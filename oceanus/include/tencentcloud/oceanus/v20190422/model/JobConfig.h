@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/oceanus/v20190422/model/Property.h>
 #include <tencentcloud/oceanus/v20190422/model/ResourceRefDetail.h>
+#include <tencentcloud/oceanus/v20190422/model/ClazzLevel.h>
+#include <tencentcloud/oceanus/v20190422/model/ExpertModeConfiguration.h>
 
 
 namespace TencentCloud
@@ -561,6 +563,81 @@ namespace TencentCloud
                      */
                     bool LogLevelHasBeenSet() const;
 
+                    /**
+                     * 获取类日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClazzLevels 类日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ClazzLevel> GetClazzLevels() const;
+
+                    /**
+                     * 设置类日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clazzLevels 类日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClazzLevels(const std::vector<ClazzLevel>& _clazzLevels);
+
+                    /**
+                     * 判断参数 ClazzLevels 是否已赋值
+                     * @return ClazzLevels 是否已赋值
+                     * 
+                     */
+                    bool ClazzLevelsHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启专家模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpertModeOn 是否开启专家模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetExpertModeOn() const;
+
+                    /**
+                     * 设置是否开启专家模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _expertModeOn 是否开启专家模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExpertModeOn(const bool& _expertModeOn);
+
+                    /**
+                     * 判断参数 ExpertModeOn 是否已赋值
+                     * @return ExpertModeOn 是否已赋值
+                     * 
+                     */
+                    bool ExpertModeOnHasBeenSet() const;
+
+                    /**
+                     * 获取专家模式的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpertModeConfiguration 专家模式的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExpertModeConfiguration GetExpertModeConfiguration() const;
+
+                    /**
+                     * 设置专家模式的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _expertModeConfiguration 专家模式的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExpertModeConfiguration(const ExpertModeConfiguration& _expertModeConfiguration);
+
+                    /**
+                     * 判断参数 ExpertModeConfiguration 是否已赋值
+                     * @return ExpertModeConfiguration 是否已赋值
+                     * 
+                     */
+                    bool ExpertModeConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -706,6 +783,27 @@ namespace TencentCloud
                      */
                     std::string m_logLevel;
                     bool m_logLevelHasBeenSet;
+
+                    /**
+                     * 类日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClazzLevel> m_clazzLevels;
+                    bool m_clazzLevelsHasBeenSet;
+
+                    /**
+                     * 是否开启专家模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_expertModeOn;
+                    bool m_expertModeOnHasBeenSet;
+
+                    /**
+                     * 专家模式的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExpertModeConfiguration m_expertModeConfiguration;
+                    bool m_expertModeConfigurationHasBeenSet;
 
                 };
             }

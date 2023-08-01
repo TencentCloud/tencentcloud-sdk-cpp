@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @return PlatformType 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 获取平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @return PlatformType 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     int64_t GetPlatformType() const;
 
                     /**
-                     * 设置平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @param _platformType 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 设置平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @param _platformType 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     void SetPlatformType(const int64_t& _platformType);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道合作安卓加固App信息 
-                     * @return AndroidAppInfo 渠道合作安卓加固App信息 
+                     * 获取渠道合作android加固App信息 
+                     * @return AndroidAppInfo 渠道合作android加固App信息 
                      * 
                      */
                     AndroidAppInfo GetAndroidAppInfo() const;
 
                     /**
-                     * 设置渠道合作安卓加固App信息 
-                     * @param _androidAppInfo 渠道合作安卓加固App信息 
+                     * 设置渠道合作android加固App信息 
+                     * @param _androidAppInfo 渠道合作android加固App信息 
                      * 
                      */
                     void SetAndroidAppInfo(const AndroidAppInfo& _androidAppInfo);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool AndroidAppInfoHasBeenSet() const;
 
                     /**
-                     * 获取渠道合作安卓加固策略信息
-                     * @return AndroidPlan 渠道合作安卓加固策略信息
+                     * 获取渠道合作android加固策略信息
+                     * @return AndroidPlan 渠道合作android加固策略信息
                      * 
                      */
                     AndroidPlan GetAndroidPlan() const;
 
                     /**
-                     * 设置渠道合作安卓加固策略信息
-                     * @param _androidPlan 渠道合作安卓加固策略信息
+                     * 设置渠道合作android加固策略信息
+                     * @param _androidPlan 渠道合作android加固策略信息
                      * 
                      */
                     void SetAndroidPlan(const AndroidPlan& _androidPlan);
@@ -195,7 +195,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      */
                     int64_t m_platformType;
                     bool m_platformTypeHasBeenSet;
@@ -219,13 +219,13 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 渠道合作安卓加固App信息 
+                     * 渠道合作android加固App信息 
                      */
                     AndroidAppInfo m_androidAppInfo;
                     bool m_androidAppInfoHasBeenSet;
 
                     /**
-                     * 渠道合作安卓加固策略信息
+                     * 渠道合作android加固策略信息
                      */
                     AndroidPlan m_androidPlan;
                     bool m_androidPlanHasBeenSet;

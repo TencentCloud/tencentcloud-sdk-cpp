@@ -235,6 +235,81 @@ namespace TencentCloud
                      */
                     bool InstanceRoleHasBeenSet() const;
 
+                    /**
+                     * 获取执行开始时间(距离0点的秒数)	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaintainStartTime 执行开始时间(距离0点的秒数)	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMaintainStartTime() const;
+
+                    /**
+                     * 设置执行开始时间(距离0点的秒数)	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maintainStartTime 执行开始时间(距离0点的秒数)	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaintainStartTime(const int64_t& _maintainStartTime);
+
+                    /**
+                     * 判断参数 MaintainStartTime 是否已赋值
+                     * @return MaintainStartTime 是否已赋值
+                     * 
+                     */
+                    bool MaintainStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取持续的时间(单位：秒)	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaintainDuration 持续的时间(单位：秒)	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMaintainDuration() const;
+
+                    /**
+                     * 设置持续的时间(单位：秒)	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maintainDuration 持续的时间(单位：秒)	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaintainDuration(const int64_t& _maintainDuration);
+
+                    /**
+                     * 判断参数 MaintainDuration 是否已赋值
+                     * @return MaintainDuration 是否已赋值
+                     * 
+                     */
+                    bool MaintainDurationHasBeenSet() const;
+
+                    /**
+                     * 获取可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaintainWeekDays 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetMaintainWeekDays() const;
+
+                    /**
+                     * 设置可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maintainWeekDays 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaintainWeekDays(const std::vector<std::string>& _maintainWeekDays);
+
+                    /**
+                     * 判断参数 MaintainWeekDays 是否已赋值
+                     * @return MaintainWeekDays 是否已赋值
+                     * 
+                     */
+                    bool MaintainWeekDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +365,27 @@ namespace TencentCloud
                      */
                     std::string m_instanceRole;
                     bool m_instanceRoleHasBeenSet;
+
+                    /**
+                     * 执行开始时间(距离0点的秒数)	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maintainStartTime;
+                    bool m_maintainStartTimeHasBeenSet;
+
+                    /**
+                     * 持续的时间(单位：秒)	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maintainDuration;
+                    bool m_maintainDurationHasBeenSet;
+
+                    /**
+                     * 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_maintainWeekDays;
+                    bool m_maintainWeekDaysHasBeenSet;
 
                 };
             }

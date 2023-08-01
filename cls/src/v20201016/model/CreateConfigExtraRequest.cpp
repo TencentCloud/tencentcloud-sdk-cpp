@@ -39,7 +39,8 @@ CreateConfigExtraRequest::CreateConfigExtraRequest() :
     m_excludePathsHasBeenSet(false),
     m_userDefineRuleHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_groupIdsHasBeenSet(false)
+    m_groupIdsHasBeenSet(false),
+    m_advancedConfigHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,14 @@ string CreateConfigExtraRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_advancedConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_advancedConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -480,6 +489,22 @@ void CreateConfigExtraRequest::SetGroupIds(const vector<string>& _groupIds)
 bool CreateConfigExtraRequest::GroupIdsHasBeenSet() const
 {
     return m_groupIdsHasBeenSet;
+}
+
+string CreateConfigExtraRequest::GetAdvancedConfig() const
+{
+    return m_advancedConfig;
+}
+
+void CreateConfigExtraRequest::SetAdvancedConfig(const string& _advancedConfig)
+{
+    m_advancedConfig = _advancedConfig;
+    m_advancedConfigHasBeenSet = true;
+}
+
+bool CreateConfigExtraRequest::AdvancedConfigHasBeenSet() const
+{
+    return m_advancedConfigHasBeenSet;
 }
 
 

@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrderDirectionHasBeenSet() const;
 
                     /**
-                     * 获取（条件过滤字段）平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @return PlatformType （条件过滤字段）平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 获取（条件过滤字段）平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @return PlatformType （条件过滤字段）平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     int64_t GetPlatformType() const;
 
                     /**
-                     * 设置（条件过滤字段）平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @param _platformType （条件过滤字段）平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 设置（条件过滤字段）平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @param _platformType （条件过滤字段）平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     void SetPlatformType(const int64_t& _platformType);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取（条件过滤字段）安卓包名，查询android安卓加固订单时使用
-                     * @return AppPkgName （条件过滤字段）安卓包名，查询android安卓加固订单时使用
+                     * 获取（条件过滤字段）包名，查询android加固订单时使用
+                     * @return AppPkgName （条件过滤字段）包名，查询android加固订单时使用
                      * 
                      */
                     std::string GetAppPkgName() const;
 
                     /**
-                     * 设置（条件过滤字段）安卓包名，查询android安卓加固订单时使用
-                     * @param _appPkgName （条件过滤字段）安卓包名，查询android安卓加固订单时使用
+                     * 设置（条件过滤字段）包名，查询android加固订单时使用
+                     * @param _appPkgName （条件过滤字段）包名，查询android加固订单时使用
                      * 
                      */
                     void SetAppPkgName(const std::string& _appPkgName);
@@ -300,7 +300,7 @@ namespace TencentCloud
                     bool m_orderDirectionHasBeenSet;
 
                     /**
-                     * （条件过滤字段）平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * （条件过滤字段）平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      */
                     int64_t m_platformType;
                     bool m_platformTypeHasBeenSet;
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * （条件过滤字段）安卓包名，查询android安卓加固订单时使用
+                     * （条件过滤字段）包名，查询android加固订单时使用
                      */
                     std::string m_appPkgName;
                     bool m_appPkgNameHasBeenSet;

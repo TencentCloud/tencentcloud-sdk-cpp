@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/live/v20180801/model/CommonMixLayoutParams.h>
 #include <tencentcloud/live/v20180801/model/CommonMixCropParams.h>
+#include <tencentcloud/live/v20180801/model/MixPortraitSegmentParams.h>
 
 
 namespace TencentCloud
@@ -119,6 +120,27 @@ namespace TencentCloud
                      */
                     bool CropParamsHasBeenSet() const;
 
+                    /**
+                     * 获取抠图参数。
+                     * @return PortraitSegmentParams 抠图参数。
+                     * 
+                     */
+                    MixPortraitSegmentParams GetPortraitSegmentParams() const;
+
+                    /**
+                     * 设置抠图参数。
+                     * @param _portraitSegmentParams 抠图参数。
+                     * 
+                     */
+                    void SetPortraitSegmentParams(const MixPortraitSegmentParams& _portraitSegmentParams);
+
+                    /**
+                     * 判断参数 PortraitSegmentParams 是否已赋值
+                     * @return PortraitSegmentParams 是否已赋值
+                     * 
+                     */
+                    bool PortraitSegmentParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +162,12 @@ namespace TencentCloud
                      */
                     CommonMixCropParams m_cropParams;
                     bool m_cropParamsHasBeenSet;
+
+                    /**
+                     * 抠图参数。
+                     */
+                    MixPortraitSegmentParams m_portraitSegmentParams;
+                    bool m_portraitSegmentParamsHasBeenSet;
 
                 };
             }

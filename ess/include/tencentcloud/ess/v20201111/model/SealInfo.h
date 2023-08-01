@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模板结构体中的印章信息
+                * 模板中指定的印章信息
                 */
                 class SealInfo : public AbstractModel
                 {
@@ -46,7 +46,118 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取印章ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SealId 印章ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSealId() const;
+
+                    /**
+                     * 设置印章ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sealId 印章ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSealId(const std::string& _sealId);
+
+                    /**
+                     * 判断参数 SealId 是否已赋值
+                     * @return SealId 是否已赋值
+                     * 
+                     */
+                    bool SealIdHasBeenSet() const;
+
+                    /**
+                     * 获取印章类型。LEGAL_PERSON_SEAL: 法定代表人章；
+ORGANIZATIONSEAL：企业印章；
+OFFICIAL：企业公章；
+CONTRACT：合同专用章
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SealType 印章类型。LEGAL_PERSON_SEAL: 法定代表人章；
+ORGANIZATIONSEAL：企业印章；
+OFFICIAL：企业公章；
+CONTRACT：合同专用章
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSealType() const;
+
+                    /**
+                     * 设置印章类型。LEGAL_PERSON_SEAL: 法定代表人章；
+ORGANIZATIONSEAL：企业印章；
+OFFICIAL：企业公章；
+CONTRACT：合同专用章
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sealType 印章类型。LEGAL_PERSON_SEAL: 法定代表人章；
+ORGANIZATIONSEAL：企业印章；
+OFFICIAL：企业公章；
+CONTRACT：合同专用章
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSealType(const std::string& _sealType);
+
+                    /**
+                     * 判断参数 SealType 是否已赋值
+                     * @return SealType 是否已赋值
+                     * 
+                     */
+                    bool SealTypeHasBeenSet() const;
+
+                    /**
+                     * 获取印章名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SealName 印章名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSealName() const;
+
+                    /**
+                     * 设置印章名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sealName 印章名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSealName(const std::string& _sealName);
+
+                    /**
+                     * 判断参数 SealName 是否已赋值
+                     * @return SealName 是否已赋值
+                     * 
+                     */
+                    bool SealNameHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 印章ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sealId;
+                    bool m_sealIdHasBeenSet;
+
+                    /**
+                     * 印章类型。LEGAL_PERSON_SEAL: 法定代表人章；
+ORGANIZATIONSEAL：企业印章；
+OFFICIAL：企业公章；
+CONTRACT：合同专用章
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sealType;
+                    bool m_sealTypeHasBeenSet;
+
+                    /**
+                     * 印章名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sealName;
+                    bool m_sealNameHasBeenSet;
 
                 };
             }

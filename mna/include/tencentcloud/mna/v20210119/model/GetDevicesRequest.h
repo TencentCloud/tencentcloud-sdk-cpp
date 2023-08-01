@@ -105,6 +105,39 @@ namespace TencentCloud
                      */
                     bool KeywordHasBeenSet() const;
 
+                    /**
+                     * 获取DeviceType
+不传：返回所有设备；
+1:自有设备；
+2:三方设备
+                     * @return DeviceType DeviceType
+不传：返回所有设备；
+1:自有设备；
+2:三方设备
+                     * 
+                     */
+                    int64_t GetDeviceType() const;
+
+                    /**
+                     * 设置DeviceType
+不传：返回所有设备；
+1:自有设备；
+2:三方设备
+                     * @param _deviceType DeviceType
+不传：返回所有设备；
+1:自有设备；
+2:三方设备
+                     * 
+                     */
+                    void SetDeviceType(const int64_t& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     * 
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +157,15 @@ namespace TencentCloud
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
+
+                    /**
+                     * DeviceType
+不传：返回所有设备；
+1:自有设备；
+2:三方设备
+                     */
+                    int64_t m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                 };
             }

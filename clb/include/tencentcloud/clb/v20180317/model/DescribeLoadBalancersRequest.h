@@ -132,15 +132,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
-                     * @return Domain 腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
+                     * 获取腾讯云为负载均衡实例分配的域名。
+                     * @return Domain 腾讯云为负载均衡实例分配的域名。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
-                     * @param _domain 腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
+                     * 设置腾讯云为负载均衡实例分配的域名。
+                     * @param _domain 腾讯云为负载均衡实例分配的域名。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -514,7 +514,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_loadBalancerNameHasBeenSet;
 
                     /**
-                     * 腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
+                     * 腾讯云为负载均衡实例分配的域名。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

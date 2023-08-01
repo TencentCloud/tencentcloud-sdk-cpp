@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @return PlatformType 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 获取平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @return PlatformType 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     int64_t GetPlatformType() const;
 
                     /**
-                     * 设置平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @param _platformType 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 设置平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @param _platformType 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     void SetPlatformType(const int64_t& _platformType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取（条件过滤字段）安卓加固查询时，根据包名查询
-                     * @return AppPkgName （条件过滤字段）安卓加固查询时，根据包名查询
+                     * 获取（条件过滤字段）加固查询时，根据包名查询
+                     * @return AppPkgName （条件过滤字段）加固查询时，根据包名查询
                      * 
                      */
                     std::string GetAppPkgName() const;
 
                     /**
-                     * 设置（条件过滤字段）安卓加固查询时，根据包名查询
-                     * @param _appPkgName （条件过滤字段）安卓加固查询时，根据包名查询
+                     * 设置（条件过滤字段）加固查询时，根据包名查询
+                     * @param _appPkgName （条件过滤字段）加固查询时，根据包名查询
                      * 
                      */
                     void SetAppPkgName(const std::string& _appPkgName);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool AppPkgNameHasBeenSet() const;
 
                     /**
-                     * 获取（条件过滤字段）安卓加固查询时，根据应用格式查询，枚举值：“apk”、“aab”
-                     * @return AppType （条件过滤字段）安卓加固查询时，根据应用格式查询，枚举值：“apk”、“aab”
+                     * 获取（条件过滤字段）加固查询时，根据应用格式查询，枚举值：“apk”、“aab”
+                     * @return AppType （条件过滤字段）加固查询时，根据应用格式查询，枚举值：“apk”、“aab”
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置（条件过滤字段）安卓加固查询时，根据应用格式查询，枚举值：“apk”、“aab”
-                     * @param _appType （条件过滤字段）安卓加固查询时，根据应用格式查询，枚举值：“apk”、“aab”
+                     * 设置（条件过滤字段）加固查询时，根据应用格式查询，枚举值：“apk”、“aab”
+                     * @param _appType （条件过滤字段）加固查询时，根据应用格式查询，枚举值：“apk”、“aab”
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      */
                     int64_t m_platformType;
                     bool m_platformTypeHasBeenSet;
@@ -195,13 +195,13 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * （条件过滤字段）安卓加固查询时，根据包名查询
+                     * （条件过滤字段）加固查询时，根据包名查询
                      */
                     std::string m_appPkgName;
                     bool m_appPkgNameHasBeenSet;
 
                     /**
-                     * （条件过滤字段）安卓加固查询时，根据应用格式查询，枚举值：“apk”、“aab”
+                     * （条件过滤字段）加固查询时，根据应用格式查询，枚举值：“apk”、“aab”
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;

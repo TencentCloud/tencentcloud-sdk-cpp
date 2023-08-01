@@ -39,7 +39,8 @@ ModifyConfigExtraRequest::ModifyConfigExtraRequest() :
     m_configFlagHasBeenSet(false),
     m_logsetIdHasBeenSet(false),
     m_logsetNameHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+    m_topicNameHasBeenSet(false),
+    m_advancedConfigHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,14 @@ string ModifyConfigExtraRequest::ToJsonString() const
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_advancedConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_advancedConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -475,6 +484,22 @@ void ModifyConfigExtraRequest::SetTopicName(const string& _topicName)
 bool ModifyConfigExtraRequest::TopicNameHasBeenSet() const
 {
     return m_topicNameHasBeenSet;
+}
+
+string ModifyConfigExtraRequest::GetAdvancedConfig() const
+{
+    return m_advancedConfig;
+}
+
+void ModifyConfigExtraRequest::SetAdvancedConfig(const string& _advancedConfig)
+{
+    m_advancedConfig = _advancedConfig;
+    m_advancedConfigHasBeenSet = true;
+}
+
+bool ModifyConfigExtraRequest::AdvancedConfigHasBeenSet() const
+{
+    return m_advancedConfigHasBeenSet;
 }
 
 

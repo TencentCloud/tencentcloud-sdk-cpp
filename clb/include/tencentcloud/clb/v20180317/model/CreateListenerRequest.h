@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool ListenerNamesHasBeenSet() const;
 
                     /**
-                     * 获取健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
-                     * @return HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
+                     * 获取健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
+                     * @return HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
-                     * 设置健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
-                     * @param _healthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
+                     * 设置健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
+                     * @param _healthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     void SetHealthCheck(const HealthCheck& _healthCheck);
@@ -194,18 +194,18 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器转发的方式。可选值：WRR、LEAST_CONN
-分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL监听器。
+分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * @return Scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
-分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL监听器。
+分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     std::string GetScheduler() const;
 
                     /**
                      * 设置监听器转发的方式。可选值：WRR、LEAST_CONN
-分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL监听器。
+分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * @param _scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
-分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL监听器。
+分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     void SetScheduler(const std::string& _scheduler);
@@ -454,7 +454,7 @@ namespace TencentCloud
                     bool m_listenerNamesHasBeenSet;
 
                     /**
-                     * 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
+                     * 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      */
                     HealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
@@ -473,7 +473,7 @@ namespace TencentCloud
 
                     /**
                      * 监听器转发的方式。可选值：WRR、LEAST_CONN
-分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL监听器。
+分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;

@@ -65,6 +65,7 @@ namespace TencentCloud
 '-3': '身份证号码有误'
 '-4': '银行卡号码有误'
 '-17': '验证中心服务繁忙'
+'-18': '验证次数超限，请次日重试'
                      * @return Result 认证结果码
 收费结果码：
 '0': '认证通过'
@@ -86,6 +87,7 @@ namespace TencentCloud
 '-3': '身份证号码有误'
 '-4': '银行卡号码有误'
 '-17': '验证中心服务繁忙'
+'-18': '验证次数超限，请次日重试'
                      * 
                      */
                     std::string GetResult() const;
@@ -135,6 +137,7 @@ namespace TencentCloud
 '-3': '身份证号码有误'
 '-4': '银行卡号码有误'
 '-17': '验证中心服务繁忙'
+'-18': '验证次数超限，请次日重试'
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ListenerIdsHasBeenSet() const;
 
                     /**
-                     * 获取要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
-                     * @return Protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
+                     * 获取要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL | QUIC。
+                     * @return Protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL | QUIC。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
-                     * @param _protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
+                     * 设置要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL | QUIC。
+                     * @param _protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL | QUIC。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_listenerIdsHasBeenSet;
 
                     /**
-                     * 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
+                     * 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL | QUIC。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

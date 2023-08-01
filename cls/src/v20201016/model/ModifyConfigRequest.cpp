@@ -30,7 +30,8 @@ ModifyConfigRequest::ModifyConfigRequest() :
     m_extractRuleHasBeenSet(false),
     m_excludePathsHasBeenSet(false),
     m_outputHasBeenSet(false),
-    m_userDefineRuleHasBeenSet(false)
+    m_userDefineRuleHasBeenSet(false),
+    m_advancedConfigHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string ModifyConfigRequest::ToJsonString() const
         string key = "UserDefineRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userDefineRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_advancedConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_advancedConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -247,6 +256,22 @@ void ModifyConfigRequest::SetUserDefineRule(const string& _userDefineRule)
 bool ModifyConfigRequest::UserDefineRuleHasBeenSet() const
 {
     return m_userDefineRuleHasBeenSet;
+}
+
+string ModifyConfigRequest::GetAdvancedConfig() const
+{
+    return m_advancedConfig;
+}
+
+void ModifyConfigRequest::SetAdvancedConfig(const string& _advancedConfig)
+{
+    m_advancedConfig = _advancedConfig;
+    m_advancedConfigHasBeenSet = true;
+}
+
+bool ModifyConfigRequest::AdvancedConfigHasBeenSet() const
+{
+    return m_advancedConfigHasBeenSet;
 }
 
 

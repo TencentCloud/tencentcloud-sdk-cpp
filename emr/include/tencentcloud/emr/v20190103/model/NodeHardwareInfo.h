@@ -1304,6 +1304,31 @@ namespace TencentCloud
                      */
                     bool TradeVersionHasBeenSet() const;
 
+                    /**
+                     * 获取各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServicesStatus 各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetServicesStatus() const;
+
+                    /**
+                     * 设置各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _servicesStatus 各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServicesStatus(const std::string& _servicesStatus);
+
+                    /**
+                     * 判断参数 ServicesStatus 是否已赋值
+                     * @return ServicesStatus 是否已赋值
+                     * 
+                     */
+                    bool ServicesStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1656,6 +1681,13 @@ namespace TencentCloud
                      */
                     int64_t m_tradeVersion;
                     bool m_tradeVersionHasBeenSet;
+
+                    /**
+                     * 各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_servicesStatus;
+                    bool m_servicesStatusHasBeenSet;
 
                 };
             }

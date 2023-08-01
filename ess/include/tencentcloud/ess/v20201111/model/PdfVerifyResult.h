@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CertSnHasBeenSet() const;
 
                     /**
-                     * 获取证书起始时间戳，单位秒
-                     * @return CertNotBefore 证书起始时间戳，单位秒
+                     * 获取证书起始时间戳，单位毫秒
+                     * @return CertNotBefore 证书起始时间戳，单位毫秒
                      * 
                      */
                     int64_t GetCertNotBefore() const;
 
                     /**
-                     * 设置证书起始时间戳，单位秒
-                     * @param _certNotBefore 证书起始时间戳，单位秒
+                     * 设置证书起始时间戳，单位毫秒
+                     * @param _certNotBefore 证书起始时间戳，单位毫秒
                      * 
                      */
                     void SetCertNotBefore(const int64_t& _certNotBefore);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CertNotBeforeHasBeenSet() const;
 
                     /**
-                     * 获取证书过期时间戳，单位秒
-                     * @return CertNotAfter 证书过期时间戳，单位秒
+                     * 获取证书过期时间戳，单位毫秒
+                     * @return CertNotAfter 证书过期时间戳，单位毫秒
                      * 
                      */
                     int64_t GetCertNotAfter() const;
 
                     /**
-                     * 设置证书过期时间戳，单位秒
-                     * @param _certNotAfter 证书过期时间戳，单位秒
+                     * 设置证书过期时间戳，单位毫秒
+                     * @param _certNotAfter 证书过期时间戳，单位毫秒
                      * 
                      */
                     void SetCertNotAfter(const int64_t& _certNotAfter);
@@ -358,13 +358,13 @@ namespace TencentCloud
                     bool m_certSnHasBeenSet;
 
                     /**
-                     * 证书起始时间戳，单位秒
+                     * 证书起始时间戳，单位毫秒
                      */
                     int64_t m_certNotBefore;
                     bool m_certNotBeforeHasBeenSet;
 
                     /**
-                     * 证书过期时间戳，单位秒
+                     * 证书过期时间戳，单位毫秒
                      */
                     int64_t m_certNotAfter;
                     bool m_certNotAfterHasBeenSet;

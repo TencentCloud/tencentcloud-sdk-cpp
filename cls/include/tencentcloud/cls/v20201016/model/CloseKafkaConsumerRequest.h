@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CLS对应的topic标识
-                     * @return FromTopicId CLS对应的topic标识
+                     * 获取日志主题ID
+                     * @return FromTopicId 日志主题ID
                      * 
                      */
                     std::string GetFromTopicId() const;
 
                     /**
-                     * 设置CLS对应的topic标识
-                     * @param _fromTopicId CLS对应的topic标识
+                     * 设置日志主题ID
+                     * @param _fromTopicId 日志主题ID
                      * 
                      */
                     void SetFromTopicId(const std::string& _fromTopicId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CLS对应的topic标识
+                     * 日志主题ID
                      */
                     std::string m_fromTopicId;
                     bool m_fromTopicIdHasBeenSet;

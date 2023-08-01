@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CLS控制台创建的TopicId
-                     * @return FromTopicId CLS控制台创建的TopicId
+                     * 获取日志主题ID
+                     * @return FromTopicId 日志主题ID
                      * 
                      */
                     std::string GetFromTopicId() const;
 
                     /**
-                     * 设置CLS控制台创建的TopicId
-                     * @param _fromTopicId CLS控制台创建的TopicId
+                     * 设置日志主题ID
+                     * @param _fromTopicId 日志主题ID
                      * 
                      */
                     void SetFromTopicId(const std::string& _fromTopicId);
@@ -109,7 +109,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CLS控制台创建的TopicId
+                     * 日志主题ID
                      */
                     std::string m_fromTopicId;
                     bool m_fromTopicIdHasBeenSet;

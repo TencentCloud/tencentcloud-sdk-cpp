@@ -28,7 +28,8 @@ DescribeAccountsRequest::DescribeAccountsRequest() :
     m_dbTypeHasBeenSet(false),
     m_hostsHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_accountRegularHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string DescribeAccountsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_accountRegularHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountRegular";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accountRegular.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -199,6 +208,22 @@ void DescribeAccountsRequest::SetOffset(const int64_t& _offset)
 bool DescribeAccountsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeAccountsRequest::GetAccountRegular() const
+{
+    return m_accountRegular;
+}
+
+void DescribeAccountsRequest::SetAccountRegular(const string& _accountRegular)
+{
+    m_accountRegular = _accountRegular;
+    m_accountRegularHasBeenSet = true;
+}
+
+bool DescribeAccountsRequest::AccountRegularHasBeenSet() const
+{
+    return m_accountRegularHasBeenSet;
 }
 
 

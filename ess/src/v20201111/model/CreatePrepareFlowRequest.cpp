@@ -31,6 +31,14 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_userFlowTypeIdHasBeenSet(false),
     m_approversHasBeenSet(false),
     m_intelligentStatusHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_componentsHasBeenSet(false),
+    m_flowOptionHasBeenSet(false),
+    m_needSignReviewHasBeenSet(false),
+    m_needCreateReviewHasBeenSet(false),
+    m_userDataHasBeenSet(false),
+    m_flowIdHasBeenSet(false),
+    m_flowTypeHasBeenSet(false),
     m_agentHasBeenSet(false)
 {
 }
@@ -112,6 +120,72 @@ string CreatePrepareFlowRequest::ToJsonString() const
         string key = "IntelligentStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_intelligentStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resourceType, allocator);
+    }
+
+    if (m_componentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Components";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_components.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowOption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_needSignReviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedSignReview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needSignReview, allocator);
+    }
+
+    if (m_needCreateReviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedCreateReview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needCreateReview, allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agentHasBeenSet)
@@ -257,6 +331,134 @@ void CreatePrepareFlowRequest::SetIntelligentStatus(const string& _intelligentSt
 bool CreatePrepareFlowRequest::IntelligentStatusHasBeenSet() const
 {
     return m_intelligentStatusHasBeenSet;
+}
+
+int64_t CreatePrepareFlowRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void CreatePrepareFlowRequest::SetResourceType(const int64_t& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
+Component CreatePrepareFlowRequest::GetComponents() const
+{
+    return m_components;
+}
+
+void CreatePrepareFlowRequest::SetComponents(const Component& _components)
+{
+    m_components = _components;
+    m_componentsHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::ComponentsHasBeenSet() const
+{
+    return m_componentsHasBeenSet;
+}
+
+CreateFlowOption CreatePrepareFlowRequest::GetFlowOption() const
+{
+    return m_flowOption;
+}
+
+void CreatePrepareFlowRequest::SetFlowOption(const CreateFlowOption& _flowOption)
+{
+    m_flowOption = _flowOption;
+    m_flowOptionHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::FlowOptionHasBeenSet() const
+{
+    return m_flowOptionHasBeenSet;
+}
+
+bool CreatePrepareFlowRequest::GetNeedSignReview() const
+{
+    return m_needSignReview;
+}
+
+void CreatePrepareFlowRequest::SetNeedSignReview(const bool& _needSignReview)
+{
+    m_needSignReview = _needSignReview;
+    m_needSignReviewHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::NeedSignReviewHasBeenSet() const
+{
+    return m_needSignReviewHasBeenSet;
+}
+
+bool CreatePrepareFlowRequest::GetNeedCreateReview() const
+{
+    return m_needCreateReview;
+}
+
+void CreatePrepareFlowRequest::SetNeedCreateReview(const bool& _needCreateReview)
+{
+    m_needCreateReview = _needCreateReview;
+    m_needCreateReviewHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::NeedCreateReviewHasBeenSet() const
+{
+    return m_needCreateReviewHasBeenSet;
+}
+
+string CreatePrepareFlowRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void CreatePrepareFlowRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
+}
+
+string CreatePrepareFlowRequest::GetFlowId() const
+{
+    return m_flowId;
+}
+
+void CreatePrepareFlowRequest::SetFlowId(const string& _flowId)
+{
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
+
+string CreatePrepareFlowRequest::GetFlowType() const
+{
+    return m_flowType;
+}
+
+void CreatePrepareFlowRequest::SetFlowType(const string& _flowType)
+{
+    m_flowType = _flowType;
+    m_flowTypeHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::FlowTypeHasBeenSet() const
+{
+    return m_flowTypeHasBeenSet;
 }
 
 Agent CreatePrepareFlowRequest::GetAgent() const

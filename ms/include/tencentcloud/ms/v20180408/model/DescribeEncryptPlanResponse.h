@@ -62,8 +62,8 @@ namespace TencentCloud
                     bool PlatformTypeHasBeenSet() const;
 
                     /**
-                     * 获取平台类型描述 1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @return PlatformTypeDesc 平台类型描述 1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 获取平台类型描述 1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @return PlatformTypeDesc 平台类型描述 1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     std::string GetPlatformTypeDesc() const;
@@ -146,9 +146,9 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取上次安卓加固策略
+                     * 获取上次加固策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AndroidPlan 上次安卓加固策略
+                     * @return AndroidPlan 上次加固策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -218,7 +218,7 @@ namespace TencentCloud
                     bool m_platformTypeHasBeenSet;
 
                     /**
-                     * 平台类型描述 1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 平台类型描述 1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      */
                     std::string m_platformTypeDesc;
                     bool m_platformTypeDescHasBeenSet;
@@ -254,7 +254,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 上次安卓加固策略
+                     * 上次加固策略
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AndroidPlan m_androidPlan;

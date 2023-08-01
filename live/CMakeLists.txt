@@ -373,6 +373,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeRecordTaskResponse.h
   include/tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListResponse.h
   include/tencentcloud/live/v20180801/model/ForbidLiveDomainRequest.h
+  include/tencentcloud/live/v20180801/model/MixPortraitSegmentParams.h
   include/tencentcloud/live/v20180801/model/RecordParam.h
   include/tencentcloud/live/v20180801/model/ModifyLiveRecordTemplateRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveDomainRefererRequest.h
@@ -755,6 +756,7 @@ set(live_src
   src/v20180801/model/DescribeRecordTaskResponse.cpp
   src/v20180801/model/DescribeAreaBillBandwidthAndFluxListResponse.cpp
   src/v20180801/model/ForbidLiveDomainRequest.cpp
+  src/v20180801/model/MixPortraitSegmentParams.cpp
   src/v20180801/model/RecordParam.cpp
   src/v20180801/model/ModifyLiveRecordTemplateRequest.cpp
   src/v20180801/model/DescribeLiveDomainRefererRequest.cpp

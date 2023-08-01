@@ -41,7 +41,10 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_pythonVersionHasBeenSet(false),
     m_workSpaceIdHasBeenSet(false),
     m_logLevelHasBeenSet(false),
-    m_autoRecoverHasBeenSet(false)
+    m_autoRecoverHasBeenSet(false),
+    m_clazzLevelsHasBeenSet(false),
+    m_expertModeOnHasBeenSet(false),
+    m_expertModeConfigurationHasBeenSet(false)
 {
 }
 
@@ -216,6 +219,38 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "AutoRecover";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRecover, allocator);
+    }
+
+    if (m_clazzLevelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClazzLevels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clazzLevels.begin(); itr != m_clazzLevels.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_expertModeOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpertModeOn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expertModeOn, allocator);
+    }
+
+    if (m_expertModeConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpertModeConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_expertModeConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -528,6 +563,54 @@ void CreateJobConfigRequest::SetAutoRecover(const int64_t& _autoRecover)
 bool CreateJobConfigRequest::AutoRecoverHasBeenSet() const
 {
     return m_autoRecoverHasBeenSet;
+}
+
+vector<ClazzLevel> CreateJobConfigRequest::GetClazzLevels() const
+{
+    return m_clazzLevels;
+}
+
+void CreateJobConfigRequest::SetClazzLevels(const vector<ClazzLevel>& _clazzLevels)
+{
+    m_clazzLevels = _clazzLevels;
+    m_clazzLevelsHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::ClazzLevelsHasBeenSet() const
+{
+    return m_clazzLevelsHasBeenSet;
+}
+
+bool CreateJobConfigRequest::GetExpertModeOn() const
+{
+    return m_expertModeOn;
+}
+
+void CreateJobConfigRequest::SetExpertModeOn(const bool& _expertModeOn)
+{
+    m_expertModeOn = _expertModeOn;
+    m_expertModeOnHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::ExpertModeOnHasBeenSet() const
+{
+    return m_expertModeOnHasBeenSet;
+}
+
+ExpertModeConfiguration CreateJobConfigRequest::GetExpertModeConfiguration() const
+{
+    return m_expertModeConfiguration;
+}
+
+void CreateJobConfigRequest::SetExpertModeConfiguration(const ExpertModeConfiguration& _expertModeConfiguration)
+{
+    m_expertModeConfiguration = _expertModeConfiguration;
+    m_expertModeConfigurationHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::ExpertModeConfigurationHasBeenSet() const
+{
+    return m_expertModeConfigurationHasBeenSet;
 }
 
 

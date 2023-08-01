@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 渠道合作安卓加固App信息
+                * 渠道合作Android加固App信息
                 */
                 class AndroidAppInfo : public AbstractModel
                 {
@@ -144,18 +144,18 @@ d40cc11e4bddd643ecdf29cde729a12b
 
                     /**
                      * 获取app的包名，本次操作的包名。
-当安卓是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。
+当Android是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。
                      * @return AppPkgName app的包名，本次操作的包名。
-当安卓是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。
+当Android是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。
                      * 
                      */
                     std::string GetAppPkgName() const;
 
                     /**
                      * 设置app的包名，本次操作的包名。
-当安卓是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。
+当Android是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。
                      * @param _appPkgName app的包名，本次操作的包名。
-当安卓是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。
+当Android是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。
                      * 
                      */
                     void SetAppPkgName(const std::string& _appPkgName);
@@ -210,19 +210,19 @@ d40cc11e4bddd643ecdf29cde729a12b
                     bool AppVersionHasBeenSet() const;
 
                     /**
-                     * 获取安卓app的文件类型，本次加固操作的应用类型 。
-安卓在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
-                     * @return AppType 安卓app的文件类型，本次加固操作的应用类型 。
-安卓在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
+                     * 获取Android app的文件类型，本次加固操作的应用类型 。
+Android在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
+                     * @return AppType Android app的文件类型，本次加固操作的应用类型 。
+Android在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置安卓app的文件类型，本次加固操作的应用类型 。
-安卓在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
-                     * @param _appType 安卓app的文件类型，本次加固操作的应用类型 。
-安卓在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
+                     * 设置Android app的文件类型，本次加固操作的应用类型 。
+Android在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
+                     * @param _appType Android app的文件类型，本次加固操作的应用类型 。
+Android在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -265,7 +265,7 @@ d40cc11e4bddd643ecdf29cde729a12b
 
                     /**
                      * app的包名，本次操作的包名。
-当安卓是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。
+当Android是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。
                      */
                     std::string m_appPkgName;
                     bool m_appPkgNameHasBeenSet;
@@ -283,8 +283,8 @@ d40cc11e4bddd643ecdf29cde729a12b
                     bool m_appVersionHasBeenSet;
 
                     /**
-                     * 安卓app的文件类型，本次加固操作的应用类型 。
-安卓在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
+                     * Android app的文件类型，本次加固操作的应用类型 。
+Android在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;

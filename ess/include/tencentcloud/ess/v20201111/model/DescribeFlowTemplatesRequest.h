@@ -49,10 +49,10 @@ namespace TencentCloud
                     /**
                      * 获取调用方员工/经办人信息
 UserId 必填，在企业控制台组织架构中可以查到员工的UserId
-注：请保证对应
+注：请保证员工有相关的角色权限
                      * @return Operator 调用方员工/经办人信息
 UserId 必填，在企业控制台组织架构中可以查到员工的UserId
-注：请保证对应
+注：请保证员工有相关的角色权限
                      * 
                      */
                     UserInfo GetOperator() const;
@@ -60,10 +60,10 @@ UserId 必填，在企业控制台组织架构中可以查到员工的UserId
                     /**
                      * 设置调用方员工/经办人信息
 UserId 必填，在企业控制台组织架构中可以查到员工的UserId
-注：请保证对应
+注：请保证员工有相关的角色权限
                      * @param _operator 调用方员工/经办人信息
 UserId 必填，在企业控制台组织架构中可以查到员工的UserId
-注：请保证对应
+注：请保证员工有相关的角色权限
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -301,7 +301,7 @@ ApplicationId为空，查询所有应用下的模板列表
                     /**
                      * 调用方员工/经办人信息
 UserId 必填，在企业控制台组织架构中可以查到员工的UserId
-注：请保证对应
+注：请保证员工有相关的角色权限
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

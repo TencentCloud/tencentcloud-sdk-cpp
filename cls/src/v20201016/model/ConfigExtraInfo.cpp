@@ -39,7 +39,8 @@ ConfigExtraInfo::ConfigExtraInfo() :
     m_configFlagHasBeenSet(false),
     m_logsetIdHasBeenSet(false),
     m_logsetNameHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+    m_topicNameHasBeenSet(false),
+    m_advancedConfigHasBeenSet(false)
 {
 }
 
@@ -276,6 +277,16 @@ CoreInternalOutcome ConfigExtraInfo::Deserialize(const rapidjson::Value &value)
         m_topicNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvancedConfig") && !value["AdvancedConfig"].IsNull())
+    {
+        if (!value["AdvancedConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigExtraInfo.AdvancedConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_advancedConfig = string(value["AdvancedConfig"].GetString());
+        m_advancedConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -444,6 +455,14 @@ void ConfigExtraInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_advancedConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_advancedConfig.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -751,5 +770,21 @@ void ConfigExtraInfo::SetTopicName(const string& _topicName)
 bool ConfigExtraInfo::TopicNameHasBeenSet() const
 {
     return m_topicNameHasBeenSet;
+}
+
+string ConfigExtraInfo::GetAdvancedConfig() const
+{
+    return m_advancedConfig;
+}
+
+void ConfigExtraInfo::SetAdvancedConfig(const string& _advancedConfig)
+{
+    m_advancedConfig = _advancedConfig;
+    m_advancedConfigHasBeenSet = true;
+}
+
+bool ConfigExtraInfo::AdvancedConfigHasBeenSet() const
+{
+    return m_advancedConfigHasBeenSet;
 }
 

@@ -19,180 +19,196 @@ set(oceanus_public_header
   )
 
 set(oceanus_public_header_model
-  include/tencentcloud/oceanus/v20190422/model/DescribeJobSubmissionLogResponse.h
   include/tencentcloud/oceanus/v20190422/model/CopyJobResult.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceRequest.h
-  include/tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h
-  include/tencentcloud/oceanus/v20190422/model/CreateJobRequest.h
-  include/tencentcloud/oceanus/v20190422/model/ResourceRefDetail.h
-  include/tencentcloud/oceanus/v20190422/model/JobInstanceForSubmissionLog.h
-  include/tencentcloud/oceanus/v20190422/model/StopJobsRequest.h
-  include/tencentcloud/oceanus/v20190422/model/CreateJobResponse.h
-  include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
-  include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
-  include/tencentcloud/oceanus/v20190422/model/CCN.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeJobSubmissionLogResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsRequest.h
-  include/tencentcloud/oceanus/v20190422/model/StopJobDescription.h
-  include/tencentcloud/oceanus/v20190422/model/CreateFolderRequest.h
-  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h
-  include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
-  include/tencentcloud/oceanus/v20190422/model/ClusterSession.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h
-  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointRequest.h
-  include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/ClusterVersion.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeClustersRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeJobsResponse.h
-  include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigRequest.h
   include/tencentcloud/oceanus/v20190422/model/CopyJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/CopyJobsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointRequest.h
+  include/tencentcloud/oceanus/v20190422/model/RefJobStatusCountItem.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceLocParam.h
+  include/tencentcloud/oceanus/v20190422/model/WorkSpaceSetItem.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceItem.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
+  include/tencentcloud/oceanus/v20190422/model/CCN.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesRequest.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceRefJobInfo.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeClustersRequest.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceRefDetail.h
+  include/tencentcloud/oceanus/v20190422/model/CreateJobResponse.h
+  include/tencentcloud/oceanus/v20190422/model/JobGraph.h
+  include/tencentcloud/oceanus/v20190422/model/StopJobDescription.h
+  include/tencentcloud/oceanus/v20190422/model/CreateFolderRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
+  include/tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h
+  include/tencentcloud/oceanus/v20190422/model/Tag.h
+  include/tencentcloud/oceanus/v20190422/model/JobGraphNode.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h
+  include/tencentcloud/oceanus/v20190422/model/WorkSpaceClusterItem.h
+  include/tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h
+  include/tencentcloud/oceanus/v20190422/model/CreateFolderResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeResourcesResponse.h
+  include/tencentcloud/oceanus/v20190422/model/RunJobDescription.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeResourceRelatedJobsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeClustersResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceRef.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ClazzLevel.h
+  include/tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h
+  include/tencentcloud/oceanus/v20190422/model/StopJobsRequest.h
+  include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/Property.h
+  include/tencentcloud/oceanus/v20190422/model/JobGraphEdge.h
   include/tencentcloud/oceanus/v20190422/model/Savepoint.h
   include/tencentcloud/oceanus/v20190422/model/SystemResourceItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourceRelatedJobsRequest.h
-  include/tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h
-  include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/ResourceConfigItem.h
   include/tencentcloud/oceanus/v20190422/model/RoleAuth.h
-  include/tencentcloud/oceanus/v20190422/model/LogContent.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRsp.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/TreeResourceItem.h
-  include/tencentcloud/oceanus/v20190422/model/RefJobStatusCountItem.h
-  include/tencentcloud/oceanus/v20190422/model/ResourceLocParam.h
-  include/tencentcloud/oceanus/v20190422/model/Tag.h
-  include/tencentcloud/oceanus/v20190422/model/WorkSpaceSetItem.h
-  include/tencentcloud/oceanus/v20190422/model/ResourceRefJobInfo.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h
-  include/tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h
-  include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h
-  include/tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Filter.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourcesRequest.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h
-  include/tencentcloud/oceanus/v20190422/model/ResourceItem.h
-  include/tencentcloud/oceanus/v20190422/model/WorkSpaceClusterItem.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsResponse.h
-  include/tencentcloud/oceanus/v20190422/model/StopJobsResponse.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h
-  include/tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h
   include/tencentcloud/oceanus/v20190422/model/ClusterGroupSetItem.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h
-  include/tencentcloud/oceanus/v20190422/model/CreateFolderResponse.h
-  include/tencentcloud/oceanus/v20190422/model/CopyJobItem.h
-  include/tencentcloud/oceanus/v20190422/model/RunJobDescription.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeTreeJobsRequest.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h
-  include/tencentcloud/oceanus/v20190422/model/Property.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsResponse.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeResourceRelatedJobsResponse.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/Cluster.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeClustersResponse.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSubmissionLogRequest.h
-  include/tencentcloud/oceanus/v20190422/model/ResourceRef.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/JobV1.h
   include/tencentcloud/oceanus/v20190422/model/JobConfig.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsRequest.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRequest.h
+  include/tencentcloud/oceanus/v20190422/model/SlotSharingGroup.h
+  include/tencentcloud/oceanus/v20190422/model/CreateJobRequest.h
+  include/tencentcloud/oceanus/v20190422/model/JobInstanceForSubmissionLog.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h
+  include/tencentcloud/oceanus/v20190422/model/NodeConfig.h
+  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ClusterSession.h
+  include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h
+  include/tencentcloud/oceanus/v20190422/model/StopJobsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/LogContent.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeResourcesRequest.h
+  include/tencentcloud/oceanus/v20190422/model/SlotSharingGroupSpec.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ExpertModeConfiguration.h
+  include/tencentcloud/oceanus/v20190422/model/CopyJobItem.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeTreeJobsRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h
   )
 
 set(oceanus_src
   src/v20190422/OceanusClient.cpp
-  src/v20190422/model/DescribeJobSubmissionLogResponse.cpp
   src/v20190422/model/CopyJobResult.cpp
   src/v20190422/model/CreateResourceRequest.cpp
-  src/v20190422/model/CheckSavepointRequest.cpp
-  src/v20190422/model/CreateJobRequest.cpp
-  src/v20190422/model/ResourceRefDetail.cpp
-  src/v20190422/model/JobInstanceForSubmissionLog.cpp
-  src/v20190422/model/StopJobsRequest.cpp
-  src/v20190422/model/CreateJobResponse.cpp
-  src/v20190422/model/ResourceLoc.cpp
-  src/v20190422/model/RunJobsRequest.cpp
-  src/v20190422/model/CCN.cpp
+  src/v20190422/model/DescribeJobSubmissionLogResponse.cpp
   src/v20190422/model/DeleteJobsRequest.cpp
-  src/v20190422/model/StopJobDescription.cpp
-  src/v20190422/model/CreateFolderRequest.cpp
-  src/v20190422/model/TriggerJobSavepointResponse.cpp
-  src/v20190422/model/ModifyJobResponse.cpp
-  src/v20190422/model/ClusterSession.cpp
   src/v20190422/model/CreateJobConfigResponse.cpp
   src/v20190422/model/CreateResourceConfigResponse.cpp
   src/v20190422/model/CreateJobConfigRequest.cpp
-  src/v20190422/model/TriggerJobSavepointRequest.cpp
-  src/v20190422/model/CreateResourceConfigRequest.cpp
-  src/v20190422/model/DescribeSystemResourcesResponse.cpp
   src/v20190422/model/ClusterVersion.cpp
-  src/v20190422/model/DescribeClustersRequest.cpp
   src/v20190422/model/DescribeTreeJobsResponse.cpp
-  src/v20190422/model/DeleteTableConfigRequest.cpp
   src/v20190422/model/CopyJobsRequest.cpp
   src/v20190422/model/CopyJobsResponse.cpp
+  src/v20190422/model/TriggerJobSavepointRequest.cpp
+  src/v20190422/model/RefJobStatusCountItem.cpp
+  src/v20190422/model/ResourceLocParam.cpp
+  src/v20190422/model/WorkSpaceSetItem.cpp
+  src/v20190422/model/DescribeJobSavepointRequest.cpp
+  src/v20190422/model/ResourceItem.cpp
+  src/v20190422/model/ResourceLoc.cpp
+  src/v20190422/model/CCN.cpp
+  src/v20190422/model/DescribeWorkSpacesRequest.cpp
+  src/v20190422/model/ResourceRefJobInfo.cpp
+  src/v20190422/model/DescribeTreeResourcesRequest.cpp
+  src/v20190422/model/DescribeResourceConfigsResponse.cpp
+  src/v20190422/model/DescribeClustersRequest.cpp
+  src/v20190422/model/ResourceRefDetail.cpp
+  src/v20190422/model/CreateJobResponse.cpp
+  src/v20190422/model/JobGraph.cpp
+  src/v20190422/model/StopJobDescription.cpp
+  src/v20190422/model/CreateFolderRequest.cpp
+  src/v20190422/model/DeleteTableConfigRequest.cpp
+  src/v20190422/model/DeleteResourcesResponse.cpp
+  src/v20190422/model/ModifyJobResponse.cpp
+  src/v20190422/model/CheckSavepointResponse.cpp
+  src/v20190422/model/Tag.cpp
+  src/v20190422/model/JobGraphNode.cpp
+  src/v20190422/model/DeleteResourceConfigsRequest.cpp
+  src/v20190422/model/DescribeJobSavepointResponse.cpp
+  src/v20190422/model/DescribeWorkSpacesResponse.cpp
+  src/v20190422/model/WorkSpaceClusterItem.cpp
+  src/v20190422/model/CreateResourceResponse.cpp
+  src/v20190422/model/DescribeSystemResourcesRequest.cpp
+  src/v20190422/model/CreateFolderResponse.cpp
+  src/v20190422/model/DescribeResourcesResponse.cpp
+  src/v20190422/model/RunJobDescription.cpp
+  src/v20190422/model/DescribeResourceRelatedJobsResponse.cpp
+  src/v20190422/model/DescribeClustersResponse.cpp
+  src/v20190422/model/ResourceRef.cpp
+  src/v20190422/model/DescribeSystemResourcesResponse.cpp
+  src/v20190422/model/ClazzLevel.cpp
+  src/v20190422/model/CheckSavepointRequest.cpp
+  src/v20190422/model/StopJobsRequest.cpp
+  src/v20190422/model/RunJobsRequest.cpp
+  src/v20190422/model/DeleteJobsResponse.cpp
+  src/v20190422/model/Property.cpp
+  src/v20190422/model/JobGraphEdge.cpp
   src/v20190422/model/Savepoint.cpp
   src/v20190422/model/SystemResourceItem.cpp
   src/v20190422/model/DescribeResourceRelatedJobsRequest.cpp
-  src/v20190422/model/DeleteResourcesResponse.cpp
-  src/v20190422/model/DeleteTableConfigResponse.cpp
   src/v20190422/model/ResourceConfigItem.cpp
   src/v20190422/model/RoleAuth.cpp
-  src/v20190422/model/LogContent.cpp
   src/v20190422/model/DescribeTreeResourcesRsp.cpp
-  src/v20190422/model/DescribeResourcesRequest.cpp
   src/v20190422/model/TreeResourceItem.cpp
-  src/v20190422/model/RefJobStatusCountItem.cpp
-  src/v20190422/model/ResourceLocParam.cpp
-  src/v20190422/model/Tag.cpp
-  src/v20190422/model/WorkSpaceSetItem.cpp
-  src/v20190422/model/ResourceRefJobInfo.cpp
-  src/v20190422/model/DescribeJobConfigsRequest.cpp
-  src/v20190422/model/CheckSavepointResponse.cpp
-  src/v20190422/model/DeleteResourceConfigsRequest.cpp
-  src/v20190422/model/DescribeJobSavepointResponse.cpp
-  src/v20190422/model/DeleteJobsResponse.cpp
   src/v20190422/model/DescribeTreeResourcesResponse.cpp
   src/v20190422/model/RunJobsResponse.cpp
   src/v20190422/model/Filter.cpp
   src/v20190422/model/DeleteResourcesRequest.cpp
-  src/v20190422/model/DescribeJobsResponse.cpp
-  src/v20190422/model/DescribeWorkSpacesResponse.cpp
-  src/v20190422/model/ResourceItem.cpp
-  src/v20190422/model/WorkSpaceClusterItem.cpp
-  src/v20190422/model/DescribeResourceConfigsResponse.cpp
-  src/v20190422/model/StopJobsResponse.cpp
-  src/v20190422/model/DescribeJobSavepointRequest.cpp
-  src/v20190422/model/CreateResourceResponse.cpp
   src/v20190422/model/ClusterGroupSetItem.cpp
-  src/v20190422/model/DescribeSystemResourcesRequest.cpp
-  src/v20190422/model/CreateFolderResponse.cpp
-  src/v20190422/model/CopyJobItem.cpp
-  src/v20190422/model/RunJobDescription.cpp
+  src/v20190422/model/DescribeJobConfigsRequest.cpp
   src/v20190422/model/ModifyJobRequest.cpp
-  src/v20190422/model/DescribeTreeJobsRequest.cpp
-  src/v20190422/model/DescribeJobConfigsResponse.cpp
-  src/v20190422/model/Property.cpp
   src/v20190422/model/DeleteResourceConfigsResponse.cpp
-  src/v20190422/model/DescribeResourceRelatedJobsResponse.cpp
-  src/v20190422/model/DescribeResourcesResponse.cpp
   src/v20190422/model/Cluster.cpp
-  src/v20190422/model/DescribeClustersResponse.cpp
-  src/v20190422/model/DescribeWorkSpacesRequest.cpp
   src/v20190422/model/DescribeJobSubmissionLogRequest.cpp
-  src/v20190422/model/ResourceRef.cpp
   src/v20190422/model/DescribeJobsRequest.cpp
   src/v20190422/model/JobV1.cpp
   src/v20190422/model/JobConfig.cpp
   src/v20190422/model/DescribeResourceConfigsRequest.cpp
-  src/v20190422/model/DescribeTreeResourcesRequest.cpp
+  src/v20190422/model/SlotSharingGroup.cpp
+  src/v20190422/model/CreateJobRequest.cpp
+  src/v20190422/model/JobInstanceForSubmissionLog.cpp
+  src/v20190422/model/DeleteTableConfigResponse.cpp
+  src/v20190422/model/NodeConfig.cpp
+  src/v20190422/model/TriggerJobSavepointResponse.cpp
+  src/v20190422/model/ClusterSession.cpp
+  src/v20190422/model/CreateResourceConfigRequest.cpp
+  src/v20190422/model/StopJobsResponse.cpp
+  src/v20190422/model/LogContent.cpp
+  src/v20190422/model/DescribeResourcesRequest.cpp
+  src/v20190422/model/SlotSharingGroupSpec.cpp
+  src/v20190422/model/DescribeJobsResponse.cpp
+  src/v20190422/model/ExpertModeConfiguration.cpp
+  src/v20190422/model/CopyJobItem.cpp
+  src/v20190422/model/DescribeTreeJobsRequest.cpp
+  src/v20190422/model/DescribeJobConfigsResponse.cpp
   )
 
 set(oceanus_include

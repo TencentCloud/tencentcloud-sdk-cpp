@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模板控件信息
+                * 模板/流程中控件信息，可以是填充控件或签署控件
                 */
                 class Component : public AbstractModel
                 {
@@ -148,15 +148,19 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentTypeHasBeenSet() const;
 
                     /**
-                     * 获取控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
-                     * @return FileIndex 控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
+                     * 获取控件所属文件的序号（取值为：0-N）。
+目前单文件的情况下，值是0
+                     * @return FileIndex 控件所属文件的序号（取值为：0-N）。
+目前单文件的情况下，值是0
                      * 
                      */
                     int64_t GetFileIndex() const;
 
                     /**
-                     * 设置控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
-                     * @param _fileIndex 控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
+                     * 设置控件所属文件的序号（取值为：0-N）。
+目前单文件的情况下，值是0
+                     * @param _fileIndex 控件所属文件的序号（取值为：0-N）。
+目前单文件的情况下，值是0
                      * 
                      */
                     void SetFileIndex(const int64_t& _fileIndex);
@@ -274,15 +278,19 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentPosYHasBeenSet() const;
 
                     /**
-                     * 获取查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
-                     * @return ComponentId 查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
+                     * 获取控件唯一ID。
+或使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
+                     * @return ComponentId 控件唯一ID。
+或使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
                      * 
                      */
                     std::string GetComponentId() const;
 
                     /**
-                     * 设置查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
-                     * @param _componentId 查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
+                     * 设置控件唯一ID。
+或使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
+                     * @param _componentId 控件唯一ID。
+或使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
                      * 
                      */
                     void SetComponentId(const std::string& _componentId);
@@ -295,15 +303,19 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentIdHasBeenSet() const;
 
                     /**
-                     * 获取查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
-                     * @return ComponentName 查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
+                     * 获取控件名。
+或使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
+                     * @return ComponentName 控件名。
+或使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
                      * 
                      */
                     std::string GetComponentName() const;
 
                     /**
-                     * 设置查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
-                     * @param _componentName 查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
+                     * 设置控件名。
+或使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
+                     * @param _componentName 控件名。
+或使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
                      * 
                      */
                     void SetComponentName(const std::string& _componentName);
@@ -316,15 +328,15 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentNameHasBeenSet() const;
 
                     /**
-                     * 获取是否必选，默认为false
-                     * @return ComponentRequired 是否必选，默认为false
+                     * 获取是否必选，默认为false-非必选
+                     * @return ComponentRequired 是否必选，默认为false-非必选
                      * 
                      */
                     bool GetComponentRequired() const;
 
                     /**
-                     * 设置是否必选，默认为false
-                     * @param _componentRequired 是否必选，默认为false
+                     * 设置是否必选，默认为false-非必选
+                     * @param _componentRequired 是否必选，默认为false-非必选
                      * 
                      */
                     void SetComponentRequired(const bool& _componentRequired);
@@ -337,15 +349,15 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentRequiredHasBeenSet() const;
 
                     /**
-                     * 获取控件关联的签署人ID
-                     * @return ComponentRecipientId 控件关联的签署人ID
+                     * 获取控件关联的参与方ID，对应Recipient结构体中的RecipientId
+                     * @return ComponentRecipientId 控件关联的参与方ID，对应Recipient结构体中的RecipientId
                      * 
                      */
                     std::string GetComponentRecipientId() const;
 
                     /**
-                     * 设置控件关联的签署人ID
-                     * @param _componentRecipientId 控件关联的签署人ID
+                     * 设置控件关联的参与方ID，对应Recipient结构体中的RecipientId
+                     * @param _componentRecipientId 控件关联的参与方ID，对应Recipient结构体中的RecipientId
                      * 
                      */
                     void SetComponentRecipientId(const std::string& _componentRecipientId);
@@ -491,18 +503,18 @@ ComponentType为SIGN_SEAL类型时，支持以下参数：
                     bool ComponentExtraHasBeenSet() const;
 
                     /**
-                     * 获取是否是表单域类型，默认不false-不是
+                     * 获取是否是表单域类型，默认false-不是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsFormType 是否是表单域类型，默认不false-不是
+                     * @return IsFormType 是否是表单域类型，默认false-不是
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsFormType() const;
 
                     /**
-                     * 设置是否是表单域类型，默认不false-不是
+                     * 设置是否是表单域类型，默认false-不是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isFormType 是否是表单域类型，默认不false-不是
+                     * @param _isFormType 是否是表单域类型，默认false-不是
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -887,15 +899,15 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool ComponentDateFontSizeHasBeenSet() const;
 
                     /**
-                     * 获取第三方应用集成平台模板控件 id 标识
-                     * @return ChannelComponentId 第三方应用集成平台模板控件 id 标识
+                     * 获取第三方应用集成平台模板控件 ID 标识
+                     * @return ChannelComponentId 第三方应用集成平台模板控件 ID 标识
                      * 
                      */
                     std::string GetChannelComponentId() const;
 
                     /**
-                     * 设置第三方应用集成平台模板控件 id 标识
-                     * @param _channelComponentId 第三方应用集成平台模板控件 id 标识
+                     * 设置第三方应用集成平台模板控件 ID 标识
+                     * @param _channelComponentId 第三方应用集成平台模板控件 ID 标识
                      * 
                      */
                     void SetChannelComponentId(const std::string& _channelComponentId);
@@ -958,15 +970,23 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool OffsetYHasBeenSet() const;
 
                     /**
-                     * 获取第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
-                     * @return ChannelComponentSource 第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
+                     * 获取第三方应用集成中子客企业控件来源。
+0-平台指定；
+1-用户自定义
+                     * @return ChannelComponentSource 第三方应用集成中子客企业控件来源。
+0-平台指定；
+1-用户自定义
                      * 
                      */
                     uint64_t GetChannelComponentSource() const;
 
                     /**
-                     * 设置第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
-                     * @param _channelComponentSource 第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
+                     * 设置第三方应用集成中子客企业控件来源。
+0-平台指定；
+1-用户自定义
+                     * @param _channelComponentSource 第三方应用集成中子客企业控件来源。
+0-平台指定；
+1-用户自定义
                      * 
                      */
                     void SetChannelComponentSource(const uint64_t& _channelComponentSource);
@@ -979,18 +999,22 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool ChannelComponentSourceHasBeenSet() const;
 
                     /**
-                     * 获取指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * 获取指定关键字排序规则，Positive-正序，Reverse-倒序。
+传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
-                     * @return KeywordOrder 指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * @return KeywordOrder 指定关键字排序规则，Positive-正序，Reverse-倒序。
+传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
                      * 
                      */
                     std::string GetKeywordOrder() const;
 
                     /**
-                     * 设置指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * 设置指定关键字排序规则，Positive-正序，Reverse-倒序。
+传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
-                     * @param _keywordOrder 指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * @param _keywordOrder 指定关键字排序规则，Positive-正序，Reverse-倒序。
+传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
                      * 
                      */
@@ -1004,15 +1028,19 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool KeywordOrderHasBeenSet() const;
 
                     /**
-                     * 获取指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
-                     * @return KeywordPage 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * 获取指定关键字页码。
+指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * @return KeywordPage 指定关键字页码。
+指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
                      * 
                      */
                     int64_t GetKeywordPage() const;
 
                     /**
-                     * 设置指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
-                     * @param _keywordPage 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * 设置指定关键字页码。
+指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * @param _keywordPage 指定关键字页码。
+指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
                      * 
                      */
                     void SetKeywordPage(const int64_t& _keywordPage);
@@ -1025,15 +1053,39 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool KeywordPageHasBeenSet() const;
 
                     /**
-                     * 获取关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
-                     * @return RelativeLocation 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * 获取关键字位置模式，
+Middle-居中，
+Below-正下方，
+Right-正右方，
+LowerRight-右上角，
+UpperRight-右下角。
+示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * @return RelativeLocation 关键字位置模式，
+Middle-居中，
+Below-正下方，
+Right-正右方，
+LowerRight-右上角，
+UpperRight-右下角。
+示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
                      * 
                      */
                     std::string GetRelativeLocation() const;
 
                     /**
-                     * 设置关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
-                     * @param _relativeLocation 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * 设置关键字位置模式，
+Middle-居中，
+Below-正下方，
+Right-正右方，
+LowerRight-右上角，
+UpperRight-右下角。
+示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * @param _relativeLocation 关键字位置模式，
+Middle-居中，
+Below-正下方，
+Right-正右方，
+LowerRight-右上角，
+UpperRight-右下角。
+示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
                      * 
                      */
                     void SetRelativeLocation(const std::string& _relativeLocation);
@@ -1046,15 +1098,23 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool RelativeLocationHasBeenSet() const;
 
                     /**
-                     * 获取关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
-                     * @return KeywordIndexes 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * 获取关键字索引。
+如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。
+示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * @return KeywordIndexes 关键字索引。
+如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。
+示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
                      * 
                      */
                     std::vector<int64_t> GetKeywordIndexes() const;
 
                     /**
-                     * 设置关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
-                     * @param _keywordIndexes 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * 设置关键字索引。
+如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。
+示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * @param _keywordIndexes 关键字索引。
+如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。
+示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
                      * 
                      */
                     void SetKeywordIndexes(const std::vector<int64_t>& _keywordIndexes);
@@ -1065,6 +1125,64 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      * 
                      */
                     bool KeywordIndexesHasBeenSet() const;
+
+                    /**
+                     * 获取是否锁定控件值不允许编辑（嵌入式发起使用）
+<br/>默认false：不锁定控件值，允许在页面编辑控件值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LockComponentValue 是否锁定控件值不允许编辑（嵌入式发起使用）
+<br/>默认false：不锁定控件值，允许在页面编辑控件值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetLockComponentValue() const;
+
+                    /**
+                     * 设置是否锁定控件值不允许编辑（嵌入式发起使用）
+<br/>默认false：不锁定控件值，允许在页面编辑控件值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lockComponentValue 是否锁定控件值不允许编辑（嵌入式发起使用）
+<br/>默认false：不锁定控件值，允许在页面编辑控件值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLockComponentValue(const bool& _lockComponentValue);
+
+                    /**
+                     * 判断参数 LockComponentValue 是否已赋值
+                     * @return LockComponentValue 是否已赋值
+                     * 
+                     */
+                    bool LockComponentValueHasBeenSet() const;
+
+                    /**
+                     * 获取是否禁止移动和删除控件
+<br/>默认false，不禁止移动和删除控件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ForbidMoveAndDelete 是否禁止移动和删除控件
+<br/>默认false，不禁止移动和删除控件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetForbidMoveAndDelete() const;
+
+                    /**
+                     * 设置是否禁止移动和删除控件
+<br/>默认false，不禁止移动和删除控件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _forbidMoveAndDelete 是否禁止移动和删除控件
+<br/>默认false，不禁止移动和删除控件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetForbidMoveAndDelete(const bool& _forbidMoveAndDelete);
+
+                    /**
+                     * 判断参数 ForbidMoveAndDelete 是否已赋值
+                     * @return ForbidMoveAndDelete 是否已赋值
+                     * 
+                     */
+                    bool ForbidMoveAndDeleteHasBeenSet() const;
 
                 private:
 
@@ -1095,7 +1213,8 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool m_componentTypeHasBeenSet;
 
                     /**
-                     * 控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
+                     * 控件所属文件的序号（取值为：0-N）。
+目前单文件的情况下，值是0
                      */
                     int64_t m_fileIndex;
                     bool m_fileIndexHasBeenSet;
@@ -1131,25 +1250,27 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool m_componentPosYHasBeenSet;
 
                     /**
-                     * 查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
+                     * 控件唯一ID。
+或使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
                      */
                     std::string m_componentId;
                     bool m_componentIdHasBeenSet;
 
                     /**
-                     * 查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
+                     * 控件名。
+或使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;
 
                     /**
-                     * 是否必选，默认为false
+                     * 是否必选，默认为false-非必选
                      */
                     bool m_componentRequired;
                     bool m_componentRequiredHasBeenSet;
 
                     /**
-                     * 控件关联的签署人ID
+                     * 控件关联的参与方ID，对应Recipient结构体中的RecipientId
                      */
                     std::string m_componentRecipientId;
                     bool m_componentRecipientIdHasBeenSet;
@@ -1189,7 +1310,7 @@ ComponentType为SIGN_SEAL类型时，支持以下参数：
                     bool m_componentExtraHasBeenSet;
 
                     /**
-                     * 是否是表单域类型，默认不false-不是
+                     * 是否是表单域类型，默认false-不是
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isFormType;
@@ -1291,7 +1412,7 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool m_componentDateFontSizeHasBeenSet;
 
                     /**
-                     * 第三方应用集成平台模板控件 id 标识
+                     * 第三方应用集成平台模板控件 ID 标识
                      */
                     std::string m_channelComponentId;
                     bool m_channelComponentIdHasBeenSet;
@@ -1311,35 +1432,63 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool m_offsetYHasBeenSet;
 
                     /**
-                     * 第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
+                     * 第三方应用集成中子客企业控件来源。
+0-平台指定；
+1-用户自定义
                      */
                     uint64_t m_channelComponentSource;
                     bool m_channelComponentSourceHasBeenSet;
 
                     /**
-                     * 指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * 指定关键字排序规则，Positive-正序，Reverse-倒序。
+传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
                      */
                     std::string m_keywordOrder;
                     bool m_keywordOrderHasBeenSet;
 
                     /**
-                     * 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * 指定关键字页码。
+指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
                      */
                     int64_t m_keywordPage;
                     bool m_keywordPageHasBeenSet;
 
                     /**
-                     * 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * 关键字位置模式，
+Middle-居中，
+Below-正下方，
+Right-正右方，
+LowerRight-右上角，
+UpperRight-右下角。
+示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
                      */
                     std::string m_relativeLocation;
                     bool m_relativeLocationHasBeenSet;
 
                     /**
-                     * 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * 关键字索引。
+如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。
+示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
                      */
                     std::vector<int64_t> m_keywordIndexes;
                     bool m_keywordIndexesHasBeenSet;
+
+                    /**
+                     * 是否锁定控件值不允许编辑（嵌入式发起使用）
+<br/>默认false：不锁定控件值，允许在页面编辑控件值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_lockComponentValue;
+                    bool m_lockComponentValueHasBeenSet;
+
+                    /**
+                     * 是否禁止移动和删除控件
+<br/>默认false，不禁止移动和删除控件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_forbidMoveAndDelete;
+                    bool m_forbidMoveAndDeleteHasBeenSet;
 
                 };
             }

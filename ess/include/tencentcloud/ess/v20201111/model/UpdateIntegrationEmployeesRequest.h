@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息，userId必填
-                     * @return Operator 操作人信息，userId必填
+                     * 获取当前用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为YUFU；
+                     * @return Operator 当前用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为YUFU；
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息，userId必填
-                     * @param _operator 操作人信息，userId必填
+                     * 设置当前用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为YUFU；
+                     * @param _operator 当前用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为YUFU；
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -119,7 +119,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作人信息，userId必填
+                     * 当前用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为YUFU；
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

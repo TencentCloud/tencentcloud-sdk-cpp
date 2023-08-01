@@ -31,7 +31,8 @@ ConfigInfo::ConfigInfo() :
     m_outputHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_userDefineRuleHasBeenSet(false)
+    m_userDefineRuleHasBeenSet(false),
+    m_advancedConfigHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,16 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
         m_userDefineRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvancedConfig") && !value["AdvancedConfig"].IsNull())
+    {
+        if (!value["AdvancedConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.AdvancedConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_advancedConfig = string(value["AdvancedConfig"].GetString());
+        m_advancedConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +279,14 @@ void ConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "UserDefineRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userDefineRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_advancedConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_advancedConfig.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -447,5 +466,21 @@ void ConfigInfo::SetUserDefineRule(const string& _userDefineRule)
 bool ConfigInfo::UserDefineRuleHasBeenSet() const
 {
     return m_userDefineRuleHasBeenSet;
+}
+
+string ConfigInfo::GetAdvancedConfig() const
+{
+    return m_advancedConfig;
+}
+
+void ConfigInfo::SetAdvancedConfig(const string& _advancedConfig)
+{
+    m_advancedConfig = _advancedConfig;
+    m_advancedConfigHasBeenSet = true;
+}
+
+bool ConfigInfo::AdvancedConfigHasBeenSet() const
+{
+    return m_advancedConfigHasBeenSet;
 }
 

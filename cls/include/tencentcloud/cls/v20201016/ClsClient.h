@@ -117,6 +117,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeExportsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeIndexRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeIndexResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaRechargesRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaRechargesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextRequest.h>
@@ -161,6 +163,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyDataTransformResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyIndexRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyIndexResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaRechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaRechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h>
@@ -340,6 +344,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIndexResponse> DescribeIndexOutcome;
                 typedef std::future<DescribeIndexOutcome> DescribeIndexOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeIndexRequest&, DescribeIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKafkaConsumerResponse> DescribeKafkaConsumerOutcome;
+                typedef std::future<DescribeKafkaConsumerOutcome> DescribeKafkaConsumerOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeKafkaConsumerRequest&, DescribeKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaConsumerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKafkaRechargesResponse> DescribeKafkaRechargesOutcome;
                 typedef std::future<DescribeKafkaRechargesOutcome> DescribeKafkaRechargesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeKafkaRechargesRequest&, DescribeKafkaRechargesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaRechargesAsyncHandler;
@@ -406,6 +413,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIndexResponse> ModifyIndexOutcome;
                 typedef std::future<ModifyIndexOutcome> ModifyIndexOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyIndexRequest&, ModifyIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIndexAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyKafkaConsumerResponse> ModifyKafkaConsumerOutcome;
+                typedef std::future<ModifyKafkaConsumerOutcome> ModifyKafkaConsumerOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyKafkaConsumerRequest&, ModifyKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKafkaConsumerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyKafkaRechargeResponse> ModifyKafkaRechargeOutcome;
                 typedef std::future<ModifyKafkaRechargeOutcome> ModifyKafkaRechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyKafkaRechargeRequest&, ModifyKafkaRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKafkaRechargeAsyncHandler;
@@ -869,6 +879,15 @@ namespace TencentCloud
                 DescribeIndexOutcomeCallable DescribeIndexCallable(const Model::DescribeIndexRequest& request);
 
                 /**
+                 *获取Kafka协议消费信息
+                 * @param req DescribeKafkaConsumerRequest
+                 * @return DescribeKafkaConsumerOutcome
+                 */
+                DescribeKafkaConsumerOutcome DescribeKafkaConsumer(const Model::DescribeKafkaConsumerRequest &request);
+                void DescribeKafkaConsumerAsync(const Model::DescribeKafkaConsumerRequest& request, const DescribeKafkaConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKafkaConsumerOutcomeCallable DescribeKafkaConsumerCallable(const Model::DescribeKafkaConsumerRequest& request);
+
+                /**
                  *本接口用于获取Kafka数据订阅任务
                  * @param req DescribeKafkaRechargesRequest
                  * @return DescribeKafkaRechargesOutcome
@@ -1066,6 +1085,15 @@ namespace TencentCloud
                 ModifyIndexOutcome ModifyIndex(const Model::ModifyIndexRequest &request);
                 void ModifyIndexAsync(const Model::ModifyIndexRequest& request, const ModifyIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIndexOutcomeCallable ModifyIndexCallable(const Model::ModifyIndexRequest& request);
+
+                /**
+                 *修改Kafka协议消费信息
+                 * @param req ModifyKafkaConsumerRequest
+                 * @return ModifyKafkaConsumerOutcome
+                 */
+                ModifyKafkaConsumerOutcome ModifyKafkaConsumer(const Model::ModifyKafkaConsumerRequest &request);
+                void ModifyKafkaConsumerAsync(const Model::ModifyKafkaConsumerRequest& request, const ModifyKafkaConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyKafkaConsumerOutcomeCallable ModifyKafkaConsumerCallable(const Model::ModifyKafkaConsumerRequest& request);
 
                 /**
                  *本接口用于修改Kafka数据订阅任务

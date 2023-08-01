@@ -24,6 +24,7 @@
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
 #include <tencentcloud/ess/v20201111/model/ReviewerInfo.h>
+#include <tencentcloud/ess/v20201111/model/EmbedUrlOption.h>
 
 
 namespace TencentCloud
@@ -72,13 +73,15 @@ namespace TencentCloud
 <br/>PREVIEW_SEAL_LIST：预览印章列表
 <br/>PREVIEW_SEAL_DETAIL：预览印章详情
 <br/>EXTEND_SERVICE：拓展服务
-
+<br/>PREVIEW_FLOW：预览合同
+<br/>PREVIEW_FLOW_DETAIL：查看合同详情
                      * @return EmbedType WEB嵌入资源类型。
 <br/>CREATE_SEAL: 创建印章
 <br/>PREVIEW_SEAL_LIST：预览印章列表
 <br/>PREVIEW_SEAL_DETAIL：预览印章详情
 <br/>EXTEND_SERVICE：拓展服务
-
+<br/>PREVIEW_FLOW：预览合同
+<br/>PREVIEW_FLOW_DETAIL：查看合同详情
                      * 
                      */
                     std::string GetEmbedType() const;
@@ -89,13 +92,15 @@ namespace TencentCloud
 <br/>PREVIEW_SEAL_LIST：预览印章列表
 <br/>PREVIEW_SEAL_DETAIL：预览印章详情
 <br/>EXTEND_SERVICE：拓展服务
-
+<br/>PREVIEW_FLOW：预览合同
+<br/>PREVIEW_FLOW_DETAIL：查看合同详情
                      * @param _embedType WEB嵌入资源类型。
 <br/>CREATE_SEAL: 创建印章
 <br/>PREVIEW_SEAL_LIST：预览印章列表
 <br/>PREVIEW_SEAL_DETAIL：预览印章详情
 <br/>EXTEND_SERVICE：拓展服务
-
+<br/>PREVIEW_FLOW：预览合同
+<br/>PREVIEW_FLOW_DETAIL：查看合同详情
                      * 
                      */
                     void SetEmbedType(const std::string& _embedType);
@@ -174,6 +179,27 @@ namespace TencentCloud
                      */
                     bool ReviewerHasBeenSet() const;
 
+                    /**
+                     * 获取个性化参数
+                     * @return Option 个性化参数
+                     * 
+                     */
+                    EmbedUrlOption GetOption() const;
+
+                    /**
+                     * 设置个性化参数
+                     * @param _option 个性化参数
+                     * 
+                     */
+                    void SetOption(const EmbedUrlOption& _option);
+
+                    /**
+                     * 判断参数 Option 是否已赋值
+                     * @return Option 是否已赋值
+                     * 
+                     */
+                    bool OptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,7 +214,8 @@ namespace TencentCloud
 <br/>PREVIEW_SEAL_LIST：预览印章列表
 <br/>PREVIEW_SEAL_DETAIL：预览印章详情
 <br/>EXTEND_SERVICE：拓展服务
-
+<br/>PREVIEW_FLOW：预览合同
+<br/>PREVIEW_FLOW_DETAIL：查看合同详情
                      */
                     std::string m_embedType;
                     bool m_embedTypeHasBeenSet;
@@ -211,6 +238,12 @@ namespace TencentCloud
                      */
                     ReviewerInfo m_reviewer;
                     bool m_reviewerHasBeenSet;
+
+                    /**
+                     * 个性化参数
+                     */
+                    EmbedUrlOption m_option;
+                    bool m_optionHasBeenSet;
 
                 };
             }

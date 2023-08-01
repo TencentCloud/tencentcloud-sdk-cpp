@@ -247,6 +247,31 @@ namespace TencentCloud
                      */
                     bool AddonAudioStreamHasBeenSet() const;
 
+                    /**
+                     * 获取转码扩展字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StdExtInfo 转码扩展字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStdExtInfo() const;
+
+                    /**
+                     * 设置转码扩展字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _stdExtInfo 转码扩展字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStdExtInfo(const std::string& _stdExtInfo);
+
+                    /**
+                     * 判断参数 StdExtInfo 是否已赋值
+                     * @return StdExtInfo 是否已赋值
+                     * 
+                     */
+                    bool StdExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +328,13 @@ namespace TencentCloud
                      */
                     std::vector<MediaInputInfo> m_addonAudioStream;
                     bool m_addonAudioStreamHasBeenSet;
+
+                    /**
+                     * 转码扩展字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_stdExtInfo;
+                    bool m_stdExtInfoHasBeenSet;
 
                 };
             }

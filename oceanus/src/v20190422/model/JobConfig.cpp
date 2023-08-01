@@ -41,7 +41,10 @@ JobConfig::JobConfig() :
     m_clsTopicIdHasBeenSet(false),
     m_pythonVersionHasBeenSet(false),
     m_autoRecoverHasBeenSet(false),
-    m_logLevelHasBeenSet(false)
+    m_logLevelHasBeenSet(false),
+    m_clazzLevelsHasBeenSet(false),
+    m_expertModeOnHasBeenSet(false),
+    m_expertModeConfigurationHasBeenSet(false)
 {
 }
 
@@ -280,6 +283,53 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_logLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("ClazzLevels") && !value["ClazzLevels"].IsNull())
+    {
+        if (!value["ClazzLevels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `JobConfig.ClazzLevels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClazzLevels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClazzLevel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clazzLevels.push_back(item);
+        }
+        m_clazzLevelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpertModeOn") && !value["ExpertModeOn"].IsNull())
+    {
+        if (!value["ExpertModeOn"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.ExpertModeOn` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_expertModeOn = value["ExpertModeOn"].GetBool();
+        m_expertModeOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpertModeConfiguration") && !value["ExpertModeConfiguration"].IsNull())
+    {
+        if (!value["ExpertModeConfiguration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.ExpertModeConfiguration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_expertModeConfiguration.Deserialize(value["ExpertModeConfiguration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_expertModeConfigurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -467,6 +517,38 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "LogLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clazzLevelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClazzLevels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clazzLevels.begin(); itr != m_clazzLevels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_expertModeOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpertModeOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expertModeOn, allocator);
+    }
+
+    if (m_expertModeConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpertModeConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_expertModeConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -806,5 +888,53 @@ void JobConfig::SetLogLevel(const string& _logLevel)
 bool JobConfig::LogLevelHasBeenSet() const
 {
     return m_logLevelHasBeenSet;
+}
+
+vector<ClazzLevel> JobConfig::GetClazzLevels() const
+{
+    return m_clazzLevels;
+}
+
+void JobConfig::SetClazzLevels(const vector<ClazzLevel>& _clazzLevels)
+{
+    m_clazzLevels = _clazzLevels;
+    m_clazzLevelsHasBeenSet = true;
+}
+
+bool JobConfig::ClazzLevelsHasBeenSet() const
+{
+    return m_clazzLevelsHasBeenSet;
+}
+
+bool JobConfig::GetExpertModeOn() const
+{
+    return m_expertModeOn;
+}
+
+void JobConfig::SetExpertModeOn(const bool& _expertModeOn)
+{
+    m_expertModeOn = _expertModeOn;
+    m_expertModeOnHasBeenSet = true;
+}
+
+bool JobConfig::ExpertModeOnHasBeenSet() const
+{
+    return m_expertModeOnHasBeenSet;
+}
+
+ExpertModeConfiguration JobConfig::GetExpertModeConfiguration() const
+{
+    return m_expertModeConfiguration;
+}
+
+void JobConfig::SetExpertModeConfiguration(const ExpertModeConfiguration& _expertModeConfiguration)
+{
+    m_expertModeConfiguration = _expertModeConfiguration;
+    m_expertModeConfigurationHasBeenSet = true;
+}
+
+bool JobConfig::ExpertModeConfigurationHasBeenSet() const
+{
+    return m_expertModeConfigurationHasBeenSet;
 }
 

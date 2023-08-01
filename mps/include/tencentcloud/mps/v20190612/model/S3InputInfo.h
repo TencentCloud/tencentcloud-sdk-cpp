@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取S3 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3Bucket S3 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3Bucket() const;
 
                     /**
                      * 设置S3 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3Bucket S3 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3Bucket(const std::string& _s3Bucket);
@@ -72,10 +76,12 @@ namespace TencentCloud
 us-east-1  
 eu-west-3
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3Region S3 bucket 对应的区域，目前支持：  
 us-east-1  
 eu-west-3
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3Region() const;
@@ -85,10 +91,12 @@ eu-west-3
 us-east-1  
 eu-west-3
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3Region S3 bucket 对应的区域，目前支持：  
 us-east-1  
 eu-west-3
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3Region(const std::string& _s3Region);
@@ -102,14 +110,18 @@ eu-west-3
 
                     /**
                      * 获取S3 bucket 中的媒体资源路径。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3Object S3 bucket 中的媒体资源路径。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3Object() const;
 
                     /**
                      * 设置S3 bucket 中的媒体资源路径。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3Object S3 bucket 中的媒体资源路径。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3Object(const std::string& _s3Object);
@@ -123,14 +135,18 @@ eu-west-3
 
                     /**
                      * 获取AWS 内网访问 媒体资源的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3SecretId AWS 内网访问 媒体资源的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3SecretId() const;
 
                     /**
                      * 设置AWS 内网访问 媒体资源的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3SecretId AWS 内网访问 媒体资源的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3SecretId(const std::string& _s3SecretId);
@@ -144,14 +160,18 @@ eu-west-3
 
                     /**
                      * 获取AWS 内网访问 媒体资源的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3SecretKey AWS 内网访问 媒体资源的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3SecretKey() const;
 
                     /**
                      * 设置AWS 内网访问 媒体资源的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3SecretKey AWS 内网访问 媒体资源的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3SecretKey(const std::string& _s3SecretKey);
@@ -167,6 +187,7 @@ eu-west-3
 
                     /**
                      * S3 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3Bucket;
                     bool m_s3BucketHasBeenSet;
@@ -176,24 +197,28 @@ eu-west-3
 us-east-1  
 eu-west-3
 
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3Region;
                     bool m_s3RegionHasBeenSet;
 
                     /**
                      * S3 bucket 中的媒体资源路径。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3Object;
                     bool m_s3ObjectHasBeenSet;
 
                     /**
                      * AWS 内网访问 媒体资源的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3SecretId;
                     bool m_s3SecretIdHasBeenSet;
 
                     /**
                      * AWS 内网访问 媒体资源的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3SecretKey;
                     bool m_s3SecretKeyHasBeenSet;

@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrderDirectionHasBeenSet() const;
 
                     /**
-                     * 获取(条件过滤字段) 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @return PlatformType (条件过滤字段) 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 获取(条件过滤字段) 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @return PlatformType (条件过滤字段) 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     int64_t GetPlatformType() const;
 
                     /**
-                     * 设置(条件过滤字段) 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @param _platformType (条件过滤字段) 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 设置(条件过滤字段) 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @param _platformType (条件过滤字段) 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     void SetPlatformType(const int64_t& _platformType);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取(条件过滤字段) 安卓应用类型：安卓-apk; 安卓-aab;
-                     * @return AppType (条件过滤字段) 安卓应用类型：安卓-apk; 安卓-aab;
+                     * 获取(条件过滤字段) 应用类型：android-apk; android-aab;
+                     * @return AppType (条件过滤字段) 应用类型：android-apk; android-aab;
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置(条件过滤字段) 安卓应用类型：安卓-apk; 安卓-aab;
-                     * @param _appType (条件过滤字段) 安卓应用类型：安卓-apk; 安卓-aab;
+                     * 设置(条件过滤字段) 应用类型：android-apk; android-aab;
+                     * @param _appType (条件过滤字段) 应用类型：android-apk; android-aab;
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool AppTypeHasBeenSet() const;
 
                     /**
-                     * 获取（条件过滤字段）安卓应用的包名
-                     * @return AppPkgName （条件过滤字段）安卓应用的包名
+                     * 获取（条件过滤字段）应用的包名
+                     * @return AppPkgName （条件过滤字段）应用的包名
                      * 
                      */
                     std::string GetAppPkgName() const;
 
                     /**
-                     * 设置（条件过滤字段）安卓应用的包名
-                     * @param _appPkgName （条件过滤字段）安卓应用的包名
+                     * 设置（条件过滤字段）应用的包名
+                     * @param _appPkgName （条件过滤字段）应用的包名
                      * 
                      */
                     void SetAppPkgName(const std::string& _appPkgName);
@@ -366,7 +366,7 @@ namespace TencentCloud
                     bool m_orderDirectionHasBeenSet;
 
                     /**
-                     * (条件过滤字段) 平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * (条件过滤字段) 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      */
                     int64_t m_platformType;
                     bool m_platformTypeHasBeenSet;
@@ -402,13 +402,13 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * (条件过滤字段) 安卓应用类型：安卓-apk; 安卓-aab;
+                     * (条件过滤字段) 应用类型：android-apk; android-aab;
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
 
                     /**
-                     * （条件过滤字段）安卓应用的包名
+                     * （条件过滤字段）应用的包名
                      */
                     std::string m_appPkgName;
                     bool m_appPkgNameHasBeenSet;

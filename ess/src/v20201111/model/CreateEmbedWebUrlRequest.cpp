@@ -27,7 +27,8 @@ CreateEmbedWebUrlRequest::CreateEmbedWebUrlRequest() :
     m_embedTypeHasBeenSet(false),
     m_businessIdHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_reviewerHasBeenSet(false)
+    m_reviewerHasBeenSet(false),
+    m_optionHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,15 @@ string CreateEmbedWebUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reviewer.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_optionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Option";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_option.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -167,6 +177,22 @@ void CreateEmbedWebUrlRequest::SetReviewer(const ReviewerInfo& _reviewer)
 bool CreateEmbedWebUrlRequest::ReviewerHasBeenSet() const
 {
     return m_reviewerHasBeenSet;
+}
+
+EmbedUrlOption CreateEmbedWebUrlRequest::GetOption() const
+{
+    return m_option;
+}
+
+void CreateEmbedWebUrlRequest::SetOption(const EmbedUrlOption& _option)
+{
+    m_option = _option;
+    m_optionHasBeenSet = true;
+}
+
+bool CreateEmbedWebUrlRequest::OptionHasBeenSet() const
+{
+    return m_optionHasBeenSet;
 }
 
 

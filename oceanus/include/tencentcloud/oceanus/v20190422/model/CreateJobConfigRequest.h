@@ -23,6 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/oceanus/v20190422/model/ResourceRef.h>
 #include <tencentcloud/oceanus/v20190422/model/Property.h>
+#include <tencentcloud/oceanus/v20190422/model/ClazzLevel.h>
+#include <tencentcloud/oceanus/v20190422/model/ExpertModeConfiguration.h>
 
 
 namespace TencentCloud
@@ -443,6 +445,69 @@ namespace TencentCloud
                      */
                     bool AutoRecoverHasBeenSet() const;
 
+                    /**
+                     * 获取类日志级别
+                     * @return ClazzLevels 类日志级别
+                     * 
+                     */
+                    std::vector<ClazzLevel> GetClazzLevels() const;
+
+                    /**
+                     * 设置类日志级别
+                     * @param _clazzLevels 类日志级别
+                     * 
+                     */
+                    void SetClazzLevels(const std::vector<ClazzLevel>& _clazzLevels);
+
+                    /**
+                     * 判断参数 ClazzLevels 是否已赋值
+                     * @return ClazzLevels 是否已赋值
+                     * 
+                     */
+                    bool ClazzLevelsHasBeenSet() const;
+
+                    /**
+                     * 获取是否打开专家模式
+                     * @return ExpertModeOn 是否打开专家模式
+                     * 
+                     */
+                    bool GetExpertModeOn() const;
+
+                    /**
+                     * 设置是否打开专家模式
+                     * @param _expertModeOn 是否打开专家模式
+                     * 
+                     */
+                    void SetExpertModeOn(const bool& _expertModeOn);
+
+                    /**
+                     * 判断参数 ExpertModeOn 是否已赋值
+                     * @return ExpertModeOn 是否已赋值
+                     * 
+                     */
+                    bool ExpertModeOnHasBeenSet() const;
+
+                    /**
+                     * 获取专家模式的配置
+                     * @return ExpertModeConfiguration 专家模式的配置
+                     * 
+                     */
+                    ExpertModeConfiguration GetExpertModeConfiguration() const;
+
+                    /**
+                     * 设置专家模式的配置
+                     * @param _expertModeConfiguration 专家模式的配置
+                     * 
+                     */
+                    void SetExpertModeConfiguration(const ExpertModeConfiguration& _expertModeConfiguration);
+
+                    /**
+                     * 判断参数 ExpertModeConfiguration 是否已赋值
+                     * @return ExpertModeConfiguration 是否已赋值
+                     * 
+                     */
+                    bool ExpertModeConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -558,6 +623,24 @@ namespace TencentCloud
                      */
                     int64_t m_autoRecover;
                     bool m_autoRecoverHasBeenSet;
+
+                    /**
+                     * 类日志级别
+                     */
+                    std::vector<ClazzLevel> m_clazzLevels;
+                    bool m_clazzLevelsHasBeenSet;
+
+                    /**
+                     * 是否打开专家模式
+                     */
+                    bool m_expertModeOn;
+                    bool m_expertModeOnHasBeenSet;
+
+                    /**
+                     * 专家模式的配置
+                     */
+                    ExpertModeConfiguration m_expertModeConfiguration;
+                    bool m_expertModeConfigurationHasBeenSet;
 
                 };
             }

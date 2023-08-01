@@ -54,6 +54,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/MergePartitionRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeShippersResponse.h
   include/tencentcloud/cls/v20201016/model/TopicIdAndRegion.h
+  include/tencentcloud/cls/v20201016/model/DescribeKafkaConsumerResponse.h
   include/tencentcloud/cls/v20201016/model/CreateConfigExtraResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyShipperResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteKafkaRechargeResponse.h
@@ -169,6 +170,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ValueInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeDataTransformInfoRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteShipperResponse.h
+  include/tencentcloud/cls/v20201016/model/ModifyKafkaConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/ExportInfo.h
   include/tencentcloud/cls/v20201016/model/GroupTriggerConditionInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeLogContextResponse.h
@@ -200,6 +202,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/AlertHistoryNotice.h
   include/tencentcloud/cls/v20201016/model/DeleteAlarmRequest.h
   include/tencentcloud/cls/v20201016/model/CreateConfigResponse.h
+  include/tencentcloud/cls/v20201016/model/ModifyKafkaConsumerResponse.h
   include/tencentcloud/cls/v20201016/model/MachineGroupTypeInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupRequest.h
   include/tencentcloud/cls/v20201016/model/ShipperInfo.h
@@ -242,6 +245,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ParquetInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteTopicResponse.h
   include/tencentcloud/cls/v20201016/model/CosRechargeInfo.h
+  include/tencentcloud/cls/v20201016/model/DescribeKafkaConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyDataTransformResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeDataTransformInfoResponse.h
   include/tencentcloud/cls/v20201016/model/ConsumerContent.h
@@ -290,6 +294,7 @@ set(cls_src
   src/v20201016/model/MergePartitionRequest.cpp
   src/v20201016/model/DescribeShippersResponse.cpp
   src/v20201016/model/TopicIdAndRegion.cpp
+  src/v20201016/model/DescribeKafkaConsumerResponse.cpp
   src/v20201016/model/CreateConfigExtraResponse.cpp
   src/v20201016/model/ModifyShipperResponse.cpp
   src/v20201016/model/DeleteKafkaRechargeResponse.cpp
@@ -405,6 +410,7 @@ set(cls_src
   src/v20201016/model/ValueInfo.cpp
   src/v20201016/model/DescribeDataTransformInfoRequest.cpp
   src/v20201016/model/DeleteShipperResponse.cpp
+  src/v20201016/model/ModifyKafkaConsumerRequest.cpp
   src/v20201016/model/ExportInfo.cpp
   src/v20201016/model/GroupTriggerConditionInfo.cpp
   src/v20201016/model/DescribeLogContextResponse.cpp
@@ -436,6 +442,7 @@ set(cls_src
   src/v20201016/model/AlertHistoryNotice.cpp
   src/v20201016/model/DeleteAlarmRequest.cpp
   src/v20201016/model/CreateConfigResponse.cpp
+  src/v20201016/model/ModifyKafkaConsumerResponse.cpp
   src/v20201016/model/MachineGroupTypeInfo.cpp
   src/v20201016/model/DeleteConfigFromMachineGroupRequest.cpp
   src/v20201016/model/ShipperInfo.cpp
@@ -478,6 +485,7 @@ set(cls_src
   src/v20201016/model/ParquetInfo.cpp
   src/v20201016/model/DeleteTopicResponse.cpp
   src/v20201016/model/CosRechargeInfo.cpp
+  src/v20201016/model/DescribeKafkaConsumerRequest.cpp
   src/v20201016/model/ModifyDataTransformResponse.cpp
   src/v20201016/model/DescribeDataTransformInfoResponse.cpp
   src/v20201016/model/ConsumerContent.cpp

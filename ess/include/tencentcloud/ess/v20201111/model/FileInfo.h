@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件Id
-                     * @return FileId 文件Id
+                     * 获取文件ID
+                     * @return FileId 文件ID
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置文件Id
-                     * @param _fileId 文件Id
+                     * 设置文件ID
+                     * @param _fileId 文件ID
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取文件上传时间，10位时间戳（精确到秒）
-                     * @return CreatedOn 文件上传时间，10位时间戳（精确到秒）
+                     * 获取文件上传时间，格式为Unix标准时间戳（秒）
+                     * @return CreatedOn 文件上传时间，格式为Unix标准时间戳（秒）
                      * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
-                     * 设置文件上传时间，10位时间戳（精确到秒）
-                     * @param _createdOn 文件上传时间，10位时间戳（精确到秒）
+                     * 设置文件上传时间，格式为Unix标准时间戳（秒）
+                     * @param _createdOn 文件上传时间，格式为Unix标准时间戳（秒）
                      * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
@@ -133,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件Id
+                     * 文件ID
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 文件上传时间，10位时间戳（精确到秒）
+                     * 文件上传时间，格式为Unix标准时间戳（秒）
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;

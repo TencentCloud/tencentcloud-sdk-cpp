@@ -498,6 +498,47 @@ namespace TencentCloud
                      */
                     bool TopicNameHasBeenSet() const;
 
+                    /**
+                     * 获取高级采集配置。 Json字符串， Key/Value定义为如下：
+- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时
+- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
+- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false
+样例：{"ClsAgentFileTimeout":0,"ClsAgentMaxDepth":10,"ClsAgentParseFailMerge":true}
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvancedConfig 高级采集配置。 Json字符串， Key/Value定义为如下：
+- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时
+- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
+- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false
+样例：{"ClsAgentFileTimeout":0,"ClsAgentMaxDepth":10,"ClsAgentParseFailMerge":true}
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAdvancedConfig() const;
+
+                    /**
+                     * 设置高级采集配置。 Json字符串， Key/Value定义为如下：
+- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时
+- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
+- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false
+样例：{"ClsAgentFileTimeout":0,"ClsAgentMaxDepth":10,"ClsAgentParseFailMerge":true}
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _advancedConfig 高级采集配置。 Json字符串， Key/Value定义为如下：
+- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时
+- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
+- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false
+样例：{"ClsAgentFileTimeout":0,"ClsAgentMaxDepth":10,"ClsAgentParseFailMerge":true}
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAdvancedConfig(const std::string& _advancedConfig);
+
+                    /**
+                     * 判断参数 AdvancedConfig 是否已赋值
+                     * @return AdvancedConfig 是否已赋值
+                     * 
+                     */
+                    bool AdvancedConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -625,6 +666,17 @@ namespace TencentCloud
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
+
+                    /**
+                     * 高级采集配置。 Json字符串， Key/Value定义为如下：
+- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时
+- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
+- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false
+样例：{"ClsAgentFileTimeout":0,"ClsAgentMaxDepth":10,"ClsAgentParseFailMerge":true}
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_advancedConfig;
+                    bool m_advancedConfigHasBeenSet;
 
                 };
             }

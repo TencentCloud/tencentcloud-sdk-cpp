@@ -23,6 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/FlowCreateApprover.h>
+#include <tencentcloud/ess/v20201111/model/Component.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowOption.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
 
 
@@ -109,15 +111,23 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取是否顺序签署(true:无序签,false:顺序签)
-                     * @return Unordered 是否顺序签署(true:无序签,false:顺序签)
+                     * 获取是否顺序签署
+true:无序签
+false:顺序签
+                     * @return Unordered 是否顺序签署
+true:无序签
+false:顺序签
                      * 
                      */
                     bool GetUnordered() const;
 
                     /**
-                     * 设置是否顺序签署(true:无序签,false:顺序签)
-                     * @param _unordered 是否顺序签署(true:无序签,false:顺序签)
+                     * 设置是否顺序签署
+true:无序签
+false:顺序签
+                     * @param _unordered 是否顺序签署
+true:无序签
+false:顺序签
                      * 
                      */
                     void SetUnordered(const bool& _unordered);
@@ -131,18 +141,22 @@ namespace TencentCloud
 
                     /**
                      * 获取签署流程的签署截止时间。
-值为unix时间戳,精确到秒,不传默认为当前时间一年后
+值为unix时间戳,精确到秒
+不传默认为当前时间一年后
                      * @return Deadline 签署流程的签署截止时间。
-值为unix时间戳,精确到秒,不传默认为当前时间一年后
+值为unix时间戳,精确到秒
+不传默认为当前时间一年后
                      * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
                      * 设置签署流程的签署截止时间。
-值为unix时间戳,精确到秒,不传默认为当前时间一年后
+值为unix时间戳,精确到秒
+不传默认为当前时间一年后
                      * @param _deadline 签署流程的签署截止时间。
-值为unix时间戳,精确到秒,不传默认为当前时间一年后
+值为unix时间戳,精确到秒
+不传默认为当前时间一年后
                      * 
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -155,15 +169,19 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义合同类型
-                     * @return UserFlowTypeId 用户自定义合同类型
+                     * 获取用户自定义合同类型Id
+该id为电子签企业内的合同类型id
+                     * @return UserFlowTypeId 用户自定义合同类型Id
+该id为电子签企业内的合同类型id
                      * 
                      */
                     std::string GetUserFlowTypeId() const;
 
                     /**
-                     * 设置用户自定义合同类型
-                     * @param _userFlowTypeId 用户自定义合同类型
+                     * 设置用户自定义合同类型Id
+该id为电子签企业内的合同类型id
+                     * @param _userFlowTypeId 用户自定义合同类型Id
+该id为电子签企业内的合同类型id
                      * 
                      */
                     void SetUserFlowTypeId(const std::string& _userFlowTypeId);
@@ -197,15 +215,23 @@ namespace TencentCloud
                     bool ApproversHasBeenSet() const;
 
                     /**
-                     * 获取打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
-                     * @return IntelligentStatus 打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
+                     * 获取打开智能添加填写区
+(默认开启，打开:"OPEN"
+ 关闭："CLOSE"
+                     * @return IntelligentStatus 打开智能添加填写区
+(默认开启，打开:"OPEN"
+ 关闭："CLOSE"
                      * 
                      */
                     std::string GetIntelligentStatus() const;
 
                     /**
-                     * 设置打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
-                     * @param _intelligentStatus 打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
+                     * 设置打开智能添加填写区
+(默认开启，打开:"OPEN"
+ 关闭："CLOSE"
+                     * @param _intelligentStatus 打开智能添加填写区
+(默认开启，打开:"OPEN"
+ 关闭："CLOSE"
                      * 
                      */
                     void SetIntelligentStatus(const std::string& _intelligentStatus);
@@ -216,6 +242,234 @@ namespace TencentCloud
                      * 
                      */
                     bool IntelligentStatusHasBeenSet() const;
+
+                    /**
+                     * 获取资源类型，
+1：文件，
+2：模板
+不传默认为1：文件
+目前仅支持文件
+                     * @return ResourceType 资源类型，
+1：文件，
+2：模板
+不传默认为1：文件
+目前仅支持文件
+                     * 
+                     */
+                    int64_t GetResourceType() const;
+
+                    /**
+                     * 设置资源类型，
+1：文件，
+2：模板
+不传默认为1：文件
+目前仅支持文件
+                     * @param _resourceType 资源类型，
+1：文件，
+2：模板
+不传默认为1：文件
+目前仅支持文件
+                     * 
+                     */
+                    void SetResourceType(const int64_t& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取发起方填写控件
+该类型控件由发起方完成填写
+                     * @return Components 发起方填写控件
+该类型控件由发起方完成填写
+                     * 
+                     */
+                    Component GetComponents() const;
+
+                    /**
+                     * 设置发起方填写控件
+该类型控件由发起方完成填写
+                     * @param _components 发起方填写控件
+该类型控件由发起方完成填写
+                     * 
+                     */
+                    void SetComponents(const Component& _components);
+
+                    /**
+                     * 判断参数 Components 是否已赋值
+                     * @return Components 是否已赋值
+                     * 
+                     */
+                    bool ComponentsHasBeenSet() const;
+
+                    /**
+                     * 获取发起合同个性化参数
+用于满足创建及页面操作过程中的个性化要求
+具体定制化内容详见数据接口说明
+                     * @return FlowOption 发起合同个性化参数
+用于满足创建及页面操作过程中的个性化要求
+具体定制化内容详见数据接口说明
+                     * 
+                     */
+                    CreateFlowOption GetFlowOption() const;
+
+                    /**
+                     * 设置发起合同个性化参数
+用于满足创建及页面操作过程中的个性化要求
+具体定制化内容详见数据接口说明
+                     * @param _flowOption 发起合同个性化参数
+用于满足创建及页面操作过程中的个性化要求
+具体定制化内容详见数据接口说明
+                     * 
+                     */
+                    void SetFlowOption(const CreateFlowOption& _flowOption);
+
+                    /**
+                     * 判断参数 FlowOption 是否已赋值
+                     * @return FlowOption 是否已赋值
+                     * 
+                     */
+                    bool FlowOptionHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启发起方签署审核
+true:开启发起方签署审核
+false:不开启发起方签署审核
+默认false:不开启发起方签署审核
+                     * @return NeedSignReview 是否开启发起方签署审核
+true:开启发起方签署审核
+false:不开启发起方签署审核
+默认false:不开启发起方签署审核
+                     * 
+                     */
+                    bool GetNeedSignReview() const;
+
+                    /**
+                     * 设置是否开启发起方签署审核
+true:开启发起方签署审核
+false:不开启发起方签署审核
+默认false:不开启发起方签署审核
+                     * @param _needSignReview 是否开启发起方签署审核
+true:开启发起方签署审核
+false:不开启发起方签署审核
+默认false:不开启发起方签署审核
+                     * 
+                     */
+                    void SetNeedSignReview(const bool& _needSignReview);
+
+                    /**
+                     * 判断参数 NeedSignReview 是否已赋值
+                     * @return NeedSignReview 是否已赋值
+                     * 
+                     */
+                    bool NeedSignReviewHasBeenSet() const;
+
+                    /**
+                     * 获取开启发起方发起合同审核
+true:开启发起方发起合同审核
+false:不开启发起方发起合同审核
+默认false:不开启发起方发起合同审核
+                     * @return NeedCreateReview 开启发起方发起合同审核
+true:开启发起方发起合同审核
+false:不开启发起方发起合同审核
+默认false:不开启发起方发起合同审核
+                     * 
+                     */
+                    bool GetNeedCreateReview() const;
+
+                    /**
+                     * 设置开启发起方发起合同审核
+true:开启发起方发起合同审核
+false:不开启发起方发起合同审核
+默认false:不开启发起方发起合同审核
+                     * @param _needCreateReview 开启发起方发起合同审核
+true:开启发起方发起合同审核
+false:不开启发起方发起合同审核
+默认false:不开启发起方发起合同审核
+                     * 
+                     */
+                    void SetNeedCreateReview(const bool& _needCreateReview);
+
+                    /**
+                     * 判断参数 NeedCreateReview 是否已赋值
+                     * @return NeedCreateReview 是否已赋值
+                     * 
+                     */
+                    bool NeedCreateReviewHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义参数
+                     * @return UserData 用户自定义参数
+                     * 
+                     */
+                    std::string GetUserData() const;
+
+                    /**
+                     * 设置用户自定义参数
+                     * @param _userData 用户自定义参数
+                     * 
+                     */
+                    void SetUserData(const std::string& _userData);
+
+                    /**
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
+                     * 
+                     */
+                    bool UserDataHasBeenSet() const;
+
+                    /**
+                     * 获取合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接
+                     * @return FlowId 合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接
+                     * 
+                     */
+                    std::string GetFlowId() const;
+
+                    /**
+                     * 设置合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接
+                     * @param _flowId 合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接
+                     * 
+                     */
+                    void SetFlowId(const std::string& _flowId);
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
+                    /**
+                     * 获取合同类型名称
+该字段用于客户自定义合同类型
+建议使用时指定合同类型，便于之后合同分类以及查看
+                     * @return FlowType 合同类型名称
+该字段用于客户自定义合同类型
+建议使用时指定合同类型，便于之后合同分类以及查看
+                     * 
+                     */
+                    std::string GetFlowType() const;
+
+                    /**
+                     * 设置合同类型名称
+该字段用于客户自定义合同类型
+建议使用时指定合同类型，便于之后合同分类以及查看
+                     * @param _flowType 合同类型名称
+该字段用于客户自定义合同类型
+建议使用时指定合同类型，便于之后合同分类以及查看
+                     * 
+                     */
+                    void SetFlowType(const std::string& _flowType);
+
+                    /**
+                     * 判断参数 FlowType 是否已赋值
+                     * @return FlowType 是否已赋值
+                     * 
+                     */
+                    bool FlowTypeHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填	
@@ -259,20 +513,24 @@ namespace TencentCloud
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 是否顺序签署(true:无序签,false:顺序签)
+                     * 是否顺序签署
+true:无序签
+false:顺序签
                      */
                     bool m_unordered;
                     bool m_unorderedHasBeenSet;
 
                     /**
                      * 签署流程的签署截止时间。
-值为unix时间戳,精确到秒,不传默认为当前时间一年后
+值为unix时间戳,精确到秒
+不传默认为当前时间一年后
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
 
                     /**
-                     * 用户自定义合同类型
+                     * 用户自定义合同类型Id
+该id为电子签企业内的合同类型id
                      */
                     std::string m_userFlowTypeId;
                     bool m_userFlowTypeIdHasBeenSet;
@@ -284,10 +542,75 @@ namespace TencentCloud
                     bool m_approversHasBeenSet;
 
                     /**
-                     * 打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
+                     * 打开智能添加填写区
+(默认开启，打开:"OPEN"
+ 关闭："CLOSE"
                      */
                     std::string m_intelligentStatus;
                     bool m_intelligentStatusHasBeenSet;
+
+                    /**
+                     * 资源类型，
+1：文件，
+2：模板
+不传默认为1：文件
+目前仅支持文件
+                     */
+                    int64_t m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 发起方填写控件
+该类型控件由发起方完成填写
+                     */
+                    Component m_components;
+                    bool m_componentsHasBeenSet;
+
+                    /**
+                     * 发起合同个性化参数
+用于满足创建及页面操作过程中的个性化要求
+具体定制化内容详见数据接口说明
+                     */
+                    CreateFlowOption m_flowOption;
+                    bool m_flowOptionHasBeenSet;
+
+                    /**
+                     * 是否开启发起方签署审核
+true:开启发起方签署审核
+false:不开启发起方签署审核
+默认false:不开启发起方签署审核
+                     */
+                    bool m_needSignReview;
+                    bool m_needSignReviewHasBeenSet;
+
+                    /**
+                     * 开启发起方发起合同审核
+true:开启发起方发起合同审核
+false:不开启发起方发起合同审核
+默认false:不开启发起方发起合同审核
+                     */
+                    bool m_needCreateReview;
+                    bool m_needCreateReviewHasBeenSet;
+
+                    /**
+                     * 用户自定义参数
+                     */
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
+
+                    /**
+                     * 合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接
+                     */
+                    std::string m_flowId;
+                    bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 合同类型名称
+该字段用于客户自定义合同类型
+建议使用时指定合同类型，便于之后合同分类以及查看
+                     */
+                    std::string m_flowType;
+                    bool m_flowTypeHasBeenSet;
 
                     /**
                      * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填	

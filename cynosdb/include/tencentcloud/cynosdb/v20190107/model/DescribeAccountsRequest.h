@@ -176,6 +176,27 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取模糊匹配关键字(同时匹配AccountName和AccountHost，返回并集结果，支持正则)
+                     * @return AccountRegular 模糊匹配关键字(同时匹配AccountName和AccountHost，返回并集结果，支持正则)
+                     * 
+                     */
+                    std::string GetAccountRegular() const;
+
+                    /**
+                     * 设置模糊匹配关键字(同时匹配AccountName和AccountHost，返回并集结果，支持正则)
+                     * @param _accountRegular 模糊匹配关键字(同时匹配AccountName和AccountHost，返回并集结果，支持正则)
+                     * 
+                     */
+                    void SetAccountRegular(const std::string& _accountRegular);
+
+                    /**
+                     * 判断参数 AccountRegular 是否已赋值
+                     * @return AccountRegular 是否已赋值
+                     * 
+                     */
+                    bool AccountRegularHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +236,12 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 模糊匹配关键字(同时匹配AccountName和AccountHost，返回并集结果，支持正则)
+                     */
+                    std::string m_accountRegular;
+                    bool m_accountRegularHasBeenSet;
 
                 };
             }

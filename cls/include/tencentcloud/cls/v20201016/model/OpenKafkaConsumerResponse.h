@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待消费TopicId
-                     * @return TopicID 待消费TopicId
+                     * 获取KafkaConsumer 消费时使用的Topic参数
+                     * @return TopicID KafkaConsumer 消费时使用的Topic参数
                      * 
                      */
                     std::string GetTopicID() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待消费TopicId
+                     * KafkaConsumer 消费时使用的Topic参数
                      */
                     std::string m_topicID;
                     bool m_topicIDHasBeenSet;

@@ -29,7 +29,10 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_instanceCpuHasBeenSet(false),
     m_instanceMemoryHasBeenSet(false),
     m_instanceStorageHasBeenSet(false),
-    m_instanceRoleHasBeenSet(false)
+    m_instanceRoleHasBeenSet(false),
+    m_maintainStartTimeHasBeenSet(false),
+    m_maintainDurationHasBeenSet(false),
+    m_maintainWeekDaysHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,39 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_instanceRoleHasBeenSet = true;
     }
 
+    if (value.HasMember("MaintainStartTime") && !value["MaintainStartTime"].IsNull())
+    {
+        if (!value["MaintainStartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.MaintainStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maintainStartTime = value["MaintainStartTime"].GetInt64();
+        m_maintainStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaintainDuration") && !value["MaintainDuration"].IsNull())
+    {
+        if (!value["MaintainDuration"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.MaintainDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maintainDuration = value["MaintainDuration"].GetInt64();
+        m_maintainDurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaintainWeekDays") && !value["MaintainWeekDays"].IsNull())
+    {
+        if (!value["MaintainWeekDays"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.MaintainWeekDays` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MaintainWeekDays"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_maintainWeekDays.push_back((*itr).GetString());
+        }
+        m_maintainWeekDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +241,35 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "InstanceRole";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maintainStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaintainStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maintainStartTime, allocator);
+    }
+
+    if (m_maintainDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaintainDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maintainDuration, allocator);
+    }
+
+    if (m_maintainWeekDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaintainWeekDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_maintainWeekDays.begin(); itr != m_maintainWeekDays.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -352,5 +417,53 @@ void ClusterInstanceDetail::SetInstanceRole(const string& _instanceRole)
 bool ClusterInstanceDetail::InstanceRoleHasBeenSet() const
 {
     return m_instanceRoleHasBeenSet;
+}
+
+int64_t ClusterInstanceDetail::GetMaintainStartTime() const
+{
+    return m_maintainStartTime;
+}
+
+void ClusterInstanceDetail::SetMaintainStartTime(const int64_t& _maintainStartTime)
+{
+    m_maintainStartTime = _maintainStartTime;
+    m_maintainStartTimeHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::MaintainStartTimeHasBeenSet() const
+{
+    return m_maintainStartTimeHasBeenSet;
+}
+
+int64_t ClusterInstanceDetail::GetMaintainDuration() const
+{
+    return m_maintainDuration;
+}
+
+void ClusterInstanceDetail::SetMaintainDuration(const int64_t& _maintainDuration)
+{
+    m_maintainDuration = _maintainDuration;
+    m_maintainDurationHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::MaintainDurationHasBeenSet() const
+{
+    return m_maintainDurationHasBeenSet;
+}
+
+vector<string> ClusterInstanceDetail::GetMaintainWeekDays() const
+{
+    return m_maintainWeekDays;
+}
+
+void ClusterInstanceDetail::SetMaintainWeekDays(const vector<string>& _maintainWeekDays)
+{
+    m_maintainWeekDays = _maintainWeekDays;
+    m_maintainWeekDaysHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::MaintainWeekDaysHasBeenSet() const
+{
+    return m_maintainWeekDaysHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ using namespace std;
 GetDevicesRequest::GetDevicesRequest() :
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_keywordHasBeenSet(false)
+    m_keywordHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string GetDevicesRequest::ToJsonString() const
         string key = "Keyword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deviceType, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void GetDevicesRequest::SetKeyword(const string& _keyword)
 bool GetDevicesRequest::KeywordHasBeenSet() const
 {
     return m_keywordHasBeenSet;
+}
+
+int64_t GetDevicesRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void GetDevicesRequest::SetDeviceType(const int64_t& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool GetDevicesRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 
 

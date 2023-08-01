@@ -23,7 +23,8 @@ using namespace std;
 CommonMixInputParam::CommonMixInputParam() :
     m_inputStreamNameHasBeenSet(false),
     m_layoutParamsHasBeenSet(false),
-    m_cropParamsHasBeenSet(false)
+    m_cropParamsHasBeenSet(false),
+    m_portraitSegmentParamsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,23 @@ CoreInternalOutcome CommonMixInputParam::Deserialize(const rapidjson::Value &val
         m_cropParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("PortraitSegmentParams") && !value["PortraitSegmentParams"].IsNull())
+    {
+        if (!value["PortraitSegmentParams"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CommonMixInputParam.PortraitSegmentParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_portraitSegmentParams.Deserialize(value["PortraitSegmentParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_portraitSegmentParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ void CommonMixInputParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cropParams.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_portraitSegmentParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortraitSegmentParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_portraitSegmentParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -158,5 +185,21 @@ void CommonMixInputParam::SetCropParams(const CommonMixCropParams& _cropParams)
 bool CommonMixInputParam::CropParamsHasBeenSet() const
 {
     return m_cropParamsHasBeenSet;
+}
+
+MixPortraitSegmentParams CommonMixInputParam::GetPortraitSegmentParams() const
+{
+    return m_portraitSegmentParams;
+}
+
+void CommonMixInputParam::SetPortraitSegmentParams(const MixPortraitSegmentParams& _portraitSegmentParams)
+{
+    m_portraitSegmentParams = _portraitSegmentParams;
+    m_portraitSegmentParamsHasBeenSet = true;
+}
+
+bool CommonMixInputParam::PortraitSegmentParamsHasBeenSet() const
+{
+    return m_portraitSegmentParamsHasBeenSet;
 }
 

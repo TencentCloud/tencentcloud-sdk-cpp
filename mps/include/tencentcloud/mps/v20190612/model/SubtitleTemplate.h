@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取要压制到视频中的字幕文件地址。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 要压制到视频中的字幕文件地址。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置要压制到视频中的字幕文件地址。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 要压制到视频中的字幕文件地址。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamIndex 指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStreamIndex() const;
 
                     /**
                      * 设置指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamIndex 指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamIndex(const int64_t& _streamIndex);
@@ -95,12 +103,14 @@ namespace TencentCloud
 <li>simkai.ttf：楷体</li>
 <li>arial.ttf：仅支持英文</li>
 默认hei.ttf
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FontType 字体类型，
 <li>hei.ttf：黑体</li>
 <li>song.ttf：宋体</li>
 <li>simkai.ttf：楷体</li>
 <li>arial.ttf：仅支持英文</li>
 默认hei.ttf
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFontType() const;
@@ -112,12 +122,14 @@ namespace TencentCloud
 <li>simkai.ttf：楷体</li>
 <li>arial.ttf：仅支持英文</li>
 默认hei.ttf
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fontType 字体类型，
 <li>hei.ttf：黑体</li>
 <li>song.ttf：宋体</li>
 <li>simkai.ttf：楷体</li>
 <li>arial.ttf：仅支持英文</li>
 默认hei.ttf
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFontType(const std::string& _fontType);
@@ -131,14 +143,18 @@ namespace TencentCloud
 
                     /**
                      * 获取字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FontSize 字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFontSize() const;
 
                     /**
                      * 设置字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fontSize 字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFontSize(const std::string& _fontSize);
@@ -152,14 +168,18 @@ namespace TencentCloud
 
                     /**
                      * 获取字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFontColor() const;
 
                     /**
                      * 设置字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFontColor(const std::string& _fontColor);
@@ -176,10 +196,12 @@ namespace TencentCloud
 <li>0：完全透明</li>
 <li>1：完全不透明</li>
 默认值：1。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FontAlpha 文字透明度，取值范围：(0, 1]
 <li>0：完全透明</li>
 <li>1：完全不透明</li>
 默认值：1。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFontAlpha() const;
@@ -189,10 +211,12 @@ namespace TencentCloud
 <li>0：完全透明</li>
 <li>1：完全不透明</li>
 默认值：1。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fontAlpha 文字透明度，取值范围：(0, 1]
 <li>0：完全透明</li>
 <li>1：完全不透明</li>
 默认值：1。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFontAlpha(const double& _fontAlpha);
@@ -208,12 +232,14 @@ namespace TencentCloud
 
                     /**
                      * 要压制到视频中的字幕文件地址。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_streamIndex;
                     bool m_streamIndexHasBeenSet;
@@ -225,18 +251,21 @@ namespace TencentCloud
 <li>simkai.ttf：楷体</li>
 <li>arial.ttf：仅支持英文</li>
 默认hei.ttf
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fontType;
                     bool m_fontTypeHasBeenSet;
 
                     /**
                      * 字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fontSize;
                     bool m_fontSizeHasBeenSet;
 
                     /**
                      * 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fontColor;
                     bool m_fontColorHasBeenSet;
@@ -246,6 +275,7 @@ namespace TencentCloud
 <li>0：完全透明</li>
 <li>1：完全不透明</li>
 默认值：1。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_fontAlpha;
                     bool m_fontAlphaHasBeenSet;

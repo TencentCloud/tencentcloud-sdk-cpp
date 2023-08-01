@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 签署参与者信息
+                * 流程中参与方的信息结构
                 */
                 class Recipient : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署参与者ID
-                     * @return RecipientId 签署参与者ID
+                     * 获取签署参与者ID，唯一标识
+                     * @return RecipientId 签署参与者ID，唯一标识
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置签署参与者ID
-                     * @param _recipientId 签署参与者ID
+                     * 设置签署参与者ID，唯一标识
+                     * @param _recipientId 签署参与者ID，唯一标识
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -68,15 +68,31 @@ namespace TencentCloud
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
-                     * @return RecipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * 获取参与者类型。
+默认为空。
+ENTERPRISE-企业；
+INDIVIDUAL-个人；
+PROMOTER-发起方
+                     * @return RecipientType 参与者类型。
+默认为空。
+ENTERPRISE-企业；
+INDIVIDUAL-个人；
+PROMOTER-发起方
                      * 
                      */
                     std::string GetRecipientType() const;
 
                     /**
-                     * 设置参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
-                     * @param _recipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * 设置参与者类型。
+默认为空。
+ENTERPRISE-企业；
+INDIVIDUAL-个人；
+PROMOTER-发起方
+                     * @param _recipientType 参与者类型。
+默认为空。
+ENTERPRISE-企业；
+INDIVIDUAL-个人；
+PROMOTER-发起方
                      * 
                      */
                     void SetRecipientType(const std::string& _recipientType);
@@ -131,15 +147,19 @@ namespace TencentCloud
                     bool RoleNameHasBeenSet() const;
 
                     /**
-                     * 获取是否需要验证，默认为false
-                     * @return RequireValidation 是否需要验证，默认为false
+                     * 获取是否需要验证，
+默认为false-不需要验证
+                     * @return RequireValidation 是否需要验证，
+默认为false-不需要验证
                      * 
                      */
                     bool GetRequireValidation() const;
 
                     /**
-                     * 设置是否需要验证，默认为false
-                     * @param _requireValidation 是否需要验证，默认为false
+                     * 设置是否需要验证，
+默认为false-不需要验证
+                     * @param _requireValidation 是否需要验证，
+默认为false-不需要验证
                      * 
                      */
                     void SetRequireValidation(const bool& _requireValidation);
@@ -152,15 +172,19 @@ namespace TencentCloud
                     bool RequireValidationHasBeenSet() const;
 
                     /**
-                     * 获取是否需要签署，默认为true
-                     * @return RequireSign 是否需要签署，默认为true
+                     * 获取是否需要签署，
+默认为true-需要签署
+                     * @return RequireSign 是否需要签署，
+默认为true-需要签署
                      * 
                      */
                     bool GetRequireSign() const;
 
                     /**
-                     * 设置是否需要签署，默认为true
-                     * @param _requireSign 是否需要签署，默认为true
+                     * 设置是否需要签署，
+默认为true-需要签署
+                     * @param _requireSign 是否需要签署，
+默认为true-需要签署
                      * 
                      */
                     void SetRequireSign(const bool& _requireSign);
@@ -173,15 +197,15 @@ namespace TencentCloud
                     bool RequireSignHasBeenSet() const;
 
                     /**
-                     * 获取添加序列，0～N
-                     * @return RoutingOrder 添加序列，0～N
+                     * 获取此参与方添加的顺序，从0～N
+                     * @return RoutingOrder 此参与方添加的顺序，从0～N
                      * 
                      */
                     int64_t GetRoutingOrder() const;
 
                     /**
-                     * 设置添加序列，0～N
-                     * @param _routingOrder 添加序列，0～N
+                     * 设置此参与方添加的顺序，从0～N
+                     * @param _routingOrder 此参与方添加的顺序，从0～N
                      * 
                      */
                     void SetRoutingOrder(const int64_t& _routingOrder);
@@ -194,15 +218,19 @@ namespace TencentCloud
                     bool RoutingOrderHasBeenSet() const;
 
                     /**
-                     * 获取是否需要发送，默认为true
-                     * @return RequireDelivery 是否需要发送，默认为true
+                     * 获取是否需要发送，
+默认为true-需要发送
+                     * @return RequireDelivery 是否需要发送，
+默认为true-需要发送
                      * 
                      */
                     bool GetRequireDelivery() const;
 
                     /**
-                     * 设置是否需要发送，默认为true
-                     * @param _requireDelivery 是否需要发送，默认为true
+                     * 设置是否需要发送，
+默认为true-需要发送
+                     * @param _requireDelivery 是否需要发送，
+默认为true-需要发送
                      * 
                      */
                     void SetRequireDelivery(const bool& _requireDelivery);
@@ -257,15 +285,15 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取关联的用户ID
-                     * @return UserId 关联的用户ID
+                     * 获取关联的用户ID，电子签系统的用户ID
+                     * @return UserId 关联的用户ID，电子签系统的用户ID
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置关联的用户ID
-                     * @param _userId 关联的用户ID
+                     * 设置关联的用户ID，电子签系统的用户ID
+                     * @param _userId 关联的用户ID，电子签系统的用户ID
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -278,15 +306,27 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
-                     * @return DeliveryMethod 发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
+                     * 获取发送方式，默认为EMAIL。
+EMAIL-邮件；
+MOBILE-手机短信；
+WECHAT-微信通知
+                     * @return DeliveryMethod 发送方式，默认为EMAIL。
+EMAIL-邮件；
+MOBILE-手机短信；
+WECHAT-微信通知
                      * 
                      */
                     std::string GetDeliveryMethod() const;
 
                     /**
-                     * 设置发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
-                     * @param _deliveryMethod 发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
+                     * 设置发送方式，默认为EMAIL。
+EMAIL-邮件；
+MOBILE-手机短信；
+WECHAT-微信通知
+                     * @param _deliveryMethod 发送方式，默认为EMAIL。
+EMAIL-邮件；
+MOBILE-手机短信；
+WECHAT-微信通知
                      * 
                      */
                     void SetDeliveryMethod(const std::string& _deliveryMethod);
@@ -299,15 +339,15 @@ namespace TencentCloud
                     bool DeliveryMethodHasBeenSet() const;
 
                     /**
-                     * 获取附属信息
-                     * @return RecipientExtra 附属信息
+                     * 获取参与方的一些附属信息，json格式
+                     * @return RecipientExtra 参与方的一些附属信息，json格式
                      * 
                      */
                     std::string GetRecipientExtra() const;
 
                     /**
-                     * 设置附属信息
-                     * @param _recipientExtra 附属信息
+                     * 设置参与方的一些附属信息，json格式
+                     * @param _recipientExtra 参与方的一些附属信息，json格式
                      * 
                      */
                     void SetRecipientExtra(const std::string& _recipientExtra);
@@ -322,13 +362,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署参与者ID
+                     * 签署参与者ID，唯一标识
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * 参与者类型。
+默认为空。
+ENTERPRISE-企业；
+INDIVIDUAL-个人；
+PROMOTER-发起方
                      */
                     std::string m_recipientType;
                     bool m_recipientTypeHasBeenSet;
@@ -346,25 +390,28 @@ namespace TencentCloud
                     bool m_roleNameHasBeenSet;
 
                     /**
-                     * 是否需要验证，默认为false
+                     * 是否需要验证，
+默认为false-不需要验证
                      */
                     bool m_requireValidation;
                     bool m_requireValidationHasBeenSet;
 
                     /**
-                     * 是否需要签署，默认为true
+                     * 是否需要签署，
+默认为true-需要签署
                      */
                     bool m_requireSign;
                     bool m_requireSignHasBeenSet;
 
                     /**
-                     * 添加序列，0～N
+                     * 此参与方添加的顺序，从0～N
                      */
                     int64_t m_routingOrder;
                     bool m_routingOrderHasBeenSet;
 
                     /**
-                     * 是否需要发送，默认为true
+                     * 是否需要发送，
+默认为true-需要发送
                      */
                     bool m_requireDelivery;
                     bool m_requireDeliveryHasBeenSet;
@@ -382,19 +429,22 @@ namespace TencentCloud
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 关联的用户ID
+                     * 关联的用户ID，电子签系统的用户ID
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
+                     * 发送方式，默认为EMAIL。
+EMAIL-邮件；
+MOBILE-手机短信；
+WECHAT-微信通知
                      */
                     std::string m_deliveryMethod;
                     bool m_deliveryMethodHasBeenSet;
 
                     /**
-                     * 附属信息
+                     * 参与方的一些附属信息，json格式
                      */
                     std::string m_recipientExtra;
                     bool m_recipientExtraHasBeenSet;

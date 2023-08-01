@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
-                     * @return HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
+                     * 获取健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
+                     * @return HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
-                     * 设置健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
-                     * @param _healthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
+                     * 设置健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
+                     * @param _healthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     void SetHealthCheck(const HealthCheck& _healthCheck);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。
-                     * @return Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。
+                     * 获取证书相关信息，此参数仅适用于HTTPS/TCP_SSL/QUIC监听器；此参数和MultiCertInfo不能同时传入。
+                     * @return Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL/QUIC监听器；此参数和MultiCertInfo不能同时传入。
                      * 
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
-                     * 设置证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。
-                     * @param _certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。
+                     * 设置证书相关信息，此参数仅适用于HTTPS/TCP_SSL/QUIC监听器；此参数和MultiCertInfo不能同时传入。
+                     * @param _certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL/QUIC监听器；此参数和MultiCertInfo不能同时传入。
                      * 
                      */
                     void SetCertificate(const CertificateInput& _certificate);
@@ -412,13 +412,13 @@ namespace TencentCloud
                     bool m_sessionExpireTimeHasBeenSet;
 
                     /**
-                     * 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
+                     * 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      */
                     HealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。
+                     * 证书相关信息，此参数仅适用于HTTPS/TCP_SSL/QUIC监听器；此参数和MultiCertInfo不能同时传入。
                      */
                     CertificateInput m_certificate;
                     bool m_certificateHasBeenSet;

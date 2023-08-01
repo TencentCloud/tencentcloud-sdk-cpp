@@ -728,6 +728,49 @@ TdmqClient::CreateRocketMQTopicOutcomeCallable TdmqClient::CreateRocketMQTopicCa
     return task->get_future();
 }
 
+TdmqClient::CreateRocketMQVipInstanceOutcome TdmqClient::CreateRocketMQVipInstance(const CreateRocketMQVipInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRocketMQVipInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRocketMQVipInstanceResponse rsp = CreateRocketMQVipInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRocketMQVipInstanceOutcome(rsp);
+        else
+            return CreateRocketMQVipInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRocketMQVipInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateRocketMQVipInstanceAsync(const CreateRocketMQVipInstanceRequest& request, const CreateRocketMQVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRocketMQVipInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateRocketMQVipInstanceOutcomeCallable TdmqClient::CreateRocketMQVipInstanceCallable(const CreateRocketMQVipInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRocketMQVipInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRocketMQVipInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::CreateRoleOutcome TdmqClient::CreateRole(const CreateRoleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRole");

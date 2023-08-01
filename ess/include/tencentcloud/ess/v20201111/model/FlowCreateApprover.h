@@ -87,15 +87,27 @@ namespace TencentCloud
                     bool ApproverTypeHasBeenSet() const;
 
                     /**
-                     * 获取如果签署方为企业，需要填入企业全称
-                     * @return OrganizationName 如果签署方为企业，需要填入企业全称
+                     * 获取签署人企业名称
+<br/>当approverType=1 或 approverType=3时，必须指定
+
+
+                     * @return OrganizationName 签署人企业名称
+<br/>当approverType=1 或 approverType=3时，必须指定
+
+
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置如果签署方为企业，需要填入企业全称
-                     * @param _organizationName 如果签署方为企业，需要填入企业全称
+                     * 设置签署人企业名称
+<br/>当approverType=1 或 approverType=3时，必须指定
+
+
+                     * @param _organizationName 签署人企业名称
+<br/>当approverType=1 或 approverType=3时，必须指定
+
+
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -109,14 +121,18 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方经办人姓名
+<br/>在未指定签署人电子签UserId情况下，为必填参数
                      * @return ApproverName 签署方经办人姓名
+<br/>在未指定签署人电子签UserId情况下，为必填参数
                      * 
                      */
                     std::string GetApproverName() const;
 
                     /**
                      * 设置签署方经办人姓名
+<br/>在未指定签署人电子签UserId情况下，为必填参数
                      * @param _approverName 签署方经办人姓名
+<br/>在未指定签署人电子签UserId情况下，为必填参数
                      * 
                      */
                     void SetApproverName(const std::string& _approverName);
@@ -130,14 +146,22 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方经办人手机号码
+<br/>在未指定签署人电子签UserId情况下，为必填参数
+
                      * @return ApproverMobile 签署方经办人手机号码
+<br/>在未指定签署人电子签UserId情况下，为必填参数
+
                      * 
                      */
                     std::string GetApproverMobile() const;
 
                     /**
                      * 设置签署方经办人手机号码
+<br/>在未指定签署人电子签UserId情况下，为必填参数
+
                      * @param _approverMobile 签署方经办人手机号码
+<br/>在未指定签署人电子签UserId情况下，为必填参数
+
                      * 
                      */
                     void SetApproverMobile(const std::string& _approverMobile);
@@ -201,14 +225,26 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
 
                     /**
                      * 获取签署方经办人在模板中的参与方ID
+<br/>模版发起合同时，该参数为必填项
+<br/>文件发起合同是，该参数无序传值
+
                      * @return RecipientId 签署方经办人在模板中的参与方ID
+<br/>模版发起合同时，该参数为必填项
+<br/>文件发起合同是，该参数无序传值
+
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
                      * 设置签署方经办人在模板中的参与方ID
+<br/>模版发起合同时，该参数为必填项
+<br/>文件发起合同是，该参数无序传值
+
                      * @param _recipientId 签署方经办人在模板中的参与方ID
+<br/>模版发起合同时，该参数为必填项
+<br/>文件发起合同是，该参数无序传值
+
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -242,15 +278,31 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool VerifyChannelHasBeenSet() const;
 
                     /**
-                     * 获取是否发送短信，sms--短信通知，none--不通知，默认为sms；发起方=签署方时不发送短信
-                     * @return NotifyType 是否发送短信，sms--短信通知，none--不通知，默认为sms；发起方=签署方时不发送短信
+                     * 获取是否发送短信
+<br/>sms--短信通知
+<br/>none--不通知
+<br/>默认为sms
+<br/>发起方=签署方时不发送短信
+                     * @return NotifyType 是否发送短信
+<br/>sms--短信通知
+<br/>none--不通知
+<br/>默认为sms
+<br/>发起方=签署方时不发送短信
                      * 
                      */
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置是否发送短信，sms--短信通知，none--不通知，默认为sms；发起方=签署方时不发送短信
-                     * @param _notifyType 是否发送短信，sms--短信通知，none--不通知，默认为sms；发起方=签署方时不发送短信
+                     * 设置是否发送短信
+<br/>sms--短信通知
+<br/>none--不通知
+<br/>默认为sms
+<br/>发起方=签署方时不发送短信
+                     * @param _notifyType 是否发送短信
+<br/>sms--短信通知
+<br/>none--不通知
+<br/>默认为sms
+<br/>发起方=签署方时不发送短信
                      * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -305,15 +357,23 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool PreReadTimeHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。
-                     * @return UserId 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。
+                     * 获取签署方经办人的电子签用户ID
+<br/>当未指定签署人姓名+手机号的情况下，该字段毕传
+
+                     * @return UserId 签署方经办人的电子签用户ID
+<br/>当未指定签署人姓名+手机号的情况下，该字段毕传
+
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。
-                     * @param _userId 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。
+                     * 设置签署方经办人的电子签用户ID
+<br/>当未指定签署人姓名+手机号的情况下，该字段毕传
+
+                     * @param _userId 签署方经办人的电子签用户ID
+<br/>当未指定签署人姓名+手机号的情况下，该字段毕传
+
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -347,15 +407,19 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool RequiredHasBeenSet() const;
 
                     /**
-                     * 获取签署人用户来源,企微侧用户请传入：WEWORKAPP
-                     * @return ApproverSource 签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     * 获取签署人用户来源
+<br/>企微侧用户请传入：WEWORKAPP
+                     * @return ApproverSource 签署人用户来源
+<br/>企微侧用户请传入：WEWORKAPP
                      * 
                      */
                     std::string GetApproverSource() const;
 
                     /**
-                     * 设置签署人用户来源,企微侧用户请传入：WEWORKAPP
-                     * @param _approverSource 签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     * 设置签署人用户来源
+<br/>企微侧用户请传入：WEWORKAPP
+                     * @param _approverSource 签署人用户来源
+<br/>企微侧用户请传入：WEWORKAPP
                      * 
                      */
                     void SetApproverSource(const std::string& _approverSource);
@@ -368,15 +432,27 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool ApproverSourceHasBeenSet() const;
 
                     /**
-                     * 获取企业签署方或签标识，客户自定义，64位长度。用于发起含有或签签署人的合同。或签参与人必须有此字段。合同内不同或签参与人CustomApproverTag需要保证唯一。如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP
-                     * @return CustomApproverTag 企业签署方或签标识，客户自定义，64位长度。用于发起含有或签签署人的合同。或签参与人必须有此字段。合同内不同或签参与人CustomApproverTag需要保证唯一。如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP
+                     * 获取企业签署方或签标识，客户自定义，64位长度
+<br>用于发起含有或签签署人的合同。或签参与人必须有此字段。
+<br/>合同内不同或签参与人CustomApproverTag需要保证唯一。
+<br/>如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP
+                     * @return CustomApproverTag 企业签署方或签标识，客户自定义，64位长度
+<br>用于发起含有或签签署人的合同。或签参与人必须有此字段。
+<br/>合同内不同或签参与人CustomApproverTag需要保证唯一。
+<br/>如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP
                      * 
                      */
                     std::string GetCustomApproverTag() const;
 
                     /**
-                     * 设置企业签署方或签标识，客户自定义，64位长度。用于发起含有或签签署人的合同。或签参与人必须有此字段。合同内不同或签参与人CustomApproverTag需要保证唯一。如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP
-                     * @param _customApproverTag 企业签署方或签标识，客户自定义，64位长度。用于发起含有或签签署人的合同。或签参与人必须有此字段。合同内不同或签参与人CustomApproverTag需要保证唯一。如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP
+                     * 设置企业签署方或签标识，客户自定义，64位长度
+<br>用于发起含有或签签署人的合同。或签参与人必须有此字段。
+<br/>合同内不同或签参与人CustomApproverTag需要保证唯一。
+<br/>如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP
+                     * @param _customApproverTag 企业签署方或签标识，客户自定义，64位长度
+<br>用于发起含有或签签署人的合同。或签参与人必须有此字段。
+<br/>合同内不同或签参与人CustomApproverTag需要保证唯一。
+<br/>如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP
                      * 
                      */
                     void SetCustomApproverTag(const std::string& _customApproverTag);
@@ -481,15 +557,27 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool SignIdHasBeenSet() const;
 
                     /**
-                     * 获取当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。
-                     * @return ApproverNeedSignReview 当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。
+                     * 获取当前签署方进行签署操作是否需要企业内部审批
+<br>true 则为需要
+<br/>false,无序企业内部审批（默认）
+<br/>为个人签署方时则由发起方企业审核。
+                     * @return ApproverNeedSignReview 当前签署方进行签署操作是否需要企业内部审批
+<br>true 则为需要
+<br/>false,无序企业内部审批（默认）
+<br/>为个人签署方时则由发起方企业审核。
                      * 
                      */
                     bool GetApproverNeedSignReview() const;
 
                     /**
-                     * 设置当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。
-                     * @param _approverNeedSignReview 当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。
+                     * 设置当前签署方进行签署操作是否需要企业内部审批
+<br>true 则为需要
+<br/>false,无序企业内部审批（默认）
+<br/>为个人签署方时则由发起方企业审核。
+                     * @param _approverNeedSignReview 当前签署方进行签署操作是否需要企业内部审批
+<br>true 则为需要
+<br/>false,无序企业内部审批（默认）
+<br/>为个人签署方时则由发起方企业审核。
                      * 
                      */
                     void SetApproverNeedSignReview(const bool& _approverNeedSignReview);
@@ -503,14 +591,18 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
 
                     /**
                      * 获取签署人签署控件
+<br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置
                      * @return SignComponents 签署人签署控件
+<br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
                      * 设置签署人签署控件
+<br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置
                      * @param _signComponents 签署人签署控件
+<br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置
                      * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
@@ -524,14 +616,18 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
 
                     /**
                      * 获取签署人填写控件
+<br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置
                      * @return Components 签署人填写控件
+<br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置
                      * 
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
                      * 设置签署人填写控件
+<br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置
                      * @param _components 签署人填写控件
+<br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -635,19 +731,25 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_approverTypeHasBeenSet;
 
                     /**
-                     * 如果签署方为企业，需要填入企业全称
+                     * 签署人企业名称
+<br/>当approverType=1 或 approverType=3时，必须指定
+
+
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
                      * 签署方经办人姓名
+<br/>在未指定签署人电子签UserId情况下，为必填参数
                      */
                     std::string m_approverName;
                     bool m_approverNameHasBeenSet;
 
                     /**
                      * 签署方经办人手机号码
+<br/>在未指定签署人电子签UserId情况下，为必填参数
+
                      */
                     std::string m_approverMobile;
                     bool m_approverMobileHasBeenSet;
@@ -668,6 +770,9 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
 
                     /**
                      * 签署方经办人在模板中的参与方ID
+<br/>模版发起合同时，该参数为必填项
+<br/>文件发起合同是，该参数无序传值
+
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
@@ -679,7 +784,11 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_verifyChannelHasBeenSet;
 
                     /**
-                     * 是否发送短信，sms--短信通知，none--不通知，默认为sms；发起方=签署方时不发送短信
+                     * 是否发送短信
+<br/>sms--短信通知
+<br/>none--不通知
+<br/>默认为sms
+<br/>发起方=签署方时不发送短信
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;
@@ -697,7 +806,9 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_preReadTimeHasBeenSet;
 
                     /**
-                     * 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。
+                     * 签署方经办人的电子签用户ID
+<br/>当未指定签署人姓名+手机号的情况下，该字段毕传
+
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
@@ -709,13 +820,17 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_requiredHasBeenSet;
 
                     /**
-                     * 签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     * 签署人用户来源
+<br/>企微侧用户请传入：WEWORKAPP
                      */
                     std::string m_approverSource;
                     bool m_approverSourceHasBeenSet;
 
                     /**
-                     * 企业签署方或签标识，客户自定义，64位长度。用于发起含有或签签署人的合同。或签参与人必须有此字段。合同内不同或签参与人CustomApproverTag需要保证唯一。如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP
+                     * 企业签署方或签标识，客户自定义，64位长度
+<br>用于发起含有或签签署人的合同。或签参与人必须有此字段。
+<br/>合同内不同或签参与人CustomApproverTag需要保证唯一。
+<br/>如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP
                      */
                     std::string m_customApproverTag;
                     bool m_customApproverTagHasBeenSet;
@@ -747,19 +862,24 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_signIdHasBeenSet;
 
                     /**
-                     * 当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。
+                     * 当前签署方进行签署操作是否需要企业内部审批
+<br>true 则为需要
+<br/>false,无序企业内部审批（默认）
+<br/>为个人签署方时则由发起方企业审核。
                      */
                     bool m_approverNeedSignReview;
                     bool m_approverNeedSignReviewHasBeenSet;
 
                     /**
                      * 签署人签署控件
+<br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
 
                     /**
                      * 签署人填写控件
+<br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;

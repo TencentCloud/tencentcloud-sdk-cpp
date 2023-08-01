@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool VpnGatewayNameHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps
-                     * @return InternetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps
+                     * 获取公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。
+                     * @return InternetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps
-                     * @param _internetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps
+                     * 设置公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。
+                     * @param _internetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
-                     * @return Type VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
+                     * 获取VPN网关类型，默认为IPSEC。值“IPSEC”为VPC型IPSEC VPN网关，值“SSL”为VPC型SSL VPN网关，值“CCN”为云联网型IPSEC VPN网关，值“SSL_CCN”为云联网型SSL VPN网关。
+                     * @return Type VPN网关类型，默认为IPSEC。值“IPSEC”为VPC型IPSEC VPN网关，值“SSL”为VPC型SSL VPN网关，值“CCN”为云联网型IPSEC VPN网关，值“SSL_CCN”为云联网型SSL VPN网关。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
-                     * @param _type VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
+                     * 设置VPN网关类型，默认为IPSEC。值“IPSEC”为VPC型IPSEC VPN网关，值“SSL”为VPC型SSL VPN网关，值“CCN”为云联网型IPSEC VPN网关，值“SSL_CCN”为云联网型SSL VPN网关。
+                     * @param _type VPN网关类型，默认为IPSEC。值“IPSEC”为VPC型IPSEC VPN网关，值“SSL”为VPC型SSL VPN网关，值“CCN”为云联网型IPSEC VPN网关，值“SSL_CCN”为云联网型SSL VPN网关。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取CDC实例ID
-                     * @return CdcId CDC实例ID
+                     * 获取CDC实例ID。
+                     * @return CdcId CDC实例ID。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置CDC实例ID
-                     * @param _cdcId CDC实例ID
+                     * 设置CDC实例ID。
+                     * @param _cdcId CDC实例ID。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
-                     * @return MaxConnection SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     * 获取SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。仅 SSL / SSL_CCN 类型需要选这个参数。
+                     * @return MaxConnection SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。仅 SSL / SSL_CCN 类型需要选这个参数。
                      * 
                      */
                     uint64_t GetMaxConnection() const;
 
                     /**
-                     * 设置SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
-                     * @param _maxConnection SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     * 设置SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。仅 SSL / SSL_CCN 类型需要选这个参数。
+                     * @param _maxConnection SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。仅 SSL / SSL_CCN 类型需要选这个参数。
                      * 
                      */
                     void SetMaxConnection(const uint64_t& _maxConnection);
@@ -269,7 +269,7 @@ namespace TencentCloud
                     bool m_vpnGatewayNameHasBeenSet;
 
                     /**
-                     * 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps
+                     * 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
@@ -293,25 +293,25 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
+                     * VPN网关类型，默认为IPSEC。值“IPSEC”为VPC型IPSEC VPN网关，值“SSL”为VPC型SSL VPN网关，值“CCN”为云联网型IPSEC VPN网关，值“SSL_CCN”为云联网型SSL VPN网关。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * CDC实例ID
+                     * CDC实例ID。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     * SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。仅 SSL / SSL_CCN 类型需要选这个参数。
                      */
                     uint64_t m_maxConnection;
                     bool m_maxConnectionHasBeenSet;

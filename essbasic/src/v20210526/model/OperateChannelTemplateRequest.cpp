@@ -28,8 +28,8 @@ OperateChannelTemplateRequest::OperateChannelTemplateRequest() :
     m_templateIdHasBeenSet(false),
     m_proxyOrganizationOpenIdsHasBeenSet(false),
     m_authTagHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_availableHasBeenSet(false)
+    m_availableHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -81,6 +81,14 @@ string OperateChannelTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_authTag.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_availableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Available";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_available, allocator);
+    }
+
     if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -88,14 +96,6 @@ string OperateChannelTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_availableHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Available";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_available, allocator);
     }
 
 
@@ -186,22 +186,6 @@ bool OperateChannelTemplateRequest::AuthTagHasBeenSet() const
     return m_authTagHasBeenSet;
 }
 
-UserInfo OperateChannelTemplateRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void OperateChannelTemplateRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool OperateChannelTemplateRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 int64_t OperateChannelTemplateRequest::GetAvailable() const
 {
     return m_available;
@@ -216,6 +200,22 @@ void OperateChannelTemplateRequest::SetAvailable(const int64_t& _available)
 bool OperateChannelTemplateRequest::AvailableHasBeenSet() const
 {
     return m_availableHasBeenSet;
+}
+
+UserInfo OperateChannelTemplateRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void OperateChannelTemplateRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool OperateChannelTemplateRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

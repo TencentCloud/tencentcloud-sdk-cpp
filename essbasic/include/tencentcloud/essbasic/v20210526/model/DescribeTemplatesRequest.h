@@ -45,15 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。
+                     * 获取应用相关信息。 
+此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。
+                     * @return Agent 应用相关信息。 
+此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。
+                     * 设置应用相关信息。 
+此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。
+                     * @param _agent 应用相关信息。 
+此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -87,15 +91,23 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 获取查询内容：
+0-模板列表及详情（默认），
+1-仅模板列表
+                     * @return ContentType 查询内容：
+0-模板列表及详情（默认），
+1-仅模板列表
                      * 
                      */
                     int64_t GetContentType() const;
 
                     /**
-                     * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @param _contentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 设置查询内容：
+0-模板列表及详情（默认），
+1-仅模板列表
+                     * @param _contentType 查询内容：
+0-模板列表及详情（默认），
+1-仅模板列表
                      * 
                      */
                     void SetContentType(const int64_t& _contentType);
@@ -108,15 +120,15 @@ namespace TencentCloud
                     bool ContentTypeHasBeenSet() const;
 
                     /**
-                     * 获取查询个数，默认20，最大100；在查询列表的时候有效
-                     * @return Limit 查询个数，默认20，最大100；在查询列表的时候有效
+                     * 获取指定每页多少条数据，如果不传默认为20，单页最大100。
+                     * @return Limit 指定每页多少条数据，如果不传默认为20，单页最大100。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询个数，默认20，最大100；在查询列表的时候有效
-                     * @param _limit 查询个数，默认20，最大100；在查询列表的时候有效
+                     * 设置指定每页多少条数据，如果不传默认为20，单页最大100。
+                     * @param _limit 指定每页多少条数据，如果不传默认为20，单页最大100。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -129,15 +141,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询偏移位置，默认0；在查询列表的时候有效
-                     * @return Offset 查询偏移位置，默认0；在查询列表的时候有效
+                     * 获取查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。
+                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询偏移位置，默认0；在查询列表的时候有效
-                     * @param _offset 查询偏移位置，默认0；在查询列表的时候有效
+                     * 设置查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。
+                     * @param _offset 查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -150,15 +162,23 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
-                     * @return QueryAllComponents 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
+                     * 获取是否返回所有组件信息。
+默认false，只返回发起方控件；
+true，返回所有签署方控件
+                     * @return QueryAllComponents 是否返回所有组件信息。
+默认false，只返回发起方控件；
+true，返回所有签署方控件
                      * 
                      */
                     bool GetQueryAllComponents() const;
 
                     /**
-                     * 设置是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
-                     * @param _queryAllComponents 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
+                     * 设置是否返回所有组件信息。
+默认false，只返回发起方控件；
+true，返回所有签署方控件
+                     * @param _queryAllComponents 是否返回所有组件信息。
+默认false，只返回发起方控件；
+true，返回所有签署方控件
                      * 
                      */
                     void SetQueryAllComponents(const bool& _queryAllComponents);
@@ -192,15 +212,23 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取是否获取模板预览链接
-                     * @return WithPreviewUrl 是否获取模板预览链接
+                     * 获取是否获取模板预览链接，
+默认false-不获取
+true-获取
+                     * @return WithPreviewUrl 是否获取模板预览链接，
+默认false-不获取
+true-获取
                      * 
                      */
                     bool GetWithPreviewUrl() const;
 
                     /**
-                     * 设置是否获取模板预览链接
-                     * @param _withPreviewUrl 是否获取模板预览链接
+                     * 设置是否获取模板预览链接，
+默认false-不获取
+true-获取
+                     * @param _withPreviewUrl 是否获取模板预览链接，
+默认false-不获取
+true-获取
                      * 
                      */
                     void SetWithPreviewUrl(const bool& _withPreviewUrl);
@@ -213,15 +241,27 @@ namespace TencentCloud
                     bool WithPreviewUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
-                     * @return WithPdfUrl 是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
+                     * 获取是否获取模板的PDF文件链接。
+默认false-不获取
+true-获取
+请联系客户经理开白后使用。
+                     * @return WithPdfUrl 是否获取模板的PDF文件链接。
+默认false-不获取
+true-获取
+请联系客户经理开白后使用。
                      * 
                      */
                     bool GetWithPdfUrl() const;
 
                     /**
-                     * 设置是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
-                     * @param _withPdfUrl 是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
+                     * 设置是否获取模板的PDF文件链接。
+默认false-不获取
+true-获取
+请联系客户经理开白后使用。
+                     * @param _withPdfUrl 是否获取模板的PDF文件链接。
+默认false-不获取
+true-获取
+请联系客户经理开白后使用。
                      * 
                      */
                     void SetWithPdfUrl(const bool& _withPdfUrl);
@@ -278,7 +318,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。
+                     * 应用相关信息。 
+此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
@@ -290,25 +331,29 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 查询内容：
+0-模板列表及详情（默认），
+1-仅模板列表
                      */
                     int64_t m_contentType;
                     bool m_contentTypeHasBeenSet;
 
                     /**
-                     * 查询个数，默认20，最大100；在查询列表的时候有效
+                     * 指定每页多少条数据，如果不传默认为20，单页最大100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询偏移位置，默认0；在查询列表的时候有效
+                     * 查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
+                     * 是否返回所有组件信息。
+默认false，只返回发起方控件；
+true，返回所有签署方控件
                      */
                     bool m_queryAllComponents;
                     bool m_queryAllComponentsHasBeenSet;
@@ -320,13 +365,18 @@ namespace TencentCloud
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 是否获取模板预览链接
+                     * 是否获取模板预览链接，
+默认false-不获取
+true-获取
                      */
                     bool m_withPreviewUrl;
                     bool m_withPreviewUrlHasBeenSet;
 
                     /**
-                     * 是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
+                     * 是否获取模板的PDF文件链接。
+默认false-不获取
+true-获取
+请联系客户经理开白后使用。
                      */
                     bool m_withPdfUrl;
                     bool m_withPdfUrlHasBeenSet;

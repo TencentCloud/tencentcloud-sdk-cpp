@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 签署参与者信息
+                * 流程中参与方的信息结构
                 */
                 class Recipient : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署人唯一标识，在通过模板发起合同的时候对应签署方Id
-                     * @return RecipientId 签署人唯一标识，在通过模板发起合同的时候对应签署方Id
+                     * 获取签署人唯一标识，在通过模板发起合同的时候对应签署方ID
+                     * @return RecipientId 签署人唯一标识，在通过模板发起合同的时候对应签署方ID
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置签署人唯一标识，在通过模板发起合同的时候对应签署方Id
-                     * @param _recipientId 签署人唯一标识，在通过模板发起合同的时候对应签署方Id
+                     * 设置签署人唯一标识，在通过模板发起合同的时候对应签署方ID
+                     * @param _recipientId 签署人唯一标识，在通过模板发起合同的时候对应签署方ID
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -68,15 +68,27 @@ namespace TencentCloud
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
-                     * @return RecipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * 获取参与者类型，默认为空。
+ENTERPRISE-企业；
+INDIVIDUAL-个人；
+PROMOTER-发起方
+                     * @return RecipientType 参与者类型，默认为空。
+ENTERPRISE-企业；
+INDIVIDUAL-个人；
+PROMOTER-发起方
                      * 
                      */
                     std::string GetRecipientType() const;
 
                     /**
-                     * 设置参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
-                     * @param _recipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * 设置参与者类型，默认为空。
+ENTERPRISE-企业；
+INDIVIDUAL-个人；
+PROMOTER-发起方
+                     * @param _recipientType 参与者类型，默认为空。
+ENTERPRISE-企业；
+INDIVIDUAL-个人；
+PROMOTER-发起方
                      * 
                      */
                     void SetRecipientType(const std::string& _recipientType);
@@ -89,15 +101,15 @@ namespace TencentCloud
                     bool RecipientTypeHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取描述信息	
+                     * @return Description 描述信息	
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置描述信息	
+                     * @param _description 描述信息	
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -110,15 +122,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取签署方备注角色名
-                     * @return RoleName 签署方备注角色名
+                     * 获取角色名称	
+                     * @return RoleName 角色名称	
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置签署方备注角色名
-                     * @param _roleName 签署方备注角色名
+                     * 设置角色名称	
+                     * @param _roleName 角色名称	
                      * 
                      */
                     void SetRoleName(const std::string& _roleName);
@@ -131,15 +143,23 @@ namespace TencentCloud
                     bool RoleNameHasBeenSet() const;
 
                     /**
-                     * 获取是否需要校验，true-是，false-否
-                     * @return RequireValidation 是否需要校验，true-是，false-否
+                     * 获取是否需要校验，
+true-是，
+false-否
+                     * @return RequireValidation 是否需要校验，
+true-是，
+false-否
                      * 
                      */
                     bool GetRequireValidation() const;
 
                     /**
-                     * 设置是否需要校验，true-是，false-否
-                     * @param _requireValidation 是否需要校验，true-是，false-否
+                     * 设置是否需要校验，
+true-是，
+false-否
+                     * @param _requireValidation 是否需要校验，
+true-是，
+false-否
                      * 
                      */
                     void SetRequireValidation(const bool& _requireValidation);
@@ -152,15 +172,23 @@ namespace TencentCloud
                     bool RequireValidationHasBeenSet() const;
 
                     /**
-                     * 获取是否必须填写，true-是，false-否
-                     * @return RequireSign 是否必须填写，true-是，false-否
+                     * 获取是否必须填写，
+true-是，
+false-否
+                     * @return RequireSign 是否必须填写，
+true-是，
+false-否
                      * 
                      */
                     bool GetRequireSign() const;
 
                     /**
-                     * 设置是否必须填写，true-是，false-否
-                     * @param _requireSign 是否必须填写，true-是，false-否
+                     * 设置是否必须填写，
+true-是，
+false-否
+                     * @param _requireSign 是否必须填写，
+true-是，
+false-否
                      * 
                      */
                     void SetRequireSign(const bool& _requireSign);
@@ -173,15 +201,15 @@ namespace TencentCloud
                     bool RequireSignHasBeenSet() const;
 
                     /**
-                     * 获取签署类型
-                     * @return SignType 签署类型
+                     * 获取内部字段，签署类型
+                     * @return SignType 内部字段，签署类型
                      * 
                      */
                     int64_t GetSignType() const;
 
                     /**
-                     * 设置签署类型
-                     * @param _signType 签署类型
+                     * 设置内部字段，签署类型
+                     * @param _signType 内部字段，签署类型
                      * 
                      */
                     void SetSignType(const int64_t& _signType);
@@ -215,15 +243,23 @@ namespace TencentCloud
                     bool RoutingOrderHasBeenSet() const;
 
                     /**
-                     * 获取是否是发起方
-                     * @return IsPromoter 是否是发起方
+                     * 获取是否是发起方，
+true-是 
+false-否
+                     * @return IsPromoter 是否是发起方，
+true-是 
+false-否
                      * 
                      */
                     bool GetIsPromoter() const;
 
                     /**
-                     * 设置是否是发起方
-                     * @param _isPromoter 是否是发起方
+                     * 设置是否是发起方，
+true-是 
+false-否
+                     * @param _isPromoter 是否是发起方，
+true-是 
+false-否
                      * 
                      */
                     void SetIsPromoter(const bool& _isPromoter);
@@ -238,43 +274,50 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署人唯一标识，在通过模板发起合同的时候对应签署方Id
+                     * 签署人唯一标识，在通过模板发起合同的时候对应签署方ID
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * 参与者类型，默认为空。
+ENTERPRISE-企业；
+INDIVIDUAL-个人；
+PROMOTER-发起方
                      */
                     std::string m_recipientType;
                     bool m_recipientTypeHasBeenSet;
 
                     /**
-                     * 描述
+                     * 描述信息	
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 签署方备注角色名
+                     * 角色名称	
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
 
                     /**
-                     * 是否需要校验，true-是，false-否
+                     * 是否需要校验，
+true-是，
+false-否
                      */
                     bool m_requireValidation;
                     bool m_requireValidationHasBeenSet;
 
                     /**
-                     * 是否必须填写，true-是，false-否
+                     * 是否必须填写，
+true-是，
+false-否
                      */
                     bool m_requireSign;
                     bool m_requireSignHasBeenSet;
 
                     /**
-                     * 签署类型
+                     * 内部字段，签署类型
                      */
                     int64_t m_signType;
                     bool m_signTypeHasBeenSet;
@@ -286,7 +329,9 @@ namespace TencentCloud
                     bool m_routingOrderHasBeenSet;
 
                     /**
-                     * 是否是发起方
+                     * 是否是发起方，
+true-是 
+false-否
                      */
                     bool m_isPromoter;
                     bool m_isPromoterHasBeenSet;

@@ -244,14 +244,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否去除水印，类型为慢直播时此参数无效。
+如果为false，则录制水印流或转码流；如果为true，则录制原始流。
                      * @return RemoveWatermark 是否去除水印，类型为慢直播时此参数无效。
+如果为false，则录制水印流或转码流；如果为true，则录制原始流。
                      * 
                      */
                     bool GetRemoveWatermark() const;
 
                     /**
                      * 设置是否去除水印，类型为慢直播时此参数无效。
+如果为false，则录制水印流或转码流；如果为true，则录制原始流。
                      * @param _removeWatermark 是否去除水印，类型为慢直播时此参数无效。
+如果为false，则录制水印流或转码流；如果为true，则录制原始流。
                      * 
                      */
                     void SetRemoveWatermark(const bool& _removeWatermark);
@@ -344,6 +348,7 @@ namespace TencentCloud
 
                     /**
                      * 是否去除水印，类型为慢直播时此参数无效。
+如果为false，则录制水印流或转码流；如果为true，则录制原始流。
                      */
                     bool m_removeWatermark;
                     bool m_removeWatermarkHasBeenSet;

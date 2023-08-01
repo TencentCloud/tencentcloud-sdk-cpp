@@ -60,8 +60,7 @@ CreateFlowByTemplates发起合同时优先以ComponentId（不为空）填充；
 
 注：
 当GenerateMode=KEYWORD时，通过"^"来决定是否使用关键字整词匹配能力。
-例：
-当GenerateMode=KEYWORD时，如果传入关键字"^甲方签署^"，则会在PDF文件中有且仅有"甲方签署"关键字的地方进行对应操作。
+例：当GenerateMode=KEYWORD时，如果传入关键字"^甲方签署^"，则会在PDF文件中有且仅有"甲方签署"关键字的地方进行对应操作。
 如传入的关键字为"甲方签署"，则PDF文件中每个出现关键字的位置都会执行相应操作。
 
 创建控件时，此值为空
@@ -72,8 +71,7 @@ CreateFlowByTemplates发起合同时优先以ComponentId（不为空）填充；
 
 注：
 当GenerateMode=KEYWORD时，通过"^"来决定是否使用关键字整词匹配能力。
-例：
-当GenerateMode=KEYWORD时，如果传入关键字"^甲方签署^"，则会在PDF文件中有且仅有"甲方签署"关键字的地方进行对应操作。
+例：当GenerateMode=KEYWORD时，如果传入关键字"^甲方签署^"，则会在PDF文件中有且仅有"甲方签署"关键字的地方进行对应操作。
 如传入的关键字为"甲方签署"，则PDF文件中每个出现关键字的位置都会执行相应操作。
 
 创建控件时，此值为空
@@ -89,8 +87,7 @@ CreateFlowByTemplates发起合同时优先以ComponentId（不为空）填充；
 
 注：
 当GenerateMode=KEYWORD时，通过"^"来决定是否使用关键字整词匹配能力。
-例：
-当GenerateMode=KEYWORD时，如果传入关键字"^甲方签署^"，则会在PDF文件中有且仅有"甲方签署"关键字的地方进行对应操作。
+例：当GenerateMode=KEYWORD时，如果传入关键字"^甲方签署^"，则会在PDF文件中有且仅有"甲方签署"关键字的地方进行对应操作。
 如传入的关键字为"甲方签署"，则PDF文件中每个出现关键字的位置都会执行相应操作。
 
 创建控件时，此值为空
@@ -101,8 +98,7 @@ CreateFlowByTemplates发起合同时优先以ComponentId（不为空）填充；
 
 注：
 当GenerateMode=KEYWORD时，通过"^"来决定是否使用关键字整词匹配能力。
-例：
-当GenerateMode=KEYWORD时，如果传入关键字"^甲方签署^"，则会在PDF文件中有且仅有"甲方签署"关键字的地方进行对应操作。
+例：当GenerateMode=KEYWORD时，如果传入关键字"^甲方签署^"，则会在PDF文件中有且仅有"甲方签署"关键字的地方进行对应操作。
 如传入的关键字为"甲方签署"，则PDF文件中每个出现关键字的位置都会执行相应操作。
 
 创建控件时，此值为空
@@ -220,15 +216,15 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentTypeHasBeenSet() const;
 
                     /**
-                     * 获取控件简称，不能超过30个字符
-                     * @return ComponentName 控件简称，不能超过30个字符
+                     * 获取控件简称，不超过30个字符
+                     * @return ComponentName 控件简称，不超过30个字符
                      * 
                      */
                     std::string GetComponentName() const;
 
                     /**
-                     * 设置控件简称，不能超过30个字符
-                     * @param _componentName 控件简称，不能超过30个字符
+                     * 设置控件简称，不超过30个字符
+                     * @param _componentName 控件简称，不超过30个字符
                      * 
                      */
                     void SetComponentName(const std::string& _componentName);
@@ -241,15 +237,19 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentNameHasBeenSet() const;
 
                     /**
-                     * 获取定义控件是否为必填项，默认为false
-                     * @return ComponentRequired 定义控件是否为必填项，默认为false
+                     * 获取控件是否为必填项，
+默认为false-非必填
+                     * @return ComponentRequired 控件是否为必填项，
+默认为false-非必填
                      * 
                      */
                     bool GetComponentRequired() const;
 
                     /**
-                     * 设置定义控件是否为必填项，默认为false
-                     * @param _componentRequired 定义控件是否为必填项，默认为false
+                     * 设置控件是否为必填项，
+默认为false-非必填
+                     * @param _componentRequired 控件是否为必填项，
+默认为false-非必填
                      * 
                      */
                     void SetComponentRequired(const bool& _componentRequired);
@@ -262,15 +262,15 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentRequiredHasBeenSet() const;
 
                     /**
-                     * 获取控件关联的签署方id
-                     * @return ComponentRecipientId 控件关联的签署方id
+                     * 获取控件关联的参与方ID，对应Recipient结构体中的RecipientId	
+                     * @return ComponentRecipientId 控件关联的参与方ID，对应Recipient结构体中的RecipientId	
                      * 
                      */
                     std::string GetComponentRecipientId() const;
 
                     /**
-                     * 设置控件关联的签署方id
-                     * @param _componentRecipientId 控件关联的签署方id
+                     * 设置控件关联的参与方ID，对应Recipient结构体中的RecipientId	
+                     * @param _componentRecipientId 控件关联的参与方ID，对应Recipient结构体中的RecipientId	
                      * 
                      */
                     void SetComponentRecipientId(const std::string& _componentRecipientId);
@@ -961,15 +961,15 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool ComponentDateFontSizeHasBeenSet() const;
 
                     /**
-                     * 获取控件所属文档的Id, 模块相关接口为空值
-                     * @return DocumentId 控件所属文档的Id, 模块相关接口为空值
+                     * 获取控件所属文档的Id, 模板相关接口为空值
+                     * @return DocumentId 控件所属文档的Id, 模板相关接口为空值
                      * 
                      */
                     std::string GetDocumentId() const;
 
                     /**
-                     * 设置控件所属文档的Id, 模块相关接口为空值
-                     * @param _documentId 控件所属文档的Id, 模块相关接口为空值
+                     * 设置控件所属文档的Id, 模板相关接口为空值
+                     * @param _documentId 控件所属文档的Id, 模板相关接口为空值
                      * 
                      */
                     void SetDocumentId(const std::string& _documentId);
@@ -982,15 +982,15 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool DocumentIdHasBeenSet() const;
 
                     /**
-                     * 获取控件描述，不能超过30个字符
-                     * @return ComponentDescription 控件描述，不能超过30个字符
+                     * 获取控件描述，不超过30个字符
+                     * @return ComponentDescription 控件描述，不超过30个字符
                      * 
                      */
                     std::string GetComponentDescription() const;
 
                     /**
-                     * 设置控件描述，不能超过30个字符
-                     * @param _componentDescription 控件描述，不能超过30个字符
+                     * 设置控件描述，不超过30个字符
+                     * @param _componentDescription 控件描述，不超过30个字符
                      * 
                      */
                     void SetComponentDescription(const std::string& _componentDescription);
@@ -1070,18 +1070,30 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool ChannelComponentIdHasBeenSet() const;
 
                     /**
-                     * 获取指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * 获取指定关键字排序规则，
+Positive-正序，
+Reverse-倒序。
+传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
-                     * @return KeywordOrder 指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * @return KeywordOrder 指定关键字排序规则，
+Positive-正序，
+Reverse-倒序。
+传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
                      * 
                      */
                     std::string GetKeywordOrder() const;
 
                     /**
-                     * 设置指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * 设置指定关键字排序规则，
+Positive-正序，
+Reverse-倒序。
+传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
-                     * @param _keywordOrder 指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * @param _keywordOrder 指定关键字排序规则，
+Positive-正序，
+Reverse-倒序。
+传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
                      * 
                      */
@@ -1095,15 +1107,19 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool KeywordOrderHasBeenSet() const;
 
                     /**
-                     * 获取指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
-                     * @return KeywordPage 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * 获取指定关键字页码。
+指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * @return KeywordPage 指定关键字页码。
+指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
                      * 
                      */
                     int64_t GetKeywordPage() const;
 
                     /**
-                     * 设置指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
-                     * @param _keywordPage 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * 设置指定关键字页码。
+指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * @param _keywordPage 指定关键字页码。
+指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
                      * 
                      */
                     void SetKeywordPage(const int64_t& _keywordPage);
@@ -1116,15 +1132,39 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool KeywordPageHasBeenSet() const;
 
                     /**
-                     * 获取关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
-                     * @return RelativeLocation 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * 获取关键字位置模式，
+Middle-居中，
+Below-正下方，
+Right-正右方，
+LowerRight-右上角，
+UpperRight-右下角。
+示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * @return RelativeLocation 关键字位置模式，
+Middle-居中，
+Below-正下方，
+Right-正右方，
+LowerRight-右上角，
+UpperRight-右下角。
+示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
                      * 
                      */
                     std::string GetRelativeLocation() const;
 
                     /**
-                     * 设置关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
-                     * @param _relativeLocation 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * 设置关键字位置模式，
+Middle-居中，
+Below-正下方，
+Right-正右方，
+LowerRight-右上角，
+UpperRight-右下角。
+示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * @param _relativeLocation 关键字位置模式，
+Middle-居中，
+Below-正下方，
+Right-正右方，
+LowerRight-右上角，
+UpperRight-右下角。
+示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
                      * 
                      */
                     void SetRelativeLocation(const std::string& _relativeLocation);
@@ -1137,15 +1177,19 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool RelativeLocationHasBeenSet() const;
 
                     /**
-                     * 获取关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
-                     * @return KeywordIndexes 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * 获取关键字索引，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。
+示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * @return KeywordIndexes 关键字索引，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。
+示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
                      * 
                      */
                     std::vector<int64_t> GetKeywordIndexes() const;
 
                     /**
-                     * 设置关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
-                     * @param _keywordIndexes 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * 设置关键字索引，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。
+示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * @param _keywordIndexes 关键字索引，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。
+示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
                      * 
                      */
                     void SetKeywordIndexes(const std::vector<int64_t>& _keywordIndexes);
@@ -1191,8 +1235,7 @@ CreateFlowByTemplates发起合同时优先以ComponentId（不为空）填充；
 
 注：
 当GenerateMode=KEYWORD时，通过"^"来决定是否使用关键字整词匹配能力。
-例：
-当GenerateMode=KEYWORD时，如果传入关键字"^甲方签署^"，则会在PDF文件中有且仅有"甲方签署"关键字的地方进行对应操作。
+例：当GenerateMode=KEYWORD时，如果传入关键字"^甲方签署^"，则会在PDF文件中有且仅有"甲方签署"关键字的地方进行对应操作。
 如传入的关键字为"甲方签署"，则PDF文件中每个出现关键字的位置都会执行相应操作。
 
 创建控件时，此值为空
@@ -1228,19 +1271,20 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool m_componentTypeHasBeenSet;
 
                     /**
-                     * 控件简称，不能超过30个字符
+                     * 控件简称，不超过30个字符
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;
 
                     /**
-                     * 定义控件是否为必填项，默认为false
+                     * 控件是否为必填项，
+默认为false-非必填
                      */
                     bool m_componentRequired;
                     bool m_componentRequiredHasBeenSet;
 
                     /**
-                     * 控件关联的签署方id
+                     * 控件关联的参与方ID，对应Recipient结构体中的RecipientId	
                      */
                     std::string m_componentRecipientId;
                     bool m_componentRecipientIdHasBeenSet;
@@ -1423,13 +1467,13 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool m_componentDateFontSizeHasBeenSet;
 
                     /**
-                     * 控件所属文档的Id, 模块相关接口为空值
+                     * 控件所属文档的Id, 模板相关接口为空值
                      */
                     std::string m_documentId;
                     bool m_documentIdHasBeenSet;
 
                     /**
-                     * 控件描述，不能超过30个字符
+                     * 控件描述，不超过30个字符
                      */
                     std::string m_componentDescription;
                     bool m_componentDescriptionHasBeenSet;
@@ -1454,26 +1498,37 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool m_channelComponentIdHasBeenSet;
 
                     /**
-                     * 指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * 指定关键字排序规则，
+Positive-正序，
+Reverse-倒序。
+传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
                      */
                     std::string m_keywordOrder;
                     bool m_keywordOrderHasBeenSet;
 
                     /**
-                     * 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * 指定关键字页码。
+指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
                      */
                     int64_t m_keywordPage;
                     bool m_keywordPageHasBeenSet;
 
                     /**
-                     * 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * 关键字位置模式，
+Middle-居中，
+Below-正下方，
+Right-正右方，
+LowerRight-右上角，
+UpperRight-右下角。
+示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
                      */
                     std::string m_relativeLocation;
                     bool m_relativeLocationHasBeenSet;
 
                     /**
-                     * 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * 关键字索引，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。
+示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
                      */
                     std::vector<int64_t> m_keywordIndexes;
                     bool m_keywordIndexesHasBeenSet;
