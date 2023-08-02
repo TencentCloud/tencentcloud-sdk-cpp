@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 渠道合作安卓加固策略信息
+                * 渠道合作Android加固策略信息
                 */
                 class AndroidPlan : public AbstractModel
                 {
@@ -69,18 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取本次操作的包名。
-当收费模式是安卓按年收费和安卓免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。
+当收费模式是android按年收费和android免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。
                      * @return AppPkgName 本次操作的包名。
-当收费模式是安卓按年收费和安卓免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。
+当收费模式是android按年收费和android免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。
                      * 
                      */
                     std::string GetAppPkgName() const;
 
                     /**
                      * 设置本次操作的包名。
-当收费模式是安卓按年收费和安卓免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。
+当收费模式是android按年收费和android免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。
                      * @param _appPkgName 本次操作的包名。
-当收费模式是安卓按年收费和安卓免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。
+当收费模式是android按年收费和android免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。
                      * 
                      */
                     void SetAppPkgName(const std::string& _appPkgName);
@@ -93,22 +93,22 @@ namespace TencentCloud
                     bool AppPkgNameHasBeenSet() const;
 
                     /**
-                     * 获取安卓app的文件类型，本次加固操作的应用类型 。 
-安卓在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
+                     * 获取android app的文件类型，本次加固操作的应用类型 。 
+android在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
 
-                     * @return AppType 安卓app的文件类型，本次加固操作的应用类型 。 
-安卓在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
+                     * @return AppType android app的文件类型，本次加固操作的应用类型 。 
+android在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
 
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置安卓app的文件类型，本次加固操作的应用类型 。 
-安卓在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
+                     * 设置android app的文件类型，本次加固操作的应用类型 。 
+android在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
 
-                     * @param _appType 安卓app的文件类型，本次加固操作的应用类型 。 
-安卓在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
+                     * @param _appType android app的文件类型，本次加固操作的应用类型 。 
+android在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
 
                      * 
                      */
@@ -122,7 +122,7 @@ namespace TencentCloud
                     bool AppTypeHasBeenSet() const;
 
                     /**
-                     * 获取安卓加固必输字段。
+                     * 获取android加固必输字段。
 加固策略，json格式字符串。
 字段说明（0-关闭，1-开启）：
         "enable"=1 #DEX整体加固;
@@ -234,7 +234,7 @@ aab加固方案二
         "antimonitor": 1
     }
 }’
-                     * @return EncryptParam 安卓加固必输字段。
+                     * @return EncryptParam android加固必输字段。
 加固策略，json格式字符串。
 字段说明（0-关闭，1-开启）：
         "enable"=1 #DEX整体加固;
@@ -351,7 +351,7 @@ aab加固方案二
                     std::string GetEncryptParam() const;
 
                     /**
-                     * 设置安卓加固必输字段。
+                     * 设置android加固必输字段。
 加固策略，json格式字符串。
 字段说明（0-关闭，1-开启）：
         "enable"=1 #DEX整体加固;
@@ -463,7 +463,7 @@ aab加固方案二
         "antimonitor": 1
     }
 }’
-                     * @param _encryptParam 安卓加固必输字段。
+                     * @param _encryptParam android加固必输字段。
 加固策略，json格式字符串。
 字段说明（0-关闭，1-开启）：
         "enable"=1 #DEX整体加固;
@@ -596,21 +596,21 @@ aab加固方案二
 
                     /**
                      * 本次操作的包名。
-当收费模式是安卓按年收费和安卓免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。
+当收费模式是android按年收费和android免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。
                      */
                     std::string m_appPkgName;
                     bool m_appPkgNameHasBeenSet;
 
                     /**
-                     * 安卓app的文件类型，本次加固操作的应用类型 。 
-安卓在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
+                     * android app的文件类型，本次加固操作的应用类型 。 
+android在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。
 
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
 
                     /**
-                     * 安卓加固必输字段。
+                     * android加固必输字段。
 加固策略，json格式字符串。
 字段说明（0-关闭，1-开启）：
         "enable"=1 #DEX整体加固;

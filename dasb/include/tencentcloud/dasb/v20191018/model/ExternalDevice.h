@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool DepartmentIdHasBeenSet() const;
 
+                    /**
+                     * 获取资产多节点：字段ip和端口
+                     * @return IpPortSet 资产多节点：字段ip和端口
+                     * 
+                     */
+                    std::vector<std::string> GetIpPortSet() const;
+
+                    /**
+                     * 设置资产多节点：字段ip和端口
+                     * @param _ipPortSet 资产多节点：字段ip和端口
+                     * 
+                     */
+                    void SetIpPortSet(const std::vector<std::string>& _ipPortSet);
+
+                    /**
+                     * 判断参数 IpPortSet 是否已赋值
+                     * @return IpPortSet 是否已赋值
+                     * 
+                     */
+                    bool IpPortSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
+
+                    /**
+                     * 资产多节点：字段ip和端口
+                     */
+                    std::vector<std::string> m_ipPortSet;
+                    bool m_ipPortSetHasBeenSet;
 
                 };
             }

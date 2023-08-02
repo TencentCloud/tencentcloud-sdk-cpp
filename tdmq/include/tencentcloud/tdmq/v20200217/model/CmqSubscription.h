@@ -362,6 +362,31 @@ filterType = 2表示用户使用 bindingKey 过滤。
                      */
                     bool NotifyContentFormatHasBeenSet() const;
 
+                    /**
+                     * 获取订阅所属的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicName 订阅所属的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTopicName() const;
+
+                    /**
+                     * 设置订阅所属的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topicName 订阅所属的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopicName(const std::string& _topicName);
+
+                    /**
+                     * 判断参数 TopicName 是否已赋值
+                     * @return TopicName 是否已赋值
+                     * 
+                     */
+                    bool TopicNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -451,6 +476,13 @@ filterType = 2表示用户使用 bindingKey 过滤。
                      */
                     std::string m_notifyContentFormat;
                     bool m_notifyContentFormatHasBeenSet;
+
+                    /**
+                     * 订阅所属的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicName;
+                    bool m_topicNameHasBeenSet;
 
                 };
             }

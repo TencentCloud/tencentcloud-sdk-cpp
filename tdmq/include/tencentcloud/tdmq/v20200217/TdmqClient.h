@@ -89,6 +89,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQNamespaceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQTopicRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQTopicResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQVipInstanceRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRocketMQVipInstanceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRolesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsRequest.h>
@@ -340,6 +342,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRocketMQTopicResponse> DeleteRocketMQTopicOutcome;
                 typedef std::future<DeleteRocketMQTopicOutcome> DeleteRocketMQTopicOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteRocketMQTopicRequest&, DeleteRocketMQTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRocketMQTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRocketMQVipInstanceResponse> DeleteRocketMQVipInstanceOutcome;
+                typedef std::future<DeleteRocketMQVipInstanceOutcome> DeleteRocketMQVipInstanceOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteRocketMQVipInstanceRequest&, DeleteRocketMQVipInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRocketMQVipInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRolesResponse> DeleteRolesOutcome;
                 typedef std::future<DeleteRolesOutcome> DeleteRolesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteRolesRequest&, DeleteRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRolesAsyncHandler;
@@ -846,6 +851,15 @@ namespace TencentCloud
                 DeleteRocketMQTopicOutcome DeleteRocketMQTopic(const Model::DeleteRocketMQTopicRequest &request);
                 void DeleteRocketMQTopicAsync(const Model::DeleteRocketMQTopicRequest& request, const DeleteRocketMQTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRocketMQTopicOutcomeCallable DeleteRocketMQTopicCallable(const Model::DeleteRocketMQTopicRequest& request);
+
+                /**
+                 *删除RocketMQ专享实例
+                 * @param req DeleteRocketMQVipInstanceRequest
+                 * @return DeleteRocketMQVipInstanceOutcome
+                 */
+                DeleteRocketMQVipInstanceOutcome DeleteRocketMQVipInstance(const Model::DeleteRocketMQVipInstanceRequest &request);
+                void DeleteRocketMQVipInstanceAsync(const Model::DeleteRocketMQVipInstanceRequest& request, const DeleteRocketMQVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRocketMQVipInstanceOutcomeCallable DeleteRocketMQVipInstanceCallable(const Model::DeleteRocketMQVipInstanceRequest& request);
 
                 /**
                  *删除角色，支持批量。

@@ -90,14 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 获取签署流程参与者信息，最大限制50方
+注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。
                      * @return Approvers 签署流程参与者信息，最大限制50方
+注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。
                      * 
                      */
                     std::vector<FlowCreateApprover> GetApprovers() const;
 
                     /**
                      * 设置签署流程参与者信息，最大限制50方
+注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。
                      * @param _approvers 签署流程参与者信息，最大限制50方
+注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。
                      * 
                      */
                     void SetApprovers(const std::vector<FlowCreateApprover>& _approvers);
@@ -451,6 +455,7 @@ false：有序签
 
                     /**
                      * 签署流程参与者信息，最大限制50方
+注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。
                      */
                     std::vector<FlowCreateApprover> m_approvers;
                     bool m_approversHasBeenSet;

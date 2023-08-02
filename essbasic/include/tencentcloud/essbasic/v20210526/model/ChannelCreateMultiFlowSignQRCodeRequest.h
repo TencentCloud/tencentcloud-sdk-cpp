@@ -113,15 +113,23 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。
-                     * @return MaxFlowNum 最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。
+                     * 获取最大可发起签署流程份数
+<br/>默认5份
+<br/>备注：发起签署流程数量超过此上限后，二维码自动失效。
+                     * @return MaxFlowNum 最大可发起签署流程份数
+<br/>默认5份
+<br/>备注：发起签署流程数量超过此上限后，二维码自动失效。
                      * 
                      */
                     int64_t GetMaxFlowNum() const;
 
                     /**
-                     * 设置最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。
-                     * @param _maxFlowNum 最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。
+                     * 设置最大可发起签署流程份数
+<br/>默认5份
+<br/>备注：发起签署流程数量超过此上限后，二维码自动失效。
+                     * @param _maxFlowNum 最大可发起签署流程份数
+<br/>默认5份
+<br/>备注：发起签署流程数量超过此上限后，二维码自动失效。
                      * 
                      */
                     void SetMaxFlowNum(const int64_t& _maxFlowNum);
@@ -176,15 +184,19 @@ namespace TencentCloud
                     bool QrEffectiveDayHasBeenSet() const;
 
                     /**
-                     * 获取限制二维码用户条件
-                     * @return Restrictions 限制二维码用户条件
+                     * 获取指定的签署二维码签署人
+<br/>指定后，只允许知道的人操作和签署
+                     * @return Restrictions 指定的签署二维码签署人
+<br/>指定后，只允许知道的人操作和签署
                      * 
                      */
                     std::vector<ApproverRestriction> GetRestrictions() const;
 
                     /**
-                     * 设置限制二维码用户条件
-                     * @param _restrictions 限制二维码用户条件
+                     * 设置指定的签署二维码签署人
+<br/>指定后，只允许知道的人操作和签署
+                     * @param _restrictions 指定的签署二维码签署人
+<br/>指定后，只允许知道的人操作和签署
                      * 
                      */
                     void SetRestrictions(const std::vector<ApproverRestriction>& _restrictions);
@@ -289,7 +301,9 @@ namespace TencentCloud
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。
+                     * 最大可发起签署流程份数
+<br/>默认5份
+<br/>备注：发起签署流程数量超过此上限后，二维码自动失效。
                      */
                     int64_t m_maxFlowNum;
                     bool m_maxFlowNumHasBeenSet;
@@ -307,7 +321,8 @@ namespace TencentCloud
                     bool m_qrEffectiveDayHasBeenSet;
 
                     /**
-                     * 限制二维码用户条件
+                     * 指定的签署二维码签署人
+<br/>指定后，只允许知道的人操作和签署
                      */
                     std::vector<ApproverRestriction> m_restrictions;
                     bool m_restrictionsHasBeenSet;

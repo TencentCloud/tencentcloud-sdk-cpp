@@ -81,6 +81,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusResponse.h
   include/tencentcloud/ess/v20201111/model/FillApproverInfo.h
   include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
+  include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h
   include/tencentcloud/ess/v20201111/model/FailedDeleteStaffData.h
   include/tencentcloud/ess/v20201111/model/PdfVerifyResult.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h
@@ -129,6 +130,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateChannelSubOrganizationModifyQrCodeResponse.h
   include/tencentcloud/ess/v20201111/model/SuccessUpdateStaffData.h
+  include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesResponse.h
   include/tencentcloud/ess/v20201111/model/UploadFilesResponse.h
   include/tencentcloud/ess/v20201111/model/SuccessCreateStaffData.h
@@ -265,6 +267,7 @@ set(ess_src
   src/v20201111/model/DescribeUserAutoSignStatusResponse.cpp
   src/v20201111/model/FillApproverInfo.cpp
   src/v20201111/model/OccupiedSeal.cpp
+  src/v20201111/model/CreatePersonAuthCertificateImageResponse.cpp
   src/v20201111/model/FailedDeleteStaffData.cpp
   src/v20201111/model/PdfVerifyResult.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlResponse.cpp
@@ -313,6 +316,7 @@ set(ess_src
   src/v20201111/model/CreateIntegrationUserRolesRequest.cpp
   src/v20201111/model/CreateChannelSubOrganizationModifyQrCodeResponse.cpp
   src/v20201111/model/SuccessUpdateStaffData.cpp
+  src/v20201111/model/CreatePersonAuthCertificateImageRequest.cpp
   src/v20201111/model/CreateFlowByFilesResponse.cpp
   src/v20201111/model/UploadFilesResponse.cpp
   src/v20201111/model/SuccessCreateStaffData.cpp

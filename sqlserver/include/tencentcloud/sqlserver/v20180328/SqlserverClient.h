@@ -113,6 +113,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeIncrementalMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeIncrementalMigrationResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceByOrdersRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceByOrdersResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceParamRecordsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceParamsRequest.h>
@@ -394,6 +396,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIncrementalMigrationResponse> DescribeIncrementalMigrationOutcome;
                 typedef std::future<DescribeIncrementalMigrationOutcome> DescribeIncrementalMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeIncrementalMigrationRequest&, DescribeIncrementalMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIncrementalMigrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceByOrdersResponse> DescribeInstanceByOrdersOutcome;
+                typedef std::future<DescribeInstanceByOrdersOutcome> DescribeInstanceByOrdersOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeInstanceByOrdersRequest&, DescribeInstanceByOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceByOrdersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamRecordsResponse> DescribeInstanceParamRecordsOutcome;
                 typedef std::future<DescribeInstanceParamRecordsOutcome> DescribeInstanceParamRecordsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeInstanceParamRecordsRequest&, DescribeInstanceParamRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamRecordsAsyncHandler;
@@ -999,6 +1004,15 @@ namespace TencentCloud
                 DescribeIncrementalMigrationOutcome DescribeIncrementalMigration(const Model::DescribeIncrementalMigrationRequest &request);
                 void DescribeIncrementalMigrationAsync(const Model::DescribeIncrementalMigrationRequest& request, const DescribeIncrementalMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIncrementalMigrationOutcomeCallable DescribeIncrementalMigrationCallable(const Model::DescribeIncrementalMigrationRequest& request);
+
+                /**
+                 *本接口（DescribeInstanceByOrders）用于根据订单号查询资源ID
+                 * @param req DescribeInstanceByOrdersRequest
+                 * @return DescribeInstanceByOrdersOutcome
+                 */
+                DescribeInstanceByOrdersOutcome DescribeInstanceByOrders(const Model::DescribeInstanceByOrdersRequest &request);
+                void DescribeInstanceByOrdersAsync(const Model::DescribeInstanceByOrdersRequest& request, const DescribeInstanceByOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceByOrdersOutcomeCallable DescribeInstanceByOrdersCallable(const Model::DescribeInstanceByOrdersRequest& request);
 
                 /**
                  *该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。

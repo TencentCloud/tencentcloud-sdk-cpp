@@ -35,7 +35,8 @@ Device::Device() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_resourceHasBeenSet(false),
-    m_departmentHasBeenSet(false)
+    m_departmentHasBeenSet(false),
+    m_ipPortSetHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,19 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_departmentHasBeenSet = true;
     }
 
+    if (value.HasMember("IpPortSet") && !value["IpPortSet"].IsNull())
+    {
+        if (!value["IpPortSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Device.IpPortSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IpPortSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ipPortSet.push_back((*itr).GetString());
+        }
+        m_ipPortSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -352,6 +366,19 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_department.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ipPortSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpPortSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipPortSet.begin(); itr != m_ipPortSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -595,5 +622,21 @@ void Device::SetDepartment(const Department& _department)
 bool Device::DepartmentHasBeenSet() const
 {
     return m_departmentHasBeenSet;
+}
+
+vector<string> Device::GetIpPortSet() const
+{
+    return m_ipPortSet;
+}
+
+void Device::SetIpPortSet(const vector<string>& _ipPortSet)
+{
+    m_ipPortSet = _ipPortSet;
+    m_ipPortSetHasBeenSet = true;
+}
+
+bool Device::IpPortSetHasBeenSet() const
+{
+    return m_ipPortSetHasBeenSet;
 }
 

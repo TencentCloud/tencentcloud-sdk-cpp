@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 安卓加固结果
+                * Android加固结果
                 */
                 class AndroidResult : public AbstractModel
                 {
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool OpUinHasBeenSet() const;
 
                     /**
-                     * 获取应用类型：安卓-apk; 安卓-aab;
-                     * @return AppType 应用类型：安卓-apk; 安卓-aab;
+                     * 获取应用类型：android-apk; android-aab;
+                     * @return AppType 应用类型：android-apk; android-aab;
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置应用类型：安卓-apk; 安卓-aab;
-                     * @param _appType 应用类型：安卓-apk; 安卓-aab;
+                     * 设置应用类型：android-apk; android-aab;
+                     * @param _appType 应用类型：android-apk; android-aab;
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool CostTimeHasBeenSet() const;
 
                     /**
-                     * 获取在线加固-安卓应用原包下载链接
-                     * @return AppUrl 在线加固-安卓应用原包下载链接
+                     * 获取在线加固-android应用原包下载链接
+                     * @return AppUrl 在线加固-android应用原包下载链接
                      * 
                      */
                     std::string GetAppUrl() const;
 
                     /**
-                     * 设置在线加固-安卓应用原包下载链接
-                     * @param _appUrl 在线加固-安卓应用原包下载链接
+                     * 设置在线加固-android应用原包下载链接
+                     * @param _appUrl 在线加固-android应用原包下载链接
                      * 
                      */
                     void SetAppUrl(const std::string& _appUrl);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool AppUrlHasBeenSet() const;
 
                     /**
-                     * 获取在线加固-安卓应用文件MD5算法值
-                     * @return AppMd5 在线加固-安卓应用文件MD5算法值
+                     * 获取在线加固-android应用文件MD5算法值
+                     * @return AppMd5 在线加固-android应用文件MD5算法值
                      * 
                      */
                     std::string GetAppMd5() const;
 
                     /**
-                     * 设置在线加固-安卓应用文件MD5算法值
-                     * @param _appMd5 在线加固-安卓应用文件MD5算法值
+                     * 设置在线加固-android应用文件MD5算法值
+                     * @param _appMd5 在线加固-android应用文件MD5算法值
                      * 
                      */
                     void SetAppMd5(const std::string& _appMd5);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool AppMd5HasBeenSet() const;
 
                     /**
-                     * 获取在线加固-安卓应用应用名称
-                     * @return AppName 在线加固-安卓应用应用名称
+                     * 获取在线加固-android应用应用名称
+                     * @return AppName 在线加固-android应用应用名称
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置在线加固-安卓应用应用名称
-                     * @param _appName 在线加固-安卓应用应用名称
+                     * 设置在线加固-android应用应用名称
+                     * @param _appName 在线加固-android应用应用名称
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取在线加固-安卓应用版本；
-                     * @return AppVersion 在线加固-安卓应用版本；
+                     * 获取在线加固-android应用版本；
+                     * @return AppVersion 在线加固-android应用版本；
                      * 
                      */
                     std::string GetAppVersion() const;
 
                     /**
-                     * 设置在线加固-安卓应用版本；
-                     * @param _appVersion 在线加固-安卓应用版本；
+                     * 设置在线加固-android应用版本；
+                     * @param _appVersion 在线加固-android应用版本；
                      * 
                      */
                     void SetAppVersion(const std::string& _appVersion);
@@ -468,15 +468,15 @@ namespace TencentCloud
                     bool AppVersionHasBeenSet() const;
 
                     /**
-                     * 获取在线加固-安卓应用大小
-                     * @return AppSize 在线加固-安卓应用大小
+                     * 获取在线加固-android应用大小
+                     * @return AppSize 在线加固-android应用大小
                      * 
                      */
                     int64_t GetAppSize() const;
 
                     /**
-                     * 设置在线加固-安卓应用大小
-                     * @param _appSize 在线加固-安卓应用大小
+                     * 设置在线加固-android应用大小
+                     * @param _appSize 在线加固-android应用大小
                      * 
                      */
                     void SetAppSize(const int64_t& _appSize);
@@ -489,15 +489,15 @@ namespace TencentCloud
                     bool AppSizeHasBeenSet() const;
 
                     /**
-                     * 获取在线加固-安卓加固-腾讯云应用加固工具版本
-                     * @return OnlineToolVersion 在线加固-安卓加固-腾讯云应用加固工具版本
+                     * 获取在线加固-android加固-腾讯云应用加固工具版本
+                     * @return OnlineToolVersion 在线加固-android加固-腾讯云应用加固工具版本
                      * 
                      */
                     std::string GetOnlineToolVersion() const;
 
                     /**
-                     * 设置在线加固-安卓加固-腾讯云应用加固工具版本
-                     * @param _onlineToolVersion 在线加固-安卓加固-腾讯云应用加固工具版本
+                     * 设置在线加固-android加固-腾讯云应用加固工具版本
+                     * @param _onlineToolVersion 在线加固-android加固-腾讯云应用加固工具版本
                      * 
                      */
                     void SetOnlineToolVersion(const std::string& _onlineToolVersion);
@@ -510,15 +510,15 @@ namespace TencentCloud
                     bool OnlineToolVersionHasBeenSet() const;
 
                     /**
-                     * 获取在线加固-安卓加固，加固成功后文件md5算法值
-                     * @return EncryptAppMd5 在线加固-安卓加固，加固成功后文件md5算法值
+                     * 获取在线加固-android加固，加固成功后文件md5算法值
+                     * @return EncryptAppMd5 在线加固-android加固，加固成功后文件md5算法值
                      * 
                      */
                     std::string GetEncryptAppMd5() const;
 
                     /**
-                     * 设置在线加固-安卓加固，加固成功后文件md5算法值
-                     * @param _encryptAppMd5 在线加固-安卓加固，加固成功后文件md5算法值
+                     * 设置在线加固-android加固，加固成功后文件md5算法值
+                     * @param _encryptAppMd5 在线加固-android加固，加固成功后文件md5算法值
                      * 
                      */
                     void SetEncryptAppMd5(const std::string& _encryptAppMd5);
@@ -531,15 +531,15 @@ namespace TencentCloud
                     bool EncryptAppMd5HasBeenSet() const;
 
                     /**
-                     * 获取在线加固-安卓加固，加固成功后应用大小
-                     * @return EncryptAppSize 在线加固-安卓加固，加固成功后应用大小
+                     * 获取在线加固-android加固，加固成功后应用大小
+                     * @return EncryptAppSize 在线加固-android加固，加固成功后应用大小
                      * 
                      */
                     int64_t GetEncryptAppSize() const;
 
                     /**
-                     * 设置在线加固-安卓加固，加固成功后应用大小
-                     * @param _encryptAppSize 在线加固-安卓加固，加固成功后应用大小
+                     * 设置在线加固-android加固，加固成功后应用大小
+                     * @param _encryptAppSize 在线加固-android加固，加固成功后应用大小
                      * 
                      */
                     void SetEncryptAppSize(const int64_t& _encryptAppSize);
@@ -552,15 +552,15 @@ namespace TencentCloud
                     bool EncryptAppSizeHasBeenSet() const;
 
                     /**
-                     * 获取在线加固-安卓加固，加固包下载链接。
-                     * @return EncryptPkgUrl 在线加固-安卓加固，加固包下载链接。
+                     * 获取在线加固-android加固，加固包下载链接。
+                     * @return EncryptPkgUrl 在线加固-android加固，加固包下载链接。
                      * 
                      */
                     std::string GetEncryptPkgUrl() const;
 
                     /**
-                     * 设置在线加固-安卓加固，加固包下载链接。
-                     * @param _encryptPkgUrl 在线加固-安卓加固，加固包下载链接。
+                     * 设置在线加固-android加固，加固包下载链接。
+                     * @param _encryptPkgUrl 在线加固-android加固，加固包下载链接。
                      * 
                      */
                     void SetEncryptPkgUrl(const std::string& _encryptPkgUrl);
@@ -573,15 +573,15 @@ namespace TencentCloud
                     bool EncryptPkgUrlHasBeenSet() const;
 
                     /**
-                     * 获取输出工具-安卓加固-腾讯云输出工具版本
-                     * @return OutputToolVersion 输出工具-安卓加固-腾讯云输出工具版本
+                     * 获取输出工具-android加固-腾讯云输出工具版本
+                     * @return OutputToolVersion 输出工具-android加固-腾讯云输出工具版本
                      * 
                      */
                     std::string GetOutputToolVersion() const;
 
                     /**
-                     * 设置输出工具-安卓加固-腾讯云输出工具版本
-                     * @param _outputToolVersion 输出工具-安卓加固-腾讯云输出工具版本
+                     * 设置输出工具-android加固-腾讯云输出工具版本
+                     * @param _outputToolVersion 输出工具-android加固-腾讯云输出工具版本
                      * 
                      */
                     void SetOutputToolVersion(const std::string& _outputToolVersion);
@@ -594,15 +594,15 @@ namespace TencentCloud
                     bool OutputToolVersionHasBeenSet() const;
 
                     /**
-                     * 获取输出工具-安卓加固-工具大小
-                     * @return OutputToolSize 输出工具-安卓加固-工具大小
+                     * 获取输出工具-android加固-工具大小
+                     * @return OutputToolSize 输出工具-android加固-工具大小
                      * 
                      */
                     int64_t GetOutputToolSize() const;
 
                     /**
-                     * 设置输出工具-安卓加固-工具大小
-                     * @param _outputToolSize 输出工具-安卓加固-工具大小
+                     * 设置输出工具-android加固-工具大小
+                     * @param _outputToolSize 输出工具-android加固-工具大小
                      * 
                      */
                     void SetOutputToolSize(const int64_t& _outputToolSize);
@@ -615,15 +615,15 @@ namespace TencentCloud
                     bool OutputToolSizeHasBeenSet() const;
 
                     /**
-                     * 获取输出工具-安卓加固-工具输出时间
-                     * @return ToolOutputTime 输出工具-安卓加固-工具输出时间
+                     * 获取输出工具-android加固-工具输出时间
+                     * @return ToolOutputTime 输出工具-android加固-工具输出时间
                      * 
                      */
                     std::string GetToolOutputTime() const;
 
                     /**
-                     * 设置输出工具-安卓加固-工具输出时间
-                     * @param _toolOutputTime 输出工具-安卓加固-工具输出时间
+                     * 设置输出工具-android加固-工具输出时间
+                     * @param _toolOutputTime 输出工具-android加固-工具输出时间
                      * 
                      */
                     void SetToolOutputTime(const std::string& _toolOutputTime);
@@ -636,15 +636,15 @@ namespace TencentCloud
                     bool ToolOutputTimeHasBeenSet() const;
 
                     /**
-                     * 获取输出工具-安卓加固-工具到期时间
-                     * @return ToolExpireTime 输出工具-安卓加固-工具到期时间
+                     * 获取输出工具-android加固-工具到期时间
+                     * @return ToolExpireTime 输出工具-android加固-工具到期时间
                      * 
                      */
                     std::string GetToolExpireTime() const;
 
                     /**
-                     * 设置输出工具-安卓加固-工具到期时间
-                     * @param _toolExpireTime 输出工具-安卓加固-工具到期时间
+                     * 设置输出工具-android加固-工具到期时间
+                     * @param _toolExpireTime 输出工具-android加固-工具到期时间
                      * 
                      */
                     void SetToolExpireTime(const std::string& _toolExpireTime);
@@ -657,15 +657,15 @@ namespace TencentCloud
                     bool ToolExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取输出工具-安卓加固-输出工具下载链接
-                     * @return OutputToolUrl 输出工具-安卓加固-输出工具下载链接
+                     * 获取输出工具-android加固-输出工具下载链接
+                     * @return OutputToolUrl 输出工具-android加固-输出工具下载链接
                      * 
                      */
                     std::string GetOutputToolUrl() const;
 
                     /**
-                     * 设置输出工具-安卓加固-输出工具下载链接
-                     * @param _outputToolUrl 输出工具-安卓加固-输出工具下载链接
+                     * 设置输出工具-android加固-输出工具下载链接
+                     * @param _outputToolUrl 输出工具-android加固-输出工具下载链接
                      * 
                      */
                     void SetOutputToolUrl(const std::string& _outputToolUrl);
@@ -678,15 +678,15 @@ namespace TencentCloud
                     bool OutputToolUrlHasBeenSet() const;
 
                     /**
-                     * 获取本次安卓加固策略信息
-                     * @return AndroidPlan 本次安卓加固策略信息
+                     * 获取本次android加固策略信息
+                     * @return AndroidPlan 本次android加固策略信息
                      * 
                      */
                     AndroidPlan GetAndroidPlan() const;
 
                     /**
-                     * 设置本次安卓加固策略信息
-                     * @param _androidPlan 本次安卓加固策略信息
+                     * 设置本次android加固策略信息
+                     * @param _androidPlan 本次android加固策略信息
                      * 
                      */
                     void SetAndroidPlan(const AndroidPlan& _androidPlan);
@@ -725,7 +725,7 @@ namespace TencentCloud
                     bool m_opUinHasBeenSet;
 
                     /**
-                     * 应用类型：安卓-apk; 安卓-aab;
+                     * 应用类型：android-apk; android-aab;
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
@@ -797,91 +797,91 @@ namespace TencentCloud
                     bool m_costTimeHasBeenSet;
 
                     /**
-                     * 在线加固-安卓应用原包下载链接
+                     * 在线加固-android应用原包下载链接
                      */
                     std::string m_appUrl;
                     bool m_appUrlHasBeenSet;
 
                     /**
-                     * 在线加固-安卓应用文件MD5算法值
+                     * 在线加固-android应用文件MD5算法值
                      */
                     std::string m_appMd5;
                     bool m_appMd5HasBeenSet;
 
                     /**
-                     * 在线加固-安卓应用应用名称
+                     * 在线加固-android应用应用名称
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 在线加固-安卓应用版本；
+                     * 在线加固-android应用版本；
                      */
                     std::string m_appVersion;
                     bool m_appVersionHasBeenSet;
 
                     /**
-                     * 在线加固-安卓应用大小
+                     * 在线加固-android应用大小
                      */
                     int64_t m_appSize;
                     bool m_appSizeHasBeenSet;
 
                     /**
-                     * 在线加固-安卓加固-腾讯云应用加固工具版本
+                     * 在线加固-android加固-腾讯云应用加固工具版本
                      */
                     std::string m_onlineToolVersion;
                     bool m_onlineToolVersionHasBeenSet;
 
                     /**
-                     * 在线加固-安卓加固，加固成功后文件md5算法值
+                     * 在线加固-android加固，加固成功后文件md5算法值
                      */
                     std::string m_encryptAppMd5;
                     bool m_encryptAppMd5HasBeenSet;
 
                     /**
-                     * 在线加固-安卓加固，加固成功后应用大小
+                     * 在线加固-android加固，加固成功后应用大小
                      */
                     int64_t m_encryptAppSize;
                     bool m_encryptAppSizeHasBeenSet;
 
                     /**
-                     * 在线加固-安卓加固，加固包下载链接。
+                     * 在线加固-android加固，加固包下载链接。
                      */
                     std::string m_encryptPkgUrl;
                     bool m_encryptPkgUrlHasBeenSet;
 
                     /**
-                     * 输出工具-安卓加固-腾讯云输出工具版本
+                     * 输出工具-android加固-腾讯云输出工具版本
                      */
                     std::string m_outputToolVersion;
                     bool m_outputToolVersionHasBeenSet;
 
                     /**
-                     * 输出工具-安卓加固-工具大小
+                     * 输出工具-android加固-工具大小
                      */
                     int64_t m_outputToolSize;
                     bool m_outputToolSizeHasBeenSet;
 
                     /**
-                     * 输出工具-安卓加固-工具输出时间
+                     * 输出工具-android加固-工具输出时间
                      */
                     std::string m_toolOutputTime;
                     bool m_toolOutputTimeHasBeenSet;
 
                     /**
-                     * 输出工具-安卓加固-工具到期时间
+                     * 输出工具-android加固-工具到期时间
                      */
                     std::string m_toolExpireTime;
                     bool m_toolExpireTimeHasBeenSet;
 
                     /**
-                     * 输出工具-安卓加固-输出工具下载链接
+                     * 输出工具-android加固-输出工具下载链接
                      */
                     std::string m_outputToolUrl;
                     bool m_outputToolUrlHasBeenSet;
 
                     /**
-                     * 本次安卓加固策略信息
+                     * 本次android加固策略信息
                      */
                     AndroidPlan m_androidPlan;
                     bool m_androidPlanHasBeenSet;

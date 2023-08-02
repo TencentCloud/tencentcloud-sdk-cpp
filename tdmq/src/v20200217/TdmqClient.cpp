@@ -1459,6 +1459,49 @@ TdmqClient::DeleteRocketMQTopicOutcomeCallable TdmqClient::DeleteRocketMQTopicCa
     return task->get_future();
 }
 
+TdmqClient::DeleteRocketMQVipInstanceOutcome TdmqClient::DeleteRocketMQVipInstance(const DeleteRocketMQVipInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRocketMQVipInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRocketMQVipInstanceResponse rsp = DeleteRocketMQVipInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRocketMQVipInstanceOutcome(rsp);
+        else
+            return DeleteRocketMQVipInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRocketMQVipInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteRocketMQVipInstanceAsync(const DeleteRocketMQVipInstanceRequest& request, const DeleteRocketMQVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRocketMQVipInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteRocketMQVipInstanceOutcomeCallable TdmqClient::DeleteRocketMQVipInstanceCallable(const DeleteRocketMQVipInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRocketMQVipInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRocketMQVipInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DeleteRolesOutcome TdmqClient::DeleteRoles(const DeleteRolesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRoles");

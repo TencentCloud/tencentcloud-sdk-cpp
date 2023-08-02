@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PlatformTypeHasBeenSet() const;
 
                     /**
-                     * 获取平台类型描述：  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @return PlatformTypeDesc 平台类型描述：  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 获取平台类型描述：  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @return PlatformTypeDesc 平台类型描述：  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     std::string GetPlatformTypeDesc() const;
 
                     /**
-                     * 设置平台类型描述：  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
-                     * @param _platformTypeDesc 平台类型描述：  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 设置平台类型描述：  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * @param _platformTypeDesc 平台类型描述：  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      * 
                      */
                     void SetPlatformTypeDesc(const std::string& _platformTypeDesc);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool OrderTypeDescHasBeenSet() const;
 
                     /**
-                     * 获取安卓包年收费加固的包名
-                     * @return AppPkgName 安卓包年收费加固的包名
+                     * 获取android包年收费加固的包名
+                     * @return AppPkgName android包年收费加固的包名
                      * 
                      */
                     std::string GetAppPkgName() const;
 
                     /**
-                     * 设置安卓包年收费加固的包名
-                     * @param _appPkgName 安卓包年收费加固的包名
+                     * 设置android包年收费加固的包名
+                     * @param _appPkgName android包年收费加固的包名
                      * 
                      */
                     void SetAppPkgName(const std::string& _appPkgName);
@@ -485,7 +485,7 @@ namespace TencentCloud
                     bool m_platformTypeHasBeenSet;
 
                     /**
-                     * 平台类型描述：  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
+                     * 平台类型描述：  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固
                      */
                     std::string m_platformTypeDesc;
                     bool m_platformTypeDescHasBeenSet;
@@ -503,7 +503,7 @@ namespace TencentCloud
                     bool m_orderTypeDescHasBeenSet;
 
                     /**
-                     * 安卓包年收费加固的包名
+                     * android包年收费加固的包名
                      */
                     std::string m_appPkgName;
                     bool m_appPkgNameHasBeenSet;

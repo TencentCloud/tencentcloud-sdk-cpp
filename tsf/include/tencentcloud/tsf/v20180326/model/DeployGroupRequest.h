@@ -444,6 +444,27 @@ namespace TencentCloud
                      */
                     bool WarmupSettingHasBeenSet() const;
 
+                    /**
+                     * 获取开启分批健康检查
+                     * @return EnableBatchHealthCheck 开启分批健康检查
+                     * 
+                     */
+                    bool GetEnableBatchHealthCheck() const;
+
+                    /**
+                     * 设置开启分批健康检查
+                     * @param _enableBatchHealthCheck 开启分批健康检查
+                     * 
+                     */
+                    void SetEnableBatchHealthCheck(const bool& _enableBatchHealthCheck);
+
+                    /**
+                     * 判断参数 EnableBatchHealthCheck 是否已赋值
+                     * @return EnableBatchHealthCheck 是否已赋值
+                     * 
+                     */
+                    bool EnableBatchHealthCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +580,12 @@ namespace TencentCloud
                      */
                     WarmupSetting m_warmupSetting;
                     bool m_warmupSettingHasBeenSet;
+
+                    /**
+                     * 开启分批健康检查
+                     */
+                    bool m_enableBatchHealthCheck;
+                    bool m_enableBatchHealthCheckHasBeenSet;
 
                 };
             }

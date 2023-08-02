@@ -41,7 +41,8 @@ DeployGroupRequest::DeployGroupRequest() :
     m_jdkNameHasBeenSet(false),
     m_jdkVersionHasBeenSet(false),
     m_agentProfileListHasBeenSet(false),
-    m_warmupSettingHasBeenSet(false)
+    m_warmupSettingHasBeenSet(false),
+    m_enableBatchHealthCheckHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,14 @@ string DeployGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_warmupSetting.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableBatchHealthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBatchHealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableBatchHealthCheck, allocator);
     }
 
 
@@ -528,6 +537,22 @@ void DeployGroupRequest::SetWarmupSetting(const WarmupSetting& _warmupSetting)
 bool DeployGroupRequest::WarmupSettingHasBeenSet() const
 {
     return m_warmupSettingHasBeenSet;
+}
+
+bool DeployGroupRequest::GetEnableBatchHealthCheck() const
+{
+    return m_enableBatchHealthCheck;
+}
+
+void DeployGroupRequest::SetEnableBatchHealthCheck(const bool& _enableBatchHealthCheck)
+{
+    m_enableBatchHealthCheck = _enableBatchHealthCheck;
+    m_enableBatchHealthCheckHasBeenSet = true;
+}
+
+bool DeployGroupRequest::EnableBatchHealthCheckHasBeenSet() const
+{
+    return m_enableBatchHealthCheckHasBeenSet;
 }
 
 

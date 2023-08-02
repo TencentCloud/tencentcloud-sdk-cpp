@@ -372,6 +372,31 @@ namespace TencentCloud
                      */
                     bool DepartmentHasBeenSet() const;
 
+                    /**
+                     * 获取数据库资产的多节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpPortSet 数据库资产的多节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetIpPortSet() const;
+
+                    /**
+                     * 设置数据库资产的多节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ipPortSet 数据库资产的多节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIpPortSet(const std::vector<std::string>& _ipPortSet);
+
+                    /**
+                     * 判断参数 IpPortSet 是否已赋值
+                     * @return IpPortSet 是否已赋值
+                     * 
+                     */
+                    bool IpPortSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -465,6 +490,13 @@ namespace TencentCloud
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
+
+                    /**
+                     * 数据库资产的多节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_ipPortSet;
+                    bool m_ipPortSetHasBeenSet;
 
                 };
             }

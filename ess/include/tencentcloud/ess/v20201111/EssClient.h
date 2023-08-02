@@ -69,6 +69,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignRequest.h>
@@ -224,6 +226,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOrganizationBatchSignUrlResponse> CreateOrganizationBatchSignUrlOutcome;
                 typedef std::future<CreateOrganizationBatchSignUrlOutcome> CreateOrganizationBatchSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateOrganizationBatchSignUrlRequest&, CreateOrganizationBatchSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationBatchSignUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePersonAuthCertificateImageResponse> CreatePersonAuthCertificateImageOutcome;
+                typedef std::future<CreatePersonAuthCertificateImageOutcome> CreatePersonAuthCertificateImageOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreatePersonAuthCertificateImageRequest&, CreatePersonAuthCertificateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonAuthCertificateImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrepareFlowResponse> CreatePrepareFlowOutcome;
                 typedef std::future<CreatePrepareFlowOutcome> CreatePrepareFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreatePrepareFlowRequest&, CreatePrepareFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrepareFlowAsyncHandler;
@@ -590,6 +595,15 @@ PDF资源Id 通过上传文件接口获取
                 CreateOrganizationBatchSignUrlOutcome CreateOrganizationBatchSignUrl(const Model::CreateOrganizationBatchSignUrlRequest &request);
                 void CreateOrganizationBatchSignUrlAsync(const Model::CreateOrganizationBatchSignUrlRequest& request, const CreateOrganizationBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateOrganizationBatchSignUrlOutcomeCallable CreateOrganizationBatchSignUrlCallable(const Model::CreateOrganizationBatchSignUrlRequest& request);
+
+                /**
+                 *本接口（CreatePersonAuthCertificateImage）用于创建个人用户证书证明图片
+                 * @param req CreatePersonAuthCertificateImageRequest
+                 * @return CreatePersonAuthCertificateImageOutcome
+                 */
+                CreatePersonAuthCertificateImageOutcome CreatePersonAuthCertificateImage(const Model::CreatePersonAuthCertificateImageRequest &request);
+                void CreatePersonAuthCertificateImageAsync(const Model::CreatePersonAuthCertificateImageRequest& request, const CreatePersonAuthCertificateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePersonAuthCertificateImageOutcomeCallable CreatePersonAuthCertificateImageCallable(const Model::CreatePersonAuthCertificateImageRequest& request);
 
                 /**
                  *创建快速发起流程

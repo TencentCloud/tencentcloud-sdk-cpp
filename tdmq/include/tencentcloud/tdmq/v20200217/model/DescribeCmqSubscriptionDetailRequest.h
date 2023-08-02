@@ -126,6 +126,52 @@ namespace TencentCloud
                      */
                     bool SubscriptionNameHasBeenSet() const;
 
+                    /**
+                     * 获取队列名称，订阅绑定的endpoint
+                     * @return QueueName 队列名称，订阅绑定的endpoint
+                     * 
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置队列名称，订阅绑定的endpoint
+                     * @param _queueName 队列名称，订阅绑定的endpoint
+                     * 
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     * 
+                     */
+                    bool QueueNameHasBeenSet() const;
+
+                    /**
+                     * 获取查询类型。取值：（1）topic；（2）queue。
+默认值是topic。如果 queryType 是 topic，则查询主题下的订阅列表；如果 queryType 是 queue，则查询队列绑定的订阅列表。
+                     * @return QueryType 查询类型。取值：（1）topic；（2）queue。
+默认值是topic。如果 queryType 是 topic，则查询主题下的订阅列表；如果 queryType 是 queue，则查询队列绑定的订阅列表。
+                     * 
+                     */
+                    std::string GetQueryType() const;
+
+                    /**
+                     * 设置查询类型。取值：（1）topic；（2）queue。
+默认值是topic。如果 queryType 是 topic，则查询主题下的订阅列表；如果 queryType 是 queue，则查询队列绑定的订阅列表。
+                     * @param _queryType 查询类型。取值：（1）topic；（2）queue。
+默认值是topic。如果 queryType 是 topic，则查询主题下的订阅列表；如果 queryType 是 queue，则查询队列绑定的订阅列表。
+                     * 
+                     */
+                    void SetQueryType(const std::string& _queryType);
+
+                    /**
+                     * 判断参数 QueryType 是否已赋值
+                     * @return QueryType 是否已赋值
+                     * 
+                     */
+                    bool QueryTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +197,19 @@ namespace TencentCloud
                      */
                     std::string m_subscriptionName;
                     bool m_subscriptionNameHasBeenSet;
+
+                    /**
+                     * 队列名称，订阅绑定的endpoint
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
+
+                    /**
+                     * 查询类型。取值：（1）topic；（2）queue。
+默认值是topic。如果 queryType 是 topic，则查询主题下的订阅列表；如果 queryType 是 queue，则查询队列绑定的订阅列表。
+                     */
+                    std::string m_queryType;
+                    bool m_queryTypeHasBeenSet;
 
                 };
             }

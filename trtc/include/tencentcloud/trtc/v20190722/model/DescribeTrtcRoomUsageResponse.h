@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取房间维度用量数据，csv文件格式。
-                     * @return Data 房间维度用量数据，csv文件格式。
+                     * 获取房间维度用量数据，csv文件格式，单位：秒。
+                     * @return Data 房间维度用量数据，csv文件格式，单位：秒。
                      * 
                      */
                     std::string GetData() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 房间维度用量数据，csv文件格式。
+                     * 房间维度用量数据，csv文件格式，单位：秒。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

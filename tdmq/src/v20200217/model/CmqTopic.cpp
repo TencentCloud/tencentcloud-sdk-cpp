@@ -36,7 +36,8 @@ CmqTopic::CmqTopic() :
     m_tenantIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_brokerTypeHasBeenSet(false)
+    m_brokerTypeHasBeenSet(false),
+    m_subscriptionCountHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
         m_brokerTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubscriptionCount") && !value["SubscriptionCount"].IsNull())
+    {
+        if (!value["SubscriptionCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.SubscriptionCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscriptionCount = value["SubscriptionCount"].GetInt64();
+        m_subscriptionCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +366,14 @@ void CmqTopic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "BrokerType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_brokerType, allocator);
+    }
+
+    if (m_subscriptionCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subscriptionCount, allocator);
     }
 
 }
@@ -614,5 +633,21 @@ void CmqTopic::SetBrokerType(const int64_t& _brokerType)
 bool CmqTopic::BrokerTypeHasBeenSet() const
 {
     return m_brokerTypeHasBeenSet;
+}
+
+int64_t CmqTopic::GetSubscriptionCount() const
+{
+    return m_subscriptionCount;
+}
+
+void CmqTopic::SetSubscriptionCount(const int64_t& _subscriptionCount)
+{
+    m_subscriptionCount = _subscriptionCount;
+    m_subscriptionCountHasBeenSet = true;
+}
+
+bool CmqTopic::SubscriptionCountHasBeenSet() const
+{
+    return m_subscriptionCountHasBeenSet;
 }
 

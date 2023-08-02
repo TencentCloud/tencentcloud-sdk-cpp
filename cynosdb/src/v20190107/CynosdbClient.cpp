@@ -4598,6 +4598,49 @@ CynosdbClient::OpenClusterPasswordComplexityOutcomeCallable CynosdbClient::OpenC
     return task->get_future();
 }
 
+CynosdbClient::OpenClusterReadOnlyInstanceGroupAccessOutcome CynosdbClient::OpenClusterReadOnlyInstanceGroupAccess(const OpenClusterReadOnlyInstanceGroupAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenClusterReadOnlyInstanceGroupAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenClusterReadOnlyInstanceGroupAccessResponse rsp = OpenClusterReadOnlyInstanceGroupAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenClusterReadOnlyInstanceGroupAccessOutcome(rsp);
+        else
+            return OpenClusterReadOnlyInstanceGroupAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenClusterReadOnlyInstanceGroupAccessOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::OpenClusterReadOnlyInstanceGroupAccessAsync(const OpenClusterReadOnlyInstanceGroupAccessRequest& request, const OpenClusterReadOnlyInstanceGroupAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenClusterReadOnlyInstanceGroupAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::OpenClusterReadOnlyInstanceGroupAccessOutcomeCallable CynosdbClient::OpenClusterReadOnlyInstanceGroupAccessCallable(const OpenClusterReadOnlyInstanceGroupAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenClusterReadOnlyInstanceGroupAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenClusterReadOnlyInstanceGroupAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::OpenReadOnlyInstanceExclusiveAccessOutcome CynosdbClient::OpenReadOnlyInstanceExclusiveAccess(const OpenReadOnlyInstanceExclusiveAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "OpenReadOnlyInstanceExclusiveAccess");

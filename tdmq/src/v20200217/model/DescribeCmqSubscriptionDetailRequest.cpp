@@ -26,7 +26,9 @@ DescribeCmqSubscriptionDetailRequest::DescribeCmqSubscriptionDetailRequest() :
     m_topicNameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false)
+    m_subscriptionNameHasBeenSet(false),
+    m_queueNameHasBeenSet(false),
+    m_queryTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string DescribeCmqSubscriptionDetailRequest::ToJsonString() const
         string key = "SubscriptionName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subscriptionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +157,38 @@ void DescribeCmqSubscriptionDetailRequest::SetSubscriptionName(const string& _su
 bool DescribeCmqSubscriptionDetailRequest::SubscriptionNameHasBeenSet() const
 {
     return m_subscriptionNameHasBeenSet;
+}
+
+string DescribeCmqSubscriptionDetailRequest::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void DescribeCmqSubscriptionDetailRequest::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool DescribeCmqSubscriptionDetailRequest::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
+}
+
+string DescribeCmqSubscriptionDetailRequest::GetQueryType() const
+{
+    return m_queryType;
+}
+
+void DescribeCmqSubscriptionDetailRequest::SetQueryType(const string& _queryType)
+{
+    m_queryType = _queryType;
+    m_queryTypeHasBeenSet = true;
+}
+
+bool DescribeCmqSubscriptionDetailRequest::QueryTypeHasBeenSet() const
+{
+    return m_queryTypeHasBeenSet;
 }
 
 

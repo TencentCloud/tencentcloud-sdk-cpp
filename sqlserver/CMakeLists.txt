@@ -79,6 +79,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/SecurityGroupPolicy.h
   include/tencentcloud/sqlserver/v20180328/model/StepDetail.h
   include/tencentcloud/sqlserver/v20180328/model/ParameterDetail.h
+  include/tencentcloud/sqlserver/v20180328/model/DescribeInstanceByOrdersRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBusinessIntelligenceFileResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ZoneInfo.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyMaintenanceSpanResponse.h
@@ -140,6 +141,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeXEventsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBsNormalResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeMigrationsRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/DealInstance.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBCharsetsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeInstanceParamRecordsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusRequest.h
@@ -184,6 +186,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeUploadIncrementalInfoRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupUploadSizeResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyDatabaseCDCRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/DescribeInstanceByOrdersResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyInstanceParamResponse.h
   include/tencentcloud/sqlserver/v20180328/model/InquiryPriceRenewDBInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/StartIncrementalMigrationResponse.h
@@ -364,6 +367,7 @@ set(sqlserver_src
   src/v20180328/model/SecurityGroupPolicy.cpp
   src/v20180328/model/StepDetail.cpp
   src/v20180328/model/ParameterDetail.cpp
+  src/v20180328/model/DescribeInstanceByOrdersRequest.cpp
   src/v20180328/model/DescribeBusinessIntelligenceFileResponse.cpp
   src/v20180328/model/ZoneInfo.cpp
   src/v20180328/model/ModifyMaintenanceSpanResponse.cpp
@@ -425,6 +429,7 @@ set(sqlserver_src
   src/v20180328/model/DescribeXEventsResponse.cpp
   src/v20180328/model/DescribeDBsNormalResponse.cpp
   src/v20180328/model/DescribeMigrationsRequest.cpp
+  src/v20180328/model/DealInstance.cpp
   src/v20180328/model/DescribeDBCharsetsRequest.cpp
   src/v20180328/model/DescribeInstanceParamRecordsRequest.cpp
   src/v20180328/model/DescribeFlowStatusRequest.cpp
@@ -469,6 +474,7 @@ set(sqlserver_src
   src/v20180328/model/DescribeUploadIncrementalInfoRequest.cpp
   src/v20180328/model/DescribeBackupUploadSizeResponse.cpp
   src/v20180328/model/ModifyDatabaseCDCRequest.cpp
+  src/v20180328/model/DescribeInstanceByOrdersResponse.cpp
   src/v20180328/model/ModifyInstanceParamResponse.cpp
   src/v20180328/model/InquiryPriceRenewDBInstanceRequest.cpp
   src/v20180328/model/StartIncrementalMigrationResponse.cpp

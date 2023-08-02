@@ -2147,6 +2147,49 @@ ClsClient::DescribeKafkaRechargesOutcomeCallable ClsClient::DescribeKafkaRecharg
     return task->get_future();
 }
 
+ClsClient::DescribeKafkaUserOutcome ClsClient::DescribeKafkaUser(const DescribeKafkaUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKafkaUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKafkaUserResponse rsp = DescribeKafkaUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKafkaUserOutcome(rsp);
+        else
+            return DescribeKafkaUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKafkaUserOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeKafkaUserAsync(const DescribeKafkaUserRequest& request, const DescribeKafkaUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKafkaUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeKafkaUserOutcomeCallable ClsClient::DescribeKafkaUserCallable(const DescribeKafkaUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKafkaUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKafkaUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeLogContextOutcome ClsClient::DescribeLogContext(const DescribeLogContextRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogContext");

@@ -1029,6 +1029,49 @@ EssClient::CreateOrganizationBatchSignUrlOutcomeCallable EssClient::CreateOrgani
     return task->get_future();
 }
 
+EssClient::CreatePersonAuthCertificateImageOutcome EssClient::CreatePersonAuthCertificateImage(const CreatePersonAuthCertificateImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePersonAuthCertificateImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePersonAuthCertificateImageResponse rsp = CreatePersonAuthCertificateImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePersonAuthCertificateImageOutcome(rsp);
+        else
+            return CreatePersonAuthCertificateImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePersonAuthCertificateImageOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreatePersonAuthCertificateImageAsync(const CreatePersonAuthCertificateImageRequest& request, const CreatePersonAuthCertificateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePersonAuthCertificateImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreatePersonAuthCertificateImageOutcomeCallable EssClient::CreatePersonAuthCertificateImageCallable(const CreatePersonAuthCertificateImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePersonAuthCertificateImageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePersonAuthCertificateImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreatePrepareFlowOutcome EssClient::CreatePrepareFlow(const CreatePrepareFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrepareFlow");

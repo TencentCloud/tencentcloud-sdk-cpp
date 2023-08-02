@@ -1000,6 +1000,31 @@ namespace TencentCloud
                      */
                     bool GatewayConfigHasBeenSet() const;
 
+                    /**
+                     * 获取批次是否开启健康检查
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableBatchHealthCheck 批次是否开启健康检查
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableBatchHealthCheck() const;
+
+                    /**
+                     * 设置批次是否开启健康检查
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableBatchHealthCheck 批次是否开启健康检查
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableBatchHealthCheck(const bool& _enableBatchHealthCheck);
+
+                    /**
+                     * 判断参数 EnableBatchHealthCheck 是否已赋值
+                     * @return EnableBatchHealthCheck 是否已赋值
+                     * 
+                     */
+                    bool EnableBatchHealthCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1267,6 +1292,13 @@ namespace TencentCloud
                      */
                     GatewayConfig m_gatewayConfig;
                     bool m_gatewayConfigHasBeenSet;
+
+                    /**
+                     * 批次是否开启健康检查
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableBatchHealthCheck;
+                    bool m_enableBatchHealthCheckHasBeenSet;
 
                 };
             }

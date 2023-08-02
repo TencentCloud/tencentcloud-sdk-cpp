@@ -77,6 +77,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeCosRechargesRequest.h
   include/tencentcloud/cls/v20201016/model/MetaTagInfo.h
   include/tencentcloud/cls/v20201016/model/CreateCosRechargeRequest.h
+  include/tencentcloud/cls/v20201016/model/DescribeKafkaUserRequest.h
   include/tencentcloud/cls/v20201016/model/ExtractRuleInfo.h
   include/tencentcloud/cls/v20201016/model/TopicInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteDataTransformResponse.h
@@ -242,6 +243,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CheckRechargeKafkaServerResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyCosRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeLogsetsRequest.h
+  include/tencentcloud/cls/v20201016/model/DescribeKafkaUserResponse.h
   include/tencentcloud/cls/v20201016/model/ParquetInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteTopicResponse.h
   include/tencentcloud/cls/v20201016/model/CosRechargeInfo.h
@@ -317,6 +319,7 @@ set(cls_src
   src/v20201016/model/DescribeCosRechargesRequest.cpp
   src/v20201016/model/MetaTagInfo.cpp
   src/v20201016/model/CreateCosRechargeRequest.cpp
+  src/v20201016/model/DescribeKafkaUserRequest.cpp
   src/v20201016/model/ExtractRuleInfo.cpp
   src/v20201016/model/TopicInfo.cpp
   src/v20201016/model/DeleteDataTransformResponse.cpp
@@ -482,6 +485,7 @@ set(cls_src
   src/v20201016/model/CheckRechargeKafkaServerResponse.cpp
   src/v20201016/model/ModifyCosRechargeRequest.cpp
   src/v20201016/model/DescribeLogsetsRequest.cpp
+  src/v20201016/model/DescribeKafkaUserResponse.cpp
   src/v20201016/model/ParquetInfo.cpp
   src/v20201016/model/DeleteTopicResponse.cpp
   src/v20201016/model/CosRechargeInfo.cpp

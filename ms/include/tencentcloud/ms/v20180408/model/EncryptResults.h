@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台类型枚举值  1-android安卓加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
-                     * @return PlatformType 平台类型枚举值  1-android安卓加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
+                     * 获取平台类型枚举值  1-android加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
+                     * @return PlatformType 平台类型枚举值  1-android加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
                      * 
                      */
                     int64_t GetPlatformType() const;
 
                     /**
-                     * 设置平台类型枚举值  1-android安卓加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
-                     * @param _platformType 平台类型枚举值  1-android安卓加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
+                     * 设置平台类型枚举值  1-android加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
+                     * @param _platformType 平台类型枚举值  1-android加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
                      * 
                      */
                     void SetPlatformType(const int64_t& _platformType);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool PlatformTypeHasBeenSet() const;
 
                     /**
-                     * 获取平台类型描述  1-android安卓加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
-                     * @return PlatformDesc 平台类型描述  1-android安卓加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
+                     * 获取平台类型描述  1-android加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
+                     * @return PlatformDesc 平台类型描述  1-android加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
                      * 
                      */
                     std::string GetPlatformDesc() const;
 
                     /**
-                     * 设置平台类型描述  1-android安卓加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
-                     * @param _platformDesc 平台类型描述  1-android安卓加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
+                     * 设置平台类型描述  1-android加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
+                     * @param _platformDesc 平台类型描述  1-android加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
                      * 
                      */
                     void SetPlatformDesc(const std::string& _platformDesc);
@@ -219,18 +219,18 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取对应PlatformType平台类型值   1-android安卓加固结果
+                     * 获取对应PlatformType平台类型值   1-android加固结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AndroidResult 对应PlatformType平台类型值   1-android安卓加固结果
+                     * @return AndroidResult 对应PlatformType平台类型值   1-android加固结果
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AndroidResult GetAndroidResult() const;
 
                     /**
-                     * 设置对应PlatformType平台类型值   1-android安卓加固结果
+                     * 设置对应PlatformType平台类型值   1-android加固结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _androidResult 对应PlatformType平台类型值   1-android安卓加固结果
+                     * @param _androidResult 对应PlatformType平台类型值   1-android加固结果
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -321,13 +321,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台类型枚举值  1-android安卓加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
+                     * 平台类型枚举值  1-android加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
                      */
                     int64_t m_platformType;
                     bool m_platformTypeHasBeenSet;
 
                     /**
-                     * 平台类型描述  1-android安卓加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
+                     * 平台类型描述  1-android加固   2-ios源码混淆  3-sdk加固  4-applet小程序加固
                      */
                     std::string m_platformDesc;
                     bool m_platformDescHasBeenSet;
@@ -369,7 +369,7 @@ namespace TencentCloud
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 对应PlatformType平台类型值   1-android安卓加固结果
+                     * 对应PlatformType平台类型值   1-android加固结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AndroidResult m_androidResult;

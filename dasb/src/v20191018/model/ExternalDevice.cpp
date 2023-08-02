@@ -25,7 +25,8 @@ ExternalDevice::ExternalDevice() :
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_departmentIdHasBeenSet(false)
+    m_departmentIdHasBeenSet(false),
+    m_ipPortSetHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome ExternalDevice::Deserialize(const rapidjson::Value &value)
         m_departmentIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IpPortSet") && !value["IpPortSet"].IsNull())
+    {
+        if (!value["IpPortSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExternalDevice.IpPortSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IpPortSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ipPortSet.push_back((*itr).GetString());
+        }
+        m_ipPortSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void ExternalDevice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DepartmentId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipPortSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpPortSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipPortSet.begin(); itr != m_ipPortSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void ExternalDevice::SetDepartmentId(const string& _departmentId)
 bool ExternalDevice::DepartmentIdHasBeenSet() const
 {
     return m_departmentIdHasBeenSet;
+}
+
+vector<string> ExternalDevice::GetIpPortSet() const
+{
+    return m_ipPortSet;
+}
+
+void ExternalDevice::SetIpPortSet(const vector<string>& _ipPortSet)
+{
+    m_ipPortSet = _ipPortSet;
+    m_ipPortSetHasBeenSet = true;
+}
+
+bool ExternalDevice::IpPortSetHasBeenSet() const
+{
+    return m_ipPortSetHasBeenSet;
 }
 

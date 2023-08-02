@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PayTimeHasBeenSet() const;
 
                     /**
-                     * 获取计费核数
-                     * @return CoresCnt 计费核数
+                     * 获取计费核数(已废弃)
+                     * @return CoresCnt 计费核数(已废弃)
                      * 
                      */
                     uint64_t GetCoresCnt() const;
 
                     /**
-                     * 设置计费核数
-                     * @param _coresCnt 计费核数
+                     * 设置计费核数(已废弃)
+                     * @param _coresCnt 计费核数(已废弃)
                      * 
                      */
                     void SetCoresCnt(const uint64_t& _coresCnt);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_payTimeHasBeenSet;
 
                     /**
-                     * 计费核数
+                     * 计费核数(已废弃)
                      */
                     uint64_t m_coresCnt;
                     bool m_coresCntHasBeenSet;

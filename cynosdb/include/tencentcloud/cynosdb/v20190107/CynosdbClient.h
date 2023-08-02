@@ -235,6 +235,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/OpenAuditServiceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenClusterPasswordComplexityRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenClusterPasswordComplexityResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/OpenClusterReadOnlyInstanceGroupAccessRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/OpenClusterReadOnlyInstanceGroupAccessResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenReadOnlyInstanceExclusiveAccessRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenReadOnlyInstanceExclusiveAccessResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenWanRequest.h>
@@ -611,6 +613,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenClusterPasswordComplexityResponse> OpenClusterPasswordComplexityOutcome;
                 typedef std::future<OpenClusterPasswordComplexityOutcome> OpenClusterPasswordComplexityOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OpenClusterPasswordComplexityRequest&, OpenClusterPasswordComplexityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenClusterPasswordComplexityAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenClusterReadOnlyInstanceGroupAccessResponse> OpenClusterReadOnlyInstanceGroupAccessOutcome;
+                typedef std::future<OpenClusterReadOnlyInstanceGroupAccessOutcome> OpenClusterReadOnlyInstanceGroupAccessOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::OpenClusterReadOnlyInstanceGroupAccessRequest&, OpenClusterReadOnlyInstanceGroupAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenClusterReadOnlyInstanceGroupAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenReadOnlyInstanceExclusiveAccessResponse> OpenReadOnlyInstanceExclusiveAccessOutcome;
                 typedef std::future<OpenReadOnlyInstanceExclusiveAccessOutcome> OpenReadOnlyInstanceExclusiveAccessOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OpenReadOnlyInstanceExclusiveAccessRequest&, OpenReadOnlyInstanceExclusiveAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenReadOnlyInstanceExclusiveAccessAsyncHandler;
@@ -1633,6 +1638,15 @@ namespace TencentCloud
                 OpenClusterPasswordComplexityOutcome OpenClusterPasswordComplexity(const Model::OpenClusterPasswordComplexityRequest &request);
                 void OpenClusterPasswordComplexityAsync(const Model::OpenClusterPasswordComplexityRequest& request, const OpenClusterPasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenClusterPasswordComplexityOutcomeCallable OpenClusterPasswordComplexityCallable(const Model::OpenClusterPasswordComplexityRequest& request);
+
+                /**
+                 *开启只读实例组接入
+                 * @param req OpenClusterReadOnlyInstanceGroupAccessRequest
+                 * @return OpenClusterReadOnlyInstanceGroupAccessOutcome
+                 */
+                OpenClusterReadOnlyInstanceGroupAccessOutcome OpenClusterReadOnlyInstanceGroupAccess(const Model::OpenClusterReadOnlyInstanceGroupAccessRequest &request);
+                void OpenClusterReadOnlyInstanceGroupAccessAsync(const Model::OpenClusterReadOnlyInstanceGroupAccessRequest& request, const OpenClusterReadOnlyInstanceGroupAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenClusterReadOnlyInstanceGroupAccessOutcomeCallable OpenClusterReadOnlyInstanceGroupAccessCallable(const Model::OpenClusterReadOnlyInstanceGroupAccessRequest& request);
 
                 /**
                  *开通只读实例独有访问接入组

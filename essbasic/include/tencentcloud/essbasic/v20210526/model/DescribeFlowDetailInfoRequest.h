@@ -67,18 +67,18 @@ namespace TencentCloud
 
                     /**
                      * 获取合同(流程)编号数组，最多支持100个。
-（备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参）
+<br/>备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参
                      * @return FlowIds 合同(流程)编号数组，最多支持100个。
-（备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参）
+<br/>备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
                      * 设置合同(流程)编号数组，最多支持100个。
-（备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参）
+<br/>备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参
                      * @param _flowIds 合同(流程)编号数组，最多支持100个。
-（备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参）
+<br/>备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参
                      * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
@@ -91,15 +91,19 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
-                     * @return FlowGroupId 合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     * 获取合同组编号
+<br/>备注：该参数和合同(流程)编号数组必须二选一
+                     * @return FlowGroupId 合同组编号
+<br/>备注：该参数和合同(流程)编号数组必须二选一
                      * 
                      */
                     std::string GetFlowGroupId() const;
 
                     /**
-                     * 设置合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
-                     * @param _flowGroupId 合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     * 设置合同组编号
+<br/>备注：该参数和合同(流程)编号数组必须二选一
+                     * @param _flowGroupId 合同组编号
+<br/>备注：该参数和合同(流程)编号数组必须二选一
                      * 
                      */
                     void SetFlowGroupId(const std::string& _flowGroupId);
@@ -142,13 +146,14 @@ namespace TencentCloud
 
                     /**
                      * 合同(流程)编号数组，最多支持100个。
-（备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参）
+<br/>备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     * 合同组编号
+<br/>备注：该参数和合同(流程)编号数组必须二选一
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;

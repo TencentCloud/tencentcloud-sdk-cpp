@@ -455,6 +455,31 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                      */
                     bool BrokerTypeHasBeenSet() const;
 
+                    /**
+                     * 获取订阅数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubscriptionCount 订阅数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSubscriptionCount() const;
+
+                    /**
+                     * 设置订阅数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subscriptionCount 订阅数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubscriptionCount(const int64_t& _subscriptionCount);
+
+                    /**
+                     * 判断参数 SubscriptionCount 是否已赋值
+                     * @return SubscriptionCount 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +595,13 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                      */
                     int64_t m_brokerType;
                     bool m_brokerTypeHasBeenSet;
+
+                    /**
+                     * 订阅数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_subscriptionCount;
+                    bool m_subscriptionCountHasBeenSet;
 
                 };
             }

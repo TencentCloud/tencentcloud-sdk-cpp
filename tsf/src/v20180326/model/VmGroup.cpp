@@ -58,7 +58,8 @@ VmGroup::VmGroup() :
     m_aliasHasBeenSet(false),
     m_agentProfileListHasBeenSet(false),
     m_warmupSettingHasBeenSet(false),
-    m_gatewayConfigHasBeenSet(false)
+    m_gatewayConfigHasBeenSet(false),
+    m_enableBatchHealthCheckHasBeenSet(false)
 {
 }
 
@@ -481,6 +482,16 @@ CoreInternalOutcome VmGroup::Deserialize(const rapidjson::Value &value)
         m_gatewayConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableBatchHealthCheck") && !value["EnableBatchHealthCheck"].IsNull())
+    {
+        if (!value["EnableBatchHealthCheck"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.EnableBatchHealthCheck` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableBatchHealthCheck = value["EnableBatchHealthCheck"].GetBool();
+        m_enableBatchHealthCheckHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -805,6 +816,14 @@ void VmGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gatewayConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enableBatchHealthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBatchHealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableBatchHealthCheck, allocator);
     }
 
 }
@@ -1416,5 +1435,21 @@ void VmGroup::SetGatewayConfig(const GatewayConfig& _gatewayConfig)
 bool VmGroup::GatewayConfigHasBeenSet() const
 {
     return m_gatewayConfigHasBeenSet;
+}
+
+bool VmGroup::GetEnableBatchHealthCheck() const
+{
+    return m_enableBatchHealthCheck;
+}
+
+void VmGroup::SetEnableBatchHealthCheck(const bool& _enableBatchHealthCheck)
+{
+    m_enableBatchHealthCheck = _enableBatchHealthCheck;
+    m_enableBatchHealthCheckHasBeenSet = true;
+}
+
+bool VmGroup::EnableBatchHealthCheckHasBeenSet() const
+{
+    return m_enableBatchHealthCheckHasBeenSet;
 }
 

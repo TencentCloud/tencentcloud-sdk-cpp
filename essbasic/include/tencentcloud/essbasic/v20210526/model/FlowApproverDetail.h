@@ -203,35 +203,33 @@ namespace TencentCloud
 
                     /**
                      * 获取当前签署人的状态, 状态如下
-
-PENDING 待签署	
-FILLPENDING 待填写
-FILLACCEPT 填写完成	
-FILLREJECT 拒绝填写	
-WAITPICKUP 待领取	
-ACCEPT 已签署	
-REJECT 拒签 
-DEADLINE 过期没人处理 
-CANCEL 流程已撤回	
-FORWARD 已经转他人处理
-STOP 流程已终止	
-RELIEVED 解除协议（已解除）
+<br/>PENDING 待签署	
+<br/>FILLPENDING 待填写
+<br/>FILLACCEPT 填写完成	
+<br/>FILLREJECT 拒绝填写	
+<br/>WAITPICKUP 待领取	
+<br/>ACCEPT 已签署	
+<br/>REJECT 拒签 
+<br/>DEADLINE 过期没人处理 
+<br/>CANCEL 流程已撤回	
+<br/>FORWARD 已经转他人处理
+<br/>STOP 流程已终止	
+<br/>RELIEVED 解除协议（已解除）
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApproveStatus 当前签署人的状态, 状态如下
-
-PENDING 待签署	
-FILLPENDING 待填写
-FILLACCEPT 填写完成	
-FILLREJECT 拒绝填写	
-WAITPICKUP 待领取	
-ACCEPT 已签署	
-REJECT 拒签 
-DEADLINE 过期没人处理 
-CANCEL 流程已撤回	
-FORWARD 已经转他人处理
-STOP 流程已终止	
-RELIEVED 解除协议（已解除）
+<br/>PENDING 待签署	
+<br/>FILLPENDING 待填写
+<br/>FILLACCEPT 填写完成	
+<br/>FILLREJECT 拒绝填写	
+<br/>WAITPICKUP 待领取	
+<br/>ACCEPT 已签署	
+<br/>REJECT 拒签 
+<br/>DEADLINE 过期没人处理 
+<br/>CANCEL 流程已撤回	
+<br/>FORWARD 已经转他人处理
+<br/>STOP 流程已终止	
+<br/>RELIEVED 解除协议（已解除）
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -240,35 +238,33 @@ RELIEVED 解除协议（已解除）
 
                     /**
                      * 设置当前签署人的状态, 状态如下
-
-PENDING 待签署	
-FILLPENDING 待填写
-FILLACCEPT 填写完成	
-FILLREJECT 拒绝填写	
-WAITPICKUP 待领取	
-ACCEPT 已签署	
-REJECT 拒签 
-DEADLINE 过期没人处理 
-CANCEL 流程已撤回	
-FORWARD 已经转他人处理
-STOP 流程已终止	
-RELIEVED 解除协议（已解除）
+<br/>PENDING 待签署	
+<br/>FILLPENDING 待填写
+<br/>FILLACCEPT 填写完成	
+<br/>FILLREJECT 拒绝填写	
+<br/>WAITPICKUP 待领取	
+<br/>ACCEPT 已签署	
+<br/>REJECT 拒签 
+<br/>DEADLINE 过期没人处理 
+<br/>CANCEL 流程已撤回	
+<br/>FORWARD 已经转他人处理
+<br/>STOP 流程已终止	
+<br/>RELIEVED 解除协议（已解除）
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approveStatus 当前签署人的状态, 状态如下
-
-PENDING 待签署	
-FILLPENDING 待填写
-FILLACCEPT 填写完成	
-FILLREJECT 拒绝填写	
-WAITPICKUP 待领取	
-ACCEPT 已签署	
-REJECT 拒签 
-DEADLINE 过期没人处理 
-CANCEL 流程已撤回	
-FORWARD 已经转他人处理
-STOP 流程已终止	
-RELIEVED 解除协议（已解除）
+<br/>PENDING 待签署	
+<br/>FILLPENDING 待填写
+<br/>FILLACCEPT 填写完成	
+<br/>FILLREJECT 拒绝填写	
+<br/>WAITPICKUP 待领取	
+<br/>ACCEPT 已签署	
+<br/>REJECT 拒签 
+<br/>DEADLINE 过期没人处理 
+<br/>CANCEL 流程已撤回	
+<br/>FORWARD 已经转他人处理
+<br/>STOP 流程已终止	
+<br/>RELIEVED 解除协议（已解除）
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -283,18 +279,18 @@ RELIEVED 解除协议（已解除）
                     bool ApproveStatusHasBeenSet() const;
 
                     /**
-                     * 获取签署人信息
+                     * 获取签署人自定义信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproveMessage 签署人信息
+                     * @return ApproveMessage 签署人自定义信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproveMessage() const;
 
                     /**
-                     * 设置签署人信息
+                     * 设置签署人自定义信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _approveMessage 签署人信息
+                     * @param _approveMessage 签署人自定义信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -329,18 +325,26 @@ RELIEVED 解除协议（已解除）
                     bool ApproveTimeHasBeenSet() const;
 
                     /**
-                     * 获取参与者类型 (ORGANIZATION企业/PERSON个人)
+                     * 获取参与者类型 
+<br/>ORGANIZATION：企业签署人
+<br/>PERSON：个人签署人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproveType 参与者类型 (ORGANIZATION企业/PERSON个人)
+                     * @return ApproveType 参与者类型 
+<br/>ORGANIZATION：企业签署人
+<br/>PERSON：个人签署人
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproveType() const;
 
                     /**
-                     * 设置参与者类型 (ORGANIZATION企业/PERSON个人)
+                     * 设置参与者类型 
+<br/>ORGANIZATION：企业签署人
+<br/>PERSON：个人签署人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _approveType 参与者类型 (ORGANIZATION企业/PERSON个人)
+                     * @param _approveType 参与者类型 
+<br/>ORGANIZATION：企业签署人
+<br/>PERSON：个人签署人
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -401,19 +405,18 @@ RELIEVED 解除协议（已解除）
 
                     /**
                      * 当前签署人的状态, 状态如下
-
-PENDING 待签署	
-FILLPENDING 待填写
-FILLACCEPT 填写完成	
-FILLREJECT 拒绝填写	
-WAITPICKUP 待领取	
-ACCEPT 已签署	
-REJECT 拒签 
-DEADLINE 过期没人处理 
-CANCEL 流程已撤回	
-FORWARD 已经转他人处理
-STOP 流程已终止	
-RELIEVED 解除协议（已解除）
+<br/>PENDING 待签署	
+<br/>FILLPENDING 待填写
+<br/>FILLACCEPT 填写完成	
+<br/>FILLREJECT 拒绝填写	
+<br/>WAITPICKUP 待领取	
+<br/>ACCEPT 已签署	
+<br/>REJECT 拒签 
+<br/>DEADLINE 过期没人处理 
+<br/>CANCEL 流程已撤回	
+<br/>FORWARD 已经转他人处理
+<br/>STOP 流程已终止	
+<br/>RELIEVED 解除协议（已解除）
 
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -421,7 +424,7 @@ RELIEVED 解除协议（已解除）
                     bool m_approveStatusHasBeenSet;
 
                     /**
-                     * 签署人信息
+                     * 签署人自定义信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveMessage;
@@ -434,7 +437,9 @@ RELIEVED 解除协议（已解除）
                     bool m_approveTimeHasBeenSet;
 
                     /**
-                     * 参与者类型 (ORGANIZATION企业/PERSON个人)
+                     * 参与者类型 
+<br/>ORGANIZATION：企业签署人
+<br/>PERSON：个人签署人
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveType;
