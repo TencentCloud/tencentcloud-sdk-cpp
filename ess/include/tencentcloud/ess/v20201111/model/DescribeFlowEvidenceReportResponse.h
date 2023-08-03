@@ -64,12 +64,12 @@ namespace TencentCloud
 
 EvidenceStatusExecuting  出证任务在执行中
 EvidenceStatusSuccess  出证任务执行成功
-EvidenceStatusFailed  出征任务执行失败
+EvidenceStatusFailed  出证任务执行失败
                      * @return Status 出证任务执行的状态, 分布表示下面的含义
 
 EvidenceStatusExecuting  出证任务在执行中
 EvidenceStatusSuccess  出证任务执行成功
-EvidenceStatusFailed  出征任务执行失败
+EvidenceStatusFailed  出证任务执行失败
                      * 
                      */
                     std::string GetStatus() const;
@@ -95,7 +95,7 @@ EvidenceStatusFailed  出征任务执行失败
 
 EvidenceStatusExecuting  出证任务在执行中
 EvidenceStatusSuccess  出证任务执行成功
-EvidenceStatusFailed  出征任务执行失败
+EvidenceStatusFailed  出证任务执行失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

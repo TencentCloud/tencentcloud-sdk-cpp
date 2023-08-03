@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取主题的的地域信息
-                     * @return Region 主题的的地域信息
+                     * 获取主题的地域信息
+                     * @return Region 主题的地域信息
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置主题的的地域信息
-                     * @param _region 主题的的地域信息
+                     * 设置主题的地域信息
+                     * @param _region 主题的地域信息
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 主题的的地域信息
+                     * 主题的地域信息
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

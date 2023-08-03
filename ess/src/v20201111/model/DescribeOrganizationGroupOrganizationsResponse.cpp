@@ -28,7 +28,8 @@ DescribeOrganizationGroupOrganizationsResponse::DescribeOrganizationGroupOrganiz
     m_joinedTotalHasBeenSet(false),
     m_activedTotalHasBeenSet(false),
     m_exportUrlHasBeenSet(false),
-    m_listHasBeenSet(false)
+    m_listHasBeenSet(false),
+    m_activatedTotalHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome DescribeOrganizationGroupOrganizationsResponse::Deserialize(
         m_listHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ActivatedTotal") && !rsp["ActivatedTotal"].IsNull())
+    {
+        if (!rsp["ActivatedTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivatedTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_activatedTotal = rsp["ActivatedTotal"].GetUint64();
+        m_activatedTotalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +192,14 @@ string DescribeOrganizationGroupOrganizationsResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_activatedTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActivatedTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_activatedTotal, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +262,16 @@ vector<GroupOrganization> DescribeOrganizationGroupOrganizationsResponse::GetLis
 bool DescribeOrganizationGroupOrganizationsResponse::ListHasBeenSet() const
 {
     return m_listHasBeenSet;
+}
+
+uint64_t DescribeOrganizationGroupOrganizationsResponse::GetActivatedTotal() const
+{
+    return m_activatedTotal;
+}
+
+bool DescribeOrganizationGroupOrganizationsResponse::ActivatedTotalHasBeenSet() const
+{
+    return m_activatedTotalHasBeenSet;
 }
 
 

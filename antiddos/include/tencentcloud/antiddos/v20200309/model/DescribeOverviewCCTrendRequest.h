@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
-                     * @return Business 大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
+                     * 获取DDoS防护子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
+                     * @return Business DDoS防护子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
                      * 
                      */
                     std::string GetBusiness() const;
 
                     /**
-                     * 设置大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
-                     * @param _business 大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
+                     * 设置DDoS防护子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
+                     * @param _business DDoS防护子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
                      * 
                      */
                     void SetBusiness(const std::string& _business);
@@ -216,7 +216,7 @@ namespace TencentCloud
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
+                     * DDoS防护子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;

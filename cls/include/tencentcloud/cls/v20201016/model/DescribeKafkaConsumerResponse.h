@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/KafkaConsumerContent.h>
 
 
 namespace TencentCloud
@@ -85,6 +86,20 @@ namespace TencentCloud
                      */
                     bool CompressionHasBeenSet() const;
 
+                    /**
+                     * 获取kafka协议消费数据格式
+                     * @return ConsumerContent kafka协议消费数据格式
+                     * 
+                     */
+                    KafkaConsumerContent GetConsumerContent() const;
+
+                    /**
+                     * 判断参数 ConsumerContent 是否已赋值
+                     * @return ConsumerContent 是否已赋值
+                     * 
+                     */
+                    bool ConsumerContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +119,12 @@ namespace TencentCloud
                      */
                     int64_t m_compression;
                     bool m_compressionHasBeenSet;
+
+                    /**
+                     * kafka协议消费数据格式
+                     */
+                    KafkaConsumerContent m_consumerContent;
+                    bool m_consumerContentHasBeenSet;
 
                 };
             }

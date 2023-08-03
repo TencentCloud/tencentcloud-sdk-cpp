@@ -72,27 +72,27 @@ namespace TencentCloud
                     bool CanEditFlowHasBeenSet() const;
 
                     /**
-                     * 获取是否允许编辑模版控件
-<br/>true:允许编辑模版控件信息
-<br/>false:不允许编辑模版控件信息
-<br/>默认false:不允许编辑模版控件信息
-                     * @return CanEditFormField 是否允许编辑模版控件
-<br/>true:允许编辑模版控件信息
-<br/>false:不允许编辑模版控件信息
-<br/>默认false:不允许编辑模版控件信息
+                     * 获取是否允许编辑模板控件
+<br/>true:允许编辑模板控件信息
+<br/>false:不允许编辑模板控件信息
+<br/>默认false:不允许编辑模板控件信息
+                     * @return CanEditFormField 是否允许编辑模板控件
+<br/>true:允许编辑模板控件信息
+<br/>false:不允许编辑模板控件信息
+<br/>默认false:不允许编辑模板控件信息
                      * 
                      */
                     bool GetCanEditFormField() const;
 
                     /**
-                     * 设置是否允许编辑模版控件
-<br/>true:允许编辑模版控件信息
-<br/>false:不允许编辑模版控件信息
-<br/>默认false:不允许编辑模版控件信息
-                     * @param _canEditFormField 是否允许编辑模版控件
-<br/>true:允许编辑模版控件信息
-<br/>false:不允许编辑模版控件信息
-<br/>默认false:不允许编辑模版控件信息
+                     * 设置是否允许编辑模板控件
+<br/>true:允许编辑模板控件信息
+<br/>false:不允许编辑模板控件信息
+<br/>默认false:不允许编辑模板控件信息
+                     * @param _canEditFormField 是否允许编辑模板控件
+<br/>true:允许编辑模板控件信息
+<br/>false:不允许编辑模板控件信息
+<br/>默认false:不允许编辑模板控件信息
                      * 
                      */
                     void SetCanEditFormField(const bool& _canEditFormField);
@@ -345,10 +345,10 @@ namespace TencentCloud
                     bool m_canEditFlowHasBeenSet;
 
                     /**
-                     * 是否允许编辑模版控件
-<br/>true:允许编辑模版控件信息
-<br/>false:不允许编辑模版控件信息
-<br/>默认false:不允许编辑模版控件信息
+                     * 是否允许编辑模板控件
+<br/>true:允许编辑模板控件信息
+<br/>false:不允许编辑模板控件信息
+<br/>默认false:不允许编辑模板控件信息
                      */
                     bool m_canEditFormField;
                     bool m_canEditFormFieldHasBeenSet;

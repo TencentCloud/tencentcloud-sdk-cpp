@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID。
-                     * @return ZoneId 站点ID。
+                     * 获取站点 ID。
+                     * @return ZoneId 站点 ID。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID。
-                     * @param _zoneId 站点ID。
+                     * 设置站点 ID。
+                     * @param _zoneId 站点 ID。
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取记录名称列表。
-                     * @return RecordNames 记录名称列表。
+                     * 获取加速域名列表。
+                     * @return RecordNames 加速域名列表。
                      * 
                      */
                     std::vector<std::string> GetRecordNames() const;
 
                     /**
-                     * 设置记录名称列表。
-                     * @param _recordNames 记录名称列表。
+                     * 设置加速域名列表。
+                     * @param _recordNames 加速域名列表。
                      * 
                      */
                     void SetRecordNames(const std::vector<std::string>& _recordNames);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 站点ID。
+                     * 站点 ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 记录名称列表。
+                     * 加速域名列表。
                      */
                     std::vector<std::string> m_recordNames;
                     bool m_recordNamesHasBeenSet;

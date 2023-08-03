@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取大禹子产品代号（bgp-multip表示高防包）
-                     * @return Business 大禹子产品代号（bgp-multip表示高防包）
+                     * 获取DDoS防护子产品代号（bgp-multip表示高防包）
+                     * @return Business DDoS防护子产品代号（bgp-multip表示高防包）
                      * 
                      */
                     std::string GetBusiness() const;
 
                     /**
-                     * 设置大禹子产品代号（bgp-multip表示高防包）
-                     * @param _business 大禹子产品代号（bgp-multip表示高防包）
+                     * 设置DDoS防护子产品代号（bgp-multip表示高防包）
+                     * @param _business DDoS防护子产品代号（bgp-multip表示高防包）
                      * 
                      */
                     void SetBusiness(const std::string& _business);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 大禹子产品代号（bgp-multip表示高防包）
+                     * DDoS防护子产品代号（bgp-multip表示高防包）
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;

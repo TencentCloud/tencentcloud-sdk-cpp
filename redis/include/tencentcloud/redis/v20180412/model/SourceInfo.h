@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取来源IP
-                     * @return Ip 来源IP
+                     * 获取来源 IP 地址。
+                     * @return Ip 来源 IP 地址。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置来源IP
-                     * @param _ip 来源IP
+                     * 设置来源 IP 地址。
+                     * @param _ip 来源 IP 地址。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取连接数
-                     * @return Conn 连接数
+                     * 获取客户端连接数量。
+                     * @return Conn 客户端连接数量。
                      * 
                      */
                     int64_t GetConn() const;
 
                     /**
-                     * 设置连接数
-                     * @param _conn 连接数
+                     * 设置客户端连接数量。
+                     * @param _conn 客户端连接数量。
                      * 
                      */
                     void SetConn(const int64_t& _conn);
@@ -112,13 +112,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 来源IP
+                     * 来源 IP 地址。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 连接数
+                     * 客户端连接数量。
                      */
                     int64_t m_conn;
                     bool m_connHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cos所在腾讯云帐号uin
-                     * @return Uin cos所在腾讯云帐号uin
+                     * 获取cos所在腾讯云账号uin
+                     * @return Uin cos所在腾讯云账号uin
                      * 
                      */
                     uint64_t GetUin() const;
 
                     /**
-                     * 设置cos所在腾讯云帐号uin
-                     * @param _uin cos所在腾讯云帐号uin
+                     * 设置cos所在腾讯云账号uin
+                     * @param _uin cos所在腾讯云账号uin
                      * 
                      */
                     void SetUin(const uint64_t& _uin);
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cos所在腾讯云帐号uin
+                     * cos所在腾讯云账号uin
                      */
                     uint64_t m_uin;
                     bool m_uinHasBeenSet;

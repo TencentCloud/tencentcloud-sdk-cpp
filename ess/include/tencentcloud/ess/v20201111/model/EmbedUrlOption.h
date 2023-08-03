@@ -80,27 +80,27 @@ namespace TencentCloud
                     bool ShowFlowDetailComponentHasBeenSet() const;
 
                     /**
-                     * 获取模版预览，允许展示模版控件信息
-<br/>true：允许在模版预览页展示控件
-<br/>false：不允许在模版预览页展示控件
-<br/>默认false，模版预览页不展示控件
-                     * @return ShowTemplateComponent 模版预览，允许展示模版控件信息
-<br/>true：允许在模版预览页展示控件
-<br/>false：不允许在模版预览页展示控件
-<br/>默认false，模版预览页不展示控件
+                     * 获取模板预览，允许展示模板控件信息
+<br/>true：允许在模板预览页展示控件
+<br/>false：不允许在模板预览页展示控件
+<br/>默认false，模板预览页不展示控件
+                     * @return ShowTemplateComponent 模板预览，允许展示模板控件信息
+<br/>true：允许在模板预览页展示控件
+<br/>false：不允许在模板预览页展示控件
+<br/>默认false，模板预览页不展示控件
                      * 
                      */
                     bool GetShowTemplateComponent() const;
 
                     /**
-                     * 设置模版预览，允许展示模版控件信息
-<br/>true：允许在模版预览页展示控件
-<br/>false：不允许在模版预览页展示控件
-<br/>默认false，模版预览页不展示控件
-                     * @param _showTemplateComponent 模版预览，允许展示模版控件信息
-<br/>true：允许在模版预览页展示控件
-<br/>false：不允许在模版预览页展示控件
-<br/>默认false，模版预览页不展示控件
+                     * 设置模板预览，允许展示模板控件信息
+<br/>true：允许在模板预览页展示控件
+<br/>false：不允许在模板预览页展示控件
+<br/>默认false，模板预览页不展示控件
+                     * @param _showTemplateComponent 模板预览，允许展示模板控件信息
+<br/>true：允许在模板预览页展示控件
+<br/>false：不允许在模板预览页展示控件
+<br/>默认false，模板预览页不展示控件
                      * 
                      */
                     void SetShowTemplateComponent(const bool& _showTemplateComponent);
@@ -124,10 +124,10 @@ namespace TencentCloud
                     bool m_showFlowDetailComponentHasBeenSet;
 
                     /**
-                     * 模版预览，允许展示模版控件信息
-<br/>true：允许在模版预览页展示控件
-<br/>false：不允许在模版预览页展示控件
-<br/>默认false，模版预览页不展示控件
+                     * 模板预览，允许展示模板控件信息
+<br/>true：允许在模板预览页展示控件
+<br/>false：不允许在模板预览页展示控件
+<br/>默认false，模板预览页不展示控件
                      */
                     bool m_showTemplateComponent;
                     bool m_showTemplateComponentHasBeenSet;

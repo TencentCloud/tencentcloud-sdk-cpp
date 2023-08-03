@@ -77,18 +77,18 @@ namespace TencentCloud
                     bool JoinedTotalHasBeenSet() const;
 
                     /**
-                     * 获取已加入的企业数量
+                     * 获取已加入的企业数量(废弃,请使用ActivatedTotal)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ActivedTotal 已加入的企业数量
+                     * @return ActivedTotal 已加入的企业数量(废弃,请使用ActivatedTotal)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetActivedTotal() const;
 
                     /**
                      * 判断参数 ActivedTotal 是否已赋值
                      * @return ActivedTotal 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ActivedTotalHasBeenSet() const;
 
@@ -124,6 +124,22 @@ namespace TencentCloud
                      */
                     bool ListHasBeenSet() const;
 
+                    /**
+                     * 获取已加入的企业数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ActivatedTotal 已加入的企业数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetActivatedTotal() const;
+
+                    /**
+                     * 判断参数 ActivatedTotal 是否已赋值
+                     * @return ActivatedTotal 是否已赋值
+                     * 
+                     */
+                    bool ActivatedTotalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,7 +157,7 @@ namespace TencentCloud
                     bool m_joinedTotalHasBeenSet;
 
                     /**
-                     * 已加入的企业数量
+                     * 已加入的企业数量(废弃,请使用ActivatedTotal)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_activedTotal;
@@ -160,6 +176,13 @@ namespace TencentCloud
                      */
                     std::vector<GroupOrganization> m_list;
                     bool m_listHasBeenSet;
+
+                    /**
+                     * 已加入的企业数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_activatedTotal;
+                    bool m_activatedTotalHasBeenSet;
 
                 };
             }

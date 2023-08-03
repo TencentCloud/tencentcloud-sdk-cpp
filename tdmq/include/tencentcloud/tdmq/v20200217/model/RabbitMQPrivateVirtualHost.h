@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * RabbitMQ专享版虚拟机
+                * RabbitMQ专享版云服务器
                 */
                 class RabbitMQPrivateVirtualHost : public AbstractModel
                 {

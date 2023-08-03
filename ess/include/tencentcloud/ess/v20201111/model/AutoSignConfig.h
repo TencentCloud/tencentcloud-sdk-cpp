@@ -71,10 +71,10 @@ namespace TencentCloud
                     /**
                      * 获取接受回调URL地址。支持http://或者https://协议
 
-Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
+Post数据到此地址后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
                      * @return CallbackUrl 接受回调URL地址。支持http://或者https://协议
 
-Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
+Post数据到此地址后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
                      * 
                      */
                     std::string GetCallbackUrl() const;
@@ -82,10 +82,10 @@ Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其
                     /**
                      * 设置接受回调URL地址。支持http://或者https://协议
 
-Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
+Post数据到此地址后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
                      * @param _callbackUrl 接受回调URL地址。支持http://或者https://协议
 
-Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
+Post数据到此地址后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -159,11 +159,11 @@ true-需要
                      * 获取是否需要回调的时候返回印章(签名) 图片的 base64
 
 false-不需要(默认)
-true-需要(
+true-需要
                      * @return SealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64
 
 false-不需要(默认)
-true-需要(
+true-需要
                      * 
                      */
                     bool GetSealImgCallback() const;
@@ -172,11 +172,11 @@ true-需要(
                      * 设置是否需要回调的时候返回印章(签名) 图片的 base64
 
 false-不需要(默认)
-true-需要(
+true-需要
                      * @param _sealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64
 
 false-不需要(默认)
-true-需要(
+true-需要
                      * 
                      */
                     void SetSealImgCallback(const bool& _sealImgCallback);
@@ -252,7 +252,7 @@ TELECOM : 运营商三要素验证
                     /**
                      * 接受回调URL地址。支持http://或者https://协议
 
-Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
+Post数据到此地址后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
@@ -277,7 +277,7 @@ true-需要
                      * 是否需要回调的时候返回印章(签名) 图片的 base64
 
 false-不需要(默认)
-true-需要(
+true-需要
                      */
                     bool m_sealImgCallback;
                     bool m_sealImgCallbackHasBeenSet;

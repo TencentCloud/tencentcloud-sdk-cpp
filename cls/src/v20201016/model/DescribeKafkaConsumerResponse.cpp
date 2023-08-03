@@ -26,7 +26,8 @@ using namespace std;
 DescribeKafkaConsumerResponse::DescribeKafkaConsumerResponse() :
     m_statusHasBeenSet(false),
     m_topicIDHasBeenSet(false),
-    m_compressionHasBeenSet(false)
+    m_compressionHasBeenSet(false),
+    m_consumerContentHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,23 @@ CoreInternalOutcome DescribeKafkaConsumerResponse::Deserialize(const string &pay
         m_compressionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ConsumerContent") && !rsp["ConsumerContent"].IsNull())
+    {
+        if (!rsp["ConsumerContent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumerContent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_consumerContent.Deserialize(rsp["ConsumerContent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_consumerContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +144,15 @@ string DescribeKafkaConsumerResponse::ToJsonString() const
         string key = "Compression";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_compression, allocator);
+    }
+
+    if (m_consumerContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_consumerContent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +195,16 @@ int64_t DescribeKafkaConsumerResponse::GetCompression() const
 bool DescribeKafkaConsumerResponse::CompressionHasBeenSet() const
 {
     return m_compressionHasBeenSet;
+}
+
+KafkaConsumerContent DescribeKafkaConsumerResponse::GetConsumerContent() const
+{
+    return m_consumerContent;
+}
+
+bool DescribeKafkaConsumerResponse::ConsumerContentHasBeenSet() const
+{
+    return m_consumerContentHasBeenSet;
 }
 
 

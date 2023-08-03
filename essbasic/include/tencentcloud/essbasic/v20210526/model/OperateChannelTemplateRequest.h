@@ -178,12 +178,12 @@ namespace TencentCloud
                     bool AuthTagHasBeenSet() const;
 
                     /**
-                     * 获取当OperateType=UPADATE时，可以通过设置此字段对模板启停用状态进行操作。
+                     * 获取当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
 若此字段值为0，则不会修改模板Available，
 1为启用模板，
 2为停用模板。
 启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
-                     * @return Available 当OperateType=UPADATE时，可以通过设置此字段对模板启停用状态进行操作。
+                     * @return Available 当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
 若此字段值为0，则不会修改模板Available，
 1为启用模板，
 2为停用模板。
@@ -193,12 +193,12 @@ namespace TencentCloud
                     int64_t GetAvailable() const;
 
                     /**
-                     * 设置当OperateType=UPADATE时，可以通过设置此字段对模板启停用状态进行操作。
+                     * 设置当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
 若此字段值为0，则不会修改模板Available，
 1为启用模板，
 2为停用模板。
 启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
-                     * @param _available 当OperateType=UPADATE时，可以通过设置此字段对模板启停用状态进行操作。
+                     * @param _available 当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
 若此字段值为0，则不会修改模板Available，
 1为启用模板，
 2为停用模板。
@@ -275,7 +275,7 @@ namespace TencentCloud
                     bool m_authTagHasBeenSet;
 
                     /**
-                     * 当OperateType=UPADATE时，可以通过设置此字段对模板启停用状态进行操作。
+                     * 当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
 若此字段值为0，则不会修改模板Available，
 1为启用模板，
 2为停用模板。

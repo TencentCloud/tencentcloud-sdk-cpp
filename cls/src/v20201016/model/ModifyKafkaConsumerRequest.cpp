@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyKafkaConsumerRequest::ModifyKafkaConsumerRequest() :
     m_fromTopicIdHasBeenSet(false),
-    m_compressionHasBeenSet(false)
+    m_compressionHasBeenSet(false),
+    m_consumerContentHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,15 @@ string ModifyKafkaConsumerRequest::ToJsonString() const
         string key = "Compression";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_compression, allocator);
+    }
+
+    if (m_consumerContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerContent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_consumerContent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -89,6 +99,22 @@ void ModifyKafkaConsumerRequest::SetCompression(const int64_t& _compression)
 bool ModifyKafkaConsumerRequest::CompressionHasBeenSet() const
 {
     return m_compressionHasBeenSet;
+}
+
+KafkaConsumerContent ModifyKafkaConsumerRequest::GetConsumerContent() const
+{
+    return m_consumerContent;
+}
+
+void ModifyKafkaConsumerRequest::SetConsumerContent(const KafkaConsumerContent& _consumerContent)
+{
+    m_consumerContent = _consumerContent;
+    m_consumerContentHasBeenSet = true;
+}
+
+bool ModifyKafkaConsumerRequest::ConsumerContentHasBeenSet() const
+{
+    return m_consumerContentHasBeenSet;
 }
 
 
