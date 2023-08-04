@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源所属业务名称（资源六段式中的第三段）
-                     * @return ServiceType 资源所属业务名称（资源六段式中的第三段）
+                     * 获取业务的英文简称，即资源六段式第三段。资源六段式的描述方式参考：https://cloud.tencent.com/document/product/651/89122
+                     * @return ServiceType 业务的英文简称，即资源六段式第三段。资源六段式的描述方式参考：https://cloud.tencent.com/document/product/651/89122
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置资源所属业务名称（资源六段式中的第三段）
-                     * @param _serviceType 资源所属业务名称（资源六段式中的第三段）
+                     * 设置业务的英文简称，即资源六段式第三段。资源六段式的描述方式参考：https://cloud.tencent.com/document/product/651/89122
+                     * @param _serviceType 业务的英文简称，即资源六段式第三段。资源六段式的描述方式参考：https://cloud.tencent.com/document/product/651/89122
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取标签键
-                     * @return TagKey 标签键
+                     * 获取需要绑定的标签键，取值规范参考：https://cloud.tencent.com/document/product/651/13354
+                     * @return TagKey 需要绑定的标签键，取值规范参考：https://cloud.tencent.com/document/product/651/13354
                      * 
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置标签键
-                     * @param _tagKey 标签键
+                     * 设置需要绑定的标签键，取值规范参考：https://cloud.tencent.com/document/product/651/13354
+                     * @param _tagKey 需要绑定的标签键，取值规范参考：https://cloud.tencent.com/document/product/651/13354
                      * 
                      */
                     void SetTagKey(const std::string& _tagKey);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取标签值
-                     * @return TagValue 标签值
+                     * 获取需要绑定的标签值，取值规范参考：https://cloud.tencent.com/document/product/651/13354
+                     * @return TagValue 需要绑定的标签值，取值规范参考：https://cloud.tencent.com/document/product/651/13354
                      * 
                      */
                     std::string GetTagValue() const;
 
                     /**
-                     * 设置标签值
-                     * @param _tagValue 标签值
+                     * 设置需要绑定的标签值，取值规范参考：https://cloud.tencent.com/document/product/651/13354
+                     * @param _tagValue 需要绑定的标签值，取值规范参考：https://cloud.tencent.com/document/product/651/13354
                      * 
                      */
                     void SetTagValue(const std::string& _tagValue);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TagValueHasBeenSet() const;
 
                     /**
-                     * 获取资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
-                     * @return ResourceRegion 资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * 获取资源所在地域，区分地域的资源必填，不区分地域的资源不需要传入该字段。注意该地域必须为资源ID参数ResourceIds对应的地域
+                     * @return ResourceRegion 资源所在地域，区分地域的资源必填，不区分地域的资源不需要传入该字段。注意该地域必须为资源ID参数ResourceIds对应的地域
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
-                     * 设置资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
-                     * @param _resourceRegion 资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * 设置资源所在地域，区分地域的资源必填，不区分地域的资源不需要传入该字段。注意该地域必须为资源ID参数ResourceIds对应的地域
+                     * @param _resourceRegion 资源所在地域，区分地域的资源必填，不区分地域的资源不需要传入该字段。注意该地域必须为资源ID参数ResourceIds对应的地域
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源所属业务名称（资源六段式中的第三段）
+                     * 业务的英文简称，即资源六段式第三段。资源六段式的描述方式参考：https://cloud.tencent.com/document/product/651/89122
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -183,19 +183,19 @@ namespace TencentCloud
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 标签键
+                     * 需要绑定的标签键，取值规范参考：https://cloud.tencent.com/document/product/651/13354
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 标签值
+                     * 需要绑定的标签值，取值规范参考：https://cloud.tencent.com/document/product/651/13354
                      */
                     std::string m_tagValue;
                     bool m_tagValueHasBeenSet;
 
                     /**
-                     * 资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * 资源所在地域，区分地域的资源必填，不区分地域的资源不需要传入该字段。注意该地域必须为资源ID参数ResourceIds对应的地域
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;

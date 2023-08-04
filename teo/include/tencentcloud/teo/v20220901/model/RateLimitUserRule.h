@@ -111,27 +111,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取处置动作，取值有：
-<li>monitor：观察；</li>
-<li>drop：拦截；</li>
-<li>alg：JavaScript挑战。</li>
-                     * @return Action 处置动作，取值有：
-<li>monitor：观察；</li>
-<li>drop：拦截；</li>
-<li>alg：JavaScript挑战。</li>
+                     * 获取处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>	
+                     * @return Action 处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>	
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置处置动作，取值有：
-<li>monitor：观察；</li>
-<li>drop：拦截；</li>
-<li>alg：JavaScript挑战。</li>
-                     * @param _action 处置动作，取值有：
-<li>monitor：观察；</li>
-<li>drop：拦截；</li>
-<li>alg：JavaScript挑战。</li>
+                     * 设置处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>	
+                     * @param _action 处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>	
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -269,18 +257,18 @@ namespace TencentCloud
                     bool RulePriorityHasBeenSet() const;
 
                     /**
-                     * 获取规则id。仅出参使用。
+                     * 获取规则 Id。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleID 规则id。仅出参使用。
+                     * @return RuleID 规则 Id。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
-                     * 设置规则id。仅出参使用。
+                     * 设置规则 Id。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleID 规则id。仅出参使用。
+                     * @param _ruleID 规则 Id。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -348,11 +336,11 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计范围，字段为null时，代表source_to_eo。取值有：
+                     * 获取统计范围，字段为 null 时，代表 source_to_eo。取值有：
 <li>source_to_eo：（响应）源站到EdgeOne。</li>
 <li>client_to_eo：（请求）客户端到EdgeOne；</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FreqScope 统计范围，字段为null时，代表source_to_eo。取值有：
+                     * @return FreqScope 统计范围，字段为 null 时，代表 source_to_eo。取值有：
 <li>source_to_eo：（响应）源站到EdgeOne。</li>
 <li>client_to_eo：（请求）客户端到EdgeOne；</li>
 注意：此字段可能返回 null，表示取不到有效值。
@@ -361,11 +349,11 @@ namespace TencentCloud
                     std::vector<std::string> GetFreqScope() const;
 
                     /**
-                     * 设置统计范围，字段为null时，代表source_to_eo。取值有：
+                     * 设置统计范围，字段为 null 时，代表 source_to_eo。取值有：
 <li>source_to_eo：（响应）源站到EdgeOne。</li>
 <li>client_to_eo：（请求）客户端到EdgeOne；</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _freqScope 统计范围，字段为null时，代表source_to_eo。取值有：
+                     * @param _freqScope 统计范围，字段为 null 时，代表 source_to_eo。取值有：
 <li>source_to_eo：（响应）源站到EdgeOne。</li>
 <li>client_to_eo：（请求）客户端到EdgeOne；</li>
 注意：此字段可能返回 null，表示取不到有效值。
@@ -401,10 +389,7 @@ namespace TencentCloud
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 处置动作，取值有：
-<li>monitor：观察；</li>
-<li>drop：拦截；</li>
-<li>alg：JavaScript挑战。</li>
+                     * 处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>	
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
@@ -445,7 +430,7 @@ namespace TencentCloud
                     bool m_rulePriorityHasBeenSet;
 
                     /**
-                     * 规则id。仅出参使用。
+                     * 规则 Id。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleID;
@@ -467,7 +452,7 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 统计范围，字段为null时，代表source_to_eo。取值有：
+                     * 统计范围，字段为 null 时，代表 source_to_eo。取值有：
 <li>source_to_eo：（响应）源站到EdgeOne。</li>
 <li>client_to_eo：（请求）客户端到EdgeOne；</li>
 注意：此字段可能返回 null，表示取不到有效值。

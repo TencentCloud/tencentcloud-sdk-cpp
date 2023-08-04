@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool HATypeHasBeenSet() const;
 
                     /**
-                     * 获取修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区
-                     * @return MultiZones 修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区
+                     * 获取修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为跨可用区
+                     * @return MultiZones 修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为跨可用区
                      * 
                      */
                     std::string GetMultiZones() const;
 
                     /**
-                     * 设置修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区
-                     * @param _multiZones 修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区
+                     * 设置修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为跨可用区
+                     * @param _multiZones 修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为跨可用区
                      * 
                      */
                     void SetMultiZones(const std::string& _multiZones);
@@ -303,7 +303,7 @@ namespace TencentCloud
                     bool m_hATypeHasBeenSet;
 
                     /**
-                     * 修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区
+                     * 修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为跨可用区
                      */
                     std::string m_multiZones;
                     bool m_multiZonesHasBeenSet;

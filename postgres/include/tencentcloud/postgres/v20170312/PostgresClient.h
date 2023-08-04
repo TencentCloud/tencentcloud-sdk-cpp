@@ -89,6 +89,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeDBErrlogsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceAttributeRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceAttributeResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceHAConfigRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceHAConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceParametersRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceParametersResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceSecurityGroupsRequest.h>
@@ -157,6 +159,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceChargeTypeResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceDeploymentRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceDeploymentResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceHAConfigRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceHAConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceParametersRequest.h>
@@ -191,6 +195,8 @@
 #include <tencentcloud/postgres/v20170312/model/RestartDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/SetAutoRenewFlagRequest.h>
 #include <tencentcloud/postgres/v20170312/model/SetAutoRenewFlagResponse.h>
+#include <tencentcloud/postgres/v20170312/model/SwitchDBInstancePrimaryRequest.h>
+#include <tencentcloud/postgres/v20170312/model/SwitchDBInstancePrimaryResponse.h>
 #include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceRequest.h>
 #include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceKernelVersionRequest.h>
@@ -308,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceAttributeResponse> DescribeDBInstanceAttributeOutcome;
                 typedef std::future<DescribeDBInstanceAttributeOutcome> DescribeDBInstanceAttributeOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstanceAttributeRequest&, DescribeDBInstanceAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceHAConfigResponse> DescribeDBInstanceHAConfigOutcome;
+                typedef std::future<DescribeDBInstanceHAConfigOutcome> DescribeDBInstanceHAConfigOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstanceHAConfigRequest&, DescribeDBInstanceHAConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceHAConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceParametersResponse> DescribeDBInstanceParametersOutcome;
                 typedef std::future<DescribeDBInstanceParametersOutcome> DescribeDBInstanceParametersOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstanceParametersRequest&, DescribeDBInstanceParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceParametersAsyncHandler;
@@ -410,6 +419,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceDeploymentResponse> ModifyDBInstanceDeploymentOutcome;
                 typedef std::future<ModifyDBInstanceDeploymentOutcome> ModifyDBInstanceDeploymentOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceDeploymentRequest&, ModifyDBInstanceDeploymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceDeploymentAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceHAConfigResponse> ModifyDBInstanceHAConfigOutcome;
+                typedef std::future<ModifyDBInstanceHAConfigOutcome> ModifyDBInstanceHAConfigOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceHAConfigRequest&, ModifyDBInstanceHAConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceHAConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
@@ -461,6 +473,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetAutoRenewFlagResponse> SetAutoRenewFlagOutcome;
                 typedef std::future<SetAutoRenewFlagOutcome> SetAutoRenewFlagOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::SetAutoRenewFlagRequest&, SetAutoRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchDBInstancePrimaryResponse> SwitchDBInstancePrimaryOutcome;
+                typedef std::future<SwitchDBInstancePrimaryOutcome> SwitchDBInstancePrimaryOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::SwitchDBInstancePrimaryRequest&, SwitchDBInstancePrimaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDBInstancePrimaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeDBInstanceResponse> UpgradeDBInstanceOutcome;
                 typedef std::future<UpgradeDBInstanceOutcome> UpgradeDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
@@ -770,6 +785,17 @@ namespace TencentCloud
                 DescribeDBInstanceAttributeOutcomeCallable DescribeDBInstanceAttributeCallable(const Model::DescribeDBInstanceAttributeRequest& request);
 
                 /**
+                 *本接口（DescribeDBInstanceHAConfig）用于查询实例HA配置信息。其中HA配置信息包括：
+<li>允许备节点切换为主节点的条件配置
+<li>半同步实例使用同步复制或异步复制的条件配置
+                 * @param req DescribeDBInstanceHAConfigRequest
+                 * @return DescribeDBInstanceHAConfigOutcome
+                 */
+                DescribeDBInstanceHAConfigOutcome DescribeDBInstanceHAConfig(const Model::DescribeDBInstanceHAConfigRequest &request);
+                void DescribeDBInstanceHAConfigAsync(const Model::DescribeDBInstanceHAConfigRequest& request, const DescribeDBInstanceHAConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceHAConfigOutcomeCallable DescribeDBInstanceHAConfigCallable(const Model::DescribeDBInstanceHAConfigRequest& request);
+
+                /**
                  *本接口（DescribeDBInstanceAttribute）用于查询实例的参数信息。
                  * @param req DescribeDBInstanceParametersRequest
                  * @return DescribeDBInstanceParametersOutcome
@@ -1076,6 +1102,17 @@ namespace TencentCloud
                 ModifyDBInstanceDeploymentOutcomeCallable ModifyDBInstanceDeploymentCallable(const Model::ModifyDBInstanceDeploymentRequest& request);
 
                 /**
+                 *本接口（ModifyDBInstanceHAConfig）用于修改实例HA配置信息。其中HA配置信息包括：
+<li>允许备节点切换为主节点的条件配置
+<li>半同步实例使用同步复制或异步复制的条件配置
+                 * @param req ModifyDBInstanceHAConfigRequest
+                 * @return ModifyDBInstanceHAConfigOutcome
+                 */
+                ModifyDBInstanceHAConfigOutcome ModifyDBInstanceHAConfig(const Model::ModifyDBInstanceHAConfigRequest &request);
+                void ModifyDBInstanceHAConfigAsync(const Model::ModifyDBInstanceHAConfigRequest& request, const ModifyDBInstanceHAConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceHAConfigOutcomeCallable ModifyDBInstanceHAConfigCallable(const Model::ModifyDBInstanceHAConfigRequest& request);
+
+                /**
                  *本接口（ModifyDBInstanceName）用于修改postgresql实例名字。
                  * @param req ModifyDBInstanceNameRequest
                  * @return ModifyDBInstanceNameOutcome
@@ -1227,6 +1264,18 @@ namespace TencentCloud
                 SetAutoRenewFlagOutcome SetAutoRenewFlag(const Model::SetAutoRenewFlagRequest &request);
                 void SetAutoRenewFlagAsync(const Model::SetAutoRenewFlagRequest& request, const SetAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetAutoRenewFlagOutcomeCallable SetAutoRenewFlagCallable(const Model::SetAutoRenewFlagRequest& request);
+
+                /**
+                 *本接口（SwitchDBInstancePrimary）用于切换实例主备关系。
+<li>通过主动发起切换，可以验证业务能否正确处理实例主备切换的场景
+<li>通过使用强制切换，可以在备节点延迟不满足切换条件时，强制发起主从切换
+<li>只有主实例可以执行该操作
+                 * @param req SwitchDBInstancePrimaryRequest
+                 * @return SwitchDBInstancePrimaryOutcome
+                 */
+                SwitchDBInstancePrimaryOutcome SwitchDBInstancePrimary(const Model::SwitchDBInstancePrimaryRequest &request);
+                void SwitchDBInstancePrimaryAsync(const Model::SwitchDBInstancePrimaryRequest& request, const SwitchDBInstancePrimaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchDBInstancePrimaryOutcomeCallable SwitchDBInstancePrimaryCallable(const Model::SwitchDBInstancePrimaryRequest& request);
 
                 /**
                  *本接口（UpgradeDBInstance）用于升级实例配置。本接口已废弃，推荐使用接口[ModifyDBInstanceSpec](https://cloud.tencent.com/document/api/409/63689)替代。

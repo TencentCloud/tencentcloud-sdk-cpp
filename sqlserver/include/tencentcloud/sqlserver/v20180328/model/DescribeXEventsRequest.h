@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取扩展文件生成开始时间
-                     * @return StartTime 扩展文件生成开始时间
+                     * 获取扩展文件生成开始时间(yyyy-MM-dd HH:mm:ss)
+                     * @return StartTime 扩展文件生成开始时间(yyyy-MM-dd HH:mm:ss)
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置扩展文件生成开始时间
-                     * @param _startTime 扩展文件生成开始时间
+                     * 设置扩展文件生成开始时间(yyyy-MM-dd HH:mm:ss)
+                     * @param _startTime 扩展文件生成开始时间(yyyy-MM-dd HH:mm:ss)
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取扩展文件生成结束时间
-                     * @return EndTime 扩展文件生成结束时间
+                     * 获取扩展文件生成结束时间(yyyy-MM-dd HH:mm:ss)
+                     * @return EndTime 扩展文件生成结束时间(yyyy-MM-dd HH:mm:ss)
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置扩展文件生成结束时间
-                     * @param _endTime 扩展文件生成结束时间
+                     * 设置扩展文件生成结束时间(yyyy-MM-dd HH:mm:ss)
+                     * @param _endTime 扩展文件生成结束时间(yyyy-MM-dd HH:mm:ss)
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 扩展文件生成开始时间
+                     * 扩展文件生成开始时间(yyyy-MM-dd HH:mm:ss)
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 扩展文件生成结束时间
+                     * 扩展文件生成结束时间(yyyy-MM-dd HH:mm:ss)
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

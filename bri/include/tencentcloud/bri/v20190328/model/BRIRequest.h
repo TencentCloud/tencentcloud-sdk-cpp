@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取电话号码 (业务名为bri_num时必填)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhoneNumber 电话号码 (业务名为bri_num时必填)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
                      * 设置电话号码 (业务名为bri_num时必填)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _phoneNumber 电话号码 (业务名为bri_num时必填)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
@@ -344,6 +340,27 @@ namespace TencentCloud
                      */
                     bool WechatTagHasBeenSet() const;
 
+                    /**
+                     * 获取子客户ID
+                     * @return SubAppid 子客户ID
+                     * 
+                     */
+                    std::string GetSubAppid() const;
+
+                    /**
+                     * 设置子客户ID
+                     * @param _subAppid 子客户ID
+                     * 
+                     */
+                    void SetSubAppid(const std::string& _subAppid);
+
+                    /**
+                     * 判断参数 SubAppid 是否已赋值
+                     * @return SubAppid 是否已赋值
+                     * 
+                     */
+                    bool SubAppidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -396,7 +413,6 @@ namespace TencentCloud
 
                     /**
                      * 电话号码 (业务名为bri_num时必填)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
@@ -430,6 +446,12 @@ namespace TencentCloud
                      */
                     std::string m_wechatTag;
                     bool m_wechatTagHasBeenSet;
+
+                    /**
+                     * 子客户ID
+                     */
+                    std::string m_subAppid;
+                    bool m_subAppidHasBeenSet;
 
                 };
             }

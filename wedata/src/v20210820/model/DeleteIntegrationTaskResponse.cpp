@@ -24,7 +24,9 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DeleteIntegrationTaskResponse::DeleteIntegrationTaskResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_deleteFlagHasBeenSet(false),
+    m_deleteErrInfoHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome DeleteIntegrationTaskResponse::Deserialize(const string &pay
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeleteFlag") && !rsp["DeleteFlag"].IsNull())
+    {
+        if (!rsp["DeleteFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeleteFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteFlag = rsp["DeleteFlag"].GetInt64();
+        m_deleteFlagHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DeleteErrInfo") && !rsp["DeleteErrInfo"].IsNull())
+    {
+        if (!rsp["DeleteErrInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeleteErrInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteErrInfo = string(rsp["DeleteErrInfo"].GetString());
+        m_deleteErrInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string DeleteIntegrationTaskResponse::ToJsonString() const
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_data, allocator);
+    }
+
+    if (m_deleteFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteFlag, allocator);
+    }
+
+    if (m_deleteErrInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteErrInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteErrInfo.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ bool DeleteIntegrationTaskResponse::GetData() const
 bool DeleteIntegrationTaskResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+int64_t DeleteIntegrationTaskResponse::GetDeleteFlag() const
+{
+    return m_deleteFlag;
+}
+
+bool DeleteIntegrationTaskResponse::DeleteFlagHasBeenSet() const
+{
+    return m_deleteFlagHasBeenSet;
+}
+
+string DeleteIntegrationTaskResponse::GetDeleteErrInfo() const
+{
+    return m_deleteErrInfo;
+}
+
+bool DeleteIntegrationTaskResponse::DeleteErrInfoHasBeenSet() const
+{
+    return m_deleteErrInfoHasBeenSet;
 }
 
 

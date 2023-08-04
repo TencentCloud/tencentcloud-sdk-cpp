@@ -24,8 +24,8 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 DownloadL7LogsResponse::DownloadL7LogsResponse() :
-    m_dataHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -63,6 +63,16 @@ CoreInternalOutcome DownloadL7LogsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsArray())
@@ -83,16 +93,6 @@ CoreInternalOutcome DownloadL7LogsResponse::Deserialize(const string &payload)
         m_dataHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -102,6 +102,14 @@ string DownloadL7LogsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     if (m_dataHasBeenSet)
     {
@@ -118,14 +126,6 @@ string DownloadL7LogsResponse::ToJsonString() const
         }
     }
 
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -138,16 +138,6 @@ string DownloadL7LogsResponse::ToJsonString() const
 }
 
 
-vector<L7OfflineLog> DownloadL7LogsResponse::GetData() const
-{
-    return m_data;
-}
-
-bool DownloadL7LogsResponse::DataHasBeenSet() const
-{
-    return m_dataHasBeenSet;
-}
-
 int64_t DownloadL7LogsResponse::GetTotalCount() const
 {
     return m_totalCount;
@@ -156,6 +146,16 @@ int64_t DownloadL7LogsResponse::GetTotalCount() const
 bool DownloadL7LogsResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<L7OfflineLog> DownloadL7LogsResponse::GetData() const
+{
+    return m_data;
+}
+
+bool DownloadL7LogsResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 

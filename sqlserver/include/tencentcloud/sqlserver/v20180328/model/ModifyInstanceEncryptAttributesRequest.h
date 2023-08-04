@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认self。
-                     * @return CertificateAttribution 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认self。
+                     * 获取证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。
+                     * @return CertificateAttribution 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。
                      * 
                      */
                     std::string GetCertificateAttribution() const;
 
                     /**
-                     * 设置证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认self。
-                     * @param _certificateAttribution 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认self。
+                     * 设置证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。
+                     * @param _certificateAttribution 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。
                      * 
                      */
                     void SetCertificateAttribution(const std::string& _certificateAttribution);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认self。
+                     * 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。
                      */
                     std::string m_certificateAttribution;
                     bool m_certificateAttributionHasBeenSet;

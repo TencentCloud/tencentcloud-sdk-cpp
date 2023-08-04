@@ -21,8 +21,8 @@ using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
 Filter::Filter() :
-    m_valuesHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_valuesHasBeenSet(false)
 {
 }
 
@@ -30,6 +30,16 @@ CoreInternalOutcome Filter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Filter.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
 
     if (value.HasMember("Values") && !value["Values"].IsNull())
     {
@@ -44,22 +54,20 @@ CoreInternalOutcome Filter::Deserialize(const rapidjson::Value &value)
         m_valuesHasBeenSet = true;
     }
 
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Filter.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void Filter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_valuesHasBeenSet)
     {
@@ -74,32 +82,8 @@ void Filter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         }
     }
 
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
-
-vector<string> Filter::GetValues() const
-{
-    return m_values;
-}
-
-void Filter::SetValues(const vector<string>& _values)
-{
-    m_values = _values;
-    m_valuesHasBeenSet = true;
-}
-
-bool Filter::ValuesHasBeenSet() const
-{
-    return m_valuesHasBeenSet;
-}
 
 string Filter::GetName() const
 {
@@ -115,5 +99,21 @@ void Filter::SetName(const string& _name)
 bool Filter::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+vector<string> Filter::GetValues() const
+{
+    return m_values;
+}
+
+void Filter::SetValues(const vector<string>& _values)
+{
+    m_values = _values;
+    m_valuesHasBeenSet = true;
+}
+
+bool Filter::ValuesHasBeenSet() const
+{
+    return m_valuesHasBeenSet;
 }
 

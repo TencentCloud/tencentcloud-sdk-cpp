@@ -211,6 +211,43 @@ namespace TencentCloud
                      */
                     bool PortHasBeenSet() const;
 
+                    /**
+                     * 获取yaml格式的pod patch内容，例如
+metadata:
+  labels:
+    key: value
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodTemplatePatch yaml格式的pod patch内容，例如
+metadata:
+  labels:
+    key: value
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPodTemplatePatch() const;
+
+                    /**
+                     * 设置yaml格式的pod patch内容，例如
+metadata:
+  labels:
+    key: value
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _podTemplatePatch yaml格式的pod patch内容，例如
+metadata:
+  labels:
+    key: value
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPodTemplatePatch(const std::string& _podTemplatePatch);
+
+                    /**
+                     * 判断参数 PodTemplatePatch 是否已赋值
+                     * @return PodTemplatePatch 是否已赋值
+                     * 
+                     */
+                    bool PodTemplatePatchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -258,6 +295,16 @@ namespace TencentCloud
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
+
+                    /**
+                     * yaml格式的pod patch内容，例如
+metadata:
+  labels:
+    key: value
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_podTemplatePatch;
+                    bool m_podTemplatePatchHasBeenSet;
 
                 };
             }

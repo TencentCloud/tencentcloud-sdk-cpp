@@ -27,7 +27,8 @@ NamespaceResourceEnvTKE::NamespaceResourceEnvTKE() :
     m_dataPathHasBeenSet(false),
     m_nodeSelectorHasBeenSet(false),
     m_tolerationsHasBeenSet(false),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_podTemplatePatchHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome NamespaceResourceEnvTKE::Deserialize(const rapidjson::Value 
         m_portHasBeenSet = true;
     }
 
+    if (value.HasMember("PodTemplatePatch") && !value["PodTemplatePatch"].IsNull())
+    {
+        if (!value["PodTemplatePatch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NamespaceResourceEnvTKE.PodTemplatePatch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podTemplatePatch = string(value["PodTemplatePatch"].GetString());
+        m_podTemplatePatchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -201,6 +212,14 @@ void NamespaceResourceEnvTKE::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
+    }
+
+    if (m_podTemplatePatchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodTemplatePatch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podTemplatePatch.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -316,5 +335,21 @@ void NamespaceResourceEnvTKE::SetPort(const uint64_t& _port)
 bool NamespaceResourceEnvTKE::PortHasBeenSet() const
 {
     return m_portHasBeenSet;
+}
+
+string NamespaceResourceEnvTKE::GetPodTemplatePatch() const
+{
+    return m_podTemplatePatch;
+}
+
+void NamespaceResourceEnvTKE::SetPodTemplatePatch(const string& _podTemplatePatch)
+{
+    m_podTemplatePatch = _podTemplatePatch;
+    m_podTemplatePatchHasBeenSet = true;
+}
+
+bool NamespaceResourceEnvTKE::PodTemplatePatchHasBeenSet() const
+{
+    return m_podTemplatePatchHasBeenSet;
 }
 

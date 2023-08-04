@@ -64,7 +64,10 @@ IntegrationTaskInfo::IntegrationTaskInfo() :
     m_lockedHasBeenSet(false),
     m_lockerHasBeenSet(false),
     m_runningCuHasBeenSet(false),
-    m_taskAlarmRegularListHasBeenSet(false)
+    m_taskAlarmRegularListHasBeenSet(false),
+    m_switchResourceHasBeenSet(false),
+    m_readPhaseHasBeenSet(false),
+    m_instanceVersionHasBeenSet(false)
 {
 }
 
@@ -576,6 +579,36 @@ CoreInternalOutcome IntegrationTaskInfo::Deserialize(const rapidjson::Value &val
         m_taskAlarmRegularListHasBeenSet = true;
     }
 
+    if (value.HasMember("SwitchResource") && !value["SwitchResource"].IsNull())
+    {
+        if (!value["SwitchResource"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.SwitchResource` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_switchResource = value["SwitchResource"].GetInt64();
+        m_switchResourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadPhase") && !value["ReadPhase"].IsNull())
+    {
+        if (!value["ReadPhase"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.ReadPhase` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readPhase = value["ReadPhase"].GetInt64();
+        m_readPhaseHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceVersion") && !value["InstanceVersion"].IsNull())
+    {
+        if (!value["InstanceVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.InstanceVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceVersion = value["InstanceVersion"].GetInt64();
+        m_instanceVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -979,6 +1012,30 @@ void IntegrationTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_switchResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchResource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_switchResource, allocator);
+    }
+
+    if (m_readPhaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadPhase";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readPhase, allocator);
+    }
+
+    if (m_instanceVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceVersion, allocator);
     }
 
 }
@@ -1686,5 +1743,53 @@ void IntegrationTaskInfo::SetTaskAlarmRegularList(const vector<string>& _taskAla
 bool IntegrationTaskInfo::TaskAlarmRegularListHasBeenSet() const
 {
     return m_taskAlarmRegularListHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetSwitchResource() const
+{
+    return m_switchResource;
+}
+
+void IntegrationTaskInfo::SetSwitchResource(const int64_t& _switchResource)
+{
+    m_switchResource = _switchResource;
+    m_switchResourceHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::SwitchResourceHasBeenSet() const
+{
+    return m_switchResourceHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetReadPhase() const
+{
+    return m_readPhase;
+}
+
+void IntegrationTaskInfo::SetReadPhase(const int64_t& _readPhase)
+{
+    m_readPhase = _readPhase;
+    m_readPhaseHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::ReadPhaseHasBeenSet() const
+{
+    return m_readPhaseHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetInstanceVersion() const
+{
+    return m_instanceVersion;
+}
+
+void IntegrationTaskInfo::SetInstanceVersion(const int64_t& _instanceVersion)
+{
+    m_instanceVersion = _instanceVersion;
+    m_instanceVersionHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::InstanceVersionHasBeenSet() const
+{
+    return m_instanceVersionHasBeenSet;
 }
 

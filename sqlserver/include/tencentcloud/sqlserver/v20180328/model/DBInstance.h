@@ -1173,18 +1173,18 @@ namespace TencentCloud
                     bool SlaveZonesHasBeenSet() const;
 
                     /**
-                     * 获取架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点
+                     * 获取架构标识，SINGLE-单节点 DOUBLE-双节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Architecture 架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点
+                     * @return Architecture 架构标识，SINGLE-单节点 DOUBLE-双节点
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArchitecture() const;
 
                     /**
-                     * 设置架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点
+                     * 设置架构标识，SINGLE-单节点 DOUBLE-双节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _architecture 架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点
+                     * @param _architecture 架构标识，SINGLE-单节点 DOUBLE-双节点
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1545,7 +1545,7 @@ namespace TencentCloud
                     bool m_slaveZonesHasBeenSet;
 
                     /**
-                     * 架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点
+                     * 架构标识，SINGLE-单节点 DOUBLE-双节点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_architecture;

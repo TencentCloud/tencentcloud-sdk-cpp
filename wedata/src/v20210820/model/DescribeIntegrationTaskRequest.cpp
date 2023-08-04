@@ -25,7 +25,8 @@ using namespace std;
 DescribeIntegrationTaskRequest::DescribeIntegrationTaskRequest() :
     m_taskIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_instanceVersionHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeIntegrationTaskRequest::ToJsonString() const
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_instanceVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceVersion, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeIntegrationTaskRequest::SetTaskType(const uint64_t& _taskType)
 bool DescribeIntegrationTaskRequest::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+int64_t DescribeIntegrationTaskRequest::GetInstanceVersion() const
+{
+    return m_instanceVersion;
+}
+
+void DescribeIntegrationTaskRequest::SetInstanceVersion(const int64_t& _instanceVersion)
+{
+    m_instanceVersion = _instanceVersion;
+    m_instanceVersionHasBeenSet = true;
+}
+
+bool DescribeIntegrationTaskRequest::InstanceVersionHasBeenSet() const
+{
+    return m_instanceVersionHasBeenSet;
 }
 
 

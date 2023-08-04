@@ -34,7 +34,8 @@ BRIRequest::BRIRequest() :
     m_ipHasBeenSet(false),
     m_imeiHasBeenSet(false),
     m_wechatHasBeenSet(false),
-    m_wechatTagHasBeenSet(false)
+    m_wechatTagHasBeenSet(false),
+    m_subAppidHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
         m_wechatTagHasBeenSet = true;
     }
 
+    if (value.HasMember("SubAppid") && !value["SubAppid"].IsNull())
+    {
+        if (!value["SubAppid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.SubAppid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAppid = string(value["SubAppid"].GetString());
+        m_subAppidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void BRIRequest::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "WechatTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_wechatTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAppid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void BRIRequest::SetWechatTag(const string& _wechatTag)
 bool BRIRequest::WechatTagHasBeenSet() const
 {
     return m_wechatTagHasBeenSet;
+}
+
+string BRIRequest::GetSubAppid() const
+{
+    return m_subAppid;
+}
+
+void BRIRequest::SetSubAppid(const string& _subAppid)
+{
+    m_subAppid = _subAppid;
+    m_subAppidHasBeenSet = true;
+}
+
+bool BRIRequest::SubAppidHasBeenSet() const
+{
+    return m_subAppidHasBeenSet;
 }
 

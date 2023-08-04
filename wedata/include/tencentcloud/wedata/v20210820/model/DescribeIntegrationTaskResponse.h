@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/IntegrationTaskInfo.h>
+#include <tencentcloud/wedata/v20210820/model/AgentStatus.h>
+#include <tencentcloud/wedata/v20210820/model/TaskVersionInstance.h>
 
 
 namespace TencentCloud
@@ -60,6 +62,38 @@ namespace TencentCloud
                      */
                     bool TaskInfoHasBeenSet() const;
 
+                    /**
+                     * 获取采集器统计信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentStatus 采集器统计信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AgentStatus GetAgentStatus() const;
+
+                    /**
+                     * 判断参数 AgentStatus 是否已赋值
+                     * @return AgentStatus 是否已赋值
+                     * 
+                     */
+                    bool AgentStatusHasBeenSet() const;
+
+                    /**
+                     * 获取任务版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskVersion 任务版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TaskVersionInstance GetTaskVersion() const;
+
+                    /**
+                     * 判断参数 TaskVersion 是否已赋值
+                     * @return TaskVersion 是否已赋值
+                     * 
+                     */
+                    bool TaskVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +102,20 @@ namespace TencentCloud
                      */
                     IntegrationTaskInfo m_taskInfo;
                     bool m_taskInfoHasBeenSet;
+
+                    /**
+                     * 采集器统计信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AgentStatus m_agentStatus;
+                    bool m_agentStatusHasBeenSet;
+
+                    /**
+                     * 任务版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaskVersionInstance m_taskVersion;
+                    bool m_taskVersionHasBeenSet;
 
                 };
             }

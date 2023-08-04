@@ -47,40 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志打包开始时间。
-                     * @return LogTime 日志打包开始时间。
-                     * 
-                     */
-                    int64_t GetLogTime() const;
-
-                    /**
-                     * 设置日志打包开始时间。
-                     * @param _logTime 日志打包开始时间。
-                     * 
-                     */
-                    void SetLogTime(const int64_t& _logTime);
-
-                    /**
-                     * 判断参数 LogTime 是否已赋值
-                     * @return LogTime 是否已赋值
-                     * 
-                     */
-                    bool LogTimeHasBeenSet() const;
-
-                    /**
-                     * 获取四层实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxyId 四层实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取四层代理实例 ID。
+                     * @return ProxyId 四层代理实例 ID。
                      * 
                      */
                     std::string GetProxyId() const;
 
                     /**
-                     * 设置四层实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _proxyId 四层实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置四层代理实例 ID。
+                     * @param _proxyId 四层代理实例 ID。
                      * 
                      */
                     void SetProxyId(const std::string& _proxyId);
@@ -93,73 +68,10 @@ namespace TencentCloud
                     bool ProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取原始大小 单位byte。
-                     * @return Size 原始大小 单位byte。
-                     * 
-                     */
-                    int64_t GetSize() const;
-
-                    /**
-                     * 设置原始大小 单位byte。
-                     * @param _size 原始大小 单位byte。
-                     * 
-                     */
-                    void SetSize(const int64_t& _size);
-
-                    /**
-                     * 判断参数 Size 是否已赋值
-                     * @return Size 是否已赋值
-                     * 
-                     */
-                    bool SizeHasBeenSet() const;
-
-                    /**
-                     * 获取下载地址。
-                     * @return Url 下载地址。
-                     * 
-                     */
-                    std::string GetUrl() const;
-
-                    /**
-                     * 设置下载地址。
-                     * @param _url 下载地址。
-                     * 
-                     */
-                    void SetUrl(const std::string& _url);
-
-                    /**
-                     * 判断参数 Url 是否已赋值
-                     * @return Url 是否已赋值
-                     * 
-                     */
-                    bool UrlHasBeenSet() const;
-
-                    /**
-                     * 获取日志数据包名。
-                     * @return LogPacketName 日志数据包名。
-                     * 
-                     */
-                    std::string GetLogPacketName() const;
-
-                    /**
-                     * 设置日志数据包名。
-                     * @param _logPacketName 日志数据包名。
-                     * 
-                     */
-                    void SetLogPacketName(const std::string& _logPacketName);
-
-                    /**
-                     * 判断参数 LogPacketName 是否已赋值
-                     * @return LogPacketName 是否已赋值
-                     * 
-                     */
-                    bool LogPacketNameHasBeenSet() const;
-
-                    /**
-                     * 获取加速区域，取值有：
+                     * 获取日志所属区域，取值有：
 <li>mainland：中国大陆境内;</li>
 <li>overseas：全球（不含中国大陆）。</li>
-                     * @return Area 加速区域，取值有：
+                     * @return Area 日志所属区域，取值有：
 <li>mainland：中国大陆境内;</li>
 <li>overseas：全球（不含中国大陆）。</li>
                      * 
@@ -167,10 +79,10 @@ namespace TencentCloud
                     std::string GetArea() const;
 
                     /**
-                     * 设置加速区域，取值有：
+                     * 设置日志所属区域，取值有：
 <li>mainland：中国大陆境内;</li>
 <li>overseas：全球（不含中国大陆）。</li>
-                     * @param _area 加速区域，取值有：
+                     * @param _area 日志所属区域，取值有：
 <li>mainland：中国大陆境内;</li>
 <li>overseas：全球（不含中国大陆）。</li>
                      * 
@@ -184,46 +96,183 @@ namespace TencentCloud
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取离线日志数据包名。
+                     * @return LogPacketName 离线日志数据包名。
+                     * 
+                     */
+                    std::string GetLogPacketName() const;
+
+                    /**
+                     * 设置离线日志数据包名。
+                     * @param _logPacketName 离线日志数据包名。
+                     * 
+                     */
+                    void SetLogPacketName(const std::string& _logPacketName);
+
+                    /**
+                     * 判断参数 LogPacketName 是否已赋值
+                     * @return LogPacketName 是否已赋值
+                     * 
+                     */
+                    bool LogPacketNameHasBeenSet() const;
+
+                    /**
+                     * 获取离线日志下载地址。
+                     * @return Url 离线日志下载地址。
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置离线日志下载地址。
+                     * @param _url 离线日志下载地址。
+                     * 
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
+                    /**
+                     * 获取日志打包时间，此参数已经废弃。
+                     * @return LogTime 日志打包时间，此参数已经废弃。
+                     * 
+                     */
+                    int64_t GetLogTime() const;
+
+                    /**
+                     * 设置日志打包时间，此参数已经废弃。
+                     * @param _logTime 日志打包时间，此参数已经废弃。
+                     * 
+                     */
+                    void SetLogTime(const int64_t& _logTime);
+
+                    /**
+                     * 判断参数 LogTime 是否已赋值
+                     * @return LogTime 是否已赋值
+                     * 
+                     */
+                    bool LogTimeHasBeenSet() const;
+
+                    /**
+                     * 获取日志打包开始时间。
+                     * @return LogStartTime 日志打包开始时间。
+                     * 
+                     */
+                    std::string GetLogStartTime() const;
+
+                    /**
+                     * 设置日志打包开始时间。
+                     * @param _logStartTime 日志打包开始时间。
+                     * 
+                     */
+                    void SetLogStartTime(const std::string& _logStartTime);
+
+                    /**
+                     * 判断参数 LogStartTime 是否已赋值
+                     * @return LogStartTime 是否已赋值
+                     * 
+                     */
+                    bool LogStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取日志打包结束时间。
+                     * @return LogEndTime 日志打包结束时间。
+                     * 
+                     */
+                    std::string GetLogEndTime() const;
+
+                    /**
+                     * 设置日志打包结束时间。
+                     * @param _logEndTime 日志打包结束时间。
+                     * 
+                     */
+                    void SetLogEndTime(const std::string& _logEndTime);
+
+                    /**
+                     * 判断参数 LogEndTime 是否已赋值
+                     * @return LogEndTime 是否已赋值
+                     * 
+                     */
+                    bool LogEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取日志大小，单位为 Byte。
+                     * @return Size 日志大小，单位为 Byte。
+                     * 
+                     */
+                    int64_t GetSize() const;
+
+                    /**
+                     * 设置日志大小，单位为 Byte。
+                     * @param _size 日志大小，单位为 Byte。
+                     * 
+                     */
+                    void SetSize(const int64_t& _size);
+
+                    /**
+                     * 判断参数 Size 是否已赋值
+                     * @return Size 是否已赋值
+                     * 
+                     */
+                    bool SizeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 日志打包开始时间。
-                     */
-                    int64_t m_logTime;
-                    bool m_logTimeHasBeenSet;
-
-                    /**
-                     * 四层实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 四层代理实例 ID。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
 
                     /**
-                     * 原始大小 单位byte。
-                     */
-                    int64_t m_size;
-                    bool m_sizeHasBeenSet;
-
-                    /**
-                     * 下载地址。
-                     */
-                    std::string m_url;
-                    bool m_urlHasBeenSet;
-
-                    /**
-                     * 日志数据包名。
-                     */
-                    std::string m_logPacketName;
-                    bool m_logPacketNameHasBeenSet;
-
-                    /**
-                     * 加速区域，取值有：
+                     * 日志所属区域，取值有：
 <li>mainland：中国大陆境内;</li>
 <li>overseas：全球（不含中国大陆）。</li>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 离线日志数据包名。
+                     */
+                    std::string m_logPacketName;
+                    bool m_logPacketNameHasBeenSet;
+
+                    /**
+                     * 离线日志下载地址。
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
+
+                    /**
+                     * 日志打包时间，此参数已经废弃。
+                     */
+                    int64_t m_logTime;
+                    bool m_logTimeHasBeenSet;
+
+                    /**
+                     * 日志打包开始时间。
+                     */
+                    std::string m_logStartTime;
+                    bool m_logStartTimeHasBeenSet;
+
+                    /**
+                     * 日志打包结束时间。
+                     */
+                    std::string m_logEndTime;
+                    bool m_logEndTimeHasBeenSet;
+
+                    /**
+                     * 日志大小，单位为 Byte。
+                     */
+                    int64_t m_size;
+                    bool m_sizeHasBeenSet;
 
                 };
             }

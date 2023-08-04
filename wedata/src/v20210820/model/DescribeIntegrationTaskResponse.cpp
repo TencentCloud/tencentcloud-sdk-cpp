@@ -24,7 +24,9 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeIntegrationTaskResponse::DescribeIntegrationTaskResponse() :
-    m_taskInfoHasBeenSet(false)
+    m_taskInfoHasBeenSet(false),
+    m_agentStatusHasBeenSet(false),
+    m_taskVersionHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,40 @@ CoreInternalOutcome DescribeIntegrationTaskResponse::Deserialize(const string &p
         m_taskInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AgentStatus") && !rsp["AgentStatus"].IsNull())
+    {
+        if (!rsp["AgentStatus"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentStatus` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agentStatus.Deserialize(rsp["AgentStatus"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TaskVersion") && !rsp["TaskVersion"].IsNull())
+    {
+        if (!rsp["TaskVersion"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskVersion` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskVersion.Deserialize(rsp["TaskVersion"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +132,24 @@ string DescribeIntegrationTaskResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_agentStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agentStatus.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_taskVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskVersion.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +172,26 @@ IntegrationTaskInfo DescribeIntegrationTaskResponse::GetTaskInfo() const
 bool DescribeIntegrationTaskResponse::TaskInfoHasBeenSet() const
 {
     return m_taskInfoHasBeenSet;
+}
+
+AgentStatus DescribeIntegrationTaskResponse::GetAgentStatus() const
+{
+    return m_agentStatus;
+}
+
+bool DescribeIntegrationTaskResponse::AgentStatusHasBeenSet() const
+{
+    return m_agentStatusHasBeenSet;
+}
+
+TaskVersionInstance DescribeIntegrationTaskResponse::GetTaskVersion() const
+{
+    return m_taskVersion;
+}
+
+bool DescribeIntegrationTaskResponse::TaskVersionHasBeenSet() const
+{
+    return m_taskVersionHasBeenSet;
 }
 
 

@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool UnorderedHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）发起方的填写控件，用户
-                     * @return Components 合同（流程）发起方的填写控件，用户
+                     * 获取合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充
+                     * @return Components 合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充
                      * 
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
-                     * 设置合同（流程）发起方的填写控件，用户
-                     * @param _components 合同（流程）发起方的填写控件，用户
+                     * 设置合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充
+                     * @param _components 合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -384,7 +384,7 @@ namespace TencentCloud
                     bool m_unorderedHasBeenSet;
 
                     /**
-                     * 合同（流程）发起方的填写控件，用户
+                     * 合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;

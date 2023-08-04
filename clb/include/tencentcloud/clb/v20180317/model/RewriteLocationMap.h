@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SourceLocationIdHasBeenSet() const;
 
                     /**
-                     * 获取重定向至的目标转发规则ID
-                     * @return TargetLocationId 重定向至的目标转发规则ID
+                     * 获取重定向目标转发规则的ID
+                     * @return TargetLocationId 重定向目标转发规则的ID
                      * 
                      */
                     std::string GetTargetLocationId() const;
 
                     /**
-                     * 设置重定向至的目标转发规则ID
-                     * @param _targetLocationId 重定向至的目标转发规则ID
+                     * 设置重定向目标转发规则的ID
+                     * @param _targetLocationId 重定向目标转发规则的ID
                      * 
                      */
                     void SetTargetLocationId(const std::string& _targetLocationId);
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_sourceLocationIdHasBeenSet;
 
                     /**
-                     * 重定向至的目标转发规则ID
+                     * 重定向目标转发规则的ID
                      */
                     std::string m_targetLocationId;
                     bool m_targetLocationIdHasBeenSet;

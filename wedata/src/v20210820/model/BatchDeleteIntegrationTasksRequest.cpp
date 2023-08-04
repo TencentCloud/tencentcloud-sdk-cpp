@@ -25,7 +25,8 @@ using namespace std;
 BatchDeleteIntegrationTasksRequest::BatchDeleteIntegrationTasksRequest() :
     m_taskIdsHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_deleteKFFlagHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string BatchDeleteIntegrationTasksRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteKFFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteKFFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteKFFlag, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void BatchDeleteIntegrationTasksRequest::SetProjectId(const string& _projectId)
 bool BatchDeleteIntegrationTasksRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+int64_t BatchDeleteIntegrationTasksRequest::GetDeleteKFFlag() const
+{
+    return m_deleteKFFlag;
+}
+
+void BatchDeleteIntegrationTasksRequest::SetDeleteKFFlag(const int64_t& _deleteKFFlag)
+{
+    m_deleteKFFlag = _deleteKFFlag;
+    m_deleteKFFlagHasBeenSet = true;
+}
+
+bool BatchDeleteIntegrationTasksRequest::DeleteKFFlagHasBeenSet() const
+{
+    return m_deleteKFFlagHasBeenSet;
 }
 
 

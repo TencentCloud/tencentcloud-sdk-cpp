@@ -1138,6 +1138,81 @@ namespace TencentCloud
                      */
                     bool TaskAlarmRegularListHasBeenSet() const;
 
+                    /**
+                     * 获取资源分层情况： 0：进行中,1：成功 ,2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SwitchResource 资源分层情况： 0：进行中,1：成功 ,2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSwitchResource() const;
+
+                    /**
+                     * 设置资源分层情况： 0：进行中,1：成功 ,2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _switchResource 资源分层情况： 0：进行中,1：成功 ,2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSwitchResource(const int64_t& _switchResource);
+
+                    /**
+                     * 判断参数 SwitchResource 是否已赋值
+                     * @return SwitchResource 是否已赋值
+                     * 
+                     */
+                    bool SwitchResourceHasBeenSet() const;
+
+                    /**
+                     * 获取读取阶段：0：全部全量,1：部分全量,2：全部增量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReadPhase 读取阶段：0：全部全量,1：部分全量,2：全部增量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetReadPhase() const;
+
+                    /**
+                     * 设置读取阶段：0：全部全量,1：部分全量,2：全部增量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _readPhase 读取阶段：0：全部全量,1：部分全量,2：全部增量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReadPhase(const int64_t& _readPhase);
+
+                    /**
+                     * 判断参数 ReadPhase 是否已赋值
+                     * @return ReadPhase 是否已赋值
+                     * 
+                     */
+                    bool ReadPhaseHasBeenSet() const;
+
+                    /**
+                     * 获取版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceVersion 版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetInstanceVersion() const;
+
+                    /**
+                     * 设置版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceVersion 版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceVersion(const int64_t& _instanceVersion);
+
+                    /**
+                     * 判断参数 InstanceVersion 是否已赋值
+                     * @return InstanceVersion 是否已赋值
+                     * 
+                     */
+                    bool InstanceVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1444,6 +1519,27 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_taskAlarmRegularList;
                     bool m_taskAlarmRegularListHasBeenSet;
+
+                    /**
+                     * 资源分层情况： 0：进行中,1：成功 ,2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_switchResource;
+                    bool m_switchResourceHasBeenSet;
+
+                    /**
+                     * 读取阶段：0：全部全量,1：部分全量,2：全部增量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_readPhase;
+                    bool m_readPhaseHasBeenSet;
+
+                    /**
+                     * 版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_instanceVersion;
+                    bool m_instanceVersionHasBeenSet;
 
                 };
             }

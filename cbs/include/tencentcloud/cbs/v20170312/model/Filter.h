@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一个或者多个过滤值。
-                     * @return Values 一个或者多个过滤值。
-                     * 
-                     */
-                    std::vector<std::string> GetValues() const;
-
-                    /**
-                     * 设置一个或者多个过滤值。
-                     * @param _values 一个或者多个过滤值。
-                     * 
-                     */
-                    void SetValues(const std::vector<std::string>& _values);
-
-                    /**
-                     * 判断参数 Values 是否已赋值
-                     * @return Values 是否已赋值
-                     * 
-                     */
-                    bool ValuesHasBeenSet() const;
-
-                    /**
                      * 获取过滤键的名称。
                      * @return Name 过滤键的名称。
                      * 
@@ -88,19 +67,40 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取一个或者多个过滤值。
+                     * @return Values 一个或者多个过滤值。
+                     * 
+                     */
+                    std::vector<std::string> GetValues() const;
 
                     /**
-                     * 一个或者多个过滤值。
+                     * 设置一个或者多个过滤值。
+                     * @param _values 一个或者多个过滤值。
+                     * 
                      */
-                    std::vector<std::string> m_values;
-                    bool m_valuesHasBeenSet;
+                    void SetValues(const std::vector<std::string>& _values);
+
+                    /**
+                     * 判断参数 Values 是否已赋值
+                     * @return Values 是否已赋值
+                     * 
+                     */
+                    bool ValuesHasBeenSet() const;
+
+                private:
 
                     /**
                      * 过滤键的名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 一个或者多个过滤值。
+                     */
+                    std::vector<std::string> m_values;
+                    bool m_valuesHasBeenSet;
 
                 };
             }

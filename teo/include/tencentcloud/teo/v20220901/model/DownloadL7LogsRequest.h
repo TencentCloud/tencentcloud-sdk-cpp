@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取站点集合，不填默认选择全部站点。
-                     * @return ZoneIds 站点集合，不填默认选择全部站点。
+                     * 获取站点集合，此参数必填，不填默认查询为空。
+                     * @return ZoneIds 站点集合，此参数必填，不填默认查询为空。
                      * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点集合，不填默认选择全部站点。
-                     * @param _zoneIds 站点集合，不填默认选择全部站点。
+                     * 设置站点集合，此参数必填，不填默认查询为空。
+                     * @param _zoneIds 站点集合，此参数必填，不填默认查询为空。
                      * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取分页查询的限制数目，默认值为20，最大查询条目为1000。
-                     * @return Limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * 获取分页查询的限制数目，默认值为 20，最大查询条目为 1000。
+                     * @return Limit 分页查询的限制数目，默认值为 20，最大查询条目为 1000。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询的限制数目，默认值为20，最大查询条目为1000。
-                     * @param _limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * 设置分页查询的限制数目，默认值为 20，最大查询条目为 1000。
+                     * @param _limit 分页查询的限制数目，默认值为 20，最大查询条目为 1000。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页的偏移量，默认值为0。
-                     * @return Offset 分页的偏移量，默认值为0。
+                     * 获取分页的偏移量，默认值为 0。
+                     * @return Offset 分页的偏移量，默认值为 0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页的偏移量，默认值为0。
-                     * @param _offset 分页的偏移量，默认值为0。
+                     * 设置分页的偏移量，默认值为 0。
+                     * @param _offset 分页的偏移量，默认值为 0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 站点集合，不填默认选择全部站点。
+                     * 站点集合，此参数必填，不填默认查询为空。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
@@ -195,13 +195,13 @@ namespace TencentCloud
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * 分页查询的限制数目，默认值为 20，最大查询条目为 1000。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页的偏移量，默认值为0。
+                     * 分页的偏移量，默认值为 0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

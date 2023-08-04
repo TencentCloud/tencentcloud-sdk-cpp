@@ -27,7 +27,9 @@ CommitIntegrationTaskRequest::CommitIntegrationTaskRequest() :
     m_projectIdHasBeenSet(false),
     m_commitTypeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_extConfigHasBeenSet(false)
+    m_extConfigHasBeenSet(false),
+    m_versionDescHasBeenSet(false),
+    m_instanceVersionHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,22 @@ string CommitIntegrationTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_versionDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionDesc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_versionDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceVersion, allocator);
     }
 
 
@@ -171,6 +189,38 @@ void CommitIntegrationTaskRequest::SetExtConfig(const vector<RecordField>& _extC
 bool CommitIntegrationTaskRequest::ExtConfigHasBeenSet() const
 {
     return m_extConfigHasBeenSet;
+}
+
+string CommitIntegrationTaskRequest::GetVersionDesc() const
+{
+    return m_versionDesc;
+}
+
+void CommitIntegrationTaskRequest::SetVersionDesc(const string& _versionDesc)
+{
+    m_versionDesc = _versionDesc;
+    m_versionDescHasBeenSet = true;
+}
+
+bool CommitIntegrationTaskRequest::VersionDescHasBeenSet() const
+{
+    return m_versionDescHasBeenSet;
+}
+
+int64_t CommitIntegrationTaskRequest::GetInstanceVersion() const
+{
+    return m_instanceVersion;
+}
+
+void CommitIntegrationTaskRequest::SetInstanceVersion(const int64_t& _instanceVersion)
+{
+    m_instanceVersion = _instanceVersion;
+    m_instanceVersionHasBeenSet = true;
+}
+
+bool CommitIntegrationTaskRequest::InstanceVersionHasBeenSet() const
+{
+    return m_instanceVersionHasBeenSet;
 }
 
 

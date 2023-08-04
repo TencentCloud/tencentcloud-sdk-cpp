@@ -148,6 +148,48 @@ namespace TencentCloud
                      */
                     bool ExtConfigHasBeenSet() const;
 
+                    /**
+                     * 获取提交版本描述
+                     * @return VersionDesc 提交版本描述
+                     * 
+                     */
+                    std::string GetVersionDesc() const;
+
+                    /**
+                     * 设置提交版本描述
+                     * @param _versionDesc 提交版本描述
+                     * 
+                     */
+                    void SetVersionDesc(const std::string& _versionDesc);
+
+                    /**
+                     * 判断参数 VersionDesc 是否已赋值
+                     * @return VersionDesc 是否已赋值
+                     * 
+                     */
+                    bool VersionDescHasBeenSet() const;
+
+                    /**
+                     * 获取提交版本号
+                     * @return InstanceVersion 提交版本号
+                     * 
+                     */
+                    int64_t GetInstanceVersion() const;
+
+                    /**
+                     * 设置提交版本号
+                     * @param _instanceVersion 提交版本号
+                     * 
+                     */
+                    void SetInstanceVersion(const int64_t& _instanceVersion);
+
+                    /**
+                     * 判断参数 InstanceVersion 是否已赋值
+                     * @return InstanceVersion 是否已赋值
+                     * 
+                     */
+                    bool InstanceVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +221,18 @@ namespace TencentCloud
                      */
                     std::vector<RecordField> m_extConfig;
                     bool m_extConfigHasBeenSet;
+
+                    /**
+                     * 提交版本描述
+                     */
+                    std::string m_versionDesc;
+                    bool m_versionDescHasBeenSet;
+
+                    /**
+                     * 提交版本号
+                     */
+                    int64_t m_instanceVersion;
+                    bool m_instanceVersionHasBeenSet;
 
                 };
             }

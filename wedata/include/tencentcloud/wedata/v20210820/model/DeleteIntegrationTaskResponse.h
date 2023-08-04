@@ -57,6 +57,44 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取任务删除成功与否标识
+0表示删除成功
+1 表示失败，失败原因见 DeleteErrInfo
+100 表示running or suspend task can't be deleted失败，失败原因也会写到DeleteErrInfo里面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeleteFlag 任务删除成功与否标识
+0表示删除成功
+1 表示失败，失败原因见 DeleteErrInfo
+100 表示running or suspend task can't be deleted失败，失败原因也会写到DeleteErrInfo里面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDeleteFlag() const;
+
+                    /**
+                     * 判断参数 DeleteFlag 是否已赋值
+                     * @return DeleteFlag 是否已赋值
+                     * 
+                     */
+                    bool DeleteFlagHasBeenSet() const;
+
+                    /**
+                     * 获取删除失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeleteErrInfo 删除失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeleteErrInfo() const;
+
+                    /**
+                     * 判断参数 DeleteErrInfo 是否已赋值
+                     * @return DeleteErrInfo 是否已赋值
+                     * 
+                     */
+                    bool DeleteErrInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +102,23 @@ namespace TencentCloud
                      */
                     bool m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 任务删除成功与否标识
+0表示删除成功
+1 表示失败，失败原因见 DeleteErrInfo
+100 表示running or suspend task can't be deleted失败，失败原因也会写到DeleteErrInfo里面
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_deleteFlag;
+                    bool m_deleteFlagHasBeenSet;
+
+                    /**
+                     * 删除失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deleteErrInfo;
+                    bool m_deleteErrInfoHasBeenSet;
 
                 };
             }

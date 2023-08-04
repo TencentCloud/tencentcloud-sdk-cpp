@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否删除开发态任务。默认不删除开发态，为 0 不删除 , 为 1 删除
+                     * @return DeleteKFFlag 是否删除开发态任务。默认不删除开发态，为 0 不删除 , 为 1 删除
+                     * 
+                     */
+                    int64_t GetDeleteKFFlag() const;
+
+                    /**
+                     * 设置是否删除开发态任务。默认不删除开发态，为 0 不删除 , 为 1 删除
+                     * @param _deleteKFFlag 是否删除开发态任务。默认不删除开发态，为 0 不删除 , 为 1 删除
+                     * 
+                     */
+                    void SetDeleteKFFlag(const int64_t& _deleteKFFlag);
+
+                    /**
+                     * 判断参数 DeleteKFFlag 是否已赋值
+                     * @return DeleteKFFlag 是否已赋值
+                     * 
+                     */
+                    bool DeleteKFFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 是否删除开发态任务。默认不删除开发态，为 0 不删除 , 为 1 删除
+                     */
+                    int64_t m_deleteKFFlag;
+                    bool m_deleteKFFlagHasBeenSet;
 
                 };
             }

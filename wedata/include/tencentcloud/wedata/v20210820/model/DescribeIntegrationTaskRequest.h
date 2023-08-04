@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool TaskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取提交版本号
+                     * @return InstanceVersion 提交版本号
+                     * 
+                     */
+                    int64_t GetInstanceVersion() const;
+
+                    /**
+                     * 设置提交版本号
+                     * @param _instanceVersion 提交版本号
+                     * 
+                     */
+                    void SetInstanceVersion(const int64_t& _instanceVersion);
+
+                    /**
+                     * 判断参数 InstanceVersion 是否已赋值
+                     * @return InstanceVersion 是否已赋值
+                     * 
+                     */
+                    bool InstanceVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 提交版本号
+                     */
+                    int64_t m_instanceVersion;
+                    bool m_instanceVersionHasBeenSet;
 
                 };
             }

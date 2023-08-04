@@ -1459,6 +1459,49 @@ PostgresClient::DescribeDBInstanceAttributeOutcomeCallable PostgresClient::Descr
     return task->get_future();
 }
 
+PostgresClient::DescribeDBInstanceHAConfigOutcome PostgresClient::DescribeDBInstanceHAConfig(const DescribeDBInstanceHAConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceHAConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceHAConfigResponse rsp = DescribeDBInstanceHAConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceHAConfigOutcome(rsp);
+        else
+            return DescribeDBInstanceHAConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceHAConfigOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeDBInstanceHAConfigAsync(const DescribeDBInstanceHAConfigRequest& request, const DescribeDBInstanceHAConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceHAConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeDBInstanceHAConfigOutcomeCallable PostgresClient::DescribeDBInstanceHAConfigCallable(const DescribeDBInstanceHAConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceHAConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceHAConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeDBInstanceParametersOutcome PostgresClient::DescribeDBInstanceParameters(const DescribeDBInstanceParametersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstanceParameters");
@@ -2921,6 +2964,49 @@ PostgresClient::ModifyDBInstanceDeploymentOutcomeCallable PostgresClient::Modify
     return task->get_future();
 }
 
+PostgresClient::ModifyDBInstanceHAConfigOutcome PostgresClient::ModifyDBInstanceHAConfig(const ModifyDBInstanceHAConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceHAConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceHAConfigResponse rsp = ModifyDBInstanceHAConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceHAConfigOutcome(rsp);
+        else
+            return ModifyDBInstanceHAConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceHAConfigOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDBInstanceHAConfigAsync(const ModifyDBInstanceHAConfigRequest& request, const ModifyDBInstanceHAConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceHAConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyDBInstanceHAConfigOutcomeCallable PostgresClient::ModifyDBInstanceHAConfigCallable(const ModifyDBInstanceHAConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceHAConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceHAConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::ModifyDBInstanceNameOutcome PostgresClient::ModifyDBInstanceName(const ModifyDBInstanceNameRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceName");
@@ -3645,6 +3731,49 @@ PostgresClient::SetAutoRenewFlagOutcomeCallable PostgresClient::SetAutoRenewFlag
         [this, request]()
         {
             return this->SetAutoRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::SwitchDBInstancePrimaryOutcome PostgresClient::SwitchDBInstancePrimary(const SwitchDBInstancePrimaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchDBInstancePrimary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchDBInstancePrimaryResponse rsp = SwitchDBInstancePrimaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchDBInstancePrimaryOutcome(rsp);
+        else
+            return SwitchDBInstancePrimaryOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchDBInstancePrimaryOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::SwitchDBInstancePrimaryAsync(const SwitchDBInstancePrimaryRequest& request, const SwitchDBInstancePrimaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchDBInstancePrimary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::SwitchDBInstancePrimaryOutcomeCallable PostgresClient::SwitchDBInstancePrimaryCallable(const SwitchDBInstancePrimaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchDBInstancePrimaryOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchDBInstancePrimary(request);
         }
     );
 

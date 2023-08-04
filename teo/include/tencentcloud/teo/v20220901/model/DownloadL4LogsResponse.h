@@ -45,22 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取四层离线日志数据列表。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 四层离线日志数据列表。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<L4OfflineLog> GetData() const;
-
-                    /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
-                     * 
-                     */
-                    bool DataHasBeenSet() const;
-
-                    /**
                      * 获取查询结果的总条数。
                      * @return TotalCount 查询结果的总条数。
                      * 
@@ -74,20 +58,33 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取四层离线日志数据列表。
+                     * @return Data 四层离线日志数据列表。
+                     * 
+                     */
+                    std::vector<L4OfflineLog> GetData() const;
 
                     /**
-                     * 四层离线日志数据列表。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     * 
                      */
-                    std::vector<L4OfflineLog> m_data;
-                    bool m_dataHasBeenSet;
+                    bool DataHasBeenSet() const;
+
+                private:
 
                     /**
                      * 查询结果的总条数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 四层离线日志数据列表。
+                     */
+                    std::vector<L4OfflineLog> m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
