@@ -65,6 +65,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleResponse.h
   include/tencentcloud/cdb/v20170320/model/StopDBImportJobResponse.h
   include/tencentcloud/cdb/v20170320/model/ProxyAllocation.h
+  include/tencentcloud/cdb/v20170320/model/StopCpuExpandRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/cdb/v20170320/model/TagInfoUnit.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditRuleResponse.h
@@ -154,12 +155,14 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CreateAuditPolicyRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateRoInstanceIpRequest.h
   include/tencentcloud/cdb/v20170320/model/OpenWanServiceRequest.h
+  include/tencentcloud/cdb/v20170320/model/StopCpuExpandResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupConfigResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeParamTemplatesResponse.h
   include/tencentcloud/cdb/v20170320/model/ZoneConf.h
   include/tencentcloud/cdb/v20170320/model/SlaveInstanceInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeProjectSecurityGroupsRequest.h
   include/tencentcloud/cdb/v20170320/model/StopReplicationRequest.h
+  include/tencentcloud/cdb/v20170320/model/StartCpuExpandResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateCloneInstanceResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeCdbZoneConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/DeviceCpuInfo.h
@@ -292,6 +295,8 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateDBImportJobResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeTagsOfInstanceIdsRequest.h
+  include/tencentcloud/cdb/v20170320/model/StartCpuExpandRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeCpuExpandStrategyRequest.h
   include/tencentcloud/cdb/v20170320/model/CloseCDBProxyResponse.h
   include/tencentcloud/cdb/v20170320/model/StopReplicationResponse.h
   include/tencentcloud/cdb/v20170320/model/UpgradeDBInstanceEngineVersionRequest.h
@@ -375,6 +380,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/UpgradeCDBProxyVersionResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyAccountDescriptionRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyAccountPasswordRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeCpuExpandStrategyResponse.h
   include/tencentcloud/cdb/v20170320/model/InstanceRebootTime.h
   include/tencentcloud/cdb/v20170320/model/RenewDBInstanceResponse.h
   include/tencentcloud/cdb/v20170320/model/TablePrivilege.h
@@ -450,6 +456,7 @@ set(cdb_src
   src/v20170320/model/DescribeRoMinScaleResponse.cpp
   src/v20170320/model/StopDBImportJobResponse.cpp
   src/v20170320/model/ProxyAllocation.cpp
+  src/v20170320/model/StopCpuExpandRequest.cpp
   src/v20170320/model/ModifyDBInstanceNameRequest.cpp
   src/v20170320/model/TagInfoUnit.cpp
   src/v20170320/model/ModifyAuditRuleResponse.cpp
@@ -539,12 +546,14 @@ set(cdb_src
   src/v20170320/model/CreateAuditPolicyRequest.cpp
   src/v20170320/model/CreateRoInstanceIpRequest.cpp
   src/v20170320/model/OpenWanServiceRequest.cpp
+  src/v20170320/model/StopCpuExpandResponse.cpp
   src/v20170320/model/DescribeBackupConfigResponse.cpp
   src/v20170320/model/DescribeParamTemplatesResponse.cpp
   src/v20170320/model/ZoneConf.cpp
   src/v20170320/model/SlaveInstanceInfo.cpp
   src/v20170320/model/DescribeProjectSecurityGroupsRequest.cpp
   src/v20170320/model/StopReplicationRequest.cpp
+  src/v20170320/model/StartCpuExpandResponse.cpp
   src/v20170320/model/CreateCloneInstanceResponse.cpp
   src/v20170320/model/DescribeCdbZoneConfigRequest.cpp
   src/v20170320/model/DeviceCpuInfo.cpp
@@ -677,6 +686,8 @@ set(cdb_src
   src/v20170320/model/DescribeDBImportRecordsRequest.cpp
   src/v20170320/model/CreateDBImportJobResponse.cpp
   src/v20170320/model/DescribeTagsOfInstanceIdsRequest.cpp
+  src/v20170320/model/StartCpuExpandRequest.cpp
+  src/v20170320/model/DescribeCpuExpandStrategyRequest.cpp
   src/v20170320/model/CloseCDBProxyResponse.cpp
   src/v20170320/model/StopReplicationResponse.cpp
   src/v20170320/model/UpgradeDBInstanceEngineVersionRequest.cpp
@@ -760,6 +771,7 @@ set(cdb_src
   src/v20170320/model/UpgradeCDBProxyVersionResponse.cpp
   src/v20170320/model/ModifyAccountDescriptionRequest.cpp
   src/v20170320/model/ModifyAccountPasswordRequest.cpp
+  src/v20170320/model/DescribeCpuExpandStrategyResponse.cpp
   src/v20170320/model/InstanceRebootTime.cpp
   src/v20170320/model/RenewDBInstanceResponse.cpp
   src/v20170320/model/TablePrivilege.cpp

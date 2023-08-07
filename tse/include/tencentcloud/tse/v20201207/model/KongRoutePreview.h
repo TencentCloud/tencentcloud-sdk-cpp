@@ -302,7 +302,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForceHttps 是否开启了强制HTTPS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     bool GetForceHttps() const;
 
@@ -311,14 +311,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forceHttps 是否开启了强制HTTPS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetForceHttps(const bool& _forceHttps);
 
                     /**
                      * 判断参数 ForceHttps 是否已赋值
                      * @return ForceHttps 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ForceHttpsHasBeenSet() const;
 

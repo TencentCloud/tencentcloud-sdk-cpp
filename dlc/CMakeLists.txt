@@ -32,7 +32,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/Asset.h
   include/tencentcloud/dlc/v20210125/model/SparkSessionBatchLogOperate.h
   include/tencentcloud/dlc/v20210125/model/DetachUserPolicyResponse.h
-  include/tencentcloud/dlc/v20210125/model/TaskResultInfo.h
+  include/tencentcloud/dlc/v20210125/model/CosPermission.h
   include/tencentcloud/dlc/v20210125/model/CreateResultDownloadResponse.h
   include/tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionsRequest.h
@@ -57,6 +57,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CrontabResumeSuspendStrategy.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSTableResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoRequest.h
+  include/tencentcloud/dlc/v20210125/model/TaskResultInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSTableResponse.h
   include/tencentcloud/dlc/v20210125/model/DropDMSPartitionsRequest.h
   include/tencentcloud/dlc/v20210125/model/NotebookSessions.h
@@ -131,7 +132,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeStoreLocationRequest.h
   include/tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionLogRequest.h
-  include/tencentcloud/dlc/v20210125/model/UserInfo.h
+  include/tencentcloud/dlc/v20210125/model/DescribeUserRolesResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateExportTaskRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementResponse.h
   include/tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataResponse.h
@@ -156,6 +157,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/AddDMSPartitionsRequest.h
   include/tencentcloud/dlc/v20210125/model/Script.h
   include/tencentcloud/dlc/v20210125/model/NotebookSessionStatementBatchInformation.h
+  include/tencentcloud/dlc/v20210125/model/DescribeUserRolesRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementSqlResultRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSTableRequest.h
@@ -228,6 +230,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/TasksOverview.h
   include/tencentcloud/dlc/v20210125/model/UnbindWorkGroupsFromUserRequest.h
   include/tencentcloud/dlc/v20210125/model/UpdateRowFilterResponse.h
+  include/tencentcloud/dlc/v20210125/model/UserInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeViewsResponse.h
@@ -261,6 +264,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/UpdateRowFilterRequest.h
   include/tencentcloud/dlc/v20210125/model/TColumn.h
   include/tencentcloud/dlc/v20210125/model/DescribeResultDownloadRequest.h
+  include/tencentcloud/dlc/v20210125/model/UserRole.h
   )
 
 set(dlc_src
@@ -278,7 +282,7 @@ set(dlc_src
   src/v20210125/model/Asset.cpp
   src/v20210125/model/SparkSessionBatchLogOperate.cpp
   src/v20210125/model/DetachUserPolicyResponse.cpp
-  src/v20210125/model/TaskResultInfo.cpp
+  src/v20210125/model/CosPermission.cpp
   src/v20210125/model/CreateResultDownloadResponse.cpp
   src/v20210125/model/ModifyGovernEventRuleResponse.cpp
   src/v20210125/model/DescribeNotebookSessionsRequest.cpp
@@ -303,6 +307,7 @@ set(dlc_src
   src/v20210125/model/CrontabResumeSuspendStrategy.cpp
   src/v20210125/model/AlterDMSTableResponse.cpp
   src/v20210125/model/DescribeEngineUsageInfoRequest.cpp
+  src/v20210125/model/TaskResultInfo.cpp
   src/v20210125/model/DescribeDMSTableResponse.cpp
   src/v20210125/model/DropDMSPartitionsRequest.cpp
   src/v20210125/model/NotebookSessions.cpp
@@ -377,7 +382,7 @@ set(dlc_src
   src/v20210125/model/DescribeStoreLocationRequest.cpp
   src/v20210125/model/AddUsersToWorkGroupResponse.cpp
   src/v20210125/model/DescribeNotebookSessionLogRequest.cpp
-  src/v20210125/model/UserInfo.cpp
+  src/v20210125/model/DescribeUserRolesResponse.cpp
   src/v20210125/model/CreateExportTaskRequest.cpp
   src/v20210125/model/DescribeNotebookSessionStatementResponse.cpp
   src/v20210125/model/ReportHeartbeatMetaDataResponse.cpp
@@ -402,6 +407,7 @@ set(dlc_src
   src/v20210125/model/AddDMSPartitionsRequest.cpp
   src/v20210125/model/Script.cpp
   src/v20210125/model/NotebookSessionStatementBatchInformation.cpp
+  src/v20210125/model/DescribeUserRolesRequest.cpp
   src/v20210125/model/DescribeNotebookSessionStatementSqlResultRequest.cpp
   src/v20210125/model/ModifySparkAppResponse.cpp
   src/v20210125/model/AlterDMSTableRequest.cpp
@@ -474,6 +480,7 @@ set(dlc_src
   src/v20210125/model/TasksOverview.cpp
   src/v20210125/model/UnbindWorkGroupsFromUserRequest.cpp
   src/v20210125/model/UpdateRowFilterResponse.cpp
+  src/v20210125/model/UserInfo.cpp
   src/v20210125/model/CreateTasksResponse.cpp
   src/v20210125/model/CreateNotebookSessionResponse.cpp
   src/v20210125/model/DescribeViewsResponse.cpp
@@ -507,6 +514,7 @@ set(dlc_src
   src/v20210125/model/UpdateRowFilterRequest.cpp
   src/v20210125/model/TColumn.cpp
   src/v20210125/model/DescribeResultDownloadRequest.cpp
+  src/v20210125/model/UserRole.cpp
   )
 
 set(dlc_include

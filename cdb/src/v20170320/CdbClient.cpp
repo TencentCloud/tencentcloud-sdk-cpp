@@ -2319,6 +2319,49 @@ CdbClient::DescribeCloneListOutcomeCallable CdbClient::DescribeCloneListCallable
     return task->get_future();
 }
 
+CdbClient::DescribeCpuExpandStrategyOutcome CdbClient::DescribeCpuExpandStrategy(const DescribeCpuExpandStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCpuExpandStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCpuExpandStrategyResponse rsp = DescribeCpuExpandStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCpuExpandStrategyOutcome(rsp);
+        else
+            return DescribeCpuExpandStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCpuExpandStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeCpuExpandStrategyAsync(const DescribeCpuExpandStrategyRequest& request, const DescribeCpuExpandStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCpuExpandStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeCpuExpandStrategyOutcomeCallable CdbClient::DescribeCpuExpandStrategyCallable(const DescribeCpuExpandStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCpuExpandStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCpuExpandStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeDBFeaturesOutcome CdbClient::DescribeDBFeatures(const DescribeDBFeaturesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBFeatures");
@@ -5759,6 +5802,49 @@ CdbClient::StartBatchRollbackOutcomeCallable CdbClient::StartBatchRollbackCallab
     return task->get_future();
 }
 
+CdbClient::StartCpuExpandOutcome CdbClient::StartCpuExpand(const StartCpuExpandRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartCpuExpand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartCpuExpandResponse rsp = StartCpuExpandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartCpuExpandOutcome(rsp);
+        else
+            return StartCpuExpandOutcome(o.GetError());
+    }
+    else
+    {
+        return StartCpuExpandOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::StartCpuExpandAsync(const StartCpuExpandRequest& request, const StartCpuExpandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartCpuExpand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::StartCpuExpandOutcomeCallable CdbClient::StartCpuExpandCallable(const StartCpuExpandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartCpuExpandOutcome()>>(
+        [this, request]()
+        {
+            return this->StartCpuExpand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::StartReplicationOutcome CdbClient::StartReplication(const StartReplicationRequest &request)
 {
     auto outcome = MakeRequest(request, "StartReplication");
@@ -5795,6 +5881,49 @@ CdbClient::StartReplicationOutcomeCallable CdbClient::StartReplicationCallable(c
         [this, request]()
         {
             return this->StartReplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::StopCpuExpandOutcome CdbClient::StopCpuExpand(const StopCpuExpandRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopCpuExpand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopCpuExpandResponse rsp = StopCpuExpandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopCpuExpandOutcome(rsp);
+        else
+            return StopCpuExpandOutcome(o.GetError());
+    }
+    else
+    {
+        return StopCpuExpandOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::StopCpuExpandAsync(const StopCpuExpandRequest& request, const StopCpuExpandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopCpuExpand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::StopCpuExpandOutcomeCallable CdbClient::StopCpuExpandCallable(const StopCpuExpandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopCpuExpandOutcome()>>(
+        [this, request]()
+        {
+            return this->StopCpuExpand(request);
         }
     );
 

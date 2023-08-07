@@ -83,6 +83,49 @@ VpcClient::AcceptAttachCcnInstancesOutcomeCallable VpcClient::AcceptAttachCcnIns
     return task->get_future();
 }
 
+VpcClient::AcceptVpcPeeringConnectionOutcome VpcClient::AcceptVpcPeeringConnection(const AcceptVpcPeeringConnectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "AcceptVpcPeeringConnection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AcceptVpcPeeringConnectionResponse rsp = AcceptVpcPeeringConnectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AcceptVpcPeeringConnectionOutcome(rsp);
+        else
+            return AcceptVpcPeeringConnectionOutcome(o.GetError());
+    }
+    else
+    {
+        return AcceptVpcPeeringConnectionOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AcceptVpcPeeringConnectionAsync(const AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AcceptVpcPeeringConnection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AcceptVpcPeeringConnectionOutcomeCallable VpcClient::AcceptVpcPeeringConnectionCallable(const AcceptVpcPeeringConnectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AcceptVpcPeeringConnectionOutcome()>>(
+        [this, request]()
+        {
+            return this->AcceptVpcPeeringConnection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::AddBandwidthPackageResourcesOutcome VpcClient::AddBandwidthPackageResources(const AddBandwidthPackageResourcesRequest &request)
 {
     auto outcome = MakeRequest(request, "AddBandwidthPackageResources");
@@ -2792,6 +2835,49 @@ VpcClient::CreateVpcEndPointServiceWhiteListOutcomeCallable VpcClient::CreateVpc
     return task->get_future();
 }
 
+VpcClient::CreateVpcPeeringConnectionOutcome VpcClient::CreateVpcPeeringConnection(const CreateVpcPeeringConnectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVpcPeeringConnection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVpcPeeringConnectionResponse rsp = CreateVpcPeeringConnectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVpcPeeringConnectionOutcome(rsp);
+        else
+            return CreateVpcPeeringConnectionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVpcPeeringConnectionOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateVpcPeeringConnectionAsync(const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVpcPeeringConnection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateVpcPeeringConnectionOutcomeCallable VpcClient::CreateVpcPeeringConnectionCallable(const CreateVpcPeeringConnectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVpcPeeringConnectionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVpcPeeringConnection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateVpnConnectionOutcome VpcClient::CreateVpnConnection(const CreateVpnConnectionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateVpnConnection");
@@ -4462,6 +4548,49 @@ VpcClient::DeleteVpcEndPointServiceWhiteListOutcomeCallable VpcClient::DeleteVpc
         [this, request]()
         {
             return this->DeleteVpcEndPointServiceWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteVpcPeeringConnectionOutcome VpcClient::DeleteVpcPeeringConnection(const DeleteVpcPeeringConnectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVpcPeeringConnection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVpcPeeringConnectionResponse rsp = DeleteVpcPeeringConnectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVpcPeeringConnectionOutcome(rsp);
+        else
+            return DeleteVpcPeeringConnectionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVpcPeeringConnectionOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteVpcPeeringConnectionAsync(const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVpcPeeringConnection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteVpcPeeringConnectionOutcomeCallable VpcClient::DeleteVpcPeeringConnectionCallable(const DeleteVpcPeeringConnectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVpcPeeringConnectionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVpcPeeringConnection(request);
         }
     );
 
@@ -7816,6 +7945,49 @@ VpcClient::DescribeVpcLimitsOutcomeCallable VpcClient::DescribeVpcLimitsCallable
         [this, request]()
         {
             return this->DescribeVpcLimits(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeVpcPeeringConnectionsOutcome VpcClient::DescribeVpcPeeringConnections(const DescribeVpcPeeringConnectionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpcPeeringConnections");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpcPeeringConnectionsResponse rsp = DescribeVpcPeeringConnectionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpcPeeringConnectionsOutcome(rsp);
+        else
+            return DescribeVpcPeeringConnectionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpcPeeringConnectionsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeVpcPeeringConnectionsAsync(const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpcPeeringConnections(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeVpcPeeringConnectionsOutcomeCallable VpcClient::DescribeVpcPeeringConnectionsCallable(const DescribeVpcPeeringConnectionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpcPeeringConnectionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpcPeeringConnections(request);
         }
     );
 
@@ -11736,6 +11908,49 @@ VpcClient::ModifyVpcEndPointServiceWhiteListOutcomeCallable VpcClient::ModifyVpc
     return task->get_future();
 }
 
+VpcClient::ModifyVpcPeeringConnectionOutcome VpcClient::ModifyVpcPeeringConnection(const ModifyVpcPeeringConnectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVpcPeeringConnection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVpcPeeringConnectionResponse rsp = ModifyVpcPeeringConnectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVpcPeeringConnectionOutcome(rsp);
+        else
+            return ModifyVpcPeeringConnectionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVpcPeeringConnectionOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyVpcPeeringConnectionAsync(const ModifyVpcPeeringConnectionRequest& request, const ModifyVpcPeeringConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVpcPeeringConnection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyVpcPeeringConnectionOutcomeCallable VpcClient::ModifyVpcPeeringConnectionCallable(const ModifyVpcPeeringConnectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVpcPeeringConnectionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVpcPeeringConnection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyVpnConnectionAttributeOutcome VpcClient::ModifyVpnConnectionAttribute(const ModifyVpnConnectionAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyVpnConnectionAttribute");
@@ -12030,6 +12245,49 @@ VpcClient::RejectAttachCcnInstancesOutcomeCallable VpcClient::RejectAttachCcnIns
         [this, request]()
         {
             return this->RejectAttachCcnInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::RejectVpcPeeringConnectionOutcome VpcClient::RejectVpcPeeringConnection(const RejectVpcPeeringConnectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "RejectVpcPeeringConnection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RejectVpcPeeringConnectionResponse rsp = RejectVpcPeeringConnectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RejectVpcPeeringConnectionOutcome(rsp);
+        else
+            return RejectVpcPeeringConnectionOutcome(o.GetError());
+    }
+    else
+    {
+        return RejectVpcPeeringConnectionOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::RejectVpcPeeringConnectionAsync(const RejectVpcPeeringConnectionRequest& request, const RejectVpcPeeringConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RejectVpcPeeringConnection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::RejectVpcPeeringConnectionOutcomeCallable VpcClient::RejectVpcPeeringConnectionCallable(const RejectVpcPeeringConnectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RejectVpcPeeringConnectionOutcome()>>(
+        [this, request]()
+        {
+            return this->RejectVpcPeeringConnection(request);
         }
     );
 

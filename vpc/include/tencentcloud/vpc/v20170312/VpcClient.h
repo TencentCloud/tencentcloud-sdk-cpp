@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/vpc/v20170312/model/AcceptAttachCcnInstancesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AcceptAttachCcnInstancesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AcceptVpcPeeringConnectionRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AcceptVpcPeeringConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AddBandwidthPackageResourcesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AddBandwidthPackageResourcesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AddIp6RulesRequest.h>
@@ -151,6 +153,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointServiceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointServiceWhiteListRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointServiceWhiteListResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpcPeeringConnectionRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpcPeeringConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpnConnectionRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpnConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpnGatewayRequest.h>
@@ -229,6 +233,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointServiceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointServiceWhiteListRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointServiceWhiteListResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpcPeeringConnectionRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpcPeeringConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpnConnectionRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpnConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpnGatewayRequest.h>
@@ -385,6 +391,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcIpv6AddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcLimitsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpcPeeringConnectionsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpcPeeringConnectionsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcPrivateIpAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcPrivateIpAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcResourceDashboardRequest.h>
@@ -567,6 +575,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointServiceAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointServiceWhiteListRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointServiceWhiteListResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpcPeeringConnectionRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpcPeeringConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnConnectionAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnConnectionAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayAttributeRequest.h>
@@ -581,6 +591,8 @@
 #include <tencentcloud/vpc/v20170312/model/RefreshDirectConnectGatewayRouteToNatGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/RejectAttachCcnInstancesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/RejectAttachCcnInstancesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/RejectVpcPeeringConnectionRequest.h>
+#include <tencentcloud/vpc/v20170312/model/RejectVpcPeeringConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReleaseAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReleaseAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReleaseIp6AddressesBandwidthRequest.h>
@@ -654,6 +666,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AcceptAttachCcnInstancesResponse> AcceptAttachCcnInstancesOutcome;
                 typedef std::future<AcceptAttachCcnInstancesOutcome> AcceptAttachCcnInstancesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AcceptAttachCcnInstancesRequest&, AcceptAttachCcnInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AcceptAttachCcnInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AcceptVpcPeeringConnectionResponse> AcceptVpcPeeringConnectionOutcome;
+                typedef std::future<AcceptVpcPeeringConnectionOutcome> AcceptVpcPeeringConnectionOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AcceptVpcPeeringConnectionRequest&, AcceptVpcPeeringConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AcceptVpcPeeringConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddBandwidthPackageResourcesResponse> AddBandwidthPackageResourcesOutcome;
                 typedef std::future<AddBandwidthPackageResourcesOutcome> AddBandwidthPackageResourcesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AddBandwidthPackageResourcesRequest&, AddBandwidthPackageResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddBandwidthPackageResourcesAsyncHandler;
@@ -843,6 +858,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateVpcEndPointServiceWhiteListResponse> CreateVpcEndPointServiceWhiteListOutcome;
                 typedef std::future<CreateVpcEndPointServiceWhiteListOutcome> CreateVpcEndPointServiceWhiteListOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateVpcEndPointServiceWhiteListRequest&, CreateVpcEndPointServiceWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcEndPointServiceWhiteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVpcPeeringConnectionResponse> CreateVpcPeeringConnectionOutcome;
+                typedef std::future<CreateVpcPeeringConnectionOutcome> CreateVpcPeeringConnectionOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateVpcPeeringConnectionRequest&, CreateVpcPeeringConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcPeeringConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateVpnConnectionResponse> CreateVpnConnectionOutcome;
                 typedef std::future<CreateVpnConnectionOutcome> CreateVpnConnectionOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateVpnConnectionRequest&, CreateVpnConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpnConnectionAsyncHandler;
@@ -960,6 +978,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteVpcEndPointServiceWhiteListResponse> DeleteVpcEndPointServiceWhiteListOutcome;
                 typedef std::future<DeleteVpcEndPointServiceWhiteListOutcome> DeleteVpcEndPointServiceWhiteListOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteVpcEndPointServiceWhiteListRequest&, DeleteVpcEndPointServiceWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcEndPointServiceWhiteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionOutcome;
+                typedef std::future<DeleteVpcPeeringConnectionOutcome> DeleteVpcPeeringConnectionOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteVpcPeeringConnectionRequest&, DeleteVpcPeeringConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcPeeringConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteVpnConnectionResponse> DeleteVpnConnectionOutcome;
                 typedef std::future<DeleteVpnConnectionOutcome> DeleteVpnConnectionOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteVpnConnectionRequest&, DeleteVpnConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpnConnectionAsyncHandler;
@@ -1194,6 +1215,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVpcLimitsResponse> DescribeVpcLimitsOutcome;
                 typedef std::future<DescribeVpcLimitsOutcome> DescribeVpcLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeVpcLimitsRequest&, DescribeVpcLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcLimitsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsOutcome;
+                typedef std::future<DescribeVpcPeeringConnectionsOutcome> DescribeVpcPeeringConnectionsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeVpcPeeringConnectionsRequest&, DescribeVpcPeeringConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcPeeringConnectionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVpcPrivateIpAddressesResponse> DescribeVpcPrivateIpAddressesOutcome;
                 typedef std::future<DescribeVpcPrivateIpAddressesOutcome> DescribeVpcPrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeVpcPrivateIpAddressesRequest&, DescribeVpcPrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcPrivateIpAddressesAsyncHandler;
@@ -1467,6 +1491,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyVpcEndPointServiceWhiteListResponse> ModifyVpcEndPointServiceWhiteListOutcome;
                 typedef std::future<ModifyVpcEndPointServiceWhiteListOutcome> ModifyVpcEndPointServiceWhiteListOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpcEndPointServiceWhiteListRequest&, ModifyVpcEndPointServiceWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcEndPointServiceWhiteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVpcPeeringConnectionResponse> ModifyVpcPeeringConnectionOutcome;
+                typedef std::future<ModifyVpcPeeringConnectionOutcome> ModifyVpcPeeringConnectionOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyVpcPeeringConnectionRequest&, ModifyVpcPeeringConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcPeeringConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVpnConnectionAttributeResponse> ModifyVpnConnectionAttributeOutcome;
                 typedef std::future<ModifyVpnConnectionAttributeOutcome> ModifyVpnConnectionAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpnConnectionAttributeRequest&, ModifyVpnConnectionAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpnConnectionAttributeAsyncHandler;
@@ -1488,6 +1515,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RejectAttachCcnInstancesResponse> RejectAttachCcnInstancesOutcome;
                 typedef std::future<RejectAttachCcnInstancesOutcome> RejectAttachCcnInstancesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::RejectAttachCcnInstancesRequest&, RejectAttachCcnInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RejectAttachCcnInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RejectVpcPeeringConnectionResponse> RejectVpcPeeringConnectionOutcome;
+                typedef std::future<RejectVpcPeeringConnectionOutcome> RejectVpcPeeringConnectionOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::RejectVpcPeeringConnectionRequest&, RejectVpcPeeringConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RejectVpcPeeringConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseAddressesResponse> ReleaseAddressesOutcome;
                 typedef std::future<ReleaseAddressesOutcome> ReleaseAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReleaseAddressesRequest&, ReleaseAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseAddressesAsyncHandler;
@@ -1583,6 +1613,15 @@ namespace TencentCloud
                 AcceptAttachCcnInstancesOutcome AcceptAttachCcnInstances(const Model::AcceptAttachCcnInstancesRequest &request);
                 void AcceptAttachCcnInstancesAsync(const Model::AcceptAttachCcnInstancesRequest& request, const AcceptAttachCcnInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AcceptAttachCcnInstancesOutcomeCallable AcceptAttachCcnInstancesCallable(const Model::AcceptAttachCcnInstancesRequest& request);
+
+                /**
+                 *本接口（AcceptVpcPeeringConnection）用于接受对等连接请求。
+                 * @param req AcceptVpcPeeringConnectionRequest
+                 * @return AcceptVpcPeeringConnectionOutcome
+                 */
+                AcceptVpcPeeringConnectionOutcome AcceptVpcPeeringConnection(const Model::AcceptVpcPeeringConnectionRequest &request);
+                void AcceptVpcPeeringConnectionAsync(const Model::AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AcceptVpcPeeringConnectionOutcomeCallable AcceptVpcPeeringConnectionCallable(const Model::AcceptVpcPeeringConnectionRequest& request);
 
                 /**
                  *接口用于添加带宽包资源，包括[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)和[负载均衡](https://cloud.tencent.com/document/product/214/517)等
@@ -2276,6 +2315,15 @@ namespace TencentCloud
                 CreateVpcEndPointServiceWhiteListOutcomeCallable CreateVpcEndPointServiceWhiteListCallable(const Model::CreateVpcEndPointServiceWhiteListRequest& request);
 
                 /**
+                 *本接口（CreateVpcPeeringConnection）用于创建私有网络对等连接。
+                 * @param req CreateVpcPeeringConnectionRequest
+                 * @return CreateVpcPeeringConnectionOutcome
+                 */
+                CreateVpcPeeringConnectionOutcome CreateVpcPeeringConnection(const Model::CreateVpcPeeringConnectionRequest &request);
+                void CreateVpcPeeringConnectionAsync(const Model::CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVpcPeeringConnectionOutcomeCallable CreateVpcPeeringConnectionCallable(const Model::CreateVpcPeeringConnectionRequest& request);
+
+                /**
                  *本接口（CreateVpnConnection）用于创建VPN通道。
 >?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
 >
@@ -2648,6 +2696,15 @@ namespace TencentCloud
                 DeleteVpcEndPointServiceWhiteListOutcome DeleteVpcEndPointServiceWhiteList(const Model::DeleteVpcEndPointServiceWhiteListRequest &request);
                 void DeleteVpcEndPointServiceWhiteListAsync(const Model::DeleteVpcEndPointServiceWhiteListRequest& request, const DeleteVpcEndPointServiceWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteVpcEndPointServiceWhiteListOutcomeCallable DeleteVpcEndPointServiceWhiteListCallable(const Model::DeleteVpcEndPointServiceWhiteListRequest& request);
+
+                /**
+                 *本接口（DeleteVpcPeeringConnection）用于删除私有网络对等连接。
+                 * @param req DeleteVpcPeeringConnectionRequest
+                 * @return DeleteVpcPeeringConnectionOutcome
+                 */
+                DeleteVpcPeeringConnectionOutcome DeleteVpcPeeringConnection(const Model::DeleteVpcPeeringConnectionRequest &request);
+                void DeleteVpcPeeringConnectionAsync(const Model::DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVpcPeeringConnectionOutcomeCallable DeleteVpcPeeringConnectionCallable(const Model::DeleteVpcPeeringConnectionRequest& request);
 
                 /**
                  *本接口（DeleteVpnConnection）用于删除VPN通道。
@@ -3394,6 +3451,15 @@ LimitTypes取值范围：
                 DescribeVpcLimitsOutcome DescribeVpcLimits(const Model::DescribeVpcLimitsRequest &request);
                 void DescribeVpcLimitsAsync(const Model::DescribeVpcLimitsRequest& request, const DescribeVpcLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVpcLimitsOutcomeCallable DescribeVpcLimitsCallable(const Model::DescribeVpcLimitsRequest& request);
+
+                /**
+                 *查询私有网络对等连接。
+                 * @param req DescribeVpcPeeringConnectionsRequest
+                 * @return DescribeVpcPeeringConnectionsOutcome
+                 */
+                DescribeVpcPeeringConnectionsOutcome DescribeVpcPeeringConnections(const Model::DescribeVpcPeeringConnectionsRequest &request);
+                void DescribeVpcPeeringConnectionsAsync(const Model::DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpcPeeringConnectionsOutcomeCallable DescribeVpcPeeringConnectionsCallable(const Model::DescribeVpcPeeringConnectionsRequest& request);
 
                 /**
                  *本接口（DescribeVpcPrivateIpAddresses）用于查询VPC内网IP信息。<br />
@@ -4265,6 +4331,15 @@ LimitTypes取值范围：
                 ModifyVpcEndPointServiceWhiteListOutcomeCallable ModifyVpcEndPointServiceWhiteListCallable(const Model::ModifyVpcEndPointServiceWhiteListRequest& request);
 
                 /**
+                 *本接口（ModifyVpcPeeringConnection）用于修改私有网络对等连接属性。
+                 * @param req ModifyVpcPeeringConnectionRequest
+                 * @return ModifyVpcPeeringConnectionOutcome
+                 */
+                ModifyVpcPeeringConnectionOutcome ModifyVpcPeeringConnection(const Model::ModifyVpcPeeringConnectionRequest &request);
+                void ModifyVpcPeeringConnectionAsync(const Model::ModifyVpcPeeringConnectionRequest& request, const ModifyVpcPeeringConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVpcPeeringConnectionOutcomeCallable ModifyVpcPeeringConnectionCallable(const Model::ModifyVpcPeeringConnectionRequest& request);
+
+                /**
                  *本接口（ModifyVpnConnectionAttribute）用于修改VPN通道。
                  * @param req ModifyVpnConnectionAttributeRequest
                  * @return ModifyVpnConnectionAttributeOutcome
@@ -4327,6 +4402,15 @@ LimitTypes取值范围：
                 RejectAttachCcnInstancesOutcome RejectAttachCcnInstances(const Model::RejectAttachCcnInstancesRequest &request);
                 void RejectAttachCcnInstancesAsync(const Model::RejectAttachCcnInstancesRequest& request, const RejectAttachCcnInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RejectAttachCcnInstancesOutcomeCallable RejectAttachCcnInstancesCallable(const Model::RejectAttachCcnInstancesRequest& request);
+
+                /**
+                 *本接口（RejectVpcPeeringConnection）用于驳回对等连接请求。
+                 * @param req RejectVpcPeeringConnectionRequest
+                 * @return RejectVpcPeeringConnectionOutcome
+                 */
+                RejectVpcPeeringConnectionOutcome RejectVpcPeeringConnection(const Model::RejectVpcPeeringConnectionRequest &request);
+                void RejectVpcPeeringConnectionAsync(const Model::RejectVpcPeeringConnectionRequest& request, const RejectVpcPeeringConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RejectVpcPeeringConnectionOutcomeCallable RejectVpcPeeringConnectionCallable(const Model::RejectVpcPeeringConnectionRequest& request);
 
                 /**
                  *本接口 (ReleaseAddresses) 用于释放一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。

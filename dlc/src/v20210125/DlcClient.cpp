@@ -2964,6 +2964,49 @@ DlcClient::DescribeTasksOutcomeCallable DlcClient::DescribeTasksCallable(const D
     return task->get_future();
 }
 
+DlcClient::DescribeUserRolesOutcome DlcClient::DescribeUserRoles(const DescribeUserRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserRolesResponse rsp = DescribeUserRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserRolesOutcome(rsp);
+        else
+            return DescribeUserRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserRolesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeUserRolesAsync(const DescribeUserRolesRequest& request, const DescribeUserRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserRoles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeUserRolesOutcomeCallable DlcClient::DescribeUserRolesCallable(const DescribeUserRolesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserRolesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserRoles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeUsersOutcome DlcClient::DescribeUsers(const DescribeUsersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUsers");

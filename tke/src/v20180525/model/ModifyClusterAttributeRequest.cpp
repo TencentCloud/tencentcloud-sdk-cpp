@@ -29,7 +29,8 @@ ModifyClusterAttributeRequest::ModifyClusterAttributeRequest() :
     m_clusterDescHasBeenSet(false),
     m_clusterLevelHasBeenSet(false),
     m_autoUpgradeClusterLevelHasBeenSet(false),
-    m_qGPUShareEnableHasBeenSet(false)
+    m_qGPUShareEnableHasBeenSet(false),
+    m_clusterPropertyHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,15 @@ string ModifyClusterAttributeRequest::ToJsonString() const
         string key = "QGPUShareEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_qGPUShareEnable, allocator);
+    }
+
+    if (m_clusterPropertyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterProperty";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clusterProperty.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -215,6 +225,22 @@ void ModifyClusterAttributeRequest::SetQGPUShareEnable(const bool& _qGPUShareEna
 bool ModifyClusterAttributeRequest::QGPUShareEnableHasBeenSet() const
 {
     return m_qGPUShareEnableHasBeenSet;
+}
+
+ClusterProperty ModifyClusterAttributeRequest::GetClusterProperty() const
+{
+    return m_clusterProperty;
+}
+
+void ModifyClusterAttributeRequest::SetClusterProperty(const ClusterProperty& _clusterProperty)
+{
+    m_clusterProperty = _clusterProperty;
+    m_clusterPropertyHasBeenSet = true;
+}
+
+bool ModifyClusterAttributeRequest::ClusterPropertyHasBeenSet() const
+{
+    return m_clusterPropertyHasBeenSet;
 }
 
 

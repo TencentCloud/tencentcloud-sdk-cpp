@@ -159,6 +159,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeUserRolesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeUserRolesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUsersRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUsersResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeViewsRequest.h>
@@ -421,6 +423,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
                 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserRolesResponse> DescribeUserRolesOutcome;
+                typedef std::future<DescribeUserRolesOutcome> DescribeUserRolesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeUserRolesRequest&, DescribeUserRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserRolesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUsersResponse> DescribeUsersOutcome;
                 typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeUsersRequest&, DescribeUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersAsyncHandler;
@@ -1101,6 +1106,15 @@ namespace TencentCloud
                 DescribeTasksOutcome DescribeTasks(const Model::DescribeTasksRequest &request);
                 void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
+
+                /**
+                 *列举用户角色信息
+                 * @param req DescribeUserRolesRequest
+                 * @return DescribeUserRolesOutcome
+                 */
+                DescribeUserRolesOutcome DescribeUserRoles(const Model::DescribeUserRolesRequest &request);
+                void DescribeUserRolesAsync(const Model::DescribeUserRolesRequest& request, const DescribeUserRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserRolesOutcomeCallable DescribeUserRolesCallable(const Model::DescribeUserRolesRequest& request);
 
                 /**
                  *获取用户列表信息

@@ -531,6 +531,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusInstanceRequest.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusAlertRuleRequest.h
   include/tencentcloud/tke/v20180525/model/CreateClusterReleaseResponse.h
+  include/tencentcloud/tke/v20180525/model/ClusterProperty.h
   include/tencentcloud/tke/v20180525/model/EdgeClusterExtraArgs.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTargetsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressResponse.h
@@ -1096,6 +1097,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusInstanceRequest.cpp
   src/v20180525/model/DeletePrometheusAlertRuleRequest.cpp
   src/v20180525/model/CreateClusterReleaseResponse.cpp
+  src/v20180525/model/ClusterProperty.cpp
   src/v20180525/model/EdgeClusterExtraArgs.cpp
   src/v20180525/model/DescribePrometheusTargetsResponse.cpp
   src/v20180525/model/DescribeEnableVpcCniProgressResponse.cpp

@@ -129,6 +129,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbZoneConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCpuExpandStrategyRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCpuExpandStrategyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBFeaturesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBFeaturesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsRequest.h>
@@ -289,8 +291,12 @@
 #include <tencentcloud/cdb/v20170320/model/RestartDBInstancesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StartBatchRollbackRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StartBatchRollbackResponse.h>
+#include <tencentcloud/cdb/v20170320/model/StartCpuExpandRequest.h>
+#include <tencentcloud/cdb/v20170320/model/StartCpuExpandResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StartReplicationRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StartReplicationResponse.h>
+#include <tencentcloud/cdb/v20170320/model/StopCpuExpandRequest.h>
+#include <tencentcloud/cdb/v20170320/model/StopCpuExpandResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StopDBImportJobRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StopDBImportJobResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StopReplicationRequest.h>
@@ -486,6 +492,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloneListResponse> DescribeCloneListOutcome;
                 typedef std::future<DescribeCloneListOutcome> DescribeCloneListOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeCloneListRequest&, DescribeCloneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloneListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCpuExpandStrategyResponse> DescribeCpuExpandStrategyOutcome;
+                typedef std::future<DescribeCpuExpandStrategyOutcome> DescribeCpuExpandStrategyOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeCpuExpandStrategyRequest&, DescribeCpuExpandStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCpuExpandStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBFeaturesResponse> DescribeDBFeaturesOutcome;
                 typedef std::future<DescribeDBFeaturesOutcome> DescribeDBFeaturesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDBFeaturesRequest&, DescribeDBFeaturesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBFeaturesAsyncHandler;
@@ -726,9 +735,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartBatchRollbackResponse> StartBatchRollbackOutcome;
                 typedef std::future<StartBatchRollbackOutcome> StartBatchRollbackOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StartBatchRollbackRequest&, StartBatchRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartBatchRollbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartCpuExpandResponse> StartCpuExpandOutcome;
+                typedef std::future<StartCpuExpandOutcome> StartCpuExpandOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::StartCpuExpandRequest&, StartCpuExpandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartCpuExpandAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartReplicationResponse> StartReplicationOutcome;
                 typedef std::future<StartReplicationOutcome> StartReplicationOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StartReplicationRequest&, StartReplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartReplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopCpuExpandResponse> StopCpuExpandOutcome;
+                typedef std::future<StopCpuExpandOutcome> StopCpuExpandOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::StopCpuExpandRequest&, StopCpuExpandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopCpuExpandAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopDBImportJobResponse> StopDBImportJobOutcome;
                 typedef std::future<StopDBImportJobOutcome> StopDBImportJobOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StopDBImportJobRequest&, StopDBImportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopDBImportJobAsyncHandler;
@@ -1264,6 +1279,15 @@ namespace TencentCloud
                 DescribeCloneListOutcome DescribeCloneList(const Model::DescribeCloneListRequest &request);
                 void DescribeCloneListAsync(const Model::DescribeCloneListRequest& request, const DescribeCloneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloneListOutcomeCallable DescribeCloneListCallable(const Model::DescribeCloneListRequest& request);
+
+                /**
+                 *通过该 API 可以查询实例的 CPU 弹性扩容策略
+                 * @param req DescribeCpuExpandStrategyRequest
+                 * @return DescribeCpuExpandStrategyOutcome
+                 */
+                DescribeCpuExpandStrategyOutcome DescribeCpuExpandStrategy(const Model::DescribeCpuExpandStrategyRequest &request);
+                void DescribeCpuExpandStrategyAsync(const Model::DescribeCpuExpandStrategyRequest& request, const DescribeCpuExpandStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCpuExpandStrategyOutcomeCallable DescribeCpuExpandStrategyCallable(const Model::DescribeCpuExpandStrategyRequest& request);
 
                 /**
                  *本接口(DescribeDBFeatures)用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。
@@ -2015,6 +2039,15 @@ namespace TencentCloud
                 StartBatchRollbackOutcomeCallable StartBatchRollbackCallable(const Model::StartBatchRollbackRequest& request);
 
                 /**
+                 *通过该API，可以开启CPU弹性扩容，包括一次性的手动扩容以及自动弹性扩容。
+                 * @param req StartCpuExpandRequest
+                 * @return StartCpuExpandOutcome
+                 */
+                StartCpuExpandOutcome StartCpuExpand(const Model::StartCpuExpandRequest &request);
+                void StartCpuExpandAsync(const Model::StartCpuExpandRequest& request, const StartCpuExpandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartCpuExpandOutcomeCallable StartCpuExpandCallable(const Model::StartCpuExpandRequest& request);
+
+                /**
                  *开启 RO 复制，从主实例同步数据。
                  * @param req StartReplicationRequest
                  * @return StartReplicationOutcome
@@ -2022,6 +2055,15 @@ namespace TencentCloud
                 StartReplicationOutcome StartReplication(const Model::StartReplicationRequest &request);
                 void StartReplicationAsync(const Model::StartReplicationRequest& request, const StartReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartReplicationOutcomeCallable StartReplicationCallable(const Model::StartReplicationRequest& request);
+
+                /**
+                 *通过该API，可以关闭 CPU 弹性扩容。
+                 * @param req StopCpuExpandRequest
+                 * @return StopCpuExpandOutcome
+                 */
+                StopCpuExpandOutcome StopCpuExpand(const Model::StopCpuExpandRequest &request);
+                void StopCpuExpandAsync(const Model::StopCpuExpandRequest& request, const StopCpuExpandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopCpuExpandOutcomeCallable StopCpuExpandCallable(const Model::StopCpuExpandRequest& request);
 
                 /**
                  *本接口(StopDBImportJob)用于终止数据导入任务。
