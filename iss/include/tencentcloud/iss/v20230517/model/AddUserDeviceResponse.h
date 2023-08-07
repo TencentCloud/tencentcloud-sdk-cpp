@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/AddDeviceResponse.h>
+#include <tencentcloud/iss/v20230517/model/AddDeviceData.h>
 
 
 namespace TencentCloud
@@ -49,7 +49,7 @@ namespace TencentCloud
                      * @return Data 增加设备返回数据
                      * 
                      */
-                    AddDeviceResponse GetData() const;
+                    AddDeviceData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -63,7 +63,7 @@ namespace TencentCloud
                     /**
                      * 增加设备返回数据
                      */
-                    AddDeviceResponse m_data;
+                    AddDeviceData m_data;
                     bool m_dataHasBeenSet;
 
                 };

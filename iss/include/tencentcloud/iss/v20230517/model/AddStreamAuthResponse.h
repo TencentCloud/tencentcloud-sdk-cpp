@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/AddStreamAuthData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 设置推拉流鉴权返回数据结构
+                * AddStreamAuth返回参数结构体
                 */
                 class AddStreamAuthResponse : public AbstractModel
                 {
@@ -44,190 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取鉴权配置ID（uuid）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 鉴权配置ID（uuid）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取设置推拉流鉴权返回数据
+                     * @return Data 设置推拉流鉴权返回数据
                      * 
                      */
-                    std::string GetId() const;
+                    AddStreamAuthData GetData() const;
 
                     /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool IdHasBeenSet() const;
-
-                    /**
-                     * 获取是否开播放鉴权（1:开启,0:关闭）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PullState 是否开播放鉴权（1:开启,0:关闭）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetPullState() const;
-
-                    /**
-                     * 判断参数 PullState 是否已赋值
-                     * @return PullState 是否已赋值
-                     * 
-                     */
-                    bool PullStateHasBeenSet() const;
-
-                    /**
-                     * 获取播放密钥（仅支持字母数字，长度0-10位）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PullSecret 播放密钥（仅支持字母数字，长度0-10位）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetPullSecret() const;
-
-                    /**
-                     * 判断参数 PullSecret 是否已赋值
-                     * @return PullSecret 是否已赋值
-                     * 
-                     */
-                    bool PullSecretHasBeenSet() const;
-
-                    /**
-                     * 获取播放过期时间（单位：分钟）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PullExpired 播放过期时间（单位：分钟）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetPullExpired() const;
-
-                    /**
-                     * 判断参数 PullExpired 是否已赋值
-                     * @return PullExpired 是否已赋值
-                     * 
-                     */
-                    bool PullExpiredHasBeenSet() const;
-
-                    /**
-                     * 获取是否开启推流鉴权（1:开启,0:关闭）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PushState 是否开启推流鉴权（1:开启,0:关闭）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetPushState() const;
-
-                    /**
-                     * 判断参数 PushState 是否已赋值
-                     * @return PushState 是否已赋值
-                     * 
-                     */
-                    bool PushStateHasBeenSet() const;
-
-                    /**
-                     * 获取推流密钥（仅支持字母数字，长度0-10位）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PushSecret 推流密钥（仅支持字母数字，长度0-10位）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetPushSecret() const;
-
-                    /**
-                     * 判断参数 PushSecret 是否已赋值
-                     * @return PushSecret 是否已赋值
-                     * 
-                     */
-                    bool PushSecretHasBeenSet() const;
-
-                    /**
-                     * 获取推流过期时间（单位：分钟）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PushExpired 推流过期时间（单位：分钟）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetPushExpired() const;
-
-                    /**
-                     * 判断参数 PushExpired 是否已赋值
-                     * @return PushExpired 是否已赋值
-                     * 
-                     */
-                    bool PushExpiredHasBeenSet() const;
-
-                    /**
-                     * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetAppId() const;
-
-                    /**
-                     * 判断参数 AppId 是否已赋值
-                     * @return AppId 是否已赋值
-                     * 
-                     */
-                    bool AppIdHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 鉴权配置ID（uuid）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置推拉流鉴权返回数据
                      */
-                    std::string m_id;
-                    bool m_idHasBeenSet;
-
-                    /**
-                     * 是否开播放鉴权（1:开启,0:关闭）
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_pullState;
-                    bool m_pullStateHasBeenSet;
-
-                    /**
-                     * 播放密钥（仅支持字母数字，长度0-10位）
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_pullSecret;
-                    bool m_pullSecretHasBeenSet;
-
-                    /**
-                     * 播放过期时间（单位：分钟）
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_pullExpired;
-                    bool m_pullExpiredHasBeenSet;
-
-                    /**
-                     * 是否开启推流鉴权（1:开启,0:关闭）
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_pushState;
-                    bool m_pushStateHasBeenSet;
-
-                    /**
-                     * 推流密钥（仅支持字母数字，长度0-10位）
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_pushSecret;
-                    bool m_pushSecretHasBeenSet;
-
-                    /**
-                     * 推流过期时间（单位：分钟）
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_pushExpired;
-                    bool m_pushExpiredHasBeenSet;
-
-                    /**
-                     * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_appId;
-                    bool m_appIdHasBeenSet;
+                    AddStreamAuthData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

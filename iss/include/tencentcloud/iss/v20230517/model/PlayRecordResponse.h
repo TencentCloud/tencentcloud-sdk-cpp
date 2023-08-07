@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/PlayRecordData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 本地录像播放url数据结构
+                * PlayRecord返回参数结构体
                 */
                 class PlayRecordResponse : public AbstractModel
                 {
@@ -44,29 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取录像播放地址
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Flv 录像播放地址
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回结果
+                     * @return Data 返回结果
                      * 
                      */
-                    std::string GetFlv() const;
+                    PlayRecordData GetData() const;
 
                     /**
-                     * 判断参数 Flv 是否已赋值
-                     * @return Flv 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool FlvHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 录像播放地址
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回结果
                      */
-                    std::string m_flv;
-                    bool m_flvHasBeenSet;
+                    PlayRecordData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

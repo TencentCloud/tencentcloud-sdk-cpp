@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/DescribeGatewayVersion.h>
+#include <tencentcloud/iss/v20230517/model/DescribeGatewayVersionData.h>
 
 
 namespace TencentCloud
@@ -33,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询网关服务版本信息返回数据
+                * DescribeGatewayVersion返回参数结构体
                 */
                 class DescribeGatewayVersionResponse : public AbstractModel
                 {
@@ -45,29 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关服务列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Services 网关服务列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回数据
+                     * @return Data 返回数据
                      * 
                      */
-                    std::vector<DescribeGatewayVersion> GetServices() const;
+                    DescribeGatewayVersionData GetData() const;
 
                     /**
-                     * 判断参数 Services 是否已赋值
-                     * @return Services 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool ServicesHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 网关服务列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回数据
                      */
-                    std::vector<DescribeGatewayVersion> m_services;
-                    bool m_servicesHasBeenSet;
+                    DescribeGatewayVersionData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

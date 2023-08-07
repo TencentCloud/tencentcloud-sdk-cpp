@@ -70,7 +70,7 @@ CoreInternalOutcome ListRecordBackupPlansResponse::Deserialize(const string &pay
         const rapidjson::Value &tmpValue = rsp["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ListRecordBackupPlanResponse item;
+            ListRecordBackupPlanData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -119,7 +119,7 @@ string ListRecordBackupPlansResponse::ToJsonString() const
 }
 
 
-vector<ListRecordBackupPlanResponse> ListRecordBackupPlansResponse::GetData() const
+vector<ListRecordBackupPlanData> ListRecordBackupPlansResponse::GetData() const
 {
     return m_data;
 }

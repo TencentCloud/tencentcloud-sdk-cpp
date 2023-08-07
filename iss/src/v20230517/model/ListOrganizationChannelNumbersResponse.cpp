@@ -24,8 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 ListOrganizationChannelNumbersResponse::ListOrganizationChannelNumbersResponse() :
-    m_totalCountHasBeenSet(false),
-    m_notInPlanCountHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -63,24 +62,21 @@ CoreInternalOutcome ListOrganizationChannelNumbersResponse::Deserialize(const st
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["TotalCount"].IsInt64())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("NotInPlanCount") && !rsp["NotInPlanCount"].IsNull())
-    {
-        if (!rsp["NotInPlanCount"].IsInt64())
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `NotInPlanCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_notInPlanCount = rsp["NotInPlanCount"].GetInt64();
-        m_notInPlanCountHasBeenSet = true;
+
+        m_dataHasBeenSet = true;
     }
 
 
@@ -93,20 +89,13 @@ string ListOrganizationChannelNumbersResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
-    if (m_notInPlanCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NotInPlanCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_notInPlanCount, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +110,14 @@ string ListOrganizationChannelNumbersResponse::ToJsonString() const
 }
 
 
-int64_t ListOrganizationChannelNumbersResponse::GetTotalCount() const
+ListOrganizationChannelNumbersData ListOrganizationChannelNumbersResponse::GetData() const
 {
-    return m_totalCount;
+    return m_data;
 }
 
-bool ListOrganizationChannelNumbersResponse::TotalCountHasBeenSet() const
+bool ListOrganizationChannelNumbersResponse::DataHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
-}
-
-int64_t ListOrganizationChannelNumbersResponse::GetNotInPlanCount() const
-{
-    return m_notInPlanCount;
-}
-
-bool ListOrganizationChannelNumbersResponse::NotInPlanCountHasBeenSet() const
-{
-    return m_notInPlanCountHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/ControlDeviceStreamData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 获取开流地址返回数据
+                * ControlDeviceStream返回参数结构体
                 */
                 class ControlDeviceStreamResponse : public AbstractModel
                 {
@@ -44,75 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取flv 流地址
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Flv flv 流地址
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回数据
+                     * @return Data 返回数据
                      * 
                      */
-                    std::string GetFlv() const;
+                    ControlDeviceStreamData GetData() const;
 
                     /**
-                     * 判断参数 Flv 是否已赋值
-                     * @return Flv 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool FlvHasBeenSet() const;
-
-                    /**
-                     * 获取hls 流地址
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Hls hls 流地址
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetHls() const;
-
-                    /**
-                     * 判断参数 Hls 是否已赋值
-                     * @return Hls 是否已赋值
-                     * 
-                     */
-                    bool HlsHasBeenSet() const;
-
-                    /**
-                     * 获取rtmp 流地址
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Rtmp rtmp 流地址
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetRtmp() const;
-
-                    /**
-                     * 判断参数 Rtmp 是否已赋值
-                     * @return Rtmp 是否已赋值
-                     * 
-                     */
-                    bool RtmpHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * flv 流地址
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回数据
                      */
-                    std::string m_flv;
-                    bool m_flvHasBeenSet;
-
-                    /**
-                     * hls 流地址
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_hls;
-                    bool m_hlsHasBeenSet;
-
-                    /**
-                     * rtmp 流地址
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_rtmp;
-                    bool m_rtmpHasBeenSet;
+                    ControlDeviceStreamData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

@@ -24,7 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 DescribeGatewayVersionResponse::DescribeGatewayVersionResponse() :
-    m_servicesHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -62,24 +62,21 @@ CoreInternalOutcome DescribeGatewayVersionResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("Services") && !rsp["Services"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Services"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Services` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Services"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Data"].IsObject())
         {
-            DescribeGatewayVersion item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_services.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_servicesHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
     }
 
 
@@ -92,19 +89,13 @@ string DescribeGatewayVersionResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_servicesHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Services";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_services.begin(); itr != m_services.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,14 +110,14 @@ string DescribeGatewayVersionResponse::ToJsonString() const
 }
 
 
-vector<DescribeGatewayVersion> DescribeGatewayVersionResponse::GetServices() const
+DescribeGatewayVersionData DescribeGatewayVersionResponse::GetData() const
 {
-    return m_services;
+    return m_data;
 }
 
-bool DescribeGatewayVersionResponse::ServicesHasBeenSet() const
+bool DescribeGatewayVersionResponse::DataHasBeenSet() const
 {
-    return m_servicesHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

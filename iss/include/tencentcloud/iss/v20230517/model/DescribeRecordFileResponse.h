@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/RecordTimeLine.h>
+#include <tencentcloud/iss/v20230517/model/DescribeRecordFileData.h>
 
 
 namespace TencentCloud
@@ -33,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 用于查询设备云端录像时间轴信息返回数据
+                * DescribeRecordFile返回参数结构体
                 */
                 class DescribeRecordFileResponse : public AbstractModel
                 {
@@ -45,49 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取提示类型，0:时间段内无归档录像，1:时间段内有归档录像
-                     * @return Tips 提示类型，0:时间段内无归档录像，1:时间段内有归档录像
+                     * 获取返回结果
+                     * @return Data 返回结果
                      * 
                      */
-                    int64_t GetTips() const;
+                    DescribeRecordFileData GetData() const;
 
                     /**
-                     * 判断参数 Tips 是否已赋值
-                     * @return Tips 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool TipsHasBeenSet() const;
-
-                    /**
-                     * 获取存在为数组格式，不存在字段内容为空
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List 存在为数组格式，不存在字段内容为空
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<RecordTimeLine> GetList() const;
-
-                    /**
-                     * 判断参数 List 是否已赋值
-                     * @return List 是否已赋值
-                     * 
-                     */
-                    bool ListHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 提示类型，0:时间段内无归档录像，1:时间段内有归档录像
+                     * 返回结果
                      */
-                    int64_t m_tips;
-                    bool m_tipsHasBeenSet;
-
-                    /**
-                     * 存在为数组格式，不存在字段内容为空
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<RecordTimeLine> m_list;
-                    bool m_listHasBeenSet;
+                    DescribeRecordFileData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

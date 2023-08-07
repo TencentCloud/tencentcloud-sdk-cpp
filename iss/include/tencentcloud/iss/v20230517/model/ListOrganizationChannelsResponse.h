@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/OrganizationChannelInfo.h>
+#include <tencentcloud/iss/v20230517/model/ListOrganizationChannelsData.h>
 
 
 namespace TencentCloud
@@ -33,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询组织目录下的通道列表返回数据
+                * ListOrganizationChannels返回参数结构体
                 */
                 class ListOrganizationChannelsResponse : public AbstractModel
                 {
@@ -45,89 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第几页
-                     * @return PageNumber 第几页
+                     * 获取返回结果
+                     * @return Data 返回结果
                      * 
                      */
-                    int64_t GetPageNumber() const;
+                    ListOrganizationChannelsData GetData() const;
 
                     /**
-                     * 判断参数 PageNumber 是否已赋值
-                     * @return PageNumber 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool PageNumberHasBeenSet() const;
-
-                    /**
-                     * 获取当前页的设备数量
-                     * @return PageSize 当前页的设备数量
-                     * 
-                     */
-                    int64_t GetPageSize() const;
-
-                    /**
-                     * 判断参数 PageSize 是否已赋值
-                     * @return PageSize 是否已赋值
-                     * 
-                     */
-                    bool PageSizeHasBeenSet() const;
-
-                    /**
-                     * 获取本次查询的设备通道总数
-                     * @return TotalCount 本次查询的设备通道总数
-                     * 
-                     */
-                    int64_t GetTotalCount() const;
-
-                    /**
-                     * 判断参数 TotalCount 是否已赋值
-                     * @return TotalCount 是否已赋值
-                     * 
-                     */
-                    bool TotalCountHasBeenSet() const;
-
-                    /**
-                     * 获取设备通道信息列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List 设备通道信息列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<OrganizationChannelInfo> GetList() const;
-
-                    /**
-                     * 判断参数 List 是否已赋值
-                     * @return List 是否已赋值
-                     * 
-                     */
-                    bool ListHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 第几页
+                     * 返回结果
                      */
-                    int64_t m_pageNumber;
-                    bool m_pageNumberHasBeenSet;
-
-                    /**
-                     * 当前页的设备数量
-                     */
-                    int64_t m_pageSize;
-                    bool m_pageSizeHasBeenSet;
-
-                    /**
-                     * 本次查询的设备通道总数
-                     */
-                    int64_t m_totalCount;
-                    bool m_totalCountHasBeenSet;
-
-                    /**
-                     * 设备通道信息列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<OrganizationChannelInfo> m_list;
-                    bool m_listHasBeenSet;
+                    ListOrganizationChannelsData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

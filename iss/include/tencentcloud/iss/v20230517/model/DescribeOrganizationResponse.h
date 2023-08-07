@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/DescribeOrganizationData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询组织数据返回结果
+                * DescribeOrganization返回参数结构体
                 */
                 class DescribeOrganizationResponse : public AbstractModel
                 {
@@ -44,190 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取组织 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrganizationId 组织 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回数据
+                     * @return Data 返回数据
                      * 
                      */
-                    std::string GetOrganizationId() const;
+                    std::vector<DescribeOrganizationData> GetData() const;
 
                     /**
-                     * 判断参数 OrganizationId 是否已赋值
-                     * @return OrganizationId 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool OrganizationIdHasBeenSet() const;
-
-                    /**
-                     * 获取组织名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 组织名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     * 
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
-                     * 获取组织父节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParentId 组织父节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetParentId() const;
-
-                    /**
-                     * 判断参数 ParentId 是否已赋值
-                     * @return ParentId 是否已赋值
-                     * 
-                     */
-                    bool ParentIdHasBeenSet() const;
-
-                    /**
-                     * 获取组织层级
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Level 组织层级
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetLevel() const;
-
-                    /**
-                     * 判断参数 Level 是否已赋值
-                     * @return Level 是否已赋值
-                     * 
-                     */
-                    bool LevelHasBeenSet() const;
-
-                    /**
-                     * 获取用户id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppId 用户id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetAppId() const;
-
-                    /**
-                     * 判断参数 AppId 是否已赋值
-                     * @return AppId 是否已赋值
-                     * 
-                     */
-                    bool AppIdHasBeenSet() const;
-
-                    /**
-                     * 获取组织结构
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParentIds 组织结构
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetParentIds() const;
-
-                    /**
-                     * 判断参数 ParentIds 是否已赋值
-                     * @return ParentIds 是否已赋值
-                     * 
-                     */
-                    bool ParentIdsHasBeenSet() const;
-
-                    /**
-                     * 获取设备总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 设备总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetTotal() const;
-
-                    /**
-                     * 判断参数 Total 是否已赋值
-                     * @return Total 是否已赋值
-                     * 
-                     */
-                    bool TotalHasBeenSet() const;
-
-                    /**
-                     * 获取设备在线数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Online 设备在线数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetOnline() const;
-
-                    /**
-                     * 判断参数 Online 是否已赋值
-                     * @return Online 是否已赋值
-                     * 
-                     */
-                    bool OnlineHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 组织 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回数据
                      */
-                    std::string m_organizationId;
-                    bool m_organizationIdHasBeenSet;
-
-                    /**
-                     * 组织名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
-
-                    /**
-                     * 组织父节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_parentId;
-                    bool m_parentIdHasBeenSet;
-
-                    /**
-                     * 组织层级
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_level;
-                    bool m_levelHasBeenSet;
-
-                    /**
-                     * 用户id
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_appId;
-                    bool m_appIdHasBeenSet;
-
-                    /**
-                     * 组织结构
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_parentIds;
-                    bool m_parentIdsHasBeenSet;
-
-                    /**
-                     * 设备总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_total;
-                    bool m_totalHasBeenSet;
-
-                    /**
-                     * 设备在线数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_online;
-                    bool m_onlineHasBeenSet;
+                    std::vector<DescribeOrganizationData> m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

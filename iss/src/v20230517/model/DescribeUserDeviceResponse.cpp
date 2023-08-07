@@ -110,7 +110,7 @@ string DescribeUserDeviceResponse::ToJsonString() const
 }
 
 
-DescribeDeviceResponse DescribeUserDeviceResponse::GetData() const
+DescribeDeviceData DescribeUserDeviceResponse::GetData() const
 {
     return m_data;
 }

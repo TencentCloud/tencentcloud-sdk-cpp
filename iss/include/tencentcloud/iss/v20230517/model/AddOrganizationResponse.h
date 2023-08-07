@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/AddOrgResponse.h>
+#include <tencentcloud/iss/v20230517/model/AddOrgData.h>
 
 
 namespace TencentCloud
@@ -49,7 +49,7 @@ namespace TencentCloud
                      * @return Data 增加组织接口返回数据
                      * 
                      */
-                    AddOrgResponse GetData() const;
+                    AddOrgData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -63,7 +63,7 @@ namespace TencentCloud
                     /**
                      * 增加组织接口返回数据
                      */
-                    AddOrgResponse m_data;
+                    AddOrgData m_data;
                     bool m_dataHasBeenSet;
 
                 };

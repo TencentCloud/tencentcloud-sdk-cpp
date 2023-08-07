@@ -24,15 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 AddRecordBackupPlanResponse::AddRecordBackupPlanResponse() :
-    m_planIdHasBeenSet(false),
-    m_planNameHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_describeHasBeenSet(false),
-    m_lifeCycleHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_channelCountHasBeenSet(false),
-    m_createAtHasBeenSet(false),
-    m_updateAtHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -70,101 +62,21 @@ CoreInternalOutcome AddRecordBackupPlanResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("PlanId") && !rsp["PlanId"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["PlanId"].IsString())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `PlanId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_planId = string(rsp["PlanId"].GetString());
-        m_planIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("PlanName") && !rsp["PlanName"].IsNull())
-    {
-        if (!rsp["PlanName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `PlanName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_planName = string(rsp["PlanName"].GetString());
-        m_planNameHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TemplateId") && !rsp["TemplateId"].IsNull())
-    {
-        if (!rsp["TemplateId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TemplateId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_templateId = string(rsp["TemplateId"].GetString());
-        m_templateIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Describe") && !rsp["Describe"].IsNull())
-    {
-        if (!rsp["Describe"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Describe` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_describe = string(rsp["Describe"].GetString());
-        m_describeHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("LifeCycle") && !rsp["LifeCycle"].IsNull())
-    {
-        if (!rsp["LifeCycle"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `LifeCycle` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_lifeCycle.Deserialize(rsp["LifeCycle"]);
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_lifeCycleHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
-    {
-        if (!rsp["Status"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = rsp["Status"].GetInt64();
-        m_statusHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ChannelCount") && !rsp["ChannelCount"].IsNull())
-    {
-        if (!rsp["ChannelCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ChannelCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_channelCount = rsp["ChannelCount"].GetInt64();
-        m_channelCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("CreateAt") && !rsp["CreateAt"].IsNull())
-    {
-        if (!rsp["CreateAt"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreateAt` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_createAt = string(rsp["CreateAt"].GetString());
-        m_createAtHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("UpdateAt") && !rsp["UpdateAt"].IsNull())
-    {
-        if (!rsp["UpdateAt"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `UpdateAt` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_updateAt = string(rsp["UpdateAt"].GetString());
-        m_updateAtHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -177,77 +89,13 @@ string AddRecordBackupPlanResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_planIdHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PlanId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_planId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_planNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PlanName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_planName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_templateIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplateId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_describeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Describe";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_describe.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_lifeCycleHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LifeCycle";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_lifeCycle.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
-    }
-
-    if (m_channelCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ChannelCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_channelCount, allocator);
-    }
-
-    if (m_createAtHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateAt";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createAt.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_updateAtHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UpdateAt";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_updateAt.c_str(), allocator).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -262,94 +110,14 @@ string AddRecordBackupPlanResponse::ToJsonString() const
 }
 
 
-string AddRecordBackupPlanResponse::GetPlanId() const
+AddRecordBackupPlanData AddRecordBackupPlanResponse::GetData() const
 {
-    return m_planId;
+    return m_data;
 }
 
-bool AddRecordBackupPlanResponse::PlanIdHasBeenSet() const
+bool AddRecordBackupPlanResponse::DataHasBeenSet() const
 {
-    return m_planIdHasBeenSet;
-}
-
-string AddRecordBackupPlanResponse::GetPlanName() const
-{
-    return m_planName;
-}
-
-bool AddRecordBackupPlanResponse::PlanNameHasBeenSet() const
-{
-    return m_planNameHasBeenSet;
-}
-
-string AddRecordBackupPlanResponse::GetTemplateId() const
-{
-    return m_templateId;
-}
-
-bool AddRecordBackupPlanResponse::TemplateIdHasBeenSet() const
-{
-    return m_templateIdHasBeenSet;
-}
-
-string AddRecordBackupPlanResponse::GetDescribe() const
-{
-    return m_describe;
-}
-
-bool AddRecordBackupPlanResponse::DescribeHasBeenSet() const
-{
-    return m_describeHasBeenSet;
-}
-
-LifeCycleData AddRecordBackupPlanResponse::GetLifeCycle() const
-{
-    return m_lifeCycle;
-}
-
-bool AddRecordBackupPlanResponse::LifeCycleHasBeenSet() const
-{
-    return m_lifeCycleHasBeenSet;
-}
-
-int64_t AddRecordBackupPlanResponse::GetStatus() const
-{
-    return m_status;
-}
-
-bool AddRecordBackupPlanResponse::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
-int64_t AddRecordBackupPlanResponse::GetChannelCount() const
-{
-    return m_channelCount;
-}
-
-bool AddRecordBackupPlanResponse::ChannelCountHasBeenSet() const
-{
-    return m_channelCountHasBeenSet;
-}
-
-string AddRecordBackupPlanResponse::GetCreateAt() const
-{
-    return m_createAt;
-}
-
-bool AddRecordBackupPlanResponse::CreateAtHasBeenSet() const
-{
-    return m_createAtHasBeenSet;
-}
-
-string AddRecordBackupPlanResponse::GetUpdateAt() const
-{
-    return m_updateAt;
-}
-
-bool AddRecordBackupPlanResponse::UpdateAtHasBeenSet() const
-{
-    return m_updateAtHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

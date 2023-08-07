@@ -24,14 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 DescribeOrganizationResponse::DescribeOrganizationResponse() :
-    m_organizationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_levelHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_parentIdsHasBeenSet(false),
-    m_totalHasBeenSet(false),
-    m_onlineHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -69,84 +62,24 @@ CoreInternalOutcome DescribeOrganizationResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("OrganizationId") && !rsp["OrganizationId"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["OrganizationId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `OrganizationId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_organizationId = string(rsp["OrganizationId"].GetString());
-        m_organizationIdHasBeenSet = true;
-    }
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
 
-    if (rsp.HasMember("Name") && !rsp["Name"].IsNull())
-    {
-        if (!rsp["Name"].IsString())
+        const rapidjson::Value &tmpValue = rsp["Data"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            DescribeOrganizationData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
         }
-        m_name = string(rsp["Name"].GetString());
-        m_nameHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ParentId") && !rsp["ParentId"].IsNull())
-    {
-        if (!rsp["ParentId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ParentId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_parentId = string(rsp["ParentId"].GetString());
-        m_parentIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Level") && !rsp["Level"].IsNull())
-    {
-        if (!rsp["Level"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Level` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_level = rsp["Level"].GetInt64();
-        m_levelHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("AppId") && !rsp["AppId"].IsNull())
-    {
-        if (!rsp["AppId"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `AppId` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appId = rsp["AppId"].GetInt64();
-        m_appIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ParentIds") && !rsp["ParentIds"].IsNull())
-    {
-        if (!rsp["ParentIds"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ParentIds` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_parentIds = string(rsp["ParentIds"].GetString());
-        m_parentIdsHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
-    {
-        if (!rsp["Total"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_total = rsp["Total"].GetInt64();
-        m_totalHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Online") && !rsp["Online"].IsNull())
-    {
-        if (!rsp["Online"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Online` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_online = rsp["Online"].GetInt64();
-        m_onlineHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -159,68 +92,19 @@ string DescribeOrganizationResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_organizationIdHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrganizationId";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_organizationId.c_str(), allocator).Move(), allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_parentIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ParentId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_parentId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_levelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Level";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_level, allocator);
-    }
-
-    if (m_appIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appId, allocator);
-    }
-
-    if (m_parentIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ParentIds";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_parentIds.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_totalHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Total";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_total, allocator);
-    }
-
-    if (m_onlineHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Online";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_online, allocator);
+        int i=0;
+        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -235,84 +119,14 @@ string DescribeOrganizationResponse::ToJsonString() const
 }
 
 
-string DescribeOrganizationResponse::GetOrganizationId() const
+vector<DescribeOrganizationData> DescribeOrganizationResponse::GetData() const
 {
-    return m_organizationId;
+    return m_data;
 }
 
-bool DescribeOrganizationResponse::OrganizationIdHasBeenSet() const
+bool DescribeOrganizationResponse::DataHasBeenSet() const
 {
-    return m_organizationIdHasBeenSet;
-}
-
-string DescribeOrganizationResponse::GetName() const
-{
-    return m_name;
-}
-
-bool DescribeOrganizationResponse::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
-}
-
-string DescribeOrganizationResponse::GetParentId() const
-{
-    return m_parentId;
-}
-
-bool DescribeOrganizationResponse::ParentIdHasBeenSet() const
-{
-    return m_parentIdHasBeenSet;
-}
-
-int64_t DescribeOrganizationResponse::GetLevel() const
-{
-    return m_level;
-}
-
-bool DescribeOrganizationResponse::LevelHasBeenSet() const
-{
-    return m_levelHasBeenSet;
-}
-
-int64_t DescribeOrganizationResponse::GetAppId() const
-{
-    return m_appId;
-}
-
-bool DescribeOrganizationResponse::AppIdHasBeenSet() const
-{
-    return m_appIdHasBeenSet;
-}
-
-string DescribeOrganizationResponse::GetParentIds() const
-{
-    return m_parentIds;
-}
-
-bool DescribeOrganizationResponse::ParentIdsHasBeenSet() const
-{
-    return m_parentIdsHasBeenSet;
-}
-
-int64_t DescribeOrganizationResponse::GetTotal() const
-{
-    return m_total;
-}
-
-bool DescribeOrganizationResponse::TotalHasBeenSet() const
-{
-    return m_totalHasBeenSet;
-}
-
-int64_t DescribeOrganizationResponse::GetOnline() const
-{
-    return m_online;
-}
-
-bool DescribeOrganizationResponse::OnlineHasBeenSet() const
-{
-    return m_onlineHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

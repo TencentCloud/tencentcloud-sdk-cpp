@@ -24,9 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 DescribeDomainRegionResponse::DescribeDomainRegionResponse() :
-    m_labelHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -64,34 +62,24 @@ CoreInternalOutcome DescribeDomainRegionResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("Label") && !rsp["Label"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Label"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_label = string(rsp["Label"].GetString());
-        m_labelHasBeenSet = true;
-    }
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
 
-    if (rsp.HasMember("Value") && !rsp["Value"].IsNull())
-    {
-        if (!rsp["Value"].IsString())
+        const rapidjson::Value &tmpValue = rsp["Data"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `Value` IsString=false incorrectly").SetRequestId(requestId));
+            DescribeDomainRegionData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
         }
-        m_value = string(rsp["Value"].GetString());
-        m_valueHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Region") && !rsp["Region"].IsNull())
-    {
-        if (!rsp["Region"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Region` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_region = string(rsp["Region"].GetString());
-        m_regionHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -104,28 +92,19 @@ string DescribeDomainRegionResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_labelHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Label";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_valueHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Value";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_regionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Region";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+        int i=0;
+        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +119,14 @@ string DescribeDomainRegionResponse::ToJsonString() const
 }
 
 
-string DescribeDomainRegionResponse::GetLabel() const
+vector<DescribeDomainRegionData> DescribeDomainRegionResponse::GetData() const
 {
-    return m_label;
+    return m_data;
 }
 
-bool DescribeDomainRegionResponse::LabelHasBeenSet() const
+bool DescribeDomainRegionResponse::DataHasBeenSet() const
 {
-    return m_labelHasBeenSet;
-}
-
-string DescribeDomainRegionResponse::GetValue() const
-{
-    return m_value;
-}
-
-bool DescribeDomainRegionResponse::ValueHasBeenSet() const
-{
-    return m_valueHasBeenSet;
-}
-
-string DescribeDomainRegionResponse::GetRegion() const
-{
-    return m_region;
-}
-
-bool DescribeDomainRegionResponse::RegionHasBeenSet() const
-{
-    return m_regionHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

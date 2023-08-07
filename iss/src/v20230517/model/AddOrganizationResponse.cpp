@@ -110,7 +110,7 @@ string AddOrganizationResponse::ToJsonString() const
 }
 
 
-AddOrgResponse AddOrganizationResponse::GetData() const
+AddOrgData AddOrganizationResponse::GetData() const
 {
     return m_data;
 }

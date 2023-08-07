@@ -24,7 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 ListRecordPlanChannelsResponse::ListRecordPlanChannelsResponse() :
-    m_listHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -62,17 +62,21 @@ CoreInternalOutcome ListRecordPlanChannelsResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("List") && !rsp["List"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["List"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["List"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Data"].IsObject())
         {
-            m_list.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_listHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
     }
 
 
@@ -85,17 +89,13 @@ string ListRecordPlanChannelsResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_listHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "List";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +110,14 @@ string ListRecordPlanChannelsResponse::ToJsonString() const
 }
 
 
-vector<string> ListRecordPlanChannelsResponse::GetList() const
+ListRecordPlanChannelsData ListRecordPlanChannelsResponse::GetData() const
 {
-    return m_list;
+    return m_data;
 }
 
-bool ListRecordPlanChannelsResponse::ListHasBeenSet() const
+bool ListRecordPlanChannelsResponse::DataHasBeenSet() const
 {
-    return m_listHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

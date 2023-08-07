@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/ListOrganizationChannelNumbersData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 组织目录下的未添加到实时上云计划中的通道数量返回数据
+                * ListOrganizationChannelNumbers返回参数结构体
                 */
                 class ListOrganizationChannelNumbersResponse : public AbstractModel
                 {
@@ -44,46 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取组织下通道总数
-                     * @return TotalCount 组织下通道总数
+                     * 获取返回结果
+                     * @return Data 返回结果
                      * 
                      */
-                    int64_t GetTotalCount() const;
+                    ListOrganizationChannelNumbersData GetData() const;
 
                     /**
-                     * 判断参数 TotalCount 是否已赋值
-                     * @return TotalCount 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool TotalCountHasBeenSet() const;
-
-                    /**
-                     * 获取组织下未添加到计划的通道总数
-                     * @return NotInPlanCount 组织下未添加到计划的通道总数
-                     * 
-                     */
-                    int64_t GetNotInPlanCount() const;
-
-                    /**
-                     * 判断参数 NotInPlanCount 是否已赋值
-                     * @return NotInPlanCount 是否已赋值
-                     * 
-                     */
-                    bool NotInPlanCountHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 组织下通道总数
+                     * 返回结果
                      */
-                    int64_t m_totalCount;
-                    bool m_totalCountHasBeenSet;
-
-                    /**
-                     * 组织下未添加到计划的通道总数
-                     */
-                    int64_t m_notInPlanCount;
-                    bool m_notInPlanCountHasBeenSet;
+                    ListOrganizationChannelNumbersData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

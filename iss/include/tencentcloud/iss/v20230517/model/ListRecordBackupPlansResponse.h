@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/ListRecordBackupPlanResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListRecordBackupPlanData.h>
 
 
 namespace TencentCloud
@@ -49,7 +49,7 @@ namespace TencentCloud
                      * @return Data 返回数据
                      * 
                      */
-                    std::vector<ListRecordBackupPlanResponse> GetData() const;
+                    std::vector<ListRecordBackupPlanData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -63,7 +63,7 @@ namespace TencentCloud
                     /**
                      * 返回数据
                      */
-                    std::vector<ListRecordBackupPlanResponse> m_data;
+                    std::vector<ListRecordBackupPlanData> m_data;
                     bool m_dataHasBeenSet;
 
                 };

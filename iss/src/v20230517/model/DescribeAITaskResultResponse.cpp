@@ -129,7 +129,7 @@ string DescribeAITaskResultResponse::ToJsonString() const
 }
 
 
-AITaskResultResponse DescribeAITaskResultResponse::GetData() const
+AITaskResultData DescribeAITaskResultResponse::GetData() const
 {
     return m_data;
 }

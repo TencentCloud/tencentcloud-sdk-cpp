@@ -24,9 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 DescribeGatewayProtocolResponse::DescribeGatewayProtocolResponse() :
-    m_typeCodeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_labelHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -64,34 +62,24 @@ CoreInternalOutcome DescribeGatewayProtocolResponse::Deserialize(const string &p
     }
 
 
-    if (rsp.HasMember("TypeCode") && !rsp["TypeCode"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["TypeCode"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TypeCode` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_typeCode = string(rsp["TypeCode"].GetString());
-        m_typeCodeHasBeenSet = true;
-    }
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
 
-    if (rsp.HasMember("Value") && !rsp["Value"].IsNull())
-    {
-        if (!rsp["Value"].IsInt64())
+        const rapidjson::Value &tmpValue = rsp["Data"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `Value` IsInt64=false incorrectly").SetRequestId(requestId));
+            DescribeGatewayProtocolData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
         }
-        m_value = rsp["Value"].GetInt64();
-        m_valueHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Label") && !rsp["Label"].IsNull())
-    {
-        if (!rsp["Label"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_label = string(rsp["Label"].GetString());
-        m_labelHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -104,28 +92,19 @@ string DescribeGatewayProtocolResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_typeCodeHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TypeCode";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_typeCode.c_str(), allocator).Move(), allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_valueHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Value";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_value, allocator);
-    }
-
-    if (m_labelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Label";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+        int i=0;
+        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +119,14 @@ string DescribeGatewayProtocolResponse::ToJsonString() const
 }
 
 
-string DescribeGatewayProtocolResponse::GetTypeCode() const
+vector<DescribeGatewayProtocolData> DescribeGatewayProtocolResponse::GetData() const
 {
-    return m_typeCode;
+    return m_data;
 }
 
-bool DescribeGatewayProtocolResponse::TypeCodeHasBeenSet() const
+bool DescribeGatewayProtocolResponse::DataHasBeenSet() const
 {
-    return m_typeCodeHasBeenSet;
-}
-
-int64_t DescribeGatewayProtocolResponse::GetValue() const
-{
-    return m_value;
-}
-
-bool DescribeGatewayProtocolResponse::ValueHasBeenSet() const
-{
-    return m_valueHasBeenSet;
-}
-
-string DescribeGatewayProtocolResponse::GetLabel() const
-{
-    return m_label;
-}
-
-bool DescribeGatewayProtocolResponse::LabelHasBeenSet() const
-{
-    return m_labelHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

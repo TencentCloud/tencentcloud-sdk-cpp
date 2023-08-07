@@ -24,13 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 ListRecordBackupTemplatesResponse::ListRecordBackupTemplatesResponse() :
-    m_templateIdHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_timeSectionsHasBeenSet(false),
-    m_devTimeSectionsHasBeenSet(false),
-    m_scaleHasBeenSet(false),
-    m_createAtHasBeenSet(false),
-    m_updateAtHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -68,94 +62,24 @@ CoreInternalOutcome ListRecordBackupTemplatesResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("TemplateId") && !rsp["TemplateId"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["TemplateId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TemplateId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_templateId = string(rsp["TemplateId"].GetString());
-        m_templateIdHasBeenSet = true;
-    }
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
 
-    if (rsp.HasMember("TemplateName") && !rsp["TemplateName"].IsNull())
-    {
-        if (!rsp["TemplateName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TemplateName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_templateName = string(rsp["TemplateName"].GetString());
-        m_templateNameHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TimeSections") && !rsp["TimeSections"].IsNull())
-    {
-        if (!rsp["TimeSections"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TimeSections` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["TimeSections"];
+        const rapidjson::Value &tmpValue = rsp["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            RecordTemplateTimeSections item;
+            ListRecordBackupTemplatesData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_timeSections.push_back(item);
+            m_data.push_back(item);
         }
-        m_timeSectionsHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("DevTimeSections") && !rsp["DevTimeSections"].IsNull())
-    {
-        if (!rsp["DevTimeSections"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `DevTimeSections` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["DevTimeSections"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            RecordTemplateTimeSections item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_devTimeSections.push_back(item);
-        }
-        m_devTimeSectionsHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Scale") && !rsp["Scale"].IsNull())
-    {
-        if (!rsp["Scale"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Scale` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_scale = rsp["Scale"].GetInt64();
-        m_scaleHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("CreateAt") && !rsp["CreateAt"].IsNull())
-    {
-        if (!rsp["CreateAt"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreateAt` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_createAt = string(rsp["CreateAt"].GetString());
-        m_createAtHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("UpdateAt") && !rsp["UpdateAt"].IsNull())
-    {
-        if (!rsp["UpdateAt"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `UpdateAt` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_updateAt = string(rsp["UpdateAt"].GetString());
-        m_updateAtHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -168,74 +92,19 @@ string ListRecordBackupTemplatesResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_templateIdHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplateId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_templateNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplateName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_timeSectionsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TimeSections";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_timeSections.begin(); itr != m_timeSections.end(); ++itr, ++i)
+        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_devTimeSectionsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DevTimeSections";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_devTimeSections.begin(); itr != m_devTimeSections.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_scaleHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Scale";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_scale, allocator);
-    }
-
-    if (m_createAtHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateAt";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createAt.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_updateAtHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UpdateAt";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_updateAt.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -250,74 +119,14 @@ string ListRecordBackupTemplatesResponse::ToJsonString() const
 }
 
 
-string ListRecordBackupTemplatesResponse::GetTemplateId() const
+vector<ListRecordBackupTemplatesData> ListRecordBackupTemplatesResponse::GetData() const
 {
-    return m_templateId;
+    return m_data;
 }
 
-bool ListRecordBackupTemplatesResponse::TemplateIdHasBeenSet() const
+bool ListRecordBackupTemplatesResponse::DataHasBeenSet() const
 {
-    return m_templateIdHasBeenSet;
-}
-
-string ListRecordBackupTemplatesResponse::GetTemplateName() const
-{
-    return m_templateName;
-}
-
-bool ListRecordBackupTemplatesResponse::TemplateNameHasBeenSet() const
-{
-    return m_templateNameHasBeenSet;
-}
-
-vector<RecordTemplateTimeSections> ListRecordBackupTemplatesResponse::GetTimeSections() const
-{
-    return m_timeSections;
-}
-
-bool ListRecordBackupTemplatesResponse::TimeSectionsHasBeenSet() const
-{
-    return m_timeSectionsHasBeenSet;
-}
-
-vector<RecordTemplateTimeSections> ListRecordBackupTemplatesResponse::GetDevTimeSections() const
-{
-    return m_devTimeSections;
-}
-
-bool ListRecordBackupTemplatesResponse::DevTimeSectionsHasBeenSet() const
-{
-    return m_devTimeSectionsHasBeenSet;
-}
-
-int64_t ListRecordBackupTemplatesResponse::GetScale() const
-{
-    return m_scale;
-}
-
-bool ListRecordBackupTemplatesResponse::ScaleHasBeenSet() const
-{
-    return m_scaleHasBeenSet;
-}
-
-string ListRecordBackupTemplatesResponse::GetCreateAt() const
-{
-    return m_createAt;
-}
-
-bool ListRecordBackupTemplatesResponse::CreateAtHasBeenSet() const
-{
-    return m_createAtHasBeenSet;
-}
-
-string ListRecordBackupTemplatesResponse::GetUpdateAt() const
-{
-    return m_updateAt;
-}
-
-bool ListRecordBackupTemplatesResponse::UpdateAtHasBeenSet() const
-{
-    return m_updateAtHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

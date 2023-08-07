@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/ListRecordPlanChannelsData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 用户下所有实时上云计划中的通道id列表返回数据
+                * ListRecordPlanChannels返回参数结构体
                 */
                 class ListRecordPlanChannelsResponse : public AbstractModel
                 {
@@ -44,29 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户所有计划下通道id，存在通道是为数组格式，不存在时，字段数据为空 
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List 用户所有计划下通道id，存在通道是为数组格式，不存在时，字段数据为空 
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回结果
+                     * @return Data 返回结果
                      * 
                      */
-                    std::vector<std::string> GetList() const;
+                    ListRecordPlanChannelsData GetData() const;
 
                     /**
-                     * 判断参数 List 是否已赋值
-                     * @return List 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool ListHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 用户所有计划下通道id，存在通道是为数组格式，不存在时，字段数据为空 
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回结果
                      */
-                    std::vector<std::string> m_list;
-                    bool m_listHasBeenSet;
+                    ListRecordPlanChannelsData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

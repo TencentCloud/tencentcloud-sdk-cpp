@@ -24,9 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 DescribeVideoDownloadUrlResponse::DescribeVideoDownloadUrlResponse() :
-    m_urlHasBeenSet(false),
-    m_actualBeginTimeHasBeenSet(false),
-    m_actualEndTimeHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -64,34 +62,21 @@ CoreInternalOutcome DescribeVideoDownloadUrlResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("Url") && !rsp["Url"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Url"].IsString())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_url = string(rsp["Url"].GetString());
-        m_urlHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("ActualBeginTime") && !rsp["ActualBeginTime"].IsNull())
-    {
-        if (!rsp["ActualBeginTime"].IsString())
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `ActualBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_actualBeginTime = string(rsp["ActualBeginTime"].GetString());
-        m_actualBeginTimeHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("ActualEndTime") && !rsp["ActualEndTime"].IsNull())
-    {
-        if (!rsp["ActualEndTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ActualEndTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_actualEndTime = string(rsp["ActualEndTime"].GetString());
-        m_actualEndTimeHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -104,28 +89,13 @@ string DescribeVideoDownloadUrlResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_urlHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Url";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_actualBeginTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ActualBeginTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_actualBeginTime.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_actualEndTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ActualEndTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_actualEndTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +110,14 @@ string DescribeVideoDownloadUrlResponse::ToJsonString() const
 }
 
 
-string DescribeVideoDownloadUrlResponse::GetUrl() const
+DescribeVideoDownloadUrlData DescribeVideoDownloadUrlResponse::GetData() const
 {
-    return m_url;
+    return m_data;
 }
 
-bool DescribeVideoDownloadUrlResponse::UrlHasBeenSet() const
+bool DescribeVideoDownloadUrlResponse::DataHasBeenSet() const
 {
-    return m_urlHasBeenSet;
-}
-
-string DescribeVideoDownloadUrlResponse::GetActualBeginTime() const
-{
-    return m_actualBeginTime;
-}
-
-bool DescribeVideoDownloadUrlResponse::ActualBeginTimeHasBeenSet() const
-{
-    return m_actualBeginTimeHasBeenSet;
-}
-
-string DescribeVideoDownloadUrlResponse::GetActualEndTime() const
-{
-    return m_actualEndTime;
-}
-
-bool DescribeVideoDownloadUrlResponse::ActualEndTimeHasBeenSet() const
-{
-    return m_actualEndTimeHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

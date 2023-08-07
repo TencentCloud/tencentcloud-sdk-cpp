@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/DescribeDevicePresetData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询设备预置位返回数据
+                * DescribeDevicePreset返回参数结构体
                 */
                 class DescribeDevicePresetResponse : public AbstractModel
                 {
@@ -44,52 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预置位索引    只支持1-10的索引
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Index 预置位索引    只支持1-10的索引
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回数据
+                     * @return Data 返回数据
                      * 
                      */
-                    int64_t GetIndex() const;
+                    std::vector<DescribeDevicePresetData> GetData() const;
 
                     /**
-                     * 判断参数 Index 是否已赋值
-                     * @return Index 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool IndexHasBeenSet() const;
-
-                    /**
-                     * 获取预置位名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 预置位名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     * 
-                     */
-                    bool NameHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 预置位索引    只支持1-10的索引
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回数据
                      */
-                    int64_t m_index;
-                    bool m_indexHasBeenSet;
-
-                    /**
-                     * 预置位名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
+                    std::vector<DescribeDevicePresetData> m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

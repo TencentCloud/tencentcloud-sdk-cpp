@@ -24,17 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 DescribeGatewayResponse::DescribeGatewayResponse() :
-    m_gatewayIdHasBeenSet(false),
-    m_gwIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_deviceNumHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -72,124 +62,21 @@ CoreInternalOutcome DescribeGatewayResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("GatewayId") && !rsp["GatewayId"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["GatewayId"].IsString())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `GatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_gatewayId = string(rsp["GatewayId"].GetString());
-        m_gatewayIdHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("GwId") && !rsp["GwId"].IsNull())
-    {
-        if (!rsp["GwId"].IsString())
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `GwId` IsString=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_gwId = string(rsp["GwId"].GetString());
-        m_gwIdHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("Name") && !rsp["Name"].IsNull())
-    {
-        if (!rsp["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(rsp["Name"].GetString());
-        m_nameHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Description") && !rsp["Description"].IsNull())
-    {
-        if (!rsp["Description"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_description = string(rsp["Description"].GetString());
-        m_descriptionHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ClusterId") && !rsp["ClusterId"].IsNull())
-    {
-        if (!rsp["ClusterId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ClusterId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_clusterId = string(rsp["ClusterId"].GetString());
-        m_clusterIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ClusterName") && !rsp["ClusterName"].IsNull())
-    {
-        if (!rsp["ClusterName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ClusterName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_clusterName = string(rsp["ClusterName"].GetString());
-        m_clusterNameHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
-    {
-        if (!rsp["Status"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = rsp["Status"].GetInt64();
-        m_statusHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Version") && !rsp["Version"].IsNull())
-    {
-        if (!rsp["Version"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Version` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Version"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            GatewayVersion item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_version.push_back(item);
-        }
-        m_versionHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("DeviceNum") && !rsp["DeviceNum"].IsNull())
-    {
-        if (!rsp["DeviceNum"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DeviceNum` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_deviceNum = rsp["DeviceNum"].GetInt64();
-        m_deviceNumHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("CreatedAt") && !rsp["CreatedAt"].IsNull())
-    {
-        if (!rsp["CreatedAt"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_createdAt = string(rsp["CreatedAt"].GetString());
-        m_createdAtHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Region") && !rsp["Region"].IsNull())
-    {
-        if (!rsp["Region"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Region` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_region = string(rsp["Region"].GetString());
-        m_regionHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -202,99 +89,13 @@ string DescribeGatewayResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_gatewayIdHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GatewayId";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_gatewayId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_gwIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GwId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_gwId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_descriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Description";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_clusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_clusterNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
-    }
-
-    if (m_versionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Version";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_version.begin(); itr != m_version.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_deviceNumHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DeviceNum";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_deviceNum, allocator);
-    }
-
-    if (m_createdAtHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreatedAt";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_regionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Region";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -309,114 +110,14 @@ string DescribeGatewayResponse::ToJsonString() const
 }
 
 
-string DescribeGatewayResponse::GetGatewayId() const
+DescribeGatewayData DescribeGatewayResponse::GetData() const
 {
-    return m_gatewayId;
+    return m_data;
 }
 
-bool DescribeGatewayResponse::GatewayIdHasBeenSet() const
+bool DescribeGatewayResponse::DataHasBeenSet() const
 {
-    return m_gatewayIdHasBeenSet;
-}
-
-string DescribeGatewayResponse::GetGwId() const
-{
-    return m_gwId;
-}
-
-bool DescribeGatewayResponse::GwIdHasBeenSet() const
-{
-    return m_gwIdHasBeenSet;
-}
-
-string DescribeGatewayResponse::GetName() const
-{
-    return m_name;
-}
-
-bool DescribeGatewayResponse::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
-}
-
-string DescribeGatewayResponse::GetDescription() const
-{
-    return m_description;
-}
-
-bool DescribeGatewayResponse::DescriptionHasBeenSet() const
-{
-    return m_descriptionHasBeenSet;
-}
-
-string DescribeGatewayResponse::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-bool DescribeGatewayResponse::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
-}
-
-string DescribeGatewayResponse::GetClusterName() const
-{
-    return m_clusterName;
-}
-
-bool DescribeGatewayResponse::ClusterNameHasBeenSet() const
-{
-    return m_clusterNameHasBeenSet;
-}
-
-int64_t DescribeGatewayResponse::GetStatus() const
-{
-    return m_status;
-}
-
-bool DescribeGatewayResponse::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
-vector<GatewayVersion> DescribeGatewayResponse::GetVersion() const
-{
-    return m_version;
-}
-
-bool DescribeGatewayResponse::VersionHasBeenSet() const
-{
-    return m_versionHasBeenSet;
-}
-
-int64_t DescribeGatewayResponse::GetDeviceNum() const
-{
-    return m_deviceNum;
-}
-
-bool DescribeGatewayResponse::DeviceNumHasBeenSet() const
-{
-    return m_deviceNumHasBeenSet;
-}
-
-string DescribeGatewayResponse::GetCreatedAt() const
-{
-    return m_createdAt;
-}
-
-bool DescribeGatewayResponse::CreatedAtHasBeenSet() const
-{
-    return m_createdAtHasBeenSet;
-}
-
-string DescribeGatewayResponse::GetRegion() const
-{
-    return m_region;
-}
-
-bool DescribeGatewayResponse::RegionHasBeenSet() const
-{
-    return m_regionHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

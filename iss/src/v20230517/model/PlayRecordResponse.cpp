@@ -24,7 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 PlayRecordResponse::PlayRecordResponse() :
-    m_flvHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -62,14 +62,21 @@ CoreInternalOutcome PlayRecordResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Flv") && !rsp["Flv"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Flv"].IsString())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `Flv` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_flv = string(rsp["Flv"].GetString());
-        m_flvHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
     }
 
 
@@ -82,12 +89,13 @@ string PlayRecordResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_flvHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Flv";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_flv.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +110,14 @@ string PlayRecordResponse::ToJsonString() const
 }
 
 
-string PlayRecordResponse::GetFlv() const
+PlayRecordData PlayRecordResponse::GetData() const
 {
-    return m_flv;
+    return m_data;
 }
 
-bool PlayRecordResponse::FlvHasBeenSet() const
+bool PlayRecordResponse::DataHasBeenSet() const
 {
-    return m_flvHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

@@ -24,8 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 DescribeDevicePresetResponse::DescribeDevicePresetResponse() :
-    m_indexHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -63,24 +62,24 @@ CoreInternalOutcome DescribeDevicePresetResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("Index") && !rsp["Index"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Index"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Index` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_index = rsp["Index"].GetInt64();
-        m_indexHasBeenSet = true;
-    }
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
 
-    if (rsp.HasMember("Name") && !rsp["Name"].IsNull())
-    {
-        if (!rsp["Name"].IsString())
+        const rapidjson::Value &tmpValue = rsp["Data"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            DescribeDevicePresetData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
         }
-        m_name = string(rsp["Name"].GetString());
-        m_nameHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -93,20 +92,19 @@ string DescribeDevicePresetResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_indexHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Index";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_index, allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+        int i=0;
+        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +119,14 @@ string DescribeDevicePresetResponse::ToJsonString() const
 }
 
 
-int64_t DescribeDevicePresetResponse::GetIndex() const
+vector<DescribeDevicePresetData> DescribeDevicePresetResponse::GetData() const
 {
-    return m_index;
+    return m_data;
 }
 
-bool DescribeDevicePresetResponse::IndexHasBeenSet() const
+bool DescribeDevicePresetResponse::DataHasBeenSet() const
 {
-    return m_indexHasBeenSet;
-}
-
-string DescribeDevicePresetResponse::GetName() const
-{
-    return m_name;
-}
-
-bool DescribeDevicePresetResponse::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

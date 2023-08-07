@@ -24,8 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 DescribeRecordFileResponse::DescribeRecordFileResponse() :
-    m_tipsHasBeenSet(false),
-    m_listHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -63,34 +62,21 @@ CoreInternalOutcome DescribeRecordFileResponse::Deserialize(const string &payloa
     }
 
 
-    if (rsp.HasMember("Tips") && !rsp["Tips"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Tips"].IsInt64())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `Tips` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_tips = rsp["Tips"].GetInt64();
-        m_tipsHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("List") && !rsp["List"].IsNull())
-    {
-        if (!rsp["List"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["List"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
         {
-            RecordTimeLine item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_list.push_back(item);
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_listHasBeenSet = true;
+
+        m_dataHasBeenSet = true;
     }
 
 
@@ -103,27 +89,13 @@ string DescribeRecordFileResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_tipsHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Tips";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_tips, allocator);
-    }
-
-    if (m_listHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "List";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +110,14 @@ string DescribeRecordFileResponse::ToJsonString() const
 }
 
 
-int64_t DescribeRecordFileResponse::GetTips() const
+DescribeRecordFileData DescribeRecordFileResponse::GetData() const
 {
-    return m_tips;
+    return m_data;
 }
 
-bool DescribeRecordFileResponse::TipsHasBeenSet() const
+bool DescribeRecordFileResponse::DataHasBeenSet() const
 {
-    return m_tipsHasBeenSet;
-}
-
-vector<RecordTimeLine> DescribeRecordFileResponse::GetList() const
-{
-    return m_list;
-}
-
-bool DescribeRecordFileResponse::ListHasBeenSet() const
-{
-    return m_listHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

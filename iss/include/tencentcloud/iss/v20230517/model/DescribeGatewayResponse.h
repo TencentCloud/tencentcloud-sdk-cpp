@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/GatewayVersion.h>
+#include <tencentcloud/iss/v20230517/model/DescribeGatewayData.h>
 
 
 namespace TencentCloud
@@ -33,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询网关信息返回结果
+                * DescribeGateway返回参数结构体
                 */
                 class DescribeGatewayResponse : public AbstractModel
                 {
@@ -45,259 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关索引ID，用于网关查询，更新，删除操作
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GatewayId 网关索引ID，用于网关查询，更新，删除操作
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回数据
+                     * @return Data 返回数据
                      * 
                      */
-                    std::string GetGatewayId() const;
+                    DescribeGatewayData GetData() const;
 
                     /**
-                     * 判断参数 GatewayId 是否已赋值
-                     * @return GatewayId 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool GatewayIdHasBeenSet() const;
-
-                    /**
-                     * 获取网关编码，由网关设备生成的唯一编码
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GwId 网关编码，由网关设备生成的唯一编码
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetGwId() const;
-
-                    /**
-                     * 判断参数 GwId 是否已赋值
-                     * @return GwId 是否已赋值
-                     * 
-                     */
-                    bool GwIdHasBeenSet() const;
-
-                    /**
-                     * 获取网关名称，仅支持中文、英文、数字、_、-，长度不超过32个字符
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 网关名称，仅支持中文、英文、数字、_、-，长度不超过32个字符
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     * 
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
-                     * 获取网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetDescription() const;
-
-                    /**
-                     * 判断参数 Description 是否已赋值
-                     * @return Description 是否已赋值
-                     * 
-                     */
-                    bool DescriptionHasBeenSet() const;
-
-                    /**
-                     * 获取服务节点id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterId 服务节点id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetClusterId() const;
-
-                    /**
-                     * 判断参数 ClusterId 是否已赋值
-                     * @return ClusterId 是否已赋值
-                     * 
-                     */
-                    bool ClusterIdHasBeenSet() const;
-
-                    /**
-                     * 获取服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterName 服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetClusterName() const;
-
-                    /**
-                     * 判断参数 ClusterName 是否已赋值
-                     * @return ClusterName 是否已赋值
-                     * 
-                     */
-                    bool ClusterNameHasBeenSet() const;
-
-                    /**
-                     * 获取网关状态，0：离线，1:在线
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 网关状态，0：离线，1:在线
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetStatus() const;
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
-
-                    /**
-                     * 获取网关版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 网关版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<GatewayVersion> GetVersion() const;
-
-                    /**
-                     * 判断参数 Version 是否已赋值
-                     * @return Version 是否已赋值
-                     * 
-                     */
-                    bool VersionHasBeenSet() const;
-
-                    /**
-                     * 获取网关下挂设备数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeviceNum 网关下挂设备数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetDeviceNum() const;
-
-                    /**
-                     * 判断参数 DeviceNum 是否已赋值
-                     * @return DeviceNum 是否已赋值
-                     * 
-                     */
-                    bool DeviceNumHasBeenSet() const;
-
-                    /**
-                     * 获取激活时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedAt 激活时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetCreatedAt() const;
-
-                    /**
-                     * 判断参数 CreatedAt 是否已赋值
-                     * @return CreatedAt 是否已赋值
-                     * 
-                     */
-                    bool CreatedAtHasBeenSet() const;
-
-                    /**
-                     * 获取所属地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetRegion() const;
-
-                    /**
-                     * 判断参数 Region 是否已赋值
-                     * @return Region 是否已赋值
-                     * 
-                     */
-                    bool RegionHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 网关索引ID，用于网关查询，更新，删除操作
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回数据
                      */
-                    std::string m_gatewayId;
-                    bool m_gatewayIdHasBeenSet;
-
-                    /**
-                     * 网关编码，由网关设备生成的唯一编码
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_gwId;
-                    bool m_gwIdHasBeenSet;
-
-                    /**
-                     * 网关名称，仅支持中文、英文、数字、_、-，长度不超过32个字符
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
-
-                    /**
-                     * 网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_description;
-                    bool m_descriptionHasBeenSet;
-
-                    /**
-                     * 服务节点id
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_clusterId;
-                    bool m_clusterIdHasBeenSet;
-
-                    /**
-                     * 服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_clusterName;
-                    bool m_clusterNameHasBeenSet;
-
-                    /**
-                     * 网关状态，0：离线，1:在线
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
-                     * 网关版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<GatewayVersion> m_version;
-                    bool m_versionHasBeenSet;
-
-                    /**
-                     * 网关下挂设备数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_deviceNum;
-                    bool m_deviceNumHasBeenSet;
-
-                    /**
-                     * 激活时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_createdAt;
-                    bool m_createdAtHasBeenSet;
-
-                    /**
-                     * 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_region;
-                    bool m_regionHasBeenSet;
+                    DescribeGatewayData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

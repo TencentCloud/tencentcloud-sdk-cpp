@@ -24,8 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 ListGatewaysResponse::ListGatewaysResponse() :
-    m_listHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -63,34 +62,21 @@ CoreInternalOutcome ListGatewaysResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("List") && !rsp["List"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["List"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["List"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Data"].IsObject())
         {
-            GatewaysData item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_list.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_listHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
+
+        m_dataHasBeenSet = true;
     }
 
 
@@ -103,27 +89,13 @@ string ListGatewaysResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_listHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "List";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +110,14 @@ string ListGatewaysResponse::ToJsonString() const
 }
 
 
-vector<GatewaysData> ListGatewaysResponse::GetList() const
+ListGatewaysData ListGatewaysResponse::GetData() const
 {
-    return m_list;
+    return m_data;
 }
 
-bool ListGatewaysResponse::ListHasBeenSet() const
+bool ListGatewaysResponse::DataHasBeenSet() const
 {
-    return m_listHasBeenSet;
-}
-
-int64_t ListGatewaysResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool ListGatewaysResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

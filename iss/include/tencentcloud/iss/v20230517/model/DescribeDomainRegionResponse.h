@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/DescribeDomainRegionData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询域名可绑定集群数据
+                * DescribeDomainRegion返回参数结构体
                 */
                 class DescribeDomainRegionResponse : public AbstractModel
                 {
@@ -44,75 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务节点描述
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label 服务节点描述
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回数据
+                     * @return Data 返回数据
                      * 
                      */
-                    std::string GetLabel() const;
+                    std::vector<DescribeDomainRegionData> GetData() const;
 
                     /**
-                     * 判断参数 Label 是否已赋值
-                     * @return Label 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool LabelHasBeenSet() const;
-
-                    /**
-                     * 获取服务节点 ID（对应为其他接口中所需的 ClusterId）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 服务节点 ID（对应为其他接口中所需的 ClusterId）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetValue() const;
-
-                    /**
-                     * 判断参数 Value 是否已赋值
-                     * @return Value 是否已赋值
-                     * 
-                     */
-                    bool ValueHasBeenSet() const;
-
-                    /**
-                     * 获取地域信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetRegion() const;
-
-                    /**
-                     * 判断参数 Region 是否已赋值
-                     * @return Region 是否已赋值
-                     * 
-                     */
-                    bool RegionHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 服务节点描述
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回数据
                      */
-                    std::string m_label;
-                    bool m_labelHasBeenSet;
-
-                    /**
-                     * 服务节点 ID（对应为其他接口中所需的 ClusterId）
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_value;
-                    bool m_valueHasBeenSet;
-
-                    /**
-                     * 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_region;
-                    bool m_regionHasBeenSet;
+                    std::vector<DescribeDomainRegionData> m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

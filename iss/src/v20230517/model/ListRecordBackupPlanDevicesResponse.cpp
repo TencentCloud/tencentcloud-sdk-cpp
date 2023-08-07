@@ -24,10 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 ListRecordBackupPlanDevicesResponse::ListRecordBackupPlanDevicesResponse() :
-    m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false),
-    m_totalCountHasBeenSet(false),
-    m_listHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -65,51 +62,21 @@ CoreInternalOutcome ListRecordBackupPlanDevicesResponse::Deserialize(const strin
     }
 
 
-    if (rsp.HasMember("PageNumber") && !rsp["PageNumber"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["PageNumber"].IsInt64())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `PageNumber` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_pageNumber = rsp["PageNumber"].GetInt64();
-        m_pageNumberHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("PageSize") && !rsp["PageSize"].IsNull())
-    {
-        if (!rsp["PageSize"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `PageSize` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_pageSize = rsp["PageSize"].GetInt64();
-        m_pageSizeHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("List") && !rsp["List"].IsNull())
-    {
-        if (!rsp["List"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `List` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_list.Deserialize(rsp["List"]);
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_listHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -122,37 +89,13 @@ string ListRecordBackupPlanDevicesResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_pageNumberHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PageNumber";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_pageNumber, allocator);
-    }
-
-    if (m_pageSizeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PageSize";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_pageSize, allocator);
-    }
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
-    if (m_listHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "List";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_list.ToJsonObject(value[key.c_str()], allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -167,44 +110,14 @@ string ListRecordBackupPlanDevicesResponse::ToJsonString() const
 }
 
 
-int64_t ListRecordBackupPlanDevicesResponse::GetPageNumber() const
+ListRecordBackupPlanDevicesData ListRecordBackupPlanDevicesResponse::GetData() const
 {
-    return m_pageNumber;
+    return m_data;
 }
 
-bool ListRecordBackupPlanDevicesResponse::PageNumberHasBeenSet() const
+bool ListRecordBackupPlanDevicesResponse::DataHasBeenSet() const
 {
-    return m_pageNumberHasBeenSet;
-}
-
-int64_t ListRecordBackupPlanDevicesResponse::GetPageSize() const
-{
-    return m_pageSize;
-}
-
-bool ListRecordBackupPlanDevicesResponse::PageSizeHasBeenSet() const
-{
-    return m_pageSizeHasBeenSet;
-}
-
-int64_t ListRecordBackupPlanDevicesResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool ListRecordBackupPlanDevicesResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
-}
-
-RecordPlanChannelInfo ListRecordBackupPlanDevicesResponse::GetList() const
-{
-    return m_list;
-}
-
-bool ListRecordBackupPlanDevicesResponse::ListHasBeenSet() const
-{
-    return m_listHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

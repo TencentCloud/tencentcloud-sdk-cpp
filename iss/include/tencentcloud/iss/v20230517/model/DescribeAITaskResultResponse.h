@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/AITaskResultResponse.h>
+#include <tencentcloud/iss/v20230517/model/AITaskResultData.h>
 
 
 namespace TencentCloud
@@ -51,7 +51,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    AITaskResultResponse GetData() const;
+                    AITaskResultData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -80,7 +80,7 @@ namespace TencentCloud
                      * AI识别结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    AITaskResultResponse m_data;
+                    AITaskResultData m_data;
                     bool m_dataHasBeenSet;
 
                     /**

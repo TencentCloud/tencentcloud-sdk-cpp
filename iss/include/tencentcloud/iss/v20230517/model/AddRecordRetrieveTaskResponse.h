@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/AddRecordRetrieveTaskData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询取回任务详情返回数据
+                * AddRecordRetrieveTask返回参数结构体
                 */
                 class AddRecordRetrieveTaskResponse : public AbstractModel
                 {
@@ -44,189 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取返回结果
+                     * @return Data 返回结果
                      * 
                      */
-                    std::string GetTaskId() const;
+                    AddRecordRetrieveTaskData GetData() const;
 
                     /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool TaskIdHasBeenSet() const;
-
-                    /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
-                     * 
-                     */
-                    std::string GetTaskName() const;
-
-                    /**
-                     * 判断参数 TaskName 是否已赋值
-                     * @return TaskName 是否已赋值
-                     * 
-                     */
-                    bool TaskNameHasBeenSet() const;
-
-                    /**
-                     * 获取取回录像的开始时间
-                     * @return StartTime 取回录像的开始时间
-                     * 
-                     */
-                    uint64_t GetStartTime() const;
-
-                    /**
-                     * 判断参数 StartTime 是否已赋值
-                     * @return StartTime 是否已赋值
-                     * 
-                     */
-                    bool StartTimeHasBeenSet() const;
-
-                    /**
-                     * 获取取回录像的结束时间
-                     * @return EndTime 取回录像的结束时间
-                     * 
-                     */
-                    uint64_t GetEndTime() const;
-
-                    /**
-                     * 判断参数 EndTime 是否已赋值
-                     * @return EndTime 是否已赋值
-                     * 
-                     */
-                    bool EndTimeHasBeenSet() const;
-
-                    /**
-                     * 获取取回模式，1:极速模式，其他暂不支持
-                     * @return Mode 取回模式，1:极速模式，其他暂不支持
-                     * 
-                     */
-                    int64_t GetMode() const;
-
-                    /**
-                     * 判断参数 Mode 是否已赋值
-                     * @return Mode 是否已赋值
-                     * 
-                     */
-                    bool ModeHasBeenSet() const;
-
-                    /**
-                     * 获取副本有效期
-                     * @return Expiration 副本有效期
-                     * 
-                     */
-                    int64_t GetExpiration() const;
-
-                    /**
-                     * 判断参数 Expiration 是否已赋值
-                     * @return Expiration 是否已赋值
-                     * 
-                     */
-                    bool ExpirationHasBeenSet() const;
-
-                    /**
-                     * 获取任务状态，0:已取回，1:取回中，2:待取回
-                     * @return Status 任务状态，0:已取回，1:取回中，2:待取回
-                     * 
-                     */
-                    int64_t GetStatus() const;
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
-
-                    /**
-                     * 获取取回容量，单位MB
-                     * @return Capacity 取回容量，单位MB
-                     * 
-                     */
-                    double GetCapacity() const;
-
-                    /**
-                     * 判断参数 Capacity 是否已赋值
-                     * @return Capacity 是否已赋值
-                     * 
-                     */
-                    bool CapacityHasBeenSet() const;
-
-                    /**
-                     * 获取任务描述
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Describe 任务描述
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetDescribe() const;
-
-                    /**
-                     * 判断参数 Describe 是否已赋值
-                     * @return Describe 是否已赋值
-                     * 
-                     */
-                    bool DescribeHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务ID
+                     * 返回结果
                      */
-                    std::string m_taskId;
-                    bool m_taskIdHasBeenSet;
-
-                    /**
-                     * 任务名称
-                     */
-                    std::string m_taskName;
-                    bool m_taskNameHasBeenSet;
-
-                    /**
-                     * 取回录像的开始时间
-                     */
-                    uint64_t m_startTime;
-                    bool m_startTimeHasBeenSet;
-
-                    /**
-                     * 取回录像的结束时间
-                     */
-                    uint64_t m_endTime;
-                    bool m_endTimeHasBeenSet;
-
-                    /**
-                     * 取回模式，1:极速模式，其他暂不支持
-                     */
-                    int64_t m_mode;
-                    bool m_modeHasBeenSet;
-
-                    /**
-                     * 副本有效期
-                     */
-                    int64_t m_expiration;
-                    bool m_expirationHasBeenSet;
-
-                    /**
-                     * 任务状态，0:已取回，1:取回中，2:待取回
-                     */
-                    int64_t m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
-                     * 取回容量，单位MB
-                     */
-                    double m_capacity;
-                    bool m_capacityHasBeenSet;
-
-                    /**
-                     * 任务描述
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_describe;
-                    bool m_describeHasBeenSet;
+                    AddRecordRetrieveTaskData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

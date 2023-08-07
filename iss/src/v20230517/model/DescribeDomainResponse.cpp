@@ -24,13 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 DescribeDomainResponse::DescribeDomainResponse() :
-    m_idHasBeenSet(false),
-    m_playDomainHasBeenSet(false),
-    m_internalDomainHasBeenSet(false),
-    m_haveCertHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -68,74 +62,24 @@ CoreInternalOutcome DescribeDomainResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Id") && !rsp["Id"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Id"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Id` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_id = string(rsp["Id"].GetString());
-        m_idHasBeenSet = true;
-    }
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
 
-    if (rsp.HasMember("PlayDomain") && !rsp["PlayDomain"].IsNull())
-    {
-        if (!rsp["PlayDomain"].IsString())
+        const rapidjson::Value &tmpValue = rsp["Data"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `PlayDomain` IsString=false incorrectly").SetRequestId(requestId));
+            DescribeDomainData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
         }
-        m_playDomain = string(rsp["PlayDomain"].GetString());
-        m_playDomainHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("InternalDomain") && !rsp["InternalDomain"].IsNull())
-    {
-        if (!rsp["InternalDomain"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `InternalDomain` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_internalDomain = string(rsp["InternalDomain"].GetString());
-        m_internalDomainHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("HaveCert") && !rsp["HaveCert"].IsNull())
-    {
-        if (!rsp["HaveCert"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `HaveCert` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_haveCert = rsp["HaveCert"].GetInt64();
-        m_haveCertHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ClusterId") && !rsp["ClusterId"].IsNull())
-    {
-        if (!rsp["ClusterId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ClusterId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_clusterId = string(rsp["ClusterId"].GetString());
-        m_clusterIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ClusterName") && !rsp["ClusterName"].IsNull())
-    {
-        if (!rsp["ClusterName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ClusterName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_clusterName = string(rsp["ClusterName"].GetString());
-        m_clusterNameHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("AppId") && !rsp["AppId"].IsNull())
-    {
-        if (!rsp["AppId"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `AppId` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appId = rsp["AppId"].GetInt64();
-        m_appIdHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -148,60 +92,19 @@ string DescribeDomainResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_idHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Id";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_playDomainHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PlayDomain";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_playDomain.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_internalDomainHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InternalDomain";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_internalDomain.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_haveCertHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HaveCert";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_haveCert, allocator);
-    }
-
-    if (m_clusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_clusterNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_appIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appId, allocator);
+        int i=0;
+        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -216,74 +119,14 @@ string DescribeDomainResponse::ToJsonString() const
 }
 
 
-string DescribeDomainResponse::GetId() const
+vector<DescribeDomainData> DescribeDomainResponse::GetData() const
 {
-    return m_id;
+    return m_data;
 }
 
-bool DescribeDomainResponse::IdHasBeenSet() const
+bool DescribeDomainResponse::DataHasBeenSet() const
 {
-    return m_idHasBeenSet;
-}
-
-string DescribeDomainResponse::GetPlayDomain() const
-{
-    return m_playDomain;
-}
-
-bool DescribeDomainResponse::PlayDomainHasBeenSet() const
-{
-    return m_playDomainHasBeenSet;
-}
-
-string DescribeDomainResponse::GetInternalDomain() const
-{
-    return m_internalDomain;
-}
-
-bool DescribeDomainResponse::InternalDomainHasBeenSet() const
-{
-    return m_internalDomainHasBeenSet;
-}
-
-int64_t DescribeDomainResponse::GetHaveCert() const
-{
-    return m_haveCert;
-}
-
-bool DescribeDomainResponse::HaveCertHasBeenSet() const
-{
-    return m_haveCertHasBeenSet;
-}
-
-string DescribeDomainResponse::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-bool DescribeDomainResponse::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
-}
-
-string DescribeDomainResponse::GetClusterName() const
-{
-    return m_clusterName;
-}
-
-bool DescribeDomainResponse::ClusterNameHasBeenSet() const
-{
-    return m_clusterNameHasBeenSet;
-}
-
-int64_t DescribeDomainResponse::GetAppId() const
-{
-    return m_appId;
-}
-
-bool DescribeDomainResponse::AppIdHasBeenSet() const
-{
-    return m_appIdHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

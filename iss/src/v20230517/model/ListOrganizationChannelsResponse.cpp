@@ -24,10 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 ListOrganizationChannelsResponse::ListOrganizationChannelsResponse() :
-    m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false),
-    m_totalCountHasBeenSet(false),
-    m_listHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -65,54 +62,21 @@ CoreInternalOutcome ListOrganizationChannelsResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("PageNumber") && !rsp["PageNumber"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["PageNumber"].IsInt64())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `PageNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_pageNumber = rsp["PageNumber"].GetInt64();
-        m_pageNumberHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("PageSize") && !rsp["PageSize"].IsNull())
-    {
-        if (!rsp["PageSize"].IsInt64())
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `PageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_pageSize = rsp["PageSize"].GetInt64();
-        m_pageSizeHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("List") && !rsp["List"].IsNull())
-    {
-        if (!rsp["List"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["List"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            OrganizationChannelInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_list.push_back(item);
-        }
-        m_listHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -125,43 +89,13 @@ string ListOrganizationChannelsResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_pageNumberHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PageNumber";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_pageNumber, allocator);
-    }
-
-    if (m_pageSizeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PageSize";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_pageSize, allocator);
-    }
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
-    if (m_listHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "List";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,44 +110,14 @@ string ListOrganizationChannelsResponse::ToJsonString() const
 }
 
 
-int64_t ListOrganizationChannelsResponse::GetPageNumber() const
+ListOrganizationChannelsData ListOrganizationChannelsResponse::GetData() const
 {
-    return m_pageNumber;
+    return m_data;
 }
 
-bool ListOrganizationChannelsResponse::PageNumberHasBeenSet() const
+bool ListOrganizationChannelsResponse::DataHasBeenSet() const
 {
-    return m_pageNumberHasBeenSet;
-}
-
-int64_t ListOrganizationChannelsResponse::GetPageSize() const
-{
-    return m_pageSize;
-}
-
-bool ListOrganizationChannelsResponse::PageSizeHasBeenSet() const
-{
-    return m_pageSizeHasBeenSet;
-}
-
-int64_t ListOrganizationChannelsResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool ListOrganizationChannelsResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
-}
-
-vector<OrganizationChannelInfo> ListOrganizationChannelsResponse::GetList() const
-{
-    return m_list;
-}
-
-bool ListOrganizationChannelsResponse::ListHasBeenSet() const
-{
-    return m_listHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

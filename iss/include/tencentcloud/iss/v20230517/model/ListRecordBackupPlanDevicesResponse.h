@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/RecordPlanChannelInfo.h>
+#include <tencentcloud/iss/v20230517/model/ListRecordBackupPlanDevicesData.h>
 
 
 namespace TencentCloud
@@ -33,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询录像上云计划关联通道的返回数据
+                * ListRecordBackupPlanDevices返回参数结构体
                 */
                 class ListRecordBackupPlanDevicesResponse : public AbstractModel
                 {
@@ -45,98 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第几页
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageNumber 第几页
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回数据
+                     * @return Data 返回数据
                      * 
                      */
-                    int64_t GetPageNumber() const;
+                    ListRecordBackupPlanDevicesData GetData() const;
 
                     /**
-                     * 判断参数 PageNumber 是否已赋值
-                     * @return PageNumber 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool PageNumberHasBeenSet() const;
-
-                    /**
-                     * 获取当前页的设备数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageSize 当前页的设备数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetPageSize() const;
-
-                    /**
-                     * 判断参数 PageSize 是否已赋值
-                     * @return PageSize 是否已赋值
-                     * 
-                     */
-                    bool PageSizeHasBeenSet() const;
-
-                    /**
-                     * 获取本次查询的设备通道总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 本次查询的设备通道总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetTotalCount() const;
-
-                    /**
-                     * 判断参数 TotalCount 是否已赋值
-                     * @return TotalCount 是否已赋值
-                     * 
-                     */
-                    bool TotalCountHasBeenSet() const;
-
-                    /**
-                     * 获取设备通道信息列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List 设备通道信息列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    RecordPlanChannelInfo GetList() const;
-
-                    /**
-                     * 判断参数 List 是否已赋值
-                     * @return List 是否已赋值
-                     * 
-                     */
-                    bool ListHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 第几页
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回数据
                      */
-                    int64_t m_pageNumber;
-                    bool m_pageNumberHasBeenSet;
-
-                    /**
-                     * 当前页的设备数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_pageSize;
-                    bool m_pageSizeHasBeenSet;
-
-                    /**
-                     * 本次查询的设备通道总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_totalCount;
-                    bool m_totalCountHasBeenSet;
-
-                    /**
-                     * 设备通道信息列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    RecordPlanChannelInfo m_list;
-                    bool m_listHasBeenSet;
+                    ListRecordBackupPlanDevicesData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/UpdateOrgResponse.h>
+#include <tencentcloud/iss/v20230517/model/UpdateOrgData.h>
 
 
 namespace TencentCloud
@@ -49,7 +49,7 @@ namespace TencentCloud
                      * @return Data 返回结果
                      * 
                      */
-                    UpdateOrgResponse GetData() const;
+                    UpdateOrgData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -63,7 +63,7 @@ namespace TencentCloud
                     /**
                      * 返回结果
                      */
-                    UpdateOrgResponse m_data;
+                    UpdateOrgData m_data;
                     bool m_dataHasBeenSet;
 
                 };

@@ -110,7 +110,7 @@ string UpdateRecordPlanResponse::ToJsonString() const
 }
 
 
-RecordPlanOptResponse UpdateRecordPlanResponse::GetData() const
+RecordPlanOptData UpdateRecordPlanResponse::GetData() const
 {
     return m_data;
 }

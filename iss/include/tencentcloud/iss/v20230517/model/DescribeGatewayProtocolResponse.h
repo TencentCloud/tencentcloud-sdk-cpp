@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/DescribeGatewayProtocolData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询网关所支持的接入协议
+                * DescribeGatewayProtocol返回参数结构体
                 */
                 class DescribeGatewayProtocolResponse : public AbstractModel
                 {
@@ -44,75 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入协议的字典码
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TypeCode 接入协议的字典码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回数据
+                     * @return Data 返回数据
                      * 
                      */
-                    std::string GetTypeCode() const;
+                    std::vector<DescribeGatewayProtocolData> GetData() const;
 
                     /**
-                     * 判断参数 TypeCode 是否已赋值
-                     * @return TypeCode 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool TypeCodeHasBeenSet() const;
-
-                    /**
-                     * 获取接入协议类型值
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 接入协议类型值
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetValue() const;
-
-                    /**
-                     * 判断参数 Value 是否已赋值
-                     * @return Value 是否已赋值
-                     * 
-                     */
-                    bool ValueHasBeenSet() const;
-
-                    /**
-                     * 获取接入协议的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label 接入协议的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetLabel() const;
-
-                    /**
-                     * 判断参数 Label 是否已赋值
-                     * @return Label 是否已赋值
-                     * 
-                     */
-                    bool LabelHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 接入协议的字典码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回数据
                      */
-                    std::string m_typeCode;
-                    bool m_typeCodeHasBeenSet;
-
-                    /**
-                     * 接入协议类型值
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_value;
-                    bool m_valueHasBeenSet;
-
-                    /**
-                     * 接入协议的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_label;
-                    bool m_labelHasBeenSet;
+                    std::vector<DescribeGatewayProtocolData> m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

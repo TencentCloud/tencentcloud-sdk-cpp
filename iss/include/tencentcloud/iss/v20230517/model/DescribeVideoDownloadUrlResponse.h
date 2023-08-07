@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlData.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 获取云录像下载URL返回的数据
+                * DescribeVideoDownloadUrl返回参数结构体
                 */
                 class DescribeVideoDownloadUrlResponse : public AbstractModel
                 {
@@ -44,84 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取录像文件下载 URL
-注意：
-URL 有效期是10分钟，过期后将拒绝访问，若需再用请重新获取 
-录像文件下载采用分块传输编码，响应头Transfer-Encoding:chunked 
-下载文件命名格式为{ChannelId}-{BeginTime}-{EndTime}.{FileType} 
-                     * @return Url 录像文件下载 URL
-注意：
-URL 有效期是10分钟，过期后将拒绝访问，若需再用请重新获取 
-录像文件下载采用分块传输编码，响应头Transfer-Encoding:chunked 
-下载文件命名格式为{ChannelId}-{BeginTime}-{EndTime}.{FileType} 
+                     * 获取返回的数据结构
+                     * @return Data 返回的数据结构
                      * 
                      */
-                    std::string GetUrl() const;
+                    DescribeVideoDownloadUrlData GetData() const;
 
                     /**
-                     * 判断参数 Url 是否已赋值
-                     * @return Url 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool UrlHasBeenSet() const;
-
-                    /**
-                     * 获取实际下载录像的开始时间
-注意：当请求中指定IsRespActualTime参数为true时，才有该字段
-                     * @return ActualBeginTime 实际下载录像的开始时间
-注意：当请求中指定IsRespActualTime参数为true时，才有该字段
-                     * 
-                     */
-                    std::string GetActualBeginTime() const;
-
-                    /**
-                     * 判断参数 ActualBeginTime 是否已赋值
-                     * @return ActualBeginTime 是否已赋值
-                     * 
-                     */
-                    bool ActualBeginTimeHasBeenSet() const;
-
-                    /**
-                     * 获取实际下载录像的结束时间
-注意：当请求中指定IsRespActualTime参数为true时，才有该字段
-                     * @return ActualEndTime 实际下载录像的结束时间
-注意：当请求中指定IsRespActualTime参数为true时，才有该字段
-                     * 
-                     */
-                    std::string GetActualEndTime() const;
-
-                    /**
-                     * 判断参数 ActualEndTime 是否已赋值
-                     * @return ActualEndTime 是否已赋值
-                     * 
-                     */
-                    bool ActualEndTimeHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 录像文件下载 URL
-注意：
-URL 有效期是10分钟，过期后将拒绝访问，若需再用请重新获取 
-录像文件下载采用分块传输编码，响应头Transfer-Encoding:chunked 
-下载文件命名格式为{ChannelId}-{BeginTime}-{EndTime}.{FileType} 
+                     * 返回的数据结构
                      */
-                    std::string m_url;
-                    bool m_urlHasBeenSet;
-
-                    /**
-                     * 实际下载录像的开始时间
-注意：当请求中指定IsRespActualTime参数为true时，才有该字段
-                     */
-                    std::string m_actualBeginTime;
-                    bool m_actualBeginTimeHasBeenSet;
-
-                    /**
-                     * 实际下载录像的结束时间
-注意：当请求中指定IsRespActualTime参数为true时，才有该字段
-                     */
-                    std::string m_actualEndTime;
-                    bool m_actualEndTimeHasBeenSet;
+                    DescribeVideoDownloadUrlData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

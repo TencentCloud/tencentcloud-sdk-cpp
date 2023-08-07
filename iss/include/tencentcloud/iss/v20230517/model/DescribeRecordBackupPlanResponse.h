@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iss/v20230517/model/LifeCycleData.h>
+#include <tencentcloud/iss/v20230517/model/DescribeRecordBackupPlanData.h>
 
 
 namespace TencentCloud
@@ -33,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询录像上云计划返回数据
+                * DescribeRecordBackupPlan返回参数结构体
                 */
                 class DescribeRecordBackupPlanResponse : public AbstractModel
                 {
@@ -45,186 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取录像上云计划ID
-                     * @return PlanId 录像上云计划ID
+                     * 获取返回数据
+                     * @return Data 返回数据
                      * 
                      */
-                    std::string GetPlanId() const;
+                    DescribeRecordBackupPlanData GetData() const;
 
                     /**
-                     * 判断参数 PlanId 是否已赋值
-                     * @return PlanId 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool PlanIdHasBeenSet() const;
-
-                    /**
-                     * 获取录像上云计划名称
-                     * @return PlanName 录像上云计划名称
-                     * 
-                     */
-                    std::string GetPlanName() const;
-
-                    /**
-                     * 判断参数 PlanName 是否已赋值
-                     * @return PlanName 是否已赋值
-                     * 
-                     */
-                    bool PlanNameHasBeenSet() const;
-
-                    /**
-                     * 获取录像上云模板ID
-                     * @return TemplateId 录像上云模板ID
-                     * 
-                     */
-                    std::string GetTemplateId() const;
-
-                    /**
-                     * 判断参数 TemplateId 是否已赋值
-                     * @return TemplateId 是否已赋值
-                     * 
-                     */
-                    bool TemplateIdHasBeenSet() const;
-
-                    /**
-                     * 获取录像上云计划描述
-                     * @return Describe 录像上云计划描述
-                     * 
-                     */
-                    std::string GetDescribe() const;
-
-                    /**
-                     * 判断参数 Describe 是否已赋值
-                     * @return Describe 是否已赋值
-                     * 
-                     */
-                    bool DescribeHasBeenSet() const;
-
-                    /**
-                     * 获取云文件生命周期
-                     * @return LifeCycle 云文件生命周期
-                     * 
-                     */
-                    LifeCycleData GetLifeCycle() const;
-
-                    /**
-                     * 判断参数 LifeCycle 是否已赋值
-                     * @return LifeCycle 是否已赋值
-                     * 
-                     */
-                    bool LifeCycleHasBeenSet() const;
-
-                    /**
-                     * 获取录像上云计划状态，1:正常使用中，0:删除中，无法使用
-                     * @return Status 录像上云计划状态，1:正常使用中，0:删除中，无法使用
-                     * 
-                     */
-                    int64_t GetStatus() const;
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
-
-                    /**
-                     * 获取通道数量
-                     * @return ChannelCount 通道数量
-                     * 
-                     */
-                    int64_t GetChannelCount() const;
-
-                    /**
-                     * 判断参数 ChannelCount 是否已赋值
-                     * @return ChannelCount 是否已赋值
-                     * 
-                     */
-                    bool ChannelCountHasBeenSet() const;
-
-                    /**
-                     * 获取创建时间
-                     * @return CreateAt 创建时间
-                     * 
-                     */
-                    std::string GetCreateAt() const;
-
-                    /**
-                     * 判断参数 CreateAt 是否已赋值
-                     * @return CreateAt 是否已赋值
-                     * 
-                     */
-                    bool CreateAtHasBeenSet() const;
-
-                    /**
-                     * 获取修改时间
-                     * @return UpdateAt 修改时间
-                     * 
-                     */
-                    std::string GetUpdateAt() const;
-
-                    /**
-                     * 判断参数 UpdateAt 是否已赋值
-                     * @return UpdateAt 是否已赋值
-                     * 
-                     */
-                    bool UpdateAtHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 录像上云计划ID
+                     * 返回数据
                      */
-                    std::string m_planId;
-                    bool m_planIdHasBeenSet;
-
-                    /**
-                     * 录像上云计划名称
-                     */
-                    std::string m_planName;
-                    bool m_planNameHasBeenSet;
-
-                    /**
-                     * 录像上云模板ID
-                     */
-                    std::string m_templateId;
-                    bool m_templateIdHasBeenSet;
-
-                    /**
-                     * 录像上云计划描述
-                     */
-                    std::string m_describe;
-                    bool m_describeHasBeenSet;
-
-                    /**
-                     * 云文件生命周期
-                     */
-                    LifeCycleData m_lifeCycle;
-                    bool m_lifeCycleHasBeenSet;
-
-                    /**
-                     * 录像上云计划状态，1:正常使用中，0:删除中，无法使用
-                     */
-                    int64_t m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
-                     * 通道数量
-                     */
-                    int64_t m_channelCount;
-                    bool m_channelCountHasBeenSet;
-
-                    /**
-                     * 创建时间
-                     */
-                    std::string m_createAt;
-                    bool m_createAtHasBeenSet;
-
-                    /**
-                     * 修改时间
-                     */
-                    std::string m_updateAt;
-                    bool m_updateAtHasBeenSet;
+                    DescribeRecordBackupPlanData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

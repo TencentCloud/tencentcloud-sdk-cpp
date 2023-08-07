@@ -24,9 +24,7 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 ControlDeviceStreamResponse::ControlDeviceStreamResponse() :
-    m_flvHasBeenSet(false),
-    m_hlsHasBeenSet(false),
-    m_rtmpHasBeenSet(false)
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -64,34 +62,21 @@ CoreInternalOutcome ControlDeviceStreamResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("Flv") && !rsp["Flv"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Flv"].IsString())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `Flv` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_flv = string(rsp["Flv"].GetString());
-        m_flvHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("Hls") && !rsp["Hls"].IsNull())
-    {
-        if (!rsp["Hls"].IsString())
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `Hls` IsString=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_hls = string(rsp["Hls"].GetString());
-        m_hlsHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("Rtmp") && !rsp["Rtmp"].IsNull())
-    {
-        if (!rsp["Rtmp"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Rtmp` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_rtmp = string(rsp["Rtmp"].GetString());
-        m_rtmpHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -104,28 +89,13 @@ string ControlDeviceStreamResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_flvHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Flv";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_flv.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_hlsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Hls";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_hls.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_rtmpHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Rtmp";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_rtmp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +110,14 @@ string ControlDeviceStreamResponse::ToJsonString() const
 }
 
 
-string ControlDeviceStreamResponse::GetFlv() const
+ControlDeviceStreamData ControlDeviceStreamResponse::GetData() const
 {
-    return m_flv;
+    return m_data;
 }
 
-bool ControlDeviceStreamResponse::FlvHasBeenSet() const
+bool ControlDeviceStreamResponse::DataHasBeenSet() const
 {
-    return m_flvHasBeenSet;
-}
-
-string ControlDeviceStreamResponse::GetHls() const
-{
-    return m_hls;
-}
-
-bool ControlDeviceStreamResponse::HlsHasBeenSet() const
-{
-    return m_hlsHasBeenSet;
-}
-
-string ControlDeviceStreamResponse::GetRtmp() const
-{
-    return m_rtmp;
-}
-
-bool ControlDeviceStreamResponse::RtmpHasBeenSet() const
-{
-    return m_rtmpHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 
