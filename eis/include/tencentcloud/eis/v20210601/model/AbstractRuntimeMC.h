@@ -260,6 +260,31 @@ namespace TencentCloud
                      */
                     bool DeployedHasBeenSet() const;
 
+                    /**
+                     * 获取环境扩展组件是否满足应用要求：0=true, 1=false 表示该应用需要扩展组件0(cdc)以及1(java)，但是独立环境有cdc无java，不满足发布要求
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MatchExtensions 环境扩展组件是否满足应用要求：0=true, 1=false 表示该应用需要扩展组件0(cdc)以及1(java)，但是独立环境有cdc无java，不满足发布要求
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMatchExtensions() const;
+
+                    /**
+                     * 设置环境扩展组件是否满足应用要求：0=true, 1=false 表示该应用需要扩展组件0(cdc)以及1(java)，但是独立环境有cdc无java，不满足发布要求
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _matchExtensions 环境扩展组件是否满足应用要求：0=true, 1=false 表示该应用需要扩展组件0(cdc)以及1(java)，但是独立环境有cdc无java，不满足发布要求
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMatchExtensions(const std::string& _matchExtensions);
+
+                    /**
+                     * 判断参数 MatchExtensions 是否已赋值
+                     * @return MatchExtensions 是否已赋值
+                     * 
+                     */
+                    bool MatchExtensionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -322,6 +347,13 @@ namespace TencentCloud
                      */
                     bool m_deployed;
                     bool m_deployedHasBeenSet;
+
+                    /**
+                     * 环境扩展组件是否满足应用要求：0=true, 1=false 表示该应用需要扩展组件0(cdc)以及1(java)，但是独立环境有cdc无java，不满足发布要求
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_matchExtensions;
+                    bool m_matchExtensionsHasBeenSet;
 
                 };
             }

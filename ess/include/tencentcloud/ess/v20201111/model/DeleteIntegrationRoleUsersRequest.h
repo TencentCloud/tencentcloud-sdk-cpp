@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool RoleIdHasBeenSet() const;
 
                     /**
-                     * 获取用户信息
-                     * @return Users 用户信息
+                     * 获取用户信息,最多 200 个用户，并且 UserId 和 OpenId 二选一，其他字段不需要传
+                     * @return Users 用户信息,最多 200 个用户，并且 UserId 和 OpenId 二选一，其他字段不需要传
                      * 
                      */
                     std::vector<UserInfo> GetUsers() const;
 
                     /**
-                     * 设置用户信息
-                     * @param _users 用户信息
+                     * 设置用户信息,最多 200 个用户，并且 UserId 和 OpenId 二选一，其他字段不需要传
+                     * @param _users 用户信息,最多 200 个用户，并且 UserId 和 OpenId 二选一，其他字段不需要传
                      * 
                      */
                     void SetUsers(const std::vector<UserInfo>& _users);
@@ -143,7 +143,7 @@ namespace TencentCloud
                     bool m_roleIdHasBeenSet;
 
                     /**
-                     * 用户信息
+                     * 用户信息,最多 200 个用户，并且 UserId 和 OpenId 二选一，其他字段不需要传
                      */
                     std::vector<UserInfo> m_users;
                     bool m_usersHasBeenSet;

@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool EmployeesHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0，最大为20000
+                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Offset 偏移量，默认为0，最大为20000
+                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,8 +77,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回最大数量，最大为20
-                     * @return Limit 返回最大数量，最大为20
+                     * 获取指定每页多少条数据，单页最大20
+                     * @return Limit 指定每页多少条数据，单页最大20
                      * 
                      */
                     int64_t GetLimit() const;
@@ -114,14 +114,14 @@ namespace TencentCloud
                     bool m_employeesHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0，最大为20000
+                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回最大数量，最大为20
+                     * 指定每页多少条数据，单页最大20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

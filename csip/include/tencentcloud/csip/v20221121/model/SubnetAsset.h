@@ -433,6 +433,31 @@ namespace TencentCloud
                      */
                     bool IsCoreHasBeenSet() const;
 
+                    /**
+                     * 获取是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsNewAsset 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIsNewAsset() const;
+
+                    /**
+                     * 设置是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isNewAsset 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsNewAsset(const uint64_t& _isNewAsset);
+
+                    /**
+                     * 判断参数 IsNewAsset 是否已赋值
+                     * @return IsNewAsset 是否已赋值
+                     * 
+                     */
+                    bool IsNewAssetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -544,6 +569,13 @@ namespace TencentCloud
                      */
                     uint64_t m_isCore;
                     bool m_isCoreHasBeenSet;
+
+                    /**
+                     * 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isNewAsset;
+                    bool m_isNewAssetHasBeenSet;
 
                 };
             }

@@ -54,6 +54,11 @@ machineGroupId
 - 类型：String
 - 必选：否
 
+osType
+- 按照【操作系统类型】进行过滤。
+- 类型：Int
+- 必选：否
+
 tagKey
 - 按照【标签键】进行过滤。
 - 类型：String
@@ -73,6 +78,11 @@ tag:tagKey
 machineGroupId
 - 按照【机器组ID】进行过滤。
 - 类型：String
+- 必选：否
+
+osType
+- 按照【操作系统类型】进行过滤。
+- 类型：Int
 - 必选：否
 
 tagKey
@@ -101,6 +111,11 @@ machineGroupId
 - 类型：String
 - 必选：否
 
+osType
+- 按照【操作系统类型】进行过滤。
+- 类型：Int
+- 必选：否
+
 tagKey
 - 按照【标签键】进行过滤。
 - 类型：String
@@ -120,6 +135,11 @@ tag:tagKey
 machineGroupId
 - 按照【机器组ID】进行过滤。
 - 类型：String
+- 必选：否
+
+osType
+- 按照【操作系统类型】进行过滤。
+- 类型：Int
 - 必选：否
 
 tagKey
@@ -197,6 +217,11 @@ tag:tagKey
 machineGroupId
 - 按照【机器组ID】进行过滤。
 - 类型：String
+- 必选：否
+
+osType
+- 按照【操作系统类型】进行过滤。
+- 类型：Int
 - 必选：否
 
 tagKey

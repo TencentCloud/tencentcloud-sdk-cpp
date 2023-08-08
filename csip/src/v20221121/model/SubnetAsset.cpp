@@ -38,7 +38,8 @@ SubnetAsset::SubnetAsset() :
     m_configureRiskHasBeenSet(false),
     m_scanTaskHasBeenSet(false),
     m_lastScanTimeHasBeenSet(false),
-    m_isCoreHasBeenSet(false)
+    m_isCoreHasBeenSet(false),
+    m_isNewAssetHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome SubnetAsset::Deserialize(const rapidjson::Value &value)
         m_isCoreHasBeenSet = true;
     }
 
+    if (value.HasMember("IsNewAsset") && !value["IsNewAsset"].IsNull())
+    {
+        if (!value["IsNewAsset"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubnetAsset.IsNewAsset` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNewAsset = value["IsNewAsset"].GetUint64();
+        m_isNewAssetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +404,14 @@ void SubnetAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsCore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCore, allocator);
+    }
+
+    if (m_isNewAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNewAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNewAsset, allocator);
     }
 
 }
@@ -684,5 +703,21 @@ void SubnetAsset::SetIsCore(const uint64_t& _isCore)
 bool SubnetAsset::IsCoreHasBeenSet() const
 {
     return m_isCoreHasBeenSet;
+}
+
+uint64_t SubnetAsset::GetIsNewAsset() const
+{
+    return m_isNewAsset;
+}
+
+void SubnetAsset::SetIsNewAsset(const uint64_t& _isNewAsset)
+{
+    m_isNewAsset = _isNewAsset;
+    m_isNewAssetHasBeenSet = true;
+}
+
+bool SubnetAsset::IsNewAssetHasBeenSet() const
+{
+    return m_isNewAssetHasBeenSet;
 }
 

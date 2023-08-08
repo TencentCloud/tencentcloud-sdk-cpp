@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流程关联的填写控件信息
+                     * 获取流程关联的填写控件信息，控件会按照参与方进行分类。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecipientComponentInfos 流程关联的填写控件信息
+                     * @return RecipientComponentInfos 流程关联的填写控件信息，控件会按照参与方进行分类。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流程关联的填写控件信息
+                     * 流程关联的填写控件信息，控件会按照参与方进行分类。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecipientComponentInfo> m_recipientComponentInfos;

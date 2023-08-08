@@ -34,7 +34,11 @@ DescribeBatchOperateTaskDTO::DescribeBatchOperateTaskDTO() :
     m_submitHasBeenSet(false),
     m_dataEngineHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_cycleUnitHasBeenSet(false),
+    m_scheduleDescHasBeenSet(false),
+    m_datasourceIdHasBeenSet(false),
+    m_datasourceTypeHasBeenSet(false)
 {
 }
 
@@ -183,6 +187,46 @@ CoreInternalOutcome DescribeBatchOperateTaskDTO::Deserialize(const rapidjson::Va
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CycleUnit") && !value["CycleUnit"].IsNull())
+    {
+        if (!value["CycleUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBatchOperateTaskDTO.CycleUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cycleUnit = string(value["CycleUnit"].GetString());
+        m_cycleUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleDesc") && !value["ScheduleDesc"].IsNull())
+    {
+        if (!value["ScheduleDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBatchOperateTaskDTO.ScheduleDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleDesc = string(value["ScheduleDesc"].GetString());
+        m_scheduleDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceId") && !value["DatasourceId"].IsNull())
+    {
+        if (!value["DatasourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBatchOperateTaskDTO.DatasourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceId = string(value["DatasourceId"].GetString());
+        m_datasourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceType") && !value["DatasourceType"].IsNull())
+    {
+        if (!value["DatasourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBatchOperateTaskDTO.DatasourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceType = string(value["DatasourceType"].GetString());
+        m_datasourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +344,38 @@ void DescribeBatchOperateTaskDTO::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cycleUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CycleUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cycleUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +603,69 @@ void DescribeBatchOperateTaskDTO::SetCreateTime(const string& _createTime)
 bool DescribeBatchOperateTaskDTO::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string DescribeBatchOperateTaskDTO::GetCycleUnit() const
+{
+    return m_cycleUnit;
+}
+
+void DescribeBatchOperateTaskDTO::SetCycleUnit(const string& _cycleUnit)
+{
+    m_cycleUnit = _cycleUnit;
+    m_cycleUnitHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskDTO::CycleUnitHasBeenSet() const
+{
+    return m_cycleUnitHasBeenSet;
+}
+
+string DescribeBatchOperateTaskDTO::GetScheduleDesc() const
+{
+    return m_scheduleDesc;
+}
+
+void DescribeBatchOperateTaskDTO::SetScheduleDesc(const string& _scheduleDesc)
+{
+    m_scheduleDesc = _scheduleDesc;
+    m_scheduleDescHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskDTO::ScheduleDescHasBeenSet() const
+{
+    return m_scheduleDescHasBeenSet;
+}
+
+string DescribeBatchOperateTaskDTO::GetDatasourceId() const
+{
+    return m_datasourceId;
+}
+
+void DescribeBatchOperateTaskDTO::SetDatasourceId(const string& _datasourceId)
+{
+    m_datasourceId = _datasourceId;
+    m_datasourceIdHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskDTO::DatasourceIdHasBeenSet() const
+{
+    return m_datasourceIdHasBeenSet;
+}
+
+string DescribeBatchOperateTaskDTO::GetDatasourceType() const
+{
+    return m_datasourceType;
+}
+
+void DescribeBatchOperateTaskDTO::SetDatasourceType(const string& _datasourceType)
+{
+    m_datasourceType = _datasourceType;
+    m_datasourceTypeHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskDTO::DatasourceTypeHasBeenSet() const
+{
+    return m_datasourceTypeHasBeenSet;
 }
 

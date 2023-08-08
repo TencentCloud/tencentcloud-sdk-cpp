@@ -34,7 +34,8 @@ CreatePreparedPersonalEsignRequest::CreatePreparedPersonalEsignRequest() :
     m_enableAutoSignHasBeenSet(false),
     m_sealColorHasBeenSet(false),
     m_processSealHasBeenSet(false),
-    m_fileIdHasBeenSet(false)
+    m_fileIdHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,15 @@ string CreatePreparedPersonalEsignRequest::ToJsonString() const
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -340,6 +350,22 @@ void CreatePreparedPersonalEsignRequest::SetFileId(const string& _fileId)
 bool CreatePreparedPersonalEsignRequest::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+Agent CreatePreparedPersonalEsignRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreatePreparedPersonalEsignRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreatePreparedPersonalEsignRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

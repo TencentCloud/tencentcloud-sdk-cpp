@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取绑定角色的角色id列表
-                     * @return RoleIds 绑定角色的角色id列表
+                     * 获取绑定角色的角色id列表，最多 100 个
+                     * @return RoleIds 绑定角色的角色id列表，最多 100 个
                      * 
                      */
                     std::vector<std::string> GetRoleIds() const;
 
                     /**
-                     * 设置绑定角色的角色id列表
-                     * @param _roleIds 绑定角色的角色id列表
+                     * 设置绑定角色的角色id列表，最多 100 个
+                     * @param _roleIds 绑定角色的角色id列表，最多 100 个
                      * 
                      */
                     void SetRoleIds(const std::vector<std::string>& _roleIds);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool RoleIdsHasBeenSet() const;
 
                     /**
-                     * 获取电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
-                     * @return UserIds 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
+                     * 获取电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数，最多 100 个
+                     * @return UserIds 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数，最多 100 个
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
-                     * @param _userIds 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
+                     * 设置电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数，最多 100 个
+                     * @param _userIds 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数，最多 100 个
                      * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool UserIdsHasBeenSet() const;
 
                     /**
-                     * 获取客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
-                     * @return OpenIds 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     * 获取客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数，最多 100 个
+                     * @return OpenIds 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数，最多 100 个
                      * 
                      */
                     std::vector<std::string> GetOpenIds() const;
 
                     /**
-                     * 设置客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
-                     * @param _openIds 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     * 设置客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数，最多 100 个
+                     * @param _openIds 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数，最多 100 个
                      * 
                      */
                     void SetOpenIds(const std::vector<std::string>& _openIds);
@@ -158,19 +158,19 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 绑定角色的角色id列表
+                     * 绑定角色的角色id列表，最多 100 个
                      */
                     std::vector<std::string> m_roleIds;
                     bool m_roleIdsHasBeenSet;
 
                     /**
-                     * 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
+                     * 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数，最多 100 个
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
 
                     /**
-                     * 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     * 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数，最多 100 个
                      */
                     std::vector<std::string> m_openIds;
                     bool m_openIdsHasBeenSet;

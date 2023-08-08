@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取电子签流程的Id
-                     * @return FlowId 电子签流程的Id
+                     * 获取流程(合同)的编号
+                     * @return FlowId 流程(合同)的编号
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置电子签流程的Id
-                     * @param _flowId 电子签流程的Id
+                     * 设置流程(合同)的编号
+                     * @param _flowId 流程(合同)的编号
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
+                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息
-                     * @param _agent 应用相关信息
+                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -116,13 +116,13 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 电子签流程的Id
+                     * 流程(合同)的编号
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 应用相关信息
+                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

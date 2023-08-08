@@ -328,6 +328,56 @@ namespace TencentCloud
                      */
                     bool NickHasBeenSet() const;
 
+                    /**
+                     * 获取是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsNewAsset 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIsNewAsset() const;
+
+                    /**
+                     * 设置是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isNewAsset 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsNewAsset(const uint64_t& _isNewAsset);
+
+                    /**
+                     * 判断参数 IsNewAsset 是否已赋值
+                     * @return IsNewAsset 是否已赋值
+                     * 
+                     */
+                    bool IsNewAssetHasBeenSet() const;
+
+                    /**
+                     * 获取是否核心资产1是 2不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsCore 是否核心资产1是 2不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIsCore() const;
+
+                    /**
+                     * 设置是否核心资产1是 2不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isCore 是否核心资产1是 2不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsCore(const uint64_t& _isCore);
+
+                    /**
+                     * 判断参数 IsCore 是否已赋值
+                     * @return IsCore 是否已赋值
+                     * 
+                     */
+                    bool IsCoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -409,6 +459,20 @@ namespace TencentCloud
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
+
+                    /**
+                     * 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isNewAsset;
+                    bool m_isNewAssetHasBeenSet;
+
+                    /**
+                     * 是否核心资产1是 2不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isCore;
+                    bool m_isCoreHasBeenSet;
 
                 };
             }

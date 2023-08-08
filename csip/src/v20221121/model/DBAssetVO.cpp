@@ -42,7 +42,8 @@ DBAssetVO::DBAssetVO() :
     m_privateIpHasBeenSet(false),
     m_publicIpHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_isCoreHasBeenSet(false)
+    m_isCoreHasBeenSet(false),
+    m_isNewAssetHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome DBAssetVO::Deserialize(const rapidjson::Value &value)
         m_isCoreHasBeenSet = true;
     }
 
+    if (value.HasMember("IsNewAsset") && !value["IsNewAsset"].IsNull())
+    {
+        if (!value["IsNewAsset"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBAssetVO.IsNewAsset` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNewAsset = value["IsNewAsset"].GetUint64();
+        m_isNewAssetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +480,14 @@ void DBAssetVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsCore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCore, allocator);
+    }
+
+    if (m_isNewAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNewAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNewAsset, allocator);
     }
 
 }
@@ -824,5 +843,21 @@ void DBAssetVO::SetIsCore(const uint64_t& _isCore)
 bool DBAssetVO::IsCoreHasBeenSet() const
 {
     return m_isCoreHasBeenSet;
+}
+
+uint64_t DBAssetVO::GetIsNewAsset() const
+{
+    return m_isNewAsset;
+}
+
+void DBAssetVO::SetIsNewAsset(const uint64_t& _isNewAsset)
+{
+    m_isNewAsset = _isNewAsset;
+    m_isNewAssetHasBeenSet = true;
+}
+
+bool DBAssetVO::IsNewAssetHasBeenSet() const
+{
+    return m_isNewAssetHasBeenSet;
 }
 

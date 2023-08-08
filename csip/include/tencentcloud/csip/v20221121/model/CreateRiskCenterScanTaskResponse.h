@@ -57,6 +57,34 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取0,任务创建成功；小于0失败；-1为存在资产未认证
+                     * @return Status 0,任务创建成功；小于0失败；-1为存在资产未认证
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取未认证资产列表
+                     * @return UnAuthAsset 未认证资产列表
+                     * 
+                     */
+                    std::vector<std::string> GetUnAuthAsset() const;
+
+                    /**
+                     * 判断参数 UnAuthAsset 是否已赋值
+                     * @return UnAuthAsset 是否已赋值
+                     * 
+                     */
+                    bool UnAuthAssetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +92,18 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 0,任务创建成功；小于0失败；-1为存在资产未认证
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 未认证资产列表
+                     */
+                    std::vector<std::string> m_unAuthAsset;
+                    bool m_unAuthAssetHasBeenSet;
 
                 };
             }

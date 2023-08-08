@@ -63,6 +63,8 @@
 #include <tencentcloud/asr/v20190614/model/SetVocabStateResponse.h>
 #include <tencentcloud/asr/v20190614/model/UpdateAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/UpdateAsrVocabResponse.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintCountRequest.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintCountResponse.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintDeleteRequest.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintDeleteResponse.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintEnrollRequest.h>
@@ -145,6 +147,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateAsrVocabResponse> UpdateAsrVocabOutcome;
                 typedef std::future<UpdateAsrVocabOutcome> UpdateAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::UpdateAsrVocabRequest&, UpdateAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAsrVocabAsyncHandler;
+                typedef Outcome<Core::Error, Model::VoicePrintCountResponse> VoicePrintCountOutcome;
+                typedef std::future<VoicePrintCountOutcome> VoicePrintCountOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::VoicePrintCountRequest&, VoicePrintCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::VoicePrintDeleteResponse> VoicePrintDeleteOutcome;
                 typedef std::future<VoicePrintDeleteOutcome> VoicePrintDeleteOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::VoicePrintDeleteRequest&, VoicePrintDeleteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintDeleteAsyncHandler;
@@ -365,6 +370,15 @@ namespace TencentCloud
                 UpdateAsrVocabOutcome UpdateAsrVocab(const Model::UpdateAsrVocabRequest &request);
                 void UpdateAsrVocabAsync(const Model::UpdateAsrVocabRequest& request, const UpdateAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAsrVocabOutcomeCallable UpdateAsrVocabCallable(const Model::UpdateAsrVocabRequest& request);
+
+                /**
+                 *统计并返回注册的说话人id总数
+                 * @param req VoicePrintCountRequest
+                 * @return VoicePrintCountOutcome
+                 */
+                VoicePrintCountOutcome VoicePrintCount(const Model::VoicePrintCountRequest &request);
+                void VoicePrintCountAsync(const Model::VoicePrintCountRequest& request, const VoicePrintCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VoicePrintCountOutcomeCallable VoicePrintCountCallable(const Model::VoicePrintCountRequest& request);
 
                 /**
                  *本接口用于以删除已经注册的说话人信息（删除之后，原有的说话人ID和说话人音频数据都会失效）

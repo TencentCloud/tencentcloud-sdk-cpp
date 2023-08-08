@@ -54,7 +54,11 @@ DomainAssetVO::DomainAssetVO() :
     m_memberIdHasBeenSet(false),
     m_cCAttackHasBeenSet(false),
     m_webAttackHasBeenSet(false),
-    m_serviceRiskHasBeenSet(false)
+    m_serviceRiskHasBeenSet(false),
+    m_isNewAssetHasBeenSet(false),
+    m_verifyDomainHasBeenSet(false),
+    m_verifyTXTRecordHasBeenSet(false),
+    m_verifyStatusHasBeenSet(false)
 {
 }
 
@@ -428,6 +432,46 @@ CoreInternalOutcome DomainAssetVO::Deserialize(const rapidjson::Value &value)
         m_serviceRiskHasBeenSet = true;
     }
 
+    if (value.HasMember("IsNewAsset") && !value["IsNewAsset"].IsNull())
+    {
+        if (!value["IsNewAsset"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainAssetVO.IsNewAsset` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNewAsset = value["IsNewAsset"].GetUint64();
+        m_isNewAssetHasBeenSet = true;
+    }
+
+    if (value.HasMember("VerifyDomain") && !value["VerifyDomain"].IsNull())
+    {
+        if (!value["VerifyDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainAssetVO.VerifyDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifyDomain = string(value["VerifyDomain"].GetString());
+        m_verifyDomainHasBeenSet = true;
+    }
+
+    if (value.HasMember("VerifyTXTRecord") && !value["VerifyTXTRecord"].IsNull())
+    {
+        if (!value["VerifyTXTRecord"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainAssetVO.VerifyTXTRecord` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifyTXTRecord = string(value["VerifyTXTRecord"].GetString());
+        m_verifyTXTRecordHasBeenSet = true;
+    }
+
+    if (value.HasMember("VerifyStatus") && !value["VerifyStatus"].IsNull())
+    {
+        if (!value["VerifyStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainAssetVO.VerifyStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifyStatus = value["VerifyStatus"].GetInt64();
+        m_verifyStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -737,6 +781,38 @@ void DomainAssetVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ServiceRisk";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serviceRisk, allocator);
+    }
+
+    if (m_isNewAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNewAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNewAsset, allocator);
+    }
+
+    if (m_verifyDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verifyDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verifyTXTRecordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyTXTRecord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verifyTXTRecord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verifyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_verifyStatus, allocator);
     }
 
 }
@@ -1284,5 +1360,69 @@ void DomainAssetVO::SetServiceRisk(const uint64_t& _serviceRisk)
 bool DomainAssetVO::ServiceRiskHasBeenSet() const
 {
     return m_serviceRiskHasBeenSet;
+}
+
+uint64_t DomainAssetVO::GetIsNewAsset() const
+{
+    return m_isNewAsset;
+}
+
+void DomainAssetVO::SetIsNewAsset(const uint64_t& _isNewAsset)
+{
+    m_isNewAsset = _isNewAsset;
+    m_isNewAssetHasBeenSet = true;
+}
+
+bool DomainAssetVO::IsNewAssetHasBeenSet() const
+{
+    return m_isNewAssetHasBeenSet;
+}
+
+string DomainAssetVO::GetVerifyDomain() const
+{
+    return m_verifyDomain;
+}
+
+void DomainAssetVO::SetVerifyDomain(const string& _verifyDomain)
+{
+    m_verifyDomain = _verifyDomain;
+    m_verifyDomainHasBeenSet = true;
+}
+
+bool DomainAssetVO::VerifyDomainHasBeenSet() const
+{
+    return m_verifyDomainHasBeenSet;
+}
+
+string DomainAssetVO::GetVerifyTXTRecord() const
+{
+    return m_verifyTXTRecord;
+}
+
+void DomainAssetVO::SetVerifyTXTRecord(const string& _verifyTXTRecord)
+{
+    m_verifyTXTRecord = _verifyTXTRecord;
+    m_verifyTXTRecordHasBeenSet = true;
+}
+
+bool DomainAssetVO::VerifyTXTRecordHasBeenSet() const
+{
+    return m_verifyTXTRecordHasBeenSet;
+}
+
+int64_t DomainAssetVO::GetVerifyStatus() const
+{
+    return m_verifyStatus;
+}
+
+void DomainAssetVO::SetVerifyStatus(const int64_t& _verifyStatus)
+{
+    m_verifyStatus = _verifyStatus;
+    m_verifyStatusHasBeenSet = true;
+}
+
+bool DomainAssetVO::VerifyStatusHasBeenSet() const
+{
+    return m_verifyStatusHasBeenSet;
 }
 

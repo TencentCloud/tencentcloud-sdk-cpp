@@ -30,7 +30,8 @@ AbstractRuntimeMC::AbstractRuntimeMC() :
     m_statusHasBeenSet(false),
     m_expiredAtHasBeenSet(false),
     m_runtimeClassHasBeenSet(false),
-    m_deployedHasBeenSet(false)
+    m_deployedHasBeenSet(false),
+    m_matchExtensionsHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome AbstractRuntimeMC::Deserialize(const rapidjson::Value &value
         m_deployedHasBeenSet = true;
     }
 
+    if (value.HasMember("MatchExtensions") && !value["MatchExtensions"].IsNull())
+    {
+        if (!value["MatchExtensions"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.MatchExtensions` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchExtensions = string(value["MatchExtensions"].GetString());
+        m_matchExtensionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void AbstractRuntimeMC::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Deployed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deployed, allocator);
+    }
+
+    if (m_matchExtensionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchExtensions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchExtensions.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void AbstractRuntimeMC::SetDeployed(const bool& _deployed)
 bool AbstractRuntimeMC::DeployedHasBeenSet() const
 {
     return m_deployedHasBeenSet;
+}
+
+string AbstractRuntimeMC::GetMatchExtensions() const
+{
+    return m_matchExtensions;
+}
+
+void AbstractRuntimeMC::SetMatchExtensions(const string& _matchExtensions)
+{
+    m_matchExtensions = _matchExtensions;
+    m_matchExtensionsHasBeenSet = true;
+}
+
+bool AbstractRuntimeMC::MatchExtensionsHasBeenSet() const
+{
+    return m_matchExtensionsHasBeenSet;
 }
 

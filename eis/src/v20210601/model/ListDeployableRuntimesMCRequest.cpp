@@ -25,7 +25,8 @@ using namespace std;
 ListDeployableRuntimesMCRequest::ListDeployableRuntimesMCRequest() :
     m_projectIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_planTypeHasBeenSet(false)
+    m_planTypeHasBeenSet(false),
+    m_runtimeClassHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ListDeployableRuntimesMCRequest::ToJsonString() const
         string key = "PlanType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_planType, allocator);
+    }
+
+    if (m_runtimeClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeClass";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_runtimeClass, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ListDeployableRuntimesMCRequest::SetPlanType(const int64_t& _planType)
 bool ListDeployableRuntimesMCRequest::PlanTypeHasBeenSet() const
 {
     return m_planTypeHasBeenSet;
+}
+
+int64_t ListDeployableRuntimesMCRequest::GetRuntimeClass() const
+{
+    return m_runtimeClass;
+}
+
+void ListDeployableRuntimesMCRequest::SetRuntimeClass(const int64_t& _runtimeClass)
+{
+    m_runtimeClass = _runtimeClass;
+    m_runtimeClassHasBeenSet = true;
+}
+
+bool ListDeployableRuntimesMCRequest::RuntimeClassHasBeenSet() const
+{
+    return m_runtimeClassHasBeenSet;
 }
 
 

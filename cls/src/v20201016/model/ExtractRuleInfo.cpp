@@ -38,7 +38,8 @@ ExtractRuleInfo::ExtractRuleInfo() :
     m_parseProtocolHasBeenSet(false),
     m_metadataTypeHasBeenSet(false),
     m_pathRegexHasBeenSet(false),
-    m_metaTagsHasBeenSet(false)
+    m_metaTagsHasBeenSet(false),
+    m_eventLogRulesHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,26 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
         m_metaTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("EventLogRules") && !value["EventLogRules"].IsNull())
+    {
+        if (!value["EventLogRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.EventLogRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EventLogRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EventLog item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_eventLogRules.push_back(item);
+        }
+        m_eventLogRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +435,21 @@ void ExtractRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
 
         int i=0;
         for (auto itr = m_metaTags.begin(); itr != m_metaTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_eventLogRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventLogRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_eventLogRules.begin(); itr != m_eventLogRules.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -709,5 +745,21 @@ void ExtractRuleInfo::SetMetaTags(const vector<MetaTagInfo>& _metaTags)
 bool ExtractRuleInfo::MetaTagsHasBeenSet() const
 {
     return m_metaTagsHasBeenSet;
+}
+
+vector<EventLog> ExtractRuleInfo::GetEventLogRules() const
+{
+    return m_eventLogRules;
+}
+
+void ExtractRuleInfo::SetEventLogRules(const vector<EventLog>& _eventLogRules)
+{
+    m_eventLogRules = _eventLogRules;
+    m_eventLogRulesHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::EventLogRulesHasBeenSet() const
+{
+    return m_eventLogRulesHasBeenSet;
 }
 

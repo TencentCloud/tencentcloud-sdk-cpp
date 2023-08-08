@@ -61,23 +61,26 @@ set(asr_public_header_model
   include/tencentcloud/asr/v20190614/model/GetCustomizationListRequest.h
   include/tencentcloud/asr/v20190614/model/UpdateAsrVocabResponse.h
   include/tencentcloud/asr/v20190614/model/VoicePrintEnrollRequest.h
+  include/tencentcloud/asr/v20190614/model/VoicePrintVerifyResponse.h
   include/tencentcloud/asr/v20190614/model/CreateAsrVocabResponse.h
   include/tencentcloud/asr/v20190614/model/Model.h
   include/tencentcloud/asr/v20190614/model/CreateAsrVocabRequest.h
   include/tencentcloud/asr/v20190614/model/GetModelInfoResponse.h
   include/tencentcloud/asr/v20190614/model/UpdateAsrVocabRequest.h
-  include/tencentcloud/asr/v20190614/model/VoicePrintVerifyResponse.h
+  include/tencentcloud/asr/v20190614/model/VoicePrintCountRequest.h
   include/tencentcloud/asr/v20190614/model/DescribeTaskStatusRequest.h
   include/tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h
   include/tencentcloud/asr/v20190614/model/VoicePrintUpdateResponse.h
   include/tencentcloud/asr/v20190614/model/VoicePrintBaseData.h
   include/tencentcloud/asr/v20190614/model/DeleteCustomizationRequest.h
+  include/tencentcloud/asr/v20190614/model/VoicePrintCountResponse.h
   include/tencentcloud/asr/v20190614/model/AsyncRecognitionTaskInfo.h
   include/tencentcloud/asr/v20190614/model/ModifyCustomizationStateResponse.h
   include/tencentcloud/asr/v20190614/model/DescribeAsyncRecognitionTasksResponse.h
   include/tencentcloud/asr/v20190614/model/GetAsrVocabListResponse.h
   include/tencentcloud/asr/v20190614/model/SentenceWord.h
   include/tencentcloud/asr/v20190614/model/SentenceWords.h
+  include/tencentcloud/asr/v20190614/model/VoicePrintCountData.h
   include/tencentcloud/asr/v20190614/model/DownloadCustomizationRequest.h
   )
 
@@ -125,23 +128,26 @@ set(asr_src
   src/v20190614/model/GetCustomizationListRequest.cpp
   src/v20190614/model/UpdateAsrVocabResponse.cpp
   src/v20190614/model/VoicePrintEnrollRequest.cpp
+  src/v20190614/model/VoicePrintVerifyResponse.cpp
   src/v20190614/model/CreateAsrVocabResponse.cpp
   src/v20190614/model/Model.cpp
   src/v20190614/model/CreateAsrVocabRequest.cpp
   src/v20190614/model/GetModelInfoResponse.cpp
   src/v20190614/model/UpdateAsrVocabRequest.cpp
-  src/v20190614/model/VoicePrintVerifyResponse.cpp
+  src/v20190614/model/VoicePrintCountRequest.cpp
   src/v20190614/model/DescribeTaskStatusRequest.cpp
   src/v20190614/model/SentenceRecognitionResponse.cpp
   src/v20190614/model/VoicePrintUpdateResponse.cpp
   src/v20190614/model/VoicePrintBaseData.cpp
   src/v20190614/model/DeleteCustomizationRequest.cpp
+  src/v20190614/model/VoicePrintCountResponse.cpp
   src/v20190614/model/AsyncRecognitionTaskInfo.cpp
   src/v20190614/model/ModifyCustomizationStateResponse.cpp
   src/v20190614/model/DescribeAsyncRecognitionTasksResponse.cpp
   src/v20190614/model/GetAsrVocabListResponse.cpp
   src/v20190614/model/SentenceWord.cpp
   src/v20190614/model/SentenceWords.cpp
+  src/v20190614/model/VoicePrintCountData.cpp
   src/v20190614/model/DownloadCustomizationRequest.cpp
   )
 

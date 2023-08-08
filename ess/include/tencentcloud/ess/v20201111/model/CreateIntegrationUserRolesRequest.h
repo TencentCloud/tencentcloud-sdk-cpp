@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取绑定角色的用户id列表
-                     * @return UserIds 绑定角色的用户id列表
+                     * 获取绑定角色的用户id列表，不能重复，不能大于 100 个
+                     * @return UserIds 绑定角色的用户id列表，不能重复，不能大于 100 个
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置绑定角色的用户id列表
-                     * @param _userIds 绑定角色的用户id列表
+                     * 设置绑定角色的用户id列表，不能重复，不能大于 100 个
+                     * @param _userIds 绑定角色的用户id列表，不能重复，不能大于 100 个
                      * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool UserIdsHasBeenSet() const;
 
                     /**
-                     * 获取绑定角色的角色id列表
-                     * @return RoleIds 绑定角色的角色id列表
+                     * 获取绑定角色的角色id列表，不能重复，不能大于 100，可以通过DescribeIntegrationRoles接口获取
+                     * @return RoleIds 绑定角色的角色id列表，不能重复，不能大于 100，可以通过DescribeIntegrationRoles接口获取
                      * 
                      */
                     std::vector<std::string> GetRoleIds() const;
 
                     /**
-                     * 设置绑定角色的角色id列表
-                     * @param _roleIds 绑定角色的角色id列表
+                     * 设置绑定角色的角色id列表，不能重复，不能大于 100，可以通过DescribeIntegrationRoles接口获取
+                     * @param _roleIds 绑定角色的角色id列表，不能重复，不能大于 100，可以通过DescribeIntegrationRoles接口获取
                      * 
                      */
                     void SetRoleIds(const std::vector<std::string>& _roleIds);
@@ -137,13 +137,13 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 绑定角色的用户id列表
+                     * 绑定角色的用户id列表，不能重复，不能大于 100 个
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
 
                     /**
-                     * 绑定角色的角色id列表
+                     * 绑定角色的角色id列表，不能重复，不能大于 100，可以通过DescribeIntegrationRoles接口获取
                      */
                     std::vector<std::string> m_roleIds;
                     bool m_roleIdsHasBeenSet;

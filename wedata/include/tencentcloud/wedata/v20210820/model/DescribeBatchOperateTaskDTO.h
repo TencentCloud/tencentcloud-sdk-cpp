@@ -400,6 +400,106 @@ presto\SparkJob\SparkSql
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取周期类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CycleUnit 周期类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCycleUnit() const;
+
+                    /**
+                     * 设置周期类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cycleUnit 周期类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCycleUnit(const std::string& _cycleUnit);
+
+                    /**
+                     * 判断参数 CycleUnit 是否已赋值
+                     * @return CycleUnit 是否已赋值
+                     * 
+                     */
+                    bool CycleUnitHasBeenSet() const;
+
+                    /**
+                     * 获取调度计划
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleDesc 调度计划
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScheduleDesc() const;
+
+                    /**
+                     * 设置调度计划
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleDesc 调度计划
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleDesc(const std::string& _scheduleDesc);
+
+                    /**
+                     * 判断参数 ScheduleDesc 是否已赋值
+                     * @return ScheduleDesc 是否已赋值
+                     * 
+                     */
+                    bool ScheduleDescHasBeenSet() const;
+
+                    /**
+                     * 获取数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceId 数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceId() const;
+
+                    /**
+                     * 设置数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceId 数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceId(const std::string& _datasourceId);
+
+                    /**
+                     * 判断参数 DatasourceId 是否已赋值
+                     * @return DatasourceId 是否已赋值
+                     * 
+                     */
+                    bool DatasourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceType() const;
+
+                    /**
+                     * 设置数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceType(const std::string& _datasourceType);
+
+                    /**
+                     * 判断参数 DatasourceType 是否已赋值
+                     * @return DatasourceType 是否已赋值
+                     * 
+                     */
+                    bool DatasourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -500,6 +600,34 @@ presto\SparkJob\SparkSql
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 周期类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cycleUnit;
+                    bool m_cycleUnitHasBeenSet;
+
+                    /**
+                     * 调度计划
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scheduleDesc;
+                    bool m_scheduleDescHasBeenSet;
+
+                    /**
+                     * 数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceId;
+                    bool m_datasourceIdHasBeenSet;
+
+                    /**
+                     * 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceType;
+                    bool m_datasourceTypeHasBeenSet;
 
                 };
             }

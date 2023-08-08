@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/KeyRegexInfo.h>
 #include <tencentcloud/cls/v20201016/model/MetaTagInfo.h>
+#include <tencentcloud/cls/v20201016/model/EventLog.h>
 
 
 namespace TencentCloud
@@ -510,6 +511,27 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                      */
                     bool MetaTagsHasBeenSet() const;
 
+                    /**
+                     * 获取windows事件日志采集
+                     * @return EventLogRules windows事件日志采集
+                     * 
+                     */
+                    std::vector<EventLog> GetEventLogRules() const;
+
+                    /**
+                     * 设置windows事件日志采集
+                     * @param _eventLogRules windows事件日志采集
+                     * 
+                     */
+                    void SetEventLogRules(const std::vector<EventLog>& _eventLogRules);
+
+                    /**
+                     * 判断参数 EventLogRules 是否已赋值
+                     * @return EventLogRules 是否已赋值
+                     * 
+                     */
+                    bool EventLogRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -640,6 +662,12 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                      */
                     std::vector<MetaTagInfo> m_metaTags;
                     bool m_metaTagsHasBeenSet;
+
+                    /**
+                     * windows事件日志采集
+                     */
+                    std::vector<EventLog> m_eventLogRules;
+                    bool m_eventLogRulesHasBeenSet;
 
                 };
             }

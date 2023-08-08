@@ -33,6 +33,7 @@ DescribeDevicesRequest::DescribeDevicesRequest() :
     m_authorizedUserIdSetHasBeenSet(false),
     m_resourceIdSetHasBeenSet(false),
     m_kindSetHasBeenSet(false),
+    m_managedAccountHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
     m_tagFiltersHasBeenSet(false),
     m_filtersHasBeenSet(false)
@@ -149,6 +150,14 @@ string DescribeDevicesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_managedAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManagedAccount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_managedAccount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_departmentIdHasBeenSet)
@@ -355,6 +364,22 @@ void DescribeDevicesRequest::SetKindSet(const vector<uint64_t>& _kindSet)
 bool DescribeDevicesRequest::KindSetHasBeenSet() const
 {
     return m_kindSetHasBeenSet;
+}
+
+string DescribeDevicesRequest::GetManagedAccount() const
+{
+    return m_managedAccount;
+}
+
+void DescribeDevicesRequest::SetManagedAccount(const string& _managedAccount)
+{
+    m_managedAccount = _managedAccount;
+    m_managedAccountHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::ManagedAccountHasBeenSet() const
+{
+    return m_managedAccountHasBeenSet;
 }
 
 string DescribeDevicesRequest::GetDepartmentId() const

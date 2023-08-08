@@ -443,6 +443,90 @@ presto
                      */
                     bool TenantIdHasBeenSet() const;
 
+                    /**
+                     * 获取数据源ID列表
+                     * @return DatasourceIdList 数据源ID列表
+                     * 
+                     */
+                    std::vector<std::string> GetDatasourceIdList() const;
+
+                    /**
+                     * 设置数据源ID列表
+                     * @param _datasourceIdList 数据源ID列表
+                     * 
+                     */
+                    void SetDatasourceIdList(const std::vector<std::string>& _datasourceIdList);
+
+                    /**
+                     * 判断参数 DatasourceIdList 是否已赋值
+                     * @return DatasourceIdList 是否已赋值
+                     * 
+                     */
+                    bool DatasourceIdListHasBeenSet() const;
+
+                    /**
+                     * 获取数据源类型列表
+                     * @return DatasourceTypeList 数据源类型列表
+                     * 
+                     */
+                    std::vector<std::string> GetDatasourceTypeList() const;
+
+                    /**
+                     * 设置数据源类型列表
+                     * @param _datasourceTypeList 数据源类型列表
+                     * 
+                     */
+                    void SetDatasourceTypeList(const std::vector<std::string>& _datasourceTypeList);
+
+                    /**
+                     * 判断参数 DatasourceTypeList 是否已赋值
+                     * @return DatasourceTypeList 是否已赋值
+                     * 
+                     */
+                    bool DatasourceTypeListHasBeenSet() const;
+
+                    /**
+                     * 获取调度单位类型列表
+                     * @return CycleUnitList 调度单位类型列表
+                     * 
+                     */
+                    std::vector<std::string> GetCycleUnitList() const;
+
+                    /**
+                     * 设置调度单位类型列表
+                     * @param _cycleUnitList 调度单位类型列表
+                     * 
+                     */
+                    void SetCycleUnitList(const std::vector<std::string>& _cycleUnitList);
+
+                    /**
+                     * 判断参数 CycleUnitList 是否已赋值
+                     * @return CycleUnitList 是否已赋值
+                     * 
+                     */
+                    bool CycleUnitListHasBeenSet() const;
+
+                    /**
+                     * 获取是否筛选出可提交的任务
+                     * @return CanSubmit 是否筛选出可提交的任务
+                     * 
+                     */
+                    bool GetCanSubmit() const;
+
+                    /**
+                     * 设置是否筛选出可提交的任务
+                     * @param _canSubmit 是否筛选出可提交的任务
+                     * 
+                     */
+                    void SetCanSubmit(const bool& _canSubmit);
+
+                    /**
+                     * 判断参数 CanSubmit 是否已赋值
+                     * @return CanSubmit 是否已赋值
+                     * 
+                     */
+                    bool CanSubmitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -557,6 +641,30 @@ presto
                      */
                     std::string m_tenantId;
                     bool m_tenantIdHasBeenSet;
+
+                    /**
+                     * 数据源ID列表
+                     */
+                    std::vector<std::string> m_datasourceIdList;
+                    bool m_datasourceIdListHasBeenSet;
+
+                    /**
+                     * 数据源类型列表
+                     */
+                    std::vector<std::string> m_datasourceTypeList;
+                    bool m_datasourceTypeListHasBeenSet;
+
+                    /**
+                     * 调度单位类型列表
+                     */
+                    std::vector<std::string> m_cycleUnitList;
+                    bool m_cycleUnitListHasBeenSet;
+
+                    /**
+                     * 是否筛选出可提交的任务
+                     */
+                    bool m_canSubmit;
+                    bool m_canSubmitHasBeenSet;
 
                 };
             }

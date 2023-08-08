@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool ActivedTotalHasBeenSet() const;
 
                     /**
-                     * 获取导出文件的url
+                     * 获取如果入参Export为 true 时使用，表示导出Excel的url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExportUrl 导出文件的url
+                     * @return ExportUrl 如果入参Export为 true 时使用，表示导出Excel的url
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,7 +164,7 @@ namespace TencentCloud
                     bool m_activedTotalHasBeenSet;
 
                     /**
-                     * 导出文件的url
+                     * 如果入参Export为 true 时使用，表示导出Excel的url
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exportUrl;

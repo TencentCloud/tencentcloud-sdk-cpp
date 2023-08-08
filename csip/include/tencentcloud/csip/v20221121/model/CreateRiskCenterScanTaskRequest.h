@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ScanAssetTypeHasBeenSet() const;
 
                     /**
-                     * 获取扫描项目；port/poc/weakpass/webcontent/configrisk
-                     * @return ScanItem 扫描项目；port/poc/weakpass/webcontent/configrisk
+                     * 获取扫描项目；port/poc/weakpass/webcontent/configrisk/exposedserver
+                     * @return ScanItem 扫描项目；port/poc/weakpass/webcontent/configrisk/exposedserver
                      * 
                      */
                     std::vector<std::string> GetScanItem() const;
 
                     /**
-                     * 设置扫描项目；port/poc/weakpass/webcontent/configrisk
-                     * @param _scanItem 扫描项目；port/poc/weakpass/webcontent/configrisk
+                     * 设置扫描项目；port/poc/weakpass/webcontent/configrisk/exposedserver
+                     * @param _scanItem 扫描项目；port/poc/weakpass/webcontent/configrisk/exposedserver
                      * 
                      */
                     void SetScanItem(const std::vector<std::string>& _scanItem);
@@ -248,7 +248,7 @@ namespace TencentCloud
                     bool m_scanAssetTypeHasBeenSet;
 
                     /**
-                     * 扫描项目；port/poc/weakpass/webcontent/configrisk
+                     * 扫描项目；port/poc/weakpass/webcontent/configrisk/exposedserver
                      */
                     std::vector<std::string> m_scanItem;
                     bool m_scanItemHasBeenSet;

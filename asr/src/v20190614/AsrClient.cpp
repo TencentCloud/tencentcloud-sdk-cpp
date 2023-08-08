@@ -900,6 +900,49 @@ AsrClient::UpdateAsrVocabOutcomeCallable AsrClient::UpdateAsrVocabCallable(const
     return task->get_future();
 }
 
+AsrClient::VoicePrintCountOutcome AsrClient::VoicePrintCount(const VoicePrintCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoicePrintCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoicePrintCountResponse rsp = VoicePrintCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoicePrintCountOutcome(rsp);
+        else
+            return VoicePrintCountOutcome(o.GetError());
+    }
+    else
+    {
+        return VoicePrintCountOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::VoicePrintCountAsync(const VoicePrintCountRequest& request, const VoicePrintCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VoicePrintCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::VoicePrintCountOutcomeCallable AsrClient::VoicePrintCountCallable(const VoicePrintCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VoicePrintCountOutcome()>>(
+        [this, request]()
+        {
+            return this->VoicePrintCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::VoicePrintDeleteOutcome AsrClient::VoicePrintDelete(const VoicePrintDeleteRequest &request)
 {
     auto outcome = MakeRequest(request, "VoicePrintDelete");

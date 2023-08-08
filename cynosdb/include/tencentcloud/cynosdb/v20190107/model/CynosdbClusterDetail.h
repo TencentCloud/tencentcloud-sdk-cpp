@@ -647,15 +647,15 @@ pausing
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取读写分离Vport
-                     * @return RoAddr 读写分离Vport
+                     * 获取集群只读实例的vip地址和vport端口
+                     * @return RoAddr 集群只读实例的vip地址和vport端口
                      * 
                      */
                     std::vector<Addr> GetRoAddr() const;
 
                     /**
-                     * 设置读写分离Vport
-                     * @param _roAddr 读写分离Vport
+                     * 设置集群只读实例的vip地址和vport端口
+                     * @param _roAddr 集群只读实例的vip地址和vport端口
                      * 
                      */
                     void SetRoAddr(const std::vector<Addr>& _roAddr);
@@ -1343,7 +1343,7 @@ pausing
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 读写分离Vport
+                     * 集群只读实例的vip地址和vport端口
                      */
                     std::vector<Addr> m_roAddr;
                     bool m_roAddrHasBeenSet;

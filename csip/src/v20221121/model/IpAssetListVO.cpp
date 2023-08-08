@@ -53,7 +53,9 @@ IpAssetListVO::IpAssetListVO() :
     m_tagHasBeenSet(false),
     m_addressIdHasBeenSet(false),
     m_memberIdHasBeenSet(false),
-    m_riskExposureHasBeenSet(false)
+    m_riskExposureHasBeenSet(false),
+    m_isNewAssetHasBeenSet(false),
+    m_verifyStatusHasBeenSet(false)
 {
 }
 
@@ -402,6 +404,26 @@ CoreInternalOutcome IpAssetListVO::Deserialize(const rapidjson::Value &value)
         m_riskExposureHasBeenSet = true;
     }
 
+    if (value.HasMember("IsNewAsset") && !value["IsNewAsset"].IsNull())
+    {
+        if (!value["IsNewAsset"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAssetListVO.IsNewAsset` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNewAsset = value["IsNewAsset"].GetUint64();
+        m_isNewAssetHasBeenSet = true;
+    }
+
+    if (value.HasMember("VerifyStatus") && !value["VerifyStatus"].IsNull())
+    {
+        if (!value["VerifyStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAssetListVO.VerifyStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifyStatus = value["VerifyStatus"].GetInt64();
+        m_verifyStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -678,6 +700,22 @@ void IpAssetListVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "RiskExposure";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskExposure, allocator);
+    }
+
+    if (m_isNewAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNewAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNewAsset, allocator);
+    }
+
+    if (m_verifyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_verifyStatus, allocator);
     }
 
 }
@@ -1209,5 +1247,37 @@ void IpAssetListVO::SetRiskExposure(const int64_t& _riskExposure)
 bool IpAssetListVO::RiskExposureHasBeenSet() const
 {
     return m_riskExposureHasBeenSet;
+}
+
+uint64_t IpAssetListVO::GetIsNewAsset() const
+{
+    return m_isNewAsset;
+}
+
+void IpAssetListVO::SetIsNewAsset(const uint64_t& _isNewAsset)
+{
+    m_isNewAsset = _isNewAsset;
+    m_isNewAssetHasBeenSet = true;
+}
+
+bool IpAssetListVO::IsNewAssetHasBeenSet() const
+{
+    return m_isNewAssetHasBeenSet;
+}
+
+int64_t IpAssetListVO::GetVerifyStatus() const
+{
+    return m_verifyStatus;
+}
+
+void IpAssetListVO::SetVerifyStatus(const int64_t& _verifyStatus)
+{
+    m_verifyStatus = _verifyStatus;
+    m_verifyStatusHasBeenSet = true;
+}
+
+bool IpAssetListVO::VerifyStatusHasBeenSet() const
+{
+    return m_verifyStatusHasBeenSet;
 }
 

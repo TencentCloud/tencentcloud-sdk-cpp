@@ -279,6 +279,27 @@ namespace TencentCloud
                      */
                     bool MetaTagsHasBeenSet() const;
 
+                    /**
+                     * 获取操作系统类型，0: Linux，1: windows
+                     * @return OSType 操作系统类型，0: Linux，1: windows
+                     * 
+                     */
+                    uint64_t GetOSType() const;
+
+                    /**
+                     * 设置操作系统类型，0: Linux，1: windows
+                     * @param _oSType 操作系统类型，0: Linux，1: windows
+                     * 
+                     */
+                    void SetOSType(const uint64_t& _oSType);
+
+                    /**
+                     * 判断参数 OSType 是否已赋值
+                     * @return OSType 是否已赋值
+                     * 
+                     */
+                    bool OSTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,6 +366,12 @@ namespace TencentCloud
                      */
                     std::vector<MetaTagInfo> m_metaTags;
                     bool m_metaTagsHasBeenSet;
+
+                    /**
+                     * 操作系统类型，0: Linux，1: windows
+                     */
+                    uint64_t m_oSType;
+                    bool m_oSTypeHasBeenSet;
 
                 };
             }

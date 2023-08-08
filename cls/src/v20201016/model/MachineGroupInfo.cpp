@@ -30,7 +30,8 @@ MachineGroupInfo::MachineGroupInfo() :
     m_updateStartTimeHasBeenSet(false),
     m_updateEndTimeHasBeenSet(false),
     m_serviceLoggingHasBeenSet(false),
-    m_metaTagsHasBeenSet(false)
+    m_metaTagsHasBeenSet(false),
+    m_oSTypeHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,16 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
         m_metaTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("OSType") && !value["OSType"].IsNull())
+    {
+        if (!value["OSType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.OSType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_oSType = value["OSType"].GetUint64();
+        m_oSTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -266,6 +277,14 @@ void MachineGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_oSTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OSType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_oSType, allocator);
     }
 
 }
@@ -429,5 +448,21 @@ void MachineGroupInfo::SetMetaTags(const vector<MetaTagInfo>& _metaTags)
 bool MachineGroupInfo::MetaTagsHasBeenSet() const
 {
     return m_metaTagsHasBeenSet;
+}
+
+uint64_t MachineGroupInfo::GetOSType() const
+{
+    return m_oSType;
+}
+
+void MachineGroupInfo::SetOSType(const uint64_t& _oSType)
+{
+    m_oSType = _oSType;
+    m_oSTypeHasBeenSet = true;
+}
+
+bool MachineGroupInfo::OSTypeHasBeenSet() const
+{
+    return m_oSTypeHasBeenSet;
 }
 

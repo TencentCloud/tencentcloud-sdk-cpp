@@ -897,6 +897,106 @@ namespace TencentCloud
                      */
                     bool ServiceRiskHasBeenSet() const;
 
+                    /**
+                     * 获取是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsNewAsset 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIsNewAsset() const;
+
+                    /**
+                     * 设置是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isNewAsset 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsNewAsset(const uint64_t& _isNewAsset);
+
+                    /**
+                     * 判断参数 IsNewAsset 是否已赋值
+                     * @return IsNewAsset 是否已赋值
+                     * 
+                     */
+                    bool IsNewAssetHasBeenSet() const;
+
+                    /**
+                     * 获取待确认资产的随机三级域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VerifyDomain 待确认资产的随机三级域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVerifyDomain() const;
+
+                    /**
+                     * 设置待确认资产的随机三级域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _verifyDomain 待确认资产的随机三级域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVerifyDomain(const std::string& _verifyDomain);
+
+                    /**
+                     * 判断参数 VerifyDomain 是否已赋值
+                     * @return VerifyDomain 是否已赋值
+                     * 
+                     */
+                    bool VerifyDomainHasBeenSet() const;
+
+                    /**
+                     * 获取待确认资产的TXT记录内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VerifyTXTRecord 待确认资产的TXT记录内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVerifyTXTRecord() const;
+
+                    /**
+                     * 设置待确认资产的TXT记录内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _verifyTXTRecord 待确认资产的TXT记录内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVerifyTXTRecord(const std::string& _verifyTXTRecord);
+
+                    /**
+                     * 判断参数 VerifyTXTRecord 是否已赋值
+                     * @return VerifyTXTRecord 是否已赋值
+                     * 
+                     */
+                    bool VerifyTXTRecordHasBeenSet() const;
+
+                    /**
+                     * 获取待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VerifyStatus 待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetVerifyStatus() const;
+
+                    /**
+                     * 设置待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _verifyStatus 待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVerifyStatus(const int64_t& _verifyStatus);
+
+                    /**
+                     * 判断参数 VerifyStatus 是否已赋值
+                     * @return VerifyStatus 是否已赋值
+                     * 
+                     */
+                    bool VerifyStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1136,6 +1236,34 @@ namespace TencentCloud
                      */
                     uint64_t m_serviceRisk;
                     bool m_serviceRiskHasBeenSet;
+
+                    /**
+                     * 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isNewAsset;
+                    bool m_isNewAssetHasBeenSet;
+
+                    /**
+                     * 待确认资产的随机三级域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_verifyDomain;
+                    bool m_verifyDomainHasBeenSet;
+
+                    /**
+                     * 待确认资产的TXT记录内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_verifyTXTRecord;
+                    bool m_verifyTXTRecordHasBeenSet;
+
+                    /**
+                     * 待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_verifyStatus;
+                    bool m_verifyStatusHasBeenSet;
 
                 };
             }

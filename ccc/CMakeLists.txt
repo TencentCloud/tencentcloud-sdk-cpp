@@ -30,6 +30,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateUserSigResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeIMCdrsResponse.h
+  include/tencentcloud/ccc/v20200210/model/CreateAdminURLResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateCallOutSessionResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsRequest.h
   include/tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberRequest.h
@@ -67,6 +68,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/AutoCalloutTaskInfo.h
   include/tencentcloud/ccc/v20200210/model/SkillGroupInfoItem.h
   include/tencentcloud/ccc/v20200210/model/ResetExtensionPasswordResponse.h
+  include/tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/ModifyExtensionRequest.h
   include/tencentcloud/ccc/v20200210/model/PSTNSessionInfo.h
   include/tencentcloud/ccc/v20200210/model/Message.h
@@ -117,7 +119,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTasksRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h
-  include/tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h
+  include/tencentcloud/ccc/v20200210/model/CreateAdminURLRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsResponse.h
   include/tencentcloud/ccc/v20200210/model/HangUpCallResponse.h
@@ -144,6 +146,7 @@ set(ccc_src
   src/v20200210/model/DescribeAutoCalloutTaskRequest.cpp
   src/v20200210/model/CreateUserSigResponse.cpp
   src/v20200210/model/DescribeIMCdrsResponse.cpp
+  src/v20200210/model/CreateAdminURLResponse.cpp
   src/v20200210/model/CreateCallOutSessionResponse.cpp
   src/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsRequest.cpp
   src/v20200210/model/DisableCCCPhoneNumberRequest.cpp
@@ -181,6 +184,7 @@ set(ccc_src
   src/v20200210/model/AutoCalloutTaskInfo.cpp
   src/v20200210/model/SkillGroupInfoItem.cpp
   src/v20200210/model/ResetExtensionPasswordResponse.cpp
+  src/v20200210/model/ModifyStaffResponse.cpp
   src/v20200210/model/ModifyExtensionRequest.cpp
   src/v20200210/model/PSTNSessionInfo.cpp
   src/v20200210/model/Message.cpp
@@ -231,7 +235,7 @@ set(ccc_src
   src/v20200210/model/DescribeAutoCalloutTasksRequest.cpp
   src/v20200210/model/DescribeChatMessagesRequest.cpp
   src/v20200210/model/DescribeTelSessionResponse.cpp
-  src/v20200210/model/ModifyStaffResponse.cpp
+  src/v20200210/model/CreateAdminURLRequest.cpp
   src/v20200210/model/DescribeStaffStatusMetricsResponse.cpp
   src/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsResponse.cpp
   src/v20200210/model/HangUpCallResponse.cpp

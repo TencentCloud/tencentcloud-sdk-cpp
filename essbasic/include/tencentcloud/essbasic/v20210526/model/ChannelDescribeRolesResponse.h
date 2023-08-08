@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取页面偏移量，最大2000
-                     * @return Offset 页面偏移量，最大2000
+                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
                      * 
                      */
                     uint64_t GetOffset() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询数量，最大200
-                     * @return Limit 查询数量，最大200
+                     * 获取指定每页多少条数据，单页最大200
+                     * @return Limit 指定每页多少条数据，单页最大200
                      * 
                      */
                     uint64_t GetLimit() const;
@@ -105,13 +105,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 页面偏移量，最大2000
+                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询数量，最大200
+                     * 指定每页多少条数据，单页最大200
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

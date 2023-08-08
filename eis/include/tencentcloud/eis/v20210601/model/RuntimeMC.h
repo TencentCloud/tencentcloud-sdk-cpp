@@ -513,18 +513,18 @@ namespace TencentCloud
                     bool RuntimeTypeHasBeenSet() const;
 
                     /**
-                     * 获取环境运行类型：0:运行时类型、1:api类型
+                     * 获取环境运行类型：0:运行时类型、1:api类型、2:etl环境
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+                     * @return RuntimeClass 环境运行类型：0:运行时类型、1:api类型、2:etl环境
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuntimeClass() const;
 
                     /**
-                     * 设置环境运行类型：0:运行时类型、1:api类型
+                     * 设置环境运行类型：0:运行时类型、1:api类型、2:etl环境
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runtimeClass 环境运行类型：0:运行时类型、1:api类型
+                     * @param _runtimeClass 环境运行类型：0:运行时类型、1:api类型、2:etl环境
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -722,7 +722,7 @@ namespace TencentCloud
                     bool m_runtimeTypeHasBeenSet;
 
                     /**
-                     * 环境运行类型：0:运行时类型、1:api类型
+                     * 环境运行类型：0:运行时类型、1:api类型、2:etl环境
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_runtimeClass;

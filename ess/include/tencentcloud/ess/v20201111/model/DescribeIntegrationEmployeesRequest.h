@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取返回最大数量，最大为20
-                     * @return Limit 返回最大数量，最大为20
+                     * 获取指定每页多少条数据，单页最大20
+                     * @return Limit 指定每页多少条数据，单页最大20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回最大数量，最大为20
-                     * @param _limit 返回最大数量，最大为20
+                     * 设置指定每页多少条数据，单页最大20
+                     * @param _limit 指定每页多少条数据，单页最大20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0，最大为20000
-                     * @return Offset 偏移量，默认为0，最大为20000
+                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
+                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0，最大为20000
-                     * @param _offset 偏移量，默认为0，最大为20000
+                     * 设置查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
+                     * @param _offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 返回最大数量，最大为20
+                     * 指定每页多少条数据，单页最大20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -182,7 +182,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0，最大为20000
+                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

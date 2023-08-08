@@ -255,6 +255,27 @@ namespace TencentCloud
                     bool KindSetHasBeenSet() const;
 
                     /**
+                     * 获取资产是否包含托管账号。1，包含；0，不包含
+                     * @return ManagedAccount 资产是否包含托管账号。1，包含；0，不包含
+                     * 
+                     */
+                    std::string GetManagedAccount() const;
+
+                    /**
+                     * 设置资产是否包含托管账号。1，包含；0，不包含
+                     * @param _managedAccount 资产是否包含托管账号。1，包含；0，不包含
+                     * 
+                     */
+                    void SetManagedAccount(const std::string& _managedAccount);
+
+                    /**
+                     * 判断参数 ManagedAccount 是否已赋值
+                     * @return ManagedAccount 是否已赋值
+                     * 
+                     */
+                    bool ManagedAccountHasBeenSet() const;
+
+                    /**
                      * 获取过滤条件，可按照部门ID进行过滤
                      * @return DepartmentId 过滤条件，可按照部门ID进行过滤
                      * 
@@ -382,6 +403,12 @@ BindingStatus 绑定状态
                      */
                     std::vector<uint64_t> m_kindSet;
                     bool m_kindSetHasBeenSet;
+
+                    /**
+                     * 资产是否包含托管账号。1，包含；0，不包含
+                     */
+                    std::string m_managedAccount;
+                    bool m_managedAccountHasBeenSet;
 
                     /**
                      * 过滤条件，可按照部门ID进行过滤

@@ -1297,6 +1297,31 @@ namespace TencentCloud
                      */
                     bool BASAgentStatusHasBeenSet() const;
 
+                    /**
+                     * 获取1新资产；0 非新资产
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsNewAsset 1新资产；0 非新资产
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIsNewAsset() const;
+
+                    /**
+                     * 设置1新资产；0 非新资产
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isNewAsset 1新资产；0 非新资产
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsNewAsset(const uint64_t& _isNewAsset);
+
+                    /**
+                     * 判断参数 IsNewAsset 是否已赋值
+                     * @return IsNewAsset 是否已赋值
+                     * 
+                     */
+                    bool IsNewAssetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1648,6 +1673,13 @@ namespace TencentCloud
                      */
                     int64_t m_bASAgentStatus;
                     bool m_bASAgentStatusHasBeenSet;
+
+                    /**
+                     * 1新资产；0 非新资产
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isNewAsset;
+                    bool m_isNewAssetHasBeenSet;
 
                 };
             }

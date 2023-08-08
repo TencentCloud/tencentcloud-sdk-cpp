@@ -33,7 +33,9 @@ Vpc::Vpc() :
     m_createTimeHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uinHasBeenSet(false),
-    m_nickHasBeenSet(false)
+    m_nickHasBeenSet(false),
+    m_isNewAssetHasBeenSet(false),
+    m_isCoreHasBeenSet(false)
 {
 }
 
@@ -185,6 +187,26 @@ CoreInternalOutcome Vpc::Deserialize(const rapidjson::Value &value)
         m_nickHasBeenSet = true;
     }
 
+    if (value.HasMember("IsNewAsset") && !value["IsNewAsset"].IsNull())
+    {
+        if (!value["IsNewAsset"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Vpc.IsNewAsset` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNewAsset = value["IsNewAsset"].GetUint64();
+        m_isNewAssetHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCore") && !value["IsCore"].IsNull())
+    {
+        if (!value["IsCore"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Vpc.IsCore` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCore = value["IsCore"].GetUint64();
+        m_isCoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +328,22 @@ void Vpc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "Nick";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nick.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNewAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNewAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNewAsset, allocator);
+    }
+
+    if (m_isCoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCore, allocator);
     }
 
 }
@@ -517,5 +555,37 @@ void Vpc::SetNick(const string& _nick)
 bool Vpc::NickHasBeenSet() const
 {
     return m_nickHasBeenSet;
+}
+
+uint64_t Vpc::GetIsNewAsset() const
+{
+    return m_isNewAsset;
+}
+
+void Vpc::SetIsNewAsset(const uint64_t& _isNewAsset)
+{
+    m_isNewAsset = _isNewAsset;
+    m_isNewAssetHasBeenSet = true;
+}
+
+bool Vpc::IsNewAssetHasBeenSet() const
+{
+    return m_isNewAssetHasBeenSet;
+}
+
+uint64_t Vpc::GetIsCore() const
+{
+    return m_isCore;
+}
+
+void Vpc::SetIsCore(const uint64_t& _isCore)
+{
+    m_isCore = _isCore;
+    m_isCoreHasBeenSet = true;
+}
+
+bool Vpc::IsCoreHasBeenSet() const
+{
+    return m_isCoreHasBeenSet;
 }
 

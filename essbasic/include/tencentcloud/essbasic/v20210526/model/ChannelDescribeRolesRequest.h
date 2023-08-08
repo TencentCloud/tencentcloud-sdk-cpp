@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取查询起始偏移，最大2000
-                     * @return Offset 查询起始偏移，最大2000
+                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始偏移，最大2000
-                     * @param _offset 查询起始偏移，最大2000
+                     * 设置查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * @param _offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询数量，最大200
-                     * @return Limit 查询数量，最大200
+                     * 获取指定每页多少条数据，单页最大200
+                     * @return Limit 指定每页多少条数据，单页最大200
                      * 
                      */
                     std::string GetLimit() const;
 
                     /**
-                     * 设置查询数量，最大200
-                     * @param _limit 查询数量，最大200
+                     * 设置指定每页多少条数据，单页最大200
+                     * @param _limit 指定每页多少条数据，单页最大200
                      * 
                      */
                     void SetLimit(const std::string& _limit);
@@ -167,13 +167,13 @@ Key:"RoleStatus",Values:["1"]查询启用角色，Values:["2"]查询禁用角色
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 查询起始偏移，最大2000
+                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询数量，最大200
+                     * 指定每页多少条数据，单页最大200
                      */
                     std::string m_limit;
                     bool m_limitHasBeenSet;

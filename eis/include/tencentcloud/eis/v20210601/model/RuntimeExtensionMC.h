@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扩展组件类型：0:cdc
-                     * @return Type 扩展组件类型：0:cdc
+                     * 获取扩展组件类型：0:cdc 1:dataway-java
+                     * @return Type 扩展组件类型：0:cdc 1:dataway-java
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置扩展组件类型：0:cdc
-                     * @param _type 扩展组件类型：0:cdc
+                     * 设置扩展组件类型：0:cdc 1:dataway-java
+                     * @param _type 扩展组件类型：0:cdc 1:dataway-java
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -196,7 +196,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 扩展组件类型：0:cdc
+                     * 扩展组件类型：0:cdc 1:dataway-java
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取待移除员工的信息，userId和openId二选一，必填一个
-                     * @return Employees 待移除员工的信息，userId和openId二选一，必填一个
+                     * 获取待移除员工的信息，userId和openId二选一，必填一个，如果需要指定交接人的话，ReceiveUserId或者ReceiveOpenId字段二选一
+                     * @return Employees 待移除员工的信息，userId和openId二选一，必填一个，如果需要指定交接人的话，ReceiveUserId或者ReceiveOpenId字段二选一
                      * 
                      */
                     std::vector<Staff> GetEmployees() const;
 
                     /**
-                     * 设置待移除员工的信息，userId和openId二选一，必填一个
-                     * @param _employees 待移除员工的信息，userId和openId二选一，必填一个
+                     * 设置待移除员工的信息，userId和openId二选一，必填一个，如果需要指定交接人的话，ReceiveUserId或者ReceiveOpenId字段二选一
+                     * @param _employees 待移除员工的信息，userId和openId二选一，必填一个，如果需要指定交接人的话，ReceiveUserId或者ReceiveOpenId字段二选一
                      * 
                      */
                     void SetEmployees(const std::vector<Staff>& _employees);
@@ -117,7 +117,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 待移除员工的信息，userId和openId二选一，必填一个
+                     * 待移除员工的信息，userId和openId二选一，必填一个，如果需要指定交接人的话，ReceiveUserId或者ReceiveOpenId字段二选一
                      */
                     std::vector<Staff> m_employees;
                     bool m_employeesHasBeenSet;

@@ -23,8 +23,8 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ChannelDescribeEmployeesRequest::ChannelDescribeEmployeesRequest() :
-    m_limitHasBeenSet(false),
     m_agentHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_operatorHasBeenSet(false)
@@ -38,14 +38,6 @@ string ChannelDescribeEmployeesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -53,6 +45,14 @@ string ChannelDescribeEmployeesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -95,22 +95,6 @@ string ChannelDescribeEmployeesRequest::ToJsonString() const
 }
 
 
-int64_t ChannelDescribeEmployeesRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void ChannelDescribeEmployeesRequest::SetLimit(const int64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool ChannelDescribeEmployeesRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
-
 Agent ChannelDescribeEmployeesRequest::GetAgent() const
 {
     return m_agent;
@@ -125,6 +109,22 @@ void ChannelDescribeEmployeesRequest::SetAgent(const Agent& _agent)
 bool ChannelDescribeEmployeesRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+int64_t ChannelDescribeEmployeesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void ChannelDescribeEmployeesRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool ChannelDescribeEmployeesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 vector<Filter> ChannelDescribeEmployeesRequest::GetFilters() const

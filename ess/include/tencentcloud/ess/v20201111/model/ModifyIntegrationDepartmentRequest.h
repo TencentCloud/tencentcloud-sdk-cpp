@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取电子签部门ID
-                     * @return DeptId 电子签部门ID
+                     * 获取电子签部门ID,通过DescribeIntegrationDepartments接口可以获取
+                     * @return DeptId 电子签部门ID,通过DescribeIntegrationDepartments接口可以获取
                      * 
                      */
                     std::string GetDeptId() const;
 
                     /**
-                     * 设置电子签部门ID
-                     * @param _deptId 电子签部门ID
+                     * 设置电子签部门ID,通过DescribeIntegrationDepartments接口可以获取
+                     * @param _deptId 电子签部门ID,通过DescribeIntegrationDepartments接口可以获取
                      * 
                      */
                     void SetDeptId(const std::string& _deptId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DeptIdHasBeenSet() const;
 
                     /**
-                     * 获取电子签父部门ID
-                     * @return ParentDeptId 电子签父部门ID
+                     * 获取电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取
+                     * @return ParentDeptId 电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取
                      * 
                      */
                     std::string GetParentDeptId() const;
 
                     /**
-                     * 设置电子签父部门ID
-                     * @param _parentDeptId 电子签父部门ID
+                     * 设置电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取
+                     * @param _parentDeptId 电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取
                      * 
                      */
                     void SetParentDeptId(const std::string& _parentDeptId);
@@ -178,13 +178,13 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 电子签部门ID
+                     * 电子签部门ID,通过DescribeIntegrationDepartments接口可以获取
                      */
                     std::string m_deptId;
                     bool m_deptIdHasBeenSet;
 
                     /**
-                     * 电子签父部门ID
+                     * 电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取
                      */
                     std::string m_parentDeptId;
                     bool m_parentDeptIdHasBeenSet;

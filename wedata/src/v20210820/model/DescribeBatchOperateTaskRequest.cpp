@@ -39,7 +39,11 @@ DescribeBatchOperateTaskRequest::DescribeBatchOperateTaskRequest() :
     m_dataEngineListHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_tenantIdHasBeenSet(false)
+    m_tenantIdHasBeenSet(false),
+    m_datasourceIdListHasBeenSet(false),
+    m_datasourceTypeListHasBeenSet(false),
+    m_cycleUnitListHasBeenSet(false),
+    m_canSubmitHasBeenSet(false)
 {
 }
 
@@ -214,6 +218,53 @@ string DescribeBatchOperateTaskRequest::ToJsonString() const
         string key = "TenantId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tenantId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_datasourceIdList.begin(); itr != m_datasourceIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_datasourceTypeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_datasourceTypeList.begin(); itr != m_datasourceTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cycleUnitListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CycleUnitList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cycleUnitList.begin(); itr != m_cycleUnitList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_canSubmitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanSubmit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canSubmit, allocator);
     }
 
 
@@ -494,6 +545,70 @@ void DescribeBatchOperateTaskRequest::SetTenantId(const string& _tenantId)
 bool DescribeBatchOperateTaskRequest::TenantIdHasBeenSet() const
 {
     return m_tenantIdHasBeenSet;
+}
+
+vector<string> DescribeBatchOperateTaskRequest::GetDatasourceIdList() const
+{
+    return m_datasourceIdList;
+}
+
+void DescribeBatchOperateTaskRequest::SetDatasourceIdList(const vector<string>& _datasourceIdList)
+{
+    m_datasourceIdList = _datasourceIdList;
+    m_datasourceIdListHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskRequest::DatasourceIdListHasBeenSet() const
+{
+    return m_datasourceIdListHasBeenSet;
+}
+
+vector<string> DescribeBatchOperateTaskRequest::GetDatasourceTypeList() const
+{
+    return m_datasourceTypeList;
+}
+
+void DescribeBatchOperateTaskRequest::SetDatasourceTypeList(const vector<string>& _datasourceTypeList)
+{
+    m_datasourceTypeList = _datasourceTypeList;
+    m_datasourceTypeListHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskRequest::DatasourceTypeListHasBeenSet() const
+{
+    return m_datasourceTypeListHasBeenSet;
+}
+
+vector<string> DescribeBatchOperateTaskRequest::GetCycleUnitList() const
+{
+    return m_cycleUnitList;
+}
+
+void DescribeBatchOperateTaskRequest::SetCycleUnitList(const vector<string>& _cycleUnitList)
+{
+    m_cycleUnitList = _cycleUnitList;
+    m_cycleUnitListHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskRequest::CycleUnitListHasBeenSet() const
+{
+    return m_cycleUnitListHasBeenSet;
+}
+
+bool DescribeBatchOperateTaskRequest::GetCanSubmit() const
+{
+    return m_canSubmit;
+}
+
+void DescribeBatchOperateTaskRequest::SetCanSubmit(const bool& _canSubmit)
+{
+    m_canSubmit = _canSubmit;
+    m_canSubmitHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskRequest::CanSubmitHasBeenSet() const
+{
+    return m_canSubmitHasBeenSet;
 }
 
 

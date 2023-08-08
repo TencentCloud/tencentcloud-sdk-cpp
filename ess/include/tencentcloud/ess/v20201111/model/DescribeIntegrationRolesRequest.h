@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取返回最大数量，最大为200
-                     * @return Limit 返回最大数量，最大为200
+                     * 获取指定每页多少条数据，单页最大200
+                     * @return Limit 指定每页多少条数据，单页最大200
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回最大数量，最大为200
-                     * @param _limit 返回最大数量，最大为200
+                     * 设置指定每页多少条数据，单页最大200
+                     * @param _limit 指定每页多少条数据，单页最大200
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -142,15 +142,15 @@ Key:"IsGroupRole"，Values:["0"],查询非集团角色，Values:["1"]表示查�
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0，最大为2000
-                     * @return Offset 偏移量，默认为0，最大为2000
+                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0，最大为2000
-                     * @param _offset 偏移量，默认为0，最大为2000
+                     * 设置查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * @param _offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -171,7 +171,7 @@ Key:"IsGroupRole"，Values:["0"],查询非集团角色，Values:["1"]表示查�
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 返回最大数量，最大为200
+                     * 指定每页多少条数据，单页最大200
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -192,7 +192,7 @@ Key:"IsGroupRole"，Values:["0"],查询非集团角色，Values:["1"]表示查�
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0，最大为2000
+                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

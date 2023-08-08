@@ -206,18 +206,18 @@ namespace TencentCloud
 
                     /**
                      * 获取当DbMode为NORMAL或不填时必选
-普通实例内存,单位G
+普通实例内存,单位GB
                      * @return Memory 当DbMode为NORMAL或不填时必选
-普通实例内存,单位G
+普通实例内存,单位GB
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置当DbMode为NORMAL或不填时必选
-普通实例内存,单位G
+普通实例内存,单位GB
                      * @param _memory 当DbMode为NORMAL或不填时必选
-普通实例内存,单位G
+普通实例内存,单位GB
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -231,18 +231,18 @@ namespace TencentCloud
 
                     /**
                      * 获取该参数无实际意义，已废弃。
-存储大小，单位G。
+存储大小，单位GB。
                      * @return Storage 该参数无实际意义，已废弃。
-存储大小，单位G。
+存储大小，单位GB。
                      * 
                      */
                     int64_t GetStorage() const;
 
                     /**
                      * 设置该参数无实际意义，已废弃。
-存储大小，单位G。
+存储大小，单位GB。
                      * @param _storage 该参数无实际意义，已废弃。
-存储大小，单位G。
+存储大小，单位GB。
                      * 
                      */
                     void SetStorage(const int64_t& _storage);
@@ -1039,14 +1039,14 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
 
                     /**
                      * 当DbMode为NORMAL或不填时必选
-普通实例内存,单位G
+普通实例内存,单位GB
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
                      * 该参数无实际意义，已废弃。
-存储大小，单位G。
+存储大小，单位GB。
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;

@@ -89,15 +89,27 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构
-                     * @return OperatorType 精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构
+                     * 获取中台定义：
+1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与
+精确匹配填 7 模糊匹配填9 兼容 中台定的结构
+
+                     * @return OperatorType 中台定义：
+1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与
+精确匹配填 7 模糊匹配填9 兼容 中台定的结构
+
                      * 
                      */
                     int64_t GetOperatorType() const;
 
                     /**
-                     * 设置精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构
-                     * @param _operatorType 精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构
+                     * 设置中台定义：
+1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与
+精确匹配填 7 模糊匹配填9 兼容 中台定的结构
+
+                     * @param _operatorType 中台定义：
+1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与
+精确匹配填 7 模糊匹配填9 兼容 中台定的结构
+
                      * 
                      */
                     void SetOperatorType(const int64_t& _operatorType);
@@ -124,7 +136,10 @@ namespace TencentCloud
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * 精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构
+                     * 中台定义：
+1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与
+精确匹配填 7 模糊匹配填9 兼容 中台定的结构
+
                      */
                     int64_t m_operatorType;
                     bool m_operatorTypeHasBeenSet;

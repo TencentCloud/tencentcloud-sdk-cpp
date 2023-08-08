@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取单次查询成员企业最大返回数量
-                     * @return Limit 单次查询成员企业最大返回数量
+                     * 获取指定每页多少条数据，单页最大1000
+                     * @return Limit 指定每页多少条数据，单页最大1000
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置单次查询成员企业最大返回数量
-                     * @param _limit 单次查询成员企业最大返回数量
+                     * 设置指定每页多少条数据，单页最大1000
+                     * @param _limit 指定每页多少条数据，单页最大1000
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取页面偏移量
-                     * @return Offset 页面偏移量
+                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0
+                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置页面偏移量
-                     * @param _offset 页面偏移量
+                     * 设置查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0
+                     * @param _offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ExportHasBeenSet() const;
 
                     /**
-                     * 获取成员企业id
-                     * @return Id 成员企业id
+                     * 获取成员企业机构 ID，在PC控制台 集团管理可获取
+                     * @return Id 成员企业机构 ID，在PC控制台 集团管理可获取
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置成员企业id
-                     * @param _id 成员企业id
+                     * 设置成员企业机构 ID，在PC控制台 集团管理可获取
+                     * @param _id 成员企业机构 ID，在PC控制台 集团管理可获取
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -199,13 +199,13 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 单次查询成员企业最大返回数量
+                     * 指定每页多少条数据，单页最大1000
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 页面偏移量
+                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -229,7 +229,7 @@ namespace TencentCloud
                     bool m_exportHasBeenSet;
 
                     /**
-                     * 成员企业id
+                     * 成员企业机构 ID，在PC控制台 集团管理可获取
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

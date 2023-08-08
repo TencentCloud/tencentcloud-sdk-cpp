@@ -24,7 +24,9 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 CreateRiskCenterScanTaskResponse::CreateRiskCenterScanTaskResponse() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_unAuthAssetHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,29 @@ CoreInternalOutcome CreateRiskCenterScanTaskResponse::Deserialize(const string &
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UnAuthAsset") && !rsp["UnAuthAsset"].IsNull())
+    {
+        if (!rsp["UnAuthAsset"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UnAuthAsset` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["UnAuthAsset"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_unAuthAsset.push_back((*itr).GetString());
+        }
+        m_unAuthAssetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +113,27 @@ string CreateRiskCenterScanTaskResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_unAuthAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnAuthAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_unAuthAsset.begin(); itr != m_unAuthAsset.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +156,26 @@ string CreateRiskCenterScanTaskResponse::GetTaskId() const
 bool CreateRiskCenterScanTaskResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+int64_t CreateRiskCenterScanTaskResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool CreateRiskCenterScanTaskResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+vector<string> CreateRiskCenterScanTaskResponse::GetUnAuthAsset() const
+{
+    return m_unAuthAsset;
+}
+
+bool CreateRiskCenterScanTaskResponse::UnAuthAssetHasBeenSet() const
+{
+    return m_unAuthAssetHasBeenSet;
 }
 
 

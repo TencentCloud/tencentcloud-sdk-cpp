@@ -872,6 +872,56 @@ namespace TencentCloud
                      */
                     bool RiskExposureHasBeenSet() const;
 
+                    /**
+                     * 获取是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsNewAsset 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIsNewAsset() const;
+
+                    /**
+                     * 设置是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isNewAsset 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsNewAsset(const uint64_t& _isNewAsset);
+
+                    /**
+                     * 判断参数 IsNewAsset 是否已赋值
+                     * @return IsNewAsset 是否已赋值
+                     * 
+                     */
+                    bool IsNewAssetHasBeenSet() const;
+
+                    /**
+                     * 获取资产认证状态，0-待认证，1-认证成功，2-认证中，3+-认证失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VerifyStatus 资产认证状态，0-待认证，1-认证成功，2-认证中，3+-认证失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetVerifyStatus() const;
+
+                    /**
+                     * 设置资产认证状态，0-待认证，1-认证成功，2-认证中，3+-认证失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _verifyStatus 资产认证状态，0-待认证，1-认证成功，2-认证中，3+-认证失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVerifyStatus(const int64_t& _verifyStatus);
+
+                    /**
+                     * 判断参数 VerifyStatus 是否已赋值
+                     * @return VerifyStatus 是否已赋值
+                     * 
+                     */
+                    bool VerifyStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1104,6 +1154,20 @@ namespace TencentCloud
                      */
                     int64_t m_riskExposure;
                     bool m_riskExposureHasBeenSet;
+
+                    /**
+                     * 是否新资产 1新
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isNewAsset;
+                    bool m_isNewAssetHasBeenSet;
+
+                    /**
+                     * 资产认证状态，0-待认证，1-认证成功，2-认证中，3+-认证失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_verifyStatus;
+                    bool m_verifyStatusHasBeenSet;
 
                 };
             }

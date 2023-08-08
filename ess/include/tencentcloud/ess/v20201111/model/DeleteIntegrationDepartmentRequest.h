@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取电子签中的部门id
-                     * @return DeptId 电子签中的部门id
+                     * 获取电子签中的部门id,通过DescribeIntegrationDepartments接口可获得
+                     * @return DeptId 电子签中的部门id,通过DescribeIntegrationDepartments接口可获得
                      * 
                      */
                     std::string GetDeptId() const;
 
                     /**
-                     * 设置电子签中的部门id
-                     * @param _deptId 电子签中的部门id
+                     * 设置电子签中的部门id,通过DescribeIntegrationDepartments接口可获得
+                     * @param _deptId 电子签中的部门id,通过DescribeIntegrationDepartments接口可获得
                      * 
                      */
                     void SetDeptId(const std::string& _deptId);
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 电子签中的部门id
+                     * 电子签中的部门id,通过DescribeIntegrationDepartments接口可获得
                      */
                     std::string m_deptId;
                     bool m_deptIdHasBeenSet;

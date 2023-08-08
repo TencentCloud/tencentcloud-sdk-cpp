@@ -30,7 +30,8 @@ CreateMachineGroupRequest::CreateMachineGroupRequest() :
     m_updateStartTimeHasBeenSet(false),
     m_updateEndTimeHasBeenSet(false),
     m_serviceLoggingHasBeenSet(false),
-    m_metaTagsHasBeenSet(false)
+    m_metaTagsHasBeenSet(false),
+    m_oSTypeHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,14 @@ string CreateMachineGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_oSTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OSType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_oSType, allocator);
     }
 
 
@@ -254,6 +263,22 @@ void CreateMachineGroupRequest::SetMetaTags(const vector<MetaTagInfo>& _metaTags
 bool CreateMachineGroupRequest::MetaTagsHasBeenSet() const
 {
     return m_metaTagsHasBeenSet;
+}
+
+uint64_t CreateMachineGroupRequest::GetOSType() const
+{
+    return m_oSType;
+}
+
+void CreateMachineGroupRequest::SetOSType(const uint64_t& _oSType)
+{
+    m_oSType = _oSType;
+    m_oSTypeHasBeenSet = true;
+}
+
+bool CreateMachineGroupRequest::OSTypeHasBeenSet() const
+{
+    return m_oSTypeHasBeenSet;
 }
 
 
