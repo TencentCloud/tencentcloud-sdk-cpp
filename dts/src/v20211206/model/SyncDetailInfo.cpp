@@ -29,7 +29,8 @@ SyncDetailInfo::SyncDetailInfo() :
     m_secondsBehindMasterHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_stepInfosHasBeenSet(false),
-    m_causeOfCompareDisableHasBeenSet(false)
+    m_causeOfCompareDisableHasBeenSet(false),
+    m_errInfoHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,23 @@ CoreInternalOutcome SyncDetailInfo::Deserialize(const rapidjson::Value &value)
         m_causeOfCompareDisableHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrInfo") && !value["ErrInfo"].IsNull())
+    {
+        if (!value["ErrInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncDetailInfo.ErrInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_errInfo.Deserialize(value["ErrInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_errInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +240,15 @@ void SyncDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CauseOfCompareDisable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_causeOfCompareDisable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_errInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -369,5 +396,21 @@ void SyncDetailInfo::SetCauseOfCompareDisable(const string& _causeOfCompareDisab
 bool SyncDetailInfo::CauseOfCompareDisableHasBeenSet() const
 {
     return m_causeOfCompareDisableHasBeenSet;
+}
+
+ErrInfo SyncDetailInfo::GetErrInfo() const
+{
+    return m_errInfo;
+}
+
+void SyncDetailInfo::SetErrInfo(const ErrInfo& _errInfo)
+{
+    m_errInfo = _errInfo;
+    m_errInfoHasBeenSet = true;
+}
+
+bool SyncDetailInfo::ErrInfoHasBeenSet() const
+{
+    return m_errInfoHasBeenSet;
 }
 

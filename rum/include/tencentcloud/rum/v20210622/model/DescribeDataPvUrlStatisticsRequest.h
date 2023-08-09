@@ -483,6 +483,31 @@ namespace TencentCloud
                      */
                     bool EnvHasBeenSet() const;
 
+                    /**
+                     * 获取group by 参数值枚举1:1m  2:5m  3:30m  4:1h 
+ 5:1d
+                     * @return GroupByType group by 参数值枚举1:1m  2:5m  3:30m  4:1h 
+ 5:1d
+                     * 
+                     */
+                    int64_t GetGroupByType() const;
+
+                    /**
+                     * 设置group by 参数值枚举1:1m  2:5m  3:30m  4:1h 
+ 5:1d
+                     * @param _groupByType group by 参数值枚举1:1m  2:5m  3:30m  4:1h 
+ 5:1d
+                     * 
+                     */
+                    void SetGroupByType(const int64_t& _groupByType);
+
+                    /**
+                     * 判断参数 GroupByType 是否已赋值
+                     * @return GroupByType 是否已赋值
+                     * 
+                     */
+                    bool GroupByTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -610,6 +635,13 @@ namespace TencentCloud
                      */
                     std::string m_env;
                     bool m_envHasBeenSet;
+
+                    /**
+                     * group by 参数值枚举1:1m  2:5m  3:30m  4:1h 
+ 5:1d
+                     */
+                    int64_t m_groupByType;
+                    bool m_groupByTypeHasBeenSet;
 
                 };
             }

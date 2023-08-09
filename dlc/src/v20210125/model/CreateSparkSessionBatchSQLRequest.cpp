@@ -32,7 +32,8 @@ CreateSparkSessionBatchSQLRequest::CreateSparkSessionBatchSQLRequest() :
     m_timeoutInSecondHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionNameHasBeenSet(false),
-    m_argumentsHasBeenSet(false)
+    m_argumentsHasBeenSet(false),
+    m_isInheritHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,14 @@ string CreateSparkSessionBatchSQLRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isInheritHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInherit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isInherit, allocator);
     }
 
 
@@ -296,6 +305,22 @@ void CreateSparkSessionBatchSQLRequest::SetArguments(const vector<KVPair>& _argu
 bool CreateSparkSessionBatchSQLRequest::ArgumentsHasBeenSet() const
 {
     return m_argumentsHasBeenSet;
+}
+
+int64_t CreateSparkSessionBatchSQLRequest::GetIsInherit() const
+{
+    return m_isInherit;
+}
+
+void CreateSparkSessionBatchSQLRequest::SetIsInherit(const int64_t& _isInherit)
+{
+    m_isInherit = _isInherit;
+    m_isInheritHasBeenSet = true;
+}
+
+bool CreateSparkSessionBatchSQLRequest::IsInheritHasBeenSet() const
+{
+    return m_isInheritHasBeenSet;
 }
 
 

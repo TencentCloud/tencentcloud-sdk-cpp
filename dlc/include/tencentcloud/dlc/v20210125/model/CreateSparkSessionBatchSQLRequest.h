@@ -261,6 +261,27 @@ namespace TencentCloud
                      */
                     bool ArgumentsHasBeenSet() const;
 
+                    /**
+                     * 获取是否继承集群的资源类配置：0：自定义（默认），1：继承集群；
+                     * @return IsInherit 是否继承集群的资源类配置：0：自定义（默认），1：继承集群；
+                     * 
+                     */
+                    int64_t GetIsInherit() const;
+
+                    /**
+                     * 设置是否继承集群的资源类配置：0：自定义（默认），1：继承集群；
+                     * @param _isInherit 是否继承集群的资源类配置：0：自定义（默认），1：继承集群；
+                     * 
+                     */
+                    void SetIsInherit(const int64_t& _isInherit);
+
+                    /**
+                     * 判断参数 IsInherit 是否已赋值
+                     * @return IsInherit 是否已赋值
+                     * 
+                     */
+                    bool IsInheritHasBeenSet() const;
+
                 private:
 
                     /**
@@ -324,6 +345,12 @@ namespace TencentCloud
                      */
                     std::vector<KVPair> m_arguments;
                     bool m_argumentsHasBeenSet;
+
+                    /**
+                     * 是否继承集群的资源类配置：0：自定义（默认），1：继承集群；
+                     */
+                    int64_t m_isInherit;
+                    bool m_isInheritHasBeenSet;
 
                 };
             }

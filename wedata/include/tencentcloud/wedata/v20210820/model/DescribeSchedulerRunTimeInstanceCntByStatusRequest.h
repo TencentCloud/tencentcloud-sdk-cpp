@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取1
+                     * @return TaskType 1
+                     * 
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置1
+                     * @param _taskType 1
+                     * 
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return InCharge 1
+                     * 
+                     */
+                    std::string GetInCharge() const;
+
+                    /**
+                     * 设置1
+                     * @param _inCharge 1
+                     * 
+                     */
+                    void SetInCharge(const std::string& _inCharge);
+
+                    /**
+                     * 判断参数 InCharge 是否已赋值
+                     * @return InCharge 是否已赋值
+                     * 
+                     */
+                    bool InChargeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    std::string m_inCharge;
+                    bool m_inChargeHasBeenSet;
 
                 };
             }

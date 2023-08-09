@@ -36,10 +36,14 @@ SyncJobInfo::SyncJobInfo() :
     m_srcDatabaseTypeHasBeenSet(false),
     m_srcAccessTypeHasBeenSet(false),
     m_srcInfoHasBeenSet(false),
+    m_srcNodeTypeHasBeenSet(false),
+    m_srcInfosHasBeenSet(false),
     m_dstRegionHasBeenSet(false),
     m_dstDatabaseTypeHasBeenSet(false),
     m_dstAccessTypeHasBeenSet(false),
     m_dstInfoHasBeenSet(false),
+    m_dstNodeTypeHasBeenSet(false),
+    m_dstInfosHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -50,7 +54,8 @@ SyncJobInfo::SyncJobInfo() :
     m_instanceClassHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
     m_offlineTimeHasBeenSet(false),
-    m_autoRetryTimeRangeMinutesHasBeenSet(false)
+    m_autoRetryTimeRangeMinutesHasBeenSet(false),
+    m_dumperResumeCtrlHasBeenSet(false)
 {
 }
 
@@ -236,6 +241,33 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
         m_srcInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("SrcNodeType") && !value["SrcNodeType"].IsNull())
+    {
+        if (!value["SrcNodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.SrcNodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_srcNodeType = string(value["SrcNodeType"].GetString());
+        m_srcNodeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SrcInfos") && !value["SrcInfos"].IsNull())
+    {
+        if (!value["SrcInfos"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.SrcInfos` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_srcInfos.Deserialize(value["SrcInfos"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_srcInfosHasBeenSet = true;
+    }
+
     if (value.HasMember("DstRegion") && !value["DstRegion"].IsNull())
     {
         if (!value["DstRegion"].IsString())
@@ -281,6 +313,33 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
         }
 
         m_dstInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("DstNodeType") && !value["DstNodeType"].IsNull())
+    {
+        if (!value["DstNodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.DstNodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dstNodeType = string(value["DstNodeType"].GetString());
+        m_dstNodeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DstInfos") && !value["DstInfos"].IsNull())
+    {
+        if (!value["DstInfos"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.DstInfos` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dstInfos.Deserialize(value["DstInfos"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dstInfosHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -408,6 +467,16 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
         }
         m_autoRetryTimeRangeMinutes = value["AutoRetryTimeRangeMinutes"].GetInt64();
         m_autoRetryTimeRangeMinutesHasBeenSet = true;
+    }
+
+    if (value.HasMember("DumperResumeCtrl") && !value["DumperResumeCtrl"].IsNull())
+    {
+        if (!value["DumperResumeCtrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.DumperResumeCtrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dumperResumeCtrl = string(value["DumperResumeCtrl"].GetString());
+        m_dumperResumeCtrlHasBeenSet = true;
     }
 
 
@@ -550,6 +619,23 @@ void SyncJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         m_srcInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_srcNodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcNodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_srcInfos.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_dstRegionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -581,6 +667,23 @@ void SyncJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dstInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dstNodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstNodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dstInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dstInfos.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -677,6 +780,14 @@ void SyncJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AutoRetryTimeRangeMinutes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRetryTimeRangeMinutes, allocator);
+    }
+
+    if (m_dumperResumeCtrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DumperResumeCtrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dumperResumeCtrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -922,6 +1033,38 @@ bool SyncJobInfo::SrcInfoHasBeenSet() const
     return m_srcInfoHasBeenSet;
 }
 
+string SyncJobInfo::GetSrcNodeType() const
+{
+    return m_srcNodeType;
+}
+
+void SyncJobInfo::SetSrcNodeType(const string& _srcNodeType)
+{
+    m_srcNodeType = _srcNodeType;
+    m_srcNodeTypeHasBeenSet = true;
+}
+
+bool SyncJobInfo::SrcNodeTypeHasBeenSet() const
+{
+    return m_srcNodeTypeHasBeenSet;
+}
+
+SyncDBEndpointInfos SyncJobInfo::GetSrcInfos() const
+{
+    return m_srcInfos;
+}
+
+void SyncJobInfo::SetSrcInfos(const SyncDBEndpointInfos& _srcInfos)
+{
+    m_srcInfos = _srcInfos;
+    m_srcInfosHasBeenSet = true;
+}
+
+bool SyncJobInfo::SrcInfosHasBeenSet() const
+{
+    return m_srcInfosHasBeenSet;
+}
+
 string SyncJobInfo::GetDstRegion() const
 {
     return m_dstRegion;
@@ -984,6 +1127,38 @@ void SyncJobInfo::SetDstInfo(const Endpoint& _dstInfo)
 bool SyncJobInfo::DstInfoHasBeenSet() const
 {
     return m_dstInfoHasBeenSet;
+}
+
+string SyncJobInfo::GetDstNodeType() const
+{
+    return m_dstNodeType;
+}
+
+void SyncJobInfo::SetDstNodeType(const string& _dstNodeType)
+{
+    m_dstNodeType = _dstNodeType;
+    m_dstNodeTypeHasBeenSet = true;
+}
+
+bool SyncJobInfo::DstNodeTypeHasBeenSet() const
+{
+    return m_dstNodeTypeHasBeenSet;
+}
+
+SyncDBEndpointInfos SyncJobInfo::GetDstInfos() const
+{
+    return m_dstInfos;
+}
+
+void SyncJobInfo::SetDstInfos(const SyncDBEndpointInfos& _dstInfos)
+{
+    m_dstInfos = _dstInfos;
+    m_dstInfosHasBeenSet = true;
+}
+
+bool SyncJobInfo::DstInfosHasBeenSet() const
+{
+    return m_dstInfosHasBeenSet;
 }
 
 string SyncJobInfo::GetCreateTime() const
@@ -1160,5 +1335,21 @@ void SyncJobInfo::SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRang
 bool SyncJobInfo::AutoRetryTimeRangeMinutesHasBeenSet() const
 {
     return m_autoRetryTimeRangeMinutesHasBeenSet;
+}
+
+string SyncJobInfo::GetDumperResumeCtrl() const
+{
+    return m_dumperResumeCtrl;
+}
+
+void SyncJobInfo::SetDumperResumeCtrl(const string& _dumperResumeCtrl)
+{
+    m_dumperResumeCtrl = _dumperResumeCtrl;
+    m_dumperResumeCtrlHasBeenSet = true;
+}
+
+bool SyncJobInfo::DumperResumeCtrlHasBeenSet() const
+{
+    return m_dumperResumeCtrlHasBeenSet;
 }
 

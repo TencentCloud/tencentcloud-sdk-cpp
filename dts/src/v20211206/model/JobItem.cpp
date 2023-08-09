@@ -38,7 +38,8 @@ JobItem::JobItem() :
     m_compareTaskHasBeenSet(false),
     m_tradeInfoHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_autoRetryTimeRangeMinutesHasBeenSet(false)
+    m_autoRetryTimeRangeMinutesHasBeenSet(false),
+    m_dumperResumeCtrlHasBeenSet(false)
 {
 }
 
@@ -279,6 +280,16 @@ CoreInternalOutcome JobItem::Deserialize(const rapidjson::Value &value)
         m_autoRetryTimeRangeMinutesHasBeenSet = true;
     }
 
+    if (value.HasMember("DumperResumeCtrl") && !value["DumperResumeCtrl"].IsNull())
+    {
+        if (!value["DumperResumeCtrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobItem.DumperResumeCtrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dumperResumeCtrl = string(value["DumperResumeCtrl"].GetString());
+        m_dumperResumeCtrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +452,14 @@ void JobItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "AutoRetryTimeRangeMinutes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRetryTimeRangeMinutes, allocator);
+    }
+
+    if (m_dumperResumeCtrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DumperResumeCtrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dumperResumeCtrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -732,5 +751,21 @@ void JobItem::SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMin
 bool JobItem::AutoRetryTimeRangeMinutesHasBeenSet() const
 {
     return m_autoRetryTimeRangeMinutesHasBeenSet;
+}
+
+string JobItem::GetDumperResumeCtrl() const
+{
+    return m_dumperResumeCtrl;
+}
+
+void JobItem::SetDumperResumeCtrl(const string& _dumperResumeCtrl)
+{
+    m_dumperResumeCtrl = _dumperResumeCtrl;
+    m_dumperResumeCtrlHasBeenSet = true;
+}
+
+bool JobItem::DumperResumeCtrlHasBeenSet() const
+{
+    return m_dumperResumeCtrlHasBeenSet;
 }
 

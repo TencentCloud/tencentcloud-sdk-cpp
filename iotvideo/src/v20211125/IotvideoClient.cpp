@@ -3953,6 +3953,49 @@ IotvideoClient::ResetCloudStorageOutcomeCallable IotvideoClient::ResetCloudStora
     return task->get_future();
 }
 
+IotvideoClient::ResetCloudStorageEventOutcome IotvideoClient::ResetCloudStorageEvent(const ResetCloudStorageEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetCloudStorageEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetCloudStorageEventResponse rsp = ResetCloudStorageEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetCloudStorageEventOutcome(rsp);
+        else
+            return ResetCloudStorageEventOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetCloudStorageEventOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ResetCloudStorageEventAsync(const ResetCloudStorageEventRequest& request, const ResetCloudStorageEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetCloudStorageEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ResetCloudStorageEventOutcomeCallable IotvideoClient::ResetCloudStorageEventCallable(const ResetCloudStorageEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetCloudStorageEventOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetCloudStorageEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::RetryDeviceFirmwareTaskOutcome IotvideoClient::RetryDeviceFirmwareTask(const RetryDeviceFirmwareTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "RetryDeviceFirmwareTask");

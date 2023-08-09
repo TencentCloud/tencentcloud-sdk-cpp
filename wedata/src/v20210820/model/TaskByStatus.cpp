@@ -24,7 +24,9 @@ TaskByStatus::TaskByStatus() :
     m_countGroupHasBeenSet(false),
     m_showTimeGroupHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_cycleUnitHasBeenSet(false)
+    m_cycleUnitHasBeenSet(false),
+    m_reportTimeHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome TaskByStatus::Deserialize(const rapidjson::Value &value)
         m_cycleUnitHasBeenSet = true;
     }
 
+    if (value.HasMember("ReportTime") && !value["ReportTime"].IsNull())
+    {
+        if (!value["ReportTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskByStatus.ReportTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportTime = string(value["ReportTime"].GetString());
+        m_reportTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Count") && !value["Count"].IsNull())
+    {
+        if (!value["Count"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskByStatus.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = value["Count"].GetUint64();
+        m_countHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void TaskByStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CycleUnit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cycleUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reportTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void TaskByStatus::SetCycleUnit(const string& _cycleUnit)
 bool TaskByStatus::CycleUnitHasBeenSet() const
 {
     return m_cycleUnitHasBeenSet;
+}
+
+string TaskByStatus::GetReportTime() const
+{
+    return m_reportTime;
+}
+
+void TaskByStatus::SetReportTime(const string& _reportTime)
+{
+    m_reportTime = _reportTime;
+    m_reportTimeHasBeenSet = true;
+}
+
+bool TaskByStatus::ReportTimeHasBeenSet() const
+{
+    return m_reportTimeHasBeenSet;
+}
+
+uint64_t TaskByStatus::GetCount() const
+{
+    return m_count;
+}
+
+void TaskByStatus::SetCount(const uint64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool TaskByStatus::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 

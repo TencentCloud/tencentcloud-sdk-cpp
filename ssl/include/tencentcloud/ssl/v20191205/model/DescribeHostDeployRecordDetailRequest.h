@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待部署的证书ID
-                     * @return DeployRecordId 待部署的证书ID
+                     * 获取部署记录ID
+                     * @return DeployRecordId 部署记录ID
                      * 
                      */
                     std::string GetDeployRecordId() const;
 
                     /**
-                     * 设置待部署的证书ID
-                     * @param _deployRecordId 待部署的证书ID
+                     * 设置部署记录ID
+                     * @param _deployRecordId 部署记录ID
                      * 
                      */
                     void SetDeployRecordId(const std::string& _deployRecordId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待部署的证书ID
+                     * 部署记录ID
                      */
                     std::string m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;

@@ -255,6 +255,49 @@ OrganizationClient::CreateOrganizationMemberOutcomeCallable OrganizationClient::
     return task->get_future();
 }
 
+OrganizationClient::CreateOrganizationMemberAuthIdentityOutcome OrganizationClient::CreateOrganizationMemberAuthIdentity(const CreateOrganizationMemberAuthIdentityRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrganizationMemberAuthIdentity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrganizationMemberAuthIdentityResponse rsp = CreateOrganizationMemberAuthIdentityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrganizationMemberAuthIdentityOutcome(rsp);
+        else
+            return CreateOrganizationMemberAuthIdentityOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrganizationMemberAuthIdentityOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::CreateOrganizationMemberAuthIdentityAsync(const CreateOrganizationMemberAuthIdentityRequest& request, const CreateOrganizationMemberAuthIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrganizationMemberAuthIdentity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::CreateOrganizationMemberAuthIdentityOutcomeCallable OrganizationClient::CreateOrganizationMemberAuthIdentityCallable(const CreateOrganizationMemberAuthIdentityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrganizationMemberAuthIdentityOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrganizationMemberAuthIdentity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::CreateOrganizationMemberPolicyOutcome OrganizationClient::CreateOrganizationMemberPolicy(const CreateOrganizationMemberPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOrganizationMemberPolicy");
@@ -334,6 +377,49 @@ OrganizationClient::DeleteOrganizationMembersOutcomeCallable OrganizationClient:
         [this, request]()
         {
             return this->DeleteOrganizationMembers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::DeleteOrganizationMembersPolicyOutcome OrganizationClient::DeleteOrganizationMembersPolicy(const DeleteOrganizationMembersPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOrganizationMembersPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOrganizationMembersPolicyResponse rsp = DeleteOrganizationMembersPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOrganizationMembersPolicyOutcome(rsp);
+        else
+            return DeleteOrganizationMembersPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOrganizationMembersPolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DeleteOrganizationMembersPolicyAsync(const DeleteOrganizationMembersPolicyRequest& request, const DeleteOrganizationMembersPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOrganizationMembersPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DeleteOrganizationMembersPolicyOutcomeCallable OrganizationClient::DeleteOrganizationMembersPolicyCallable(const DeleteOrganizationMembersPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOrganizationMembersPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOrganizationMembersPolicy(request);
         }
     );
 

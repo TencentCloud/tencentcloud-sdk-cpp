@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tione/v20211111/model/ChatCompletionRequest.h>
+#include <tencentcloud/tione/v20211111/model/ChatCompletionResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateBatchModelAccTasksRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateBatchModelAccTasksResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateBatchTaskRequest.h>
@@ -173,6 +175,9 @@ namespace TencentCloud
                 TioneClient(const Credential &credential, const std::string &region);
                 TioneClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ChatCompletionResponse> ChatCompletionOutcome;
+                typedef std::future<ChatCompletionOutcome> ChatCompletionOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ChatCompletionRequest&, ChatCompletionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatCompletionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchModelAccTasksResponse> CreateBatchModelAccTasksOutcome;
                 typedef std::future<CreateBatchModelAccTasksOutcome> CreateBatchModelAccTasksOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateBatchModelAccTasksRequest&, CreateBatchModelAccTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchModelAccTasksAsyncHandler;
@@ -379,6 +384,15 @@ namespace TencentCloud
                 typedef std::function<void(const TioneClient*, const Model::StopTrainingTaskRequest&, StopTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTrainingTaskAsyncHandler;
 
 
+
+                /**
+                 *与大模型聊天
+                 * @param req ChatCompletionRequest
+                 * @return ChatCompletionOutcome
+                 */
+                ChatCompletionOutcome ChatCompletion(const Model::ChatCompletionRequest &request);
+                void ChatCompletionAsync(const Model::ChatCompletionRequest& request, const ChatCompletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChatCompletionOutcomeCallable ChatCompletionCallable(const Model::ChatCompletionRequest& request);
 
                 /**
                  *批量创建模型加速任务

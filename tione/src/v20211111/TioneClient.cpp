@@ -40,6 +40,49 @@ TioneClient::TioneClient(const Credential &credential, const string &region, con
 }
 
 
+TioneClient::ChatCompletionOutcome TioneClient::ChatCompletion(const ChatCompletionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChatCompletion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChatCompletionResponse rsp = ChatCompletionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChatCompletionOutcome(rsp);
+        else
+            return ChatCompletionOutcome(o.GetError());
+    }
+    else
+    {
+        return ChatCompletionOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ChatCompletionAsync(const ChatCompletionRequest& request, const ChatCompletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChatCompletion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::ChatCompletionOutcomeCallable TioneClient::ChatCompletionCallable(const ChatCompletionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChatCompletionOutcome()>>(
+        [this, request]()
+        {
+            return this->ChatCompletion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::CreateBatchModelAccTasksOutcome TioneClient::CreateBatchModelAccTasks(const CreateBatchModelAccTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchModelAccTasks");

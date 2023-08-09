@@ -27,6 +27,7 @@
 #include <tencentcloud/dts/v20211206/model/Options.h>
 #include <tencentcloud/dts/v20211206/model/Objects.h>
 #include <tencentcloud/dts/v20211206/model/Endpoint.h>
+#include <tencentcloud/dts/v20211206/model/SyncDBEndpointInfos.h>
 #include <tencentcloud/dts/v20211206/model/TagItem.h>
 #include <tencentcloud/dts/v20211206/model/SyncDetailInfo.h>
 
@@ -427,6 +428,56 @@ namespace TencentCloud
                     bool SrcInfoHasBeenSet() const;
 
                     /**
+                     * 获取枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SrcNodeType 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSrcNodeType() const;
+
+                    /**
+                     * 设置枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _srcNodeType 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSrcNodeType(const std::string& _srcNodeType);
+
+                    /**
+                     * 判断参数 SrcNodeType 是否已赋值
+                     * @return SrcNodeType 是否已赋值
+                     * 
+                     */
+                    bool SrcNodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取源端信息，多节点数据库使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SrcInfos 源端信息，多节点数据库使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SyncDBEndpointInfos GetSrcInfos() const;
+
+                    /**
+                     * 设置源端信息，多节点数据库使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _srcInfos 源端信息，多节点数据库使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSrcInfos(const SyncDBEndpointInfos& _srcInfos);
+
+                    /**
+                     * 判断参数 SrcInfos 是否已赋值
+                     * @return SrcInfos 是否已赋值
+                     * 
+                     */
+                    bool SrcInfosHasBeenSet() const;
+
+                    /**
                      * 获取目标端地域，如：ap-guangzhou等
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstRegion 目标端地域，如：ap-guangzhou等
@@ -525,6 +576,56 @@ namespace TencentCloud
                      * 
                      */
                     bool DstInfoHasBeenSet() const;
+
+                    /**
+                     * 获取枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DstNodeType 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDstNodeType() const;
+
+                    /**
+                     * 设置枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dstNodeType 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDstNodeType(const std::string& _dstNodeType);
+
+                    /**
+                     * 判断参数 DstNodeType 是否已赋值
+                     * @return DstNodeType 是否已赋值
+                     * 
+                     */
+                    bool DstNodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目标端信息，多节点数据库使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DstInfos 目标端信息，多节点数据库使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SyncDBEndpointInfos GetDstInfos() const;
+
+                    /**
+                     * 设置目标端信息，多节点数据库使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dstInfos 目标端信息，多节点数据库使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDstInfos(const SyncDBEndpointInfos& _dstInfos);
+
+                    /**
+                     * 判断参数 DstInfos 是否已赋值
+                     * @return DstInfos 是否已赋值
+                     * 
+                     */
+                    bool DstInfosHasBeenSet() const;
 
                     /**
                      * 获取创建时间，格式为 yyyy-mm-dd hh:mm:ss
@@ -801,6 +902,31 @@ namespace TencentCloud
                      */
                     bool AutoRetryTimeRangeMinutesHasBeenSet() const;
 
+                    /**
+                     * 获取全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DumperResumeCtrl 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDumperResumeCtrl() const;
+
+                    /**
+                     * 设置全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dumperResumeCtrl 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDumperResumeCtrl(const std::string& _dumperResumeCtrl);
+
+                    /**
+                     * 判断参数 DumperResumeCtrl 是否已赋值
+                     * @return DumperResumeCtrl 是否已赋值
+                     * 
+                     */
+                    bool DumperResumeCtrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -909,6 +1035,20 @@ namespace TencentCloud
                     bool m_srcInfoHasBeenSet;
 
                     /**
+                     * 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_srcNodeType;
+                    bool m_srcNodeTypeHasBeenSet;
+
+                    /**
+                     * 源端信息，多节点数据库使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SyncDBEndpointInfos m_srcInfos;
+                    bool m_srcInfosHasBeenSet;
+
+                    /**
                      * 目标端地域，如：ap-guangzhou等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -935,6 +1075,20 @@ namespace TencentCloud
                      */
                     Endpoint m_dstInfo;
                     bool m_dstInfoHasBeenSet;
+
+                    /**
+                     * 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dstNodeType;
+                    bool m_dstNodeTypeHasBeenSet;
+
+                    /**
+                     * 目标端信息，多节点数据库使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SyncDBEndpointInfos m_dstInfos;
+                    bool m_dstInfosHasBeenSet;
 
                     /**
                      * 创建时间，格式为 yyyy-mm-dd hh:mm:ss
@@ -1012,6 +1166,13 @@ namespace TencentCloud
                      */
                     int64_t m_autoRetryTimeRangeMinutes;
                     bool m_autoRetryTimeRangeMinutesHasBeenSet;
+
+                    /**
+                     * 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dumperResumeCtrl;
+                    bool m_dumperResumeCtrlHasBeenSet;
 
                 };
             }

@@ -27,7 +27,11 @@ RabbitMQVirtualHostInfo::RabbitMQVirtualHostInfo() :
     m_tagsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_virtualHostStatisticsHasBeenSet(false)
+    m_virtualHostStatisticsHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_messageHeapCountHasBeenSet(false),
+    m_messageRateInHasBeenSet(false),
+    m_messageRateOutHasBeenSet(false)
 {
 }
 
@@ -116,6 +120,46 @@ CoreInternalOutcome RabbitMQVirtualHostInfo::Deserialize(const rapidjson::Value 
         m_virtualHostStatisticsHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("MessageHeapCount") && !value["MessageHeapCount"].IsNull())
+    {
+        if (!value["MessageHeapCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.MessageHeapCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageHeapCount = value["MessageHeapCount"].GetInt64();
+        m_messageHeapCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("MessageRateIn") && !value["MessageRateIn"].IsNull())
+    {
+        if (!value["MessageRateIn"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.MessageRateIn` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageRateIn = value["MessageRateIn"].GetDouble();
+        m_messageRateInHasBeenSet = true;
+    }
+
+    if (value.HasMember("MessageRateOut") && !value["MessageRateOut"].IsNull())
+    {
+        if (!value["MessageRateOut"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.MessageRateOut` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageRateOut = value["MessageRateOut"].GetDouble();
+        m_messageRateOutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +227,38 @@ void RabbitMQVirtualHostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_virtualHostStatistics.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageHeapCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageHeapCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_messageHeapCount, allocator);
+    }
+
+    if (m_messageRateInHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageRateIn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_messageRateIn, allocator);
+    }
+
+    if (m_messageRateOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageRateOut";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_messageRateOut, allocator);
     }
 
 }
@@ -298,5 +374,69 @@ void RabbitMQVirtualHostInfo::SetVirtualHostStatistics(const RabbitMQVirtualHost
 bool RabbitMQVirtualHostInfo::VirtualHostStatisticsHasBeenSet() const
 {
     return m_virtualHostStatisticsHasBeenSet;
+}
+
+string RabbitMQVirtualHostInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void RabbitMQVirtualHostInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+int64_t RabbitMQVirtualHostInfo::GetMessageHeapCount() const
+{
+    return m_messageHeapCount;
+}
+
+void RabbitMQVirtualHostInfo::SetMessageHeapCount(const int64_t& _messageHeapCount)
+{
+    m_messageHeapCount = _messageHeapCount;
+    m_messageHeapCountHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::MessageHeapCountHasBeenSet() const
+{
+    return m_messageHeapCountHasBeenSet;
+}
+
+double RabbitMQVirtualHostInfo::GetMessageRateIn() const
+{
+    return m_messageRateIn;
+}
+
+void RabbitMQVirtualHostInfo::SetMessageRateIn(const double& _messageRateIn)
+{
+    m_messageRateIn = _messageRateIn;
+    m_messageRateInHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::MessageRateInHasBeenSet() const
+{
+    return m_messageRateInHasBeenSet;
+}
+
+double RabbitMQVirtualHostInfo::GetMessageRateOut() const
+{
+    return m_messageRateOut;
+}
+
+void RabbitMQVirtualHostInfo::SetMessageRateOut(const double& _messageRateOut)
+{
+    m_messageRateOut = _messageRateOut;
+    m_messageRateOutHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::MessageRateOutHasBeenSet() const
+{
+    return m_messageRateOutHasBeenSet;
 }
 

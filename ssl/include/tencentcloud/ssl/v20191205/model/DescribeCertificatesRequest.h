@@ -315,6 +315,27 @@ namespace TencentCloud
                      */
                     bool FilterExpiringHasBeenSet() const;
 
+                    /**
+                     * 获取是否可托管，可选值：1 = 可托管，0 =  不可托管。
+                     * @return Hostable 是否可托管，可选值：1 = 可托管，0 =  不可托管。
+                     * 
+                     */
+                    uint64_t GetHostable() const;
+
+                    /**
+                     * 设置是否可托管，可选值：1 = 可托管，0 =  不可托管。
+                     * @param _hostable 是否可托管，可选值：1 = 可托管，0 =  不可托管。
+                     * 
+                     */
+                    void SetHostable(const uint64_t& _hostable);
+
+                    /**
+                     * 判断参数 Hostable 是否已赋值
+                     * @return Hostable 是否已赋值
+                     * 
+                     */
+                    bool HostableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +415,12 @@ namespace TencentCloud
                      */
                     uint64_t m_filterExpiring;
                     bool m_filterExpiringHasBeenSet;
+
+                    /**
+                     * 是否可托管，可选值：1 = 可托管，0 =  不可托管。
+                     */
+                    uint64_t m_hostable;
+                    bool m_hostableHasBeenSet;
 
                 };
             }

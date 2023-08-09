@@ -21,7 +21,8 @@ using namespace TencentCloud::Cme::V20191029::Model;
 using namespace std;
 
 MediaCastOutputMediaSetting::MediaCastOutputMediaSetting() :
-    m_videoSettingHasBeenSet(false)
+    m_videoSettingHasBeenSet(false),
+    m_followSourceInfoHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,16 @@ CoreInternalOutcome MediaCastOutputMediaSetting::Deserialize(const rapidjson::Va
         m_videoSettingHasBeenSet = true;
     }
 
+    if (value.HasMember("FollowSourceInfo") && !value["FollowSourceInfo"].IsNull())
+    {
+        if (!value["FollowSourceInfo"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCastOutputMediaSetting.FollowSourceInfo` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_followSourceInfo = value["FollowSourceInfo"].GetBool();
+        m_followSourceInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +72,14 @@ void MediaCastOutputMediaSetting::ToJsonObject(rapidjson::Value &value, rapidjso
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoSetting.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_followSourceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FollowSourceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_followSourceInfo, allocator);
     }
 
 }
@@ -80,5 +99,21 @@ void MediaCastOutputMediaSetting::SetVideoSetting(const MediaCastVideoSetting& _
 bool MediaCastOutputMediaSetting::VideoSettingHasBeenSet() const
 {
     return m_videoSettingHasBeenSet;
+}
+
+bool MediaCastOutputMediaSetting::GetFollowSourceInfo() const
+{
+    return m_followSourceInfo;
+}
+
+void MediaCastOutputMediaSetting::SetFollowSourceInfo(const bool& _followSourceInfo)
+{
+    m_followSourceInfo = _followSourceInfo;
+    m_followSourceInfoHasBeenSet = true;
+}
+
+bool MediaCastOutputMediaSetting::FollowSourceInfoHasBeenSet() const
+{
+    return m_followSourceInfoHasBeenSet;
 }
 

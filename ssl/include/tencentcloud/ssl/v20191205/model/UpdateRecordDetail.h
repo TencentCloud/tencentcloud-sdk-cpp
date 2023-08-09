@@ -518,6 +518,56 @@ namespace TencentCloud
                      */
                     bool SecretNameHasBeenSet() const;
 
+                    /**
+                     * 获取环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnvId 环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _envId 环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
+                     * 获取TCB部署类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TCBType TCB部署类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTCBType() const;
+
+                    /**
+                     * 设置TCB部署类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tCBType TCB部署类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTCBType(const std::string& _tCBType);
+
+                    /**
+                     * 判断参数 TCBType 是否已赋值
+                     * @return TCBType 是否已赋值
+                     * 
+                     */
+                    bool TCBTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -652,6 +702,20 @@ namespace TencentCloud
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
+
+                    /**
+                     * 环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
+
+                    /**
+                     * TCB部署类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tCBType;
+                    bool m_tCBTypeHasBeenSet;
 
                 };
             }

@@ -29,6 +29,7 @@ UploadCertificateRequest::UploadCertificateRequest() :
     m_aliasHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_certificateUseHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_repeatableHasBeenSet(false)
 {
 }
@@ -86,6 +87,21 @@ string UploadCertificateRequest::ToJsonString() const
         string key = "CertificateUse";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_certificateUse.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_repeatableHasBeenSet)
@@ -198,6 +214,22 @@ void UploadCertificateRequest::SetCertificateUse(const string& _certificateUse)
 bool UploadCertificateRequest::CertificateUseHasBeenSet() const
 {
     return m_certificateUseHasBeenSet;
+}
+
+vector<Tags> UploadCertificateRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void UploadCertificateRequest::SetTags(const vector<Tags>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool UploadCertificateRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 bool UploadCertificateRequest::GetRepeatable() const

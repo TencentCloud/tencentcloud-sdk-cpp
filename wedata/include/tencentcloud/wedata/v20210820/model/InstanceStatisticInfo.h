@@ -163,6 +163,56 @@ namespace TencentCloud
                      */
                     bool ShowTimeHasBeenSet() const;
 
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportTime 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReportTime() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reportTime 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReportTime(const std::string& _reportTime);
+
+                    /**
+                     * 判断参数 ReportTime 是否已赋值
+                     * @return ReportTime 是否已赋值
+                     * 
+                     */
+                    bool ReportTimeHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Count 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _count 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCount(const int64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     * 
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +247,20 @@ namespace TencentCloud
                      */
                     std::string m_showTime;
                     bool m_showTimeHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reportTime;
+                    bool m_reportTimeHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

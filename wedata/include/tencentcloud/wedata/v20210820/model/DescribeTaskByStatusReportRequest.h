@@ -168,6 +168,90 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return AggregationUnit 无
+                     * 
+                     */
+                    std::string GetAggregationUnit() const;
+
+                    /**
+                     * 设置无
+                     * @param _aggregationUnit 无
+                     * 
+                     */
+                    void SetAggregationUnit(const std::string& _aggregationUnit);
+
+                    /**
+                     * 判断参数 AggregationUnit 是否已赋值
+                     * @return AggregationUnit 是否已赋值
+                     * 
+                     */
+                    bool AggregationUnitHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return CycleUnit 无
+                     * 
+                     */
+                    std::string GetCycleUnit() const;
+
+                    /**
+                     * 设置无
+                     * @param _cycleUnit 无
+                     * 
+                     */
+                    void SetCycleUnit(const std::string& _cycleUnit);
+
+                    /**
+                     * 判断参数 CycleUnit 是否已赋值
+                     * @return CycleUnit 是否已赋值
+                     * 
+                     */
+                    bool CycleUnitHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return Status 无
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置无
+                     * @param _status 无
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return InCharge 无
+                     * 
+                     */
+                    std::string GetInCharge() const;
+
+                    /**
+                     * 设置无
+                     * @param _inCharge 无
+                     * 
+                     */
+                    void SetInCharge(const std::string& _inCharge);
+
+                    /**
+                     * 判断参数 InCharge 是否已赋值
+                     * @return InCharge 是否已赋值
+                     * 
+                     */
+                    bool InChargeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +289,30 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::string m_aggregationUnit;
+                    bool m_aggregationUnitHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::string m_cycleUnit;
+                    bool m_cycleUnitHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::string m_inCharge;
+                    bool m_inChargeHasBeenSet;
 
                 };
             }

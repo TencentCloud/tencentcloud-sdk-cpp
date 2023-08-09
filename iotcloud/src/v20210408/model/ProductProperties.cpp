@@ -38,7 +38,8 @@ ProductProperties::ProductProperties() :
     m_privateCANameHasBeenSet(false),
     m_originUserIdHasBeenSet(false),
     m_deviceLimitHasBeenSet(false),
-    m_forbiddenStatusHasBeenSet(false)
+    m_forbiddenStatusHasBeenSet(false),
+    m_appEUIHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome ProductProperties::Deserialize(const rapidjson::Value &value
         m_forbiddenStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("AppEUI") && !value["AppEUI"].IsNull())
+    {
+        if (!value["AppEUI"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductProperties.AppEUI` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appEUI = string(value["AppEUI"].GetString());
+        m_appEUIHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void ProductProperties::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ForbiddenStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forbiddenStatus, allocator);
+    }
+
+    if (m_appEUIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppEUI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appEUI.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void ProductProperties::SetForbiddenStatus(const uint64_t& _forbiddenStatus)
 bool ProductProperties::ForbiddenStatusHasBeenSet() const
 {
     return m_forbiddenStatusHasBeenSet;
+}
+
+string ProductProperties::GetAppEUI() const
+{
+    return m_appEUI;
+}
+
+void ProductProperties::SetAppEUI(const string& _appEUI)
+{
+    m_appEUI = _appEUI;
+    m_appEUIHasBeenSet = true;
+}
+
+bool ProductProperties::AppEUIHasBeenSet() const
+{
+    return m_appEUIHasBeenSet;
 }
 

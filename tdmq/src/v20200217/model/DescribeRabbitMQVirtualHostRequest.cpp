@@ -27,7 +27,9 @@ DescribeRabbitMQVirtualHostRequest::DescribeRabbitMQVirtualHostRequest() :
     m_virtualHostHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_sortElementHasBeenSet(false),
+    m_sortOrderHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,22 @@ string DescribeRabbitMQVirtualHostRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_filters.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sortElementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortElement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortElement.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortOrder";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortOrder.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +183,38 @@ void DescribeRabbitMQVirtualHostRequest::SetFilters(const Filter& _filters)
 bool DescribeRabbitMQVirtualHostRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeRabbitMQVirtualHostRequest::GetSortElement() const
+{
+    return m_sortElement;
+}
+
+void DescribeRabbitMQVirtualHostRequest::SetSortElement(const string& _sortElement)
+{
+    m_sortElement = _sortElement;
+    m_sortElementHasBeenSet = true;
+}
+
+bool DescribeRabbitMQVirtualHostRequest::SortElementHasBeenSet() const
+{
+    return m_sortElementHasBeenSet;
+}
+
+string DescribeRabbitMQVirtualHostRequest::GetSortOrder() const
+{
+    return m_sortOrder;
+}
+
+void DescribeRabbitMQVirtualHostRequest::SetSortOrder(const string& _sortOrder)
+{
+    m_sortOrder = _sortOrder;
+    m_sortOrderHasBeenSet = true;
+}
+
+bool DescribeRabbitMQVirtualHostRequest::SortOrderHasBeenSet() const
+{
+    return m_sortOrderHasBeenSet;
 }
 
 

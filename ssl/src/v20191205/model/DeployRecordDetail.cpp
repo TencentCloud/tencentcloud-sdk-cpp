@@ -38,7 +38,10 @@ DeployRecordDetail::DeployRecordDetail() :
     m_bucketHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_secretNameHasBeenSet(false),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_envIdHasBeenSet(false),
+    m_tCBTypeHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -230,6 +233,36 @@ CoreInternalOutcome DeployRecordDetail::Deserialize(const rapidjson::Value &valu
         m_portHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvId") && !value["EnvId"].IsNull())
+    {
+        if (!value["EnvId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployRecordDetail.EnvId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_envId = string(value["EnvId"].GetString());
+        m_envIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TCBType") && !value["TCBType"].IsNull())
+    {
+        if (!value["TCBType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployRecordDetail.TCBType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tCBType = string(value["TCBType"].GetString());
+        m_tCBTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployRecordDetail.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +417,30 @@ void DeployRecordDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
+    }
+
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tCBTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TCBType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tCBType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -675,5 +732,53 @@ void DeployRecordDetail::SetPort(const int64_t& _port)
 bool DeployRecordDetail::PortHasBeenSet() const
 {
     return m_portHasBeenSet;
+}
+
+string DeployRecordDetail::GetEnvId() const
+{
+    return m_envId;
+}
+
+void DeployRecordDetail::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool DeployRecordDetail::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
+
+string DeployRecordDetail::GetTCBType() const
+{
+    return m_tCBType;
+}
+
+void DeployRecordDetail::SetTCBType(const string& _tCBType)
+{
+    m_tCBType = _tCBType;
+    m_tCBTypeHasBeenSet = true;
+}
+
+bool DeployRecordDetail::TCBTypeHasBeenSet() const
+{
+    return m_tCBTypeHasBeenSet;
+}
+
+string DeployRecordDetail::GetRegion() const
+{
+    return m_region;
+}
+
+void DeployRecordDetail::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool DeployRecordDetail::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

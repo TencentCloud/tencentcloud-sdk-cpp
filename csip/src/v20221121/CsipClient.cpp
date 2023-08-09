@@ -427,6 +427,49 @@ CsipClient::DescribeDomainAssetsOutcomeCallable CsipClient::DescribeDomainAssets
     return task->get_future();
 }
 
+CsipClient::DescribeListenerListOutcome CsipClient::DescribeListenerList(const DescribeListenerListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeListenerList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeListenerListResponse rsp = DescribeListenerListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeListenerListOutcome(rsp);
+        else
+            return DescribeListenerListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeListenerListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeListenerListAsync(const DescribeListenerListRequest& request, const DescribeListenerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeListenerList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeListenerListOutcomeCallable CsipClient::DescribeListenerListCallable(const DescribeListenerListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeListenerListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeListenerList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribePublicIpAssetsOutcome CsipClient::DescribePublicIpAssets(const DescribePublicIpAssetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePublicIpAssets");

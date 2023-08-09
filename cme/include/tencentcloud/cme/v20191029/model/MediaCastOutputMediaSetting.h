@@ -68,6 +68,27 @@ namespace TencentCloud
                      */
                     bool VideoSettingHasBeenSet() const;
 
+                    /**
+                     * 获取视频配置是否和第一个输入源的视频配置相同，默认值：false。如果 FollowSourceInfo 的值为 true，忽略 VideoSetting 参数。
+                     * @return FollowSourceInfo 视频配置是否和第一个输入源的视频配置相同，默认值：false。如果 FollowSourceInfo 的值为 true，忽略 VideoSetting 参数。
+                     * 
+                     */
+                    bool GetFollowSourceInfo() const;
+
+                    /**
+                     * 设置视频配置是否和第一个输入源的视频配置相同，默认值：false。如果 FollowSourceInfo 的值为 true，忽略 VideoSetting 参数。
+                     * @param _followSourceInfo 视频配置是否和第一个输入源的视频配置相同，默认值：false。如果 FollowSourceInfo 的值为 true，忽略 VideoSetting 参数。
+                     * 
+                     */
+                    void SetFollowSourceInfo(const bool& _followSourceInfo);
+
+                    /**
+                     * 判断参数 FollowSourceInfo 是否已赋值
+                     * @return FollowSourceInfo 是否已赋值
+                     * 
+                     */
+                    bool FollowSourceInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +96,12 @@ namespace TencentCloud
                      */
                     MediaCastVideoSetting m_videoSetting;
                     bool m_videoSettingHasBeenSet;
+
+                    /**
+                     * 视频配置是否和第一个输入源的视频配置相同，默认值：false。如果 FollowSourceInfo 的值为 true，忽略 VideoSetting 参数。
+                     */
+                    bool m_followSourceInfo;
+                    bool m_followSourceInfoHasBeenSet;
 
                 };
             }

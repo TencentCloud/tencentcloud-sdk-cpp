@@ -214,6 +214,106 @@ namespace TencentCloud
                      */
                     bool VirtualHostStatisticsHasBeenSet() const;
 
+                    /**
+                     * 获取vhost状态，与原生控制台对应，有running、partial、stopped、unknown
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status vhost状态，与原生控制台对应，有running、partial、stopped、unknown
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置vhost状态，与原生控制台对应，有running、partial、stopped、unknown
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status vhost状态，与原生控制台对应，有running、partial、stopped、unknown
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取消息堆积数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MessageHeapCount 消息堆积数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMessageHeapCount() const;
+
+                    /**
+                     * 设置消息堆积数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _messageHeapCount 消息堆积数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMessageHeapCount(const int64_t& _messageHeapCount);
+
+                    /**
+                     * 判断参数 MessageHeapCount 是否已赋值
+                     * @return MessageHeapCount 是否已赋值
+                     * 
+                     */
+                    bool MessageHeapCountHasBeenSet() const;
+
+                    /**
+                     * 获取输入消息速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MessageRateIn 输入消息速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetMessageRateIn() const;
+
+                    /**
+                     * 设置输入消息速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _messageRateIn 输入消息速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMessageRateIn(const double& _messageRateIn);
+
+                    /**
+                     * 判断参数 MessageRateIn 是否已赋值
+                     * @return MessageRateIn 是否已赋值
+                     * 
+                     */
+                    bool MessageRateInHasBeenSet() const;
+
+                    /**
+                     * 获取输出消息速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MessageRateOut 输出消息速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetMessageRateOut() const;
+
+                    /**
+                     * 设置输出消息速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _messageRateOut 输出消息速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMessageRateOut(const double& _messageRateOut);
+
+                    /**
+                     * 判断参数 MessageRateOut 是否已赋值
+                     * @return MessageRateOut 是否已赋值
+                     * 
+                     */
+                    bool MessageRateOutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,6 +362,34 @@ namespace TencentCloud
                      */
                     RabbitMQVirtualHostStatistics m_virtualHostStatistics;
                     bool m_virtualHostStatisticsHasBeenSet;
+
+                    /**
+                     * vhost状态，与原生控制台对应，有running、partial、stopped、unknown
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 消息堆积数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_messageHeapCount;
+                    bool m_messageHeapCountHasBeenSet;
+
+                    /**
+                     * 输入消息速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_messageRateIn;
+                    bool m_messageRateInHasBeenSet;
+
+                    /**
+                     * 输出消息速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_messageRateOut;
+                    bool m_messageRateOutHasBeenSet;
 
                 };
             }

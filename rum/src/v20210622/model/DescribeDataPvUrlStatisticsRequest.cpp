@@ -43,7 +43,8 @@ DescribeDataPvUrlStatisticsRequest::DescribeDataPvUrlStatisticsRequest() :
     m_isAbroadHasBeenSet(false),
     m_osHasBeenSet(false),
     m_browserHasBeenSet(false),
-    m_envHasBeenSet(false)
+    m_envHasBeenSet(false),
+    m_groupByTypeHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,14 @@ string DescribeDataPvUrlStatisticsRequest::ToJsonString() const
         string key = "Env";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupByTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupByType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_groupByType, allocator);
     }
 
 
@@ -564,6 +573,22 @@ void DescribeDataPvUrlStatisticsRequest::SetEnv(const string& _env)
 bool DescribeDataPvUrlStatisticsRequest::EnvHasBeenSet() const
 {
     return m_envHasBeenSet;
+}
+
+int64_t DescribeDataPvUrlStatisticsRequest::GetGroupByType() const
+{
+    return m_groupByType;
+}
+
+void DescribeDataPvUrlStatisticsRequest::SetGroupByType(const int64_t& _groupByType)
+{
+    m_groupByType = _groupByType;
+    m_groupByTypeHasBeenSet = true;
+}
+
+bool DescribeDataPvUrlStatisticsRequest::GroupByTypeHasBeenSet() const
+{
+    return m_groupByTypeHasBeenSet;
 }
 
 

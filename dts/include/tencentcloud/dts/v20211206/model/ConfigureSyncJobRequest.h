@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool DstNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取同步任务选项
-                     * @return Options 同步任务选项
+                     * 获取同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速
+                     * @return Options 同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速
                      * 
                      */
                     Options GetOptions() const;
 
                     /**
-                     * 设置同步任务选项
-                     * @param _options 同步任务选项
+                     * 设置同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速
+                     * @param _options 同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速
                      * 
                      */
                     void SetOptions(const Options& _options);
@@ -469,7 +469,7 @@ namespace TencentCloud
                     bool m_dstNodeTypeHasBeenSet;
 
                     /**
-                     * 同步任务选项
+                     * 同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速
                      */
                     Options m_options;
                     bool m_optionsHasBeenSet;

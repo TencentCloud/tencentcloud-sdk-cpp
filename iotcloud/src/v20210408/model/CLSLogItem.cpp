@@ -28,7 +28,8 @@ CLSLogItem::CLSLogItem() :
     m_resultHasBeenSet(false),
     m_sceneHasBeenSet(false),
     m_timeHasBeenSet(false),
-    m_useridHasBeenSet(false)
+    m_useridHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome CLSLogItem::Deserialize(const rapidjson::Value &value)
         m_useridHasBeenSet = true;
     }
 
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CLSLogItem.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void CLSLogItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Userid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void CLSLogItem::SetUserid(const string& _userid)
 bool CLSLogItem::UseridHasBeenSet() const
 {
     return m_useridHasBeenSet;
+}
+
+string CLSLogItem::GetUserId() const
+{
+    return m_userId;
+}
+
+void CLSLogItem::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool CLSLogItem::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 

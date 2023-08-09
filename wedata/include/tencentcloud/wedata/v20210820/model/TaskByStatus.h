@@ -146,6 +146,48 @@ namespace TencentCloud
                      */
                     bool CycleUnitHasBeenSet() const;
 
+                    /**
+                     * 获取1
+                     * @return ReportTime 1
+                     * 
+                     */
+                    std::string GetReportTime() const;
+
+                    /**
+                     * 设置1
+                     * @param _reportTime 1
+                     * 
+                     */
+                    void SetReportTime(const std::string& _reportTime);
+
+                    /**
+                     * 判断参数 ReportTime 是否已赋值
+                     * @return ReportTime 是否已赋值
+                     * 
+                     */
+                    bool ReportTimeHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return Count 1
+                     * 
+                     */
+                    uint64_t GetCount() const;
+
+                    /**
+                     * 设置1
+                     * @param _count 1
+                     * 
+                     */
+                    void SetCount(const uint64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     * 
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +217,18 @@ namespace TencentCloud
                      */
                     std::string m_cycleUnit;
                     bool m_cycleUnitHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    std::string m_reportTime;
+                    bool m_reportTimeHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    uint64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

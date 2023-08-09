@@ -26,8 +26,8 @@ ApproverInfo::ApproverInfo() :
     m_approverMobileHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
     m_signComponentsHasBeenSet(false),
-    m_approverIdCardNumberHasBeenSet(false),
     m_approverIdCardTypeHasBeenSet(false),
+    m_approverIdCardNumberHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
     m_approverRoleHasBeenSet(false),
     m_verifyChannelHasBeenSet(false),
@@ -107,16 +107,6 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_signComponentsHasBeenSet = true;
     }
 
-    if (value.HasMember("ApproverIdCardNumber") && !value["ApproverIdCardNumber"].IsNull())
-    {
-        if (!value["ApproverIdCardNumber"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApproverInfo.ApproverIdCardNumber` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_approverIdCardNumber = string(value["ApproverIdCardNumber"].GetString());
-        m_approverIdCardNumberHasBeenSet = true;
-    }
-
     if (value.HasMember("ApproverIdCardType") && !value["ApproverIdCardType"].IsNull())
     {
         if (!value["ApproverIdCardType"].IsString())
@@ -125,6 +115,16 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         }
         m_approverIdCardType = string(value["ApproverIdCardType"].GetString());
         m_approverIdCardTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverIdCardNumber") && !value["ApproverIdCardNumber"].IsNull())
+    {
+        if (!value["ApproverIdCardNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.ApproverIdCardNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverIdCardNumber = string(value["ApproverIdCardNumber"].GetString());
+        m_approverIdCardNumberHasBeenSet = true;
     }
 
     if (value.HasMember("NotifyType") && !value["NotifyType"].IsNull())
@@ -307,20 +307,20 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
-    if (m_approverIdCardNumberHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ApproverIdCardNumber";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_approverIdCardNumber.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_approverIdCardTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApproverIdCardType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverIdCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverIdCardNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverIdCardNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverIdCardNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_notifyTypeHasBeenSet)
@@ -510,22 +510,6 @@ bool ApproverInfo::SignComponentsHasBeenSet() const
     return m_signComponentsHasBeenSet;
 }
 
-string ApproverInfo::GetApproverIdCardNumber() const
-{
-    return m_approverIdCardNumber;
-}
-
-void ApproverInfo::SetApproverIdCardNumber(const string& _approverIdCardNumber)
-{
-    m_approverIdCardNumber = _approverIdCardNumber;
-    m_approverIdCardNumberHasBeenSet = true;
-}
-
-bool ApproverInfo::ApproverIdCardNumberHasBeenSet() const
-{
-    return m_approverIdCardNumberHasBeenSet;
-}
-
 string ApproverInfo::GetApproverIdCardType() const
 {
     return m_approverIdCardType;
@@ -540,6 +524,22 @@ void ApproverInfo::SetApproverIdCardType(const string& _approverIdCardType)
 bool ApproverInfo::ApproverIdCardTypeHasBeenSet() const
 {
     return m_approverIdCardTypeHasBeenSet;
+}
+
+string ApproverInfo::GetApproverIdCardNumber() const
+{
+    return m_approverIdCardNumber;
+}
+
+void ApproverInfo::SetApproverIdCardNumber(const string& _approverIdCardNumber)
+{
+    m_approverIdCardNumber = _approverIdCardNumber;
+    m_approverIdCardNumberHasBeenSet = true;
+}
+
+bool ApproverInfo::ApproverIdCardNumberHasBeenSet() const
+{
+    return m_approverIdCardNumberHasBeenSet;
 }
 
 string ApproverInfo::GetNotifyType() const

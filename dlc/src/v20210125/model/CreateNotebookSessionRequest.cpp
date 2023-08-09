@@ -37,7 +37,8 @@ CreateNotebookSessionRequest::CreateNotebookSessionRequest() :
     m_proxyUserHasBeenSet(false),
     m_timeoutInSecondHasBeenSet(false),
     m_executorMaxNumbersHasBeenSet(false),
-    m_sparkImageHasBeenSet(false)
+    m_sparkImageHasBeenSet(false),
+    m_isInheritHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,14 @@ string CreateNotebookSessionRequest::ToJsonString() const
         string key = "SparkImage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sparkImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInheritHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInherit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isInherit, allocator);
     }
 
 
@@ -441,6 +450,22 @@ void CreateNotebookSessionRequest::SetSparkImage(const string& _sparkImage)
 bool CreateNotebookSessionRequest::SparkImageHasBeenSet() const
 {
     return m_sparkImageHasBeenSet;
+}
+
+int64_t CreateNotebookSessionRequest::GetIsInherit() const
+{
+    return m_isInherit;
+}
+
+void CreateNotebookSessionRequest::SetIsInherit(const int64_t& _isInherit)
+{
+    m_isInherit = _isInherit;
+    m_isInheritHasBeenSet = true;
+}
+
+bool CreateNotebookSessionRequest::IsInheritHasBeenSet() const
+{
+    return m_isInheritHasBeenSet;
 }
 
 

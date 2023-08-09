@@ -27,6 +27,7 @@
 #include <tencentcloud/dts/v20211206/model/ConflictHandleOption.h>
 #include <tencentcloud/dts/v20211206/model/DdlOption.h>
 #include <tencentcloud/dts/v20211206/model/KafkaOption.h>
+#include <tencentcloud/dts/v20211206/model/RateLimitOption.h>
 
 
 namespace TencentCloud
@@ -249,6 +250,56 @@ namespace TencentCloud
                      */
                     bool KafkaOptionHasBeenSet() const;
 
+                    /**
+                     * 获取任务限速信息、该字段仅用作出参、入参该字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RateLimitOption 任务限速信息、该字段仅用作出参、入参该字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    RateLimitOption GetRateLimitOption() const;
+
+                    /**
+                     * 设置任务限速信息、该字段仅用作出参、入参该字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rateLimitOption 任务限速信息、该字段仅用作出参、入参该字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRateLimitOption(const RateLimitOption& _rateLimitOption);
+
+                    /**
+                     * 判断参数 RateLimitOption 是否已赋值
+                     * @return RateLimitOption 是否已赋值
+                     * 
+                     */
+                    bool RateLimitOptionHasBeenSet() const;
+
+                    /**
+                     * 获取自动重试的时间窗口设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRetryTimeRangeMinutes 自动重试的时间窗口设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAutoRetryTimeRangeMinutes() const;
+
+                    /**
+                     * 设置自动重试的时间窗口设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoRetryTimeRangeMinutes 自动重试的时间窗口设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes);
+
+                    /**
+                     * 判断参数 AutoRetryTimeRangeMinutes 是否已赋值
+                     * @return AutoRetryTimeRangeMinutes 是否已赋值
+                     * 
+                     */
+                    bool AutoRetryTimeRangeMinutesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -306,6 +357,20 @@ namespace TencentCloud
                      */
                     KafkaOption m_kafkaOption;
                     bool m_kafkaOptionHasBeenSet;
+
+                    /**
+                     * 任务限速信息、该字段仅用作出参、入参该字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RateLimitOption m_rateLimitOption;
+                    bool m_rateLimitOptionHasBeenSet;
+
+                    /**
+                     * 自动重试的时间窗口设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_autoRetryTimeRangeMinutes;
+                    bool m_autoRetryTimeRangeMinutesHasBeenSet;
 
                 };
             }

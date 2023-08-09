@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OldCertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取需要部署的资源类型
-                     * @return ResourceTypes 需要部署的资源类型
+                     * 获取需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb
+                     * @return ResourceTypes 需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb
                      * 
                      */
                     std::vector<std::string> GetResourceTypes() const;
 
                     /**
-                     * 设置需要部署的资源类型
-                     * @param _resourceTypes 需要部署的资源类型
+                     * 设置需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb
+                     * @param _resourceTypes 需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb
                      * 
                      */
                     void SetResourceTypes(const std::vector<std::string>& _resourceTypes);
@@ -109,21 +109,21 @@ namespace TencentCloud
                     /**
                      * 获取需要部署的地域列表（废弃）
                      * @return Regions 需要部署的地域列表（废弃）
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetRegions() const;
 
                     /**
                      * 设置需要部署的地域列表（废弃）
                      * @param _regions 需要部署的地域列表（废弃）
-                     * 
+                     * @deprecated
                      */
                     void SetRegions(const std::vector<std::string>& _regions);
 
                     /**
                      * 判断参数 Regions 是否已赋值
                      * @return Regions 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RegionsHasBeenSet() const;
 
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_oldCertificateIdHasBeenSet;
 
                     /**
-                     * 需要部署的资源类型
+                     * 需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb
                      */
                     std::vector<std::string> m_resourceTypes;
                     bool m_resourceTypesHasBeenSet;

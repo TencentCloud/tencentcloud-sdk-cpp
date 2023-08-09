@@ -23,7 +23,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeTaskByCycleRequest::DescribeTaskByCycleRequest() :
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_inChargeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeTaskByCycleRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inChargeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InCharge";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inCharge.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeTaskByCycleRequest::SetProjectId(const string& _projectId)
 bool DescribeTaskByCycleRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string DescribeTaskByCycleRequest::GetInCharge() const
+{
+    return m_inCharge;
+}
+
+void DescribeTaskByCycleRequest::SetInCharge(const string& _inCharge)
+{
+    m_inCharge = _inCharge;
+    m_inChargeHasBeenSet = true;
+}
+
+bool DescribeTaskByCycleRequest::InChargeHasBeenSet() const
+{
+    return m_inChargeHasBeenSet;
 }
 
 

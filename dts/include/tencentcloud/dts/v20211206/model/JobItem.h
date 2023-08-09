@@ -510,6 +510,31 @@ manualPaused(已暂停)
                      */
                     bool AutoRetryTimeRangeMinutesHasBeenSet() const;
 
+                    /**
+                     * 获取全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DumperResumeCtrl 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDumperResumeCtrl() const;
+
+                    /**
+                     * 设置全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dumperResumeCtrl 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDumperResumeCtrl(const std::string& _dumperResumeCtrl);
+
+                    /**
+                     * 判断参数 DumperResumeCtrl 是否已赋值
+                     * @return DumperResumeCtrl 是否已赋值
+                     * 
+                     */
+                    bool DumperResumeCtrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -639,6 +664,13 @@ manualPaused(已暂停)
                      */
                     int64_t m_autoRetryTimeRangeMinutes;
                     bool m_autoRetryTimeRangeMinutesHasBeenSet;
+
+                    /**
+                     * 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dumperResumeCtrl;
+                    bool m_dumperResumeCtrlHasBeenSet;
 
                 };
             }

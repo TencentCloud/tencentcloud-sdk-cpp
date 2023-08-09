@@ -25,7 +25,8 @@ using namespace std;
 DescribeSchedulerTaskCntByStatusRequest::DescribeSchedulerTaskCntByStatusRequest() :
     m_taskTypeHasBeenSet(false),
     m_typeNameHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_inChargeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeSchedulerTaskCntByStatusRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inChargeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InCharge";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inCharge.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeSchedulerTaskCntByStatusRequest::SetProjectId(const string& _projec
 bool DescribeSchedulerTaskCntByStatusRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string DescribeSchedulerTaskCntByStatusRequest::GetInCharge() const
+{
+    return m_inCharge;
+}
+
+void DescribeSchedulerTaskCntByStatusRequest::SetInCharge(const string& _inCharge)
+{
+    m_inCharge = _inCharge;
+    m_inChargeHasBeenSet = true;
+}
+
+bool DescribeSchedulerTaskCntByStatusRequest::InChargeHasBeenSet() const
+{
+    return m_inChargeHasBeenSet;
 }
 
 

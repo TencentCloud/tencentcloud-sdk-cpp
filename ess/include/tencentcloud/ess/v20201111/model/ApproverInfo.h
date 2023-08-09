@@ -170,48 +170,31 @@ namespace TencentCloud
                     bool SignComponentsHasBeenSet() const;
 
                     /**
-                     * 获取签署人的身份证号
-                     * @return ApproverIdCardNumber 签署人的身份证号
-                     * 
-                     */
-                    std::string GetApproverIdCardNumber() const;
-
-                    /**
-                     * 设置签署人的身份证号
-                     * @param _approverIdCardNumber 签署人的身份证号
-                     * 
-                     */
-                    void SetApproverIdCardNumber(const std::string& _approverIdCardNumber);
-
-                    /**
-                     * 判断参数 ApproverIdCardNumber 是否已赋值
-                     * @return ApproverIdCardNumber 是否已赋值
-                     * 
-                     */
-                    bool ApproverIdCardNumberHasBeenSet() const;
-
-                    /**
-                     * 获取签署人的身份证件类型 
+                     * 获取签署人的证件类型
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-                     * @return ApproverIdCardType 签署人的身份证件类型 
+OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
+                     * @return ApproverIdCardType 签署人的证件类型
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                      * 
                      */
                     std::string GetApproverIdCardType() const;
 
                     /**
-                     * 设置签署人的身份证件类型 
+                     * 设置签署人的证件类型
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-                     * @param _approverIdCardType 签署人的身份证件类型 
+OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
+                     * @param _approverIdCardType 签署人的证件类型
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                      * 
                      */
                     void SetApproverIdCardType(const std::string& _approverIdCardType);
@@ -222,6 +205,27 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      * 
                      */
                     bool ApproverIdCardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取签署人证件号（长度不超过18位）	
+                     * @return ApproverIdCardNumber 签署人证件号（长度不超过18位）	
+                     * 
+                     */
+                    std::string GetApproverIdCardNumber() const;
+
+                    /**
+                     * 设置签署人证件号（长度不超过18位）	
+                     * @param _approverIdCardNumber 签署人证件号（长度不超过18位）	
+                     * 
+                     */
+                    void SetApproverIdCardNumber(const std::string& _approverIdCardNumber);
+
+                    /**
+                     * 判断参数 ApproverIdCardNumber 是否已赋值
+                     * @return ApproverIdCardNumber 是否已赋值
+                     * 
+                     */
+                    bool ApproverIdCardNumberHasBeenSet() const;
 
                     /**
                      * 获取签署通知类型：sms--短信，none--不通知
@@ -515,19 +519,20 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_signComponentsHasBeenSet;
 
                     /**
-                     * 签署人的身份证号
-                     */
-                    std::string m_approverIdCardNumber;
-                    bool m_approverIdCardNumberHasBeenSet;
-
-                    /**
-                     * 签署人的身份证件类型 
+                     * 签署人的证件类型
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                      */
                     std::string m_approverIdCardType;
                     bool m_approverIdCardTypeHasBeenSet;
+
+                    /**
+                     * 签署人证件号（长度不超过18位）	
+                     */
+                    std::string m_approverIdCardNumber;
+                    bool m_approverIdCardNumberHasBeenSet;
 
                     /**
                      * 签署通知类型：sms--短信，none--不通知

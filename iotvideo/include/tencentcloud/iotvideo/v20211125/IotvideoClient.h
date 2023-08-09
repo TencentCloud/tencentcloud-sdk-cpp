@@ -205,6 +205,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/ReportAliveDeviceResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/ResetCloudStorageRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/ResetCloudStorageResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/ResetCloudStorageEventRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/ResetCloudStorageEventResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/RetryDeviceFirmwareTaskRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/RetryDeviceFirmwareTaskResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/SetForwardAuthRequest.h>
@@ -504,6 +506,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetCloudStorageResponse> ResetCloudStorageOutcome;
                 typedef std::future<ResetCloudStorageOutcome> ResetCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ResetCloudStorageRequest&, ResetCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetCloudStorageEventResponse> ResetCloudStorageEventOutcome;
+                typedef std::future<ResetCloudStorageEventOutcome> ResetCloudStorageEventOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ResetCloudStorageEventRequest&, ResetCloudStorageEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::RetryDeviceFirmwareTaskResponse> RetryDeviceFirmwareTaskOutcome;
                 typedef std::future<RetryDeviceFirmwareTaskOutcome> RetryDeviceFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::RetryDeviceFirmwareTaskRequest&, RetryDeviceFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryDeviceFirmwareTaskAsyncHandler;
@@ -1343,6 +1348,15 @@ namespace TencentCloud
                 ResetCloudStorageOutcome ResetCloudStorage(const Model::ResetCloudStorageRequest &request);
                 void ResetCloudStorageAsync(const Model::ResetCloudStorageRequest& request, const ResetCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetCloudStorageOutcomeCallable ResetCloudStorageCallable(const Model::ResetCloudStorageRequest& request);
+
+                /**
+                 *重置云存事件
+                 * @param req ResetCloudStorageEventRequest
+                 * @return ResetCloudStorageEventOutcome
+                 */
+                ResetCloudStorageEventOutcome ResetCloudStorageEvent(const Model::ResetCloudStorageEventRequest &request);
+                void ResetCloudStorageEventAsync(const Model::ResetCloudStorageEventRequest& request, const ResetCloudStorageEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetCloudStorageEventOutcomeCallable ResetCloudStorageEventCallable(const Model::ResetCloudStorageEventRequest& request);
 
                 /**
                  *本接口用于重试设备升级任务

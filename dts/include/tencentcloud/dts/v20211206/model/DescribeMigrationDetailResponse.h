@@ -30,6 +30,7 @@
 #include <tencentcloud/dts/v20211206/model/CheckStepInfo.h>
 #include <tencentcloud/dts/v20211206/model/TradeInfo.h>
 #include <tencentcloud/dts/v20211206/model/ErrorInfoItem.h>
+#include <tencentcloud/dts/v20211206/model/RateLimitOption.h>
 
 
 namespace TencentCloud
@@ -376,6 +377,36 @@ manualPaused(已暂停)
                      */
                     bool ErrorInfoHasBeenSet() const;
 
+                    /**
+                     * 获取全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+                     * @return DumperResumeCtrl 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+                     * 
+                     */
+                    std::string GetDumperResumeCtrl() const;
+
+                    /**
+                     * 判断参数 DumperResumeCtrl 是否已赋值
+                     * @return DumperResumeCtrl 是否已赋值
+                     * 
+                     */
+                    bool DumperResumeCtrlHasBeenSet() const;
+
+                    /**
+                     * 获取任务的限速信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RateLimitOption 任务的限速信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    RateLimitOption GetRateLimitOption() const;
+
+                    /**
+                     * 判断参数 RateLimitOption 是否已赋值
+                     * @return RateLimitOption 是否已赋值
+                     * 
+                     */
+                    bool RateLimitOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -519,6 +550,19 @@ manualPaused(已暂停)
                      */
                     std::vector<ErrorInfoItem> m_errorInfo;
                     bool m_errorInfoHasBeenSet;
+
+                    /**
+                     * 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+                     */
+                    std::string m_dumperResumeCtrl;
+                    bool m_dumperResumeCtrlHasBeenSet;
+
+                    /**
+                     * 任务的限速信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RateLimitOption m_rateLimitOption;
+                    bool m_rateLimitOptionHasBeenSet;
 
                 };
             }

@@ -148,6 +148,64 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取排序依据的字段：
+MessageHeapCount - 消息堆积数；
+MessageRateInOut - 生产消费速率之和；
+MessageRateIn - 生产速率；
+MessageRateOut - 消费速率；
+                     * @return SortElement 排序依据的字段：
+MessageHeapCount - 消息堆积数；
+MessageRateInOut - 生产消费速率之和；
+MessageRateIn - 生产速率；
+MessageRateOut - 消费速率；
+                     * 
+                     */
+                    std::string GetSortElement() const;
+
+                    /**
+                     * 设置排序依据的字段：
+MessageHeapCount - 消息堆积数；
+MessageRateInOut - 生产消费速率之和；
+MessageRateIn - 生产速率；
+MessageRateOut - 消费速率；
+                     * @param _sortElement 排序依据的字段：
+MessageHeapCount - 消息堆积数；
+MessageRateInOut - 生产消费速率之和；
+MessageRateIn - 生产速率；
+MessageRateOut - 消费速率；
+                     * 
+                     */
+                    void SetSortElement(const std::string& _sortElement);
+
+                    /**
+                     * 判断参数 SortElement 是否已赋值
+                     * @return SortElement 是否已赋值
+                     * 
+                     */
+                    bool SortElementHasBeenSet() const;
+
+                    /**
+                     * 获取排序顺序，ascend 或 descend
+                     * @return SortOrder 排序顺序，ascend 或 descend
+                     * 
+                     */
+                    std::string GetSortOrder() const;
+
+                    /**
+                     * 设置排序顺序，ascend 或 descend
+                     * @param _sortOrder 排序顺序，ascend 或 descend
+                     * 
+                     */
+                    void SetSortOrder(const std::string& _sortOrder);
+
+                    /**
+                     * 判断参数 SortOrder 是否已赋值
+                     * @return SortOrder 是否已赋值
+                     * 
+                     */
+                    bool SortOrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +237,22 @@ namespace TencentCloud
                      */
                     Filter m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 排序依据的字段：
+MessageHeapCount - 消息堆积数；
+MessageRateInOut - 生产消费速率之和；
+MessageRateIn - 生产速率；
+MessageRateOut - 消费速率；
+                     */
+                    std::string m_sortElement;
+                    bool m_sortElementHasBeenSet;
+
+                    /**
+                     * 排序顺序，ascend 或 descend
+                     */
+                    std::string m_sortOrder;
+                    bool m_sortOrderHasBeenSet;
 
                 };
             }

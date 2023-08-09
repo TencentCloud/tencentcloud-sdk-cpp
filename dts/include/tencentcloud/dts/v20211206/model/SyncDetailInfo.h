@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/StepInfo.h>
+#include <tencentcloud/dts/v20211206/model/ErrInfo.h>
 
 
 namespace TencentCloud
@@ -123,18 +124,18 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取当前步骤进度
+                     * 获取当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentStepProgress 当前步骤进度
+                     * @return CurrentStepProgress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentStepProgress() const;
 
                     /**
-                     * 设置当前步骤进度
+                     * 设置当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _currentStepProgress 当前步骤进度
+                     * @param _currentStepProgress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,6 +273,31 @@ namespace TencentCloud
                      */
                     bool CauseOfCompareDisableHasBeenSet() const;
 
+                    /**
+                     * 获取任务的错误和解决方案信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrInfo 任务的错误和解决方案信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ErrInfo GetErrInfo() const;
+
+                    /**
+                     * 设置任务的错误和解决方案信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errInfo 任务的错误和解决方案信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrInfo(const ErrInfo& _errInfo);
+
+                    /**
+                     * 判断参数 ErrInfo 是否已赋值
+                     * @return ErrInfo 是否已赋值
+                     * 
+                     */
+                    bool ErrInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -296,7 +322,7 @@ namespace TencentCloud
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 当前步骤进度
+                     * 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentStepProgress;
@@ -336,6 +362,13 @@ namespace TencentCloud
                      */
                     std::string m_causeOfCompareDisable;
                     bool m_causeOfCompareDisableHasBeenSet;
+
+                    /**
+                     * 任务的错误和解决方案信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ErrInfo m_errInfo;
+                    bool m_errInfoHasBeenSet;
 
                 };
             }

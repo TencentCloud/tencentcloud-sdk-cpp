@@ -126,6 +126,69 @@ namespace TencentCloud
                      */
                     bool ExecutionGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取开始时间
+                     * @return StartTime 开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param _startTime 开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间
+                     * @return EndTime 结束时间
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置结束时间
+                     * @param _endTime 结束时间
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取责任人
+                     * @return InCharge 责任人
+                     * 
+                     */
+                    std::string GetInCharge() const;
+
+                    /**
+                     * 设置责任人
+                     * @param _inCharge 责任人
+                     * 
+                     */
+                    void SetInCharge(const std::string& _inCharge);
+
+                    /**
+                     * 判断参数 InCharge 是否已赋值
+                     * @return InCharge 是否已赋值
+                     * 
+                     */
+                    bool InChargeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +214,24 @@ namespace TencentCloud
                      */
                     std::string m_executionGroupName;
                     bool m_executionGroupNameHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 责任人
+                     */
+                    std::string m_inCharge;
+                    bool m_inChargeHasBeenSet;
 
                 };
             }

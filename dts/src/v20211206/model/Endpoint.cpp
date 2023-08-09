@@ -46,7 +46,8 @@ Endpoint::Endpoint() :
     m_tmpSecretKeyHasBeenSet(false),
     m_tmpTokenHasBeenSet(false),
     m_encryptConnHasBeenSet(false),
-    m_databaseNetEnvHasBeenSet(false)
+    m_databaseNetEnvHasBeenSet(false),
+    m_ccnOwnerUinHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,16 @@ CoreInternalOutcome Endpoint::Deserialize(const rapidjson::Value &value)
         m_databaseNetEnvHasBeenSet = true;
     }
 
+    if (value.HasMember("CcnOwnerUin") && !value["CcnOwnerUin"].IsNull())
+    {
+        if (!value["CcnOwnerUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Endpoint.CcnOwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccnOwnerUin = string(value["CcnOwnerUin"].GetString());
+        m_ccnOwnerUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +539,14 @@ void Endpoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DatabaseNetEnv";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_databaseNetEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ccnOwnerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcnOwnerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ccnOwnerUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -947,5 +966,21 @@ void Endpoint::SetDatabaseNetEnv(const string& _databaseNetEnv)
 bool Endpoint::DatabaseNetEnvHasBeenSet() const
 {
     return m_databaseNetEnvHasBeenSet;
+}
+
+string Endpoint::GetCcnOwnerUin() const
+{
+    return m_ccnOwnerUin;
+}
+
+void Endpoint::SetCcnOwnerUin(const string& _ccnOwnerUin)
+{
+    m_ccnOwnerUin = _ccnOwnerUin;
+    m_ccnOwnerUinHasBeenSet = true;
+}
+
+bool Endpoint::CcnOwnerUinHasBeenSet() const
+{
+    return m_ccnOwnerUinHasBeenSet;
 }
 

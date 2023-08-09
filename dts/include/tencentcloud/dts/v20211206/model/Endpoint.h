@@ -696,6 +696,31 @@ namespace TencentCloud
                      */
                     bool DatabaseNetEnvHasBeenSet() const;
 
+                    /**
+                     * 获取数据库为跨账号云联网下的实例时、表示云联网所属主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CcnOwnerUin 数据库为跨账号云联网下的实例时、表示云联网所属主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCcnOwnerUin() const;
+
+                    /**
+                     * 设置数据库为跨账号云联网下的实例时、表示云联网所属主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ccnOwnerUin 数据库为跨账号云联网下的实例时、表示云联网所属主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCcnOwnerUin(const std::string& _ccnOwnerUin);
+
+                    /**
+                     * 判断参数 CcnOwnerUin 是否已赋值
+                     * @return CcnOwnerUin 是否已赋值
+                     * 
+                     */
+                    bool CcnOwnerUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -879,6 +904,13 @@ namespace TencentCloud
                      */
                     std::string m_databaseNetEnv;
                     bool m_databaseNetEnvHasBeenSet;
+
+                    /**
+                     * 数据库为跨账号云联网下的实例时、表示云联网所属主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ccnOwnerUin;
+                    bool m_ccnOwnerUinHasBeenSet;
 
                 };
             }

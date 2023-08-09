@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取设备是否在线，0不在线，1在线
-                     * @return Online 设备是否在线，0不在线，1在线
+                     * 获取设备是否在线，0不在线，1在线，3未激活
+                     * @return Online 设备是否在线，0不在线，1在线，3未激活
                      * 
                      */
                     uint64_t GetOnline() const;
@@ -216,14 +216,14 @@ namespace TencentCloud
                     /**
                      * 获取NB IoT运营商处的DeviceID
                      * @return NbiotDeviceID NB IoT运营商处的DeviceID
-                     * 
+                     * @deprecated
                      */
                     std::string GetNbiotDeviceID() const;
 
                     /**
                      * 判断参数 NbiotDeviceID 是否已赋值
                      * @return NbiotDeviceID 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NbiotDeviceIDHasBeenSet() const;
 
@@ -415,6 +415,20 @@ namespace TencentCloud
                      */
                     bool CreateUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取NB IoT运营商处的DeviceID
+                     * @return NBIoTDeviceID NB IoT运营商处的DeviceID
+                     * 
+                     */
+                    std::string GetNBIoTDeviceID() const;
+
+                    /**
+                     * 判断参数 NBIoTDeviceID 是否已赋值
+                     * @return NBIoTDeviceID 是否已赋值
+                     * 
+                     */
+                    bool NBIoTDeviceIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -424,7 +438,7 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 设备是否在线，0不在线，1在线
+                     * 设备是否在线，0不在线，1在线，3未激活
                      */
                     uint64_t m_online;
                     bool m_onlineHasBeenSet;
@@ -576,6 +590,12 @@ namespace TencentCloud
                      */
                     uint64_t m_createUserId;
                     bool m_createUserIdHasBeenSet;
+
+                    /**
+                     * NB IoT运营商处的DeviceID
+                     */
+                    std::string m_nBIoTDeviceID;
+                    bool m_nBIoTDeviceIDHasBeenSet;
 
                 };
             }

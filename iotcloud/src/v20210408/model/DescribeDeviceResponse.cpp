@@ -48,7 +48,8 @@ DescribeDeviceResponse::DescribeDeviceResponse() :
     m_labelsHasBeenSet(false),
     m_clientIPHasBeenSet(false),
     m_firmwareUpdateTimeHasBeenSet(false),
-    m_createUserIdHasBeenSet(false)
+    m_createUserIdHasBeenSet(false),
+    m_nBIoTDeviceIDHasBeenSet(false)
 {
 }
 
@@ -356,6 +357,16 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
         m_createUserIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NBIoTDeviceID") && !rsp["NBIoTDeviceID"].IsNull())
+    {
+        if (!rsp["NBIoTDeviceID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NBIoTDeviceID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nBIoTDeviceID = string(rsp["NBIoTDeviceID"].GetString());
+        m_nBIoTDeviceIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -578,6 +589,14 @@ string DescribeDeviceResponse::ToJsonString() const
         string key = "CreateUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createUserId, allocator);
+    }
+
+    if (m_nBIoTDeviceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NBIoTDeviceID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nBIoTDeviceID.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -840,6 +859,16 @@ uint64_t DescribeDeviceResponse::GetCreateUserId() const
 bool DescribeDeviceResponse::CreateUserIdHasBeenSet() const
 {
     return m_createUserIdHasBeenSet;
+}
+
+string DescribeDeviceResponse::GetNBIoTDeviceID() const
+{
+    return m_nBIoTDeviceID;
+}
+
+bool DescribeDeviceResponse::NBIoTDeviceIDHasBeenSet() const
+{
+    return m_nBIoTDeviceIDHasBeenSet;
 }
 
 

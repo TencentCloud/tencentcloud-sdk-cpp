@@ -43,7 +43,9 @@ DescribeMigrationDetailResponse::DescribeMigrationDetailResponse() :
     m_migrateOptionHasBeenSet(false),
     m_checkStepInfoHasBeenSet(false),
     m_tradeInfoHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
+    m_errorInfoHasBeenSet(false),
+    m_dumperResumeCtrlHasBeenSet(false),
+    m_rateLimitOptionHasBeenSet(false)
 {
 }
 
@@ -357,6 +359,33 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
         m_errorInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DumperResumeCtrl") && !rsp["DumperResumeCtrl"].IsNull())
+    {
+        if (!rsp["DumperResumeCtrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DumperResumeCtrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dumperResumeCtrl = string(rsp["DumperResumeCtrl"].GetString());
+        m_dumperResumeCtrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RateLimitOption") && !rsp["RateLimitOption"].IsNull())
+    {
+        if (!rsp["RateLimitOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rateLimitOption.Deserialize(rsp["RateLimitOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rateLimitOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +576,23 @@ string DescribeMigrationDetailResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dumperResumeCtrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DumperResumeCtrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dumperResumeCtrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rateLimitOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateLimitOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rateLimitOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -759,6 +805,26 @@ vector<ErrorInfoItem> DescribeMigrationDetailResponse::GetErrorInfo() const
 bool DescribeMigrationDetailResponse::ErrorInfoHasBeenSet() const
 {
     return m_errorInfoHasBeenSet;
+}
+
+string DescribeMigrationDetailResponse::GetDumperResumeCtrl() const
+{
+    return m_dumperResumeCtrl;
+}
+
+bool DescribeMigrationDetailResponse::DumperResumeCtrlHasBeenSet() const
+{
+    return m_dumperResumeCtrlHasBeenSet;
+}
+
+RateLimitOption DescribeMigrationDetailResponse::GetRateLimitOption() const
+{
+    return m_rateLimitOption;
+}
+
+bool DescribeMigrationDetailResponse::RateLimitOptionHasBeenSet() const
+{
+    return m_rateLimitOptionHasBeenSet;
 }
 
 

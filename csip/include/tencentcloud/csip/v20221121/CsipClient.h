@@ -41,6 +41,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDbAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDomainAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDomainAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeListenerListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeListenerListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribePublicIpAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribePublicIpAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewPortRiskListRequest.h>
@@ -94,6 +96,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainAssetsResponse> DescribeDomainAssetsOutcome;
                 typedef std::future<DescribeDomainAssetsOutcome> DescribeDomainAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDomainAssetsRequest&, DescribeDomainAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeListenerListResponse> DescribeListenerListOutcome;
+                typedef std::future<DescribeListenerListOutcome> DescribeListenerListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeListenerListRequest&, DescribeListenerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenerListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePublicIpAssetsResponse> DescribePublicIpAssetsOutcome;
                 typedef std::future<DescribePublicIpAssetsOutcome> DescribePublicIpAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribePublicIpAssetsRequest&, DescribePublicIpAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicIpAssetsAsyncHandler;
@@ -195,6 +200,15 @@ namespace TencentCloud
                 DescribeDomainAssetsOutcome DescribeDomainAssets(const Model::DescribeDomainAssetsRequest &request);
                 void DescribeDomainAssetsAsync(const Model::DescribeDomainAssetsRequest& request, const DescribeDomainAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainAssetsOutcomeCallable DescribeDomainAssetsCallable(const Model::DescribeDomainAssetsRequest& request);
+
+                /**
+                 *查询clb监听器列表
+                 * @param req DescribeListenerListRequest
+                 * @return DescribeListenerListOutcome
+                 */
+                DescribeListenerListOutcome DescribeListenerList(const Model::DescribeListenerListRequest &request);
+                void DescribeListenerListAsync(const Model::DescribeListenerListRequest& request, const DescribeListenerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeListenerListOutcomeCallable DescribeListenerListCallable(const Model::DescribeListenerListRequest& request);
 
                 /**
                  *ip公网列表

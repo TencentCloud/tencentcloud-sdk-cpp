@@ -35,7 +35,8 @@ DescribeCertificatesRequest::DescribeCertificatesRequest() :
     m_renewHasBeenSet(false),
     m_filterSourceHasBeenSet(false),
     m_isSMHasBeenSet(false),
-    m_filterExpiringHasBeenSet(false)
+    m_filterExpiringHasBeenSet(false),
+    m_hostableHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string DescribeCertificatesRequest::ToJsonString() const
         string key = "FilterExpiring";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterExpiring, allocator);
+    }
+
+    if (m_hostableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Hostable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hostable, allocator);
     }
 
 
@@ -369,6 +378,22 @@ void DescribeCertificatesRequest::SetFilterExpiring(const uint64_t& _filterExpir
 bool DescribeCertificatesRequest::FilterExpiringHasBeenSet() const
 {
     return m_filterExpiringHasBeenSet;
+}
+
+uint64_t DescribeCertificatesRequest::GetHostable() const
+{
+    return m_hostable;
+}
+
+void DescribeCertificatesRequest::SetHostable(const uint64_t& _hostable)
+{
+    m_hostable = _hostable;
+    m_hostableHasBeenSet = true;
+}
+
+bool DescribeCertificatesRequest::HostableHasBeenSet() const
+{
+    return m_hostableHasBeenSet;
 }
 
 

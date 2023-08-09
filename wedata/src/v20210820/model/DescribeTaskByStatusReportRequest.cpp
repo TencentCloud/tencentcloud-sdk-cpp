@@ -28,7 +28,11 @@ DescribeTaskByStatusReportRequest::DescribeTaskByStatusReportRequest() :
     m_taskTypeHasBeenSet(false),
     m_typeNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_aggregationUnitHasBeenSet(false),
+    m_cycleUnitHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_inChargeHasBeenSet(false)
 {
 }
 
@@ -85,6 +89,38 @@ string DescribeTaskByStatusReportRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aggregationUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AggregationUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_aggregationUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cycleUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CycleUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cycleUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inChargeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InCharge";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inCharge.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +225,70 @@ void DescribeTaskByStatusReportRequest::SetEndTime(const string& _endTime)
 bool DescribeTaskByStatusReportRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeTaskByStatusReportRequest::GetAggregationUnit() const
+{
+    return m_aggregationUnit;
+}
+
+void DescribeTaskByStatusReportRequest::SetAggregationUnit(const string& _aggregationUnit)
+{
+    m_aggregationUnit = _aggregationUnit;
+    m_aggregationUnitHasBeenSet = true;
+}
+
+bool DescribeTaskByStatusReportRequest::AggregationUnitHasBeenSet() const
+{
+    return m_aggregationUnitHasBeenSet;
+}
+
+string DescribeTaskByStatusReportRequest::GetCycleUnit() const
+{
+    return m_cycleUnit;
+}
+
+void DescribeTaskByStatusReportRequest::SetCycleUnit(const string& _cycleUnit)
+{
+    m_cycleUnit = _cycleUnit;
+    m_cycleUnitHasBeenSet = true;
+}
+
+bool DescribeTaskByStatusReportRequest::CycleUnitHasBeenSet() const
+{
+    return m_cycleUnitHasBeenSet;
+}
+
+string DescribeTaskByStatusReportRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeTaskByStatusReportRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeTaskByStatusReportRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DescribeTaskByStatusReportRequest::GetInCharge() const
+{
+    return m_inCharge;
+}
+
+void DescribeTaskByStatusReportRequest::SetInCharge(const string& _inCharge)
+{
+    m_inCharge = _inCharge;
+    m_inChargeHasBeenSet = true;
+}
+
+bool DescribeTaskByStatusReportRequest::InChargeHasBeenSet() const
+{
+    return m_inChargeHasBeenSet;
 }
 
 

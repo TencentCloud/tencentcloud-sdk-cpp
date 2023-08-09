@@ -456,6 +456,81 @@ namespace TencentCloud
                      */
                     bool PortHasBeenSet() const;
 
+                    /**
+                     * 获取TCB环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnvId TCB环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置TCB环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _envId TCB环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
+                     * 获取部署的TCB类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TCBType 部署的TCB类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTCBType() const;
+
+                    /**
+                     * 设置部署的TCB类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tCBType 部署的TCB类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTCBType(const std::string& _tCBType);
+
+                    /**
+                     * 判断参数 TCBType 是否已赋值
+                     * @return TCBType 是否已赋值
+                     * 
+                     */
+                    bool TCBTypeHasBeenSet() const;
+
+                    /**
+                     * 获取部署的TCB地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 部署的TCB地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置部署的TCB地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _region 部署的TCB地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -573,6 +648,27 @@ namespace TencentCloud
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
+
+                    /**
+                     * TCB环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
+
+                    /**
+                     * 部署的TCB类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tCBType;
+                    bool m_tCBTypeHasBeenSet;
+
+                    /**
+                     * 部署的TCB地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

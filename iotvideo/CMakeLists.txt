@@ -343,6 +343,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/BalanceTransaction.h
   include/tencentcloud/iotvideo/v20211125/model/FirmwareTaskInfo.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeProductDynamicRegisterRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/ResetCloudStorageEventRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTaskDistributionResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeBatchResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DeviceSignatureInfo.h
@@ -386,6 +387,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/CallTRTCDeviceResponse.h
   include/tencentcloud/iotvideo/v20211125/model/ModifyDeviceLogLevelResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CreateDataForwardRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/ResetCloudStorageEventResponse.h
   include/tencentcloud/iotvideo/v20211125/model/BatchUpdateFirmwareRequest.h
   include/tencentcloud/iotvideo/v20211125/model/ModifyProductDynamicRegisterRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataStatsResponse.h
@@ -913,6 +915,7 @@ set(iotvideo_src
   src/v20211125/model/BalanceTransaction.cpp
   src/v20211125/model/FirmwareTaskInfo.cpp
   src/v20211125/model/DescribeProductDynamicRegisterRequest.cpp
+  src/v20211125/model/ResetCloudStorageEventRequest.cpp
   src/v20211125/model/DescribeFirmwareTaskDistributionResponse.cpp
   src/v20211125/model/DescribeBatchResponse.cpp
   src/v20211125/model/DeviceSignatureInfo.cpp
@@ -956,6 +959,7 @@ set(iotvideo_src
   src/v20211125/model/CallTRTCDeviceResponse.cpp
   src/v20211125/model/ModifyDeviceLogLevelResponse.cpp
   src/v20211125/model/CreateDataForwardRequest.cpp
+  src/v20211125/model/ResetCloudStorageEventResponse.cpp
   src/v20211125/model/BatchUpdateFirmwareRequest.cpp
   src/v20211125/model/ModifyProductDynamicRegisterRequest.cpp
   src/v20211125/model/DescribeDeviceDataStatsResponse.cpp

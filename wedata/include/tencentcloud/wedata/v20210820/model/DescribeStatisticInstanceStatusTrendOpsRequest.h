@@ -210,6 +210,111 @@ namespace TencentCloud
                      */
                     bool ExecutionGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取1
+                     * @return InCharge 1
+                     * 
+                     */
+                    std::string GetInCharge() const;
+
+                    /**
+                     * 设置1
+                     * @param _inCharge 1
+                     * 
+                     */
+                    void SetInCharge(const std::string& _inCharge);
+
+                    /**
+                     * 判断参数 InCharge 是否已赋值
+                     * @return InCharge 是否已赋值
+                     * 
+                     */
+                    bool InChargeHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return TaskType 1
+                     * 
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置1
+                     * @param _taskType 1
+                     * 
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return StateList 1
+                     * 
+                     */
+                    std::vector<int64_t> GetStateList() const;
+
+                    /**
+                     * 设置1
+                     * @param _stateList 1
+                     * 
+                     */
+                    void SetStateList(const std::vector<int64_t>& _stateList);
+
+                    /**
+                     * 判断参数 StateList 是否已赋值
+                     * @return StateList 是否已赋值
+                     * 
+                     */
+                    bool StateListHasBeenSet() const;
+
+                    /**
+                     * 获取D代表天，H代表小时
+                     * @return AggregationUnit D代表天，H代表小时
+                     * 
+                     */
+                    std::string GetAggregationUnit() const;
+
+                    /**
+                     * 设置D代表天，H代表小时
+                     * @param _aggregationUnit D代表天，H代表小时
+                     * 
+                     */
+                    void SetAggregationUnit(const std::string& _aggregationUnit);
+
+                    /**
+                     * 判断参数 AggregationUnit 是否已赋值
+                     * @return AggregationUnit 是否已赋值
+                     * 
+                     */
+                    bool AggregationUnitHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return AverageWindowSize 1
+                     * 
+                     */
+                    int64_t GetAverageWindowSize() const;
+
+                    /**
+                     * 设置1
+                     * @param _averageWindowSize 1
+                     * 
+                     */
+                    void SetAverageWindowSize(const int64_t& _averageWindowSize);
+
+                    /**
+                     * 判断参数 AverageWindowSize 是否已赋值
+                     * @return AverageWindowSize 是否已赋值
+                     * 
+                     */
+                    bool AverageWindowSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +364,36 @@ namespace TencentCloud
                      */
                     std::string m_executionGroupName;
                     bool m_executionGroupNameHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    std::string m_inCharge;
+                    bool m_inChargeHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    std::vector<int64_t> m_stateList;
+                    bool m_stateListHasBeenSet;
+
+                    /**
+                     * D代表天，H代表小时
+                     */
+                    std::string m_aggregationUnit;
+                    bool m_aggregationUnitHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    int64_t m_averageWindowSize;
+                    bool m_averageWindowSizeHasBeenSet;
 
                 };
             }

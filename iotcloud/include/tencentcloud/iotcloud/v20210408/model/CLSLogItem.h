@@ -196,23 +196,44 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云账号
                      * @return Userid 腾讯云账号
-                     * 
+                     * @deprecated
                      */
                     std::string GetUserid() const;
 
                     /**
                      * 设置腾讯云账号
                      * @param _userid 腾讯云账号
-                     * 
+                     * @deprecated
                      */
                     void SetUserid(const std::string& _userid);
 
                     /**
                      * 判断参数 Userid 是否已赋值
                      * @return Userid 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UseridHasBeenSet() const;
+
+                    /**
+                     * 获取腾讯云账号
+                     * @return UserId 腾讯云账号
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置腾讯云账号
+                     * @param _userId 腾讯云账号
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
 
                 private:
 
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     std::string m_userid;
                     bool m_useridHasBeenSet;
+
+                    /**
+                     * 腾讯云账号
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

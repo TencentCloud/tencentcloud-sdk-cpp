@@ -261,21 +261,21 @@ namespace TencentCloud
                     /**
                      * 获取NB IOT运营商处的DeviceID
                      * @return NbiotDeviceID NB IOT运营商处的DeviceID
-                     * 
+                     * @deprecated
                      */
                     std::string GetNbiotDeviceID() const;
 
                     /**
                      * 设置NB IOT运营商处的DeviceID
                      * @param _nbiotDeviceID NB IOT运营商处的DeviceID
-                     * 
+                     * @deprecated
                      */
                     void SetNbiotDeviceID(const std::string& _nbiotDeviceID);
 
                     /**
                      * 判断参数 NbiotDeviceID 是否已赋值
                      * @return NbiotDeviceID 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NbiotDeviceIDHasBeenSet() const;
 
@@ -613,6 +613,27 @@ namespace TencentCloud
                      */
                     bool CreateUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取NB IOT运营商处的DeviceID
+                     * @return NBIoTDeviceID NB IOT运营商处的DeviceID
+                     * 
+                     */
+                    std::string GetNBIoTDeviceID() const;
+
+                    /**
+                     * 设置NB IOT运营商处的DeviceID
+                     * @param _nBIoTDeviceID NB IOT运营商处的DeviceID
+                     * 
+                     */
+                    void SetNBIoTDeviceID(const std::string& _nBIoTDeviceID);
+
+                    /**
+                     * 判断参数 NBIoTDeviceID 是否已赋值
+                     * @return NBIoTDeviceID 是否已赋值
+                     * 
+                     */
+                    bool NBIoTDeviceIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -774,6 +795,12 @@ namespace TencentCloud
                      */
                     uint64_t m_createUserId;
                     bool m_createUserIdHasBeenSet;
+
+                    /**
+                     * NB IOT运营商处的DeviceID
+                     */
+                    std::string m_nBIoTDeviceID;
+                    bool m_nBIoTDeviceIDHasBeenSet;
 
                 };
             }

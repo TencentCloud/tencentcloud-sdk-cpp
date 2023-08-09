@@ -40,7 +40,9 @@ UpdateRecordDetail::UpdateRecordDetail() :
     m_bucketHasBeenSet(false),
     m_portHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_secretNameHasBeenSet(false)
+    m_secretNameHasBeenSet(false),
+    m_envIdHasBeenSet(false),
+    m_tCBTypeHasBeenSet(false)
 {
 }
 
@@ -252,6 +254,26 @@ CoreInternalOutcome UpdateRecordDetail::Deserialize(const rapidjson::Value &valu
         m_secretNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvId") && !value["EnvId"].IsNull())
+    {
+        if (!value["EnvId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetail.EnvId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_envId = string(value["EnvId"].GetString());
+        m_envIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TCBType") && !value["TCBType"].IsNull())
+    {
+        if (!value["TCBType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetail.TCBType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tCBType = string(value["TCBType"].GetString());
+        m_tCBTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +444,22 @@ void UpdateRecordDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SecretName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tCBTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TCBType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tCBType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -745,5 +783,37 @@ void UpdateRecordDetail::SetSecretName(const string& _secretName)
 bool UpdateRecordDetail::SecretNameHasBeenSet() const
 {
     return m_secretNameHasBeenSet;
+}
+
+string UpdateRecordDetail::GetEnvId() const
+{
+    return m_envId;
+}
+
+void UpdateRecordDetail::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool UpdateRecordDetail::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
+
+string UpdateRecordDetail::GetTCBType() const
+{
+    return m_tCBType;
+}
+
+void UpdateRecordDetail::SetTCBType(const string& _tCBType)
+{
+    m_tCBType = _tCBType;
+    m_tCBTypeHasBeenSet = true;
+}
+
+bool UpdateRecordDetail::TCBTypeHasBeenSet() const
+{
+    return m_tCBTypeHasBeenSet;
 }
 

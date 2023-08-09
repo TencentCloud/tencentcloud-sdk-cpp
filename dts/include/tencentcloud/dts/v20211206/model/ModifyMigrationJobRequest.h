@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool RunModeHasBeenSet() const;
 
                     /**
-                     * 获取迁移任务配置选项，描述任务如何执行迁移等一系列配置信息
-                     * @return MigrateOption 迁移任务配置选项，描述任务如何执行迁移等一系列配置信息
+                     * 获取迁移任务配置选项，描述任务如何执行迁移等一系列配置信息；字段下的RateLimitOption不可配置、如果需要修改任务的限速信息、请在任务运行后通过ModifyMigrateRateLimit接口修改
+                     * @return MigrateOption 迁移任务配置选项，描述任务如何执行迁移等一系列配置信息；字段下的RateLimitOption不可配置、如果需要修改任务的限速信息、请在任务运行后通过ModifyMigrateRateLimit接口修改
                      * 
                      */
                     MigrateOption GetMigrateOption() const;
 
                     /**
-                     * 设置迁移任务配置选项，描述任务如何执行迁移等一系列配置信息
-                     * @param _migrateOption 迁移任务配置选项，描述任务如何执行迁移等一系列配置信息
+                     * 设置迁移任务配置选项，描述任务如何执行迁移等一系列配置信息；字段下的RateLimitOption不可配置、如果需要修改任务的限速信息、请在任务运行后通过ModifyMigrateRateLimit接口修改
+                     * @param _migrateOption 迁移任务配置选项，描述任务如何执行迁移等一系列配置信息；字段下的RateLimitOption不可配置、如果需要修改任务的限速信息、请在任务运行后通过ModifyMigrateRateLimit接口修改
                      * 
                      */
                     void SetMigrateOption(const MigrateOption& _migrateOption);
@@ -249,7 +249,7 @@ namespace TencentCloud
                     bool m_runModeHasBeenSet;
 
                     /**
-                     * 迁移任务配置选项，描述任务如何执行迁移等一系列配置信息
+                     * 迁移任务配置选项，描述任务如何执行迁移等一系列配置信息；字段下的RateLimitOption不可配置、如果需要修改任务的限速信息、请在任务运行后通过ModifyMigrateRateLimit接口修改
                      */
                     MigrateOption m_migrateOption;
                     bool m_migrateOptionHasBeenSet;

@@ -30,7 +30,12 @@ DescribeStatisticInstanceStatusTrendOpsRequest::DescribeStatisticInstanceStatusT
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_executionGroupIdHasBeenSet(false),
-    m_executionGroupNameHasBeenSet(false)
+    m_executionGroupNameHasBeenSet(false),
+    m_inChargeHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_stateListHasBeenSet(false),
+    m_aggregationUnitHasBeenSet(false),
+    m_averageWindowSizeHasBeenSet(false)
 {
 }
 
@@ -103,6 +108,51 @@ string DescribeStatisticInstanceStatusTrendOpsRequest::ToJsonString() const
         string key = "ExecutionGroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_executionGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inChargeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InCharge";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inCharge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_stateListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StateList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_stateList.begin(); itr != m_stateList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_aggregationUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AggregationUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_aggregationUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_averageWindowSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AverageWindowSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_averageWindowSize, allocator);
     }
 
 
@@ -239,6 +289,86 @@ void DescribeStatisticInstanceStatusTrendOpsRequest::SetExecutionGroupName(const
 bool DescribeStatisticInstanceStatusTrendOpsRequest::ExecutionGroupNameHasBeenSet() const
 {
     return m_executionGroupNameHasBeenSet;
+}
+
+string DescribeStatisticInstanceStatusTrendOpsRequest::GetInCharge() const
+{
+    return m_inCharge;
+}
+
+void DescribeStatisticInstanceStatusTrendOpsRequest::SetInCharge(const string& _inCharge)
+{
+    m_inCharge = _inCharge;
+    m_inChargeHasBeenSet = true;
+}
+
+bool DescribeStatisticInstanceStatusTrendOpsRequest::InChargeHasBeenSet() const
+{
+    return m_inChargeHasBeenSet;
+}
+
+int64_t DescribeStatisticInstanceStatusTrendOpsRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void DescribeStatisticInstanceStatusTrendOpsRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool DescribeStatisticInstanceStatusTrendOpsRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+vector<int64_t> DescribeStatisticInstanceStatusTrendOpsRequest::GetStateList() const
+{
+    return m_stateList;
+}
+
+void DescribeStatisticInstanceStatusTrendOpsRequest::SetStateList(const vector<int64_t>& _stateList)
+{
+    m_stateList = _stateList;
+    m_stateListHasBeenSet = true;
+}
+
+bool DescribeStatisticInstanceStatusTrendOpsRequest::StateListHasBeenSet() const
+{
+    return m_stateListHasBeenSet;
+}
+
+string DescribeStatisticInstanceStatusTrendOpsRequest::GetAggregationUnit() const
+{
+    return m_aggregationUnit;
+}
+
+void DescribeStatisticInstanceStatusTrendOpsRequest::SetAggregationUnit(const string& _aggregationUnit)
+{
+    m_aggregationUnit = _aggregationUnit;
+    m_aggregationUnitHasBeenSet = true;
+}
+
+bool DescribeStatisticInstanceStatusTrendOpsRequest::AggregationUnitHasBeenSet() const
+{
+    return m_aggregationUnitHasBeenSet;
+}
+
+int64_t DescribeStatisticInstanceStatusTrendOpsRequest::GetAverageWindowSize() const
+{
+    return m_averageWindowSize;
+}
+
+void DescribeStatisticInstanceStatusTrendOpsRequest::SetAverageWindowSize(const int64_t& _averageWindowSize)
+{
+    m_averageWindowSize = _averageWindowSize;
+    m_averageWindowSizeHasBeenSet = true;
+}
+
+bool DescribeStatisticInstanceStatusTrendOpsRequest::AverageWindowSizeHasBeenSet() const
+{
+    return m_averageWindowSizeHasBeenSet;
 }
 
 

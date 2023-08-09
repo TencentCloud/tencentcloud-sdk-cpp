@@ -28,7 +28,9 @@ Options::Options() :
     m_opTypesHasBeenSet(false),
     m_conflictHandleOptionHasBeenSet(false),
     m_ddlOptionsHasBeenSet(false),
-    m_kafkaOptionHasBeenSet(false)
+    m_kafkaOptionHasBeenSet(false),
+    m_rateLimitOptionHasBeenSet(false),
+    m_autoRetryTimeRangeMinutesHasBeenSet(false)
 {
 }
 
@@ -144,6 +146,33 @@ CoreInternalOutcome Options::Deserialize(const rapidjson::Value &value)
         m_kafkaOptionHasBeenSet = true;
     }
 
+    if (value.HasMember("RateLimitOption") && !value["RateLimitOption"].IsNull())
+    {
+        if (!value["RateLimitOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Options.RateLimitOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rateLimitOption.Deserialize(value["RateLimitOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rateLimitOptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRetryTimeRangeMinutes") && !value["AutoRetryTimeRangeMinutes"].IsNull())
+    {
+        if (!value["AutoRetryTimeRangeMinutes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Options.AutoRetryTimeRangeMinutes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRetryTimeRangeMinutes = value["AutoRetryTimeRangeMinutes"].GetInt64();
+        m_autoRetryTimeRangeMinutesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -227,6 +256,23 @@ void Options::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_kafkaOption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rateLimitOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateLimitOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rateLimitOption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_autoRetryTimeRangeMinutesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRetryTimeRangeMinutes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRetryTimeRangeMinutes, allocator);
     }
 
 }
@@ -358,5 +404,37 @@ void Options::SetKafkaOption(const KafkaOption& _kafkaOption)
 bool Options::KafkaOptionHasBeenSet() const
 {
     return m_kafkaOptionHasBeenSet;
+}
+
+RateLimitOption Options::GetRateLimitOption() const
+{
+    return m_rateLimitOption;
+}
+
+void Options::SetRateLimitOption(const RateLimitOption& _rateLimitOption)
+{
+    m_rateLimitOption = _rateLimitOption;
+    m_rateLimitOptionHasBeenSet = true;
+}
+
+bool Options::RateLimitOptionHasBeenSet() const
+{
+    return m_rateLimitOptionHasBeenSet;
+}
+
+int64_t Options::GetAutoRetryTimeRangeMinutes() const
+{
+    return m_autoRetryTimeRangeMinutes;
+}
+
+void Options::SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes)
+{
+    m_autoRetryTimeRangeMinutes = _autoRetryTimeRangeMinutes;
+    m_autoRetryTimeRangeMinutesHasBeenSet = true;
+}
+
+bool Options::AutoRetryTimeRangeMinutesHasBeenSet() const
+{
+    return m_autoRetryTimeRangeMinutesHasBeenSet;
 }
 

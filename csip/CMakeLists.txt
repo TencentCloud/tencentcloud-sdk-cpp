@@ -42,6 +42,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/Vpc.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewVULRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetsRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeListenerListResponse.h
   include/tencentcloud/csip/v20221121/model/TaskAdvanceCFG.h
   include/tencentcloud/csip/v20221121/model/DBAssetVO.h
   include/tencentcloud/csip/v20221121/model/ScanTaskInfo.h
@@ -51,6 +52,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeSubnetAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetInfoRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewPortRiskListRequest.h
+  include/tencentcloud/csip/v20221121/model/ClbListenerListInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVpcAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/TaskAssetObject.h
@@ -62,6 +64,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeClusterPodAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/AssetBaseInfoResponse.h
   include/tencentcloud/csip/v20221121/model/AssetViewPortRisk.h
+  include/tencentcloud/csip/v20221121/model/DescribeListenerListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDomainAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/CreateDomainAndIpResponse.h
   include/tencentcloud/csip/v20221121/model/DescribePublicIpAssetsRequest.h
@@ -97,6 +100,7 @@ set(csip_src
   src/v20221121/model/Vpc.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewVULRiskListResponse.cpp
   src/v20221121/model/DescribeCVMAssetsRequest.cpp
+  src/v20221121/model/DescribeListenerListResponse.cpp
   src/v20221121/model/TaskAdvanceCFG.cpp
   src/v20221121/model/DBAssetVO.cpp
   src/v20221121/model/ScanTaskInfo.cpp
@@ -106,6 +110,7 @@ set(csip_src
   src/v20221121/model/DescribeSubnetAssetsResponse.cpp
   src/v20221121/model/DescribeDbAssetInfoRequest.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewPortRiskListRequest.cpp
+  src/v20221121/model/ClbListenerListInfo.cpp
   src/v20221121/model/DescribeCVMAssetsResponse.cpp
   src/v20221121/model/DescribeVpcAssetsRequest.cpp
   src/v20221121/model/TaskAssetObject.cpp
@@ -117,6 +122,7 @@ set(csip_src
   src/v20221121/model/DescribeClusterPodAssetsResponse.cpp
   src/v20221121/model/AssetBaseInfoResponse.cpp
   src/v20221121/model/AssetViewPortRisk.cpp
+  src/v20221121/model/DescribeListenerListRequest.cpp
   src/v20221121/model/DescribeDomainAssetsRequest.cpp
   src/v20221121/model/CreateDomainAndIpResponse.cpp
   src/v20221121/model/DescribePublicIpAssetsRequest.cpp

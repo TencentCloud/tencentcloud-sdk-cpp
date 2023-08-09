@@ -25,7 +25,9 @@ InstanceStatisticInfo::InstanceStatisticInfo() :
     m_timeListHasBeenSet(false),
     m_instanceStatusHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
-    m_showTimeHasBeenSet(false)
+    m_showTimeHasBeenSet(false),
+    m_reportTimeHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -90,6 +92,26 @@ CoreInternalOutcome InstanceStatisticInfo::Deserialize(const rapidjson::Value &v
         m_showTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ReportTime") && !value["ReportTime"].IsNull())
+    {
+        if (!value["ReportTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceStatisticInfo.ReportTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportTime = string(value["ReportTime"].GetString());
+        m_reportTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Count") && !value["Count"].IsNull())
+    {
+        if (!value["Count"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceStatisticInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = value["Count"].GetInt64();
+        m_countHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +167,22 @@ void InstanceStatisticInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ShowTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_showTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reportTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
     }
 
 }
@@ -228,5 +266,37 @@ void InstanceStatisticInfo::SetShowTime(const string& _showTime)
 bool InstanceStatisticInfo::ShowTimeHasBeenSet() const
 {
     return m_showTimeHasBeenSet;
+}
+
+string InstanceStatisticInfo::GetReportTime() const
+{
+    return m_reportTime;
+}
+
+void InstanceStatisticInfo::SetReportTime(const string& _reportTime)
+{
+    m_reportTime = _reportTime;
+    m_reportTimeHasBeenSet = true;
+}
+
+bool InstanceStatisticInfo::ReportTimeHasBeenSet() const
+{
+    return m_reportTimeHasBeenSet;
+}
+
+int64_t InstanceStatisticInfo::GetCount() const
+{
+    return m_count;
+}
+
+void InstanceStatisticInfo::SetCount(const int64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool InstanceStatisticInfo::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 

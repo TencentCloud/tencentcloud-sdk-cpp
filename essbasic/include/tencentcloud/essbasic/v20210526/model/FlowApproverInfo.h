@@ -80,27 +80,31 @@ RecipientId参数：
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取签署人身份证件类型
+                     * 获取签署人的证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-                     * @return IdCardType 签署人身份证件类型
+4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
+                     * @return IdCardType 签署人的证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                      * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置签署人身份证件类型
+                     * 设置签署人的证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-                     * @param _idCardType 签署人身份证件类型
+4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
+                     * @param _idCardType 签署人的证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -113,15 +117,15 @@ RecipientId参数：
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署人证件号
-                     * @return IdCardNumber 签署人证件号
+                     * 获取签署人证件号（长度不超过18位）
+                     * @return IdCardNumber 签署人证件号（长度不超过18位）
                      * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置签署人证件号
-                     * @param _idCardNumber 签署人证件号
+                     * 设置签署人证件号（长度不超过18位）
+                     * @param _idCardNumber 签署人证件号（长度不超过18位）
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -601,16 +605,17 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 签署人身份证件类型
+                     * 签署人的证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 签署人证件号
+                     * 签署人证件号（长度不超过18位）
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;

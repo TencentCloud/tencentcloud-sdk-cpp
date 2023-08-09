@@ -27,7 +27,9 @@ DescribeSchedulerRunTimeInstanceCntByStatusRequest::DescribeSchedulerRunTimeInst
     m_cycleUnitHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_inChargeHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string DescribeSchedulerRunTimeInstanceCntByStatusRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_inChargeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InCharge";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inCharge.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void DescribeSchedulerRunTimeInstanceCntByStatusRequest::SetEndTime(const string
 bool DescribeSchedulerRunTimeInstanceCntByStatusRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+int64_t DescribeSchedulerRunTimeInstanceCntByStatusRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void DescribeSchedulerRunTimeInstanceCntByStatusRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool DescribeSchedulerRunTimeInstanceCntByStatusRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+string DescribeSchedulerRunTimeInstanceCntByStatusRequest::GetInCharge() const
+{
+    return m_inCharge;
+}
+
+void DescribeSchedulerRunTimeInstanceCntByStatusRequest::SetInCharge(const string& _inCharge)
+{
+    m_inCharge = _inCharge;
+    m_inChargeHasBeenSet = true;
+}
+
+bool DescribeSchedulerRunTimeInstanceCntByStatusRequest::InChargeHasBeenSet() const
+{
+    return m_inChargeHasBeenSet;
 }
 
 

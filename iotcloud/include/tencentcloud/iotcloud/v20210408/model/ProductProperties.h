@@ -179,21 +179,21 @@ namespace TencentCloud
                     /**
                      * 获取LoRa产品运营侧APPEUI，只有LoRa产品需要填写
                      * @return Appeui LoRa产品运营侧APPEUI，只有LoRa产品需要填写
-                     * 
+                     * @deprecated
                      */
                     std::string GetAppeui() const;
 
                     /**
                      * 设置LoRa产品运营侧APPEUI，只有LoRa产品需要填写
                      * @param _appeui LoRa产品运营侧APPEUI，只有LoRa产品需要填写
-                     * 
+                     * @deprecated
                      */
                     void SetAppeui(const std::string& _appeui);
 
                     /**
                      * 判断参数 Appeui 是否已赋值
                      * @return Appeui 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AppeuiHasBeenSet() const;
 
@@ -428,6 +428,27 @@ namespace TencentCloud
                      */
                     bool ForbiddenStatusHasBeenSet() const;
 
+                    /**
+                     * 获取LoRa产品运营侧APPEUI，只有LoRa产品需要填写
+                     * @return AppEUI LoRa产品运营侧APPEUI，只有LoRa产品需要填写
+                     * 
+                     */
+                    std::string GetAppEUI() const;
+
+                    /**
+                     * 设置LoRa产品运营侧APPEUI，只有LoRa产品需要填写
+                     * @param _appEUI LoRa产品运营侧APPEUI，只有LoRa产品需要填写
+                     * 
+                     */
+                    void SetAppEUI(const std::string& _appEUI);
+
+                    /**
+                     * 判断参数 AppEUI 是否已赋值
+                     * @return AppEUI 是否已赋值
+                     * 
+                     */
+                    bool AppEUIHasBeenSet() const;
+
                 private:
 
                     /**
@@ -538,6 +559,12 @@ namespace TencentCloud
                      */
                     uint64_t m_forbiddenStatus;
                     bool m_forbiddenStatusHasBeenSet;
+
+                    /**
+                     * LoRa产品运营侧APPEUI，只有LoRa产品需要填写
+                     */
+                    std::string m_appEUI;
+                    bool m_appEUIHasBeenSet;
 
                 };
             }
