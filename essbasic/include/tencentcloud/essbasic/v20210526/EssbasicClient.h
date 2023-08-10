@@ -29,6 +29,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCancelFlowResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCancelUserAutoSignEnableUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCancelUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateBoundFlowsRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigRequest.h>
@@ -75,6 +79,10 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDescribeUserAutoSignStatusRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDescribeUserAutoSignStatusResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDisableUserAutoSignRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDisableUserAutoSignResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusRequest.h>
@@ -140,6 +148,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCancelMultiFlowSignQRCodeResponse> ChannelCancelMultiFlowSignQRCodeOutcome;
                 typedef std::future<ChannelCancelMultiFlowSignQRCodeOutcome> ChannelCancelMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCancelMultiFlowSignQRCodeRequest&, ChannelCancelMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCancelMultiFlowSignQRCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCancelUserAutoSignEnableUrlResponse> ChannelCancelUserAutoSignEnableUrlOutcome;
+                typedef std::future<ChannelCancelUserAutoSignEnableUrlOutcome> ChannelCancelUserAutoSignEnableUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCancelUserAutoSignEnableUrlRequest&, ChannelCancelUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCancelUserAutoSignEnableUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateBatchCancelFlowUrlResponse> ChannelCreateBatchCancelFlowUrlOutcome;
                 typedef std::future<ChannelCreateBatchCancelFlowUrlOutcome> ChannelCreateBatchCancelFlowUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateBatchCancelFlowUrlRequest&, ChannelCreateBatchCancelFlowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateBatchCancelFlowUrlAsyncHandler;
@@ -185,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateSealPolicyResponse> ChannelCreateSealPolicyOutcome;
                 typedef std::future<ChannelCreateSealPolicyOutcome> ChannelCreateSealPolicyOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateSealPolicyRequest&, ChannelCreateSealPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateSealPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateUserAutoSignEnableUrlResponse> ChannelCreateUserAutoSignEnableUrlOutcome;
+                typedef std::future<ChannelCreateUserAutoSignEnableUrlOutcome> ChannelCreateUserAutoSignEnableUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateUserAutoSignEnableUrlRequest&, ChannelCreateUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateUserAutoSignEnableUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateUserRolesResponse> ChannelCreateUserRolesOutcome;
                 typedef std::future<ChannelCreateUserRolesOutcome> ChannelCreateUserRolesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateUserRolesRequest&, ChannelCreateUserRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateUserRolesAsyncHandler;
@@ -209,6 +223,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelDescribeRolesResponse> ChannelDescribeRolesOutcome;
                 typedef std::future<ChannelDescribeRolesOutcome> ChannelDescribeRolesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeRolesRequest&, ChannelDescribeRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelDescribeUserAutoSignStatusResponse> ChannelDescribeUserAutoSignStatusOutcome;
+                typedef std::future<ChannelDescribeUserAutoSignStatusOutcome> ChannelDescribeUserAutoSignStatusOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeUserAutoSignStatusRequest&, ChannelDescribeUserAutoSignStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeUserAutoSignStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelDisableUserAutoSignResponse> ChannelDisableUserAutoSignOutcome;
+                typedef std::future<ChannelDisableUserAutoSignOutcome> ChannelDisableUserAutoSignOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelDisableUserAutoSignRequest&, ChannelDisableUserAutoSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDisableUserAutoSignAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelGetTaskResultApiResponse> ChannelGetTaskResultApiOutcome;
                 typedef std::future<ChannelGetTaskResultApiOutcome> ChannelGetTaskResultApiOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelGetTaskResultApiRequest&, ChannelGetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelGetTaskResultApiAsyncHandler;
@@ -314,6 +334,15 @@ namespace TencentCloud
                 ChannelCancelMultiFlowSignQRCodeOutcome ChannelCancelMultiFlowSignQRCode(const Model::ChannelCancelMultiFlowSignQRCodeRequest &request);
                 void ChannelCancelMultiFlowSignQRCodeAsync(const Model::ChannelCancelMultiFlowSignQRCodeRequest& request, const ChannelCancelMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelCancelMultiFlowSignQRCodeOutcomeCallable ChannelCancelMultiFlowSignQRCodeCallable(const Model::ChannelCancelMultiFlowSignQRCodeRequest& request);
+
+                /**
+                 *此接口（ChannelCancelUserAutoSignEnableUrl）用来撤销发送给个人用户的自动签开通链接，撤销后对应的个人用户开通链接失效。若个人用户已经完成开通，将无法撤销。（处方单场景专用，使用此接口请与客户经理确认）
+                 * @param req ChannelCancelUserAutoSignEnableUrlRequest
+                 * @return ChannelCancelUserAutoSignEnableUrlOutcome
+                 */
+                ChannelCancelUserAutoSignEnableUrlOutcome ChannelCancelUserAutoSignEnableUrl(const Model::ChannelCancelUserAutoSignEnableUrlRequest &request);
+                void ChannelCancelUserAutoSignEnableUrlAsync(const Model::ChannelCancelUserAutoSignEnableUrlRequest& request, const ChannelCancelUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCancelUserAutoSignEnableUrlOutcomeCallable ChannelCancelUserAutoSignEnableUrlCallable(const Model::ChannelCancelUserAutoSignEnableUrlRequest& request);
 
                 /**
                  *指定需要批量撤销的签署流程Id，获取批量撤销链接 - 不建议使用此接口，可使用ChannelBatchCancelFlows
@@ -485,6 +514,15 @@ namespace TencentCloud
                 ChannelCreateSealPolicyOutcomeCallable ChannelCreateSealPolicyCallable(const Model::ChannelCreateSealPolicyRequest& request);
 
                 /**
+                 *企业方可以通过此接口获取个人用户开启自动签的跳转链接
+                 * @param req ChannelCreateUserAutoSignEnableUrlRequest
+                 * @return ChannelCreateUserAutoSignEnableUrlOutcome
+                 */
+                ChannelCreateUserAutoSignEnableUrlOutcome ChannelCreateUserAutoSignEnableUrl(const Model::ChannelCreateUserAutoSignEnableUrlRequest &request);
+                void ChannelCreateUserAutoSignEnableUrlAsync(const Model::ChannelCreateUserAutoSignEnableUrlRequest& request, const ChannelCreateUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateUserAutoSignEnableUrlOutcomeCallable ChannelCreateUserAutoSignEnableUrlCallable(const Model::ChannelCreateUserAutoSignEnableUrlRequest& request);
+
+                /**
                  *通过此接口，绑定员工角色，支持以电子签userId、客户系统userId两种方式调用。
                  * @param req ChannelCreateUserRolesRequest
                  * @return ChannelCreateUserRolesOutcome
@@ -556,6 +594,24 @@ namespace TencentCloud
                 ChannelDescribeRolesOutcome ChannelDescribeRoles(const Model::ChannelDescribeRolesRequest &request);
                 void ChannelDescribeRolesAsync(const Model::ChannelDescribeRolesRequest& request, const ChannelDescribeRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelDescribeRolesOutcomeCallable ChannelDescribeRolesCallable(const Model::ChannelDescribeRolesRequest& request);
+
+                /**
+                 *企业方可以通过此接口查询个人用户自动签开启状态
+                 * @param req ChannelDescribeUserAutoSignStatusRequest
+                 * @return ChannelDescribeUserAutoSignStatusOutcome
+                 */
+                ChannelDescribeUserAutoSignStatusOutcome ChannelDescribeUserAutoSignStatus(const Model::ChannelDescribeUserAutoSignStatusRequest &request);
+                void ChannelDescribeUserAutoSignStatusAsync(const Model::ChannelDescribeUserAutoSignStatusRequest& request, const ChannelDescribeUserAutoSignStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelDescribeUserAutoSignStatusOutcomeCallable ChannelDescribeUserAutoSignStatusCallable(const Model::ChannelDescribeUserAutoSignStatusRequest& request);
+
+                /**
+                 *企业方可以通过此接口关闭个人的自动签功能
+                 * @param req ChannelDisableUserAutoSignRequest
+                 * @return ChannelDisableUserAutoSignOutcome
+                 */
+                ChannelDisableUserAutoSignOutcome ChannelDisableUserAutoSign(const Model::ChannelDisableUserAutoSignRequest &request);
+                void ChannelDisableUserAutoSignAsync(const Model::ChannelDisableUserAutoSignRequest& request, const ChannelDisableUserAutoSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelDisableUserAutoSignOutcomeCallable ChannelDisableUserAutoSignCallable(const Model::ChannelDisableUserAutoSignRequest& request);
 
                 /**
                  *查询转换任务的状态。转换任务Id通过发起转换任务接口（ChannelCreateConvertTaskApi）获取。

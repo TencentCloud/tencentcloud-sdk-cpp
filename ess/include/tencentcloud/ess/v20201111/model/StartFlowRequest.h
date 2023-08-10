@@ -129,15 +129,31 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
-                     * @return CcNotifyType 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     * 获取给关注人发送短信通知的类型，
+
+0-合同发起时通知 
+
+1-签署完成后通知
+                     * @return CcNotifyType 给关注人发送短信通知的类型，
+
+0-合同发起时通知 
+
+1-签署完成后通知
                      * 
                      */
                     int64_t GetCcNotifyType() const;
 
                     /**
-                     * 设置给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
-                     * @param _ccNotifyType 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     * 设置给关注人发送短信通知的类型，
+
+0-合同发起时通知 
+
+1-签署完成后通知
+                     * @param _ccNotifyType 给关注人发送短信通知的类型，
+
+0-合同发起时通知 
+
+1-签署完成后通知
                      * 
                      */
                     void SetCcNotifyType(const int64_t& _ccNotifyType);
@@ -176,7 +192,11 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     * 给关注人发送短信通知的类型，
+
+0-合同发起时通知 
+
+1-签署完成后通知
                      */
                     int64_t m_ccNotifyType;
                     bool m_ccNotifyTypeHasBeenSet;

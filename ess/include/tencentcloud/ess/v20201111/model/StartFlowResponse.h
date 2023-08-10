@@ -44,8 +44,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回描述，START-发起成功， REVIEW-提交审核成功，EXECUTING-已提交发起任务
-                     * @return Status 返回描述，START-发起成功， REVIEW-提交审核成功，EXECUTING-已提交发起任务
+                     * 获取发起成功之后返回状态，
+
+START-发起成功， 
+
+REVIEW-提交审核成功，
+
+EXECUTING-已提交发起任务
+                     * @return Status 发起成功之后返回状态，
+
+START-发起成功， 
+
+REVIEW-提交审核成功，
+
+EXECUTING-已提交发起任务
                      * 
                      */
                     std::string GetStatus() const;
@@ -60,7 +72,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回描述，START-发起成功， REVIEW-提交审核成功，EXECUTING-已提交发起任务
+                     * 发起成功之后返回状态，
+
+START-发起成功， 
+
+REVIEW-提交审核成功，
+
+EXECUTING-已提交发起任务
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

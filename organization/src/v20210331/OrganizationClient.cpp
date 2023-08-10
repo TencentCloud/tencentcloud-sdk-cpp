@@ -341,6 +341,49 @@ OrganizationClient::CreateOrganizationMemberPolicyOutcomeCallable OrganizationCl
     return task->get_future();
 }
 
+OrganizationClient::DeleteOrganizationMemberAuthIdentityOutcome OrganizationClient::DeleteOrganizationMemberAuthIdentity(const DeleteOrganizationMemberAuthIdentityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOrganizationMemberAuthIdentity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOrganizationMemberAuthIdentityResponse rsp = DeleteOrganizationMemberAuthIdentityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOrganizationMemberAuthIdentityOutcome(rsp);
+        else
+            return DeleteOrganizationMemberAuthIdentityOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOrganizationMemberAuthIdentityOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DeleteOrganizationMemberAuthIdentityAsync(const DeleteOrganizationMemberAuthIdentityRequest& request, const DeleteOrganizationMemberAuthIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOrganizationMemberAuthIdentity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DeleteOrganizationMemberAuthIdentityOutcomeCallable OrganizationClient::DeleteOrganizationMemberAuthIdentityCallable(const DeleteOrganizationMemberAuthIdentityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOrganizationMemberAuthIdentityOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOrganizationMemberAuthIdentity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DeleteOrganizationMembersOutcome OrganizationClient::DeleteOrganizationMembers(const DeleteOrganizationMembersRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteOrganizationMembers");

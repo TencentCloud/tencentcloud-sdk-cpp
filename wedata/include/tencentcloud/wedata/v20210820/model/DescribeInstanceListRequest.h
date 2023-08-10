@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageIndexHasBeenSet() const;
 
                     /**
-                     * 获取页大小
-                     * @return PageSize 页大小
+                     * 获取一页展示的条数
+                     * @return PageSize 一页展示的条数
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置页大小
-                     * @param _pageSize 页大小
+                     * 设置一页展示的条数
+                     * @param _pageSize 一页展示的条数
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -211,15 +211,31 @@ namespace TencentCloud
                     bool SortColHasBeenSet() const;
 
                     /**
-                     * 获取类型列表（如35 shell任务），可选
-                     * @return TaskTypeList 类型列表（如35 shell任务），可选
+                     * 获取类型列表（如python任务类型：30
+pyspark任务类型：31
+hivesql任务类型：34
+shell任务类型：35
+sparksql任务类型：36 jdbcsql任务类型：21 dlc任务类型：32），可选
+                     * @return TaskTypeList 类型列表（如python任务类型：30
+pyspark任务类型：31
+hivesql任务类型：34
+shell任务类型：35
+sparksql任务类型：36 jdbcsql任务类型：21 dlc任务类型：32），可选
                      * 
                      */
                     std::vector<int64_t> GetTaskTypeList() const;
 
                     /**
-                     * 设置类型列表（如35 shell任务），可选
-                     * @param _taskTypeList 类型列表（如35 shell任务），可选
+                     * 设置类型列表（如python任务类型：30
+pyspark任务类型：31
+hivesql任务类型：34
+shell任务类型：35
+sparksql任务类型：36 jdbcsql任务类型：21 dlc任务类型：32），可选
+                     * @param _taskTypeList 类型列表（如python任务类型：30
+pyspark任务类型：31
+hivesql任务类型：34
+shell任务类型：35
+sparksql任务类型：36 jdbcsql任务类型：21 dlc任务类型：32），可选
                      * 
                      */
                     void SetTaskTypeList(const std::vector<int64_t>& _taskTypeList);
@@ -288,7 +304,7 @@ namespace TencentCloud
                     bool m_pageIndexHasBeenSet;
 
                     /**
-                     * 页大小
+                     * 一页展示的条数
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -324,7 +340,11 @@ namespace TencentCloud
                     bool m_sortColHasBeenSet;
 
                     /**
-                     * 类型列表（如35 shell任务），可选
+                     * 类型列表（如python任务类型：30
+pyspark任务类型：31
+hivesql任务类型：34
+shell任务类型：35
+sparksql任务类型：36 jdbcsql任务类型：21 dlc任务类型：32），可选
                      */
                     std::vector<int64_t> m_taskTypeList;
                     bool m_taskTypeListHasBeenSet;

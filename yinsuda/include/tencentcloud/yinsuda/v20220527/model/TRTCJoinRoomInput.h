@@ -130,6 +130,47 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取TRTC房间号的类型：
+
+Integer：数字类型
+String：字符串类型
+默认为：Integer 。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RoomIdType TRTC房间号的类型：
+
+Integer：数字类型
+String：字符串类型
+默认为：Integer 。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRoomIdType() const;
+
+                    /**
+                     * 设置TRTC房间号的类型：
+
+Integer：数字类型
+String：字符串类型
+默认为：Integer 。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _roomIdType TRTC房间号的类型：
+
+Integer：数字类型
+String：字符串类型
+默认为：Integer 。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRoomIdType(const std::string& _roomIdType);
+
+                    /**
+                     * 判断参数 RoomIdType 是否已赋值
+                     * @return RoomIdType 是否已赋值
+                     * 
+                     */
+                    bool RoomIdTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +196,17 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * TRTC房间号的类型：
+
+Integer：数字类型
+String：字符串类型
+默认为：Integer 。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_roomIdType;
+                    bool m_roomIdTypeHasBeenSet;
 
                 };
             }

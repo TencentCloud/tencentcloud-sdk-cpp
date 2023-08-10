@@ -90,6 +90,27 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
+                     * 获取签署流程的描述，长度不超过1000个字符
+                     * @return FlowDescription 签署流程的描述，长度不超过1000个字符
+                     * 
+                     */
+                    std::string GetFlowDescription() const;
+
+                    /**
+                     * 设置签署流程的描述，长度不超过1000个字符
+                     * @param _flowDescription 签署流程的描述，长度不超过1000个字符
+                     * 
+                     */
+                    void SetFlowDescription(const std::string& _flowDescription);
+
+                    /**
+                     * 判断参数 FlowDescription 是否已赋值
+                     * @return FlowDescription 是否已赋值
+                     * 
+                     */
+                    bool FlowDescriptionHasBeenSet() const;
+
+                    /**
                      * 获取签署流程签约方列表，最多不超过50个参与方
                      * @return FlowApprovers 签署流程签约方列表，最多不超过50个参与方
                      * 
@@ -153,15 +174,23 @@ namespace TencentCloud
                     bool ComponentsHasBeenSet() const;
 
                     /**
-                     * 获取签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年
-                     * @return Deadline 签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年
+                     * 获取签署流程的签署截止时间。
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+不能早于当前时间
+                     * @return Deadline 签署流程的签署截止时间。
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+不能早于当前时间
                      * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年
-                     * @param _deadline 签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年
+                     * 设置签署流程的签署截止时间。
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+不能早于当前时间
+                     * @param _deadline 签署流程的签署截止时间。
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+不能早于当前时间
                      * 
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -175,14 +204,18 @@ namespace TencentCloud
 
                     /**
                      * 获取签署流程回调地址，长度不超过255个字符
+如果不传递回调地址， 则默认是配置应用号时候使用的回调地址
                      * @return CallbackUrl 签署流程回调地址，长度不超过255个字符
+如果不传递回调地址， 则默认是配置应用号时候使用的回调地址
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置签署流程回调地址，长度不超过255个字符
+如果不传递回调地址， 则默认是配置应用号时候使用的回调地址
                      * @param _callbackUrl 签署流程回调地址，长度不超过255个字符
+如果不传递回调地址， 则默认是配置应用号时候使用的回调地址
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -195,15 +228,31 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序
-                     * @return Unordered 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序
+                     * 获取合同签署顺序类型
+true - 无序签,
+false - 顺序签，
+默认为false，即有序签署。
+有序签署时以传入FlowApprovers数组的顺序作为签署顺序
+                     * @return Unordered 合同签署顺序类型
+true - 无序签,
+false - 顺序签，
+默认为false，即有序签署。
+有序签署时以传入FlowApprovers数组的顺序作为签署顺序
                      * 
                      */
                     bool GetUnordered() const;
 
                     /**
-                     * 设置合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序
-                     * @param _unordered 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序
+                     * 设置合同签署顺序类型
+true - 无序签,
+false - 顺序签，
+默认为false，即有序签署。
+有序签署时以传入FlowApprovers数组的顺序作为签署顺序
+                     * @param _unordered 合同签署顺序类型
+true - 无序签,
+false - 顺序签，
+默认为false，即有序签署。
+有序签署时以传入FlowApprovers数组的顺序作为签署顺序
                      * 
                      */
                     void SetUnordered(const bool& _unordered);
@@ -235,27 +284,6 @@ namespace TencentCloud
                      * 
                      */
                     bool FlowTypeHasBeenSet() const;
-
-                    /**
-                     * 获取签署流程的描述，长度不超过1000个字符
-                     * @return FlowDescription 签署流程的描述，长度不超过1000个字符
-                     * 
-                     */
-                    std::string GetFlowDescription() const;
-
-                    /**
-                     * 设置签署流程的描述，长度不超过1000个字符
-                     * @param _flowDescription 签署流程的描述，长度不超过1000个字符
-                     * 
-                     */
-                    void SetFlowDescription(const std::string& _flowDescription);
-
-                    /**
-                     * 判断参数 FlowDescription 是否已赋值
-                     * @return FlowDescription 是否已赋值
-                     * 
-                     */
-                    bool FlowDescriptionHasBeenSet() const;
 
                     /**
                      * 获取合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
@@ -354,15 +382,27 @@ MobileCheck：手机号验证
                     bool ApproverVerifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
-                     * @return SignBeanTag 标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
+                     * 获取标识是否允许发起后添加控件。
+0为不允许
+1为允许。
+如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
+                     * @return SignBeanTag 标识是否允许发起后添加控件。
+0为不允许
+1为允许。
+如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
                      * 
                      */
                     int64_t GetSignBeanTag() const;
 
                     /**
-                     * 设置标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
-                     * @param _signBeanTag 标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
+                     * 设置标识是否允许发起后添加控件。
+0为不允许
+1为允许。
+如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
+                     * @param _signBeanTag 标识是否允许发起后添加控件。
+0为不允许
+1为允许。
+如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
                      * 
                      */
                     void SetSignBeanTag(const int64_t& _signBeanTag);
@@ -396,15 +436,23 @@ MobileCheck：手机号验证
                     bool CcInfosHasBeenSet() const;
 
                     /**
-                     * 获取给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
-                     * @return CcNotifyType 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     * 获取给关注人发送短信通知的类型，
+0-合同发起时通知 
+1-签署完成后通知
+                     * @return CcNotifyType 给关注人发送短信通知的类型，
+0-合同发起时通知 
+1-签署完成后通知
                      * 
                      */
                     int64_t GetCcNotifyType() const;
 
                     /**
-                     * 设置给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
-                     * @param _ccNotifyType 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     * 设置给关注人发送短信通知的类型，
+0-合同发起时通知 
+1-签署完成后通知
+                     * @param _ccNotifyType 给关注人发送短信通知的类型，
+0-合同发起时通知 
+1-签署完成后通知
                      * 
                      */
                     void SetCcNotifyType(const int64_t& _ccNotifyType);
@@ -473,6 +521,12 @@ MobileCheck：手机号验证
                     bool m_flowNameHasBeenSet;
 
                     /**
+                     * 签署流程的描述，长度不超过1000个字符
+                     */
+                    std::string m_flowDescription;
+                    bool m_flowDescriptionHasBeenSet;
+
+                    /**
                      * 签署流程签约方列表，最多不超过50个参与方
                      */
                     std::vector<FlowApproverInfo> m_flowApprovers;
@@ -491,19 +545,26 @@ MobileCheck：手机号验证
                     bool m_componentsHasBeenSet;
 
                     /**
-                     * 签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年
+                     * 签署流程的签署截止时间。
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+不能早于当前时间
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
 
                     /**
                      * 签署流程回调地址，长度不超过255个字符
+如果不传递回调地址， 则默认是配置应用号时候使用的回调地址
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序
+                     * 合同签署顺序类型
+true - 无序签,
+false - 顺序签，
+默认为false，即有序签署。
+有序签署时以传入FlowApprovers数组的顺序作为签署顺序
                      */
                     bool m_unordered;
                     bool m_unorderedHasBeenSet;
@@ -513,12 +574,6 @@ MobileCheck：手机号验证
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
-
-                    /**
-                     * 签署流程的描述，长度不超过1000个字符
-                     */
-                    std::string m_flowDescription;
-                    bool m_flowDescriptionHasBeenSet;
 
                     /**
                      * 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
@@ -548,7 +603,10 @@ MobileCheck：手机号验证
                     bool m_approverVerifyTypeHasBeenSet;
 
                     /**
-                     * 标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
+                     * 标识是否允许发起后添加控件。
+0为不允许
+1为允许。
+如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
                      */
                     int64_t m_signBeanTag;
                     bool m_signBeanTagHasBeenSet;
@@ -560,7 +618,9 @@ MobileCheck：手机号验证
                     bool m_ccInfosHasBeenSet;
 
                     /**
-                     * 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     * 给关注人发送短信通知的类型，
+0-合同发起时通知 
+1-签署完成后通知
                      */
                     int64_t m_ccNotifyType;
                     bool m_ccNotifyTypeHasBeenSet;

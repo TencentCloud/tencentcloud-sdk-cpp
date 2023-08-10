@@ -29,7 +29,8 @@ GetRuntimeResourceMonitorMetricMCRequest::GetRuntimeResourceMonitorMetricMCReque
     m_metricTypeHasBeenSet(false),
     m_rateTypeHasBeenSet(false),
     m_intervalHasBeenSet(false),
-    m_runtimeClassHasBeenSet(false)
+    m_runtimeClassHasBeenSet(false),
+    m_aggregationTypeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string GetRuntimeResourceMonitorMetricMCRequest::ToJsonString() const
         string key = "RuntimeClass";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_runtimeClass, allocator);
+    }
+
+    if (m_aggregationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AggregationType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_aggregationType, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void GetRuntimeResourceMonitorMetricMCRequest::SetRuntimeClass(const int64_t& _r
 bool GetRuntimeResourceMonitorMetricMCRequest::RuntimeClassHasBeenSet() const
 {
     return m_runtimeClassHasBeenSet;
+}
+
+int64_t GetRuntimeResourceMonitorMetricMCRequest::GetAggregationType() const
+{
+    return m_aggregationType;
+}
+
+void GetRuntimeResourceMonitorMetricMCRequest::SetAggregationType(const int64_t& _aggregationType)
+{
+    m_aggregationType = _aggregationType;
+    m_aggregationTypeHasBeenSet = true;
+}
+
+bool GetRuntimeResourceMonitorMetricMCRequest::AggregationTypeHasBeenSet() const
+{
+    return m_aggregationTypeHasBeenSet;
 }
 
 

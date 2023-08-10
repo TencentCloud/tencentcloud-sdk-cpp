@@ -169,6 +169,49 @@ EssbasicClient::ChannelCancelMultiFlowSignQRCodeOutcomeCallable EssbasicClient::
     return task->get_future();
 }
 
+EssbasicClient::ChannelCancelUserAutoSignEnableUrlOutcome EssbasicClient::ChannelCancelUserAutoSignEnableUrl(const ChannelCancelUserAutoSignEnableUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCancelUserAutoSignEnableUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCancelUserAutoSignEnableUrlResponse rsp = ChannelCancelUserAutoSignEnableUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCancelUserAutoSignEnableUrlOutcome(rsp);
+        else
+            return ChannelCancelUserAutoSignEnableUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCancelUserAutoSignEnableUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCancelUserAutoSignEnableUrlAsync(const ChannelCancelUserAutoSignEnableUrlRequest& request, const ChannelCancelUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCancelUserAutoSignEnableUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCancelUserAutoSignEnableUrlOutcomeCallable EssbasicClient::ChannelCancelUserAutoSignEnableUrlCallable(const ChannelCancelUserAutoSignEnableUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCancelUserAutoSignEnableUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCancelUserAutoSignEnableUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateBatchCancelFlowUrlOutcome EssbasicClient::ChannelCreateBatchCancelFlowUrl(const ChannelCreateBatchCancelFlowUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateBatchCancelFlowUrl");
@@ -814,6 +857,49 @@ EssbasicClient::ChannelCreateSealPolicyOutcomeCallable EssbasicClient::ChannelCr
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateUserAutoSignEnableUrlOutcome EssbasicClient::ChannelCreateUserAutoSignEnableUrl(const ChannelCreateUserAutoSignEnableUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateUserAutoSignEnableUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateUserAutoSignEnableUrlResponse rsp = ChannelCreateUserAutoSignEnableUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateUserAutoSignEnableUrlOutcome(rsp);
+        else
+            return ChannelCreateUserAutoSignEnableUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateUserAutoSignEnableUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateUserAutoSignEnableUrlAsync(const ChannelCreateUserAutoSignEnableUrlRequest& request, const ChannelCreateUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateUserAutoSignEnableUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateUserAutoSignEnableUrlOutcomeCallable EssbasicClient::ChannelCreateUserAutoSignEnableUrlCallable(const ChannelCreateUserAutoSignEnableUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateUserAutoSignEnableUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateUserAutoSignEnableUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateUserRolesOutcome EssbasicClient::ChannelCreateUserRoles(const ChannelCreateUserRolesRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateUserRoles");
@@ -1151,6 +1237,92 @@ EssbasicClient::ChannelDescribeRolesOutcomeCallable EssbasicClient::ChannelDescr
         [this, request]()
         {
             return this->ChannelDescribeRoles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelDescribeUserAutoSignStatusOutcome EssbasicClient::ChannelDescribeUserAutoSignStatus(const ChannelDescribeUserAutoSignStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelDescribeUserAutoSignStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelDescribeUserAutoSignStatusResponse rsp = ChannelDescribeUserAutoSignStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelDescribeUserAutoSignStatusOutcome(rsp);
+        else
+            return ChannelDescribeUserAutoSignStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelDescribeUserAutoSignStatusOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelDescribeUserAutoSignStatusAsync(const ChannelDescribeUserAutoSignStatusRequest& request, const ChannelDescribeUserAutoSignStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelDescribeUserAutoSignStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelDescribeUserAutoSignStatusOutcomeCallable EssbasicClient::ChannelDescribeUserAutoSignStatusCallable(const ChannelDescribeUserAutoSignStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelDescribeUserAutoSignStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelDescribeUserAutoSignStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelDisableUserAutoSignOutcome EssbasicClient::ChannelDisableUserAutoSign(const ChannelDisableUserAutoSignRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelDisableUserAutoSign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelDisableUserAutoSignResponse rsp = ChannelDisableUserAutoSignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelDisableUserAutoSignOutcome(rsp);
+        else
+            return ChannelDisableUserAutoSignOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelDisableUserAutoSignOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelDisableUserAutoSignAsync(const ChannelDisableUserAutoSignRequest& request, const ChannelDisableUserAutoSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelDisableUserAutoSign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelDisableUserAutoSignOutcomeCallable EssbasicClient::ChannelDisableUserAutoSignCallable(const ChannelDisableUserAutoSignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelDisableUserAutoSignOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelDisableUserAutoSign(request);
         }
     );
 

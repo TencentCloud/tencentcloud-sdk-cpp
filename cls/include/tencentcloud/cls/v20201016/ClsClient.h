@@ -605,7 +605,7 @@ namespace TencentCloud
                 CreateMachineGroupOutcomeCallable CreateMachineGroupCallable(const Model::CreateMachineGroupRequest& request);
 
                 /**
-                 *本接口用于创建ScheduledSql任务
+                 *本接口用于创建定时SQL分析任务
                  * @param req CreateScheduledSqlRequest
                  * @return CreateScheduledSqlOutcome
                  */
@@ -749,7 +749,7 @@ namespace TencentCloud
                 DeleteMachineGroupInfoOutcomeCallable DeleteMachineGroupInfoCallable(const Model::DeleteMachineGroupInfoRequest& request);
 
                 /**
-                 *本接口用于删除ScheduledSql任务
+                 *本接口用于删除定时SQL分析任务
                  * @param req DeleteScheduledSqlRequest
                  * @return DeleteScheduledSqlOutcome
                  */
@@ -974,7 +974,7 @@ namespace TencentCloud
                 DescribePartitionsOutcomeCallable DescribePartitionsCallable(const Model::DescribePartitionsRequest& request);
 
                 /**
-                 *本接口用于获取ScheduledSql任务列表
+                 *本接口用于获取定时SQL分析任务列表
                  * @param req DescribeScheduledSqlInfoRequest
                  * @return DescribeScheduledSqlInfoOutcome
                  */
@@ -1137,7 +1137,7 @@ namespace TencentCloud
                 ModifyMachineGroupOutcomeCallable ModifyMachineGroupCallable(const Model::ModifyMachineGroupRequest& request);
 
                 /**
-                 *本接口用于修改ScheduledSql任务
+                 *本接口用于修改定时SQL分析任务
                  * @param req ModifyScheduledSqlRequest
                  * @return ModifyScheduledSqlOutcome
                  */

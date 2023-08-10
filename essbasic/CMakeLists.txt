@@ -26,17 +26,19 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/Component.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelDisableUserAutoSignResponse.h
   include/tencentcloud/essbasic/v20210526/model/Department.h
   include/tencentcloud/essbasic/v20210526/model/CommonApproverOption.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewRequest.h
   include/tencentcloud/essbasic/v20210526/model/AuthFailMessage.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCancelUserAutoSignEnableUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ModifyExtendedServiceRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/RemindFlowRecords.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlResponse.h
-  include/tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/WebThemeConfig.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateResponse.h
   include/tencentcloud/essbasic/v20210526/model/FlowFileInfo.h
@@ -70,15 +72,19 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/Agent.h
   include/tencentcloud/essbasic/v20210526/model/Recipient.h
   include/tencentcloud/essbasic/v20210526/model/DescribeTemplatesResponse.h
+  include/tencentcloud/essbasic/v20210526/model/AutoSignConfig.h
   include/tencentcloud/essbasic/v20210526/model/StaffRole.h
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCancelUserAutoSignEnableUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/OrganizationInfo.h
   include/tencentcloud/essbasic/v20210526/model/SignUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/CommonFlowApprover.h
   include/tencentcloud/essbasic/v20210526/model/PdfVerifyResult.h
+  include/tencentcloud/essbasic/v20210526/model/UserThreeFactor.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/UploadFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsRequest.h
@@ -100,12 +106,14 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/SignQrCode.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverInfo.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h
   include/tencentcloud/essbasic/v20210526/model/FlowDetailInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsResponse.h
   include/tencentcloud/essbasic/v20210526/model/FailedCreateRoleData.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelDescribeUserAutoSignStatusRequest.h
   include/tencentcloud/essbasic/v20210526/model/FlowResourceUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/UploadFile.h
   include/tencentcloud/essbasic/v20210526/model/ExtentServiceAuthInfo.h
@@ -118,8 +126,9 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelDisableUserAutoSignRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsResponse.h
-  include/tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowResponse.h
+  include/tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowRequest.h
@@ -156,6 +165,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateSealByImageRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelDescribeUserAutoSignStatusResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoResponse.h
@@ -299,17 +309,19 @@ set(essbasic_src
   src/v20210526/model/Component.cpp
   src/v20210526/model/ChannelDeleteSealPoliciesRequest.cpp
   src/v20210526/model/ChannelBatchCancelFlowsResponse.cpp
+  src/v20210526/model/ChannelDisableUserAutoSignResponse.cpp
   src/v20210526/model/Department.cpp
   src/v20210526/model/CommonApproverOption.cpp
   src/v20210526/model/ChannelCreateFlowGroupByTemplatesResponse.cpp
   src/v20210526/model/ChannelCreateFlowSignReviewRequest.cpp
   src/v20210526/model/AuthFailMessage.cpp
   src/v20210526/model/DescribeFlowDetailInfoRequest.cpp
+  src/v20210526/model/ChannelCancelUserAutoSignEnableUrlResponse.cpp
   src/v20210526/model/ModifyExtendedServiceRequest.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
   src/v20210526/model/RemindFlowRecords.cpp
   src/v20210526/model/ChannelCreateFlowSignUrlResponse.cpp
-  src/v20210526/model/CreateSealByImageResponse.cpp
+  src/v20210526/model/ChannelCreatePrepareFlowResponse.cpp
   src/v20210526/model/WebThemeConfig.cpp
   src/v20210526/model/OperateChannelTemplateResponse.cpp
   src/v20210526/model/FlowFileInfo.cpp
@@ -343,15 +355,19 @@ set(essbasic_src
   src/v20210526/model/Agent.cpp
   src/v20210526/model/Recipient.cpp
   src/v20210526/model/DescribeTemplatesResponse.cpp
+  src/v20210526/model/AutoSignConfig.cpp
   src/v20210526/model/StaffRole.cpp
   src/v20210526/model/ChannelVerifyPdfRequest.cpp
   src/v20210526/model/CreateChannelFlowEvidenceReportRequest.cpp
+  src/v20210526/model/ChannelCancelUserAutoSignEnableUrlRequest.cpp
   src/v20210526/model/ChannelVerifyPdfResponse.cpp
   src/v20210526/model/CreateConsoleLoginUrlRequest.cpp
   src/v20210526/model/OrganizationInfo.cpp
   src/v20210526/model/SignUrlInfo.cpp
   src/v20210526/model/CommonFlowApprover.cpp
   src/v20210526/model/PdfVerifyResult.cpp
+  src/v20210526/model/UserThreeFactor.cpp
+  src/v20210526/model/ChannelCreateUserAutoSignEnableUrlRequest.cpp
   src/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.cpp
   src/v20210526/model/UploadFilesRequest.cpp
   src/v20210526/model/ChannelDescribeOrganizationSealsRequest.cpp
@@ -373,12 +389,14 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.cpp
   src/v20210526/model/SignQrCode.cpp
   src/v20210526/model/FlowApproverInfo.cpp
+  src/v20210526/model/ChannelCreateUserAutoSignEnableUrlResponse.cpp
   src/v20210526/model/ChannelGetTaskResultApiRequest.cpp
   src/v20210526/model/FlowDetailInfo.cpp
   src/v20210526/model/CreateFlowsByTemplatesResponse.cpp
   src/v20210526/model/DescribeChannelFlowEvidenceReportRequest.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsResponse.cpp
   src/v20210526/model/FailedCreateRoleData.cpp
+  src/v20210526/model/ChannelDescribeUserAutoSignStatusRequest.cpp
   src/v20210526/model/FlowResourceUrlInfo.cpp
   src/v20210526/model/UploadFile.cpp
   src/v20210526/model/ExtentServiceAuthInfo.cpp
@@ -391,8 +409,9 @@ set(essbasic_src
   src/v20210526/model/PrepareFlowsRequest.cpp
   src/v20210526/model/ChannelCreateFlowByFilesResponse.cpp
   src/v20210526/model/ChannelCreateFlowSignReviewResponse.cpp
+  src/v20210526/model/ChannelDisableUserAutoSignRequest.cpp
   src/v20210526/model/ChannelDescribeOrganizationSealsResponse.cpp
-  src/v20210526/model/ChannelCreatePrepareFlowResponse.cpp
+  src/v20210526/model/CreateSealByImageResponse.cpp
   src/v20210526/model/ChannelCancelMultiFlowSignQRCodeResponse.cpp
   src/v20210526/model/ChannelDescribeRolesResponse.cpp
   src/v20210526/model/ChannelCreateReleaseFlowRequest.cpp
@@ -429,6 +448,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateReleaseFlowResponse.cpp
   src/v20210526/model/DescribeChannelFlowEvidenceReportResponse.cpp
   src/v20210526/model/CreateSealByImageRequest.cpp
+  src/v20210526/model/ChannelDescribeUserAutoSignStatusResponse.cpp
   src/v20210526/model/ChannelUpdateSealStatusResponse.cpp
   src/v20210526/model/ChannelCreateFlowSignUrlRequest.cpp
   src/v20210526/model/DescribeExtendedServiceAuthInfoResponse.cpp

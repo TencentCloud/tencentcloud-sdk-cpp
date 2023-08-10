@@ -243,6 +243,35 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取0: 应用集成
+1: API管理
+2: ETL
+                     * @return RuntimeClass 0: 应用集成
+1: API管理
+2: ETL
+                     * 
+                     */
+                    int64_t GetRuntimeClass() const;
+
+                    /**
+                     * 设置0: 应用集成
+1: API管理
+2: ETL
+                     * @param _runtimeClass 0: 应用集成
+1: API管理
+2: ETL
+                     * 
+                     */
+                    void SetRuntimeClass(const int64_t& _runtimeClass);
+
+                    /**
+                     * 判断参数 RuntimeClass 是否已赋值
+                     * @return RuntimeClass 是否已赋值
+                     * 
+                     */
+                    bool RuntimeClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -301,6 +330,14 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 0: 应用集成
+1: API管理
+2: ETL
+                     */
+                    int64_t m_runtimeClass;
+                    bool m_runtimeClassHasBeenSet;
 
                 };
             }

@@ -47,7 +47,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤项。支持以下搜索条件:
+                     * 获取过滤项。目前支持以下搜索条件：
+
+包含、不包含、包含（分词维度）、不包含（分词维度）:
+sql - SQL详情
 
 等于、不等于、包含、不包含：
 host - 客户端地址；
@@ -61,15 +64,17 @@ threadId - 线程ID；
 
 范围搜索（时间类型统一为微妙）：
 execTime - 执行时间；
-lockWaitTime - 执行时间；
+lockWaitTime - 锁等待时间；
 ioWaitTime - IO等待时间；
 trxLivingTime - 事物持续时间；
 cpuTime - cpu时间；
 checkRows - 扫描行数；
 affectRows - 影响行数；
 sentRows - 返回行数。
+                     * @return Type 过滤项。目前支持以下搜索条件：
 
-                     * @return Type 过滤项。支持以下搜索条件:
+包含、不包含、包含（分词维度）、不包含（分词维度）:
+sql - SQL详情
 
 等于、不等于、包含、不包含：
 host - 客户端地址；
@@ -83,20 +88,22 @@ threadId - 线程ID；
 
 范围搜索（时间类型统一为微妙）：
 execTime - 执行时间；
-lockWaitTime - 执行时间；
+lockWaitTime - 锁等待时间；
 ioWaitTime - IO等待时间；
 trxLivingTime - 事物持续时间；
 cpuTime - cpu时间；
 checkRows - 扫描行数；
 affectRows - 影响行数；
 sentRows - 返回行数。
-
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置过滤项。支持以下搜索条件:
+                     * 设置过滤项。目前支持以下搜索条件：
+
+包含、不包含、包含（分词维度）、不包含（分词维度）:
+sql - SQL详情
 
 等于、不等于、包含、不包含：
 host - 客户端地址；
@@ -110,15 +117,17 @@ threadId - 线程ID；
 
 范围搜索（时间类型统一为微妙）：
 execTime - 执行时间；
-lockWaitTime - 执行时间；
+lockWaitTime - 锁等待时间；
 ioWaitTime - IO等待时间；
 trxLivingTime - 事物持续时间；
 cpuTime - cpu时间；
 checkRows - 扫描行数；
 affectRows - 影响行数；
 sentRows - 返回行数。
+                     * @param _type 过滤项。目前支持以下搜索条件：
 
-                     * @param _type 过滤项。支持以下搜索条件:
+包含、不包含、包含（分词维度）、不包含（分词维度）:
+sql - SQL详情
 
 等于、不等于、包含、不包含：
 host - 客户端地址；
@@ -132,14 +141,13 @@ threadId - 线程ID；
 
 范围搜索（时间类型统一为微妙）：
 execTime - 执行时间；
-lockWaitTime - 执行时间；
+lockWaitTime - 锁等待时间；
 ioWaitTime - IO等待时间；
 trxLivingTime - 事物持续时间；
 cpuTime - cpu时间；
 checkRows - 扫描行数；
 affectRows - 影响行数；
 sentRows - 返回行数。
-
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -152,35 +160,43 @@ sentRows - 返回行数。
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。支持以下选项:
+                     * 获取过滤条件。支持以下条件：
+WINC-包含（分词维度），
+WEXC-不包含（分词维度）,
 INC - 包含,
 EXC - 不包含,
 EQS - 等于,
 NEQ - 不等于,
-RA - 范围.
-                     * @return Compare 过滤条件。支持以下选项:
+RA - 范围。
+                     * @return Compare 过滤条件。支持以下条件：
+WINC-包含（分词维度），
+WEXC-不包含（分词维度）,
 INC - 包含,
 EXC - 不包含,
 EQS - 等于,
 NEQ - 不等于,
-RA - 范围.
+RA - 范围。
                      * 
                      */
                     std::string GetCompare() const;
 
                     /**
-                     * 设置过滤条件。支持以下选项:
+                     * 设置过滤条件。支持以下条件：
+WINC-包含（分词维度），
+WEXC-不包含（分词维度）,
 INC - 包含,
 EXC - 不包含,
 EQS - 等于,
 NEQ - 不等于,
-RA - 范围.
-                     * @param _compare 过滤条件。支持以下选项:
+RA - 范围。
+                     * @param _compare 过滤条件。支持以下条件：
+WINC-包含（分词维度），
+WEXC-不包含（分词维度）,
 INC - 包含,
 EXC - 不包含,
 EQS - 等于,
 NEQ - 不等于,
-RA - 范围.
+RA - 范围。
                      * 
                      */
                     void SetCompare(const std::string& _compare);
@@ -193,15 +209,15 @@ RA - 范围.
                     bool CompareHasBeenSet() const;
 
                     /**
-                     * 获取过滤的值。
-                     * @return Value 过滤的值。
+                     * 获取过滤的值。反向查询时，多个值之前是且的关系，正向查询多个值是或的关系。
+                     * @return Value 过滤的值。反向查询时，多个值之前是且的关系，正向查询多个值是或的关系。
                      * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
-                     * 设置过滤的值。
-                     * @param _value 过滤的值。
+                     * 设置过滤的值。反向查询时，多个值之前是且的关系，正向查询多个值是或的关系。
+                     * @param _value 过滤的值。反向查询时，多个值之前是且的关系，正向查询多个值是或的关系。
                      * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
@@ -216,7 +232,10 @@ RA - 范围.
                 private:
 
                     /**
-                     * 过滤项。支持以下搜索条件:
+                     * 过滤项。目前支持以下搜索条件：
+
+包含、不包含、包含（分词维度）、不包含（分词维度）:
+sql - SQL详情
 
 等于、不等于、包含、不包含：
 host - 客户端地址；
@@ -230,31 +249,32 @@ threadId - 线程ID；
 
 范围搜索（时间类型统一为微妙）：
 execTime - 执行时间；
-lockWaitTime - 执行时间；
+lockWaitTime - 锁等待时间；
 ioWaitTime - IO等待时间；
 trxLivingTime - 事物持续时间；
 cpuTime - cpu时间；
 checkRows - 扫描行数；
 affectRows - 影响行数；
 sentRows - 返回行数。
-
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 过滤条件。支持以下选项:
+                     * 过滤条件。支持以下条件：
+WINC-包含（分词维度），
+WEXC-不包含（分词维度）,
 INC - 包含,
 EXC - 不包含,
 EQS - 等于,
 NEQ - 不等于,
-RA - 范围.
+RA - 范围。
                      */
                     std::string m_compare;
                     bool m_compareHasBeenSet;
 
                     /**
-                     * 过滤的值。
+                     * 过滤的值。反向查询时，多个值之前是且的关系，正向查询多个值是或的关系。
                      */
                     std::vector<std::string> m_value;
                     bool m_valueHasBeenSet;

@@ -25,6 +25,7 @@ using namespace std;
 ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_agentHasBeenSet(false),
     m_flowNameHasBeenSet(false),
+    m_flowDescriptionHasBeenSet(false),
     m_flowApproversHasBeenSet(false),
     m_fileIdsHasBeenSet(false),
     m_componentsHasBeenSet(false),
@@ -32,7 +33,6 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_callbackUrlHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_flowTypeHasBeenSet(false),
-    m_flowDescriptionHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_customerDataHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
@@ -67,6 +67,14 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "FlowName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowDescription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowApproversHasBeenSet)
@@ -142,14 +150,6 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "FlowType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_flowDescriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowDescription";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customShowMapHasBeenSet)
@@ -272,6 +272,22 @@ bool ChannelCreateFlowByFilesRequest::FlowNameHasBeenSet() const
     return m_flowNameHasBeenSet;
 }
 
+string ChannelCreateFlowByFilesRequest::GetFlowDescription() const
+{
+    return m_flowDescription;
+}
+
+void ChannelCreateFlowByFilesRequest::SetFlowDescription(const string& _flowDescription)
+{
+    m_flowDescription = _flowDescription;
+    m_flowDescriptionHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::FlowDescriptionHasBeenSet() const
+{
+    return m_flowDescriptionHasBeenSet;
+}
+
 vector<FlowApproverInfo> ChannelCreateFlowByFilesRequest::GetFlowApprovers() const
 {
     return m_flowApprovers;
@@ -382,22 +398,6 @@ void ChannelCreateFlowByFilesRequest::SetFlowType(const string& _flowType)
 bool ChannelCreateFlowByFilesRequest::FlowTypeHasBeenSet() const
 {
     return m_flowTypeHasBeenSet;
-}
-
-string ChannelCreateFlowByFilesRequest::GetFlowDescription() const
-{
-    return m_flowDescription;
-}
-
-void ChannelCreateFlowByFilesRequest::SetFlowDescription(const string& _flowDescription)
-{
-    m_flowDescription = _flowDescription;
-    m_flowDescriptionHasBeenSet = true;
-}
-
-bool ChannelCreateFlowByFilesRequest::FlowDescriptionHasBeenSet() const
-{
-    return m_flowDescriptionHasBeenSet;
 }
 
 string ChannelCreateFlowByFilesRequest::GetCustomShowMap() const

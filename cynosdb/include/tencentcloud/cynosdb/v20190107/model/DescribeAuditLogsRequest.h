@@ -225,15 +225,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取审计日志过滤条件。
-                     * @return LogFilter 审计日志过滤条件。
+                     * 获取过滤条件。多个值之前是且的关系。
+                     * @return LogFilter 过滤条件。多个值之前是且的关系。
                      * 
                      */
                     std::vector<InstanceAuditLogFilter> GetLogFilter() const;
 
                     /**
-                     * 设置审计日志过滤条件。
-                     * @param _logFilter 审计日志过滤条件。
+                     * 设置过滤条件。多个值之前是且的关系。
+                     * @param _logFilter 过滤条件。多个值之前是且的关系。
                      * 
                      */
                     void SetLogFilter(const std::vector<InstanceAuditLogFilter>& _logFilter);
@@ -299,7 +299,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 审计日志过滤条件。
+                     * 过滤条件。多个值之前是且的关系。
                      */
                     std::vector<InstanceAuditLogFilter> m_logFilter;
                     bool m_logFilterHasBeenSet;

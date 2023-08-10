@@ -31,7 +31,8 @@ ListRuntimeDeployedInstancesMCRequest::ListRuntimeDeployedInstancesMCRequest() :
     m_zoneHasBeenSet(false),
     m_apiVersionHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_runtimeClassHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string ListRuntimeDeployedInstancesMCRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_runtimeClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeClass";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_runtimeClass, allocator);
     }
 
 
@@ -264,6 +273,22 @@ void ListRuntimeDeployedInstancesMCRequest::SetStatus(const int64_t& _status)
 bool ListRuntimeDeployedInstancesMCRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t ListRuntimeDeployedInstancesMCRequest::GetRuntimeClass() const
+{
+    return m_runtimeClass;
+}
+
+void ListRuntimeDeployedInstancesMCRequest::SetRuntimeClass(const int64_t& _runtimeClass)
+{
+    m_runtimeClass = _runtimeClass;
+    m_runtimeClassHasBeenSet = true;
+}
+
+bool ListRuntimeDeployedInstancesMCRequest::RuntimeClassHasBeenSet() const
+{
+    return m_runtimeClassHasBeenSet;
 }
 
 

@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool RuntimeClassHasBeenSet() const;
 
+                    /**
+                     * 获取资源指标聚合类型：0: 环境维度 1:执行引擎维度 2:datatwaypy维度 3.datawayjava维度
+                     * @return AggregationType 资源指标聚合类型：0: 环境维度 1:执行引擎维度 2:datatwaypy维度 3.datawayjava维度
+                     * 
+                     */
+                    int64_t GetAggregationType() const;
+
+                    /**
+                     * 设置资源指标聚合类型：0: 环境维度 1:执行引擎维度 2:datatwaypy维度 3.datawayjava维度
+                     * @param _aggregationType 资源指标聚合类型：0: 环境维度 1:执行引擎维度 2:datatwaypy维度 3.datawayjava维度
+                     * 
+                     */
+                    void SetAggregationType(const int64_t& _aggregationType);
+
+                    /**
+                     * 判断参数 AggregationType 是否已赋值
+                     * @return AggregationType 是否已赋值
+                     * 
+                     */
+                    bool AggregationTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     int64_t m_runtimeClass;
                     bool m_runtimeClassHasBeenSet;
+
+                    /**
+                     * 资源指标聚合类型：0: 环境维度 1:执行引擎维度 2:datatwaypy维度 3.datawayjava维度
+                     */
+                    int64_t m_aggregationType;
+                    bool m_aggregationTypeHasBeenSet;
 
                 };
             }

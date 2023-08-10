@@ -45,6 +45,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/AuthNode.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMemberEmailBindResponse.h
   include/tencentcloud/organization/v20210331/model/DeleteOrganizationMembersRequest.h
+  include/tencentcloud/organization/v20210331/model/DeleteOrganizationMemberAuthIdentityRequest.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMemberPoliciesResponse.h
   include/tencentcloud/organization/v20210331/model/DeleteOrganizationNodesRequest.h
   include/tencentcloud/organization/v20210331/model/IdentityPolicy.h
@@ -84,6 +85,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersResponse.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMembersRequest.h
   include/tencentcloud/organization/v20210331/model/MemberIdentity.h
+  include/tencentcloud/organization/v20210331/model/DeleteOrganizationMemberAuthIdentityResponse.h
   include/tencentcloud/organization/v20210331/model/UpdateOrganizationMemberEmailBindRequest.h
   include/tencentcloud/organization/v20210331/model/OrgNode.h
   include/tencentcloud/organization/v20181225/model/MoveOrganizationMembersToNodeRequest.h
@@ -159,6 +161,7 @@ set(organization_src
   src/v20210331/model/AuthNode.cpp
   src/v20210331/model/DescribeOrganizationMemberEmailBindResponse.cpp
   src/v20210331/model/DeleteOrganizationMembersRequest.cpp
+  src/v20210331/model/DeleteOrganizationMemberAuthIdentityRequest.cpp
   src/v20210331/model/DescribeOrganizationMemberPoliciesResponse.cpp
   src/v20210331/model/DeleteOrganizationNodesRequest.cpp
   src/v20210331/model/IdentityPolicy.cpp
@@ -198,6 +201,7 @@ set(organization_src
   src/v20210331/model/MoveOrganizationNodeMembersResponse.cpp
   src/v20210331/model/DescribeOrganizationMembersRequest.cpp
   src/v20210331/model/MemberIdentity.cpp
+  src/v20210331/model/DeleteOrganizationMemberAuthIdentityResponse.cpp
   src/v20210331/model/UpdateOrganizationMemberEmailBindRequest.cpp
   src/v20210331/model/OrgNode.cpp
   src/v20181225/model/MoveOrganizationMembersToNodeRequest.cpp

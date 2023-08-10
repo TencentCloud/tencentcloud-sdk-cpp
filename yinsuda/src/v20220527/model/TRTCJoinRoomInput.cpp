@@ -24,7 +24,8 @@ TRTCJoinRoomInput::TRTCJoinRoomInput() :
     m_signHasBeenSet(false),
     m_roomIdHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_roomIdTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome TRTCJoinRoomInput::Deserialize(const rapidjson::Value &value
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RoomIdType") && !value["RoomIdType"].IsNull())
+    {
+        if (!value["RoomIdType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TRTCJoinRoomInput.RoomIdType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roomIdType = string(value["RoomIdType"].GetString());
+        m_roomIdTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void TRTCJoinRoomInput::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roomIdTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoomIdType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roomIdType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void TRTCJoinRoomInput::SetUserId(const string& _userId)
 bool TRTCJoinRoomInput::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string TRTCJoinRoomInput::GetRoomIdType() const
+{
+    return m_roomIdType;
+}
+
+void TRTCJoinRoomInput::SetRoomIdType(const string& _roomIdType)
+{
+    m_roomIdType = _roomIdType;
+    m_roomIdTypeHasBeenSet = true;
+}
+
+bool TRTCJoinRoomInput::RoomIdTypeHasBeenSet() const
+{
+    return m_roomIdTypeHasBeenSet;
 }
 
