@@ -414,15 +414,15 @@ video 纯视频
                     bool AudienceTypeHasBeenSet() const;
 
                     /**
-                     * 获取录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
-                     * @return RecordLayout 录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * 获取录制模板。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * @return RecordLayout 录制模板。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
                      * 
                      */
                     uint64_t GetRecordLayout() const;
 
                     /**
-                     * 设置录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
-                     * @param _recordLayout 录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * 设置录制模板。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * @param _recordLayout 录制模板。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
                      * 
                      */
                     void SetRecordLayout(const uint64_t& _recordLayout);
@@ -683,7 +683,7 @@ video 纯视频
                     bool m_audienceTypeHasBeenSet;
 
                     /**
-                     * 录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * 录制模板。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
                      */
                     uint64_t m_recordLayout;
                     bool m_recordLayoutHasBeenSet;

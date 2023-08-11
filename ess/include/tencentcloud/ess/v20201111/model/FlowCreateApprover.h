@@ -58,6 +58,8 @@ namespace TencentCloud
 自动签署仅进行盖章操作，不能是手写签名。
 本方企业自动签署的签署人会默认是当前的发起人
 他方企业自动签署的签署人是自动签模板的他方企业授权人
+7: 个人自动签署，适用于个人自动签场景。
+注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
                      * @return ApproverType 参与者类型：
 0：企业
 1：个人
@@ -66,6 +68,8 @@ namespace TencentCloud
 自动签署仅进行盖章操作，不能是手写签名。
 本方企业自动签署的签署人会默认是当前的发起人
 他方企业自动签署的签署人是自动签模板的他方企业授权人
+7: 个人自动签署，适用于个人自动签场景。
+注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
                      * 
                      */
                     int64_t GetApproverType() const;
@@ -79,6 +83,8 @@ namespace TencentCloud
 自动签署仅进行盖章操作，不能是手写签名。
 本方企业自动签署的签署人会默认是当前的发起人
 他方企业自动签署的签署人是自动签模板的他方企业授权人
+7: 个人自动签署，适用于个人自动签场景。
+注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
                      * @param _approverType 参与者类型：
 0：企业
 1：个人
@@ -87,6 +93,8 @@ namespace TencentCloud
 自动签署仅进行盖章操作，不能是手写签名。
 本方企业自动签署的签署人会默认是当前的发起人
 他方企业自动签署的签署人是自动签模板的他方企业授权人
+7: 个人自动签署，适用于个人自动签场景。
+注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
                      * 
                      */
                     void SetApproverType(const int64_t& _approverType);
@@ -377,23 +385,23 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                     bool PreReadTimeHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人的电子签用户ID
-<br/>当未指定签署人姓名+手机号的情况下，该字段毕传
+                     * 获取签署人userId，仅支持本企业的员工userid， 可在控制台组织管理处获得
 
-                     * @return UserId 签署方经办人的电子签用户ID
-<br/>当未指定签署人姓名+手机号的情况下，该字段毕传
+若传此字段 则以userid的信息为主，会覆盖传递过来的签署人基本信息， 包括姓名，手机号，证件类型等信息
+                     * @return UserId 签署人userId，仅支持本企业的员工userid， 可在控制台组织管理处获得
 
+若传此字段 则以userid的信息为主，会覆盖传递过来的签署人基本信息， 包括姓名，手机号，证件类型等信息
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置签署方经办人的电子签用户ID
-<br/>当未指定签署人姓名+手机号的情况下，该字段毕传
+                     * 设置签署人userId，仅支持本企业的员工userid， 可在控制台组织管理处获得
 
-                     * @param _userId 签署方经办人的电子签用户ID
-<br/>当未指定签署人姓名+手机号的情况下，该字段毕传
+若传此字段 则以userid的信息为主，会覆盖传递过来的签署人基本信息， 包括姓名，手机号，证件类型等信息
+                     * @param _userId 签署人userId，仅支持本企业的员工userid， 可在控制台组织管理处获得
 
+若传此字段 则以userid的信息为主，会覆盖传递过来的签署人基本信息， 包括姓名，手机号，证件类型等信息
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -427,19 +435,23 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                     bool RequiredHasBeenSet() const;
 
                     /**
-                     * 获取签署人用户来源
-<br/>企微侧用户请传入：WEWORKAPP
-                     * @return ApproverSource 签署人用户来源
-<br/>企微侧用户请传入：WEWORKAPP
+                     * 获取签署人用户来源，此参数仅针对企微用户开放
+
+企微侧用户请传入：WEWORKAPP
+                     * @return ApproverSource 签署人用户来源，此参数仅针对企微用户开放
+
+企微侧用户请传入：WEWORKAPP
                      * 
                      */
                     std::string GetApproverSource() const;
 
                     /**
-                     * 设置签署人用户来源
-<br/>企微侧用户请传入：WEWORKAPP
-                     * @param _approverSource 签署人用户来源
-<br/>企微侧用户请传入：WEWORKAPP
+                     * 设置签署人用户来源，此参数仅针对企微用户开放
+
+企微侧用户请传入：WEWORKAPP
+                     * @param _approverSource 签署人用户来源，此参数仅针对企微用户开放
+
+企微侧用户请传入：WEWORKAPP
                      * 
                      */
                     void SetApproverSource(const std::string& _approverSource);
@@ -610,18 +622,18 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                     bool ApproverNeedSignReviewHasBeenSet() const;
 
                     /**
-                     * 获取签署人签署控件
+                     * 获取签署人签署控件， 此参数仅针对文件发起（CreateFlowByFiles）生效
 <br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置
-                     * @return SignComponents 签署人签署控件
+                     * @return SignComponents 签署人签署控件， 此参数仅针对文件发起（CreateFlowByFiles）生效
 <br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置签署人签署控件
+                     * 设置签署人签署控件， 此参数仅针对文件发起（CreateFlowByFiles）生效
 <br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置
-                     * @param _signComponents 签署人签署控件
+                     * @param _signComponents 签署人签署控件， 此参数仅针对文件发起（CreateFlowByFiles）生效
 <br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置
                      * 
                      */
@@ -635,18 +647,18 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                     bool SignComponentsHasBeenSet() const;
 
                     /**
-                     * 获取签署人填写控件
+                     * 获取签署人填写控件 此参数仅针对文件发起（CreateFlowByFiles）生效
 <br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置
-                     * @return Components 签署人填写控件
+                     * @return Components 签署人填写控件 此参数仅针对文件发起（CreateFlowByFiles）生效
 <br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置
                      * 
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
-                     * 设置签署人填写控件
+                     * 设置签署人填写控件 此参数仅针对文件发起（CreateFlowByFiles）生效
 <br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置
-                     * @param _components 签署人填写控件
+                     * @param _components 签署人填写控件 此参数仅针对文件发起（CreateFlowByFiles）生效
 <br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置
                      * 
                      */
@@ -749,6 +761,8 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
 自动签署仅进行盖章操作，不能是手写签名。
 本方企业自动签署的签署人会默认是当前的发起人
 他方企业自动签署的签署人是自动签模板的他方企业授权人
+7: 个人自动签署，适用于个人自动签场景。
+注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
                      */
                     int64_t m_approverType;
                     bool m_approverTypeHasBeenSet;
@@ -831,9 +845,9 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                     bool m_preReadTimeHasBeenSet;
 
                     /**
-                     * 签署方经办人的电子签用户ID
-<br/>当未指定签署人姓名+手机号的情况下，该字段毕传
+                     * 签署人userId，仅支持本企业的员工userid， 可在控制台组织管理处获得
 
+若传此字段 则以userid的信息为主，会覆盖传递过来的签署人基本信息， 包括姓名，手机号，证件类型等信息
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
@@ -845,8 +859,9 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                     bool m_requiredHasBeenSet;
 
                     /**
-                     * 签署人用户来源
-<br/>企微侧用户请传入：WEWORKAPP
+                     * 签署人用户来源，此参数仅针对企微用户开放
+
+企微侧用户请传入：WEWORKAPP
                      */
                     std::string m_approverSource;
                     bool m_approverSourceHasBeenSet;
@@ -896,14 +911,14 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
                     bool m_approverNeedSignReviewHasBeenSet;
 
                     /**
-                     * 签署人签署控件
+                     * 签署人签署控件， 此参数仅针对文件发起（CreateFlowByFiles）生效
 <br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
 
                     /**
-                     * 签署人填写控件
+                     * 签署人填写控件 此参数仅针对文件发起（CreateFlowByFiles）生效
 <br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置
                      */
                     std::vector<Component> m_components;

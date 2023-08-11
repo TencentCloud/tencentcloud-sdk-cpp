@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取是否开启云监控和云镜服务，未指定时默认开启。
-                     * @return EnhancedService 是否开启云监控和云镜服务，未指定时默认开启。
+                     * 获取是否开启腾讯云可观测平台和主机安全服务，未指定时默认开启。
+                     * @return EnhancedService 是否开启腾讯云可观测平台和主机安全服务，未指定时默认开启。
                      * 
                      */
                     EnhancedService GetEnhancedService() const;
 
                     /**
-                     * 设置是否开启云监控和云镜服务，未指定时默认开启。
-                     * @param _enhancedService 是否开启云监控和云镜服务，未指定时默认开启。
+                     * 设置是否开启腾讯云可观测平台和主机安全服务，未指定时默认开启。
+                     * @param _enhancedService 是否开启腾讯云可观测平台和主机安全服务，未指定时默认开启。
                      * 
                      */
                     void SetEnhancedService(const EnhancedService& _enhancedService);
@@ -210,7 +210,7 @@ FALSE：表示不保持镜像的登录设置
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 是否开启云监控和云镜服务，未指定时默认开启。
+                     * 是否开启腾讯云可观测平台和主机安全服务，未指定时默认开启。
                      */
                     EnhancedService m_enhancedService;
                     bool m_enhancedServiceHasBeenSet;

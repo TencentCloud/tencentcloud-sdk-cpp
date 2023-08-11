@@ -125,6 +125,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesConfig.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTaskStatusResponse.h
   include/tencentcloud/ckafka/v20190819/model/AuthorizeTokenRequest.h
+  include/tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceResp.h
   include/tencentcloud/ckafka/v20190819/model/OperateResponseData.h
   include/tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeACLRequest.h
@@ -454,6 +455,7 @@ set(ckafka_src
   src/v20190819/model/ModifyInstanceAttributesConfig.cpp
   src/v20190819/model/DescribeTaskStatusResponse.cpp
   src/v20190819/model/AuthorizeTokenRequest.cpp
+  src/v20190819/model/RenewCkafkaInstanceResp.cpp
   src/v20190819/model/OperateResponseData.cpp
   src/v20190819/model/RenewCkafkaInstanceResponse.cpp
   src/v20190819/model/DescribeACLRequest.cpp

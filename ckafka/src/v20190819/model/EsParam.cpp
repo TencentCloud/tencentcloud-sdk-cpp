@@ -39,7 +39,8 @@ EsParam::EsParam() :
     m_databasePrimaryKeyHasBeenSet(false),
     m_dropDlqHasBeenSet(false),
     m_recordMappingListHasBeenSet(false),
-    m_dateFieldHasBeenSet(false)
+    m_dateFieldHasBeenSet(false),
+    m_recordMappingModeHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,16 @@ CoreInternalOutcome EsParam::Deserialize(const rapidjson::Value &value)
         m_dateFieldHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordMappingMode") && !value["RecordMappingMode"].IsNull())
+    {
+        if (!value["RecordMappingMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EsParam.RecordMappingMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordMappingMode = string(value["RecordMappingMode"].GetString());
+        m_recordMappingModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -428,6 +439,14 @@ void EsParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "DateField";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dateField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordMappingModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordMappingMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordMappingMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -735,5 +754,21 @@ void EsParam::SetDateField(const string& _dateField)
 bool EsParam::DateFieldHasBeenSet() const
 {
     return m_dateFieldHasBeenSet;
+}
+
+string EsParam::GetRecordMappingMode() const
+{
+    return m_recordMappingMode;
+}
+
+void EsParam::SetRecordMappingMode(const string& _recordMappingMode)
+{
+    m_recordMappingMode = _recordMappingMode;
+    m_recordMappingModeHasBeenSet = true;
+}
+
+bool EsParam::RecordMappingModeHasBeenSet() const
+{
+    return m_recordMappingModeHasBeenSet;
 }
 

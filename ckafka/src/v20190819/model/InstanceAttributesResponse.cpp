@@ -55,7 +55,8 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_deleteRouteTimestampHasBeenSet(false),
     m_remainingPartitionsHasBeenSet(false),
     m_remainingTopicsHasBeenSet(false),
-    m_dynamicDiskConfigHasBeenSet(false)
+    m_dynamicDiskConfigHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false)
 {
 }
 
@@ -461,6 +462,16 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_dynamicDiskConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceChargeType") && !value["InstanceChargeType"].IsNull())
+    {
+        if (!value["InstanceChargeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceChargeType = string(value["InstanceChargeType"].GetString());
+        m_instanceChargeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -773,6 +784,14 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dynamicDiskConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1336,5 +1355,21 @@ void InstanceAttributesResponse::SetDynamicDiskConfig(const DynamicDiskConfig& _
 bool InstanceAttributesResponse::DynamicDiskConfigHasBeenSet() const
 {
     return m_dynamicDiskConfigHasBeenSet;
+}
+
+string InstanceAttributesResponse::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void InstanceAttributesResponse::SetInstanceChargeType(const string& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
 }
 

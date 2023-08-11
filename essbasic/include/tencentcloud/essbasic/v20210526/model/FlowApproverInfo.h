@@ -253,12 +253,14 @@ RecipientId参数：
                     /**
                      * 获取签署人类型
 PERSON-个人/自然人；
-PERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；
+PERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景
+注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
 ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
 ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      * @return ApproverType 签署人类型
 PERSON-个人/自然人；
-PERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；
+PERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景
+注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
 ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
 ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      * 
@@ -268,12 +270,14 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     /**
                      * 设置签署人类型
 PERSON-个人/自然人；
-PERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；
+PERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景
+注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
 ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
 ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      * @param _approverType 签署人类型
 PERSON-个人/自然人；
-PERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；
+PERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景
+注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
 ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
 ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      * 
@@ -655,7 +659,8 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     /**
                      * 签署人类型
 PERSON-个人/自然人；
-PERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；
+PERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景
+注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
 ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
 ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      */

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceResp.h>
 
 
 namespace TencentCloud
@@ -32,7 +33,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * RenewCkafkaInstance接口出参bigDealIds
+                * RenewCkafkaInstance返回参数结构体
                 */
                 class RenewCkafkaInstanceResponse : public AbstractModel
                 {
@@ -44,52 +45,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BigDealId 订单号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回值
+                     * @return Result 返回值
                      * 
                      */
-                    std::string GetBigDealId() const;
+                    RenewCkafkaInstanceResp GetResult() const;
 
                     /**
-                     * 判断参数 BigDealId 是否已赋值
-                     * @return BigDealId 是否已赋值
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      * 
                      */
-                    bool BigDealIdHasBeenSet() const;
-
-                    /**
-                     * 获取子订单号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealName 子订单号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetDealName() const;
-
-                    /**
-                     * 判断参数 DealName 是否已赋值
-                     * @return DealName 是否已赋值
-                     * 
-                     */
-                    bool DealNameHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 订单号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回值
                      */
-                    std::string m_bigDealId;
-                    bool m_bigDealIdHasBeenSet;
-
-                    /**
-                     * 子订单号
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_dealName;
-                    bool m_dealNameHasBeenSet;
+                    RenewCkafkaInstanceResp m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

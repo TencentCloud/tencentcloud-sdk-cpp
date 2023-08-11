@@ -846,6 +846,31 @@ namespace TencentCloud
                      */
                     bool DynamicDiskConfigHasBeenSet() const;
 
+                    /**
+                     * 获取实例计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceChargeType 实例计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceChargeType() const;
+
+                    /**
+                     * 设置实例计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceChargeType 实例计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceChargeType(const std::string& _instanceChargeType);
+
+                    /**
+                     * 判断参数 InstanceChargeType 是否已赋值
+                     * @return InstanceChargeType 是否已赋值
+                     * 
+                     */
+                    bool InstanceChargeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1072,6 +1097,13 @@ namespace TencentCloud
                      */
                     DynamicDiskConfig m_dynamicDiskConfig;
                     bool m_dynamicDiskConfigHasBeenSet;
+
+                    /**
+                     * 实例计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceChargeType;
+                    bool m_instanceChargeTypeHasBeenSet;
 
                 };
             }

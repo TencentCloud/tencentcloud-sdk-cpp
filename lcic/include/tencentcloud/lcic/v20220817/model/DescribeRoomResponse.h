@@ -373,6 +373,20 @@ video 纯视频
                      */
                     bool RoomTypeHasBeenSet() const;
 
+                    /**
+                     * 获取录制时长
+                     * @return VideoDuration 录制时长
+                     * 
+                     */
+                    uint64_t GetVideoDuration() const;
+
+                    /**
+                     * 判断参数 VideoDuration 是否已赋值
+                     * @return VideoDuration 是否已赋值
+                     * 
+                     */
+                    bool VideoDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -518,6 +532,12 @@ video 纯视频
                      */
                     int64_t m_roomType;
                     bool m_roomTypeHasBeenSet;
+
+                    /**
+                     * 录制时长
+                     */
+                    uint64_t m_videoDuration;
+                    bool m_videoDurationHasBeenSet;
 
                 };
             }

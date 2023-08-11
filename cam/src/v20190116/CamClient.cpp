@@ -384,6 +384,49 @@ CamClient::CreateGroupOutcomeCallable CamClient::CreateGroupCallable(const Creat
     return task->get_future();
 }
 
+CamClient::CreateMessageReceiverOutcome CamClient::CreateMessageReceiver(const CreateMessageReceiverRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMessageReceiver");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMessageReceiverResponse rsp = CreateMessageReceiverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMessageReceiverOutcome(rsp);
+        else
+            return CreateMessageReceiverOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMessageReceiverOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::CreateMessageReceiverAsync(const CreateMessageReceiverRequest& request, const CreateMessageReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMessageReceiver(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::CreateMessageReceiverOutcomeCallable CamClient::CreateMessageReceiverCallable(const CreateMessageReceiverRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMessageReceiverOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMessageReceiver(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::CreateOIDCConfigOutcome CamClient::CreateOIDCConfig(const CreateOIDCConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOIDCConfig");

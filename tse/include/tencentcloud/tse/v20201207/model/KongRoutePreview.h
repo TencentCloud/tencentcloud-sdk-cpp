@@ -404,7 +404,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    KVMapping GetHeaders() const;
+                    std::vector<KVMapping> GetHeaders() const;
 
                     /**
                      * 设置路由的Headers
@@ -413,7 +413,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetHeaders(const KVMapping& _headers);
+                    void SetHeaders(const std::vector<KVMapping>& _headers);
 
                     /**
                      * 判断参数 Headers 是否已赋值
@@ -526,7 +526,7 @@ namespace TencentCloud
                      * 路由的Headers
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    KVMapping m_headers;
+                    std::vector<KVMapping> m_headers;
                     bool m_headersHasBeenSet;
 
                 };

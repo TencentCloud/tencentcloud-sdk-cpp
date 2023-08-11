@@ -39,6 +39,8 @@
 #include <tencentcloud/cam/v20190116/model/CreateAccessKeyResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/CreateMessageReceiverRequest.h>
+#include <tencentcloud/cam/v20190116/model/CreateMessageReceiverResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateOIDCConfigRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreatePolicyRequest.h>
@@ -233,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateGroupResponse> CreateGroupOutcome;
                 typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateGroupRequest&, CreateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMessageReceiverResponse> CreateMessageReceiverOutcome;
+                typedef std::future<CreateMessageReceiverOutcome> CreateMessageReceiverOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::CreateMessageReceiverRequest&, CreateMessageReceiverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMessageReceiverAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOIDCConfigResponse> CreateOIDCConfigOutcome;
                 typedef std::future<CreateOIDCConfigOutcome> CreateOIDCConfigOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateOIDCConfigRequest&, CreateOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOIDCConfigAsyncHandler;
@@ -541,6 +546,15 @@ namespace TencentCloud
                 CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest &request);
                 void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request);
+
+                /**
+                 *创建消息接收人接口：仅允许已完成实名认证的用户访问消息接收人接口，并对每个用户限制每天最多请求10次。
+                 * @param req CreateMessageReceiverRequest
+                 * @return CreateMessageReceiverOutcome
+                 */
+                CreateMessageReceiverOutcome CreateMessageReceiver(const Model::CreateMessageReceiverRequest &request);
+                void CreateMessageReceiverAsync(const Model::CreateMessageReceiverRequest& request, const CreateMessageReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMessageReceiverOutcomeCallable CreateMessageReceiverCallable(const Model::CreateMessageReceiverRequest& request);
 
                 /**
                  *创建角色OIDC配置

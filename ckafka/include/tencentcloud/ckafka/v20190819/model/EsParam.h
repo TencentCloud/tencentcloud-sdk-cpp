@@ -448,6 +448,27 @@ namespace TencentCloud
                      */
                     bool DateFieldHasBeenSet() const;
 
+                    /**
+                     * 获取用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
+                     * @return RecordMappingMode 用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
+                     * 
+                     */
+                    std::string GetRecordMappingMode() const;
+
+                    /**
+                     * 设置用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
+                     * @param _recordMappingMode 用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
+                     * 
+                     */
+                    void SetRecordMappingMode(const std::string& _recordMappingMode);
+
+                    /**
+                     * 判断参数 RecordMappingMode 是否已赋值
+                     * @return RecordMappingMode 是否已赋值
+                     * 
+                     */
+                    bool RecordMappingModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -563,6 +584,12 @@ namespace TencentCloud
                      */
                     std::string m_dateField;
                     bool m_dateFieldHasBeenSet;
+
+                    /**
+                     * 用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
+                     */
+                    std::string m_recordMappingMode;
+                    bool m_recordMappingModeHasBeenSet;
 
                 };
             }

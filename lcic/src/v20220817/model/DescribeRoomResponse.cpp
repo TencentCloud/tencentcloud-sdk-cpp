@@ -44,7 +44,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_interactionModeHasBeenSet(false),
     m_videoOrientationHasBeenSet(false),
     m_isGradingRequiredPostClassHasBeenSet(false),
-    m_roomTypeHasBeenSet(false)
+    m_roomTypeHasBeenSet(false),
+    m_videoDurationHasBeenSet(false)
 {
 }
 
@@ -295,6 +296,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_roomTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VideoDuration") && !rsp["VideoDuration"].IsNull())
+    {
+        if (!rsp["VideoDuration"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoDuration = rsp["VideoDuration"].GetUint64();
+        m_videoDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -476,6 +487,14 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "RoomType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_roomType, allocator);
+    }
+
+    if (m_videoDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_videoDuration, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -698,6 +717,16 @@ int64_t DescribeRoomResponse::GetRoomType() const
 bool DescribeRoomResponse::RoomTypeHasBeenSet() const
 {
     return m_roomTypeHasBeenSet;
+}
+
+uint64_t DescribeRoomResponse::GetVideoDuration() const
+{
+    return m_videoDuration;
+}
+
+bool DescribeRoomResponse::VideoDurationHasBeenSet() const
+{
+    return m_videoDurationHasBeenSet;
 }
 
 

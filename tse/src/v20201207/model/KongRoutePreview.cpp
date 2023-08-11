@@ -201,18 +201,21 @@ CoreInternalOutcome KongRoutePreview::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("Headers") && !value["Headers"].IsNull())
     {
-        if (!value["Headers"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `KongRoutePreview.Headers` is not object type").SetRequestId(requestId));
-        }
+        if (!value["Headers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KongRoutePreview.Headers` is not array type"));
 
-        CoreInternalOutcome outcome = m_headers.Deserialize(value["Headers"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = value["Headers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            KVMapping item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_headers.push_back(item);
         }
-
         m_headersHasBeenSet = true;
     }
 
@@ -365,8 +368,14 @@ void KongRoutePreview::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Headers";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_headers.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_headers.begin(); itr != m_headers.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -596,12 +605,12 @@ bool KongRoutePreview::DestinationPortsHasBeenSet() const
     return m_destinationPortsHasBeenSet;
 }
 
-KVMapping KongRoutePreview::GetHeaders() const
+vector<KVMapping> KongRoutePreview::GetHeaders() const
 {
     return m_headers;
 }
 
-void KongRoutePreview::SetHeaders(const KVMapping& _headers)
+void KongRoutePreview::SetHeaders(const vector<KVMapping>& _headers)
 {
     m_headers = _headers;
     m_headersHasBeenSet = true;
