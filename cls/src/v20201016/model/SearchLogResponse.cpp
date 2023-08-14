@@ -32,7 +32,8 @@ SearchLogResponse::SearchLogResponse() :
     m_analysisResultsHasBeenSet(false),
     m_analysisRecordsHasBeenSet(false),
     m_columnsHasBeenSet(false),
-    m_samplingRateHasBeenSet(false)
+    m_samplingRateHasBeenSet(false),
+    m_topicsHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,23 @@ CoreInternalOutcome SearchLogResponse::Deserialize(const string &payload)
         m_samplingRateHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Topics") && !rsp["Topics"].IsNull())
+    {
+        if (!rsp["Topics"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topics` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_topics.Deserialize(rsp["Topics"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_topicsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -309,6 +327,15 @@ string SearchLogResponse::ToJsonString() const
         value.AddMember(iKey, m_samplingRate, allocator);
     }
 
+    if (m_topicsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Topics";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_topics.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -409,6 +436,16 @@ double SearchLogResponse::GetSamplingRate() const
 bool SearchLogResponse::SamplingRateHasBeenSet() const
 {
     return m_samplingRateHasBeenSet;
+}
+
+SearchLogTopics SearchLogResponse::GetTopics() const
+{
+    return m_topics;
+}
+
+bool SearchLogResponse::TopicsHasBeenSet() const
+{
+    return m_topicsHasBeenSet;
 }
 
 

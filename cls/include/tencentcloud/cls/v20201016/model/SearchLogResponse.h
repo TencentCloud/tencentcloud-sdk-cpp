@@ -24,6 +24,7 @@
 #include <tencentcloud/cls/v20201016/model/LogInfo.h>
 #include <tencentcloud/cls/v20201016/model/LogItems.h>
 #include <tencentcloud/cls/v20201016/model/Column.h>
+#include <tencentcloud/cls/v20201016/model/SearchLogTopics.h>
 
 
 namespace TencentCloud
@@ -47,8 +48,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
-                     * @return Context 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
+                     * 获取透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时。
+注意：
+* 仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context
+                     * @return Context 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时。
+注意：
+* 仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context
                      * 
                      */
                     std::string GetContext() const;
@@ -194,10 +199,28 @@ namespace TencentCloud
                      */
                     bool SamplingRateHasBeenSet() const;
 
+                    /**
+                     * 获取使用多日志主题检索时，各个日志主题的基本信息，例如报错信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Topics 使用多日志主题检索时，各个日志主题的基本信息，例如报错信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SearchLogTopics GetTopics() const;
+
+                    /**
+                     * 判断参数 Topics 是否已赋值
+                     * @return Topics 是否已赋值
+                     * 
+                     */
+                    bool TopicsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
+                     * 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时。
+注意：
+* 仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
@@ -260,6 +283,13 @@ namespace TencentCloud
                      */
                     double m_samplingRate;
                     bool m_samplingRateHasBeenSet;
+
+                    /**
+                     * 使用多日志主题检索时，各个日志主题的基本信息，例如报错信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SearchLogTopics m_topics;
+                    bool m_topicsHasBeenSet;
 
                 };
             }

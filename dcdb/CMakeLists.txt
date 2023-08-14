@@ -97,6 +97,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ShardZoneChooseInfo.h
   include/tencentcloud/dcdb/v20180411/model/RenewDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBEncryptAttributesResponse.h
+  include/tencentcloud/dcdb/v20180411/model/Project.h
   include/tencentcloud/dcdb/v20180411/model/CreateTmpDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseTable.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBEncryptAttributesRequest.h
@@ -184,6 +185,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/CreateTmpDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/CreateAccountResponse.h
   include/tencentcloud/dcdb/v20180411/model/IsolateDedicatedDBInstanceResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeLogFileRetentionPeriodResponse.h
   include/tencentcloud/dcdb/v20180411/model/RegionInfo.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseObjectsRequest.h
   include/tencentcloud/dcdb/v20180411/model/UpgradeDCDBInstanceRequest.h
@@ -201,7 +203,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBRenewalPriceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstancesRequest.h
-  include/tencentcloud/dcdb/v20180411/model/Project.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeLogFileRetentionPeriodRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVportRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DestroyHourDCDBInstanceRequest.h
@@ -292,6 +294,7 @@ set(dcdb_src
   src/v20180411/model/ShardZoneChooseInfo.cpp
   src/v20180411/model/RenewDCDBInstanceRequest.cpp
   src/v20180411/model/DescribeDBEncryptAttributesResponse.cpp
+  src/v20180411/model/Project.cpp
   src/v20180411/model/CreateTmpDCDBInstanceRequest.cpp
   src/v20180411/model/DatabaseTable.cpp
   src/v20180411/model/DescribeDBEncryptAttributesRequest.cpp
@@ -379,6 +382,7 @@ set(dcdb_src
   src/v20180411/model/CreateTmpDCDBInstanceResponse.cpp
   src/v20180411/model/CreateAccountResponse.cpp
   src/v20180411/model/IsolateDedicatedDBInstanceResponse.cpp
+  src/v20180411/model/DescribeLogFileRetentionPeriodResponse.cpp
   src/v20180411/model/RegionInfo.cpp
   src/v20180411/model/DescribeDatabaseObjectsRequest.cpp
   src/v20180411/model/UpgradeDCDBInstanceRequest.cpp
@@ -396,7 +400,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDBSlowLogsResponse.cpp
   src/v20180411/model/DescribeDCDBRenewalPriceRequest.cpp
   src/v20180411/model/DescribeDCDBInstancesRequest.cpp
-  src/v20180411/model/Project.cpp
+  src/v20180411/model/DescribeLogFileRetentionPeriodRequest.cpp
   src/v20180411/model/ModifyInstanceVportRequest.cpp
   src/v20180411/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20180411/model/DestroyHourDCDBInstanceRequest.cpp

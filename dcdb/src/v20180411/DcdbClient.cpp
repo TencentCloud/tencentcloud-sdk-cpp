@@ -1588,6 +1588,49 @@ DcdbClient::DescribeFlowOutcomeCallable DcdbClient::DescribeFlowCallable(const D
     return task->get_future();
 }
 
+DcdbClient::DescribeLogFileRetentionPeriodOutcome DcdbClient::DescribeLogFileRetentionPeriod(const DescribeLogFileRetentionPeriodRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogFileRetentionPeriod");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogFileRetentionPeriodResponse rsp = DescribeLogFileRetentionPeriodResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogFileRetentionPeriodOutcome(rsp);
+        else
+            return DescribeLogFileRetentionPeriodOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogFileRetentionPeriodOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeLogFileRetentionPeriodAsync(const DescribeLogFileRetentionPeriodRequest& request, const DescribeLogFileRetentionPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogFileRetentionPeriod(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeLogFileRetentionPeriodOutcomeCallable DcdbClient::DescribeLogFileRetentionPeriodCallable(const DescribeLogFileRetentionPeriodRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogFileRetentionPeriodOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogFileRetentionPeriod(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::DescribeOrdersOutcome DcdbClient::DescribeOrders(const DescribeOrdersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrders");

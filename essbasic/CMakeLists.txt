@@ -59,6 +59,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelRole.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignResponse.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverDetail.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesRequest.h
@@ -108,6 +109,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/FlowApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.h
   include/tencentcloud/essbasic/v20210526/model/FlowDetailInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h
@@ -342,6 +344,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateConvertTaskApiRequest.cpp
   src/v20210526/model/ChannelCreateFlowByFilesRequest.cpp
   src/v20210526/model/ChannelRole.cpp
+  src/v20210526/model/ChannelCreatePreparedPersonalEsignResponse.cpp
   src/v20210526/model/FlowApproverDetail.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsResponse.cpp
   src/v20210526/model/ChannelCreateFlowGroupByFilesRequest.cpp
@@ -391,6 +394,7 @@ set(essbasic_src
   src/v20210526/model/FlowApproverInfo.cpp
   src/v20210526/model/ChannelCreateUserAutoSignEnableUrlResponse.cpp
   src/v20210526/model/ChannelGetTaskResultApiRequest.cpp
+  src/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.cpp
   src/v20210526/model/FlowDetailInfo.cpp
   src/v20210526/model/CreateFlowsByTemplatesResponse.cpp
   src/v20210526/model/DescribeChannelFlowEvidenceReportRequest.cpp

@@ -771,6 +771,49 @@ EssbasicClient::ChannelCreatePrepareFlowOutcomeCallable EssbasicClient::ChannelC
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreatePreparedPersonalEsignOutcome EssbasicClient::ChannelCreatePreparedPersonalEsign(const ChannelCreatePreparedPersonalEsignRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreatePreparedPersonalEsign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreatePreparedPersonalEsignResponse rsp = ChannelCreatePreparedPersonalEsignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreatePreparedPersonalEsignOutcome(rsp);
+        else
+            return ChannelCreatePreparedPersonalEsignOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreatePreparedPersonalEsignOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreatePreparedPersonalEsignAsync(const ChannelCreatePreparedPersonalEsignRequest& request, const ChannelCreatePreparedPersonalEsignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreatePreparedPersonalEsign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreatePreparedPersonalEsignOutcomeCallable EssbasicClient::ChannelCreatePreparedPersonalEsignCallable(const ChannelCreatePreparedPersonalEsignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreatePreparedPersonalEsignOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreatePreparedPersonalEsign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateReleaseFlowOutcome EssbasicClient::ChannelCreateReleaseFlow(const ChannelCreateReleaseFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateReleaseFlow");

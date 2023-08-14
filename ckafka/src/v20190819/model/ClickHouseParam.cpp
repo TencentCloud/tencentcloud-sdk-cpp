@@ -35,7 +35,10 @@ ClickHouseParam::ClickHouseParam() :
     m_selfBuiltHasBeenSet(false),
     m_dropInvalidMessageHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_dropClsHasBeenSet(false)
+    m_dropClsHasBeenSet(false),
+    m_batchSizeHasBeenSet(false),
+    m_consumerFetchMinBytesHasBeenSet(false),
+    m_consumerFetchMaxWaitMsHasBeenSet(false)
 {
 }
 
@@ -211,6 +214,36 @@ CoreInternalOutcome ClickHouseParam::Deserialize(const rapidjson::Value &value)
         m_dropClsHasBeenSet = true;
     }
 
+    if (value.HasMember("BatchSize") && !value["BatchSize"].IsNull())
+    {
+        if (!value["BatchSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClickHouseParam.BatchSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_batchSize = value["BatchSize"].GetInt64();
+        m_batchSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerFetchMinBytes") && !value["ConsumerFetchMinBytes"].IsNull())
+    {
+        if (!value["ConsumerFetchMinBytes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClickHouseParam.ConsumerFetchMinBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerFetchMinBytes = value["ConsumerFetchMinBytes"].GetInt64();
+        m_consumerFetchMinBytesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerFetchMaxWaitMs") && !value["ConsumerFetchMaxWaitMs"].IsNull())
+    {
+        if (!value["ConsumerFetchMaxWaitMs"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClickHouseParam.ConsumerFetchMaxWaitMs` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerFetchMaxWaitMs = value["ConsumerFetchMaxWaitMs"].GetInt64();
+        m_consumerFetchMaxWaitMsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -344,6 +377,30 @@ void ClickHouseParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dropCls.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_batchSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_batchSize, allocator);
+    }
+
+    if (m_consumerFetchMinBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerFetchMinBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consumerFetchMinBytes, allocator);
+    }
+
+    if (m_consumerFetchMaxWaitMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerFetchMaxWaitMs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consumerFetchMaxWaitMs, allocator);
     }
 
 }
@@ -587,5 +644,53 @@ void ClickHouseParam::SetDropCls(const DropCls& _dropCls)
 bool ClickHouseParam::DropClsHasBeenSet() const
 {
     return m_dropClsHasBeenSet;
+}
+
+int64_t ClickHouseParam::GetBatchSize() const
+{
+    return m_batchSize;
+}
+
+void ClickHouseParam::SetBatchSize(const int64_t& _batchSize)
+{
+    m_batchSize = _batchSize;
+    m_batchSizeHasBeenSet = true;
+}
+
+bool ClickHouseParam::BatchSizeHasBeenSet() const
+{
+    return m_batchSizeHasBeenSet;
+}
+
+int64_t ClickHouseParam::GetConsumerFetchMinBytes() const
+{
+    return m_consumerFetchMinBytes;
+}
+
+void ClickHouseParam::SetConsumerFetchMinBytes(const int64_t& _consumerFetchMinBytes)
+{
+    m_consumerFetchMinBytes = _consumerFetchMinBytes;
+    m_consumerFetchMinBytesHasBeenSet = true;
+}
+
+bool ClickHouseParam::ConsumerFetchMinBytesHasBeenSet() const
+{
+    return m_consumerFetchMinBytesHasBeenSet;
+}
+
+int64_t ClickHouseParam::GetConsumerFetchMaxWaitMs() const
+{
+    return m_consumerFetchMaxWaitMs;
+}
+
+void ClickHouseParam::SetConsumerFetchMaxWaitMs(const int64_t& _consumerFetchMaxWaitMs)
+{
+    m_consumerFetchMaxWaitMs = _consumerFetchMaxWaitMs;
+    m_consumerFetchMaxWaitMsHasBeenSet = true;
+}
+
+bool ClickHouseParam::ConsumerFetchMaxWaitMsHasBeenSet() const
+{
+    return m_consumerFetchMaxWaitMsHasBeenSet;
 }
 

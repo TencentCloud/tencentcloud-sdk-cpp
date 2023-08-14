@@ -9027,6 +9027,92 @@ TcssClient::DescribeReverseShellWhiteListsOutcomeCallable TcssClient::DescribeRe
     return task->get_future();
 }
 
+TcssClient::DescribeRiskDnsEventDetailOutcome TcssClient::DescribeRiskDnsEventDetail(const DescribeRiskDnsEventDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskDnsEventDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskDnsEventDetailResponse rsp = DescribeRiskDnsEventDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskDnsEventDetailOutcome(rsp);
+        else
+            return DescribeRiskDnsEventDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskDnsEventDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeRiskDnsEventDetailAsync(const DescribeRiskDnsEventDetailRequest& request, const DescribeRiskDnsEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskDnsEventDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeRiskDnsEventDetailOutcomeCallable TcssClient::DescribeRiskDnsEventDetailCallable(const DescribeRiskDnsEventDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskDnsEventDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskDnsEventDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeRiskDnsListOutcome TcssClient::DescribeRiskDnsList(const DescribeRiskDnsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskDnsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskDnsListResponse rsp = DescribeRiskDnsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskDnsListOutcome(rsp);
+        else
+            return DescribeRiskDnsListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskDnsListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeRiskDnsListAsync(const DescribeRiskDnsListRequest& request, const DescribeRiskDnsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskDnsList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeRiskDnsListOutcomeCallable TcssClient::DescribeRiskDnsListCallable(const DescribeRiskDnsListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskDnsListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskDnsList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeRiskListOutcome TcssClient::DescribeRiskList(const DescribeRiskListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRiskList");

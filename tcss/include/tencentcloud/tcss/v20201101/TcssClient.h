@@ -441,6 +441,10 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeReverseShellWhiteListDetailResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeReverseShellWhiteListsRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeReverseShellWhiteListsResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeRiskDnsEventDetailRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeRiskDnsEventDetailResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeRiskDnsListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeRiskDnsListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeRiskListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeRiskListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeRiskSyscallDetailRequest.h>
@@ -1326,6 +1330,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReverseShellWhiteListsResponse> DescribeReverseShellWhiteListsOutcome;
                 typedef std::future<DescribeReverseShellWhiteListsOutcome> DescribeReverseShellWhiteListsOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeReverseShellWhiteListsRequest&, DescribeReverseShellWhiteListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellWhiteListsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRiskDnsEventDetailResponse> DescribeRiskDnsEventDetailOutcome;
+                typedef std::future<DescribeRiskDnsEventDetailOutcome> DescribeRiskDnsEventDetailOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeRiskDnsEventDetailRequest&, DescribeRiskDnsEventDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskDnsEventDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRiskDnsListResponse> DescribeRiskDnsListOutcome;
+                typedef std::future<DescribeRiskDnsListOutcome> DescribeRiskDnsListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeRiskDnsListRequest&, DescribeRiskDnsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskDnsListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRiskListResponse> DescribeRiskListOutcome;
                 typedef std::future<DescribeRiskListOutcome> DescribeRiskListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeRiskListRequest&, DescribeRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskListAsyncHandler;
@@ -3578,6 +3588,24 @@ namespace TencentCloud
                 DescribeReverseShellWhiteListsOutcome DescribeReverseShellWhiteLists(const Model::DescribeReverseShellWhiteListsRequest &request);
                 void DescribeReverseShellWhiteListsAsync(const Model::DescribeReverseShellWhiteListsRequest& request, const DescribeReverseShellWhiteListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReverseShellWhiteListsOutcomeCallable DescribeReverseShellWhiteListsCallable(const Model::DescribeReverseShellWhiteListsRequest& request);
+
+                /**
+                 *查询恶意请求事件详情
+                 * @param req DescribeRiskDnsEventDetailRequest
+                 * @return DescribeRiskDnsEventDetailOutcome
+                 */
+                DescribeRiskDnsEventDetailOutcome DescribeRiskDnsEventDetail(const Model::DescribeRiskDnsEventDetailRequest &request);
+                void DescribeRiskDnsEventDetailAsync(const Model::DescribeRiskDnsEventDetailRequest& request, const DescribeRiskDnsEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRiskDnsEventDetailOutcomeCallable DescribeRiskDnsEventDetailCallable(const Model::DescribeRiskDnsEventDetailRequest& request);
+
+                /**
+                 *查询恶意请求事件列表
+                 * @param req DescribeRiskDnsListRequest
+                 * @return DescribeRiskDnsListOutcome
+                 */
+                DescribeRiskDnsListOutcome DescribeRiskDnsList(const Model::DescribeRiskDnsListRequest &request);
+                void DescribeRiskDnsListAsync(const Model::DescribeRiskDnsListRequest& request, const DescribeRiskDnsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRiskDnsListOutcomeCallable DescribeRiskDnsListCallable(const Model::DescribeRiskDnsListRequest& request);
 
                 /**
                  *查询最近一次任务发现的风险项的信息列表，支持根据特殊字段进行过滤

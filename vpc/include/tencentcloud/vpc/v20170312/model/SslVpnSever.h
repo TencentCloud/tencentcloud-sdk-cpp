@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * SSL-VPN-SERVER 信息 SET
+                * SSL-VPN-SERVER 出参
                 */
                 class SslVpnSever : public AbstractModel
                 {
@@ -352,7 +352,7 @@ namespace TencentCloud
 2 更新中
 3 更新出错
 4 销毁中
-5 销毁出粗
+5 销毁出错
 6 已连通
 7 未知
                      * @return State SSL-VPN-SERVER 创建状态。
@@ -361,7 +361,7 @@ namespace TencentCloud
 2 更新中
 3 更新出错
 4 销毁中
-5 销毁出粗
+5 销毁出错
 6 已连通
 7 未知
                      * 
@@ -375,7 +375,7 @@ namespace TencentCloud
 2 更新中
 3 更新出错
 4 销毁中
-5 销毁出粗
+5 销毁出错
 6 已连通
 7 未知
                      * @param _state SSL-VPN-SERVER 创建状态。
@@ -384,7 +384,7 @@ namespace TencentCloud
 2 更新中
 3 更新出错
 4 销毁中
-5 销毁出粗
+5 销毁出错
 6 已连通
 7 未知
                      * 
@@ -576,7 +576,7 @@ namespace TencentCloud
 2 更新中
 3 更新出错
 4 销毁中
-5 销毁出粗
+5 销毁出错
 6 已连通
 7 未知
                      */

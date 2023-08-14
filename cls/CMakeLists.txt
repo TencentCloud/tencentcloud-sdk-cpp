@@ -39,6 +39,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ModifyConfigExtraResponse.h
   include/tencentcloud/cls/v20201016/model/KafkaRechargeInfo.h
   include/tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h
+  include/tencentcloud/cls/v20201016/model/UploadLogRequest.h
   include/tencentcloud/cls/v20201016/model/CreateLogsetRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeShippersRequest.h
   include/tencentcloud/cls/v20201016/model/CreateScheduledSqlResponse.h
@@ -99,6 +100,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/EventLog.h
   include/tencentcloud/cls/v20201016/model/CreateAlarmRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteExportResponse.h
+  include/tencentcloud/cls/v20201016/model/SearchLogInfos.h
   include/tencentcloud/cls/v20201016/model/PartitionInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteScheduledSqlResponse.h
   include/tencentcloud/cls/v20201016/model/AlertHistoryRecord.h
@@ -129,7 +131,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteIndexRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeConsumerResponse.h
-  include/tencentcloud/cls/v20201016/model/UploadLogRequest.h
+  include/tencentcloud/cls/v20201016/model/SearchLogTopics.h
   include/tencentcloud/cls/v20201016/model/ModifyConsumerResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeAlertRecordHistoryRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigsRequest.h
@@ -165,6 +167,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteIndexResponse.h
   include/tencentcloud/cls/v20201016/model/AlarmAnalysisConfig.h
   include/tencentcloud/cls/v20201016/model/PreviewLogStatistic.h
+  include/tencentcloud/cls/v20201016/model/SearchLogErrors.h
   include/tencentcloud/cls/v20201016/model/ModifyIndexRequest.h
   include/tencentcloud/cls/v20201016/model/Column.h
   include/tencentcloud/cls/v20201016/model/ContentInfo.h
@@ -282,6 +285,7 @@ set(cls_src
   src/v20201016/model/ModifyConfigExtraResponse.cpp
   src/v20201016/model/KafkaRechargeInfo.cpp
   src/v20201016/model/ModifyLogsetRequest.cpp
+  src/v20201016/model/UploadLogRequest.cpp
   src/v20201016/model/CreateLogsetRequest.cpp
   src/v20201016/model/DescribeShippersRequest.cpp
   src/v20201016/model/CreateScheduledSqlResponse.cpp
@@ -342,6 +346,7 @@ set(cls_src
   src/v20201016/model/EventLog.cpp
   src/v20201016/model/CreateAlarmRequest.cpp
   src/v20201016/model/DeleteExportResponse.cpp
+  src/v20201016/model/SearchLogInfos.cpp
   src/v20201016/model/PartitionInfo.cpp
   src/v20201016/model/DeleteScheduledSqlResponse.cpp
   src/v20201016/model/AlertHistoryRecord.cpp
@@ -372,7 +377,7 @@ set(cls_src
   src/v20201016/model/DeleteConsumerRequest.cpp
   src/v20201016/model/DeleteIndexRequest.cpp
   src/v20201016/model/DescribeConsumerResponse.cpp
-  src/v20201016/model/UploadLogRequest.cpp
+  src/v20201016/model/SearchLogTopics.cpp
   src/v20201016/model/ModifyConsumerResponse.cpp
   src/v20201016/model/DescribeAlertRecordHistoryRequest.cpp
   src/v20201016/model/DescribeConfigsRequest.cpp
@@ -408,6 +413,7 @@ set(cls_src
   src/v20201016/model/DeleteIndexResponse.cpp
   src/v20201016/model/AlarmAnalysisConfig.cpp
   src/v20201016/model/PreviewLogStatistic.cpp
+  src/v20201016/model/SearchLogErrors.cpp
   src/v20201016/model/ModifyIndexRequest.cpp
   src/v20201016/model/Column.cpp
   src/v20201016/model/ContentInfo.cpp

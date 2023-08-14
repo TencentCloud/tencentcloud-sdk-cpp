@@ -57,6 +57,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyRequest.h>
@@ -190,6 +192,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreatePrepareFlowResponse> ChannelCreatePrepareFlowOutcome;
                 typedef std::future<ChannelCreatePrepareFlowOutcome> ChannelCreatePrepareFlowOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreatePrepareFlowRequest&, ChannelCreatePrepareFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreatePrepareFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreatePreparedPersonalEsignResponse> ChannelCreatePreparedPersonalEsignOutcome;
+                typedef std::future<ChannelCreatePreparedPersonalEsignOutcome> ChannelCreatePreparedPersonalEsignOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreatePreparedPersonalEsignRequest&, ChannelCreatePreparedPersonalEsignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreatePreparedPersonalEsignAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateReleaseFlowResponse> ChannelCreateReleaseFlowOutcome;
                 typedef std::future<ChannelCreateReleaseFlowOutcome> ChannelCreateReleaseFlowOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateReleaseFlowRequest&, ChannelCreateReleaseFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateReleaseFlowAsyncHandler;
@@ -493,6 +498,15 @@ namespace TencentCloud
                 ChannelCreatePrepareFlowOutcome ChannelCreatePrepareFlow(const Model::ChannelCreatePrepareFlowRequest &request);
                 void ChannelCreatePrepareFlowAsync(const Model::ChannelCreatePrepareFlowRequest& request, const ChannelCreatePrepareFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelCreatePrepareFlowOutcomeCallable ChannelCreatePrepareFlowCallable(const Model::ChannelCreatePrepareFlowRequest& request);
+
+                /**
+                 *本接口（ChannelCreatePreparedPersonalEsign）用于创建导入个人印章
+                 * @param req ChannelCreatePreparedPersonalEsignRequest
+                 * @return ChannelCreatePreparedPersonalEsignOutcome
+                 */
+                ChannelCreatePreparedPersonalEsignOutcome ChannelCreatePreparedPersonalEsign(const Model::ChannelCreatePreparedPersonalEsignRequest &request);
+                void ChannelCreatePreparedPersonalEsignAsync(const Model::ChannelCreatePreparedPersonalEsignRequest& request, const ChannelCreatePreparedPersonalEsignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreatePreparedPersonalEsignOutcomeCallable ChannelCreatePreparedPersonalEsignCallable(const Model::ChannelCreatePreparedPersonalEsignRequest& request);
 
                 /**
                  *发起解除协议，主要应用场景为：基于一份已经签署的合同，进行解除操作。
