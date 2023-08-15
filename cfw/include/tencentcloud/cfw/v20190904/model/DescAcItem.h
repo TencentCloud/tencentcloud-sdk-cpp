@@ -664,6 +664,56 @@ namespace TencentCloud
                      */
                     bool BetaListHasBeenSet() const;
 
+                    /**
+                     * 获取生效范围：serial，串行；side，旁路；all，全局
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Scope 生效范围：serial，串行；side，旁路；all，全局
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScope() const;
+
+                    /**
+                     * 设置生效范围：serial，串行；side，旁路；all，全局
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scope 生效范围：serial，串行；side，旁路；all，全局
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScope(const std::string& _scope);
+
+                    /**
+                     * 判断参数 Scope 是否已赋值
+                     * @return Scope 是否已赋值
+                     * 
+                     */
+                    bool ScopeHasBeenSet() const;
+
+                    /**
+                     * 获取互联网边界防火墙使用的内部规则id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternetBorderUuid 互联网边界防火墙使用的内部规则id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInternetBorderUuid() const;
+
+                    /**
+                     * 设置互联网边界防火墙使用的内部规则id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _internetBorderUuid 互联网边界防火墙使用的内部规则id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInternetBorderUuid(const std::string& _internetBorderUuid);
+
+                    /**
+                     * 判断参数 InternetBorderUuid 是否已赋值
+                     * @return InternetBorderUuid 是否已赋值
+                     * 
+                     */
+                    bool InternetBorderUuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -838,6 +888,20 @@ namespace TencentCloud
                      */
                     std::vector<BetaInfoByACL> m_betaList;
                     bool m_betaListHasBeenSet;
+
+                    /**
+                     * 生效范围：serial，串行；side，旁路；all，全局
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scope;
+                    bool m_scopeHasBeenSet;
+
+                    /**
+                     * 互联网边界防火墙使用的内部规则id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_internetBorderUuid;
+                    bool m_internetBorderUuidHasBeenSet;
 
                 };
             }

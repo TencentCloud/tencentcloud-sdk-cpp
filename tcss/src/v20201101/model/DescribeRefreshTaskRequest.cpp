@@ -23,7 +23,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeRefreshTaskRequest::DescribeRefreshTaskRequest() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_newTaskIDHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeRefreshTaskRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskId, allocator);
+    }
+
+    if (m_newTaskIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewTaskID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_newTaskID.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeRefreshTaskRequest::SetTaskId(const uint64_t& _taskId)
 bool DescribeRefreshTaskRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string DescribeRefreshTaskRequest::GetNewTaskID() const
+{
+    return m_newTaskID;
+}
+
+void DescribeRefreshTaskRequest::SetNewTaskID(const string& _newTaskID)
+{
+    m_newTaskID = _newTaskID;
+    m_newTaskIDHasBeenSet = true;
+}
+
+bool DescribeRefreshTaskRequest::NewTaskIDHasBeenSet() const
+{
+    return m_newTaskIDHasBeenSet;
 }
 
 

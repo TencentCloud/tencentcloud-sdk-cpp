@@ -118,7 +118,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeNotebookImageKernelsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetDetailUnstructuredRequest.h
   include/tencentcloud/tione/v20211111/model/TrainingTaskDetail.h
-  include/tencentcloud/tione/v20211111/model/StopBatchTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/SendChatMessageResponse.h
   include/tencentcloud/tione/v20211111/model/ModifyNotebookTagsResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookImageRecordsResponse.h
   include/tencentcloud/tione/v20211111/model/CosPathInfo.h
@@ -263,6 +263,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/StopModelAccelerateTaskResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeAPIConfigsResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetDetailStructuredRequest.h
+  include/tencentcloud/tione/v20211111/model/SendChatMessageRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskRequest.h
   include/tencentcloud/tione/v20211111/model/Container.h
   include/tencentcloud/tione/v20211111/model/SegmentationInfo.h
@@ -283,6 +284,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/StopNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceGroupRequest.h
   include/tencentcloud/tione/v20211111/model/TrainingModelVersionDTO.h
+  include/tencentcloud/tione/v20211111/model/StopBatchTaskResponse.h
   include/tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/ChatCompletionResponse.h
@@ -423,7 +425,7 @@ set(tione_src
   src/v20211111/model/DescribeNotebookImageKernelsRequest.cpp
   src/v20211111/model/DescribeDatasetDetailUnstructuredRequest.cpp
   src/v20211111/model/TrainingTaskDetail.cpp
-  src/v20211111/model/StopBatchTaskResponse.cpp
+  src/v20211111/model/SendChatMessageResponse.cpp
   src/v20211111/model/ModifyNotebookTagsResponse.cpp
   src/v20211111/model/DescribeNotebookImageRecordsResponse.cpp
   src/v20211111/model/CosPathInfo.cpp
@@ -568,6 +570,7 @@ set(tione_src
   src/v20211111/model/StopModelAccelerateTaskResponse.cpp
   src/v20211111/model/DescribeAPIConfigsResponse.cpp
   src/v20211111/model/DescribeDatasetDetailStructuredRequest.cpp
+  src/v20211111/model/SendChatMessageRequest.cpp
   src/v20211111/model/DescribeModelAccelerateTaskRequest.cpp
   src/v20211111/model/Container.cpp
   src/v20211111/model/SegmentationInfo.cpp
@@ -588,6 +591,7 @@ set(tione_src
   src/v20211111/model/StopNotebookRequest.cpp
   src/v20211111/model/DeleteModelServiceGroupRequest.cpp
   src/v20211111/model/TrainingModelVersionDTO.cpp
+  src/v20211111/model/StopBatchTaskResponse.cpp
   src/v20211111/model/PushTrainingMetricsRequest.cpp
   src/v20211111/model/DescribeTrainingTaskRequest.cpp
   src/v20211111/model/ChatCompletionResponse.cpp

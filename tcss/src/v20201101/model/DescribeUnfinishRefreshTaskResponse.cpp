@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeUnfinishRefreshTaskResponse::DescribeUnfinishRefreshTaskResponse() :
     m_taskIdHasBeenSet(false),
-    m_taskStatusHasBeenSet(false)
+    m_taskStatusHasBeenSet(false),
+    m_newTaskIDHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeUnfinishRefreshTaskResponse::Deserialize(const strin
         m_taskStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NewTaskID") && !rsp["NewTaskID"].IsNull())
+    {
+        if (!rsp["NewTaskID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewTaskID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newTaskID = string(rsp["NewTaskID"].GetString());
+        m_newTaskIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeUnfinishRefreshTaskResponse::ToJsonString() const
         string key = "TaskStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newTaskIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewTaskID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newTaskID.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string DescribeUnfinishRefreshTaskResponse::GetTaskStatus() const
 bool DescribeUnfinishRefreshTaskResponse::TaskStatusHasBeenSet() const
 {
     return m_taskStatusHasBeenSet;
+}
+
+string DescribeUnfinishRefreshTaskResponse::GetNewTaskID() const
+{
+    return m_newTaskID;
+}
+
+bool DescribeUnfinishRefreshTaskResponse::NewTaskIDHasBeenSet() const
+{
+    return m_newTaskIDHasBeenSet;
 }
 
 

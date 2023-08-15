@@ -576,18 +576,18 @@ namespace TencentCloud
                     bool AttackLogPostHasBeenSet() const;
 
                     /**
-                     * 获取带宽峰值
+                     * 获取带宽峰值，单位为B/s(字节每秒)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxBandwidth 带宽峰值
+                     * @return MaxBandwidth 带宽峰值，单位为B/s(字节每秒)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxBandwidth() const;
 
                     /**
-                     * 设置带宽峰值
+                     * 设置带宽峰值，单位为B/s(字节每秒)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxBandwidth 带宽峰值
+                     * @param _maxBandwidth 带宽峰值，单位为B/s(字节每秒)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -720,6 +720,31 @@ namespace TencentCloud
                      * 
                      */
                     bool SandboxQpsHasBeenSet() const;
+
+                    /**
+                     * 获取是否api 安全试用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAPISecurityTrial 是否api 安全试用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIsAPISecurityTrial() const;
+
+                    /**
+                     * 设置是否api 安全试用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isAPISecurityTrial 是否api 安全试用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsAPISecurityTrial(const uint64_t& _isAPISecurityTrial);
+
+                    /**
+                     * 判断参数 IsAPISecurityTrial 是否已赋值
+                     * @return IsAPISecurityTrial 是否已赋值
+                     * 
+                     */
+                    bool IsAPISecurityTrialHasBeenSet() const;
 
                 private:
 
@@ -873,7 +898,7 @@ namespace TencentCloud
                     bool m_attackLogPostHasBeenSet;
 
                     /**
-                     * 带宽峰值
+                     * 带宽峰值，单位为B/s(字节每秒)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxBandwidth;
@@ -912,6 +937,13 @@ namespace TencentCloud
                      */
                     uint64_t m_sandboxQps;
                     bool m_sandboxQpsHasBeenSet;
+
+                    /**
+                     * 是否api 安全试用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isAPISecurityTrial;
+                    bool m_isAPISecurityTrialHasBeenSet;
 
                 };
             }

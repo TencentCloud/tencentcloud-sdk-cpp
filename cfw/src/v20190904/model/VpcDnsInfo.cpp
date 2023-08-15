@@ -28,7 +28,9 @@ VpcDnsInfo::VpcDnsInfo() :
     m_dNSEipHasBeenSet(false),
     m_natInsIdHasBeenSet(false),
     m_natInsNameHasBeenSet(false),
-    m_switchStatusHasBeenSet(false)
+    m_switchStatusHasBeenSet(false),
+    m_protectedStatusHasBeenSet(false),
+    m_supportDNSFWHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome VpcDnsInfo::Deserialize(const rapidjson::Value &value)
         m_switchStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtectedStatus") && !value["ProtectedStatus"].IsNull())
+    {
+        if (!value["ProtectedStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcDnsInfo.ProtectedStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectedStatus = value["ProtectedStatus"].GetUint64();
+        m_protectedStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportDNSFW") && !value["SupportDNSFW"].IsNull())
+    {
+        if (!value["SupportDNSFW"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcDnsInfo.SupportDNSFW` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportDNSFW = value["SupportDNSFW"].GetUint64();
+        m_supportDNSFWHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void VpcDnsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SwitchStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_switchStatus, allocator);
+    }
+
+    if (m_protectedStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectedStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectedStatus, allocator);
+    }
+
+    if (m_supportDNSFWHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportDNSFW";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportDNSFW, allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void VpcDnsInfo::SetSwitchStatus(const int64_t& _switchStatus)
 bool VpcDnsInfo::SwitchStatusHasBeenSet() const
 {
     return m_switchStatusHasBeenSet;
+}
+
+uint64_t VpcDnsInfo::GetProtectedStatus() const
+{
+    return m_protectedStatus;
+}
+
+void VpcDnsInfo::SetProtectedStatus(const uint64_t& _protectedStatus)
+{
+    m_protectedStatus = _protectedStatus;
+    m_protectedStatusHasBeenSet = true;
+}
+
+bool VpcDnsInfo::ProtectedStatusHasBeenSet() const
+{
+    return m_protectedStatusHasBeenSet;
+}
+
+uint64_t VpcDnsInfo::GetSupportDNSFW() const
+{
+    return m_supportDNSFW;
+}
+
+void VpcDnsInfo::SetSupportDNSFW(const uint64_t& _supportDNSFW)
+{
+    m_supportDNSFW = _supportDNSFW;
+    m_supportDNSFWHasBeenSet = true;
+}
+
+bool VpcDnsInfo::SupportDNSFWHasBeenSet() const
+{
+    return m_supportDNSFWHasBeenSet;
 }
 

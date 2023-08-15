@@ -222,6 +222,56 @@ namespace TencentCloud
                      */
                     bool SwitchStatusHasBeenSet() const;
 
+                    /**
+                     * 获取0：未防护， 1: 已防护，2：忽略此字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProtectedStatus 0：未防护， 1: 已防护，2：忽略此字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetProtectedStatus() const;
+
+                    /**
+                     * 设置0：未防护， 1: 已防护，2：忽略此字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _protectedStatus 0：未防护， 1: 已防护，2：忽略此字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProtectedStatus(const uint64_t& _protectedStatus);
+
+                    /**
+                     * 判断参数 ProtectedStatus 是否已赋值
+                     * @return ProtectedStatus 是否已赋值
+                     * 
+                     */
+                    bool ProtectedStatusHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持DNS FW，0-不支持、1-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportDNSFW 是否支持DNS FW，0-不支持、1-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSupportDNSFW() const;
+
+                    /**
+                     * 设置是否支持DNS FW，0-不支持、1-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _supportDNSFW 是否支持DNS FW，0-不支持、1-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSupportDNSFW(const uint64_t& _supportDNSFW);
+
+                    /**
+                     * 判断参数 SupportDNSFW 是否已赋值
+                     * @return SupportDNSFW 是否已赋值
+                     * 
+                     */
+                    bool SupportDNSFWHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +323,20 @@ namespace TencentCloud
                      */
                     int64_t m_switchStatus;
                     bool m_switchStatusHasBeenSet;
+
+                    /**
+                     * 0：未防护， 1: 已防护，2：忽略此字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_protectedStatus;
+                    bool m_protectedStatusHasBeenSet;
+
+                    /**
+                     * 是否支持DNS FW，0-不支持、1-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_supportDNSFW;
+                    bool m_supportDNSFWHasBeenSet;
 
                 };
             }

@@ -439,6 +439,56 @@ namespace TencentCloud
                      */
                     bool RuleMaxHasBeenSet() const;
 
+                    /**
+                     * 获取实例引擎版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineVersion 实例引擎版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineVersion() const;
+
+                    /**
+                     * 设置实例引擎版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineVersion 实例引擎版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineVersion(const std::string& _engineVersion);
+
+                    /**
+                     * 判断参数 EngineVersion 是否已赋值
+                     * @return EngineVersion 是否已赋值
+                     * 
+                     */
+                    bool EngineVersionHasBeenSet() const;
+
+                    /**
+                     * 获取引擎是否可升级：0，不可升级；1，可升级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateEnable 引擎是否可升级：0，不可升级；1，可升级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetUpdateEnable() const;
+
+                    /**
+                     * 设置引擎是否可升级：0，不可升级；1，可升级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updateEnable 引擎是否可升级：0，不可升级；1，可升级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdateEnable(const int64_t& _updateEnable);
+
+                    /**
+                     * 判断参数 UpdateEnable 是否已赋值
+                     * @return UpdateEnable 是否已赋值
+                     * 
+                     */
+                    bool UpdateEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -551,6 +601,20 @@ namespace TencentCloud
                      */
                     uint64_t m_ruleMax;
                     bool m_ruleMaxHasBeenSet;
+
+                    /**
+                     * 实例引擎版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineVersion;
+                    bool m_engineVersionHasBeenSet;
+
+                    /**
+                     * 引擎是否可升级：0，不可升级；1，可升级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_updateEnable;
+                    bool m_updateEnableHasBeenSet;
 
                 };
             }

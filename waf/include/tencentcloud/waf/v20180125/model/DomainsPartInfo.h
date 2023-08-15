@@ -696,6 +696,31 @@ namespace TencentCloud
                      */
                     bool IpHeadersHasBeenSet() const;
 
+                    /**
+                     * 获取0:关闭xff重置；1:开启xff重置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return XFFReset 0:关闭xff重置；1:开启xff重置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetXFFReset() const;
+
+                    /**
+                     * 设置0:关闭xff重置；1:开启xff重置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _xFFReset 0:关闭xff重置；1:开启xff重置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetXFFReset(const int64_t& _xFFReset);
+
+                    /**
+                     * 判断参数 XFFReset 是否已赋值
+                     * @return XFFReset 是否已赋值
+                     * 
+                     */
+                    bool XFFResetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -881,6 +906,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ipHeaders;
                     bool m_ipHeadersHasBeenSet;
+
+                    /**
+                     * 0:关闭xff重置；1:开启xff重置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_xFFReset;
+                    bool m_xFFResetHasBeenSet;
 
                 };
             }

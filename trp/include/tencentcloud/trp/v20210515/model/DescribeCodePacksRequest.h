@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool SerialTypeHasBeenSet() const;
 
+                    /**
+                     * 获取资源类型 batch:批次, order_in 入库, order_out: 出入
+                     * @return ResType 资源类型 batch:批次, order_in 入库, order_out: 出入
+                     * 
+                     */
+                    std::string GetResType() const;
+
+                    /**
+                     * 设置资源类型 batch:批次, order_in 入库, order_out: 出入
+                     * @param _resType 资源类型 batch:批次, order_in 入库, order_out: 出入
+                     * 
+                     */
+                    void SetResType(const std::string& _resType);
+
+                    /**
+                     * 判断参数 ResType 是否已赋值
+                     * @return ResType 是否已赋值
+                     * 
+                     */
+                    bool ResTypeHasBeenSet() const;
+
+                    /**
+                     * 获取资源ID ResType是 batch 时对应是批次ID, 是 order_in, order_out时，则是订单ID
+                     * @return ResId 资源ID ResType是 batch 时对应是批次ID, 是 order_in, order_out时，则是订单ID
+                     * 
+                     */
+                    std::string GetResId() const;
+
+                    /**
+                     * 设置资源ID ResType是 batch 时对应是批次ID, 是 order_in, order_out时，则是订单ID
+                     * @param _resId 资源ID ResType是 batch 时对应是批次ID, 是 order_in, order_out时，则是订单ID
+                     * 
+                     */
+                    void SetResId(const std::string& _resId);
+
+                    /**
+                     * 判断参数 ResId 是否已赋值
+                     * @return ResId 是否已赋值
+                     * 
+                     */
+                    bool ResIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     uint64_t m_serialType;
                     bool m_serialTypeHasBeenSet;
+
+                    /**
+                     * 资源类型 batch:批次, order_in 入库, order_out: 出入
+                     */
+                    std::string m_resType;
+                    bool m_resTypeHasBeenSet;
+
+                    /**
+                     * 资源ID ResType是 batch 时对应是批次ID, 是 order_in, order_out时，则是订单ID
+                     */
+                    std::string m_resId;
+                    bool m_resIdHasBeenSet;
 
                 };
             }

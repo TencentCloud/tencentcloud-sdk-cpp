@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool IsWebsocketHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡策略，0表示轮徇，1表示IP hash
-                     * @return LoadBalance 负载均衡策略，0表示轮徇，1表示IP hash
+                     * 获取负载均衡策略，0表示轮询，1表示IP hash
+                     * @return LoadBalance 负载均衡策略，0表示轮询，1表示IP hash
                      * 
                      */
                     std::string GetLoadBalance() const;
 
                     /**
-                     * 设置负载均衡策略，0表示轮徇，1表示IP hash
-                     * @param _loadBalance 负载均衡策略，0表示轮徇，1表示IP hash
+                     * 设置负载均衡策略，0表示轮询，1表示IP hash
+                     * @param _loadBalance 负载均衡策略，0表示轮询，1表示IP hash
                      * 
                      */
                     void SetLoadBalance(const std::string& _loadBalance);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool LoadBalanceHasBeenSet() const;
 
                     /**
-                     * 获取CertType=1时，需要填次参数，表示证书内容
-                     * @return Cert CertType=1时，需要填次参数，表示证书内容
+                     * 获取值为1时，需要填次参数，表示证书内容
+                     * @return Cert 值为1时，需要填次参数，表示证书内容
                      * 
                      */
                     std::string GetCert() const;
 
                     /**
-                     * 设置CertType=1时，需要填次参数，表示证书内容
-                     * @param _cert CertType=1时，需要填次参数，表示证书内容
+                     * 设置值为1时，需要填次参数，表示证书内容
+                     * @param _cert 值为1时，需要填次参数，表示证书内容
                      * 
                      */
                     void SetCert(const std::string& _cert);
@@ -736,6 +736,27 @@ namespace TencentCloud
                      */
                     bool IpHeadersHasBeenSet() const;
 
+                    /**
+                     * 获取0:关闭xff重置；1:开启xff重置
+                     * @return XFFReset 0:关闭xff重置；1:开启xff重置
+                     * 
+                     */
+                    int64_t GetXFFReset() const;
+
+                    /**
+                     * 设置0:关闭xff重置；1:开启xff重置
+                     * @param _xFFReset 0:关闭xff重置；1:开启xff重置
+                     * 
+                     */
+                    void SetXFFReset(const int64_t& _xFFReset);
+
+                    /**
+                     * 判断参数 XFFReset 是否已赋值
+                     * @return XFFReset 是否已赋值
+                     * 
+                     */
+                    bool XFFResetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -769,13 +790,13 @@ namespace TencentCloud
                     bool m_isWebsocketHasBeenSet;
 
                     /**
-                     * 负载均衡策略，0表示轮徇，1表示IP hash
+                     * 负载均衡策略，0表示轮询，1表示IP hash
                      */
                     std::string m_loadBalance;
                     bool m_loadBalanceHasBeenSet;
 
                     /**
-                     * CertType=1时，需要填次参数，表示证书内容
+                     * 值为1时，需要填次参数，表示证书内容
                      */
                     std::string m_cert;
                     bool m_certHasBeenSet;
@@ -935,6 +956,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ipHeaders;
                     bool m_ipHeadersHasBeenSet;
+
+                    /**
+                     * 0:关闭xff重置；1:开启xff重置
+                     */
+                    int64_t m_xFFReset;
+                    bool m_xFFResetHasBeenSet;
 
                 };
             }

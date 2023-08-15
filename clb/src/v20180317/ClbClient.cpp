@@ -2792,6 +2792,49 @@ ClbClient::ModifyLoadBalancerSlaOutcomeCallable ClbClient::ModifyLoadBalancerSla
     return task->get_future();
 }
 
+ClbClient::ModifyLoadBalancersProjectOutcome ClbClient::ModifyLoadBalancersProject(const ModifyLoadBalancersProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLoadBalancersProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLoadBalancersProjectResponse rsp = ModifyLoadBalancersProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLoadBalancersProjectOutcome(rsp);
+        else
+            return ModifyLoadBalancersProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLoadBalancersProjectOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyLoadBalancersProjectAsync(const ModifyLoadBalancersProjectRequest& request, const ModifyLoadBalancersProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLoadBalancersProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::ModifyLoadBalancersProjectOutcomeCallable ClbClient::ModifyLoadBalancersProjectCallable(const ModifyLoadBalancersProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancersProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLoadBalancersProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::ModifyRuleOutcome ClbClient::ModifyRule(const ModifyRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRule");

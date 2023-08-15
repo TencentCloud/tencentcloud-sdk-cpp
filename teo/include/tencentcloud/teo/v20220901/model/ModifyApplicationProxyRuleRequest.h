@@ -345,6 +345,27 @@ namespace TencentCloud
                      */
                     bool OriginPortHasBeenSet() const;
 
+                    /**
+                     * 获取规则标签。不填保持原有值。
+                     * @return RuleTag 规则标签。不填保持原有值。
+                     * 
+                     */
+                    std::string GetRuleTag() const;
+
+                    /**
+                     * 设置规则标签。不填保持原有值。
+                     * @param _ruleTag 规则标签。不填保持原有值。
+                     * 
+                     */
+                    void SetRuleTag(const std::string& _ruleTag);
+
+                    /**
+                     * 判断参数 RuleTag 是否已赋值
+                     * @return RuleTag 是否已赋值
+                     * 
+                     */
+                    bool RuleTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -430,6 +451,12 @@ namespace TencentCloud
                      */
                     std::string m_originPort;
                     bool m_originPortHasBeenSet;
+
+                    /**
+                     * 规则标签。不填保持原有值。
+                     */
+                    std::string m_ruleTag;
+                    bool m_ruleTagHasBeenSet;
 
                 };
             }

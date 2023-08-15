@@ -2706,6 +2706,49 @@ TioneClient::RestartModelAccelerateTaskOutcomeCallable TioneClient::RestartModel
     return task->get_future();
 }
 
+TioneClient::SendChatMessageOutcome TioneClient::SendChatMessage(const SendChatMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendChatMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendChatMessageResponse rsp = SendChatMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendChatMessageOutcome(rsp);
+        else
+            return SendChatMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return SendChatMessageOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::SendChatMessageAsync(const SendChatMessageRequest& request, const SendChatMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendChatMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::SendChatMessageOutcomeCallable TioneClient::SendChatMessageCallable(const SendChatMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendChatMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->SendChatMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::StartNotebookOutcome TioneClient::StartNotebook(const StartNotebookRequest &request)
 {
     auto outcome = MakeRequest(request, "StartNotebook");

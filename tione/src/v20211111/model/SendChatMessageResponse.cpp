@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcss/v20201101/model/CreateClusterCheckTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/SendChatMessageResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcss::V20201101::Model;
+using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-CreateClusterCheckTaskResponse::CreateClusterCheckTaskResponse() :
-    m_taskIdHasBeenSet(false),
-    m_createResultHasBeenSet(false),
-    m_newTaskIDHasBeenSet(false)
+SendChatMessageResponse::SendChatMessageResponse() :
+    m_answerHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateClusterCheckTaskResponse::Deserialize(const string &payload)
+CoreInternalOutcome SendChatMessageResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,68 +63,50 @@ CoreInternalOutcome CreateClusterCheckTaskResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    if (rsp.HasMember("Answer") && !rsp["Answer"].IsNull())
     {
-        if (!rsp["TaskId"].IsUint64())
+        if (!rsp["Answer"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Answer` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_taskId = rsp["TaskId"].GetUint64();
-        m_taskIdHasBeenSet = true;
+        m_answer = string(rsp["Answer"].GetString());
+        m_answerHasBeenSet = true;
     }
 
-    if (rsp.HasMember("CreateResult") && !rsp["CreateResult"].IsNull())
+    if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
     {
-        if (!rsp["CreateResult"].IsString())
+        if (!rsp["SessionId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `CreateResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_createResult = string(rsp["CreateResult"].GetString());
-        m_createResultHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("NewTaskID") && !rsp["NewTaskID"].IsNull())
-    {
-        if (!rsp["NewTaskID"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NewTaskID` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_newTaskID = string(rsp["NewTaskID"].GetString());
-        m_newTaskIDHasBeenSet = true;
+        m_sessionId = string(rsp["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateClusterCheckTaskResponse::ToJsonString() const
+string SendChatMessageResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_taskIdHasBeenSet)
+    if (m_answerHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
+        string key = "Answer";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_taskId, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_answer.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_createResultHasBeenSet)
+    if (m_sessionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateResult";
+        string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createResult.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_newTaskIDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NewTaskID";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_newTaskID.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +121,24 @@ string CreateClusterCheckTaskResponse::ToJsonString() const
 }
 
 
-uint64_t CreateClusterCheckTaskResponse::GetTaskId() const
+string SendChatMessageResponse::GetAnswer() const
 {
-    return m_taskId;
+    return m_answer;
 }
 
-bool CreateClusterCheckTaskResponse::TaskIdHasBeenSet() const
+bool SendChatMessageResponse::AnswerHasBeenSet() const
 {
-    return m_taskIdHasBeenSet;
+    return m_answerHasBeenSet;
 }
 
-string CreateClusterCheckTaskResponse::GetCreateResult() const
+string SendChatMessageResponse::GetSessionId() const
 {
-    return m_createResult;
+    return m_sessionId;
 }
 
-bool CreateClusterCheckTaskResponse::CreateResultHasBeenSet() const
+bool SendChatMessageResponse::SessionIdHasBeenSet() const
 {
-    return m_createResultHasBeenSet;
-}
-
-string CreateClusterCheckTaskResponse::GetNewTaskID() const
-{
-    return m_newTaskID;
-}
-
-bool CreateClusterCheckTaskResponse::NewTaskIDHasBeenSet() const
-{
-    return m_newTaskIDHasBeenSet;
+    return m_sessionIdHasBeenSet;
 }
 
 

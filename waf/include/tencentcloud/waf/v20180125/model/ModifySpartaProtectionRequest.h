@@ -590,15 +590,15 @@ namespace TencentCloud
                     bool CiphersHasBeenSet() const;
 
                     /**
-                     * 获取0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版
-                     * @return CipherTemplate 0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版
+                     * 获取0:不支持选择：默认模板  1:通用型模板 2:安全型模板 3:自定义模板
+                     * @return CipherTemplate 0:不支持选择：默认模板  1:通用型模板 2:安全型模板 3:自定义模板
                      * 
                      */
                     int64_t GetCipherTemplate() const;
 
                     /**
-                     * 设置0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版
-                     * @param _cipherTemplate 0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版
+                     * 设置0:不支持选择：默认模板  1:通用型模板 2:安全型模板 3:自定义模板
+                     * @param _cipherTemplate 0:不支持选择：默认模板  1:通用型模板 2:安全型模板 3:自定义模板
                      * 
                      */
                     void SetCipherTemplate(const int64_t& _cipherTemplate);
@@ -714,6 +714,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IpHeadersHasBeenSet() const;
+
+                    /**
+                     * 获取0:关闭xff重置；1:开启xff重置
+                     * @return XFFReset 0:关闭xff重置；1:开启xff重置
+                     * 
+                     */
+                    int64_t GetXFFReset() const;
+
+                    /**
+                     * 设置0:关闭xff重置；1:开启xff重置
+                     * @param _xFFReset 0:关闭xff重置；1:开启xff重置
+                     * 
+                     */
+                    void SetXFFReset(const int64_t& _xFFReset);
+
+                    /**
+                     * 判断参数 XFFReset 是否已赋值
+                     * @return XFFReset 是否已赋值
+                     * 
+                     */
+                    bool XFFResetHasBeenSet() const;
 
                 private:
 
@@ -874,7 +895,7 @@ namespace TencentCloud
                     bool m_ciphersHasBeenSet;
 
                     /**
-                     * 0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版
+                     * 0:不支持选择：默认模板  1:通用型模板 2:安全型模板 3:自定义模板
                      */
                     int64_t m_cipherTemplate;
                     bool m_cipherTemplateHasBeenSet;
@@ -908,6 +929,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ipHeaders;
                     bool m_ipHeadersHasBeenSet;
+
+                    /**
+                     * 0:关闭xff重置；1:开启xff重置
+                     */
+                    int64_t m_xFFReset;
+                    bool m_xFFResetHasBeenSet;
 
                 };
             }

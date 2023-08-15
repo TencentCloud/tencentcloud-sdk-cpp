@@ -49,7 +49,8 @@ DomainsPartInfo::DomainsPartInfo() :
     m_sniTypeHasBeenSet(false),
     m_sniHostHasBeenSet(false),
     m_weightsHasBeenSet(false),
-    m_ipHeadersHasBeenSet(false)
+    m_ipHeadersHasBeenSet(false),
+    m_xFFResetHasBeenSet(false)
 {
 }
 
@@ -370,6 +371,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_ipHeadersHasBeenSet = true;
     }
 
+    if (value.HasMember("XFFReset") && !value["XFFReset"].IsNull())
+    {
+        if (!value["XFFReset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.XFFReset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_xFFReset = value["XFFReset"].GetInt64();
+        m_xFFResetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -634,6 +645,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_xFFResetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "XFFReset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_xFFReset, allocator);
     }
 
 }
@@ -1101,5 +1120,21 @@ void DomainsPartInfo::SetIpHeaders(const vector<string>& _ipHeaders)
 bool DomainsPartInfo::IpHeadersHasBeenSet() const
 {
     return m_ipHeadersHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetXFFReset() const
+{
+    return m_xFFReset;
+}
+
+void DomainsPartInfo::SetXFFReset(const int64_t& _xFFReset)
+{
+    m_xFFReset = _xFFReset;
+    m_xFFResetHasBeenSet = true;
+}
+
+bool DomainsPartInfo::XFFResetHasBeenSet() const
+{
+    return m_xFFResetHasBeenSet;
 }
 

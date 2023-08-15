@@ -45,7 +45,9 @@ DescAcItem::DescAcItem() :
     m_instanceNameHasBeenSet(false),
     m_internalUuidHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_betaListHasBeenSet(false)
+    m_betaListHasBeenSet(false),
+    m_scopeHasBeenSet(false),
+    m_internetBorderUuidHasBeenSet(false)
 {
 }
 
@@ -314,6 +316,26 @@ CoreInternalOutcome DescAcItem::Deserialize(const rapidjson::Value &value)
         m_betaListHasBeenSet = true;
     }
 
+    if (value.HasMember("Scope") && !value["Scope"].IsNull())
+    {
+        if (!value["Scope"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.Scope` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scope = string(value["Scope"].GetString());
+        m_scopeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InternetBorderUuid") && !value["InternetBorderUuid"].IsNull())
+    {
+        if (!value["InternetBorderUuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.InternetBorderUuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internetBorderUuid = string(value["InternetBorderUuid"].GetString());
+        m_internetBorderUuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -526,6 +548,22 @@ void DescAcItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scope.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internetBorderUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternetBorderUuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internetBorderUuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -929,5 +967,37 @@ void DescAcItem::SetBetaList(const vector<BetaInfoByACL>& _betaList)
 bool DescAcItem::BetaListHasBeenSet() const
 {
     return m_betaListHasBeenSet;
+}
+
+string DescAcItem::GetScope() const
+{
+    return m_scope;
+}
+
+void DescAcItem::SetScope(const string& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool DescAcItem::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
+string DescAcItem::GetInternetBorderUuid() const
+{
+    return m_internetBorderUuid;
+}
+
+void DescAcItem::SetInternetBorderUuid(const string& _internetBorderUuid)
+{
+    m_internetBorderUuid = _internetBorderUuid;
+    m_internetBorderUuidHasBeenSet = true;
+}
+
+bool DescAcItem::InternetBorderUuidHasBeenSet() const
+{
+    return m_internetBorderUuidHasBeenSet;
 }
 

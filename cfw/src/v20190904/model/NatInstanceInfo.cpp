@@ -37,7 +37,9 @@ NatInstanceInfo::NatInstanceInfo() :
     m_zoneZhHasBeenSet(false),
     m_zoneZhBakHasBeenSet(false),
     m_ruleUsedHasBeenSet(false),
-    m_ruleMaxHasBeenSet(false)
+    m_ruleMaxHasBeenSet(false),
+    m_engineVersionHasBeenSet(false),
+    m_updateEnableHasBeenSet(false)
 {
 }
 
@@ -225,6 +227,26 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_ruleMaxHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineVersion") && !value["EngineVersion"].IsNull())
+    {
+        if (!value["EngineVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineVersion = string(value["EngineVersion"].GetString());
+        m_engineVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateEnable") && !value["UpdateEnable"].IsNull())
+    {
+        if (!value["UpdateEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.UpdateEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateEnable = value["UpdateEnable"].GetInt64();
+        m_updateEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -381,6 +403,22 @@ void NatInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RuleMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ruleMax, allocator);
+    }
+
+    if (m_engineVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateEnable, allocator);
     }
 
 }
@@ -656,5 +694,37 @@ void NatInstanceInfo::SetRuleMax(const uint64_t& _ruleMax)
 bool NatInstanceInfo::RuleMaxHasBeenSet() const
 {
     return m_ruleMaxHasBeenSet;
+}
+
+string NatInstanceInfo::GetEngineVersion() const
+{
+    return m_engineVersion;
+}
+
+void NatInstanceInfo::SetEngineVersion(const string& _engineVersion)
+{
+    m_engineVersion = _engineVersion;
+    m_engineVersionHasBeenSet = true;
+}
+
+bool NatInstanceInfo::EngineVersionHasBeenSet() const
+{
+    return m_engineVersionHasBeenSet;
+}
+
+int64_t NatInstanceInfo::GetUpdateEnable() const
+{
+    return m_updateEnable;
+}
+
+void NatInstanceInfo::SetUpdateEnable(const int64_t& _updateEnable)
+{
+    m_updateEnable = _updateEnable;
+    m_updateEnableHasBeenSet = true;
+}
+
+bool NatInstanceInfo::UpdateEnableHasBeenSet() const
+{
+    return m_updateEnableHasBeenSet;
 }
 

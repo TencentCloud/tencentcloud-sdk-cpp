@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool EnableFlagHasBeenSet() const;
 
                     /**
-                     * 获取加工任务目的topic_id以及别名
-                     * @return DstResources 加工任务目的topic_id以及别名
+                     * 获取加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写
+                     * @return DstResources 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写
                      * 
                      */
                     std::vector<DataTransformResouceInfo> GetDstResources() const;
 
                     /**
-                     * 设置加工任务目的topic_id以及别名
-                     * @param _dstResources 加工任务目的topic_id以及别名
+                     * 设置加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写
+                     * @param _dstResources 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写
                      * 
                      */
                     void SetDstResources(const std::vector<DataTransformResouceInfo>& _dstResources);
@@ -251,7 +251,7 @@ namespace TencentCloud
                     bool m_enableFlagHasBeenSet;
 
                     /**
-                     * 加工任务目的topic_id以及别名
+                     * 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写
                      */
                     std::vector<DataTransformResouceInfo> m_dstResources;
                     bool m_dstResourcesHasBeenSet;

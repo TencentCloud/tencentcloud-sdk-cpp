@@ -147,6 +147,8 @@
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h>
 #include <tencentcloud/tione/v20211111/model/RestartModelAccelerateTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/RestartModelAccelerateTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/SendChatMessageRequest.h>
+#include <tencentcloud/tione/v20211111/model/SendChatMessageResponse.h>
 #include <tencentcloud/tione/v20211111/model/StartNotebookRequest.h>
 #include <tencentcloud/tione/v20211111/model/StartNotebookResponse.h>
 #include <tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h>
@@ -361,6 +363,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartModelAccelerateTaskResponse> RestartModelAccelerateTaskOutcome;
                 typedef std::future<RestartModelAccelerateTaskOutcome> RestartModelAccelerateTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::RestartModelAccelerateTaskRequest&, RestartModelAccelerateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartModelAccelerateTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendChatMessageResponse> SendChatMessageOutcome;
+                typedef std::future<SendChatMessageOutcome> SendChatMessageOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::SendChatMessageRequest&, SendChatMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendChatMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartNotebookResponse> StartNotebookOutcome;
                 typedef std::future<StartNotebookOutcome> StartNotebookOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StartNotebookRequest&, StartNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartNotebookAsyncHandler;
@@ -942,6 +947,15 @@ namespace TencentCloud
                 RestartModelAccelerateTaskOutcome RestartModelAccelerateTask(const Model::RestartModelAccelerateTaskRequest &request);
                 void RestartModelAccelerateTaskAsync(const Model::RestartModelAccelerateTaskRequest& request, const RestartModelAccelerateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartModelAccelerateTaskOutcomeCallable RestartModelAccelerateTaskCallable(const Model::RestartModelAccelerateTaskRequest& request);
+
+                /**
+                 *LLM模型的对话请求发送接口
+                 * @param req SendChatMessageRequest
+                 * @return SendChatMessageOutcome
+                 */
+                SendChatMessageOutcome SendChatMessage(const Model::SendChatMessageRequest &request);
+                void SendChatMessageAsync(const Model::SendChatMessageRequest& request, const SendChatMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendChatMessageOutcomeCallable SendChatMessageCallable(const Model::SendChatMessageRequest& request);
 
                 /**
                  *启动Notebook

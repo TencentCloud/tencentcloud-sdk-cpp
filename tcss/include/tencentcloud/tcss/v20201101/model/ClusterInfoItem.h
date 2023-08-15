@@ -466,6 +466,131 @@ namespace TencentCloud
                      */
                     bool TaskCreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取接入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessedStatus 接入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAccessedStatus() const;
+
+                    /**
+                     * 设置接入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accessedStatus 接入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccessedStatus(const std::string& _accessedStatus);
+
+                    /**
+                     * 判断参数 AccessedStatus 是否已赋值
+                     * @return AccessedStatus 是否已赋值
+                     * 
+                     */
+                    bool AccessedStatusHasBeenSet() const;
+
+                    /**
+                     * 获取接入失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessedSubStatus 接入失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAccessedSubStatus() const;
+
+                    /**
+                     * 设置接入失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accessedSubStatus 接入失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccessedSubStatus(const std::string& _accessedSubStatus);
+
+                    /**
+                     * 判断参数 AccessedSubStatus 是否已赋值
+                     * @return AccessedSubStatus 是否已赋值
+                     * 
+                     */
+                    bool AccessedSubStatusHasBeenSet() const;
+
+                    /**
+                     * 获取节点总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeCount 节点总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetNodeCount() const;
+
+                    /**
+                     * 设置节点总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nodeCount 节点总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNodeCount(const uint64_t& _nodeCount);
+
+                    /**
+                     * 判断参数 NodeCount 是否已赋值
+                     * @return NodeCount 是否已赋值
+                     * 
+                     */
+                    bool NodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取离线节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OffLineNodeCount 离线节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetOffLineNodeCount() const;
+
+                    /**
+                     * 设置离线节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _offLineNodeCount 离线节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOffLineNodeCount(const uint64_t& _offLineNodeCount);
+
+                    /**
+                     * 判断参数 OffLineNodeCount 是否已赋值
+                     * @return OffLineNodeCount 是否已赋值
+                     * 
+                     */
+                    bool OffLineNodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取未安装agent节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UnInstallAgentNodeCount 未安装agent节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetUnInstallAgentNodeCount() const;
+
+                    /**
+                     * 设置未安装agent节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _unInstallAgentNodeCount 未安装agent节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUnInstallAgentNodeCount(const uint64_t& _unInstallAgentNodeCount);
+
+                    /**
+                     * 判断参数 UnInstallAgentNodeCount 是否已赋值
+                     * @return UnInstallAgentNodeCount 是否已赋值
+                     * 
+                     */
+                    bool UnInstallAgentNodeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -587,6 +712,41 @@ namespace TencentCloud
                      */
                     std::string m_taskCreateTime;
                     bool m_taskCreateTimeHasBeenSet;
+
+                    /**
+                     * 接入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accessedStatus;
+                    bool m_accessedStatusHasBeenSet;
+
+                    /**
+                     * 接入失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accessedSubStatus;
+                    bool m_accessedSubStatusHasBeenSet;
+
+                    /**
+                     * 节点总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_nodeCount;
+                    bool m_nodeCountHasBeenSet;
+
+                    /**
+                     * 离线节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_offLineNodeCount;
+                    bool m_offLineNodeCountHasBeenSet;
+
+                    /**
+                     * 未安装agent节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_unInstallAgentNodeCount;
+                    bool m_unInstallAgentNodeCountHasBeenSet;
 
                 };
             }

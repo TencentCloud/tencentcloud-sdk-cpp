@@ -151,6 +151,8 @@
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerSlaRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerSlaResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyLoadBalancersProjectRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyLoadBalancersProjectResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyRuleRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyRuleResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyTargetGroupAttributeRequest.h>
@@ -387,6 +389,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancerSlaResponse> ModifyLoadBalancerSlaOutcome;
                 typedef std::future<ModifyLoadBalancerSlaOutcome> ModifyLoadBalancerSlaOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyLoadBalancerSlaRequest&, ModifyLoadBalancerSlaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerSlaAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLoadBalancersProjectResponse> ModifyLoadBalancersProjectOutcome;
+                typedef std::future<ModifyLoadBalancersProjectOutcome> ModifyLoadBalancersProjectOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyLoadBalancersProjectRequest&, ModifyLoadBalancersProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancersProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRuleResponse> ModifyRuleOutcome;
                 typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyRuleRequest&, ModifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
@@ -1071,6 +1076,15 @@ BGP带宽包必须传带宽包id
                 ModifyLoadBalancerSlaOutcome ModifyLoadBalancerSla(const Model::ModifyLoadBalancerSlaRequest &request);
                 void ModifyLoadBalancerSlaAsync(const Model::ModifyLoadBalancerSlaRequest& request, const ModifyLoadBalancerSlaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLoadBalancerSlaOutcomeCallable ModifyLoadBalancerSlaCallable(const Model::ModifyLoadBalancerSlaRequest& request);
+
+                /**
+                 *修改一个或多个负载均衡实例所属项目。
+                 * @param req ModifyLoadBalancersProjectRequest
+                 * @return ModifyLoadBalancersProjectOutcome
+                 */
+                ModifyLoadBalancersProjectOutcome ModifyLoadBalancersProject(const Model::ModifyLoadBalancersProjectRequest &request);
+                void ModifyLoadBalancersProjectAsync(const Model::ModifyLoadBalancersProjectRequest& request, const ModifyLoadBalancersProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLoadBalancersProjectOutcomeCallable ModifyLoadBalancersProjectCallable(const Model::ModifyLoadBalancersProjectRequest& request);
 
                 /**
                  *ModifyRule 接口用来修改负载均衡七层监听器下的转发规则的各项属性，包括转发路径、健康检查属性、转发策略等。

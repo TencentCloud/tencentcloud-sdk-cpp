@@ -136,6 +136,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/LBChargePrepaid.h
   include/tencentcloud/clb/v20180317/model/ClassicalListener.h
   include/tencentcloud/clb/v20180317/model/DeleteLoadBalancerRequest.h
+  include/tencentcloud/clb/v20180317/model/ModifyLoadBalancersProjectRequest.h
   include/tencentcloud/clb/v20180317/model/CertificateInput.h
   include/tencentcloud/clb/v20180317/model/ResourceAvailability.h
   include/tencentcloud/clb/v20180317/model/DescribeCustomizedConfigAssociateListResponse.h
@@ -229,6 +230,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBTargetsResponse.h
   include/tencentcloud/clb/v20180317/model/RewriteLocationMap.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetPortRequest.h
+  include/tencentcloud/clb/v20180317/model/ModifyLoadBalancersProjectResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeLoadBalancersResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeLBListenersResponse.h
   include/tencentcloud/clb/v20180317/model/TargetGroupInfo.h
@@ -365,6 +367,7 @@ set(clb_src
   src/v20180317/model/LBChargePrepaid.cpp
   src/v20180317/model/ClassicalListener.cpp
   src/v20180317/model/DeleteLoadBalancerRequest.cpp
+  src/v20180317/model/ModifyLoadBalancersProjectRequest.cpp
   src/v20180317/model/CertificateInput.cpp
   src/v20180317/model/ResourceAvailability.cpp
   src/v20180317/model/DescribeCustomizedConfigAssociateListResponse.cpp
@@ -458,6 +461,7 @@ set(clb_src
   src/v20180317/model/DescribeClassicalLBTargetsResponse.cpp
   src/v20180317/model/RewriteLocationMap.cpp
   src/v20180317/model/ModifyTargetPortRequest.cpp
+  src/v20180317/model/ModifyLoadBalancersProjectResponse.cpp
   src/v20180317/model/DescribeLoadBalancersResponse.cpp
   src/v20180317/model/DescribeLBListenersResponse.cpp
   src/v20180317/model/TargetGroupInfo.cpp

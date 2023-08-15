@@ -38,7 +38,9 @@ HostInfo::HostInfo() :
     m_regionIDHasBeenSet(false),
     m_projectHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clusterIDHasBeenSet(false)
+    m_clusterIDHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_clusterAccessedStatusHasBeenSet(false)
 {
 }
 
@@ -244,6 +246,26 @@ CoreInternalOutcome HostInfo::Deserialize(const rapidjson::Value &value)
         m_clusterIDHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterAccessedStatus") && !value["ClusterAccessedStatus"].IsNull())
+    {
+        if (!value["ClusterAccessedStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.ClusterAccessedStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterAccessedStatus = string(value["ClusterAccessedStatus"].GetString());
+        m_clusterAccessedStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -401,6 +423,22 @@ void HostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ClusterID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterAccessedStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterAccessedStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterAccessedStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -692,5 +730,37 @@ void HostInfo::SetClusterID(const string& _clusterID)
 bool HostInfo::ClusterIDHasBeenSet() const
 {
     return m_clusterIDHasBeenSet;
+}
+
+string HostInfo::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void HostInfo::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool HostInfo::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
+}
+
+string HostInfo::GetClusterAccessedStatus() const
+{
+    return m_clusterAccessedStatus;
+}
+
+void HostInfo::SetClusterAccessedStatus(const string& _clusterAccessedStatus)
+{
+    m_clusterAccessedStatus = _clusterAccessedStatus;
+    m_clusterAccessedStatusHasBeenSet = true;
+}
+
+bool HostInfo::ClusterAccessedStatusHasBeenSet() const
+{
+    return m_clusterAccessedStatusHasBeenSet;
 }
 

@@ -3910,6 +3910,49 @@ TcrClient::DownloadHelmChartOutcomeCallable TcrClient::DownloadHelmChartCallable
     return task->get_future();
 }
 
+TcrClient::DuplicateImageOutcome TcrClient::DuplicateImage(const DuplicateImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DuplicateImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DuplicateImageResponse rsp = DuplicateImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DuplicateImageOutcome(rsp);
+        else
+            return DuplicateImageOutcome(o.GetError());
+    }
+    else
+    {
+        return DuplicateImageOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DuplicateImageAsync(const DuplicateImageRequest& request, const DuplicateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DuplicateImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DuplicateImageOutcomeCallable TcrClient::DuplicateImageCallable(const DuplicateImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DuplicateImageOutcome()>>(
+        [this, request]()
+        {
+            return this->DuplicateImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DuplicateImagePersonalOutcome TcrClient::DuplicateImagePersonal(const DuplicateImagePersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DuplicateImagePersonal");

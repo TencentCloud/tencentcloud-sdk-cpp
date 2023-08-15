@@ -50,7 +50,8 @@ InstanceInfo::InstanceInfo() :
     m_qpsStandardHasBeenSet(false),
     m_bandwidthStandardHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_sandboxQpsHasBeenSet(false)
+    m_sandboxQpsHasBeenSet(false),
+    m_isAPISecurityTrialHasBeenSet(false)
 {
 }
 
@@ -394,6 +395,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_sandboxQpsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAPISecurityTrial") && !value["IsAPISecurityTrial"].IsNull())
+    {
+        if (!value["IsAPISecurityTrial"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsAPISecurityTrial` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAPISecurityTrial = value["IsAPISecurityTrial"].GetUint64();
+        m_isAPISecurityTrialHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -644,6 +655,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SandboxQps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sandboxQps, allocator);
+    }
+
+    if (m_isAPISecurityTrialHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAPISecurityTrial";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAPISecurityTrial, allocator);
     }
 
 }
@@ -1127,5 +1146,21 @@ void InstanceInfo::SetSandboxQps(const uint64_t& _sandboxQps)
 bool InstanceInfo::SandboxQpsHasBeenSet() const
 {
     return m_sandboxQpsHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetIsAPISecurityTrial() const
+{
+    return m_isAPISecurityTrial;
+}
+
+void InstanceInfo::SetIsAPISecurityTrial(const uint64_t& _isAPISecurityTrial)
+{
+    m_isAPISecurityTrial = _isAPISecurityTrial;
+    m_isAPISecurityTrialHasBeenSet = true;
+}
+
+bool InstanceInfo::IsAPISecurityTrialHasBeenSet() const
+{
+    return m_isAPISecurityTrialHasBeenSet;
 }
 

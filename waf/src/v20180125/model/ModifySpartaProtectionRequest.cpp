@@ -54,7 +54,8 @@ ModifySpartaProtectionRequest::ModifySpartaProtectionRequest() :
     m_proxySendTimeoutHasBeenSet(false),
     m_sniTypeHasBeenSet(false),
     m_sniHostHasBeenSet(false),
-    m_ipHeadersHasBeenSet(false)
+    m_ipHeadersHasBeenSet(false),
+    m_xFFResetHasBeenSet(false)
 {
 }
 
@@ -346,6 +347,14 @@ string ModifySpartaProtectionRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_xFFResetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "XFFReset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_xFFReset, allocator);
     }
 
 
@@ -866,6 +875,22 @@ void ModifySpartaProtectionRequest::SetIpHeaders(const vector<string>& _ipHeader
 bool ModifySpartaProtectionRequest::IpHeadersHasBeenSet() const
 {
     return m_ipHeadersHasBeenSet;
+}
+
+int64_t ModifySpartaProtectionRequest::GetXFFReset() const
+{
+    return m_xFFReset;
+}
+
+void ModifySpartaProtectionRequest::SetXFFReset(const int64_t& _xFFReset)
+{
+    m_xFFReset = _xFFReset;
+    m_xFFResetHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::XFFResetHasBeenSet() const
+{
+    return m_xFFResetHasBeenSet;
 }
 
 

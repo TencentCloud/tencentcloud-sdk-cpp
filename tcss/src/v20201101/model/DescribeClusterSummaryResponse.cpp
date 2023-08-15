@@ -35,7 +35,10 @@ DescribeClusterSummaryResponse::DescribeClusterSummaryResponse() :
     m_manualCheckClusterCountHasBeenSet(false),
     m_failedClusterCountHasBeenSet(false),
     m_notImportedClusterCountHasBeenSet(false),
-    m_serverlessClusterCountHasBeenSet(false)
+    m_serverlessClusterCountHasBeenSet(false),
+    m_tkeClusterCountHasBeenSet(false),
+    m_userCreateTencentClusterCountHasBeenSet(false),
+    m_userCreateHybridClusterCountHasBeenSet(false)
 {
 }
 
@@ -193,6 +196,36 @@ CoreInternalOutcome DescribeClusterSummaryResponse::Deserialize(const string &pa
         m_serverlessClusterCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TkeClusterCount") && !rsp["TkeClusterCount"].IsNull())
+    {
+        if (!rsp["TkeClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TkeClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tkeClusterCount = rsp["TkeClusterCount"].GetUint64();
+        m_tkeClusterCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UserCreateTencentClusterCount") && !rsp["UserCreateTencentClusterCount"].IsNull())
+    {
+        if (!rsp["UserCreateTencentClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserCreateTencentClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_userCreateTencentClusterCount = rsp["UserCreateTencentClusterCount"].GetUint64();
+        m_userCreateTencentClusterCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UserCreateHybridClusterCount") && !rsp["UserCreateHybridClusterCount"].IsNull())
+    {
+        if (!rsp["UserCreateHybridClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserCreateHybridClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_userCreateHybridClusterCount = rsp["UserCreateHybridClusterCount"].GetUint64();
+        m_userCreateHybridClusterCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +330,30 @@ string DescribeClusterSummaryResponse::ToJsonString() const
         string key = "ServerlessClusterCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serverlessClusterCount, allocator);
+    }
+
+    if (m_tkeClusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TkeClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tkeClusterCount, allocator);
+    }
+
+    if (m_userCreateTencentClusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserCreateTencentClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userCreateTencentClusterCount, allocator);
+    }
+
+    if (m_userCreateHybridClusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserCreateHybridClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userCreateHybridClusterCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -429,6 +486,36 @@ uint64_t DescribeClusterSummaryResponse::GetServerlessClusterCount() const
 bool DescribeClusterSummaryResponse::ServerlessClusterCountHasBeenSet() const
 {
     return m_serverlessClusterCountHasBeenSet;
+}
+
+uint64_t DescribeClusterSummaryResponse::GetTkeClusterCount() const
+{
+    return m_tkeClusterCount;
+}
+
+bool DescribeClusterSummaryResponse::TkeClusterCountHasBeenSet() const
+{
+    return m_tkeClusterCountHasBeenSet;
+}
+
+uint64_t DescribeClusterSummaryResponse::GetUserCreateTencentClusterCount() const
+{
+    return m_userCreateTencentClusterCount;
+}
+
+bool DescribeClusterSummaryResponse::UserCreateTencentClusterCountHasBeenSet() const
+{
+    return m_userCreateTencentClusterCountHasBeenSet;
+}
+
+uint64_t DescribeClusterSummaryResponse::GetUserCreateHybridClusterCount() const
+{
+    return m_userCreateHybridClusterCount;
+}
+
+bool DescribeClusterSummaryResponse::UserCreateHybridClusterCountHasBeenSet() const
+{
+    return m_userCreateHybridClusterCountHasBeenSet;
 }
 
 

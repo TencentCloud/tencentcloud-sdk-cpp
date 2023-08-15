@@ -203,6 +203,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DownloadHelmChartRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DownloadHelmChartResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DuplicateImageRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DuplicateImageResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ManageExternalEndpointRequest.h>
@@ -531,6 +533,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadHelmChartResponse> DownloadHelmChartOutcome;
                 typedef std::future<DownloadHelmChartOutcome> DownloadHelmChartOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DownloadHelmChartRequest&, DownloadHelmChartOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadHelmChartAsyncHandler;
+                typedef Outcome<Core::Error, Model::DuplicateImageResponse> DuplicateImageOutcome;
+                typedef std::future<DuplicateImageOutcome> DuplicateImageOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DuplicateImageRequest&, DuplicateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DuplicateImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DuplicateImagePersonalResponse> DuplicateImagePersonalOutcome;
                 typedef std::future<DuplicateImagePersonalOutcome> DuplicateImagePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DuplicateImagePersonalRequest&, DuplicateImagePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DuplicateImagePersonalAsyncHandler;
@@ -1411,6 +1416,15 @@ namespace TencentCloud
                 DownloadHelmChartOutcome DownloadHelmChart(const Model::DownloadHelmChartRequest &request);
                 void DownloadHelmChartAsync(const Model::DownloadHelmChartRequest& request, const DownloadHelmChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadHelmChartOutcomeCallable DownloadHelmChartCallable(const Model::DownloadHelmChartRequest& request);
+
+                /**
+                 *用于在企业版镜像仓库中复制镜像版本
+                 * @param req DuplicateImageRequest
+                 * @return DuplicateImageOutcome
+                 */
+                DuplicateImageOutcome DuplicateImage(const Model::DuplicateImageRequest &request);
+                void DuplicateImageAsync(const Model::DuplicateImageRequest& request, const DuplicateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DuplicateImageOutcomeCallable DuplicateImageCallable(const Model::DuplicateImageRequest& request);
 
                 /**
                  *用于在个人版镜像仓库中复制镜像版本

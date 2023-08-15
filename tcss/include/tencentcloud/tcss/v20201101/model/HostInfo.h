@@ -434,6 +434,48 @@ namespace TencentCloud
                      */
                     bool ClusterIDHasBeenSet() const;
 
+                    /**
+                     * 获取集群名称
+                     * @return ClusterName 集群名称
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置集群名称
+                     * @param _clusterName 集群名称
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
+                    /**
+                     * 获取集群接入状态
+                     * @return ClusterAccessedStatus 集群接入状态
+                     * 
+                     */
+                    std::string GetClusterAccessedStatus() const;
+
+                    /**
+                     * 设置集群接入状态
+                     * @param _clusterAccessedStatus 集群接入状态
+                     * 
+                     */
+                    void SetClusterAccessedStatus(const std::string& _clusterAccessedStatus);
+
+                    /**
+                     * 判断参数 ClusterAccessedStatus 是否已赋值
+                     * @return ClusterAccessedStatus 是否已赋值
+                     * 
+                     */
+                    bool ClusterAccessedStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -545,6 +587,18 @@ namespace TencentCloud
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;
+
+                    /**
+                     * 集群名称
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 集群接入状态
+                     */
+                    std::string m_clusterAccessedStatus;
+                    bool m_clusterAccessedStatusHasBeenSet;
 
                 };
             }

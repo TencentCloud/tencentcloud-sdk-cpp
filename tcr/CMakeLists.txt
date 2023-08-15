@@ -209,7 +209,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/Filter.h
   include/tencentcloud/tcr/v20190924/model/RetentionExecution.h
   include/tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogRequest.h
-  include/tencentcloud/tcr/v20190924/model/ManageReplicationResponse.h
+  include/tencentcloud/tcr/v20190924/model/DuplicateImageResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceCreateTasksRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/RepoInfo.h
@@ -229,6 +229,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/Header.h
   include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateSecurityPolicyRequest.h
+  include/tencentcloud/tcr/v20190924/model/ManageReplicationResponse.h
   include/tencentcloud/tcr/v20190924/model/CustomAccount.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageAccelerateServiceResponse.h
   include/tencentcloud/tcr/v20190924/model/CVEWhitelistItem.h
@@ -299,6 +300,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteRepositoryRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateInternalEndpointDnsResponse.h
+  include/tencentcloud/tcr/v20190924/model/DuplicateImageRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateTagRetentionExecutionRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteCustomAccountRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeInstanceAllNamespacesResponse.h
@@ -501,7 +503,7 @@ set(tcr_src
   src/v20190924/model/Filter.cpp
   src/v20190924/model/RetentionExecution.cpp
   src/v20190924/model/DescribeWebhookTriggerLogRequest.cpp
-  src/v20190924/model/ManageReplicationResponse.cpp
+  src/v20190924/model/DuplicateImageResponse.cpp
   src/v20190924/model/DescribeReplicationInstanceCreateTasksRequest.cpp
   src/v20190924/model/ModifyWebhookTriggerResponse.cpp
   src/v20190924/model/RepoInfo.cpp
@@ -521,6 +523,7 @@ set(tcr_src
   src/v20190924/model/Header.cpp
   src/v20190924/model/DescribeReplicationInstancesResponse.cpp
   src/v20190924/model/CreateSecurityPolicyRequest.cpp
+  src/v20190924/model/ManageReplicationResponse.cpp
   src/v20190924/model/CustomAccount.cpp
   src/v20190924/model/DeleteImageAccelerateServiceResponse.cpp
   src/v20190924/model/CVEWhitelistItem.cpp
@@ -591,6 +594,7 @@ set(tcr_src
   src/v20190924/model/ModifyUserPasswordPersonalRequest.cpp
   src/v20190924/model/DeleteRepositoryRequest.cpp
   src/v20190924/model/CreateInternalEndpointDnsResponse.cpp
+  src/v20190924/model/DuplicateImageRequest.cpp
   src/v20190924/model/CreateTagRetentionExecutionRequest.cpp
   src/v20190924/model/DeleteCustomAccountRequest.cpp
   src/v20190924/model/DescribeInstanceAllNamespacesResponse.cpp
