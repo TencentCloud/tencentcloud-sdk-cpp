@@ -32,7 +32,10 @@ User::User() :
     m_authTypeHasBeenSet(false),
     m_validateTimeHasBeenSet(false),
     m_departmentHasBeenSet(false),
-    m_departmentIdHasBeenSet(false)
+    m_departmentIdHasBeenSet(false),
+    m_activeStatusHasBeenSet(false),
+    m_lockStatusHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -178,6 +181,36 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_departmentIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ActiveStatus") && !value["ActiveStatus"].IsNull())
+    {
+        if (!value["ActiveStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.ActiveStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_activeStatus = value["ActiveStatus"].GetUint64();
+        m_activeStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("LockStatus") && !value["LockStatus"].IsNull())
+    {
+        if (!value["LockStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.LockStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockStatus = value["LockStatus"].GetUint64();
+        m_lockStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +320,30 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "DepartmentId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_activeStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActiveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_activeStatus, allocator);
+    }
+
+    if (m_lockStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LockStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lockStatus, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -482,5 +539,53 @@ void User::SetDepartmentId(const string& _departmentId)
 bool User::DepartmentIdHasBeenSet() const
 {
     return m_departmentIdHasBeenSet;
+}
+
+uint64_t User::GetActiveStatus() const
+{
+    return m_activeStatus;
+}
+
+void User::SetActiveStatus(const uint64_t& _activeStatus)
+{
+    m_activeStatus = _activeStatus;
+    m_activeStatusHasBeenSet = true;
+}
+
+bool User::ActiveStatusHasBeenSet() const
+{
+    return m_activeStatusHasBeenSet;
+}
+
+uint64_t User::GetLockStatus() const
+{
+    return m_lockStatus;
+}
+
+void User::SetLockStatus(const uint64_t& _lockStatus)
+{
+    m_lockStatus = _lockStatus;
+    m_lockStatusHasBeenSet = true;
+}
+
+bool User::LockStatusHasBeenSet() const
+{
+    return m_lockStatusHasBeenSet;
+}
+
+string User::GetStatus() const
+{
+    return m_status;
+}
+
+void User::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool User::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

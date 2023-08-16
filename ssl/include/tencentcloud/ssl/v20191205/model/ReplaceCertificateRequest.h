@@ -168,6 +168,52 @@ namespace TencentCloud
                      */
                     bool ReasonHasBeenSet() const;
 
+                    /**
+                     * 获取CSR加密方式，可选：RSA、ECC、SM2
+（CsrType为Online才可选）， 默认为RSA
+                     * @return CertCSREncryptAlgo CSR加密方式，可选：RSA、ECC、SM2
+（CsrType为Online才可选）， 默认为RSA
+                     * 
+                     */
+                    std::string GetCertCSREncryptAlgo() const;
+
+                    /**
+                     * 设置CSR加密方式，可选：RSA、ECC、SM2
+（CsrType为Online才可选）， 默认为RSA
+                     * @param _certCSREncryptAlgo CSR加密方式，可选：RSA、ECC、SM2
+（CsrType为Online才可选）， 默认为RSA
+                     * 
+                     */
+                    void SetCertCSREncryptAlgo(const std::string& _certCSREncryptAlgo);
+
+                    /**
+                     * 判断参数 CertCSREncryptAlgo 是否已赋值
+                     * @return CertCSREncryptAlgo 是否已赋值
+                     * 
+                     */
+                    bool CertCSREncryptAlgoHasBeenSet() const;
+
+                    /**
+                     * 获取CSR加密参数，CsrEncryptAlgo为RSA时， 可选2048、4096等默认为2048；CsrEncryptAlgo为ECC时，可选prime256v1，secp384r1等，默认为prime256v1; 
+                     * @return CertCSRKeyParameter CSR加密参数，CsrEncryptAlgo为RSA时， 可选2048、4096等默认为2048；CsrEncryptAlgo为ECC时，可选prime256v1，secp384r1等，默认为prime256v1; 
+                     * 
+                     */
+                    std::string GetCertCSRKeyParameter() const;
+
+                    /**
+                     * 设置CSR加密参数，CsrEncryptAlgo为RSA时， 可选2048、4096等默认为2048；CsrEncryptAlgo为ECC时，可选prime256v1，secp384r1等，默认为prime256v1; 
+                     * @param _certCSRKeyParameter CSR加密参数，CsrEncryptAlgo为RSA时， 可选2048、4096等默认为2048；CsrEncryptAlgo为ECC时，可选prime256v1，secp384r1等，默认为prime256v1; 
+                     * 
+                     */
+                    void SetCertCSRKeyParameter(const std::string& _certCSRKeyParameter);
+
+                    /**
+                     * 判断参数 CertCSRKeyParameter 是否已赋值
+                     * @return CertCSRKeyParameter 是否已赋值
+                     * 
+                     */
+                    bool CertCSRKeyParameterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +251,19 @@ namespace TencentCloud
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
+
+                    /**
+                     * CSR加密方式，可选：RSA、ECC、SM2
+（CsrType为Online才可选）， 默认为RSA
+                     */
+                    std::string m_certCSREncryptAlgo;
+                    bool m_certCSREncryptAlgoHasBeenSet;
+
+                    /**
+                     * CSR加密参数，CsrEncryptAlgo为RSA时， 可选2048、4096等默认为2048；CsrEncryptAlgo为ECC时，可选prime256v1，secp384r1等，默认为prime256v1; 
+                     */
+                    std::string m_certCSRKeyParameter;
+                    bool m_certCSRKeyParameterHasBeenSet;
 
                 };
             }

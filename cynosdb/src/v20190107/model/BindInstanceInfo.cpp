@@ -23,7 +23,8 @@ using namespace std;
 BindInstanceInfo::BindInstanceInfo() :
     m_instanceIdHasBeenSet(false),
     m_instanceRegionHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_extendIdsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,19 @@ CoreInternalOutcome BindInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtendIds") && !value["ExtendIds"].IsNull())
+    {
+        if (!value["ExtendIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BindInstanceInfo.ExtendIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExtendIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_extendIds.push_back((*itr).GetString());
+        }
+        m_extendIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +105,19 @@ void BindInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extendIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_extendIds.begin(); itr != m_extendIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -142,5 +169,21 @@ void BindInstanceInfo::SetInstanceType(const string& _instanceType)
 bool BindInstanceInfo::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+vector<string> BindInstanceInfo::GetExtendIds() const
+{
+    return m_extendIds;
+}
+
+void BindInstanceInfo::SetExtendIds(const vector<string>& _extendIds)
+{
+    m_extendIds = _extendIds;
+    m_extendIdsHasBeenSet = true;
+}
+
+bool BindInstanceInfo::ExtendIdsHasBeenSet() const
+{
+    return m_extendIdsHasBeenSet;
 }
 

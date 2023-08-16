@@ -316,6 +316,81 @@ namespace TencentCloud
                      */
                     bool DepartmentIdHasBeenSet() const;
 
+                    /**
+                     * 获取激活状态 0 - 未激活 1 - 激活
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ActiveStatus 激活状态 0 - 未激活 1 - 激活
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetActiveStatus() const;
+
+                    /**
+                     * 设置激活状态 0 - 未激活 1 - 激活
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _activeStatus 激活状态 0 - 未激活 1 - 激活
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetActiveStatus(const uint64_t& _activeStatus);
+
+                    /**
+                     * 判断参数 ActiveStatus 是否已赋值
+                     * @return ActiveStatus 是否已赋值
+                     * 
+                     */
+                    bool ActiveStatusHasBeenSet() const;
+
+                    /**
+                     * 获取锁定状态 0 - 未锁定 1 - 锁定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LockStatus 锁定状态 0 - 未锁定 1 - 锁定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetLockStatus() const;
+
+                    /**
+                     * 设置锁定状态 0 - 未锁定 1 - 锁定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lockStatus 锁定状态 0 - 未锁定 1 - 锁定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLockStatus(const uint64_t& _lockStatus);
+
+                    /**
+                     * 判断参数 LockStatus 是否已赋值
+                     * @return LockStatus 是否已赋值
+                     * 
+                     */
+                    bool LockStatusHasBeenSet() const;
+
+                    /**
+                     * 获取状态 与Filter中一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 状态 与Filter中一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置状态 与Filter中一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 状态 与Filter中一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -393,6 +468,27 @@ namespace TencentCloud
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
+
+                    /**
+                     * 激活状态 0 - 未激活 1 - 激活
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_activeStatus;
+                    bool m_activeStatusHasBeenSet;
+
+                    /**
+                     * 锁定状态 0 - 未锁定 1 - 锁定
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_lockStatus;
+                    bool m_lockStatusHasBeenSet;
+
+                    /**
+                     * 状态 与Filter中一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

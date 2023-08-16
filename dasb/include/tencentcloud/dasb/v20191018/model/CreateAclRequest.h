@@ -596,6 +596,27 @@ namespace TencentCloud
                      */
                     bool DepartmentIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许使用访问串，默认允许
+                     * @return AllowAccessCredential 是否允许使用访问串，默认允许
+                     * 
+                     */
+                    bool GetAllowAccessCredential() const;
+
+                    /**
+                     * 设置是否允许使用访问串，默认允许
+                     * @param _allowAccessCredential 是否允许使用访问串，默认允许
+                     * 
+                     */
+                    void SetAllowAccessCredential(const bool& _allowAccessCredential);
+
+                    /**
+                     * 判断参数 AllowAccessCredential 是否已赋值
+                     * @return AllowAccessCredential 是否已赋值
+                     * 
+                     */
+                    bool AllowAccessCredentialHasBeenSet() const;
+
                 private:
 
                     /**
@@ -755,6 +776,12 @@ namespace TencentCloud
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
+
+                    /**
+                     * 是否允许使用访问串，默认允许
+                     */
+                    bool m_allowAccessCredential;
+                    bool m_allowAccessCredentialHasBeenSet;
 
                 };
             }

@@ -32,7 +32,8 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_instanceRoleHasBeenSet(false),
     m_maintainStartTimeHasBeenSet(false),
     m_maintainDurationHasBeenSet(false),
-    m_maintainWeekDaysHasBeenSet(false)
+    m_maintainWeekDaysHasBeenSet(false),
+    m_serverlessStatusHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,16 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_maintainWeekDaysHasBeenSet = true;
     }
 
+    if (value.HasMember("ServerlessStatus") && !value["ServerlessStatus"].IsNull())
+    {
+        if (!value["ServerlessStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.ServerlessStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverlessStatus = string(value["ServerlessStatus"].GetString());
+        m_serverlessStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_serverlessStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerlessStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void ClusterInstanceDetail::SetMaintainWeekDays(const vector<string>& _maintainW
 bool ClusterInstanceDetail::MaintainWeekDaysHasBeenSet() const
 {
     return m_maintainWeekDaysHasBeenSet;
+}
+
+string ClusterInstanceDetail::GetServerlessStatus() const
+{
+    return m_serverlessStatus;
+}
+
+void ClusterInstanceDetail::SetServerlessStatus(const string& _serverlessStatus)
+{
+    m_serverlessStatus = _serverlessStatus;
+    m_serverlessStatusHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::ServerlessStatusHasBeenSet() const
+{
+    return m_serverlessStatusHasBeenSet;
 }
 

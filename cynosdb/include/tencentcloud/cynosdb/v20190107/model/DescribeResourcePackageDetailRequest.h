@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PackageIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return ClusterIds 实例ID
+                     * 获取集群ID
+                     * @return ClusterIds 集群ID
                      * 
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _clusterIds 实例ID
+                     * 设置集群ID
+                     * @param _clusterIds 集群ID
                      * 
                      */
                     void SetClusterIds(const std::vector<std::string>& _clusterIds);
@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取实例D
+                     * @return InstanceIds 实例D
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 设置实例D
+                     * @param _instanceIds 实例D
+                     * 
+                     */
+                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,7 +198,7 @@ namespace TencentCloud
                     bool m_packageIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 集群ID
                      */
                     std::vector<std::string> m_clusterIds;
                     bool m_clusterIdsHasBeenSet;
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 实例D
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
 
                 };
             }

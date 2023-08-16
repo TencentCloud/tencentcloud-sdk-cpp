@@ -24,7 +24,11 @@ InstanceInitInfo::InstanceInitInfo() :
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_instanceCountHasBeenSet(false)
+    m_instanceCountHasBeenSet(false),
+    m_minRoCountHasBeenSet(false),
+    m_maxRoCountHasBeenSet(false),
+    m_minRoCpuHasBeenSet(false),
+    m_maxRoCpuHasBeenSet(false)
 {
 }
 
@@ -73,6 +77,46 @@ CoreInternalOutcome InstanceInitInfo::Deserialize(const rapidjson::Value &value)
         m_instanceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("MinRoCount") && !value["MinRoCount"].IsNull())
+    {
+        if (!value["MinRoCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInitInfo.MinRoCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minRoCount = value["MinRoCount"].GetInt64();
+        m_minRoCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxRoCount") && !value["MaxRoCount"].IsNull())
+    {
+        if (!value["MaxRoCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInitInfo.MaxRoCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxRoCount = value["MaxRoCount"].GetInt64();
+        m_maxRoCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinRoCpu") && !value["MinRoCpu"].IsNull())
+    {
+        if (!value["MinRoCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInitInfo.MinRoCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_minRoCpu = value["MinRoCpu"].GetDouble();
+        m_minRoCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxRoCpu") && !value["MaxRoCpu"].IsNull())
+    {
+        if (!value["MaxRoCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInitInfo.MaxRoCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxRoCpu = value["MaxRoCpu"].GetDouble();
+        m_maxRoCpuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +154,38 @@ void InstanceInitInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceCount, allocator);
+    }
+
+    if (m_minRoCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinRoCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minRoCount, allocator);
+    }
+
+    if (m_maxRoCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRoCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxRoCount, allocator);
+    }
+
+    if (m_minRoCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinRoCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minRoCpu, allocator);
+    }
+
+    if (m_maxRoCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRoCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxRoCpu, allocator);
     }
 
 }
@@ -177,5 +253,69 @@ void InstanceInitInfo::SetInstanceCount(const int64_t& _instanceCount)
 bool InstanceInitInfo::InstanceCountHasBeenSet() const
 {
     return m_instanceCountHasBeenSet;
+}
+
+int64_t InstanceInitInfo::GetMinRoCount() const
+{
+    return m_minRoCount;
+}
+
+void InstanceInitInfo::SetMinRoCount(const int64_t& _minRoCount)
+{
+    m_minRoCount = _minRoCount;
+    m_minRoCountHasBeenSet = true;
+}
+
+bool InstanceInitInfo::MinRoCountHasBeenSet() const
+{
+    return m_minRoCountHasBeenSet;
+}
+
+int64_t InstanceInitInfo::GetMaxRoCount() const
+{
+    return m_maxRoCount;
+}
+
+void InstanceInitInfo::SetMaxRoCount(const int64_t& _maxRoCount)
+{
+    m_maxRoCount = _maxRoCount;
+    m_maxRoCountHasBeenSet = true;
+}
+
+bool InstanceInitInfo::MaxRoCountHasBeenSet() const
+{
+    return m_maxRoCountHasBeenSet;
+}
+
+double InstanceInitInfo::GetMinRoCpu() const
+{
+    return m_minRoCpu;
+}
+
+void InstanceInitInfo::SetMinRoCpu(const double& _minRoCpu)
+{
+    m_minRoCpu = _minRoCpu;
+    m_minRoCpuHasBeenSet = true;
+}
+
+bool InstanceInitInfo::MinRoCpuHasBeenSet() const
+{
+    return m_minRoCpuHasBeenSet;
+}
+
+double InstanceInitInfo::GetMaxRoCpu() const
+{
+    return m_maxRoCpu;
+}
+
+void InstanceInitInfo::SetMaxRoCpu(const double& _maxRoCpu)
+{
+    m_maxRoCpu = _maxRoCpu;
+    m_maxRoCpuHasBeenSet = true;
+}
+
+bool InstanceInitInfo::MaxRoCpuHasBeenSet() const
+{
+    return m_maxRoCpuHasBeenSet;
 }
 

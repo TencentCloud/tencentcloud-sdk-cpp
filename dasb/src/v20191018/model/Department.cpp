@@ -23,7 +23,8 @@ using namespace std;
 Department::Department() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_managersHasBeenSet(false)
+    m_managersHasBeenSet(false),
+    m_managerUsersHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,26 @@ CoreInternalOutcome Department::Deserialize(const rapidjson::Value &value)
         m_managersHasBeenSet = true;
     }
 
+    if (value.HasMember("ManagerUsers") && !value["ManagerUsers"].IsNull())
+    {
+        if (!value["ManagerUsers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Department.ManagerUsers` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ManagerUsers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DepartmentManagerUser item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_managerUsers.push_back(item);
+        }
+        m_managerUsersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +119,21 @@ void Department::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_managers.begin(); itr != m_managers.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_managerUsersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManagerUsers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_managerUsers.begin(); itr != m_managerUsers.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -150,5 +186,21 @@ void Department::SetManagers(const vector<string>& _managers)
 bool Department::ManagersHasBeenSet() const
 {
     return m_managersHasBeenSet;
+}
+
+vector<DepartmentManagerUser> Department::GetManagerUsers() const
+{
+    return m_managerUsers;
+}
+
+void Department::SetManagerUsers(const vector<DepartmentManagerUser>& _managerUsers)
+{
+    m_managerUsers = _managerUsers;
+    m_managerUsersHasBeenSet = true;
+}
+
+bool Department::ManagerUsersHasBeenSet() const
+{
+    return m_managerUsersHasBeenSet;
 }
 

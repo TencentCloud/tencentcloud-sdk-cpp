@@ -48,7 +48,8 @@ CreateAclRequest::CreateAclRequest() :
     m_allowFileDelHasBeenSet(false),
     m_validateFromHasBeenSet(false),
     m_validateToHasBeenSet(false),
-    m_departmentIdHasBeenSet(false)
+    m_departmentIdHasBeenSet(false),
+    m_allowAccessCredentialHasBeenSet(false)
 {
 }
 
@@ -300,6 +301,14 @@ string CreateAclRequest::ToJsonString() const
         string key = "DepartmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowAccessCredentialHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowAccessCredential";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allowAccessCredential, allocator);
     }
 
 
@@ -724,6 +733,22 @@ void CreateAclRequest::SetDepartmentId(const string& _departmentId)
 bool CreateAclRequest::DepartmentIdHasBeenSet() const
 {
     return m_departmentIdHasBeenSet;
+}
+
+bool CreateAclRequest::GetAllowAccessCredential() const
+{
+    return m_allowAccessCredential;
+}
+
+void CreateAclRequest::SetAllowAccessCredential(const bool& _allowAccessCredential)
+{
+    m_allowAccessCredential = _allowAccessCredential;
+    m_allowAccessCredentialHasBeenSet = true;
+}
+
+bool CreateAclRequest::AllowAccessCredentialHasBeenSet() const
+{
+    return m_allowAccessCredentialHasBeenSet;
 }
 
 

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
-                     * @return IsRemoteZone 克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     * 获取克隆实例与源实例是否在异地可用区，是:"true"，否:"false"
+                     * @return IsRemoteZone 克隆实例与源实例是否在异地可用区，是:"true"，否:"false"
                      * 
                      */
                     std::string GetIsRemoteZone() const;
 
                     /**
-                     * 设置克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
-                     * @param _isRemoteZone 克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     * 设置克隆实例与源实例是否在异地可用区，是:"true"，否:"false"
+                     * @param _isRemoteZone 克隆实例与源实例是否在异地可用区，是:"true"，否:"false"
                      * 
                      */
                     void SetIsRemoteZone(const std::string& _isRemoteZone);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     * 克隆实例与源实例是否在异地可用区，是:"true"，否:"false"
                      */
                     std::string m_isRemoteZone;
                     bool m_isRemoteZoneHasBeenSet;

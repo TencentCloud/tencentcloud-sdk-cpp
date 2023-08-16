@@ -47,7 +47,9 @@ Acl::Acl() :
     m_validateFromHasBeenSet(false),
     m_validateToHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_departmentHasBeenSet(false)
+    m_departmentHasBeenSet(false),
+    m_allowAccessCredentialHasBeenSet(false),
+    m_aCTemplateSetHasBeenSet(false)
 {
 }
 
@@ -386,6 +388,36 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
         m_departmentHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowAccessCredential") && !value["AllowAccessCredential"].IsNull())
+    {
+        if (!value["AllowAccessCredential"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Acl.AllowAccessCredential` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowAccessCredential = value["AllowAccessCredential"].GetBool();
+        m_allowAccessCredentialHasBeenSet = true;
+    }
+
+    if (value.HasMember("ACTemplateSet") && !value["ACTemplateSet"].IsNull())
+    {
+        if (!value["ACTemplateSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Acl.ACTemplateSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ACTemplateSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ACTemplate item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_aCTemplateSet.push_back(item);
+        }
+        m_aCTemplateSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -648,6 +680,29 @@ void Acl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_department.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_allowAccessCredentialHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowAccessCredential";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowAccessCredential, allocator);
+    }
+
+    if (m_aCTemplateSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ACTemplateSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_aCTemplateSet.begin(); itr != m_aCTemplateSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1083,5 +1138,37 @@ void Acl::SetDepartment(const Department& _department)
 bool Acl::DepartmentHasBeenSet() const
 {
     return m_departmentHasBeenSet;
+}
+
+bool Acl::GetAllowAccessCredential() const
+{
+    return m_allowAccessCredential;
+}
+
+void Acl::SetAllowAccessCredential(const bool& _allowAccessCredential)
+{
+    m_allowAccessCredential = _allowAccessCredential;
+    m_allowAccessCredentialHasBeenSet = true;
+}
+
+bool Acl::AllowAccessCredentialHasBeenSet() const
+{
+    return m_allowAccessCredentialHasBeenSet;
+}
+
+vector<ACTemplate> Acl::GetACTemplateSet() const
+{
+    return m_aCTemplateSet;
+}
+
+void Acl::SetACTemplateSet(const vector<ACTemplate>& _aCTemplateSet)
+{
+    m_aCTemplateSet = _aCTemplateSet;
+    m_aCTemplateSetHasBeenSet = true;
+}
+
+bool Acl::ACTemplateSetHasBeenSet() const
+{
+    return m_aCTemplateSetHasBeenSet;
 }
 

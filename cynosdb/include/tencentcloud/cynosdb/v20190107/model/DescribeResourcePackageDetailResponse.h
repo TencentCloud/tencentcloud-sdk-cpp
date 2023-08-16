@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总使用明细数
-                     * @return Total 总使用明细数
+                     * 获取资源包抵扣总数
+                     * @return Total 资源包抵扣总数
                      * 
                      */
                     int64_t GetTotal() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总使用明细数
+                     * 资源包抵扣总数
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

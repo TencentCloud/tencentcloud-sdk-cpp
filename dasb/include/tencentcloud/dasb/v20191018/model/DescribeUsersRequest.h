@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dasb/v20191018/model/Filter.h>
 
 
 namespace TencentCloud
@@ -256,6 +257,31 @@ namespace TencentCloud
                      */
                     bool DepartmentIdHasBeenSet() const;
 
+                    /**
+                     * 获取参数过滤数组
+
+                     * @return Filters 参数过滤数组
+
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置参数过滤数组
+
+                     * @param _filters 参数过滤数组
+
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +344,13 @@ namespace TencentCloud
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
+
+                    /**
+                     * 参数过滤数组
+
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

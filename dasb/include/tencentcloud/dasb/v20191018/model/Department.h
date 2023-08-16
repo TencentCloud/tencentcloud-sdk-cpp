@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dasb/v20191018/model/DepartmentManagerUser.h>
 
 
 namespace TencentCloud
@@ -113,6 +114,31 @@ namespace TencentCloud
                      */
                     bool ManagersHasBeenSet() const;
 
+                    /**
+                     * 获取管理员用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ManagerUsers 管理员用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DepartmentManagerUser> GetManagerUsers() const;
+
+                    /**
+                     * 设置管理员用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _managerUsers 管理员用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetManagerUsers(const std::vector<DepartmentManagerUser>& _managerUsers);
+
+                    /**
+                     * 判断参数 ManagerUsers 是否已赋值
+                     * @return ManagerUsers 是否已赋值
+                     * 
+                     */
+                    bool ManagerUsersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,6 +159,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_managers;
                     bool m_managersHasBeenSet;
+
+                    /**
+                     * 管理员用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DepartmentManagerUser> m_managerUsers;
+                    bool m_managerUsersHasBeenSet;
 
                 };
             }

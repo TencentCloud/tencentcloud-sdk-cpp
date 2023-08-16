@@ -310,6 +310,31 @@ namespace TencentCloud
                      */
                     bool MaintainWeekDaysHasBeenSet() const;
 
+                    /**
+                     * 获取serverless实例子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServerlessStatus serverless实例子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetServerlessStatus() const;
+
+                    /**
+                     * 设置serverless实例子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serverlessStatus serverless实例子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServerlessStatus(const std::string& _serverlessStatus);
+
+                    /**
+                     * 判断参数 ServerlessStatus 是否已赋值
+                     * @return ServerlessStatus 是否已赋值
+                     * 
+                     */
+                    bool ServerlessStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -386,6 +411,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_maintainWeekDays;
                     bool m_maintainWeekDaysHasBeenSet;
+
+                    /**
+                     * serverless实例子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serverlessStatus;
+                    bool m_serverlessStatusHasBeenSet;
 
                 };
             }

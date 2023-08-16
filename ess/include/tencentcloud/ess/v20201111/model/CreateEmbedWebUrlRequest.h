@@ -131,11 +131,11 @@ namespace TencentCloud
                     /**
                      * 获取WEB嵌入的业务资源ID
 <br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id
-<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模版id
+<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id
 <br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id
                      * @return BusinessId WEB嵌入的业务资源ID
 <br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id
-<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模版id
+<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id
 <br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id
                      * 
                      */
@@ -144,11 +144,11 @@ namespace TencentCloud
                     /**
                      * 设置WEB嵌入的业务资源ID
 <br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id
-<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模版id
+<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id
 <br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id
                      * @param _businessId WEB嵌入的业务资源ID
 <br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id
-<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模版id
+<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id
 <br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id
                      * 
                      */
@@ -251,7 +251,7 @@ namespace TencentCloud
                     /**
                      * WEB嵌入的业务资源ID
 <br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id
-<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模版id
+<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id
 <br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id
                      */
                     std::string m_businessId;

@@ -27,9 +27,11 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_flowNameHasBeenSet(false),
     m_approversHasBeenSet(false),
     m_fileIdsHasBeenSet(false),
+    m_flowDescriptionHasBeenSet(false),
     m_flowTypeHasBeenSet(false),
     m_componentsHasBeenSet(false),
     m_ccInfosHasBeenSet(false),
+    m_ccNotifyTypeHasBeenSet(false),
     m_needPreviewHasBeenSet(false),
     m_previewTypeHasBeenSet(false),
     m_deadlineHasBeenSet(false),
@@ -39,10 +41,8 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_needSignReviewHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_approverVerifyTypeHasBeenSet(false),
-    m_flowDescriptionHasBeenSet(false),
     m_signBeanTagHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_ccNotifyTypeHasBeenSet(false),
     m_autoSignSceneHasBeenSet(false)
 {
 }
@@ -99,6 +99,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         }
     }
 
+    if (m_flowDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowDescription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_flowTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -135,6 +143,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ccNotifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcNotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ccNotifyType, allocator);
     }
 
     if (m_needPreviewHasBeenSet)
@@ -209,14 +225,6 @@ string CreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_approverVerifyType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_flowDescriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowDescription";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_signBeanTagHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -232,14 +240,6 @@ string CreateFlowByFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_ccNotifyTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CcNotifyType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_ccNotifyType, allocator);
     }
 
     if (m_autoSignSceneHasBeenSet)
@@ -322,6 +322,22 @@ bool CreateFlowByFilesRequest::FileIdsHasBeenSet() const
     return m_fileIdsHasBeenSet;
 }
 
+string CreateFlowByFilesRequest::GetFlowDescription() const
+{
+    return m_flowDescription;
+}
+
+void CreateFlowByFilesRequest::SetFlowDescription(const string& _flowDescription)
+{
+    m_flowDescription = _flowDescription;
+    m_flowDescriptionHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::FlowDescriptionHasBeenSet() const
+{
+    return m_flowDescriptionHasBeenSet;
+}
+
 string CreateFlowByFilesRequest::GetFlowType() const
 {
     return m_flowType;
@@ -368,6 +384,22 @@ void CreateFlowByFilesRequest::SetCcInfos(const vector<CcInfo>& _ccInfos)
 bool CreateFlowByFilesRequest::CcInfosHasBeenSet() const
 {
     return m_ccInfosHasBeenSet;
+}
+
+int64_t CreateFlowByFilesRequest::GetCcNotifyType() const
+{
+    return m_ccNotifyType;
+}
+
+void CreateFlowByFilesRequest::SetCcNotifyType(const int64_t& _ccNotifyType)
+{
+    m_ccNotifyType = _ccNotifyType;
+    m_ccNotifyTypeHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::CcNotifyTypeHasBeenSet() const
+{
+    return m_ccNotifyTypeHasBeenSet;
 }
 
 bool CreateFlowByFilesRequest::GetNeedPreview() const
@@ -514,22 +546,6 @@ bool CreateFlowByFilesRequest::ApproverVerifyTypeHasBeenSet() const
     return m_approverVerifyTypeHasBeenSet;
 }
 
-string CreateFlowByFilesRequest::GetFlowDescription() const
-{
-    return m_flowDescription;
-}
-
-void CreateFlowByFilesRequest::SetFlowDescription(const string& _flowDescription)
-{
-    m_flowDescription = _flowDescription;
-    m_flowDescriptionHasBeenSet = true;
-}
-
-bool CreateFlowByFilesRequest::FlowDescriptionHasBeenSet() const
-{
-    return m_flowDescriptionHasBeenSet;
-}
-
 int64_t CreateFlowByFilesRequest::GetSignBeanTag() const
 {
     return m_signBeanTag;
@@ -560,22 +576,6 @@ void CreateFlowByFilesRequest::SetAgent(const Agent& _agent)
 bool CreateFlowByFilesRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
-}
-
-int64_t CreateFlowByFilesRequest::GetCcNotifyType() const
-{
-    return m_ccNotifyType;
-}
-
-void CreateFlowByFilesRequest::SetCcNotifyType(const int64_t& _ccNotifyType)
-{
-    m_ccNotifyType = _ccNotifyType;
-    m_ccNotifyTypeHasBeenSet = true;
-}
-
-bool CreateFlowByFilesRequest::CcNotifyTypeHasBeenSet() const
-{
-    return m_ccNotifyTypeHasBeenSet;
 }
 
 string CreateFlowByFilesRequest::GetAutoSignScene() const

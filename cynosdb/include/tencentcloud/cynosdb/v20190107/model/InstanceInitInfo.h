@@ -130,6 +130,90 @@ namespace TencentCloud
                      */
                     bool InstanceCountHasBeenSet() const;
 
+                    /**
+                     * 获取Serverless实例个数最小值，范围[1,15]
+                     * @return MinRoCount Serverless实例个数最小值，范围[1,15]
+                     * 
+                     */
+                    int64_t GetMinRoCount() const;
+
+                    /**
+                     * 设置Serverless实例个数最小值，范围[1,15]
+                     * @param _minRoCount Serverless实例个数最小值，范围[1,15]
+                     * 
+                     */
+                    void SetMinRoCount(const int64_t& _minRoCount);
+
+                    /**
+                     * 判断参数 MinRoCount 是否已赋值
+                     * @return MinRoCount 是否已赋值
+                     * 
+                     */
+                    bool MinRoCountHasBeenSet() const;
+
+                    /**
+                     * 获取Serverless实例个数最大值，范围[1,15]
+                     * @return MaxRoCount Serverless实例个数最大值，范围[1,15]
+                     * 
+                     */
+                    int64_t GetMaxRoCount() const;
+
+                    /**
+                     * 设置Serverless实例个数最大值，范围[1,15]
+                     * @param _maxRoCount Serverless实例个数最大值，范围[1,15]
+                     * 
+                     */
+                    void SetMaxRoCount(const int64_t& _maxRoCount);
+
+                    /**
+                     * 判断参数 MaxRoCount 是否已赋值
+                     * @return MaxRoCount 是否已赋值
+                     * 
+                     */
+                    bool MaxRoCountHasBeenSet() const;
+
+                    /**
+                     * 获取Serverless实例最小规格
+                     * @return MinRoCpu Serverless实例最小规格
+                     * 
+                     */
+                    double GetMinRoCpu() const;
+
+                    /**
+                     * 设置Serverless实例最小规格
+                     * @param _minRoCpu Serverless实例最小规格
+                     * 
+                     */
+                    void SetMinRoCpu(const double& _minRoCpu);
+
+                    /**
+                     * 判断参数 MinRoCpu 是否已赋值
+                     * @return MinRoCpu 是否已赋值
+                     * 
+                     */
+                    bool MinRoCpuHasBeenSet() const;
+
+                    /**
+                     * 获取Serverless实例最大规格
+                     * @return MaxRoCpu Serverless实例最大规格
+                     * 
+                     */
+                    double GetMaxRoCpu() const;
+
+                    /**
+                     * 设置Serverless实例最大规格
+                     * @param _maxRoCpu Serverless实例最大规格
+                     * 
+                     */
+                    void SetMaxRoCpu(const double& _maxRoCpu);
+
+                    /**
+                     * 判断参数 MaxRoCpu 是否已赋值
+                     * @return MaxRoCpu 是否已赋值
+                     * 
+                     */
+                    bool MaxRoCpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +239,30 @@ namespace TencentCloud
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
+
+                    /**
+                     * Serverless实例个数最小值，范围[1,15]
+                     */
+                    int64_t m_minRoCount;
+                    bool m_minRoCountHasBeenSet;
+
+                    /**
+                     * Serverless实例个数最大值，范围[1,15]
+                     */
+                    int64_t m_maxRoCount;
+                    bool m_maxRoCountHasBeenSet;
+
+                    /**
+                     * Serverless实例最小规格
+                     */
+                    double m_minRoCpu;
+                    bool m_minRoCpuHasBeenSet;
+
+                    /**
+                     * Serverless实例最大规格
+                     */
+                    double m_maxRoCpu;
+                    bool m_maxRoCpuHasBeenSet;
 
                 };
             }

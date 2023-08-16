@@ -36,7 +36,6 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/ResetUserResponse.h
   include/tencentcloud/dasb/v20191018/model/SessionCommand.h
   include/tencentcloud/dasb/v20191018/model/DeleteUserGroupMembersRequest.h
-  include/tencentcloud/dasb/v20191018/model/DeleteAclsResponse.h
   include/tencentcloud/dasb/v20191018/model/DeleteUserGroupsResponse.h
   include/tencentcloud/dasb/v20191018/model/ModifyDeviceRequest.h
   include/tencentcloud/dasb/v20191018/model/SearchFileRequest.h
@@ -80,6 +79,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/CreateCmdTemplateRequest.h
   include/tencentcloud/dasb/v20191018/model/AuditLogResult.h
   include/tencentcloud/dasb/v20191018/model/ResetDeviceAccountPrivateKeyRequest.h
+  include/tencentcloud/dasb/v20191018/model/DescribeDeviceGroupsRequest.h
   include/tencentcloud/dasb/v20191018/model/CreateAssetSyncJobResponse.h
   include/tencentcloud/dasb/v20191018/model/BindDeviceAccountPrivateKeyRequest.h
   include/tencentcloud/dasb/v20191018/model/CreateAssetSyncJobRequest.h
@@ -117,7 +117,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/DescribeDeviceAccountsRequest.h
   include/tencentcloud/dasb/v20191018/model/DescribeDasbImageIdsResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeCmdTemplatesRequest.h
-  include/tencentcloud/dasb/v20191018/model/LoginEvent.h
+  include/tencentcloud/dasb/v20191018/model/DeleteAclsResponse.h
   include/tencentcloud/dasb/v20191018/model/CreateUserGroupResponse.h
   include/tencentcloud/dasb/v20191018/model/DeleteDevicesRequest.h
   include/tencentcloud/dasb/v20191018/model/DescribeDeviceAccountsResponse.h
@@ -131,12 +131,14 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/BindDeviceResourceRequest.h
   include/tencentcloud/dasb/v20191018/model/Acl.h
   include/tencentcloud/dasb/v20191018/model/DescribeDevicesRequest.h
-  include/tencentcloud/dasb/v20191018/model/DescribeDeviceGroupsRequest.h
+  include/tencentcloud/dasb/v20191018/model/DepartmentManagerUser.h
+  include/tencentcloud/dasb/v20191018/model/ACTemplate.h
   include/tencentcloud/dasb/v20191018/model/SearchSessionCommandRequest.h
   include/tencentcloud/dasb/v20191018/model/SearchFileBySidRequest.h
   include/tencentcloud/dasb/v20191018/model/DescribeOperationEventResponse.h
   include/tencentcloud/dasb/v20191018/model/ExternalDevice.h
   include/tencentcloud/dasb/v20191018/model/SearchFileResult.h
+  include/tencentcloud/dasb/v20191018/model/LoginEvent.h
   include/tencentcloud/dasb/v20191018/model/DescribeUserGroupsRequest.h
   include/tencentcloud/dasb/v20191018/model/DescribeDeviceGroupMembersRequest.h
   include/tencentcloud/dasb/v20191018/model/DescribeAclsRequest.h
@@ -164,7 +166,6 @@ set(dasb_src
   src/v20191018/model/ResetUserResponse.cpp
   src/v20191018/model/SessionCommand.cpp
   src/v20191018/model/DeleteUserGroupMembersRequest.cpp
-  src/v20191018/model/DeleteAclsResponse.cpp
   src/v20191018/model/DeleteUserGroupsResponse.cpp
   src/v20191018/model/ModifyDeviceRequest.cpp
   src/v20191018/model/SearchFileRequest.cpp
@@ -208,6 +209,7 @@ set(dasb_src
   src/v20191018/model/CreateCmdTemplateRequest.cpp
   src/v20191018/model/AuditLogResult.cpp
   src/v20191018/model/ResetDeviceAccountPrivateKeyRequest.cpp
+  src/v20191018/model/DescribeDeviceGroupsRequest.cpp
   src/v20191018/model/CreateAssetSyncJobResponse.cpp
   src/v20191018/model/BindDeviceAccountPrivateKeyRequest.cpp
   src/v20191018/model/CreateAssetSyncJobRequest.cpp
@@ -245,7 +247,7 @@ set(dasb_src
   src/v20191018/model/DescribeDeviceAccountsRequest.cpp
   src/v20191018/model/DescribeDasbImageIdsResponse.cpp
   src/v20191018/model/DescribeCmdTemplatesRequest.cpp
-  src/v20191018/model/LoginEvent.cpp
+  src/v20191018/model/DeleteAclsResponse.cpp
   src/v20191018/model/CreateUserGroupResponse.cpp
   src/v20191018/model/DeleteDevicesRequest.cpp
   src/v20191018/model/DescribeDeviceAccountsResponse.cpp
@@ -259,12 +261,14 @@ set(dasb_src
   src/v20191018/model/BindDeviceResourceRequest.cpp
   src/v20191018/model/Acl.cpp
   src/v20191018/model/DescribeDevicesRequest.cpp
-  src/v20191018/model/DescribeDeviceGroupsRequest.cpp
+  src/v20191018/model/DepartmentManagerUser.cpp
+  src/v20191018/model/ACTemplate.cpp
   src/v20191018/model/SearchSessionCommandRequest.cpp
   src/v20191018/model/SearchFileBySidRequest.cpp
   src/v20191018/model/DescribeOperationEventResponse.cpp
   src/v20191018/model/ExternalDevice.cpp
   src/v20191018/model/SearchFileResult.cpp
+  src/v20191018/model/LoginEvent.cpp
   src/v20191018/model/DescribeUserGroupsRequest.cpp
   src/v20191018/model/DescribeDeviceGroupMembersRequest.cpp
   src/v20191018/model/DescribeAclsRequest.cpp

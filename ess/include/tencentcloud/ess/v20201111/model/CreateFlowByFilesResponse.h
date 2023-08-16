@@ -44,12 +44,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署流程编号。
+                     * 获取合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
 
-注：如入参 是否需要预览 NeedPreview 设置为 true，不会正式发起合同，此处不会有值返回；如入参 是否需要预览 NeedPreview 设置为 false，此处会正常返回签署流程编号 FlowId。
-                     * @return FlowId 签署流程编号。
+注: 如果是预览模式(即NeedPreview设置为true)时, 此处不会有值返回。
+                     * @return FlowId 合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
 
-注：如入参 是否需要预览 NeedPreview 设置为 true，不会正式发起合同，此处不会有值返回；如入参 是否需要预览 NeedPreview 设置为 false，此处会正常返回签署流程编号 FlowId。
+注: 如果是预览模式(即NeedPreview设置为true)时, 此处不会有值返回。
                      * 
                      */
                     std::string GetFlowId() const;
@@ -62,13 +66,13 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取合同预览链接。
+                     * 获取合同预览链接URL。
 
-注：如入参 是否需要预览 NeedPreview 设置为 true，会开启“预览模式”，此处会返回预览链接；如入参 是否需要预览 NeedPreview 设置为 false，此处不会有值返回。
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PreviewUrl 合同预览链接。
+                     * @return PreviewUrl 合同预览链接URL。
 
-注：如入参 是否需要预览 NeedPreview 设置为 true，会开启“预览模式”，此处会返回预览链接；如入参 是否需要预览 NeedPreview 设置为 false，此处不会有值返回。
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -84,17 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署流程编号。
+                     * 合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
 
-注：如入参 是否需要预览 NeedPreview 设置为 true，不会正式发起合同，此处不会有值返回；如入参 是否需要预览 NeedPreview 设置为 false，此处会正常返回签署流程编号 FlowId。
+注: 如果是预览模式(即NeedPreview设置为true)时, 此处不会有值返回。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 合同预览链接。
+                     * 合同预览链接URL。
 
-注：如入参 是否需要预览 NeedPreview 设置为 true，会开启“预览模式”，此处会返回预览链接；如入参 是否需要预览 NeedPreview 设置为 false，此处不会有值返回。
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;

@@ -78,13 +78,15 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeHiveQueriesResponse.h
   include/tencentcloud/emr/v20190103/model/PodNewParameter.h
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h
-  include/tencentcloud/emr/v20190103/model/MultiZoneSetting.h
+  include/tencentcloud/emr/v20190103/model/ModifyResourcesTagsResponse.h
+  include/tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnApplicationsRequest.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/NewResourceSpec.h
   include/tencentcloud/emr/v20190103/model/DiskGroup.h
   include/tencentcloud/emr/v20190103/model/ScaleOutNodeConfig.h
-  include/tencentcloud/emr/v20190103/model/DeleteUserManagerUserListRequest.h
+  include/tencentcloud/emr/v20190103/model/ModifyResourceTags.h
+  include/tencentcloud/emr/v20190103/model/PriceDetail.h
   include/tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h
   include/tencentcloud/emr/v20190103/model/MultiDisk.h
   include/tencentcloud/emr/v20190103/model/TerminateClusterNodesResponse.h
@@ -123,7 +125,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerResponse.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/CdbInfo.h
-  include/tencentcloud/emr/v20190103/model/PriceDetail.h
+  include/tencentcloud/emr/v20190103/model/ModifyResourcesTagsRequest.h
   include/tencentcloud/emr/v20190103/model/InquirePriceRenewEmrResponse.h
   include/tencentcloud/emr/v20190103/model/MultiDiskMC.h
   include/tencentcloud/emr/v20190103/model/AddUsersForUserManagerRequest.h
@@ -132,7 +134,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/CustomMetaInfo.h
   include/tencentcloud/emr/v20190103/model/ApplicationStatics.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h
-  include/tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h
+  include/tencentcloud/emr/v20190103/model/MultiZoneSetting.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h
   include/tencentcloud/emr/v20190103/model/UserInfoForUserManager.h
   include/tencentcloud/emr/v20190103/model/DynamicPodSpec.h
@@ -146,6 +148,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/Filters.h
   include/tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h
   include/tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h
+  include/tencentcloud/emr/v20190103/model/DeleteUserManagerUserListRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeImpalaQueriesResponse.h
   include/tencentcloud/emr/v20190103/model/CustomMetaDBInfo.h
   include/tencentcloud/emr/v20190103/model/UserManagerUserBriefInfo.h
@@ -227,13 +230,15 @@ set(emr_src
   src/v20190103/model/DescribeHiveQueriesResponse.cpp
   src/v20190103/model/PodNewParameter.cpp
   src/v20190103/model/DescribeInstanceRenewNodesResponse.cpp
-  src/v20190103/model/MultiZoneSetting.cpp
+  src/v20190103/model/ModifyResourcesTagsResponse.cpp
+  src/v20190103/model/DescribeClusterNodesResponse.cpp
   src/v20190103/model/DescribeYarnApplicationsRequest.cpp
   src/v20190103/model/InquiryPriceUpdateInstanceResponse.cpp
   src/v20190103/model/NewResourceSpec.cpp
   src/v20190103/model/DiskGroup.cpp
   src/v20190103/model/ScaleOutNodeConfig.cpp
-  src/v20190103/model/DeleteUserManagerUserListRequest.cpp
+  src/v20190103/model/ModifyResourceTags.cpp
+  src/v20190103/model/PriceDetail.cpp
   src/v20190103/model/DescribeResourceScheduleResponse.cpp
   src/v20190103/model/MultiDisk.cpp
   src/v20190103/model/TerminateClusterNodesResponse.cpp
@@ -272,7 +277,7 @@ set(emr_src
   src/v20190103/model/DescribeUsersForUserManagerResponse.cpp
   src/v20190103/model/InquiryPriceRenewInstanceRequest.cpp
   src/v20190103/model/CdbInfo.cpp
-  src/v20190103/model/PriceDetail.cpp
+  src/v20190103/model/ModifyResourcesTagsRequest.cpp
   src/v20190103/model/InquirePriceRenewEmrResponse.cpp
   src/v20190103/model/MultiDiskMC.cpp
   src/v20190103/model/AddUsersForUserManagerRequest.cpp
@@ -281,7 +286,7 @@ set(emr_src
   src/v20190103/model/CustomMetaInfo.cpp
   src/v20190103/model/ApplicationStatics.cpp
   src/v20190103/model/InquiryPriceCreateInstanceRequest.cpp
-  src/v20190103/model/DescribeClusterNodesResponse.cpp
+  src/v20190103/model/MultiZoneSetting.cpp
   src/v20190103/model/ModifyResourceScheduleConfigRequest.cpp
   src/v20190103/model/UserInfoForUserManager.cpp
   src/v20190103/model/DynamicPodSpec.cpp
@@ -295,6 +300,7 @@ set(emr_src
   src/v20190103/model/Filters.cpp
   src/v20190103/model/DescribeEmrApplicationStaticsResponse.cpp
   src/v20190103/model/InquirePriceRenewEmrRequest.cpp
+  src/v20190103/model/DeleteUserManagerUserListRequest.cpp
   src/v20190103/model/DescribeImpalaQueriesResponse.cpp
   src/v20190103/model/CustomMetaDBInfo.cpp
   src/v20190103/model/UserManagerUserBriefInfo.cpp

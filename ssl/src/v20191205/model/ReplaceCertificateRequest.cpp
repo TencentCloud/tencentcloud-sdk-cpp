@@ -28,7 +28,9 @@ ReplaceCertificateRequest::ReplaceCertificateRequest() :
     m_csrTypeHasBeenSet(false),
     m_csrContentHasBeenSet(false),
     m_csrkeyPasswordHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_certCSREncryptAlgoHasBeenSet(false),
+    m_certCSRKeyParameterHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,22 @@ string ReplaceCertificateRequest::ToJsonString() const
         string key = "Reason";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certCSREncryptAlgoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertCSREncryptAlgo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certCSREncryptAlgo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certCSRKeyParameterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertCSRKeyParameter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certCSRKeyParameter.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +207,38 @@ void ReplaceCertificateRequest::SetReason(const string& _reason)
 bool ReplaceCertificateRequest::ReasonHasBeenSet() const
 {
     return m_reasonHasBeenSet;
+}
+
+string ReplaceCertificateRequest::GetCertCSREncryptAlgo() const
+{
+    return m_certCSREncryptAlgo;
+}
+
+void ReplaceCertificateRequest::SetCertCSREncryptAlgo(const string& _certCSREncryptAlgo)
+{
+    m_certCSREncryptAlgo = _certCSREncryptAlgo;
+    m_certCSREncryptAlgoHasBeenSet = true;
+}
+
+bool ReplaceCertificateRequest::CertCSREncryptAlgoHasBeenSet() const
+{
+    return m_certCSREncryptAlgoHasBeenSet;
+}
+
+string ReplaceCertificateRequest::GetCertCSRKeyParameter() const
+{
+    return m_certCSRKeyParameter;
+}
+
+void ReplaceCertificateRequest::SetCertCSRKeyParameter(const string& _certCSRKeyParameter)
+{
+    m_certCSRKeyParameter = _certCSRKeyParameter;
+    m_certCSRKeyParameterHasBeenSet = true;
+}
+
+bool ReplaceCertificateRequest::CertCSRKeyParameterHasBeenSet() const
+{
+    return m_certCSRKeyParameterHasBeenSet;
 }
 
 

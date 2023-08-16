@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取绑定的实例ID
+                     * 获取绑定的集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 绑定的实例ID
+                     * @return InstanceId 绑定的集群ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置绑定的实例ID
+                     * 设置绑定的集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId 绑定的实例ID
+                     * @param _instanceId 绑定的集群ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -121,10 +121,35 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取绑定集群下的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtendIds 绑定集群下的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetExtendIds() const;
+
+                    /**
+                     * 设置绑定集群下的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extendIds 绑定集群下的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtendIds(const std::vector<std::string>& _extendIds);
+
+                    /**
+                     * 判断参数 ExtendIds 是否已赋值
+                     * @return ExtendIds 是否已赋值
+                     * 
+                     */
+                    bool ExtendIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 绑定的实例ID
+                     * 绑定的集群ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 绑定集群下的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_extendIds;
+                    bool m_extendIdsHasBeenSet;
 
                 };
             }

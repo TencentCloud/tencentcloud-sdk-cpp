@@ -29,6 +29,7 @@
 #include <tencentcloud/dasb/v20191018/model/Device.h>
 #include <tencentcloud/dasb/v20191018/model/CmdTemplate.h>
 #include <tencentcloud/dasb/v20191018/model/Department.h>
+#include <tencentcloud/dasb/v20191018/model/ACTemplate.h>
 
 
 namespace TencentCloud
@@ -630,6 +631,56 @@ namespace TencentCloud
                      */
                     bool DepartmentHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许使用访问串，默认允许
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllowAccessCredential 是否允许使用访问串，默认允许
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAllowAccessCredential() const;
+
+                    /**
+                     * 设置是否允许使用访问串，默认允许
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _allowAccessCredential 是否允许使用访问串，默认允许
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAllowAccessCredential(const bool& _allowAccessCredential);
+
+                    /**
+                     * 判断参数 AllowAccessCredential 是否已赋值
+                     * @return AllowAccessCredential 是否已赋值
+                     * 
+                     */
+                    bool AllowAccessCredentialHasBeenSet() const;
+
+                    /**
+                     * 获取关联的数据库高危命令列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ACTemplateSet 关联的数据库高危命令列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ACTemplate> GetACTemplateSet() const;
+
+                    /**
+                     * 设置关联的数据库高危命令列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aCTemplateSet 关联的数据库高危命令列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetACTemplateSet(const std::vector<ACTemplate>& _aCTemplateSet);
+
+                    /**
+                     * 判断参数 ACTemplateSet 是否已赋值
+                     * @return ACTemplateSet 是否已赋值
+                     * 
+                     */
+                    bool ACTemplateSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -796,6 +847,20 @@ namespace TencentCloud
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
+
+                    /**
+                     * 是否允许使用访问串，默认允许
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_allowAccessCredential;
+                    bool m_allowAccessCredentialHasBeenSet;
+
+                    /**
+                     * 关联的数据库高危命令列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ACTemplate> m_aCTemplateSet;
+                    bool m_aCTemplateSetHasBeenSet;
 
                 };
             }

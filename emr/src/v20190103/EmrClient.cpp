@@ -1072,6 +1072,49 @@ EmrClient::ModifyResourceSchedulerOutcomeCallable EmrClient::ModifyResourceSched
     return task->get_future();
 }
 
+EmrClient::ModifyResourcesTagsOutcome EmrClient::ModifyResourcesTags(const ModifyResourcesTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourcesTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourcesTagsResponse rsp = ModifyResourcesTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourcesTagsOutcome(rsp);
+        else
+            return ModifyResourcesTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourcesTagsOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyResourcesTagsAsync(const ModifyResourcesTagsRequest& request, const ModifyResourcesTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyResourcesTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyResourcesTagsOutcomeCallable EmrClient::ModifyResourcesTagsCallable(const ModifyResourcesTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyResourcesTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyResourcesTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::RunJobFlowOutcome EmrClient::RunJobFlow(const RunJobFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "RunJobFlow");
