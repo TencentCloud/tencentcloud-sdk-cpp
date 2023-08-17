@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ESS_V20201111_MODEL_CREATESCHEMEURLRESPONSE_H_
-#define TENCENTCLOUD_ESS_V20201111_MODEL_CREATESCHEMEURLRESPONSE_H_
+#ifndef TENCENTCLOUD_MS_V20180408_MODEL_REQUESTLOCALTASKREQUEST_H_
+#define TENCENTCLOUD_MS_V20180408_MODEL_REQUESTLOCALTASKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Ess
+    namespace Ms
     {
-        namespace V20201111
+        namespace V20180408
         {
             namespace Model
             {
                 /**
-                * CreateSchemeUrl返回参数结构体
+                * RequestLocalTask请求参数结构体
                 */
-                class CreateSchemeUrlResponse : public AbstractModel
+                class RequestLocalTaskRequest : public AbstractModel
                 {
                 public:
-                    CreateSchemeUrlResponse();
-                    ~CreateSchemeUrlResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    RequestLocalTaskRequest();
+                    ~RequestLocalTaskRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取小程序链接地址，有效期30天
-                     * @return SchemeUrl 小程序链接地址，有效期30天
+                     * 获取Client Id
+                     * @return ClientId Client Id
                      * 
                      */
-                    std::string GetSchemeUrl() const;
+                    std::string GetClientId() const;
 
                     /**
-                     * 判断参数 SchemeUrl 是否已赋值
-                     * @return SchemeUrl 是否已赋值
+                     * 设置Client Id
+                     * @param _clientId Client Id
                      * 
                      */
-                    bool SchemeUrlHasBeenSet() const;
+                    void SetClientId(const std::string& _clientId);
+
+                    /**
+                     * 判断参数 ClientId 是否已赋值
+                     * @return ClientId 是否已赋值
+                     * 
+                     */
+                    bool ClientIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 小程序链接地址，有效期30天
+                     * Client Id
                      */
-                    std::string m_schemeUrl;
-                    bool m_schemeUrlHasBeenSet;
+                    std::string m_clientId;
+                    bool m_clientIdHasBeenSet;
 
                 };
             }
@@ -71,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ESS_V20201111_MODEL_CREATESCHEMEURLRESPONSE_H_
+#endif // !TENCENTCLOUD_MS_V20180408_MODEL_REQUESTLOCALTASKREQUEST_H_

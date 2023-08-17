@@ -27,6 +27,7 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/CreateResourceInstancesRequest.h
   include/tencentcloud/ms/v20180408/model/DescribeShieldInstancesResponse.h
   include/tencentcloud/ms/v20180408/model/ShieldInfo.h
+  include/tencentcloud/ms/v20180408/model/UpdateClientStateRequest.h
   include/tencentcloud/ms/v20180408/model/SDKPlan.h
   include/tencentcloud/ms/v20180408/model/DescribeShieldResultRequest.h
   include/tencentcloud/ms/v20180408/model/CancelEncryptTaskResponse.h
@@ -34,10 +35,14 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/CreateCosSecKeyInstanceRequest.h
   include/tencentcloud/ms/v20180408/model/IOSPlan.h
   include/tencentcloud/ms/v20180408/model/DescribeUserBaseInfoInstanceResponse.h
+  include/tencentcloud/ms/v20180408/model/UpdateLocalTaskResultResponse.h
   include/tencentcloud/ms/v20180408/model/Filter.h
   include/tencentcloud/ms/v20180408/model/CreateShieldPlanInstanceRequest.h
   include/tencentcloud/ms/v20180408/model/CreateEncryptInstanceResponse.h
   include/tencentcloud/ms/v20180408/model/SDKResult.h
+  include/tencentcloud/ms/v20180408/model/RequestLocalTaskResponse.h
+  include/tencentcloud/ms/v20180408/model/UpdateLocalTaskResultRequest.h
+  include/tencentcloud/ms/v20180408/model/ShieldPlanInfo.h
   include/tencentcloud/ms/v20180408/model/CreateBindInstanceRequest.h
   include/tencentcloud/ms/v20180408/model/CreateShieldInstanceResponse.h
   include/tencentcloud/ms/v20180408/model/AppletPlan.h
@@ -66,7 +71,7 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/DescribeEncryptPlanResponse.h
   include/tencentcloud/ms/v20180408/model/CreateResourceInstancesResponse.h
   include/tencentcloud/ms/v20180408/model/AppDetailInfo.h
-  include/tencentcloud/ms/v20180408/model/ShieldPlanInfo.h
+  include/tencentcloud/ms/v20180408/model/RequestLocalTaskRequest.h
   include/tencentcloud/ms/v20180408/model/DescribeOrderInstancesRequest.h
   include/tencentcloud/ms/v20180408/model/DescribeResourceInstancesRequest.h
   include/tencentcloud/ms/v20180408/model/CreateOrderInstanceRequest.h
@@ -83,6 +88,7 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/DescribeShieldResultResponse.h
   include/tencentcloud/ms/v20180408/model/CreateBindInstanceResponse.h
   include/tencentcloud/ms/v20180408/model/BindInfo.h
+  include/tencentcloud/ms/v20180408/model/UpdateClientStateResponse.h
   include/tencentcloud/ms/v20180408/model/OptPluginListItem.h
   include/tencentcloud/ms/v20180408/model/EncryptResults.h
   )
@@ -97,6 +103,7 @@ set(ms_src
   src/v20180408/model/CreateResourceInstancesRequest.cpp
   src/v20180408/model/DescribeShieldInstancesResponse.cpp
   src/v20180408/model/ShieldInfo.cpp
+  src/v20180408/model/UpdateClientStateRequest.cpp
   src/v20180408/model/SDKPlan.cpp
   src/v20180408/model/DescribeShieldResultRequest.cpp
   src/v20180408/model/CancelEncryptTaskResponse.cpp
@@ -104,10 +111,14 @@ set(ms_src
   src/v20180408/model/CreateCosSecKeyInstanceRequest.cpp
   src/v20180408/model/IOSPlan.cpp
   src/v20180408/model/DescribeUserBaseInfoInstanceResponse.cpp
+  src/v20180408/model/UpdateLocalTaskResultResponse.cpp
   src/v20180408/model/Filter.cpp
   src/v20180408/model/CreateShieldPlanInstanceRequest.cpp
   src/v20180408/model/CreateEncryptInstanceResponse.cpp
   src/v20180408/model/SDKResult.cpp
+  src/v20180408/model/RequestLocalTaskResponse.cpp
+  src/v20180408/model/UpdateLocalTaskResultRequest.cpp
+  src/v20180408/model/ShieldPlanInfo.cpp
   src/v20180408/model/CreateBindInstanceRequest.cpp
   src/v20180408/model/CreateShieldInstanceResponse.cpp
   src/v20180408/model/AppletPlan.cpp
@@ -136,7 +147,7 @@ set(ms_src
   src/v20180408/model/DescribeEncryptPlanResponse.cpp
   src/v20180408/model/CreateResourceInstancesResponse.cpp
   src/v20180408/model/AppDetailInfo.cpp
-  src/v20180408/model/ShieldPlanInfo.cpp
+  src/v20180408/model/RequestLocalTaskRequest.cpp
   src/v20180408/model/DescribeOrderInstancesRequest.cpp
   src/v20180408/model/DescribeResourceInstancesRequest.cpp
   src/v20180408/model/CreateOrderInstanceRequest.cpp
@@ -153,6 +164,7 @@ set(ms_src
   src/v20180408/model/DescribeShieldResultResponse.cpp
   src/v20180408/model/CreateBindInstanceResponse.cpp
   src/v20180408/model/BindInfo.cpp
+  src/v20180408/model/UpdateClientStateResponse.cpp
   src/v20180408/model/OptPluginListItem.cpp
   src/v20180408/model/EncryptResults.cpp
   )

@@ -115,15 +115,35 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例列表排序依据，枚举值如下所示：<ul><li>projectId：依据项目ID排序。</li><li>createtime：依据实例创建时间排序。</li><li>instancename：依据实例名称排序。</li><li>type：依据实例类型排序。</li><li>curDeadline：依据实例到期时间排序。</li></ul>
-                     * @return OrderBy 实例列表排序依据，枚举值如下所示：<ul><li>projectId：依据项目ID排序。</li><li>createtime：依据实例创建时间排序。</li><li>instancename：依据实例名称排序。</li><li>type：依据实例类型排序。</li><li>curDeadline：依据实例到期时间排序。</li></ul>
+                     * 获取实例列表排序依据，枚举值如下所示：
+- projectId：依据项目ID排序。
+- createtime：依据实例创建时间排序。
+- instancename：依据实例名称排序。
+- type：依据实例类型排序。
+- curDeadline：依据实例到期时间排序。
+                     * @return OrderBy 实例列表排序依据，枚举值如下所示：
+- projectId：依据项目ID排序。
+- createtime：依据实例创建时间排序。
+- instancename：依据实例名称排序。
+- type：依据实例类型排序。
+- curDeadline：依据实例到期时间排序。
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置实例列表排序依据，枚举值如下所示：<ul><li>projectId：依据项目ID排序。</li><li>createtime：依据实例创建时间排序。</li><li>instancename：依据实例名称排序。</li><li>type：依据实例类型排序。</li><li>curDeadline：依据实例到期时间排序。</li></ul>
-                     * @param _orderBy 实例列表排序依据，枚举值如下所示：<ul><li>projectId：依据项目ID排序。</li><li>createtime：依据实例创建时间排序。</li><li>instancename：依据实例名称排序。</li><li>type：依据实例类型排序。</li><li>curDeadline：依据实例到期时间排序。</li></ul>
+                     * 设置实例列表排序依据，枚举值如下所示：
+- projectId：依据项目ID排序。
+- createtime：依据实例创建时间排序。
+- instancename：依据实例名称排序。
+- type：依据实例类型排序。
+- curDeadline：依据实例到期时间排序。
+                     * @param _orderBy 实例列表排序依据，枚举值如下所示：
+- projectId：依据项目ID排序。
+- createtime：依据实例创建时间排序。
+- instancename：依据实例名称排序。
+- type：依据实例类型排序。
+- curDeadline：依据实例到期时间排序。
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -136,15 +156,23 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取实例排序方式，默认为倒序排序。<ul><li>1：倒序。</li><li>0：顺序。</li></ul>
-                     * @return OrderType 实例排序方式，默认为倒序排序。<ul><li>1：倒序。</li><li>0：顺序。</li></ul>
+                     * 获取实例排序方式，默认为倒序排序。
+- 1：倒序。
+- 0：顺序。
+                     * @return OrderType 实例排序方式，默认为倒序排序。
+- 1：倒序。
+- 0：顺序。
                      * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
-                     * 设置实例排序方式，默认为倒序排序。<ul><li>1：倒序。</li><li>0：顺序。</li></ul>
-                     * @param _orderType 实例排序方式，默认为倒序排序。<ul><li>1：倒序。</li><li>0：顺序。</li></ul>
+                     * 设置实例排序方式，默认为倒序排序。
+- 1：倒序。
+- 0：顺序。
+                     * @param _orderType 实例排序方式，默认为倒序排序。
+- 1：倒序。
+- 0：顺序。
                      * 
                      */
                     void SetOrderType(const int64_t& _orderType);
@@ -199,15 +227,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取设置模糊查询关键字，支持根据实例名称或实例ID模糊查询实例。
-                     * @return SearchKey 设置模糊查询关键字，支持根据实例名称或实例ID模糊查询实例。
+                     * 获取设置模糊查询关键字段，仅实例名称支持模糊查询。
+                     * @return SearchKey 设置模糊查询关键字段，仅实例名称支持模糊查询。
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置设置模糊查询关键字，支持根据实例名称或实例ID模糊查询实例。
-                     * @param _searchKey 设置模糊查询关键字，支持根据实例名称或实例ID模糊查询实例。
+                     * 设置设置模糊查询关键字段，仅实例名称支持模糊查询。
+                     * @param _searchKey 设置模糊查询关键字段，仅实例名称支持模糊查询。
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -325,15 +353,35 @@ namespace TencentCloud
                     bool RegionIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
-                     * @return Status 实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
+                     * 获取实例状态。
+- 0：待初始化。
+- 1：流程中。
+- 2：运行中。
+- -2：已隔离。
+- -3：待删除。
+                     * @return Status 实例状态。
+- 0：待初始化。
+- 1：流程中。
+- 2：运行中。
+- -2：已隔离。
+- -3：待删除。
                      * 
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
-                     * 设置实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
-                     * @param _status 实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
+                     * 设置实例状态。
+- 0：待初始化。
+- 1：流程中。
+- 2：运行中。
+- -2：已隔离。
+- -3：待删除。
+                     * @param _status 实例状态。
+- 0：待初始化。
+- 1：流程中。
+- 2：运行中。
+- -2：已隔离。
+- -3：待删除。
                      * 
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
@@ -346,15 +394,27 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例架构版本。<ul><li>1：单机版。</li><li>2：主从版。</li><li>3：集群版。</li></ul>
-                     * @return TypeVersion 实例架构版本。<ul><li>1：单机版。</li><li>2：主从版。</li><li>3：集群版。</li></ul>
+                     * 获取实例架构版本。
+- 1：单机版。
+- 2：主从版。
+- 3：集群版。
+                     * @return TypeVersion 实例架构版本。
+- 1：单机版。
+- 2：主从版。
+- 3：集群版。
                      * 
                      */
                     int64_t GetTypeVersion() const;
 
                     /**
-                     * 设置实例架构版本。<ul><li>1：单机版。</li><li>2：主从版。</li><li>3：集群版。</li></ul>
-                     * @param _typeVersion 实例架构版本。<ul><li>1：单机版。</li><li>2：主从版。</li><li>3：集群版。</li></ul>
+                     * 设置实例架构版本。
+- 1：单机版。
+- 2：主从版。
+- 3：集群版。
+                     * @param _typeVersion 实例架构版本。
+- 1：单机版。
+- 2：主从版。
+- 3：集群版。
                      * 
                      */
                     void SetTypeVersion(const int64_t& _typeVersion);
@@ -388,15 +448,27 @@ namespace TencentCloud
                     bool EngineNameHasBeenSet() const;
 
                     /**
-                     * 获取续费模式。<ul><li>0：手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
-                     * @return AutoRenew 续费模式。<ul><li>0：手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
+                     * 获取续费模式。
+- 0：手动续费。
+- 1：自动续费。
+- 2：到期不再续费。
+                     * @return AutoRenew 续费模式。
+- 0：手动续费。
+- 1：自动续费。
+- 2：到期不再续费。
                      * 
                      */
                     std::vector<int64_t> GetAutoRenew() const;
 
                     /**
-                     * 设置续费模式。<ul><li>0：手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
-                     * @param _autoRenew 续费模式。<ul><li>0：手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
+                     * 设置续费模式。
+- 0：手动续费。
+- 1：自动续费。
+- 2：到期不再续费。
+                     * @param _autoRenew 续费模式。
+- 0：手动续费。
+- 1：自动续费。
+- 2：到期不再续费。
                      * 
                      */
                     void SetAutoRenew(const std::vector<int64_t>& _autoRenew);
@@ -409,15 +481,23 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>
-                     * @return BillingMode 计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>
+                     * 获取计费模式。
+- postpaid：按量计费。
+- prepaid：包年包月。
+                     * @return BillingMode 计费模式。
+- postpaid：按量计费。
+- prepaid：包年包月。
                      * 
                      */
                     std::string GetBillingMode() const;
 
                     /**
-                     * 设置计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>
-                     * @param _billingMode 计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>
+                     * 设置计费模式。
+- postpaid：按量计费。
+- prepaid：包年包月。
+                     * @param _billingMode 计费模式。
+- postpaid：按量计费。
+- prepaid：包年包月。
                      * 
                      */
                     void SetBillingMode(const std::string& _billingMode);
@@ -491,15 +571,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址查询实例。
-                     * @return SearchKeys 设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址查询实例。
+                     * 获取设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址搜索实例。
+                     * @return SearchKeys 设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址搜索实例。
                      * 
                      */
                     std::vector<std::string> GetSearchKeys() const;
 
                     /**
-                     * 设置设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址查询实例。
-                     * @param _searchKeys 设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址查询实例。
+                     * 设置设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址搜索实例。
+                     * @param _searchKeys 设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址搜索实例。
                      * 
                      */
                     void SetSearchKeys(const std::vector<std::string>& _searchKeys);
@@ -596,15 +676,23 @@ namespace TencentCloud
                     bool TagKeysHasBeenSet() const;
 
                     /**
-                     * 获取实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。<ul><li>local：本地盘版。</li><li>cdc：独享集群版。</li></ul>
-                     * @return ProductVersions 实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。<ul><li>local：本地盘版。</li><li>cdc：独享集群版。</li></ul>
+                     * 获取实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。
+- local：本地盘版。
+- cdc：独享集群版。
+                     * @return ProductVersions 实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。
+- local：本地盘版。
+- cdc：独享集群版。
                      * 
                      */
                     std::vector<std::string> GetProductVersions() const;
 
                     /**
-                     * 设置实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。<ul><li>local：本地盘版。</li><li>cdc：独享集群版。</li></ul>
-                     * @param _productVersions 实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。<ul><li>local：本地盘版。</li><li>cdc：独享集群版。</li></ul>
+                     * 设置实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。
+- local：本地盘版。
+- cdc：独享集群版。
+                     * @param _productVersions 实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。
+- local：本地盘版。
+- cdc：独享集群版。
                      * 
                      */
                     void SetProductVersions(const std::vector<std::string>& _productVersions);
@@ -638,15 +726,23 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取可用区模式。<ul><li>singleaz：单可用区。</li><li>multiaz：多可用区。</li></ul>
-                     * @return AzMode 可用区模式。<ul><li>singleaz：单可用区。</li><li>multiaz：多可用区。</li></ul>
+                     * 获取可用区模式。
+- singleaz：单可用区。
+- multiaz：多可用区。
+                     * @return AzMode 可用区模式。
+- singleaz：单可用区。
+- multiaz：多可用区。
                      * 
                      */
                     std::string GetAzMode() const;
 
                     /**
-                     * 设置可用区模式。<ul><li>singleaz：单可用区。</li><li>multiaz：多可用区。</li></ul>
-                     * @param _azMode 可用区模式。<ul><li>singleaz：单可用区。</li><li>multiaz：多可用区。</li></ul>
+                     * 设置可用区模式。
+- singleaz：单可用区。
+- multiaz：多可用区。
+                     * @param _azMode 可用区模式。
+- singleaz：单可用区。
+- multiaz：多可用区。
                      * 
                      */
                     void SetAzMode(const std::string& _azMode);
@@ -681,13 +777,20 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例列表排序依据，枚举值如下所示：<ul><li>projectId：依据项目ID排序。</li><li>createtime：依据实例创建时间排序。</li><li>instancename：依据实例名称排序。</li><li>type：依据实例类型排序。</li><li>curDeadline：依据实例到期时间排序。</li></ul>
+                     * 实例列表排序依据，枚举值如下所示：
+- projectId：依据项目ID排序。
+- createtime：依据实例创建时间排序。
+- instancename：依据实例名称排序。
+- type：依据实例类型排序。
+- curDeadline：依据实例到期时间排序。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 实例排序方式，默认为倒序排序。<ul><li>1：倒序。</li><li>0：顺序。</li></ul>
+                     * 实例排序方式，默认为倒序排序。
+- 1：倒序。
+- 0：顺序。
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
@@ -705,7 +808,7 @@ namespace TencentCloud
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 设置模糊查询关键字，支持根据实例名称或实例ID模糊查询实例。
+                     * 设置模糊查询关键字段，仅实例名称支持模糊查询。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
@@ -741,13 +844,21 @@ namespace TencentCloud
                     bool m_regionIdsHasBeenSet;
 
                     /**
-                     * 实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
+                     * 实例状态。
+- 0：待初始化。
+- 1：流程中。
+- 2：运行中。
+- -2：已隔离。
+- -3：待删除。
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例架构版本。<ul><li>1：单机版。</li><li>2：主从版。</li><li>3：集群版。</li></ul>
+                     * 实例架构版本。
+- 1：单机版。
+- 2：主从版。
+- 3：集群版。
                      */
                     int64_t m_typeVersion;
                     bool m_typeVersionHasBeenSet;
@@ -759,13 +870,18 @@ namespace TencentCloud
                     bool m_engineNameHasBeenSet;
 
                     /**
-                     * 续费模式。<ul><li>0：手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
+                     * 续费模式。
+- 0：手动续费。
+- 1：自动续费。
+- 2：到期不再续费。
                      */
                     std::vector<int64_t> m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>
+                     * 计费模式。
+- postpaid：按量计费。
+- prepaid：包年包月。
                      */
                     std::string m_billingMode;
                     bool m_billingModeHasBeenSet;
@@ -787,7 +903,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址查询实例。
+                     * 设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址搜索实例。
                      */
                     std::vector<std::string> m_searchKeys;
                     bool m_searchKeysHasBeenSet;
@@ -817,7 +933,9 @@ namespace TencentCloud
                     bool m_tagKeysHasBeenSet;
 
                     /**
-                     * 实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。<ul><li>local：本地盘版。</li><li>cdc：独享集群版。</li></ul>
+                     * 实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。
+- local：本地盘版。
+- cdc：独享集群版。
                      */
                     std::vector<std::string> m_productVersions;
                     bool m_productVersionsHasBeenSet;
@@ -829,7 +947,9 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 可用区模式。<ul><li>singleaz：单可用区。</li><li>multiaz：多可用区。</li></ul>
+                     * 可用区模式。
+- singleaz：单可用区。
+- multiaz：多可用区。
                      */
                     std::string m_azMode;
                     bool m_azModeHasBeenSet;

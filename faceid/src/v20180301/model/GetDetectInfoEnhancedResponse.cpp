@@ -30,7 +30,8 @@ GetDetectInfoEnhancedResponse::GetDetectInfoEnhancedResponse() :
     m_videoDataHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_intentionVerifyDataHasBeenSet(false),
-    m_intentionQuestionResultHasBeenSet(false)
+    m_intentionQuestionResultHasBeenSet(false),
+    m_intentionActionResultHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,23 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
         m_intentionQuestionResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IntentionActionResult") && !rsp["IntentionActionResult"].IsNull())
+    {
+        if (!rsp["IntentionActionResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntentionActionResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_intentionActionResult.Deserialize(rsp["IntentionActionResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_intentionActionResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,6 +276,15 @@ string GetDetectInfoEnhancedResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intentionQuestionResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_intentionActionResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionActionResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intentionActionResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -340,6 +367,16 @@ IntentionQuestionResult GetDetectInfoEnhancedResponse::GetIntentionQuestionResul
 bool GetDetectInfoEnhancedResponse::IntentionQuestionResultHasBeenSet() const
 {
     return m_intentionQuestionResultHasBeenSet;
+}
+
+IntentionActionResult GetDetectInfoEnhancedResponse::GetIntentionActionResult() const
+{
+    return m_intentionActionResult;
+}
+
+bool GetDetectInfoEnhancedResponse::IntentionActionResultHasBeenSet() const
+{
+    return m_intentionActionResultHasBeenSet;
 }
 
 

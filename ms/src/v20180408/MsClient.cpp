@@ -857,3 +857,132 @@ MsClient::DescribeUserBaseInfoInstanceOutcomeCallable MsClient::DescribeUserBase
     return task->get_future();
 }
 
+MsClient::RequestLocalTaskOutcome MsClient::RequestLocalTask(const RequestLocalTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RequestLocalTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RequestLocalTaskResponse rsp = RequestLocalTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RequestLocalTaskOutcome(rsp);
+        else
+            return RequestLocalTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RequestLocalTaskOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::RequestLocalTaskAsync(const RequestLocalTaskRequest& request, const RequestLocalTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RequestLocalTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::RequestLocalTaskOutcomeCallable MsClient::RequestLocalTaskCallable(const RequestLocalTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RequestLocalTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->RequestLocalTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MsClient::UpdateClientStateOutcome MsClient::UpdateClientState(const UpdateClientStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateClientState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateClientStateResponse rsp = UpdateClientStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateClientStateOutcome(rsp);
+        else
+            return UpdateClientStateOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateClientStateOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::UpdateClientStateAsync(const UpdateClientStateRequest& request, const UpdateClientStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateClientState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::UpdateClientStateOutcomeCallable MsClient::UpdateClientStateCallable(const UpdateClientStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateClientStateOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateClientState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MsClient::UpdateLocalTaskResultOutcome MsClient::UpdateLocalTaskResult(const UpdateLocalTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateLocalTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateLocalTaskResultResponse rsp = UpdateLocalTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateLocalTaskResultOutcome(rsp);
+        else
+            return UpdateLocalTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateLocalTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::UpdateLocalTaskResultAsync(const UpdateLocalTaskResultRequest& request, const UpdateLocalTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateLocalTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::UpdateLocalTaskResultOutcomeCallable MsClient::UpdateLocalTaskResultCallable(const UpdateLocalTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateLocalTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateLocalTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

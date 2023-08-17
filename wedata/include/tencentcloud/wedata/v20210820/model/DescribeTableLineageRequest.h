@@ -170,6 +170,27 @@ namespace TencentCloud
                      */
                     bool IgnoreTempHasBeenSet() const;
 
+                    /**
+                     * 获取是否递归查询二级节点数目，默认为true
+                     * @return RecursiveSecond 是否递归查询二级节点数目，默认为true
+                     * 
+                     */
+                    bool GetRecursiveSecond() const;
+
+                    /**
+                     * 设置是否递归查询二级节点数目，默认为true
+                     * @param _recursiveSecond 是否递归查询二级节点数目，默认为true
+                     * 
+                     */
+                    void SetRecursiveSecond(const bool& _recursiveSecond);
+
+                    /**
+                     * 判断参数 RecursiveSecond 是否已赋值
+                     * @return RecursiveSecond 是否已赋值
+                     * 
+                     */
+                    bool RecursiveSecondHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +228,12 @@ namespace TencentCloud
                      */
                     bool m_ignoreTemp;
                     bool m_ignoreTempHasBeenSet;
+
+                    /**
+                     * 是否递归查询二级节点数目，默认为true
+                     */
+                    bool m_recursiveSecond;
+                    bool m_recursiveSecondHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/faceid/v20180301/model/Encryption.h>
 #include <tencentcloud/faceid/v20180301/model/IntentionQuestion.h>
 #include <tencentcloud/faceid/v20180301/model/RuleIdConfig.h>
+#include <tencentcloud/faceid/v20180301/model/IntentionActionConfig.h>
 
 
 namespace TencentCloud
@@ -243,15 +244,15 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                     bool IntentionVerifyTextHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。
-                     * @return IntentionQuestions 意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。
+                     * 获取意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
+                     * @return IntentionQuestions 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
                      * 
                      */
                     std::vector<IntentionQuestion> GetIntentionQuestions() const;
 
                     /**
-                     * 设置意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。
-                     * @param _intentionQuestions 意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。
+                     * 设置意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
+                     * @param _intentionQuestions 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
                      * 
                      */
                     void SetIntentionQuestions(const std::vector<IntentionQuestion>& _intentionQuestions);
@@ -283,6 +284,27 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                      * 
                      */
                     bool ConfigHasBeenSet() const;
+
+                    /**
+                     * 获取意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * @return IntentionActions 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * 
+                     */
+                    std::vector<IntentionActionConfig> GetIntentionActions() const;
+
+                    /**
+                     * 设置意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * @param _intentionActions 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * 
+                     */
+                    void SetIntentionActions(const std::vector<IntentionActionConfig>& _intentionActions);
+
+                    /**
+                     * 判断参数 IntentionActions 是否已赋值
+                     * @return IntentionActions 是否已赋值
+                     * 
+                     */
+                    bool IntentionActionsHasBeenSet() const;
 
                 private:
 
@@ -343,7 +365,7 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                     bool m_intentionVerifyTextHasBeenSet;
 
                     /**
-                     * 意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。
+                     * 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
                      */
                     std::vector<IntentionQuestion> m_intentionQuestions;
                     bool m_intentionQuestionsHasBeenSet;
@@ -353,6 +375,12 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                      */
                     RuleIdConfig m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     */
+                    std::vector<IntentionActionConfig> m_intentionActions;
+                    bool m_intentionActionsHasBeenSet;
 
                 };
             }

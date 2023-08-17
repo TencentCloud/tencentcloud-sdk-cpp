@@ -61,6 +61,12 @@
 #include <tencentcloud/ms/v20180408/model/DescribeUrlDetectionResultResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeUserBaseInfoInstanceRequest.h>
 #include <tencentcloud/ms/v20180408/model/DescribeUserBaseInfoInstanceResponse.h>
+#include <tencentcloud/ms/v20180408/model/RequestLocalTaskRequest.h>
+#include <tencentcloud/ms/v20180408/model/RequestLocalTaskResponse.h>
+#include <tencentcloud/ms/v20180408/model/UpdateClientStateRequest.h>
+#include <tencentcloud/ms/v20180408/model/UpdateClientStateResponse.h>
+#include <tencentcloud/ms/v20180408/model/UpdateLocalTaskResultRequest.h>
+#include <tencentcloud/ms/v20180408/model/UpdateLocalTaskResultResponse.h>
 
 
 namespace TencentCloud
@@ -132,6 +138,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserBaseInfoInstanceResponse> DescribeUserBaseInfoInstanceOutcome;
                 typedef std::future<DescribeUserBaseInfoInstanceOutcome> DescribeUserBaseInfoInstanceOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DescribeUserBaseInfoInstanceRequest&, DescribeUserBaseInfoInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserBaseInfoInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RequestLocalTaskResponse> RequestLocalTaskOutcome;
+                typedef std::future<RequestLocalTaskOutcome> RequestLocalTaskOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::RequestLocalTaskRequest&, RequestLocalTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RequestLocalTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateClientStateResponse> UpdateClientStateOutcome;
+                typedef std::future<UpdateClientStateOutcome> UpdateClientStateOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::UpdateClientStateRequest&, UpdateClientStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClientStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateLocalTaskResultResponse> UpdateLocalTaskResultOutcome;
+                typedef std::future<UpdateLocalTaskResultOutcome> UpdateLocalTaskResultOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::UpdateLocalTaskResultRequest&, UpdateLocalTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLocalTaskResultAsyncHandler;
 
 
 
@@ -313,6 +328,33 @@ namespace TencentCloud
                 DescribeUserBaseInfoInstanceOutcome DescribeUserBaseInfoInstance(const Model::DescribeUserBaseInfoInstanceRequest &request);
                 void DescribeUserBaseInfoInstanceAsync(const Model::DescribeUserBaseInfoInstanceRequest& request, const DescribeUserBaseInfoInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserBaseInfoInstanceOutcomeCallable DescribeUserBaseInfoInstanceCallable(const Model::DescribeUserBaseInfoInstanceRequest& request);
+
+                /**
+                 *client任务请求地址
+                 * @param req RequestLocalTaskRequest
+                 * @return RequestLocalTaskOutcome
+                 */
+                RequestLocalTaskOutcome RequestLocalTask(const Model::RequestLocalTaskRequest &request);
+                void RequestLocalTaskAsync(const Model::RequestLocalTaskRequest& request, const RequestLocalTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RequestLocalTaskOutcomeCallable RequestLocalTaskCallable(const Model::RequestLocalTaskRequest& request);
+
+                /**
+                 *更新client状态
+                 * @param req UpdateClientStateRequest
+                 * @return UpdateClientStateOutcome
+                 */
+                UpdateClientStateOutcome UpdateClientState(const Model::UpdateClientStateRequest &request);
+                void UpdateClientStateAsync(const Model::UpdateClientStateRequest& request, const UpdateClientStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateClientStateOutcomeCallable UpdateClientStateCallable(const Model::UpdateClientStateRequest& request);
+
+                /**
+                 *更新本地任务结果
+                 * @param req UpdateLocalTaskResultRequest
+                 * @return UpdateLocalTaskResultOutcome
+                 */
+                UpdateLocalTaskResultOutcome UpdateLocalTaskResult(const Model::UpdateLocalTaskResultRequest &request);
+                void UpdateLocalTaskResultAsync(const Model::UpdateLocalTaskResultRequest& request, const UpdateLocalTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateLocalTaskResultOutcomeCallable UpdateLocalTaskResultCallable(const Model::UpdateLocalTaskResultRequest& request);
 
             };
         }

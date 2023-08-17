@@ -28,7 +28,8 @@ DescribeTableLineageRequest::DescribeTableLineageRequest() :
     m_inputDepthHasBeenSet(false),
     m_outputDepthHasBeenSet(false),
     m_extParamsHasBeenSet(false),
-    m_ignoreTempHasBeenSet(false)
+    m_ignoreTempHasBeenSet(false),
+    m_recursiveSecondHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,14 @@ string DescribeTableLineageRequest::ToJsonString() const
         string key = "IgnoreTemp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ignoreTemp, allocator);
+    }
+
+    if (m_recursiveSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecursiveSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_recursiveSecond, allocator);
     }
 
 
@@ -197,6 +206,22 @@ void DescribeTableLineageRequest::SetIgnoreTemp(const bool& _ignoreTemp)
 bool DescribeTableLineageRequest::IgnoreTempHasBeenSet() const
 {
     return m_ignoreTempHasBeenSet;
+}
+
+bool DescribeTableLineageRequest::GetRecursiveSecond() const
+{
+    return m_recursiveSecond;
+}
+
+void DescribeTableLineageRequest::SetRecursiveSecond(const bool& _recursiveSecond)
+{
+    m_recursiveSecond = _recursiveSecond;
+    m_recursiveSecondHasBeenSet = true;
+}
+
+bool DescribeTableLineageRequest::RecursiveSecondHasBeenSet() const
+{
+    return m_recursiveSecondHasBeenSet;
 }
 
 

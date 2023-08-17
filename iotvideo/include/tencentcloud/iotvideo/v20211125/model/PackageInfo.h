@@ -184,6 +184,56 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
+                    /**
+                     * 获取套餐id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PackageId 套餐id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPackageId() const;
+
+                    /**
+                     * 设置套餐id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _packageId 套餐id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPackageId(const std::string& _packageId);
+
+                    /**
+                     * 判断参数 PackageId 是否已赋值
+                     * @return PackageId 是否已赋值
+                     * 
+                     */
+                    bool PackageIdHasBeenSet() const;
+
+                    /**
+                     * 获取订单id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrderId 订单id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOrderId() const;
+
+                    /**
+                     * 设置订单id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _orderId 订单id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOrderId(const std::string& _orderId);
+
+                    /**
+                     * 判断参数 OrderId 是否已赋值
+                     * @return OrderId 是否已赋值
+                     * 
+                     */
+                    bool OrderIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +274,20 @@ namespace TencentCloud
                      */
                     int64_t m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * 套餐id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_packageId;
+                    bool m_packageIdHasBeenSet;
+
+                    /**
+                     * 订单id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_orderId;
+                    bool m_orderIdHasBeenSet;
 
                 };
             }

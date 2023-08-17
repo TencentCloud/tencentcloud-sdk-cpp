@@ -26,7 +26,9 @@ PackageInfo::PackageInfo() :
     m_cSShiftDurationHasBeenSet(false),
     m_cSExpiredTimeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_packageIdHasBeenSet(false),
+    m_orderIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome PackageInfo::Deserialize(const rapidjson::Value &value)
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("PackageId") && !value["PackageId"].IsNull())
+    {
+        if (!value["PackageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PackageInfo.PackageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageId = string(value["PackageId"].GetString());
+        m_packageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrderId") && !value["OrderId"].IsNull())
+    {
+        if (!value["OrderId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PackageInfo.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orderId = string(value["OrderId"].GetString());
+        m_orderIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void PackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updatedAt, allocator);
+    }
+
+    if (m_packageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_packageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void PackageInfo::SetUpdatedAt(const int64_t& _updatedAt)
 bool PackageInfo::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+string PackageInfo::GetPackageId() const
+{
+    return m_packageId;
+}
+
+void PackageInfo::SetPackageId(const string& _packageId)
+{
+    m_packageId = _packageId;
+    m_packageIdHasBeenSet = true;
+}
+
+bool PackageInfo::PackageIdHasBeenSet() const
+{
+    return m_packageIdHasBeenSet;
+}
+
+string PackageInfo::GetOrderId() const
+{
+    return m_orderId;
+}
+
+void PackageInfo::SetOrderId(const string& _orderId)
+{
+    m_orderId = _orderId;
+    m_orderIdHasBeenSet = true;
+}
+
+bool PackageInfo::OrderIdHasBeenSet() const
+{
+    return m_orderIdHasBeenSet;
 }
 

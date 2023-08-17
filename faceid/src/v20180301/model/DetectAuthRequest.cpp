@@ -33,7 +33,8 @@ DetectAuthRequest::DetectAuthRequest() :
     m_encryptionHasBeenSet(false),
     m_intentionVerifyTextHasBeenSet(false),
     m_intentionQuestionsHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_intentionActionsHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,21 @@ string DetectAuthRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_config.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_intentionActionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionActions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_intentionActions.begin(); itr != m_intentionActions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -323,6 +339,22 @@ void DetectAuthRequest::SetConfig(const RuleIdConfig& _config)
 bool DetectAuthRequest::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+vector<IntentionActionConfig> DetectAuthRequest::GetIntentionActions() const
+{
+    return m_intentionActions;
+}
+
+void DetectAuthRequest::SetIntentionActions(const vector<IntentionActionConfig>& _intentionActions)
+{
+    m_intentionActions = _intentionActions;
+    m_intentionActionsHasBeenSet = true;
+}
+
+bool DetectAuthRequest::IntentionActionsHasBeenSet() const
+{
+    return m_intentionActionsHasBeenSet;
 }
 
 

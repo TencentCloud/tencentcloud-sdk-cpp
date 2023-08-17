@@ -21,7 +21,8 @@ using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace std;
 
 RuleIdConfig::RuleIdConfig() :
-    m_intentionRecognitionHasBeenSet(false)
+    m_intentionRecognitionHasBeenSet(false),
+    m_intentionTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome RuleIdConfig::Deserialize(const rapidjson::Value &value)
         m_intentionRecognitionHasBeenSet = true;
     }
 
+    if (value.HasMember("IntentionType") && !value["IntentionType"].IsNull())
+    {
+        if (!value["IntentionType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleIdConfig.IntentionType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_intentionType = value["IntentionType"].GetInt64();
+        m_intentionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void RuleIdConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IntentionRecognition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_intentionRecognition, allocator);
+    }
+
+    if (m_intentionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_intentionType, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void RuleIdConfig::SetIntentionRecognition(const bool& _intentionRecognition)
 bool RuleIdConfig::IntentionRecognitionHasBeenSet() const
 {
     return m_intentionRecognitionHasBeenSet;
+}
+
+int64_t RuleIdConfig::GetIntentionType() const
+{
+    return m_intentionType;
+}
+
+void RuleIdConfig::SetIntentionType(const int64_t& _intentionType)
+{
+    m_intentionType = _intentionType;
+    m_intentionTypeHasBeenSet = true;
+}
+
+bool RuleIdConfig::IntentionTypeHasBeenSet() const
+{
+    return m_intentionTypeHasBeenSet;
 }
 

@@ -227,6 +227,27 @@ lye1y30d：低功耗事件30天年套餐。
                      */
                     bool PackageQueueHasBeenSet() const;
 
+                    /**
+                     * 获取订单id
+                     * @return OrderId 订单id
+                     * 
+                     */
+                    std::string GetOrderId() const;
+
+                    /**
+                     * 设置订单id
+                     * @param _orderId 订单id
+                     * 
+                     */
+                    void SetOrderId(const std::string& _orderId);
+
+                    /**
+                     * 判断参数 OrderId 是否已赋值
+                     * @return OrderId 是否已赋值
+                     * 
+                     */
+                    bool OrderIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -278,6 +299,12 @@ lye1y30d：低功耗事件30天年套餐。
                      */
                     std::string m_packageQueue;
                     bool m_packageQueueHasBeenSet;
+
+                    /**
+                     * 订单id
+                     */
+                    std::string m_orderId;
+                    bool m_orderIdHasBeenSet;
 
                 };
             }

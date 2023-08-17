@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取多个合同（签署流程）信息，最多支持20个
-                     * @return FlowInfos 多个合同（签署流程）信息，最多支持20个
+                     * 获取要创建的合同信息列表，最多支持一次创建20个合同
+                     * @return FlowInfos 要创建的合同信息列表，最多支持一次创建20个合同
                      * 
                      */
                     std::vector<FlowInfo> GetFlowInfos() const;
 
                     /**
-                     * 设置多个合同（签署流程）信息，最多支持20个
-                     * @param _flowInfos 多个合同（签署流程）信息，最多支持20个
+                     * 设置要创建的合同信息列表，最多支持一次创建20个合同
+                     * @param _flowInfos 要创建的合同信息列表，最多支持一次创建20个合同
                      * 
                      */
                     void SetFlowInfos(const std::vector<FlowInfo>& _flowInfos);
@@ -167,7 +167,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 多个合同（签署流程）信息，最多支持20个
+                     * 要创建的合同信息列表，最多支持一次创建20个合同
                      */
                     std::vector<FlowInfo> m_flowInfos;
                     bool m_flowInfosHasBeenSet;

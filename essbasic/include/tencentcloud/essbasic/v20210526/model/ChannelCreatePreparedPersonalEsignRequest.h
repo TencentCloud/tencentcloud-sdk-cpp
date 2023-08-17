@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取个人用户名称
-                     * @return UserName 个人用户名称
+                     * 获取个人用户姓名
+                     * @return UserName 个人用户姓名
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置个人用户名称
-                     * @param _userName 个人用户名称
+                     * 设置个人用户姓名
+                     * @param _userName 个人用户姓名
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -108,27 +108,6 @@ namespace TencentCloud
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取印章图片的base64
-                     * @return SealImage 印章图片的base64
-                     * 
-                     */
-                    std::string GetSealImage() const;
-
-                    /**
-                     * 设置印章图片的base64
-                     * @param _sealImage 印章图片的base64
-                     * 
-                     */
-                    void SetSealImage(const std::string& _sealImage);
-
-                    /**
-                     * 判断参数 SealImage 是否已赋值
-                     * @return SealImage 是否已赋值
-                     * 
-                     */
-                    bool SealImageHasBeenSet() const;
-
-                    /**
                      * 获取印章名称
                      * @return SealName 印章名称
                      * 
@@ -148,6 +127,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SealNameHasBeenSet() const;
+
+                    /**
+                     * 获取印章图片的base64，最大不超过 8M
+                     * @return SealImage 印章图片的base64，最大不超过 8M
+                     * 
+                     */
+                    std::string GetSealImage() const;
+
+                    /**
+                     * 设置印章图片的base64，最大不超过 8M
+                     * @param _sealImage 印章图片的base64，最大不超过 8M
+                     * 
+                     */
+                    void SetSealImage(const std::string& _sealImage);
+
+                    /**
+                     * 判断参数 SealImage 是否已赋值
+                     * @return SealImage 是否已赋值
+                     * 
+                     */
+                    bool SealImageHasBeenSet() const;
 
                     /**
                      * 获取操作者信息
@@ -190,6 +190,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IdCardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
+                     * @return SealImageCompress 是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
+                     * 
+                     */
+                    bool GetSealImageCompress() const;
+
+                    /**
+                     * 设置是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
+                     * @param _sealImageCompress 是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
+                     * 
+                     */
+                    void SetSealImageCompress(const bool& _sealImageCompress);
+
+                    /**
+                     * 判断参数 SealImageCompress 是否已赋值
+                     * @return SealImageCompress 是否已赋值
+                     * 
+                     */
+                    bool SealImageCompressHasBeenSet() const;
 
                     /**
                      * 获取手机号码；当需要开通自动签时，该参数必传
@@ -242,7 +263,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 个人用户名称
+                     * 个人用户姓名
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
@@ -254,16 +275,16 @@ namespace TencentCloud
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 印章图片的base64
-                     */
-                    std::string m_sealImage;
-                    bool m_sealImageHasBeenSet;
-
-                    /**
                      * 印章名称
                      */
                     std::string m_sealName;
                     bool m_sealNameHasBeenSet;
+
+                    /**
+                     * 印章图片的base64，最大不超过 8M
+                     */
+                    std::string m_sealImage;
+                    bool m_sealImageHasBeenSet;
 
                     /**
                      * 操作者信息
@@ -276,6 +297,12 @@ namespace TencentCloud
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
+
+                    /**
+                     * 是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
+                     */
+                    bool m_sealImageCompress;
+                    bool m_sealImageCompressHasBeenSet;
 
                     /**
                      * 手机号码；当需要开通自动签时，该参数必传

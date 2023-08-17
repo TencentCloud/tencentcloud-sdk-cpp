@@ -67,6 +67,35 @@ namespace TencentCloud
                      */
                     bool IntentionRecognitionHasBeenSet() const;
 
+                    /**
+                     * 获取意愿核身类型，默认为0：
+0：问答模式，DetectAuth接口需要传入IntentionQuestions字段；
+1：点头模式，DetectAuth接口需要传入IntentionActions字段；
+                     * @return IntentionType 意愿核身类型，默认为0：
+0：问答模式，DetectAuth接口需要传入IntentionQuestions字段；
+1：点头模式，DetectAuth接口需要传入IntentionActions字段；
+                     * 
+                     */
+                    int64_t GetIntentionType() const;
+
+                    /**
+                     * 设置意愿核身类型，默认为0：
+0：问答模式，DetectAuth接口需要传入IntentionQuestions字段；
+1：点头模式，DetectAuth接口需要传入IntentionActions字段；
+                     * @param _intentionType 意愿核身类型，默认为0：
+0：问答模式，DetectAuth接口需要传入IntentionQuestions字段；
+1：点头模式，DetectAuth接口需要传入IntentionActions字段；
+                     * 
+                     */
+                    void SetIntentionType(const int64_t& _intentionType);
+
+                    /**
+                     * 判断参数 IntentionType 是否已赋值
+                     * @return IntentionType 是否已赋值
+                     * 
+                     */
+                    bool IntentionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +103,14 @@ namespace TencentCloud
                      */
                     bool m_intentionRecognition;
                     bool m_intentionRecognitionHasBeenSet;
+
+                    /**
+                     * 意愿核身类型，默认为0：
+0：问答模式，DetectAuth接口需要传入IntentionQuestions字段；
+1：点头模式，DetectAuth接口需要传入IntentionActions字段；
+                     */
+                    int64_t m_intentionType;
+                    bool m_intentionTypeHasBeenSet;
 
                 };
             }

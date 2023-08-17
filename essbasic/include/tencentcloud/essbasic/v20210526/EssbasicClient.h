@@ -500,7 +500,7 @@ namespace TencentCloud
                 ChannelCreatePrepareFlowOutcomeCallable ChannelCreatePrepareFlowCallable(const Model::ChannelCreatePrepareFlowRequest& request);
 
                 /**
-                 *本接口（ChannelCreatePreparedPersonalEsign）用于创建导入个人印章
+                 *本接口（ChannelCreatePreparedPersonalEsign）用于创建导入个人印章（处方单场景专用，使用此接口请与客户经理确认）。
                  * @param req ChannelCreatePreparedPersonalEsignRequest
                  * @return ChannelCreatePreparedPersonalEsignOutcome
                  */

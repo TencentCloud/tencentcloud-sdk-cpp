@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ESS_V20201111_MODEL_CREATESCHEMEURLRESPONSE_H_
-#define TENCENTCLOUD_ESS_V20201111_MODEL_CREATESCHEMEURLRESPONSE_H_
+#ifndef TENCENTCLOUD_MS_V20180408_MODEL_UPDATECLIENTSTATERESPONSE_H_
+#define TENCENTCLOUD_MS_V20180408_MODEL_UPDATECLIENTSTATERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Ess
+    namespace Ms
     {
-        namespace V20201111
+        namespace V20180408
         {
             namespace Model
             {
                 /**
-                * CreateSchemeUrl返回参数结构体
+                * UpdateClientState返回参数结构体
                 */
-                class CreateSchemeUrlResponse : public AbstractModel
+                class UpdateClientStateResponse : public AbstractModel
                 {
                 public:
-                    CreateSchemeUrlResponse();
-                    ~CreateSchemeUrlResponse() = default;
+                    UpdateClientStateResponse();
+                    ~UpdateClientStateResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取小程序链接地址，有效期30天
-                     * @return SchemeUrl 小程序链接地址，有效期30天
+                     * 获取返回值
+                     * @return ResultCode 返回值
                      * 
                      */
-                    std::string GetSchemeUrl() const;
+                    std::string GetResultCode() const;
 
                     /**
-                     * 判断参数 SchemeUrl 是否已赋值
-                     * @return SchemeUrl 是否已赋值
+                     * 判断参数 ResultCode 是否已赋值
+                     * @return ResultCode 是否已赋值
                      * 
                      */
-                    bool SchemeUrlHasBeenSet() const;
+                    bool ResultCodeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 小程序链接地址，有效期30天
+                     * 返回值
                      */
-                    std::string m_schemeUrl;
-                    bool m_schemeUrlHasBeenSet;
+                    std::string m_resultCode;
+                    bool m_resultCodeHasBeenSet;
 
                 };
             }
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ESS_V20201111_MODEL_CREATESCHEMEURLRESPONSE_H_
+#endif // !TENCENTCLOUD_MS_V20180408_MODEL_UPDATECLIENTSTATERESPONSE_H_

@@ -26,10 +26,11 @@ ChannelCreatePreparedPersonalEsignRequest::ChannelCreatePreparedPersonalEsignReq
     m_agentHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
-    m_sealImageHasBeenSet(false),
     m_sealNameHasBeenSet(false),
+    m_sealImageHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_idCardTypeHasBeenSet(false),
+    m_sealImageCompressHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_enableAutoSignHasBeenSet(false)
 {
@@ -67,20 +68,20 @@ string ChannelCreatePreparedPersonalEsignRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_idCardNumber.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sealImageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SealImage";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_sealImage.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_sealNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SealName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sealName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealImage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -98,6 +99,14 @@ string ChannelCreatePreparedPersonalEsignRequest::ToJsonString() const
         string key = "IdCardType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_idCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealImageCompressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealImageCompress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sealImageCompress, allocator);
     }
 
     if (m_mobileHasBeenSet)
@@ -172,22 +181,6 @@ bool ChannelCreatePreparedPersonalEsignRequest::IdCardNumberHasBeenSet() const
     return m_idCardNumberHasBeenSet;
 }
 
-string ChannelCreatePreparedPersonalEsignRequest::GetSealImage() const
-{
-    return m_sealImage;
-}
-
-void ChannelCreatePreparedPersonalEsignRequest::SetSealImage(const string& _sealImage)
-{
-    m_sealImage = _sealImage;
-    m_sealImageHasBeenSet = true;
-}
-
-bool ChannelCreatePreparedPersonalEsignRequest::SealImageHasBeenSet() const
-{
-    return m_sealImageHasBeenSet;
-}
-
 string ChannelCreatePreparedPersonalEsignRequest::GetSealName() const
 {
     return m_sealName;
@@ -202,6 +195,22 @@ void ChannelCreatePreparedPersonalEsignRequest::SetSealName(const string& _sealN
 bool ChannelCreatePreparedPersonalEsignRequest::SealNameHasBeenSet() const
 {
     return m_sealNameHasBeenSet;
+}
+
+string ChannelCreatePreparedPersonalEsignRequest::GetSealImage() const
+{
+    return m_sealImage;
+}
+
+void ChannelCreatePreparedPersonalEsignRequest::SetSealImage(const string& _sealImage)
+{
+    m_sealImage = _sealImage;
+    m_sealImageHasBeenSet = true;
+}
+
+bool ChannelCreatePreparedPersonalEsignRequest::SealImageHasBeenSet() const
+{
+    return m_sealImageHasBeenSet;
 }
 
 UserInfo ChannelCreatePreparedPersonalEsignRequest::GetOperator() const
@@ -234,6 +243,22 @@ void ChannelCreatePreparedPersonalEsignRequest::SetIdCardType(const string& _idC
 bool ChannelCreatePreparedPersonalEsignRequest::IdCardTypeHasBeenSet() const
 {
     return m_idCardTypeHasBeenSet;
+}
+
+bool ChannelCreatePreparedPersonalEsignRequest::GetSealImageCompress() const
+{
+    return m_sealImageCompress;
+}
+
+void ChannelCreatePreparedPersonalEsignRequest::SetSealImageCompress(const bool& _sealImageCompress)
+{
+    m_sealImageCompress = _sealImageCompress;
+    m_sealImageCompressHasBeenSet = true;
+}
+
+bool ChannelCreatePreparedPersonalEsignRequest::SealImageCompressHasBeenSet() const
+{
+    return m_sealImageCompressHasBeenSet;
 }
 
 string ChannelCreatePreparedPersonalEsignRequest::GetMobile() const

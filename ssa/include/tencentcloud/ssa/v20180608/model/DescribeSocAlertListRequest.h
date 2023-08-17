@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool SorterHasBeenSet() const;
 
                     /**
-                     * 获取是否导出
-                     * @return ExportFlag 是否导出
+                     * 获取是否导出；默认为否，如量级超过1000，则使用单独的导出接口
+                     * @return ExportFlag 是否导出；默认为否，如量级超过1000，则使用单独的导出接口
                      * 
                      */
                     bool GetExportFlag() const;
 
                     /**
-                     * 设置是否导出
-                     * @param _exportFlag 是否导出
+                     * 设置是否导出；默认为否，如量级超过1000，则使用单独的导出接口
+                     * @param _exportFlag 是否导出；默认为否，如量级超过1000，则使用单独的导出接口
                      * 
                      */
                     void SetExportFlag(const bool& _exportFlag);
@@ -203,7 +203,7 @@ namespace TencentCloud
                     bool m_sorterHasBeenSet;
 
                     /**
-                     * 是否导出
+                     * 是否导出；默认为否，如量级超过1000，则使用单独的导出接口
                      */
                     bool m_exportFlag;
                     bool m_exportFlagHasBeenSet;
