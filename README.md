@@ -41,7 +41,7 @@ https://vcpkg.io/en/getting-started.html
 
 ## 依赖库
 
-- [libcurl](https://curl.haxx.se/libcurl/)
+- [libcurl](https://curl.se/libcurl/)
 
 安装示例如下:
 
