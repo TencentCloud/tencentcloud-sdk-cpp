@@ -105,8 +105,6 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditRulesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupConfigRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupConfigResponse.h>
-#include <tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesRequest.h>
-#include <tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupDecryptionKeyRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupDecryptionKeyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupDownloadRestrictionRequest.h>
@@ -456,9 +454,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupConfigResponse> DescribeBackupConfigOutcome;
                 typedef std::future<DescribeBackupConfigOutcome> DescribeBackupConfigOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupConfigRequest&, DescribeBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupConfigAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeBackupDatabasesResponse> DescribeBackupDatabasesOutcome;
-                typedef std::future<DescribeBackupDatabasesOutcome> DescribeBackupDatabasesOutcomeCallable;
-                typedef std::function<void(const CdbClient*, const Model::DescribeBackupDatabasesRequest&, DescribeBackupDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDatabasesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupDecryptionKeyResponse> DescribeBackupDecryptionKeyOutcome;
                 typedef std::future<DescribeBackupDecryptionKeyOutcome> DescribeBackupDecryptionKeyOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupDecryptionKeyRequest&, DescribeBackupDecryptionKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDecryptionKeyAsyncHandler;
@@ -1167,19 +1162,6 @@ namespace TencentCloud
                 DescribeBackupConfigOutcome DescribeBackupConfig(const Model::DescribeBackupConfigRequest &request);
                 void DescribeBackupConfigAsync(const Model::DescribeBackupConfigRequest& request, const DescribeBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupConfigOutcomeCallable DescribeBackupConfigCallable(const Model::DescribeBackupConfigRequest& request);
-
-                /**
-                 *接口已废弃，需要下线
-
-本接口(DescribeBackupDatabases)用于查询备份文件包含的库 (已废弃)。
-旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。
-新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。
-                 * @param req DescribeBackupDatabasesRequest
-                 * @return DescribeBackupDatabasesOutcome
-                 */
-                DescribeBackupDatabasesOutcome DescribeBackupDatabases(const Model::DescribeBackupDatabasesRequest &request);
-                void DescribeBackupDatabasesAsync(const Model::DescribeBackupDatabasesRequest& request, const DescribeBackupDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeBackupDatabasesOutcomeCallable DescribeBackupDatabasesCallable(const Model::DescribeBackupDatabasesRequest& request);
 
                 /**
                  *本接口(DescribeBackupDecryptionKey)用于查询备份文件解密密钥。

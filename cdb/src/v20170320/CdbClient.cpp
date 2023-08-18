@@ -1803,49 +1803,6 @@ CdbClient::DescribeBackupConfigOutcomeCallable CdbClient::DescribeBackupConfigCa
     return task->get_future();
 }
 
-CdbClient::DescribeBackupDatabasesOutcome CdbClient::DescribeBackupDatabases(const DescribeBackupDatabasesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeBackupDatabases");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeBackupDatabasesResponse rsp = DescribeBackupDatabasesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeBackupDatabasesOutcome(rsp);
-        else
-            return DescribeBackupDatabasesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeBackupDatabasesOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::DescribeBackupDatabasesAsync(const DescribeBackupDatabasesRequest& request, const DescribeBackupDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupDatabases(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::DescribeBackupDatabasesOutcomeCallable CdbClient::DescribeBackupDatabasesCallable(const DescribeBackupDatabasesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeBackupDatabasesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupDatabases(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdbClient::DescribeBackupDecryptionKeyOutcome CdbClient::DescribeBackupDecryptionKey(const DescribeBackupDecryptionKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupDecryptionKey");

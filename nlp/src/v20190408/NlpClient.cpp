@@ -470,6 +470,49 @@ NlpClient::SentenceCorrectionOutcomeCallable NlpClient::SentenceCorrectionCallab
     return task->get_future();
 }
 
+NlpClient::TestingTextGenerationOutcome NlpClient::TestingTextGeneration(const TestingTextGenerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "TestingTextGeneration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TestingTextGenerationResponse rsp = TestingTextGenerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TestingTextGenerationOutcome(rsp);
+        else
+            return TestingTextGenerationOutcome(o.GetError());
+    }
+    else
+    {
+        return TestingTextGenerationOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::TestingTextGenerationAsync(const TestingTextGenerationRequest& request, const TestingTextGenerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TestingTextGeneration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::TestingTextGenerationOutcomeCallable NlpClient::TestingTextGenerationCallable(const TestingTextGenerationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TestingTextGenerationOutcome()>>(
+        [this, request]()
+        {
+            return this->TestingTextGeneration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 NlpClient::TextEmbellishOutcome NlpClient::TextEmbellish(const TextEmbellishRequest &request)
 {
     auto outcome = MakeRequest(request, "TextEmbellish");

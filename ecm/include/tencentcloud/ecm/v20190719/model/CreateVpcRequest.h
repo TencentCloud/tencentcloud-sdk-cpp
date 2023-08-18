@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ecm/v20190719/model/Tag.h>
+#include <tencentcloud/ecm/v20190719/model/ISPTypeItem.h>
 
 
 namespace TencentCloud
@@ -211,6 +212,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取网络运营商类型 取值范围:'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调	
+                     * @return ISPTypes 网络运营商类型 取值范围:'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调	
+                     * 
+                     */
+                    std::vector<ISPTypeItem> GetISPTypes() const;
+
+                    /**
+                     * 设置网络运营商类型 取值范围:'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调	
+                     * @param _iSPTypes 网络运营商类型 取值范围:'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调	
+                     * 
+                     */
+                    void SetISPTypes(const std::vector<ISPTypeItem>& _iSPTypes);
+
+                    /**
+                     * 判断参数 ISPTypes 是否已赋值
+                     * @return ISPTypes 是否已赋值
+                     * 
+                     */
+                    bool ISPTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +282,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 网络运营商类型 取值范围:'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调	
+                     */
+                    std::vector<ISPTypeItem> m_iSPTypes;
+                    bool m_iSPTypesHasBeenSet;
 
                 };
             }

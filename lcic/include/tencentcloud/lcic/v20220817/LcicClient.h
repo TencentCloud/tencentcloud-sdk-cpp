@@ -65,6 +65,8 @@
 #include <tencentcloud/lcic/v20220817/model/DeleteRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteSupervisorRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteSupervisorResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteUserRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteUserResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAnswerListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAnswerListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAppDetailRequest.h>
@@ -208,6 +210,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSupervisorResponse> DeleteSupervisorOutcome;
                 typedef std::future<DeleteSupervisorOutcome> DeleteSupervisorOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DeleteSupervisorRequest&, DeleteSupervisorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSupervisorAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserResponse> DeleteUserOutcome;
+                typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAnswerListResponse> DescribeAnswerListOutcome;
                 typedef std::future<DescribeAnswerListOutcome> DescribeAnswerListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeAnswerListRequest&, DescribeAnswerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnswerListAsyncHandler;
@@ -498,6 +503,15 @@ namespace TencentCloud
                 DeleteSupervisorOutcome DeleteSupervisor(const Model::DeleteSupervisorRequest &request);
                 void DeleteSupervisorAsync(const Model::DeleteSupervisorRequest& request, const DeleteSupervisorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSupervisorOutcomeCallable DeleteSupervisorCallable(const Model::DeleteSupervisorRequest& request);
+
+                /**
+                 *删除已注册用户。注：如果该成员已被添加到群组，请先在群组中删除该成员。
+                 * @param req DeleteUserRequest
+                 * @return DeleteUserOutcome
+                 */
+                DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest &request);
+                void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request);
 
                 /**
                  *获取房间答题详情

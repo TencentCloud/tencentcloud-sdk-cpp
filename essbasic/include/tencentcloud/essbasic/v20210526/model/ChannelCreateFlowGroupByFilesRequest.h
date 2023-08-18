@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/FlowFileInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
+#include <tencentcloud/essbasic/v20210526/model/FlowGroupOptions.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
 
@@ -142,6 +143,27 @@ MobileCheck：手机号验证
                     bool ApproverVerifyTypeHasBeenSet() const;
 
                     /**
+                     * 获取合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
+                     * @return FlowGroupOptions 合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
+                     * 
+                     */
+                    FlowGroupOptions GetFlowGroupOptions() const;
+
+                    /**
+                     * 设置合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
+                     * @param _flowGroupOptions 合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
+                     * 
+                     */
+                    void SetFlowGroupOptions(const FlowGroupOptions& _flowGroupOptions);
+
+                    /**
+                     * 判断参数 FlowGroupOptions 是否已赋值
+                     * @return FlowGroupOptions 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupOptionsHasBeenSet() const;
+
+                    /**
                      * 获取操作者的信息，此参数不用传
                      * @return Operator 操作者的信息，此参数不用传
                      * @deprecated
@@ -190,6 +212,12 @@ MobileCheck：手机号验证
                      */
                     std::string m_approverVerifyType;
                     bool m_approverVerifyTypeHasBeenSet;
+
+                    /**
+                     * 合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
+                     */
+                    FlowGroupOptions m_flowGroupOptions;
+                    bool m_flowGroupOptionsHasBeenSet;
 
                     /**
                      * 操作者的信息，此参数不用传

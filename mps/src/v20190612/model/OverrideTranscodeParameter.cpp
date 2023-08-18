@@ -29,7 +29,8 @@ OverrideTranscodeParameter::OverrideTranscodeParameter() :
     m_tEHDConfigHasBeenSet(false),
     m_subtitleTemplateHasBeenSet(false),
     m_addonAudioStreamHasBeenSet(false),
-    m_stdExtInfoHasBeenSet(false)
+    m_stdExtInfoHasBeenSet(false),
+    m_addOnSubtitlesHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,26 @@ CoreInternalOutcome OverrideTranscodeParameter::Deserialize(const rapidjson::Val
         m_stdExtInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("AddOnSubtitles") && !value["AddOnSubtitles"].IsNull())
+    {
+        if (!value["AddOnSubtitles"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OverrideTranscodeParameter.AddOnSubtitles` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AddOnSubtitles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AddOnSubtitle item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_addOnSubtitles.push_back(item);
+        }
+        m_addOnSubtitlesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -254,6 +275,21 @@ void OverrideTranscodeParameter::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "StdExtInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addOnSubtitlesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddOnSubtitles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addOnSubtitles.begin(); itr != m_addOnSubtitles.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -401,5 +437,21 @@ void OverrideTranscodeParameter::SetStdExtInfo(const string& _stdExtInfo)
 bool OverrideTranscodeParameter::StdExtInfoHasBeenSet() const
 {
     return m_stdExtInfoHasBeenSet;
+}
+
+vector<AddOnSubtitle> OverrideTranscodeParameter::GetAddOnSubtitles() const
+{
+    return m_addOnSubtitles;
+}
+
+void OverrideTranscodeParameter::SetAddOnSubtitles(const vector<AddOnSubtitle>& _addOnSubtitles)
+{
+    m_addOnSubtitles = _addOnSubtitles;
+    m_addOnSubtitlesHasBeenSet = true;
+}
+
+bool OverrideTranscodeParameter::AddOnSubtitlesHasBeenSet() const
+{
+    return m_addOnSubtitlesHasBeenSet;
 }
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预发起的合同链接
-                     * @return PrepareFlowUrl 预发起的合同链接
+                     * 获取预发起的合同链接， 可以直接点击进入进行合同发起
+                     * @return PrepareFlowUrl 预发起的合同链接， 可以直接点击进入进行合同发起
                      * 
                      */
                     std::string GetPrepareFlowUrl() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool PrepareFlowUrlHasBeenSet() const;
 
                     /**
-                     * 获取合同发起后预览链接
-                     * @return PreviewFlowUrl 合同发起后预览链接
+                     * 获取合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果
+                     * @return PreviewFlowUrl 合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果
                      * 
                      */
                     std::string GetPreviewFlowUrl() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 预发起的合同链接
+                     * 预发起的合同链接， 可以直接点击进入进行合同发起
                      */
                     std::string m_prepareFlowUrl;
                     bool m_prepareFlowUrlHasBeenSet;
 
                     /**
-                     * 合同发起后预览链接
+                     * 合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果
                      */
                     std::string m_previewFlowUrl;
                     bool m_previewFlowUrlHasBeenSet;

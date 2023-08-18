@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_DATABASENAME_H_
-#define TENCENTCLOUD_CDB_V20170320_MODEL_DATABASENAME_H_
+#ifndef TENCENTCLOUD_NLP_V20190408_MODEL_TEXTGENERATIONCHOICES_H_
+#define TENCENTCLOUD_NLP_V20190408_MODEL_TEXTGENERATIONCHOICES_H_
 
 #include <string>
 #include <vector>
@@ -24,56 +24,62 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/nlp/v20190408/model/TextGenerationMessage.h>
 
 
 namespace TencentCloud
 {
-    namespace Cdb
+    namespace Nlp
     {
-        namespace V20170320
+        namespace V20190408
         {
             namespace Model
             {
                 /**
-                * 数据库表名
+                * TextGenerationChoices
                 */
-                class DatabaseName : public AbstractModel
+                class TextGenerationChoices : public AbstractModel
                 {
                 public:
-                    DatabaseName();
-                    ~DatabaseName() = default;
+                    TextGenerationChoices();
+                    ~TextGenerationChoices() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取数据库表名
-                     * @return DatabaseName 数据库表名
+                     * 获取内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Message 内容
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetDatabaseName() const;
+                    TextGenerationMessage GetMessage() const;
 
                     /**
-                     * 设置数据库表名
-                     * @param _databaseName 数据库表名
+                     * 设置内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _message 内容
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetDatabaseName(const std::string& _databaseName);
+                    void SetMessage(const TextGenerationMessage& _message);
 
                     /**
-                     * 判断参数 DatabaseName 是否已赋值
-                     * @return DatabaseName 是否已赋值
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
                      * 
                      */
-                    bool DatabaseNameHasBeenSet() const;
+                    bool MessageHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 数据库表名
+                     * 内容
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_databaseName;
-                    bool m_databaseNameHasBeenSet;
+                    TextGenerationMessage m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }
@@ -81,4 +87,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_DATABASENAME_H_
+#endif // !TENCENTCLOUD_NLP_V20190408_MODEL_TEXTGENERATIONCHOICES_H_

@@ -24,8 +24,9 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/ModifyRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeAppDetailResponse.h
   include/tencentcloud/lcic/v20220817/model/DeleteSupervisorRequest.h
+  include/tencentcloud/lcic/v20220817/model/DeleteUserRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeSupervisorsResponse.h
-  include/tencentcloud/lcic/v20220817/model/KickUserFromRoomResponse.h
+  include/tencentcloud/lcic/v20220817/model/DeleteUserResponse.h
   include/tencentcloud/lcic/v20220817/model/BatchDeleteRecordRequest.h
   include/tencentcloud/lcic/v20220817/model/ModifyAppResponse.h
   include/tencentcloud/lcic/v20220817/model/BatchRegisterRequest.h
@@ -58,6 +59,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/LoginUserResponse.h
   include/tencentcloud/lcic/v20220817/model/ModifyGroupRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeAppDetailRequest.h
+  include/tencentcloud/lcic/v20220817/model/KickUserFromRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/DeleteGroupRequest.h
   include/tencentcloud/lcic/v20220817/model/StartRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/AddGroupMemberRequest.h
@@ -105,7 +107,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DeleteDocumentRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeSupervisorsRequest.h
   include/tencentcloud/lcic/v20220817/model/MessageList.h
-  include/tencentcloud/lcic/v20220817/model/DeleteGroupMemberRequest.h
+  include/tencentcloud/lcic/v20220817/model/DescribeGroupRequest.h
   include/tencentcloud/lcic/v20220817/model/EndRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/GetWatermarkRequest.h
   include/tencentcloud/lcic/v20220817/model/CreateGroupWithMembersResponse.h
@@ -139,7 +141,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/SceneItem.h
   include/tencentcloud/lcic/v20220817/model/DeleteRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchCreateGroupWithMembersRequest.h
-  include/tencentcloud/lcic/v20220817/model/DescribeGroupRequest.h
+  include/tencentcloud/lcic/v20220817/model/DeleteGroupMemberRequest.h
   include/tencentcloud/lcic/v20220817/model/CreateSupervisorRequest.h
   include/tencentcloud/lcic/v20220817/model/BackgroundPictureConfig.h
   include/tencentcloud/lcic/v20220817/model/DeleteAppCustomContentResponse.h
@@ -158,8 +160,9 @@ set(lcic_src
   src/v20220817/model/ModifyRoomResponse.cpp
   src/v20220817/model/DescribeAppDetailResponse.cpp
   src/v20220817/model/DeleteSupervisorRequest.cpp
+  src/v20220817/model/DeleteUserRequest.cpp
   src/v20220817/model/DescribeSupervisorsResponse.cpp
-  src/v20220817/model/KickUserFromRoomResponse.cpp
+  src/v20220817/model/DeleteUserResponse.cpp
   src/v20220817/model/BatchDeleteRecordRequest.cpp
   src/v20220817/model/ModifyAppResponse.cpp
   src/v20220817/model/BatchRegisterRequest.cpp
@@ -192,6 +195,7 @@ set(lcic_src
   src/v20220817/model/LoginUserResponse.cpp
   src/v20220817/model/ModifyGroupRequest.cpp
   src/v20220817/model/DescribeAppDetailRequest.cpp
+  src/v20220817/model/KickUserFromRoomResponse.cpp
   src/v20220817/model/DeleteGroupRequest.cpp
   src/v20220817/model/StartRoomRequest.cpp
   src/v20220817/model/AddGroupMemberRequest.cpp
@@ -239,7 +243,7 @@ set(lcic_src
   src/v20220817/model/DeleteDocumentRequest.cpp
   src/v20220817/model/DescribeSupervisorsRequest.cpp
   src/v20220817/model/MessageList.cpp
-  src/v20220817/model/DeleteGroupMemberRequest.cpp
+  src/v20220817/model/DescribeGroupRequest.cpp
   src/v20220817/model/EndRoomResponse.cpp
   src/v20220817/model/GetWatermarkRequest.cpp
   src/v20220817/model/CreateGroupWithMembersResponse.cpp
@@ -273,7 +277,7 @@ set(lcic_src
   src/v20220817/model/SceneItem.cpp
   src/v20220817/model/DeleteRoomRequest.cpp
   src/v20220817/model/BatchCreateGroupWithMembersRequest.cpp
-  src/v20220817/model/DescribeGroupRequest.cpp
+  src/v20220817/model/DeleteGroupMemberRequest.cpp
   src/v20220817/model/CreateSupervisorRequest.cpp
   src/v20220817/model/BackgroundPictureConfig.cpp
   src/v20220817/model/DeleteAppCustomContentResponse.cpp

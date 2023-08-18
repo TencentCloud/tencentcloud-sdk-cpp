@@ -107,15 +107,23 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取<li>Keywords 机器别名/公私IP 模糊查询</li>
-                     * @return Filters <li>Keywords 机器别名/公私IP 模糊查询</li>
+                     * 获取<li>InstanceID、IP、
+
+MachineName 模糊查询</li>
+                     * @return Filters <li>InstanceID、IP、
+
+MachineName 模糊查询</li>
                      * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
-                     * 设置<li>Keywords 机器别名/公私IP 模糊查询</li>
-                     * @param _filters <li>Keywords 机器别名/公私IP 模糊查询</li>
+                     * 设置<li>InstanceID、IP、
+
+MachineName 模糊查询</li>
+                     * @param _filters <li>InstanceID、IP、
+
+MachineName 模糊查询</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
@@ -190,7 +198,9 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * <li>Keywords 机器别名/公私IP 模糊查询</li>
+                     * <li>InstanceID、IP、
+
+MachineName 模糊查询</li>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;

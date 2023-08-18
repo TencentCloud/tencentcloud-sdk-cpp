@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/WatermarkInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
+#include <tencentcloud/mps/v20190612/model/AddOnSubtitle.h>
 
 
 namespace TencentCloud
@@ -178,6 +179,31 @@ namespace TencentCloud
                      */
                     bool SegmentObjectNameHasBeenSet() const;
 
+                    /**
+                     * 获取要插入的字幕文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AddOnSubtitles 要插入的字幕文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AddOnSubtitle> GetAddOnSubtitles() const;
+
+                    /**
+                     * 设置要插入的字幕文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _addOnSubtitles 要插入的字幕文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAddOnSubtitles(const std::vector<AddOnSubtitle>& _addOnSubtitles);
+
+                    /**
+                     * 判断参数 AddOnSubtitles 是否已赋值
+                     * @return AddOnSubtitles 是否已赋值
+                     * 
+                     */
+                    bool AddOnSubtitlesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +242,13 @@ namespace TencentCloud
                      */
                     std::string m_segmentObjectName;
                     bool m_segmentObjectNameHasBeenSet;
+
+                    /**
+                     * 要插入的字幕文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AddOnSubtitle> m_addOnSubtitles;
+                    bool m_addOnSubtitlesHasBeenSet;
 
                 };
             }

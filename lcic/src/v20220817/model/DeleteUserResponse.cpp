@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteUserResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Lcic::V20220817::Model;
 using namespace std;
 
-DescribeBackupDatabasesResponse::DescribeBackupDatabasesResponse() :
-    m_totalCountHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+DeleteUserResponse::DeleteUserResponse()
 {
 }
 
-CoreInternalOutcome DescribeBackupDatabasesResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteUserResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,68 +61,15 @@ CoreInternalOutcome DescribeBackupDatabasesResponse::Deserialize(const string &p
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
-    {
-        if (!rsp["Items"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Items"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            DatabaseName item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_items.push_back(item);
-        }
-        m_itemsHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeBackupDatabasesResponse::ToJsonString() const
+string DeleteUserResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
-    if (m_itemsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Items";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -137,25 +82,5 @@ string DescribeBackupDatabasesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t DescribeBackupDatabasesResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeBackupDatabasesResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
-}
-
-vector<DatabaseName> DescribeBackupDatabasesResponse::GetItems() const
-{
-    return m_items;
-}
-
-bool DescribeBackupDatabasesResponse::ItemsHasBeenSet() const
-{
-    return m_itemsHasBeenSet;
-}
 
 

@@ -43,6 +43,8 @@
 #include <tencentcloud/nlp/v20190408/model/RetrieveSimilarWordsResponse.h>
 #include <tencentcloud/nlp/v20190408/model/SentenceCorrectionRequest.h>
 #include <tencentcloud/nlp/v20190408/model/SentenceCorrectionResponse.h>
+#include <tencentcloud/nlp/v20190408/model/TestingTextGenerationRequest.h>
+#include <tencentcloud/nlp/v20190408/model/TestingTextGenerationResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextEmbellishRequest.h>
 #include <tencentcloud/nlp/v20190408/model/TextEmbellishResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextWritingRequest.h>
@@ -91,6 +93,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SentenceCorrectionResponse> SentenceCorrectionOutcome;
                 typedef std::future<SentenceCorrectionOutcome> SentenceCorrectionOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::SentenceCorrectionRequest&, SentenceCorrectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SentenceCorrectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::TestingTextGenerationResponse> TestingTextGenerationOutcome;
+                typedef std::future<TestingTextGenerationOutcome> TestingTextGenerationOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::TestingTextGenerationRequest&, TestingTextGenerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TestingTextGenerationAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextEmbellishResponse> TextEmbellishOutcome;
                 typedef std::future<TextEmbellishOutcome> TextEmbellishOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::TextEmbellishRequest&, TextEmbellishOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextEmbellishAsyncHandler;
@@ -189,6 +194,15 @@ namespace TencentCloud
                 SentenceCorrectionOutcome SentenceCorrection(const Model::SentenceCorrectionRequest &request);
                 void SentenceCorrectionAsync(const Model::SentenceCorrectionRequest& request, const SentenceCorrectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SentenceCorrectionOutcomeCallable SentenceCorrectionCallable(const Model::SentenceCorrectionRequest& request);
+
+                /**
+                 *基于腾讯大模型能力，用户可以通过传入不同的参数控制生成内容的类型，并通过自然语言给模型以内容生成的指令，可以满足多种场景的文本生成需求，包括但不限于文章写作、营销文案、视频脚本、电商文案、纪要整理等（注意：当前接口为内测体验专用接口，非正式服务接口，内测期结束接口会下线或停服，届时请接入正式服务接口）
+                 * @param req TestingTextGenerationRequest
+                 * @return TestingTextGenerationOutcome
+                 */
+                TestingTextGenerationOutcome TestingTextGeneration(const Model::TestingTextGenerationRequest &request);
+                void TestingTextGenerationAsync(const Model::TestingTextGenerationRequest& request, const TestingTextGenerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TestingTextGenerationOutcomeCallable TestingTextGenerationCallable(const Model::TestingTextGenerationRequest& request);
 
                 /**
                  *运用先进的自然语言处理技术，对原始文本进行优化润色，提升文本的通顺性、表达力和语言质量。

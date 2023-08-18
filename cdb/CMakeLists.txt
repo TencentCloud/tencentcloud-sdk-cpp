@@ -60,7 +60,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CreateCdbProxyAddressRequest.h
   include/tencentcloud/cdb/v20170320/model/AnalyzeAuditLogsRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyBackupEncryptionStatusResponse.h
-  include/tencentcloud/cdb/v20170320/model/DatabaseName.h
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceParamsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleResponse.h
   include/tencentcloud/cdb/v20170320/model/StopDBImportJobResponse.h
@@ -258,7 +257,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ReloadBalanceProxyNodeResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeTimeWindowRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsResponse.h
-  include/tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesResponse.h
   include/tencentcloud/cdb/v20170320/model/BackupItem.h
   include/tencentcloud/cdb/v20170320/model/AuditFilter.h
   include/tencentcloud/cdb/v20170320/model/DescribeProxySupportParamResponse.h
@@ -391,7 +389,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/AuditLogFile.h
   include/tencentcloud/cdb/v20170320/model/CloseCdbProxyAddressResponse.h
   include/tencentcloud/cdb/v20170320/model/RollbackTables.h
-  include/tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesRequest.h
   include/tencentcloud/cdb/v20170320/model/LocalBinlogConfigDefault.h
   include/tencentcloud/cdb/v20170320/model/DescribeSlowLogDataRequest.h
   include/tencentcloud/cdb/v20170320/model/ReleaseIsolatedDBInstancesResponse.h
@@ -451,7 +448,6 @@ set(cdb_src
   src/v20170320/model/CreateCdbProxyAddressRequest.cpp
   src/v20170320/model/AnalyzeAuditLogsRequest.cpp
   src/v20170320/model/ModifyBackupEncryptionStatusResponse.cpp
-  src/v20170320/model/DatabaseName.cpp
   src/v20170320/model/DescribeInstanceParamsRequest.cpp
   src/v20170320/model/DescribeRoMinScaleResponse.cpp
   src/v20170320/model/StopDBImportJobResponse.cpp
@@ -649,7 +645,6 @@ set(cdb_src
   src/v20170320/model/ReloadBalanceProxyNodeResponse.cpp
   src/v20170320/model/DescribeTimeWindowRequest.cpp
   src/v20170320/model/DescribeDBImportRecordsResponse.cpp
-  src/v20170320/model/DescribeBackupDatabasesResponse.cpp
   src/v20170320/model/BackupItem.cpp
   src/v20170320/model/AuditFilter.cpp
   src/v20170320/model/DescribeProxySupportParamResponse.cpp
@@ -782,7 +777,6 @@ set(cdb_src
   src/v20170320/model/AuditLogFile.cpp
   src/v20170320/model/CloseCdbProxyAddressResponse.cpp
   src/v20170320/model/RollbackTables.cpp
-  src/v20170320/model/DescribeBackupDatabasesRequest.cpp
   src/v20170320/model/LocalBinlogConfigDefault.cpp
   src/v20170320/model/DescribeSlowLogDataRequest.cpp
   src/v20170320/model/ReleaseIsolatedDBInstancesResponse.cpp

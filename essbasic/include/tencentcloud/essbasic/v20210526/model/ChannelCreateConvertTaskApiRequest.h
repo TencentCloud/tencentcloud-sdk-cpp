@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取资源Id，通过UploadFiles获取
-                     * @return ResourceId 资源Id，通过UploadFiles获取
+                     * 获取文件Id，通过UploadFiles获取
+                     * @return ResourceId 文件Id，通过UploadFiles获取
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源Id，通过UploadFiles获取
-                     * @param _resourceId 资源Id，通过UploadFiles获取
+                     * 设置文件Id，通过UploadFiles获取
+                     * @param _resourceId 文件Id，通过UploadFiles获取
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -192,7 +192,7 @@ namespace TencentCloud
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 资源Id，通过UploadFiles获取
+                     * 文件Id，通过UploadFiles获取
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

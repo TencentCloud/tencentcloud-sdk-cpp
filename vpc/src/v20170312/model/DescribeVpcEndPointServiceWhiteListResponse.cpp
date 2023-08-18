@@ -25,6 +25,7 @@ using namespace std;
 
 DescribeVpcEndPointServiceWhiteListResponse::DescribeVpcEndPointServiceWhiteListResponse() :
     m_vpcEndpointServiceUserSetHasBeenSet(false),
+    m_vpcEndPointServiceUserSetHasBeenSet(false),
     m_totalCountHasBeenSet(false)
 {
 }
@@ -83,6 +84,26 @@ CoreInternalOutcome DescribeVpcEndPointServiceWhiteListResponse::Deserialize(con
         m_vpcEndpointServiceUserSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VpcEndPointServiceUserSet") && !rsp["VpcEndPointServiceUserSet"].IsNull())
+    {
+        if (!rsp["VpcEndPointServiceUserSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VpcEndPointServiceUserSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["VpcEndPointServiceUserSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcEndPointServiceUser item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vpcEndPointServiceUserSet.push_back(item);
+        }
+        m_vpcEndPointServiceUserSetHasBeenSet = true;
+    }
+
     if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
         if (!rsp["TotalCount"].IsUint64())
@@ -118,6 +139,21 @@ string DescribeVpcEndPointServiceWhiteListResponse::ToJsonString() const
         }
     }
 
+    if (m_vpcEndPointServiceUserSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcEndPointServiceUserSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vpcEndPointServiceUserSet.begin(); itr != m_vpcEndPointServiceUserSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,6 +182,16 @@ vector<VpcEndPointServiceUser> DescribeVpcEndPointServiceWhiteListResponse::GetV
 bool DescribeVpcEndPointServiceWhiteListResponse::VpcEndpointServiceUserSetHasBeenSet() const
 {
     return m_vpcEndpointServiceUserSetHasBeenSet;
+}
+
+vector<VpcEndPointServiceUser> DescribeVpcEndPointServiceWhiteListResponse::GetVpcEndPointServiceUserSet() const
+{
+    return m_vpcEndPointServiceUserSet;
+}
+
+bool DescribeVpcEndPointServiceWhiteListResponse::VpcEndPointServiceUserSetHasBeenSet() const
+{
+    return m_vpcEndPointServiceUserSetHasBeenSet;
 }
 
 uint64_t DescribeVpcEndPointServiceWhiteListResponse::GetTotalCount() const

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取S3 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3Bucket S3 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3Bucket() const;
 
                     /**
                      * 设置S3 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3Bucket S3 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3Bucket(const std::string& _s3Bucket);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取S3 bucket 对应的区域。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3Region S3 bucket 对应的区域。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3Region() const;
 
                     /**
                      * 设置S3 bucket 对应的区域。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3Region S3 bucket 对应的区域。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3Region(const std::string& _s3Region);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取AWS 内网上传 媒体资源的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3SecretId AWS 内网上传 媒体资源的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3SecretId() const;
 
                     /**
                      * 设置AWS 内网上传 媒体资源的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3SecretId AWS 内网上传 媒体资源的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3SecretId(const std::string& _s3SecretId);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取AWS 内网上传 媒体资源的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3SecretKey AWS 内网上传 媒体资源的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3SecretKey() const;
 
                     /**
                      * 设置AWS 内网上传 媒体资源的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3SecretKey AWS 内网上传 媒体资源的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3SecretKey(const std::string& _s3SecretKey);
@@ -134,24 +150,28 @@ namespace TencentCloud
 
                     /**
                      * S3 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3Bucket;
                     bool m_s3BucketHasBeenSet;
 
                     /**
                      * S3 bucket 对应的区域。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3Region;
                     bool m_s3RegionHasBeenSet;
 
                     /**
                      * AWS 内网上传 媒体资源的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3SecretId;
                     bool m_s3SecretIdHasBeenSet;
 
                     /**
                      * AWS 内网上传 媒体资源的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3SecretKey;
                     bool m_s3SecretKeyHasBeenSet;

@@ -87,7 +87,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/UserThreeFactor.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.h
-  include/tencentcloud/essbasic/v20210526/model/UploadFilesRequest.h
+  include/tencentcloud/essbasic/v20210526/model/FlowGroupOptions.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoRequest.h
@@ -157,6 +157,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyRequest.h
   include/tencentcloud/essbasic/v20210526/model/OccupiedSeal.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesRequest.h
+  include/tencentcloud/essbasic/v20210526/model/UploadFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageResponse.h
   include/tencentcloud/essbasic/v20210526/model/UsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.h
@@ -372,7 +373,7 @@ set(essbasic_src
   src/v20210526/model/UserThreeFactor.cpp
   src/v20210526/model/ChannelCreateUserAutoSignEnableUrlRequest.cpp
   src/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.cpp
-  src/v20210526/model/UploadFilesRequest.cpp
+  src/v20210526/model/FlowGroupOptions.cpp
   src/v20210526/model/ChannelDescribeOrganizationSealsRequest.cpp
   src/v20210526/model/DescribeUsageRequest.cpp
   src/v20210526/model/DescribeExtendedServiceAuthInfoRequest.cpp
@@ -442,6 +443,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateSealPolicyRequest.cpp
   src/v20210526/model/OccupiedSeal.cpp
   src/v20210526/model/CreateFlowsByTemplatesRequest.cpp
+  src/v20210526/model/UploadFilesRequest.cpp
   src/v20210526/model/DescribeUsageResponse.cpp
   src/v20210526/model/UsageDetail.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.cpp

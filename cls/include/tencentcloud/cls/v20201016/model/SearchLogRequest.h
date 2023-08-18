@@ -140,11 +140,11 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+                     * 获取表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
 注意：
 * 仅当检索分析语句(Query)不包含SQL时有效
 * SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
-                     * @return Limit 表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+                     * @return Limit 表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
 注意：
 * 仅当检索分析语句(Query)不包含SQL时有效
 * SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
@@ -153,11 +153,11 @@ namespace TencentCloud
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+                     * 设置表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
 注意：
 * 仅当检索分析语句(Query)不包含SQL时有效
 * SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
-                     * @param _limit 表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+                     * @param _limit 表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
 注意：
 * 仅当检索分析语句(Query)不包含SQL时有效
 * SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
@@ -396,7 +396,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+                     * 表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
 注意：
 * 仅当检索分析语句(Query)不包含SQL时有效
 * SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>

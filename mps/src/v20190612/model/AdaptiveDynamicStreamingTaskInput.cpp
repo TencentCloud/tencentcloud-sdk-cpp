@@ -26,7 +26,8 @@ AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_outputStorageHasBeenSet(false),
     m_outputObjectPathHasBeenSet(false),
     m_subStreamObjectNameHasBeenSet(false),
-    m_segmentObjectNameHasBeenSet(false)
+    m_segmentObjectNameHasBeenSet(false),
+    m_addOnSubtitlesHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,26 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_segmentObjectNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AddOnSubtitles") && !value["AddOnSubtitles"].IsNull())
+    {
+        if (!value["AddOnSubtitles"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.AddOnSubtitles` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AddOnSubtitles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AddOnSubtitle item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_addOnSubtitles.push_back(item);
+        }
+        m_addOnSubtitlesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -173,6 +194,21 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
         string key = "SegmentObjectName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_segmentObjectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addOnSubtitlesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddOnSubtitles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addOnSubtitles.begin(); itr != m_addOnSubtitles.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -272,5 +308,21 @@ void AdaptiveDynamicStreamingTaskInput::SetSegmentObjectName(const string& _segm
 bool AdaptiveDynamicStreamingTaskInput::SegmentObjectNameHasBeenSet() const
 {
     return m_segmentObjectNameHasBeenSet;
+}
+
+vector<AddOnSubtitle> AdaptiveDynamicStreamingTaskInput::GetAddOnSubtitles() const
+{
+    return m_addOnSubtitles;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetAddOnSubtitles(const vector<AddOnSubtitle>& _addOnSubtitles)
+{
+    m_addOnSubtitles = _addOnSubtitles;
+    m_addOnSubtitlesHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::AddOnSubtitlesHasBeenSet() const
+{
+    return m_addOnSubtitlesHasBeenSet;
 }
 

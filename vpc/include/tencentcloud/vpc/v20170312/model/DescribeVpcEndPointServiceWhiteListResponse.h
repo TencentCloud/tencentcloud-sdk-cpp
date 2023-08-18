@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取白名单对象数组。
-                     * @return VpcEndpointServiceUserSet 白名单对象数组。
+                     * 获取白名单对象数组。已废弃
+                     * @return VpcEndpointServiceUserSet 白名单对象数组。已废弃
                      * 
                      */
                     std::vector<VpcEndPointServiceUser> GetVpcEndpointServiceUserSet() const;
@@ -57,6 +57,20 @@ namespace TencentCloud
                      * 
                      */
                     bool VpcEndpointServiceUserSetHasBeenSet() const;
+
+                    /**
+                     * 获取白名单对象数组。
+                     * @return VpcEndPointServiceUserSet 白名单对象数组。
+                     * 
+                     */
+                    std::vector<VpcEndPointServiceUser> GetVpcEndPointServiceUserSet() const;
+
+                    /**
+                     * 判断参数 VpcEndPointServiceUserSet 是否已赋值
+                     * @return VpcEndPointServiceUserSet 是否已赋值
+                     * 
+                     */
+                    bool VpcEndPointServiceUserSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的白名单个数。
@@ -75,10 +89,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 白名单对象数组。
+                     * 白名单对象数组。已废弃
                      */
                     std::vector<VpcEndPointServiceUser> m_vpcEndpointServiceUserSet;
                     bool m_vpcEndpointServiceUserSetHasBeenSet;
+
+                    /**
+                     * 白名单对象数组。
+                     */
+                    std::vector<VpcEndPointServiceUser> m_vpcEndPointServiceUserSet;
+                    bool m_vpcEndPointServiceUserSetHasBeenSet;
 
                     /**
                      * 符合条件的白名单个数。

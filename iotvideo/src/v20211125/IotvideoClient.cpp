@@ -1631,6 +1631,49 @@ IotvideoClient::DescribeCloudStorageEventsOutcomeCallable IotvideoClient::Descri
     return task->get_future();
 }
 
+IotvideoClient::DescribeCloudStorageOrderOutcome IotvideoClient::DescribeCloudStorageOrder(const DescribeCloudStorageOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageOrderResponse rsp = DescribeCloudStorageOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageOrderOutcome(rsp);
+        else
+            return DescribeCloudStorageOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageOrderOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCloudStorageOrderAsync(const DescribeCloudStorageOrderRequest& request, const DescribeCloudStorageOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCloudStorageOrderOutcomeCallable IotvideoClient::DescribeCloudStorageOrderCallable(const DescribeCloudStorageOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeCloudStoragePackageConsumeDetailsOutcome IotvideoClient::DescribeCloudStoragePackageConsumeDetails(const DescribeCloudStoragePackageConsumeDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudStoragePackageConsumeDetails");
