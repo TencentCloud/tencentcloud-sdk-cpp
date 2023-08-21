@@ -398,6 +398,31 @@ namespace TencentCloud
                      */
                     bool GatewayRouteEnvIdHasBeenSet() const;
 
+                    /**
+                     * 获取路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayRoutePathMatchType 路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGatewayRoutePathMatchType() const;
+
+                    /**
+                     * 设置路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gatewayRoutePathMatchType 路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGatewayRoutePathMatchType(const std::string& _gatewayRoutePathMatchType);
+
+                    /**
+                     * 判断参数 GatewayRoutePathMatchType 是否已赋值
+                     * @return GatewayRoutePathMatchType 是否已赋值
+                     * 
+                     */
+                    bool GatewayRoutePathMatchTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -498,6 +523,13 @@ namespace TencentCloud
                      */
                     std::string m_gatewayRouteEnvId;
                     bool m_gatewayRouteEnvIdHasBeenSet;
+
+                    /**
+                     * 路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewayRoutePathMatchType;
+                    bool m_gatewayRoutePathMatchTypeHasBeenSet;
 
                 };
             }

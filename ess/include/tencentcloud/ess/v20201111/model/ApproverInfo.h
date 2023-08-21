@@ -188,11 +188,11 @@ namespace TencentCloud
                      * 获取合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
 <ul><li> 个人签名/印章</li>
 <li> 企业印章</li>
-<li> 骑缝章等签署控件</li><ul>
+<li> 骑缝章等签署控件</li></ul>
                      * @return SignComponents 合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
 <ul><li> 个人签名/印章</li>
 <li> 企业印章</li>
-<li> 骑缝章等签署控件</li><ul>
+<li> 骑缝章等签署控件</li></ul>
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
@@ -201,11 +201,11 @@ namespace TencentCloud
                      * 设置合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
 <ul><li> 个人签名/印章</li>
 <li> 企业印章</li>
-<li> 骑缝章等签署控件</li><ul>
+<li> 骑缝章等签署控件</li></ul>
                      * @param _signComponents 合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
 <ul><li> 个人签名/印章</li>
 <li> 企业印章</li>
-<li> 骑缝章等签署控件</li><ul>
+<li> 骑缝章等签署控件</li></ul>
                      * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
@@ -717,7 +717,7 @@ namespace TencentCloud
                      * 合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
 <ul><li> 个人签名/印章</li>
 <li> 企业印章</li>
-<li> 骑缝章等签署控件</li><ul>
+<li> 骑缝章等签署控件</li></ul>
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;

@@ -25,6 +25,7 @@ using namespace std;
 DescribeIntegrationDepartmentsRequest::DescribeIntegrationDepartmentsRequest() :
     m_operatorHasBeenSet(false),
     m_queryTypeHasBeenSet(false),
+    m_agentHasBeenSet(false),
     m_deptIdHasBeenSet(false),
     m_deptOpenIdHasBeenSet(false)
 {
@@ -52,6 +53,15 @@ string DescribeIntegrationDepartmentsRequest::ToJsonString() const
         string key = "QueryType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_queryType, allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_deptIdHasBeenSet)
@@ -108,6 +118,22 @@ void DescribeIntegrationDepartmentsRequest::SetQueryType(const uint64_t& _queryT
 bool DescribeIntegrationDepartmentsRequest::QueryTypeHasBeenSet() const
 {
     return m_queryTypeHasBeenSet;
+}
+
+Agent DescribeIntegrationDepartmentsRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void DescribeIntegrationDepartmentsRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool DescribeIntegrationDepartmentsRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 string DescribeIntegrationDepartmentsRequest::GetDeptId() const

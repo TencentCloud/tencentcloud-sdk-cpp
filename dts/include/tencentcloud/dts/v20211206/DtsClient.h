@@ -79,10 +79,14 @@
 #include <tencentcloud/dts/v20211206/model/ModifyMigrateJobSpecResponse.h>
 #include <tencentcloud/dts/v20211206/model/ModifyMigrateNameRequest.h>
 #include <tencentcloud/dts/v20211206/model/ModifyMigrateNameResponse.h>
+#include <tencentcloud/dts/v20211206/model/ModifyMigrateRateLimitRequest.h>
+#include <tencentcloud/dts/v20211206/model/ModifyMigrateRateLimitResponse.h>
 #include <tencentcloud/dts/v20211206/model/ModifyMigrationJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/ModifyMigrationJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/ModifySyncJobConfigRequest.h>
 #include <tencentcloud/dts/v20211206/model/ModifySyncJobConfigResponse.h>
+#include <tencentcloud/dts/v20211206/model/ModifySyncRateLimitRequest.h>
+#include <tencentcloud/dts/v20211206/model/ModifySyncRateLimitResponse.h>
 #include <tencentcloud/dts/v20211206/model/PauseMigrateJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/PauseMigrateJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/PauseSyncJobRequest.h>
@@ -213,12 +217,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMigrateNameResponse> ModifyMigrateNameOutcome;
                 typedef std::future<ModifyMigrateNameOutcome> ModifyMigrateNameOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifyMigrateNameRequest&, ModifyMigrateNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrateNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMigrateRateLimitResponse> ModifyMigrateRateLimitOutcome;
+                typedef std::future<ModifyMigrateRateLimitOutcome> ModifyMigrateRateLimitOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ModifyMigrateRateLimitRequest&, ModifyMigrateRateLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrateRateLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMigrationJobResponse> ModifyMigrationJobOutcome;
                 typedef std::future<ModifyMigrationJobOutcome> ModifyMigrationJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifyMigrationJobRequest&, ModifyMigrationJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrationJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySyncJobConfigResponse> ModifySyncJobConfigOutcome;
                 typedef std::future<ModifySyncJobConfigOutcome> ModifySyncJobConfigOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifySyncJobConfigRequest&, ModifySyncJobConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySyncJobConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySyncRateLimitResponse> ModifySyncRateLimitOutcome;
+                typedef std::future<ModifySyncRateLimitOutcome> ModifySyncRateLimitOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ModifySyncRateLimitRequest&, ModifySyncRateLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySyncRateLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::PauseMigrateJobResponse> PauseMigrateJobOutcome;
                 typedef std::future<PauseMigrateJobOutcome> PauseMigrateJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::PauseMigrateJobRequest&, PauseMigrateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseMigrateJobAsyncHandler;
@@ -531,6 +541,15 @@ namespace TencentCloud
                 ModifyMigrateNameOutcomeCallable ModifyMigrateNameCallable(const Model::ModifyMigrateNameRequest& request);
 
                 /**
+                 *用户在发现迁移任务对用户的数据库的负载影响较大时、可通过该接口限制任务的传输速率
+                 * @param req ModifyMigrateRateLimitRequest
+                 * @return ModifyMigrateRateLimitOutcome
+                 */
+                ModifyMigrateRateLimitOutcome ModifyMigrateRateLimit(const Model::ModifyMigrateRateLimitRequest &request);
+                void ModifyMigrateRateLimitAsync(const Model::ModifyMigrateRateLimitRequest& request, const ModifyMigrateRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMigrateRateLimitOutcomeCallable ModifyMigrateRateLimitCallable(const Model::ModifyMigrateRateLimitRequest& request);
+
+                /**
                  *配置迁移服务，配置成功后可通过`CreateMigrationCheckJob` 创建迁移校验任务接口发起校验任务，只有校验通过才能启动迁移任务。
                  * @param req ModifyMigrationJobRequest
                  * @return ModifyMigrationJobOutcome
@@ -548,6 +567,15 @@ namespace TencentCloud
                 ModifySyncJobConfigOutcome ModifySyncJobConfig(const Model::ModifySyncJobConfigRequest &request);
                 void ModifySyncJobConfigAsync(const Model::ModifySyncJobConfigRequest& request, const ModifySyncJobConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySyncJobConfigOutcomeCallable ModifySyncJobConfigCallable(const Model::ModifySyncJobConfigRequest& request);
+
+                /**
+                 *用户在发现同步任务对用户的数据库的负载影响较大时、可通过该接口限制任务的传输速率
+                 * @param req ModifySyncRateLimitRequest
+                 * @return ModifySyncRateLimitOutcome
+                 */
+                ModifySyncRateLimitOutcome ModifySyncRateLimit(const Model::ModifySyncRateLimitRequest &request);
+                void ModifySyncRateLimitAsync(const Model::ModifySyncRateLimitRequest& request, const ModifySyncRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySyncRateLimitOutcomeCallable ModifySyncRateLimitCallable(const Model::ModifySyncRateLimitRequest& request);
 
                 /**
                  *暂停一个迁移任务。

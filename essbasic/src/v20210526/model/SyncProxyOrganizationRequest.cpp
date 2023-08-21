@@ -28,7 +28,9 @@ SyncProxyOrganizationRequest::SyncProxyOrganizationRequest() :
     m_businessLicenseHasBeenSet(false),
     m_uniformSocialCreditCodeHasBeenSet(false),
     m_proxyLegalNameHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_proxyLegalIdCardTypeHasBeenSet(false),
+    m_proxyLegalIdCardNumberHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,22 @@ string SyncProxyOrganizationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_proxyLegalIdCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyLegalIdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyLegalIdCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyLegalIdCardNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyLegalIdCardNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyLegalIdCardNumber.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -191,6 +209,38 @@ void SyncProxyOrganizationRequest::SetOperator(const UserInfo& _operator)
 bool SyncProxyOrganizationRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string SyncProxyOrganizationRequest::GetProxyLegalIdCardType() const
+{
+    return m_proxyLegalIdCardType;
+}
+
+void SyncProxyOrganizationRequest::SetProxyLegalIdCardType(const string& _proxyLegalIdCardType)
+{
+    m_proxyLegalIdCardType = _proxyLegalIdCardType;
+    m_proxyLegalIdCardTypeHasBeenSet = true;
+}
+
+bool SyncProxyOrganizationRequest::ProxyLegalIdCardTypeHasBeenSet() const
+{
+    return m_proxyLegalIdCardTypeHasBeenSet;
+}
+
+string SyncProxyOrganizationRequest::GetProxyLegalIdCardNumber() const
+{
+    return m_proxyLegalIdCardNumber;
+}
+
+void SyncProxyOrganizationRequest::SetProxyLegalIdCardNumber(const string& _proxyLegalIdCardNumber)
+{
+    m_proxyLegalIdCardNumber = _proxyLegalIdCardNumber;
+    m_proxyLegalIdCardNumberHasBeenSet = true;
+}
+
+bool SyncProxyOrganizationRequest::ProxyLegalIdCardNumberHasBeenSet() const
+{
+    return m_proxyLegalIdCardNumberHasBeenSet;
 }
 
 

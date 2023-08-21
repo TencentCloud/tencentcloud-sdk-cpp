@@ -25,6 +25,7 @@ using namespace std;
 CreateIntegrationDepartmentRequest::CreateIntegrationDepartmentRequest() :
     m_operatorHasBeenSet(false),
     m_deptNameHasBeenSet(false),
+    m_agentHasBeenSet(false),
     m_parentDeptIdHasBeenSet(false),
     m_parentDeptOpenIdHasBeenSet(false),
     m_deptOpenIdHasBeenSet(false),
@@ -54,6 +55,15 @@ string CreateIntegrationDepartmentRequest::ToJsonString() const
         string key = "DeptName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deptName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_parentDeptIdHasBeenSet)
@@ -126,6 +136,22 @@ void CreateIntegrationDepartmentRequest::SetDeptName(const string& _deptName)
 bool CreateIntegrationDepartmentRequest::DeptNameHasBeenSet() const
 {
     return m_deptNameHasBeenSet;
+}
+
+Agent CreateIntegrationDepartmentRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateIntegrationDepartmentRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateIntegrationDepartmentRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 string CreateIntegrationDepartmentRequest::GetParentDeptId() const

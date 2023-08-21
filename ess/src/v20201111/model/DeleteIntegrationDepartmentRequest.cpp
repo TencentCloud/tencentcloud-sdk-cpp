@@ -25,6 +25,7 @@ using namespace std;
 DeleteIntegrationDepartmentRequest::DeleteIntegrationDepartmentRequest() :
     m_operatorHasBeenSet(false),
     m_deptIdHasBeenSet(false),
+    m_agentHasBeenSet(false),
     m_receiveDeptIdHasBeenSet(false)
 {
 }
@@ -51,6 +52,15 @@ string DeleteIntegrationDepartmentRequest::ToJsonString() const
         string key = "DeptId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deptId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_receiveDeptIdHasBeenSet)
@@ -99,6 +109,22 @@ void DeleteIntegrationDepartmentRequest::SetDeptId(const string& _deptId)
 bool DeleteIntegrationDepartmentRequest::DeptIdHasBeenSet() const
 {
     return m_deptIdHasBeenSet;
+}
+
+Agent DeleteIntegrationDepartmentRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void DeleteIntegrationDepartmentRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool DeleteIntegrationDepartmentRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 string DeleteIntegrationDepartmentRequest::GetReceiveDeptId() const

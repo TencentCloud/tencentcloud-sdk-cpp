@@ -30,7 +30,8 @@ ProxyNodeInfo::ProxyNodeInfo() :
     m_clusterIdHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_ossProxyNodeNameHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome ProxyNodeInfo::Deserialize(const rapidjson::Value &value)
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("OssProxyNodeName") && !value["OssProxyNodeName"].IsNull())
+    {
+        if (!value["OssProxyNodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyNodeInfo.OssProxyNodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ossProxyNodeName = string(value["OssProxyNodeName"].GetString());
+        m_ossProxyNodeNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void ProxyNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ossProxyNodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OssProxyNodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ossProxyNodeName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void ProxyNodeInfo::SetZone(const string& _zone)
 bool ProxyNodeInfo::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string ProxyNodeInfo::GetOssProxyNodeName() const
+{
+    return m_ossProxyNodeName;
+}
+
+void ProxyNodeInfo::SetOssProxyNodeName(const string& _ossProxyNodeName)
+{
+    m_ossProxyNodeName = _ossProxyNodeName;
+    m_ossProxyNodeNameHasBeenSet = true;
+}
+
+bool ProxyNodeInfo::OssProxyNodeNameHasBeenSet() const
+{
+    return m_ossProxyNodeNameHasBeenSet;
 }
 

@@ -1244,6 +1244,49 @@ DtsClient::ModifyMigrateNameOutcomeCallable DtsClient::ModifyMigrateNameCallable
     return task->get_future();
 }
 
+DtsClient::ModifyMigrateRateLimitOutcome DtsClient::ModifyMigrateRateLimit(const ModifyMigrateRateLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMigrateRateLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMigrateRateLimitResponse rsp = ModifyMigrateRateLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMigrateRateLimitOutcome(rsp);
+        else
+            return ModifyMigrateRateLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMigrateRateLimitOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifyMigrateRateLimitAsync(const ModifyMigrateRateLimitRequest& request, const ModifyMigrateRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMigrateRateLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ModifyMigrateRateLimitOutcomeCallable DtsClient::ModifyMigrateRateLimitCallable(const ModifyMigrateRateLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMigrateRateLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMigrateRateLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::ModifyMigrationJobOutcome DtsClient::ModifyMigrationJob(const ModifyMigrationJobRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMigrationJob");
@@ -1323,6 +1366,49 @@ DtsClient::ModifySyncJobConfigOutcomeCallable DtsClient::ModifySyncJobConfigCall
         [this, request]()
         {
             return this->ModifySyncJobConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::ModifySyncRateLimitOutcome DtsClient::ModifySyncRateLimit(const ModifySyncRateLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySyncRateLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySyncRateLimitResponse rsp = ModifySyncRateLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySyncRateLimitOutcome(rsp);
+        else
+            return ModifySyncRateLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySyncRateLimitOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifySyncRateLimitAsync(const ModifySyncRateLimitRequest& request, const ModifySyncRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySyncRateLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ModifySyncRateLimitOutcomeCallable DtsClient::ModifySyncRateLimitCallable(const ModifySyncRateLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySyncRateLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySyncRateLimit(request);
         }
     );
 

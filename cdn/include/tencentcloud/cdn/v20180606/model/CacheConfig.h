@@ -50,9 +50,11 @@ namespace TencentCloud
                      * 获取启发式自定义时间缓存配置开关，取值有：
 on：开启
 off：关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeuristicCacheTimeSwitch 启发式自定义时间缓存配置开关，取值有：
 on：开启
 off：关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHeuristicCacheTimeSwitch() const;
@@ -61,9 +63,11 @@ off：关闭
                      * 设置启发式自定义时间缓存配置开关，取值有：
 on：开启
 off：关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _heuristicCacheTimeSwitch 启发式自定义时间缓存配置开关，取值有：
 on：开启
 off：关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeuristicCacheTimeSwitch(const std::string& _heuristicCacheTimeSwitch);
@@ -77,14 +81,18 @@ off：关闭
 
                     /**
                      * 获取单位 秒.
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeuristicCacheTime 单位 秒.
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHeuristicCacheTime() const;
 
                     /**
                      * 设置单位 秒.
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _heuristicCacheTime 单位 秒.
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeuristicCacheTime(const int64_t& _heuristicCacheTime);
@@ -102,12 +110,14 @@ off：关闭
                      * 启发式自定义时间缓存配置开关，取值有：
 on：开启
 off：关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_heuristicCacheTimeSwitch;
                     bool m_heuristicCacheTimeSwitchHasBeenSet;
 
                     /**
                      * 单位 秒.
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_heuristicCacheTime;
                     bool m_heuristicCacheTimeHasBeenSet;

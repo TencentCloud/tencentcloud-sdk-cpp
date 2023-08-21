@@ -51,9 +51,11 @@ namespace TencentCloud
                      * 获取启发式缓存配置开关，取值有：
 on：开启
 off：关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Switch 启发式缓存配置开关，取值有：
 on：开启
 off：关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSwitch() const;
@@ -62,9 +64,11 @@ off：关闭
                      * 设置启发式缓存配置开关，取值有：
 on：开启
 off：关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switch 启发式缓存配置开关，取值有：
 on：开启
 off：关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -78,14 +82,18 @@ off：关闭
 
                     /**
                      * 获取自定义启发式缓存时间配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheConfig 自定义启发式缓存时间配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CacheConfig GetCacheConfig() const;
 
                     /**
                      * 设置自定义启发式缓存时间配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cacheConfig 自定义启发式缓存时间配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCacheConfig(const CacheConfig& _cacheConfig);
@@ -103,12 +111,14 @@ off：关闭
                      * 启发式缓存配置开关，取值有：
 on：开启
 off：关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
                      * 自定义启发式缓存时间配置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheConfig m_cacheConfig;
                     bool m_cacheConfigHasBeenSet;

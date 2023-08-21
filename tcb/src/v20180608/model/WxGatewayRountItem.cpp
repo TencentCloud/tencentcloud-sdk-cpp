@@ -35,7 +35,8 @@ WxGatewayRountItem::WxGatewayRountItem() :
     m_gatewayRoutePathHasBeenSet(false),
     m_gatewayRouteMethodHasBeenSet(false),
     m_gatewayRoutePortHasBeenSet(false),
-    m_gatewayRouteEnvIdHasBeenSet(false)
+    m_gatewayRouteEnvIdHasBeenSet(false),
+    m_gatewayRoutePathMatchTypeHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome WxGatewayRountItem::Deserialize(const rapidjson::Value &valu
         m_gatewayRouteEnvIdHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewayRoutePathMatchType") && !value["GatewayRoutePathMatchType"].IsNull())
+    {
+        if (!value["GatewayRoutePathMatchType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WxGatewayRountItem.GatewayRoutePathMatchType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayRoutePathMatchType = string(value["GatewayRoutePathMatchType"].GetString());
+        m_gatewayRoutePathMatchTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void WxGatewayRountItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "GatewayRouteEnvId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gatewayRouteEnvId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayRoutePathMatchTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayRoutePathMatchType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayRoutePathMatchType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void WxGatewayRountItem::SetGatewayRouteEnvId(const string& _gatewayRouteEnvId)
 bool WxGatewayRountItem::GatewayRouteEnvIdHasBeenSet() const
 {
     return m_gatewayRouteEnvIdHasBeenSet;
+}
+
+string WxGatewayRountItem::GetGatewayRoutePathMatchType() const
+{
+    return m_gatewayRoutePathMatchType;
+}
+
+void WxGatewayRountItem::SetGatewayRoutePathMatchType(const string& _gatewayRoutePathMatchType)
+{
+    m_gatewayRoutePathMatchType = _gatewayRoutePathMatchType;
+    m_gatewayRoutePathMatchTypeHasBeenSet = true;
+}
+
+bool WxGatewayRountItem::GatewayRoutePathMatchTypeHasBeenSet() const
+{
+    return m_gatewayRoutePathMatchTypeHasBeenSet;
 }
 

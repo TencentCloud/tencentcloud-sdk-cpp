@@ -174,6 +174,48 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型
+                     * @return ProxyLegalIdCardType 第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型
+                     * 
+                     */
+                    std::string GetProxyLegalIdCardType() const;
+
+                    /**
+                     * 设置第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型
+                     * @param _proxyLegalIdCardType 第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型
+                     * 
+                     */
+                    void SetProxyLegalIdCardType(const std::string& _proxyLegalIdCardType);
+
+                    /**
+                     * 判断参数 ProxyLegalIdCardType 是否已赋值
+                     * @return ProxyLegalIdCardType 是否已赋值
+                     * 
+                     */
+                    bool ProxyLegalIdCardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取第三方平台子客企业法人/负责人证件号
+                     * @return ProxyLegalIdCardNumber 第三方平台子客企业法人/负责人证件号
+                     * 
+                     */
+                    std::string GetProxyLegalIdCardNumber() const;
+
+                    /**
+                     * 设置第三方平台子客企业法人/负责人证件号
+                     * @param _proxyLegalIdCardNumber 第三方平台子客企业法人/负责人证件号
+                     * 
+                     */
+                    void SetProxyLegalIdCardNumber(const std::string& _proxyLegalIdCardNumber);
+
+                    /**
+                     * 判断参数 ProxyLegalIdCardNumber 是否已赋值
+                     * @return ProxyLegalIdCardNumber 是否已赋值
+                     * 
+                     */
+                    bool ProxyLegalIdCardNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +254,18 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型
+                     */
+                    std::string m_proxyLegalIdCardType;
+                    bool m_proxyLegalIdCardTypeHasBeenSet;
+
+                    /**
+                     * 第三方平台子客企业法人/负责人证件号
+                     */
+                    std::string m_proxyLegalIdCardNumber;
+                    bool m_proxyLegalIdCardNumberHasBeenSet;
 
                 };
             }
