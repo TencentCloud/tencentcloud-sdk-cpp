@@ -86,6 +86,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/PostAttackDownloadTaskRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/DescribePolicyStatusRequest.h
+  include/tencentcloud/waf/v20180125/model/GetAttackTotalCountRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteIpAccessControlRequest.h
   include/tencentcloud/waf/v20180125/model/AttackLogInfo.h
@@ -121,6 +122,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/CdcRegion.h
   include/tencentcloud/waf/v20180125/model/AccessValueInfo.h
   include/tencentcloud/waf/v20180125/model/DeleteIpAccessControlResponse.h
+  include/tencentcloud/waf/v20180125/model/GetAttackTotalCountResponse.h
   include/tencentcloud/waf/v20180125/model/AccessLogInfo.h
   include/tencentcloud/waf/v20180125/model/InstanceInfo.h
   include/tencentcloud/waf/v20180125/model/PortInfo.h
@@ -241,6 +243,7 @@ set(waf_src
   src/v20180125/model/PostAttackDownloadTaskRequest.cpp
   src/v20180125/model/ModifyCustomWhiteRuleResponse.cpp
   src/v20180125/model/DescribePolicyStatusRequest.cpp
+  src/v20180125/model/GetAttackTotalCountRequest.cpp
   src/v20180125/model/DescribeAccessFastAnalysisRequest.cpp
   src/v20180125/model/DeleteIpAccessControlRequest.cpp
   src/v20180125/model/AttackLogInfo.cpp
@@ -276,6 +279,7 @@ set(waf_src
   src/v20180125/model/CdcRegion.cpp
   src/v20180125/model/AccessValueInfo.cpp
   src/v20180125/model/DeleteIpAccessControlResponse.cpp
+  src/v20180125/model/GetAttackTotalCountResponse.cpp
   src/v20180125/model/AccessLogInfo.cpp
   src/v20180125/model/InstanceInfo.cpp
   src/v20180125/model/PortInfo.cpp

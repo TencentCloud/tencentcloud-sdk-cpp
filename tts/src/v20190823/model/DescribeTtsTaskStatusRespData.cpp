@@ -25,6 +25,7 @@ DescribeTtsTaskStatusRespData::DescribeTtsTaskStatusRespData() :
     m_statusHasBeenSet(false),
     m_statusStrHasBeenSet(false),
     m_resultUrlHasBeenSet(false),
+    m_subtitlesHasBeenSet(false),
     m_errorMsgHasBeenSet(false)
 {
 }
@@ -74,6 +75,26 @@ CoreInternalOutcome DescribeTtsTaskStatusRespData::Deserialize(const rapidjson::
         m_resultUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("Subtitles") && !value["Subtitles"].IsNull())
+    {
+        if (!value["Subtitles"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeTtsTaskStatusRespData.Subtitles` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Subtitles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Subtitle item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_subtitles.push_back(item);
+        }
+        m_subtitlesHasBeenSet = true;
+    }
+
     if (value.HasMember("ErrorMsg") && !value["ErrorMsg"].IsNull())
     {
         if (!value["ErrorMsg"].IsString())
@@ -121,6 +142,21 @@ void DescribeTtsTaskStatusRespData::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "ResultUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resultUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitlesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Subtitles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subtitles.begin(); itr != m_subtitles.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_errorMsgHasBeenSet)
@@ -196,6 +232,22 @@ void DescribeTtsTaskStatusRespData::SetResultUrl(const string& _resultUrl)
 bool DescribeTtsTaskStatusRespData::ResultUrlHasBeenSet() const
 {
     return m_resultUrlHasBeenSet;
+}
+
+vector<Subtitle> DescribeTtsTaskStatusRespData::GetSubtitles() const
+{
+    return m_subtitles;
+}
+
+void DescribeTtsTaskStatusRespData::SetSubtitles(const vector<Subtitle>& _subtitles)
+{
+    m_subtitles = _subtitles;
+    m_subtitlesHasBeenSet = true;
+}
+
+bool DescribeTtsTaskStatusRespData::SubtitlesHasBeenSet() const
+{
+    return m_subtitlesHasBeenSet;
 }
 
 string DescribeTtsTaskStatusRespData::GetErrorMsg() const

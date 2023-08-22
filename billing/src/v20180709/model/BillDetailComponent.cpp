@@ -49,7 +49,8 @@ BillDetailComponent::BillDetailComponent() :
     m_sPDeductionRateHasBeenSet(false),
     m_sPDeductionHasBeenSet(false),
     m_originalCostWithSPHasBeenSet(false),
-    m_blendedDiscountHasBeenSet(false)
+    m_blendedDiscountHasBeenSet(false),
+    m_componentConfigHasBeenSet(false)
 {
 }
 
@@ -348,6 +349,26 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
         m_blendedDiscountHasBeenSet = true;
     }
 
+    if (value.HasMember("ComponentConfig") && !value["ComponentConfig"].IsNull())
+    {
+        if (!value["ComponentConfig"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.ComponentConfig` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ComponentConfig"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BillDetailComponentConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_componentConfig.push_back(item);
+        }
+        m_componentConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +606,21 @@ void BillDetailComponent::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "BlendedDiscount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_blendedDiscount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_componentConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_componentConfig.begin(); itr != m_componentConfig.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1052,5 +1088,21 @@ void BillDetailComponent::SetBlendedDiscount(const string& _blendedDiscount)
 bool BillDetailComponent::BlendedDiscountHasBeenSet() const
 {
     return m_blendedDiscountHasBeenSet;
+}
+
+vector<BillDetailComponentConfig> BillDetailComponent::GetComponentConfig() const
+{
+    return m_componentConfig;
+}
+
+void BillDetailComponent::SetComponentConfig(const vector<BillDetailComponentConfig>& _componentConfig)
+{
+    m_componentConfig = _componentConfig;
+    m_componentConfigHasBeenSet = true;
+}
+
+bool BillDetailComponent::ComponentConfigHasBeenSet() const
+{
+    return m_componentConfigHasBeenSet;
 }
 

@@ -159,6 +159,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/AssociateConfigWithGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/UpdateRepositoryResponse.h
   include/tencentcloud/tsf/v20180326/model/DisassociateKafkaConfigRequest.h
+  include/tencentcloud/tsf/v20180326/model/TsfConfigCenter.h
   include/tencentcloud/tsf/v20180326/model/RollbackConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/RevocationConfigRequest.h
   include/tencentcloud/tsf/v20180326/model/StartContainerGroupResponse.h
@@ -779,6 +780,7 @@ set(tsf_src
   src/v20180326/model/AssociateConfigWithGroupResponse.cpp
   src/v20180326/model/UpdateRepositoryResponse.cpp
   src/v20180326/model/DisassociateKafkaConfigRequest.cpp
+  src/v20180326/model/TsfConfigCenter.cpp
   src/v20180326/model/RollbackConfigResponse.cpp
   src/v20180326/model/RevocationConfigRequest.cpp
   src/v20180326/model/StartContainerGroupResponse.cpp

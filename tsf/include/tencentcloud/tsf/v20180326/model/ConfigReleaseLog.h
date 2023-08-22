@@ -471,6 +471,43 @@ namespace TencentCloud
                      */
                     bool RollbackFlagHasBeenSet() const;
 
+                    /**
+                     * 获取发布成功的配置中心
+ ALL/EXCLUSIVE/SHARE/NONE
+
+全部发布成功，独占发布成功，共享发布成功，全部发布失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReleasedConfigCenter 发布成功的配置中心
+ ALL/EXCLUSIVE/SHARE/NONE
+
+全部发布成功，独占发布成功，共享发布成功，全部发布失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReleasedConfigCenter() const;
+
+                    /**
+                     * 设置发布成功的配置中心
+ ALL/EXCLUSIVE/SHARE/NONE
+
+全部发布成功，独占发布成功，共享发布成功，全部发布失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _releasedConfigCenter 发布成功的配置中心
+ ALL/EXCLUSIVE/SHARE/NONE
+
+全部发布成功，独占发布成功，共享发布成功，全部发布失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReleasedConfigCenter(const std::string& _releasedConfigCenter);
+
+                    /**
+                     * 判断参数 ReleasedConfigCenter 是否已赋值
+                     * @return ReleasedConfigCenter 是否已赋值
+                     * 
+                     */
+                    bool ReleasedConfigCenterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -591,6 +628,16 @@ namespace TencentCloud
                      */
                     bool m_rollbackFlag;
                     bool m_rollbackFlagHasBeenSet;
+
+                    /**
+                     * 发布成功的配置中心
+ ALL/EXCLUSIVE/SHARE/NONE
+
+全部发布成功，独占发布成功，共享发布成功，全部发布失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_releasedConfigCenter;
+                    bool m_releasedConfigCenterHasBeenSet;
 
                 };
             }

@@ -24,7 +24,9 @@ ImageInfo::ImageInfo() :
     m_imageTypeHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_registryRegionHasBeenSet(false),
-    m_registryIdHasBeenSet(false)
+    m_registryIdHasBeenSet(false),
+    m_allowSaveAllContentHasBeenSet(false),
+    m_imageNameHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
         m_registryIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowSaveAllContent") && !value["AllowSaveAllContent"].IsNull())
+    {
+        if (!value["AllowSaveAllContent"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.AllowSaveAllContent` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowSaveAllContent = value["AllowSaveAllContent"].GetBool();
+        m_allowSaveAllContentHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageName") && !value["ImageName"].IsNull())
+    {
+        if (!value["ImageName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.ImageName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageName = string(value["ImageName"].GetString());
+        m_imageNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ImageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RegistryId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowSaveAllContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowSaveAllContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowSaveAllContent, allocator);
+    }
+
+    if (m_imageNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ImageInfo::SetRegistryId(const string& _registryId)
 bool ImageInfo::RegistryIdHasBeenSet() const
 {
     return m_registryIdHasBeenSet;
+}
+
+bool ImageInfo::GetAllowSaveAllContent() const
+{
+    return m_allowSaveAllContent;
+}
+
+void ImageInfo::SetAllowSaveAllContent(const bool& _allowSaveAllContent)
+{
+    m_allowSaveAllContent = _allowSaveAllContent;
+    m_allowSaveAllContentHasBeenSet = true;
+}
+
+bool ImageInfo::AllowSaveAllContentHasBeenSet() const
+{
+    return m_allowSaveAllContentHasBeenSet;
+}
+
+string ImageInfo::GetImageName() const
+{
+    return m_imageName;
+}
+
+void ImageInfo::SetImageName(const string& _imageName)
+{
+    m_imageName = _imageName;
+    m_imageNameHasBeenSet = true;
+}
+
+bool ImageInfo::ImageNameHasBeenSet() const
+{
+    return m_imageNameHasBeenSet;
 }
 

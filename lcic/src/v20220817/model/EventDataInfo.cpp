@@ -22,7 +22,11 @@ using namespace std;
 
 EventDataInfo::EventDataInfo() :
     m_roomIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_deviceHasBeenSet(false),
+    m_durationHasBeenSet(false),
+    m_recordSizeHasBeenSet(false),
+    m_recordUrlHasBeenSet(false)
 {
 }
 
@@ -51,6 +55,46 @@ CoreInternalOutcome EventDataInfo::Deserialize(const rapidjson::Value &value)
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Device") && !value["Device"].IsNull())
+    {
+        if (!value["Device"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDataInfo.Device` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_device = value["Device"].GetUint64();
+        m_deviceHasBeenSet = true;
+    }
+
+    if (value.HasMember("Duration") && !value["Duration"].IsNull())
+    {
+        if (!value["Duration"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDataInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_duration = value["Duration"].GetUint64();
+        m_durationHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordSize") && !value["RecordSize"].IsNull())
+    {
+        if (!value["RecordSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDataInfo.RecordSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordSize = value["RecordSize"].GetUint64();
+        m_recordSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordUrl") && !value["RecordUrl"].IsNull())
+    {
+        if (!value["RecordUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDataInfo.RecordUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordUrl = string(value["RecordUrl"].GetString());
+        m_recordUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +116,38 @@ void EventDataInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Device";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_device, allocator);
+    }
+
+    if (m_durationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Duration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_recordSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordSize, allocator);
+    }
+
+    if (m_recordUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +183,69 @@ void EventDataInfo::SetUserId(const string& _userId)
 bool EventDataInfo::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+uint64_t EventDataInfo::GetDevice() const
+{
+    return m_device;
+}
+
+void EventDataInfo::SetDevice(const uint64_t& _device)
+{
+    m_device = _device;
+    m_deviceHasBeenSet = true;
+}
+
+bool EventDataInfo::DeviceHasBeenSet() const
+{
+    return m_deviceHasBeenSet;
+}
+
+uint64_t EventDataInfo::GetDuration() const
+{
+    return m_duration;
+}
+
+void EventDataInfo::SetDuration(const uint64_t& _duration)
+{
+    m_duration = _duration;
+    m_durationHasBeenSet = true;
+}
+
+bool EventDataInfo::DurationHasBeenSet() const
+{
+    return m_durationHasBeenSet;
+}
+
+uint64_t EventDataInfo::GetRecordSize() const
+{
+    return m_recordSize;
+}
+
+void EventDataInfo::SetRecordSize(const uint64_t& _recordSize)
+{
+    m_recordSize = _recordSize;
+    m_recordSizeHasBeenSet = true;
+}
+
+bool EventDataInfo::RecordSizeHasBeenSet() const
+{
+    return m_recordSizeHasBeenSet;
+}
+
+string EventDataInfo::GetRecordUrl() const
+{
+    return m_recordUrl;
+}
+
+void EventDataInfo::SetRecordUrl(const string& _recordUrl)
+{
+    m_recordUrl = _recordUrl;
+    m_recordUrlHasBeenSet = true;
+}
+
+bool EventDataInfo::RecordUrlHasBeenSet() const
+{
+    return m_recordUrlHasBeenSet;
 }
 

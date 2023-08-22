@@ -44,27 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要保存的kernel数组
-                     * @return Kernels 要保存的kernel数组
-                     * 
-                     */
-                    std::vector<std::string> GetKernels() const;
-
-                    /**
-                     * 设置要保存的kernel数组
-                     * @param _kernels 要保存的kernel数组
-                     * 
-                     */
-                    void SetKernels(const std::vector<std::string>& _kernels);
-
-                    /**
-                     * 判断参数 Kernels 是否已赋值
-                     * @return Kernels 是否已赋值
-                     * 
-                     */
-                    bool KernelsHasBeenSet() const;
-
-                    /**
                      * 获取镜像信息
                      * @return ImageInfo 镜像信息
                      * 
@@ -106,13 +85,28 @@ namespace TencentCloud
                      */
                     bool NotebookIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取要保存的kernel数组
+                     * @return Kernels 要保存的kernel数组
+                     * 
+                     */
+                    std::vector<std::string> GetKernels() const;
 
                     /**
-                     * 要保存的kernel数组
+                     * 设置要保存的kernel数组
+                     * @param _kernels 要保存的kernel数组
+                     * 
                      */
-                    std::vector<std::string> m_kernels;
-                    bool m_kernelsHasBeenSet;
+                    void SetKernels(const std::vector<std::string>& _kernels);
+
+                    /**
+                     * 判断参数 Kernels 是否已赋值
+                     * @return Kernels 是否已赋值
+                     * 
+                     */
+                    bool KernelsHasBeenSet() const;
+
+                private:
 
                     /**
                      * 镜像信息
@@ -125,6 +119,12 @@ namespace TencentCloud
                      */
                     std::string m_notebookId;
                     bool m_notebookIdHasBeenSet;
+
+                    /**
+                     * 要保存的kernel数组
+                     */
+                    std::vector<std::string> m_kernels;
+                    bool m_kernelsHasBeenSet;
 
                 };
             }

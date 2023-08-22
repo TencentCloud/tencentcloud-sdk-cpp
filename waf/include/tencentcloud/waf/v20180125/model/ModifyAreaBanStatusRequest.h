@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修要修改的域名
-                     * @return Domain 修要修改的域名
+                     * 获取需要修改的域名
+                     * @return Domain 需要修改的域名
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置修要修改的域名
-                     * @param _domain 修要修改的域名
+                     * 设置需要修改的域名
+                     * @param _domain 需要修改的域名
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 修要修改的域名
+                     * 需要修改的域名
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

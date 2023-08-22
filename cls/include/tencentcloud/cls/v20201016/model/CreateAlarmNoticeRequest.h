@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/NoticeReceiver.h>
 #include <tencentcloud/cls/v20201016/model/WebCallback.h>
+#include <tencentcloud/cls/v20201016/model/NoticeRule.h>
 
 
 namespace TencentCloud
@@ -140,6 +141,51 @@ namespace TencentCloud
                      */
                     bool WebCallbacksHasBeenSet() const;
 
+                    /**
+                     * 获取通知规则。
+
+ 注意:  
+
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。
+
+
+                     * @return NoticeRules 通知规则。
+
+ 注意:  
+
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。
+
+
+                     * 
+                     */
+                    std::vector<NoticeRule> GetNoticeRules() const;
+
+                    /**
+                     * 设置通知规则。
+
+ 注意:  
+
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。
+
+
+                     * @param _noticeRules 通知规则。
+
+ 注意:  
+
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。
+
+
+                     * 
+                     */
+                    void SetNoticeRules(const std::vector<NoticeRule>& _noticeRules);
+
+                    /**
+                     * 判断参数 NoticeRules 是否已赋值
+                     * @return NoticeRules 是否已赋值
+                     * 
+                     */
+                    bool NoticeRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +214,18 @@ namespace TencentCloud
                      */
                     std::vector<WebCallback> m_webCallbacks;
                     bool m_webCallbacksHasBeenSet;
+
+                    /**
+                     * 通知规则。
+
+ 注意:  
+
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。
+
+
+                     */
+                    std::vector<NoticeRule> m_noticeRules;
+                    bool m_noticeRulesHasBeenSet;
 
                 };
             }

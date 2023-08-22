@@ -101,6 +101,8 @@
 #include <tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsResponse.h>
 #include <tencentcloud/waf/v20180125/model/GetAttackHistogramRequest.h>
 #include <tencentcloud/waf/v20180125/model/GetAttackHistogramResponse.h>
+#include <tencentcloud/waf/v20180125/model/GetAttackTotalCountRequest.h>
+#include <tencentcloud/waf/v20180125/model/GetAttackTotalCountResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h>
@@ -260,6 +262,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetAttackHistogramResponse> GetAttackHistogramOutcome;
                 typedef std::future<GetAttackHistogramOutcome> GetAttackHistogramOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::GetAttackHistogramRequest&, GetAttackHistogramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAttackHistogramAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetAttackTotalCountResponse> GetAttackTotalCountOutcome;
+                typedef std::future<GetAttackTotalCountOutcome> GetAttackTotalCountOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::GetAttackTotalCountRequest&, GetAttackTotalCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAttackTotalCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAccessPeriodResponse> ModifyAccessPeriodOutcome;
                 typedef std::future<ModifyAccessPeriodOutcome> ModifyAccessPeriodOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAccessPeriodRequest&, ModifyAccessPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPeriodAsyncHandler;
@@ -657,6 +662,15 @@ namespace TencentCloud
                 GetAttackHistogramOutcome GetAttackHistogram(const Model::GetAttackHistogramRequest &request);
                 void GetAttackHistogramAsync(const Model::GetAttackHistogramRequest& request, const GetAttackHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetAttackHistogramOutcomeCallable GetAttackHistogramCallable(const Model::GetAttackHistogramRequest& request);
+
+                /**
+                 *按照条件查询展示攻击总次数
+                 * @param req GetAttackTotalCountRequest
+                 * @return GetAttackTotalCountOutcome
+                 */
+                GetAttackTotalCountOutcome GetAttackTotalCount(const Model::GetAttackTotalCountRequest &request);
+                void GetAttackTotalCountAsync(const Model::GetAttackTotalCountRequest& request, const GetAttackTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAttackTotalCountOutcomeCallable GetAttackTotalCountCallable(const Model::GetAttackTotalCountRequest& request);
 
                 /**
                  *本接口用于修改访问日志保存期限及大字段是否存储

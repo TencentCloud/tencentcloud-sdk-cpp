@@ -25,10 +25,12 @@ ContainerFileInfo::ContainerFileInfo() :
     m_containerHasBeenSet(false),
     m_logPathHasBeenSet(false),
     m_filePatternHasBeenSet(false),
+    m_filePathsHasBeenSet(false),
     m_includeLabelsHasBeenSet(false),
     m_workLoadHasBeenSet(false),
     m_excludeNamespaceHasBeenSet(false),
-    m_excludeLabelsHasBeenSet(false)
+    m_excludeLabelsHasBeenSet(false),
+    m_customLabelsHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,26 @@ CoreInternalOutcome ContainerFileInfo::Deserialize(const rapidjson::Value &value
         }
         m_filePattern = string(value["FilePattern"].GetString());
         m_filePatternHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilePaths") && !value["FilePaths"].IsNull())
+    {
+        if (!value["FilePaths"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ContainerFileInfo.FilePaths` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FilePaths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FilePathInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_filePaths.push_back(item);
+        }
+        m_filePathsHasBeenSet = true;
     }
 
     if (value.HasMember("IncludeLabels") && !value["IncludeLabels"].IsNull())
@@ -130,6 +152,19 @@ CoreInternalOutcome ContainerFileInfo::Deserialize(const rapidjson::Value &value
         m_excludeLabelsHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomLabels") && !value["CustomLabels"].IsNull())
+    {
+        if (!value["CustomLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ContainerFileInfo.CustomLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_customLabels.push_back((*itr).GetString());
+        }
+        m_customLabelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +202,21 @@ void ContainerFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "FilePattern";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_filePattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filePathsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilePaths";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filePaths.begin(); itr != m_filePaths.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_includeLabelsHasBeenSet)
@@ -207,6 +257,19 @@ void ContainerFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_excludeLabels.begin(); itr != m_excludeLabels.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_customLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customLabels.begin(); itr != m_customLabels.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -279,6 +342,22 @@ bool ContainerFileInfo::FilePatternHasBeenSet() const
     return m_filePatternHasBeenSet;
 }
 
+vector<FilePathInfo> ContainerFileInfo::GetFilePaths() const
+{
+    return m_filePaths;
+}
+
+void ContainerFileInfo::SetFilePaths(const vector<FilePathInfo>& _filePaths)
+{
+    m_filePaths = _filePaths;
+    m_filePathsHasBeenSet = true;
+}
+
+bool ContainerFileInfo::FilePathsHasBeenSet() const
+{
+    return m_filePathsHasBeenSet;
+}
+
 vector<string> ContainerFileInfo::GetIncludeLabels() const
 {
     return m_includeLabels;
@@ -341,5 +420,21 @@ void ContainerFileInfo::SetExcludeLabels(const vector<string>& _excludeLabels)
 bool ContainerFileInfo::ExcludeLabelsHasBeenSet() const
 {
     return m_excludeLabelsHasBeenSet;
+}
+
+vector<string> ContainerFileInfo::GetCustomLabels() const
+{
+    return m_customLabels;
+}
+
+void ContainerFileInfo::SetCustomLabels(const vector<string>& _customLabels)
+{
+    m_customLabels = _customLabels;
+    m_customLabelsHasBeenSet = true;
+}
+
+bool ContainerFileInfo::CustomLabelsHasBeenSet() const
+{
+    return m_customLabelsHasBeenSet;
 }
 

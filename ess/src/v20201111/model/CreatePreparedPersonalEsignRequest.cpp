@@ -35,7 +35,8 @@ CreatePreparedPersonalEsignRequest::CreatePreparedPersonalEsignRequest() :
     m_sealColorHasBeenSet(false),
     m_processSealHasBeenSet(false),
     m_fileIdHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,14 @@ string CreatePreparedPersonalEsignRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_licenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_licenseType, allocator);
     }
 
 
@@ -366,6 +375,22 @@ void CreatePreparedPersonalEsignRequest::SetAgent(const Agent& _agent)
 bool CreatePreparedPersonalEsignRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+int64_t CreatePreparedPersonalEsignRequest::GetLicenseType() const
+{
+    return m_licenseType;
+}
+
+void CreatePreparedPersonalEsignRequest::SetLicenseType(const int64_t& _licenseType)
+{
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
+}
+
+bool CreatePreparedPersonalEsignRequest::LicenseTypeHasBeenSet() const
+{
+    return m_licenseTypeHasBeenSet;
 }
 
 

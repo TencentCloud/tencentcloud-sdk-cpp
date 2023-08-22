@@ -105,6 +105,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubProductsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubProductsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeInstanceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeInstanceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionRequest.h>
@@ -340,6 +342,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatewaySubProductsResponse> DescribeGatewaySubProductsOutcome;
                 typedef std::future<DescribeGatewaySubProductsOutcome> DescribeGatewaySubProductsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewaySubProductsRequest&, DescribeGatewaySubProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewaySubProductsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
+                typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLoRaFrequencyResponse> DescribeLoRaFrequencyOutcome;
                 typedef std::future<DescribeLoRaFrequencyOutcome> DescribeLoRaFrequencyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeLoRaFrequencyRequest&, DescribeLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoRaFrequencyAsyncHandler;
@@ -858,6 +863,15 @@ namespace TencentCloud
                 DescribeGatewaySubProductsOutcome DescribeGatewaySubProducts(const Model::DescribeGatewaySubProductsRequest &request);
                 void DescribeGatewaySubProductsAsync(const Model::DescribeGatewaySubProductsRequest& request, const DescribeGatewaySubProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGatewaySubProductsOutcomeCallable DescribeGatewaySubProductsCallable(const Model::DescribeGatewaySubProductsRequest& request);
+
+                /**
+                 *公共实例过期时间 0001-01-01T00:00:00Z，公共实例是永久有效
+                 * @param req DescribeInstanceRequest
+                 * @return DescribeInstanceOutcome
+                 */
+                DescribeInstanceOutcome DescribeInstance(const Model::DescribeInstanceRequest &request);
+                void DescribeInstanceAsync(const Model::DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceOutcomeCallable DescribeInstanceCallable(const Model::DescribeInstanceRequest& request);
 
                 /**
                  *提供查询LoRa自定义频点详情的能力

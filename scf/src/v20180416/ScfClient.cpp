@@ -1932,6 +1932,49 @@ ScfClient::UpdateNamespaceOutcomeCallable ScfClient::UpdateNamespaceCallable(con
     return task->get_future();
 }
 
+ScfClient::UpdateTriggerOutcome ScfClient::UpdateTrigger(const UpdateTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTriggerResponse rsp = UpdateTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTriggerOutcome(rsp);
+        else
+            return UpdateTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTriggerOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::UpdateTriggerAsync(const UpdateTriggerRequest& request, const UpdateTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateTrigger(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::UpdateTriggerOutcomeCallable ScfClient::UpdateTriggerCallable(const UpdateTriggerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateTriggerOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateTrigger(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::UpdateTriggerStatusOutcome ScfClient::UpdateTriggerStatus(const UpdateTriggerStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateTriggerStatus");

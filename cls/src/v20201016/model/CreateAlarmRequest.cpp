@@ -26,10 +26,11 @@ CreateAlarmRequest::CreateAlarmRequest() :
     m_nameHasBeenSet(false),
     m_alarmTargetsHasBeenSet(false),
     m_monitorTimeHasBeenSet(false),
-    m_conditionHasBeenSet(false),
     m_triggerCountHasBeenSet(false),
     m_alarmPeriodHasBeenSet(false),
     m_alarmNoticeIdsHasBeenSet(false),
+    m_conditionHasBeenSet(false),
+    m_multiConditionsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageTemplateHasBeenSet(false),
     m_callBackHasBeenSet(false),
@@ -76,14 +77,6 @@ string CreateAlarmRequest::ToJsonString() const
         m_monitorTime.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_conditionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Condition";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_condition.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_triggerCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +103,29 @@ string CreateAlarmRequest::ToJsonString() const
         for (auto itr = m_alarmNoticeIds.begin(); itr != m_alarmNoticeIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_conditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Condition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_condition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiConditionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiConditions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiConditions.begin(); itr != m_multiConditions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -209,22 +225,6 @@ bool CreateAlarmRequest::MonitorTimeHasBeenSet() const
     return m_monitorTimeHasBeenSet;
 }
 
-string CreateAlarmRequest::GetCondition() const
-{
-    return m_condition;
-}
-
-void CreateAlarmRequest::SetCondition(const string& _condition)
-{
-    m_condition = _condition;
-    m_conditionHasBeenSet = true;
-}
-
-bool CreateAlarmRequest::ConditionHasBeenSet() const
-{
-    return m_conditionHasBeenSet;
-}
-
 int64_t CreateAlarmRequest::GetTriggerCount() const
 {
     return m_triggerCount;
@@ -271,6 +271,38 @@ void CreateAlarmRequest::SetAlarmNoticeIds(const vector<string>& _alarmNoticeIds
 bool CreateAlarmRequest::AlarmNoticeIdsHasBeenSet() const
 {
     return m_alarmNoticeIdsHasBeenSet;
+}
+
+string CreateAlarmRequest::GetCondition() const
+{
+    return m_condition;
+}
+
+void CreateAlarmRequest::SetCondition(const string& _condition)
+{
+    m_condition = _condition;
+    m_conditionHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::ConditionHasBeenSet() const
+{
+    return m_conditionHasBeenSet;
+}
+
+vector<MultiCondition> CreateAlarmRequest::GetMultiConditions() const
+{
+    return m_multiConditions;
+}
+
+void CreateAlarmRequest::SetMultiConditions(const vector<MultiCondition>& _multiConditions)
+{
+    m_multiConditions = _multiConditions;
+    m_multiConditionsHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::MultiConditionsHasBeenSet() const
+{
+    return m_multiConditionsHasBeenSet;
 }
 
 bool CreateAlarmRequest::GetStatus() const

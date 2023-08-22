@@ -20,6 +20,7 @@ set(billing_public_header
 
 set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/CostComponentSet.h
+  include/tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateResponse.h
   include/tencentcloud/billing/v20180709/model/VoucherInfos.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByProductRequest.h
@@ -33,6 +34,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DetailPoint.h
   include/tencentcloud/billing/v20180709/model/CostDetail.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByPayModeResponse.h
+  include/tencentcloud/billing/v20180709/model/SummaryTotal.h
   include/tencentcloud/billing/v20180709/model/BillResourceSummary.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagRequest.h
   include/tencentcloud/billing/v20180709/model/Conditions.h
@@ -50,7 +52,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/RegionSummaryOverviewItem.h
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByProductResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagResponse.h
-  include/tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateResponse.h
+  include/tencentcloud/billing/v20180709/model/BillDetailAssociatedOrder.h
   include/tencentcloud/billing/v20180709/model/DescribeBillListResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeAccountBalanceResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByRegionRequest.h
@@ -77,7 +79,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/PayDealsRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillListRequest.h
   include/tencentcloud/billing/v20180709/model/PayDealsResponse.h
-  include/tencentcloud/billing/v20180709/model/SummaryTotal.h
+  include/tencentcloud/billing/v20180709/model/BillDetailComponentConfig.h
   include/tencentcloud/billing/v20180709/model/BillDetail.h
   include/tencentcloud/billing/v20180709/model/BusinessSummaryInfo.h
   include/tencentcloud/billing/v20180709/model/TagSummaryOverviewItem.h
@@ -105,6 +107,7 @@ set(billing_public_header_model
 set(billing_src
   src/v20180709/BillingClient.cpp
   src/v20180709/model/CostComponentSet.cpp
+  src/v20180709/model/DescribeDosageDetailByDateResponse.cpp
   src/v20180709/model/VoucherInfos.cpp
   src/v20180709/model/DescribeBillSummaryResponse.cpp
   src/v20180709/model/DescribeCostSummaryByProductRequest.cpp
@@ -118,6 +121,7 @@ set(billing_src
   src/v20180709/model/DetailPoint.cpp
   src/v20180709/model/CostDetail.cpp
   src/v20180709/model/DescribeBillSummaryByPayModeResponse.cpp
+  src/v20180709/model/SummaryTotal.cpp
   src/v20180709/model/BillResourceSummary.cpp
   src/v20180709/model/DescribeBillSummaryByTagRequest.cpp
   src/v20180709/model/Conditions.cpp
@@ -135,7 +139,7 @@ set(billing_src
   src/v20180709/model/RegionSummaryOverviewItem.cpp
   src/v20180709/model/DescribeCostSummaryByProductResponse.cpp
   src/v20180709/model/DescribeBillSummaryByTagResponse.cpp
-  src/v20180709/model/DescribeDosageDetailByDateResponse.cpp
+  src/v20180709/model/BillDetailAssociatedOrder.cpp
   src/v20180709/model/DescribeBillListResponse.cpp
   src/v20180709/model/DescribeAccountBalanceResponse.cpp
   src/v20180709/model/DescribeCostSummaryByRegionRequest.cpp
@@ -162,7 +166,7 @@ set(billing_src
   src/v20180709/model/PayDealsRequest.cpp
   src/v20180709/model/DescribeBillListRequest.cpp
   src/v20180709/model/PayDealsResponse.cpp
-  src/v20180709/model/SummaryTotal.cpp
+  src/v20180709/model/BillDetailComponentConfig.cpp
   src/v20180709/model/BillDetail.cpp
   src/v20180709/model/BusinessSummaryInfo.cpp
   src/v20180709/model/TagSummaryOverviewItem.cpp

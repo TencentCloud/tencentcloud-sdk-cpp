@@ -1717,6 +1717,49 @@ WafClient::GetAttackHistogramOutcomeCallable WafClient::GetAttackHistogramCallab
     return task->get_future();
 }
 
+WafClient::GetAttackTotalCountOutcome WafClient::GetAttackTotalCount(const GetAttackTotalCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAttackTotalCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAttackTotalCountResponse rsp = GetAttackTotalCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAttackTotalCountOutcome(rsp);
+        else
+            return GetAttackTotalCountOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAttackTotalCountOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::GetAttackTotalCountAsync(const GetAttackTotalCountRequest& request, const GetAttackTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAttackTotalCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::GetAttackTotalCountOutcomeCallable WafClient::GetAttackTotalCountCallable(const GetAttackTotalCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAttackTotalCountOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAttackTotalCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyAccessPeriodOutcome WafClient::ModifyAccessPeriod(const ModifyAccessPeriodRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccessPeriod");

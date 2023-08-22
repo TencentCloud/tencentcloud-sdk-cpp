@@ -27,7 +27,8 @@ ContainerStdoutInfo::ContainerStdoutInfo() :
     m_includeLabelsHasBeenSet(false),
     m_workLoadsHasBeenSet(false),
     m_excludeNamespaceHasBeenSet(false),
-    m_excludeLabelsHasBeenSet(false)
+    m_excludeLabelsHasBeenSet(false),
+    m_customLabelsHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,19 @@ CoreInternalOutcome ContainerStdoutInfo::Deserialize(const rapidjson::Value &val
         m_excludeLabelsHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomLabels") && !value["CustomLabels"].IsNull())
+    {
+        if (!value["CustomLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ContainerStdoutInfo.CustomLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_customLabels.push_back((*itr).GetString());
+        }
+        m_customLabelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -197,6 +211,19 @@ void ContainerStdoutInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_excludeLabels.begin(); itr != m_excludeLabels.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_customLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customLabels.begin(); itr != m_customLabels.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -315,5 +342,21 @@ void ContainerStdoutInfo::SetExcludeLabels(const vector<string>& _excludeLabels)
 bool ContainerStdoutInfo::ExcludeLabelsHasBeenSet() const
 {
     return m_excludeLabelsHasBeenSet;
+}
+
+vector<string> ContainerStdoutInfo::GetCustomLabels() const
+{
+    return m_customLabels;
+}
+
+void ContainerStdoutInfo::SetCustomLabels(const vector<string>& _customLabels)
+{
+    m_customLabels = _customLabels;
+    m_customLabelsHasBeenSet = true;
+}
+
+bool ContainerStdoutInfo::CustomLabelsHasBeenSet() const
+{
+    return m_customLabelsHasBeenSet;
 }
 

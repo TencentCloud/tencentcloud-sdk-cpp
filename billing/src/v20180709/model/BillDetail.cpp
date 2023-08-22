@@ -45,7 +45,10 @@ BillDetail::BillDetail() :
     m_actionTypeHasBeenSet(false),
     m_regionIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_priceInfoHasBeenSet(false)
+    m_priceInfoHasBeenSet(false),
+    m_associatedOrderHasBeenSet(false),
+    m_formulaHasBeenSet(false),
+    m_formulaUrlHasBeenSet(false)
 {
 }
 
@@ -327,6 +330,43 @@ CoreInternalOutcome BillDetail::Deserialize(const rapidjson::Value &value)
         m_priceInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("AssociatedOrder") && !value["AssociatedOrder"].IsNull())
+    {
+        if (!value["AssociatedOrder"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetail.AssociatedOrder` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_associatedOrder.Deserialize(value["AssociatedOrder"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_associatedOrderHasBeenSet = true;
+    }
+
+    if (value.HasMember("Formula") && !value["Formula"].IsNull())
+    {
+        if (!value["Formula"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetail.Formula` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_formula = string(value["Formula"].GetString());
+        m_formulaHasBeenSet = true;
+    }
+
+    if (value.HasMember("FormulaUrl") && !value["FormulaUrl"].IsNull())
+    {
+        if (!value["FormulaUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetail.FormulaUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_formulaUrl = string(value["FormulaUrl"].GetString());
+        m_formulaUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -551,6 +591,31 @@ void BillDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_associatedOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociatedOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_associatedOrder.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_formulaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Formula";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_formula.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formulaUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FormulaUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_formulaUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -954,5 +1019,53 @@ void BillDetail::SetPriceInfo(const vector<string>& _priceInfo)
 bool BillDetail::PriceInfoHasBeenSet() const
 {
     return m_priceInfoHasBeenSet;
+}
+
+BillDetailAssociatedOrder BillDetail::GetAssociatedOrder() const
+{
+    return m_associatedOrder;
+}
+
+void BillDetail::SetAssociatedOrder(const BillDetailAssociatedOrder& _associatedOrder)
+{
+    m_associatedOrder = _associatedOrder;
+    m_associatedOrderHasBeenSet = true;
+}
+
+bool BillDetail::AssociatedOrderHasBeenSet() const
+{
+    return m_associatedOrderHasBeenSet;
+}
+
+string BillDetail::GetFormula() const
+{
+    return m_formula;
+}
+
+void BillDetail::SetFormula(const string& _formula)
+{
+    m_formula = _formula;
+    m_formulaHasBeenSet = true;
+}
+
+bool BillDetail::FormulaHasBeenSet() const
+{
+    return m_formulaHasBeenSet;
+}
+
+string BillDetail::GetFormulaUrl() const
+{
+    return m_formulaUrl;
+}
+
+void BillDetail::SetFormulaUrl(const string& _formulaUrl)
+{
+    m_formulaUrl = _formulaUrl;
+    m_formulaUrlHasBeenSet = true;
+}
+
+bool BillDetail::FormulaUrlHasBeenSet() const
+{
+    return m_formulaUrlHasBeenSet;
 }
 

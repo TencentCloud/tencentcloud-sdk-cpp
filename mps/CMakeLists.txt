@@ -294,6 +294,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/OutputSRTSourceAddressResp.h
   include/tencentcloud/mps/v20190612/model/DeleteAdaptiveDynamicStreamingTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/StreamLinkRegionInfo.h
+  include/tencentcloud/mps/v20190612/model/LiveStreamTagRecognitionResult.h
   include/tencentcloud/mps/v20190612/model/FlowRealtimeStatusRTP.h
   include/tencentcloud/mps/v20190612/model/AnimatedGraphicTaskInput.h
   include/tencentcloud/mps/v20190612/model/OutputAddress.h
@@ -846,6 +847,7 @@ set(mps_src
   src/v20190612/model/OutputSRTSourceAddressResp.cpp
   src/v20190612/model/DeleteAdaptiveDynamicStreamingTemplateResponse.cpp
   src/v20190612/model/StreamLinkRegionInfo.cpp
+  src/v20190612/model/LiveStreamTagRecognitionResult.cpp
   src/v20190612/model/FlowRealtimeStatusRTP.cpp
   src/v20190612/model/AnimatedGraphicTaskInput.cpp
   src/v20190612/model/OutputAddress.cpp

@@ -23,9 +23,9 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 CreateNotebookImageRequest::CreateNotebookImageRequest() :
-    m_kernelsHasBeenSet(false),
     m_imageInfoHasBeenSet(false),
-    m_notebookIdHasBeenSet(false)
+    m_notebookIdHasBeenSet(false),
+    m_kernelsHasBeenSet(false)
 {
 }
 
@@ -35,19 +35,6 @@ string CreateNotebookImageRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_kernelsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Kernels";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_kernels.begin(); itr != m_kernels.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
 
     if (m_imageInfoHasBeenSet)
     {
@@ -66,6 +53,19 @@ string CreateNotebookImageRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_notebookId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_kernelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Kernels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_kernels.begin(); itr != m_kernels.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -73,22 +73,6 @@ string CreateNotebookImageRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<string> CreateNotebookImageRequest::GetKernels() const
-{
-    return m_kernels;
-}
-
-void CreateNotebookImageRequest::SetKernels(const vector<string>& _kernels)
-{
-    m_kernels = _kernels;
-    m_kernelsHasBeenSet = true;
-}
-
-bool CreateNotebookImageRequest::KernelsHasBeenSet() const
-{
-    return m_kernelsHasBeenSet;
-}
 
 ImageInfo CreateNotebookImageRequest::GetImageInfo() const
 {
@@ -120,6 +104,22 @@ void CreateNotebookImageRequest::SetNotebookId(const string& _notebookId)
 bool CreateNotebookImageRequest::NotebookIdHasBeenSet() const
 {
     return m_notebookIdHasBeenSet;
+}
+
+vector<string> CreateNotebookImageRequest::GetKernels() const
+{
+    return m_kernels;
+}
+
+void CreateNotebookImageRequest::SetKernels(const vector<string>& _kernels)
+{
+    m_kernels = _kernels;
+    m_kernelsHasBeenSet = true;
+}
+
+bool CreateNotebookImageRequest::KernelsHasBeenSet() const
+{
+    return m_kernelsHasBeenSet;
 }
 
 

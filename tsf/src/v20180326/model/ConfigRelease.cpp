@@ -33,7 +33,8 @@ ConfigRelease::ConfigRelease() :
     m_clusterIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_releaseDescHasBeenSet(false),
-    m_applicationIdHasBeenSet(false)
+    m_applicationIdHasBeenSet(false),
+    m_configCentersHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,26 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
         m_applicationIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigCenters") && !value["ConfigCenters"].IsNull())
+    {
+        if (!value["ConfigCenters"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.ConfigCenters` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConfigCenters"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TsfConfigCenter item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_configCenters.push_back(item);
+        }
+        m_configCentersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +302,21 @@ void ConfigRelease::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ApplicationId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configCentersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigCenters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_configCenters.begin(); itr != m_configCenters.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -492,5 +528,21 @@ void ConfigRelease::SetApplicationId(const string& _applicationId)
 bool ConfigRelease::ApplicationIdHasBeenSet() const
 {
     return m_applicationIdHasBeenSet;
+}
+
+vector<TsfConfigCenter> ConfigRelease::GetConfigCenters() const
+{
+    return m_configCenters;
+}
+
+void ConfigRelease::SetConfigCenters(const vector<TsfConfigCenter>& _configCenters)
+{
+    m_configCenters = _configCenters;
+    m_configCentersHasBeenSet = true;
+}
+
+bool ConfigRelease::ConfigCentersHasBeenSet() const
+{
+    return m_configCentersHasBeenSet;
 }
 

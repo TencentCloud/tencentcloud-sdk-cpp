@@ -38,7 +38,8 @@ RuleGroup::RuleGroup() :
     m_ruleCountHasBeenSet(false),
     m_monitorStatusHasBeenSet(false),
     m_tableOwnerUserIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,16 @@ CoreInternalOutcome RuleGroup::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -392,6 +403,14 @@ void RuleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -683,5 +702,21 @@ void RuleGroup::SetInstanceId(const string& _instanceId)
 bool RuleGroup::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string RuleGroup::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void RuleGroup::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool RuleGroup::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

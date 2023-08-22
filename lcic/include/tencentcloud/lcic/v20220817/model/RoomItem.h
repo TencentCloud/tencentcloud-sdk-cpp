@@ -330,18 +330,18 @@ namespace TencentCloud
                     bool RecordUrlHasBeenSet() const;
 
                     /**
-                     * 获取最高房间内人数（包括老师），0表示不限制，默认为0
+                     * 获取最高房间内人数（不包括老师），0表示不限制，默认为0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxMicNumber 最高房间内人数（包括老师），0表示不限制，默认为0
+                     * @return MaxMicNumber 最高房间内人数（不包括老师），0表示不限制，默认为0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxMicNumber() const;
 
                     /**
-                     * 设置最高房间内人数（包括老师），0表示不限制，默认为0
+                     * 设置最高房间内人数（不包括老师），0表示不限制，默认为0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxMicNumber 最高房间内人数（包括老师），0表示不限制，默认为0
+                     * @param _maxMicNumber 最高房间内人数（不包括老师），0表示不限制，默认为0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -561,7 +561,7 @@ namespace TencentCloud
                     bool m_recordUrlHasBeenSet;
 
                     /**
-                     * 最高房间内人数（包括老师），0表示不限制，默认为0
+                     * 最高房间内人数（不包括老师），0表示不限制，默认为0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxMicNumber;

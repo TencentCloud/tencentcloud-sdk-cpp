@@ -33,6 +33,7 @@ CreateTtsTaskRequest::CreateTtsTaskRequest() :
     m_sampleRateHasBeenSet(false),
     m_codecHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
+    m_enableSubtitleHasBeenSet(false),
     m_voiceoverDialogueSplitHasBeenSet(false)
 {
 }
@@ -122,6 +123,14 @@ string CreateTtsTaskRequest::ToJsonString() const
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableSubtitleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSubtitle";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSubtitle, allocator);
     }
 
     if (m_voiceoverDialogueSplitHasBeenSet)
@@ -298,6 +307,22 @@ void CreateTtsTaskRequest::SetCallbackUrl(const string& _callbackUrl)
 bool CreateTtsTaskRequest::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+bool CreateTtsTaskRequest::GetEnableSubtitle() const
+{
+    return m_enableSubtitle;
+}
+
+void CreateTtsTaskRequest::SetEnableSubtitle(const bool& _enableSubtitle)
+{
+    m_enableSubtitle = _enableSubtitle;
+    m_enableSubtitleHasBeenSet = true;
+}
+
+bool CreateTtsTaskRequest::EnableSubtitleHasBeenSet() const
+{
+    return m_enableSubtitleHasBeenSet;
 }
 
 bool CreateTtsTaskRequest::GetVoiceoverDialogueSplit() const

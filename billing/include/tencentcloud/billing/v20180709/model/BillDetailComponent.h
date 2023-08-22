@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/billing/v20180709/model/BillDetailComponentConfig.h>
 
 
 namespace TencentCloud
@@ -707,6 +708,31 @@ namespace TencentCloud
                      */
                     bool BlendedDiscountHasBeenSet() const;
 
+                    /**
+                     * 获取配置描述：资源配置规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComponentConfig 配置描述：资源配置规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<BillDetailComponentConfig> GetComponentConfig() const;
+
+                    /**
+                     * 设置配置描述：资源配置规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _componentConfig 配置描述：资源配置规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComponentConfig(const std::vector<BillDetailComponentConfig>& _componentConfig);
+
+                    /**
+                     * 判断参数 ComponentConfig 是否已赋值
+                     * @return ComponentConfig 是否已赋值
+                     * 
+                     */
+                    bool ComponentConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -895,6 +921,13 @@ namespace TencentCloud
                      */
                     std::string m_blendedDiscount;
                     bool m_blendedDiscountHasBeenSet;
+
+                    /**
+                     * 配置描述：资源配置规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BillDetailComponentConfig> m_componentConfig;
+                    bool m_componentConfigHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ using namespace std;
 DescribeUserAutoSignStatusResponse::DescribeUserAutoSignStatusResponse() :
     m_isOpenHasBeenSet(false),
     m_licenseFromHasBeenSet(false),
-    m_licenseToHasBeenSet(false)
+    m_licenseToHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeUserAutoSignStatusResponse::Deserialize(const string
         m_licenseToHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LicenseType") && !rsp["LicenseType"].IsNull())
+    {
+        if (!rsp["LicenseType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseType = rsp["LicenseType"].GetInt64();
+        m_licenseTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeUserAutoSignStatusResponse::ToJsonString() const
         string key = "LicenseTo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_licenseTo, allocator);
+    }
+
+    if (m_licenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licenseType, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ int64_t DescribeUserAutoSignStatusResponse::GetLicenseTo() const
 bool DescribeUserAutoSignStatusResponse::LicenseToHasBeenSet() const
 {
     return m_licenseToHasBeenSet;
+}
+
+int64_t DescribeUserAutoSignStatusResponse::GetLicenseType() const
+{
+    return m_licenseType;
+}
+
+bool DescribeUserAutoSignStatusResponse::LicenseTypeHasBeenSet() const
+{
+    return m_licenseTypeHasBeenSet;
 }
 
 

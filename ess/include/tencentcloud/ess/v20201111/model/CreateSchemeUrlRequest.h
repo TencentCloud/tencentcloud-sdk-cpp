@@ -131,12 +131,14 @@ namespace TencentCloud
                     /**
                      * 获取要跳转的链接类型
 
-- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)
+- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链
+- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链
 - APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型
 
                      * @return EndPoint 要跳转的链接类型
 
-- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)
+- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链
+- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链
 - APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型
 
                      * 
@@ -146,12 +148,14 @@ namespace TencentCloud
                     /**
                      * 设置要跳转的链接类型
 
-- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)
+- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链
+- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链
 - APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型
 
                      * @param _endPoint 要跳转的链接类型
 
-- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)
+- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链
+- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链
 - APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型
 
                      * 
@@ -372,7 +376,8 @@ false：否。
                     /**
                      * 要跳转的链接类型
 
-- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)
+- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链
+- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链
 - APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型
 
                      */

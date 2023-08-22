@@ -50,11 +50,13 @@ namespace TencentCloud
                     /**
                      * 获取插入形式，可选值：
 <li>subtitle-stream：插入字幕轨道</li>
-<li>close-caption：编码到SEI帧</li>
+<li>close-caption-708：CEA-708字幕编码到SEI帧</li>
+<li>close-caption-608：CEA-608字幕编码到SEI帧</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 插入形式，可选值：
 <li>subtitle-stream：插入字幕轨道</li>
-<li>close-caption：编码到SEI帧</li>
+<li>close-caption-708：CEA-708字幕编码到SEI帧</li>
+<li>close-caption-608：CEA-608字幕编码到SEI帧</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,11 +65,13 @@ namespace TencentCloud
                     /**
                      * 设置插入形式，可选值：
 <li>subtitle-stream：插入字幕轨道</li>
-<li>close-caption：编码到SEI帧</li>
+<li>close-caption-708：CEA-708字幕编码到SEI帧</li>
+<li>close-caption-608：CEA-608字幕编码到SEI帧</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 插入形式，可选值：
 <li>subtitle-stream：插入字幕轨道</li>
-<li>close-caption：编码到SEI帧</li>
+<li>close-caption-708：CEA-708字幕编码到SEI帧</li>
+<li>close-caption-608：CEA-608字幕编码到SEI帧</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -110,7 +114,8 @@ namespace TencentCloud
                     /**
                      * 插入形式，可选值：
 <li>subtitle-stream：插入字幕轨道</li>
-<li>close-caption：编码到SEI帧</li>
+<li>close-caption-708：CEA-708字幕编码到SEI帧</li>
+<li>close-caption-608：CEA-608字幕编码到SEI帧</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;

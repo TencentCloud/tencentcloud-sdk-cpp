@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/AlarmTarget.h>
 #include <tencentcloud/cls/v20201016/model/MonitorTime.h>
+#include <tencentcloud/cls/v20201016/model/MultiCondition.h>
 #include <tencentcloud/cls/v20201016/model/CallBackInfo.h>
 #include <tencentcloud/cls/v20201016/model/AnalysisDimensional.h>
 
@@ -110,27 +111,6 @@ namespace TencentCloud
                     bool MonitorTimeHasBeenSet() const;
 
                     /**
-                     * 获取触发条件。
-                     * @return Condition 触发条件。
-                     * 
-                     */
-                    std::string GetCondition() const;
-
-                    /**
-                     * 设置触发条件。
-                     * @param _condition 触发条件。
-                     * 
-                     */
-                    void SetCondition(const std::string& _condition);
-
-                    /**
-                     * 判断参数 Condition 是否已赋值
-                     * @return Condition 是否已赋值
-                     * 
-                     */
-                    bool ConditionHasBeenSet() const;
-
-                    /**
                      * 获取持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。
                      * @return TriggerCount 持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。
                      * 
@@ -192,6 +172,92 @@ namespace TencentCloud
                      * 
                      */
                     bool AlarmNoticeIdsHasBeenSet() const;
+
+                    /**
+                     * 获取触发条件。
+
+ 注意:  
+
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+
+                     * @return Condition 触发条件。
+
+ 注意:  
+
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+
+                     * 
+                     */
+                    std::string GetCondition() const;
+
+                    /**
+                     * 设置触发条件。
+
+ 注意:  
+
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+
+                     * @param _condition 触发条件。
+
+ 注意:  
+
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+
+                     * 
+                     */
+                    void SetCondition(const std::string& _condition);
+
+                    /**
+                     * 判断参数 Condition 是否已赋值
+                     * @return Condition 是否已赋值
+                     * 
+                     */
+                    bool ConditionHasBeenSet() const;
+
+                    /**
+                     * 获取多触发条件。
+
+ 注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>
+
+
+
+                     * @return MultiConditions 多触发条件。
+
+ 注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>
+
+
+
+                     * 
+                     */
+                    std::vector<MultiCondition> GetMultiConditions() const;
+
+                    /**
+                     * 设置多触发条件。
+
+ 注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>
+
+
+
+                     * @param _multiConditions 多触发条件。
+
+ 注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>
+
+
+
+                     * 
+                     */
+                    void SetMultiConditions(const std::vector<MultiCondition>& _multiConditions);
+
+                    /**
+                     * 判断参数 MultiConditions 是否已赋值
+                     * @return MultiConditions 是否已赋值
+                     * 
+                     */
+                    bool MultiConditionsHasBeenSet() const;
 
                     /**
                      * 获取是否开启告警策略。默认值为true
@@ -298,12 +364,6 @@ namespace TencentCloud
                     bool m_monitorTimeHasBeenSet;
 
                     /**
-                     * 触发条件。
-                     */
-                    std::string m_condition;
-                    bool m_conditionHasBeenSet;
-
-                    /**
                      * 持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。
                      */
                     int64_t m_triggerCount;
@@ -320,6 +380,29 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_alarmNoticeIds;
                     bool m_alarmNoticeIdsHasBeenSet;
+
+                    /**
+                     * 触发条件。
+
+ 注意:  
+
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+
+                     */
+                    std::string m_condition;
+                    bool m_conditionHasBeenSet;
+
+                    /**
+                     * 多触发条件。
+
+ 注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>
+
+
+
+                     */
+                    std::vector<MultiCondition> m_multiConditions;
+                    bool m_multiConditionsHasBeenSet;
 
                     /**
                      * 是否开启告警策略。默认值为true

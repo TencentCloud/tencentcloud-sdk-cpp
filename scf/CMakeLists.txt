@@ -141,6 +141,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/ListFunctionsResponse.h
   include/tencentcloud/scf/v20180416/model/GetAsyncEventStatusResponse.h
   include/tencentcloud/scf/v20180416/model/ListTriggersRequest.h
+  include/tencentcloud/scf/v20180416/model/UpdateTriggerResponse.h
   include/tencentcloud/scf/v20180416/model/CreateFunctionResponse.h
   include/tencentcloud/scf/v20180416/model/GetReservedConcurrencyConfigRequest.h
   include/tencentcloud/scf/v20180416/model/PutProvisionedConcurrencyConfigRequest.h
@@ -162,6 +163,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/EipConfigOut.h
   include/tencentcloud/scf/v20180416/model/NamespaceResourceEnv.h
   include/tencentcloud/scf/v20180416/model/UpdateFunctionCodeResponse.h
+  include/tencentcloud/scf/v20180416/model/UpdateTriggerRequest.h
   )
 
 set(scf_src
@@ -288,6 +290,7 @@ set(scf_src
   src/v20180416/model/ListFunctionsResponse.cpp
   src/v20180416/model/GetAsyncEventStatusResponse.cpp
   src/v20180416/model/ListTriggersRequest.cpp
+  src/v20180416/model/UpdateTriggerResponse.cpp
   src/v20180416/model/CreateFunctionResponse.cpp
   src/v20180416/model/GetReservedConcurrencyConfigRequest.cpp
   src/v20180416/model/PutProvisionedConcurrencyConfigRequest.cpp
@@ -309,6 +312,7 @@ set(scf_src
   src/v20180416/model/EipConfigOut.cpp
   src/v20180416/model/NamespaceResourceEnv.cpp
   src/v20180416/model/UpdateFunctionCodeResponse.cpp
+  src/v20180416/model/UpdateTriggerRequest.cpp
   )
 
 set(scf_include

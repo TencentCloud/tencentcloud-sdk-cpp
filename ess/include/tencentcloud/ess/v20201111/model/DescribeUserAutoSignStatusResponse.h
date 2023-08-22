@@ -91,6 +91,24 @@ namespace TencentCloud
                      */
                     bool LicenseToHasBeenSet() const;
 
+                    /**
+                     * 获取设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。
+0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
+1-不绑定，发起合同时将按标准合同套餐进行扣减
+                     * @return LicenseType 设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。
+0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
+1-不绑定，发起合同时将按标准合同套餐进行扣减
+                     * 
+                     */
+                    int64_t GetLicenseType() const;
+
+                    /**
+                     * 判断参数 LicenseType 是否已赋值
+                     * @return LicenseType 是否已赋值
+                     * 
+                     */
+                    bool LicenseTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +131,14 @@ namespace TencentCloud
                      */
                     int64_t m_licenseTo;
                     bool m_licenseToHasBeenSet;
+
+                    /**
+                     * 设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。
+0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
+1-不绑定，发起合同时将按标准合同套餐进行扣减
+                     */
+                    int64_t m_licenseType;
+                    bool m_licenseTypeHasBeenSet;
 
                 };
             }

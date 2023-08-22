@@ -28,6 +28,7 @@
 #include <tencentcloud/cls/v20201016/model/MonitorTime.h>
 #include <tencentcloud/cls/v20201016/model/CallBackInfo.h>
 #include <tencentcloud/cls/v20201016/model/AnalysisDimensional.h>
+#include <tencentcloud/cls/v20201016/model/MultiCondition.h>
 
 
 namespace TencentCloud
@@ -356,6 +357,35 @@ namespace TencentCloud
                      */
                     bool AnalysisHasBeenSet() const;
 
+                    /**
+                     * 获取多触发条件。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MultiConditions 多触发条件。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<MultiCondition> GetMultiConditions() const;
+
+                    /**
+                     * 设置多触发条件。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _multiConditions 多触发条件。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMultiConditions(const std::vector<MultiCondition>& _multiConditions);
+
+                    /**
+                     * 判断参数 MultiConditions 是否已赋值
+                     * @return MultiConditions 是否已赋值
+                     * 
+                     */
+                    bool MultiConditionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -444,6 +474,14 @@ namespace TencentCloud
                      */
                     std::vector<AnalysisDimensional> m_analysis;
                     bool m_analysisHasBeenSet;
+
+                    /**
+                     * 多触发条件。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MultiCondition> m_multiConditions;
+                    bool m_multiConditionsHasBeenSet;
 
                 };
             }

@@ -42,7 +42,8 @@ Topic::Topic() :
     m_updateTimeHasBeenSet(false),
     m_producerLimitHasBeenSet(false),
     m_consumerLimitHasBeenSet(false),
-    m_pulsarTopicTypeHasBeenSet(false)
+    m_pulsarTopicTypeHasBeenSet(false),
+    m_msgTTLHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
         m_pulsarTopicTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("MsgTTL") && !value["MsgTTL"].IsNull())
+    {
+        if (!value["MsgTTL"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.MsgTTL` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_msgTTL = value["MsgTTL"].GetUint64();
+        m_msgTTLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +480,14 @@ void Topic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "PulsarTopicType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pulsarTopicType, allocator);
+    }
+
+    if (m_msgTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgTTL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_msgTTL, allocator);
     }
 
 }
@@ -824,5 +843,21 @@ void Topic::SetPulsarTopicType(const int64_t& _pulsarTopicType)
 bool Topic::PulsarTopicTypeHasBeenSet() const
 {
     return m_pulsarTopicTypeHasBeenSet;
+}
+
+uint64_t Topic::GetMsgTTL() const
+{
+    return m_msgTTL;
+}
+
+void Topic::SetMsgTTL(const uint64_t& _msgTTL)
+{
+    m_msgTTL = _msgTTL;
+    m_msgTTLHasBeenSet = true;
+}
+
+bool Topic::MsgTTLHasBeenSet() const
+{
+    return m_msgTTLHasBeenSet;
 }
 

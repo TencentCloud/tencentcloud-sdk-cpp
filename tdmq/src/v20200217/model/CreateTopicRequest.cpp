@@ -29,7 +29,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_remarkHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_pulsarTopicTypeHasBeenSet(false)
+    m_pulsarTopicTypeHasBeenSet(false),
+    m_msgTTLHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "PulsarTopicType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pulsarTopicType, allocator);
+    }
+
+    if (m_msgTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgTTL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_msgTTL, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateTopicRequest::SetPulsarTopicType(const int64_t& _pulsarTopicType)
 bool CreateTopicRequest::PulsarTopicTypeHasBeenSet() const
 {
     return m_pulsarTopicTypeHasBeenSet;
+}
+
+uint64_t CreateTopicRequest::GetMsgTTL() const
+{
+    return m_msgTTL;
+}
+
+void CreateTopicRequest::SetMsgTTL(const uint64_t& _msgTTL)
+{
+    m_msgTTL = _msgTTL;
+    m_msgTTLHasBeenSet = true;
+}
+
+bool CreateTopicRequest::MsgTTLHasBeenSet() const
+{
+    return m_msgTTLHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/FilePathInfo.h>
 #include <tencentcloud/cls/v20201016/model/ContainerWorkLoadInfo.h>
 
 
@@ -132,6 +133,27 @@ namespace TencentCloud
                     bool FilePatternHasBeenSet() const;
 
                     /**
+                     * 获取日志文件信息
+                     * @return FilePaths 日志文件信息
+                     * 
+                     */
+                    std::vector<FilePathInfo> GetFilePaths() const;
+
+                    /**
+                     * 设置日志文件信息
+                     * @param _filePaths 日志文件信息
+                     * 
+                     */
+                    void SetFilePaths(const std::vector<FilePathInfo>& _filePaths);
+
+                    /**
+                     * 判断参数 FilePaths 是否已赋值
+                     * @return FilePaths 是否已赋值
+                     * 
+                     */
+                    bool FilePathsHasBeenSet() const;
+
+                    /**
                      * 获取pod标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncludeLabels pod标签信息
@@ -231,6 +253,31 @@ namespace TencentCloud
                      */
                     bool ExcludeLabelsHasBeenSet() const;
 
+                    /**
+                     * 获取metadata信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomLabels metadata信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCustomLabels() const;
+
+                    /**
+                     * 设置metadata信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customLabels metadata信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomLabels(const std::vector<std::string>& _customLabels);
+
+                    /**
+                     * 判断参数 CustomLabels 是否已赋值
+                     * @return CustomLabels 是否已赋值
+                     * 
+                     */
+                    bool CustomLabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,6 +303,12 @@ namespace TencentCloud
                      */
                     std::string m_filePattern;
                     bool m_filePatternHasBeenSet;
+
+                    /**
+                     * 日志文件信息
+                     */
+                    std::vector<FilePathInfo> m_filePaths;
+                    bool m_filePathsHasBeenSet;
 
                     /**
                      * pod标签信息
@@ -284,6 +337,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_excludeLabels;
                     bool m_excludeLabelsHasBeenSet;
+
+                    /**
+                     * metadata信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_customLabels;
+                    bool m_customLabelsHasBeenSet;
 
                 };
             }

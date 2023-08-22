@@ -253,6 +253,27 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
+                     * 获取是否开启时间戳功能，默认为false。
+                     * @return EnableSubtitle 是否开启时间戳功能，默认为false。
+                     * 
+                     */
+                    bool GetEnableSubtitle() const;
+
+                    /**
+                     * 设置是否开启时间戳功能，默认为false。
+                     * @param _enableSubtitle 是否开启时间戳功能，默认为false。
+                     * 
+                     */
+                    void SetEnableSubtitle(const bool& _enableSubtitle);
+
+                    /**
+                     * 判断参数 EnableSubtitle 是否已赋值
+                     * @return EnableSubtitle 是否已赋值
+                     * 
+                     */
+                    bool EnableSubtitleHasBeenSet() const;
+
+                    /**
                      * 获取旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色10510000、100510000），默认 false
                      * @return VoiceoverDialogueSplit 旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色10510000、100510000），默认 false
                      * 
@@ -334,6 +355,12 @@ namespace TencentCloud
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 是否开启时间戳功能，默认为false。
+                     */
+                    bool m_enableSubtitle;
+                    bool m_enableSubtitleHasBeenSet;
 
                     /**
                      * 旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色10510000、100510000），默认 false

@@ -34,7 +34,8 @@ AlarmInfo::AlarmInfo() :
     m_updateTimeHasBeenSet(false),
     m_messageTemplateHasBeenSet(false),
     m_callBackHasBeenSet(false),
-    m_analysisHasBeenSet(false)
+    m_analysisHasBeenSet(false),
+    m_multiConditionsHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,26 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
         m_analysisHasBeenSet = true;
     }
 
+    if (value.HasMember("MultiConditions") && !value["MultiConditions"].IsNull())
+    {
+        if (!value["MultiConditions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.MultiConditions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MultiConditions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MultiCondition item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_multiConditions.push_back(item);
+        }
+        m_multiConditionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +375,21 @@ void AlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
 
         int i=0;
         for (auto itr = m_analysis.begin(); itr != m_analysis.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_multiConditionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiConditions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiConditions.begin(); itr != m_multiConditions.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -585,5 +621,21 @@ void AlarmInfo::SetAnalysis(const vector<AnalysisDimensional>& _analysis)
 bool AlarmInfo::AnalysisHasBeenSet() const
 {
     return m_analysisHasBeenSet;
+}
+
+vector<MultiCondition> AlarmInfo::GetMultiConditions() const
+{
+    return m_multiConditions;
+}
+
+void AlarmInfo::SetMultiConditions(const vector<MultiCondition>& _multiConditions)
+{
+    m_multiConditions = _multiConditions;
+    m_multiConditionsHasBeenSet = true;
+}
+
+bool AlarmInfo::MultiConditionsHasBeenSet() const
+{
+    return m_multiConditionsHasBeenSet;
 }
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tts/v20190823/model/Subtitle.h>
 
 
 namespace TencentCloud
@@ -131,6 +132,27 @@ namespace TencentCloud
                     bool ResultUrlHasBeenSet() const;
 
                     /**
+                     * 获取时间戳信息，若未开启时间戳，则返回空数组。
+                     * @return Subtitles 时间戳信息，若未开启时间戳，则返回空数组。
+                     * 
+                     */
+                    std::vector<Subtitle> GetSubtitles() const;
+
+                    /**
+                     * 设置时间戳信息，若未开启时间戳，则返回空数组。
+                     * @param _subtitles 时间戳信息，若未开启时间戳，则返回空数组。
+                     * 
+                     */
+                    void SetSubtitles(const std::vector<Subtitle>& _subtitles);
+
+                    /**
+                     * 判断参数 Subtitles 是否已赋值
+                     * @return Subtitles 是否已赋值
+                     * 
+                     */
+                    bool SubtitlesHasBeenSet() const;
+
+                    /**
                      * 获取失败原因说明。
                      * @return ErrorMsg 失败原因说明。
                      * 
@@ -176,6 +198,12 @@ namespace TencentCloud
                      */
                     std::string m_resultUrl;
                     bool m_resultUrlHasBeenSet;
+
+                    /**
+                     * 时间戳信息，若未开启时间戳，则返回空数组。
+                     */
+                    std::vector<Subtitle> m_subtitles;
+                    bool m_subtitlesHasBeenSet;
 
                     /**
                      * 失败原因说明。

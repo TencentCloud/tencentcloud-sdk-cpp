@@ -27,6 +27,8 @@ ModifyAlarmRequest::ModifyAlarmRequest() :
     m_nameHasBeenSet(false),
     m_monitorTimeHasBeenSet(false),
     m_conditionHasBeenSet(false),
+    m_alarmLevelHasBeenSet(false),
+    m_multiConditionsHasBeenSet(false),
     m_triggerCountHasBeenSet(false),
     m_alarmPeriodHasBeenSet(false),
     m_alarmNoticeIdsHasBeenSet(false),
@@ -76,6 +78,29 @@ string ModifyAlarmRequest::ToJsonString() const
         string key = "Condition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_condition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alarmLevel, allocator);
+    }
+
+    if (m_multiConditionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiConditions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiConditions.begin(); itr != m_multiConditions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_triggerCountHasBeenSet)
@@ -232,6 +257,38 @@ void ModifyAlarmRequest::SetCondition(const string& _condition)
 bool ModifyAlarmRequest::ConditionHasBeenSet() const
 {
     return m_conditionHasBeenSet;
+}
+
+uint64_t ModifyAlarmRequest::GetAlarmLevel() const
+{
+    return m_alarmLevel;
+}
+
+void ModifyAlarmRequest::SetAlarmLevel(const uint64_t& _alarmLevel)
+{
+    m_alarmLevel = _alarmLevel;
+    m_alarmLevelHasBeenSet = true;
+}
+
+bool ModifyAlarmRequest::AlarmLevelHasBeenSet() const
+{
+    return m_alarmLevelHasBeenSet;
+}
+
+vector<MultiCondition> ModifyAlarmRequest::GetMultiConditions() const
+{
+    return m_multiConditions;
+}
+
+void ModifyAlarmRequest::SetMultiConditions(const vector<MultiCondition>& _multiConditions)
+{
+    m_multiConditions = _multiConditions;
+    m_multiConditionsHasBeenSet = true;
+}
+
+bool ModifyAlarmRequest::MultiConditionsHasBeenSet() const
+{
+    return m_multiConditionsHasBeenSet;
 }
 
 int64_t ModifyAlarmRequest::GetTriggerCount() const

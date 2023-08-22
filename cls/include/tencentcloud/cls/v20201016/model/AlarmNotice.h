@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/NoticeReceiver.h>
 #include <tencentcloud/cls/v20201016/model/WebCallback.h>
+#include <tencentcloud/cls/v20201016/model/NoticeRule.h>
 
 
 namespace TencentCloud
@@ -227,6 +228,31 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取通知规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoticeRules 通知规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<NoticeRule> GetNoticeRules() const;
+
+                    /**
+                     * 设置通知规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _noticeRules 通知规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNoticeRules(const std::vector<NoticeRule>& _noticeRules);
+
+                    /**
+                     * 判断参数 NoticeRules 是否已赋值
+                     * @return NoticeRules 是否已赋值
+                     * 
+                     */
+                    bool NoticeRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -278,6 +304,13 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 通知规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NoticeRule> m_noticeRules;
+                    bool m_noticeRulesHasBeenSet;
 
                 };
             }

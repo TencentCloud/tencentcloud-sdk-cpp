@@ -111,6 +111,8 @@
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionEventInvokeConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateNamespaceRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateNamespaceResponse.h>
+#include <tencentcloud/scf/v20180416/model/UpdateTriggerRequest.h>
+#include <tencentcloud/scf/v20180416/model/UpdateTriggerResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateTriggerStatusRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateTriggerStatusResponse.h>
 
@@ -259,6 +261,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateNamespaceResponse> UpdateNamespaceOutcome;
                 typedef std::future<UpdateNamespaceOutcome> UpdateNamespaceOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateNamespaceRequest&, UpdateNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNamespaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateTriggerResponse> UpdateTriggerOutcome;
+                typedef std::future<UpdateTriggerOutcome> UpdateTriggerOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::UpdateTriggerRequest&, UpdateTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTriggerAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateTriggerStatusResponse> UpdateTriggerStatusOutcome;
                 typedef std::future<UpdateTriggerStatusOutcome> UpdateTriggerStatusOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateTriggerStatusRequest&, UpdateTriggerStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTriggerStatusAsyncHandler;
@@ -667,6 +672,30 @@ namespace TencentCloud
                 UpdateNamespaceOutcome UpdateNamespace(const Model::UpdateNamespaceRequest &request);
                 void UpdateNamespaceAsync(const Model::UpdateNamespaceRequest& request, const UpdateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateNamespaceOutcomeCallable UpdateNamespaceCallable(const Model::UpdateNamespaceRequest& request);
+
+                /**
+                 *支持触发器配置更新。
+默认接口请求频率限制：20次/秒
+
+注意：目前只支持timer触发器和ckafka触发器更新！
+
+timer触发器和ckafka触发器支持更新字段有：Enable、TriggerDesc、Description、CustomArgument。
+
+timer触发器TriggerDesc支持5段式和7段式的更新。
+
+ckafka触发器TriggerDesc支持Retry、MaxMsgNum、TimeOut参数更新，不传值表示原值不变，传值不能为空。
+
+Enable 触发器开启或关闭，传参为OPEN为开启，CLOSE为关闭。不传值表示原值不变，传值不能为空。
+
+Description 触发器描述，不传值保持原值不变，传值为空则为空。
+
+CustomArgument 触发器用户附加信息（注意：只有timer触发器展示），不传值保持原值不变，传值为空则为空。
+                 * @param req UpdateTriggerRequest
+                 * @return UpdateTriggerOutcome
+                 */
+                UpdateTriggerOutcome UpdateTrigger(const Model::UpdateTriggerRequest &request);
+                void UpdateTriggerAsync(const Model::UpdateTriggerRequest& request, const UpdateTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateTriggerOutcomeCallable UpdateTriggerCallable(const Model::UpdateTriggerRequest& request);
 
                 /**
                  *更新触发器状态的值

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询过滤参数
-                     * @return Params 查询过滤参数
+                     * 获取查询过滤参数:(json序列化的结果）
+                     * @return Params 查询过滤参数:(json序列化的结果）
                      * 
                      */
                     std::string GetParams() const;
 
                     /**
-                     * 设置查询过滤参数
-                     * @param _params 查询过滤参数
+                     * 设置查询过滤参数:(json序列化的结果）
+                     * @param _params 查询过滤参数:(json序列化的结果）
                      * 
                      */
                     void SetParams(const std::string& _params);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询过滤参数
+                     * 查询过滤参数:(json序列化的结果）
                      */
                     std::string m_params;
                     bool m_paramsHasBeenSet;

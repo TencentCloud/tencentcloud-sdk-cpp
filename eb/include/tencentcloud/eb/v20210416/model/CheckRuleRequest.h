@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取Event信息
+                     * @return Event Event信息
+                     * 
+                     */
+                    std::string GetEvent() const;
+
+                    /**
+                     * 设置Event信息
+                     * @param _event Event信息
+                     * 
+                     */
+                    void SetEvent(const std::string& _event);
+
+                    /**
+                     * 判断参数 Event 是否已赋值
+                     * @return Event 是否已赋值
+                     * 
+                     */
+                    bool EventHasBeenSet() const;
+
+                    /**
+                     * 获取EventPattern信息
+                     * @return EventPattern EventPattern信息
+                     * 
+                     */
+                    std::string GetEventPattern() const;
+
+                    /**
+                     * 设置EventPattern信息
+                     * @param _eventPattern EventPattern信息
+                     * 
+                     */
+                    void SetEventPattern(const std::string& _eventPattern);
+
+                    /**
+                     * 判断参数 EventPattern 是否已赋值
+                     * @return EventPattern 是否已赋值
+                     * 
+                     */
+                    bool EventPatternHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * Event信息
+                     */
+                    std::string m_event;
+                    bool m_eventHasBeenSet;
+
+                    /**
+                     * EventPattern信息
+                     */
+                    std::string m_eventPattern;
+                    bool m_eventPatternHasBeenSet;
 
                 };
             }

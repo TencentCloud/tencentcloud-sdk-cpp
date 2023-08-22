@@ -27,7 +27,8 @@ ModifyAlarmNoticeRequest::ModifyAlarmNoticeRequest() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_noticeReceiversHasBeenSet(false),
-    m_webCallbacksHasBeenSet(false)
+    m_webCallbacksHasBeenSet(false),
+    m_noticeRulesHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,21 @@ string ModifyAlarmNoticeRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_webCallbacks.begin(); itr != m_webCallbacks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_noticeRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeRules";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_noticeRules.begin(); itr != m_noticeRules.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -178,6 +194,22 @@ void ModifyAlarmNoticeRequest::SetWebCallbacks(const vector<WebCallback>& _webCa
 bool ModifyAlarmNoticeRequest::WebCallbacksHasBeenSet() const
 {
     return m_webCallbacksHasBeenSet;
+}
+
+vector<NoticeRule> ModifyAlarmNoticeRequest::GetNoticeRules() const
+{
+    return m_noticeRules;
+}
+
+void ModifyAlarmNoticeRequest::SetNoticeRules(const vector<NoticeRule>& _noticeRules)
+{
+    m_noticeRules = _noticeRules;
+    m_noticeRulesHasBeenSet = true;
+}
+
+bool ModifyAlarmNoticeRequest::NoticeRulesHasBeenSet() const
+{
+    return m_noticeRulesHasBeenSet;
 }
 
 

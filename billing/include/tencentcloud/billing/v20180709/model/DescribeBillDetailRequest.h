@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MonthHasBeenSet() const;
 
                     /**
-                     * 获取周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。(不支持跨月查询)
-                     * @return BeginTime 周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。(不支持跨月查询)
+                     * 获取周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。
+                     * @return BeginTime 周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。(不支持跨月查询)
-                     * @param _beginTime 周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。(不支持跨月查询)
+                     * 设置周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。
+                     * @param _beginTime 周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。（不支持跨月查询）
-                     * @return EndTime 周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。（不支持跨月查询）
+                     * 获取周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。
+                     * @return EndTime 周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。（不支持跨月查询）
-                     * @param _endTime 周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。（不支持跨月查询）
+                     * 设置周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。
+                     * @param _endTime 周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取付费模式 prePay/postPay
-                     * @return PayMode 付费模式 prePay/postPay
+                     * 获取付费模式 prePay(表示包年包月)/postPay(表示按时按量)
+                     * @return PayMode 付费模式 prePay(表示包年包月)/postPay(表示按时按量)
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置付费模式 prePay/postPay
-                     * @param _payMode 付费模式 prePay/postPay
+                     * 设置付费模式 prePay(表示包年包月)/postPay(表示按时按量)
+                     * @param _payMode 付费模式 prePay(表示包年包月)/postPay(表示按时按量)
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -504,13 +504,13 @@ namespace TencentCloud
                     bool m_monthHasBeenSet;
 
                     /**
-                     * 周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。(不支持跨月查询)
+                     * 周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。（不支持跨月查询）
+                     * 周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -529,7 +529,7 @@ namespace TencentCloud
                     bool m_productCodeHasBeenSet;
 
                     /**
-                     * 付费模式 prePay/postPay
+                     * 付费模式 prePay(表示包年包月)/postPay(表示按时按量)
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;

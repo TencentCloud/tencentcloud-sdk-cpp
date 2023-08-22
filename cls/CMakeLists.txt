@@ -67,11 +67,13 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/OpenKafkaConsumerResponse.h
   include/tencentcloud/cls/v20201016/model/AlarmTargetInfo.h
   include/tencentcloud/cls/v20201016/model/ScheduledSqlResouceInfo.h
+  include/tencentcloud/cls/v20201016/model/FilePathInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeIndexRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyScheduledSqlResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigsResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteMachineGroupInfoRequest.h
   include/tencentcloud/cls/v20201016/model/CreateLogsetResponse.h
+  include/tencentcloud/cls/v20201016/model/NoticeRule.h
   include/tencentcloud/cls/v20201016/model/DeleteMachineGroupResponse.h
   include/tencentcloud/cls/v20201016/model/KafkaProtocolInfo.h
   include/tencentcloud/cls/v20201016/model/ScheduledSqlTaskInfo.h
@@ -220,6 +222,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ModifyTopicRequest.h
   include/tencentcloud/cls/v20201016/model/Ckafka.h
   include/tencentcloud/cls/v20201016/model/DescribeMachinesRequest.h
+  include/tencentcloud/cls/v20201016/model/MultiCondition.h
   include/tencentcloud/cls/v20201016/model/DeleteAlarmNoticeRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteLogsetRequest.h
@@ -313,11 +316,13 @@ set(cls_src
   src/v20201016/model/OpenKafkaConsumerResponse.cpp
   src/v20201016/model/AlarmTargetInfo.cpp
   src/v20201016/model/ScheduledSqlResouceInfo.cpp
+  src/v20201016/model/FilePathInfo.cpp
   src/v20201016/model/DescribeIndexRequest.cpp
   src/v20201016/model/ModifyScheduledSqlResponse.cpp
   src/v20201016/model/DescribeConfigsResponse.cpp
   src/v20201016/model/DeleteMachineGroupInfoRequest.cpp
   src/v20201016/model/CreateLogsetResponse.cpp
+  src/v20201016/model/NoticeRule.cpp
   src/v20201016/model/DeleteMachineGroupResponse.cpp
   src/v20201016/model/KafkaProtocolInfo.cpp
   src/v20201016/model/ScheduledSqlTaskInfo.cpp
@@ -466,6 +471,7 @@ set(cls_src
   src/v20201016/model/ModifyTopicRequest.cpp
   src/v20201016/model/Ckafka.cpp
   src/v20201016/model/DescribeMachinesRequest.cpp
+  src/v20201016/model/MultiCondition.cpp
   src/v20201016/model/DeleteAlarmNoticeRequest.cpp
   src/v20201016/model/DescribeScheduledSqlInfoRequest.cpp
   src/v20201016/model/DeleteLogsetRequest.cpp

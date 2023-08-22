@@ -27,7 +27,8 @@ AlarmNotice::AlarmNotice() :
     m_webCallbacksHasBeenSet(false),
     m_alarmNoticeIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_noticeRulesHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,26 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("NoticeRules") && !value["NoticeRules"].IsNull())
+    {
+        if (!value["NoticeRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.NoticeRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NoticeRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NoticeRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_noticeRules.push_back(item);
+        }
+        m_noticeRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -201,6 +222,21 @@ void AlarmNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noticeRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_noticeRules.begin(); itr != m_noticeRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -316,5 +352,21 @@ void AlarmNotice::SetUpdateTime(const string& _updateTime)
 bool AlarmNotice::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+vector<NoticeRule> AlarmNotice::GetNoticeRules() const
+{
+    return m_noticeRules;
+}
+
+void AlarmNotice::SetNoticeRules(const vector<NoticeRule>& _noticeRules)
+{
+    m_noticeRules = _noticeRules;
+    m_noticeRulesHasBeenSet = true;
+}
+
+bool AlarmNotice::NoticeRulesHasBeenSet() const
+{
+    return m_noticeRulesHasBeenSet;
 }
 

@@ -32,7 +32,8 @@ ChannelCreatePreparedPersonalEsignRequest::ChannelCreatePreparedPersonalEsignReq
     m_idCardTypeHasBeenSet(false),
     m_sealImageCompressHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_enableAutoSignHasBeenSet(false)
+    m_enableAutoSignHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,14 @@ string ChannelCreatePreparedPersonalEsignRequest::ToJsonString() const
         string key = "EnableAutoSign";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableAutoSign, allocator);
+    }
+
+    if (m_licenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_licenseType, allocator);
     }
 
 
@@ -291,6 +300,22 @@ void ChannelCreatePreparedPersonalEsignRequest::SetEnableAutoSign(const bool& _e
 bool ChannelCreatePreparedPersonalEsignRequest::EnableAutoSignHasBeenSet() const
 {
     return m_enableAutoSignHasBeenSet;
+}
+
+int64_t ChannelCreatePreparedPersonalEsignRequest::GetLicenseType() const
+{
+    return m_licenseType;
+}
+
+void ChannelCreatePreparedPersonalEsignRequest::SetLicenseType(const int64_t& _licenseType)
+{
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
+}
+
+bool ChannelCreatePreparedPersonalEsignRequest::LicenseTypeHasBeenSet() const
+{
+    return m_licenseTypeHasBeenSet;
 }
 
 

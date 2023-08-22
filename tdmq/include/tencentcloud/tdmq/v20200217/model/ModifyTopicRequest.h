@@ -147,6 +147,31 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取未消费消息过期时间，单位：秒，取值范围：60秒~15天。
+
+                     * @return MsgTTL 未消费消息过期时间，单位：秒，取值范围：60秒~15天。
+
+                     * 
+                     */
+                    uint64_t GetMsgTTL() const;
+
+                    /**
+                     * 设置未消费消息过期时间，单位：秒，取值范围：60秒~15天。
+
+                     * @param _msgTTL 未消费消息过期时间，单位：秒，取值范围：60秒~15天。
+
+                     * 
+                     */
+                    void SetMsgTTL(const uint64_t& _msgTTL);
+
+                    /**
+                     * 判断参数 MsgTTL 是否已赋值
+                     * @return MsgTTL 是否已赋值
+                     * 
+                     */
+                    bool MsgTTLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +203,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 未消费消息过期时间，单位：秒，取值范围：60秒~15天。
+
+                     */
+                    uint64_t m_msgTTL;
+                    bool m_msgTTLHasBeenSet;
 
                 };
             }

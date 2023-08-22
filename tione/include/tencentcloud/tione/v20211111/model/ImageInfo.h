@@ -138,6 +138,56 @@ namespace TencentCloud
                      */
                     bool RegistryIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许导出全部内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllowSaveAllContent 是否允许导出全部内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAllowSaveAllContent() const;
+
+                    /**
+                     * 设置是否允许导出全部内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _allowSaveAllContent 是否允许导出全部内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAllowSaveAllContent(const bool& _allowSaveAllContent);
+
+                    /**
+                     * 判断参数 AllowSaveAllContent 是否已赋值
+                     * @return AllowSaveAllContent 是否已赋值
+                     * 
+                     */
+                    bool AllowSaveAllContentHasBeenSet() const;
+
+                    /**
+                     * 获取镜像名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageName 镜像名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetImageName() const;
+
+                    /**
+                     * 设置镜像名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _imageName 镜像名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetImageName(const std::string& _imageName);
+
+                    /**
+                     * 判断参数 ImageName 是否已赋值
+                     * @return ImageName 是否已赋值
+                     * 
+                     */
+                    bool ImageNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +215,20 @@ namespace TencentCloud
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;
+
+                    /**
+                     * 是否允许导出全部内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_allowSaveAllContent;
+                    bool m_allowSaveAllContentHasBeenSet;
+
+                    /**
+                     * 镜像名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imageName;
+                    bool m_imageNameHasBeenSet;
 
                 };
             }

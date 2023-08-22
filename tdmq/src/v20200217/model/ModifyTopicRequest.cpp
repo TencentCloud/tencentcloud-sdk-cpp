@@ -27,7 +27,8 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_topicNameHasBeenSet(false),
     m_partitionsHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_msgTTLHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_msgTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgTTL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_msgTTL, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ModifyTopicRequest::SetClusterId(const string& _clusterId)
 bool ModifyTopicRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+uint64_t ModifyTopicRequest::GetMsgTTL() const
+{
+    return m_msgTTL;
+}
+
+void ModifyTopicRequest::SetMsgTTL(const uint64_t& _msgTTL)
+{
+    m_msgTTL = _msgTTL;
+    m_msgTTLHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::MsgTTLHasBeenSet() const
+{
+    return m_msgTTLHasBeenSet;
 }
 
 

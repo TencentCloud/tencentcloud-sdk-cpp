@@ -1803,6 +1803,49 @@ IotexplorerClient::DescribeGatewaySubProductsOutcomeCallable IotexplorerClient::
     return task->get_future();
 }
 
+IotexplorerClient::DescribeInstanceOutcome IotexplorerClient::DescribeInstance(const DescribeInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceResponse rsp = DescribeInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceOutcome(rsp);
+        else
+            return DescribeInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeInstanceAsync(const DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeInstanceOutcomeCallable IotexplorerClient::DescribeInstanceCallable(const DescribeInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeLoRaFrequencyOutcome IotexplorerClient::DescribeLoRaFrequency(const DescribeLoRaFrequencyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLoRaFrequency");

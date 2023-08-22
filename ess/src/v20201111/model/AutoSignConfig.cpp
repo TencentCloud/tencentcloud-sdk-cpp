@@ -26,7 +26,8 @@ AutoSignConfig::AutoSignConfig() :
     m_certInfoCallbackHasBeenSet(false),
     m_userDefineSealHasBeenSet(false),
     m_sealImgCallbackHasBeenSet(false),
-    m_verifyChannelsHasBeenSet(false)
+    m_verifyChannelsHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome AutoSignConfig::Deserialize(const rapidjson::Value &value)
         m_verifyChannelsHasBeenSet = true;
     }
 
+    if (value.HasMember("LicenseType") && !value["LicenseType"].IsNull())
+    {
+        if (!value["LicenseType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoSignConfig.LicenseType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseType = value["LicenseType"].GetInt64();
+        m_licenseTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ void AutoSignConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_licenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licenseType, allocator);
     }
 
 }
@@ -263,5 +282,21 @@ void AutoSignConfig::SetVerifyChannels(const vector<string>& _verifyChannels)
 bool AutoSignConfig::VerifyChannelsHasBeenSet() const
 {
     return m_verifyChannelsHasBeenSet;
+}
+
+int64_t AutoSignConfig::GetLicenseType() const
+{
+    return m_licenseType;
+}
+
+void AutoSignConfig::SetLicenseType(const int64_t& _licenseType)
+{
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
+}
+
+bool AutoSignConfig::LicenseTypeHasBeenSet() const
+{
+    return m_licenseTypeHasBeenSet;
 }
 

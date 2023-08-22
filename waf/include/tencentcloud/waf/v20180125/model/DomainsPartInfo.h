@@ -522,18 +522,18 @@ namespace TencentCloud
                     bool CiphersHasBeenSet() const;
 
                     /**
-                     * 获取模版
+                     * 获取模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CipherTemplate 模版
+                     * @return CipherTemplate 模板
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCipherTemplate() const;
 
                     /**
-                     * 设置模版
+                     * 设置模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cipherTemplate 模版
+                     * @param _cipherTemplate 模板
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -859,7 +859,7 @@ namespace TencentCloud
                     bool m_ciphersHasBeenSet;
 
                     /**
-                     * 模版
+                     * 模板
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cipherTemplate;

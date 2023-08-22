@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/MonitorTime.h>
+#include <tencentcloud/cls/v20201016/model/MultiCondition.h>
 #include <tencentcloud/cls/v20201016/model/AlarmTarget.h>
 #include <tencentcloud/cls/v20201016/model/CallBackInfo.h>
 #include <tencentcloud/cls/v20201016/model/AnalysisDimensional.h>
@@ -111,14 +112,26 @@ namespace TencentCloud
 
                     /**
                      * 获取触发条件。
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
                      * @return Condition 触发条件。
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
                      * 设置触发条件。
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
                      * @param _condition 触发条件。
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -129,6 +142,80 @@ namespace TencentCloud
                      * 
                      */
                     bool ConditionHasBeenSet() const;
+
+                    /**
+                     * 获取告警级别。
+
+0:警告(Warn);1:提醒(Info);2:紧急 (Critical)
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * @return AlarmLevel 告警级别。
+
+0:警告(Warn);1:提醒(Info);2:紧急 (Critical)
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * 
+                     */
+                    uint64_t GetAlarmLevel() const;
+
+                    /**
+                     * 设置告警级别。
+
+0:警告(Warn);1:提醒(Info);2:紧急 (Critical)
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * @param _alarmLevel 告警级别。
+
+0:警告(Warn);1:提醒(Info);2:紧急 (Critical)
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * 
+                     */
+                    void SetAlarmLevel(const uint64_t& _alarmLevel);
+
+                    /**
+                     * 判断参数 AlarmLevel 是否已赋值
+                     * @return AlarmLevel 是否已赋值
+                     * 
+                     */
+                    bool AlarmLevelHasBeenSet() const;
+
+                    /**
+                     * 获取多触发条件。 
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * @return MultiConditions 多触发条件。 
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * 
+                     */
+                    std::vector<MultiCondition> GetMultiConditions() const;
+
+                    /**
+                     * 设置多触发条件。 
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * @param _multiConditions 多触发条件。 
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * 
+                     */
+                    void SetMultiConditions(const std::vector<MultiCondition>& _multiConditions);
+
+                    /**
+                     * 判断参数 MultiConditions 是否已赋值
+                     * @return MultiConditions 是否已赋值
+                     * 
+                     */
+                    bool MultiConditionsHasBeenSet() const;
 
                     /**
                      * 获取持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。
@@ -320,9 +407,32 @@ namespace TencentCloud
 
                     /**
                      * 触发条件。
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
+
+                    /**
+                     * 告警级别。
+
+0:警告(Warn);1:提醒(Info);2:紧急 (Critical)
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     */
+                    uint64_t m_alarmLevel;
+                    bool m_alarmLevelHasBeenSet;
+
+                    /**
+                     * 多触发条件。 
+
+注意:  
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     */
+                    std::vector<MultiCondition> m_multiConditions;
+                    bool m_multiConditionsHasBeenSet;
 
                     /**
                      * 持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。

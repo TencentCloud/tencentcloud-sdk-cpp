@@ -37,7 +37,8 @@ ConfigReleaseLog::ConfigReleaseLog() :
     m_lastConfigIdHasBeenSet(false),
     m_lastConfigNameHasBeenSet(false),
     m_lastConfigVersionHasBeenSet(false),
-    m_rollbackFlagHasBeenSet(false)
+    m_rollbackFlagHasBeenSet(false),
+    m_releasedConfigCenterHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome ConfigReleaseLog::Deserialize(const rapidjson::Value &value)
         m_rollbackFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("ReleasedConfigCenter") && !value["ReleasedConfigCenter"].IsNull())
+    {
+        if (!value["ReleasedConfigCenter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigReleaseLog.ReleasedConfigCenter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_releasedConfigCenter = string(value["ReleasedConfigCenter"].GetString());
+        m_releasedConfigCenterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void ConfigReleaseLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "RollbackFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rollbackFlag, allocator);
+    }
+
+    if (m_releasedConfigCenterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReleasedConfigCenter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_releasedConfigCenter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void ConfigReleaseLog::SetRollbackFlag(const bool& _rollbackFlag)
 bool ConfigReleaseLog::RollbackFlagHasBeenSet() const
 {
     return m_rollbackFlagHasBeenSet;
+}
+
+string ConfigReleaseLog::GetReleasedConfigCenter() const
+{
+    return m_releasedConfigCenter;
+}
+
+void ConfigReleaseLog::SetReleasedConfigCenter(const string& _releasedConfigCenter)
+{
+    m_releasedConfigCenter = _releasedConfigCenter;
+    m_releasedConfigCenterHasBeenSet = true;
+}
+
+bool ConfigReleaseLog::ReleasedConfigCenterHasBeenSet() const
+{
+    return m_releasedConfigCenterHasBeenSet;
 }
 

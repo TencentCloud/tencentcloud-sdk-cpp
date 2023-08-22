@@ -633,6 +633,35 @@ namespace TencentCloud
                      */
                     bool PulsarTopicTypeHasBeenSet() const;
 
+                    /**
+                     * 获取未消费消息过期时间，单位：秒
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MsgTTL 未消费消息过期时间，单位：秒
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMsgTTL() const;
+
+                    /**
+                     * 设置未消费消息过期时间，单位：秒
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _msgTTL 未消费消息过期时间，单位：秒
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMsgTTL(const uint64_t& _msgTTL);
+
+                    /**
+                     * 判断参数 MsgTTL 是否已赋值
+                     * @return MsgTTL 是否已赋值
+                     * 
+                     */
+                    bool MsgTTLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -797,6 +826,14 @@ namespace TencentCloud
                      */
                     int64_t m_pulsarTopicType;
                     bool m_pulsarTopicTypeHasBeenSet;
+
+                    /**
+                     * 未消费消息过期时间，单位：秒
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_msgTTL;
+                    bool m_msgTTLHasBeenSet;
 
                 };
             }
