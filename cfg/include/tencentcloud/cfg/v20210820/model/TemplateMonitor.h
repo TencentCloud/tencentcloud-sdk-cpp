@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监控指标ID
-                     * @return MonitorId 监控指标ID
+                     * 获取pk
+                     * @return MonitorId pk
                      * 
                      */
                     int64_t GetMonitorId() const;
 
                     /**
-                     * 设置监控指标ID
-                     * @param _monitorId 监控指标ID
+                     * 设置pk
+                     * @param _monitorId pk
                      * 
                      */
                     void SetMonitorId(const int64_t& _monitorId);
@@ -66,6 +66,31 @@ namespace TencentCloud
                      * 
                      */
                     bool MonitorIdHasBeenSet() const;
+
+                    /**
+                     * 获取监控指标ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricId 监控指标ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMetricId() const;
+
+                    /**
+                     * 设置监控指标ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _metricId 监控指标ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMetricId(const int64_t& _metricId);
+
+                    /**
+                     * 判断参数 MetricId 是否已赋值
+                     * @return MetricId 是否已赋值
+                     * 
+                     */
+                    bool MetricIdHasBeenSet() const;
 
                     /**
                      * 获取监控指标对象类型ID
@@ -137,10 +162,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监控指标ID
+                     * pk
                      */
                     int64_t m_monitorId;
                     bool m_monitorIdHasBeenSet;
+
+                    /**
+                     * 监控指标ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_metricId;
+                    bool m_metricIdHasBeenSet;
 
                     /**
                      * 监控指标对象类型ID

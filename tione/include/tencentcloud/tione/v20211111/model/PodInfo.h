@@ -96,6 +96,31 @@ namespace TencentCloud
                      */
                     bool IPHasBeenSet() const;
 
+                    /**
+                     * 获取pod状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status pod状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置pod状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status pod状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +136,13 @@ namespace TencentCloud
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
+
+                    /**
+                     * pod状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

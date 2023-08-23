@@ -172,22 +172,22 @@ namespace TencentCloud
                     bool Md5ValueHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，秒级别的时间戳
+                     * 获取创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间，秒级别的时间戳
+                     * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetCreateTime() const;
+                    std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，秒级别的时间戳
+                     * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间，秒级别的时间戳
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetCreateTime(const uint64_t& _createTime);
+                    void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
@@ -197,22 +197,22 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间，秒级别的时间戳
+                     * 获取更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间，秒级别的时间戳
+                     * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetUpdateTime() const;
+                    std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间，秒级别的时间戳
+                     * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间，秒级别的时间戳
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetUpdateTime(const uint64_t& _updateTime);
+                    void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
@@ -559,17 +559,17 @@ namespace TencentCloud
                     bool m_md5ValueHasBeenSet;
 
                     /**
-                     * 创建时间，秒级别的时间戳
+                     * 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_createTime;
+                    std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间，秒级别的时间戳
+                     * 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_updateTime;
+                    std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**

@@ -100,21 +100,21 @@ CoreInternalOutcome UserFileDTO::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
-        if (!value["CreateTime"].IsUint64())
+        if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `UserFileDTO.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserFileDTO.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_createTime = value["CreateTime"].GetUint64();
+        m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
     }
 
     if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
     {
-        if (!value["UpdateTime"].IsUint64())
+        if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `UserFileDTO.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserFileDTO.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_updateTime = value["UpdateTime"].GetUint64();
+        m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
     }
 
@@ -290,7 +290,7 @@ void UserFileDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_createTime, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
@@ -298,7 +298,7 @@ void UserFileDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_updateTime, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sizeHasBeenSet)
@@ -480,12 +480,12 @@ bool UserFileDTO::Md5ValueHasBeenSet() const
     return m_md5ValueHasBeenSet;
 }
 
-uint64_t UserFileDTO::GetCreateTime() const
+string UserFileDTO::GetCreateTime() const
 {
     return m_createTime;
 }
 
-void UserFileDTO::SetCreateTime(const uint64_t& _createTime)
+void UserFileDTO::SetCreateTime(const string& _createTime)
 {
     m_createTime = _createTime;
     m_createTimeHasBeenSet = true;
@@ -496,12 +496,12 @@ bool UserFileDTO::CreateTimeHasBeenSet() const
     return m_createTimeHasBeenSet;
 }
 
-uint64_t UserFileDTO::GetUpdateTime() const
+string UserFileDTO::GetUpdateTime() const
 {
     return m_updateTime;
 }
 
-void UserFileDTO::SetUpdateTime(const uint64_t& _updateTime)
+void UserFileDTO::SetUpdateTime(const string& _updateTime)
 {
     m_updateTime = _updateTime;
     m_updateTimeHasBeenSet = true;

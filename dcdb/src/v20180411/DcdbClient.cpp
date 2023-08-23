@@ -1803,49 +1803,6 @@ DcdbClient::DescribeShardSpecOutcomeCallable DcdbClient::DescribeShardSpecCallab
     return task->get_future();
 }
 
-DcdbClient::DescribeSqlLogsOutcome DcdbClient::DescribeSqlLogs(const DescribeSqlLogsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSqlLogs");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSqlLogsResponse rsp = DescribeSqlLogsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSqlLogsOutcome(rsp);
-        else
-            return DescribeSqlLogsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSqlLogsOutcome(outcome.GetError());
-    }
-}
-
-void DcdbClient::DescribeSqlLogsAsync(const DescribeSqlLogsRequest& request, const DescribeSqlLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSqlLogs(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DcdbClient::DescribeSqlLogsOutcomeCallable DcdbClient::DescribeSqlLogsCallable(const DescribeSqlLogsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSqlLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSqlLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 DcdbClient::DescribeUserTasksOutcome DcdbClient::DescribeUserTasks(const DescribeUserTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserTasks");

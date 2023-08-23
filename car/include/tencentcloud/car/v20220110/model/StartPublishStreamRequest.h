@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取推流参数，推流时携带自定义参数。
+                     * @return PublishStreamArgs 推流参数，推流时携带自定义参数。
+                     * 
+                     */
+                    std::string GetPublishStreamArgs() const;
+
+                    /**
+                     * 设置推流参数，推流时携带自定义参数。
+                     * @param _publishStreamArgs 推流参数，推流时携带自定义参数。
+                     * 
+                     */
+                    void SetPublishStreamArgs(const std::string& _publishStreamArgs);
+
+                    /**
+                     * 判断参数 PublishStreamArgs 是否已赋值
+                     * @return PublishStreamArgs 是否已赋值
+                     * 
+                     */
+                    bool PublishStreamArgsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 推流参数，推流时携带自定义参数。
+                     */
+                    std::string m_publishStreamArgs;
+                    bool m_publishStreamArgsHasBeenSet;
 
                 };
             }

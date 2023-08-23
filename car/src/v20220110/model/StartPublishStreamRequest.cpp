@@ -23,7 +23,8 @@ using namespace TencentCloud::Car::V20220110::Model;
 using namespace std;
 
 StartPublishStreamRequest::StartPublishStreamRequest() :
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_publishStreamArgsHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string StartPublishStreamRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publishStreamArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublishStreamArgs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_publishStreamArgs.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void StartPublishStreamRequest::SetUserId(const string& _userId)
 bool StartPublishStreamRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string StartPublishStreamRequest::GetPublishStreamArgs() const
+{
+    return m_publishStreamArgs;
+}
+
+void StartPublishStreamRequest::SetPublishStreamArgs(const string& _publishStreamArgs)
+{
+    m_publishStreamArgs = _publishStreamArgs;
+    m_publishStreamArgsHasBeenSet = true;
+}
+
+bool StartPublishStreamRequest::PublishStreamArgsHasBeenSet() const
+{
+    return m_publishStreamArgsHasBeenSet;
 }
 
 

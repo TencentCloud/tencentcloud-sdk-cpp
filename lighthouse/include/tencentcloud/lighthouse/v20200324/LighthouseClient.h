@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/lighthouse/v20200324/model/ApplyDiskBackupRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ApplyDiskBackupResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ApplyFirewallTemplateRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ApplyFirewallTemplateResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsRequest.h>
@@ -41,6 +43,10 @@
 #include <tencentcloud/lighthouse/v20200324/model/CreateDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateFirewallTemplateRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateFirewallTemplateResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateFirewallTemplateRulesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateFirewallTemplateRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstancesRequest.h>
@@ -53,6 +59,10 @@
 #include <tencentcloud/lighthouse/v20200324/model/DeleteDiskBackupsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallTemplateRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallTemplateResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallTemplateRulesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallTemplateRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsRequest.h>
@@ -95,6 +105,16 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateApplyRecordsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateApplyRecordsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateQuotaRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateQuotaResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateRuleQuotaRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateRuleQuotaResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateRulesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplatesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplatesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceLoginKeyPairAttributeRequest.h>
@@ -163,6 +183,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallTemplateRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallTemplateResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesBundleRequest.h>
@@ -183,10 +205,14 @@
 #include <tencentcloud/lighthouse/v20200324/model/RenewDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenewInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenewInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ReplaceFirewallTemplateRuleRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ReplaceFirewallTemplateRuleResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RerunDockerContainerRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RerunDockerContainerResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ResetFirewallTemplateRulesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ResetFirewallTemplateRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordRequest.h>
@@ -224,6 +250,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyDiskBackupResponse> ApplyDiskBackupOutcome;
                 typedef std::future<ApplyDiskBackupOutcome> ApplyDiskBackupOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ApplyDiskBackupRequest&, ApplyDiskBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyDiskBackupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyFirewallTemplateResponse> ApplyFirewallTemplateOutcome;
+                typedef std::future<ApplyFirewallTemplateOutcome> ApplyFirewallTemplateOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ApplyFirewallTemplateRequest&, ApplyFirewallTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyFirewallTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyInstanceSnapshotResponse> ApplyInstanceSnapshotOutcome;
                 typedef std::future<ApplyInstanceSnapshotOutcome> ApplyInstanceSnapshotOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ApplyInstanceSnapshotRequest&, ApplyInstanceSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyInstanceSnapshotAsyncHandler;
@@ -248,6 +277,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFirewallRulesResponse> CreateFirewallRulesOutcome;
                 typedef std::future<CreateFirewallRulesOutcome> CreateFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateFirewallRulesRequest&, CreateFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFirewallTemplateResponse> CreateFirewallTemplateOutcome;
+                typedef std::future<CreateFirewallTemplateOutcome> CreateFirewallTemplateOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateFirewallTemplateRequest&, CreateFirewallTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFirewallTemplateRulesResponse> CreateFirewallTemplateRulesOutcome;
+                typedef std::future<CreateFirewallTemplateRulesOutcome> CreateFirewallTemplateRulesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateFirewallTemplateRulesRequest&, CreateFirewallTemplateRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallTemplateRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceSnapshotResponse> CreateInstanceSnapshotOutcome;
                 typedef std::future<CreateInstanceSnapshotOutcome> CreateInstanceSnapshotOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateInstanceSnapshotRequest&, CreateInstanceSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceSnapshotAsyncHandler;
@@ -266,6 +301,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteFirewallRulesResponse> DeleteFirewallRulesOutcome;
                 typedef std::future<DeleteFirewallRulesOutcome> DeleteFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DeleteFirewallRulesRequest&, DeleteFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFirewallTemplateResponse> DeleteFirewallTemplateOutcome;
+                typedef std::future<DeleteFirewallTemplateOutcome> DeleteFirewallTemplateOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DeleteFirewallTemplateRequest&, DeleteFirewallTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFirewallTemplateRulesResponse> DeleteFirewallTemplateRulesOutcome;
+                typedef std::future<DeleteFirewallTemplateRulesOutcome> DeleteFirewallTemplateRulesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DeleteFirewallTemplateRulesRequest&, DeleteFirewallTemplateRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallTemplateRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteKeyPairsResponse> DeleteKeyPairsOutcome;
                 typedef std::future<DeleteKeyPairsOutcome> DeleteKeyPairsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DeleteKeyPairsRequest&, DeleteKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeyPairsAsyncHandler;
@@ -329,6 +370,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFirewallRulesTemplateResponse> DescribeFirewallRulesTemplateOutcome;
                 typedef std::future<DescribeFirewallRulesTemplateOutcome> DescribeFirewallRulesTemplateOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallRulesTemplateRequest&, DescribeFirewallRulesTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallRulesTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirewallTemplateApplyRecordsResponse> DescribeFirewallTemplateApplyRecordsOutcome;
+                typedef std::future<DescribeFirewallTemplateApplyRecordsOutcome> DescribeFirewallTemplateApplyRecordsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallTemplateApplyRecordsRequest&, DescribeFirewallTemplateApplyRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallTemplateApplyRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirewallTemplateQuotaResponse> DescribeFirewallTemplateQuotaOutcome;
+                typedef std::future<DescribeFirewallTemplateQuotaOutcome> DescribeFirewallTemplateQuotaOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallTemplateQuotaRequest&, DescribeFirewallTemplateQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallTemplateQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirewallTemplateRuleQuotaResponse> DescribeFirewallTemplateRuleQuotaOutcome;
+                typedef std::future<DescribeFirewallTemplateRuleQuotaOutcome> DescribeFirewallTemplateRuleQuotaOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallTemplateRuleQuotaRequest&, DescribeFirewallTemplateRuleQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallTemplateRuleQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirewallTemplateRulesResponse> DescribeFirewallTemplateRulesOutcome;
+                typedef std::future<DescribeFirewallTemplateRulesOutcome> DescribeFirewallTemplateRulesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallTemplateRulesRequest&, DescribeFirewallTemplateRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallTemplateRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirewallTemplatesResponse> DescribeFirewallTemplatesOutcome;
+                typedef std::future<DescribeFirewallTemplatesOutcome> DescribeFirewallTemplatesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallTemplatesRequest&, DescribeFirewallTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGeneralResourceQuotasResponse> DescribeGeneralResourceQuotasOutcome;
                 typedef std::future<DescribeGeneralResourceQuotasOutcome> DescribeGeneralResourceQuotasOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeGeneralResourceQuotasRequest&, DescribeGeneralResourceQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralResourceQuotasAsyncHandler;
@@ -431,6 +487,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyFirewallRulesResponse> ModifyFirewallRulesOutcome;
                 typedef std::future<ModifyFirewallRulesOutcome> ModifyFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyFirewallRulesRequest&, ModifyFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFirewallTemplateResponse> ModifyFirewallTemplateOutcome;
+                typedef std::future<ModifyFirewallTemplateOutcome> ModifyFirewallTemplateOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyFirewallTemplateRequest&, ModifyFirewallTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
                 typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
@@ -461,12 +520,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewInstancesResponse> RenewInstancesOutcome;
                 typedef std::future<RenewInstancesOutcome> RenewInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RenewInstancesRequest&, RenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceFirewallTemplateRuleResponse> ReplaceFirewallTemplateRuleOutcome;
+                typedef std::future<ReplaceFirewallTemplateRuleOutcome> ReplaceFirewallTemplateRuleOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ReplaceFirewallTemplateRuleRequest&, ReplaceFirewallTemplateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceFirewallTemplateRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::RerunDockerContainerResponse> RerunDockerContainerOutcome;
                 typedef std::future<RerunDockerContainerOutcome> RerunDockerContainerOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RerunDockerContainerRequest&, RerunDockerContainerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RerunDockerContainerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetAttachCcnResponse> ResetAttachCcnOutcome;
                 typedef std::future<ResetAttachCcnOutcome> ResetAttachCcnOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ResetAttachCcnRequest&, ResetAttachCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAttachCcnAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetFirewallTemplateRulesResponse> ResetFirewallTemplateRulesOutcome;
+                typedef std::future<ResetFirewallTemplateRulesOutcome> ResetFirewallTemplateRulesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ResetFirewallTemplateRulesRequest&, ResetFirewallTemplateRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetFirewallTemplateRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetInstanceResponse> ResetInstanceOutcome;
                 typedef std::future<ResetInstanceOutcome> ResetInstanceOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ResetInstanceRequest&, ResetInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstanceAsyncHandler;
@@ -514,6 +579,15 @@ namespace TencentCloud
                 ApplyDiskBackupOutcome ApplyDiskBackup(const Model::ApplyDiskBackupRequest &request);
                 void ApplyDiskBackupAsync(const Model::ApplyDiskBackupRequest& request, const ApplyDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyDiskBackupOutcomeCallable ApplyDiskBackupCallable(const Model::ApplyDiskBackupRequest& request);
+
+                /**
+                 *本接口 (ApplyFirewallTemplate) 用于应用防火墙模板到多个实例。
+                 * @param req ApplyFirewallTemplateRequest
+                 * @return ApplyFirewallTemplateOutcome
+                 */
+                ApplyFirewallTemplateOutcome ApplyFirewallTemplate(const Model::ApplyFirewallTemplateRequest &request);
+                void ApplyFirewallTemplateAsync(const Model::ApplyFirewallTemplateRequest& request, const ApplyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyFirewallTemplateOutcomeCallable ApplyFirewallTemplateCallable(const Model::ApplyFirewallTemplateRequest& request);
 
                 /**
                  *本接口（ApplyInstanceSnapshot）用于回滚指定实例的系统盘快照。
@@ -607,6 +681,24 @@ namespace TencentCloud
                 CreateFirewallRulesOutcomeCallable CreateFirewallRulesCallable(const Model::CreateFirewallRulesRequest& request);
 
                 /**
+                 *本接口 (CreateFirewallTemplate) 用于创建防火墙模板。
+                 * @param req CreateFirewallTemplateRequest
+                 * @return CreateFirewallTemplateOutcome
+                 */
+                CreateFirewallTemplateOutcome CreateFirewallTemplate(const Model::CreateFirewallTemplateRequest &request);
+                void CreateFirewallTemplateAsync(const Model::CreateFirewallTemplateRequest& request, const CreateFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFirewallTemplateOutcomeCallable CreateFirewallTemplateCallable(const Model::CreateFirewallTemplateRequest& request);
+
+                /**
+                 *本接口 (CreateFirewallTemplateRules) 用于创建防火墙模板规则。
+                 * @param req CreateFirewallTemplateRulesRequest
+                 * @return CreateFirewallTemplateRulesOutcome
+                 */
+                CreateFirewallTemplateRulesOutcome CreateFirewallTemplateRules(const Model::CreateFirewallTemplateRulesRequest &request);
+                void CreateFirewallTemplateRulesAsync(const Model::CreateFirewallTemplateRulesRequest& request, const CreateFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFirewallTemplateRulesOutcomeCallable CreateFirewallTemplateRulesCallable(const Model::CreateFirewallTemplateRulesRequest& request);
+
+                /**
                  *本接口（CreateInstanceSnapshot）用于创建指定实例的系统盘快照。
                  * @param req CreateInstanceSnapshotRequest
                  * @return CreateInstanceSnapshotOutcome
@@ -669,6 +761,24 @@ namespace TencentCloud
                 DeleteFirewallRulesOutcome DeleteFirewallRules(const Model::DeleteFirewallRulesRequest &request);
                 void DeleteFirewallRulesAsync(const Model::DeleteFirewallRulesRequest& request, const DeleteFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFirewallRulesOutcomeCallable DeleteFirewallRulesCallable(const Model::DeleteFirewallRulesRequest& request);
+
+                /**
+                 *本接口 (DeleteFirewallTemplate) 用于删除防火墙模板。
+                 * @param req DeleteFirewallTemplateRequest
+                 * @return DeleteFirewallTemplateOutcome
+                 */
+                DeleteFirewallTemplateOutcome DeleteFirewallTemplate(const Model::DeleteFirewallTemplateRequest &request);
+                void DeleteFirewallTemplateAsync(const Model::DeleteFirewallTemplateRequest& request, const DeleteFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFirewallTemplateOutcomeCallable DeleteFirewallTemplateCallable(const Model::DeleteFirewallTemplateRequest& request);
+
+                /**
+                 *本接口 (DeleteFirewallTemplateRules) 用于删除防火墙模板规则。
+                 * @param req DeleteFirewallTemplateRulesRequest
+                 * @return DeleteFirewallTemplateRulesOutcome
+                 */
+                DeleteFirewallTemplateRulesOutcome DeleteFirewallTemplateRules(const Model::DeleteFirewallTemplateRulesRequest &request);
+                void DeleteFirewallTemplateRulesAsync(const Model::DeleteFirewallTemplateRulesRequest& request, const DeleteFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFirewallTemplateRulesOutcomeCallable DeleteFirewallTemplateRulesCallable(const Model::DeleteFirewallTemplateRulesRequest& request);
 
                 /**
                  *本接口（DeleteKeyPairs）用于删除密钥对。
@@ -859,6 +969,51 @@ namespace TencentCloud
                 DescribeFirewallRulesTemplateOutcome DescribeFirewallRulesTemplate(const Model::DescribeFirewallRulesTemplateRequest &request);
                 void DescribeFirewallRulesTemplateAsync(const Model::DescribeFirewallRulesTemplateRequest& request, const DescribeFirewallRulesTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFirewallRulesTemplateOutcomeCallable DescribeFirewallRulesTemplateCallable(const Model::DescribeFirewallRulesTemplateRequest& request);
+
+                /**
+                 *本接口 (DescribeFirewallTemplateApplyRecords) 用于查询防火墙模板应用记录列表。
+                 * @param req DescribeFirewallTemplateApplyRecordsRequest
+                 * @return DescribeFirewallTemplateApplyRecordsOutcome
+                 */
+                DescribeFirewallTemplateApplyRecordsOutcome DescribeFirewallTemplateApplyRecords(const Model::DescribeFirewallTemplateApplyRecordsRequest &request);
+                void DescribeFirewallTemplateApplyRecordsAsync(const Model::DescribeFirewallTemplateApplyRecordsRequest& request, const DescribeFirewallTemplateApplyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirewallTemplateApplyRecordsOutcomeCallable DescribeFirewallTemplateApplyRecordsCallable(const Model::DescribeFirewallTemplateApplyRecordsRequest& request);
+
+                /**
+                 *本接口 (DescribeFirewallTemplateQuota) 用于查询防火墙模板配额。
+                 * @param req DescribeFirewallTemplateQuotaRequest
+                 * @return DescribeFirewallTemplateQuotaOutcome
+                 */
+                DescribeFirewallTemplateQuotaOutcome DescribeFirewallTemplateQuota(const Model::DescribeFirewallTemplateQuotaRequest &request);
+                void DescribeFirewallTemplateQuotaAsync(const Model::DescribeFirewallTemplateQuotaRequest& request, const DescribeFirewallTemplateQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirewallTemplateQuotaOutcomeCallable DescribeFirewallTemplateQuotaCallable(const Model::DescribeFirewallTemplateQuotaRequest& request);
+
+                /**
+                 *本接口 (DescribeFirewallTemplateRuleQuota) 用于查询防火墙模板规则配额。
+                 * @param req DescribeFirewallTemplateRuleQuotaRequest
+                 * @return DescribeFirewallTemplateRuleQuotaOutcome
+                 */
+                DescribeFirewallTemplateRuleQuotaOutcome DescribeFirewallTemplateRuleQuota(const Model::DescribeFirewallTemplateRuleQuotaRequest &request);
+                void DescribeFirewallTemplateRuleQuotaAsync(const Model::DescribeFirewallTemplateRuleQuotaRequest& request, const DescribeFirewallTemplateRuleQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirewallTemplateRuleQuotaOutcomeCallable DescribeFirewallTemplateRuleQuotaCallable(const Model::DescribeFirewallTemplateRuleQuotaRequest& request);
+
+                /**
+                 *本接口 (DescribeFirewallTemplateRules) 用于查询防火墙模板规则列表。
+                 * @param req DescribeFirewallTemplateRulesRequest
+                 * @return DescribeFirewallTemplateRulesOutcome
+                 */
+                DescribeFirewallTemplateRulesOutcome DescribeFirewallTemplateRules(const Model::DescribeFirewallTemplateRulesRequest &request);
+                void DescribeFirewallTemplateRulesAsync(const Model::DescribeFirewallTemplateRulesRequest& request, const DescribeFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirewallTemplateRulesOutcomeCallable DescribeFirewallTemplateRulesCallable(const Model::DescribeFirewallTemplateRulesRequest& request);
+
+                /**
+                 *本接口 (DescribeFirewallTemplates) 用于查询防火墙模板列表。
+                 * @param req DescribeFirewallTemplatesRequest
+                 * @return DescribeFirewallTemplatesOutcome
+                 */
+                DescribeFirewallTemplatesOutcome DescribeFirewallTemplates(const Model::DescribeFirewallTemplatesRequest &request);
+                void DescribeFirewallTemplatesAsync(const Model::DescribeFirewallTemplatesRequest& request, const DescribeFirewallTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirewallTemplatesOutcomeCallable DescribeFirewallTemplatesCallable(const Model::DescribeFirewallTemplatesRequest& request);
 
                 /**
                  *本接口（DescribeGeneralResourceQuotas）用于查询通用资源配额信息。
@@ -1221,6 +1376,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyFirewallRulesOutcomeCallable ModifyFirewallRulesCallable(const Model::ModifyFirewallRulesRequest& request);
 
                 /**
+                 *本接口 (ModifyFirewallTemplate) 用于修改防火墙模板。
+                 * @param req ModifyFirewallTemplateRequest
+                 * @return ModifyFirewallTemplateOutcome
+                 */
+                ModifyFirewallTemplateOutcome ModifyFirewallTemplate(const Model::ModifyFirewallTemplateRequest &request);
+                void ModifyFirewallTemplateAsync(const Model::ModifyFirewallTemplateRequest& request, const ModifyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFirewallTemplateOutcomeCallable ModifyFirewallTemplateCallable(const Model::ModifyFirewallTemplateRequest& request);
+
+                /**
                  *本接口（ModifyInstancesAttribute）用于修改实例的属性。
 * “实例名称”仅为方便用户自己管理之用。
 * 支持批量操作。每次请求批量实例的上限为 100。
@@ -1334,6 +1498,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 RenewInstancesOutcomeCallable RenewInstancesCallable(const Model::RenewInstancesRequest& request);
 
                 /**
+                 *本接口 (ReplaceFirewallTemplateRules) 用于替换防火墙模板规则。
+                 * @param req ReplaceFirewallTemplateRuleRequest
+                 * @return ReplaceFirewallTemplateRuleOutcome
+                 */
+                ReplaceFirewallTemplateRuleOutcome ReplaceFirewallTemplateRule(const Model::ReplaceFirewallTemplateRuleRequest &request);
+                void ReplaceFirewallTemplateRuleAsync(const Model::ReplaceFirewallTemplateRuleRequest& request, const ReplaceFirewallTemplateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceFirewallTemplateRuleOutcomeCallable ReplaceFirewallTemplateRuleCallable(const Model::ReplaceFirewallTemplateRuleRequest& request);
+
+                /**
                  *重新创建并运行实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重建情况。
                  * @param req RerunDockerContainerRequest
                  * @return RerunDockerContainerOutcome
@@ -1350,6 +1523,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ResetAttachCcnOutcome ResetAttachCcn(const Model::ResetAttachCcnRequest &request);
                 void ResetAttachCcnAsync(const Model::ResetAttachCcnRequest& request, const ResetAttachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetAttachCcnOutcomeCallable ResetAttachCcnCallable(const Model::ResetAttachCcnRequest& request);
+
+                /**
+                 *本接口 (ResetFirewallTemplateRules) 用于重置防火墙模板下所有规则。
+                 * @param req ResetFirewallTemplateRulesRequest
+                 * @return ResetFirewallTemplateRulesOutcome
+                 */
+                ResetFirewallTemplateRulesOutcome ResetFirewallTemplateRules(const Model::ResetFirewallTemplateRulesRequest &request);
+                void ResetFirewallTemplateRulesAsync(const Model::ResetFirewallTemplateRulesRequest& request, const ResetFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetFirewallTemplateRulesOutcomeCallable ResetFirewallTemplateRulesCallable(const Model::ResetFirewallTemplateRulesRequest& request);
 
                 /**
                  *本接口（ResetInstance）用于重装指定实例上的镜像。

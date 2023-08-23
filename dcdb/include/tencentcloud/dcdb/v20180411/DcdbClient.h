@@ -105,8 +105,6 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeProjectsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeShardSpecRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeShardSpecResponse.h>
-#include <tencentcloud/dcdb/v20180411/model/DescribeSqlLogsRequest.h>
-#include <tencentcloud/dcdb/v20180411/model/DescribeSqlLogsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeUserTasksRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeUserTasksResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DestroyDCDBInstanceRequest.h>
@@ -308,9 +306,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeShardSpecResponse> DescribeShardSpecOutcome;
                 typedef std::future<DescribeShardSpecOutcome> DescribeShardSpecOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeShardSpecRequest&, DescribeShardSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShardSpecAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSqlLogsResponse> DescribeSqlLogsOutcome;
-                typedef std::future<DescribeSqlLogsOutcome> DescribeSqlLogsOutcomeCallable;
-                typedef std::function<void(const DcdbClient*, const Model::DescribeSqlLogsRequest&, DescribeSqlLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserTasksResponse> DescribeUserTasksOutcome;
                 typedef std::future<DescribeUserTasksOutcome> DescribeUserTasksOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeUserTasksRequest&, DescribeUserTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserTasksAsyncHandler;
@@ -781,17 +776,6 @@ namespace TencentCloud
                 DescribeShardSpecOutcome DescribeShardSpec(const Model::DescribeShardSpecRequest &request);
                 void DescribeShardSpecAsync(const Model::DescribeShardSpecRequest& request, const DescribeShardSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeShardSpecOutcomeCallable DescribeShardSpecCallable(const Model::DescribeShardSpecRequest& request);
-
-                /**
-                 *已废弃接口
-
-本接口（DescribeSqlLogs）用于获取实例SQL日志。
-                 * @param req DescribeSqlLogsRequest
-                 * @return DescribeSqlLogsOutcome
-                 */
-                DescribeSqlLogsOutcome DescribeSqlLogs(const Model::DescribeSqlLogsRequest &request);
-                void DescribeSqlLogsAsync(const Model::DescribeSqlLogsRequest& request, const DescribeSqlLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSqlLogsOutcomeCallable DescribeSqlLogsCallable(const Model::DescribeSqlLogsRequest& request);
 
                 /**
                  *本接口（DescribeUserTasks）用于拉取用户任务列表

@@ -26,22 +26,22 @@ CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_nameHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_resourceConfigInfosHasBeenSet(false),
-    m_codePackagePathHasBeenSet(false),
-    m_trainingModeHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_logEnableHasBeenSet(false),
     m_frameworkNameHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
     m_frameworkEnvironmentHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_imageInfoHasBeenSet(false),
+    m_codePackagePathHasBeenSet(false),
     m_startCmdInfoHasBeenSet(false),
+    m_trainingModeHasBeenSet(false),
     m_dataConfigsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_outputHasBeenSet(false),
     m_logConfigHasBeenSet(false),
     m_tuningParametersHasBeenSet(false),
+    m_logEnableHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_callbackUrlHasBeenSet(false)
@@ -84,40 +84,6 @@ string CreateTrainingTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_codePackagePathHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CodePackagePath";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_codePackagePath.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_trainingModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TrainingMode";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_trainingMode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_outputHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Output";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_output.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_logEnableHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LogEnable";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_logEnable, allocator);
     }
 
     if (m_frameworkNameHasBeenSet)
@@ -176,6 +142,15 @@ string CreateTrainingTaskRequest::ToJsonString() const
         m_imageInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_codePackagePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodePackagePath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_codePackagePath.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_startCmdInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -183,6 +158,14 @@ string CreateTrainingTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_startCmdInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_trainingModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrainingMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_trainingMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataConfigsHasBeenSet)
@@ -216,6 +199,15 @@ string CreateTrainingTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_outputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Output";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_output.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_logConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -231,6 +223,14 @@ string CreateTrainingTaskRequest::ToJsonString() const
         string key = "TuningParameters";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tuningParameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_logEnable, allocator);
     }
 
     if (m_remarkHasBeenSet)
@@ -311,70 +311,6 @@ void CreateTrainingTaskRequest::SetResourceConfigInfos(const vector<ResourceConf
 bool CreateTrainingTaskRequest::ResourceConfigInfosHasBeenSet() const
 {
     return m_resourceConfigInfosHasBeenSet;
-}
-
-CosPathInfo CreateTrainingTaskRequest::GetCodePackagePath() const
-{
-    return m_codePackagePath;
-}
-
-void CreateTrainingTaskRequest::SetCodePackagePath(const CosPathInfo& _codePackagePath)
-{
-    m_codePackagePath = _codePackagePath;
-    m_codePackagePathHasBeenSet = true;
-}
-
-bool CreateTrainingTaskRequest::CodePackagePathHasBeenSet() const
-{
-    return m_codePackagePathHasBeenSet;
-}
-
-string CreateTrainingTaskRequest::GetTrainingMode() const
-{
-    return m_trainingMode;
-}
-
-void CreateTrainingTaskRequest::SetTrainingMode(const string& _trainingMode)
-{
-    m_trainingMode = _trainingMode;
-    m_trainingModeHasBeenSet = true;
-}
-
-bool CreateTrainingTaskRequest::TrainingModeHasBeenSet() const
-{
-    return m_trainingModeHasBeenSet;
-}
-
-CosPathInfo CreateTrainingTaskRequest::GetOutput() const
-{
-    return m_output;
-}
-
-void CreateTrainingTaskRequest::SetOutput(const CosPathInfo& _output)
-{
-    m_output = _output;
-    m_outputHasBeenSet = true;
-}
-
-bool CreateTrainingTaskRequest::OutputHasBeenSet() const
-{
-    return m_outputHasBeenSet;
-}
-
-bool CreateTrainingTaskRequest::GetLogEnable() const
-{
-    return m_logEnable;
-}
-
-void CreateTrainingTaskRequest::SetLogEnable(const bool& _logEnable)
-{
-    m_logEnable = _logEnable;
-    m_logEnableHasBeenSet = true;
-}
-
-bool CreateTrainingTaskRequest::LogEnableHasBeenSet() const
-{
-    return m_logEnableHasBeenSet;
 }
 
 string CreateTrainingTaskRequest::GetFrameworkName() const
@@ -473,6 +409,22 @@ bool CreateTrainingTaskRequest::ImageInfoHasBeenSet() const
     return m_imageInfoHasBeenSet;
 }
 
+CosPathInfo CreateTrainingTaskRequest::GetCodePackagePath() const
+{
+    return m_codePackagePath;
+}
+
+void CreateTrainingTaskRequest::SetCodePackagePath(const CosPathInfo& _codePackagePath)
+{
+    m_codePackagePath = _codePackagePath;
+    m_codePackagePathHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::CodePackagePathHasBeenSet() const
+{
+    return m_codePackagePathHasBeenSet;
+}
+
 StartCmdInfo CreateTrainingTaskRequest::GetStartCmdInfo() const
 {
     return m_startCmdInfo;
@@ -487,6 +439,22 @@ void CreateTrainingTaskRequest::SetStartCmdInfo(const StartCmdInfo& _startCmdInf
 bool CreateTrainingTaskRequest::StartCmdInfoHasBeenSet() const
 {
     return m_startCmdInfoHasBeenSet;
+}
+
+string CreateTrainingTaskRequest::GetTrainingMode() const
+{
+    return m_trainingMode;
+}
+
+void CreateTrainingTaskRequest::SetTrainingMode(const string& _trainingMode)
+{
+    m_trainingMode = _trainingMode;
+    m_trainingModeHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::TrainingModeHasBeenSet() const
+{
+    return m_trainingModeHasBeenSet;
 }
 
 vector<DataConfig> CreateTrainingTaskRequest::GetDataConfigs() const
@@ -537,6 +505,22 @@ bool CreateTrainingTaskRequest::SubnetIdHasBeenSet() const
     return m_subnetIdHasBeenSet;
 }
 
+CosPathInfo CreateTrainingTaskRequest::GetOutput() const
+{
+    return m_output;
+}
+
+void CreateTrainingTaskRequest::SetOutput(const CosPathInfo& _output)
+{
+    m_output = _output;
+    m_outputHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::OutputHasBeenSet() const
+{
+    return m_outputHasBeenSet;
+}
+
 LogConfig CreateTrainingTaskRequest::GetLogConfig() const
 {
     return m_logConfig;
@@ -567,6 +551,22 @@ void CreateTrainingTaskRequest::SetTuningParameters(const string& _tuningParamet
 bool CreateTrainingTaskRequest::TuningParametersHasBeenSet() const
 {
     return m_tuningParametersHasBeenSet;
+}
+
+bool CreateTrainingTaskRequest::GetLogEnable() const
+{
+    return m_logEnable;
+}
+
+void CreateTrainingTaskRequest::SetLogEnable(const bool& _logEnable)
+{
+    m_logEnable = _logEnable;
+    m_logEnableHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::LogEnableHasBeenSet() const
+{
+    return m_logEnableHasBeenSet;
 }
 
 string CreateTrainingTaskRequest::GetRemark() const

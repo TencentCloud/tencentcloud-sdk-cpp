@@ -27,6 +27,7 @@
 #include <tencentcloud/tione/v20211111/model/ResourceConf.h>
 #include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/CFSConfig.h>
+#include <tencentcloud/tione/v20211111/model/SSHConfig.h>
 
 
 namespace TencentCloud
@@ -658,6 +659,31 @@ namespace TencentCloud
                      */
                     bool UserTypesHasBeenSet() const;
 
+                    /**
+                     * 获取SSH配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SSHConfig SSH配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SSHConfig GetSSHConfig() const;
+
+                    /**
+                     * 设置SSH配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sSHConfig SSH配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSSHConfig(const SSHConfig& _sSHConfig);
+
+                    /**
+                     * 判断参数 SSHConfig 是否已赋值
+                     * @return SSHConfig 是否已赋值
+                     * 
+                     */
+                    bool SSHConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -830,6 +856,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_userTypes;
                     bool m_userTypesHasBeenSet;
+
+                    /**
+                     * SSH配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SSHConfig m_sSHConfig;
+                    bool m_sSHConfigHasBeenSet;
 
                 };
             }

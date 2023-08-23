@@ -45,7 +45,8 @@ NotebookSetItem::NotebookSetItem() :
     m_volumeSourceTypeHasBeenSet(false),
     m_volumeSourceCFSHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_userTypesHasBeenSet(false)
+    m_userTypesHasBeenSet(false),
+    m_sSHConfigHasBeenSet(false)
 {
 }
 
@@ -334,6 +335,23 @@ CoreInternalOutcome NotebookSetItem::Deserialize(const rapidjson::Value &value)
         m_userTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("SSHConfig") && !value["SSHConfig"].IsNull())
+    {
+        if (!value["SSHConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSetItem.SSHConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sSHConfig.Deserialize(value["SSHConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sSHConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -558,6 +576,15 @@ void NotebookSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_sSHConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSHConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sSHConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -961,5 +988,21 @@ void NotebookSetItem::SetUserTypes(const vector<string>& _userTypes)
 bool NotebookSetItem::UserTypesHasBeenSet() const
 {
     return m_userTypesHasBeenSet;
+}
+
+SSHConfig NotebookSetItem::GetSSHConfig() const
+{
+    return m_sSHConfig;
+}
+
+void NotebookSetItem::SetSSHConfig(const SSHConfig& _sSHConfig)
+{
+    m_sSHConfig = _sSHConfig;
+    m_sSHConfigHasBeenSet = true;
+}
+
+bool NotebookSetItem::SSHConfigHasBeenSet() const
+{
+    return m_sSHConfigHasBeenSet;
 }
 

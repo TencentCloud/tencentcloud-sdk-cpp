@@ -87,7 +87,6 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/TablePrivilege.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseFunction.h
-  include/tencentcloud/dcdb/v20180411/model/DescribeSqlLogsRequest.h
   include/tencentcloud/dcdb/v20180411/model/ParamConstraint.h
   include/tencentcloud/dcdb/v20180411/model/ResetAccountPasswordResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBSaleInfoRequest.h
@@ -163,7 +162,6 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/CloseDBExtranetAccessRequest.h
   include/tencentcloud/dcdb/v20180411/model/InitDCDBInstancesRequest.h
   include/tencentcloud/dcdb/v20180411/model/ResourceTag.h
-  include/tencentcloud/dcdb/v20180411/model/DescribeSqlLogsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DeleteAccountRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstancesResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyAccountPrivilegesResponse.h
@@ -198,7 +196,6 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DBAccount.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseTableResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeAccountPrivilegesRequest.h
-  include/tencentcloud/dcdb/v20180411/model/SqlLogItem.h
   include/tencentcloud/dcdb/v20180411/model/DescribeAccountsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBRenewalPriceRequest.h
@@ -284,7 +281,6 @@ set(dcdb_src
   src/v20180411/model/TablePrivilege.cpp
   src/v20180411/model/DescribeProjectSecurityGroupsResponse.cpp
   src/v20180411/model/DatabaseFunction.cpp
-  src/v20180411/model/DescribeSqlLogsRequest.cpp
   src/v20180411/model/ParamConstraint.cpp
   src/v20180411/model/ResetAccountPasswordResponse.cpp
   src/v20180411/model/DescribeDCDBSaleInfoRequest.cpp
@@ -360,7 +356,6 @@ set(dcdb_src
   src/v20180411/model/CloseDBExtranetAccessRequest.cpp
   src/v20180411/model/InitDCDBInstancesRequest.cpp
   src/v20180411/model/ResourceTag.cpp
-  src/v20180411/model/DescribeSqlLogsResponse.cpp
   src/v20180411/model/DeleteAccountRequest.cpp
   src/v20180411/model/DescribeDCDBInstancesResponse.cpp
   src/v20180411/model/ModifyAccountPrivilegesResponse.cpp
@@ -395,7 +390,6 @@ set(dcdb_src
   src/v20180411/model/DBAccount.cpp
   src/v20180411/model/DescribeDatabaseTableResponse.cpp
   src/v20180411/model/DescribeAccountPrivilegesRequest.cpp
-  src/v20180411/model/SqlLogItem.cpp
   src/v20180411/model/DescribeAccountsResponse.cpp
   src/v20180411/model/DescribeDBSlowLogsResponse.cpp
   src/v20180411/model/DescribeDCDBRenewalPriceRequest.cpp

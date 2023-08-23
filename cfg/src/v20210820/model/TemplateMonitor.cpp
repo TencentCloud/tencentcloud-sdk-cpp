@@ -22,6 +22,7 @@ using namespace std;
 
 TemplateMonitor::TemplateMonitor() :
     m_monitorIdHasBeenSet(false),
+    m_metricIdHasBeenSet(false),
     m_objectTypeIdHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_metricChineseNameHasBeenSet(false)
@@ -41,6 +42,16 @@ CoreInternalOutcome TemplateMonitor::Deserialize(const rapidjson::Value &value)
         }
         m_monitorId = value["MonitorId"].GetInt64();
         m_monitorIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetricId") && !value["MetricId"].IsNull())
+    {
+        if (!value["MetricId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateMonitor.MetricId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricId = value["MetricId"].GetInt64();
+        m_metricIdHasBeenSet = true;
     }
 
     if (value.HasMember("ObjectTypeId") && !value["ObjectTypeId"].IsNull())
@@ -88,6 +99,14 @@ void TemplateMonitor::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, m_monitorId, allocator);
     }
 
+    if (m_metricIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_metricId, allocator);
+    }
+
     if (m_objectTypeIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -129,6 +148,22 @@ void TemplateMonitor::SetMonitorId(const int64_t& _monitorId)
 bool TemplateMonitor::MonitorIdHasBeenSet() const
 {
     return m_monitorIdHasBeenSet;
+}
+
+int64_t TemplateMonitor::GetMetricId() const
+{
+    return m_metricId;
+}
+
+void TemplateMonitor::SetMetricId(const int64_t& _metricId)
+{
+    m_metricId = _metricId;
+    m_metricIdHasBeenSet = true;
+}
+
+bool TemplateMonitor::MetricIdHasBeenSet() const
+{
+    return m_metricIdHasBeenSet;
 }
 
 int64_t TemplateMonitor::GetObjectTypeId() const

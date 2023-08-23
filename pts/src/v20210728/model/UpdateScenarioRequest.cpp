@@ -43,7 +43,8 @@ UpdateScenarioRequest::UpdateScenarioRequest() :
     m_pluginsHasBeenSet(false),
     m_domainNameConfigHasBeenSet(false),
     m_notificationHooksHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+    m_ownerHasBeenSet(false),
+    m_envIdHasBeenSet(false)
 {
 }
 
@@ -275,6 +276,14 @@ string UpdateScenarioRequest::ToJsonString() const
         string key = "Owner";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -619,6 +628,22 @@ void UpdateScenarioRequest::SetOwner(const string& _owner)
 bool UpdateScenarioRequest::OwnerHasBeenSet() const
 {
     return m_ownerHasBeenSet;
+}
+
+string UpdateScenarioRequest::GetEnvId() const
+{
+    return m_envId;
+}
+
+void UpdateScenarioRequest::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool UpdateScenarioRequest::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
 }
 
 

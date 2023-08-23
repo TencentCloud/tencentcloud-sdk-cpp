@@ -170,6 +170,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/Option.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookImageRecordsRequest.h
   include/tencentcloud/tione/v20211111/model/StopCreatingImageRequest.h
+  include/tencentcloud/tione/v20211111/model/SSHConfig.h
   include/tencentcloud/tione/v20211111/model/Choice.h
   include/tencentcloud/tione/v20211111/model/ResourceGroup.h
   include/tencentcloud/tione/v20211111/model/DescribeBatchTaskInstancesRequest.h
@@ -477,6 +478,7 @@ set(tione_src
   src/v20211111/model/Option.cpp
   src/v20211111/model/DescribeNotebookImageRecordsRequest.cpp
   src/v20211111/model/StopCreatingImageRequest.cpp
+  src/v20211111/model/SSHConfig.cpp
   src/v20211111/model/Choice.cpp
   src/v20211111/model/ResourceGroup.cpp
   src/v20211111/model/DescribeBatchTaskInstancesRequest.cpp

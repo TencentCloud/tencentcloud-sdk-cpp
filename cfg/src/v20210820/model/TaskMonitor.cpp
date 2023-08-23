@@ -22,6 +22,7 @@ using namespace std;
 
 TaskMonitor::TaskMonitor() :
     m_taskMonitorIdHasBeenSet(false),
+    m_metricIdHasBeenSet(false),
     m_taskMonitorObjectTypeIdHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_instancesIdsHasBeenSet(false),
@@ -43,6 +44,16 @@ CoreInternalOutcome TaskMonitor::Deserialize(const rapidjson::Value &value)
         }
         m_taskMonitorId = value["TaskMonitorId"].GetInt64();
         m_taskMonitorIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetricId") && !value["MetricId"].IsNull())
+    {
+        if (!value["MetricId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskMonitor.MetricId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricId = value["MetricId"].GetUint64();
+        m_metricIdHasBeenSet = true;
     }
 
     if (value.HasMember("TaskMonitorObjectTypeId") && !value["TaskMonitorObjectTypeId"].IsNull())
@@ -113,6 +124,14 @@ void TaskMonitor::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_taskMonitorId, allocator);
     }
 
+    if (m_metricIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_metricId, allocator);
+    }
+
     if (m_taskMonitorObjectTypeIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -175,6 +194,22 @@ void TaskMonitor::SetTaskMonitorId(const int64_t& _taskMonitorId)
 bool TaskMonitor::TaskMonitorIdHasBeenSet() const
 {
     return m_taskMonitorIdHasBeenSet;
+}
+
+uint64_t TaskMonitor::GetMetricId() const
+{
+    return m_metricId;
+}
+
+void TaskMonitor::SetMetricId(const uint64_t& _metricId)
+{
+    m_metricId = _metricId;
+    m_metricIdHasBeenSet = true;
+}
+
+bool TaskMonitor::MetricIdHasBeenSet() const
+{
+    return m_metricIdHasBeenSet;
 }
 
 int64_t TaskMonitor::GetTaskMonitorObjectTypeId() const

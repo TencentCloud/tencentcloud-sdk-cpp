@@ -27,6 +27,7 @@
 #include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/DataConfig.h>
 #include <tencentcloud/tione/v20211111/model/ImageInfo.h>
+#include <tencentcloud/tione/v20211111/model/SSHConfig.h>
 
 
 namespace TencentCloud
@@ -555,6 +556,27 @@ POSTPAID_BY_HOUR：按小时后付费
                      */
                     bool ImageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取SSH配置
+                     * @return SSHConfig SSH配置
+                     * 
+                     */
+                    SSHConfig GetSSHConfig() const;
+
+                    /**
+                     * 设置SSH配置
+                     * @param _sSHConfig SSH配置
+                     * 
+                     */
+                    void SetSSHConfig(const SSHConfig& _sSHConfig);
+
+                    /**
+                     * 判断参数 SSHConfig 是否已赋值
+                     * @return SSHConfig 是否已赋值
+                     * 
+                     */
+                    bool SSHConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -700,6 +722,12 @@ POSTPAID_BY_HOUR：按小时后付费
                      */
                     std::string m_imageType;
                     bool m_imageTypeHasBeenSet;
+
+                    /**
+                     * SSH配置
+                     */
+                    SSHConfig m_sSHConfig;
+                    bool m_sSHConfigHasBeenSet;
 
                 };
             }

@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool SeatUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取生成的token是否一次性校验
+                     * @return OnlyOnce 生成的token是否一次性校验
+                     * 
+                     */
+                    bool GetOnlyOnce() const;
+
+                    /**
+                     * 设置生成的token是否一次性校验
+                     * @param _onlyOnce 生成的token是否一次性校验
+                     * 
+                     */
+                    void SetOnlyOnce(const bool& _onlyOnce);
+
+                    /**
+                     * 判断参数 OnlyOnce 是否已赋值
+                     * @return OnlyOnce 是否已赋值
+                     * 
+                     */
+                    bool OnlyOnceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_seatUserId;
                     bool m_seatUserIdHasBeenSet;
+
+                    /**
+                     * 生成的token是否一次性校验
+                     */
+                    bool m_onlyOnce;
+                    bool m_onlyOnceHasBeenSet;
 
                 };
             }

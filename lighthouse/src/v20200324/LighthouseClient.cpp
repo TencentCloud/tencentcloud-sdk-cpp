@@ -83,6 +83,49 @@ LighthouseClient::ApplyDiskBackupOutcomeCallable LighthouseClient::ApplyDiskBack
     return task->get_future();
 }
 
+LighthouseClient::ApplyFirewallTemplateOutcome LighthouseClient::ApplyFirewallTemplate(const ApplyFirewallTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyFirewallTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyFirewallTemplateResponse rsp = ApplyFirewallTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyFirewallTemplateOutcome(rsp);
+        else
+            return ApplyFirewallTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyFirewallTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ApplyFirewallTemplateAsync(const ApplyFirewallTemplateRequest& request, const ApplyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyFirewallTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ApplyFirewallTemplateOutcomeCallable LighthouseClient::ApplyFirewallTemplateCallable(const ApplyFirewallTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyFirewallTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyFirewallTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ApplyInstanceSnapshotOutcome LighthouseClient::ApplyInstanceSnapshot(const ApplyInstanceSnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyInstanceSnapshot");
@@ -427,6 +470,92 @@ LighthouseClient::CreateFirewallRulesOutcomeCallable LighthouseClient::CreateFir
     return task->get_future();
 }
 
+LighthouseClient::CreateFirewallTemplateOutcome LighthouseClient::CreateFirewallTemplate(const CreateFirewallTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFirewallTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFirewallTemplateResponse rsp = CreateFirewallTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFirewallTemplateOutcome(rsp);
+        else
+            return CreateFirewallTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFirewallTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::CreateFirewallTemplateAsync(const CreateFirewallTemplateRequest& request, const CreateFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFirewallTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::CreateFirewallTemplateOutcomeCallable LighthouseClient::CreateFirewallTemplateCallable(const CreateFirewallTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFirewallTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFirewallTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::CreateFirewallTemplateRulesOutcome LighthouseClient::CreateFirewallTemplateRules(const CreateFirewallTemplateRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFirewallTemplateRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFirewallTemplateRulesResponse rsp = CreateFirewallTemplateRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFirewallTemplateRulesOutcome(rsp);
+        else
+            return CreateFirewallTemplateRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFirewallTemplateRulesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::CreateFirewallTemplateRulesAsync(const CreateFirewallTemplateRulesRequest& request, const CreateFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFirewallTemplateRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::CreateFirewallTemplateRulesOutcomeCallable LighthouseClient::CreateFirewallTemplateRulesCallable(const CreateFirewallTemplateRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFirewallTemplateRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFirewallTemplateRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::CreateInstanceSnapshotOutcome LighthouseClient::CreateInstanceSnapshot(const CreateInstanceSnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstanceSnapshot");
@@ -678,6 +807,92 @@ LighthouseClient::DeleteFirewallRulesOutcomeCallable LighthouseClient::DeleteFir
         [this, request]()
         {
             return this->DeleteFirewallRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DeleteFirewallTemplateOutcome LighthouseClient::DeleteFirewallTemplate(const DeleteFirewallTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFirewallTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFirewallTemplateResponse rsp = DeleteFirewallTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFirewallTemplateOutcome(rsp);
+        else
+            return DeleteFirewallTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFirewallTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DeleteFirewallTemplateAsync(const DeleteFirewallTemplateRequest& request, const DeleteFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFirewallTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DeleteFirewallTemplateOutcomeCallable LighthouseClient::DeleteFirewallTemplateCallable(const DeleteFirewallTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFirewallTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFirewallTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DeleteFirewallTemplateRulesOutcome LighthouseClient::DeleteFirewallTemplateRules(const DeleteFirewallTemplateRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFirewallTemplateRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFirewallTemplateRulesResponse rsp = DeleteFirewallTemplateRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFirewallTemplateRulesOutcome(rsp);
+        else
+            return DeleteFirewallTemplateRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFirewallTemplateRulesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DeleteFirewallTemplateRulesAsync(const DeleteFirewallTemplateRulesRequest& request, const DeleteFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFirewallTemplateRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DeleteFirewallTemplateRulesOutcomeCallable LighthouseClient::DeleteFirewallTemplateRulesCallable(const DeleteFirewallTemplateRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFirewallTemplateRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFirewallTemplateRules(request);
         }
     );
 
@@ -1581,6 +1796,221 @@ LighthouseClient::DescribeFirewallRulesTemplateOutcomeCallable LighthouseClient:
         [this, request]()
         {
             return this->DescribeFirewallRulesTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeFirewallTemplateApplyRecordsOutcome LighthouseClient::DescribeFirewallTemplateApplyRecords(const DescribeFirewallTemplateApplyRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirewallTemplateApplyRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirewallTemplateApplyRecordsResponse rsp = DescribeFirewallTemplateApplyRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirewallTemplateApplyRecordsOutcome(rsp);
+        else
+            return DescribeFirewallTemplateApplyRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirewallTemplateApplyRecordsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeFirewallTemplateApplyRecordsAsync(const DescribeFirewallTemplateApplyRecordsRequest& request, const DescribeFirewallTemplateApplyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirewallTemplateApplyRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeFirewallTemplateApplyRecordsOutcomeCallable LighthouseClient::DescribeFirewallTemplateApplyRecordsCallable(const DescribeFirewallTemplateApplyRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplateApplyRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirewallTemplateApplyRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeFirewallTemplateQuotaOutcome LighthouseClient::DescribeFirewallTemplateQuota(const DescribeFirewallTemplateQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirewallTemplateQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirewallTemplateQuotaResponse rsp = DescribeFirewallTemplateQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirewallTemplateQuotaOutcome(rsp);
+        else
+            return DescribeFirewallTemplateQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirewallTemplateQuotaOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeFirewallTemplateQuotaAsync(const DescribeFirewallTemplateQuotaRequest& request, const DescribeFirewallTemplateQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirewallTemplateQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeFirewallTemplateQuotaOutcomeCallable LighthouseClient::DescribeFirewallTemplateQuotaCallable(const DescribeFirewallTemplateQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplateQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirewallTemplateQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeFirewallTemplateRuleQuotaOutcome LighthouseClient::DescribeFirewallTemplateRuleQuota(const DescribeFirewallTemplateRuleQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirewallTemplateRuleQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirewallTemplateRuleQuotaResponse rsp = DescribeFirewallTemplateRuleQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirewallTemplateRuleQuotaOutcome(rsp);
+        else
+            return DescribeFirewallTemplateRuleQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirewallTemplateRuleQuotaOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeFirewallTemplateRuleQuotaAsync(const DescribeFirewallTemplateRuleQuotaRequest& request, const DescribeFirewallTemplateRuleQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirewallTemplateRuleQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeFirewallTemplateRuleQuotaOutcomeCallable LighthouseClient::DescribeFirewallTemplateRuleQuotaCallable(const DescribeFirewallTemplateRuleQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplateRuleQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirewallTemplateRuleQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeFirewallTemplateRulesOutcome LighthouseClient::DescribeFirewallTemplateRules(const DescribeFirewallTemplateRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirewallTemplateRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirewallTemplateRulesResponse rsp = DescribeFirewallTemplateRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirewallTemplateRulesOutcome(rsp);
+        else
+            return DescribeFirewallTemplateRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirewallTemplateRulesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeFirewallTemplateRulesAsync(const DescribeFirewallTemplateRulesRequest& request, const DescribeFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirewallTemplateRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeFirewallTemplateRulesOutcomeCallable LighthouseClient::DescribeFirewallTemplateRulesCallable(const DescribeFirewallTemplateRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplateRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirewallTemplateRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeFirewallTemplatesOutcome LighthouseClient::DescribeFirewallTemplates(const DescribeFirewallTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirewallTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirewallTemplatesResponse rsp = DescribeFirewallTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirewallTemplatesOutcome(rsp);
+        else
+            return DescribeFirewallTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirewallTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeFirewallTemplatesAsync(const DescribeFirewallTemplatesRequest& request, const DescribeFirewallTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirewallTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeFirewallTemplatesOutcomeCallable LighthouseClient::DescribeFirewallTemplatesCallable(const DescribeFirewallTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirewallTemplates(request);
         }
     );
 
@@ -3050,6 +3480,49 @@ LighthouseClient::ModifyFirewallRulesOutcomeCallable LighthouseClient::ModifyFir
     return task->get_future();
 }
 
+LighthouseClient::ModifyFirewallTemplateOutcome LighthouseClient::ModifyFirewallTemplate(const ModifyFirewallTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFirewallTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFirewallTemplateResponse rsp = ModifyFirewallTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFirewallTemplateOutcome(rsp);
+        else
+            return ModifyFirewallTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFirewallTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyFirewallTemplateAsync(const ModifyFirewallTemplateRequest& request, const ModifyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFirewallTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyFirewallTemplateOutcomeCallable LighthouseClient::ModifyFirewallTemplateCallable(const ModifyFirewallTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFirewallTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFirewallTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ModifyInstancesAttributeOutcome LighthouseClient::ModifyInstancesAttribute(const ModifyInstancesAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstancesAttribute");
@@ -3480,6 +3953,49 @@ LighthouseClient::RenewInstancesOutcomeCallable LighthouseClient::RenewInstances
     return task->get_future();
 }
 
+LighthouseClient::ReplaceFirewallTemplateRuleOutcome LighthouseClient::ReplaceFirewallTemplateRule(const ReplaceFirewallTemplateRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceFirewallTemplateRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceFirewallTemplateRuleResponse rsp = ReplaceFirewallTemplateRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceFirewallTemplateRuleOutcome(rsp);
+        else
+            return ReplaceFirewallTemplateRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceFirewallTemplateRuleOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ReplaceFirewallTemplateRuleAsync(const ReplaceFirewallTemplateRuleRequest& request, const ReplaceFirewallTemplateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceFirewallTemplateRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ReplaceFirewallTemplateRuleOutcomeCallable LighthouseClient::ReplaceFirewallTemplateRuleCallable(const ReplaceFirewallTemplateRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceFirewallTemplateRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceFirewallTemplateRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::RerunDockerContainerOutcome LighthouseClient::RerunDockerContainer(const RerunDockerContainerRequest &request)
 {
     auto outcome = MakeRequest(request, "RerunDockerContainer");
@@ -3559,6 +4075,49 @@ LighthouseClient::ResetAttachCcnOutcomeCallable LighthouseClient::ResetAttachCcn
         [this, request]()
         {
             return this->ResetAttachCcn(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ResetFirewallTemplateRulesOutcome LighthouseClient::ResetFirewallTemplateRules(const ResetFirewallTemplateRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetFirewallTemplateRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetFirewallTemplateRulesResponse rsp = ResetFirewallTemplateRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetFirewallTemplateRulesOutcome(rsp);
+        else
+            return ResetFirewallTemplateRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetFirewallTemplateRulesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ResetFirewallTemplateRulesAsync(const ResetFirewallTemplateRulesRequest& request, const ResetFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetFirewallTemplateRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ResetFirewallTemplateRulesOutcomeCallable LighthouseClient::ResetFirewallTemplateRulesCallable(const ResetFirewallTemplateRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetFirewallTemplateRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetFirewallTemplateRules(request);
         }
     );
 

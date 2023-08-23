@@ -33,7 +33,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_clientTokenHasBeenSet(false),
     m_loginConfigurationHasBeenSet(false),
     m_containersHasBeenSet(false),
-    m_autoVoucherHasBeenSet(false)
+    m_autoVoucherHasBeenSet(false),
+    m_firewallTemplateIdHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,14 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "AutoVoucher";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoVoucher, allocator);
+    }
+
+    if (m_firewallTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirewallTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_firewallTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -328,6 +337,22 @@ void CreateInstancesRequest::SetAutoVoucher(const bool& _autoVoucher)
 bool CreateInstancesRequest::AutoVoucherHasBeenSet() const
 {
     return m_autoVoucherHasBeenSet;
+}
+
+string CreateInstancesRequest::GetFirewallTemplateId() const
+{
+    return m_firewallTemplateId;
+}
+
+void CreateInstancesRequest::SetFirewallTemplateId(const string& _firewallTemplateId)
+{
+    m_firewallTemplateId = _firewallTemplateId;
+    m_firewallTemplateIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::FirewallTemplateIdHasBeenSet() const
+{
+    return m_firewallTemplateIdHasBeenSet;
 }
 
 

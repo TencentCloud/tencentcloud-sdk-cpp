@@ -22,7 +22,8 @@ using namespace std;
 
 PodInfo::PodInfo() :
     m_nameHasBeenSet(false),
-    m_iPHasBeenSet(false)
+    m_iPHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome PodInfo::Deserialize(const rapidjson::Value &value)
         m_iPHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void PodInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "IP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_iP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void PodInfo::SetIP(const string& _iP)
 bool PodInfo::IPHasBeenSet() const
 {
     return m_iPHasBeenSet;
+}
+
+string PodInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void PodInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool PodInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

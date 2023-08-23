@@ -44,7 +44,8 @@ CreateNotebookRequest::CreateNotebookRequest() :
     m_tagsHasBeenSet(false),
     m_dataConfigsHasBeenSet(false),
     m_imageInfoHasBeenSet(false),
-    m_imageTypeHasBeenSet(false)
+    m_imageTypeHasBeenSet(false),
+    m_sSHConfigHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,15 @@ string CreateNotebookRequest::ToJsonString() const
         string key = "ImageType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sSHConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSHConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sSHConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -612,6 +622,22 @@ void CreateNotebookRequest::SetImageType(const string& _imageType)
 bool CreateNotebookRequest::ImageTypeHasBeenSet() const
 {
     return m_imageTypeHasBeenSet;
+}
+
+SSHConfig CreateNotebookRequest::GetSSHConfig() const
+{
+    return m_sSHConfig;
+}
+
+void CreateNotebookRequest::SetSSHConfig(const SSHConfig& _sSHConfig)
+{
+    m_sSHConfig = _sSHConfig;
+    m_sSHConfigHasBeenSet = true;
+}
+
+bool CreateNotebookRequest::SSHConfigHasBeenSet() const
+{
+    return m_sSHConfigHasBeenSet;
 }
 
 

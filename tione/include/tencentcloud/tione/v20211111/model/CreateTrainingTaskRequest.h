@@ -22,9 +22,9 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/ResourceConfigInfo.h>
-#include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
 #include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/ImageInfo.h>
+#include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
 #include <tencentcloud/tione/v20211111/model/StartCmdInfo.h>
 #include <tencentcloud/tione/v20211111/model/DataConfig.h>
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
@@ -115,90 +115,6 @@ POSTPAID_BY_HOUR 按量计费
                      * 
                      */
                     bool ResourceConfigInfosHasBeenSet() const;
-
-                    /**
-                     * 获取COS代码包路径
-                     * @return CodePackagePath COS代码包路径
-                     * 
-                     */
-                    CosPathInfo GetCodePackagePath() const;
-
-                    /**
-                     * 设置COS代码包路径
-                     * @param _codePackagePath COS代码包路径
-                     * 
-                     */
-                    void SetCodePackagePath(const CosPathInfo& _codePackagePath);
-
-                    /**
-                     * 判断参数 CodePackagePath 是否已赋值
-                     * @return CodePackagePath 是否已赋值
-                     * 
-                     */
-                    bool CodePackagePathHasBeenSet() const;
-
-                    /**
-                     * 获取训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     * @return TrainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     * 
-                     */
-                    std::string GetTrainingMode() const;
-
-                    /**
-                     * 设置训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     * @param _trainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     * 
-                     */
-                    void SetTrainingMode(const std::string& _trainingMode);
-
-                    /**
-                     * 判断参数 TrainingMode 是否已赋值
-                     * @return TrainingMode 是否已赋值
-                     * 
-                     */
-                    bool TrainingModeHasBeenSet() const;
-
-                    /**
-                     * 获取COS训练输出路径
-                     * @return Output COS训练输出路径
-                     * 
-                     */
-                    CosPathInfo GetOutput() const;
-
-                    /**
-                     * 设置COS训练输出路径
-                     * @param _output COS训练输出路径
-                     * 
-                     */
-                    void SetOutput(const CosPathInfo& _output);
-
-                    /**
-                     * 判断参数 Output 是否已赋值
-                     * @return Output 是否已赋值
-                     * 
-                     */
-                    bool OutputHasBeenSet() const;
-
-                    /**
-                     * 获取是否上报日志
-                     * @return LogEnable 是否上报日志
-                     * 
-                     */
-                    bool GetLogEnable() const;
-
-                    /**
-                     * 设置是否上报日志
-                     * @param _logEnable 是否上报日志
-                     * 
-                     */
-                    void SetLogEnable(const bool& _logEnable);
-
-                    /**
-                     * 判断参数 LogEnable 是否已赋值
-                     * @return LogEnable 是否已赋值
-                     * 
-                     */
-                    bool LogEnableHasBeenSet() const;
 
                     /**
                      * 获取训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH
@@ -327,6 +243,27 @@ POSTPAID_BY_HOUR 按量计费
                     bool ImageInfoHasBeenSet() const;
 
                     /**
+                     * 获取COS代码包路径
+                     * @return CodePackagePath COS代码包路径
+                     * 
+                     */
+                    CosPathInfo GetCodePackagePath() const;
+
+                    /**
+                     * 设置COS代码包路径
+                     * @param _codePackagePath COS代码包路径
+                     * 
+                     */
+                    void SetCodePackagePath(const CosPathInfo& _codePackagePath);
+
+                    /**
+                     * 判断参数 CodePackagePath 是否已赋值
+                     * @return CodePackagePath 是否已赋值
+                     * 
+                     */
+                    bool CodePackagePathHasBeenSet() const;
+
+                    /**
                      * 获取启动命令信息，默认为sh start.sh
                      * @return StartCmdInfo 启动命令信息，默认为sh start.sh
                      * 
@@ -346,6 +283,27 @@ POSTPAID_BY_HOUR 按量计费
                      * 
                      */
                     bool StartCmdInfoHasBeenSet() const;
+
+                    /**
+                     * 获取训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * @return TrainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * 
+                     */
+                    std::string GetTrainingMode() const;
+
+                    /**
+                     * 设置训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * @param _trainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * 
+                     */
+                    void SetTrainingMode(const std::string& _trainingMode);
+
+                    /**
+                     * 判断参数 TrainingMode 是否已赋值
+                     * @return TrainingMode 是否已赋值
+                     * 
+                     */
+                    bool TrainingModeHasBeenSet() const;
 
                     /**
                      * 获取数据配置，依赖DataSource字段
@@ -411,6 +369,27 @@ POSTPAID_BY_HOUR 按量计费
                     bool SubnetIdHasBeenSet() const;
 
                     /**
+                     * 获取COS训练输出路径
+                     * @return Output COS训练输出路径
+                     * 
+                     */
+                    CosPathInfo GetOutput() const;
+
+                    /**
+                     * 设置COS训练输出路径
+                     * @param _output COS训练输出路径
+                     * 
+                     */
+                    void SetOutput(const CosPathInfo& _output);
+
+                    /**
+                     * 判断参数 Output 是否已赋值
+                     * @return Output 是否已赋值
+                     * 
+                     */
+                    bool OutputHasBeenSet() const;
+
+                    /**
                      * 获取CLS日志配置
                      * @return LogConfig CLS日志配置
                      * 
@@ -451,6 +430,27 @@ POSTPAID_BY_HOUR 按量计费
                      * 
                      */
                     bool TuningParametersHasBeenSet() const;
+
+                    /**
+                     * 获取是否上报日志
+                     * @return LogEnable 是否上报日志
+                     * 
+                     */
+                    bool GetLogEnable() const;
+
+                    /**
+                     * 设置是否上报日志
+                     * @param _logEnable 是否上报日志
+                     * 
+                     */
+                    void SetLogEnable(const bool& _logEnable);
+
+                    /**
+                     * 判断参数 LogEnable 是否已赋值
+                     * @return LogEnable 是否已赋值
+                     * 
+                     */
+                    bool LogEnableHasBeenSet() const;
 
                     /**
                      * 获取备注，最多500个字
@@ -537,30 +537,6 @@ POSTPAID_BY_HOUR 按量计费
                     bool m_resourceConfigInfosHasBeenSet;
 
                     /**
-                     * COS代码包路径
-                     */
-                    CosPathInfo m_codePackagePath;
-                    bool m_codePackagePathHasBeenSet;
-
-                    /**
-                     * 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     */
-                    std::string m_trainingMode;
-                    bool m_trainingModeHasBeenSet;
-
-                    /**
-                     * COS训练输出路径
-                     */
-                    CosPathInfo m_output;
-                    bool m_outputHasBeenSet;
-
-                    /**
-                     * 是否上报日志
-                     */
-                    bool m_logEnable;
-                    bool m_logEnableHasBeenSet;
-
-                    /**
                      * 训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH
                      */
                     std::string m_frameworkName;
@@ -597,10 +573,22 @@ POSTPAID_BY_HOUR 按量计费
                     bool m_imageInfoHasBeenSet;
 
                     /**
+                     * COS代码包路径
+                     */
+                    CosPathInfo m_codePackagePath;
+                    bool m_codePackagePathHasBeenSet;
+
+                    /**
                      * 启动命令信息，默认为sh start.sh
                      */
                     StartCmdInfo m_startCmdInfo;
                     bool m_startCmdInfoHasBeenSet;
+
+                    /**
+                     * 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     */
+                    std::string m_trainingMode;
+                    bool m_trainingModeHasBeenSet;
 
                     /**
                      * 数据配置，依赖DataSource字段
@@ -621,6 +609,12 @@ POSTPAID_BY_HOUR 按量计费
                     bool m_subnetIdHasBeenSet;
 
                     /**
+                     * COS训练输出路径
+                     */
+                    CosPathInfo m_output;
+                    bool m_outputHasBeenSet;
+
+                    /**
                      * CLS日志配置
                      */
                     LogConfig m_logConfig;
@@ -631,6 +625,12 @@ POSTPAID_BY_HOUR 按量计费
                      */
                     std::string m_tuningParameters;
                     bool m_tuningParametersHasBeenSet;
+
+                    /**
+                     * 是否上报日志
+                     */
+                    bool m_logEnable;
+                    bool m_logEnableHasBeenSet;
 
                     /**
                      * 备注，最多500个字

@@ -41,7 +41,8 @@ ModifyRoomRequest::ModifyRoomRequest() :
     m_interactionModeHasBeenSet(false),
     m_videoOrientationHasBeenSet(false),
     m_isGradingRequiredPostClassHasBeenSet(false),
-    m_roomTypeHasBeenSet(false)
+    m_roomTypeHasBeenSet(false),
+    m_recordLayoutHasBeenSet(false)
 {
 }
 
@@ -207,6 +208,14 @@ string ModifyRoomRequest::ToJsonString() const
         string key = "RoomType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_roomType, allocator);
+    }
+
+    if (m_recordLayoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordLayout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_recordLayout, allocator);
     }
 
 
@@ -519,6 +528,22 @@ void ModifyRoomRequest::SetRoomType(const uint64_t& _roomType)
 bool ModifyRoomRequest::RoomTypeHasBeenSet() const
 {
     return m_roomTypeHasBeenSet;
+}
+
+uint64_t ModifyRoomRequest::GetRecordLayout() const
+{
+    return m_recordLayout;
+}
+
+void ModifyRoomRequest::SetRecordLayout(const uint64_t& _recordLayout)
+{
+    m_recordLayout = _recordLayout;
+    m_recordLayoutHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::RecordLayoutHasBeenSet() const
+{
+    return m_recordLayoutHasBeenSet;
 }
 
 
