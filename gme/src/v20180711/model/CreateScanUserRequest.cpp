@@ -24,7 +24,9 @@ using namespace std;
 
 CreateScanUserRequest::CreateScanUserRequest() :
     m_bizIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_userIdStringHasBeenSet(false),
+    m_expirationTimeHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string CreateScanUserRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_userId, allocator);
+    }
+
+    if (m_userIdStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIdString";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userIdString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expirationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpirationTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expirationTime, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void CreateScanUserRequest::SetUserId(const uint64_t& _userId)
 bool CreateScanUserRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string CreateScanUserRequest::GetUserIdString() const
+{
+    return m_userIdString;
+}
+
+void CreateScanUserRequest::SetUserIdString(const string& _userIdString)
+{
+    m_userIdString = _userIdString;
+    m_userIdStringHasBeenSet = true;
+}
+
+bool CreateScanUserRequest::UserIdStringHasBeenSet() const
+{
+    return m_userIdStringHasBeenSet;
+}
+
+uint64_t CreateScanUserRequest::GetExpirationTime() const
+{
+    return m_expirationTime;
+}
+
+void CreateScanUserRequest::SetExpirationTime(const uint64_t& _expirationTime)
+{
+    m_expirationTime = _expirationTime;
+    m_expirationTimeHasBeenSet = true;
+}
+
+bool CreateScanUserRequest::ExpirationTimeHasBeenSet() const
+{
+    return m_expirationTimeHasBeenSet;
 }
 
 

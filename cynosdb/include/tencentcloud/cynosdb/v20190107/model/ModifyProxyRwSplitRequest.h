@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，例如cynosdbmysql-asd123
+                     * @return ClusterId 集群ID，例如cynosdbmysql-asd123
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，例如cynosdbmysql-asd123
+                     * @param _clusterId 集群ID，例如cynosdbmysql-asd123
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理组ID
-                     * @return ProxyGroupId 数据库代理组ID
+                     * 获取数据库代理组ID，例如cynosdbmysql-proxy-qwe123
+                     * @return ProxyGroupId 数据库代理组ID，例如cynosdbmysql-proxy-qwe123
                      * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
-                     * 设置数据库代理组ID
-                     * @param _proxyGroupId 数据库代理组ID
+                     * 设置数据库代理组ID，例如cynosdbmysql-proxy-qwe123
+                     * @param _proxyGroupId 数据库代理组ID，例如cynosdbmysql-proxy-qwe123
                      * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
@@ -377,13 +377,13 @@ SessionConnectionPool
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，例如cynosdbmysql-asd123
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 数据库代理组ID
+                     * 数据库代理组ID，例如cynosdbmysql-proxy-qwe123
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;

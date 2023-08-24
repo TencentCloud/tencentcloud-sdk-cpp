@@ -169,6 +169,49 @@ TatClient::CreateInvokerOutcomeCallable TatClient::CreateInvokerCallable(const C
     return task->get_future();
 }
 
+TatClient::CreateRegisterCodeOutcome TatClient::CreateRegisterCode(const CreateRegisterCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRegisterCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRegisterCodeResponse rsp = CreateRegisterCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRegisterCodeOutcome(rsp);
+        else
+            return CreateRegisterCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRegisterCodeOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::CreateRegisterCodeAsync(const CreateRegisterCodeRequest& request, const CreateRegisterCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRegisterCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::CreateRegisterCodeOutcomeCallable TatClient::CreateRegisterCodeCallable(const CreateRegisterCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRegisterCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRegisterCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TatClient::DeleteCommandOutcome TatClient::DeleteCommand(const DeleteCommandRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCommand");
@@ -248,6 +291,92 @@ TatClient::DeleteInvokerOutcomeCallable TatClient::DeleteInvokerCallable(const D
         [this, request]()
         {
             return this->DeleteInvoker(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::DeleteRegisterCodesOutcome TatClient::DeleteRegisterCodes(const DeleteRegisterCodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRegisterCodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRegisterCodesResponse rsp = DeleteRegisterCodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRegisterCodesOutcome(rsp);
+        else
+            return DeleteRegisterCodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRegisterCodesOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DeleteRegisterCodesAsync(const DeleteRegisterCodesRequest& request, const DeleteRegisterCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRegisterCodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DeleteRegisterCodesOutcomeCallable TatClient::DeleteRegisterCodesCallable(const DeleteRegisterCodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRegisterCodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRegisterCodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::DeleteRegisterInstanceOutcome TatClient::DeleteRegisterInstance(const DeleteRegisterInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRegisterInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRegisterInstanceResponse rsp = DeleteRegisterInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRegisterInstanceOutcome(rsp);
+        else
+            return DeleteRegisterInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRegisterInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DeleteRegisterInstanceAsync(const DeleteRegisterInstanceRequest& request, const DeleteRegisterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRegisterInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DeleteRegisterInstanceOutcomeCallable TatClient::DeleteRegisterInstanceCallable(const DeleteRegisterInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRegisterInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRegisterInstance(request);
         }
     );
 
@@ -556,6 +685,92 @@ TatClient::DescribeRegionsOutcomeCallable TatClient::DescribeRegionsCallable(con
     return task->get_future();
 }
 
+TatClient::DescribeRegisterCodesOutcome TatClient::DescribeRegisterCodes(const DescribeRegisterCodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegisterCodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegisterCodesResponse rsp = DescribeRegisterCodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegisterCodesOutcome(rsp);
+        else
+            return DescribeRegisterCodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegisterCodesOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DescribeRegisterCodesAsync(const DescribeRegisterCodesRequest& request, const DescribeRegisterCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRegisterCodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DescribeRegisterCodesOutcomeCallable TatClient::DescribeRegisterCodesCallable(const DescribeRegisterCodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRegisterCodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRegisterCodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::DescribeRegisterInstancesOutcome TatClient::DescribeRegisterInstances(const DescribeRegisterInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegisterInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegisterInstancesResponse rsp = DescribeRegisterInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegisterInstancesOutcome(rsp);
+        else
+            return DescribeRegisterInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegisterInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DescribeRegisterInstancesAsync(const DescribeRegisterInstancesRequest& request, const DescribeRegisterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRegisterInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DescribeRegisterInstancesOutcomeCallable TatClient::DescribeRegisterInstancesCallable(const DescribeRegisterInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRegisterInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRegisterInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TatClient::DisableInvokerOutcome TatClient::DisableInvoker(const DisableInvokerRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableInvoker");
@@ -592,6 +807,49 @@ TatClient::DisableInvokerOutcomeCallable TatClient::DisableInvokerCallable(const
         [this, request]()
         {
             return this->DisableInvoker(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::DisableRegisterCodesOutcome TatClient::DisableRegisterCodes(const DisableRegisterCodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableRegisterCodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableRegisterCodesResponse rsp = DisableRegisterCodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableRegisterCodesOutcome(rsp);
+        else
+            return DisableRegisterCodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableRegisterCodesOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DisableRegisterCodesAsync(const DisableRegisterCodesRequest& request, const DisableRegisterCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableRegisterCodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DisableRegisterCodesOutcomeCallable TatClient::DisableRegisterCodesCallable(const DisableRegisterCodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableRegisterCodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableRegisterCodes(request);
         }
     );
 
@@ -764,6 +1022,49 @@ TatClient::ModifyInvokerOutcomeCallable TatClient::ModifyInvokerCallable(const M
         [this, request]()
         {
             return this->ModifyInvoker(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::ModifyRegisterInstanceOutcome TatClient::ModifyRegisterInstance(const ModifyRegisterInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRegisterInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRegisterInstanceResponse rsp = ModifyRegisterInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRegisterInstanceOutcome(rsp);
+        else
+            return ModifyRegisterInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRegisterInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::ModifyRegisterInstanceAsync(const ModifyRegisterInstanceRequest& request, const ModifyRegisterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRegisterInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::ModifyRegisterInstanceOutcomeCallable TatClient::ModifyRegisterInstanceCallable(const ModifyRegisterInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRegisterInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRegisterInstance(request);
         }
     );
 

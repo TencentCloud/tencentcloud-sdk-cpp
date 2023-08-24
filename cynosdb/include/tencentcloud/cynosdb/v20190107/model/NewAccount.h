@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
-                     * @return AccountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
+                     * 获取账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30
+                     * @return AccountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
-                     * @param _accountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
+                     * 设置账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30
+                     * @param _accountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AccountPasswordHasBeenSet() const;
 
                     /**
-                     * 获取主机
-                     * @return Host 主机
+                     * 获取主机(%或ipv4地址)
+                     * @return Host 主机(%或ipv4地址)
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置主机
-                     * @param _host 主机
+                     * 设置主机(%或ipv4地址)
+                     * @param _host 主机(%或ipv4地址)
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
+                     * 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_accountPasswordHasBeenSet;
 
                     /**
-                     * 主机
+                     * 主机(%或ipv4地址)
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

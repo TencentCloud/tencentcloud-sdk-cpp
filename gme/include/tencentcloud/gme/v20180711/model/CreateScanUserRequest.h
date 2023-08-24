@@ -65,14 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取需要新增送检的用户号。示例：1234
+(若UserId不填，则UserIdString必填；两者选其一；两者都填以UserIdString为准)
                      * @return UserId 需要新增送检的用户号。示例：1234
+(若UserId不填，则UserIdString必填；两者选其一；两者都填以UserIdString为准)
                      * 
                      */
                     uint64_t GetUserId() const;
 
                     /**
                      * 设置需要新增送检的用户号。示例：1234
+(若UserId不填，则UserIdString必填；两者选其一；两者都填以UserIdString为准)
                      * @param _userId 需要新增送检的用户号。示例：1234
+(若UserId不填，则UserIdString必填；两者选其一；两者都填以UserIdString为准)
                      * 
                      */
                     void SetUserId(const uint64_t& _userId);
@@ -84,6 +88,60 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取需要新增送检的用户号。示例："1234"
+(若UserIdString不填，则UserId必填；两者选其一；两者都填以UserIdString为准)
+                     * @return UserIdString 需要新增送检的用户号。示例："1234"
+(若UserIdString不填，则UserId必填；两者选其一；两者都填以UserIdString为准)
+                     * 
+                     */
+                    std::string GetUserIdString() const;
+
+                    /**
+                     * 设置需要新增送检的用户号。示例："1234"
+(若UserIdString不填，则UserId必填；两者选其一；两者都填以UserIdString为准)
+                     * @param _userIdString 需要新增送检的用户号。示例："1234"
+(若UserIdString不填，则UserId必填；两者选其一；两者都填以UserIdString为准)
+                     * 
+                     */
+                    void SetUserIdString(const std::string& _userIdString);
+
+                    /**
+                     * 判断参数 UserIdString 是否已赋值
+                     * @return UserIdString 是否已赋值
+                     * 
+                     */
+                    bool UserIdStringHasBeenSet() const;
+
+                    /**
+                     * 获取当前用户送检过期时间，单位：秒。
+若参数不为0，则在过期时间之后，用户不会被送检。
+若参数为0，则送检配置不会自动失效。 
+                     * @return ExpirationTime 当前用户送检过期时间，单位：秒。
+若参数不为0，则在过期时间之后，用户不会被送检。
+若参数为0，则送检配置不会自动失效。 
+                     * 
+                     */
+                    uint64_t GetExpirationTime() const;
+
+                    /**
+                     * 设置当前用户送检过期时间，单位：秒。
+若参数不为0，则在过期时间之后，用户不会被送检。
+若参数为0，则送检配置不会自动失效。 
+                     * @param _expirationTime 当前用户送检过期时间，单位：秒。
+若参数不为0，则在过期时间之后，用户不会被送检。
+若参数为0，则送检配置不会自动失效。 
+                     * 
+                     */
+                    void SetExpirationTime(const uint64_t& _expirationTime);
+
+                    /**
+                     * 判断参数 ExpirationTime 是否已赋值
+                     * @return ExpirationTime 是否已赋值
+                     * 
+                     */
+                    bool ExpirationTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -94,9 +152,25 @@ namespace TencentCloud
 
                     /**
                      * 需要新增送检的用户号。示例：1234
+(若UserId不填，则UserIdString必填；两者选其一；两者都填以UserIdString为准)
                      */
                     uint64_t m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 需要新增送检的用户号。示例："1234"
+(若UserIdString不填，则UserId必填；两者选其一；两者都填以UserIdString为准)
+                     */
+                    std::string m_userIdString;
+                    bool m_userIdStringHasBeenSet;
+
+                    /**
+                     * 当前用户送检过期时间，单位：秒。
+若参数不为0，则在过期时间之后，用户不会被送检。
+若参数为0，则送检配置不会自动失效。 
+                     */
+                    uint64_t m_expirationTime;
+                    bool m_expirationTimeHasBeenSet;
 
                 };
             }

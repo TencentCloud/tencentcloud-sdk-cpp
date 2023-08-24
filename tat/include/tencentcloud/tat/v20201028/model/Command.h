@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tat/v20201028/model/DefaultParameterConf.h>
 #include <tencentcloud/tat/v20201028/model/Tag.h>
 
 
@@ -279,6 +280,31 @@ namespace TencentCloud
                     bool DefaultParametersHasBeenSet() const;
 
                     /**
+                     * 获取自定义参数的默认取值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultParameterConfs 自定义参数的默认取值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DefaultParameterConf> GetDefaultParameterConfs() const;
+
+                    /**
+                     * 设置自定义参数的默认取值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _defaultParameterConfs 自定义参数的默认取值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDefaultParameterConfs(const std::vector<DefaultParameterConf>& _defaultParameterConfs);
+
+                    /**
+                     * 判断参数 DefaultParameterConfs 是否已赋值
+                     * @return DefaultParameterConfs 是否已赋值
+                     * 
+                     */
+                    bool DefaultParameterConfsHasBeenSet() const;
+
+                    /**
                      * 获取命令的结构化描述。公共命令有值，用户命令为空字符串。
                      * @return FormattedDescription 命令的结构化描述。公共命令有值，用户命令为空字符串。
                      * 
@@ -471,6 +497,13 @@ namespace TencentCloud
                      */
                     std::string m_defaultParameters;
                     bool m_defaultParametersHasBeenSet;
+
+                    /**
+                     * 自定义参数的默认取值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DefaultParameterConf> m_defaultParameterConfs;
+                    bool m_defaultParameterConfsHasBeenSet;
 
                     /**
                      * 命令的结构化描述。公共命令有值，用户命令为空字符串。

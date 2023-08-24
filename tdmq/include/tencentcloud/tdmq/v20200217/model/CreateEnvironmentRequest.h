@@ -86,27 +86,6 @@ namespace TencentCloud
                     bool MsgTTLHasBeenSet() const;
 
                     /**
-                     * 获取说明，128个字符以内。
-                     * @return Remark 说明，128个字符以内。
-                     * 
-                     */
-                    std::string GetRemark() const;
-
-                    /**
-                     * 设置说明，128个字符以内。
-                     * @param _remark 说明，128个字符以内。
-                     * 
-                     */
-                    void SetRemark(const std::string& _remark);
-
-                    /**
-                     * 判断参数 Remark 是否已赋值
-                     * @return Remark 是否已赋值
-                     * 
-                     */
-                    bool RemarkHasBeenSet() const;
-
-                    /**
                      * 获取Pulsar 集群的ID
                      * @return ClusterId Pulsar 集群的ID
                      * 
@@ -126,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取说明，128个字符以内。
+                     * @return Remark 说明，128个字符以内。
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置说明，128个字符以内。
+                     * @param _remark 说明，128个字符以内。
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取消息保留策略
@@ -184,16 +184,16 @@ namespace TencentCloud
                     bool m_msgTTLHasBeenSet;
 
                     /**
-                     * 说明，128个字符以内。
-                     */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
-
-                    /**
                      * Pulsar 集群的ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 说明，128个字符以内。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                     /**
                      * 消息保留策略

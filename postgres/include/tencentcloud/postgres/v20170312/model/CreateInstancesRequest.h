@@ -269,27 +269,19 @@ namespace TencentCloud
                     bool AdminPasswordHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。
-当只输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
-该参数和DBVersion、DBKernelVersion需要至少指定一个，如无指定购买内核小版本需求时，只传入该参数即可。
-
-                     * @return DBMajorVersion PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。
-当只输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
-该参数和DBVersion、DBKernelVersion需要至少指定一个，如无指定购买内核小版本需求时，只传入该参数即可。
-
+                     * 获取PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。
+输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
+                     * @return DBMajorVersion PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。
+输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
                      * 
                      */
                     std::string GetDBMajorVersion() const;
 
                     /**
-                     * 设置PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。
-当只输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
-该参数和DBVersion、DBKernelVersion需要至少指定一个，如无指定购买内核小版本需求时，只传入该参数即可。
-
-                     * @param _dBMajorVersion PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。
-当只输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
-该参数和DBVersion、DBKernelVersion需要至少指定一个，如无指定购买内核小版本需求时，只传入该参数即可。
-
+                     * 设置PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。
+输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
+                     * @param _dBMajorVersion PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。
+输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
                      * 
                      */
                     void SetDBMajorVersion(const std::string& _dBMajorVersion);
@@ -302,23 +294,19 @@ namespace TencentCloud
                     bool DBMajorVersionHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL社区大版本+小版本号，如12.4，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
-当只输入该参数时，会基于此社区小版本号创建对应的最新内核版本实例。
-该参数和DBMajorVersion、DBKernelVersion需要至少指定一个。
-                     * @return DBVersion PostgreSQL社区大版本+小版本号，如12.4，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
-当只输入该参数时，会基于此社区小版本号创建对应的最新内核版本实例。
-该参数和DBMajorVersion、DBKernelVersion需要至少指定一个。
+                     * 获取PostgreSQL社区大版本+小版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。
+                     * @return DBVersion PostgreSQL社区大版本+小版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。
                      * 
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置PostgreSQL社区大版本+小版本号，如12.4，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
-当只输入该参数时，会基于此社区小版本号创建对应的最新内核版本实例。
-该参数和DBMajorVersion、DBKernelVersion需要至少指定一个。
-                     * @param _dBVersion PostgreSQL社区大版本+小版本号，如12.4，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
-当只输入该参数时，会基于此社区小版本号创建对应的最新内核版本实例。
-该参数和DBMajorVersion、DBKernelVersion需要至少指定一个。
+                     * 设置PostgreSQL社区大版本+小版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。
+                     * @param _dBVersion PostgreSQL社区大版本+小版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。
                      * 
                      */
                     void SetDBVersion(const std::string& _dBVersion);
@@ -331,23 +319,19 @@ namespace TencentCloud
                     bool DBVersionHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
-当只输入该参数时，会创建指定的内核版本实例。只针对内核版本需要指定时使用，一般场景不推荐传入该参数。
-
-                     * @return DBKernelVersion PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
-当只输入该参数时，会创建指定的内核版本实例。只针对内核版本需要指定时使用，一般场景不推荐传入该参数。
-
+                     * 获取PostgreSQL内核版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。
+                     * @return DBKernelVersion PostgreSQL内核版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。
                      * 
                      */
                     std::string GetDBKernelVersion() const;
 
                     /**
-                     * 设置PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
-当只输入该参数时，会创建指定的内核版本实例。只针对内核版本需要指定时使用，一般场景不推荐传入该参数。
-
-                     * @param _dBKernelVersion PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
-当只输入该参数时，会创建指定的内核版本实例。只针对内核版本需要指定时使用，一般场景不推荐传入该参数。
-
+                     * 设置PostgreSQL内核版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。
+                     * @param _dBKernelVersion PostgreSQL内核版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。
                      * 
                      */
                     void SetDBKernelVersion(const std::string& _dBKernelVersion);
@@ -393,15 +377,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
-                     * @return VpcId 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * 获取私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * @return VpcId 私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
-                     * @param _vpcId 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * 设置私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * @param _vpcId 私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -414,15 +398,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
-                     * @return SubnetId 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * 获取私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * @return SubnetId 私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
-                     * @param _subnetId 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * 设置私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * @param _subnetId 私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -963,26 +947,22 @@ mssql_compatible引擎：
                     bool m_adminPasswordHasBeenSet;
 
                     /**
-                     * PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。
-当只输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
-该参数和DBVersion、DBKernelVersion需要至少指定一个，如无指定购买内核小版本需求时，只传入该参数即可。
-
+                     * PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。
+输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
                      */
                     std::string m_dBMajorVersion;
                     bool m_dBMajorVersionHasBeenSet;
 
                     /**
-                     * PostgreSQL社区大版本+小版本号，如12.4，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
-当只输入该参数时，会基于此社区小版本号创建对应的最新内核版本实例。
-该参数和DBMajorVersion、DBKernelVersion需要至少指定一个。
+                     * PostgreSQL社区大版本+小版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
 
                     /**
-                     * PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
-当只输入该参数时，会创建指定的内核版本实例。只针对内核版本需要指定时使用，一般场景不推荐传入该参数。
-
+                     * PostgreSQL内核版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。
                      */
                     std::string m_dBKernelVersion;
                     bool m_dBKernelVersionHasBeenSet;
@@ -997,13 +977,13 @@ mssql_compatible引擎：
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * 私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * 私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

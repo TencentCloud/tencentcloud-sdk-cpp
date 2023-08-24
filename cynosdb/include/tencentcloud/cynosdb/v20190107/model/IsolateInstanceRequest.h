@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID数组
-                     * @return InstanceIdList 实例ID数组
+                     * 获取实例ID数组，例如["cynosdbbmysql-ins-asd","cynosdbmysql-ins-zxc"]
+                     * @return InstanceIdList 实例ID数组，例如["cynosdbbmysql-ins-asd","cynosdbmysql-ins-zxc"]
                      * 
                      */
                     std::vector<std::string> GetInstanceIdList() const;
 
                     /**
-                     * 设置实例ID数组
-                     * @param _instanceIdList 实例ID数组
+                     * 设置实例ID数组，例如["cynosdbbmysql-ins-asd","cynosdbmysql-ins-zxc"]
+                     * @param _instanceIdList 实例ID数组，例如["cynosdbbmysql-ins-asd","cynosdbmysql-ins-zxc"]
                      * 
                      */
                     void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 实例ID数组
+                     * 实例ID数组，例如["cynosdbbmysql-ins-asd","cynosdbmysql-ins-zxc"]
                      */
                     std::vector<std::string> m_instanceIdList;
                     bool m_instanceIdListHasBeenSet;

@@ -36,7 +36,9 @@ CreateSealRequest::CreateSealRequest() :
     m_sealHorizontalTextHasBeenSet(false),
     m_sealChordTextHasBeenSet(false),
     m_sealCentralTypeHasBeenSet(false),
-    m_fileTokenHasBeenSet(false)
+    m_fileTokenHasBeenSet(false),
+    m_sealStyleHasBeenSet(false),
+    m_sealSizeHasBeenSet(false)
 {
 }
 
@@ -159,6 +161,22 @@ string CreateSealRequest::ToJsonString() const
         string key = "FileToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealStyleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealStyle";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealStyle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealSize.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -391,6 +409,38 @@ void CreateSealRequest::SetFileToken(const string& _fileToken)
 bool CreateSealRequest::FileTokenHasBeenSet() const
 {
     return m_fileTokenHasBeenSet;
+}
+
+string CreateSealRequest::GetSealStyle() const
+{
+    return m_sealStyle;
+}
+
+void CreateSealRequest::SetSealStyle(const string& _sealStyle)
+{
+    m_sealStyle = _sealStyle;
+    m_sealStyleHasBeenSet = true;
+}
+
+bool CreateSealRequest::SealStyleHasBeenSet() const
+{
+    return m_sealStyleHasBeenSet;
+}
+
+string CreateSealRequest::GetSealSize() const
+{
+    return m_sealSize;
+}
+
+void CreateSealRequest::SetSealSize(const string& _sealSize)
+{
+    m_sealSize = _sealSize;
+    m_sealSizeHasBeenSet = true;
+}
+
+bool CreateSealRequest::SealSizeHasBeenSet() const
+{
+    return m_sealSizeHasBeenSet;
 }
 
 

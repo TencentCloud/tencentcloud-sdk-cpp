@@ -25,8 +25,8 @@ using namespace std;
 CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_environmentIdHasBeenSet(false),
     m_msgTTLHasBeenSet(false),
-    m_remarkHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
+    m_remarkHasBeenSet(false),
     m_retentionPolicyHasBeenSet(false),
     m_autoSubscriptionCreationHasBeenSet(false)
 {
@@ -55,20 +55,20 @@ string CreateEnvironmentRequest::ToJsonString() const
         d.AddMember(iKey, m_msgTTL, allocator);
     }
 
-    if (m_remarkHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Remark";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_clusterIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_retentionPolicyHasBeenSet)
@@ -128,22 +128,6 @@ bool CreateEnvironmentRequest::MsgTTLHasBeenSet() const
     return m_msgTTLHasBeenSet;
 }
 
-string CreateEnvironmentRequest::GetRemark() const
-{
-    return m_remark;
-}
-
-void CreateEnvironmentRequest::SetRemark(const string& _remark)
-{
-    m_remark = _remark;
-    m_remarkHasBeenSet = true;
-}
-
-bool CreateEnvironmentRequest::RemarkHasBeenSet() const
-{
-    return m_remarkHasBeenSet;
-}
-
 string CreateEnvironmentRequest::GetClusterId() const
 {
     return m_clusterId;
@@ -158,6 +142,22 @@ void CreateEnvironmentRequest::SetClusterId(const string& _clusterId)
 bool CreateEnvironmentRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string CreateEnvironmentRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void CreateEnvironmentRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool CreateEnvironmentRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 RetentionPolicy CreateEnvironmentRequest::GetRetentionPolicy() const

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取复制集群ID数组
-                     * @return ClusterIds 复制集群ID数组
+                     * 获取复制集群ID数组，例如["cynosdbmysql-bzxxrmtq","cynosdbmysql-qwer"]
+                     * @return ClusterIds 复制集群ID数组，例如["cynosdbmysql-bzxxrmtq","cynosdbmysql-qwer"]
                      * 
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
-                     * 设置复制集群ID数组
-                     * @param _clusterIds 复制集群ID数组
+                     * 设置复制集群ID数组，例如["cynosdbmysql-bzxxrmtq","cynosdbmysql-qwer"]
+                     * @param _clusterIds 复制集群ID数组，例如["cynosdbmysql-bzxxrmtq","cynosdbmysql-qwer"]
                      * 
                      */
                     void SetClusterIds(const std::vector<std::string>& _clusterIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdsHasBeenSet() const;
 
                     /**
-                     * 获取集群id
-                     * @return SourceClusterId 集群id
+                     * 获取集群id，例如"cynosdbmysql-bzxxrmtq"
+                     * @return SourceClusterId 集群id，例如"cynosdbmysql-bzxxrmtq"
                      * 
                      */
                     std::string GetSourceClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _sourceClusterId 集群id
+                     * 设置集群id，例如"cynosdbmysql-bzxxrmtq"
+                     * @param _sourceClusterId 集群id，例如"cynosdbmysql-bzxxrmtq"
                      * 
                      */
                     void SetSourceClusterId(const std::string& _sourceClusterId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 复制集群ID数组
+                     * 复制集群ID数组，例如["cynosdbmysql-bzxxrmtq","cynosdbmysql-qwer"]
                      */
                     std::vector<std::string> m_clusterIds;
                     bool m_clusterIdsHasBeenSet;
 
                     /**
-                     * 集群id
+                     * 集群id，例如"cynosdbmysql-bzxxrmtq"
                      */
                     std::string m_sourceClusterId;
                     bool m_sourceClusterIdHasBeenSet;

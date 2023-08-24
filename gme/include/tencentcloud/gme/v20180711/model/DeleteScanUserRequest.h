@@ -65,14 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取需要删除送检的用户号。示例：1234
+(若UserId不填，则UserIdString必填；两者选其一；两者都填以UserIdString为准)
                      * @return UserId 需要删除送检的用户号。示例：1234
+(若UserId不填，则UserIdString必填；两者选其一；两者都填以UserIdString为准)
                      * 
                      */
                     uint64_t GetUserId() const;
 
                     /**
                      * 设置需要删除送检的用户号。示例：1234
+(若UserId不填，则UserIdString必填；两者选其一；两者都填以UserIdString为准)
                      * @param _userId 需要删除送检的用户号。示例：1234
+(若UserId不填，则UserIdString必填；两者选其一；两者都填以UserIdString为准)
                      * 
                      */
                     void SetUserId(const uint64_t& _userId);
@@ -84,6 +88,31 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取需要删除送检的用户号。示例："1234"
+(若UserIdString不填，则UserId必填；两者选其一；两者都填以UserIdString为准)
+                     * @return UserIdString 需要删除送检的用户号。示例："1234"
+(若UserIdString不填，则UserId必填；两者选其一；两者都填以UserIdString为准)
+                     * 
+                     */
+                    std::string GetUserIdString() const;
+
+                    /**
+                     * 设置需要删除送检的用户号。示例："1234"
+(若UserIdString不填，则UserId必填；两者选其一；两者都填以UserIdString为准)
+                     * @param _userIdString 需要删除送检的用户号。示例："1234"
+(若UserIdString不填，则UserId必填；两者选其一；两者都填以UserIdString为准)
+                     * 
+                     */
+                    void SetUserIdString(const std::string& _userIdString);
+
+                    /**
+                     * 判断参数 UserIdString 是否已赋值
+                     * @return UserIdString 是否已赋值
+                     * 
+                     */
+                    bool UserIdStringHasBeenSet() const;
+
                 private:
 
                     /**
@@ -94,9 +123,17 @@ namespace TencentCloud
 
                     /**
                      * 需要删除送检的用户号。示例：1234
+(若UserId不填，则UserIdString必填；两者选其一；两者都填以UserIdString为准)
                      */
                     uint64_t m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 需要删除送检的用户号。示例："1234"
+(若UserIdString不填，则UserId必填；两者选其一；两者都填以UserIdString为准)
+                     */
+                    std::string m_userIdString;
+                    bool m_userIdStringHasBeenSet;
 
                 };
             }

@@ -20,29 +20,39 @@ set(tat_public_header
 
 set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/ScheduleSettings.h
-  include/tencentcloud/tat/v20201028/model/InvocationTaskBasicInfo.h
+  include/tencentcloud/tat/v20201028/model/CreateRegisterCodeResponse.h
   include/tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentResponse.h
   include/tencentcloud/tat/v20201028/model/CreateCommandResponse.h
   include/tencentcloud/tat/v20201028/model/DisableInvokerRequest.h
+  include/tencentcloud/tat/v20201028/model/RegisterInstanceInfo.h
   include/tencentcloud/tat/v20201028/model/AutomationAgentInfo.h
-  include/tencentcloud/tat/v20201028/model/RunCommandRequest.h
-  include/tencentcloud/tat/v20201028/model/Invoker.h
-  include/tencentcloud/tat/v20201028/model/DescribeInvocationTasksRequest.h
+  include/tencentcloud/tat/v20201028/model/DisableRegisterCodesRequest.h
+  include/tencentcloud/tat/v20201028/model/DescribeRegisterInstancesRequest.h
+  include/tencentcloud/tat/v20201028/model/DeleteRegisterCodesRequest.h
   include/tencentcloud/tat/v20201028/model/Invocation.h
+  include/tencentcloud/tat/v20201028/model/RunCommandRequest.h
+  include/tencentcloud/tat/v20201028/model/InvokeCommandRequest.h
+  include/tencentcloud/tat/v20201028/model/DescribeInvocationTasksRequest.h
+  include/tencentcloud/tat/v20201028/model/DeleteRegisterInstanceResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeRegionsRequest.h
   include/tencentcloud/tat/v20201028/model/CommandDocument.h
   include/tencentcloud/tat/v20201028/model/DescribeInvokerRecordsResponse.h
   include/tencentcloud/tat/v20201028/model/TaskResult.h
   include/tencentcloud/tat/v20201028/model/ModifyInvokerRequest.h
+  include/tencentcloud/tat/v20201028/model/InvocationTaskBasicInfo.h
   include/tencentcloud/tat/v20201028/model/EnableInvokerResponse.h
   include/tencentcloud/tat/v20201028/model/EnableInvokerRequest.h
+  include/tencentcloud/tat/v20201028/model/DefaultParameterConf.h
+  include/tencentcloud/tat/v20201028/model/DescribeRegisterInstancesResponse.h
   include/tencentcloud/tat/v20201028/model/ModifyCommandResponse.h
   include/tencentcloud/tat/v20201028/model/RegionInfo.h
   include/tencentcloud/tat/v20201028/model/DescribeInvokersResponse.h
   include/tencentcloud/tat/v20201028/model/CancelInvocationResponse.h
+  include/tencentcloud/tat/v20201028/model/DeleteRegisterInstanceRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteCommandResponse.h
   include/tencentcloud/tat/v20201028/model/DisableInvokerResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeCommandsResponse.h
+  include/tencentcloud/tat/v20201028/model/CreateRegisterCodeRequest.h
   include/tencentcloud/tat/v20201028/model/CreateInvokerRequest.h
   include/tencentcloud/tat/v20201028/model/DescribeAutomationAgentStatusRequest.h
   include/tencentcloud/tat/v20201028/model/InvokeCommandResponse.h
@@ -58,46 +68,63 @@ set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentRequest.h
   include/tencentcloud/tat/v20201028/model/InvocationTask.h
   include/tencentcloud/tat/v20201028/model/ModifyInvokerResponse.h
+  include/tencentcloud/tat/v20201028/model/ModifyRegisterInstanceResponse.h
   include/tencentcloud/tat/v20201028/model/InvokerRecord.h
+  include/tencentcloud/tat/v20201028/model/DescribeRegisterCodesResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeAutomationAgentStatusResponse.h
   include/tencentcloud/tat/v20201028/model/CreateInvokerResponse.h
   include/tencentcloud/tat/v20201028/model/CancelInvocationRequest.h
+  include/tencentcloud/tat/v20201028/model/DescribeRegisterCodesRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteCommandRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteInvokerRequest.h
-  include/tencentcloud/tat/v20201028/model/InvokeCommandRequest.h
+  include/tencentcloud/tat/v20201028/model/DeleteRegisterCodesResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeInvokerRecordsRequest.h
+  include/tencentcloud/tat/v20201028/model/ModifyRegisterInstanceRequest.h
   include/tencentcloud/tat/v20201028/model/Tag.h
   include/tencentcloud/tat/v20201028/model/RunCommandResponse.h
+  include/tencentcloud/tat/v20201028/model/DisableRegisterCodesResponse.h
+  include/tencentcloud/tat/v20201028/model/RegisterCodeInfo.h
   include/tencentcloud/tat/v20201028/model/DescribeRegionsResponse.h
   include/tencentcloud/tat/v20201028/model/CreateCommandRequest.h
+  include/tencentcloud/tat/v20201028/model/Invoker.h
   )
 
 set(tat_src
   src/v20201028/TatClient.cpp
   src/v20201028/model/ScheduleSettings.cpp
-  src/v20201028/model/InvocationTaskBasicInfo.cpp
+  src/v20201028/model/CreateRegisterCodeResponse.cpp
   src/v20201028/model/PreviewReplacedCommandContentResponse.cpp
   src/v20201028/model/CreateCommandResponse.cpp
   src/v20201028/model/DisableInvokerRequest.cpp
+  src/v20201028/model/RegisterInstanceInfo.cpp
   src/v20201028/model/AutomationAgentInfo.cpp
-  src/v20201028/model/RunCommandRequest.cpp
-  src/v20201028/model/Invoker.cpp
-  src/v20201028/model/DescribeInvocationTasksRequest.cpp
+  src/v20201028/model/DisableRegisterCodesRequest.cpp
+  src/v20201028/model/DescribeRegisterInstancesRequest.cpp
+  src/v20201028/model/DeleteRegisterCodesRequest.cpp
   src/v20201028/model/Invocation.cpp
+  src/v20201028/model/RunCommandRequest.cpp
+  src/v20201028/model/InvokeCommandRequest.cpp
+  src/v20201028/model/DescribeInvocationTasksRequest.cpp
+  src/v20201028/model/DeleteRegisterInstanceResponse.cpp
   src/v20201028/model/DescribeRegionsRequest.cpp
   src/v20201028/model/CommandDocument.cpp
   src/v20201028/model/DescribeInvokerRecordsResponse.cpp
   src/v20201028/model/TaskResult.cpp
   src/v20201028/model/ModifyInvokerRequest.cpp
+  src/v20201028/model/InvocationTaskBasicInfo.cpp
   src/v20201028/model/EnableInvokerResponse.cpp
   src/v20201028/model/EnableInvokerRequest.cpp
+  src/v20201028/model/DefaultParameterConf.cpp
+  src/v20201028/model/DescribeRegisterInstancesResponse.cpp
   src/v20201028/model/ModifyCommandResponse.cpp
   src/v20201028/model/RegionInfo.cpp
   src/v20201028/model/DescribeInvokersResponse.cpp
   src/v20201028/model/CancelInvocationResponse.cpp
+  src/v20201028/model/DeleteRegisterInstanceRequest.cpp
   src/v20201028/model/DeleteCommandResponse.cpp
   src/v20201028/model/DisableInvokerResponse.cpp
   src/v20201028/model/DescribeCommandsResponse.cpp
+  src/v20201028/model/CreateRegisterCodeRequest.cpp
   src/v20201028/model/CreateInvokerRequest.cpp
   src/v20201028/model/DescribeAutomationAgentStatusRequest.cpp
   src/v20201028/model/InvokeCommandResponse.cpp
@@ -113,18 +140,25 @@ set(tat_src
   src/v20201028/model/PreviewReplacedCommandContentRequest.cpp
   src/v20201028/model/InvocationTask.cpp
   src/v20201028/model/ModifyInvokerResponse.cpp
+  src/v20201028/model/ModifyRegisterInstanceResponse.cpp
   src/v20201028/model/InvokerRecord.cpp
+  src/v20201028/model/DescribeRegisterCodesResponse.cpp
   src/v20201028/model/DescribeAutomationAgentStatusResponse.cpp
   src/v20201028/model/CreateInvokerResponse.cpp
   src/v20201028/model/CancelInvocationRequest.cpp
+  src/v20201028/model/DescribeRegisterCodesRequest.cpp
   src/v20201028/model/DeleteCommandRequest.cpp
   src/v20201028/model/DeleteInvokerRequest.cpp
-  src/v20201028/model/InvokeCommandRequest.cpp
+  src/v20201028/model/DeleteRegisterCodesResponse.cpp
   src/v20201028/model/DescribeInvokerRecordsRequest.cpp
+  src/v20201028/model/ModifyRegisterInstanceRequest.cpp
   src/v20201028/model/Tag.cpp
   src/v20201028/model/RunCommandResponse.cpp
+  src/v20201028/model/DisableRegisterCodesResponse.cpp
+  src/v20201028/model/RegisterCodeInfo.cpp
   src/v20201028/model/DescribeRegionsResponse.cpp
   src/v20201028/model/CreateCommandRequest.cpp
+  src/v20201028/model/Invoker.cpp
   )
 
 set(tat_include
