@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据偏移量，从1开始。
-                     * @return Offset 数据偏移量，从1开始。
+                     * 获取分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
+                     * @return Offset 分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置数据偏移量，从1开始。
-                     * @param _offset 数据偏移量，从1开始。
+                     * 设置分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
+                     * @param _offset 分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -109,7 +109,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据偏移量，从1开始。
+                     * 分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

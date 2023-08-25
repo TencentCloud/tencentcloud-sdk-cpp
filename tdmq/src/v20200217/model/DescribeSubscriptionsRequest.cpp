@@ -25,11 +25,11 @@ using namespace std;
 DescribeSubscriptionsRequest::DescribeSubscriptionsRequest() :
     m_environmentIdHasBeenSet(false),
     m_topicNameHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_subscriptionNameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -54,6 +54,14 @@ string DescribeSubscriptionsRequest::ToJsonString() const
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -95,14 +103,6 @@ string DescribeSubscriptionsRequest::ToJsonString() const
         }
     }
 
-    if (m_clusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -141,6 +141,22 @@ void DescribeSubscriptionsRequest::SetTopicName(const string& _topicName)
 bool DescribeSubscriptionsRequest::TopicNameHasBeenSet() const
 {
     return m_topicNameHasBeenSet;
+}
+
+string DescribeSubscriptionsRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeSubscriptionsRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeSubscriptionsRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 uint64_t DescribeSubscriptionsRequest::GetOffset() const
@@ -205,22 +221,6 @@ void DescribeSubscriptionsRequest::SetFilters(const vector<FilterSubscription>& 
 bool DescribeSubscriptionsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
-}
-
-string DescribeSubscriptionsRequest::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-void DescribeSubscriptionsRequest::SetClusterId(const string& _clusterId)
-{
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
-}
-
-bool DescribeSubscriptionsRequest::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
 }
 
 

@@ -26,8 +26,8 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_environmentIdHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_partitionsHasBeenSet(false),
-    m_remarkHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
+    m_remarkHasBeenSet(false),
     m_msgTTLHasBeenSet(false)
 {
 }
@@ -63,20 +63,20 @@ string ModifyTopicRequest::ToJsonString() const
         d.AddMember(iKey, m_partitions, allocator);
     }
 
-    if (m_remarkHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Remark";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_clusterIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_msgTTLHasBeenSet)
@@ -143,22 +143,6 @@ bool ModifyTopicRequest::PartitionsHasBeenSet() const
     return m_partitionsHasBeenSet;
 }
 
-string ModifyTopicRequest::GetRemark() const
-{
-    return m_remark;
-}
-
-void ModifyTopicRequest::SetRemark(const string& _remark)
-{
-    m_remark = _remark;
-    m_remarkHasBeenSet = true;
-}
-
-bool ModifyTopicRequest::RemarkHasBeenSet() const
-{
-    return m_remarkHasBeenSet;
-}
-
 string ModifyTopicRequest::GetClusterId() const
 {
     return m_clusterId;
@@ -173,6 +157,22 @@ void ModifyTopicRequest::SetClusterId(const string& _clusterId)
 bool ModifyTopicRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string ModifyTopicRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void ModifyTopicRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 uint64_t ModifyTopicRequest::GetMsgTTL() const

@@ -44,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取Pulsar 集群的ID
+                     * @return ClusterId Pulsar 集群的ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置Pulsar 集群的ID
+                     * @param _clusterId Pulsar 集群的ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取命名空间名称，模糊搜索。
                      * @return EnvironmentId 命名空间名称，模糊搜索。
                      * 
@@ -107,27 +128,6 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取Pulsar 集群的ID
-                     * @return ClusterId Pulsar 集群的ID
-                     * 
-                     */
-                    std::string GetClusterId() const;
-
-                    /**
-                     * 设置Pulsar 集群的ID
-                     * @param _clusterId Pulsar 集群的ID
-                     * 
-                     */
-                    void SetClusterId(const std::string& _clusterId);
-
-                    /**
-                     * 判断参数 ClusterId 是否已赋值
-                     * @return ClusterId 是否已赋值
-                     * 
-                     */
-                    bool ClusterIdHasBeenSet() const;
-
-                    /**
                      * 获取* EnvironmentId
 按照名称空间进行过滤，精确查询。
 类型：String
@@ -163,6 +163,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * Pulsar 集群的ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
                      * 命名空间名称，模糊搜索。
                      */
                     std::string m_environmentId;
@@ -179,12 +185,6 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
-
-                    /**
-                     * Pulsar 集群的ID
-                     */
-                    std::string m_clusterId;
-                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * * EnvironmentId

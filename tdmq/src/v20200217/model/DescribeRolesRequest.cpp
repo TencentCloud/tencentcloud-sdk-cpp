@@ -23,10 +23,10 @@ using namespace TencentCloud::Tdmq::V20200217::Model;
 using namespace std;
 
 DescribeRolesRequest::DescribeRolesRequest() :
+    m_clusterIdHasBeenSet(false),
     m_roleNameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
 }
@@ -37,6 +37,14 @@ string DescribeRolesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_roleNameHasBeenSet)
     {
@@ -62,14 +70,6 @@ string DescribeRolesRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_clusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -92,6 +92,22 @@ string DescribeRolesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeRolesRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeRolesRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeRolesRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
 
 string DescribeRolesRequest::GetRoleName() const
 {
@@ -139,22 +155,6 @@ void DescribeRolesRequest::SetLimit(const int64_t& _limit)
 bool DescribeRolesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
-}
-
-string DescribeRolesRequest::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-void DescribeRolesRequest::SetClusterId(const string& _clusterId)
-{
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
-}
-
-bool DescribeRolesRequest::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
 }
 
 vector<Filter> DescribeRolesRequest::GetFilters() const

@@ -278,6 +278,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/RebuildMediaTaskInput.h
   include/tencentcloud/vod/v20180717/model/UserDefineConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/NoiseConfigureInfoForUpdate.h
+  include/tencentcloud/vod/v20180717/model/LiveRecordInfo.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskSegmentSegmentItem.h
   include/tencentcloud/vod/v20180717/model/RestoreMediaTask.h
   include/tencentcloud/vod/v20180717/model/AiReviewPornOcrTaskInput.h
@@ -288,6 +289,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DeleteReviewTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/ModifyAdaptiveDynamicStreamingTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/MediaAnimatedGraphicsItem.h
+  include/tencentcloud/vod/v20180717/model/WebPageRecordInfo.h
   include/tencentcloud/vod/v20180717/model/DescribeCDNUsageDataResponse.h
   include/tencentcloud/vod/v20180717/model/ModifyWordSampleRequest.h
   include/tencentcloud/vod/v20180717/model/EditMediaTask.h
@@ -1025,6 +1027,7 @@ set(vod_src
   src/v20180717/model/RebuildMediaTaskInput.cpp
   src/v20180717/model/UserDefineConfigureInfo.cpp
   src/v20180717/model/NoiseConfigureInfoForUpdate.cpp
+  src/v20180717/model/LiveRecordInfo.cpp
   src/v20180717/model/AiRecognitionTaskSegmentSegmentItem.cpp
   src/v20180717/model/RestoreMediaTask.cpp
   src/v20180717/model/AiReviewPornOcrTaskInput.cpp
@@ -1035,6 +1038,7 @@ set(vod_src
   src/v20180717/model/DeleteReviewTemplateResponse.cpp
   src/v20180717/model/ModifyAdaptiveDynamicStreamingTemplateRequest.cpp
   src/v20180717/model/MediaAnimatedGraphicsItem.cpp
+  src/v20180717/model/WebPageRecordInfo.cpp
   src/v20180717/model/DescribeCDNUsageDataResponse.cpp
   src/v20180717/model/ModifyWordSampleRequest.cpp
   src/v20180717/model/EditMediaTask.cpp

@@ -27,8 +27,8 @@ CreateSubscriptionRequest::CreateSubscriptionRequest() :
     m_topicNameHasBeenSet(false),
     m_subscriptionNameHasBeenSet(false),
     m_isIdempotentHasBeenSet(false),
-    m_remarkHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
+    m_remarkHasBeenSet(false),
     m_autoCreatePolicyTopicHasBeenSet(false),
     m_postFixPatternHasBeenSet(false)
 {
@@ -73,20 +73,20 @@ string CreateSubscriptionRequest::ToJsonString() const
         d.AddMember(iKey, m_isIdempotent, allocator);
     }
 
-    if (m_remarkHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Remark";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_clusterIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoCreatePolicyTopicHasBeenSet)
@@ -177,22 +177,6 @@ bool CreateSubscriptionRequest::IsIdempotentHasBeenSet() const
     return m_isIdempotentHasBeenSet;
 }
 
-string CreateSubscriptionRequest::GetRemark() const
-{
-    return m_remark;
-}
-
-void CreateSubscriptionRequest::SetRemark(const string& _remark)
-{
-    m_remark = _remark;
-    m_remarkHasBeenSet = true;
-}
-
-bool CreateSubscriptionRequest::RemarkHasBeenSet() const
-{
-    return m_remarkHasBeenSet;
-}
-
 string CreateSubscriptionRequest::GetClusterId() const
 {
     return m_clusterId;
@@ -207,6 +191,22 @@ void CreateSubscriptionRequest::SetClusterId(const string& _clusterId)
 bool CreateSubscriptionRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string CreateSubscriptionRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void CreateSubscriptionRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool CreateSubscriptionRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 bool CreateSubscriptionRequest::GetAutoCreatePolicyTopic() const

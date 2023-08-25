@@ -127,6 +127,22 @@ namespace TencentCloud
                      */
                     bool ApiAssetsCountHasBeenSet() const;
 
+                    /**
+                     * 获取api风险事件数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiRiskEventCount api风险事件数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetApiRiskEventCount() const;
+
+                    /**
+                     * 判断参数 ApiRiskEventCount 是否已赋值
+                     * @return ApiRiskEventCount 是否已赋值
+                     * 
+                     */
+                    bool ApiRiskEventCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +180,13 @@ namespace TencentCloud
                      */
                     uint64_t m_apiAssetsCount;
                     bool m_apiAssetsCountHasBeenSet;
+
+                    /**
+                     * api风险事件数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_apiRiskEventCount;
+                    bool m_apiRiskEventCountHasBeenSet;
 
                 };
             }

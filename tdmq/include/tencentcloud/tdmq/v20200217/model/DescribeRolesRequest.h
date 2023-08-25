@@ -44,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取必填字段，集群Id
+                     * @return ClusterId 必填字段，集群Id
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置必填字段，集群Id
+                     * @param _clusterId 必填字段，集群Id
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取角色名称，模糊查询
                      * @return RoleName 角色名称，模糊查询
                      * 
@@ -107,27 +128,6 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取必填字段，集群Id
-                     * @return ClusterId 必填字段，集群Id
-                     * 
-                     */
-                    std::string GetClusterId() const;
-
-                    /**
-                     * 设置必填字段，集群Id
-                     * @param _clusterId 必填字段，集群Id
-                     * 
-                     */
-                    void SetClusterId(const std::string& _clusterId);
-
-                    /**
-                     * 判断参数 ClusterId 是否已赋值
-                     * @return ClusterId 是否已赋值
-                     * 
-                     */
-                    bool ClusterIdHasBeenSet() const;
-
-                    /**
                      * 获取* RoleName
 按照角色名进行过滤，精确查询。
 类型：String
@@ -163,6 +163,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 必填字段，集群Id
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
                      * 角色名称，模糊查询
                      */
                     std::string m_roleName;
@@ -179,12 +185,6 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
-
-                    /**
-                     * 必填字段，集群Id
-                     */
-                    std::string m_clusterId;
-                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * * RoleName

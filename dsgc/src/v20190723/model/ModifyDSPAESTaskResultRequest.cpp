@@ -1,0 +1,219 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/dsgc/v20190723/model/ModifyDSPAESTaskResultRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Dsgc::V20190723::Model;
+using namespace std;
+
+ModifyDSPAESTaskResultRequest::ModifyDSPAESTaskResultRequest() :
+    m_dspaIdHasBeenSet(false),
+    m_fieldResultIdHasBeenSet(false),
+    m_complianceIdHasBeenSet(false),
+    m_isSetNonSensitiveFieldHasBeenSet(false),
+    m_destRuleIdHasBeenSet(false),
+    m_destCategoryIdHasBeenSet(false),
+    m_destLevelIdHasBeenSet(false)
+{
+}
+
+string ModifyDSPAESTaskResultRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_dspaIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DspaId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dspaId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fieldResultIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldResultId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fieldResultId, allocator);
+    }
+
+    if (m_complianceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComplianceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_complianceId, allocator);
+    }
+
+    if (m_isSetNonSensitiveFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSetNonSensitiveField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSetNonSensitiveField, allocator);
+    }
+
+    if (m_destRuleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestRuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_destRuleId, allocator);
+    }
+
+    if (m_destCategoryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestCategoryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_destCategoryId, allocator);
+    }
+
+    if (m_destLevelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestLevelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_destLevelId, allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string ModifyDSPAESTaskResultRequest::GetDspaId() const
+{
+    return m_dspaId;
+}
+
+void ModifyDSPAESTaskResultRequest::SetDspaId(const string& _dspaId)
+{
+    m_dspaId = _dspaId;
+    m_dspaIdHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::DspaIdHasBeenSet() const
+{
+    return m_dspaIdHasBeenSet;
+}
+
+int64_t ModifyDSPAESTaskResultRequest::GetFieldResultId() const
+{
+    return m_fieldResultId;
+}
+
+void ModifyDSPAESTaskResultRequest::SetFieldResultId(const int64_t& _fieldResultId)
+{
+    m_fieldResultId = _fieldResultId;
+    m_fieldResultIdHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::FieldResultIdHasBeenSet() const
+{
+    return m_fieldResultIdHasBeenSet;
+}
+
+int64_t ModifyDSPAESTaskResultRequest::GetComplianceId() const
+{
+    return m_complianceId;
+}
+
+void ModifyDSPAESTaskResultRequest::SetComplianceId(const int64_t& _complianceId)
+{
+    m_complianceId = _complianceId;
+    m_complianceIdHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::ComplianceIdHasBeenSet() const
+{
+    return m_complianceIdHasBeenSet;
+}
+
+bool ModifyDSPAESTaskResultRequest::GetIsSetNonSensitiveField() const
+{
+    return m_isSetNonSensitiveField;
+}
+
+void ModifyDSPAESTaskResultRequest::SetIsSetNonSensitiveField(const bool& _isSetNonSensitiveField)
+{
+    m_isSetNonSensitiveField = _isSetNonSensitiveField;
+    m_isSetNonSensitiveFieldHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::IsSetNonSensitiveFieldHasBeenSet() const
+{
+    return m_isSetNonSensitiveFieldHasBeenSet;
+}
+
+int64_t ModifyDSPAESTaskResultRequest::GetDestRuleId() const
+{
+    return m_destRuleId;
+}
+
+void ModifyDSPAESTaskResultRequest::SetDestRuleId(const int64_t& _destRuleId)
+{
+    m_destRuleId = _destRuleId;
+    m_destRuleIdHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::DestRuleIdHasBeenSet() const
+{
+    return m_destRuleIdHasBeenSet;
+}
+
+int64_t ModifyDSPAESTaskResultRequest::GetDestCategoryId() const
+{
+    return m_destCategoryId;
+}
+
+void ModifyDSPAESTaskResultRequest::SetDestCategoryId(const int64_t& _destCategoryId)
+{
+    m_destCategoryId = _destCategoryId;
+    m_destCategoryIdHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::DestCategoryIdHasBeenSet() const
+{
+    return m_destCategoryIdHasBeenSet;
+}
+
+int64_t ModifyDSPAESTaskResultRequest::GetDestLevelId() const
+{
+    return m_destLevelId;
+}
+
+void ModifyDSPAESTaskResultRequest::SetDestLevelId(const int64_t& _destLevelId)
+{
+    m_destLevelId = _destLevelId;
+    m_destLevelIdHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::DestLevelIdHasBeenSet() const
+{
+    return m_destLevelIdHasBeenSet;
+}
+
+

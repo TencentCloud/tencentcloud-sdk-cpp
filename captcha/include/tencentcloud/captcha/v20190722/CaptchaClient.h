@@ -180,7 +180,7 @@ namespace TencentCloud
                 DescribeCaptchaMiniOperDataOutcomeCallable DescribeCaptchaMiniOperDataCallable(const Model::DescribeCaptchaMiniOperDataRequest& request);
 
                 /**
-                 *核查验证码票据结果(小程序插件) 
+                 *核查验证码票据结果(小程序插件)
                  * @param req DescribeCaptchaMiniResultRequest
                  * @return DescribeCaptchaMiniResultOutcome
                  */

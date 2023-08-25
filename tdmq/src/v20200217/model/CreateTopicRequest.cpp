@@ -26,9 +26,9 @@ CreateTopicRequest::CreateTopicRequest() :
     m_environmentIdHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_partitionsHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
     m_pulsarTopicTypeHasBeenSet(false),
     m_msgTTLHasBeenSet(false)
 {
@@ -65,6 +65,14 @@ string CreateTopicRequest::ToJsonString() const
         d.AddMember(iKey, m_partitions, allocator);
     }
 
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_remarkHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -79,14 +87,6 @@ string CreateTopicRequest::ToJsonString() const
         string key = "TopicType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_topicType, allocator);
-    }
-
-    if (m_clusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pulsarTopicTypeHasBeenSet)
@@ -161,6 +161,22 @@ bool CreateTopicRequest::PartitionsHasBeenSet() const
     return m_partitionsHasBeenSet;
 }
 
+string CreateTopicRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void CreateTopicRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool CreateTopicRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
 string CreateTopicRequest::GetRemark() const
 {
     return m_remark;
@@ -191,22 +207,6 @@ void CreateTopicRequest::SetTopicType(const uint64_t& _topicType)
 bool CreateTopicRequest::TopicTypeHasBeenSet() const
 {
     return m_topicTypeHasBeenSet;
-}
-
-string CreateTopicRequest::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-void CreateTopicRequest::SetClusterId(const string& _clusterId)
-{
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
-}
-
-bool CreateTopicRequest::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
 }
 
 int64_t CreateTopicRequest::GetPulsarTopicType() const

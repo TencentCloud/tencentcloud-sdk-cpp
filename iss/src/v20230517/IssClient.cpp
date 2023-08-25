@@ -2190,6 +2190,49 @@ IssClient::ListDevicesOutcomeCallable IssClient::ListDevicesCallable(const ListD
     return task->get_future();
 }
 
+IssClient::ListGatewayDevicesOutcome IssClient::ListGatewayDevices(const ListGatewayDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListGatewayDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListGatewayDevicesResponse rsp = ListGatewayDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListGatewayDevicesOutcome(rsp);
+        else
+            return ListGatewayDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListGatewayDevicesOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::ListGatewayDevicesAsync(const ListGatewayDevicesRequest& request, const ListGatewayDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListGatewayDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::ListGatewayDevicesOutcomeCallable IssClient::ListGatewayDevicesCallable(const ListGatewayDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListGatewayDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListGatewayDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::ListGatewaysOutcome IssClient::ListGateways(const ListGatewaysRequest &request)
 {
     auto outcome = MakeRequest(request, "ListGateways");

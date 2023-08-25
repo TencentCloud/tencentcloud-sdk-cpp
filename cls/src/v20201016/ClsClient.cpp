@@ -3523,6 +3523,49 @@ ClsClient::RetryShipperTaskOutcomeCallable ClsClient::RetryShipperTaskCallable(c
     return task->get_future();
 }
 
+ClsClient::SearchCosRechargeInfoOutcome ClsClient::SearchCosRechargeInfo(const SearchCosRechargeInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchCosRechargeInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchCosRechargeInfoResponse rsp = SearchCosRechargeInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchCosRechargeInfoOutcome(rsp);
+        else
+            return SearchCosRechargeInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchCosRechargeInfoOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::SearchCosRechargeInfoAsync(const SearchCosRechargeInfoRequest& request, const SearchCosRechargeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchCosRechargeInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::SearchCosRechargeInfoOutcomeCallable ClsClient::SearchCosRechargeInfoCallable(const SearchCosRechargeInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchCosRechargeInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchCosRechargeInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::SearchLogOutcome ClsClient::SearchLog(const SearchLogRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchLog");

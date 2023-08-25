@@ -35,6 +35,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/SystemDisk.h
   include/tencentcloud/batch/v20170312/model/Task.h
   include/tencentcloud/batch/v20170312/model/InstanceTypeConfig.h
+  include/tencentcloud/batch/v20170312/model/CommandLine.h
   include/tencentcloud/batch/v20170312/model/LoginSettings.h
   include/tencentcloud/batch/v20170312/model/TerminateComputeNodesResponse.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvActivitiesResponse.h
@@ -162,6 +163,7 @@ set(batch_src
   src/v20170312/model/SystemDisk.cpp
   src/v20170312/model/Task.cpp
   src/v20170312/model/InstanceTypeConfig.cpp
+  src/v20170312/model/CommandLine.cpp
   src/v20170312/model/LoginSettings.cpp
   src/v20170312/model/TerminateComputeNodesResponse.cpp
   src/v20170312/model/DescribeComputeEnvActivitiesResponse.cpp

@@ -77,6 +77,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeNativeGatewayServerGroupsRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeNativeGatewayServerGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeOneCloudNativeAPIGatewayServiceRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeOneCloudNativeAPIGatewayServiceResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h>
@@ -200,6 +202,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNacosServerInterfacesResponse> DescribeNacosServerInterfacesOutcome;
                 typedef std::future<DescribeNacosServerInterfacesOutcome> DescribeNacosServerInterfacesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeNacosServerInterfacesRequest&, DescribeNacosServerInterfacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNacosServerInterfacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNativeGatewayServerGroupsResponse> DescribeNativeGatewayServerGroupsOutcome;
+                typedef std::future<DescribeNativeGatewayServerGroupsOutcome> DescribeNativeGatewayServerGroupsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeNativeGatewayServerGroupsRequest&, DescribeNativeGatewayServerGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNativeGatewayServerGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOneCloudNativeAPIGatewayServiceResponse> DescribeOneCloudNativeAPIGatewayServiceOutcome;
                 typedef std::future<DescribeOneCloudNativeAPIGatewayServiceOutcome> DescribeOneCloudNativeAPIGatewayServiceOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeOneCloudNativeAPIGatewayServiceRequest&, DescribeOneCloudNativeAPIGatewayServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOneCloudNativeAPIGatewayServiceAsyncHandler;
@@ -487,6 +492,15 @@ namespace TencentCloud
                 DescribeNacosServerInterfacesOutcome DescribeNacosServerInterfaces(const Model::DescribeNacosServerInterfacesRequest &request);
                 void DescribeNacosServerInterfacesAsync(const Model::DescribeNacosServerInterfacesRequest& request, const DescribeNacosServerInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNacosServerInterfacesOutcomeCallable DescribeNacosServerInterfacesCallable(const Model::DescribeNacosServerInterfacesRequest& request);
+
+                /**
+                 *查询云原生网关分组信息
+                 * @param req DescribeNativeGatewayServerGroupsRequest
+                 * @return DescribeNativeGatewayServerGroupsOutcome
+                 */
+                DescribeNativeGatewayServerGroupsOutcome DescribeNativeGatewayServerGroups(const Model::DescribeNativeGatewayServerGroupsRequest &request);
+                void DescribeNativeGatewayServerGroupsAsync(const Model::DescribeNativeGatewayServerGroupsRequest& request, const DescribeNativeGatewayServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNativeGatewayServerGroupsOutcomeCallable DescribeNativeGatewayServerGroupsCallable(const Model::DescribeNativeGatewayServerGroupsRequest& request);
 
                 /**
                  *获取云原生网关服务详情

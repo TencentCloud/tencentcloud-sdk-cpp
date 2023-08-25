@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/batch/v20170312/model/Docker.h>
+#include <tencentcloud/batch/v20170312/model/CommandLine.h>
 
 
 namespace TencentCloud
@@ -147,6 +148,31 @@ namespace TencentCloud
                      */
                     bool DockerHasBeenSet() const;
 
+                    /**
+                     * 获取任务执行命令信息。与Command不能同时指定。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Commands 任务执行命令信息。与Command不能同时指定。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<CommandLine> GetCommands() const;
+
+                    /**
+                     * 设置任务执行命令信息。与Command不能同时指定。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _commands 任务执行命令信息。与Command不能同时指定。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCommands(const std::vector<CommandLine>& _commands);
+
+                    /**
+                     * 判断参数 Commands 是否已赋值
+                     * @return Commands 是否已赋值
+                     * 
+                     */
+                    bool CommandsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +202,13 @@ namespace TencentCloud
                      */
                     Docker m_docker;
                     bool m_dockerHasBeenSet;
+
+                    /**
+                     * 任务执行命令信息。与Command不能同时指定。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CommandLine> m_commands;
+                    bool m_commandsHasBeenSet;
 
                 };
             }

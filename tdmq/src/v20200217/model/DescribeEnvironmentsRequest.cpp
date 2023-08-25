@@ -23,10 +23,10 @@ using namespace TencentCloud::Tdmq::V20200217::Model;
 using namespace std;
 
 DescribeEnvironmentsRequest::DescribeEnvironmentsRequest() :
+    m_clusterIdHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
 }
@@ -37,6 +37,14 @@ string DescribeEnvironmentsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_environmentIdHasBeenSet)
     {
@@ -62,14 +70,6 @@ string DescribeEnvironmentsRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_clusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -92,6 +92,22 @@ string DescribeEnvironmentsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeEnvironmentsRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeEnvironmentsRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeEnvironmentsRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
 
 string DescribeEnvironmentsRequest::GetEnvironmentId() const
 {
@@ -139,22 +155,6 @@ void DescribeEnvironmentsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeEnvironmentsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
-}
-
-string DescribeEnvironmentsRequest::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-void DescribeEnvironmentsRequest::SetClusterId(const string& _clusterId)
-{
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
-}
-
-bool DescribeEnvironmentsRequest::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
 }
 
 vector<Filter> DescribeEnvironmentsRequest::GetFilters() const

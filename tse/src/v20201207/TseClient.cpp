@@ -1201,6 +1201,49 @@ TseClient::DescribeNacosServerInterfacesOutcomeCallable TseClient::DescribeNacos
     return task->get_future();
 }
 
+TseClient::DescribeNativeGatewayServerGroupsOutcome TseClient::DescribeNativeGatewayServerGroups(const DescribeNativeGatewayServerGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNativeGatewayServerGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNativeGatewayServerGroupsResponse rsp = DescribeNativeGatewayServerGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNativeGatewayServerGroupsOutcome(rsp);
+        else
+            return DescribeNativeGatewayServerGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNativeGatewayServerGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeNativeGatewayServerGroupsAsync(const DescribeNativeGatewayServerGroupsRequest& request, const DescribeNativeGatewayServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNativeGatewayServerGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeNativeGatewayServerGroupsOutcomeCallable TseClient::DescribeNativeGatewayServerGroupsCallable(const DescribeNativeGatewayServerGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNativeGatewayServerGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNativeGatewayServerGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeOneCloudNativeAPIGatewayServiceOutcome TseClient::DescribeOneCloudNativeAPIGatewayService(const DescribeOneCloudNativeAPIGatewayServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOneCloudNativeAPIGatewayService");

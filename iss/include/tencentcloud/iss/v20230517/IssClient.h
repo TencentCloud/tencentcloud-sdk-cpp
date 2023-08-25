@@ -123,6 +123,8 @@
 #include <tencentcloud/iss/v20230517/model/ListAITasksResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListDevicesRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListDevicesResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListGatewayDevicesRequest.h>
+#include <tencentcloud/iss/v20230517/model/ListGatewayDevicesResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListGatewaysRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListGatewaysResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListOrganizationChannelNumbersRequest.h>
@@ -337,6 +339,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListDevicesResponse> ListDevicesOutcome;
                 typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListDevicesRequest&, ListDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListGatewayDevicesResponse> ListGatewayDevicesOutcome;
+                typedef std::future<ListGatewayDevicesOutcome> ListGatewayDevicesOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ListGatewayDevicesRequest&, ListGatewayDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListGatewayDevicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListGatewaysResponse> ListGatewaysOutcome;
                 typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListGatewaysRequest&, ListGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListGatewaysAsyncHandler;
@@ -867,6 +872,15 @@ namespace TencentCloud
                 ListDevicesOutcome ListDevices(const Model::ListDevicesRequest &request);
                 void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request);
+
+                /**
+                 *用于查询网关下挂载的设备列表。
+                 * @param req ListGatewayDevicesRequest
+                 * @return ListGatewayDevicesOutcome
+                 */
+                ListGatewayDevicesOutcome ListGatewayDevices(const Model::ListGatewayDevicesRequest &request);
+                void ListGatewayDevicesAsync(const Model::ListGatewayDevicesRequest& request, const ListGatewayDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListGatewayDevicesOutcomeCallable ListGatewayDevicesCallable(const Model::ListGatewayDevicesRequest& request);
 
                 /**
                  *用于获取网关列表。

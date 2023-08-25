@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/EnvironmentRoleSet.h>
 
 
 namespace TencentCloud
@@ -64,6 +65,27 @@ namespace TencentCloud
                     bool RoleNameHasBeenSet() const;
 
                     /**
+                     * 获取必填字段，集群Id
+                     * @return ClusterId 必填字段，集群Id
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置必填字段，集群Id
+                     * @param _clusterId 必填字段，集群Id
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取备注说明，长度必须大等于0且小等于128。
                      * @return Remark 备注说明，长度必须大等于0且小等于128。
                      * 
@@ -85,25 +107,46 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取必填字段，集群Id
-                     * @return ClusterId 必填字段，集群Id
+                     * 获取批量绑定名字空间信息
+                     * @return EnvironmentRoleSets 批量绑定名字空间信息
                      * 
                      */
-                    std::string GetClusterId() const;
+                    std::vector<EnvironmentRoleSet> GetEnvironmentRoleSets() const;
 
                     /**
-                     * 设置必填字段，集群Id
-                     * @param _clusterId 必填字段，集群Id
+                     * 设置批量绑定名字空间信息
+                     * @param _environmentRoleSets 批量绑定名字空间信息
                      * 
                      */
-                    void SetClusterId(const std::string& _clusterId);
+                    void SetEnvironmentRoleSets(const std::vector<EnvironmentRoleSet>& _environmentRoleSets);
 
                     /**
-                     * 判断参数 ClusterId 是否已赋值
-                     * @return ClusterId 是否已赋值
+                     * 判断参数 EnvironmentRoleSets 是否已赋值
+                     * @return EnvironmentRoleSets 是否已赋值
                      * 
                      */
-                    bool ClusterIdHasBeenSet() const;
+                    bool EnvironmentRoleSetsHasBeenSet() const;
+
+                    /**
+                     * 获取全部解绑名字空间，设置为 true
+                     * @return UnbindAllEnvironment 全部解绑名字空间，设置为 true
+                     * 
+                     */
+                    bool GetUnbindAllEnvironment() const;
+
+                    /**
+                     * 设置全部解绑名字空间，设置为 true
+                     * @param _unbindAllEnvironment 全部解绑名字空间，设置为 true
+                     * 
+                     */
+                    void SetUnbindAllEnvironment(const bool& _unbindAllEnvironment);
+
+                    /**
+                     * 判断参数 UnbindAllEnvironment 是否已赋值
+                     * @return UnbindAllEnvironment 是否已赋值
+                     * 
+                     */
+                    bool UnbindAllEnvironmentHasBeenSet() const;
 
                 private:
 
@@ -114,16 +157,28 @@ namespace TencentCloud
                     bool m_roleNameHasBeenSet;
 
                     /**
+                     * 必填字段，集群Id
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
                      * 备注说明，长度必须大等于0且小等于128。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 必填字段，集群Id
+                     * 批量绑定名字空间信息
                      */
-                    std::string m_clusterId;
-                    bool m_clusterIdHasBeenSet;
+                    std::vector<EnvironmentRoleSet> m_environmentRoleSets;
+                    bool m_environmentRoleSetsHasBeenSet;
+
+                    /**
+                     * 全部解绑名字空间，设置为 true
+                     */
+                    bool m_unbindAllEnvironment;
+                    bool m_unbindAllEnvironmentHasBeenSet;
 
                 };
             }

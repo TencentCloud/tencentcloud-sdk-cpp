@@ -1,0 +1,250 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_DSGC_V20190723_MODEL_DSPADISCOVERYCOMPLIANCEGROUP_H_
+#define TENCENTCLOUD_DSGC_V20190723_MODEL_DSPADISCOVERYCOMPLIANCEGROUP_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dsgc/v20190723/model/DspaDiscoveryComplianceGroupRuleInfo.h>
+
+
+namespace TencentCloud
+{
+    namespace Dsgc
+    {
+        namespace V20190723
+        {
+            namespace Model
+            {
+                /**
+                * 合规组
+                */
+                class DspaDiscoveryComplianceGroup : public AbstractModel
+                {
+                public:
+                    DspaDiscoveryComplianceGroup();
+                    ~DspaDiscoveryComplianceGroup() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取合规组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComplianceGroupId 合规组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetComplianceGroupId() const;
+
+                    /**
+                     * 设置合规组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _complianceGroupId 合规组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComplianceGroupId(const int64_t& _complianceGroupId);
+
+                    /**
+                     * 判断参数 ComplianceGroupId 是否已赋值
+                     * @return ComplianceGroupId 是否已赋值
+                     * 
+                     */
+                    bool ComplianceGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取合规组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 合规组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置合规组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _name 合规组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取合规组描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 合规组描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置合规组描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description 合规组描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取合规组类型；0 默认合规组，1 系统合规组（除默认合规组外）, 2 自定义合规组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComplianceGroupType 合规组类型；0 默认合规组，1 系统合规组（除默认合规组外）, 2 自定义合规组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetComplianceGroupType() const;
+
+                    /**
+                     * 设置合规组类型；0 默认合规组，1 系统合规组（除默认合规组外）, 2 自定义合规组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _complianceGroupType 合规组类型；0 默认合规组，1 系统合规组（除默认合规组外）, 2 自定义合规组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComplianceGroupType(const int64_t& _complianceGroupType);
+
+                    /**
+                     * 判断参数 ComplianceGroupType 是否已赋值
+                     * @return ComplianceGroupType 是否已赋值
+                     * 
+                     */
+                    bool ComplianceGroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取合规组对应的规则项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComplianceGroupRules 合规组对应的规则项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DspaDiscoveryComplianceGroupRuleInfo> GetComplianceGroupRules() const;
+
+                    /**
+                     * 设置合规组对应的规则项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _complianceGroupRules 合规组对应的规则项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComplianceGroupRules(const std::vector<DspaDiscoveryComplianceGroupRuleInfo>& _complianceGroupRules);
+
+                    /**
+                     * 判断参数 ComplianceGroupRules 是否已赋值
+                     * @return ComplianceGroupRules 是否已赋值
+                     * 
+                     */
+                    bool ComplianceGroupRulesHasBeenSet() const;
+
+                    /**
+                     * 获取合规组对应的分级组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LevelGroupId 合规组对应的分级组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetLevelGroupId() const;
+
+                    /**
+                     * 设置合规组对应的分级组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _levelGroupId 合规组对应的分级组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLevelGroupId(const uint64_t& _levelGroupId);
+
+                    /**
+                     * 判断参数 LevelGroupId 是否已赋值
+                     * @return LevelGroupId 是否已赋值
+                     * 
+                     */
+                    bool LevelGroupIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 合规组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_complianceGroupId;
+                    bool m_complianceGroupIdHasBeenSet;
+
+                    /**
+                     * 合规组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 合规组描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 合规组类型；0 默认合规组，1 系统合规组（除默认合规组外）, 2 自定义合规组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_complianceGroupType;
+                    bool m_complianceGroupTypeHasBeenSet;
+
+                    /**
+                     * 合规组对应的规则项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DspaDiscoveryComplianceGroupRuleInfo> m_complianceGroupRules;
+                    bool m_complianceGroupRulesHasBeenSet;
+
+                    /**
+                     * 合规组对应的分级组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_levelGroupId;
+                    bool m_levelGroupIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_DSGC_V20190723_MODEL_DSPADISCOVERYCOMPLIANCEGROUP_H_

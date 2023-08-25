@@ -133,8 +133,12 @@
 #include <tencentcloud/waf/v20180125/model/GetAttackTotalCountResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyApiAnalyzeStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyApiAnalyzeStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBotStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBotStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleRequest.h>
@@ -356,9 +360,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAccessPeriodResponse> ModifyAccessPeriodOutcome;
                 typedef std::future<ModifyAccessPeriodOutcome> ModifyAccessPeriodOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAccessPeriodRequest&, ModifyAccessPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPeriodAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApiAnalyzeStatusResponse> ModifyApiAnalyzeStatusOutcome;
+                typedef std::future<ModifyApiAnalyzeStatusOutcome> ModifyApiAnalyzeStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyApiAnalyzeStatusRequest&, ModifyApiAnalyzeStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiAnalyzeStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAreaBanStatusResponse> ModifyAreaBanStatusOutcome;
                 typedef std::future<ModifyAreaBanStatusOutcome> ModifyAreaBanStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAreaBanStatusRequest&, ModifyAreaBanStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAreaBanStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBotStatusResponse> ModifyBotStatusOutcome;
+                typedef std::future<ModifyBotStatusOutcome> ModifyBotStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyBotStatusRequest&, ModifyBotStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBotStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCustomRuleStatusResponse> ModifyCustomRuleStatusOutcome;
                 typedef std::future<ModifyCustomRuleStatusOutcome> ModifyCustomRuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyCustomRuleStatusRequest&, ModifyCustomRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomRuleStatusAsyncHandler;
@@ -927,6 +937,15 @@ namespace TencentCloud
                 ModifyAccessPeriodOutcomeCallable ModifyAccessPeriodCallable(const Model::ModifyAccessPeriodRequest& request);
 
                 /**
+                 *api分析页面开关
+                 * @param req ModifyApiAnalyzeStatusRequest
+                 * @return ModifyApiAnalyzeStatusOutcome
+                 */
+                ModifyApiAnalyzeStatusOutcome ModifyApiAnalyzeStatus(const Model::ModifyApiAnalyzeStatusRequest &request);
+                void ModifyApiAnalyzeStatusAsync(const Model::ModifyApiAnalyzeStatusRequest& request, const ModifyApiAnalyzeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApiAnalyzeStatusOutcomeCallable ModifyApiAnalyzeStatusCallable(const Model::ModifyApiAnalyzeStatusRequest& request);
+
+                /**
                  *修改防护域名的地域封禁状态
                  * @param req ModifyAreaBanStatusRequest
                  * @return ModifyAreaBanStatusOutcome
@@ -934,6 +953,15 @@ namespace TencentCloud
                 ModifyAreaBanStatusOutcome ModifyAreaBanStatus(const Model::ModifyAreaBanStatusRequest &request);
                 void ModifyAreaBanStatusAsync(const Model::ModifyAreaBanStatusRequest& request, const ModifyAreaBanStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAreaBanStatusOutcomeCallable ModifyAreaBanStatusCallable(const Model::ModifyAreaBanStatusRequest& request);
+
+                /**
+                 *Bot_V2 bot总开关更新
+                 * @param req ModifyBotStatusRequest
+                 * @return ModifyBotStatusOutcome
+                 */
+                ModifyBotStatusOutcome ModifyBotStatus(const Model::ModifyBotStatusRequest &request);
+                void ModifyBotStatusAsync(const Model::ModifyBotStatusRequest& request, const ModifyBotStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBotStatusOutcomeCallable ModifyBotStatusCallable(const Model::ModifyBotStatusRequest& request);
 
                 /**
                  *开启或禁用访问控制（自定义策略）

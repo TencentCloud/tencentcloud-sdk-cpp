@@ -185,6 +185,8 @@
 #include <tencentcloud/cls/v20201016/model/PreviewKafkaRechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/RetryShipperTaskRequest.h>
 #include <tencentcloud/cls/v20201016/model/RetryShipperTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/SearchCosRechargeInfoRequest.h>
+#include <tencentcloud/cls/v20201016/model/SearchCosRechargeInfoResponse.h>
 #include <tencentcloud/cls/v20201016/model/SearchLogRequest.h>
 #include <tencentcloud/cls/v20201016/model/SearchLogResponse.h>
 #include <tencentcloud/cls/v20201016/model/SplitPartitionRequest.h>
@@ -448,6 +450,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RetryShipperTaskResponse> RetryShipperTaskOutcome;
                 typedef std::future<RetryShipperTaskOutcome> RetryShipperTaskOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::RetryShipperTaskRequest&, RetryShipperTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryShipperTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchCosRechargeInfoResponse> SearchCosRechargeInfoOutcome;
+                typedef std::future<SearchCosRechargeInfoOutcome> SearchCosRechargeInfoOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::SearchCosRechargeInfoRequest&, SearchCosRechargeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchCosRechargeInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchLogResponse> SearchLogOutcome;
                 typedef std::future<SearchLogOutcome> SearchLogOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::SearchLogRequest&, SearchLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchLogAsyncHandler;
@@ -1189,6 +1194,15 @@ namespace TencentCloud
                 RetryShipperTaskOutcome RetryShipperTask(const Model::RetryShipperTaskRequest &request);
                 void RetryShipperTaskAsync(const Model::RetryShipperTaskRequest& request, const RetryShipperTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RetryShipperTaskOutcomeCallable RetryShipperTaskCallable(const Model::RetryShipperTaskRequest& request);
+
+                /**
+                 *本接口用于预览cos导入信息
+                 * @param req SearchCosRechargeInfoRequest
+                 * @return SearchCosRechargeInfoOutcome
+                 */
+                SearchCosRechargeInfoOutcome SearchCosRechargeInfo(const Model::SearchCosRechargeInfoRequest &request);
+                void SearchCosRechargeInfoAsync(const Model::SearchCosRechargeInfoRequest& request, const SearchCosRechargeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchCosRechargeInfoOutcomeCallable SearchCosRechargeInfoCallable(const Model::SearchCosRechargeInfoRequest& request);
 
                 /**
                  *本接口用于检索分析日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。

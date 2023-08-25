@@ -821,7 +821,7 @@ namespace TencentCloud
                 CreateClusterDatabaseOutcomeCallable CreateClusterDatabaseCallable(const Model::CreateClusterDatabaseRequest& request);
 
                 /**
-                 *创建集群
+                 *购买新集群
                  * @param req CreateClustersRequest
                  * @return CreateClustersOutcome
                  */
@@ -1505,7 +1505,7 @@ namespace TencentCloud
                 ModifyClusterSlaveZoneOutcomeCallable ModifyClusterSlaveZoneCallable(const Model::ModifyClusterSlaveZoneRequest& request);
 
                 /**
-                 *升级预付费存储
+                 *调整包年包月存储容量
                  * @param req ModifyClusterStorageRequest
                  * @return ModifyClusterStorageOutcome
                  */
@@ -1604,7 +1604,7 @@ namespace TencentCloud
                 ModifyVipVportOutcomeCallable ModifyVipVportCallable(const Model::ModifyVipVportRequest& request);
 
                 /**
-                 *下线集群
+                 *销毁集群
                  * @param req OfflineClusterRequest
                  * @return OfflineClusterOutcome
                  */
@@ -1613,7 +1613,7 @@ namespace TencentCloud
                 OfflineClusterOutcomeCallable OfflineClusterCallable(const Model::OfflineClusterRequest& request);
 
                 /**
-                 *下线实例
+                 *销毁实例
                  * @param req OfflineInstanceRequest
                  * @return OfflineInstanceOutcome
                  */
@@ -1631,7 +1631,7 @@ namespace TencentCloud
                 OpenAuditServiceOutcomeCallable OpenAuditServiceCallable(const Model::OpenAuditServiceRequest& request);
 
                 /**
-                 *本接口（OpenClusterPasswordComplexity）用于开启集群密码复杂度
+                 *本接口（OpenClusterPasswordComplexity）用于开启自定义密码复杂度功能
                  * @param req OpenClusterPasswordComplexityRequest
                  * @return OpenClusterPasswordComplexityOutcome
                  */
@@ -1811,7 +1811,7 @@ namespace TencentCloud
                 UnbindClusterResourcePackagesOutcomeCallable UnbindClusterResourcePackagesCallable(const Model::UnbindClusterResourcePackagesRequest& request);
 
                 /**
-                 *更新集群Cynos内核版本
+                 *更新内核小版本
                  * @param req UpgradeClusterVersionRequest
                  * @return UpgradeClusterVersionOutcome
                  */
@@ -1820,7 +1820,7 @@ namespace TencentCloud
                 UpgradeClusterVersionOutcomeCallable UpgradeClusterVersionCallable(const Model::UpgradeClusterVersionRequest& request);
 
                 /**
-                 *升级实例
+                 *实例变配
                  * @param req UpgradeInstanceRequest
                  * @return UpgradeInstanceOutcome
                  */

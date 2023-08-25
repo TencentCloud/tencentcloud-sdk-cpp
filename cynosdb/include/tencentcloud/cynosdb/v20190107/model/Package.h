@@ -280,18 +280,18 @@ refund-已退费。
                     bool PackageUsedSpecHasBeenSet() const;
 
                     /**
-                     * 获取资源包已使用量
+                     * 获取是否还有库存余量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HasQuota 资源包已使用量
+                     * @return HasQuota 是否还有库存余量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHasQuota() const;
 
                     /**
-                     * 设置资源包已使用量
+                     * 设置是否还有库存余量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hasQuota 资源包已使用量
+                     * @param _hasQuota 是否还有库存余量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -446,7 +446,7 @@ refund-已退费。
                     bool m_packageUsedSpecHasBeenSet;
 
                     /**
-                     * 资源包已使用量
+                     * 是否还有库存余量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hasQuota;

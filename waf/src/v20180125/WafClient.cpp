@@ -2405,6 +2405,49 @@ WafClient::ModifyAccessPeriodOutcomeCallable WafClient::ModifyAccessPeriodCallab
     return task->get_future();
 }
 
+WafClient::ModifyApiAnalyzeStatusOutcome WafClient::ModifyApiAnalyzeStatus(const ModifyApiAnalyzeStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApiAnalyzeStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApiAnalyzeStatusResponse rsp = ModifyApiAnalyzeStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApiAnalyzeStatusOutcome(rsp);
+        else
+            return ModifyApiAnalyzeStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApiAnalyzeStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyApiAnalyzeStatusAsync(const ModifyApiAnalyzeStatusRequest& request, const ModifyApiAnalyzeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApiAnalyzeStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyApiAnalyzeStatusOutcomeCallable WafClient::ModifyApiAnalyzeStatusCallable(const ModifyApiAnalyzeStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApiAnalyzeStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApiAnalyzeStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyAreaBanStatusOutcome WafClient::ModifyAreaBanStatus(const ModifyAreaBanStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAreaBanStatus");
@@ -2441,6 +2484,49 @@ WafClient::ModifyAreaBanStatusOutcomeCallable WafClient::ModifyAreaBanStatusCall
         [this, request]()
         {
             return this->ModifyAreaBanStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyBotStatusOutcome WafClient::ModifyBotStatus(const ModifyBotStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBotStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBotStatusResponse rsp = ModifyBotStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBotStatusOutcome(rsp);
+        else
+            return ModifyBotStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBotStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBotStatusAsync(const ModifyBotStatusRequest& request, const ModifyBotStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBotStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyBotStatusOutcomeCallable WafClient::ModifyBotStatusCallable(const ModifyBotStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBotStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBotStatus(request);
         }
     );
 

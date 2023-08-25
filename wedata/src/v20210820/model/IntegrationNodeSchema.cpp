@@ -26,7 +26,8 @@ IntegrationNodeSchema::IntegrationNodeSchema() :
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_propertiesHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+    m_aliasHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome IntegrationNodeSchema::Deserialize(const rapidjson::Value &v
         m_aliasHasBeenSet = true;
     }
 
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationNodeSchema.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void IntegrationNodeSchema::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void IntegrationNodeSchema::SetAlias(const string& _alias)
 bool IntegrationNodeSchema::AliasHasBeenSet() const
 {
     return m_aliasHasBeenSet;
+}
+
+string IntegrationNodeSchema::GetComment() const
+{
+    return m_comment;
+}
+
+void IntegrationNodeSchema::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool IntegrationNodeSchema::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 

@@ -37,6 +37,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/Filter.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyConfigExtraResponse.h
+  include/tencentcloud/cls/v20201016/model/SearchCosRechargeInfoRequest.h
   include/tencentcloud/cls/v20201016/model/KafkaRechargeInfo.h
   include/tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h
   include/tencentcloud/cls/v20201016/model/UploadLogRequest.h
@@ -211,6 +212,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ModifyKafkaConsumerResponse.h
   include/tencentcloud/cls/v20201016/model/MachineGroupTypeInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupRequest.h
+  include/tencentcloud/cls/v20201016/model/SearchCosRechargeInfoResponse.h
   include/tencentcloud/cls/v20201016/model/ShipperInfo.h
   include/tencentcloud/cls/v20201016/model/CreateCosRechargeResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeAlertRecordHistoryResponse.h
@@ -286,6 +288,7 @@ set(cls_src
   src/v20201016/model/Filter.cpp
   src/v20201016/model/DescribeConfigMachineGroupsRequest.cpp
   src/v20201016/model/ModifyConfigExtraResponse.cpp
+  src/v20201016/model/SearchCosRechargeInfoRequest.cpp
   src/v20201016/model/KafkaRechargeInfo.cpp
   src/v20201016/model/ModifyLogsetRequest.cpp
   src/v20201016/model/UploadLogRequest.cpp
@@ -460,6 +463,7 @@ set(cls_src
   src/v20201016/model/ModifyKafkaConsumerResponse.cpp
   src/v20201016/model/MachineGroupTypeInfo.cpp
   src/v20201016/model/DeleteConfigFromMachineGroupRequest.cpp
+  src/v20201016/model/SearchCosRechargeInfoResponse.cpp
   src/v20201016/model/ShipperInfo.cpp
   src/v20201016/model/CreateCosRechargeResponse.cpp
   src/v20201016/model/DescribeAlertRecordHistoryResponse.cpp

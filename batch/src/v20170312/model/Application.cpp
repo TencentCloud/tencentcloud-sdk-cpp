@@ -24,7 +24,8 @@ Application::Application() :
     m_deliveryFormHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_packagePathHasBeenSet(false),
-    m_dockerHasBeenSet(false)
+    m_dockerHasBeenSet(false),
+    m_commandsHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,26 @@ CoreInternalOutcome Application::Deserialize(const rapidjson::Value &value)
         m_dockerHasBeenSet = true;
     }
 
+    if (value.HasMember("Commands") && !value["Commands"].IsNull())
+    {
+        if (!value["Commands"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Application.Commands` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Commands"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CommandLine item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_commands.push_back(item);
+        }
+        m_commandsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +139,21 @@ void Application::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_docker.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_commandsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Commands";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_commands.begin(); itr != m_commands.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -185,5 +221,21 @@ void Application::SetDocker(const Docker& _docker)
 bool Application::DockerHasBeenSet() const
 {
     return m_dockerHasBeenSet;
+}
+
+vector<CommandLine> Application::GetCommands() const
+{
+    return m_commands;
+}
+
+void Application::SetCommands(const vector<CommandLine>& _commands)
+{
+    m_commands = _commands;
+    m_commandsHasBeenSet = true;
+}
+
+bool Application::CommandsHasBeenSet() const
+{
+    return m_commandsHasBeenSet;
 }
 

@@ -86,27 +86,6 @@ namespace TencentCloud
                     bool MsgTTLHasBeenSet() const;
 
                     /**
-                     * 获取备注，字符串最长不超过128。
-                     * @return Remark 备注，字符串最长不超过128。
-                     * 
-                     */
-                    std::string GetRemark() const;
-
-                    /**
-                     * 设置备注，字符串最长不超过128。
-                     * @param _remark 备注，字符串最长不超过128。
-                     * 
-                     */
-                    void SetRemark(const std::string& _remark);
-
-                    /**
-                     * 判断参数 Remark 是否已赋值
-                     * @return Remark 是否已赋值
-                     * 
-                     */
-                    bool RemarkHasBeenSet() const;
-
-                    /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
                      * 
@@ -126,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取备注，字符串最长不超过128。
+                     * @return Remark 备注，字符串最长不超过128。
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注，字符串最长不超过128。
+                     * @param _remark 备注，字符串最长不超过128。
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取消息保留策略
@@ -184,16 +184,16 @@ namespace TencentCloud
                     bool m_msgTTLHasBeenSet;
 
                     /**
-                     * 备注，字符串最长不超过128。
-                     */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
-
-                    /**
                      * 集群ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 备注，字符串最长不超过128。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                     /**
                      * 消息保留策略

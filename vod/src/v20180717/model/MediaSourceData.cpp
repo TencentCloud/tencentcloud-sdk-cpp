@@ -23,7 +23,9 @@ using namespace std;
 MediaSourceData::MediaSourceData() :
     m_sourceTypeHasBeenSet(false),
     m_sourceContextHasBeenSet(false),
-    m_trtcRecordInfoHasBeenSet(false)
+    m_liveRecordInfoHasBeenSet(false),
+    m_trtcRecordInfoHasBeenSet(false),
+    m_webPageRecordInfoHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,23 @@ CoreInternalOutcome MediaSourceData::Deserialize(const rapidjson::Value &value)
         m_sourceContextHasBeenSet = true;
     }
 
+    if (value.HasMember("LiveRecordInfo") && !value["LiveRecordInfo"].IsNull())
+    {
+        if (!value["LiveRecordInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaSourceData.LiveRecordInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_liveRecordInfo.Deserialize(value["LiveRecordInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_liveRecordInfoHasBeenSet = true;
+    }
+
     if (value.HasMember("TrtcRecordInfo") && !value["TrtcRecordInfo"].IsNull())
     {
         if (!value["TrtcRecordInfo"].IsObject())
@@ -67,6 +86,23 @@ CoreInternalOutcome MediaSourceData::Deserialize(const rapidjson::Value &value)
         }
 
         m_trtcRecordInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("WebPageRecordInfo") && !value["WebPageRecordInfo"].IsNull())
+    {
+        if (!value["WebPageRecordInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaSourceData.WebPageRecordInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_webPageRecordInfo.Deserialize(value["WebPageRecordInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_webPageRecordInfoHasBeenSet = true;
     }
 
 
@@ -92,6 +128,15 @@ void MediaSourceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_sourceContext.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_liveRecordInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiveRecordInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_liveRecordInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_trtcRecordInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -99,6 +144,15 @@ void MediaSourceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_trtcRecordInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_webPageRecordInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebPageRecordInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_webPageRecordInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -136,6 +190,22 @@ bool MediaSourceData::SourceContextHasBeenSet() const
     return m_sourceContextHasBeenSet;
 }
 
+LiveRecordInfo MediaSourceData::GetLiveRecordInfo() const
+{
+    return m_liveRecordInfo;
+}
+
+void MediaSourceData::SetLiveRecordInfo(const LiveRecordInfo& _liveRecordInfo)
+{
+    m_liveRecordInfo = _liveRecordInfo;
+    m_liveRecordInfoHasBeenSet = true;
+}
+
+bool MediaSourceData::LiveRecordInfoHasBeenSet() const
+{
+    return m_liveRecordInfoHasBeenSet;
+}
+
 TrtcRecordInfo MediaSourceData::GetTrtcRecordInfo() const
 {
     return m_trtcRecordInfo;
@@ -150,5 +220,21 @@ void MediaSourceData::SetTrtcRecordInfo(const TrtcRecordInfo& _trtcRecordInfo)
 bool MediaSourceData::TrtcRecordInfoHasBeenSet() const
 {
     return m_trtcRecordInfoHasBeenSet;
+}
+
+WebPageRecordInfo MediaSourceData::GetWebPageRecordInfo() const
+{
+    return m_webPageRecordInfo;
+}
+
+void MediaSourceData::SetWebPageRecordInfo(const WebPageRecordInfo& _webPageRecordInfo)
+{
+    m_webPageRecordInfo = _webPageRecordInfo;
+    m_webPageRecordInfoHasBeenSet = true;
+}
+
+bool MediaSourceData::WebPageRecordInfoHasBeenSet() const
+{
+    return m_webPageRecordInfoHasBeenSet;
 }
 
