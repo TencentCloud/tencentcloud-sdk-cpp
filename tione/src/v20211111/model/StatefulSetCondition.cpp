@@ -25,7 +25,8 @@ StatefulSetCondition::StatefulSetCondition() :
     m_reasonHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_lastTransitionTimeHasBeenSet(false)
+    m_lastTransitionTimeHasBeenSet(false),
+    m_lastUpdateTimeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome StatefulSetCondition::Deserialize(const rapidjson::Value &va
         m_lastTransitionTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LastUpdateTime") && !value["LastUpdateTime"].IsNull())
+    {
+        if (!value["LastUpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StatefulSetCondition.LastUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastUpdateTime = string(value["LastUpdateTime"].GetString());
+        m_lastUpdateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void StatefulSetCondition::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "LastTransitionTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastTransitionTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastUpdateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void StatefulSetCondition::SetLastTransitionTime(const string& _lastTransitionTi
 bool StatefulSetCondition::LastTransitionTimeHasBeenSet() const
 {
     return m_lastTransitionTimeHasBeenSet;
+}
+
+string StatefulSetCondition::GetLastUpdateTime() const
+{
+    return m_lastUpdateTime;
+}
+
+void StatefulSetCondition::SetLastUpdateTime(const string& _lastUpdateTime)
+{
+    m_lastUpdateTime = _lastUpdateTime;
+    m_lastUpdateTimeHasBeenSet = true;
+}
+
+bool StatefulSetCondition::LastUpdateTimeHasBeenSet() const
+{
+    return m_lastUpdateTimeHasBeenSet;
 }
 

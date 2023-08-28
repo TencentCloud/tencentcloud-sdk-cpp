@@ -599,6 +599,49 @@ TrtcClient::DescribeScaleInfoOutcomeCallable TrtcClient::DescribeScaleInfoCallab
     return task->get_future();
 }
 
+TrtcClient::DescribeTRTCMarketQualityDataOutcome TrtcClient::DescribeTRTCMarketQualityData(const DescribeTRTCMarketQualityDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTRTCMarketQualityData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTRTCMarketQualityDataResponse rsp = DescribeTRTCMarketQualityDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTRTCMarketQualityDataOutcome(rsp);
+        else
+            return DescribeTRTCMarketQualityDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTRTCMarketQualityDataOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTRTCMarketQualityDataAsync(const DescribeTRTCMarketQualityDataRequest& request, const DescribeTRTCMarketQualityDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTRTCMarketQualityData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeTRTCMarketQualityDataOutcomeCallable TrtcClient::DescribeTRTCMarketQualityDataCallable(const DescribeTRTCMarketQualityDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTRTCMarketQualityDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTRTCMarketQualityData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeTRTCMarketQualityMetricDataOutcome TrtcClient::DescribeTRTCMarketQualityMetricData(const DescribeTRTCMarketQualityMetricDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTRTCMarketQualityMetricData");
@@ -635,6 +678,49 @@ TrtcClient::DescribeTRTCMarketQualityMetricDataOutcomeCallable TrtcClient::Descr
         [this, request]()
         {
             return this->DescribeTRTCMarketQualityMetricData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DescribeTRTCMarketScaleDataOutcome TrtcClient::DescribeTRTCMarketScaleData(const DescribeTRTCMarketScaleDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTRTCMarketScaleData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTRTCMarketScaleDataResponse rsp = DescribeTRTCMarketScaleDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTRTCMarketScaleDataOutcome(rsp);
+        else
+            return DescribeTRTCMarketScaleDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTRTCMarketScaleDataOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTRTCMarketScaleDataAsync(const DescribeTRTCMarketScaleDataRequest& request, const DescribeTRTCMarketScaleDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTRTCMarketScaleData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeTRTCMarketScaleDataOutcomeCallable TrtcClient::DescribeTRTCMarketScaleDataCallable(const DescribeTRTCMarketScaleDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTRTCMarketScaleDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTRTCMarketScaleData(request);
         }
     );
 
@@ -685,6 +771,49 @@ TrtcClient::DescribeTRTCMarketScaleMetricDataOutcomeCallable TrtcClient::Describ
     return task->get_future();
 }
 
+TrtcClient::DescribeTRTCRealTimeQualityDataOutcome TrtcClient::DescribeTRTCRealTimeQualityData(const DescribeTRTCRealTimeQualityDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTRTCRealTimeQualityData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTRTCRealTimeQualityDataResponse rsp = DescribeTRTCRealTimeQualityDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTRTCRealTimeQualityDataOutcome(rsp);
+        else
+            return DescribeTRTCRealTimeQualityDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTRTCRealTimeQualityDataOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTRTCRealTimeQualityDataAsync(const DescribeTRTCRealTimeQualityDataRequest& request, const DescribeTRTCRealTimeQualityDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTRTCRealTimeQualityData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeTRTCRealTimeQualityDataOutcomeCallable TrtcClient::DescribeTRTCRealTimeQualityDataCallable(const DescribeTRTCRealTimeQualityDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTRTCRealTimeQualityDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTRTCRealTimeQualityData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeTRTCRealTimeQualityMetricDataOutcome TrtcClient::DescribeTRTCRealTimeQualityMetricData(const DescribeTRTCRealTimeQualityMetricDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTRTCRealTimeQualityMetricData");
@@ -721,6 +850,49 @@ TrtcClient::DescribeTRTCRealTimeQualityMetricDataOutcomeCallable TrtcClient::Des
         [this, request]()
         {
             return this->DescribeTRTCRealTimeQualityMetricData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DescribeTRTCRealTimeScaleDataOutcome TrtcClient::DescribeTRTCRealTimeScaleData(const DescribeTRTCRealTimeScaleDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTRTCRealTimeScaleData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTRTCRealTimeScaleDataResponse rsp = DescribeTRTCRealTimeScaleDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTRTCRealTimeScaleDataOutcome(rsp);
+        else
+            return DescribeTRTCRealTimeScaleDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTRTCRealTimeScaleDataOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTRTCRealTimeScaleDataAsync(const DescribeTRTCRealTimeScaleDataRequest& request, const DescribeTRTCRealTimeScaleDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTRTCRealTimeScaleData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeTRTCRealTimeScaleDataOutcomeCallable TrtcClient::DescribeTRTCRealTimeScaleDataCallable(const DescribeTRTCRealTimeScaleDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTRTCRealTimeScaleDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTRTCRealTimeScaleData(request);
         }
     );
 

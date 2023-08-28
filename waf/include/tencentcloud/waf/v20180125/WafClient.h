@@ -43,6 +43,8 @@
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteCustomRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteCustomRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteCustomWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteCustomWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteDomainWhiteRulesRequest.h>
@@ -71,6 +73,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCiphersDetailRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCiphersDetailResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeCustomRuleListRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeCustomRuleListResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCustomWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCustomWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainCountInfoRequest.h>
@@ -139,6 +143,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyCustomRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyCustomRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleRequest.h>
@@ -225,6 +231,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAttackDownloadRecordResponse> DeleteAttackDownloadRecordOutcome;
                 typedef std::future<DeleteAttackDownloadRecordOutcome> DeleteAttackDownloadRecordOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAttackDownloadRecordRequest&, DeleteAttackDownloadRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAttackDownloadRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomRuleResponse> DeleteCustomRuleOutcome;
+                typedef std::future<DeleteCustomRuleOutcome> DeleteCustomRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteCustomRuleRequest&, DeleteCustomRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCustomWhiteRuleResponse> DeleteCustomWhiteRuleOutcome;
                 typedef std::future<DeleteCustomWhiteRuleOutcome> DeleteCustomWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteCustomWhiteRuleRequest&, DeleteCustomWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomWhiteRuleAsyncHandler;
@@ -267,6 +276,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCiphersDetailResponse> DescribeCiphersDetailOutcome;
                 typedef std::future<DescribeCiphersDetailOutcome> DescribeCiphersDetailOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeCiphersDetailRequest&, DescribeCiphersDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCiphersDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomRuleListResponse> DescribeCustomRuleListOutcome;
+                typedef std::future<DescribeCustomRuleListOutcome> DescribeCustomRuleListOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeCustomRuleListRequest&, DescribeCustomRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCustomWhiteRuleResponse> DescribeCustomWhiteRuleOutcome;
                 typedef std::future<DescribeCustomWhiteRuleOutcome> DescribeCustomWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeCustomWhiteRuleRequest&, DescribeCustomWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomWhiteRuleAsyncHandler;
@@ -369,6 +381,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBotStatusResponse> ModifyBotStatusOutcome;
                 typedef std::future<ModifyBotStatusOutcome> ModifyBotStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyBotStatusRequest&, ModifyBotStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBotStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCustomRuleResponse> ModifyCustomRuleOutcome;
+                typedef std::future<ModifyCustomRuleOutcome> ModifyCustomRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyCustomRuleRequest&, ModifyCustomRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCustomRuleStatusResponse> ModifyCustomRuleStatusOutcome;
                 typedef std::future<ModifyCustomRuleStatusOutcome> ModifyCustomRuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyCustomRuleStatusRequest&, ModifyCustomRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomRuleStatusAsyncHandler;
@@ -526,6 +541,15 @@ namespace TencentCloud
                 DeleteAttackDownloadRecordOutcomeCallable DeleteAttackDownloadRecordCallable(const Model::DeleteAttackDownloadRecordRequest& request);
 
                 /**
+                 *删除自定义规则
+                 * @param req DeleteCustomRuleRequest
+                 * @return DeleteCustomRuleOutcome
+                 */
+                DeleteCustomRuleOutcome DeleteCustomRule(const Model::DeleteCustomRuleRequest &request);
+                void DeleteCustomRuleAsync(const Model::DeleteCustomRuleRequest& request, const DeleteCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomRuleOutcomeCallable DeleteCustomRuleCallable(const Model::DeleteCustomRuleRequest& request);
+
+                /**
                  *删除精准白名单规则
                  * @param req DeleteCustomWhiteRuleRequest
                  * @return DeleteCustomWhiteRuleOutcome
@@ -653,6 +677,15 @@ namespace TencentCloud
                 DescribeCiphersDetailOutcome DescribeCiphersDetail(const Model::DescribeCiphersDetailRequest &request);
                 void DescribeCiphersDetailAsync(const Model::DescribeCiphersDetailRequest& request, const DescribeCiphersDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCiphersDetailOutcomeCallable DescribeCiphersDetailCallable(const Model::DescribeCiphersDetailRequest& request);
+
+                /**
+                 *获取防护配置中的访问控制策略列表
+                 * @param req DescribeCustomRuleListRequest
+                 * @return DescribeCustomRuleListOutcome
+                 */
+                DescribeCustomRuleListOutcome DescribeCustomRuleList(const Model::DescribeCustomRuleListRequest &request);
+                void DescribeCustomRuleListAsync(const Model::DescribeCustomRuleListRequest& request, const DescribeCustomRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomRuleListOutcomeCallable DescribeCustomRuleListCallable(const Model::DescribeCustomRuleListRequest& request);
 
                 /**
                  *获取防护配置中的精准白名单策略列表
@@ -962,6 +995,15 @@ namespace TencentCloud
                 ModifyBotStatusOutcome ModifyBotStatus(const Model::ModifyBotStatusRequest &request);
                 void ModifyBotStatusAsync(const Model::ModifyBotStatusRequest& request, const ModifyBotStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBotStatusOutcomeCallable ModifyBotStatusCallable(const Model::ModifyBotStatusRequest& request);
+
+                /**
+                 *编辑自定义规则
+                 * @param req ModifyCustomRuleRequest
+                 * @return ModifyCustomRuleOutcome
+                 */
+                ModifyCustomRuleOutcome ModifyCustomRule(const Model::ModifyCustomRuleRequest &request);
+                void ModifyCustomRuleAsync(const Model::ModifyCustomRuleRequest& request, const ModifyCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomRuleOutcomeCallable ModifyCustomRuleCallable(const Model::ModifyCustomRuleRequest& request);
 
                 /**
                  *开启或禁用访问控制（自定义策略）

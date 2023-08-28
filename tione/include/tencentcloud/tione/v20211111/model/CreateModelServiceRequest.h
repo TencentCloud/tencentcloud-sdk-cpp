@@ -754,6 +754,27 @@ HYBRID_PAID:
                      */
                     bool ServiceCategoryHasBeenSet() const;
 
+                    /**
+                     * 获取服务的启动命令
+                     * @return Command 服务的启动命令
+                     * 
+                     */
+                    std::string GetCommand() const;
+
+                    /**
+                     * 设置服务的启动命令
+                     * @param _command 服务的启动命令
+                     * 
+                     */
+                    void SetCommand(const std::string& _command);
+
+                    /**
+                     * 判断参数 Command 是否已赋值
+                     * @return Command 是否已赋值
+                     * 
+                     */
+                    bool CommandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -952,6 +973,12 @@ HYBRID_PAID:
                      */
                     std::string m_serviceCategory;
                     bool m_serviceCategoryHasBeenSet;
+
+                    /**
+                     * 服务的启动命令
+                     */
+                    std::string m_command;
+                    bool m_commandHasBeenSet;
 
                 };
             }

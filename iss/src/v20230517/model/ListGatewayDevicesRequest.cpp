@@ -23,7 +23,9 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 ListGatewayDevicesRequest::ListGatewayDevicesRequest() :
-    m_gatewayIdHasBeenSet(false)
+    m_gatewayIdHasBeenSet(false),
+    m_pageNumberHasBeenSet(false),
+    m_pageSizeHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string ListGatewayDevicesRequest::ToJsonString() const
         string key = "GatewayId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_gatewayId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
     }
 
 
@@ -64,6 +82,38 @@ void ListGatewayDevicesRequest::SetGatewayId(const string& _gatewayId)
 bool ListGatewayDevicesRequest::GatewayIdHasBeenSet() const
 {
     return m_gatewayIdHasBeenSet;
+}
+
+int64_t ListGatewayDevicesRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void ListGatewayDevicesRequest::SetPageNumber(const int64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool ListGatewayDevicesRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
+}
+
+int64_t ListGatewayDevicesRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void ListGatewayDevicesRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool ListGatewayDevicesRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
 }
 
 

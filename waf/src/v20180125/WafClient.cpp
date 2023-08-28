@@ -470,6 +470,49 @@ WafClient::DeleteAttackDownloadRecordOutcomeCallable WafClient::DeleteAttackDown
     return task->get_future();
 }
 
+WafClient::DeleteCustomRuleOutcome WafClient::DeleteCustomRule(const DeleteCustomRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomRuleResponse rsp = DeleteCustomRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomRuleOutcome(rsp);
+        else
+            return DeleteCustomRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteCustomRuleAsync(const DeleteCustomRuleRequest& request, const DeleteCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCustomRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteCustomRuleOutcomeCallable WafClient::DeleteCustomRuleCallable(const DeleteCustomRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCustomRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCustomRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DeleteCustomWhiteRuleOutcome WafClient::DeleteCustomWhiteRule(const DeleteCustomWhiteRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCustomWhiteRule");
@@ -1065,6 +1108,49 @@ WafClient::DescribeCiphersDetailOutcomeCallable WafClient::DescribeCiphersDetail
         [this, request]()
         {
             return this->DescribeCiphersDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeCustomRuleListOutcome WafClient::DescribeCustomRuleList(const DescribeCustomRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomRuleListResponse rsp = DescribeCustomRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomRuleListOutcome(rsp);
+        else
+            return DescribeCustomRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomRuleListOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeCustomRuleListAsync(const DescribeCustomRuleListRequest& request, const DescribeCustomRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCustomRuleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeCustomRuleListOutcomeCallable WafClient::DescribeCustomRuleListCallable(const DescribeCustomRuleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCustomRuleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCustomRuleList(request);
         }
     );
 
@@ -2527,6 +2613,49 @@ WafClient::ModifyBotStatusOutcomeCallable WafClient::ModifyBotStatusCallable(con
         [this, request]()
         {
             return this->ModifyBotStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyCustomRuleOutcome WafClient::ModifyCustomRule(const ModifyCustomRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomRuleResponse rsp = ModifyCustomRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomRuleOutcome(rsp);
+        else
+            return ModifyCustomRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyCustomRuleAsync(const ModifyCustomRuleRequest& request, const ModifyCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyCustomRuleOutcomeCallable WafClient::ModifyCustomRuleCallable(const ModifyCustomRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomRule(request);
         }
     );
 

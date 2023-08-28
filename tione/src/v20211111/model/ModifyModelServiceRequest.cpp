@@ -43,7 +43,8 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_scheduledActionHasBeenSet(false),
     m_serviceLimitHasBeenSet(false),
     m_volumeMountHasBeenSet(false),
-    m_modelTurboEnableHasBeenSet(false)
+    m_modelTurboEnableHasBeenSet(false),
+    m_commandHasBeenSet(false)
 {
 }
 
@@ -242,6 +243,14 @@ string ModifyModelServiceRequest::ToJsonString() const
         string key = "ModelTurboEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_modelTurboEnable, allocator);
+    }
+
+    if (m_commandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Command";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -586,6 +595,22 @@ void ModifyModelServiceRequest::SetModelTurboEnable(const bool& _modelTurboEnabl
 bool ModifyModelServiceRequest::ModelTurboEnableHasBeenSet() const
 {
     return m_modelTurboEnableHasBeenSet;
+}
+
+string ModifyModelServiceRequest::GetCommand() const
+{
+    return m_command;
+}
+
+void ModifyModelServiceRequest::SetCommand(const string& _command)
+{
+    m_command = _command;
+    m_commandHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::CommandHasBeenSet() const
+{
+    return m_commandHasBeenSet;
 }
 
 

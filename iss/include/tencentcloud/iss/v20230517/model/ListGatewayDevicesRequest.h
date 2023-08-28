@@ -63,6 +63,48 @@ namespace TencentCloud
                      */
                     bool GatewayIdHasBeenSet() const;
 
+                    /**
+                     * 获取分页页数
+                     * @return PageNumber 分页页数
+                     * 
+                     */
+                    int64_t GetPageNumber() const;
+
+                    /**
+                     * 设置分页页数
+                     * @param _pageNumber 分页页数
+                     * 
+                     */
+                    void SetPageNumber(const int64_t& _pageNumber);
+
+                    /**
+                     * 判断参数 PageNumber 是否已赋值
+                     * @return PageNumber 是否已赋值
+                     * 
+                     */
+                    bool PageNumberHasBeenSet() const;
+
+                    /**
+                     * 获取分页大小
+                     * @return PageSize 分页大小
+                     * 
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置分页大小
+                     * @param _pageSize 分页大小
+                     * 
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +112,18 @@ namespace TencentCloud
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
+
+                    /**
+                     * 分页页数
+                     */
+                    int64_t m_pageNumber;
+                    bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 分页大小
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
 
                 };
             }

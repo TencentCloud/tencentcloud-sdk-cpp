@@ -171,6 +171,31 @@ namespace TencentCloud
                      */
                     bool LastTransitionTimeHasBeenSet() const;
 
+                    /**
+                     * 获取上次更新的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastUpdateTime 上次更新的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLastUpdateTime() const;
+
+                    /**
+                     * 设置上次更新的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastUpdateTime 上次更新的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastUpdateTime(const std::string& _lastUpdateTime);
+
+                    /**
+                     * 判断参数 LastUpdateTime 是否已赋值
+                     * @return LastUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool LastUpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +232,13 @@ namespace TencentCloud
                      */
                     std::string m_lastTransitionTime;
                     bool m_lastTransitionTimeHasBeenSet;
+
+                    /**
+                     * 上次更新的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastUpdateTime;
+                    bool m_lastUpdateTimeHasBeenSet;
 
                 };
             }

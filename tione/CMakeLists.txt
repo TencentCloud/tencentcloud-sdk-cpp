@@ -156,6 +156,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeAPIConfigsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteBatchTaskRequest.h
+  include/tencentcloud/tione/v20211111/model/InferGatewayCallInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelsResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBatchTaskInstancesResponse.h
   include/tencentcloud/tione/v20211111/model/CreateNotebookRequest.h
@@ -181,7 +182,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeInferTemplatesResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsRequest.h
-  include/tencentcloud/tione/v20211111/model/InferGatewayCallInfo.h
+  include/tencentcloud/tione/v20211111/model/InferCodeInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeInferTemplatesRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceGroupResponse.h
   include/tencentcloud/tione/v20211111/model/GpuDetail.h
@@ -464,6 +465,7 @@ set(tione_src
   src/v20211111/model/DescribeAPIConfigsRequest.cpp
   src/v20211111/model/DescribeModelServiceGroupsResponse.cpp
   src/v20211111/model/DeleteBatchTaskRequest.cpp
+  src/v20211111/model/InferGatewayCallInfo.cpp
   src/v20211111/model/DescribeTrainingModelsResponse.cpp
   src/v20211111/model/DescribeBatchTaskInstancesResponse.cpp
   src/v20211111/model/CreateNotebookRequest.cpp
@@ -489,7 +491,7 @@ set(tione_src
   src/v20211111/model/DeleteTrainingModelResponse.cpp
   src/v20211111/model/DescribeInferTemplatesResponse.cpp
   src/v20211111/model/DescribeBillingSpecsRequest.cpp
-  src/v20211111/model/InferGatewayCallInfo.cpp
+  src/v20211111/model/InferCodeInfo.cpp
   src/v20211111/model/DescribeInferTemplatesRequest.cpp
   src/v20211111/model/DeleteModelServiceGroupResponse.cpp
   src/v20211111/model/GpuDetail.cpp

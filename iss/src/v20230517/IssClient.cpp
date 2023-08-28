@@ -427,6 +427,49 @@ IssClient::AddUserDeviceOutcomeCallable IssClient::AddUserDeviceCallable(const A
     return task->get_future();
 }
 
+IssClient::BatchOperateDeviceOutcome IssClient::BatchOperateDevice(const BatchOperateDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchOperateDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchOperateDeviceResponse rsp = BatchOperateDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchOperateDeviceOutcome(rsp);
+        else
+            return BatchOperateDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchOperateDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::BatchOperateDeviceAsync(const BatchOperateDeviceRequest& request, const BatchOperateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchOperateDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::BatchOperateDeviceOutcomeCallable IssClient::BatchOperateDeviceCallable(const BatchOperateDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchOperateDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchOperateDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::CheckDomainOutcome IssClient::CheckDomain(const CheckDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckDomain");
@@ -2018,6 +2061,49 @@ IssClient::DescribeStreamAuthOutcomeCallable IssClient::DescribeStreamAuthCallab
     return task->get_future();
 }
 
+IssClient::DescribeTaskOutcome IssClient::DescribeTask(const DescribeTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskResponse rsp = DescribeTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskOutcome(rsp);
+        else
+            return DescribeTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::DescribeTaskAsync(const DescribeTaskRequest& request, const DescribeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::DescribeTaskOutcomeCallable IssClient::DescribeTaskCallable(const DescribeTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::DescribeUserDeviceOutcome IssClient::DescribeUserDevice(const DescribeUserDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserDevice");
@@ -2699,6 +2785,92 @@ IssClient::ListRecordTemplatesOutcomeCallable IssClient::ListRecordTemplatesCall
         [this, request]()
         {
             return this->ListRecordTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IssClient::ListSubTasksOutcome IssClient::ListSubTasks(const ListSubTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListSubTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListSubTasksResponse rsp = ListSubTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListSubTasksOutcome(rsp);
+        else
+            return ListSubTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListSubTasksOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::ListSubTasksAsync(const ListSubTasksRequest& request, const ListSubTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListSubTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::ListSubTasksOutcomeCallable IssClient::ListSubTasksCallable(const ListSubTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListSubTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->ListSubTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IssClient::ListTasksOutcome IssClient::ListTasks(const ListTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTasksResponse rsp = ListTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTasksOutcome(rsp);
+        else
+            return ListTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTasksOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::ListTasksAsync(const ListTasksRequest& request, const ListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::ListTasksOutcomeCallable IssClient::ListTasksCallable(const ListTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTasks(request);
         }
     );
 

@@ -41,6 +41,8 @@
 #include <tencentcloud/iss/v20230517/model/AddStreamAuthResponse.h>
 #include <tencentcloud/iss/v20230517/model/AddUserDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/AddUserDeviceResponse.h>
+#include <tencentcloud/iss/v20230517/model/BatchOperateDeviceRequest.h>
+#include <tencentcloud/iss/v20230517/model/BatchOperateDeviceResponse.h>
 #include <tencentcloud/iss/v20230517/model/CheckDomainRequest.h>
 #include <tencentcloud/iss/v20230517/model/CheckDomainResponse.h>
 #include <tencentcloud/iss/v20230517/model/ControlDevicePTZRequest.h>
@@ -115,6 +117,8 @@
 #include <tencentcloud/iss/v20230517/model/DescribeRecordTemplateResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeStreamAuthRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeStreamAuthResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeTaskRequest.h>
+#include <tencentcloud/iss/v20230517/model/DescribeTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeUserDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeUserDeviceResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlRequest.h>
@@ -147,6 +151,10 @@
 #include <tencentcloud/iss/v20230517/model/ListRecordRetrieveTasksResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListRecordTemplatesRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListRecordTemplatesResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListSubTasksRequest.h>
+#include <tencentcloud/iss/v20230517/model/ListSubTasksResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListTasksRequest.h>
+#include <tencentcloud/iss/v20230517/model/ListTasksResponse.h>
 #include <tencentcloud/iss/v20230517/model/PlayRecordRequest.h>
 #include <tencentcloud/iss/v20230517/model/PlayRecordResponse.h>
 #include <tencentcloud/iss/v20230517/model/RefreshDeviceChannelRequest.h>
@@ -216,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddUserDeviceResponse> AddUserDeviceOutcome;
                 typedef std::future<AddUserDeviceOutcome> AddUserDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::AddUserDeviceRequest&, AddUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchOperateDeviceResponse> BatchOperateDeviceOutcome;
+                typedef std::future<BatchOperateDeviceOutcome> BatchOperateDeviceOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::BatchOperateDeviceRequest&, BatchOperateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchOperateDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckDomainResponse> CheckDomainOutcome;
                 typedef std::future<CheckDomainOutcome> CheckDomainOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::CheckDomainRequest&, CheckDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainAsyncHandler;
@@ -327,6 +338,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStreamAuthResponse> DescribeStreamAuthOutcome;
                 typedef std::future<DescribeStreamAuthOutcome> DescribeStreamAuthOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeStreamAuthRequest&, DescribeStreamAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamAuthAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskResponse> DescribeTaskOutcome;
+                typedef std::future<DescribeTaskOutcome> DescribeTaskOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DescribeTaskRequest&, DescribeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserDeviceResponse> DescribeUserDeviceOutcome;
                 typedef std::future<DescribeUserDeviceOutcome> DescribeUserDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeUserDeviceRequest&, DescribeUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDeviceAsyncHandler;
@@ -375,6 +389,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListRecordTemplatesResponse> ListRecordTemplatesOutcome;
                 typedef std::future<ListRecordTemplatesOutcome> ListRecordTemplatesOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListRecordTemplatesRequest&, ListRecordTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRecordTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListSubTasksResponse> ListSubTasksOutcome;
+                typedef std::future<ListSubTasksOutcome> ListSubTasksOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ListSubTasksRequest&, ListSubTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSubTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTasksResponse> ListTasksOutcome;
+                typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ListTasksRequest&, ListTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::PlayRecordResponse> PlayRecordOutcome;
                 typedef std::future<PlayRecordOutcome> PlayRecordOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::PlayRecordRequest&, PlayRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PlayRecordAsyncHandler;
@@ -503,6 +523,15 @@ namespace TencentCloud
                 AddUserDeviceOutcome AddUserDevice(const Model::AddUserDeviceRequest &request);
                 void AddUserDeviceAsync(const Model::AddUserDeviceRequest& request, const AddUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddUserDeviceOutcomeCallable AddUserDeviceCallable(const Model::AddUserDeviceRequest& request);
+
+                /**
+                 *用于批量操作（启用，禁用，删除）设备
+                 * @param req BatchOperateDeviceRequest
+                 * @return BatchOperateDeviceOutcome
+                 */
+                BatchOperateDeviceOutcome BatchOperateDevice(const Model::BatchOperateDeviceRequest &request);
+                void BatchOperateDeviceAsync(const Model::BatchOperateDeviceRequest& request, const BatchOperateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchOperateDeviceOutcomeCallable BatchOperateDeviceCallable(const Model::BatchOperateDeviceRequest& request);
 
                 /**
                  *用于检测域名是否备案。
@@ -838,6 +867,15 @@ namespace TencentCloud
                 DescribeStreamAuthOutcomeCallable DescribeStreamAuthCallable(const Model::DescribeStreamAuthRequest& request);
 
                 /**
+                 *用于查询任务详情
+                 * @param req DescribeTaskRequest
+                 * @return DescribeTaskOutcome
+                 */
+                DescribeTaskOutcome DescribeTask(const Model::DescribeTaskRequest &request);
+                void DescribeTaskAsync(const Model::DescribeTaskRequest& request, const DescribeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskOutcomeCallable DescribeTaskCallable(const Model::DescribeTaskRequest& request);
+
+                /**
                  *用于查询设备的详细信息。
                  * @param req DescribeUserDeviceRequest
                  * @return DescribeUserDeviceOutcome
@@ -980,6 +1018,24 @@ namespace TencentCloud
                 ListRecordTemplatesOutcome ListRecordTemplates(const Model::ListRecordTemplatesRequest &request);
                 void ListRecordTemplatesAsync(const Model::ListRecordTemplatesRequest& request, const ListRecordTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListRecordTemplatesOutcomeCallable ListRecordTemplatesCallable(const Model::ListRecordTemplatesRequest& request);
+
+                /**
+                 *用于查询任务的子任务列表
+                 * @param req ListSubTasksRequest
+                 * @return ListSubTasksOutcome
+                 */
+                ListSubTasksOutcome ListSubTasks(const Model::ListSubTasksRequest &request);
+                void ListSubTasksAsync(const Model::ListSubTasksRequest& request, const ListSubTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListSubTasksOutcomeCallable ListSubTasksCallable(const Model::ListSubTasksRequest& request);
+
+                /**
+                 *用于查询批量任务和简单任务列表
+                 * @param req ListTasksRequest
+                 * @return ListTasksOutcome
+                 */
+                ListTasksOutcome ListTasks(const Model::ListTasksRequest &request);
+                void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTasksOutcomeCallable ListTasksCallable(const Model::ListTasksRequest& request);
 
                 /**
                  *用于获取设备本地录像 URL 地址。

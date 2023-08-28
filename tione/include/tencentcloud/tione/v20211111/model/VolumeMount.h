@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool CFSConfigHasBeenSet() const;
 
                     /**
-                     * 获取挂载源类型
-                     * @return VolumeSourceType 挂载源类型
+                     * 获取挂载源类型，CFS、COS，默认为CFS
+                     * @return VolumeSourceType 挂载源类型，CFS、COS，默认为CFS
                      * 
                      */
                     std::string GetVolumeSourceType() const;
 
                     /**
-                     * 设置挂载源类型
-                     * @param _volumeSourceType 挂载源类型
+                     * 设置挂载源类型，CFS、COS，默认为CFS
+                     * @param _volumeSourceType 挂载源类型，CFS、COS，默认为CFS
                      * 
                      */
                     void SetVolumeSourceType(const std::string& _volumeSourceType);
@@ -98,7 +98,7 @@ namespace TencentCloud
                     bool m_cFSConfigHasBeenSet;
 
                     /**
-                     * 挂载源类型
+                     * 挂载源类型，CFS、COS，默认为CFS
                      */
                     std::string m_volumeSourceType;
                     bool m_volumeSourceTypeHasBeenSet;

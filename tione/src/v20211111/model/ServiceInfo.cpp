@@ -46,7 +46,10 @@ ServiceInfo::ServiceInfo() :
     m_podsHasBeenSet(false),
     m_podInfosHasBeenSet(false),
     m_serviceLimitHasBeenSet(false),
-    m_modelTurboEnableHasBeenSet(false)
+    m_modelTurboEnableHasBeenSet(false),
+    m_volumeMountHasBeenSet(false),
+    m_inferCodeInfoHasBeenSet(false),
+    m_commandHasBeenSet(false)
 {
 }
 
@@ -411,6 +414,50 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_modelTurboEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("VolumeMount") && !value["VolumeMount"].IsNull())
+    {
+        if (!value["VolumeMount"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.VolumeMount` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_volumeMount.Deserialize(value["VolumeMount"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_volumeMountHasBeenSet = true;
+    }
+
+    if (value.HasMember("InferCodeInfo") && !value["InferCodeInfo"].IsNull())
+    {
+        if (!value["InferCodeInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.InferCodeInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_inferCodeInfo.Deserialize(value["InferCodeInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_inferCodeInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Command") && !value["Command"].IsNull())
+    {
+        if (!value["Command"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.Command` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_command = string(value["Command"].GetString());
+        m_commandHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -659,6 +706,32 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ModelTurboEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modelTurboEnable, allocator);
+    }
+
+    if (m_volumeMountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeMount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_volumeMount.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_inferCodeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InferCodeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_inferCodeInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_commandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Command";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1078,5 +1151,53 @@ void ServiceInfo::SetModelTurboEnable(const bool& _modelTurboEnable)
 bool ServiceInfo::ModelTurboEnableHasBeenSet() const
 {
     return m_modelTurboEnableHasBeenSet;
+}
+
+VolumeMount ServiceInfo::GetVolumeMount() const
+{
+    return m_volumeMount;
+}
+
+void ServiceInfo::SetVolumeMount(const VolumeMount& _volumeMount)
+{
+    m_volumeMount = _volumeMount;
+    m_volumeMountHasBeenSet = true;
+}
+
+bool ServiceInfo::VolumeMountHasBeenSet() const
+{
+    return m_volumeMountHasBeenSet;
+}
+
+InferCodeInfo ServiceInfo::GetInferCodeInfo() const
+{
+    return m_inferCodeInfo;
+}
+
+void ServiceInfo::SetInferCodeInfo(const InferCodeInfo& _inferCodeInfo)
+{
+    m_inferCodeInfo = _inferCodeInfo;
+    m_inferCodeInfoHasBeenSet = true;
+}
+
+bool ServiceInfo::InferCodeInfoHasBeenSet() const
+{
+    return m_inferCodeInfoHasBeenSet;
+}
+
+string ServiceInfo::GetCommand() const
+{
+    return m_command;
+}
+
+void ServiceInfo::SetCommand(const string& _command)
+{
+    m_command = _command;
+    m_commandHasBeenSet = true;
+}
+
+bool ServiceInfo::CommandHasBeenSet() const
+{
+    return m_commandHasBeenSet;
 }
 

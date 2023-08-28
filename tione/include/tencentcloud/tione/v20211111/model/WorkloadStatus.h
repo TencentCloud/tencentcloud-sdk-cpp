@@ -196,21 +196,21 @@ Stopping 停止中
                     /**
                      * 获取工作负载的状况信息
                      * @return StatefulSetCondition 工作负载的状况信息
-                     * 
+                     * @deprecated
                      */
                     std::vector<StatefulSetCondition> GetStatefulSetCondition() const;
 
                     /**
                      * 设置工作负载的状况信息
                      * @param _statefulSetCondition 工作负载的状况信息
-                     * 
+                     * @deprecated
                      */
                     void SetStatefulSetCondition(const std::vector<StatefulSetCondition>& _statefulSetCondition);
 
                     /**
                      * 判断参数 StatefulSetCondition 是否已赋值
                      * @return StatefulSetCondition 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StatefulSetConditionHasBeenSet() const;
 

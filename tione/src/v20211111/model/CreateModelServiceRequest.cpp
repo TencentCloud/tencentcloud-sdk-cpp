@@ -51,7 +51,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_serviceLimitHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_modelTurboEnableHasBeenSet(false),
-    m_serviceCategoryHasBeenSet(false)
+    m_serviceCategoryHasBeenSet(false),
+    m_commandHasBeenSet(false)
 {
 }
 
@@ -321,6 +322,14 @@ string CreateModelServiceRequest::ToJsonString() const
         string key = "ServiceCategory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceCategory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Command";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -793,6 +802,22 @@ void CreateModelServiceRequest::SetServiceCategory(const string& _serviceCategor
 bool CreateModelServiceRequest::ServiceCategoryHasBeenSet() const
 {
     return m_serviceCategoryHasBeenSet;
+}
+
+string CreateModelServiceRequest::GetCommand() const
+{
+    return m_command;
+}
+
+void CreateModelServiceRequest::SetCommand(const string& _command)
+{
+    m_command = _command;
+    m_commandHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::CommandHasBeenSet() const
+{
+    return m_commandHasBeenSet;
 }
 
 

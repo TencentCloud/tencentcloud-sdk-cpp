@@ -34,6 +34,8 @@
 #include <tencentcloud/tione/v20211111/model/CronScaleJob.h>
 #include <tencentcloud/tione/v20211111/model/Pod.h>
 #include <tencentcloud/tione/v20211111/model/ServiceLimit.h>
+#include <tencentcloud/tione/v20211111/model/VolumeMount.h>
+#include <tencentcloud/tione/v20211111/model/InferCodeInfo.h>
 
 
 namespace TencentCloud
@@ -738,6 +740,81 @@ HYBRID_PAID:
                      */
                     bool ModelTurboEnableHasBeenSet() const;
 
+                    /**
+                     * 获取挂载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VolumeMount 挂载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    VolumeMount GetVolumeMount() const;
+
+                    /**
+                     * 设置挂载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _volumeMount 挂载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVolumeMount(const VolumeMount& _volumeMount);
+
+                    /**
+                     * 判断参数 VolumeMount 是否已赋值
+                     * @return VolumeMount 是否已赋值
+                     * 
+                     */
+                    bool VolumeMountHasBeenSet() const;
+
+                    /**
+                     * 获取推理代码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InferCodeInfo 推理代码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    InferCodeInfo GetInferCodeInfo() const;
+
+                    /**
+                     * 设置推理代码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inferCodeInfo 推理代码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInferCodeInfo(const InferCodeInfo& _inferCodeInfo);
+
+                    /**
+                     * 判断参数 InferCodeInfo 是否已赋值
+                     * @return InferCodeInfo 是否已赋值
+                     * 
+                     */
+                    bool InferCodeInfoHasBeenSet() const;
+
+                    /**
+                     * 获取服务的启动命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Command 服务的启动命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCommand() const;
+
+                    /**
+                     * 设置服务的启动命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _command 服务的启动命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCommand(const std::string& _command);
+
+                    /**
+                     * 判断参数 Command 是否已赋值
+                     * @return Command 是否已赋值
+                     * 
+                     */
+                    bool CommandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -929,6 +1006,27 @@ HYBRID_PAID:
                      */
                     bool m_modelTurboEnable;
                     bool m_modelTurboEnableHasBeenSet;
+
+                    /**
+                     * 挂载
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VolumeMount m_volumeMount;
+                    bool m_volumeMountHasBeenSet;
+
+                    /**
+                     * 推理代码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InferCodeInfo m_inferCodeInfo;
+                    bool m_inferCodeInfoHasBeenSet;
+
+                    /**
+                     * 服务的启动命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_command;
+                    bool m_commandHasBeenSet;
 
                 };
             }
