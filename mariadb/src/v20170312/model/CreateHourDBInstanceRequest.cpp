@@ -40,7 +40,8 @@ CreateHourDBInstanceRequest::CreateHourDBInstanceRequest() :
     m_dcnInstanceIdHasBeenSet(false),
     m_initParamsHasBeenSet(false),
     m_rollbackInstanceIdHasBeenSet(false),
-    m_rollbackTimeHasBeenSet(false)
+    m_rollbackTimeHasBeenSet(false),
+    m_dcnSyncModeHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,14 @@ string CreateHourDBInstanceRequest::ToJsonString() const
         string key = "RollbackTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_rollbackTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dcnSyncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DcnSyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dcnSyncMode, allocator);
     }
 
 
@@ -513,6 +522,22 @@ void CreateHourDBInstanceRequest::SetRollbackTime(const string& _rollbackTime)
 bool CreateHourDBInstanceRequest::RollbackTimeHasBeenSet() const
 {
     return m_rollbackTimeHasBeenSet;
+}
+
+int64_t CreateHourDBInstanceRequest::GetDcnSyncMode() const
+{
+    return m_dcnSyncMode;
+}
+
+void CreateHourDBInstanceRequest::SetDcnSyncMode(const int64_t& _dcnSyncMode)
+{
+    m_dcnSyncMode = _dcnSyncMode;
+    m_dcnSyncModeHasBeenSet = true;
+}
+
+bool CreateHourDBInstanceRequest::DcnSyncModeHasBeenSet() const
+{
+    return m_dcnSyncModeHasBeenSet;
 }
 
 

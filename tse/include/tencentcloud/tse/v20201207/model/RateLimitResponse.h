@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool BodyHasBeenSet() const;
 
                     /**
-                     * 获取headrs
+                     * 获取Headers
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Headers headrs
+                     * @return Headers Headers
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KVMapping> GetHeaders() const;
 
                     /**
-                     * 设置headrs
+                     * 设置Headers
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _headers headrs
+                     * @param _headers Headers
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -132,7 +132,7 @@ namespace TencentCloud
                     bool m_bodyHasBeenSet;
 
                     /**
-                     * headrs
+                     * Headers
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KVMapping> m_headers;

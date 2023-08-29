@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 参与者信息
+                * 参与者信息。
                 */
                 class ApproverInfo : public AbstractModel
                 {

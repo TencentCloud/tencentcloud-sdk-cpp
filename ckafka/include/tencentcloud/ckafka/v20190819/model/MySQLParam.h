@@ -573,6 +573,27 @@ namespace TencentCloud
                      */
                     bool IsTableRegularHasBeenSet() const;
 
+                    /**
+                     * 获取信号表
+                     * @return SignalTable 信号表
+                     * 
+                     */
+                    std::string GetSignalTable() const;
+
+                    /**
+                     * 设置信号表
+                     * @param _signalTable 信号表
+                     * 
+                     */
+                    void SetSignalTable(const std::string& _signalTable);
+
+                    /**
+                     * 判断参数 SignalTable 是否已赋值
+                     * @return SignalTable 是否已赋值
+                     * 
+                     */
+                    bool SignalTableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -724,6 +745,12 @@ namespace TencentCloud
                      */
                     bool m_isTableRegular;
                     bool m_isTableRegularHasBeenSet;
+
+                    /**
+                     * 信号表
+                     */
+                    std::string m_signalTable;
+                    bool m_signalTableHasBeenSet;
 
                 };
             }

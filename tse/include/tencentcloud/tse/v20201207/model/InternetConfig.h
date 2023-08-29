@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取公网地址版本，可选："IPV4" | "IPV6-NAT64" 。不填默认 IPV4 。
-                     * @return InternetAddressVersion 公网地址版本，可选："IPV4" | "IPV6-NAT64" 。不填默认 IPV4 。
+                     * 获取公网地址版本，可选："IPV4" | "IPV6" 。不填默认 IPV4 。
+                     * @return InternetAddressVersion 公网地址版本，可选："IPV4" | "IPV6" 。不填默认 IPV4 。
                      * 
                      */
                     std::string GetInternetAddressVersion() const;
 
                     /**
-                     * 设置公网地址版本，可选："IPV4" | "IPV6-NAT64" 。不填默认 IPV4 。
-                     * @param _internetAddressVersion 公网地址版本，可选："IPV4" | "IPV6-NAT64" 。不填默认 IPV4 。
+                     * 设置公网地址版本，可选："IPV4" | "IPV6" 。不填默认 IPV4 。
+                     * @param _internetAddressVersion 公网地址版本，可选："IPV4" | "IPV6" 。不填默认 IPV4 。
                      * 
                      */
                     void SetInternetAddressVersion(const std::string& _internetAddressVersion);
@@ -217,7 +217,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 公网地址版本，可选："IPV4" | "IPV6-NAT64" 。不填默认 IPV4 。
+                     * 公网地址版本，可选："IPV4" | "IPV6" 。不填默认 IPV4 。
                      */
                     std::string m_internetAddressVersion;
                     bool m_internetAddressVersionHasBeenSet;

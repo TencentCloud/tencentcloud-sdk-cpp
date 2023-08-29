@@ -31,7 +31,8 @@ BaseFlowInfo::BaseFlowInfo() :
     m_needSignReviewHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_ccInfosHasBeenSet(false),
-    m_needCreateReviewHasBeenSet(false)
+    m_needCreateReviewHasBeenSet(false),
+    m_componentsHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,26 @@ CoreInternalOutcome BaseFlowInfo::Deserialize(const rapidjson::Value &value)
         m_needCreateReviewHasBeenSet = true;
     }
 
+    if (value.HasMember("Components") && !value["Components"].IsNull())
+    {
+        if (!value["Components"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BaseFlowInfo.Components` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Components"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Component item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_components.push_back(item);
+        }
+        m_componentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +298,21 @@ void BaseFlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "NeedCreateReview";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needCreateReview, allocator);
+    }
+
+    if (m_componentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Components";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_components.begin(); itr != m_components.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -456,5 +492,21 @@ void BaseFlowInfo::SetNeedCreateReview(const bool& _needCreateReview)
 bool BaseFlowInfo::NeedCreateReviewHasBeenSet() const
 {
     return m_needCreateReviewHasBeenSet;
+}
+
+vector<Component> BaseFlowInfo::GetComponents() const
+{
+    return m_components;
+}
+
+void BaseFlowInfo::SetComponents(const vector<Component>& _components)
+{
+    m_components = _components;
+    m_componentsHasBeenSet = true;
+}
+
+bool BaseFlowInfo::ComponentsHasBeenSet() const
+{
+    return m_componentsHasBeenSet;
 }
 

@@ -1959,6 +1959,56 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool KibanaAlteringPublicAccessHasBeenSet() const;
 
+                    /**
+                     * 获取本月是否有内核可以更新：false-无，true-有
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasKernelUpgrade 本月是否有内核可以更新：false-无，true-有
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetHasKernelUpgrade() const;
+
+                    /**
+                     * 设置本月是否有内核可以更新：false-无，true-有
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hasKernelUpgrade 本月是否有内核可以更新：false-无，true-有
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHasKernelUpgrade(const bool& _hasKernelUpgrade);
+
+                    /**
+                     * 判断参数 HasKernelUpgrade 是否已赋值
+                     * @return HasKernelUpgrade 是否已赋值
+                     * 
+                     */
+                    bool HasKernelUpgradeHasBeenSet() const;
+
+                    /**
+                     * 获取cdcId，使用cdc子网时传递
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdcId cdcId，使用cdc子网时传递
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置cdcId，使用cdc子网时传递
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cdcId cdcId，使用cdc子网时传递
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2496,6 +2546,20 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     std::string m_kibanaAlteringPublicAccess;
                     bool m_kibanaAlteringPublicAccessHasBeenSet;
+
+                    /**
+                     * 本月是否有内核可以更新：false-无，true-有
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_hasKernelUpgrade;
+                    bool m_hasKernelUpgradeHasBeenSet;
+
+                    /**
+                     * cdcId，使用cdc子网时传递
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

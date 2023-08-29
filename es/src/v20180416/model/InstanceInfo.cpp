@@ -101,7 +101,9 @@ InstanceInfo::InstanceInfo() :
     m_autoIndexEnabledHasBeenSet(false),
     m_enableHybridStorageHasBeenSet(false),
     m_processPercentHasBeenSet(false),
-    m_kibanaAlteringPublicAccessHasBeenSet(false)
+    m_kibanaAlteringPublicAccessHasBeenSet(false),
+    m_hasKernelUpgradeHasBeenSet(false),
+    m_cdcIdHasBeenSet(false)
 {
 }
 
@@ -1029,6 +1031,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_kibanaAlteringPublicAccessHasBeenSet = true;
     }
 
+    if (value.HasMember("HasKernelUpgrade") && !value["HasKernelUpgrade"].IsNull())
+    {
+        if (!value["HasKernelUpgrade"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.HasKernelUpgrade` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasKernelUpgrade = value["HasKernelUpgrade"].GetBool();
+        m_hasKernelUpgradeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1730,6 +1752,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "KibanaAlteringPublicAccess";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_kibanaAlteringPublicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasKernelUpgradeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasKernelUpgrade";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasKernelUpgrade, allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3029,5 +3067,37 @@ void InstanceInfo::SetKibanaAlteringPublicAccess(const string& _kibanaAlteringPu
 bool InstanceInfo::KibanaAlteringPublicAccessHasBeenSet() const
 {
     return m_kibanaAlteringPublicAccessHasBeenSet;
+}
+
+bool InstanceInfo::GetHasKernelUpgrade() const
+{
+    return m_hasKernelUpgrade;
+}
+
+void InstanceInfo::SetHasKernelUpgrade(const bool& _hasKernelUpgrade)
+{
+    m_hasKernelUpgrade = _hasKernelUpgrade;
+    m_hasKernelUpgradeHasBeenSet = true;
+}
+
+bool InstanceInfo::HasKernelUpgradeHasBeenSet() const
+{
+    return m_hasKernelUpgradeHasBeenSet;
+}
+
+string InstanceInfo::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void InstanceInfo::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool InstanceInfo::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 

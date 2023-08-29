@@ -34,7 +34,8 @@ CommonFlowApprover::CommonFlowApprover() :
     m_preReadTimeHasBeenSet(false),
     m_isFullTextHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
-    m_approverOptionHasBeenSet(false)
+    m_approverOptionHasBeenSet(false),
+    m_signComponentsHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,26 @@ CoreInternalOutcome CommonFlowApprover::Deserialize(const rapidjson::Value &valu
         m_approverOptionHasBeenSet = true;
     }
 
+    if (value.HasMember("SignComponents") && !value["SignComponents"].IsNull())
+    {
+        if (!value["SignComponents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CommonFlowApprover.SignComponents` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SignComponents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Component item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_signComponents.push_back(item);
+        }
+        m_signComponentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +329,21 @@ void CommonFlowApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_approverOption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_signComponentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_signComponents.begin(); itr != m_signComponents.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -535,5 +571,21 @@ void CommonFlowApprover::SetApproverOption(const CommonApproverOption& _approver
 bool CommonFlowApprover::ApproverOptionHasBeenSet() const
 {
     return m_approverOptionHasBeenSet;
+}
+
+vector<Component> CommonFlowApprover::GetSignComponents() const
+{
+    return m_signComponents;
+}
+
+void CommonFlowApprover::SetSignComponents(const vector<Component>& _signComponents)
+{
+    m_signComponents = _signComponents;
+    m_signComponentsHasBeenSet = true;
+}
+
+bool CommonFlowApprover::SignComponentsHasBeenSet() const
+{
+    return m_signComponentsHasBeenSet;
 }
 

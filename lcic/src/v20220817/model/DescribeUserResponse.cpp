@@ -27,7 +27,8 @@ DescribeUserResponse::DescribeUserResponse() :
     m_sdkAppIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_avatarHasBeenSet(false)
+    m_avatarHasBeenSet(false),
+    m_originIdHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeUserResponse::Deserialize(const string &payload)
         m_avatarHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OriginId") && !rsp["OriginId"].IsNull())
+    {
+        if (!rsp["OriginId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originId = string(rsp["OriginId"].GetString());
+        m_originIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string DescribeUserResponse::ToJsonString() const
         string key = "Avatar";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_avatar.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ string DescribeUserResponse::GetAvatar() const
 bool DescribeUserResponse::AvatarHasBeenSet() const
 {
     return m_avatarHasBeenSet;
+}
+
+string DescribeUserResponse::GetOriginId() const
+{
+    return m_originId;
+}
+
+bool DescribeUserResponse::OriginIdHasBeenSet() const
+{
+    return m_originIdHasBeenSet;
 }
 
 

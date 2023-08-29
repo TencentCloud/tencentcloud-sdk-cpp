@@ -288,18 +288,18 @@ namespace TencentCloud
 
                     /**
                      * 获取已废弃请使用NodeInfoList
-节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li>默认值CLOUD_SSD
                      * @return DiskType 已废弃请使用NodeInfoList
-节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li>默认值CLOUD_SSD
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置已废弃请使用NodeInfoList
-节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li>默认值CLOUD_SSD
                      * @param _diskType 已废弃请使用NodeInfoList
-节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li>默认值CLOUD_SSD
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -793,6 +793,27 @@ namespace TencentCloud
                      */
                     bool EnableDiagnoseHasBeenSet() const;
 
+                    /**
+                     * 获取cdcId，使用cdc子网时传递
+                     * @return CdcId cdcId，使用cdc子网时传递
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置cdcId，使用cdc子网时传递
+                     * @param _cdcId cdcId，使用cdc子网时传递
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -865,7 +886,7 @@ namespace TencentCloud
 
                     /**
                      * 已废弃请使用NodeInfoList
-节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li>默认值CLOUD_SSD
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
@@ -1006,6 +1027,12 @@ namespace TencentCloud
                      */
                     bool m_enableDiagnose;
                     bool m_enableDiagnoseHasBeenSet;
+
+                    /**
+                     * cdcId，使用cdc子网时传递
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

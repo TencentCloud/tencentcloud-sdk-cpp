@@ -99,6 +99,22 @@ namespace TencentCloud
                      */
                     bool AvatarHasBeenSet() const;
 
+                    /**
+                     * 获取用户在客户系统的Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginId 用户在客户系统的Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOriginId() const;
+
+                    /**
+                     * 判断参数 OriginId 是否已赋值
+                     * @return OriginId 是否已赋值
+                     * 
+                     */
+                    bool OriginIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +140,13 @@ namespace TencentCloud
                      */
                     std::string m_avatar;
                     bool m_avatarHasBeenSet;
+
+                    /**
+                     * 用户在客户系统的Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originId;
+                    bool m_originIdHasBeenSet;
 
                 };
             }

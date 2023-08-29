@@ -56,7 +56,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_operationDurationHasBeenSet(false),
     m_enableHybridStorageHasBeenSet(false),
     m_diskEnhanceHasBeenSet(false),
-    m_enableDiagnoseHasBeenSet(false)
+    m_enableDiagnoseHasBeenSet(false),
+    m_cdcIdHasBeenSet(false)
 {
 }
 
@@ -365,6 +366,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "EnableDiagnose";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDiagnose, allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -917,6 +926,22 @@ void CreateInstanceRequest::SetEnableDiagnose(const bool& _enableDiagnose)
 bool CreateInstanceRequest::EnableDiagnoseHasBeenSet() const
 {
     return m_enableDiagnoseHasBeenSet;
+}
+
+string CreateInstanceRequest::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void CreateInstanceRequest::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 
 

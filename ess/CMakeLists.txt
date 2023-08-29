@@ -74,6 +74,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateWebThemeConfigResponse.h
   include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h
+  include/tencentcloud/ess/v20201111/model/Permission.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h
@@ -167,6 +168,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateEmbedWebUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationSealsRequest.h
+  include/tencentcloud/ess/v20201111/model/PermissionGroup.h
   include/tencentcloud/ess/v20201111/model/CancelFlowRequest.h
   include/tencentcloud/ess/v20201111/model/UploadFile.h
   include/tencentcloud/ess/v20201111/model/Component.h
@@ -260,6 +262,7 @@ set(ess_src
   src/v20201111/model/CreateWebThemeConfigResponse.cpp
   src/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsRequest.cpp
+  src/v20201111/model/Permission.cpp
   src/v20201111/model/CreateIntegrationDepartmentResponse.cpp
   src/v20201111/model/DescribeFlowTemplatesRequest.cpp
   src/v20201111/model/DeleteSealPoliciesResponse.cpp
@@ -353,6 +356,7 @@ set(ess_src
   src/v20201111/model/CreateEmbedWebUrlResponse.cpp
   src/v20201111/model/CreateSealPolicyRequest.cpp
   src/v20201111/model/DescribeOrganizationSealsRequest.cpp
+  src/v20201111/model/PermissionGroup.cpp
   src/v20201111/model/CancelFlowRequest.cpp
   src/v20201111/model/UploadFile.cpp
   src/v20201111/model/Component.cpp

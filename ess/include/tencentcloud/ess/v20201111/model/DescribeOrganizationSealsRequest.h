@@ -215,6 +215,67 @@ LEGAL_PERSON_SEAL：法定代表人章
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取查询的印章状态列表。
+取值为空，只查询启用状态的印章；
+取值ALL，查询所有状态的印章；
+取值CHECKING，查询待审核的印章；
+取值SUCCESS，查询启用状态的印章；
+取值FAIL，查询印章审核拒绝的印章；
+取值DISABLE，查询已停用的印章；
+取值STOPPED，查询已终止的印章；
+取值VOID，查询已作废的印章；
+取值INVALID，查询以失效的印章；
+
+                     * @return SealStatuses 查询的印章状态列表。
+取值为空，只查询启用状态的印章；
+取值ALL，查询所有状态的印章；
+取值CHECKING，查询待审核的印章；
+取值SUCCESS，查询启用状态的印章；
+取值FAIL，查询印章审核拒绝的印章；
+取值DISABLE，查询已停用的印章；
+取值STOPPED，查询已终止的印章；
+取值VOID，查询已作废的印章；
+取值INVALID，查询以失效的印章；
+
+                     * 
+                     */
+                    std::vector<std::string> GetSealStatuses() const;
+
+                    /**
+                     * 设置查询的印章状态列表。
+取值为空，只查询启用状态的印章；
+取值ALL，查询所有状态的印章；
+取值CHECKING，查询待审核的印章；
+取值SUCCESS，查询启用状态的印章；
+取值FAIL，查询印章审核拒绝的印章；
+取值DISABLE，查询已停用的印章；
+取值STOPPED，查询已终止的印章；
+取值VOID，查询已作废的印章；
+取值INVALID，查询以失效的印章；
+
+                     * @param _sealStatuses 查询的印章状态列表。
+取值为空，只查询启用状态的印章；
+取值ALL，查询所有状态的印章；
+取值CHECKING，查询待审核的印章；
+取值SUCCESS，查询启用状态的印章；
+取值FAIL，查询印章审核拒绝的印章；
+取值DISABLE，查询已停用的印章；
+取值STOPPED，查询已终止的印章；
+取值VOID，查询已作废的印章；
+取值INVALID，查询以失效的印章；
+
+                     * 
+                     */
+                    void SetSealStatuses(const std::vector<std::string>& _sealStatuses);
+
+                    /**
+                     * 判断参数 SealStatuses 是否已赋值
+                     * @return SealStatuses 是否已赋值
+                     * 
+                     */
+                    bool SealStatusesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +325,22 @@ LEGAL_PERSON_SEAL：法定代表人章
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 查询的印章状态列表。
+取值为空，只查询启用状态的印章；
+取值ALL，查询所有状态的印章；
+取值CHECKING，查询待审核的印章；
+取值SUCCESS，查询启用状态的印章；
+取值FAIL，查询印章审核拒绝的印章；
+取值DISABLE，查询已停用的印章；
+取值STOPPED，查询已终止的印章；
+取值VOID，查询已作废的印章；
+取值INVALID，查询以失效的印章；
+
+                     */
+                    std::vector<std::string> m_sealStatuses;
+                    bool m_sealStatusesHasBeenSet;
 
                 };
             }

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/FormField.h>
 #include <tencentcloud/essbasic/v20210526/model/CcInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/Component.h>
 
 
 namespace TencentCloud
@@ -311,6 +312,27 @@ namespace TencentCloud
                      */
                     bool NeedCreateReviewHasBeenSet() const;
 
+                    /**
+                     * 获取填写控件：文件发起使用
+                     * @return Components 填写控件：文件发起使用
+                     * 
+                     */
+                    std::vector<Component> GetComponents() const;
+
+                    /**
+                     * 设置填写控件：文件发起使用
+                     * @param _components 填写控件：文件发起使用
+                     * 
+                     */
+                    void SetComponents(const std::vector<Component>& _components);
+
+                    /**
+                     * 判断参数 Components 是否已赋值
+                     * @return Components 是否已赋值
+                     * 
+                     */
+                    bool ComponentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -386,6 +408,12 @@ namespace TencentCloud
                      */
                     bool m_needCreateReview;
                     bool m_needCreateReviewHasBeenSet;
+
+                    /**
+                     * 填写控件：文件发起使用
+                     */
+                    std::vector<Component> m_components;
+                    bool m_componentsHasBeenSet;
 
                 };
             }

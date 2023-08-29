@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ess/v20201111/model/PermissionGroup.h>
 
 
 namespace TencentCloud
@@ -171,6 +172,31 @@ namespace TencentCloud
                      */
                     bool SubOrgIdListHasBeenSet() const;
 
+                    /**
+                     * 获取权限树
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PermissionGroups 权限树
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<PermissionGroup> GetPermissionGroups() const;
+
+                    /**
+                     * 设置权限树
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _permissionGroups 权限树
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPermissionGroups(const std::vector<PermissionGroup>& _permissionGroups);
+
+                    /**
+                     * 判断参数 PermissionGroups 是否已赋值
+                     * @return PermissionGroups 是否已赋值
+                     * 
+                     */
+                    bool PermissionGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +233,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_subOrgIdList;
                     bool m_subOrgIdListHasBeenSet;
+
+                    /**
+                     * 权限树
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PermissionGroup> m_permissionGroups;
+                    bool m_permissionGroupsHasBeenSet;
 
                 };
             }

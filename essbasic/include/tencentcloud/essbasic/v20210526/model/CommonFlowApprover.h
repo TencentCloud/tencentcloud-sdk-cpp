@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/CommonApproverOption.h>
+#include <tencentcloud/essbasic/v20210526/model/Component.h>
 
 
 namespace TencentCloud
@@ -345,6 +346,27 @@ namespace TencentCloud
                      */
                     bool ApproverOptionHasBeenSet() const;
 
+                    /**
+                     * 获取签署控件：文件发起使用
+                     * @return SignComponents 签署控件：文件发起使用
+                     * 
+                     */
+                    std::vector<Component> GetSignComponents() const;
+
+                    /**
+                     * 设置签署控件：文件发起使用
+                     * @param _signComponents 签署控件：文件发起使用
+                     * 
+                     */
+                    void SetSignComponents(const std::vector<Component>& _signComponents);
+
+                    /**
+                     * 判断参数 SignComponents 是否已赋值
+                     * @return SignComponents 是否已赋值
+                     * 
+                     */
+                    bool SignComponentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +453,12 @@ namespace TencentCloud
                      */
                     CommonApproverOption m_approverOption;
                     bool m_approverOptionHasBeenSet;
+
+                    /**
+                     * 签署控件：文件发起使用
+                     */
+                    std::vector<Component> m_signComponents;
+                    bool m_signComponentsHasBeenSet;
 
                 };
             }

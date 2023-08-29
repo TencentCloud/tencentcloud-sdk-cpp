@@ -234,48 +234,56 @@ namespace TencentCloud
                     bool UserDataHasBeenSet() const;
 
                     /**
-                     * 获取回调地址,最大长度1000字符串
-<br/>回调时机：用户通过签署二维码发起签署流程时，企业额度不足导致失败
-                     * @return CallbackUrl 回调地址,最大长度1000字符串
-<br/>回调时机：用户通过签署二维码发起签署流程时，企业额度不足导致失败
-                     * 
+                     * 获取已废弃，回调配置统一使用企业应用管理-应用集成-企业版应用中的配置 
+<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/company/callback_types_contracts_sign
+<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83
+
+                     * @return CallbackUrl 已废弃，回调配置统一使用企业应用管理-应用集成-企业版应用中的配置 
+<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/company/callback_types_contracts_sign
+<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83
+
+                     * @deprecated
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调地址,最大长度1000字符串
-<br/>回调时机：用户通过签署二维码发起签署流程时，企业额度不足导致失败
-                     * @param _callbackUrl 回调地址,最大长度1000字符串
-<br/>回调时机：用户通过签署二维码发起签署流程时，企业额度不足导致失败
-                     * 
+                     * 设置已废弃，回调配置统一使用企业应用管理-应用集成-企业版应用中的配置 
+<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/company/callback_types_contracts_sign
+<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83
+
+                     * @param _callbackUrl 已废弃，回调配置统一使用企业应用管理-应用集成-企业版应用中的配置 
+<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/company/callback_types_contracts_sign
+<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83
+
+                     * @deprecated
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取应用信息
-                     * @return Agent 应用信息
-                     * @deprecated
+                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用信息
-                     * @param _agent 应用信息
-                     * @deprecated
+                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
-                     * @deprecated
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
@@ -356,14 +364,16 @@ namespace TencentCloud
                     bool m_userDataHasBeenSet;
 
                     /**
-                     * 回调地址,最大长度1000字符串
-<br/>回调时机：用户通过签署二维码发起签署流程时，企业额度不足导致失败
+                     * 已废弃，回调配置统一使用企业应用管理-应用集成-企业版应用中的配置 
+<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/company/callback_types_contracts_sign
+<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83
+
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 应用信息
+                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

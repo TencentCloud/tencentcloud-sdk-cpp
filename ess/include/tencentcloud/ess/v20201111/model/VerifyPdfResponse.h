@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool VerifyResultHasBeenSet() const;
 
                     /**
-                     * 获取验签结果详情,内部状态1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误
-                     * @return PdfVerifyResults 验签结果详情,内部状态1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误
+                     * 获取验签结果详情，每个签名域对应的验签结果。状态值：1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误
+                     * @return PdfVerifyResults 验签结果详情，每个签名域对应的验签结果。状态值：1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误
                      * 
                      */
                     std::vector<PdfVerifyResult> GetPdfVerifyResults() const;
@@ -95,7 +95,7 @@ namespace TencentCloud
                     bool m_verifyResultHasBeenSet;
 
                     /**
-                     * 验签结果详情,内部状态1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误
+                     * 验签结果详情，每个签名域对应的验签结果。状态值：1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误
                      */
                     std::vector<PdfVerifyResult> m_pdfVerifyResults;
                     bool m_pdfVerifyResultsHasBeenSet;

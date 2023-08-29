@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点可用区分布，最多可填两个可用区。
-                     * @return Zones 节点可用区分布，最多可填两个可用区。
+                     * 获取节点可用区分布，可填写多个可用区。
+                     * @return Zones 节点可用区分布，可填写多个可用区。
                      * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置节点可用区分布，最多可填两个可用区。
-                     * @param _zones 节点可用区分布，最多可填两个可用区。
+                     * 设置节点可用区分布，可填写多个可用区。
+                     * @param _zones 节点可用区分布，可填写多个可用区。
                      * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
@@ -430,10 +430,31 @@ innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0
                      */
                     bool RollbackTimeHasBeenSet() const;
 
+                    /**
+                     * 获取DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * @return DcnSyncMode DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * 
+                     */
+                    int64_t GetDcnSyncMode() const;
+
+                    /**
+                     * 设置DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * @param _dcnSyncMode DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * 
+                     */
+                    void SetDcnSyncMode(const int64_t& _dcnSyncMode);
+
+                    /**
+                     * 判断参数 DcnSyncMode 是否已赋值
+                     * @return DcnSyncMode 是否已赋值
+                     * 
+                     */
+                    bool DcnSyncModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 节点可用区分布，最多可填两个可用区。
+                     * 节点可用区分布，可填写多个可用区。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
@@ -541,6 +562,12 @@ innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0
                      */
                     std::string m_rollbackTime;
                     bool m_rollbackTimeHasBeenSet;
+
+                    /**
+                     * DCN同步模式，0：普通DCN同步，1：一致性同步
+                     */
+                    int64_t m_dcnSyncMode;
+                    bool m_dcnSyncModeHasBeenSet;
 
                 };
             }

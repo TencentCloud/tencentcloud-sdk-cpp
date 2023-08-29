@@ -271,15 +271,15 @@ namespace TencentCloud
                     bool DbVersionIdHasBeenSet() const;
 
                     /**
-                     * 获取分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
-                     * @return Zones 分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+                     * 获取分片节点可用区分布，可填写多个可用区。
+                     * @return Zones 分片节点可用区分布，可填写多个可用区。
                      * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
-                     * @param _zones 分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+                     * 设置分片节点可用区分布，可填写多个可用区。
+                     * @param _zones 分片节点可用区分布，可填写多个可用区。
                      * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
@@ -501,6 +501,27 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * @return DcnSyncMode DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * 
+                     */
+                    int64_t GetDcnSyncMode() const;
+
+                    /**
+                     * 设置DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * @param _dcnSyncMode DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * 
+                     */
+                    void SetDcnSyncMode(const int64_t& _dcnSyncMode);
+
+                    /**
+                     * 判断参数 DcnSyncMode 是否已赋值
+                     * @return DcnSyncMode 是否已赋值
+                     * 
+                     */
+                    bool DcnSyncModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -568,7 +589,7 @@ namespace TencentCloud
                     bool m_dbVersionIdHasBeenSet;
 
                     /**
-                     * 分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+                     * 分片节点可用区分布，可填写多个可用区。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
@@ -632,6 +653,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * DCN同步模式，0：普通DCN同步，1：一致性同步
+                     */
+                    int64_t m_dcnSyncMode;
+                    bool m_dcnSyncModeHasBeenSet;
 
                 };
             }

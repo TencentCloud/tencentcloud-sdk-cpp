@@ -209,31 +209,31 @@ namespace TencentCloud
                     bool RestrictionsHasBeenSet() const;
 
                     /**
-                     * 获取回调地址，最大长度1000个字符
-不传默认使用第三方应用号配置的回调地址
-回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
-                     * @return CallbackUrl 回调地址，最大长度1000个字符
-不传默认使用第三方应用号配置的回调地址
-回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
-                     * 
+                     * 获取已废弃，回调配置统一使用企业应用管理-应用集成-第三方应用中的配置
+<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/partner/callback_types_contracts_sign
+<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83
+                     * @return CallbackUrl 已废弃，回调配置统一使用企业应用管理-应用集成-第三方应用中的配置
+<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/partner/callback_types_contracts_sign
+<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83
+                     * @deprecated
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调地址，最大长度1000个字符
-不传默认使用第三方应用号配置的回调地址
-回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
-                     * @param _callbackUrl 回调地址，最大长度1000个字符
-不传默认使用第三方应用号配置的回调地址
-回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
-                     * 
+                     * 设置已废弃，回调配置统一使用企业应用管理-应用集成-第三方应用中的配置
+<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/partner/callback_types_contracts_sign
+<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83
+                     * @param _callbackUrl 已废弃，回调配置统一使用企业应用管理-应用集成-第三方应用中的配置
+<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/partner/callback_types_contracts_sign
+<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83
+                     * @deprecated
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CallbackUrlHasBeenSet() const;
 
@@ -328,9 +328,9 @@ namespace TencentCloud
                     bool m_restrictionsHasBeenSet;
 
                     /**
-                     * 回调地址，最大长度1000个字符
-不传默认使用第三方应用号配置的回调地址
-回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
+                     * 已废弃，回调配置统一使用企业应用管理-应用集成-第三方应用中的配置
+<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/partner/callback_types_contracts_sign
+<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

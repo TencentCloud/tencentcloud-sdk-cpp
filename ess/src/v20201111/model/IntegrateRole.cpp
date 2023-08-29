@@ -25,7 +25,8 @@ IntegrateRole::IntegrateRole() :
     m_roleNameHasBeenSet(false),
     m_roleStatusHasBeenSet(false),
     m_isGroupRoleHasBeenSet(false),
-    m_subOrgIdListHasBeenSet(false)
+    m_subOrgIdListHasBeenSet(false),
+    m_permissionGroupsHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,26 @@ CoreInternalOutcome IntegrateRole::Deserialize(const rapidjson::Value &value)
         m_subOrgIdListHasBeenSet = true;
     }
 
+    if (value.HasMember("PermissionGroups") && !value["PermissionGroups"].IsNull())
+    {
+        if (!value["PermissionGroups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IntegrateRole.PermissionGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PermissionGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PermissionGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_permissionGroups.push_back(item);
+        }
+        m_permissionGroupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -136,6 +157,21 @@ void IntegrateRole::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         for (auto itr = m_subOrgIdList.begin(); itr != m_subOrgIdList.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_permissionGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermissionGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_permissionGroups.begin(); itr != m_permissionGroups.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -220,5 +256,21 @@ void IntegrateRole::SetSubOrgIdList(const vector<string>& _subOrgIdList)
 bool IntegrateRole::SubOrgIdListHasBeenSet() const
 {
     return m_subOrgIdListHasBeenSet;
+}
+
+vector<PermissionGroup> IntegrateRole::GetPermissionGroups() const
+{
+    return m_permissionGroups;
+}
+
+void IntegrateRole::SetPermissionGroups(const vector<PermissionGroup>& _permissionGroups)
+{
+    m_permissionGroups = _permissionGroups;
+    m_permissionGroupsHasBeenSet = true;
+}
+
+bool IntegrateRole::PermissionGroupsHasBeenSet() const
+{
+    return m_permissionGroupsHasBeenSet;
 }
 
