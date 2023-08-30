@@ -108,11 +108,11 @@ namespace TencentCloud
 
                     /**
                      * 获取签署人企业名称
-<br/>当approverType=1 或 approverType=3时，必须指定
+当approverType=0 或 approverType=3时，必须指定
 
 
                      * @return OrganizationName 签署人企业名称
-<br/>当approverType=1 或 approverType=3时，必须指定
+当approverType=0 或 approverType=3时，必须指定
 
 
                      * 
@@ -121,11 +121,11 @@ namespace TencentCloud
 
                     /**
                      * 设置签署人企业名称
-<br/>当approverType=1 或 approverType=3时，必须指定
+当approverType=0 或 approverType=3时，必须指定
 
 
                      * @param _organizationName 签署人企业名称
-<br/>当approverType=1 或 approverType=3时，必须指定
+当approverType=0 或 approverType=3时，必须指定
 
 
                      * 
@@ -710,14 +710,22 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
 
                     /**
                      * 获取合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)
+
+> 注意:此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主.
                      * @return ApproverVerifyTypes 合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)
+
+> 注意:此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主.
                      * 
                      */
                     std::vector<int64_t> GetApproverVerifyTypes() const;
 
                     /**
                      * 设置合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)
+
+> 注意:此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主.
                      * @param _approverVerifyTypes 合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)
+
+> 注意:此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主.
                      * 
                      */
                     void SetApproverVerifyTypes(const std::vector<int64_t>& _approverVerifyTypes);
@@ -731,14 +739,22 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
 
                     /**
                      * 获取合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素
+
+> 注意:此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主.
                      * @return ApproverSignTypes 合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素
+
+> 注意:此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主.
                      * 
                      */
                     std::vector<uint64_t> GetApproverSignTypes() const;
 
                     /**
                      * 设置合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素
+
+> 注意:此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主.
                      * @param _approverSignTypes 合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素
+
+> 注意:此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主.
                      * 
                      */
                     void SetApproverSignTypes(const std::vector<uint64_t>& _approverSignTypes);
@@ -769,7 +785,7 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
 
                     /**
                      * 签署人企业名称
-<br/>当approverType=1 或 approverType=3时，必须指定
+当approverType=0 或 approverType=3时，必须指定
 
 
                      */
@@ -936,12 +952,16 @@ OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
 
                     /**
                      * 合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)
+
+> 注意:此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主.
                      */
                     std::vector<int64_t> m_approverVerifyTypes;
                     bool m_approverVerifyTypesHasBeenSet;
 
                     /**
                      * 合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素
+
+> 注意:此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主.
                      */
                     std::vector<uint64_t> m_approverSignTypes;
                     bool m_approverSignTypesHasBeenSet;

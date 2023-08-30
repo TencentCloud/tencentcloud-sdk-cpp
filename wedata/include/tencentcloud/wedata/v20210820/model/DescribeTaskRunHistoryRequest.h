@@ -111,14 +111,14 @@ namespace TencentCloud
                      * @return PageNumber 分页页码
                      * 
                      */
-                    std::string GetPageNumber() const;
+                    uint64_t GetPageNumber() const;
 
                     /**
                      * 设置分页页码
                      * @param _pageNumber 分页页码
                      * 
                      */
-                    void SetPageNumber(const std::string& _pageNumber);
+                    void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
@@ -150,7 +150,7 @@ namespace TencentCloud
                     /**
                      * 分页页码
                      */
-                    std::string m_pageNumber;
+                    uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                 };

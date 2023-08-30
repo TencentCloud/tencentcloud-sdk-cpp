@@ -67,7 +67,7 @@ string DescribeTaskRunHistoryRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageNumber";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_pageNumber.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
     }
 
 
@@ -126,12 +126,12 @@ bool DescribeTaskRunHistoryRequest::PageSizeHasBeenSet() const
     return m_pageSizeHasBeenSet;
 }
 
-string DescribeTaskRunHistoryRequest::GetPageNumber() const
+uint64_t DescribeTaskRunHistoryRequest::GetPageNumber() const
 {
     return m_pageNumber;
 }
 
-void DescribeTaskRunHistoryRequest::SetPageNumber(const string& _pageNumber)
+void DescribeTaskRunHistoryRequest::SetPageNumber(const uint64_t& _pageNumber)
 {
     m_pageNumber = _pageNumber;
     m_pageNumberHasBeenSet = true;

@@ -24,7 +24,11 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreatePersonAuthCertificateImageResponse::CreatePersonAuthCertificateImageResponse() :
-    m_authCertUrlHasBeenSet(false)
+    m_authCertUrlHasBeenSet(false),
+    m_imageCertIdHasBeenSet(false),
+    m_serialNumberHasBeenSet(false),
+    m_validFromHasBeenSet(false),
+    m_validToHasBeenSet(false)
 {
 }
 
@@ -72,6 +76,46 @@ CoreInternalOutcome CreatePersonAuthCertificateImageResponse::Deserialize(const 
         m_authCertUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageCertId") && !rsp["ImageCertId"].IsNull())
+    {
+        if (!rsp["ImageCertId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageCertId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageCertId = string(rsp["ImageCertId"].GetString());
+        m_imageCertIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SerialNumber") && !rsp["SerialNumber"].IsNull())
+    {
+        if (!rsp["SerialNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SerialNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serialNumber = string(rsp["SerialNumber"].GetString());
+        m_serialNumberHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ValidFrom") && !rsp["ValidFrom"].IsNull())
+    {
+        if (!rsp["ValidFrom"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValidFrom` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validFrom = rsp["ValidFrom"].GetUint64();
+        m_validFromHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ValidTo") && !rsp["ValidTo"].IsNull())
+    {
+        if (!rsp["ValidTo"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValidTo` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validTo = rsp["ValidTo"].GetUint64();
+        m_validToHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +132,38 @@ string CreatePersonAuthCertificateImageResponse::ToJsonString() const
         string key = "AuthCertUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_authCertUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageCertIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageCertId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageCertId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serialNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerialNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serialNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidFrom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validFrom, allocator);
+    }
+
+    if (m_validToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidTo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validTo, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +186,46 @@ string CreatePersonAuthCertificateImageResponse::GetAuthCertUrl() const
 bool CreatePersonAuthCertificateImageResponse::AuthCertUrlHasBeenSet() const
 {
     return m_authCertUrlHasBeenSet;
+}
+
+string CreatePersonAuthCertificateImageResponse::GetImageCertId() const
+{
+    return m_imageCertId;
+}
+
+bool CreatePersonAuthCertificateImageResponse::ImageCertIdHasBeenSet() const
+{
+    return m_imageCertIdHasBeenSet;
+}
+
+string CreatePersonAuthCertificateImageResponse::GetSerialNumber() const
+{
+    return m_serialNumber;
+}
+
+bool CreatePersonAuthCertificateImageResponse::SerialNumberHasBeenSet() const
+{
+    return m_serialNumberHasBeenSet;
+}
+
+uint64_t CreatePersonAuthCertificateImageResponse::GetValidFrom() const
+{
+    return m_validFrom;
+}
+
+bool CreatePersonAuthCertificateImageResponse::ValidFromHasBeenSet() const
+{
+    return m_validFromHasBeenSet;
+}
+
+uint64_t CreatePersonAuthCertificateImageResponse::GetValidTo() const
+{
+    return m_validTo;
+}
+
+bool CreatePersonAuthCertificateImageResponse::ValidToHasBeenSet() const
+{
+    return m_validToHasBeenSet;
 }
 
 

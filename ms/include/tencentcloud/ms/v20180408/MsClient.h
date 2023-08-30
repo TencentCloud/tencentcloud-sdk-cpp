@@ -330,7 +330,7 @@ namespace TencentCloud
                 DescribeUserBaseInfoInstanceOutcomeCallable DescribeUserBaseInfoInstanceCallable(const Model::DescribeUserBaseInfoInstanceRequest& request);
 
                 /**
-                 *client任务请求地址
+                 *client任务请求
                  * @param req RequestLocalTaskRequest
                  * @return RequestLocalTaskOutcome
                  */
@@ -339,7 +339,7 @@ namespace TencentCloud
                 RequestLocalTaskOutcomeCallable RequestLocalTaskCallable(const Model::RequestLocalTaskRequest& request);
 
                 /**
-                 *更新client状态
+                 *更新client状态，需要白名单
                  * @param req UpdateClientStateRequest
                  * @return UpdateClientStateOutcome
                  */
@@ -348,7 +348,7 @@ namespace TencentCloud
                 UpdateClientStateOutcomeCallable UpdateClientStateCallable(const Model::UpdateClientStateRequest& request);
 
                 /**
-                 *更新本地任务结果
+                 *更新本地任务执行结果
                  * @param req UpdateLocalTaskResultRequest
                  * @return UpdateLocalTaskResultOutcome
                  */

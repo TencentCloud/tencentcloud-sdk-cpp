@@ -28,7 +28,8 @@ CreateCloudStorageRequest::CreateCloudStorageRequest() :
     m_packageIdHasBeenSet(false),
     m_overrideHasBeenSet(false),
     m_packageQueueHasBeenSet(false),
-    m_orderIdHasBeenSet(false)
+    m_orderIdHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateCloudStorageRequest::ToJsonString() const
         string key = "OrderId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateCloudStorageRequest::SetOrderId(const string& _orderId)
 bool CreateCloudStorageRequest::OrderIdHasBeenSet() const
 {
     return m_orderIdHasBeenSet;
+}
+
+uint64_t CreateCloudStorageRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void CreateCloudStorageRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool CreateCloudStorageRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 

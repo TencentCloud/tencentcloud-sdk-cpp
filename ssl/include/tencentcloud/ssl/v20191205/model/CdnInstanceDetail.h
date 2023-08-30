@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取域名计费状态
+                     * @return HttpsBillingSwitch 域名计费状态
+                     * 
+                     */
+                    std::string GetHttpsBillingSwitch() const;
+
+                    /**
+                     * 设置域名计费状态
+                     * @param _httpsBillingSwitch 域名计费状态
+                     * 
+                     */
+                    void SetHttpsBillingSwitch(const std::string& _httpsBillingSwitch);
+
+                    /**
+                     * 判断参数 HttpsBillingSwitch 是否已赋值
+                     * @return HttpsBillingSwitch 是否已赋值
+                     * 
+                     */
+                    bool HttpsBillingSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 域名计费状态
+                     */
+                    std::string m_httpsBillingSwitch;
+                    bool m_httpsBillingSwitchHasBeenSet;
 
                 };
             }

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 移动网络加速目标地址结构体
+                * 多网聚合加速目标地址结构体
                 */
                 class DestAddressInfo : public AbstractModel
                 {

@@ -23,7 +23,9 @@ using namespace std;
 TkeInstanceDetail::TkeInstanceDetail() :
     m_clusterIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_namespaceListHasBeenSet(false)
+    m_namespaceListHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
+    m_clusterVersionHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome TkeInstanceDetail::Deserialize(const rapidjson::Value &value
         m_namespaceListHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TkeInstanceDetail.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = string(value["ClusterType"].GetString());
+        m_clusterTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterVersion") && !value["ClusterVersion"].IsNull())
+    {
+        if (!value["ClusterVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TkeInstanceDetail.ClusterVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterVersion = string(value["ClusterVersion"].GetString());
+        m_clusterVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +130,22 @@ void TkeInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +197,37 @@ void TkeInstanceDetail::SetNamespaceList(const vector<TkeNameSpaceDetail>& _name
 bool TkeInstanceDetail::NamespaceListHasBeenSet() const
 {
     return m_namespaceListHasBeenSet;
+}
+
+string TkeInstanceDetail::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void TkeInstanceDetail::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool TkeInstanceDetail::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
+}
+
+string TkeInstanceDetail::GetClusterVersion() const
+{
+    return m_clusterVersion;
+}
+
+void TkeInstanceDetail::SetClusterVersion(const string& _clusterVersion)
+{
+    m_clusterVersion = _clusterVersion;
+    m_clusterVersionHasBeenSet = true;
+}
+
+bool TkeInstanceDetail::ClusterVersionHasBeenSet() const
+{
+    return m_clusterVersionHasBeenSet;
 }
 

@@ -372,6 +372,52 @@ namespace TencentCloud
                      */
                     bool PayerUinHasBeenSet() const;
 
+                    /**
+                     * 获取分账标签键，用户自定义（支持2021-01以后账单查询）
+                     * @return TagKey 分账标签键，用户自定义（支持2021-01以后账单查询）
+                     * 
+                     */
+                    std::string GetTagKey() const;
+
+                    /**
+                     * 设置分账标签键，用户自定义（支持2021-01以后账单查询）
+                     * @param _tagKey 分账标签键，用户自定义（支持2021-01以后账单查询）
+                     * 
+                     */
+                    void SetTagKey(const std::string& _tagKey);
+
+                    /**
+                     * 判断参数 TagKey 是否已赋值
+                     * @return TagKey 是否已赋值
+                     * 
+                     */
+                    bool TagKeyHasBeenSet() const;
+
+                    /**
+                     * 获取分账标签值，该参数为空表示该标签键下未设置标签值的记录
+（支持2021-01以后账单查询）
+                     * @return TagValue 分账标签值，该参数为空表示该标签键下未设置标签值的记录
+（支持2021-01以后账单查询）
+                     * 
+                     */
+                    std::string GetTagValue() const;
+
+                    /**
+                     * 设置分账标签值，该参数为空表示该标签键下未设置标签值的记录
+（支持2021-01以后账单查询）
+                     * @param _tagValue 分账标签值，该参数为空表示该标签键下未设置标签值的记录
+（支持2021-01以后账单查询）
+                     * 
+                     */
+                    void SetTagValue(const std::string& _tagValue);
+
+                    /**
+                     * 判断参数 TagValue 是否已赋值
+                     * @return TagValue 是否已赋值
+                     * 
+                     */
+                    bool TagValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +509,19 @@ namespace TencentCloud
                      */
                     std::string m_payerUin;
                     bool m_payerUinHasBeenSet;
+
+                    /**
+                     * 分账标签键，用户自定义（支持2021-01以后账单查询）
+                     */
+                    std::string m_tagKey;
+                    bool m_tagKeyHasBeenSet;
+
+                    /**
+                     * 分账标签值，该参数为空表示该标签键下未设置标签值的记录
+（支持2021-01以后账单查询）
+                     */
+                    std::string m_tagValue;
+                    bool m_tagValueHasBeenSet;
 
                 };
             }

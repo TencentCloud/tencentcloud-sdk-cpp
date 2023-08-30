@@ -129,7 +129,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    RecordPlanChannelInfo GetList() const;
+                    std::vector<RecordPlanChannelInfo> GetList() const;
 
                     /**
                      * 设置设备通道信息列表
@@ -138,7 +138,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetList(const RecordPlanChannelInfo& _list);
+                    void SetList(const std::vector<RecordPlanChannelInfo>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
@@ -174,7 +174,7 @@ namespace TencentCloud
                      * 设备通道信息列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    RecordPlanChannelInfo m_list;
+                    std::vector<RecordPlanChannelInfo> m_list;
                     bool m_listHasBeenSet;
 
                 };

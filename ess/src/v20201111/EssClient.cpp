@@ -900,6 +900,49 @@ EssClient::CreateIntegrationEmployeesOutcomeCallable EssClient::CreateIntegratio
     return task->get_future();
 }
 
+EssClient::CreateIntegrationRoleOutcome EssClient::CreateIntegrationRole(const CreateIntegrationRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIntegrationRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIntegrationRoleResponse rsp = CreateIntegrationRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIntegrationRoleOutcome(rsp);
+        else
+            return CreateIntegrationRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIntegrationRoleOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateIntegrationRoleAsync(const CreateIntegrationRoleRequest& request, const CreateIntegrationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateIntegrationRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateIntegrationRoleOutcomeCallable EssClient::CreateIntegrationRoleCallable(const CreateIntegrationRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateIntegrationRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateIntegrationRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateIntegrationUserRolesOutcome EssClient::CreateIntegrationUserRoles(const CreateIntegrationUserRolesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIntegrationUserRoles");
@@ -2398,6 +2441,49 @@ EssClient::ModifyIntegrationDepartmentOutcomeCallable EssClient::ModifyIntegrati
         [this, request]()
         {
             return this->ModifyIntegrationDepartment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::ModifyIntegrationRoleOutcome EssClient::ModifyIntegrationRole(const ModifyIntegrationRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIntegrationRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIntegrationRoleResponse rsp = ModifyIntegrationRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIntegrationRoleOutcome(rsp);
+        else
+            return ModifyIntegrationRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIntegrationRoleOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ModifyIntegrationRoleAsync(const ModifyIntegrationRoleRequest& request, const ModifyIntegrationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyIntegrationRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::ModifyIntegrationRoleOutcomeCallable EssClient::ModifyIntegrationRoleCallable(const ModifyIntegrationRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyIntegrationRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyIntegrationRole(request);
         }
     );
 

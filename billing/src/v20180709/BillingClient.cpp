@@ -40,6 +40,92 @@ BillingClient::BillingClient(const Credential &credential, const string &region,
 }
 
 
+BillingClient::CreateAllocationTagOutcome BillingClient::CreateAllocationTag(const CreateAllocationTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAllocationTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAllocationTagResponse rsp = CreateAllocationTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAllocationTagOutcome(rsp);
+        else
+            return CreateAllocationTagOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAllocationTagOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::CreateAllocationTagAsync(const CreateAllocationTagRequest& request, const CreateAllocationTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAllocationTag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::CreateAllocationTagOutcomeCallable BillingClient::CreateAllocationTagCallable(const CreateAllocationTagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAllocationTagOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAllocationTag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BillingClient::DeleteAllocationTagOutcome BillingClient::DeleteAllocationTag(const DeleteAllocationTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAllocationTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAllocationTagResponse rsp = DeleteAllocationTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAllocationTagOutcome(rsp);
+        else
+            return DeleteAllocationTagOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAllocationTagOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DeleteAllocationTagAsync(const DeleteAllocationTagRequest& request, const DeleteAllocationTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAllocationTag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DeleteAllocationTagOutcomeCallable BillingClient::DeleteAllocationTagCallable(const DeleteAllocationTagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAllocationTagOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAllocationTag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::DescribeAccountBalanceOutcome BillingClient::DescribeAccountBalance(const DescribeAccountBalanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAccountBalance");
@@ -807,6 +893,49 @@ BillingClient::DescribeDosageDetailByDateOutcomeCallable BillingClient::Describe
         [this, request]()
         {
             return this->DescribeDosageDetailByDate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BillingClient::DescribeTagListOutcome BillingClient::DescribeTagList(const DescribeTagListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTagList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTagListResponse rsp = DescribeTagListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTagListOutcome(rsp);
+        else
+            return DescribeTagListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTagListOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeTagListAsync(const DescribeTagListRequest& request, const DescribeTagListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTagList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeTagListOutcomeCallable BillingClient::DescribeTagListCallable(const DescribeTagListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTagListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTagList(request);
         }
     );
 

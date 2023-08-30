@@ -65,18 +65,21 @@ CoreInternalOutcome ListRecordBackupPlanDevicesData::Deserialize(const rapidjson
 
     if (value.HasMember("List") && !value["List"].IsNull())
     {
-        if (!value["List"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ListRecordBackupPlanDevicesData.List` is not object type").SetRequestId(requestId));
-        }
+        if (!value["List"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ListRecordBackupPlanDevicesData.List` is not array type"));
 
-        CoreInternalOutcome outcome = m_list.Deserialize(value["List"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = value["List"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            RecordPlanChannelInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_list.push_back(item);
         }
-
         m_listHasBeenSet = true;
     }
 
@@ -116,8 +119,14 @@ void ListRecordBackupPlanDevicesData::ToJsonObject(rapidjson::Value &value, rapi
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "List";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_list.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -171,12 +180,12 @@ bool ListRecordBackupPlanDevicesData::TotalCountHasBeenSet() const
     return m_totalCountHasBeenSet;
 }
 
-RecordPlanChannelInfo ListRecordBackupPlanDevicesData::GetList() const
+vector<RecordPlanChannelInfo> ListRecordBackupPlanDevicesData::GetList() const
 {
     return m_list;
 }
 
-void ListRecordBackupPlanDevicesData::SetList(const RecordPlanChannelInfo& _list)
+void ListRecordBackupPlanDevicesData::SetList(const vector<RecordPlanChannelInfo>& _list)
 {
     m_list = _list;
     m_listHasBeenSet = true;

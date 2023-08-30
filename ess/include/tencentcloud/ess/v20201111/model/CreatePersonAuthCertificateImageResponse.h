@@ -57,6 +57,70 @@ namespace TencentCloud
                      */
                     bool AuthCertUrlHasBeenSet() const;
 
+                    /**
+                     * 获取证书图片上的证书编号，20位数字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageCertId 证书图片上的证书编号，20位数字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetImageCertId() const;
+
+                    /**
+                     * 判断参数 ImageCertId 是否已赋值
+                     * @return ImageCertId 是否已赋值
+                     * 
+                     */
+                    bool ImageCertIdHasBeenSet() const;
+
+                    /**
+                     * 获取图片证明对应的CA证书序列号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SerialNumber 图片证明对应的CA证书序列号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSerialNumber() const;
+
+                    /**
+                     * 判断参数 SerialNumber 是否已赋值
+                     * @return SerialNumber 是否已赋值
+                     * 
+                     */
+                    bool SerialNumberHasBeenSet() const;
+
+                    /**
+                     * 获取CA证书颁发时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValidFrom CA证书颁发时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetValidFrom() const;
+
+                    /**
+                     * 判断参数 ValidFrom 是否已赋值
+                     * @return ValidFrom 是否已赋值
+                     * 
+                     */
+                    bool ValidFromHasBeenSet() const;
+
+                    /**
+                     * 获取CA证书有效截止时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValidTo CA证书有效截止时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetValidTo() const;
+
+                    /**
+                     * 判断参数 ValidTo 是否已赋值
+                     * @return ValidTo 是否已赋值
+                     * 
+                     */
+                    bool ValidToHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +128,34 @@ namespace TencentCloud
                      */
                     std::string m_authCertUrl;
                     bool m_authCertUrlHasBeenSet;
+
+                    /**
+                     * 证书图片上的证书编号，20位数字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imageCertId;
+                    bool m_imageCertIdHasBeenSet;
+
+                    /**
+                     * 图片证明对应的CA证书序列号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serialNumber;
+                    bool m_serialNumberHasBeenSet;
+
+                    /**
+                     * CA证书颁发时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_validFrom;
+                    bool m_validFromHasBeenSet;
+
+                    /**
+                     * CA证书有效截止时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_validTo;
+                    bool m_validToHasBeenSet;
 
                 };
             }

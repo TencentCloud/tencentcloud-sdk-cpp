@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取来源渠道
-                     * @return SourceChannel 来源渠道
+                     * 获取来源渠道(用户不需要关心此参数)
+                     * @return SourceChannel 来源渠道(用户不需要关心此参数)
                      * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
-                     * 设置来源渠道
-                     * @param _sourceChannel 来源渠道
+                     * 设置来源渠道(用户不需要关心此参数)
+                     * @param _sourceChannel 来源渠道(用户不需要关心此参数)
                      * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * 来源渠道
+                     * 来源渠道(用户不需要关心此参数)
                      */
                     int64_t m_sourceChannel;
                     bool m_sourceChannelHasBeenSet;

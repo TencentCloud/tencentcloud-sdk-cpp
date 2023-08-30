@@ -110,6 +110,48 @@ namespace TencentCloud
                      */
                     bool NamespaceListHasBeenSet() const;
 
+                    /**
+                     * 获取集群类型
+                     * @return ClusterType 集群类型
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型
+                     * @param _clusterType 集群类型
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取集群版本
+                     * @return ClusterVersion 集群版本
+                     * 
+                     */
+                    std::string GetClusterVersion() const;
+
+                    /**
+                     * 设置集群版本
+                     * @param _clusterVersion 集群版本
+                     * 
+                     */
+                    void SetClusterVersion(const std::string& _clusterVersion);
+
+                    /**
+                     * 判断参数 ClusterVersion 是否已赋值
+                     * @return ClusterVersion 是否已赋值
+                     * 
+                     */
+                    bool ClusterVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +171,18 @@ namespace TencentCloud
                      */
                     std::vector<TkeNameSpaceDetail> m_namespaceList;
                     bool m_namespaceListHasBeenSet;
+
+                    /**
+                     * 集群类型
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * 集群版本
+                     */
+                    std::string m_clusterVersion;
+                    bool m_clusterVersionHasBeenSet;
 
                 };
             }

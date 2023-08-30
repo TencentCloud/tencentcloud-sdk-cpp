@@ -44,6 +44,90 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取集群id
+                     * @return InstanceId 集群id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置集群id
+                     * @param _instanceId 集群id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取策略类型 meta(元数据)  data (表数据)
+                     * @return ScheduleType 策略类型 meta(元数据)  data (表数据)
+                     * 
+                     */
+                    std::string GetScheduleType() const;
+
+                    /**
+                     * 设置策略类型 meta(元数据)  data (表数据)
+                     * @param _scheduleType 策略类型 meta(元数据)  data (表数据)
+                     * 
+                     */
+                    void SetScheduleType(const std::string& _scheduleType);
+
+                    /**
+                     * 判断参数 ScheduleType 是否已赋值
+                     * @return ScheduleType 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取操作类型 create(创建) update(编辑修改)
+                     * @return OperationType 操作类型 create(创建) update(编辑修改)
+                     * 
+                     */
+                    std::string GetOperationType() const;
+
+                    /**
+                     * 设置操作类型 create(创建) update(编辑修改)
+                     * @param _operationType 操作类型 create(创建) update(编辑修改)
+                     * 
+                     */
+                    void SetOperationType(const std::string& _operationType);
+
+                    /**
+                     * 判断参数 OperationType 是否已赋值
+                     * @return OperationType 是否已赋值
+                     * 
+                     */
+                    bool OperationTypeHasBeenSet() const;
+
+                    /**
+                     * 获取保留天数 例如7
+                     * @return RetainDays 保留天数 例如7
+                     * 
+                     */
+                    int64_t GetRetainDays() const;
+
+                    /**
+                     * 设置保留天数 例如7
+                     * @param _retainDays 保留天数 例如7
+                     * 
+                     */
+                    void SetRetainDays(const int64_t& _retainDays);
+
+                    /**
+                     * 判断参数 RetainDays 是否已赋值
+                     * @return RetainDays 是否已赋值
+                     * 
+                     */
+                    bool RetainDaysHasBeenSet() const;
+
+                    /**
                      * 获取编辑时需要传
                      * @return ScheduleId 编辑时需要传
                      * 
@@ -128,6 +212,30 @@ namespace TencentCloud
                     bool BackUpTablesHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 集群id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 策略类型 meta(元数据)  data (表数据)
+                     */
+                    std::string m_scheduleType;
+                    bool m_scheduleTypeHasBeenSet;
+
+                    /**
+                     * 操作类型 create(创建) update(编辑修改)
+                     */
+                    std::string m_operationType;
+                    bool m_operationTypeHasBeenSet;
+
+                    /**
+                     * 保留天数 例如7
+                     */
+                    int64_t m_retainDays;
+                    bool m_retainDaysHasBeenSet;
 
                     /**
                      * 编辑时需要传

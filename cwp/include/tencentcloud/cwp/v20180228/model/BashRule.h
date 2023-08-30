@@ -154,21 +154,21 @@ namespace TencentCloud
                     /**
                      * 获取规则描述
                      * @return Decription 规则描述
-                     * 
+                     * @deprecated
                      */
                     std::string GetDecription() const;
 
                     /**
                      * 设置规则描述
                      * @param _decription 规则描述
-                     * 
+                     * @deprecated
                      */
                     void SetDecription(const std::string& _decription);
 
                     /**
                      * 判断参数 Decription 是否已赋值
                      * @return Decription 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DecriptionHasBeenSet() const;
 
@@ -373,6 +373,31 @@ namespace TencentCloud
                      */
                     bool DealOldEventsHasBeenSet() const;
 
+                    /**
+                     * 获取规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description 规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -467,6 +492,13 @@ namespace TencentCloud
                      */
                     uint64_t m_dealOldEvents;
                     bool m_dealOldEventsHasBeenSet;
+
+                    /**
+                     * 规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

@@ -76,7 +76,7 @@ string ListRecordBackupPlanDevicesRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_pageSize.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
     }
 
     if (m_pageNumberHasBeenSet)
@@ -84,7 +84,7 @@ string ListRecordBackupPlanDevicesRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageNumber";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_pageNumber.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
     }
 
 
@@ -159,12 +159,12 @@ bool ListRecordBackupPlanDevicesRequest::OrganizationNameHasBeenSet() const
     return m_organizationNameHasBeenSet;
 }
 
-string ListRecordBackupPlanDevicesRequest::GetPageSize() const
+int64_t ListRecordBackupPlanDevicesRequest::GetPageSize() const
 {
     return m_pageSize;
 }
 
-void ListRecordBackupPlanDevicesRequest::SetPageSize(const string& _pageSize)
+void ListRecordBackupPlanDevicesRequest::SetPageSize(const int64_t& _pageSize)
 {
     m_pageSize = _pageSize;
     m_pageSizeHasBeenSet = true;
@@ -175,12 +175,12 @@ bool ListRecordBackupPlanDevicesRequest::PageSizeHasBeenSet() const
     return m_pageSizeHasBeenSet;
 }
 
-string ListRecordBackupPlanDevicesRequest::GetPageNumber() const
+int64_t ListRecordBackupPlanDevicesRequest::GetPageNumber() const
 {
     return m_pageNumber;
 }
 
-void ListRecordBackupPlanDevicesRequest::SetPageNumber(const string& _pageNumber)
+void ListRecordBackupPlanDevicesRequest::SetPageNumber(const int64_t& _pageNumber)
 {
     m_pageNumber = _pageNumber;
     m_pageNumberHasBeenSet = true;

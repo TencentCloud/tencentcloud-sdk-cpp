@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取资源Id，通过多文件上传（UploadFiles）接口获得
-                     * @return ResourceId 资源Id，通过多文件上传（UploadFiles）接口获得
+                     * 获取资源id，与ResourceType对应
+                     * @return ResourceId 资源id，与ResourceType对应
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源Id，通过多文件上传（UploadFiles）接口获得
-                     * @param _resourceId 资源Id，通过多文件上传（UploadFiles）接口获得
+                     * 设置资源id，与ResourceType对应
+                     * @param _resourceId 资源id，与ResourceType对应
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -170,18 +170,22 @@ false:顺序签
 
                     /**
                      * 获取用户自定义合同类型Id
-该id为电子签企业内的合同类型id
+
+该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取
                      * @return UserFlowTypeId 用户自定义合同类型Id
-该id为电子签企业内的合同类型id
+
+该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取
                      * 
                      */
                     std::string GetUserFlowTypeId() const;
 
                     /**
                      * 设置用户自定义合同类型Id
-该id为电子签企业内的合同类型id
+
+该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取
                      * @param _userFlowTypeId 用户自定义合同类型Id
-该id为电子签企业内的合同类型id
+
+该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取
                      * 
                      */
                     void SetUserFlowTypeId(const std::string& _userFlowTypeId);
@@ -192,6 +196,39 @@ false:顺序签
                      * 
                      */
                     bool UserFlowTypeIdHasBeenSet() const;
+
+                    /**
+                     * 获取合同类型名称
+该字段用于客户自定义合同类型
+建议使用时指定合同类型，便于之后合同分类以及查看
+如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型
+                     * @return FlowType 合同类型名称
+该字段用于客户自定义合同类型
+建议使用时指定合同类型，便于之后合同分类以及查看
+如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型
+                     * 
+                     */
+                    std::string GetFlowType() const;
+
+                    /**
+                     * 设置合同类型名称
+该字段用于客户自定义合同类型
+建议使用时指定合同类型，便于之后合同分类以及查看
+如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型
+                     * @param _flowType 合同类型名称
+该字段用于客户自定义合同类型
+建议使用时指定合同类型，便于之后合同分类以及查看
+如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型
+                     * 
+                     */
+                    void SetFlowType(const std::string& _flowType);
+
+                    /**
+                     * 判断参数 FlowType 是否已赋值
+                     * @return FlowType 是否已赋值
+                     * 
+                     */
+                    bool FlowTypeHasBeenSet() const;
 
                     /**
                      * 获取签署流程参与者信息，最大限制50方
@@ -216,10 +253,10 @@ false:顺序签
 
                     /**
                      * 获取打开智能添加填写区
-(默认开启，打开:"OPEN"
+默认开启，打开:"OPEN"
  关闭："CLOSE"
                      * @return IntelligentStatus 打开智能添加填写区
-(默认开启，打开:"OPEN"
+默认开启，打开:"OPEN"
  关闭："CLOSE"
                      * 
                      */
@@ -227,10 +264,10 @@ false:顺序签
 
                     /**
                      * 设置打开智能添加填写区
-(默认开启，打开:"OPEN"
+默认开启，打开:"OPEN"
  关闭："CLOSE"
                      * @param _intelligentStatus 打开智能添加填写区
-(默认开启，打开:"OPEN"
+默认开启，打开:"OPEN"
  关闭："CLOSE"
                      * 
                      */
@@ -245,30 +282,26 @@ false:顺序签
 
                     /**
                      * 获取资源类型，
-1：文件，
-2：模板
-不传默认为1：文件
-目前仅支持文件
+1：模板
+2：文件，
+不传默认为2：文件
                      * @return ResourceType 资源类型，
-1：文件，
-2：模板
-不传默认为1：文件
-目前仅支持文件
+1：模板
+2：文件，
+不传默认为2：文件
                      * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
                      * 设置资源类型，
-1：文件，
-2：模板
-不传默认为1：文件
-目前仅支持文件
+1：模板
+2：文件，
+不传默认为2：文件
                      * @param _resourceType 资源类型，
-1：文件，
-2：模板
-不传默认为1：文件
-目前仅支持文件
+1：模板
+2：文件，
+不传默认为2：文件
                      * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
@@ -443,35 +476,6 @@ false:不开启发起方发起合同审核
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取合同类型名称
-该字段用于客户自定义合同类型
-建议使用时指定合同类型，便于之后合同分类以及查看
-                     * @return FlowType 合同类型名称
-该字段用于客户自定义合同类型
-建议使用时指定合同类型，便于之后合同分类以及查看
-                     * 
-                     */
-                    std::string GetFlowType() const;
-
-                    /**
-                     * 设置合同类型名称
-该字段用于客户自定义合同类型
-建议使用时指定合同类型，便于之后合同分类以及查看
-                     * @param _flowType 合同类型名称
-该字段用于客户自定义合同类型
-建议使用时指定合同类型，便于之后合同分类以及查看
-                     * 
-                     */
-                    void SetFlowType(const std::string& _flowType);
-
-                    /**
-                     * 判断参数 FlowType 是否已赋值
-                     * @return FlowType 是否已赋值
-                     * 
-                     */
-                    bool FlowTypeHasBeenSet() const;
-
-                    /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填	
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填	
                      * 
@@ -501,7 +505,7 @@ false:不开启发起方发起合同审核
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 资源Id，通过多文件上传（UploadFiles）接口获得
+                     * 资源id，与ResourceType对应
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
@@ -530,10 +534,20 @@ false:顺序签
 
                     /**
                      * 用户自定义合同类型Id
-该id为电子签企业内的合同类型id
+
+该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取
                      */
                     std::string m_userFlowTypeId;
                     bool m_userFlowTypeIdHasBeenSet;
+
+                    /**
+                     * 合同类型名称
+该字段用于客户自定义合同类型
+建议使用时指定合同类型，便于之后合同分类以及查看
+如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型
+                     */
+                    std::string m_flowType;
+                    bool m_flowTypeHasBeenSet;
 
                     /**
                      * 签署流程参与者信息，最大限制50方
@@ -543,7 +557,7 @@ false:顺序签
 
                     /**
                      * 打开智能添加填写区
-(默认开启，打开:"OPEN"
+默认开启，打开:"OPEN"
  关闭："CLOSE"
                      */
                     std::string m_intelligentStatus;
@@ -551,10 +565,9 @@ false:顺序签
 
                     /**
                      * 资源类型，
-1：文件，
-2：模板
-不传默认为1：文件
-目前仅支持文件
+1：模板
+2：文件，
+不传默认为2：文件
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;
@@ -603,14 +616,6 @@ false:不开启发起方发起合同审核
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
-
-                    /**
-                     * 合同类型名称
-该字段用于客户自定义合同类型
-建议使用时指定合同类型，便于之后合同分类以及查看
-                     */
-                    std::string m_flowType;
-                    bool m_flowTypeHasBeenSet;
 
                     /**
                      * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填	

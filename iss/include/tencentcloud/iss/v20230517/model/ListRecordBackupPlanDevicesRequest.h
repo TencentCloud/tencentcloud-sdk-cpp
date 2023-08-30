@@ -131,14 +131,14 @@ namespace TencentCloud
                      * @return PageSize 每页最大数量
                      * 
                      */
-                    std::string GetPageSize() const;
+                    int64_t GetPageSize() const;
 
                     /**
                      * 设置每页最大数量
                      * @param _pageSize 每页最大数量
                      * 
                      */
-                    void SetPageSize(const std::string& _pageSize);
+                    void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取第几页
-                     * @return PageNumber 第几页
+                     * 获取分页页数
+                     * @return PageNumber 分页页数
                      * 
                      */
-                    std::string GetPageNumber() const;
+                    int64_t GetPageNumber() const;
 
                     /**
-                     * 设置第几页
-                     * @param _pageNumber 第几页
+                     * 设置分页页数
+                     * @param _pageNumber 分页页数
                      * 
                      */
-                    void SetPageNumber(const std::string& _pageNumber);
+                    void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
@@ -197,13 +197,13 @@ namespace TencentCloud
                     /**
                      * 每页最大数量
                      */
-                    std::string m_pageSize;
+                    int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 第几页
+                     * 分页页数
                      */
-                    std::string m_pageNumber;
+                    int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                 };

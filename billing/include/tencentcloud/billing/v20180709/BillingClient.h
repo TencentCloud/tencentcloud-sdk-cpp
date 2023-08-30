@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/billing/v20180709/model/CreateAllocationTagRequest.h>
+#include <tencentcloud/billing/v20180709/model/CreateAllocationTagResponse.h>
+#include <tencentcloud/billing/v20180709/model/DeleteAllocationTagRequest.h>
+#include <tencentcloud/billing/v20180709/model/DeleteAllocationTagResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAccountBalanceRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAccountBalanceResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailRequest.h>
@@ -59,6 +63,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeDosageCosDetailByDateResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeTagListRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeTagListResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeVoucherInfoRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeVoucherInfoResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeVoucherUsageDetailsRequest.h>
@@ -79,6 +85,12 @@ namespace TencentCloud
                 BillingClient(const Credential &credential, const std::string &region);
                 BillingClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateAllocationTagResponse> CreateAllocationTagOutcome;
+                typedef std::future<CreateAllocationTagOutcome> CreateAllocationTagOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::CreateAllocationTagRequest&, CreateAllocationTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAllocationTagAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAllocationTagResponse> DeleteAllocationTagOutcome;
+                typedef std::future<DeleteAllocationTagOutcome> DeleteAllocationTagOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DeleteAllocationTagRequest&, DeleteAllocationTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllocationTagAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountBalanceResponse> DescribeAccountBalanceOutcome;
                 typedef std::future<DescribeAccountBalanceOutcome> DescribeAccountBalanceOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeAccountBalanceRequest&, DescribeAccountBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountBalanceAsyncHandler;
@@ -133,6 +145,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDosageDetailByDateResponse> DescribeDosageDetailByDateOutcome;
                 typedef std::future<DescribeDosageDetailByDateOutcome> DescribeDosageDetailByDateOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeDosageDetailByDateRequest&, DescribeDosageDetailByDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDosageDetailByDateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTagListResponse> DescribeTagListOutcome;
+                typedef std::future<DescribeTagListOutcome> DescribeTagListOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeTagListRequest&, DescribeTagListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVoucherInfoResponse> DescribeVoucherInfoOutcome;
                 typedef std::future<DescribeVoucherInfoOutcome> DescribeVoucherInfoOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeVoucherInfoRequest&, DescribeVoucherInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoucherInfoAsyncHandler;
@@ -144,6 +159,24 @@ namespace TencentCloud
                 typedef std::function<void(const BillingClient*, const Model::PayDealsRequest&, PayDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PayDealsAsyncHandler;
 
 
+
+                /**
+                 *批量设置分账标签
+                 * @param req CreateAllocationTagRequest
+                 * @return CreateAllocationTagOutcome
+                 */
+                CreateAllocationTagOutcome CreateAllocationTag(const Model::CreateAllocationTagRequest &request);
+                void CreateAllocationTagAsync(const Model::CreateAllocationTagRequest& request, const CreateAllocationTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAllocationTagOutcomeCallable CreateAllocationTagCallable(const Model::CreateAllocationTagRequest& request);
+
+                /**
+                 *批量取消设置分账标签
+                 * @param req DeleteAllocationTagRequest
+                 * @return DeleteAllocationTagOutcome
+                 */
+                DeleteAllocationTagOutcome DeleteAllocationTag(const Model::DeleteAllocationTagRequest &request);
+                void DeleteAllocationTagAsync(const Model::DeleteAllocationTagRequest& request, const DeleteAllocationTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAllocationTagOutcomeCallable DeleteAllocationTagCallable(const Model::DeleteAllocationTagRequest& request);
 
                 /**
                  *获取云账户余额信息。
@@ -309,6 +342,15 @@ namespace TencentCloud
                 DescribeDosageDetailByDateOutcome DescribeDosageDetailByDate(const Model::DescribeDosageDetailByDateRequest &request);
                 void DescribeDosageDetailByDateAsync(const Model::DescribeDosageDetailByDateRequest& request, const DescribeDosageDetailByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDosageDetailByDateOutcomeCallable DescribeDosageDetailByDateCallable(const Model::DescribeDosageDetailByDateRequest& request);
+
+                /**
+                 *获取分账标签
+                 * @param req DescribeTagListRequest
+                 * @return DescribeTagListOutcome
+                 */
+                DescribeTagListOutcome DescribeTagList(const Model::DescribeTagListRequest &request);
+                void DescribeTagListAsync(const Model::DescribeTagListRequest& request, const DescribeTagListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTagListOutcomeCallable DescribeTagListCallable(const Model::DescribeTagListRequest& request);
 
                 /**
                  *获取代金券相关信息

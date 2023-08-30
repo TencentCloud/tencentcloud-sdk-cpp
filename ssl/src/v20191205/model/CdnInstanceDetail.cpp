@@ -23,7 +23,8 @@ using namespace std;
 CdnInstanceDetail::CdnInstanceDetail() :
     m_domainHasBeenSet(false),
     m_certIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_httpsBillingSwitchHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome CdnInstanceDetail::Deserialize(const rapidjson::Value &value
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("HttpsBillingSwitch") && !value["HttpsBillingSwitch"].IsNull())
+    {
+        if (!value["HttpsBillingSwitch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CdnInstanceDetail.HttpsBillingSwitch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_httpsBillingSwitch = string(value["HttpsBillingSwitch"].GetString());
+        m_httpsBillingSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void CdnInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_httpsBillingSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpsBillingSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpsBillingSwitch.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void CdnInstanceDetail::SetStatus(const string& _status)
 bool CdnInstanceDetail::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string CdnInstanceDetail::GetHttpsBillingSwitch() const
+{
+    return m_httpsBillingSwitch;
+}
+
+void CdnInstanceDetail::SetHttpsBillingSwitch(const string& _httpsBillingSwitch)
+{
+    m_httpsBillingSwitch = _httpsBillingSwitch;
+    m_httpsBillingSwitchHasBeenSet = true;
+}
+
+bool CdnInstanceDetail::HttpsBillingSwitchHasBeenSet() const
+{
+    return m_httpsBillingSwitchHasBeenSet;
 }
 

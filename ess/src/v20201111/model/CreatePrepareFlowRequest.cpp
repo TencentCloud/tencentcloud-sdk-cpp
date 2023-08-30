@@ -29,6 +29,7 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_unorderedHasBeenSet(false),
     m_deadlineHasBeenSet(false),
     m_userFlowTypeIdHasBeenSet(false),
+    m_flowTypeHasBeenSet(false),
     m_approversHasBeenSet(false),
     m_intelligentStatusHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
@@ -38,7 +39,6 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_needCreateReviewHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_flowIdHasBeenSet(false),
-    m_flowTypeHasBeenSet(false),
     m_agentHasBeenSet(false)
 {
 }
@@ -97,6 +97,14 @@ string CreatePrepareFlowRequest::ToJsonString() const
         string key = "UserFlowTypeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userFlowTypeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_approversHasBeenSet)
@@ -178,14 +186,6 @@ string CreatePrepareFlowRequest::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_flowTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agentHasBeenSet)
@@ -299,6 +299,22 @@ void CreatePrepareFlowRequest::SetUserFlowTypeId(const string& _userFlowTypeId)
 bool CreatePrepareFlowRequest::UserFlowTypeIdHasBeenSet() const
 {
     return m_userFlowTypeIdHasBeenSet;
+}
+
+string CreatePrepareFlowRequest::GetFlowType() const
+{
+    return m_flowType;
+}
+
+void CreatePrepareFlowRequest::SetFlowType(const string& _flowType)
+{
+    m_flowType = _flowType;
+    m_flowTypeHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::FlowTypeHasBeenSet() const
+{
+    return m_flowTypeHasBeenSet;
 }
 
 vector<FlowCreateApprover> CreatePrepareFlowRequest::GetApprovers() const
@@ -443,22 +459,6 @@ void CreatePrepareFlowRequest::SetFlowId(const string& _flowId)
 bool CreatePrepareFlowRequest::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
-}
-
-string CreatePrepareFlowRequest::GetFlowType() const
-{
-    return m_flowType;
-}
-
-void CreatePrepareFlowRequest::SetFlowType(const string& _flowType)
-{
-    m_flowType = _flowType;
-    m_flowTypeHasBeenSet = true;
-}
-
-bool CreatePrepareFlowRequest::FlowTypeHasBeenSet() const
-{
-    return m_flowTypeHasBeenSet;
 }
 
 Agent CreatePrepareFlowRequest::GetAgent() const

@@ -22,7 +22,9 @@ using namespace std;
 
 Certificate::Certificate() :
     m_certIdHasBeenSet(false),
-    m_dnsNamesHasBeenSet(false)
+    m_dnsNamesHasBeenSet(false),
+    m_certCaIdHasBeenSet(false),
+    m_sSLModeHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,26 @@ CoreInternalOutcome Certificate::Deserialize(const rapidjson::Value &value)
         m_dnsNamesHasBeenSet = true;
     }
 
+    if (value.HasMember("CertCaId") && !value["CertCaId"].IsNull())
+    {
+        if (!value["CertCaId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificate.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certCaId = string(value["CertCaId"].GetString());
+        m_certCaIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SSLMode") && !value["SSLMode"].IsNull())
+    {
+        if (!value["SSLMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificate.SSLMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sSLMode = string(value["SSLMode"].GetString());
+        m_sSLModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +102,22 @@ void Certificate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_certCaIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertCaId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certCaId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sSLModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sSLMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +153,37 @@ void Certificate::SetDnsNames(const vector<string>& _dnsNames)
 bool Certificate::DnsNamesHasBeenSet() const
 {
     return m_dnsNamesHasBeenSet;
+}
+
+string Certificate::GetCertCaId() const
+{
+    return m_certCaId;
+}
+
+void Certificate::SetCertCaId(const string& _certCaId)
+{
+    m_certCaId = _certCaId;
+    m_certCaIdHasBeenSet = true;
+}
+
+bool Certificate::CertCaIdHasBeenSet() const
+{
+    return m_certCaIdHasBeenSet;
+}
+
+string Certificate::GetSSLMode() const
+{
+    return m_sSLMode;
+}
+
+void Certificate::SetSSLMode(const string& _sSLMode)
+{
+    m_sSLMode = _sSLMode;
+    m_sSLModeHasBeenSet = true;
+}
+
+bool Certificate::SSLModeHasBeenSet() const
+{
+    return m_sSLModeHasBeenSet;
 }
 

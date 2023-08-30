@@ -29,7 +29,8 @@ HostResource::HostResource() :
     m_diskAvailableHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
     m_gpuTotalHasBeenSet(false),
-    m_gpuAvailableHasBeenSet(false)
+    m_gpuAvailableHasBeenSet(false),
+    m_exclusiveOwnerHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome HostResource::Deserialize(const rapidjson::Value &value)
         m_gpuAvailableHasBeenSet = true;
     }
 
+    if (value.HasMember("ExclusiveOwner") && !value["ExclusiveOwner"].IsNull())
+    {
+        if (!value["ExclusiveOwner"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostResource.ExclusiveOwner` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_exclusiveOwner = string(value["ExclusiveOwner"].GetString());
+        m_exclusiveOwnerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void HostResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "GpuAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gpuAvailable, allocator);
+    }
+
+    if (m_exclusiveOwnerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExclusiveOwner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exclusiveOwner.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void HostResource::SetGpuAvailable(const uint64_t& _gpuAvailable)
 bool HostResource::GpuAvailableHasBeenSet() const
 {
     return m_gpuAvailableHasBeenSet;
+}
+
+string HostResource::GetExclusiveOwner() const
+{
+    return m_exclusiveOwner;
+}
+
+void HostResource::SetExclusiveOwner(const string& _exclusiveOwner)
+{
+    m_exclusiveOwner = _exclusiveOwner;
+    m_exclusiveOwnerHasBeenSet = true;
+}
+
+bool HostResource::ExclusiveOwnerHasBeenSet() const
+{
+    return m_exclusiveOwnerHasBeenSet;
 }
 

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SourceChannelHasBeenSet() const;
 
                     /**
-                     * 获取环境ID
-                     * @return EnvironmentId 环境ID
+                     * 获取环境ID/命名空间ID
+                     * @return EnvironmentId 环境ID/命名空间ID
                      * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
-                     * 设置环境ID
-                     * @param _environmentId 环境ID
+                     * 设置环境ID/命名空间ID
+                     * @param _environmentId 环境ID/命名空间ID
                      * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_sourceChannelHasBeenSet;
 
                     /**
-                     * 环境ID
+                     * 环境ID/命名空间ID
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;

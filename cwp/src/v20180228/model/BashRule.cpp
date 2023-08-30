@@ -35,7 +35,8 @@ BashRule::BashRule() :
     m_hostipHasBeenSet(false),
     m_uuidsHasBeenSet(false),
     m_whiteHasBeenSet(false),
-    m_dealOldEventsHasBeenSet(false)
+    m_dealOldEventsHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,16 @@ CoreInternalOutcome BashRule::Deserialize(const rapidjson::Value &value)
         m_dealOldEventsHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void BashRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DealOldEvents";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dealOldEvents, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void BashRule::SetDealOldEvents(const uint64_t& _dealOldEvents)
 bool BashRule::DealOldEventsHasBeenSet() const
 {
     return m_dealOldEventsHasBeenSet;
+}
+
+string BashRule::GetDescription() const
+{
+    return m_description;
+}
+
+void BashRule::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool BashRule::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

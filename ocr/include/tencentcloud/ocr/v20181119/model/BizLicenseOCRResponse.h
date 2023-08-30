@@ -186,8 +186,10 @@ namespace TencentCloud
                     /**
                      * 获取Code 告警码列表和释义：
 -9102 黑白复印件告警
+-9104 翻拍件告警
                      * @return RecognizeWarnCode Code 告警码列表和释义：
 -9102 黑白复印件告警
+-9104 翻拍件告警
                      * 
                      */
                     std::vector<int64_t> GetRecognizeWarnCode() const;
@@ -202,8 +204,10 @@ namespace TencentCloud
                     /**
                      * 获取告警码说明：
 WARN_COPY_CARD 黑白复印件告警
+WARN_RESHOOT_SCREENED_CARD 翻拍件告警
                      * @return RecognizeWarnMsg 告警码说明：
 WARN_COPY_CARD 黑白复印件告警
+WARN_RESHOOT_SCREENED_CARD 翻拍件告警
                      * 
                      */
                     std::vector<std::string> GetRecognizeWarnMsg() const;
@@ -308,6 +312,7 @@ WARN_COPY_CARD 黑白复印件告警
                     /**
                      * Code 告警码列表和释义：
 -9102 黑白复印件告警
+-9104 翻拍件告警
                      */
                     std::vector<int64_t> m_recognizeWarnCode;
                     bool m_recognizeWarnCodeHasBeenSet;
@@ -315,6 +320,7 @@ WARN_COPY_CARD 黑白复印件告警
                     /**
                      * 告警码说明：
 WARN_COPY_CARD 黑白复印件告警
+WARN_RESHOOT_SCREENED_CARD 翻拍件告警
                      */
                     std::vector<std::string> m_recognizeWarnMsg;
                     bool m_recognizeWarnMsgHasBeenSet;

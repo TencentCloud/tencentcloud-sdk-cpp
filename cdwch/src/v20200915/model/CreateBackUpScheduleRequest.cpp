@@ -23,6 +23,10 @@ using namespace TencentCloud::Cdwch::V20200915::Model;
 using namespace std;
 
 CreateBackUpScheduleRequest::CreateBackUpScheduleRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_scheduleTypeHasBeenSet(false),
+    m_operationTypeHasBeenSet(false),
+    m_retainDaysHasBeenSet(false),
     m_scheduleIdHasBeenSet(false),
     m_weekDaysHasBeenSet(false),
     m_executeHourHasBeenSet(false),
@@ -36,6 +40,38 @@ string CreateBackUpScheduleRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retainDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetainDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retainDays, allocator);
+    }
 
     if (m_scheduleIdHasBeenSet)
     {
@@ -83,6 +119,70 @@ string CreateBackUpScheduleRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateBackUpScheduleRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreateBackUpScheduleRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string CreateBackUpScheduleRequest::GetScheduleType() const
+{
+    return m_scheduleType;
+}
+
+void CreateBackUpScheduleRequest::SetScheduleType(const string& _scheduleType)
+{
+    m_scheduleType = _scheduleType;
+    m_scheduleTypeHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::ScheduleTypeHasBeenSet() const
+{
+    return m_scheduleTypeHasBeenSet;
+}
+
+string CreateBackUpScheduleRequest::GetOperationType() const
+{
+    return m_operationType;
+}
+
+void CreateBackUpScheduleRequest::SetOperationType(const string& _operationType)
+{
+    m_operationType = _operationType;
+    m_operationTypeHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::OperationTypeHasBeenSet() const
+{
+    return m_operationTypeHasBeenSet;
+}
+
+int64_t CreateBackUpScheduleRequest::GetRetainDays() const
+{
+    return m_retainDays;
+}
+
+void CreateBackUpScheduleRequest::SetRetainDays(const int64_t& _retainDays)
+{
+    m_retainDays = _retainDays;
+    m_retainDaysHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::RetainDaysHasBeenSet() const
+{
+    return m_retainDaysHasBeenSet;
+}
 
 int64_t CreateBackUpScheduleRequest::GetScheduleId() const
 {
