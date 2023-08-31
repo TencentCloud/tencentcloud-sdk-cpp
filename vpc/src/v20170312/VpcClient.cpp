@@ -2104,6 +2104,49 @@ VpcClient::CreateNetworkAclOutcomeCallable VpcClient::CreateNetworkAclCallable(c
     return task->get_future();
 }
 
+VpcClient::CreateNetworkAclEntriesOutcome VpcClient::CreateNetworkAclEntries(const CreateNetworkAclEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNetworkAclEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNetworkAclEntriesResponse rsp = CreateNetworkAclEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNetworkAclEntriesOutcome(rsp);
+        else
+            return CreateNetworkAclEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNetworkAclEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateNetworkAclEntriesAsync(const CreateNetworkAclEntriesRequest& request, const CreateNetworkAclEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNetworkAclEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateNetworkAclEntriesOutcomeCallable VpcClient::CreateNetworkAclEntriesCallable(const CreateNetworkAclEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNetworkAclEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNetworkAclEntries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateNetworkAclQuintupleEntriesOutcome VpcClient::CreateNetworkAclQuintupleEntries(const CreateNetworkAclQuintupleEntriesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNetworkAclQuintupleEntries");
@@ -3860,6 +3903,49 @@ VpcClient::DeleteNetworkAclOutcomeCallable VpcClient::DeleteNetworkAclCallable(c
         [this, request]()
         {
             return this->DeleteNetworkAcl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteNetworkAclEntriesOutcome VpcClient::DeleteNetworkAclEntries(const DeleteNetworkAclEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNetworkAclEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNetworkAclEntriesResponse rsp = DeleteNetworkAclEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNetworkAclEntriesOutcome(rsp);
+        else
+            return DeleteNetworkAclEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNetworkAclEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteNetworkAclEntriesAsync(const DeleteNetworkAclEntriesRequest& request, const DeleteNetworkAclEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNetworkAclEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteNetworkAclEntriesOutcomeCallable VpcClient::DeleteNetworkAclEntriesCallable(const DeleteNetworkAclEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNetworkAclEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNetworkAclEntries(request);
         }
     );
 

@@ -119,6 +119,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateNetDetectResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkAclRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkAclResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateNetworkAclEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateNetworkAclEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkAclQuintupleEntriesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkAclQuintupleEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkInterfaceRequest.h>
@@ -201,6 +203,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteNetDetectResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclQuintupleEntriesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclQuintupleEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkInterfaceRequest.h>
@@ -807,6 +811,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNetworkAclResponse> CreateNetworkAclOutcome;
                 typedef std::future<CreateNetworkAclOutcome> CreateNetworkAclOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateNetworkAclRequest&, CreateNetworkAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNetworkAclEntriesResponse> CreateNetworkAclEntriesOutcome;
+                typedef std::future<CreateNetworkAclEntriesOutcome> CreateNetworkAclEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateNetworkAclEntriesRequest&, CreateNetworkAclEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkAclEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNetworkAclQuintupleEntriesResponse> CreateNetworkAclQuintupleEntriesOutcome;
                 typedef std::future<CreateNetworkAclQuintupleEntriesOutcome> CreateNetworkAclQuintupleEntriesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateNetworkAclQuintupleEntriesRequest&, CreateNetworkAclQuintupleEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkAclQuintupleEntriesAsyncHandler;
@@ -930,6 +937,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNetworkAclResponse> DeleteNetworkAclOutcome;
                 typedef std::future<DeleteNetworkAclOutcome> DeleteNetworkAclOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteNetworkAclRequest&, DeleteNetworkAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNetworkAclEntriesResponse> DeleteNetworkAclEntriesOutcome;
+                typedef std::future<DeleteNetworkAclEntriesOutcome> DeleteNetworkAclEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteNetworkAclEntriesRequest&, DeleteNetworkAclEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkAclEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNetworkAclQuintupleEntriesResponse> DeleteNetworkAclQuintupleEntriesOutcome;
                 typedef std::future<DeleteNetworkAclQuintupleEntriesOutcome> DeleteNetworkAclQuintupleEntriesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteNetworkAclQuintupleEntriesRequest&, DeleteNetworkAclQuintupleEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkAclQuintupleEntriesAsyncHandler;
@@ -2106,6 +2116,15 @@ namespace TencentCloud
                 CreateNetworkAclOutcomeCallable CreateNetworkAclCallable(const Model::CreateNetworkAclRequest& request);
 
                 /**
+                 *本接口（CreateNetworkAclEntries）用于增量添加网络ACL三元组的入站规则和出站规则。
+                 * @param req CreateNetworkAclEntriesRequest
+                 * @return CreateNetworkAclEntriesOutcome
+                 */
+                CreateNetworkAclEntriesOutcome CreateNetworkAclEntries(const Model::CreateNetworkAclEntriesRequest &request);
+                void CreateNetworkAclEntriesAsync(const Model::CreateNetworkAclEntriesRequest& request, const CreateNetworkAclEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNetworkAclEntriesOutcomeCallable CreateNetworkAclEntriesCallable(const Model::CreateNetworkAclEntriesRequest& request);
+
+                /**
                  *本接口（CreateNetworkAclQuintupleEntries）用于增量网络ACL五元组的入站规则和出站规则。
                  * @param req CreateNetworkAclQuintupleEntriesRequest
                  * @return CreateNetworkAclQuintupleEntriesOutcome
@@ -2541,6 +2560,17 @@ namespace TencentCloud
                 DeleteNetworkAclOutcome DeleteNetworkAcl(const Model::DeleteNetworkAclRequest &request);
                 void DeleteNetworkAclAsync(const Model::DeleteNetworkAclRequest& request, const DeleteNetworkAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNetworkAclOutcomeCallable DeleteNetworkAclCallable(const Model::DeleteNetworkAclRequest& request);
+
+                /**
+                 *本接口（DeleteNetworkAclEntries）用于删除三元组网络ACL的入站规则和出站规则。在NetworkAclEntrySet参数中：
+* 删除IPv4规则，需要传入NetworkAclIpv4EntryId。
+* 删除IPv6规则，需要传入NetworkAclIpv6EntryId。
+                 * @param req DeleteNetworkAclEntriesRequest
+                 * @return DeleteNetworkAclEntriesOutcome
+                 */
+                DeleteNetworkAclEntriesOutcome DeleteNetworkAclEntries(const Model::DeleteNetworkAclEntriesRequest &request);
+                void DeleteNetworkAclEntriesAsync(const Model::DeleteNetworkAclEntriesRequest& request, const DeleteNetworkAclEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNetworkAclEntriesOutcomeCallable DeleteNetworkAclEntriesCallable(const Model::DeleteNetworkAclEntriesRequest& request);
 
                 /**
                  *本接口（DeleteNetworkAclQuintupleEntries）用于删除网络ACL五元组指定的入站规则和出站规则（但不是全量删除该ACL下的所有条目）。在NetworkAclQuintupleEntrySet参数中：NetworkAclQuintupleEntry需要提供NetworkAclQuintupleEntryId。
