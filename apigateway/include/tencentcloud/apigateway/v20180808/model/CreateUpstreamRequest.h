@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取后端协议，取值范围：HTTP, HTTPS
-                     * @return Scheme 后端协议，取值范围：HTTP, HTTPS
+                     * 获取后端协议，取值范围：HTTP, HTTPS,gRPC，gRPCs
+                     * @return Scheme 后端协议，取值范围：HTTP, HTTPS,gRPC，gRPCs
                      * 
                      */
                     std::string GetScheme() const;
 
                     /**
-                     * 设置后端协议，取值范围：HTTP, HTTPS
-                     * @param _scheme 后端协议，取值范围：HTTP, HTTPS
+                     * 设置后端协议，取值范围：HTTP, HTTPS,gRPC，gRPCs
+                     * @param _scheme 后端协议，取值范围：HTTP, HTTPS,gRPC，gRPCs
                      * 
                      */
                     void SetScheme(const std::string& _scheme);
@@ -301,7 +301,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 后端协议，取值范围：HTTP, HTTPS
+                     * 后端协议，取值范围：HTTP, HTTPS,gRPC，gRPCs
                      */
                     std::string m_scheme;
                     bool m_schemeHasBeenSet;

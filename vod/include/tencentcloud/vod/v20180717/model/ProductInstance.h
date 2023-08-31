@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/ProductInstanceRecource.h>
+#include <tencentcloud/vod/v20180717/model/ProductInstanceResource.h>
 
 
 namespace TencentCloud
@@ -196,23 +197,44 @@ namespace TencentCloud
                     /**
                      * 获取预付费资源包实例中包含的资源包列表。
                      * @return ProductInstanceResourceSet 预付费资源包实例中包含的资源包列表。
-                     * 
+                     * @deprecated
                      */
                     std::vector<ProductInstanceRecource> GetProductInstanceResourceSet() const;
 
                     /**
                      * 设置预付费资源包实例中包含的资源包列表。
                      * @param _productInstanceResourceSet 预付费资源包实例中包含的资源包列表。
-                     * 
+                     * @deprecated
                      */
                     void SetProductInstanceResourceSet(const std::vector<ProductInstanceRecource>& _productInstanceResourceSet);
 
                     /**
                      * 判断参数 ProductInstanceResourceSet 是否已赋值
                      * @return ProductInstanceResourceSet 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ProductInstanceResourceSetHasBeenSet() const;
+
+                    /**
+                     * 获取预付费资源包实例中包含的资源包列表。
+                     * @return ResourceSet 预付费资源包实例中包含的资源包列表。
+                     * 
+                     */
+                    std::vector<ProductInstanceResource> GetResourceSet() const;
+
+                    /**
+                     * 设置预付费资源包实例中包含的资源包列表。
+                     * @param _resourceSet 预付费资源包实例中包含的资源包列表。
+                     * 
+                     */
+                    void SetResourceSet(const std::vector<ProductInstanceResource>& _resourceSet);
+
+                    /**
+                     * 判断参数 ResourceSet 是否已赋值
+                     * @return ResourceSet 是否已赋值
+                     * 
+                     */
+                    bool ResourceSetHasBeenSet() const;
 
                     /**
                      * 获取资源包实例的状态，取值有：
@@ -357,6 +379,12 @@ namespace TencentCloud
                      */
                     std::vector<ProductInstanceRecource> m_productInstanceResourceSet;
                     bool m_productInstanceResourceSetHasBeenSet;
+
+                    /**
+                     * 预付费资源包实例中包含的资源包列表。
+                     */
+                    std::vector<ProductInstanceResource> m_resourceSet;
+                    bool m_resourceSetHasBeenSet;
 
                     /**
                      * 资源包实例的状态，取值有：

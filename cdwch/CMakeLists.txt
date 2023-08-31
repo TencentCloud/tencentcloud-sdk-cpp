@@ -20,6 +20,7 @@ set(cdwch_public_header
 
 set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsRequest.h
+  include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/ResizeDiskRequest.h
   include/tencentcloud/cdwch/v20200915/model/DestroyInstanceResponse.h
@@ -37,48 +38,56 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h
   include/tencentcloud/cdwch/v20200915/model/ClusterConfigsInfoFromEMR.h
-  include/tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersRequest.h
+  include/tencentcloud/cdwch/v20200915/model/ClusterInfo.h
   include/tencentcloud/cdwch/v20200915/model/OpenBackUpRequest.h
   include/tencentcloud/cdwch/v20200915/model/BackupTableContent.h
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewResponse.h
   include/tencentcloud/cdwch/v20200915/model/ConfigSubmitContext.h
   include/tencentcloud/cdwch/v20200915/model/InstanceStateInfo.h
+  include/tencentcloud/cdwch/v20200915/model/Tag.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersResponse.h
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewRequest.h
   include/tencentcloud/cdwch/v20200915/model/InstanceInfo.h
+  include/tencentcloud/cdwch/v20200915/model/NodeSpec.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeBackUpJobDetailResponse.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/ScaleUpInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsResponse.h
   include/tencentcloud/cdwch/v20200915/model/ServiceInfo.h
   include/tencentcloud/cdwch/v20200915/model/MapConfigItem.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsResponse.h
+  include/tencentcloud/cdwch/v20200915/model/RecoverBackUpJobRequest.h
   include/tencentcloud/cdwch/v20200915/model/DiskSpec.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstancesNewRequest.h
-  include/tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsRequest.h
+  include/tencentcloud/cdwch/v20200915/model/DeleteBackUpDataResponse.h
   include/tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstancesNewResponse.h
-  include/tencentcloud/cdwch/v20200915/model/AttachCBSSpec.h
-  include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceRequest.h
+  include/tencentcloud/cdwch/v20200915/model/BackUpJobDisplay.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/ResourceSpec.h
   include/tencentcloud/cdwch/v20200915/model/SearchTags.h
   include/tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleResponse.h
   include/tencentcloud/cdwch/v20200915/model/InstanceConfigItem.h
+  include/tencentcloud/cdwch/v20200915/model/RecoverBackUpJobResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceResponse.h
-  include/tencentcloud/cdwch/v20200915/model/ClusterInfo.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeBackUpJobResponse.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceStateRequest.h
   include/tencentcloud/cdwch/v20200915/model/NodesSummary.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h
   include/tencentcloud/cdwch/v20200915/model/InstanceConfigInfo.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeBackUpJobDetailRequest.h
   include/tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleRequest.h
-  include/tencentcloud/cdwch/v20200915/model/NodeSpec.h
+  include/tencentcloud/cdwch/v20200915/model/DeleteBackUpDataRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/ActionAlterCkUserResponse.h
-  include/tencentcloud/cdwch/v20200915/model/Tag.h
+  include/tencentcloud/cdwch/v20200915/model/AttachCBSSpec.h
   include/tencentcloud/cdwch/v20200915/model/ScheduleStrategy.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceStateResponse.h
   include/tencentcloud/cdwch/v20200915/model/ResizeDiskResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeBackUpJobRequest.h
   include/tencentcloud/cdwch/v20200915/model/ScaleUpInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeResponse.h
   )
@@ -86,6 +95,7 @@ set(cdwch_public_header_model
 set(cdwch_src
   src/v20200915/CdwchClient.cpp
   src/v20200915/model/DescribeInstanceShardsRequest.cpp
+  src/v20200915/model/ScaleOutInstanceRequest.cpp
   src/v20200915/model/ScaleOutInstanceResponse.cpp
   src/v20200915/model/ResizeDiskRequest.cpp
   src/v20200915/model/DestroyInstanceResponse.cpp
@@ -103,48 +113,56 @@ set(cdwch_src
   src/v20200915/model/ModifyUserNewPrivilegeRequest.cpp
   src/v20200915/model/DescribeCkSqlApisRequest.cpp
   src/v20200915/model/ClusterConfigsInfoFromEMR.cpp
-  src/v20200915/model/DescribeInstanceClustersRequest.cpp
+  src/v20200915/model/ClusterInfo.cpp
   src/v20200915/model/OpenBackUpRequest.cpp
   src/v20200915/model/BackupTableContent.cpp
   src/v20200915/model/CreateInstanceNewResponse.cpp
   src/v20200915/model/ConfigSubmitContext.cpp
   src/v20200915/model/InstanceStateInfo.cpp
+  src/v20200915/model/Tag.cpp
   src/v20200915/model/DescribeInstanceClustersResponse.cpp
   src/v20200915/model/CreateInstanceNewRequest.cpp
   src/v20200915/model/InstanceInfo.cpp
+  src/v20200915/model/NodeSpec.cpp
+  src/v20200915/model/DescribeBackUpJobDetailResponse.cpp
   src/v20200915/model/ModifyClusterConfigsRequest.cpp
   src/v20200915/model/ScaleUpInstanceRequest.cpp
   src/v20200915/model/DescribeInstanceKeyValConfigsResponse.cpp
   src/v20200915/model/ServiceInfo.cpp
   src/v20200915/model/MapConfigItem.cpp
   src/v20200915/model/ModifyClusterConfigsResponse.cpp
+  src/v20200915/model/RecoverBackUpJobRequest.cpp
   src/v20200915/model/DiskSpec.cpp
   src/v20200915/model/DescribeInstancesNewRequest.cpp
-  src/v20200915/model/DescribeClusterConfigsRequest.cpp
+  src/v20200915/model/DeleteBackUpDataResponse.cpp
   src/v20200915/model/ModifyInstanceKeyValConfigsRequest.cpp
   src/v20200915/model/DescribeInstancesNewResponse.cpp
-  src/v20200915/model/AttachCBSSpec.cpp
-  src/v20200915/model/ScaleOutInstanceRequest.cpp
+  src/v20200915/model/BackUpJobDisplay.cpp
+  src/v20200915/model/DescribeClusterConfigsRequest.cpp
   src/v20200915/model/ResourceSpec.cpp
   src/v20200915/model/SearchTags.cpp
   src/v20200915/model/CreateBackUpScheduleResponse.cpp
   src/v20200915/model/InstanceConfigItem.cpp
+  src/v20200915/model/RecoverBackUpJobResponse.cpp
   src/v20200915/model/DescribeInstanceResponse.cpp
-  src/v20200915/model/ClusterInfo.cpp
+  src/v20200915/model/DescribeBackUpJobResponse.cpp
+  src/v20200915/model/DescribeInstanceClustersRequest.cpp
   src/v20200915/model/DescribeInstanceStateRequest.cpp
   src/v20200915/model/NodesSummary.cpp
   src/v20200915/model/DescribeInstanceShardsResponse.cpp
   src/v20200915/model/InstanceConfigInfo.cpp
+  src/v20200915/model/DescribeBackUpJobDetailRequest.cpp
   src/v20200915/model/CreateBackUpScheduleRequest.cpp
-  src/v20200915/model/NodeSpec.cpp
+  src/v20200915/model/DeleteBackUpDataRequest.cpp
   src/v20200915/model/DescribeInstanceRequest.cpp
   src/v20200915/model/ActionAlterCkUserResponse.cpp
-  src/v20200915/model/Tag.cpp
+  src/v20200915/model/AttachCBSSpec.cpp
   src/v20200915/model/ScheduleStrategy.cpp
   src/v20200915/model/DescribeInstanceStateResponse.cpp
   src/v20200915/model/ResizeDiskResponse.cpp
   src/v20200915/model/DescribeBackUpScheduleResponse.cpp
   src/v20200915/model/DescribeCkSqlApisResponse.cpp
+  src/v20200915/model/DescribeBackUpJobRequest.cpp
   src/v20200915/model/ScaleUpInstanceResponse.cpp
   src/v20200915/model/ModifyUserNewPrivilegeResponse.cpp
   )

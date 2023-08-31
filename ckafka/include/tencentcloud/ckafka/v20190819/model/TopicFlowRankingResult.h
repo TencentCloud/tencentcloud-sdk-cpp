@@ -28,6 +28,7 @@
 #include <tencentcloud/ckafka/v20190819/model/ConsumerGroupSpeed.h>
 #include <tencentcloud/ckafka/v20190819/model/TopicMessageHeapRanking.h>
 #include <tencentcloud/ckafka/v20190819/model/BrokerTopicData.h>
+#include <tencentcloud/ckafka/v20190819/model/BrokerTopicFlowData.h>
 
 
 namespace TencentCloud
@@ -167,6 +168,27 @@ namespace TencentCloud
                      */
                     bool BrokerTopicDataHasBeenSet() const;
 
+                    /**
+                     * 获取单个Broker 节点Topic 流量的大小(单位MB)
+                     * @return BrokerTopicFlowData 单个Broker 节点Topic 流量的大小(单位MB)
+                     * 
+                     */
+                    std::vector<BrokerTopicFlowData> GetBrokerTopicFlowData() const;
+
+                    /**
+                     * 设置单个Broker 节点Topic 流量的大小(单位MB)
+                     * @param _brokerTopicFlowData 单个Broker 节点Topic 流量的大小(单位MB)
+                     * 
+                     */
+                    void SetBrokerTopicFlowData(const std::vector<BrokerTopicFlowData>& _brokerTopicFlowData);
+
+                    /**
+                     * 判断参数 BrokerTopicFlowData 是否已赋值
+                     * @return BrokerTopicFlowData 是否已赋值
+                     * 
+                     */
+                    bool BrokerTopicFlowDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -201,6 +223,12 @@ namespace TencentCloud
                      */
                     std::vector<BrokerTopicData> m_brokerTopicData;
                     bool m_brokerTopicDataHasBeenSet;
+
+                    /**
+                     * 单个Broker 节点Topic 流量的大小(单位MB)
+                     */
+                    std::vector<BrokerTopicFlowData> m_brokerTopicFlowData;
+                    bool m_brokerTopicFlowDataHasBeenSet;
 
                 };
             }

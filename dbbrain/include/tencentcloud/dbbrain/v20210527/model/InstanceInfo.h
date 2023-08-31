@@ -756,6 +756,48 @@ namespace TencentCloud
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取自建MySQL的Agent状态，"not_deployed" - 未部署，"deploying" - 部署中，"connected" - 连接正常，"deploy_failed" - 连接失败，"monitoring" - 连接正常，"stopped" - 暂停连接，"connect_failed" - 连接失败，unknown - 未知。
+                     * @return AgentStatus 自建MySQL的Agent状态，"not_deployed" - 未部署，"deploying" - 部署中，"connected" - 连接正常，"deploy_failed" - 连接失败，"monitoring" - 连接正常，"stopped" - 暂停连接，"connect_failed" - 连接失败，unknown - 未知。
+                     * 
+                     */
+                    std::string GetAgentStatus() const;
+
+                    /**
+                     * 设置自建MySQL的Agent状态，"not_deployed" - 未部署，"deploying" - 部署中，"connected" - 连接正常，"deploy_failed" - 连接失败，"monitoring" - 连接正常，"stopped" - 暂停连接，"connect_failed" - 连接失败，unknown - 未知。
+                     * @param _agentStatus 自建MySQL的Agent状态，"not_deployed" - 未部署，"deploying" - 部署中，"connected" - 连接正常，"deploy_failed" - 连接失败，"monitoring" - 连接正常，"stopped" - 暂停连接，"connect_failed" - 连接失败，unknown - 未知。
+                     * 
+                     */
+                    void SetAgentStatus(const std::string& _agentStatus);
+
+                    /**
+                     * 判断参数 AgentStatus 是否已赋值
+                     * @return AgentStatus 是否已赋值
+                     * 
+                     */
+                    bool AgentStatusHasBeenSet() const;
+
+                    /**
+                     * 获取自建MySQL的实例状态，"not_attached" - 未连接，"attached" - 连接正常，"failed" - 连接失败，"stopped" - 停止监控，unknown- 未知。
+                     * @return InstanceStatus 自建MySQL的实例状态，"not_attached" - 未连接，"attached" - 连接正常，"failed" - 连接失败，"stopped" - 停止监控，unknown- 未知。
+                     * 
+                     */
+                    std::string GetInstanceStatus() const;
+
+                    /**
+                     * 设置自建MySQL的实例状态，"not_attached" - 未连接，"attached" - 连接正常，"failed" - 连接失败，"stopped" - 停止监控，unknown- 未知。
+                     * @param _instanceStatus 自建MySQL的实例状态，"not_attached" - 未连接，"attached" - 连接正常，"failed" - 连接失败，"stopped" - 停止监控，unknown- 未知。
+                     * 
+                     */
+                    void SetInstanceStatus(const std::string& _instanceStatus);
+
+                    /**
+                     * 判断参数 InstanceStatus 是否已赋值
+                     * @return InstanceStatus 是否已赋值
+                     * 
+                     */
+                    bool InstanceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -959,6 +1001,18 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 自建MySQL的Agent状态，"not_deployed" - 未部署，"deploying" - 部署中，"connected" - 连接正常，"deploy_failed" - 连接失败，"monitoring" - 连接正常，"stopped" - 暂停连接，"connect_failed" - 连接失败，unknown - 未知。
+                     */
+                    std::string m_agentStatus;
+                    bool m_agentStatusHasBeenSet;
+
+                    /**
+                     * 自建MySQL的实例状态，"not_attached" - 未连接，"attached" - 连接正常，"failed" - 连接失败，"stopped" - 停止监控，unknown- 未知。
+                     */
+                    std::string m_instanceStatus;
+                    bool m_instanceStatusHasBeenSet;
 
                 };
             }

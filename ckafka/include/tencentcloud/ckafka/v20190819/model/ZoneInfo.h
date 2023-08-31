@@ -176,21 +176,21 @@ namespace TencentCloud
                     /**
                      * 获取额外标识
                      * @return Exflag 额外标识
-                     * 
+                     * @deprecated
                      */
                     std::string GetExflag() const;
 
                     /**
                      * 设置额外标识
                      * @param _exflag 额外标识
-                     * 
+                     * @deprecated
                      */
                     void SetExflag(const std::string& _exflag);
 
                     /**
                      * 判断参数 Exflag 是否已赋值
                      * @return Exflag 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ExflagHasBeenSet() const;
 
@@ -239,6 +239,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SalesInfoHasBeenSet() const;
+
+                    /**
+                     * 获取额外标识
+                     * @return ExtraFlag 额外标识
+                     * 
+                     */
+                    std::string GetExtraFlag() const;
+
+                    /**
+                     * 设置额外标识
+                     * @param _extraFlag 额外标识
+                     * 
+                     */
+                    void SetExtraFlag(const std::string& _extraFlag);
+
+                    /**
+                     * 判断参数 ExtraFlag 是否已赋值
+                     * @return ExtraFlag 是否已赋值
+                     * 
+                     */
+                    bool ExtraFlagHasBeenSet() const;
 
                 private:
 
@@ -296,6 +317,12 @@ namespace TencentCloud
                      */
                     std::vector<SaleInfo> m_salesInfo;
                     bool m_salesInfoHasBeenSet;
+
+                    /**
+                     * 额外标识
+                     */
+                    std::string m_extraFlag;
+                    bool m_extraFlagHasBeenSet;
 
                 };
             }

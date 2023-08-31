@@ -463,6 +463,27 @@ namespace TencentCloud
                      */
                     bool InstanceNumHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动选择代金券:1-是;0否。默认为0
+                     * @return AutoVoucher 是否自动选择代金券:1-是;0否。默认为0
+                     * 
+                     */
+                    int64_t GetAutoVoucher() const;
+
+                    /**
+                     * 设置是否自动选择代金券:1-是;0否。默认为0
+                     * @param _autoVoucher 是否自动选择代金券:1-是;0否。默认为0
+                     * 
+                     */
+                    void SetAutoVoucher(const int64_t& _autoVoucher);
+
+                    /**
+                     * 判断参数 AutoVoucher 是否已赋值
+                     * @return AutoVoucher 是否已赋值
+                     * 
+                     */
+                    bool AutoVoucherHasBeenSet() const;
+
                 private:
 
                     /**
@@ -584,6 +605,12 @@ namespace TencentCloud
                      */
                     int64_t m_instanceNum;
                     bool m_instanceNumHasBeenSet;
+
+                    /**
+                     * 是否自动选择代金券:1-是;0否。默认为0
+                     */
+                    int64_t m_autoVoucher;
+                    bool m_autoVoucherHasBeenSet;
 
                 };
             }

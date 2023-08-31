@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dsgc/v20190723/model/TemplateInfo.h>
 
 
 namespace TencentCloud
@@ -221,6 +222,56 @@ namespace TencentCloud
                      */
                     bool SupportDataSourceHasBeenSet() const;
 
+                    /**
+                     * 获取风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskSide 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRiskSide() const;
+
+                    /**
+                     * 设置风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _riskSide 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRiskSide(const std::string& _riskSide);
+
+                    /**
+                     * 判断参数 RiskSide 是否已赋值
+                     * @return RiskSide 是否已赋值
+                     * 
+                     */
+                    bool RiskSideHasBeenSet() const;
+
+                    /**
+                     * 获取关联模版列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReferTemplateList 关联模版列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TemplateInfo> GetReferTemplateList() const;
+
+                    /**
+                     * 设置关联模版列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _referTemplateList 关联模版列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReferTemplateList(const std::vector<TemplateInfo>& _referTemplateList);
+
+                    /**
+                     * 判断参数 ReferTemplateList 是否已赋值
+                     * @return ReferTemplateList 是否已赋值
+                     * 
+                     */
+                    bool ReferTemplateListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +322,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_supportDataSource;
                     bool m_supportDataSourceHasBeenSet;
+
+                    /**
+                     * 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_riskSide;
+                    bool m_riskSideHasBeenSet;
+
+                    /**
+                     * 关联模版列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TemplateInfo> m_referTemplateList;
+                    bool m_referTemplateListHasBeenSet;
 
                 };
             }

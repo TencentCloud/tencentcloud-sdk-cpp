@@ -27,7 +27,8 @@ ModifyServiceRequest::ModifyServiceRequest() :
     m_serviceNameHasBeenSet(false),
     m_serviceDescHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_netTypesHasBeenSet(false)
+    m_netTypesHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string ModifyServiceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -169,6 +178,22 @@ void ModifyServiceRequest::SetNetTypes(const vector<string>& _netTypes)
 bool ModifyServiceRequest::NetTypesHasBeenSet() const
 {
     return m_netTypesHasBeenSet;
+}
+
+string ModifyServiceRequest::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+void ModifyServiceRequest::SetUniqVpcId(const string& _uniqVpcId)
+{
+    m_uniqVpcId = _uniqVpcId;
+    m_uniqVpcIdHasBeenSet = true;
+}
+
+bool ModifyServiceRequest::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
 }
 
 

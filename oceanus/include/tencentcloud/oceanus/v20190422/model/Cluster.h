@@ -29,6 +29,7 @@
 #include <tencentcloud/oceanus/v20190422/model/ClusterVersion.h>
 #include <tencentcloud/oceanus/v20190422/model/WorkSpaceClusterItem.h>
 #include <tencentcloud/oceanus/v20190422/model/ClusterSession.h>
+#include <tencentcloud/oceanus/v20190422/model/Order.h>
 
 
 namespace TencentCloud
@@ -883,6 +884,81 @@ namespace TencentCloud
                      */
                     bool ClusterSessionsHasBeenSet() const;
 
+                    /**
+                     * 获取V3版本 = 2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ArchGeneration V3版本 = 2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetArchGeneration() const;
+
+                    /**
+                     * 设置V3版本 = 2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _archGeneration V3版本 = 2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetArchGeneration(const uint64_t& _archGeneration);
+
+                    /**
+                     * 判断参数 ArchGeneration 是否已赋值
+                     * @return ArchGeneration 是否已赋值
+                     * 
+                     */
+                    bool ArchGenerationHasBeenSet() const;
+
+                    /**
+                     * 获取0:TKE, 1:EKS
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterType 0:TKE, 1:EKS
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetClusterType() const;
+
+                    /**
+                     * 设置0:TKE, 1:EKS
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterType 0:TKE, 1:EKS
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterType(const uint64_t& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取订单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Orders 订单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Order> GetOrders() const;
+
+                    /**
+                     * 设置订单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _orders 订单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOrders(const std::vector<Order>& _orders);
+
+                    /**
+                     * 判断参数 Orders 是否已赋值
+                     * @return Orders 是否已赋值
+                     * 
+                     */
+                    bool OrdersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1119,6 +1195,27 @@ namespace TencentCloud
                      */
                     std::vector<ClusterSession> m_clusterSessions;
                     bool m_clusterSessionsHasBeenSet;
+
+                    /**
+                     * V3版本 = 2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_archGeneration;
+                    bool m_archGenerationHasBeenSet;
+
+                    /**
+                     * 0:TKE, 1:EKS
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * 订单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Order> m_orders;
+                    bool m_ordersHasBeenSet;
 
                 };
             }

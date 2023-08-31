@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/faceid/v20180301/model/IntentionQuestion.h>
+#include <tencentcloud/faceid/v20180301/model/IntentionActionConfig.h>
 
 
 namespace TencentCloud
@@ -114,15 +115,15 @@ namespace TencentCloud
                     bool UseIntentionVerifyHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1
-                     * @return IntentionMode 意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1
+                     * 获取意愿核身模式。枚举值：1( 语音朗读模式)，2（语音问答模式） ，3（点头确认模式）。默认值为1。
+                     * @return IntentionMode 意愿核身模式。枚举值：1( 语音朗读模式)，2（语音问答模式） ，3（点头确认模式）。默认值为1。
                      * 
                      */
                     std::string GetIntentionMode() const;
 
                     /**
-                     * 设置意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1
-                     * @param _intentionMode 意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1
+                     * 设置意愿核身模式。枚举值：1( 语音朗读模式)，2（语音问答模式） ，3（点头确认模式）。默认值为1。
+                     * @param _intentionMode 意愿核身模式。枚举值：1( 语音朗读模式)，2（语音问答模式） ，3（点头确认模式）。默认值为1。
                      * 
                      */
                     void SetIntentionMode(const std::string& _intentionMode);
@@ -175,6 +176,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IntentionQuestionsHasBeenSet() const;
+
+                    /**
+                     * 获取意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。默认为空，最长可接受150的字符串长度。
+                     * @return IntentionActions 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。默认为空，最长可接受150的字符串长度。
+                     * 
+                     */
+                    std::vector<IntentionActionConfig> GetIntentionActions() const;
+
+                    /**
+                     * 设置意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。默认为空，最长可接受150的字符串长度。
+                     * @param _intentionActions 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。默认为空，最长可接受150的字符串长度。
+                     * 
+                     */
+                    void SetIntentionActions(const std::vector<IntentionActionConfig>& _intentionActions);
+
+                    /**
+                     * 判断参数 IntentionActions 是否已赋值
+                     * @return IntentionActions 是否已赋值
+                     * 
+                     */
+                    bool IntentionActionsHasBeenSet() const;
 
                     /**
                      * 获取意愿核身过程中识别用户的回答意图，开启后除了IntentionQuestions的Answers列表中的标准回答会通过，近似意图的回答也会通过，默认不开启。
@@ -239,7 +261,7 @@ namespace TencentCloud
                     bool m_useIntentionVerifyHasBeenSet;
 
                     /**
-                     * 意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1
+                     * 意愿核身模式。枚举值：1( 语音朗读模式)，2（语音问答模式） ，3（点头确认模式）。默认值为1。
                      */
                     std::string m_intentionMode;
                     bool m_intentionModeHasBeenSet;
@@ -255,6 +277,12 @@ namespace TencentCloud
                      */
                     std::vector<IntentionQuestion> m_intentionQuestions;
                     bool m_intentionQuestionsHasBeenSet;
+
+                    /**
+                     * 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。默认为空，最长可接受150的字符串长度。
+                     */
+                    std::vector<IntentionActionConfig> m_intentionActions;
+                    bool m_intentionActionsHasBeenSet;
 
                     /**
                      * 意愿核身过程中识别用户的回答意图，开启后除了IntentionQuestions的Answers列表中的标准回答会通过，近似意图的回答也会通过，默认不开启。

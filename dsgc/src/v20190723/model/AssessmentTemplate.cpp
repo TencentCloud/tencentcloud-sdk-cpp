@@ -31,7 +31,8 @@ AssessmentTemplate::AssessmentTemplate() :
     m_controlItemCountHasBeenSet(false),
     m_appliedItemCountHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_supportDataSourceHasBeenSet(false)
+    m_supportDataSourceHasBeenSet(false),
+    m_isASMTemplateHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome AssessmentTemplate::Deserialize(const rapidjson::Value &valu
         m_supportDataSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("IsASMTemplate") && !value["IsASMTemplate"].IsNull())
+    {
+        if (!value["IsASMTemplate"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssessmentTemplate.IsASMTemplate` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isASMTemplate = value["IsASMTemplate"].GetBool();
+        m_isASMTemplateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void AssessmentTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isASMTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsASMTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isASMTemplate, allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void AssessmentTemplate::SetSupportDataSource(const vector<string>& _supportData
 bool AssessmentTemplate::SupportDataSourceHasBeenSet() const
 {
     return m_supportDataSourceHasBeenSet;
+}
+
+bool AssessmentTemplate::GetIsASMTemplate() const
+{
+    return m_isASMTemplate;
+}
+
+void AssessmentTemplate::SetIsASMTemplate(const bool& _isASMTemplate)
+{
+    m_isASMTemplate = _isASMTemplate;
+    m_isASMTemplateHasBeenSet = true;
+}
+
+bool AssessmentTemplate::IsASMTemplateHasBeenSet() const
+{
+    return m_isASMTemplateHasBeenSet;
 }
 

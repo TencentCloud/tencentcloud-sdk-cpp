@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc属性
-                     * @return UniqVpcId vpc属性
+                     * 获取vpc属性，选择VPC后不可修改，为服务选择VPC后，可对接该VPC下的后端资源
+                     * @return UniqVpcId vpc属性，选择VPC后不可修改，为服务选择VPC后，可对接该VPC下的后端资源
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置vpc属性
-                     * @param _uniqVpcId vpc属性
+                     * 设置vpc属性，选择VPC后不可修改，为服务选择VPC后，可对接该VPC下的后端资源
+                     * @param _uniqVpcId vpc属性，选择VPC后不可修改，为服务选择VPC后，可对接该VPC下的后端资源
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -310,7 +310,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * vpc属性
+                     * vpc属性，选择VPC后不可修改，为服务选择VPC后，可对接该VPC下的后端资源
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;

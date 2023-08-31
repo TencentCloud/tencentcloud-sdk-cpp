@@ -66,21 +66,21 @@ namespace TencentCloud
                     /**
                      * 获取最新风险项Id
                      * @return RiskLatestTableId 最新风险项Id
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetRiskLatestTableId() const;
 
                     /**
                      * 设置最新风险项Id
                      * @param _riskLatestTableId 最新风险项Id
-                     * 
+                     * @deprecated
                      */
                     void SetRiskLatestTableId(const uint64_t& _riskLatestTableId);
 
                     /**
                      * 判断参数 RiskLatestTableId 是否已赋值
                      * @return RiskLatestTableId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RiskLatestTableIdHasBeenSet() const;
 
@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool ProcessPeopleHasBeenSet() const;
 
+                    /**
+                     * 获取批量处理的列表
+                     * @return BathRiskIdList 批量处理的列表
+                     * 
+                     */
+                    std::vector<int64_t> GetBathRiskIdList() const;
+
+                    /**
+                     * 设置批量处理的列表
+                     * @param _bathRiskIdList 批量处理的列表
+                     * 
+                     */
+                    void SetBathRiskIdList(const std::vector<int64_t>& _bathRiskIdList);
+
+                    /**
+                     * 判断参数 BathRiskIdList 是否已赋值
+                     * @return BathRiskIdList 是否已赋值
+                     * 
+                     */
+                    bool BathRiskIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_processPeople;
                     bool m_processPeopleHasBeenSet;
+
+                    /**
+                     * 批量处理的列表
+                     */
+                    std::vector<int64_t> m_bathRiskIdList;
+                    bool m_bathRiskIdListHasBeenSet;
 
                 };
             }

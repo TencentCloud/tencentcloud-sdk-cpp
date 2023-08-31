@@ -22,10 +22,14 @@ using namespace std;
 
 HighRiskAssetsDetail::HighRiskAssetsDetail() :
     m_instanceIdHasBeenSet(false),
+    m_dataSourceTypeHasBeenSet(false),
+    m_dataSourceNameHasBeenSet(false),
     m_assetsNameHasBeenSet(false),
     m_highRiskCountHasBeenSet(false),
     m_riskTypeHasBeenSet(false),
-    m_totalRiskCountHasBeenSet(false)
+    m_totalRiskCountHasBeenSet(false),
+    m_riskSideHasBeenSet(false),
+    m_resourceRegionHasBeenSet(false)
 {
 }
 
@@ -42,6 +46,26 @@ CoreInternalOutcome HighRiskAssetsDetail::Deserialize(const rapidjson::Value &va
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataSourceType") && !value["DataSourceType"].IsNull())
+    {
+        if (!value["DataSourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HighRiskAssetsDetail.DataSourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataSourceType = string(value["DataSourceType"].GetString());
+        m_dataSourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataSourceName") && !value["DataSourceName"].IsNull())
+    {
+        if (!value["DataSourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HighRiskAssetsDetail.DataSourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataSourceName = string(value["DataSourceName"].GetString());
+        m_dataSourceNameHasBeenSet = true;
     }
 
     if (value.HasMember("AssetsName") && !value["AssetsName"].IsNull())
@@ -84,6 +108,26 @@ CoreInternalOutcome HighRiskAssetsDetail::Deserialize(const rapidjson::Value &va
         m_totalRiskCountHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskSide") && !value["RiskSide"].IsNull())
+    {
+        if (!value["RiskSide"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HighRiskAssetsDetail.RiskSide` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskSide = string(value["RiskSide"].GetString());
+        m_riskSideHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceRegion") && !value["ResourceRegion"].IsNull())
+    {
+        if (!value["ResourceRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HighRiskAssetsDetail.ResourceRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceRegion = string(value["ResourceRegion"].GetString());
+        m_resourceRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -97,6 +141,22 @@ void HighRiskAssetsDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataSourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataSourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataSourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataSourceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_assetsNameHasBeenSet)
@@ -131,6 +191,22 @@ void HighRiskAssetsDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         value.AddMember(iKey, m_totalRiskCount, allocator);
     }
 
+    if (m_riskSideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskSide";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskSide.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceRegion.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -148,6 +224,38 @@ void HighRiskAssetsDetail::SetInstanceId(const string& _instanceId)
 bool HighRiskAssetsDetail::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string HighRiskAssetsDetail::GetDataSourceType() const
+{
+    return m_dataSourceType;
+}
+
+void HighRiskAssetsDetail::SetDataSourceType(const string& _dataSourceType)
+{
+    m_dataSourceType = _dataSourceType;
+    m_dataSourceTypeHasBeenSet = true;
+}
+
+bool HighRiskAssetsDetail::DataSourceTypeHasBeenSet() const
+{
+    return m_dataSourceTypeHasBeenSet;
+}
+
+string HighRiskAssetsDetail::GetDataSourceName() const
+{
+    return m_dataSourceName;
+}
+
+void HighRiskAssetsDetail::SetDataSourceName(const string& _dataSourceName)
+{
+    m_dataSourceName = _dataSourceName;
+    m_dataSourceNameHasBeenSet = true;
+}
+
+bool HighRiskAssetsDetail::DataSourceNameHasBeenSet() const
+{
+    return m_dataSourceNameHasBeenSet;
 }
 
 string HighRiskAssetsDetail::GetAssetsName() const
@@ -212,5 +320,37 @@ void HighRiskAssetsDetail::SetTotalRiskCount(const int64_t& _totalRiskCount)
 bool HighRiskAssetsDetail::TotalRiskCountHasBeenSet() const
 {
     return m_totalRiskCountHasBeenSet;
+}
+
+string HighRiskAssetsDetail::GetRiskSide() const
+{
+    return m_riskSide;
+}
+
+void HighRiskAssetsDetail::SetRiskSide(const string& _riskSide)
+{
+    m_riskSide = _riskSide;
+    m_riskSideHasBeenSet = true;
+}
+
+bool HighRiskAssetsDetail::RiskSideHasBeenSet() const
+{
+    return m_riskSideHasBeenSet;
+}
+
+string HighRiskAssetsDetail::GetResourceRegion() const
+{
+    return m_resourceRegion;
+}
+
+void HighRiskAssetsDetail::SetResourceRegion(const string& _resourceRegion)
+{
+    m_resourceRegion = _resourceRegion;
+    m_resourceRegionHasBeenSet = true;
+}
+
+bool HighRiskAssetsDetail::ResourceRegionHasBeenSet() const
+{
+    return m_resourceRegionHasBeenSet;
 }
 

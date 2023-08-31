@@ -29,6 +29,12 @@
 #include <tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/CreateInstanceNewRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/CreateInstanceNewResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DeleteBackUpDataRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DeleteBackUpDataResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeBackUpJobRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeBackUpJobResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeBackUpJobDetailRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeBackUpJobDetailResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h>
@@ -59,6 +65,8 @@
 #include <tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/OpenBackUpRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/OpenBackUpResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/RecoverBackUpJobRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/RecoverBackUpJobResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ResizeDiskRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/ResizeDiskResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ScaleOutInstanceRequest.h>
@@ -88,6 +96,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceNewResponse> CreateInstanceNewOutcome;
                 typedef std::future<CreateInstanceNewOutcome> CreateInstanceNewOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::CreateInstanceNewRequest&, CreateInstanceNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBackUpDataResponse> DeleteBackUpDataOutcome;
+                typedef std::future<DeleteBackUpDataOutcome> DeleteBackUpDataOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DeleteBackUpDataRequest&, DeleteBackUpDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackUpDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackUpJobResponse> DescribeBackUpJobOutcome;
+                typedef std::future<DescribeBackUpJobOutcome> DescribeBackUpJobOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeBackUpJobRequest&, DescribeBackUpJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackUpJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackUpJobDetailResponse> DescribeBackUpJobDetailOutcome;
+                typedef std::future<DescribeBackUpJobDetailOutcome> DescribeBackUpJobDetailOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeBackUpJobDetailRequest&, DescribeBackUpJobDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackUpJobDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackUpScheduleResponse> DescribeBackUpScheduleOutcome;
                 typedef std::future<DescribeBackUpScheduleOutcome> DescribeBackUpScheduleOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeBackUpScheduleRequest&, DescribeBackUpScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackUpScheduleAsyncHandler;
@@ -133,6 +150,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenBackUpResponse> OpenBackUpOutcome;
                 typedef std::future<OpenBackUpOutcome> OpenBackUpOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::OpenBackUpRequest&, OpenBackUpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenBackUpAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecoverBackUpJobResponse> RecoverBackUpJobOutcome;
+                typedef std::future<RecoverBackUpJobOutcome> RecoverBackUpJobOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::RecoverBackUpJobRequest&, RecoverBackUpJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecoverBackUpJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResizeDiskResponse> ResizeDiskOutcome;
                 typedef std::future<ResizeDiskOutcome> ResizeDiskOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::ResizeDiskRequest&, ResizeDiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDiskAsyncHandler;
@@ -171,6 +191,33 @@ namespace TencentCloud
                 CreateInstanceNewOutcome CreateInstanceNew(const Model::CreateInstanceNewRequest &request);
                 void CreateInstanceNewAsync(const Model::CreateInstanceNewRequest& request, const CreateInstanceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstanceNewOutcomeCallable CreateInstanceNewCallable(const Model::CreateInstanceNewRequest& request);
+
+                /**
+                 *删除备份数据
+                 * @param req DeleteBackUpDataRequest
+                 * @return DeleteBackUpDataOutcome
+                 */
+                DeleteBackUpDataOutcome DeleteBackUpData(const Model::DeleteBackUpDataRequest &request);
+                void DeleteBackUpDataAsync(const Model::DeleteBackUpDataRequest& request, const DeleteBackUpDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBackUpDataOutcomeCallable DeleteBackUpDataCallable(const Model::DeleteBackUpDataRequest& request);
+
+                /**
+                 *查询备份任务列表
+                 * @param req DescribeBackUpJobRequest
+                 * @return DescribeBackUpJobOutcome
+                 */
+                DescribeBackUpJobOutcome DescribeBackUpJob(const Model::DescribeBackUpJobRequest &request);
+                void DescribeBackUpJobAsync(const Model::DescribeBackUpJobRequest& request, const DescribeBackUpJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackUpJobOutcomeCallable DescribeBackUpJobCallable(const Model::DescribeBackUpJobRequest& request);
+
+                /**
+                 *查询备份任务详情
+                 * @param req DescribeBackUpJobDetailRequest
+                 * @return DescribeBackUpJobDetailOutcome
+                 */
+                DescribeBackUpJobDetailOutcome DescribeBackUpJobDetail(const Model::DescribeBackUpJobDetailRequest &request);
+                void DescribeBackUpJobDetailAsync(const Model::DescribeBackUpJobDetailRequest& request, const DescribeBackUpJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackUpJobDetailOutcomeCallable DescribeBackUpJobDetailCallable(const Model::DescribeBackUpJobDetailRequest& request);
 
                 /**
                  *查询备份策略信息
@@ -306,6 +353,15 @@ namespace TencentCloud
                 OpenBackUpOutcome OpenBackUp(const Model::OpenBackUpRequest &request);
                 void OpenBackUpAsync(const Model::OpenBackUpRequest& request, const OpenBackUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenBackUpOutcomeCallable OpenBackUpCallable(const Model::OpenBackUpRequest& request);
+
+                /**
+                 *备份恢复
+                 * @param req RecoverBackUpJobRequest
+                 * @return RecoverBackUpJobOutcome
+                 */
+                RecoverBackUpJobOutcome RecoverBackUpJob(const Model::RecoverBackUpJobRequest &request);
+                void RecoverBackUpJobAsync(const Model::RecoverBackUpJobRequest& request, const RecoverBackUpJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecoverBackUpJobOutcomeCallable RecoverBackUpJobCallable(const Model::RecoverBackUpJobRequest& request);
 
                 /**
                  *扩容磁盘，包含扩容数据节点，zk节点

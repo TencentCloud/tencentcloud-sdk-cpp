@@ -29,7 +29,8 @@ DescribeDSPAESDiscoveryTaskResultDetailRequest::DescribeDSPAESDiscoveryTaskResul
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_categoryIdListHasBeenSet(false),
-    m_levelIdHasBeenSet(false)
+    m_levelIdHasBeenSet(false),
+    m_dbNameHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string DescribeDSPAESDiscoveryTaskResultDetailRequest::ToJsonString() const
         string key = "LevelId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_levelId, allocator);
+    }
+
+    if (m_dbNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -219,6 +228,22 @@ void DescribeDSPAESDiscoveryTaskResultDetailRequest::SetLevelId(const int64_t& _
 bool DescribeDSPAESDiscoveryTaskResultDetailRequest::LevelIdHasBeenSet() const
 {
     return m_levelIdHasBeenSet;
+}
+
+string DescribeDSPAESDiscoveryTaskResultDetailRequest::GetDbName() const
+{
+    return m_dbName;
+}
+
+void DescribeDSPAESDiscoveryTaskResultDetailRequest::SetDbName(const string& _dbName)
+{
+    m_dbName = _dbName;
+    m_dbNameHasBeenSet = true;
+}
+
+bool DescribeDSPAESDiscoveryTaskResultDetailRequest::DbNameHasBeenSet() const
+{
+    return m_dbNameHasBeenSet;
 }
 
 

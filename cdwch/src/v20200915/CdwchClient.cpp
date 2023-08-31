@@ -169,6 +169,135 @@ CdwchClient::CreateInstanceNewOutcomeCallable CdwchClient::CreateInstanceNewCall
     return task->get_future();
 }
 
+CdwchClient::DeleteBackUpDataOutcome CdwchClient::DeleteBackUpData(const DeleteBackUpDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBackUpData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBackUpDataResponse rsp = DeleteBackUpDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBackUpDataOutcome(rsp);
+        else
+            return DeleteBackUpDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBackUpDataOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DeleteBackUpDataAsync(const DeleteBackUpDataRequest& request, const DeleteBackUpDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBackUpData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DeleteBackUpDataOutcomeCallable CdwchClient::DeleteBackUpDataCallable(const DeleteBackUpDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBackUpDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBackUpData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwchClient::DescribeBackUpJobOutcome CdwchClient::DescribeBackUpJob(const DescribeBackUpJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackUpJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackUpJobResponse rsp = DescribeBackUpJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackUpJobOutcome(rsp);
+        else
+            return DescribeBackUpJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackUpJobOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeBackUpJobAsync(const DescribeBackUpJobRequest& request, const DescribeBackUpJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackUpJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeBackUpJobOutcomeCallable CdwchClient::DescribeBackUpJobCallable(const DescribeBackUpJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackUpJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackUpJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwchClient::DescribeBackUpJobDetailOutcome CdwchClient::DescribeBackUpJobDetail(const DescribeBackUpJobDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackUpJobDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackUpJobDetailResponse rsp = DescribeBackUpJobDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackUpJobDetailOutcome(rsp);
+        else
+            return DescribeBackUpJobDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackUpJobDetailOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeBackUpJobDetailAsync(const DescribeBackUpJobDetailRequest& request, const DescribeBackUpJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackUpJobDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeBackUpJobDetailOutcomeCallable CdwchClient::DescribeBackUpJobDetailCallable(const DescribeBackUpJobDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackUpJobDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackUpJobDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::DescribeBackUpScheduleOutcome CdwchClient::DescribeBackUpSchedule(const DescribeBackUpScheduleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackUpSchedule");
@@ -807,6 +936,49 @@ CdwchClient::OpenBackUpOutcomeCallable CdwchClient::OpenBackUpCallable(const Ope
         [this, request]()
         {
             return this->OpenBackUp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwchClient::RecoverBackUpJobOutcome CdwchClient::RecoverBackUpJob(const RecoverBackUpJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecoverBackUpJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecoverBackUpJobResponse rsp = RecoverBackUpJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecoverBackUpJobOutcome(rsp);
+        else
+            return RecoverBackUpJobOutcome(o.GetError());
+    }
+    else
+    {
+        return RecoverBackUpJobOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::RecoverBackUpJobAsync(const RecoverBackUpJobRequest& request, const RecoverBackUpJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecoverBackUpJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::RecoverBackUpJobOutcomeCallable CdwchClient::RecoverBackUpJobCallable(const RecoverBackUpJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecoverBackUpJobOutcome()>>(
+        [this, request]()
+        {
+            return this->RecoverBackUpJob(request);
         }
     );
 

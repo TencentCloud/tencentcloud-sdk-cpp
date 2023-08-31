@@ -296,6 +296,31 @@ namespace TencentCloud
                      */
                     bool LevelNameHasBeenSet() const;
 
+                    /**
+                     * 获取分级分数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LevelRiskScore 分级分数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLevelRiskScore() const;
+
+                    /**
+                     * 设置分级分数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _levelRiskScore 分级分数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLevelRiskScore(const int64_t& _levelRiskScore);
+
+                    /**
+                     * 判断参数 LevelRiskScore 是否已赋值
+                     * @return LevelRiskScore 是否已赋值
+                     * 
+                     */
+                    bool LevelRiskScoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +392,13 @@ namespace TencentCloud
                      */
                     std::string m_levelName;
                     bool m_levelNameHasBeenSet;
+
+                    /**
+                     * 分级分数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_levelRiskScore;
+                    bool m_levelRiskScoreHasBeenSet;
 
                 };
             }

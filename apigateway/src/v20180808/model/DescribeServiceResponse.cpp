@@ -48,7 +48,8 @@ DescribeServiceResponse::DescribeServiceResponse() :
     m_instanceNameHasBeenSet(false),
     m_setTypeHasBeenSet(false),
     m_deploymentTypeHasBeenSet(false),
-    m_specialUseHasBeenSet(false)
+    m_specialUseHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false)
 {
 }
 
@@ -372,6 +373,16 @@ CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
         m_specialUseHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UniqVpcId") && !rsp["UniqVpcId"].IsNull())
+    {
+        if (!rsp["UniqVpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqVpcId = string(rsp["UniqVpcId"].GetString());
+        m_uniqVpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -611,6 +622,14 @@ string DescribeServiceResponse::ToJsonString() const
         string key = "SpecialUse";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_specialUse.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -873,6 +892,16 @@ string DescribeServiceResponse::GetSpecialUse() const
 bool DescribeServiceResponse::SpecialUseHasBeenSet() const
 {
     return m_specialUseHasBeenSet;
+}
+
+string DescribeServiceResponse::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+bool DescribeServiceResponse::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
 }
 
 

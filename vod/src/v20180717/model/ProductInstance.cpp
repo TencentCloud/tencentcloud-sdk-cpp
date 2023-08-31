@@ -28,6 +28,7 @@ ProductInstance::ProductInstance() :
     m_lastConsumeDateHasBeenSet(false),
     m_bindStatusHasBeenSet(false),
     m_productInstanceResourceSetHasBeenSet(false),
+    m_resourceSetHasBeenSet(false),
     m_productInstanceStatusHasBeenSet(false),
     m_refundStatusHasBeenSet(false),
     m_renewStatusHasBeenSet(false)
@@ -117,6 +118,26 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
             m_productInstanceResourceSet.push_back(item);
         }
         m_productInstanceResourceSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceSet") && !value["ResourceSet"].IsNull())
+    {
+        if (!value["ResourceSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.ResourceSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResourceSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ProductInstanceResource item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceSet.push_back(item);
+        }
+        m_resourceSetHasBeenSet = true;
     }
 
     if (value.HasMember("ProductInstanceStatus") && !value["ProductInstanceStatus"].IsNull())
@@ -213,6 +234,21 @@ void ProductInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
 
         int i=0;
         for (auto itr = m_productInstanceResourceSet.begin(); itr != m_productInstanceResourceSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_resourceSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceSet.begin(); itr != m_resourceSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -356,6 +392,22 @@ void ProductInstance::SetProductInstanceResourceSet(const vector<ProductInstance
 bool ProductInstance::ProductInstanceResourceSetHasBeenSet() const
 {
     return m_productInstanceResourceSetHasBeenSet;
+}
+
+vector<ProductInstanceResource> ProductInstance::GetResourceSet() const
+{
+    return m_resourceSet;
+}
+
+void ProductInstance::SetResourceSet(const vector<ProductInstanceResource>& _resourceSet)
+{
+    m_resourceSet = _resourceSet;
+    m_resourceSetHasBeenSet = true;
+}
+
+bool ProductInstance::ResourceSetHasBeenSet() const
+{
+    return m_resourceSetHasBeenSet;
 }
 
 string ProductInstance::GetProductInstanceStatus() const

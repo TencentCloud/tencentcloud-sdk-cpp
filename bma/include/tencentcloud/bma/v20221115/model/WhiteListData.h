@@ -172,6 +172,31 @@ namespace TencentCloud
                     bool WhiteListHasBeenSet() const;
 
                     /**
+                     * 获取白名单备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Remark 白名单备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置白名单备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _remark 白名单备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
                      * 获取新增时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsertTime 新增时间
@@ -232,6 +257,13 @@ namespace TencentCloud
                      */
                     std::string m_whiteList;
                     bool m_whiteListHasBeenSet;
+
+                    /**
+                     * 白名单备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                     /**
                      * 新增时间

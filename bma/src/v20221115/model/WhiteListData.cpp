@@ -26,6 +26,7 @@ WhiteListData::WhiteListData() :
     m_brandNameHasBeenSet(false),
     m_assetsTypeHasBeenSet(false),
     m_whiteListHasBeenSet(false),
+    m_remarkHasBeenSet(false),
     m_insertTimeHasBeenSet(false)
 {
 }
@@ -85,6 +86,16 @@ CoreInternalOutcome WhiteListData::Deserialize(const rapidjson::Value &value)
         m_whiteListHasBeenSet = true;
     }
 
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WhiteListData.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
     if (value.HasMember("InsertTime") && !value["InsertTime"].IsNull())
     {
         if (!value["InsertTime"].IsString())
@@ -140,6 +151,14 @@ void WhiteListData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "WhiteList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_whiteList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_insertTimeHasBeenSet)
@@ -231,6 +250,22 @@ void WhiteListData::SetWhiteList(const string& _whiteList)
 bool WhiteListData::WhiteListHasBeenSet() const
 {
     return m_whiteListHasBeenSet;
+}
+
+string WhiteListData::GetRemark() const
+{
+    return m_remark;
+}
+
+void WhiteListData::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool WhiteListData::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 string WhiteListData::GetInsertTime() const

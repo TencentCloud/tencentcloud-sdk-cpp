@@ -72,6 +72,56 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
+                     * 获取数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataSourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataSourceType() const;
+
+                    /**
+                     * 设置数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataSourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataSourceType(const std::string& _dataSourceType);
+
+                    /**
+                     * 判断参数 DataSourceType 是否已赋值
+                     * @return DataSourceType 是否已赋值
+                     * 
+                     */
+                    bool DataSourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataSourceName 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataSourceName() const;
+
+                    /**
+                     * 设置数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataSourceName 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataSourceName(const std::string& _dataSourceName);
+
+                    /**
+                     * 判断参数 DataSourceName 是否已赋值
+                     * @return DataSourceName 是否已赋值
+                     * 
+                     */
+                    bool DataSourceNameHasBeenSet() const;
+
+                    /**
                      * 获取资产对象名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetsName 资产对象名称
@@ -171,6 +221,56 @@ namespace TencentCloud
                      */
                     bool TotalRiskCountHasBeenSet() const;
 
+                    /**
+                     * 获取风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskSide 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRiskSide() const;
+
+                    /**
+                     * 设置风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _riskSide 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRiskSide(const std::string& _riskSide);
+
+                    /**
+                     * 判断参数 RiskSide 是否已赋值
+                     * @return RiskSide 是否已赋值
+                     * 
+                     */
+                    bool RiskSideHasBeenSet() const;
+
+                    /**
+                     * 获取地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceRegion 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceRegion() const;
+
+                    /**
+                     * 设置地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceRegion 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceRegion(const std::string& _resourceRegion);
+
+                    /**
+                     * 判断参数 ResourceRegion 是否已赋值
+                     * @return ResourceRegion 是否已赋值
+                     * 
+                     */
+                    bool ResourceRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +279,20 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataSourceType;
+                    bool m_dataSourceTypeHasBeenSet;
+
+                    /**
+                     * 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataSourceName;
+                    bool m_dataSourceNameHasBeenSet;
 
                     /**
                      * 资产对象名称
@@ -207,6 +321,20 @@ namespace TencentCloud
                      */
                     int64_t m_totalRiskCount;
                     bool m_totalRiskCountHasBeenSet;
+
+                    /**
+                     * 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_riskSide;
+                    bool m_riskSideHasBeenSet;
+
+                    /**
+                     * 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceRegion;
+                    bool m_resourceRegionHasBeenSet;
 
                 };
             }

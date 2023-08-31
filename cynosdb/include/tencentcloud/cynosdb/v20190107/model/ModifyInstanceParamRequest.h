@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取集群参数列表
-                     * @return ClusterParamList 集群参数列表
+                     * 获取集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
+                     * @return ClusterParamList 集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
                      * 
                      */
                     std::vector<ModifyParamItem> GetClusterParamList() const;
 
                     /**
-                     * 设置集群参数列表
-                     * @param _clusterParamList 集群参数列表
+                     * 设置集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
+                     * @param _clusterParamList 集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
                      * 
                      */
                     void SetClusterParamList(const std::vector<ModifyParamItem>& _clusterParamList);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ClusterParamListHasBeenSet() const;
 
                     /**
-                     * 获取实例参数列表
-                     * @return InstanceParamList 实例参数列表
+                     * 获取实例参数列表，例如[{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
+                     * @return InstanceParamList 实例参数列表，例如[{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
                      * 
                      */
                     std::vector<ModifyParamItem> GetInstanceParamList() const;
 
                     /**
-                     * 设置实例参数列表
-                     * @param _instanceParamList 实例参数列表
+                     * 设置实例参数列表，例如[{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
+                     * @param _instanceParamList 实例参数列表，例如[{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
                      * 
                      */
                     void SetInstanceParamList(const std::vector<ModifyParamItem>& _instanceParamList);
@@ -163,13 +163,13 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 集群参数列表
+                     * 集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
                      */
                     std::vector<ModifyParamItem> m_clusterParamList;
                     bool m_clusterParamListHasBeenSet;
 
                     /**
-                     * 实例参数列表
+                     * 实例参数列表，例如[{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
                      */
                     std::vector<ModifyParamItem> m_instanceParamList;
                     bool m_instanceParamListHasBeenSet;

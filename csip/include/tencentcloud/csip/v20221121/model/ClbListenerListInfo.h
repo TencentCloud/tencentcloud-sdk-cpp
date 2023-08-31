@@ -346,6 +346,31 @@ namespace TencentCloud
                      */
                     bool DomainHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancerDomain 负载均衡域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLoadBalancerDomain() const;
+
+                    /**
+                     * 设置负载均衡域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _loadBalancerDomain 负载均衡域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLoadBalancerDomain(const std::string& _loadBalancerDomain);
+
+                    /**
+                     * 判断参数 LoadBalancerDomain 是否已赋值
+                     * @return LoadBalancerDomain 是否已赋值
+                     * 
+                     */
+                    bool LoadBalancerDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +456,13 @@ namespace TencentCloud
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
+
+                    /**
+                     * 负载均衡域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_loadBalancerDomain;
+                    bool m_loadBalancerDomainHasBeenSet;
 
                 };
             }

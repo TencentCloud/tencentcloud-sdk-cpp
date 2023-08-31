@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool WhiteListsHasBeenSet() const;
 
+                    /**
+                     * 获取白名单备注
+                     * @return Remark 白名单备注
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置白名单备注
+                     * @param _remark 白名单备注
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_whiteLists;
                     bool m_whiteListsHasBeenSet;
+
+                    /**
+                     * 白名单备注
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                 };
             }

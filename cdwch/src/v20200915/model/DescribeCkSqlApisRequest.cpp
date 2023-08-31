@@ -26,7 +26,8 @@ DescribeCkSqlApisRequest::DescribeCkSqlApisRequest() :
     m_instanceIdHasBeenSet(false),
     m_apiTypeHasBeenSet(false),
     m_clusterHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_userTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeCkSqlApisRequest::ToJsonString() const
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeCkSqlApisRequest::SetUserName(const string& _userName)
 bool DescribeCkSqlApisRequest::UserNameHasBeenSet() const
 {
     return m_userNameHasBeenSet;
+}
+
+string DescribeCkSqlApisRequest::GetUserType() const
+{
+    return m_userType;
+}
+
+void DescribeCkSqlApisRequest::SetUserType(const string& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool DescribeCkSqlApisRequest::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
 }
 
 

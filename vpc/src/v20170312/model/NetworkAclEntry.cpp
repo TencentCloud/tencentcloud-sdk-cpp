@@ -21,13 +21,16 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 NetworkAclEntry::NetworkAclEntry() :
-    m_modifyTimeHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_portHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
     m_ipv6CidrBlockHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false),
+    m_priorityHasBeenSet(false),
+    m_networkAclIpv4EntryIdHasBeenSet(false),
+    m_networkAclIpv6EntryIdHasBeenSet(false)
 {
 }
 
@@ -35,16 +38,6 @@ CoreInternalOutcome NetworkAclEntry::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
-    {
-        if (!value["ModifyTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_modifyTime = string(value["ModifyTime"].GetString());
-        m_modifyTimeHasBeenSet = true;
-    }
 
     if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
     {
@@ -106,20 +99,52 @@ CoreInternalOutcome NetworkAclEntry::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Priority") && !value["Priority"].IsNull())
+    {
+        if (!value["Priority"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_priority = value["Priority"].GetInt64();
+        m_priorityHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkAclIpv4EntryId") && !value["NetworkAclIpv4EntryId"].IsNull())
+    {
+        if (!value["NetworkAclIpv4EntryId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.NetworkAclIpv4EntryId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkAclIpv4EntryId = string(value["NetworkAclIpv4EntryId"].GetString());
+        m_networkAclIpv4EntryIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkAclIpv6EntryId") && !value["NetworkAclIpv6EntryId"].IsNull())
+    {
+        if (!value["NetworkAclIpv6EntryId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.NetworkAclIpv6EntryId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkAclIpv6EntryId = string(value["NetworkAclIpv6EntryId"].GetString());
+        m_networkAclIpv6EntryIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void NetworkAclEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_modifyTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ModifyTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_protocolHasBeenSet)
     {
@@ -169,24 +194,40 @@ void NetworkAclEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_priorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Priority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_priority, allocator);
+    }
+
+    if (m_networkAclIpv4EntryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkAclIpv4EntryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkAclIpv4EntryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkAclIpv6EntryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkAclIpv6EntryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkAclIpv6EntryId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string NetworkAclEntry::GetModifyTime() const
-{
-    return m_modifyTime;
-}
-
-void NetworkAclEntry::SetModifyTime(const string& _modifyTime)
-{
-    m_modifyTime = _modifyTime;
-    m_modifyTimeHasBeenSet = true;
-}
-
-bool NetworkAclEntry::ModifyTimeHasBeenSet() const
-{
-    return m_modifyTimeHasBeenSet;
-}
 
 string NetworkAclEntry::GetProtocol() const
 {
@@ -282,5 +323,69 @@ void NetworkAclEntry::SetDescription(const string& _description)
 bool NetworkAclEntry::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string NetworkAclEntry::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void NetworkAclEntry::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool NetworkAclEntry::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
+}
+
+int64_t NetworkAclEntry::GetPriority() const
+{
+    return m_priority;
+}
+
+void NetworkAclEntry::SetPriority(const int64_t& _priority)
+{
+    m_priority = _priority;
+    m_priorityHasBeenSet = true;
+}
+
+bool NetworkAclEntry::PriorityHasBeenSet() const
+{
+    return m_priorityHasBeenSet;
+}
+
+string NetworkAclEntry::GetNetworkAclIpv4EntryId() const
+{
+    return m_networkAclIpv4EntryId;
+}
+
+void NetworkAclEntry::SetNetworkAclIpv4EntryId(const string& _networkAclIpv4EntryId)
+{
+    m_networkAclIpv4EntryId = _networkAclIpv4EntryId;
+    m_networkAclIpv4EntryIdHasBeenSet = true;
+}
+
+bool NetworkAclEntry::NetworkAclIpv4EntryIdHasBeenSet() const
+{
+    return m_networkAclIpv4EntryIdHasBeenSet;
+}
+
+string NetworkAclEntry::GetNetworkAclIpv6EntryId() const
+{
+    return m_networkAclIpv6EntryId;
+}
+
+void NetworkAclEntry::SetNetworkAclIpv6EntryId(const string& _networkAclIpv6EntryId)
+{
+    m_networkAclIpv6EntryId = _networkAclIpv6EntryId;
+    m_networkAclIpv6EntryIdHasBeenSet = true;
+}
+
+bool NetworkAclEntry::NetworkAclIpv6EntryIdHasBeenSet() const
+{
+    return m_networkAclIpv6EntryIdHasBeenSet;
 }
 

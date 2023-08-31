@@ -42,7 +42,8 @@ CreateInstancePreRequest::CreateInstancePreRequest() :
     m_multiZoneFlagHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
     m_publicNetworkMonthlyHasBeenSet(false),
-    m_instanceNumHasBeenSet(false)
+    m_instanceNumHasBeenSet(false),
+    m_autoVoucherHasBeenSet(false)
 {
 }
 
@@ -223,6 +224,14 @@ string CreateInstancePreRequest::ToJsonString() const
         string key = "InstanceNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_instanceNum, allocator);
+    }
+
+    if (m_autoVoucherHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoVoucher";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoVoucher, allocator);
     }
 
 
@@ -551,6 +560,22 @@ void CreateInstancePreRequest::SetInstanceNum(const int64_t& _instanceNum)
 bool CreateInstancePreRequest::InstanceNumHasBeenSet() const
 {
     return m_instanceNumHasBeenSet;
+}
+
+int64_t CreateInstancePreRequest::GetAutoVoucher() const
+{
+    return m_autoVoucher;
+}
+
+void CreateInstancePreRequest::SetAutoVoucher(const int64_t& _autoVoucher)
+{
+    m_autoVoucher = _autoVoucher;
+    m_autoVoucherHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::AutoVoucherHasBeenSet() const
+{
+    return m_autoVoucherHasBeenSet;
 }
 
 

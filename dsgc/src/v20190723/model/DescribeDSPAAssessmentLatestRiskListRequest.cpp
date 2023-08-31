@@ -33,7 +33,8 @@ DescribeDSPAAssessmentLatestRiskListRequest::DescribeDSPAAssessmentLatestRiskLis
     m_statusHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_riskLevelHasBeenSet(false)
+    m_riskLevelHasBeenSet(false),
+    m_riskSideHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,19 @@ string DescribeDSPAAssessmentLatestRiskListRequest::ToJsonString() const
         string key = "RiskLevel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_riskLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskSideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskSide";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_riskSide.begin(); itr != m_riskSide.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -314,6 +328,22 @@ void DescribeDSPAAssessmentLatestRiskListRequest::SetRiskLevel(const string& _ri
 bool DescribeDSPAAssessmentLatestRiskListRequest::RiskLevelHasBeenSet() const
 {
     return m_riskLevelHasBeenSet;
+}
+
+vector<string> DescribeDSPAAssessmentLatestRiskListRequest::GetRiskSide() const
+{
+    return m_riskSide;
+}
+
+void DescribeDSPAAssessmentLatestRiskListRequest::SetRiskSide(const vector<string>& _riskSide)
+{
+    m_riskSide = _riskSide;
+    m_riskSideHasBeenSet = true;
+}
+
+bool DescribeDSPAAssessmentLatestRiskListRequest::RiskSideHasBeenSet() const
+{
+    return m_riskSideHasBeenSet;
 }
 
 

@@ -796,6 +796,31 @@ namespace TencentCloud
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取数据源页面展示类型，与Type对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShowType 数据源页面展示类型，与Type对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetShowType() const;
+
+                    /**
+                     * 设置数据源页面展示类型，与Type对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _showType 数据源页面展示类型，与Type对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShowType(const std::string& _showType);
+
+                    /**
+                     * 判断参数 ShowType 是否已赋值
+                     * @return ShowType 是否已赋值
+                     * 
+                     */
+                    bool ShowTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1007,6 +1032,13 @@ namespace TencentCloud
                      */
                     int64_t m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
+
+                    /**
+                     * 数据源页面展示类型，与Type对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_showType;
+                    bool m_showTypeHasBeenSet;
 
                 };
             }

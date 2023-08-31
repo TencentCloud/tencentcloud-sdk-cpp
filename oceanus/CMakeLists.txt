@@ -109,6 +109,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/SlotSharingGroupSpec.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/ExpertModeConfiguration.h
+  include/tencentcloud/oceanus/v20190422/model/Order.h
   include/tencentcloud/oceanus/v20190422/model/CopyJobItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h
@@ -206,6 +207,7 @@ set(oceanus_src
   src/v20190422/model/SlotSharingGroupSpec.cpp
   src/v20190422/model/DescribeJobsResponse.cpp
   src/v20190422/model/ExpertModeConfiguration.cpp
+  src/v20190422/model/Order.cpp
   src/v20190422/model/CopyJobItem.cpp
   src/v20190422/model/DescribeTreeJobsRequest.cpp
   src/v20190422/model/DescribeJobConfigsResponse.cpp

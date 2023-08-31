@@ -38,7 +38,8 @@ AssessmentRisk::AssessmentRisk() :
     m_dataSourceNameHasBeenSet(false),
     m_assetNameHasBeenSet(false),
     m_securityProductHasBeenSet(false),
-    m_riskTypeHasBeenSet(false)
+    m_riskTypeHasBeenSet(false),
+    m_riskSideHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome AssessmentRisk::Deserialize(const rapidjson::Value &value)
         m_riskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskSide") && !value["RiskSide"].IsNull())
+    {
+        if (!value["RiskSide"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssessmentRisk.RiskSide` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskSide = string(value["RiskSide"].GetString());
+        m_riskSideHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +404,14 @@ void AssessmentRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RiskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_riskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskSideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskSide";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskSide.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -684,5 +703,21 @@ void AssessmentRisk::SetRiskType(const string& _riskType)
 bool AssessmentRisk::RiskTypeHasBeenSet() const
 {
     return m_riskTypeHasBeenSet;
+}
+
+string AssessmentRisk::GetRiskSide() const
+{
+    return m_riskSide;
+}
+
+void AssessmentRisk::SetRiskSide(const string& _riskSide)
+{
+    m_riskSide = _riskSide;
+    m_riskSideHasBeenSet = true;
+}
+
+bool AssessmentRisk::RiskSideHasBeenSet() const
+{
+    return m_riskSideHasBeenSet;
 }
 

@@ -420,6 +420,22 @@ namespace TencentCloud
                      */
                     bool SpecialUseHasBeenSet() const;
 
+                    /**
+                     * 获取vpc属性，存量可能为空字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UniqVpcId vpc属性，存量可能为空字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     * 
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -583,6 +599,13 @@ namespace TencentCloud
                      */
                     std::string m_specialUse;
                     bool m_specialUseHasBeenSet;
+
+                    /**
+                     * vpc属性，存量可能为空字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
 
                 };
             }

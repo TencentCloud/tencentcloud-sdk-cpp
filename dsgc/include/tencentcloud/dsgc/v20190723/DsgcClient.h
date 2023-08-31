@@ -135,6 +135,10 @@
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskOverviewResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskProcessHistoryRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskProcessHistoryResponse.h>
+#include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskSideDistributedRequest.h>
+#include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskSideDistributedResponse.h>
+#include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskSideListRequest.h>
+#include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskSideListResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskTemplateDetailRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskTemplateDetailResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskTemplateVulnerableListRequest.h>
@@ -497,6 +501,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDSPAAssessmentRiskProcessHistoryResponse> DescribeDSPAAssessmentRiskProcessHistoryOutcome;
                 typedef std::future<DescribeDSPAAssessmentRiskProcessHistoryOutcome> DescribeDSPAAssessmentRiskProcessHistoryOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeDSPAAssessmentRiskProcessHistoryRequest&, DescribeDSPAAssessmentRiskProcessHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDSPAAssessmentRiskProcessHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDSPAAssessmentRiskSideDistributedResponse> DescribeDSPAAssessmentRiskSideDistributedOutcome;
+                typedef std::future<DescribeDSPAAssessmentRiskSideDistributedOutcome> DescribeDSPAAssessmentRiskSideDistributedOutcomeCallable;
+                typedef std::function<void(const DsgcClient*, const Model::DescribeDSPAAssessmentRiskSideDistributedRequest&, DescribeDSPAAssessmentRiskSideDistributedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDSPAAssessmentRiskSideDistributedAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDSPAAssessmentRiskSideListResponse> DescribeDSPAAssessmentRiskSideListOutcome;
+                typedef std::future<DescribeDSPAAssessmentRiskSideListOutcome> DescribeDSPAAssessmentRiskSideListOutcomeCallable;
+                typedef std::function<void(const DsgcClient*, const Model::DescribeDSPAAssessmentRiskSideListRequest&, DescribeDSPAAssessmentRiskSideListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDSPAAssessmentRiskSideListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDSPAAssessmentRiskTemplateDetailResponse> DescribeDSPAAssessmentRiskTemplateDetailOutcome;
                 typedef std::future<DescribeDSPAAssessmentRiskTemplateDetailOutcome> DescribeDSPAAssessmentRiskTemplateDetailOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeDSPAAssessmentRiskTemplateDetailRequest&, DescribeDSPAAssessmentRiskTemplateDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDSPAAssessmentRiskTemplateDetailAsyncHandler;
@@ -1283,6 +1293,24 @@ namespace TencentCloud
                 DescribeDSPAAssessmentRiskProcessHistoryOutcome DescribeDSPAAssessmentRiskProcessHistory(const Model::DescribeDSPAAssessmentRiskProcessHistoryRequest &request);
                 void DescribeDSPAAssessmentRiskProcessHistoryAsync(const Model::DescribeDSPAAssessmentRiskProcessHistoryRequest& request, const DescribeDSPAAssessmentRiskProcessHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDSPAAssessmentRiskProcessHistoryOutcomeCallable DescribeDSPAAssessmentRiskProcessHistoryCallable(const Model::DescribeDSPAAssessmentRiskProcessHistoryRequest& request);
+
+                /**
+                 *风险评估概览页，查询风险面的分布
+                 * @param req DescribeDSPAAssessmentRiskSideDistributedRequest
+                 * @return DescribeDSPAAssessmentRiskSideDistributedOutcome
+                 */
+                DescribeDSPAAssessmentRiskSideDistributedOutcome DescribeDSPAAssessmentRiskSideDistributed(const Model::DescribeDSPAAssessmentRiskSideDistributedRequest &request);
+                void DescribeDSPAAssessmentRiskSideDistributedAsync(const Model::DescribeDSPAAssessmentRiskSideDistributedRequest& request, const DescribeDSPAAssessmentRiskSideDistributedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDSPAAssessmentRiskSideDistributedOutcomeCallable DescribeDSPAAssessmentRiskSideDistributedCallable(const Model::DescribeDSPAAssessmentRiskSideDistributedRequest& request);
+
+                /**
+                 *风险评估概览页，查询风险面的分布
+                 * @param req DescribeDSPAAssessmentRiskSideListRequest
+                 * @return DescribeDSPAAssessmentRiskSideListOutcome
+                 */
+                DescribeDSPAAssessmentRiskSideListOutcome DescribeDSPAAssessmentRiskSideList(const Model::DescribeDSPAAssessmentRiskSideListRequest &request);
+                void DescribeDSPAAssessmentRiskSideListAsync(const Model::DescribeDSPAAssessmentRiskSideListRequest& request, const DescribeDSPAAssessmentRiskSideListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDSPAAssessmentRiskSideListOutcomeCallable DescribeDSPAAssessmentRiskSideListCallable(const Model::DescribeDSPAAssessmentRiskSideListRequest& request);
 
                 /**
                  *风险项页面--查看评估模版详情

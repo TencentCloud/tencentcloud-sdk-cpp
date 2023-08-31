@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签类型 : U(用户标签)
-                     * @return TagType 标签类型 : U(用户标签)
+                     * 获取标签类型 : U(用户标签)/S(系统标签)
+                     * @return TagType 标签类型 : U(用户标签)/S(系统标签)
                      * 
                      */
                     std::string GetTagType() const;
 
                     /**
-                     * 设置标签类型 : U(用户标签)
-                     * @param _tagType 标签类型 : U(用户标签)
+                     * 设置标签类型 : U(用户标签)/S(系统标签)
+                     * @param _tagType 标签类型 : U(用户标签)/S(系统标签)
                      * 
                      */
                     void SetTagType(const std::string& _tagType);
@@ -183,7 +183,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签类型 : U(用户标签)
+                     * 标签类型 : U(用户标签)/S(系统标签)
                      */
                     std::string m_tagType;
                     bool m_tagTypeHasBeenSet;

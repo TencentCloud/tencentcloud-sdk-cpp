@@ -27,7 +27,8 @@ ModifyDSPAAssessmentRiskLatestRequest::ModifyDSPAAssessmentRiskLatestRequest() :
     m_riskLatestTableIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_noteHasBeenSet(false),
-    m_processPeopleHasBeenSet(false)
+    m_processPeopleHasBeenSet(false),
+    m_bathRiskIdListHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ string ModifyDSPAAssessmentRiskLatestRequest::ToJsonString() const
         string key = "ProcessPeople";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_processPeople.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bathRiskIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BathRiskIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_bathRiskIdList.begin(); itr != m_bathRiskIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -164,6 +178,22 @@ void ModifyDSPAAssessmentRiskLatestRequest::SetProcessPeople(const string& _proc
 bool ModifyDSPAAssessmentRiskLatestRequest::ProcessPeopleHasBeenSet() const
 {
     return m_processPeopleHasBeenSet;
+}
+
+vector<int64_t> ModifyDSPAAssessmentRiskLatestRequest::GetBathRiskIdList() const
+{
+    return m_bathRiskIdList;
+}
+
+void ModifyDSPAAssessmentRiskLatestRequest::SetBathRiskIdList(const vector<int64_t>& _bathRiskIdList)
+{
+    m_bathRiskIdList = _bathRiskIdList;
+    m_bathRiskIdListHasBeenSet = true;
+}
+
+bool ModifyDSPAAssessmentRiskLatestRequest::BathRiskIdListHasBeenSet() const
+{
+    return m_bathRiskIdListHasBeenSet;
 }
 
 

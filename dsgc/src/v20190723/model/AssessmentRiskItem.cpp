@@ -27,7 +27,9 @@ AssessmentRiskItem::AssessmentRiskItem() :
     m_descriptionHasBeenSet(false),
     m_riskTypeHasBeenSet(false),
     m_referTemplateCountHasBeenSet(false),
-    m_supportDataSourceHasBeenSet(false)
+    m_supportDataSourceHasBeenSet(false),
+    m_riskSideHasBeenSet(false),
+    m_referTemplateListHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,36 @@ CoreInternalOutcome AssessmentRiskItem::Deserialize(const rapidjson::Value &valu
         m_supportDataSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskSide") && !value["RiskSide"].IsNull())
+    {
+        if (!value["RiskSide"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssessmentRiskItem.RiskSide` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskSide = string(value["RiskSide"].GetString());
+        m_riskSideHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReferTemplateList") && !value["ReferTemplateList"].IsNull())
+    {
+        if (!value["ReferTemplateList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AssessmentRiskItem.ReferTemplateList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ReferTemplateList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TemplateInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_referTemplateList.push_back(item);
+        }
+        m_referTemplateListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -174,6 +206,29 @@ void AssessmentRiskItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         for (auto itr = m_supportDataSource.begin(); itr != m_supportDataSource.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_riskSideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskSide";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskSide.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_referTemplateListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReferTemplateList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_referTemplateList.begin(); itr != m_referTemplateList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -290,5 +345,37 @@ void AssessmentRiskItem::SetSupportDataSource(const vector<string>& _supportData
 bool AssessmentRiskItem::SupportDataSourceHasBeenSet() const
 {
     return m_supportDataSourceHasBeenSet;
+}
+
+string AssessmentRiskItem::GetRiskSide() const
+{
+    return m_riskSide;
+}
+
+void AssessmentRiskItem::SetRiskSide(const string& _riskSide)
+{
+    m_riskSide = _riskSide;
+    m_riskSideHasBeenSet = true;
+}
+
+bool AssessmentRiskItem::RiskSideHasBeenSet() const
+{
+    return m_riskSideHasBeenSet;
+}
+
+vector<TemplateInfo> AssessmentRiskItem::GetReferTemplateList() const
+{
+    return m_referTemplateList;
+}
+
+void AssessmentRiskItem::SetReferTemplateList(const vector<TemplateInfo>& _referTemplateList)
+{
+    m_referTemplateList = _referTemplateList;
+    m_referTemplateListHasBeenSet = true;
+}
+
+bool AssessmentRiskItem::ReferTemplateListHasBeenSet() const
+{
+    return m_referTemplateListHasBeenSet;
 }
 

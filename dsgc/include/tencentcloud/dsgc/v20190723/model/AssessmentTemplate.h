@@ -289,6 +289,31 @@ namespace TencentCloud
                      */
                     bool SupportDataSourceHasBeenSet() const;
 
+                    /**
+                     * 获取是否包含攻击面风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsASMTemplate 是否包含攻击面风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsASMTemplate() const;
+
+                    /**
+                     * 设置是否包含攻击面风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isASMTemplate 是否包含攻击面风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsASMTemplate(const bool& _isASMTemplate);
+
+                    /**
+                     * 判断参数 IsASMTemplate 是否已赋值
+                     * @return IsASMTemplate 是否已赋值
+                     * 
+                     */
+                    bool IsASMTemplateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +384,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_supportDataSource;
                     bool m_supportDataSourceHasBeenSet;
+
+                    /**
+                     * 是否包含攻击面风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isASMTemplate;
+                    bool m_isASMTemplateHasBeenSet;
 
                 };
             }

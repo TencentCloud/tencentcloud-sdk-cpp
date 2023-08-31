@@ -26,6 +26,7 @@ GetEidTokenConfig::GetEidTokenConfig() :
     m_intentionModeHasBeenSet(false),
     m_intentionVerifyTextHasBeenSet(false),
     m_intentionQuestionsHasBeenSet(false),
+    m_intentionActionsHasBeenSet(false),
     m_intentionRecognitionHasBeenSet(false),
     m_isSupportHMTResidentPermitOCRHasBeenSet(false)
 {
@@ -96,6 +97,26 @@ CoreInternalOutcome GetEidTokenConfig::Deserialize(const rapidjson::Value &value
         m_intentionQuestionsHasBeenSet = true;
     }
 
+    if (value.HasMember("IntentionActions") && !value["IntentionActions"].IsNull())
+    {
+        if (!value["IntentionActions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GetEidTokenConfig.IntentionActions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IntentionActions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IntentionActionConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_intentionActions.push_back(item);
+        }
+        m_intentionActionsHasBeenSet = true;
+    }
+
     if (value.HasMember("IntentionRecognition") && !value["IntentionRecognition"].IsNull())
     {
         if (!value["IntentionRecognition"].IsBool())
@@ -164,6 +185,21 @@ void GetEidTokenConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
 
         int i=0;
         for (auto itr = m_intentionQuestions.begin(); itr != m_intentionQuestions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_intentionActionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionActions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_intentionActions.begin(); itr != m_intentionActions.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -267,6 +303,22 @@ void GetEidTokenConfig::SetIntentionQuestions(const vector<IntentionQuestion>& _
 bool GetEidTokenConfig::IntentionQuestionsHasBeenSet() const
 {
     return m_intentionQuestionsHasBeenSet;
+}
+
+vector<IntentionActionConfig> GetEidTokenConfig::GetIntentionActions() const
+{
+    return m_intentionActions;
+}
+
+void GetEidTokenConfig::SetIntentionActions(const vector<IntentionActionConfig>& _intentionActions)
+{
+    m_intentionActions = _intentionActions;
+    m_intentionActionsHasBeenSet = true;
+}
+
+bool GetEidTokenConfig::IntentionActionsHasBeenSet() const
+{
+    return m_intentionActionsHasBeenSet;
 }
 
 bool GetEidTokenConfig::GetIntentionRecognition() const

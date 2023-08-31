@@ -170,6 +170,27 @@ GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY
                      */
                     bool UserNameHasBeenSet() const;
 
+                    /**
+                     * 获取账户的类型
+                     * @return UserType 账户的类型
+                     * 
+                     */
+                    std::string GetUserType() const;
+
+                    /**
+                     * 设置账户的类型
+                     * @param _userType 账户的类型
+                     * 
+                     */
+                    void SetUserType(const std::string& _userType);
+
+                    /**
+                     * 判断参数 UserType 是否已赋值
+                     * @return UserType 是否已赋值
+                     * 
+                     */
+                    bool UserTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
+
+                    /**
+                     * 账户的类型
+                     */
+                    std::string m_userType;
+                    bool m_userTypeHasBeenSet;
 
                 };
             }

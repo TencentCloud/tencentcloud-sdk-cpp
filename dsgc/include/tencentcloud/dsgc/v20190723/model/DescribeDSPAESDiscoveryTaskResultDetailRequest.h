@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool LevelIdHasBeenSet() const;
 
+                    /**
+                     * 获取索引名称
+                     * @return DbName 索引名称
+                     * 
+                     */
+                    std::string GetDbName() const;
+
+                    /**
+                     * 设置索引名称
+                     * @param _dbName 索引名称
+                     * 
+                     */
+                    void SetDbName(const std::string& _dbName);
+
+                    /**
+                     * 判断参数 DbName 是否已赋值
+                     * @return DbName 是否已赋值
+                     * 
+                     */
+                    bool DbNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     int64_t m_levelId;
                     bool m_levelIdHasBeenSet;
+
+                    /**
+                     * 索引名称
+                     */
+                    std::string m_dbName;
+                    bool m_dbNameHasBeenSet;
 
                 };
             }

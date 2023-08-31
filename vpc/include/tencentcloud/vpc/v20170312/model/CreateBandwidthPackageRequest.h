@@ -77,10 +77,16 @@ namespace TencentCloud
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
+<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
+<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
+
                      * @return ChargeType 带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
+<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
+<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
+
                      * 
                      */
                     std::string GetChargeType() const;
@@ -90,10 +96,16 @@ namespace TencentCloud
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
+<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
+<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
+
                      * @param _chargeType 带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
+<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
+<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
+
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -246,6 +258,9 @@ namespace TencentCloud
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
+<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
+<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
+
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;

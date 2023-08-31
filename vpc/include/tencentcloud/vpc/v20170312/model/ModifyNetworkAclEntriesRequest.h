@@ -107,6 +107,27 @@ namespace TencentCloud
                      */
                     bool NetworkAclQuintupleSetHasBeenSet() const;
 
+                    /**
+                     * 获取三元组的增量更新。该接口的默认语义为全量覆盖。当需要实现增量更新语义时，设置该参数为True。
+                     * @return EnableUpdateAclEntries 三元组的增量更新。该接口的默认语义为全量覆盖。当需要实现增量更新语义时，设置该参数为True。
+                     * 
+                     */
+                    bool GetEnableUpdateAclEntries() const;
+
+                    /**
+                     * 设置三元组的增量更新。该接口的默认语义为全量覆盖。当需要实现增量更新语义时，设置该参数为True。
+                     * @param _enableUpdateAclEntries 三元组的增量更新。该接口的默认语义为全量覆盖。当需要实现增量更新语义时，设置该参数为True。
+                     * 
+                     */
+                    void SetEnableUpdateAclEntries(const bool& _enableUpdateAclEntries);
+
+                    /**
+                     * 判断参数 EnableUpdateAclEntries 是否已赋值
+                     * @return EnableUpdateAclEntries 是否已赋值
+                     * 
+                     */
+                    bool EnableUpdateAclEntriesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +147,12 @@ namespace TencentCloud
                      */
                     NetworkAclQuintupleEntries m_networkAclQuintupleSet;
                     bool m_networkAclQuintupleSetHasBeenSet;
+
+                    /**
+                     * 三元组的增量更新。该接口的默认语义为全量覆盖。当需要实现增量更新语义时，设置该参数为True。
+                     */
+                    bool m_enableUpdateAclEntries;
+                    bool m_enableUpdateAclEntriesHasBeenSet;
 
                 };
             }

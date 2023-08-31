@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取房间号。
-                     * @return RoomId 房间号。
+                     * 获取字符串类型房间号。
+本接口仅支持解散字符串类型房间号，如需解散数字类型房间号，请使用：DismissRoom
+                     * @return RoomId 字符串类型房间号。
+本接口仅支持解散字符串类型房间号，如需解散数字类型房间号，请使用：DismissRoom
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置房间号。
-                     * @param _roomId 房间号。
+                     * 设置字符串类型房间号。
+本接口仅支持解散字符串类型房间号，如需解散数字类型房间号，请使用：DismissRoom
+                     * @param _roomId 字符串类型房间号。
+本接口仅支持解散字符串类型房间号，如需解散数字类型房间号，请使用：DismissRoom
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -93,7 +97,8 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 房间号。
+                     * 字符串类型房间号。
+本接口仅支持解散字符串类型房间号，如需解散数字类型房间号，请使用：DismissRoom
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;

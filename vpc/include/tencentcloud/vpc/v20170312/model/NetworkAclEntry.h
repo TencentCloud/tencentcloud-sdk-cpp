@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改时间。
-                     * @return ModifyTime 修改时间。
-                     * 
-                     */
-                    std::string GetModifyTime() const;
-
-                    /**
-                     * 设置修改时间。
-                     * @param _modifyTime 修改时间。
-                     * 
-                     */
-                    void SetModifyTime(const std::string& _modifyTime);
-
-                    /**
-                     * 判断参数 ModifyTime 是否已赋值
-                     * @return ModifyTime 是否已赋值
-                     * 
-                     */
-                    bool ModifyTimeHasBeenSet() const;
-
-                    /**
                      * 获取协议, 取值: TCP,UDP, ICMP, ALL。
                      * @return Protocol 协议, 取值: TCP,UDP, ICMP, ALL。
                      * 
@@ -110,15 +89,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取网段或IP(互斥)。
-                     * @return CidrBlock 网段或IP(互斥)。
+                     * 获取网段或IP(互斥)。增量创建ACL规则时，CidrBlock和Ipv6CidrBlock至少提供一个。
+                     * @return CidrBlock 网段或IP(互斥)。增量创建ACL规则时，CidrBlock和Ipv6CidrBlock至少提供一个。
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置网段或IP(互斥)。
-                     * @param _cidrBlock 网段或IP(互斥)。
+                     * 设置网段或IP(互斥)。增量创建ACL规则时，CidrBlock和Ipv6CidrBlock至少提供一个。
+                     * @param _cidrBlock 网段或IP(互斥)。增量创建ACL规则时，CidrBlock和Ipv6CidrBlock至少提供一个。
                      * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
@@ -193,13 +172,99 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取修改时间。
+                     * @return ModifyTime 修改时间。
+                     * 
+                     */
+                    std::string GetModifyTime() const;
 
                     /**
-                     * 修改时间。
+                     * 设置修改时间。
+                     * @param _modifyTime 修改时间。
+                     * 
                      */
-                    std::string m_modifyTime;
-                    bool m_modifyTimeHasBeenSet;
+                    void SetModifyTime(const std::string& _modifyTime);
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     * 
+                     */
+                    bool ModifyTimeHasBeenSet() const;
+
+                    /**
+                     * 获取优先级，从1开始。	
+                     * @return Priority 优先级，从1开始。	
+                     * 
+                     */
+                    int64_t GetPriority() const;
+
+                    /**
+                     * 设置优先级，从1开始。	
+                     * @param _priority 优先级，从1开始。	
+                     * 
+                     */
+                    void SetPriority(const int64_t& _priority);
+
+                    /**
+                     * 判断参数 Priority 是否已赋值
+                     * @return Priority 是否已赋值
+                     * 
+                     */
+                    bool PriorityHasBeenSet() const;
+
+                    /**
+                     * 获取IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkAclIpv4EntryId IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNetworkAclIpv4EntryId() const;
+
+                    /**
+                     * 设置IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _networkAclIpv4EntryId IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetworkAclIpv4EntryId(const std::string& _networkAclIpv4EntryId);
+
+                    /**
+                     * 判断参数 NetworkAclIpv4EntryId 是否已赋值
+                     * @return NetworkAclIpv4EntryId 是否已赋值
+                     * 
+                     */
+                    bool NetworkAclIpv4EntryIdHasBeenSet() const;
+
+                    /**
+                     * 获取IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkAclIpv6EntryId IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNetworkAclIpv6EntryId() const;
+
+                    /**
+                     * 设置IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _networkAclIpv6EntryId IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetworkAclIpv6EntryId(const std::string& _networkAclIpv6EntryId);
+
+                    /**
+                     * 判断参数 NetworkAclIpv6EntryId 是否已赋值
+                     * @return NetworkAclIpv6EntryId 是否已赋值
+                     * 
+                     */
+                    bool NetworkAclIpv6EntryIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 协议, 取值: TCP,UDP, ICMP, ALL。
@@ -214,7 +279,7 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 网段或IP(互斥)。
+                     * 网段或IP(互斥)。增量创建ACL规则时，CidrBlock和Ipv6CidrBlock至少提供一个。
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
@@ -236,6 +301,32 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 修改时间。
+                     */
+                    std::string m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 优先级，从1开始。	
+                     */
+                    int64_t m_priority;
+                    bool m_priorityHasBeenSet;
+
+                    /**
+                     * IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_networkAclIpv4EntryId;
+                    bool m_networkAclIpv4EntryIdHasBeenSet;
+
+                    /**
+                     * IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_networkAclIpv6EntryId;
+                    bool m_networkAclIpv6EntryIdHasBeenSet;
 
                 };
             }

@@ -699,6 +699,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeRebuildMediaTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/AudioVolumeParam.h
   include/tencentcloud/vod/v20180717/model/AiReviewTaskPornAsrResult.h
+  include/tencentcloud/vod/v20180717/model/ProductInstanceResource.h
   include/tencentcloud/vod/v20180717/model/ModifyClassResponse.h
   include/tencentcloud/vod/v20180717/model/BlackWhiteEdgeConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/EditMediaFileInfo.h
@@ -1448,6 +1449,7 @@ set(vod_src
   src/v20180717/model/DescribeRebuildMediaTemplatesResponse.cpp
   src/v20180717/model/AudioVolumeParam.cpp
   src/v20180717/model/AiReviewTaskPornAsrResult.cpp
+  src/v20180717/model/ProductInstanceResource.cpp
   src/v20180717/model/ModifyClassResponse.cpp
   src/v20180717/model/BlackWhiteEdgeConfigureInfoForUpdate.cpp
   src/v20180717/model/EditMediaFileInfo.cpp

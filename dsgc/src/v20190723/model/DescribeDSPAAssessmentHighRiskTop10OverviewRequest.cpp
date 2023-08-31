@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeDSPAAssessmentHighRiskTop10OverviewRequest::DescribeDSPAAssessmentHighRiskTop10OverviewRequest() :
     m_dspaIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeDSPAAssessmentHighRiskTop10OverviewRequest::ToJsonString() const
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_templateId, allocator);
+    }
+
+    if (m_filterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_filter.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeDSPAAssessmentHighRiskTop10OverviewRequest::SetTemplateId(const int
 bool DescribeDSPAAssessmentHighRiskTop10OverviewRequest::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+string DescribeDSPAAssessmentHighRiskTop10OverviewRequest::GetFilter() const
+{
+    return m_filter;
+}
+
+void DescribeDSPAAssessmentHighRiskTop10OverviewRequest::SetFilter(const string& _filter)
+{
+    m_filter = _filter;
+    m_filterHasBeenSet = true;
+}
+
+bool DescribeDSPAAssessmentHighRiskTop10OverviewRequest::FilterHasBeenSet() const
+{
+    return m_filterHasBeenSet;
 }
 
 

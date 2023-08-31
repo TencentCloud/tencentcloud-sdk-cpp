@@ -25,7 +25,8 @@ using namespace std;
 ModifyNetworkAclEntriesRequest::ModifyNetworkAclEntriesRequest() :
     m_networkAclIdHasBeenSet(false),
     m_networkAclEntrySetHasBeenSet(false),
-    m_networkAclQuintupleSetHasBeenSet(false)
+    m_networkAclQuintupleSetHasBeenSet(false),
+    m_enableUpdateAclEntriesHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,14 @@ string ModifyNetworkAclEntriesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_networkAclQuintupleSet.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableUpdateAclEntriesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableUpdateAclEntries";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableUpdateAclEntries, allocator);
     }
 
 
@@ -116,6 +125,22 @@ void ModifyNetworkAclEntriesRequest::SetNetworkAclQuintupleSet(const NetworkAclQ
 bool ModifyNetworkAclEntriesRequest::NetworkAclQuintupleSetHasBeenSet() const
 {
     return m_networkAclQuintupleSetHasBeenSet;
+}
+
+bool ModifyNetworkAclEntriesRequest::GetEnableUpdateAclEntries() const
+{
+    return m_enableUpdateAclEntries;
+}
+
+void ModifyNetworkAclEntriesRequest::SetEnableUpdateAclEntries(const bool& _enableUpdateAclEntries)
+{
+    m_enableUpdateAclEntries = _enableUpdateAclEntries;
+    m_enableUpdateAclEntriesHasBeenSet = true;
+}
+
+bool ModifyNetworkAclEntriesRequest::EnableUpdateAclEntriesHasBeenSet() const
+{
+    return m_enableUpdateAclEntriesHasBeenSet;
 }
 
 

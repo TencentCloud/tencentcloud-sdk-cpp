@@ -25,7 +25,8 @@ TopicFlowRankingResult::TopicFlowRankingResult() :
     m_consumeSpeedHasBeenSet(false),
     m_topicMessageHeapHasBeenSet(false),
     m_brokerIpHasBeenSet(false),
-    m_brokerTopicDataHasBeenSet(false)
+    m_brokerTopicDataHasBeenSet(false),
+    m_brokerTopicFlowDataHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,26 @@ CoreInternalOutcome TopicFlowRankingResult::Deserialize(const rapidjson::Value &
         m_brokerTopicDataHasBeenSet = true;
     }
 
+    if (value.HasMember("BrokerTopicFlowData") && !value["BrokerTopicFlowData"].IsNull())
+    {
+        if (!value["BrokerTopicFlowData"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TopicFlowRankingResult.BrokerTopicFlowData` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BrokerTopicFlowData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BrokerTopicFlowData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_brokerTopicFlowData.push_back(item);
+        }
+        m_brokerTopicFlowDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -201,6 +222,21 @@ void TopicFlowRankingResult::ToJsonObject(rapidjson::Value &value, rapidjson::Do
 
         int i=0;
         for (auto itr = m_brokerTopicData.begin(); itr != m_brokerTopicData.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_brokerTopicFlowDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrokerTopicFlowData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_brokerTopicFlowData.begin(); itr != m_brokerTopicFlowData.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -288,5 +324,21 @@ void TopicFlowRankingResult::SetBrokerTopicData(const vector<BrokerTopicData>& _
 bool TopicFlowRankingResult::BrokerTopicDataHasBeenSet() const
 {
     return m_brokerTopicDataHasBeenSet;
+}
+
+vector<BrokerTopicFlowData> TopicFlowRankingResult::GetBrokerTopicFlowData() const
+{
+    return m_brokerTopicFlowData;
+}
+
+void TopicFlowRankingResult::SetBrokerTopicFlowData(const vector<BrokerTopicFlowData>& _brokerTopicFlowData)
+{
+    m_brokerTopicFlowData = _brokerTopicFlowData;
+    m_brokerTopicFlowDataHasBeenSet = true;
+}
+
+bool TopicFlowRankingResult::BrokerTopicFlowDataHasBeenSet() const
+{
+    return m_brokerTopicFlowDataHasBeenSet;
 }
 

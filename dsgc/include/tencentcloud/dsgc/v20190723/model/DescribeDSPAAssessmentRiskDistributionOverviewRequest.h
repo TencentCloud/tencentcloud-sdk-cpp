@@ -84,6 +84,31 @@ namespace TencentCloud
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取风险资产分布的过滤条件
+（rdb，cos，不传就筛选全部）
+                     * @return Filter 风险资产分布的过滤条件
+（rdb，cos，不传就筛选全部）
+                     * 
+                     */
+                    std::string GetFilter() const;
+
+                    /**
+                     * 设置风险资产分布的过滤条件
+（rdb，cos，不传就筛选全部）
+                     * @param _filter 风险资产分布的过滤条件
+（rdb，cos，不传就筛选全部）
+                     * 
+                     */
+                    void SetFilter(const std::string& _filter);
+
+                    /**
+                     * 判断参数 Filter 是否已赋值
+                     * @return Filter 是否已赋值
+                     * 
+                     */
+                    bool FilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +122,13 @@ namespace TencentCloud
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 风险资产分布的过滤条件
+（rdb，cos，不传就筛选全部）
+                     */
+                    std::string m_filter;
+                    bool m_filterHasBeenSet;
 
                 };
             }

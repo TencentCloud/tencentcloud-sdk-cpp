@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool NetTypesHasBeenSet() const;
 
+                    /**
+                     * 获取vpc属性，选择VPC后不可修改。为服务选择VPC后，可对接该VPC下的后端资源
+                     * @return UniqVpcId vpc属性，选择VPC后不可修改。为服务选择VPC后，可对接该VPC下的后端资源
+                     * 
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置vpc属性，选择VPC后不可修改。为服务选择VPC后，可对接该VPC下的后端资源
+                     * @param _uniqVpcId vpc属性，选择VPC后不可修改。为服务选择VPC后，可对接该VPC下的后端资源
+                     * 
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     * 
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_netTypes;
                     bool m_netTypesHasBeenSet;
+
+                    /**
+                     * vpc属性，选择VPC后不可修改。为服务选择VPC后，可对接该VPC下的后端资源
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
 
                 };
             }

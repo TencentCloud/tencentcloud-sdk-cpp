@@ -29,7 +29,8 @@ ZoneInfo::ZoneInfo() :
     m_zoneStatusHasBeenSet(false),
     m_exflagHasBeenSet(false),
     m_soldOutHasBeenSet(false),
-    m_salesInfoHasBeenSet(false)
+    m_salesInfoHasBeenSet(false),
+    m_extraFlagHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
         m_salesInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtraFlag") && !value["ExtraFlag"].IsNull())
+    {
+        if (!value["ExtraFlag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ExtraFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extraFlag = string(value["ExtraFlag"].GetString());
+        m_extraFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void ZoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_extraFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extraFlag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void ZoneInfo::SetSalesInfo(const vector<SaleInfo>& _salesInfo)
 bool ZoneInfo::SalesInfoHasBeenSet() const
 {
     return m_salesInfoHasBeenSet;
+}
+
+string ZoneInfo::GetExtraFlag() const
+{
+    return m_extraFlag;
+}
+
+void ZoneInfo::SetExtraFlag(const string& _extraFlag)
+{
+    m_extraFlag = _extraFlag;
+    m_extraFlagHasBeenSet = true;
+}
+
+bool ZoneInfo::ExtraFlagHasBeenSet() const
+{
+    return m_extraFlagHasBeenSet;
 }
 

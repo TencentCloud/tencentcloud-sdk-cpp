@@ -56,7 +56,10 @@ Cluster::Cluster() :
     m_runningCuHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_isNeedManageNodeHasBeenSet(false),
-    m_clusterSessionsHasBeenSet(false)
+    m_clusterSessionsHasBeenSet(false),
+    m_archGenerationHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
+    m_ordersHasBeenSet(false)
 {
 }
 
@@ -472,6 +475,46 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_clusterSessionsHasBeenSet = true;
     }
 
+    if (value.HasMember("ArchGeneration") && !value["ArchGeneration"].IsNull())
+    {
+        if (!value["ArchGeneration"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.ArchGeneration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_archGeneration = value["ArchGeneration"].GetUint64();
+        m_archGenerationHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = value["ClusterType"].GetUint64();
+        m_clusterTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Orders") && !value["Orders"].IsNull())
+    {
+        if (!value["Orders"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.Orders` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Orders"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Order item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_orders.push_back(item);
+        }
+        m_ordersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -790,6 +833,37 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
 
         int i=0;
         for (auto itr = m_clusterSessions.begin(); itr != m_clusterSessions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_archGenerationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchGeneration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_archGeneration, allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterType, allocator);
+    }
+
+    if (m_ordersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Orders";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_orders.begin(); itr != m_orders.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -1373,5 +1447,53 @@ void Cluster::SetClusterSessions(const vector<ClusterSession>& _clusterSessions)
 bool Cluster::ClusterSessionsHasBeenSet() const
 {
     return m_clusterSessionsHasBeenSet;
+}
+
+uint64_t Cluster::GetArchGeneration() const
+{
+    return m_archGeneration;
+}
+
+void Cluster::SetArchGeneration(const uint64_t& _archGeneration)
+{
+    m_archGeneration = _archGeneration;
+    m_archGenerationHasBeenSet = true;
+}
+
+bool Cluster::ArchGenerationHasBeenSet() const
+{
+    return m_archGenerationHasBeenSet;
+}
+
+uint64_t Cluster::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void Cluster::SetClusterType(const uint64_t& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool Cluster::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
+}
+
+vector<Order> Cluster::GetOrders() const
+{
+    return m_orders;
+}
+
+void Cluster::SetOrders(const vector<Order>& _orders)
+{
+    m_orders = _orders;
+    m_ordersHasBeenSet = true;
+}
+
+bool Cluster::OrdersHasBeenSet() const
+{
+    return m_ordersHasBeenSet;
 }
 

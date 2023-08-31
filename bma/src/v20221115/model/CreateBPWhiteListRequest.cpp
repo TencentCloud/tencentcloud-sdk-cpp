@@ -25,7 +25,8 @@ using namespace std;
 CreateBPWhiteListRequest::CreateBPWhiteListRequest() :
     m_companyIdHasBeenSet(false),
     m_whiteListTypeHasBeenSet(false),
-    m_whiteListsHasBeenSet(false)
+    m_whiteListsHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string CreateBPWhiteListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void CreateBPWhiteListRequest::SetWhiteLists(const vector<string>& _whiteLists)
 bool CreateBPWhiteListRequest::WhiteListsHasBeenSet() const
 {
     return m_whiteListsHasBeenSet;
+}
+
+string CreateBPWhiteListRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void CreateBPWhiteListRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool CreateBPWhiteListRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 

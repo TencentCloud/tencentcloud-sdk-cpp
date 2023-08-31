@@ -2448,6 +2448,92 @@ DsgcClient::DescribeDSPAAssessmentRiskProcessHistoryOutcomeCallable DsgcClient::
     return task->get_future();
 }
 
+DsgcClient::DescribeDSPAAssessmentRiskSideDistributedOutcome DsgcClient::DescribeDSPAAssessmentRiskSideDistributed(const DescribeDSPAAssessmentRiskSideDistributedRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDSPAAssessmentRiskSideDistributed");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDSPAAssessmentRiskSideDistributedResponse rsp = DescribeDSPAAssessmentRiskSideDistributedResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDSPAAssessmentRiskSideDistributedOutcome(rsp);
+        else
+            return DescribeDSPAAssessmentRiskSideDistributedOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDSPAAssessmentRiskSideDistributedOutcome(outcome.GetError());
+    }
+}
+
+void DsgcClient::DescribeDSPAAssessmentRiskSideDistributedAsync(const DescribeDSPAAssessmentRiskSideDistributedRequest& request, const DescribeDSPAAssessmentRiskSideDistributedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDSPAAssessmentRiskSideDistributed(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DsgcClient::DescribeDSPAAssessmentRiskSideDistributedOutcomeCallable DsgcClient::DescribeDSPAAssessmentRiskSideDistributedCallable(const DescribeDSPAAssessmentRiskSideDistributedRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDSPAAssessmentRiskSideDistributedOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDSPAAssessmentRiskSideDistributed(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DsgcClient::DescribeDSPAAssessmentRiskSideListOutcome DsgcClient::DescribeDSPAAssessmentRiskSideList(const DescribeDSPAAssessmentRiskSideListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDSPAAssessmentRiskSideList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDSPAAssessmentRiskSideListResponse rsp = DescribeDSPAAssessmentRiskSideListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDSPAAssessmentRiskSideListOutcome(rsp);
+        else
+            return DescribeDSPAAssessmentRiskSideListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDSPAAssessmentRiskSideListOutcome(outcome.GetError());
+    }
+}
+
+void DsgcClient::DescribeDSPAAssessmentRiskSideListAsync(const DescribeDSPAAssessmentRiskSideListRequest& request, const DescribeDSPAAssessmentRiskSideListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDSPAAssessmentRiskSideList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DsgcClient::DescribeDSPAAssessmentRiskSideListOutcomeCallable DsgcClient::DescribeDSPAAssessmentRiskSideListCallable(const DescribeDSPAAssessmentRiskSideListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDSPAAssessmentRiskSideListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDSPAAssessmentRiskSideList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DsgcClient::DescribeDSPAAssessmentRiskTemplateDetailOutcome DsgcClient::DescribeDSPAAssessmentRiskTemplateDetail(const DescribeDSPAAssessmentRiskTemplateDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDSPAAssessmentRiskTemplateDetail");

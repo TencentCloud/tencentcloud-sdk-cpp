@@ -27,6 +27,7 @@
 #include <tencentcloud/faceid/v20180301/model/EidInfo.h>
 #include <tencentcloud/faceid/v20180301/model/IntentionVerifyData.h>
 #include <tencentcloud/faceid/v20180301/model/IntentionQuestionResult.h>
+#include <tencentcloud/faceid/v20180301/model/IntentionActionResult.h>
 
 
 namespace TencentCloud
@@ -145,6 +146,22 @@ namespace TencentCloud
                      */
                     bool IntentionQuestionResultHasBeenSet() const;
 
+                    /**
+                     * 获取意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntentionActionResult 意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    IntentionActionResult GetIntentionActionResult() const;
+
+                    /**
+                     * 判断参数 IntentionActionResult 是否已赋值
+                     * @return IntentionActionResult 是否已赋值
+                     * 
+                     */
+                    bool IntentionActionResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +205,13 @@ namespace TencentCloud
                      */
                     IntentionQuestionResult m_intentionQuestionResult;
                     bool m_intentionQuestionResultHasBeenSet;
+
+                    /**
+                     * 意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntentionActionResult m_intentionActionResult;
+                    bool m_intentionActionResultHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ GetEidResultResponse::GetEidResultResponse() :
     m_bestFrameHasBeenSet(false),
     m_eidInfoHasBeenSet(false),
     m_intentionVerifyDataHasBeenSet(false),
-    m_intentionQuestionResultHasBeenSet(false)
+    m_intentionQuestionResultHasBeenSet(false),
+    m_intentionActionResultHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,23 @@ CoreInternalOutcome GetEidResultResponse::Deserialize(const string &payload)
         m_intentionQuestionResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IntentionActionResult") && !rsp["IntentionActionResult"].IsNull())
+    {
+        if (!rsp["IntentionActionResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntentionActionResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_intentionActionResult.Deserialize(rsp["IntentionActionResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_intentionActionResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -231,6 +249,15 @@ string GetEidResultResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intentionQuestionResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_intentionActionResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionActionResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intentionActionResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -303,6 +330,16 @@ IntentionQuestionResult GetEidResultResponse::GetIntentionQuestionResult() const
 bool GetEidResultResponse::IntentionQuestionResultHasBeenSet() const
 {
     return m_intentionQuestionResultHasBeenSet;
+}
+
+IntentionActionResult GetEidResultResponse::GetIntentionActionResult() const
+{
+    return m_intentionActionResult;
+}
+
+bool GetEidResultResponse::IntentionActionResultHasBeenSet() const
+{
+    return m_intentionActionResultHasBeenSet;
 }
 
 

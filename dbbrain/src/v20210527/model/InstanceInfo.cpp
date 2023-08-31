@@ -53,7 +53,9 @@ InstanceInfo::InstanceInfo() :
     m_internalVportHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_agentStatusHasBeenSet(false),
+    m_instanceStatusHasBeenSet(false)
 {
 }
 
@@ -399,6 +401,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentStatus") && !value["AgentStatus"].IsNull())
+    {
+        if (!value["AgentStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AgentStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentStatus = string(value["AgentStatus"].GetString());
+        m_agentStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceStatus") && !value["InstanceStatus"].IsNull())
+    {
+        if (!value["InstanceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceStatus = string(value["InstanceStatus"].GetString());
+        m_instanceStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -669,6 +691,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1200,5 +1238,37 @@ void InstanceInfo::SetClusterName(const string& _clusterName)
 bool InstanceInfo::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string InstanceInfo::GetAgentStatus() const
+{
+    return m_agentStatus;
+}
+
+void InstanceInfo::SetAgentStatus(const string& _agentStatus)
+{
+    m_agentStatus = _agentStatus;
+    m_agentStatusHasBeenSet = true;
+}
+
+bool InstanceInfo::AgentStatusHasBeenSet() const
+{
+    return m_agentStatusHasBeenSet;
+}
+
+string InstanceInfo::GetInstanceStatus() const
+{
+    return m_instanceStatus;
+}
+
+void InstanceInfo::SetInstanceStatus(const string& _instanceStatus)
+{
+    m_instanceStatus = _instanceStatus;
+    m_instanceStatusHasBeenSet = true;
+}
+
+bool InstanceInfo::InstanceStatusHasBeenSet() const
+{
+    return m_instanceStatusHasBeenSet;
 }
 

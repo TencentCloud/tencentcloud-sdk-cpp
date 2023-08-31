@@ -84,6 +84,31 @@ namespace TencentCloud
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件， rdb（数据库）cos（对象存储）
+不传就是全部
+                     * @return Filter 过滤条件， rdb（数据库）cos（对象存储）
+不传就是全部
+                     * 
+                     */
+                    std::string GetFilter() const;
+
+                    /**
+                     * 设置过滤条件， rdb（数据库）cos（对象存储）
+不传就是全部
+                     * @param _filter 过滤条件， rdb（数据库）cos（对象存储）
+不传就是全部
+                     * 
+                     */
+                    void SetFilter(const std::string& _filter);
+
+                    /**
+                     * 判断参数 Filter 是否已赋值
+                     * @return Filter 是否已赋值
+                     * 
+                     */
+                    bool FilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +122,13 @@ namespace TencentCloud
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 过滤条件， rdb（数据库）cos（对象存储）
+不传就是全部
+                     */
+                    std::string m_filter;
+                    bool m_filterHasBeenSet;
 
                 };
             }

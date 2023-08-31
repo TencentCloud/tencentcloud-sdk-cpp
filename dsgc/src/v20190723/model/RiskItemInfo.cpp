@@ -25,6 +25,7 @@ RiskItemInfo::RiskItemInfo() :
     m_dataSourceIdHasBeenSet(false),
     m_dataSourceNameHasBeenSet(false),
     m_dataSourceTypeHasBeenSet(false),
+    m_resourceRegionHasBeenSet(false),
     m_assetNameHasBeenSet(false),
     m_riskTypeHasBeenSet(false),
     m_riskNameHasBeenSet(false),
@@ -36,7 +37,8 @@ RiskItemInfo::RiskItemInfo() :
     m_scanTimeHasBeenSet(false),
     m_lastProcessTimeHasBeenSet(false),
     m_identifyComplianceIdHasBeenSet(false),
-    m_itemSubTypeHasBeenSet(false)
+    m_itemSubTypeHasBeenSet(false),
+    m_riskSideHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,16 @@ CoreInternalOutcome RiskItemInfo::Deserialize(const rapidjson::Value &value)
         }
         m_dataSourceType = string(value["DataSourceType"].GetString());
         m_dataSourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceRegion") && !value["ResourceRegion"].IsNull())
+    {
+        if (!value["ResourceRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskItemInfo.ResourceRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceRegion = string(value["ResourceRegion"].GetString());
+        m_resourceRegionHasBeenSet = true;
     }
 
     if (value.HasMember("AssetName") && !value["AssetName"].IsNull())
@@ -215,6 +227,16 @@ CoreInternalOutcome RiskItemInfo::Deserialize(const rapidjson::Value &value)
         m_itemSubTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskSide") && !value["RiskSide"].IsNull())
+    {
+        if (!value["RiskSide"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskItemInfo.RiskSide` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskSide = string(value["RiskSide"].GetString());
+        m_riskSideHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -252,6 +274,14 @@ void RiskItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DataSourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dataSourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_assetNameHasBeenSet)
@@ -357,6 +387,14 @@ void RiskItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_itemSubType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_riskSideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskSide";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskSide.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -422,6 +460,22 @@ void RiskItemInfo::SetDataSourceType(const string& _dataSourceType)
 bool RiskItemInfo::DataSourceTypeHasBeenSet() const
 {
     return m_dataSourceTypeHasBeenSet;
+}
+
+string RiskItemInfo::GetResourceRegion() const
+{
+    return m_resourceRegion;
+}
+
+void RiskItemInfo::SetResourceRegion(const string& _resourceRegion)
+{
+    m_resourceRegion = _resourceRegion;
+    m_resourceRegionHasBeenSet = true;
+}
+
+bool RiskItemInfo::ResourceRegionHasBeenSet() const
+{
+    return m_resourceRegionHasBeenSet;
 }
 
 string RiskItemInfo::GetAssetName() const
@@ -614,5 +668,21 @@ void RiskItemInfo::SetItemSubType(const string& _itemSubType)
 bool RiskItemInfo::ItemSubTypeHasBeenSet() const
 {
     return m_itemSubTypeHasBeenSet;
+}
+
+string RiskItemInfo::GetRiskSide() const
+{
+    return m_riskSide;
+}
+
+void RiskItemInfo::SetRiskSide(const string& _riskSide)
+{
+    m_riskSide = _riskSide;
+    m_riskSideHasBeenSet = true;
+}
+
+bool RiskItemInfo::RiskSideHasBeenSet() const
+{
+    return m_riskSideHasBeenSet;
 }
 

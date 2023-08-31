@@ -449,6 +449,31 @@ namespace TencentCloud
                      */
                     bool RiskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskSide 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRiskSide() const;
+
+                    /**
+                     * 设置风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _riskSide 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRiskSide(const std::string& _riskSide);
+
+                    /**
+                     * 判断参数 RiskSide 是否已赋值
+                     * @return RiskSide 是否已赋值
+                     * 
+                     */
+                    bool RiskSideHasBeenSet() const;
+
                 private:
 
                     /**
@@ -564,6 +589,13 @@ namespace TencentCloud
                      */
                     std::string m_riskType;
                     bool m_riskTypeHasBeenSet;
+
+                    /**
+                     * 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_riskSide;
+                    bool m_riskSideHasBeenSet;
 
                 };
             }

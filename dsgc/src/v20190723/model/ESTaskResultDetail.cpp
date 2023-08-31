@@ -30,7 +30,8 @@ ESTaskResultDetail::ESTaskResultDetail() :
     m_categoryNameHasBeenSet(false),
     m_categoryArrHasBeenSet(false),
     m_levelIdHasBeenSet(false),
-    m_levelNameHasBeenSet(false)
+    m_levelNameHasBeenSet(false),
+    m_levelRiskScoreHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,16 @@ CoreInternalOutcome ESTaskResultDetail::Deserialize(const rapidjson::Value &valu
         m_levelNameHasBeenSet = true;
     }
 
+    if (value.HasMember("LevelRiskScore") && !value["LevelRiskScore"].IsNull())
+    {
+        if (!value["LevelRiskScore"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ESTaskResultDetail.LevelRiskScore` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_levelRiskScore = value["LevelRiskScore"].GetInt64();
+        m_levelRiskScoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void ESTaskResultDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "LevelName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_levelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_levelRiskScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LevelRiskScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_levelRiskScore, allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void ESTaskResultDetail::SetLevelName(const string& _levelName)
 bool ESTaskResultDetail::LevelNameHasBeenSet() const
 {
     return m_levelNameHasBeenSet;
+}
+
+int64_t ESTaskResultDetail::GetLevelRiskScore() const
+{
+    return m_levelRiskScore;
+}
+
+void ESTaskResultDetail::SetLevelRiskScore(const int64_t& _levelRiskScore)
+{
+    m_levelRiskScore = _levelRiskScore;
+    m_levelRiskScoreHasBeenSet = true;
+}
+
+bool ESTaskResultDetail::LevelRiskScoreHasBeenSet() const
+{
+    return m_levelRiskScoreHasBeenSet;
 }
 

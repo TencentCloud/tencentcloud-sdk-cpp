@@ -144,6 +144,31 @@ namespace TencentCloud
                     bool DataSourceTypeHasBeenSet() const;
 
                     /**
+                     * 获取资源地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceRegion 资源地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceRegion() const;
+
+                    /**
+                     * 设置资源地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceRegion 资源地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceRegion(const std::string& _resourceRegion);
+
+                    /**
+                     * 判断参数 ResourceRegion 是否已赋值
+                     * @return ResourceRegion 是否已赋值
+                     * 
+                     */
+                    bool ResourceRegionHasBeenSet() const;
+
+                    /**
                      * 获取资产名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetName 资产名称
@@ -443,6 +468,31 @@ namespace TencentCloud
                      */
                     bool ItemSubTypeHasBeenSet() const;
 
+                    /**
+                     * 获取风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskSide 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRiskSide() const;
+
+                    /**
+                     * 设置风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _riskSide 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRiskSide(const std::string& _riskSide);
+
+                    /**
+                     * 判断参数 RiskSide 是否已赋值
+                     * @return RiskSide 是否已赋值
+                     * 
+                     */
+                    bool RiskSideHasBeenSet() const;
+
                 private:
 
                     /**
@@ -471,6 +521,13 @@ namespace TencentCloud
                      */
                     std::string m_dataSourceType;
                     bool m_dataSourceTypeHasBeenSet;
+
+                    /**
+                     * 资源地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceRegion;
+                    bool m_resourceRegionHasBeenSet;
 
                     /**
                      * 资产名称
@@ -555,6 +612,13 @@ namespace TencentCloud
                      */
                     std::string m_itemSubType;
                     bool m_itemSubTypeHasBeenSet;
+
+                    /**
+                     * 风险面
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_riskSide;
+                    bool m_riskSideHasBeenSet;
 
                 };
             }

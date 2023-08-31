@@ -107,27 +107,6 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取敏感数据扫描数据源条件。
-                     * @return DiscoveryCondition 敏感数据扫描数据源条件。
-                     * 
-                     */
-                    DiscoveryCondition GetDiscoveryCondition() const;
-
-                    /**
-                     * 设置敏感数据扫描数据源条件。
-                     * @param _discoveryCondition 敏感数据扫描数据源条件。
-                     * 
-                     */
-                    void SetDiscoveryCondition(const DiscoveryCondition& _discoveryCondition);
-
-                    /**
-                     * 判断参数 DiscoveryCondition 是否已赋值
-                     * @return DiscoveryCondition 是否已赋值
-                     * 
-                     */
-                    bool DiscoveryConditionHasBeenSet() const;
-
-                    /**
                      * 获取评估业务名称。1-60个字符，仅允许输入中文、英文字母、数字、'_'、'-'，并且开头和结尾需为中文、英文字母或者数字
                      * @return BusinessName 评估业务名称。1-60个字符，仅允许输入中文、英文字母、数字、'_'、'-'，并且开头和结尾需为中文、英文字母或者数字
                      * @deprecated
@@ -212,6 +191,27 @@ namespace TencentCloud
                     bool ComplianceIdHasBeenSet() const;
 
                     /**
+                     * 获取敏感数据扫描数据源条件。
+                     * @return DiscoveryCondition 敏感数据扫描数据源条件。
+                     * 
+                     */
+                    DiscoveryCondition GetDiscoveryCondition() const;
+
+                    /**
+                     * 设置敏感数据扫描数据源条件。
+                     * @param _discoveryCondition 敏感数据扫描数据源条件。
+                     * 
+                     */
+                    void SetDiscoveryCondition(const DiscoveryCondition& _discoveryCondition);
+
+                    /**
+                     * 判断参数 DiscoveryCondition 是否已赋值
+                     * @return DiscoveryCondition 是否已赋值
+                     * 
+                     */
+                    bool DiscoveryConditionHasBeenSet() const;
+
+                    /**
                      * 获取说明
                      * @return Description 说明
                      * 
@@ -253,12 +253,6 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 敏感数据扫描数据源条件。
-                     */
-                    DiscoveryCondition m_discoveryCondition;
-                    bool m_discoveryConditionHasBeenSet;
-
-                    /**
                      * 评估业务名称。1-60个字符，仅允许输入中文、英文字母、数字、'_'、'-'，并且开头和结尾需为中文、英文字母或者数字
                      */
                     std::string m_businessName;
@@ -281,6 +275,12 @@ namespace TencentCloud
                      */
                     int64_t m_complianceId;
                     bool m_complianceIdHasBeenSet;
+
+                    /**
+                     * 敏感数据扫描数据源条件。
+                     */
+                    DiscoveryCondition m_discoveryCondition;
+                    bool m_discoveryConditionHasBeenSet;
 
                     /**
                      * 说明

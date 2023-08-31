@@ -22,7 +22,8 @@ using namespace std;
 
 RiskCountInfo::RiskCountInfo() :
     m_riskLevelHasBeenSet(false),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_riskLevelNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome RiskCountInfo::Deserialize(const rapidjson::Value &value)
         m_countHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskLevelName") && !value["RiskLevelName"].IsNull())
+    {
+        if (!value["RiskLevelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskCountInfo.RiskLevelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskLevelName = string(value["RiskLevelName"].GetString());
+        m_riskLevelNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void RiskCountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_riskLevelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskLevelName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void RiskCountInfo::SetCount(const int64_t& _count)
 bool RiskCountInfo::CountHasBeenSet() const
 {
     return m_countHasBeenSet;
+}
+
+string RiskCountInfo::GetRiskLevelName() const
+{
+    return m_riskLevelName;
+}
+
+void RiskCountInfo::SetRiskLevelName(const string& _riskLevelName)
+{
+    m_riskLevelName = _riskLevelName;
+    m_riskLevelNameHasBeenSet = true;
+}
+
+bool RiskCountInfo::RiskLevelNameHasBeenSet() const
+{
+    return m_riskLevelNameHasBeenSet;
 }
 

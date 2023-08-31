@@ -167,6 +167,7 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryRulesResponse.h
   include/tencentcloud/dsgc/v20190723/model/ModifyLevelStateResponse.h
   include/tencentcloud/dsgc/v20190723/model/StopDSPADiscoveryTaskRequest.h
+  include/tencentcloud/dsgc/v20190723/model/RiskSideDistributed.h
   include/tencentcloud/dsgc/v20190723/model/LevelItem.h
   include/tencentcloud/dsgc/v20190723/model/DecribeSuggestRiskLevelMatrixRequest.h
   include/tencentcloud/dsgc/v20190723/model/AssetCosDetail.h
@@ -214,6 +215,7 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/DataRules.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentProcessingRiskOverviewRequest.h
   include/tencentcloud/dsgc/v20190723/model/CosAsset.h
+  include/tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskSideListResponse.h
   include/tencentcloud/dsgc/v20190723/model/SensitiveLevel.h
   include/tencentcloud/dsgc/v20190723/model/CreateAssetSortingReportRetryTaskRequest.h
   include/tencentcloud/dsgc/v20190723/model/CreateDSPADiscoveryRuleResponse.h
@@ -260,10 +262,12 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/DescribeSensitiveCOSDataDistributionResponse.h
   include/tencentcloud/dsgc/v20190723/model/DescribeCOSAssetSensitiveDistributionRequest.h
   include/tencentcloud/dsgc/v20190723/model/CreateDSPAAssessmentRiskTemplateRequest.h
+  include/tencentcloud/dsgc/v20190723/model/TemplateInfo.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPACOSDiscoveryTaskFilesResponse.h
   include/tencentcloud/dsgc/v20190723/model/BindDSPAResourceCosBucketsRequest.h
   include/tencentcloud/dsgc/v20190723/model/ModifyDSPAESTaskResultResponse.h
   include/tencentcloud/dsgc/v20190723/model/CreateDSPACosMetaResourcesRequest.h
+  include/tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskSideListRequest.h
   include/tencentcloud/dsgc/v20190723/model/ModifyNewClassificationRequest.h
   include/tencentcloud/dsgc/v20190723/model/DspaUserResourceMeta.h
   include/tencentcloud/dsgc/v20190723/model/DataCategory.h
@@ -348,6 +352,7 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/CreateComplianceRules.h
   include/tencentcloud/dsgc/v20190723/model/EnableTrialVersionRequest.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryTaskTablesRequest.h
+  include/tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskSideDistributedRequest.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentNewDiscoveredRiskOverviewResponse.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskAmountOverviewRequest.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryTaskDetailResponse.h
@@ -416,6 +421,7 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/ESDataAssetDetail.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPACOSTaskResultDetailRequest.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPALevelDetailResponse.h
+  include/tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentRiskSideDistributedResponse.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPACOSDiscoveryTasksRequest.h
   include/tencentcloud/dsgc/v20190723/model/ModifyMergeClassificationRequest.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentPendingRiskOverviewResponse.h
@@ -575,6 +581,7 @@ set(dsgc_src
   src/v20190723/model/DescribeDSPADiscoveryRulesResponse.cpp
   src/v20190723/model/ModifyLevelStateResponse.cpp
   src/v20190723/model/StopDSPADiscoveryTaskRequest.cpp
+  src/v20190723/model/RiskSideDistributed.cpp
   src/v20190723/model/LevelItem.cpp
   src/v20190723/model/DecribeSuggestRiskLevelMatrixRequest.cpp
   src/v20190723/model/AssetCosDetail.cpp
@@ -622,6 +629,7 @@ set(dsgc_src
   src/v20190723/model/DataRules.cpp
   src/v20190723/model/DescribeDSPAAssessmentProcessingRiskOverviewRequest.cpp
   src/v20190723/model/CosAsset.cpp
+  src/v20190723/model/DescribeDSPAAssessmentRiskSideListResponse.cpp
   src/v20190723/model/SensitiveLevel.cpp
   src/v20190723/model/CreateAssetSortingReportRetryTaskRequest.cpp
   src/v20190723/model/CreateDSPADiscoveryRuleResponse.cpp
@@ -668,10 +676,12 @@ set(dsgc_src
   src/v20190723/model/DescribeSensitiveCOSDataDistributionResponse.cpp
   src/v20190723/model/DescribeCOSAssetSensitiveDistributionRequest.cpp
   src/v20190723/model/CreateDSPAAssessmentRiskTemplateRequest.cpp
+  src/v20190723/model/TemplateInfo.cpp
   src/v20190723/model/DescribeDSPACOSDiscoveryTaskFilesResponse.cpp
   src/v20190723/model/BindDSPAResourceCosBucketsRequest.cpp
   src/v20190723/model/ModifyDSPAESTaskResultResponse.cpp
   src/v20190723/model/CreateDSPACosMetaResourcesRequest.cpp
+  src/v20190723/model/DescribeDSPAAssessmentRiskSideListRequest.cpp
   src/v20190723/model/ModifyNewClassificationRequest.cpp
   src/v20190723/model/DspaUserResourceMeta.cpp
   src/v20190723/model/DataCategory.cpp
@@ -756,6 +766,7 @@ set(dsgc_src
   src/v20190723/model/CreateComplianceRules.cpp
   src/v20190723/model/EnableTrialVersionRequest.cpp
   src/v20190723/model/DescribeDSPADiscoveryTaskTablesRequest.cpp
+  src/v20190723/model/DescribeDSPAAssessmentRiskSideDistributedRequest.cpp
   src/v20190723/model/DescribeDSPAAssessmentNewDiscoveredRiskOverviewResponse.cpp
   src/v20190723/model/DescribeDSPAAssessmentRiskAmountOverviewRequest.cpp
   src/v20190723/model/DescribeDSPADiscoveryTaskDetailResponse.cpp
@@ -824,6 +835,7 @@ set(dsgc_src
   src/v20190723/model/ESDataAssetDetail.cpp
   src/v20190723/model/DescribeDSPACOSTaskResultDetailRequest.cpp
   src/v20190723/model/DescribeDSPALevelDetailResponse.cpp
+  src/v20190723/model/DescribeDSPAAssessmentRiskSideDistributedResponse.cpp
   src/v20190723/model/DescribeDSPACOSDiscoveryTasksRequest.cpp
   src/v20190723/model/ModifyMergeClassificationRequest.cpp
   src/v20190723/model/DescribeDSPAAssessmentPendingRiskOverviewResponse.cpp

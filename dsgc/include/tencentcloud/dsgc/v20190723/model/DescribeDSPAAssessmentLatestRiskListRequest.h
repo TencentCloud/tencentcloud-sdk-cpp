@@ -273,6 +273,27 @@ namespace TencentCloud
                      */
                     bool RiskLevelHasBeenSet() const;
 
+                    /**
+                     * 获取风险面筛选
+                     * @return RiskSide 风险面筛选
+                     * 
+                     */
+                    std::vector<std::string> GetRiskSide() const;
+
+                    /**
+                     * 设置风险面筛选
+                     * @param _riskSide 风险面筛选
+                     * 
+                     */
+                    void SetRiskSide(const std::vector<std::string>& _riskSide);
+
+                    /**
+                     * 判断参数 RiskSide 是否已赋值
+                     * @return RiskSide 是否已赋值
+                     * 
+                     */
+                    bool RiskSideHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +361,12 @@ namespace TencentCloud
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
+
+                    /**
+                     * 风险面筛选
+                     */
+                    std::vector<std::string> m_riskSide;
+                    bool m_riskSideHasBeenSet;
 
                 };
             }

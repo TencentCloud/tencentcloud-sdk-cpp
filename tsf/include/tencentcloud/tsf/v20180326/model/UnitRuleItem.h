@@ -257,18 +257,18 @@ namespace TencentCloud
                     bool UnitRuleTagListHasBeenSet() const;
 
                     /**
-                     * 获取项目id
+                     * 获取规则项索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ItemIndex 项目id
+                     * @return ItemIndex 规则项索引
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetItemIndex() const;
 
                     /**
-                     * 设置项目id
+                     * 设置规则项索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _itemIndex 项目id
+                     * @param _itemIndex 规则项索引
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -393,7 +393,7 @@ namespace TencentCloud
                     bool m_unitRuleTagListHasBeenSet;
 
                     /**
-                     * 项目id
+                     * 规则项索引
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_itemIndex;

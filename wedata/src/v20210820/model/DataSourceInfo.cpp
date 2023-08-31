@@ -50,7 +50,8 @@ DataSourceInfo::DataSourceInfo() :
     m_createTimeHasBeenSet(false),
     m_paramsStringHasBeenSet(false),
     m_bizParamsStringHasBeenSet(false),
-    m_modifiedTimeHasBeenSet(false)
+    m_modifiedTimeHasBeenSet(false),
+    m_showTypeHasBeenSet(false)
 {
 }
 
@@ -359,6 +360,16 @@ CoreInternalOutcome DataSourceInfo::Deserialize(const rapidjson::Value &value)
         m_modifiedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ShowType") && !value["ShowType"].IsNull())
+    {
+        if (!value["ShowType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.ShowType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_showType = string(value["ShowType"].GetString());
+        m_showTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -604,6 +615,14 @@ void DataSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ModifiedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modifiedTime, allocator);
+    }
+
+    if (m_showTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1087,5 +1106,21 @@ void DataSourceInfo::SetModifiedTime(const int64_t& _modifiedTime)
 bool DataSourceInfo::ModifiedTimeHasBeenSet() const
 {
     return m_modifiedTimeHasBeenSet;
+}
+
+string DataSourceInfo::GetShowType() const
+{
+    return m_showType;
+}
+
+void DataSourceInfo::SetShowType(const string& _showType)
+{
+    m_showType = _showType;
+    m_showTypeHasBeenSet = true;
+}
+
+bool DataSourceInfo::ShowTypeHasBeenSet() const
+{
+    return m_showTypeHasBeenSet;
 }
 

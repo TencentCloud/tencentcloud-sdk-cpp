@@ -27,7 +27,8 @@ DescribeDSPAAssessmentRiskTemplateVulnerableListRequest::DescribeDSPAAssessmentR
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_riskTypeHasBeenSet(false),
-    m_riskNameHasBeenSet(false)
+    m_riskNameHasBeenSet(false),
+    m_riskSideHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeDSPAAssessmentRiskTemplateVulnerableListRequest::ToJsonString() c
         string key = "RiskName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_riskName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskSideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskSide";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_riskSide.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeDSPAAssessmentRiskTemplateVulnerableListRequest::SetRiskName(const 
 bool DescribeDSPAAssessmentRiskTemplateVulnerableListRequest::RiskNameHasBeenSet() const
 {
     return m_riskNameHasBeenSet;
+}
+
+string DescribeDSPAAssessmentRiskTemplateVulnerableListRequest::GetRiskSide() const
+{
+    return m_riskSide;
+}
+
+void DescribeDSPAAssessmentRiskTemplateVulnerableListRequest::SetRiskSide(const string& _riskSide)
+{
+    m_riskSide = _riskSide;
+    m_riskSideHasBeenSet = true;
+}
+
+bool DescribeDSPAAssessmentRiskTemplateVulnerableListRequest::RiskSideHasBeenSet() const
+{
+    return m_riskSideHasBeenSet;
 }
 
 

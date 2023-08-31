@@ -26,11 +26,11 @@ CreateDSPAAssessmentTaskRequest::CreateDSPAAssessmentTaskRequest() :
     m_dspaIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_templateIdHasBeenSet(false),
-    m_discoveryConditionHasBeenSet(false),
     m_businessNameHasBeenSet(false),
     m_businessDeptHasBeenSet(false),
     m_businessOwnerHasBeenSet(false),
     m_complianceIdHasBeenSet(false),
+    m_discoveryConditionHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -66,15 +66,6 @@ string CreateDSPAAssessmentTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_discoveryConditionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiscoveryCondition";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_discoveryCondition.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_businessNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -105,6 +96,15 @@ string CreateDSPAAssessmentTaskRequest::ToJsonString() const
         string key = "ComplianceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_complianceId, allocator);
+    }
+
+    if (m_discoveryConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscoveryCondition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_discoveryCondition.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -171,22 +171,6 @@ bool CreateDSPAAssessmentTaskRequest::TemplateIdHasBeenSet() const
     return m_templateIdHasBeenSet;
 }
 
-DiscoveryCondition CreateDSPAAssessmentTaskRequest::GetDiscoveryCondition() const
-{
-    return m_discoveryCondition;
-}
-
-void CreateDSPAAssessmentTaskRequest::SetDiscoveryCondition(const DiscoveryCondition& _discoveryCondition)
-{
-    m_discoveryCondition = _discoveryCondition;
-    m_discoveryConditionHasBeenSet = true;
-}
-
-bool CreateDSPAAssessmentTaskRequest::DiscoveryConditionHasBeenSet() const
-{
-    return m_discoveryConditionHasBeenSet;
-}
-
 string CreateDSPAAssessmentTaskRequest::GetBusinessName() const
 {
     return m_businessName;
@@ -249,6 +233,22 @@ void CreateDSPAAssessmentTaskRequest::SetComplianceId(const int64_t& _compliance
 bool CreateDSPAAssessmentTaskRequest::ComplianceIdHasBeenSet() const
 {
     return m_complianceIdHasBeenSet;
+}
+
+DiscoveryCondition CreateDSPAAssessmentTaskRequest::GetDiscoveryCondition() const
+{
+    return m_discoveryCondition;
+}
+
+void CreateDSPAAssessmentTaskRequest::SetDiscoveryCondition(const DiscoveryCondition& _discoveryCondition)
+{
+    m_discoveryCondition = _discoveryCondition;
+    m_discoveryConditionHasBeenSet = true;
+}
+
+bool CreateDSPAAssessmentTaskRequest::DiscoveryConditionHasBeenSet() const
+{
+    return m_discoveryConditionHasBeenSet;
 }
 
 string CreateDSPAAssessmentTaskRequest::GetDescription() const
