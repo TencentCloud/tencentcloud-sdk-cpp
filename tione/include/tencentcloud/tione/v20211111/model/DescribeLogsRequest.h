@@ -65,27 +65,6 @@ namespace TencentCloud
                     bool ServiceHasBeenSet() const;
 
                     /**
-                     * 获取查询哪个Pod的日志（支持结尾通配符*)
-                     * @return PodName 查询哪个Pod的日志（支持结尾通配符*)
-                     * 
-                     */
-                    std::string GetPodName() const;
-
-                    /**
-                     * 设置查询哪个Pod的日志（支持结尾通配符*)
-                     * @param _podName 查询哪个Pod的日志（支持结尾通配符*)
-                     * 
-                     */
-                    void SetPodName(const std::string& _podName);
-
-                    /**
-                     * 判断参数 PodName 是否已赋值
-                     * @return PodName 是否已赋值
-                     * 
-                     */
-                    bool PodNameHasBeenSet() const;
-
-                    /**
                      * 获取日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时
                      * @return StartTime 日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时
                      * 
@@ -147,6 +126,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取查询哪个Pod的日志（支持结尾通配符*)
+                     * @return PodName 查询哪个Pod的日志（支持结尾通配符*)
+                     * 
+                     */
+                    std::string GetPodName() const;
+
+                    /**
+                     * 设置查询哪个Pod的日志（支持结尾通配符*)
+                     * @param _podName 查询哪个Pod的日志（支持结尾通配符*)
+                     * 
+                     */
+                    void SetPodName(const std::string& _podName);
+
+                    /**
+                     * 判断参数 PodName 是否已赋值
+                     * @return PodName 是否已赋值
+                     * 
+                     */
+                    bool PodNameHasBeenSet() const;
 
                     /**
                      * 获取排序方向（可选值为ASC, DESC ），默认为DESC
@@ -257,12 +257,6 @@ namespace TencentCloud
                     bool m_serviceHasBeenSet;
 
                     /**
-                     * 查询哪个Pod的日志（支持结尾通配符*)
-                     */
-                    std::string m_podName;
-                    bool m_podNameHasBeenSet;
-
-                    /**
                      * 日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时
                      */
                     std::string m_startTime;
@@ -279,6 +273,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 查询哪个Pod的日志（支持结尾通配符*)
+                     */
+                    std::string m_podName;
+                    bool m_podNameHasBeenSet;
 
                     /**
                      * 排序方向（可选值为ASC, DESC ），默认为DESC

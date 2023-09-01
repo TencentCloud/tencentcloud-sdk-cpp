@@ -27,7 +27,8 @@ AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_outputObjectPathHasBeenSet(false),
     m_subStreamObjectNameHasBeenSet(false),
     m_segmentObjectNameHasBeenSet(false),
-    m_addOnSubtitlesHasBeenSet(false)
+    m_addOnSubtitlesHasBeenSet(false),
+    m_drmInfoHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,23 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_addOnSubtitlesHasBeenSet = true;
     }
 
+    if (value.HasMember("DrmInfo") && !value["DrmInfo"].IsNull())
+    {
+        if (!value["DrmInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.DrmInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_drmInfo.Deserialize(value["DrmInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_drmInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -209,6 +227,15 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_drmInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrmInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_drmInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -324,5 +351,21 @@ void AdaptiveDynamicStreamingTaskInput::SetAddOnSubtitles(const vector<AddOnSubt
 bool AdaptiveDynamicStreamingTaskInput::AddOnSubtitlesHasBeenSet() const
 {
     return m_addOnSubtitlesHasBeenSet;
+}
+
+DrmInfo AdaptiveDynamicStreamingTaskInput::GetDrmInfo() const
+{
+    return m_drmInfo;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetDrmInfo(const DrmInfo& _drmInfo)
+{
+    m_drmInfo = _drmInfo;
+    m_drmInfoHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::DrmInfoHasBeenSet() const
+{
+    return m_drmInfoHasBeenSet;
 }
 

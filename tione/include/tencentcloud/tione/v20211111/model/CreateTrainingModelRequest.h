@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
 #include <tencentcloud/tione/v20211111/model/Tag.h>
+#include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
 #include <tencentcloud/tione/v20211111/model/ImageInfo.h>
 
 
@@ -77,27 +77,6 @@ EXIST：导入现有版本
                      * 
                      */
                     bool ImportMethodHasBeenSet() const;
-
-                    /**
-                     * 获取模型来源cos目录，以/结尾
-                     * @return TrainingModelCosPath 模型来源cos目录，以/结尾
-                     * 
-                     */
-                    CosPathInfo GetTrainingModelCosPath() const;
-
-                    /**
-                     * 设置模型来源cos目录，以/结尾
-                     * @param _trainingModelCosPath 模型来源cos目录，以/结尾
-                     * 
-                     */
-                    void SetTrainingModelCosPath(const CosPathInfo& _trainingModelCosPath);
-
-                    /**
-                     * 判断参数 TrainingModelCosPath 是否已赋值
-                     * @return TrainingModelCosPath 是否已赋值
-                     * 
-                     */
-                    bool TrainingModelCosPathHasBeenSet() const;
 
                     /**
                      * 获取推理环境来源（SYSTEM/CUSTOM）
@@ -182,6 +161,27 @@ EXIST：导入现有版本
                      * 
                      */
                     bool TrainingJobNameHasBeenSet() const;
+
+                    /**
+                     * 获取模型来源cos目录，以/结尾
+                     * @return TrainingModelCosPath 模型来源cos目录，以/结尾
+                     * 
+                     */
+                    CosPathInfo GetTrainingModelCosPath() const;
+
+                    /**
+                     * 设置模型来源cos目录，以/结尾
+                     * @param _trainingModelCosPath 模型来源cos目录，以/结尾
+                     * 
+                     */
+                    void SetTrainingModelCosPath(const CosPathInfo& _trainingModelCosPath);
+
+                    /**
+                     * 判断参数 TrainingModelCosPath 是否已赋值
+                     * @return TrainingModelCosPath 是否已赋值
+                     * 
+                     */
+                    bool TrainingModelCosPathHasBeenSet() const;
 
                     /**
                      * 获取算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)
@@ -623,12 +623,6 @@ EXIST：导入现有版本
                     bool m_importMethodHasBeenSet;
 
                     /**
-                     * 模型来源cos目录，以/结尾
-                     */
-                    CosPathInfo m_trainingModelCosPath;
-                    bool m_trainingModelCosPathHasBeenSet;
-
-                    /**
                      * 推理环境来源（SYSTEM/CUSTOM）
                      */
                     std::string m_reasoningEnvironmentSource;
@@ -651,6 +645,12 @@ EXIST：导入现有版本
                      */
                     std::string m_trainingJobName;
                     bool m_trainingJobNameHasBeenSet;
+
+                    /**
+                     * 模型来源cos目录，以/结尾
+                     */
+                    CosPathInfo m_trainingModelCosPath;
+                    bool m_trainingModelCosPathHasBeenSet;
 
                     /**
                      * 算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)

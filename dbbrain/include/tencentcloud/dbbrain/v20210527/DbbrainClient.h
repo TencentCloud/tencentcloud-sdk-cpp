@@ -129,6 +129,10 @@
 #include <tencentcloud/dbbrain/v20210527/model/ModifySqlFiltersResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/OpenAuditServiceRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/OpenAuditServiceResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/UpdateAgentSwitchRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/UpdateAgentSwitchResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/UpdateMonitorSwitchRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/UpdateMonitorSwitchResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/VerifyUserAccountRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/VerifyUserAccountResponse.h>
 
@@ -304,6 +308,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenAuditServiceResponse> OpenAuditServiceOutcome;
                 typedef std::future<OpenAuditServiceOutcome> OpenAuditServiceOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::OpenAuditServiceRequest&, OpenAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenAuditServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateAgentSwitchResponse> UpdateAgentSwitchOutcome;
+                typedef std::future<UpdateAgentSwitchOutcome> UpdateAgentSwitchOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::UpdateAgentSwitchRequest&, UpdateAgentSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAgentSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateMonitorSwitchResponse> UpdateMonitorSwitchOutcome;
+                typedef std::future<UpdateMonitorSwitchOutcome> UpdateMonitorSwitchOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::UpdateMonitorSwitchRequest&, UpdateMonitorSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMonitorSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyUserAccountResponse> VerifyUserAccountOutcome;
                 typedef std::future<VerifyUserAccountOutcome> VerifyUserAccountOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::VerifyUserAccountRequest&, VerifyUserAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyUserAccountAsyncHandler;
@@ -786,6 +796,24 @@ namespace TencentCloud
                 OpenAuditServiceOutcome OpenAuditService(const Model::OpenAuditServiceRequest &request);
                 void OpenAuditServiceAsync(const Model::OpenAuditServiceRequest& request, const OpenAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenAuditServiceOutcomeCallable OpenAuditServiceCallable(const Model::OpenAuditServiceRequest& request);
+
+                /**
+                 *更新agent状态（停止或重连Agent）
+                 * @param req UpdateAgentSwitchRequest
+                 * @return UpdateAgentSwitchOutcome
+                 */
+                UpdateAgentSwitchOutcome UpdateAgentSwitch(const Model::UpdateAgentSwitchRequest &request);
+                void UpdateAgentSwitchAsync(const Model::UpdateAgentSwitchRequest& request, const UpdateAgentSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAgentSwitchOutcomeCallable UpdateAgentSwitchCallable(const Model::UpdateAgentSwitchRequest& request);
+
+                /**
+                 *更新Agent实例状态（停止或重连实例）
+                 * @param req UpdateMonitorSwitchRequest
+                 * @return UpdateMonitorSwitchOutcome
+                 */
+                UpdateMonitorSwitchOutcome UpdateMonitorSwitch(const Model::UpdateMonitorSwitchRequest &request);
+                void UpdateMonitorSwitchAsync(const Model::UpdateMonitorSwitchRequest& request, const UpdateMonitorSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateMonitorSwitchOutcomeCallable UpdateMonitorSwitchCallable(const Model::UpdateMonitorSwitchRequest& request);
 
                 /**
                  *验证用户数据库账号权限，获取会话token。

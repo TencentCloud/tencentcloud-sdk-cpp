@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/WatermarkInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/AddOnSubtitle.h>
+#include <tencentcloud/mps/v20190612/model/DrmInfo.h>
 
 
 namespace TencentCloud
@@ -204,6 +205,31 @@ namespace TencentCloud
                      */
                     bool AddOnSubtitlesHasBeenSet() const;
 
+                    /**
+                     * 获取Drm信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DrmInfo Drm信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DrmInfo GetDrmInfo() const;
+
+                    /**
+                     * 设置Drm信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _drmInfo Drm信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDrmInfo(const DrmInfo& _drmInfo);
+
+                    /**
+                     * 判断参数 DrmInfo 是否已赋值
+                     * @return DrmInfo 是否已赋值
+                     * 
+                     */
+                    bool DrmInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -249,6 +275,13 @@ namespace TencentCloud
                      */
                     std::vector<AddOnSubtitle> m_addOnSubtitles;
                     bool m_addOnSubtitlesHasBeenSet;
+
+                    /**
+                     * Drm信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DrmInfo m_drmInfo;
+                    bool m_drmInfoHasBeenSet;
 
                 };
             }

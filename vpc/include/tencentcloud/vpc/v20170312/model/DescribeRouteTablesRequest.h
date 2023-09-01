@@ -187,15 +187,15 @@ LOCAL_GATEWAY：本地网关。
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取请求对象个数。
-                     * @return Limit 请求对象个数。
+                     * 获取返回数量，默认为20，最大值为100。
+                     * @return Limit 返回数量，默认为20，最大值为100。
                      * 
                      */
                     std::string GetLimit() const;
 
                     /**
-                     * 设置请求对象个数。
-                     * @param _limit 请求对象个数。
+                     * 设置返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
                      * 
                      */
                     void SetLimit(const std::string& _limit);
@@ -248,7 +248,7 @@ LOCAL_GATEWAY：本地网关。
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 请求对象个数。
+                     * 返回数量，默认为20，最大值为100。
                      */
                     std::string m_limit;
                     bool m_limitHasBeenSet;

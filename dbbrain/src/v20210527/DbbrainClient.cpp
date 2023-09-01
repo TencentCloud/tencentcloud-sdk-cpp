@@ -2319,6 +2319,92 @@ DbbrainClient::OpenAuditServiceOutcomeCallable DbbrainClient::OpenAuditServiceCa
     return task->get_future();
 }
 
+DbbrainClient::UpdateAgentSwitchOutcome DbbrainClient::UpdateAgentSwitch(const UpdateAgentSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAgentSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAgentSwitchResponse rsp = UpdateAgentSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAgentSwitchOutcome(rsp);
+        else
+            return UpdateAgentSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAgentSwitchOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::UpdateAgentSwitchAsync(const UpdateAgentSwitchRequest& request, const UpdateAgentSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAgentSwitch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::UpdateAgentSwitchOutcomeCallable DbbrainClient::UpdateAgentSwitchCallable(const UpdateAgentSwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAgentSwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAgentSwitch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::UpdateMonitorSwitchOutcome DbbrainClient::UpdateMonitorSwitch(const UpdateMonitorSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateMonitorSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateMonitorSwitchResponse rsp = UpdateMonitorSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateMonitorSwitchOutcome(rsp);
+        else
+            return UpdateMonitorSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateMonitorSwitchOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::UpdateMonitorSwitchAsync(const UpdateMonitorSwitchRequest& request, const UpdateMonitorSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateMonitorSwitch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::UpdateMonitorSwitchOutcomeCallable DbbrainClient::UpdateMonitorSwitchCallable(const UpdateMonitorSwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateMonitorSwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateMonitorSwitch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::VerifyUserAccountOutcome DbbrainClient::VerifyUserAccount(const VerifyUserAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyUserAccount");

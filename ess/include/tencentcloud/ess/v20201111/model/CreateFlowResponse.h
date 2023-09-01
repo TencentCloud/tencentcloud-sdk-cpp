@@ -44,8 +44,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署流程编号
-                     * @return FlowId 签署流程编号
+                     * 获取签署流程编号，
+
+返回的流程编号，需要在CreateDocument，StartFlow中使用，
+
+注意：这三个接口（CreateFlow，CreateDocument，StartFlow）要一并调用，才算发起成功
+                     * @return FlowId 签署流程编号，
+
+返回的流程编号，需要在CreateDocument，StartFlow中使用，
+
+注意：这三个接口（CreateFlow，CreateDocument，StartFlow）要一并调用，才算发起成功
                      * 
                      */
                     std::string GetFlowId() const;
@@ -60,7 +68,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署流程编号
+                     * 签署流程编号，
+
+返回的流程编号，需要在CreateDocument，StartFlow中使用，
+
+注意：这三个接口（CreateFlow，CreateDocument，StartFlow）要一并调用，才算发起成功
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

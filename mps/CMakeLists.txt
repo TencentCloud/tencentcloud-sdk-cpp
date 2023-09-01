@@ -433,6 +433,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/AdaptiveDynamicStreamingTaskInput.h
   include/tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesResponse.h
+  include/tencentcloud/mps/v20190612/model/SimpleAesDrm.h
   include/tencentcloud/mps/v20190612/model/TaskNotifyConfig.h
   include/tencentcloud/mps/v20190612/model/FaceEnhanceConfig.h
   include/tencentcloud/mps/v20190612/model/LiveStreamAiReviewImagePornResult.h
@@ -488,6 +489,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AwsSQS.h
   include/tencentcloud/mps/v20190612/model/LiveStreamProcessTask.h
   include/tencentcloud/mps/v20190612/model/QualityControlData.h
+  include/tencentcloud/mps/v20190612/model/DrmInfo.h
   include/tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/MediaContentReviewSegmentItem.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowRealtimeStatusResponse.h
@@ -986,6 +988,7 @@ set(mps_src
   src/v20190612/model/DescribeContentReviewTemplatesRequest.cpp
   src/v20190612/model/AdaptiveDynamicStreamingTaskInput.cpp
   src/v20190612/model/DescribeImageSpriteTemplatesResponse.cpp
+  src/v20190612/model/SimpleAesDrm.cpp
   src/v20190612/model/TaskNotifyConfig.cpp
   src/v20190612/model/FaceEnhanceConfig.cpp
   src/v20190612/model/LiveStreamAiReviewImagePornResult.cpp
@@ -1041,6 +1044,7 @@ set(mps_src
   src/v20190612/model/AwsSQS.cpp
   src/v20190612/model/LiveStreamProcessTask.cpp
   src/v20190612/model/QualityControlData.cpp
+  src/v20190612/model/DrmInfo.cpp
   src/v20190612/model/DescribeSampleSnapshotTemplatesResponse.cpp
   src/v20190612/model/MediaContentReviewSegmentItem.cpp
   src/v20190612/model/DescribeStreamLinkFlowRealtimeStatusResponse.cpp

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取催办合同详情列表
-                     * @return RemindFlowRecords 催办合同详情列表
+                     * 获取合同催办结果的详细信息列表。
+                     * @return RemindFlowRecords 合同催办结果的详细信息列表。
                      * 
                      */
                     std::vector<RemindFlowRecords> GetRemindFlowRecords() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 催办合同详情列表
+                     * 合同催办结果的详细信息列表。
                      */
                     std::vector<RemindFlowRecords> m_remindFlowRecords;
                     bool m_remindFlowRecordsHasBeenSet;

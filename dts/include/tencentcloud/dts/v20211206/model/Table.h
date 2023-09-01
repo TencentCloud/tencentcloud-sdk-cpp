@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dts/v20211206/model/Column.h>
 
 
 namespace TencentCloud
@@ -122,6 +123,56 @@ namespace TencentCloud
                     bool FilterConditionHasBeenSet() const;
 
                     /**
+                     * 获取是否同步表中所有列，All：当前表下的所有列,Partial(ModifySyncJobConfig接口里的对应字段ColumnMode暂不支持Partial)：当前表下的部分列，通过填充Columns字段详细表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColumnMode 是否同步表中所有列，All：当前表下的所有列,Partial(ModifySyncJobConfig接口里的对应字段ColumnMode暂不支持Partial)：当前表下的部分列，通过填充Columns字段详细表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetColumnMode() const;
+
+                    /**
+                     * 设置是否同步表中所有列，All：当前表下的所有列,Partial(ModifySyncJobConfig接口里的对应字段ColumnMode暂不支持Partial)：当前表下的部分列，通过填充Columns字段详细表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _columnMode 是否同步表中所有列，All：当前表下的所有列,Partial(ModifySyncJobConfig接口里的对应字段ColumnMode暂不支持Partial)：当前表下的部分列，通过填充Columns字段详细表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetColumnMode(const std::string& _columnMode);
+
+                    /**
+                     * 判断参数 ColumnMode 是否已赋值
+                     * @return ColumnMode 是否已赋值
+                     * 
+                     */
+                    bool ColumnModeHasBeenSet() const;
+
+                    /**
+                     * 获取同步的的列信息，当ColumnMode为Partial时，必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Columns 同步的的列信息，当ColumnMode为Partial时，必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Column> GetColumns() const;
+
+                    /**
+                     * 设置同步的的列信息，当ColumnMode为Partial时，必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _columns 同步的的列信息，当ColumnMode为Partial时，必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetColumns(const std::vector<Column>& _columns);
+
+                    /**
+                     * 判断参数 Columns 是否已赋值
+                     * @return Columns 是否已赋值
+                     * 
+                     */
+                    bool ColumnsHasBeenSet() const;
+
+                    /**
                      * 获取同步临时表，注意此配置与NewTableName互斥，只能使用其中一种。当配置的同步对象为表级别且TableEditMode为pt时此项有意义，针对pt-osc等工具在同步过程中产生的临时表进行同步，需要提前将可能的临时表配置在这里，否则不会同步任何临时表。示例，如要对t1进行pt-osc操作，此项配置应该为["\_t1\_new","\_t1\_old"]；如要对t1进行gh-ost操作，此项配置应该为["\_t1\_ghc","\_t1\_gho","\_t1\_del"]，pt-osc与gh-ost产生的临时表可同时配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpTables 同步临时表，注意此配置与NewTableName互斥，只能使用其中一种。当配置的同步对象为表级别且TableEditMode为pt时此项有意义，针对pt-osc等工具在同步过程中产生的临时表进行同步，需要提前将可能的临时表配置在这里，否则不会同步任何临时表。示例，如要对t1进行pt-osc操作，此项配置应该为["\_t1\_new","\_t1\_old"]；如要对t1进行gh-ost操作，此项配置应该为["\_t1\_ghc","\_t1\_gho","\_t1\_del"]，pt-osc与gh-ost产生的临时表可同时配置。
@@ -193,6 +244,20 @@ namespace TencentCloud
                      */
                     std::string m_filterCondition;
                     bool m_filterConditionHasBeenSet;
+
+                    /**
+                     * 是否同步表中所有列，All：当前表下的所有列,Partial(ModifySyncJobConfig接口里的对应字段ColumnMode暂不支持Partial)：当前表下的部分列，通过填充Columns字段详细表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_columnMode;
+                    bool m_columnModeHasBeenSet;
+
+                    /**
+                     * 同步的的列信息，当ColumnMode为Partial时，必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Column> m_columns;
+                    bool m_columnsHasBeenSet;
 
                     /**
                      * 同步临时表，注意此配置与NewTableName互斥，只能使用其中一种。当配置的同步对象为表级别且TableEditMode为pt时此项有意义，针对pt-osc等工具在同步过程中产生的临时表进行同步，需要提前将可能的临时表配置在这里，否则不会同步任何临时表。示例，如要对t1进行pt-osc操作，此项配置应该为["\_t1\_new","\_t1\_old"]；如要对t1进行gh-ost操作，此项配置应该为["\_t1\_ghc","\_t1\_gho","\_t1\_del"]，pt-osc与gh-ost产生的临时表可同时配置。

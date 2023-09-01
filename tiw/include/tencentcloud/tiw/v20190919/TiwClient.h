@@ -379,7 +379,9 @@ namespace TencentCloud
                 CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request);
 
                 /**
-                 *创建课后录制任务
+                 *课后录制服务已下线
+
+创建课后录制任务
                  * @param req CreateOfflineRecordRequest
                  * @return CreateOfflineRecordOutcome
                  */
@@ -469,7 +471,9 @@ namespace TencentCloud
                 DescribeIMApplicationsOutcomeCallable DescribeIMApplicationsCallable(const Model::DescribeIMApplicationsRequest& request);
 
                 /**
-                 *查询课后录制任务的进度与录制结果等相关信息
+                 *课后录制服务已下线
+
+查询课后录制任务的进度与录制结果等相关信息
                  * @param req DescribeOfflineRecordRequest
                  * @return DescribeOfflineRecordOutcome
                  */
@@ -478,7 +482,9 @@ namespace TencentCloud
                 DescribeOfflineRecordOutcomeCallable DescribeOfflineRecordCallable(const Model::DescribeOfflineRecordRequest& request);
 
                 /**
-                 *查询课后录制回调地址
+                 *课后录制服务已下线
+
+查询课后录制回调地址
                  * @param req DescribeOfflineRecordCallbackRequest
                  * @return DescribeOfflineRecordCallbackOutcome
                  */
@@ -800,7 +806,9 @@ namespace TencentCloud
                 ResumeOnlineRecordOutcomeCallable ResumeOnlineRecordCallable(const Model::ResumeOnlineRecordRequest& request);
 
                 /**
-                 *设置课后录制回调地址
+                 *课后录制服务已下线
+
+设置课后录制回调地址
                  * @param req SetOfflineRecordCallbackRequest
                  * @return SetOfflineRecordCallbackOutcome
                  */

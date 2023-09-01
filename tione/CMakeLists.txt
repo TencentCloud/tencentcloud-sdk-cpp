@@ -150,6 +150,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceCallInfoRequest.h
   include/tencentcloud/tione/v20211111/model/DataPoint.h
   include/tencentcloud/tione/v20211111/model/TagFilter.h
+  include/tencentcloud/tione/v20211111/model/TJCallInfo.h
   include/tencentcloud/tione/v20211111/model/CreateTrainingModelRequest.h
   include/tencentcloud/tione/v20211111/model/SchemaInfo.h
   include/tencentcloud/tione/v20211111/model/StartCmdInfo.h
@@ -195,6 +196,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskResponse.h
   include/tencentcloud/tione/v20211111/model/DetectionLabelInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsRequest.h
+  include/tencentcloud/tione/v20211111/model/ServiceEIPInfo.h
   include/tencentcloud/tione/v20211111/model/TextLabelDistributionDetailInfoSecondClass.h
   include/tencentcloud/tione/v20211111/model/BatchTaskSetItem.h
   include/tencentcloud/tione/v20211111/model/ImageInfo.h
@@ -214,6 +216,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeDatasetsResponse.h
   include/tencentcloud/tione/v20211111/model/RestartModelAccelerateTaskResponse.h
   include/tencentcloud/tione/v20211111/model/CreateBatchModelAccTasksRequest.h
+  include/tencentcloud/tione/v20211111/model/IntranetCallInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceRequest.h
   include/tencentcloud/tione/v20211111/model/WeightEntry.h
   include/tencentcloud/tione/v20211111/model/Instance.h
@@ -251,6 +254,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/VolumeMount.h
   include/tencentcloud/tione/v20211111/model/DeleteNotebookImageRecordResponse.h
   include/tencentcloud/tione/v20211111/model/CreateModelServiceResponse.h
+  include/tencentcloud/tione/v20211111/model/ServiceEIP.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupResponse.h
   include/tencentcloud/tione/v20211111/model/ServiceGroup.h
   include/tencentcloud/tione/v20211111/model/TrainingModelDTO.h
@@ -263,6 +267,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreateTrainingModelResponse.h
   include/tencentcloud/tione/v20211111/model/LogIdentity.h
   include/tencentcloud/tione/v20211111/model/StopModelAccelerateTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/IngressPrivateLinkInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeAPIConfigsResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetDetailStructuredRequest.h
   include/tencentcloud/tione/v20211111/model/SendChatMessageRequest.h
@@ -459,6 +464,7 @@ set(tione_src
   src/v20211111/model/DescribeModelServiceCallInfoRequest.cpp
   src/v20211111/model/DataPoint.cpp
   src/v20211111/model/TagFilter.cpp
+  src/v20211111/model/TJCallInfo.cpp
   src/v20211111/model/CreateTrainingModelRequest.cpp
   src/v20211111/model/SchemaInfo.cpp
   src/v20211111/model/StartCmdInfo.cpp
@@ -504,6 +510,7 @@ set(tione_src
   src/v20211111/model/DescribeModelAccelerateTaskResponse.cpp
   src/v20211111/model/DetectionLabelInfo.cpp
   src/v20211111/model/DescribeModelServiceGroupsRequest.cpp
+  src/v20211111/model/ServiceEIPInfo.cpp
   src/v20211111/model/TextLabelDistributionDetailInfoSecondClass.cpp
   src/v20211111/model/BatchTaskSetItem.cpp
   src/v20211111/model/ImageInfo.cpp
@@ -523,6 +530,7 @@ set(tione_src
   src/v20211111/model/DescribeDatasetsResponse.cpp
   src/v20211111/model/RestartModelAccelerateTaskResponse.cpp
   src/v20211111/model/CreateBatchModelAccTasksRequest.cpp
+  src/v20211111/model/IntranetCallInfo.cpp
   src/v20211111/model/DescribeBillingSpecsPriceRequest.cpp
   src/v20211111/model/WeightEntry.cpp
   src/v20211111/model/Instance.cpp
@@ -560,6 +568,7 @@ set(tione_src
   src/v20211111/model/VolumeMount.cpp
   src/v20211111/model/DeleteNotebookImageRecordResponse.cpp
   src/v20211111/model/CreateModelServiceResponse.cpp
+  src/v20211111/model/ServiceEIP.cpp
   src/v20211111/model/DescribeModelServiceGroupResponse.cpp
   src/v20211111/model/ServiceGroup.cpp
   src/v20211111/model/TrainingModelDTO.cpp
@@ -572,6 +581,7 @@ set(tione_src
   src/v20211111/model/CreateTrainingModelResponse.cpp
   src/v20211111/model/LogIdentity.cpp
   src/v20211111/model/StopModelAccelerateTaskResponse.cpp
+  src/v20211111/model/IngressPrivateLinkInfo.cpp
   src/v20211111/model/DescribeAPIConfigsResponse.cpp
   src/v20211111/model/DescribeDatasetDetailStructuredRequest.cpp
   src/v20211111/model/SendChatMessageRequest.cpp

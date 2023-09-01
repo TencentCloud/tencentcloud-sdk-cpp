@@ -189,15 +189,15 @@ CMCC：中国移动
                     bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取为弹性网卡指定随机生成的IPv6地址数量，目前数量不能大于1。
-                     * @return Ipv6AddressCount 为弹性网卡指定随机生成的IPv6地址数量，目前数量不能大于1。
+                     * 获取为弹性网卡指定随机生成的IPv6地址数量，单网情况下是1，单网需要ISP 只能为单网运营商，三网情况3
+                     * @return Ipv6AddressCount 为弹性网卡指定随机生成的IPv6地址数量，单网情况下是1，单网需要ISP 只能为单网运营商，三网情况3
                      * 
                      */
                     int64_t GetIpv6AddressCount() const;
 
                     /**
-                     * 设置为弹性网卡指定随机生成的IPv6地址数量，目前数量不能大于1。
-                     * @param _ipv6AddressCount 为弹性网卡指定随机生成的IPv6地址数量，目前数量不能大于1。
+                     * 设置为弹性网卡指定随机生成的IPv6地址数量，单网情况下是1，单网需要ISP 只能为单网运营商，三网情况3
+                     * @param _ipv6AddressCount 为弹性网卡指定随机生成的IPv6地址数量，单网情况下是1，单网需要ISP 只能为单网运营商，三网情况3
                      * 
                      */
                     void SetIpv6AddressCount(const int64_t& _ipv6AddressCount);
@@ -208,6 +208,27 @@ CMCC：中国移动
                      * 
                      */
                     bool Ipv6AddressCountHasBeenSet() const;
+
+                    /**
+                     * 获取指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段
+                     * @return Ipv6SubnetIds 指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段
+                     * 
+                     */
+                    std::vector<std::string> GetIpv6SubnetIds() const;
+
+                    /**
+                     * 设置指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段
+                     * @param _ipv6SubnetIds 指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段
+                     * 
+                     */
+                    void SetIpv6SubnetIds(const std::vector<std::string>& _ipv6SubnetIds);
+
+                    /**
+                     * 判断参数 Ipv6SubnetIds 是否已赋值
+                     * @return Ipv6SubnetIds 是否已赋值
+                     * 
+                     */
+                    bool Ipv6SubnetIdsHasBeenSet() const;
 
                 private:
 
@@ -252,10 +273,16 @@ CMCC：中国移动
                     bool m_privateIpAddressesHasBeenSet;
 
                     /**
-                     * 为弹性网卡指定随机生成的IPv6地址数量，目前数量不能大于1。
+                     * 为弹性网卡指定随机生成的IPv6地址数量，单网情况下是1，单网需要ISP 只能为单网运营商，三网情况3
                      */
                     int64_t m_ipv6AddressCount;
                     bool m_ipv6AddressCountHasBeenSet;
+
+                    /**
+                     * 指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段
+                     */
+                    std::vector<std::string> m_ipv6SubnetIds;
+                    bool m_ipv6SubnetIdsHasBeenSet;
 
                 };
             }

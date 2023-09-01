@@ -24,6 +24,8 @@
 #include <tencentcloud/tione/v20211111/model/ServiceCallInfo.h>
 #include <tencentcloud/tione/v20211111/model/InferGatewayCallInfo.h>
 #include <tencentcloud/tione/v20211111/model/DefaultNginxGatewayCallInfo.h>
+#include <tencentcloud/tione/v20211111/model/TJCallInfo.h>
+#include <tencentcloud/tione/v20211111/model/IntranetCallInfo.h>
 
 
 namespace TencentCloud
@@ -94,6 +96,38 @@ namespace TencentCloud
                      */
                     bool DefaultNginxGatewayCallInfoHasBeenSet() const;
 
+                    /**
+                     * 获取太极服务的调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TJCallInfo 太极服务的调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TJCallInfo GetTJCallInfo() const;
+
+                    /**
+                     * 判断参数 TJCallInfo 是否已赋值
+                     * @return TJCallInfo 是否已赋值
+                     * 
+                     */
+                    bool TJCallInfoHasBeenSet() const;
+
+                    /**
+                     * 获取内网调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntranetCallInfo 内网调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    IntranetCallInfo GetIntranetCallInfo() const;
+
+                    /**
+                     * 判断参数 IntranetCallInfo 是否已赋值
+                     * @return IntranetCallInfo 是否已赋值
+                     * 
+                     */
+                    bool IntranetCallInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +150,20 @@ namespace TencentCloud
                      */
                     DefaultNginxGatewayCallInfo m_defaultNginxGatewayCallInfo;
                     bool m_defaultNginxGatewayCallInfoHasBeenSet;
+
+                    /**
+                     * 太极服务的调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TJCallInfo m_tJCallInfo;
+                    bool m_tJCallInfoHasBeenSet;
+
+                    /**
+                     * 内网调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntranetCallInfo m_intranetCallInfo;
+                    bool m_intranetCallInfoHasBeenSet;
 
                 };
             }

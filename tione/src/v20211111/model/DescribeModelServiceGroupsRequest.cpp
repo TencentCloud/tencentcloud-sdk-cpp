@@ -28,7 +28,8 @@ DescribeModelServiceGroupsRequest::DescribeModelServiceGroupsRequest() :
     m_orderHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_tagFiltersHasBeenSet(false)
+    m_tagFiltersHasBeenSet(false),
+    m_serviceCategoryHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string DescribeModelServiceGroupsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_serviceCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceCategory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceCategory.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -203,6 +212,22 @@ void DescribeModelServiceGroupsRequest::SetTagFilters(const vector<TagFilter>& _
 bool DescribeModelServiceGroupsRequest::TagFiltersHasBeenSet() const
 {
     return m_tagFiltersHasBeenSet;
+}
+
+string DescribeModelServiceGroupsRequest::GetServiceCategory() const
+{
+    return m_serviceCategory;
+}
+
+void DescribeModelServiceGroupsRequest::SetServiceCategory(const string& _serviceCategory)
+{
+    m_serviceCategory = _serviceCategory;
+    m_serviceCategoryHasBeenSet = true;
+}
+
+bool DescribeModelServiceGroupsRequest::ServiceCategoryHasBeenSet() const
+{
+    return m_serviceCategoryHasBeenSet;
 }
 
 

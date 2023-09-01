@@ -33,7 +33,8 @@ CreateAndAttachNetworkInterfaceRequest::CreateAndAttachNetworkInterfaceRequest()
     m_securityGroupIdsHasBeenSet(false),
     m_networkInterfaceDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_attachTypeHasBeenSet(false)
+    m_attachTypeHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,14 @@ string CreateAndAttachNetworkInterfaceRequest::ToJsonString() const
         string key = "AttachType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_attachType, allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -333,6 +342,22 @@ void CreateAndAttachNetworkInterfaceRequest::SetAttachType(const uint64_t& _atta
 bool CreateAndAttachNetworkInterfaceRequest::AttachTypeHasBeenSet() const
 {
     return m_attachTypeHasBeenSet;
+}
+
+string CreateAndAttachNetworkInterfaceRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateAndAttachNetworkInterfaceRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateAndAttachNetworkInterfaceRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dts/v20211206/model/CompareColumnItem.h>
 
 
 namespace TencentCloud
@@ -71,6 +72,56 @@ namespace TencentCloud
                      */
                     bool TableNameHasBeenSet() const;
 
+                    /**
+                     * 获取column 模式，all 为全部，partial 表示部分(该参数仅对数据同步任务有效)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColumnMode column 模式，all 为全部，partial 表示部分(该参数仅对数据同步任务有效)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetColumnMode() const;
+
+                    /**
+                     * 设置column 模式，all 为全部，partial 表示部分(该参数仅对数据同步任务有效)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _columnMode column 模式，all 为全部，partial 表示部分(该参数仅对数据同步任务有效)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetColumnMode(const std::string& _columnMode);
+
+                    /**
+                     * 判断参数 ColumnMode 是否已赋值
+                     * @return ColumnMode 是否已赋值
+                     * 
+                     */
+                    bool ColumnModeHasBeenSet() const;
+
+                    /**
+                     * 获取当 ColumnMode 为 partial 时必填(该参数仅对数据同步任务有效)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Columns 当 ColumnMode 为 partial 时必填(该参数仅对数据同步任务有效)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<CompareColumnItem> GetColumns() const;
+
+                    /**
+                     * 设置当 ColumnMode 为 partial 时必填(该参数仅对数据同步任务有效)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _columns 当 ColumnMode 为 partial 时必填(该参数仅对数据同步任务有效)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetColumns(const std::vector<CompareColumnItem>& _columns);
+
+                    /**
+                     * 判断参数 Columns 是否已赋值
+                     * @return Columns 是否已赋值
+                     * 
+                     */
+                    bool ColumnsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +130,20 @@ namespace TencentCloud
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
+
+                    /**
+                     * column 模式，all 为全部，partial 表示部分(该参数仅对数据同步任务有效)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_columnMode;
+                    bool m_columnModeHasBeenSet;
+
+                    /**
+                     * 当 ColumnMode 为 partial 时必填(该参数仅对数据同步任务有效)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CompareColumnItem> m_columns;
+                    bool m_columnsHasBeenSet;
 
                 };
             }

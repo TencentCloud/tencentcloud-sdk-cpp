@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool GroupDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">qcloud控制台项目管理页面</a>查询到。
-                     * @return ProjectId 项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">qcloud控制台项目管理页面</a>查询到。
+                     * 获取项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。
+                     * @return ProjectId 项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">qcloud控制台项目管理页面</a>查询到。
-                     * @param _projectId 项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">qcloud控制台项目管理页面</a>查询到。
+                     * 设置项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。
+                     * @param _projectId 项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_groupDescriptionHasBeenSet;
 
                     /**
-                     * 项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">qcloud控制台项目管理页面</a>查询到。
+                     * 项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

@@ -26,7 +26,9 @@ using namespace std;
 DescribeModelServiceCallInfoResponse::DescribeModelServiceCallInfoResponse() :
     m_serviceCallInfoHasBeenSet(false),
     m_inferGatewayCallInfoHasBeenSet(false),
-    m_defaultNginxGatewayCallInfoHasBeenSet(false)
+    m_defaultNginxGatewayCallInfoHasBeenSet(false),
+    m_tJCallInfoHasBeenSet(false),
+    m_intranetCallInfoHasBeenSet(false)
 {
 }
 
@@ -115,6 +117,40 @@ CoreInternalOutcome DescribeModelServiceCallInfoResponse::Deserialize(const stri
         m_defaultNginxGatewayCallInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TJCallInfo") && !rsp["TJCallInfo"].IsNull())
+    {
+        if (!rsp["TJCallInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TJCallInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tJCallInfo.Deserialize(rsp["TJCallInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tJCallInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IntranetCallInfo") && !rsp["IntranetCallInfo"].IsNull())
+    {
+        if (!rsp["IntranetCallInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntranetCallInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_intranetCallInfo.Deserialize(rsp["IntranetCallInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_intranetCallInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -150,6 +186,24 @@ string DescribeModelServiceCallInfoResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_defaultNginxGatewayCallInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tJCallInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TJCallInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tJCallInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_intranetCallInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetCallInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intranetCallInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -192,6 +246,26 @@ DefaultNginxGatewayCallInfo DescribeModelServiceCallInfoResponse::GetDefaultNgin
 bool DescribeModelServiceCallInfoResponse::DefaultNginxGatewayCallInfoHasBeenSet() const
 {
     return m_defaultNginxGatewayCallInfoHasBeenSet;
+}
+
+TJCallInfo DescribeModelServiceCallInfoResponse::GetTJCallInfo() const
+{
+    return m_tJCallInfo;
+}
+
+bool DescribeModelServiceCallInfoResponse::TJCallInfoHasBeenSet() const
+{
+    return m_tJCallInfoHasBeenSet;
+}
+
+IntranetCallInfo DescribeModelServiceCallInfoResponse::GetIntranetCallInfo() const
+{
+    return m_intranetCallInfo;
+}
+
+bool DescribeModelServiceCallInfoResponse::IntranetCallInfoHasBeenSet() const
+{
+    return m_intranetCallInfoHasBeenSet;
 }
 
 

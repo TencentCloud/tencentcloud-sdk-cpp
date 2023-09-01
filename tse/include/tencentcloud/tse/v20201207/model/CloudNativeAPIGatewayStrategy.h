@@ -249,7 +249,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxReplicas 最大节点数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetMaxReplicas() const;
 
@@ -258,14 +258,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxReplicas 最大节点数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetMaxReplicas(const uint64_t& _maxReplicas);
 
                     /**
                      * 判断参数 MaxReplicas 是否已赋值
                      * @return MaxReplicas 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MaxReplicasHasBeenSet() const;
 

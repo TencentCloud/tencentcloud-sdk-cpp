@@ -23,7 +23,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DescribeModelServiceGroupRequest::DescribeModelServiceGroupRequest() :
-    m_serviceGroupIdHasBeenSet(false)
+    m_serviceGroupIdHasBeenSet(false),
+    m_serviceCategoryHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeModelServiceGroupRequest::ToJsonString() const
         string key = "ServiceGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceCategory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceCategory.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeModelServiceGroupRequest::SetServiceGroupId(const string& _serviceG
 bool DescribeModelServiceGroupRequest::ServiceGroupIdHasBeenSet() const
 {
     return m_serviceGroupIdHasBeenSet;
+}
+
+string DescribeModelServiceGroupRequest::GetServiceCategory() const
+{
+    return m_serviceCategory;
+}
+
+void DescribeModelServiceGroupRequest::SetServiceCategory(const string& _serviceCategory)
+{
+    m_serviceCategory = _serviceCategory;
+    m_serviceCategoryHasBeenSet = true;
+}
+
+bool DescribeModelServiceGroupRequest::ServiceCategoryHasBeenSet() const
+{
+    return m_serviceCategoryHasBeenSet;
 }
 
 

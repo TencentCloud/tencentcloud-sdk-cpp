@@ -27,7 +27,8 @@ CloudNativeAPIGatewayStrategyAutoScalerConfig::CloudNativeAPIGatewayStrategyAuto
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_strategyIdHasBeenSet(false),
-    m_autoScalerIdHasBeenSet(false)
+    m_autoScalerIdHasBeenSet(false),
+    m_behaviorHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,23 @@ CoreInternalOutcome CloudNativeAPIGatewayStrategyAutoScalerConfig::Deserialize(c
         m_autoScalerIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Behavior") && !value["Behavior"].IsNull())
+    {
+        if (!value["Behavior"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayStrategyAutoScalerConfig.Behavior` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_behavior.Deserialize(value["Behavior"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_behaviorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +202,15 @@ void CloudNativeAPIGatewayStrategyAutoScalerConfig::ToJsonObject(rapidjson::Valu
         string key = "AutoScalerId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_autoScalerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_behaviorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Behavior";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_behavior.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -299,5 +326,21 @@ void CloudNativeAPIGatewayStrategyAutoScalerConfig::SetAutoScalerId(const string
 bool CloudNativeAPIGatewayStrategyAutoScalerConfig::AutoScalerIdHasBeenSet() const
 {
     return m_autoScalerIdHasBeenSet;
+}
+
+AutoScalerBehavior CloudNativeAPIGatewayStrategyAutoScalerConfig::GetBehavior() const
+{
+    return m_behavior;
+}
+
+void CloudNativeAPIGatewayStrategyAutoScalerConfig::SetBehavior(const AutoScalerBehavior& _behavior)
+{
+    m_behavior = _behavior;
+    m_behaviorHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayStrategyAutoScalerConfig::BehaviorHasBeenSet() const
+{
+    return m_behaviorHasBeenSet;
 }
 

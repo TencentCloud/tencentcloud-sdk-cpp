@@ -114,6 +114,27 @@ namespace TencentCloud
                     bool ApproversHasBeenSet() const;
 
                     /**
+                     * 获取签署流程描述,最大长度1000个字符
+                     * @return FlowDescription 签署流程描述,最大长度1000个字符
+                     * 
+                     */
+                    std::string GetFlowDescription() const;
+
+                    /**
+                     * 设置签署流程描述,最大长度1000个字符
+                     * @param _flowDescription 签署流程描述,最大长度1000个字符
+                     * 
+                     */
+                    void SetFlowDescription(const std::string& _flowDescription);
+
+                    /**
+                     * 判断参数 FlowDescription 是否已赋值
+                     * @return FlowDescription 是否已赋值
+                     * 
+                     */
+                    bool FlowDescriptionHasBeenSet() const;
+
+                    /**
                      * 获取签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
                      * @return FlowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
                      * 
@@ -157,8 +178,10 @@ namespace TencentCloud
 
                     /**
                      * 获取签署流程的签署截止时间。
+
 值为unix时间戳,精确到秒,不传默认为当前时间一年后
                      * @return DeadLine 签署流程的签署截止时间。
+
 值为unix时间戳,精确到秒,不传默认为当前时间一年后
                      * 
                      */
@@ -166,8 +189,10 @@ namespace TencentCloud
 
                     /**
                      * 设置签署流程的签署截止时间。
+
 值为unix时间戳,精确到秒,不传默认为当前时间一年后
                      * @param _deadLine 签署流程的签署截止时间。
+
 值为unix时间戳,精确到秒,不传默认为当前时间一年后
                      * 
                      */
@@ -221,27 +246,6 @@ namespace TencentCloud
                      * 
                      */
                     bool UserDataHasBeenSet() const;
-
-                    /**
-                     * 获取签署流程描述,最大长度1000个字符
-                     * @return FlowDescription 签署流程描述,最大长度1000个字符
-                     * 
-                     */
-                    std::string GetFlowDescription() const;
-
-                    /**
-                     * 设置签署流程描述,最大长度1000个字符
-                     * @param _flowDescription 签署流程描述,最大长度1000个字符
-                     * 
-                     */
-                    void SetFlowDescription(const std::string& _flowDescription);
-
-                    /**
-                     * 判断参数 FlowDescription 是否已赋值
-                     * @return FlowDescription 是否已赋值
-                     * 
-                     */
-                    bool FlowDescriptionHasBeenSet() const;
 
                     /**
                      * 获取发送类型：
@@ -461,6 +465,12 @@ false：有序签
                     bool m_approversHasBeenSet;
 
                     /**
+                     * 签署流程描述,最大长度1000个字符
+                     */
+                    std::string m_flowDescription;
+                    bool m_flowDescriptionHasBeenSet;
+
+                    /**
                      * 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
                      */
                     std::string m_flowType;
@@ -474,6 +484,7 @@ false：有序签
 
                     /**
                      * 签署流程的签署截止时间。
+
 值为unix时间戳,精确到秒,不传默认为当前时间一年后
                      */
                     int64_t m_deadLine;
@@ -490,12 +501,6 @@ false：有序签
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
-
-                    /**
-                     * 签署流程描述,最大长度1000个字符
-                     */
-                    std::string m_flowDescription;
-                    bool m_flowDescriptionHasBeenSet;
 
                     /**
                      * 发送类型：

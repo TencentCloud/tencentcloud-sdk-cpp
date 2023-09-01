@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool TablesHasBeenSet() const;
 
                     /**
-                     * 获取视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
+                     * 获取视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ViewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
+                     * @return ViewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetViewMode() const;
 
                     /**
-                     * 设置视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
+                     * 设置视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _viewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
+                     * @param _viewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool ViewModeHasBeenSet() const;
 
                     /**
-                     * 获取用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写
+                     * 获取用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Views 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写
+                     * @return Views 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CompareViewItem> GetViews() const;
 
                     /**
-                     * 设置用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写
+                     * 设置用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _views 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写
+                     * @param _views 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -261,14 +261,14 @@ namespace TencentCloud
                     bool m_tablesHasBeenSet;
 
                     /**
-                     * 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
+                     * 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_viewMode;
                     bool m_viewModeHasBeenSet;
 
                     /**
-                     * 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写
+                     * 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CompareViewItem> m_views;

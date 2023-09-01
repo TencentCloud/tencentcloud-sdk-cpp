@@ -642,6 +642,92 @@ CsipClient::DescribeScanReportListOutcomeCallable CsipClient::DescribeScanReport
     return task->get_future();
 }
 
+CsipClient::DescribeScanTaskListOutcome CsipClient::DescribeScanTaskList(const DescribeScanTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScanTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScanTaskListResponse rsp = DescribeScanTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScanTaskListOutcome(rsp);
+        else
+            return DescribeScanTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScanTaskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeScanTaskListAsync(const DescribeScanTaskListRequest& request, const DescribeScanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScanTaskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeScanTaskListOutcomeCallable CsipClient::DescribeScanTaskListCallable(const DescribeScanTaskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScanTaskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScanTaskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeSearchBugInfoOutcome CsipClient::DescribeSearchBugInfo(const DescribeSearchBugInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSearchBugInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSearchBugInfoResponse rsp = DescribeSearchBugInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSearchBugInfoOutcome(rsp);
+        else
+            return DescribeSearchBugInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSearchBugInfoOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSearchBugInfoAsync(const DescribeSearchBugInfoRequest& request, const DescribeSearchBugInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSearchBugInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeSearchBugInfoOutcomeCallable CsipClient::DescribeSearchBugInfoCallable(const DescribeSearchBugInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSearchBugInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSearchBugInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeSubnetAssetsOutcome CsipClient::DescribeSubnetAssets(const DescribeSubnetAssetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubnetAssets");
@@ -678,6 +764,92 @@ CsipClient::DescribeSubnetAssetsOutcomeCallable CsipClient::DescribeSubnetAssets
         [this, request]()
         {
             return this->DescribeSubnetAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeTaskLogListOutcome CsipClient::DescribeTaskLogList(const DescribeTaskLogListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskLogList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskLogListResponse rsp = DescribeTaskLogListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskLogListOutcome(rsp);
+        else
+            return DescribeTaskLogListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskLogListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeTaskLogListAsync(const DescribeTaskLogListRequest& request, const DescribeTaskLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskLogList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeTaskLogListOutcomeCallable CsipClient::DescribeTaskLogListCallable(const DescribeTaskLogListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskLogListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskLogList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeTaskLogURLOutcome CsipClient::DescribeTaskLogURL(const DescribeTaskLogURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskLogURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskLogURLResponse rsp = DescribeTaskLogURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskLogURLOutcome(rsp);
+        else
+            return DescribeTaskLogURLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskLogURLOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeTaskLogURLAsync(const DescribeTaskLogURLRequest& request, const DescribeTaskLogURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskLogURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeTaskLogURLOutcomeCallable CsipClient::DescribeTaskLogURLCallable(const DescribeTaskLogURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskLogURLOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskLogURL(request);
         }
     );
 

@@ -85,19 +85,27 @@ namespace TencentCloud
                     bool QuestionHasBeenSet() const;
 
                     /**
-                     * 获取会话模型版本，不同的会话模型调用到不同的模型后台。
-注: 多行业多场景大模型填写 tj_llm_clm-v1
-                     * @return ModelVersion 会话模型版本，不同的会话模型调用到不同的模型后台。
-注: 多行业多场景大模型填写 tj_llm_clm-v1
+                     * 获取会话模型版本。
+多行业多场景大模型：填写 tj_llm_clm-v1。
+多行业客服大模型：填写demo_big_model_version_id。
+默认为demo_big_model_version_id，即多行业客服大模型。
+                     * @return ModelVersion 会话模型版本。
+多行业多场景大模型：填写 tj_llm_clm-v1。
+多行业客服大模型：填写demo_big_model_version_id。
+默认为demo_big_model_version_id，即多行业客服大模型。
                      * 
                      */
                     std::string GetModelVersion() const;
 
                     /**
-                     * 设置会话模型版本，不同的会话模型调用到不同的模型后台。
-注: 多行业多场景大模型填写 tj_llm_clm-v1
-                     * @param _modelVersion 会话模型版本，不同的会话模型调用到不同的模型后台。
-注: 多行业多场景大模型填写 tj_llm_clm-v1
+                     * 设置会话模型版本。
+多行业多场景大模型：填写 tj_llm_clm-v1。
+多行业客服大模型：填写demo_big_model_version_id。
+默认为demo_big_model_version_id，即多行业客服大模型。
+                     * @param _modelVersion 会话模型版本。
+多行业多场景大模型：填写 tj_llm_clm-v1。
+多行业客服大模型：填写demo_big_model_version_id。
+默认为demo_big_model_version_id，即多行业客服大模型。
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -110,15 +118,27 @@ namespace TencentCloud
                     bool ModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取使用模式(仅部分模型支持)。General 通用问答；WithSearchPlugin 搜索增强问答
-                     * @return Mode 使用模式(仅部分模型支持)。General 通用问答；WithSearchPlugin 搜索增强问答
+                     * 获取使用模式(仅多场景客服大模型支持)。
+通用问答：填写General。
+搜索增强问答：填写WithSearchPlugin。
+默认为General，即通用问答。
+                     * @return Mode 使用模式(仅多场景客服大模型支持)。
+通用问答：填写General。
+搜索增强问答：填写WithSearchPlugin。
+默认为General，即通用问答。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置使用模式(仅部分模型支持)。General 通用问答；WithSearchPlugin 搜索增强问答
-                     * @param _mode 使用模式(仅部分模型支持)。General 通用问答；WithSearchPlugin 搜索增强问答
+                     * 设置使用模式(仅多场景客服大模型支持)。
+通用问答：填写General。
+搜索增强问答：填写WithSearchPlugin。
+默认为General，即通用问答。
+                     * @param _mode 使用模式(仅多场景客服大模型支持)。
+通用问答：填写General。
+搜索增强问答：填写WithSearchPlugin。
+默认为General，即通用问答。
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -131,15 +151,19 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取搜索来源。仅当Mode未WithSearchPlugin时生效。Preset 预置文稿库；Custom 自定义。
-                     * @return SearchSource 搜索来源。仅当Mode未WithSearchPlugin时生效。Preset 预置文稿库；Custom 自定义。
+                     * 获取搜索来源。仅当Mode为WithSearchPlugin时生效。
+预置文稿库：填写Preset。自定义：填写Custom。
+                     * @return SearchSource 搜索来源。仅当Mode为WithSearchPlugin时生效。
+预置文稿库：填写Preset。自定义：填写Custom。
                      * 
                      */
                     std::string GetSearchSource() const;
 
                     /**
-                     * 设置搜索来源。仅当Mode未WithSearchPlugin时生效。Preset 预置文稿库；Custom 自定义。
-                     * @param _searchSource 搜索来源。仅当Mode未WithSearchPlugin时生效。Preset 预置文稿库；Custom 自定义。
+                     * 设置搜索来源。仅当Mode为WithSearchPlugin时生效。
+预置文稿库：填写Preset。自定义：填写Custom。
+                     * @param _searchSource 搜索来源。仅当Mode为WithSearchPlugin时生效。
+预置文稿库：填写Preset。自定义：填写Custom。
                      * 
                      */
                     void SetSearchSource(const std::string& _searchSource);
@@ -166,20 +190,26 @@ namespace TencentCloud
                     bool m_questionHasBeenSet;
 
                     /**
-                     * 会话模型版本，不同的会话模型调用到不同的模型后台。
-注: 多行业多场景大模型填写 tj_llm_clm-v1
+                     * 会话模型版本。
+多行业多场景大模型：填写 tj_llm_clm-v1。
+多行业客服大模型：填写demo_big_model_version_id。
+默认为demo_big_model_version_id，即多行业客服大模型。
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
 
                     /**
-                     * 使用模式(仅部分模型支持)。General 通用问答；WithSearchPlugin 搜索增强问答
+                     * 使用模式(仅多场景客服大模型支持)。
+通用问答：填写General。
+搜索增强问答：填写WithSearchPlugin。
+默认为General，即通用问答。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 搜索来源。仅当Mode未WithSearchPlugin时生效。Preset 预置文稿库；Custom 自定义。
+                     * 搜索来源。仅当Mode为WithSearchPlugin时生效。
+预置文稿库：填写Preset。自定义：填写Custom。
                      */
                     std::string m_searchSource;
                     bool m_searchSourceHasBeenSet;

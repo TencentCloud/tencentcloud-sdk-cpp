@@ -24,11 +24,11 @@ using namespace std;
 
 CreateTrainingModelRequest::CreateTrainingModelRequest() :
     m_importMethodHasBeenSet(false),
-    m_trainingModelCosPathHasBeenSet(false),
     m_reasoningEnvironmentSourceHasBeenSet(false),
     m_trainingModelNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_trainingJobNameHasBeenSet(false),
+    m_trainingModelCosPathHasBeenSet(false),
     m_algorithmFrameworkHasBeenSet(false),
     m_reasoningEnvironmentHasBeenSet(false),
     m_trainingModelIndexHasBeenSet(false),
@@ -65,15 +65,6 @@ string CreateTrainingModelRequest::ToJsonString() const
         string key = "ImportMethod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_importMethod.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_trainingModelCosPathHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TrainingModelCosPath";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_trainingModelCosPath.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_reasoningEnvironmentSourceHasBeenSet)
@@ -113,6 +104,15 @@ string CreateTrainingModelRequest::ToJsonString() const
         string key = "TrainingJobName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_trainingJobName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trainingModelCosPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrainingModelCosPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_trainingModelCosPath.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_algorithmFrameworkHasBeenSet)
@@ -301,22 +301,6 @@ bool CreateTrainingModelRequest::ImportMethodHasBeenSet() const
     return m_importMethodHasBeenSet;
 }
 
-CosPathInfo CreateTrainingModelRequest::GetTrainingModelCosPath() const
-{
-    return m_trainingModelCosPath;
-}
-
-void CreateTrainingModelRequest::SetTrainingModelCosPath(const CosPathInfo& _trainingModelCosPath)
-{
-    m_trainingModelCosPath = _trainingModelCosPath;
-    m_trainingModelCosPathHasBeenSet = true;
-}
-
-bool CreateTrainingModelRequest::TrainingModelCosPathHasBeenSet() const
-{
-    return m_trainingModelCosPathHasBeenSet;
-}
-
 string CreateTrainingModelRequest::GetReasoningEnvironmentSource() const
 {
     return m_reasoningEnvironmentSource;
@@ -379,6 +363,22 @@ void CreateTrainingModelRequest::SetTrainingJobName(const string& _trainingJobNa
 bool CreateTrainingModelRequest::TrainingJobNameHasBeenSet() const
 {
     return m_trainingJobNameHasBeenSet;
+}
+
+CosPathInfo CreateTrainingModelRequest::GetTrainingModelCosPath() const
+{
+    return m_trainingModelCosPath;
+}
+
+void CreateTrainingModelRequest::SetTrainingModelCosPath(const CosPathInfo& _trainingModelCosPath)
+{
+    m_trainingModelCosPath = _trainingModelCosPath;
+    m_trainingModelCosPathHasBeenSet = true;
+}
+
+bool CreateTrainingModelRequest::TrainingModelCosPathHasBeenSet() const
+{
+    return m_trainingModelCosPathHasBeenSet;
 }
 
 string CreateTrainingModelRequest::GetAlgorithmFramework() const

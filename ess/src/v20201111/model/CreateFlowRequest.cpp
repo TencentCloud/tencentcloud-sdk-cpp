@@ -26,12 +26,12 @@ CreateFlowRequest::CreateFlowRequest() :
     m_operatorHasBeenSet(false),
     m_flowNameHasBeenSet(false),
     m_approversHasBeenSet(false),
+    m_flowDescriptionHasBeenSet(false),
     m_flowTypeHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_deadLineHasBeenSet(false),
     m_remindedOnHasBeenSet(false),
     m_userDataHasBeenSet(false),
-    m_flowDescriptionHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
@@ -82,6 +82,14 @@ string CreateFlowRequest::ToJsonString() const
         }
     }
 
+    if (m_flowDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowDescription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_flowTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -120,14 +128,6 @@ string CreateFlowRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_flowDescriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowDescription";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unorderedHasBeenSet)
@@ -258,6 +258,22 @@ bool CreateFlowRequest::ApproversHasBeenSet() const
     return m_approversHasBeenSet;
 }
 
+string CreateFlowRequest::GetFlowDescription() const
+{
+    return m_flowDescription;
+}
+
+void CreateFlowRequest::SetFlowDescription(const string& _flowDescription)
+{
+    m_flowDescription = _flowDescription;
+    m_flowDescriptionHasBeenSet = true;
+}
+
+bool CreateFlowRequest::FlowDescriptionHasBeenSet() const
+{
+    return m_flowDescriptionHasBeenSet;
+}
+
 string CreateFlowRequest::GetFlowType() const
 {
     return m_flowType;
@@ -336,22 +352,6 @@ void CreateFlowRequest::SetUserData(const string& _userData)
 bool CreateFlowRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
-}
-
-string CreateFlowRequest::GetFlowDescription() const
-{
-    return m_flowDescription;
-}
-
-void CreateFlowRequest::SetFlowDescription(const string& _flowDescription)
-{
-    m_flowDescription = _flowDescription;
-    m_flowDescriptionHasBeenSet = true;
-}
-
-bool CreateFlowRequest::FlowDescriptionHasBeenSet() const
-{
-    return m_flowDescriptionHasBeenSet;
 }
 
 bool CreateFlowRequest::GetUnordered() const

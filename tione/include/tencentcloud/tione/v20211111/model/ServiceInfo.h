@@ -36,6 +36,7 @@
 #include <tencentcloud/tione/v20211111/model/ServiceLimit.h>
 #include <tencentcloud/tione/v20211111/model/VolumeMount.h>
 #include <tencentcloud/tione/v20211111/model/InferCodeInfo.h>
+#include <tencentcloud/tione/v20211111/model/ServiceEIP.h>
 
 
 namespace TencentCloud
@@ -815,6 +816,31 @@ HYBRID_PAID:
                      */
                     bool CommandHasBeenSet() const;
 
+                    /**
+                     * 获取开启TIONE内网访问外部设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceEIP 开启TIONE内网访问外部设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ServiceEIP GetServiceEIP() const;
+
+                    /**
+                     * 设置开启TIONE内网访问外部设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceEIP 开启TIONE内网访问外部设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceEIP(const ServiceEIP& _serviceEIP);
+
+                    /**
+                     * 判断参数 ServiceEIP 是否已赋值
+                     * @return ServiceEIP 是否已赋值
+                     * 
+                     */
+                    bool ServiceEIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1027,6 +1053,13 @@ HYBRID_PAID:
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
+
+                    /**
+                     * 开启TIONE内网访问外部设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ServiceEIP m_serviceEIP;
+                    bool m_serviceEIPHasBeenSet;
 
                 };
             }

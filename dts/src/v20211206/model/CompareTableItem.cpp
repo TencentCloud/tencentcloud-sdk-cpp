@@ -21,7 +21,9 @@ using namespace TencentCloud::Dts::V20211206::Model;
 using namespace std;
 
 CompareTableItem::CompareTableItem() :
-    m_tableNameHasBeenSet(false)
+    m_tableNameHasBeenSet(false),
+    m_columnModeHasBeenSet(false),
+    m_columnsHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,36 @@ CoreInternalOutcome CompareTableItem::Deserialize(const rapidjson::Value &value)
         m_tableNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ColumnMode") && !value["ColumnMode"].IsNull())
+    {
+        if (!value["ColumnMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareTableItem.ColumnMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_columnMode = string(value["ColumnMode"].GetString());
+        m_columnModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Columns") && !value["Columns"].IsNull())
+    {
+        if (!value["Columns"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CompareTableItem.Columns` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Columns"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CompareColumnItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_columns.push_back(item);
+        }
+        m_columnsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +85,29 @@ void CompareTableItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_columnModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColumnMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_columnMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_columnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Columns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_columns.begin(); itr != m_columns.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -72,5 +127,37 @@ void CompareTableItem::SetTableName(const string& _tableName)
 bool CompareTableItem::TableNameHasBeenSet() const
 {
     return m_tableNameHasBeenSet;
+}
+
+string CompareTableItem::GetColumnMode() const
+{
+    return m_columnMode;
+}
+
+void CompareTableItem::SetColumnMode(const string& _columnMode)
+{
+    m_columnMode = _columnMode;
+    m_columnModeHasBeenSet = true;
+}
+
+bool CompareTableItem::ColumnModeHasBeenSet() const
+{
+    return m_columnModeHasBeenSet;
+}
+
+vector<CompareColumnItem> CompareTableItem::GetColumns() const
+{
+    return m_columns;
+}
+
+void CompareTableItem::SetColumns(const vector<CompareColumnItem>& _columns)
+{
+    m_columns = _columns;
+    m_columnsHasBeenSet = true;
+}
+
+bool CompareTableItem::ColumnsHasBeenSet() const
+{
+    return m_columnsHasBeenSet;
 }
 

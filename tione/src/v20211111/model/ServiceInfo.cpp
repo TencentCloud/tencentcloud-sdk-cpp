@@ -49,7 +49,8 @@ ServiceInfo::ServiceInfo() :
     m_modelTurboEnableHasBeenSet(false),
     m_volumeMountHasBeenSet(false),
     m_inferCodeInfoHasBeenSet(false),
-    m_commandHasBeenSet(false)
+    m_commandHasBeenSet(false),
+    m_serviceEIPHasBeenSet(false)
 {
 }
 
@@ -458,6 +459,23 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_commandHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceEIP") && !value["ServiceEIP"].IsNull())
+    {
+        if (!value["ServiceEIP"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ServiceEIP` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_serviceEIP.Deserialize(value["ServiceEIP"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_serviceEIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -732,6 +750,15 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceEIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceEIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serviceEIP.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1199,5 +1226,21 @@ void ServiceInfo::SetCommand(const string& _command)
 bool ServiceInfo::CommandHasBeenSet() const
 {
     return m_commandHasBeenSet;
+}
+
+ServiceEIP ServiceInfo::GetServiceEIP() const
+{
+    return m_serviceEIP;
+}
+
+void ServiceInfo::SetServiceEIP(const ServiceEIP& _serviceEIP)
+{
+    m_serviceEIP = _serviceEIP;
+    m_serviceEIPHasBeenSet = true;
+}
+
+bool ServiceInfo::ServiceEIPHasBeenSet() const
+{
+    return m_serviceEIPHasBeenSet;
 }
 

@@ -32,7 +32,8 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_trunkingFlagHasBeenSet(false)
+    m_trunkingFlagHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string CreateNetworkInterfaceRequest::ToJsonString() const
         string key = "TrunkingFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_trunkingFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -308,6 +317,22 @@ void CreateNetworkInterfaceRequest::SetTrunkingFlag(const string& _trunkingFlag)
 bool CreateNetworkInterfaceRequest::TrunkingFlagHasBeenSet() const
 {
     return m_trunkingFlagHasBeenSet;
+}
+
+string CreateNetworkInterfaceRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateNetworkInterfaceRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateNetworkInterfaceRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

@@ -24,10 +24,10 @@ using namespace std;
 
 DescribeLogsRequest::DescribeLogsRequest() :
     m_serviceHasBeenSet(false),
-    m_podNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_podNameHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
     m_contextHasBeenSet(false),
@@ -48,14 +48,6 @@ string DescribeLogsRequest::ToJsonString() const
         string key = "Service";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_service.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_podNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PodName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
@@ -80,6 +72,14 @@ string DescribeLogsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_orderHasBeenSet)
@@ -145,22 +145,6 @@ bool DescribeLogsRequest::ServiceHasBeenSet() const
     return m_serviceHasBeenSet;
 }
 
-string DescribeLogsRequest::GetPodName() const
-{
-    return m_podName;
-}
-
-void DescribeLogsRequest::SetPodName(const string& _podName)
-{
-    m_podName = _podName;
-    m_podNameHasBeenSet = true;
-}
-
-bool DescribeLogsRequest::PodNameHasBeenSet() const
-{
-    return m_podNameHasBeenSet;
-}
-
 string DescribeLogsRequest::GetStartTime() const
 {
     return m_startTime;
@@ -207,6 +191,22 @@ void DescribeLogsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeLogsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeLogsRequest::GetPodName() const
+{
+    return m_podName;
+}
+
+void DescribeLogsRequest::SetPodName(const string& _podName)
+{
+    m_podName = _podName;
+    m_podNameHasBeenSet = true;
+}
+
+bool DescribeLogsRequest::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
 }
 
 string DescribeLogsRequest::GetOrder() const

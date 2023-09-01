@@ -24,6 +24,8 @@ Table::Table() :
     m_tableNameHasBeenSet(false),
     m_newTableNameHasBeenSet(false),
     m_filterConditionHasBeenSet(false),
+    m_columnModeHasBeenSet(false),
+    m_columnsHasBeenSet(false),
     m_tmpTablesHasBeenSet(false),
     m_tableEditModeHasBeenSet(false)
 {
@@ -62,6 +64,36 @@ CoreInternalOutcome Table::Deserialize(const rapidjson::Value &value)
         }
         m_filterCondition = string(value["FilterCondition"].GetString());
         m_filterConditionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ColumnMode") && !value["ColumnMode"].IsNull())
+    {
+        if (!value["ColumnMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Table.ColumnMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_columnMode = string(value["ColumnMode"].GetString());
+        m_columnModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Columns") && !value["Columns"].IsNull())
+    {
+        if (!value["Columns"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Table.Columns` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Columns"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Column item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_columns.push_back(item);
+        }
+        m_columnsHasBeenSet = true;
     }
 
     if (value.HasMember("TmpTables") && !value["TmpTables"].IsNull())
@@ -116,6 +148,29 @@ void Table::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "FilterCondition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_filterCondition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_columnModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColumnMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_columnMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_columnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Columns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_columns.begin(); itr != m_columns.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_tmpTablesHasBeenSet)
@@ -188,6 +243,38 @@ void Table::SetFilterCondition(const string& _filterCondition)
 bool Table::FilterConditionHasBeenSet() const
 {
     return m_filterConditionHasBeenSet;
+}
+
+string Table::GetColumnMode() const
+{
+    return m_columnMode;
+}
+
+void Table::SetColumnMode(const string& _columnMode)
+{
+    m_columnMode = _columnMode;
+    m_columnModeHasBeenSet = true;
+}
+
+bool Table::ColumnModeHasBeenSet() const
+{
+    return m_columnModeHasBeenSet;
+}
+
+vector<Column> Table::GetColumns() const
+{
+    return m_columns;
+}
+
+void Table::SetColumns(const vector<Column>& _columns)
+{
+    m_columns = _columns;
+    m_columnsHasBeenSet = true;
+}
+
+bool Table::ColumnsHasBeenSet() const
+{
+    return m_columnsHasBeenSet;
 }
 
 vector<string> Table::GetTmpTables() const
