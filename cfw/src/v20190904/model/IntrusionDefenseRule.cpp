@@ -1,0 +1,251 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cfw/v20190904/model/IntrusionDefenseRule.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cfw::V20190904::Model;
+using namespace std;
+
+IntrusionDefenseRule::IntrusionDefenseRule() :
+    m_directionHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_iPHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome IntrusionDefenseRule::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Direction") && !value["Direction"].IsNull())
+    {
+        if (!value["Direction"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntrusionDefenseRule.Direction` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_direction = value["Direction"].GetInt64();
+        m_directionHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntrusionDefenseRule.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IP") && !value["IP"].IsNull())
+    {
+        if (!value["IP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntrusionDefenseRule.IP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iP = string(value["IP"].GetString());
+        m_iPHasBeenSet = true;
+    }
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntrusionDefenseRule.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntrusionDefenseRule.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntrusionDefenseRule.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void IntrusionDefenseRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_directionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Direction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_direction, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+int64_t IntrusionDefenseRule::GetDirection() const
+{
+    return m_direction;
+}
+
+void IntrusionDefenseRule::SetDirection(const int64_t& _direction)
+{
+    m_direction = _direction;
+    m_directionHasBeenSet = true;
+}
+
+bool IntrusionDefenseRule::DirectionHasBeenSet() const
+{
+    return m_directionHasBeenSet;
+}
+
+string IntrusionDefenseRule::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void IntrusionDefenseRule::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool IntrusionDefenseRule::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+string IntrusionDefenseRule::GetIP() const
+{
+    return m_iP;
+}
+
+void IntrusionDefenseRule::SetIP(const string& _iP)
+{
+    m_iP = _iP;
+    m_iPHasBeenSet = true;
+}
+
+bool IntrusionDefenseRule::IPHasBeenSet() const
+{
+    return m_iPHasBeenSet;
+}
+
+string IntrusionDefenseRule::GetDomain() const
+{
+    return m_domain;
+}
+
+void IntrusionDefenseRule::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool IntrusionDefenseRule::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string IntrusionDefenseRule::GetComment() const
+{
+    return m_comment;
+}
+
+void IntrusionDefenseRule::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool IntrusionDefenseRule::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
+}
+
+string IntrusionDefenseRule::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void IntrusionDefenseRule::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool IntrusionDefenseRule::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+

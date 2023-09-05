@@ -21,7 +21,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 EnhanceConfig::EnhanceConfig() :
-    m_videoEnhanceHasBeenSet(false)
+    m_videoEnhanceHasBeenSet(false),
+    m_audioEnhanceHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,23 @@ CoreInternalOutcome EnhanceConfig::Deserialize(const rapidjson::Value &value)
         m_videoEnhanceHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioEnhance") && !value["AudioEnhance"].IsNull())
+    {
+        if (!value["AudioEnhance"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnhanceConfig.AudioEnhance` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_audioEnhance.Deserialize(value["AudioEnhance"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_audioEnhanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +79,15 @@ void EnhanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoEnhance.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_audioEnhanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioEnhance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_audioEnhance.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -80,5 +107,21 @@ void EnhanceConfig::SetVideoEnhance(const VideoEnhanceConfig& _videoEnhance)
 bool EnhanceConfig::VideoEnhanceHasBeenSet() const
 {
     return m_videoEnhanceHasBeenSet;
+}
+
+AudioEnhanceConfig EnhanceConfig::GetAudioEnhance() const
+{
+    return m_audioEnhance;
+}
+
+void EnhanceConfig::SetAudioEnhance(const AudioEnhanceConfig& _audioEnhance)
+{
+    m_audioEnhance = _audioEnhance;
+    m_audioEnhanceHasBeenSet = true;
+}
+
+bool EnhanceConfig::AudioEnhanceHasBeenSet() const
+{
+    return m_audioEnhanceHasBeenSet;
 }
 

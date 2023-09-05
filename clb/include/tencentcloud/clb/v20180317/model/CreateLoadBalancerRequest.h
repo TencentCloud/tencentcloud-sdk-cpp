@@ -399,23 +399,19 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ExclusiveClusterHasBeenSet() const;
 
                     /**
-                     * 获取创建性能容量型实例。
-<ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示超强型1规格。
-<ul><li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。如需超大型规格的性能容量型，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>
-                     * @return SlaType 创建性能容量型实例。
-<ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示超强型1规格。
-<ul><li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。如需超大型规格的性能容量型，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>
+                     * 获取性能容量型规格。
+<ul><li>若需要创建性能容量型实例，则此参数必填，取值范围：<ul><li> SLA：超强型1规格。当您开通了超大型规格的性能容量型时，SLA对应超强型4规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li>如需超大型规格（超强型2及以上），请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>如需了解规格详情，请参见[实例规格对比](https://cloud.tencent.com/document/product/214/84689)。
+                     * @return SlaType 性能容量型规格。
+<ul><li>若需要创建性能容量型实例，则此参数必填，取值范围：<ul><li> SLA：超强型1规格。当您开通了超大型规格的性能容量型时，SLA对应超强型4规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li>如需超大型规格（超强型2及以上），请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>如需了解规格详情，请参见[实例规格对比](https://cloud.tencent.com/document/product/214/84689)。
                      * 
                      */
                     std::string GetSlaType() const;
 
                     /**
-                     * 设置创建性能容量型实例。
-<ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示超强型1规格。
-<ul><li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。如需超大型规格的性能容量型，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>
-                     * @param _slaType 创建性能容量型实例。
-<ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示超强型1规格。
-<ul><li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。如需超大型规格的性能容量型，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>
+                     * 设置性能容量型规格。
+<ul><li>若需要创建性能容量型实例，则此参数必填，取值范围：<ul><li> SLA：超强型1规格。当您开通了超大型规格的性能容量型时，SLA对应超强型4规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li>如需超大型规格（超强型2及以上），请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>如需了解规格详情，请参见[实例规格对比](https://cloud.tencent.com/document/product/214/84689)。
+                     * @param _slaType 性能容量型规格。
+<ul><li>若需要创建性能容量型实例，则此参数必填，取值范围：<ul><li> SLA：超强型1规格。当您开通了超大型规格的性能容量型时，SLA对应超强型4规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li>如需超大型规格（超强型2及以上），请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>如需了解规格详情，请参见[实例规格对比](https://cloud.tencent.com/document/product/214/84689)。
                      * 
                      */
                     void SetSlaType(const std::string& _slaType);
@@ -599,6 +595,27 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool DynamicVipHasBeenSet() const;
 
+                    /**
+                     * 获取网络出口
+                     * @return Egress 网络出口
+                     * 
+                     */
+                    std::string GetEgress() const;
+
+                    /**
+                     * 设置网络出口
+                     * @param _egress 网络出口
+                     * 
+                     */
+                    void SetEgress(const std::string& _egress);
+
+                    /**
+                     * 判断参数 Egress 是否已赋值
+                     * @return Egress 是否已赋值
+                     * 
+                     */
+                    bool EgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -702,9 +719,8 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_exclusiveClusterHasBeenSet;
 
                     /**
-                     * 创建性能容量型实例。
-<ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示超强型1规格。
-<ul><li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。如需超大型规格的性能容量型，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>
+                     * 性能容量型规格。
+<ul><li>若需要创建性能容量型实例，则此参数必填，取值范围：<ul><li> SLA：超强型1规格。当您开通了超大型规格的性能容量型时，SLA对应超强型4规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li>如需超大型规格（超强型2及以上），请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>如需了解规格详情，请参见[实例规格对比](https://cloud.tencent.com/document/product/214/84689)。
                      */
                     std::string m_slaType;
                     bool m_slaTypeHasBeenSet;
@@ -757,6 +773,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool m_dynamicVip;
                     bool m_dynamicVipHasBeenSet;
+
+                    /**
+                     * 网络出口
+                     */
+                    std::string m_egress;
+                    bool m_egressHasBeenSet;
 
                 };
             }

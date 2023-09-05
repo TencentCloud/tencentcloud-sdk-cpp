@@ -19,6 +19,7 @@ set(cfw_public_header
   )
 
 set(cfw_public_header_model
+  include/tencentcloud/cfw/v20190904/model/ModifyEWRuleStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeLogsRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatFwVpcDnsSwitchResponse.h
@@ -50,7 +51,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeUnHandleEventTabListRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListResponse.h
   include/tencentcloud/cfw/v20190904/model/AssociatedInstanceInfo.h
-  include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingResponse.h
+  include/tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListRequest.h
   include/tencentcloud/cfw/v20190904/model/RemoveAcRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/NatFwInstance.h
   include/tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesResponse.h
@@ -77,6 +78,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/AcListsData.h
   include/tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateNatRuleItem.h
+  include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifySecurityGroupItemRuleStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeSourceAssetRequest.h
   include/tencentcloud/cfw/v20190904/model/SecurityGroupOrderIndexData.h
@@ -85,6 +87,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressRequest.h
   include/tencentcloud/cfw/v20190904/model/AssetZone.h
   include/tencentcloud/cfw/v20190904/model/RuleChangeItem.h
+  include/tencentcloud/cfw/v20190904/model/IntrusionDefenseRule.h
   include/tencentcloud/cfw/v20190904/model/DescribeTLogIpListRequest.h
   include/tencentcloud/cfw/v20190904/model/CommonFilter.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstancesInfoRequest.h
@@ -149,7 +152,8 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeAcListsRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h
   include/tencentcloud/cfw/v20190904/model/UnHandleEvent.h
-  include/tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeBlockIgnoreListResponse.h
+  include/tencentcloud/cfw/v20190904/model/ModifyEWRuleStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatFwSwitchRequest.h
@@ -184,6 +188,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/CreateNatFwInstanceWithDomainRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteAddressTemplateResponse.h
+  include/tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyResourceGroupResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteResourceGroupResponse.h
@@ -204,7 +209,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityDispatchStatusRequest.h
-  include/tencentcloud/cfw/v20190904/model/DescribeBlockIgnoreListResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyTableStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyTableStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoResponse.h
@@ -212,6 +217,7 @@ set(cfw_public_header_model
 
 set(cfw_src
   src/v20190904/CfwClient.cpp
+  src/v20190904/model/ModifyEWRuleStatusResponse.cpp
   src/v20190904/model/DescribeNatFwInstanceRequest.cpp
   src/v20190904/model/DescribeLogsRequest.cpp
   src/v20190904/model/ModifyNatFwVpcDnsSwitchResponse.cpp
@@ -243,7 +249,7 @@ set(cfw_src
   src/v20190904/model/DescribeUnHandleEventTabListRequest.cpp
   src/v20190904/model/DescribeAssociatedInstanceListResponse.cpp
   src/v20190904/model/AssociatedInstanceInfo.cpp
-  src/v20190904/model/ModifyStorageSettingResponse.cpp
+  src/v20190904/model/CreateBlockIgnoreRuleListRequest.cpp
   src/v20190904/model/RemoveAcRuleResponse.cpp
   src/v20190904/model/NatFwInstance.cpp
   src/v20190904/model/CreateSecurityGroupRulesResponse.cpp
@@ -270,6 +276,7 @@ set(cfw_src
   src/v20190904/model/AcListsData.cpp
   src/v20190904/model/ModifyPublicIPSwitchStatusRequest.cpp
   src/v20190904/model/CreateNatRuleItem.cpp
+  src/v20190904/model/ModifyStorageSettingResponse.cpp
   src/v20190904/model/ModifySecurityGroupItemRuleStatusRequest.cpp
   src/v20190904/model/DescribeSourceAssetRequest.cpp
   src/v20190904/model/SecurityGroupOrderIndexData.cpp
@@ -278,6 +285,7 @@ set(cfw_src
   src/v20190904/model/DescribeEnterpriseSGRuleProgressRequest.cpp
   src/v20190904/model/AssetZone.cpp
   src/v20190904/model/RuleChangeItem.cpp
+  src/v20190904/model/IntrusionDefenseRule.cpp
   src/v20190904/model/DescribeTLogIpListRequest.cpp
   src/v20190904/model/CommonFilter.cpp
   src/v20190904/model/DescribeNatFwInstancesInfoRequest.cpp
@@ -342,7 +350,8 @@ set(cfw_src
   src/v20190904/model/DescribeAcListsRequest.cpp
   src/v20190904/model/DescribeGuideScanInfoRequest.cpp
   src/v20190904/model/UnHandleEvent.cpp
-  src/v20190904/model/DescribeAssociatedInstanceListRequest.cpp
+  src/v20190904/model/DescribeBlockIgnoreListResponse.cpp
+  src/v20190904/model/ModifyEWRuleStatusRequest.cpp
   src/v20190904/model/DeleteAcRuleRequest.cpp
   src/v20190904/model/DeleteAllAccessControlRuleResponse.cpp
   src/v20190904/model/ModifyNatFwSwitchRequest.cpp
@@ -377,6 +386,7 @@ set(cfw_src
   src/v20190904/model/CreateNatFwInstanceWithDomainRequest.cpp
   src/v20190904/model/DescribeResourceGroupResponse.cpp
   src/v20190904/model/DeleteAddressTemplateResponse.cpp
+  src/v20190904/model/CreateBlockIgnoreRuleListResponse.cpp
   src/v20190904/model/DescribeCfwEipsResponse.cpp
   src/v20190904/model/ModifyResourceGroupResponse.cpp
   src/v20190904/model/DeleteResourceGroupResponse.cpp
@@ -397,7 +407,7 @@ set(cfw_src
   src/v20190904/model/DescribeResourceGroupRequest.cpp
   src/v20190904/model/CreateAcRulesRequest.cpp
   src/v20190904/model/ModifyEnterpriseSecurityDispatchStatusRequest.cpp
-  src/v20190904/model/DescribeBlockIgnoreListResponse.cpp
+  src/v20190904/model/DescribeAssociatedInstanceListRequest.cpp
   src/v20190904/model/ModifyTableStatusRequest.cpp
   src/v20190904/model/ModifyTableStatusResponse.cpp
   src/v20190904/model/DescribeGuideScanInfoResponse.cpp

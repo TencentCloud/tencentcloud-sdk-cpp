@@ -255,6 +255,49 @@ CfwClient::CreateAddressTemplateOutcomeCallable CfwClient::CreateAddressTemplate
     return task->get_future();
 }
 
+CfwClient::CreateBlockIgnoreRuleListOutcome CfwClient::CreateBlockIgnoreRuleList(const CreateBlockIgnoreRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBlockIgnoreRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBlockIgnoreRuleListResponse rsp = CreateBlockIgnoreRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBlockIgnoreRuleListOutcome(rsp);
+        else
+            return CreateBlockIgnoreRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBlockIgnoreRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateBlockIgnoreRuleListAsync(const CreateBlockIgnoreRuleListRequest& request, const CreateBlockIgnoreRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBlockIgnoreRuleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateBlockIgnoreRuleListOutcomeCallable CfwClient::CreateBlockIgnoreRuleListCallable(const CreateBlockIgnoreRuleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBlockIgnoreRuleListOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBlockIgnoreRuleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::CreateChooseVpcsOutcome CfwClient::CreateChooseVpcs(const CreateChooseVpcsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateChooseVpcs");
@@ -2312,6 +2355,49 @@ CfwClient::ModifyBlockTopOutcomeCallable CfwClient::ModifyBlockTopCallable(const
         [this, request]()
         {
             return this->ModifyBlockTop(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::ModifyEWRuleStatusOutcome CfwClient::ModifyEWRuleStatus(const ModifyEWRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEWRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEWRuleStatusResponse rsp = ModifyEWRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEWRuleStatusOutcome(rsp);
+        else
+            return ModifyEWRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEWRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyEWRuleStatusAsync(const ModifyEWRuleStatusRequest& request, const ModifyEWRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEWRuleStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyEWRuleStatusOutcomeCallable CfwClient::ModifyEWRuleStatusCallable(const ModifyEWRuleStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEWRuleStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEWRuleStatus(request);
         }
     );
 

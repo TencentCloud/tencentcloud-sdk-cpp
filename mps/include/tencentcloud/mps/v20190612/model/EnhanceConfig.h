@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/VideoEnhanceConfig.h>
+#include <tencentcloud/mps/v20190612/model/AudioEnhanceConfig.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,31 @@ namespace TencentCloud
                      */
                     bool VideoEnhanceHasBeenSet() const;
 
+                    /**
+                     * 获取音频增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AudioEnhance 音频增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AudioEnhanceConfig GetAudioEnhance() const;
+
+                    /**
+                     * 设置音频增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _audioEnhance 音频增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAudioEnhance(const AudioEnhanceConfig& _audioEnhance);
+
+                    /**
+                     * 判断参数 AudioEnhance 是否已赋值
+                     * @return AudioEnhance 是否已赋值
+                     * 
+                     */
+                    bool AudioEnhanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +106,13 @@ namespace TencentCloud
                      */
                     VideoEnhanceConfig m_videoEnhance;
                     bool m_videoEnhanceHasBeenSet;
+
+                    /**
+                     * 音频增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AudioEnhanceConfig m_audioEnhance;
+                    bool m_audioEnhanceHasBeenSet;
 
                 };
             }

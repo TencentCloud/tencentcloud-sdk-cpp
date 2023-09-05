@@ -742,6 +742,27 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用搜索引擎推送
+                     * @return SearchEnginePush 是否启用搜索引擎推送
+                     * 
+                     */
+                    std::string GetSearchEnginePush() const;
+
+                    /**
+                     * 设置是否启用搜索引擎推送
+                     * @param _searchEnginePush 是否启用搜索引擎推送
+                     * 
+                     */
+                    void SetSearchEnginePush(const std::string& _searchEnginePush);
+
+                    /**
+                     * 判断参数 SearchEnginePush 是否已赋值
+                     * @return SearchEnginePush 是否已赋值
+                     * 
+                     */
+                    bool SearchEnginePushHasBeenSet() const;
+
                 private:
 
                     /**
@@ -940,6 +961,12 @@ namespace TencentCloud
                      */
                     std::vector<TagItem> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 是否启用搜索引擎推送
+                     */
+                    std::string m_searchEnginePush;
+                    bool m_searchEnginePushHasBeenSet;
 
                 };
             }

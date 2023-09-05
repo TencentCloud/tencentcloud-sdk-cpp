@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体文件唯一标识列表。
-                     * @return FileIds 媒体文件唯一标识列表。
+                     * 获取媒体文件唯一标识列表，最大长度：100。
+                     * @return FileIds 媒体文件唯一标识列表，最大长度：100。
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
-                     * 设置媒体文件唯一标识列表。
-                     * @param _fileIds 媒体文件唯一标识列表。
+                     * 设置媒体文件唯一标识列表，最大长度：100。
+                     * @param _fileIds 媒体文件唯一标识列表，最大长度：100。
                      * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
@@ -173,7 +173,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体文件唯一标识列表。
+                     * 媒体文件唯一标识列表，最大长度：100。
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;

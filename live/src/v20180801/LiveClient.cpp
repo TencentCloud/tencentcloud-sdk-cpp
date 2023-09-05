@@ -2276,6 +2276,49 @@ LiveClient::DescribeDeliverBandwidthListOutcomeCallable LiveClient::DescribeDeli
     return task->get_future();
 }
 
+LiveClient::DescribeDeliverLogDownListOutcome LiveClient::DescribeDeliverLogDownList(const DescribeDeliverLogDownListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeliverLogDownList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeliverLogDownListResponse rsp = DescribeDeliverLogDownListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeliverLogDownListOutcome(rsp);
+        else
+            return DescribeDeliverLogDownListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeliverLogDownListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeDeliverLogDownListAsync(const DescribeDeliverLogDownListRequest& request, const DescribeDeliverLogDownListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeliverLogDownList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeDeliverLogDownListOutcomeCallable LiveClient::DescribeDeliverLogDownListCallable(const DescribeDeliverLogDownListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeliverLogDownListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeliverLogDownList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeGroupProIspPlayInfoListOutcome LiveClient::DescribeGroupProIspPlayInfoList(const DescribeGroupProIspPlayInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGroupProIspPlayInfoList");

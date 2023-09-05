@@ -127,6 +127,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeDeliverBandwidthListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeDeliverBandwidthListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeDeliverLogDownListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeDeliverLogDownListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeGroupProIspPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeGroupProIspPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeHttpStatusInfoListRequest.h>
@@ -491,6 +493,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeliverBandwidthListResponse> DescribeDeliverBandwidthListOutcome;
                 typedef std::future<DescribeDeliverBandwidthListOutcome> DescribeDeliverBandwidthListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeDeliverBandwidthListRequest&, DescribeDeliverBandwidthListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeliverBandwidthListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeliverLogDownListResponse> DescribeDeliverLogDownListOutcome;
+                typedef std::future<DescribeDeliverLogDownListOutcome> DescribeDeliverLogDownListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeDeliverLogDownListRequest&, DescribeDeliverLogDownListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeliverLogDownListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGroupProIspPlayInfoListResponse> DescribeGroupProIspPlayInfoListOutcome;
                 typedef std::future<DescribeGroupProIspPlayInfoListOutcome> DescribeGroupProIspPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeGroupProIspPlayInfoListRequest&, DescribeGroupProIspPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupProIspPlayInfoListAsyncHandler;
@@ -1315,6 +1320,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeDeliverBandwidthListOutcome DescribeDeliverBandwidthList(const Model::DescribeDeliverBandwidthListRequest &request);
                 void DescribeDeliverBandwidthListAsync(const Model::DescribeDeliverBandwidthListRequest& request, const DescribeDeliverBandwidthListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeliverBandwidthListOutcomeCallable DescribeDeliverBandwidthListCallable(const Model::DescribeDeliverBandwidthListRequest& request);
+
+                /**
+                 *批量获取转推日志的URL。
+                 * @param req DescribeDeliverLogDownListRequest
+                 * @return DescribeDeliverLogDownListOutcome
+                 */
+                DescribeDeliverLogDownListOutcome DescribeDeliverLogDownList(const Model::DescribeDeliverLogDownListRequest &request);
+                void DescribeDeliverLogDownListAsync(const Model::DescribeDeliverLogDownListRequest& request, const DescribeDeliverLogDownListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeliverLogDownListOutcomeCallable DescribeDeliverLogDownListCallable(const Model::DescribeDeliverLogDownListRequest& request);
 
                 /**
                  *该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。

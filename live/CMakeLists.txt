@@ -142,8 +142,10 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamEventListRequest.h
   include/tencentcloud/live/v20180801/model/CallBackTemplateInfo.h
   include/tencentcloud/live/v20180801/model/DeleteLiveRecordResponse.h
+  include/tencentcloud/live/v20180801/model/DescribeDeliverLogDownListResponse.h
   include/tencentcloud/live/v20180801/model/ModifyLivePullStreamTaskRequest.h
   include/tencentcloud/live/v20180801/model/PullStreamConfig.h
+  include/tencentcloud/live/v20180801/model/DescribeDeliverLogDownListRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamPushInfoListRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveTimeShiftTemplatesRequest.h
   include/tencentcloud/live/v20180801/model/StopLiveStreamMonitorResponse.h
@@ -319,6 +321,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/ModifyLivePlayAuthKeyRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveDelayInfoListRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveTranscodeTemplateResponse.h
+  include/tencentcloud/live/v20180801/model/PushLogInfo.h
   include/tencentcloud/live/v20180801/model/DescribeScreenShotSheetNumListResponse.h
   include/tencentcloud/live/v20180801/model/CreateLiveRecordRuleResponse.h
   include/tencentcloud/live/v20180801/model/ModifyLivePullStreamTaskResponse.h
@@ -525,8 +528,10 @@ set(live_src
   src/v20180801/model/DescribeLiveStreamEventListRequest.cpp
   src/v20180801/model/CallBackTemplateInfo.cpp
   src/v20180801/model/DeleteLiveRecordResponse.cpp
+  src/v20180801/model/DescribeDeliverLogDownListResponse.cpp
   src/v20180801/model/ModifyLivePullStreamTaskRequest.cpp
   src/v20180801/model/PullStreamConfig.cpp
+  src/v20180801/model/DescribeDeliverLogDownListRequest.cpp
   src/v20180801/model/DescribeLiveStreamPushInfoListRequest.cpp
   src/v20180801/model/DescribeLiveTimeShiftTemplatesRequest.cpp
   src/v20180801/model/StopLiveStreamMonitorResponse.cpp
@@ -702,6 +707,7 @@ set(live_src
   src/v20180801/model/ModifyLivePlayAuthKeyRequest.cpp
   src/v20180801/model/DescribeLiveDelayInfoListRequest.cpp
   src/v20180801/model/DescribeLiveTranscodeTemplateResponse.cpp
+  src/v20180801/model/PushLogInfo.cpp
   src/v20180801/model/DescribeScreenShotSheetNumListResponse.cpp
   src/v20180801/model/CreateLiveRecordRuleResponse.cpp
   src/v20180801/model/ModifyLivePullStreamTaskResponse.cpp

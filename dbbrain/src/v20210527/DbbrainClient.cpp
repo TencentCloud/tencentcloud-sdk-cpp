@@ -771,6 +771,49 @@ DbbrainClient::DeleteSqlFiltersOutcomeCallable DbbrainClient::DeleteSqlFiltersCa
     return task->get_future();
 }
 
+DbbrainClient::DescribeAlarmTemplateOutcome DbbrainClient::DescribeAlarmTemplate(const DescribeAlarmTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmTemplateResponse rsp = DescribeAlarmTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmTemplateOutcome(rsp);
+        else
+            return DescribeAlarmTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmTemplateOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeAlarmTemplateAsync(const DescribeAlarmTemplateRequest& request, const DescribeAlarmTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeAlarmTemplateOutcomeCallable DbbrainClient::DescribeAlarmTemplateCallable(const DescribeAlarmTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeAllUserContactOutcome DbbrainClient::DescribeAllUserContact(const DescribeAllUserContactRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAllUserContact");
@@ -2140,6 +2183,49 @@ DbbrainClient::KillMySqlThreadsOutcomeCallable DbbrainClient::KillMySqlThreadsCa
         [this, request]()
         {
             return this->KillMySqlThreads(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::ModifyAlarmPolicyOutcome DbbrainClient::ModifyAlarmPolicy(const ModifyAlarmPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAlarmPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAlarmPolicyResponse rsp = ModifyAlarmPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAlarmPolicyOutcome(rsp);
+        else
+            return ModifyAlarmPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAlarmPolicyOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::ModifyAlarmPolicyAsync(const ModifyAlarmPolicyRequest& request, const ModifyAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAlarmPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::ModifyAlarmPolicyOutcomeCallable DbbrainClient::ModifyAlarmPolicyCallable(const ModifyAlarmPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAlarmPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAlarmPolicy(request);
         }
     );
 

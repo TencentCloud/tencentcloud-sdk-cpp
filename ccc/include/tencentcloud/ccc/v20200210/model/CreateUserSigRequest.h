@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取用户 ID
-                     * @return Uid 用户 ID
+                     * 获取用户 ID，该值必须与 ClientData 字段中 Uid 的值一致
+                     * @return Uid 用户 ID，该值必须与 ClientData 字段中 Uid 的值一致
                      * 
                      */
                     std::string GetUid() const;
 
                     /**
-                     * 设置用户 ID
-                     * @param _uid 用户 ID
+                     * 设置用户 ID，该值必须与 ClientData 字段中 Uid 的值一致
+                     * @param _uid 用户 ID，该值必须与 ClientData 字段中 Uid 的值一致
                      * 
                      */
                     void SetUid(const std::string& _uid);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户签名数据
-                     * @return ClientData 用户签名数据
+                     * 获取用户签名数据，必填字段，为标准 JSON 格式
+                     * @return ClientData 用户签名数据，必填字段，为标准 JSON 格式
                      * 
                      */
                     std::string GetClientData() const;
 
                     /**
-                     * 设置用户签名数据
-                     * @param _clientData 用户签名数据
+                     * 设置用户签名数据，必填字段，为标准 JSON 格式
+                     * @param _clientData 用户签名数据，必填字段，为标准 JSON 格式
                      * 
                      */
                     void SetClientData(const std::string& _clientData);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 用户 ID
+                     * 用户 ID，该值必须与 ClientData 字段中 Uid 的值一致
                      */
                     std::string m_uid;
                     bool m_uidHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 用户签名数据
+                     * 用户签名数据，必填字段，为标准 JSON 格式
                      */
                     std::string m_clientData;
                     bool m_clientDataHasBeenSet;

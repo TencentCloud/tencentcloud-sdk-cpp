@@ -2642,7 +2642,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 EnableUnitRuleOutcomeCallable EnableUnitRuleCallable(const Model::EnableUnitRuleRequest& request);
 
                 /**
-                 *手动执行一次任务。
+                 *手动执行一次任务
                  * @param req ExecuteTaskRequest
                  * @return ExecuteTaskOutcome
                  */

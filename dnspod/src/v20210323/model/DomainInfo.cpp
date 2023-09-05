@@ -51,7 +51,8 @@ DomainInfo::DomainInfo() :
     m_vipAutoRenewHasBeenSet(false),
     m_vipResourceIdHasBeenSet(false),
     m_isSubDomainHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_searchEnginePushHasBeenSet(false)
 {
 }
 
@@ -386,6 +387,16 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("SearchEnginePush") && !value["SearchEnginePush"].IsNull())
+    {
+        if (!value["SearchEnginePush"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.SearchEnginePush` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_searchEnginePush = string(value["SearchEnginePush"].GetString());
+        m_searchEnginePushHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -656,6 +667,14 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_searchEnginePushHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchEnginePush";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_searchEnginePush.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1155,5 +1174,21 @@ void DomainInfo::SetTagList(const vector<TagItem>& _tagList)
 bool DomainInfo::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+string DomainInfo::GetSearchEnginePush() const
+{
+    return m_searchEnginePush;
+}
+
+void DomainInfo::SetSearchEnginePush(const string& _searchEnginePush)
+{
+    m_searchEnginePush = _searchEnginePush;
+    m_searchEnginePushHasBeenSet = true;
+}
+
+bool DomainInfo::SearchEnginePushHasBeenSet() const
+{
+    return m_searchEnginePushHasBeenSet;
 }
 

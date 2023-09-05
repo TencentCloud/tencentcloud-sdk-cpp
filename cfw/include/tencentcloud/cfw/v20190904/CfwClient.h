@@ -33,6 +33,8 @@
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAddressTemplateRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAddressTemplateResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesRequest.h>
@@ -129,6 +131,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyEWRuleStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyEWRuleStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityDispatchStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityDispatchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityGroupRuleRequest.h>
@@ -202,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAddressTemplateResponse> CreateAddressTemplateOutcome;
                 typedef std::future<CreateAddressTemplateOutcome> CreateAddressTemplateOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateAddressTemplateRequest&, CreateAddressTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAddressTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBlockIgnoreRuleListResponse> CreateBlockIgnoreRuleListOutcome;
+                typedef std::future<CreateBlockIgnoreRuleListOutcome> CreateBlockIgnoreRuleListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateBlockIgnoreRuleListRequest&, CreateBlockIgnoreRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlockIgnoreRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateChooseVpcsResponse> CreateChooseVpcsOutcome;
                 typedef std::future<CreateChooseVpcsOutcome> CreateChooseVpcsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateChooseVpcsRequest&, CreateChooseVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChooseVpcsAsyncHandler;
@@ -346,6 +353,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBlockTopResponse> ModifyBlockTopOutcome;
                 typedef std::future<ModifyBlockTopOutcome> ModifyBlockTopOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyBlockTopRequest&, ModifyBlockTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockTopAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEWRuleStatusResponse> ModifyEWRuleStatusOutcome;
+                typedef std::future<ModifyEWRuleStatusOutcome> ModifyEWRuleStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyEWRuleStatusRequest&, ModifyEWRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEWRuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEnterpriseSecurityDispatchStatusResponse> ModifyEnterpriseSecurityDispatchStatusOutcome;
                 typedef std::future<ModifyEnterpriseSecurityDispatchStatusOutcome> ModifyEnterpriseSecurityDispatchStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyEnterpriseSecurityDispatchStatusRequest&, ModifyEnterpriseSecurityDispatchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnterpriseSecurityDispatchStatusAsyncHandler;
@@ -459,6 +469,15 @@ namespace TencentCloud
                 CreateAddressTemplateOutcome CreateAddressTemplate(const Model::CreateAddressTemplateRequest &request);
                 void CreateAddressTemplateAsync(const Model::CreateAddressTemplateRequest& request, const CreateAddressTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAddressTemplateOutcomeCallable CreateAddressTemplateCallable(const Model::CreateAddressTemplateRequest& request);
+
+                /**
+                 *批量添加入侵防御封禁列表、放通列表规则
+                 * @param req CreateBlockIgnoreRuleListRequest
+                 * @return CreateBlockIgnoreRuleListOutcome
+                 */
+                CreateBlockIgnoreRuleListOutcome CreateBlockIgnoreRuleList(const Model::CreateBlockIgnoreRuleListRequest &request);
+                void CreateBlockIgnoreRuleListAsync(const Model::CreateBlockIgnoreRuleListRequest& request, const CreateBlockIgnoreRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBlockIgnoreRuleListOutcomeCallable CreateBlockIgnoreRuleListCallable(const Model::CreateBlockIgnoreRuleListRequest& request);
 
                 /**
                  *创建、选择vpc
@@ -900,6 +919,16 @@ namespace TencentCloud
                 ModifyBlockTopOutcome ModifyBlockTop(const Model::ModifyBlockTopRequest &request);
                 void ModifyBlockTopAsync(const Model::ModifyBlockTopRequest& request, const ModifyBlockTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBlockTopOutcomeCallable ModifyBlockTopCallable(const Model::ModifyBlockTopRequest& request);
+
+                /**
+                 *启用停用VPC间规则或Nat边界规则
+VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction。
+                 * @param req ModifyEWRuleStatusRequest
+                 * @return ModifyEWRuleStatusOutcome
+                 */
+                ModifyEWRuleStatusOutcome ModifyEWRuleStatus(const Model::ModifyEWRuleStatusRequest &request);
+                void ModifyEWRuleStatusAsync(const Model::ModifyEWRuleStatusRequest& request, const ModifyEWRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEWRuleStatusOutcomeCallable ModifyEWRuleStatusCallable(const Model::ModifyEWRuleStatusRequest& request);
 
                 /**
                  *修改企业安全组下发状态

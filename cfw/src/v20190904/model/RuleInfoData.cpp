@@ -38,7 +38,8 @@ RuleInfoData::RuleInfoData() :
     m_cloudCodeHasBeenSet(false),
     m_isRegionHasBeenSet(false),
     m_cityNameHasBeenSet(false),
-    m_countryNameHasBeenSet(false)
+    m_countryNameHasBeenSet(false),
+    m_regionIsoHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
         m_countryNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionIso") && !value["RegionIso"].IsNull())
+    {
+        if (!value["RegionIso"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.RegionIso` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionIso = string(value["RegionIso"].GetString());
+        m_regionIsoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void RuleInfoData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CountryName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_countryName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIsoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionIso";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionIso.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void RuleInfoData::SetCountryName(const string& _countryName)
 bool RuleInfoData::CountryNameHasBeenSet() const
 {
     return m_countryNameHasBeenSet;
+}
+
+string RuleInfoData::GetRegionIso() const
+{
+    return m_regionIso;
+}
+
+void RuleInfoData::SetRegionIso(const string& _regionIso)
+{
+    m_regionIso = _regionIso;
+    m_regionIsoHasBeenSet = true;
+}
+
+bool RuleInfoData::RegionIsoHasBeenSet() const
+{
+    return m_regionIsoHasBeenSet;
 }
 

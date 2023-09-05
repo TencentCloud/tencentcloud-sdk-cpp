@@ -57,6 +57,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSqlFiltersRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSqlFiltersResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeAlarmTemplateRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeAlarmTemplateResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAllUserContactRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAllUserContactResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupRequest.h>
@@ -121,6 +123,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeUserSqlAdviceResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/ModifyAlarmPolicyRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/ModifyAlarmPolicyResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/ModifyAuditServiceRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/ModifyAuditServiceResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfRequest.h>
@@ -200,6 +204,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSqlFiltersResponse> DeleteSqlFiltersOutcome;
                 typedef std::future<DeleteSqlFiltersOutcome> DeleteSqlFiltersOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DeleteSqlFiltersRequest&, DeleteSqlFiltersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSqlFiltersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAlarmTemplateResponse> DescribeAlarmTemplateOutcome;
+                typedef std::future<DescribeAlarmTemplateOutcome> DescribeAlarmTemplateOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeAlarmTemplateRequest&, DescribeAlarmTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllUserContactResponse> DescribeAllUserContactOutcome;
                 typedef std::future<DescribeAllUserContactOutcome> DescribeAllUserContactOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeAllUserContactRequest&, DescribeAllUserContactOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllUserContactAsyncHandler;
@@ -296,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::KillMySqlThreadsResponse> KillMySqlThreadsOutcome;
                 typedef std::future<KillMySqlThreadsOutcome> KillMySqlThreadsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::KillMySqlThreadsRequest&, KillMySqlThreadsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillMySqlThreadsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAlarmPolicyResponse> ModifyAlarmPolicyOutcome;
+                typedef std::future<ModifyAlarmPolicyOutcome> ModifyAlarmPolicyOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::ModifyAlarmPolicyRequest&, ModifyAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAuditServiceResponse> ModifyAuditServiceOutcome;
                 typedef std::future<ModifyAuditServiceOutcome> ModifyAuditServiceOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::ModifyAuditServiceRequest&, ModifyAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditServiceAsyncHandler;
@@ -472,6 +482,15 @@ namespace TencentCloud
                 DeleteSqlFiltersOutcome DeleteSqlFilters(const Model::DeleteSqlFiltersRequest &request);
                 void DeleteSqlFiltersAsync(const Model::DeleteSqlFiltersRequest& request, const DeleteSqlFiltersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSqlFiltersOutcomeCallable DeleteSqlFiltersCallable(const Model::DeleteSqlFiltersRequest& request);
+
+                /**
+                 *通知模板查询
+                 * @param req DescribeAlarmTemplateRequest
+                 * @return DescribeAlarmTemplateOutcome
+                 */
+                DescribeAlarmTemplateOutcome DescribeAlarmTemplate(const Model::DescribeAlarmTemplateRequest &request);
+                void DescribeAlarmTemplateAsync(const Model::DescribeAlarmTemplateRequest& request, const DescribeAlarmTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmTemplateOutcomeCallable DescribeAlarmTemplateCallable(const Model::DescribeAlarmTemplateRequest& request);
 
                 /**
                  *获取邮件发送中联系人的相关信息。
@@ -760,6 +779,15 @@ namespace TencentCloud
                 KillMySqlThreadsOutcome KillMySqlThreads(const Model::KillMySqlThreadsRequest &request);
                 void KillMySqlThreadsAsync(const Model::KillMySqlThreadsRequest& request, const KillMySqlThreadsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 KillMySqlThreadsOutcomeCallable KillMySqlThreadsCallable(const Model::KillMySqlThreadsRequest& request);
+
+                /**
+                 *修改告警策略
+                 * @param req ModifyAlarmPolicyRequest
+                 * @return ModifyAlarmPolicyOutcome
+                 */
+                ModifyAlarmPolicyOutcome ModifyAlarmPolicy(const Model::ModifyAlarmPolicyRequest &request);
+                void ModifyAlarmPolicyAsync(const Model::ModifyAlarmPolicyRequest& request, const ModifyAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAlarmPolicyOutcomeCallable ModifyAlarmPolicyCallable(const Model::ModifyAlarmPolicyRequest& request);
 
                 /**
                  *修改审计配置相关信息，如高频存储时长等

@@ -49,17 +49,17 @@ namespace TencentCloud
                     /**
                      * 获取访问源示例：
 net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+template：参数模板id(ipm-dyodhpby)
+instance：资产实例id(ins-123456)
+resourcegroup：资产分组id(cfwrg-xxxx)
+tag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})
 region：地域(ap-gaungzhou)
                      * @return SourceContent 访问源示例：
 net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+template：参数模板id(ipm-dyodhpby)
+instance：资产实例id(ins-123456)
+resourcegroup：资产分组id(cfwrg-xxxx)
+tag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})
 region：地域(ap-gaungzhou)
                      * 
                      */
@@ -68,17 +68,17 @@ region：地域(ap-gaungzhou)
                     /**
                      * 设置访问源示例：
 net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+template：参数模板id(ipm-dyodhpby)
+instance：资产实例id(ins-123456)
+resourcegroup：资产分组id(cfwrg-xxxx)
+tag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})
 region：地域(ap-gaungzhou)
                      * @param _sourceContent 访问源示例：
 net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+template：参数模板id(ipm-dyodhpby)
+instance：资产实例id(ins-123456)
+resourcegroup：资产分组id(cfwrg-xxxx)
+tag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})
 region：地域(ap-gaungzhou)
                      * 
                      */
@@ -115,17 +115,17 @@ region：地域(ap-gaungzhou)
                     /**
                      * 获取访问目的示例：
 net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+template：参数模板id(ipm-dyodhpby)
+instance：资产实例id(ins-123456)
+resourcegroup：资产分组id(cfwrg-xxxx)
+tag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})
 region：地域(ap-gaungzhou)
                      * @return DestContent 访问目的示例：
 net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+template：参数模板id(ipm-dyodhpby)
+instance：资产实例id(ins-123456)
+resourcegroup：资产分组id(cfwrg-xxxx)
+tag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})
 region：地域(ap-gaungzhou)
                      * 
                      */
@@ -134,17 +134,17 @@ region：地域(ap-gaungzhou)
                     /**
                      * 设置访问目的示例：
 net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+template：参数模板id(ipm-dyodhpby)
+instance：资产实例id(ins-123456)
+resourcegroup：资产分组id(cfwrg-xxxx)
+tag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})
 region：地域(ap-gaungzhou)
                      * @param _destContent 访问目的示例：
 net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+template：参数模板id(ipm-dyodhpby)
+instance：资产实例id(ins-123456)
+resourcegroup：资产分组id(cfwrg-xxxx)
+tag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})
 region：地域(ap-gaungzhou)
                      * 
                      */
@@ -229,15 +229,15 @@ drop：拒绝
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取规则顺序，-1表示最低，1表示最高
-                     * @return OrderIndex 规则顺序，-1表示最低，1表示最高
+                     * 获取规则顺序，-1表示最低，1表示最高，请勿和外层Type冲突（和外层的Type配合使用，当中间插入时，指定添加位置）
+                     * @return OrderIndex 规则顺序，-1表示最低，1表示最高，请勿和外层Type冲突（和外层的Type配合使用，当中间插入时，指定添加位置）
                      * 
                      */
                     std::string GetOrderIndex() const;
 
                     /**
-                     * 设置规则顺序，-1表示最低，1表示最高
-                     * @param _orderIndex 规则顺序，-1表示最低，1表示最高
+                     * 设置规则顺序，-1表示最低，1表示最高，请勿和外层Type冲突（和外层的Type配合使用，当中间插入时，指定添加位置）
+                     * @param _orderIndex 规则顺序，-1表示最低，1表示最高，请勿和外层Type冲突（和外层的Type配合使用，当中间插入时，指定添加位置）
                      * 
                      */
                     void SetOrderIndex(const std::string& _orderIndex);
@@ -333,15 +333,15 @@ drop：拒绝
                     bool ServiceTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取规则对应的唯一id
-                     * @return Id 规则对应的唯一id
+                     * 获取（入参时无需填写，自动生成）规则对应的唯一id
+                     * @return Id （入参时无需填写，自动生成）规则对应的唯一id
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置规则对应的唯一id
-                     * @param _id 规则对应的唯一id
+                     * 设置（入参时无需填写，自动生成）规则对应的唯一id
+                     * @param _id （入参时无需填写，自动生成）规则对应的唯一id
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -354,15 +354,19 @@ drop：拒绝
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取规则状态，true表示启用，false表示禁用
-                     * @return Enable 规则状态，true表示启用，false表示禁用
+                     * 获取（入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+规则状态，true表示启用，false表示禁用
+                     * @return Enable （入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+规则状态，true表示启用，false表示禁用
                      * 
                      */
                     std::string GetEnable() const;
 
                     /**
-                     * 设置规则状态，true表示启用，false表示禁用
-                     * @param _enable 规则状态，true表示启用，false表示禁用
+                     * 设置（入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+规则状态，true表示启用，false表示禁用
+                     * @param _enable （入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+规则状态，true表示启用，false表示禁用
                      * 
                      */
                     void SetEnable(const std::string& _enable);
@@ -379,10 +383,10 @@ drop：拒绝
                     /**
                      * 访问源示例：
 net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+template：参数模板id(ipm-dyodhpby)
+instance：资产实例id(ins-123456)
+resourcegroup：资产分组id(cfwrg-xxxx)
+tag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})
 region：地域(ap-gaungzhou)
                      */
                     std::string m_sourceContent;
@@ -397,10 +401,10 @@ region：地域(ap-gaungzhou)
                     /**
                      * 访问目的示例：
 net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+template：参数模板id(ipm-dyodhpby)
+instance：资产实例id(ins-123456)
+resourcegroup：资产分组id(cfwrg-xxxx)
+tag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})
 region：地域(ap-gaungzhou)
                      */
                     std::string m_destContent;
@@ -427,7 +431,7 @@ drop：拒绝
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 规则顺序，-1表示最低，1表示最高
+                     * 规则顺序，-1表示最低，1表示最高，请勿和外层Type冲突（和外层的Type配合使用，当中间插入时，指定添加位置）
                      */
                     std::string m_orderIndex;
                     bool m_orderIndexHasBeenSet;
@@ -456,13 +460,14 @@ drop：拒绝
                     bool m_serviceTemplateIdHasBeenSet;
 
                     /**
-                     * 规则对应的唯一id
+                     * （入参时无需填写，自动生成）规则对应的唯一id
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 规则状态，true表示启用，false表示禁用
+                     * （入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+规则状态，true表示启用，false表示禁用
                      */
                     std::string m_enable;
                     bool m_enableHasBeenSet;

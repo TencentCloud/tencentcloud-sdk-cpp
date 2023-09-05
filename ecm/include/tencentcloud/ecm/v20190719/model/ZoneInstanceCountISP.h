@@ -93,12 +93,12 @@ namespace TencentCloud
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
-多个运营商用英文分号连接";"，例如："CMCC;CUCC;CTCC"。多运营商需要开通白名单，请直接联系腾讯云客服。
+CMCC;CUCC;CTCC：三网；三网需要开通白名单，请直接联系腾讯云客服。
                      * @return ISP 运营商如下：
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
-多个运营商用英文分号连接";"，例如："CMCC;CUCC;CTCC"。多运营商需要开通白名单，请直接联系腾讯云客服。
+CMCC;CUCC;CTCC：三网；三网需要开通白名单，请直接联系腾讯云客服。
                      * 
                      */
                     std::string GetISP() const;
@@ -108,12 +108,12 @@ CMCC：中国移动
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
-多个运营商用英文分号连接";"，例如："CMCC;CUCC;CTCC"。多运营商需要开通白名单，请直接联系腾讯云客服。
+CMCC;CUCC;CTCC：三网；三网需要开通白名单，请直接联系腾讯云客服。
                      * @param _iSP 运营商如下：
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
-多个运营商用英文分号连接";"，例如："CMCC;CUCC;CTCC"。多运营商需要开通白名单，请直接联系腾讯云客服。
+CMCC;CUCC;CTCC：三网；三网需要开通白名单，请直接联系腾讯云客服。
                      * 
                      */
                     void SetISP(const std::string& _iSP);
@@ -210,15 +210,19 @@ CMCC：中国移动
                     bool Ipv6AddressCountHasBeenSet() const;
 
                     /**
-                     * 获取指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段
-                     * @return Ipv6SubnetIds 指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段
+                     * 获取指定创建三网ipv6地址，使用的subnet数组，只创建ipv4不创建ipv6和单网ipv6子网依然使用SubnetId字段；
+该数组必须且仅支持传入三个不同的子网，并且这三个子网各自分配了电信、联通、移动三个运营商的其中一个IPV6 CIDR网段
+                     * @return Ipv6SubnetIds 指定创建三网ipv6地址，使用的subnet数组，只创建ipv4不创建ipv6和单网ipv6子网依然使用SubnetId字段；
+该数组必须且仅支持传入三个不同的子网，并且这三个子网各自分配了电信、联通、移动三个运营商的其中一个IPV6 CIDR网段
                      * 
                      */
                     std::vector<std::string> GetIpv6SubnetIds() const;
 
                     /**
-                     * 设置指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段
-                     * @param _ipv6SubnetIds 指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段
+                     * 设置指定创建三网ipv6地址，使用的subnet数组，只创建ipv4不创建ipv6和单网ipv6子网依然使用SubnetId字段；
+该数组必须且仅支持传入三个不同的子网，并且这三个子网各自分配了电信、联通、移动三个运营商的其中一个IPV6 CIDR网段
+                     * @param _ipv6SubnetIds 指定创建三网ipv6地址，使用的subnet数组，只创建ipv4不创建ipv6和单网ipv6子网依然使用SubnetId字段；
+该数组必须且仅支持传入三个不同的子网，并且这三个子网各自分配了电信、联通、移动三个运营商的其中一个IPV6 CIDR网段
                      * 
                      */
                     void SetIpv6SubnetIds(const std::vector<std::string>& _ipv6SubnetIds);
@@ -249,7 +253,7 @@ CMCC：中国移动
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
-多个运营商用英文分号连接";"，例如："CMCC;CUCC;CTCC"。多运营商需要开通白名单，请直接联系腾讯云客服。
+CMCC;CUCC;CTCC：三网；三网需要开通白名单，请直接联系腾讯云客服。
                      */
                     std::string m_iSP;
                     bool m_iSPHasBeenSet;
@@ -279,7 +283,8 @@ CMCC：中国移动
                     bool m_ipv6AddressCountHasBeenSet;
 
                     /**
-                     * 指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段
+                     * 指定创建三网ipv6地址，使用的subnet数组，只创建ipv4不创建ipv6和单网ipv6子网依然使用SubnetId字段；
+该数组必须且仅支持传入三个不同的子网，并且这三个子网各自分配了电信、联通、移动三个运营商的其中一个IPV6 CIDR网段
                      */
                     std::vector<std::string> m_ipv6SubnetIds;
                     bool m_ipv6SubnetIdsHasBeenSet;

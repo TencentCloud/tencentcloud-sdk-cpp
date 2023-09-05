@@ -424,6 +424,27 @@ namespace TencentCloud
                      */
                     bool CountryNameHasBeenSet() const;
 
+                    /**
+                     * 获取国家二位iso代码或者省份缩写代码
+                     * @return RegionIso 国家二位iso代码或者省份缩写代码
+                     * 
+                     */
+                    std::string GetRegionIso() const;
+
+                    /**
+                     * 设置国家二位iso代码或者省份缩写代码
+                     * @param _regionIso 国家二位iso代码或者省份缩写代码
+                     * 
+                     */
+                    void SetRegionIso(const std::string& _regionIso);
+
+                    /**
+                     * 判断参数 RegionIso 是否已赋值
+                     * @return RegionIso 是否已赋值
+                     * 
+                     */
+                    bool RegionIsoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -533,6 +554,12 @@ namespace TencentCloud
                      */
                     std::string m_countryName;
                     bool m_countryNameHasBeenSet;
+
+                    /**
+                     * 国家二位iso代码或者省份缩写代码
+                     */
+                    std::string m_regionIso;
+                    bool m_regionIsoHasBeenSet;
 
                 };
             }

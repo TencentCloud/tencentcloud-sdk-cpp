@@ -47,7 +47,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_slaveZoneIdHasBeenSet(false),
     m_eipAddressIdHasBeenSet(false),
     m_loadBalancerPassToTargetHasBeenSet(false),
-    m_dynamicVipHasBeenSet(false)
+    m_dynamicVipHasBeenSet(false),
+    m_egressHasBeenSet(false)
 {
 }
 
@@ -272,6 +273,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "DynamicVip";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dynamicVip, allocator);
+    }
+
+    if (m_egressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Egress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -680,6 +689,22 @@ void CreateLoadBalancerRequest::SetDynamicVip(const bool& _dynamicVip)
 bool CreateLoadBalancerRequest::DynamicVipHasBeenSet() const
 {
     return m_dynamicVipHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetEgress() const
+{
+    return m_egress;
+}
+
+void CreateLoadBalancerRequest::SetEgress(const string& _egress)
+{
+    m_egress = _egress;
+    m_egressHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::EgressHasBeenSet() const
+{
+    return m_egressHasBeenSet;
 }
 
 
