@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取Grafana 内网地址
-                     * @return InternetUrl Grafana 内网地址
+                     * 获取Grafana 公网地址
+                     * @return InternetUrl Grafana 公网地址
                      * 
                      */
                     std::string GetInternetUrl() const;
 
                     /**
-                     * 设置Grafana 内网地址
-                     * @param _internetUrl Grafana 内网地址
+                     * 设置Grafana 公网地址
+                     * @param _internetUrl Grafana 公网地址
                      * 
                      */
                     void SetInternetUrl(const std::string& _internetUrl);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool InternetUrlHasBeenSet() const;
 
                     /**
-                     * 获取Grafana 公网地址
-                     * @return InternalUrl Grafana 公网地址
+                     * 获取Grafana 内网地址
+                     * @return InternalUrl Grafana 内网地址
                      * 
                      */
                     std::string GetInternalUrl() const;
 
                     /**
-                     * 设置Grafana 公网地址
-                     * @param _internalUrl Grafana 公网地址
+                     * 设置Grafana 内网地址
+                     * @param _internalUrl Grafana 内网地址
                      * 
                      */
                     void SetInternalUrl(const std::string& _internalUrl);
@@ -483,13 +483,13 @@ namespace TencentCloud
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * Grafana 内网地址
+                     * Grafana 公网地址
                      */
                     std::string m_internetUrl;
                     bool m_internetUrlHasBeenSet;
 
                     /**
-                     * Grafana 公网地址
+                     * Grafana 内网地址
                      */
                     std::string m_internalUrl;
                     bool m_internalUrlHasBeenSet;

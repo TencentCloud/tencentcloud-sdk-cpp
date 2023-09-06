@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
-                     * @return ClusterParamList 集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
+                     * 获取集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"auto_increment_increment"}]
+                     * @return ClusterParamList 集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"auto_increment_increment"}]
                      * 
                      */
                     std::vector<ModifyParamItem> GetClusterParamList() const;
 
                     /**
-                     * 设置集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
-                     * @param _clusterParamList 集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
+                     * 设置集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"auto_increment_increment"}]
+                     * @param _clusterParamList 集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"auto_increment_increment"}]
                      * 
                      */
                     void SetClusterParamList(const std::vector<ModifyParamItem>& _clusterParamList);
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"innodb_stats_transient_sample_pages"}]
+                     * 集群参数列表，例如 [{           "CurrentValue":"2",        "ParamName":"auto_increment_increment"}]
                      */
                     std::vector<ModifyParamItem> m_clusterParamList;
                     bool m_clusterParamListHasBeenSet;

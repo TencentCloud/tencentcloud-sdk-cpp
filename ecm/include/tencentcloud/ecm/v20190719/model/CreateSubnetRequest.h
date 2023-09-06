@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取IPv6 CIDR
+                     * @return IPv6CidrBlock IPv6 CIDR
+                     * 
+                     */
+                    std::string GetIPv6CidrBlock() const;
+
+                    /**
+                     * 设置IPv6 CIDR
+                     * @param _iPv6CidrBlock IPv6 CIDR
+                     * 
+                     */
+                    void SetIPv6CidrBlock(const std::string& _iPv6CidrBlock);
+
+                    /**
+                     * 判断参数 IPv6CidrBlock 是否已赋值
+                     * @return IPv6CidrBlock 是否已赋值
+                     * 
+                     */
+                    bool IPv6CidrBlockHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * IPv6 CIDR
+                     */
+                    std::string m_iPv6CidrBlock;
+                    bool m_iPv6CidrBlockHasBeenSet;
 
                 };
             }

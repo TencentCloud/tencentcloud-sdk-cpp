@@ -44,7 +44,8 @@ CreateRoomRequest::CreateRoomRequest() :
     m_interactionModeHasBeenSet(false),
     m_videoOrientationHasBeenSet(false),
     m_isGradingRequiredPostClassHasBeenSet(false),
-    m_roomTypeHasBeenSet(false)
+    m_roomTypeHasBeenSet(false),
+    m_endDelayTimeHasBeenSet(false)
 {
 }
 
@@ -234,6 +235,14 @@ string CreateRoomRequest::ToJsonString() const
         string key = "RoomType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_roomType, allocator);
+    }
+
+    if (m_endDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endDelayTime, allocator);
     }
 
 
@@ -594,6 +603,22 @@ void CreateRoomRequest::SetRoomType(const int64_t& _roomType)
 bool CreateRoomRequest::RoomTypeHasBeenSet() const
 {
     return m_roomTypeHasBeenSet;
+}
+
+int64_t CreateRoomRequest::GetEndDelayTime() const
+{
+    return m_endDelayTime;
+}
+
+void CreateRoomRequest::SetEndDelayTime(const int64_t& _endDelayTime)
+{
+    m_endDelayTime = _endDelayTime;
+    m_endDelayTimeHasBeenSet = true;
+}
+
+bool CreateRoomRequest::EndDelayTimeHasBeenSet() const
+{
+    return m_endDelayTimeHasBeenSet;
 }
 
 

@@ -203,6 +203,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRuleYamlResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRulesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRulesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusRegionsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusRegionsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeJobsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeJobsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusTargetsTMPRequest.h>
@@ -605,6 +607,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePrometheusRecordRulesResponse> DescribePrometheusRecordRulesOutcome;
                 typedef std::future<DescribePrometheusRecordRulesOutcome> DescribePrometheusRecordRulesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusRecordRulesRequest&, DescribePrometheusRecordRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusRecordRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusRegionsResponse> DescribePrometheusRegionsOutcome;
+                typedef std::future<DescribePrometheusRegionsOutcome> DescribePrometheusRegionsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusRegionsRequest&, DescribePrometheusRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusRegionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusScrapeJobsResponse> DescribePrometheusScrapeJobsOutcome;
                 typedef std::future<DescribePrometheusScrapeJobsOutcome> DescribePrometheusScrapeJobsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusScrapeJobsRequest&, DescribePrometheusScrapeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusScrapeJobsAsyncHandler;
@@ -1606,6 +1611,15 @@ namespace TencentCloud
                 DescribePrometheusRecordRulesOutcome DescribePrometheusRecordRules(const Model::DescribePrometheusRecordRulesRequest &request);
                 void DescribePrometheusRecordRulesAsync(const Model::DescribePrometheusRecordRulesRequest& request, const DescribePrometheusRecordRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePrometheusRecordRulesOutcomeCallable DescribePrometheusRecordRulesCallable(const Model::DescribePrometheusRecordRulesRequest& request);
+
+                /**
+                 *列出 Prometheus 服务所有可用的地域
+                 * @param req DescribePrometheusRegionsRequest
+                 * @return DescribePrometheusRegionsOutcome
+                 */
+                DescribePrometheusRegionsOutcome DescribePrometheusRegions(const Model::DescribePrometheusRegionsRequest &request);
+                void DescribePrometheusRegionsAsync(const Model::DescribePrometheusRegionsRequest& request, const DescribePrometheusRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusRegionsOutcomeCallable DescribePrometheusRegionsCallable(const Model::DescribePrometheusRegionsRequest& request);
 
                 /**
                  *列出 Prometheus 抓取任务

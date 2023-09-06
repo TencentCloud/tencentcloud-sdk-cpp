@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DBNameHasBeenSet() const;
 
                     /**
-                     * 获取enable-开启加密，disable-关闭加密
-                     * @return Encryption enable-开启加密，disable-关闭加密
+                     * 获取enable-开启数据库TDE加密，disable-关闭数据库TDE加密
+                     * @return Encryption enable-开启数据库TDE加密，disable-关闭数据库TDE加密
                      * 
                      */
                     std::string GetEncryption() const;
 
                     /**
-                     * 设置enable-开启加密，disable-关闭加密
-                     * @param _encryption enable-开启加密，disable-关闭加密
+                     * 设置enable-开启数据库TDE加密，disable-关闭数据库TDE加密
+                     * @param _encryption enable-开启数据库TDE加密，disable-关闭数据库TDE加密
                      * 
                      */
                     void SetEncryption(const std::string& _encryption);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_dBNameHasBeenSet;
 
                     /**
-                     * enable-开启加密，disable-关闭加密
+                     * enable-开启数据库TDE加密，disable-关闭数据库TDE加密
                      */
                     std::string m_encryption;
                     bool m_encryptionHasBeenSet;

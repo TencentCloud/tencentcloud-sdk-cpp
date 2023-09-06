@@ -33,7 +33,8 @@ ExportInfo::ExportInfo() :
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false),
     m_cosPathHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_syntaxRuleHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SyntaxRule") && !value["SyntaxRule"].IsNull())
+    {
+        if (!value["SyntaxRule"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.SyntaxRule` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syntaxRule = value["SyntaxRule"].GetUint64();
+        m_syntaxRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void ExportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syntaxRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyntaxRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syntaxRule, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void ExportInfo::SetCreateTime(const string& _createTime)
 bool ExportInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t ExportInfo::GetSyntaxRule() const
+{
+    return m_syntaxRule;
+}
+
+void ExportInfo::SetSyntaxRule(const uint64_t& _syntaxRule)
+{
+    m_syntaxRule = _syntaxRule;
+    m_syntaxRuleHasBeenSet = true;
+}
+
+bool ExportInfo::SyntaxRuleHasBeenSet() const
+{
+    return m_syntaxRuleHasBeenSet;
 }
 

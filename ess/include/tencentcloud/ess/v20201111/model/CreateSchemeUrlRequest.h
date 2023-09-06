@@ -45,15 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，userId 必填
-                     * @return Operator 调用方用户信息，userId 必填
+                     * 获取执行本接口操作的员工信息, userId 必填。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息, userId 必填。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填
-                     * @param _operator 调用方用户信息，userId 必填
+                     * 设置执行本接口操作的员工信息, userId 必填。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息, userId 必填。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -66,15 +70,19 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取企业名称
-                     * @return OrganizationName 企业名称
+                     * 获取合同流程签署方的组织机构名称。
+如果名称中包含英文括号()，请使用中文括号（）代替。
+                     * @return OrganizationName 合同流程签署方的组织机构名称。
+如果名称中包含英文括号()，请使用中文括号（）代替。
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置企业名称
-                     * @param _organizationName 企业名称
+                     * 设置合同流程签署方的组织机构名称。
+如果名称中包含英文括号()，请使用中文括号（）代替。
+                     * @param _organizationName 合同流程签署方的组织机构名称。
+如果名称中包含英文括号()，请使用中文括号（）代替。
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -87,15 +95,19 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取姓名,最大长度50个字符
-                     * @return Name 姓名,最大长度50个字符
+                     * 获取合同流程里边签署方经办人的姓名。
+
+                     * @return Name 合同流程里边签署方经办人的姓名。
+
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置姓名,最大长度50个字符
-                     * @param _name 姓名,最大长度50个字符
+                     * 设置合同流程里边签署方经办人的姓名。
+
+                     * @param _name 合同流程里边签署方经办人的姓名。
+
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -108,15 +120,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取手机号，大陆手机号11位
-                     * @return Mobile 手机号，大陆手机号11位
+                     * 获取合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * @return Mobile 合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置手机号，大陆手机号11位
-                     * @param _mobile 手机号，大陆手机号11位
+                     * 设置合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * @param _mobile 合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -131,16 +143,14 @@ namespace TencentCloud
                     /**
                      * 获取要跳转的链接类型
 
-- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链
-- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链
-- APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型
-
+<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li>
+<li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li>
+<li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li></ul>
                      * @return EndPoint 要跳转的链接类型
 
-- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链
-- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链
-- APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型
-
+<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li>
+<li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li>
+<li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li></ul>
                      * 
                      */
                     std::string GetEndPoint() const;
@@ -148,16 +158,14 @@ namespace TencentCloud
                     /**
                      * 设置要跳转的链接类型
 
-- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链
-- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链
-- APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型
-
+<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li>
+<li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li>
+<li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li></ul>
                      * @param _endPoint 要跳转的链接类型
 
-- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链
-- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链
-- APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型
-
+<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li>
+<li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li>
+<li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li></ul>
                      * 
                      */
                     void SetEndPoint(const std::string& _endPoint);
@@ -170,15 +178,19 @@ namespace TencentCloud
                     bool EndPointHasBeenSet() const;
 
                     /**
-                     * 获取签署流程编号 (PathType=1时必传)
-                     * @return FlowId 签署流程编号 (PathType=1时必传)
+                     * 获取合同流程ID 
+注: `如果准备跳转到合同流程签署的详情页面(即PathType=1时)必传,   跳转其他页面可不传`
+                     * @return FlowId 合同流程ID 
+注: `如果准备跳转到合同流程签署的详情页面(即PathType=1时)必传,   跳转其他页面可不传`
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置签署流程编号 (PathType=1时必传)
-                     * @param _flowId 签署流程编号 (PathType=1时必传)
+                     * 设置合同流程ID 
+注: `如果准备跳转到合同流程签署的详情页面(即PathType=1时)必传,   跳转其他页面可不传`
+                     * @param _flowId 合同流程ID 
+注: `如果准备跳转到合同流程签署的详情页面(即PathType=1时)必传,   跳转其他页面可不传`
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -191,15 +203,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取合同组ID 
-                     * @return FlowGroupId 合同组ID 
+                     * 获取合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值
+                     * @return FlowGroupId 合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值
                      * 
                      */
                     std::string GetFlowGroupId() const;
 
                     /**
-                     * 设置合同组ID 
-                     * @param _flowGroupId 合同组ID 
+                     * 设置合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值
+                     * @param _flowGroupId 合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值
                      * 
                      */
                     void SetFlowGroupId(const std::string& _flowGroupId);
@@ -214,16 +226,14 @@ namespace TencentCloud
                     /**
                      * 获取要跳转到的页面类型 
 
-- 0: 不传, 主页 (默认)
-- 1: 小程序合同详情 
-- 2: 小程序合同列表页 
-
+<ul><li> **0** : 腾讯电子签小程序个人首页 (默认)</li>
+<li> **1** : 腾讯电子签小程序流程合同的详情页 (即合同签署页面)</li>
+<li> **2** : 腾讯电子签小程序合同列表页</li></ul>
                      * @return PathType 要跳转到的页面类型 
 
-- 0: 不传, 主页 (默认)
-- 1: 小程序合同详情 
-- 2: 小程序合同列表页 
-
+<ul><li> **0** : 腾讯电子签小程序个人首页 (默认)</li>
+<li> **1** : 腾讯电子签小程序流程合同的详情页 (即合同签署页面)</li>
+<li> **2** : 腾讯电子签小程序合同列表页</li></ul>
                      * 
                      */
                     uint64_t GetPathType() const;
@@ -231,16 +241,14 @@ namespace TencentCloud
                     /**
                      * 设置要跳转到的页面类型 
 
-- 0: 不传, 主页 (默认)
-- 1: 小程序合同详情 
-- 2: 小程序合同列表页 
-
+<ul><li> **0** : 腾讯电子签小程序个人首页 (默认)</li>
+<li> **1** : 腾讯电子签小程序流程合同的详情页 (即合同签署页面)</li>
+<li> **2** : 腾讯电子签小程序合同列表页</li></ul>
                      * @param _pathType 要跳转到的页面类型 
 
-- 0: 不传, 主页 (默认)
-- 1: 小程序合同详情 
-- 2: 小程序合同列表页 
-
+<ul><li> **0** : 腾讯电子签小程序个人首页 (默认)</li>
+<li> **1** : 腾讯电子签小程序流程合同的详情页 (即合同签署页面)</li>
+<li> **2** : 腾讯电子签小程序合同列表页</li></ul>
                      * 
                      */
                     void SetPathType(const uint64_t& _pathType);
@@ -253,27 +261,23 @@ namespace TencentCloud
                     bool PathTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否自动回跳
-true：是，
-false：否。
-该参数只针对"APP" 类型的签署链接有效
-                     * @return AutoJumpBack 是否自动回跳
-true：是，
-false：否。
-该参数只针对"APP" 类型的签署链接有效
+                     * 获取签署完成后是否自动回跳
+<ul><li>**false**：否, 签署完成不会自动跳转回来(默认)</li><li>**true**：是, 签署完成会自动跳转回来</li></ul>
+注:  ` 该参数只针对"APP" 类型的签署链接有效`
+                     * @return AutoJumpBack 签署完成后是否自动回跳
+<ul><li>**false**：否, 签署完成不会自动跳转回来(默认)</li><li>**true**：是, 签署完成会自动跳转回来</li></ul>
+注:  ` 该参数只针对"APP" 类型的签署链接有效`
                      * 
                      */
                     bool GetAutoJumpBack() const;
 
                     /**
-                     * 设置是否自动回跳
-true：是，
-false：否。
-该参数只针对"APP" 类型的签署链接有效
-                     * @param _autoJumpBack 是否自动回跳
-true：是，
-false：否。
-该参数只针对"APP" 类型的签署链接有效
+                     * 设置签署完成后是否自动回跳
+<ul><li>**false**：否, 签署完成不会自动跳转回来(默认)</li><li>**true**：是, 签署完成会自动跳转回来</li></ul>
+注:  ` 该参数只针对"APP" 类型的签署链接有效`
+                     * @param _autoJumpBack 签署完成后是否自动回跳
+<ul><li>**false**：否, 签署完成不会自动跳转回来(默认)</li><li>**true**：是, 签署完成会自动跳转回来</li></ul>
+注:  ` 该参数只针对"APP" 类型的签署链接有效`
                      * 
                      */
                     void SetAutoJumpBack(const bool& _autoJumpBack);
@@ -286,15 +290,19 @@ false：否。
                     bool AutoJumpBackHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -307,35 +315,43 @@ false：否。
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下
+                     * 获取生成的签署链接在签署页面隐藏的按钮列表，可设置如下：
 
-- 0:合同签署页面更多操作按钮
-- 1:合同签署页面更多操作的拒绝签署按钮
-- 2:合同签署页面更多操作的转他人处理按钮
-- 3:签署成功页的查看详情按钮
-                     * @return Hides 生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下
+<ul><li> **0** :合同签署页面更多操作按钮</li>
+<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>
+<li> **2** :合同签署页面更多操作的转他人处理按钮</li>
+<li> **3** :签署成功页的查看详情按钮</li></ul>
 
-- 0:合同签署页面更多操作按钮
-- 1:合同签署页面更多操作的拒绝签署按钮
-- 2:合同签署页面更多操作的转他人处理按钮
-- 3:签署成功页的查看详情按钮
+注:  `字段为数组, 可以传值隐藏多个按钮`
+                     * @return Hides 生成的签署链接在签署页面隐藏的按钮列表，可设置如下：
+
+<ul><li> **0** :合同签署页面更多操作按钮</li>
+<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>
+<li> **2** :合同签署页面更多操作的转他人处理按钮</li>
+<li> **3** :签署成功页的查看详情按钮</li></ul>
+
+注:  `字段为数组, 可以传值隐藏多个按钮`
                      * 
                      */
                     std::vector<int64_t> GetHides() const;
 
                     /**
-                     * 设置生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下
+                     * 设置生成的签署链接在签署页面隐藏的按钮列表，可设置如下：
 
-- 0:合同签署页面更多操作按钮
-- 1:合同签署页面更多操作的拒绝签署按钮
-- 2:合同签署页面更多操作的转他人处理按钮
-- 3:签署成功页的查看详情按钮
-                     * @param _hides 生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下
+<ul><li> **0** :合同签署页面更多操作按钮</li>
+<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>
+<li> **2** :合同签署页面更多操作的转他人处理按钮</li>
+<li> **3** :签署成功页的查看详情按钮</li></ul>
 
-- 0:合同签署页面更多操作按钮
-- 1:合同签署页面更多操作的拒绝签署按钮
-- 2:合同签署页面更多操作的转他人处理按钮
-- 3:签署成功页的查看详情按钮
+注:  `字段为数组, 可以传值隐藏多个按钮`
+                     * @param _hides 生成的签署链接在签署页面隐藏的按钮列表，可设置如下：
+
+<ul><li> **0** :合同签署页面更多操作按钮</li>
+<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>
+<li> **2** :合同签署页面更多操作的转他人处理按钮</li>
+<li> **3** :签署成功页的查看详情按钮</li></ul>
+
+注:  `字段为数组, 可以传值隐藏多个按钮`
                      * 
                      */
                     void SetHides(const std::vector<int64_t>& _hides);
@@ -350,25 +366,28 @@ false：否。
                 private:
 
                     /**
-                     * 调用方用户信息，userId 必填
+                     * 执行本接口操作的员工信息, userId 必填。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 企业名称
+                     * 合同流程签署方的组织机构名称。
+如果名称中包含英文括号()，请使用中文括号（）代替。
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 姓名,最大长度50个字符
+                     * 合同流程里边签署方经办人的姓名。
+
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 手机号，大陆手机号11位
+                     * 合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
@@ -376,22 +395,22 @@ false：否。
                     /**
                      * 要跳转的链接类型
 
-- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链
-- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链
-- APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型
-
+<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li>
+<li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li>
+<li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li></ul>
                      */
                     std::string m_endPoint;
                     bool m_endPointHasBeenSet;
 
                     /**
-                     * 签署流程编号 (PathType=1时必传)
+                     * 合同流程ID 
+注: `如果准备跳转到合同流程签署的详情页面(即PathType=1时)必传,   跳转其他页面可不传`
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 合同组ID 
+                     * 合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
@@ -399,36 +418,37 @@ false：否。
                     /**
                      * 要跳转到的页面类型 
 
-- 0: 不传, 主页 (默认)
-- 1: 小程序合同详情 
-- 2: 小程序合同列表页 
-
+<ul><li> **0** : 腾讯电子签小程序个人首页 (默认)</li>
+<li> **1** : 腾讯电子签小程序流程合同的详情页 (即合同签署页面)</li>
+<li> **2** : 腾讯电子签小程序合同列表页</li></ul>
                      */
                     uint64_t m_pathType;
                     bool m_pathTypeHasBeenSet;
 
                     /**
-                     * 是否自动回跳
-true：是，
-false：否。
-该参数只针对"APP" 类型的签署链接有效
+                     * 签署完成后是否自动回跳
+<ul><li>**false**：否, 签署完成不会自动跳转回来(默认)</li><li>**true**：是, 签署完成会自动跳转回来</li></ul>
+注:  ` 该参数只针对"APP" 类型的签署链接有效`
                      */
                     bool m_autoJumpBack;
                     bool m_autoJumpBackHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下
+                     * 生成的签署链接在签署页面隐藏的按钮列表，可设置如下：
 
-- 0:合同签署页面更多操作按钮
-- 1:合同签署页面更多操作的拒绝签署按钮
-- 2:合同签署页面更多操作的转他人处理按钮
-- 3:签署成功页的查看详情按钮
+<ul><li> **0** :合同签署页面更多操作按钮</li>
+<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>
+<li> **2** :合同签署页面更多操作的转他人处理按钮</li>
+<li> **3** :签署成功页的查看详情按钮</li></ul>
+
+注:  `字段为数组, 可以传值隐藏多个按钮`
                      */
                     std::vector<int64_t> m_hides;
                     bool m_hidesHasBeenSet;

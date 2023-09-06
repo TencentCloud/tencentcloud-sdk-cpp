@@ -45,15 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息
-                     * @param _operator 操作人信息
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -66,56 +70,43 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作
-                     * 
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作
-                     * 
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     * 
-                     */
-                    bool AgentHasBeenSet() const;
-
-                    /**
-                     * 获取扩展服务类型，默认为空，查询目前支持的所有扩展服务信息，单个指定则查询单个扩展服务开通信息，取值：
-OPEN_SERVER_SIGN：开通企业静默签署
-OVERSEA_SIGN：企业与港澳台居民签署合同
-MOBILE_CHECK_APPROVER：使用手机号验证签署方身份
-PAGING_SEAL：骑缝章
-BATCH_SIGN：批量签署
-                     * @return ExtendServiceType 扩展服务类型，默认为空，查询目前支持的所有扩展服务信息，单个指定则查询单个扩展服务开通信息，取值：
-OPEN_SERVER_SIGN：开通企业静默签署
-OVERSEA_SIGN：企业与港澳台居民签署合同
-MOBILE_CHECK_APPROVER：使用手机号验证签署方身份
-PAGING_SEAL：骑缝章
-BATCH_SIGN：批量签署
+                     * 获取要查询的扩展服务类型。
+默认为空，即查询当前支持的所有扩展服务信息。
+若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
+<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>
+<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
+<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>
+<li>PAGING_SEAL：骑缝章</li>
+<li>BATCH_SIGN：批量签署</li></ul>
+                     * @return ExtendServiceType 要查询的扩展服务类型。
+默认为空，即查询当前支持的所有扩展服务信息。
+若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
+<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>
+<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
+<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>
+<li>PAGING_SEAL：骑缝章</li>
+<li>BATCH_SIGN：批量签署</li></ul>
                      * 
                      */
                     std::string GetExtendServiceType() const;
 
                     /**
-                     * 设置扩展服务类型，默认为空，查询目前支持的所有扩展服务信息，单个指定则查询单个扩展服务开通信息，取值：
-OPEN_SERVER_SIGN：开通企业静默签署
-OVERSEA_SIGN：企业与港澳台居民签署合同
-MOBILE_CHECK_APPROVER：使用手机号验证签署方身份
-PAGING_SEAL：骑缝章
-BATCH_SIGN：批量签署
-                     * @param _extendServiceType 扩展服务类型，默认为空，查询目前支持的所有扩展服务信息，单个指定则查询单个扩展服务开通信息，取值：
-OPEN_SERVER_SIGN：开通企业静默签署
-OVERSEA_SIGN：企业与港澳台居民签署合同
-MOBILE_CHECK_APPROVER：使用手机号验证签署方身份
-PAGING_SEAL：骑缝章
-BATCH_SIGN：批量签署
+                     * 设置要查询的扩展服务类型。
+默认为空，即查询当前支持的所有扩展服务信息。
+若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
+<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>
+<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
+<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>
+<li>PAGING_SEAL：骑缝章</li>
+<li>BATCH_SIGN：批量签署</li></ul>
+                     * @param _extendServiceType 要查询的扩展服务类型。
+默认为空，即查询当前支持的所有扩展服务信息。
+若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
+<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>
+<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
+<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>
+<li>PAGING_SEAL：骑缝章</li>
+<li>BATCH_SIGN：批量签署</li></ul>
                      * 
                      */
                     void SetExtendServiceType(const std::string& _extendServiceType);
@@ -127,30 +118,59 @@ BATCH_SIGN：批量签署
                      */
                     bool ExtendServiceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     * 
+                     */
+                    bool AgentHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 操作人信息
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作
-                     */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
-
-                    /**
-                     * 扩展服务类型，默认为空，查询目前支持的所有扩展服务信息，单个指定则查询单个扩展服务开通信息，取值：
-OPEN_SERVER_SIGN：开通企业静默签署
-OVERSEA_SIGN：企业与港澳台居民签署合同
-MOBILE_CHECK_APPROVER：使用手机号验证签署方身份
-PAGING_SEAL：骑缝章
-BATCH_SIGN：批量签署
+                     * 要查询的扩展服务类型。
+默认为空，即查询当前支持的所有扩展服务信息。
+若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
+<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>
+<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
+<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>
+<li>PAGING_SEAL：骑缝章</li>
+<li>BATCH_SIGN：批量签署</li></ul>
                      */
                     std::string m_extendServiceType;
                     bool m_extendServiceTypeHasBeenSet;
+
+                    /**
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }

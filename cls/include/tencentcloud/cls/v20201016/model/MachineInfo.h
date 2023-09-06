@@ -68,6 +68,31 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
+                     * 获取机器实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceID 机器实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 设置机器实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceID 机器实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceID(const std::string& _instanceID);
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     * 
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
+                    /**
                      * 获取机器状态，0:异常，1:正常
                      * @return Status 机器状态，0:异常，1:正常
                      * 
@@ -221,6 +246,13 @@ namespace TencentCloud
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
+
+                    /**
+                     * 机器实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
 
                     /**
                      * 机器状态，0:异常，1:正常

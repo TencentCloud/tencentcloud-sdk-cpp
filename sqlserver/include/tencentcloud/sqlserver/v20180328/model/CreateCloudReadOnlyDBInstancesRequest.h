@@ -338,15 +338,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取本次购买几个只读实例，默认值为2。
-                     * @return GoodsNum 本次购买几个只读实例，默认值为2。
+                     * 获取本次即将购买的实例数量，默认取值2。
+                     * @return GoodsNum 本次即将购买的实例数量，默认取值2。
                      * 
                      */
                     int64_t GetGoodsNum() const;
 
                     /**
-                     * 设置本次购买几个只读实例，默认值为2。
-                     * @param _goodsNum 本次购买几个只读实例，默认值为2。
+                     * 设置本次即将购买的实例数量，默认取值2。
+                     * @param _goodsNum 本次即将购买的实例数量，默认取值2。
                      * 
                      */
                     void SetGoodsNum(const int64_t& _goodsNum);
@@ -634,7 +634,7 @@ namespace TencentCloud
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 本次购买几个只读实例，默认值为2。
+                     * 本次即将购买的实例数量，默认取值2。
                      */
                     int64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;

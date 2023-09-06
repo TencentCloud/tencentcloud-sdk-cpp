@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取新增只读实例数，取值范围为[0,4]
-                     * @return ReadOnlyCount 新增只读实例数，取值范围为[0,4]
+                     * 获取新增只读实例数，取值范围为(0,15]
+                     * @return ReadOnlyCount 新增只读实例数，取值范围为(0,15]
                      * 
                      */
                     int64_t GetReadOnlyCount() const;
 
                     /**
-                     * 设置新增只读实例数，取值范围为[0,4]
-                     * @param _readOnlyCount 新增只读实例数，取值范围为[0,4]
+                     * 设置新增只读实例数，取值范围为(0,15]
+                     * @param _readOnlyCount 新增只读实例数，取值范围为(0,15]
                      * 
                      */
                     void SetReadOnlyCount(const int64_t& _readOnlyCount);
@@ -404,7 +404,7 @@ namespace TencentCloud
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 新增只读实例数，取值范围为[0,4]
+                     * 新增只读实例数，取值范围为(0,15]
                      */
                     int64_t m_readOnlyCount;
                     bool m_readOnlyCountHasBeenSet;

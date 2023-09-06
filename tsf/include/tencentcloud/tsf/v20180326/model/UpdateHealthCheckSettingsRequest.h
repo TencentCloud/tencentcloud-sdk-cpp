@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否能使健康检查
-                     * @return EnableHealthCheck 是否能使健康检查
+                     * 获取是否开启健康检查
+                     * @return EnableHealthCheck 是否开启健康检查
                      * 
                      */
                     bool GetEnableHealthCheck() const;
 
                     /**
-                     * 设置是否能使健康检查
-                     * @param _enableHealthCheck 是否能使健康检查
+                     * 设置是否开启健康检查
+                     * @param _enableHealthCheck 是否开启健康检查
                      * 
                      */
                     void SetEnableHealthCheck(const bool& _enableHealthCheck);
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 是否能使健康检查
+                     * 是否开启健康检查
                      */
                     bool m_enableHealthCheck;
                     bool m_enableHealthCheckHasBeenSet;

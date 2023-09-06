@@ -58,7 +58,8 @@ LoadBalancerDetail::LoadBalancerDetail() :
     m_slaveZoneHasBeenSet(false),
     m_zonesHasBeenSet(false),
     m_sniSwitchHasBeenSet(false),
-    m_loadBalancerDomainHasBeenSet(false)
+    m_loadBalancerDomainHasBeenSet(false),
+    m_egressHasBeenSet(false)
 {
 }
 
@@ -487,6 +488,16 @@ CoreInternalOutcome LoadBalancerDetail::Deserialize(const rapidjson::Value &valu
         m_loadBalancerDomainHasBeenSet = true;
     }
 
+    if (value.HasMember("Egress") && !value["Egress"].IsNull())
+    {
+        if (!value["Egress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerDetail.Egress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_egress = string(value["Egress"].GetString());
+        m_egressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -821,6 +832,14 @@ void LoadBalancerDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "LoadBalancerDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_loadBalancerDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_egressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Egress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1432,5 +1451,21 @@ void LoadBalancerDetail::SetLoadBalancerDomain(const string& _loadBalancerDomain
 bool LoadBalancerDetail::LoadBalancerDomainHasBeenSet() const
 {
     return m_loadBalancerDomainHasBeenSet;
+}
+
+string LoadBalancerDetail::GetEgress() const
+{
+    return m_egress;
+}
+
+void LoadBalancerDetail::SetEgress(const string& _egress)
+{
+    m_egress = _egress;
+    m_egressHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::EgressHasBeenSet() const
+{
+    return m_egressHasBeenSet;
 }
 

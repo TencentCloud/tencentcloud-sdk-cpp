@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态码
-                     * @return Result 状态码
+                     * 获取状态码：0-修改成功，否则修改失败
+                     * @return Result 状态码：0-修改成功，否则修改失败
                      * 
                      */
                     int64_t GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态码
+                     * 状态码：0-修改成功，否则修改失败
                      */
                     int64_t m_result;
                     bool m_resultHasBeenSet;

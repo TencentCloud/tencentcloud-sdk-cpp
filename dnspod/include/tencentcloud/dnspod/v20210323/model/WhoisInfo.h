@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool IsQcloudHasBeenSet() const;
 
                     /**
-                     * 获取是否当前操作帐号注册的域名
+                     * 获取是否当前操作账号注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsQcloudOwner 是否当前操作帐号注册的域名
+                     * @return IsQcloudOwner 是否当前操作账号注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsQcloudOwner() const;
 
                     /**
-                     * 设置是否当前操作帐号注册的域名
+                     * 设置是否当前操作账号注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isQcloudOwner 是否当前操作帐号注册的域名
+                     * @param _isQcloudOwner 是否当前操作账号注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -328,7 +328,7 @@ namespace TencentCloud
                     bool m_isQcloudHasBeenSet;
 
                     /**
-                     * 是否当前操作帐号注册的域名
+                     * 是否当前操作账号注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isQcloudOwner;

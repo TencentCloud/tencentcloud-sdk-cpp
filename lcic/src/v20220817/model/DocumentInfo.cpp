@@ -38,7 +38,8 @@ DocumentInfo::DocumentInfo() :
     m_pagesHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
-    m_coverHasBeenSet(false)
+    m_coverHasBeenSet(false),
+    m_previewHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome DocumentInfo::Deserialize(const rapidjson::Value &value)
         m_coverHasBeenSet = true;
     }
 
+    if (value.HasMember("Preview") && !value["Preview"].IsNull())
+    {
+        if (!value["Preview"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentInfo.Preview` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preview = string(value["Preview"].GetString());
+        m_previewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void DocumentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Cover";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cover.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Preview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preview.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void DocumentInfo::SetCover(const string& _cover)
 bool DocumentInfo::CoverHasBeenSet() const
 {
     return m_coverHasBeenSet;
+}
+
+string DocumentInfo::GetPreview() const
+{
+    return m_preview;
+}
+
+void DocumentInfo::SetPreview(const string& _preview)
+{
+    m_preview = _preview;
+    m_previewHasBeenSet = true;
+}
+
+bool DocumentInfo::PreviewHasBeenSet() const
+{
+    return m_previewHasBeenSet;
 }
 

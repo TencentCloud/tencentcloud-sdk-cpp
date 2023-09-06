@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 授权服务信息
+                * 扩展服务开通和授权的详细信息
                 */
                 class ExtendAuthInfo : public AbstractModel
                 {
@@ -48,35 +48,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取授权服务类型
-OPEN_SERVER_SIGN：开通企业静默签署
-OVERSEA_SIGN：企业与港澳台居民签署合同
-MOBILE_CHECK_APPROVER：使用手机号验证签署方身份
-PAGING_SEAL：骑缝章
-BATCH_SIGN：批量签署
-                     * @return Type 授权服务类型
-OPEN_SERVER_SIGN：开通企业静默签署
-OVERSEA_SIGN：企业与港澳台居民签署合同
-MOBILE_CHECK_APPROVER：使用手机号验证签署方身份
-PAGING_SEAL：骑缝章
-BATCH_SIGN：批量签署
+                     * 获取扩展服务的类型，可能是以下值：
+<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>
+<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
+<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>
+<li>PAGING_SEAL：骑缝章</li>
+<li>BATCH_SIGN：批量签署</li></ul>
+                     * @return Type 扩展服务的类型，可能是以下值：
+<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>
+<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
+<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>
+<li>PAGING_SEAL：骑缝章</li>
+<li>BATCH_SIGN：批量签署</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置授权服务类型
-OPEN_SERVER_SIGN：开通企业静默签署
-OVERSEA_SIGN：企业与港澳台居民签署合同
-MOBILE_CHECK_APPROVER：使用手机号验证签署方身份
-PAGING_SEAL：骑缝章
-BATCH_SIGN：批量签署
-                     * @param _type 授权服务类型
-OPEN_SERVER_SIGN：开通企业静默签署
-OVERSEA_SIGN：企业与港澳台居民签署合同
-MOBILE_CHECK_APPROVER：使用手机号验证签署方身份
-PAGING_SEAL：骑缝章
-BATCH_SIGN：批量签署
+                     * 设置扩展服务的类型，可能是以下值：
+<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>
+<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
+<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>
+<li>PAGING_SEAL：骑缝章</li>
+<li>BATCH_SIGN：批量签署</li></ul>
+                     * @param _type 扩展服务的类型，可能是以下值：
+<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>
+<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
+<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>
+<li>PAGING_SEAL：骑缝章</li>
+<li>BATCH_SIGN：批量签署</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -89,15 +89,15 @@ BATCH_SIGN：批量签署
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取授权服务名称
-                     * @return Name 授权服务名称
+                     * 获取扩展服务的名称
+                     * @return Name 扩展服务的名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置授权服务名称
-                     * @param _name 授权服务名称
+                     * 设置扩展服务的名称
+                     * @param _name 扩展服务的名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -110,18 +110,22 @@ BATCH_SIGN：批量签署
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取授权服务状态，ENABLE：开通
+                     * 获取扩展服务的开通状态：
+ENABLE：开通
 DISABLE：未开通
-                     * @return Status 授权服务状态，ENABLE：开通
+                     * @return Status 扩展服务的开通状态：
+ENABLE：开通
 DISABLE：未开通
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置授权服务状态，ENABLE：开通
+                     * 设置扩展服务的开通状态：
+ENABLE：开通
 DISABLE：未开通
-                     * @param _status 授权服务状态，ENABLE：开通
+                     * @param _status 扩展服务的开通状态：
+ENABLE：开通
 DISABLE：未开通
                      * 
                      */
@@ -135,18 +139,18 @@ DISABLE：未开通
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取授权人用户id
+                     * 获取操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperatorUserId 授权人用户id
+                     * @return OperatorUserId 操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperatorUserId() const;
 
                     /**
-                     * 设置授权人用户id
+                     * 设置操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operatorUserId 授权人用户id
+                     * @param _operatorUserId 操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,18 +164,18 @@ DISABLE：未开通
                     bool OperatorUserIdHasBeenSet() const;
 
                     /**
-                     * 获取授权时间戳，单位秒
+                     * 获取扩展服务的操作时间，格式为Unix标准时间戳（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperateOn 授权时间戳，单位秒
+                     * @return OperateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOperateOn() const;
 
                     /**
-                     * 设置授权时间戳，单位秒
+                     * 设置扩展服务的操作时间，格式为Unix标准时间戳（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operateOn 授权时间戳，单位秒
+                     * @param _operateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -185,18 +189,18 @@ DISABLE：未开通
                     bool OperateOnHasBeenSet() const;
 
                     /**
-                     * 获取被授权用户列表
+                     * 获取该扩展服务若可以授权，此参数对应授权人员的列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HasAuthUserList 被授权用户列表
+                     * @return HasAuthUserList 该扩展服务若可以授权，此参数对应授权人员的列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HasAuthUser> GetHasAuthUserList() const;
 
                     /**
-                     * 设置被授权用户列表
+                     * 设置该扩展服务若可以授权，此参数对应授权人员的列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hasAuthUserList 被授权用户列表
+                     * @param _hasAuthUserList 该扩展服务若可以授权，此参数对应授权人员的列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -212,45 +216,46 @@ DISABLE：未开通
                 private:
 
                     /**
-                     * 授权服务类型
-OPEN_SERVER_SIGN：开通企业静默签署
-OVERSEA_SIGN：企业与港澳台居民签署合同
-MOBILE_CHECK_APPROVER：使用手机号验证签署方身份
-PAGING_SEAL：骑缝章
-BATCH_SIGN：批量签署
+                     * 扩展服务的类型，可能是以下值：
+<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>
+<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
+<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>
+<li>PAGING_SEAL：骑缝章</li>
+<li>BATCH_SIGN：批量签署</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 授权服务名称
+                     * 扩展服务的名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 授权服务状态，ENABLE：开通
+                     * 扩展服务的开通状态：
+ENABLE：开通
 DISABLE：未开通
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 授权人用户id
+                     * 操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operatorUserId;
                     bool m_operatorUserIdHasBeenSet;
 
                     /**
-                     * 授权时间戳，单位秒
+                     * 扩展服务的操作时间，格式为Unix标准时间戳（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operateOn;
                     bool m_operateOnHasBeenSet;
 
                     /**
-                     * 被授权用户列表
+                     * 该扩展服务若可以授权，此参数对应授权人员的列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HasAuthUser> m_hasAuthUserList;

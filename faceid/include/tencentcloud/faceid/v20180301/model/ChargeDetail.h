@@ -90,22 +90,43 @@ namespace TencentCloud
 
                     /**
                      * 获取一比一时使用的、脱敏后的身份证号。
-                     * @return Idcard 一比一时使用的、脱敏后的身份证号。
+                     * @return IdCard 一比一时使用的、脱敏后的身份证号。
                      * 
+                     */
+                    std::string GetIdCard() const;
+
+                    /**
+                     * 设置一比一时使用的、脱敏后的身份证号。
+                     * @param _idCard 一比一时使用的、脱敏后的身份证号。
+                     * 
+                     */
+                    void SetIdCard(const std::string& _idCard);
+
+                    /**
+                     * 判断参数 IdCard 是否已赋值
+                     * @return IdCard 是否已赋值
+                     * 
+                     */
+                    bool IdCardHasBeenSet() const;
+
+                    /**
+                     * 获取已废弃。请使用“IdCard”字段
+                     * @return Idcard 已废弃。请使用“IdCard”字段
+                     * @deprecated
                      */
                     std::string GetIdcard() const;
 
                     /**
-                     * 设置一比一时使用的、脱敏后的身份证号。
-                     * @param _idcard 一比一时使用的、脱敏后的身份证号。
-                     * 
+                     * 设置已废弃。请使用“IdCard”字段
+                     * @param _idcard 已废弃。请使用“IdCard”字段
+                     * @deprecated
                      */
                     void SetIdcard(const std::string& _idcard);
 
                     /**
                      * 判断参数 Idcard 是否已赋值
                      * @return Idcard 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IdcardHasBeenSet() const;
 
@@ -251,6 +272,12 @@ namespace TencentCloud
 
                     /**
                      * 一比一时使用的、脱敏后的身份证号。
+                     */
+                    std::string m_idCard;
+                    bool m_idCardHasBeenSet;
+
+                    /**
+                     * 已废弃。请使用“IdCard”字段
                      */
                     std::string m_idcard;
                     bool m_idcardHasBeenSet;

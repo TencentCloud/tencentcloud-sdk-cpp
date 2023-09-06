@@ -198,15 +198,19 @@ namespace TencentCloud
                     bool SourceContextHasBeenSet() const;
 
                     /**
-                     * 获取上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效)。
-                     * @return MediaType 上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效)。
+                     * 获取上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效),
+3: hls+mp4, 4: hls+aac(StreamType=1纯音频录制时有效)。
+                     * @return MediaType 上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效),
+3: hls+mp4, 4: hls+aac(StreamType=1纯音频录制时有效)。
                      * 
                      */
                     uint64_t GetMediaType() const;
 
                     /**
-                     * 设置上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效)。
-                     * @param _mediaType 上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效)。
+                     * 设置上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效),
+3: hls+mp4, 4: hls+aac(StreamType=1纯音频录制时有效)。
+                     * @param _mediaType 上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效),
+3: hls+mp4, 4: hls+aac(StreamType=1纯音频录制时有效)。
                      * 
                      */
                     void SetMediaType(const uint64_t& _mediaType);
@@ -285,7 +289,8 @@ namespace TencentCloud
                     bool m_sourceContextHasBeenSet;
 
                     /**
-                     * 上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效)。
+                     * 上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效),
+3: hls+mp4, 4: hls+aac(StreamType=1纯音频录制时有效)。
                      */
                     uint64_t m_mediaType;
                     bool m_mediaTypeHasBeenSet;

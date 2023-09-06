@@ -46,15 +46,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，userId 必填
-                     * @return Operator 调用方用户信息，userId 必填
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填
-                     * @param _operator 调用方用户信息，userId 必填
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -67,15 +71,23 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取操作类型：1-新增，2-删除
-                     * @return OperateType 操作类型：1-新增，2-删除
+                     * 获取操作类型：
+1-新增
+2-删除
+                     * @return OperateType 操作类型：
+1-新增
+2-删除
                      * 
                      */
                     int64_t GetOperateType() const;
 
                     /**
-                     * 设置操作类型：1-新增，2-删除
-                     * @param _operateType 操作类型：1-新增，2-删除
+                     * 设置操作类型：
+1-新增
+2-删除
+                     * @param _operateType 操作类型：
+1-新增
+2-删除
                      * 
                      */
                     void SetOperateType(const int64_t& _operateType);
@@ -88,15 +100,15 @@ namespace TencentCloud
                     bool OperateTypeHasBeenSet() const;
 
                     /**
-                     * 获取回调信息
-                     * @return CallbackInfo 回调信息
+                     * 获取企业应用回调信息
+                     * @return CallbackInfo 企业应用回调信息
                      * 
                      */
                     CallbackInfo GetCallbackInfo() const;
 
                     /**
-                     * 设置回调信息
-                     * @param _callbackInfo 回调信息
+                     * 设置企业应用回调信息
+                     * @param _callbackInfo 企业应用回调信息
                      * 
                      */
                     void SetCallbackInfo(const CallbackInfo& _callbackInfo);
@@ -109,15 +121,19 @@ namespace TencentCloud
                     bool CallbackInfoHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -132,25 +148,29 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 调用方用户信息，userId 必填
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 操作类型：1-新增，2-删除
+                     * 操作类型：
+1-新增
+2-删除
                      */
                     int64_t m_operateType;
                     bool m_operateTypeHasBeenSet;
 
                     /**
-                     * 回调信息
+                     * 企业应用回调信息
                      */
                     CallbackInfo m_callbackInfo;
                     bool m_callbackInfoHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

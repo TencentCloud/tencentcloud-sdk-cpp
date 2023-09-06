@@ -27,8 +27,8 @@ CreateMultiFlowSignQRCodeRequest::CreateMultiFlowSignQRCodeRequest() :
     m_templateIdHasBeenSet(false),
     m_flowNameHasBeenSet(false),
     m_maxFlowNumHasBeenSet(false),
-    m_flowEffectiveDayHasBeenSet(false),
     m_qrEffectiveDayHasBeenSet(false),
+    m_flowEffectiveDayHasBeenSet(false),
     m_restrictionsHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
@@ -77,20 +77,20 @@ string CreateMultiFlowSignQRCodeRequest::ToJsonString() const
         d.AddMember(iKey, m_maxFlowNum, allocator);
     }
 
-    if (m_flowEffectiveDayHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowEffectiveDay";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_flowEffectiveDay, allocator);
-    }
-
     if (m_qrEffectiveDayHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QrEffectiveDay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_qrEffectiveDay, allocator);
+    }
+
+    if (m_flowEffectiveDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowEffectiveDay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowEffectiveDay, allocator);
     }
 
     if (m_restrictionsHasBeenSet)
@@ -214,22 +214,6 @@ bool CreateMultiFlowSignQRCodeRequest::MaxFlowNumHasBeenSet() const
     return m_maxFlowNumHasBeenSet;
 }
 
-int64_t CreateMultiFlowSignQRCodeRequest::GetFlowEffectiveDay() const
-{
-    return m_flowEffectiveDay;
-}
-
-void CreateMultiFlowSignQRCodeRequest::SetFlowEffectiveDay(const int64_t& _flowEffectiveDay)
-{
-    m_flowEffectiveDay = _flowEffectiveDay;
-    m_flowEffectiveDayHasBeenSet = true;
-}
-
-bool CreateMultiFlowSignQRCodeRequest::FlowEffectiveDayHasBeenSet() const
-{
-    return m_flowEffectiveDayHasBeenSet;
-}
-
 int64_t CreateMultiFlowSignQRCodeRequest::GetQrEffectiveDay() const
 {
     return m_qrEffectiveDay;
@@ -244,6 +228,22 @@ void CreateMultiFlowSignQRCodeRequest::SetQrEffectiveDay(const int64_t& _qrEffec
 bool CreateMultiFlowSignQRCodeRequest::QrEffectiveDayHasBeenSet() const
 {
     return m_qrEffectiveDayHasBeenSet;
+}
+
+int64_t CreateMultiFlowSignQRCodeRequest::GetFlowEffectiveDay() const
+{
+    return m_flowEffectiveDay;
+}
+
+void CreateMultiFlowSignQRCodeRequest::SetFlowEffectiveDay(const int64_t& _flowEffectiveDay)
+{
+    m_flowEffectiveDay = _flowEffectiveDay;
+    m_flowEffectiveDayHasBeenSet = true;
+}
+
+bool CreateMultiFlowSignQRCodeRequest::FlowEffectiveDayHasBeenSet() const
+{
+    return m_flowEffectiveDayHasBeenSet;
 }
 
 vector<ApproverRestriction> CreateMultiFlowSignQRCodeRequest::GetRestrictions() const

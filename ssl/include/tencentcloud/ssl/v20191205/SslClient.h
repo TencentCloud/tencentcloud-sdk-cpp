@@ -35,6 +35,8 @@
 #include <tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CreateCertificateBindResourceSyncTaskRequest.h>
+#include <tencentcloud/ssl/v20191205/model/CreateCertificateBindResourceSyncTaskResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateByPackageRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateByPackageResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteCertificateRequest.h>
@@ -49,6 +51,10 @@
 #include <tencentcloud/ssl/v20191205/model/DeployCertificateRecordRollbackResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeCertificateBindResourceTaskDetailRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeCertificateBindResourceTaskDetailResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeCertificateBindResourceTaskResultRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeCertificateBindResourceTaskResultResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateDetailRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateDetailResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsRequest.h>
@@ -159,6 +165,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCertificateResponse> CreateCertificateOutcome;
                 typedef std::future<CreateCertificateOutcome> CreateCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CreateCertificateRequest&, CreateCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCertificateBindResourceSyncTaskResponse> CreateCertificateBindResourceSyncTaskOutcome;
+                typedef std::future<CreateCertificateBindResourceSyncTaskOutcome> CreateCertificateBindResourceSyncTaskOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::CreateCertificateBindResourceSyncTaskRequest&, CreateCertificateBindResourceSyncTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertificateBindResourceSyncTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCertificateByPackageResponse> CreateCertificateByPackageOutcome;
                 typedef std::future<CreateCertificateByPackageOutcome> CreateCertificateByPackageOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CreateCertificateByPackageRequest&, CreateCertificateByPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertificateByPackageAsyncHandler;
@@ -180,6 +189,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCertificateResponse> DescribeCertificateOutcome;
                 typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeCertificateRequest&, DescribeCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCertificateBindResourceTaskDetailResponse> DescribeCertificateBindResourceTaskDetailOutcome;
+                typedef std::future<DescribeCertificateBindResourceTaskDetailOutcome> DescribeCertificateBindResourceTaskDetailOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeCertificateBindResourceTaskDetailRequest&, DescribeCertificateBindResourceTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateBindResourceTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCertificateBindResourceTaskResultResponse> DescribeCertificateBindResourceTaskResultOutcome;
+                typedef std::future<DescribeCertificateBindResourceTaskResultOutcome> DescribeCertificateBindResourceTaskResultOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeCertificateBindResourceTaskResultRequest&, DescribeCertificateBindResourceTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateBindResourceTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCertificateDetailResponse> DescribeCertificateDetailOutcome;
                 typedef std::future<DescribeCertificateDetailOutcome> DescribeCertificateDetailOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeCertificateDetailRequest&, DescribeCertificateDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateDetailAsyncHandler;
@@ -355,6 +370,15 @@ namespace TencentCloud
                 CreateCertificateOutcomeCallable CreateCertificateCallable(const Model::CreateCertificateRequest& request);
 
                 /**
+                 *创建证书绑定关联云资源异步任务， 该接口用于查询证书关联云资源。 若证书ID已存在查询云资源任务，则结果返回该任务ID。关联云资源类型，支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）。查询关联云资源结果使用DescribeCertificateBindResourceTaskResult接口
+                 * @param req CreateCertificateBindResourceSyncTaskRequest
+                 * @return CreateCertificateBindResourceSyncTaskOutcome
+                 */
+                CreateCertificateBindResourceSyncTaskOutcome CreateCertificateBindResourceSyncTask(const Model::CreateCertificateBindResourceSyncTaskRequest &request);
+                void CreateCertificateBindResourceSyncTaskAsync(const Model::CreateCertificateBindResourceSyncTaskRequest& request, const CreateCertificateBindResourceSyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCertificateBindResourceSyncTaskOutcomeCallable CreateCertificateBindResourceSyncTaskCallable(const Model::CreateCertificateBindResourceSyncTaskRequest& request);
+
+                /**
                  *使用权益点创建证书
                  * @param req CreateCertificateByPackageRequest
                  * @return CreateCertificateByPackageOutcome
@@ -416,6 +440,24 @@ namespace TencentCloud
                 DescribeCertificateOutcome DescribeCertificate(const Model::DescribeCertificateRequest &request);
                 void DescribeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCertificateOutcomeCallable DescribeCertificateCallable(const Model::DescribeCertificateRequest& request);
+
+                /**
+                 *查询CreateCertificateBindResourceSyncTask任务结果， 返回证书关联云资源异步任务结果， 支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）
+                 * @param req DescribeCertificateBindResourceTaskDetailRequest
+                 * @return DescribeCertificateBindResourceTaskDetailOutcome
+                 */
+                DescribeCertificateBindResourceTaskDetailOutcome DescribeCertificateBindResourceTaskDetail(const Model::DescribeCertificateBindResourceTaskDetailRequest &request);
+                void DescribeCertificateBindResourceTaskDetailAsync(const Model::DescribeCertificateBindResourceTaskDetailRequest& request, const DescribeCertificateBindResourceTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCertificateBindResourceTaskDetailOutcomeCallable DescribeCertificateBindResourceTaskDetailCallable(const Model::DescribeCertificateBindResourceTaskDetailRequest& request);
+
+                /**
+                 *查询CreateCertificateBindResourceSyncTask任务结果， 返回证书关联云资源异步任务结果， 支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）
+                 * @param req DescribeCertificateBindResourceTaskResultRequest
+                 * @return DescribeCertificateBindResourceTaskResultOutcome
+                 */
+                DescribeCertificateBindResourceTaskResultOutcome DescribeCertificateBindResourceTaskResult(const Model::DescribeCertificateBindResourceTaskResultRequest &request);
+                void DescribeCertificateBindResourceTaskResultAsync(const Model::DescribeCertificateBindResourceTaskResultRequest& request, const DescribeCertificateBindResourceTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCertificateBindResourceTaskResultOutcomeCallable DescribeCertificateBindResourceTaskResultCallable(const Model::DescribeCertificateBindResourceTaskResultRequest& request);
 
                 /**
                  *获取证书详情。

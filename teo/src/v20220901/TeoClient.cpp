@@ -556,6 +556,49 @@ TeoClient::CreateSecurityIPGroupOutcomeCallable TeoClient::CreateSecurityIPGroup
     return task->get_future();
 }
 
+TeoClient::CreateSharedCNAMEOutcome TeoClient::CreateSharedCNAME(const CreateSharedCNAMERequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSharedCNAME");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSharedCNAMEResponse rsp = CreateSharedCNAMEResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSharedCNAMEOutcome(rsp);
+        else
+            return CreateSharedCNAMEOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSharedCNAMEOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateSharedCNAMEAsync(const CreateSharedCNAMERequest& request, const CreateSharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSharedCNAME(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateSharedCNAMEOutcomeCallable TeoClient::CreateSharedCNAMECallable(const CreateSharedCNAMERequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSharedCNAMEOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSharedCNAME(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateZoneOutcome TeoClient::CreateZone(const CreateZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateZone");

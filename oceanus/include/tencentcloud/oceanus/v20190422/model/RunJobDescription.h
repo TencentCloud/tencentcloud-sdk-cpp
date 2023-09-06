@@ -89,15 +89,19 @@ namespace TencentCloud
                     bool RunTypeHasBeenSet() const;
 
                     /**
-                     * 获取兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）
-                     * @return StartMode 兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）
+                     * 获取兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（建议传值）
+保证参数为 LATEST、EARLIEST、T+Timestamp （例:T1557394288000）
+                     * @return StartMode 兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（建议传值）
+保证参数为 LATEST、EARLIEST、T+Timestamp （例:T1557394288000）
                      * 
                      */
                     std::string GetStartMode() const;
 
                     /**
-                     * 设置兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）
-                     * @param _startMode 兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）
+                     * 设置兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（建议传值）
+保证参数为 LATEST、EARLIEST、T+Timestamp （例:T1557394288000）
+                     * @param _startMode 兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（建议传值）
+保证参数为 LATEST、EARLIEST、T+Timestamp （例:T1557394288000）
                      * 
                      */
                     void SetStartMode(const std::string& _startMode);
@@ -111,14 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 获取当前作业的某个版本
+（不传默认为非草稿的作业版本）
                      * @return JobConfigVersion 当前作业的某个版本
+（不传默认为非草稿的作业版本）
                      * 
                      */
                     uint64_t GetJobConfigVersion() const;
 
                     /**
                      * 设置当前作业的某个版本
+（不传默认为非草稿的作业版本）
                      * @param _jobConfigVersion 当前作业的某个版本
+（不传默认为非草稿的作业版本）
                      * 
                      */
                     void SetJobConfigVersion(const uint64_t& _jobConfigVersion);
@@ -193,6 +201,27 @@ namespace TencentCloud
                      */
                     bool UseOldSystemConnectorHasBeenSet() const;
 
+                    /**
+                     * 获取自定义时间戳
+                     * @return CustomTimestamp 自定义时间戳
+                     * 
+                     */
+                    int64_t GetCustomTimestamp() const;
+
+                    /**
+                     * 设置自定义时间戳
+                     * @param _customTimestamp 自定义时间戳
+                     * 
+                     */
+                    void SetCustomTimestamp(const int64_t& _customTimestamp);
+
+                    /**
+                     * 判断参数 CustomTimestamp 是否已赋值
+                     * @return CustomTimestamp 是否已赋值
+                     * 
+                     */
+                    bool CustomTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,13 +237,15 @@ namespace TencentCloud
                     bool m_runTypeHasBeenSet;
 
                     /**
-                     * 兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）
+                     * 兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（建议传值）
+保证参数为 LATEST、EARLIEST、T+Timestamp （例:T1557394288000）
                      */
                     std::string m_startMode;
                     bool m_startModeHasBeenSet;
 
                     /**
                      * 当前作业的某个版本
+（不传默认为非草稿的作业版本）
                      */
                     uint64_t m_jobConfigVersion;
                     bool m_jobConfigVersionHasBeenSet;
@@ -236,6 +267,12 @@ namespace TencentCloud
                      */
                     bool m_useOldSystemConnector;
                     bool m_useOldSystemConnectorHasBeenSet;
+
+                    /**
+                     * 自定义时间戳
+                     */
+                    int64_t m_customTimestamp;
+                    bool m_customTimestampHasBeenSet;
 
                 };
             }

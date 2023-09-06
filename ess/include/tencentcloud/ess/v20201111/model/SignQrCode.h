@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 一码多扫签署二维码对象
+                * 签署二维码的基本信息，用于创建二维码，用户可扫描该二维码进行签署操作。
                 */
                 class SignQrCode : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取二维码id
-                     * @return QrCodeId 二维码id
+                     * 获取二维码ID，为32位字符串。
+                     * @return QrCodeId 二维码ID，为32位字符串。
                      * 
                      */
                     std::string GetQrCodeId() const;
 
                     /**
-                     * 设置二维码id
-                     * @param _qrCodeId 二维码id
+                     * 设置二维码ID，为32位字符串。
+                     * @param _qrCodeId 二维码ID，为32位字符串。
                      * 
                      */
                     void SetQrCodeId(const std::string& _qrCodeId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool QrCodeIdHasBeenSet() const;
 
                     /**
-                     * 获取二维码url
-                     * @return QrCodeUrl 二维码url
+                     * 获取二维码URL，可通过转换二维码的工具或代码组件将此URL转化为二维码，以便用户扫描进行流程签署。
+                     * @return QrCodeUrl 二维码URL，可通过转换二维码的工具或代码组件将此URL转化为二维码，以便用户扫描进行流程签署。
                      * 
                      */
                     std::string GetQrCodeUrl() const;
 
                     /**
-                     * 设置二维码url
-                     * @param _qrCodeUrl 二维码url
+                     * 设置二维码URL，可通过转换二维码的工具或代码组件将此URL转化为二维码，以便用户扫描进行流程签署。
+                     * @param _qrCodeUrl 二维码URL，可通过转换二维码的工具或代码组件将此URL转化为二维码，以便用户扫描进行流程签署。
                      * 
                      */
                     void SetQrCodeUrl(const std::string& _qrCodeUrl);
@@ -89,15 +89,19 @@ namespace TencentCloud
                     bool QrCodeUrlHasBeenSet() const;
 
                     /**
-                     * 获取二维码过期时间戳，单位秒
-                     * @return ExpiredTime 二维码过期时间戳，单位秒
+                     * 获取二维码的有截止时间，格式为Unix标准时间戳（秒）。
+一旦超过二维码的有效期限，该二维码将自动失效。
+                     * @return ExpiredTime 二维码的有截止时间，格式为Unix标准时间戳（秒）。
+一旦超过二维码的有效期限，该二维码将自动失效。
                      * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
-                     * 设置二维码过期时间戳，单位秒
-                     * @param _expiredTime 二维码过期时间戳，单位秒
+                     * 设置二维码的有截止时间，格式为Unix标准时间戳（秒）。
+一旦超过二维码的有效期限，该二维码将自动失效。
+                     * @param _expiredTime 二维码的有截止时间，格式为Unix标准时间戳（秒）。
+一旦超过二维码的有效期限，该二维码将自动失效。
                      * 
                      */
                     void SetExpiredTime(const int64_t& _expiredTime);
@@ -112,19 +116,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 二维码id
+                     * 二维码ID，为32位字符串。
                      */
                     std::string m_qrCodeId;
                     bool m_qrCodeIdHasBeenSet;
 
                     /**
-                     * 二维码url
+                     * 二维码URL，可通过转换二维码的工具或代码组件将此URL转化为二维码，以便用户扫描进行流程签署。
                      */
                     std::string m_qrCodeUrl;
                     bool m_qrCodeUrlHasBeenSet;
 
                     /**
-                     * 二维码过期时间戳，单位秒
+                     * 二维码的有截止时间，格式为Unix标准时间戳（秒）。
+一旦超过二维码的有效期限，该二维码将自动失效。
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;

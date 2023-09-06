@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 应用回调信息
+                * 企业应用回调信息
                 */
                 class CallbackInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调url
-                     * @return CallbackUrl 回调url
+                     * 获取回调url,。请确保回调地址能够接收并处理 HTTP POST 请求，并返回状态码 200 以表示处理正常。
+                     * @return CallbackUrl 回调url,。请确保回调地址能够接收并处理 HTTP POST 请求，并返回状态码 200 以表示处理正常。
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调url
-                     * @param _callbackUrl 回调url
+                     * 设置回调url,。请确保回调地址能够接收并处理 HTTP POST 请求，并返回状态码 200 以表示处理正常。
+                     * @param _callbackUrl 回调url,。请确保回调地址能够接收并处理 HTTP POST 请求，并返回状态码 200 以表示处理正常。
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TokenHasBeenSet() const;
 
                     /**
-                     * 获取回调加密key
-                     * @return CallbackKey 回调加密key
+                     * 获取回调加密key，用于回调消息加解密。
+                     * @return CallbackKey 回调加密key，用于回调消息加解密。
                      * 
                      */
                     std::string GetCallbackKey() const;
 
                     /**
-                     * 设置回调加密key
-                     * @param _callbackKey 回调加密key
+                     * 设置回调加密key，用于回调消息加解密。
+                     * @param _callbackKey 回调加密key，用于回调消息加解密。
                      * 
                      */
                     void SetCallbackKey(const std::string& _callbackKey);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CallbackKeyHasBeenSet() const;
 
                     /**
-                     * 获取回调验签token
-                     * @return CallbackToken 回调验签token
+                     * 获取回调验签token，用于回调通知校验。
+                     * @return CallbackToken 回调验签token，用于回调通知校验。
                      * 
                      */
                     std::string GetCallbackToken() const;
 
                     /**
-                     * 设置回调验签token
-                     * @param _callbackToken 回调验签token
+                     * 设置回调验签token，用于回调通知校验。
+                     * @param _callbackToken 回调验签token，用于回调通知校验。
                      * 
                      */
                     void SetCallbackToken(const std::string& _callbackToken);
@@ -133,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回调url
+                     * 回调url,。请确保回调地址能够接收并处理 HTTP POST 请求，并返回状态码 200 以表示处理正常。
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
@@ -145,13 +145,13 @@ namespace TencentCloud
                     bool m_tokenHasBeenSet;
 
                     /**
-                     * 回调加密key
+                     * 回调加密key，用于回调消息加解密。
                      */
                     std::string m_callbackKey;
                     bool m_callbackKeyHasBeenSet;
 
                     /**
-                     * 回调验签token
+                     * 回调验签token，用于回调通知校验。
                      */
                     std::string m_callbackToken;
                     bool m_callbackTokenHasBeenSet;

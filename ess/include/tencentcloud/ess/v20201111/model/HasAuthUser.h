@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 被授权用户信息
+                * 被授权的用户信息
                 */
                 class HasAuthUser : public AbstractModel
                 {
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户id
+                     * 获取员工在腾讯电子签平台的唯一身份标识，为32位字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserId 用户id
+                     * @return UserId 员工在腾讯电子签平台的唯一身份标识，为32位字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户id
+                     * 设置员工在腾讯电子签平台的唯一身份标识，为32位字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userId 用户id
+                     * @param _userId 员工在腾讯电子签平台的唯一身份标识，为32位字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,26 +72,26 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户归属
-MainOrg：主企业
-CurrentOrg：当前企业
+                     * 获取当前员工的归属情况，可能值是：
+MainOrg：在集团企业的场景下，返回此值代表是归属主企业
+CurrentOrg：在普通企业场景下返回此值；或者在集团企业的场景下，返回此值代表归属子企业
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BelongTo 用户归属
-MainOrg：主企业
-CurrentOrg：当前企业
+                     * @return BelongTo 当前员工的归属情况，可能值是：
+MainOrg：在集团企业的场景下，返回此值代表是归属主企业
+CurrentOrg：在普通企业场景下返回此值；或者在集团企业的场景下，返回此值代表归属子企业
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBelongTo() const;
 
                     /**
-                     * 设置用户归属
-MainOrg：主企业
-CurrentOrg：当前企业
+                     * 设置当前员工的归属情况，可能值是：
+MainOrg：在集团企业的场景下，返回此值代表是归属主企业
+CurrentOrg：在普通企业场景下返回此值；或者在集团企业的场景下，返回此值代表归属子企业
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _belongTo 用户归属
-MainOrg：主企业
-CurrentOrg：当前企业
+                     * @param _belongTo 当前员工的归属情况，可能值是：
+MainOrg：在集团企业的场景下，返回此值代表是归属主企业
+CurrentOrg：在普通企业场景下返回此值；或者在集团企业的场景下，返回此值代表归属子企业
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -107,16 +107,16 @@ CurrentOrg：当前企业
                 private:
 
                     /**
-                     * 用户id
+                     * 员工在腾讯电子签平台的唯一身份标识，为32位字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户归属
-MainOrg：主企业
-CurrentOrg：当前企业
+                     * 当前员工的归属情况，可能值是：
+MainOrg：在集团企业的场景下，返回此值代表是归属主企业
+CurrentOrg：在普通企业场景下返回此值；或者在集团企业的场景下，返回此值代表归属子企业
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_belongTo;

@@ -387,6 +387,20 @@ video 纯视频
                      */
                     bool VideoDurationHasBeenSet() const;
 
+                    /**
+                     * 获取拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
+                     * @return EndDelayTime 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
+                     * 
+                     */
+                    int64_t GetEndDelayTime() const;
+
+                    /**
+                     * 判断参数 EndDelayTime 是否已赋值
+                     * @return EndDelayTime 是否已赋值
+                     * 
+                     */
+                    bool EndDelayTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -538,6 +552,12 @@ video 纯视频
                      */
                     uint64_t m_videoDuration;
                     bool m_videoDurationHasBeenSet;
+
+                    /**
+                     * 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
+                     */
+                    int64_t m_endDelayTime;
+                    bool m_endDelayTimeHasBeenSet;
 
                 };
             }

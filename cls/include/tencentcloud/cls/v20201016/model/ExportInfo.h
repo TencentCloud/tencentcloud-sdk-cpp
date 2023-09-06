@@ -319,6 +319,31 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取语法规则。 默认值为0。
+0：Lucene语法，1：CQL语法。
+                     * @return SyntaxRule 语法规则。 默认值为0。
+0：Lucene语法，1：CQL语法。
+                     * 
+                     */
+                    uint64_t GetSyntaxRule() const;
+
+                    /**
+                     * 设置语法规则。 默认值为0。
+0：Lucene语法，1：CQL语法。
+                     * @param _syntaxRule 语法规则。 默认值为0。
+0：Lucene语法，1：CQL语法。
+                     * 
+                     */
+                    void SetSyntaxRule(const uint64_t& _syntaxRule);
+
+                    /**
+                     * 判断参数 SyntaxRule 是否已赋值
+                     * @return SyntaxRule 是否已赋值
+                     * 
+                     */
+                    bool SyntaxRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +423,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 语法规则。 默认值为0。
+0：Lucene语法，1：CQL语法。
+                     */
+                    uint64_t m_syntaxRule;
+                    bool m_syntaxRuleHasBeenSet;
 
                 };
             }

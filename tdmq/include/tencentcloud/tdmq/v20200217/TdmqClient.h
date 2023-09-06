@@ -159,8 +159,12 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGroupsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgTraceRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgTraceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQVipInstanceDetailRequest.h>
@@ -447,9 +451,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQMsgResponse> DescribeRocketMQMsgOutcome;
                 typedef std::future<DescribeRocketMQMsgOutcome> DescribeRocketMQMsgOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQMsgRequest&, DescribeRocketMQMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQMsgAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQMsgTraceResponse> DescribeRocketMQMsgTraceOutcome;
+                typedef std::future<DescribeRocketMQMsgTraceOutcome> DescribeRocketMQMsgTraceOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQMsgTraceRequest&, DescribeRocketMQMsgTraceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQMsgTraceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQNamespacesResponse> DescribeRocketMQNamespacesOutcome;
                 typedef std::future<DescribeRocketMQNamespacesOutcome> DescribeRocketMQNamespacesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQNamespacesRequest&, DescribeRocketMQNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQTopicMsgsResponse> DescribeRocketMQTopicMsgsOutcome;
+                typedef std::future<DescribeRocketMQTopicMsgsOutcome> DescribeRocketMQTopicMsgsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicMsgsRequest&, DescribeRocketMQTopicMsgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicMsgsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQTopicsResponse> DescribeRocketMQTopicsOutcome;
                 typedef std::future<DescribeRocketMQTopicsOutcome> DescribeRocketMQTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicsRequest&, DescribeRocketMQTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicsAsyncHandler;
@@ -1168,6 +1178,15 @@ namespace TencentCloud
                 DescribeRocketMQMsgOutcomeCallable DescribeRocketMQMsgCallable(const Model::DescribeRocketMQMsgRequest& request);
 
                 /**
+                 *查询消息轨迹
+                 * @param req DescribeRocketMQMsgTraceRequest
+                 * @return DescribeRocketMQMsgTraceOutcome
+                 */
+                DescribeRocketMQMsgTraceOutcome DescribeRocketMQMsgTrace(const Model::DescribeRocketMQMsgTraceRequest &request);
+                void DescribeRocketMQMsgTraceAsync(const Model::DescribeRocketMQMsgTraceRequest& request, const DescribeRocketMQMsgTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQMsgTraceOutcomeCallable DescribeRocketMQMsgTraceCallable(const Model::DescribeRocketMQMsgTraceRequest& request);
+
+                /**
                  *获取RocketMQ命名空间列表
                  * @param req DescribeRocketMQNamespacesRequest
                  * @return DescribeRocketMQNamespacesOutcome
@@ -1175,6 +1194,15 @@ namespace TencentCloud
                 DescribeRocketMQNamespacesOutcome DescribeRocketMQNamespaces(const Model::DescribeRocketMQNamespacesRequest &request);
                 void DescribeRocketMQNamespacesAsync(const Model::DescribeRocketMQNamespacesRequest& request, const DescribeRocketMQNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRocketMQNamespacesOutcomeCallable DescribeRocketMQNamespacesCallable(const Model::DescribeRocketMQNamespacesRequest& request);
+
+                /**
+                 *rocketmq 消息查询
+                 * @param req DescribeRocketMQTopicMsgsRequest
+                 * @return DescribeRocketMQTopicMsgsOutcome
+                 */
+                DescribeRocketMQTopicMsgsOutcome DescribeRocketMQTopicMsgs(const Model::DescribeRocketMQTopicMsgsRequest &request);
+                void DescribeRocketMQTopicMsgsAsync(const Model::DescribeRocketMQTopicMsgsRequest& request, const DescribeRocketMQTopicMsgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQTopicMsgsOutcomeCallable DescribeRocketMQTopicMsgsCallable(const Model::DescribeRocketMQTopicMsgsRequest& request);
 
                 /**
                  *获取RocketMQ主题列表

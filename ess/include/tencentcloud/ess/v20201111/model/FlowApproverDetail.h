@@ -399,6 +399,31 @@ namespace TencentCloud
                      */
                     bool OrganizationNameHasBeenSet() const;
 
+                    /**
+                     * 获取签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SignId 签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSignId() const;
+
+                    /**
+                     * 设置签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _signId 签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSignId(const std::string& _signId);
+
+                    /**
+                     * 判断参数 SignId 是否已赋值
+                     * @return SignId 是否已赋值
+                     * 
+                     */
+                    bool SignIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -498,6 +523,13 @@ namespace TencentCloud
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
+
+                    /**
+                     * 签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_signId;
+                    bool m_signIdHasBeenSet;
 
                 };
             }

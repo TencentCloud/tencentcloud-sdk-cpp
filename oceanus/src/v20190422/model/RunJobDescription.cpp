@@ -27,7 +27,8 @@ RunJobDescription::RunJobDescription() :
     m_jobConfigVersionHasBeenSet(false),
     m_savepointPathHasBeenSet(false),
     m_savepointIdHasBeenSet(false),
-    m_useOldSystemConnectorHasBeenSet(false)
+    m_useOldSystemConnectorHasBeenSet(false),
+    m_customTimestampHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome RunJobDescription::Deserialize(const rapidjson::Value &value
         m_useOldSystemConnectorHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomTimestamp") && !value["CustomTimestamp"].IsNull())
+    {
+        if (!value["CustomTimestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunJobDescription.CustomTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_customTimestamp = value["CustomTimestamp"].GetInt64();
+        m_customTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void RunJobDescription::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UseOldSystemConnector";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useOldSystemConnector, allocator);
+    }
+
+    if (m_customTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_customTimestamp, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void RunJobDescription::SetUseOldSystemConnector(const bool& _useOldSystemConnec
 bool RunJobDescription::UseOldSystemConnectorHasBeenSet() const
 {
     return m_useOldSystemConnectorHasBeenSet;
+}
+
+int64_t RunJobDescription::GetCustomTimestamp() const
+{
+    return m_customTimestamp;
+}
+
+void RunJobDescription::SetCustomTimestamp(const int64_t& _customTimestamp)
+{
+    m_customTimestamp = _customTimestamp;
+    m_customTimestampHasBeenSet = true;
+}
+
+bool RunJobDescription::CustomTimestampHasBeenSet() const
+{
+    return m_customTimestampHasBeenSet;
 }
 

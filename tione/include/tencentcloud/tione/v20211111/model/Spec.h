@@ -151,6 +151,106 @@ namespace TencentCloud
                      */
                     bool AvailableRegionHasBeenSet() const;
 
+                    /**
+                     * 获取当前计费项支持的特性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpecFeatures 当前计费项支持的特性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSpecFeatures() const;
+
+                    /**
+                     * 设置当前计费项支持的特性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _specFeatures 当前计费项支持的特性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpecFeatures(const std::vector<std::string>& _specFeatures);
+
+                    /**
+                     * 判断参数 SpecFeatures 是否已赋值
+                     * @return SpecFeatures 是否已赋值
+                     * 
+                     */
+                    bool SpecFeaturesHasBeenSet() const;
+
+                    /**
+                     * 获取计费项类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpecType 计费项类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSpecType() const;
+
+                    /**
+                     * 设置计费项类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _specType 计费项类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpecType(const std::string& _specType);
+
+                    /**
+                     * 判断参数 SpecType 是否已赋值
+                     * @return SpecType 是否已赋值
+                     * 
+                     */
+                    bool SpecTypeHasBeenSet() const;
+
+                    /**
+                     * 获取GPU类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GpuType GPU类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGpuType() const;
+
+                    /**
+                     * 设置GPU类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gpuType GPU类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGpuType(const std::string& _gpuType);
+
+                    /**
+                     * 判断参数 GpuType 是否已赋值
+                     * @return GpuType 是否已赋值
+                     * 
+                     */
+                    bool GpuTypeHasBeenSet() const;
+
+                    /**
+                     * 获取计费项CategoryId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CategoryId 计费项CategoryId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCategoryId() const;
+
+                    /**
+                     * 设置计费项CategoryId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _categoryId 计费项CategoryId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCategoryId(const std::string& _categoryId);
+
+                    /**
+                     * 判断参数 CategoryId 是否已赋值
+                     * @return CategoryId 是否已赋值
+                     * 
+                     */
+                    bool CategoryIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +282,34 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_availableRegion;
                     bool m_availableRegionHasBeenSet;
+
+                    /**
+                     * 当前计费项支持的特性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_specFeatures;
+                    bool m_specFeaturesHasBeenSet;
+
+                    /**
+                     * 计费项类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_specType;
+                    bool m_specTypeHasBeenSet;
+
+                    /**
+                     * GPU类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gpuType;
+                    bool m_gpuTypeHasBeenSet;
+
+                    /**
+                     * 计费项CategoryId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_categoryId;
+                    bool m_categoryIdHasBeenSet;
 
                 };
             }

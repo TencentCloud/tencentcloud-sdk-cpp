@@ -496,6 +496,31 @@ namespace TencentCloud
                      */
                     bool CoverHasBeenSet() const;
 
+                    /**
+                     * 获取课件预览地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Preview 课件预览地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPreview() const;
+
+                    /**
+                     * 设置课件预览地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _preview 课件预览地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPreview(const std::string& _preview);
+
+                    /**
+                     * 判断参数 Preview 是否已赋值
+                     * @return Preview 是否已赋值
+                     * 
+                     */
+                    bool PreviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -623,6 +648,13 @@ namespace TencentCloud
                      */
                     std::string m_cover;
                     bool m_coverHasBeenSet;
+
+                    /**
+                     * 课件预览地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_preview;
+                    bool m_previewHasBeenSet;
 
                 };
             }

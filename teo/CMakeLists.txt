@@ -267,6 +267,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeHostsSettingRequest.h
   include/tencentcloud/teo/v20220901/model/SubRuleItem.h
   include/tencentcloud/teo/v20220901/model/CreateSecurityIPGroupResponse.h
+  include/tencentcloud/teo/v20220901/model/CreateSharedCNAMEResponse.h
   include/tencentcloud/teo/v20220901/model/DescribePurgeTasksResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeAvailablePlansResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventRequest.h
@@ -275,6 +276,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/AlgDetectResult.h
   include/tencentcloud/teo/v20220901/model/QueryString.h
   include/tencentcloud/teo/v20220901/model/DefaultServerCertInfo.h
+  include/tencentcloud/teo/v20220901/model/CreateSharedCNAMERequest.h
   include/tencentcloud/teo/v20220901/model/DescribeAccelerationDomainsRequest.h
   include/tencentcloud/teo/v20220901/model/UpstreamHttp2.h
   include/tencentcloud/teo/v20220901/model/TopEntryValue.h
@@ -554,6 +556,7 @@ set(teo_src
   src/v20220901/model/DescribeHostsSettingRequest.cpp
   src/v20220901/model/SubRuleItem.cpp
   src/v20220901/model/CreateSecurityIPGroupResponse.cpp
+  src/v20220901/model/CreateSharedCNAMEResponse.cpp
   src/v20220901/model/DescribePurgeTasksResponse.cpp
   src/v20220901/model/DescribeAvailablePlansResponse.cpp
   src/v20220901/model/DescribeDDoSAttackEventRequest.cpp
@@ -562,6 +565,7 @@ set(teo_src
   src/v20220901/model/AlgDetectResult.cpp
   src/v20220901/model/QueryString.cpp
   src/v20220901/model/DefaultServerCertInfo.cpp
+  src/v20220901/model/CreateSharedCNAMERequest.cpp
   src/v20220901/model/DescribeAccelerationDomainsRequest.cpp
   src/v20220901/model/UpstreamHttp2.cpp
   src/v20220901/model/TopEntryValue.cpp

@@ -256,15 +256,15 @@ namespace TencentCloud
                     bool DeployBatchHasBeenSet() const;
 
                     /**
-                     * 获取滚动发布的执行方式
-                     * @return DeployExeMode 滚动发布的执行方式
+                     * 获取滚动发布的执行方式，auto表示自动， manual表示手动
+                     * @return DeployExeMode 滚动发布的执行方式，auto表示自动， manual表示手动
                      * 
                      */
                     std::string GetDeployExeMode() const;
 
                     /**
-                     * 设置滚动发布的执行方式
-                     * @param _deployExeMode 滚动发布的执行方式
+                     * 设置滚动发布的执行方式，auto表示自动， manual表示手动
+                     * @param _deployExeMode 滚动发布的执行方式，auto表示自动， manual表示手动
                      * 
                      */
                     void SetDeployExeMode(const std::string& _deployExeMode);
@@ -382,15 +382,19 @@ namespace TencentCloud
                     bool JdkNameHasBeenSet() const;
 
                     /**
-                     * 获取JDK版本: 8或11 (openJDK只支持8)
-                     * @return JdkVersion JDK版本: 8或11 (openJDK只支持8)
+                     * 获取konaJDK版本：8、11和17
+openJDK版本：8、17
+                     * @return JdkVersion konaJDK版本：8、11和17
+openJDK版本：8、17
                      * 
                      */
                     std::string GetJdkVersion() const;
 
                     /**
-                     * 设置JDK版本: 8或11 (openJDK只支持8)
-                     * @param _jdkVersion JDK版本: 8或11 (openJDK只支持8)
+                     * 设置konaJDK版本：8、11和17
+openJDK版本：8、17
+                     * @param _jdkVersion konaJDK版本：8、11和17
+openJDK版本：8、17
                      * 
                      */
                     void SetJdkVersion(const std::string& _jdkVersion);
@@ -528,7 +532,7 @@ namespace TencentCloud
                     bool m_deployBatchHasBeenSet;
 
                     /**
-                     * 滚动发布的执行方式
+                     * 滚动发布的执行方式，auto表示自动， manual表示手动
                      */
                     std::string m_deployExeMode;
                     bool m_deployExeModeHasBeenSet;
@@ -564,7 +568,8 @@ namespace TencentCloud
                     bool m_jdkNameHasBeenSet;
 
                     /**
-                     * JDK版本: 8或11 (openJDK只支持8)
+                     * konaJDK版本：8、11和17
+openJDK版本：8、17
                      */
                     std::string m_jdkVersion;
                     bool m_jdkVersionHasBeenSet;

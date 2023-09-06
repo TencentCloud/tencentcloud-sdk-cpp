@@ -222,6 +222,31 @@ namespace TencentCloud
                      */
                     bool EditableHasBeenSet() const;
 
+                    /**
+                     * 获取请求路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Path 请求路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置请求路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _path 请求路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     * 
+                     */
+                    bool PathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -272,6 +297,13 @@ namespace TencentCloud
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;
+
+                    /**
+                     * 请求路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
 
                 };
             }

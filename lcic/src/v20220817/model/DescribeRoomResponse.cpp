@@ -45,7 +45,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_videoOrientationHasBeenSet(false),
     m_isGradingRequiredPostClassHasBeenSet(false),
     m_roomTypeHasBeenSet(false),
-    m_videoDurationHasBeenSet(false)
+    m_videoDurationHasBeenSet(false),
+    m_endDelayTimeHasBeenSet(false)
 {
 }
 
@@ -306,6 +307,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_videoDurationHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EndDelayTime") && !rsp["EndDelayTime"].IsNull())
+    {
+        if (!rsp["EndDelayTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndDelayTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_endDelayTime = rsp["EndDelayTime"].GetInt64();
+        m_endDelayTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -495,6 +506,14 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "VideoDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoDuration, allocator);
+    }
+
+    if (m_endDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endDelayTime, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -727,6 +746,16 @@ uint64_t DescribeRoomResponse::GetVideoDuration() const
 bool DescribeRoomResponse::VideoDurationHasBeenSet() const
 {
     return m_videoDurationHasBeenSet;
+}
+
+int64_t DescribeRoomResponse::GetEndDelayTime() const
+{
+    return m_endDelayTime;
+}
+
+bool DescribeRoomResponse::EndDelayTimeHasBeenSet() const
+{
+    return m_endDelayTimeHasBeenSet;
 }
 
 

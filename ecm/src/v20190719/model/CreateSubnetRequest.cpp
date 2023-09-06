@@ -28,7 +28,8 @@ CreateSubnetRequest::CreateSubnetRequest() :
     m_cidrBlockHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_ecmRegionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_iPv6CidrBlockHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string CreateSubnetRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_iPv6CidrBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPv6CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_iPv6CidrBlock.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void CreateSubnetRequest::SetTags(const vector<Tag>& _tags)
 bool CreateSubnetRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateSubnetRequest::GetIPv6CidrBlock() const
+{
+    return m_iPv6CidrBlock;
+}
+
+void CreateSubnetRequest::SetIPv6CidrBlock(const string& _iPv6CidrBlock)
+{
+    m_iPv6CidrBlock = _iPv6CidrBlock;
+    m_iPv6CidrBlockHasBeenSet = true;
+}
+
+bool CreateSubnetRequest::IPv6CidrBlockHasBeenSet() const
+{
+    return m_iPv6CidrBlockHasBeenSet;
 }
 
 

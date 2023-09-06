@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取签署流程编号数组，最多支持100个。(备注：该参数和合同组编号必须二选一)
-                     * @return FlowIds 签署流程编号数组，最多支持100个。(备注：该参数和合同组编号必须二选一)
+                     * 获取流程(合同)的编号列表，最多支持100个。(备注：该参数和合同组编号必须二选一)
+                     * @return FlowIds 流程(合同)的编号列表，最多支持100个。(备注：该参数和合同组编号必须二选一)
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置签署流程编号数组，最多支持100个。(备注：该参数和合同组编号必须二选一)
-                     * @param _flowIds 签署流程编号数组，最多支持100个。(备注：该参数和合同组编号必须二选一)
+                     * 设置流程(合同)的编号列表，最多支持100个。(备注：该参数和合同组编号必须二选一)
+                     * @param _flowIds 流程(合同)的编号列表，最多支持100个。(备注：该参数和合同组编号必须二选一)
                      * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
@@ -108,15 +108,35 @@ namespace TencentCloud
                     bool FlowGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；"LONGURL2WEIXINAPP"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；
-                     * @return Endpoint 签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；"LONGURL2WEIXINAPP"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；
+                     * 获取签署链接类型,可以设置的参数如下
+
+- WEIXINAPP:短链直接跳小程序 (默认类型)
+- CHANNEL:跳转H5页面
+- APP:第三方APP或小程序跳转电子签小程序
+- LONGURL2WEIXINAPP:长链接跳转小程序
+                     * @return Endpoint 签署链接类型,可以设置的参数如下
+
+- WEIXINAPP:短链直接跳小程序 (默认类型)
+- CHANNEL:跳转H5页面
+- APP:第三方APP或小程序跳转电子签小程序
+- LONGURL2WEIXINAPP:长链接跳转小程序
                      * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
-                     * 设置签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；"LONGURL2WEIXINAPP"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；
-                     * @param _endpoint 签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；"LONGURL2WEIXINAPP"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；
+                     * 设置签署链接类型,可以设置的参数如下
+
+- WEIXINAPP:短链直接跳小程序 (默认类型)
+- CHANNEL:跳转H5页面
+- APP:第三方APP或小程序跳转电子签小程序
+- LONGURL2WEIXINAPP:长链接跳转小程序
+                     * @param _endpoint 签署链接类型,可以设置的参数如下
+
+- WEIXINAPP:短链直接跳小程序 (默认类型)
+- CHANNEL:跳转H5页面
+- APP:第三方APP或小程序跳转电子签小程序
+- LONGURL2WEIXINAPP:长链接跳转小程序
                      * 
                      */
                     void SetEndpoint(const std::string& _endpoint);
@@ -129,35 +149,39 @@ namespace TencentCloud
                     bool EndpointHasBeenSet() const;
 
                     /**
-                     * 获取签署链接生成类型，默认是 "ALL"；
-"ALL"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；
-"CHANNEL"：第三方平台子客企业企业；
-"NOT_CHANNEL"：非第三方平台子客企业企业；
-"PERSON"：个人；
-"FOLLOWER"：关注方，目前是合同抄送方；
-                     * @return GenerateType 签署链接生成类型，默认是 "ALL"；
-"ALL"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；
-"CHANNEL"：第三方平台子客企业企业；
-"NOT_CHANNEL"：非第三方平台子客企业企业；
-"PERSON"：个人；
-"FOLLOWER"：关注方，目前是合同抄送方；
+                     * 获取签署链接生成类型，可以选择的类型如下
+
+- ALL：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接(默认类型)
+- CHANNEL：第三方平台子客企业企业
+- NOT_CHANNEL：非第三方平台子客企业企业
+- PERSON：个人
+- FOLLOWER：关注方，目前是合同抄送方
+                     * @return GenerateType 签署链接生成类型，可以选择的类型如下
+
+- ALL：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接(默认类型)
+- CHANNEL：第三方平台子客企业企业
+- NOT_CHANNEL：非第三方平台子客企业企业
+- PERSON：个人
+- FOLLOWER：关注方，目前是合同抄送方
                      * 
                      */
                     std::string GetGenerateType() const;
 
                     /**
-                     * 设置签署链接生成类型，默认是 "ALL"；
-"ALL"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；
-"CHANNEL"：第三方平台子客企业企业；
-"NOT_CHANNEL"：非第三方平台子客企业企业；
-"PERSON"：个人；
-"FOLLOWER"：关注方，目前是合同抄送方；
-                     * @param _generateType 签署链接生成类型，默认是 "ALL"；
-"ALL"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；
-"CHANNEL"：第三方平台子客企业企业；
-"NOT_CHANNEL"：非第三方平台子客企业企业；
-"PERSON"：个人；
-"FOLLOWER"：关注方，目前是合同抄送方；
+                     * 设置签署链接生成类型，可以选择的类型如下
+
+- ALL：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接(默认类型)
+- CHANNEL：第三方平台子客企业企业
+- NOT_CHANNEL：非第三方平台子客企业企业
+- PERSON：个人
+- FOLLOWER：关注方，目前是合同抄送方
+                     * @param _generateType 签署链接生成类型，可以选择的类型如下
+
+- ALL：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接(默认类型)
+- CHANNEL：第三方平台子客企业企业
+- NOT_CHANNEL：非第三方平台子客企业企业
+- PERSON：个人
+- FOLLOWER：关注方，目前是合同抄送方
                      * 
                      */
                     void SetGenerateType(const std::string& _generateType);
@@ -191,15 +215,19 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取参与人姓名，GenerateType为"PERSON"时必填
-                     * @return Name 参与人姓名，GenerateType为"PERSON"时必填
+                     * 获取参与人姓名
+GenerateType为"PERSON"(即个人签署方)时必填
+                     * @return Name 参与人姓名
+GenerateType为"PERSON"(即个人签署方)时必填
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置参与人姓名，GenerateType为"PERSON"时必填
-                     * @param _name 参与人姓名，GenerateType为"PERSON"时必填
+                     * 设置参与人姓名
+GenerateType为"PERSON"(即个人签署方)时必填
+                     * @param _name 参与人姓名
+GenerateType为"PERSON"(即个人签署方)时必填
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -212,18 +240,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取参与人手机号；
+                     * 获取参与人手机号
 GenerateType为"PERSON"或"FOLLOWER"时必填
-                     * @return Mobile 参与人手机号；
+                     * @return Mobile 参与人手机号
 GenerateType为"PERSON"或"FOLLOWER"时必填
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置参与人手机号；
+                     * 设置参与人手机号
 GenerateType为"PERSON"或"FOLLOWER"时必填
-                     * @param _mobile 参与人手机号；
+                     * @param _mobile 参与人手机号
 GenerateType为"PERSON"或"FOLLOWER"时必填
                      * 
                      */
@@ -344,16 +372,16 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     /**
                      * 获取生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下
 
-0:合同签署页面更多操作按钮
-1:合同签署页面更多操作的拒绝签署按钮
-2:合同签署页面更多操作的转他人处理按钮
-3:签署成功页的查看详情按钮
+- 0:合同签署页面更多操作按钮
+- 1:合同签署页面更多操作的拒绝签署按钮
+- 2:合同签署页面更多操作的转他人处理按钮
+- 3:签署成功页的查看详情按钮
                      * @return Hides 生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下
 
-0:合同签署页面更多操作按钮
-1:合同签署页面更多操作的拒绝签署按钮
-2:合同签署页面更多操作的转他人处理按钮
-3:签署成功页的查看详情按钮
+- 0:合同签署页面更多操作按钮
+- 1:合同签署页面更多操作的拒绝签署按钮
+- 2:合同签署页面更多操作的转他人处理按钮
+- 3:签署成功页的查看详情按钮
                      * 
                      */
                     std::vector<int64_t> GetHides() const;
@@ -361,16 +389,16 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     /**
                      * 设置生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下
 
-0:合同签署页面更多操作按钮
-1:合同签署页面更多操作的拒绝签署按钮
-2:合同签署页面更多操作的转他人处理按钮
-3:签署成功页的查看详情按钮
+- 0:合同签署页面更多操作按钮
+- 1:合同签署页面更多操作的拒绝签署按钮
+- 2:合同签署页面更多操作的转他人处理按钮
+- 3:签署成功页的查看详情按钮
                      * @param _hides 生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下
 
-0:合同签署页面更多操作按钮
-1:合同签署页面更多操作的拒绝签署按钮
-2:合同签署页面更多操作的转他人处理按钮
-3:签署成功页的查看详情按钮
+- 0:合同签署页面更多操作按钮
+- 1:合同签署页面更多操作的拒绝签署按钮
+- 2:合同签署页面更多操作的转他人处理按钮
+- 3:签署成功页的查看详情按钮
                      * 
                      */
                     void SetHides(const std::vector<int64_t>& _hides);
@@ -391,7 +419,7 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 签署流程编号数组，最多支持100个。(备注：该参数和合同组编号必须二选一)
+                     * 流程(合同)的编号列表，最多支持100个。(备注：该参数和合同组编号必须二选一)
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
@@ -403,18 +431,24 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
-                     * 签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；"LONGURL2WEIXINAPP"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；
+                     * 签署链接类型,可以设置的参数如下
+
+- WEIXINAPP:短链直接跳小程序 (默认类型)
+- CHANNEL:跳转H5页面
+- APP:第三方APP或小程序跳转电子签小程序
+- LONGURL2WEIXINAPP:长链接跳转小程序
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
 
                     /**
-                     * 签署链接生成类型，默认是 "ALL"；
-"ALL"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；
-"CHANNEL"：第三方平台子客企业企业；
-"NOT_CHANNEL"：非第三方平台子客企业企业；
-"PERSON"：个人；
-"FOLLOWER"：关注方，目前是合同抄送方；
+                     * 签署链接生成类型，可以选择的类型如下
+
+- ALL：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接(默认类型)
+- CHANNEL：第三方平台子客企业企业
+- NOT_CHANNEL：非第三方平台子客企业企业
+- PERSON：个人
+- FOLLOWER：关注方，目前是合同抄送方
                      */
                     std::string m_generateType;
                     bool m_generateTypeHasBeenSet;
@@ -426,13 +460,14 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 参与人姓名，GenerateType为"PERSON"时必填
+                     * 参与人姓名
+GenerateType为"PERSON"(即个人签署方)时必填
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 参与人手机号；
+                     * 参与人手机号
 GenerateType为"PERSON"或"FOLLOWER"时必填
                      */
                     std::string m_mobile;
@@ -471,10 +506,10 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     /**
                      * 生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下
 
-0:合同签署页面更多操作按钮
-1:合同签署页面更多操作的拒绝签署按钮
-2:合同签署页面更多操作的转他人处理按钮
-3:签署成功页的查看详情按钮
+- 0:合同签署页面更多操作按钮
+- 1:合同签署页面更多操作的拒绝签署按钮
+- 2:合同签署页面更多操作的转他人处理按钮
+- 3:签署成功页的查看详情按钮
                      */
                     std::vector<int64_t> m_hides;
                     bool m_hidesHasBeenSet;

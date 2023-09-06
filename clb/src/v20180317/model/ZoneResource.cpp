@@ -28,7 +28,8 @@ ZoneResource::ZoneResource() :
     m_zoneRegionHasBeenSet(false),
     m_localZoneHasBeenSet(false),
     m_zoneResourceTypeHasBeenSet(false),
-    m_edgeZoneHasBeenSet(false)
+    m_edgeZoneHasBeenSet(false),
+    m_egressHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome ZoneResource::Deserialize(const rapidjson::Value &value)
         m_edgeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("Egress") && !value["Egress"].IsNull())
+    {
+        if (!value["Egress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneResource.Egress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_egress = string(value["Egress"].GetString());
+        m_egressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void ZoneResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EdgeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_edgeZone, allocator);
+    }
+
+    if (m_egressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Egress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void ZoneResource::SetEdgeZone(const bool& _edgeZone)
 bool ZoneResource::EdgeZoneHasBeenSet() const
 {
     return m_edgeZoneHasBeenSet;
+}
+
+string ZoneResource::GetEgress() const
+{
+    return m_egress;
+}
+
+void ZoneResource::SetEgress(const string& _egress)
+{
+    m_egress = _egress;
+    m_egressHasBeenSet = true;
+}
+
+bool ZoneResource::EgressHasBeenSet() const
+{
+    return m_egressHasBeenSet;
 }
 

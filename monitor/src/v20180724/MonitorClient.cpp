@@ -3910,6 +3910,49 @@ MonitorClient::DescribePrometheusRecordRulesOutcomeCallable MonitorClient::Descr
     return task->get_future();
 }
 
+MonitorClient::DescribePrometheusRegionsOutcome MonitorClient::DescribePrometheusRegions(const DescribePrometheusRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusRegionsResponse rsp = DescribePrometheusRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusRegionsOutcome(rsp);
+        else
+            return DescribePrometheusRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusRegionsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusRegionsAsync(const DescribePrometheusRegionsRequest& request, const DescribePrometheusRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePrometheusRegionsOutcomeCallable MonitorClient::DescribePrometheusRegionsCallable(const DescribePrometheusRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribePrometheusScrapeJobsOutcome MonitorClient::DescribePrometheusScrapeJobs(const DescribePrometheusScrapeJobsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusScrapeJobs");

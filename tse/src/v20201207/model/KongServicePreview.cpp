@@ -27,7 +27,8 @@ KongServicePreview::KongServicePreview() :
     m_upstreamInfoHasBeenSet(false),
     m_upstreamTypeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_editableHasBeenSet(false)
+    m_editableHasBeenSet(false),
+    m_pathHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome KongServicePreview::Deserialize(const rapidjson::Value &valu
         m_editableHasBeenSet = true;
     }
 
+    if (value.HasMember("Path") && !value["Path"].IsNull())
+    {
+        if (!value["Path"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongServicePreview.Path` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_path = string(value["Path"].GetString());
+        m_pathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ void KongServicePreview::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Editable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_editable, allocator);
+    }
+
+    if (m_pathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Path";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -298,5 +317,21 @@ void KongServicePreview::SetEditable(const bool& _editable)
 bool KongServicePreview::EditableHasBeenSet() const
 {
     return m_editableHasBeenSet;
+}
+
+string KongServicePreview::GetPath() const
+{
+    return m_path;
+}
+
+void KongServicePreview::SetPath(const string& _path)
+{
+    m_path = _path;
+    m_pathHasBeenSet = true;
+}
+
+bool KongServicePreview::PathHasBeenSet() const
+{
+    return m_pathHasBeenSet;
 }
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。
-                     * @return ClusterName 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。
+                     * 获取集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
+                     * @return ClusterName 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。
-                     * @param _clusterName 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。
+                     * 设置集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
+                     * @param _clusterName 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。
+                     * 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;

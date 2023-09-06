@@ -22,6 +22,7 @@ using namespace std;
 
 MachineInfo::MachineInfo() :
     m_ipHasBeenSet(false),
+    m_instanceIDHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_offlineTimeHasBeenSet(false),
     m_autoUpdateHasBeenSet(false),
@@ -45,6 +46,16 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceID") && !value["InstanceID"].IsNull())
+    {
+        if (!value["InstanceID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.InstanceID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceID = string(value["InstanceID"].GetString());
+        m_instanceIDHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -132,6 +143,14 @@ void MachineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -205,6 +224,22 @@ void MachineInfo::SetIp(const string& _ip)
 bool MachineInfo::IpHasBeenSet() const
 {
     return m_ipHasBeenSet;
+}
+
+string MachineInfo::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+void MachineInfo::SetInstanceID(const string& _instanceID)
+{
+    m_instanceID = _instanceID;
+    m_instanceIDHasBeenSet = true;
+}
+
+bool MachineInfo::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
 }
 
 uint64_t MachineInfo::GetStatus() const

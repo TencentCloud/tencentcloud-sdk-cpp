@@ -576,6 +576,27 @@ video 纯视频
                      */
                     bool RoomTypeHasBeenSet() const;
 
+                    /**
+                     * 获取拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
+                     * @return EndDelayTime 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
+                     * 
+                     */
+                    int64_t GetEndDelayTime() const;
+
+                    /**
+                     * 设置拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
+                     * @param _endDelayTime 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
+                     * 
+                     */
+                    void SetEndDelayTime(const int64_t& _endDelayTime);
+
+                    /**
+                     * 判断参数 EndDelayTime 是否已赋值
+                     * @return EndDelayTime 是否已赋值
+                     * 
+                     */
+                    bool EndDelayTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -727,6 +748,12 @@ video 纯视频
                      */
                     int64_t m_roomType;
                     bool m_roomTypeHasBeenSet;
+
+                    /**
+                     * 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
+                     */
+                    int64_t m_endDelayTime;
+                    bool m_endDelayTimeHasBeenSet;
 
                 };
             }

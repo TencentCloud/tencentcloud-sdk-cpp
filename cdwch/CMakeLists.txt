@@ -23,7 +23,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/ResizeDiskRequest.h
-  include/tencentcloud/cdwch/v20200915/model/DestroyInstanceResponse.h
+  include/tencentcloud/cdwch/v20200915/model/DatabasePrivilegeInfo.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/OpenBackUpResponse.h
   include/tencentcloud/cdwch/v20200915/model/Charge.h
@@ -44,7 +44,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewResponse.h
   include/tencentcloud/cdwch/v20200915/model/ConfigSubmitContext.h
   include/tencentcloud/cdwch/v20200915/model/InstanceStateInfo.h
-  include/tencentcloud/cdwch/v20200915/model/Tag.h
+  include/tencentcloud/cdwch/v20200915/model/TablePrivilegeInfo.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersResponse.h
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewRequest.h
   include/tencentcloud/cdwch/v20200915/model/InstanceInfo.h
@@ -62,6 +62,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DeleteBackUpDataResponse.h
   include/tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstancesNewResponse.h
+  include/tencentcloud/cdwch/v20200915/model/Tag.h
   include/tencentcloud/cdwch/v20200915/model/BackUpJobDisplay.h
   include/tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/ResourceSpec.h
@@ -84,6 +85,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/AttachCBSSpec.h
   include/tencentcloud/cdwch/v20200915/model/ScheduleStrategy.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceStateResponse.h
+  include/tencentcloud/cdwch/v20200915/model/DestroyInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/ResizeDiskResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h
@@ -98,7 +100,7 @@ set(cdwch_src
   src/v20200915/model/ScaleOutInstanceRequest.cpp
   src/v20200915/model/ScaleOutInstanceResponse.cpp
   src/v20200915/model/ResizeDiskRequest.cpp
-  src/v20200915/model/DestroyInstanceResponse.cpp
+  src/v20200915/model/DatabasePrivilegeInfo.cpp
   src/v20200915/model/DescribeInstanceKeyValConfigsRequest.cpp
   src/v20200915/model/OpenBackUpResponse.cpp
   src/v20200915/model/Charge.cpp
@@ -119,7 +121,7 @@ set(cdwch_src
   src/v20200915/model/CreateInstanceNewResponse.cpp
   src/v20200915/model/ConfigSubmitContext.cpp
   src/v20200915/model/InstanceStateInfo.cpp
-  src/v20200915/model/Tag.cpp
+  src/v20200915/model/TablePrivilegeInfo.cpp
   src/v20200915/model/DescribeInstanceClustersResponse.cpp
   src/v20200915/model/CreateInstanceNewRequest.cpp
   src/v20200915/model/InstanceInfo.cpp
@@ -137,6 +139,7 @@ set(cdwch_src
   src/v20200915/model/DeleteBackUpDataResponse.cpp
   src/v20200915/model/ModifyInstanceKeyValConfigsRequest.cpp
   src/v20200915/model/DescribeInstancesNewResponse.cpp
+  src/v20200915/model/Tag.cpp
   src/v20200915/model/BackUpJobDisplay.cpp
   src/v20200915/model/DescribeClusterConfigsRequest.cpp
   src/v20200915/model/ResourceSpec.cpp
@@ -159,6 +162,7 @@ set(cdwch_src
   src/v20200915/model/AttachCBSSpec.cpp
   src/v20200915/model/ScheduleStrategy.cpp
   src/v20200915/model/DescribeInstanceStateResponse.cpp
+  src/v20200915/model/DestroyInstanceResponse.cpp
   src/v20200915/model/ResizeDiskResponse.cpp
   src/v20200915/model/DescribeBackUpScheduleResponse.cpp
   src/v20200915/model/DescribeCkSqlApisResponse.cpp

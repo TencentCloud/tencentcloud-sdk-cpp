@@ -45,15 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
-                     * @return Operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
-                     * @param _operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -66,15 +70,19 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取签署流程编号，由CreateFlow接口返回
-                     * @return FlowId 签署流程编号，由CreateFlow接口返回
+                     * 获取合同流程ID，为32位字符串。
+此处需要传入[创建签署流程接口](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)得到的FlowId。
+                     * @return FlowId 合同流程ID，为32位字符串。
+此处需要传入[创建签署流程接口](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)得到的FlowId。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置签署流程编号，由CreateFlow接口返回
-                     * @param _flowId 签署流程编号，由CreateFlow接口返回
+                     * 设置合同流程ID，为32位字符串。
+此处需要传入[创建签署流程接口](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)得到的FlowId。
+                     * @param _flowId 合同流程ID，为32位字符串。
+此处需要传入[创建签署流程接口](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)得到的FlowId。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -89,34 +97,38 @@ namespace TencentCloud
                     /**
                      * 获取客户端Token，保持接口幂等性,最大长度64个字符
                      * @return ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
-                     * 
+                     * @deprecated
                      */
                     std::string GetClientToken() const;
 
                     /**
                      * 设置客户端Token，保持接口幂等性,最大长度64个字符
                      * @param _clientToken 客户端Token，保持接口幂等性,最大长度64个字符
-                     * 
+                     * @deprecated
                      */
                     void SetClientToken(const std::string& _clientToken);
 
                     /**
                      * 判断参数 ClientToken 是否已赋值
                      * @return ClientToken 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -129,31 +141,23 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取给关注人发送短信通知的类型，
-
-0-合同发起时通知 
-
-1-签署完成后通知
-                     * @return CcNotifyType 给关注人发送短信通知的类型，
-
-0-合同发起时通知 
-
-1-签署完成后通知
+                     * 获取若在创建签署流程时指定了关注人CcInfos，此参数可设定向关注人发送短信通知的类型：
+0 - 合同发起时通知（默认）
+1 - 签署完成后通知
+                     * @return CcNotifyType 若在创建签署流程时指定了关注人CcInfos，此参数可设定向关注人发送短信通知的类型：
+0 - 合同发起时通知（默认）
+1 - 签署完成后通知
                      * 
                      */
                     int64_t GetCcNotifyType() const;
 
                     /**
-                     * 设置给关注人发送短信通知的类型，
-
-0-合同发起时通知 
-
-1-签署完成后通知
-                     * @param _ccNotifyType 给关注人发送短信通知的类型，
-
-0-合同发起时通知 
-
-1-签署完成后通知
+                     * 设置若在创建签署流程时指定了关注人CcInfos，此参数可设定向关注人发送短信通知的类型：
+0 - 合同发起时通知（默认）
+1 - 签署完成后通知
+                     * @param _ccNotifyType 若在创建签署流程时指定了关注人CcInfos，此参数可设定向关注人发送短信通知的类型：
+0 - 合同发起时通知（默认）
+1 - 签署完成后通知
                      * 
                      */
                     void SetCcNotifyType(const int64_t& _ccNotifyType);
@@ -168,13 +172,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 签署流程编号，由CreateFlow接口返回
+                     * 合同流程ID，为32位字符串。
+此处需要传入[创建签署流程接口](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)得到的FlowId。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
@@ -186,17 +192,16 @@ namespace TencentCloud
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 给关注人发送短信通知的类型，
-
-0-合同发起时通知 
-
-1-签署完成后通知
+                     * 若在创建签署流程时指定了关注人CcInfos，此参数可设定向关注人发送短信通知的类型：
+0 - 合同发起时通知（默认）
+1 - 签署完成后通知
                      */
                     int64_t m_ccNotifyType;
                     bool m_ccNotifyTypeHasBeenSet;

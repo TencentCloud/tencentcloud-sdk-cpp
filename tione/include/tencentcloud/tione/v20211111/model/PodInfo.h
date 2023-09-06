@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/ResourceConfigInfo.h>
 
 
 namespace TencentCloud
@@ -121,6 +122,81 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取pod启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartTime pod启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置pod启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _startTime pod启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取pod结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndTime pod结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置pod结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _endTime pod结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取pod资源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceConfigInfo pod资源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ResourceConfigInfo GetResourceConfigInfo() const;
+
+                    /**
+                     * 设置pod资源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceConfigInfo pod资源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceConfigInfo(const ResourceConfigInfo& _resourceConfigInfo);
+
+                    /**
+                     * 判断参数 ResourceConfigInfo 是否已赋值
+                     * @return ResourceConfigInfo 是否已赋值
+                     * 
+                     */
+                    bool ResourceConfigInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +219,27 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * pod启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * pod结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * pod资源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceConfigInfo m_resourceConfigInfo;
+                    bool m_resourceConfigInfoHasBeenSet;
 
                 };
             }

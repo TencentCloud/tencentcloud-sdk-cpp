@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取访问类型
-                     * @return AccessType 访问类型
+                     * 获取访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl
+                     * @return AccessType 访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl
                      * 
                      */
                     int64_t GetAccessType() const;
 
                     /**
-                     * 设置访问类型
-                     * @param _accessType 访问类型
+                     * 设置访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl
+                     * @param _accessType 访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl
                      * 
                      */
                     void SetAccessType(const int64_t& _accessType);
@@ -258,7 +258,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 访问类型
+                     * 访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl
                      */
                     int64_t m_accessType;
                     bool m_accessTypeHasBeenSet;

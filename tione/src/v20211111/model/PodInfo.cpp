@@ -23,7 +23,10 @@ using namespace std;
 PodInfo::PodInfo() :
     m_nameHasBeenSet(false),
     m_iPHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_resourceConfigInfoHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,43 @@ CoreInternalOutcome PodInfo::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceConfigInfo") && !value["ResourceConfigInfo"].IsNull())
+    {
+        if (!value["ResourceConfigInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodInfo.ResourceConfigInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_resourceConfigInfo.Deserialize(value["ResourceConfigInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resourceConfigInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +131,31 @@ void PodInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceConfigInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceConfigInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceConfigInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -142,5 +207,53 @@ void PodInfo::SetStatus(const string& _status)
 bool PodInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string PodInfo::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void PodInfo::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool PodInfo::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string PodInfo::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void PodInfo::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool PodInfo::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+ResourceConfigInfo PodInfo::GetResourceConfigInfo() const
+{
+    return m_resourceConfigInfo;
+}
+
+void PodInfo::SetResourceConfigInfo(const ResourceConfigInfo& _resourceConfigInfo)
+{
+    m_resourceConfigInfo = _resourceConfigInfo;
+    m_resourceConfigInfoHasBeenSet = true;
+}
+
+bool PodInfo::ResourceConfigInfoHasBeenSet() const
+{
+    return m_resourceConfigInfoHasBeenSet;
 }
 

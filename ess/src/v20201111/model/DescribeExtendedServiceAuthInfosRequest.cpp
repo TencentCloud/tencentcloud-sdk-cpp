@@ -24,8 +24,8 @@ using namespace std;
 
 DescribeExtendedServiceAuthInfosRequest::DescribeExtendedServiceAuthInfosRequest() :
     m_operatorHasBeenSet(false),
-    m_agentHasBeenSet(false),
-    m_extendServiceTypeHasBeenSet(false)
+    m_extendServiceTypeHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -45,6 +45,14 @@ string DescribeExtendedServiceAuthInfosRequest::ToJsonString() const
         m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_extendServiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extendServiceType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -52,14 +60,6 @@ string DescribeExtendedServiceAuthInfosRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_extendServiceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExtendServiceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_extendServiceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -86,22 +86,6 @@ bool DescribeExtendedServiceAuthInfosRequest::OperatorHasBeenSet() const
     return m_operatorHasBeenSet;
 }
 
-Agent DescribeExtendedServiceAuthInfosRequest::GetAgent() const
-{
-    return m_agent;
-}
-
-void DescribeExtendedServiceAuthInfosRequest::SetAgent(const Agent& _agent)
-{
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
-}
-
-bool DescribeExtendedServiceAuthInfosRequest::AgentHasBeenSet() const
-{
-    return m_agentHasBeenSet;
-}
-
 string DescribeExtendedServiceAuthInfosRequest::GetExtendServiceType() const
 {
     return m_extendServiceType;
@@ -116,6 +100,22 @@ void DescribeExtendedServiceAuthInfosRequest::SetExtendServiceType(const string&
 bool DescribeExtendedServiceAuthInfosRequest::ExtendServiceTypeHasBeenSet() const
 {
     return m_extendServiceTypeHasBeenSet;
+}
+
+Agent DescribeExtendedServiceAuthInfosRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void DescribeExtendedServiceAuthInfosRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool DescribeExtendedServiceAuthInfosRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

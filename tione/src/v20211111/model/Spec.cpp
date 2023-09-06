@@ -25,7 +25,11 @@ Spec::Spec() :
     m_specNameHasBeenSet(false),
     m_specAliasHasBeenSet(false),
     m_availableHasBeenSet(false),
-    m_availableRegionHasBeenSet(false)
+    m_availableRegionHasBeenSet(false),
+    m_specFeaturesHasBeenSet(false),
+    m_specTypeHasBeenSet(false),
+    m_gpuTypeHasBeenSet(false),
+    m_categoryIdHasBeenSet(false)
 {
 }
 
@@ -87,6 +91,49 @@ CoreInternalOutcome Spec::Deserialize(const rapidjson::Value &value)
         m_availableRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("SpecFeatures") && !value["SpecFeatures"].IsNull())
+    {
+        if (!value["SpecFeatures"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Spec.SpecFeatures` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SpecFeatures"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_specFeatures.push_back((*itr).GetString());
+        }
+        m_specFeaturesHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpecType") && !value["SpecType"].IsNull())
+    {
+        if (!value["SpecType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Spec.SpecType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specType = string(value["SpecType"].GetString());
+        m_specTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GpuType") && !value["GpuType"].IsNull())
+    {
+        if (!value["GpuType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Spec.GpuType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuType = string(value["GpuType"].GetString());
+        m_gpuTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CategoryId") && !value["CategoryId"].IsNull())
+    {
+        if (!value["CategoryId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Spec.CategoryId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_categoryId = string(value["CategoryId"].GetString());
+        m_categoryIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +184,43 @@ void Spec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_specFeaturesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecFeatures";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_specFeatures.begin(); itr != m_specFeatures.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_specTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gpuTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_categoryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_categoryId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +304,69 @@ void Spec::SetAvailableRegion(const vector<string>& _availableRegion)
 bool Spec::AvailableRegionHasBeenSet() const
 {
     return m_availableRegionHasBeenSet;
+}
+
+vector<string> Spec::GetSpecFeatures() const
+{
+    return m_specFeatures;
+}
+
+void Spec::SetSpecFeatures(const vector<string>& _specFeatures)
+{
+    m_specFeatures = _specFeatures;
+    m_specFeaturesHasBeenSet = true;
+}
+
+bool Spec::SpecFeaturesHasBeenSet() const
+{
+    return m_specFeaturesHasBeenSet;
+}
+
+string Spec::GetSpecType() const
+{
+    return m_specType;
+}
+
+void Spec::SetSpecType(const string& _specType)
+{
+    m_specType = _specType;
+    m_specTypeHasBeenSet = true;
+}
+
+bool Spec::SpecTypeHasBeenSet() const
+{
+    return m_specTypeHasBeenSet;
+}
+
+string Spec::GetGpuType() const
+{
+    return m_gpuType;
+}
+
+void Spec::SetGpuType(const string& _gpuType)
+{
+    m_gpuType = _gpuType;
+    m_gpuTypeHasBeenSet = true;
+}
+
+bool Spec::GpuTypeHasBeenSet() const
+{
+    return m_gpuTypeHasBeenSet;
+}
+
+string Spec::GetCategoryId() const
+{
+    return m_categoryId;
+}
+
+void Spec::SetCategoryId(const string& _categoryId)
+{
+    m_categoryId = _categoryId;
+    m_categoryIdHasBeenSet = true;
+}
+
+bool Spec::CategoryIdHasBeenSet() const
+{
+    return m_categoryIdHasBeenSet;
 }
 

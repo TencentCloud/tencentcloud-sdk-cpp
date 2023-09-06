@@ -569,15 +569,19 @@ timeRollback，时间点回档
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取包年包月购买是否自动续费，默认为0
-                     * @return AutoRenewFlag 包年包月购买是否自动续费，默认为0
+                     * 获取包年包月购买是否自动续费，默认为0。
+0标识默认续费方式，1表示自动续费，2表示手不自动续费。
+                     * @return AutoRenewFlag 包年包月购买是否自动续费，默认为0。
+0标识默认续费方式，1表示自动续费，2表示手不自动续费。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置包年包月购买是否自动续费，默认为0
-                     * @param _autoRenewFlag 包年包月购买是否自动续费，默认为0
+                     * 设置包年包月购买是否自动续费，默认为0。
+0标识默认续费方式，1表示自动续费，2表示手不自动续费。
+                     * @param _autoRenewFlag 包年包月购买是否自动续费，默认为0。
+0标识默认续费方式，1表示自动续费，2表示手不自动续费。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -1141,7 +1145,8 @@ timeRollback，时间点回档
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 包年包月购买是否自动续费，默认为0
+                     * 包年包月购买是否自动续费，默认为0。
+0标识默认续费方式，1表示自动续费，2表示手不自动续费。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;

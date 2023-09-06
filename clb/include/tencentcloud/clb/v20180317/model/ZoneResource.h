@@ -223,6 +223,31 @@ namespace TencentCloud
                      */
                     bool EdgeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取网络出口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Egress 网络出口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEgress() const;
+
+                    /**
+                     * 设置网络出口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _egress 网络出口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEgress(const std::string& _egress);
+
+                    /**
+                     * 判断参数 Egress 是否已赋值
+                     * @return Egress 是否已赋值
+                     * 
+                     */
+                    bool EgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -274,6 +299,13 @@ namespace TencentCloud
                      */
                     bool m_edgeZone;
                     bool m_edgeZoneHasBeenSet;
+
+                    /**
+                     * 网络出口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_egress;
+                    bool m_egressHasBeenSet;
 
                 };
             }

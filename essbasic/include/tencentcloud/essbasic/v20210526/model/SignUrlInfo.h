@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署链接，过期时间为30天
+                     * 获取签署链接，过期时间为90天
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SignUrl 签署链接，过期时间为30天
+                     * @return SignUrl 签署链接，过期时间为90天
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSignUrl() const;
 
                     /**
-                     * 设置签署链接，过期时间为30天
+                     * 设置签署链接，过期时间为90天
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _signUrl 签署链接，过期时间为30天
+                     * @param _signUrl 签署链接，过期时间为90天
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -382,7 +382,7 @@ PERSON 自然人
                 private:
 
                     /**
-                     * 签署链接，过期时间为30天
+                     * 签署链接，过期时间为90天
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signUrl;

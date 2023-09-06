@@ -52,7 +52,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_callbackUrlHasBeenSet(false),
     m_modelTurboEnableHasBeenSet(false),
     m_serviceCategoryHasBeenSet(false),
-    m_commandHasBeenSet(false)
+    m_commandHasBeenSet(false),
+    m_serviceEIPHasBeenSet(false)
 {
 }
 
@@ -330,6 +331,15 @@ string CreateModelServiceRequest::ToJsonString() const
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceEIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceEIP";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serviceEIP.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -818,6 +828,22 @@ void CreateModelServiceRequest::SetCommand(const string& _command)
 bool CreateModelServiceRequest::CommandHasBeenSet() const
 {
     return m_commandHasBeenSet;
+}
+
+ServiceEIP CreateModelServiceRequest::GetServiceEIP() const
+{
+    return m_serviceEIP;
+}
+
+void CreateModelServiceRequest::SetServiceEIP(const ServiceEIP& _serviceEIP)
+{
+    m_serviceEIP = _serviceEIP;
+    m_serviceEIPHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::ServiceEIPHasBeenSet() const
+{
+    return m_serviceEIPHasBeenSet;
 }
 
 

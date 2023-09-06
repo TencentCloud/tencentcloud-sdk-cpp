@@ -42,7 +42,8 @@ ModifyRoomRequest::ModifyRoomRequest() :
     m_videoOrientationHasBeenSet(false),
     m_isGradingRequiredPostClassHasBeenSet(false),
     m_roomTypeHasBeenSet(false),
-    m_recordLayoutHasBeenSet(false)
+    m_recordLayoutHasBeenSet(false),
+    m_endDelayTimeHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,14 @@ string ModifyRoomRequest::ToJsonString() const
         string key = "RecordLayout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_recordLayout, allocator);
+    }
+
+    if (m_endDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endDelayTime, allocator);
     }
 
 
@@ -544,6 +553,22 @@ void ModifyRoomRequest::SetRecordLayout(const uint64_t& _recordLayout)
 bool ModifyRoomRequest::RecordLayoutHasBeenSet() const
 {
     return m_recordLayoutHasBeenSet;
+}
+
+int64_t ModifyRoomRequest::GetEndDelayTime() const
+{
+    return m_endDelayTime;
+}
+
+void ModifyRoomRequest::SetEndDelayTime(const int64_t& _endDelayTime)
+{
+    m_endDelayTime = _endDelayTime;
+    m_endDelayTimeHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::EndDelayTimeHasBeenSet() const
+{
+    return m_endDelayTimeHasBeenSet;
 }
 
 

@@ -43,7 +43,8 @@ Cluster::Cluster() :
     m_ispHasBeenSet(false),
     m_clustersZoneHasBeenSet(false),
     m_clustersVersionHasBeenSet(false),
-    m_disasterRecoveryTypeHasBeenSet(false)
+    m_disasterRecoveryTypeHasBeenSet(false),
+    m_egressHasBeenSet(false)
 {
 }
 
@@ -289,6 +290,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_disasterRecoveryTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Egress") && !value["Egress"].IsNull())
+    {
+        if (!value["Egress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.Egress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_egress = string(value["Egress"].GetString());
+        m_egressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -479,6 +490,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "DisasterRecoveryType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_disasterRecoveryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_egressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Egress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -850,5 +869,21 @@ void Cluster::SetDisasterRecoveryType(const string& _disasterRecoveryType)
 bool Cluster::DisasterRecoveryTypeHasBeenSet() const
 {
     return m_disasterRecoveryTypeHasBeenSet;
+}
+
+string Cluster::GetEgress() const
+{
+    return m_egress;
+}
+
+void Cluster::SetEgress(const string& _egress)
+{
+    m_egress = _egress;
+    m_egressHasBeenSet = true;
+}
+
+bool Cluster::EgressHasBeenSet() const
+{
+    return m_egressHasBeenSet;
 }
 

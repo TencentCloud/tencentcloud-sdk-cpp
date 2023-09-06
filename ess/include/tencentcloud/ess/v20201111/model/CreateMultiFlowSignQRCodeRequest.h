@@ -46,15 +46,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户信息，其中UserId为必填参数
-                     * @return Operator 用户信息，其中UserId为必填参数
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置用户信息，其中UserId为必填参数
-                     * @param _operator 用户信息，其中UserId为必填参数
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -67,15 +71,19 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取模板ID
-                     * @return TemplateId 模板ID
+                     * 获取合同模板ID，为32位字符串。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
+                     * @return TemplateId 合同模板ID，为32位字符串。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板ID
-                     * @param _templateId 模板ID
+                     * 设置合同模板ID，为32位字符串。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
+                     * @param _templateId 合同模板ID，为32位字符串。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -88,15 +96,19 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取签署流程名称，最大长度不超过200字符
-                     * @return FlowName 签署流程名称，最大长度不超过200字符
+                     * 获取合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+该名称还将用于合同签署完成后的下载文件名。
+                     * @return FlowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+该名称还将用于合同签署完成后的下载文件名。
                      * 
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置签署流程名称，最大长度不超过200字符
-                     * @param _flowName 签署流程名称，最大长度不超过200字符
+                     * 设置合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+该名称还将用于合同签署完成后的下载文件名。
+                     * @param _flowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+该名称还将用于合同签署完成后的下载文件名。
                      * 
                      */
                     void SetFlowName(const std::string& _flowName);
@@ -109,19 +121,19 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取最大可发起签署流程份数，默认5份 
-<br/>发起流程数量超过此上限后二维码自动失效
-                     * @return MaxFlowNum 最大可发起签署流程份数，默认5份 
-<br/>发起流程数量超过此上限后二维码自动失效
+                     * 获取通过此二维码可发起的流程最大限额，如未明确指定，默认为5份。
+一旦发起流程数超越该限制，该二维码将自动失效。
+                     * @return MaxFlowNum 通过此二维码可发起的流程最大限额，如未明确指定，默认为5份。
+一旦发起流程数超越该限制，该二维码将自动失效。
                      * 
                      */
                     int64_t GetMaxFlowNum() const;
 
                     /**
-                     * 设置最大可发起签署流程份数，默认5份 
-<br/>发起流程数量超过此上限后二维码自动失效
-                     * @param _maxFlowNum 最大可发起签署流程份数，默认5份 
-<br/>发起流程数量超过此上限后二维码自动失效
+                     * 设置通过此二维码可发起的流程最大限额，如未明确指定，默认为5份。
+一旦发起流程数超越该限制，该二维码将自动失效。
+                     * @param _maxFlowNum 通过此二维码可发起的流程最大限额，如未明确指定，默认为5份。
+一旦发起流程数超越该限制，该二维码将自动失效。
                      * 
                      */
                     void SetMaxFlowNum(const int64_t& _maxFlowNum);
@@ -134,44 +146,19 @@ namespace TencentCloud
                     bool MaxFlowNumHasBeenSet() const;
 
                     /**
-                     * 获取签署流程有效天数 
-<br/>默认7天 
-<br/>最高设置不超过30天
-                     * @return FlowEffectiveDay 签署流程有效天数 
-<br/>默认7天 
-<br/>最高设置不超过30天
-                     * 
-                     */
-                    int64_t GetFlowEffectiveDay() const;
-
-                    /**
-                     * 设置签署流程有效天数 
-<br/>默认7天 
-<br/>最高设置不超过30天
-                     * @param _flowEffectiveDay 签署流程有效天数 
-<br/>默认7天 
-<br/>最高设置不超过30天
-                     * 
-                     */
-                    void SetFlowEffectiveDay(const int64_t& _flowEffectiveDay);
-
-                    /**
-                     * 判断参数 FlowEffectiveDay 是否已赋值
-                     * @return FlowEffectiveDay 是否已赋值
-                     * 
-                     */
-                    bool FlowEffectiveDayHasBeenSet() const;
-
-                    /**
-                     * 获取二维码有效天数 默认7天 最高设置不超过90天
-                     * @return QrEffectiveDay 二维码有效天数 默认7天 最高设置不超过90天
+                     * 获取二维码的有效期限，默认为7天，最高设定不得超过90天。
+一旦超过二维码的有效期限，该二维码将自动失效。
+                     * @return QrEffectiveDay 二维码的有效期限，默认为7天，最高设定不得超过90天。
+一旦超过二维码的有效期限，该二维码将自动失效。
                      * 
                      */
                     int64_t GetQrEffectiveDay() const;
 
                     /**
-                     * 设置二维码有效天数 默认7天 最高设置不超过90天
-                     * @param _qrEffectiveDay 二维码有效天数 默认7天 最高设置不超过90天
+                     * 设置二维码的有效期限，默认为7天，最高设定不得超过90天。
+一旦超过二维码的有效期限，该二维码将自动失效。
+                     * @param _qrEffectiveDay 二维码的有效期限，默认为7天，最高设定不得超过90天。
+一旦超过二维码的有效期限，该二维码将自动失效。
                      * 
                      */
                     void SetQrEffectiveDay(const int64_t& _qrEffectiveDay);
@@ -184,19 +171,48 @@ namespace TencentCloud
                     bool QrEffectiveDayHasBeenSet() const;
 
                     /**
-                     * 获取指定的签署人信息
-<br/>指定后，则只允许指定的签署人扫码签署
-                     * @return Restrictions 指定的签署人信息
-<br/>指定后，则只允许指定的签署人扫码签署
+                     * 获取合同流程的签署有效期限，若未设定签署截止日期，则默认为自合同流程创建起的7天内截止。
+若在签署截止日期前未完成签署，合同状态将变更为已过期，从而导致合同无效。
+最长设定期限不得超过30天。
+                     * @return FlowEffectiveDay 合同流程的签署有效期限，若未设定签署截止日期，则默认为自合同流程创建起的7天内截止。
+若在签署截止日期前未完成签署，合同状态将变更为已过期，从而导致合同无效。
+最长设定期限不得超过30天。
+                     * 
+                     */
+                    int64_t GetFlowEffectiveDay() const;
+
+                    /**
+                     * 设置合同流程的签署有效期限，若未设定签署截止日期，则默认为自合同流程创建起的7天内截止。
+若在签署截止日期前未完成签署，合同状态将变更为已过期，从而导致合同无效。
+最长设定期限不得超过30天。
+                     * @param _flowEffectiveDay 合同流程的签署有效期限，若未设定签署截止日期，则默认为自合同流程创建起的7天内截止。
+若在签署截止日期前未完成签署，合同状态将变更为已过期，从而导致合同无效。
+最长设定期限不得超过30天。
+                     * 
+                     */
+                    void SetFlowEffectiveDay(const int64_t& _flowEffectiveDay);
+
+                    /**
+                     * 判断参数 FlowEffectiveDay 是否已赋值
+                     * @return FlowEffectiveDay 是否已赋值
+                     * 
+                     */
+                    bool FlowEffectiveDayHasBeenSet() const;
+
+                    /**
+                     * 获取指定签署人信息。
+在指定签署人后，仅允许特定签署人通过扫描二维码进行签署。
+                     * @return Restrictions 指定签署人信息。
+在指定签署人后，仅允许特定签署人通过扫描二维码进行签署。
                      * 
                      */
                     std::vector<ApproverRestriction> GetRestrictions() const;
 
                     /**
-                     * 设置指定的签署人信息
-<br/>指定后，则只允许指定的签署人扫码签署
-                     * @param _restrictions 指定的签署人信息
-<br/>指定后，则只允许指定的签署人扫码签署
+                     * 设置指定签署人信息。
+在指定签署人后，仅允许特定签署人通过扫描二维码进行签署。
+                     * @param _restrictions 指定签署人信息。
+在指定签署人后，仅允许特定签署人通过扫描二维码进行签署。
                      * 
                      */
                     void SetRestrictions(const std::vector<ApproverRestriction>& _restrictions);
@@ -209,19 +225,23 @@ namespace TencentCloud
                     bool RestrictionsHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义字段
-<br/>回调的时候会进行透传，长度需要小于20480
-                     * @return UserData 用户自定义字段
-<br/>回调的时候会进行透传，长度需要小于20480
+                     * 获取调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
+                     * @return UserData 调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      * 
                      */
                     std::string GetUserData() const;
 
                     /**
-                     * 设置用户自定义字段
-<br/>回调的时候会进行透传，长度需要小于20480
-                     * @param _userData 用户自定义字段
-<br/>回调的时候会进行透传，长度需要小于20480
+                     * 设置调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
+                     * @param _userData 调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      * 
                      */
                     void SetUserData(const std::string& _userData);
@@ -267,15 +287,19 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -311,54 +335,59 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户信息，其中UserId为必填参数
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 模板ID
+                     * 合同模板ID，为32位字符串。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 签署流程名称，最大长度不超过200字符
+                     * 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+该名称还将用于合同签署完成后的下载文件名。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 最大可发起签署流程份数，默认5份 
-<br/>发起流程数量超过此上限后二维码自动失效
+                     * 通过此二维码可发起的流程最大限额，如未明确指定，默认为5份。
+一旦发起流程数超越该限制，该二维码将自动失效。
                      */
                     int64_t m_maxFlowNum;
                     bool m_maxFlowNumHasBeenSet;
 
                     /**
-                     * 签署流程有效天数 
-<br/>默认7天 
-<br/>最高设置不超过30天
-                     */
-                    int64_t m_flowEffectiveDay;
-                    bool m_flowEffectiveDayHasBeenSet;
-
-                    /**
-                     * 二维码有效天数 默认7天 最高设置不超过90天
+                     * 二维码的有效期限，默认为7天，最高设定不得超过90天。
+一旦超过二维码的有效期限，该二维码将自动失效。
                      */
                     int64_t m_qrEffectiveDay;
                     bool m_qrEffectiveDayHasBeenSet;
 
                     /**
-                     * 指定的签署人信息
-<br/>指定后，则只允许指定的签署人扫码签署
+                     * 合同流程的签署有效期限，若未设定签署截止日期，则默认为自合同流程创建起的7天内截止。
+若在签署截止日期前未完成签署，合同状态将变更为已过期，从而导致合同无效。
+最长设定期限不得超过30天。
+                     */
+                    int64_t m_flowEffectiveDay;
+                    bool m_flowEffectiveDayHasBeenSet;
+
+                    /**
+                     * 指定签署人信息。
+在指定签署人后，仅允许特定签署人通过扫描二维码进行签署。
                      */
                     std::vector<ApproverRestriction> m_restrictions;
                     bool m_restrictionsHasBeenSet;
 
                     /**
-                     * 用户自定义字段
-<br/>回调的时候会进行透传，长度需要小于20480
+                     * 调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
@@ -373,7 +402,8 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
