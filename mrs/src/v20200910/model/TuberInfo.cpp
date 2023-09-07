@@ -65,7 +65,8 @@ TuberInfo::TuberInfo() :
     m_radioactiveUptakeHasBeenSet(false),
     m_symDescHasBeenSet(false),
     m_imageFeatureHasBeenSet(false),
-    m_coordsHasBeenSet(false)
+    m_coordsHasBeenSet(false),
+    m_isthmusThicknessHasBeenSet(false)
 {
 }
 
@@ -837,6 +838,23 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
         m_coordsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsthmusThickness") && !value["IsthmusThickness"].IsNull())
+    {
+        if (!value["IsthmusThickness"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.IsthmusThickness` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_isthmusThickness.Deserialize(value["IsthmusThickness"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_isthmusThicknessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1268,6 +1286,15 @@ void TuberInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isthmusThicknessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsthmusThickness";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_isthmusThickness.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1991,5 +2018,21 @@ void TuberInfo::SetCoords(const vector<Coord>& _coords)
 bool TuberInfo::CoordsHasBeenSet() const
 {
     return m_coordsHasBeenSet;
+}
+
+Size TuberInfo::GetIsthmusThickness() const
+{
+    return m_isthmusThickness;
+}
+
+void TuberInfo::SetIsthmusThickness(const Size& _isthmusThickness)
+{
+    m_isthmusThickness = _isthmusThickness;
+    m_isthmusThicknessHasBeenSet = true;
+}
+
+bool TuberInfo::IsthmusThicknessHasBeenSet() const
+{
+    return m_isthmusThicknessHasBeenSet;
 }
 

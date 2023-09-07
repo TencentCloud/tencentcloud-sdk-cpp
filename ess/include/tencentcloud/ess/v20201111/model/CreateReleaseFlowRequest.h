@@ -23,8 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/RelieveInfo.h>
-#include <tencentcloud/ess/v20201111/model/ReleasedApprover.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/ReleasedApprover.h>
 
 
 namespace TencentCloud
@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，userId 必填
-                     * @return Operator 调用方用户信息，userId 必填
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填
-                     * @param _operator 调用方用户信息，userId 必填
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -68,15 +72,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取待解除的签署流程编号（即原签署流程的编号）
-                     * @return NeedRelievedFlowId 待解除的签署流程编号（即原签署流程的编号）
+                     * 获取待解除的签署流程编号（即原签署流程的编号）。
+                     * @return NeedRelievedFlowId 待解除的签署流程编号（即原签署流程的编号）。
                      * 
                      */
                     std::string GetNeedRelievedFlowId() const;
 
                     /**
-                     * 设置待解除的签署流程编号（即原签署流程的编号）
-                     * @param _needRelievedFlowId 待解除的签署流程编号（即原签署流程的编号）
+                     * 设置待解除的签署流程编号（即原签署流程的编号）。
+                     * @param _needRelievedFlowId 待解除的签署流程编号（即原签署流程的编号）。
                      * 
                      */
                     void SetNeedRelievedFlowId(const std::string& _needRelievedFlowId);
@@ -89,15 +93,15 @@ namespace TencentCloud
                     bool NeedRelievedFlowIdHasBeenSet() const;
 
                     /**
-                     * 获取解除协议内容
-                     * @return ReliveInfo 解除协议内容
+                     * 获取解除协议内容。
+                     * @return ReliveInfo 解除协议内容。
                      * 
                      */
                     RelieveInfo GetReliveInfo() const;
 
                     /**
-                     * 设置解除协议内容
-                     * @param _reliveInfo 解除协议内容
+                     * 设置解除协议内容。
+                     * @param _reliveInfo 解除协议内容。
                      * 
                      */
                     void SetReliveInfo(const RelieveInfo& _reliveInfo);
@@ -110,23 +114,56 @@ namespace TencentCloud
                     bool ReliveInfoHasBeenSet() const;
 
                     /**
-                     * 获取非必须，解除协议的本企业签署人列表，
-默认使用原流程的签署人列表,当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业其他已实名员工来替换原流程中的原签署人，注意需要指明原签署人的编号(ReceiptId,通过DescribeFlowInfo接口获取)来代表需要替换哪一个签署人
-解除协议的签署人数量不能多于原流程的签署人数量
-                     * @return ReleasedApprovers 非必须，解除协议的本企业签署人列表，
-默认使用原流程的签署人列表,当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业其他已实名员工来替换原流程中的原签署人，注意需要指明原签署人的编号(ReceiptId,通过DescribeFlowInfo接口获取)来代表需要替换哪一个签署人
-解除协议的签署人数量不能多于原流程的签署人数量
+                     * 获取关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @return Agent 关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @param _agent 关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     * 
+                     */
+                    bool AgentHasBeenSet() const;
+
+                    /**
+                     * 获取解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>
+如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+解除协议的签署人数量不能多于原流程的签署人数量。<br/>
+
+`注意：只能更换同企业的签署人。`<br/>
+`注意：不支持更换个人类型的签署人。`<br/>
+                     * @return ReleasedApprovers 解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>
+如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+解除协议的签署人数量不能多于原流程的签署人数量。<br/>
+
+`注意：只能更换同企业的签署人。`<br/>
+`注意：不支持更换个人类型的签署人。`<br/>
                      * 
                      */
                     std::vector<ReleasedApprover> GetReleasedApprovers() const;
 
                     /**
-                     * 设置非必须，解除协议的本企业签署人列表，
-默认使用原流程的签署人列表,当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业其他已实名员工来替换原流程中的原签署人，注意需要指明原签署人的编号(ReceiptId,通过DescribeFlowInfo接口获取)来代表需要替换哪一个签署人
-解除协议的签署人数量不能多于原流程的签署人数量
-                     * @param _releasedApprovers 非必须，解除协议的本企业签署人列表，
-默认使用原流程的签署人列表,当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业其他已实名员工来替换原流程中的原签署人，注意需要指明原签署人的编号(ReceiptId,通过DescribeFlowInfo接口获取)来代表需要替换哪一个签署人
-解除协议的签署人数量不能多于原流程的签署人数量
+                     * 设置解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>
+如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+解除协议的签署人数量不能多于原流程的签署人数量。<br/>
+
+`注意：只能更换同企业的签署人。`<br/>
+`注意：不支持更换个人类型的签署人。`<br/>
+                     * @param _releasedApprovers 解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>
+如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+解除协议的签署人数量不能多于原流程的签署人数量。<br/>
+
+`注意：只能更换同企业的签署人。`<br/>
+`注意：不支持更换个人类型的签署人。`<br/>
                      * 
                      */
                     void SetReleasedApprovers(const std::vector<ReleasedApprover>& _releasedApprovers);
@@ -139,15 +176,19 @@ namespace TencentCloud
                     bool ReleasedApproversHasBeenSet() const;
 
                     /**
-                     * 获取签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后
-                     * @return Deadline 签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后
+                     * 获取合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的7天时截止。
+如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     * @return Deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的7天时截止。
+如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
                      * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后
-                     * @param _deadline 签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后
+                     * 设置合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的7天时截止。
+如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     * @param _deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的7天时截止。
+如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
                      * 
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -160,65 +201,86 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
+                     * @return UserData 调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      * 
                      */
-                    Agent GetAgent() const;
+                    std::string GetUserData() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
+                     * @param _userData 调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      * 
                      */
-                    void SetAgent(const Agent& _agent);
+                    void SetUserData(const std::string& _userData);
 
                     /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
                      * 
                      */
-                    bool AgentHasBeenSet() const;
+                    bool UserDataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 调用方用户信息，userId 必填
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 待解除的签署流程编号（即原签署流程的编号）
+                     * 待解除的签署流程编号（即原签署流程的编号）。
                      */
                     std::string m_needRelievedFlowId;
                     bool m_needRelievedFlowIdHasBeenSet;
 
                     /**
-                     * 解除协议内容
+                     * 解除协议内容。
                      */
                     RelieveInfo m_reliveInfo;
                     bool m_reliveInfoHasBeenSet;
 
                     /**
-                     * 非必须，解除协议的本企业签署人列表，
-默认使用原流程的签署人列表,当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业其他已实名员工来替换原流程中的原签署人，注意需要指明原签署人的编号(ReceiptId,通过DescribeFlowInfo接口获取)来代表需要替换哪一个签署人
-解除协议的签署人数量不能多于原流程的签署人数量
+                     * 关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
+
+                    /**
+                     * 解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>
+如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+解除协议的签署人数量不能多于原流程的签署人数量。<br/>
+
+`注意：只能更换同企业的签署人。`<br/>
+`注意：不支持更换个人类型的签署人。`<br/>
                      */
                     std::vector<ReleasedApprover> m_releasedApprovers;
                     bool m_releasedApproversHasBeenSet;
 
                     /**
-                     * 签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后
+                     * 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的7天时截止。
+如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
 
                 };
             }

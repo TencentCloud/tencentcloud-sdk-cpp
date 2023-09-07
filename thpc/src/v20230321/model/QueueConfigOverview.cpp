@@ -30,7 +30,8 @@ QueueConfigOverview::QueueConfigOverview() :
     m_desiredIdleNodeCapacityHasBeenSet(false),
     m_scaleOutRatioHasBeenSet(false),
     m_scaleOutNodeThresholdHasBeenSet(false),
-    m_maxNodesPerCycleHasBeenSet(false)
+    m_maxNodesPerCycleHasBeenSet(false),
+    m_scaleUpMemRatioHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome QueueConfigOverview::Deserialize(const rapidjson::Value &val
         m_maxNodesPerCycleHasBeenSet = true;
     }
 
+    if (value.HasMember("ScaleUpMemRatio") && !value["ScaleUpMemRatio"].IsNull())
+    {
+        if (!value["ScaleUpMemRatio"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueConfigOverview.ScaleUpMemRatio` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleUpMemRatio = value["ScaleUpMemRatio"].GetInt64();
+        m_scaleUpMemRatioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void QueueConfigOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "MaxNodesPerCycle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxNodesPerCycle, allocator);
+    }
+
+    if (m_scaleUpMemRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleUpMemRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaleUpMemRatio, allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void QueueConfigOverview::SetMaxNodesPerCycle(const int64_t& _maxNodesPerCycle)
 bool QueueConfigOverview::MaxNodesPerCycleHasBeenSet() const
 {
     return m_maxNodesPerCycleHasBeenSet;
+}
+
+int64_t QueueConfigOverview::GetScaleUpMemRatio() const
+{
+    return m_scaleUpMemRatio;
+}
+
+void QueueConfigOverview::SetScaleUpMemRatio(const int64_t& _scaleUpMemRatio)
+{
+    m_scaleUpMemRatio = _scaleUpMemRatio;
+    m_scaleUpMemRatioHasBeenSet = true;
+}
+
+bool QueueConfigOverview::ScaleUpMemRatioHasBeenSet() const
+{
+    return m_scaleUpMemRatioHasBeenSet;
 }
 

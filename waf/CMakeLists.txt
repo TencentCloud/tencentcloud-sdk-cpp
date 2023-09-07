@@ -116,6 +116,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/CreateHostResponse.h
   include/tencentcloud/waf/v20180125/model/IpAccessControlItem.h
   include/tencentcloud/waf/v20180125/model/DeleteHostResponse.h
+  include/tencentcloud/waf/v20180125/model/FreshAntiFakeUrlResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyBotStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteSpartaProtectionRequest.h
   include/tencentcloud/waf/v20180125/model/DomainsPartInfo.h
@@ -125,6 +126,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/HostRecord.h
   include/tencentcloud/waf/v20180125/model/CreateHostRequest.h
   include/tencentcloud/waf/v20180125/model/UserDomainInfo.h
+  include/tencentcloud/waf/v20180125/model/FreshAntiFakeUrlRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeFindDomainListResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeWafInfoRequest.h
   include/tencentcloud/waf/v20180125/model/SpartaProtectionPort.h
@@ -395,6 +397,7 @@ set(waf_src
   src/v20180125/model/CreateHostResponse.cpp
   src/v20180125/model/IpAccessControlItem.cpp
   src/v20180125/model/DeleteHostResponse.cpp
+  src/v20180125/model/FreshAntiFakeUrlResponse.cpp
   src/v20180125/model/ModifyBotStatusRequest.cpp
   src/v20180125/model/DeleteSpartaProtectionRequest.cpp
   src/v20180125/model/DomainsPartInfo.cpp
@@ -404,6 +407,7 @@ set(waf_src
   src/v20180125/model/HostRecord.cpp
   src/v20180125/model/CreateHostRequest.cpp
   src/v20180125/model/UserDomainInfo.cpp
+  src/v20180125/model/FreshAntiFakeUrlRequest.cpp
   src/v20180125/model/DescribeFindDomainListResponse.cpp
   src/v20180125/model/DescribeWafInfoRequest.cpp
   src/v20180125/model/SpartaProtectionPort.cpp

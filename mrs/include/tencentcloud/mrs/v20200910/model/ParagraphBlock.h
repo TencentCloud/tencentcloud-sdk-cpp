@@ -505,7 +505,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MenstruallHistoryText 月经史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetMenstruallHistoryText() const;
 
@@ -514,14 +514,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _menstruallHistoryText 月经史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetMenstruallHistoryText(const std::string& _menstruallHistoryText);
 
                     /**
                      * 判断参数 MenstruallHistoryText 是否已赋值
                      * @return MenstruallHistoryText 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MenstruallHistoryTextHasBeenSet() const;
 
@@ -725,6 +725,31 @@ namespace TencentCloud
                      */
                     bool TreatmentResultTextHasBeenSet() const;
 
+                    /**
+                     * 获取月经史
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MenstrualHistoryText 月经史
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMenstrualHistoryText() const;
+
+                    /**
+                     * 设置月经史
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _menstrualHistoryText 月经史
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMenstrualHistoryText(const std::string& _menstrualHistoryText);
+
+                    /**
+                     * 判断参数 MenstrualHistoryText 是否已赋值
+                     * @return MenstrualHistoryText 是否已赋值
+                     * 
+                     */
+                    bool MenstrualHistoryTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -916,6 +941,13 @@ namespace TencentCloud
                      */
                     std::string m_treatmentResultText;
                     bool m_treatmentResultTextHasBeenSet;
+
+                    /**
+                     * 月经史
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_menstrualHistoryText;
+                    bool m_menstrualHistoryTextHasBeenSet;
 
                 };
             }

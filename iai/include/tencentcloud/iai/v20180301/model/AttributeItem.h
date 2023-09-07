@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Type识别概率值，【0,1】,代表判断正确的概率。
-                     * @return Probability Type识别概率值，【0,1】,代表判断正确的概率。
+                     * 获取Type识别概率值,[0,1],代表判断正确的概率。
+                     * @return Probability Type识别概率值,[0,1],代表判断正确的概率。
                      * 
                      */
                     double GetProbability() const;
 
                     /**
-                     * 设置Type识别概率值，【0,1】,代表判断正确的概率。
-                     * @param _probability Type识别概率值，【0,1】,代表判断正确的概率。
+                     * 设置Type识别概率值,[0,1],代表判断正确的概率。
+                     * @param _probability Type识别概率值,[0,1],代表判断正确的概率。
                      * 
                      */
                     void SetProbability(const double& _probability);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Type识别概率值，【0,1】,代表判断正确的概率。
+                     * Type识别概率值,[0,1],代表判断正确的概率。
                      */
                     double m_probability;
                     bool m_probabilityHasBeenSet;

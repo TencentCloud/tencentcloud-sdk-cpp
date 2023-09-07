@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ESS_V20201111_MODEL_CREATERELEASEFLOWRESPONSE_H_
-#define TENCENTCLOUD_ESS_V20201111_MODEL_CREATERELEASEFLOWRESPONSE_H_
+#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_FRESHANTIFAKEURLRESPONSE_H_
+#define TENCENTCLOUD_WAF_V20180125_MODEL_FRESHANTIFAKEURLRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Ess
+    namespace Waf
     {
-        namespace V20201111
+        namespace V20180125
         {
             namespace Model
             {
                 /**
-                * CreateReleaseFlow返回参数结构体
+                * FreshAntiFakeUrl返回参数结构体
                 */
-                class CreateReleaseFlowResponse : public AbstractModel
+                class FreshAntiFakeUrlResponse : public AbstractModel
                 {
                 public:
-                    CreateReleaseFlowResponse();
-                    ~CreateReleaseFlowResponse() = default;
+                    FreshAntiFakeUrlResponse();
+                    ~FreshAntiFakeUrlResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取解除协议流程编号
-`注意：这里的流程编号对应的合同是本次发起的解除协议。`
-
-                     * @return FlowId 解除协议流程编号
-`注意：这里的流程编号对应的合同是本次发起的解除协议。`
-
+                     * 获取结果成功与否
+                     * @return Result 结果成功与否
                      * 
                      */
-                    std::string GetFlowId() const;
+                    std::string GetResult() const;
 
                     /**
-                     * 判断参数 FlowId 是否已赋值
-                     * @return FlowId 是否已赋值
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      * 
                      */
-                    bool FlowIdHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 解除协议流程编号
-`注意：这里的流程编号对应的合同是本次发起的解除协议。`
-
+                     * 结果成功与否
                      */
-                    std::string m_flowId;
-                    bool m_flowIdHasBeenSet;
+                    std::string m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }
@@ -77,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ESS_V20201111_MODEL_CREATERELEASEFLOWRESPONSE_H_
+#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_FRESHANTIFAKEURLRESPONSE_H_

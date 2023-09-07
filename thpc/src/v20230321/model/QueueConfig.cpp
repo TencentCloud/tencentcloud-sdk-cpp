@@ -34,7 +34,8 @@ QueueConfig::QueueConfig() :
     m_desiredIdleNodeCapacityHasBeenSet(false),
     m_scaleOutRatioHasBeenSet(false),
     m_scaleOutNodeThresholdHasBeenSet(false),
-    m_maxNodesPerCycleHasBeenSet(false)
+    m_maxNodesPerCycleHasBeenSet(false),
+    m_scaleUpMemRatioHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,16 @@ CoreInternalOutcome QueueConfig::Deserialize(const rapidjson::Value &value)
         m_maxNodesPerCycleHasBeenSet = true;
     }
 
+    if (value.HasMember("ScaleUpMemRatio") && !value["ScaleUpMemRatio"].IsNull())
+    {
+        if (!value["ScaleUpMemRatio"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueConfig.ScaleUpMemRatio` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleUpMemRatio = value["ScaleUpMemRatio"].GetInt64();
+        m_scaleUpMemRatioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -350,6 +361,14 @@ void QueueConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "MaxNodesPerCycle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxNodesPerCycle, allocator);
+    }
+
+    if (m_scaleUpMemRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleUpMemRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaleUpMemRatio, allocator);
     }
 
 }
@@ -577,5 +596,21 @@ void QueueConfig::SetMaxNodesPerCycle(const int64_t& _maxNodesPerCycle)
 bool QueueConfig::MaxNodesPerCycleHasBeenSet() const
 {
     return m_maxNodesPerCycleHasBeenSet;
+}
+
+int64_t QueueConfig::GetScaleUpMemRatio() const
+{
+    return m_scaleUpMemRatio;
+}
+
+void QueueConfig::SetScaleUpMemRatio(const int64_t& _scaleUpMemRatio)
+{
+    m_scaleUpMemRatio = _scaleUpMemRatio;
+    m_scaleUpMemRatioHasBeenSet = true;
+}
+
+bool QueueConfig::ScaleUpMemRatioHasBeenSet() const
+{
+    return m_scaleUpMemRatioHasBeenSet;
 }
 

@@ -88,6 +88,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/Variable.h
   include/tencentcloud/ccc/v20200210/model/CallInNumberMetrics.h
   include/tencentcloud/ccc/v20200210/model/CreateExtensionRequest.h
+  include/tencentcloud/ccc/v20200210/model/StaffSkillGroupList.h
   include/tencentcloud/ccc/v20200210/model/CreateAutoCalloutTaskRequest.h
   include/tencentcloud/ccc/v20200210/model/Filter.h
   include/tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h
@@ -204,6 +205,7 @@ set(ccc_src
   src/v20200210/model/Variable.cpp
   src/v20200210/model/CallInNumberMetrics.cpp
   src/v20200210/model/CreateExtensionRequest.cpp
+  src/v20200210/model/StaffSkillGroupList.cpp
   src/v20200210/model/CreateAutoCalloutTaskRequest.cpp
   src/v20200210/model/Filter.cpp
   src/v20200210/model/UnbindStaffSkillGroupListRequest.cpp

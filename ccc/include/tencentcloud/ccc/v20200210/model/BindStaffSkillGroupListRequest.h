@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/StaffSkillGroupList.h>
 
 
 namespace TencentCloud
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取坐席邮箱
-                     * @return StaffEmail 坐席邮箱
+                     * 获取座席邮箱
+                     * @return StaffEmail 座席邮箱
                      * 
                      */
                     std::string GetStaffEmail() const;
 
                     /**
-                     * 设置坐席邮箱
-                     * @param _staffEmail 坐席邮箱
+                     * 设置座席邮箱
+                     * @param _staffEmail 座席邮箱
                      * 
                      */
                     void SetStaffEmail(const std::string& _staffEmail);
@@ -87,23 +88,44 @@ namespace TencentCloud
                     /**
                      * 获取绑定技能组列表
                      * @return SkillGroupList 绑定技能组列表
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetSkillGroupList() const;
 
                     /**
                      * 设置绑定技能组列表
                      * @param _skillGroupList 绑定技能组列表
-                     * 
+                     * @deprecated
                      */
                     void SetSkillGroupList(const std::vector<int64_t>& _skillGroupList);
 
                     /**
                      * 判断参数 SkillGroupList 是否已赋值
                      * @return SkillGroupList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SkillGroupListHasBeenSet() const;
+
+                    /**
+                     * 获取绑定技能组列表(必填)
+                     * @return StaffSkillGroupList 绑定技能组列表(必填)
+                     * 
+                     */
+                    std::vector<StaffSkillGroupList> GetStaffSkillGroupList() const;
+
+                    /**
+                     * 设置绑定技能组列表(必填)
+                     * @param _staffSkillGroupList 绑定技能组列表(必填)
+                     * 
+                     */
+                    void SetStaffSkillGroupList(const std::vector<StaffSkillGroupList>& _staffSkillGroupList);
+
+                    /**
+                     * 判断参数 StaffSkillGroupList 是否已赋值
+                     * @return StaffSkillGroupList 是否已赋值
+                     * 
+                     */
+                    bool StaffSkillGroupListHasBeenSet() const;
 
                 private:
 
@@ -114,7 +136,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 坐席邮箱
+                     * 座席邮箱
                      */
                     std::string m_staffEmail;
                     bool m_staffEmailHasBeenSet;
@@ -124,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_skillGroupList;
                     bool m_skillGroupListHasBeenSet;
+
+                    /**
+                     * 绑定技能组列表(必填)
+                     */
+                    std::vector<StaffSkillGroupList> m_staffSkillGroupList;
+                    bool m_staffSkillGroupListHasBeenSet;
 
                 };
             }

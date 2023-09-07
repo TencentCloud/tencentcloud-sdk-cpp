@@ -47,7 +47,8 @@ ParagraphBlock::ParagraphBlock() :
     m_otherDiagnosisTextHasBeenSet(false),
     m_bodyExaminationTextHasBeenSet(false),
     m_specialistExaminationTextHasBeenSet(false),
-    m_treatmentResultTextHasBeenSet(false)
+    m_treatmentResultTextHasBeenSet(false),
+    m_menstrualHistoryTextHasBeenSet(false)
 {
 }
 
@@ -326,6 +327,16 @@ CoreInternalOutcome ParagraphBlock::Deserialize(const rapidjson::Value &value)
         m_treatmentResultTextHasBeenSet = true;
     }
 
+    if (value.HasMember("MenstrualHistoryText") && !value["MenstrualHistoryText"].IsNull())
+    {
+        if (!value["MenstrualHistoryText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParagraphBlock.MenstrualHistoryText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_menstrualHistoryText = string(value["MenstrualHistoryText"].GetString());
+        m_menstrualHistoryTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +558,14 @@ void ParagraphBlock::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TreatmentResultText";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_treatmentResultText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_menstrualHistoryTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MenstrualHistoryText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_menstrualHistoryText.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -982,5 +1001,21 @@ void ParagraphBlock::SetTreatmentResultText(const string& _treatmentResultText)
 bool ParagraphBlock::TreatmentResultTextHasBeenSet() const
 {
     return m_treatmentResultTextHasBeenSet;
+}
+
+string ParagraphBlock::GetMenstrualHistoryText() const
+{
+    return m_menstrualHistoryText;
+}
+
+void ParagraphBlock::SetMenstrualHistoryText(const string& _menstrualHistoryText)
+{
+    m_menstrualHistoryText = _menstrualHistoryText;
+    m_menstrualHistoryTextHasBeenSet = true;
+}
+
+bool ParagraphBlock::MenstrualHistoryTextHasBeenSet() const
+{
+    return m_menstrualHistoryTextHasBeenSet;
 }
 

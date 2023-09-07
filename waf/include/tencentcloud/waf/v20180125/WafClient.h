@@ -155,6 +155,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeWafInfoResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceResponse.h>
+#include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlRequest.h>
+#include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlResponse.h>
 #include <tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsRequest.h>
 #include <tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsResponse.h>
 #include <tencentcloud/waf/v20180125/model/GetAttackHistogramRequest.h>
@@ -439,6 +441,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWafThreatenIntelligenceResponse> DescribeWafThreatenIntelligenceOutcome;
                 typedef std::future<DescribeWafThreatenIntelligenceOutcome> DescribeWafThreatenIntelligenceOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeWafThreatenIntelligenceRequest&, DescribeWafThreatenIntelligenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafThreatenIntelligenceAsyncHandler;
+                typedef Outcome<Core::Error, Model::FreshAntiFakeUrlResponse> FreshAntiFakeUrlOutcome;
+                typedef std::future<FreshAntiFakeUrlOutcome> FreshAntiFakeUrlOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::FreshAntiFakeUrlRequest&, FreshAntiFakeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreshAntiFakeUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetAttackDownloadRecordsResponse> GetAttackDownloadRecordsOutcome;
                 typedef std::future<GetAttackDownloadRecordsOutcome> GetAttackDownloadRecordsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::GetAttackDownloadRecordsRequest&, GetAttackDownloadRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAttackDownloadRecordsAsyncHandler;
@@ -1151,6 +1156,15 @@ namespace TencentCloud
                 DescribeWafThreatenIntelligenceOutcome DescribeWafThreatenIntelligence(const Model::DescribeWafThreatenIntelligenceRequest &request);
                 void DescribeWafThreatenIntelligenceAsync(const Model::DescribeWafThreatenIntelligenceRequest& request, const DescribeWafThreatenIntelligenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWafThreatenIntelligenceOutcomeCallable DescribeWafThreatenIntelligenceCallable(const Model::DescribeWafThreatenIntelligenceRequest& request);
+
+                /**
+                 *刷新防篡改url
+                 * @param req FreshAntiFakeUrlRequest
+                 * @return FreshAntiFakeUrlOutcome
+                 */
+                FreshAntiFakeUrlOutcome FreshAntiFakeUrl(const Model::FreshAntiFakeUrlRequest &request);
+                void FreshAntiFakeUrlAsync(const Model::FreshAntiFakeUrlRequest& request, const FreshAntiFakeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FreshAntiFakeUrlOutcomeCallable FreshAntiFakeUrlCallable(const Model::FreshAntiFakeUrlRequest& request);
 
                 /**
                  *查询下载攻击日志任务记录列表

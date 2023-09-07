@@ -2878,6 +2878,49 @@ WafClient::DescribeWafThreatenIntelligenceOutcomeCallable WafClient::DescribeWaf
     return task->get_future();
 }
 
+WafClient::FreshAntiFakeUrlOutcome WafClient::FreshAntiFakeUrl(const FreshAntiFakeUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "FreshAntiFakeUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FreshAntiFakeUrlResponse rsp = FreshAntiFakeUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FreshAntiFakeUrlOutcome(rsp);
+        else
+            return FreshAntiFakeUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return FreshAntiFakeUrlOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::FreshAntiFakeUrlAsync(const FreshAntiFakeUrlRequest& request, const FreshAntiFakeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FreshAntiFakeUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::FreshAntiFakeUrlOutcomeCallable WafClient::FreshAntiFakeUrlCallable(const FreshAntiFakeUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FreshAntiFakeUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->FreshAntiFakeUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::GetAttackDownloadRecordsOutcome WafClient::GetAttackDownloadRecords(const GetAttackDownloadRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetAttackDownloadRecords");

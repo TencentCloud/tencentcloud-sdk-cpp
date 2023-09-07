@@ -45,7 +45,8 @@ ReportInfo::ReportInfo() :
     m_healthCheckupNumHasBeenSet(false),
     m_otherTimeHasBeenSet(false),
     m_printTimeHasBeenSet(false),
-    m_timesHasBeenSet(false)
+    m_timesHasBeenSet(false),
+    m_bedNoHasBeenSet(false)
 {
 }
 
@@ -314,6 +315,16 @@ CoreInternalOutcome ReportInfo::Deserialize(const rapidjson::Value &value)
         m_timesHasBeenSet = true;
     }
 
+    if (value.HasMember("BedNo") && !value["BedNo"].IsNull())
+    {
+        if (!value["BedNo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportInfo.BedNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bedNo = string(value["BedNo"].GetString());
+        m_bedNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -526,6 +537,14 @@ void ReportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_bedNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BedNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bedNo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -929,5 +948,21 @@ void ReportInfo::SetTimes(const vector<Time>& _times)
 bool ReportInfo::TimesHasBeenSet() const
 {
     return m_timesHasBeenSet;
+}
+
+string ReportInfo::GetBedNo() const
+{
+    return m_bedNo;
+}
+
+void ReportInfo::SetBedNo(const string& _bedNo)
+{
+    m_bedNo = _bedNo;
+    m_bedNoHasBeenSet = true;
+}
+
+bool ReportInfo::BedNoHasBeenSet() const
+{
+    return m_bedNoHasBeenSet;
 }
 

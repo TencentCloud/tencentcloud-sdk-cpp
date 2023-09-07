@@ -505,7 +505,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsthmusThicknese 峡部厚度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     Size GetIsthmusThicknese() const;
 
@@ -514,14 +514,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isthmusThicknese 峡部厚度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetIsthmusThicknese(const Size& _isthmusThicknese);
 
                     /**
                      * 判断参数 IsthmusThicknese 是否已赋值
                      * @return IsthmusThicknese 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsthmusThickneseHasBeenSet() const;
 
@@ -975,6 +975,31 @@ namespace TencentCloud
                      */
                     bool CoordsHasBeenSet() const;
 
+                    /**
+                     * 获取峡部厚度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsthmusThickness 峡部厚度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    Size GetIsthmusThickness() const;
+
+                    /**
+                     * 设置峡部厚度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isthmusThickness 峡部厚度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsthmusThickness(const Size& _isthmusThickness);
+
+                    /**
+                     * 判断参数 IsthmusThickness 是否已赋值
+                     * @return IsthmusThickness 是否已赋值
+                     * 
+                     */
+                    bool IsthmusThicknessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1235,6 +1260,13 @@ namespace TencentCloud
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;
+
+                    /**
+                     * 峡部厚度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Size m_isthmusThickness;
+                    bool m_isthmusThicknessHasBeenSet;
 
                 };
             }

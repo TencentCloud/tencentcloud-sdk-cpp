@@ -57,7 +57,8 @@ Organ::Organ() :
     m_ductHasBeenSet(false),
     m_trendHasBeenSet(false),
     m_operationHasBeenSet(false),
-    m_coordsHasBeenSet(false)
+    m_coordsHasBeenSet(false),
+    m_isthmusThicknessHasBeenSet(false)
 {
 }
 
@@ -690,6 +691,23 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
         m_coordsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsthmusThickness") && !value["IsthmusThickness"].IsNull())
+    {
+        if (!value["IsthmusThickness"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.IsthmusThickness` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_isthmusThickness.Deserialize(value["IsthmusThickness"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_isthmusThicknessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1043,6 +1061,15 @@ void Organ::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isthmusThicknessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsthmusThickness";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_isthmusThickness.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1638,5 +1665,21 @@ void Organ::SetCoords(const vector<Coord>& _coords)
 bool Organ::CoordsHasBeenSet() const
 {
     return m_coordsHasBeenSet;
+}
+
+Size Organ::GetIsthmusThickness() const
+{
+    return m_isthmusThickness;
+}
+
+void Organ::SetIsthmusThickness(const Size& _isthmusThickness)
+{
+    m_isthmusThickness = _isthmusThickness;
+    m_isthmusThicknessHasBeenSet = true;
+}
+
+bool Organ::IsthmusThicknessHasBeenSet() const
+{
+    return m_isthmusThicknessHasBeenSet;
 }
 

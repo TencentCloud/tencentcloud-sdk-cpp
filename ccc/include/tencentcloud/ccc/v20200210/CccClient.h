@@ -250,7 +250,7 @@ namespace TencentCloud
                 BindNumberCallOutSkillGroupOutcomeCallable BindNumberCallOutSkillGroupCallable(const Model::BindNumberCallOutSkillGroupRequest& request);
 
                 /**
-                 *绑定坐席所属技能组
+                 *绑定座席所属技能组
                  * @param req BindStaffSkillGroupListRequest
                  * @return BindStaffSkillGroupListOutcome
                  */

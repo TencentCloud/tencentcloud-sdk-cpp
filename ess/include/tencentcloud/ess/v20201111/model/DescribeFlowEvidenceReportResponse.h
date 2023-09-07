@@ -60,16 +60,18 @@ namespace TencentCloud
                     bool ReportUrlHasBeenSet() const;
 
                     /**
-                     * 获取出证任务执行的状态, 分布表示下面的含义
-
-EvidenceStatusExecuting  出证任务在执行中
-EvidenceStatusSuccess  出证任务执行成功
-EvidenceStatusFailed  出证任务执行失败
-                     * @return Status 出证任务执行的状态, 分布表示下面的含义
-
-EvidenceStatusExecuting  出证任务在执行中
-EvidenceStatusSuccess  出证任务执行成功
-EvidenceStatusFailed  出证任务执行失败
+                     * 获取签署报告出证任务的状态
+<ul>
+<li>EvidenceStatusExecuting : 出证任务在执行中</li>
+<li>EvidenceStatusSuccess : 出证任务执行成功</li>
+<li>EvidenceStatusFailed : 出证任务执行失败</li>
+</ul>
+                     * @return Status 签署报告出证任务的状态
+<ul>
+<li>EvidenceStatusExecuting : 出证任务在执行中</li>
+<li>EvidenceStatusSuccess : 出证任务执行成功</li>
+<li>EvidenceStatusFailed : 出证任务执行失败</li>
+</ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -91,11 +93,12 @@ EvidenceStatusFailed  出证任务执行失败
                     bool m_reportUrlHasBeenSet;
 
                     /**
-                     * 出证任务执行的状态, 分布表示下面的含义
-
-EvidenceStatusExecuting  出证任务在执行中
-EvidenceStatusSuccess  出证任务执行成功
-EvidenceStatusFailed  出证任务执行失败
+                     * 签署报告出证任务的状态
+<ul>
+<li>EvidenceStatusExecuting : 出证任务在执行中</li>
+<li>EvidenceStatusSuccess : 出证任务执行成功</li>
+<li>EvidenceStatusFailed : 出证任务执行失败</li>
+</ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

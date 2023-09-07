@@ -26,9 +26,10 @@ CreateReleaseFlowRequest::CreateReleaseFlowRequest() :
     m_operatorHasBeenSet(false),
     m_needRelievedFlowIdHasBeenSet(false),
     m_reliveInfoHasBeenSet(false),
+    m_agentHasBeenSet(false),
     m_releasedApproversHasBeenSet(false),
     m_deadlineHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,15 @@ string CreateReleaseFlowRequest::ToJsonString() const
         m_reliveInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_releasedApproversHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -88,13 +98,12 @@ string CreateReleaseFlowRequest::ToJsonString() const
         d.AddMember(iKey, m_deadline, allocator);
     }
 
-    if (m_agentHasBeenSet)
+    if (m_userDataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
+        string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -153,6 +162,22 @@ bool CreateReleaseFlowRequest::ReliveInfoHasBeenSet() const
     return m_reliveInfoHasBeenSet;
 }
 
+Agent CreateReleaseFlowRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateReleaseFlowRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateReleaseFlowRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
+}
+
 vector<ReleasedApprover> CreateReleaseFlowRequest::GetReleasedApprovers() const
 {
     return m_releasedApprovers;
@@ -185,20 +210,20 @@ bool CreateReleaseFlowRequest::DeadlineHasBeenSet() const
     return m_deadlineHasBeenSet;
 }
 
-Agent CreateReleaseFlowRequest::GetAgent() const
+string CreateReleaseFlowRequest::GetUserData() const
 {
-    return m_agent;
+    return m_userData;
 }
 
-void CreateReleaseFlowRequest::SetAgent(const Agent& _agent)
+void CreateReleaseFlowRequest::SetUserData(const string& _userData)
 {
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
 }
 
-bool CreateReleaseFlowRequest::AgentHasBeenSet() const
+bool CreateReleaseFlowRequest::UserDataHasBeenSet() const
 {
-    return m_agentHasBeenSet;
+    return m_userDataHasBeenSet;
 }
 
 
