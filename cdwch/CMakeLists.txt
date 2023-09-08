@@ -29,17 +29,18 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/Charge.h
   include/tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsResponse.h
   include/tencentcloud/cdwch/v20200915/model/ActionAlterCkUserRequest.h
-  include/tencentcloud/cdwch/v20200915/model/DescribeSpecRequest.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h
   include/tencentcloud/cdwch/v20200915/model/CkUserAlterInfo.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeSpecResponse.h
-  include/tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsResponse.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeSpecRequest.h
   include/tencentcloud/cdwch/v20200915/model/DestroyInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeRequest.h
-  include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeBackUpTablesResponse.h
   include/tencentcloud/cdwch/v20200915/model/ClusterConfigsInfoFromEMR.h
   include/tencentcloud/cdwch/v20200915/model/ClusterInfo.h
   include/tencentcloud/cdwch/v20200915/model/OpenBackUpRequest.h
+  include/tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsResponse.h
   include/tencentcloud/cdwch/v20200915/model/BackupTableContent.h
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewResponse.h
   include/tencentcloud/cdwch/v20200915/model/ConfigSubmitContext.h
@@ -85,6 +86,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/AttachCBSSpec.h
   include/tencentcloud/cdwch/v20200915/model/ScheduleStrategy.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceStateResponse.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeBackUpTablesRequest.h
   include/tencentcloud/cdwch/v20200915/model/DestroyInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/ResizeDiskResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h
@@ -106,17 +108,18 @@ set(cdwch_src
   src/v20200915/model/Charge.cpp
   src/v20200915/model/DescribeClusterConfigsResponse.cpp
   src/v20200915/model/ActionAlterCkUserRequest.cpp
-  src/v20200915/model/DescribeSpecRequest.cpp
+  src/v20200915/model/DescribeCkSqlApisRequest.cpp
   src/v20200915/model/CkUserAlterInfo.cpp
   src/v20200915/model/DescribeBackUpScheduleRequest.cpp
   src/v20200915/model/DescribeSpecResponse.cpp
-  src/v20200915/model/ModifyInstanceKeyValConfigsResponse.cpp
+  src/v20200915/model/DescribeSpecRequest.cpp
   src/v20200915/model/DestroyInstanceRequest.cpp
   src/v20200915/model/ModifyUserNewPrivilegeRequest.cpp
-  src/v20200915/model/DescribeCkSqlApisRequest.cpp
+  src/v20200915/model/DescribeBackUpTablesResponse.cpp
   src/v20200915/model/ClusterConfigsInfoFromEMR.cpp
   src/v20200915/model/ClusterInfo.cpp
   src/v20200915/model/OpenBackUpRequest.cpp
+  src/v20200915/model/ModifyInstanceKeyValConfigsResponse.cpp
   src/v20200915/model/BackupTableContent.cpp
   src/v20200915/model/CreateInstanceNewResponse.cpp
   src/v20200915/model/ConfigSubmitContext.cpp
@@ -162,6 +165,7 @@ set(cdwch_src
   src/v20200915/model/AttachCBSSpec.cpp
   src/v20200915/model/ScheduleStrategy.cpp
   src/v20200915/model/DescribeInstanceStateResponse.cpp
+  src/v20200915/model/DescribeBackUpTablesRequest.cpp
   src/v20200915/model/DestroyInstanceResponse.cpp
   src/v20200915/model/ResizeDiskResponse.cpp
   src/v20200915/model/DescribeBackUpScheduleResponse.cpp

@@ -19,27 +19,49 @@ set(trocket_public_header
   )
 
 set(trocket_public_header_model
-  include/tencentcloud/trocket/v20230308/model/DescribeInstanceListResponse.h
+  include/tencentcloud/trocket/v20230308/model/ModifyInstanceResponse.h
+  include/tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h
+  include/tencentcloud/trocket/v20230308/model/DeleteInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h
-  include/tencentcloud/trocket/v20230308/model/TagFilter.h
-  include/tencentcloud/trocket/v20230308/model/Filter.h
+  include/tencentcloud/trocket/v20230308/model/DeleteInstanceRequest.h
   include/tencentcloud/trocket/v20230308/model/TopicItem.h
-  include/tencentcloud/trocket/v20230308/model/Tag.h
+  include/tencentcloud/trocket/v20230308/model/DescribeInstanceResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeInstanceRequest.h
+  include/tencentcloud/trocket/v20230308/model/IpRule.h
+  include/tencentcloud/trocket/v20230308/model/Filter.h
   include/tencentcloud/trocket/v20230308/model/InstanceItem.h
+  include/tencentcloud/trocket/v20230308/model/Tag.h
+  include/tencentcloud/trocket/v20230308/model/Endpoint.h
+  include/tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h
+  include/tencentcloud/trocket/v20230308/model/TagFilter.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListRequest.h
+  include/tencentcloud/trocket/v20230308/model/ModifyInstanceRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeInstanceListResponse.h
+  include/tencentcloud/trocket/v20230308/model/VpcInfo.h
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceListRequest.h
   )
 
 set(trocket_src
   src/v20230308/TrocketClient.cpp
-  src/v20230308/model/DescribeInstanceListResponse.cpp
+  src/v20230308/model/ModifyInstanceResponse.cpp
+  src/v20230308/model/CreateInstanceResponse.cpp
+  src/v20230308/model/DeleteInstanceResponse.cpp
   src/v20230308/model/DescribeTopicListResponse.cpp
-  src/v20230308/model/TagFilter.cpp
-  src/v20230308/model/Filter.cpp
+  src/v20230308/model/DeleteInstanceRequest.cpp
   src/v20230308/model/TopicItem.cpp
-  src/v20230308/model/Tag.cpp
+  src/v20230308/model/DescribeInstanceResponse.cpp
+  src/v20230308/model/DescribeInstanceRequest.cpp
+  src/v20230308/model/IpRule.cpp
+  src/v20230308/model/Filter.cpp
   src/v20230308/model/InstanceItem.cpp
+  src/v20230308/model/Tag.cpp
+  src/v20230308/model/Endpoint.cpp
+  src/v20230308/model/CreateInstanceRequest.cpp
+  src/v20230308/model/TagFilter.cpp
   src/v20230308/model/DescribeTopicListRequest.cpp
+  src/v20230308/model/ModifyInstanceRequest.cpp
+  src/v20230308/model/DescribeInstanceListResponse.cpp
+  src/v20230308/model/VpcInfo.cpp
   src/v20230308/model/DescribeInstanceListRequest.cpp
   )
 

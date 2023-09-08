@@ -35,10 +35,6 @@
 #include <tencentcloud/waf/v20180125/model/AddDomainWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddSpartaProtectionRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddSpartaProtectionResponse.h>
-#include <tencentcloud/waf/v20180125/model/AddSpartaProtectionAutoRequest.h>
-#include <tencentcloud/waf/v20180125/model/AddSpartaProtectionAutoResponse.h>
-#include <tencentcloud/waf/v20180125/model/AddSpartaProtectionsAutoRequest.h>
-#include <tencentcloud/waf/v20180125/model/AddSpartaProtectionsAutoResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateHostRequest.h>
@@ -107,6 +103,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeDomainDetailsClbResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainDetailsSaasRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainDetailsSaasResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeDomainVerifyResultRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeDomainVerifyResultResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainsRequest.h>
@@ -261,12 +259,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddSpartaProtectionResponse> AddSpartaProtectionOutcome;
                 typedef std::future<AddSpartaProtectionOutcome> AddSpartaProtectionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddSpartaProtectionRequest&, AddSpartaProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSpartaProtectionAsyncHandler;
-                typedef Outcome<Core::Error, Model::AddSpartaProtectionAutoResponse> AddSpartaProtectionAutoOutcome;
-                typedef std::future<AddSpartaProtectionAutoOutcome> AddSpartaProtectionAutoOutcomeCallable;
-                typedef std::function<void(const WafClient*, const Model::AddSpartaProtectionAutoRequest&, AddSpartaProtectionAutoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSpartaProtectionAutoAsyncHandler;
-                typedef Outcome<Core::Error, Model::AddSpartaProtectionsAutoResponse> AddSpartaProtectionsAutoOutcome;
-                typedef std::future<AddSpartaProtectionsAutoOutcome> AddSpartaProtectionsAutoOutcomeCallable;
-                typedef std::function<void(const WafClient*, const Model::AddSpartaProtectionsAutoRequest&, AddSpartaProtectionsAutoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSpartaProtectionsAutoAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccessExportResponse> CreateAccessExportOutcome;
                 typedef std::future<CreateAccessExportOutcome> CreateAccessExportOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateAccessExportRequest&, CreateAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessExportAsyncHandler;
@@ -369,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainDetailsSaasResponse> DescribeDomainDetailsSaasOutcome;
                 typedef std::future<DescribeDomainDetailsSaasOutcome> DescribeDomainDetailsSaasOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeDomainDetailsSaasRequest&, DescribeDomainDetailsSaasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainDetailsSaasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainVerifyResultResponse> DescribeDomainVerifyResultOutcome;
+                typedef std::future<DescribeDomainVerifyResultOutcome> DescribeDomainVerifyResultOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeDomainVerifyResultRequest&, DescribeDomainVerifyResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainVerifyResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainWhiteRulesResponse> DescribeDomainWhiteRulesOutcome;
                 typedef std::future<DescribeDomainWhiteRulesOutcome> DescribeDomainWhiteRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeDomainWhiteRulesRequest&, DescribeDomainWhiteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainWhiteRulesAsyncHandler;
@@ -608,24 +603,6 @@ namespace TencentCloud
                 AddSpartaProtectionOutcome AddSpartaProtection(const Model::AddSpartaProtectionRequest &request);
                 void AddSpartaProtectionAsync(const Model::AddSpartaProtectionRequest& request, const AddSpartaProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddSpartaProtectionOutcomeCallable AddSpartaProtectionCallable(const Model::AddSpartaProtectionRequest& request);
-
-                /**
-                 *一键接入
-                 * @param req AddSpartaProtectionAutoRequest
-                 * @return AddSpartaProtectionAutoOutcome
-                 */
-                AddSpartaProtectionAutoOutcome AddSpartaProtectionAuto(const Model::AddSpartaProtectionAutoRequest &request);
-                void AddSpartaProtectionAutoAsync(const Model::AddSpartaProtectionAutoRequest& request, const AddSpartaProtectionAutoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AddSpartaProtectionAutoOutcomeCallable AddSpartaProtectionAutoCallable(const Model::AddSpartaProtectionAutoRequest& request);
-
-                /**
-                 *批量添加域名
-                 * @param req AddSpartaProtectionsAutoRequest
-                 * @return AddSpartaProtectionsAutoOutcome
-                 */
-                AddSpartaProtectionsAutoOutcome AddSpartaProtectionsAuto(const Model::AddSpartaProtectionsAutoRequest &request);
-                void AddSpartaProtectionsAutoAsync(const Model::AddSpartaProtectionsAutoRequest& request, const AddSpartaProtectionsAutoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AddSpartaProtectionsAutoOutcomeCallable AddSpartaProtectionsAutoCallable(const Model::AddSpartaProtectionsAutoRequest& request);
 
                 /**
                  *本接口用于创建访问日志导出
@@ -937,6 +914,15 @@ namespace TencentCloud
                 DescribeDomainDetailsSaasOutcome DescribeDomainDetailsSaas(const Model::DescribeDomainDetailsSaasRequest &request);
                 void DescribeDomainDetailsSaasAsync(const Model::DescribeDomainDetailsSaasRequest& request, const DescribeDomainDetailsSaasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainDetailsSaasOutcomeCallable DescribeDomainDetailsSaasCallable(const Model::DescribeDomainDetailsSaasRequest& request);
+
+                /**
+                 *获取添加域名操作的结果
+                 * @param req DescribeDomainVerifyResultRequest
+                 * @return DescribeDomainVerifyResultOutcome
+                 */
+                DescribeDomainVerifyResultOutcome DescribeDomainVerifyResult(const Model::DescribeDomainVerifyResultRequest &request);
+                void DescribeDomainVerifyResultAsync(const Model::DescribeDomainVerifyResultRequest& request, const DescribeDomainVerifyResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainVerifyResultOutcomeCallable DescribeDomainVerifyResultCallable(const Model::DescribeDomainVerifyResultRequest& request);
 
                 /**
                  *获取域名的规则白名单

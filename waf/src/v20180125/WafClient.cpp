@@ -298,92 +298,6 @@ WafClient::AddSpartaProtectionOutcomeCallable WafClient::AddSpartaProtectionCall
     return task->get_future();
 }
 
-WafClient::AddSpartaProtectionAutoOutcome WafClient::AddSpartaProtectionAuto(const AddSpartaProtectionAutoRequest &request)
-{
-    auto outcome = MakeRequest(request, "AddSpartaProtectionAuto");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        AddSpartaProtectionAutoResponse rsp = AddSpartaProtectionAutoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return AddSpartaProtectionAutoOutcome(rsp);
-        else
-            return AddSpartaProtectionAutoOutcome(o.GetError());
-    }
-    else
-    {
-        return AddSpartaProtectionAutoOutcome(outcome.GetError());
-    }
-}
-
-void WafClient::AddSpartaProtectionAutoAsync(const AddSpartaProtectionAutoRequest& request, const AddSpartaProtectionAutoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddSpartaProtectionAuto(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WafClient::AddSpartaProtectionAutoOutcomeCallable WafClient::AddSpartaProtectionAutoCallable(const AddSpartaProtectionAutoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<AddSpartaProtectionAutoOutcome()>>(
-        [this, request]()
-        {
-            return this->AddSpartaProtectionAuto(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-WafClient::AddSpartaProtectionsAutoOutcome WafClient::AddSpartaProtectionsAuto(const AddSpartaProtectionsAutoRequest &request)
-{
-    auto outcome = MakeRequest(request, "AddSpartaProtectionsAuto");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        AddSpartaProtectionsAutoResponse rsp = AddSpartaProtectionsAutoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return AddSpartaProtectionsAutoOutcome(rsp);
-        else
-            return AddSpartaProtectionsAutoOutcome(o.GetError());
-    }
-    else
-    {
-        return AddSpartaProtectionsAutoOutcome(outcome.GetError());
-    }
-}
-
-void WafClient::AddSpartaProtectionsAutoAsync(const AddSpartaProtectionsAutoRequest& request, const AddSpartaProtectionsAutoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddSpartaProtectionsAuto(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WafClient::AddSpartaProtectionsAutoOutcomeCallable WafClient::AddSpartaProtectionsAutoCallable(const AddSpartaProtectionsAutoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<AddSpartaProtectionsAutoOutcome()>>(
-        [this, request]()
-        {
-            return this->AddSpartaProtectionsAuto(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WafClient::CreateAccessExportOutcome WafClient::CreateAccessExport(const CreateAccessExportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccessExport");
@@ -1839,6 +1753,49 @@ WafClient::DescribeDomainDetailsSaasOutcomeCallable WafClient::DescribeDomainDet
         [this, request]()
         {
             return this->DescribeDomainDetailsSaas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeDomainVerifyResultOutcome WafClient::DescribeDomainVerifyResult(const DescribeDomainVerifyResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainVerifyResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainVerifyResultResponse rsp = DescribeDomainVerifyResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainVerifyResultOutcome(rsp);
+        else
+            return DescribeDomainVerifyResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainVerifyResultOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeDomainVerifyResultAsync(const DescribeDomainVerifyResultRequest& request, const DescribeDomainVerifyResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainVerifyResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeDomainVerifyResultOutcomeCallable WafClient::DescribeDomainVerifyResultCallable(const DescribeDomainVerifyResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainVerifyResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainVerifyResult(request);
         }
     );
 

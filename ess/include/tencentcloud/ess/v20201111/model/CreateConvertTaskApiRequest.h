@@ -46,15 +46,55 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型
-                     * @return ResourceType 资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型
+                     * 获取需要进行转换的资源文件类型
+支持的文件类型如下：
+<ul><li>doc</li>
+<li>docx</li>
+<li>xls</li>
+<li>xlsx</li>
+<li>jpg</li>
+<li>jpeg</li>
+<li>png</li>
+<li>bmp</li>
+<li>txt</li></ul>
+                     * @return ResourceType 需要进行转换的资源文件类型
+支持的文件类型如下：
+<ul><li>doc</li>
+<li>docx</li>
+<li>xls</li>
+<li>xlsx</li>
+<li>jpg</li>
+<li>jpeg</li>
+<li>png</li>
+<li>bmp</li>
+<li>txt</li></ul>
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型
-                     * @param _resourceType 资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型
+                     * 设置需要进行转换的资源文件类型
+支持的文件类型如下：
+<ul><li>doc</li>
+<li>docx</li>
+<li>xls</li>
+<li>xlsx</li>
+<li>jpg</li>
+<li>jpeg</li>
+<li>png</li>
+<li>bmp</li>
+<li>txt</li></ul>
+                     * @param _resourceType 需要进行转换的资源文件类型
+支持的文件类型如下：
+<ul><li>doc</li>
+<li>docx</li>
+<li>xls</li>
+<li>xlsx</li>
+<li>jpg</li>
+<li>jpeg</li>
+<li>png</li>
+<li>bmp</li>
+<li>txt</li></ul>
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -67,15 +107,23 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源名称，长度限制为256字符
-                     * @return ResourceName 资源名称，长度限制为256字符
+                     * 获取需要进行转换操作的文件资源名称，带资源后缀名。
+
+注:  `资源名称长度限制为256个字符`
+                     * @return ResourceName 需要进行转换操作的文件资源名称，带资源后缀名。
+
+注:  `资源名称长度限制为256个字符`
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
-                     * 设置资源名称，长度限制为256字符
-                     * @param _resourceName 资源名称，长度限制为256字符
+                     * 设置需要进行转换操作的文件资源名称，带资源后缀名。
+
+注:  `资源名称长度限制为256个字符`
+                     * @param _resourceName 需要进行转换操作的文件资源名称，带资源后缀名。
+
+注:  `资源名称长度限制为256个字符`
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -88,15 +136,23 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取文件Id，通过UploadFiles获取
-                     * @return ResourceId 文件Id，通过UploadFiles获取
+                     * 获取需要进行转换操作的文件资源Id，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles" target="_blank">UploadFiles</a>接口获取文件资源Id。
+
+注:  `目前，此接口仅支持单个文件进行转换。`
+                     * @return ResourceId 需要进行转换操作的文件资源Id，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles" target="_blank">UploadFiles</a>接口获取文件资源Id。
+
+注:  `目前，此接口仅支持单个文件进行转换。`
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置文件Id，通过UploadFiles获取
-                     * @param _resourceId 文件Id，通过UploadFiles获取
+                     * 设置需要进行转换操作的文件资源Id，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles" target="_blank">UploadFiles</a>接口获取文件资源Id。
+
+注:  `目前，此接口仅支持单个文件进行转换。`
+                     * @param _resourceId 需要进行转换操作的文件资源Id，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles" target="_blank">UploadFiles</a>接口获取文件资源Id。
+
+注:  `目前，此接口仅支持单个文件进行转换。`
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -109,15 +165,19 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取调用方用户信息，userId 必填
-                     * @return Operator 调用方用户信息，userId 必填
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填
-                     * @param _operator 调用方用户信息，userId 必填
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -130,15 +190,19 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @return Agent 代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @param _agent 代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -174,31 +238,47 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型
+                     * 需要进行转换的资源文件类型
+支持的文件类型如下：
+<ul><li>doc</li>
+<li>docx</li>
+<li>xls</li>
+<li>xlsx</li>
+<li>jpg</li>
+<li>jpeg</li>
+<li>png</li>
+<li>bmp</li>
+<li>txt</li></ul>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 资源名称，长度限制为256字符
+                     * 需要进行转换操作的文件资源名称，带资源后缀名。
+
+注:  `资源名称长度限制为256个字符`
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 文件Id，通过UploadFiles获取
+                     * 需要进行转换操作的文件资源Id，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles" target="_blank">UploadFiles</a>接口获取文件资源Id。
+
+注:  `目前，此接口仅支持单个文件进行转换。`
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 调用方用户信息，userId 必填
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

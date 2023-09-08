@@ -83,6 +83,49 @@ CfwClient::AddAcRuleOutcomeCallable CfwClient::AddAcRuleCallable(const AddAcRule
     return task->get_future();
 }
 
+CfwClient::AddAclRuleOutcome CfwClient::AddAclRule(const AddAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddAclRuleResponse rsp = AddAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddAclRuleOutcome(rsp);
+        else
+            return AddAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::AddAclRuleAsync(const AddAclRuleRequest& request, const AddAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::AddAclRuleOutcomeCallable CfwClient::AddAclRuleCallable(const AddAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->AddAclRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::AddEnterpriseSecurityGroupRulesOutcome CfwClient::AddEnterpriseSecurityGroupRules(const AddEnterpriseSecurityGroupRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "AddEnterpriseSecurityGroupRules");
@@ -162,6 +205,49 @@ CfwClient::AddNatAcRuleOutcomeCallable CfwClient::AddNatAcRuleCallable(const Add
         [this, request]()
         {
             return this->AddNatAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::AddVpcAcRuleOutcome CfwClient::AddVpcAcRule(const AddVpcAcRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddVpcAcRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddVpcAcRuleResponse rsp = AddVpcAcRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddVpcAcRuleOutcome(rsp);
+        else
+            return AddVpcAcRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddVpcAcRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::AddVpcAcRuleAsync(const AddVpcAcRuleRequest& request, const AddVpcAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddVpcAcRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::AddVpcAcRuleOutcomeCallable CfwClient::AddVpcAcRuleCallable(const AddVpcAcRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddVpcAcRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->AddVpcAcRule(request);
         }
     );
 
@@ -513,6 +599,49 @@ CfwClient::CreateSecurityGroupRulesOutcomeCallable CfwClient::CreateSecurityGrou
     return task->get_future();
 }
 
+CfwClient::CreateVpcFwGroupOutcome CfwClient::CreateVpcFwGroup(const CreateVpcFwGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVpcFwGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVpcFwGroupResponse rsp = CreateVpcFwGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVpcFwGroupOutcome(rsp);
+        else
+            return CreateVpcFwGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVpcFwGroupOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateVpcFwGroupAsync(const CreateVpcFwGroupRequest& request, const CreateVpcFwGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVpcFwGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateVpcFwGroupOutcomeCallable CfwClient::CreateVpcFwGroupCallable(const CreateVpcFwGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVpcFwGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVpcFwGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DeleteAcRuleOutcome CfwClient::DeleteAcRule(const DeleteAcRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAcRule");
@@ -635,6 +764,49 @@ CfwClient::DeleteAllAccessControlRuleOutcomeCallable CfwClient::DeleteAllAccessC
         [this, request]()
         {
             return this->DeleteAllAccessControlRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DeleteBlockIgnoreRuleListOutcome CfwClient::DeleteBlockIgnoreRuleList(const DeleteBlockIgnoreRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBlockIgnoreRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBlockIgnoreRuleListResponse rsp = DeleteBlockIgnoreRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBlockIgnoreRuleListOutcome(rsp);
+        else
+            return DeleteBlockIgnoreRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBlockIgnoreRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DeleteBlockIgnoreRuleListAsync(const DeleteBlockIgnoreRuleListRequest& request, const DeleteBlockIgnoreRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBlockIgnoreRuleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DeleteBlockIgnoreRuleListOutcomeCallable CfwClient::DeleteBlockIgnoreRuleListCallable(const DeleteBlockIgnoreRuleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBlockIgnoreRuleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBlockIgnoreRuleList(request);
         }
     );
 
@@ -771,6 +943,49 @@ CfwClient::DeleteSecurityGroupRuleOutcomeCallable CfwClient::DeleteSecurityGroup
     return task->get_future();
 }
 
+CfwClient::DeleteVpcFwGroupOutcome CfwClient::DeleteVpcFwGroup(const DeleteVpcFwGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVpcFwGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVpcFwGroupResponse rsp = DeleteVpcFwGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVpcFwGroupOutcome(rsp);
+        else
+            return DeleteVpcFwGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVpcFwGroupOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DeleteVpcFwGroupAsync(const DeleteVpcFwGroupRequest& request, const DeleteVpcFwGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVpcFwGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DeleteVpcFwGroupOutcomeCallable CfwClient::DeleteVpcFwGroupCallable(const DeleteVpcFwGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVpcFwGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVpcFwGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DeleteVpcInstanceOutcome CfwClient::DeleteVpcInstance(const DeleteVpcInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteVpcInstance");
@@ -850,6 +1065,49 @@ CfwClient::DescribeAcListsOutcomeCallable CfwClient::DescribeAcListsCallable(con
         [this, request]()
         {
             return this->DescribeAcLists(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeAclRuleOutcome CfwClient::DescribeAclRule(const DescribeAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAclRuleResponse rsp = DescribeAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAclRuleOutcome(rsp);
+        else
+            return DescribeAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeAclRuleAsync(const DescribeAclRuleRequest& request, const DescribeAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeAclRuleOutcomeCallable CfwClient::DescribeAclRuleCallable(const DescribeAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAclRule(request);
         }
     );
 
@@ -1194,6 +1452,92 @@ CfwClient::DescribeEnterpriseSecurityGroupRuleOutcomeCallable CfwClient::Describ
         [this, request]()
         {
             return this->DescribeEnterpriseSecurityGroupRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeFwEdgeIpsOutcome CfwClient::DescribeFwEdgeIps(const DescribeFwEdgeIpsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFwEdgeIps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFwEdgeIpsResponse rsp = DescribeFwEdgeIpsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFwEdgeIpsOutcome(rsp);
+        else
+            return DescribeFwEdgeIpsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFwEdgeIpsOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeFwEdgeIpsAsync(const DescribeFwEdgeIpsRequest& request, const DescribeFwEdgeIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFwEdgeIps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeFwEdgeIpsOutcomeCallable CfwClient::DescribeFwEdgeIpsCallable(const DescribeFwEdgeIpsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFwEdgeIpsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFwEdgeIps(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeFwGroupInstanceInfoOutcome CfwClient::DescribeFwGroupInstanceInfo(const DescribeFwGroupInstanceInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFwGroupInstanceInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFwGroupInstanceInfoResponse rsp = DescribeFwGroupInstanceInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFwGroupInstanceInfoOutcome(rsp);
+        else
+            return DescribeFwGroupInstanceInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFwGroupInstanceInfoOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeFwGroupInstanceInfoAsync(const DescribeFwGroupInstanceInfoRequest& request, const DescribeFwGroupInstanceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFwGroupInstanceInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeFwGroupInstanceInfoOutcomeCallable CfwClient::DescribeFwGroupInstanceInfoCallable(const DescribeFwGroupInstanceInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFwGroupInstanceInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFwGroupInstanceInfo(request);
         }
     );
 
@@ -2018,6 +2362,92 @@ CfwClient::DescribeUnHandleEventTabListOutcomeCallable CfwClient::DescribeUnHand
     return task->get_future();
 }
 
+CfwClient::DescribeVpcAcRuleOutcome CfwClient::DescribeVpcAcRule(const DescribeVpcAcRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpcAcRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpcAcRuleResponse rsp = DescribeVpcAcRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpcAcRuleOutcome(rsp);
+        else
+            return DescribeVpcAcRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpcAcRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeVpcAcRuleAsync(const DescribeVpcAcRuleRequest& request, const DescribeVpcAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpcAcRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeVpcAcRuleOutcomeCallable CfwClient::DescribeVpcAcRuleCallable(const DescribeVpcAcRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpcAcRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpcAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeVpcFwGroupSwitchOutcome CfwClient::DescribeVpcFwGroupSwitch(const DescribeVpcFwGroupSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpcFwGroupSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpcFwGroupSwitchResponse rsp = DescribeVpcFwGroupSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpcFwGroupSwitchOutcome(rsp);
+        else
+            return DescribeVpcFwGroupSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpcFwGroupSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeVpcFwGroupSwitchAsync(const DescribeVpcFwGroupSwitchRequest& request, const DescribeVpcFwGroupSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpcFwGroupSwitch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeVpcFwGroupSwitchOutcomeCallable CfwClient::DescribeVpcFwGroupSwitchCallable(const DescribeVpcFwGroupSwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpcFwGroupSwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpcFwGroupSwitch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::ExpandCfwVerticalOutcome CfwClient::ExpandCfwVertical(const ExpandCfwVerticalRequest &request)
 {
     auto outcome = MakeRequest(request, "ExpandCfwVertical");
@@ -2097,6 +2527,49 @@ CfwClient::ModifyAcRuleOutcomeCallable CfwClient::ModifyAcRuleCallable(const Mod
         [this, request]()
         {
             return this->ModifyAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::ModifyAclRuleOutcome CfwClient::ModifyAclRule(const ModifyAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAclRuleResponse rsp = ModifyAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAclRuleOutcome(rsp);
+        else
+            return ModifyAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyAclRuleAsync(const ModifyAclRuleRequest& request, const ModifyAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyAclRuleOutcomeCallable CfwClient::ModifyAclRuleCallable(const ModifyAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAclRule(request);
         }
     );
 
@@ -2319,6 +2792,49 @@ CfwClient::ModifyBlockIgnoreListOutcomeCallable CfwClient::ModifyBlockIgnoreList
     return task->get_future();
 }
 
+CfwClient::ModifyBlockIgnoreRuleOutcome CfwClient::ModifyBlockIgnoreRule(const ModifyBlockIgnoreRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBlockIgnoreRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBlockIgnoreRuleResponse rsp = ModifyBlockIgnoreRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBlockIgnoreRuleOutcome(rsp);
+        else
+            return ModifyBlockIgnoreRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBlockIgnoreRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyBlockIgnoreRuleAsync(const ModifyBlockIgnoreRuleRequest& request, const ModifyBlockIgnoreRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBlockIgnoreRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyBlockIgnoreRuleOutcomeCallable CfwClient::ModifyBlockIgnoreRuleCallable(const ModifyBlockIgnoreRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBlockIgnoreRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBlockIgnoreRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::ModifyBlockTopOutcome CfwClient::ModifyBlockTop(const ModifyBlockTopRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBlockTop");
@@ -2405,6 +2921,49 @@ CfwClient::ModifyEWRuleStatusOutcomeCallable CfwClient::ModifyEWRuleStatusCallab
     return task->get_future();
 }
 
+CfwClient::ModifyEdgeIpSwitchOutcome CfwClient::ModifyEdgeIpSwitch(const ModifyEdgeIpSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEdgeIpSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEdgeIpSwitchResponse rsp = ModifyEdgeIpSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEdgeIpSwitchOutcome(rsp);
+        else
+            return ModifyEdgeIpSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEdgeIpSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyEdgeIpSwitchAsync(const ModifyEdgeIpSwitchRequest& request, const ModifyEdgeIpSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEdgeIpSwitch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyEdgeIpSwitchOutcomeCallable CfwClient::ModifyEdgeIpSwitchCallable(const ModifyEdgeIpSwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEdgeIpSwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEdgeIpSwitch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::ModifyEnterpriseSecurityDispatchStatusOutcome CfwClient::ModifyEnterpriseSecurityDispatchStatus(const ModifyEnterpriseSecurityDispatchStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEnterpriseSecurityDispatchStatus");
@@ -2484,6 +3043,49 @@ CfwClient::ModifyEnterpriseSecurityGroupRuleOutcomeCallable CfwClient::ModifyEnt
         [this, request]()
         {
             return this->ModifyEnterpriseSecurityGroupRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::ModifyFwGroupSwitchOutcome CfwClient::ModifyFwGroupSwitch(const ModifyFwGroupSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFwGroupSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFwGroupSwitchResponse rsp = ModifyFwGroupSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFwGroupSwitchOutcome(rsp);
+        else
+            return ModifyFwGroupSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFwGroupSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyFwGroupSwitchAsync(const ModifyFwGroupSwitchRequest& request, const ModifyFwGroupSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFwGroupSwitch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyFwGroupSwitchOutcomeCallable CfwClient::ModifyFwGroupSwitchCallable(const ModifyFwGroupSwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFwGroupSwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFwGroupSwitch(request);
         }
     );
 
@@ -2964,6 +3566,49 @@ CfwClient::ModifySecurityGroupSequenceRulesOutcomeCallable CfwClient::ModifySecu
     return task->get_future();
 }
 
+CfwClient::ModifySequenceAclRulesOutcome CfwClient::ModifySequenceAclRules(const ModifySequenceAclRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySequenceAclRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySequenceAclRulesResponse rsp = ModifySequenceAclRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySequenceAclRulesOutcome(rsp);
+        else
+            return ModifySequenceAclRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySequenceAclRulesOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifySequenceAclRulesAsync(const ModifySequenceAclRulesRequest& request, const ModifySequenceAclRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySequenceAclRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifySequenceAclRulesOutcomeCallable CfwClient::ModifySequenceAclRulesCallable(const ModifySequenceAclRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySequenceAclRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySequenceAclRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::ModifySequenceRulesOutcome CfwClient::ModifySequenceRules(const ModifySequenceRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySequenceRules");
@@ -3093,6 +3738,135 @@ CfwClient::ModifyTableStatusOutcomeCallable CfwClient::ModifyTableStatusCallable
     return task->get_future();
 }
 
+CfwClient::ModifyVpcAcRuleOutcome CfwClient::ModifyVpcAcRule(const ModifyVpcAcRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVpcAcRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVpcAcRuleResponse rsp = ModifyVpcAcRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVpcAcRuleOutcome(rsp);
+        else
+            return ModifyVpcAcRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVpcAcRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyVpcAcRuleAsync(const ModifyVpcAcRuleRequest& request, const ModifyVpcAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVpcAcRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyVpcAcRuleOutcomeCallable CfwClient::ModifyVpcAcRuleCallable(const ModifyVpcAcRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVpcAcRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVpcAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::ModifyVpcFwGroupOutcome CfwClient::ModifyVpcFwGroup(const ModifyVpcFwGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVpcFwGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVpcFwGroupResponse rsp = ModifyVpcFwGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVpcFwGroupOutcome(rsp);
+        else
+            return ModifyVpcFwGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVpcFwGroupOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyVpcFwGroupAsync(const ModifyVpcFwGroupRequest& request, const ModifyVpcFwGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVpcFwGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyVpcFwGroupOutcomeCallable CfwClient::ModifyVpcFwGroupCallable(const ModifyVpcFwGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVpcFwGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVpcFwGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::ModifyVpcFwSequenceRulesOutcome CfwClient::ModifyVpcFwSequenceRules(const ModifyVpcFwSequenceRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVpcFwSequenceRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVpcFwSequenceRulesResponse rsp = ModifyVpcFwSequenceRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVpcFwSequenceRulesOutcome(rsp);
+        else
+            return ModifyVpcFwSequenceRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVpcFwSequenceRulesOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyVpcFwSequenceRulesAsync(const ModifyVpcFwSequenceRulesRequest& request, const ModifyVpcFwSequenceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVpcFwSequenceRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyVpcFwSequenceRulesOutcomeCallable CfwClient::ModifyVpcFwSequenceRulesCallable(const ModifyVpcFwSequenceRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVpcFwSequenceRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVpcFwSequenceRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::RemoveAcRuleOutcome CfwClient::RemoveAcRule(const RemoveAcRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveAcRule");
@@ -3129,6 +3903,49 @@ CfwClient::RemoveAcRuleOutcomeCallable CfwClient::RemoveAcRuleCallable(const Rem
         [this, request]()
         {
             return this->RemoveAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::RemoveAclRuleOutcome CfwClient::RemoveAclRule(const RemoveAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveAclRuleResponse rsp = RemoveAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveAclRuleOutcome(rsp);
+        else
+            return RemoveAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::RemoveAclRuleAsync(const RemoveAclRuleRequest& request, const RemoveAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::RemoveAclRuleOutcomeCallable CfwClient::RemoveAclRuleCallable(const RemoveAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveAclRule(request);
         }
     );
 
@@ -3215,6 +4032,49 @@ CfwClient::RemoveNatAcRuleOutcomeCallable CfwClient::RemoveNatAcRuleCallable(con
         [this, request]()
         {
             return this->RemoveNatAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::RemoveVpcAcRuleOutcome CfwClient::RemoveVpcAcRule(const RemoveVpcAcRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveVpcAcRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveVpcAcRuleResponse rsp = RemoveVpcAcRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveVpcAcRuleOutcome(rsp);
+        else
+            return RemoveVpcAcRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveVpcAcRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::RemoveVpcAcRuleAsync(const RemoveVpcAcRuleRequest& request, const RemoveVpcAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveVpcAcRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::RemoveVpcAcRuleOutcomeCallable CfwClient::RemoveVpcAcRuleCallable(const RemoveVpcAcRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveVpcAcRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveVpcAcRule(request);
         }
     );
 

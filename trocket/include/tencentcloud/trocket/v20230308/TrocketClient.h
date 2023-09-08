@@ -23,10 +23,18 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h>
+#include <tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteInstanceRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeInstanceRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeInstanceResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyInstanceRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyInstanceResponse.h>
 
 
 namespace TencentCloud
@@ -41,14 +49,53 @@ namespace TencentCloud
                 TrocketClient(const Credential &credential, const std::string &region);
                 TrocketClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
+                typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
+                typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
+                typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceListResponse> DescribeInstanceListOutcome;
                 typedef std::future<DescribeInstanceListOutcome> DescribeInstanceListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeInstanceListRequest&, DescribeInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicListResponse> DescribeTopicListOutcome;
                 typedef std::future<DescribeTopicListOutcome> DescribeTopicListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeTopicListRequest&, DescribeTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
+                typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
 
 
+
+                /**
+                 *购买新实例
+                 * @param req CreateInstanceRequest
+                 * @return CreateInstanceOutcome
+                 */
+                CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest &request);
+                void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
+
+                /**
+                 *删除实例
+                 * @param req DeleteInstanceRequest
+                 * @return DeleteInstanceOutcome
+                 */
+                DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
+                void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
+
+                /**
+                 *查询实例信息
+                 * @param req DescribeInstanceRequest
+                 * @return DescribeInstanceOutcome
+                 */
+                DescribeInstanceOutcome DescribeInstance(const Model::DescribeInstanceRequest &request);
+                void DescribeInstanceAsync(const Model::DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceOutcomeCallable DescribeInstanceCallable(const Model::DescribeInstanceRequest& request);
 
                 /**
                  *获取实例列表，Filters参数使用说明如下：
@@ -76,6 +123,15 @@ namespace TencentCloud
                 DescribeTopicListOutcome DescribeTopicList(const Model::DescribeTopicListRequest &request);
                 void DescribeTopicListAsync(const Model::DescribeTopicListRequest& request, const DescribeTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicListOutcomeCallable DescribeTopicListCallable(const Model::DescribeTopicListRequest& request);
+
+                /**
+                 *修改实例属性
+                 * @param req ModifyInstanceRequest
+                 * @return ModifyInstanceOutcome
+                 */
+                ModifyInstanceOutcome ModifyInstance(const Model::ModifyInstanceRequest &request);
+                void ModifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
             };
         }

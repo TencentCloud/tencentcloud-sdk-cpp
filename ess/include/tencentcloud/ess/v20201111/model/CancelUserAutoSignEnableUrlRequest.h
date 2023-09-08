@@ -71,27 +71,27 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取企业开通用户自动签场景，例如电子处方。
-<ul>
-<li>E_PRESCRIPTION_AUTO_SIGN : 电子处方</li>
-</ul>
-                     * @return SceneKey 企业开通用户自动签场景，例如电子处方。
-<ul>
-<li>E_PRESCRIPTION_AUTO_SIGN : 电子处方</li>
-</ul>
+                     * 获取自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li></ul>
+
+注: `现在仅支持电子处方场景`
+                     * @return SceneKey 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li></ul>
+
+注: `现在仅支持电子处方场景`
                      * 
                      */
                     std::string GetSceneKey() const;
 
                     /**
-                     * 设置企业开通用户自动签场景，例如电子处方。
-<ul>
-<li>E_PRESCRIPTION_AUTO_SIGN : 电子处方</li>
-</ul>
-                     * @param _sceneKey 企业开通用户自动签场景，例如电子处方。
-<ul>
-<li>E_PRESCRIPTION_AUTO_SIGN : 电子处方</li>
-</ul>
+                     * 设置自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li></ul>
+
+注: `现在仅支持电子处方场景`
+                     * @param _sceneKey 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li></ul>
+
+注: `现在仅支持电子处方场景`
                      * 
                      */
                     void SetSceneKey(const std::string& _sceneKey);
@@ -104,18 +104,18 @@ namespace TencentCloud
                     bool SceneKeyHasBeenSet() const;
 
                     /**
-                     * 获取指定撤销链接的用户指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
+                     * 获取预撤销链接的用户信息，包含姓名、证件类型、证件号码等信息。
 
-                     * @return UserInfo 指定撤销链接的用户指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
+                     * @return UserInfo 预撤销链接的用户信息，包含姓名、证件类型、证件号码等信息。
 
                      * 
                      */
                     UserThreeFactor GetUserInfo() const;
 
                     /**
-                     * 设置指定撤销链接的用户指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
+                     * 设置预撤销链接的用户信息，包含姓名、证件类型、证件号码等信息。
 
-                     * @param _userInfo 指定撤销链接的用户指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
+                     * @param _userInfo 预撤销链接的用户信息，包含姓名、证件类型、证件号码等信息。
 
                      * 
                      */
@@ -163,16 +163,16 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 企业开通用户自动签场景，例如电子处方。
-<ul>
-<li>E_PRESCRIPTION_AUTO_SIGN : 电子处方</li>
-</ul>
+                     * 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li></ul>
+
+注: `现在仅支持电子处方场景`
                      */
                     std::string m_sceneKey;
                     bool m_sceneKeyHasBeenSet;
 
                     /**
-                     * 指定撤销链接的用户指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
+                     * 预撤销链接的用户信息，包含姓名、证件类型、证件号码等信息。
 
                      */
                     UserThreeFactor m_userInfo;

@@ -37,6 +37,8 @@
 #include <tencentcloud/cdwch/v20200915/model/DescribeBackUpJobDetailResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeBackUpTablesRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeBackUpTablesResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsRequest.h>
@@ -108,6 +110,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackUpScheduleResponse> DescribeBackUpScheduleOutcome;
                 typedef std::future<DescribeBackUpScheduleOutcome> DescribeBackUpScheduleOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeBackUpScheduleRequest&, DescribeBackUpScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackUpScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackUpTablesResponse> DescribeBackUpTablesOutcome;
+                typedef std::future<DescribeBackUpTablesOutcome> DescribeBackUpTablesOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeBackUpTablesRequest&, DescribeBackUpTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackUpTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCkSqlApisResponse> DescribeCkSqlApisOutcome;
                 typedef std::future<DescribeCkSqlApisOutcome> DescribeCkSqlApisOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeCkSqlApisRequest&, DescribeCkSqlApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCkSqlApisAsyncHandler;
@@ -227,6 +232,15 @@ namespace TencentCloud
                 DescribeBackUpScheduleOutcome DescribeBackUpSchedule(const Model::DescribeBackUpScheduleRequest &request);
                 void DescribeBackUpScheduleAsync(const Model::DescribeBackUpScheduleRequest& request, const DescribeBackUpScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackUpScheduleOutcomeCallable DescribeBackUpScheduleCallable(const Model::DescribeBackUpScheduleRequest& request);
+
+                /**
+                 *获取可备份表信息
+                 * @param req DescribeBackUpTablesRequest
+                 * @return DescribeBackUpTablesOutcome
+                 */
+                DescribeBackUpTablesOutcome DescribeBackUpTables(const Model::DescribeBackUpTablesRequest &request);
+                void DescribeBackUpTablesAsync(const Model::DescribeBackUpTablesRequest& request, const DescribeBackUpTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackUpTablesOutcomeCallable DescribeBackUpTablesCallable(const Model::DescribeBackUpTablesRequest& request);
 
                 /**
                  *查询集群用户、集群表，数据库等相关信息

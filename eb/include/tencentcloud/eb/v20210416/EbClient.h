@@ -51,6 +51,8 @@
 #include <tencentcloud/eb/v20210416/model/DescribeLogTagValueResponse.h>
 #include <tencentcloud/eb/v20210416/model/GetEventBusRequest.h>
 #include <tencentcloud/eb/v20210416/model/GetEventBusResponse.h>
+#include <tencentcloud/eb/v20210416/model/GetPlatformEventTemplateRequest.h>
+#include <tencentcloud/eb/v20210416/model/GetPlatformEventTemplateResponse.h>
 #include <tencentcloud/eb/v20210416/model/GetRuleRequest.h>
 #include <tencentcloud/eb/v20210416/model/GetRuleResponse.h>
 #include <tencentcloud/eb/v20210416/model/GetTransformationRequest.h>
@@ -59,6 +61,12 @@
 #include <tencentcloud/eb/v20210416/model/ListConnectionsResponse.h>
 #include <tencentcloud/eb/v20210416/model/ListEventBusesRequest.h>
 #include <tencentcloud/eb/v20210416/model/ListEventBusesResponse.h>
+#include <tencentcloud/eb/v20210416/model/ListPlatformEventNamesRequest.h>
+#include <tencentcloud/eb/v20210416/model/ListPlatformEventNamesResponse.h>
+#include <tencentcloud/eb/v20210416/model/ListPlatformEventPatternsRequest.h>
+#include <tencentcloud/eb/v20210416/model/ListPlatformEventPatternsResponse.h>
+#include <tencentcloud/eb/v20210416/model/ListPlatformProductsRequest.h>
+#include <tencentcloud/eb/v20210416/model/ListPlatformProductsResponse.h>
 #include <tencentcloud/eb/v20210416/model/ListRulesRequest.h>
 #include <tencentcloud/eb/v20210416/model/ListRulesResponse.h>
 #include <tencentcloud/eb/v20210416/model/ListTargetsRequest.h>
@@ -135,6 +143,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetEventBusResponse> GetEventBusOutcome;
                 typedef std::future<GetEventBusOutcome> GetEventBusOutcomeCallable;
                 typedef std::function<void(const EbClient*, const Model::GetEventBusRequest&, GetEventBusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEventBusAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPlatformEventTemplateResponse> GetPlatformEventTemplateOutcome;
+                typedef std::future<GetPlatformEventTemplateOutcome> GetPlatformEventTemplateOutcomeCallable;
+                typedef std::function<void(const EbClient*, const Model::GetPlatformEventTemplateRequest&, GetPlatformEventTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPlatformEventTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRuleResponse> GetRuleOutcome;
                 typedef std::future<GetRuleOutcome> GetRuleOutcomeCallable;
                 typedef std::function<void(const EbClient*, const Model::GetRuleRequest&, GetRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRuleAsyncHandler;
@@ -147,6 +158,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListEventBusesResponse> ListEventBusesOutcome;
                 typedef std::future<ListEventBusesOutcome> ListEventBusesOutcomeCallable;
                 typedef std::function<void(const EbClient*, const Model::ListEventBusesRequest&, ListEventBusesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEventBusesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListPlatformEventNamesResponse> ListPlatformEventNamesOutcome;
+                typedef std::future<ListPlatformEventNamesOutcome> ListPlatformEventNamesOutcomeCallable;
+                typedef std::function<void(const EbClient*, const Model::ListPlatformEventNamesRequest&, ListPlatformEventNamesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPlatformEventNamesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListPlatformEventPatternsResponse> ListPlatformEventPatternsOutcome;
+                typedef std::future<ListPlatformEventPatternsOutcome> ListPlatformEventPatternsOutcomeCallable;
+                typedef std::function<void(const EbClient*, const Model::ListPlatformEventPatternsRequest&, ListPlatformEventPatternsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPlatformEventPatternsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListPlatformProductsResponse> ListPlatformProductsOutcome;
+                typedef std::future<ListPlatformProductsOutcome> ListPlatformProductsOutcomeCallable;
+                typedef std::function<void(const EbClient*, const Model::ListPlatformProductsRequest&, ListPlatformProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPlatformProductsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListRulesResponse> ListRulesOutcome;
                 typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
                 typedef std::function<void(const EbClient*, const Model::ListRulesRequest&, ListRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRulesAsyncHandler;
@@ -307,6 +327,15 @@ namespace TencentCloud
                 GetEventBusOutcomeCallable GetEventBusCallable(const Model::GetEventBusRequest& request);
 
                 /**
+                 *获取平台产品事件模板
+                 * @param req GetPlatformEventTemplateRequest
+                 * @return GetPlatformEventTemplateOutcome
+                 */
+                GetPlatformEventTemplateOutcome GetPlatformEventTemplate(const Model::GetPlatformEventTemplateRequest &request);
+                void GetPlatformEventTemplateAsync(const Model::GetPlatformEventTemplateRequest& request, const GetPlatformEventTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPlatformEventTemplateOutcomeCallable GetPlatformEventTemplateCallable(const Model::GetPlatformEventTemplateRequest& request);
+
+                /**
                  *获取事件规则详情
                  * @param req GetRuleRequest
                  * @return GetRuleOutcome
@@ -341,6 +370,33 @@ namespace TencentCloud
                 ListEventBusesOutcome ListEventBuses(const Model::ListEventBusesRequest &request);
                 void ListEventBusesAsync(const Model::ListEventBusesRequest& request, const ListEventBusesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListEventBusesOutcomeCallable ListEventBusesCallable(const Model::ListEventBusesRequest& request);
+
+                /**
+                 *获取平台产品事件名称
+                 * @param req ListPlatformEventNamesRequest
+                 * @return ListPlatformEventNamesOutcome
+                 */
+                ListPlatformEventNamesOutcome ListPlatformEventNames(const Model::ListPlatformEventNamesRequest &request);
+                void ListPlatformEventNamesAsync(const Model::ListPlatformEventNamesRequest& request, const ListPlatformEventNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPlatformEventNamesOutcomeCallable ListPlatformEventNamesCallable(const Model::ListPlatformEventNamesRequest& request);
+
+                /**
+                 *获取平台产品事件匹配规则
+                 * @param req ListPlatformEventPatternsRequest
+                 * @return ListPlatformEventPatternsOutcome
+                 */
+                ListPlatformEventPatternsOutcome ListPlatformEventPatterns(const Model::ListPlatformEventPatternsRequest &request);
+                void ListPlatformEventPatternsAsync(const Model::ListPlatformEventPatternsRequest& request, const ListPlatformEventPatternsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPlatformEventPatternsOutcomeCallable ListPlatformEventPatternsCallable(const Model::ListPlatformEventPatternsRequest& request);
+
+                /**
+                 *获取平台产品列表
+                 * @param req ListPlatformProductsRequest
+                 * @return ListPlatformProductsOutcome
+                 */
+                ListPlatformProductsOutcome ListPlatformProducts(const Model::ListPlatformProductsRequest &request);
+                void ListPlatformProductsAsync(const Model::ListPlatformProductsRequest& request, const ListPlatformProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPlatformProductsOutcomeCallable ListPlatformProductsCallable(const Model::ListPlatformProductsRequest& request);
 
                 /**
                  *获取事件规则列表

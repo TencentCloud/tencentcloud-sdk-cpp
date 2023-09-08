@@ -24,7 +24,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 CreateAddressTemplateResponse::CreateAddressTemplateResponse() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_uuidHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateAddressTemplateResponse::Deserialize(const string &pay
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Uuid") && !rsp["Uuid"].IsNull())
+    {
+        if (!rsp["Uuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Uuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uuid = string(rsp["Uuid"].GetString());
+        m_uuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateAddressTemplateResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_uuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ int64_t CreateAddressTemplateResponse::GetStatus() const
 bool CreateAddressTemplateResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string CreateAddressTemplateResponse::GetUuid() const
+{
+    return m_uuid;
+}
+
+bool CreateAddressTemplateResponse::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
 }
 
 

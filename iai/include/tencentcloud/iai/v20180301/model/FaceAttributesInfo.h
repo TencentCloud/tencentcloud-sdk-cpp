@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool AgeHasBeenSet() const;
 
                     /**
-                     * 获取微笑[0(normal，正常)~50(smile，微笑)~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @return Expression 微笑[0(normal，正常)~50(smile，微笑)~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 获取微笑[0(normal，正常))~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @return Expression 微笑[0(normal，正常))~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     int64_t GetExpression() const;
 
                     /**
-                     * 设置微笑[0(normal，正常)~50(smile，微笑)~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param _expression 微笑[0(normal，正常)~50(smile，微笑)~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 设置微笑[0(normal，正常))~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @param _expression 微笑[0(normal，正常))~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     void SetExpression(const int64_t& _expression);
@@ -343,7 +343,7 @@ namespace TencentCloud
                     bool m_ageHasBeenSet;
 
                     /**
-                     * 微笑[0(normal，正常)~50(smile，微笑)~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 微笑[0(normal，正常))~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      */
                     int64_t m_expression;
                     bool m_expressionHasBeenSet;

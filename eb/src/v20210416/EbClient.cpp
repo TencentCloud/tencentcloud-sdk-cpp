@@ -642,6 +642,49 @@ EbClient::GetEventBusOutcomeCallable EbClient::GetEventBusCallable(const GetEven
     return task->get_future();
 }
 
+EbClient::GetPlatformEventTemplateOutcome EbClient::GetPlatformEventTemplate(const GetPlatformEventTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPlatformEventTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPlatformEventTemplateResponse rsp = GetPlatformEventTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPlatformEventTemplateOutcome(rsp);
+        else
+            return GetPlatformEventTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPlatformEventTemplateOutcome(outcome.GetError());
+    }
+}
+
+void EbClient::GetPlatformEventTemplateAsync(const GetPlatformEventTemplateRequest& request, const GetPlatformEventTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPlatformEventTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EbClient::GetPlatformEventTemplateOutcomeCallable EbClient::GetPlatformEventTemplateCallable(const GetPlatformEventTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPlatformEventTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPlatformEventTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EbClient::GetRuleOutcome EbClient::GetRule(const GetRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "GetRule");
@@ -807,6 +850,135 @@ EbClient::ListEventBusesOutcomeCallable EbClient::ListEventBusesCallable(const L
         [this, request]()
         {
             return this->ListEventBuses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EbClient::ListPlatformEventNamesOutcome EbClient::ListPlatformEventNames(const ListPlatformEventNamesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListPlatformEventNames");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListPlatformEventNamesResponse rsp = ListPlatformEventNamesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListPlatformEventNamesOutcome(rsp);
+        else
+            return ListPlatformEventNamesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListPlatformEventNamesOutcome(outcome.GetError());
+    }
+}
+
+void EbClient::ListPlatformEventNamesAsync(const ListPlatformEventNamesRequest& request, const ListPlatformEventNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListPlatformEventNames(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EbClient::ListPlatformEventNamesOutcomeCallable EbClient::ListPlatformEventNamesCallable(const ListPlatformEventNamesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListPlatformEventNamesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListPlatformEventNames(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EbClient::ListPlatformEventPatternsOutcome EbClient::ListPlatformEventPatterns(const ListPlatformEventPatternsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListPlatformEventPatterns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListPlatformEventPatternsResponse rsp = ListPlatformEventPatternsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListPlatformEventPatternsOutcome(rsp);
+        else
+            return ListPlatformEventPatternsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListPlatformEventPatternsOutcome(outcome.GetError());
+    }
+}
+
+void EbClient::ListPlatformEventPatternsAsync(const ListPlatformEventPatternsRequest& request, const ListPlatformEventPatternsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListPlatformEventPatterns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EbClient::ListPlatformEventPatternsOutcomeCallable EbClient::ListPlatformEventPatternsCallable(const ListPlatformEventPatternsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListPlatformEventPatternsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListPlatformEventPatterns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EbClient::ListPlatformProductsOutcome EbClient::ListPlatformProducts(const ListPlatformProductsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListPlatformProducts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListPlatformProductsResponse rsp = ListPlatformProductsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListPlatformProductsOutcome(rsp);
+        else
+            return ListPlatformProductsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListPlatformProductsOutcome(outcome.GetError());
+    }
+}
+
+void EbClient::ListPlatformProductsAsync(const ListPlatformProductsRequest& request, const ListPlatformProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListPlatformProducts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EbClient::ListPlatformProductsOutcomeCallable EbClient::ListPlatformProductsCallable(const ListPlatformProductsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListPlatformProductsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListPlatformProducts(request);
         }
     );
 

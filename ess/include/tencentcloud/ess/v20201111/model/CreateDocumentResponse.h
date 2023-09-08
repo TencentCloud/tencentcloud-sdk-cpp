@@ -44,8 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署流程电子文档ID
-                     * @return DocumentId 签署流程电子文档ID
+                     * 获取合同流程的底层电子文档ID，为32位字符串。
+
+注:
+后续需用同样的FlowId再次调用<a href="https://qian.tencent.com/developers/companyApis/startFlows/StartFlow" target="_blank">发起签署流程</a>，合同才能进入签署环节
+                     * @return DocumentId 合同流程的底层电子文档ID，为32位字符串。
+
+注:
+后续需用同样的FlowId再次调用<a href="https://qian.tencent.com/developers/companyApis/startFlows/StartFlow" target="_blank">发起签署流程</a>，合同才能进入签署环节
                      * 
                      */
                     std::string GetDocumentId() const;
@@ -58,9 +64,13 @@ namespace TencentCloud
                     bool DocumentIdHasBeenSet() const;
 
                     /**
-                     * 获取签署流程文件的预览地址, 5分钟内有效。仅当NeedPreview为true 时返回
+                     * 获取合同预览链接URL。
+
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PreviewFileUrl 签署流程文件的预览地址, 5分钟内有效。仅当NeedPreview为true 时返回
+                     * @return PreviewFileUrl 合同预览链接URL。
+
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,13 +86,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署流程电子文档ID
+                     * 合同流程的底层电子文档ID，为32位字符串。
+
+注:
+后续需用同样的FlowId再次调用<a href="https://qian.tencent.com/developers/companyApis/startFlows/StartFlow" target="_blank">发起签署流程</a>，合同才能进入签署环节
                      */
                     std::string m_documentId;
                     bool m_documentIdHasBeenSet;
 
                     /**
-                     * 签署流程文件的预览地址, 5分钟内有效。仅当NeedPreview为true 时返回
+                     * 合同预览链接URL。
+
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewFileUrl;

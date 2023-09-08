@@ -67,15 +67,19 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取签署流程编号,由CreateFlow接口返回
-                     * @return FlowId 签署流程编号,由CreateFlow接口返回
+                     * 获取合同流程ID，为32位字符串。
+此接口的合同流程ID需要由<a href="https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow" target="_blank">创建签署流程</a>接口创建得到。
+                     * @return FlowId 合同流程ID，为32位字符串。
+此接口的合同流程ID需要由<a href="https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow" target="_blank">创建签署流程</a>接口创建得到。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置签署流程编号,由CreateFlow接口返回
-                     * @param _flowId 签署流程编号,由CreateFlow接口返回
+                     * 设置合同流程ID，为32位字符串。
+此接口的合同流程ID需要由<a href="https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow" target="_blank">创建签署流程</a>接口创建得到。
+                     * @param _flowId 合同流程ID，为32位字符串。
+此接口的合同流程ID需要由<a href="https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow" target="_blank">创建签署流程</a>接口创建得到。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -88,15 +92,19 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取用户上传的模板ID
-                     * @return TemplateId 用户上传的模板ID
+                     * 获取用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
+                     * @return TemplateId 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置用户上传的模板ID
-                     * @param _templateId 用户上传的模板ID
+                     * 设置用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
+                     * @param _templateId 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -130,15 +138,15 @@ namespace TencentCloud
                     bool FileNamesHasBeenSet() const;
 
                     /**
-                     * 获取内容控件信息数组
-                     * @return FormFields 内容控件信息数组
+                     * 获取电子文档的填写控件的填充内容。具体方式可以参考<a href="https://qian.tencent.com/developers/companyApis/dataTypes/#formfield" target="_blank">FormField</a>结构体的定义。
+                     * @return FormFields 电子文档的填写控件的填充内容。具体方式可以参考<a href="https://qian.tencent.com/developers/companyApis/dataTypes/#formfield" target="_blank">FormField</a>结构体的定义。
                      * 
                      */
                     std::vector<FormField> GetFormFields() const;
 
                     /**
-                     * 设置内容控件信息数组
-                     * @param _formFields 内容控件信息数组
+                     * 设置电子文档的填写控件的填充内容。具体方式可以参考<a href="https://qian.tencent.com/developers/companyApis/dataTypes/#formfield" target="_blank">FormField</a>结构体的定义。
+                     * @param _formFields 电子文档的填写控件的填充内容。具体方式可以参考<a href="https://qian.tencent.com/developers/companyApis/dataTypes/#formfield" target="_blank">FormField</a>结构体的定义。
                      * 
                      */
                     void SetFormFields(const std::vector<FormField>& _formFields);
@@ -151,19 +159,23 @@ namespace TencentCloud
                     bool FormFieldsHasBeenSet() const;
 
                     /**
-                     * 获取是否需要生成预览文件 默认不生成；
-预览链接有效期300秒；
-                     * @return NeedPreview 是否需要生成预览文件 默认不生成；
-预览链接有效期300秒；
+                     * 获取是否为预览模式，取值如下：
+<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>
+<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     * @return NeedPreview 是否为预览模式，取值如下：
+<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>
+<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
                      * 
                      */
                     bool GetNeedPreview() const;
 
                     /**
-                     * 设置是否需要生成预览文件 默认不生成；
-预览链接有效期300秒；
-                     * @param _needPreview 是否需要生成预览文件 默认不生成；
-预览链接有效期300秒；
+                     * 设置是否为预览模式，取值如下：
+<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>
+<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     * @param _needPreview 是否为预览模式，取值如下：
+<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>
+<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
                      * 
                      */
                     void SetNeedPreview(const bool& _needPreview);
@@ -176,15 +188,31 @@ namespace TencentCloud
                     bool NeedPreviewHasBeenSet() const;
 
                     /**
-                     * 获取预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
-                     * @return PreviewType 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
+                     * 获取预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     * @return PreviewType 预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
                      * 
                      */
                     int64_t GetPreviewType() const;
 
                     /**
-                     * 设置预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
-                     * @param _previewType 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
+                     * 设置预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     * @param _previewType 预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
                      * 
                      */
                     void SetPreviewType(const int64_t& _previewType);
@@ -197,15 +225,19 @@ namespace TencentCloud
                     bool PreviewTypeHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -218,15 +250,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取客户端Token，保持接口幂等性,最大长度64个字符
-                     * @return ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 获取已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符
+                     * @return ClientToken 已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置客户端Token，保持接口幂等性,最大长度64个字符
-                     * @param _clientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 设置已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符
+                     * @param _clientToken 已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -247,13 +279,15 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 签署流程编号,由CreateFlow接口返回
+                     * 合同流程ID，为32位字符串。
+此接口的合同流程ID需要由<a href="https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow" target="_blank">创建签署流程</a>接口创建得到。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 用户上传的模板ID
+                     * 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -265,32 +299,38 @@ namespace TencentCloud
                     bool m_fileNamesHasBeenSet;
 
                     /**
-                     * 内容控件信息数组
+                     * 电子文档的填写控件的填充内容。具体方式可以参考<a href="https://qian.tencent.com/developers/companyApis/dataTypes/#formfield" target="_blank">FormField</a>结构体的定义。
                      */
                     std::vector<FormField> m_formFields;
                     bool m_formFieldsHasBeenSet;
 
                     /**
-                     * 是否需要生成预览文件 默认不生成；
-预览链接有效期300秒；
+                     * 是否为预览模式，取值如下：
+<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>
+<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
                      */
                     bool m_needPreview;
                     bool m_needPreviewHasBeenSet;
 
                     /**
-                     * 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
+                     * 预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
                      */
                     int64_t m_previewType;
                     bool m_previewTypeHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;

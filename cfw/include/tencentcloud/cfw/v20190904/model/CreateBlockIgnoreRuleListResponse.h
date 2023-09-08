@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cfw/v20190904/model/IocListData.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取成功返回
+                     * @return List 成功返回
+                     * 
+                     */
+                    std::vector<IocListData> GetList() const;
+
+                    /**
+                     * 判断参数 List 是否已赋值
+                     * @return List 是否已赋值
+                     * 
+                     */
+                    bool ListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 成功返回
+                     */
+                    std::vector<IocListData> m_list;
+                    bool m_listHasBeenSet;
 
                 };
             }

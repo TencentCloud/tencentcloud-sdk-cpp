@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
-CreateBlockIgnoreRuleListResponse::CreateBlockIgnoreRuleListResponse()
+CreateBlockIgnoreRuleListResponse::CreateBlockIgnoreRuleListResponse() :
+    m_listHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome CreateBlockIgnoreRuleListResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("List") && !rsp["List"].IsNull())
+    {
+        if (!rsp["List"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["List"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IocListData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_list.push_back(item);
+        }
+        m_listHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string CreateBlockIgnoreRuleListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_listHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "List";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string CreateBlockIgnoreRuleListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<IocListData> CreateBlockIgnoreRuleListResponse::GetList() const
+{
+    return m_list;
+}
+
+bool CreateBlockIgnoreRuleListResponse::ListHasBeenSet() const
+{
+    return m_listHasBeenSet;
+}
 
 

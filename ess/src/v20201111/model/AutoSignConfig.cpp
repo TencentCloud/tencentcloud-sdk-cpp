@@ -22,10 +22,10 @@ using namespace std;
 
 AutoSignConfig::AutoSignConfig() :
     m_userInfoHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false),
     m_certInfoCallbackHasBeenSet(false),
     m_userDefineSealHasBeenSet(false),
     m_sealImgCallbackHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false),
     m_verifyChannelsHasBeenSet(false),
     m_licenseTypeHasBeenSet(false)
 {
@@ -51,16 +51,6 @@ CoreInternalOutcome AutoSignConfig::Deserialize(const rapidjson::Value &value)
         }
 
         m_userInfoHasBeenSet = true;
-    }
-
-    if (value.HasMember("CallbackUrl") && !value["CallbackUrl"].IsNull())
-    {
-        if (!value["CallbackUrl"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AutoSignConfig.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_callbackUrl = string(value["CallbackUrl"].GetString());
-        m_callbackUrlHasBeenSet = true;
     }
 
     if (value.HasMember("CertInfoCallback") && !value["CertInfoCallback"].IsNull())
@@ -91,6 +81,16 @@ CoreInternalOutcome AutoSignConfig::Deserialize(const rapidjson::Value &value)
         }
         m_sealImgCallback = value["SealImgCallback"].GetBool();
         m_sealImgCallbackHasBeenSet = true;
+    }
+
+    if (value.HasMember("CallbackUrl") && !value["CallbackUrl"].IsNull())
+    {
+        if (!value["CallbackUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoSignConfig.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackUrl = string(value["CallbackUrl"].GetString());
+        m_callbackUrlHasBeenSet = true;
     }
 
     if (value.HasMember("VerifyChannels") && !value["VerifyChannels"].IsNull())
@@ -132,14 +132,6 @@ void AutoSignConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         m_userInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_callbackUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallbackUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_certInfoCallbackHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -162,6 +154,14 @@ void AutoSignConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SealImgCallback";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sealImgCallback, allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_verifyChannelsHasBeenSet)
@@ -202,22 +202,6 @@ void AutoSignConfig::SetUserInfo(const UserThreeFactor& _userInfo)
 bool AutoSignConfig::UserInfoHasBeenSet() const
 {
     return m_userInfoHasBeenSet;
-}
-
-string AutoSignConfig::GetCallbackUrl() const
-{
-    return m_callbackUrl;
-}
-
-void AutoSignConfig::SetCallbackUrl(const string& _callbackUrl)
-{
-    m_callbackUrl = _callbackUrl;
-    m_callbackUrlHasBeenSet = true;
-}
-
-bool AutoSignConfig::CallbackUrlHasBeenSet() const
-{
-    return m_callbackUrlHasBeenSet;
 }
 
 bool AutoSignConfig::GetCertInfoCallback() const
@@ -266,6 +250,22 @@ void AutoSignConfig::SetSealImgCallback(const bool& _sealImgCallback)
 bool AutoSignConfig::SealImgCallbackHasBeenSet() const
 {
     return m_sealImgCallbackHasBeenSet;
+}
+
+string AutoSignConfig::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void AutoSignConfig::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool AutoSignConfig::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
 }
 
 vector<string> AutoSignConfig::GetVerifyChannels() const
