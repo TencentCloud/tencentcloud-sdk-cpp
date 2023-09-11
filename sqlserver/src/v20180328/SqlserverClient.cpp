@@ -1932,6 +1932,49 @@ SqlserverClient::DescribeFlowStatusOutcomeCallable SqlserverClient::DescribeFlow
     return task->get_future();
 }
 
+SqlserverClient::DescribeHASwitchLogOutcome SqlserverClient::DescribeHASwitchLog(const DescribeHASwitchLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHASwitchLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHASwitchLogResponse rsp = DescribeHASwitchLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHASwitchLogOutcome(rsp);
+        else
+            return DescribeHASwitchLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHASwitchLogOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeHASwitchLogAsync(const DescribeHASwitchLogRequest& request, const DescribeHASwitchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHASwitchLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeHASwitchLogOutcomeCallable SqlserverClient::DescribeHASwitchLogCallable(const DescribeHASwitchLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHASwitchLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHASwitchLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::DescribeIncrementalMigrationOutcome SqlserverClient::DescribeIncrementalMigration(const DescribeIncrementalMigrationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIncrementalMigration");
@@ -4763,6 +4806,49 @@ SqlserverClient::StopMigrationOutcomeCallable SqlserverClient::StopMigrationCall
         [this, request]()
         {
             return this->StopMigration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::SwitchCloudInstanceHAOutcome SqlserverClient::SwitchCloudInstanceHA(const SwitchCloudInstanceHARequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchCloudInstanceHA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchCloudInstanceHAResponse rsp = SwitchCloudInstanceHAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchCloudInstanceHAOutcome(rsp);
+        else
+            return SwitchCloudInstanceHAOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchCloudInstanceHAOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::SwitchCloudInstanceHAAsync(const SwitchCloudInstanceHARequest& request, const SwitchCloudInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchCloudInstanceHA(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::SwitchCloudInstanceHAOutcomeCallable SqlserverClient::SwitchCloudInstanceHACallable(const SwitchCloudInstanceHARequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchCloudInstanceHAOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchCloudInstanceHA(request);
         }
     );
 

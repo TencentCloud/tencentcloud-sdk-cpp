@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ResourceHasBeenSet() const;
 
                     /**
-                     * 获取动作，目前仅支持：tcr:PushRepository、tcr:PullRepository
+                     * 获取动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Actions 动作，目前仅支持：tcr:PushRepository、tcr:PullRepository
+                     * @return Actions 动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetActions() const;
 
                     /**
-                     * 设置动作，目前仅支持：tcr:PushRepository、tcr:PullRepository
+                     * 设置动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _actions 动作，目前仅支持：tcr:PushRepository、tcr:PullRepository
+                     * @param _actions 动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -106,7 +106,7 @@ namespace TencentCloud
                     bool m_resourceHasBeenSet;
 
                     /**
-                     * 动作，目前仅支持：tcr:PushRepository、tcr:PullRepository
+                     * 动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_actions;

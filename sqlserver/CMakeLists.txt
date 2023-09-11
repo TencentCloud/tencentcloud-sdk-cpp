@@ -209,6 +209,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/StartMigrationCheckRequest.h
   include/tencentcloud/sqlserver/v20180328/model/InterInstance.h
   include/tencentcloud/sqlserver/v20180328/model/StartInstanceXEventResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/SwitchCloudInstanceHARequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateBasicDBInstancesRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBNameResponse.h
   include/tencentcloud/sqlserver/v20180328/model/CosUploadBackupFile.h
@@ -244,7 +245,9 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/PublishSubscribe.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupByFlowIdRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateBackupRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/SwitchCloudInstanceHAResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBsNormalRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/DescribeHASwitchLogRequest.h
   include/tencentcloud/sqlserver/v20180328/model/BackupFile.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyAccountRemarkRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyIncrementalMigrationResponse.h
@@ -287,11 +290,13 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeAccountsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DeleteDBInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesAttributeRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/DescribeHASwitchLogResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupCommandResponse.h
   include/tencentcloud/sqlserver/v20180328/model/InquiryPriceRenewDBInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/StartBackupMigrationRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribePublishSubscribeResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/SwitchLog.h
   include/tencentcloud/sqlserver/v20180328/model/CreateCloudDBInstancesRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupListRequest.h
   include/tencentcloud/sqlserver/v20180328/model/SlowlogInfo.h
@@ -497,6 +502,7 @@ set(sqlserver_src
   src/v20180328/model/StartMigrationCheckRequest.cpp
   src/v20180328/model/InterInstance.cpp
   src/v20180328/model/StartInstanceXEventResponse.cpp
+  src/v20180328/model/SwitchCloudInstanceHARequest.cpp
   src/v20180328/model/CreateBasicDBInstancesRequest.cpp
   src/v20180328/model/ModifyDBNameResponse.cpp
   src/v20180328/model/CosUploadBackupFile.cpp
@@ -532,7 +538,9 @@ set(sqlserver_src
   src/v20180328/model/PublishSubscribe.cpp
   src/v20180328/model/DescribeBackupByFlowIdRequest.cpp
   src/v20180328/model/CreateBackupRequest.cpp
+  src/v20180328/model/SwitchCloudInstanceHAResponse.cpp
   src/v20180328/model/DescribeDBsNormalRequest.cpp
+  src/v20180328/model/DescribeHASwitchLogRequest.cpp
   src/v20180328/model/BackupFile.cpp
   src/v20180328/model/ModifyAccountRemarkRequest.cpp
   src/v20180328/model/ModifyIncrementalMigrationResponse.cpp
@@ -575,11 +583,13 @@ set(sqlserver_src
   src/v20180328/model/DescribeAccountsResponse.cpp
   src/v20180328/model/DeleteDBInstanceResponse.cpp
   src/v20180328/model/DescribeDBInstancesAttributeRequest.cpp
+  src/v20180328/model/DescribeHASwitchLogResponse.cpp
   src/v20180328/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20180328/model/DescribeBackupCommandResponse.cpp
   src/v20180328/model/InquiryPriceRenewDBInstanceResponse.cpp
   src/v20180328/model/StartBackupMigrationRequest.cpp
   src/v20180328/model/DescribePublishSubscribeResponse.cpp
+  src/v20180328/model/SwitchLog.cpp
   src/v20180328/model/CreateCloudDBInstancesRequest.cpp
   src/v20180328/model/DescribeReadOnlyGroupListRequest.cpp
   src/v20180328/model/SlowlogInfo.cpp

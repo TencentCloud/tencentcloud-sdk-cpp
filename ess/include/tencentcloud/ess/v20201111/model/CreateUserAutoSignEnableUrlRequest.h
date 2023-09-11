@@ -127,10 +127,10 @@ namespace TencentCloud
                     /**
                      * 获取生成的链接类型：
 <ul><li> 不传(即为空值) 则会生成小程序端开通链接(默认)</li>
-<li> **H5SIGN** : 生成H5端开通链接</li><ul>
+<li> **H5SIGN** : 生成H5端开通链接</li></ul>
                      * @return UrlType 生成的链接类型：
 <ul><li> 不传(即为空值) 则会生成小程序端开通链接(默认)</li>
-<li> **H5SIGN** : 生成H5端开通链接</li><ul>
+<li> **H5SIGN** : 生成H5端开通链接</li></ul>
                      * 
                      */
                     std::string GetUrlType() const;
@@ -138,10 +138,10 @@ namespace TencentCloud
                     /**
                      * 设置生成的链接类型：
 <ul><li> 不传(即为空值) 则会生成小程序端开通链接(默认)</li>
-<li> **H5SIGN** : 生成H5端开通链接</li><ul>
+<li> **H5SIGN** : 生成H5端开通链接</li></ul>
                      * @param _urlType 生成的链接类型：
 <ul><li> 不传(即为空值) 则会生成小程序端开通链接(默认)</li>
-<li> **H5SIGN** : 生成H5端开通链接</li><ul>
+<li> **H5SIGN** : 生成H5端开通链接</li></ul>
                      * 
                      */
                     void SetUrlType(const std::string& _urlType);
@@ -276,7 +276,7 @@ namespace TencentCloud
                     /**
                      * 生成的链接类型：
 <ul><li> 不传(即为空值) 则会生成小程序端开通链接(默认)</li>
-<li> **H5SIGN** : 生成H5端开通链接</li><ul>
+<li> **H5SIGN** : 生成H5端开通链接</li></ul>
                      */
                     std::string m_urlType;
                     bool m_urlTypeHasBeenSet;

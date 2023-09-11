@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool ServiceAccountsHasBeenSet() const;
 
                     /**
-                     * 获取自定义账户数量
-                     * @return TotalCount 自定义账户数量
+                     * 获取服务级账户数量
+                     * @return TotalCount 服务级账户数量
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -84,7 +84,7 @@ namespace TencentCloud
                     bool m_serviceAccountsHasBeenSet;
 
                     /**
-                     * 自定义账户数量
+                     * 服务级账户数量
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

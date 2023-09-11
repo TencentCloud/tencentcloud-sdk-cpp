@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool AllHasBeenSet() const;
 
                     /**
-                     * 获取是否填充策略
-                     * @return EmbedPermission 是否填充策略
+                     * 获取是否填充权限信息
+                     * @return EmbedPermission 是否填充权限信息
                      * 
                      */
                     bool GetEmbedPermission() const;
 
                     /**
-                     * 设置是否填充策略
-                     * @param _embedPermission 是否填充策略
+                     * 设置是否填充权限信息
+                     * @param _embedPermission 是否填充权限信息
                      * 
                      */
                     void SetEmbedPermission(const bool& _embedPermission);
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_allHasBeenSet;
 
                     /**
-                     * 是否填充策略
+                     * 是否填充权限信息
                      */
                     bool m_embedPermission;
                     bool m_embedPermissionHasBeenSet;

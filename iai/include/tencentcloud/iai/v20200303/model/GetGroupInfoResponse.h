@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool FaceModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。
-                     * @return CreationTimestamp Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。
+                     * 获取Group的创建时间和日期。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。
+                     * @return CreationTimestamp Group的创建时间和日期。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。
                      * 
                      */
                     uint64_t GetCreationTimestamp() const;
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_faceModelVersionHasBeenSet;
 
                     /**
-                     * Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。
+                     * Group的创建时间和日期。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。
                      */
                     uint64_t m_creationTimestamp;
                     bool m_creationTimestampHasBeenSet;

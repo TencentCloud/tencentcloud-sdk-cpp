@@ -35,7 +35,8 @@ Registry::Registry() :
     m_tagSpecificationHasBeenSet(false),
     m_expiredAtHasBeenSet(false),
     m_payModHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,16 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
         m_renewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletionProtection") && !value["DeletionProtection"].IsNull())
+    {
+        if (!value["DeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Registry.DeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionProtection = value["DeletionProtection"].GetBool();
+        m_deletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void Registry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void Registry::SetRenewFlag(const int64_t& _renewFlag)
 bool Registry::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+bool Registry::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void Registry::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool Registry::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 

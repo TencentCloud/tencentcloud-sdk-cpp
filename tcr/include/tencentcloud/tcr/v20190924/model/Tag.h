@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取云标签的key
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 云标签的key
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置云标签的key
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 云标签的key
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取云标签的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 云标签的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置云标签的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 云标签的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 云标签的key
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 云标签的值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

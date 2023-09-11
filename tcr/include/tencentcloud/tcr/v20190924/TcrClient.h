@@ -777,7 +777,7 @@ namespace TencentCloud
                 CreateSecurityPolicyOutcomeCallable CreateSecurityPolicyCallable(const Model::CreateSecurityPolicyRequest& request);
 
                 /**
-                 *创建自定义账户
+                 *创建服务级账户
                  * @param req CreateServiceAccountRequest
                  * @return CreateServiceAccountOutcome
                  */

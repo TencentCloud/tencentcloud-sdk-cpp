@@ -73,6 +73,10 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAclRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAclRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeAddressTemplateListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeAddressTemplateListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeAssetSyncRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeAssetSyncResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListRequest.h>
@@ -93,6 +97,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeFwEdgeIpsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeFwGroupInstanceInfoRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeFwGroupInstanceInfoResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeFwSyncStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeFwSyncStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeIPStatusListRequest.h>
@@ -111,6 +117,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstancesInfoResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatSwitchListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatSwitchListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewRequest.h>
@@ -141,6 +149,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAclRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAclRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyAddressTemplateRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyAddressTemplateResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllPublicIPSwitchStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllPublicIPSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusRequest.h>
@@ -149,6 +159,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAssetScanRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAssetScanResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyAssetSyncRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyAssetSyncResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreRuleRequest.h>
@@ -173,6 +185,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyNatFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatFwVpcDnsSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatFwVpcDnsSwitchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyNatInstanceRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyNatInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatSequenceRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatSequenceRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusRequest.h>
@@ -217,6 +231,8 @@
 #include <tencentcloud/cfw/v20190904/model/SetNatFwEipResponse.h>
 #include <tencentcloud/cfw/v20190904/model/StopSecurityGroupRuleDispatchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/StopSecurityGroupRuleDispatchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/SyncFwOperateRequest.h>
+#include <tencentcloud/cfw/v20190904/model/SyncFwOperateResponse.h>
 
 
 namespace TencentCloud
@@ -306,6 +322,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAclRuleResponse> DescribeAclRuleOutcome;
                 typedef std::future<DescribeAclRuleOutcome> DescribeAclRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAclRuleRequest&, DescribeAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAddressTemplateListResponse> DescribeAddressTemplateListOutcome;
+                typedef std::future<DescribeAddressTemplateListOutcome> DescribeAddressTemplateListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeAddressTemplateListRequest&, DescribeAddressTemplateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddressTemplateListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetSyncResponse> DescribeAssetSyncOutcome;
+                typedef std::future<DescribeAssetSyncOutcome> DescribeAssetSyncOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeAssetSyncRequest&, DescribeAssetSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetSyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssociatedInstanceListResponse> DescribeAssociatedInstanceListOutcome;
                 typedef std::future<DescribeAssociatedInstanceListOutcome> DescribeAssociatedInstanceListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAssociatedInstanceListRequest&, DescribeAssociatedInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssociatedInstanceListAsyncHandler;
@@ -336,6 +358,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFwGroupInstanceInfoResponse> DescribeFwGroupInstanceInfoOutcome;
                 typedef std::future<DescribeFwGroupInstanceInfoOutcome> DescribeFwGroupInstanceInfoOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeFwGroupInstanceInfoRequest&, DescribeFwGroupInstanceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFwGroupInstanceInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFwSyncStatusResponse> DescribeFwSyncStatusOutcome;
+                typedef std::future<DescribeFwSyncStatusOutcome> DescribeFwSyncStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeFwSyncStatusRequest&, DescribeFwSyncStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFwSyncStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGuideScanInfoResponse> DescribeGuideScanInfoOutcome;
                 typedef std::future<DescribeGuideScanInfoOutcome> DescribeGuideScanInfoOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeGuideScanInfoRequest&, DescribeGuideScanInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGuideScanInfoAsyncHandler;
@@ -363,6 +388,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNatFwVpcDnsLstResponse> DescribeNatFwVpcDnsLstOutcome;
                 typedef std::future<DescribeNatFwVpcDnsLstOutcome> DescribeNatFwVpcDnsLstOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatFwVpcDnsLstRequest&, DescribeNatFwVpcDnsLstOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwVpcDnsLstAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNatSwitchListResponse> DescribeNatSwitchListOutcome;
+                typedef std::future<DescribeNatSwitchListOutcome> DescribeNatSwitchListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNatSwitchListRequest&, DescribeNatSwitchListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatSwitchListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceGroupResponse> DescribeResourceGroupOutcome;
                 typedef std::future<DescribeResourceGroupOutcome> DescribeResourceGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeResourceGroupRequest&, DescribeResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupAsyncHandler;
@@ -408,6 +436,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAclRuleResponse> ModifyAclRuleOutcome;
                 typedef std::future<ModifyAclRuleOutcome> ModifyAclRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAclRuleRequest&, ModifyAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAclRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAddressTemplateResponse> ModifyAddressTemplateOutcome;
+                typedef std::future<ModifyAddressTemplateOutcome> ModifyAddressTemplateOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyAddressTemplateRequest&, ModifyAddressTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAddressTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAllPublicIPSwitchStatusResponse> ModifyAllPublicIPSwitchStatusOutcome;
                 typedef std::future<ModifyAllPublicIPSwitchStatusOutcome> ModifyAllPublicIPSwitchStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAllPublicIPSwitchStatusRequest&, ModifyAllPublicIPSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllPublicIPSwitchStatusAsyncHandler;
@@ -420,6 +451,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAssetScanResponse> ModifyAssetScanOutcome;
                 typedef std::future<ModifyAssetScanOutcome> ModifyAssetScanOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAssetScanRequest&, ModifyAssetScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAssetScanAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAssetSyncResponse> ModifyAssetSyncOutcome;
+                typedef std::future<ModifyAssetSyncOutcome> ModifyAssetSyncOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyAssetSyncRequest&, ModifyAssetSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAssetSyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBlockIgnoreListResponse> ModifyBlockIgnoreListOutcome;
                 typedef std::future<ModifyBlockIgnoreListOutcome> ModifyBlockIgnoreListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyBlockIgnoreListRequest&, ModifyBlockIgnoreListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockIgnoreListAsyncHandler;
@@ -456,6 +490,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNatFwVpcDnsSwitchResponse> ModifyNatFwVpcDnsSwitchOutcome;
                 typedef std::future<ModifyNatFwVpcDnsSwitchOutcome> ModifyNatFwVpcDnsSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyNatFwVpcDnsSwitchRequest&, ModifyNatFwVpcDnsSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatFwVpcDnsSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNatInstanceResponse> ModifyNatInstanceOutcome;
+                typedef std::future<ModifyNatInstanceOutcome> ModifyNatInstanceOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyNatInstanceRequest&, ModifyNatInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNatSequenceRulesResponse> ModifyNatSequenceRulesOutcome;
                 typedef std::future<ModifyNatSequenceRulesOutcome> ModifyNatSequenceRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyNatSequenceRulesRequest&, ModifyNatSequenceRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatSequenceRulesAsyncHandler;
@@ -522,6 +559,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopSecurityGroupRuleDispatchResponse> StopSecurityGroupRuleDispatchOutcome;
                 typedef std::future<StopSecurityGroupRuleDispatchOutcome> StopSecurityGroupRuleDispatchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::StopSecurityGroupRuleDispatchRequest&, StopSecurityGroupRuleDispatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopSecurityGroupRuleDispatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncFwOperateResponse> SyncFwOperateOutcome;
+                typedef std::future<SyncFwOperateOutcome> SyncFwOperateOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::SyncFwOperateRequest&, SyncFwOperateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncFwOperateAsyncHandler;
 
 
 
@@ -751,6 +791,24 @@ namespace TencentCloud
                 DescribeAclRuleOutcomeCallable DescribeAclRuleCallable(const Model::DescribeAclRuleRequest& request);
 
                 /**
+                 *查询地址模板列表
+                 * @param req DescribeAddressTemplateListRequest
+                 * @return DescribeAddressTemplateListOutcome
+                 */
+                DescribeAddressTemplateListOutcome DescribeAddressTemplateList(const Model::DescribeAddressTemplateListRequest &request);
+                void DescribeAddressTemplateListAsync(const Model::DescribeAddressTemplateListRequest& request, const DescribeAddressTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAddressTemplateListOutcomeCallable DescribeAddressTemplateListCallable(const Model::DescribeAddressTemplateListRequest& request);
+
+                /**
+                 *资产同步状态查询
+                 * @param req DescribeAssetSyncRequest
+                 * @return DescribeAssetSyncOutcome
+                 */
+                DescribeAssetSyncOutcome DescribeAssetSync(const Model::DescribeAssetSyncRequest &request);
+                void DescribeAssetSyncAsync(const Model::DescribeAssetSyncRequest& request, const DescribeAssetSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetSyncOutcomeCallable DescribeAssetSyncCallable(const Model::DescribeAssetSyncRequest& request);
+
+                /**
                  *获取安全组关联实例列表
                  * @param req DescribeAssociatedInstanceListRequest
                  * @return DescribeAssociatedInstanceListOutcome
@@ -843,6 +901,15 @@ namespace TencentCloud
                 DescribeFwGroupInstanceInfoOutcomeCallable DescribeFwGroupInstanceInfoCallable(const Model::DescribeFwGroupInstanceInfoRequest& request);
 
                 /**
+                 *获取防火墙同步状态，一般在执行同步操作后查询
+                 * @param req DescribeFwSyncStatusRequest
+                 * @return DescribeFwSyncStatusOutcome
+                 */
+                DescribeFwSyncStatusOutcome DescribeFwSyncStatus(const Model::DescribeFwSyncStatusRequest &request);
+                void DescribeFwSyncStatusAsync(const Model::DescribeFwSyncStatusRequest& request, const DescribeFwSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFwSyncStatusOutcomeCallable DescribeFwSyncStatusCallable(const Model::DescribeFwSyncStatusRequest& request);
+
+                /**
                  *DescribeGuideScanInfo新手引导扫描接口信息
                  * @param req DescribeGuideScanInfoRequest
                  * @return DescribeGuideScanInfoOutcome
@@ -922,6 +989,15 @@ namespace TencentCloud
                 DescribeNatFwVpcDnsLstOutcome DescribeNatFwVpcDnsLst(const Model::DescribeNatFwVpcDnsLstRequest &request);
                 void DescribeNatFwVpcDnsLstAsync(const Model::DescribeNatFwVpcDnsLstRequest& request, const DescribeNatFwVpcDnsLstAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatFwVpcDnsLstOutcomeCallable DescribeNatFwVpcDnsLstCallable(const Model::DescribeNatFwVpcDnsLstRequest& request);
+
+                /**
+                 *查询NAT边界防火墙开关列表
+                 * @param req DescribeNatSwitchListRequest
+                 * @return DescribeNatSwitchListOutcome
+                 */
+                DescribeNatSwitchListOutcome DescribeNatSwitchList(const Model::DescribeNatSwitchListRequest &request);
+                void DescribeNatSwitchListAsync(const Model::DescribeNatSwitchListRequest& request, const DescribeNatSwitchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatSwitchListOutcomeCallable DescribeNatSwitchListCallable(const Model::DescribeNatSwitchListRequest& request);
 
                 /**
                  *DescribeResourceGroup资产中心资产树信息
@@ -1063,6 +1139,15 @@ namespace TencentCloud
                 ModifyAclRuleOutcomeCallable ModifyAclRuleCallable(const Model::ModifyAclRuleRequest& request);
 
                 /**
+                 *修改地址模板
+                 * @param req ModifyAddressTemplateRequest
+                 * @return ModifyAddressTemplateOutcome
+                 */
+                ModifyAddressTemplateOutcome ModifyAddressTemplate(const Model::ModifyAddressTemplateRequest &request);
+                void ModifyAddressTemplateAsync(const Model::ModifyAddressTemplateRequest& request, const ModifyAddressTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAddressTemplateOutcomeCallable ModifyAddressTemplateCallable(const Model::ModifyAddressTemplateRequest& request);
+
+                /**
                  *互联网边界防火墙一键开关
                  * @param req ModifyAllPublicIPSwitchStatusRequest
                  * @return ModifyAllPublicIPSwitchStatusOutcome
@@ -1097,6 +1182,15 @@ namespace TencentCloud
                 ModifyAssetScanOutcome ModifyAssetScan(const Model::ModifyAssetScanRequest &request);
                 void ModifyAssetScanAsync(const Model::ModifyAssetScanRequest& request, const ModifyAssetScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAssetScanOutcomeCallable ModifyAssetScanCallable(const Model::ModifyAssetScanRequest& request);
+
+                /**
+                 *资产同步
+                 * @param req ModifyAssetSyncRequest
+                 * @return ModifyAssetSyncOutcome
+                 */
+                ModifyAssetSyncOutcome ModifyAssetSync(const Model::ModifyAssetSyncRequest &request);
+                void ModifyAssetSyncAsync(const Model::ModifyAssetSyncRequest& request, const ModifyAssetSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAssetSyncOutcomeCallable ModifyAssetSyncCallable(const Model::ModifyAssetSyncRequest& request);
 
                 /**
                  *支持对封禁列表、放通列表如下操作：
@@ -1209,6 +1303,15 @@ VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction�
                 ModifyNatFwVpcDnsSwitchOutcome ModifyNatFwVpcDnsSwitch(const Model::ModifyNatFwVpcDnsSwitchRequest &request);
                 void ModifyNatFwVpcDnsSwitchAsync(const Model::ModifyNatFwVpcDnsSwitchRequest& request, const ModifyNatFwVpcDnsSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNatFwVpcDnsSwitchOutcomeCallable ModifyNatFwVpcDnsSwitchCallable(const Model::ModifyNatFwVpcDnsSwitchRequest& request);
+
+                /**
+                 *编辑NAT防火墙
+                 * @param req ModifyNatInstanceRequest
+                 * @return ModifyNatInstanceOutcome
+                 */
+                ModifyNatInstanceOutcome ModifyNatInstance(const Model::ModifyNatInstanceRequest &request);
+                void ModifyNatInstanceAsync(const Model::ModifyNatInstanceRequest& request, const ModifyNatInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNatInstanceOutcomeCallable ModifyNatInstanceCallable(const Model::ModifyNatInstanceRequest& request);
 
                 /**
                  *NAT防火墙规则快速排序
@@ -1409,6 +1512,15 @@ VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction�
                 StopSecurityGroupRuleDispatchOutcome StopSecurityGroupRuleDispatch(const Model::StopSecurityGroupRuleDispatchRequest &request);
                 void StopSecurityGroupRuleDispatchAsync(const Model::StopSecurityGroupRuleDispatchRequest& request, const StopSecurityGroupRuleDispatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopSecurityGroupRuleDispatchOutcomeCallable StopSecurityGroupRuleDispatchCallable(const Model::StopSecurityGroupRuleDispatchRequest& request);
+
+                /**
+                 *同步防火墙操作，包括同步防火墙路由（若vpc，专线网关等增加了Cidr，需要手动同步一下路由使之在防火墙上生效）等。
+                 * @param req SyncFwOperateRequest
+                 * @return SyncFwOperateOutcome
+                 */
+                SyncFwOperateOutcome SyncFwOperate(const Model::SyncFwOperateRequest &request);
+                void SyncFwOperateAsync(const Model::SyncFwOperateRequest& request, const SyncFwOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncFwOperateOutcomeCallable SyncFwOperateCallable(const Model::SyncFwOperateRequest& request);
 
             };
         }

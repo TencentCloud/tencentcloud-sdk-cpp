@@ -378,6 +378,27 @@ namespace TencentCloud
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启实例删除保护，false表示不开启
+                     * @return DeletionProtection 是否开启实例删除保护，false表示不开启
+                     * 
+                     */
+                    bool GetDeletionProtection() const;
+
+                    /**
+                     * 设置是否开启实例删除保护，false表示不开启
+                     * @param _deletionProtection 是否开启实例删除保护，false表示不开启
+                     * 
+                     */
+                    void SetDeletionProtection(const bool& _deletionProtection);
+
+                    /**
+                     * 判断参数 DeletionProtection 是否已赋值
+                     * @return DeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -473,6 +494,12 @@ namespace TencentCloud
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 是否开启实例删除保护，false表示不开启
+                     */
+                    bool m_deletionProtection;
+                    bool m_deletionProtectionHasBeenSet;
 
                 };
             }

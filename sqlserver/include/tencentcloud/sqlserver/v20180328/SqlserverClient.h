@@ -111,6 +111,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsNormalResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeHASwitchLogRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeHASwitchLogResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeIncrementalMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeIncrementalMigrationResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceByOrdersRequest.h>
@@ -243,6 +245,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/StartMigrationCheckResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/StopMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/StopMigrationResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/SwitchCloudInstanceHARequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/SwitchCloudInstanceHAResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/TerminateDBInstanceRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/TerminateDBInstanceResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/UpgradeDBInstanceRequest.h>
@@ -393,6 +397,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowStatusResponse> DescribeFlowStatusOutcome;
                 typedef std::future<DescribeFlowStatusOutcome> DescribeFlowStatusOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeFlowStatusRequest&, DescribeFlowStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHASwitchLogResponse> DescribeHASwitchLogOutcome;
+                typedef std::future<DescribeHASwitchLogOutcome> DescribeHASwitchLogOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeHASwitchLogRequest&, DescribeHASwitchLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHASwitchLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIncrementalMigrationResponse> DescribeIncrementalMigrationOutcome;
                 typedef std::future<DescribeIncrementalMigrationOutcome> DescribeIncrementalMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeIncrementalMigrationRequest&, DescribeIncrementalMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIncrementalMigrationAsyncHandler;
@@ -591,6 +598,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopMigrationResponse> StopMigrationOutcome;
                 typedef std::future<StopMigrationOutcome> StopMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::StopMigrationRequest&, StopMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMigrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchCloudInstanceHAResponse> SwitchCloudInstanceHAOutcome;
+                typedef std::future<SwitchCloudInstanceHAOutcome> SwitchCloudInstanceHAOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::SwitchCloudInstanceHARequest&, SwitchCloudInstanceHAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchCloudInstanceHAAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateDBInstanceResponse> TerminateDBInstanceOutcome;
                 typedef std::future<TerminateDBInstanceOutcome> TerminateDBInstanceOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::TerminateDBInstanceRequest&, TerminateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDBInstanceAsyncHandler;
@@ -995,6 +1005,15 @@ namespace TencentCloud
                 DescribeFlowStatusOutcome DescribeFlowStatus(const Model::DescribeFlowStatusRequest &request);
                 void DescribeFlowStatusAsync(const Model::DescribeFlowStatusRequest& request, const DescribeFlowStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlowStatusOutcomeCallable DescribeFlowStatusCallable(const Model::DescribeFlowStatusRequest& request);
+
+                /**
+                 *本接口(DescribeHASwitchLog)用于手动主备切换。
+                 * @param req DescribeHASwitchLogRequest
+                 * @return DescribeHASwitchLogOutcome
+                 */
+                DescribeHASwitchLogOutcome DescribeHASwitchLog(const Model::DescribeHASwitchLogRequest &request);
+                void DescribeHASwitchLogAsync(const Model::DescribeHASwitchLogRequest& request, const DescribeHASwitchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHASwitchLogOutcomeCallable DescribeHASwitchLogCallable(const Model::DescribeHASwitchLogRequest& request);
 
                 /**
                  *本接口（DescribeIncrementalMigration）用于查询增量备份导入任务。
@@ -1592,6 +1611,15 @@ namespace TencentCloud
                 StopMigrationOutcome StopMigration(const Model::StopMigrationRequest &request);
                 void StopMigrationAsync(const Model::StopMigrationRequest& request, const StopMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopMigrationOutcomeCallable StopMigrationCallable(const Model::StopMigrationRequest& request);
+
+                /**
+                 *本接口(SwitchCloudInstanceHA)用于手动主备切换。
+                 * @param req SwitchCloudInstanceHARequest
+                 * @return SwitchCloudInstanceHAOutcome
+                 */
+                SwitchCloudInstanceHAOutcome SwitchCloudInstanceHA(const Model::SwitchCloudInstanceHARequest &request);
+                void SwitchCloudInstanceHAAsync(const Model::SwitchCloudInstanceHARequest& request, const SwitchCloudInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchCloudInstanceHAOutcomeCallable SwitchCloudInstanceHACallable(const Model::SwitchCloudInstanceHARequest& request);
 
                 /**
                  *本接口(TerminateDBInstance)用于主动隔离实例，使得实例进入回收站。
