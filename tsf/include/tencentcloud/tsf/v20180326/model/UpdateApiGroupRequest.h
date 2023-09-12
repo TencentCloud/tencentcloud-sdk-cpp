@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取鉴权类型
-                     * @return AuthType 鉴权类型
+                     * 获取鉴权类型。 secret： 密钥鉴权； none:无鉴权
+                     * @return AuthType 鉴权类型。 secret： 密钥鉴权； none:无鉴权
                      * 
                      */
                     std::string GetAuthType() const;
 
                     /**
-                     * 设置鉴权类型
-                     * @param _authType 鉴权类型
+                     * 设置鉴权类型。 secret： 密钥鉴权； none:无鉴权
+                     * @param _authType 鉴权类型。 secret： 密钥鉴权； none:无鉴权
                      * 
                      */
                     void SetAuthType(const std::string& _authType);
@@ -252,7 +252,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 鉴权类型
+                     * 鉴权类型。 secret： 密钥鉴权； none:无鉴权
                      */
                     std::string m_authType;
                     bool m_authTypeHasBeenSet;

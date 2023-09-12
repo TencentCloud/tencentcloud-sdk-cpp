@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdc/v20201214/model/DetailData.h>
 
 
 namespace TencentCloud
@@ -151,6 +152,181 @@ namespace TencentCloud
                      */
                     bool CountHasBeenSet() const;
 
+                    /**
+                     * 获取平均cpu负载百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CpuAverage 平均cpu负载百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetCpuAverage() const;
+
+                    /**
+                     * 设置平均cpu负载百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cpuAverage 平均cpu负载百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCpuAverage(const double& _cpuAverage);
+
+                    /**
+                     * 判断参数 CpuAverage 是否已赋值
+                     * @return CpuAverage 是否已赋值
+                     * 
+                     */
+                    bool CpuAverageHasBeenSet() const;
+
+                    /**
+                     * 获取平均内存使用率百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MemAverage 平均内存使用率百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetMemAverage() const;
+
+                    /**
+                     * 设置平均内存使用率百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _memAverage 平均内存使用率百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMemAverage(const double& _memAverage);
+
+                    /**
+                     * 判断参数 MemAverage 是否已赋值
+                     * @return MemAverage 是否已赋值
+                     * 
+                     */
+                    bool MemAverageHasBeenSet() const;
+
+                    /**
+                     * 获取平均网络流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetAverage 平均网络流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetNetAverage() const;
+
+                    /**
+                     * 设置平均网络流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _netAverage 平均网络流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetAverage(const double& _netAverage);
+
+                    /**
+                     * 判断参数 NetAverage 是否已赋值
+                     * @return NetAverage 是否已赋值
+                     * 
+                     */
+                    bool NetAverageHasBeenSet() const;
+
+                    /**
+                     * 获取cpu详细监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CpuDetailData cpu详细监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DetailData GetCpuDetailData() const;
+
+                    /**
+                     * 设置cpu详细监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cpuDetailData cpu详细监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCpuDetailData(const DetailData& _cpuDetailData);
+
+                    /**
+                     * 判断参数 CpuDetailData 是否已赋值
+                     * @return CpuDetailData 是否已赋值
+                     * 
+                     */
+                    bool CpuDetailDataHasBeenSet() const;
+
+                    /**
+                     * 获取内存详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MemDetailData 内存详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DetailData GetMemDetailData() const;
+
+                    /**
+                     * 设置内存详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _memDetailData 内存详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMemDetailData(const DetailData& _memDetailData);
+
+                    /**
+                     * 判断参数 MemDetailData 是否已赋值
+                     * @return MemDetailData 是否已赋值
+                     * 
+                     */
+                    bool MemDetailDataHasBeenSet() const;
+
+                    /**
+                     * 获取网络速率详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetRateDetailData 网络速率详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DetailData GetNetRateDetailData() const;
+
+                    /**
+                     * 设置网络速率详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _netRateDetailData 网络速率详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetRateDetailData(const DetailData& _netRateDetailData);
+
+                    /**
+                     * 判断参数 NetRateDetailData 是否已赋值
+                     * @return NetRateDetailData 是否已赋值
+                     * 
+                     */
+                    bool NetRateDetailDataHasBeenSet() const;
+
+                    /**
+                     * 获取网速包详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetPacketDetailData 网速包详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DetailData GetNetPacketDetailData() const;
+
+                    /**
+                     * 设置网速包详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _netPacketDetailData 网速包详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetPacketDetailData(const DetailData& _netPacketDetailData);
+
+                    /**
+                     * 判断参数 NetPacketDetailData 是否已赋值
+                     * @return NetPacketDetailData 是否已赋值
+                     * 
+                     */
+                    bool NetPacketDetailDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +358,55 @@ namespace TencentCloud
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
+
+                    /**
+                     * 平均cpu负载百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_cpuAverage;
+                    bool m_cpuAverageHasBeenSet;
+
+                    /**
+                     * 平均内存使用率百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_memAverage;
+                    bool m_memAverageHasBeenSet;
+
+                    /**
+                     * 平均网络流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_netAverage;
+                    bool m_netAverageHasBeenSet;
+
+                    /**
+                     * cpu详细监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DetailData m_cpuDetailData;
+                    bool m_cpuDetailDataHasBeenSet;
+
+                    /**
+                     * 内存详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DetailData m_memDetailData;
+                    bool m_memDetailDataHasBeenSet;
+
+                    /**
+                     * 网络速率详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DetailData m_netRateDetailData;
+                    bool m_netRateDetailDataHasBeenSet;
+
+                    /**
+                     * 网速包详细数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DetailData m_netPacketDetailData;
+                    bool m_netPacketDetailDataHasBeenSet;
 
                 };
             }

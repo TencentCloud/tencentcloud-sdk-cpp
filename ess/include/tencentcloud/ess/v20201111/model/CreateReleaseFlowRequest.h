@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool NeedRelievedFlowIdHasBeenSet() const;
 
                     /**
-                     * 获取解除协议内容。
-                     * @return ReliveInfo 解除协议内容。
+                     * 获取解除协议内容, 包括解除理由等信息。
+                     * @return ReliveInfo 解除协议内容, 包括解除理由等信息。
                      * 
                      */
                     RelieveInfo GetReliveInfo() const;
 
                     /**
-                     * 设置解除协议内容。
-                     * @param _reliveInfo 解除协议内容。
+                     * 设置解除协议内容, 包括解除理由等信息。
+                     * @param _reliveInfo 解除协议内容, 包括解除理由等信息。
                      * 
                      */
                     void SetReliveInfo(const RelieveInfo& _reliveInfo);
@@ -135,35 +135,35 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>
-如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-解除协议的签署人数量不能多于原流程的签署人数量。<br/>
+                     * 获取替换解除协议的签署人， 如不指定替换签署人,  则使用原流程的签署人。 <br/>
+如需更换原合同中的企业端签署人，可通过指定该签署人的RecipientId编号更换此企业端签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
 
-`注意：只能更换同企业的签署人。`<br/>
-`注意：不支持更换个人类型的签署人。`<br/>
-                     * @return ReleasedApprovers 解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>
-如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-解除协议的签署人数量不能多于原流程的签署人数量。<br/>
+注意：
+`只能更换自己企业的签署人,  不支持更换个人类型或者其他企业的签署人。`
+`可以不指定替换签署人, 使用原流程的签署人 `
+                     * @return ReleasedApprovers 替换解除协议的签署人， 如不指定替换签署人,  则使用原流程的签署人。 <br/>
+如需更换原合同中的企业端签署人，可通过指定该签署人的RecipientId编号更换此企业端签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
 
-`注意：只能更换同企业的签署人。`<br/>
-`注意：不支持更换个人类型的签署人。`<br/>
+注意：
+`只能更换自己企业的签署人,  不支持更换个人类型或者其他企业的签署人。`
+`可以不指定替换签署人, 使用原流程的签署人 `
                      * 
                      */
                     std::vector<ReleasedApprover> GetReleasedApprovers() const;
 
                     /**
-                     * 设置解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>
-如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-解除协议的签署人数量不能多于原流程的签署人数量。<br/>
+                     * 设置替换解除协议的签署人， 如不指定替换签署人,  则使用原流程的签署人。 <br/>
+如需更换原合同中的企业端签署人，可通过指定该签署人的RecipientId编号更换此企业端签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
 
-`注意：只能更换同企业的签署人。`<br/>
-`注意：不支持更换个人类型的签署人。`<br/>
-                     * @param _releasedApprovers 解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>
-如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-解除协议的签署人数量不能多于原流程的签署人数量。<br/>
+注意：
+`只能更换自己企业的签署人,  不支持更换个人类型或者其他企业的签署人。`
+`可以不指定替换签署人, 使用原流程的签署人 `
+                     * @param _releasedApprovers 替换解除协议的签署人， 如不指定替换签署人,  则使用原流程的签署人。 <br/>
+如需更换原合同中的企业端签署人，可通过指定该签署人的RecipientId编号更换此企业端签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
 
-`注意：只能更换同企业的签署人。`<br/>
-`注意：不支持更换个人类型的签署人。`<br/>
+注意：
+`只能更换自己企业的签署人,  不支持更换个人类型或者其他企业的签署人。`
+`可以不指定替换签署人, 使用原流程的签署人 `
                      * 
                      */
                     void SetReleasedApprovers(const std::vector<ReleasedApprover>& _releasedApprovers);
@@ -253,7 +253,7 @@ namespace TencentCloud
                     bool m_needRelievedFlowIdHasBeenSet;
 
                     /**
-                     * 解除协议内容。
+                     * 解除协议内容, 包括解除理由等信息。
                      */
                     RelieveInfo m_reliveInfo;
                     bool m_reliveInfoHasBeenSet;
@@ -265,12 +265,12 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>
-如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-解除协议的签署人数量不能多于原流程的签署人数量。<br/>
+                     * 替换解除协议的签署人， 如不指定替换签署人,  则使用原流程的签署人。 <br/>
+如需更换原合同中的企业端签署人，可通过指定该签署人的RecipientId编号更换此企业端签署人。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
 
-`注意：只能更换同企业的签署人。`<br/>
-`注意：不支持更换个人类型的签署人。`<br/>
+注意：
+`只能更换自己企业的签署人,  不支持更换个人类型或者其他企业的签署人。`
+`可以不指定替换签署人, 使用原流程的签署人 `
                      */
                     std::vector<ReleasedApprover> m_releasedApprovers;
                     bool m_releasedApproversHasBeenSet;

@@ -58,7 +58,8 @@ DomainAssetVO::DomainAssetVO() :
     m_isNewAssetHasBeenSet(false),
     m_verifyDomainHasBeenSet(false),
     m_verifyTXTRecordHasBeenSet(false),
-    m_verifyStatusHasBeenSet(false)
+    m_verifyStatusHasBeenSet(false),
+    m_botAccessCountHasBeenSet(false)
 {
 }
 
@@ -472,6 +473,16 @@ CoreInternalOutcome DomainAssetVO::Deserialize(const rapidjson::Value &value)
         m_verifyStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("BotAccessCount") && !value["BotAccessCount"].IsNull())
+    {
+        if (!value["BotAccessCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainAssetVO.BotAccessCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_botAccessCount = value["BotAccessCount"].GetInt64();
+        m_botAccessCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -813,6 +824,14 @@ void DomainAssetVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "VerifyStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_verifyStatus, allocator);
+    }
+
+    if (m_botAccessCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotAccessCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_botAccessCount, allocator);
     }
 
 }
@@ -1424,5 +1443,21 @@ void DomainAssetVO::SetVerifyStatus(const int64_t& _verifyStatus)
 bool DomainAssetVO::VerifyStatusHasBeenSet() const
 {
     return m_verifyStatusHasBeenSet;
+}
+
+int64_t DomainAssetVO::GetBotAccessCount() const
+{
+    return m_botAccessCount;
+}
+
+void DomainAssetVO::SetBotAccessCount(const int64_t& _botAccessCount)
+{
+    m_botAccessCount = _botAccessCount;
+    m_botAccessCountHasBeenSet = true;
+}
+
+bool DomainAssetVO::BotAccessCountHasBeenSet() const
+{
+    return m_botAccessCountHasBeenSet;
 }
 

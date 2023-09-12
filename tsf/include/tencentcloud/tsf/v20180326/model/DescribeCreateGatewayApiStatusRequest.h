@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求方法
-                     * @return GroupId 请求方法
+                     * 获取所属分组ID
+                     * @return GroupId 所属分组ID
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置请求方法
-                     * @param _groupId 请求方法
+                     * 设置所属分组ID
+                     * @param _groupId 所属分组ID
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求方法
+                     * 所属分组ID
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

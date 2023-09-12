@@ -23,7 +23,11 @@ using namespace TencentCloud::Cdc::V20201214::Model;
 using namespace std;
 
 DescribeDedicatedClusterHostStatisticsRequest::DescribeDedicatedClusterHostStatisticsRequest() :
-    m_dedicatedClusterIdHasBeenSet(false)
+    m_dedicatedClusterIdHasBeenSet(false),
+    m_hostIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -40,6 +44,38 @@ string DescribeDedicatedClusterHostStatisticsRequest::ToJsonString() const
         string key = "DedicatedClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hostId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_period.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +100,70 @@ void DescribeDedicatedClusterHostStatisticsRequest::SetDedicatedClusterId(const 
 bool DescribeDedicatedClusterHostStatisticsRequest::DedicatedClusterIdHasBeenSet() const
 {
     return m_dedicatedClusterIdHasBeenSet;
+}
+
+string DescribeDedicatedClusterHostStatisticsRequest::GetHostId() const
+{
+    return m_hostId;
+}
+
+void DescribeDedicatedClusterHostStatisticsRequest::SetHostId(const string& _hostId)
+{
+    m_hostId = _hostId;
+    m_hostIdHasBeenSet = true;
+}
+
+bool DescribeDedicatedClusterHostStatisticsRequest::HostIdHasBeenSet() const
+{
+    return m_hostIdHasBeenSet;
+}
+
+string DescribeDedicatedClusterHostStatisticsRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeDedicatedClusterHostStatisticsRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeDedicatedClusterHostStatisticsRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeDedicatedClusterHostStatisticsRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeDedicatedClusterHostStatisticsRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeDedicatedClusterHostStatisticsRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+string DescribeDedicatedClusterHostStatisticsRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void DescribeDedicatedClusterHostStatisticsRequest::SetPeriod(const string& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool DescribeDedicatedClusterHostStatisticsRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 

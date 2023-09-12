@@ -40,6 +40,49 @@ SsaClient::SsaClient(const Credential &credential, const string &region, const C
 }
 
 
+SsaClient::DescribeAlarmStatOutcome SsaClient::DescribeAlarmStat(const DescribeAlarmStatRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmStat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmStatResponse rsp = DescribeAlarmStatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmStatOutcome(rsp);
+        else
+            return DescribeAlarmStatOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmStatOutcome(outcome.GetError());
+    }
+}
+
+void SsaClient::DescribeAlarmStatAsync(const DescribeAlarmStatRequest& request, const DescribeAlarmStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmStat(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsaClient::DescribeAlarmStatOutcomeCallable SsaClient::DescribeAlarmStatCallable(const DescribeAlarmStatRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmStatOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmStat(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsaClient::DescribeAssetDetailOutcome SsaClient::DescribeAssetDetail(const DescribeAssetDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetDetail");

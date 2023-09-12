@@ -27,7 +27,10 @@ DescribeHostTeoInstanceListRequest::DescribeHostTeoInstanceListRequest() :
     m_resourceTypeHasBeenSet(false),
     m_isCacheHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_oldCertificateIdHasBeenSet(false)
+    m_oldCertificateIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_asyncCacheHasBeenSet(false)
 {
 }
 
@@ -83,6 +86,30 @@ string DescribeHostTeoInstanceListRequest::ToJsonString() const
         string key = "OldCertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_oldCertificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_asyncCacheHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncCache";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asyncCache, allocator);
     }
 
 
@@ -171,6 +198,54 @@ void DescribeHostTeoInstanceListRequest::SetOldCertificateId(const string& _oldC
 bool DescribeHostTeoInstanceListRequest::OldCertificateIdHasBeenSet() const
 {
     return m_oldCertificateIdHasBeenSet;
+}
+
+uint64_t DescribeHostTeoInstanceListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeHostTeoInstanceListRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeHostTeoInstanceListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeHostTeoInstanceListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeHostTeoInstanceListRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeHostTeoInstanceListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeHostTeoInstanceListRequest::GetAsyncCache() const
+{
+    return m_asyncCache;
+}
+
+void DescribeHostTeoInstanceListRequest::SetAsyncCache(const int64_t& _asyncCache)
+{
+    m_asyncCache = _asyncCache;
+    m_asyncCacheHasBeenSet = true;
+}
+
+bool DescribeHostTeoInstanceListRequest::AsyncCacheHasBeenSet() const
+{
+    return m_asyncCacheHasBeenSet;
 }
 
 

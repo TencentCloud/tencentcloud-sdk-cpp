@@ -25,7 +25,14 @@ HostStatistic::HostStatistic() :
     m_hostFamilyHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_cpuAverageHasBeenSet(false),
+    m_memAverageHasBeenSet(false),
+    m_netAverageHasBeenSet(false),
+    m_cpuDetailDataHasBeenSet(false),
+    m_memDetailDataHasBeenSet(false),
+    m_netRateDetailDataHasBeenSet(false),
+    m_netPacketDetailDataHasBeenSet(false)
 {
 }
 
@@ -84,6 +91,104 @@ CoreInternalOutcome HostStatistic::Deserialize(const rapidjson::Value &value)
         m_countHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuAverage") && !value["CpuAverage"].IsNull())
+    {
+        if (!value["CpuAverage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostStatistic.CpuAverage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuAverage = value["CpuAverage"].GetDouble();
+        m_cpuAverageHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemAverage") && !value["MemAverage"].IsNull())
+    {
+        if (!value["MemAverage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostStatistic.MemAverage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_memAverage = value["MemAverage"].GetDouble();
+        m_memAverageHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetAverage") && !value["NetAverage"].IsNull())
+    {
+        if (!value["NetAverage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostStatistic.NetAverage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_netAverage = value["NetAverage"].GetDouble();
+        m_netAverageHasBeenSet = true;
+    }
+
+    if (value.HasMember("CpuDetailData") && !value["CpuDetailData"].IsNull())
+    {
+        if (!value["CpuDetailData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostStatistic.CpuDetailData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cpuDetailData.Deserialize(value["CpuDetailData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cpuDetailDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemDetailData") && !value["MemDetailData"].IsNull())
+    {
+        if (!value["MemDetailData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostStatistic.MemDetailData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_memDetailData.Deserialize(value["MemDetailData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_memDetailDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetRateDetailData") && !value["NetRateDetailData"].IsNull())
+    {
+        if (!value["NetRateDetailData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostStatistic.NetRateDetailData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_netRateDetailData.Deserialize(value["NetRateDetailData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_netRateDetailDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetPacketDetailData") && !value["NetPacketDetailData"].IsNull())
+    {
+        if (!value["NetPacketDetailData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostStatistic.NetPacketDetailData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_netPacketDetailData.Deserialize(value["NetPacketDetailData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_netPacketDetailDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +234,66 @@ void HostStatistic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_cpuAverageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuAverage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpuAverage, allocator);
+    }
+
+    if (m_memAverageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemAverage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memAverage, allocator);
+    }
+
+    if (m_netAverageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetAverage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_netAverage, allocator);
+    }
+
+    if (m_cpuDetailDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuDetailData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cpuDetailData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_memDetailDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemDetailData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_memDetailData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_netRateDetailDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetRateDetailData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_netRateDetailData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_netPacketDetailDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetPacketDetailData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_netPacketDetailData.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -212,5 +377,117 @@ void HostStatistic::SetCount(const uint64_t& _count)
 bool HostStatistic::CountHasBeenSet() const
 {
     return m_countHasBeenSet;
+}
+
+double HostStatistic::GetCpuAverage() const
+{
+    return m_cpuAverage;
+}
+
+void HostStatistic::SetCpuAverage(const double& _cpuAverage)
+{
+    m_cpuAverage = _cpuAverage;
+    m_cpuAverageHasBeenSet = true;
+}
+
+bool HostStatistic::CpuAverageHasBeenSet() const
+{
+    return m_cpuAverageHasBeenSet;
+}
+
+double HostStatistic::GetMemAverage() const
+{
+    return m_memAverage;
+}
+
+void HostStatistic::SetMemAverage(const double& _memAverage)
+{
+    m_memAverage = _memAverage;
+    m_memAverageHasBeenSet = true;
+}
+
+bool HostStatistic::MemAverageHasBeenSet() const
+{
+    return m_memAverageHasBeenSet;
+}
+
+double HostStatistic::GetNetAverage() const
+{
+    return m_netAverage;
+}
+
+void HostStatistic::SetNetAverage(const double& _netAverage)
+{
+    m_netAverage = _netAverage;
+    m_netAverageHasBeenSet = true;
+}
+
+bool HostStatistic::NetAverageHasBeenSet() const
+{
+    return m_netAverageHasBeenSet;
+}
+
+DetailData HostStatistic::GetCpuDetailData() const
+{
+    return m_cpuDetailData;
+}
+
+void HostStatistic::SetCpuDetailData(const DetailData& _cpuDetailData)
+{
+    m_cpuDetailData = _cpuDetailData;
+    m_cpuDetailDataHasBeenSet = true;
+}
+
+bool HostStatistic::CpuDetailDataHasBeenSet() const
+{
+    return m_cpuDetailDataHasBeenSet;
+}
+
+DetailData HostStatistic::GetMemDetailData() const
+{
+    return m_memDetailData;
+}
+
+void HostStatistic::SetMemDetailData(const DetailData& _memDetailData)
+{
+    m_memDetailData = _memDetailData;
+    m_memDetailDataHasBeenSet = true;
+}
+
+bool HostStatistic::MemDetailDataHasBeenSet() const
+{
+    return m_memDetailDataHasBeenSet;
+}
+
+DetailData HostStatistic::GetNetRateDetailData() const
+{
+    return m_netRateDetailData;
+}
+
+void HostStatistic::SetNetRateDetailData(const DetailData& _netRateDetailData)
+{
+    m_netRateDetailData = _netRateDetailData;
+    m_netRateDetailDataHasBeenSet = true;
+}
+
+bool HostStatistic::NetRateDetailDataHasBeenSet() const
+{
+    return m_netRateDetailDataHasBeenSet;
+}
+
+DetailData HostStatistic::GetNetPacketDetailData() const
+{
+    return m_netPacketDetailData;
+}
+
+void HostStatistic::SetNetPacketDetailData(const DetailData& _netPacketDetailData)
+{
+    m_netPacketDetailData = _netPacketDetailData;
+    m_netPacketDetailDataHasBeenSet = true;
+}
+
+bool HostStatistic::NetPacketDetailDataHasBeenSet() const
+{
+    return m_netPacketDetailDataHasBeenSet;
 }
 

@@ -58,7 +58,10 @@ Certificates::Certificates() :
     m_cAEndTimesHasBeenSet(false),
     m_cACommonNamesHasBeenSet(false),
     m_preAuditInfoHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_hostingStatusHasBeenSet(false),
+    m_hostingCompleteTimeHasBeenSet(false),
+    m_hostingRenewCertIdHasBeenSet(false)
 {
 }
 
@@ -493,6 +496,36 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_autoRenewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("HostingStatus") && !value["HostingStatus"].IsNull())
+    {
+        if (!value["HostingStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.HostingStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostingStatus = value["HostingStatus"].GetInt64();
+        m_hostingStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostingCompleteTime") && !value["HostingCompleteTime"].IsNull())
+    {
+        if (!value["HostingCompleteTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.HostingCompleteTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostingCompleteTime = string(value["HostingCompleteTime"].GetString());
+        m_hostingCompleteTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostingRenewCertId") && !value["HostingRenewCertId"].IsNull())
+    {
+        if (!value["HostingRenewCertId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.HostingRenewCertId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostingRenewCertId = string(value["HostingRenewCertId"].GetString());
+        m_hostingRenewCertIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -837,6 +870,30 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_hostingStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostingStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostingStatus, allocator);
+    }
+
+    if (m_hostingCompleteTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostingCompleteTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostingCompleteTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostingRenewCertIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostingRenewCertId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostingRenewCertId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1448,5 +1505,53 @@ void Certificates::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 bool Certificates::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+int64_t Certificates::GetHostingStatus() const
+{
+    return m_hostingStatus;
+}
+
+void Certificates::SetHostingStatus(const int64_t& _hostingStatus)
+{
+    m_hostingStatus = _hostingStatus;
+    m_hostingStatusHasBeenSet = true;
+}
+
+bool Certificates::HostingStatusHasBeenSet() const
+{
+    return m_hostingStatusHasBeenSet;
+}
+
+string Certificates::GetHostingCompleteTime() const
+{
+    return m_hostingCompleteTime;
+}
+
+void Certificates::SetHostingCompleteTime(const string& _hostingCompleteTime)
+{
+    m_hostingCompleteTime = _hostingCompleteTime;
+    m_hostingCompleteTimeHasBeenSet = true;
+}
+
+bool Certificates::HostingCompleteTimeHasBeenSet() const
+{
+    return m_hostingCompleteTimeHasBeenSet;
+}
+
+string Certificates::GetHostingRenewCertId() const
+{
+    return m_hostingRenewCertId;
+}
+
+void Certificates::SetHostingRenewCertId(const string& _hostingRenewCertId)
+{
+    m_hostingRenewCertId = _hostingRenewCertId;
+    m_hostingRenewCertIdHasBeenSet = true;
+}
+
+bool Certificates::HostingRenewCertIdHasBeenSet() const
+{
+    return m_hostingRenewCertIdHasBeenSet;
 }
 

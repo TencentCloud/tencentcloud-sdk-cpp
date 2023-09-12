@@ -24,9 +24,9 @@ using namespace std;
 
 DescribeGroupsWithPluginRequest::DescribeGroupsWithPluginRequest() :
     m_pluginIdHasBeenSet(false),
-    m_boundHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_boundHasBeenSet(false),
     m_searchWordHasBeenSet(false),
     m_gatewayInstanceIdHasBeenSet(false)
 {
@@ -47,14 +47,6 @@ string DescribeGroupsWithPluginRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_pluginId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_boundHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Bound";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_bound, allocator);
-    }
-
     if (m_offsetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -69,6 +61,14 @@ string DescribeGroupsWithPluginRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_boundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bound";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bound, allocator);
     }
 
     if (m_searchWordHasBeenSet)
@@ -111,22 +111,6 @@ bool DescribeGroupsWithPluginRequest::PluginIdHasBeenSet() const
     return m_pluginIdHasBeenSet;
 }
 
-bool DescribeGroupsWithPluginRequest::GetBound() const
-{
-    return m_bound;
-}
-
-void DescribeGroupsWithPluginRequest::SetBound(const bool& _bound)
-{
-    m_bound = _bound;
-    m_boundHasBeenSet = true;
-}
-
-bool DescribeGroupsWithPluginRequest::BoundHasBeenSet() const
-{
-    return m_boundHasBeenSet;
-}
-
 int64_t DescribeGroupsWithPluginRequest::GetOffset() const
 {
     return m_offset;
@@ -157,6 +141,22 @@ void DescribeGroupsWithPluginRequest::SetLimit(const int64_t& _limit)
 bool DescribeGroupsWithPluginRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+bool DescribeGroupsWithPluginRequest::GetBound() const
+{
+    return m_bound;
+}
+
+void DescribeGroupsWithPluginRequest::SetBound(const bool& _bound)
+{
+    m_bound = _bound;
+    m_boundHasBeenSet = true;
+}
+
+bool DescribeGroupsWithPluginRequest::BoundHasBeenSet() const
+{
+    return m_boundHasBeenSet;
 }
 
 string DescribeGroupsWithPluginRequest::GetSearchWord() const

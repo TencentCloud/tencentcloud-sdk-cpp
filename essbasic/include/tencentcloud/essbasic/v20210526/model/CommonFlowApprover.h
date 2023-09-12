@@ -307,21 +307,21 @@ namespace TencentCloud
                     /**
                      * 获取通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
                      * @return NotifyType 通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
-                     * @deprecated
+                     * 
                      */
                     std::string GetNotifyType() const;
 
                     /**
                      * 设置通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
                      * @param _notifyType 通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
-                     * @deprecated
+                     * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
 
                     /**
                      * 判断参数 NotifyType 是否已赋值
                      * @return NotifyType 是否已赋值
-                     * @deprecated
+                     * 
                      */
                     bool NotifyTypeHasBeenSet() const;
 
@@ -366,6 +366,48 @@ namespace TencentCloud
                      * 
                      */
                     bool SignComponentsHasBeenSet() const;
+
+                    /**
+                     * 获取签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1 查看合同的认证方式 Flow层级的优先于approver层级的 （当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）
+                     * @return ApproverVerifyTypes 签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1 查看合同的认证方式 Flow层级的优先于approver层级的 （当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）
+                     * 
+                     */
+                    std::vector<int64_t> GetApproverVerifyTypes() const;
+
+                    /**
+                     * 设置签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1 查看合同的认证方式 Flow层级的优先于approver层级的 （当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）
+                     * @param _approverVerifyTypes 签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1 查看合同的认证方式 Flow层级的优先于approver层级的 （当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）
+                     * 
+                     */
+                    void SetApproverVerifyTypes(const std::vector<int64_t>& _approverVerifyTypes);
+
+                    /**
+                     * 判断参数 ApproverVerifyTypes 是否已赋值
+                     * @return ApproverVerifyTypes 是否已赋值
+                     * 
+                     */
+                    bool ApproverVerifyTypesHasBeenSet() const;
+
+                    /**
+                     * 获取签署人签署合同时的认证方式 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)	
+                     * @return ApproverSignTypes 签署人签署合同时的认证方式 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)	
+                     * 
+                     */
+                    std::vector<int64_t> GetApproverSignTypes() const;
+
+                    /**
+                     * 设置签署人签署合同时的认证方式 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)	
+                     * @param _approverSignTypes 签署人签署合同时的认证方式 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)	
+                     * 
+                     */
+                    void SetApproverSignTypes(const std::vector<int64_t>& _approverSignTypes);
+
+                    /**
+                     * 判断参数 ApproverSignTypes 是否已赋值
+                     * @return ApproverSignTypes 是否已赋值
+                     * 
+                     */
+                    bool ApproverSignTypesHasBeenSet() const;
 
                 private:
 
@@ -459,6 +501,18 @@ namespace TencentCloud
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
+
+                    /**
+                     * 签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1 查看合同的认证方式 Flow层级的优先于approver层级的 （当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）
+                     */
+                    std::vector<int64_t> m_approverVerifyTypes;
+                    bool m_approverVerifyTypesHasBeenSet;
+
+                    /**
+                     * 签署人签署合同时的认证方式 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)	
+                     */
+                    std::vector<int64_t> m_approverSignTypes;
+                    bool m_approverSignTypesHasBeenSet;
 
                 };
             }

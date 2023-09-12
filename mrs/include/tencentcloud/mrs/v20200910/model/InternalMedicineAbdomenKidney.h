@@ -1,0 +1,250 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_MRS_V20200910_MODEL_INTERNALMEDICINEABDOMENKIDNEY_H_
+#define TENCENTCLOUD_MRS_V20200910_MODEL_INTERNALMEDICINEABDOMENKIDNEY_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mrs/v20200910/model/KeyValueItem.h>
+
+
+namespace TencentCloud
+{
+    namespace Mrs
+    {
+        namespace V20200910
+        {
+            namespace Model
+            {
+                /**
+                * 体检报告-内科-腹部-肾脏
+                */
+                class InternalMedicineAbdomenKidney : public AbstractModel
+                {
+                public:
+                    InternalMedicineAbdomenKidney();
+                    ~InternalMedicineAbdomenKidney() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取肾脏总体描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Src 肾脏总体描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KeyValueItem GetSrc() const;
+
+                    /**
+                     * 设置肾脏总体描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _src 肾脏总体描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSrc(const KeyValueItem& _src);
+
+                    /**
+                     * 判断参数 Src 是否已赋值
+                     * @return Src 是否已赋值
+                     * 
+                     */
+                    bool SrcHasBeenSet() const;
+
+                    /**
+                     * 获取肾脏大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Size 肾脏大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KeyValueItem GetSize() const;
+
+                    /**
+                     * 设置肾脏大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _size 肾脏大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSize(const KeyValueItem& _size);
+
+                    /**
+                     * 判断参数 Size 是否已赋值
+                     * @return Size 是否已赋值
+                     * 
+                     */
+                    bool SizeHasBeenSet() const;
+
+                    /**
+                     * 获取肾脏触诊
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Palpation 肾脏触诊
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KeyValueItem GetPalpation() const;
+
+                    /**
+                     * 设置肾脏触诊
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _palpation 肾脏触诊
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPalpation(const KeyValueItem& _palpation);
+
+                    /**
+                     * 判断参数 Palpation 是否已赋值
+                     * @return Palpation 是否已赋值
+                     * 
+                     */
+                    bool PalpationHasBeenSet() const;
+
+                    /**
+                     * 获取肾脏叩诊
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Percussion 肾脏叩诊
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KeyValueItem GetPercussion() const;
+
+                    /**
+                     * 设置肾脏叩诊
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _percussion 肾脏叩诊
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPercussion(const KeyValueItem& _percussion);
+
+                    /**
+                     * 判断参数 Percussion 是否已赋值
+                     * @return Percussion 是否已赋值
+                     * 
+                     */
+                    bool PercussionHasBeenSet() const;
+
+                    /**
+                     * 获取肾脏压痛
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tenderness 肾脏压痛
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KeyValueItem GetTenderness() const;
+
+                    /**
+                     * 设置肾脏压痛
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tenderness 肾脏压痛
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTenderness(const KeyValueItem& _tenderness);
+
+                    /**
+                     * 判断参数 Tenderness 是否已赋值
+                     * @return Tenderness 是否已赋值
+                     * 
+                     */
+                    bool TendernessHasBeenSet() const;
+
+                    /**
+                     * 获取肾脏质地
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Consistency 肾脏质地
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KeyValueItem GetConsistency() const;
+
+                    /**
+                     * 设置肾脏质地
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _consistency 肾脏质地
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConsistency(const KeyValueItem& _consistency);
+
+                    /**
+                     * 判断参数 Consistency 是否已赋值
+                     * @return Consistency 是否已赋值
+                     * 
+                     */
+                    bool ConsistencyHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 肾脏总体描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KeyValueItem m_src;
+                    bool m_srcHasBeenSet;
+
+                    /**
+                     * 肾脏大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KeyValueItem m_size;
+                    bool m_sizeHasBeenSet;
+
+                    /**
+                     * 肾脏触诊
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KeyValueItem m_palpation;
+                    bool m_palpationHasBeenSet;
+
+                    /**
+                     * 肾脏叩诊
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KeyValueItem m_percussion;
+                    bool m_percussionHasBeenSet;
+
+                    /**
+                     * 肾脏压痛
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KeyValueItem m_tenderness;
+                    bool m_tendernessHasBeenSet;
+
+                    /**
+                     * 肾脏质地
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KeyValueItem m_consistency;
+                    bool m_consistencyHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_MRS_V20200910_MODEL_INTERNALMEDICINEABDOMENKIDNEY_H_

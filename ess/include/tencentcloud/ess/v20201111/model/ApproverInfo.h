@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/Component.h>
 #include <tencentcloud/ess/v20201111/model/ApproverOption.h>
+#include <tencentcloud/ess/v20201111/model/ComponentLimit.h>
 
 
 namespace TencentCloud
@@ -674,6 +675,35 @@ namespace TencentCloud
                      */
                     bool ApproverNeedSignReviewHasBeenSet() const;
 
+                    /**
+                     * 获取[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID）或签名方式。
+
+注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`
+                     * @return AddSignComponentsLimits [用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID）或签名方式。
+
+注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`
+                     * 
+                     */
+                    std::vector<ComponentLimit> GetAddSignComponentsLimits() const;
+
+                    /**
+                     * 设置[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID）或签名方式。
+
+注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`
+                     * @param _addSignComponentsLimits [用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID）或签名方式。
+
+注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`
+                     * 
+                     */
+                    void SetAddSignComponentsLimits(const std::vector<ComponentLimit>& _addSignComponentsLimits);
+
+                    /**
+                     * 判断参数 AddSignComponentsLimits 是否已赋值
+                     * @return AddSignComponentsLimits 是否已赋值
+                     * 
+                     */
+                    bool AddSignComponentsLimitsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -845,6 +875,14 @@ namespace TencentCloud
                      */
                     bool m_approverNeedSignReview;
                     bool m_approverNeedSignReviewHasBeenSet;
+
+                    /**
+                     * [用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID）或签名方式。
+
+注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`
+                     */
+                    std::vector<ComponentLimit> m_addSignComponentsLimits;
+                    bool m_addSignComponentsLimitsHasBeenSet;
 
                 };
             }

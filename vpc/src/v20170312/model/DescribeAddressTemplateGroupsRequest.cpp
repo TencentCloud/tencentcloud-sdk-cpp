@@ -25,7 +25,8 @@ using namespace std;
 DescribeAddressTemplateGroupsRequest::DescribeAddressTemplateGroupsRequest() :
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_needMemberInfoHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeAddressTemplateGroupsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_limit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needMemberInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedMemberInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needMemberInfo, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeAddressTemplateGroupsRequest::SetLimit(const string& _limit)
 bool DescribeAddressTemplateGroupsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+bool DescribeAddressTemplateGroupsRequest::GetNeedMemberInfo() const
+{
+    return m_needMemberInfo;
+}
+
+void DescribeAddressTemplateGroupsRequest::SetNeedMemberInfo(const bool& _needMemberInfo)
+{
+    m_needMemberInfo = _needMemberInfo;
+    m_needMemberInfoHasBeenSet = true;
+}
+
+bool DescribeAddressTemplateGroupsRequest::NeedMemberInfoHasBeenSet() const
+{
+    return m_needMemberInfoHasBeenSet;
 }
 
 

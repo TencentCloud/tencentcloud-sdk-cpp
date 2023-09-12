@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取数据集idList
+                     * @return ProgramIdList 数据集idList
+                     * 
+                     */
+                    std::vector<std::string> GetProgramIdList() const;
+
+                    /**
+                     * 设置数据集idList
+                     * @param _programIdList 数据集idList
+                     * 
+                     */
+                    void SetProgramIdList(const std::vector<std::string>& _programIdList);
+
+                    /**
+                     * 判断参数 ProgramIdList 是否已赋值
+                     * @return ProgramIdList 是否已赋值
+                     * 
+                     */
+                    bool ProgramIdListHasBeenSet() const;
+
+                    /**
+                     * 获取ConfigIdList
+                     * @return ConfigIdList ConfigIdList
+                     * 
+                     */
+                    std::vector<std::string> GetConfigIdList() const;
+
+                    /**
+                     * 设置ConfigIdList
+                     * @param _configIdList ConfigIdList
+                     * 
+                     */
+                    void SetConfigIdList(const std::vector<std::string>& _configIdList);
+
+                    /**
+                     * 判断参数 ConfigIdList 是否已赋值
+                     * @return ConfigIdList 是否已赋值
+                     * 
+                     */
+                    bool ConfigIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 数据集idList
+                     */
+                    std::vector<std::string> m_programIdList;
+                    bool m_programIdListHasBeenSet;
+
+                    /**
+                     * ConfigIdList
+                     */
+                    std::vector<std::string> m_configIdList;
+                    bool m_configIdListHasBeenSet;
 
                 };
             }

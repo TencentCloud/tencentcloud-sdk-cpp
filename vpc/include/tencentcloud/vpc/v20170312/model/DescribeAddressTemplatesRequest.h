@@ -118,6 +118,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否获取IP地址模板成员标识。
+                     * @return NeedMemberInfo 是否获取IP地址模板成员标识。
+                     * 
+                     */
+                    bool GetNeedMemberInfo() const;
+
+                    /**
+                     * 设置是否获取IP地址模板成员标识。
+                     * @param _needMemberInfo 是否获取IP地址模板成员标识。
+                     * 
+                     */
+                    void SetNeedMemberInfo(const bool& _needMemberInfo);
+
+                    /**
+                     * 判断参数 NeedMemberInfo 是否已赋值
+                     * @return NeedMemberInfo 是否已赋值
+                     * 
+                     */
+                    bool NeedMemberInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 是否获取IP地址模板成员标识。
+                     */
+                    bool m_needMemberInfo;
+                    bool m_needMemberInfoHasBeenSet;
 
                 };
             }

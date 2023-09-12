@@ -900,6 +900,49 @@ SesClient::ListEmailTemplatesOutcomeCallable SesClient::ListEmailTemplatesCallab
     return task->get_future();
 }
 
+SesClient::ListReceiverDetailsOutcome SesClient::ListReceiverDetails(const ListReceiverDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListReceiverDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListReceiverDetailsResponse rsp = ListReceiverDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListReceiverDetailsOutcome(rsp);
+        else
+            return ListReceiverDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListReceiverDetailsOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::ListReceiverDetailsAsync(const ListReceiverDetailsRequest& request, const ListReceiverDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListReceiverDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::ListReceiverDetailsOutcomeCallable SesClient::ListReceiverDetailsCallable(const ListReceiverDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListReceiverDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListReceiverDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SesClient::ListReceiversOutcome SesClient::ListReceivers(const ListReceiversRequest &request)
 {
     auto outcome = MakeRequest(request, "ListReceivers");

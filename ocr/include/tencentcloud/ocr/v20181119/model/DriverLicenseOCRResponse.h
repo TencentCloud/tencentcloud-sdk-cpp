@@ -295,6 +295,34 @@ WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
                      */
                     bool CumulativeScoreHasBeenSet() const;
 
+                    /**
+                     * 获取当前时间（仅电子驾驶证支持返回该字段）
+                     * @return CurrentTime 当前时间（仅电子驾驶证支持返回该字段）
+                     * 
+                     */
+                    std::string GetCurrentTime() const;
+
+                    /**
+                     * 判断参数 CurrentTime 是否已赋值
+                     * @return CurrentTime 是否已赋值
+                     * 
+                     */
+                    bool CurrentTimeHasBeenSet() const;
+
+                    /**
+                     * 获取生成时间（仅电子驾驶证支持返回该字段）
+                     * @return GenerateTime 生成时间（仅电子驾驶证支持返回该字段）
+                     * 
+                     */
+                    std::string GetGenerateTime() const;
+
+                    /**
+                     * 判断参数 GenerateTime 是否已赋值
+                     * @return GenerateTime 是否已赋值
+                     * 
+                     */
+                    bool GenerateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -405,6 +433,18 @@ WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
                      */
                     std::string m_cumulativeScore;
                     bool m_cumulativeScoreHasBeenSet;
+
+                    /**
+                     * 当前时间（仅电子驾驶证支持返回该字段）
+                     */
+                    std::string m_currentTime;
+                    bool m_currentTimeHasBeenSet;
+
+                    /**
+                     * 生成时间（仅电子驾驶证支持返回该字段）
+                     */
+                    std::string m_generateTime;
+                    bool m_generateTimeHasBeenSet;
 
                 };
             }

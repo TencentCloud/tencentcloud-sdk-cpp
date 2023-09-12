@@ -63,6 +63,8 @@
 #include <tencentcloud/ses/v20201002/model/ListEmailIdentitiesResponse.h>
 #include <tencentcloud/ses/v20201002/model/ListEmailTemplatesRequest.h>
 #include <tencentcloud/ses/v20201002/model/ListEmailTemplatesResponse.h>
+#include <tencentcloud/ses/v20201002/model/ListReceiverDetailsRequest.h>
+#include <tencentcloud/ses/v20201002/model/ListReceiverDetailsResponse.h>
 #include <tencentcloud/ses/v20201002/model/ListReceiversRequest.h>
 #include <tencentcloud/ses/v20201002/model/ListReceiversResponse.h>
 #include <tencentcloud/ses/v20201002/model/ListSendTasksRequest.h>
@@ -149,6 +151,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListEmailTemplatesResponse> ListEmailTemplatesOutcome;
                 typedef std::future<ListEmailTemplatesOutcome> ListEmailTemplatesOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::ListEmailTemplatesRequest&, ListEmailTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEmailTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListReceiverDetailsResponse> ListReceiverDetailsOutcome;
+                typedef std::future<ListReceiverDetailsOutcome> ListReceiverDetailsOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::ListReceiverDetailsRequest&, ListReceiverDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListReceiverDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListReceiversResponse> ListReceiversOutcome;
                 typedef std::future<ListReceiversOutcome> ListReceiversOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::ListReceiversRequest&, ListReceiversOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListReceiversAsyncHandler;
@@ -351,6 +356,15 @@ namespace TencentCloud
                 ListEmailTemplatesOutcome ListEmailTemplates(const Model::ListEmailTemplatesRequest &request);
                 void ListEmailTemplatesAsync(const Model::ListEmailTemplatesRequest& request, const ListEmailTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListEmailTemplatesOutcomeCallable ListEmailTemplatesCallable(const Model::ListEmailTemplatesRequest& request);
+
+                /**
+                 *根据收件人列表id查询收件人列表中的所有收件人邮箱地址，分页查询，可以根据收件邮箱地址来过滤查询
+                 * @param req ListReceiverDetailsRequest
+                 * @return ListReceiverDetailsOutcome
+                 */
+                ListReceiverDetailsOutcome ListReceiverDetails(const Model::ListReceiverDetailsRequest &request);
+                void ListReceiverDetailsAsync(const Model::ListReceiverDetailsRequest& request, const ListReceiverDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListReceiverDetailsOutcomeCallable ListReceiverDetailsCallable(const Model::ListReceiverDetailsRequest& request);
 
                 /**
                  *根据条件查询收件人列表，支持分页，模糊查询，状态查询

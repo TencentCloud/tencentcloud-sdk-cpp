@@ -30,6 +30,7 @@
 #include <tencentcloud/as/v20180419/model/InstanceNameSettings.h>
 #include <tencentcloud/as/v20180419/model/EnhancedService.h>
 #include <tencentcloud/as/v20180419/model/IPv6InternetAccessible.h>
+#include <tencentcloud/as/v20180419/model/LoginSettings.h>
 
 
 namespace TencentCloud
@@ -596,6 +597,27 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     bool DisasterRecoverGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取实例登录设置，包括密码、密钥或保持镜像的原始登录设置。<br>请注意，指定新的登录设置会覆盖原有登录设置。例如，如果您之前使用密码登录，使用该参数将登录设置修改为密钥，则原有密码被清除。
+                     * @return LoginSettings 实例登录设置，包括密码、密钥或保持镜像的原始登录设置。<br>请注意，指定新的登录设置会覆盖原有登录设置。例如，如果您之前使用密码登录，使用该参数将登录设置修改为密钥，则原有密码被清除。
+                     * 
+                     */
+                    LoginSettings GetLoginSettings() const;
+
+                    /**
+                     * 设置实例登录设置，包括密码、密钥或保持镜像的原始登录设置。<br>请注意，指定新的登录设置会覆盖原有登录设置。例如，如果您之前使用密码登录，使用该参数将登录设置修改为密钥，则原有密码被清除。
+                     * @param _loginSettings 实例登录设置，包括密码、密钥或保持镜像的原始登录设置。<br>请注意，指定新的登录设置会覆盖原有登录设置。例如，如果您之前使用密码登录，使用该参数将登录设置修改为密钥，则原有密码被清除。
+                     * 
+                     */
+                    void SetLoginSettings(const LoginSettings& _loginSettings);
+
+                    /**
+                     * 判断参数 LoginSettings 是否已赋值
+                     * @return LoginSettings 是否已赋值
+                     * 
+                     */
+                    bool LoginSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -749,6 +771,12 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     std::vector<std::string> m_disasterRecoverGroupIds;
                     bool m_disasterRecoverGroupIdsHasBeenSet;
+
+                    /**
+                     * 实例登录设置，包括密码、密钥或保持镜像的原始登录设置。<br>请注意，指定新的登录设置会覆盖原有登录设置。例如，如果您之前使用密码登录，使用该参数将登录设置修改为密钥，则原有密码被清除。
+                     */
+                    LoginSettings m_loginSettings;
+                    bool m_loginSettingsHasBeenSet;
 
                 };
             }

@@ -45,15 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息
-                     * @param _operator 操作人信息
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -87,35 +91,35 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取身份证件类型取值：
-ID_CARD 身居民身份证
-PASSPORT 护照
-HONGKONG_AND_MACAO 港澳居民来往内地通行证
-FOREIGN_ID_CARD 外国人永久居留身份证
-HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-                     * @return IdCardType 身份证件类型取值：
-ID_CARD 身居民身份证
-PASSPORT 护照
-HONGKONG_AND_MACAO 港澳居民来往内地通行证
-FOREIGN_ID_CARD 外国人永久居留身份证
-HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+                     * 获取证件类型，支持以下类型
+<ul><li> ID_CARD  : 居民身份证 (默认值)</li>
+<li> PASSPORT  : 护照</li>
+<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>
+<li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>
+<li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * @return IdCardType 证件类型，支持以下类型
+<ul><li> ID_CARD  : 居民身份证 (默认值)</li>
+<li> PASSPORT  : 护照</li>
+<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>
+<li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>
+<li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>
                      * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置身份证件类型取值：
-ID_CARD 身居民身份证
-PASSPORT 护照
-HONGKONG_AND_MACAO 港澳居民来往内地通行证
-FOREIGN_ID_CARD 外国人永久居留身份证
-HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-                     * @param _idCardType 身份证件类型取值：
-ID_CARD 身居民身份证
-PASSPORT 护照
-HONGKONG_AND_MACAO 港澳居民来往内地通行证
-FOREIGN_ID_CARD 外国人永久居留身份证
-HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+                     * 设置证件类型，支持以下类型
+<ul><li> ID_CARD  : 居民身份证 (默认值)</li>
+<li> PASSPORT  : 护照</li>
+<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>
+<li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>
+<li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * @param _idCardType 证件类型，支持以下类型
+<ul><li> ID_CARD  : 居民身份证 (默认值)</li>
+<li> PASSPORT  : 护照</li>
+<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>
+<li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>
+<li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -128,15 +132,27 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取身份证件号码
-                     * @return IdCardNumber 身份证件号码
+                     * 获取证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @return IdCardNumber 证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置身份证件号码
-                     * @param _idCardNumber 身份证件号码
+                     * 设置证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @param _idCardNumber 证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -149,15 +165,19 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @return Agent 代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @param _agent 代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -172,7 +192,8 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                 private:
 
                     /**
-                     * 操作人信息
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
@@ -184,24 +205,28 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 身份证件类型取值：
-ID_CARD 身居民身份证
-PASSPORT 护照
-HONGKONG_AND_MACAO 港澳居民来往内地通行证
-FOREIGN_ID_CARD 外国人永久居留身份证
-HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
+                     * 证件类型，支持以下类型
+<ul><li> ID_CARD  : 居民身份证 (默认值)</li>
+<li> PASSPORT  : 护照</li>
+<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>
+<li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>
+<li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 身份证件号码
+                     * 证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

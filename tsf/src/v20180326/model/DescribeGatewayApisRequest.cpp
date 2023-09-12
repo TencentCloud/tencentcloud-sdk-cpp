@@ -27,7 +27,8 @@ DescribeGatewayApisRequest::DescribeGatewayApisRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_searchWordHasBeenSet(false),
-    m_gatewayDeployGroupIdHasBeenSet(false)
+    m_gatewayDeployGroupIdHasBeenSet(false),
+    m_releaseStatusHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeGatewayApisRequest::ToJsonString() const
         string key = "GatewayDeployGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_gatewayDeployGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_releaseStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReleaseStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_releaseStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeGatewayApisRequest::SetGatewayDeployGroupId(const string& _gatewayD
 bool DescribeGatewayApisRequest::GatewayDeployGroupIdHasBeenSet() const
 {
     return m_gatewayDeployGroupIdHasBeenSet;
+}
+
+string DescribeGatewayApisRequest::GetReleaseStatus() const
+{
+    return m_releaseStatus;
+}
+
+void DescribeGatewayApisRequest::SetReleaseStatus(const string& _releaseStatus)
+{
+    m_releaseStatus = _releaseStatus;
+    m_releaseStatusHasBeenSet = true;
+}
+
+bool DescribeGatewayApisRequest::ReleaseStatusHasBeenSet() const
+{
+    return m_releaseStatusHasBeenSet;
 }
 
 

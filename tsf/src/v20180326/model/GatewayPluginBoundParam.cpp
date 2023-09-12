@@ -23,7 +23,9 @@ using namespace std;
 GatewayPluginBoundParam::GatewayPluginBoundParam() :
     m_pluginIdHasBeenSet(false),
     m_scopeTypeHasBeenSet(false),
-    m_scopeValueHasBeenSet(false)
+    m_scopeValueHasBeenSet(false),
+    m_microserviceIdHasBeenSet(false),
+    m_gatewayInstanceIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome GatewayPluginBoundParam::Deserialize(const rapidjson::Value 
         m_scopeValueHasBeenSet = true;
     }
 
+    if (value.HasMember("MicroserviceId") && !value["MicroserviceId"].IsNull())
+    {
+        if (!value["MicroserviceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayPluginBoundParam.MicroserviceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_microserviceId = string(value["MicroserviceId"].GetString());
+        m_microserviceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GatewayInstanceId") && !value["GatewayInstanceId"].IsNull())
+    {
+        if (!value["GatewayInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayPluginBoundParam.GatewayInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayInstanceId = string(value["GatewayInstanceId"].GetString());
+        m_gatewayInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void GatewayPluginBoundParam::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ScopeValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scopeValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_microserviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MicroserviceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_microserviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void GatewayPluginBoundParam::SetScopeValue(const string& _scopeValue)
 bool GatewayPluginBoundParam::ScopeValueHasBeenSet() const
 {
     return m_scopeValueHasBeenSet;
+}
+
+string GatewayPluginBoundParam::GetMicroserviceId() const
+{
+    return m_microserviceId;
+}
+
+void GatewayPluginBoundParam::SetMicroserviceId(const string& _microserviceId)
+{
+    m_microserviceId = _microserviceId;
+    m_microserviceIdHasBeenSet = true;
+}
+
+bool GatewayPluginBoundParam::MicroserviceIdHasBeenSet() const
+{
+    return m_microserviceIdHasBeenSet;
+}
+
+string GatewayPluginBoundParam::GetGatewayInstanceId() const
+{
+    return m_gatewayInstanceId;
+}
+
+void GatewayPluginBoundParam::SetGatewayInstanceId(const string& _gatewayInstanceId)
+{
+    m_gatewayInstanceId = _gatewayInstanceId;
+    m_gatewayInstanceIdHasBeenSet = true;
+}
+
+bool GatewayPluginBoundParam::GatewayInstanceIdHasBeenSet() const
+{
+    return m_gatewayInstanceIdHasBeenSet;
 }
 

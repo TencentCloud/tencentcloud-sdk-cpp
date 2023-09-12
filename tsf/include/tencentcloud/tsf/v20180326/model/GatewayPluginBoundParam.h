@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PluginIdHasBeenSet() const;
 
                     /**
-                     * 获取插件绑定到的对象类型:group/api
-                     * @return ScopeType 插件绑定到的对象类型:group/api
+                     * 获取插件绑定到的对象类型:group/api/all
+                     * @return ScopeType 插件绑定到的对象类型:group/api/all
                      * 
                      */
                     std::string GetScopeType() const;
 
                     /**
-                     * 设置插件绑定到的对象类型:group/api
-                     * @param _scopeType 插件绑定到的对象类型:group/api
+                     * 设置插件绑定到的对象类型:group/api/all
+                     * @param _scopeType 插件绑定到的对象类型:group/api/all
                      * 
                      */
                     void SetScopeType(const std::string& _scopeType);
@@ -109,6 +109,48 @@ namespace TencentCloud
                      */
                     bool ScopeValueHasBeenSet() const;
 
+                    /**
+                     * 获取创建关联的服务id，关联envoy网关时使用
+                     * @return MicroserviceId 创建关联的服务id，关联envoy网关时使用
+                     * 
+                     */
+                    std::string GetMicroserviceId() const;
+
+                    /**
+                     * 设置创建关联的服务id，关联envoy网关时使用
+                     * @param _microserviceId 创建关联的服务id，关联envoy网关时使用
+                     * 
+                     */
+                    void SetMicroserviceId(const std::string& _microserviceId);
+
+                    /**
+                     * 判断参数 MicroserviceId 是否已赋值
+                     * @return MicroserviceId 是否已赋值
+                     * 
+                     */
+                    bool MicroserviceIdHasBeenSet() const;
+
+                    /**
+                     * 获取网关id
+                     * @return GatewayInstanceId 网关id
+                     * 
+                     */
+                    std::string GetGatewayInstanceId() const;
+
+                    /**
+                     * 设置网关id
+                     * @param _gatewayInstanceId 网关id
+                     * 
+                     */
+                    void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
+
+                    /**
+                     * 判断参数 GatewayInstanceId 是否已赋值
+                     * @return GatewayInstanceId 是否已赋值
+                     * 
+                     */
+                    bool GatewayInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -118,7 +160,7 @@ namespace TencentCloud
                     bool m_pluginIdHasBeenSet;
 
                     /**
-                     * 插件绑定到的对象类型:group/api
+                     * 插件绑定到的对象类型:group/api/all
                      */
                     std::string m_scopeType;
                     bool m_scopeTypeHasBeenSet;
@@ -128,6 +170,18 @@ namespace TencentCloud
                      */
                     std::string m_scopeValue;
                     bool m_scopeValueHasBeenSet;
+
+                    /**
+                     * 创建关联的服务id，关联envoy网关时使用
+                     */
+                    std::string m_microserviceId;
+                    bool m_microserviceIdHasBeenSet;
+
+                    /**
+                     * 网关id
+                     */
+                    std::string m_gatewayInstanceId;
+                    bool m_gatewayInstanceIdHasBeenSet;
 
                 };
             }

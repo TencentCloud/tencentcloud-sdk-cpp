@@ -148,6 +148,69 @@ namespace TencentCloud
                      */
                     bool OldCertificateIdHasBeenSet() const;
 
+                    /**
+                     * 获取分页偏移量，从0开始。
+                     * @return Offset 分页偏移量，从0开始。
+                     * 
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置分页偏移量，从0开始。
+                     * @param _offset 分页偏移量，从0开始。
+                     * 
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取每页数量，默认10。	
+                     * @return Limit 每页数量，默认10。	
+                     * 
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置每页数量，默认10。	
+                     * @param _limit 每页数量，默认10。	
+                     * 
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取是否异步
+                     * @return AsyncCache 是否异步
+                     * 
+                     */
+                    int64_t GetAsyncCache() const;
+
+                    /**
+                     * 设置是否异步
+                     * @param _asyncCache 是否异步
+                     * 
+                     */
+                    void SetAsyncCache(const int64_t& _asyncCache);
+
+                    /**
+                     * 判断参数 AsyncCache 是否已赋值
+                     * @return AsyncCache 是否已赋值
+                     * 
+                     */
+                    bool AsyncCacheHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +242,24 @@ namespace TencentCloud
                      */
                     std::string m_oldCertificateId;
                     bool m_oldCertificateIdHasBeenSet;
+
+                    /**
+                     * 分页偏移量，从0开始。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 每页数量，默认10。	
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 是否异步
+                     */
+                    int64_t m_asyncCache;
+                    bool m_asyncCacheHasBeenSet;
 
                 };
             }

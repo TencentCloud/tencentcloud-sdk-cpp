@@ -204,6 +204,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelUserAutoSignEnableUrlRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ComponentLimit.h
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/OrganizationInfo.h
@@ -490,6 +491,7 @@ set(essbasic_src
   src/v20210526/model/ChannelVerifyPdfRequest.cpp
   src/v20210526/model/CreateChannelFlowEvidenceReportRequest.cpp
   src/v20210526/model/ChannelCancelUserAutoSignEnableUrlRequest.cpp
+  src/v20210526/model/ComponentLimit.cpp
   src/v20210526/model/ChannelVerifyPdfResponse.cpp
   src/v20210526/model/CreateConsoleLoginUrlRequest.cpp
   src/v20210526/model/OrganizationInfo.cpp

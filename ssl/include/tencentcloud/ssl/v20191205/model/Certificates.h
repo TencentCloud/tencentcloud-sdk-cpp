@@ -1008,6 +1008,81 @@ null = 用户上传证书（没有套餐类型），
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取托管状态，0，托管中，5，资源替换中， 10， 托管完成， -1未托管 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostingStatus 托管状态，0，托管中，5，资源替换中， 10， 托管完成， -1未托管 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetHostingStatus() const;
+
+                    /**
+                     * 设置托管状态，0，托管中，5，资源替换中， 10， 托管完成， -1未托管 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hostingStatus 托管状态，0，托管中，5，资源替换中， 10， 托管完成， -1未托管 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHostingStatus(const int64_t& _hostingStatus);
+
+                    /**
+                     * 判断参数 HostingStatus 是否已赋值
+                     * @return HostingStatus 是否已赋值
+                     * 
+                     */
+                    bool HostingStatusHasBeenSet() const;
+
+                    /**
+                     * 获取托管完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostingCompleteTime 托管完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetHostingCompleteTime() const;
+
+                    /**
+                     * 设置托管完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hostingCompleteTime 托管完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHostingCompleteTime(const std::string& _hostingCompleteTime);
+
+                    /**
+                     * 判断参数 HostingCompleteTime 是否已赋值
+                     * @return HostingCompleteTime 是否已赋值
+                     * 
+                     */
+                    bool HostingCompleteTimeHasBeenSet() const;
+
+                    /**
+                     * 获取托管新证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostingRenewCertId 托管新证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetHostingRenewCertId() const;
+
+                    /**
+                     * 设置托管新证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hostingRenewCertId 托管新证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHostingRenewCertId(const std::string& _hostingRenewCertId);
+
+                    /**
+                     * 判断参数 HostingRenewCertId 是否已赋值
+                     * @return HostingRenewCertId 是否已赋值
+                     * 
+                     */
+                    bool HostingRenewCertIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1277,6 +1352,27 @@ null = 用户上传证书（没有套餐类型），
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 托管状态，0，托管中，5，资源替换中， 10， 托管完成， -1未托管 
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_hostingStatus;
+                    bool m_hostingStatusHasBeenSet;
+
+                    /**
+                     * 托管完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hostingCompleteTime;
+                    bool m_hostingCompleteTimeHasBeenSet;
+
+                    /**
+                     * 托管新证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hostingRenewCertId;
+                    bool m_hostingRenewCertIdHasBeenSet;
 
                 };
             }

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeAlarmStatRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeAlarmStatResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetDetailRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetDetailResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetDetailListRequest.h>
@@ -85,6 +87,9 @@ namespace TencentCloud
                 SsaClient(const Credential &credential, const std::string &region);
                 SsaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::DescribeAlarmStatResponse> DescribeAlarmStatOutcome;
+                typedef std::future<DescribeAlarmStatOutcome> DescribeAlarmStatOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeAlarmStatRequest&, DescribeAlarmStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmStatAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetDetailResponse> DescribeAssetDetailOutcome;
                 typedef std::future<DescribeAssetDetailOutcome> DescribeAssetDetailOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeAssetDetailRequest&, DescribeAssetDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetDetailAsyncHandler;
@@ -159,6 +164,15 @@ namespace TencentCloud
                 typedef std::function<void(const SsaClient*, const Model::SaEventPubRequest&, SaEventPubOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaEventPubAsyncHandler;
 
 
+
+                /**
+                 *安全大屏-用户威胁告警信息
+                 * @param req DescribeAlarmStatRequest
+                 * @return DescribeAlarmStatOutcome
+                 */
+                DescribeAlarmStatOutcome DescribeAlarmStat(const Model::DescribeAlarmStatRequest &request);
+                void DescribeAlarmStatAsync(const Model::DescribeAlarmStatRequest& request, const DescribeAlarmStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmStatOutcomeCallable DescribeAlarmStatCallable(const Model::DescribeAlarmStatRequest& request);
 
                 /**
                  *资产安全页资产详情

@@ -24,9 +24,9 @@ using namespace std;
 
 DescribePluginInstancesRequest::DescribePluginInstancesRequest() :
     m_scopeValueHasBeenSet(false),
-    m_boundHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_boundHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_searchWordHasBeenSet(false)
 {
@@ -47,14 +47,6 @@ string DescribePluginInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_scopeValue.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_boundHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Bound";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_bound, allocator);
-    }
-
     if (m_offsetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -69,6 +61,14 @@ string DescribePluginInstancesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_boundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bound";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bound, allocator);
     }
 
     if (m_typeHasBeenSet)
@@ -111,22 +111,6 @@ bool DescribePluginInstancesRequest::ScopeValueHasBeenSet() const
     return m_scopeValueHasBeenSet;
 }
 
-bool DescribePluginInstancesRequest::GetBound() const
-{
-    return m_bound;
-}
-
-void DescribePluginInstancesRequest::SetBound(const bool& _bound)
-{
-    m_bound = _bound;
-    m_boundHasBeenSet = true;
-}
-
-bool DescribePluginInstancesRequest::BoundHasBeenSet() const
-{
-    return m_boundHasBeenSet;
-}
-
 int64_t DescribePluginInstancesRequest::GetOffset() const
 {
     return m_offset;
@@ -157,6 +141,22 @@ void DescribePluginInstancesRequest::SetLimit(const int64_t& _limit)
 bool DescribePluginInstancesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+bool DescribePluginInstancesRequest::GetBound() const
+{
+    return m_bound;
+}
+
+void DescribePluginInstancesRequest::SetBound(const bool& _bound)
+{
+    m_bound = _bound;
+    m_boundHasBeenSet = true;
+}
+
+bool DescribePluginInstancesRequest::BoundHasBeenSet() const
+{
+    return m_boundHasBeenSet;
 }
 
 string DescribePluginInstancesRequest::GetType() const

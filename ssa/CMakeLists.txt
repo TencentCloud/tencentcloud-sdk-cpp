@@ -22,7 +22,9 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeAssetDetailRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListResponse.h
   include/tencentcloud/ssa/v20180608/model/ListDataSaEventPub.h
+  include/tencentcloud/ssa/v20180608/model/DescribeAlarmStatResponse.h
   include/tencentcloud/ssa/v20180608/model/Asset.h
+  include/tencentcloud/ssa/v20180608/model/AttackEvent.h
   include/tencentcloud/ssa/v20180608/model/SaEventPubRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeConfigListResponse.h
   include/tencentcloud/ssa/v20180608/model/AggregationObj.h
@@ -76,6 +78,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListRequest.h
   include/tencentcloud/ssa/v20180608/model/Filter.h
+  include/tencentcloud/ssa/v20180608/model/AlarmInfoRsp.h
   include/tencentcloud/ssa/v20180608/model/DataEvent.h
   include/tencentcloud/ssa/v20180608/model/SocCheckItemV1.h
   include/tencentcloud/ssa/v20180608/model/CheckAssetItem.h
@@ -88,6 +91,7 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeVulListResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceAssetListResponse.h
   include/tencentcloud/ssa/v20180608/model/DataCheck.h
+  include/tencentcloud/ssa/v20180608/model/DescribeAlarmStatRequest.h
   include/tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPub.h
   include/tencentcloud/ssa/v20180608/model/DescribeDomainListRequest.h
   include/tencentcloud/ssa/v20180608/model/CheckConfigDetail.h
@@ -116,7 +120,9 @@ set(ssa_src
   src/v20180608/model/DescribeAssetDetailRequest.cpp
   src/v20180608/model/DescribeSocCheckItemListResponse.cpp
   src/v20180608/model/ListDataSaEventPub.cpp
+  src/v20180608/model/DescribeAlarmStatResponse.cpp
   src/v20180608/model/Asset.cpp
+  src/v20180608/model/AttackEvent.cpp
   src/v20180608/model/SaEventPubRequest.cpp
   src/v20180608/model/DescribeConfigListResponse.cpp
   src/v20180608/model/AggregationObj.cpp
@@ -170,6 +176,7 @@ set(ssa_src
   src/v20180608/model/DescribeSocCspmComplianceResponse.cpp
   src/v20180608/model/DescribeSocCheckItemListRequest.cpp
   src/v20180608/model/Filter.cpp
+  src/v20180608/model/AlarmInfoRsp.cpp
   src/v20180608/model/DataEvent.cpp
   src/v20180608/model/SocCheckItemV1.cpp
   src/v20180608/model/CheckAssetItem.cpp
@@ -182,6 +189,7 @@ set(ssa_src
   src/v20180608/model/DescribeVulListResponse.cpp
   src/v20180608/model/DescribeComplianceAssetListResponse.cpp
   src/v20180608/model/DataCheck.cpp
+  src/v20180608/model/DescribeAlarmStatRequest.cpp
   src/v20180608/model/SaDivulgeDataQueryPub.cpp
   src/v20180608/model/DescribeDomainListRequest.cpp
   src/v20180608/model/CheckConfigDetail.cpp

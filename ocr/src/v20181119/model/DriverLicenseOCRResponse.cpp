@@ -40,7 +40,9 @@ DriverLicenseOCRResponse::DriverLicenseOCRResponse() :
     m_recognizeWarnMsgHasBeenSet(false),
     m_issuingAuthorityHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_cumulativeScoreHasBeenSet(false)
+    m_cumulativeScoreHasBeenSet(false),
+    m_currentTimeHasBeenSet(false),
+    m_generateTimeHasBeenSet(false)
 {
 }
 
@@ -254,6 +256,26 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
         m_cumulativeScoreHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CurrentTime") && !rsp["CurrentTime"].IsNull())
+    {
+        if (!rsp["CurrentTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CurrentTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentTime = string(rsp["CurrentTime"].GetString());
+        m_currentTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("GenerateTime") && !rsp["GenerateTime"].IsNull())
+    {
+        if (!rsp["GenerateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GenerateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_generateTime = string(rsp["GenerateTime"].GetString());
+        m_generateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -408,6 +430,22 @@ string DriverLicenseOCRResponse::ToJsonString() const
         string key = "CumulativeScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cumulativeScore.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_currentTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_generateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GenerateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_generateTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -590,6 +628,26 @@ string DriverLicenseOCRResponse::GetCumulativeScore() const
 bool DriverLicenseOCRResponse::CumulativeScoreHasBeenSet() const
 {
     return m_cumulativeScoreHasBeenSet;
+}
+
+string DriverLicenseOCRResponse::GetCurrentTime() const
+{
+    return m_currentTime;
+}
+
+bool DriverLicenseOCRResponse::CurrentTimeHasBeenSet() const
+{
+    return m_currentTimeHasBeenSet;
+}
+
+string DriverLicenseOCRResponse::GetGenerateTime() const
+{
+    return m_generateTime;
+}
+
+bool DriverLicenseOCRResponse::GenerateTimeHasBeenSet() const
+{
+    return m_generateTimeHasBeenSet;
 }
 
 

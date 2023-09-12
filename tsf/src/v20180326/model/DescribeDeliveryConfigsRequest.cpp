@@ -25,7 +25,9 @@ using namespace std;
 DescribeDeliveryConfigsRequest::DescribeDeliveryConfigsRequest() :
     m_searchWordHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_programIdListHasBeenSet(false),
+    m_configIdListHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,32 @@ string DescribeDeliveryConfigsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_programIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_programIdList.begin(); itr != m_programIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_configIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_configIdList.begin(); itr != m_configIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -114,6 +142,38 @@ void DescribeDeliveryConfigsRequest::SetLimit(const int64_t& _limit)
 bool DescribeDeliveryConfigsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> DescribeDeliveryConfigsRequest::GetProgramIdList() const
+{
+    return m_programIdList;
+}
+
+void DescribeDeliveryConfigsRequest::SetProgramIdList(const vector<string>& _programIdList)
+{
+    m_programIdList = _programIdList;
+    m_programIdListHasBeenSet = true;
+}
+
+bool DescribeDeliveryConfigsRequest::ProgramIdListHasBeenSet() const
+{
+    return m_programIdListHasBeenSet;
+}
+
+vector<string> DescribeDeliveryConfigsRequest::GetConfigIdList() const
+{
+    return m_configIdList;
+}
+
+void DescribeDeliveryConfigsRequest::SetConfigIdList(const vector<string>& _configIdList)
+{
+    m_configIdList = _configIdList;
+    m_configIdListHasBeenSet = true;
+}
+
+bool DescribeDeliveryConfigsRequest::ConfigIdListHasBeenSet() const
+{
+    return m_configIdListHasBeenSet;
 }
 
 

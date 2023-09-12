@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单元化规则 ID
+                     * 获取单元化规则信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result 单元化规则 ID
+                     * @return Result 单元化规则信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 单元化规则 ID
+                     * 单元化规则信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UnitRule m_result;

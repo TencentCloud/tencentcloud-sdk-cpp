@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool GatewayDeployGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)
+                     * @return ReleaseStatus 发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)
+                     * 
+                     */
+                    std::string GetReleaseStatus() const;
+
+                    /**
+                     * 设置发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)
+                     * @param _releaseStatus 发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)
+                     * 
+                     */
+                    void SetReleaseStatus(const std::string& _releaseStatus);
+
+                    /**
+                     * 判断参数 ReleaseStatus 是否已赋值
+                     * @return ReleaseStatus 是否已赋值
+                     * 
+                     */
+                    bool ReleaseStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_gatewayDeployGroupId;
                     bool m_gatewayDeployGroupIdHasBeenSet;
+
+                    /**
+                     * 发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)
+                     */
+                    std::string m_releaseStatus;
+                    bool m_releaseStatusHasBeenSet;
 
                 };
             }

@@ -63,6 +63,90 @@ namespace TencentCloud
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取宿主机id
+                     * @return HostId 宿主机id
+                     * 
+                     */
+                    std::string GetHostId() const;
+
+                    /**
+                     * 设置宿主机id
+                     * @param _hostId 宿主机id
+                     * 
+                     */
+                    void SetHostId(const std::string& _hostId);
+
+                    /**
+                     * 判断参数 HostId 是否已赋值
+                     * @return HostId 是否已赋值
+                     * 
+                     */
+                    bool HostIdHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间
+                     * @return StartTime 开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param _startTime 开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间
+                     * @return EndTime 结束时间
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置结束时间
+                     * @param _endTime 结束时间
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取时间范围精度，1分钟/5分钟
+                     * @return Period 时间范围精度，1分钟/5分钟
+                     * 
+                     */
+                    std::string GetPeriod() const;
+
+                    /**
+                     * 设置时间范围精度，1分钟/5分钟
+                     * @param _period 时间范围精度，1分钟/5分钟
+                     * 
+                     */
+                    void SetPeriod(const std::string& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     * 
+                     */
+                    bool PeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +154,30 @@ namespace TencentCloud
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * 宿主机id
+                     */
+                    std::string m_hostId;
+                    bool m_hostIdHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 时间范围精度，1分钟/5分钟
+                     */
+                    std::string m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

@@ -31,6 +31,8 @@
 #include <tencentcloud/mrs/v20200910/model/TextToClassResponse.h>
 #include <tencentcloud/mrs/v20200910/model/TextToObjectRequest.h>
 #include <tencentcloud/mrs/v20200910/model/TextToObjectResponse.h>
+#include <tencentcloud/mrs/v20200910/model/TurnPDFToObjectRequest.h>
+#include <tencentcloud/mrs/v20200910/model/TurnPDFToObjectResponse.h>
 
 
 namespace TencentCloud
@@ -57,6 +59,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TextToObjectResponse> TextToObjectOutcome;
                 typedef std::future<TextToObjectOutcome> TextToObjectOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::TextToObjectRequest&, TextToObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToObjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::TurnPDFToObjectResponse> TurnPDFToObjectOutcome;
+                typedef std::future<TurnPDFToObjectOutcome> TurnPDFToObjectOutcomeCallable;
+                typedef std::function<void(const MrsClient*, const Model::TurnPDFToObjectRequest&, TurnPDFToObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnPDFToObjectAsyncHandler;
 
 
 
@@ -97,6 +102,15 @@ namespace TencentCloud
                 TextToObjectOutcome TextToObject(const Model::TextToObjectRequest &request);
                 void TextToObjectAsync(const Model::TextToObjectRequest& request, const TextToObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextToObjectOutcomeCallable TextToObjectCallable(const Model::TextToObjectRequest& request);
+
+                /**
+                 *将PDF格式的体检报告文件结构化,解析关键信息.
+                 * @param req TurnPDFToObjectRequest
+                 * @return TurnPDFToObjectOutcome
+                 */
+                TurnPDFToObjectOutcome TurnPDFToObject(const Model::TurnPDFToObjectRequest &request);
+                void TurnPDFToObjectAsync(const Model::TurnPDFToObjectRequest& request, const TurnPDFToObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TurnPDFToObjectOutcomeCallable TurnPDFToObjectCallable(const Model::TurnPDFToObjectRequest& request);
 
             };
         }

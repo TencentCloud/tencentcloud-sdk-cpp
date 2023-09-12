@@ -44,6 +44,7 @@ set(cdc_public_header_model
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterCosCapacityRequest.h
   include/tencentcloud/cdc/v20201214/model/DescribeSitesResponse.h
   include/tencentcloud/cdc/v20201214/model/DescribeSitesDetailRequest.h
+  include/tencentcloud/cdc/v20201214/model/DetailData.h
   include/tencentcloud/cdc/v20201214/model/DedicatedClusterOrder.h
   include/tencentcloud/cdc/v20201214/model/ModifyDedicatedClusterInfoRequest.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterHostsRequest.h
@@ -107,6 +108,7 @@ set(cdc_src
   src/v20201214/model/DescribeDedicatedClusterCosCapacityRequest.cpp
   src/v20201214/model/DescribeSitesResponse.cpp
   src/v20201214/model/DescribeSitesDetailRequest.cpp
+  src/v20201214/model/DetailData.cpp
   src/v20201214/model/DedicatedClusterOrder.cpp
   src/v20201214/model/ModifyDedicatedClusterInfoRequest.cpp
   src/v20201214/model/DescribeDedicatedClusterHostsRequest.cpp

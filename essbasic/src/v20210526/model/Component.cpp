@@ -45,7 +45,9 @@ Component::Component() :
     m_keywordPageHasBeenSet(false),
     m_relativeLocationHasBeenSet(false),
     m_keywordIndexesHasBeenSet(false),
-    m_placeholderHasBeenSet(false)
+    m_placeholderHasBeenSet(false),
+    m_lockComponentValueHasBeenSet(false),
+    m_forbidMoveAndDeleteHasBeenSet(false)
 {
 }
 
@@ -307,6 +309,26 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_placeholderHasBeenSet = true;
     }
 
+    if (value.HasMember("LockComponentValue") && !value["LockComponentValue"].IsNull())
+    {
+        if (!value["LockComponentValue"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.LockComponentValue` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockComponentValue = value["LockComponentValue"].GetBool();
+        m_lockComponentValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForbidMoveAndDelete") && !value["ForbidMoveAndDelete"].IsNull())
+    {
+        if (!value["ForbidMoveAndDelete"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.ForbidMoveAndDelete` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidMoveAndDelete = value["ForbidMoveAndDelete"].GetBool();
+        m_forbidMoveAndDeleteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -517,6 +539,22 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Placeholder";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_placeholder.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lockComponentValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LockComponentValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lockComponentValue, allocator);
+    }
+
+    if (m_forbidMoveAndDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidMoveAndDelete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidMoveAndDelete, allocator);
     }
 
 }
@@ -920,5 +958,37 @@ void Component::SetPlaceholder(const string& _placeholder)
 bool Component::PlaceholderHasBeenSet() const
 {
     return m_placeholderHasBeenSet;
+}
+
+bool Component::GetLockComponentValue() const
+{
+    return m_lockComponentValue;
+}
+
+void Component::SetLockComponentValue(const bool& _lockComponentValue)
+{
+    m_lockComponentValue = _lockComponentValue;
+    m_lockComponentValueHasBeenSet = true;
+}
+
+bool Component::LockComponentValueHasBeenSet() const
+{
+    return m_lockComponentValueHasBeenSet;
+}
+
+bool Component::GetForbidMoveAndDelete() const
+{
+    return m_forbidMoveAndDelete;
+}
+
+void Component::SetForbidMoveAndDelete(const bool& _forbidMoveAndDelete)
+{
+    m_forbidMoveAndDelete = _forbidMoveAndDelete;
+    m_forbidMoveAndDeleteHasBeenSet = true;
+}
+
+bool Component::ForbidMoveAndDeleteHasBeenSet() const
+{
+    return m_forbidMoveAndDeleteHasBeenSet;
 }
 

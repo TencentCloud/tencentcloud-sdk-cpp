@@ -30,7 +30,8 @@ CreateDocumentRequest::CreateDocumentRequest() :
     m_transcodeTypeHasBeenSet(false),
     m_permissionHasBeenSet(false),
     m_documentTypeHasBeenSet(false),
-    m_documentSizeHasBeenSet(false)
+    m_documentSizeHasBeenSet(false),
+    m_autoHandleUnsupportedElementHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateDocumentRequest::ToJsonString() const
         string key = "DocumentSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_documentSize, allocator);
+    }
+
+    if (m_autoHandleUnsupportedElementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoHandleUnsupportedElement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoHandleUnsupportedElement, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CreateDocumentRequest::SetDocumentSize(const uint64_t& _documentSize)
 bool CreateDocumentRequest::DocumentSizeHasBeenSet() const
 {
     return m_documentSizeHasBeenSet;
+}
+
+bool CreateDocumentRequest::GetAutoHandleUnsupportedElement() const
+{
+    return m_autoHandleUnsupportedElement;
+}
+
+void CreateDocumentRequest::SetAutoHandleUnsupportedElement(const bool& _autoHandleUnsupportedElement)
+{
+    m_autoHandleUnsupportedElement = _autoHandleUnsupportedElement;
+    m_autoHandleUnsupportedElementHasBeenSet = true;
+}
+
+bool CreateDocumentRequest::AutoHandleUnsupportedElementHasBeenSet() const
+{
+    return m_autoHandleUnsupportedElementHasBeenSet;
 }
 
 

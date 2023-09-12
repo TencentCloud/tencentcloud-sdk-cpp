@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取解除理由，最大支持200个字
-                     * @return Reason 解除理由，最大支持200个字
+                     * 获取解除理由，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * @return Reason 解除理由，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
-                     * 设置解除理由，最大支持200个字
-                     * @param _reason 解除理由，最大支持200个字
+                     * 设置解除理由，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * @param _reason 解除理由，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool ReasonHasBeenSet() const;
 
                     /**
-                     * 获取解除后仍然有效的条款，保留条款，最大支持200个字
+                     * 获取解除后仍然有效的条款，保留条款，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
 
-                     * @return RemainInForceItem 解除后仍然有效的条款，保留条款，最大支持200个字
+                     * @return RemainInForceItem 解除后仍然有效的条款，保留条款，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
 
                      * 
                      */
                     std::string GetRemainInForceItem() const;
 
                     /**
-                     * 设置解除后仍然有效的条款，保留条款，最大支持200个字
+                     * 设置解除后仍然有效的条款，保留条款，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
 
-                     * @param _remainInForceItem 解除后仍然有效的条款，保留条款，最大支持200个字
+                     * @param _remainInForceItem 解除后仍然有效的条款，保留条款，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
 
                      * 
                      */
@@ -93,19 +93,15 @@ namespace TencentCloud
                     bool RemainInForceItemHasBeenSet() const;
 
                     /**
-                     * 获取原合同事项处理-费用结算，最大支持200个字
-
-                     * @return OriginalExpenseSettlement 原合同事项处理-费用结算，最大支持200个字
-
+                     * 获取原合同事项处理-费用结算，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * @return OriginalExpenseSettlement 原合同事项处理-费用结算，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      * 
                      */
                     std::string GetOriginalExpenseSettlement() const;
 
                     /**
-                     * 设置原合同事项处理-费用结算，最大支持200个字
-
-                     * @param _originalExpenseSettlement 原合同事项处理-费用结算，最大支持200个字
-
+                     * 设置原合同事项处理-费用结算，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * @param _originalExpenseSettlement 原合同事项处理-费用结算，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      * 
                      */
                     void SetOriginalExpenseSettlement(const std::string& _originalExpenseSettlement);
@@ -118,19 +114,15 @@ namespace TencentCloud
                     bool OriginalExpenseSettlementHasBeenSet() const;
 
                     /**
-                     * 获取原合同事项处理-其他事项，最大支持200个字
-
-                     * @return OriginalOtherSettlement 原合同事项处理-其他事项，最大支持200个字
-
+                     * 获取原合同事项处理-其他事项，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * @return OriginalOtherSettlement 原合同事项处理-其他事项，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      * 
                      */
                     std::string GetOriginalOtherSettlement() const;
 
                     /**
-                     * 设置原合同事项处理-其他事项，最大支持200个字
-
-                     * @param _originalOtherSettlement 原合同事项处理-其他事项，最大支持200个字
-
+                     * 设置原合同事项处理-其他事项，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * @param _originalOtherSettlement 原合同事项处理-其他事项，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      * 
                      */
                     void SetOriginalOtherSettlement(const std::string& _originalOtherSettlement);
@@ -143,19 +135,15 @@ namespace TencentCloud
                     bool OriginalOtherSettlementHasBeenSet() const;
 
                     /**
-                     * 获取其他约定，最大支持200个字
-
-                     * @return OtherDeals 其他约定，最大支持200个字
-
+                     * 获取其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * @return OtherDeals 其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      * 
                      */
                     std::string GetOtherDeals() const;
 
                     /**
-                     * 设置其他约定，最大支持200个字
-
-                     * @param _otherDeals 其他约定，最大支持200个字
-
+                     * 设置其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * @param _otherDeals 其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      * 
                      */
                     void SetOtherDeals(const std::string& _otherDeals);
@@ -170,35 +158,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 解除理由，最大支持200个字
+                     * 解除理由，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
-                     * 解除后仍然有效的条款，保留条款，最大支持200个字
+                     * 解除后仍然有效的条款，保留条款，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
 
                      */
                     std::string m_remainInForceItem;
                     bool m_remainInForceItemHasBeenSet;
 
                     /**
-                     * 原合同事项处理-费用结算，最大支持200个字
-
+                     * 原合同事项处理-费用结算，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      */
                     std::string m_originalExpenseSettlement;
                     bool m_originalExpenseSettlementHasBeenSet;
 
                     /**
-                     * 原合同事项处理-其他事项，最大支持200个字
-
+                     * 原合同事项处理-其他事项，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      */
                     std::string m_originalOtherSettlement;
                     bool m_originalOtherSettlementHasBeenSet;
 
                     /**
-                     * 其他约定，最大支持200个字
-
+                     * 其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      */
                     std::string m_otherDeals;
                     bool m_otherDealsHasBeenSet;

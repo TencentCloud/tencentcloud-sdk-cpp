@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool ScopeValueHasBeenSet() const;
 
                     /**
-                     * 获取绑定: true; 未绑定: false
-                     * @return Bound 绑定: true; 未绑定: false
-                     * 
-                     */
-                    bool GetBound() const;
-
-                    /**
-                     * 设置绑定: true; 未绑定: false
-                     * @param _bound 绑定: true; 未绑定: false
-                     * 
-                     */
-                    void SetBound(const bool& _bound);
-
-                    /**
-                     * 判断参数 Bound 是否已赋值
-                     * @return Bound 是否已赋值
-                     * 
-                     */
-                    bool BoundHasBeenSet() const;
-
-                    /**
                      * 获取翻页偏移量
                      * @return Offset 翻页偏移量
                      * 
@@ -125,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取绑定: true; 未绑定: false
+                     * @return Bound 绑定: true; 未绑定: false
+                     * 
+                     */
+                    bool GetBound() const;
+
+                    /**
+                     * 设置绑定: true; 未绑定: false
+                     * @param _bound 绑定: true; 未绑定: false
+                     * 
+                     */
+                    void SetBound(const bool& _bound);
+
+                    /**
+                     * 判断参数 Bound 是否已赋值
+                     * @return Bound 是否已赋值
+                     * 
+                     */
+                    bool BoundHasBeenSet() const;
 
                     /**
                      * 获取插件类型
@@ -177,12 +177,6 @@ namespace TencentCloud
                     bool m_scopeValueHasBeenSet;
 
                     /**
-                     * 绑定: true; 未绑定: false
-                     */
-                    bool m_bound;
-                    bool m_boundHasBeenSet;
-
-                    /**
                      * 翻页偏移量
                      */
                     int64_t m_offset;
@@ -193,6 +187,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 绑定: true; 未绑定: false
+                     */
+                    bool m_bound;
+                    bool m_boundHasBeenSet;
 
                     /**
                      * 插件类型

@@ -1226,6 +1226,56 @@ UpperRight-右下角。
                      */
                     bool PlaceholderHasBeenSet() const;
 
+                    /**
+                     * 获取是否锁定控件值不允许编辑（嵌入式发起使用） <br/>默认false：不锁定控件值，允许在页面编辑控件值	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LockComponentValue 是否锁定控件值不允许编辑（嵌入式发起使用） <br/>默认false：不锁定控件值，允许在页面编辑控件值	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetLockComponentValue() const;
+
+                    /**
+                     * 设置是否锁定控件值不允许编辑（嵌入式发起使用） <br/>默认false：不锁定控件值，允许在页面编辑控件值	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lockComponentValue 是否锁定控件值不允许编辑（嵌入式发起使用） <br/>默认false：不锁定控件值，允许在页面编辑控件值	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLockComponentValue(const bool& _lockComponentValue);
+
+                    /**
+                     * 判断参数 LockComponentValue 是否已赋值
+                     * @return LockComponentValue 是否已赋值
+                     * 
+                     */
+                    bool LockComponentValueHasBeenSet() const;
+
+                    /**
+                     * 获取是否禁止移动和删除控件 <br/>默认false，不禁止移动和删除控件	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ForbidMoveAndDelete 是否禁止移动和删除控件 <br/>默认false，不禁止移动和删除控件	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetForbidMoveAndDelete() const;
+
+                    /**
+                     * 设置是否禁止移动和删除控件 <br/>默认false，不禁止移动和删除控件	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _forbidMoveAndDelete 是否禁止移动和删除控件 <br/>默认false，不禁止移动和删除控件	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetForbidMoveAndDelete(const bool& _forbidMoveAndDelete);
+
+                    /**
+                     * 判断参数 ForbidMoveAndDelete 是否已赋值
+                     * @return ForbidMoveAndDelete 是否已赋值
+                     * 
+                     */
+                    bool ForbidMoveAndDeleteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1539,6 +1589,20 @@ UpperRight-右下角。
                      */
                     std::string m_placeholder;
                     bool m_placeholderHasBeenSet;
+
+                    /**
+                     * 是否锁定控件值不允许编辑（嵌入式发起使用） <br/>默认false：不锁定控件值，允许在页面编辑控件值	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_lockComponentValue;
+                    bool m_lockComponentValueHasBeenSet;
+
+                    /**
+                     * 是否禁止移动和删除控件 <br/>默认false，不禁止移动和删除控件	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_forbidMoveAndDelete;
+                    bool m_forbidMoveAndDeleteHasBeenSet;
 
                 };
             }

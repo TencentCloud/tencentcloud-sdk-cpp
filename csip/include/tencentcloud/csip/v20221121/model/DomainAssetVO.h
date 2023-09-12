@@ -997,6 +997,31 @@ namespace TencentCloud
                      */
                     bool VerifyStatusHasBeenSet() const;
 
+                    /**
+                     * 获取bot访问数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BotAccessCount bot访问数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBotAccessCount() const;
+
+                    /**
+                     * 设置bot访问数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _botAccessCount bot访问数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBotAccessCount(const int64_t& _botAccessCount);
+
+                    /**
+                     * 判断参数 BotAccessCount 是否已赋值
+                     * @return BotAccessCount 是否已赋值
+                     * 
+                     */
+                    bool BotAccessCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1264,6 +1289,13 @@ namespace TencentCloud
                      */
                     int64_t m_verifyStatus;
                     bool m_verifyStatusHasBeenSet;
+
+                    /**
+                     * bot访问数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_botAccessCount;
+                    bool m_botAccessCountHasBeenSet;
 
                 };
             }

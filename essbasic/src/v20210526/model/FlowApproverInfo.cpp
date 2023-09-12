@@ -42,7 +42,8 @@ FlowApproverInfo::FlowApproverInfo() :
     m_approverVerifyTypesHasBeenSet(false),
     m_approverSignTypesHasBeenSet(false),
     m_signIdHasBeenSet(false),
-    m_notifyTypeHasBeenSet(false)
+    m_notifyTypeHasBeenSet(false),
+    m_addSignComponentsLimitsHasBeenSet(false)
 {
 }
 
@@ -297,6 +298,26 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_notifyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AddSignComponentsLimits") && !value["AddSignComponentsLimits"].IsNull())
+    {
+        if (!value["AddSignComponentsLimits"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.AddSignComponentsLimits` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AddSignComponentsLimits"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ComponentLimit item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_addSignComponentsLimits.push_back(item);
+        }
+        m_addSignComponentsLimitsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -501,6 +522,21 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "NotifyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addSignComponentsLimitsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddSignComponentsLimits";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addSignComponentsLimits.begin(); itr != m_addSignComponentsLimits.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -856,5 +892,21 @@ void FlowApproverInfo::SetNotifyType(const string& _notifyType)
 bool FlowApproverInfo::NotifyTypeHasBeenSet() const
 {
     return m_notifyTypeHasBeenSet;
+}
+
+vector<ComponentLimit> FlowApproverInfo::GetAddSignComponentsLimits() const
+{
+    return m_addSignComponentsLimits;
+}
+
+void FlowApproverInfo::SetAddSignComponentsLimits(const vector<ComponentLimit>& _addSignComponentsLimits)
+{
+    m_addSignComponentsLimits = _addSignComponentsLimits;
+    m_addSignComponentsLimitsHasBeenSet = true;
+}
+
+bool FlowApproverInfo::AddSignComponentsLimitsHasBeenSet() const
+{
+    return m_addSignComponentsLimitsHasBeenSet;
 }
 

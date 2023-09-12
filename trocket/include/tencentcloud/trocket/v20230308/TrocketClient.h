@@ -23,18 +23,36 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/trocket/v20230308/model/CreateConsumerGroupRequest.h>
+#include <tencentcloud/trocket/v20230308/model/CreateConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/CreateTopicRequest.h>
+#include <tencentcloud/trocket/v20230308/model/CreateTopicResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteConsumerGroupRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteTopicRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteTopicResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeTopicRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeTopicStatsOpRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeTopicStatsOpResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyConsumerGroupRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyTopicRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyTopicResponse.h>
 
 
 namespace TencentCloud
@@ -49,26 +67,62 @@ namespace TencentCloud
                 TrocketClient(const Credential &credential, const std::string &region);
                 TrocketClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateConsumerGroupResponse> CreateConsumerGroupOutcome;
+                typedef std::future<CreateConsumerGroupOutcome> CreateConsumerGroupOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::CreateConsumerGroupRequest&, CreateConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
+                typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteConsumerGroupResponse> DeleteConsumerGroupOutcome;
+                typedef std::future<DeleteConsumerGroupOutcome> DeleteConsumerGroupOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DeleteConsumerGroupRequest&, DeleteConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
                 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
+                typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumerGroupResponse> DescribeConsumerGroupOutcome;
+                typedef std::future<DescribeConsumerGroupOutcome> DescribeConsumerGroupOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerGroupRequest&, DescribeConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
                 typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceListResponse> DescribeInstanceListOutcome;
                 typedef std::future<DescribeInstanceListOutcome> DescribeInstanceListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeInstanceListRequest&, DescribeInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopicResponse> DescribeTopicOutcome;
+                typedef std::future<DescribeTopicOutcome> DescribeTopicOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeTopicRequest&, DescribeTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicListResponse> DescribeTopicListOutcome;
                 typedef std::future<DescribeTopicListOutcome> DescribeTopicListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeTopicListRequest&, DescribeTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopicStatsOpResponse> DescribeTopicStatsOpOutcome;
+                typedef std::future<DescribeTopicStatsOpOutcome> DescribeTopicStatsOpOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeTopicStatsOpRequest&, DescribeTopicStatsOpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicStatsOpAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConsumerGroupResponse> ModifyConsumerGroupOutcome;
+                typedef std::future<ModifyConsumerGroupOutcome> ModifyConsumerGroupOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ModifyConsumerGroupRequest&, ModifyConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConsumerGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
                 typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
+                typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
 
 
+
+                /**
+                 *创建消费组
+                 * @param req CreateConsumerGroupRequest
+                 * @return CreateConsumerGroupOutcome
+                 */
+                CreateConsumerGroupOutcome CreateConsumerGroup(const Model::CreateConsumerGroupRequest &request);
+                void CreateConsumerGroupAsync(const Model::CreateConsumerGroupRequest& request, const CreateConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConsumerGroupOutcomeCallable CreateConsumerGroupCallable(const Model::CreateConsumerGroupRequest& request);
 
                 /**
                  *购买新实例
@@ -80,6 +134,24 @@ namespace TencentCloud
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
 
                 /**
+                 *创建主题
+                 * @param req CreateTopicRequest
+                 * @return CreateTopicOutcome
+                 */
+                CreateTopicOutcome CreateTopic(const Model::CreateTopicRequest &request);
+                void CreateTopicAsync(const Model::CreateTopicRequest& request, const CreateTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
+
+                /**
+                 *删除消费组
+                 * @param req DeleteConsumerGroupRequest
+                 * @return DeleteConsumerGroupOutcome
+                 */
+                DeleteConsumerGroupOutcome DeleteConsumerGroup(const Model::DeleteConsumerGroupRequest &request);
+                void DeleteConsumerGroupAsync(const Model::DeleteConsumerGroupRequest& request, const DeleteConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConsumerGroupOutcomeCallable DeleteConsumerGroupCallable(const Model::DeleteConsumerGroupRequest& request);
+
+                /**
                  *删除实例
                  * @param req DeleteInstanceRequest
                  * @return DeleteInstanceOutcome
@@ -87,6 +159,24 @@ namespace TencentCloud
                 DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
                 void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
+
+                /**
+                 *删除主题
+                 * @param req DeleteTopicRequest
+                 * @return DeleteTopicOutcome
+                 */
+                DeleteTopicOutcome DeleteTopic(const Model::DeleteTopicRequest &request);
+                void DeleteTopicAsync(const Model::DeleteTopicRequest& request, const DeleteTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTopicOutcomeCallable DeleteTopicCallable(const Model::DeleteTopicRequest& request);
+
+                /**
+                 *查询消费组详情
+                 * @param req DescribeConsumerGroupRequest
+                 * @return DescribeConsumerGroupOutcome
+                 */
+                DescribeConsumerGroupOutcome DescribeConsumerGroup(const Model::DescribeConsumerGroupRequest &request);
+                void DescribeConsumerGroupAsync(const Model::DescribeConsumerGroupRequest& request, const DescribeConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumerGroupOutcomeCallable DescribeConsumerGroupCallable(const Model::DescribeConsumerGroupRequest& request);
 
                 /**
                  *查询实例信息
@@ -113,6 +203,17 @@ namespace TencentCloud
                 DescribeInstanceListOutcomeCallable DescribeInstanceListCallable(const Model::DescribeInstanceListRequest& request);
 
                 /**
+                 *查询主题详情，Offset和Limit参数是指订阅该主题的消费组查询分页参数，Filter参数使用说明如下：
+
+ConsumerGroup，消费组名称过滤
+                 * @param req DescribeTopicRequest
+                 * @return DescribeTopicOutcome
+                 */
+                DescribeTopicOutcome DescribeTopic(const Model::DescribeTopicRequest &request);
+                void DescribeTopicAsync(const Model::DescribeTopicRequest& request, const DescribeTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopicOutcomeCallable DescribeTopicCallable(const Model::DescribeTopicRequest& request);
+
+                /**
                  *获取主题列表，Filter参数使用说明如下：
 
 1. TopicName，主题名称模糊搜索
@@ -125,6 +226,24 @@ namespace TencentCloud
                 DescribeTopicListOutcomeCallable DescribeTopicListCallable(const Model::DescribeTopicListRequest& request);
 
                 /**
+                 *运营端查询topicStata
+                 * @param req DescribeTopicStatsOpRequest
+                 * @return DescribeTopicStatsOpOutcome
+                 */
+                DescribeTopicStatsOpOutcome DescribeTopicStatsOp(const Model::DescribeTopicStatsOpRequest &request);
+                void DescribeTopicStatsOpAsync(const Model::DescribeTopicStatsOpRequest& request, const DescribeTopicStatsOpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopicStatsOpOutcomeCallable DescribeTopicStatsOpCallable(const Model::DescribeTopicStatsOpRequest& request);
+
+                /**
+                 *修改消费组属性
+                 * @param req ModifyConsumerGroupRequest
+                 * @return ModifyConsumerGroupOutcome
+                 */
+                ModifyConsumerGroupOutcome ModifyConsumerGroup(const Model::ModifyConsumerGroupRequest &request);
+                void ModifyConsumerGroupAsync(const Model::ModifyConsumerGroupRequest& request, const ModifyConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConsumerGroupOutcomeCallable ModifyConsumerGroupCallable(const Model::ModifyConsumerGroupRequest& request);
+
+                /**
                  *修改实例属性
                  * @param req ModifyInstanceRequest
                  * @return ModifyInstanceOutcome
@@ -132,6 +251,15 @@ namespace TencentCloud
                 ModifyInstanceOutcome ModifyInstance(const Model::ModifyInstanceRequest &request);
                 void ModifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
+
+                /**
+                 *修改主题属性
+                 * @param req ModifyTopicRequest
+                 * @return ModifyTopicOutcome
+                 */
+                ModifyTopicOutcome ModifyTopic(const Model::ModifyTopicRequest &request);
+                void ModifyTopicAsync(const Model::ModifyTopicRequest& request, const ModifyTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTopicOutcomeCallable ModifyTopicCallable(const Model::ModifyTopicRequest& request);
 
             };
         }

@@ -38,7 +38,8 @@ ApproverInfo::ApproverInfo() :
     m_approverOptionHasBeenSet(false),
     m_approverVerifyTypesHasBeenSet(false),
     m_approverSignTypesHasBeenSet(false),
-    m_approverNeedSignReviewHasBeenSet(false)
+    m_approverNeedSignReviewHasBeenSet(false),
+    m_addSignComponentsLimitsHasBeenSet(false)
 {
 }
 
@@ -253,6 +254,26 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_approverNeedSignReviewHasBeenSet = true;
     }
 
+    if (value.HasMember("AddSignComponentsLimits") && !value["AddSignComponentsLimits"].IsNull())
+    {
+        if (!value["AddSignComponentsLimits"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.AddSignComponentsLimits` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AddSignComponentsLimits"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ComponentLimit item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_addSignComponentsLimits.push_back(item);
+        }
+        m_addSignComponentsLimitsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -425,6 +446,21 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ApproverNeedSignReview";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_approverNeedSignReview, allocator);
+    }
+
+    if (m_addSignComponentsLimitsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddSignComponentsLimits";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addSignComponentsLimits.begin(); itr != m_addSignComponentsLimits.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -716,5 +752,21 @@ void ApproverInfo::SetApproverNeedSignReview(const bool& _approverNeedSignReview
 bool ApproverInfo::ApproverNeedSignReviewHasBeenSet() const
 {
     return m_approverNeedSignReviewHasBeenSet;
+}
+
+vector<ComponentLimit> ApproverInfo::GetAddSignComponentsLimits() const
+{
+    return m_addSignComponentsLimits;
+}
+
+void ApproverInfo::SetAddSignComponentsLimits(const vector<ComponentLimit>& _addSignComponentsLimits)
+{
+    m_addSignComponentsLimits = _addSignComponentsLimits;
+    m_addSignComponentsLimitsHasBeenSet = true;
+}
+
+bool ApproverInfo::AddSignComponentsLimitsHasBeenSet() const
+{
+    return m_addSignComponentsLimitsHasBeenSet;
 }
 

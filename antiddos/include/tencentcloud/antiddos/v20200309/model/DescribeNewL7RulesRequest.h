@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取页起始偏移，取值为(页码-1)*一页条数
-                     * @return Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 获取规则偏移量，取值为(页码-1)*一页条数
+                     * @return Offset 规则偏移量，取值为(页码-1)*一页条数
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置页起始偏移，取值为(页码-1)*一页条数
-                     * @param _offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 设置规则偏移量，取值为(页码-1)*一页条数
+                     * @param _offset 规则偏移量，取值为(页码-1)*一页条数
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -264,7 +264,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 页起始偏移，取值为(页码-1)*一页条数
+                     * 规则偏移量，取值为(页码-1)*一页条数
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

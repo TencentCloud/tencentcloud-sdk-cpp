@@ -45,8 +45,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流程列表
-                     * @return FlowBriefs 流程列表
+                     * 获取合同流程基础信息列表，包含流程的名称、状态、创建日期等基本信息。 
+注：`与入参 FlowIds 的顺序可能存在不一致的情况。`
+                     * @return FlowBriefs 合同流程基础信息列表，包含流程的名称、状态、创建日期等基本信息。 
+注：`与入参 FlowIds 的顺序可能存在不一致的情况。`
                      * 
                      */
                     std::vector<FlowBrief> GetFlowBriefs() const;
@@ -61,7 +63,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流程列表
+                     * 合同流程基础信息列表，包含流程的名称、状态、创建日期等基本信息。 
+注：`与入参 FlowIds 的顺序可能存在不一致的情况。`
                      */
                     std::vector<FlowBrief> m_flowBriefs;
                     bool m_flowBriefsHasBeenSet;

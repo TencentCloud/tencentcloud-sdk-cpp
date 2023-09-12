@@ -43,7 +43,8 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_iPv6InternetAccessibleHasBeenSet(false),
-    m_disasterRecoverGroupIdsHasBeenSet(false)
+    m_disasterRecoverGroupIdsHasBeenSet(false),
+    m_loginSettingsHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,15 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_loginSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loginSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -594,6 +604,22 @@ void ModifyLaunchConfigurationAttributesRequest::SetDisasterRecoverGroupIds(cons
 bool ModifyLaunchConfigurationAttributesRequest::DisasterRecoverGroupIdsHasBeenSet() const
 {
     return m_disasterRecoverGroupIdsHasBeenSet;
+}
+
+LoginSettings ModifyLaunchConfigurationAttributesRequest::GetLoginSettings() const
+{
+    return m_loginSettings;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetLoginSettings(const LoginSettings& _loginSettings)
+{
+    m_loginSettings = _loginSettings;
+    m_loginSettingsHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::LoginSettingsHasBeenSet() const
+{
+    return m_loginSettingsHasBeenSet;
 }
 
 

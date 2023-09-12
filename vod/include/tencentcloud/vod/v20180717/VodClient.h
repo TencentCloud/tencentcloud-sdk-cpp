@@ -45,6 +45,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateContentReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateContentReviewTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateDomainVerifyRecordRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateDomainVerifyRecordResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateEnhanceMediaTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateEnhanceMediaTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateHeadTailTemplateRequest.h>
@@ -341,6 +343,10 @@
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/SplitMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/SplitMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/VerifyDomainOwnershipForConsoleRequest.h>
+#include <tencentcloud/vod/v20180717/model/VerifyDomainOwnershipForConsoleResponse.h>
+#include <tencentcloud/vod/v20180717/model/VerifyDomainRecordRequest.h>
+#include <tencentcloud/vod/v20180717/model/VerifyDomainRecordResponse.h>
 #include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishRequest.h>
 #include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishResponse.h>
 
@@ -390,6 +396,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateContentReviewTemplateResponse> CreateContentReviewTemplateOutcome;
                 typedef std::future<CreateContentReviewTemplateOutcome> CreateContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateContentReviewTemplateRequest&, CreateContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContentReviewTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDomainVerifyRecordResponse> CreateDomainVerifyRecordOutcome;
+                typedef std::future<CreateDomainVerifyRecordOutcome> CreateDomainVerifyRecordOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateDomainVerifyRecordRequest&, CreateDomainVerifyRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainVerifyRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEnhanceMediaTemplateResponse> CreateEnhanceMediaTemplateOutcome;
                 typedef std::future<CreateEnhanceMediaTemplateOutcome> CreateEnhanceMediaTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateEnhanceMediaTemplateRequest&, CreateEnhanceMediaTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnhanceMediaTemplateAsyncHandler;
@@ -834,6 +843,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SplitMediaResponse> SplitMediaOutcome;
                 typedef std::future<SplitMediaOutcome> SplitMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SplitMediaRequest&, SplitMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SplitMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyDomainOwnershipForConsoleResponse> VerifyDomainOwnershipForConsoleOutcome;
+                typedef std::future<VerifyDomainOwnershipForConsoleOutcome> VerifyDomainOwnershipForConsoleOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::VerifyDomainOwnershipForConsoleRequest&, VerifyDomainOwnershipForConsoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainOwnershipForConsoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyDomainRecordResponse> VerifyDomainRecordOutcome;
+                typedef std::future<VerifyDomainRecordOutcome> VerifyDomainRecordOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::VerifyDomainRecordRequest&, VerifyDomainRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::WeChatMiniProgramPublishResponse> WeChatMiniProgramPublishOutcome;
                 typedef std::future<WeChatMiniProgramPublishOutcome> WeChatMiniProgramPublishOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::WeChatMiniProgramPublishRequest&, WeChatMiniProgramPublishOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WeChatMiniProgramPublishAsyncHandler;
@@ -957,6 +972,15 @@ namespace TencentCloud
                 CreateContentReviewTemplateOutcome CreateContentReviewTemplate(const Model::CreateContentReviewTemplateRequest &request);
                 void CreateContentReviewTemplateAsync(const Model::CreateContentReviewTemplateRequest& request, const CreateContentReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateContentReviewTemplateOutcomeCallable CreateContentReviewTemplateCallable(const Model::CreateContentReviewTemplateRequest& request);
+
+                /**
+                 *该接口用于生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权。
+                 * @param req CreateDomainVerifyRecordRequest
+                 * @return CreateDomainVerifyRecordOutcome
+                 */
+                CreateDomainVerifyRecordOutcome CreateDomainVerifyRecord(const Model::CreateDomainVerifyRecordRequest &request);
+                void CreateDomainVerifyRecordAsync(const Model::CreateDomainVerifyRecordRequest& request, const CreateDomainVerifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDomainVerifyRecordOutcomeCallable CreateDomainVerifyRecordCallable(const Model::CreateDomainVerifyRecordRequest& request);
 
                 /**
                  *创建音画质重生模板。
@@ -2554,6 +2578,24 @@ namespace TencentCloud
                 SplitMediaOutcome SplitMedia(const Model::SplitMediaRequest &request);
                 void SplitMediaAsync(const Model::SplitMediaRequest& request, const SplitMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SplitMediaOutcomeCallable SplitMediaCallable(const Model::SplitMediaRequest& request);
+
+                /**
+                 *控制台验证域名归属
+                 * @param req VerifyDomainOwnershipForConsoleRequest
+                 * @return VerifyDomainOwnershipForConsoleOutcome
+                 */
+                VerifyDomainOwnershipForConsoleOutcome VerifyDomainOwnershipForConsole(const Model::VerifyDomainOwnershipForConsoleRequest &request);
+                void VerifyDomainOwnershipForConsoleAsync(const Model::VerifyDomainOwnershipForConsoleRequest& request, const VerifyDomainOwnershipForConsoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyDomainOwnershipForConsoleOutcomeCallable VerifyDomainOwnershipForConsoleCallable(const Model::VerifyDomainOwnershipForConsoleRequest& request);
+
+                /**
+                 *该接口用于验证域名解析值。
+                 * @param req VerifyDomainRecordRequest
+                 * @return VerifyDomainRecordOutcome
+                 */
+                VerifyDomainRecordOutcome VerifyDomainRecord(const Model::VerifyDomainRecordRequest &request);
+                void VerifyDomainRecordAsync(const Model::VerifyDomainRecordRequest& request, const VerifyDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyDomainRecordOutcomeCallable VerifyDomainRecordCallable(const Model::VerifyDomainRecordRequest& request);
 
                 /**
                  *将点播视频发布到微信小程序，供微信小程序播放器播放。

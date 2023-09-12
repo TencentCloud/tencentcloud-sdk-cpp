@@ -76,6 +76,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h
   include/tencentcloud/ess/v20201111/model/Permission.h
+  include/tencentcloud/ess/v20201111/model/ComponentLimit.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h
@@ -268,6 +269,7 @@ set(ess_src
   src/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsRequest.cpp
   src/v20201111/model/Permission.cpp
+  src/v20201111/model/ComponentLimit.cpp
   src/v20201111/model/CreateIntegrationDepartmentResponse.cpp
   src/v20201111/model/DescribeFlowTemplatesRequest.cpp
   src/v20201111/model/DeleteSealPoliciesResponse.cpp

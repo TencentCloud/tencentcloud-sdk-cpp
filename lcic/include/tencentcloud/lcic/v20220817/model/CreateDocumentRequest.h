@@ -234,6 +234,27 @@ namespace TencentCloud
                      */
                     bool DocumentSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否对不支持元素开启自动处理的功能。默认关闭。
+                     * @return AutoHandleUnsupportedElement 是否对不支持元素开启自动处理的功能。默认关闭。
+                     * 
+                     */
+                    bool GetAutoHandleUnsupportedElement() const;
+
+                    /**
+                     * 设置是否对不支持元素开启自动处理的功能。默认关闭。
+                     * @param _autoHandleUnsupportedElement 是否对不支持元素开启自动处理的功能。默认关闭。
+                     * 
+                     */
+                    void SetAutoHandleUnsupportedElement(const bool& _autoHandleUnsupportedElement);
+
+                    /**
+                     * 判断参数 AutoHandleUnsupportedElement 是否已赋值
+                     * @return AutoHandleUnsupportedElement 是否已赋值
+                     * 
+                     */
+                    bool AutoHandleUnsupportedElementHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +310,12 @@ namespace TencentCloud
                      */
                     uint64_t m_documentSize;
                     bool m_documentSizeHasBeenSet;
+
+                    /**
+                     * 是否对不支持元素开启自动处理的功能。默认关闭。
+                     */
+                    bool m_autoHandleUnsupportedElement;
+                    bool m_autoHandleUnsupportedElementHasBeenSet;
 
                 };
             }

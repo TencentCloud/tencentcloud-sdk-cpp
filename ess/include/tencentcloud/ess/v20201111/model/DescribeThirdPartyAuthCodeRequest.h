@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取电子签小程序跳转客户小程序时携带的授权查看码
-                     * @return AuthCode 电子签小程序跳转客户小程序时携带的授权查看码
+                     * 获取腾讯电子签小程序跳转客户企业小程序时携带的授权查看码，AuthCode由腾讯电子签小程序生成。
+                     * @return AuthCode 腾讯电子签小程序跳转客户企业小程序时携带的授权查看码，AuthCode由腾讯电子签小程序生成。
                      * 
                      */
                     std::string GetAuthCode() const;
 
                     /**
-                     * 设置电子签小程序跳转客户小程序时携带的授权查看码
-                     * @param _authCode 电子签小程序跳转客户小程序时携带的授权查看码
+                     * 设置腾讯电子签小程序跳转客户企业小程序时携带的授权查看码，AuthCode由腾讯电子签小程序生成。
+                     * @param _authCode 腾讯电子签小程序跳转客户企业小程序时携带的授权查看码，AuthCode由腾讯电子签小程序生成。
                      * 
                      */
                     void SetAuthCode(const std::string& _authCode);
@@ -66,15 +66,19 @@ namespace TencentCloud
                     bool AuthCodeHasBeenSet() const;
 
                     /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息
-                     * @param _operator 操作人信息
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -87,15 +91,19 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -110,19 +118,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 电子签小程序跳转客户小程序时携带的授权查看码
+                     * 腾讯电子签小程序跳转客户企业小程序时携带的授权查看码，AuthCode由腾讯电子签小程序生成。
                      */
                     std::string m_authCode;
                     bool m_authCodeHasBeenSet;
 
                     /**
-                     * 操作人信息
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
