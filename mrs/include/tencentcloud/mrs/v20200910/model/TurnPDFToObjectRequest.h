@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符
-                     * @return PdfInfo 体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符
+                     * 获取体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符(PDF文件不能超过10MB，如果超过建议先压缩PDF，再转成base64)
+                     * @return PdfInfo 体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符(PDF文件不能超过10MB，如果超过建议先压缩PDF，再转成base64)
                      * 
                      */
                     PdfInfo GetPdfInfo() const;
 
                     /**
-                     * 设置体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符
-                     * @param _pdfInfo 体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符
+                     * 设置体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符(PDF文件不能超过10MB，如果超过建议先压缩PDF，再转成base64)
+                     * @param _pdfInfo 体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符(PDF文件不能超过10MB，如果超过建议先压缩PDF，再转成base64)
                      * 
                      */
                     void SetPdfInfo(const PdfInfo& _pdfInfo);
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符
+                     * 体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符(PDF文件不能超过10MB，如果超过建议先压缩PDF，再转成base64)
                      */
                     PdfInfo m_pdfInfo;
                     bool m_pdfInfoHasBeenSet;

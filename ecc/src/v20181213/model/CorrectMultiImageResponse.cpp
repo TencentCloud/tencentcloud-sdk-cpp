@@ -24,7 +24,8 @@ using namespace TencentCloud::Ecc::V20181213::Model;
 using namespace std;
 
 CorrectMultiImageResponse::CorrectMultiImageResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_resultDataHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,23 @@ CoreInternalOutcome CorrectMultiImageResponse::Deserialize(const string &payload
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResultData") && !rsp["ResultData"].IsNull())
+    {
+        if (!rsp["ResultData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_resultData.Deserialize(rsp["ResultData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resultDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +114,15 @@ string CorrectMultiImageResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_data.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_resultDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resultData.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +145,16 @@ CompostionContext CorrectMultiImageResponse::GetData() const
 bool CorrectMultiImageResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+CompositionContext CorrectMultiImageResponse::GetResultData() const
+{
+    return m_resultData;
+}
+
+bool CorrectMultiImageResponse::ResultDataHasBeenSet() const
+{
+    return m_resultDataHasBeenSet;
 }
 
 

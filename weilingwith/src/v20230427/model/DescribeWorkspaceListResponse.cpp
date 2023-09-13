@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/vod/v20180717/model/VerifyDomainOwnershipForConsoleResponse.h>
+#include <tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Vod::V20180717::Model;
+using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-VerifyDomainOwnershipForConsoleResponse::VerifyDomainOwnershipForConsoleResponse()
+DescribeWorkspaceListResponse::DescribeWorkspaceListResponse()
 {
 }
 
-CoreInternalOutcome VerifyDomainOwnershipForConsoleResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeWorkspaceListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome VerifyDomainOwnershipForConsoleResponse::Deserialize(const s
     return CoreInternalOutcome(true);
 }
 
-string VerifyDomainOwnershipForConsoleResponse::ToJsonString() const
+string DescribeWorkspaceListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

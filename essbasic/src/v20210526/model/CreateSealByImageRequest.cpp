@@ -26,7 +26,12 @@ CreateSealByImageRequest::CreateSealByImageRequest() :
     m_agentHasBeenSet(false),
     m_sealNameHasBeenSet(false),
     m_sealImageHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_generateSourceHasBeenSet(false),
+    m_sealTypeHasBeenSet(false),
+    m_sealHorizontalTextHasBeenSet(false),
+    m_sealStyleHasBeenSet(false),
+    m_sealSizeHasBeenSet(false)
 {
 }
 
@@ -69,6 +74,46 @@ string CreateSealByImageRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_generateSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GenerateSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_generateSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealHorizontalTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealHorizontalText";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealHorizontalText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealStyleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealStyle";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealStyle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealSize.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -141,6 +186,86 @@ void CreateSealByImageRequest::SetOperator(const UserInfo& _operator)
 bool CreateSealByImageRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string CreateSealByImageRequest::GetGenerateSource() const
+{
+    return m_generateSource;
+}
+
+void CreateSealByImageRequest::SetGenerateSource(const string& _generateSource)
+{
+    m_generateSource = _generateSource;
+    m_generateSourceHasBeenSet = true;
+}
+
+bool CreateSealByImageRequest::GenerateSourceHasBeenSet() const
+{
+    return m_generateSourceHasBeenSet;
+}
+
+string CreateSealByImageRequest::GetSealType() const
+{
+    return m_sealType;
+}
+
+void CreateSealByImageRequest::SetSealType(const string& _sealType)
+{
+    m_sealType = _sealType;
+    m_sealTypeHasBeenSet = true;
+}
+
+bool CreateSealByImageRequest::SealTypeHasBeenSet() const
+{
+    return m_sealTypeHasBeenSet;
+}
+
+string CreateSealByImageRequest::GetSealHorizontalText() const
+{
+    return m_sealHorizontalText;
+}
+
+void CreateSealByImageRequest::SetSealHorizontalText(const string& _sealHorizontalText)
+{
+    m_sealHorizontalText = _sealHorizontalText;
+    m_sealHorizontalTextHasBeenSet = true;
+}
+
+bool CreateSealByImageRequest::SealHorizontalTextHasBeenSet() const
+{
+    return m_sealHorizontalTextHasBeenSet;
+}
+
+string CreateSealByImageRequest::GetSealStyle() const
+{
+    return m_sealStyle;
+}
+
+void CreateSealByImageRequest::SetSealStyle(const string& _sealStyle)
+{
+    m_sealStyle = _sealStyle;
+    m_sealStyleHasBeenSet = true;
+}
+
+bool CreateSealByImageRequest::SealStyleHasBeenSet() const
+{
+    return m_sealStyleHasBeenSet;
+}
+
+string CreateSealByImageRequest::GetSealSize() const
+{
+    return m_sealSize;
+}
+
+void CreateSealByImageRequest::SetSealSize(const string& _sealSize)
+{
+    m_sealSize = _sealSize;
+    m_sealSizeHasBeenSet = true;
+}
+
+bool CreateSealByImageRequest::SealSizeHasBeenSet() const
+{
+    return m_sealSizeHasBeenSet;
 }
 
 

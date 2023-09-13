@@ -136,6 +136,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeSessionRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DescribePolicyStatusRequest.h
+  include/tencentcloud/waf/v20180125/model/DescribePortsResponse.h
   include/tencentcloud/waf/v20180125/model/GetAttackTotalCountRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteIpAccessControlRequest.h
@@ -150,6 +151,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyWafThreatenIntelligenceRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakRulesRequest.h
+  include/tencentcloud/waf/v20180125/model/DescribePortsRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyHostModeRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlRequest.h
@@ -414,6 +416,7 @@ set(waf_src
   src/v20180125/model/DescribeSessionRequest.cpp
   src/v20180125/model/ModifyAreaBanStatusRequest.cpp
   src/v20180125/model/DescribePolicyStatusRequest.cpp
+  src/v20180125/model/DescribePortsResponse.cpp
   src/v20180125/model/GetAttackTotalCountRequest.cpp
   src/v20180125/model/DescribeAccessFastAnalysisRequest.cpp
   src/v20180125/model/DeleteIpAccessControlRequest.cpp
@@ -428,6 +431,7 @@ set(waf_src
   src/v20180125/model/ModifyWafAutoDenyStatusResponse.cpp
   src/v20180125/model/ModifyWafThreatenIntelligenceRequest.cpp
   src/v20180125/model/DescribeAntiInfoLeakRulesRequest.cpp
+  src/v20180125/model/DescribePortsRequest.cpp
   src/v20180125/model/ModifyHostModeRequest.cpp
   src/v20180125/model/DescribeWafAutoDenyStatusResponse.cpp
   src/v20180125/model/ModifyAntiFakeUrlRequest.cpp

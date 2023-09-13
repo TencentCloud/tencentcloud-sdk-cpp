@@ -34,6 +34,7 @@ set(ecc_public_header_model
   include/tencentcloud/ecc/v20181213/model/CompostionContext.h
   include/tencentcloud/ecc/v20181213/model/DescribeTaskResponse.h
   include/tencentcloud/ecc/v20181213/model/EHOCRRequest.h
+  include/tencentcloud/ecc/v20181213/model/CompositionContext.h
   include/tencentcloud/ecc/v20181213/model/CorrectMultiImageRequest.h
   )
 
@@ -54,6 +55,7 @@ set(ecc_src
   src/v20181213/model/CompostionContext.cpp
   src/v20181213/model/DescribeTaskResponse.cpp
   src/v20181213/model/EHOCRRequest.cpp
+  src/v20181213/model/CompositionContext.cpp
   src/v20181213/model/CorrectMultiImageRequest.cpp
   )
 

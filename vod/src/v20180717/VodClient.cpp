@@ -6920,49 +6920,6 @@ VodClient::SplitMediaOutcomeCallable VodClient::SplitMediaCallable(const SplitMe
     return task->get_future();
 }
 
-VodClient::VerifyDomainOwnershipForConsoleOutcome VodClient::VerifyDomainOwnershipForConsole(const VerifyDomainOwnershipForConsoleRequest &request)
-{
-    auto outcome = MakeRequest(request, "VerifyDomainOwnershipForConsole");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        VerifyDomainOwnershipForConsoleResponse rsp = VerifyDomainOwnershipForConsoleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return VerifyDomainOwnershipForConsoleOutcome(rsp);
-        else
-            return VerifyDomainOwnershipForConsoleOutcome(o.GetError());
-    }
-    else
-    {
-        return VerifyDomainOwnershipForConsoleOutcome(outcome.GetError());
-    }
-}
-
-void VodClient::VerifyDomainOwnershipForConsoleAsync(const VerifyDomainOwnershipForConsoleRequest& request, const VerifyDomainOwnershipForConsoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->VerifyDomainOwnershipForConsole(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-VodClient::VerifyDomainOwnershipForConsoleOutcomeCallable VodClient::VerifyDomainOwnershipForConsoleCallable(const VerifyDomainOwnershipForConsoleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<VerifyDomainOwnershipForConsoleOutcome()>>(
-        [this, request]()
-        {
-            return this->VerifyDomainOwnershipForConsole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 VodClient::VerifyDomainRecordOutcome VodClient::VerifyDomainRecord(const VerifyDomainRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyDomainRecord");

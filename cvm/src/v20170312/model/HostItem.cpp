@@ -33,7 +33,8 @@ HostItem::HostItem() :
     m_hostStateHasBeenSet(false),
     m_hostIpHasBeenSet(false),
     m_hostResourceHasBeenSet(false),
-    m_cageIdHasBeenSet(false)
+    m_cageIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -189,6 +190,26 @@ CoreInternalOutcome HostItem::Deserialize(const rapidjson::Value &value)
         m_cageIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HostItem.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -305,6 +326,21 @@ void HostItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -516,5 +552,21 @@ void HostItem::SetCageId(const string& _cageId)
 bool HostItem::CageIdHasBeenSet() const
 {
     return m_cageIdHasBeenSet;
+}
+
+vector<Tag> HostItem::GetTags() const
+{
+    return m_tags;
+}
+
+void HostItem::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool HostItem::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

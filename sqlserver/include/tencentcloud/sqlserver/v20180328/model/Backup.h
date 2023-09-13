@@ -259,6 +259,27 @@ namespace TencentCloud
                     bool StrategyHasBeenSet() const;
 
                     /**
+                     * 获取备份存储策略 0-跟随自定义备份保留策略 1-跟随实例生命周期直到实例下线
+                     * @return StorageStrategy 备份存储策略 0-跟随自定义备份保留策略 1-跟随实例生命周期直到实例下线
+                     * 
+                     */
+                    int64_t GetStorageStrategy() const;
+
+                    /**
+                     * 设置备份存储策略 0-跟随自定义备份保留策略 1-跟随实例生命周期直到实例下线
+                     * @param _storageStrategy 备份存储策略 0-跟随自定义备份保留策略 1-跟随实例生命周期直到实例下线
+                     * 
+                     */
+                    void SetStorageStrategy(const int64_t& _storageStrategy);
+
+                    /**
+                     * 判断参数 StorageStrategy 是否已赋值
+                     * @return StorageStrategy 是否已赋值
+                     * 
+                     */
+                    bool StorageStrategyHasBeenSet() const;
+
+                    /**
                      * 获取备份方式，0-定时备份；1-手动临时备份；2-定期备份
                      * @return BackupWay 备份方式，0-定时备份；1-手动临时备份；2-定期备份
                      * 
@@ -466,6 +487,12 @@ namespace TencentCloud
                      */
                     int64_t m_strategy;
                     bool m_strategyHasBeenSet;
+
+                    /**
+                     * 备份存储策略 0-跟随自定义备份保留策略 1-跟随实例生命周期直到实例下线
+                     */
+                    int64_t m_storageStrategy;
+                    bool m_storageStrategyHasBeenSet;
 
                     /**
                      * 备份方式，0-定时备份；1-手动临时备份；2-定期备份

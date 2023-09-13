@@ -47,27 +47,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否页面底部显示电子签logo
-<br/>true：允许在页面底部隐藏电子签logo
-<br/>false：不允许允许在页面底部隐藏电子签logo
-<br/>默认false，不隐藏logo
-                     * @return DisplaySignBrandLogo 是否页面底部显示电子签logo
-<br/>true：允许在页面底部隐藏电子签logo
-<br/>false：不允许允许在页面底部隐藏电子签logo
-<br/>默认false，不隐藏logo
+                     * 获取是否显示页面底部电子签logo，取值如下：
+<ul>
+<li> **true**：页面底部显示电子签logo</li>
+<li> **false**：页面底部不显示电子签logo（默认）</li>
+</ul>
+                     * @return DisplaySignBrandLogo 是否显示页面底部电子签logo，取值如下：
+<ul>
+<li> **true**：页面底部显示电子签logo</li>
+<li> **false**：页面底部不显示电子签logo（默认）</li>
+</ul>
                      * 
                      */
                     bool GetDisplaySignBrandLogo() const;
 
                     /**
-                     * 设置是否页面底部显示电子签logo
-<br/>true：允许在页面底部隐藏电子签logo
-<br/>false：不允许允许在页面底部隐藏电子签logo
-<br/>默认false，不隐藏logo
-                     * @param _displaySignBrandLogo 是否页面底部显示电子签logo
-<br/>true：允许在页面底部隐藏电子签logo
-<br/>false：不允许允许在页面底部隐藏电子签logo
-<br/>默认false，不隐藏logo
+                     * 设置是否显示页面底部电子签logo，取值如下：
+<ul>
+<li> **true**：页面底部显示电子签logo</li>
+<li> **false**：页面底部不显示电子签logo（默认）</li>
+</ul>
+                     * @param _displaySignBrandLogo 是否显示页面底部电子签logo，取值如下：
+<ul>
+<li> **true**：页面底部显示电子签logo</li>
+<li> **false**：页面底部不显示电子签logo（默认）</li>
+</ul>
                      * 
                      */
                     void SetDisplaySignBrandLogo(const bool& _displaySignBrandLogo);
@@ -107,10 +111,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否页面底部显示电子签logo
-<br/>true：允许在页面底部隐藏电子签logo
-<br/>false：不允许允许在页面底部隐藏电子签logo
-<br/>默认false，不隐藏logo
+                     * 是否显示页面底部电子签logo，取值如下：
+<ul>
+<li> **true**：页面底部显示电子签logo</li>
+<li> **false**：页面底部不显示电子签logo（默认）</li>
+</ul>
                      */
                     bool m_displaySignBrandLogo;
                     bool m_displaySignBrandLogoHasBeenSet;

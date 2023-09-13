@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool TextTypeListHasBeenSet() const;
 
                     /**
-                     * 获取报告结构化结果
-                     * @return Block 报告结构化结果
+                     * 获取报告结构化结果(体检报告PDF结构化接口返回的 json 内容非常多，建议通过本地代码调用)
+                     * @return Block 报告结构化结果(体检报告PDF结构化接口返回的 json 内容非常多，建议通过本地代码调用)
                      * 
                      */
                     Block GetBlock() const;
@@ -117,7 +117,7 @@ namespace TencentCloud
                     bool m_textTypeListHasBeenSet;
 
                     /**
-                     * 报告结构化结果
+                     * 报告结构化结果(体检报告PDF结构化接口返回的 json 内容非常多，建议通过本地代码调用)
                      */
                     Block m_block;
                     bool m_blockHasBeenSet;

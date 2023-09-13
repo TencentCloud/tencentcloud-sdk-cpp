@@ -35,7 +35,8 @@ DescribeBackupsRequest::DescribeBackupsRequest() :
     m_databaseNameHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_backupFormatHasBeenSet(false)
+    m_backupFormatHasBeenSet(false),
+    m_storageStrategyHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string DescribeBackupsRequest::ToJsonString() const
         string key = "BackupFormat";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_backupFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storageStrategy, allocator);
     }
 
 
@@ -364,6 +373,22 @@ void DescribeBackupsRequest::SetBackupFormat(const string& _backupFormat)
 bool DescribeBackupsRequest::BackupFormatHasBeenSet() const
 {
     return m_backupFormatHasBeenSet;
+}
+
+int64_t DescribeBackupsRequest::GetStorageStrategy() const
+{
+    return m_storageStrategy;
+}
+
+void DescribeBackupsRequest::SetStorageStrategy(const int64_t& _storageStrategy)
+{
+    m_storageStrategy = _storageStrategy;
+    m_storageStrategyHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::StorageStrategyHasBeenSet() const
+{
+    return m_storageStrategyHasBeenSet;
 }
 
 

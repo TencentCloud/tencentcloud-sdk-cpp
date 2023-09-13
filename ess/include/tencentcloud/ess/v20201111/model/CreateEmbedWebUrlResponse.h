@@ -45,9 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取嵌入的web链接，有效期：5分钟
-EmbedType=PREVIEW_CC_FLOW，该url为h5链接
+<br/>EmbedType=PREVIEW_CC_FLOW，该url为h5链接
                      * @return WebUrl 嵌入的web链接，有效期：5分钟
-EmbedType=PREVIEW_CC_FLOW，该url为h5链接
+<br/>EmbedType=PREVIEW_CC_FLOW，该url为h5链接
                      * 
                      */
                     std::string GetWebUrl() const;
@@ -63,7 +63,7 @@ EmbedType=PREVIEW_CC_FLOW，该url为h5链接
 
                     /**
                      * 嵌入的web链接，有效期：5分钟
-EmbedType=PREVIEW_CC_FLOW，该url为h5链接
+<br/>EmbedType=PREVIEW_CC_FLOW，该url为h5链接
                      */
                     std::string m_webUrl;
                     bool m_webUrlHasBeenSet;

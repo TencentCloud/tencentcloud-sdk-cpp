@@ -343,8 +343,6 @@
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/SplitMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/SplitMediaResponse.h>
-#include <tencentcloud/vod/v20180717/model/VerifyDomainOwnershipForConsoleRequest.h>
-#include <tencentcloud/vod/v20180717/model/VerifyDomainOwnershipForConsoleResponse.h>
 #include <tencentcloud/vod/v20180717/model/VerifyDomainRecordRequest.h>
 #include <tencentcloud/vod/v20180717/model/VerifyDomainRecordResponse.h>
 #include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishRequest.h>
@@ -843,9 +841,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SplitMediaResponse> SplitMediaOutcome;
                 typedef std::future<SplitMediaOutcome> SplitMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SplitMediaRequest&, SplitMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SplitMediaAsyncHandler;
-                typedef Outcome<Core::Error, Model::VerifyDomainOwnershipForConsoleResponse> VerifyDomainOwnershipForConsoleOutcome;
-                typedef std::future<VerifyDomainOwnershipForConsoleOutcome> VerifyDomainOwnershipForConsoleOutcomeCallable;
-                typedef std::function<void(const VodClient*, const Model::VerifyDomainOwnershipForConsoleRequest&, VerifyDomainOwnershipForConsoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainOwnershipForConsoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyDomainRecordResponse> VerifyDomainRecordOutcome;
                 typedef std::future<VerifyDomainRecordOutcome> VerifyDomainRecordOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::VerifyDomainRecordRequest&, VerifyDomainRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainRecordAsyncHandler;
@@ -2578,15 +2573,6 @@ namespace TencentCloud
                 SplitMediaOutcome SplitMedia(const Model::SplitMediaRequest &request);
                 void SplitMediaAsync(const Model::SplitMediaRequest& request, const SplitMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SplitMediaOutcomeCallable SplitMediaCallable(const Model::SplitMediaRequest& request);
-
-                /**
-                 *控制台验证域名归属
-                 * @param req VerifyDomainOwnershipForConsoleRequest
-                 * @return VerifyDomainOwnershipForConsoleOutcome
-                 */
-                VerifyDomainOwnershipForConsoleOutcome VerifyDomainOwnershipForConsole(const Model::VerifyDomainOwnershipForConsoleRequest &request);
-                void VerifyDomainOwnershipForConsoleAsync(const Model::VerifyDomainOwnershipForConsoleRequest& request, const VerifyDomainOwnershipForConsoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                VerifyDomainOwnershipForConsoleOutcomeCallable VerifyDomainOwnershipForConsoleCallable(const Model::VerifyDomainOwnershipForConsoleRequest& request);
 
                 /**
                  *该接口用于验证域名解析值。

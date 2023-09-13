@@ -2362,6 +2362,49 @@ WafClient::DescribePolicyStatusOutcomeCallable WafClient::DescribePolicyStatusCa
     return task->get_future();
 }
 
+WafClient::DescribePortsOutcome WafClient::DescribePorts(const DescribePortsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePorts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePortsResponse rsp = DescribePortsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePortsOutcome(rsp);
+        else
+            return DescribePortsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePortsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribePortsAsync(const DescribePortsRequest& request, const DescribePortsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePorts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribePortsOutcomeCallable WafClient::DescribePortsCallable(const DescribePortsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePortsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePorts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeRuleLimitOutcome WafClient::DescribeRuleLimit(const DescribeRuleLimitRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRuleLimit");

@@ -31,6 +31,7 @@ Backup::Backup() :
     m_statusHasBeenSet(false),
     m_dBsHasBeenSet(false),
     m_strategyHasBeenSet(false),
+    m_storageStrategyHasBeenSet(false),
     m_backupWayHasBeenSet(false),
     m_backupNameHasBeenSet(false),
     m_groupIdHasBeenSet(false),
@@ -147,6 +148,16 @@ CoreInternalOutcome Backup::Deserialize(const rapidjson::Value &value)
         }
         m_strategy = value["Strategy"].GetInt64();
         m_strategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageStrategy") && !value["StorageStrategy"].IsNull())
+    {
+        if (!value["StorageStrategy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Backup.StorageStrategy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageStrategy = value["StorageStrategy"].GetInt64();
+        m_storageStrategyHasBeenSet = true;
     }
 
     if (value.HasMember("BackupWay") && !value["BackupWay"].IsNull())
@@ -329,6 +340,14 @@ void Backup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Strategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_strategy, allocator);
+    }
+
+    if (m_storageStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storageStrategy, allocator);
     }
 
     if (m_backupWayHasBeenSet)
@@ -562,6 +581,22 @@ void Backup::SetStrategy(const int64_t& _strategy)
 bool Backup::StrategyHasBeenSet() const
 {
     return m_strategyHasBeenSet;
+}
+
+int64_t Backup::GetStorageStrategy() const
+{
+    return m_storageStrategy;
+}
+
+void Backup::SetStorageStrategy(const int64_t& _storageStrategy)
+{
+    m_storageStrategy = _storageStrategy;
+    m_storageStrategyHasBeenSet = true;
+}
+
+bool Backup::StorageStrategyHasBeenSet() const
+{
+    return m_storageStrategyHasBeenSet;
 }
 
 int64_t Backup::GetBackupWay() const

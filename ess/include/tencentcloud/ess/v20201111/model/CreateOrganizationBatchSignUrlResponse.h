@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量签署入口链接
-                     * @return SignUrl 批量签署入口链接
+                     * 获取批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。
+                     * @return SignUrl 批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。
                      * 
                      */
                     std::string GetSignUrl() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SignUrlHasBeenSet() const;
 
                     /**
-                     * 获取链接过期时间戳
-                     * @return ExpiredTime 链接过期时间戳
+                     * 获取链接过期截止时间，格式为Unix标准时间戳（秒），默认为7天后截止。
+                     * @return ExpiredTime 链接过期截止时间，格式为Unix标准时间戳（秒），默认为7天后截止。
                      * 
                      */
                     int64_t GetExpiredTime() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量签署入口链接
+                     * 批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。
                      */
                     std::string m_signUrl;
                     bool m_signUrlHasBeenSet;
 
                     /**
-                     * 链接过期时间戳
+                     * 链接过期截止时间，格式为Unix标准时间戳（秒），默认为7天后截止。
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;

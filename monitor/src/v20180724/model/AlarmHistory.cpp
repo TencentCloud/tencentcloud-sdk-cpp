@@ -44,7 +44,8 @@ AlarmHistory::AlarmHistory() :
     m_regionHasBeenSet(false),
     m_policyExistsHasBeenSet(false),
     m_metricsInfoHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
+    m_dimensionsHasBeenSet(false),
+    m_alarmLevelHasBeenSet(false)
 {
 }
 
@@ -322,6 +323,16 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
         m_dimensionsHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmLevel") && !value["AlarmLevel"].IsNull())
+    {
+        if (!value["AlarmLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.AlarmLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmLevel = string(value["AlarmLevel"].GetString());
+        m_alarmLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -548,6 +559,14 @@ void AlarmHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Dimensions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dimensions.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -935,5 +954,21 @@ void AlarmHistory::SetDimensions(const string& _dimensions)
 bool AlarmHistory::DimensionsHasBeenSet() const
 {
     return m_dimensionsHasBeenSet;
+}
+
+string AlarmHistory::GetAlarmLevel() const
+{
+    return m_alarmLevel;
+}
+
+void AlarmHistory::SetAlarmLevel(const string& _alarmLevel)
+{
+    m_alarmLevel = _alarmLevel;
+    m_alarmLevelHasBeenSet = true;
+}
+
+bool AlarmHistory::AlarmLevelHasBeenSet() const
+{
+    return m_alarmLevelHasBeenSet;
 }
 

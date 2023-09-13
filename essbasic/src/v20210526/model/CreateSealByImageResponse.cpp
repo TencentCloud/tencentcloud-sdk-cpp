@@ -24,7 +24,8 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 CreateSealByImageResponse::CreateSealByImageResponse() :
-    m_sealIdHasBeenSet(false)
+    m_sealIdHasBeenSet(false),
+    m_imageUrlHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateSealByImageResponse::Deserialize(const string &payload
         m_sealIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageUrl") && !rsp["ImageUrl"].IsNull())
+    {
+        if (!rsp["ImageUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageUrl = string(rsp["ImageUrl"].GetString());
+        m_imageUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateSealByImageResponse::ToJsonString() const
         string key = "SealId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sealId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string CreateSealByImageResponse::GetSealId() const
 bool CreateSealByImageResponse::SealIdHasBeenSet() const
 {
     return m_sealIdHasBeenSet;
+}
+
+string CreateSealByImageResponse::GetImageUrl() const
+{
+    return m_imageUrl;
+}
+
+bool CreateSealByImageResponse::ImageUrlHasBeenSet() const
+{
+    return m_imageUrlHasBeenSet;
 }
 
 

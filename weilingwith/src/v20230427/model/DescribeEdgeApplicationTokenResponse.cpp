@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ess/v20201111/model/CreateChannelSubOrganizationModifyQrCodeResponse.h>
+#include <tencentcloud/weilingwith/v20230427/model/DescribeEdgeApplicationTokenResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ess::V20201111::Model;
+using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-CreateChannelSubOrganizationModifyQrCodeResponse::CreateChannelSubOrganizationModifyQrCodeResponse() :
-    m_qrCodeUrlHasBeenSet(false),
-    m_expiredTimeHasBeenSet(false)
+DescribeEdgeApplicationTokenResponse::DescribeEdgeApplicationTokenResponse()
 {
 }
 
-CoreInternalOutcome CreateChannelSubOrganizationModifyQrCodeResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeEdgeApplicationTokenResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,51 +61,15 @@ CoreInternalOutcome CreateChannelSubOrganizationModifyQrCodeResponse::Deserializ
     }
 
 
-    if (rsp.HasMember("QrCodeUrl") && !rsp["QrCodeUrl"].IsNull())
-    {
-        if (!rsp["QrCodeUrl"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `QrCodeUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_qrCodeUrl = string(rsp["QrCodeUrl"].GetString());
-        m_qrCodeUrlHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ExpiredTime") && !rsp["ExpiredTime"].IsNull())
-    {
-        if (!rsp["ExpiredTime"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ExpiredTime` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_expiredTime = rsp["ExpiredTime"].GetInt64();
-        m_expiredTimeHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string CreateChannelSubOrganizationModifyQrCodeResponse::ToJsonString() const
+string DescribeEdgeApplicationTokenResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_qrCodeUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "QrCodeUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_qrCodeUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_expiredTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExpiredTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_expiredTime, allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -120,25 +82,5 @@ string CreateChannelSubOrganizationModifyQrCodeResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateChannelSubOrganizationModifyQrCodeResponse::GetQrCodeUrl() const
-{
-    return m_qrCodeUrl;
-}
-
-bool CreateChannelSubOrganizationModifyQrCodeResponse::QrCodeUrlHasBeenSet() const
-{
-    return m_qrCodeUrlHasBeenSet;
-}
-
-int64_t CreateChannelSubOrganizationModifyQrCodeResponse::GetExpiredTime() const
-{
-    return m_expiredTime;
-}
-
-bool CreateChannelSubOrganizationModifyQrCodeResponse::ExpiredTimeHasBeenSet() const
-{
-    return m_expiredTimeHasBeenSet;
-}
 
 

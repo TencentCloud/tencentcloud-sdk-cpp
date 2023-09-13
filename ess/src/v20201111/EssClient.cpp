@@ -255,49 +255,6 @@ EssClient::CreateBatchCancelFlowUrlOutcomeCallable EssClient::CreateBatchCancelF
     return task->get_future();
 }
 
-EssClient::CreateChannelSubOrganizationModifyQrCodeOutcome EssClient::CreateChannelSubOrganizationModifyQrCode(const CreateChannelSubOrganizationModifyQrCodeRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateChannelSubOrganizationModifyQrCode");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateChannelSubOrganizationModifyQrCodeResponse rsp = CreateChannelSubOrganizationModifyQrCodeResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateChannelSubOrganizationModifyQrCodeOutcome(rsp);
-        else
-            return CreateChannelSubOrganizationModifyQrCodeOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateChannelSubOrganizationModifyQrCodeOutcome(outcome.GetError());
-    }
-}
-
-void EssClient::CreateChannelSubOrganizationModifyQrCodeAsync(const CreateChannelSubOrganizationModifyQrCodeRequest& request, const CreateChannelSubOrganizationModifyQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateChannelSubOrganizationModifyQrCode(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-EssClient::CreateChannelSubOrganizationModifyQrCodeOutcomeCallable EssClient::CreateChannelSubOrganizationModifyQrCodeCallable(const CreateChannelSubOrganizationModifyQrCodeRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateChannelSubOrganizationModifyQrCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateChannelSubOrganizationModifyQrCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 EssClient::CreateConvertTaskApiOutcome EssClient::CreateConvertTaskApi(const CreateConvertTaskApiRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConvertTaskApi");

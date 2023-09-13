@@ -131,6 +131,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribePeakValueResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePolicyStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribePolicyStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribePortsRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribePortsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSessionRequest.h>
@@ -403,6 +405,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePolicyStatusResponse> DescribePolicyStatusOutcome;
                 typedef std::future<DescribePolicyStatusOutcome> DescribePolicyStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribePolicyStatusRequest&, DescribePolicyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePortsResponse> DescribePortsOutcome;
+                typedef std::future<DescribePortsOutcome> DescribePortsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribePortsRequest&, DescribePortsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRuleLimitResponse> DescribeRuleLimitOutcome;
                 typedef std::future<DescribeRuleLimitOutcome> DescribeRuleLimitOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeRuleLimitRequest&, DescribeRuleLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleLimitAsyncHandler;
@@ -1040,6 +1045,15 @@ namespace TencentCloud
                 DescribePolicyStatusOutcome DescribePolicyStatus(const Model::DescribePolicyStatusRequest &request);
                 void DescribePolicyStatusAsync(const Model::DescribePolicyStatusRequest& request, const DescribePolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePolicyStatusOutcomeCallable DescribePolicyStatusCallable(const Model::DescribePolicyStatusRequest& request);
+
+                /**
+                 *获取非标端口列表
+                 * @param req DescribePortsRequest
+                 * @return DescribePortsOutcome
+                 */
+                DescribePortsOutcome DescribePorts(const Model::DescribePortsRequest &request);
+                void DescribePortsAsync(const Model::DescribePortsRequest& request, const DescribePortsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePortsOutcomeCallable DescribePortsCallable(const Model::DescribePortsRequest& request);
 
                 /**
                  *获取各个模块具体的规格限制

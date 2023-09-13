@@ -44,8 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取印章id
-                     * @return SealId 印章id
+                     * 获取电子印章ID，为32位字符串。
+建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。
+可登录腾讯电子签控制台，在 "印章"->"印章中心"选择查看的印章，在"印章详情" 中查看某个印章的SealId(在页面中展示为印章ID)。
+                     * @return SealId 电子印章ID，为32位字符串。
+建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。
+可登录腾讯电子签控制台，在 "印章"->"印章中心"选择查看的印章，在"印章详情" 中查看某个印章的SealId(在页面中展示为印章ID)。
                      * 
                      */
                     std::string GetSealId() const;
@@ -57,13 +61,38 @@ namespace TencentCloud
                      */
                     bool SealIdHasBeenSet() const;
 
+                    /**
+                     * 获取电子印章预览链接地址，地址默认失效时间为24小时。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageUrl 电子印章预览链接地址，地址默认失效时间为24小时。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetImageUrl() const;
+
+                    /**
+                     * 判断参数 ImageUrl 是否已赋值
+                     * @return ImageUrl 是否已赋值
+                     * 
+                     */
+                    bool ImageUrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 印章id
+                     * 电子印章ID，为32位字符串。
+建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。
+可登录腾讯电子签控制台，在 "印章"->"印章中心"选择查看的印章，在"印章详情" 中查看某个印章的SealId(在页面中展示为印章ID)。
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;
+
+                    /**
+                     * 电子印章预览链接地址，地址默认失效时间为24小时。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imageUrl;
+                    bool m_imageUrlHasBeenSet;
 
                 };
             }

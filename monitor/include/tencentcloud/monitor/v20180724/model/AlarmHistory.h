@@ -560,6 +560,31 @@ namespace TencentCloud
                      */
                     bool DimensionsHasBeenSet() const;
 
+                    /**
+                     * 获取告警等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmLevel 告警等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmLevel() const;
+
+                    /**
+                     * 设置告警等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmLevel 告警等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmLevel(const std::string& _alarmLevel);
+
+                    /**
+                     * 判断参数 AlarmLevel 是否已赋值
+                     * @return AlarmLevel 是否已赋值
+                     * 
+                     */
+                    bool AlarmLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -707,6 +732,13 @@ namespace TencentCloud
                      */
                     std::string m_dimensions;
                     bool m_dimensionsHasBeenSet;
+
+                    /**
+                     * 告警等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmLevel;
+                    bool m_alarmLevelHasBeenSet;
 
                 };
             }

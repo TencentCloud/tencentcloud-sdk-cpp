@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_VERIFYDOMAINOWNERSHIPFORCONSOLERESPONSE_H_
-#define TENCENTCLOUD_VOD_V20180717_MODEL_VERIFYDOMAINOWNERSHIPFORCONSOLERESPONSE_H_
+#ifndef TENCENTCLOUD_WEILINGWITH_V20230427_MODEL_DESCRIBEWORKSPACELISTRESPONSE_H_
+#define TENCENTCLOUD_WEILINGWITH_V20230427_MODEL_DESCRIBEWORKSPACELISTRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Vod
+    namespace Weilingwith
     {
-        namespace V20180717
+        namespace V20230427
         {
             namespace Model
             {
                 /**
-                * VerifyDomainOwnershipForConsole返回参数结构体
+                * DescribeWorkspaceList返回参数结构体
                 */
-                class VerifyDomainOwnershipForConsoleResponse : public AbstractModel
+                class DescribeWorkspaceListResponse : public AbstractModel
                 {
                 public:
-                    VerifyDomainOwnershipForConsoleResponse();
-                    ~VerifyDomainOwnershipForConsoleResponse() = default;
+                    DescribeWorkspaceListResponse();
+                    ~DescribeWorkspaceListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_VERIFYDOMAINOWNERSHIPFORCONSOLERESPONSE_H_
+#endif // !TENCENTCLOUD_WEILINGWITH_V20230427_MODEL_DESCRIBEWORKSPACELISTRESPONSE_H_

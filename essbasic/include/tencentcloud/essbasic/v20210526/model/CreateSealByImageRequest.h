@@ -45,15 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -128,10 +132,172 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取本接口支持上传图片印章及系统直接生成印章； 如果要使用系统生成印章，此值传：SealGenerateSourceSystem； 如果要使用图片上传请传字段 SealImage
+                     * @return GenerateSource 本接口支持上传图片印章及系统直接生成印章； 如果要使用系统生成印章，此值传：SealGenerateSourceSystem； 如果要使用图片上传请传字段 SealImage
+                     * 
+                     */
+                    std::string GetGenerateSource() const;
+
+                    /**
+                     * 设置本接口支持上传图片印章及系统直接生成印章； 如果要使用系统生成印章，此值传：SealGenerateSourceSystem； 如果要使用图片上传请传字段 SealImage
+                     * @param _generateSource 本接口支持上传图片印章及系统直接生成印章； 如果要使用系统生成印章，此值传：SealGenerateSourceSystem； 如果要使用图片上传请传字段 SealImage
+                     * 
+                     */
+                    void SetGenerateSource(const std::string& _generateSource);
+
+                    /**
+                     * 判断参数 GenerateSource 是否已赋值
+                     * @return GenerateSource 是否已赋值
+                     * 
+                     */
+                    bool GenerateSourceHasBeenSet() const;
+
+                    /**
+                     * 获取电子印章类型：
+<ul><li>OFFICIAL-公章</li>
+<li>CONTRACT-合同专用章;</li>
+<li>FINANCE-合财务专用章;</li>
+<li>PERSONNEL-人事专用章
+</li>
+<li>默认：OFFICIAL</li>
+<ul>
+                     * @return SealType 电子印章类型：
+<ul><li>OFFICIAL-公章</li>
+<li>CONTRACT-合同专用章;</li>
+<li>FINANCE-合财务专用章;</li>
+<li>PERSONNEL-人事专用章
+</li>
+<li>默认：OFFICIAL</li>
+<ul>
+                     * 
+                     */
+                    std::string GetSealType() const;
+
+                    /**
+                     * 设置电子印章类型：
+<ul><li>OFFICIAL-公章</li>
+<li>CONTRACT-合同专用章;</li>
+<li>FINANCE-合财务专用章;</li>
+<li>PERSONNEL-人事专用章
+</li>
+<li>默认：OFFICIAL</li>
+<ul>
+                     * @param _sealType 电子印章类型：
+<ul><li>OFFICIAL-公章</li>
+<li>CONTRACT-合同专用章;</li>
+<li>FINANCE-合财务专用章;</li>
+<li>PERSONNEL-人事专用章
+</li>
+<li>默认：OFFICIAL</li>
+<ul>
+                     * 
+                     */
+                    void SetSealType(const std::string& _sealType);
+
+                    /**
+                     * 判断参数 SealType 是否已赋值
+                     * @return SealType 是否已赋值
+                     * 
+                     */
+                    bool SealTypeHasBeenSet() const;
+
+                    /**
+                     * 获取企业印章横向文字，最多可填15个汉字（若超过印章最大宽度，优先压缩字间距，其次缩小字号
+                     * @return SealHorizontalText 企业印章横向文字，最多可填15个汉字（若超过印章最大宽度，优先压缩字间距，其次缩小字号
+                     * 
+                     */
+                    std::string GetSealHorizontalText() const;
+
+                    /**
+                     * 设置企业印章横向文字，最多可填15个汉字（若超过印章最大宽度，优先压缩字间距，其次缩小字号
+                     * @param _sealHorizontalText 企业印章横向文字，最多可填15个汉字（若超过印章最大宽度，优先压缩字间距，其次缩小字号
+                     * 
+                     */
+                    void SetSealHorizontalText(const std::string& _sealHorizontalText);
+
+                    /**
+                     * 判断参数 SealHorizontalText 是否已赋值
+                     * @return SealHorizontalText 是否已赋值
+                     * 
+                     */
+                    bool SealHorizontalTextHasBeenSet() const;
+
+                    /**
+                     * 获取印章样式:
+
+<ul><li>cycle:圆形印章</li>
+<li>ellipse:椭圆印章</li>
+<li> 注：默认圆形印章</li></ul>
+                     * @return SealStyle 印章样式:
+
+<ul><li>cycle:圆形印章</li>
+<li>ellipse:椭圆印章</li>
+<li> 注：默认圆形印章</li></ul>
+                     * 
+                     */
+                    std::string GetSealStyle() const;
+
+                    /**
+                     * 设置印章样式:
+
+<ul><li>cycle:圆形印章</li>
+<li>ellipse:椭圆印章</li>
+<li> 注：默认圆形印章</li></ul>
+                     * @param _sealStyle 印章样式:
+
+<ul><li>cycle:圆形印章</li>
+<li>ellipse:椭圆印章</li>
+<li> 注：默认圆形印章</li></ul>
+                     * 
+                     */
+                    void SetSealStyle(const std::string& _sealStyle);
+
+                    /**
+                     * 判断参数 SealStyle 是否已赋值
+                     * @return SealStyle 是否已赋值
+                     * 
+                     */
+                    bool SealStyleHasBeenSet() const;
+
+                    /**
+                     * 获取印章尺寸取值描述：<ul><li> 42_42 圆形企业公章直径42mm</li>
+<li> 40_40 圆形企业印章直径40mm</li>
+<li> 45_30 椭圆形印章45mm x 30mm</li>
+</ul>
+                     * @return SealSize 印章尺寸取值描述：<ul><li> 42_42 圆形企业公章直径42mm</li>
+<li> 40_40 圆形企业印章直径40mm</li>
+<li> 45_30 椭圆形印章45mm x 30mm</li>
+</ul>
+                     * 
+                     */
+                    std::string GetSealSize() const;
+
+                    /**
+                     * 设置印章尺寸取值描述：<ul><li> 42_42 圆形企业公章直径42mm</li>
+<li> 40_40 圆形企业印章直径40mm</li>
+<li> 45_30 椭圆形印章45mm x 30mm</li>
+</ul>
+                     * @param _sealSize 印章尺寸取值描述：<ul><li> 42_42 圆形企业公章直径42mm</li>
+<li> 40_40 圆形企业印章直径40mm</li>
+<li> 45_30 椭圆形印章45mm x 30mm</li>
+</ul>
+                     * 
+                     */
+                    void SetSealSize(const std::string& _sealSize);
+
+                    /**
+                     * 判断参数 SealSize 是否已赋值
+                     * @return SealSize 是否已赋值
+                     * 
+                     */
+                    bool SealSizeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
@@ -153,6 +319,50 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 本接口支持上传图片印章及系统直接生成印章； 如果要使用系统生成印章，此值传：SealGenerateSourceSystem； 如果要使用图片上传请传字段 SealImage
+                     */
+                    std::string m_generateSource;
+                    bool m_generateSourceHasBeenSet;
+
+                    /**
+                     * 电子印章类型：
+<ul><li>OFFICIAL-公章</li>
+<li>CONTRACT-合同专用章;</li>
+<li>FINANCE-合财务专用章;</li>
+<li>PERSONNEL-人事专用章
+</li>
+<li>默认：OFFICIAL</li>
+<ul>
+                     */
+                    std::string m_sealType;
+                    bool m_sealTypeHasBeenSet;
+
+                    /**
+                     * 企业印章横向文字，最多可填15个汉字（若超过印章最大宽度，优先压缩字间距，其次缩小字号
+                     */
+                    std::string m_sealHorizontalText;
+                    bool m_sealHorizontalTextHasBeenSet;
+
+                    /**
+                     * 印章样式:
+
+<ul><li>cycle:圆形印章</li>
+<li>ellipse:椭圆印章</li>
+<li> 注：默认圆形印章</li></ul>
+                     */
+                    std::string m_sealStyle;
+                    bool m_sealStyleHasBeenSet;
+
+                    /**
+                     * 印章尺寸取值描述：<ul><li> 42_42 圆形企业公章直径42mm</li>
+<li> 40_40 圆形企业印章直径40mm</li>
+<li> 45_30 椭圆形印章45mm x 30mm</li>
+</ul>
+                     */
+                    std::string m_sealSize;
+                    bool m_sealSizeHasBeenSet;
 
                 };
             }

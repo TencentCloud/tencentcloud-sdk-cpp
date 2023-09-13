@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态：0：初始化、1：成功、2：失败、3：取消、4：异常；
-                     * @return State 状态：0：初始化、1：成功、2：失败、3：取消、4：异常；
+                     * 获取状态：0：运行中、1：成功、2：失败、3：取消、4：超时；
+                     * @return State 状态：0：运行中、1：成功、2：失败、3：取消、4：超时；
                      * 
                      */
                     uint64_t GetState() const;
@@ -77,7 +77,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态：0：初始化、1：成功、2：失败、3：取消、4：异常；
+                     * 状态：0：运行中、1：成功、2：失败、3：取消、4：超时；
                      */
                     uint64_t m_state;
                     bool m_stateHasBeenSet;

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ecc/v20181213/model/CompostionContext.h>
+#include <tencentcloud/ecc/v20181213/model/CompositionContext.h>
 
 
 namespace TencentCloud
@@ -47,16 +48,30 @@ namespace TencentCloud
                     /**
                      * 获取接口返回数据
                      * @return Data 接口返回数据
-                     * 
+                     * @deprecated
                      */
                     CompostionContext GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DataHasBeenSet() const;
+
+                    /**
+                     * 获取接口返回数据
+                     * @return ResultData 接口返回数据
+                     * 
+                     */
+                    CompositionContext GetResultData() const;
+
+                    /**
+                     * 判断参数 ResultData 是否已赋值
+                     * @return ResultData 是否已赋值
+                     * 
+                     */
+                    bool ResultDataHasBeenSet() const;
 
                 private:
 
@@ -65,6 +80,12 @@ namespace TencentCloud
                      */
                     CompostionContext m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 接口返回数据
+                     */
+                    CompositionContext m_resultData;
+                    bool m_resultDataHasBeenSet;
 
                 };
             }
