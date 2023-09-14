@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取出证报告 ID，可用于DescribeFlowEvidenceReport接口查询出证PDF的下载地址
+                     * 获取出证报告 ID，可用于<a href="https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReportId 出证报告 ID，可用于DescribeFlowEvidenceReport接口查询出证PDF的下载地址
+                     * @return ReportId 出证报告 ID，可用于<a href="https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,16 +60,16 @@ namespace TencentCloud
                     bool ReportIdHasBeenSet() const;
 
                     /**
-                     * 获取出证任务执行的状态, 可能会有以下状态：
+                     * 获取出证任务执行的状态, 状态含义如下：
 
-<ul><li>EvidenceStatusExecuting：  出证任务在执行中</li>
-<li>EvidenceStatusSuccess：  出证任务执行成功</li>
-<li>EvidenceStatusFailed ： 出征任务执行失败</li></ul>
-                     * @return Status 出证任务执行的状态, 可能会有以下状态：
+<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
+<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
+<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+                     * @return Status 出证任务执行的状态, 状态含义如下：
 
-<ul><li>EvidenceStatusExecuting：  出证任务在执行中</li>
-<li>EvidenceStatusSuccess：  出证任务执行成功</li>
-<li>EvidenceStatusFailed ： 出征任务执行失败</li></ul>
+<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
+<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
+<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -102,18 +102,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 出证报告 ID，可用于DescribeFlowEvidenceReport接口查询出证PDF的下载地址
+                     * 出证报告 ID，可用于<a href="https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportId;
                     bool m_reportIdHasBeenSet;
 
                     /**
-                     * 出证任务执行的状态, 可能会有以下状态：
+                     * 出证任务执行的状态, 状态含义如下：
 
-<ul><li>EvidenceStatusExecuting：  出证任务在执行中</li>
-<li>EvidenceStatusSuccess：  出证任务执行成功</li>
-<li>EvidenceStatusFailed ： 出征任务执行失败</li></ul>
+<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
+<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
+<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

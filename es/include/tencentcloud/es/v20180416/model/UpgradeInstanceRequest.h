@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标ES版本，支持：”6.4.3“, "6.8.2"，"7.5.1"
-                     * @return EsVersion 目标ES版本，支持：”6.4.3“, "6.8.2"，"7.5.1"
+                     * 获取目标ES版本，支持：”6.4.3“, "6.8.2"，"7.5.1", "7.10.1", "7.14.2"
+                     * @return EsVersion 目标ES版本，支持：”6.4.3“, "6.8.2"，"7.5.1", "7.10.1", "7.14.2"
                      * 
                      */
                     std::string GetEsVersion() const;
 
                     /**
-                     * 设置目标ES版本，支持：”6.4.3“, "6.8.2"，"7.5.1"
-                     * @param _esVersion 目标ES版本，支持：”6.4.3“, "6.8.2"，"7.5.1"
+                     * 设置目标ES版本，支持：”6.4.3“, "6.8.2"，"7.5.1", "7.10.1", "7.14.2"
+                     * @param _esVersion 目标ES版本，支持：”6.4.3“, "6.8.2"，"7.5.1", "7.10.1", "7.14.2"
                      * 
                      */
                     void SetEsVersion(const std::string& _esVersion);
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 目标ES版本，支持：”6.4.3“, "6.8.2"，"7.5.1"
+                     * 目标ES版本，支持：”6.4.3“, "6.8.2"，"7.5.1", "7.10.1", "7.14.2"
                      */
                     std::string m_esVersion;
                     bool m_esVersionHasBeenSet;

@@ -60,7 +60,9 @@ namespace TencentCloud
 
                     /**
                      * 获取审计日志文件详情。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 审计日志文件详情。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AuditLogFile> GetItems() const;
@@ -82,6 +84,7 @@ namespace TencentCloud
 
                     /**
                      * 审计日志文件详情。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuditLogFile> m_items;
                     bool m_itemsHasBeenSet;

@@ -280,21 +280,21 @@ namespace TencentCloud
                     /**
                      * 获取敏感信息数
                      * @return SentiveInfoCnt 敏感信息数
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetSentiveInfoCnt() const;
 
                     /**
                      * 设置敏感信息数
                      * @param _sentiveInfoCnt 敏感信息数
-                     * 
+                     * @deprecated
                      */
                     void SetSentiveInfoCnt(const uint64_t& _sentiveInfoCnt);
 
                     /**
                      * 判断参数 SentiveInfoCnt 是否已赋值
                      * @return SentiveInfoCnt 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SentiveInfoCntHasBeenSet() const;
 
@@ -816,6 +816,199 @@ namespace TencentCloud
                      */
                     bool IsLatestImageHasBeenSet() const;
 
+                    /**
+                     * 获取low级别漏洞个数
+                     * @return LowLevelVulCnt low级别漏洞个数
+                     * 
+                     */
+                    uint64_t GetLowLevelVulCnt() const;
+
+                    /**
+                     * 设置low级别漏洞个数
+                     * @param _lowLevelVulCnt low级别漏洞个数
+                     * 
+                     */
+                    void SetLowLevelVulCnt(const uint64_t& _lowLevelVulCnt);
+
+                    /**
+                     * 判断参数 LowLevelVulCnt 是否已赋值
+                     * @return LowLevelVulCnt 是否已赋值
+                     * 
+                     */
+                    bool LowLevelVulCntHasBeenSet() const;
+
+                    /**
+                     * 获取medium级别漏洞个数
+                     * @return MediumLevelVulCnt medium级别漏洞个数
+                     * 
+                     */
+                    uint64_t GetMediumLevelVulCnt() const;
+
+                    /**
+                     * 设置medium级别漏洞个数
+                     * @param _mediumLevelVulCnt medium级别漏洞个数
+                     * 
+                     */
+                    void SetMediumLevelVulCnt(const uint64_t& _mediumLevelVulCnt);
+
+                    /**
+                     * 判断参数 MediumLevelVulCnt 是否已赋值
+                     * @return MediumLevelVulCnt 是否已赋值
+                     * 
+                     */
+                    bool MediumLevelVulCntHasBeenSet() const;
+
+                    /**
+                     * 获取high级别漏洞个数
+                     * @return HighLevelVulCnt high级别漏洞个数
+                     * 
+                     */
+                    uint64_t GetHighLevelVulCnt() const;
+
+                    /**
+                     * 设置high级别漏洞个数
+                     * @param _highLevelVulCnt high级别漏洞个数
+                     * 
+                     */
+                    void SetHighLevelVulCnt(const uint64_t& _highLevelVulCnt);
+
+                    /**
+                     * 判断参数 HighLevelVulCnt 是否已赋值
+                     * @return HighLevelVulCnt 是否已赋值
+                     * 
+                     */
+                    bool HighLevelVulCntHasBeenSet() const;
+
+                    /**
+                     * 获取critical级别漏洞个数
+                     * @return CriticalLevelVulCnt critical级别漏洞个数
+                     * 
+                     */
+                    uint64_t GetCriticalLevelVulCnt() const;
+
+                    /**
+                     * 设置critical级别漏洞个数
+                     * @param _criticalLevelVulCnt critical级别漏洞个数
+                     * 
+                     */
+                    void SetCriticalLevelVulCnt(const uint64_t& _criticalLevelVulCnt);
+
+                    /**
+                     * 判断参数 CriticalLevelVulCnt 是否已赋值
+                     * @return CriticalLevelVulCnt 是否已赋值
+                     * 
+                     */
+                    bool CriticalLevelVulCntHasBeenSet() const;
+
+                    /**
+                     * 获取关联容器数
+                     * @return ContainerCnt 关联容器数
+                     * 
+                     */
+                    uint64_t GetContainerCnt() const;
+
+                    /**
+                     * 设置关联容器数
+                     * @param _containerCnt 关联容器数
+                     * 
+                     */
+                    void SetContainerCnt(const uint64_t& _containerCnt);
+
+                    /**
+                     * 判断参数 ContainerCnt 是否已赋值
+                     * @return ContainerCnt 是否已赋值
+                     * 
+                     */
+                    bool ContainerCntHasBeenSet() const;
+
+                    /**
+                     * 获取组件数
+                     * @return ComponentCnt 组件数
+                     * 
+                     */
+                    uint64_t GetComponentCnt() const;
+
+                    /**
+                     * 设置组件数
+                     * @param _componentCnt 组件数
+                     * 
+                     */
+                    void SetComponentCnt(const uint64_t& _componentCnt);
+
+                    /**
+                     * 判断参数 ComponentCnt 是否已赋值
+                     * @return ComponentCnt 是否已赋值
+                     * 
+                     */
+                    bool ComponentCntHasBeenSet() const;
+
+                    /**
+                     * 获取是否运行中
+                     * @return IsRunning 是否运行中
+                     * 
+                     */
+                    bool GetIsRunning() const;
+
+                    /**
+                     * 设置是否运行中
+                     * @param _isRunning 是否运行中
+                     * 
+                     */
+                    void SetIsRunning(const bool& _isRunning);
+
+                    /**
+                     * 判断参数 IsRunning 是否已赋值
+                     * @return IsRunning 是否已赋值
+                     * 
+                     */
+                    bool IsRunningHasBeenSet() const;
+
+                    /**
+                     * 获取是否存在必修漏洞
+                     * @return HasNeedFixVul 是否存在必修漏洞
+                     * 
+                     */
+                    bool GetHasNeedFixVul() const;
+
+                    /**
+                     * 设置是否存在必修漏洞
+                     * @param _hasNeedFixVul 是否存在必修漏洞
+                     * 
+                     */
+                    void SetHasNeedFixVul(const bool& _hasNeedFixVul);
+
+                    /**
+                     * 判断参数 HasNeedFixVul 是否已赋值
+                     * @return HasNeedFixVul 是否已赋值
+                     * 
+                     */
+                    bool HasNeedFixVulHasBeenSet() const;
+
+                    /**
+                     * 获取敏感信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SensitiveInfoCnt 敏感信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSensitiveInfoCnt() const;
+
+                    /**
+                     * 设置敏感信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sensitiveInfoCnt 敏感信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSensitiveInfoCnt(const uint64_t& _sensitiveInfoCnt);
+
+                    /**
+                     * 判断参数 SensitiveInfoCnt 是否已赋值
+                     * @return SensitiveInfoCnt 是否已赋值
+                     * 
+                     */
+                    bool SensitiveInfoCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1035,6 +1228,61 @@ namespace TencentCloud
                      */
                     bool m_isLatestImage;
                     bool m_isLatestImageHasBeenSet;
+
+                    /**
+                     * low级别漏洞个数
+                     */
+                    uint64_t m_lowLevelVulCnt;
+                    bool m_lowLevelVulCntHasBeenSet;
+
+                    /**
+                     * medium级别漏洞个数
+                     */
+                    uint64_t m_mediumLevelVulCnt;
+                    bool m_mediumLevelVulCntHasBeenSet;
+
+                    /**
+                     * high级别漏洞个数
+                     */
+                    uint64_t m_highLevelVulCnt;
+                    bool m_highLevelVulCntHasBeenSet;
+
+                    /**
+                     * critical级别漏洞个数
+                     */
+                    uint64_t m_criticalLevelVulCnt;
+                    bool m_criticalLevelVulCntHasBeenSet;
+
+                    /**
+                     * 关联容器数
+                     */
+                    uint64_t m_containerCnt;
+                    bool m_containerCntHasBeenSet;
+
+                    /**
+                     * 组件数
+                     */
+                    uint64_t m_componentCnt;
+                    bool m_componentCntHasBeenSet;
+
+                    /**
+                     * 是否运行中
+                     */
+                    bool m_isRunning;
+                    bool m_isRunningHasBeenSet;
+
+                    /**
+                     * 是否存在必修漏洞
+                     */
+                    bool m_hasNeedFixVul;
+                    bool m_hasNeedFixVulHasBeenSet;
+
+                    /**
+                     * 敏感信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_sensitiveInfoCnt;
+                    bool m_sensitiveInfoCntHasBeenSet;
 
                 };
             }

@@ -151,21 +151,21 @@ namespace TencentCloud
                     /**
                      * 获取是否扫描所有
                      * @return All 是否扫描所有
-                     * 
+                     * @deprecated
                      */
                     bool GetAll() const;
 
                     /**
                      * 设置是否扫描所有
                      * @param _all 是否扫描所有
-                     * 
+                     * @deprecated
                      */
                     void SetAll(const bool& _all);
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AllHasBeenSet() const;
 
@@ -210,6 +210,111 @@ namespace TencentCloud
                      * 
                      */
                     bool LatestHasBeenSet() const;
+
+                    /**
+                     * 获取是否存在运行中的容器
+                     * @return ContainerRunning 是否存在运行中的容器
+                     * 
+                     */
+                    bool GetContainerRunning() const;
+
+                    /**
+                     * 设置是否存在运行中的容器
+                     * @param _containerRunning 是否存在运行中的容器
+                     * 
+                     */
+                    void SetContainerRunning(const bool& _containerRunning);
+
+                    /**
+                     * 判断参数 ContainerRunning 是否已赋值
+                     * @return ContainerRunning 是否已赋值
+                     * 
+                     */
+                    bool ContainerRunningHasBeenSet() const;
+
+                    /**
+                     * 获取扫描结束时间
+                     * @return ScanEndTime 扫描结束时间
+                     * 
+                     */
+                    std::string GetScanEndTime() const;
+
+                    /**
+                     * 设置扫描结束时间
+                     * @param _scanEndTime 扫描结束时间
+                     * 
+                     */
+                    void SetScanEndTime(const std::string& _scanEndTime);
+
+                    /**
+                     * 判断参数 ScanEndTime 是否已赋值
+                     * @return ScanEndTime 是否已赋值
+                     * 
+                     */
+                    bool ScanEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     * @return ScanScope 扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     * 
+                     */
+                    uint64_t GetScanScope() const;
+
+                    /**
+                     * 设置扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     * @param _scanScope 扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     * 
+                     */
+                    void SetScanScope(const uint64_t& _scanScope);
+
+                    /**
+                     * 判断参数 ScanScope 是否已赋值
+                     * @return ScanScope 是否已赋值
+                     * 
+                     */
+                    bool ScanScopeHasBeenSet() const;
+
+                    /**
+                     * 获取仓库类型 tcr,ccr,harbor
+                     * @return RegistryType 仓库类型 tcr,ccr,harbor
+                     * 
+                     */
+                    std::vector<std::string> GetRegistryType() const;
+
+                    /**
+                     * 设置仓库类型 tcr,ccr,harbor
+                     * @param _registryType 仓库类型 tcr,ccr,harbor
+                     * 
+                     */
+                    void SetRegistryType(const std::vector<std::string>& _registryType);
+
+                    /**
+                     * 判断参数 RegistryType 是否已赋值
+                     * @return RegistryType 是否已赋值
+                     * 
+                     */
+                    bool RegistryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间
+                     * @return Namespace 命名空间
+                     * 
+                     */
+                    std::vector<std::string> GetNamespace() const;
+
+                    /**
+                     * 设置命名空间
+                     * @param _namespace 命名空间
+                     * 
+                     */
+                    void SetNamespace(const std::vector<std::string>& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
 
                 private:
 
@@ -260,6 +365,36 @@ namespace TencentCloud
                      */
                     bool m_latest;
                     bool m_latestHasBeenSet;
+
+                    /**
+                     * 是否存在运行中的容器
+                     */
+                    bool m_containerRunning;
+                    bool m_containerRunningHasBeenSet;
+
+                    /**
+                     * 扫描结束时间
+                     */
+                    std::string m_scanEndTime;
+                    bool m_scanEndTimeHasBeenSet;
+
+                    /**
+                     * 扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     */
+                    uint64_t m_scanScope;
+                    bool m_scanScopeHasBeenSet;
+
+                    /**
+                     * 仓库类型 tcr,ccr,harbor
+                     */
+                    std::vector<std::string> m_registryType;
+                    bool m_registryTypeHasBeenSet;
+
+                    /**
+                     * 命名空间
+                     */
+                    std::vector<std::string> m_namespace;
+                    bool m_namespaceHasBeenSet;
 
                 };
             }

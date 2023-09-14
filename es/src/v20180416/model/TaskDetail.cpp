@@ -25,7 +25,8 @@ TaskDetail::TaskDetail() :
     m_progressHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
     m_subTasksHasBeenSet(false),
-    m_elapsedTimeHasBeenSet(false)
+    m_elapsedTimeHasBeenSet(false),
+    m_processInfoHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,23 @@ CoreInternalOutcome TaskDetail::Deserialize(const rapidjson::Value &value)
         m_elapsedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcessInfo") && !value["ProcessInfo"].IsNull())
+    {
+        if (!value["ProcessInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDetail.ProcessInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_processInfo.Deserialize(value["ProcessInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_processInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +164,15 @@ void TaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ElapsedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_elapsedTime, allocator);
+    }
+
+    if (m_processInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_processInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -229,5 +256,21 @@ void TaskDetail::SetElapsedTime(const int64_t& _elapsedTime)
 bool TaskDetail::ElapsedTimeHasBeenSet() const
 {
     return m_elapsedTimeHasBeenSet;
+}
+
+ProcessDetail TaskDetail::GetProcessInfo() const
+{
+    return m_processInfo;
+}
+
+void TaskDetail::SetProcessInfo(const ProcessDetail& _processInfo)
+{
+    m_processInfo = _processInfo;
+    m_processInfoHasBeenSet = true;
+}
+
+bool TaskDetail::ProcessInfoHasBeenSet() const
+{
+    return m_processInfoHasBeenSet;
 }
 

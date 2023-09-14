@@ -31,7 +31,12 @@ DescribeImageRegistryTimingScanTaskResponse::DescribeImageRegistryTimingScanTask
     m_allHasBeenSet(false),
     m_imagesHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_latestHasBeenSet(false)
+    m_latestHasBeenSet(false),
+    m_scanEndTimeHasBeenSet(false),
+    m_registryTypeHasBeenSet(false),
+    m_containerRunningHasBeenSet(false),
+    m_scanScopeHasBeenSet(false),
+    m_namespaceHasBeenSet(false)
 {
 }
 
@@ -165,6 +170,62 @@ CoreInternalOutcome DescribeImageRegistryTimingScanTaskResponse::Deserialize(con
         m_latestHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScanEndTime") && !rsp["ScanEndTime"].IsNull())
+    {
+        if (!rsp["ScanEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanEndTime = string(rsp["ScanEndTime"].GetString());
+        m_scanEndTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RegistryType") && !rsp["RegistryType"].IsNull())
+    {
+        if (!rsp["RegistryType"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RegistryType` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RegistryType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_registryType.push_back((*itr).GetString());
+        }
+        m_registryTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ContainerRunning") && !rsp["ContainerRunning"].IsNull())
+    {
+        if (!rsp["ContainerRunning"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerRunning` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerRunning = rsp["ContainerRunning"].GetBool();
+        m_containerRunningHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ScanScope") && !rsp["ScanScope"].IsNull())
+    {
+        if (!rsp["ScanScope"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanScope` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanScope = rsp["ScanScope"].GetUint64();
+        m_scanScopeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Namespace") && !rsp["Namespace"].IsNull())
+    {
+        if (!rsp["Namespace"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Namespace` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Namespace"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_namespace.push_back((*itr).GetString());
+        }
+        m_namespaceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -254,6 +315,56 @@ string DescribeImageRegistryTimingScanTaskResponse::ToJsonString() const
         string key = "Latest";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_latest, allocator);
+    }
+
+    if (m_scanEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_registryType.begin(); itr != m_registryType.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_containerRunningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerRunning";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_containerRunning, allocator);
+    }
+
+    if (m_scanScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scanScope, allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_namespace.begin(); itr != m_namespace.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -346,6 +457,56 @@ bool DescribeImageRegistryTimingScanTaskResponse::GetLatest() const
 bool DescribeImageRegistryTimingScanTaskResponse::LatestHasBeenSet() const
 {
     return m_latestHasBeenSet;
+}
+
+string DescribeImageRegistryTimingScanTaskResponse::GetScanEndTime() const
+{
+    return m_scanEndTime;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::ScanEndTimeHasBeenSet() const
+{
+    return m_scanEndTimeHasBeenSet;
+}
+
+vector<string> DescribeImageRegistryTimingScanTaskResponse::GetRegistryType() const
+{
+    return m_registryType;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::RegistryTypeHasBeenSet() const
+{
+    return m_registryTypeHasBeenSet;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::GetContainerRunning() const
+{
+    return m_containerRunning;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::ContainerRunningHasBeenSet() const
+{
+    return m_containerRunningHasBeenSet;
+}
+
+uint64_t DescribeImageRegistryTimingScanTaskResponse::GetScanScope() const
+{
+    return m_scanScope;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::ScanScopeHasBeenSet() const
+{
+    return m_scanScopeHasBeenSet;
+}
+
+vector<string> DescribeImageRegistryTimingScanTaskResponse::GetNamespace() const
+{
+    return m_namespace;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
 }
 
 

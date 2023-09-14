@@ -49,15 +49,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同（流程）的名称
-                     * @return FlowName 合同（流程）的名称
+                     * 获取合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+该名称还将用于合同签署完成后的下载文件名。
+                     * @return FlowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+该名称还将用于合同签署完成后的下载文件名。
                      * 
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置合同（流程）的名称
-                     * @param _flowName 合同（流程）的名称
+                     * 设置合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+该名称还将用于合同签署完成后的下载文件名。
+                     * @param _flowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+该名称还将用于合同签署完成后的下载文件名。
                      * 
                      */
                     void SetFlowName(const std::string& _flowName);
@@ -70,15 +74,19 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）的签署方信息
-                     * @return Approvers 合同（流程）的签署方信息
+                     * 获取签署流程参与者信息，最大限制50方
+注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。
+                     * @return Approvers 签署流程参与者信息，最大限制50方
+注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。
                      * 
                      */
                     std::vector<ApproverInfo> GetApprovers() const;
 
                     /**
-                     * 设置合同（流程）的签署方信息
-                     * @param _approvers 合同（流程）的签署方信息
+                     * 设置签署流程参与者信息，最大限制50方
+注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。
+                     * @param _approvers 签署流程参与者信息，最大限制50方
+注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。
                      * 
                      */
                     void SetApprovers(const std::vector<ApproverInfo>& _approvers);
@@ -91,15 +99,19 @@ namespace TencentCloud
                     bool ApproversHasBeenSet() const;
 
                     /**
-                     * 获取发起合同（流程）的资源Id,此资源必须是PDF文件,来自UploadFiles,使用文件发起合同(流程)组时必传
-                     * @return FileIds 发起合同（流程）的资源Id,此资源必须是PDF文件,来自UploadFiles,使用文件发起合同(流程)组时必传
+                     * 获取文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+                     * @return FileIds 文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
-                     * 设置发起合同（流程）的资源Id,此资源必须是PDF文件,来自UploadFiles,使用文件发起合同(流程)组时必传
-                     * @param _fileIds 发起合同（流程）的资源Id,此资源必须是PDF文件,来自UploadFiles,使用文件发起合同(流程)组时必传
+                     * 设置文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+                     * @param _fileIds 文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
                      * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
@@ -112,15 +124,23 @@ namespace TencentCloud
                     bool FileIdsHasBeenSet() const;
 
                     /**
-                     * 获取发起合同（流程）的模板Id,用模板发起合同（流程）组时必填
-                     * @return TemplateId 发起合同（流程）的模板Id,用模板发起合同（流程）组时必填
+                     * 获取合同模板ID，为32位字符串。
+建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
+                     * @return TemplateId 合同模板ID，为32位字符串。
+建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置发起合同（流程）的模板Id,用模板发起合同（流程）组时必填
-                     * @param _templateId 发起合同（流程）的模板Id,用模板发起合同（流程）组时必填
+                     * 设置合同模板ID，为32位字符串。
+建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
+                     * @param _templateId 合同模板ID，为32位字符串。
+建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -133,15 +153,19 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）的类型
-                     * @return FlowType 合同（流程）的类型
+                     * 获取签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
+示例值：劳务合同
+                     * @return FlowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
+示例值：劳务合同
                      * 
                      */
                     std::string GetFlowType() const;
 
                     /**
-                     * 设置合同（流程）的类型
-                     * @param _flowType 合同（流程）的类型
+                     * 设置签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
+示例值：劳务合同
+                     * @param _flowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
+示例值：劳务合同
                      * 
                      */
                     void SetFlowType(const std::string& _flowType);
@@ -154,15 +178,15 @@ namespace TencentCloud
                     bool FlowTypeHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）的描述
-                     * @return FlowDescription 合同（流程）的描述
+                     * 获取签署流程描述,最大长度1000个字符
+                     * @return FlowDescription 签署流程描述,最大长度1000个字符
                      * 
                      */
                     std::string GetFlowDescription() const;
 
                     /**
-                     * 设置合同（流程）的描述
-                     * @param _flowDescription 合同（流程）的描述
+                     * 设置签署流程描述,最大长度1000个字符
+                     * @param _flowDescription 签署流程描述,最大长度1000个字符
                      * 
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
@@ -175,15 +199,27 @@ namespace TencentCloud
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）的截止时间戳，单位秒。默认是一年
-                     * @return Deadline 合同（流程）的截止时间戳，单位秒。默认是一年
+                     * 获取签署流程的签署截止时间。
+
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+示例值：1604912664
+                     * @return Deadline 签署流程的签署截止时间。
+
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+示例值：1604912664
                      * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置合同（流程）的截止时间戳，单位秒。默认是一年
-                     * @param _deadline 合同（流程）的截止时间戳，单位秒。默认是一年
+                     * 设置签署流程的签署截止时间。
+
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+示例值：1604912664
+                     * @param _deadline 签署流程的签署截止时间。
+
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+示例值：1604912664
                      * 
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -198,34 +234,42 @@ namespace TencentCloud
                     /**
                      * 获取合同（流程）的回调地址
                      * @return CallbackUrl 合同（流程）的回调地址
-                     * 
+                     * @deprecated
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置合同（流程）的回调地址
                      * @param _callbackUrl 合同（流程）的回调地址
-                     * 
+                     * @deprecated
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台传递过来的信息, 限制1024字符 格式必须是base64的
-                     * @return UserData 第三方平台传递过来的信息, 限制1024字符 格式必须是base64的
+                     * 获取调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
+                     * @return UserData 调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      * 
                      */
                     std::string GetUserData() const;
 
                     /**
-                     * 设置第三方平台传递过来的信息, 限制1024字符 格式必须是base64的
-                     * @param _userData 第三方平台传递过来的信息, 限制1024字符 格式必须是base64的
+                     * 设置调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
+                     * @param _userData 调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      * 
                      */
                     void SetUserData(const std::string& _userData);
@@ -238,15 +282,31 @@ namespace TencentCloud
                     bool UserDataHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）的签署是否是无序签, true - 无序。 false - 有序, 默认 
-                     * @return Unordered 合同（流程）的签署是否是无序签, true - 无序。 false - 有序, 默认 
+                     * 获取发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签），请和模板中的配置保持一致
+示例值：true
+                     * @return Unordered 发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签），请和模板中的配置保持一致
+示例值：true
                      * 
                      */
                     bool GetUnordered() const;
 
                     /**
-                     * 设置合同（流程）的签署是否是无序签, true - 无序。 false - 有序, 默认 
-                     * @param _unordered 合同（流程）的签署是否是无序签, true - 无序。 false - 有序, 默认 
+                     * 设置发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签），请和模板中的配置保持一致
+示例值：true
+                     * @param _unordered 发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签），请和模板中的配置保持一致
+示例值：true
                      * 
                      */
                     void SetUnordered(const bool& _unordered);
@@ -259,15 +319,39 @@ namespace TencentCloud
                     bool UnorderedHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充
-                     * @return Components 合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充
+                     * 获取模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+<ul><li>单行文本控件</li>
+<li>多行文本控件</li>
+<li>勾选框控件</li>
+<li>数字控件</li>
+<li>图片控件</li>
+<li>动态表格等填写控件</li></ul>
+                     * @return Components 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+<ul><li>单行文本控件</li>
+<li>多行文本控件</li>
+<li>勾选框控件</li>
+<li>数字控件</li>
+<li>图片控件</li>
+<li>动态表格等填写控件</li></ul>
                      * 
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
-                     * 设置合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充
-                     * @param _components 合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充
+                     * 设置模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+<ul><li>单行文本控件</li>
+<li>多行文本控件</li>
+<li>勾选框控件</li>
+<li>数字控件</li>
+<li>图片控件</li>
+<li>动态表格等填写控件</li></ul>
+                     * @param _components 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+<ul><li>单行文本控件</li>
+<li>多行文本控件</li>
+<li>勾选框控件</li>
+<li>数字控件</li>
+<li>图片控件</li>
+<li>动态表格等填写控件</li></ul>
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -280,15 +364,31 @@ namespace TencentCloud
                     bool ComponentsHasBeenSet() const;
 
                     /**
-                     * 获取本企业（发起方）是否需要签署审批，若需要审批则只允许查看不允许签署，需要您调用接口CreateFlowSignReview提交审批结果。
-                     * @return NeedSignReview 本企业（发起方）是否需要签署审批，若需要审批则只允许查看不允许签署，需要您调用接口CreateFlowSignReview提交审批结果。
+                     * 获取发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+若设置为true，审核结果需通过接口 [CreateFlowSignReview](https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview) 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。
+
+注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。
+示例值：true
+                     * @return NeedSignReview 发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+若设置为true，审核结果需通过接口 [CreateFlowSignReview](https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview) 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。
+
+注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。
+示例值：true
                      * 
                      */
                     bool GetNeedSignReview() const;
 
                     /**
-                     * 设置本企业（发起方）是否需要签署审批，若需要审批则只允许查看不允许签署，需要您调用接口CreateFlowSignReview提交审批结果。
-                     * @param _needSignReview 本企业（发起方）是否需要签署审批，若需要审批则只允许查看不允许签署，需要您调用接口CreateFlowSignReview提交审批结果。
+                     * 设置发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+若设置为true，审核结果需通过接口 [CreateFlowSignReview](https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview) 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。
+
+注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。
+示例值：true
+                     * @param _needSignReview 发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+若设置为true，审核结果需通过接口 [CreateFlowSignReview](https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview) 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。
+
+注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。
+示例值：true
                      * 
                      */
                     void SetNeedSignReview(const bool& _needSignReview);
@@ -301,15 +401,19 @@ namespace TencentCloud
                     bool NeedSignReviewHasBeenSet() const;
 
                     /**
-                     * 获取本企业（发起方）自动签署，需要您在发起合同时给印章控件指定自动签的印章。
-                     * @return AutoSignScene 本企业（发起方）自动签署，需要您在发起合同时给印章控件指定自动签的印章。
+                     * 获取个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+示例值：E_PRESCRIPTION_AUTO_SIGN
+                     * @return AutoSignScene 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+示例值：E_PRESCRIPTION_AUTO_SIGN
                      * 
                      */
                     std::string GetAutoSignScene() const;
 
                     /**
-                     * 设置本企业（发起方）自动签署，需要您在发起合同时给印章控件指定自动签的印章。
-                     * @param _autoSignScene 本企业（发起方）自动签署，需要您在发起合同时给印章控件指定自动签的印章。
+                     * 设置个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+示例值：E_PRESCRIPTION_AUTO_SIGN
+                     * @param _autoSignScene 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+示例值：E_PRESCRIPTION_AUTO_SIGN
                      * 
                      */
                     void SetAutoSignScene(const std::string& _autoSignScene);
@@ -324,43 +428,52 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同（流程）的名称
+                     * 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+该名称还将用于合同签署完成后的下载文件名。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 合同（流程）的签署方信息
+                     * 签署流程参与者信息，最大限制50方
+注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。
                      */
                     std::vector<ApproverInfo> m_approvers;
                     bool m_approversHasBeenSet;
 
                     /**
-                     * 发起合同（流程）的资源Id,此资源必须是PDF文件,来自UploadFiles,使用文件发起合同(流程)组时必传
+                     * 文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;
 
                     /**
-                     * 发起合同（流程）的模板Id,用模板发起合同（流程）组时必填
+                     * 合同模板ID，为32位字符串。
+建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。
+可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 合同（流程）的类型
+                     * 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
+示例值：劳务合同
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
 
                     /**
-                     * 合同（流程）的描述
+                     * 签署流程描述,最大长度1000个字符
                      */
                     std::string m_flowDescription;
                     bool m_flowDescriptionHasBeenSet;
 
                     /**
-                     * 合同（流程）的截止时间戳，单位秒。默认是一年
+                     * 签署流程的签署截止时间。
+
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+示例值：1604912664
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
@@ -372,31 +485,48 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 第三方平台传递过来的信息, 限制1024字符 格式必须是base64的
+                     * 调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。
+回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
 
                     /**
-                     * 合同（流程）的签署是否是无序签, true - 无序。 false - 有序, 默认 
+                     * 发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签），请和模板中的配置保持一致
+示例值：true
                      */
                     bool m_unordered;
                     bool m_unorderedHasBeenSet;
 
                     /**
-                     * 合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充
+                     * 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+<ul><li>单行文本控件</li>
+<li>多行文本控件</li>
+<li>勾选框控件</li>
+<li>数字控件</li>
+<li>图片控件</li>
+<li>动态表格等填写控件</li></ul>
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;
 
                     /**
-                     * 本企业（发起方）是否需要签署审批，若需要审批则只允许查看不允许签署，需要您调用接口CreateFlowSignReview提交审批结果。
+                     * 发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+若设置为true，审核结果需通过接口 [CreateFlowSignReview](https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview) 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。
+
+注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。
+示例值：true
                      */
                     bool m_needSignReview;
                     bool m_needSignReviewHasBeenSet;
 
                     /**
-                     * 本企业（发起方）自动签署，需要您在发起合同时给印章控件指定自动签的印章。
+                     * 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+示例值：E_PRESCRIPTION_AUTO_SIGN
                      */
                     std::string m_autoSignScene;
                     bool m_autoSignSceneHasBeenSet;

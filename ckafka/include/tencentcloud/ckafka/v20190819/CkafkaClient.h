@@ -79,6 +79,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DeleteDatahubTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteGroupRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteGroupResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteInstancePostRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteInstancePostResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteRouteRequest.h>
@@ -281,6 +283,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
                 typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInstancePostResponse> DeleteInstancePostOutcome;
+                typedef std::future<DeleteInstancePostOutcome> DeleteInstancePostOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteInstancePostRequest&, DeleteInstancePostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstancePostAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstancePreResponse> DeleteInstancePreOutcome;
                 typedef std::future<DeleteInstancePreOutcome> DeleteInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteInstancePreRequest&, DeleteInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstancePreAsyncHandler;
@@ -691,6 +696,15 @@ namespace TencentCloud
                 DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest &request);
                 void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request);
+
+                /**
+                 *删除后付费实例
+                 * @param req DeleteInstancePostRequest
+                 * @return DeleteInstancePostOutcome
+                 */
+                DeleteInstancePostOutcome DeleteInstancePost(const Model::DeleteInstancePostRequest &request);
+                void DeleteInstancePostAsync(const Model::DeleteInstancePostRequest& request, const DeleteInstancePostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstancePostOutcomeCallable DeleteInstancePostCallable(const Model::DeleteInstancePostRequest& request);
 
                 /**
                  *删除预付费实例

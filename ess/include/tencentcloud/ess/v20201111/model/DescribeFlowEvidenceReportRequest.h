@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取签署报告编号
-                     * @return ReportId 签署报告编号
+                     * 获取签署报告编号, 由<a href="https://qian.tencent.com/developers/companyApis/certificate/CreateFlowEvidenceReport" target="_blank">提交申请出证报告任务</a>产生
+                     * @return ReportId 签署报告编号, 由<a href="https://qian.tencent.com/developers/companyApis/certificate/CreateFlowEvidenceReport" target="_blank">提交申请出证报告任务</a>产生
                      * 
                      */
                     std::string GetReportId() const;
 
                     /**
-                     * 设置签署报告编号
-                     * @param _reportId 签署报告编号
+                     * 设置签署报告编号, 由<a href="https://qian.tencent.com/developers/companyApis/certificate/CreateFlowEvidenceReport" target="_blank">提交申请出证报告任务</a>产生
+                     * @param _reportId 签署报告编号, 由<a href="https://qian.tencent.com/developers/companyApis/certificate/CreateFlowEvidenceReport" target="_blank">提交申请出证报告任务</a>产生
                      * 
                      */
                     void SetReportId(const std::string& _reportId);
@@ -125,7 +125,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 签署报告编号
+                     * 签署报告编号, 由<a href="https://qian.tencent.com/developers/companyApis/certificate/CreateFlowEvidenceReport" target="_blank">提交申请出证报告任务</a>产生
                      */
                     std::string m_reportId;
                     bool m_reportIdHasBeenSet;

@@ -208,14 +208,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SentiveInfoCnt 敏感信息数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetSentiveInfoCnt() const;
 
                     /**
                      * 判断参数 SentiveInfoCnt 是否已赋值
                      * @return SentiveInfoCnt 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SentiveInfoCntHasBeenSet() const;
 
@@ -555,6 +555,22 @@ namespace TencentCloud
                      */
                     bool ImageCreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取敏感信息数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SensitiveInfoCnt 敏感信息数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSensitiveInfoCnt() const;
+
+                    /**
+                     * 判断参数 SensitiveInfoCnt 是否已赋值
+                     * @return SensitiveInfoCnt 是否已赋值
+                     * 
+                     */
+                    bool SensitiveInfoCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -780,6 +796,13 @@ namespace TencentCloud
                      */
                     std::string m_imageCreateTime;
                     bool m_imageCreateTimeHasBeenSet;
+
+                    /**
+                     * 敏感信息数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_sensitiveInfoCnt;
+                    bool m_sensitiveInfoCntHasBeenSet;
 
                 };
             }

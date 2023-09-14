@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/apigateway/v20180808/model/InstanceChargePrepaid.h>
 
 
 namespace TencentCloud
@@ -239,6 +240,106 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取公网IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OuterIpList 公网IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetOuterIpList() const;
+
+                    /**
+                     * 设置公网IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outerIpList 公网IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOuterIpList(const std::vector<std::string>& _outerIpList);
+
+                    /**
+                     * 判断参数 OuterIpList 是否已赋值
+                     * @return OuterIpList 是否已赋值
+                     * 
+                     */
+                    bool OuterIpListHasBeenSet() const;
+
+                    /**
+                     * 获取内网IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InnerIpList 内网IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetInnerIpList() const;
+
+                    /**
+                     * 设置内网IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _innerIpList 内网IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInnerIpList(const std::vector<std::string>& _innerIpList);
+
+                    /**
+                     * 判断参数 InnerIpList 是否已赋值
+                     * @return InnerIpList 是否已赋值
+                     * 
+                     */
+                    bool InnerIpListHasBeenSet() const;
+
+                    /**
+                     * 获取专享实例计费信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceChargePrepaid 专享实例计费信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    InstanceChargePrepaid GetInstanceChargePrepaid() const;
+
+                    /**
+                     * 设置专享实例计费信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceChargePrepaid 专享实例计费信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
+
+                    /**
+                     * 判断参数 InstanceChargePrepaid 是否已赋值
+                     * @return InstanceChargePrepaid 是否已赋值
+                     * 
+                     */
+                    bool InstanceChargePrepaidHasBeenSet() const;
+
+                    /**
+                     * 获取所属vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UniqVpcId 所属vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置所属vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _uniqVpcId 所属vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     * 
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -295,6 +396,34 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 公网IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_outerIpList;
+                    bool m_outerIpListHasBeenSet;
+
+                    /**
+                     * 内网IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_innerIpList;
+                    bool m_innerIpListHasBeenSet;
+
+                    /**
+                     * 专享实例计费信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceChargePrepaid m_instanceChargePrepaid;
+                    bool m_instanceChargePrepaidHasBeenSet;
+
+                    /**
+                     * 所属vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
 
                 };
             }

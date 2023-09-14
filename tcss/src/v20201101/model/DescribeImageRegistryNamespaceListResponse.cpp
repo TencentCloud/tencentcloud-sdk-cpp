@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeImageRegistryNamespaceListResponse::DescribeImageRegistryNamespaceListResponse() :
     m_totalCountHasBeenSet(false),
-    m_namespaceListHasBeenSet(false)
+    m_namespaceListHasBeenSet(false),
+    m_namespaceDetailHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,26 @@ CoreInternalOutcome DescribeImageRegistryNamespaceListResponse::Deserialize(cons
         m_namespaceListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NamespaceDetail") && !rsp["NamespaceDetail"].IsNull())
+    {
+        if (!rsp["NamespaceDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NamespaceDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["NamespaceDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NamespaceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_namespaceDetail.push_back(item);
+        }
+        m_namespaceDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -114,6 +135,21 @@ string DescribeImageRegistryNamespaceListResponse::ToJsonString() const
         for (auto itr = m_namespaceList.begin(); itr != m_namespaceList.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_namespaceDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_namespaceDetail.begin(); itr != m_namespaceDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -147,6 +183,16 @@ vector<string> DescribeImageRegistryNamespaceListResponse::GetNamespaceList() co
 bool DescribeImageRegistryNamespaceListResponse::NamespaceListHasBeenSet() const
 {
     return m_namespaceListHasBeenSet;
+}
+
+vector<NamespaceInfo> DescribeImageRegistryNamespaceListResponse::GetNamespaceDetail() const
+{
+    return m_namespaceDetail;
+}
+
+bool DescribeImageRegistryNamespaceListResponse::NamespaceDetailHasBeenSet() const
+{
+    return m_namespaceDetailHasBeenSet;
 }
 
 

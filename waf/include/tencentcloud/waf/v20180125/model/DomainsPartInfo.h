@@ -48,6 +48,174 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取域名
+                     * @return Domain 域名
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置域名
+                     * @param _domain 域名
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取域名id
+                     * @return DomainId 域名id
+                     * 
+                     */
+                    std::string GetDomainId() const;
+
+                    /**
+                     * 设置域名id
+                     * @param _domainId 域名id
+                     * 
+                     */
+                    void SetDomainId(const std::string& _domainId);
+
+                    /**
+                     * 判断参数 DomainId 是否已赋值
+                     * @return DomainId 是否已赋值
+                     * 
+                     */
+                    bool DomainIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例id
+                     * @return InstanceId 实例id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例id
+                     * @param _instanceId 实例id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取类型
+                     * @return Edition 类型
+                     * 
+                     */
+                    std::string GetEdition() const;
+
+                    /**
+                     * 设置类型
+                     * @param _edition 类型
+                     * 
+                     */
+                    void SetEdition(const std::string& _edition);
+
+                    /**
+                     * 判断参数 Edition 是否已赋值
+                     * @return Edition 是否已赋值
+                     * 
+                     */
+                    bool EditionHasBeenSet() const;
+
+                    /**
+                     * 获取实例名
+                     * @return InstanceName 实例名
+                     * 
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名
+                     * @param _instanceName 实例名
+                     * 
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取证书
+                     * @return Cert 证书
+                     * 
+                     */
+                    std::string GetCert() const;
+
+                    /**
+                     * 设置证书
+                     * @param _cert 证书
+                     * 
+                     */
+                    void SetCert(const std::string& _cert);
+
+                    /**
+                     * 判断参数 Cert 是否已赋值
+                     * @return Cert 是否已赋值
+                     * 
+                     */
+                    bool CertHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _createTime 创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取AI防御模式
+                     * @return Engine AI防御模式
+                     * 
+                     */
+                    uint64_t GetEngine() const;
+
+                    /**
+                     * 设置AI防御模式
+                     * @param _engine AI防御模式
+                     * 
+                     */
+                    void SetEngine(const uint64_t& _engine);
+
+                    /**
+                     * 判断参数 Engine 是否已赋值
+                     * @return Engine 是否已赋值
+                     * 
+                     */
+                    bool EngineHasBeenSet() const;
+
+                    /**
                      * 获取是否开启httpRewrite
                      * @return HttpsRewrite 是否开启httpRewrite
                      * 
@@ -722,6 +890,54 @@ namespace TencentCloud
                     bool XFFResetHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * 域名id
+                     */
+                    std::string m_domainId;
+                    bool m_domainIdHasBeenSet;
+
+                    /**
+                     * 实例id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 类型
+                     */
+                    std::string m_edition;
+                    bool m_editionHasBeenSet;
+
+                    /**
+                     * 实例名
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 证书
+                     */
+                    std::string m_cert;
+                    bool m_certHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * AI防御模式
+                     */
+                    uint64_t m_engine;
+                    bool m_engineHasBeenSet;
 
                     /**
                      * 是否开启httpRewrite

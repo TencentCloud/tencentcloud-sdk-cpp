@@ -27,7 +27,8 @@ Operation::Operation() :
     m_detailHasBeenSet(false),
     m_resultHasBeenSet(false),
     m_tasksHasBeenSet(false),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
         m_progressHasBeenSet = true;
     }
 
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Operation.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -192,6 +203,14 @@ void Operation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -307,5 +326,21 @@ void Operation::SetProgress(const double& _progress)
 bool Operation::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+string Operation::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void Operation::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool Operation::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
 }
 

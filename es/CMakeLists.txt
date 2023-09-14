@@ -89,7 +89,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/CreateLogstashInstanceRequest.h
   include/tencentcloud/es/v20180416/model/UpdateDictionariesResponse.h
-  include/tencentcloud/es/v20180416/model/InstanceInfo.h
+  include/tencentcloud/es/v20180416/model/ProcessDetail.h
   include/tencentcloud/es/v20180416/model/DeleteIndexResponse.h
   include/tencentcloud/es/v20180416/model/UpdatePluginsResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstancesRequest.h
@@ -98,6 +98,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/RestartNodesRequest.h
   include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h
   include/tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h
+  include/tencentcloud/es/v20180416/model/InstanceInfo.h
   include/tencentcloud/es/v20180416/model/DescribeLogstashInstancesRequest.h
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
   include/tencentcloud/es/v20180416/model/DeleteInstanceRequest.h
@@ -206,7 +207,7 @@ set(es_src
   src/v20180416/model/CreateInstanceRequest.cpp
   src/v20180416/model/CreateLogstashInstanceRequest.cpp
   src/v20180416/model/UpdateDictionariesResponse.cpp
-  src/v20180416/model/InstanceInfo.cpp
+  src/v20180416/model/ProcessDetail.cpp
   src/v20180416/model/DeleteIndexResponse.cpp
   src/v20180416/model/UpdatePluginsResponse.cpp
   src/v20180416/model/DescribeInstancesRequest.cpp
@@ -215,6 +216,7 @@ set(es_src
   src/v20180416/model/RestartNodesRequest.cpp
   src/v20180416/model/GetRequestTargetNodeTypesRequest.cpp
   src/v20180416/model/ModifyEsVipSecurityGroupRequest.cpp
+  src/v20180416/model/InstanceInfo.cpp
   src/v20180416/model/DescribeLogstashInstancesRequest.cpp
   src/v20180416/model/MasterNodeInfo.cpp
   src/v20180416/model/DeleteInstanceRequest.cpp

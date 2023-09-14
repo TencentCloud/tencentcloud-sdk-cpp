@@ -3050,6 +3050,49 @@ WafClient::GetAttackTotalCountOutcomeCallable WafClient::GetAttackTotalCountCall
     return task->get_future();
 }
 
+WafClient::GetInstanceQpsLimitOutcome WafClient::GetInstanceQpsLimit(const GetInstanceQpsLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetInstanceQpsLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetInstanceQpsLimitResponse rsp = GetInstanceQpsLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetInstanceQpsLimitOutcome(rsp);
+        else
+            return GetInstanceQpsLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return GetInstanceQpsLimitOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::GetInstanceQpsLimitAsync(const GetInstanceQpsLimitRequest& request, const GetInstanceQpsLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetInstanceQpsLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::GetInstanceQpsLimitOutcomeCallable WafClient::GetInstanceQpsLimitCallable(const GetInstanceQpsLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetInstanceQpsLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->GetInstanceQpsLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyAccessPeriodOutcome WafClient::ModifyAccessPeriod(const ModifyAccessPeriodRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccessPeriod");

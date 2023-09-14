@@ -629,6 +629,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ProjectInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeAffectedNodeListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryAssetStatusResponse.h
+  include/tencentcloud/tcss/v20201101/model/NamespaceInfo.h
   include/tencentcloud/tcss/v20201101/model/ContainerNetwork.h
   include/tencentcloud/tcss/v20201101/model/DescribeSecLogDeliveryKafkaSettingResponse.h
   include/tencentcloud/tcss/v20201101/model/CreateHostExportJobRequest.h
@@ -1455,6 +1456,7 @@ set(tcss_src
   src/v20201101/model/ProjectInfo.cpp
   src/v20201101/model/DescribeAffectedNodeListRequest.cpp
   src/v20201101/model/DescribeAssetImageRegistryAssetStatusResponse.cpp
+  src/v20201101/model/NamespaceInfo.cpp
   src/v20201101/model/ContainerNetwork.cpp
   src/v20201101/model/DescribeSecLogDeliveryKafkaSettingResponse.cpp
   src/v20201101/model/CreateHostExportJobRequest.cpp

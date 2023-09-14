@@ -27,7 +27,8 @@ OpenAuditServiceRequest::OpenAuditServiceRequest() :
     m_logExpireDayHasBeenSet(false),
     m_highLogExpireDayHasBeenSet(false),
     m_auditRuleFiltersHasBeenSet(false),
-    m_ruleTemplateIdsHasBeenSet(false)
+    m_ruleTemplateIdsHasBeenSet(false),
+    m_auditAllHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string OpenAuditServiceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_auditAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuditAll";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_auditAll, allocator);
     }
 
 
@@ -176,6 +185,22 @@ void OpenAuditServiceRequest::SetRuleTemplateIds(const vector<string>& _ruleTemp
 bool OpenAuditServiceRequest::RuleTemplateIdsHasBeenSet() const
 {
     return m_ruleTemplateIdsHasBeenSet;
+}
+
+bool OpenAuditServiceRequest::GetAuditAll() const
+{
+    return m_auditAll;
+}
+
+void OpenAuditServiceRequest::SetAuditAll(const bool& _auditAll)
+{
+    m_auditAll = _auditAll;
+    m_auditAllHasBeenSet = true;
+}
+
+bool OpenAuditServiceRequest::AuditAllHasBeenSet() const
+{
+    return m_auditAllHasBeenSet;
 }
 
 

@@ -104,12 +104,14 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ClbHostResult.h
   include/tencentcloud/waf/v20180125/model/DescribeVipInfoRequest.h
   include/tencentcloud/waf/v20180125/model/GetAttackHistogramResponse.h
+  include/tencentcloud/waf/v20180125/model/GetInstanceQpsLimitRequest.h
   include/tencentcloud/waf/v20180125/model/FiltersItemNew.h
   include/tencentcloud/waf/v20180125/model/DeleteSpartaProtectionResponse.h
   include/tencentcloud/waf/v20180125/model/SessionData.h
   include/tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h
   include/tencentcloud/waf/v20180125/model/SwitchDomainRulesResponse.h
   include/tencentcloud/waf/v20180125/model/SearchAccessLogResponse.h
+  include/tencentcloud/waf/v20180125/model/QpsData.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesRequest.h
   include/tencentcloud/waf/v20180125/model/CreateHostResponse.h
   include/tencentcloud/waf/v20180125/model/IpAccessControlItem.h
@@ -130,6 +132,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/SpartaProtectionPort.h
   include/tencentcloud/waf/v20180125/model/AddSpartaProtectionRequest.h
   include/tencentcloud/waf/v20180125/model/PeakPointsItem.h
+  include/tencentcloud/waf/v20180125/model/GetInstanceQpsLimitResponse.h
   include/tencentcloud/waf/v20180125/model/IpHitItem.h
   include/tencentcloud/waf/v20180125/model/PostAttackDownloadTaskRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleResponse.h
@@ -384,12 +387,14 @@ set(waf_src
   src/v20180125/model/ClbHostResult.cpp
   src/v20180125/model/DescribeVipInfoRequest.cpp
   src/v20180125/model/GetAttackHistogramResponse.cpp
+  src/v20180125/model/GetInstanceQpsLimitRequest.cpp
   src/v20180125/model/FiltersItemNew.cpp
   src/v20180125/model/DeleteSpartaProtectionResponse.cpp
   src/v20180125/model/SessionData.cpp
   src/v20180125/model/DescribeAutoDenyIPResponse.cpp
   src/v20180125/model/SwitchDomainRulesResponse.cpp
   src/v20180125/model/SearchAccessLogResponse.cpp
+  src/v20180125/model/QpsData.cpp
   src/v20180125/model/DescribeAntiInfoLeakageRulesRequest.cpp
   src/v20180125/model/CreateHostResponse.cpp
   src/v20180125/model/IpAccessControlItem.cpp
@@ -410,6 +415,7 @@ set(waf_src
   src/v20180125/model/SpartaProtectionPort.cpp
   src/v20180125/model/AddSpartaProtectionRequest.cpp
   src/v20180125/model/PeakPointsItem.cpp
+  src/v20180125/model/GetInstanceQpsLimitResponse.cpp
   src/v20180125/model/IpHitItem.cpp
   src/v20180125/model/PostAttackDownloadTaskRequest.cpp
   src/v20180125/model/ModifyCustomWhiteRuleResponse.cpp

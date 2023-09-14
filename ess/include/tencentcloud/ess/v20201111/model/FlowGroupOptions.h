@@ -47,26 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发起合同（流程）组的合同（流程）签署人校验方式
-VerifyCheck: 人脸识别（默认）
-MobileCheck：手机号验证
+                     * 获取签署人校验方式,支持以下类型
+<ul><li>VerifyCheck : 人脸识别 (默认值)</li>
+<li>MobileCheck : 手机号验证</li></ul>
 参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。
-                     * @return ApproverVerifyType 发起合同（流程）组的合同（流程）签署人校验方式
-VerifyCheck: 人脸识别（默认）
-MobileCheck：手机号验证
+                     * @return ApproverVerifyType 签署人校验方式,支持以下类型
+<ul><li>VerifyCheck : 人脸识别 (默认值)</li>
+<li>MobileCheck : 手机号验证</li></ul>
 参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。
                      * 
                      */
                     std::string GetApproverVerifyType() const;
 
                     /**
-                     * 设置发起合同（流程）组的合同（流程）签署人校验方式
-VerifyCheck: 人脸识别（默认）
-MobileCheck：手机号验证
+                     * 设置签署人校验方式,支持以下类型
+<ul><li>VerifyCheck : 人脸识别 (默认值)</li>
+<li>MobileCheck : 手机号验证</li></ul>
 参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。
-                     * @param _approverVerifyType 发起合同（流程）组的合同（流程）签署人校验方式
-VerifyCheck: 人脸识别（默认）
-MobileCheck：手机号验证
+                     * @param _approverVerifyType 签署人校验方式,支持以下类型
+<ul><li>VerifyCheck : 人脸识别 (默认值)</li>
+<li>MobileCheck : 手机号验证</li></ul>
 参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。
                      * 
                      */
@@ -81,18 +81,22 @@ MobileCheck：手机号验证
 
                     /**
                      * 获取发起合同（流程）组本方企业经办人通知方式
-签署通知类型：sms--短信，none--不通知
+签署通知类型，支持以下类型
+<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>
                      * @return SelfOrganizationApproverNotifyType 发起合同（流程）组本方企业经办人通知方式
-签署通知类型：sms--短信，none--不通知
+签署通知类型，支持以下类型
+<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>
                      * 
                      */
                     std::string GetSelfOrganizationApproverNotifyType() const;
 
                     /**
                      * 设置发起合同（流程）组本方企业经办人通知方式
-签署通知类型：sms--短信，none--不通知
+签署通知类型，支持以下类型
+<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>
                      * @param _selfOrganizationApproverNotifyType 发起合同（流程）组本方企业经办人通知方式
-签署通知类型：sms--短信，none--不通知
+签署通知类型，支持以下类型
+<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>
                      * 
                      */
                     void SetSelfOrganizationApproverNotifyType(const std::string& _selfOrganizationApproverNotifyType);
@@ -106,18 +110,22 @@ MobileCheck：手机号验证
 
                     /**
                      * 获取发起合同（流程）组他方经办人通知方式
-签署通知类型：sms--短信，none--不通知
+签署通知类型，支持以下类型
+<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>
                      * @return OtherApproverNotifyType 发起合同（流程）组他方经办人通知方式
-签署通知类型：sms--短信，none--不通知
+签署通知类型，支持以下类型
+<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>
                      * 
                      */
                     std::string GetOtherApproverNotifyType() const;
 
                     /**
                      * 设置发起合同（流程）组他方经办人通知方式
-签署通知类型：sms--短信，none--不通知
+签署通知类型，支持以下类型
+<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>
                      * @param _otherApproverNotifyType 发起合同（流程）组他方经办人通知方式
-签署通知类型：sms--短信，none--不通知
+签署通知类型，支持以下类型
+<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>
                      * 
                      */
                     void SetOtherApproverNotifyType(const std::string& _otherApproverNotifyType);
@@ -132,9 +140,9 @@ MobileCheck：手机号验证
                 private:
 
                     /**
-                     * 发起合同（流程）组的合同（流程）签署人校验方式
-VerifyCheck: 人脸识别（默认）
-MobileCheck：手机号验证
+                     * 签署人校验方式,支持以下类型
+<ul><li>VerifyCheck : 人脸识别 (默认值)</li>
+<li>MobileCheck : 手机号验证</li></ul>
 参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。
                      */
                     std::string m_approverVerifyType;
@@ -142,14 +150,16 @@ MobileCheck：手机号验证
 
                     /**
                      * 发起合同（流程）组本方企业经办人通知方式
-签署通知类型：sms--短信，none--不通知
+签署通知类型，支持以下类型
+<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>
                      */
                     std::string m_selfOrganizationApproverNotifyType;
                     bool m_selfOrganizationApproverNotifyTypeHasBeenSet;
 
                     /**
                      * 发起合同（流程）组他方经办人通知方式
-签署通知类型：sms--短信，none--不通知
+签署通知类型，支持以下类型
+<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>
                      */
                     std::string m_otherApproverNotifyType;
                     bool m_otherApproverNotifyTypeHasBeenSet;

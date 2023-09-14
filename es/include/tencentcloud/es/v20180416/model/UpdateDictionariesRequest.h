@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取IK分词主词典COS地址
-                     * @return IkMainDicts IK分词主词典COS地址
+                     * 获取安装时填IK分词主词典COS地址，删除时填词典名如test.dic
+                     * @return IkMainDicts 安装时填IK分词主词典COS地址，删除时填词典名如test.dic
                      * 
                      */
                     std::vector<std::string> GetIkMainDicts() const;
 
                     /**
-                     * 设置IK分词主词典COS地址
-                     * @param _ikMainDicts IK分词主词典COS地址
+                     * 设置安装时填IK分词主词典COS地址，删除时填词典名如test.dic
+                     * @param _ikMainDicts 安装时填IK分词主词典COS地址，删除时填词典名如test.dic
                      * 
                      */
                     void SetIkMainDicts(const std::vector<std::string>& _ikMainDicts);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IkMainDictsHasBeenSet() const;
 
                     /**
-                     * 获取IK分词停用词词典COS地址
-                     * @return IkStopwords IK分词停用词词典COS地址
+                     * 获取安装时填IK分词停用词词典COS地址，删除时填词典名如test.dic
+                     * @return IkStopwords 安装时填IK分词停用词词典COS地址，删除时填词典名如test.dic
                      * 
                      */
                     std::vector<std::string> GetIkStopwords() const;
 
                     /**
-                     * 设置IK分词停用词词典COS地址
-                     * @param _ikStopwords IK分词停用词词典COS地址
+                     * 设置安装时填IK分词停用词词典COS地址，删除时填词典名如test.dic
+                     * @param _ikStopwords 安装时填IK分词停用词词典COS地址，删除时填词典名如test.dic
                      * 
                      */
                     void SetIkStopwords(const std::vector<std::string>& _ikStopwords);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IkStopwordsHasBeenSet() const;
 
                     /**
-                     * 获取同义词词典COS地址
-                     * @return Synonym 同义词词典COS地址
+                     * 获取安装时填同义词词典COS地址，删除时填词典名如test.dic
+                     * @return Synonym 安装时填同义词词典COS地址，删除时填词典名如test.dic
                      * 
                      */
                     std::vector<std::string> GetSynonym() const;
 
                     /**
-                     * 设置同义词词典COS地址
-                     * @param _synonym 同义词词典COS地址
+                     * 设置安装时填同义词词典COS地址，删除时填词典名如test.dic
+                     * @param _synonym 安装时填同义词词典COS地址，删除时填词典名如test.dic
                      * 
                      */
                     void SetSynonym(const std::vector<std::string>& _synonym);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SynonymHasBeenSet() const;
 
                     /**
-                     * 获取QQ分词词典COS地址
-                     * @return QQDict QQ分词词典COS地址
+                     * 获取安装时填QQ分词词典COS地址，删除时填词典名如test.dic
+                     * @return QQDict 安装时填QQ分词词典COS地址，删除时填词典名如test.dic
                      * 
                      */
                     std::vector<std::string> GetQQDict() const;
 
                     /**
-                     * 设置QQ分词词典COS地址
-                     * @param _qQDict QQ分词词典COS地址
+                     * 设置安装时填QQ分词词典COS地址，删除时填词典名如test.dic
+                     * @param _qQDict 安装时填QQ分词词典COS地址，删除时填词典名如test.dic
                      * 
                      */
                     void SetQQDict(const std::vector<std::string>& _qQDict);
@@ -198,25 +198,25 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * IK分词主词典COS地址
+                     * 安装时填IK分词主词典COS地址，删除时填词典名如test.dic
                      */
                     std::vector<std::string> m_ikMainDicts;
                     bool m_ikMainDictsHasBeenSet;
 
                     /**
-                     * IK分词停用词词典COS地址
+                     * 安装时填IK分词停用词词典COS地址，删除时填词典名如test.dic
                      */
                     std::vector<std::string> m_ikStopwords;
                     bool m_ikStopwordsHasBeenSet;
 
                     /**
-                     * 同义词词典COS地址
+                     * 安装时填同义词词典COS地址，删除时填词典名如test.dic
                      */
                     std::vector<std::string> m_synonym;
                     bool m_synonymHasBeenSet;
 
                     /**
-                     * QQ分词词典COS地址
+                     * 安装时填QQ分词词典COS地址，删除时填词典名如test.dic
                      */
                     std::vector<std::string> m_qQDict;
                     bool m_qQDictHasBeenSet;

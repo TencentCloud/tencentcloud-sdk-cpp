@@ -491,6 +491,27 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool InitNodeScriptsHasBeenSet() const;
 
+                    /**
+                     * 获取高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。
+                     * @return HpcClusterId 高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。
+                     * 
+                     */
+                    std::string GetHpcClusterId() const;
+
+                    /**
+                     * 设置高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。
+                     * @param _hpcClusterId 高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。
+                     * 
+                     */
+                    void SetHpcClusterId(const std::string& _hpcClusterId);
+
+                    /**
+                     * 判断参数 HpcClusterId 是否已赋值
+                     * @return HpcClusterId 是否已赋值
+                     * 
+                     */
+                    bool HpcClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -617,6 +638,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     std::vector<NodeScript> m_initNodeScripts;
                     bool m_initNodeScriptsHasBeenSet;
+
+                    /**
+                     * 高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。
+                     */
+                    std::string m_hpcClusterId;
+                    bool m_hpcClusterIdHasBeenSet;
 
                 };
             }

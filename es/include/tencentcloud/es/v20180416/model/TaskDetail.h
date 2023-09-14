@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/es/v20180416/model/SubTaskDetail.h>
+#include <tencentcloud/es/v20180416/model/ProcessDetail.h>
 
 
 namespace TencentCloud
@@ -156,6 +157,31 @@ namespace TencentCloud
                      */
                     bool ElapsedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取任务进度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProcessInfo 任务进度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ProcessDetail GetProcessInfo() const;
+
+                    /**
+                     * 设置任务进度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _processInfo 任务进度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProcessInfo(const ProcessDetail& _processInfo);
+
+                    /**
+                     * 判断参数 ProcessInfo 是否已赋值
+                     * @return ProcessInfo 是否已赋值
+                     * 
+                     */
+                    bool ProcessInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +214,13 @@ namespace TencentCloud
                      */
                     int64_t m_elapsedTime;
                     bool m_elapsedTimeHasBeenSet;
+
+                    /**
+                     * 任务进度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProcessDetail m_processInfo;
+                    bool m_processInfoHasBeenSet;
 
                 };
             }

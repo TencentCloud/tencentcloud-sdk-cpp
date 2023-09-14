@@ -55,7 +55,8 @@ DescribeAssetImageRegistryDetailResponse::DescribeAssetImageRegistryDetailRespon
     m_imageSizeHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_registryRegionHasBeenSet(false),
-    m_imageCreateTimeHasBeenSet(false)
+    m_imageCreateTimeHasBeenSet(false),
+    m_sensitiveInfoCntHasBeenSet(false)
 {
 }
 
@@ -413,6 +414,16 @@ CoreInternalOutcome DescribeAssetImageRegistryDetailResponse::Deserialize(const 
         m_imageCreateTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SensitiveInfoCnt") && !rsp["SensitiveInfoCnt"].IsNull())
+    {
+        if (!rsp["SensitiveInfoCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SensitiveInfoCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sensitiveInfoCnt = rsp["SensitiveInfoCnt"].GetUint64();
+        m_sensitiveInfoCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -677,6 +688,14 @@ string DescribeAssetImageRegistryDetailResponse::ToJsonString() const
         string key = "ImageCreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageCreateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sensitiveInfoCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SensitiveInfoCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sensitiveInfoCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1009,6 +1028,16 @@ string DescribeAssetImageRegistryDetailResponse::GetImageCreateTime() const
 bool DescribeAssetImageRegistryDetailResponse::ImageCreateTimeHasBeenSet() const
 {
     return m_imageCreateTimeHasBeenSet;
+}
+
+uint64_t DescribeAssetImageRegistryDetailResponse::GetSensitiveInfoCnt() const
+{
+    return m_sensitiveInfoCnt;
+}
+
+bool DescribeAssetImageRegistryDetailResponse::SensitiveInfoCntHasBeenSet() const
+{
+    return m_sensitiveInfoCntHasBeenSet;
 }
 
 

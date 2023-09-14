@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ES公网访问访问控制信息
+                * ES公网访问控制信息
                 */
                 class EsPublicAcl : public AbstractModel
                 {

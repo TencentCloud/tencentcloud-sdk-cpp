@@ -22,7 +22,8 @@ using namespace std;
 
 MediaTransitionItem::MediaTransitionItem() :
     m_durationHasBeenSet(false),
-    m_transitionsHasBeenSet(false)
+    m_transitionsHasBeenSet(false),
+    m_mediaTransitionsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome MediaTransitionItem::Deserialize(const rapidjson::Value &val
         m_transitionsHasBeenSet = true;
     }
 
+    if (value.HasMember("MediaTransitions") && !value["MediaTransitions"].IsNull())
+    {
+        if (!value["MediaTransitions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MediaTransitionItem.MediaTransitions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MediaTransitions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TransitionOperation item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_mediaTransitions.push_back(item);
+        }
+        m_mediaTransitionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +106,21 @@ void MediaTransitionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
 
         int i=0;
         for (auto itr = m_transitions.begin(); itr != m_transitions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_mediaTransitionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaTransitions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_mediaTransitions.begin(); itr != m_mediaTransitions.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -124,5 +160,21 @@ void MediaTransitionItem::SetTransitions(const vector<TransitionOpertion>& _tran
 bool MediaTransitionItem::TransitionsHasBeenSet() const
 {
     return m_transitionsHasBeenSet;
+}
+
+vector<TransitionOperation> MediaTransitionItem::GetMediaTransitions() const
+{
+    return m_mediaTransitions;
+}
+
+void MediaTransitionItem::SetMediaTransitions(const vector<TransitionOperation>& _mediaTransitions)
+{
+    m_mediaTransitions = _mediaTransitions;
+    m_mediaTransitionsHasBeenSet = true;
+}
+
+bool MediaTransitionItem::MediaTransitionsHasBeenSet() const
+{
+    return m_mediaTransitionsHasBeenSet;
 }
 

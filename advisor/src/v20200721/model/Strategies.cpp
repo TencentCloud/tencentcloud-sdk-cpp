@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/advisor/v20200721/model/DescribeStrategie.h>
+#include <tencentcloud/advisor/v20200721/model/Strategies.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Advisor::V20200721::Model;
 using namespace std;
 
-DescribeStrategie::DescribeStrategie() :
+Strategies::Strategies() :
     m_strategyIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descHasBeenSet(false),
@@ -33,7 +33,7 @@ DescribeStrategie::DescribeStrategie() :
 {
 }
 
-CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value)
+CoreInternalOutcome Strategies::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -42,7 +42,7 @@ CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value
     {
         if (!value["StrategyId"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeStrategie.StrategyId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategies.StrategyId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_strategyId = value["StrategyId"].GetUint64();
         m_strategyIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeStrategie.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategies.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeStrategie.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategies.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value
     {
         if (!value["Product"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeStrategie.Product` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategies.Product` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_product = string(value["Product"].GetString());
         m_productHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProductDesc"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeStrategie.ProductDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategies.ProductDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productDesc = string(value["ProductDesc"].GetString());
         m_productDescHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value
     {
         if (!value["Repair"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeStrategie.Repair` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategies.Repair` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repair = string(value["Repair"].GetString());
         m_repairHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value
     {
         if (!value["GroupId"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeStrategie.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategies.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetUint64();
         m_groupIdHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeStrategie.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategies.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -121,12 +121,12 @@ CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Conditions") && !value["Conditions"].IsNull())
     {
         if (!value["Conditions"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `DescribeStrategie.Conditions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Strategies.Conditions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Conditions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            DescribeStrategiesCondition item;
+            Conditions item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -142,7 +142,7 @@ CoreInternalOutcome DescribeStrategie::Deserialize(const rapidjson::Value &value
     return CoreInternalOutcome(true);
 }
 
-void DescribeStrategie::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+void Strategies::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_strategyIdHasBeenSet)
@@ -227,146 +227,146 @@ void DescribeStrategie::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
 }
 
 
-uint64_t DescribeStrategie::GetStrategyId() const
+uint64_t Strategies::GetStrategyId() const
 {
     return m_strategyId;
 }
 
-void DescribeStrategie::SetStrategyId(const uint64_t& _strategyId)
+void Strategies::SetStrategyId(const uint64_t& _strategyId)
 {
     m_strategyId = _strategyId;
     m_strategyIdHasBeenSet = true;
 }
 
-bool DescribeStrategie::StrategyIdHasBeenSet() const
+bool Strategies::StrategyIdHasBeenSet() const
 {
     return m_strategyIdHasBeenSet;
 }
 
-string DescribeStrategie::GetName() const
+string Strategies::GetName() const
 {
     return m_name;
 }
 
-void DescribeStrategie::SetName(const string& _name)
+void Strategies::SetName(const string& _name)
 {
     m_name = _name;
     m_nameHasBeenSet = true;
 }
 
-bool DescribeStrategie::NameHasBeenSet() const
+bool Strategies::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
 }
 
-string DescribeStrategie::GetDesc() const
+string Strategies::GetDesc() const
 {
     return m_desc;
 }
 
-void DescribeStrategie::SetDesc(const string& _desc)
+void Strategies::SetDesc(const string& _desc)
 {
     m_desc = _desc;
     m_descHasBeenSet = true;
 }
 
-bool DescribeStrategie::DescHasBeenSet() const
+bool Strategies::DescHasBeenSet() const
 {
     return m_descHasBeenSet;
 }
 
-string DescribeStrategie::GetProduct() const
+string Strategies::GetProduct() const
 {
     return m_product;
 }
 
-void DescribeStrategie::SetProduct(const string& _product)
+void Strategies::SetProduct(const string& _product)
 {
     m_product = _product;
     m_productHasBeenSet = true;
 }
 
-bool DescribeStrategie::ProductHasBeenSet() const
+bool Strategies::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
 }
 
-string DescribeStrategie::GetProductDesc() const
+string Strategies::GetProductDesc() const
 {
     return m_productDesc;
 }
 
-void DescribeStrategie::SetProductDesc(const string& _productDesc)
+void Strategies::SetProductDesc(const string& _productDesc)
 {
     m_productDesc = _productDesc;
     m_productDescHasBeenSet = true;
 }
 
-bool DescribeStrategie::ProductDescHasBeenSet() const
+bool Strategies::ProductDescHasBeenSet() const
 {
     return m_productDescHasBeenSet;
 }
 
-string DescribeStrategie::GetRepair() const
+string Strategies::GetRepair() const
 {
     return m_repair;
 }
 
-void DescribeStrategie::SetRepair(const string& _repair)
+void Strategies::SetRepair(const string& _repair)
 {
     m_repair = _repair;
     m_repairHasBeenSet = true;
 }
 
-bool DescribeStrategie::RepairHasBeenSet() const
+bool Strategies::RepairHasBeenSet() const
 {
     return m_repairHasBeenSet;
 }
 
-uint64_t DescribeStrategie::GetGroupId() const
+uint64_t Strategies::GetGroupId() const
 {
     return m_groupId;
 }
 
-void DescribeStrategie::SetGroupId(const uint64_t& _groupId)
+void Strategies::SetGroupId(const uint64_t& _groupId)
 {
     m_groupId = _groupId;
     m_groupIdHasBeenSet = true;
 }
 
-bool DescribeStrategie::GroupIdHasBeenSet() const
+bool Strategies::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
 }
 
-string DescribeStrategie::GetGroupName() const
+string Strategies::GetGroupName() const
 {
     return m_groupName;
 }
 
-void DescribeStrategie::SetGroupName(const string& _groupName)
+void Strategies::SetGroupName(const string& _groupName)
 {
     m_groupName = _groupName;
     m_groupNameHasBeenSet = true;
 }
 
-bool DescribeStrategie::GroupNameHasBeenSet() const
+bool Strategies::GroupNameHasBeenSet() const
 {
     return m_groupNameHasBeenSet;
 }
 
-vector<DescribeStrategiesCondition> DescribeStrategie::GetConditions() const
+vector<Conditions> Strategies::GetConditions() const
 {
     return m_conditions;
 }
 
-void DescribeStrategie::SetConditions(const vector<DescribeStrategiesCondition>& _conditions)
+void Strategies::SetConditions(const vector<Conditions>& _conditions)
 {
     m_conditions = _conditions;
     m_conditionsHasBeenSet = true;
 }
 
-bool DescribeStrategie::ConditionsHasBeenSet() const
+bool Strategies::ConditionsHasBeenSet() const
 {
     return m_conditionsHasBeenSet;
 }

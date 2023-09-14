@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/AssetFilters.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取过滤字段
+                     * @return Filters 过滤字段
+                     * 
+                     */
+                    std::vector<AssetFilters> GetFilters() const;
+
+                    /**
+                     * 设置过滤字段
+                     * @param _filters 过滤字段
+                     * 
+                     */
+                    void SetFilters(const std::vector<AssetFilters>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 过滤字段
+                     */
+                    std::vector<AssetFilters> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

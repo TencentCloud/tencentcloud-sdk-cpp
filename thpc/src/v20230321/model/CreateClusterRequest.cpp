@@ -42,7 +42,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_loginNodeCountHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_autoScalingTypeHasBeenSet(false),
-    m_initNodeScriptsHasBeenSet(false)
+    m_initNodeScriptsHasBeenSet(false),
+    m_hpcClusterIdHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,14 @@ string CreateClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hpcClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HpcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hpcClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -565,6 +574,22 @@ void CreateClusterRequest::SetInitNodeScripts(const vector<NodeScript>& _initNod
 bool CreateClusterRequest::InitNodeScriptsHasBeenSet() const
 {
     return m_initNodeScriptsHasBeenSet;
+}
+
+string CreateClusterRequest::GetHpcClusterId() const
+{
+    return m_hpcClusterId;
+}
+
+void CreateClusterRequest::SetHpcClusterId(const string& _hpcClusterId)
+{
+    m_hpcClusterId = _hpcClusterId;
+    m_hpcClusterIdHasBeenSet = true;
+}
+
+bool CreateClusterRequest::HpcClusterIdHasBeenSet() const
+{
+    return m_hpcClusterIdHasBeenSet;
 }
 
 

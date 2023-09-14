@@ -163,6 +163,8 @@
 #include <tencentcloud/waf/v20180125/model/GetAttackHistogramResponse.h>
 #include <tencentcloud/waf/v20180125/model/GetAttackTotalCountRequest.h>
 #include <tencentcloud/waf/v20180125/model/GetAttackTotalCountResponse.h>
+#include <tencentcloud/waf/v20180125/model/GetInstanceQpsLimitRequest.h>
+#include <tencentcloud/waf/v20180125/model/GetInstanceQpsLimitResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlRequest.h>
@@ -453,6 +455,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetAttackTotalCountResponse> GetAttackTotalCountOutcome;
                 typedef std::future<GetAttackTotalCountOutcome> GetAttackTotalCountOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::GetAttackTotalCountRequest&, GetAttackTotalCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAttackTotalCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetInstanceQpsLimitResponse> GetInstanceQpsLimitOutcome;
+                typedef std::future<GetInstanceQpsLimitOutcome> GetInstanceQpsLimitOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::GetInstanceQpsLimitRequest&, GetInstanceQpsLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceQpsLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAccessPeriodResponse> ModifyAccessPeriodOutcome;
                 typedef std::future<ModifyAccessPeriodOutcome> ModifyAccessPeriodOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAccessPeriodRequest&, ModifyAccessPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPeriodAsyncHandler;
@@ -1192,6 +1197,15 @@ namespace TencentCloud
                 GetAttackTotalCountOutcome GetAttackTotalCount(const Model::GetAttackTotalCountRequest &request);
                 void GetAttackTotalCountAsync(const Model::GetAttackTotalCountRequest& request, const GetAttackTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetAttackTotalCountOutcomeCallable GetAttackTotalCountCallable(const Model::GetAttackTotalCountRequest& request);
+
+                /**
+                 *获取套餐实例的弹性qps上限
+                 * @param req GetInstanceQpsLimitRequest
+                 * @return GetInstanceQpsLimitOutcome
+                 */
+                GetInstanceQpsLimitOutcome GetInstanceQpsLimit(const Model::GetInstanceQpsLimitRequest &request);
+                void GetInstanceQpsLimitAsync(const Model::GetInstanceQpsLimitRequest& request, const GetInstanceQpsLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetInstanceQpsLimitOutcomeCallable GetInstanceQpsLimitCallable(const Model::GetInstanceQpsLimitRequest& request);
 
                 /**
                  *本接口用于修改访问日志保存期限及大字段是否存储

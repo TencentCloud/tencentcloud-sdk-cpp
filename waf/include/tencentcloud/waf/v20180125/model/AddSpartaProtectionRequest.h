@@ -464,15 +464,15 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启长连接，仅IP回源时可以用填次参数，域名回源时这个参数无效
-                     * @return IsKeepAlive 是否开启长连接，仅IP回源时可以用填次参数，域名回源时这个参数无效
+                     * 获取是否开启长连接，0 短连接，1 长连接
+                     * @return IsKeepAlive 是否开启长连接，0 短连接，1 长连接
                      * 
                      */
                     std::string GetIsKeepAlive() const;
 
                     /**
-                     * 设置是否开启长连接，仅IP回源时可以用填次参数，域名回源时这个参数无效
-                     * @param _isKeepAlive 是否开启长连接，仅IP回源时可以用填次参数，域名回源时这个参数无效
+                     * 设置是否开启长连接，0 短连接，1 长连接
+                     * @param _isKeepAlive 是否开启长连接，0 短连接，1 长连接
                      * 
                      */
                     void SetIsKeepAlive(const std::string& _isKeepAlive);
@@ -880,7 +880,7 @@ namespace TencentCloud
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 是否开启长连接，仅IP回源时可以用填次参数，域名回源时这个参数无效
+                     * 是否开启长连接，0 短连接，1 长连接
                      */
                     std::string m_isKeepAlive;
                     bool m_isKeepAliveHasBeenSet;

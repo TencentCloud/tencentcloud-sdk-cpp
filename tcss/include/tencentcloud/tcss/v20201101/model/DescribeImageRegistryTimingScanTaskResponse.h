@@ -107,14 +107,14 @@ namespace TencentCloud
                     /**
                      * 获取扫描全部镜像
                      * @return All 扫描全部镜像
-                     * 
+                     * @deprecated
                      */
                     bool GetAll() const;
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AllHasBeenSet() const;
 
@@ -165,6 +165,78 @@ namespace TencentCloud
                      * 
                      */
                     bool LatestHasBeenSet() const;
+
+                    /**
+                     * 获取扫描结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScanEndTime 扫描结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScanEndTime() const;
+
+                    /**
+                     * 判断参数 ScanEndTime 是否已赋值
+                     * @return ScanEndTime 是否已赋值
+                     * 
+                     */
+                    bool ScanEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取仓库类型 tcr,ccr,harbor	
+                     * @return RegistryType 仓库类型 tcr,ccr,harbor	
+                     * 
+                     */
+                    std::vector<std::string> GetRegistryType() const;
+
+                    /**
+                     * 判断参数 RegistryType 是否已赋值
+                     * @return RegistryType 是否已赋值
+                     * 
+                     */
+                    bool RegistryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否存在运行中的容器	
+                     * @return ContainerRunning 是否存在运行中的容器	
+                     * 
+                     */
+                    bool GetContainerRunning() const;
+
+                    /**
+                     * 判断参数 ContainerRunning 是否已赋值
+                     * @return ContainerRunning 是否已赋值
+                     * 
+                     */
+                    bool ContainerRunningHasBeenSet() const;
+
+                    /**
+                     * 获取扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     * @return ScanScope 扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     * 
+                     */
+                    uint64_t GetScanScope() const;
+
+                    /**
+                     * 判断参数 ScanScope 是否已赋值
+                     * @return ScanScope 是否已赋值
+                     * 
+                     */
+                    bool ScanScopeHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间
+                     * @return Namespace 命名空间
+                     * 
+                     */
+                    std::vector<std::string> GetNamespace() const;
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
 
                 private:
 
@@ -220,6 +292,37 @@ namespace TencentCloud
                      */
                     bool m_latest;
                     bool m_latestHasBeenSet;
+
+                    /**
+                     * 扫描结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scanEndTime;
+                    bool m_scanEndTimeHasBeenSet;
+
+                    /**
+                     * 仓库类型 tcr,ccr,harbor	
+                     */
+                    std::vector<std::string> m_registryType;
+                    bool m_registryTypeHasBeenSet;
+
+                    /**
+                     * 是否存在运行中的容器	
+                     */
+                    bool m_containerRunning;
+                    bool m_containerRunningHasBeenSet;
+
+                    /**
+                     * 扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     */
+                    uint64_t m_scanScope;
+                    bool m_scanScopeHasBeenSet;
+
+                    /**
+                     * 命名空间
+                     */
+                    std::vector<std::string> m_namespace;
+                    bool m_namespaceHasBeenSet;
 
                 };
             }

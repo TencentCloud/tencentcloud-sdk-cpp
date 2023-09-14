@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/LogRuleTemplateInfo.h>
 
 
 namespace TencentCloud
@@ -448,6 +449,31 @@ namespace TencentCloud
                      */
                     bool TrxLivingTimeHasBeenSet() const;
 
+                    /**
+                     * 获取日志命中规则模板的基本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TemplateInfo 日志命中规则模板的基本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<LogRuleTemplateInfo> GetTemplateInfo() const;
+
+                    /**
+                     * 设置日志命中规则模板的基本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _templateInfo 日志命中规则模板的基本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTemplateInfo(const std::vector<LogRuleTemplateInfo>& _templateInfo);
+
+                    /**
+                     * 判断参数 TemplateInfo 是否已赋值
+                     * @return TemplateInfo 是否已赋值
+                     * 
+                     */
+                    bool TemplateInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -563,6 +589,13 @@ namespace TencentCloud
                      */
                     uint64_t m_trxLivingTime;
                     bool m_trxLivingTimeHasBeenSet;
+
+                    /**
+                     * 日志命中规则模板的基本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LogRuleTemplateInfo> m_templateInfo;
+                    bool m_templateInfoHasBeenSet;
 
                 };
             }

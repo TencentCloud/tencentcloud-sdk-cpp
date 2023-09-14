@@ -1154,7 +1154,7 @@ namespace TencentCloud
                 DescribeInstanceSlowQueriesOutcomeCallable DescribeInstanceSlowQueriesCallable(const Model::DescribeInstanceSlowQueriesRequest& request);
 
                 /**
-                 *本接口（DescribeInstanceSpecs）用于查询实例规格
+                 *本接口（DescribeInstanceSpecs）用于查询购买页可购买的实例规格
                  * @param req DescribeInstanceSpecsRequest
                  * @return DescribeInstanceSpecsOutcome
                  */

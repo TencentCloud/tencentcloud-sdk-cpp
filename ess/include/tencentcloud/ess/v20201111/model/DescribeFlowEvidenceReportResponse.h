@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取出证报告PDF的下载 URL
+                     * 获取出证报告PDF的下载 URL，`有效期为5分钟`，超过有效期后将无法再下载。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReportUrl 出证报告PDF的下载 URL
+                     * @return ReportUrl 出证报告PDF的下载 URL，`有效期为5分钟`，超过有效期后将无法再下载。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,18 +60,16 @@ namespace TencentCloud
                     bool ReportUrlHasBeenSet() const;
 
                     /**
-                     * 获取签署报告出证任务的状态
-<ul>
-<li>EvidenceStatusExecuting : 出证任务在执行中</li>
-<li>EvidenceStatusSuccess : 出证任务执行成功</li>
-<li>EvidenceStatusFailed : 出证任务执行失败</li>
-</ul>
-                     * @return Status 签署报告出证任务的状态
-<ul>
-<li>EvidenceStatusExecuting : 出证任务在执行中</li>
-<li>EvidenceStatusSuccess : 出证任务执行成功</li>
-<li>EvidenceStatusFailed : 出证任务执行失败</li>
-</ul>
+                     * 获取出证任务执行的状态, 状态含义如下：
+
+<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
+<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
+<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+                     * @return Status 出证任务执行的状态, 状态含义如下：
+
+<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
+<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
+<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -86,19 +84,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 出证报告PDF的下载 URL
+                     * 出证报告PDF的下载 URL，`有效期为5分钟`，超过有效期后将无法再下载。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportUrl;
                     bool m_reportUrlHasBeenSet;
 
                     /**
-                     * 签署报告出证任务的状态
-<ul>
-<li>EvidenceStatusExecuting : 出证任务在执行中</li>
-<li>EvidenceStatusSuccess : 出证任务执行成功</li>
-<li>EvidenceStatusFailed : 出证任务执行失败</li>
-</ul>
+                     * 出证任务执行的状态, 状态含义如下：
+
+<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
+<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
+<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

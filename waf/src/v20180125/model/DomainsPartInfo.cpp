@@ -21,6 +21,14 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 DomainsPartInfo::DomainsPartInfo() :
+    m_domainHasBeenSet(false),
+    m_domainIdHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_editionHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_certHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_engineHasBeenSet(false),
     m_httpsRewriteHasBeenSet(false),
     m_httpsUpstreamPortHasBeenSet(false),
     m_isCdnHasBeenSet(false),
@@ -58,6 +66,86 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("DomainId") && !value["DomainId"].IsNull())
+    {
+        if (!value["DomainId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.DomainId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainId = string(value["DomainId"].GetString());
+        m_domainIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Edition") && !value["Edition"].IsNull())
+    {
+        if (!value["Edition"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Edition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_edition = string(value["Edition"].GetString());
+        m_editionHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceName") && !value["InstanceName"].IsNull())
+    {
+        if (!value["InstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceName = string(value["InstanceName"].GetString());
+        m_instanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Cert") && !value["Cert"].IsNull())
+    {
+        if (!value["Cert"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Cert` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cert = string(value["Cert"].GetString());
+        m_certHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Engine") && !value["Engine"].IsNull())
+    {
+        if (!value["Engine"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Engine` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_engine = value["Engine"].GetUint64();
+        m_engineHasBeenSet = true;
+    }
 
     if (value.HasMember("HttpsRewrite") && !value["HttpsRewrite"].IsNull())
     {
@@ -388,6 +476,70 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
 void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_editionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Edition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Engine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_engine, allocator);
+    }
+
     if (m_httpsRewriteHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -657,6 +809,134 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
 
 }
 
+
+string DomainsPartInfo::GetDomain() const
+{
+    return m_domain;
+}
+
+void DomainsPartInfo::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DomainsPartInfo::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string DomainsPartInfo::GetDomainId() const
+{
+    return m_domainId;
+}
+
+void DomainsPartInfo::SetDomainId(const string& _domainId)
+{
+    m_domainId = _domainId;
+    m_domainIdHasBeenSet = true;
+}
+
+bool DomainsPartInfo::DomainIdHasBeenSet() const
+{
+    return m_domainIdHasBeenSet;
+}
+
+string DomainsPartInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DomainsPartInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DomainsPartInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string DomainsPartInfo::GetEdition() const
+{
+    return m_edition;
+}
+
+void DomainsPartInfo::SetEdition(const string& _edition)
+{
+    m_edition = _edition;
+    m_editionHasBeenSet = true;
+}
+
+bool DomainsPartInfo::EditionHasBeenSet() const
+{
+    return m_editionHasBeenSet;
+}
+
+string DomainsPartInfo::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void DomainsPartInfo::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool DomainsPartInfo::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+string DomainsPartInfo::GetCert() const
+{
+    return m_cert;
+}
+
+void DomainsPartInfo::SetCert(const string& _cert)
+{
+    m_cert = _cert;
+    m_certHasBeenSet = true;
+}
+
+bool DomainsPartInfo::CertHasBeenSet() const
+{
+    return m_certHasBeenSet;
+}
+
+string DomainsPartInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DomainsPartInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DomainsPartInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+uint64_t DomainsPartInfo::GetEngine() const
+{
+    return m_engine;
+}
+
+void DomainsPartInfo::SetEngine(const uint64_t& _engine)
+{
+    m_engine = _engine;
+    m_engineHasBeenSet = true;
+}
+
+bool DomainsPartInfo::EngineHasBeenSet() const
+{
+    return m_engineHasBeenSet;
+}
 
 uint64_t DomainsPartInfo::GetHttpsRewrite() const
 {

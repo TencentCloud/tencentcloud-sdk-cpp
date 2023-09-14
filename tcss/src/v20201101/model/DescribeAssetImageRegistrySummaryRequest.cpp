@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
-DescribeAssetImageRegistrySummaryRequest::DescribeAssetImageRegistrySummaryRequest()
+DescribeAssetImageRegistrySummaryRequest::DescribeAssetImageRegistrySummaryRequest() :
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,21 @@ string DescribeAssetImageRegistrySummaryRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +56,21 @@ string DescribeAssetImageRegistrySummaryRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<AssetFilters> DescribeAssetImageRegistrySummaryRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAssetImageRegistrySummaryRequest::SetFilters(const vector<AssetFilters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAssetImageRegistrySummaryRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 

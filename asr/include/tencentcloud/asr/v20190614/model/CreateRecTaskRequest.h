@@ -295,6 +295,142 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
+                     * 获取语音数据base64编码
+**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
+
+注意：音频数据要小于5MB（含）
+                     * @return Data 语音数据base64编码
+**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
+
+注意：音频数据要小于5MB（含）
+                     * 
+                     */
+                    std::string GetData() const;
+
+                    /**
+                     * 设置语音数据base64编码
+**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
+
+注意：音频数据要小于5MB（含）
+                     * @param _data 语音数据base64编码
+**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
+
+注意：音频数据要小于5MB（含）
+                     * 
+                     */
+                    void SetData(const std::string& _data);
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     * 
+                     */
+                    bool DataHasBeenSet() const;
+
+                    /**
+                     * 获取数据长度（此数据长度为数据未进行base64编码时的长度）
+                     * @return DataLen 数据长度（此数据长度为数据未进行base64编码时的长度）
+                     * 
+                     */
+                    uint64_t GetDataLen() const;
+
+                    /**
+                     * 设置数据长度（此数据长度为数据未进行base64编码时的长度）
+                     * @param _dataLen 数据长度（此数据长度为数据未进行base64编码时的长度）
+                     * 
+                     */
+                    void SetDataLen(const uint64_t& _dataLen);
+
+                    /**
+                     * 判断参数 DataLen 是否已赋值
+                     * @return DataLen 是否已赋值
+                     * 
+                     */
+                    bool DataLenHasBeenSet() const;
+
+                    /**
+                     * 获取语音URL的地址（需要公网环境浏览器可下载）
+**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
+
+注意：
+1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
+2. 请保证文件的下载速度，否则可能下载失败
+                     * @return Url 语音URL的地址（需要公网环境浏览器可下载）
+**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
+
+注意：
+1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
+2. 请保证文件的下载速度，否则可能下载失败
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置语音URL的地址（需要公网环境浏览器可下载）
+**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
+
+注意：
+1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
+2. 请保证文件的下载速度，否则可能下载失败
+                     * @param _url 语音URL的地址（需要公网环境浏览器可下载）
+**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
+
+注意：
+1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
+2. 请保证文件的下载速度，否则可能下载失败
+                     * 
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
+                    /**
+                     * 获取回调 URL
+用户自行搭建的用于接收识别结果的服务URL
+回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+
+注意：
+如果用户使用轮询方式获取识别结果，则无需提交该参数
+                     * @return CallbackUrl 回调 URL
+用户自行搭建的用于接收识别结果的服务URL
+回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+
+注意：
+如果用户使用轮询方式获取识别结果，则无需提交该参数
+                     * 
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置回调 URL
+用户自行搭建的用于接收识别结果的服务URL
+回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+
+注意：
+如果用户使用轮询方式获取识别结果，则无需提交该参数
+                     * @param _callbackUrl 回调 URL
+用户自行搭建的用于接收识别结果的服务URL
+回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+
+注意：
+如果用户使用轮询方式获取识别结果，则无需提交该参数
+                     * 
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     * 
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
+                    /**
                      * 获取是否开启说话人分离
 0：不开启；
 1：开启（仅支持以下引擎：8k_zh/16k_zh/16k_ms/16k_en/16k_id，且ChannelNum=1时可用）；
@@ -377,140 +513,197 @@ namespace TencentCloud
                     bool SpeakerNumberHasBeenSet() const;
 
                     /**
-                     * 获取回调 URL
-用户自行搭建的用于接收识别结果的服务URL
-回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+                     * 获取热词表id
+如不设置该参数，将自动生效默认热词表；
+如设置该参数，将生效对应id的热词表；
+点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)
+                     * @return HotwordId 热词表id
+如不设置该参数，将自动生效默认热词表；
+如设置该参数，将生效对应id的热词表；
+点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)
+                     * 
+                     */
+                    std::string GetHotwordId() const;
+
+                    /**
+                     * 设置热词表id
+如不设置该参数，将自动生效默认热词表；
+如设置该参数，将生效对应id的热词表；
+点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)
+                     * @param _hotwordId 热词表id
+如不设置该参数，将自动生效默认热词表；
+如设置该参数，将生效对应id的热词表；
+点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)
+                     * 
+                     */
+                    void SetHotwordId(const std::string& _hotwordId);
+
+                    /**
+                     * 判断参数 HotwordId 是否已赋值
+                     * @return HotwordId 是否已赋值
+                     * 
+                     */
+                    bool HotwordIdHasBeenSet() const;
+
+                    /**
+                     * 获取热词增强功能（目前仅支持8k_zh/16k_zh引擎）
+1：开启热词增强功能
+
+注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。**建议客户根据实际的业务需求开启该功能**
+                     * @return ReinforceHotword 热词增强功能（目前仅支持8k_zh/16k_zh引擎）
+1：开启热词增强功能
+
+注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。**建议客户根据实际的业务需求开启该功能**
+                     * 
+                     */
+                    int64_t GetReinforceHotword() const;
+
+                    /**
+                     * 设置热词增强功能（目前仅支持8k_zh/16k_zh引擎）
+1：开启热词增强功能
+
+注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。**建议客户根据实际的业务需求开启该功能**
+                     * @param _reinforceHotword 热词增强功能（目前仅支持8k_zh/16k_zh引擎）
+1：开启热词增强功能
+
+注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。**建议客户根据实际的业务需求开启该功能**
+                     * 
+                     */
+                    void SetReinforceHotword(const int64_t& _reinforceHotword);
+
+                    /**
+                     * 判断参数 ReinforceHotword 是否已赋值
+                     * @return ReinforceHotword 是否已赋值
+                     * 
+                     */
+                    bool ReinforceHotwordHasBeenSet() const;
+
+                    /**
+                     * 获取自学习定制模型 id
+如设置了该参数，将生效对应id的自学习定制模型；
+点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)
+                     * @return CustomizationId 自学习定制模型 id
+如设置了该参数，将生效对应id的自学习定制模型；
+点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)
+                     * 
+                     */
+                    std::string GetCustomizationId() const;
+
+                    /**
+                     * 设置自学习定制模型 id
+如设置了该参数，将生效对应id的自学习定制模型；
+点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)
+                     * @param _customizationId 自学习定制模型 id
+如设置了该参数，将生效对应id的自学习定制模型；
+点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)
+                     * 
+                     */
+                    void SetCustomizationId(const std::string& _customizationId);
+
+                    /**
+                     * 判断参数 CustomizationId 是否已赋值
+                     * @return CustomizationId 是否已赋值
+                     * 
+                     */
+                    bool CustomizationIdHasBeenSet() const;
+
+                    /**
+                     * 获取**【增值付费功能】**情绪识别能力（目前仅支持16k_zh）
+0：不开启；
+1：开启情绪识别，但不在文本展示情绪标签；
+2：开启情绪识别，并且在文本展示情绪标签（**该功能需要设置ResTextFormat 大于0**）
+默认值为0
+支持的情绪分类为：高兴、伤心、愤怒
 
 注意：
-如果用户使用轮询方式获取识别结果，则无需提交该参数
-                     * @return CallbackUrl 回调 URL
-用户自行搭建的用于接收识别结果的服务URL
-回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+1. **本功能为增值服务**，需将参数设置为1或2时方可按对应方式生效；
+2. 如果传入参数值1或2，需确保账号已购买[情绪识别资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值1或2，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)）**；
+3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源
+                     * @return EmotionRecognition **【增值付费功能】**情绪识别能力（目前仅支持16k_zh）
+0：不开启；
+1：开启情绪识别，但不在文本展示情绪标签；
+2：开启情绪识别，并且在文本展示情绪标签（**该功能需要设置ResTextFormat 大于0**）
+默认值为0
+支持的情绪分类为：高兴、伤心、愤怒
 
 注意：
-如果用户使用轮询方式获取识别结果，则无需提交该参数
+1. **本功能为增值服务**，需将参数设置为1或2时方可按对应方式生效；
+2. 如果传入参数值1或2，需确保账号已购买[情绪识别资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值1或2，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)）**；
+3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源
                      * 
                      */
-                    std::string GetCallbackUrl() const;
+                    int64_t GetEmotionRecognition() const;
 
                     /**
-                     * 设置回调 URL
-用户自行搭建的用于接收识别结果的服务URL
-回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+                     * 设置**【增值付费功能】**情绪识别能力（目前仅支持16k_zh）
+0：不开启；
+1：开启情绪识别，但不在文本展示情绪标签；
+2：开启情绪识别，并且在文本展示情绪标签（**该功能需要设置ResTextFormat 大于0**）
+默认值为0
+支持的情绪分类为：高兴、伤心、愤怒
 
 注意：
-如果用户使用轮询方式获取识别结果，则无需提交该参数
-                     * @param _callbackUrl 回调 URL
-用户自行搭建的用于接收识别结果的服务URL
-回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+1. **本功能为增值服务**，需将参数设置为1或2时方可按对应方式生效；
+2. 如果传入参数值1或2，需确保账号已购买[情绪识别资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值1或2，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)）**；
+3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源
+                     * @param _emotionRecognition **【增值付费功能】**情绪识别能力（目前仅支持16k_zh）
+0：不开启；
+1：开启情绪识别，但不在文本展示情绪标签；
+2：开启情绪识别，并且在文本展示情绪标签（**该功能需要设置ResTextFormat 大于0**）
+默认值为0
+支持的情绪分类为：高兴、伤心、愤怒
 
 注意：
-如果用户使用轮询方式获取识别结果，则无需提交该参数
+1. **本功能为增值服务**，需将参数设置为1或2时方可按对应方式生效；
+2. 如果传入参数值1或2，需确保账号已购买[情绪识别资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值1或2，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)）**；
+3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源
                      * 
                      */
-                    void SetCallbackUrl(const std::string& _callbackUrl);
+                    void SetEmotionRecognition(const int64_t& _emotionRecognition);
 
                     /**
-                     * 判断参数 CallbackUrl 是否已赋值
-                     * @return CallbackUrl 是否已赋值
+                     * 判断参数 EmotionRecognition 是否已赋值
+                     * @return EmotionRecognition 是否已赋值
                      * 
                      */
-                    bool CallbackUrlHasBeenSet() const;
+                    bool EmotionRecognitionHasBeenSet() const;
 
                     /**
-                     * 获取语音URL的地址（需要公网环境浏览器可下载）
-**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
-
-注意：
-1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
-2. 请保证文件的下载速度，否则可能下载失败
-                     * @return Url 语音URL的地址（需要公网环境浏览器可下载）
-**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
-
-注意：
-1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
-2. 请保证文件的下载速度，否则可能下载失败
+                     * 获取情绪能量值
+取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈
+0：不开启；
+1：开启；
+默认值为0
+                     * @return EmotionalEnergy 情绪能量值
+取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈
+0：不开启；
+1：开启；
+默认值为0
                      * 
                      */
-                    std::string GetUrl() const;
+                    int64_t GetEmotionalEnergy() const;
 
                     /**
-                     * 设置语音URL的地址（需要公网环境浏览器可下载）
-**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
-
-注意：
-1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
-2. 请保证文件的下载速度，否则可能下载失败
-                     * @param _url 语音URL的地址（需要公网环境浏览器可下载）
-**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
-
-注意：
-1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
-2. 请保证文件的下载速度，否则可能下载失败
+                     * 设置情绪能量值
+取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈
+0：不开启；
+1：开启；
+默认值为0
+                     * @param _emotionalEnergy 情绪能量值
+取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈
+0：不开启；
+1：开启；
+默认值为0
                      * 
                      */
-                    void SetUrl(const std::string& _url);
+                    void SetEmotionalEnergy(const int64_t& _emotionalEnergy);
 
                     /**
-                     * 判断参数 Url 是否已赋值
-                     * @return Url 是否已赋值
+                     * 判断参数 EmotionalEnergy 是否已赋值
+                     * @return EmotionalEnergy 是否已赋值
                      * 
                      */
-                    bool UrlHasBeenSet() const;
-
-                    /**
-                     * 获取语音数据base64编码
-**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
-
-注意：音频数据要小于5MB（含）
-                     * @return Data 语音数据base64编码
-**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
-
-注意：音频数据要小于5MB（含）
-                     * 
-                     */
-                    std::string GetData() const;
-
-                    /**
-                     * 设置语音数据base64编码
-**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
-
-注意：音频数据要小于5MB（含）
-                     * @param _data 语音数据base64编码
-**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
-
-注意：音频数据要小于5MB（含）
-                     * 
-                     */
-                    void SetData(const std::string& _data);
-
-                    /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
-                     * 
-                     */
-                    bool DataHasBeenSet() const;
-
-                    /**
-                     * 获取数据长度（此数据长度为数据未进行base64编码时的长度）
-                     * @return DataLen 数据长度（此数据长度为数据未进行base64编码时的长度）
-                     * 
-                     */
-                    uint64_t GetDataLen() const;
-
-                    /**
-                     * 设置数据长度（此数据长度为数据未进行base64编码时的长度）
-                     * @param _dataLen 数据长度（此数据长度为数据未进行base64编码时的长度）
-                     * 
-                     */
-                    void SetDataLen(const uint64_t& _dataLen);
-
-                    /**
-                     * 判断参数 DataLen 是否已赋值
-                     * @return DataLen 是否已赋值
-                     * 
-                     */
-                    bool DataLenHasBeenSet() const;
+                    bool EmotionalEnergyHasBeenSet() const;
 
                     /**
                      * 获取阿拉伯数字智能转换（目前仅支持8k_zh/16k_zh引擎）
@@ -587,89 +780,6 @@ namespace TencentCloud
                     bool FilterDirtyHasBeenSet() const;
 
                     /**
-                     * 获取热词表id
-如不设置该参数，将自动生效默认热词表；
-如设置该参数，将生效对应id的热词表；
-点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)
-                     * @return HotwordId 热词表id
-如不设置该参数，将自动生效默认热词表；
-如设置该参数，将生效对应id的热词表；
-点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)
-                     * 
-                     */
-                    std::string GetHotwordId() const;
-
-                    /**
-                     * 设置热词表id
-如不设置该参数，将自动生效默认热词表；
-如设置该参数，将生效对应id的热词表；
-点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)
-                     * @param _hotwordId 热词表id
-如不设置该参数，将自动生效默认热词表；
-如设置该参数，将生效对应id的热词表；
-点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)
-                     * 
-                     */
-                    void SetHotwordId(const std::string& _hotwordId);
-
-                    /**
-                     * 判断参数 HotwordId 是否已赋值
-                     * @return HotwordId 是否已赋值
-                     * 
-                     */
-                    bool HotwordIdHasBeenSet() const;
-
-                    /**
-                     * 获取自学习定制模型 id
-如设置了该参数，将生效对应id的自学习定制模型；
-点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)
-                     * @return CustomizationId 自学习定制模型 id
-如设置了该参数，将生效对应id的自学习定制模型；
-点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)
-                     * 
-                     */
-                    std::string GetCustomizationId() const;
-
-                    /**
-                     * 设置自学习定制模型 id
-如设置了该参数，将生效对应id的自学习定制模型；
-点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)
-                     * @param _customizationId 自学习定制模型 id
-如设置了该参数，将生效对应id的自学习定制模型；
-点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)
-                     * 
-                     */
-                    void SetCustomizationId(const std::string& _customizationId);
-
-                    /**
-                     * 判断参数 CustomizationId 是否已赋值
-                     * @return CustomizationId 是否已赋值
-                     * 
-                     */
-                    bool CustomizationIdHasBeenSet() const;
-
-                    /**
-                     * 获取附加参数**（该参数无意义，忽略即可）**
-                     * @return Extra 附加参数**（该参数无意义，忽略即可）**
-                     * 
-                     */
-                    std::string GetExtra() const;
-
-                    /**
-                     * 设置附加参数**（该参数无意义，忽略即可）**
-                     * @param _extra 附加参数**（该参数无意义，忽略即可）**
-                     * 
-                     */
-                    void SetExtra(const std::string& _extra);
-
-                    /**
-                     * 判断参数 Extra 是否已赋值
-                     * @return Extra 是否已赋值
-                     * 
-                     */
-                    bool ExtraHasBeenSet() const;
-
-                    /**
                      * 获取标点符号过滤（目前仅支持8k_zh/16k_zh引擎）
 0：不过滤标点；
 1：过滤句末标点；
@@ -707,12 +817,12 @@ namespace TencentCloud
                     bool FilterPuncHasBeenSet() const;
 
                     /**
-                     * 获取语气词过滤（目前支持8k_zh/16k_zh引擎）
+                     * 获取语气词过滤（目前仅支持8k_zh/16k_zh引擎）
 0：不过滤语气词；
 1：过滤部分语气词；
 2：严格过滤语气词；
 默认值为 0
-                     * @return FilterModal 语气词过滤（目前支持8k_zh/16k_zh引擎）
+                     * @return FilterModal 语气词过滤（目前仅支持8k_zh/16k_zh引擎）
 0：不过滤语气词；
 1：过滤部分语气词；
 2：严格过滤语气词；
@@ -722,12 +832,12 @@ namespace TencentCloud
                     int64_t GetFilterModal() const;
 
                     /**
-                     * 设置语气词过滤（目前支持8k_zh/16k_zh引擎）
+                     * 设置语气词过滤（目前仅支持8k_zh/16k_zh引擎）
 0：不过滤语气词；
 1：过滤部分语气词；
 2：严格过滤语气词；
 默认值为 0
-                     * @param _filterModal 语气词过滤（目前支持8k_zh/16k_zh引擎）
+                     * @param _filterModal 语气词过滤（目前仅支持8k_zh/16k_zh引擎）
 0：不过滤语气词；
 1：过滤部分语气词；
 2：严格过滤语气词；
@@ -742,76 +852,6 @@ namespace TencentCloud
                      * 
                      */
                     bool FilterModalHasBeenSet() const;
-
-                    /**
-                     * 获取情绪能量值
-取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈
-0：不开启；
-1：开启；
-默认值为0
-                     * @return EmotionalEnergy 情绪能量值
-取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈
-0：不开启；
-1：开启；
-默认值为0
-                     * 
-                     */
-                    int64_t GetEmotionalEnergy() const;
-
-                    /**
-                     * 设置情绪能量值
-取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈
-0：不开启；
-1：开启；
-默认值为0
-                     * @param _emotionalEnergy 情绪能量值
-取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈
-0：不开启；
-1：开启；
-默认值为0
-                     * 
-                     */
-                    void SetEmotionalEnergy(const int64_t& _emotionalEnergy);
-
-                    /**
-                     * 判断参数 EmotionalEnergy 是否已赋值
-                     * @return EmotionalEnergy 是否已赋值
-                     * 
-                     */
-                    bool EmotionalEnergyHasBeenSet() const;
-
-                    /**
-                     * 获取热词增强功能（仅支持8k_zh/16k_zh引擎）
-1：开启热词增强功能
-
-注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。**建议客户根据实际的业务需求开启该功能**
-                     * @return ReinforceHotword 热词增强功能（仅支持8k_zh/16k_zh引擎）
-1：开启热词增强功能
-
-注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。**建议客户根据实际的业务需求开启该功能**
-                     * 
-                     */
-                    int64_t GetReinforceHotword() const;
-
-                    /**
-                     * 设置热词增强功能（仅支持8k_zh/16k_zh引擎）
-1：开启热词增强功能
-
-注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。**建议客户根据实际的业务需求开启该功能**
-                     * @param _reinforceHotword 热词增强功能（仅支持8k_zh/16k_zh引擎）
-1：开启热词增强功能
-
-注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。**建议客户根据实际的业务需求开启该功能**
-                     * 
-                     */
-                    void SetReinforceHotword(const int64_t& _reinforceHotword);
-
-                    /**
-                     * 判断参数 ReinforceHotword 是否已赋值
-                     * @return ReinforceHotword 是否已赋值
-                     * 
-                     */
-                    bool ReinforceHotwordHasBeenSet() const;
 
                     /**
                      * 获取单标点最多字数
@@ -855,61 +895,25 @@ namespace TencentCloud
                     bool SentenceMaxLengthHasBeenSet() const;
 
                     /**
-                     * 获取**【增值付费功能】**情绪识别能力（目前仅支持16k_zh）
-0：不开启；
-1：开启情绪识别，但不在文本展示情绪标签；
-2：开启情绪识别，并且在文本展示情绪标签（**该功能需要设置ResTextFormat 大于0**）
-默认值为0
-
-注意：
-1. **本功能为增值服务**，需将参数设置为1或2时方可按对应方式生效；
-2. 如果传入参数值1或2，需确保账号已购买[情绪识别资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值4，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)）**；
-3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源
-                     * @return EmotionRecognition **【增值付费功能】**情绪识别能力（目前仅支持16k_zh）
-0：不开启；
-1：开启情绪识别，但不在文本展示情绪标签；
-2：开启情绪识别，并且在文本展示情绪标签（**该功能需要设置ResTextFormat 大于0**）
-默认值为0
-
-注意：
-1. **本功能为增值服务**，需将参数设置为1或2时方可按对应方式生效；
-2. 如果传入参数值1或2，需确保账号已购买[情绪识别资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值4，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)）**；
-3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源
+                     * 获取附加参数**（该参数无意义，忽略即可）**
+                     * @return Extra 附加参数**（该参数无意义，忽略即可）**
                      * 
                      */
-                    int64_t GetEmotionRecognition() const;
+                    std::string GetExtra() const;
 
                     /**
-                     * 设置**【增值付费功能】**情绪识别能力（目前仅支持16k_zh）
-0：不开启；
-1：开启情绪识别，但不在文本展示情绪标签；
-2：开启情绪识别，并且在文本展示情绪标签（**该功能需要设置ResTextFormat 大于0**）
-默认值为0
-
-注意：
-1. **本功能为增值服务**，需将参数设置为1或2时方可按对应方式生效；
-2. 如果传入参数值1或2，需确保账号已购买[情绪识别资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值4，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)）**；
-3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源
-                     * @param _emotionRecognition **【增值付费功能】**情绪识别能力（目前仅支持16k_zh）
-0：不开启；
-1：开启情绪识别，但不在文本展示情绪标签；
-2：开启情绪识别，并且在文本展示情绪标签（**该功能需要设置ResTextFormat 大于0**）
-默认值为0
-
-注意：
-1. **本功能为增值服务**，需将参数设置为1或2时方可按对应方式生效；
-2. 如果传入参数值1或2，需确保账号已购买[情绪识别资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值4，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)）**；
-3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源
+                     * 设置附加参数**（该参数无意义，忽略即可）**
+                     * @param _extra 附加参数**（该参数无意义，忽略即可）**
                      * 
                      */
-                    void SetEmotionRecognition(const int64_t& _emotionRecognition);
+                    void SetExtra(const std::string& _extra);
 
                     /**
-                     * 判断参数 EmotionRecognition 是否已赋值
-                     * @return EmotionRecognition 是否已赋值
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
                      * 
                      */
-                    bool EmotionRecognitionHasBeenSet() const;
+                    bool ExtraHasBeenSet() const;
 
                 private:
 
@@ -980,6 +984,43 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
+                     * 语音数据base64编码
+**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
+
+注意：音频数据要小于5MB（含）
+                     */
+                    std::string m_data;
+                    bool m_dataHasBeenSet;
+
+                    /**
+                     * 数据长度（此数据长度为数据未进行base64编码时的长度）
+                     */
+                    uint64_t m_dataLen;
+                    bool m_dataLenHasBeenSet;
+
+                    /**
+                     * 语音URL的地址（需要公网环境浏览器可下载）
+**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
+
+注意：
+1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
+2. 请保证文件的下载速度，否则可能下载失败
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
+
+                    /**
+                     * 回调 URL
+用户自行搭建的用于接收识别结果的服务URL
+回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+
+注意：
+如果用户使用轮询方式获取识别结果，则无需提交该参数
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
+
+                    /**
                      * 是否开启说话人分离
 0：不开启；
 1：开启（仅支持以下引擎：8k_zh/16k_zh/16k_ms/16k_en/16k_id，且ChannelNum=1时可用）；
@@ -1002,41 +1043,56 @@ namespace TencentCloud
                     bool m_speakerNumberHasBeenSet;
 
                     /**
-                     * 回调 URL
-用户自行搭建的用于接收识别结果的服务URL
-回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+                     * 热词表id
+如不设置该参数，将自动生效默认热词表；
+如设置该参数，将生效对应id的热词表；
+点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)
+                     */
+                    std::string m_hotwordId;
+                    bool m_hotwordIdHasBeenSet;
+
+                    /**
+                     * 热词增强功能（目前仅支持8k_zh/16k_zh引擎）
+1：开启热词增强功能
+
+注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。**建议客户根据实际的业务需求开启该功能**
+                     */
+                    int64_t m_reinforceHotword;
+                    bool m_reinforceHotwordHasBeenSet;
+
+                    /**
+                     * 自学习定制模型 id
+如设置了该参数，将生效对应id的自学习定制模型；
+点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)
+                     */
+                    std::string m_customizationId;
+                    bool m_customizationIdHasBeenSet;
+
+                    /**
+                     * **【增值付费功能】**情绪识别能力（目前仅支持16k_zh）
+0：不开启；
+1：开启情绪识别，但不在文本展示情绪标签；
+2：开启情绪识别，并且在文本展示情绪标签（**该功能需要设置ResTextFormat 大于0**）
+默认值为0
+支持的情绪分类为：高兴、伤心、愤怒
 
 注意：
-如果用户使用轮询方式获取识别结果，则无需提交该参数
+1. **本功能为增值服务**，需将参数设置为1或2时方可按对应方式生效；
+2. 如果传入参数值1或2，需确保账号已购买[情绪识别资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值1或2，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)）**；
+3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源
                      */
-                    std::string m_callbackUrl;
-                    bool m_callbackUrlHasBeenSet;
+                    int64_t m_emotionRecognition;
+                    bool m_emotionRecognitionHasBeenSet;
 
                     /**
-                     * 语音URL的地址（需要公网环境浏览器可下载）
-**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
-
-注意：
-1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
-2. 请保证文件的下载速度，否则可能下载失败
+                     * 情绪能量值
+取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈
+0：不开启；
+1：开启；
+默认值为0
                      */
-                    std::string m_url;
-                    bool m_urlHasBeenSet;
-
-                    /**
-                     * 语音数据base64编码
-**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
-
-注意：音频数据要小于5MB（含）
-                     */
-                    std::string m_data;
-                    bool m_dataHasBeenSet;
-
-                    /**
-                     * 数据长度（此数据长度为数据未进行base64编码时的长度）
-                     */
-                    uint64_t m_dataLen;
-                    bool m_dataLenHasBeenSet;
+                    int64_t m_emotionalEnergy;
+                    bool m_emotionalEnergyHasBeenSet;
 
                     /**
                      * 阿拉伯数字智能转换（目前仅支持8k_zh/16k_zh引擎）
@@ -1059,29 +1115,6 @@ namespace TencentCloud
                     bool m_filterDirtyHasBeenSet;
 
                     /**
-                     * 热词表id
-如不设置该参数，将自动生效默认热词表；
-如设置该参数，将生效对应id的热词表；
-点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)
-                     */
-                    std::string m_hotwordId;
-                    bool m_hotwordIdHasBeenSet;
-
-                    /**
-                     * 自学习定制模型 id
-如设置了该参数，将生效对应id的自学习定制模型；
-点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)
-                     */
-                    std::string m_customizationId;
-                    bool m_customizationIdHasBeenSet;
-
-                    /**
-                     * 附加参数**（该参数无意义，忽略即可）**
-                     */
-                    std::string m_extra;
-                    bool m_extraHasBeenSet;
-
-                    /**
                      * 标点符号过滤（目前仅支持8k_zh/16k_zh引擎）
 0：不过滤标点；
 1：过滤句末标点；
@@ -1092,7 +1125,7 @@ namespace TencentCloud
                     bool m_filterPuncHasBeenSet;
 
                     /**
-                     * 语气词过滤（目前支持8k_zh/16k_zh引擎）
+                     * 语气词过滤（目前仅支持8k_zh/16k_zh引擎）
 0：不过滤语气词；
 1：过滤部分语气词；
 2：严格过滤语气词；
@@ -1100,25 +1133,6 @@ namespace TencentCloud
                      */
                     int64_t m_filterModal;
                     bool m_filterModalHasBeenSet;
-
-                    /**
-                     * 情绪能量值
-取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈
-0：不开启；
-1：开启；
-默认值为0
-                     */
-                    int64_t m_emotionalEnergy;
-                    bool m_emotionalEnergyHasBeenSet;
-
-                    /**
-                     * 热词增强功能（仅支持8k_zh/16k_zh引擎）
-1：开启热词增强功能
-
-注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。**建议客户根据实际的业务需求开启该功能**
-                     */
-                    int64_t m_reinforceHotword;
-                    bool m_reinforceHotwordHasBeenSet;
 
                     /**
                      * 单标点最多字数
@@ -1132,19 +1146,10 @@ namespace TencentCloud
                     bool m_sentenceMaxLengthHasBeenSet;
 
                     /**
-                     * **【增值付费功能】**情绪识别能力（目前仅支持16k_zh）
-0：不开启；
-1：开启情绪识别，但不在文本展示情绪标签；
-2：开启情绪识别，并且在文本展示情绪标签（**该功能需要设置ResTextFormat 大于0**）
-默认值为0
-
-注意：
-1. **本功能为增值服务**，需将参数设置为1或2时方可按对应方式生效；
-2. 如果传入参数值1或2，需确保账号已购买[情绪识别资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值4，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)）**；
-3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源
+                     * 附加参数**（该参数无意义，忽略即可）**
                      */
-                    int64_t m_emotionRecognition;
-                    bool m_emotionRecognitionHasBeenSet;
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
 
                 };
             }

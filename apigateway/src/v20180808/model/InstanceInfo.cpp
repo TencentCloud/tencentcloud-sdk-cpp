@@ -29,7 +29,11 @@ InstanceInfo::InstanceInfo() :
     m_instanceStateHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_dealNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_outerIpListHasBeenSet(false),
+    m_innerIpListHasBeenSet(false),
+    m_instanceChargePrepaidHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +132,59 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_resourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("OuterIpList") && !value["OuterIpList"].IsNull())
+    {
+        if (!value["OuterIpList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.OuterIpList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OuterIpList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_outerIpList.push_back((*itr).GetString());
+        }
+        m_outerIpListHasBeenSet = true;
+    }
+
+    if (value.HasMember("InnerIpList") && !value["InnerIpList"].IsNull())
+    {
+        if (!value["InnerIpList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.InnerIpList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InnerIpList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_innerIpList.push_back((*itr).GetString());
+        }
+        m_innerIpListHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceChargePrepaid") && !value["InstanceChargePrepaid"].IsNull())
+    {
+        if (!value["InstanceChargePrepaid"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.InstanceChargePrepaid` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceChargePrepaid.Deserialize(value["InstanceChargePrepaid"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceChargePrepaidHasBeenSet = true;
+    }
+
+    if (value.HasMember("UniqVpcId") && !value["UniqVpcId"].IsNull())
+    {
+        if (!value["UniqVpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqVpcId = string(value["UniqVpcId"].GetString());
+        m_uniqVpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +262,49 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outerIpListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OuterIpList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_outerIpList.begin(); itr != m_outerIpList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_innerIpListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InnerIpList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_innerIpList.begin(); itr != m_innerIpList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceChargePrepaidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceChargePrepaid.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +452,69 @@ void InstanceInfo::SetResourceId(const string& _resourceId)
 bool InstanceInfo::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+vector<string> InstanceInfo::GetOuterIpList() const
+{
+    return m_outerIpList;
+}
+
+void InstanceInfo::SetOuterIpList(const vector<string>& _outerIpList)
+{
+    m_outerIpList = _outerIpList;
+    m_outerIpListHasBeenSet = true;
+}
+
+bool InstanceInfo::OuterIpListHasBeenSet() const
+{
+    return m_outerIpListHasBeenSet;
+}
+
+vector<string> InstanceInfo::GetInnerIpList() const
+{
+    return m_innerIpList;
+}
+
+void InstanceInfo::SetInnerIpList(const vector<string>& _innerIpList)
+{
+    m_innerIpList = _innerIpList;
+    m_innerIpListHasBeenSet = true;
+}
+
+bool InstanceInfo::InnerIpListHasBeenSet() const
+{
+    return m_innerIpListHasBeenSet;
+}
+
+InstanceChargePrepaid InstanceInfo::GetInstanceChargePrepaid() const
+{
+    return m_instanceChargePrepaid;
+}
+
+void InstanceInfo::SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid)
+{
+    m_instanceChargePrepaid = _instanceChargePrepaid;
+    m_instanceChargePrepaidHasBeenSet = true;
+}
+
+bool InstanceInfo::InstanceChargePrepaidHasBeenSet() const
+{
+    return m_instanceChargePrepaidHasBeenSet;
+}
+
+string InstanceInfo::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+void InstanceInfo::SetUniqVpcId(const string& _uniqVpcId)
+{
+    m_uniqVpcId = _uniqVpcId;
+    m_uniqVpcIdHasBeenSet = true;
+}
+
+bool InstanceInfo::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ADVISOR_V20200721_MODEL_DESCRIBESTRATEGIE_H_
-#define TENCENTCLOUD_ADVISOR_V20200721_MODEL_DESCRIBESTRATEGIE_H_
+#ifndef TENCENTCLOUD_ADVISOR_V20200721_MODEL_STRATEGIES_H_
+#define TENCENTCLOUD_ADVISOR_V20200721_MODEL_STRATEGIES_H_
 
 #include <string>
 #include <vector>
@@ -24,7 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/advisor/v20200721/model/DescribeStrategiesCondition.h>
+#include <tencentcloud/advisor/v20200721/model/Conditions.h>
 
 
 namespace TencentCloud
@@ -38,11 +38,11 @@ namespace TencentCloud
                 /**
                 * 评估项信息
                 */
-                class DescribeStrategie : public AbstractModel
+                class Strategies : public AbstractModel
                 {
                 public:
-                    DescribeStrategie();
-                    ~DescribeStrategie() = default;
+                    Strategies();
+                    ~Strategies() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
@@ -254,7 +254,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<DescribeStrategiesCondition> GetConditions() const;
+                    std::vector<Conditions> GetConditions() const;
 
                     /**
                      * 设置评估项风险列表
@@ -263,7 +263,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetConditions(const std::vector<DescribeStrategiesCondition>& _conditions);
+                    void SetConditions(const std::vector<Conditions>& _conditions);
 
                     /**
                      * 判断参数 Conditions 是否已赋值
@@ -334,7 +334,7 @@ namespace TencentCloud
                      * 评估项风险列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<DescribeStrategiesCondition> m_conditions;
+                    std::vector<Conditions> m_conditions;
                     bool m_conditionsHasBeenSet;
 
                 };
@@ -343,4 +343,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ADVISOR_V20200721_MODEL_DESCRIBESTRATEGIE_H_
+#endif // !TENCENTCLOUD_ADVISOR_V20200721_MODEL_STRATEGIES_H_

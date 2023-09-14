@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取智能运维每天定时巡检时间
-                     * @return CronTime 智能运维每天定时巡检时间
+                     * 获取智能运维每天定时巡检时间，时间格式为HH:00:00，例如15:00:00
+                     * @return CronTime 智能运维每天定时巡检时间，时间格式为HH:00:00，例如15:00:00
                      * 
                      */
                     std::string GetCronTime() const;
 
                     /**
-                     * 设置智能运维每天定时巡检时间
-                     * @param _cronTime 智能运维每天定时巡检时间
+                     * 设置智能运维每天定时巡检时间，时间格式为HH:00:00，例如15:00:00
+                     * @param _cronTime 智能运维每天定时巡检时间，时间格式为HH:00:00，例如15:00:00
                      * 
                      */
                     void SetCronTime(const std::string& _cronTime);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 智能运维每天定时巡检时间
+                     * 智能运维每天定时巡检时间，时间格式为HH:00:00，例如15:00:00
                      */
                     std::string m_cronTime;
                     bool m_cronTimeHasBeenSet;

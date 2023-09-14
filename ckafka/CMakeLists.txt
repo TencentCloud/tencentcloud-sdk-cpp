@@ -33,6 +33,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DeleteUserRequest.h
   include/tencentcloud/ckafka/v20190819/model/PartitionOffset.h
   include/tencentcloud/ckafka/v20190819/model/SQLServerConnectParam.h
+  include/tencentcloud/ckafka/v20190819/model/InstanceDeleteResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateConnectResourceResponse.h
   include/tencentcloud/ckafka/v20190819/model/EsModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/TopicRetentionTimeConfigRsp.h
@@ -138,6 +139,8 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/ClusterInfo.h
   include/tencentcloud/ckafka/v20190819/model/DeleteGroupRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupRequest.h
+  include/tencentcloud/ckafka/v20190819/model/DeleteInstancePostResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DeleteInstancePostRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteUserResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResourceRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicProduceConnectionRequest.h
@@ -364,6 +367,7 @@ set(ckafka_src
   src/v20190819/model/DeleteUserRequest.cpp
   src/v20190819/model/PartitionOffset.cpp
   src/v20190819/model/SQLServerConnectParam.cpp
+  src/v20190819/model/InstanceDeleteResponse.cpp
   src/v20190819/model/CreateConnectResourceResponse.cpp
   src/v20190819/model/EsModifyConnectParam.cpp
   src/v20190819/model/TopicRetentionTimeConfigRsp.cpp
@@ -469,6 +473,8 @@ set(ckafka_src
   src/v20190819/model/ClusterInfo.cpp
   src/v20190819/model/DeleteGroupRequest.cpp
   src/v20190819/model/DescribeConsumerGroupRequest.cpp
+  src/v20190819/model/DeleteInstancePostResponse.cpp
+  src/v20190819/model/DeleteInstancePostRequest.cpp
   src/v20190819/model/DeleteUserResponse.cpp
   src/v20190819/model/DescribeConnectResourceRequest.cpp
   src/v20190819/model/DescribeTopicProduceConnectionRequest.cpp

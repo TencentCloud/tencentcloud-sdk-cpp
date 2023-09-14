@@ -173,6 +173,27 @@ IsAuthorized是否授权，取值全部all，未授权0，已授权1
                      */
                     bool OnlyShowLatestHasBeenSet() const;
 
+                    /**
+                     * 获取是否仅展示运行中容器镜像
+                     * @return IsRunning 是否仅展示运行中容器镜像
+                     * 
+                     */
+                    bool GetIsRunning() const;
+
+                    /**
+                     * 设置是否仅展示运行中容器镜像
+                     * @param _isRunning 是否仅展示运行中容器镜像
+                     * 
+                     */
+                    void SetIsRunning(const bool& _isRunning);
+
+                    /**
+                     * 判断参数 IsRunning 是否已赋值
+                     * @return IsRunning 是否已赋值
+                     * 
+                     */
+                    bool IsRunningHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +232,12 @@ IsAuthorized是否授权，取值全部all，未授权0，已授权1
                      */
                     bool m_onlyShowLatest;
                     bool m_onlyShowLatestHasBeenSet;
+
+                    /**
+                     * 是否仅展示运行中容器镜像
+                     */
+                    bool m_isRunning;
+                    bool m_isRunningHasBeenSet;
 
                 };
             }

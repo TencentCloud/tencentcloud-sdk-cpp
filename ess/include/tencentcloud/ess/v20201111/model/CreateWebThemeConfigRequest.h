@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
+                     * 获取注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息
-                     * @param _operator 操作人信息
+                     * 设置注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -67,23 +67,23 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取主题类型
-<br/>EMBED_WEB_THEME：嵌入式主题
-<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置
-                     * @return ThemeType 主题类型
-<br/>EMBED_WEB_THEME：嵌入式主题
-<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置
+                     * 获取主题类型，取值如下：
+<ul><li> **EMBED_WEB_THEME**：嵌入式主题（默认），web页面嵌入的主题风格配置</li>
+</ul>
+                     * @return ThemeType 主题类型，取值如下：
+<ul><li> **EMBED_WEB_THEME**：嵌入式主题（默认），web页面嵌入的主题风格配置</li>
+</ul>
                      * 
                      */
                     std::string GetThemeType() const;
 
                     /**
-                     * 设置主题类型
-<br/>EMBED_WEB_THEME：嵌入式主题
-<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置
-                     * @param _themeType 主题类型
-<br/>EMBED_WEB_THEME：嵌入式主题
-<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置
+                     * 设置主题类型，取值如下：
+<ul><li> **EMBED_WEB_THEME**：嵌入式主题（默认），web页面嵌入的主题风格配置</li>
+</ul>
+                     * @param _themeType 主题类型，取值如下：
+<ul><li> **EMBED_WEB_THEME**：嵌入式主题（默认），web页面嵌入的主题风格配置</li>
+</ul>
                      * 
                      */
                     void SetThemeType(const std::string& _themeType);
@@ -117,15 +117,19 @@ namespace TencentCloud
                     bool WebThemeConfigHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。	
-                     * @return Agent 代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。	
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。	
-                     * @param _agent 代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。	
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -140,15 +144,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作人信息
+                     * 注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 主题类型
-<br/>EMBED_WEB_THEME：嵌入式主题
-<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置
+                     * 主题类型，取值如下：
+<ul><li> **EMBED_WEB_THEME**：嵌入式主题（默认），web页面嵌入的主题风格配置</li>
+</ul>
                      */
                     std::string m_themeType;
                     bool m_themeTypeHasBeenSet;
@@ -160,7 +164,8 @@ namespace TencentCloud
                     bool m_webThemeConfigHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。	
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

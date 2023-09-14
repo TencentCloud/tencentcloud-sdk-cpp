@@ -27,23 +27,23 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_channelNumHasBeenSet(false),
     m_resTextFormatHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
-    m_speakerDiarizationHasBeenSet(false),
-    m_speakerNumberHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false),
-    m_urlHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_dataLenHasBeenSet(false),
+    m_urlHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false),
+    m_speakerDiarizationHasBeenSet(false),
+    m_speakerNumberHasBeenSet(false),
+    m_hotwordIdHasBeenSet(false),
+    m_reinforceHotwordHasBeenSet(false),
+    m_customizationIdHasBeenSet(false),
+    m_emotionRecognitionHasBeenSet(false),
+    m_emotionalEnergyHasBeenSet(false),
     m_convertNumModeHasBeenSet(false),
     m_filterDirtyHasBeenSet(false),
-    m_hotwordIdHasBeenSet(false),
-    m_customizationIdHasBeenSet(false),
-    m_extraHasBeenSet(false),
     m_filterPuncHasBeenSet(false),
     m_filterModalHasBeenSet(false),
-    m_emotionalEnergyHasBeenSet(false),
-    m_reinforceHotwordHasBeenSet(false),
     m_sentenceMaxLengthHasBeenSet(false),
-    m_emotionRecognitionHasBeenSet(false)
+    m_extraHasBeenSet(false)
 {
 }
 
@@ -86,6 +86,38 @@ string CreateRecTaskRequest::ToJsonString() const
         d.AddMember(iKey, m_sourceType, allocator);
     }
 
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataLenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataLen";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataLen, allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_speakerDiarizationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,36 +134,44 @@ string CreateRecTaskRequest::ToJsonString() const
         d.AddMember(iKey, m_speakerNumber, allocator);
     }
 
-    if (m_callbackUrlHasBeenSet)
+    if (m_hotwordIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallbackUrl";
+        string key = "HotwordId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hotwordId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_urlHasBeenSet)
+    if (m_reinforceHotwordHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Url";
+        string key = "ReinforceHotword";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_reinforceHotword, allocator);
     }
 
-    if (m_dataHasBeenSet)
+    if (m_customizationIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "CustomizationId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customizationId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_dataLenHasBeenSet)
+    if (m_emotionRecognitionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DataLen";
+        string key = "EmotionRecognition";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_dataLen, allocator);
+        d.AddMember(iKey, m_emotionRecognition, allocator);
+    }
+
+    if (m_emotionalEnergyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmotionalEnergy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_emotionalEnergy, allocator);
     }
 
     if (m_convertNumModeHasBeenSet)
@@ -150,30 +190,6 @@ string CreateRecTaskRequest::ToJsonString() const
         d.AddMember(iKey, m_filterDirty, allocator);
     }
 
-    if (m_hotwordIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HotwordId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_hotwordId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_customizationIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomizationId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_customizationId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_extraHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Extra";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_filterPuncHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -190,22 +206,6 @@ string CreateRecTaskRequest::ToJsonString() const
         d.AddMember(iKey, m_filterModal, allocator);
     }
 
-    if (m_emotionalEnergyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EmotionalEnergy";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_emotionalEnergy, allocator);
-    }
-
-    if (m_reinforceHotwordHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReinforceHotword";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_reinforceHotword, allocator);
-    }
-
     if (m_sentenceMaxLengthHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,12 +214,12 @@ string CreateRecTaskRequest::ToJsonString() const
         d.AddMember(iKey, m_sentenceMaxLength, allocator);
     }
 
-    if (m_emotionRecognitionHasBeenSet)
+    if (m_extraHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EmotionRecognition";
+        string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_emotionRecognition, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -294,6 +294,70 @@ bool CreateRecTaskRequest::SourceTypeHasBeenSet() const
     return m_sourceTypeHasBeenSet;
 }
 
+string CreateRecTaskRequest::GetData() const
+{
+    return m_data;
+}
+
+void CreateRecTaskRequest::SetData(const string& _data)
+{
+    m_data = _data;
+    m_dataHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
+}
+
+uint64_t CreateRecTaskRequest::GetDataLen() const
+{
+    return m_dataLen;
+}
+
+void CreateRecTaskRequest::SetDataLen(const uint64_t& _dataLen)
+{
+    m_dataLen = _dataLen;
+    m_dataLenHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::DataLenHasBeenSet() const
+{
+    return m_dataLenHasBeenSet;
+}
+
+string CreateRecTaskRequest::GetUrl() const
+{
+    return m_url;
+}
+
+void CreateRecTaskRequest::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
+}
+
+string CreateRecTaskRequest::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void CreateRecTaskRequest::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
+}
+
 int64_t CreateRecTaskRequest::GetSpeakerDiarization() const
 {
     return m_speakerDiarization;
@@ -326,68 +390,84 @@ bool CreateRecTaskRequest::SpeakerNumberHasBeenSet() const
     return m_speakerNumberHasBeenSet;
 }
 
-string CreateRecTaskRequest::GetCallbackUrl() const
+string CreateRecTaskRequest::GetHotwordId() const
 {
-    return m_callbackUrl;
+    return m_hotwordId;
 }
 
-void CreateRecTaskRequest::SetCallbackUrl(const string& _callbackUrl)
+void CreateRecTaskRequest::SetHotwordId(const string& _hotwordId)
 {
-    m_callbackUrl = _callbackUrl;
-    m_callbackUrlHasBeenSet = true;
+    m_hotwordId = _hotwordId;
+    m_hotwordIdHasBeenSet = true;
 }
 
-bool CreateRecTaskRequest::CallbackUrlHasBeenSet() const
+bool CreateRecTaskRequest::HotwordIdHasBeenSet() const
 {
-    return m_callbackUrlHasBeenSet;
+    return m_hotwordIdHasBeenSet;
 }
 
-string CreateRecTaskRequest::GetUrl() const
+int64_t CreateRecTaskRequest::GetReinforceHotword() const
 {
-    return m_url;
+    return m_reinforceHotword;
 }
 
-void CreateRecTaskRequest::SetUrl(const string& _url)
+void CreateRecTaskRequest::SetReinforceHotword(const int64_t& _reinforceHotword)
 {
-    m_url = _url;
-    m_urlHasBeenSet = true;
+    m_reinforceHotword = _reinforceHotword;
+    m_reinforceHotwordHasBeenSet = true;
 }
 
-bool CreateRecTaskRequest::UrlHasBeenSet() const
+bool CreateRecTaskRequest::ReinforceHotwordHasBeenSet() const
 {
-    return m_urlHasBeenSet;
+    return m_reinforceHotwordHasBeenSet;
 }
 
-string CreateRecTaskRequest::GetData() const
+string CreateRecTaskRequest::GetCustomizationId() const
 {
-    return m_data;
+    return m_customizationId;
 }
 
-void CreateRecTaskRequest::SetData(const string& _data)
+void CreateRecTaskRequest::SetCustomizationId(const string& _customizationId)
 {
-    m_data = _data;
-    m_dataHasBeenSet = true;
+    m_customizationId = _customizationId;
+    m_customizationIdHasBeenSet = true;
 }
 
-bool CreateRecTaskRequest::DataHasBeenSet() const
+bool CreateRecTaskRequest::CustomizationIdHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_customizationIdHasBeenSet;
 }
 
-uint64_t CreateRecTaskRequest::GetDataLen() const
+int64_t CreateRecTaskRequest::GetEmotionRecognition() const
 {
-    return m_dataLen;
+    return m_emotionRecognition;
 }
 
-void CreateRecTaskRequest::SetDataLen(const uint64_t& _dataLen)
+void CreateRecTaskRequest::SetEmotionRecognition(const int64_t& _emotionRecognition)
 {
-    m_dataLen = _dataLen;
-    m_dataLenHasBeenSet = true;
+    m_emotionRecognition = _emotionRecognition;
+    m_emotionRecognitionHasBeenSet = true;
 }
 
-bool CreateRecTaskRequest::DataLenHasBeenSet() const
+bool CreateRecTaskRequest::EmotionRecognitionHasBeenSet() const
 {
-    return m_dataLenHasBeenSet;
+    return m_emotionRecognitionHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetEmotionalEnergy() const
+{
+    return m_emotionalEnergy;
+}
+
+void CreateRecTaskRequest::SetEmotionalEnergy(const int64_t& _emotionalEnergy)
+{
+    m_emotionalEnergy = _emotionalEnergy;
+    m_emotionalEnergyHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::EmotionalEnergyHasBeenSet() const
+{
+    return m_emotionalEnergyHasBeenSet;
 }
 
 int64_t CreateRecTaskRequest::GetConvertNumMode() const
@@ -422,54 +502,6 @@ bool CreateRecTaskRequest::FilterDirtyHasBeenSet() const
     return m_filterDirtyHasBeenSet;
 }
 
-string CreateRecTaskRequest::GetHotwordId() const
-{
-    return m_hotwordId;
-}
-
-void CreateRecTaskRequest::SetHotwordId(const string& _hotwordId)
-{
-    m_hotwordId = _hotwordId;
-    m_hotwordIdHasBeenSet = true;
-}
-
-bool CreateRecTaskRequest::HotwordIdHasBeenSet() const
-{
-    return m_hotwordIdHasBeenSet;
-}
-
-string CreateRecTaskRequest::GetCustomizationId() const
-{
-    return m_customizationId;
-}
-
-void CreateRecTaskRequest::SetCustomizationId(const string& _customizationId)
-{
-    m_customizationId = _customizationId;
-    m_customizationIdHasBeenSet = true;
-}
-
-bool CreateRecTaskRequest::CustomizationIdHasBeenSet() const
-{
-    return m_customizationIdHasBeenSet;
-}
-
-string CreateRecTaskRequest::GetExtra() const
-{
-    return m_extra;
-}
-
-void CreateRecTaskRequest::SetExtra(const string& _extra)
-{
-    m_extra = _extra;
-    m_extraHasBeenSet = true;
-}
-
-bool CreateRecTaskRequest::ExtraHasBeenSet() const
-{
-    return m_extraHasBeenSet;
-}
-
 int64_t CreateRecTaskRequest::GetFilterPunc() const
 {
     return m_filterPunc;
@@ -502,38 +534,6 @@ bool CreateRecTaskRequest::FilterModalHasBeenSet() const
     return m_filterModalHasBeenSet;
 }
 
-int64_t CreateRecTaskRequest::GetEmotionalEnergy() const
-{
-    return m_emotionalEnergy;
-}
-
-void CreateRecTaskRequest::SetEmotionalEnergy(const int64_t& _emotionalEnergy)
-{
-    m_emotionalEnergy = _emotionalEnergy;
-    m_emotionalEnergyHasBeenSet = true;
-}
-
-bool CreateRecTaskRequest::EmotionalEnergyHasBeenSet() const
-{
-    return m_emotionalEnergyHasBeenSet;
-}
-
-int64_t CreateRecTaskRequest::GetReinforceHotword() const
-{
-    return m_reinforceHotword;
-}
-
-void CreateRecTaskRequest::SetReinforceHotword(const int64_t& _reinforceHotword)
-{
-    m_reinforceHotword = _reinforceHotword;
-    m_reinforceHotwordHasBeenSet = true;
-}
-
-bool CreateRecTaskRequest::ReinforceHotwordHasBeenSet() const
-{
-    return m_reinforceHotwordHasBeenSet;
-}
-
 int64_t CreateRecTaskRequest::GetSentenceMaxLength() const
 {
     return m_sentenceMaxLength;
@@ -550,20 +550,20 @@ bool CreateRecTaskRequest::SentenceMaxLengthHasBeenSet() const
     return m_sentenceMaxLengthHasBeenSet;
 }
 
-int64_t CreateRecTaskRequest::GetEmotionRecognition() const
+string CreateRecTaskRequest::GetExtra() const
 {
-    return m_emotionRecognition;
+    return m_extra;
 }
 
-void CreateRecTaskRequest::SetEmotionRecognition(const int64_t& _emotionRecognition)
+void CreateRecTaskRequest::SetExtra(const string& _extra)
 {
-    m_emotionRecognition = _emotionRecognition;
-    m_emotionRecognitionHasBeenSet = true;
+    m_extra = _extra;
+    m_extraHasBeenSet = true;
 }
 
-bool CreateRecTaskRequest::EmotionRecognitionHasBeenSet() const
+bool CreateRecTaskRequest::ExtraHasBeenSet() const
 {
-    return m_emotionRecognitionHasBeenSet;
+    return m_extraHasBeenSet;
 }
 
 

@@ -1172,6 +1172,31 @@ pausing
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取节点网络类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkType 节点网络类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNetworkType() const;
+
+                    /**
+                     * 设置节点网络类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _networkType 节点网络类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetworkType(const std::string& _networkType);
+
+                    /**
+                     * 判断参数 NetworkType 是否已赋值
+                     * @return NetworkType 是否已赋值
+                     * 
+                     */
+                    bool NetworkTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1489,6 +1514,13 @@ pausing
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 节点网络类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_networkType;
+                    bool m_networkTypeHasBeenSet;
 
                 };
             }

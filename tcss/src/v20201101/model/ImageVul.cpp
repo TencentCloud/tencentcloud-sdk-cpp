@@ -39,7 +39,8 @@ ImageVul::ImageVul() :
     m_fixedVersionsHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_componentHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_attackLevelHasBeenSet(false)
 {
 }
 
@@ -251,6 +252,16 @@ CoreInternalOutcome ImageVul::Deserialize(const rapidjson::Value &value)
         m_versionHasBeenSet = true;
     }
 
+    if (value.HasMember("AttackLevel") && !value["AttackLevel"].IsNull())
+    {
+        if (!value["AttackLevel"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageVul.AttackLevel` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_attackLevel = value["AttackLevel"].GetInt64();
+        m_attackLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -420,6 +431,14 @@ void ImageVul::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attackLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttackLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_attackLevel, allocator);
     }
 
 }
@@ -727,5 +746,21 @@ void ImageVul::SetVersion(const string& _version)
 bool ImageVul::VersionHasBeenSet() const
 {
     return m_versionHasBeenSet;
+}
+
+int64_t ImageVul::GetAttackLevel() const
+{
+    return m_attackLevel;
+}
+
+void ImageVul::SetAttackLevel(const int64_t& _attackLevel)
+{
+    m_attackLevel = _attackLevel;
+    m_attackLevelHasBeenSet = true;
+}
+
+bool ImageVul::AttackLevelHasBeenSet() const
+{
+    return m_attackLevelHasBeenSet;
 }
 

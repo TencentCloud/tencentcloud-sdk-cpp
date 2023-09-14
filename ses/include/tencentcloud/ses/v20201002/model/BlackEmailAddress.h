@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 邮箱黑名单结构，包含被拉黑的邮箱地址和被拉黑时间
+                * 邮箱黑名单结构，包含被拉黑的邮箱地址和被拉黑时间，以及被拉黑的理由
                 */
                 class BlackEmailAddress : public AbstractModel
                 {
@@ -88,6 +88,31 @@ namespace TencentCloud
                      */
                     bool EmailAddressHasBeenSet() const;
 
+                    /**
+                     * 获取被拉黑的理由
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IspDesc 被拉黑的理由
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIspDesc() const;
+
+                    /**
+                     * 设置被拉黑的理由
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ispDesc 被拉黑的理由
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIspDesc(const std::string& _ispDesc);
+
+                    /**
+                     * 判断参数 IspDesc 是否已赋值
+                     * @return IspDesc 是否已赋值
+                     * 
+                     */
+                    bool IspDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +126,13 @@ namespace TencentCloud
                      */
                     std::string m_emailAddress;
                     bool m_emailAddressHasBeenSet;
+
+                    /**
+                     * 被拉黑的理由
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ispDesc;
+                    bool m_ispDescHasBeenSet;
 
                 };
             }

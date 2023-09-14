@@ -50,7 +50,7 @@ namespace TencentCloud
                      * 获取过滤项。目前支持以下搜索条件：
 
 包含、不包含、包含（分词维度）、不包含（分词维度）:
-sql - SQL详情
+sql - SQL详情；alarmLevel - 告警等级；ruleTemplateId - 规则模板Id
 
 等于、不等于、包含、不包含：
 host - 客户端地址；
@@ -74,7 +74,7 @@ sentRows - 返回行数。
                      * @return Type 过滤项。目前支持以下搜索条件：
 
 包含、不包含、包含（分词维度）、不包含（分词维度）:
-sql - SQL详情
+sql - SQL详情；alarmLevel - 告警等级；ruleTemplateId - 规则模板Id
 
 等于、不等于、包含、不包含：
 host - 客户端地址；
@@ -103,7 +103,7 @@ sentRows - 返回行数。
                      * 设置过滤项。目前支持以下搜索条件：
 
 包含、不包含、包含（分词维度）、不包含（分词维度）:
-sql - SQL详情
+sql - SQL详情；alarmLevel - 告警等级；ruleTemplateId - 规则模板Id
 
 等于、不等于、包含、不包含：
 host - 客户端地址；
@@ -127,7 +127,7 @@ sentRows - 返回行数。
                      * @param _type 过滤项。目前支持以下搜索条件：
 
 包含、不包含、包含（分词维度）、不包含（分词维度）:
-sql - SQL详情
+sql - SQL详情；alarmLevel - 告警等级；ruleTemplateId - 规则模板Id
 
 等于、不等于、包含、不包含：
 host - 客户端地址；
@@ -235,7 +235,7 @@ RA - 范围。
                      * 过滤项。目前支持以下搜索条件：
 
 包含、不包含、包含（分词维度）、不包含（分词维度）:
-sql - SQL详情
+sql - SQL详情；alarmLevel - 告警等级；ruleTemplateId - 规则模板Id
 
 等于、不等于、包含、不包含：
 host - 客户端地址；

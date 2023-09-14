@@ -48,30 +48,22 @@ namespace TencentCloud
 
                     /**
                      * 获取是否显示页面底部电子签logo，取值如下：
-<ul>
-<li> **true**：页面底部显示电子签logo</li>
-<li> **false**：页面底部不显示电子签logo（默认）</li>
-</ul>
+<ul><li> **true**：页面底部显示电子签logo</li>
+<li> **false**：页面底部不显示电子签logo（默认）</li></ul>
                      * @return DisplaySignBrandLogo 是否显示页面底部电子签logo，取值如下：
-<ul>
-<li> **true**：页面底部显示电子签logo</li>
-<li> **false**：页面底部不显示电子签logo（默认）</li>
-</ul>
+<ul><li> **true**：页面底部显示电子签logo</li>
+<li> **false**：页面底部不显示电子签logo（默认）</li></ul>
                      * 
                      */
                     bool GetDisplaySignBrandLogo() const;
 
                     /**
                      * 设置是否显示页面底部电子签logo，取值如下：
-<ul>
-<li> **true**：页面底部显示电子签logo</li>
-<li> **false**：页面底部不显示电子签logo（默认）</li>
-</ul>
+<ul><li> **true**：页面底部显示电子签logo</li>
+<li> **false**：页面底部不显示电子签logo（默认）</li></ul>
                      * @param _displaySignBrandLogo 是否显示页面底部电子签logo，取值如下：
-<ul>
-<li> **true**：页面底部显示电子签logo</li>
-<li> **false**：页面底部不显示电子签logo（默认）</li>
-</ul>
+<ul><li> **true**：页面底部显示电子签logo</li>
+<li> **false**：页面底部不显示电子签logo（默认）</li></ul>
                      * 
                      */
                     void SetDisplaySignBrandLogo(const bool& _displaySignBrandLogo);
@@ -84,19 +76,23 @@ namespace TencentCloud
                     bool DisplaySignBrandLogoHasBeenSet() const;
 
                     /**
-                     * 获取主题颜色
-<br/>支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)
-                     * @return WebEmbedThemeColor 主题颜色
-<br/>支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)
+                     * 获取主题颜色：
+支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)
+<br/>
+                     * @return WebEmbedThemeColor 主题颜色：
+支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)
+<br/>
                      * 
                      */
                     std::string GetWebEmbedThemeColor() const;
 
                     /**
-                     * 设置主题颜色
-<br/>支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)
-                     * @param _webEmbedThemeColor 主题颜色
-<br/>支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)
+                     * 设置主题颜色：
+支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)
+<br/>
+                     * @param _webEmbedThemeColor 主题颜色：
+支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)
+<br/>
                      * 
                      */
                     void SetWebEmbedThemeColor(const std::string& _webEmbedThemeColor);
@@ -112,17 +108,16 @@ namespace TencentCloud
 
                     /**
                      * 是否显示页面底部电子签logo，取值如下：
-<ul>
-<li> **true**：页面底部显示电子签logo</li>
-<li> **false**：页面底部不显示电子签logo（默认）</li>
-</ul>
+<ul><li> **true**：页面底部显示电子签logo</li>
+<li> **false**：页面底部不显示电子签logo（默认）</li></ul>
                      */
                     bool m_displaySignBrandLogo;
                     bool m_displaySignBrandLogoHasBeenSet;
 
                     /**
-                     * 主题颜色
-<br/>支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)
+                     * 主题颜色：
+支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)
+<br/>
                      */
                     std::string m_webEmbedThemeColor;
                     bool m_webEmbedThemeColorHasBeenSet;

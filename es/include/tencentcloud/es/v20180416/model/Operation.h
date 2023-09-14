@@ -195,6 +195,31 @@ namespace TencentCloud
                      */
                     bool ProgressHasBeenSet() const;
 
+                    /**
+                     * 获取操作者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubAccountUin 操作者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 设置操作者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subAccountUin 操作者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubAccountUin(const std::string& _subAccountUin);
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +263,13 @@ namespace TencentCloud
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
+
+                    /**
+                     * 操作者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
 
                 };
             }

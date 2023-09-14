@@ -267,7 +267,7 @@ namespace TencentCloud
                 DeleteIndexOutcomeCallable DeleteIndexCallable(const Model::DeleteIndexRequest& request);
 
                 /**
-                 *销毁集群实例 
+                 *销毁集群实例
                  * @param req DeleteInstanceRequest
                  * @return DeleteInstanceOutcome
                  */

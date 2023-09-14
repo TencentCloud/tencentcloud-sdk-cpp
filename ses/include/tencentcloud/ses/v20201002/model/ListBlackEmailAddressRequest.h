@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EmailAddressHasBeenSet() const;
 
                     /**
-                     * 获取可以指定任务ID进行查询
-                     * @return TaskID 可以指定任务ID进行查询
+                     * 获取已废弃
+                     * @return TaskID 已废弃
                      * 
                      */
                     std::string GetTaskID() const;
 
                     /**
-                     * 设置可以指定任务ID进行查询
-                     * @param _taskID 可以指定任务ID进行查询
+                     * 设置已废弃
+                     * @param _taskID 已废弃
                      * 
                      */
                     void SetTaskID(const std::string& _taskID);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_emailAddressHasBeenSet;
 
                     /**
-                     * 可以指定任务ID进行查询
+                     * 已废弃
                      */
                     std::string m_taskID;
                     bool m_taskIDHasBeenSet;

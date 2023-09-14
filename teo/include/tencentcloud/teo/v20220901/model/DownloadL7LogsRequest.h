@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取分页查询的限制数目，默认值为 20，最大查询条目为 1000。
-                     * @return Limit 分页查询的限制数目，默认值为 20，最大查询条目为 1000。
+                     * 获取分页查询的限制数目，默认值为 20，最大查询条目为 300。
+                     * @return Limit 分页查询的限制数目，默认值为 20，最大查询条目为 300。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询的限制数目，默认值为 20，最大查询条目为 1000。
-                     * @param _limit 分页查询的限制数目，默认值为 20，最大查询条目为 1000。
+                     * 设置分页查询的限制数目，默认值为 20，最大查询条目为 300。
+                     * @param _limit 分页查询的限制数目，默认值为 20，最大查询条目为 300。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 分页查询的限制数目，默认值为 20，最大查询条目为 1000。
+                     * 分页查询的限制数目，默认值为 20，最大查询条目为 300。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

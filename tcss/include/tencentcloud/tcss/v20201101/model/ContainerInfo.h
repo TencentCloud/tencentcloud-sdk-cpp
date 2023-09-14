@@ -645,6 +645,73 @@ namespace TencentCloud
                      */
                     bool PodMemHasBeenSet() const;
 
+                    /**
+                     * 获取集群名称
+                     * @return ClusterName 集群名称
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置集群名称
+                     * @param _clusterName 集群名称
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
+                    /**
+                     * 获取集群ID
+                     * @return ClusterID 集群ID
+                     * 
+                     */
+                    std::string GetClusterID() const;
+
+                    /**
+                     * 设置集群ID
+                     * @param _clusterID 集群ID
+                     * 
+                     */
+                    void SetClusterID(const std::string& _clusterID);
+
+                    /**
+                     * 判断参数 ClusterID 是否已赋值
+                     * @return ClusterID 是否已赋值
+                     * 
+                     */
+                    bool ClusterIDHasBeenSet() const;
+
+                    /**
+                     * 获取pod uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodUid pod uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPodUid() const;
+
+                    /**
+                     * 设置pod uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _podUid pod uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPodUid(const std::string& _podUid);
+
+                    /**
+                     * 判断参数 PodUid 是否已赋值
+                     * @return PodUid 是否已赋值
+                     * 
+                     */
+                    bool PodUidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -816,6 +883,25 @@ namespace TencentCloud
                      */
                     int64_t m_podMem;
                     bool m_podMemHasBeenSet;
+
+                    /**
+                     * 集群名称
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 集群ID
+                     */
+                    std::string m_clusterID;
+                    bool m_clusterIDHasBeenSet;
+
+                    /**
+                     * pod uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_podUid;
+                    bool m_podUidHasBeenSet;
 
                 };
             }

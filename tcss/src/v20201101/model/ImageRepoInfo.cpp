@@ -54,7 +54,16 @@ ImageRepoInfo::ImageRepoInfo() :
     m_idHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_imageCreateTimeHasBeenSet(false),
-    m_isLatestImageHasBeenSet(false)
+    m_isLatestImageHasBeenSet(false),
+    m_lowLevelVulCntHasBeenSet(false),
+    m_mediumLevelVulCntHasBeenSet(false),
+    m_highLevelVulCntHasBeenSet(false),
+    m_criticalLevelVulCntHasBeenSet(false),
+    m_containerCntHasBeenSet(false),
+    m_componentCntHasBeenSet(false),
+    m_isRunningHasBeenSet(false),
+    m_hasNeedFixVulHasBeenSet(false),
+    m_sensitiveInfoCntHasBeenSet(false)
 {
 }
 
@@ -403,6 +412,96 @@ CoreInternalOutcome ImageRepoInfo::Deserialize(const rapidjson::Value &value)
         m_isLatestImageHasBeenSet = true;
     }
 
+    if (value.HasMember("LowLevelVulCnt") && !value["LowLevelVulCnt"].IsNull())
+    {
+        if (!value["LowLevelVulCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.LowLevelVulCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lowLevelVulCnt = value["LowLevelVulCnt"].GetUint64();
+        m_lowLevelVulCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("MediumLevelVulCnt") && !value["MediumLevelVulCnt"].IsNull())
+    {
+        if (!value["MediumLevelVulCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.MediumLevelVulCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mediumLevelVulCnt = value["MediumLevelVulCnt"].GetUint64();
+        m_mediumLevelVulCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("HighLevelVulCnt") && !value["HighLevelVulCnt"].IsNull())
+    {
+        if (!value["HighLevelVulCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.HighLevelVulCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_highLevelVulCnt = value["HighLevelVulCnt"].GetUint64();
+        m_highLevelVulCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("CriticalLevelVulCnt") && !value["CriticalLevelVulCnt"].IsNull())
+    {
+        if (!value["CriticalLevelVulCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.CriticalLevelVulCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_criticalLevelVulCnt = value["CriticalLevelVulCnt"].GetUint64();
+        m_criticalLevelVulCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerCnt") && !value["ContainerCnt"].IsNull())
+    {
+        if (!value["ContainerCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.ContainerCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerCnt = value["ContainerCnt"].GetUint64();
+        m_containerCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComponentCnt") && !value["ComponentCnt"].IsNull())
+    {
+        if (!value["ComponentCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.ComponentCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_componentCnt = value["ComponentCnt"].GetUint64();
+        m_componentCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsRunning") && !value["IsRunning"].IsNull())
+    {
+        if (!value["IsRunning"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.IsRunning` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isRunning = value["IsRunning"].GetBool();
+        m_isRunningHasBeenSet = true;
+    }
+
+    if (value.HasMember("HasNeedFixVul") && !value["HasNeedFixVul"].IsNull())
+    {
+        if (!value["HasNeedFixVul"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.HasNeedFixVul` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasNeedFixVul = value["HasNeedFixVul"].GetBool();
+        m_hasNeedFixVulHasBeenSet = true;
+    }
+
+    if (value.HasMember("SensitiveInfoCnt") && !value["SensitiveInfoCnt"].IsNull())
+    {
+        if (!value["SensitiveInfoCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.SensitiveInfoCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sensitiveInfoCnt = value["SensitiveInfoCnt"].GetUint64();
+        m_sensitiveInfoCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -680,6 +779,78 @@ void ImageRepoInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "IsLatestImage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isLatestImage, allocator);
+    }
+
+    if (m_lowLevelVulCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LowLevelVulCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lowLevelVulCnt, allocator);
+    }
+
+    if (m_mediumLevelVulCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediumLevelVulCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mediumLevelVulCnt, allocator);
+    }
+
+    if (m_highLevelVulCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighLevelVulCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_highLevelVulCnt, allocator);
+    }
+
+    if (m_criticalLevelVulCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CriticalLevelVulCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_criticalLevelVulCnt, allocator);
+    }
+
+    if (m_containerCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_containerCnt, allocator);
+    }
+
+    if (m_componentCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_componentCnt, allocator);
+    }
+
+    if (m_isRunningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRunning";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isRunning, allocator);
+    }
+
+    if (m_hasNeedFixVulHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasNeedFixVul";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasNeedFixVul, allocator);
+    }
+
+    if (m_sensitiveInfoCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SensitiveInfoCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sensitiveInfoCnt, allocator);
     }
 
 }
@@ -1227,5 +1398,149 @@ void ImageRepoInfo::SetIsLatestImage(const bool& _isLatestImage)
 bool ImageRepoInfo::IsLatestImageHasBeenSet() const
 {
     return m_isLatestImageHasBeenSet;
+}
+
+uint64_t ImageRepoInfo::GetLowLevelVulCnt() const
+{
+    return m_lowLevelVulCnt;
+}
+
+void ImageRepoInfo::SetLowLevelVulCnt(const uint64_t& _lowLevelVulCnt)
+{
+    m_lowLevelVulCnt = _lowLevelVulCnt;
+    m_lowLevelVulCntHasBeenSet = true;
+}
+
+bool ImageRepoInfo::LowLevelVulCntHasBeenSet() const
+{
+    return m_lowLevelVulCntHasBeenSet;
+}
+
+uint64_t ImageRepoInfo::GetMediumLevelVulCnt() const
+{
+    return m_mediumLevelVulCnt;
+}
+
+void ImageRepoInfo::SetMediumLevelVulCnt(const uint64_t& _mediumLevelVulCnt)
+{
+    m_mediumLevelVulCnt = _mediumLevelVulCnt;
+    m_mediumLevelVulCntHasBeenSet = true;
+}
+
+bool ImageRepoInfo::MediumLevelVulCntHasBeenSet() const
+{
+    return m_mediumLevelVulCntHasBeenSet;
+}
+
+uint64_t ImageRepoInfo::GetHighLevelVulCnt() const
+{
+    return m_highLevelVulCnt;
+}
+
+void ImageRepoInfo::SetHighLevelVulCnt(const uint64_t& _highLevelVulCnt)
+{
+    m_highLevelVulCnt = _highLevelVulCnt;
+    m_highLevelVulCntHasBeenSet = true;
+}
+
+bool ImageRepoInfo::HighLevelVulCntHasBeenSet() const
+{
+    return m_highLevelVulCntHasBeenSet;
+}
+
+uint64_t ImageRepoInfo::GetCriticalLevelVulCnt() const
+{
+    return m_criticalLevelVulCnt;
+}
+
+void ImageRepoInfo::SetCriticalLevelVulCnt(const uint64_t& _criticalLevelVulCnt)
+{
+    m_criticalLevelVulCnt = _criticalLevelVulCnt;
+    m_criticalLevelVulCntHasBeenSet = true;
+}
+
+bool ImageRepoInfo::CriticalLevelVulCntHasBeenSet() const
+{
+    return m_criticalLevelVulCntHasBeenSet;
+}
+
+uint64_t ImageRepoInfo::GetContainerCnt() const
+{
+    return m_containerCnt;
+}
+
+void ImageRepoInfo::SetContainerCnt(const uint64_t& _containerCnt)
+{
+    m_containerCnt = _containerCnt;
+    m_containerCntHasBeenSet = true;
+}
+
+bool ImageRepoInfo::ContainerCntHasBeenSet() const
+{
+    return m_containerCntHasBeenSet;
+}
+
+uint64_t ImageRepoInfo::GetComponentCnt() const
+{
+    return m_componentCnt;
+}
+
+void ImageRepoInfo::SetComponentCnt(const uint64_t& _componentCnt)
+{
+    m_componentCnt = _componentCnt;
+    m_componentCntHasBeenSet = true;
+}
+
+bool ImageRepoInfo::ComponentCntHasBeenSet() const
+{
+    return m_componentCntHasBeenSet;
+}
+
+bool ImageRepoInfo::GetIsRunning() const
+{
+    return m_isRunning;
+}
+
+void ImageRepoInfo::SetIsRunning(const bool& _isRunning)
+{
+    m_isRunning = _isRunning;
+    m_isRunningHasBeenSet = true;
+}
+
+bool ImageRepoInfo::IsRunningHasBeenSet() const
+{
+    return m_isRunningHasBeenSet;
+}
+
+bool ImageRepoInfo::GetHasNeedFixVul() const
+{
+    return m_hasNeedFixVul;
+}
+
+void ImageRepoInfo::SetHasNeedFixVul(const bool& _hasNeedFixVul)
+{
+    m_hasNeedFixVul = _hasNeedFixVul;
+    m_hasNeedFixVulHasBeenSet = true;
+}
+
+bool ImageRepoInfo::HasNeedFixVulHasBeenSet() const
+{
+    return m_hasNeedFixVulHasBeenSet;
+}
+
+uint64_t ImageRepoInfo::GetSensitiveInfoCnt() const
+{
+    return m_sensitiveInfoCnt;
+}
+
+void ImageRepoInfo::SetSensitiveInfoCnt(const uint64_t& _sensitiveInfoCnt)
+{
+    m_sensitiveInfoCnt = _sensitiveInfoCnt;
+    m_sensitiveInfoCntHasBeenSet = true;
+}
+
+bool ImageRepoInfo::SensitiveInfoCntHasBeenSet() const
+{
+    return m_sensitiveInfoCntHasBeenSet;
 }
 

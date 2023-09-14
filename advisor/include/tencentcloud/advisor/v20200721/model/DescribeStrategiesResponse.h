@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/advisor/v20200721/model/DescribeStrategie.h>
+#include <tencentcloud/advisor/v20200721/model/Strategies.h>
 
 
 namespace TencentCloud
@@ -51,7 +51,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<DescribeStrategie> GetStrategies() const;
+                    std::vector<Strategies> GetStrategies() const;
 
                     /**
                      * 判断参数 Strategies 是否已赋值
@@ -66,7 +66,7 @@ namespace TencentCloud
                      * 评估项列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<DescribeStrategie> m_strategies;
+                    std::vector<Strategies> m_strategies;
                     bool m_strategiesHasBeenSet;
 
                 };

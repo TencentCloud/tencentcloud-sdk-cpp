@@ -161,7 +161,7 @@ namespace TencentCloud
 <li>PERSONNEL-人事专用章
 </li>
 <li>默认：OFFICIAL</li>
-<ul>
+</ul>
                      * @return SealType 电子印章类型：
 <ul><li>OFFICIAL-公章</li>
 <li>CONTRACT-合同专用章;</li>
@@ -169,7 +169,7 @@ namespace TencentCloud
 <li>PERSONNEL-人事专用章
 </li>
 <li>默认：OFFICIAL</li>
-<ul>
+</ul>
                      * 
                      */
                     std::string GetSealType() const;
@@ -182,7 +182,7 @@ namespace TencentCloud
 <li>PERSONNEL-人事专用章
 </li>
 <li>默认：OFFICIAL</li>
-<ul>
+</ul>
                      * @param _sealType 电子印章类型：
 <ul><li>OFFICIAL-公章</li>
 <li>CONTRACT-合同专用章;</li>
@@ -190,7 +190,7 @@ namespace TencentCloud
 <li>PERSONNEL-人事专用章
 </li>
 <li>默认：OFFICIAL</li>
-<ul>
+</ul>
                      * 
                      */
                     void SetSealType(const std::string& _sealType);
@@ -334,7 +334,7 @@ namespace TencentCloud
 <li>PERSONNEL-人事专用章
 </li>
 <li>默认：OFFICIAL</li>
-<ul>
+</ul>
                      */
                     std::string m_sealType;
                     bool m_sealTypeHasBeenSet;

@@ -1244,6 +1244,49 @@ CkafkaClient::DeleteGroupOutcomeCallable CkafkaClient::DeleteGroupCallable(const
     return task->get_future();
 }
 
+CkafkaClient::DeleteInstancePostOutcome CkafkaClient::DeleteInstancePost(const DeleteInstancePostRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstancePost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstancePostResponse rsp = DeleteInstancePostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstancePostOutcome(rsp);
+        else
+            return DeleteInstancePostOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstancePostOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DeleteInstancePostAsync(const DeleteInstancePostRequest& request, const DeleteInstancePostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInstancePost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DeleteInstancePostOutcomeCallable CkafkaClient::DeleteInstancePostCallable(const DeleteInstancePostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInstancePostOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInstancePost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DeleteInstancePreOutcome CkafkaClient::DeleteInstancePre(const DeleteInstancePreRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteInstancePre");

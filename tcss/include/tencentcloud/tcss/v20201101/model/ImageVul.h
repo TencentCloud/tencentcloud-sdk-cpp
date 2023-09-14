@@ -522,6 +522,31 @@ namespace TencentCloud
                      */
                     bool VersionHasBeenSet() const;
 
+                    /**
+                     * 获取攻击热度 0-3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttackLevel 攻击热度 0-3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAttackLevel() const;
+
+                    /**
+                     * 设置攻击热度 0-3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _attackLevel 攻击热度 0-3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAttackLevel(const int64_t& _attackLevel);
+
+                    /**
+                     * 判断参数 AttackLevel 是否已赋值
+                     * @return AttackLevel 是否已赋值
+                     * 
+                     */
+                    bool AttackLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -656,6 +681,13 @@ namespace TencentCloud
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
+
+                    /**
+                     * 攻击热度 0-3
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_attackLevel;
+                    bool m_attackLevelHasBeenSet;
 
                 };
             }

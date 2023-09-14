@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeStrategiesResponse::Deserialize(const string &payloa
         const rapidjson::Value &tmpValue = rsp["Strategies"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            DescribeStrategie item;
+            Strategies item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -119,7 +119,7 @@ string DescribeStrategiesResponse::ToJsonString() const
 }
 
 
-vector<DescribeStrategie> DescribeStrategiesResponse::GetStrategies() const
+vector<Strategies> DescribeStrategiesResponse::GetStrategies() const
 {
     return m_strategies;
 }

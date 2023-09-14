@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ADVISOR_V20200721_MODEL_DESCRIBESTRATEGIESCONDITION_H_
-#define TENCENTCLOUD_ADVISOR_V20200721_MODEL_DESCRIBESTRATEGIESCONDITION_H_
+#ifndef TENCENTCLOUD_ADVISOR_V20200721_MODEL_CONDITIONS_H_
+#define TENCENTCLOUD_ADVISOR_V20200721_MODEL_CONDITIONS_H_
 
 #include <string>
 #include <vector>
@@ -37,11 +37,11 @@ namespace TencentCloud
                 /**
                 * 评估项警告条件
                 */
-                class DescribeStrategiesCondition : public AbstractModel
+                class Conditions : public AbstractModel
                 {
                 public:
-                    DescribeStrategiesCondition();
-                    ~DescribeStrategiesCondition() = default;
+                    Conditions();
+                    ~Conditions() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
@@ -177,4 +177,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ADVISOR_V20200721_MODEL_DESCRIBESTRATEGIESCONDITION_H_
+#endif // !TENCENTCLOUD_ADVISOR_V20200721_MODEL_CONDITIONS_H_

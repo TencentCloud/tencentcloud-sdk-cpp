@@ -22,7 +22,8 @@ using namespace std;
 
 AiRecognitionTaskObjectResultItem::AiRecognitionTaskObjectResultItem() :
     m_nameHasBeenSet(false),
-    m_segmentSetHasBeenSet(false)
+    m_segmentSetHasBeenSet(false),
+    m_recognitionSegmentSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome AiRecognitionTaskObjectResultItem::Deserialize(const rapidjs
         m_segmentSetHasBeenSet = true;
     }
 
+    if (value.HasMember("RecognitionSegmentSet") && !value["RecognitionSegmentSet"].IsNull())
+    {
+        if (!value["RecognitionSegmentSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskObjectResultItem.RecognitionSegmentSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RecognitionSegmentSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AiRecognitionTaskObjectSegmentItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recognitionSegmentSet.push_back(item);
+        }
+        m_recognitionSegmentSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +106,21 @@ void AiRecognitionTaskObjectResultItem::ToJsonObject(rapidjson::Value &value, ra
 
         int i=0;
         for (auto itr = m_segmentSet.begin(); itr != m_segmentSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_recognitionSegmentSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecognitionSegmentSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recognitionSegmentSet.begin(); itr != m_recognitionSegmentSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -124,5 +160,21 @@ void AiRecognitionTaskObjectResultItem::SetSegmentSet(const vector<AiRecognition
 bool AiRecognitionTaskObjectResultItem::SegmentSetHasBeenSet() const
 {
     return m_segmentSetHasBeenSet;
+}
+
+vector<AiRecognitionTaskObjectSegmentItem> AiRecognitionTaskObjectResultItem::GetRecognitionSegmentSet() const
+{
+    return m_recognitionSegmentSet;
+}
+
+void AiRecognitionTaskObjectResultItem::SetRecognitionSegmentSet(const vector<AiRecognitionTaskObjectSegmentItem>& _recognitionSegmentSet)
+{
+    m_recognitionSegmentSet = _recognitionSegmentSet;
+    m_recognitionSegmentSetHasBeenSet = true;
+}
+
+bool AiRecognitionTaskObjectResultItem::RecognitionSegmentSetHasBeenSet() const
+{
+    return m_recognitionSegmentSetHasBeenSet;
 }
 

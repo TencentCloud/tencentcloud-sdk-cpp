@@ -44,23 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否扫描全部镜像
-                     * @return All 是否扫描全部镜像
-                     * 
+                     * 获取是否扫描全部镜像(废弃)
+                     * @return All 是否扫描全部镜像(废弃)
+                     * @deprecated
                      */
                     bool GetAll() const;
 
                     /**
-                     * 设置是否扫描全部镜像
-                     * @param _all 是否扫描全部镜像
-                     * 
+                     * 设置是否扫描全部镜像(废弃)
+                     * @param _all 是否扫描全部镜像(废弃)
+                     * @deprecated
                      */
                     void SetAll(const bool& _all);
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AllHasBeenSet() const;
 
@@ -127,10 +127,136 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取是否最新镜像
+                     * @return IsLatest 是否最新镜像
+                     * 
+                     */
+                    bool GetIsLatest() const;
+
+                    /**
+                     * 设置是否最新镜像
+                     * @param _isLatest 是否最新镜像
+                     * 
+                     */
+                    void SetIsLatest(const bool& _isLatest);
+
+                    /**
+                     * 判断参数 IsLatest 是否已赋值
+                     * @return IsLatest 是否已赋值
+                     * 
+                     */
+                    bool IsLatestHasBeenSet() const;
+
+                    /**
+                     * 获取扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     * @return ScanScope 扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     * 
+                     */
+                    uint64_t GetScanScope() const;
+
+                    /**
+                     * 设置扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     * @param _scanScope 扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     * 
+                     */
+                    void SetScanScope(const uint64_t& _scanScope);
+
+                    /**
+                     * 判断参数 ScanScope 是否已赋值
+                     * @return ScanScope 是否已赋值
+                     * 
+                     */
+                    bool ScanScopeHasBeenSet() const;
+
+                    /**
+                     * 获取仓库类型
+                     * @return RegistryType 仓库类型
+                     * 
+                     */
+                    std::vector<std::string> GetRegistryType() const;
+
+                    /**
+                     * 设置仓库类型
+                     * @param _registryType 仓库类型
+                     * 
+                     */
+                    void SetRegistryType(const std::vector<std::string>& _registryType);
+
+                    /**
+                     * 判断参数 RegistryType 是否已赋值
+                     * @return RegistryType 是否已赋值
+                     * 
+                     */
+                    bool RegistryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间
+                     * @return Namespace 命名空间
+                     * 
+                     */
+                    std::vector<std::string> GetNamespace() const;
+
+                    /**
+                     * 设置命名空间
+                     * @param _namespace 命名空间
+                     * 
+                     */
+                    void SetNamespace(const std::vector<std::string>& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取是否存在运行中的容器
+                     * @return ContainerRunning 是否存在运行中的容器
+                     * 
+                     */
+                    bool GetContainerRunning() const;
+
+                    /**
+                     * 设置是否存在运行中的容器
+                     * @param _containerRunning 是否存在运行中的容器
+                     * 
+                     */
+                    void SetContainerRunning(const bool& _containerRunning);
+
+                    /**
+                     * 判断参数 ContainerRunning 是否已赋值
+                     * @return ContainerRunning 是否已赋值
+                     * 
+                     */
+                    bool ContainerRunningHasBeenSet() const;
+
+                    /**
+                     * 获取任务超时时长单位s
+                     * @return Timeout 任务超时时长单位s
+                     * 
+                     */
+                    uint64_t GetTimeout() const;
+
+                    /**
+                     * 设置任务超时时长单位s
+                     * @param _timeout 任务超时时长单位s
+                     * 
+                     */
+                    void SetTimeout(const uint64_t& _timeout);
+
+                    /**
+                     * 判断参数 Timeout 是否已赋值
+                     * @return Timeout 是否已赋值
+                     * 
+                     */
+                    bool TimeoutHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否扫描全部镜像
+                     * 是否扫描全部镜像(废弃)
                      */
                     bool m_all;
                     bool m_allHasBeenSet;
@@ -152,6 +278,42 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 是否最新镜像
+                     */
+                    bool m_isLatest;
+                    bool m_isLatestHasBeenSet;
+
+                    /**
+                     * 扫描范围 0全部镜像，1自选镜像，2推荐扫描镜像
+                     */
+                    uint64_t m_scanScope;
+                    bool m_scanScopeHasBeenSet;
+
+                    /**
+                     * 仓库类型
+                     */
+                    std::vector<std::string> m_registryType;
+                    bool m_registryTypeHasBeenSet;
+
+                    /**
+                     * 命名空间
+                     */
+                    std::vector<std::string> m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 是否存在运行中的容器
+                     */
+                    bool m_containerRunning;
+                    bool m_containerRunningHasBeenSet;
+
+                    /**
+                     * 任务超时时长单位s
+                     */
+                    uint64_t m_timeout;
+                    bool m_timeoutHasBeenSet;
 
                 };
             }

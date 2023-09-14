@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/TransitionOpertion.h>
+#include <tencentcloud/vod/v20180717/model/TransitionOperation.h>
 
 
 namespace TencentCloud
@@ -71,23 +72,44 @@ namespace TencentCloud
                     /**
                      * 获取转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
                      * @return Transitions 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
-                     * 
+                     * @deprecated
                      */
                     std::vector<TransitionOpertion> GetTransitions() const;
 
                     /**
                      * 设置转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
                      * @param _transitions 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
-                     * 
+                     * @deprecated
                      */
                     void SetTransitions(const std::vector<TransitionOpertion>& _transitions);
 
                     /**
                      * 判断参数 Transitions 是否已赋值
                      * @return Transitions 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TransitionsHasBeenSet() const;
+
+                    /**
+                     * 获取转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
+                     * @return MediaTransitions 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
+                     * 
+                     */
+                    std::vector<TransitionOperation> GetMediaTransitions() const;
+
+                    /**
+                     * 设置转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
+                     * @param _mediaTransitions 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
+                     * 
+                     */
+                    void SetMediaTransitions(const std::vector<TransitionOperation>& _mediaTransitions);
+
+                    /**
+                     * 判断参数 MediaTransitions 是否已赋值
+                     * @return MediaTransitions 是否已赋值
+                     * 
+                     */
+                    bool MediaTransitionsHasBeenSet() const;
 
                 private:
 
@@ -102,6 +124,12 @@ namespace TencentCloud
                      */
                     std::vector<TransitionOpertion> m_transitions;
                     bool m_transitionsHasBeenSet;
+
+                    /**
+                     * 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
+                     */
+                    std::vector<TransitionOperation> m_mediaTransitions;
+                    bool m_mediaTransitionsHasBeenSet;
 
                 };
             }
