@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取个人用户自动签的开通链接, 短链形式
-                     * @return Url 个人用户自动签的开通链接, 短链形式
+                     * 获取个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。
+                     * @return Url 个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。
                      * 
                      */
                     std::string GetUrl() const;
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 个人用户自动签的开通链接, 短链形式
+                     * 个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

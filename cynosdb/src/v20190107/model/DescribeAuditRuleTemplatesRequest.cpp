@@ -26,7 +26,9 @@ DescribeAuditRuleTemplatesRequest::DescribeAuditRuleTemplatesRequest() :
     m_ruleTemplateIdsHasBeenSet(false),
     m_ruleTemplateNamesHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_alarmLevelHasBeenSet(false),
+    m_alarmPolicyHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,22 @@ string DescribeAuditRuleTemplatesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_alarmLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alarmLevel, allocator);
+    }
+
+    if (m_alarmPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alarmPolicy, allocator);
     }
 
 
@@ -149,6 +167,38 @@ void DescribeAuditRuleTemplatesRequest::SetOffset(const uint64_t& _offset)
 bool DescribeAuditRuleTemplatesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeAuditRuleTemplatesRequest::GetAlarmLevel() const
+{
+    return m_alarmLevel;
+}
+
+void DescribeAuditRuleTemplatesRequest::SetAlarmLevel(const uint64_t& _alarmLevel)
+{
+    m_alarmLevel = _alarmLevel;
+    m_alarmLevelHasBeenSet = true;
+}
+
+bool DescribeAuditRuleTemplatesRequest::AlarmLevelHasBeenSet() const
+{
+    return m_alarmLevelHasBeenSet;
+}
+
+uint64_t DescribeAuditRuleTemplatesRequest::GetAlarmPolicy() const
+{
+    return m_alarmPolicy;
+}
+
+void DescribeAuditRuleTemplatesRequest::SetAlarmPolicy(const uint64_t& _alarmPolicy)
+{
+    m_alarmPolicy = _alarmPolicy;
+    m_alarmPolicyHasBeenSet = true;
+}
+
+bool DescribeAuditRuleTemplatesRequest::AlarmPolicyHasBeenSet() const
+{
+    return m_alarmPolicyHasBeenSet;
 }
 
 

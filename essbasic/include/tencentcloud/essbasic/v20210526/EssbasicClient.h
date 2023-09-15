@@ -61,6 +61,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateRoleRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateRoleResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlRequest.h>
@@ -69,6 +71,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleUsersRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleUsersResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesRequest.h>
@@ -87,6 +91,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelDisableUserAutoSignResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelModifyRoleRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelModifyRoleResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfRequest.h>
@@ -198,6 +204,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateReleaseFlowResponse> ChannelCreateReleaseFlowOutcome;
                 typedef std::future<ChannelCreateReleaseFlowOutcome> ChannelCreateReleaseFlowOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateReleaseFlowRequest&, ChannelCreateReleaseFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateReleaseFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateRoleResponse> ChannelCreateRoleOutcome;
+                typedef std::future<ChannelCreateRoleOutcome> ChannelCreateRoleOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateRoleRequest&, ChannelCreateRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateSealPolicyResponse> ChannelCreateSealPolicyOutcome;
                 typedef std::future<ChannelCreateSealPolicyOutcome> ChannelCreateSealPolicyOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateSealPolicyRequest&, ChannelCreateSealPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateSealPolicyAsyncHandler;
@@ -210,6 +219,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateWebThemeConfigResponse> ChannelCreateWebThemeConfigOutcome;
                 typedef std::future<ChannelCreateWebThemeConfigOutcome> ChannelCreateWebThemeConfigOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateWebThemeConfigRequest&, ChannelCreateWebThemeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateWebThemeConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelDeleteRoleResponse> ChannelDeleteRoleOutcome;
+                typedef std::future<ChannelDeleteRoleOutcome> ChannelDeleteRoleOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelDeleteRoleRequest&, ChannelDeleteRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDeleteRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelDeleteRoleUsersResponse> ChannelDeleteRoleUsersOutcome;
                 typedef std::future<ChannelDeleteRoleUsersOutcome> ChannelDeleteRoleUsersOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelDeleteRoleUsersRequest&, ChannelDeleteRoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDeleteRoleUsersAsyncHandler;
@@ -237,6 +249,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelGetTaskResultApiResponse> ChannelGetTaskResultApiOutcome;
                 typedef std::future<ChannelGetTaskResultApiOutcome> ChannelGetTaskResultApiOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelGetTaskResultApiRequest&, ChannelGetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelGetTaskResultApiAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelModifyRoleResponse> ChannelModifyRoleOutcome;
+                typedef std::future<ChannelModifyRoleOutcome> ChannelModifyRoleOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelModifyRoleRequest&, ChannelModifyRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelModifyRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelUpdateSealStatusResponse> ChannelUpdateSealStatusOutcome;
                 typedef std::future<ChannelUpdateSealStatusOutcome> ChannelUpdateSealStatusOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelUpdateSealStatusRequest&, ChannelUpdateSealStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelUpdateSealStatusAsyncHandler;
@@ -524,6 +539,19 @@ namespace TencentCloud
                 ChannelCreateReleaseFlowOutcomeCallable ChannelCreateReleaseFlowCallable(const Model::ChannelCreateReleaseFlowRequest& request);
 
                 /**
+                 *此接口（ChannelCreateRole）用来创建企业自定义角色。
+
+适用场景1：创建当前企业的自定义角色，并且创建时不进行权限的设置（PermissionGroups 参数不传），角色中的权限内容可通过接口 ChannelModifyRole 完成更新。
+
+适用场景2：创建当前企业的自定义角色，并且创建时进行权限的设置（PermissionGroups 参数要传），权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles 的输出。
+                 * @param req ChannelCreateRoleRequest
+                 * @return ChannelCreateRoleOutcome
+                 */
+                ChannelCreateRoleOutcome ChannelCreateRole(const Model::ChannelCreateRoleRequest &request);
+                void ChannelCreateRoleAsync(const Model::ChannelCreateRoleRequest& request, const ChannelCreateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateRoleOutcomeCallable ChannelCreateRoleCallable(const Model::ChannelCreateRoleRequest& request);
+
+                /**
                  *将指定印章授权给第三方平台子客企业下的某些员工
                  * @param req ChannelCreateSealPolicyRequest
                  * @return ChannelCreateSealPolicyOutcome
@@ -551,13 +579,25 @@ namespace TencentCloud
                 ChannelCreateUserRolesOutcomeCallable ChannelCreateUserRolesCallable(const Model::ChannelCreateUserRolesRequest& request);
 
                 /**
-                 *生成页面主题配置
+                 *用来创建嵌入式页面个性化主题配置（例如是否展示电子签logo、定义主题色等），该接口配合其他所有可嵌入页面接口使用
+创建配置对当前第三方应用全局生效，如果多次调用，会以最后一次的配置为准
                  * @param req ChannelCreateWebThemeConfigRequest
                  * @return ChannelCreateWebThemeConfigOutcome
                  */
                 ChannelCreateWebThemeConfigOutcome ChannelCreateWebThemeConfig(const Model::ChannelCreateWebThemeConfigRequest &request);
                 void ChannelCreateWebThemeConfigAsync(const Model::ChannelCreateWebThemeConfigRequest& request, const ChannelCreateWebThemeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelCreateWebThemeConfigOutcomeCallable ChannelCreateWebThemeConfigCallable(const Model::ChannelCreateWebThemeConfigRequest& request);
+
+                /**
+                 *此接口（ChannelDeleteRole）用来删除企业自定义角色。
+
+注意：系统角色不可删除。
+                 * @param req ChannelDeleteRoleRequest
+                 * @return ChannelDeleteRoleOutcome
+                 */
+                ChannelDeleteRoleOutcome ChannelDeleteRole(const Model::ChannelDeleteRoleRequest &request);
+                void ChannelDeleteRoleAsync(const Model::ChannelDeleteRoleRequest& request, const ChannelDeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelDeleteRoleOutcomeCallable ChannelDeleteRoleCallable(const Model::ChannelDeleteRoleRequest& request);
 
                 /**
                  *通过此接口，删除员工绑定的角色，支持以电子签userId、客户系统userId两种方式调用。
@@ -606,7 +646,7 @@ namespace TencentCloud
                 ChannelDescribeOrganizationSealsOutcomeCallable ChannelDescribeOrganizationSealsCallable(const Model::ChannelDescribeOrganizationSealsRequest& request);
 
                 /**
-                 *查询角色列表，支持根据类型和状态过滤角色列表
+                 *分页查询企业角色列表，法人的角色是系统保留角色，不会返回，按照角色创建时间升序排列
                  * @param req ChannelDescribeRolesRequest
                  * @return ChannelDescribeRolesOutcome
                  */
@@ -641,6 +681,19 @@ namespace TencentCloud
                 ChannelGetTaskResultApiOutcome ChannelGetTaskResultApi(const Model::ChannelGetTaskResultApiRequest &request);
                 void ChannelGetTaskResultApiAsync(const Model::ChannelGetTaskResultApiRequest& request, const ChannelGetTaskResultApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelGetTaskResultApiOutcomeCallable ChannelGetTaskResultApiCallable(const Model::ChannelGetTaskResultApiRequest& request);
+
+                /**
+                 *此接口（ChannelModifyRole）用来更新企业自定义角色。
+
+适用场景1：更新当前企业的自定义角色的名称或描述等其他信息，更新时不进行权限的设置（PermissionGroups 参数不传）。
+
+适用场景2：更新当前企业的自定义角色的权限信息，更新时进行权限的设置（PermissionGroups 参数要传），权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles 的输出。
+                 * @param req ChannelModifyRoleRequest
+                 * @return ChannelModifyRoleOutcome
+                 */
+                ChannelModifyRoleOutcome ChannelModifyRole(const Model::ChannelModifyRoleRequest &request);
+                void ChannelModifyRoleAsync(const Model::ChannelModifyRoleRequest& request, const ChannelModifyRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelModifyRoleOutcomeCallable ChannelModifyRoleCallable(const Model::ChannelModifyRoleRequest& request);
 
                 /**
                  *本接口（ChannelUpdateSealStatus）用于第三方应用平台为子客企业更新印章状态

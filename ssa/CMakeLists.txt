@@ -34,14 +34,15 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/QueryFilter.h
   include/tencentcloud/ssa/v20180608/model/QueryFilterV3.h
   include/tencentcloud/ssa/v20180608/model/SocComplianceItem.h
-  include/tencentcloud/ssa/v20180608/model/SaEventPubResponse.h
-  include/tencentcloud/ssa/v20180608/model/DescribeVulListRequest.h
+  include/tencentcloud/ssa/v20180608/model/SocCheckItem.h
+  include/tencentcloud/ssa/v20180608/model/SaDivulgeScanRuleSetList.h
   include/tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocAlertListRequest.h
   include/tencentcloud/ssa/v20180608/model/DomainInfo.h
   include/tencentcloud/ssa/v20180608/model/DescribeConfigListRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceDetailResponse.h
-  include/tencentcloud/ssa/v20180608/model/SocCheckItem.h
+  include/tencentcloud/ssa/v20180608/model/SaEventPubResponse.h
+  include/tencentcloud/ssa/v20180608/model/SaDivulgeScanRuleMutateRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeComplianceAssetListRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeAssetDetailListRequest.h
   include/tencentcloud/ssa/v20180608/model/AlertDetail.h
@@ -75,10 +76,12 @@ set(ssa_public_header_model
   include/tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocCheckResultListRequest.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsRequest.h
+  include/tencentcloud/ssa/v20180608/model/SaDivulgeScanRuleMutateResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceResponse.h
   include/tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListRequest.h
   include/tencentcloud/ssa/v20180608/model/Filter.h
   include/tencentcloud/ssa/v20180608/model/AlarmInfoRsp.h
+  include/tencentcloud/ssa/v20180608/model/DescribeVulListRequest.h
   include/tencentcloud/ssa/v20180608/model/DataEvent.h
   include/tencentcloud/ssa/v20180608/model/SocCheckItemV1.h
   include/tencentcloud/ssa/v20180608/model/CheckAssetItem.h
@@ -132,14 +135,15 @@ set(ssa_src
   src/v20180608/model/QueryFilter.cpp
   src/v20180608/model/QueryFilterV3.cpp
   src/v20180608/model/SocComplianceItem.cpp
-  src/v20180608/model/SaEventPubResponse.cpp
-  src/v20180608/model/DescribeVulListRequest.cpp
+  src/v20180608/model/SocCheckItem.cpp
+  src/v20180608/model/SaDivulgeScanRuleSetList.cpp
   src/v20180608/model/DescribeLeakDetectionListRequest.cpp
   src/v20180608/model/DescribeSocAlertListRequest.cpp
   src/v20180608/model/DomainInfo.cpp
   src/v20180608/model/DescribeConfigListRequest.cpp
   src/v20180608/model/DescribeComplianceDetailResponse.cpp
-  src/v20180608/model/SocCheckItem.cpp
+  src/v20180608/model/SaEventPubResponse.cpp
+  src/v20180608/model/SaDivulgeScanRuleMutateRequest.cpp
   src/v20180608/model/DescribeComplianceAssetListRequest.cpp
   src/v20180608/model/DescribeAssetDetailListRequest.cpp
   src/v20180608/model/AlertDetail.cpp
@@ -173,10 +177,12 @@ set(ssa_src
   src/v20180608/model/DescribeSafetyEventListResponse.cpp
   src/v20180608/model/DescribeSocCheckResultListRequest.cpp
   src/v20180608/model/DescribeSocAlertDetailsRequest.cpp
+  src/v20180608/model/SaDivulgeScanRuleMutateResponse.cpp
   src/v20180608/model/DescribeSocCspmComplianceResponse.cpp
   src/v20180608/model/DescribeSocCheckItemListRequest.cpp
   src/v20180608/model/Filter.cpp
   src/v20180608/model/AlarmInfoRsp.cpp
+  src/v20180608/model/DescribeVulListRequest.cpp
   src/v20180608/model/DataEvent.cpp
   src/v20180608/model/SocCheckItemV1.cpp
   src/v20180608/model/CheckAssetItem.cpp

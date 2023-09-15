@@ -23,7 +23,9 @@ using namespace std;
 InstanceAuditRule::InstanceAuditRule() :
     m_instanceIdHasBeenSet(false),
     m_auditRuleHasBeenSet(false),
-    m_auditRuleFiltersHasBeenSet(false)
+    m_auditRuleFiltersHasBeenSet(false),
+    m_oldRuleHasBeenSet(false),
+    m_ruleTemplatesHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,36 @@ CoreInternalOutcome InstanceAuditRule::Deserialize(const rapidjson::Value &value
         m_auditRuleFiltersHasBeenSet = true;
     }
 
+    if (value.HasMember("OldRule") && !value["OldRule"].IsNull())
+    {
+        if (!value["OldRule"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAuditRule.OldRule` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldRule = value["OldRule"].GetBool();
+        m_oldRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleTemplates") && !value["RuleTemplates"].IsNull())
+    {
+        if (!value["RuleTemplates"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceAuditRule.RuleTemplates` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RuleTemplates"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RuleTemplateInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleTemplates.push_back(item);
+        }
+        m_ruleTemplatesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -104,6 +136,29 @@ void InstanceAuditRule::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
 
         int i=0;
         for (auto itr = m_auditRuleFilters.begin(); itr != m_auditRuleFilters.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_oldRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_oldRule, allocator);
+    }
+
+    if (m_ruleTemplatesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleTemplates";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleTemplates.begin(); itr != m_ruleTemplates.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -159,5 +214,37 @@ void InstanceAuditRule::SetAuditRuleFilters(const vector<AuditRuleFilters>& _aud
 bool InstanceAuditRule::AuditRuleFiltersHasBeenSet() const
 {
     return m_auditRuleFiltersHasBeenSet;
+}
+
+bool InstanceAuditRule::GetOldRule() const
+{
+    return m_oldRule;
+}
+
+void InstanceAuditRule::SetOldRule(const bool& _oldRule)
+{
+    m_oldRule = _oldRule;
+    m_oldRuleHasBeenSet = true;
+}
+
+bool InstanceAuditRule::OldRuleHasBeenSet() const
+{
+    return m_oldRuleHasBeenSet;
+}
+
+vector<RuleTemplateInfo> InstanceAuditRule::GetRuleTemplates() const
+{
+    return m_ruleTemplates;
+}
+
+void InstanceAuditRule::SetRuleTemplates(const vector<RuleTemplateInfo>& _ruleTemplates)
+{
+    m_ruleTemplates = _ruleTemplates;
+    m_ruleTemplatesHasBeenSet = true;
+}
+
+bool InstanceAuditRule::RuleTemplatesHasBeenSet() const
+{
+    return m_ruleTemplatesHasBeenSet;
 }
 

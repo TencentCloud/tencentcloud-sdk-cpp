@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool AuditRuleFiltersHasBeenSet() const;
 
                     /**
-                     * 获取规则模版ID。同AuditRuleFilters都不填是全审计。
-                     * @return RuleTemplateIds 规则模版ID。同AuditRuleFilters都不填是全审计。
+                     * 获取规则模板ID。同AuditRuleFilters都不填是全审计。
+                     * @return RuleTemplateIds 规则模板ID。同AuditRuleFilters都不填是全审计。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
-                     * 设置规则模版ID。同AuditRuleFilters都不填是全审计。
-                     * @param _ruleTemplateIds 规则模版ID。同AuditRuleFilters都不填是全审计。
+                     * 设置规则模板ID。同AuditRuleFilters都不填是全审计。
+                     * @param _ruleTemplateIds 规则模板ID。同AuditRuleFilters都不填是全审计。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -147,6 +147,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RuleTemplateIdsHasBeenSet() const;
+
+                    /**
+                     * 获取审计类型。true-全审计；默认false-规则审计。
+                     * @return AuditAll 审计类型。true-全审计；默认false-规则审计。
+                     * 
+                     */
+                    bool GetAuditAll() const;
+
+                    /**
+                     * 设置审计类型。true-全审计；默认false-规则审计。
+                     * @param _auditAll 审计类型。true-全审计；默认false-规则审计。
+                     * 
+                     */
+                    void SetAuditAll(const bool& _auditAll);
+
+                    /**
+                     * 判断参数 AuditAll 是否已赋值
+                     * @return AuditAll 是否已赋值
+                     * 
+                     */
+                    bool AuditAllHasBeenSet() const;
 
                 private:
 
@@ -175,10 +196,16 @@ namespace TencentCloud
                     bool m_auditRuleFiltersHasBeenSet;
 
                     /**
-                     * 规则模版ID。同AuditRuleFilters都不填是全审计。
+                     * 规则模板ID。同AuditRuleFilters都不填是全审计。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;
+
+                    /**
+                     * 审计类型。true-全审计；默认false-规则审计。
+                     */
+                    bool m_auditAll;
+                    bool m_auditAllHasBeenSet;
 
                 };
             }

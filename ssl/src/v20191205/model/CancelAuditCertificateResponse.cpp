@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CancelAuditCertificateResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ess::V20201111::Model;
+using namespace TencentCloud::Ssl::V20191205::Model;
 using namespace std;
 
-DescribeIntegrationMainOrganizationUserResponse::DescribeIntegrationMainOrganizationUserResponse() :
-    m_integrationMainOrganizationUserHasBeenSet(false)
+CancelAuditCertificateResponse::CancelAuditCertificateResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeIntegrationMainOrganizationUserResponse::Deserialize(const string &payload)
+CoreInternalOutcome CancelAuditCertificateResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome DescribeIntegrationMainOrganizationUserResponse::Deserialize
     }
 
 
-    if (rsp.HasMember("IntegrationMainOrganizationUser") && !rsp["IntegrationMainOrganizationUser"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["IntegrationMainOrganizationUser"].IsObject())
+        if (!rsp["Result"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `IntegrationMainOrganizationUser` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` IsBool=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_integrationMainOrganizationUser.Deserialize(rsp["IntegrationMainOrganizationUser"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_integrationMainOrganizationUserHasBeenSet = true;
+        m_result = rsp["Result"].GetBool();
+        m_resultHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeIntegrationMainOrganizationUserResponse::ToJsonString() const
+string CancelAuditCertificateResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_integrationMainOrganizationUserHasBeenSet)
+    if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IntegrationMainOrganizationUser";
+        string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_integrationMainOrganizationUser.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_result, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string DescribeIntegrationMainOrganizationUserResponse::ToJsonString() const
 }
 
 
-IntegrationMainOrganizationUser DescribeIntegrationMainOrganizationUserResponse::GetIntegrationMainOrganizationUser() const
+bool CancelAuditCertificateResponse::GetResult() const
 {
-    return m_integrationMainOrganizationUser;
+    return m_result;
 }
 
-bool DescribeIntegrationMainOrganizationUserResponse::IntegrationMainOrganizationUserHasBeenSet() const
+bool CancelAuditCertificateResponse::ResultHasBeenSet() const
 {
-    return m_integrationMainOrganizationUserHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

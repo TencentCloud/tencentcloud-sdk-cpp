@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool CosUriHasBeenSet() const;
 
                     /**
-                     * 获取表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]
-                     * @return DataType 表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]
+                     * 获取表格文件中每列的数据类型，支持的类型包括：Int、Float、String、File、Boolean、Array[Int]、Array[Float]、Array[String]、Array[File]、Array[Boolean]
+                     * @return DataType 表格文件中每列的数据类型，支持的类型包括：Int、Float、String、File、Boolean、Array[Int]、Array[Float]、Array[String]、Array[File]、Array[Boolean]
                      * 
                      */
                     std::vector<std::string> GetDataType() const;
 
                     /**
-                     * 设置表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]
-                     * @param _dataType 表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]
+                     * 设置表格文件中每列的数据类型，支持的类型包括：Int、Float、String、File、Boolean、Array[Int]、Array[Float]、Array[String]、Array[File]、Array[Boolean]
+                     * @param _dataType 表格文件中每列的数据类型，支持的类型包括：Int、Float、String、File、Boolean、Array[Int]、Array[Float]、Array[String]、Array[File]、Array[Boolean]
                      * 
                      */
                     void SetDataType(const std::vector<std::string>& _dataType);
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_cosUriHasBeenSet;
 
                     /**
-                     * 表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]
+                     * 表格文件中每列的数据类型，支持的类型包括：Int、Float、String、File、Boolean、Array[Int]、Array[Float]、Array[String]、Array[File]、Array[Boolean]
                      */
                     std::vector<std::string> m_dataType;
                     bool m_dataTypeHasBeenSet;

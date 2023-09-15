@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool IsBlockedHasBeenSet() const;
 
+                    /**
+                     * 获取资源封堵类型。NORMAL表示未封禁，SECURITY表示安全封禁，USER表示用户封禁，OTHER表示其他封禁，多个原因封禁时用&连接，比如：SECURITY&USER&OTHER。
+                     * @return BlockType 资源封堵类型。NORMAL表示未封禁，SECURITY表示安全封禁，USER表示用户封禁，OTHER表示其他封禁，多个原因封禁时用&连接，比如：SECURITY&USER&OTHER。
+                     * 
+                     */
+                    std::string GetBlockType() const;
+
+                    /**
+                     * 设置资源封堵类型。NORMAL表示未封禁，SECURITY表示安全封禁，USER表示用户封禁，OTHER表示其他封禁，多个原因封禁时用&连接，比如：SECURITY&USER&OTHER。
+                     * @param _blockType 资源封堵类型。NORMAL表示未封禁，SECURITY表示安全封禁，USER表示用户封禁，OTHER表示其他封禁，多个原因封禁时用&连接，比如：SECURITY&USER&OTHER。
+                     * 
+                     */
+                    void SetBlockType(const std::string& _blockType);
+
+                    /**
+                     * 判断参数 BlockType 是否已赋值
+                     * @return BlockType 是否已赋值
+                     * 
+                     */
+                    bool BlockTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     bool m_isBlocked;
                     bool m_isBlockedHasBeenSet;
+
+                    /**
+                     * 资源封堵类型。NORMAL表示未封禁，SECURITY表示安全封禁，USER表示用户封禁，OTHER表示其他封禁，多个原因封禁时用&连接，比如：SECURITY&USER&OTHER。
+                     */
+                    std::string m_blockType;
+                    bool m_blockTypeHasBeenSet;
 
                 };
             }

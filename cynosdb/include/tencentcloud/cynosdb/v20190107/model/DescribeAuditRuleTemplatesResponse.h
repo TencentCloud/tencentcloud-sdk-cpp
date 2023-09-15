@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取规则模版详细信息列表。
+                     * 获取规则模板详细信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Items 规则模版详细信息列表。
+                     * @return Items 规则模板详细信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -83,7 +83,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 规则模版详细信息列表。
+                     * 规则模板详细信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuditRuleTemplateInfo> m_items;

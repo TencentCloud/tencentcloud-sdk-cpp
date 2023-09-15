@@ -2921,6 +2921,49 @@ WafClient::FreshAntiFakeUrlOutcomeCallable WafClient::FreshAntiFakeUrlCallable(c
     return task->get_future();
 }
 
+WafClient::GenerateDealsAndPayNewOutcome WafClient::GenerateDealsAndPayNew(const GenerateDealsAndPayNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateDealsAndPayNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateDealsAndPayNewResponse rsp = GenerateDealsAndPayNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateDealsAndPayNewOutcome(rsp);
+        else
+            return GenerateDealsAndPayNewOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateDealsAndPayNewOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::GenerateDealsAndPayNewAsync(const GenerateDealsAndPayNewRequest& request, const GenerateDealsAndPayNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateDealsAndPayNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::GenerateDealsAndPayNewOutcomeCallable WafClient::GenerateDealsAndPayNewCallable(const GenerateDealsAndPayNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateDealsAndPayNewOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateDealsAndPayNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::GetAttackDownloadRecordsOutcome WafClient::GetAttackDownloadRecords(const GetAttackDownloadRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetAttackDownloadRecords");

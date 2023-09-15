@@ -25,7 +25,12 @@ AuditRuleTemplateInfo::AuditRuleTemplateInfo() :
     m_ruleTemplateNameHasBeenSet(false),
     m_ruleFiltersHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createAtHasBeenSet(false)
+    m_createAtHasBeenSet(false),
+    m_updateAtHasBeenSet(false),
+    m_alarmLevelHasBeenSet(false),
+    m_alarmPolicyHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_affectedInstancesHasBeenSet(false)
 {
 }
 
@@ -94,6 +99,59 @@ CoreInternalOutcome AuditRuleTemplateInfo::Deserialize(const rapidjson::Value &v
         m_createAtHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateAt") && !value["UpdateAt"].IsNull())
+    {
+        if (!value["UpdateAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditRuleTemplateInfo.UpdateAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateAt = string(value["UpdateAt"].GetString());
+        m_updateAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmLevel") && !value["AlarmLevel"].IsNull())
+    {
+        if (!value["AlarmLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditRuleTemplateInfo.AlarmLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmLevel = value["AlarmLevel"].GetUint64();
+        m_alarmLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmPolicy") && !value["AlarmPolicy"].IsNull())
+    {
+        if (!value["AlarmPolicy"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditRuleTemplateInfo.AlarmPolicy` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmPolicy = value["AlarmPolicy"].GetUint64();
+        m_alarmPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditRuleTemplateInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetUint64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AffectedInstances") && !value["AffectedInstances"].IsNull())
+    {
+        if (!value["AffectedInstances"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AuditRuleTemplateInfo.AffectedInstances` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AffectedInstances"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_affectedInstances.push_back((*itr).GetString());
+        }
+        m_affectedInstancesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +204,51 @@ void AuditRuleTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "CreateAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmLevel, allocator);
+    }
+
+    if (m_alarmPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmPolicy, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_affectedInstancesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffectedInstances";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_affectedInstances.begin(); itr != m_affectedInstances.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -229,5 +332,85 @@ void AuditRuleTemplateInfo::SetCreateAt(const string& _createAt)
 bool AuditRuleTemplateInfo::CreateAtHasBeenSet() const
 {
     return m_createAtHasBeenSet;
+}
+
+string AuditRuleTemplateInfo::GetUpdateAt() const
+{
+    return m_updateAt;
+}
+
+void AuditRuleTemplateInfo::SetUpdateAt(const string& _updateAt)
+{
+    m_updateAt = _updateAt;
+    m_updateAtHasBeenSet = true;
+}
+
+bool AuditRuleTemplateInfo::UpdateAtHasBeenSet() const
+{
+    return m_updateAtHasBeenSet;
+}
+
+uint64_t AuditRuleTemplateInfo::GetAlarmLevel() const
+{
+    return m_alarmLevel;
+}
+
+void AuditRuleTemplateInfo::SetAlarmLevel(const uint64_t& _alarmLevel)
+{
+    m_alarmLevel = _alarmLevel;
+    m_alarmLevelHasBeenSet = true;
+}
+
+bool AuditRuleTemplateInfo::AlarmLevelHasBeenSet() const
+{
+    return m_alarmLevelHasBeenSet;
+}
+
+uint64_t AuditRuleTemplateInfo::GetAlarmPolicy() const
+{
+    return m_alarmPolicy;
+}
+
+void AuditRuleTemplateInfo::SetAlarmPolicy(const uint64_t& _alarmPolicy)
+{
+    m_alarmPolicy = _alarmPolicy;
+    m_alarmPolicyHasBeenSet = true;
+}
+
+bool AuditRuleTemplateInfo::AlarmPolicyHasBeenSet() const
+{
+    return m_alarmPolicyHasBeenSet;
+}
+
+uint64_t AuditRuleTemplateInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void AuditRuleTemplateInfo::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool AuditRuleTemplateInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+vector<string> AuditRuleTemplateInfo::GetAffectedInstances() const
+{
+    return m_affectedInstances;
+}
+
+void AuditRuleTemplateInfo::SetAffectedInstances(const vector<string>& _affectedInstances)
+{
+    m_affectedInstances = _affectedInstances;
+    m_affectedInstancesHasBeenSet = true;
+}
+
+bool AuditRuleTemplateInfo::AffectedInstancesHasBeenSet() const
+{
+    return m_affectedInstancesHasBeenSet;
 }
 

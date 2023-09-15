@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取匹配字段
-                     * @return Field 匹配字段
+                     * 获取匹配条件，returncode（响应码）、keywords（关键字）、information（敏感信息）
+                     * @return Field 匹配条件，returncode（响应码）、keywords（关键字）、information（敏感信息）
                      * 
                      */
                     std::string GetField() const;
 
                     /**
-                     * 设置匹配字段
-                     * @param _field 匹配字段
+                     * 设置匹配条件，returncode（响应码）、keywords（关键字）、information（敏感信息）
+                     * @param _field 匹配条件，returncode（响应码）、keywords（关键字）、information（敏感信息）
                      * 
                      */
                     void SetField(const std::string& _field);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FieldHasBeenSet() const;
 
                     /**
-                     * 获取逻辑符号
-                     * @return CompareFunc 逻辑符号
+                     * 获取逻辑符号，固定取值为contains
+                     * @return CompareFunc 逻辑符号，固定取值为contains
                      * 
                      */
                     std::string GetCompareFunc() const;
 
                     /**
-                     * 设置逻辑符号
-                     * @param _compareFunc 逻辑符号
+                     * 设置逻辑符号，固定取值为contains
+                     * @param _compareFunc 逻辑符号，固定取值为contains
                      * 
                      */
                     void SetCompareFunc(const std::string& _compareFunc);
@@ -89,15 +89,39 @@ namespace TencentCloud
                     bool CompareFuncHasBeenSet() const;
 
                     /**
-                     * 获取匹配内容
-                     * @return Content 匹配内容
+                     * 获取匹配内容。
+以下三个对应Field为information时可取的匹配内容：
+idcard（身份证）、phone（手机号）、bankcard（银行卡）。
+以下为对应Field为returncode时可取的匹配内容：
+400（状态码400）、403（状态码403）、404（状态码404）、4xx（其它4xx状态码）、500（状态码500）、501（状态码501）、502（状态码502）、504（状态码504）、5xx（其它5xx状态码）。
+当对应Field为keywords时由用户自己输入匹配内容。
+
+                     * @return Content 匹配内容。
+以下三个对应Field为information时可取的匹配内容：
+idcard（身份证）、phone（手机号）、bankcard（银行卡）。
+以下为对应Field为returncode时可取的匹配内容：
+400（状态码400）、403（状态码403）、404（状态码404）、4xx（其它4xx状态码）、500（状态码500）、501（状态码501）、502（状态码502）、504（状态码504）、5xx（其它5xx状态码）。
+当对应Field为keywords时由用户自己输入匹配内容。
+
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置匹配内容
-                     * @param _content 匹配内容
+                     * 设置匹配内容。
+以下三个对应Field为information时可取的匹配内容：
+idcard（身份证）、phone（手机号）、bankcard（银行卡）。
+以下为对应Field为returncode时可取的匹配内容：
+400（状态码400）、403（状态码403）、404（状态码404）、4xx（其它4xx状态码）、500（状态码500）、501（状态码501）、502（状态码502）、504（状态码504）、5xx（其它5xx状态码）。
+当对应Field为keywords时由用户自己输入匹配内容。
+
+                     * @param _content 匹配内容。
+以下三个对应Field为information时可取的匹配内容：
+idcard（身份证）、phone（手机号）、bankcard（银行卡）。
+以下为对应Field为returncode时可取的匹配内容：
+400（状态码400）、403（状态码403）、404（状态码404）、4xx（其它4xx状态码）、500（状态码500）、501（状态码501）、502（状态码502）、504（状态码504）、5xx（其它5xx状态码）。
+当对应Field为keywords时由用户自己输入匹配内容。
+
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -112,19 +136,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 匹配字段
+                     * 匹配条件，returncode（响应码）、keywords（关键字）、information（敏感信息）
                      */
                     std::string m_field;
                     bool m_fieldHasBeenSet;
 
                     /**
-                     * 逻辑符号
+                     * 逻辑符号，固定取值为contains
                      */
                     std::string m_compareFunc;
                     bool m_compareFuncHasBeenSet;
 
                     /**
-                     * 匹配内容
+                     * 匹配内容。
+以下三个对应Field为information时可取的匹配内容：
+idcard（身份证）、phone（手机号）、bankcard（银行卡）。
+以下为对应Field为returncode时可取的匹配内容：
+400（状态码400）、403（状态码403）、404（状态码404）、4xx（其它4xx状态码）、500（状态码500）、501（状态码501）、502（状态码502）、504（状态码504）、5xx（其它5xx状态码）。
+当对应Field为keywords时由用户自己输入匹配内容。
+
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

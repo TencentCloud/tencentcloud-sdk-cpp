@@ -490,6 +490,27 @@ namespace TencentCloud
                      */
                     bool DockerVersionHasBeenSet() const;
 
+                    /**
+                     * 获取镜像是否已共享。
+                     * @return BlueprintShared 镜像是否已共享。
+                     * 
+                     */
+                    bool GetBlueprintShared() const;
+
+                    /**
+                     * 设置镜像是否已共享。
+                     * @param _blueprintShared 镜像是否已共享。
+                     * 
+                     */
+                    void SetBlueprintShared(const bool& _blueprintShared);
+
+                    /**
+                     * 判断参数 BlueprintShared 是否已赋值
+                     * @return BlueprintShared 是否已赋值
+                     * 
+                     */
+                    bool BlueprintSharedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -617,6 +638,12 @@ namespace TencentCloud
                      */
                     std::string m_dockerVersion;
                     bool m_dockerVersionHasBeenSet;
+
+                    /**
+                     * 镜像是否已共享。
+                     */
+                    bool m_blueprintShared;
+                    bool m_blueprintSharedHasBeenSet;
 
                 };
             }

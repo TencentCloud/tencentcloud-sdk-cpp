@@ -40,7 +40,8 @@ AuditLog::AuditLog() :
     m_ioWaitTimeHasBeenSet(false),
     m_lockWaitTimeHasBeenSet(false),
     m_trxLivingTimeHasBeenSet(false),
-    m_nsTimeHasBeenSet(false)
+    m_nsTimeHasBeenSet(false),
+    m_templateInfoHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,26 @@ CoreInternalOutcome AuditLog::Deserialize(const rapidjson::Value &value)
         m_nsTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateInfo") && !value["TemplateInfo"].IsNull())
+    {
+        if (!value["TemplateInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AuditLog.TemplateInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TemplateInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LogRuleTemplateInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_templateInfo.push_back(item);
+        }
+        m_templateInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +435,21 @@ void AuditLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "NsTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nsTime, allocator);
+    }
+
+    if (m_templateInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_templateInfo.begin(); itr != m_templateInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -737,5 +773,21 @@ void AuditLog::SetNsTime(const int64_t& _nsTime)
 bool AuditLog::NsTimeHasBeenSet() const
 {
     return m_nsTimeHasBeenSet;
+}
+
+vector<LogRuleTemplateInfo> AuditLog::GetTemplateInfo() const
+{
+    return m_templateInfo;
+}
+
+void AuditLog::SetTemplateInfo(const vector<LogRuleTemplateInfo>& _templateInfo)
+{
+    m_templateInfo = _templateInfo;
+    m_templateInfoHasBeenSet = true;
+}
+
+bool AuditLog::TemplateInfoHasBeenSet() const
+{
+    return m_templateInfoHasBeenSet;
 }
 

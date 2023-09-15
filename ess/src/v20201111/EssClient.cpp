@@ -1975,49 +1975,6 @@ EssClient::DescribeIntegrationEmployeesOutcomeCallable EssClient::DescribeIntegr
     return task->get_future();
 }
 
-EssClient::DescribeIntegrationMainOrganizationUserOutcome EssClient::DescribeIntegrationMainOrganizationUser(const DescribeIntegrationMainOrganizationUserRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeIntegrationMainOrganizationUser");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeIntegrationMainOrganizationUserResponse rsp = DescribeIntegrationMainOrganizationUserResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeIntegrationMainOrganizationUserOutcome(rsp);
-        else
-            return DescribeIntegrationMainOrganizationUserOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeIntegrationMainOrganizationUserOutcome(outcome.GetError());
-    }
-}
-
-void EssClient::DescribeIntegrationMainOrganizationUserAsync(const DescribeIntegrationMainOrganizationUserRequest& request, const DescribeIntegrationMainOrganizationUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIntegrationMainOrganizationUser(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-EssClient::DescribeIntegrationMainOrganizationUserOutcomeCallable EssClient::DescribeIntegrationMainOrganizationUserCallable(const DescribeIntegrationMainOrganizationUserRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeIntegrationMainOrganizationUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIntegrationMainOrganizationUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 EssClient::DescribeIntegrationRolesOutcome EssClient::DescribeIntegrationRoles(const DescribeIntegrationRolesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIntegrationRoles");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则模版ID。
-                     * @return RuleTemplateIds 规则模版ID。
+                     * 获取规则模板ID。
+                     * @return RuleTemplateIds 规则模板ID。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
-                     * 设置规则模版ID。
-                     * @param _ruleTemplateIds 规则模版ID。
+                     * 设置规则模板ID。
+                     * @param _ruleTemplateIds 规则模板ID。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RuleTemplateIdsHasBeenSet() const;
 
                     /**
-                     * 获取规则模版名称
-                     * @return RuleTemplateNames 规则模版名称
+                     * 获取规则模板名称
+                     * @return RuleTemplateNames 规则模板名称
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateNames() const;
 
                     /**
-                     * 设置规则模版名称
-                     * @param _ruleTemplateNames 规则模版名称
+                     * 设置规则模板名称
+                     * @param _ruleTemplateNames 规则模板名称
                      * 
                      */
                     void SetRuleTemplateNames(const std::vector<std::string>& _ruleTemplateNames);
@@ -126,16 +126,58 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取告警等级。1-低风险，2-中风险，3-高风险。
+                     * @return AlarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
+                     * 
+                     */
+                    uint64_t GetAlarmLevel() const;
+
+                    /**
+                     * 设置告警等级。1-低风险，2-中风险，3-高风险。
+                     * @param _alarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
+                     * 
+                     */
+                    void SetAlarmLevel(const uint64_t& _alarmLevel);
+
+                    /**
+                     * 判断参数 AlarmLevel 是否已赋值
+                     * @return AlarmLevel 是否已赋值
+                     * 
+                     */
+                    bool AlarmLevelHasBeenSet() const;
+
+                    /**
+                     * 获取告警策略。0-不告警，1-告警。
+                     * @return AlarmPolicy 告警策略。0-不告警，1-告警。
+                     * 
+                     */
+                    uint64_t GetAlarmPolicy() const;
+
+                    /**
+                     * 设置告警策略。0-不告警，1-告警。
+                     * @param _alarmPolicy 告警策略。0-不告警，1-告警。
+                     * 
+                     */
+                    void SetAlarmPolicy(const uint64_t& _alarmPolicy);
+
+                    /**
+                     * 判断参数 AlarmPolicy 是否已赋值
+                     * @return AlarmPolicy 是否已赋值
+                     * 
+                     */
+                    bool AlarmPolicyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规则模版ID。
+                     * 规则模板ID。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;
 
                     /**
-                     * 规则模版名称
+                     * 规则模板名称
                      */
                     std::vector<std::string> m_ruleTemplateNames;
                     bool m_ruleTemplateNamesHasBeenSet;
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 告警等级。1-低风险，2-中风险，3-高风险。
+                     */
+                    uint64_t m_alarmLevel;
+                    bool m_alarmLevelHasBeenSet;
+
+                    /**
+                     * 告警策略。0-不告警，1-告警。
+                     */
+                    uint64_t m_alarmPolicy;
+                    bool m_alarmPolicyHasBeenSet;
 
                 };
             }

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ssl/v20191205/model/ApplyCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/ApplyCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CancelAuditCertificateRequest.h>
+#include <tencentcloud/ssl/v20191205/model/CancelAuditCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CancelCertificateOrderRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CancelCertificateOrderResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CheckCertificateChainRequest.h>
@@ -109,6 +111,8 @@
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateAliasResponse.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateProjectRequest.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateProjectResponse.h>
+#include <tencentcloud/ssl/v20191205/model/ModifyCertificateResubmitRequest.h>
+#include <tencentcloud/ssl/v20191205/model/ModifyCertificateResubmitResponse.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificatesExpiringNotificationSwitchRequest.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificatesExpiringNotificationSwitchResponse.h>
 #include <tencentcloud/ssl/v20191205/model/ReplaceCertificateRequest.h>
@@ -150,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyCertificateResponse> ApplyCertificateOutcome;
                 typedef std::future<ApplyCertificateOutcome> ApplyCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::ApplyCertificateRequest&, ApplyCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelAuditCertificateResponse> CancelAuditCertificateOutcome;
+                typedef std::future<CancelAuditCertificateOutcome> CancelAuditCertificateOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::CancelAuditCertificateRequest&, CancelAuditCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelAuditCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelCertificateOrderResponse> CancelCertificateOrderOutcome;
                 typedef std::future<CancelCertificateOrderOutcome> CancelCertificateOrderOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CancelCertificateOrderRequest&, CancelCertificateOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelCertificateOrderAsyncHandler;
@@ -276,6 +283,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCertificateProjectResponse> ModifyCertificateProjectOutcome;
                 typedef std::future<ModifyCertificateProjectOutcome> ModifyCertificateProjectOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::ModifyCertificateProjectRequest&, ModifyCertificateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCertificateProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCertificateResubmitResponse> ModifyCertificateResubmitOutcome;
+                typedef std::future<ModifyCertificateResubmitOutcome> ModifyCertificateResubmitOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::ModifyCertificateResubmitRequest&, ModifyCertificateResubmitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCertificateResubmitAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCertificatesExpiringNotificationSwitchResponse> ModifyCertificatesExpiringNotificationSwitchOutcome;
                 typedef std::future<ModifyCertificatesExpiringNotificationSwitchOutcome> ModifyCertificatesExpiringNotificationSwitchOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::ModifyCertificatesExpiringNotificationSwitchRequest&, ModifyCertificatesExpiringNotificationSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCertificatesExpiringNotificationSwitchAsyncHandler;
@@ -323,6 +333,15 @@ namespace TencentCloud
                 ApplyCertificateOutcome ApplyCertificate(const Model::ApplyCertificateRequest &request);
                 void ApplyCertificateAsync(const Model::ApplyCertificateRequest& request, const ApplyCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyCertificateOutcomeCallable ApplyCertificateCallable(const Model::ApplyCertificateRequest& request);
+
+                /**
+                 *取消证书审核
+                 * @param req CancelAuditCertificateRequest
+                 * @return CancelAuditCertificateOutcome
+                 */
+                CancelAuditCertificateOutcome CancelAuditCertificate(const Model::CancelAuditCertificateRequest &request);
+                void CancelAuditCertificateAsync(const Model::CancelAuditCertificateRequest& request, const CancelAuditCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelAuditCertificateOutcomeCallable CancelAuditCertificateCallable(const Model::CancelAuditCertificateRequest& request);
 
                 /**
                  *取消证书订单。
@@ -701,6 +720,15 @@ namespace TencentCloud
                 ModifyCertificateProjectOutcome ModifyCertificateProject(const Model::ModifyCertificateProjectRequest &request);
                 void ModifyCertificateProjectAsync(const Model::ModifyCertificateProjectRequest& request, const ModifyCertificateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCertificateProjectOutcomeCallable ModifyCertificateProjectCallable(const Model::ModifyCertificateProjectRequest& request);
+
+                /**
+                 *针对审核失败或审核取消的付费证书，重新发起审核
+                 * @param req ModifyCertificateResubmitRequest
+                 * @return ModifyCertificateResubmitOutcome
+                 */
+                ModifyCertificateResubmitOutcome ModifyCertificateResubmit(const Model::ModifyCertificateResubmitRequest &request);
+                void ModifyCertificateResubmitAsync(const Model::ModifyCertificateResubmitRequest& request, const ModifyCertificateResubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCertificateResubmitOutcomeCallable ModifyCertificateResubmitCallable(const Model::ModifyCertificateResubmitRequest& request);
 
                 /**
                  *修改忽略证书到期通知。打开或关闭证书到期通知。

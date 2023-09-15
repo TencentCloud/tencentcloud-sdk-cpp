@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/LogRuleTemplateInfo.h>
 
 
 namespace TencentCloud
@@ -490,6 +491,31 @@ namespace TencentCloud
                      */
                     bool NsTimeHasBeenSet() const;
 
+                    /**
+                     * 获取日志命中规则模板的基本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TemplateInfo 日志命中规则模板的基本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<LogRuleTemplateInfo> GetTemplateInfo() const;
+
+                    /**
+                     * 设置日志命中规则模板的基本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _templateInfo 日志命中规则模板的基本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTemplateInfo(const std::vector<LogRuleTemplateInfo>& _templateInfo);
+
+                    /**
+                     * 判断参数 TemplateInfo 是否已赋值
+                     * @return TemplateInfo 是否已赋值
+                     * 
+                     */
+                    bool TemplateInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -617,6 +643,13 @@ namespace TencentCloud
                      */
                     int64_t m_nsTime;
                     bool m_nsTimeHasBeenSet;
+
+                    /**
+                     * 日志命中规则模板的基本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LogRuleTemplateInfo> m_templateInfo;
+                    bool m_templateInfoHasBeenSet;
 
                 };
             }

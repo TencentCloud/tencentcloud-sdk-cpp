@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 审计规则模版的详情
+                * 审计规则模板的详情
                 */
                 class AuditRuleTemplateInfo : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则模版ID。
-                     * @return RuleTemplateId 规则模版ID。
+                     * 获取规则模板ID。
+                     * @return RuleTemplateId 规则模板ID。
                      * 
                      */
                     std::string GetRuleTemplateId() const;
 
                     /**
-                     * 设置规则模版ID。
-                     * @param _ruleTemplateId 规则模版ID。
+                     * 设置规则模板ID。
+                     * @param _ruleTemplateId 规则模板ID。
                      * 
                      */
                     void SetRuleTemplateId(const std::string& _ruleTemplateId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool RuleTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取规则模版名称。
-                     * @return RuleTemplateName 规则模版名称。
+                     * 获取规则模板名称。
+                     * @return RuleTemplateName 规则模板名称。
                      * 
                      */
                     std::string GetRuleTemplateName() const;
 
                     /**
-                     * 设置规则模版名称。
-                     * @param _ruleTemplateName 规则模版名称。
+                     * 设置规则模板名称。
+                     * @param _ruleTemplateName 规则模板名称。
                      * 
                      */
                     void SetRuleTemplateName(const std::string& _ruleTemplateName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool RuleTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取规则模版的过滤条件
-                     * @return RuleFilters 规则模版的过滤条件
+                     * 获取规则模板的过滤条件
+                     * @return RuleFilters 规则模板的过滤条件
                      * 
                      */
                     std::vector<RuleFilters> GetRuleFilters() const;
 
                     /**
-                     * 设置规则模版的过滤条件
-                     * @param _ruleFilters 规则模版的过滤条件
+                     * 设置规则模板的过滤条件
+                     * @param _ruleFilters 规则模板的过滤条件
                      * 
                      */
                     void SetRuleFilters(const std::vector<RuleFilters>& _ruleFilters);
@@ -111,18 +111,18 @@ namespace TencentCloud
                     bool RuleFiltersHasBeenSet() const;
 
                     /**
-                     * 获取规则模版描述。
+                     * 获取规则模板描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 规则模版描述。
+                     * @return Description 规则模板描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置规则模版描述。
+                     * 设置规则模板描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 规则模版描述。
+                     * @param _description 规则模板描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取规则模版创建时间。
-                     * @return CreateAt 规则模版创建时间。
+                     * 获取规则模板创建时间。
+                     * @return CreateAt 规则模板创建时间。
                      * 
                      */
                     std::string GetCreateAt() const;
 
                     /**
-                     * 设置规则模版创建时间。
-                     * @param _createAt 规则模版创建时间。
+                     * 设置规则模板创建时间。
+                     * @param _createAt 规则模板创建时间。
                      * 
                      */
                     void SetCreateAt(const std::string& _createAt);
@@ -156,38 +156,198 @@ namespace TencentCloud
                      */
                     bool CreateAtHasBeenSet() const;
 
+                    /**
+                     * 获取规则模板修改时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateAt 规则模板修改时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUpdateAt() const;
+
+                    /**
+                     * 设置规则模板修改时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updateAt 规则模板修改时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdateAt(const std::string& _updateAt);
+
+                    /**
+                     * 判断参数 UpdateAt 是否已赋值
+                     * @return UpdateAt 是否已赋值
+                     * 
+                     */
+                    bool UpdateAtHasBeenSet() const;
+
+                    /**
+                     * 获取告警等级。1-低风险，2-中风险，3-高风险。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAlarmLevel() const;
+
+                    /**
+                     * 设置告警等级。1-低风险，2-中风险，3-高风险。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmLevel(const uint64_t& _alarmLevel);
+
+                    /**
+                     * 判断参数 AlarmLevel 是否已赋值
+                     * @return AlarmLevel 是否已赋值
+                     * 
+                     */
+                    bool AlarmLevelHasBeenSet() const;
+
+                    /**
+                     * 获取告警策略。0-不告警，1-告警。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmPolicy 告警策略。0-不告警，1-告警。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAlarmPolicy() const;
+
+                    /**
+                     * 设置告警策略。0-不告警，1-告警。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmPolicy 告警策略。0-不告警，1-告警。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmPolicy(const uint64_t& _alarmPolicy);
+
+                    /**
+                     * 判断参数 AlarmPolicy 是否已赋值
+                     * @return AlarmPolicy 是否已赋值
+                     * 
+                     */
+                    bool AlarmPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取模版状态。0-无任务 ，1-修改中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 模版状态。0-无任务 ，1-修改中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置模版状态。0-无任务 ，1-修改中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 模版状态。0-无任务 ，1-修改中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取规则模板应用在哪些在实例。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AffectedInstances 规则模板应用在哪些在实例。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetAffectedInstances() const;
+
+                    /**
+                     * 设置规则模板应用在哪些在实例。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _affectedInstances 规则模板应用在哪些在实例。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAffectedInstances(const std::vector<std::string>& _affectedInstances);
+
+                    /**
+                     * 判断参数 AffectedInstances 是否已赋值
+                     * @return AffectedInstances 是否已赋值
+                     * 
+                     */
+                    bool AffectedInstancesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规则模版ID。
+                     * 规则模板ID。
                      */
                     std::string m_ruleTemplateId;
                     bool m_ruleTemplateIdHasBeenSet;
 
                     /**
-                     * 规则模版名称。
+                     * 规则模板名称。
                      */
                     std::string m_ruleTemplateName;
                     bool m_ruleTemplateNameHasBeenSet;
 
                     /**
-                     * 规则模版的过滤条件
+                     * 规则模板的过滤条件
                      */
                     std::vector<RuleFilters> m_ruleFilters;
                     bool m_ruleFiltersHasBeenSet;
 
                     /**
-                     * 规则模版描述。
+                     * 规则模板描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 规则模版创建时间。
+                     * 规则模板创建时间。
                      */
                     std::string m_createAt;
                     bool m_createAtHasBeenSet;
+
+                    /**
+                     * 规则模板修改时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateAt;
+                    bool m_updateAtHasBeenSet;
+
+                    /**
+                     * 告警等级。1-低风险，2-中风险，3-高风险。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_alarmLevel;
+                    bool m_alarmLevelHasBeenSet;
+
+                    /**
+                     * 告警策略。0-不告警，1-告警。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_alarmPolicy;
+                    bool m_alarmPolicyHasBeenSet;
+
+                    /**
+                     * 模版状态。0-无任务 ，1-修改中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 规则模板应用在哪些在实例。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_affectedInstances;
+                    bool m_affectedInstancesHasBeenSet;
 
                 };
             }

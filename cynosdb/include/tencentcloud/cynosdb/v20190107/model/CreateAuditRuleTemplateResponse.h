@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生成的规则模版ID。
+                     * 获取生成的规则模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleTemplateId 生成的规则模版ID。
+                     * @return RuleTemplateId 生成的规则模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 生成的规则模版ID。
+                     * 生成的规则模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleTemplateId;

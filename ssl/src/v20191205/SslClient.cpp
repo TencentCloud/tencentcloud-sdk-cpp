@@ -83,6 +83,49 @@ SslClient::ApplyCertificateOutcomeCallable SslClient::ApplyCertificateCallable(c
     return task->get_future();
 }
 
+SslClient::CancelAuditCertificateOutcome SslClient::CancelAuditCertificate(const CancelAuditCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelAuditCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelAuditCertificateResponse rsp = CancelAuditCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelAuditCertificateOutcome(rsp);
+        else
+            return CancelAuditCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelAuditCertificateOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::CancelAuditCertificateAsync(const CancelAuditCertificateRequest& request, const CancelAuditCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelAuditCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::CancelAuditCertificateOutcomeCallable SslClient::CancelAuditCertificateCallable(const CancelAuditCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelAuditCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelAuditCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::CancelCertificateOrderOutcome SslClient::CancelCertificateOrder(const CancelCertificateOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelCertificateOrder");
@@ -1882,6 +1925,49 @@ SslClient::ModifyCertificateProjectOutcomeCallable SslClient::ModifyCertificateP
         [this, request]()
         {
             return this->ModifyCertificateProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SslClient::ModifyCertificateResubmitOutcome SslClient::ModifyCertificateResubmit(const ModifyCertificateResubmitRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCertificateResubmit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCertificateResubmitResponse rsp = ModifyCertificateResubmitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCertificateResubmitOutcome(rsp);
+        else
+            return ModifyCertificateResubmitOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCertificateResubmitOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::ModifyCertificateResubmitAsync(const ModifyCertificateResubmitRequest& request, const ModifyCertificateResubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCertificateResubmit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::ModifyCertificateResubmitOutcomeCallable SslClient::ModifyCertificateResubmitCallable(const ModifyCertificateResubmitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCertificateResubmitOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCertificateResubmit(request);
         }
     );
 

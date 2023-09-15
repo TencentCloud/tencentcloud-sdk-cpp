@@ -61,6 +61,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeHostDdosInstanceListResponse.h
   include/tencentcloud/ssl/v20191205/model/UpdateRecordDetails.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateDetailResponse.h
+  include/tencentcloud/ssl/v20191205/model/ModifyCertificateResubmitRequest.h
   include/tencentcloud/ssl/v20191205/model/DownloadCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostTkeInstanceListResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateBindResourceTaskResultRequest.h
@@ -145,7 +146,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/TCBAccessService.h
   include/tencentcloud/ssl/v20191205/model/DdosInstanceList.h
   include/tencentcloud/ssl/v20191205/model/SubmittedData.h
-  include/tencentcloud/ssl/v20191205/model/DescribeCompaniesRequest.h
+  include/tencentcloud/ssl/v20191205/model/DeployCertificateRecordRollbackResponse.h
   include/tencentcloud/ssl/v20191205/model/TCBInstanceList.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostCosInstanceListRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostCdnInstanceListResponse.h
@@ -161,6 +162,8 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeHostTeoInstanceListResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostWafInstanceListRequest.h
   include/tencentcloud/ssl/v20191205/model/UploadRevokeLetterResponse.h
+  include/tencentcloud/ssl/v20191205/model/CancelAuditCertificateRequest.h
+  include/tencentcloud/ssl/v20191205/model/ModifyCertificateResubmitResponse.h
   include/tencentcloud/ssl/v20191205/model/UpdateCertificateInstanceResponse.h
   include/tencentcloud/ssl/v20191205/model/UploadCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/OperationLog.h
@@ -184,8 +187,9 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribePackagesRequest.h
   include/tencentcloud/ssl/v20191205/model/TCBHostService.h
   include/tencentcloud/ssl/v20191205/model/CheckCertificateChainRequest.h
-  include/tencentcloud/ssl/v20191205/model/DeployCertificateRecordRollbackResponse.h
+  include/tencentcloud/ssl/v20191205/model/DescribeCompaniesRequest.h
   include/tencentcloud/ssl/v20191205/model/ManagerStatusInfo.h
+  include/tencentcloud/ssl/v20191205/model/CancelAuditCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/DeployRecordInfo.h
   include/tencentcloud/ssl/v20191205/model/DescribePackagesResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeManagersRequest.h
@@ -238,6 +242,7 @@ set(ssl_src
   src/v20191205/model/DescribeHostDdosInstanceListResponse.cpp
   src/v20191205/model/UpdateRecordDetails.cpp
   src/v20191205/model/DescribeCertificateDetailResponse.cpp
+  src/v20191205/model/ModifyCertificateResubmitRequest.cpp
   src/v20191205/model/DownloadCertificateRequest.cpp
   src/v20191205/model/DescribeHostTkeInstanceListResponse.cpp
   src/v20191205/model/DescribeCertificateBindResourceTaskResultRequest.cpp
@@ -322,7 +327,7 @@ set(ssl_src
   src/v20191205/model/TCBAccessService.cpp
   src/v20191205/model/DdosInstanceList.cpp
   src/v20191205/model/SubmittedData.cpp
-  src/v20191205/model/DescribeCompaniesRequest.cpp
+  src/v20191205/model/DeployCertificateRecordRollbackResponse.cpp
   src/v20191205/model/TCBInstanceList.cpp
   src/v20191205/model/DescribeHostCosInstanceListRequest.cpp
   src/v20191205/model/DescribeHostCdnInstanceListResponse.cpp
@@ -338,6 +343,8 @@ set(ssl_src
   src/v20191205/model/DescribeHostTeoInstanceListResponse.cpp
   src/v20191205/model/DescribeHostWafInstanceListRequest.cpp
   src/v20191205/model/UploadRevokeLetterResponse.cpp
+  src/v20191205/model/CancelAuditCertificateRequest.cpp
+  src/v20191205/model/ModifyCertificateResubmitResponse.cpp
   src/v20191205/model/UpdateCertificateInstanceResponse.cpp
   src/v20191205/model/UploadCertificateRequest.cpp
   src/v20191205/model/OperationLog.cpp
@@ -361,8 +368,9 @@ set(ssl_src
   src/v20191205/model/DescribePackagesRequest.cpp
   src/v20191205/model/TCBHostService.cpp
   src/v20191205/model/CheckCertificateChainRequest.cpp
-  src/v20191205/model/DeployCertificateRecordRollbackResponse.cpp
+  src/v20191205/model/DescribeCompaniesRequest.cpp
   src/v20191205/model/ManagerStatusInfo.cpp
+  src/v20191205/model/CancelAuditCertificateResponse.cpp
   src/v20191205/model/DeployRecordInfo.cpp
   src/v20191205/model/DescribePackagesResponse.cpp
   src/v20191205/model/DescribeManagersRequest.cpp

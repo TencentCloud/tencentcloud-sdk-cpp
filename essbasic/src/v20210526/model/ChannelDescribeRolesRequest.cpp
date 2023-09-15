@@ -24,9 +24,9 @@ using namespace std;
 
 ChannelDescribeRolesRequest::ChannelDescribeRolesRequest() :
     m_agentHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -45,14 +45,6 @@ string ChannelDescribeRolesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -76,6 +68,14 @@ string ChannelDescribeRolesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -111,22 +111,6 @@ bool ChannelDescribeRolesRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
-uint64_t ChannelDescribeRolesRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void ChannelDescribeRolesRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool ChannelDescribeRolesRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
 string ChannelDescribeRolesRequest::GetLimit() const
 {
     return m_limit;
@@ -157,6 +141,22 @@ void ChannelDescribeRolesRequest::SetFilters(const vector<Filter>& _filters)
 bool ChannelDescribeRolesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+uint64_t ChannelDescribeRolesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void ChannelDescribeRolesRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool ChannelDescribeRolesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 UserInfo ChannelDescribeRolesRequest::GetOperator() const

@@ -510,6 +510,56 @@ namespace TencentCloud
                      */
                     bool NatProductVersionHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用根据目的网段选择SNAT使用的EIP功能	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SmartScheduleMode 是否启用根据目的网段选择SNAT使用的EIP功能	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSmartScheduleMode() const;
+
+                    /**
+                     * 设置是否启用根据目的网段选择SNAT使用的EIP功能	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _smartScheduleMode 是否启用根据目的网段选择SNAT使用的EIP功能	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSmartScheduleMode(const bool& _smartScheduleMode);
+
+                    /**
+                     * 判断参数 SmartScheduleMode 是否已赋值
+                     * @return SmartScheduleMode 是否已赋值
+                     * 
+                     */
+                    bool SmartScheduleModeHasBeenSet() const;
+
+                    /**
+                     * 获取NAT实例归属的专属集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DedicatedClusterId NAT实例归属的专属集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置NAT实例归属的专属集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dedicatedClusterId NAT实例归属的专属集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,6 +691,20 @@ namespace TencentCloud
                      */
                     uint64_t m_natProductVersion;
                     bool m_natProductVersionHasBeenSet;
+
+                    /**
+                     * 是否启用根据目的网段选择SNAT使用的EIP功能	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_smartScheduleMode;
+                    bool m_smartScheduleModeHasBeenSet;
+
+                    /**
+                     * NAT实例归属的专属集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
 
                 };
             }

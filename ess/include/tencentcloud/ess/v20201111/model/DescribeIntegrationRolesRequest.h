@@ -46,15 +46,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息，UserId必填
-                     * @return Operator 操作人信息，UserId必填
+                     * 获取执行本接口操作的员工信息。使用此接口时，必须填写UserId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * @return Operator 执行本接口操作的员工信息。使用此接口时，必须填写UserId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息，UserId必填
-                     * @param _operator 操作人信息，UserId必填
+                     * 设置执行本接口操作的员工信息。使用此接口时，必须填写UserId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * @param _operator 执行本接口操作的员工信息。使用此接口时，必须填写UserId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -67,15 +71,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取指定每页多少条数据，单页最大200
-                     * @return Limit 指定每页多少条数据，单页最大200
+                     * 获取指定分页每页返回的数据条数，单页最大支持 200。
+                     * @return Limit 指定分页每页返回的数据条数，单页最大支持 200。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置指定每页多少条数据，单页最大200
-                     * @param _limit 指定每页多少条数据，单页最大200
+                     * 设置指定分页每页返回的数据条数，单页最大支持 200。
+                     * @param _limit 指定分页每页返回的数据条数，单页最大支持 200。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -88,15 +92,19 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -109,31 +117,59 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取查询的关键字段:
-Key:"RoleType",Values:["1"]查询系统角色，Values:["2"]查询自定义角色
-Key:"RoleStatus",Values:["1"]查询启用角色，Values:["2"]查询禁用角色
-Key:"IsGroupRole"，Values:["0"]:查询非集团角色，Values:["1"]表示查询集团角色
-Key:"IsReturnPermissionGroup"，Values:["0"]:表示接口不返回角色对应的权限树字段，Values:["1"]表示接口返回角色对应的权限树字段
-                     * @return Filters 查询的关键字段:
-Key:"RoleType",Values:["1"]查询系统角色，Values:["2"]查询自定义角色
-Key:"RoleStatus",Values:["1"]查询启用角色，Values:["2"]查询禁用角色
-Key:"IsGroupRole"，Values:["0"]:查询非集团角色，Values:["1"]表示查询集团角色
-Key:"IsReturnPermissionGroup"，Values:["0"]:表示接口不返回角色对应的权限树字段，Values:["1"]表示接口返回角色对应的权限树字段
+                     * 获取查询的关键字段，支持Key-Value单值查询。可选键值对如下：
+<ul>
+  <li>Key:"RoleType"，查询角色类型，Values可选：
+    <ul><li>**"1"**：查询系统角色</li><li>**"2"**：查询自定义角色</li></ul>
+  </li><li>Key:"RoleStatus"，查询角色状态，Values可选：
+    <ul><li>**"1"**：查询启用角色</li><li>**"2"**：查询禁用角色</li></ul>
+  </li><li>Key:"IsGroupRole"，是否查询集团角色，Values可选：
+    <ul><li>**"0"**：查询非集团角色</li><li>**"1"**：查询集团角色</li></ul>
+  </li><li>Key:"IsReturnPermissionGroup"，是否返回角色对应权限树，Values可选：
+    <ul><li>**"0"**：接口不返回角色对应的权限树字段</li><li>**"1"**：接口返回角色对应的权限树字段</li></ul>
+  </li>
+</ul>
+                     * @return Filters 查询的关键字段，支持Key-Value单值查询。可选键值对如下：
+<ul>
+  <li>Key:"RoleType"，查询角色类型，Values可选：
+    <ul><li>**"1"**：查询系统角色</li><li>**"2"**：查询自定义角色</li></ul>
+  </li><li>Key:"RoleStatus"，查询角色状态，Values可选：
+    <ul><li>**"1"**：查询启用角色</li><li>**"2"**：查询禁用角色</li></ul>
+  </li><li>Key:"IsGroupRole"，是否查询集团角色，Values可选：
+    <ul><li>**"0"**：查询非集团角色</li><li>**"1"**：查询集团角色</li></ul>
+  </li><li>Key:"IsReturnPermissionGroup"，是否返回角色对应权限树，Values可选：
+    <ul><li>**"0"**：接口不返回角色对应的权限树字段</li><li>**"1"**：接口返回角色对应的权限树字段</li></ul>
+  </li>
+</ul>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询的关键字段:
-Key:"RoleType",Values:["1"]查询系统角色，Values:["2"]查询自定义角色
-Key:"RoleStatus",Values:["1"]查询启用角色，Values:["2"]查询禁用角色
-Key:"IsGroupRole"，Values:["0"]:查询非集团角色，Values:["1"]表示查询集团角色
-Key:"IsReturnPermissionGroup"，Values:["0"]:表示接口不返回角色对应的权限树字段，Values:["1"]表示接口返回角色对应的权限树字段
-                     * @param _filters 查询的关键字段:
-Key:"RoleType",Values:["1"]查询系统角色，Values:["2"]查询自定义角色
-Key:"RoleStatus",Values:["1"]查询启用角色，Values:["2"]查询禁用角色
-Key:"IsGroupRole"，Values:["0"]:查询非集团角色，Values:["1"]表示查询集团角色
-Key:"IsReturnPermissionGroup"，Values:["0"]:表示接口不返回角色对应的权限树字段，Values:["1"]表示接口返回角色对应的权限树字段
+                     * 设置查询的关键字段，支持Key-Value单值查询。可选键值对如下：
+<ul>
+  <li>Key:"RoleType"，查询角色类型，Values可选：
+    <ul><li>**"1"**：查询系统角色</li><li>**"2"**：查询自定义角色</li></ul>
+  </li><li>Key:"RoleStatus"，查询角色状态，Values可选：
+    <ul><li>**"1"**：查询启用角色</li><li>**"2"**：查询禁用角色</li></ul>
+  </li><li>Key:"IsGroupRole"，是否查询集团角色，Values可选：
+    <ul><li>**"0"**：查询非集团角色</li><li>**"1"**：查询集团角色</li></ul>
+  </li><li>Key:"IsReturnPermissionGroup"，是否返回角色对应权限树，Values可选：
+    <ul><li>**"0"**：接口不返回角色对应的权限树字段</li><li>**"1"**：接口返回角色对应的权限树字段</li></ul>
+  </li>
+</ul>
+                     * @param _filters 查询的关键字段，支持Key-Value单值查询。可选键值对如下：
+<ul>
+  <li>Key:"RoleType"，查询角色类型，Values可选：
+    <ul><li>**"1"**：查询系统角色</li><li>**"2"**：查询自定义角色</li></ul>
+  </li><li>Key:"RoleStatus"，查询角色状态，Values可选：
+    <ul><li>**"1"**：查询启用角色</li><li>**"2"**：查询禁用角色</li></ul>
+  </li><li>Key:"IsGroupRole"，是否查询集团角色，Values可选：
+    <ul><li>**"0"**：查询非集团角色</li><li>**"1"**：查询集团角色</li></ul>
+  </li><li>Key:"IsReturnPermissionGroup"，是否返回角色对应权限树，Values可选：
+    <ul><li>**"0"**：接口不返回角色对应的权限树字段</li><li>**"1"**：接口返回角色对应的权限树字段</li></ul>
+  </li>
+</ul>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -146,15 +182,15 @@ Key:"IsReturnPermissionGroup"，Values:["0"]:表示接口不返回角色对应�
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
-                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * 获取指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。
+                     * @return Offset 指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
-                     * @param _offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * 设置指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。
+                     * @param _offset 指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -169,35 +205,44 @@ Key:"IsReturnPermissionGroup"，Values:["0"]:表示接口不返回角色对应�
                 private:
 
                     /**
-                     * 操作人信息，UserId必填
+                     * 执行本接口操作的员工信息。使用此接口时，必须填写UserId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 指定每页多少条数据，单页最大200
+                     * 指定分页每页返回的数据条数，单页最大支持 200。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 查询的关键字段:
-Key:"RoleType",Values:["1"]查询系统角色，Values:["2"]查询自定义角色
-Key:"RoleStatus",Values:["1"]查询启用角色，Values:["2"]查询禁用角色
-Key:"IsGroupRole"，Values:["0"]:查询非集团角色，Values:["1"]表示查询集团角色
-Key:"IsReturnPermissionGroup"，Values:["0"]:表示接口不返回角色对应的权限树字段，Values:["1"]表示接口返回角色对应的权限树字段
+                     * 查询的关键字段，支持Key-Value单值查询。可选键值对如下：
+<ul>
+  <li>Key:"RoleType"，查询角色类型，Values可选：
+    <ul><li>**"1"**：查询系统角色</li><li>**"2"**：查询自定义角色</li></ul>
+  </li><li>Key:"RoleStatus"，查询角色状态，Values可选：
+    <ul><li>**"1"**：查询启用角色</li><li>**"2"**：查询禁用角色</li></ul>
+  </li><li>Key:"IsGroupRole"，是否查询集团角色，Values可选：
+    <ul><li>**"0"**：查询非集团角色</li><li>**"1"**：查询集团角色</li></ul>
+  </li><li>Key:"IsReturnPermissionGroup"，是否返回角色对应权限树，Values可选：
+    <ul><li>**"0"**：接口不返回角色对应的权限树字段</li><li>**"1"**：接口返回角色对应的权限树字段</li></ul>
+  </li>
+</ul>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * 指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

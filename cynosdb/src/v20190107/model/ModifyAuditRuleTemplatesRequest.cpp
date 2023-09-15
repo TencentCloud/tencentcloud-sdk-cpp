@@ -26,7 +26,9 @@ ModifyAuditRuleTemplatesRequest::ModifyAuditRuleTemplatesRequest() :
     m_ruleTemplateIdsHasBeenSet(false),
     m_ruleFiltersHasBeenSet(false),
     m_ruleTemplateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_alarmLevelHasBeenSet(false),
+    m_alarmPolicyHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,22 @@ string ModifyAuditRuleTemplatesRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alarmLevel, allocator);
+    }
+
+    if (m_alarmPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alarmPolicy, allocator);
     }
 
 
@@ -151,6 +169,38 @@ void ModifyAuditRuleTemplatesRequest::SetDescription(const string& _description)
 bool ModifyAuditRuleTemplatesRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+uint64_t ModifyAuditRuleTemplatesRequest::GetAlarmLevel() const
+{
+    return m_alarmLevel;
+}
+
+void ModifyAuditRuleTemplatesRequest::SetAlarmLevel(const uint64_t& _alarmLevel)
+{
+    m_alarmLevel = _alarmLevel;
+    m_alarmLevelHasBeenSet = true;
+}
+
+bool ModifyAuditRuleTemplatesRequest::AlarmLevelHasBeenSet() const
+{
+    return m_alarmLevelHasBeenSet;
+}
+
+uint64_t ModifyAuditRuleTemplatesRequest::GetAlarmPolicy() const
+{
+    return m_alarmPolicy;
+}
+
+void ModifyAuditRuleTemplatesRequest::SetAlarmPolicy(const uint64_t& _alarmPolicy)
+{
+    m_alarmPolicy = _alarmPolicy;
+    m_alarmPolicyHasBeenSet = true;
+}
+
+bool ModifyAuditRuleTemplatesRequest::AlarmPolicyHasBeenSet() const
+{
+    return m_alarmPolicyHasBeenSet;
 }
 
 

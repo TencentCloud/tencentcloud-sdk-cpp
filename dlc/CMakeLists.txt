@@ -87,7 +87,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/ModifySparkAppBatchResponse.h
   include/tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchResponse.h
   include/tencentcloud/dlc/v20210125/model/KVPair.h
-  include/tencentcloud/dlc/v20210125/model/TableBaseInfo.h
+  include/tencentcloud/dlc/v20210125/model/QueryResultResponse.h
   include/tencentcloud/dlc/v20210125/model/UnlockMetaDataRequest.h
   include/tencentcloud/dlc/v20210125/model/AttachUserPolicyRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateInternalTableRequest.h
@@ -113,6 +113,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h
   include/tencentcloud/dlc/v20210125/model/WorkGroupIdSetOfUserId.h
   include/tencentcloud/dlc/v20210125/model/Partition.h
+  include/tencentcloud/dlc/v20210125/model/QueryResultRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDataEngineRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifySparkAppBatchRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTaskRequest.h
@@ -140,6 +141,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSTableRequest.h
   include/tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementResponse.h
+  include/tencentcloud/dlc/v20210125/model/TableBaseInfo.h
   include/tencentcloud/dlc/v20210125/model/DMSTable.h
   include/tencentcloud/dlc/v20210125/model/AttachWorkGroupPolicyResponse.h
   include/tencentcloud/dlc/v20210125/model/ModifyWorkGroupResponse.h
@@ -337,7 +339,7 @@ set(dlc_src
   src/v20210125/model/ModifySparkAppBatchResponse.cpp
   src/v20210125/model/CancelNotebookSessionStatementBatchResponse.cpp
   src/v20210125/model/KVPair.cpp
-  src/v20210125/model/TableBaseInfo.cpp
+  src/v20210125/model/QueryResultResponse.cpp
   src/v20210125/model/UnlockMetaDataRequest.cpp
   src/v20210125/model/AttachUserPolicyRequest.cpp
   src/v20210125/model/CreateInternalTableRequest.cpp
@@ -363,6 +365,7 @@ set(dlc_src
   src/v20210125/model/CreateNotebookSessionRequest.cpp
   src/v20210125/model/WorkGroupIdSetOfUserId.cpp
   src/v20210125/model/Partition.cpp
+  src/v20210125/model/QueryResultRequest.cpp
   src/v20210125/model/CreateDataEngineRequest.cpp
   src/v20210125/model/ModifySparkAppBatchRequest.cpp
   src/v20210125/model/CreateTaskRequest.cpp
@@ -390,6 +393,7 @@ set(dlc_src
   src/v20210125/model/ReportHeartbeatMetaDataRequest.cpp
   src/v20210125/model/CreateDMSTableRequest.cpp
   src/v20210125/model/CancelNotebookSessionStatementResponse.cpp
+  src/v20210125/model/TableBaseInfo.cpp
   src/v20210125/model/DMSTable.cpp
   src/v20210125/model/AttachWorkGroupPolicyResponse.cpp
   src/v20210125/model/ModifyWorkGroupResponse.cpp

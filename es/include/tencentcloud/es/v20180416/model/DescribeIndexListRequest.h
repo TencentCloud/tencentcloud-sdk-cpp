@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool IndexStatusListHasBeenSet() const;
 
                     /**
-                     * 获取排序顺序，支持asc、desc
-                     * @return Order 排序顺序，支持asc、desc
+                     * 获取排序顺序，支持asc、desc，默认为desc 数据格式"asc","desc"
+                     * @return Order 排序顺序，支持asc、desc，默认为desc 数据格式"asc","desc"
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序顺序，支持asc、desc
-                     * @param _order 排序顺序，支持asc、desc
+                     * 设置排序顺序，支持asc、desc，默认为desc 数据格式"asc","desc"
+                     * @param _order 排序顺序，支持asc、desc，默认为desc 数据格式"asc","desc"
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -309,7 +309,7 @@ namespace TencentCloud
                     bool m_indexStatusListHasBeenSet;
 
                     /**
-                     * 排序顺序，支持asc、desc
+                     * 排序顺序，支持asc、desc，默认为desc 数据格式"asc","desc"
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;

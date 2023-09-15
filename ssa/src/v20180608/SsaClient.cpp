@@ -1072,6 +1072,49 @@ SsaClient::SaDivulgeDataQueryPubOutcomeCallable SsaClient::SaDivulgeDataQueryPub
     return task->get_future();
 }
 
+SsaClient::SaDivulgeScanRuleMutateOutcome SsaClient::SaDivulgeScanRuleMutate(const SaDivulgeScanRuleMutateRequest &request)
+{
+    auto outcome = MakeRequest(request, "SaDivulgeScanRuleMutate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SaDivulgeScanRuleMutateResponse rsp = SaDivulgeScanRuleMutateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SaDivulgeScanRuleMutateOutcome(rsp);
+        else
+            return SaDivulgeScanRuleMutateOutcome(o.GetError());
+    }
+    else
+    {
+        return SaDivulgeScanRuleMutateOutcome(outcome.GetError());
+    }
+}
+
+void SsaClient::SaDivulgeScanRuleMutateAsync(const SaDivulgeScanRuleMutateRequest& request, const SaDivulgeScanRuleMutateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SaDivulgeScanRuleMutate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsaClient::SaDivulgeScanRuleMutateOutcomeCallable SsaClient::SaDivulgeScanRuleMutateCallable(const SaDivulgeScanRuleMutateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SaDivulgeScanRuleMutateOutcome()>>(
+        [this, request]()
+        {
+            return this->SaDivulgeScanRuleMutate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsaClient::SaEventPubOutcome SsaClient::SaEventPub(const SaEventPubRequest &request)
 {
     auto outcome = MakeRequest(request, "SaEventPub");

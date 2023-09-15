@@ -236,14 +236,30 @@ namespace TencentCloud
 
                     /**
                      * 获取是否对不支持元素开启自动处理的功能。默认关闭。
+自动处理的元素如下：
+1. 墨迹：移除不支持的墨迹（例如WPS墨迹）
+2. 自动翻页：移除PPT上所有自动翻页设置，并设置为单击鼠标翻页
+3. 已损坏音视频：移除PPT上对损坏音视频的引用
                      * @return AutoHandleUnsupportedElement 是否对不支持元素开启自动处理的功能。默认关闭。
+自动处理的元素如下：
+1. 墨迹：移除不支持的墨迹（例如WPS墨迹）
+2. 自动翻页：移除PPT上所有自动翻页设置，并设置为单击鼠标翻页
+3. 已损坏音视频：移除PPT上对损坏音视频的引用
                      * 
                      */
                     bool GetAutoHandleUnsupportedElement() const;
 
                     /**
                      * 设置是否对不支持元素开启自动处理的功能。默认关闭。
+自动处理的元素如下：
+1. 墨迹：移除不支持的墨迹（例如WPS墨迹）
+2. 自动翻页：移除PPT上所有自动翻页设置，并设置为单击鼠标翻页
+3. 已损坏音视频：移除PPT上对损坏音视频的引用
                      * @param _autoHandleUnsupportedElement 是否对不支持元素开启自动处理的功能。默认关闭。
+自动处理的元素如下：
+1. 墨迹：移除不支持的墨迹（例如WPS墨迹）
+2. 自动翻页：移除PPT上所有自动翻页设置，并设置为单击鼠标翻页
+3. 已损坏音视频：移除PPT上对损坏音视频的引用
                      * 
                      */
                     void SetAutoHandleUnsupportedElement(const bool& _autoHandleUnsupportedElement);
@@ -313,6 +329,10 @@ namespace TencentCloud
 
                     /**
                      * 是否对不支持元素开启自动处理的功能。默认关闭。
+自动处理的元素如下：
+1. 墨迹：移除不支持的墨迹（例如WPS墨迹）
+2. 自动翻页：移除PPT上所有自动翻页设置，并设置为单击鼠标翻页
+3. 已损坏音视频：移除PPT上对损坏音视频的引用
                      */
                     bool m_autoHandleUnsupportedElement;
                     bool m_autoHandleUnsupportedElementHasBeenSet;

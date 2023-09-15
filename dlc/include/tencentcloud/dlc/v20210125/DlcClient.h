@@ -193,6 +193,8 @@
 #include <tencentcloud/dlc/v20210125/model/ModifyUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupResponse.h>
+#include <tencentcloud/dlc/v20210125/model/QueryResultRequest.h>
+#include <tencentcloud/dlc/v20210125/model/QueryResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataResponse.h>
 #include <tencentcloud/dlc/v20210125/model/SuspendResumeDataEngineRequest.h>
@@ -474,6 +476,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWorkGroupResponse> ModifyWorkGroupOutcome;
                 typedef std::future<ModifyWorkGroupOutcome> ModifyWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifyWorkGroupRequest&, ModifyWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryResultResponse> QueryResultOutcome;
+                typedef std::future<QueryResultOutcome> QueryResultOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::QueryResultRequest&, QueryResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReportHeartbeatMetaDataResponse> ReportHeartbeatMetaDataOutcome;
                 typedef std::future<ReportHeartbeatMetaDataOutcome> ReportHeartbeatMetaDataOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ReportHeartbeatMetaDataRequest&, ReportHeartbeatMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportHeartbeatMetaDataAsyncHandler;
@@ -1259,6 +1264,15 @@ namespace TencentCloud
                 ModifyWorkGroupOutcome ModifyWorkGroup(const Model::ModifyWorkGroupRequest &request);
                 void ModifyWorkGroupAsync(const Model::ModifyWorkGroupRequest& request, const ModifyWorkGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWorkGroupOutcomeCallable ModifyWorkGroupCallable(const Model::ModifyWorkGroupRequest& request);
+
+                /**
+                 *获取任务结果查询
+                 * @param req QueryResultRequest
+                 * @return QueryResultOutcome
+                 */
+                QueryResultOutcome QueryResult(const Model::QueryResultRequest &request);
+                void QueryResultAsync(const Model::QueryResultRequest& request, const QueryResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryResultOutcomeCallable QueryResultCallable(const Model::QueryResultRequest& request);
 
                 /**
                  *上报元数据心跳

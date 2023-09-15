@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同
-                     * @return Operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同
-                     * @param _operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -68,15 +72,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取合同组名称,最大长度200个字符
-                     * @return FlowGroupName 合同组名称,最大长度200个字符
+                     * 获取合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * @return FlowGroupName 合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     std::string GetFlowGroupName() const;
 
                     /**
-                     * 设置合同组名称,最大长度200个字符
-                     * @param _flowGroupName 合同组名称,最大长度200个字符
+                     * 设置合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * @param _flowGroupName 合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     void SetFlowGroupName(const std::string& _flowGroupName);
@@ -89,15 +93,15 @@ namespace TencentCloud
                     bool FlowGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取合同组的子合同信息，支持2-50个子合同
-                     * @return FlowGroupInfos 合同组的子合同信息，支持2-50个子合同
+                     * 获取合同（流程）组的子合同信息，支持2-50个子合同
+                     * @return FlowGroupInfos 合同（流程）组的子合同信息，支持2-50个子合同
                      * 
                      */
                     std::vector<FlowGroupInfo> GetFlowGroupInfos() const;
 
                     /**
-                     * 设置合同组的子合同信息，支持2-50个子合同
-                     * @param _flowGroupInfos 合同组的子合同信息，支持2-50个子合同
+                     * 设置合同（流程）组的子合同信息，支持2-50个子合同
+                     * @param _flowGroupInfos 合同（流程）组的子合同信息，支持2-50个子合同
                      * 
                      */
                     void SetFlowGroupInfos(const std::vector<FlowGroupInfo>& _flowGroupInfos);
@@ -110,15 +114,19 @@ namespace TencentCloud
                     bool FlowGroupInfosHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -131,15 +139,35 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取合同组的配置信息。包括是否通知本企业签署方，是否通知其他签署方
-                     * @return FlowGroupOptions 合同组的配置信息。包括是否通知本企业签署方，是否通知其他签署方
+                     * 获取合同（流程）组的配置项信息。
+其中包括：
+<ul>
+<li>是否通知本企业签署方</li>
+<li>是否通知其他签署方</li>
+</ul>
+                     * @return FlowGroupOptions 合同（流程）组的配置项信息。
+其中包括：
+<ul>
+<li>是否通知本企业签署方</li>
+<li>是否通知其他签署方</li>
+</ul>
                      * 
                      */
                     FlowGroupOptions GetFlowGroupOptions() const;
 
                     /**
-                     * 设置合同组的配置信息。包括是否通知本企业签署方，是否通知其他签署方
-                     * @param _flowGroupOptions 合同组的配置信息。包括是否通知本企业签署方，是否通知其他签署方
+                     * 设置合同（流程）组的配置项信息。
+其中包括：
+<ul>
+<li>是否通知本企业签署方</li>
+<li>是否通知其他签署方</li>
+</ul>
+                     * @param _flowGroupOptions 合同（流程）组的配置项信息。
+其中包括：
+<ul>
+<li>是否通知本企业签署方</li>
+<li>是否通知其他签署方</li>
+</ul>
                      * 
                      */
                     void SetFlowGroupOptions(const FlowGroupOptions& _flowGroupOptions);
@@ -154,31 +182,38 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 合同组名称,最大长度200个字符
+                     * 合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      */
                     std::string m_flowGroupName;
                     bool m_flowGroupNameHasBeenSet;
 
                     /**
-                     * 合同组的子合同信息，支持2-50个子合同
+                     * 合同（流程）组的子合同信息，支持2-50个子合同
                      */
                     std::vector<FlowGroupInfo> m_flowGroupInfos;
                     bool m_flowGroupInfosHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 合同组的配置信息。包括是否通知本企业签署方，是否通知其他签署方
+                     * 合同（流程）组的配置项信息。
+其中包括：
+<ul>
+<li>是否通知本企业签署方</li>
+<li>是否通知其他签署方</li>
+</ul>
                      */
                     FlowGroupOptions m_flowGroupOptions;
                     bool m_flowGroupOptionsHasBeenSet;

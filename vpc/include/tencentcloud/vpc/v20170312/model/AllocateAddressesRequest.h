@@ -205,12 +205,10 @@ namespace TencentCloud
                      * 获取EIP类型。默认值：EIP。
 <ul style="margin:0"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>AnycastEIP：加速IP，可参见 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)</li></ul>注意：仅部分地域支持加速IP。</li></ul>
 <ul style="margin:0"><li>已开通精品IP白名单的用户，可选值：<ul><li>HighQualityEIP：精品IP</li></ul>注意：仅部分地域支持精品IP。</li></ul>
-</ul>
 <ul style="margin:0"><li>已开高防IP白名单的用户，可选值：<ul><li>AntiDDoSEIP：高防IP</li></ul>注意：仅部分地域支持高防IP。</li></ul>
                      * @return AddressType EIP类型。默认值：EIP。
 <ul style="margin:0"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>AnycastEIP：加速IP，可参见 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)</li></ul>注意：仅部分地域支持加速IP。</li></ul>
 <ul style="margin:0"><li>已开通精品IP白名单的用户，可选值：<ul><li>HighQualityEIP：精品IP</li></ul>注意：仅部分地域支持精品IP。</li></ul>
-</ul>
 <ul style="margin:0"><li>已开高防IP白名单的用户，可选值：<ul><li>AntiDDoSEIP：高防IP</li></ul>注意：仅部分地域支持高防IP。</li></ul>
                      * 
                      */
@@ -220,12 +218,10 @@ namespace TencentCloud
                      * 设置EIP类型。默认值：EIP。
 <ul style="margin:0"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>AnycastEIP：加速IP，可参见 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)</li></ul>注意：仅部分地域支持加速IP。</li></ul>
 <ul style="margin:0"><li>已开通精品IP白名单的用户，可选值：<ul><li>HighQualityEIP：精品IP</li></ul>注意：仅部分地域支持精品IP。</li></ul>
-</ul>
 <ul style="margin:0"><li>已开高防IP白名单的用户，可选值：<ul><li>AntiDDoSEIP：高防IP</li></ul>注意：仅部分地域支持高防IP。</li></ul>
                      * @param _addressType EIP类型。默认值：EIP。
 <ul style="margin:0"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>AnycastEIP：加速IP，可参见 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)</li></ul>注意：仅部分地域支持加速IP。</li></ul>
 <ul style="margin:0"><li>已开通精品IP白名单的用户，可选值：<ul><li>HighQualityEIP：精品IP</li></ul>注意：仅部分地域支持精品IP。</li></ul>
-</ul>
 <ul style="margin:0"><li>已开高防IP白名单的用户，可选值：<ul><li>AntiDDoSEIP：高防IP</li></ul>注意：仅部分地域支持高防IP。</li></ul>
                      * 
                      */
@@ -360,15 +356,15 @@ AnycastEIP是否用于绑定负载均衡。
                     bool AddressNameHasBeenSet() const;
 
                     /**
-                     * 获取网络出口，默认是：center_egress1
-                     * @return Egress 网络出口，默认是：center_egress1
+                     * 获取静态单线IP网络出口，默认值：center_egress1
+                     * @return Egress 静态单线IP网络出口，默认值：center_egress1
                      * 
                      */
                     std::string GetEgress() const;
 
                     /**
-                     * 设置网络出口，默认是：center_egress1
-                     * @param _egress 网络出口，默认是：center_egress1
+                     * 设置静态单线IP网络出口，默认值：center_egress1
+                     * @param _egress 静态单线IP网络出口，默认值：center_egress1
                      * 
                      */
                     void SetEgress(const std::string& _egress);
@@ -471,7 +467,6 @@ AnycastEIP是否用于绑定负载均衡。
                      * EIP类型。默认值：EIP。
 <ul style="margin:0"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>AnycastEIP：加速IP，可参见 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)</li></ul>注意：仅部分地域支持加速IP。</li></ul>
 <ul style="margin:0"><li>已开通精品IP白名单的用户，可选值：<ul><li>HighQualityEIP：精品IP</li></ul>注意：仅部分地域支持精品IP。</li></ul>
-</ul>
 <ul style="margin:0"><li>已开高防IP白名单的用户，可选值：<ul><li>AntiDDoSEIP：高防IP</li></ul>注意：仅部分地域支持高防IP。</li></ul>
                      */
                     std::string m_addressType;
@@ -512,7 +507,7 @@ AnycastEIP是否用于绑定负载均衡。
                     bool m_addressNameHasBeenSet;
 
                     /**
-                     * 网络出口，默认是：center_egress1
+                     * 静态单线IP网络出口，默认值：center_egress1
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;

@@ -23,7 +23,8 @@ using namespace std;
 NatGatewayAddress::NatGatewayAddress() :
     m_addressIdHasBeenSet(false),
     m_publicIpAddressHasBeenSet(false),
-    m_isBlockedHasBeenSet(false)
+    m_isBlockedHasBeenSet(false),
+    m_blockTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome NatGatewayAddress::Deserialize(const rapidjson::Value &value
         m_isBlockedHasBeenSet = true;
     }
 
+    if (value.HasMember("BlockType") && !value["BlockType"].IsNull())
+    {
+        if (!value["BlockType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatGatewayAddress.BlockType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_blockType = string(value["BlockType"].GetString());
+        m_blockTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void NatGatewayAddress::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsBlocked";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isBlocked, allocator);
+    }
+
+    if (m_blockTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_blockType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void NatGatewayAddress::SetIsBlocked(const bool& _isBlocked)
 bool NatGatewayAddress::IsBlockedHasBeenSet() const
 {
     return m_isBlockedHasBeenSet;
+}
+
+string NatGatewayAddress::GetBlockType() const
+{
+    return m_blockType;
+}
+
+void NatGatewayAddress::SetBlockType(const string& _blockType)
+{
+    m_blockType = _blockType;
+    m_blockTypeHasBeenSet = true;
+}
+
+bool NatGatewayAddress::BlockTypeHasBeenSet() const
+{
+    return m_blockTypeHasBeenSet;
 }
 

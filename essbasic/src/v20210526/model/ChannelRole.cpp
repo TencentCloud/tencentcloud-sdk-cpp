@@ -23,7 +23,8 @@ using namespace std;
 ChannelRole::ChannelRole() :
     m_roleIdHasBeenSet(false),
     m_roleNameHasBeenSet(false),
-    m_roleStatusHasBeenSet(false)
+    m_roleStatusHasBeenSet(false),
+    m_permissionGroupsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,26 @@ CoreInternalOutcome ChannelRole::Deserialize(const rapidjson::Value &value)
         m_roleStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("PermissionGroups") && !value["PermissionGroups"].IsNull())
+    {
+        if (!value["PermissionGroups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ChannelRole.PermissionGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PermissionGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PermissionGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_permissionGroups.push_back(item);
+        }
+        m_permissionGroupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +112,21 @@ void ChannelRole::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "RoleStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_roleStatus, allocator);
+    }
+
+    if (m_permissionGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermissionGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_permissionGroups.begin(); itr != m_permissionGroups.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -142,5 +178,21 @@ void ChannelRole::SetRoleStatus(const uint64_t& _roleStatus)
 bool ChannelRole::RoleStatusHasBeenSet() const
 {
     return m_roleStatusHasBeenSet;
+}
+
+vector<PermissionGroup> ChannelRole::GetPermissionGroups() const
+{
+    return m_permissionGroups;
+}
+
+void ChannelRole::SetPermissionGroups(const vector<PermissionGroup>& _permissionGroups)
+{
+    m_permissionGroups = _permissionGroups;
+    m_permissionGroupsHasBeenSet = true;
+}
+
+bool ChannelRole::PermissionGroupsHasBeenSet() const
+{
+    return m_permissionGroupsHasBeenSet;
 }
 

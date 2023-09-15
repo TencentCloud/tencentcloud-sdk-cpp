@@ -72,55 +72,51 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取WEB嵌入资源类型。
-<br/>CREATE_SEAL: 生成创建印章的嵌入页面
-<br/>CREATE_TEMPLATE：生成创建模板的嵌入页面
-<br/>MODIFY_TEMPLATE：生成编辑模板的嵌入页面
-<br/>PREVIEW_TEMPLATE：生成预览模板的嵌入页面
-<br/>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面
-<br/>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面
-<br/>EXTEND_SERVICE：生成拓展服务的嵌入页面
-<br/>PREVIEW_FLOW：生成预览合同的嵌入页面
-<br/>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面
-
-                     * @return EmbedType WEB嵌入资源类型。
-<br/>CREATE_SEAL: 生成创建印章的嵌入页面
-<br/>CREATE_TEMPLATE：生成创建模板的嵌入页面
-<br/>MODIFY_TEMPLATE：生成编辑模板的嵌入页面
-<br/>PREVIEW_TEMPLATE：生成预览模板的嵌入页面
-<br/>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面
-<br/>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面
-<br/>EXTEND_SERVICE：生成拓展服务的嵌入页面
-<br/>PREVIEW_FLOW：生成预览合同的嵌入页面
-<br/>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面
-
+                     * 获取WEB嵌入资源类型，支持以下类型
+<ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>
+<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>
+<li>MODIFY_TEMPLATE：生成编辑模板的嵌入页面</li>
+<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>
+<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>
+<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>
+<li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>
+<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>
+<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>
+                     * @return EmbedType WEB嵌入资源类型，支持以下类型
+<ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>
+<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>
+<li>MODIFY_TEMPLATE：生成编辑模板的嵌入页面</li>
+<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>
+<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>
+<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>
+<li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>
+<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>
+<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>
                      * 
                      */
                     std::string GetEmbedType() const;
 
                     /**
-                     * 设置WEB嵌入资源类型。
-<br/>CREATE_SEAL: 生成创建印章的嵌入页面
-<br/>CREATE_TEMPLATE：生成创建模板的嵌入页面
-<br/>MODIFY_TEMPLATE：生成编辑模板的嵌入页面
-<br/>PREVIEW_TEMPLATE：生成预览模板的嵌入页面
-<br/>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面
-<br/>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面
-<br/>EXTEND_SERVICE：生成拓展服务的嵌入页面
-<br/>PREVIEW_FLOW：生成预览合同的嵌入页面
-<br/>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面
-
-                     * @param _embedType WEB嵌入资源类型。
-<br/>CREATE_SEAL: 生成创建印章的嵌入页面
-<br/>CREATE_TEMPLATE：生成创建模板的嵌入页面
-<br/>MODIFY_TEMPLATE：生成编辑模板的嵌入页面
-<br/>PREVIEW_TEMPLATE：生成预览模板的嵌入页面
-<br/>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面
-<br/>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面
-<br/>EXTEND_SERVICE：生成拓展服务的嵌入页面
-<br/>PREVIEW_FLOW：生成预览合同的嵌入页面
-<br/>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面
-
+                     * 设置WEB嵌入资源类型，支持以下类型
+<ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>
+<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>
+<li>MODIFY_TEMPLATE：生成编辑模板的嵌入页面</li>
+<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>
+<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>
+<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>
+<li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>
+<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>
+<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>
+                     * @param _embedType WEB嵌入资源类型，支持以下类型
+<ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>
+<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>
+<li>MODIFY_TEMPLATE：生成编辑模板的嵌入页面</li>
+<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>
+<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>
+<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>
+<li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>
+<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>
+<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>
                      * 
                      */
                     void SetEmbedType(const std::string& _embedType);
@@ -134,26 +130,26 @@ namespace TencentCloud
 
                     /**
                      * 获取WEB嵌入的业务资源ID
-<br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id
-<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id
-<br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id
+<ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>
+<li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>
+<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>
                      * @return BusinessId WEB嵌入的业务资源ID
-<br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id
-<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id
-<br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id
+<ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>
+<li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>
+<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置WEB嵌入的业务资源ID
-<br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id
-<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id
-<br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id
+<ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>
+<li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>
+<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>
                      * @param _businessId WEB嵌入的业务资源ID
-<br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id
-<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id
-<br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id
+<ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>
+<li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>
+<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -242,26 +238,25 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * WEB嵌入资源类型。
-<br/>CREATE_SEAL: 生成创建印章的嵌入页面
-<br/>CREATE_TEMPLATE：生成创建模板的嵌入页面
-<br/>MODIFY_TEMPLATE：生成编辑模板的嵌入页面
-<br/>PREVIEW_TEMPLATE：生成预览模板的嵌入页面
-<br/>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面
-<br/>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面
-<br/>EXTEND_SERVICE：生成拓展服务的嵌入页面
-<br/>PREVIEW_FLOW：生成预览合同的嵌入页面
-<br/>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面
-
+                     * WEB嵌入资源类型，支持以下类型
+<ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>
+<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>
+<li>MODIFY_TEMPLATE：生成编辑模板的嵌入页面</li>
+<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>
+<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>
+<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>
+<li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>
+<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>
+<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>
                      */
                     std::string m_embedType;
                     bool m_embedTypeHasBeenSet;
 
                     /**
                      * WEB嵌入的业务资源ID
-<br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id
-<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id
-<br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id
+<ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>
+<li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>
+<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;

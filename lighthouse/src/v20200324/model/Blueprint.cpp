@@ -40,7 +40,8 @@ Blueprint::Blueprint() :
     m_communityUrlHasBeenSet(false),
     m_guideUrlHasBeenSet(false),
     m_sceneIdSetHasBeenSet(false),
-    m_dockerVersionHasBeenSet(false)
+    m_dockerVersionHasBeenSet(false),
+    m_blueprintSharedHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,16 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
         m_dockerVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("BlueprintShared") && !value["BlueprintShared"].IsNull())
+    {
+        if (!value["BlueprintShared"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Blueprint.BlueprintShared` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_blueprintShared = value["BlueprintShared"].GetBool();
+        m_blueprintSharedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +433,14 @@ void Blueprint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "DockerVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dockerVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_blueprintSharedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlueprintShared";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blueprintShared, allocator);
     }
 
 }
@@ -745,5 +764,21 @@ void Blueprint::SetDockerVersion(const string& _dockerVersion)
 bool Blueprint::DockerVersionHasBeenSet() const
 {
     return m_dockerVersionHasBeenSet;
+}
+
+bool Blueprint::GetBlueprintShared() const
+{
+    return m_blueprintShared;
+}
+
+void Blueprint::SetBlueprintShared(const bool& _blueprintShared)
+{
+    m_blueprintShared = _blueprintShared;
+    m_blueprintSharedHasBeenSet = true;
+}
+
+bool Blueprint::BlueprintSharedHasBeenSet() const
+{
+    return m_blueprintSharedHasBeenSet;
 }
 

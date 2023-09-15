@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/AuditRuleFilters.h>
+#include <tencentcloud/cynosdb/v20190107/model/RuleTemplateInfo.h>
 
 
 namespace TencentCloud
@@ -36,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例的审计规则详情，DescribeAuditRuleWithInstanceIds接口的出参。
+                * 实例的审计规则详情。
                 */
                 class InstanceAuditRule : public AbstractModel
                 {
@@ -118,6 +119,56 @@ namespace TencentCloud
                      */
                     bool AuditRuleFiltersHasBeenSet() const;
 
+                    /**
+                     * 获取是否是审计策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OldRule 是否是审计策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetOldRule() const;
+
+                    /**
+                     * 设置是否是审计策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _oldRule 是否是审计策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOldRule(const bool& _oldRule);
+
+                    /**
+                     * 判断参数 OldRule 是否已赋值
+                     * @return OldRule 是否已赋值
+                     * 
+                     */
+                    bool OldRuleHasBeenSet() const;
+
+                    /**
+                     * 获取实例应用的规则模板详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleTemplates 实例应用的规则模板详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<RuleTemplateInfo> GetRuleTemplates() const;
+
+                    /**
+                     * 设置实例应用的规则模板详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleTemplates 实例应用的规则模板详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleTemplates(const std::vector<RuleTemplateInfo>& _ruleTemplates);
+
+                    /**
+                     * 判断参数 RuleTemplates 是否已赋值
+                     * @return RuleTemplates 是否已赋值
+                     * 
+                     */
+                    bool RuleTemplatesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +190,20 @@ namespace TencentCloud
                      */
                     std::vector<AuditRuleFilters> m_auditRuleFilters;
                     bool m_auditRuleFiltersHasBeenSet;
+
+                    /**
+                     * 是否是审计策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_oldRule;
+                    bool m_oldRuleHasBeenSet;
+
+                    /**
+                     * 实例应用的规则模板详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RuleTemplateInfo> m_ruleTemplates;
+                    bool m_ruleTemplatesHasBeenSet;
 
                 };
             }

@@ -1,0 +1,479 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_GOODSDETAILNEW_H_
+#define TENCENTCLOUD_WAF_V20180125_MODEL_GOODSDETAILNEW_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Waf
+    {
+        namespace V20180125
+        {
+            namespace Model
+            {
+                /**
+                * 产品明细
+                */
+                class GoodsDetailNew : public AbstractModel
+                {
+                public:
+                    GoodsDetailNew();
+                    ~GoodsDetailNew() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取时间间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeSpan 时间间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTimeSpan() const;
+
+                    /**
+                     * 设置时间间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _timeSpan 时间间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTimeSpan(const int64_t& _timeSpan);
+
+                    /**
+                     * 判断参数 TimeSpan 是否已赋值
+                     * @return TimeSpan 是否已赋值
+                     * 
+                     */
+                    bool TimeSpanHasBeenSet() const;
+
+                    /**
+                     * 获取单位，支持m、y、d
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeUnit 单位，支持m、y、d
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTimeUnit() const;
+
+                    /**
+                     * 设置单位，支持m、y、d
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _timeUnit 单位，支持m、y、d
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTimeUnit(const std::string& _timeUnit);
+
+                    /**
+                     * 判断参数 TimeUnit 是否已赋值
+                     * @return TimeUnit 是否已赋值
+                     * 
+                     */
+                    bool TimeUnitHasBeenSet() const;
+
+                    /**
+                     * 获取子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
+高级版 ：sp_wsm_waf_premium
+企业版 ：sp_wsm_waf_enterprise
+旗舰版 ：sp_wsm_waf_ultimate
+高级版-CLB:sp_wsm_waf_premium_clb
+企业版-CLB : sp_wsm_waf_enterprise_clb
+旗舰版-CLB:sp_wsm_waf_ultimate_clb
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubProductCode 子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
+高级版 ：sp_wsm_waf_premium
+企业版 ：sp_wsm_waf_enterprise
+旗舰版 ：sp_wsm_waf_ultimate
+高级版-CLB:sp_wsm_waf_premium_clb
+企业版-CLB : sp_wsm_waf_enterprise_clb
+旗舰版-CLB:sp_wsm_waf_ultimate_clb
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubProductCode() const;
+
+                    /**
+                     * 设置子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
+高级版 ：sp_wsm_waf_premium
+企业版 ：sp_wsm_waf_enterprise
+旗舰版 ：sp_wsm_waf_ultimate
+高级版-CLB:sp_wsm_waf_premium_clb
+企业版-CLB : sp_wsm_waf_enterprise_clb
+旗舰版-CLB:sp_wsm_waf_ultimate_clb
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subProductCode 子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
+高级版 ：sp_wsm_waf_premium
+企业版 ：sp_wsm_waf_enterprise
+旗舰版 ：sp_wsm_waf_ultimate
+高级版-CLB:sp_wsm_waf_premium_clb
+企业版-CLB : sp_wsm_waf_enterprise_clb
+旗舰版-CLB:sp_wsm_waf_ultimate_clb
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubProductCode(const std::string& _subProductCode);
+
+                    /**
+                     * 判断参数 SubProductCode 是否已赋值
+                     * @return SubProductCode 是否已赋值
+                     * 
+                     */
+                    bool SubProductCodeHasBeenSet() const;
+
+                    /**
+                     * 获取业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型
+高级版 ：1000827
+企业版 ：1000830
+旗舰版 ：1000832
+高级版-CLB:1001150
+企业版-CLB : 1001152
+旗舰版-CLB:1001154
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Pid 业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型
+高级版 ：1000827
+企业版 ：1000830
+旗舰版 ：1000832
+高级版-CLB:1001150
+企业版-CLB : 1001152
+旗舰版-CLB:1001154
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPid() const;
+
+                    /**
+                     * 设置业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型
+高级版 ：1000827
+企业版 ：1000830
+旗舰版 ：1000832
+高级版-CLB:1001150
+企业版-CLB : 1001152
+旗舰版-CLB:1001154
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pid 业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型
+高级版 ：1000827
+企业版 ：1000830
+旗舰版 ：1000832
+高级版-CLB:1001150
+企业版-CLB : 1001152
+旗舰版-CLB:1001154
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPid(const int64_t& _pid);
+
+                    /**
+                     * 判断参数 Pid 是否已赋值
+                     * @return Pid 是否已赋值
+                     * 
+                     */
+                    bool PidHasBeenSet() const;
+
+                    /**
+                     * 获取waf实例名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceName waf实例名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置waf实例名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceName waf实例名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取1:自动续费，0:不自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenewFlag 1:自动续费，0:不自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置1:自动续费，0:不自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoRenewFlag 1:自动续费，0:不自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取waf购买的实际地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RealRegion waf购买的实际地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRealRegion() const;
+
+                    /**
+                     * 设置waf购买的实际地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _realRegion waf购买的实际地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRealRegion(const int64_t& _realRegion);
+
+                    /**
+                     * 判断参数 RealRegion 是否已赋值
+                     * @return RealRegion 是否已赋值
+                     * 
+                     */
+                    bool RealRegionHasBeenSet() const;
+
+                    /**
+                     * 获取计费细项标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LabelTypes 计费细项标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetLabelTypes() const;
+
+                    /**
+                     * 设置计费细项标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _labelTypes 计费细项标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLabelTypes(const std::vector<std::string>& _labelTypes);
+
+                    /**
+                     * 判断参数 LabelTypes 是否已赋值
+                     * @return LabelTypes 是否已赋值
+                     * 
+                     */
+                    bool LabelTypesHasBeenSet() const;
+
+                    /**
+                     * 获取计费细项标签数量，一般和SvLabelType一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LabelCounts 计费细项标签数量，一般和SvLabelType一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetLabelCounts() const;
+
+                    /**
+                     * 设置计费细项标签数量，一般和SvLabelType一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _labelCounts 计费细项标签数量，一般和SvLabelType一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLabelCounts(const std::vector<int64_t>& _labelCounts);
+
+                    /**
+                     * 判断参数 LabelCounts 是否已赋值
+                     * @return LabelCounts 是否已赋值
+                     * 
+                     */
+                    bool LabelCountsHasBeenSet() const;
+
+                    /**
+                     * 获取变配使用，实例到期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CurDeadline 变配使用，实例到期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCurDeadline() const;
+
+                    /**
+                     * 设置变配使用，实例到期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _curDeadline 变配使用，实例到期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCurDeadline(const std::string& _curDeadline);
+
+                    /**
+                     * 判断参数 CurDeadline 是否已赋值
+                     * @return CurDeadline 是否已赋值
+                     * 
+                     */
+                    bool CurDeadlineHasBeenSet() const;
+
+                    /**
+                     * 获取对存在的实例购买bot 或api 安全
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 对存在的实例购买bot 或api 安全
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置对存在的实例购买bot 或api 安全
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceId 对存在的实例购买bot 或api 安全
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 时间间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_timeSpan;
+                    bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 单位，支持m、y、d
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_timeUnit;
+                    bool m_timeUnitHasBeenSet;
+
+                    /**
+                     * 子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
+高级版 ：sp_wsm_waf_premium
+企业版 ：sp_wsm_waf_enterprise
+旗舰版 ：sp_wsm_waf_ultimate
+高级版-CLB:sp_wsm_waf_premium_clb
+企业版-CLB : sp_wsm_waf_enterprise_clb
+旗舰版-CLB:sp_wsm_waf_ultimate_clb
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subProductCode;
+                    bool m_subProductCodeHasBeenSet;
+
+                    /**
+                     * 业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型
+高级版 ：1000827
+企业版 ：1000830
+旗舰版 ：1000832
+高级版-CLB:1001150
+企业版-CLB : 1001152
+旗舰版-CLB:1001154
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_pid;
+                    bool m_pidHasBeenSet;
+
+                    /**
+                     * waf实例名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 1:自动续费，0:不自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * waf购买的实际地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_realRegion;
+                    bool m_realRegionHasBeenSet;
+
+                    /**
+                     * 计费细项标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_labelTypes;
+                    bool m_labelTypesHasBeenSet;
+
+                    /**
+                     * 计费细项标签数量，一般和SvLabelType一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_labelCounts;
+                    bool m_labelCountsHasBeenSet;
+
+                    /**
+                     * 变配使用，实例到期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_curDeadline;
+                    bool m_curDeadlineHasBeenSet;
+
+                    /**
+                     * 对存在的实例购买bot 或api 安全
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_GOODSDETAILNEW_H_

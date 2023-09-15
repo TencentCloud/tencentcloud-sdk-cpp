@@ -71,6 +71,8 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeVulListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubRequest.h>
 #include <tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubResponse.h>
+#include <tencentcloud/ssa/v20180608/model/SaDivulgeScanRuleMutateRequest.h>
+#include <tencentcloud/ssa/v20180608/model/SaDivulgeScanRuleMutateResponse.h>
 #include <tencentcloud/ssa/v20180608/model/SaEventPubRequest.h>
 #include <tencentcloud/ssa/v20180608/model/SaEventPubResponse.h>
 
@@ -159,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SaDivulgeDataQueryPubResponse> SaDivulgeDataQueryPubOutcome;
                 typedef std::future<SaDivulgeDataQueryPubOutcome> SaDivulgeDataQueryPubOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::SaDivulgeDataQueryPubRequest&, SaDivulgeDataQueryPubOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaDivulgeDataQueryPubAsyncHandler;
+                typedef Outcome<Core::Error, Model::SaDivulgeScanRuleMutateResponse> SaDivulgeScanRuleMutateOutcome;
+                typedef std::future<SaDivulgeScanRuleMutateOutcome> SaDivulgeScanRuleMutateOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::SaDivulgeScanRuleMutateRequest&, SaDivulgeScanRuleMutateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaDivulgeScanRuleMutateAsyncHandler;
                 typedef Outcome<Core::Error, Model::SaEventPubResponse> SaEventPubOutcome;
                 typedef std::future<SaEventPubOutcome> SaEventPubOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::SaEventPubRequest&, SaEventPubOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaEventPubAsyncHandler;
@@ -380,6 +385,15 @@ namespace TencentCloud
                 SaDivulgeDataQueryPubOutcome SaDivulgeDataQueryPub(const Model::SaDivulgeDataQueryPubRequest &request);
                 void SaDivulgeDataQueryPubAsync(const Model::SaDivulgeDataQueryPubRequest& request, const SaDivulgeDataQueryPubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SaDivulgeDataQueryPubOutcomeCallable SaDivulgeDataQueryPubCallable(const Model::SaDivulgeDataQueryPubRequest& request);
+
+                /**
+                 *SaDivulgeScanRuleMutate
+                 * @param req SaDivulgeScanRuleMutateRequest
+                 * @return SaDivulgeScanRuleMutateOutcome
+                 */
+                SaDivulgeScanRuleMutateOutcome SaDivulgeScanRuleMutate(const Model::SaDivulgeScanRuleMutateRequest &request);
+                void SaDivulgeScanRuleMutateAsync(const Model::SaDivulgeScanRuleMutateRequest& request, const SaDivulgeScanRuleMutateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SaDivulgeScanRuleMutateOutcomeCallable SaDivulgeScanRuleMutateCallable(const Model::SaDivulgeScanRuleMutateRequest& request);
 
                 /**
                  *安全事件通用字段

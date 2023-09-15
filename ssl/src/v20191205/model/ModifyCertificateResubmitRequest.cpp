@@ -14,33 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserRequest.h>
+#include <tencentcloud/ssl/v20191205/model/ModifyCertificateResubmitRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Ess::V20201111::Model;
+using namespace TencentCloud::Ssl::V20191205::Model;
 using namespace std;
 
-DescribeIntegrationMainOrganizationUserRequest::DescribeIntegrationMainOrganizationUserRequest() :
-    m_operatorHasBeenSet(false)
+ModifyCertificateResubmitRequest::ModifyCertificateResubmitRequest() :
+    m_certificateIdHasBeenSet(false)
 {
 }
 
-string DescribeIntegrationMainOrganizationUserRequest::ToJsonString() const
+string ModifyCertificateResubmitRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_operatorHasBeenSet)
+    if (m_certificateIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
+        string key = "CertificateId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -51,20 +50,20 @@ string DescribeIntegrationMainOrganizationUserRequest::ToJsonString() const
 }
 
 
-UserInfo DescribeIntegrationMainOrganizationUserRequest::GetOperator() const
+string ModifyCertificateResubmitRequest::GetCertificateId() const
 {
-    return m_operator;
+    return m_certificateId;
 }
 
-void DescribeIntegrationMainOrganizationUserRequest::SetOperator(const UserInfo& _operator)
+void ModifyCertificateResubmitRequest::SetCertificateId(const string& _certificateId)
 {
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
+    m_certificateId = _certificateId;
+    m_certificateIdHasBeenSet = true;
 }
 
-bool DescribeIntegrationMainOrganizationUserRequest::OperatorHasBeenSet() const
+bool ModifyCertificateResubmitRequest::CertificateIdHasBeenSet() const
 {
-    return m_operatorHasBeenSet;
+    return m_certificateIdHasBeenSet;
 }
 
 

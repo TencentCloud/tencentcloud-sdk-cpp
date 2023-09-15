@@ -3695,6 +3695,49 @@ DlcClient::ModifyWorkGroupOutcomeCallable DlcClient::ModifyWorkGroupCallable(con
     return task->get_future();
 }
 
+DlcClient::QueryResultOutcome DlcClient::QueryResult(const QueryResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryResultResponse rsp = QueryResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryResultOutcome(rsp);
+        else
+            return QueryResultOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryResultOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::QueryResultAsync(const QueryResultRequest& request, const QueryResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::QueryResultOutcomeCallable DlcClient::QueryResultCallable(const QueryResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryResultOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::ReportHeartbeatMetaDataOutcome DlcClient::ReportHeartbeatMetaData(const ReportHeartbeatMetaDataRequest &request)
 {
     auto outcome = MakeRequest(request, "ReportHeartbeatMetaData");

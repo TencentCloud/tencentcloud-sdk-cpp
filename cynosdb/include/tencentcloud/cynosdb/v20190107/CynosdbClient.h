@@ -794,7 +794,7 @@ namespace TencentCloud
                 CreateAuditLogFileOutcomeCallable CreateAuditLogFileCallable(const Model::CreateAuditLogFileRequest& request);
 
                 /**
-                 *创建审计规则模版
+                 *创建审计规则模板
                  * @param req CreateAuditRuleTemplateRequest
                  * @return CreateAuditRuleTemplateOutcome
                  */
@@ -884,7 +884,7 @@ namespace TencentCloud
                 DeleteAuditLogFileOutcomeCallable DeleteAuditLogFileCallable(const Model::DeleteAuditLogFileRequest& request);
 
                 /**
-                 *删除审计规则模版
+                 *删除审计规则模板
                  * @param req DeleteAuditRuleTemplatesRequest
                  * @return DeleteAuditRuleTemplatesOutcome
                  */
@@ -965,7 +965,7 @@ namespace TencentCloud
                 DescribeAuditLogsOutcomeCallable DescribeAuditLogsCallable(const Model::DescribeAuditLogsRequest& request);
 
                 /**
-                 *查询审计规则模版信息
+                 *查询审计规则模板信息
                  * @param req DescribeAuditRuleTemplatesRequest
                  * @return DescribeAuditRuleTemplatesOutcome
                  */
@@ -1415,7 +1415,7 @@ namespace TencentCloud
                 ModifyAccountPrivilegesOutcomeCallable ModifyAccountPrivilegesCallable(const Model::ModifyAccountPrivilegesRequest& request);
 
                 /**
-                 *修改审计规则模版
+                 *修改审计规则模板
                  * @param req ModifyAuditRuleTemplatesRequest
                  * @return ModifyAuditRuleTemplatesOutcome
                  */

@@ -857,6 +857,49 @@ EssbasicClient::ChannelCreateReleaseFlowOutcomeCallable EssbasicClient::ChannelC
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateRoleOutcome EssbasicClient::ChannelCreateRole(const ChannelCreateRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateRoleResponse rsp = ChannelCreateRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateRoleOutcome(rsp);
+        else
+            return ChannelCreateRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateRoleOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateRoleAsync(const ChannelCreateRoleRequest& request, const ChannelCreateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateRoleOutcomeCallable EssbasicClient::ChannelCreateRoleCallable(const ChannelCreateRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateSealPolicyOutcome EssbasicClient::ChannelCreateSealPolicy(const ChannelCreateSealPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateSealPolicy");
@@ -1022,6 +1065,49 @@ EssbasicClient::ChannelCreateWebThemeConfigOutcomeCallable EssbasicClient::Chann
         [this, request]()
         {
             return this->ChannelCreateWebThemeConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelDeleteRoleOutcome EssbasicClient::ChannelDeleteRole(const ChannelDeleteRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelDeleteRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelDeleteRoleResponse rsp = ChannelDeleteRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelDeleteRoleOutcome(rsp);
+        else
+            return ChannelDeleteRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelDeleteRoleOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelDeleteRoleAsync(const ChannelDeleteRoleRequest& request, const ChannelDeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelDeleteRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelDeleteRoleOutcomeCallable EssbasicClient::ChannelDeleteRoleCallable(const ChannelDeleteRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelDeleteRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelDeleteRole(request);
         }
     );
 
@@ -1409,6 +1495,49 @@ EssbasicClient::ChannelGetTaskResultApiOutcomeCallable EssbasicClient::ChannelGe
         [this, request]()
         {
             return this->ChannelGetTaskResultApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelModifyRoleOutcome EssbasicClient::ChannelModifyRole(const ChannelModifyRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelModifyRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelModifyRoleResponse rsp = ChannelModifyRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelModifyRoleOutcome(rsp);
+        else
+            return ChannelModifyRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelModifyRoleOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelModifyRoleAsync(const ChannelModifyRoleRequest& request, const ChannelModifyRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelModifyRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelModifyRoleOutcomeCallable EssbasicClient::ChannelModifyRoleCallable(const ChannelModifyRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelModifyRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelModifyRole(request);
         }
     );
 

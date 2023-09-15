@@ -51,6 +51,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogDownloadUrlRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CreateAccountsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyInstanceNameRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/SwitchClusterVpcRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterDatabaseResponse.h
   include/tencentcloud/cynosdb/v20190107/model/UpgradeClusterVersionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsResponse.h
@@ -74,7 +75,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeParamTemplatesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CopyClusterPasswordComplexityResponse.h
   include/tencentcloud/cynosdb/v20190107/model/UpgradeProxyVersionRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/SwitchClusterVpcRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/OfflineInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditLogsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceParamsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeProxiesResponse.h
@@ -89,6 +90,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/RuleTemplateInfo.h
   include/tencentcloud/cynosdb/v20190107/model/RuleFilters.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailDatabasesResponse.h
@@ -200,7 +202,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadUrlRequest.h
   include/tencentcloud/cynosdb/v20190107/model/SearchClusterDatabasesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RollbackTimeRange.h
-  include/tencentcloud/cynosdb/v20190107/model/OfflineInstanceRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/LogRuleTemplateInfo.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterPasswordComplexityRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OpenWanRequest.h
@@ -388,6 +390,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeBinlogDownloadUrlRequest.cpp
   src/v20190107/model/CreateAccountsResponse.cpp
   src/v20190107/model/ModifyInstanceNameRequest.cpp
+  src/v20190107/model/SwitchClusterVpcRequest.cpp
   src/v20190107/model/ModifyClusterDatabaseResponse.cpp
   src/v20190107/model/UpgradeClusterVersionResponse.cpp
   src/v20190107/model/DescribeDBSecurityGroupsResponse.cpp
@@ -411,7 +414,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeParamTemplatesRequest.cpp
   src/v20190107/model/CopyClusterPasswordComplexityResponse.cpp
   src/v20190107/model/UpgradeProxyVersionRequest.cpp
-  src/v20190107/model/SwitchClusterVpcRequest.cpp
+  src/v20190107/model/OfflineInstanceRequest.cpp
   src/v20190107/model/DescribeAuditLogsResponse.cpp
   src/v20190107/model/DescribeInstanceParamsRequest.cpp
   src/v20190107/model/DescribeProxiesResponse.cpp
@@ -426,6 +429,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeBackupConfigResponse.cpp
   src/v20190107/model/CreateClustersResponse.cpp
   src/v20190107/model/SetRenewFlagRequest.cpp
+  src/v20190107/model/RuleTemplateInfo.cpp
   src/v20190107/model/RuleFilters.cpp
   src/v20190107/model/OfflineClusterRequest.cpp
   src/v20190107/model/DescribeClusterDetailDatabasesResponse.cpp
@@ -537,7 +541,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeBackupDownloadUrlRequest.cpp
   src/v20190107/model/SearchClusterDatabasesResponse.cpp
   src/v20190107/model/RollbackTimeRange.cpp
-  src/v20190107/model/OfflineInstanceRequest.cpp
+  src/v20190107/model/LogRuleTemplateInfo.cpp
   src/v20190107/model/ModifyClusterPasswordComplexityRequest.cpp
   src/v20190107/model/RevokeAccountPrivilegesRequest.cpp
   src/v20190107/model/OpenWanRequest.cpp

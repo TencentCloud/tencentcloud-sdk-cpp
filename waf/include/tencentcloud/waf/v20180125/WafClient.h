@@ -157,6 +157,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceResponse.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlRequest.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlResponse.h>
+#include <tencentcloud/waf/v20180125/model/GenerateDealsAndPayNewRequest.h>
+#include <tencentcloud/waf/v20180125/model/GenerateDealsAndPayNewResponse.h>
 #include <tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsRequest.h>
 #include <tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsResponse.h>
 #include <tencentcloud/waf/v20180125/model/GetAttackHistogramRequest.h>
@@ -446,6 +448,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FreshAntiFakeUrlResponse> FreshAntiFakeUrlOutcome;
                 typedef std::future<FreshAntiFakeUrlOutcome> FreshAntiFakeUrlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::FreshAntiFakeUrlRequest&, FreshAntiFakeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreshAntiFakeUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenerateDealsAndPayNewResponse> GenerateDealsAndPayNewOutcome;
+                typedef std::future<GenerateDealsAndPayNewOutcome> GenerateDealsAndPayNewOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::GenerateDealsAndPayNewRequest&, GenerateDealsAndPayNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDealsAndPayNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetAttackDownloadRecordsResponse> GetAttackDownloadRecordsOutcome;
                 typedef std::future<GetAttackDownloadRecordsOutcome> GetAttackDownloadRecordsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::GetAttackDownloadRecordsRequest&, GetAttackDownloadRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAttackDownloadRecordsAsyncHandler;
@@ -1170,6 +1175,15 @@ namespace TencentCloud
                 FreshAntiFakeUrlOutcome FreshAntiFakeUrl(const Model::FreshAntiFakeUrlRequest &request);
                 void FreshAntiFakeUrlAsync(const Model::FreshAntiFakeUrlRequest& request, const FreshAntiFakeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FreshAntiFakeUrlOutcomeCallable FreshAntiFakeUrlCallable(const Model::FreshAntiFakeUrlRequest& request);
+
+                /**
+                 *计费资源购买、续费下单接口
+                 * @param req GenerateDealsAndPayNewRequest
+                 * @return GenerateDealsAndPayNewOutcome
+                 */
+                GenerateDealsAndPayNewOutcome GenerateDealsAndPayNew(const Model::GenerateDealsAndPayNewRequest &request);
+                void GenerateDealsAndPayNewAsync(const Model::GenerateDealsAndPayNewRequest& request, const GenerateDealsAndPayNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateDealsAndPayNewOutcomeCallable GenerateDealsAndPayNewCallable(const Model::GenerateDealsAndPayNewRequest& request);
 
                 /**
                  *查询下载攻击日志任务记录列表

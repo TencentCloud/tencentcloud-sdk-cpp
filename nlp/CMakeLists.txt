@@ -27,18 +27,14 @@ set(nlp_public_header_model
   include/tencentcloud/nlp/v20190408/model/ParseWordsResponse.h
   include/tencentcloud/nlp/v20190408/model/BasicParticiple.h
   include/tencentcloud/nlp/v20190408/model/ComposePoetryResponse.h
-  include/tencentcloud/nlp/v20190408/model/TextGenerationMessage.h
   include/tencentcloud/nlp/v20190408/model/ClassifyContentRequest.h
   include/tencentcloud/nlp/v20190408/model/RetrieveSimilarWordsResponse.h
   include/tencentcloud/nlp/v20190408/model/EvaluateSentenceSimilarityResponse.h
   include/tencentcloud/nlp/v20190408/model/Embellish.h
-  include/tencentcloud/nlp/v20190408/model/TestingTextGenerationResponse.h
   include/tencentcloud/nlp/v20190408/model/EvaluateWordSimilarityRequest.h
   include/tencentcloud/nlp/v20190408/model/CompoundParticiple.h
-  include/tencentcloud/nlp/v20190408/model/TestingTextGenerationRequest.h
   include/tencentcloud/nlp/v20190408/model/TextWritingResponse.h
   include/tencentcloud/nlp/v20190408/model/AnalyzeSentimentResponse.h
-  include/tencentcloud/nlp/v20190408/model/TextGenerationUsage.h
   include/tencentcloud/nlp/v20190408/model/ParseWordsRequest.h
   include/tencentcloud/nlp/v20190408/model/Writing.h
   include/tencentcloud/nlp/v20190408/model/SentenceCorrectionResponse.h
@@ -46,7 +42,6 @@ set(nlp_public_header_model
   include/tencentcloud/nlp/v20190408/model/KeywordSentence.h
   include/tencentcloud/nlp/v20190408/model/ComposeCoupletRequest.h
   include/tencentcloud/nlp/v20190408/model/EvaluateSentenceSimilarityRequest.h
-  include/tencentcloud/nlp/v20190408/model/TextGenerationChoices.h
   include/tencentcloud/nlp/v20190408/model/TextWritingRequest.h
   include/tencentcloud/nlp/v20190408/model/GenerateKeywordSentenceResponse.h
   include/tencentcloud/nlp/v20190408/model/Entity.h
@@ -69,18 +64,14 @@ set(nlp_src
   src/v20190408/model/ParseWordsResponse.cpp
   src/v20190408/model/BasicParticiple.cpp
   src/v20190408/model/ComposePoetryResponse.cpp
-  src/v20190408/model/TextGenerationMessage.cpp
   src/v20190408/model/ClassifyContentRequest.cpp
   src/v20190408/model/RetrieveSimilarWordsResponse.cpp
   src/v20190408/model/EvaluateSentenceSimilarityResponse.cpp
   src/v20190408/model/Embellish.cpp
-  src/v20190408/model/TestingTextGenerationResponse.cpp
   src/v20190408/model/EvaluateWordSimilarityRequest.cpp
   src/v20190408/model/CompoundParticiple.cpp
-  src/v20190408/model/TestingTextGenerationRequest.cpp
   src/v20190408/model/TextWritingResponse.cpp
   src/v20190408/model/AnalyzeSentimentResponse.cpp
-  src/v20190408/model/TextGenerationUsage.cpp
   src/v20190408/model/ParseWordsRequest.cpp
   src/v20190408/model/Writing.cpp
   src/v20190408/model/SentenceCorrectionResponse.cpp
@@ -88,7 +79,6 @@ set(nlp_src
   src/v20190408/model/KeywordSentence.cpp
   src/v20190408/model/ComposeCoupletRequest.cpp
   src/v20190408/model/EvaluateSentenceSimilarityRequest.cpp
-  src/v20190408/model/TextGenerationChoices.cpp
   src/v20190408/model/TextWritingRequest.cpp
   src/v20190408/model/GenerateKeywordSentenceResponse.cpp
   src/v20190408/model/Entity.cpp

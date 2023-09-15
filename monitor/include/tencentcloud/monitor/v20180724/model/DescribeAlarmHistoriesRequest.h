@@ -429,6 +429,27 @@ namespace TencentCloud
                      */
                     bool PolicyIdsHasBeenSet() const;
 
+                    /**
+                     * 获取告警等级
+                     * @return AlarmLevels 告警等级
+                     * 
+                     */
+                    std::vector<std::string> GetAlarmLevels() const;
+
+                    /**
+                     * 设置告警等级
+                     * @param _alarmLevels 告警等级
+                     * 
+                     */
+                    void SetAlarmLevels(const std::vector<std::string>& _alarmLevels);
+
+                    /**
+                     * 判断参数 AlarmLevels 是否已赋值
+                     * @return AlarmLevels 是否已赋值
+                     * 
+                     */
+                    bool AlarmLevelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -540,6 +561,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_policyIds;
                     bool m_policyIdsHasBeenSet;
+
+                    /**
+                     * 告警等级
+                     */
+                    std::vector<std::string> m_alarmLevels;
+                    bool m_alarmLevelsHasBeenSet;
 
                 };
             }

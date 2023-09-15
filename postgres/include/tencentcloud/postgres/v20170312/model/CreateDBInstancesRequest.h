@@ -170,15 +170,19 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
-                     * @return DBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
+                     * 获取PostgreSQL社区大版本+小版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。
+                     * @return DBVersion PostgreSQL社区大版本+小版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。
                      * 
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
-                     * @param _dBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
+                     * 设置PostgreSQL社区大版本+小版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。
+                     * @param _dBVersion PostgreSQL社区大版本+小版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。
                      * 
                      */
                     void SetDBVersion(const std::string& _dBVersion);
@@ -422,15 +426,19 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
-                     * @return DBMajorVersion PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
+                     * 获取PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。
+输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
+                     * @return DBMajorVersion PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。
+输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
                      * 
                      */
                     std::string GetDBMajorVersion() const;
 
                     /**
-                     * 设置PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
-                     * @param _dBMajorVersion PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
+                     * 设置PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。
+输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
+                     * @param _dBMajorVersion PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。
+输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
                      * 
                      */
                     void SetDBMajorVersion(const std::string& _dBMajorVersion);
@@ -443,15 +451,19 @@ namespace TencentCloud
                     bool DBMajorVersionHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
-                     * @return DBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
+                     * 获取PostgreSQL内核版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。
+                     * @return DBKernelVersion PostgreSQL内核版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。
                      * 
                      */
                     std::string GetDBKernelVersion() const;
 
                     /**
-                     * 设置PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
-                     * @param _dBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
+                     * 设置PostgreSQL内核版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。
+                     * @param _dBKernelVersion PostgreSQL内核版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。
                      * 
                      */
                     void SetDBKernelVersion(const std::string& _dBKernelVersion);
@@ -502,7 +514,8 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
+                     * PostgreSQL社区大版本+小版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
@@ -574,13 +587,15 @@ namespace TencentCloud
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
+                     * PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。
+输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。
                      */
                     std::string m_dBMajorVersion;
                     bool m_dBMajorVersionHasBeenSet;
 
                     /**
-                     * PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
+                     * PostgreSQL内核版本号。
+一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。
                      */
                     std::string m_dBKernelVersion;
                     bool m_dBKernelVersionHasBeenSet;

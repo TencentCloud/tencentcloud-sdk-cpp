@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
-                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * 获取指定分页返回的页码。页码从0开始，最大为2000。
+                     * @return Offset 指定分页返回的页码。页码从0开始，最大为2000。
                      * 
                      */
                     uint64_t GetOffset() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取指定每页多少条数据，单页最大200
-                     * @return Limit 指定每页多少条数据，单页最大200
+                     * 获取指定分页每页返回的数据条数，单页最大支持 200。
+                     * @return Limit 指定分页每页返回的数据条数，单页最大支持 200。
                      * 
                      */
                     uint64_t GetLimit() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取符合查询条件的总的角色数
-                     * @return TotalCount 符合查询条件的总的角色数
+                     * 获取符合查询条件的总角色数。
+                     * @return TotalCount 符合查询条件的总角色数。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取企业角色信息列表
-                     * @return IntegrateRoles 企业角色信息列表
+                     * 获取企业角色信息列表。
+                     * @return IntegrateRoles 企业角色信息列表。
                      * 
                      */
                     std::vector<IntegrateRole> GetIntegrateRoles() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * 指定分页返回的页码。页码从0开始，最大为2000。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 指定每页多少条数据，单页最大200
+                     * 指定分页每页返回的数据条数，单页最大支持 200。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 符合查询条件的总的角色数
+                     * 符合查询条件的总角色数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 企业角色信息列表
+                     * 企业角色信息列表。
                      */
                     std::vector<IntegrateRole> m_integrateRoles;
                     bool m_integrateRolesHasBeenSet;

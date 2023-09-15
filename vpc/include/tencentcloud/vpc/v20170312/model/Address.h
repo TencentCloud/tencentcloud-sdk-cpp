@@ -550,6 +550,31 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
+                     * 获取静态单线IP网络出口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Egress 静态单线IP网络出口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEgress() const;
+
+                    /**
+                     * 设置静态单线IP网络出口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _egress 静态单线IP网络出口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEgress(const std::string& _egress);
+
+                    /**
+                     * 判断参数 Egress 是否已赋值
+                     * @return Egress 是否已赋值
+                     * 
+                     */
+                    bool EgressHasBeenSet() const;
+
+                    /**
                      * 获取高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.
                      * @return AntiDDoSPackageId 高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.
                      * 
@@ -712,6 +737,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 静态单线IP网络出口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_egress;
+                    bool m_egressHasBeenSet;
 
                     /**
                      * 高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.

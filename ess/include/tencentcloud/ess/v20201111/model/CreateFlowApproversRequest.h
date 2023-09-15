@@ -46,15 +46,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，userId 必填
-                     * @return Operator 调用方用户信息，userId 必填
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填
-                     * @param _operator 调用方用户信息，userId 必填
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -67,15 +71,23 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取签署流程编号
-                     * @return FlowId 签署流程编号
+                     * 获取合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
+                     * @return FlowId 合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置签署流程编号
-                     * @param _flowId 签署流程编号
+                     * 设置合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
+                     * @param _flowId 合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -88,15 +100,31 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取补充签署人信息
-                     * @return Approvers 补充签署人信息
+                     * 获取补充企业签署人信息。
+
+- 如果发起方指定的补充签署人是企业微信签署人（ApproverSource=WEWORKAPP），则需要提供企业微信UserId进行补充；
+
+- 如果不指定，则使用姓名和手机号进行补充。
+                     * @return Approvers 补充企业签署人信息。
+
+- 如果发起方指定的补充签署人是企业微信签署人（ApproverSource=WEWORKAPP），则需要提供企业微信UserId进行补充；
+
+- 如果不指定，则使用姓名和手机号进行补充。
                      * 
                      */
                     std::vector<FillApproverInfo> GetApprovers() const;
 
                     /**
-                     * 设置补充签署人信息
-                     * @param _approvers 补充签署人信息
+                     * 设置补充企业签署人信息。
+
+- 如果发起方指定的补充签署人是企业微信签署人（ApproverSource=WEWORKAPP），则需要提供企业微信UserId进行补充；
+
+- 如果不指定，则使用姓名和手机号进行补充。
+                     * @param _approvers 补充企业签署人信息。
+
+- 如果发起方指定的补充签署人是企业微信签署人（ApproverSource=WEWORKAPP），则需要提供企业微信UserId进行补充；
+
+- 如果不指定，则使用姓名和手机号进行补充。
                      * 
                      */
                     void SetApprovers(const std::vector<FillApproverInfo>& _approvers);
@@ -109,15 +137,15 @@ namespace TencentCloud
                     bool ApproversHasBeenSet() const;
 
                     /**
-                     * 获取企微消息中的发起人
-                     * @return Initiator 企微消息中的发起人
+                     * 获取在可定制的企业微信通知中，发起人可以根据具体需求进行自定义设置。
+                     * @return Initiator 在可定制的企业微信通知中，发起人可以根据具体需求进行自定义设置。
                      * 
                      */
                     std::string GetInitiator() const;
 
                     /**
-                     * 设置企微消息中的发起人
-                     * @param _initiator 企微消息中的发起人
+                     * 设置在可定制的企业微信通知中，发起人可以根据具体需求进行自定义设置。
+                     * @param _initiator 在可定制的企业微信通知中，发起人可以根据具体需求进行自定义设置。
                      * 
                      */
                     void SetInitiator(const std::string& _initiator);
@@ -130,23 +158,19 @@ namespace TencentCloud
                     bool InitiatorHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作
-
-
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作
-
-
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作
-
-
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作
-
-
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -161,33 +185,39 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 调用方用户信息，userId 必填
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 签署流程编号
+                     * 合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 补充签署人信息
+                     * 补充企业签署人信息。
+
+- 如果发起方指定的补充签署人是企业微信签署人（ApproverSource=WEWORKAPP），则需要提供企业微信UserId进行补充；
+
+- 如果不指定，则使用姓名和手机号进行补充。
                      */
                     std::vector<FillApproverInfo> m_approvers;
                     bool m_approversHasBeenSet;
 
                     /**
-                     * 企微消息中的发起人
+                     * 在可定制的企业微信通知中，发起人可以根据具体需求进行自定义设置。
                      */
                     std::string m_initiator;
                     bool m_initiatorHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作
-
-
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

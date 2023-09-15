@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool AuditRuleFiltersHasBeenSet() const;
 
                     /**
-                     * 获取规则模版ID。
-                     * @return RuleTemplateIds 规则模版ID。
+                     * 获取规则模板ID。
+                     * @return RuleTemplateIds 规则模板ID。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
-                     * 设置规则模版ID。
-                     * @param _ruleTemplateIds 规则模版ID。
+                     * 设置规则模板ID。
+                     * @param _ruleTemplateIds 规则模板ID。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_auditRuleFiltersHasBeenSet;
 
                     /**
-                     * 规则模版ID。
+                     * 规则模板ID。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;

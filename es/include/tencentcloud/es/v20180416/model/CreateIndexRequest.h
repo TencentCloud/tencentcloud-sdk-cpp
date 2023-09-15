@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IndexNameHasBeenSet() const;
 
                     /**
-                     * 获取创建的索引元数据JSON，如mappings、settings
-                     * @return IndexMetaJson 创建的索引元数据JSON，如mappings、settings
+                     * 获取【必填】创建的索引元数据JSON，如mappings、settings
+                     * @return IndexMetaJson 【必填】创建的索引元数据JSON，如mappings、settings
                      * 
                      */
                     std::string GetIndexMetaJson() const;
 
                     /**
-                     * 设置创建的索引元数据JSON，如mappings、settings
-                     * @param _indexMetaJson 创建的索引元数据JSON，如mappings、settings
+                     * 设置【必填】创建的索引元数据JSON，如mappings、settings
+                     * @param _indexMetaJson 【必填】创建的索引元数据JSON，如mappings、settings
                      * 
                      */
                     void SetIndexMetaJson(const std::string& _indexMetaJson);
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_indexNameHasBeenSet;
 
                     /**
-                     * 创建的索引元数据JSON，如mappings、settings
+                     * 【必填】创建的索引元数据JSON，如mappings、settings
                      */
                     std::string m_indexMetaJson;
                     bool m_indexMetaJsonHasBeenSet;

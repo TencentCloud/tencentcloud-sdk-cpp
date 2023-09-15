@@ -37,7 +37,7 @@ namespace TencentCloud
                 /**
                 * 补充签署人信息
 - RecipientId 必须指定
--  通过企业自定义账号ID补充签署人时，ApproverSource 和 CustomUserId 必填，ApproverSource取值：WEWORKAPP
+-  通过企业微信自定义账号ID补充签署人时，ApproverSource 和 CustomUserId 必填，ApproverSource取值：WEWORKAPP
 - 通过二要素（姓名/手机号）补充签署人时，ApproverName 和 ApproverMobile 必填，ApproverSource设置为空
                 */
                 class FillApproverInfo : public AbstractModel
@@ -50,15 +50,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对应模板中的参与方ID
-                     * @return RecipientId 对应模板中的参与方ID
+                     * 获取签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。
+模板发起合同时，该参数为必填项。
+文件发起合同是，该参数无需传值。
+如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。
+                     * @return RecipientId 签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。
+模板发起合同时，该参数为必填项。
+文件发起合同是，该参数无需传值。
+如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置对应模板中的参与方ID
-                     * @param _recipientId 对应模板中的参与方ID
+                     * 设置签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。
+模板发起合同时，该参数为必填项。
+文件发起合同是，该参数无需传值。
+如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。
+                     * @param _recipientId 签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。
+模板发起合同时，该参数为必填项。
+文件发起合同是，该参数无需传值。
+如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -100,19 +112,19 @@ WEWORKAPP: 企业微信
                     bool ApproverSourceHasBeenSet() const;
 
                     /**
-                     * 获取企业自定义账号ID
-<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企微明文的userid
-                     * @return CustomUserId 企业自定义账号ID
-<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企微明文的userid
+                     * 获取企业微信UserId
+<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企业微信的UserId
+                     * @return CustomUserId 企业微信UserId
+<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企业微信的UserId
                      * 
                      */
                     std::string GetCustomUserId() const;
 
                     /**
-                     * 设置企业自定义账号ID
-<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企微明文的userid
-                     * @param _customUserId 企业自定义账号ID
-<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企微明文的userid
+                     * 设置企业微信UserId
+<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企业微信的UserId
+                     * @param _customUserId 企业微信UserId
+<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企业微信的UserId
                      * 
                      */
                     void SetCustomUserId(const std::string& _customUserId);
@@ -125,15 +137,15 @@ WEWORKAPP: 企业微信
                     bool CustomUserIdHasBeenSet() const;
 
                     /**
-                     * 获取补充签署人姓名
-                     * @return ApproverName 补充签署人姓名
+                     * 获取补充企业签署人员工姓名
+                     * @return ApproverName 补充企业签署人员工姓名
                      * 
                      */
                     std::string GetApproverName() const;
 
                     /**
-                     * 设置补充签署人姓名
-                     * @param _approverName 补充签署人姓名
+                     * 设置补充企业签署人员工姓名
+                     * @param _approverName 补充企业签署人员工姓名
                      * 
                      */
                     void SetApproverName(const std::string& _approverName);
@@ -146,15 +158,15 @@ WEWORKAPP: 企业微信
                     bool ApproverNameHasBeenSet() const;
 
                     /**
-                     * 获取补充签署人手机号
-                     * @return ApproverMobile 补充签署人手机号
+                     * 获取补充企业签署人员工手机号
+                     * @return ApproverMobile 补充企业签署人员工手机号
                      * 
                      */
                     std::string GetApproverMobile() const;
 
                     /**
-                     * 设置补充签署人手机号
-                     * @param _approverMobile 补充签署人手机号
+                     * 设置补充企业签署人员工手机号
+                     * @param _approverMobile 补充企业签署人员工手机号
                      * 
                      */
                     void SetApproverMobile(const std::string& _approverMobile);
@@ -169,7 +181,10 @@ WEWORKAPP: 企业微信
                 private:
 
                     /**
-                     * 对应模板中的参与方ID
+                     * 签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。
+模板发起合同时，该参数为必填项。
+文件发起合同是，该参数无需传值。
+如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
@@ -183,20 +198,20 @@ WEWORKAPP: 企业微信
                     bool m_approverSourceHasBeenSet;
 
                     /**
-                     * 企业自定义账号ID
-<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企微明文的userid
+                     * 企业微信UserId
+<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企业微信的UserId
                      */
                     std::string m_customUserId;
                     bool m_customUserIdHasBeenSet;
 
                     /**
-                     * 补充签署人姓名
+                     * 补充企业签署人员工姓名
                      */
                     std::string m_approverName;
                     bool m_approverNameHasBeenSet;
 
                     /**
-                     * 补充签署人手机号
+                     * 补充企业签署人员工手机号
                      */
                     std::string m_approverMobile;
                     bool m_approverMobileHasBeenSet;

@@ -411,7 +411,7 @@ namespace TencentCloud
                 ModifyEsVipSecurityGroupOutcomeCallable ModifyEsVipSecurityGroupCallable(const Model::ModifyEsVipSecurityGroupRequest& request);
 
                 /**
-                 *重启ES集群实例(用于系统版本更新等操作) 
+                 *重启ES集群实例(用于系统版本更新等操作)
                  * @param req RestartInstanceRequest
                  * @return RestartInstanceOutcome
                  */
@@ -420,7 +420,7 @@ namespace TencentCloud
                 RestartInstanceOutcomeCallable RestartInstanceCallable(const Model::RestartInstanceRequest& request);
 
                 /**
-                 *重启Kibana 
+                 *重启Kibana
                  * @param req RestartKibanaRequest
                  * @return RestartKibanaOutcome
                  */

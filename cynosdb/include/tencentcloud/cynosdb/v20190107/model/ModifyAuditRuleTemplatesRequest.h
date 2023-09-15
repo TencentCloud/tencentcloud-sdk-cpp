@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取审计规则模版ID。
-                     * @return RuleTemplateIds 审计规则模版ID。
+                     * 获取审计规则模板ID。
+                     * @return RuleTemplateIds 审计规则模板ID。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
-                     * 设置审计规则模版ID。
-                     * @param _ruleTemplateIds 审计规则模版ID。
+                     * 设置审计规则模板ID。
+                     * @param _ruleTemplateIds 审计规则模板ID。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RuleFiltersHasBeenSet() const;
 
                     /**
-                     * 获取修改后的规则模版名称。
-                     * @return RuleTemplateName 修改后的规则模版名称。
+                     * 获取修改后的规则模板名称。
+                     * @return RuleTemplateName 修改后的规则模板名称。
                      * 
                      */
                     std::string GetRuleTemplateName() const;
 
                     /**
-                     * 设置修改后的规则模版名称。
-                     * @param _ruleTemplateName 修改后的规则模版名称。
+                     * 设置修改后的规则模板名称。
+                     * @param _ruleTemplateName 修改后的规则模板名称。
                      * 
                      */
                     void SetRuleTemplateName(const std::string& _ruleTemplateName);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool RuleTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取修改后的规则模版描述。
-                     * @return Description 修改后的规则模版描述。
+                     * 获取修改后的规则模板描述。
+                     * @return Description 修改后的规则模板描述。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置修改后的规则模版描述。
-                     * @param _description 修改后的规则模版描述。
+                     * 设置修改后的规则模板描述。
+                     * @param _description 修改后的规则模板描述。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -127,10 +127,52 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取告警等级。1-低风险，2-中风险，3-高风险。
+                     * @return AlarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
+                     * 
+                     */
+                    uint64_t GetAlarmLevel() const;
+
+                    /**
+                     * 设置告警等级。1-低风险，2-中风险，3-高风险。
+                     * @param _alarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
+                     * 
+                     */
+                    void SetAlarmLevel(const uint64_t& _alarmLevel);
+
+                    /**
+                     * 判断参数 AlarmLevel 是否已赋值
+                     * @return AlarmLevel 是否已赋值
+                     * 
+                     */
+                    bool AlarmLevelHasBeenSet() const;
+
+                    /**
+                     * 获取告警策略。0-不告警，1-告警。
+                     * @return AlarmPolicy 告警策略。0-不告警，1-告警。
+                     * 
+                     */
+                    uint64_t GetAlarmPolicy() const;
+
+                    /**
+                     * 设置告警策略。0-不告警，1-告警。
+                     * @param _alarmPolicy 告警策略。0-不告警，1-告警。
+                     * 
+                     */
+                    void SetAlarmPolicy(const uint64_t& _alarmPolicy);
+
+                    /**
+                     * 判断参数 AlarmPolicy 是否已赋值
+                     * @return AlarmPolicy 是否已赋值
+                     * 
+                     */
+                    bool AlarmPolicyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 审计规则模版ID。
+                     * 审计规则模板ID。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;
@@ -142,16 +184,28 @@ namespace TencentCloud
                     bool m_ruleFiltersHasBeenSet;
 
                     /**
-                     * 修改后的规则模版名称。
+                     * 修改后的规则模板名称。
                      */
                     std::string m_ruleTemplateName;
                     bool m_ruleTemplateNameHasBeenSet;
 
                     /**
-                     * 修改后的规则模版描述。
+                     * 修改后的规则模板描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 告警等级。1-低风险，2-中风险，3-高风险。
+                     */
+                    uint64_t m_alarmLevel;
+                    bool m_alarmLevelHasBeenSet;
+
+                    /**
+                     * 告警策略。0-不告警，1-告警。
+                     */
+                    uint64_t m_alarmPolicy;
+                    bool m_alarmPolicyHasBeenSet;
 
                 };
             }

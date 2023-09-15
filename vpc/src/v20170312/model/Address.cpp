@@ -42,6 +42,7 @@ Address::Address() :
     m_tagSetHasBeenSet(false),
     m_deadlineDateHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_egressHasBeenSet(false),
     m_antiDDoSPackageIdHasBeenSet(false)
 {
 }
@@ -278,6 +279,16 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Egress") && !value["Egress"].IsNull())
+    {
+        if (!value["Egress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Address.Egress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_egress = string(value["Egress"].GetString());
+        m_egressHasBeenSet = true;
+    }
+
     if (value.HasMember("AntiDDoSPackageId") && !value["AntiDDoSPackageId"].IsNull())
     {
         if (!value["AntiDDoSPackageId"].IsString())
@@ -469,6 +480,14 @@ void Address::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_egressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Egress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_antiDDoSPackageIdHasBeenSet)
@@ -816,6 +835,22 @@ void Address::SetInstanceType(const string& _instanceType)
 bool Address::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+string Address::GetEgress() const
+{
+    return m_egress;
+}
+
+void Address::SetEgress(const string& _egress)
+{
+    m_egress = _egress;
+    m_egressHasBeenSet = true;
+}
+
+bool Address::EgressHasBeenSet() const
+{
+    return m_egressHasBeenSet;
 }
 
 string Address::GetAntiDDoSPackageId() const
