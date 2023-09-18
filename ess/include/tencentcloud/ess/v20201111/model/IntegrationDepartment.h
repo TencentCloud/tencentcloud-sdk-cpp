@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部门ID
+                     * 获取部门ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeptId 部门ID
+                     * @return DeptId 部门ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeptId() const;
 
                     /**
-                     * 设置部门ID
+                     * 设置部门ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deptId 部门ID
+                     * @param _deptId 部门ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool DeptIdHasBeenSet() const;
 
                     /**
-                     * 获取部门名
+                     * 获取部门名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeptName 部门名
+                     * @return DeptName 部门名。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeptName() const;
 
                     /**
-                     * 设置部门名
+                     * 设置部门名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deptName 部门名
+                     * @param _deptName 部门名。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool DeptOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取序列号
+                     * 获取序列号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrderNo 序列号
+                     * @return OrderNo 序列号。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOrderNo() const;
 
                     /**
-                     * 设置序列号
+                     * 设置序列号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _orderNo 序列号
+                     * @param _orderNo 序列号。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,14 +174,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部门ID
+                     * 部门ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deptId;
                     bool m_deptIdHasBeenSet;
 
                     /**
-                     * 部门名
+                     * 部门名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deptName;
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_deptOpenIdHasBeenSet;
 
                     /**
-                     * 序列号
+                     * 序列号。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_orderNo;

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/iss/v20230517/model/LifeCycleData.h>
+#include <tencentcloud/iss/v20230517/model/ChannelInfo.h>
 
 
 namespace TencentCloud
@@ -136,14 +137,14 @@ namespace TencentCloud
                      * @return Add 要新增的设备通道（Json数组，没有新增时，不需要该字段，一次添加通道总数不超过5000个，包括组织目录下的通道数量）
                      * 
                      */
-                    std::string GetAdd() const;
+                    std::vector<ChannelInfo> GetAdd() const;
 
                     /**
                      * 设置要新增的设备通道（Json数组，没有新增时，不需要该字段，一次添加通道总数不超过5000个，包括组织目录下的通道数量）
                      * @param _add 要新增的设备通道（Json数组，没有新增时，不需要该字段，一次添加通道总数不超过5000个，包括组织目录下的通道数量）
                      * 
                      */
-                    void SetAdd(const std::string& _add);
+                    void SetAdd(const std::vector<ChannelInfo>& _add);
 
                     /**
                      * 判断参数 Add 是否已赋值
@@ -157,14 +158,14 @@ namespace TencentCloud
                      * @return Del 要删除的设备通道（Json数组，内容为要删除的设备通道id，没有删除设备通道时，不需要该字段）
                      * 
                      */
-                    std::string GetDel() const;
+                    std::vector<std::string> GetDel() const;
 
                     /**
                      * 设置要删除的设备通道（Json数组，内容为要删除的设备通道id，没有删除设备通道时，不需要该字段）
                      * @param _del 要删除的设备通道（Json数组，内容为要删除的设备通道id，没有删除设备通道时，不需要该字段）
                      * 
                      */
-                    void SetDel(const std::string& _del);
+                    void SetDel(const std::vector<std::string>& _del);
 
                     /**
                      * 判断参数 Del 是否已赋值
@@ -178,14 +179,14 @@ namespace TencentCloud
                      * @return OrganizationId 添加组织目录下所有设备通道（Json数组，可以为空，并且通道总数量不超过5000个（包括Add字段通道数量））
                      * 
                      */
-                    std::string GetOrganizationId() const;
+                    std::vector<std::string> GetOrganizationId() const;
 
                     /**
                      * 设置添加组织目录下所有设备通道（Json数组，可以为空，并且通道总数量不超过5000个（包括Add字段通道数量））
                      * @param _organizationId 添加组织目录下所有设备通道（Json数组，可以为空，并且通道总数量不超过5000个（包括Add字段通道数量））
                      * 
                      */
-                    void SetOrganizationId(const std::string& _organizationId);
+                    void SetOrganizationId(const std::vector<std::string>& _organizationId);
 
                     /**
                      * 判断参数 OrganizationId 是否已赋值
@@ -223,19 +224,19 @@ namespace TencentCloud
                     /**
                      * 要新增的设备通道（Json数组，没有新增时，不需要该字段，一次添加通道总数不超过5000个，包括组织目录下的通道数量）
                      */
-                    std::string m_add;
+                    std::vector<ChannelInfo> m_add;
                     bool m_addHasBeenSet;
 
                     /**
                      * 要删除的设备通道（Json数组，内容为要删除的设备通道id，没有删除设备通道时，不需要该字段）
                      */
-                    std::string m_del;
+                    std::vector<std::string> m_del;
                     bool m_delHasBeenSet;
 
                     /**
                      * 添加组织目录下所有设备通道（Json数组，可以为空，并且通道总数量不超过5000个（包括Add字段通道数量））
                      */
-                    std::string m_organizationId;
+                    std::vector<std::string> m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                 };

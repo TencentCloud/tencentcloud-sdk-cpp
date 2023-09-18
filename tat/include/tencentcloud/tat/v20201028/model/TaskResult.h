@@ -90,14 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 获取命令执行开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecStartTime 命令执行开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecStartTime() const;
 
                     /**
                      * 设置命令执行开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _execStartTime 命令执行开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecStartTime(const std::string& _execStartTime);
@@ -111,14 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 获取命令执行结束时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecEndTime 命令执行结束时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecEndTime() const;
 
                     /**
                      * 设置命令执行结束时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _execEndTime 命令执行结束时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecEndTime(const std::string& _execEndTime);
@@ -209,12 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 命令执行开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_execStartTime;
                     bool m_execStartTimeHasBeenSet;
 
                     /**
                      * 命令执行结束时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_execEndTime;
                     bool m_execEndTimeHasBeenSet;

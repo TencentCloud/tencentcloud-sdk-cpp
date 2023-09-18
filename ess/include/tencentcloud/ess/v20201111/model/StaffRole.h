@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 集成版企业角色信息
+                * 集成版企业角色信息。
                 */
                 class StaffRole : public AbstractModel
                 {
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色id
+                     * 获取角色ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoleId 角色id
+                     * @return RoleId 角色ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleId() const;
 
                     /**
-                     * 设置角色id
+                     * 设置角色ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _roleId 角色id
+                     * @param _roleId 角色ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RoleIdHasBeenSet() const;
 
                     /**
-                     * 获取角色名称
+                     * 获取角色名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoleName 角色名称
+                     * @return RoleName 角色名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置角色名称
+                     * 设置角色名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _roleName 角色名称
+                     * @param _roleName 角色名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 角色id
+                     * 角色ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleId;
                     bool m_roleIdHasBeenSet;
 
                     /**
-                     * 角色名称
+                     * 角色名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleName;

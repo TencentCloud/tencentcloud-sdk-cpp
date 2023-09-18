@@ -321,6 +321,56 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取使用者企业Id(仅用于多用户)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserCorpId 使用者企业Id(仅用于多用户)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserCorpId() const;
+
+                    /**
+                     * 设置使用者企业Id(仅用于多用户)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userCorpId 使用者企业Id(仅用于多用户)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserCorpId(const std::string& _userCorpId);
+
+                    /**
+                     * 判断参数 UserCorpId 是否已赋值
+                     * @return UserCorpId 是否已赋值
+                     * 
+                     */
+                    bool UserCorpIdHasBeenSet() const;
+
+                    /**
+                     * 获取使用者Id(仅用于多用户)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserId 使用者Id(仅用于多用户)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置使用者Id(仅用于多用户)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userId 使用者Id(仅用于多用户)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +449,20 @@ namespace TencentCloud
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 使用者企业Id(仅用于多用户)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userCorpId;
+                    bool m_userCorpIdHasBeenSet;
+
+                    /**
+                     * 使用者Id(仅用于多用户)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

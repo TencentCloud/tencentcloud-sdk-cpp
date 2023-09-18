@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取传入的手机号
-                     * @return Mobile 传入的手机号
+                     * 获取传入的手机号，没有打码
+                     * @return Mobile 传入的手机号，没有打码
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置传入的手机号
-                     * @param _mobile 传入的手机号
+                     * 设置传入的手机号，没有打码
+                     * @param _mobile 传入的手机号，没有打码
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -89,15 +89,19 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取用户Id
-                     * @return UserId 用户Id
+                     * 获取员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
+                     * @return UserId 员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id
-                     * @param _userId 用户Id
+                     * 设置员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
+                     * @param _userId 员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -118,13 +122,14 @@ namespace TencentCloud
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 传入的手机号
+                     * 传入的手机号，没有打码
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 用户Id
+                     * 员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

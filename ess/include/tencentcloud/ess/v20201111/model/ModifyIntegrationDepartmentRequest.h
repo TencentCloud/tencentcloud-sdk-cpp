@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取电子签部门ID,通过DescribeIntegrationDepartments接口可以获取
-                     * @return DeptId 电子签部门ID,通过DescribeIntegrationDepartments接口可以获取
+                     * 获取电子签部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口获得。
+                     * @return DeptId 电子签部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口获得。
                      * 
                      */
                     std::string GetDeptId() const;
 
                     /**
-                     * 设置电子签部门ID,通过DescribeIntegrationDepartments接口可以获取
-                     * @param _deptId 电子签部门ID,通过DescribeIntegrationDepartments接口可以获取
+                     * 设置电子签部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口获得。
+                     * @param _deptId 电子签部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口获得。
                      * 
                      */
                     void SetDeptId(const std::string& _deptId);
@@ -116,15 +116,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取
-                     * @return ParentDeptId 电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取
+                     * 获取电子签父部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口获得。
+                     * @return ParentDeptId 电子签父部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口获得。
                      * 
                      */
                     std::string GetParentDeptId() const;
 
                     /**
-                     * 设置电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取
-                     * @param _parentDeptId 电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取
+                     * 设置电子签父部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口获得。
+                     * @param _parentDeptId 电子签父部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口获得。
                      * 
                      */
                     void SetParentDeptId(const std::string& _parentDeptId);
@@ -137,15 +137,15 @@ namespace TencentCloud
                     bool ParentDeptIdHasBeenSet() const;
 
                     /**
-                     * 获取部门名称，不超过50个字符
-                     * @return DeptName 部门名称，不超过50个字符
+                     * 获取部门名称，最大长度为50个字符。
+                     * @return DeptName 部门名称，最大长度为50个字符。
                      * 
                      */
                     std::string GetDeptName() const;
 
                     /**
-                     * 设置部门名称，不超过50个字符
-                     * @param _deptName 部门名称，不超过50个字符
+                     * 设置部门名称，最大长度为50个字符。
+                     * @param _deptName 部门名称，最大长度为50个字符。
                      * 
                      */
                     void SetDeptName(const std::string& _deptName);
@@ -158,15 +158,15 @@ namespace TencentCloud
                     bool DeptNameHasBeenSet() const;
 
                     /**
-                     * 获取客户系统部门ID，不超过64个字符
-                     * @return DeptOpenId 客户系统部门ID，不超过64个字符
+                     * 获取客户系统部门ID，最大长度为64个字符。
+                     * @return DeptOpenId 客户系统部门ID，最大长度为64个字符。
                      * 
                      */
                     std::string GetDeptOpenId() const;
 
                     /**
-                     * 设置客户系统部门ID，不超过64个字符
-                     * @param _deptOpenId 客户系统部门ID，不超过64个字符
+                     * 设置客户系统部门ID，最大长度为64个字符。
+                     * @param _deptOpenId 客户系统部门ID，最大长度为64个字符。
                      * 
                      */
                     void SetDeptOpenId(const std::string& _deptOpenId);
@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool DeptOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取排序号,1~30000范围内
-                     * @return OrderNo 排序号,1~30000范围内
+                     * 获取排序号，支持设置的数值范围为1~30000。同一父部门下，排序号越大，部门顺序越靠前。
+                     * @return OrderNo 排序号，支持设置的数值范围为1~30000。同一父部门下，排序号越大，部门顺序越靠前。
                      * 
                      */
                     uint64_t GetOrderNo() const;
 
                     /**
-                     * 设置排序号,1~30000范围内
-                     * @param _orderNo 排序号,1~30000范围内
+                     * 设置排序号，支持设置的数值范围为1~30000。同一父部门下，排序号越大，部门顺序越靠前。
+                     * @param _orderNo 排序号，支持设置的数值范围为1~30000。同一父部门下，排序号越大，部门顺序越靠前。
                      * 
                      */
                     void SetOrderNo(const uint64_t& _orderNo);
@@ -209,7 +209,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 电子签部门ID,通过DescribeIntegrationDepartments接口可以获取
+                     * 电子签部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口获得。
                      */
                     std::string m_deptId;
                     bool m_deptIdHasBeenSet;
@@ -222,25 +222,25 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取
+                     * 电子签父部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口获得。
                      */
                     std::string m_parentDeptId;
                     bool m_parentDeptIdHasBeenSet;
 
                     /**
-                     * 部门名称，不超过50个字符
+                     * 部门名称，最大长度为50个字符。
                      */
                     std::string m_deptName;
                     bool m_deptNameHasBeenSet;
 
                     /**
-                     * 客户系统部门ID，不超过64个字符
+                     * 客户系统部门ID，最大长度为64个字符。
                      */
                     std::string m_deptOpenId;
                     bool m_deptOpenIdHasBeenSet;
 
                     /**
-                     * 排序号,1~30000范围内
+                     * 排序号，支持设置的数值范围为1~30000。同一父部门下，排序号越大，部门顺序越靠前。
                      */
                     uint64_t m_orderNo;
                     bool m_orderNoHasBeenSet;

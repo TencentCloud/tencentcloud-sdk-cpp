@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息，userId必填
-                     * @return Operator 操作人信息，userId必填
+                     * 获取执行本接口操作的员工信息,userId必填。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * @return Operator 执行本接口操作的员工信息,userId必填。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息，userId必填
-                     * @param _operator 操作人信息，userId必填
+                     * 设置执行本接口操作的员工信息,userId必填。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * @param _operator 执行本接口操作的员工信息,userId必填。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -65,15 +69,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取指定每页多少条数据，单页最大1000
-                     * @return Limit 指定每页多少条数据，单页最大1000
+                     * 获取指定分页每页返回的数据条数，单页最大1000
+                     * @return Limit 指定分页每页返回的数据条数，单页最大1000
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置指定每页多少条数据，单页最大1000
-                     * @param _limit 指定每页多少条数据，单页最大1000
+                     * 设置指定分页每页返回的数据条数，单页最大1000
+                     * @param _limit 指定分页每页返回的数据条数，单页最大1000
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -86,15 +90,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0
-                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0
+                     * 获取指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0
+                     * @return Offset 指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0
-                     * @param _offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0
+                     * 设置指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0
+                     * @param _offset 指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -128,15 +132,39 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
-                     * @return Status 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * 获取成员企业加入集团的当前状态
+<ul><li> **1**：待授权</li>
+<li> **2**：已授权待激活</li>
+<li> **3**：拒绝授权</li>
+<li> **4**：已解除</li>
+<li> **5**：已加入</li>
+</ul>
+                     * @return Status 成员企业加入集团的当前状态
+<ul><li> **1**：待授权</li>
+<li> **2**：已授权待激活</li>
+<li> **3**：拒绝授权</li>
+<li> **4**：已解除</li>
+<li> **5**：已加入</li>
+</ul>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
-                     * @param _status 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * 设置成员企业加入集团的当前状态
+<ul><li> **1**：待授权</li>
+<li> **2**：已授权待激活</li>
+<li> **3**：拒绝授权</li>
+<li> **4**：已解除</li>
+<li> **5**：已加入</li>
+</ul>
+                     * @param _status 成员企业加入集团的当前状态
+<ul><li> **1**：待授权</li>
+<li> **2**：已授权待激活</li>
+<li> **3**：拒绝授权</li>
+<li> **4**：已解除</li>
+<li> **5**：已加入</li>
+</ul>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -150,14 +178,22 @@ namespace TencentCloud
 
                     /**
                      * 获取是否导出当前成员企业数据
+<ul><li> **false**：不导出（默认值）</li>
+<li> **true**：导出</li></ul>
                      * @return Export 是否导出当前成员企业数据
+<ul><li> **false**：不导出（默认值）</li>
+<li> **true**：导出</li></ul>
                      * 
                      */
                     bool GetExport() const;
 
                     /**
                      * 设置是否导出当前成员企业数据
+<ul><li> **false**：不导出（默认值）</li>
+<li> **true**：导出</li></ul>
                      * @param _export 是否导出当前成员企业数据
+<ul><li> **false**：不导出（默认值）</li>
+<li> **true**：导出</li></ul>
                      * 
                      */
                     void SetExport(const bool& _export);
@@ -170,15 +206,15 @@ namespace TencentCloud
                     bool ExportHasBeenSet() const;
 
                     /**
-                     * 获取成员企业机构 ID，在PC控制台 集团管理可获取
-                     * @return Id 成员企业机构 ID，在PC控制台 集团管理可获取
+                     * 获取成员企业机构 ID，32 位字符串，在PC控制台 集团管理可获取
+                     * @return Id 成员企业机构 ID，32 位字符串，在PC控制台 集团管理可获取
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置成员企业机构 ID，在PC控制台 集团管理可获取
-                     * @param _id 成员企业机构 ID，在PC控制台 集团管理可获取
+                     * 设置成员企业机构 ID，32 位字符串，在PC控制台 集团管理可获取
+                     * @param _id 成员企业机构 ID，32 位字符串，在PC控制台 集团管理可获取
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -193,19 +229,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作人信息，userId必填
+                     * 执行本接口操作的员工信息,userId必填。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 指定每页多少条数据，单页最大1000
+                     * 指定分页每页返回的数据条数，单页最大1000
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0
+                     * 指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -217,19 +254,27 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * 成员企业加入集团的当前状态
+<ul><li> **1**：待授权</li>
+<li> **2**：已授权待激活</li>
+<li> **3**：拒绝授权</li>
+<li> **4**：已解除</li>
+<li> **5**：已加入</li>
+</ul>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 是否导出当前成员企业数据
+<ul><li> **false**：不导出（默认值）</li>
+<li> **true**：导出</li></ul>
                      */
                     bool m_export;
                     bool m_exportHasBeenSet;
 
                     /**
-                     * 成员企业机构 ID，在PC控制台 集团管理可获取
+                     * 成员企业机构 ID，32 位字符串，在PC控制台 集团管理可获取
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

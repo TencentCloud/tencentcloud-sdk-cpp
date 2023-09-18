@@ -51,15 +51,51 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账号信息。
-                     * @return Account 账号信息。
+                     * 获取用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微
+信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信
+开放账号）： 
+1：QQ 开放账号。 
+2：微信开放账号。 
+4：手机号（暂仅支持国内手机号）。 
+8：设备号（imei/imeiMD5/idfa/idfaMd5）。 
+0： 其他。 
+10004：手机号 MD5。
+
+                     * @return Account 用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微
+信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信
+开放账号）： 
+1：QQ 开放账号。 
+2：微信开放账号。 
+4：手机号（暂仅支持国内手机号）。 
+8：设备号（imei/imeiMD5/idfa/idfaMd5）。 
+0： 其他。 
+10004：手机号 MD5。
+
                      * 
                      */
                     AccountInfo GetAccount() const;
 
                     /**
-                     * 设置账号信息。
-                     * @param _account 账号信息。
+                     * 设置用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微
+信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信
+开放账号）： 
+1：QQ 开放账号。 
+2：微信开放账号。 
+4：手机号（暂仅支持国内手机号）。 
+8：设备号（imei/imeiMD5/idfa/idfaMd5）。 
+0： 其他。 
+10004：手机号 MD5。
+
+                     * @param _account 用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微
+信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信
+开放账号）： 
+1：QQ 开放账号。 
+2：微信开放账号。 
+4：手机号（暂仅支持国内手机号）。 
+8：设备号（imei/imeiMD5/idfa/idfaMd5）。 
+0： 其他。 
+10004：手机号 MD5。
+
                      * 
                      */
                     void SetAccount(const AccountInfo& _account);
@@ -424,23 +460,35 @@ namespace TencentCloud
                     bool VendorIdHasBeenSet() const;
 
                     /**
-                     * 获取设备类型：
-1：Android
-2：IOS
-                     * @return DeviceType 设备类型：
-1：Android
-2：IOS
+                     * 获取设备类型，账号类型为8时必填： 
+0:未知 
+1:Imei;国际移动设备识别号（15-17位数字） 
+2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 
+3:Idfa; 
+4:IdfaMD5;
+                     * @return DeviceType 设备类型，账号类型为8时必填： 
+0:未知 
+1:Imei;国际移动设备识别号（15-17位数字） 
+2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 
+3:Idfa; 
+4:IdfaMD5;
                      * 
                      */
                     int64_t GetDeviceType() const;
 
                     /**
-                     * 设置设备类型：
-1：Android
-2：IOS
-                     * @param _deviceType 设备类型：
-1：Android
-2：IOS
+                     * 设置设备类型，账号类型为8时必填： 
+0:未知 
+1:Imei;国际移动设备识别号（15-17位数字） 
+2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 
+3:Idfa; 
+4:IdfaMD5;
+                     * @param _deviceType 设备类型，账号类型为8时必填： 
+0:未知 
+1:Imei;国际移动设备识别号（15-17位数字） 
+2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 
+3:Idfa; 
+4:IdfaMD5;
                      * 
                      */
                     void SetDeviceType(const int64_t& _deviceType);
@@ -516,15 +564,31 @@ namespace TencentCloud
                     bool OnlineScamHasBeenSet() const;
 
                     /**
-                     * 获取平台: 1android
-                     * @return Platform 平台: 1android
+                     * 获取1：安卓
+2：iOS 
+3：H5 
+4：小程序 
+
+                     * @return Platform 1：安卓
+2：iOS 
+3：H5 
+4：小程序 
+
                      * 
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台: 1android
-                     * @param _platform 平台: 1android
+                     * 设置1：安卓
+2：iOS 
+3：H5 
+4：小程序 
+
+                     * @param _platform 1：安卓
+2：iOS 
+3：H5 
+4：小程序 
+
                      * 
                      */
                     void SetPlatform(const std::string& _platform);
@@ -539,7 +603,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账号信息。
+                     * 用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微
+信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信
+开放账号）： 
+1：QQ 开放账号。 
+2：微信开放账号。 
+4：手机号（暂仅支持国内手机号）。 
+8：设备号（imei/imeiMD5/idfa/idfaMd5）。 
+0： 其他。 
+10004：手机号 MD5。
+
                      */
                     AccountInfo m_account;
                     bool m_accountHasBeenSet;
@@ -645,9 +718,12 @@ namespace TencentCloud
                     bool m_vendorIdHasBeenSet;
 
                     /**
-                     * 设备类型：
-1：Android
-2：IOS
+                     * 设备类型，账号类型为8时必填： 
+0:未知 
+1:Imei;国际移动设备识别号（15-17位数字） 
+2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 
+3:Idfa; 
+4:IdfaMD5;
                      */
                     int64_t m_deviceType;
                     bool m_deviceTypeHasBeenSet;
@@ -671,7 +747,11 @@ namespace TencentCloud
                     bool m_onlineScamHasBeenSet;
 
                     /**
-                     * 平台: 1android
+                     * 1：安卓
+2：iOS 
+3：H5 
+4：小程序 
+
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;

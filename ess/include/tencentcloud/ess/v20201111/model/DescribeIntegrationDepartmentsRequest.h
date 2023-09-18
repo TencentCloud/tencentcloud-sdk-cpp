@@ -70,15 +70,23 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表
-                     * @return QueryType 查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表
+                     * 获取查询类型，支持以下类型：
+<ul><li>**0**：查询单个部门节点列表，不包含子节点部门信息</li>
+<li>**1**：查询单个部门节点级一级子节点部门信息列表</li></ul>
+                     * @return QueryType 查询类型，支持以下类型：
+<ul><li>**0**：查询单个部门节点列表，不包含子节点部门信息</li>
+<li>**1**：查询单个部门节点级一级子节点部门信息列表</li></ul>
                      * 
                      */
                     uint64_t GetQueryType() const;
 
                     /**
-                     * 设置查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表
-                     * @param _queryType 查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表
+                     * 设置查询类型，支持以下类型：
+<ul><li>**0**：查询单个部门节点列表，不包含子节点部门信息</li>
+<li>**1**：查询单个部门节点级一级子节点部门信息列表</li></ul>
+                     * @param _queryType 查询类型，支持以下类型：
+<ul><li>**0**：查询单个部门节点列表，不包含子节点部门信息</li>
+<li>**1**：查询单个部门节点级一级子节点部门信息列表</li></ul>
                      * 
                      */
                     void SetQueryType(const uint64_t& _queryType);
@@ -116,15 +124,19 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据
-                     * @return DeptId 部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据
+                     * 获取查询的部门ID。
+注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`
+                     * @return DeptId 查询的部门ID。
+注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`
                      * 
                      */
                     std::string GetDeptId() const;
 
                     /**
-                     * 设置部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据
-                     * @param _deptId 部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据
+                     * 设置查询的部门ID。
+注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`
+                     * @param _deptId 查询的部门ID。
+注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`
                      * 
                      */
                     void SetDeptId(const std::string& _deptId);
@@ -137,15 +149,19 @@ namespace TencentCloud
                     bool DeptIdHasBeenSet() const;
 
                     /**
-                     * 获取客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据
-                     * @return DeptOpenId 客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据
+                     * 获取查询的客户系统部门ID。
+注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`
+                     * @return DeptOpenId 查询的客户系统部门ID。
+注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`
                      * 
                      */
                     std::string GetDeptOpenId() const;
 
                     /**
-                     * 设置客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据
-                     * @param _deptOpenId 客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据
+                     * 设置查询的客户系统部门ID。
+注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`
+                     * @param _deptOpenId 查询的客户系统部门ID。
+注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`
                      * 
                      */
                     void SetDeptOpenId(const std::string& _deptOpenId);
@@ -167,7 +183,9 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表
+                     * 查询类型，支持以下类型：
+<ul><li>**0**：查询单个部门节点列表，不包含子节点部门信息</li>
+<li>**1**：查询单个部门节点级一级子节点部门信息列表</li></ul>
                      */
                     uint64_t m_queryType;
                     bool m_queryTypeHasBeenSet;
@@ -180,13 +198,15 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据
+                     * 查询的部门ID。
+注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`
                      */
                     std::string m_deptId;
                     bool m_deptIdHasBeenSet;
 
                     /**
-                     * 客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据
+                     * 查询的客户系统部门ID。
+注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`
                      */
                     std::string m_deptOpenId;
                     bool m_deptOpenIdHasBeenSet;

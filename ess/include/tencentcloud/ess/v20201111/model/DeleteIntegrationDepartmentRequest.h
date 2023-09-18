@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取电子签中的部门id,通过DescribeIntegrationDepartments接口可获得
-                     * @return DeptId 电子签中的部门id,通过DescribeIntegrationDepartments接口可获得
+                     * 获取电子签中的部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口可获得。
+                     * @return DeptId 电子签中的部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口可获得。
                      * 
                      */
                     std::string GetDeptId() const;
 
                     /**
-                     * 设置电子签中的部门id,通过DescribeIntegrationDepartments接口可获得
-                     * @param _deptId 电子签中的部门id,通过DescribeIntegrationDepartments接口可获得
+                     * 设置电子签中的部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口可获得。
+                     * @param _deptId 电子签中的部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口可获得。
                      * 
                      */
                     void SetDeptId(const std::string& _deptId);
@@ -116,15 +116,19 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取交接部门ID。待删除部门中的合同、印章和模板数据，交接至该部门ID下，未填写交接至公司根部门。
-                     * @return ReceiveDeptId 交接部门ID。待删除部门中的合同、印章和模板数据，交接至该部门ID下，未填写交接至公司根部门。
+                     * 获取交接部门ID。
+待删除部门中的合同、印章和模板数据，将会被交接至该部门ID下；若未填写则交接至公司根部门。
+                     * @return ReceiveDeptId 交接部门ID。
+待删除部门中的合同、印章和模板数据，将会被交接至该部门ID下；若未填写则交接至公司根部门。
                      * 
                      */
                     std::string GetReceiveDeptId() const;
 
                     /**
-                     * 设置交接部门ID。待删除部门中的合同、印章和模板数据，交接至该部门ID下，未填写交接至公司根部门。
-                     * @param _receiveDeptId 交接部门ID。待删除部门中的合同、印章和模板数据，交接至该部门ID下，未填写交接至公司根部门。
+                     * 设置交接部门ID。
+待删除部门中的合同、印章和模板数据，将会被交接至该部门ID下；若未填写则交接至公司根部门。
+                     * @param _receiveDeptId 交接部门ID。
+待删除部门中的合同、印章和模板数据，将会被交接至该部门ID下；若未填写则交接至公司根部门。
                      * 
                      */
                     void SetReceiveDeptId(const std::string& _receiveDeptId);
@@ -146,7 +150,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 电子签中的部门id,通过DescribeIntegrationDepartments接口可获得
+                     * 电子签中的部门ID，通过<a href="https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments" target="_blank">DescribeIntegrationDepartments</a>接口可获得。
                      */
                     std::string m_deptId;
                     bool m_deptIdHasBeenSet;
@@ -159,7 +163,8 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 交接部门ID。待删除部门中的合同、印章和模板数据，交接至该部门ID下，未填写交接至公司根部门。
+                     * 交接部门ID。
+待删除部门中的合同、印章和模板数据，将会被交接至该部门ID下；若未填写则交接至公司根部门。
                      */
                     std::string m_receiveDeptId;
                     bool m_receiveDeptIdHasBeenSet;

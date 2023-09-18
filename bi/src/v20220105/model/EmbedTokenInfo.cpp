@@ -31,7 +31,9 @@ EmbedTokenInfo::EmbedTokenInfo() :
     m_pageIdHasBeenSet(false),
     m_extraParamHasBeenSet(false),
     m_scopeHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_userCorpIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome EmbedTokenInfo::Deserialize(const rapidjson::Value &value)
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("UserCorpId") && !value["UserCorpId"].IsNull())
+    {
+        if (!value["UserCorpId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedTokenInfo.UserCorpId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userCorpId = string(value["UserCorpId"].GetString());
+        m_userCorpIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedTokenInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void EmbedTokenInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_userCorpIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserCorpId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userCorpId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void EmbedTokenInfo::SetExpireTime(const uint64_t& _expireTime)
 bool EmbedTokenInfo::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+string EmbedTokenInfo::GetUserCorpId() const
+{
+    return m_userCorpId;
+}
+
+void EmbedTokenInfo::SetUserCorpId(const string& _userCorpId)
+{
+    m_userCorpId = _userCorpId;
+    m_userCorpIdHasBeenSet = true;
+}
+
+bool EmbedTokenInfo::UserCorpIdHasBeenSet() const
+{
+    return m_userCorpIdHasBeenSet;
+}
+
+string EmbedTokenInfo::GetUserId() const
+{
+    return m_userId;
+}
+
+void EmbedTokenInfo::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool EmbedTokenInfo::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 

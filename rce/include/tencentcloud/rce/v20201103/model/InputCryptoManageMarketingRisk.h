@@ -47,15 +47,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否授权
-                     * @return IsAuthorized 是否授权
+                     * 获取是否授权：1已授权，否则未授权。
+ 调用全栈式风控引擎接口服务时，客户需先明确授权
+
+
+                     * @return IsAuthorized 是否授权：1已授权，否则未授权。
+ 调用全栈式风控引擎接口服务时，客户需先明确授权
+
+
                      * 
                      */
                     std::string GetIsAuthorized() const;
 
                     /**
-                     * 设置是否授权
-                     * @param _isAuthorized 是否授权
+                     * 设置是否授权：1已授权，否则未授权。
+ 调用全栈式风控引擎接口服务时，客户需先明确授权
+
+
+                     * @param _isAuthorized 是否授权：1已授权，否则未授权。
+ 调用全栈式风控引擎接口服务时，客户需先明确授权
+
+
                      * 
                      */
                     void SetIsAuthorized(const std::string& _isAuthorized);
@@ -68,15 +80,19 @@ namespace TencentCloud
                     bool IsAuthorizedHasBeenSet() const;
 
                     /**
-                     * 获取加密类型
-                     * @return CryptoType 加密类型
+                     * 获取加密类型：1AES加密
+
+                     * @return CryptoType 加密类型：1AES加密
+
                      * 
                      */
                     std::string GetCryptoType() const;
 
                     /**
-                     * 设置加密类型
-                     * @param _cryptoType 加密类型
+                     * 设置加密类型：1AES加密
+
+                     * @param _cryptoType 加密类型：1AES加密
+
                      * 
                      */
                     void SetCryptoType(const std::string& _cryptoType);
@@ -89,15 +105,15 @@ namespace TencentCloud
                     bool CryptoTypeHasBeenSet() const;
 
                     /**
-                     * 获取加密内容
-                     * @return CryptoContent 加密内容
+                     * 获取加密内容，非空时接口采用加密模式。
+                     * @return CryptoContent 加密内容，非空时接口采用加密模式。
                      * 
                      */
                     std::string GetCryptoContent() const;
 
                     /**
-                     * 设置加密内容
-                     * @param _cryptoContent 加密内容
+                     * 设置加密内容，非空时接口采用加密模式。
+                     * @param _cryptoContent 加密内容，非空时接口采用加密模式。
                      * 
                      */
                     void SetCryptoContent(const std::string& _cryptoContent);
@@ -112,19 +128,23 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否授权
+                     * 是否授权：1已授权，否则未授权。
+ 调用全栈式风控引擎接口服务时，客户需先明确授权
+
+
                      */
                     std::string m_isAuthorized;
                     bool m_isAuthorizedHasBeenSet;
 
                     /**
-                     * 加密类型
+                     * 加密类型：1AES加密
+
                      */
                     std::string m_cryptoType;
                     bool m_cryptoTypeHasBeenSet;
 
                     /**
-                     * 加密内容
+                     * 加密内容，非空时接口采用加密模式。
                      */
                     std::string m_cryptoContent;
                     bool m_cryptoContentHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需操作的实例ID
-                     * @return ResourceIds 需操作的实例ID
+                     * 获取需操作的集群ID
+                     * @return ResourceIds 需操作的集群ID
                      * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置需操作的实例ID
-                     * @param _resourceIds 需操作的实例ID
+                     * 设置需操作的集群ID
+                     * @param _resourceIds 需操作的集群ID
                      * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需操作的实例ID
+                     * 需操作的集群ID
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;

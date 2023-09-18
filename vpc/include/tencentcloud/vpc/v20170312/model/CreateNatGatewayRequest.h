@@ -295,6 +295,27 @@ namespace TencentCloud
                      */
                     bool PublicIpFromSameZoneHasBeenSet() const;
 
+                    /**
+                     * 获取NAT网关大版本号，1是传统型，2是标准型，默认是1
+                     * @return NatProductVersion NAT网关大版本号，1是传统型，2是标准型，默认是1
+                     * 
+                     */
+                    uint64_t GetNatProductVersion() const;
+
+                    /**
+                     * 设置NAT网关大版本号，1是传统型，2是标准型，默认是1
+                     * @param _natProductVersion NAT网关大版本号，1是传统型，2是标准型，默认是1
+                     * 
+                     */
+                    void SetNatProductVersion(const uint64_t& _natProductVersion);
+
+                    /**
+                     * 判断参数 NatProductVersion 是否已赋值
+                     * @return NatProductVersion 是否已赋值
+                     * 
+                     */
+                    bool NatProductVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +389,12 @@ namespace TencentCloud
                      */
                     bool m_publicIpFromSameZone;
                     bool m_publicIpFromSameZoneHasBeenSet;
+
+                    /**
+                     * NAT网关大版本号，1是传统型，2是标准型，默认是1
+                     */
+                    uint64_t m_natProductVersion;
+                    bool m_natProductVersionHasBeenSet;
 
                 };
             }

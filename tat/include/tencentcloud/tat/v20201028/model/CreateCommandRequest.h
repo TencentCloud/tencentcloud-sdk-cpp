@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tat/v20201028/model/DefaultParameterConf.h>
 #include <tencentcloud/tat/v20201028/model/Tag.h>
 
 
@@ -236,6 +237,35 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool DefaultParametersHasBeenSet() const;
 
                     /**
+                     * 获取自定义参数数组。
+如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+自定义参数最多20个。
+                     * @return DefaultParameterConfs 自定义参数数组。
+如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+自定义参数最多20个。
+                     * 
+                     */
+                    std::vector<DefaultParameterConf> GetDefaultParameterConfs() const;
+
+                    /**
+                     * 设置自定义参数数组。
+如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+自定义参数最多20个。
+                     * @param _defaultParameterConfs 自定义参数数组。
+如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+自定义参数最多20个。
+                     * 
+                     */
+                    void SetDefaultParameterConfs(const std::vector<DefaultParameterConf>& _defaultParameterConfs);
+
+                    /**
+                     * 判断参数 DefaultParameterConfs 是否已赋值
+                     * @return DefaultParameterConfs 是否已赋值
+                     * 
+                     */
+                    bool DefaultParameterConfsHasBeenSet() const;
+
+                    /**
                      * 获取为命令关联的标签，列表长度不超过10。
                      * @return Tags 为命令关联的标签，列表长度不超过10。
                      * 
@@ -390,6 +420,14 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                      */
                     std::string m_defaultParameters;
                     bool m_defaultParametersHasBeenSet;
+
+                    /**
+                     * 自定义参数数组。
+如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+自定义参数最多20个。
+                     */
+                    std::vector<DefaultParameterConf> m_defaultParameterConfs;
+                    bool m_defaultParameterConfsHasBeenSet;
 
                     /**
                      * 为命令关联的标签，列表长度不超过10。

@@ -44,8 +44,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取绑定是否成功，1表示成功，0表示失败
-                     * @return Status 绑定是否成功，1表示成功，0表示失败
+                     * 获取绑定是否成功。
+<ul><li>**0**：失败</li><li>**1**：成功</li></ul>
+                     * @return Status 绑定是否成功。
+<ul><li>**0**：失败</li><li>**1**：成功</li></ul>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -60,7 +62,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 绑定是否成功，1表示成功，0表示失败
+                     * 绑定是否成功。
+<ul><li>**0**：失败</li><li>**1**：成功</li></ul>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

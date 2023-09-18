@@ -34,7 +34,8 @@ CreateNatGatewayRequest::CreateNatGatewayRequest() :
     m_subnetIdHasBeenSet(false),
     m_stockPublicIpAddressesBandwidthOutHasBeenSet(false),
     m_publicIpAddressesBandwidthOutHasBeenSet(false),
-    m_publicIpFromSameZoneHasBeenSet(false)
+    m_publicIpFromSameZoneHasBeenSet(false),
+    m_natProductVersionHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,14 @@ string CreateNatGatewayRequest::ToJsonString() const
         string key = "PublicIpFromSameZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_publicIpFromSameZone, allocator);
+    }
+
+    if (m_natProductVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NatProductVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_natProductVersion, allocator);
     }
 
 
@@ -351,6 +360,22 @@ void CreateNatGatewayRequest::SetPublicIpFromSameZone(const bool& _publicIpFromS
 bool CreateNatGatewayRequest::PublicIpFromSameZoneHasBeenSet() const
 {
     return m_publicIpFromSameZoneHasBeenSet;
+}
+
+uint64_t CreateNatGatewayRequest::GetNatProductVersion() const
+{
+    return m_natProductVersion;
+}
+
+void CreateNatGatewayRequest::SetNatProductVersion(const uint64_t& _natProductVersion)
+{
+    m_natProductVersion = _natProductVersion;
+    m_natProductVersionHasBeenSet = true;
+}
+
+bool CreateNatGatewayRequest::NatProductVersionHasBeenSet() const
+{
+    return m_natProductVersionHasBeenSet;
 }
 
 

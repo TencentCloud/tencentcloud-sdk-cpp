@@ -205,6 +205,14 @@
 #include <tencentcloud/waf/v20180125/model/ModifyHostModeResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyHostStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyHostStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyInstanceElasticModeRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyInstanceElasticModeResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyInstanceNameRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyInstanceNameResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyInstanceQpsLimitRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyInstanceQpsLimitResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyInstanceRenewFlagRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyInstanceRenewFlagResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifySpartaProtectionRequest.h>
@@ -520,6 +528,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyHostStatusResponse> ModifyHostStatusOutcome;
                 typedef std::future<ModifyHostStatusOutcome> ModifyHostStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyHostStatusRequest&, ModifyHostStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHostStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceElasticModeResponse> ModifyInstanceElasticModeOutcome;
+                typedef std::future<ModifyInstanceElasticModeOutcome> ModifyInstanceElasticModeOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyInstanceElasticModeRequest&, ModifyInstanceElasticModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceElasticModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceNameResponse> ModifyInstanceNameOutcome;
+                typedef std::future<ModifyInstanceNameOutcome> ModifyInstanceNameOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyInstanceNameRequest&, ModifyInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceQpsLimitResponse> ModifyInstanceQpsLimitOutcome;
+                typedef std::future<ModifyInstanceQpsLimitOutcome> ModifyInstanceQpsLimitOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyInstanceQpsLimitRequest&, ModifyInstanceQpsLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceQpsLimitAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceRenewFlagResponse> ModifyInstanceRenewFlagOutcome;
+                typedef std::future<ModifyInstanceRenewFlagOutcome> ModifyInstanceRenewFlagOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyInstanceRenewFlagRequest&, ModifyInstanceRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceRenewFlagAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProtectionStatusResponse> ModifyProtectionStatusOutcome;
                 typedef std::future<ModifyProtectionStatusOutcome> ModifyProtectionStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyProtectionStatusRequest&, ModifyProtectionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtectionStatusAsyncHandler;
@@ -747,7 +767,7 @@ namespace TencentCloud
                 DeleteSessionOutcomeCallable DeleteSessionCallable(const Model::DeleteSessionRequest& request);
 
                 /**
-                 *waf斯巴达-删除防护域名
+                 *SAASWAF删除防护域名
                  * @param req DeleteSpartaProtectionRequest
                  * @return DeleteSpartaProtectionOutcome
                  */
@@ -1392,6 +1412,42 @@ namespace TencentCloud
                 ModifyHostStatusOutcome ModifyHostStatus(const Model::ModifyHostStatusRequest &request);
                 void ModifyHostStatusAsync(const Model::ModifyHostStatusRequest& request, const ModifyHostStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyHostStatusOutcomeCallable ModifyHostStatusCallable(const Model::ModifyHostStatusRequest& request);
+
+                /**
+                 *修改实例的QPS弹性计费开关
+                 * @param req ModifyInstanceElasticModeRequest
+                 * @return ModifyInstanceElasticModeOutcome
+                 */
+                ModifyInstanceElasticModeOutcome ModifyInstanceElasticMode(const Model::ModifyInstanceElasticModeRequest &request);
+                void ModifyInstanceElasticModeAsync(const Model::ModifyInstanceElasticModeRequest& request, const ModifyInstanceElasticModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceElasticModeOutcomeCallable ModifyInstanceElasticModeCallable(const Model::ModifyInstanceElasticModeRequest& request);
+
+                /**
+                 *修改实例的名称
+                 * @param req ModifyInstanceNameRequest
+                 * @return ModifyInstanceNameOutcome
+                 */
+                ModifyInstanceNameOutcome ModifyInstanceName(const Model::ModifyInstanceNameRequest &request);
+                void ModifyInstanceNameAsync(const Model::ModifyInstanceNameRequest& request, const ModifyInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceNameOutcomeCallable ModifyInstanceNameCallable(const Model::ModifyInstanceNameRequest& request);
+
+                /**
+                 *设置套餐实例的弹性qps上限
+                 * @param req ModifyInstanceQpsLimitRequest
+                 * @return ModifyInstanceQpsLimitOutcome
+                 */
+                ModifyInstanceQpsLimitOutcome ModifyInstanceQpsLimit(const Model::ModifyInstanceQpsLimitRequest &request);
+                void ModifyInstanceQpsLimitAsync(const Model::ModifyInstanceQpsLimitRequest& request, const ModifyInstanceQpsLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceQpsLimitOutcomeCallable ModifyInstanceQpsLimitCallable(const Model::ModifyInstanceQpsLimitRequest& request);
+
+                /**
+                 *修改实例的自动续费开关
+                 * @param req ModifyInstanceRenewFlagRequest
+                 * @return ModifyInstanceRenewFlagOutcome
+                 */
+                ModifyInstanceRenewFlagOutcome ModifyInstanceRenewFlag(const Model::ModifyInstanceRenewFlagRequest &request);
+                void ModifyInstanceRenewFlagAsync(const Model::ModifyInstanceRenewFlagRequest& request, const ModifyInstanceRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceRenewFlagOutcomeCallable ModifyInstanceRenewFlagCallable(const Model::ModifyInstanceRenewFlagRequest& request);
 
                 /**
                  *waf斯巴达-waf开关

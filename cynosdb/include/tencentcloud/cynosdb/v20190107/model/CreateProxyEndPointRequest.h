@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ConnectionPoolTimeOutHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID数组
-                     * @return SecurityGroupIds 安全组ID数组
+                     * 获取绑定的安全组ID数组
+                     * @return SecurityGroupIds 绑定的安全组ID数组
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组ID数组
-                     * @param _securityGroupIds 安全组ID数组
+                     * 设置绑定的安全组ID数组
+                     * @param _securityGroupIds 绑定的安全组ID数组
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取vip信息
-                     * @return Vip vip信息
+                     * 获取想要绑定的vip信息，需与UniqueVpcId对应。
+                     * @return Vip 想要绑定的vip信息，需与UniqueVpcId对应。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置vip信息
-                     * @param _vip vip信息
+                     * 设置想要绑定的vip信息，需与UniqueVpcId对应。
+                     * @param _vip 想要绑定的vip信息，需与UniqueVpcId对应。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -279,15 +279,27 @@ system-系统分配，custom-自定义
                     bool AutoAddRoHasBeenSet() const;
 
                     /**
-                     * 获取是否开启故障转移
-                     * @return FailOver 是否开启故障转移
+                     * 获取是否开启故障转移。
+yes：开启
+no：不开启。
+数据库代理出现故障时，链接地址将会路由到主实例
+                     * @return FailOver 是否开启故障转移。
+yes：开启
+no：不开启。
+数据库代理出现故障时，链接地址将会路由到主实例
                      * 
                      */
                     std::string GetFailOver() const;
 
                     /**
-                     * 设置是否开启故障转移
-                     * @param _failOver 是否开启故障转移
+                     * 设置是否开启故障转移。
+yes：开启
+no：不开启。
+数据库代理出现故障时，链接地址将会路由到主实例
+                     * @param _failOver 是否开启故障转移。
+yes：开启
+no：不开启。
+数据库代理出现故障时，链接地址将会路由到主实例
                      * 
                      */
                     void SetFailOver(const std::string& _failOver);
@@ -350,15 +362,15 @@ READWRITE,READONLY
                     bool RwTypeHasBeenSet() const;
 
                     /**
-                     * 获取一致性超时时间
-                     * @return ConsistencyTimeOut 一致性超时时间
+                     * 获取一致性超时时间。取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待
+                     * @return ConsistencyTimeOut 一致性超时时间。取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待
                      * 
                      */
                     int64_t GetConsistencyTimeOut() const;
 
                     /**
-                     * 设置一致性超时时间
-                     * @param _consistencyTimeOut 一致性超时时间
+                     * 设置一致性超时时间。取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待
+                     * @param _consistencyTimeOut 一致性超时时间。取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待
                      * 
                      */
                     void SetConsistencyTimeOut(const int64_t& _consistencyTimeOut);
@@ -371,15 +383,15 @@ READWRITE,READONLY
                     bool ConsistencyTimeOutHasBeenSet() const;
 
                     /**
-                     * 获取事务拆分
-                     * @return TransSplit 事务拆分
+                     * 获取是否开启事务拆分。在一个事务中拆分读和写到不同的实例上去执行
+                     * @return TransSplit 是否开启事务拆分。在一个事务中拆分读和写到不同的实例上去执行
                      * 
                      */
                     bool GetTransSplit() const;
 
                     /**
-                     * 设置事务拆分
-                     * @param _transSplit 事务拆分
+                     * 设置是否开启事务拆分。在一个事务中拆分读和写到不同的实例上去执行
+                     * @param _transSplit 是否开启事务拆分。在一个事务中拆分读和写到不同的实例上去执行
                      * 
                      */
                     void SetTransSplit(const bool& _transSplit);
@@ -476,7 +488,7 @@ nearby,balance
                     bool m_connectionPoolTimeOutHasBeenSet;
 
                     /**
-                     * 安全组ID数组
+                     * 绑定的安全组ID数组
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
@@ -488,7 +500,7 @@ nearby,balance
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * vip信息
+                     * 想要绑定的vip信息，需与UniqueVpcId对应。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
@@ -507,7 +519,10 @@ system-系统分配，custom-自定义
                     bool m_autoAddRoHasBeenSet;
 
                     /**
-                     * 是否开启故障转移
+                     * 是否开启故障转移。
+yes：开启
+no：不开启。
+数据库代理出现故障时，链接地址将会路由到主实例
                      */
                     std::string m_failOver;
                     bool m_failOverHasBeenSet;
@@ -527,13 +542,13 @@ READWRITE,READONLY
                     bool m_rwTypeHasBeenSet;
 
                     /**
-                     * 一致性超时时间
+                     * 一致性超时时间。取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待
                      */
                     int64_t m_consistencyTimeOut;
                     bool m_consistencyTimeOutHasBeenSet;
 
                     /**
-                     * 事务拆分
+                     * 是否开启事务拆分。在一个事务中拆分读和写到不同的实例上去执行
                      */
                     bool m_transSplit;
                     bool m_transSplitHasBeenSet;

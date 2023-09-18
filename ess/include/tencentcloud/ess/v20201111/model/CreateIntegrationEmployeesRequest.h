@@ -46,15 +46,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息，userId必填
-                     * @return Operator 操作人信息，userId必填
+                     * 获取执行本接口操作的员工信息。使用此接口时，必须填写userId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。使用此接口时，必须填写userId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息，userId必填
-                     * @param _operator 操作人信息，userId必填
+                     * 设置执行本接口操作的员工信息。使用此接口时，必须填写userId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。使用此接口时，必须填写userId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -67,23 +71,23 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取待创建员工的信息，不超过20个。
-所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
-企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息
-                     * @return Employees 待创建员工的信息，不超过20个。
-所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
-企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息
+                     * 获取待创建员工的信息，最多不超过20个。
+其中入参Mobile和DisplayName必填，OpenId、Email和Department.DepartmentId选填，其他字段暂不支持设置。
+在创建企微企业员工场景下，只需传入WeworkOpenId，无需再传其他信息。
+                     * @return Employees 待创建员工的信息，最多不超过20个。
+其中入参Mobile和DisplayName必填，OpenId、Email和Department.DepartmentId选填，其他字段暂不支持设置。
+在创建企微企业员工场景下，只需传入WeworkOpenId，无需再传其他信息。
                      * 
                      */
                     std::vector<Staff> GetEmployees() const;
 
                     /**
-                     * 设置待创建员工的信息，不超过20个。
-所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
-企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息
-                     * @param _employees 待创建员工的信息，不超过20个。
-所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
-企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息
+                     * 设置待创建员工的信息，最多不超过20个。
+其中入参Mobile和DisplayName必填，OpenId、Email和Department.DepartmentId选填，其他字段暂不支持设置。
+在创建企微企业员工场景下，只需传入WeworkOpenId，无需再传其他信息。
+                     * @param _employees 待创建员工的信息，最多不超过20个。
+其中入参Mobile和DisplayName必填，OpenId、Email和Department.DepartmentId选填，其他字段暂不支持设置。
+在创建企微企业员工场景下，只需传入WeworkOpenId，无需再传其他信息。
                      * 
                      */
                     void SetEmployees(const std::vector<Staff>& _employees);
@@ -96,15 +100,19 @@ namespace TencentCloud
                     bool EmployeesHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -119,21 +127,23 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作人信息，userId必填
+                     * 执行本接口操作的员工信息。使用此接口时，必须填写userId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 待创建员工的信息，不超过20个。
-所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
-企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息
+                     * 待创建员工的信息，最多不超过20个。
+其中入参Mobile和DisplayName必填，OpenId、Email和Department.DepartmentId选填，其他字段暂不支持设置。
+在创建企微企业员工场景下，只需传入WeworkOpenId，无需再传其他信息。
                      */
                     std::vector<Staff> m_employees;
                     bool m_employeesHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

@@ -72,18 +72,26 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取超管手机号
+                     * 获取超管手机号，打码显示
+示例值：138****1569
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mobile 超管手机号
+                     * @return Mobile 超管手机号，打码显示
+示例值：138****1569
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置超管手机号
+                     * 设置超管手机号，打码显示
+示例值：138****1569
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mobile 超管手机号
+                     * @param _mobile 超管手机号，打码显示
+示例值：138****1569
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -106,7 +114,9 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 超管手机号
+                     * 超管手机号，打码显示
+示例值：138****1569
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mobile;

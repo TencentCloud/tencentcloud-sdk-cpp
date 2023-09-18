@@ -892,6 +892,31 @@ PullVodPushLive -点播。
                      */
                     bool RecordTemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取新增的推流地址。用于单任务推两路场景。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupToUrl 新增的推流地址。用于单任务推两路场景。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBackupToUrl() const;
+
+                    /**
+                     * 设置新增的推流地址。用于单任务推两路场景。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backupToUrl 新增的推流地址。用于单任务推两路场景。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackupToUrl(const std::string& _backupToUrl);
+
+                    /**
+                     * 判断参数 BackupToUrl 是否已赋值
+                     * @return BackupToUrl 是否已赋值
+                     * 
+                     */
+                    bool BackupToUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1125,6 +1150,13 @@ PullVodPushLive -点播。
                      */
                     std::string m_recordTemplateId;
                     bool m_recordTemplateIdHasBeenSet;
+
+                    /**
+                     * 新增的推流地址。用于单任务推两路场景。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_backupToUrl;
+                    bool m_backupToUrlHasBeenSet;
 
                 };
             }

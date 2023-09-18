@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取用户传入的手机号
-                     * @return Mobile 用户传入的手机号
+                     * 获取用户传入的手机号，明文展示
+                     * @return Mobile 用户传入的手机号，明文展示
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置用户传入的手机号
-                     * @param _mobile 用户传入的手机号
+                     * 设置用户传入的手机号，明文展示
+                     * @param _mobile 用户传入的手机号，明文展示
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -110,15 +110,19 @@ namespace TencentCloud
                     bool ReasonHasBeenSet() const;
 
                     /**
-                     * 获取用户Id
-                     * @return UserId 用户Id
+                     * 获取员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
+                     * @return UserId 员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id
-                     * @param _userId 用户Id
+                     * 设置员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
+                     * @param _userId 员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -160,7 +164,7 @@ namespace TencentCloud
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 用户传入的手机号
+                     * 用户传入的手机号，明文展示
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
@@ -172,7 +176,8 @@ namespace TencentCloud
                     bool m_reasonHasBeenSet;
 
                     /**
-                     * 用户Id
+                     * 员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

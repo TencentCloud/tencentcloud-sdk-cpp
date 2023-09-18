@@ -3953,6 +3953,178 @@ WafClient::ModifyHostStatusOutcomeCallable WafClient::ModifyHostStatusCallable(c
     return task->get_future();
 }
 
+WafClient::ModifyInstanceElasticModeOutcome WafClient::ModifyInstanceElasticMode(const ModifyInstanceElasticModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceElasticMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceElasticModeResponse rsp = ModifyInstanceElasticModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceElasticModeOutcome(rsp);
+        else
+            return ModifyInstanceElasticModeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceElasticModeOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyInstanceElasticModeAsync(const ModifyInstanceElasticModeRequest& request, const ModifyInstanceElasticModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceElasticMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyInstanceElasticModeOutcomeCallable WafClient::ModifyInstanceElasticModeCallable(const ModifyInstanceElasticModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceElasticModeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceElasticMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyInstanceNameOutcome WafClient::ModifyInstanceName(const ModifyInstanceNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceNameResponse rsp = ModifyInstanceNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceNameOutcome(rsp);
+        else
+            return ModifyInstanceNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceNameOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyInstanceNameAsync(const ModifyInstanceNameRequest& request, const ModifyInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyInstanceNameOutcomeCallable WafClient::ModifyInstanceNameCallable(const ModifyInstanceNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceNameOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyInstanceQpsLimitOutcome WafClient::ModifyInstanceQpsLimit(const ModifyInstanceQpsLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceQpsLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceQpsLimitResponse rsp = ModifyInstanceQpsLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceQpsLimitOutcome(rsp);
+        else
+            return ModifyInstanceQpsLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceQpsLimitOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyInstanceQpsLimitAsync(const ModifyInstanceQpsLimitRequest& request, const ModifyInstanceQpsLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceQpsLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyInstanceQpsLimitOutcomeCallable WafClient::ModifyInstanceQpsLimitCallable(const ModifyInstanceQpsLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceQpsLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceQpsLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyInstanceRenewFlagOutcome WafClient::ModifyInstanceRenewFlag(const ModifyInstanceRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceRenewFlagResponse rsp = ModifyInstanceRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceRenewFlagOutcome(rsp);
+        else
+            return ModifyInstanceRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyInstanceRenewFlagAsync(const ModifyInstanceRenewFlagRequest& request, const ModifyInstanceRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyInstanceRenewFlagOutcomeCallable WafClient::ModifyInstanceRenewFlagCallable(const ModifyInstanceRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyProtectionStatusOutcome WafClient::ModifyProtectionStatus(const ModifyProtectionStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyProtectionStatus");

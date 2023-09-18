@@ -87,15 +87,19 @@ namespace TencentCloud
                     bool RollbackStrategyHasBeenSet() const;
 
                     /**
-                     * 获取回档ID
-                     * @return RollbackId 回档ID
+                     * 获取备份文件ID。
+回档策略为按备份文件回档时必填。
+                     * @return RollbackId 备份文件ID。
+回档策略为按备份文件回档时必填。
                      * 
                      */
                     uint64_t GetRollbackId() const;
 
                     /**
-                     * 设置回档ID
-                     * @param _rollbackId 回档ID
+                     * 设置备份文件ID。
+回档策略为按备份文件回档时必填。
+                     * @param _rollbackId 备份文件ID。
+回档策略为按备份文件回档时必填。
                      * 
                      */
                     void SetRollbackId(const uint64_t& _rollbackId);
@@ -108,15 +112,19 @@ namespace TencentCloud
                     bool RollbackIdHasBeenSet() const;
 
                     /**
-                     * 获取期望回档时间
-                     * @return ExpectTime 期望回档时间
+                     * 获取期望回档时间。
+回档策略为timeRollback按时间点回档时必填。
+                     * @return ExpectTime 期望回档时间。
+回档策略为timeRollback按时间点回档时必填。
                      * 
                      */
                     std::string GetExpectTime() const;
 
                     /**
-                     * 设置期望回档时间
-                     * @param _expectTime 期望回档时间
+                     * 设置期望回档时间。
+回档策略为timeRollback按时间点回档时必填。
+                     * @param _expectTime 期望回档时间。
+回档策略为timeRollback按时间点回档时必填。
                      * 
                      */
                     void SetExpectTime(const std::string& _expectTime);
@@ -227,13 +235,15 @@ namespace TencentCloud
                     bool m_rollbackStrategyHasBeenSet;
 
                     /**
-                     * 回档ID
+                     * 备份文件ID。
+回档策略为按备份文件回档时必填。
                      */
                     uint64_t m_rollbackId;
                     bool m_rollbackIdHasBeenSet;
 
                     /**
-                     * 期望回档时间
+                     * 期望回档时间。
+回档策略为timeRollback按时间点回档时必填。
                      */
                     std::string m_expectTime;
                     bool m_expectTimeHasBeenSet;

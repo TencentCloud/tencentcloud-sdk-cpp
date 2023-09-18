@@ -110,27 +110,6 @@ namespace TencentCloud
                     bool HostIdsHasBeenSet() const;
 
                     /**
-                     * 获取指定母机IP生产子机
-                     * @return HostIps 指定母机IP生产子机
-                     * 
-                     */
-                    std::vector<std::string> GetHostIps() const;
-
-                    /**
-                     * 设置指定母机IP生产子机
-                     * @param _hostIps 指定母机IP生产子机
-                     * 
-                     */
-                    void SetHostIps(const std::vector<std::string>& _hostIps);
-
-                    /**
-                     * 判断参数 HostIps 是否已赋值
-                     * @return HostIps 是否已赋值
-                     * 
-                     */
-                    bool HostIpsHasBeenSet() const;
-
-                    /**
                      * 获取实例所属的专用宿主机ID，仅用于出参。
                      * @return HostId 实例所属的专用宿主机ID，仅用于出参。
                      * 
@@ -170,12 +149,6 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_hostIds;
                     bool m_hostIdsHasBeenSet;
-
-                    /**
-                     * 指定母机IP生产子机
-                     */
-                    std::vector<std::string> m_hostIps;
-                    bool m_hostIpsHasBeenSet;
 
                     /**
                      * 实例所属的专用宿主机ID，仅用于出参。

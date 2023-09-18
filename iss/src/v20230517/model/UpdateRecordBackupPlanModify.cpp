@@ -85,31 +85,47 @@ CoreInternalOutcome UpdateRecordBackupPlanModify::Deserialize(const rapidjson::V
 
     if (value.HasMember("Add") && !value["Add"].IsNull())
     {
-        if (!value["Add"].IsString())
+        if (!value["Add"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordBackupPlanModify.Add` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Add"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `UpdateRecordBackupPlanModify.Add` IsString=false incorrectly").SetRequestId(requestId));
+            ChannelInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_add.push_back(item);
         }
-        m_add = string(value["Add"].GetString());
         m_addHasBeenSet = true;
     }
 
     if (value.HasMember("Del") && !value["Del"].IsNull())
     {
-        if (!value["Del"].IsString())
+        if (!value["Del"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordBackupPlanModify.Del` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Del"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `UpdateRecordBackupPlanModify.Del` IsString=false incorrectly").SetRequestId(requestId));
+            m_del.push_back((*itr).GetString());
         }
-        m_del = string(value["Del"].GetString());
         m_delHasBeenSet = true;
     }
 
     if (value.HasMember("OrganizationId") && !value["OrganizationId"].IsNull())
     {
-        if (!value["OrganizationId"].IsString())
+        if (!value["OrganizationId"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordBackupPlanModify.OrganizationId` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OrganizationId"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `UpdateRecordBackupPlanModify.OrganizationId` IsString=false incorrectly").SetRequestId(requestId));
+            m_organizationId.push_back((*itr).GetString());
         }
-        m_organizationId = string(value["OrganizationId"].GetString());
         m_organizationIdHasBeenSet = true;
     }
 
@@ -158,7 +174,14 @@ void UpdateRecordBackupPlanModify::ToJsonObject(rapidjson::Value &value, rapidjs
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Add";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_add.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_add.begin(); itr != m_add.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_delHasBeenSet)
@@ -166,7 +189,12 @@ void UpdateRecordBackupPlanModify::ToJsonObject(rapidjson::Value &value, rapidjs
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Del";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_del.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_del.begin(); itr != m_del.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_organizationIdHasBeenSet)
@@ -174,7 +202,12 @@ void UpdateRecordBackupPlanModify::ToJsonObject(rapidjson::Value &value, rapidjs
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrganizationId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_organizationId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_organizationId.begin(); itr != m_organizationId.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -244,12 +277,12 @@ bool UpdateRecordBackupPlanModify::LifeCycleHasBeenSet() const
     return m_lifeCycleHasBeenSet;
 }
 
-string UpdateRecordBackupPlanModify::GetAdd() const
+vector<ChannelInfo> UpdateRecordBackupPlanModify::GetAdd() const
 {
     return m_add;
 }
 
-void UpdateRecordBackupPlanModify::SetAdd(const string& _add)
+void UpdateRecordBackupPlanModify::SetAdd(const vector<ChannelInfo>& _add)
 {
     m_add = _add;
     m_addHasBeenSet = true;
@@ -260,12 +293,12 @@ bool UpdateRecordBackupPlanModify::AddHasBeenSet() const
     return m_addHasBeenSet;
 }
 
-string UpdateRecordBackupPlanModify::GetDel() const
+vector<string> UpdateRecordBackupPlanModify::GetDel() const
 {
     return m_del;
 }
 
-void UpdateRecordBackupPlanModify::SetDel(const string& _del)
+void UpdateRecordBackupPlanModify::SetDel(const vector<string>& _del)
 {
     m_del = _del;
     m_delHasBeenSet = true;
@@ -276,12 +309,12 @@ bool UpdateRecordBackupPlanModify::DelHasBeenSet() const
     return m_delHasBeenSet;
 }
 
-string UpdateRecordBackupPlanModify::GetOrganizationId() const
+vector<string> UpdateRecordBackupPlanModify::GetOrganizationId() const
 {
     return m_organizationId;
 }
 
-void UpdateRecordBackupPlanModify::SetOrganizationId(const string& _organizationId)
+void UpdateRecordBackupPlanModify::SetOrganizationId(const vector<string>& _organizationId)
 {
     m_organizationId = _organizationId;
     m_organizationIdHasBeenSet = true;

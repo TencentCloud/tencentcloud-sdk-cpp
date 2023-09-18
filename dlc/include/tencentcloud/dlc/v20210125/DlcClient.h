@@ -117,6 +117,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDatasourceConnectionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDatasourceConnectionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProRequest.h>
@@ -362,6 +364,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatasourceConnectionResponse> DescribeDatasourceConnectionOutcome;
+                typedef std::future<DescribeDatasourceConnectionOutcome> DescribeDatasourceConnectionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDatasourceConnectionRequest&, DescribeDatasourceConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatasourceConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEngineUsageInfoResponse> DescribeEngineUsageInfoOutcome;
                 typedef std::future<DescribeEngineUsageInfoOutcome> DescribeEngineUsageInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeEngineUsageInfoRequest&, DescribeEngineUsageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEngineUsageInfoAsyncHandler;
@@ -922,6 +927,15 @@ namespace TencentCloud
                 DescribeDatabasesOutcome DescribeDatabases(const Model::DescribeDatabasesRequest &request);
                 void DescribeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
+
+                /**
+                 *本接口（DescribeDatasourceConnection）用于查询数据源信息
+                 * @param req DescribeDatasourceConnectionRequest
+                 * @return DescribeDatasourceConnectionOutcome
+                 */
+                DescribeDatasourceConnectionOutcome DescribeDatasourceConnection(const Model::DescribeDatasourceConnectionRequest &request);
+                void DescribeDatasourceConnectionAsync(const Model::DescribeDatasourceConnectionRequest& request, const DescribeDatasourceConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatasourceConnectionOutcomeCallable DescribeDatasourceConnectionCallable(const Model::DescribeDatasourceConnectionRequest& request);
 
                 /**
                  *本接口根据引擎ID查询数据引擎资源使用情况

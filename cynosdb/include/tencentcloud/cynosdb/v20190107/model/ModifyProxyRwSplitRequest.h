@@ -107,15 +107,19 @@ namespace TencentCloud
                     bool ConsistencyTypeHasBeenSet() const;
 
                     /**
-                     * 获取一致性超时时间
-                     * @return ConsistencyTimeOut 一致性超时时间
+                     * 获取一致性超时时间。
+取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。
+                     * @return ConsistencyTimeOut 一致性超时时间。
+取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。
                      * 
                      */
                     std::string GetConsistencyTimeOut() const;
 
                     /**
-                     * 设置一致性超时时间
-                     * @param _consistencyTimeOut 一致性超时时间
+                     * 设置一致性超时时间。
+取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。
+                     * @param _consistencyTimeOut 一致性超时时间。
+取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。
                      * 
                      */
                     void SetConsistencyTimeOut(const std::string& _consistencyTimeOut);
@@ -149,15 +153,19 @@ namespace TencentCloud
                     bool WeightModeHasBeenSet() const;
 
                     /**
-                     * 获取实例只读权重
-                     * @return InstanceWeights 实例只读权重
+                     * 获取实例只读权重。
+该参数必填。
+                     * @return InstanceWeights 实例只读权重。
+该参数必填。
                      * 
                      */
                     std::vector<ProxyInstanceWeight> GetInstanceWeights() const;
 
                     /**
-                     * 设置实例只读权重
-                     * @param _instanceWeights 实例只读权重
+                     * 设置实例只读权重。
+该参数必填。
+                     * @param _instanceWeights 实例只读权重。
+该参数必填。
                      * 
                      */
                     void SetInstanceWeights(const std::vector<ProxyInstanceWeight>& _instanceWeights);
@@ -212,15 +220,19 @@ namespace TencentCloud
                     bool AutoAddRoHasBeenSet() const;
 
                     /**
-                     * 获取是否打开读写分离
-                     * @return OpenRw 是否打开读写分离
+                     * 获取是否打开读写分离。
+该参数已废弃，请通过RwType设置读写属性。
+                     * @return OpenRw 是否打开读写分离。
+该参数已废弃，请通过RwType设置读写属性。
                      * 
                      */
                     std::string GetOpenRw() const;
 
                     /**
-                     * 设置是否打开读写分离
-                     * @param _openRw 是否打开读写分离
+                     * 设置是否打开读写分离。
+该参数已废弃，请通过RwType设置读写属性。
+                     * @param _openRw 是否打开读写分离。
+该参数已废弃，请通过RwType设置读写属性。
                      * 
                      */
                     void SetOpenRw(const std::string& _openRw);
@@ -258,15 +270,19 @@ READWRITE,READONLY
                     bool RwTypeHasBeenSet() const;
 
                     /**
-                     * 获取事务拆分
-                     * @return TransSplit 事务拆分
+                     * 获取事务拆分。
+在一个事务中拆分读和写到不同的实例上去执行。
+                     * @return TransSplit 事务拆分。
+在一个事务中拆分读和写到不同的实例上去执行。
                      * 
                      */
                     bool GetTransSplit() const;
 
                     /**
-                     * 设置事务拆分
-                     * @param _transSplit 事务拆分
+                     * 设置事务拆分。
+在一个事务中拆分读和写到不同的实例上去执行。
+                     * @param _transSplit 事务拆分。
+在一个事务中拆分读和写到不同的实例上去执行。
                      * 
                      */
                     void SetTransSplit(const bool& _transSplit);
@@ -354,15 +370,19 @@ SessionConnectionPool
                     bool ConnectionPoolTypeHasBeenSet() const;
 
                     /**
-                     * 获取连接池时间
-                     * @return ConnectionPoolTimeOut 连接池时间
+                     * 获取连接池时间。
+可选范围:0~300（秒）
+                     * @return ConnectionPoolTimeOut 连接池时间。
+可选范围:0~300（秒）
                      * 
                      */
                     int64_t GetConnectionPoolTimeOut() const;
 
                     /**
-                     * 设置连接池时间
-                     * @param _connectionPoolTimeOut 连接池时间
+                     * 设置连接池时间。
+可选范围:0~300（秒）
+                     * @param _connectionPoolTimeOut 连接池时间。
+可选范围:0~300（秒）
                      * 
                      */
                     void SetConnectionPoolTimeOut(const int64_t& _connectionPoolTimeOut);
@@ -395,7 +415,8 @@ SessionConnectionPool
                     bool m_consistencyTypeHasBeenSet;
 
                     /**
-                     * 一致性超时时间
+                     * 一致性超时时间。
+取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。
                      */
                     std::string m_consistencyTimeOut;
                     bool m_consistencyTimeOutHasBeenSet;
@@ -407,7 +428,8 @@ SessionConnectionPool
                     bool m_weightModeHasBeenSet;
 
                     /**
-                     * 实例只读权重
+                     * 实例只读权重。
+该参数必填。
                      */
                     std::vector<ProxyInstanceWeight> m_instanceWeights;
                     bool m_instanceWeightsHasBeenSet;
@@ -425,7 +447,8 @@ SessionConnectionPool
                     bool m_autoAddRoHasBeenSet;
 
                     /**
-                     * 是否打开读写分离
+                     * 是否打开读写分离。
+该参数已废弃，请通过RwType设置读写属性。
                      */
                     std::string m_openRw;
                     bool m_openRwHasBeenSet;
@@ -438,7 +461,8 @@ READWRITE,READONLY
                     bool m_rwTypeHasBeenSet;
 
                     /**
-                     * 事务拆分
+                     * 事务拆分。
+在一个事务中拆分读和写到不同的实例上去执行。
                      */
                     bool m_transSplit;
                     bool m_transSplitHasBeenSet;
@@ -465,7 +489,8 @@ SessionConnectionPool
                     bool m_connectionPoolTypeHasBeenSet;
 
                     /**
-                     * 连接池时间
+                     * 连接池时间。
+可选范围:0~300（秒）
                      */
                     int64_t m_connectionPoolTimeOut;
                     bool m_connectionPoolTimeOutHasBeenSet;

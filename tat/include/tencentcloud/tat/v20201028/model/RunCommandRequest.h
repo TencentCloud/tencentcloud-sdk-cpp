@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tat/v20201028/model/DefaultParameterConf.h>
 #include <tencentcloud/tat/v20201028/model/Tag.h>
 
 
@@ -65,10 +66,10 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取待执行命令的实例ID列表，上限100。支持实例类型：
+                     * 获取待执行命令的实例ID列表，上限200。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
-                     * @return InstanceIds 待执行命令的实例ID列表，上限100。支持实例类型：
+                     * @return InstanceIds 待执行命令的实例ID列表，上限200。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
                      * 
@@ -76,10 +77,10 @@ namespace TencentCloud
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置待执行命令的实例ID列表，上限100。支持实例类型：
+                     * 设置待执行命令的实例ID列表，上限200。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
-                     * @param _instanceIds 待执行命令的实例ID列表，上限100。支持实例类型：
+                     * @param _instanceIds 待执行命令的实例ID列表，上限200。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
                      * 
@@ -200,26 +201,26 @@ namespace TencentCloud
 
                     /**
                      * 获取是否保存命令，取值范围：
-<li> True：保存
-<li> False：不保存
-默认为 False。
+<li> true：保存
+<li> false：不保存
+默认为 false。
                      * @return SaveCommand 是否保存命令，取值范围：
-<li> True：保存
-<li> False：不保存
-默认为 False。
+<li> true：保存
+<li> false：不保存
+默认为 false。
                      * 
                      */
                     bool GetSaveCommand() const;
 
                     /**
                      * 设置是否保存命令，取值范围：
-<li> True：保存
-<li> False：不保存
-默认为 False。
+<li> true：保存
+<li> false：不保存
+默认为 false。
                      * @param _saveCommand 是否保存命令，取值范围：
-<li> True：保存
-<li> False：不保存
-默认为 False。
+<li> true：保存
+<li> false：不保存
+默认为 false。
                      * 
                      */
                     void SetSaveCommand(const bool& _saveCommand);
@@ -234,9 +235,15 @@ namespace TencentCloud
                     /**
                      * 获取是否启用自定义参数功能。
 一旦创建，此值不提供修改。
+取值范围：
+<li> true：启用
+<li> false：不启用
 默认值：false。
                      * @return EnableParameter 是否启用自定义参数功能。
 一旦创建，此值不提供修改。
+取值范围：
+<li> true：启用
+<li> false：不启用
 默认值：false。
                      * 
                      */
@@ -245,9 +252,15 @@ namespace TencentCloud
                     /**
                      * 设置是否启用自定义参数功能。
 一旦创建，此值不提供修改。
+取值范围：
+<li> true：启用
+<li> false：不启用
 默认值：false。
                      * @param _enableParameter 是否启用自定义参数功能。
 一旦创建，此值不提供修改。
+取值范围：
+<li> true：启用
+<li> false：不启用
 默认值：false。
                      * 
                      */
@@ -296,6 +309,27 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                      * 
                      */
                     bool DefaultParametersHasBeenSet() const;
+
+                    /**
+                     * 获取自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。
+                     * @return DefaultParameterConfs 自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。
+                     * 
+                     */
+                    std::vector<DefaultParameterConf> GetDefaultParameterConfs() const;
+
+                    /**
+                     * 设置自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。
+                     * @param _defaultParameterConfs 自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。
+                     * 
+                     */
+                    void SetDefaultParameterConfs(const std::vector<DefaultParameterConf>& _defaultParameterConfs);
+
+                    /**
+                     * 判断参数 DefaultParameterConfs 是否已赋值
+                     * @return DefaultParameterConfs 是否已赋值
+                     * 
+                     */
+                    bool DefaultParameterConfsHasBeenSet() const;
 
                     /**
                      * 获取Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
@@ -443,7 +477,7 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 待执行命令的实例ID列表，上限100。支持实例类型：
+                     * 待执行命令的实例ID列表，上限200。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
                      */
@@ -482,9 +516,9 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
 
                     /**
                      * 是否保存命令，取值范围：
-<li> True：保存
-<li> False：不保存
-默认为 False。
+<li> true：保存
+<li> false：不保存
+默认为 false。
                      */
                     bool m_saveCommand;
                     bool m_saveCommandHasBeenSet;
@@ -492,6 +526,9 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     /**
                      * 是否启用自定义参数功能。
 一旦创建，此值不提供修改。
+取值范围：
+<li> true：启用
+<li> false：不启用
 默认值：false。
                      */
                     bool m_enableParameter;
@@ -506,6 +543,12 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                      */
                     std::string m_defaultParameters;
                     bool m_defaultParametersHasBeenSet;
+
+                    /**
+                     * 自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。
+                     */
+                    std::vector<DefaultParameterConf> m_defaultParameterConfs;
+                    bool m_defaultParameterConfsHasBeenSet;
 
                     /**
                      * Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。

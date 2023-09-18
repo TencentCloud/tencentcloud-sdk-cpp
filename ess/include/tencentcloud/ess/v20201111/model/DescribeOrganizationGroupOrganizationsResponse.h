@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询到的符合条件的成员企业总数量
+                     * 获取符合查询条件的资源实例总数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 查询到的符合条件的成员企业总数量
+                     * @return Total 符合查询条件的资源实例总数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取已授权待激活的企业数量
+                     * 获取已授权待激活的子企业总数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JoinedTotal 已授权待激活的企业数量
+                     * @return JoinedTotal 已授权待激活的子企业总数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,9 +125,9 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                     /**
-                     * 获取已加入的企业数量
+                     * 获取已加入的子企业总数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ActivatedTotal 已加入的企业数量
+                     * @return ActivatedTotal 已加入的子企业总数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,14 +143,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询到的符合条件的成员企业总数量
+                     * 符合查询条件的资源实例总数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 已授权待激活的企业数量
+                     * 已授权待激活的子企业总数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_joinedTotal;
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_listHasBeenSet;
 
                     /**
-                     * 已加入的企业数量
+                     * 已加入的子企业总数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_activatedTotal;

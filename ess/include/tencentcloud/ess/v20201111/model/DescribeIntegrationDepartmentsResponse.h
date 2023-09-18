@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部门列表
-                     * @return Departments 部门列表
+                     * 获取部门信息列表。部门信息根据部门排序号OrderNo降序排列，根据部门创建时间升序排列。
+                     * @return Departments 部门信息列表。部门信息根据部门排序号OrderNo降序排列，根据部门创建时间升序排列。
                      * 
                      */
                     std::vector<IntegrationDepartment> GetDepartments() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部门列表
+                     * 部门信息列表。部门信息根据部门排序号OrderNo降序排列，根据部门创建时间升序排列。
                      */
                     std::vector<IntegrationDepartment> m_departments;
                     bool m_departmentsHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取电子签部门ID
-                     * @return DeptId 电子签部门ID
+                     * 获取电子签部门ID。建议开发者保存此部门ID，方便后续查询或修改部门信息。
+                     * @return DeptId 电子签部门ID。建议开发者保存此部门ID，方便后续查询或修改部门信息。
                      * 
                      */
                     std::string GetDeptId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 电子签部门ID
+                     * 电子签部门ID。建议开发者保存此部门ID，方便后续查询或修改部门信息。
                      */
                     std::string m_deptId;
                     bool m_deptIdHasBeenSet;

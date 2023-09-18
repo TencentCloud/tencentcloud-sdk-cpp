@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 集成版员工部门信息
+                * 集成版员工部门信息。
                 */
                 class Department : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部门id
-                     * @return DepartmentId 部门id
+                     * 获取部门ID。
+                     * @return DepartmentId 部门ID。
                      * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
-                     * 设置部门id
-                     * @param _departmentId 部门id
+                     * 设置部门ID。
+                     * @param _departmentId 部门ID。
                      * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DepartmentIdHasBeenSet() const;
 
                     /**
-                     * 获取部门名称
-                     * @return DepartmentName 部门名称
+                     * 获取部门名称。
+                     * @return DepartmentName 部门名称。
                      * 
                      */
                     std::string GetDepartmentName() const;
 
                     /**
-                     * 设置部门名称
-                     * @param _departmentName 部门名称
+                     * 设置部门名称。
+                     * @param _departmentName 部门名称。
                      * 
                      */
                     void SetDepartmentName(const std::string& _departmentName);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部门id
+                     * 部门ID。
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
 
                     /**
-                     * 部门名称
+                     * 部门名称。
                      */
                     std::string m_departmentName;
                     bool m_departmentNameHasBeenSet;

@@ -24,7 +24,6 @@ Placement::Placement() :
     m_zoneHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_hostIdsHasBeenSet(false),
-    m_hostIpsHasBeenSet(false),
     m_hostIdHasBeenSet(false)
 {
 }
@@ -65,19 +64,6 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
             m_hostIds.push_back((*itr).GetString());
         }
         m_hostIdsHasBeenSet = true;
-    }
-
-    if (value.HasMember("HostIps") && !value["HostIps"].IsNull())
-    {
-        if (!value["HostIps"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Placement.HostIps` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["HostIps"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_hostIps.push_back((*itr).GetString());
-        }
-        m_hostIpsHasBeenSet = true;
     }
 
     if (value.HasMember("HostId") && !value["HostId"].IsNull())
@@ -121,19 +107,6 @@ void Placement::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_hostIds.begin(); itr != m_hostIds.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_hostIpsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HostIps";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_hostIps.begin(); itr != m_hostIps.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -196,22 +169,6 @@ void Placement::SetHostIds(const vector<string>& _hostIds)
 bool Placement::HostIdsHasBeenSet() const
 {
     return m_hostIdsHasBeenSet;
-}
-
-vector<string> Placement::GetHostIps() const
-{
-    return m_hostIps;
-}
-
-void Placement::SetHostIps(const vector<string>& _hostIps)
-{
-    m_hostIps = _hostIps;
-    m_hostIpsHasBeenSet = true;
-}
-
-bool Placement::HostIpsHasBeenSet() const
-{
-    return m_hostIpsHasBeenSet;
 }
 
 string Placement::GetHostId() const

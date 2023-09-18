@@ -31,6 +31,7 @@ ModifyCommandRequest::ModifyCommandRequest() :
     m_workingDirectoryHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_defaultParametersHasBeenSet(false),
+    m_defaultParameterConfsHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_outputCOSBucketUrlHasBeenSet(false),
     m_outputCOSKeyPrefixHasBeenSet(false)
@@ -106,6 +107,21 @@ string ModifyCommandRequest::ToJsonString() const
         string key = "DefaultParameters";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultParameterConfsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultParameterConfs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_defaultParameterConfs.begin(); itr != m_defaultParameterConfs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_usernameHasBeenSet)
@@ -266,6 +282,22 @@ void ModifyCommandRequest::SetDefaultParameters(const string& _defaultParameters
 bool ModifyCommandRequest::DefaultParametersHasBeenSet() const
 {
     return m_defaultParametersHasBeenSet;
+}
+
+vector<DefaultParameterConf> ModifyCommandRequest::GetDefaultParameterConfs() const
+{
+    return m_defaultParameterConfs;
+}
+
+void ModifyCommandRequest::SetDefaultParameterConfs(const vector<DefaultParameterConf>& _defaultParameterConfs)
+{
+    m_defaultParameterConfs = _defaultParameterConfs;
+    m_defaultParameterConfsHasBeenSet = true;
+}
+
+bool ModifyCommandRequest::DefaultParameterConfsHasBeenSet() const
+{
+    return m_defaultParameterConfsHasBeenSet;
 }
 
 string ModifyCommandRequest::GetUsername() const

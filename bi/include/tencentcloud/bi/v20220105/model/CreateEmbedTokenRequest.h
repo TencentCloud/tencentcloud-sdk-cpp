@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool ExtraParamHasBeenSet() const;
 
+                    /**
+                     * 获取使用者企业Id(仅用于多用户)
+                     * @return UserCorpId 使用者企业Id(仅用于多用户)
+                     * 
+                     */
+                    std::string GetUserCorpId() const;
+
+                    /**
+                     * 设置使用者企业Id(仅用于多用户)
+                     * @param _userCorpId 使用者企业Id(仅用于多用户)
+                     * 
+                     */
+                    void SetUserCorpId(const std::string& _userCorpId);
+
+                    /**
+                     * 判断参数 UserCorpId 是否已赋值
+                     * @return UserCorpId 是否已赋值
+                     * 
+                     */
+                    bool UserCorpIdHasBeenSet() const;
+
+                    /**
+                     * 获取使用者Id(仅用于多用户)
+                     * @return UserId 使用者Id(仅用于多用户)
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置使用者Id(仅用于多用户)
+                     * @param _userId 使用者Id(仅用于多用户)
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     std::string m_extraParam;
                     bool m_extraParamHasBeenSet;
+
+                    /**
+                     * 使用者企业Id(仅用于多用户)
+                     */
+                    std::string m_userCorpId;
+                    bool m_userCorpIdHasBeenSet;
+
+                    /**
+                     * 使用者Id(仅用于多用户)
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

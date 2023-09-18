@@ -47,15 +47,47 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取id
-                     * @return AccountId id
+                     * 获取其它账号信息：  
+AccountType 是 4 时，填入真实的手机号（如 13123456789）。 
+AccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  
+AccountType 是 0 时，填入账号信息。  
+AccountType 是 10004 时，填入手机号的 MD5 值。 
+注：imeiMd5 加密方式为：  
+imei 明文小写后，进行 MD5 加密，加密后取小写值。  
+IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。
+
+                     * @return AccountId 其它账号信息：  
+AccountType 是 4 时，填入真实的手机号（如 13123456789）。 
+AccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  
+AccountType 是 0 时，填入账号信息。  
+AccountType 是 10004 时，填入手机号的 MD5 值。 
+注：imeiMd5 加密方式为：  
+imei 明文小写后，进行 MD5 加密，加密后取小写值。  
+IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。
+
                      * 
                      */
                     std::string GetAccountId() const;
 
                     /**
-                     * 设置id
-                     * @param _accountId id
+                     * 设置其它账号信息：  
+AccountType 是 4 时，填入真实的手机号（如 13123456789）。 
+AccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  
+AccountType 是 0 时，填入账号信息。  
+AccountType 是 10004 时，填入手机号的 MD5 值。 
+注：imeiMd5 加密方式为：  
+imei 明文小写后，进行 MD5 加密，加密后取小写值。  
+IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。
+
+                     * @param _accountId 其它账号信息：  
+AccountType 是 4 时，填入真实的手机号（如 13123456789）。 
+AccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  
+AccountType 是 0 时，填入账号信息。  
+AccountType 是 10004 时，填入手机号的 MD5 值。 
+注：imeiMd5 加密方式为：  
+imei 明文小写后，进行 MD5 加密，加密后取小写值。  
+IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。
+
                      * 
                      */
                     void SetAccountId(const std::string& _accountId);
@@ -68,15 +100,19 @@ namespace TencentCloud
                     bool AccountIdHasBeenSet() const;
 
                     /**
-                     * 获取手机号
-                     * @return MobilePhone 手机号
+                     * 获取手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 
+否则填入对应的手机号（如 13123456789）。
+                     * @return MobilePhone 手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 
+否则填入对应的手机号（如 13123456789）。
                      * 
                      */
                     std::string GetMobilePhone() const;
 
                     /**
-                     * 设置手机号
-                     * @param _mobilePhone 手机号
+                     * 设置手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 
+否则填入对应的手机号（如 13123456789）。
+                     * @param _mobilePhone 手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 
+否则填入对应的手机号（如 13123456789）。
                      * 
                      */
                     void SetMobilePhone(const std::string& _mobilePhone);
@@ -89,15 +125,23 @@ namespace TencentCloud
                     bool MobilePhoneHasBeenSet() const;
 
                     /**
-                     * 获取id
-                     * @return DeviceId id
+                     * 获取用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 
+号。 
+
+                     * @return DeviceId 用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 
+号。 
+
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置id
-                     * @param _deviceId id
+                     * 设置用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 
+号。 
+
+                     * @param _deviceId 用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 
+号。 
+
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -112,19 +156,30 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * id
+                     * 其它账号信息：  
+AccountType 是 4 时，填入真实的手机号（如 13123456789）。 
+AccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  
+AccountType 是 0 时，填入账号信息。  
+AccountType 是 10004 时，填入手机号的 MD5 值。 
+注：imeiMd5 加密方式为：  
+imei 明文小写后，进行 MD5 加密，加密后取小写值。  
+IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。
+
                      */
                     std::string m_accountId;
                     bool m_accountIdHasBeenSet;
 
                     /**
-                     * 手机号
+                     * 手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 
+否则填入对应的手机号（如 13123456789）。
                      */
                     std::string m_mobilePhone;
                     bool m_mobilePhoneHasBeenSet;
 
                     /**
-                     * id
+                     * 用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 
+号。 
+
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取单位，支持m、y、d
+                     * 获取单位，支持购买d、m、y 即（日、月、年）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeUnit 单位，支持m、y、d
+                     * @return TimeUnit 单位，支持购买d、m、y 即（日、月、年）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置单位，支持m、y、d
+                     * 设置单位，支持购买d、m、y 即（日、月、年）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timeUnit 单位，支持m、y、d
+                     * @param _timeUnit 单位，支持购买d、m、y 即（日、月、年）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,21 +98,33 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
-高级版 ：sp_wsm_waf_premium
-企业版 ：sp_wsm_waf_enterprise
-旗舰版 ：sp_wsm_waf_ultimate
+
+Saas 高级版 ：sp_wsm_waf_premium
+Saas企业版 ：sp_wsm_waf_enterprise
+Saas旗舰版 ：sp_wsm_waf_ultimate
+Saas 业务扩展包：sp_wsm_waf_qpsep
+Saas 域名扩展包：sp_wsm_waf_domain
+
 高级版-CLB:sp_wsm_waf_premium_clb
 企业版-CLB : sp_wsm_waf_enterprise_clb
 旗舰版-CLB:sp_wsm_waf_ultimate_clb
+ 业务扩展包-CLB：sp_wsm_waf_qpsep_clb
+域名扩展包-CLB：sp_wsm_waf_domain_clb
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubProductCode 子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
-高级版 ：sp_wsm_waf_premium
-企业版 ：sp_wsm_waf_enterprise
-旗舰版 ：sp_wsm_waf_ultimate
+
+Saas 高级版 ：sp_wsm_waf_premium
+Saas企业版 ：sp_wsm_waf_enterprise
+Saas旗舰版 ：sp_wsm_waf_ultimate
+Saas 业务扩展包：sp_wsm_waf_qpsep
+Saas 域名扩展包：sp_wsm_waf_domain
+
 高级版-CLB:sp_wsm_waf_premium_clb
 企业版-CLB : sp_wsm_waf_enterprise_clb
 旗舰版-CLB:sp_wsm_waf_ultimate_clb
+ 业务扩展包-CLB：sp_wsm_waf_qpsep_clb
+域名扩展包-CLB：sp_wsm_waf_domain_clb
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -121,21 +133,33 @@ namespace TencentCloud
 
                     /**
                      * 设置子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
-高级版 ：sp_wsm_waf_premium
-企业版 ：sp_wsm_waf_enterprise
-旗舰版 ：sp_wsm_waf_ultimate
+
+Saas 高级版 ：sp_wsm_waf_premium
+Saas企业版 ：sp_wsm_waf_enterprise
+Saas旗舰版 ：sp_wsm_waf_ultimate
+Saas 业务扩展包：sp_wsm_waf_qpsep
+Saas 域名扩展包：sp_wsm_waf_domain
+
 高级版-CLB:sp_wsm_waf_premium_clb
 企业版-CLB : sp_wsm_waf_enterprise_clb
 旗舰版-CLB:sp_wsm_waf_ultimate_clb
+ 业务扩展包-CLB：sp_wsm_waf_qpsep_clb
+域名扩展包-CLB：sp_wsm_waf_domain_clb
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subProductCode 子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
-高级版 ：sp_wsm_waf_premium
-企业版 ：sp_wsm_waf_enterprise
-旗舰版 ：sp_wsm_waf_ultimate
+
+Saas 高级版 ：sp_wsm_waf_premium
+Saas企业版 ：sp_wsm_waf_enterprise
+Saas旗舰版 ：sp_wsm_waf_ultimate
+Saas 业务扩展包：sp_wsm_waf_qpsep
+Saas 域名扩展包：sp_wsm_waf_domain
+
 高级版-CLB:sp_wsm_waf_premium_clb
 企业版-CLB : sp_wsm_waf_enterprise_clb
 旗舰版-CLB:sp_wsm_waf_ultimate_clb
+ 业务扩展包-CLB：sp_wsm_waf_qpsep_clb
+域名扩展包-CLB：sp_wsm_waf_domain_clb
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -154,18 +178,26 @@ namespace TencentCloud
 高级版 ：1000827
 企业版 ：1000830
 旗舰版 ：1000832
+域名包 : 1000834
+业务扩展包 : 1000481
 高级版-CLB:1001150
 企业版-CLB : 1001152
 旗舰版-CLB:1001154
+域名包-CLB: 1001156
+业务扩展包-CLB : 1001160
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pid 业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型
 高级版 ：1000827
 企业版 ：1000830
 旗舰版 ：1000832
+域名包 : 1000834
+业务扩展包 : 1000481
 高级版-CLB:1001150
 企业版-CLB : 1001152
 旗舰版-CLB:1001154
+域名包-CLB: 1001156
+业务扩展包-CLB : 1001160
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -177,18 +209,26 @@ namespace TencentCloud
 高级版 ：1000827
 企业版 ：1000830
 旗舰版 ：1000832
+域名包 : 1000834
+业务扩展包 : 1000481
 高级版-CLB:1001150
 企业版-CLB : 1001152
 旗舰版-CLB:1001154
+域名包-CLB: 1001156
+业务扩展包-CLB : 1001160
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pid 业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型
 高级版 ：1000827
 企业版 ：1000830
 旗舰版 ：1000832
+域名包 : 1000834
+业务扩展包 : 1000481
 高级版-CLB:1001150
 企业版-CLB : 1001152
 旗舰版-CLB:1001154
+域名包-CLB: 1001156
+业务扩展包-CLB : 1001160
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -279,8 +319,44 @@ namespace TencentCloud
 
                     /**
                      * 获取计费细项标签数组
+Saas 高级版  sv_wsm_waf_package_premium 
+Saas 企业版  sv_wsm_waf_package_enterprise
+Saas 旗舰版  sv_wsm_waf_package_ultimate 
+Saas 非中国大陆高级版  sv_wsm_waf_package_premium_intl
+Saas 非中国大陆企业版   sv_wsm_waf_package_enterprise_intl
+Saas 非中国大陆旗舰版  sv_wsm_waf_package_ultimate _intl
+Saas 业务扩展包  sv_wsm_waf_qps_ep
+Saas 域名扩展包  sv_wsm_waf_domain
+
+高级版CLB   sv_wsm_waf_package_premium_clb
+企业版CLB  sv_wsm_waf_package_enterprise_clb
+旗舰版CLB   sv_wsm_waf_package_ultimate_clb
+非中国大陆高级版 CLB sv_wsm_waf_package_premium_clb_intl
+非中国大陆企业版CLB   sv_wsm_waf_package_premium_clb_intl
+非中国大陆旗舰版CLB  sv_wsm_waf_package_ultimate_clb _intl
+业务扩展包CLB sv_wsm_waf_qps_ep_clb
+域名扩展包CLB  sv_wsm_waf_domain_clb
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelTypes 计费细项标签数组
+Saas 高级版  sv_wsm_waf_package_premium 
+Saas 企业版  sv_wsm_waf_package_enterprise
+Saas 旗舰版  sv_wsm_waf_package_ultimate 
+Saas 非中国大陆高级版  sv_wsm_waf_package_premium_intl
+Saas 非中国大陆企业版   sv_wsm_waf_package_enterprise_intl
+Saas 非中国大陆旗舰版  sv_wsm_waf_package_ultimate _intl
+Saas 业务扩展包  sv_wsm_waf_qps_ep
+Saas 域名扩展包  sv_wsm_waf_domain
+
+高级版CLB   sv_wsm_waf_package_premium_clb
+企业版CLB  sv_wsm_waf_package_enterprise_clb
+旗舰版CLB   sv_wsm_waf_package_ultimate_clb
+非中国大陆高级版 CLB sv_wsm_waf_package_premium_clb_intl
+非中国大陆企业版CLB   sv_wsm_waf_package_premium_clb_intl
+非中国大陆旗舰版CLB  sv_wsm_waf_package_ultimate_clb _intl
+业务扩展包CLB sv_wsm_waf_qps_ep_clb
+域名扩展包CLB  sv_wsm_waf_domain_clb
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -288,8 +364,44 @@ namespace TencentCloud
 
                     /**
                      * 设置计费细项标签数组
+Saas 高级版  sv_wsm_waf_package_premium 
+Saas 企业版  sv_wsm_waf_package_enterprise
+Saas 旗舰版  sv_wsm_waf_package_ultimate 
+Saas 非中国大陆高级版  sv_wsm_waf_package_premium_intl
+Saas 非中国大陆企业版   sv_wsm_waf_package_enterprise_intl
+Saas 非中国大陆旗舰版  sv_wsm_waf_package_ultimate _intl
+Saas 业务扩展包  sv_wsm_waf_qps_ep
+Saas 域名扩展包  sv_wsm_waf_domain
+
+高级版CLB   sv_wsm_waf_package_premium_clb
+企业版CLB  sv_wsm_waf_package_enterprise_clb
+旗舰版CLB   sv_wsm_waf_package_ultimate_clb
+非中国大陆高级版 CLB sv_wsm_waf_package_premium_clb_intl
+非中国大陆企业版CLB   sv_wsm_waf_package_premium_clb_intl
+非中国大陆旗舰版CLB  sv_wsm_waf_package_ultimate_clb _intl
+业务扩展包CLB sv_wsm_waf_qps_ep_clb
+域名扩展包CLB  sv_wsm_waf_domain_clb
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labelTypes 计费细项标签数组
+Saas 高级版  sv_wsm_waf_package_premium 
+Saas 企业版  sv_wsm_waf_package_enterprise
+Saas 旗舰版  sv_wsm_waf_package_ultimate 
+Saas 非中国大陆高级版  sv_wsm_waf_package_premium_intl
+Saas 非中国大陆企业版   sv_wsm_waf_package_enterprise_intl
+Saas 非中国大陆旗舰版  sv_wsm_waf_package_ultimate _intl
+Saas 业务扩展包  sv_wsm_waf_qps_ep
+Saas 域名扩展包  sv_wsm_waf_domain
+
+高级版CLB   sv_wsm_waf_package_premium_clb
+企业版CLB  sv_wsm_waf_package_enterprise_clb
+旗舰版CLB   sv_wsm_waf_package_ultimate_clb
+非中国大陆高级版 CLB sv_wsm_waf_package_premium_clb_intl
+非中国大陆企业版CLB   sv_wsm_waf_package_premium_clb_intl
+非中国大陆旗舰版CLB  sv_wsm_waf_package_ultimate_clb _intl
+业务扩展包CLB sv_wsm_waf_qps_ep_clb
+域名扩展包CLB  sv_wsm_waf_domain_clb
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -387,7 +499,7 @@ namespace TencentCloud
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 单位，支持m、y、d
+                     * 单位，支持购买d、m、y 即（日、月、年）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
@@ -395,12 +507,18 @@ namespace TencentCloud
 
                     /**
                      * 子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
-高级版 ：sp_wsm_waf_premium
-企业版 ：sp_wsm_waf_enterprise
-旗舰版 ：sp_wsm_waf_ultimate
+
+Saas 高级版 ：sp_wsm_waf_premium
+Saas企业版 ：sp_wsm_waf_enterprise
+Saas旗舰版 ：sp_wsm_waf_ultimate
+Saas 业务扩展包：sp_wsm_waf_qpsep
+Saas 域名扩展包：sp_wsm_waf_domain
+
 高级版-CLB:sp_wsm_waf_premium_clb
 企业版-CLB : sp_wsm_waf_enterprise_clb
 旗舰版-CLB:sp_wsm_waf_ultimate_clb
+ 业务扩展包-CLB：sp_wsm_waf_qpsep_clb
+域名扩展包-CLB：sp_wsm_waf_domain_clb
 
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -412,9 +530,13 @@ namespace TencentCloud
 高级版 ：1000827
 企业版 ：1000830
 旗舰版 ：1000832
+域名包 : 1000834
+业务扩展包 : 1000481
 高级版-CLB:1001150
 企业版-CLB : 1001152
 旗舰版-CLB:1001154
+域名包-CLB: 1001156
+业务扩展包-CLB : 1001160
 
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -444,6 +566,24 @@ namespace TencentCloud
 
                     /**
                      * 计费细项标签数组
+Saas 高级版  sv_wsm_waf_package_premium 
+Saas 企业版  sv_wsm_waf_package_enterprise
+Saas 旗舰版  sv_wsm_waf_package_ultimate 
+Saas 非中国大陆高级版  sv_wsm_waf_package_premium_intl
+Saas 非中国大陆企业版   sv_wsm_waf_package_enterprise_intl
+Saas 非中国大陆旗舰版  sv_wsm_waf_package_ultimate _intl
+Saas 业务扩展包  sv_wsm_waf_qps_ep
+Saas 域名扩展包  sv_wsm_waf_domain
+
+高级版CLB   sv_wsm_waf_package_premium_clb
+企业版CLB  sv_wsm_waf_package_enterprise_clb
+旗舰版CLB   sv_wsm_waf_package_ultimate_clb
+非中国大陆高级版 CLB sv_wsm_waf_package_premium_clb_intl
+非中国大陆企业版CLB   sv_wsm_waf_package_premium_clb_intl
+非中国大陆旗舰版CLB  sv_wsm_waf_package_ultimate_clb _intl
+业务扩展包CLB sv_wsm_waf_qps_ep_clb
+域名扩展包CLB  sv_wsm_waf_domain_clb
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labelTypes;

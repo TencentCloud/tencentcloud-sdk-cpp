@@ -27,7 +27,9 @@ CreateEmbedTokenRequest::CreateEmbedTokenRequest() :
     m_pageIdHasBeenSet(false),
     m_scopeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
-    m_extraParamHasBeenSet(false)
+    m_extraParamHasBeenSet(false),
+    m_userCorpIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string CreateEmbedTokenRequest::ToJsonString() const
         string key = "ExtraParam";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extraParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userCorpIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserCorpId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userCorpId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void CreateEmbedTokenRequest::SetExtraParam(const string& _extraParam)
 bool CreateEmbedTokenRequest::ExtraParamHasBeenSet() const
 {
     return m_extraParamHasBeenSet;
+}
+
+string CreateEmbedTokenRequest::GetUserCorpId() const
+{
+    return m_userCorpId;
+}
+
+void CreateEmbedTokenRequest::SetUserCorpId(const string& _userCorpId)
+{
+    m_userCorpId = _userCorpId;
+    m_userCorpIdHasBeenSet = true;
+}
+
+bool CreateEmbedTokenRequest::UserCorpIdHasBeenSet() const
+{
+    return m_userCorpIdHasBeenSet;
+}
+
+string CreateEmbedTokenRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void CreateEmbedTokenRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool CreateEmbedTokenRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

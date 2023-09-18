@@ -126,6 +126,49 @@ TseClient::CreateCloudNativeAPIGatewayCanaryRuleOutcomeCallable TseClient::Creat
     return task->get_future();
 }
 
+TseClient::CreateCloudNativeAPIGatewayCertificateOutcome TseClient::CreateCloudNativeAPIGatewayCertificate(const CreateCloudNativeAPIGatewayCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayCertificateResponse rsp = CreateCloudNativeAPIGatewayCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayCertificateOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayCertificateOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayCertificateAsync(const CreateCloudNativeAPIGatewayCertificateRequest& request, const CreateCloudNativeAPIGatewayCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudNativeAPIGatewayCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateCloudNativeAPIGatewayCertificateOutcomeCallable TseClient::CreateCloudNativeAPIGatewayCertificateCallable(const CreateCloudNativeAPIGatewayCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudNativeAPIGatewayCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudNativeAPIGatewayCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::CreateCloudNativeAPIGatewayRouteOutcome TseClient::CreateCloudNativeAPIGatewayRoute(const CreateCloudNativeAPIGatewayRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayRoute");
@@ -470,6 +513,49 @@ TseClient::DeleteCloudNativeAPIGatewayCanaryRuleOutcomeCallable TseClient::Delet
     return task->get_future();
 }
 
+TseClient::DeleteCloudNativeAPIGatewayCertificateOutcome TseClient::DeleteCloudNativeAPIGatewayCertificate(const DeleteCloudNativeAPIGatewayCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayCertificateResponse rsp = DeleteCloudNativeAPIGatewayCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayCertificateOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayCertificateOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayCertificateAsync(const DeleteCloudNativeAPIGatewayCertificateRequest& request, const DeleteCloudNativeAPIGatewayCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudNativeAPIGatewayCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteCloudNativeAPIGatewayCertificateOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayCertificateCallable(const DeleteCloudNativeAPIGatewayCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudNativeAPIGatewayCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudNativeAPIGatewayCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DeleteCloudNativeAPIGatewayRouteOutcome TseClient::DeleteCloudNativeAPIGatewayRoute(const DeleteCloudNativeAPIGatewayRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayRoute");
@@ -807,6 +893,92 @@ TseClient::DescribeCloudNativeAPIGatewayCanaryRulesOutcomeCallable TseClient::De
         [this, request]()
         {
             return this->DescribeCloudNativeAPIGatewayCanaryRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayCertificateDetailsOutcome TseClient::DescribeCloudNativeAPIGatewayCertificateDetails(const DescribeCloudNativeAPIGatewayCertificateDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayCertificateDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayCertificateDetailsResponse rsp = DescribeCloudNativeAPIGatewayCertificateDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayCertificateDetailsOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayCertificateDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayCertificateDetailsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayCertificateDetailsAsync(const DescribeCloudNativeAPIGatewayCertificateDetailsRequest& request, const DescribeCloudNativeAPIGatewayCertificateDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayCertificateDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayCertificateDetailsOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayCertificateDetailsCallable(const DescribeCloudNativeAPIGatewayCertificateDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayCertificateDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayCertificateDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayCertificatesOutcome TseClient::DescribeCloudNativeAPIGatewayCertificates(const DescribeCloudNativeAPIGatewayCertificatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayCertificates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayCertificatesResponse rsp = DescribeCloudNativeAPIGatewayCertificatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayCertificatesOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayCertificatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayCertificatesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayCertificatesAsync(const DescribeCloudNativeAPIGatewayCertificatesRequest& request, const DescribeCloudNativeAPIGatewayCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayCertificates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayCertificatesOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayCertificatesCallable(const DescribeCloudNativeAPIGatewayCertificatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayCertificatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayCertificates(request);
         }
     );
 
@@ -1796,6 +1968,49 @@ TseClient::ModifyNativeGatewayServerGroupOutcomeCallable TseClient::ModifyNative
         [this, request]()
         {
             return this->ModifyNativeGatewayServerGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::UpdateCloudNativeAPIGatewayCertificateInfoOutcome TseClient::UpdateCloudNativeAPIGatewayCertificateInfo(const UpdateCloudNativeAPIGatewayCertificateInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateCloudNativeAPIGatewayCertificateInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateCloudNativeAPIGatewayCertificateInfoResponse rsp = UpdateCloudNativeAPIGatewayCertificateInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateCloudNativeAPIGatewayCertificateInfoOutcome(rsp);
+        else
+            return UpdateCloudNativeAPIGatewayCertificateInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateCloudNativeAPIGatewayCertificateInfoOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::UpdateCloudNativeAPIGatewayCertificateInfoAsync(const UpdateCloudNativeAPIGatewayCertificateInfoRequest& request, const UpdateCloudNativeAPIGatewayCertificateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateCloudNativeAPIGatewayCertificateInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::UpdateCloudNativeAPIGatewayCertificateInfoOutcomeCallable TseClient::UpdateCloudNativeAPIGatewayCertificateInfoCallable(const UpdateCloudNativeAPIGatewayCertificateInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateCloudNativeAPIGatewayCertificateInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateCloudNativeAPIGatewayCertificateInfo(request);
         }
     );
 

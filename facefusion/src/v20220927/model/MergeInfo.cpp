@@ -24,7 +24,8 @@ MergeInfo::MergeInfo() :
     m_imageHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_inputImageFaceRectHasBeenSet(false),
-    m_templateFaceIDHasBeenSet(false)
+    m_templateFaceIDHasBeenSet(false),
+    m_templateFaceRectHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,23 @@ CoreInternalOutcome MergeInfo::Deserialize(const rapidjson::Value &value)
         m_templateFaceIDHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateFaceRect") && !value["TemplateFaceRect"].IsNull())
+    {
+        if (!value["TemplateFaceRect"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MergeInfo.TemplateFaceRect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_templateFaceRect.Deserialize(value["TemplateFaceRect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_templateFaceRectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +136,15 @@ void MergeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TemplateFaceID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_templateFaceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateFaceRectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateFaceRect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_templateFaceRect.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -185,5 +212,21 @@ void MergeInfo::SetTemplateFaceID(const string& _templateFaceID)
 bool MergeInfo::TemplateFaceIDHasBeenSet() const
 {
     return m_templateFaceIDHasBeenSet;
+}
+
+FaceRect MergeInfo::GetTemplateFaceRect() const
+{
+    return m_templateFaceRect;
+}
+
+void MergeInfo::SetTemplateFaceRect(const FaceRect& _templateFaceRect)
+{
+    m_templateFaceRect = _templateFaceRect;
+    m_templateFaceRectHasBeenSet = true;
+}
+
+bool MergeInfo::TemplateFaceRectHasBeenSet() const
+{
+    return m_templateFaceRectHasBeenSet;
 }
 

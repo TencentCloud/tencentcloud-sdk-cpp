@@ -2061,6 +2061,49 @@ DlcClient::DescribeDatabasesOutcomeCallable DlcClient::DescribeDatabasesCallable
     return task->get_future();
 }
 
+DlcClient::DescribeDatasourceConnectionOutcome DlcClient::DescribeDatasourceConnection(const DescribeDatasourceConnectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatasourceConnection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatasourceConnectionResponse rsp = DescribeDatasourceConnectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatasourceConnectionOutcome(rsp);
+        else
+            return DescribeDatasourceConnectionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatasourceConnectionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDatasourceConnectionAsync(const DescribeDatasourceConnectionRequest& request, const DescribeDatasourceConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatasourceConnection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDatasourceConnectionOutcomeCallable DlcClient::DescribeDatasourceConnectionCallable(const DescribeDatasourceConnectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatasourceConnectionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatasourceConnection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeEngineUsageInfoOutcome DlcClient::DescribeEngineUsageInfo(const DescribeEngineUsageInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEngineUsageInfo");

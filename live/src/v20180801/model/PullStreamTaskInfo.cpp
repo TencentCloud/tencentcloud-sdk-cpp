@@ -48,7 +48,8 @@ PullStreamTaskInfo::PullStreamTaskInfo() :
     m_backupSourceUrlHasBeenSet(false),
     m_watermarkListHasBeenSet(false),
     m_vodLocalModeHasBeenSet(false),
-    m_recordTemplateIdHasBeenSet(false)
+    m_recordTemplateIdHasBeenSet(false),
+    m_backupToUrlHasBeenSet(false)
 {
 }
 
@@ -360,6 +361,16 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
         m_recordTemplateIdHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupToUrl") && !value["BackupToUrl"].IsNull())
+    {
+        if (!value["BackupToUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.BackupToUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupToUrl = string(value["BackupToUrl"].GetString());
+        m_backupToUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -607,6 +618,14 @@ void PullStreamTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "RecordTemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupToUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupToUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupToUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1058,5 +1077,21 @@ void PullStreamTaskInfo::SetRecordTemplateId(const string& _recordTemplateId)
 bool PullStreamTaskInfo::RecordTemplateIdHasBeenSet() const
 {
     return m_recordTemplateIdHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetBackupToUrl() const
+{
+    return m_backupToUrl;
+}
+
+void PullStreamTaskInfo::SetBackupToUrl(const string& _backupToUrl)
+{
+    m_backupToUrl = _backupToUrl;
+    m_backupToUrlHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::BackupToUrlHasBeenSet() const
+{
+    return m_backupToUrlHasBeenSet;
 }
 

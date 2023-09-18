@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建员工的结果
-                     * @return CreateEmployeeResult 创建员工的结果
+                     * 获取创建员工的结果。包含创建成功的数据与创建失败数据。
+                     * @return CreateEmployeeResult 创建员工的结果。包含创建成功的数据与创建失败数据。
                      * 
                      */
                     CreateStaffResult GetCreateEmployeeResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建员工的结果
+                     * 创建员工的结果。包含创建成功的数据与创建失败数据。
                      */
                     CreateStaffResult m_createEmployeeResult;
                     bool m_createEmployeeResultHasBeenSet;

@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool AliasHasBeenSet() const;
 
                     /**
-                     * 获取成员企业id
+                     * 获取成员企业id，为 32 位字符串，可在电子签PC 控制台，企业设置->企业电子签账号 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrganizationId 成员企业id
+                     * @return OrganizationId 成员企业id，为 32 位字符串，可在电子签PC 控制台，企业设置->企业电子签账号 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrganizationId() const;
 
                     /**
-                     * 设置成员企业id
+                     * 设置成员企业id，为 32 位字符串，可在电子签PC 控制台，企业设置->企业电子签账号 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _organizationId 成员企业id
+                     * @param _organizationId 成员企业id，为 32 位字符串，可在电子签PC 控制台，企业设置->企业电子签账号 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取更新时间，时间戳，单位秒
+                     * 获取记录更新时间， unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间，时间戳，单位秒
+                     * @return UpdateTime 记录更新时间， unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间，时间戳，单位秒
+                     * 设置记录更新时间， unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间，时间戳，单位秒
+                     * @param _updateTime 记录更新时间， unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,46 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * 获取成员企业加入集团的当前状态
+<ul><li> **1**：待授权</li>
+<li> **2**：已授权待激活</li>
+<li> **3**：拒绝授权</li>
+<li> **4**：已解除</li>
+<li> **5**：已加入</li>
+</ul>
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * @return Status 成员企业加入集团的当前状态
+<ul><li> **1**：待授权</li>
+<li> **2**：已授权待激活</li>
+<li> **3**：拒绝授权</li>
+<li> **4**：已解除</li>
+<li> **5**：已加入</li>
+</ul>
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * 设置成员企业加入集团的当前状态
+<ul><li> **1**：待授权</li>
+<li> **2**：已授权待激活</li>
+<li> **3**：拒绝授权</li>
+<li> **4**：已解除</li>
+<li> **5**：已加入</li>
+</ul>
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * @param _status 成员企业加入集团的当前状态
+<ul><li> **1**：待授权</li>
+<li> **2**：已授权待激活</li>
+<li> **3**：拒绝授权</li>
+<li> **4**：已解除</li>
+<li> **5**：已加入</li>
+</ul>
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,18 +276,18 @@ namespace TencentCloud
                     bool AdminInfoHasBeenSet() const;
 
                     /**
-                     * 获取企业许可证
+                     * 获取企业许可证Id，此字段暂时不需要关注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return License 企业许可证
+                     * @return License 企业许可证Id，此字段暂时不需要关注
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLicense() const;
 
                     /**
-                     * 设置企业许可证
+                     * 设置企业许可证Id，此字段暂时不需要关注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _license 企业许可证
+                     * @param _license 企业许可证Id，此字段暂时不需要关注
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,18 +301,18 @@ namespace TencentCloud
                     bool LicenseHasBeenSet() const;
 
                     /**
-                     * 获取企业许可证过期时间，时间戳，单位秒
+                     * 获取企业许可证过期时间，unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LicenseExpireTime 企业许可证过期时间，时间戳，单位秒
+                     * @return LicenseExpireTime 企业许可证过期时间，unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLicenseExpireTime() const;
 
                     /**
-                     * 设置企业许可证过期时间，时间戳，单位秒
+                     * 设置企业许可证过期时间，unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _licenseExpireTime 企业许可证过期时间，时间戳，单位秒
+                     * @param _licenseExpireTime 企业许可证过期时间，unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -298,18 +326,18 @@ namespace TencentCloud
                     bool LicenseExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取成员企业加入集团时间，时间戳，单位秒
+                     * 获取成员企业加入集团时间，unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JoinTime 成员企业加入集团时间，时间戳，单位秒
+                     * @return JoinTime 成员企业加入集团时间，unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetJoinTime() const;
 
                     /**
-                     * 设置成员企业加入集团时间，时间戳，单位秒
+                     * 设置成员企业加入集团时间，unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _joinTime 成员企业加入集团时间，时间戳，单位秒
+                     * @param _joinTime 成员企业加入集团时间，unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -323,18 +351,26 @@ namespace TencentCloud
                     bool JoinTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否使用自建审批流引擎（即不是企微审批流引擎），true-是，false-否
+                     * 获取是否使用自建审批流引擎（即不是企微审批流引擎）
+<ul><li> **true**：是</li>
+<li> **false**：否</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowEngineEnable 是否使用自建审批流引擎（即不是企微审批流引擎），true-是，false-否
+                     * @return FlowEngineEnable 是否使用自建审批流引擎（即不是企微审批流引擎）
+<ul><li> **true**：是</li>
+<li> **false**：否</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetFlowEngineEnable() const;
 
                     /**
-                     * 设置是否使用自建审批流引擎（即不是企微审批流引擎），true-是，false-否
+                     * 设置是否使用自建审批流引擎（即不是企微审批流引擎）
+<ul><li> **true**：是</li>
+<li> **false**：否</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _flowEngineEnable 是否使用自建审批流引擎（即不是企微审批流引擎），true-是，false-否
+                     * @param _flowEngineEnable 是否使用自建审批流引擎（即不是企微审批流引擎）
+<ul><li> **true**：是</li>
+<li> **false**：否</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -364,21 +400,28 @@ namespace TencentCloud
                     bool m_aliasHasBeenSet;
 
                     /**
-                     * 成员企业id
+                     * 成员企业id，为 32 位字符串，可在电子签PC 控制台，企业设置->企业电子签账号 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 更新时间，时间戳，单位秒
+                     * 记录更新时间， unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * 成员企业加入集团的当前状态
+<ul><li> **1**：待授权</li>
+<li> **2**：已授权待激活</li>
+<li> **3**：拒绝授权</li>
+<li> **4**：已解除</li>
+<li> **5**：已加入</li>
+</ul>
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
@@ -406,28 +449,30 @@ namespace TencentCloud
                     bool m_adminInfoHasBeenSet;
 
                     /**
-                     * 企业许可证
+                     * 企业许可证Id，此字段暂时不需要关注
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_license;
                     bool m_licenseHasBeenSet;
 
                     /**
-                     * 企业许可证过期时间，时间戳，单位秒
+                     * 企业许可证过期时间，unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_licenseExpireTime;
                     bool m_licenseExpireTimeHasBeenSet;
 
                     /**
-                     * 成员企业加入集团时间，时间戳，单位秒
+                     * 成员企业加入集团时间，unix时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_joinTime;
                     bool m_joinTimeHasBeenSet;
 
                     /**
-                     * 是否使用自建审批流引擎（即不是企微审批流引擎），true-是，false-否
+                     * 是否使用自建审批流引擎（即不是企微审批流引擎）
+<ul><li> **true**：是</li>
+<li> **false**：否</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_flowEngineEnable;
