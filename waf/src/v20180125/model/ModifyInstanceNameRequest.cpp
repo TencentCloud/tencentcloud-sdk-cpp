@@ -23,6 +23,7 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 ModifyInstanceNameRequest::ModifyInstanceNameRequest() :
+    m_instanceNameHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
     m_editionHasBeenSet(false)
 {
@@ -34,6 +35,14 @@ string ModifyInstanceNameRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_instanceIDHasBeenSet)
     {
@@ -58,6 +67,22 @@ string ModifyInstanceNameRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyInstanceNameRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void ModifyInstanceNameRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool ModifyInstanceNameRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
 
 string ModifyInstanceNameRequest::GetInstanceID() const
 {

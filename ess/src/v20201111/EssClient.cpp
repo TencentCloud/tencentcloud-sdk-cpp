@@ -255,6 +255,49 @@ EssClient::CreateBatchCancelFlowUrlOutcomeCallable EssClient::CreateBatchCancelF
     return task->get_future();
 }
 
+EssClient::CreateBatchSignUrlOutcome EssClient::CreateBatchSignUrl(const CreateBatchSignUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchSignUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchSignUrlResponse rsp = CreateBatchSignUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchSignUrlOutcome(rsp);
+        else
+            return CreateBatchSignUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchSignUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateBatchSignUrlAsync(const CreateBatchSignUrlRequest& request, const CreateBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchSignUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateBatchSignUrlOutcomeCallable EssClient::CreateBatchSignUrlCallable(const CreateBatchSignUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchSignUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchSignUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateConvertTaskApiOutcome EssClient::CreateConvertTaskApi(const CreateConvertTaskApiRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConvertTaskApi");

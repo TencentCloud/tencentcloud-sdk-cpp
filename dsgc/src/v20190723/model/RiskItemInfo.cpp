@@ -38,7 +38,9 @@ RiskItemInfo::RiskItemInfo() :
     m_lastProcessTimeHasBeenSet(false),
     m_identifyComplianceIdHasBeenSet(false),
     m_itemSubTypeHasBeenSet(false),
-    m_riskSideHasBeenSet(false)
+    m_riskSideHasBeenSet(false),
+    m_aPIRiskLinkURLHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,26 @@ CoreInternalOutcome RiskItemInfo::Deserialize(const rapidjson::Value &value)
         m_riskSideHasBeenSet = true;
     }
 
+    if (value.HasMember("APIRiskLinkURL") && !value["APIRiskLinkURL"].IsNull())
+    {
+        if (!value["APIRiskLinkURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskItemInfo.APIRiskLinkURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aPIRiskLinkURL = string(value["APIRiskLinkURL"].GetString());
+        m_aPIRiskLinkURLHasBeenSet = true;
+    }
+
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskItemInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +415,22 @@ void RiskItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RiskSide";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_riskSide.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aPIRiskLinkURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "APIRiskLinkURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aPIRiskLinkURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -684,5 +722,37 @@ void RiskItemInfo::SetRiskSide(const string& _riskSide)
 bool RiskItemInfo::RiskSideHasBeenSet() const
 {
     return m_riskSideHasBeenSet;
+}
+
+string RiskItemInfo::GetAPIRiskLinkURL() const
+{
+    return m_aPIRiskLinkURL;
+}
+
+void RiskItemInfo::SetAPIRiskLinkURL(const string& _aPIRiskLinkURL)
+{
+    m_aPIRiskLinkURL = _aPIRiskLinkURL;
+    m_aPIRiskLinkURLHasBeenSet = true;
+}
+
+bool RiskItemInfo::APIRiskLinkURLHasBeenSet() const
+{
+    return m_aPIRiskLinkURLHasBeenSet;
+}
+
+string RiskItemInfo::GetRemark() const
+{
+    return m_remark;
+}
+
+void RiskItemInfo::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool RiskItemInfo::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 

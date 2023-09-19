@@ -247,6 +247,31 @@ namespace TencentCloud
                      */
                     bool ClsHasBeenSet() const;
 
+                    /**
+                     * 获取标记是否是混合云接入。hybrid表示混合云接入域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudType 标记是否是混合云接入。hybrid表示混合云接入域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCloudType() const;
+
+                    /**
+                     * 设置标记是否是混合云接入。hybrid表示混合云接入域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cloudType 标记是否是混合云接入。hybrid表示混合云接入域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCloudType(const std::string& _cloudType);
+
+                    /**
+                     * 判断参数 CloudType 是否已赋值
+                     * @return CloudType 是否已赋值
+                     * 
+                     */
+                    bool CloudTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,6 +330,13 @@ namespace TencentCloud
                      */
                     uint64_t m_cls;
                     bool m_clsHasBeenSet;
+
+                    /**
+                     * 标记是否是混合云接入。hybrid表示混合云接入域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cloudType;
+                    bool m_cloudTypeHasBeenSet;
 
                 };
             }

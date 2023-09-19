@@ -38,7 +38,8 @@ HostRecord::HostRecord() :
     m_cdcClustersHasBeenSet(false),
     m_albTypeHasBeenSet(false),
     m_ipHeadersHasBeenSet(false),
-    m_engineTypeHasBeenSet(false)
+    m_engineTypeHasBeenSet(false),
+    m_cloudTypeHasBeenSet(false)
 {
 }
 
@@ -243,6 +244,16 @@ CoreInternalOutcome HostRecord::Deserialize(const rapidjson::Value &value)
         m_engineTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudType") && !value["CloudType"].IsNull())
+    {
+        if (!value["CloudType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostRecord.CloudType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudType = string(value["CloudType"].GetString());
+        m_cloudTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -409,6 +420,14 @@ void HostRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "EngineType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_engineType, allocator);
+    }
+
+    if (m_cloudTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cloudType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -700,5 +719,21 @@ void HostRecord::SetEngineType(const int64_t& _engineType)
 bool HostRecord::EngineTypeHasBeenSet() const
 {
     return m_engineTypeHasBeenSet;
+}
+
+string HostRecord::GetCloudType() const
+{
+    return m_cloudType;
+}
+
+void HostRecord::SetCloudType(const string& _cloudType)
+{
+    m_cloudType = _cloudType;
+    m_cloudTypeHasBeenSet = true;
+}
+
+bool HostRecord::CloudTypeHasBeenSet() const
+{
+    return m_cloudTypeHasBeenSet;
 }
 

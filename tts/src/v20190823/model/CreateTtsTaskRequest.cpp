@@ -34,7 +34,9 @@ CreateTtsTaskRequest::CreateTtsTaskRequest() :
     m_codecHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_enableSubtitleHasBeenSet(false),
-    m_voiceoverDialogueSplitHasBeenSet(false)
+    m_voiceoverDialogueSplitHasBeenSet(false),
+    m_emotionCategoryHasBeenSet(false),
+    m_emotionIntensityHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,22 @@ string CreateTtsTaskRequest::ToJsonString() const
         string key = "VoiceoverDialogueSplit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_voiceoverDialogueSplit, allocator);
+    }
+
+    if (m_emotionCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmotionCategory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_emotionCategory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_emotionIntensityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmotionIntensity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_emotionIntensity, allocator);
     }
 
 
@@ -339,6 +357,38 @@ void CreateTtsTaskRequest::SetVoiceoverDialogueSplit(const bool& _voiceoverDialo
 bool CreateTtsTaskRequest::VoiceoverDialogueSplitHasBeenSet() const
 {
     return m_voiceoverDialogueSplitHasBeenSet;
+}
+
+string CreateTtsTaskRequest::GetEmotionCategory() const
+{
+    return m_emotionCategory;
+}
+
+void CreateTtsTaskRequest::SetEmotionCategory(const string& _emotionCategory)
+{
+    m_emotionCategory = _emotionCategory;
+    m_emotionCategoryHasBeenSet = true;
+}
+
+bool CreateTtsTaskRequest::EmotionCategoryHasBeenSet() const
+{
+    return m_emotionCategoryHasBeenSet;
+}
+
+int64_t CreateTtsTaskRequest::GetEmotionIntensity() const
+{
+    return m_emotionIntensity;
+}
+
+void CreateTtsTaskRequest::SetEmotionIntensity(const int64_t& _emotionIntensity)
+{
+    m_emotionIntensity = _emotionIntensity;
+    m_emotionIntensityHasBeenSet = true;
+}
+
+bool CreateTtsTaskRequest::EmotionIntensityHasBeenSet() const
+{
+    return m_emotionIntensityHasBeenSet;
 }
 
 

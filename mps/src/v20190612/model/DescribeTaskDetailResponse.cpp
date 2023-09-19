@@ -37,7 +37,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_extInfoHasBeenSet(false),
-    m_scheduleTaskHasBeenSet(false)
+    m_scheduleTaskHasBeenSet(false),
+    m_liveScheduleTaskHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_scheduleTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LiveScheduleTask") && !rsp["LiveScheduleTask"].IsNull())
+    {
+        if (!rsp["LiveScheduleTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveScheduleTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_liveScheduleTask.Deserialize(rsp["LiveScheduleTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_liveScheduleTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -375,6 +393,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scheduleTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_liveScheduleTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiveScheduleTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_liveScheduleTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -527,6 +554,16 @@ ScheduleTask DescribeTaskDetailResponse::GetScheduleTask() const
 bool DescribeTaskDetailResponse::ScheduleTaskHasBeenSet() const
 {
     return m_scheduleTaskHasBeenSet;
+}
+
+LiveScheduleTask DescribeTaskDetailResponse::GetLiveScheduleTask() const
+{
+    return m_liveScheduleTask;
+}
+
+bool DescribeTaskDetailResponse::LiveScheduleTaskHasBeenSet() const
+{
+    return m_liveScheduleTaskHasBeenSet;
 }
 
 

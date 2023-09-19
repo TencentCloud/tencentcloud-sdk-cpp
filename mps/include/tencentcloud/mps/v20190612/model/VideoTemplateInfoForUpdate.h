@@ -100,7 +100,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetFps() const;
+                    int64_t GetFps() const;
 
                     /**
                      * 设置视频帧率，取值范围：[0, 120]，单位：Hz。
@@ -111,7 +111,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetFps(const uint64_t& _fps);
+                    void SetFps(const int64_t& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
@@ -129,7 +129,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetBitrate() const;
+                    int64_t GetBitrate() const;
 
                     /**
                      * 设置视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
@@ -140,7 +140,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetBitrate(const uint64_t& _bitrate);
+                    void SetBitrate(const int64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
@@ -403,7 +403,7 @@ namespace TencentCloud
 当取值为 0，表示帧率和原始视频保持一致。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_fps;
+                    int64_t m_fps;
                     bool m_fpsHasBeenSet;
 
                     /**
@@ -411,7 +411,7 @@ namespace TencentCloud
 当取值为 0，表示视频码率和原始视频保持一致。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_bitrate;
+                    int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取鉴黄模板 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Definition 鉴黄模板 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置鉴黄模板 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _definition 鉴黄模板 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -71,6 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 鉴黄模板 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

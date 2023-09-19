@@ -294,6 +294,27 @@ namespace TencentCloud
                      */
                     bool RiskSideHasBeenSet() const;
 
+                    /**
+                     * 获取ASC 正序，DESC倒叙
+                     * @return TimeSort ASC 正序，DESC倒叙
+                     * 
+                     */
+                    std::string GetTimeSort() const;
+
+                    /**
+                     * 设置ASC 正序，DESC倒叙
+                     * @param _timeSort ASC 正序，DESC倒叙
+                     * 
+                     */
+                    void SetTimeSort(const std::string& _timeSort);
+
+                    /**
+                     * 判断参数 TimeSort 是否已赋值
+                     * @return TimeSort 是否已赋值
+                     * 
+                     */
+                    bool TimeSortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +388,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_riskSide;
                     bool m_riskSideHasBeenSet;
+
+                    /**
+                     * ASC 正序，DESC倒叙
+                     */
+                    std::string m_timeSort;
+                    bool m_timeSortHasBeenSet;
 
                 };
             }

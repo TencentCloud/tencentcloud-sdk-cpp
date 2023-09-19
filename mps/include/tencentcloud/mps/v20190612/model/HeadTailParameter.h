@@ -49,14 +49,18 @@ namespace TencentCloud
 
                     /**
                      * 获取片头列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadSet 片头列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MediaInputInfo> GetHeadSet() const;
 
                     /**
                      * 设置片头列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headSet 片头列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeadSet(const std::vector<MediaInputInfo>& _headSet);
@@ -70,14 +74,18 @@ namespace TencentCloud
 
                     /**
                      * 获取片尾列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TailSet 片尾列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MediaInputInfo> GetTailSet() const;
 
                     /**
                      * 设置片尾列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tailSet 片尾列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTailSet(const std::vector<MediaInputInfo>& _tailSet);
@@ -93,12 +101,14 @@ namespace TencentCloud
 
                     /**
                      * 片头列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaInputInfo> m_headSet;
                     bool m_headSetHasBeenSet;
 
                     /**
                      * 片尾列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaInputInfo> m_tailSet;
                     bool m_tailSetHasBeenSet;

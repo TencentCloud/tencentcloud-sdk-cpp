@@ -50,21 +50,21 @@ CoreInternalOutcome VideoTemplateInfo::Deserialize(const rapidjson::Value &value
 
     if (value.HasMember("Fps") && !value["Fps"].IsNull())
     {
-        if (!value["Fps"].IsUint64())
+        if (!value["Fps"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.Fps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_fps = value["Fps"].GetUint64();
+        m_fps = value["Fps"].GetInt64();
         m_fpsHasBeenSet = true;
     }
 
     if (value.HasMember("Bitrate") && !value["Bitrate"].IsNull())
     {
-        if (!value["Bitrate"].IsUint64())
+        if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_bitrate = value["Bitrate"].GetUint64();
+        m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
     }
 
@@ -226,12 +226,12 @@ bool VideoTemplateInfo::CodecHasBeenSet() const
     return m_codecHasBeenSet;
 }
 
-uint64_t VideoTemplateInfo::GetFps() const
+int64_t VideoTemplateInfo::GetFps() const
 {
     return m_fps;
 }
 
-void VideoTemplateInfo::SetFps(const uint64_t& _fps)
+void VideoTemplateInfo::SetFps(const int64_t& _fps)
 {
     m_fps = _fps;
     m_fpsHasBeenSet = true;
@@ -242,12 +242,12 @@ bool VideoTemplateInfo::FpsHasBeenSet() const
     return m_fpsHasBeenSet;
 }
 
-uint64_t VideoTemplateInfo::GetBitrate() const
+int64_t VideoTemplateInfo::GetBitrate() const
 {
     return m_bitrate;
 }
 
-void VideoTemplateInfo::SetBitrate(const uint64_t& _bitrate)
+void VideoTemplateInfo::SetBitrate(const int64_t& _bitrate)
 {
     m_bitrate = _bitrate;
     m_bitrateHasBeenSet = true;

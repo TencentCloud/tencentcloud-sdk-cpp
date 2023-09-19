@@ -71,14 +71,18 @@ namespace TencentCloud
 
                     /**
                      * 获取精彩片段的存储位置。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputStorage 精彩片段的存储位置。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置精彩片段的存储位置。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputStorage 精彩片段的存储位置。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -100,6 +104,7 @@ namespace TencentCloud
 
                     /**
                      * 精彩片段的存储位置。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;

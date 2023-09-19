@@ -255,6 +255,49 @@ EssbasicClient::ChannelCreateBatchCancelFlowUrlOutcomeCallable EssbasicClient::C
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateBatchSignUrlOutcome EssbasicClient::ChannelCreateBatchSignUrl(const ChannelCreateBatchSignUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateBatchSignUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateBatchSignUrlResponse rsp = ChannelCreateBatchSignUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateBatchSignUrlOutcome(rsp);
+        else
+            return ChannelCreateBatchSignUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateBatchSignUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateBatchSignUrlAsync(const ChannelCreateBatchSignUrlRequest& request, const ChannelCreateBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateBatchSignUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateBatchSignUrlOutcomeCallable EssbasicClient::ChannelCreateBatchSignUrlCallable(const ChannelCreateBatchSignUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateBatchSignUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateBatchSignUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateBoundFlowsOutcome EssbasicClient::ChannelCreateBoundFlows(const ChannelCreateBoundFlowsRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateBoundFlows");

@@ -889,7 +889,9 @@ namespace TencentCloud
                 DescribeBizTrendOutcomeCallable DescribeBizTrendCallable(const Model::DescribeBizTrendRequest& request);
 
                 /**
-                 *获取DDoS防护的IP黑白名单
+                 *接口变更
+
+获取DDoS防护的IP黑白名单
                  * @param req DescribeBlackWhiteIpListRequest
                  * @return DescribeBlackWhiteIpListOutcome
                  */
@@ -1106,7 +1108,9 @@ namespace TencentCloud
                 DescribeListPortAclListOutcomeCallable DescribeListPortAclListCallable(const Model::DescribeListPortAclListRequest& request);
 
                 /**
-                 *获取防护阈值配置列表，包括DDoS的AI、等级、CC阈值开关等
+                 *接口变更
+
+获取防护阈值配置列表，包括DDoS的AI、等级、CC阈值开关等
                  * @param req DescribeListProtectThresholdConfigRequest
                  * @return DescribeListProtectThresholdConfigOutcome
                  */

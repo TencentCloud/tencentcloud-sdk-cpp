@@ -31,7 +31,8 @@ LoadBalancer::LoadBalancer() :
     m_protocolHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_numericalVpcIdHasBeenSet(false),
-    m_loadBalancerTypeHasBeenSet(false)
+    m_loadBalancerTypeHasBeenSet(false),
+    m_loadBalancerDomainHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_loadBalancerTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("LoadBalancerDomain") && !value["LoadBalancerDomain"].IsNull())
+    {
+        if (!value["LoadBalancerDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.LoadBalancerDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancerDomain = string(value["LoadBalancerDomain"].GetString());
+        m_loadBalancerDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LoadBalancerType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_loadBalancerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalancerDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancerDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void LoadBalancer::SetLoadBalancerType(const string& _loadBalancerType)
 bool LoadBalancer::LoadBalancerTypeHasBeenSet() const
 {
     return m_loadBalancerTypeHasBeenSet;
+}
+
+string LoadBalancer::GetLoadBalancerDomain() const
+{
+    return m_loadBalancerDomain;
+}
+
+void LoadBalancer::SetLoadBalancerDomain(const string& _loadBalancerDomain)
+{
+    m_loadBalancerDomain = _loadBalancerDomain;
+    m_loadBalancerDomainHasBeenSet = true;
+}
+
+bool LoadBalancer::LoadBalancerDomainHasBeenSet() const
+{
+    return m_loadBalancerDomainHasBeenSet;
 }
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/mps/v20190612/model/EditMediaFileInfo.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaOutputConfig.h>
+#include <tencentcloud/mps/v20190612/model/ComposeMediaConfig.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 
 
@@ -90,14 +91,26 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体处理输出文件的目标路径。
+
+注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。
+
                      * @return OutputObjectPath 媒体处理输出文件的目标路径。
+
+注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。
+
                      * 
                      */
                     std::string GetOutputObjectPath() const;
 
                     /**
                      * 设置媒体处理输出文件的目标路径。
+
+注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。
+
                      * @param _outputObjectPath 媒体处理输出文件的目标路径。
+
+注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。
+
                      * 
                      */
                     void SetOutputObjectPath(const std::string& _outputObjectPath);
@@ -110,15 +123,15 @@ namespace TencentCloud
                     bool OutputObjectPathHasBeenSet() const;
 
                     /**
-                     * 获取编辑后生成的文件配置。
-                     * @return OutputConfig 编辑后生成的文件配置。
+                     * 获取【剪辑】任务生成的文件配置。
+                     * @return OutputConfig 【剪辑】任务生成的文件配置。
                      * 
                      */
                     EditMediaOutputConfig GetOutputConfig() const;
 
                     /**
-                     * 设置编辑后生成的文件配置。
-                     * @param _outputConfig 编辑后生成的文件配置。
+                     * 设置【剪辑】任务生成的文件配置。
+                     * @param _outputConfig 【剪辑】任务生成的文件配置。
                      * 
                      */
                     void SetOutputConfig(const EditMediaOutputConfig& _outputConfig);
@@ -129,6 +142,35 @@ namespace TencentCloud
                      * 
                      */
                     bool OutputConfigHasBeenSet() const;
+
+                    /**
+                     * 获取【合成】任务配置。
+
+注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。
+                     * @return ComposeConfig 【合成】任务配置。
+
+注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。
+                     * 
+                     */
+                    ComposeMediaConfig GetComposeConfig() const;
+
+                    /**
+                     * 设置【合成】任务配置。
+
+注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。
+                     * @param _composeConfig 【合成】任务配置。
+
+注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。
+                     * 
+                     */
+                    void SetComposeConfig(const ComposeMediaConfig& _composeConfig);
+
+                    /**
+                     * 判断参数 ComposeConfig 是否已赋值
+                     * @return ComposeConfig 是否已赋值
+                     * 
+                     */
+                    bool ComposeConfigHasBeenSet() const;
 
                     /**
                      * 获取任务的事件通知信息，不填代表不获取事件通知。
@@ -230,15 +272,26 @@ namespace TencentCloud
 
                     /**
                      * 媒体处理输出文件的目标路径。
+
+注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。
+
                      */
                     std::string m_outputObjectPath;
                     bool m_outputObjectPathHasBeenSet;
 
                     /**
-                     * 编辑后生成的文件配置。
+                     * 【剪辑】任务生成的文件配置。
                      */
                     EditMediaOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;
+
+                    /**
+                     * 【合成】任务配置。
+
+注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。
+                     */
+                    ComposeMediaConfig m_composeConfig;
+                    bool m_composeConfigHasBeenSet;
 
                     /**
                      * 任务的事件通知信息，不填代表不获取事件通知。

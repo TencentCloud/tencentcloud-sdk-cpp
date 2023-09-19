@@ -315,6 +315,31 @@ namespace TencentCloud
                      */
                     bool CdcClustersHasBeenSet() const;
 
+                    /**
+                     * 获取云类型:public:公有云；private:私有云;hybrid:混合云
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudType 云类型:public:公有云；private:私有云;hybrid:混合云
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCloudType() const;
+
+                    /**
+                     * 设置云类型:public:公有云；private:私有云;hybrid:混合云
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cloudType 云类型:public:公有云；private:私有云;hybrid:混合云
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCloudType(const std::string& _cloudType);
+
+                    /**
+                     * 判断参数 CloudType 是否已赋值
+                     * @return CloudType 是否已赋值
+                     * 
+                     */
+                    bool CloudTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -392,6 +417,13 @@ namespace TencentCloud
                      */
                     std::string m_cdcClusters;
                     bool m_cdcClustersHasBeenSet;
+
+                    /**
+                     * 云类型:public:公有云；private:私有云;hybrid:混合云
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cloudType;
+                    bool m_cloudTypeHasBeenSet;
 
                 };
             }

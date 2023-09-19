@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DataEngineNameHasBeenSet() const;
 
                     /**
-                     * 获取运行sql
-                     * @return ExecuteSQL 运行sql
+                     * 获取运行sql，需要base64编码。
+                     * @return ExecuteSQL 运行sql，需要base64编码。
                      * 
                      */
                     std::string GetExecuteSQL() const;
 
                     /**
-                     * 设置运行sql
-                     * @param _executeSQL 运行sql
+                     * 设置运行sql，需要base64编码。
+                     * @param _executeSQL 运行sql，需要base64编码。
                      * 
                      */
                     void SetExecuteSQL(const std::string& _executeSQL);
@@ -262,15 +262,15 @@ namespace TencentCloud
                     bool ArgumentsHasBeenSet() const;
 
                     /**
-                     * 获取是否继承集群的资源类配置：0：自定义（默认），1：继承集群；
-                     * @return IsInherit 是否继承集群的资源类配置：0：自定义（默认），1：继承集群；
+                     * 获取是否继承集群的资源类配置：0：不继承（默认），1：继承集群；
+                     * @return IsInherit 是否继承集群的资源类配置：0：不继承（默认），1：继承集群；
                      * 
                      */
                     int64_t GetIsInherit() const;
 
                     /**
-                     * 设置是否继承集群的资源类配置：0：自定义（默认），1：继承集群；
-                     * @param _isInherit 是否继承集群的资源类配置：0：自定义（默认），1：继承集群；
+                     * 设置是否继承集群的资源类配置：0：不继承（默认），1：继承集群；
+                     * @param _isInherit 是否继承集群的资源类配置：0：不继承（默认），1：继承集群；
                      * 
                      */
                     void SetIsInherit(const int64_t& _isInherit);
@@ -291,7 +291,7 @@ namespace TencentCloud
                     bool m_dataEngineNameHasBeenSet;
 
                     /**
-                     * 运行sql
+                     * 运行sql，需要base64编码。
                      */
                     std::string m_executeSQL;
                     bool m_executeSQLHasBeenSet;
@@ -347,7 +347,7 @@ namespace TencentCloud
                     bool m_argumentsHasBeenSet;
 
                     /**
-                     * 是否继承集群的资源类配置：0：自定义（默认），1：继承集群；
+                     * 是否继承集群的资源类配置：0：不继承（默认），1：继承集群；
                      */
                     int64_t m_isInherit;
                     bool m_isInheritHasBeenSet;

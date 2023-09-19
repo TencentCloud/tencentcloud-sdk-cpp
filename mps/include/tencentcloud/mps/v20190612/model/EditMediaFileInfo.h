@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取视频剪辑的起始时间偏移，单位：秒。
-                     * @return StartTimeOffset 视频剪辑的起始时间偏移，单位：秒。
+                     * 获取【剪辑】任务生效，视频剪辑的起始时间偏移，单位：秒。
+                     * @return StartTimeOffset 【剪辑】任务生效，视频剪辑的起始时间偏移，单位：秒。
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置视频剪辑的起始时间偏移，单位：秒。
-                     * @param _startTimeOffset 视频剪辑的起始时间偏移，单位：秒。
+                     * 设置【剪辑】任务生效，视频剪辑的起始时间偏移，单位：秒。
+                     * @param _startTimeOffset 【剪辑】任务生效，视频剪辑的起始时间偏移，单位：秒。
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取视频剪辑的结束时间偏移，单位：秒。
-                     * @return EndTimeOffset 视频剪辑的结束时间偏移，单位：秒。
+                     * 获取【剪辑】任务生效，视频剪辑的结束时间偏移，单位：秒。
+                     * @return EndTimeOffset 【剪辑】任务生效，视频剪辑的结束时间偏移，单位：秒。
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置视频剪辑的结束时间偏移，单位：秒。
-                     * @param _endTimeOffset 视频剪辑的结束时间偏移，单位：秒。
+                     * 设置【剪辑】任务生效，视频剪辑的结束时间偏移，单位：秒。
+                     * @param _endTimeOffset 【剪辑】任务生效，视频剪辑的结束时间偏移，单位：秒。
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -110,6 +110,39 @@ namespace TencentCloud
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 
+                    /**
+                     * 获取【合成】任务必选，用于轨道元素中媒体关联源素材 ID。
+
+注意：允许字母、数字、-、_ ，最长 32 字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id 【合成】任务必选，用于轨道元素中媒体关联源素材 ID。
+
+注意：允许字母、数字、-、_ ，最长 32 字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置【合成】任务必选，用于轨道元素中媒体关联源素材 ID。
+
+注意：允许字母、数字、-、_ ，最长 32 字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _id 【合成】任务必选，用于轨道元素中媒体关联源素材 ID。
+
+注意：允许字母、数字、-、_ ，最长 32 字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,16 +152,25 @@ namespace TencentCloud
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * 视频剪辑的起始时间偏移，单位：秒。
+                     * 【剪辑】任务生效，视频剪辑的起始时间偏移，单位：秒。
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * 视频剪辑的结束时间偏移，单位：秒。
+                     * 【剪辑】任务生效，视频剪辑的结束时间偏移，单位：秒。
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
+
+                    /**
+                     * 【合成】任务必选，用于轨道元素中媒体关联源素材 ID。
+
+注意：允许字母、数字、-、_ ，最长 32 字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

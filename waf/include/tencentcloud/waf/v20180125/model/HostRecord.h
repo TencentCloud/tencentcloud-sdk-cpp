@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool MainDomainHasBeenSet() const;
 
                     /**
-                     * 获取waf模式，同saas waf保持一致
-                     * @return Mode waf模式，同saas waf保持一致
+                     * 获取规则引擎防护模式，0 观察模式，1拦截模式
+                     * @return Mode 规则引擎防护模式，0 观察模式，1拦截模式
                      * 
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置waf模式，同saas waf保持一致
-                     * @param _mode waf模式，同saas waf保持一致
+                     * 设置规则引擎防护模式，0 观察模式，1拦截模式
+                     * @param _mode 规则引擎防护模式，0 观察模式，1拦截模式
                      * 
                      */
                     void SetMode(const uint64_t& _mode);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取使用的规则，同saas waf保持一致
-                     * @return Engine 使用的规则，同saas waf保持一致
+                     * 获取规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * @return Engine 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
                      * 
                      */
                     uint64_t GetEngine() const;
 
                     /**
-                     * 设置使用的规则，同saas waf保持一致
-                     * @param _engine 使用的规则，同saas waf保持一致
+                     * 设置规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * @param _engine 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
                      * 
                      */
                     void SetEngine(const uint64_t& _engine);
@@ -445,6 +445,31 @@ namespace TencentCloud
                      */
                     bool EngineTypeHasBeenSet() const;
 
+                    /**
+                     * 获取云类型:public:公有云；private:私有云;hybrid:混合云
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudType 云类型:public:公有云；private:私有云;hybrid:混合云
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCloudType() const;
+
+                    /**
+                     * 设置云类型:public:公有云；private:私有云;hybrid:混合云
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cloudType 云类型:public:公有云；private:私有云;hybrid:混合云
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCloudType(const std::string& _cloudType);
+
+                    /**
+                     * 判断参数 CloudType 是否已赋值
+                     * @return CloudType 是否已赋值
+                     * 
+                     */
+                    bool CloudTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,7 +491,7 @@ namespace TencentCloud
                     bool m_mainDomainHasBeenSet;
 
                     /**
-                     * waf模式，同saas waf保持一致
+                     * 规则引擎防护模式，0 观察模式，1拦截模式
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
@@ -484,7 +509,7 @@ namespace TencentCloud
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 使用的规则，同saas waf保持一致
+                     * 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
                      */
                     uint64_t m_engine;
                     bool m_engineHasBeenSet;
@@ -559,6 +584,13 @@ namespace TencentCloud
                      */
                     int64_t m_engineType;
                     bool m_engineTypeHasBeenSet;
+
+                    /**
+                     * 云类型:public:公有云；private:私有云;hybrid:混合云
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cloudType;
+                    bool m_cloudTypeHasBeenSet;
 
                 };
             }

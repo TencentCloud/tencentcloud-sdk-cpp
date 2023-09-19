@@ -26,6 +26,7 @@
 #include <tencentcloud/mps/v20190612/model/LiveStreamProcessTask.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleTask.h>
+#include <tencentcloud/mps/v20190612/model/LiveScheduleTask.h>
 
 
 namespace TencentCloud
@@ -268,6 +269,22 @@ namespace TencentCloud
                      */
                     bool ScheduleTaskHasBeenSet() const;
 
+                    /**
+                     * 获取直播编排处理任务信息，仅当 TaskType 为 LiveScheduleTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LiveScheduleTask 直播编排处理任务信息，仅当 TaskType 为 LiveScheduleTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    LiveScheduleTask GetLiveScheduleTask() const;
+
+                    /**
+                     * 判断参数 LiveScheduleTask 是否已赋值
+                     * @return LiveScheduleTask 是否已赋值
+                     * 
+                     */
+                    bool LiveScheduleTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -365,6 +382,13 @@ namespace TencentCloud
                      */
                     ScheduleTask m_scheduleTask;
                     bool m_scheduleTaskHasBeenSet;
+
+                    /**
+                     * 直播编排处理任务信息，仅当 TaskType 为 LiveScheduleTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LiveScheduleTask m_liveScheduleTask;
+                    bool m_liveScheduleTaskHasBeenSet;
 
                 };
             }

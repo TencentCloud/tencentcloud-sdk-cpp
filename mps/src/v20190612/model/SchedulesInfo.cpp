@@ -23,6 +23,7 @@ using namespace std;
 SchedulesInfo::SchedulesInfo() :
     m_scheduleIdHasBeenSet(false),
     m_scheduleNameHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_triggerHasBeenSet(false),
     m_activitiesHasBeenSet(false),
@@ -57,6 +58,16 @@ CoreInternalOutcome SchedulesInfo::Deserialize(const rapidjson::Value &value)
         }
         m_scheduleName = string(value["ScheduleName"].GetString());
         m_scheduleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SchedulesInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -193,6 +204,14 @@ void SchedulesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_scheduleName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -300,6 +319,22 @@ void SchedulesInfo::SetScheduleName(const string& _scheduleName)
 bool SchedulesInfo::ScheduleNameHasBeenSet() const
 {
     return m_scheduleNameHasBeenSet;
+}
+
+string SchedulesInfo::GetType() const
+{
+    return m_type;
+}
+
+void SchedulesInfo::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool SchedulesInfo::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 string SchedulesInfo::GetStatus() const

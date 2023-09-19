@@ -21,13 +21,13 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 TaskNotifyConfig::TaskNotifyConfig() :
+    m_notifyTypeHasBeenSet(false),
+    m_notifyModeHasBeenSet(false),
+    m_notifyUrlHasBeenSet(false),
     m_cmqModelHasBeenSet(false),
     m_cmqRegionHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_queueNameHasBeenSet(false),
-    m_notifyModeHasBeenSet(false),
-    m_notifyTypeHasBeenSet(false),
-    m_notifyUrlHasBeenSet(false),
     m_awsSQSHasBeenSet(false)
 {
 }
@@ -36,6 +36,36 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("NotifyType") && !value["NotifyType"].IsNull())
+    {
+        if (!value["NotifyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyType = string(value["NotifyType"].GetString());
+        m_notifyTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NotifyMode") && !value["NotifyMode"].IsNull())
+    {
+        if (!value["NotifyMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.NotifyMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyMode = string(value["NotifyMode"].GetString());
+        m_notifyModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NotifyUrl") && !value["NotifyUrl"].IsNull())
+    {
+        if (!value["NotifyUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.NotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyUrl = string(value["NotifyUrl"].GetString());
+        m_notifyUrlHasBeenSet = true;
+    }
 
     if (value.HasMember("CmqModel") && !value["CmqModel"].IsNull())
     {
@@ -77,36 +107,6 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
         m_queueNameHasBeenSet = true;
     }
 
-    if (value.HasMember("NotifyMode") && !value["NotifyMode"].IsNull())
-    {
-        if (!value["NotifyMode"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.NotifyMode` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_notifyMode = string(value["NotifyMode"].GetString());
-        m_notifyModeHasBeenSet = true;
-    }
-
-    if (value.HasMember("NotifyType") && !value["NotifyType"].IsNull())
-    {
-        if (!value["NotifyType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_notifyType = string(value["NotifyType"].GetString());
-        m_notifyTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("NotifyUrl") && !value["NotifyUrl"].IsNull())
-    {
-        if (!value["NotifyUrl"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.NotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_notifyUrl = string(value["NotifyUrl"].GetString());
-        m_notifyUrlHasBeenSet = true;
-    }
-
     if (value.HasMember("AwsSQS") && !value["AwsSQS"].IsNull())
     {
         if (!value["AwsSQS"].IsObject())
@@ -130,6 +130,30 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
 
 void TaskNotifyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_notifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_cmqModelHasBeenSet)
     {
@@ -163,30 +187,6 @@ void TaskNotifyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_notifyModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NotifyMode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_notifyMode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_notifyTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NotifyType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_notifyUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NotifyUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_awsSQSHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -198,6 +198,54 @@ void TaskNotifyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
 
 }
 
+
+string TaskNotifyConfig::GetNotifyType() const
+{
+    return m_notifyType;
+}
+
+void TaskNotifyConfig::SetNotifyType(const string& _notifyType)
+{
+    m_notifyType = _notifyType;
+    m_notifyTypeHasBeenSet = true;
+}
+
+bool TaskNotifyConfig::NotifyTypeHasBeenSet() const
+{
+    return m_notifyTypeHasBeenSet;
+}
+
+string TaskNotifyConfig::GetNotifyMode() const
+{
+    return m_notifyMode;
+}
+
+void TaskNotifyConfig::SetNotifyMode(const string& _notifyMode)
+{
+    m_notifyMode = _notifyMode;
+    m_notifyModeHasBeenSet = true;
+}
+
+bool TaskNotifyConfig::NotifyModeHasBeenSet() const
+{
+    return m_notifyModeHasBeenSet;
+}
+
+string TaskNotifyConfig::GetNotifyUrl() const
+{
+    return m_notifyUrl;
+}
+
+void TaskNotifyConfig::SetNotifyUrl(const string& _notifyUrl)
+{
+    m_notifyUrl = _notifyUrl;
+    m_notifyUrlHasBeenSet = true;
+}
+
+bool TaskNotifyConfig::NotifyUrlHasBeenSet() const
+{
+    return m_notifyUrlHasBeenSet;
+}
 
 string TaskNotifyConfig::GetCmqModel() const
 {
@@ -261,54 +309,6 @@ void TaskNotifyConfig::SetQueueName(const string& _queueName)
 bool TaskNotifyConfig::QueueNameHasBeenSet() const
 {
     return m_queueNameHasBeenSet;
-}
-
-string TaskNotifyConfig::GetNotifyMode() const
-{
-    return m_notifyMode;
-}
-
-void TaskNotifyConfig::SetNotifyMode(const string& _notifyMode)
-{
-    m_notifyMode = _notifyMode;
-    m_notifyModeHasBeenSet = true;
-}
-
-bool TaskNotifyConfig::NotifyModeHasBeenSet() const
-{
-    return m_notifyModeHasBeenSet;
-}
-
-string TaskNotifyConfig::GetNotifyType() const
-{
-    return m_notifyType;
-}
-
-void TaskNotifyConfig::SetNotifyType(const string& _notifyType)
-{
-    m_notifyType = _notifyType;
-    m_notifyTypeHasBeenSet = true;
-}
-
-bool TaskNotifyConfig::NotifyTypeHasBeenSet() const
-{
-    return m_notifyTypeHasBeenSet;
-}
-
-string TaskNotifyConfig::GetNotifyUrl() const
-{
-    return m_notifyUrl;
-}
-
-void TaskNotifyConfig::SetNotifyUrl(const string& _notifyUrl)
-{
-    m_notifyUrl = _notifyUrl;
-    m_notifyUrlHasBeenSet = true;
-}
-
-bool TaskNotifyConfig::NotifyUrlHasBeenSet() const
-{
-    return m_notifyUrlHasBeenSet;
 }
 
 AwsSQS TaskNotifyConfig::GetAwsSQS() const

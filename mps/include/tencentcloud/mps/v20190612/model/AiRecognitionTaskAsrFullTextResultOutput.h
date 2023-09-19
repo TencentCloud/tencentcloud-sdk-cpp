@@ -93,21 +93,21 @@ namespace TencentCloud
                     /**
                      * 获取字幕文件存储位置。
                      * @return OutputStorage 字幕文件存储位置。
-                     * 
+                     * @deprecated
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置字幕文件存储位置。
                      * @param _outputStorage 字幕文件存储位置。
-                     * 
+                     * @deprecated
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
                     /**
                      * 判断参数 OutputStorage 是否已赋值
                      * @return OutputStorage 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OutputStorageHasBeenSet() const;
 

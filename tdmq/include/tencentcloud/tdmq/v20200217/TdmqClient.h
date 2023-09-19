@@ -163,6 +163,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgTraceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessPointRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessPointResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsRequest.h>
@@ -191,6 +193,8 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkAccessPointRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkAccessPointResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQUserRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQUserResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQVipInstanceRequest.h>
@@ -231,6 +235,8 @@
 #include <tencentcloud/tdmq/v20200217/model/SendMsgResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/SendRocketMQMessageRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/SendRocketMQMessageResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/SetRocketMQPublicAccessPointRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/SetRocketMQPublicAccessPointResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterResponse.h>
 
@@ -457,6 +463,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQNamespacesResponse> DescribeRocketMQNamespacesOutcome;
                 typedef std::future<DescribeRocketMQNamespacesOutcome> DescribeRocketMQNamespacesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQNamespacesRequest&, DescribeRocketMQNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQPublicAccessPointResponse> DescribeRocketMQPublicAccessPointOutcome;
+                typedef std::future<DescribeRocketMQPublicAccessPointOutcome> DescribeRocketMQPublicAccessPointOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQPublicAccessPointRequest&, DescribeRocketMQPublicAccessPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQPublicAccessPointAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQTopicMsgsResponse> DescribeRocketMQTopicMsgsOutcome;
                 typedef std::future<DescribeRocketMQTopicMsgsOutcome> DescribeRocketMQTopicMsgsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicMsgsRequest&, DescribeRocketMQTopicMsgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicMsgsAsyncHandler;
@@ -499,6 +508,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEnvironmentRoleResponse> ModifyEnvironmentRoleOutcome;
                 typedef std::future<ModifyEnvironmentRoleOutcome> ModifyEnvironmentRoleOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyEnvironmentRoleRequest&, ModifyEnvironmentRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPublicNetworkAccessPointResponse> ModifyPublicNetworkAccessPointOutcome;
+                typedef std::future<ModifyPublicNetworkAccessPointOutcome> ModifyPublicNetworkAccessPointOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyPublicNetworkAccessPointRequest&, ModifyPublicNetworkAccessPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublicNetworkAccessPointAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRabbitMQUserResponse> ModifyRabbitMQUserOutcome;
                 typedef std::future<ModifyRabbitMQUserOutcome> ModifyRabbitMQUserOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyRabbitMQUserRequest&, ModifyRabbitMQUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRabbitMQUserAsyncHandler;
@@ -559,6 +571,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SendRocketMQMessageResponse> SendRocketMQMessageOutcome;
                 typedef std::future<SendRocketMQMessageOutcome> SendRocketMQMessageOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::SendRocketMQMessageRequest&, SendRocketMQMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendRocketMQMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetRocketMQPublicAccessPointResponse> SetRocketMQPublicAccessPointOutcome;
+                typedef std::future<SetRocketMQPublicAccessPointOutcome> SetRocketMQPublicAccessPointOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::SetRocketMQPublicAccessPointRequest&, SetRocketMQPublicAccessPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetRocketMQPublicAccessPointAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindCmqDeadLetterResponse> UnbindCmqDeadLetterOutcome;
                 typedef std::future<UnbindCmqDeadLetterOutcome> UnbindCmqDeadLetterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::UnbindCmqDeadLetterRequest&, UnbindCmqDeadLetterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindCmqDeadLetterAsyncHandler;
@@ -1196,6 +1211,15 @@ namespace TencentCloud
                 DescribeRocketMQNamespacesOutcomeCallable DescribeRocketMQNamespacesCallable(const Model::DescribeRocketMQNamespacesRequest& request);
 
                 /**
+                 *接口用于查询RocketMQ实例的公网接入信息
+                 * @param req DescribeRocketMQPublicAccessPointRequest
+                 * @return DescribeRocketMQPublicAccessPointOutcome
+                 */
+                DescribeRocketMQPublicAccessPointOutcome DescribeRocketMQPublicAccessPoint(const Model::DescribeRocketMQPublicAccessPointRequest &request);
+                void DescribeRocketMQPublicAccessPointAsync(const Model::DescribeRocketMQPublicAccessPointRequest& request, const DescribeRocketMQPublicAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQPublicAccessPointOutcomeCallable DescribeRocketMQPublicAccessPointCallable(const Model::DescribeRocketMQPublicAccessPointRequest& request);
+
+                /**
                  *rocketmq 消息查询
                  * @param req DescribeRocketMQTopicMsgsRequest
                  * @return DescribeRocketMQTopicMsgsOutcome
@@ -1320,6 +1344,15 @@ namespace TencentCloud
                 ModifyEnvironmentRoleOutcome ModifyEnvironmentRole(const Model::ModifyEnvironmentRoleRequest &request);
                 void ModifyEnvironmentRoleAsync(const Model::ModifyEnvironmentRoleRequest& request, const ModifyEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEnvironmentRoleOutcomeCallable ModifyEnvironmentRoleCallable(const Model::ModifyEnvironmentRoleRequest& request);
+
+                /**
+                 *RabbitMQ专享版修改公网管控台，vpc15672开关
+                 * @param req ModifyPublicNetworkAccessPointRequest
+                 * @return ModifyPublicNetworkAccessPointOutcome
+                 */
+                ModifyPublicNetworkAccessPointOutcome ModifyPublicNetworkAccessPoint(const Model::ModifyPublicNetworkAccessPointRequest &request);
+                void ModifyPublicNetworkAccessPointAsync(const Model::ModifyPublicNetworkAccessPointRequest& request, const ModifyPublicNetworkAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPublicNetworkAccessPointOutcomeCallable ModifyPublicNetworkAccessPointCallable(const Model::ModifyPublicNetworkAccessPointRequest& request);
 
                 /**
                  *修改RabbitMQ的用户
@@ -1523,6 +1556,15 @@ BatchReceivePolicy 的接口会一次性返回多条消息：
                 SendRocketMQMessageOutcome SendRocketMQMessage(const Model::SendRocketMQMessageRequest &request);
                 void SendRocketMQMessageAsync(const Model::SendRocketMQMessageRequest& request, const SendRocketMQMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SendRocketMQMessageOutcomeCallable SendRocketMQMessageCallable(const Model::SendRocketMQMessageRequest& request);
+
+                /**
+                 *该接口用于开启关闭公网访问、设置安全访问策略
+                 * @param req SetRocketMQPublicAccessPointRequest
+                 * @return SetRocketMQPublicAccessPointOutcome
+                 */
+                SetRocketMQPublicAccessPointOutcome SetRocketMQPublicAccessPoint(const Model::SetRocketMQPublicAccessPointRequest &request);
+                void SetRocketMQPublicAccessPointAsync(const Model::SetRocketMQPublicAccessPointRequest& request, const SetRocketMQPublicAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetRocketMQPublicAccessPointOutcomeCallable SetRocketMQPublicAccessPointCallable(const Model::SetRocketMQPublicAccessPointRequest& request);
 
                 /**
                  *解绑cmq死信队列

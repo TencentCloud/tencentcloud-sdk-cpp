@@ -716,15 +716,15 @@ namespace TencentCloud
                     bool IpHeadersHasBeenSet() const;
 
                     /**
-                     * 获取0:关闭xff重置；1:开启xff重置
-                     * @return XFFReset 0:关闭xff重置；1:开启xff重置
+                     * 获取0:关闭xff重置；1:开启xff重置，只有在IsCdn=0时可以开启
+                     * @return XFFReset 0:关闭xff重置；1:开启xff重置，只有在IsCdn=0时可以开启
                      * 
                      */
                     int64_t GetXFFReset() const;
 
                     /**
-                     * 设置0:关闭xff重置；1:开启xff重置
-                     * @param _xFFReset 0:关闭xff重置；1:开启xff重置
+                     * 设置0:关闭xff重置；1:开启xff重置，只有在IsCdn=0时可以开启
+                     * @param _xFFReset 0:关闭xff重置；1:开启xff重置，只有在IsCdn=0时可以开启
                      * 
                      */
                     void SetXFFReset(const int64_t& _xFFReset);
@@ -931,7 +931,7 @@ namespace TencentCloud
                     bool m_ipHeadersHasBeenSet;
 
                     /**
-                     * 0:关闭xff重置；1:开启xff重置
+                     * 0:关闭xff重置；1:开启xff重置，只有在IsCdn=0时可以开启
                      */
                     int64_t m_xFFReset;
                     bool m_xFFResetHasBeenSet;

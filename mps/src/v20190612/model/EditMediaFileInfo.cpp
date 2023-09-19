@@ -23,7 +23,8 @@ using namespace std;
 EditMediaFileInfo::EditMediaFileInfo() :
     m_inputInfoHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
-    m_endTimeOffsetHasBeenSet(false)
+    m_endTimeOffsetHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome EditMediaFileInfo::Deserialize(const rapidjson::Value &value
         m_endTimeOffsetHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EditMediaFileInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void EditMediaFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void EditMediaFileInfo::SetEndTimeOffset(const double& _endTimeOffset)
 bool EditMediaFileInfo::EndTimeOffsetHasBeenSet() const
 {
     return m_endTimeOffsetHasBeenSet;
+}
+
+string EditMediaFileInfo::GetId() const
+{
+    return m_id;
+}
+
+void EditMediaFileInfo::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool EditMediaFileInfo::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

@@ -46,11 +46,11 @@ CoreInternalOutcome AudioTemplateInfoForUpdate::Deserialize(const rapidjson::Val
 
     if (value.HasMember("Bitrate") && !value["Bitrate"].IsNull())
     {
-        if (!value["Bitrate"].IsUint64())
+        if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfoForUpdate.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfoForUpdate.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_bitrate = value["Bitrate"].GetUint64();
+        m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
     }
 
@@ -158,12 +158,12 @@ bool AudioTemplateInfoForUpdate::CodecHasBeenSet() const
     return m_codecHasBeenSet;
 }
 
-uint64_t AudioTemplateInfoForUpdate::GetBitrate() const
+int64_t AudioTemplateInfoForUpdate::GetBitrate() const
 {
     return m_bitrate;
 }
 
-void AudioTemplateInfoForUpdate::SetBitrate(const uint64_t& _bitrate)
+void AudioTemplateInfoForUpdate::SetBitrate(const int64_t& _bitrate)
 {
     m_bitrate = _bitrate;
     m_bitrateHasBeenSet = true;

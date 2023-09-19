@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取新名称
+                     * @return InstanceName 新名称
+                     * 
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置新名称
+                     * @param _instanceName 新名称
+                     * 
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
                      * 获取实例id
                      * @return InstanceID 实例id
                      * 
@@ -85,6 +106,12 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 新名称
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
 
                     /**
                      * 实例id

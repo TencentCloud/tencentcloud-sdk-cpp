@@ -50,6 +50,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/AuthorizedUser.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateBatchSignUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRemindsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsRequest.h
   include/tencentcloud/ess/v20201111/model/Agent.h
@@ -175,6 +176,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/IntegrationDepartment.h
   include/tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationRolesResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateBatchSignUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRemindsRequest.h
   include/tencentcloud/ess/v20201111/model/UpdateIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
@@ -238,6 +240,7 @@ set(ess_src
   src/v20201111/model/AuthorizedUser.cpp
   src/v20201111/model/CreateConvertTaskApiRequest.cpp
   src/v20201111/model/DeleteIntegrationEmployeesResponse.cpp
+  src/v20201111/model/CreateBatchSignUrlResponse.cpp
   src/v20201111/model/CreateFlowRemindsResponse.cpp
   src/v20201111/model/DescribeOrganizationGroupOrganizationsRequest.cpp
   src/v20201111/model/Agent.cpp
@@ -363,6 +366,7 @@ set(ess_src
   src/v20201111/model/IntegrationDepartment.cpp
   src/v20201111/model/DescribeExtendedServiceAuthInfosRequest.cpp
   src/v20201111/model/DescribeIntegrationRolesResponse.cpp
+  src/v20201111/model/CreateBatchSignUrlRequest.cpp
   src/v20201111/model/CreateFlowRemindsRequest.cpp
   src/v20201111/model/UpdateIntegrationEmployeesRequest.cpp
   src/v20201111/model/DescribeFlowBriefsRequest.cpp

@@ -314,12 +314,12 @@ bool ActivityResItem::AnimatedGraphicTaskHasBeenSet() const
     return m_animatedGraphicTaskHasBeenSet;
 }
 
-MediaProcessTaskSampleSnapshotResult ActivityResItem::GetSnapshotByTimeOffsetTask() const
+MediaProcessTaskSnapshotByTimeOffsetResult ActivityResItem::GetSnapshotByTimeOffsetTask() const
 {
     return m_snapshotByTimeOffsetTask;
 }
 
-void ActivityResItem::SetSnapshotByTimeOffsetTask(const MediaProcessTaskSampleSnapshotResult& _snapshotByTimeOffsetTask)
+void ActivityResItem::SetSnapshotByTimeOffsetTask(const MediaProcessTaskSnapshotByTimeOffsetResult& _snapshotByTimeOffsetTask)
 {
     m_snapshotByTimeOffsetTask = _snapshotByTimeOffsetTask;
     m_snapshotByTimeOffsetTaskHasBeenSet = true;

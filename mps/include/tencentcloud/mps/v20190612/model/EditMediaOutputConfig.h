@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Container 封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _container 封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainer(const std::string& _container);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
                      * 剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

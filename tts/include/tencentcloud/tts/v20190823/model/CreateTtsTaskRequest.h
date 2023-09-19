@@ -294,6 +294,48 @@ namespace TencentCloud
                      */
                     bool VoiceoverDialogueSplitHasBeenSet() const;
 
+                    /**
+                     * 获取控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、撒娇(sajiao)、厌恶(disgusted)、震惊(amaze)、平静(peaceful)、兴奋(exciting)、傲娇(aojiao)、解说(jieshuo)
+                     * @return EmotionCategory 控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、撒娇(sajiao)、厌恶(disgusted)、震惊(amaze)、平静(peaceful)、兴奋(exciting)、傲娇(aojiao)、解说(jieshuo)
+                     * 
+                     */
+                    std::string GetEmotionCategory() const;
+
+                    /**
+                     * 设置控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、撒娇(sajiao)、厌恶(disgusted)、震惊(amaze)、平静(peaceful)、兴奋(exciting)、傲娇(aojiao)、解说(jieshuo)
+                     * @param _emotionCategory 控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、撒娇(sajiao)、厌恶(disgusted)、震惊(amaze)、平静(peaceful)、兴奋(exciting)、傲娇(aojiao)、解说(jieshuo)
+                     * 
+                     */
+                    void SetEmotionCategory(const std::string& _emotionCategory);
+
+                    /**
+                     * 判断参数 EmotionCategory 是否已赋值
+                     * @return EmotionCategory 是否已赋值
+                     * 
+                     */
+                    bool EmotionCategoryHasBeenSet() const;
+
+                    /**
+                     * 获取控制合成音频情感程度，取值范围为[50,200],默认为100；只有EmotionCategory不为空时生效。
+                     * @return EmotionIntensity 控制合成音频情感程度，取值范围为[50,200],默认为100；只有EmotionCategory不为空时生效。
+                     * 
+                     */
+                    int64_t GetEmotionIntensity() const;
+
+                    /**
+                     * 设置控制合成音频情感程度，取值范围为[50,200],默认为100；只有EmotionCategory不为空时生效。
+                     * @param _emotionIntensity 控制合成音频情感程度，取值范围为[50,200],默认为100；只有EmotionCategory不为空时生效。
+                     * 
+                     */
+                    void SetEmotionIntensity(const int64_t& _emotionIntensity);
+
+                    /**
+                     * 判断参数 EmotionIntensity 是否已赋值
+                     * @return EmotionIntensity 是否已赋值
+                     * 
+                     */
+                    bool EmotionIntensityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +409,18 @@ namespace TencentCloud
                      */
                     bool m_voiceoverDialogueSplit;
                     bool m_voiceoverDialogueSplitHasBeenSet;
+
+                    /**
+                     * 控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、撒娇(sajiao)、厌恶(disgusted)、震惊(amaze)、平静(peaceful)、兴奋(exciting)、傲娇(aojiao)、解说(jieshuo)
+                     */
+                    std::string m_emotionCategory;
+                    bool m_emotionCategoryHasBeenSet;
+
+                    /**
+                     * 控制合成音频情感程度，取值范围为[50,200],默认为100；只有EmotionCategory不为空时生效。
+                     */
+                    int64_t m_emotionIntensity;
+                    bool m_emotionIntensityHasBeenSet;
 
                 };
             }

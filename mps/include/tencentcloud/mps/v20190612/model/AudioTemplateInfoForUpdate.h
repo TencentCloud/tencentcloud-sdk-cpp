@@ -138,7 +138,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetBitrate() const;
+                    int64_t GetBitrate() const;
 
                     /**
                      * 设置音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示音频码率和原始音频保持一致。
@@ -147,7 +147,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetBitrate(const uint64_t& _bitrate);
+                    void SetBitrate(const int64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
@@ -291,7 +291,7 @@ namespace TencentCloud
                      * 音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示音频码率和原始音频保持一致。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_bitrate;
+                    int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**

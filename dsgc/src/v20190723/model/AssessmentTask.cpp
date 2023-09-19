@@ -22,6 +22,7 @@ using namespace std;
 
 AssessmentTask::AssessmentTask() :
     m_taskIdHasBeenSet(false),
+    m_taskUidHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_businessNameHasBeenSet(false),
     m_businessDeptHasBeenSet(false),
@@ -37,7 +38,9 @@ AssessmentTask::AssessmentTask() :
     m_statusHasBeenSet(false),
     m_riskCountInfoListHasBeenSet(false),
     m_discoveryConditionHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
+    m_errorInfoHasBeenSet(false),
+    m_templateUidHasBeenSet(false),
+    m_progressPercentHasBeenSet(false)
 {
 }
 
@@ -54,6 +57,16 @@ CoreInternalOutcome AssessmentTask::Deserialize(const rapidjson::Value &value)
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskUid") && !value["TaskUid"].IsNull())
+    {
+        if (!value["TaskUid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssessmentTask.TaskUid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskUid = value["TaskUid"].GetInt64();
+        m_taskUidHasBeenSet = true;
     }
 
     if (value.HasMember("TaskName") && !value["TaskName"].IsNull())
@@ -233,6 +246,26 @@ CoreInternalOutcome AssessmentTask::Deserialize(const rapidjson::Value &value)
         m_errorInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateUid") && !value["TemplateUid"].IsNull())
+    {
+        if (!value["TemplateUid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssessmentTask.TemplateUid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateUid = value["TemplateUid"].GetInt64();
+        m_templateUidHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProgressPercent") && !value["ProgressPercent"].IsNull())
+    {
+        if (!value["ProgressPercent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssessmentTask.ProgressPercent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_progressPercent = value["ProgressPercent"].GetInt64();
+        m_progressPercentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -246,6 +279,14 @@ void AssessmentTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskUidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskUid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskUid, allocator);
     }
 
     if (m_taskNameHasBeenSet)
@@ -384,6 +425,22 @@ void AssessmentTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_errorInfo.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_templateUidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateUid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_templateUid, allocator);
+    }
+
+    if (m_progressPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgressPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progressPercent, allocator);
+    }
+
 }
 
 
@@ -401,6 +458,22 @@ void AssessmentTask::SetTaskId(const string& _taskId)
 bool AssessmentTask::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+int64_t AssessmentTask::GetTaskUid() const
+{
+    return m_taskUid;
+}
+
+void AssessmentTask::SetTaskUid(const int64_t& _taskUid)
+{
+    m_taskUid = _taskUid;
+    m_taskUidHasBeenSet = true;
+}
+
+bool AssessmentTask::TaskUidHasBeenSet() const
+{
+    return m_taskUidHasBeenSet;
 }
 
 string AssessmentTask::GetTaskName() const
@@ -657,5 +730,37 @@ void AssessmentTask::SetErrorInfo(const string& _errorInfo)
 bool AssessmentTask::ErrorInfoHasBeenSet() const
 {
     return m_errorInfoHasBeenSet;
+}
+
+int64_t AssessmentTask::GetTemplateUid() const
+{
+    return m_templateUid;
+}
+
+void AssessmentTask::SetTemplateUid(const int64_t& _templateUid)
+{
+    m_templateUid = _templateUid;
+    m_templateUidHasBeenSet = true;
+}
+
+bool AssessmentTask::TemplateUidHasBeenSet() const
+{
+    return m_templateUidHasBeenSet;
+}
+
+int64_t AssessmentTask::GetProgressPercent() const
+{
+    return m_progressPercent;
+}
+
+void AssessmentTask::SetProgressPercent(const int64_t& _progressPercent)
+{
+    m_progressPercent = _progressPercent;
+    m_progressPercentHasBeenSet = true;
+}
+
+bool AssessmentTask::ProgressPercentHasBeenSet() const
+{
+    return m_progressPercentHasBeenSet;
 }
 

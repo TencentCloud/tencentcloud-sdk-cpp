@@ -51,21 +51,21 @@ CoreInternalOutcome VideoTemplateInfoForUpdate::Deserialize(const rapidjson::Val
 
     if (value.HasMember("Fps") && !value["Fps"].IsNull())
     {
-        if (!value["Fps"].IsUint64())
+        if (!value["Fps"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfoForUpdate.Fps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfoForUpdate.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_fps = value["Fps"].GetUint64();
+        m_fps = value["Fps"].GetInt64();
         m_fpsHasBeenSet = true;
     }
 
     if (value.HasMember("Bitrate") && !value["Bitrate"].IsNull())
     {
-        if (!value["Bitrate"].IsUint64())
+        if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfoForUpdate.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfoForUpdate.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_bitrate = value["Bitrate"].GetUint64();
+        m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
     }
 
@@ -245,12 +245,12 @@ bool VideoTemplateInfoForUpdate::CodecHasBeenSet() const
     return m_codecHasBeenSet;
 }
 
-uint64_t VideoTemplateInfoForUpdate::GetFps() const
+int64_t VideoTemplateInfoForUpdate::GetFps() const
 {
     return m_fps;
 }
 
-void VideoTemplateInfoForUpdate::SetFps(const uint64_t& _fps)
+void VideoTemplateInfoForUpdate::SetFps(const int64_t& _fps)
 {
     m_fps = _fps;
     m_fpsHasBeenSet = true;
@@ -261,12 +261,12 @@ bool VideoTemplateInfoForUpdate::FpsHasBeenSet() const
     return m_fpsHasBeenSet;
 }
 
-uint64_t VideoTemplateInfoForUpdate::GetBitrate() const
+int64_t VideoTemplateInfoForUpdate::GetBitrate() const
 {
     return m_bitrate;
 }
 
-void VideoTemplateInfoForUpdate::SetBitrate(const uint64_t& _bitrate)
+void VideoTemplateInfoForUpdate::SetBitrate(const int64_t& _bitrate)
 {
     m_bitrate = _bitrate;
     m_bitrateHasBeenSet = true;

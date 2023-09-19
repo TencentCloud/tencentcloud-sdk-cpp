@@ -32,7 +32,8 @@ ClbDomainsInfo::ClbDomainsInfo() :
     m_stateHasBeenSet(false),
     m_albTypeHasBeenSet(false),
     m_ipHeadersHasBeenSet(false),
-    m_cdcClustersHasBeenSet(false)
+    m_cdcClustersHasBeenSet(false),
+    m_cloudTypeHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,16 @@ CoreInternalOutcome ClbDomainsInfo::Deserialize(const rapidjson::Value &value)
         m_cdcClustersHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudType") && !value["CloudType"].IsNull())
+    {
+        if (!value["CloudType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbDomainsInfo.CloudType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudType = string(value["CloudType"].GetString());
+        m_cloudTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +298,14 @@ void ClbDomainsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CdcClusters";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cdcClusters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloudTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cloudType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -482,5 +501,21 @@ void ClbDomainsInfo::SetCdcClusters(const string& _cdcClusters)
 bool ClbDomainsInfo::CdcClustersHasBeenSet() const
 {
     return m_cdcClustersHasBeenSet;
+}
+
+string ClbDomainsInfo::GetCloudType() const
+{
+    return m_cloudType;
+}
+
+void ClbDomainsInfo::SetCloudType(const string& _cloudType)
+{
+    m_cloudType = _cloudType;
+    m_cloudTypeHasBeenSet = true;
+}
+
+bool ClbDomainsInfo::CloudTypeHasBeenSet() const
+{
+    return m_cloudTypeHasBeenSet;
 }
 

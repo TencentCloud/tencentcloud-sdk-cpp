@@ -164,6 +164,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/RemindFlowRecords.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchSignUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/WebThemeConfig.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateResponse.h
@@ -275,6 +276,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h
   include/tencentcloud/essbasic/v20210526/model/PermissionGroup.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchSignUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigResponse.h
@@ -459,6 +461,7 @@ set(essbasic_src
   src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
   src/v20210526/model/RemindFlowRecords.cpp
   src/v20210526/model/ChannelCreateFlowSignUrlResponse.cpp
+  src/v20210526/model/ChannelCreateBatchSignUrlResponse.cpp
   src/v20210526/model/ChannelCreatePrepareFlowResponse.cpp
   src/v20210526/model/WebThemeConfig.cpp
   src/v20210526/model/OperateChannelTemplateResponse.cpp
@@ -570,6 +573,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateUserRolesRequest.cpp
   src/v20210526/model/ChannelGetTaskResultApiResponse.cpp
   src/v20210526/model/PermissionGroup.cpp
+  src/v20210526/model/ChannelCreateBatchSignUrlRequest.cpp
   src/v20210526/model/ChannelCreateOrganizationModifyQrCodeResponse.cpp
   src/v20210526/model/ChannelDeleteSealPoliciesResponse.cpp
   src/v20210526/model/ChannelCreateWebThemeConfigResponse.cpp

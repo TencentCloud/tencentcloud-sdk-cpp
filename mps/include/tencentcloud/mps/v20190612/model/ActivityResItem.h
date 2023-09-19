@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskTranscodeResult.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskAnimatedGraphicResult.h>
+#include <tencentcloud/mps/v20190612/model/MediaProcessTaskSnapshotByTimeOffsetResult.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskSampleSnapshotResult.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskImageSpriteResult.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskAdaptiveDynamicStreamingResult.h>
@@ -111,7 +112,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    MediaProcessTaskSampleSnapshotResult GetSnapshotByTimeOffsetTask() const;
+                    MediaProcessTaskSnapshotByTimeOffsetResult GetSnapshotByTimeOffsetTask() const;
 
                     /**
                      * 设置时间点截图任务输出
@@ -120,7 +121,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetSnapshotByTimeOffsetTask(const MediaProcessTaskSampleSnapshotResult& _snapshotByTimeOffsetTask);
+                    void SetSnapshotByTimeOffsetTask(const MediaProcessTaskSnapshotByTimeOffsetResult& _snapshotByTimeOffsetTask);
 
                     /**
                      * 判断参数 SnapshotByTimeOffsetTask 是否已赋值
@@ -299,7 +300,7 @@ namespace TencentCloud
                      * 时间点截图任务输出
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    MediaProcessTaskSampleSnapshotResult m_snapshotByTimeOffsetTask;
+                    MediaProcessTaskSnapshotByTimeOffsetResult m_snapshotByTimeOffsetTask;
                     bool m_snapshotByTimeOffsetTaskHasBeenSet;
 
                     /**

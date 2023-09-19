@@ -39,7 +39,8 @@ AssessmentRisk::AssessmentRisk() :
     m_assetNameHasBeenSet(false),
     m_securityProductHasBeenSet(false),
     m_riskTypeHasBeenSet(false),
-    m_riskSideHasBeenSet(false)
+    m_riskSideHasBeenSet(false),
+    m_dataSourceTypeHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome AssessmentRisk::Deserialize(const rapidjson::Value &value)
         m_riskSideHasBeenSet = true;
     }
 
+    if (value.HasMember("DataSourceType") && !value["DataSourceType"].IsNull())
+    {
+        if (!value["DataSourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssessmentRisk.DataSourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataSourceType = string(value["DataSourceType"].GetString());
+        m_dataSourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +423,14 @@ void AssessmentRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RiskSide";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_riskSide.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataSourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataSourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -719,5 +738,21 @@ void AssessmentRisk::SetRiskSide(const string& _riskSide)
 bool AssessmentRisk::RiskSideHasBeenSet() const
 {
     return m_riskSideHasBeenSet;
+}
+
+string AssessmentRisk::GetDataSourceType() const
+{
+    return m_dataSourceType;
+}
+
+void AssessmentRisk::SetDataSourceType(const string& _dataSourceType)
+{
+    m_dataSourceType = _dataSourceType;
+    m_dataSourceTypeHasBeenSet = true;
+}
+
+bool AssessmentRisk::DataSourceTypeHasBeenSet() const
+{
+    return m_dataSourceTypeHasBeenSet;
 }
 

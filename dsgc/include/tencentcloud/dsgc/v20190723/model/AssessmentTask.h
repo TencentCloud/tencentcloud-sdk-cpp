@@ -70,6 +70,35 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
+                     * 获取评估任务的自增ID
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskUid 评估任务的自增ID
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTaskUid() const;
+
+                    /**
+                     * 设置评估任务的自增ID
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskUid 评估任务的自增ID
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskUid(const int64_t& _taskUid);
+
+                    /**
+                     * 判断参数 TaskUid 是否已赋值
+                     * @return TaskUid 是否已赋值
+                     * 
+                     */
+                    bool TaskUidHasBeenSet() const;
+
+                    /**
                      * 获取评估任务名称
                      * @return TaskName 评估任务名称
                      * 
@@ -413,6 +442,56 @@ namespace TencentCloud
                      */
                     bool ErrorInfoHasBeenSet() const;
 
+                    /**
+                     * 获取模版主键id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TemplateUid 模版主键id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTemplateUid() const;
+
+                    /**
+                     * 设置模版主键id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _templateUid 模版主键id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTemplateUid(const int64_t& _templateUid);
+
+                    /**
+                     * 判断参数 TemplateUid 是否已赋值
+                     * @return TemplateUid 是否已赋值
+                     * 
+                     */
+                    bool TemplateUidHasBeenSet() const;
+
+                    /**
+                     * 获取进度百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProgressPercent 进度百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetProgressPercent() const;
+
+                    /**
+                     * 设置进度百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _progressPercent 进度百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProgressPercent(const int64_t& _progressPercent);
+
+                    /**
+                     * 判断参数 ProgressPercent 是否已赋值
+                     * @return ProgressPercent 是否已赋值
+                     * 
+                     */
+                    bool ProgressPercentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -420,6 +499,14 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 评估任务的自增ID
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskUid;
+                    bool m_taskUidHasBeenSet;
 
                     /**
                      * 评估任务名称
@@ -518,6 +605,20 @@ namespace TencentCloud
                      */
                     std::string m_errorInfo;
                     bool m_errorInfoHasBeenSet;
+
+                    /**
+                     * 模版主键id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_templateUid;
+                    bool m_templateUidHasBeenSet;
+
+                    /**
+                     * 进度百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_progressPercent;
+                    bool m_progressPercentHasBeenSet;
 
                 };
             }

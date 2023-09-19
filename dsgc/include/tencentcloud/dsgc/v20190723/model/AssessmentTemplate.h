@@ -314,6 +314,31 @@ namespace TencentCloud
                      */
                     bool IsASMTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取合规组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdentifyComplianceId 合规组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIdentifyComplianceId() const;
+
+                    /**
+                     * 设置合规组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _identifyComplianceId 合规组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIdentifyComplianceId(const int64_t& _identifyComplianceId);
+
+                    /**
+                     * 判断参数 IdentifyComplianceId 是否已赋值
+                     * @return IdentifyComplianceId 是否已赋值
+                     * 
+                     */
+                    bool IdentifyComplianceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -391,6 +416,13 @@ namespace TencentCloud
                      */
                     bool m_isASMTemplate;
                     bool m_isASMTemplateHasBeenSet;
+
+                    /**
+                     * 合规组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_identifyComplianceId;
+                    bool m_identifyComplianceIdHasBeenSet;
 
                 };
             }

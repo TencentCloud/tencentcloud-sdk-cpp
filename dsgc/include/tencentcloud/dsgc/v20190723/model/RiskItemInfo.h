@@ -493,6 +493,56 @@ namespace TencentCloud
                      */
                     bool RiskSideHasBeenSet() const;
 
+                    /**
+                     * 获取API安全风险链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return APIRiskLinkURL API安全风险链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAPIRiskLinkURL() const;
+
+                    /**
+                     * 设置API安全风险链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aPIRiskLinkURL API安全风险链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAPIRiskLinkURL(const std::string& _aPIRiskLinkURL);
+
+                    /**
+                     * 判断参数 APIRiskLinkURL 是否已赋值
+                     * @return APIRiskLinkURL 是否已赋值
+                     * 
+                     */
+                    bool APIRiskLinkURLHasBeenSet() const;
+
+                    /**
+                     * 获取备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Remark 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _remark 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -619,6 +669,20 @@ namespace TencentCloud
                      */
                     std::string m_riskSide;
                     bool m_riskSideHasBeenSet;
+
+                    /**
+                     * API安全风险链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_aPIRiskLinkURL;
+                    bool m_aPIRiskLinkURLHasBeenSet;
+
+                    /**
+                     * 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                 };
             }

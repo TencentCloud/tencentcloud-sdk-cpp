@@ -32,7 +32,8 @@ AssessmentTemplate::AssessmentTemplate() :
     m_appliedItemCountHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_supportDataSourceHasBeenSet(false),
-    m_isASMTemplateHasBeenSet(false)
+    m_isASMTemplateHasBeenSet(false),
+    m_identifyComplianceIdHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,16 @@ CoreInternalOutcome AssessmentTemplate::Deserialize(const rapidjson::Value &valu
         m_isASMTemplateHasBeenSet = true;
     }
 
+    if (value.HasMember("IdentifyComplianceId") && !value["IdentifyComplianceId"].IsNull())
+    {
+        if (!value["IdentifyComplianceId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssessmentTemplate.IdentifyComplianceId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_identifyComplianceId = value["IdentifyComplianceId"].GetInt64();
+        m_identifyComplianceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void AssessmentTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "IsASMTemplate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isASMTemplate, allocator);
+    }
+
+    if (m_identifyComplianceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentifyComplianceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_identifyComplianceId, allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void AssessmentTemplate::SetIsASMTemplate(const bool& _isASMTemplate)
 bool AssessmentTemplate::IsASMTemplateHasBeenSet() const
 {
     return m_isASMTemplateHasBeenSet;
+}
+
+int64_t AssessmentTemplate::GetIdentifyComplianceId() const
+{
+    return m_identifyComplianceId;
+}
+
+void AssessmentTemplate::SetIdentifyComplianceId(const int64_t& _identifyComplianceId)
+{
+    m_identifyComplianceId = _identifyComplianceId;
+    m_identifyComplianceIdHasBeenSet = true;
+}
+
+bool AssessmentTemplate::IdentifyComplianceIdHasBeenSet() const
+{
+    return m_identifyComplianceIdHasBeenSet;
 }
 

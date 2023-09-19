@@ -29,7 +29,8 @@ UserDomainInfo::UserDomainInfo() :
     m_editionHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_writeConfigHasBeenSet(false),
-    m_clsHasBeenSet(false)
+    m_clsHasBeenSet(false),
+    m_cloudTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome UserDomainInfo::Deserialize(const rapidjson::Value &value)
         m_clsHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudType") && !value["CloudType"].IsNull())
+    {
+        if (!value["CloudType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDomainInfo.CloudType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudType = string(value["CloudType"].GetString());
+        m_cloudTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void UserDomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Cls";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cls, allocator);
+    }
+
+    if (m_cloudTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cloudType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void UserDomainInfo::SetCls(const uint64_t& _cls)
 bool UserDomainInfo::ClsHasBeenSet() const
 {
     return m_clsHasBeenSet;
+}
+
+string UserDomainInfo::GetCloudType() const
+{
+    return m_cloudType;
+}
+
+void UserDomainInfo::SetCloudType(const string& _cloudType)
+{
+    m_cloudType = _cloudType;
+    m_cloudTypeHasBeenSet = true;
+}
+
+bool UserDomainInfo::CloudTypeHasBeenSet() const
+{
+    return m_cloudTypeHasBeenSet;
 }
 

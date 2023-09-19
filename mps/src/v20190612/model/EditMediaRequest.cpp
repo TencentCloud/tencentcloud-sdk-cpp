@@ -27,6 +27,7 @@ EditMediaRequest::EditMediaRequest() :
     m_outputStorageHasBeenSet(false),
     m_outputObjectPathHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
+    m_composeConfigHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -80,6 +81,15 @@ string EditMediaRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outputConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_composeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComposeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_composeConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_taskNotifyConfigHasBeenSet)
@@ -185,6 +195,22 @@ void EditMediaRequest::SetOutputConfig(const EditMediaOutputConfig& _outputConfi
 bool EditMediaRequest::OutputConfigHasBeenSet() const
 {
     return m_outputConfigHasBeenSet;
+}
+
+ComposeMediaConfig EditMediaRequest::GetComposeConfig() const
+{
+    return m_composeConfig;
+}
+
+void EditMediaRequest::SetComposeConfig(const ComposeMediaConfig& _composeConfig)
+{
+    m_composeConfig = _composeConfig;
+    m_composeConfigHasBeenSet = true;
+}
+
+bool EditMediaRequest::ComposeConfigHasBeenSet() const
+{
+    return m_composeConfigHasBeenSet;
 }
 
 TaskNotifyConfig EditMediaRequest::GetTaskNotifyConfig() const

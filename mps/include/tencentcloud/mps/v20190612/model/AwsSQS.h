@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取SQS 队列区域。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SQSRegion SQS 队列区域。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSQSRegion() const;
 
                     /**
                      * 设置SQS 队列区域。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sQSRegion SQS 队列区域。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSQSRegion(const std::string& _sQSRegion);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取SQS 队列名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SQSQueueName SQS 队列名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSQSQueueName() const;
 
                     /**
                      * 设置SQS 队列名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sQSQueueName SQS 队列名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSQSQueueName(const std::string& _sQSQueueName);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取读写SQS的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3SecretId 读写SQS的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3SecretId() const;
 
                     /**
                      * 设置读写SQS的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3SecretId 读写SQS的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3SecretId(const std::string& _s3SecretId);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取读写SQS的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return S3SecretKey 读写SQS的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetS3SecretKey() const;
 
                     /**
                      * 设置读写SQS的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _s3SecretKey 读写SQS的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetS3SecretKey(const std::string& _s3SecretKey);
@@ -134,24 +150,28 @@ namespace TencentCloud
 
                     /**
                      * SQS 队列区域。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sQSRegion;
                     bool m_sQSRegionHasBeenSet;
 
                     /**
                      * SQS 队列名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sQSQueueName;
                     bool m_sQSQueueNameHasBeenSet;
 
                     /**
                      * 读写SQS的秘钥id。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3SecretId;
                     bool m_s3SecretIdHasBeenSet;
 
                     /**
                      * 读写SQS的秘钥key。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3SecretKey;
                     bool m_s3SecretKeyHasBeenSet;

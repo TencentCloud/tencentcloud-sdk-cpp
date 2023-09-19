@@ -3050,6 +3050,49 @@ TdmqClient::DescribeRocketMQNamespacesOutcomeCallable TdmqClient::DescribeRocket
     return task->get_future();
 }
 
+TdmqClient::DescribeRocketMQPublicAccessPointOutcome TdmqClient::DescribeRocketMQPublicAccessPoint(const DescribeRocketMQPublicAccessPointRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQPublicAccessPoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQPublicAccessPointResponse rsp = DescribeRocketMQPublicAccessPointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQPublicAccessPointOutcome(rsp);
+        else
+            return DescribeRocketMQPublicAccessPointOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQPublicAccessPointOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQPublicAccessPointAsync(const DescribeRocketMQPublicAccessPointRequest& request, const DescribeRocketMQPublicAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQPublicAccessPoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQPublicAccessPointOutcomeCallable TdmqClient::DescribeRocketMQPublicAccessPointCallable(const DescribeRocketMQPublicAccessPointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQPublicAccessPointOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQPublicAccessPoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQTopicMsgsOutcome TdmqClient::DescribeRocketMQTopicMsgs(const DescribeRocketMQTopicMsgsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQTopicMsgs");
@@ -3645,6 +3688,49 @@ TdmqClient::ModifyEnvironmentRoleOutcomeCallable TdmqClient::ModifyEnvironmentRo
         [this, request]()
         {
             return this->ModifyEnvironmentRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::ModifyPublicNetworkAccessPointOutcome TdmqClient::ModifyPublicNetworkAccessPoint(const ModifyPublicNetworkAccessPointRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPublicNetworkAccessPoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPublicNetworkAccessPointResponse rsp = ModifyPublicNetworkAccessPointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPublicNetworkAccessPointOutcome(rsp);
+        else
+            return ModifyPublicNetworkAccessPointOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPublicNetworkAccessPointOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyPublicNetworkAccessPointAsync(const ModifyPublicNetworkAccessPointRequest& request, const ModifyPublicNetworkAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPublicNetworkAccessPoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyPublicNetworkAccessPointOutcomeCallable TdmqClient::ModifyPublicNetworkAccessPointCallable(const ModifyPublicNetworkAccessPointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPublicNetworkAccessPointOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPublicNetworkAccessPoint(request);
         }
     );
 
@@ -4505,6 +4591,49 @@ TdmqClient::SendRocketMQMessageOutcomeCallable TdmqClient::SendRocketMQMessageCa
         [this, request]()
         {
             return this->SendRocketMQMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::SetRocketMQPublicAccessPointOutcome TdmqClient::SetRocketMQPublicAccessPoint(const SetRocketMQPublicAccessPointRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetRocketMQPublicAccessPoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetRocketMQPublicAccessPointResponse rsp = SetRocketMQPublicAccessPointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetRocketMQPublicAccessPointOutcome(rsp);
+        else
+            return SetRocketMQPublicAccessPointOutcome(o.GetError());
+    }
+    else
+    {
+        return SetRocketMQPublicAccessPointOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::SetRocketMQPublicAccessPointAsync(const SetRocketMQPublicAccessPointRequest& request, const SetRocketMQPublicAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetRocketMQPublicAccessPoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::SetRocketMQPublicAccessPointOutcomeCallable TdmqClient::SetRocketMQPublicAccessPointCallable(const SetRocketMQPublicAccessPointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetRocketMQPublicAccessPointOutcome()>>(
+        [this, request]()
+        {
+            return this->SetRocketMQPublicAccessPoint(request);
         }
     );
 

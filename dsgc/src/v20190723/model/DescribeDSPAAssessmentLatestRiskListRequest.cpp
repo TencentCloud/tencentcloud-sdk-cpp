@@ -34,7 +34,8 @@ DescribeDSPAAssessmentLatestRiskListRequest::DescribeDSPAAssessmentLatestRiskLis
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_riskLevelHasBeenSet(false),
-    m_riskSideHasBeenSet(false)
+    m_riskSideHasBeenSet(false),
+    m_timeSortHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,14 @@ string DescribeDSPAAssessmentLatestRiskListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_timeSortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeSort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeSort.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -344,6 +353,22 @@ void DescribeDSPAAssessmentLatestRiskListRequest::SetRiskSide(const vector<strin
 bool DescribeDSPAAssessmentLatestRiskListRequest::RiskSideHasBeenSet() const
 {
     return m_riskSideHasBeenSet;
+}
+
+string DescribeDSPAAssessmentLatestRiskListRequest::GetTimeSort() const
+{
+    return m_timeSort;
+}
+
+void DescribeDSPAAssessmentLatestRiskListRequest::SetTimeSort(const string& _timeSort)
+{
+    m_timeSort = _timeSort;
+    m_timeSortHasBeenSet = true;
+}
+
+bool DescribeDSPAAssessmentLatestRiskListRequest::TimeSortHasBeenSet() const
+{
+    return m_timeSortHasBeenSet;
 }
 
 
