@@ -146,30 +146,38 @@ namespace TencentCloud
 
                     /**
                      * 获取电子印章类型：
-OFFICIAL-公章；
-CONTRACT-合同专用章;
-FINANCE-合财务专用章;
-PERSONNEL-人事专用章.
+<ul>
+<li>OFFICIAL-公章；</li>
+<li>CONTRACT-合同专用章;</li>
+<li>FINANCE-合财务专用章;</li>
+<li>PERSONNEL-人事专用章.</li>
+</ul>
                      * @return SealType 电子印章类型：
-OFFICIAL-公章；
-CONTRACT-合同专用章;
-FINANCE-合财务专用章;
-PERSONNEL-人事专用章.
+<ul>
+<li>OFFICIAL-公章；</li>
+<li>CONTRACT-合同专用章;</li>
+<li>FINANCE-合财务专用章;</li>
+<li>PERSONNEL-人事专用章.</li>
+</ul>
                      * 
                      */
                     std::string GetSealType() const;
 
                     /**
                      * 设置电子印章类型：
-OFFICIAL-公章；
-CONTRACT-合同专用章;
-FINANCE-合财务专用章;
-PERSONNEL-人事专用章.
+<ul>
+<li>OFFICIAL-公章；</li>
+<li>CONTRACT-合同专用章;</li>
+<li>FINANCE-合财务专用章;</li>
+<li>PERSONNEL-人事专用章.</li>
+</ul>
                      * @param _sealType 电子印章类型：
-OFFICIAL-公章；
-CONTRACT-合同专用章;
-FINANCE-合财务专用章;
-PERSONNEL-人事专用章.
+<ul>
+<li>OFFICIAL-公章；</li>
+<li>CONTRACT-合同专用章;</li>
+<li>FINANCE-合财务专用章;</li>
+<li>PERSONNEL-人事专用章.</li>
+</ul>
                      * 
                      */
                     void SetSealType(const std::string& _sealType);
@@ -395,31 +403,39 @@ PERSONNEL-人事专用章.
                     bool FileTokenHasBeenSet() const;
 
                     /**
-                     * 获取印章样式:
+                     * 获取印章样式，取值如下:
 
-cycle:圆形印章;
-ellipse:椭圆印章;
-注：默认圆形印章
-                     * @return SealStyle 印章样式:
+<ul>
+<li>cycle:圆形印章;</li>
+<li>ellipse:椭圆印章;</li>
+<li>注：默认圆形印章</li>
+</ul>
+                     * @return SealStyle 印章样式，取值如下:
 
-cycle:圆形印章;
-ellipse:椭圆印章;
-注：默认圆形印章
+<ul>
+<li>cycle:圆形印章;</li>
+<li>ellipse:椭圆印章;</li>
+<li>注：默认圆形印章</li>
+</ul>
                      * 
                      */
                     std::string GetSealStyle() const;
 
                     /**
-                     * 设置印章样式:
+                     * 设置印章样式，取值如下:
 
-cycle:圆形印章;
-ellipse:椭圆印章;
-注：默认圆形印章
-                     * @param _sealStyle 印章样式:
+<ul>
+<li>cycle:圆形印章;</li>
+<li>ellipse:椭圆印章;</li>
+<li>注：默认圆形印章</li>
+</ul>
+                     * @param _sealStyle 印章样式，取值如下:
 
-cycle:圆形印章;
-ellipse:椭圆印章;
-注：默认圆形印章
+<ul>
+<li>cycle:圆形印章;</li>
+<li>ellipse:椭圆印章;</li>
+<li>注：默认圆形印章</li>
+</ul>
                      * 
                      */
                     void SetSealStyle(const std::string& _sealStyle);
@@ -433,26 +449,34 @@ ellipse:椭圆印章;
 
                     /**
                      * 获取印章尺寸取值描述：
-42_42 圆形企业公章直径42mm；
-40_40 圆形企业印章直径40mm；
-45_30 椭圆形印章45mm x 30mm;
+<ul>
+<li>42_42 圆形企业公章直径42mm；</li>
+<li>40_40 圆形企业印章直径40mm；</li>
+<li>45_30 椭圆形印章45mm x 30mm;</li>
+</ul>
                      * @return SealSize 印章尺寸取值描述：
-42_42 圆形企业公章直径42mm；
-40_40 圆形企业印章直径40mm；
-45_30 椭圆形印章45mm x 30mm;
+<ul>
+<li>42_42 圆形企业公章直径42mm；</li>
+<li>40_40 圆形企业印章直径40mm；</li>
+<li>45_30 椭圆形印章45mm x 30mm;</li>
+</ul>
                      * 
                      */
                     std::string GetSealSize() const;
 
                     /**
                      * 设置印章尺寸取值描述：
-42_42 圆形企业公章直径42mm；
-40_40 圆形企业印章直径40mm；
-45_30 椭圆形印章45mm x 30mm;
+<ul>
+<li>42_42 圆形企业公章直径42mm；</li>
+<li>40_40 圆形企业印章直径40mm；</li>
+<li>45_30 椭圆形印章45mm x 30mm;</li>
+</ul>
                      * @param _sealSize 印章尺寸取值描述：
-42_42 圆形企业公章直径42mm；
-40_40 圆形企业印章直径40mm；
-45_30 椭圆形印章45mm x 30mm;
+<ul>
+<li>42_42 圆形企业公章直径42mm；</li>
+<li>40_40 圆形企业印章直径40mm；</li>
+<li>45_30 椭圆形印章45mm x 30mm;</li>
+</ul>
                      * 
                      */
                     void SetSealSize(const std::string& _sealSize);
@@ -496,10 +520,12 @@ ellipse:椭圆印章;
 
                     /**
                      * 电子印章类型：
-OFFICIAL-公章；
-CONTRACT-合同专用章;
-FINANCE-合财务专用章;
-PERSONNEL-人事专用章.
+<ul>
+<li>OFFICIAL-公章；</li>
+<li>CONTRACT-合同专用章;</li>
+<li>FINANCE-合财务专用章;</li>
+<li>PERSONNEL-人事专用章.</li>
+</ul>
                      */
                     std::string m_sealType;
                     bool m_sealTypeHasBeenSet;
@@ -565,20 +591,24 @@ PERSONNEL-人事专用章.
                     bool m_fileTokenHasBeenSet;
 
                     /**
-                     * 印章样式:
+                     * 印章样式，取值如下:
 
-cycle:圆形印章;
-ellipse:椭圆印章;
-注：默认圆形印章
+<ul>
+<li>cycle:圆形印章;</li>
+<li>ellipse:椭圆印章;</li>
+<li>注：默认圆形印章</li>
+</ul>
                      */
                     std::string m_sealStyle;
                     bool m_sealStyleHasBeenSet;
 
                     /**
                      * 印章尺寸取值描述：
-42_42 圆形企业公章直径42mm；
-40_40 圆形企业印章直径40mm；
-45_30 椭圆形印章45mm x 30mm;
+<ul>
+<li>42_42 圆形企业公章直径42mm；</li>
+<li>40_40 圆形企业印章直径40mm；</li>
+<li>45_30 椭圆形印章45mm x 30mm;</li>
+</ul>
                      */
                     std::string m_sealSize;
                     bool m_sealSizeHasBeenSet;

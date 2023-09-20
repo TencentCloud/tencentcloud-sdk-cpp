@@ -2362,6 +2362,178 @@ ClbClient::DisassociateTargetGroupsOutcomeCallable ClbClient::DisassociateTarget
     return task->get_future();
 }
 
+ClbClient::InquiryPriceCreateLoadBalancerOutcome ClbClient::InquiryPriceCreateLoadBalancer(const InquiryPriceCreateLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceCreateLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceCreateLoadBalancerResponse rsp = InquiryPriceCreateLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceCreateLoadBalancerOutcome(rsp);
+        else
+            return InquiryPriceCreateLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceCreateLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::InquiryPriceCreateLoadBalancerAsync(const InquiryPriceCreateLoadBalancerRequest& request, const InquiryPriceCreateLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceCreateLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::InquiryPriceCreateLoadBalancerOutcomeCallable ClbClient::InquiryPriceCreateLoadBalancerCallable(const InquiryPriceCreateLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceCreateLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceCreateLoadBalancer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::InquiryPriceModifyLoadBalancerOutcome ClbClient::InquiryPriceModifyLoadBalancer(const InquiryPriceModifyLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceModifyLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceModifyLoadBalancerResponse rsp = InquiryPriceModifyLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceModifyLoadBalancerOutcome(rsp);
+        else
+            return InquiryPriceModifyLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceModifyLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::InquiryPriceModifyLoadBalancerAsync(const InquiryPriceModifyLoadBalancerRequest& request, const InquiryPriceModifyLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceModifyLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::InquiryPriceModifyLoadBalancerOutcomeCallable ClbClient::InquiryPriceModifyLoadBalancerCallable(const InquiryPriceModifyLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceModifyLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceModifyLoadBalancer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::InquiryPriceRefundLoadBalancerOutcome ClbClient::InquiryPriceRefundLoadBalancer(const InquiryPriceRefundLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceRefundLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceRefundLoadBalancerResponse rsp = InquiryPriceRefundLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceRefundLoadBalancerOutcome(rsp);
+        else
+            return InquiryPriceRefundLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceRefundLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::InquiryPriceRefundLoadBalancerAsync(const InquiryPriceRefundLoadBalancerRequest& request, const InquiryPriceRefundLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceRefundLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::InquiryPriceRefundLoadBalancerOutcomeCallable ClbClient::InquiryPriceRefundLoadBalancerCallable(const InquiryPriceRefundLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceRefundLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceRefundLoadBalancer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::InquiryPriceRenewLoadBalancerOutcome ClbClient::InquiryPriceRenewLoadBalancer(const InquiryPriceRenewLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceRenewLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceRenewLoadBalancerResponse rsp = InquiryPriceRenewLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceRenewLoadBalancerOutcome(rsp);
+        else
+            return InquiryPriceRenewLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceRenewLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::InquiryPriceRenewLoadBalancerAsync(const InquiryPriceRenewLoadBalancerRequest& request, const InquiryPriceRenewLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceRenewLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::InquiryPriceRenewLoadBalancerOutcomeCallable ClbClient::InquiryPriceRenewLoadBalancerCallable(const InquiryPriceRenewLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceRenewLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceRenewLoadBalancer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::ManualRewriteOutcome ClbClient::ManualRewrite(const ManualRewriteRequest &request)
 {
     auto outcome = MakeRequest(request, "ManualRewrite");

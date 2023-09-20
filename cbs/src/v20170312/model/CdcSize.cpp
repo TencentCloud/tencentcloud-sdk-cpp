@@ -21,8 +21,8 @@ using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
 CdcSize::CdcSize() :
-    m_diskAavilableHasBeenSet(false),
-    m_diskTotalHasBeenSet(false)
+    m_diskTotalHasBeenSet(false),
+    m_diskAvailableHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome CdcSize::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("DiskAavilable") && !value["DiskAavilable"].IsNull())
-    {
-        if (!value["DiskAavilable"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `CdcSize.DiskAavilable` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_diskAavilable = value["DiskAavilable"].GetUint64();
-        m_diskAavilableHasBeenSet = true;
-    }
 
     if (value.HasMember("DiskTotal") && !value["DiskTotal"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome CdcSize::Deserialize(const rapidjson::Value &value)
         m_diskTotalHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskAvailable") && !value["DiskAvailable"].IsNull())
+    {
+        if (!value["DiskAvailable"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CdcSize.DiskAvailable` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskAvailable = value["DiskAvailable"].GetUint64();
+        m_diskAvailableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void CdcSize::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_diskAavilableHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiskAavilable";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_diskAavilable, allocator);
-    }
 
     if (m_diskTotalHasBeenSet)
     {
@@ -74,24 +66,16 @@ void CdcSize::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, m_diskTotal, allocator);
     }
 
+    if (m_diskAvailableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskAvailable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskAvailable, allocator);
+    }
+
 }
 
-
-uint64_t CdcSize::GetDiskAavilable() const
-{
-    return m_diskAavilable;
-}
-
-void CdcSize::SetDiskAavilable(const uint64_t& _diskAavilable)
-{
-    m_diskAavilable = _diskAavilable;
-    m_diskAavilableHasBeenSet = true;
-}
-
-bool CdcSize::DiskAavilableHasBeenSet() const
-{
-    return m_diskAavilableHasBeenSet;
-}
 
 uint64_t CdcSize::GetDiskTotal() const
 {
@@ -107,5 +91,21 @@ void CdcSize::SetDiskTotal(const uint64_t& _diskTotal)
 bool CdcSize::DiskTotalHasBeenSet() const
 {
     return m_diskTotalHasBeenSet;
+}
+
+uint64_t CdcSize::GetDiskAvailable() const
+{
+    return m_diskAvailable;
+}
+
+void CdcSize::SetDiskAvailable(const uint64_t& _diskAvailable)
+{
+    m_diskAvailable = _diskAvailable;
+    m_diskAvailableHasBeenSet = true;
+}
+
+bool CdcSize::DiskAvailableHasBeenSet() const
+{
+    return m_diskAvailableHasBeenSet;
 }
 

@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool FlowDetailInfosHasBeenSet() const;
 
                     /**
-                     * 获取合同组ID
-                     * @return FlowGroupId 合同组ID
+                     * 获取合同组ID，为32位字符串
+                     * @return FlowGroupId 合同组ID，为32位字符串
                      * 
                      */
                     std::string GetFlowGroupId() const;
@@ -95,7 +95,7 @@ namespace TencentCloud
                     bool m_flowDetailInfosHasBeenSet;
 
                     /**
-                     * 合同组ID
+                     * 合同组ID，为32位字符串
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;

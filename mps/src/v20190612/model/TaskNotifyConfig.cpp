@@ -28,7 +28,8 @@ TaskNotifyConfig::TaskNotifyConfig() :
     m_cmqRegionHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_queueNameHasBeenSet(false),
-    m_awsSQSHasBeenSet(false)
+    m_awsSQSHasBeenSet(false),
+    m_notifyKeyHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,16 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
         m_awsSQSHasBeenSet = true;
     }
 
+    if (value.HasMember("NotifyKey") && !value["NotifyKey"].IsNull())
+    {
+        if (!value["NotifyKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.NotifyKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyKey = string(value["NotifyKey"].GetString());
+        m_notifyKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +205,14 @@ void TaskNotifyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_awsSQS.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_notifyKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void TaskNotifyConfig::SetAwsSQS(const AwsSQS& _awsSQS)
 bool TaskNotifyConfig::AwsSQSHasBeenSet() const
 {
     return m_awsSQSHasBeenSet;
+}
+
+string TaskNotifyConfig::GetNotifyKey() const
+{
+    return m_notifyKey;
+}
+
+void TaskNotifyConfig::SetNotifyKey(const string& _notifyKey)
+{
+    m_notifyKey = _notifyKey;
+    m_notifyKeyHasBeenSet = true;
+}
+
+bool TaskNotifyConfig::NotifyKeyHasBeenSet() const
+{
+    return m_notifyKeyHasBeenSet;
 }
 

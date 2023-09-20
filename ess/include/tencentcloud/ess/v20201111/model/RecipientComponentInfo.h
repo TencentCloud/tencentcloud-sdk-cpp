@@ -74,12 +74,12 @@ namespace TencentCloud
 
                     /**
                      * 获取参与方填写状态
-0-未填写
-1-已填写
+<ul><li>0-未填写</li>
+<li>1-已填写</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecipientFillStatus 参与方填写状态
-0-未填写
-1-已填写
+<ul><li>0-未填写</li>
+<li>1-已填写</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -87,12 +87,12 @@ namespace TencentCloud
 
                     /**
                      * 设置参与方填写状态
-0-未填写
-1-已填写
+<ul><li>0-未填写</li>
+<li>1-已填写</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recipientFillStatus 参与方填写状态
-0-未填写
-1-已填写
+<ul><li>0-未填写</li>
+<li>1-已填写</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -107,8 +107,12 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为发起方
+<ul><li>true-发起方</li>
+<li>false-参与方</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPromoter 是否为发起方
+<ul><li>true-发起方</li>
+<li>false-参与方</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -116,8 +120,12 @@ namespace TencentCloud
 
                     /**
                      * 设置是否为发起方
+<ul><li>true-发起方</li>
+<li>false-参与方</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isPromoter 是否为发起方
+<ul><li>true-发起方</li>
+<li>false-参与方</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -166,8 +174,8 @@ namespace TencentCloud
 
                     /**
                      * 参与方填写状态
-0-未填写
-1-已填写
+<ul><li>0-未填写</li>
+<li>1-已填写</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recipientFillStatus;
@@ -175,6 +183,8 @@ namespace TencentCloud
 
                     /**
                      * 是否为发起方
+<ul><li>true-发起方</li>
+<li>false-参与方</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPromoter;

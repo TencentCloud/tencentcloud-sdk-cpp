@@ -4598,6 +4598,49 @@ WafClient::SwitchDomainRulesOutcomeCallable WafClient::SwitchDomainRulesCallable
     return task->get_future();
 }
 
+WafClient::SwitchElasticModeOutcome WafClient::SwitchElasticMode(const SwitchElasticModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchElasticMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchElasticModeResponse rsp = SwitchElasticModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchElasticModeOutcome(rsp);
+        else
+            return SwitchElasticModeOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchElasticModeOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::SwitchElasticModeAsync(const SwitchElasticModeRequest& request, const SwitchElasticModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchElasticMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::SwitchElasticModeOutcomeCallable WafClient::SwitchElasticModeCallable(const SwitchElasticModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchElasticModeOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchElasticMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::UpsertCCRuleOutcome WafClient::UpsertCCRule(const UpsertCCRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "UpsertCCRule");

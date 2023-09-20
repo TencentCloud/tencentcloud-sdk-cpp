@@ -48,15 +48,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，userId 必填
-                     * @return Operator 调用方用户信息，userId 必填
+                     * 获取执行本接口操作的员工信息。使用此接口时，必须填写userId。
+支持填入集团子公司经办人 userId 代发合同。
+
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。使用此接口时，必须填写userId。
+支持填入集团子公司经办人 userId 代发合同。
+
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填
-                     * @param _operator 调用方用户信息，userId 必填
+                     * 设置执行本接口操作的员工信息。使用此接口时，必须填写userId。
+支持填入集团子公司经办人 userId 代发合同。
+
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。使用此接口时，必须填写userId。
+支持填入集团子公司经办人 userId 代发合同。
+
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -69,15 +81,31 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取资源id，与ResourceType对应
-                     * @return ResourceId 资源id，与ResourceType对应
+                     * 获取资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
+                     * @return ResourceId 资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源id，与ResourceType对应
-                     * @param _resourceId 资源id，与ResourceType对应
+                     * 设置资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
+                     * @param _resourceId 资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -90,15 +118,19 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取合同名称
-                     * @return FlowName 合同名称
+                     * 获取合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+
+                     * @return FlowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+
                      * 
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置合同名称
-                     * @param _flowName 合同名称
+                     * 设置合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+
+                     * @param _flowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+
                      * 
                      */
                     void SetFlowName(const std::string& _flowName);
@@ -111,23 +143,23 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取是否顺序签署
-true:无序签
-false:顺序签
-                     * @return Unordered 是否顺序签署
-true:无序签
-false:顺序签
+                     * 获取合同流程的签署顺序类型：
+<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
+<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
+                     * @return Unordered 合同流程的签署顺序类型：
+<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
+<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
                      * 
                      */
                     bool GetUnordered() const;
 
                     /**
-                     * 设置是否顺序签署
-true:无序签
-false:顺序签
-                     * @param _unordered 是否顺序签署
-true:无序签
-false:顺序签
+                     * 设置合同流程的签署顺序类型：
+<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
+<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
+                     * @param _unordered 合同流程的签署顺序类型：
+<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
+<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
                      * 
                      */
                     void SetUnordered(const bool& _unordered);
@@ -140,23 +172,19 @@ false:顺序签
                     bool UnorderedHasBeenSet() const;
 
                     /**
-                     * 获取签署流程的签署截止时间。
-值为unix时间戳,精确到秒
-不传默认为当前时间一年后
-                     * @return Deadline 签署流程的签署截止时间。
-值为unix时间戳,精确到秒
-不传默认为当前时间一年后
+                     * 获取合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。
+
+                     * @return Deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。
+
                      * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置签署流程的签署截止时间。
-值为unix时间戳,精确到秒
-不传默认为当前时间一年后
-                     * @param _deadline 签署流程的签署截止时间。
-值为unix时间戳,精确到秒
-不传默认为当前时间一年后
+                     * 设置合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。
+
+                     * @param _deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。
+
                      * 
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -171,10 +199,12 @@ false:顺序签
                     /**
                      * 获取用户自定义合同类型Id
 
-该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取
+该id为电子签企业内的合同类型id， 可以在控制台-合同-自定义合同类型处获取
+注: `该参数如果和FlowType同时传，以该参数优先生效`
                      * @return UserFlowTypeId 用户自定义合同类型Id
 
-该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取
+该id为电子签企业内的合同类型id， 可以在控制台-合同-自定义合同类型处获取
+注: `该参数如果和FlowType同时传，以该参数优先生效`
                      * 
                      */
                     std::string GetUserFlowTypeId() const;
@@ -182,10 +212,12 @@ false:顺序签
                     /**
                      * 设置用户自定义合同类型Id
 
-该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取
+该id为电子签企业内的合同类型id， 可以在控制台-合同-自定义合同类型处获取
+注: `该参数如果和FlowType同时传，以该参数优先生效`
                      * @param _userFlowTypeId 用户自定义合同类型Id
 
-该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取
+该id为电子签企业内的合同类型id， 可以在控制台-合同-自定义合同类型处获取
+注: `该参数如果和FlowType同时传，以该参数优先生效`
                      * 
                      */
                     void SetUserFlowTypeId(const std::string& _userFlowTypeId);
@@ -198,27 +230,15 @@ false:顺序签
                     bool UserFlowTypeIdHasBeenSet() const;
 
                     /**
-                     * 获取合同类型名称
-该字段用于客户自定义合同类型
-建议使用时指定合同类型，便于之后合同分类以及查看
-如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型
-                     * @return FlowType 合同类型名称
-该字段用于客户自定义合同类型
-建议使用时指定合同类型，便于之后合同分类以及查看
-如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型
+                     * 获取合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
+                     * @return FlowType 合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
                      * 
                      */
                     std::string GetFlowType() const;
 
                     /**
-                     * 设置合同类型名称
-该字段用于客户自定义合同类型
-建议使用时指定合同类型，便于之后合同分类以及查看
-如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型
-                     * @param _flowType 合同类型名称
-该字段用于客户自定义合同类型
-建议使用时指定合同类型，便于之后合同分类以及查看
-如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型
+                     * 设置合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
+                     * @param _flowType 合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
                      * 
                      */
                     void SetFlowType(const std::string& _flowType);
@@ -231,15 +251,23 @@ false:顺序签
                     bool FlowTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署流程参与者信息，最大限制50方
-                     * @return Approvers 签署流程参与者信息，最大限制50方
+                     * 获取合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
+
+如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
+                     * @return Approvers 合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
+
+如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
                      * 
                      */
                     std::vector<FlowCreateApprover> GetApprovers() const;
 
                     /**
-                     * 设置签署流程参与者信息，最大限制50方
-                     * @param _approvers 签署流程参与者信息，最大限制50方
+                     * 设置合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
+
+如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
+                     * @param _approvers 合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
+
+如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
                      * 
                      */
                     void SetApprovers(const std::vector<FlowCreateApprover>& _approvers);
@@ -252,23 +280,23 @@ false:顺序签
                     bool ApproversHasBeenSet() const;
 
                     /**
-                     * 获取打开智能添加填写区
-默认开启，打开:"OPEN"
- 关闭："CLOSE"
-                     * @return IntelligentStatus 打开智能添加填写区
-默认开启，打开:"OPEN"
- 关闭："CLOSE"
+                     * 获取开启或者关闭智能添加填写区：
+<ul><li> **OPEN**：开启（默认值）</li>
+<li> **CLOSE**：关闭</li></ul>
+                     * @return IntelligentStatus 开启或者关闭智能添加填写区：
+<ul><li> **OPEN**：开启（默认值）</li>
+<li> **CLOSE**：关闭</li></ul>
                      * 
                      */
                     std::string GetIntelligentStatus() const;
 
                     /**
-                     * 设置打开智能添加填写区
-默认开启，打开:"OPEN"
- 关闭："CLOSE"
-                     * @param _intelligentStatus 打开智能添加填写区
-默认开启，打开:"OPEN"
- 关闭："CLOSE"
+                     * 设置开启或者关闭智能添加填写区：
+<ul><li> **OPEN**：开启（默认值）</li>
+<li> **CLOSE**：关闭</li></ul>
+                     * @param _intelligentStatus 开启或者关闭智能添加填写区：
+<ul><li> **OPEN**：开启（默认值）</li>
+<li> **CLOSE**：关闭</li></ul>
                      * 
                      */
                     void SetIntelligentStatus(const std::string& _intelligentStatus);
@@ -281,27 +309,23 @@ false:顺序签
                     bool IntelligentStatusHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，
-1：模板
-2：文件，
-不传默认为2：文件
-                     * @return ResourceType 资源类型，
-1：模板
-2：文件，
-不传默认为2：文件
+                     * 获取资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
+                     * @return ResourceType 资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
                      * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型，
-1：模板
-2：文件，
-不传默认为2：文件
-                     * @param _resourceType 资源类型，
-1：模板
-2：文件，
-不传默认为2：文件
+                     * 设置资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
+                     * @param _resourceType 资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
                      * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
@@ -314,19 +338,15 @@ false:顺序签
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取发起方填写控件
-该类型控件由发起方完成填写
-                     * @return Components 发起方填写控件
-该类型控件由发起方完成填写
+                     * 获取该字段已废弃，请使用InitiatorComponents
+                     * @return Components 该字段已废弃，请使用InitiatorComponents
                      * 
                      */
                     Component GetComponents() const;
 
                     /**
-                     * 设置发起方填写控件
-该类型控件由发起方完成填写
-                     * @param _components 发起方填写控件
-该类型控件由发起方完成填写
+                     * 设置该字段已废弃，请使用InitiatorComponents
+                     * @param _components 该字段已废弃，请使用InitiatorComponents
                      * 
                      */
                     void SetComponents(const Component& _components);
@@ -368,27 +388,39 @@ false:顺序签
                     bool FlowOptionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启发起方签署审核
-true:开启发起方签署审核
-false:不开启发起方签署审核
-默认false:不开启发起方签署审核
-                     * @return NeedSignReview 是否开启发起方签署审核
-true:开启发起方签署审核
-false:不开启发起方签署审核
-默认false:不开启发起方签署审核
+                     * 获取发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+                     * @return NeedSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
                      * 
                      */
                     bool GetNeedSignReview() const;
 
                     /**
-                     * 设置是否开启发起方签署审核
-true:开启发起方签署审核
-false:不开启发起方签署审核
-默认false:不开启发起方签署审核
-                     * @param _needSignReview 是否开启发起方签署审核
-true:开启发起方签署审核
-false:不开启发起方签署审核
-默认false:不开启发起方签署审核
+                     * 设置发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+                     * @param _needSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
                      * 
                      */
                     void SetNeedSignReview(const bool& _needSignReview);
@@ -401,27 +433,31 @@ false:不开启发起方签署审核
                     bool NeedSignReviewHasBeenSet() const;
 
                     /**
-                     * 获取开启发起方发起合同审核
-true:开启发起方发起合同审核
-false:不开启发起方发起合同审核
-默认false:不开启发起方发起合同审核
-                     * @return NeedCreateReview 开启发起方发起合同审核
-true:开启发起方发起合同审核
-false:不开启发起方发起合同审核
-默认false:不开启发起方发起合同审核
+                     * 获取发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+
+若设置为true，发起审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。
+
+
+                     * @return NeedCreateReview 发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+
+若设置为true，发起审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。
+
+
                      * 
                      */
                     bool GetNeedCreateReview() const;
 
                     /**
-                     * 设置开启发起方发起合同审核
-true:开启发起方发起合同审核
-false:不开启发起方发起合同审核
-默认false:不开启发起方发起合同审核
-                     * @param _needCreateReview 开启发起方发起合同审核
-true:开启发起方发起合同审核
-false:不开启发起方发起合同审核
-默认false:不开启发起方发起合同审核
+                     * 设置发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+
+若设置为true，发起审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。
+
+
+                     * @param _needCreateReview 发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+
+若设置为true，发起审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。
+
+
                      * 
                      */
                     void SetNeedCreateReview(const bool& _needCreateReview);
@@ -434,15 +470,23 @@ false:不开启发起方发起合同审核
                     bool NeedCreateReviewHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义参数
-                     * @return UserData 用户自定义参数
+                     * 获取调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
+                     * @return UserData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      * 
                      */
                     std::string GetUserData() const;
 
                     /**
-                     * 设置用户自定义参数
-                     * @param _userData 用户自定义参数
+                     * 设置调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
+                     * @param _userData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      * 
                      */
                     void SetUserData(const std::string& _userData);
@@ -455,15 +499,19 @@ false:不开启发起方发起合同审核
                     bool UserDataHasBeenSet() const;
 
                     /**
-                     * 获取合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接
-                     * @return FlowId 合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接
+                     * 获取合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
+注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
+                     * @return FlowId 合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
+注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接
-                     * @param _flowId 合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接
+                     * 设置合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
+注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
+                     * @param _flowId 合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
+注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -476,15 +524,19 @@ false:不开启发起方发起合同审核
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填	
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填	
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填	
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填	
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -496,38 +548,70 @@ false:不开启发起方发起合同审核
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+
+                     * @return InitiatorComponents 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+
+                     * 
+                     */
+                    std::vector<Component> GetInitiatorComponents() const;
+
+                    /**
+                     * 设置模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+
+                     * @param _initiatorComponents 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+
+                     * 
+                     */
+                    void SetInitiatorComponents(const std::vector<Component>& _initiatorComponents);
+
+                    /**
+                     * 判断参数 InitiatorComponents 是否已赋值
+                     * @return InitiatorComponents 是否已赋值
+                     * 
+                     */
+                    bool InitiatorComponentsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 调用方用户信息，userId 必填
+                     * 执行本接口操作的员工信息。使用此接口时，必须填写userId。
+支持填入集团子公司经办人 userId 代发合同。
+
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 资源id，与ResourceType对应
+                     * 资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 合同名称
+                     * 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 是否顺序签署
-true:无序签
-false:顺序签
+                     * 合同流程的签署顺序类型：
+<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
+<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
                      */
                     bool m_unordered;
                     bool m_unorderedHasBeenSet;
 
                     /**
-                     * 签署流程的签署截止时间。
-值为unix时间戳,精确到秒
-不传默认为当前时间一年后
+                     * 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。
+
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
@@ -535,46 +619,44 @@ false:顺序签
                     /**
                      * 用户自定义合同类型Id
 
-该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取
+该id为电子签企业内的合同类型id， 可以在控制台-合同-自定义合同类型处获取
+注: `该参数如果和FlowType同时传，以该参数优先生效`
                      */
                     std::string m_userFlowTypeId;
                     bool m_userFlowTypeIdHasBeenSet;
 
                     /**
-                     * 合同类型名称
-该字段用于客户自定义合同类型
-建议使用时指定合同类型，便于之后合同分类以及查看
-如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型
+                     * 合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
 
                     /**
-                     * 签署流程参与者信息，最大限制50方
+                     * 合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
+
+如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
                      */
                     std::vector<FlowCreateApprover> m_approvers;
                     bool m_approversHasBeenSet;
 
                     /**
-                     * 打开智能添加填写区
-默认开启，打开:"OPEN"
- 关闭："CLOSE"
+                     * 开启或者关闭智能添加填写区：
+<ul><li> **OPEN**：开启（默认值）</li>
+<li> **CLOSE**：关闭</li></ul>
                      */
                     std::string m_intelligentStatus;
                     bool m_intelligentStatusHasBeenSet;
 
                     /**
-                     * 资源类型，
-1：模板
-2：文件，
-不传默认为2：文件
+                     * 资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 发起方填写控件
-该类型控件由发起方完成填写
+                     * 该字段已废弃，请使用InitiatorComponents
                      */
                     Component m_components;
                     bool m_componentsHasBeenSet;
@@ -588,40 +670,55 @@ false:顺序签
                     bool m_flowOptionHasBeenSet;
 
                     /**
-                     * 是否开启发起方签署审核
-true:开启发起方签署审核
-false:不开启发起方签署审核
-默认false:不开启发起方签署审核
+                     * 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
                      */
                     bool m_needSignReview;
                     bool m_needSignReviewHasBeenSet;
 
                     /**
-                     * 开启发起方发起合同审核
-true:开启发起方发起合同审核
-false:不开启发起方发起合同审核
-默认false:不开启发起方发起合同审核
+                     * 发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+
+若设置为true，发起审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。
+
+
                      */
                     bool m_needCreateReview;
                     bool m_needCreateReviewHasBeenSet;
 
                     /**
-                     * 用户自定义参数
+                     * 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_v2" target="_blank">回调通知</a>模块。
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
 
                     /**
-                     * 合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接
+                     * 合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
+注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填	
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+
+                     */
+                    std::vector<Component> m_initiatorComponents;
+                    bool m_initiatorComponentsHasBeenSet;
 
                 };
             }

@@ -247,6 +247,31 @@ namespace TencentCloud
                      */
                     bool AwsSQSHasBeenSet() const;
 
+                    /**
+                     * 获取用于生成回调签名的key。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NotifyKey 用于生成回调签名的key。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNotifyKey() const;
+
+                    /**
+                     * 设置用于生成回调签名的key。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _notifyKey 用于生成回调签名的key。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNotifyKey(const std::string& _notifyKey);
+
+                    /**
+                     * 判断参数 NotifyKey 是否已赋值
+                     * @return NotifyKey 是否已赋值
+                     * 
+                     */
+                    bool NotifyKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +329,13 @@ namespace TencentCloud
                      */
                     AwsSQS m_awsSQS;
                     bool m_awsSQSHasBeenSet;
+
+                    /**
+                     * 用于生成回调签名的key。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_notifyKey;
+                    bool m_notifyKeyHasBeenSet;
 
                 };
             }

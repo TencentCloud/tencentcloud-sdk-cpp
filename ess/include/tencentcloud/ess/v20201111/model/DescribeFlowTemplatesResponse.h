@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板详情列表
-                     * @return Templates 模板详情列表
+                     * 获取模板详情列表数据
+                     * @return Templates 模板详情列表数据
                      * 
                      */
                     std::vector<TemplateInfo> GetTemplates() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TemplatesHasBeenSet() const;
 
                     /**
-                     * 获取查询到的总数
-                     * @return TotalCount 查询到的总数
+                     * 获取查询到的模板总数
+                     * @return TotalCount 查询到的模板总数
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板详情列表
+                     * 模板详情列表数据
                      */
                     std::vector<TemplateInfo> m_templates;
                     bool m_templatesHasBeenSet;
 
                     /**
-                     * 查询到的总数
+                     * 查询到的模板总数
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

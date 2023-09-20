@@ -175,6 +175,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/ListGatewaysRequest.h
   include/tencentcloud/iss/v20230517/model/ListTasksRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeGatewayVersionRequest.h
+  include/tencentcloud/iss/v20230517/model/DescribeRecordSliceRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordBackupTemplateRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeUserDeviceRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeDeviceRegionRequest.h
@@ -207,6 +208,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/AITaskResultData.h
   include/tencentcloud/iss/v20230517/model/DeleteRecordRetrieveTaskRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordBackupPlanData.h
+  include/tencentcloud/iss/v20230517/model/DescribeRecordSliceResponse.h
   include/tencentcloud/iss/v20230517/model/UpdateRecordPlanResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeTaskResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeGatewayVersion.h
@@ -247,6 +249,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/AddRecordBackupPlanRequest.h
   include/tencentcloud/iss/v20230517/model/ListTasksData.h
   include/tencentcloud/iss/v20230517/model/ControlDeviceStreamData.h
+  include/tencentcloud/iss/v20230517/model/RecordSliceInfo.h
   include/tencentcloud/iss/v20230517/model/RecordTemplateInfo.h
   include/tencentcloud/iss/v20230517/model/UpdateRecordBackupTemplateRequest.h
   include/tencentcloud/iss/v20230517/model/UpdateDeviceStatusResponse.h
@@ -424,6 +427,7 @@ set(iss_src
   src/v20230517/model/ListGatewaysRequest.cpp
   src/v20230517/model/ListTasksRequest.cpp
   src/v20230517/model/DescribeGatewayVersionRequest.cpp
+  src/v20230517/model/DescribeRecordSliceRequest.cpp
   src/v20230517/model/DescribeRecordBackupTemplateRequest.cpp
   src/v20230517/model/DescribeUserDeviceRequest.cpp
   src/v20230517/model/DescribeDeviceRegionRequest.cpp
@@ -456,6 +460,7 @@ set(iss_src
   src/v20230517/model/AITaskResultData.cpp
   src/v20230517/model/DeleteRecordRetrieveTaskRequest.cpp
   src/v20230517/model/DescribeRecordBackupPlanData.cpp
+  src/v20230517/model/DescribeRecordSliceResponse.cpp
   src/v20230517/model/UpdateRecordPlanResponse.cpp
   src/v20230517/model/DescribeTaskResponse.cpp
   src/v20230517/model/DescribeGatewayVersion.cpp
@@ -496,6 +501,7 @@ set(iss_src
   src/v20230517/model/AddRecordBackupPlanRequest.cpp
   src/v20230517/model/ListTasksData.cpp
   src/v20230517/model/ControlDeviceStreamData.cpp
+  src/v20230517/model/RecordSliceInfo.cpp
   src/v20230517/model/RecordTemplateInfo.cpp
   src/v20230517/model/UpdateRecordBackupTemplateRequest.cpp
   src/v20230517/model/UpdateDeviceStatusResponse.cpp

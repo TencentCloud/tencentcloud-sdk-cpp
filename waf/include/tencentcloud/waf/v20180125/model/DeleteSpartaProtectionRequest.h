@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取版本
-                     * @return Edition 版本
+                     * 获取实例类型
+                     * @return Edition 实例类型
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置版本
-                     * @param _edition 版本
+                     * 设置实例类型
+                     * @param _edition 实例类型
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 版本
+                     * 实例类型
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;

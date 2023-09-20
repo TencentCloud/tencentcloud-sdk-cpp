@@ -24,11 +24,13 @@ using namespace std;
 
 ModifyBackupConfigRequest::ModifyBackupConfigRequest() :
     m_clusterIdHasBeenSet(false),
-    m_reserveDurationHasBeenSet(false),
     m_backupTimeBegHasBeenSet(false),
     m_backupTimeEndHasBeenSet(false),
+    m_reserveDurationHasBeenSet(false),
     m_backupFreqHasBeenSet(false),
-    m_backupTypeHasBeenSet(false)
+    m_backupTypeHasBeenSet(false),
+    m_logicBackupConfigHasBeenSet(false),
+    m_deleteAutoLogicBackupHasBeenSet(false)
 {
 }
 
@@ -47,14 +49,6 @@ string ModifyBackupConfigRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_reserveDurationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReserveDuration";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_reserveDuration, allocator);
-    }
-
     if (m_backupTimeBegHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -69,6 +63,14 @@ string ModifyBackupConfigRequest::ToJsonString() const
         string key = "BackupTimeEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupTimeEnd, allocator);
+    }
+
+    if (m_reserveDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReserveDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_reserveDuration, allocator);
     }
 
     if (m_backupFreqHasBeenSet)
@@ -90,6 +92,23 @@ string ModifyBackupConfigRequest::ToJsonString() const
         string key = "BackupType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_backupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logicBackupConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicBackupConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logicBackupConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_deleteAutoLogicBackupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteAutoLogicBackup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteAutoLogicBackup, allocator);
     }
 
 
@@ -114,22 +133,6 @@ void ModifyBackupConfigRequest::SetClusterId(const string& _clusterId)
 bool ModifyBackupConfigRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
-}
-
-uint64_t ModifyBackupConfigRequest::GetReserveDuration() const
-{
-    return m_reserveDuration;
-}
-
-void ModifyBackupConfigRequest::SetReserveDuration(const uint64_t& _reserveDuration)
-{
-    m_reserveDuration = _reserveDuration;
-    m_reserveDurationHasBeenSet = true;
-}
-
-bool ModifyBackupConfigRequest::ReserveDurationHasBeenSet() const
-{
-    return m_reserveDurationHasBeenSet;
 }
 
 uint64_t ModifyBackupConfigRequest::GetBackupTimeBeg() const
@@ -164,6 +167,22 @@ bool ModifyBackupConfigRequest::BackupTimeEndHasBeenSet() const
     return m_backupTimeEndHasBeenSet;
 }
 
+uint64_t ModifyBackupConfigRequest::GetReserveDuration() const
+{
+    return m_reserveDuration;
+}
+
+void ModifyBackupConfigRequest::SetReserveDuration(const uint64_t& _reserveDuration)
+{
+    m_reserveDuration = _reserveDuration;
+    m_reserveDurationHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::ReserveDurationHasBeenSet() const
+{
+    return m_reserveDurationHasBeenSet;
+}
+
 vector<string> ModifyBackupConfigRequest::GetBackupFreq() const
 {
     return m_backupFreq;
@@ -194,6 +213,38 @@ void ModifyBackupConfigRequest::SetBackupType(const string& _backupType)
 bool ModifyBackupConfigRequest::BackupTypeHasBeenSet() const
 {
     return m_backupTypeHasBeenSet;
+}
+
+LogicBackupConfigInfo ModifyBackupConfigRequest::GetLogicBackupConfig() const
+{
+    return m_logicBackupConfig;
+}
+
+void ModifyBackupConfigRequest::SetLogicBackupConfig(const LogicBackupConfigInfo& _logicBackupConfig)
+{
+    m_logicBackupConfig = _logicBackupConfig;
+    m_logicBackupConfigHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::LogicBackupConfigHasBeenSet() const
+{
+    return m_logicBackupConfigHasBeenSet;
+}
+
+bool ModifyBackupConfigRequest::GetDeleteAutoLogicBackup() const
+{
+    return m_deleteAutoLogicBackup;
+}
+
+void ModifyBackupConfigRequest::SetDeleteAutoLogicBackup(const bool& _deleteAutoLogicBackup)
+{
+    m_deleteAutoLogicBackup = _deleteAutoLogicBackup;
+    m_deleteAutoLogicBackupHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::DeleteAutoLogicBackupHasBeenSet() const
+{
+    return m_deleteAutoLogicBackupHasBeenSet;
 }
 
 

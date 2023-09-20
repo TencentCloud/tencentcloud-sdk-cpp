@@ -157,6 +157,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetWebServiceInfoListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetWebServiceProcessListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetWebServiceProcessListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAttackEventsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAttackEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsRequest.h>
@@ -309,6 +311,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeMachineOsListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMachineRegionsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMachineRegionsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeMachineRiskCntRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeMachineRiskCntResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMachinesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMachinesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalWareListRequest.h>
@@ -375,6 +379,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchLogsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchTemplatesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchTemplatesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSecurityBroadcastsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSecurityBroadcastsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityDynamicsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityDynamicsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventStatRequest.h>
@@ -519,6 +525,8 @@
 #include <tencentcloud/cwp/v20180228/model/ModifyBruteAttackRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyLicenseBindsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyLicenseBindsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyLicenseOrderRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyLicenseOrderResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyLicenseUnBindsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyLicenseUnBindsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyLogStorageConfigRequest.h>
@@ -786,6 +794,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssetWebServiceProcessListResponse> DescribeAssetWebServiceProcessListOutcome;
                 typedef std::future<DescribeAssetWebServiceProcessListOutcome> DescribeAssetWebServiceProcessListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAssetWebServiceProcessListRequest&, DescribeAssetWebServiceProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetWebServiceProcessListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAttackEventsResponse> DescribeAttackEventsOutcome;
+                typedef std::future<DescribeAttackEventsOutcome> DescribeAttackEventsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAttackEventsRequest&, DescribeAttackEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAttackLogInfoResponse> DescribeAttackLogInfoOutcome;
                 typedef std::future<DescribeAttackLogInfoOutcome> DescribeAttackLogInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackLogInfoRequest&, DescribeAttackLogInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackLogInfoAsyncHandler;
@@ -1014,6 +1025,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMachineRegionsResponse> DescribeMachineRegionsOutcome;
                 typedef std::future<DescribeMachineRegionsOutcome> DescribeMachineRegionsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeMachineRegionsRequest&, DescribeMachineRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMachineRiskCntResponse> DescribeMachineRiskCntOutcome;
+                typedef std::future<DescribeMachineRiskCntOutcome> DescribeMachineRiskCntOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeMachineRiskCntRequest&, DescribeMachineRiskCntOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineRiskCntAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMachinesResponse> DescribeMachinesOutcome;
                 typedef std::future<DescribeMachinesOutcome> DescribeMachinesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeMachinesRequest&, DescribeMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachinesAsyncHandler;
@@ -1113,6 +1127,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSearchTemplatesResponse> DescribeSearchTemplatesOutcome;
                 typedef std::future<DescribeSearchTemplatesOutcome> DescribeSearchTemplatesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSearchTemplatesRequest&, DescribeSearchTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityBroadcastsResponse> DescribeSecurityBroadcastsOutcome;
+                typedef std::future<DescribeSecurityBroadcastsOutcome> DescribeSecurityBroadcastsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeSecurityBroadcastsRequest&, DescribeSecurityBroadcastsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityBroadcastsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityDynamicsResponse> DescribeSecurityDynamicsOutcome;
                 typedef std::future<DescribeSecurityDynamicsOutcome> DescribeSecurityDynamicsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSecurityDynamicsRequest&, DescribeSecurityDynamicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityDynamicsAsyncHandler;
@@ -1329,6 +1346,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLicenseBindsResponse> ModifyLicenseBindsOutcome;
                 typedef std::future<ModifyLicenseBindsOutcome> ModifyLicenseBindsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyLicenseBindsRequest&, ModifyLicenseBindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLicenseBindsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLicenseOrderResponse> ModifyLicenseOrderOutcome;
+                typedef std::future<ModifyLicenseOrderOutcome> ModifyLicenseOrderOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ModifyLicenseOrderRequest&, ModifyLicenseOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLicenseOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLicenseUnBindsResponse> ModifyLicenseUnBindsOutcome;
                 typedef std::future<ModifyLicenseUnBindsOutcome> ModifyLicenseUnBindsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyLicenseUnBindsRequest&, ModifyLicenseUnBindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLicenseUnBindsAsyncHandler;
@@ -2017,6 +2037,15 @@ namespace TencentCloud
                 DescribeAssetWebServiceProcessListOutcomeCallable DescribeAssetWebServiceProcessListCallable(const Model::DescribeAssetWebServiceProcessListRequest& request);
 
                 /**
+                 *按分页形式展示网络攻击检测事件列表
+                 * @param req DescribeAttackEventsRequest
+                 * @return DescribeAttackEventsOutcome
+                 */
+                DescribeAttackEventsOutcome DescribeAttackEvents(const Model::DescribeAttackEventsRequest &request);
+                void DescribeAttackEventsAsync(const Model::DescribeAttackEventsRequest& request, const DescribeAttackEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAttackEventsOutcomeCallable DescribeAttackEventsCallable(const Model::DescribeAttackEventsRequest& request);
+
+                /**
                  *网络攻击日志详情
                  * @param req DescribeAttackLogInfoRequest
                  * @return DescribeAttackLogInfoOutcome
@@ -2701,6 +2730,15 @@ namespace TencentCloud
                 DescribeMachineRegionsOutcomeCallable DescribeMachineRegionsCallable(const Model::DescribeMachineRegionsRequest& request);
 
                 /**
+                 *查询主机入侵检测事件统计
+                 * @param req DescribeMachineRiskCntRequest
+                 * @return DescribeMachineRiskCntOutcome
+                 */
+                DescribeMachineRiskCntOutcome DescribeMachineRiskCnt(const Model::DescribeMachineRiskCntRequest &request);
+                void DescribeMachineRiskCntAsync(const Model::DescribeMachineRiskCntRequest& request, const DescribeMachineRiskCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMachineRiskCntOutcomeCallable DescribeMachineRiskCntCallable(const Model::DescribeMachineRiskCntRequest& request);
+
+                /**
                  *本接口 (DescribeMachines) 用于获取区域主机列表。
                  * @param req DescribeMachinesRequest
                  * @return DescribeMachinesOutcome
@@ -2996,6 +3034,15 @@ namespace TencentCloud
                 DescribeSearchTemplatesOutcome DescribeSearchTemplates(const Model::DescribeSearchTemplatesRequest &request);
                 void DescribeSearchTemplatesAsync(const Model::DescribeSearchTemplatesRequest& request, const DescribeSearchTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSearchTemplatesOutcomeCallable DescribeSearchTemplatesCallable(const Model::DescribeSearchTemplatesRequest& request);
+
+                /**
+                 *安全播报列表页
+                 * @param req DescribeSecurityBroadcastsRequest
+                 * @return DescribeSecurityBroadcastsOutcome
+                 */
+                DescribeSecurityBroadcastsOutcome DescribeSecurityBroadcasts(const Model::DescribeSecurityBroadcastsRequest &request);
+                void DescribeSecurityBroadcastsAsync(const Model::DescribeSecurityBroadcastsRequest& request, const DescribeSecurityBroadcastsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityBroadcastsOutcomeCallable DescribeSecurityBroadcastsCallable(const Model::DescribeSecurityBroadcastsRequest& request);
 
                 /**
                  *本接口 (DescribeSecurityDynamics) 用于获取安全事件动态消息数据。
@@ -3644,6 +3691,15 @@ namespace TencentCloud
                 ModifyLicenseBindsOutcome ModifyLicenseBinds(const Model::ModifyLicenseBindsRequest &request);
                 void ModifyLicenseBindsAsync(const Model::ModifyLicenseBindsRequest& request, const ModifyLicenseBindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLicenseBindsOutcomeCallable ModifyLicenseBindsCallable(const Model::ModifyLicenseBindsRequest& request);
+
+                /**
+                 *编辑《主机安全-按量计费》授权订单
+                 * @param req ModifyLicenseOrderRequest
+                 * @return ModifyLicenseOrderOutcome
+                 */
+                ModifyLicenseOrderOutcome ModifyLicenseOrder(const Model::ModifyLicenseOrderRequest &request);
+                void ModifyLicenseOrderAsync(const Model::ModifyLicenseOrderRequest& request, const ModifyLicenseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLicenseOrderOutcomeCallable ModifyLicenseOrderCallable(const Model::ModifyLicenseOrderRequest& request);
 
                 /**
                  *设置中心-授权管理 对某个授权批量解绑机器

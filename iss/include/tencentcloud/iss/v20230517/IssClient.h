@@ -113,6 +113,8 @@
 #include <tencentcloud/iss/v20230517/model/DescribeRecordPlaybackUrlResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeRecordRetrieveTaskRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeRecordRetrieveTaskResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeRecordSliceRequest.h>
+#include <tencentcloud/iss/v20230517/model/DescribeRecordSliceResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeRecordTemplateRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeRecordTemplateResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeStreamAuthRequest.h>
@@ -332,6 +334,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRecordRetrieveTaskResponse> DescribeRecordRetrieveTaskOutcome;
                 typedef std::future<DescribeRecordRetrieveTaskOutcome> DescribeRecordRetrieveTaskOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeRecordRetrieveTaskRequest&, DescribeRecordRetrieveTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordRetrieveTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordSliceResponse> DescribeRecordSliceOutcome;
+                typedef std::future<DescribeRecordSliceOutcome> DescribeRecordSliceOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DescribeRecordSliceRequest&, DescribeRecordSliceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordSliceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordTemplateResponse> DescribeRecordTemplateOutcome;
                 typedef std::future<DescribeRecordTemplateOutcome> DescribeRecordTemplateOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeRecordTemplateRequest&, DescribeRecordTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTemplateAsyncHandler;
@@ -847,6 +852,16 @@ namespace TencentCloud
                 DescribeRecordRetrieveTaskOutcome DescribeRecordRetrieveTask(const Model::DescribeRecordRetrieveTaskRequest &request);
                 void DescribeRecordRetrieveTaskAsync(const Model::DescribeRecordRetrieveTaskRequest& request, const DescribeRecordRetrieveTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRecordRetrieveTaskOutcomeCallable DescribeRecordRetrieveTaskCallable(const Model::DescribeRecordRetrieveTaskRequest& request);
+
+                /**
+                 *平台支持将数据以TS切片的形式存入客户自有COS桶，该接口用于支持客户快捷查询切片信息列表
+（注意：只支持标准存储类型的查询）
+                 * @param req DescribeRecordSliceRequest
+                 * @return DescribeRecordSliceOutcome
+                 */
+                DescribeRecordSliceOutcome DescribeRecordSlice(const Model::DescribeRecordSliceRequest &request);
+                void DescribeRecordSliceAsync(const Model::DescribeRecordSliceRequest& request, const DescribeRecordSliceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordSliceOutcomeCallable DescribeRecordSliceCallable(const Model::DescribeRecordSliceRequest& request);
 
                 /**
                  *用于查询实时上云模板详情

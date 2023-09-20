@@ -131,6 +131,14 @@
 #include <tencentcloud/clb/v20180317/model/DescribeTaskStatusResponse.h>
 #include <tencentcloud/clb/v20180317/model/DisassociateTargetGroupsRequest.h>
 #include <tencentcloud/clb/v20180317/model/DisassociateTargetGroupsResponse.h>
+#include <tencentcloud/clb/v20180317/model/InquiryPriceCreateLoadBalancerRequest.h>
+#include <tencentcloud/clb/v20180317/model/InquiryPriceCreateLoadBalancerResponse.h>
+#include <tencentcloud/clb/v20180317/model/InquiryPriceModifyLoadBalancerRequest.h>
+#include <tencentcloud/clb/v20180317/model/InquiryPriceModifyLoadBalancerResponse.h>
+#include <tencentcloud/clb/v20180317/model/InquiryPriceRefundLoadBalancerRequest.h>
+#include <tencentcloud/clb/v20180317/model/InquiryPriceRefundLoadBalancerResponse.h>
+#include <tencentcloud/clb/v20180317/model/InquiryPriceRenewLoadBalancerRequest.h>
+#include <tencentcloud/clb/v20180317/model/InquiryPriceRenewLoadBalancerResponse.h>
 #include <tencentcloud/clb/v20180317/model/ManualRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/ManualRewriteResponse.h>
 #include <tencentcloud/clb/v20180317/model/MigrateClassicalLoadBalancersRequest.h>
@@ -359,6 +367,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisassociateTargetGroupsResponse> DisassociateTargetGroupsOutcome;
                 typedef std::future<DisassociateTargetGroupsOutcome> DisassociateTargetGroupsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DisassociateTargetGroupsRequest&, DisassociateTargetGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateTargetGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquiryPriceCreateLoadBalancerResponse> InquiryPriceCreateLoadBalancerOutcome;
+                typedef std::future<InquiryPriceCreateLoadBalancerOutcome> InquiryPriceCreateLoadBalancerOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::InquiryPriceCreateLoadBalancerRequest&, InquiryPriceCreateLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateLoadBalancerAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquiryPriceModifyLoadBalancerResponse> InquiryPriceModifyLoadBalancerOutcome;
+                typedef std::future<InquiryPriceModifyLoadBalancerOutcome> InquiryPriceModifyLoadBalancerOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::InquiryPriceModifyLoadBalancerRequest&, InquiryPriceModifyLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceModifyLoadBalancerAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquiryPriceRefundLoadBalancerResponse> InquiryPriceRefundLoadBalancerOutcome;
+                typedef std::future<InquiryPriceRefundLoadBalancerOutcome> InquiryPriceRefundLoadBalancerOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::InquiryPriceRefundLoadBalancerRequest&, InquiryPriceRefundLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRefundLoadBalancerAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquiryPriceRenewLoadBalancerResponse> InquiryPriceRenewLoadBalancerOutcome;
+                typedef std::future<InquiryPriceRenewLoadBalancerOutcome> InquiryPriceRenewLoadBalancerOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::InquiryPriceRenewLoadBalancerRequest&, InquiryPriceRenewLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRenewLoadBalancerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ManualRewriteResponse> ManualRewriteOutcome;
                 typedef std::future<ManualRewriteOutcome> ManualRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ManualRewriteRequest&, ManualRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManualRewriteAsyncHandler;
@@ -975,6 +995,42 @@ BGP带宽包必须传带宽包id
                 DisassociateTargetGroupsOutcome DisassociateTargetGroups(const Model::DisassociateTargetGroupsRequest &request);
                 void DisassociateTargetGroupsAsync(const Model::DisassociateTargetGroupsRequest& request, const DisassociateTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateTargetGroupsOutcomeCallable DisassociateTargetGroupsCallable(const Model::DisassociateTargetGroupsRequest& request);
+
+                /**
+                 *InquiryPriceCreateLoadBalancer接口查询创建负载均衡的价格。
+                 * @param req InquiryPriceCreateLoadBalancerRequest
+                 * @return InquiryPriceCreateLoadBalancerOutcome
+                 */
+                InquiryPriceCreateLoadBalancerOutcome InquiryPriceCreateLoadBalancer(const Model::InquiryPriceCreateLoadBalancerRequest &request);
+                void InquiryPriceCreateLoadBalancerAsync(const Model::InquiryPriceCreateLoadBalancerRequest& request, const InquiryPriceCreateLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceCreateLoadBalancerOutcomeCallable InquiryPriceCreateLoadBalancerCallable(const Model::InquiryPriceCreateLoadBalancerRequest& request);
+
+                /**
+                 *InquiryPriceModifyLoadBalancer接口修改负载均衡配置询价。
+                 * @param req InquiryPriceModifyLoadBalancerRequest
+                 * @return InquiryPriceModifyLoadBalancerOutcome
+                 */
+                InquiryPriceModifyLoadBalancerOutcome InquiryPriceModifyLoadBalancer(const Model::InquiryPriceModifyLoadBalancerRequest &request);
+                void InquiryPriceModifyLoadBalancerAsync(const Model::InquiryPriceModifyLoadBalancerRequest& request, const InquiryPriceModifyLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceModifyLoadBalancerOutcomeCallable InquiryPriceModifyLoadBalancerCallable(const Model::InquiryPriceModifyLoadBalancerRequest& request);
+
+                /**
+                 *InquiryPriceRefundLoadBalancer接口查询负载均衡退费价格。
+                 * @param req InquiryPriceRefundLoadBalancerRequest
+                 * @return InquiryPriceRefundLoadBalancerOutcome
+                 */
+                InquiryPriceRefundLoadBalancerOutcome InquiryPriceRefundLoadBalancer(const Model::InquiryPriceRefundLoadBalancerRequest &request);
+                void InquiryPriceRefundLoadBalancerAsync(const Model::InquiryPriceRefundLoadBalancerRequest& request, const InquiryPriceRefundLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceRefundLoadBalancerOutcomeCallable InquiryPriceRefundLoadBalancerCallable(const Model::InquiryPriceRefundLoadBalancerRequest& request);
+
+                /**
+                 *InquiryPriceRenewLoadBalancer接口查询对负载均衡续费的价格，只支持预付费负载均衡续费。
+                 * @param req InquiryPriceRenewLoadBalancerRequest
+                 * @return InquiryPriceRenewLoadBalancerOutcome
+                 */
+                InquiryPriceRenewLoadBalancerOutcome InquiryPriceRenewLoadBalancer(const Model::InquiryPriceRenewLoadBalancerRequest &request);
+                void InquiryPriceRenewLoadBalancerAsync(const Model::InquiryPriceRenewLoadBalancerRequest& request, const InquiryPriceRenewLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceRenewLoadBalancerOutcomeCallable InquiryPriceRenewLoadBalancerCallable(const Model::InquiryPriceRenewLoadBalancerRequest& request);
 
                 /**
                  *用户手动配置原访问地址和重定向地址，系统自动将原访问地址的请求重定向至对应路径的目的地址。同一域名下可以配置多条路径作为重定向策略，实现http/https之间请求的自动跳转。设置重定向时，需满足如下约束条件：若A已经重定向至B，则A不能再重定向至C（除非先删除老的重定向关系，再建立新的重定向关系），B不能重定向至任何其它地址。

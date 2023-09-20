@@ -235,6 +235,8 @@
 #include <tencentcloud/waf/v20180125/model/SearchAttackLogResponse.h>
 #include <tencentcloud/waf/v20180125/model/SwitchDomainRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/SwitchDomainRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/SwitchElasticModeRequest.h>
+#include <tencentcloud/waf/v20180125/model/SwitchElasticModeResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertIpAccessControlRequest.h>
@@ -573,6 +575,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchDomainRulesResponse> SwitchDomainRulesOutcome;
                 typedef std::future<SwitchDomainRulesOutcome> SwitchDomainRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::SwitchDomainRulesRequest&, SwitchDomainRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDomainRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchElasticModeResponse> SwitchElasticModeOutcome;
+                typedef std::future<SwitchElasticModeOutcome> SwitchElasticModeOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::SwitchElasticModeRequest&, SwitchElasticModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchElasticModeAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpsertCCRuleResponse> UpsertCCRuleOutcome;
                 typedef std::future<UpsertCCRuleOutcome> UpsertCCRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::UpsertCCRuleRequest&, UpsertCCRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpsertCCRuleAsyncHandler;
@@ -631,7 +636,7 @@ namespace TencentCloud
                 AddDomainWhiteRuleOutcomeCallable AddDomainWhiteRuleCallable(const Model::AddDomainWhiteRuleRequest& request);
 
                 /**
-                 *添加Spart防护域名
+                 *添加SaaS型WAF防护域名
                  * @param req AddSpartaProtectionRequest
                  * @return AddSpartaProtectionOutcome
                  */
@@ -649,7 +654,7 @@ namespace TencentCloud
                 CreateAccessExportOutcomeCallable CreateAccessExportCallable(const Model::CreateAccessExportRequest& request);
 
                 /**
-                 *clb-waf中添加防护的域名
+                 *clb-waf中添加防护域名
                  * @param req CreateHostRequest
                  * @return CreateHostOutcome
                  */
@@ -767,7 +772,7 @@ namespace TencentCloud
                 DeleteSessionOutcomeCallable DeleteSessionCallable(const Model::DeleteSessionRequest& request);
 
                 /**
-                 *SAASWAF删除防护域名
+                 *Saas型WAF删除防护域名
                  * @param req DeleteSpartaProtectionRequest
                  * @return DeleteSpartaProtectionOutcome
                  */
@@ -897,7 +902,7 @@ namespace TencentCloud
                 DescribeCCRuleListOutcomeCallable DescribeCCRuleListCallable(const Model::DescribeCCRuleListRequest& request);
 
                 /**
-                 *查询加密套件信息
+                 *Saas型WAF接入查询加密套件信息
                  * @param req DescribeCiphersDetailRequest
                  * @return DescribeCiphersDetailOutcome
                  */
@@ -933,7 +938,7 @@ namespace TencentCloud
                 DescribeDomainCountInfoOutcomeCallable DescribeDomainCountInfoCallable(const Model::DescribeDomainCountInfoRequest& request);
 
                 /**
-                 *获取一个clb域名详情
+                 *获取一个clbwaf域名详情
                  * @param req DescribeDomainDetailsClbRequest
                  * @return DescribeDomainDetailsClbOutcome
                  */
@@ -942,7 +947,7 @@ namespace TencentCloud
                 DescribeDomainDetailsClbOutcomeCallable DescribeDomainDetailsClbCallable(const Model::DescribeDomainDetailsClbRequest& request);
 
                 /**
-                 *查询单个saas域名详情
+                 *查询单个saaswaf域名详情
                  * @param req DescribeDomainDetailsSaasRequest
                  * @return DescribeDomainDetailsSaasOutcome
                  */
@@ -1077,7 +1082,7 @@ namespace TencentCloud
                 DescribePolicyStatusOutcomeCallable DescribePolicyStatusCallable(const Model::DescribePolicyStatusRequest& request);
 
                 /**
-                 *获取非标端口列表
+                 *获取Saas型WAF防护端口列表
                  * @param req DescribePortsRequest
                  * @return DescribePortsOutcome
                  */
@@ -1350,7 +1355,7 @@ namespace TencentCloud
                 ModifyCustomWhiteRuleStatusOutcomeCallable ModifyCustomWhiteRuleStatusCallable(const Model::ModifyCustomWhiteRuleStatusRequest& request);
 
                 /**
-                 *修改ipv6开关
+                 *切换ipv6开关
                  * @param req ModifyDomainIpv6StatusRequest
                  * @return ModifyDomainIpv6StatusOutcome
                  */
@@ -1547,6 +1552,15 @@ namespace TencentCloud
                 SwitchDomainRulesOutcome SwitchDomainRules(const Model::SwitchDomainRulesRequest &request);
                 void SwitchDomainRulesAsync(const Model::SwitchDomainRulesRequest& request, const SwitchDomainRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchDomainRulesOutcomeCallable SwitchDomainRulesCallable(const Model::SwitchDomainRulesRequest& request);
+
+                /**
+                 *切换弹性的开关
+                 * @param req SwitchElasticModeRequest
+                 * @return SwitchElasticModeOutcome
+                 */
+                SwitchElasticModeOutcome SwitchElasticMode(const Model::SwitchElasticModeRequest &request);
+                void SwitchElasticModeAsync(const Model::SwitchElasticModeRequest& request, const SwitchElasticModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchElasticModeOutcomeCallable SwitchElasticModeCallable(const Model::SwitchElasticModeRequest& request);
 
                 /**
                  *Waf  CC V2 Upsert接口

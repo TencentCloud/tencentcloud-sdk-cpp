@@ -38,6 +38,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DomainPackageNew.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/AccessLogItems.h
+  include/tencentcloud/waf/v20180125/model/SwitchElasticModeRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyInstanceNameRequest.h
   include/tencentcloud/waf/v20180125/model/DescribePeakValueResponse.h
   include/tencentcloud/waf/v20180125/model/HostDel.h
@@ -123,6 +124,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/CreateHostResponse.h
   include/tencentcloud/waf/v20180125/model/IpAccessControlItem.h
   include/tencentcloud/waf/v20180125/model/DeleteHostResponse.h
+  include/tencentcloud/waf/v20180125/model/SwitchElasticModeResponse.h
   include/tencentcloud/waf/v20180125/model/FreshAntiFakeUrlResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyBotStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteSpartaProtectionRequest.h
@@ -334,6 +336,7 @@ set(waf_src
   src/v20180125/model/DomainPackageNew.cpp
   src/v20180125/model/DescribeCustomWhiteRuleResponse.cpp
   src/v20180125/model/AccessLogItems.cpp
+  src/v20180125/model/SwitchElasticModeRequest.cpp
   src/v20180125/model/ModifyInstanceNameRequest.cpp
   src/v20180125/model/DescribePeakValueResponse.cpp
   src/v20180125/model/HostDel.cpp
@@ -419,6 +422,7 @@ set(waf_src
   src/v20180125/model/CreateHostResponse.cpp
   src/v20180125/model/IpAccessControlItem.cpp
   src/v20180125/model/DeleteHostResponse.cpp
+  src/v20180125/model/SwitchElasticModeResponse.cpp
   src/v20180125/model/FreshAntiFakeUrlResponse.cpp
   src/v20180125/model/ModifyBotStatusRequest.cpp
   src/v20180125/model/DeleteSpartaProtectionRequest.cpp

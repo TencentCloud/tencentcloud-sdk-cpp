@@ -48,18 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许修改发起合同时确认弹窗的合同信息（合同名称、合同类型、签署截止时间），若不允许编辑，则表单字段将被禁止输入。
-<br/>true：允许编辑（默认），<br/>false：不允许编辑<br/>默认：false：不允许编辑
+<br/>true：允许编辑<br/>false：不允许编辑（默认值）<br/>
                      * @return CanEditFlow 是否允许修改发起合同时确认弹窗的合同信息（合同名称、合同类型、签署截止时间），若不允许编辑，则表单字段将被禁止输入。
-<br/>true：允许编辑（默认），<br/>false：不允许编辑<br/>默认：false：不允许编辑
+<br/>true：允许编辑<br/>false：不允许编辑（默认值）<br/>
                      * 
                      */
                     bool GetCanEditFlow() const;
 
                     /**
                      * 设置是否允许修改发起合同时确认弹窗的合同信息（合同名称、合同类型、签署截止时间），若不允许编辑，则表单字段将被禁止输入。
-<br/>true：允许编辑（默认），<br/>false：不允许编辑<br/>默认：false：不允许编辑
+<br/>true：允许编辑<br/>false：不允许编辑（默认值）<br/>
                      * @param _canEditFlow 是否允许修改发起合同时确认弹窗的合同信息（合同名称、合同类型、签署截止时间），若不允许编辑，则表单字段将被禁止输入。
-<br/>true：允许编辑（默认），<br/>false：不允许编辑<br/>默认：false：不允许编辑
+<br/>true：允许编辑<br/>false：不允许编辑（默认值）<br/>
                      * 
                      */
                     void SetCanEditFlow(const bool& _canEditFlow);
@@ -74,12 +74,12 @@ namespace TencentCloud
                     /**
                      * 获取是否允许编辑模板控件
 <br/>true:允许编辑模板控件信息
-<br/>false:不允许编辑模板控件信息
-<br/>默认false:不允许编辑模板控件信息
+<br/>false:不允许编辑模板控件信息（默认值）
+<br/>
                      * @return CanEditFormField 是否允许编辑模板控件
 <br/>true:允许编辑模板控件信息
-<br/>false:不允许编辑模板控件信息
-<br/>默认false:不允许编辑模板控件信息
+<br/>false:不允许编辑模板控件信息（默认值）
+<br/>
                      * 
                      */
                     bool GetCanEditFormField() const;
@@ -87,12 +87,12 @@ namespace TencentCloud
                     /**
                      * 设置是否允许编辑模板控件
 <br/>true:允许编辑模板控件信息
-<br/>false:不允许编辑模板控件信息
-<br/>默认false:不允许编辑模板控件信息
+<br/>false:不允许编辑模板控件信息（默认值）
+<br/>
                      * @param _canEditFormField 是否允许编辑模板控件
 <br/>true:允许编辑模板控件信息
-<br/>false:不允许编辑模板控件信息
-<br/>默认false:不允许编辑模板控件信息
+<br/>false:不允许编辑模板控件信息（默认值）
+<br/>
                      * 
                      */
                     void SetCanEditFormField(const bool& _canEditFormField);
@@ -107,12 +107,12 @@ namespace TencentCloud
                     /**
                      * 获取发起页面隐藏合同名称展示
 <br/>true:发起页面隐藏合同名称展示
-<br/>false:发起页面不隐藏合同名称展示
-<br/>默认false:发起页面不隐藏合同名称展示
+<br/>false:发起页面不隐藏合同名称展示（默认值）
+<br/>
                      * @return HideShowFlowName 发起页面隐藏合同名称展示
 <br/>true:发起页面隐藏合同名称展示
-<br/>false:发起页面不隐藏合同名称展示
-<br/>默认false:发起页面不隐藏合同名称展示
+<br/>false:发起页面不隐藏合同名称展示（默认值）
+<br/>
                      * 
                      */
                     bool GetHideShowFlowName() const;
@@ -120,12 +120,12 @@ namespace TencentCloud
                     /**
                      * 设置发起页面隐藏合同名称展示
 <br/>true:发起页面隐藏合同名称展示
-<br/>false:发起页面不隐藏合同名称展示
-<br/>默认false:发起页面不隐藏合同名称展示
+<br/>false:发起页面不隐藏合同名称展示（默认值）
+<br/>
                      * @param _hideShowFlowName 发起页面隐藏合同名称展示
 <br/>true:发起页面隐藏合同名称展示
-<br/>false:发起页面不隐藏合同名称展示
-<br/>默认false:发起页面不隐藏合同名称展示
+<br/>false:发起页面不隐藏合同名称展示（默认值）
+<br/>
                      * 
                      */
                     void SetHideShowFlowName(const bool& _hideShowFlowName);
@@ -140,13 +140,13 @@ namespace TencentCloud
                     /**
                      * 获取发起页面隐藏合同类型展示
 <br/>true:发起页面隐藏合同类型展示
-<br/>false:发起页面不隐藏合同类型展示
-<br/>默认false:发起页面不隐藏合同类型展示
+<br/>false:发起页面不隐藏合同类型展示（默认值）
+<br/>
 
                      * @return HideShowFlowType 发起页面隐藏合同类型展示
 <br/>true:发起页面隐藏合同类型展示
-<br/>false:发起页面不隐藏合同类型展示
-<br/>默认false:发起页面不隐藏合同类型展示
+<br/>false:发起页面不隐藏合同类型展示（默认值）
+<br/>
 
                      * 
                      */
@@ -155,13 +155,13 @@ namespace TencentCloud
                     /**
                      * 设置发起页面隐藏合同类型展示
 <br/>true:发起页面隐藏合同类型展示
-<br/>false:发起页面不隐藏合同类型展示
-<br/>默认false:发起页面不隐藏合同类型展示
+<br/>false:发起页面不隐藏合同类型展示（默认值）
+<br/>
 
                      * @param _hideShowFlowType 发起页面隐藏合同类型展示
 <br/>true:发起页面隐藏合同类型展示
-<br/>false:发起页面不隐藏合同类型展示
-<br/>默认false:发起页面不隐藏合同类型展示
+<br/>false:发起页面不隐藏合同类型展示（默认值）
+<br/>
 
                      * 
                      */
@@ -177,12 +177,12 @@ namespace TencentCloud
                     /**
                      * 获取发起页面隐藏合同截止日期展示
 <br/>true:发起页面隐藏合同截止日期展示
-<br/>false:发起页面不隐藏合同截止日期展示
-<br/>默认false:发起页面不隐藏合同截止日期展示
+<br/>false:发起页面不隐藏合同截止日期展示（默认值）
+<br/>
                      * @return HideShowDeadline 发起页面隐藏合同截止日期展示
 <br/>true:发起页面隐藏合同截止日期展示
-<br/>false:发起页面不隐藏合同截止日期展示
-<br/>默认false:发起页面不隐藏合同截止日期展示
+<br/>false:发起页面不隐藏合同截止日期展示（默认值）
+<br/>
                      * 
                      */
                     bool GetHideShowDeadline() const;
@@ -190,12 +190,12 @@ namespace TencentCloud
                     /**
                      * 设置发起页面隐藏合同截止日期展示
 <br/>true:发起页面隐藏合同截止日期展示
-<br/>false:发起页面不隐藏合同截止日期展示
-<br/>默认false:发起页面不隐藏合同截止日期展示
+<br/>false:发起页面不隐藏合同截止日期展示（默认值）
+<br/>
                      * @param _hideShowDeadline 发起页面隐藏合同截止日期展示
 <br/>true:发起页面隐藏合同截止日期展示
-<br/>false:发起页面不隐藏合同截止日期展示
-<br/>默认false:发起页面不隐藏合同截止日期展示
+<br/>false:发起页面不隐藏合同截止日期展示（默认值）
+<br/>
                      * 
                      */
                     void SetHideShowDeadline(const bool& _hideShowDeadline);
@@ -210,13 +210,13 @@ namespace TencentCloud
                     /**
                      * 获取发起页面允许跳过添加签署人环节
 <br/>true:发起页面允许跳过添加签署人环节
-<br/>false:发起页面不允许跳过添加签署人环节
-<br/>默认false:发起页面不允许跳过添加签署人环节
+<br/>false:发起页面不允许跳过添加签署人环节（默认值）
+<br/>
 
                      * @return CanSkipAddApprover 发起页面允许跳过添加签署人环节
 <br/>true:发起页面允许跳过添加签署人环节
-<br/>false:发起页面不允许跳过添加签署人环节
-<br/>默认false:发起页面不允许跳过添加签署人环节
+<br/>false:发起页面不允许跳过添加签署人环节（默认值）
+<br/>
 
                      * 
                      */
@@ -225,13 +225,13 @@ namespace TencentCloud
                     /**
                      * 设置发起页面允许跳过添加签署人环节
 <br/>true:发起页面允许跳过添加签署人环节
-<br/>false:发起页面不允许跳过添加签署人环节
-<br/>默认false:发起页面不允许跳过添加签署人环节
+<br/>false:发起页面不允许跳过添加签署人环节（默认值）
+<br/>
 
                      * @param _canSkipAddApprover 发起页面允许跳过添加签署人环节
 <br/>true:发起页面允许跳过添加签署人环节
-<br/>false:发起页面不允许跳过添加签署人环节
-<br/>默认false:发起页面不允许跳过添加签署人环节
+<br/>false:发起页面不允许跳过添加签署人环节（默认值）
+<br/>
 
                      * 
                      */
@@ -247,12 +247,12 @@ namespace TencentCloud
                     /**
                      * 获取文件发起页面跳过文件上传步骤
 <br/>true:文件发起页面跳过文件上传步骤
-<br/>false:文件发起页面不跳过文件上传步骤
-<br/>默认false:文件发起页面不跳过文件上传步骤
+<br/>false:文件发起页面不跳过文件上传步骤（默认值）
+<br/>
                      * @return SkipUploadFile 文件发起页面跳过文件上传步骤
 <br/>true:文件发起页面跳过文件上传步骤
-<br/>false:文件发起页面不跳过文件上传步骤
-<br/>默认false:文件发起页面不跳过文件上传步骤
+<br/>false:文件发起页面不跳过文件上传步骤（默认值）
+<br/>
                      * 
                      */
                     bool GetSkipUploadFile() const;
@@ -260,12 +260,12 @@ namespace TencentCloud
                     /**
                      * 设置文件发起页面跳过文件上传步骤
 <br/>true:文件发起页面跳过文件上传步骤
-<br/>false:文件发起页面不跳过文件上传步骤
-<br/>默认false:文件发起页面不跳过文件上传步骤
+<br/>false:文件发起页面不跳过文件上传步骤（默认值）
+<br/>
                      * @param _skipUploadFile 文件发起页面跳过文件上传步骤
 <br/>true:文件发起页面跳过文件上传步骤
-<br/>false:文件发起页面不跳过文件上传步骤
-<br/>默认false:文件发起页面不跳过文件上传步骤
+<br/>false:文件发起页面不跳过文件上传步骤（默认值）
+<br/>
                      * 
                      */
                     void SetSkipUploadFile(const bool& _skipUploadFile);
@@ -280,12 +280,12 @@ namespace TencentCloud
                     /**
                      * 获取禁止编辑填写控件
 <br/>true:禁止编辑填写控件
-<br/>false:允许编辑填写控件
-<br/>默认false:允许编辑填写控件
+<br/>false:允许编辑填写控件（默认值）
+<br/>
                      * @return ForbidEditFillComponent 禁止编辑填写控件
 <br/>true:禁止编辑填写控件
-<br/>false:允许编辑填写控件
-<br/>默认false:允许编辑填写控件
+<br/>false:允许编辑填写控件（默认值）
+<br/>
                      * 
                      */
                     bool GetForbidEditFillComponent() const;
@@ -293,12 +293,12 @@ namespace TencentCloud
                     /**
                      * 设置禁止编辑填写控件
 <br/>true:禁止编辑填写控件
-<br/>false:允许编辑填写控件
-<br/>默认false:允许编辑填写控件
+<br/>false:允许编辑填写控件（默认值）
+<br/>
                      * @param _forbidEditFillComponent 禁止编辑填写控件
 <br/>true:禁止编辑填写控件
-<br/>false:允许编辑填写控件
-<br/>默认false:允许编辑填写控件
+<br/>false:允许编辑填写控件（默认值）
+<br/>
                      * 
                      */
                     void SetForbidEditFillComponent(const bool& _forbidEditFillComponent);
@@ -311,18 +311,18 @@ namespace TencentCloud
                     bool ForbidEditFillComponentHasBeenSet() const;
 
                     /**
-                     * 获取定制化发起合同弹窗的描述信息，描述信息最长500
+                     * 获取定制化发起合同弹窗的描述信息，描述信息最长500字符
 
-                     * @return CustomCreateFlowDescription 定制化发起合同弹窗的描述信息，描述信息最长500
+                     * @return CustomCreateFlowDescription 定制化发起合同弹窗的描述信息，描述信息最长500字符
 
                      * 
                      */
                     std::string GetCustomCreateFlowDescription() const;
 
                     /**
-                     * 设置定制化发起合同弹窗的描述信息，描述信息最长500
+                     * 设置定制化发起合同弹窗的描述信息，描述信息最长500字符
 
-                     * @param _customCreateFlowDescription 定制化发起合同弹窗的描述信息，描述信息最长500
+                     * @param _customCreateFlowDescription 定制化发起合同弹窗的描述信息，描述信息最长500字符
 
                      * 
                      */
@@ -339,7 +339,7 @@ namespace TencentCloud
 
                     /**
                      * 是否允许修改发起合同时确认弹窗的合同信息（合同名称、合同类型、签署截止时间），若不允许编辑，则表单字段将被禁止输入。
-<br/>true：允许编辑（默认），<br/>false：不允许编辑<br/>默认：false：不允许编辑
+<br/>true：允许编辑<br/>false：不允许编辑（默认值）<br/>
                      */
                     bool m_canEditFlow;
                     bool m_canEditFlowHasBeenSet;
@@ -347,8 +347,8 @@ namespace TencentCloud
                     /**
                      * 是否允许编辑模板控件
 <br/>true:允许编辑模板控件信息
-<br/>false:不允许编辑模板控件信息
-<br/>默认false:不允许编辑模板控件信息
+<br/>false:不允许编辑模板控件信息（默认值）
+<br/>
                      */
                     bool m_canEditFormField;
                     bool m_canEditFormFieldHasBeenSet;
@@ -356,8 +356,8 @@ namespace TencentCloud
                     /**
                      * 发起页面隐藏合同名称展示
 <br/>true:发起页面隐藏合同名称展示
-<br/>false:发起页面不隐藏合同名称展示
-<br/>默认false:发起页面不隐藏合同名称展示
+<br/>false:发起页面不隐藏合同名称展示（默认值）
+<br/>
                      */
                     bool m_hideShowFlowName;
                     bool m_hideShowFlowNameHasBeenSet;
@@ -365,8 +365,8 @@ namespace TencentCloud
                     /**
                      * 发起页面隐藏合同类型展示
 <br/>true:发起页面隐藏合同类型展示
-<br/>false:发起页面不隐藏合同类型展示
-<br/>默认false:发起页面不隐藏合同类型展示
+<br/>false:发起页面不隐藏合同类型展示（默认值）
+<br/>
 
                      */
                     bool m_hideShowFlowType;
@@ -375,8 +375,8 @@ namespace TencentCloud
                     /**
                      * 发起页面隐藏合同截止日期展示
 <br/>true:发起页面隐藏合同截止日期展示
-<br/>false:发起页面不隐藏合同截止日期展示
-<br/>默认false:发起页面不隐藏合同截止日期展示
+<br/>false:发起页面不隐藏合同截止日期展示（默认值）
+<br/>
                      */
                     bool m_hideShowDeadline;
                     bool m_hideShowDeadlineHasBeenSet;
@@ -384,8 +384,8 @@ namespace TencentCloud
                     /**
                      * 发起页面允许跳过添加签署人环节
 <br/>true:发起页面允许跳过添加签署人环节
-<br/>false:发起页面不允许跳过添加签署人环节
-<br/>默认false:发起页面不允许跳过添加签署人环节
+<br/>false:发起页面不允许跳过添加签署人环节（默认值）
+<br/>
 
                      */
                     bool m_canSkipAddApprover;
@@ -394,8 +394,8 @@ namespace TencentCloud
                     /**
                      * 文件发起页面跳过文件上传步骤
 <br/>true:文件发起页面跳过文件上传步骤
-<br/>false:文件发起页面不跳过文件上传步骤
-<br/>默认false:文件发起页面不跳过文件上传步骤
+<br/>false:文件发起页面不跳过文件上传步骤（默认值）
+<br/>
                      */
                     bool m_skipUploadFile;
                     bool m_skipUploadFileHasBeenSet;
@@ -403,14 +403,14 @@ namespace TencentCloud
                     /**
                      * 禁止编辑填写控件
 <br/>true:禁止编辑填写控件
-<br/>false:允许编辑填写控件
-<br/>默认false:允许编辑填写控件
+<br/>false:允许编辑填写控件（默认值）
+<br/>
                      */
                     bool m_forbidEditFillComponent;
                     bool m_forbidEditFillComponentHasBeenSet;
 
                     /**
-                     * 定制化发起合同弹窗的描述信息，描述信息最长500
+                     * 定制化发起合同弹窗的描述信息，描述信息最长500字符
 
                      */
                     std::string m_customCreateFlowDescription;

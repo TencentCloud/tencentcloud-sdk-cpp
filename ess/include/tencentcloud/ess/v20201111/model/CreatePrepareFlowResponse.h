@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快速发起预览链接，有效期5分钟
-                     * @return Url 快速发起预览链接，有效期5分钟
+                     * 获取发起流程的web页面链接，有效期5分钟
+                     * @return Url 发起流程的web页面链接，有效期5分钟
                      * 
                      */
                     std::string GetUrl() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 快速发起预览链接，有效期5分钟
+                     * 发起流程的web页面链接，有效期5分钟
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

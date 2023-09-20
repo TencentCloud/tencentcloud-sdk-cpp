@@ -44,8 +44,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最终授权成功的。其他的跳过的是已经授权了的
-                     * @return UserIds 最终授权成功的。其他的跳过的是已经授权了的
+                     * 获取最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
+                     * @return UserIds 最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
@@ -60,7 +62,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 最终授权成功的。其他的跳过的是已经授权了的
+                     * 最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。
+可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;

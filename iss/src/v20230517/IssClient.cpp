@@ -1975,6 +1975,49 @@ IssClient::DescribeRecordRetrieveTaskOutcomeCallable IssClient::DescribeRecordRe
     return task->get_future();
 }
 
+IssClient::DescribeRecordSliceOutcome IssClient::DescribeRecordSlice(const DescribeRecordSliceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordSlice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordSliceResponse rsp = DescribeRecordSliceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordSliceOutcome(rsp);
+        else
+            return DescribeRecordSliceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordSliceOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::DescribeRecordSliceAsync(const DescribeRecordSliceRequest& request, const DescribeRecordSliceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordSlice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::DescribeRecordSliceOutcomeCallable IssClient::DescribeRecordSliceCallable(const DescribeRecordSliceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordSliceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordSlice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::DescribeRecordTemplateOutcome IssClient::DescribeRecordTemplate(const DescribeRecordTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRecordTemplate");

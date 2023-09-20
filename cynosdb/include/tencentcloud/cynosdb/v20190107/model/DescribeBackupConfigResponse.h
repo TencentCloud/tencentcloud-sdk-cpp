@@ -117,6 +117,22 @@ namespace TencentCloud
                      */
                     bool BackupTypeHasBeenSet() const;
 
+                    /**
+                     * 获取跨地域逻辑备份配置修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogicCrossRegionsConfigUpdateTime 跨地域逻辑备份配置修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogicCrossRegionsConfigUpdateTime() const;
+
+                    /**
+                     * 判断参数 LogicCrossRegionsConfigUpdateTime 是否已赋值
+                     * @return LogicCrossRegionsConfigUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool LogicCrossRegionsConfigUpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -150,6 +166,13 @@ namespace TencentCloud
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
+
+                    /**
+                     * 跨地域逻辑备份配置修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logicCrossRegionsConfigUpdateTime;
+                    bool m_logicCrossRegionsConfigUpdateTimeHasBeenSet;
 
                 };
             }

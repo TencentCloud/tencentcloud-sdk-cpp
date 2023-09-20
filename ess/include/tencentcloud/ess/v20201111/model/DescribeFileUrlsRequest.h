@@ -45,15 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，UserId 必填
-                     * @return Operator 调用方用户信息，UserId 必填
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，UserId 必填
-                     * @param _operator 调用方用户信息，UserId 必填
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -67,30 +71,38 @@ namespace TencentCloud
 
                     /**
                      * 获取文件对应的业务类型，目前支持：
-- 流程 "FLOW"，如需下载合同文件请选择此项
-- 模板 "TEMPLATE"
-- 文档 "DOCUMENT"
-- 印章  “SEAL”
+<ul>
+<li>FLOW 如需下载合同文件请选择此项</li>
+<li>TEMPLATE 如需下载模板文件请选择此项</li>
+<li>DOCUMENT 如需下载文档文件请选择此项</li>
+<li>SEAL 如需下载印章图片请选择此项</li>
+</ul>
                      * @return BusinessType 文件对应的业务类型，目前支持：
-- 流程 "FLOW"，如需下载合同文件请选择此项
-- 模板 "TEMPLATE"
-- 文档 "DOCUMENT"
-- 印章  “SEAL”
+<ul>
+<li>FLOW 如需下载合同文件请选择此项</li>
+<li>TEMPLATE 如需下载模板文件请选择此项</li>
+<li>DOCUMENT 如需下载文档文件请选择此项</li>
+<li>SEAL 如需下载印章图片请选择此项</li>
+</ul>
                      * 
                      */
                     std::string GetBusinessType() const;
 
                     /**
                      * 设置文件对应的业务类型，目前支持：
-- 流程 "FLOW"，如需下载合同文件请选择此项
-- 模板 "TEMPLATE"
-- 文档 "DOCUMENT"
-- 印章  “SEAL”
+<ul>
+<li>FLOW 如需下载合同文件请选择此项</li>
+<li>TEMPLATE 如需下载模板文件请选择此项</li>
+<li>DOCUMENT 如需下载文档文件请选择此项</li>
+<li>SEAL 如需下载印章图片请选择此项</li>
+</ul>
                      * @param _businessType 文件对应的业务类型，目前支持：
-- 流程 "FLOW"，如需下载合同文件请选择此项
-- 模板 "TEMPLATE"
-- 文档 "DOCUMENT"
-- 印章  “SEAL”
+<ul>
+<li>FLOW 如需下载合同文件请选择此项</li>
+<li>TEMPLATE 如需下载模板文件请选择此项</li>
+<li>DOCUMENT 如需下载文档文件请选择此项</li>
+<li>SEAL 如需下载印章图片请选择此项</li>
+</ul>
                      * 
                      */
                     void SetBusinessType(const std::string& _businessType);
@@ -103,19 +115,43 @@ namespace TencentCloud
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
-                     * 获取业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId
-最大支持20个资源
-                     * @return BusinessIds 业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId
-最大支持20个资源
+                     * 获取业务编号的数组，取值如下：
+<ul>
+<li>流程编号</li>
+<li>模板编号</li>
+<li>文档编号</li>
+<li>印章编号</li>
+<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>
+</ul>
+                     * @return BusinessIds 业务编号的数组，取值如下：
+<ul>
+<li>流程编号</li>
+<li>模板编号</li>
+<li>文档编号</li>
+<li>印章编号</li>
+<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>
+</ul>
                      * 
                      */
                     std::vector<std::string> GetBusinessIds() const;
 
                     /**
-                     * 设置业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId
-最大支持20个资源
-                     * @param _businessIds 业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId
-最大支持20个资源
+                     * 设置业务编号的数组，取值如下：
+<ul>
+<li>流程编号</li>
+<li>模板编号</li>
+<li>文档编号</li>
+<li>印章编号</li>
+<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>
+</ul>
+                     * @param _businessIds 业务编号的数组，取值如下：
+<ul>
+<li>流程编号</li>
+<li>模板编号</li>
+<li>文档编号</li>
+<li>印章编号</li>
+<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>
+</ul>
                      * 
                      */
                     void SetBusinessIds(const std::vector<std::string>& _businessIds);
@@ -149,15 +185,35 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取文件类型，"JPG", "PDF","ZIP"等
-                     * @return FileType 文件类型，"JPG", "PDF","ZIP"等
+                     * 获取要下载的文件类型，取值如下：
+<ul>
+<li>JPG</li>
+<li>PDF</li>
+<li>ZIP</li>
+</ul>
+                     * @return FileType 要下载的文件类型，取值如下：
+<ul>
+<li>JPG</li>
+<li>PDF</li>
+<li>ZIP</li>
+</ul>
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置文件类型，"JPG", "PDF","ZIP"等
-                     * @param _fileType 文件类型，"JPG", "PDF","ZIP"等
+                     * 设置要下载的文件类型，取值如下：
+<ul>
+<li>JPG</li>
+<li>PDF</li>
+<li>ZIP</li>
+</ul>
+                     * @param _fileType 要下载的文件类型，取值如下：
+<ul>
+<li>JPG</li>
+<li>PDF</li>
+<li>ZIP</li>
+</ul>
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -170,15 +226,15 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取指定资源起始偏移量，默认0
-                     * @return Offset 指定资源起始偏移量，默认0
+                     * 获取指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。
+                     * @return Offset 指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置指定资源起始偏移量，默认0
-                     * @param _offset 指定资源起始偏移量，默认0
+                     * 设置指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。
+                     * @param _offset 指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -191,15 +247,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取指定资源数量，查询全部资源则传入-1
-                     * @return Limit 指定资源数量，查询全部资源则传入-1
+                     * 获取指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。
+                     * @return Limit 指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置指定资源数量，查询全部资源则传入-1
-                     * @param _limit 指定资源数量，查询全部资源则传入-1
+                     * 设置指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。
+                     * @param _limit 指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -302,24 +358,33 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 调用方用户信息，UserId 必填
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * 文件对应的业务类型，目前支持：
-- 流程 "FLOW"，如需下载合同文件请选择此项
-- 模板 "TEMPLATE"
-- 文档 "DOCUMENT"
-- 印章  “SEAL”
+<ul>
+<li>FLOW 如需下载合同文件请选择此项</li>
+<li>TEMPLATE 如需下载模板文件请选择此项</li>
+<li>DOCUMENT 如需下载文档文件请选择此项</li>
+<li>SEAL 如需下载印章图片请选择此项</li>
+</ul>
                      */
                     std::string m_businessType;
                     bool m_businessTypeHasBeenSet;
 
                     /**
-                     * 业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId
-最大支持20个资源
+                     * 业务编号的数组，取值如下：
+<ul>
+<li>流程编号</li>
+<li>模板编号</li>
+<li>文档编号</li>
+<li>印章编号</li>
+<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>
+</ul>
                      */
                     std::vector<std::string> m_businessIds;
                     bool m_businessIdsHasBeenSet;
@@ -331,19 +396,24 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 文件类型，"JPG", "PDF","ZIP"等
+                     * 要下载的文件类型，取值如下：
+<ul>
+<li>JPG</li>
+<li>PDF</li>
+<li>ZIP</li>
+</ul>
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * 指定资源起始偏移量，默认0
+                     * 指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 指定资源数量，查询全部资源则传入-1
+                     * 指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

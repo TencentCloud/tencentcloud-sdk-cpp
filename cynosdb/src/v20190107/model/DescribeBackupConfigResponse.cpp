@@ -28,7 +28,8 @@ DescribeBackupConfigResponse::DescribeBackupConfigResponse() :
     m_backupTimeEndHasBeenSet(false),
     m_reserveDurationHasBeenSet(false),
     m_backupFreqHasBeenSet(false),
-    m_backupTypeHasBeenSet(false)
+    m_backupTypeHasBeenSet(false),
+    m_logicCrossRegionsConfigUpdateTimeHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,16 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
         m_backupTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LogicCrossRegionsConfigUpdateTime") && !rsp["LogicCrossRegionsConfigUpdateTime"].IsNull())
+    {
+        if (!rsp["LogicCrossRegionsConfigUpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogicCrossRegionsConfigUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logicCrossRegionsConfigUpdateTime = string(rsp["LogicCrossRegionsConfigUpdateTime"].GetString());
+        m_logicCrossRegionsConfigUpdateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +183,14 @@ string DescribeBackupConfigResponse::ToJsonString() const
         string key = "BackupType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logicCrossRegionsConfigUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicCrossRegionsConfigUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logicCrossRegionsConfigUpdateTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -234,6 +253,16 @@ string DescribeBackupConfigResponse::GetBackupType() const
 bool DescribeBackupConfigResponse::BackupTypeHasBeenSet() const
 {
     return m_backupTypeHasBeenSet;
+}
+
+string DescribeBackupConfigResponse::GetLogicCrossRegionsConfigUpdateTime() const
+{
+    return m_logicCrossRegionsConfigUpdateTime;
+}
+
+bool DescribeBackupConfigResponse::LogicCrossRegionsConfigUpdateTimeHasBeenSet() const
+{
+    return m_logicCrossRegionsConfigUpdateTimeHasBeenSet;
 }
 
 

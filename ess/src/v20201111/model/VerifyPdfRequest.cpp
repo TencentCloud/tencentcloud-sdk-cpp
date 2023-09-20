@@ -24,7 +24,8 @@ using namespace std;
 
 VerifyPdfRequest::VerifyPdfRequest() :
     m_flowIdHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,15 @@ string VerifyPdfRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -90,6 +100,22 @@ void VerifyPdfRequest::SetOperator(const UserInfo& _operator)
 bool VerifyPdfRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+Agent VerifyPdfRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void VerifyPdfRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool VerifyPdfRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

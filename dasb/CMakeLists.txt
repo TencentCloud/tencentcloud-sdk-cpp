@@ -55,6 +55,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/CreateDeviceGroupResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeUserGroupMembersRequest.h
   include/tencentcloud/dasb/v20191018/model/OperationEvent.h
+  include/tencentcloud/dasb/v20191018/model/ModifyCmdTemplateRequest.h
   include/tencentcloud/dasb/v20191018/model/SessionResult.h
   include/tencentcloud/dasb/v20191018/model/CreateUserResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeAssetSyncStatusResponse.h
@@ -110,6 +111,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/ModifyUserResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeCmdTemplatesResponse.h
   include/tencentcloud/dasb/v20191018/model/CreateDeviceAccountRequest.h
+  include/tencentcloud/dasb/v20191018/model/ModifyCmdTemplateResponse.h
   include/tencentcloud/dasb/v20191018/model/AddDeviceGroupMembersResponse.h
   include/tencentcloud/dasb/v20191018/model/DeleteCmdTemplatesRequest.h
   include/tencentcloud/dasb/v20191018/model/DescribeUserGroupsResponse.h
@@ -185,6 +187,7 @@ set(dasb_src
   src/v20191018/model/CreateDeviceGroupResponse.cpp
   src/v20191018/model/DescribeUserGroupMembersRequest.cpp
   src/v20191018/model/OperationEvent.cpp
+  src/v20191018/model/ModifyCmdTemplateRequest.cpp
   src/v20191018/model/SessionResult.cpp
   src/v20191018/model/CreateUserResponse.cpp
   src/v20191018/model/DescribeAssetSyncStatusResponse.cpp
@@ -240,6 +243,7 @@ set(dasb_src
   src/v20191018/model/ModifyUserResponse.cpp
   src/v20191018/model/DescribeCmdTemplatesResponse.cpp
   src/v20191018/model/CreateDeviceAccountRequest.cpp
+  src/v20191018/model/ModifyCmdTemplateResponse.cpp
   src/v20191018/model/AddDeviceGroupMembersResponse.cpp
   src/v20191018/model/DeleteCmdTemplatesRequest.cpp
   src/v20191018/model/DescribeUserGroupsResponse.cpp

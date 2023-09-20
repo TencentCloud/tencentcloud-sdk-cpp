@@ -99,6 +99,8 @@
 #include <tencentcloud/dasb/v20191018/model/ImportExternalDeviceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyAclRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyAclResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyCmdTemplateRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyCmdTemplateResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyDeviceRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyDeviceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyDeviceGroupRequest.h>
@@ -253,6 +255,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAclResponse> ModifyAclOutcome;
                 typedef std::future<ModifyAclOutcome> ModifyAclOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyAclRequest&, ModifyAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCmdTemplateResponse> ModifyCmdTemplateOutcome;
+                typedef std::future<ModifyCmdTemplateOutcome> ModifyCmdTemplateOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ModifyCmdTemplateRequest&, ModifyCmdTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCmdTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDeviceResponse> ModifyDeviceOutcome;
                 typedef std::future<ModifyDeviceOutcome> ModifyDeviceOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyDeviceRequest&, ModifyDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceAsyncHandler;
@@ -636,6 +641,15 @@ namespace TencentCloud
                 ModifyAclOutcome ModifyAcl(const Model::ModifyAclRequest &request);
                 void ModifyAclAsync(const Model::ModifyAclRequest& request, const ModifyAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAclOutcomeCallable ModifyAclCallable(const Model::ModifyAclRequest& request);
+
+                /**
+                 *修改高危命令模板
+                 * @param req ModifyCmdTemplateRequest
+                 * @return ModifyCmdTemplateOutcome
+                 */
+                ModifyCmdTemplateOutcome ModifyCmdTemplate(const Model::ModifyCmdTemplateRequest &request);
+                void ModifyCmdTemplateAsync(const Model::ModifyCmdTemplateRequest& request, const ModifyCmdTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCmdTemplateOutcomeCallable ModifyCmdTemplateCallable(const Model::ModifyCmdTemplateRequest& request);
 
                 /**
                  *修改资产信息

@@ -23,8 +23,8 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 DescribePortsRequest::DescribePortsRequest() :
-    m_editionHasBeenSet(false),
-    m_instanceIDHasBeenSet(false)
+    m_instanceIDHasBeenSet(false),
+    m_editionHasBeenSet(false)
 {
 }
 
@@ -35,20 +35,20 @@ string DescribePortsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_editionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Edition";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_instanceIDHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_editionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Edition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -58,22 +58,6 @@ string DescribePortsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribePortsRequest::GetEdition() const
-{
-    return m_edition;
-}
-
-void DescribePortsRequest::SetEdition(const string& _edition)
-{
-    m_edition = _edition;
-    m_editionHasBeenSet = true;
-}
-
-bool DescribePortsRequest::EditionHasBeenSet() const
-{
-    return m_editionHasBeenSet;
-}
 
 string DescribePortsRequest::GetInstanceID() const
 {
@@ -89,6 +73,22 @@ void DescribePortsRequest::SetInstanceID(const string& _instanceID)
 bool DescribePortsRequest::InstanceIDHasBeenSet() const
 {
     return m_instanceIDHasBeenSet;
+}
+
+string DescribePortsRequest::GetEdition() const
+{
+    return m_edition;
+}
+
+void DescribePortsRequest::SetEdition(const string& _edition)
+{
+    m_edition = _edition;
+    m_editionHasBeenSet = true;
+}
+
+bool DescribePortsRequest::EditionHasBeenSet() const
+{
+    return m_editionHasBeenSet;
 }
 
 

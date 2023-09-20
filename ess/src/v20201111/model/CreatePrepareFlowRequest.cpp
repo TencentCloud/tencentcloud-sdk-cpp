@@ -39,7 +39,8 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_needCreateReviewHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_flowIdHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_initiatorComponentsHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,21 @@ string CreatePrepareFlowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_initiatorComponentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InitiatorComponents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_initiatorComponents.begin(); itr != m_initiatorComponents.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -475,6 +491,22 @@ void CreatePrepareFlowRequest::SetAgent(const Agent& _agent)
 bool CreatePrepareFlowRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+vector<Component> CreatePrepareFlowRequest::GetInitiatorComponents() const
+{
+    return m_initiatorComponents;
+}
+
+void CreatePrepareFlowRequest::SetInitiatorComponents(const vector<Component>& _initiatorComponents)
+{
+    m_initiatorComponents = _initiatorComponents;
+    m_initiatorComponentsHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::InitiatorComponentsHasBeenSet() const
+{
+    return m_initiatorComponentsHasBeenSet;
 }
 
 

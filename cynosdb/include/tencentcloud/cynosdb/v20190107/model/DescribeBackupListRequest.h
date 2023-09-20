@@ -319,6 +319,48 @@ namespace TencentCloud
                      */
                     bool SnapshotIdListHasBeenSet() const;
 
+                    /**
+                     * 获取备份地域
+                     * @return BackupRegion 备份地域
+                     * 
+                     */
+                    std::string GetBackupRegion() const;
+
+                    /**
+                     * 设置备份地域
+                     * @param _backupRegion 备份地域
+                     * 
+                     */
+                    void SetBackupRegion(const std::string& _backupRegion);
+
+                    /**
+                     * 判断参数 BackupRegion 是否已赋值
+                     * @return BackupRegion 是否已赋值
+                     * 
+                     */
+                    bool BackupRegionHasBeenSet() const;
+
+                    /**
+                     * 获取是否跨地域备份
+                     * @return IsCrossRegionsBackup 是否跨地域备份
+                     * 
+                     */
+                    std::string GetIsCrossRegionsBackup() const;
+
+                    /**
+                     * 设置是否跨地域备份
+                     * @param _isCrossRegionsBackup 是否跨地域备份
+                     * 
+                     */
+                    void SetIsCrossRegionsBackup(const std::string& _isCrossRegionsBackup);
+
+                    /**
+                     * 判断参数 IsCrossRegionsBackup 是否已赋值
+                     * @return IsCrossRegionsBackup 是否已赋值
+                     * 
+                     */
+                    bool IsCrossRegionsBackupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +441,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_snapshotIdList;
                     bool m_snapshotIdListHasBeenSet;
+
+                    /**
+                     * 备份地域
+                     */
+                    std::string m_backupRegion;
+                    bool m_backupRegionHasBeenSet;
+
+                    /**
+                     * 是否跨地域备份
+                     */
+                    std::string m_isCrossRegionsBackup;
+                    bool m_isCrossRegionsBackupHasBeenSet;
 
                 };
             }

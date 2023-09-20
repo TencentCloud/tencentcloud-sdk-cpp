@@ -1158,6 +1158,49 @@ OrganizationClient::MoveOrganizationNodeMembersOutcomeCallable OrganizationClien
     return task->get_future();
 }
 
+OrganizationClient::QuitOrganizationOutcome OrganizationClient::QuitOrganization(const QuitOrganizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "QuitOrganization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QuitOrganizationResponse rsp = QuitOrganizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QuitOrganizationOutcome(rsp);
+        else
+            return QuitOrganizationOutcome(o.GetError());
+    }
+    else
+    {
+        return QuitOrganizationOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::QuitOrganizationAsync(const QuitOrganizationRequest& request, const QuitOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QuitOrganization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::QuitOrganizationOutcomeCallable OrganizationClient::QuitOrganizationCallable(const QuitOrganizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QuitOrganizationOutcome()>>(
+        [this, request]()
+        {
+            return this->QuitOrganization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::UpdateOrganizationMemberOutcome OrganizationClient::UpdateOrganizationMember(const UpdateOrganizationMemberRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateOrganizationMember");

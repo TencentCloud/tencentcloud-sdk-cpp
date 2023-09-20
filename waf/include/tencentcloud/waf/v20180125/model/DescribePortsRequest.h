@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取版本
-                     * @return Edition 版本
-                     * 
-                     */
-                    std::string GetEdition() const;
-
-                    /**
-                     * 设置版本
-                     * @param _edition 版本
-                     * 
-                     */
-                    void SetEdition(const std::string& _edition);
-
-                    /**
-                     * 判断参数 Edition 是否已赋值
-                     * @return Edition 是否已赋值
-                     * 
-                     */
-                    bool EditionHasBeenSet() const;
-
-                    /**
                      * 获取实例ID
                      * @return InstanceID 实例ID
                      * 
@@ -84,19 +63,40 @@ namespace TencentCloud
                      */
                     bool InstanceIDHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取实例类型
+                     * @return Edition 实例类型
+                     * 
+                     */
+                    std::string GetEdition() const;
 
                     /**
-                     * 版本
+                     * 设置实例类型
+                     * @param _edition 实例类型
+                     * 
                      */
-                    std::string m_edition;
-                    bool m_editionHasBeenSet;
+                    void SetEdition(const std::string& _edition);
+
+                    /**
+                     * 判断参数 Edition 是否已赋值
+                     * @return Edition 是否已赋值
+                     * 
+                     */
+                    bool EditionHasBeenSet() const;
+
+                private:
 
                     /**
                      * 实例ID
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
+
+                    /**
+                     * 实例类型
+                     */
+                    std::string m_edition;
+                    bool m_editionHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/LogicBackupConfigInfo.h>
 
 
 namespace TencentCloud
@@ -62,27 +63,6 @@ namespace TencentCloud
                      * 
                      */
                     bool ClusterIdHasBeenSet() const;
-
-                    /**
-                     * 获取表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     * @return ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     * 
-                     */
-                    uint64_t GetReserveDuration() const;
-
-                    /**
-                     * 设置表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     * @param _reserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     * 
-                     */
-                    void SetReserveDuration(const uint64_t& _reserveDuration);
-
-                    /**
-                     * 判断参数 ReserveDuration 是否已赋值
-                     * @return ReserveDuration 是否已赋值
-                     * 
-                     */
-                    bool ReserveDurationHasBeenSet() const;
 
                     /**
                      * 获取表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
@@ -127,6 +107,27 @@ namespace TencentCloud
                     bool BackupTimeEndHasBeenSet() const;
 
                     /**
+                     * 获取表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * @return ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * 
+                     */
+                    uint64_t GetReserveDuration() const;
+
+                    /**
+                     * 设置表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * @param _reserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * 
+                     */
+                    void SetReserveDuration(const uint64_t& _reserveDuration);
+
+                    /**
+                     * 判断参数 ReserveDuration 是否已赋值
+                     * @return ReserveDuration 是否已赋值
+                     * 
+                     */
+                    bool ReserveDurationHasBeenSet() const;
+
+                    /**
                      * 获取该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
                      * @return BackupFreq 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
                      * 
@@ -168,6 +169,48 @@ namespace TencentCloud
                      */
                     bool BackupTypeHasBeenSet() const;
 
+                    /**
+                     * 获取逻辑备份配置
+                     * @return LogicBackupConfig 逻辑备份配置
+                     * 
+                     */
+                    LogicBackupConfigInfo GetLogicBackupConfig() const;
+
+                    /**
+                     * 设置逻辑备份配置
+                     * @param _logicBackupConfig 逻辑备份配置
+                     * 
+                     */
+                    void SetLogicBackupConfig(const LogicBackupConfigInfo& _logicBackupConfig);
+
+                    /**
+                     * 判断参数 LogicBackupConfig 是否已赋值
+                     * @return LogicBackupConfig 是否已赋值
+                     * 
+                     */
+                    bool LogicBackupConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否删除自动逻辑备份
+                     * @return DeleteAutoLogicBackup 是否删除自动逻辑备份
+                     * 
+                     */
+                    bool GetDeleteAutoLogicBackup() const;
+
+                    /**
+                     * 设置是否删除自动逻辑备份
+                     * @param _deleteAutoLogicBackup 是否删除自动逻辑备份
+                     * 
+                     */
+                    void SetDeleteAutoLogicBackup(const bool& _deleteAutoLogicBackup);
+
+                    /**
+                     * 判断参数 DeleteAutoLogicBackup 是否已赋值
+                     * @return DeleteAutoLogicBackup 是否已赋值
+                     * 
+                     */
+                    bool DeleteAutoLogicBackupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,12 +218,6 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
-
-                    /**
-                     * 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     */
-                    uint64_t m_reserveDuration;
-                    bool m_reserveDurationHasBeenSet;
 
                     /**
                      * 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
@@ -195,6 +232,12 @@ namespace TencentCloud
                     bool m_backupTimeEndHasBeenSet;
 
                     /**
+                     * 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     */
+                    uint64_t m_reserveDuration;
+                    bool m_reserveDurationHasBeenSet;
+
+                    /**
                      * 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
                      */
                     std::vector<std::string> m_backupFreq;
@@ -205,6 +248,18 @@ namespace TencentCloud
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
+
+                    /**
+                     * 逻辑备份配置
+                     */
+                    LogicBackupConfigInfo m_logicBackupConfig;
+                    bool m_logicBackupConfigHasBeenSet;
+
+                    /**
+                     * 是否删除自动逻辑备份
+                     */
+                    bool m_deleteAutoLogicBackup;
+                    bool m_deleteAutoLogicBackupHasBeenSet;
 
                 };
             }

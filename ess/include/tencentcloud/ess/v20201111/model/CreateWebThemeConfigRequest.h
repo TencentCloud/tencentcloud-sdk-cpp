@@ -96,15 +96,15 @@ namespace TencentCloud
                     bool ThemeTypeHasBeenSet() const;
 
                     /**
-                     * 获取主题配置
-                     * @return WebThemeConfig 主题配置
+                     * 获取电子签logo是否展示，主体颜色等配置项
+                     * @return WebThemeConfig 电子签logo是否展示，主体颜色等配置项
                      * 
                      */
                     WebThemeConfig GetWebThemeConfig() const;
 
                     /**
-                     * 设置主题配置
-                     * @param _webThemeConfig 主题配置
+                     * 设置电子签logo是否展示，主体颜色等配置项
+                     * @param _webThemeConfig 电子签logo是否展示，主体颜色等配置项
                      * 
                      */
                     void SetWebThemeConfig(const WebThemeConfig& _webThemeConfig);
@@ -158,7 +158,7 @@ namespace TencentCloud
                     bool m_themeTypeHasBeenSet;
 
                     /**
-                     * 主题配置
+                     * 电子签logo是否展示，主体颜色等配置项
                      */
                     WebThemeConfig m_webThemeConfig;
                     bool m_webThemeConfigHasBeenSet;

@@ -1674,6 +1674,49 @@ DasbClient::ModifyAclOutcomeCallable DasbClient::ModifyAclCallable(const ModifyA
     return task->get_future();
 }
 
+DasbClient::ModifyCmdTemplateOutcome DasbClient::ModifyCmdTemplate(const ModifyCmdTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCmdTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCmdTemplateResponse rsp = ModifyCmdTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCmdTemplateOutcome(rsp);
+        else
+            return ModifyCmdTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCmdTemplateOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ModifyCmdTemplateAsync(const ModifyCmdTemplateRequest& request, const ModifyCmdTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCmdTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ModifyCmdTemplateOutcomeCallable DasbClient::ModifyCmdTemplateCallable(const ModifyCmdTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCmdTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCmdTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::ModifyDeviceOutcome DasbClient::ModifyDevice(const ModifyDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDevice");
