@@ -212,7 +212,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/QueryMerchantPayWayListRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryOpenBankRefundOrderRequest.h
   include/tencentcloud/cpdp/v20190820/model/WithdrawCashMembershipRequest.h
-  include/tencentcloud/cpdp/v20190820/model/RevResigterBillSupportWithdrawRequest.h
+  include/tencentcloud/cpdp/v20190820/model/TransferItem.h
   include/tencentcloud/cpdp/v20190820/model/CreateInvoiceResponse.h
   include/tencentcloud/cpdp/v20190820/model/AddMerchantRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResultV2.h
@@ -337,7 +337,6 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/PaymentOrders.h
   include/tencentcloud/cpdp/v20190820/model/CloudSubRefundItem.h
   include/tencentcloud/cpdp/v20190820/model/QueryOpenBankDownLoadUrlResponse.h
-  include/tencentcloud/cpdp/v20190820/model/RevResigterBillSupportWithdrawResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryOpenBankVerificationOrderResponse.h
   include/tencentcloud/cpdp/v20190820/model/ApplyApplicationMaterialResponse.h
   include/tencentcloud/cpdp/v20190820/model/DistributeQueryResult.h
@@ -469,7 +468,6 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/MultiApplyOrder.h
   include/tencentcloud/cpdp/v20190820/model/AddFlexIdInfoRequest.h
   include/tencentcloud/cpdp/v20190820/model/ModifyMerchantRequest.h
-  include/tencentcloud/cpdp/v20190820/model/TransferItem.h
   include/tencentcloud/cpdp/v20190820/model/OrderItem.h
   include/tencentcloud/cpdp/v20190820/model/PayeeAccountInfos.h
   include/tencentcloud/cpdp/v20190820/model/RefundMemberTransactionRequest.h
@@ -896,7 +894,7 @@ set(cpdp_src
   src/v20190820/model/QueryMerchantPayWayListRequest.cpp
   src/v20190820/model/QueryOpenBankRefundOrderRequest.cpp
   src/v20190820/model/WithdrawCashMembershipRequest.cpp
-  src/v20190820/model/RevResigterBillSupportWithdrawRequest.cpp
+  src/v20190820/model/TransferItem.cpp
   src/v20190820/model/CreateInvoiceResponse.cpp
   src/v20190820/model/AddMerchantRequest.cpp
   src/v20190820/model/CreateRedInvoiceResultV2.cpp
@@ -1021,7 +1019,6 @@ set(cpdp_src
   src/v20190820/model/PaymentOrders.cpp
   src/v20190820/model/CloudSubRefundItem.cpp
   src/v20190820/model/QueryOpenBankDownLoadUrlResponse.cpp
-  src/v20190820/model/RevResigterBillSupportWithdrawResponse.cpp
   src/v20190820/model/QueryOpenBankVerificationOrderResponse.cpp
   src/v20190820/model/ApplyApplicationMaterialResponse.cpp
   src/v20190820/model/DistributeQueryResult.cpp
@@ -1153,7 +1150,6 @@ set(cpdp_src
   src/v20190820/model/MultiApplyOrder.cpp
   src/v20190820/model/AddFlexIdInfoRequest.cpp
   src/v20190820/model/ModifyMerchantRequest.cpp
-  src/v20190820/model/TransferItem.cpp
   src/v20190820/model/OrderItem.cpp
   src/v20190820/model/PayeeAccountInfos.cpp
   src/v20190820/model/RefundMemberTransactionRequest.cpp

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页大小，默认为 15
-                     * @return Limit 每页大小，默认为 15
+                     * 获取每页大小，默认为 15，最大1000
+                     * @return Limit 每页大小，默认为 15，最大1000
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页大小，默认为 15
-                     * @param _limit 每页大小，默认为 15
+                     * 设置每页大小，默认为 15，最大1000
+                     * @param _limit 每页大小，默认为 15，最大1000
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool ShowProjectHasBeenSet() const;
 
+                    /**
+                     * 获取标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * @return Category 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * 
+                     */
+                    std::string GetCategory() const;
+
+                    /**
+                     * 设置标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * @param _category 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * 
+                     */
+                    void SetCategory(const std::string& _category);
+
+                    /**
+                     * 判断参数 Category 是否已赋值
+                     * @return Category 是否已赋值
+                     * 
+                     */
+                    bool CategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,7 +162,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页大小，默认为 15
+                     * 每页大小，默认为 15，最大1000
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     uint64_t m_showProject;
                     bool m_showProjectHasBeenSet;
+
+                    /**
+                     * 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     */
+                    std::string m_category;
+                    bool m_categoryHasBeenSet;
 
                 };
             }

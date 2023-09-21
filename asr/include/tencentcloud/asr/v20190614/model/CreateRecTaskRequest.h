@@ -266,23 +266,23 @@ namespace TencentCloud
                     bool ResTextFormatHasBeenSet() const;
 
                     /**
-                     * 获取语音数据来源
-0：语音 URL；
-1：语音数据（post body）
-                     * @return SourceType 语音数据来源
-0：语音 URL；
-1：语音数据（post body）
+                     * 获取音频数据来源
+0：音频URL；
+1：音频数据（post body）
+                     * @return SourceType 音频数据来源
+0：音频URL；
+1：音频数据（post body）
                      * 
                      */
                     uint64_t GetSourceType() const;
 
                     /**
-                     * 设置语音数据来源
-0：语音 URL；
-1：语音数据（post body）
-                     * @param _sourceType 语音数据来源
-0：语音 URL；
-1：语音数据（post body）
+                     * 设置音频数据来源
+0：音频URL；
+1：音频数据（post body）
+                     * @param _sourceType 音频数据来源
+0：音频URL；
+1：音频数据（post body）
                      * 
                      */
                     void SetSourceType(const uint64_t& _sourceType);
@@ -295,11 +295,11 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取语音数据base64编码
+                     * 获取音频数据base64编码
 **当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
 
 注意：音频数据要小于5MB（含）
-                     * @return Data 语音数据base64编码
+                     * @return Data 音频数据base64编码
 **当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
 
 注意：音频数据要小于5MB（含）
@@ -308,11 +308,11 @@ namespace TencentCloud
                     std::string GetData() const;
 
                     /**
-                     * 设置语音数据base64编码
+                     * 设置音频数据base64编码
 **当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
 
 注意：音频数据要小于5MB（含）
-                     * @param _data 语音数据base64编码
+                     * @param _data 音频数据base64编码
 **当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
 
 注意：音频数据要小于5MB（含）
@@ -349,13 +349,13 @@ namespace TencentCloud
                     bool DataLenHasBeenSet() const;
 
                     /**
-                     * 获取语音URL的地址（需要公网环境浏览器可下载）
+                     * 获取音频URL的地址（需要公网环境浏览器可下载）
 **当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
 
 注意：
 1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
 2. 请保证文件的下载速度，否则可能下载失败
-                     * @return Url 语音URL的地址（需要公网环境浏览器可下载）
+                     * @return Url 音频URL的地址（需要公网环境浏览器可下载）
 **当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
 
 注意：
@@ -366,13 +366,13 @@ namespace TencentCloud
                     std::string GetUrl() const;
 
                     /**
-                     * 设置语音URL的地址（需要公网环境浏览器可下载）
+                     * 设置音频URL的地址（需要公网环境浏览器可下载）
 **当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
 
 注意：
 1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；
 2. 请保证文件的下载速度，否则可能下载失败
-                     * @param _url 语音URL的地址（需要公网环境浏览器可下载）
+                     * @param _url 音频URL的地址（需要公网环境浏览器可下载）
 **当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
 
 注意：
@@ -976,15 +976,15 @@ namespace TencentCloud
                     bool m_resTextFormatHasBeenSet;
 
                     /**
-                     * 语音数据来源
-0：语音 URL；
-1：语音数据（post body）
+                     * 音频数据来源
+0：音频URL；
+1：音频数据（post body）
                      */
                     uint64_t m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 语音数据base64编码
+                     * 音频数据base64编码
 **当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**
 
 注意：音频数据要小于5MB（含）
@@ -999,7 +999,7 @@ namespace TencentCloud
                     bool m_dataLenHasBeenSet;
 
                     /**
-                     * 语音URL的地址（需要公网环境浏览器可下载）
+                     * 音频URL的地址（需要公网环境浏览器可下载）
 **当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**
 
 注意：

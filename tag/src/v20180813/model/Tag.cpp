@@ -22,7 +22,8 @@ using namespace std;
 
 Tag::Tag() :
     m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false)
+    m_tagValueHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome Tag::Deserialize(const rapidjson::Value &value)
         m_tagValueHasBeenSet = true;
     }
 
+    if (value.HasMember("Category") && !value["Category"].IsNull())
+    {
+        if (!value["Category"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Tag.Category` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_category = string(value["Category"].GetString());
+        m_categoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void Tag::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "TagValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tagValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_category.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void Tag::SetTagValue(const string& _tagValue)
 bool Tag::TagValueHasBeenSet() const
 {
     return m_tagValueHasBeenSet;
+}
+
+string Tag::GetCategory() const
+{
+    return m_category;
+}
+
+void Tag::SetCategory(const string& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool Tag::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
 }
 

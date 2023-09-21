@@ -35,7 +35,8 @@ QueueConfig::QueueConfig() :
     m_scaleOutRatioHasBeenSet(false),
     m_scaleOutNodeThresholdHasBeenSet(false),
     m_maxNodesPerCycleHasBeenSet(false),
-    m_scaleUpMemRatioHasBeenSet(false)
+    m_scaleUpMemRatioHasBeenSet(false),
+    m_enhancedServiceHasBeenSet(false)
 {
 }
 
@@ -228,6 +229,23 @@ CoreInternalOutcome QueueConfig::Deserialize(const rapidjson::Value &value)
         m_scaleUpMemRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("EnhancedService") && !value["EnhancedService"].IsNull())
+    {
+        if (!value["EnhancedService"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueConfig.EnhancedService` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_enhancedService.Deserialize(value["EnhancedService"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_enhancedServiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -369,6 +387,15 @@ void QueueConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ScaleUpMemRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scaleUpMemRatio, allocator);
+    }
+
+    if (m_enhancedServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhancedService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enhancedService.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -612,5 +639,21 @@ void QueueConfig::SetScaleUpMemRatio(const int64_t& _scaleUpMemRatio)
 bool QueueConfig::ScaleUpMemRatioHasBeenSet() const
 {
     return m_scaleUpMemRatioHasBeenSet;
+}
+
+EnhancedService QueueConfig::GetEnhancedService() const
+{
+    return m_enhancedService;
+}
+
+void QueueConfig::SetEnhancedService(const EnhancedService& _enhancedService)
+{
+    m_enhancedService = _enhancedService;
+    m_enhancedServiceHasBeenSet = true;
+}
+
+bool QueueConfig::EnhancedServiceHasBeenSet() const
+{
+    return m_enhancedServiceHasBeenSet;
 }
 

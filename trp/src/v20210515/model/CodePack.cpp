@@ -40,7 +40,11 @@ CodePack::CodePack() :
     m_customIdHasBeenSet(false),
     m_packTypeHasBeenSet(false),
     m_packLevelHasBeenSet(false),
-    m_packSpecHasBeenSet(false)
+    m_packSpecHasBeenSet(false),
+    m_productNameHasBeenSet(false),
+    m_productSpecificationHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_relateTypeHasBeenSet(false)
 {
 }
 
@@ -259,6 +263,46 @@ CoreInternalOutcome CodePack::Deserialize(const rapidjson::Value &value)
         m_packSpecHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductName") && !value["ProductName"].IsNull())
+    {
+        if (!value["ProductName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePack.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productName = string(value["ProductName"].GetString());
+        m_productNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductSpecification") && !value["ProductSpecification"].IsNull())
+    {
+        if (!value["ProductSpecification"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePack.ProductSpecification` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productSpecification = string(value["ProductSpecification"].GetString());
+        m_productSpecificationHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductId") && !value["ProductId"].IsNull())
+    {
+        if (!value["ProductId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePack.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productId = string(value["ProductId"].GetString());
+        m_productIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RelateType") && !value["RelateType"].IsNull())
+    {
+        if (!value["RelateType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePack.RelateType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_relateType = value["RelateType"].GetInt64();
+        m_relateTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +475,38 @@ void CodePack::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_productNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productSpecification.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_relateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelateType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_relateType, allocator);
     }
 
 }
@@ -754,5 +830,69 @@ void CodePack::SetPackSpec(const vector<PackSpec>& _packSpec)
 bool CodePack::PackSpecHasBeenSet() const
 {
     return m_packSpecHasBeenSet;
+}
+
+string CodePack::GetProductName() const
+{
+    return m_productName;
+}
+
+void CodePack::SetProductName(const string& _productName)
+{
+    m_productName = _productName;
+    m_productNameHasBeenSet = true;
+}
+
+bool CodePack::ProductNameHasBeenSet() const
+{
+    return m_productNameHasBeenSet;
+}
+
+string CodePack::GetProductSpecification() const
+{
+    return m_productSpecification;
+}
+
+void CodePack::SetProductSpecification(const string& _productSpecification)
+{
+    m_productSpecification = _productSpecification;
+    m_productSpecificationHasBeenSet = true;
+}
+
+bool CodePack::ProductSpecificationHasBeenSet() const
+{
+    return m_productSpecificationHasBeenSet;
+}
+
+string CodePack::GetProductId() const
+{
+    return m_productId;
+}
+
+void CodePack::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool CodePack::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+int64_t CodePack::GetRelateType() const
+{
+    return m_relateType;
+}
+
+void CodePack::SetRelateType(const int64_t& _relateType)
+{
+    m_relateType = _relateType;
+    m_relateTypeHasBeenSet = true;
+}
+
+bool CodePack::RelateTypeHasBeenSet() const
+{
+    return m_relateTypeHasBeenSet;
 }
 

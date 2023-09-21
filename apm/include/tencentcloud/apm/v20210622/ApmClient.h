@@ -31,6 +31,8 @@
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeGeneralSpanListResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h>
@@ -65,6 +67,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGeneralMetricDataResponse> DescribeGeneralMetricDataOutcome;
                 typedef std::future<DescribeGeneralMetricDataOutcome> DescribeGeneralMetricDataOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeGeneralMetricDataRequest&, DescribeGeneralMetricDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralMetricDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGeneralSpanListResponse> DescribeGeneralSpanListOutcome;
+                typedef std::future<DescribeGeneralSpanListOutcome> DescribeGeneralSpanListOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeGeneralSpanListRequest&, DescribeGeneralSpanListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralSpanListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMetricRecordsResponse> DescribeMetricRecordsOutcome;
                 typedef std::future<DescribeMetricRecordsOutcome> DescribeMetricRecordsOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeMetricRecordsRequest&, DescribeMetricRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricRecordsAsyncHandler;
@@ -116,6 +121,15 @@ namespace TencentCloud
                 DescribeGeneralMetricDataOutcome DescribeGeneralMetricData(const Model::DescribeGeneralMetricDataRequest &request);
                 void DescribeGeneralMetricDataAsync(const Model::DescribeGeneralMetricDataRequest& request, const DescribeGeneralMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGeneralMetricDataOutcomeCallable DescribeGeneralMetricDataCallable(const Model::DescribeGeneralMetricDataRequest& request);
+
+                /**
+                 *通用查询调用链列表
+                 * @param req DescribeGeneralSpanListRequest
+                 * @return DescribeGeneralSpanListOutcome
+                 */
+                DescribeGeneralSpanListOutcome DescribeGeneralSpanList(const Model::DescribeGeneralSpanListRequest &request);
+                void DescribeGeneralSpanListAsync(const Model::DescribeGeneralSpanListRequest& request, const DescribeGeneralSpanListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGeneralSpanListOutcomeCallable DescribeGeneralSpanListCallable(const Model::DescribeGeneralSpanListRequest& request);
 
                 /**
                  *拉取通用指标列表

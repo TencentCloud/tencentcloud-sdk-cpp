@@ -32,7 +32,9 @@ CreateCustomPackRequest::CreateCustomPackRequest() :
     m_customIdHasBeenSet(false),
     m_codePartsHasBeenSet(false),
     m_batchIdHasBeenSet(false),
-    m_serialTypeHasBeenSet(false)
+    m_serialTypeHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_relateTypeHasBeenSet(false)
 {
 }
 
@@ -135,6 +137,22 @@ string CreateCustomPackRequest::ToJsonString() const
         string key = "SerialType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_serialType, allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_relateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_relateType, allocator);
     }
 
 
@@ -303,6 +321,38 @@ void CreateCustomPackRequest::SetSerialType(const uint64_t& _serialType)
 bool CreateCustomPackRequest::SerialTypeHasBeenSet() const
 {
     return m_serialTypeHasBeenSet;
+}
+
+string CreateCustomPackRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void CreateCustomPackRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool CreateCustomPackRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+int64_t CreateCustomPackRequest::GetRelateType() const
+{
+    return m_relateType;
+}
+
+void CreateCustomPackRequest::SetRelateType(const int64_t& _relateType)
+{
+    m_relateType = _relateType;
+    m_relateTypeHasBeenSet = true;
+}
+
+bool CreateCustomPackRequest::RelateTypeHasBeenSet() const
+{
+    return m_relateTypeHasBeenSet;
 }
 
 

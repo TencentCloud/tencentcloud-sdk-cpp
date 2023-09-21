@@ -212,6 +212,49 @@ ApmClient::DescribeGeneralMetricDataOutcomeCallable ApmClient::DescribeGeneralMe
     return task->get_future();
 }
 
+ApmClient::DescribeGeneralSpanListOutcome ApmClient::DescribeGeneralSpanList(const DescribeGeneralSpanListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGeneralSpanList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGeneralSpanListResponse rsp = DescribeGeneralSpanListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGeneralSpanListOutcome(rsp);
+        else
+            return DescribeGeneralSpanListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGeneralSpanListOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeGeneralSpanListAsync(const DescribeGeneralSpanListRequest& request, const DescribeGeneralSpanListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGeneralSpanList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeGeneralSpanListOutcomeCallable ApmClient::DescribeGeneralSpanListCallable(const DescribeGeneralSpanListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGeneralSpanListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGeneralSpanList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::DescribeMetricRecordsOutcome ApmClient::DescribeMetricRecords(const DescribeMetricRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMetricRecords");

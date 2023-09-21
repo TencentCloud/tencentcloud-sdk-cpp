@@ -26,7 +26,8 @@ DescribeTagValuesRequest::DescribeTagValuesRequest() :
     m_tagKeysHasBeenSet(false),
     m_createUinHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string DescribeTagValuesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_category.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void DescribeTagValuesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeTagValuesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeTagValuesRequest::GetCategory() const
+{
+    return m_category;
+}
+
+void DescribeTagValuesRequest::SetCategory(const string& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool DescribeTagValuesRequest::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
 }
 
 

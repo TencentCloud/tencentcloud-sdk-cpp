@@ -133,21 +133,21 @@ namespace TencentCloud
                     /**
                      * 获取参数是否修改成功
                      * @return IsSucess 参数是否修改成功
-                     * 
+                     * @deprecated
                      */
                     bool GetIsSucess() const;
 
                     /**
                      * 设置参数是否修改成功
                      * @param _isSucess 参数是否修改成功
-                     * 
+                     * @deprecated
                      */
                     void SetIsSucess(const bool& _isSucess);
 
                     /**
                      * 判断参数 IsSucess 是否已赋值
                      * @return IsSucess 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsSucessHasBeenSet() const;
 
@@ -171,6 +171,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ModifyTimeHasBeenSet() const;
+
+                    /**
+                     * 获取参数是否修改成功
+                     * @return IsSuccess 参数是否修改成功
+                     * 
+                     */
+                    bool GetIsSuccess() const;
+
+                    /**
+                     * 设置参数是否修改成功
+                     * @param _isSuccess 参数是否修改成功
+                     * 
+                     */
+                    void SetIsSuccess(const bool& _isSuccess);
+
+                    /**
+                     * 判断参数 IsSuccess 是否已赋值
+                     * @return IsSuccess 是否已赋值
+                     * 
+                     */
+                    bool IsSuccessHasBeenSet() const;
 
                 private:
 
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 参数是否修改成功
+                     */
+                    bool m_isSuccess;
+                    bool m_isSuccessHasBeenSet;
 
                 };
             }

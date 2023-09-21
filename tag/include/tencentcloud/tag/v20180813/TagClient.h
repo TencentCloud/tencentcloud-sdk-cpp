@@ -332,7 +332,6 @@ namespace TencentCloud
 
                 /**
                  *用于查询已建立的标签列表中的标签键。
-
                  * @param req DescribeTagKeysRequest
                  * @return DescribeTagKeysOutcome
                  */
@@ -360,7 +359,6 @@ namespace TencentCloud
 
                 /**
                  *用于查询已建立的标签列表。
-
                  * @param req DescribeTagsRequest
                  * @return DescribeTagsOutcome
                  */

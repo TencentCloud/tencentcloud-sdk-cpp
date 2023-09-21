@@ -253,6 +253,48 @@ namespace TencentCloud
                      */
                     bool SerialTypeHasBeenSet() const;
 
+                    /**
+                     * 获取关联产品ID
+                     * @return ProductId 关联产品ID
+                     * 
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置关联产品ID
+                     * @param _productId 关联产品ID
+                     * 
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     * 
+                     */
+                    bool ProductIdHasBeenSet() const;
+
+                    /**
+                     * 获取层级码时是否提前生成关联关系，默认为 1
+                     * @return RelateType 层级码时是否提前生成关联关系，默认为 1
+                     * 
+                     */
+                    int64_t GetRelateType() const;
+
+                    /**
+                     * 设置层级码时是否提前生成关联关系，默认为 1
+                     * @param _relateType 层级码时是否提前生成关联关系，默认为 1
+                     * 
+                     */
+                    void SetRelateType(const int64_t& _relateType);
+
+                    /**
+                     * 判断参数 RelateType 是否已赋值
+                     * @return RelateType 是否已赋值
+                     * 
+                     */
+                    bool RelateTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +356,18 @@ namespace TencentCloud
                      */
                     uint64_t m_serialType;
                     bool m_serialTypeHasBeenSet;
+
+                    /**
+                     * 关联产品ID
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
+
+                    /**
+                     * 层级码时是否提前生成关联关系，默认为 1
+                     */
+                    int64_t m_relateType;
+                    bool m_relateTypeHasBeenSet;
 
                 };
             }

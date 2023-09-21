@@ -183,6 +183,10 @@
 #include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/PreviewKafkaRechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/PreviewKafkaRechargeResponse.h>
+#include <tencentcloud/cls/v20201016/model/QueryMetricRequest.h>
+#include <tencentcloud/cls/v20201016/model/QueryMetricResponse.h>
+#include <tencentcloud/cls/v20201016/model/QueryRangeMetricRequest.h>
+#include <tencentcloud/cls/v20201016/model/QueryRangeMetricResponse.h>
 #include <tencentcloud/cls/v20201016/model/RetryShipperTaskRequest.h>
 #include <tencentcloud/cls/v20201016/model/RetryShipperTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/SearchCosRechargeInfoRequest.h>
@@ -447,6 +451,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PreviewKafkaRechargeResponse> PreviewKafkaRechargeOutcome;
                 typedef std::future<PreviewKafkaRechargeOutcome> PreviewKafkaRechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::PreviewKafkaRechargeRequest&, PreviewKafkaRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PreviewKafkaRechargeAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryMetricResponse> QueryMetricOutcome;
+                typedef std::future<QueryMetricOutcome> QueryMetricOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::QueryMetricRequest&, QueryMetricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMetricAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryRangeMetricResponse> QueryRangeMetricOutcome;
+                typedef std::future<QueryRangeMetricOutcome> QueryRangeMetricOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::QueryRangeMetricRequest&, QueryRangeMetricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryRangeMetricAsyncHandler;
                 typedef Outcome<Core::Error, Model::RetryShipperTaskResponse> RetryShipperTaskOutcome;
                 typedef std::future<RetryShipperTaskOutcome> RetryShipperTaskOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::RetryShipperTaskRequest&, RetryShipperTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryShipperTaskAsyncHandler;
@@ -1185,6 +1195,24 @@ namespace TencentCloud
                 PreviewKafkaRechargeOutcome PreviewKafkaRecharge(const Model::PreviewKafkaRechargeRequest &request);
                 void PreviewKafkaRechargeAsync(const Model::PreviewKafkaRechargeRequest& request, const PreviewKafkaRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PreviewKafkaRechargeOutcomeCallable PreviewKafkaRechargeCallable(const Model::PreviewKafkaRechargeRequest& request);
+
+                /**
+                 *查询指定时刻指标的最新值
+                 * @param req QueryMetricRequest
+                 * @return QueryMetricOutcome
+                 */
+                QueryMetricOutcome QueryMetric(const Model::QueryMetricRequest &request);
+                void QueryMetricAsync(const Model::QueryMetricRequest& request, const QueryMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMetricOutcomeCallable QueryMetricCallable(const Model::QueryMetricRequest& request);
+
+                /**
+                 *查询指定时间范围内指标的变化趋势
+                 * @param req QueryRangeMetricRequest
+                 * @return QueryRangeMetricOutcome
+                 */
+                QueryRangeMetricOutcome QueryRangeMetric(const Model::QueryRangeMetricRequest &request);
+                void QueryRangeMetricAsync(const Model::QueryRangeMetricRequest& request, const QueryRangeMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryRangeMetricOutcomeCallable QueryRangeMetricCallable(const Model::QueryRangeMetricRequest& request);
 
                 /**
                  *重试失败的投递任务

@@ -254,6 +254,56 @@ namespace TencentCloud
                      */
                     bool SerialTypeHasBeenSet() const;
 
+                    /**
+                     * 获取产品ID
+                     * @return ProductId 产品ID
+                     * 
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置产品ID
+                     * @param _productId 产品ID
+                     * 
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     * 
+                     */
+                    bool ProductIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否预生成码关系
+0: 否, 1:是
+默认为1，仅对层级码有效
+                     * @return RelateType 是否预生成码关系
+0: 否, 1:是
+默认为1，仅对层级码有效
+                     * 
+                     */
+                    int64_t GetRelateType() const;
+
+                    /**
+                     * 设置是否预生成码关系
+0: 否, 1:是
+默认为1，仅对层级码有效
+                     * @param _relateType 是否预生成码关系
+0: 否, 1:是
+默认为1，仅对层级码有效
+                     * 
+                     */
+                    void SetRelateType(const int64_t& _relateType);
+
+                    /**
+                     * 判断参数 RelateType 是否已赋值
+                     * @return RelateType 是否已赋值
+                     * 
+                     */
+                    bool RelateTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +365,20 @@ namespace TencentCloud
                      */
                     uint64_t m_serialType;
                     bool m_serialTypeHasBeenSet;
+
+                    /**
+                     * 产品ID
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
+
+                    /**
+                     * 是否预生成码关系
+0: 否, 1:是
+默认为1，仅对层级码有效
+                     */
+                    int64_t m_relateType;
+                    bool m_relateTypeHasBeenSet;
 
                 };
             }

@@ -32,7 +32,9 @@ CreateCodePackRequest::CreateCodePackRequest() :
     m_packLevelHasBeenSet(false),
     m_packSpecHasBeenSet(false),
     m_batchIdHasBeenSet(false),
-    m_serialTypeHasBeenSet(false)
+    m_serialTypeHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_relateTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,22 @@ string CreateCodePackRequest::ToJsonString() const
         string key = "SerialType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_serialType, allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_relateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_relateType, allocator);
     }
 
 
@@ -296,6 +314,38 @@ void CreateCodePackRequest::SetSerialType(const uint64_t& _serialType)
 bool CreateCodePackRequest::SerialTypeHasBeenSet() const
 {
     return m_serialTypeHasBeenSet;
+}
+
+string CreateCodePackRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void CreateCodePackRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool CreateCodePackRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+int64_t CreateCodePackRequest::GetRelateType() const
+{
+    return m_relateType;
+}
+
+void CreateCodePackRequest::SetRelateType(const int64_t& _relateType)
+{
+    m_relateType = _relateType;
+    m_relateTypeHasBeenSet = true;
+}
+
+bool CreateCodePackRequest::RelateTypeHasBeenSet() const
+{
+    return m_relateTypeHasBeenSet;
 }
 
 

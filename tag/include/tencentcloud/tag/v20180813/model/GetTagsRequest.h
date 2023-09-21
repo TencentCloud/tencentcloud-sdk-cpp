@@ -121,6 +121,27 @@ namespace TencentCloud
                      */
                     bool TagKeysHasBeenSet() const;
 
+                    /**
+                     * 获取标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * @return Category 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * 
+                     */
+                    std::string GetCategory() const;
+
+                    /**
+                     * 设置标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * @param _category 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * 
+                     */
+                    void SetCategory(const std::string& _category);
+
+                    /**
+                     * 判断参数 Category 是否已赋值
+                     * @return Category 是否已赋值
+                     * 
+                     */
+                    bool CategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +165,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
+
+                    /**
+                     * 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     */
+                    std::string m_category;
+                    bool m_categoryHasBeenSet;
 
                 };
             }

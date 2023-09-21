@@ -26,7 +26,8 @@ DescribeTagKeysRequest::DescribeTagKeysRequest() :
     m_createUinHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_showProjectHasBeenSet(false)
+    m_showProjectHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeTagKeysRequest::ToJsonString() const
         string key = "ShowProject";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_showProject, allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_category.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeTagKeysRequest::SetShowProject(const uint64_t& _showProject)
 bool DescribeTagKeysRequest::ShowProjectHasBeenSet() const
 {
     return m_showProjectHasBeenSet;
+}
+
+string DescribeTagKeysRequest::GetCategory() const
+{
+    return m_category;
+}
+
+void DescribeTagKeysRequest::SetCategory(const string& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool DescribeTagKeysRequest::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ TagResource::TagResource() :
     m_resourceIdHasBeenSet(false),
     m_tagKeyMd5HasBeenSet(false),
     m_tagValueMd5HasBeenSet(false),
-    m_serviceTypeHasBeenSet(false)
+    m_serviceTypeHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome TagResource::Deserialize(const rapidjson::Value &value)
         m_serviceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Category") && !value["Category"].IsNull())
+    {
+        if (!value["Category"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagResource.Category` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_category = string(value["Category"].GetString());
+        m_categoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void TagResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_category.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void TagResource::SetServiceType(const string& _serviceType)
 bool TagResource::ServiceTypeHasBeenSet() const
 {
     return m_serviceTypeHasBeenSet;
+}
+
+string TagResource::GetCategory() const
+{
+    return m_category;
+}
+
+void TagResource::SetCategory(const string& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool TagResource::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
 }
 

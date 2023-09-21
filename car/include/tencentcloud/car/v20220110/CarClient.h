@@ -31,6 +31,8 @@
 #include <tencentcloud/car/v20220110/model/DestroySessionResponse.h>
 #include <tencentcloud/car/v20220110/model/StartPublishStreamRequest.h>
 #include <tencentcloud/car/v20220110/model/StartPublishStreamResponse.h>
+#include <tencentcloud/car/v20220110/model/StartPublishStreamWithURLRequest.h>
+#include <tencentcloud/car/v20220110/model/StartPublishStreamWithURLResponse.h>
 #include <tencentcloud/car/v20220110/model/StopPublishStreamRequest.h>
 #include <tencentcloud/car/v20220110/model/StopPublishStreamResponse.h>
 
@@ -59,6 +61,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartPublishStreamResponse> StartPublishStreamOutcome;
                 typedef std::future<StartPublishStreamOutcome> StartPublishStreamOutcomeCallable;
                 typedef std::function<void(const CarClient*, const Model::StartPublishStreamRequest&, StartPublishStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartPublishStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartPublishStreamWithURLResponse> StartPublishStreamWithURLOutcome;
+                typedef std::future<StartPublishStreamWithURLOutcome> StartPublishStreamWithURLOutcomeCallable;
+                typedef std::function<void(const CarClient*, const Model::StartPublishStreamWithURLRequest&, StartPublishStreamWithURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartPublishStreamWithURLAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopPublishStreamResponse> StopPublishStreamOutcome;
                 typedef std::future<StopPublishStreamOutcome> StopPublishStreamOutcomeCallable;
                 typedef std::function<void(const CarClient*, const Model::StopPublishStreamRequest&, StopPublishStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopPublishStreamAsyncHandler;
@@ -100,6 +105,15 @@ namespace TencentCloud
                 StartPublishStreamOutcome StartPublishStream(const Model::StartPublishStreamRequest &request);
                 void StartPublishStreamAsync(const Model::StartPublishStreamRequest& request, const StartPublishStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartPublishStreamOutcomeCallable StartPublishStreamCallable(const Model::StartPublishStreamRequest& request);
+
+                /**
+                 *开始云端推流到指定URL
+                 * @param req StartPublishStreamWithURLRequest
+                 * @return StartPublishStreamWithURLOutcome
+                 */
+                StartPublishStreamWithURLOutcome StartPublishStreamWithURL(const Model::StartPublishStreamWithURLRequest &request);
+                void StartPublishStreamWithURLAsync(const Model::StartPublishStreamWithURLRequest& request, const StartPublishStreamWithURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartPublishStreamWithURLOutcomeCallable StartPublishStreamWithURLCallable(const Model::StartPublishStreamWithURLRequest& request);
 
                 /**
                  *停止云端推流

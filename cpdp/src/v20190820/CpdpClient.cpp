@@ -8468,49 +8468,6 @@ CpdpClient::RegisterBillSupportWithdrawOutcomeCallable CpdpClient::RegisterBillS
     return task->get_future();
 }
 
-CpdpClient::RevResigterBillSupportWithdrawOutcome CpdpClient::RevResigterBillSupportWithdraw(const RevResigterBillSupportWithdrawRequest &request)
-{
-    auto outcome = MakeRequest(request, "RevResigterBillSupportWithdraw");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RevResigterBillSupportWithdrawResponse rsp = RevResigterBillSupportWithdrawResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RevResigterBillSupportWithdrawOutcome(rsp);
-        else
-            return RevResigterBillSupportWithdrawOutcome(o.GetError());
-    }
-    else
-    {
-        return RevResigterBillSupportWithdrawOutcome(outcome.GetError());
-    }
-}
-
-void CpdpClient::RevResigterBillSupportWithdrawAsync(const RevResigterBillSupportWithdrawRequest& request, const RevResigterBillSupportWithdrawAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RevResigterBillSupportWithdraw(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CpdpClient::RevResigterBillSupportWithdrawOutcomeCallable CpdpClient::RevResigterBillSupportWithdrawCallable(const RevResigterBillSupportWithdrawRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RevResigterBillSupportWithdrawOutcome()>>(
-        [this, request]()
-        {
-            return this->RevResigterBillSupportWithdraw(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CpdpClient::ReviseMbrPropertyOutcome CpdpClient::ReviseMbrProperty(const ReviseMbrPropertyRequest &request)
 {
     auto outcome = MakeRequest(request, "ReviseMbrProperty");

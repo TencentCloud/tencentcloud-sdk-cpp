@@ -24,7 +24,8 @@ using namespace std;
 
 GetTagKeysRequest::GetTagKeysRequest() :
     m_paginationTokenHasBeenSet(false),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string GetTagKeysRequest::ToJsonString() const
         string key = "MaxResults";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxResults, allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_category.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void GetTagKeysRequest::SetMaxResults(const uint64_t& _maxResults)
 bool GetTagKeysRequest::MaxResultsHasBeenSet() const
 {
     return m_maxResultsHasBeenSet;
+}
+
+string GetTagKeysRequest::GetCategory() const
+{
+    return m_category;
+}
+
+void GetTagKeysRequest::SetCategory(const string& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool GetTagKeysRequest::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
 }
 
 

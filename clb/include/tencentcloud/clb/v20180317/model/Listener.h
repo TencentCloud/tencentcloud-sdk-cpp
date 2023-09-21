@@ -214,18 +214,18 @@ namespace TencentCloud
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SNI特性（本参数仅对于HTTPS监听器有意义）
+                     * 获取是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SniSwitch 是否开启SNI特性（本参数仅对于HTTPS监听器有意义）
+                     * @return SniSwitch 是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSniSwitch() const;
 
                     /**
-                     * 设置是否开启SNI特性（本参数仅对于HTTPS监听器有意义）
+                     * 设置是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sniSwitch 是否开启SNI特性（本参数仅对于HTTPS监听器有意义）
+                     * @param _sniSwitch 是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -662,7 +662,7 @@ namespace TencentCloud
                     bool m_sessionExpireTimeHasBeenSet;
 
                     /**
-                     * 是否开启SNI特性（本参数仅对于HTTPS监听器有意义）
+                     * 是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sniSwitch;

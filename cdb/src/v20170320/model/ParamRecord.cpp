@@ -26,7 +26,8 @@ ParamRecord::ParamRecord() :
     m_oldValueHasBeenSet(false),
     m_newValueHasBeenSet(false),
     m_isSucessHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_isSuccessHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ParamRecord::Deserialize(const rapidjson::Value &value)
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSuccess") && !value["IsSuccess"].IsNull())
+    {
+        if (!value["IsSuccess"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamRecord.IsSuccess` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSuccess = value["IsSuccess"].GetBool();
+        m_isSuccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ParamRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSuccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSuccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSuccess, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ParamRecord::SetModifyTime(const string& _modifyTime)
 bool ParamRecord::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+bool ParamRecord::GetIsSuccess() const
+{
+    return m_isSuccess;
+}
+
+void ParamRecord::SetIsSuccess(const bool& _isSuccess)
+{
+    m_isSuccess = _isSuccess;
+    m_isSuccessHasBeenSet = true;
+}
+
+bool ParamRecord::IsSuccessHasBeenSet() const
+{
+    return m_isSuccessHasBeenSet;
 }
 

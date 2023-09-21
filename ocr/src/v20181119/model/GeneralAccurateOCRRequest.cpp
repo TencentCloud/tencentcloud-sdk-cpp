@@ -28,7 +28,8 @@ GeneralAccurateOCRRequest::GeneralAccurateOCRRequest() :
     m_isWordsHasBeenSet(false),
     m_enableDetectSplitHasBeenSet(false),
     m_isPdfHasBeenSet(false),
-    m_pdfPageNumberHasBeenSet(false)
+    m_pdfPageNumberHasBeenSet(false),
+    m_enableDetectTextHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string GeneralAccurateOCRRequest::ToJsonString() const
         string key = "PdfPageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pdfPageNumber, allocator);
+    }
+
+    if (m_enableDetectTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDetectText";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDetectText, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void GeneralAccurateOCRRequest::SetPdfPageNumber(const uint64_t& _pdfPageNumber)
 bool GeneralAccurateOCRRequest::PdfPageNumberHasBeenSet() const
 {
     return m_pdfPageNumberHasBeenSet;
+}
+
+bool GeneralAccurateOCRRequest::GetEnableDetectText() const
+{
+    return m_enableDetectText;
+}
+
+void GeneralAccurateOCRRequest::SetEnableDetectText(const bool& _enableDetectText)
+{
+    m_enableDetectText = _enableDetectText;
+    m_enableDetectTextHasBeenSet = true;
+}
+
+bool GeneralAccurateOCRRequest::EnableDetectTextHasBeenSet() const
+{
+    return m_enableDetectTextHasBeenSet;
 }
 
 

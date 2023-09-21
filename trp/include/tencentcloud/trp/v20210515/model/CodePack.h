@@ -547,6 +547,106 @@ namespace TencentCloud
                      */
                     bool PackSpecHasBeenSet() const;
 
+                    /**
+                     * 获取商品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductName 商品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductName() const;
+
+                    /**
+                     * 设置商品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productName 商品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductName(const std::string& _productName);
+
+                    /**
+                     * 判断参数 ProductName 是否已赋值
+                     * @return ProductName 是否已赋值
+                     * 
+                     */
+                    bool ProductNameHasBeenSet() const;
+
+                    /**
+                     * 获取商品规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductSpecification 商品规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductSpecification() const;
+
+                    /**
+                     * 设置商品规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productSpecification 商品规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductSpecification(const std::string& _productSpecification);
+
+                    /**
+                     * 判断参数 ProductSpecification 是否已赋值
+                     * @return ProductSpecification 是否已赋值
+                     * 
+                     */
+                    bool ProductSpecificationHasBeenSet() const;
+
+                    /**
+                     * 获取商品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductId 商品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置商品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productId 商品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     * 
+                     */
+                    bool ProductIdHasBeenSet() const;
+
+                    /**
+                     * 获取码关系是否预关联
+0:否, 1:是
+                     * @return RelateType 码关系是否预关联
+0:否, 1:是
+                     * 
+                     */
+                    int64_t GetRelateType() const;
+
+                    /**
+                     * 设置码关系是否预关联
+0:否, 1:是
+                     * @param _relateType 码关系是否预关联
+0:否, 1:是
+                     * 
+                     */
+                    void SetRelateType(const int64_t& _relateType);
+
+                    /**
+                     * 判断参数 RelateType 是否已赋值
+                     * @return RelateType 是否已赋值
+                     * 
+                     */
+                    bool RelateTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -688,6 +788,34 @@ namespace TencentCloud
                      */
                     std::vector<PackSpec> m_packSpec;
                     bool m_packSpecHasBeenSet;
+
+                    /**
+                     * 商品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productName;
+                    bool m_productNameHasBeenSet;
+
+                    /**
+                     * 商品规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productSpecification;
+                    bool m_productSpecificationHasBeenSet;
+
+                    /**
+                     * 商品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
+
+                    /**
+                     * 码关系是否预关联
+0:否, 1:是
+                     */
+                    int64_t m_relateType;
+                    bool m_relateTypeHasBeenSet;
 
                 };
             }

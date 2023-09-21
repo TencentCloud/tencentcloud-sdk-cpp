@@ -3480,6 +3480,92 @@ ClsClient::PreviewKafkaRechargeOutcomeCallable ClsClient::PreviewKafkaRechargeCa
     return task->get_future();
 }
 
+ClsClient::QueryMetricOutcome ClsClient::QueryMetric(const QueryMetricRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMetric");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMetricResponse rsp = QueryMetricResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMetricOutcome(rsp);
+        else
+            return QueryMetricOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMetricOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::QueryMetricAsync(const QueryMetricRequest& request, const QueryMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryMetric(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::QueryMetricOutcomeCallable ClsClient::QueryMetricCallable(const QueryMetricRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryMetricOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryMetric(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::QueryRangeMetricOutcome ClsClient::QueryRangeMetric(const QueryRangeMetricRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryRangeMetric");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryRangeMetricResponse rsp = QueryRangeMetricResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryRangeMetricOutcome(rsp);
+        else
+            return QueryRangeMetricOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryRangeMetricOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::QueryRangeMetricAsync(const QueryRangeMetricRequest& request, const QueryRangeMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryRangeMetric(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::QueryRangeMetricOutcomeCallable ClsClient::QueryRangeMetricCallable(const QueryRangeMetricRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryRangeMetricOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryRangeMetric(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::RetryShipperTaskOutcome ClsClient::RetryShipperTask(const RetryShipperTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "RetryShipperTask");

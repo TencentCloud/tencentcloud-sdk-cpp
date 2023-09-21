@@ -29,7 +29,9 @@ ParseNotificationResponse::ParseNotificationResponse() :
     m_editMediaTaskEventHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_scheduleTaskEventHasBeenSet(false)
+    m_scheduleTaskEventHasBeenSet(false),
+    m_timestampHasBeenSet(false),
+    m_signHasBeenSet(false)
 {
 }
 
@@ -148,6 +150,26 @@ CoreInternalOutcome ParseNotificationResponse::Deserialize(const string &payload
         m_scheduleTaskEventHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Timestamp") && !rsp["Timestamp"].IsNull())
+    {
+        if (!rsp["Timestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timestamp = rsp["Timestamp"].GetInt64();
+        m_timestampHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Sign") && !rsp["Sign"].IsNull())
+    {
+        if (!rsp["Sign"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Sign` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sign = string(rsp["Sign"].GetString());
+        m_signHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -207,6 +229,22 @@ string ParseNotificationResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scheduleTaskEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_timestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timestamp, allocator);
+    }
+
+    if (m_signHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sign";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sign.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -279,6 +317,26 @@ ScheduleTask ParseNotificationResponse::GetScheduleTaskEvent() const
 bool ParseNotificationResponse::ScheduleTaskEventHasBeenSet() const
 {
     return m_scheduleTaskEventHasBeenSet;
+}
+
+int64_t ParseNotificationResponse::GetTimestamp() const
+{
+    return m_timestamp;
+}
+
+bool ParseNotificationResponse::TimestampHasBeenSet() const
+{
+    return m_timestampHasBeenSet;
+}
+
+string ParseNotificationResponse::GetSign() const
+{
+    return m_sign;
+}
+
+bool ParseNotificationResponse::SignHasBeenSet() const
+{
+    return m_signHasBeenSet;
 }
 
 

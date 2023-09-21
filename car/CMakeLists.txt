@@ -21,7 +21,9 @@ set(car_public_header
 set(car_public_header_model
   include/tencentcloud/car/v20220110/model/CreateSessionResponse.h
   include/tencentcloud/car/v20220110/model/StopPublishStreamRequest.h
+  include/tencentcloud/car/v20220110/model/StartPublishStreamWithURLResponse.h
   include/tencentcloud/car/v20220110/model/StopPublishStreamResponse.h
+  include/tencentcloud/car/v20220110/model/StartPublishStreamWithURLRequest.h
   include/tencentcloud/car/v20220110/model/DestroySessionResponse.h
   include/tencentcloud/car/v20220110/model/StartPublishStreamResponse.h
   include/tencentcloud/car/v20220110/model/ApplyConcurrentResponse.h
@@ -35,7 +37,9 @@ set(car_src
   src/v20220110/CarClient.cpp
   src/v20220110/model/CreateSessionResponse.cpp
   src/v20220110/model/StopPublishStreamRequest.cpp
+  src/v20220110/model/StartPublishStreamWithURLResponse.cpp
   src/v20220110/model/StopPublishStreamResponse.cpp
+  src/v20220110/model/StartPublishStreamWithURLRequest.cpp
   src/v20220110/model/DestroySessionResponse.cpp
   src/v20220110/model/StartPublishStreamResponse.cpp
   src/v20220110/model/ApplyConcurrentResponse.cpp

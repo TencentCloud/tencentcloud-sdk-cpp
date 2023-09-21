@@ -212,6 +212,49 @@ CarClient::StartPublishStreamOutcomeCallable CarClient::StartPublishStreamCallab
     return task->get_future();
 }
 
+CarClient::StartPublishStreamWithURLOutcome CarClient::StartPublishStreamWithURL(const StartPublishStreamWithURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartPublishStreamWithURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartPublishStreamWithURLResponse rsp = StartPublishStreamWithURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartPublishStreamWithURLOutcome(rsp);
+        else
+            return StartPublishStreamWithURLOutcome(o.GetError());
+    }
+    else
+    {
+        return StartPublishStreamWithURLOutcome(outcome.GetError());
+    }
+}
+
+void CarClient::StartPublishStreamWithURLAsync(const StartPublishStreamWithURLRequest& request, const StartPublishStreamWithURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartPublishStreamWithURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CarClient::StartPublishStreamWithURLOutcomeCallable CarClient::StartPublishStreamWithURLCallable(const StartPublishStreamWithURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartPublishStreamWithURLOutcome()>>(
+        [this, request]()
+        {
+            return this->StartPublishStreamWithURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CarClient::StopPublishStreamOutcome CarClient::StopPublishStream(const StopPublishStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "StopPublishStream");

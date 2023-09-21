@@ -184,6 +184,27 @@ namespace TencentCloud
                      */
                     bool PdfPageNumberHasBeenSet() const;
 
+                    /**
+                     * 获取文本检测开关，默认为true。设置为false可直接进行单行识别，适用于仅包含正向单行文本的图片场景。
+                     * @return EnableDetectText 文本检测开关，默认为true。设置为false可直接进行单行识别，适用于仅包含正向单行文本的图片场景。
+                     * 
+                     */
+                    bool GetEnableDetectText() const;
+
+                    /**
+                     * 设置文本检测开关，默认为true。设置为false可直接进行单行识别，适用于仅包含正向单行文本的图片场景。
+                     * @param _enableDetectText 文本检测开关，默认为true。设置为false可直接进行单行识别，适用于仅包含正向单行文本的图片场景。
+                     * 
+                     */
+                    void SetEnableDetectText(const bool& _enableDetectText);
+
+                    /**
+                     * 判断参数 EnableDetectText 是否已赋值
+                     * @return EnableDetectText 是否已赋值
+                     * 
+                     */
+                    bool EnableDetectTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -225,6 +246,12 @@ namespace TencentCloud
                      */
                     uint64_t m_pdfPageNumber;
                     bool m_pdfPageNumberHasBeenSet;
+
+                    /**
+                     * 文本检测开关，默认为true。设置为false可直接进行单行识别，适用于仅包含正向单行文本的图片场景。
+                     */
+                    bool m_enableDetectText;
+                    bool m_enableDetectTextHasBeenSet;
 
                 };
             }

@@ -415,8 +415,6 @@
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillSupportWithdrawRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillSupportWithdrawResponse.h>
-#include <tencentcloud/cpdp/v20190820/model/RevResigterBillSupportWithdrawRequest.h>
-#include <tencentcloud/cpdp/v20190820/model/RevResigterBillSupportWithdrawResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ReviseMbrPropertyRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ReviseMbrPropertyResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RevokeMemberRechargeThirdPayRequest.h>
@@ -1065,9 +1063,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RegisterBillSupportWithdrawResponse> RegisterBillSupportWithdrawOutcome;
                 typedef std::future<RegisterBillSupportWithdrawOutcome> RegisterBillSupportWithdrawOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RegisterBillSupportWithdrawRequest&, RegisterBillSupportWithdrawOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterBillSupportWithdrawAsyncHandler;
-                typedef Outcome<Core::Error, Model::RevResigterBillSupportWithdrawResponse> RevResigterBillSupportWithdrawOutcome;
-                typedef std::future<RevResigterBillSupportWithdrawOutcome> RevResigterBillSupportWithdrawOutcomeCallable;
-                typedef std::function<void(const CpdpClient*, const Model::RevResigterBillSupportWithdrawRequest&, RevResigterBillSupportWithdrawOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevResigterBillSupportWithdrawAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReviseMbrPropertyResponse> ReviseMbrPropertyOutcome;
                 typedef std::future<ReviseMbrPropertyOutcome> ReviseMbrPropertyOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ReviseMbrPropertyRequest&, ReviseMbrPropertyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReviseMbrPropertyAsyncHandler;
@@ -2914,15 +2909,6 @@ namespace TencentCloud
                 RegisterBillSupportWithdrawOutcome RegisterBillSupportWithdraw(const Model::RegisterBillSupportWithdrawRequest &request);
                 void RegisterBillSupportWithdrawAsync(const Model::RegisterBillSupportWithdrawRequest& request, const RegisterBillSupportWithdrawAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RegisterBillSupportWithdrawOutcomeCallable RegisterBillSupportWithdrawCallable(const Model::RegisterBillSupportWithdrawRequest& request);
-
-                /**
-                 *登记挂账撤销。此接口可以实现把RegisterBillSupportWithdraw接口完成的登记挂账进行撤销，即调减普通会员子账户的可提现和可用余额，调增挂账子账户的可用余额。
-                 * @param req RevResigterBillSupportWithdrawRequest
-                 * @return RevResigterBillSupportWithdrawOutcome
-                 */
-                RevResigterBillSupportWithdrawOutcome RevResigterBillSupportWithdraw(const Model::RevResigterBillSupportWithdrawRequest &request);
-                void RevResigterBillSupportWithdrawAsync(const Model::RevResigterBillSupportWithdrawRequest& request, const RevResigterBillSupportWithdrawAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RevResigterBillSupportWithdrawOutcomeCallable RevResigterBillSupportWithdrawCallable(const Model::RevResigterBillSupportWithdrawRequest& request);
 
                 /**
                  *修改会员属性-普通商户子账户。修改会员的会员属性。
