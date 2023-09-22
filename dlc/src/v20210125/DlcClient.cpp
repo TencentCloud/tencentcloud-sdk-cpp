@@ -2749,6 +2749,49 @@ DlcClient::DescribeSparkAppTasksOutcomeCallable DlcClient::DescribeSparkAppTasks
     return task->get_future();
 }
 
+DlcClient::DescribeSparkSessionBatchSQLOutcome DlcClient::DescribeSparkSessionBatchSQL(const DescribeSparkSessionBatchSQLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSparkSessionBatchSQL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSparkSessionBatchSQLResponse rsp = DescribeSparkSessionBatchSQLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSparkSessionBatchSQLOutcome(rsp);
+        else
+            return DescribeSparkSessionBatchSQLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSparkSessionBatchSQLOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeSparkSessionBatchSQLAsync(const DescribeSparkSessionBatchSQLRequest& request, const DescribeSparkSessionBatchSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSparkSessionBatchSQL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeSparkSessionBatchSQLOutcomeCallable DlcClient::DescribeSparkSessionBatchSQLCallable(const DescribeSparkSessionBatchSQLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSparkSessionBatchSQLOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSparkSessionBatchSQL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeSparkSessionBatchSqlLogOutcome DlcClient::DescribeSparkSessionBatchSqlLog(const DescribeSparkSessionBatchSqlLogRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSparkSessionBatchSqlLog");

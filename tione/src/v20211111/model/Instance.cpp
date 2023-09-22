@@ -30,7 +30,8 @@ Instance::Instance() :
     m_expireTimeHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_specIdHasBeenSet(false),
-    m_specAliasHasBeenSet(false)
+    m_specAliasHasBeenSet(false),
+    m_specFeaturesHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,19 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_specAliasHasBeenSet = true;
     }
 
+    if (value.HasMember("SpecFeatures") && !value["SpecFeatures"].IsNull())
+    {
+        if (!value["SpecFeatures"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Instance.SpecFeatures` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SpecFeatures"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_specFeatures.push_back((*itr).GetString());
+        }
+        m_specFeaturesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +254,19 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "SpecAlias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_specAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specFeaturesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecFeatures";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_specFeatures.begin(); itr != m_specFeatures.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -403,5 +430,21 @@ void Instance::SetSpecAlias(const string& _specAlias)
 bool Instance::SpecAliasHasBeenSet() const
 {
     return m_specAliasHasBeenSet;
+}
+
+vector<string> Instance::GetSpecFeatures() const
+{
+    return m_specFeatures;
+}
+
+void Instance::SetSpecFeatures(const vector<string>& _specFeatures)
+{
+    m_specFeatures = _specFeatures;
+    m_specFeaturesHasBeenSet = true;
+}
+
+bool Instance::SpecFeaturesHasBeenSet() const
+{
+    return m_specFeaturesHasBeenSet;
 }
 

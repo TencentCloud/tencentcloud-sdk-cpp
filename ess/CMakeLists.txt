@@ -19,6 +19,7 @@ set(ess_public_header
   )
 
 set(ess_public_header_model
+  include/tencentcloud/ess/v20201111/model/DescribePersonCertificateResponse.h
   include/tencentcloud/ess/v20201111/model/CreateSealRequest.h
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h
   include/tencentcloud/ess/v20201111/model/CancelFlowResponse.h
@@ -47,7 +48,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/SealInfo.h
   include/tencentcloud/ess/v20201111/model/StaffRole.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationRoleRequest.h
-  include/tencentcloud/ess/v20201111/model/AuthorizedUser.h
+  include/tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersResponse.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesResponse.h
   include/tencentcloud/ess/v20201111/model/CreateBatchSignUrlResponse.h
@@ -75,6 +76,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h
   include/tencentcloud/ess/v20201111/model/Permission.h
+  include/tencentcloud/ess/v20201111/model/Staff.h
   include/tencentcloud/ess/v20201111/model/ComponentLimit.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h
@@ -106,15 +108,16 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/UserInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversRequest.h
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h
+  include/tencentcloud/ess/v20201111/model/ExtendAuthInfo.h
   include/tencentcloud/ess/v20201111/model/FlowCreateApprover.h
-  include/tencentcloud/ess/v20201111/model/Staff.h
+  include/tencentcloud/ess/v20201111/model/ApproverComponentLimitType.h
   include/tencentcloud/ess/v20201111/model/RecipientComponentInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationRoleResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowComponentsRequest.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentRequest.h
   include/tencentcloud/ess/v20201111/model/GroupOrganization.h
-  include/tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersResponse.h
+  include/tencentcloud/ess/v20201111/model/AuthorizedUser.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentRequest.h
   include/tencentcloud/ess/v20201111/model/RemindFlowRecords.h
   include/tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignResponse.h
@@ -189,7 +192,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/Caller.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h
   include/tencentcloud/ess/v20201111/model/UploadFilesRequest.h
-  include/tencentcloud/ess/v20201111/model/ExtendAuthInfo.h
+  include/tencentcloud/ess/v20201111/model/DescribePersonCertificateRequest.h
   include/tencentcloud/ess/v20201111/model/RelieveInfo.h
   include/tencentcloud/ess/v20201111/model/EmbedUrlOption.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h
@@ -209,6 +212,7 @@ set(ess_public_header_model
 
 set(ess_src
   src/v20201111/EssClient.cpp
+  src/v20201111/model/DescribePersonCertificateResponse.cpp
   src/v20201111/model/CreateSealRequest.cpp
   src/v20201111/model/ModifyIntegrationDepartmentResponse.cpp
   src/v20201111/model/CancelFlowResponse.cpp
@@ -237,7 +241,7 @@ set(ess_src
   src/v20201111/model/SealInfo.cpp
   src/v20201111/model/StaffRole.cpp
   src/v20201111/model/CreateIntegrationRoleRequest.cpp
-  src/v20201111/model/AuthorizedUser.cpp
+  src/v20201111/model/DeleteIntegrationRoleUsersResponse.cpp
   src/v20201111/model/CreateConvertTaskApiRequest.cpp
   src/v20201111/model/DeleteIntegrationEmployeesResponse.cpp
   src/v20201111/model/CreateBatchSignUrlResponse.cpp
@@ -265,6 +269,7 @@ set(ess_src
   src/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsRequest.cpp
   src/v20201111/model/Permission.cpp
+  src/v20201111/model/Staff.cpp
   src/v20201111/model/ComponentLimit.cpp
   src/v20201111/model/CreateIntegrationDepartmentResponse.cpp
   src/v20201111/model/DescribeFlowTemplatesRequest.cpp
@@ -296,15 +301,16 @@ set(ess_src
   src/v20201111/model/UserInfo.cpp
   src/v20201111/model/CreateFlowApproversRequest.cpp
   src/v20201111/model/ModifyIntegrationRoleResponse.cpp
+  src/v20201111/model/ExtendAuthInfo.cpp
   src/v20201111/model/FlowCreateApprover.cpp
-  src/v20201111/model/Staff.cpp
+  src/v20201111/model/ApproverComponentLimitType.cpp
   src/v20201111/model/RecipientComponentInfo.cpp
   src/v20201111/model/CreateFlowEvidenceReportResponse.cpp
   src/v20201111/model/CreateIntegrationRoleResponse.cpp
   src/v20201111/model/DescribeFlowComponentsRequest.cpp
   src/v20201111/model/CreateIntegrationDepartmentRequest.cpp
   src/v20201111/model/GroupOrganization.cpp
-  src/v20201111/model/DeleteIntegrationRoleUsersResponse.cpp
+  src/v20201111/model/AuthorizedUser.cpp
   src/v20201111/model/CreateDocumentRequest.cpp
   src/v20201111/model/RemindFlowRecords.cpp
   src/v20201111/model/CreatePreparedPersonalEsignResponse.cpp
@@ -379,7 +385,7 @@ set(ess_src
   src/v20201111/model/Caller.cpp
   src/v20201111/model/DescribeFlowTemplatesResponse.cpp
   src/v20201111/model/UploadFilesRequest.cpp
-  src/v20201111/model/ExtendAuthInfo.cpp
+  src/v20201111/model/DescribePersonCertificateRequest.cpp
   src/v20201111/model/RelieveInfo.cpp
   src/v20201111/model/EmbedUrlOption.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlRequest.cpp

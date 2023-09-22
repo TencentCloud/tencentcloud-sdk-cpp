@@ -45,8 +45,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署流程信息
-                     * @return FlowDetailInfos 签署流程信息
+                     * 获取合同流程的详细信息。
+如果查询的是合同组信息，则返回的是组内所有子合同流程的详细信息。
+                     * @return FlowDetailInfos 合同流程的详细信息。
+如果查询的是合同组信息，则返回的是组内所有子合同流程的详细信息。
                      * 
                      */
                     std::vector<FlowDetailInfo> GetFlowDetailInfos() const;
@@ -59,8 +61,8 @@ namespace TencentCloud
                     bool FlowDetailInfosHasBeenSet() const;
 
                     /**
-                     * 获取合同组ID，为32位字符串
-                     * @return FlowGroupId 合同组ID，为32位字符串
+                     * 获取合同组ID，只有在查询合同组信息时才会返回。
+                     * @return FlowGroupId 合同组ID，只有在查询合同组信息时才会返回。
                      * 
                      */
                     std::string GetFlowGroupId() const;
@@ -73,8 +75,8 @@ namespace TencentCloud
                     bool FlowGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取合同组名称
-                     * @return FlowGroupName 合同组名称
+                     * 获取合同组名称，只有在查询合同组信息时才会返回。
+                     * @return FlowGroupName 合同组名称，只有在查询合同组信息时才会返回。
                      * 
                      */
                     std::string GetFlowGroupName() const;
@@ -89,19 +91,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署流程信息
+                     * 合同流程的详细信息。
+如果查询的是合同组信息，则返回的是组内所有子合同流程的详细信息。
                      */
                     std::vector<FlowDetailInfo> m_flowDetailInfos;
                     bool m_flowDetailInfosHasBeenSet;
 
                     /**
-                     * 合同组ID，为32位字符串
+                     * 合同组ID，只有在查询合同组信息时才会返回。
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
-                     * 合同组名称
+                     * 合同组名称，只有在查询合同组信息时才会返回。
                      */
                     std::string m_flowGroupName;
                     bool m_flowGroupNameHasBeenSet;

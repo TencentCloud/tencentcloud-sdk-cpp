@@ -2147,6 +2147,49 @@ EssClient::DescribeOrganizationSealsOutcomeCallable EssClient::DescribeOrganizat
     return task->get_future();
 }
 
+EssClient::DescribePersonCertificateOutcome EssClient::DescribePersonCertificate(const DescribePersonCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePersonCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePersonCertificateResponse rsp = DescribePersonCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePersonCertificateOutcome(rsp);
+        else
+            return DescribePersonCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePersonCertificateOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribePersonCertificateAsync(const DescribePersonCertificateRequest& request, const DescribePersonCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePersonCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribePersonCertificateOutcomeCallable EssClient::DescribePersonCertificateCallable(const DescribePersonCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePersonCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePersonCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeThirdPartyAuthCodeOutcome EssClient::DescribeThirdPartyAuthCode(const DescribeThirdPartyAuthCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeThirdPartyAuthCode");

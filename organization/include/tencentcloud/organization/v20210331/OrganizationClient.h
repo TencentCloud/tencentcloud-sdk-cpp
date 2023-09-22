@@ -363,7 +363,7 @@ namespace TencentCloud
                 DescribeOrganizationMemberAuthAccountsOutcomeCallable DescribeOrganizationMemberAuthAccountsCallable(const Model::DescribeOrganizationMemberAuthAccountsRequest& request);
 
                 /**
-                 *获取组织成员可被管理的身份列表
+                 *获取组织成员访问授权列表
                  * @param req DescribeOrganizationMemberAuthIdentitiesRequest
                  * @return DescribeOrganizationMemberAuthIdentitiesOutcome
                  */

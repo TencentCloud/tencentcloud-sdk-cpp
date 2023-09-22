@@ -98,6 +98,31 @@ namespace TencentCloud
                     bool SliceSentenceHasBeenSet() const;
 
                     /**
+                     * 获取口语转书面语结果，开启改功能才有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WrittenText 口语转书面语结果，开启改功能才有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWrittenText() const;
+
+                    /**
+                     * 设置口语转书面语结果，开启改功能才有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _writtenText 口语转书面语结果，开启改功能才有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWrittenText(const std::string& _writtenText);
+
+                    /**
+                     * 判断参数 WrittenText 是否已赋值
+                     * @return WrittenText 是否已赋值
+                     * 
+                     */
+                    bool WrittenTextHasBeenSet() const;
+
+                    /**
                      * 获取单句开始时间（毫秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartMs 单句开始时间（毫秒）
@@ -337,6 +362,13 @@ namespace TencentCloud
                      */
                     std::string m_sliceSentence;
                     bool m_sliceSentenceHasBeenSet;
+
+                    /**
+                     * 口语转书面语结果，开启改功能才有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_writtenText;
+                    bool m_writtenTextHasBeenSet;
 
                     /**
                      * 单句开始时间（毫秒）

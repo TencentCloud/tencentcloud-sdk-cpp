@@ -25,7 +25,8 @@ using namespace std;
 DescribeOrganizationMemberAuthIdentitiesRequest::DescribeOrganizationMemberAuthIdentitiesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_memberUinHasBeenSet(false)
+    m_memberUinHasBeenSet(false),
+    m_identityIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeOrganizationMemberAuthIdentitiesRequest::ToJsonString() const
         string key = "MemberUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_memberUin, allocator);
+    }
+
+    if (m_identityIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentityId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_identityId, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeOrganizationMemberAuthIdentitiesRequest::SetMemberUin(const int64_t
 bool DescribeOrganizationMemberAuthIdentitiesRequest::MemberUinHasBeenSet() const
 {
     return m_memberUinHasBeenSet;
+}
+
+uint64_t DescribeOrganizationMemberAuthIdentitiesRequest::GetIdentityId() const
+{
+    return m_identityId;
+}
+
+void DescribeOrganizationMemberAuthIdentitiesRequest::SetIdentityId(const uint64_t& _identityId)
+{
+    m_identityId = _identityId;
+    m_identityIdHasBeenSet = true;
+}
+
+bool DescribeOrganizationMemberAuthIdentitiesRequest::IdentityIdHasBeenSet() const
+{
+    return m_identityIdHasBeenSet;
 }
 
 

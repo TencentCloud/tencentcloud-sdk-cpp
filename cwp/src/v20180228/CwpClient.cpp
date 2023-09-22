@@ -1631,6 +1631,49 @@ CwpClient::DescribeAccountStatisticsOutcomeCallable CwpClient::DescribeAccountSt
     return task->get_future();
 }
 
+CwpClient::DescribeAgentInstallCommandOutcome CwpClient::DescribeAgentInstallCommand(const DescribeAgentInstallCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentInstallCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentInstallCommandResponse rsp = DescribeAgentInstallCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentInstallCommandOutcome(rsp);
+        else
+            return DescribeAgentInstallCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentInstallCommandOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAgentInstallCommandAsync(const DescribeAgentInstallCommandRequest& request, const DescribeAgentInstallCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentInstallCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAgentInstallCommandOutcomeCallable CwpClient::DescribeAgentInstallCommandCallable(const DescribeAgentInstallCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentInstallCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentInstallCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeAlarmIncidentNodesOutcome CwpClient::DescribeAlarmIncidentNodes(const DescribeAlarmIncidentNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAlarmIncidentNodes");

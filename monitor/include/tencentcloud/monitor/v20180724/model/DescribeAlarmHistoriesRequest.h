@@ -325,15 +325,15 @@ namespace TencentCloud
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取根据策略名称模糊搜索
-                     * @return PolicyName 根据策略名称模糊搜索
+                     * 获取根据策略名称模糊搜索,不支持大小写区分
+                     * @return PolicyName 根据策略名称模糊搜索,不支持大小写区分
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置根据策略名称模糊搜索
-                     * @param _policyName 根据策略名称模糊搜索
+                     * 设置根据策略名称模糊搜索,不支持大小写区分
+                     * @param _policyName 根据策略名称模糊搜索,不支持大小写区分
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -430,15 +430,15 @@ namespace TencentCloud
                     bool PolicyIdsHasBeenSet() const;
 
                     /**
-                     * 获取告警等级
-                     * @return AlarmLevels 告警等级
+                     * 获取告警等级,取值范围：Remind、Serious、Warn
+                     * @return AlarmLevels 告警等级,取值范围：Remind、Serious、Warn
                      * 
                      */
                     std::vector<std::string> GetAlarmLevels() const;
 
                     /**
-                     * 设置告警等级
-                     * @param _alarmLevels 告警等级
+                     * 设置告警等级,取值范围：Remind、Serious、Warn
+                     * @param _alarmLevels 告警等级,取值范围：Remind、Serious、Warn
                      * 
                      */
                     void SetAlarmLevels(const std::vector<std::string>& _alarmLevels);
@@ -533,7 +533,7 @@ namespace TencentCloud
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 根据策略名称模糊搜索
+                     * 根据策略名称模糊搜索,不支持大小写区分
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
@@ -563,7 +563,7 @@ namespace TencentCloud
                     bool m_policyIdsHasBeenSet;
 
                     /**
-                     * 告警等级
+                     * 告警等级,取值范围：Remind、Serious、Warn
                      */
                     std::vector<std::string> m_alarmLevels;
                     bool m_alarmLevelsHasBeenSet;

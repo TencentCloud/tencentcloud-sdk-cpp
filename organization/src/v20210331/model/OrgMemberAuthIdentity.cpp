@@ -27,7 +27,10 @@ OrgMemberAuthIdentity::OrgMemberAuthIdentity() :
     m_descriptionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_identityTypeHasBeenSet(false)
+    m_identityTypeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_memberUinHasBeenSet(false),
+    m_memberNameHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,36 @@ CoreInternalOutcome OrgMemberAuthIdentity::Deserialize(const rapidjson::Value &v
         m_identityTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgMemberAuthIdentity.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetUint64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemberUin") && !value["MemberUin"].IsNull())
+    {
+        if (!value["MemberUin"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgMemberAuthIdentity.MemberUin` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memberUin = value["MemberUin"].GetInt64();
+        m_memberUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemberName") && !value["MemberName"].IsNull())
+    {
+        if (!value["MemberName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgMemberAuthIdentity.MemberName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_memberName = string(value["MemberName"].GetString());
+        m_memberNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +200,30 @@ void OrgMemberAuthIdentity::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "IdentityType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_identityType, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_memberUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memberUin, allocator);
+    }
+
+    if (m_memberNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_memberName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +339,53 @@ void OrgMemberAuthIdentity::SetIdentityType(const uint64_t& _identityType)
 bool OrgMemberAuthIdentity::IdentityTypeHasBeenSet() const
 {
     return m_identityTypeHasBeenSet;
+}
+
+uint64_t OrgMemberAuthIdentity::GetStatus() const
+{
+    return m_status;
+}
+
+void OrgMemberAuthIdentity::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool OrgMemberAuthIdentity::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+int64_t OrgMemberAuthIdentity::GetMemberUin() const
+{
+    return m_memberUin;
+}
+
+void OrgMemberAuthIdentity::SetMemberUin(const int64_t& _memberUin)
+{
+    m_memberUin = _memberUin;
+    m_memberUinHasBeenSet = true;
+}
+
+bool OrgMemberAuthIdentity::MemberUinHasBeenSet() const
+{
+    return m_memberUinHasBeenSet;
+}
+
+string OrgMemberAuthIdentity::GetMemberName() const
+{
+    return m_memberName;
+}
+
+void OrgMemberAuthIdentity::SetMemberName(const string& _memberName)
+{
+    m_memberName = _memberName;
+    m_memberNameHasBeenSet = true;
+}
+
+bool OrgMemberAuthIdentity::MemberNameHasBeenSet() const
+{
+    return m_memberNameHasBeenSet;
 }
 

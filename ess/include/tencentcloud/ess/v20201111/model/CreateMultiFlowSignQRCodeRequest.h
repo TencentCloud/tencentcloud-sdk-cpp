@@ -24,6 +24,7 @@
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/ApproverRestriction.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/ApproverComponentLimitType.h>
 
 
 namespace TencentCloud
@@ -332,6 +333,27 @@ namespace TencentCloud
                      */
                     bool ApproverRestrictionsHasBeenSet() const;
 
+                    /**
+                     * 获取指定签署方在使用个人印章签署控件（SIGN_SIGNATURE） 时可使用的签署方式：自由书写、正楷临摹、系统签名、个人印章。
+                     * @return ApproverComponentLimitTypes 指定签署方在使用个人印章签署控件（SIGN_SIGNATURE） 时可使用的签署方式：自由书写、正楷临摹、系统签名、个人印章。
+                     * 
+                     */
+                    std::vector<ApproverComponentLimitType> GetApproverComponentLimitTypes() const;
+
+                    /**
+                     * 设置指定签署方在使用个人印章签署控件（SIGN_SIGNATURE） 时可使用的签署方式：自由书写、正楷临摹、系统签名、个人印章。
+                     * @param _approverComponentLimitTypes 指定签署方在使用个人印章签署控件（SIGN_SIGNATURE） 时可使用的签署方式：自由书写、正楷临摹、系统签名、个人印章。
+                     * 
+                     */
+                    void SetApproverComponentLimitTypes(const std::vector<ApproverComponentLimitType>& _approverComponentLimitTypes);
+
+                    /**
+                     * 判断参数 ApproverComponentLimitTypes 是否已赋值
+                     * @return ApproverComponentLimitTypes 是否已赋值
+                     * 
+                     */
+                    bool ApproverComponentLimitTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -413,6 +435,12 @@ namespace TencentCloud
                      */
                     ApproverRestriction m_approverRestrictions;
                     bool m_approverRestrictionsHasBeenSet;
+
+                    /**
+                     * 指定签署方在使用个人印章签署控件（SIGN_SIGNATURE） 时可使用的签署方式：自由书写、正楷临摹、系统签名、个人印章。
+                     */
+                    std::vector<ApproverComponentLimitType> m_approverComponentLimitTypes;
+                    bool m_approverComponentLimitTypesHasBeenSet;
 
                 };
             }

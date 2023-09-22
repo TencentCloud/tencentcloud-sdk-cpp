@@ -24,6 +24,7 @@
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
 #include <tencentcloud/essbasic/v20210526/model/ApproverRestriction.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/ApproverComponentLimitType.h>
 
 
 namespace TencentCloud
@@ -279,6 +280,27 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
+                     * @return ApproverComponentLimitTypes 指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
+                     * 
+                     */
+                    std::vector<ApproverComponentLimitType> GetApproverComponentLimitTypes() const;
+
+                    /**
+                     * 设置指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
+                     * @param _approverComponentLimitTypes 指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
+                     * 
+                     */
+                    void SetApproverComponentLimitTypes(const std::vector<ApproverComponentLimitType>& _approverComponentLimitTypes);
+
+                    /**
+                     * 判断参数 ApproverComponentLimitTypes 是否已赋值
+                     * @return ApproverComponentLimitTypes 是否已赋值
+                     * 
+                     */
+                    bool ApproverComponentLimitTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +368,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
+                     */
+                    std::vector<ApproverComponentLimitType> m_approverComponentLimitTypes;
+                    bool m_approverComponentLimitTypesHasBeenSet;
 
                 };
             }

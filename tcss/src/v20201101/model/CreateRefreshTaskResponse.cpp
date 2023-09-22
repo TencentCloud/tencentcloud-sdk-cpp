@@ -25,7 +25,8 @@ using namespace std;
 
 CreateRefreshTaskResponse::CreateRefreshTaskResponse() :
     m_taskIdHasBeenSet(false),
-    m_createResultHasBeenSet(false)
+    m_createResultHasBeenSet(false),
+    m_newTaskIDHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome CreateRefreshTaskResponse::Deserialize(const string &payload
         m_createResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NewTaskID") && !rsp["NewTaskID"].IsNull())
+    {
+        if (!rsp["NewTaskID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewTaskID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newTaskID = string(rsp["NewTaskID"].GetString());
+        m_newTaskIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string CreateRefreshTaskResponse::ToJsonString() const
         string key = "CreateResult";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newTaskIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewTaskID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newTaskID.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string CreateRefreshTaskResponse::GetCreateResult() const
 bool CreateRefreshTaskResponse::CreateResultHasBeenSet() const
 {
     return m_createResultHasBeenSet;
+}
+
+string CreateRefreshTaskResponse::GetNewTaskID() const
+{
+    return m_newTaskID;
+}
+
+bool CreateRefreshTaskResponse::NewTaskIDHasBeenSet() const
+{
+    return m_newTaskIDHasBeenSet;
 }
 
 

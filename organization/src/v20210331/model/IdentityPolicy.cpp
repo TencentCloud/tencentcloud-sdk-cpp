@@ -22,7 +22,9 @@ using namespace std;
 
 IdentityPolicy::IdentityPolicy() :
     m_policyIdHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
+    m_policyNameHasBeenSet(false),
+    m_policyTypeHasBeenSet(false),
+    m_policyDocumentHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome IdentityPolicy::Deserialize(const rapidjson::Value &value)
         m_policyNameHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyType") && !value["PolicyType"].IsNull())
+    {
+        if (!value["PolicyType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IdentityPolicy.PolicyType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyType = value["PolicyType"].GetUint64();
+        m_policyTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolicyDocument") && !value["PolicyDocument"].IsNull())
+    {
+        if (!value["PolicyDocument"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IdentityPolicy.PolicyDocument` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyDocument = string(value["PolicyDocument"].GetString());
+        m_policyDocumentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void IdentityPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "PolicyName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_policyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_policyType, allocator);
+    }
+
+    if (m_policyDocumentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyDocument";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyDocument.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void IdentityPolicy::SetPolicyName(const string& _policyName)
 bool IdentityPolicy::PolicyNameHasBeenSet() const
 {
     return m_policyNameHasBeenSet;
+}
+
+uint64_t IdentityPolicy::GetPolicyType() const
+{
+    return m_policyType;
+}
+
+void IdentityPolicy::SetPolicyType(const uint64_t& _policyType)
+{
+    m_policyType = _policyType;
+    m_policyTypeHasBeenSet = true;
+}
+
+bool IdentityPolicy::PolicyTypeHasBeenSet() const
+{
+    return m_policyTypeHasBeenSet;
+}
+
+string IdentityPolicy::GetPolicyDocument() const
+{
+    return m_policyDocument;
+}
+
+void IdentityPolicy::SetPolicyDocument(const string& _policyDocument)
+{
+    m_policyDocument = _policyDocument;
+    m_policyDocumentHasBeenSet = true;
+}
+
+bool IdentityPolicy::PolicyDocumentHasBeenSet() const
+{
+    return m_policyDocumentHasBeenSet;
 }
 

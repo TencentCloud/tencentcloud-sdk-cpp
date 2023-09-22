@@ -207,6 +207,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelUserAutoSignEnableUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/Permission.h
+  include/tencentcloud/essbasic/v20210526/model/Staff.h
   include/tencentcloud/essbasic/v20210526/model/ComponentLimit.h
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h
@@ -226,7 +227,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/UserInfo.h
   include/tencentcloud/essbasic/v20210526/model/TaskInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBoundFlowsResponse.h
-  include/tencentcloud/essbasic/v20210526/model/Staff.h
+  include/tencentcloud/essbasic/v20210526/model/ApproverComponentLimitType.h
   include/tencentcloud/essbasic/v20210526/model/ResourceUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBoundFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesRequest.h
@@ -504,6 +505,7 @@ set(essbasic_src
   src/v20210526/model/CreateChannelFlowEvidenceReportRequest.cpp
   src/v20210526/model/ChannelCancelUserAutoSignEnableUrlRequest.cpp
   src/v20210526/model/Permission.cpp
+  src/v20210526/model/Staff.cpp
   src/v20210526/model/ComponentLimit.cpp
   src/v20210526/model/ChannelVerifyPdfResponse.cpp
   src/v20210526/model/CreateConsoleLoginUrlRequest.cpp
@@ -523,7 +525,7 @@ set(essbasic_src
   src/v20210526/model/UserInfo.cpp
   src/v20210526/model/TaskInfo.cpp
   src/v20210526/model/ChannelCreateBoundFlowsResponse.cpp
-  src/v20210526/model/Staff.cpp
+  src/v20210526/model/ApproverComponentLimitType.cpp
   src/v20210526/model/ResourceUrlInfo.cpp
   src/v20210526/model/ChannelCreateBoundFlowsRequest.cpp
   src/v20210526/model/ChannelDescribeEmployeesRequest.cpp

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取组织成员Uin。
-                     * @return MemberUin 组织成员Uin。
+                     * 获取组织成员Uin。入参MemberUin与IdentityId至少填写一个
+                     * @return MemberUin 组织成员Uin。入参MemberUin与IdentityId至少填写一个
                      * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
-                     * 设置组织成员Uin。
-                     * @param _memberUin 组织成员Uin。
+                     * 设置组织成员Uin。入参MemberUin与IdentityId至少填写一个
+                     * @param _memberUin 组织成员Uin。入参MemberUin与IdentityId至少填写一个
                      * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
@@ -104,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MemberUinHasBeenSet() const;
+
+                    /**
+                     * 获取身份ID。入参MemberUin与IdentityId至少填写一个
+                     * @return IdentityId 身份ID。入参MemberUin与IdentityId至少填写一个
+                     * 
+                     */
+                    uint64_t GetIdentityId() const;
+
+                    /**
+                     * 设置身份ID。入参MemberUin与IdentityId至少填写一个
+                     * @param _identityId 身份ID。入参MemberUin与IdentityId至少填写一个
+                     * 
+                     */
+                    void SetIdentityId(const uint64_t& _identityId);
+
+                    /**
+                     * 判断参数 IdentityId 是否已赋值
+                     * @return IdentityId 是否已赋值
+                     * 
+                     */
+                    bool IdentityIdHasBeenSet() const;
 
                 private:
 
@@ -120,10 +141,16 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 组织成员Uin。
+                     * 组织成员Uin。入参MemberUin与IdentityId至少填写一个
                      */
                     int64_t m_memberUin;
                     bool m_memberUinHasBeenSet;
+
+                    /**
+                     * 身份ID。入参MemberUin与IdentityId至少填写一个
+                     */
+                    uint64_t m_identityId;
+                    bool m_identityIdHasBeenSet;
 
                 };
             }

@@ -33,7 +33,8 @@ CreateMultiFlowSignQRCodeRequest::CreateMultiFlowSignQRCodeRequest() :
     m_userDataHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_approverRestrictionsHasBeenSet(false)
+    m_approverRestrictionsHasBeenSet(false),
+    m_approverComponentLimitTypesHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,21 @@ string CreateMultiFlowSignQRCodeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_approverRestrictions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_approverComponentLimitTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverComponentLimitTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_approverComponentLimitTypes.begin(); itr != m_approverComponentLimitTypes.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -324,6 +340,22 @@ void CreateMultiFlowSignQRCodeRequest::SetApproverRestrictions(const ApproverRes
 bool CreateMultiFlowSignQRCodeRequest::ApproverRestrictionsHasBeenSet() const
 {
     return m_approverRestrictionsHasBeenSet;
+}
+
+vector<ApproverComponentLimitType> CreateMultiFlowSignQRCodeRequest::GetApproverComponentLimitTypes() const
+{
+    return m_approverComponentLimitTypes;
+}
+
+void CreateMultiFlowSignQRCodeRequest::SetApproverComponentLimitTypes(const vector<ApproverComponentLimitType>& _approverComponentLimitTypes)
+{
+    m_approverComponentLimitTypes = _approverComponentLimitTypes;
+    m_approverComponentLimitTypesHasBeenSet = true;
+}
+
+bool CreateMultiFlowSignQRCodeRequest::ApproverComponentLimitTypesHasBeenSet() const
+{
+    return m_approverComponentLimitTypesHasBeenSet;
 }
 
 

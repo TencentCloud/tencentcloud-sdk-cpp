@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取指定集群列表,若为空则标识同步所有集群
+                     * @return ClusterIDs 指定集群列表,若为空则标识同步所有集群
+                     * 
+                     */
+                    std::vector<std::string> GetClusterIDs() const;
+
+                    /**
+                     * 设置指定集群列表,若为空则标识同步所有集群
+                     * @param _clusterIDs 指定集群列表,若为空则标识同步所有集群
+                     * 
+                     */
+                    void SetClusterIDs(const std::vector<std::string>& _clusterIDs);
+
+                    /**
+                     * 判断参数 ClusterIDs 是否已赋值
+                     * @return ClusterIDs 是否已赋值
+                     * 
+                     */
+                    bool ClusterIDsHasBeenSet() const;
+
+                    /**
+                     * 获取是否只同步列表
+                     * @return IsSyncListOnly 是否只同步列表
+                     * 
+                     */
+                    bool GetIsSyncListOnly() const;
+
+                    /**
+                     * 设置是否只同步列表
+                     * @param _isSyncListOnly 是否只同步列表
+                     * 
+                     */
+                    void SetIsSyncListOnly(const bool& _isSyncListOnly);
+
+                    /**
+                     * 判断参数 IsSyncListOnly 是否已赋值
+                     * @return IsSyncListOnly 是否已赋值
+                     * 
+                     */
+                    bool IsSyncListOnlyHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 指定集群列表,若为空则标识同步所有集群
+                     */
+                    std::vector<std::string> m_clusterIDs;
+                    bool m_clusterIDsHasBeenSet;
+
+                    /**
+                     * 是否只同步列表
+                     */
+                    bool m_isSyncListOnly;
+                    bool m_isSyncListOnlyHasBeenSet;
 
                 };
             }

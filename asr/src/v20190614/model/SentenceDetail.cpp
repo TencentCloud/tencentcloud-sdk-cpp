@@ -23,6 +23,7 @@ using namespace std;
 SentenceDetail::SentenceDetail() :
     m_finalSentenceHasBeenSet(false),
     m_sliceSentenceHasBeenSet(false),
+    m_writtenTextHasBeenSet(false),
     m_startMsHasBeenSet(false),
     m_endMsHasBeenSet(false),
     m_wordsNumHasBeenSet(false),
@@ -58,6 +59,16 @@ CoreInternalOutcome SentenceDetail::Deserialize(const rapidjson::Value &value)
         }
         m_sliceSentence = string(value["SliceSentence"].GetString());
         m_sliceSentenceHasBeenSet = true;
+    }
+
+    if (value.HasMember("WrittenText") && !value["WrittenText"].IsNull())
+    {
+        if (!value["WrittenText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SentenceDetail.WrittenText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_writtenText = string(value["WrittenText"].GetString());
+        m_writtenTextHasBeenSet = true;
     }
 
     if (value.HasMember("StartMs") && !value["StartMs"].IsNull())
@@ -186,6 +197,14 @@ void SentenceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_sliceSentence.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_writtenTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WrittenText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_writtenText.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_startMsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -303,6 +322,22 @@ void SentenceDetail::SetSliceSentence(const string& _sliceSentence)
 bool SentenceDetail::SliceSentenceHasBeenSet() const
 {
     return m_sliceSentenceHasBeenSet;
+}
+
+string SentenceDetail::GetWrittenText() const
+{
+    return m_writtenText;
+}
+
+void SentenceDetail::SetWrittenText(const string& _writtenText)
+{
+    m_writtenText = _writtenText;
+    m_writtenTextHasBeenSet = true;
+}
+
+bool SentenceDetail::WrittenTextHasBeenSet() const
+{
+    return m_writtenTextHasBeenSet;
 }
 
 int64_t SentenceDetail::GetStartMs() const

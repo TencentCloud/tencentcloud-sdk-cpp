@@ -341,6 +341,31 @@ DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不�
                      */
                     bool SpecAliasHasBeenSet() const;
 
+                    /**
+                     * 获取计费项特性列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpecFeatures 计费项特性列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSpecFeatures() const;
+
+                    /**
+                     * 设置计费项特性列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _specFeatures 计费项特性列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpecFeatures(const std::vector<std::string>& _specFeatures);
+
+                    /**
+                     * 判断参数 SpecFeatures 是否已赋值
+                     * @return SpecFeatures 是否已赋值
+                     * 
+                     */
+                    bool SpecFeaturesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -423,6 +448,13 @@ DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不�
                      */
                     std::string m_specAlias;
                     bool m_specAliasHasBeenSet;
+
+                    /**
+                     * 计费项特性列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_specFeatures;
+                    bool m_specFeaturesHasBeenSet;
 
                 };
             }

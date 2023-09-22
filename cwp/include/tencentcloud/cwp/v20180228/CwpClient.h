@@ -97,6 +97,8 @@
 #include <tencentcloud/cwp/v20180228/model/DeleteWebPageEventLogResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAgentInstallCommandRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAgentInstallCommandResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAlarmIncidentNodesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAlarmIncidentNodesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAlarmVertexIdRequest.h>
@@ -704,6 +706,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountStatisticsResponse> DescribeAccountStatisticsOutcome;
                 typedef std::future<DescribeAccountStatisticsOutcome> DescribeAccountStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAccountStatisticsRequest&, DescribeAccountStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAgentInstallCommandResponse> DescribeAgentInstallCommandOutcome;
+                typedef std::future<DescribeAgentInstallCommandOutcome> DescribeAgentInstallCommandOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAgentInstallCommandRequest&, DescribeAgentInstallCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentInstallCommandAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAlarmIncidentNodesResponse> DescribeAlarmIncidentNodesOutcome;
                 typedef std::future<DescribeAlarmIncidentNodesOutcome> DescribeAlarmIncidentNodesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAlarmIncidentNodesRequest&, DescribeAlarmIncidentNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmIncidentNodesAsyncHandler;
@@ -1765,6 +1770,15 @@ namespace TencentCloud
                 DescribeAccountStatisticsOutcome DescribeAccountStatistics(const Model::DescribeAccountStatisticsRequest &request);
                 void DescribeAccountStatisticsAsync(const Model::DescribeAccountStatisticsRequest& request, const DescribeAccountStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountStatisticsOutcomeCallable DescribeAccountStatisticsCallable(const Model::DescribeAccountStatisticsRequest& request);
+
+                /**
+                 *获取agent安装命令
+                 * @param req DescribeAgentInstallCommandRequest
+                 * @return DescribeAgentInstallCommandOutcome
+                 */
+                DescribeAgentInstallCommandOutcome DescribeAgentInstallCommand(const Model::DescribeAgentInstallCommandRequest &request);
+                void DescribeAgentInstallCommandAsync(const Model::DescribeAgentInstallCommandRequest& request, const DescribeAgentInstallCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentInstallCommandOutcomeCallable DescribeAgentInstallCommandCallable(const Model::DescribeAgentInstallCommandRequest& request);
 
                 /**
                  *获取告警点所在事件的所有节点信息

@@ -22,7 +22,9 @@
 using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
-CreateRefreshTaskRequest::CreateRefreshTaskRequest()
+CreateRefreshTaskRequest::CreateRefreshTaskRequest() :
+    m_clusterIDsHasBeenSet(false),
+    m_isSyncListOnlyHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string CreateRefreshTaskRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_clusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIDs.begin(); itr != m_clusterIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isSyncListOnlyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSyncListOnly";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSyncListOnly, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string CreateRefreshTaskRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> CreateRefreshTaskRequest::GetClusterIDs() const
+{
+    return m_clusterIDs;
+}
+
+void CreateRefreshTaskRequest::SetClusterIDs(const vector<string>& _clusterIDs)
+{
+    m_clusterIDs = _clusterIDs;
+    m_clusterIDsHasBeenSet = true;
+}
+
+bool CreateRefreshTaskRequest::ClusterIDsHasBeenSet() const
+{
+    return m_clusterIDsHasBeenSet;
+}
+
+bool CreateRefreshTaskRequest::GetIsSyncListOnly() const
+{
+    return m_isSyncListOnly;
+}
+
+void CreateRefreshTaskRequest::SetIsSyncListOnly(const bool& _isSyncListOnly)
+{
+    m_isSyncListOnly = _isSyncListOnly;
+    m_isSyncListOnlyHasBeenSet = true;
+}
+
+bool CreateRefreshTaskRequest::IsSyncListOnlyHasBeenSet() const
+{
+    return m_isSyncListOnlyHasBeenSet;
+}
 
 

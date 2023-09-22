@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Organization::V20210331::Model;
 using namespace std;
 
-AddOrganizationMemberEmailResponse::AddOrganizationMemberEmailResponse()
+AddOrganizationMemberEmailResponse::AddOrganizationMemberEmailResponse() :
+    m_bindIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome AddOrganizationMemberEmailResponse::Deserialize(const string
     }
 
 
+    if (rsp.HasMember("BindId") && !rsp["BindId"].IsNull())
+    {
+        if (!rsp["BindId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BindId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bindId = rsp["BindId"].GetUint64();
+        m_bindIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string AddOrganizationMemberEmailResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_bindIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bindId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string AddOrganizationMemberEmailResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t AddOrganizationMemberEmailResponse::GetBindId() const
+{
+    return m_bindId;
+}
+
+bool AddOrganizationMemberEmailResponse::BindIdHasBeenSet() const
+{
+    return m_bindIdHasBeenSet;
+}
 
 

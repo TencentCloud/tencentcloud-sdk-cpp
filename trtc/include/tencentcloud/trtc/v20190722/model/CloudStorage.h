@@ -48,18 +48,22 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方云储存的供应商:
-0：腾讯云存储 COS，暂不支持其他家。
+0：腾讯云存储 COS。
+【*注意】：目前第三方仅支持腾讯云存储COS，暂不支持AWS等其他第三方云存储。
                      * @return Vendor 第三方云储存的供应商:
-0：腾讯云存储 COS，暂不支持其他家。
+0：腾讯云存储 COS。
+【*注意】：目前第三方仅支持腾讯云存储COS，暂不支持AWS等其他第三方云存储。
                      * 
                      */
                     uint64_t GetVendor() const;
 
                     /**
                      * 设置第三方云储存的供应商:
-0：腾讯云存储 COS，暂不支持其他家。
+0：腾讯云存储 COS。
+【*注意】：目前第三方仅支持腾讯云存储COS，暂不支持AWS等其他第三方云存储。
                      * @param _vendor 第三方云储存的供应商:
-0：腾讯云存储 COS，暂不支持其他家。
+0：腾讯云存储 COS。
+【*注意】：目前第三方仅支持腾讯云存储COS，暂不支持AWS等其他第三方云存储。
                      * 
                      */
                     void SetVendor(const uint64_t& _vendor);
@@ -188,7 +192,8 @@ namespace TencentCloud
 
                     /**
                      * 第三方云储存的供应商:
-0：腾讯云存储 COS，暂不支持其他家。
+0：腾讯云存储 COS。
+【*注意】：目前第三方仅支持腾讯云存储COS，暂不支持AWS等其他第三方云存储。
                      */
                     uint64_t m_vendor;
                     bool m_vendorHasBeenSet;

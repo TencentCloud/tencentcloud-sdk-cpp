@@ -29,6 +29,10 @@
 #include <tencentcloud/csip/v20221121/model/CreateDomainAndIpResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDomainAndIpRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDomainAndIpResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetsRequest.h>
@@ -63,6 +67,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeTaskLogURLResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVpcAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVpcAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskResponse.h>
 
 
 namespace TencentCloud
@@ -86,6 +92,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRiskCenterScanTaskResponse> CreateRiskCenterScanTaskOutcome;
                 typedef std::future<CreateRiskCenterScanTaskOutcome> CreateRiskCenterScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateRiskCenterScanTaskRequest&, CreateRiskCenterScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRiskCenterScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDomainAndIpResponse> DeleteDomainAndIpOutcome;
+                typedef std::future<DeleteDomainAndIpOutcome> DeleteDomainAndIpOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDomainAndIpRequest&, DeleteDomainAndIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAndIpAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRiskScanTaskResponse> DeleteRiskScanTaskOutcome;
+                typedef std::future<DeleteRiskScanTaskOutcome> DeleteRiskScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteRiskScanTaskRequest&, DeleteRiskScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRiskScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCVMAssetInfoResponse> DescribeCVMAssetInfoOutcome;
                 typedef std::future<DescribeCVMAssetInfoOutcome> DescribeCVMAssetInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCVMAssetInfoRequest&, DescribeCVMAssetInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCVMAssetInfoAsyncHandler;
@@ -137,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVpcAssetsResponse> DescribeVpcAssetsOutcome;
                 typedef std::future<DescribeVpcAssetsOutcome> DescribeVpcAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeVpcAssetsRequest&, DescribeVpcAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopRiskCenterTaskResponse> StopRiskCenterTaskOutcome;
+                typedef std::future<StopRiskCenterTaskOutcome> StopRiskCenterTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::StopRiskCenterTaskRequest&, StopRiskCenterTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRiskCenterTaskAsyncHandler;
 
 
 
@@ -166,6 +181,24 @@ namespace TencentCloud
                 CreateRiskCenterScanTaskOutcome CreateRiskCenterScanTask(const Model::CreateRiskCenterScanTaskRequest &request);
                 void CreateRiskCenterScanTaskAsync(const Model::CreateRiskCenterScanTaskRequest& request, const CreateRiskCenterScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRiskCenterScanTaskOutcomeCallable CreateRiskCenterScanTaskCallable(const Model::CreateRiskCenterScanTaskRequest& request);
+
+                /**
+                 *删除域名和ip请求
+                 * @param req DeleteDomainAndIpRequest
+                 * @return DeleteDomainAndIpOutcome
+                 */
+                DeleteDomainAndIpOutcome DeleteDomainAndIp(const Model::DeleteDomainAndIpRequest &request);
+                void DeleteDomainAndIpAsync(const Model::DeleteDomainAndIpRequest& request, const DeleteDomainAndIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDomainAndIpOutcomeCallable DeleteDomainAndIpCallable(const Model::DeleteDomainAndIpRequest& request);
+
+                /**
+                 *删除风险中心扫描任务
+                 * @param req DeleteRiskScanTaskRequest
+                 * @return DeleteRiskScanTaskOutcome
+                 */
+                DeleteRiskScanTaskOutcome DeleteRiskScanTask(const Model::DeleteRiskScanTaskRequest &request);
+                void DeleteRiskScanTaskAsync(const Model::DeleteRiskScanTaskRequest& request, const DeleteRiskScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRiskScanTaskOutcomeCallable DeleteRiskScanTaskCallable(const Model::DeleteRiskScanTaskRequest& request);
 
                 /**
                  *cvm详情
@@ -319,6 +352,15 @@ namespace TencentCloud
                 DescribeVpcAssetsOutcome DescribeVpcAssets(const Model::DescribeVpcAssetsRequest &request);
                 void DescribeVpcAssetsAsync(const Model::DescribeVpcAssetsRequest& request, const DescribeVpcAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVpcAssetsOutcomeCallable DescribeVpcAssetsCallable(const Model::DescribeVpcAssetsRequest& request);
+
+                /**
+                 *停止扫风险中心扫描任务
+                 * @param req StopRiskCenterTaskRequest
+                 * @return StopRiskCenterTaskOutcome
+                 */
+                StopRiskCenterTaskOutcome StopRiskCenterTask(const Model::StopRiskCenterTaskRequest &request);
+                void StopRiskCenterTaskAsync(const Model::StopRiskCenterTaskRequest& request, const StopRiskCenterTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopRiskCenterTaskOutcomeCallable StopRiskCenterTaskCallable(const Model::StopRiskCenterTaskRequest& request);
 
             };
         }

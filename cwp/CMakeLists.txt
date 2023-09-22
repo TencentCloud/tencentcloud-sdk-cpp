@@ -381,6 +381,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ProtectMachine.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetUserInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportBaselineItemListRequest.h
+  include/tencentcloud/cwp/v20180228/model/DeleteReverseShellRulesRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeProtectDirListRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportPrivilegeEventsRequest.h
   include/tencentcloud/cwp/v20180228/model/MachineExtraInfo.h
@@ -420,7 +421,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeScanStateResponse.h
   include/tencentcloud/cwp/v20180228/model/BaselineHostDetect.h
   include/tencentcloud/cwp/v20180228/model/EditTagsRequest.h
-  include/tencentcloud/cwp/v20180228/model/DeleteReverseShellRulesRequest.h
+  include/tencentcloud/cwp/v20180228/model/DescribeAgentInstallCommandRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineEffectHostListRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportSecurityTrendsRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportBaselineHostDetectListRequest.h
@@ -619,6 +620,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeScanStateRequest.h
   include/tencentcloud/cwp/v20180228/model/SyncBaselineDetectSummaryResponse.h
   include/tencentcloud/cwp/v20180228/model/ModifyMalwareTimingScanSettingsRequest.h
+  include/tencentcloud/cwp/v20180228/model/DescribeAgentInstallCommandResponse.h
   include/tencentcloud/cwp/v20180228/model/AssetEnvBaseInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeMachineListResponse.h
   include/tencentcloud/cwp/v20180228/model/MalwareInfo.h
@@ -1091,6 +1093,7 @@ set(cwp_src
   src/v20180228/model/ProtectMachine.cpp
   src/v20180228/model/DescribeAssetUserInfoRequest.cpp
   src/v20180228/model/ExportBaselineItemListRequest.cpp
+  src/v20180228/model/DeleteReverseShellRulesRequest.cpp
   src/v20180228/model/DescribeProtectDirListRequest.cpp
   src/v20180228/model/ExportPrivilegeEventsRequest.cpp
   src/v20180228/model/MachineExtraInfo.cpp
@@ -1130,7 +1133,7 @@ set(cwp_src
   src/v20180228/model/DescribeScanStateResponse.cpp
   src/v20180228/model/BaselineHostDetect.cpp
   src/v20180228/model/EditTagsRequest.cpp
-  src/v20180228/model/DeleteReverseShellRulesRequest.cpp
+  src/v20180228/model/DescribeAgentInstallCommandRequest.cpp
   src/v20180228/model/DescribeBaselineEffectHostListRequest.cpp
   src/v20180228/model/ExportSecurityTrendsRequest.cpp
   src/v20180228/model/ExportBaselineHostDetectListRequest.cpp
@@ -1329,6 +1332,7 @@ set(cwp_src
   src/v20180228/model/DescribeScanStateRequest.cpp
   src/v20180228/model/SyncBaselineDetectSummaryResponse.cpp
   src/v20180228/model/ModifyMalwareTimingScanSettingsRequest.cpp
+  src/v20180228/model/DescribeAgentInstallCommandResponse.cpp
   src/v20180228/model/AssetEnvBaseInfo.cpp
   src/v20180228/model/DescribeMachineListResponse.cpp
   src/v20180228/model/MalwareInfo.cpp

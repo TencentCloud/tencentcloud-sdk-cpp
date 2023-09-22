@@ -169,6 +169,92 @@ CsipClient::CreateRiskCenterScanTaskOutcomeCallable CsipClient::CreateRiskCenter
     return task->get_future();
 }
 
+CsipClient::DeleteDomainAndIpOutcome CsipClient::DeleteDomainAndIp(const DeleteDomainAndIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDomainAndIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDomainAndIpResponse rsp = DeleteDomainAndIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDomainAndIpOutcome(rsp);
+        else
+            return DeleteDomainAndIpOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDomainAndIpOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteDomainAndIpAsync(const DeleteDomainAndIpRequest& request, const DeleteDomainAndIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDomainAndIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DeleteDomainAndIpOutcomeCallable CsipClient::DeleteDomainAndIpCallable(const DeleteDomainAndIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDomainAndIpOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDomainAndIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DeleteRiskScanTaskOutcome CsipClient::DeleteRiskScanTask(const DeleteRiskScanTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRiskScanTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRiskScanTaskResponse rsp = DeleteRiskScanTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRiskScanTaskOutcome(rsp);
+        else
+            return DeleteRiskScanTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRiskScanTaskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteRiskScanTaskAsync(const DeleteRiskScanTaskRequest& request, const DeleteRiskScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRiskScanTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DeleteRiskScanTaskOutcomeCallable CsipClient::DeleteRiskScanTaskCallable(const DeleteRiskScanTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRiskScanTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRiskScanTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeCVMAssetInfoOutcome CsipClient::DescribeCVMAssetInfo(const DescribeCVMAssetInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCVMAssetInfo");
@@ -893,6 +979,49 @@ CsipClient::DescribeVpcAssetsOutcomeCallable CsipClient::DescribeVpcAssetsCallab
         [this, request]()
         {
             return this->DescribeVpcAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::StopRiskCenterTaskOutcome CsipClient::StopRiskCenterTask(const StopRiskCenterTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopRiskCenterTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopRiskCenterTaskResponse rsp = StopRiskCenterTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopRiskCenterTaskOutcome(rsp);
+        else
+            return StopRiskCenterTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return StopRiskCenterTaskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::StopRiskCenterTaskAsync(const StopRiskCenterTaskRequest& request, const StopRiskCenterTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopRiskCenterTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::StopRiskCenterTaskOutcomeCallable CsipClient::StopRiskCenterTaskCallable(const StopRiskCenterTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopRiskCenterTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->StopRiskCenterTask(request);
         }
     );
 

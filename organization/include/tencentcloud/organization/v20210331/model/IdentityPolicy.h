@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略ID
-                     * @return PolicyId 策略ID
+                     * 获取CAM预设策略ID。PolicyType 为预设策略时有效且必选
+                     * @return PolicyId CAM预设策略ID。PolicyType 为预设策略时有效且必选
                      * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略ID
-                     * @param _policyId 策略ID
+                     * 设置CAM预设策略ID。PolicyType 为预设策略时有效且必选
+                     * @param _policyId CAM预设策略ID。PolicyType 为预设策略时有效且必选
                      * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取策略名称
-                     * @return PolicyName 策略名称
+                     * 获取CAM预设策略名称。PolicyType 为预设策略时有效且必选
+                     * @return PolicyName CAM预设策略名称。PolicyType 为预设策略时有效且必选
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置策略名称
-                     * @param _policyName 策略名称
+                     * 设置CAM预设策略名称。PolicyType 为预设策略时有效且必选
+                     * @param _policyName CAM预设策略名称。PolicyType 为预设策略时有效且必选
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -88,19 +88,83 @@ namespace TencentCloud
                      */
                     bool PolicyNameHasBeenSet() const;
 
+                    /**
+                     * 获取策略类型。取值 1-自定义策略  2-预设策略；默认值2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolicyType 策略类型。取值 1-自定义策略  2-预设策略；默认值2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetPolicyType() const;
+
+                    /**
+                     * 设置策略类型。取值 1-自定义策略  2-预设策略；默认值2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _policyType 策略类型。取值 1-自定义策略  2-预设策略；默认值2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPolicyType(const uint64_t& _policyType);
+
+                    /**
+                     * 判断参数 PolicyType 是否已赋值
+                     * @return PolicyType 是否已赋值
+                     * 
+                     */
+                    bool PolicyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取自定义策略内容，遵循CAM策略语法。PolicyType 为自定义策略时有效且必选
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolicyDocument 自定义策略内容，遵循CAM策略语法。PolicyType 为自定义策略时有效且必选
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPolicyDocument() const;
+
+                    /**
+                     * 设置自定义策略内容，遵循CAM策略语法。PolicyType 为自定义策略时有效且必选
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _policyDocument 自定义策略内容，遵循CAM策略语法。PolicyType 为自定义策略时有效且必选
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPolicyDocument(const std::string& _policyDocument);
+
+                    /**
+                     * 判断参数 PolicyDocument 是否已赋值
+                     * @return PolicyDocument 是否已赋值
+                     * 
+                     */
+                    bool PolicyDocumentHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 策略ID
+                     * CAM预设策略ID。PolicyType 为预设策略时有效且必选
                      */
                     uint64_t m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 策略名称
+                     * CAM预设策略名称。PolicyType 为预设策略时有效且必选
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
+
+                    /**
+                     * 策略类型。取值 1-自定义策略  2-预设策略；默认值2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_policyType;
+                    bool m_policyTypeHasBeenSet;
+
+                    /**
+                     * 自定义策略内容，遵循CAM策略语法。PolicyType 为自定义策略时有效且必选
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_policyDocument;
+                    bool m_policyDocumentHasBeenSet;
 
                 };
             }

@@ -43,7 +43,30 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取绑定Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BindId 绑定Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetBindId() const;
+
+                    /**
+                     * 判断参数 BindId 是否已赋值
+                     * @return BindId 是否已赋值
+                     * 
+                     */
+                    bool BindIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 绑定Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_bindId;
+                    bool m_bindIdHasBeenSet;
 
                 };
             }
