@@ -25,7 +25,10 @@ MappedBucket::MappedBucket() :
     m_fileSystemPathHasBeenSet(false),
     m_dataRepositoryTaskAutoStrategyHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_ruleDescriptionHasBeenSet(false)
+    m_ruleDescriptionHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_accelerateFlagHasBeenSet(false),
+    m_bucketRegionHasBeenSet(false)
 {
 }
 
@@ -87,6 +90,36 @@ CoreInternalOutcome MappedBucket::Deserialize(const rapidjson::Value &value)
         m_ruleDescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MappedBucket.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetUint64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccelerateFlag") && !value["AccelerateFlag"].IsNull())
+    {
+        if (!value["AccelerateFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MappedBucket.AccelerateFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_accelerateFlag = value["AccelerateFlag"].GetBool();
+        m_accelerateFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("BucketRegion") && !value["BucketRegion"].IsNull())
+    {
+        if (!value["BucketRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MappedBucket.BucketRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bucketRegion = string(value["BucketRegion"].GetString());
+        m_bucketRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +170,30 @@ void MappedBucket::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RuleDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_accelerateFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccelerateFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accelerateFlag, allocator);
+    }
+
+    if (m_bucketRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bucketRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +277,53 @@ void MappedBucket::SetRuleDescription(const string& _ruleDescription)
 bool MappedBucket::RuleDescriptionHasBeenSet() const
 {
     return m_ruleDescriptionHasBeenSet;
+}
+
+uint64_t MappedBucket::GetStatus() const
+{
+    return m_status;
+}
+
+void MappedBucket::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool MappedBucket::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+bool MappedBucket::GetAccelerateFlag() const
+{
+    return m_accelerateFlag;
+}
+
+void MappedBucket::SetAccelerateFlag(const bool& _accelerateFlag)
+{
+    m_accelerateFlag = _accelerateFlag;
+    m_accelerateFlagHasBeenSet = true;
+}
+
+bool MappedBucket::AccelerateFlagHasBeenSet() const
+{
+    return m_accelerateFlagHasBeenSet;
+}
+
+string MappedBucket::GetBucketRegion() const
+{
+    return m_bucketRegion;
+}
+
+void MappedBucket::SetBucketRegion(const string& _bucketRegion)
+{
+    m_bucketRegion = _bucketRegion;
+    m_bucketRegionHasBeenSet = true;
+}
+
+bool MappedBucket::BucketRegionHasBeenSet() const
+{
+    return m_bucketRegionHasBeenSet;
 }
 

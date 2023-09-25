@@ -599,6 +599,49 @@ CsipClient::DescribePublicIpAssetsOutcomeCallable CsipClient::DescribePublicIpAs
     return task->get_future();
 }
 
+CsipClient::DescribeRiskCenterAssetViewCFGRiskListOutcome CsipClient::DescribeRiskCenterAssetViewCFGRiskList(const DescribeRiskCenterAssetViewCFGRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskCenterAssetViewCFGRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskCenterAssetViewCFGRiskListResponse rsp = DescribeRiskCenterAssetViewCFGRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskCenterAssetViewCFGRiskListOutcome(rsp);
+        else
+            return DescribeRiskCenterAssetViewCFGRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskCenterAssetViewCFGRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskCenterAssetViewCFGRiskListAsync(const DescribeRiskCenterAssetViewCFGRiskListRequest& request, const DescribeRiskCenterAssetViewCFGRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskCenterAssetViewCFGRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskCenterAssetViewCFGRiskListOutcomeCallable CsipClient::DescribeRiskCenterAssetViewCFGRiskListCallable(const DescribeRiskCenterAssetViewCFGRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskCenterAssetViewCFGRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskCenterAssetViewCFGRiskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeRiskCenterAssetViewPortRiskListOutcome CsipClient::DescribeRiskCenterAssetViewPortRiskList(const DescribeRiskCenterAssetViewPortRiskListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRiskCenterAssetViewPortRiskList");
@@ -678,6 +721,135 @@ CsipClient::DescribeRiskCenterAssetViewVULRiskListOutcomeCallable CsipClient::De
         [this, request]()
         {
             return this->DescribeRiskCenterAssetViewVULRiskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeRiskCenterAssetViewWeakPasswordRiskListOutcome CsipClient::DescribeRiskCenterAssetViewWeakPasswordRiskList(const DescribeRiskCenterAssetViewWeakPasswordRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskCenterAssetViewWeakPasswordRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskCenterAssetViewWeakPasswordRiskListResponse rsp = DescribeRiskCenterAssetViewWeakPasswordRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskCenterAssetViewWeakPasswordRiskListOutcome(rsp);
+        else
+            return DescribeRiskCenterAssetViewWeakPasswordRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskCenterAssetViewWeakPasswordRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskCenterAssetViewWeakPasswordRiskListAsync(const DescribeRiskCenterAssetViewWeakPasswordRiskListRequest& request, const DescribeRiskCenterAssetViewWeakPasswordRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskCenterAssetViewWeakPasswordRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskCenterAssetViewWeakPasswordRiskListOutcomeCallable CsipClient::DescribeRiskCenterAssetViewWeakPasswordRiskListCallable(const DescribeRiskCenterAssetViewWeakPasswordRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskCenterAssetViewWeakPasswordRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskCenterAssetViewWeakPasswordRiskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeRiskCenterServerRiskListOutcome CsipClient::DescribeRiskCenterServerRiskList(const DescribeRiskCenterServerRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskCenterServerRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskCenterServerRiskListResponse rsp = DescribeRiskCenterServerRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskCenterServerRiskListOutcome(rsp);
+        else
+            return DescribeRiskCenterServerRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskCenterServerRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskCenterServerRiskListAsync(const DescribeRiskCenterServerRiskListRequest& request, const DescribeRiskCenterServerRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskCenterServerRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskCenterServerRiskListOutcomeCallable CsipClient::DescribeRiskCenterServerRiskListCallable(const DescribeRiskCenterServerRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskCenterServerRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskCenterServerRiskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeRiskCenterWebsiteRiskListOutcome CsipClient::DescribeRiskCenterWebsiteRiskList(const DescribeRiskCenterWebsiteRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskCenterWebsiteRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskCenterWebsiteRiskListResponse rsp = DescribeRiskCenterWebsiteRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskCenterWebsiteRiskListOutcome(rsp);
+        else
+            return DescribeRiskCenterWebsiteRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskCenterWebsiteRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskCenterWebsiteRiskListAsync(const DescribeRiskCenterWebsiteRiskListRequest& request, const DescribeRiskCenterWebsiteRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskCenterWebsiteRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskCenterWebsiteRiskListOutcomeCallable CsipClient::DescribeRiskCenterWebsiteRiskListCallable(const DescribeRiskCenterWebsiteRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskCenterWebsiteRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskCenterWebsiteRiskList(request);
         }
     );
 

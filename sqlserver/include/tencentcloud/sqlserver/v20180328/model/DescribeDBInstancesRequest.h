@@ -426,6 +426,27 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取分页查询方式 offset-按照偏移量分页查询，pageNumber-按照页数分页查询，默认取值pageNumber
+                     * @return PaginationType 分页查询方式 offset-按照偏移量分页查询，pageNumber-按照页数分页查询，默认取值pageNumber
+                     * 
+                     */
+                    std::string GetPaginationType() const;
+
+                    /**
+                     * 设置分页查询方式 offset-按照偏移量分页查询，pageNumber-按照页数分页查询，默认取值pageNumber
+                     * @param _paginationType 分页查询方式 offset-按照偏移量分页查询，pageNumber-按照页数分页查询，默认取值pageNumber
+                     * 
+                     */
+                    void SetPaginationType(const std::string& _paginationType);
+
+                    /**
+                     * 判断参数 PaginationType 是否已赋值
+                     * @return PaginationType 是否已赋值
+                     * 
+                     */
+                    bool PaginationTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -535,6 +556,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 分页查询方式 offset-按照偏移量分页查询，pageNumber-按照页数分页查询，默认取值pageNumber
+                     */
+                    std::string m_paginationType;
+                    bool m_paginationTypeHasBeenSet;
 
                 };
             }

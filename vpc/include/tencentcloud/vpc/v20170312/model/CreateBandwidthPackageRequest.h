@@ -47,9 +47,15 @@ namespace TencentCloud
                      * 获取带宽包类型, 默认值: BGP, 可选值:
 <li>BGP: 普通BGP共享带宽包</li>
 <li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
+<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>
+<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>
+<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>
                      * @return NetworkType 带宽包类型, 默认值: BGP, 可选值:
 <li>BGP: 普通BGP共享带宽包</li>
 <li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
+<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>
+<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>
+<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>
                      * 
                      */
                     std::string GetNetworkType() const;
@@ -58,9 +64,15 @@ namespace TencentCloud
                      * 设置带宽包类型, 默认值: BGP, 可选值:
 <li>BGP: 普通BGP共享带宽包</li>
 <li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
+<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>
+<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>
+<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>
                      * @param _networkType 带宽包类型, 默认值: BGP, 可选值:
 <li>BGP: 普通BGP共享带宽包</li>
 <li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
+<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>
+<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>
+<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -243,12 +255,36 @@ namespace TencentCloud
                      */
                     bool TimeSpanHasBeenSet() const;
 
+                    /**
+                     * 获取网络出口，默认值：center_egress1
+                     * @return Egress 网络出口，默认值：center_egress1
+                     * 
+                     */
+                    std::string GetEgress() const;
+
+                    /**
+                     * 设置网络出口，默认值：center_egress1
+                     * @param _egress 网络出口，默认值：center_egress1
+                     * 
+                     */
+                    void SetEgress(const std::string& _egress);
+
+                    /**
+                     * 判断参数 Egress 是否已赋值
+                     * @return Egress 是否已赋值
+                     * 
+                     */
+                    bool EgressHasBeenSet() const;
+
                 private:
 
                     /**
                      * 带宽包类型, 默认值: BGP, 可选值:
 <li>BGP: 普通BGP共享带宽包</li>
 <li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
+<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>
+<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>
+<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
@@ -300,6 +336,12 @@ namespace TencentCloud
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 网络出口，默认值：center_egress1
+                     */
+                    std::string m_egress;
+                    bool m_egressHasBeenSet;
 
                 };
             }

@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取规则防御模式,0观察模式 1拦截模式
-                     * @return Mode 规则防御模式,0观察模式 1拦截模式
+                     * 获取规则引擎防护模式,0观察模式 1拦截模式
+                     * @return Mode 规则引擎防护模式,0观察模式 1拦截模式
                      * 
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置规则防御模式,0观察模式 1拦截模式
-                     * @param _mode 规则防御模式,0观察模式 1拦截模式
+                     * 设置规则引擎防护模式,0观察模式 1拦截模式
+                     * @param _mode 规则引擎防护模式,0观察模式 1拦截模式
                      * 
                      */
                     void SetMode(const uint64_t& _mode);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取AI防御模式,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
-                     * @return Engine AI防御模式,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * 获取规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * @return Engine 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
                      * 
                      */
                     uint64_t GetEngine() const;
 
                     /**
-                     * 设置AI防御模式,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
-                     * @param _engine AI防御模式,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * 设置规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * @param _engine 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
                      * 
                      */
                     void SetEngine(const uint64_t& _engine);
@@ -677,6 +677,31 @@ namespace TencentCloud
                      */
                     bool SgDetailHasBeenSet() const;
 
+                    /**
+                     * 获取域名类型:hybrid表示混合云域名，public表示公有云域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudType 域名类型:hybrid表示混合云域名，public表示公有云域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCloudType() const;
+
+                    /**
+                     * 设置域名类型:hybrid表示混合云域名，public表示公有云域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cloudType 域名类型:hybrid表示混合云域名，public表示公有云域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCloudType(const std::string& _cloudType);
+
+                    /**
+                     * 判断参数 CloudType 是否已赋值
+                     * @return CloudType 是否已赋值
+                     * 
+                     */
+                    bool CloudTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -740,13 +765,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 规则防御模式,0观察模式 1拦截模式
+                     * 规则引擎防护模式,0观察模式 1拦截模式
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * AI防御模式,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
                      */
                     uint64_t m_engine;
                     bool m_engineHasBeenSet;
@@ -857,6 +882,13 @@ namespace TencentCloud
                      */
                     std::string m_sgDetail;
                     bool m_sgDetailHasBeenSet;
+
+                    /**
+                     * 域名类型:hybrid表示混合云域名，public表示公有云域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cloudType;
+                    bool m_cloudTypeHasBeenSet;
 
                 };
             }

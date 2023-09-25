@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 音频流异步识别任务信息
+                * [音频流异步识别](https://cloud.tencent.com/document/api/1093/37824#AsyncRecognitionTasks)任务信息
                 */
                 class AsyncRecognitionTaskInfo : public AbstractModel
                 {

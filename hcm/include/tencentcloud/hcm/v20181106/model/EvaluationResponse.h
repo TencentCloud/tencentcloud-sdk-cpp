@@ -77,14 +77,14 @@ namespace TencentCloud
                     /**
                      * 获取任务 id，用于查询接口
                      * @return TaskId 任务 id，用于查询接口
-                     * 
+                     * @deprecated
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TaskIdHasBeenSet() const;
 

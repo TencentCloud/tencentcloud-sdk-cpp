@@ -129,42 +129,42 @@ namespace TencentCloud
                     /**
                      * 获取证书私钥
                      * @return Key 证书私钥
-                     * 
+                     * @deprecated
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置证书私钥
                      * @param _key 证书私钥
-                     * 
+                     * @deprecated
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取证书pem格式
                      * @return Crt 证书pem格式
-                     * 
+                     * @deprecated
                      */
                     std::string GetCrt() const;
 
                     /**
                      * 设置证书pem格式
                      * @param _crt 证书pem格式
-                     * 
+                     * @deprecated
                      */
                     void SetCrt(const std::string& _crt);
 
                     /**
                      * 判断参数 Crt 是否已赋值
                      * @return Crt 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CrtHasBeenSet() const;
 

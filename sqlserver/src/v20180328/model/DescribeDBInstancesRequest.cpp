@@ -38,7 +38,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_tagKeysHasBeenSet(false),
     m_searchKeyHasBeenSet(false),
     m_uidSetHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_paginationTypeHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,14 @@ string DescribeDBInstancesRequest::ToJsonString() const
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paginationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PaginationType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_paginationType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -469,6 +478,22 @@ void DescribeDBInstancesRequest::SetInstanceType(const string& _instanceType)
 bool DescribeDBInstancesRequest::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetPaginationType() const
+{
+    return m_paginationType;
+}
+
+void DescribeDBInstancesRequest::SetPaginationType(const string& _paginationType)
+{
+    m_paginationType = _paginationType;
+    m_paginationTypeHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::PaginationTypeHasBeenSet() const
+{
+    return m_paginationTypeHasBeenSet;
 }
 
 

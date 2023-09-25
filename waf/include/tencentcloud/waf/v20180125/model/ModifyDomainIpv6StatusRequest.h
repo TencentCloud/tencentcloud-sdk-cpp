@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取修改域名的Ipv6开关为Status （0:关闭 1:开启）
-                     * @return Status 修改域名的Ipv6开关为Status （0:关闭 1:开启）
+                     * 获取修改域名的Ipv6开关为Status （1:开启 2:关闭）
+                     * @return Status 修改域名的Ipv6开关为Status （1:开启 2:关闭）
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置修改域名的Ipv6开关为Status （0:关闭 1:开启）
-                     * @param _status 修改域名的Ipv6开关为Status （0:关闭 1:开启）
+                     * 设置修改域名的Ipv6开关为Status （1:开启 2:关闭）
+                     * @param _status 修改域名的Ipv6开关为Status （1:开启 2:关闭）
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 修改域名的Ipv6开关为Status （0:关闭 1:开启）
+                     * 修改域名的Ipv6开关为Status （1:开启 2:关闭）
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

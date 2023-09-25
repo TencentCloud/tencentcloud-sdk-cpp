@@ -191,6 +191,77 @@ namespace TencentCloud
                      */
                     bool RuleDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取桶关联状态 0：关联中 1：关联完成
+                     * @return Status 桶关联状态 0：关联中 1：关联完成
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置桶关联状态 0：关联中 1：关联完成
+                     * @param _status 桶关联状态 0：关联中 1：关联完成
+                     * 
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取是否使用全球加速域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccelerateFlag 是否使用全球加速域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAccelerateFlag() const;
+
+                    /**
+                     * 设置是否使用全球加速域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accelerateFlag 是否使用全球加速域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccelerateFlag(const bool& _accelerateFlag);
+
+                    /**
+                     * 判断参数 AccelerateFlag 是否已赋值
+                     * @return AccelerateFlag 是否已赋值
+                     * 
+                     */
+                    bool AccelerateFlagHasBeenSet() const;
+
+                    /**
+                     * 获取桶所在的园区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BucketRegion 桶所在的园区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBucketRegion() const;
+
+                    /**
+                     * 设置桶所在的园区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bucketRegion 桶所在的园区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBucketRegion(const std::string& _bucketRegion);
+
+                    /**
+                     * 判断参数 BucketRegion 是否已赋值
+                     * @return BucketRegion 是否已赋值
+                     * 
+                     */
+                    bool BucketRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +303,26 @@ namespace TencentCloud
                      */
                     std::string m_ruleDescription;
                     bool m_ruleDescriptionHasBeenSet;
+
+                    /**
+                     * 桶关联状态 0：关联中 1：关联完成
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 是否使用全球加速域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_accelerateFlag;
+                    bool m_accelerateFlagHasBeenSet;
+
+                    /**
+                     * 桶所在的园区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bucketRegion;
+                    bool m_bucketRegionHasBeenSet;
 
                 };
             }

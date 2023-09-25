@@ -30,7 +30,8 @@ CreateBandwidthPackageRequest::CreateBandwidthPackageRequest() :
     m_internetMaxBandwidthHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_timeSpanHasBeenSet(false)
+    m_timeSpanHasBeenSet(false),
+    m_egressHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string CreateBandwidthPackageRequest::ToJsonString() const
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_egressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Egress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -246,6 +255,22 @@ void CreateBandwidthPackageRequest::SetTimeSpan(const uint64_t& _timeSpan)
 bool CreateBandwidthPackageRequest::TimeSpanHasBeenSet() const
 {
     return m_timeSpanHasBeenSet;
+}
+
+string CreateBandwidthPackageRequest::GetEgress() const
+{
+    return m_egress;
+}
+
+void CreateBandwidthPackageRequest::SetEgress(const string& _egress)
+{
+    m_egress = _egress;
+    m_egressHasBeenSet = true;
+}
+
+bool CreateBandwidthPackageRequest::EgressHasBeenSet() const
+{
+    return m_egressHasBeenSet;
 }
 
 

@@ -171,21 +171,21 @@ namespace TencentCloud
                     /**
                      * 获取异步模式标识，0：同步模式，1：异步模式。默认为同步模式
                      * @return IsAsync 异步模式标识，0：同步模式，1：异步模式。默认为同步模式
-                     * 
+                     * @deprecated
                      */
                     int64_t GetIsAsync() const;
 
                     /**
                      * 设置异步模式标识，0：同步模式，1：异步模式。默认为同步模式
                      * @param _isAsync 异步模式标识，0：同步模式，1：异步模式。默认为同步模式
-                     * 
+                     * @deprecated
                      */
                     void SetIsAsync(const int64_t& _isAsync);
 
                     /**
                      * 判断参数 IsAsync 是否已赋值
                      * @return IsAsync 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsAsyncHasBeenSet() const;
 

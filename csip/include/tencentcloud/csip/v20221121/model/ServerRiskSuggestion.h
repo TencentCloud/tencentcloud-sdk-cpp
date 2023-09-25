@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ASR_V20190614_MODEL_VOICEPRINTBASEDATA_H_
-#define TENCENTCLOUD_ASR_V20190614_MODEL_VOICEPRINTBASEDATA_H_
+#ifndef TENCENTCLOUD_CSIP_V20221121_MODEL_SERVERRISKSUGGESTION_H_
+#define TENCENTCLOUD_CSIP_V20221121_MODEL_SERVERRISKSUGGESTION_H_
 
 #include <string>
 #include <vector>
@@ -28,89 +28,89 @@
 
 namespace TencentCloud
 {
-    namespace Asr
+    namespace Csip
     {
-        namespace V20190614
+        namespace V20221121
         {
             namespace Model
             {
                 /**
-                * [说话人基础数据](https://cloud.tencent.com/document/product/1093/94483#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)，包括说话人id和说话人昵称
+                * 风险详情
                 */
-                class VoicePrintBaseData : public AbstractModel
+                class ServerRiskSuggestion : public AbstractModel
                 {
                 public:
-                    VoicePrintBaseData();
-                    ~VoicePrintBaseData() = default;
+                    ServerRiskSuggestion();
+                    ~ServerRiskSuggestion() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取说话人id
+                     * 获取标题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VoicePrintId 说话人id
+                     * @return Title 标题
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetVoicePrintId() const;
+                    std::string GetTitle() const;
 
                     /**
-                     * 设置说话人id
+                     * 设置标题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _voicePrintId 说话人id
+                     * @param _title 标题
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetVoicePrintId(const std::string& _voicePrintId);
+                    void SetTitle(const std::string& _title);
 
                     /**
-                     * 判断参数 VoicePrintId 是否已赋值
-                     * @return VoicePrintId 是否已赋值
+                     * 判断参数 Title 是否已赋值
+                     * @return Title 是否已赋值
                      * 
                      */
-                    bool VoicePrintIdHasBeenSet() const;
+                    bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取说话人昵称
+                     * 获取详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SpeakerNick 说话人昵称
+                     * @return Body 详情
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetSpeakerNick() const;
+                    std::string GetBody() const;
 
                     /**
-                     * 设置说话人昵称
+                     * 设置详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _speakerNick 说话人昵称
+                     * @param _body 详情
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetSpeakerNick(const std::string& _speakerNick);
+                    void SetBody(const std::string& _body);
 
                     /**
-                     * 判断参数 SpeakerNick 是否已赋值
-                     * @return SpeakerNick 是否已赋值
+                     * 判断参数 Body 是否已赋值
+                     * @return Body 是否已赋值
                      * 
                      */
-                    bool SpeakerNickHasBeenSet() const;
+                    bool BodyHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 说话人id
+                     * 标题
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_voicePrintId;
-                    bool m_voicePrintIdHasBeenSet;
+                    std::string m_title;
+                    bool m_titleHasBeenSet;
 
                     /**
-                     * 说话人昵称
+                     * 详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_speakerNick;
-                    bool m_speakerNickHasBeenSet;
+                    std::string m_body;
+                    bool m_bodyHasBeenSet;
 
                 };
             }
@@ -118,4 +118,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ASR_V20190614_MODEL_VOICEPRINTBASEDATA_H_
+#endif // !TENCENTCLOUD_CSIP_V20221121_MODEL_SERVERRISKSUGGESTION_H_
