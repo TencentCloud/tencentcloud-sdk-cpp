@@ -22,6 +22,7 @@ using namespace std;
 
 BlockIgnoreRule::BlockIgnoreRule() :
     m_domainHasBeenSet(false),
+    m_iPHasBeenSet(false),
     m_iocHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_eventNameHasBeenSet(false),
@@ -53,6 +54,16 @@ CoreInternalOutcome BlockIgnoreRule::Deserialize(const rapidjson::Value &value)
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("IP") && !value["IP"].IsNull())
+    {
+        if (!value["IP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.IP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iP = string(value["IP"].GetString());
+        m_iPHasBeenSet = true;
     }
 
     if (value.HasMember("Ioc") && !value["Ioc"].IsNull())
@@ -220,6 +231,14 @@ void BlockIgnoreRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_iPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iP.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_iocHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -357,6 +376,22 @@ void BlockIgnoreRule::SetDomain(const string& _domain)
 bool BlockIgnoreRule::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+string BlockIgnoreRule::GetIP() const
+{
+    return m_iP;
+}
+
+void BlockIgnoreRule::SetIP(const string& _iP)
+{
+    m_iP = _iP;
+    m_iPHasBeenSet = true;
+}
+
+bool BlockIgnoreRule::IPHasBeenSet() const
+{
+    return m_iPHasBeenSet;
 }
 
 string BlockIgnoreRule::GetIoc() const

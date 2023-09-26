@@ -39,7 +39,8 @@ KongUpstreamInfo::KongUpstreamInfo() :
     m_autoScalingTatCmdStatusHasBeenSet(false),
     m_autoScalingHookStatusHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
-    m_realSourceTypeHasBeenSet(false)
+    m_realSourceTypeHasBeenSet(false),
+    m_healthStatusHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome KongUpstreamInfo::Deserialize(const rapidjson::Value &value)
         m_realSourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthStatus") && !value["HealthStatus"].IsNull())
+    {
+        if (!value["HealthStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongUpstreamInfo.HealthStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthStatus = string(value["HealthStatus"].GetString());
+        m_healthStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +423,14 @@ void KongUpstreamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "RealSourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_realSourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -719,5 +738,21 @@ void KongUpstreamInfo::SetRealSourceType(const string& _realSourceType)
 bool KongUpstreamInfo::RealSourceTypeHasBeenSet() const
 {
     return m_realSourceTypeHasBeenSet;
+}
+
+string KongUpstreamInfo::GetHealthStatus() const
+{
+    return m_healthStatus;
+}
+
+void KongUpstreamInfo::SetHealthStatus(const string& _healthStatus)
+{
+    m_healthStatus = _healthStatus;
+    m_healthStatusHasBeenSet = true;
+}
+
+bool KongUpstreamInfo::HealthStatusHasBeenSet() const
+{
+    return m_healthStatusHasBeenSet;
 }
 

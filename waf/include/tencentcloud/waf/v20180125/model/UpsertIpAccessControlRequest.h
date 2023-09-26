@@ -85,6 +85,27 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
+                     * 获取实例Id
+                     * @return InstanceId 实例Id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例Id
+                     * @param _instanceId 实例Id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
                      * 获取WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      * @return Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      * 
@@ -139,6 +160,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 实例Id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF

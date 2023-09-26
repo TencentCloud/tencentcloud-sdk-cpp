@@ -34,7 +34,8 @@ DescribeIpAccessControlRequest::DescribeIpAccessControlRequest() :
     m_limitHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_sortHasBeenSet(false),
-    m_ipHasBeenSet(false)
+    m_ipHasBeenSet(false),
+    m_validStatusHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string DescribeIpAccessControlRequest::ToJsonString() const
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_validStatus, allocator);
     }
 
 
@@ -339,6 +348,22 @@ void DescribeIpAccessControlRequest::SetIp(const string& _ip)
 bool DescribeIpAccessControlRequest::IpHasBeenSet() const
 {
     return m_ipHasBeenSet;
+}
+
+int64_t DescribeIpAccessControlRequest::GetValidStatus() const
+{
+    return m_validStatus;
+}
+
+void DescribeIpAccessControlRequest::SetValidStatus(const int64_t& _validStatus)
+{
+    m_validStatus = _validStatus;
+    m_validStatusHasBeenSet = true;
+}
+
+bool DescribeIpAccessControlRequest::ValidStatusHasBeenSet() const
+{
+    return m_validStatusHasBeenSet;
 }
 
 

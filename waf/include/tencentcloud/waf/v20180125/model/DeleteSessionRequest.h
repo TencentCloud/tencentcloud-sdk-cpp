@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool EditionHasBeenSet() const;
 
+                    /**
+                     * 获取要删除的SessionID
+                     * @return SessionID 要删除的SessionID
+                     * 
+                     */
+                    int64_t GetSessionID() const;
+
+                    /**
+                     * 设置要删除的SessionID
+                     * @param _sessionID 要删除的SessionID
+                     * 
+                     */
+                    void SetSessionID(const int64_t& _sessionID);
+
+                    /**
+                     * 判断参数 SessionID 是否已赋值
+                     * @return SessionID 是否已赋值
+                     * 
+                     */
+                    bool SessionIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
+
+                    /**
+                     * 要删除的SessionID
+                     */
+                    int64_t m_sessionID;
+                    bool m_sessionIDHasBeenSet;
 
                 };
             }

@@ -72,6 +72,31 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
+                     * 获取IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IP IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIP() const;
+
+                    /**
+                     * 设置IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _iP IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIP(const std::string& _iP);
+
+                    /**
+                     * 判断参数 IP 是否已赋值
+                     * @return IP 是否已赋值
+                     * 
+                     */
+                    bool IPHasBeenSet() const;
+
+                    /**
                      * 获取规则ip
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ioc 规则ip
@@ -454,6 +479,13 @@ namespace TencentCloud
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
+
+                    /**
+                     * IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iP;
+                    bool m_iPHasBeenSet;
 
                     /**
                      * 规则ip

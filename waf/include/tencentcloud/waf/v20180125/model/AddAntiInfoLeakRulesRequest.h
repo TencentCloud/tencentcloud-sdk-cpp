@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取规则名称
+                     * @return Name 规则名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置规则名称
+                     * @param _name 规则名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取动作
-                     * @return ActionType 动作
+                     * 获取动作，0（告警）、1（替换）、2（仅显示前四位）、3（仅显示后四位）、4（阻断）
+                     * @return ActionType 动作，0（告警）、1（替换）、2（仅显示前四位）、3（仅显示后四位）、4（阻断）
                      * 
                      */
                     uint64_t GetActionType() const;
 
                     /**
-                     * 设置动作
-                     * @param _actionType 动作
+                     * 设置动作，0（告警）、1（替换）、2（仅显示前四位）、3（仅显示后四位）、4（阻断）
+                     * @param _actionType 动作，0（告警）、1（替换）、2（仅显示前四位）、3（仅显示后四位）、4（阻断）
                      * 
                      */
                     void SetActionType(const uint64_t& _actionType);
@@ -157,13 +157,13 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 名称
+                     * 规则名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 动作
+                     * 动作，0（告警）、1（替换）、2（仅显示前四位）、3（仅显示后四位）、4（阻断）
                      */
                     uint64_t m_actionType;
                     bool m_actionTypeHasBeenSet;

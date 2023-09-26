@@ -25,6 +25,7 @@ using namespace std;
 ModifyHostsCertificateRequest::ModifyHostsCertificateRequest() :
     m_zoneIdHasBeenSet(false),
     m_hostsHasBeenSet(false),
+    m_modeHasBeenSet(false),
     m_serverCertInfoHasBeenSet(false),
     m_applyTypeHasBeenSet(false)
 {
@@ -56,6 +57,14 @@ string ModifyHostsCertificateRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serverCertInfoHasBeenSet)
@@ -119,6 +128,22 @@ void ModifyHostsCertificateRequest::SetHosts(const vector<string>& _hosts)
 bool ModifyHostsCertificateRequest::HostsHasBeenSet() const
 {
     return m_hostsHasBeenSet;
+}
+
+string ModifyHostsCertificateRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void ModifyHostsCertificateRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool ModifyHostsCertificateRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 vector<ServerCertInfo> ModifyHostsCertificateRequest::GetServerCertInfo() const

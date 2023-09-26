@@ -46,8 +46,10 @@ namespace TencentCloud
                     /**
                      * 获取0 关闭开关
 1 打开开关
+2 不操作开关，此次切换模式
                      * @return Enable 0 关闭开关
 1 打开开关
+2 不操作开关，此次切换模式
                      * 
                      */
                     int64_t GetEnable() const;
@@ -55,8 +57,10 @@ namespace TencentCloud
                     /**
                      * 设置0 关闭开关
 1 打开开关
+2 不操作开关，此次切换模式
                      * @param _enable 0 关闭开关
 1 打开开关
+2 不操作开关，此次切换模式
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -89,11 +93,66 @@ namespace TencentCloud
                      */
                     bool EdgeIpSwitchLstHasBeenSet() const;
 
+                    /**
+                     * 获取0 不自动选择子网
+1 自动选择子网创建私有连接
+                     * @return AutoChooseSubnet 0 不自动选择子网
+1 自动选择子网创建私有连接
+                     * 
+                     */
+                    int64_t GetAutoChooseSubnet() const;
+
+                    /**
+                     * 设置0 不自动选择子网
+1 自动选择子网创建私有连接
+                     * @param _autoChooseSubnet 0 不自动选择子网
+1 自动选择子网创建私有连接
+                     * 
+                     */
+                    void SetAutoChooseSubnet(const int64_t& _autoChooseSubnet);
+
+                    /**
+                     * 判断参数 AutoChooseSubnet 是否已赋值
+                     * @return AutoChooseSubnet 是否已赋值
+                     * 
+                     */
+                    bool AutoChooseSubnetHasBeenSet() const;
+
+                    /**
+                     * 获取0 切换为旁路
+1 切换为串行
+2 不切换模式，此次操作开关
+                     * @return SwitchMode 0 切换为旁路
+1 切换为串行
+2 不切换模式，此次操作开关
+                     * 
+                     */
+                    int64_t GetSwitchMode() const;
+
+                    /**
+                     * 设置0 切换为旁路
+1 切换为串行
+2 不切换模式，此次操作开关
+                     * @param _switchMode 0 切换为旁路
+1 切换为串行
+2 不切换模式，此次操作开关
+                     * 
+                     */
+                    void SetSwitchMode(const int64_t& _switchMode);
+
+                    /**
+                     * 判断参数 SwitchMode 是否已赋值
+                     * @return SwitchMode 是否已赋值
+                     * 
+                     */
+                    bool SwitchModeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 0 关闭开关
 1 打开开关
+2 不操作开关，此次切换模式
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
@@ -103,6 +162,21 @@ namespace TencentCloud
                      */
                     std::vector<EdgeIpSwitch> m_edgeIpSwitchLst;
                     bool m_edgeIpSwitchLstHasBeenSet;
+
+                    /**
+                     * 0 不自动选择子网
+1 自动选择子网创建私有连接
+                     */
+                    int64_t m_autoChooseSubnet;
+                    bool m_autoChooseSubnetHasBeenSet;
+
+                    /**
+                     * 0 切换为旁路
+1 切换为串行
+2 不切换模式，此次操作开关
+                     */
+                    int64_t m_switchMode;
+                    bool m_switchModeHasBeenSet;
 
                 };
             }

@@ -37,7 +37,9 @@ UpsertCCRuleRequest::UpsertCCRuleRequest() :
     m_optionsArrHasBeenSet(false),
     m_editionHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_sessionAppliedHasBeenSet(false),
+    m_ruleIdHasBeenSet(false)
 {
 }
 
@@ -166,6 +168,27 @@ string UpsertCCRuleRequest::ToJsonString() const
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionAppliedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionApplied";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sessionApplied.begin(); itr != m_sessionApplied.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ruleId, allocator);
     }
 
 
@@ -414,6 +437,38 @@ void UpsertCCRuleRequest::SetEventId(const string& _eventId)
 bool UpsertCCRuleRequest::EventIdHasBeenSet() const
 {
     return m_eventIdHasBeenSet;
+}
+
+vector<int64_t> UpsertCCRuleRequest::GetSessionApplied() const
+{
+    return m_sessionApplied;
+}
+
+void UpsertCCRuleRequest::SetSessionApplied(const vector<int64_t>& _sessionApplied)
+{
+    m_sessionApplied = _sessionApplied;
+    m_sessionAppliedHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::SessionAppliedHasBeenSet() const
+{
+    return m_sessionAppliedHasBeenSet;
+}
+
+int64_t UpsertCCRuleRequest::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void UpsertCCRuleRequest::SetRuleId(const int64_t& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
 }
 
 

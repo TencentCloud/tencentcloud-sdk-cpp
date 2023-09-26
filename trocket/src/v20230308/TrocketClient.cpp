@@ -126,6 +126,49 @@ TrocketClient::CreateInstanceOutcomeCallable TrocketClient::CreateInstanceCallab
     return task->get_future();
 }
 
+TrocketClient::CreateRoleOutcome TrocketClient::CreateRole(const CreateRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoleResponse rsp = CreateRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoleOutcome(rsp);
+        else
+            return CreateRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoleOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::CreateRoleAsync(const CreateRoleRequest& request, const CreateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::CreateRoleOutcomeCallable TrocketClient::CreateRoleCallable(const CreateRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::CreateTopicOutcome TrocketClient::CreateTopic(const CreateTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTopic");
@@ -248,6 +291,49 @@ TrocketClient::DeleteInstanceOutcomeCallable TrocketClient::DeleteInstanceCallab
         [this, request]()
         {
             return this->DeleteInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DeleteRoleOutcome TrocketClient::DeleteRole(const DeleteRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoleResponse rsp = DeleteRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoleOutcome(rsp);
+        else
+            return DeleteRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoleOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DeleteRoleAsync(const DeleteRoleRequest& request, const DeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DeleteRoleOutcomeCallable TrocketClient::DeleteRoleCallable(const DeleteRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRole(request);
         }
     );
 
@@ -420,6 +506,49 @@ TrocketClient::DescribeInstanceListOutcomeCallable TrocketClient::DescribeInstan
         [this, request]()
         {
             return this->DescribeInstanceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeRoleListOutcome TrocketClient::DescribeRoleList(const DescribeRoleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoleListResponse rsp = DescribeRoleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoleListOutcome(rsp);
+        else
+            return DescribeRoleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoleListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeRoleListAsync(const DescribeRoleListRequest& request, const DescribeRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeRoleListOutcomeCallable TrocketClient::DescribeRoleListCallable(const DescribeRoleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoleList(request);
         }
     );
 
@@ -635,6 +764,49 @@ TrocketClient::ModifyInstanceOutcomeCallable TrocketClient::ModifyInstanceCallab
         [this, request]()
         {
             return this->ModifyInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::ModifyRoleOutcome TrocketClient::ModifyRole(const ModifyRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoleResponse rsp = ModifyRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoleOutcome(rsp);
+        else
+            return ModifyRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoleOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::ModifyRoleAsync(const ModifyRoleRequest& request, const ModifyRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::ModifyRoleOutcomeCallable TrocketClient::ModifyRoleCallable(const ModifyRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRole(request);
         }
     );
 

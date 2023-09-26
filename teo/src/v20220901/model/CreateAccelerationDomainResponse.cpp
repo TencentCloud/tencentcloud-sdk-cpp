@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
-CreateAccelerationDomainResponse::CreateAccelerationDomainResponse()
+CreateAccelerationDomainResponse::CreateAccelerationDomainResponse() :
+    m_ownershipVerificationHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome CreateAccelerationDomainResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("OwnershipVerification") && !rsp["OwnershipVerification"].IsNull())
+    {
+        if (!rsp["OwnershipVerification"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OwnershipVerification` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ownershipVerification.Deserialize(rsp["OwnershipVerification"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ownershipVerificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string CreateAccelerationDomainResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_ownershipVerificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnershipVerification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string CreateAccelerationDomainResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+OwnershipVerification CreateAccelerationDomainResponse::GetOwnershipVerification() const
+{
+    return m_ownershipVerification;
+}
+
+bool CreateAccelerationDomainResponse::OwnershipVerificationHasBeenSet() const
+{
+    return m_ownershipVerificationHasBeenSet;
+}
 
 

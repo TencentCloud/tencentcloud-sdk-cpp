@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取本次变更的域名列表。
-                     * @return Hosts 本次变更的域名列表。
+                     * 获取需要修改证书配置的加速域名。
+                     * @return Hosts 需要修改证书配置的加速域名。
                      * 
                      */
                     std::vector<std::string> GetHosts() const;
 
                     /**
-                     * 设置本次变更的域名列表。
-                     * @param _hosts 本次变更的域名列表。
+                     * 设置需要修改证书配置的加速域名。
+                     * @param _hosts 需要修改证书配置的加速域名。
                      * 
                      */
                     void SetHosts(const std::vector<std::string>& _hosts);
@@ -86,15 +86,48 @@ namespace TencentCloud
                     bool HostsHasBeenSet() const;
 
                     /**
-                     * 获取证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。
-                     * @return ServerCertInfo 证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。
+                     * 获取配置证书的模式，取值有：
+<li>disable：不配置证书；</li>
+<li>eofreecert：配置 EdgeOne 免费证书；</li>
+<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。
+                     * @return Mode 配置证书的模式，取值有：
+<li>disable：不配置证书；</li>
+<li>eofreecert：配置 EdgeOne 免费证书；</li>
+<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置配置证书的模式，取值有：
+<li>disable：不配置证书；</li>
+<li>eofreecert：配置 EdgeOne 免费证书；</li>
+<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。
+                     * @param _mode 配置证书的模式，取值有：
+<li>disable：不配置证书；</li>
+<li>eofreecert：配置 EdgeOne 免费证书；</li>
+<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
+                     * @return ServerCertInfo SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
                      * 
                      */
                     std::vector<ServerCertInfo> GetServerCertInfo() const;
 
                     /**
-                     * 设置证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。
-                     * @param _serverCertInfo 证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。
+                     * 设置SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
+                     * @param _serverCertInfo SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
                      * 
                      */
                     void SetServerCertInfo(const std::vector<ServerCertInfo>& _serverCertInfo);
@@ -108,30 +141,34 @@ namespace TencentCloud
 
                     /**
                      * 获取托管类型，取值有：
-<li>apply：托管EO；</li>
-<li>none：不托管EO；</li>不填，默认取值为none。
+<li>none：不托管EO；</li>
+<li>apply：托管EO</li>
+不填，默认取值为none。
                      * @return ApplyType 托管类型，取值有：
-<li>apply：托管EO；</li>
-<li>none：不托管EO；</li>不填，默认取值为none。
-                     * 
+<li>none：不托管EO；</li>
+<li>apply：托管EO</li>
+不填，默认取值为none。
+                     * @deprecated
                      */
                     std::string GetApplyType() const;
 
                     /**
                      * 设置托管类型，取值有：
-<li>apply：托管EO；</li>
-<li>none：不托管EO；</li>不填，默认取值为none。
+<li>none：不托管EO；</li>
+<li>apply：托管EO</li>
+不填，默认取值为none。
                      * @param _applyType 托管类型，取值有：
-<li>apply：托管EO；</li>
-<li>none：不托管EO；</li>不填，默认取值为none。
-                     * 
+<li>none：不托管EO；</li>
+<li>apply：托管EO</li>
+不填，默认取值为none。
+                     * @deprecated
                      */
                     void SetApplyType(const std::string& _applyType);
 
                     /**
                      * 判断参数 ApplyType 是否已赋值
                      * @return ApplyType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ApplyTypeHasBeenSet() const;
 
@@ -144,21 +181,31 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 本次变更的域名列表。
+                     * 需要修改证书配置的加速域名。
                      */
                     std::vector<std::string> m_hosts;
                     bool m_hostsHasBeenSet;
 
                     /**
-                     * 证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。
+                     * 配置证书的模式，取值有：
+<li>disable：不配置证书；</li>
+<li>eofreecert：配置 EdgeOne 免费证书；</li>
+<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
                      */
                     std::vector<ServerCertInfo> m_serverCertInfo;
                     bool m_serverCertInfoHasBeenSet;
 
                     /**
                      * 托管类型，取值有：
-<li>apply：托管EO；</li>
-<li>none：不托管EO；</li>不填，默认取值为none。
+<li>none：不托管EO；</li>
+<li>apply：托管EO</li>
+不填，默认取值为none。
                      */
                     std::string m_applyType;
                     bool m_applyTypeHasBeenSet;

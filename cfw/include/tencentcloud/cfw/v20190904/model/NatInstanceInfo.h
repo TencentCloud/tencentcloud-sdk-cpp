@@ -489,6 +489,31 @@ namespace TencentCloud
                      */
                     bool UpdateEnableHasBeenSet() const;
 
+                    /**
+                     * 获取是的需要升级引擎 支持 nat拨测 1需要 0不需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NeedProbeEngineUpdate 是的需要升级引擎 支持 nat拨测 1需要 0不需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetNeedProbeEngineUpdate() const;
+
+                    /**
+                     * 设置是的需要升级引擎 支持 nat拨测 1需要 0不需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _needProbeEngineUpdate 是的需要升级引擎 支持 nat拨测 1需要 0不需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNeedProbeEngineUpdate(const int64_t& _needProbeEngineUpdate);
+
+                    /**
+                     * 判断参数 NeedProbeEngineUpdate 是否已赋值
+                     * @return NeedProbeEngineUpdate 是否已赋值
+                     * 
+                     */
+                    bool NeedProbeEngineUpdateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -615,6 +640,13 @@ namespace TencentCloud
                      */
                     int64_t m_updateEnable;
                     bool m_updateEnableHasBeenSet;
+
+                    /**
+                     * 是的需要升级引擎 支持 nat拨测 1需要 0不需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_needProbeEngineUpdate;
+                    bool m_needProbeEngineUpdateHasBeenSet;
 
                 };
             }

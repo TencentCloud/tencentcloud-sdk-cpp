@@ -21,12 +21,14 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 IpAccessControlItem::IpAccessControlItem() :
+    m_idHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_noteHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_tsVersionHasBeenSet(false),
-    m_validTsHasBeenSet(false)
+    m_validTsHasBeenSet(false),
+    m_validStatusHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,16 @@ CoreInternalOutcome IpAccessControlItem::Deserialize(const rapidjson::Value &val
 {
     string requestId = "";
 
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAccessControlItem.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
 
     if (value.HasMember("ActionType") && !value["ActionType"].IsNull())
     {
@@ -95,12 +107,30 @@ CoreInternalOutcome IpAccessControlItem::Deserialize(const rapidjson::Value &val
         m_validTsHasBeenSet = true;
     }
 
+    if (value.HasMember("ValidStatus") && !value["ValidStatus"].IsNull())
+    {
+        if (!value["ValidStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAccessControlItem.ValidStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validStatus = value["ValidStatus"].GetInt64();
+        m_validStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void IpAccessControlItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_actionTypeHasBeenSet)
     {
@@ -150,8 +180,32 @@ void IpAccessControlItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, m_validTs, allocator);
     }
 
+    if (m_validStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validStatus, allocator);
+    }
+
 }
 
+
+string IpAccessControlItem::GetId() const
+{
+    return m_id;
+}
+
+void IpAccessControlItem::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool IpAccessControlItem::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
 
 uint64_t IpAccessControlItem::GetActionType() const
 {
@@ -247,5 +301,21 @@ void IpAccessControlItem::SetValidTs(const uint64_t& _validTs)
 bool IpAccessControlItem::ValidTsHasBeenSet() const
 {
     return m_validTsHasBeenSet;
+}
+
+int64_t IpAccessControlItem::GetValidStatus() const
+{
+    return m_validStatus;
+}
+
+void IpAccessControlItem::SetValidStatus(const int64_t& _validStatus)
+{
+    m_validStatus = _validStatus;
+    m_validStatusHasBeenSet = true;
+}
+
+bool IpAccessControlItem::ValidStatusHasBeenSet() const
+{
+    return m_validStatusHasBeenSet;
 }
 

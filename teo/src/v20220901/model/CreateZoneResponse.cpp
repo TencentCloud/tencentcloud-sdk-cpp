@@ -24,7 +24,8 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 CreateZoneResponse::CreateZoneResponse() :
-    m_zoneIdHasBeenSet(false)
+    m_zoneIdHasBeenSet(false),
+    m_ownershipVerificationHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,23 @@ CoreInternalOutcome CreateZoneResponse::Deserialize(const string &payload)
         m_zoneIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OwnershipVerification") && !rsp["OwnershipVerification"].IsNull())
+    {
+        if (!rsp["OwnershipVerification"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OwnershipVerification` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ownershipVerification.Deserialize(rsp["OwnershipVerification"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ownershipVerificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ string CreateZoneResponse::ToJsonString() const
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownershipVerificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnershipVerification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +137,16 @@ string CreateZoneResponse::GetZoneId() const
 bool CreateZoneResponse::ZoneIdHasBeenSet() const
 {
     return m_zoneIdHasBeenSet;
+}
+
+OwnershipVerification CreateZoneResponse::GetOwnershipVerification() const
+{
+    return m_ownershipVerification;
+}
+
+bool CreateZoneResponse::OwnershipVerificationHasBeenSet() const
+{
+    return m_ownershipVerificationHasBeenSet;
 }
 
 

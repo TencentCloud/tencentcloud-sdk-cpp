@@ -31,10 +31,16 @@
 #include <tencentcloud/billing/v20180709/model/DescribeAccountBalanceResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillDetailForOrganizationRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillDetailForOrganizationResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillDownloadUrlRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillDownloadUrlResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillListRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillListResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryForOrganizationRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryForOrganizationResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByPayModeRequest.h>
@@ -47,6 +53,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByRegionResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryForOrganizationRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryForOrganizationResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeCostDetailRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeCostDetailResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByProductRequest.h>
@@ -97,12 +105,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBillDetailResponse> DescribeBillDetailOutcome;
                 typedef std::future<DescribeBillDetailOutcome> DescribeBillDetailOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillDetailRequest&, DescribeBillDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillDetailForOrganizationResponse> DescribeBillDetailForOrganizationOutcome;
+                typedef std::future<DescribeBillDetailForOrganizationOutcome> DescribeBillDetailForOrganizationOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillDetailForOrganizationRequest&, DescribeBillDetailForOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillDetailForOrganizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillDownloadUrlResponse> DescribeBillDownloadUrlOutcome;
+                typedef std::future<DescribeBillDownloadUrlOutcome> DescribeBillDownloadUrlOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillDownloadUrlRequest&, DescribeBillDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillDownloadUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillListResponse> DescribeBillListOutcome;
                 typedef std::future<DescribeBillListOutcome> DescribeBillListOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillListRequest&, DescribeBillListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillResourceSummaryResponse> DescribeBillResourceSummaryOutcome;
                 typedef std::future<DescribeBillResourceSummaryOutcome> DescribeBillResourceSummaryOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillResourceSummaryRequest&, DescribeBillResourceSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillResourceSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillResourceSummaryForOrganizationResponse> DescribeBillResourceSummaryForOrganizationOutcome;
+                typedef std::future<DescribeBillResourceSummaryForOrganizationOutcome> DescribeBillResourceSummaryForOrganizationOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillResourceSummaryForOrganizationRequest&, DescribeBillResourceSummaryForOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillResourceSummaryForOrganizationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillSummaryResponse> DescribeBillSummaryOutcome;
                 typedef std::future<DescribeBillSummaryOutcome> DescribeBillSummaryOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryRequest&, DescribeBillSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryAsyncHandler;
@@ -121,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBillSummaryByTagResponse> DescribeBillSummaryByTagOutcome;
                 typedef std::future<DescribeBillSummaryByTagOutcome> DescribeBillSummaryByTagOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryByTagRequest&, DescribeBillSummaryByTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryByTagAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillSummaryForOrganizationResponse> DescribeBillSummaryForOrganizationOutcome;
+                typedef std::future<DescribeBillSummaryForOrganizationOutcome> DescribeBillSummaryForOrganizationOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryForOrganizationRequest&, DescribeBillSummaryForOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryForOrganizationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCostDetailResponse> DescribeCostDetailOutcome;
                 typedef std::future<DescribeCostDetailOutcome> DescribeCostDetailOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeCostDetailRequest&, DescribeCostDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCostDetailAsyncHandler;
@@ -188,7 +208,7 @@ namespace TencentCloud
                 DescribeAccountBalanceOutcomeCallable DescribeAccountBalanceCallable(const Model::DescribeAccountBalanceRequest& request);
 
                 /**
-                 *查询账单明细数据。
+                 *获取账单明细数据。
 注意事项：
 1.在请求接口时，由于网络不稳定或其它异常，可能会导致请求失败。如果您遇到这种情况，我们建议您在接口请求失败时，手动发起重试操作，这样可以更好地确保您的接口请求能够成功执行。
 2.对于账单明细数据量级很大（例如每月账单明细量级超过20w）的客户，通过 API 调用账单数据效率较低，建议您开通账单数据存储功能，通过存储桶中获取账单文件进行分析。[账单存储至COS桶](https://cloud.tencent.com/document/product/555/61275)
@@ -200,6 +220,25 @@ namespace TencentCloud
                 DescribeBillDetailOutcomeCallable DescribeBillDetailCallable(const Model::DescribeBillDetailRequest& request);
 
                 /**
+                 *成员账号获取管理账号代付账单（费用明细）。
+注意事项：在请求接口时，由于网络不稳定或其它异常，可能会导致请求失败。如果您遇到这种情况，我们建议您在接口请求失败时，手动发起重试操作，这样可以更好地确保您的接口请求能够成功执行。
+                 * @param req DescribeBillDetailForOrganizationRequest
+                 * @return DescribeBillDetailForOrganizationOutcome
+                 */
+                DescribeBillDetailForOrganizationOutcome DescribeBillDetailForOrganization(const Model::DescribeBillDetailForOrganizationRequest &request);
+                void DescribeBillDetailForOrganizationAsync(const Model::DescribeBillDetailForOrganizationRequest& request, const DescribeBillDetailForOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillDetailForOrganizationOutcomeCallable DescribeBillDetailForOrganizationCallable(const Model::DescribeBillDetailForOrganizationRequest& request);
+
+                /**
+                 *该接口支持通过传参，获取L0-PDF、L1-汇总、L2-资源、L3-明细、账单包、五类账单文件下载链接
+                 * @param req DescribeBillDownloadUrlRequest
+                 * @return DescribeBillDownloadUrlOutcome
+                 */
+                DescribeBillDownloadUrlOutcome DescribeBillDownloadUrl(const Model::DescribeBillDownloadUrlRequest &request);
+                void DescribeBillDownloadUrlAsync(const Model::DescribeBillDownloadUrlRequest& request, const DescribeBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillDownloadUrlOutcomeCallable DescribeBillDownloadUrlCallable(const Model::DescribeBillDownloadUrlRequest& request);
+
+                /**
                  *获取收支明细列表，支持翻页和参数过滤
                  * @param req DescribeBillListRequest
                  * @return DescribeBillListOutcome
@@ -209,13 +248,22 @@ namespace TencentCloud
                 DescribeBillListOutcomeCallable DescribeBillListCallable(const Model::DescribeBillListRequest& request);
 
                 /**
-                 *查询账单资源汇总数据
+                 *获取账单资源汇总数据
                  * @param req DescribeBillResourceSummaryRequest
                  * @return DescribeBillResourceSummaryOutcome
                  */
                 DescribeBillResourceSummaryOutcome DescribeBillResourceSummary(const Model::DescribeBillResourceSummaryRequest &request);
                 void DescribeBillResourceSummaryAsync(const Model::DescribeBillResourceSummaryRequest& request, const DescribeBillResourceSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillResourceSummaryOutcomeCallable DescribeBillResourceSummaryCallable(const Model::DescribeBillResourceSummaryRequest& request);
+
+                /**
+                 *成员账号获取管理账号代付账单（按资源汇总）
+                 * @param req DescribeBillResourceSummaryForOrganizationRequest
+                 * @return DescribeBillResourceSummaryForOrganizationOutcome
+                 */
+                DescribeBillResourceSummaryForOrganizationOutcome DescribeBillResourceSummaryForOrganization(const Model::DescribeBillResourceSummaryForOrganizationRequest &request);
+                void DescribeBillResourceSummaryForOrganizationAsync(const Model::DescribeBillResourceSummaryForOrganizationRequest& request, const DescribeBillResourceSummaryForOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillResourceSummaryForOrganizationOutcomeCallable DescribeBillResourceSummaryForOrganizationCallable(const Model::DescribeBillResourceSummaryForOrganizationRequest& request);
 
                 /**
                  *该接口支持通过传参，按照产品、项目、地域、计费模式和标签五个维度获取账单费用明细。
@@ -270,6 +318,15 @@ namespace TencentCloud
                 DescribeBillSummaryByTagOutcome DescribeBillSummaryByTag(const Model::DescribeBillSummaryByTagRequest &request);
                 void DescribeBillSummaryByTagAsync(const Model::DescribeBillSummaryByTagRequest& request, const DescribeBillSummaryByTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillSummaryByTagOutcomeCallable DescribeBillSummaryByTagCallable(const Model::DescribeBillSummaryByTagRequest& request);
+
+                /**
+                 *该接口支持通过传参，按照产品、项目、地域、计费模式和标签五个维度获取账单费用明细。
+                 * @param req DescribeBillSummaryForOrganizationRequest
+                 * @return DescribeBillSummaryForOrganizationOutcome
+                 */
+                DescribeBillSummaryForOrganizationOutcome DescribeBillSummaryForOrganization(const Model::DescribeBillSummaryForOrganizationRequest &request);
+                void DescribeBillSummaryForOrganizationAsync(const Model::DescribeBillSummaryForOrganizationRequest& request, const DescribeBillSummaryForOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillSummaryForOrganizationOutcomeCallable DescribeBillSummaryForOrganizationCallable(const Model::DescribeBillSummaryForOrganizationRequest& request);
 
                 /**
                  *查询消耗明细

@@ -29,7 +29,8 @@ CreateExportRequest::CreateExportRequest() :
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_syntaxRuleHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateExportRequest::ToJsonString() const
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syntaxRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyntaxRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_syntaxRule, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateExportRequest::SetFormat(const string& _format)
 bool CreateExportRequest::FormatHasBeenSet() const
 {
     return m_formatHasBeenSet;
+}
+
+uint64_t CreateExportRequest::GetSyntaxRule() const
+{
+    return m_syntaxRule;
+}
+
+void CreateExportRequest::SetSyntaxRule(const uint64_t& _syntaxRule)
+{
+    m_syntaxRule = _syntaxRule;
+    m_syntaxRuleHasBeenSet = true;
+}
+
+bool CreateExportRequest::SyntaxRuleHasBeenSet() const
+{
+    return m_syntaxRuleHasBeenSet;
 }
 
 

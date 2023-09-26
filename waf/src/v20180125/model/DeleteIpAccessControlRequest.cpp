@@ -25,6 +25,7 @@ using namespace std;
 DeleteIpAccessControlRequest::DeleteIpAccessControlRequest() :
     m_domainHasBeenSet(false),
     m_itemsHasBeenSet(false),
+    m_isIdHasBeenSet(false),
     m_deleteAllHasBeenSet(false),
     m_sourceTypeHasBeenSet(false)
 {
@@ -56,6 +57,14 @@ string DeleteIpAccessControlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isId, allocator);
     }
 
     if (m_deleteAllHasBeenSet)
@@ -112,6 +121,22 @@ void DeleteIpAccessControlRequest::SetItems(const vector<string>& _items)
 bool DeleteIpAccessControlRequest::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+bool DeleteIpAccessControlRequest::GetIsId() const
+{
+    return m_isId;
+}
+
+void DeleteIpAccessControlRequest::SetIsId(const bool& _isId)
+{
+    m_isId = _isId;
+    m_isIdHasBeenSet = true;
+}
+
+bool DeleteIpAccessControlRequest::IsIdHasBeenSet() const
+{
+    return m_isIdHasBeenSet;
 }
 
 bool DeleteIpAccessControlRequest::GetDeleteAll() const

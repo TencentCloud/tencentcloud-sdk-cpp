@@ -34,7 +34,11 @@ PeakPointsItem::PeakPointsItem() :
     m_statusOkHasBeenSet(false),
     m_upstreamServerErrorHasBeenSet(false),
     m_upstreamClientErrorHasBeenSet(false),
-    m_upstreamRedirectHasBeenSet(false)
+    m_upstreamRedirectHasBeenSet(false),
+    m_blackIPHasBeenSet(false),
+    m_tamperHasBeenSet(false),
+    m_leakHasBeenSet(false),
+    m_aCLHasBeenSet(false)
 {
 }
 
@@ -183,6 +187,46 @@ CoreInternalOutcome PeakPointsItem::Deserialize(const rapidjson::Value &value)
         m_upstreamRedirectHasBeenSet = true;
     }
 
+    if (value.HasMember("BlackIP") && !value["BlackIP"].IsNull())
+    {
+        if (!value["BlackIP"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.BlackIP` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_blackIP = value["BlackIP"].GetUint64();
+        m_blackIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tamper") && !value["Tamper"].IsNull())
+    {
+        if (!value["Tamper"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.Tamper` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tamper = value["Tamper"].GetUint64();
+        m_tamperHasBeenSet = true;
+    }
+
+    if (value.HasMember("Leak") && !value["Leak"].IsNull())
+    {
+        if (!value["Leak"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.Leak` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_leak = value["Leak"].GetUint64();
+        m_leakHasBeenSet = true;
+    }
+
+    if (value.HasMember("ACL") && !value["ACL"].IsNull())
+    {
+        if (!value["ACL"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.ACL` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aCL = value["ACL"].GetUint64();
+        m_aCLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +344,38 @@ void PeakPointsItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UpstreamRedirect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_upstreamRedirect, allocator);
+    }
+
+    if (m_blackIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlackIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blackIP, allocator);
+    }
+
+    if (m_tamperHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tamper";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tamper, allocator);
+    }
+
+    if (m_leakHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Leak";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_leak, allocator);
+    }
+
+    if (m_aCLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ACL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aCL, allocator);
     }
 
 }
@@ -527,5 +603,69 @@ void PeakPointsItem::SetUpstreamRedirect(const uint64_t& _upstreamRedirect)
 bool PeakPointsItem::UpstreamRedirectHasBeenSet() const
 {
     return m_upstreamRedirectHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetBlackIP() const
+{
+    return m_blackIP;
+}
+
+void PeakPointsItem::SetBlackIP(const uint64_t& _blackIP)
+{
+    m_blackIP = _blackIP;
+    m_blackIPHasBeenSet = true;
+}
+
+bool PeakPointsItem::BlackIPHasBeenSet() const
+{
+    return m_blackIPHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetTamper() const
+{
+    return m_tamper;
+}
+
+void PeakPointsItem::SetTamper(const uint64_t& _tamper)
+{
+    m_tamper = _tamper;
+    m_tamperHasBeenSet = true;
+}
+
+bool PeakPointsItem::TamperHasBeenSet() const
+{
+    return m_tamperHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetLeak() const
+{
+    return m_leak;
+}
+
+void PeakPointsItem::SetLeak(const uint64_t& _leak)
+{
+    m_leak = _leak;
+    m_leakHasBeenSet = true;
+}
+
+bool PeakPointsItem::LeakHasBeenSet() const
+{
+    return m_leakHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetACL() const
+{
+    return m_aCL;
+}
+
+void PeakPointsItem::SetACL(const uint64_t& _aCL)
+{
+    m_aCL = _aCL;
+    m_aCLHasBeenSet = true;
+}
+
+bool PeakPointsItem::ACLHasBeenSet() const
+{
+    return m_aCLHasBeenSet;
 }
 

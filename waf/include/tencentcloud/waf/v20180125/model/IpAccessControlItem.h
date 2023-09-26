@@ -47,6 +47,31 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取mongo表自增Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id mongo表自增Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置mongo表自增Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _id mongo表自增Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
                      * 获取动作
                      * @return ActionType 动作
                      * 
@@ -176,7 +201,39 @@ namespace TencentCloud
                      */
                     bool ValidTsHasBeenSet() const;
 
+                    /**
+                     * 获取生效状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValidStatus 生效状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetValidStatus() const;
+
+                    /**
+                     * 设置生效状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _validStatus 生效状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetValidStatus(const int64_t& _validStatus);
+
+                    /**
+                     * 判断参数 ValidStatus 是否已赋值
+                     * @return ValidStatus 是否已赋值
+                     * 
+                     */
+                    bool ValidStatusHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * mongo表自增Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                     /**
                      * 动作
@@ -214,6 +271,13 @@ namespace TencentCloud
                      */
                     uint64_t m_validTs;
                     bool m_validTsHasBeenSet;
+
+                    /**
+                     * 生效状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_validStatus;
+                    bool m_validStatusHasBeenSet;
 
                 };
             }

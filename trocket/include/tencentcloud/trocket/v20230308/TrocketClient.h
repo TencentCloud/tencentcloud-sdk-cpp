@@ -27,12 +27,16 @@
 #include <tencentcloud/trocket/v20230308/model/CreateConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/CreateRoleRequest.h>
+#include <tencentcloud/trocket/v20230308/model/CreateRoleResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/CreateTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteConsumerGroupRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteRoleRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteRoleResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupRequest.h>
@@ -41,6 +45,8 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeRoleListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListRequest.h>
@@ -51,6 +57,8 @@
 #include <tencentcloud/trocket/v20230308/model/ModifyConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyRoleRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyRoleResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyTopicResponse.h>
 
@@ -73,6 +81,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoleResponse> CreateRoleOutcome;
+                typedef std::future<CreateRoleOutcome> CreateRoleOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::CreateRoleRequest&, CreateRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
@@ -82,6 +93,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
                 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoleResponse> DeleteRoleOutcome;
+                typedef std::future<DeleteRoleOutcome> DeleteRoleOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DeleteRoleRequest&, DeleteRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
@@ -94,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceListResponse> DescribeInstanceListOutcome;
                 typedef std::future<DescribeInstanceListOutcome> DescribeInstanceListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeInstanceListRequest&, DescribeInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRoleListResponse> DescribeRoleListOutcome;
+                typedef std::future<DescribeRoleListOutcome> DescribeRoleListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeRoleListRequest&, DescribeRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicResponse> DescribeTopicOutcome;
                 typedef std::future<DescribeTopicOutcome> DescribeTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeTopicRequest&, DescribeTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicAsyncHandler;
@@ -109,6 +126,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
                 typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoleResponse> ModifyRoleOutcome;
+                typedef std::future<ModifyRoleOutcome> ModifyRoleOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ModifyRoleRequest&, ModifyRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
@@ -132,6 +152,15 @@ namespace TencentCloud
                 CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest &request);
                 void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
+
+                /**
+                 *添加角色
+                 * @param req CreateRoleRequest
+                 * @return CreateRoleOutcome
+                 */
+                CreateRoleOutcome CreateRole(const Model::CreateRoleRequest &request);
+                void CreateRoleAsync(const Model::CreateRoleRequest& request, const CreateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoleOutcomeCallable CreateRoleCallable(const Model::CreateRoleRequest& request);
 
                 /**
                  *创建主题
@@ -159,6 +188,15 @@ namespace TencentCloud
                 DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
                 void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
+
+                /**
+                 *删除角色
+                 * @param req DeleteRoleRequest
+                 * @return DeleteRoleOutcome
+                 */
+                DeleteRoleOutcome DeleteRole(const Model::DeleteRoleRequest &request);
+                void DeleteRoleAsync(const Model::DeleteRoleRequest& request, const DeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoleOutcomeCallable DeleteRoleCallable(const Model::DeleteRoleRequest& request);
 
                 /**
                  *删除主题
@@ -201,6 +239,17 @@ namespace TencentCloud
                 DescribeInstanceListOutcome DescribeInstanceList(const Model::DescribeInstanceListRequest &request);
                 void DescribeInstanceListAsync(const Model::DescribeInstanceListRequest& request, const DescribeInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceListOutcomeCallable DescribeInstanceListCallable(const Model::DescribeInstanceListRequest& request);
+
+                /**
+                 *查询角色列表，Filter参数使用说明如下：
+
+1. RoleName，角色名称模糊搜索
+                 * @param req DescribeRoleListRequest
+                 * @return DescribeRoleListOutcome
+                 */
+                DescribeRoleListOutcome DescribeRoleList(const Model::DescribeRoleListRequest &request);
+                void DescribeRoleListAsync(const Model::DescribeRoleListRequest& request, const DescribeRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoleListOutcomeCallable DescribeRoleListCallable(const Model::DescribeRoleListRequest& request);
 
                 /**
                  *查询主题详情，Offset和Limit参数是指订阅该主题的消费组查询分页参数，Filter参数使用说明如下：
@@ -251,6 +300,15 @@ ConsumerGroup，消费组名称过滤
                 ModifyInstanceOutcome ModifyInstance(const Model::ModifyInstanceRequest &request);
                 void ModifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
+
+                /**
+                 *修改角色
+                 * @param req ModifyRoleRequest
+                 * @return ModifyRoleOutcome
+                 */
+                ModifyRoleOutcome ModifyRole(const Model::ModifyRoleRequest &request);
+                void ModifyRoleAsync(const Model::ModifyRoleRequest& request, const ModifyRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoleOutcomeCallable ModifyRoleCallable(const Model::ModifyRoleRequest& request);
 
                 /**
                  *修改主题属性

@@ -24,7 +24,8 @@ using namespace std;
 
 CreateBlockIgnoreRuleListRequest::CreateBlockIgnoreRuleListRequest() :
     m_rulesHasBeenSet(false),
-    m_ruleTypeHasBeenSet(false)
+    m_ruleTypeHasBeenSet(false),
+    m_coverDuplicateHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string CreateBlockIgnoreRuleListRequest::ToJsonString() const
         string key = "RuleType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ruleType, allocator);
+    }
+
+    if (m_coverDuplicateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoverDuplicate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_coverDuplicate, allocator);
     }
 
 
@@ -96,6 +105,22 @@ void CreateBlockIgnoreRuleListRequest::SetRuleType(const int64_t& _ruleType)
 bool CreateBlockIgnoreRuleListRequest::RuleTypeHasBeenSet() const
 {
     return m_ruleTypeHasBeenSet;
+}
+
+int64_t CreateBlockIgnoreRuleListRequest::GetCoverDuplicate() const
+{
+    return m_coverDuplicate;
+}
+
+void CreateBlockIgnoreRuleListRequest::SetCoverDuplicate(const int64_t& _coverDuplicate)
+{
+    m_coverDuplicate = _coverDuplicate;
+    m_coverDuplicateHasBeenSet = true;
+}
+
+bool CreateBlockIgnoreRuleListRequest::CoverDuplicateHasBeenSet() const
+{
+    return m_coverDuplicateHasBeenSet;
 }
 
 

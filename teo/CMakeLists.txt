@@ -26,6 +26,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DeleteRulesRequest.h
   include/tencentcloud/teo/v20220901/model/ExceptUserRuleCondition.h
   include/tencentcloud/teo/v20220901/model/CheckCnameStatusResponse.h
+  include/tencentcloud/teo/v20220901/model/ModifyZoneResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeOriginGroupResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataRequest.h
   include/tencentcloud/teo/v20220901/model/DeleteApplicationProxyResponse.h
@@ -45,6 +46,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeZoneSettingRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyZoneStatusRequest.h
+  include/tencentcloud/teo/v20220901/model/FileVerification.h
   include/tencentcloud/teo/v20220901/model/DescribeIdentificationsResponse.h
   include/tencentcloud/teo/v20220901/model/ModifySecurityPolicyRequest.h
   include/tencentcloud/teo/v20220901/model/Waf.h
@@ -63,7 +65,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifySecurityPolicyResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeHostsSettingResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyZoneStatusResponse.h
-  include/tencentcloud/teo/v20220901/model/ModifyZoneResponse.h
+  include/tencentcloud/teo/v20220901/model/DnsVerification.h
   include/tencentcloud/teo/v20220901/model/AlgDetectSession.h
   include/tencentcloud/teo/v20220901/model/ModifyZoneRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusResponse.h
@@ -183,6 +185,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/TemplateConfig.h
   include/tencentcloud/teo/v20220901/model/TopEntry.h
   include/tencentcloud/teo/v20220901/model/VanityNameServersIps.h
+  include/tencentcloud/teo/v20220901/model/NsVerification.h
   include/tencentcloud/teo/v20220901/model/SlowPostConfig.h
   include/tencentcloud/teo/v20220901/model/AccelerateMainland.h
   include/tencentcloud/teo/v20220901/model/ExceptUserRule.h
@@ -268,6 +271,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/SubRuleItem.h
   include/tencentcloud/teo/v20220901/model/CreateSecurityIPGroupResponse.h
   include/tencentcloud/teo/v20220901/model/CreateSharedCNAMEResponse.h
+  include/tencentcloud/teo/v20220901/model/OwnershipVerification.h
   include/tencentcloud/teo/v20220901/model/DescribePurgeTasksResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeAvailablePlansResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventRequest.h
@@ -315,6 +319,7 @@ set(teo_src
   src/v20220901/model/DeleteRulesRequest.cpp
   src/v20220901/model/ExceptUserRuleCondition.cpp
   src/v20220901/model/CheckCnameStatusResponse.cpp
+  src/v20220901/model/ModifyZoneResponse.cpp
   src/v20220901/model/DescribeOriginGroupResponse.cpp
   src/v20220901/model/DescribeTopL7CacheDataRequest.cpp
   src/v20220901/model/DeleteApplicationProxyResponse.cpp
@@ -334,6 +339,7 @@ set(teo_src
   src/v20220901/model/DescribeDDoSAttackDataResponse.cpp
   src/v20220901/model/DescribeZoneSettingRequest.cpp
   src/v20220901/model/ModifyZoneStatusRequest.cpp
+  src/v20220901/model/FileVerification.cpp
   src/v20220901/model/DescribeIdentificationsResponse.cpp
   src/v20220901/model/ModifySecurityPolicyRequest.cpp
   src/v20220901/model/Waf.cpp
@@ -352,7 +358,7 @@ set(teo_src
   src/v20220901/model/ModifySecurityPolicyResponse.cpp
   src/v20220901/model/DescribeHostsSettingResponse.cpp
   src/v20220901/model/ModifyZoneStatusResponse.cpp
-  src/v20220901/model/ModifyZoneResponse.cpp
+  src/v20220901/model/DnsVerification.cpp
   src/v20220901/model/AlgDetectSession.cpp
   src/v20220901/model/ModifyZoneRequest.cpp
   src/v20220901/model/ModifyApplicationProxyStatusResponse.cpp
@@ -472,6 +478,7 @@ set(teo_src
   src/v20220901/model/TemplateConfig.cpp
   src/v20220901/model/TopEntry.cpp
   src/v20220901/model/VanityNameServersIps.cpp
+  src/v20220901/model/NsVerification.cpp
   src/v20220901/model/SlowPostConfig.cpp
   src/v20220901/model/AccelerateMainland.cpp
   src/v20220901/model/ExceptUserRule.cpp
@@ -557,6 +564,7 @@ set(teo_src
   src/v20220901/model/SubRuleItem.cpp
   src/v20220901/model/CreateSecurityIPGroupResponse.cpp
   src/v20220901/model/CreateSharedCNAMEResponse.cpp
+  src/v20220901/model/OwnershipVerification.cpp
   src/v20220901/model/DescribePurgeTasksResponse.cpp
   src/v20220901/model/DescribeAvailablePlansResponse.cpp
   src/v20220901/model/DescribeDDoSAttackEventRequest.cpp

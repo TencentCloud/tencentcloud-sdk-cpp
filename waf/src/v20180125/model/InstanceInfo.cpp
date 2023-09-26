@@ -51,7 +51,9 @@ InstanceInfo::InstanceInfo() :
     m_bandwidthStandardHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_sandboxQpsHasBeenSet(false),
-    m_isAPISecurityTrialHasBeenSet(false)
+    m_isAPISecurityTrialHasBeenSet(false),
+    m_majorEventsPkgHasBeenSet(false),
+    m_hybridPkgHasBeenSet(false)
 {
 }
 
@@ -405,6 +407,40 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_isAPISecurityTrialHasBeenSet = true;
     }
 
+    if (value.HasMember("MajorEventsPkg") && !value["MajorEventsPkg"].IsNull())
+    {
+        if (!value["MajorEventsPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MajorEventsPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_majorEventsPkg.Deserialize(value["MajorEventsPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_majorEventsPkgHasBeenSet = true;
+    }
+
+    if (value.HasMember("HybridPkg") && !value["HybridPkg"].IsNull())
+    {
+        if (!value["HybridPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.HybridPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hybridPkg.Deserialize(value["HybridPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hybridPkgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -663,6 +699,24 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsAPISecurityTrial";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAPISecurityTrial, allocator);
+    }
+
+    if (m_majorEventsPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MajorEventsPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_majorEventsPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hybridPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HybridPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hybridPkg.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1162,5 +1216,37 @@ void InstanceInfo::SetIsAPISecurityTrial(const uint64_t& _isAPISecurityTrial)
 bool InstanceInfo::IsAPISecurityTrialHasBeenSet() const
 {
     return m_isAPISecurityTrialHasBeenSet;
+}
+
+MajorEventsPkg InstanceInfo::GetMajorEventsPkg() const
+{
+    return m_majorEventsPkg;
+}
+
+void InstanceInfo::SetMajorEventsPkg(const MajorEventsPkg& _majorEventsPkg)
+{
+    m_majorEventsPkg = _majorEventsPkg;
+    m_majorEventsPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::MajorEventsPkgHasBeenSet() const
+{
+    return m_majorEventsPkgHasBeenSet;
+}
+
+HybridPkg InstanceInfo::GetHybridPkg() const
+{
+    return m_hybridPkg;
+}
+
+void InstanceInfo::SetHybridPkg(const HybridPkg& _hybridPkg)
+{
+    m_hybridPkg = _hybridPkg;
+    m_hybridPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::HybridPkgHasBeenSet() const
+{
+    return m_hybridPkgHasBeenSet;
 }
 

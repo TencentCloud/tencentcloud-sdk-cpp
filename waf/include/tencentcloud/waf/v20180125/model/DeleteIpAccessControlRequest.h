@@ -85,6 +85,27 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
+                     * 获取若IsId字段为True，则Items列表元素需为Id，否则为IP
+                     * @return IsId 若IsId字段为True，则Items列表元素需为Id，否则为IP
+                     * 
+                     */
+                    bool GetIsId() const;
+
+                    /**
+                     * 设置若IsId字段为True，则Items列表元素需为Id，否则为IP
+                     * @param _isId 若IsId字段为True，则Items列表元素需为Id，否则为IP
+                     * 
+                     */
+                    void SetIsId(const bool& _isId);
+
+                    /**
+                     * 判断参数 IsId 是否已赋值
+                     * @return IsId 是否已赋值
+                     * 
+                     */
+                    bool IsIdHasBeenSet() const;
+
+                    /**
                      * 获取是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
                      * @return DeleteAll 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
                      * 
@@ -139,6 +160,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 若IsId字段为True，则Items列表元素需为Id，否则为IP
+                     */
+                    bool m_isId;
+                    bool m_isIdHasBeenSet;
 
                     /**
                      * 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单

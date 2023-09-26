@@ -598,6 +598,31 @@ namespace TencentCloud
                      */
                     bool SwitchModeHasBeenSet() const;
 
+                    /**
+                     * 获取开关权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SwitchWeight 开关权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSwitchWeight() const;
+
+                    /**
+                     * 设置开关权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _switchWeight 开关权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSwitchWeight(const int64_t& _switchWeight);
+
+                    /**
+                     * 判断参数 SwitchWeight 是否已赋值
+                     * @return SwitchWeight 是否已赋值
+                     * 
+                     */
+                    bool SwitchWeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -752,6 +777,13 @@ namespace TencentCloud
                      */
                     uint64_t m_switchMode;
                     bool m_switchModeHasBeenSet;
+
+                    /**
+                     * 开关权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_switchWeight;
+                    bool m_switchWeightHasBeenSet;
 
                 };
             }

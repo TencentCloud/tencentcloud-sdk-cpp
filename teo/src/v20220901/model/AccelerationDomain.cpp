@@ -21,14 +21,15 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 AccelerationDomain::AccelerationDomain() :
-    m_originDetailHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_modifiedOnHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
     m_domainStatusHasBeenSet(false),
+    m_originDetailHasBeenSet(false),
     m_cnameHasBeenSet(false),
-    m_identificationStatusHasBeenSet(false)
+    m_identificationStatusHasBeenSet(false),
+    m_createdOnHasBeenSet(false),
+    m_modifiedOnHasBeenSet(false),
+    m_ownershipVerificationHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,36 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
 {
     string requestId = "";
 
+
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = string(value["ZoneId"].GetString());
+        m_zoneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DomainName") && !value["DomainName"].IsNull())
+    {
+        if (!value["DomainName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainName = string(value["DomainName"].GetString());
+        m_domainNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DomainStatus") && !value["DomainStatus"].IsNull())
+    {
+        if (!value["DomainStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.DomainStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainStatus = string(value["DomainStatus"].GetString());
+        m_domainStatusHasBeenSet = true;
+    }
 
     if (value.HasMember("OriginDetail") && !value["OriginDetail"].IsNull())
     {
@@ -52,56 +83,6 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         }
 
         m_originDetailHasBeenSet = true;
-    }
-
-    if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
-    {
-        if (!value["CreatedOn"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_createdOn = string(value["CreatedOn"].GetString());
-        m_createdOnHasBeenSet = true;
-    }
-
-    if (value.HasMember("DomainName") && !value["DomainName"].IsNull())
-    {
-        if (!value["DomainName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.DomainName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_domainName = string(value["DomainName"].GetString());
-        m_domainNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("ModifiedOn") && !value["ModifiedOn"].IsNull())
-    {
-        if (!value["ModifiedOn"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.ModifiedOn` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_modifiedOn = string(value["ModifiedOn"].GetString());
-        m_modifiedOnHasBeenSet = true;
-    }
-
-    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
-    {
-        if (!value["ZoneId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_zoneId = string(value["ZoneId"].GetString());
-        m_zoneIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("DomainStatus") && !value["DomainStatus"].IsNull())
-    {
-        if (!value["DomainStatus"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.DomainStatus` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_domainStatus = string(value["DomainStatus"].GetString());
-        m_domainStatusHasBeenSet = true;
     }
 
     if (value.HasMember("Cname") && !value["Cname"].IsNull())
@@ -124,6 +105,43 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         m_identificationStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
+    {
+        if (!value["CreatedOn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdOn = string(value["CreatedOn"].GetString());
+        m_createdOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifiedOn") && !value["ModifiedOn"].IsNull())
+    {
+        if (!value["ModifiedOn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.ModifiedOn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifiedOn = string(value["ModifiedOn"].GetString());
+        m_modifiedOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnershipVerification") && !value["OwnershipVerification"].IsNull())
+    {
+        if (!value["OwnershipVerification"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.OwnershipVerification` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ownershipVerification.Deserialize(value["OwnershipVerification"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ownershipVerificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -131,21 +149,12 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
 void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_originDetailHasBeenSet)
+    if (m_zoneIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OriginDetail";
+        string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_originDetail.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_createdOnHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreatedOn";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createdOn.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainNameHasBeenSet)
@@ -156,28 +165,21 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_modifiedOnHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ModifiedOn";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_modifiedOn.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_zoneIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_domainStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_domainStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_originDetail.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_cnameHasBeenSet)
@@ -196,39 +198,48 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_identificationStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_createdOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifiedOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifiedOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifiedOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownershipVerificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnershipVerification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
 
-OriginDetail AccelerationDomain::GetOriginDetail() const
+string AccelerationDomain::GetZoneId() const
 {
-    return m_originDetail;
+    return m_zoneId;
 }
 
-void AccelerationDomain::SetOriginDetail(const OriginDetail& _originDetail)
+void AccelerationDomain::SetZoneId(const string& _zoneId)
 {
-    m_originDetail = _originDetail;
-    m_originDetailHasBeenSet = true;
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
 }
 
-bool AccelerationDomain::OriginDetailHasBeenSet() const
+bool AccelerationDomain::ZoneIdHasBeenSet() const
 {
-    return m_originDetailHasBeenSet;
-}
-
-string AccelerationDomain::GetCreatedOn() const
-{
-    return m_createdOn;
-}
-
-void AccelerationDomain::SetCreatedOn(const string& _createdOn)
-{
-    m_createdOn = _createdOn;
-    m_createdOnHasBeenSet = true;
-}
-
-bool AccelerationDomain::CreatedOnHasBeenSet() const
-{
-    return m_createdOnHasBeenSet;
+    return m_zoneIdHasBeenSet;
 }
 
 string AccelerationDomain::GetDomainName() const
@@ -247,38 +258,6 @@ bool AccelerationDomain::DomainNameHasBeenSet() const
     return m_domainNameHasBeenSet;
 }
 
-string AccelerationDomain::GetModifiedOn() const
-{
-    return m_modifiedOn;
-}
-
-void AccelerationDomain::SetModifiedOn(const string& _modifiedOn)
-{
-    m_modifiedOn = _modifiedOn;
-    m_modifiedOnHasBeenSet = true;
-}
-
-bool AccelerationDomain::ModifiedOnHasBeenSet() const
-{
-    return m_modifiedOnHasBeenSet;
-}
-
-string AccelerationDomain::GetZoneId() const
-{
-    return m_zoneId;
-}
-
-void AccelerationDomain::SetZoneId(const string& _zoneId)
-{
-    m_zoneId = _zoneId;
-    m_zoneIdHasBeenSet = true;
-}
-
-bool AccelerationDomain::ZoneIdHasBeenSet() const
-{
-    return m_zoneIdHasBeenSet;
-}
-
 string AccelerationDomain::GetDomainStatus() const
 {
     return m_domainStatus;
@@ -293,6 +272,22 @@ void AccelerationDomain::SetDomainStatus(const string& _domainStatus)
 bool AccelerationDomain::DomainStatusHasBeenSet() const
 {
     return m_domainStatusHasBeenSet;
+}
+
+OriginDetail AccelerationDomain::GetOriginDetail() const
+{
+    return m_originDetail;
+}
+
+void AccelerationDomain::SetOriginDetail(const OriginDetail& _originDetail)
+{
+    m_originDetail = _originDetail;
+    m_originDetailHasBeenSet = true;
+}
+
+bool AccelerationDomain::OriginDetailHasBeenSet() const
+{
+    return m_originDetailHasBeenSet;
 }
 
 string AccelerationDomain::GetCname() const
@@ -325,5 +320,53 @@ void AccelerationDomain::SetIdentificationStatus(const string& _identificationSt
 bool AccelerationDomain::IdentificationStatusHasBeenSet() const
 {
     return m_identificationStatusHasBeenSet;
+}
+
+string AccelerationDomain::GetCreatedOn() const
+{
+    return m_createdOn;
+}
+
+void AccelerationDomain::SetCreatedOn(const string& _createdOn)
+{
+    m_createdOn = _createdOn;
+    m_createdOnHasBeenSet = true;
+}
+
+bool AccelerationDomain::CreatedOnHasBeenSet() const
+{
+    return m_createdOnHasBeenSet;
+}
+
+string AccelerationDomain::GetModifiedOn() const
+{
+    return m_modifiedOn;
+}
+
+void AccelerationDomain::SetModifiedOn(const string& _modifiedOn)
+{
+    m_modifiedOn = _modifiedOn;
+    m_modifiedOnHasBeenSet = true;
+}
+
+bool AccelerationDomain::ModifiedOnHasBeenSet() const
+{
+    return m_modifiedOnHasBeenSet;
+}
+
+OwnershipVerification AccelerationDomain::GetOwnershipVerification() const
+{
+    return m_ownershipVerification;
+}
+
+void AccelerationDomain::SetOwnershipVerification(const OwnershipVerification& _ownershipVerification)
+{
+    m_ownershipVerification = _ownershipVerification;
+    m_ownershipVerificationHasBeenSet = true;
+}
+
+bool AccelerationDomain::OwnershipVerificationHasBeenSet() const
+{
+    return m_ownershipVerificationHasBeenSet;
 }
 

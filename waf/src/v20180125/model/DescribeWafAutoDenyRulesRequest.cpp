@@ -23,7 +23,8 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 DescribeWafAutoDenyRulesRequest::DescribeWafAutoDenyRulesRequest() :
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeWafAutoDenyRulesRequest::ToJsonString() const
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeWafAutoDenyRulesRequest::SetDomain(const string& _domain)
 bool DescribeWafAutoDenyRulesRequest::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+string DescribeWafAutoDenyRulesRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeWafAutoDenyRulesRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeWafAutoDenyRulesRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

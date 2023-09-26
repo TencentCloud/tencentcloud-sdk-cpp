@@ -19,22 +19,130 @@ set(bi_public_header
   )
 
 set(bi_public_header_model
-  include/tencentcloud/bi/v20220105/model/CreateEmbedTokenResponse.h
+  include/tencentcloud/bi/v20220105/model/DataId.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserRoleListResponse.h
+  include/tencentcloud/bi/v20220105/model/ModifyProjectResponse.h
+  include/tencentcloud/bi/v20220105/model/DeleteProjectRequest.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserProjectListResponse.h
+  include/tencentcloud/bi/v20220105/model/CreateDatasourceRequest.h
+  include/tencentcloud/bi/v20220105/model/DeleteDatasourceRequest.h
+  include/tencentcloud/bi/v20220105/model/ModifyDatasourceResponse.h
+  include/tencentcloud/bi/v20220105/model/UserRoleListDataRoleInfo.h
   include/tencentcloud/bi/v20220105/model/ApplyEmbedIntervalRequest.h
-  include/tencentcloud/bi/v20220105/model/ApplyEmbedTokenInfo.h
-  include/tencentcloud/bi/v20220105/model/ApplyEmbedIntervalResponse.h
-  include/tencentcloud/bi/v20220105/model/CreateEmbedTokenRequest.h
   include/tencentcloud/bi/v20220105/model/EmbedTokenInfo.h
+  include/tencentcloud/bi/v20220105/model/ProjectConfigResult.h
+  include/tencentcloud/bi/v20220105/model/DeleteUserRoleResponse.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserProjectListRequest.h
+  include/tencentcloud/bi/v20220105/model/CreateDatasourceCloudResponse.h
+  include/tencentcloud/bi/v20220105/model/ProjectConfigList.h
+  include/tencentcloud/bi/v20220105/model/DeleteUserRoleRequest.h
+  include/tencentcloud/bi/v20220105/model/CreateUserRoleRequest.h
+  include/tencentcloud/bi/v20220105/model/DatasourceInfoData.h
+  include/tencentcloud/bi/v20220105/model/DescribeProjectListResponse.h
+  include/tencentcloud/bi/v20220105/model/CorpUserListData.h
+  include/tencentcloud/bi/v20220105/model/IdDTO.h
+  include/tencentcloud/bi/v20220105/model/CreateEmbedTokenRequest.h
+  include/tencentcloud/bi/v20220105/model/CreateUserRoleProjectResponse.h
+  include/tencentcloud/bi/v20220105/model/DescribeProjectInfoRequest.h
+  include/tencentcloud/bi/v20220105/model/BaseStateAction.h
+  include/tencentcloud/bi/v20220105/model/Data.h
+  include/tencentcloud/bi/v20220105/model/ModifyUserRoleProjectResponse.h
+  include/tencentcloud/bi/v20220105/model/ModifyDatasourceCloudRequest.h
+  include/tencentcloud/bi/v20220105/model/ModifyDatasourceCloudResponse.h
+  include/tencentcloud/bi/v20220105/model/ModifyDatasourceRequest.h
+  include/tencentcloud/bi/v20220105/model/ModifyProjectRequest.h
+  include/tencentcloud/bi/v20220105/model/ModifyUserRoleProjectRequest.h
+  include/tencentcloud/bi/v20220105/model/CreateUserRoleResponse.h
+  include/tencentcloud/bi/v20220105/model/ApplyEmbedTokenInfo.h
+  include/tencentcloud/bi/v20220105/model/DescribeProjectListRequest.h
+  include/tencentcloud/bi/v20220105/model/UserRoleListDataUserRoleInfo.h
+  include/tencentcloud/bi/v20220105/model/UserRoleListData.h
+  include/tencentcloud/bi/v20220105/model/Project.h
+  include/tencentcloud/bi/v20220105/model/DatasourceInfo.h
+  include/tencentcloud/bi/v20220105/model/DeleteUserRoleProjectRequest.h
+  include/tencentcloud/bi/v20220105/model/CreateProjectResponse.h
+  include/tencentcloud/bi/v20220105/model/DescribeProjectInfoResponse.h
+  include/tencentcloud/bi/v20220105/model/PermissionComponent.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserRoleListRequest.h
+  include/tencentcloud/bi/v20220105/model/DeleteProjectResponse.h
+  include/tencentcloud/bi/v20220105/model/ProjectListData.h
+  include/tencentcloud/bi/v20220105/model/PermissionGroup.h
+  include/tencentcloud/bi/v20220105/model/CreateEmbedTokenResponse.h
+  include/tencentcloud/bi/v20220105/model/CreateUserRoleProjectRequest.h
+  include/tencentcloud/bi/v20220105/model/DescribeDatasourceListRequest.h
+  include/tencentcloud/bi/v20220105/model/ApplyEmbedIntervalResponse.h
+  include/tencentcloud/bi/v20220105/model/CreateDatasourceResponse.h
+  include/tencentcloud/bi/v20220105/model/DeleteUserRoleProjectResponse.h
+  include/tencentcloud/bi/v20220105/model/CreateDatasourceCloudRequest.h
+  include/tencentcloud/bi/v20220105/model/UserInfo.h
+  include/tencentcloud/bi/v20220105/model/DescribeDatasourceListResponse.h
+  include/tencentcloud/bi/v20220105/model/UserIdAndUserName.h
+  include/tencentcloud/bi/v20220105/model/DeleteDatasourceResponse.h
+  include/tencentcloud/bi/v20220105/model/CreateProjectRequest.h
   )
 
 set(bi_src
   src/v20220105/BiClient.cpp
-  src/v20220105/model/CreateEmbedTokenResponse.cpp
+  src/v20220105/model/DataId.cpp
+  src/v20220105/model/DescribeUserRoleListResponse.cpp
+  src/v20220105/model/ModifyProjectResponse.cpp
+  src/v20220105/model/DeleteProjectRequest.cpp
+  src/v20220105/model/DescribeUserProjectListResponse.cpp
+  src/v20220105/model/CreateDatasourceRequest.cpp
+  src/v20220105/model/DeleteDatasourceRequest.cpp
+  src/v20220105/model/ModifyDatasourceResponse.cpp
+  src/v20220105/model/UserRoleListDataRoleInfo.cpp
   src/v20220105/model/ApplyEmbedIntervalRequest.cpp
-  src/v20220105/model/ApplyEmbedTokenInfo.cpp
-  src/v20220105/model/ApplyEmbedIntervalResponse.cpp
-  src/v20220105/model/CreateEmbedTokenRequest.cpp
   src/v20220105/model/EmbedTokenInfo.cpp
+  src/v20220105/model/ProjectConfigResult.cpp
+  src/v20220105/model/DeleteUserRoleResponse.cpp
+  src/v20220105/model/DescribeUserProjectListRequest.cpp
+  src/v20220105/model/CreateDatasourceCloudResponse.cpp
+  src/v20220105/model/ProjectConfigList.cpp
+  src/v20220105/model/DeleteUserRoleRequest.cpp
+  src/v20220105/model/CreateUserRoleRequest.cpp
+  src/v20220105/model/DatasourceInfoData.cpp
+  src/v20220105/model/DescribeProjectListResponse.cpp
+  src/v20220105/model/CorpUserListData.cpp
+  src/v20220105/model/IdDTO.cpp
+  src/v20220105/model/CreateEmbedTokenRequest.cpp
+  src/v20220105/model/CreateUserRoleProjectResponse.cpp
+  src/v20220105/model/DescribeProjectInfoRequest.cpp
+  src/v20220105/model/BaseStateAction.cpp
+  src/v20220105/model/Data.cpp
+  src/v20220105/model/ModifyUserRoleProjectResponse.cpp
+  src/v20220105/model/ModifyDatasourceCloudRequest.cpp
+  src/v20220105/model/ModifyDatasourceCloudResponse.cpp
+  src/v20220105/model/ModifyDatasourceRequest.cpp
+  src/v20220105/model/ModifyProjectRequest.cpp
+  src/v20220105/model/ModifyUserRoleProjectRequest.cpp
+  src/v20220105/model/CreateUserRoleResponse.cpp
+  src/v20220105/model/ApplyEmbedTokenInfo.cpp
+  src/v20220105/model/DescribeProjectListRequest.cpp
+  src/v20220105/model/UserRoleListDataUserRoleInfo.cpp
+  src/v20220105/model/UserRoleListData.cpp
+  src/v20220105/model/Project.cpp
+  src/v20220105/model/DatasourceInfo.cpp
+  src/v20220105/model/DeleteUserRoleProjectRequest.cpp
+  src/v20220105/model/CreateProjectResponse.cpp
+  src/v20220105/model/DescribeProjectInfoResponse.cpp
+  src/v20220105/model/PermissionComponent.cpp
+  src/v20220105/model/DescribeUserRoleListRequest.cpp
+  src/v20220105/model/DeleteProjectResponse.cpp
+  src/v20220105/model/ProjectListData.cpp
+  src/v20220105/model/PermissionGroup.cpp
+  src/v20220105/model/CreateEmbedTokenResponse.cpp
+  src/v20220105/model/CreateUserRoleProjectRequest.cpp
+  src/v20220105/model/DescribeDatasourceListRequest.cpp
+  src/v20220105/model/ApplyEmbedIntervalResponse.cpp
+  src/v20220105/model/CreateDatasourceResponse.cpp
+  src/v20220105/model/DeleteUserRoleProjectResponse.cpp
+  src/v20220105/model/CreateDatasourceCloudRequest.cpp
+  src/v20220105/model/UserInfo.cpp
+  src/v20220105/model/DescribeDatasourceListResponse.cpp
+  src/v20220105/model/UserIdAndUserName.cpp
+  src/v20220105/model/DeleteDatasourceResponse.cpp
+  src/v20220105/model/CreateProjectRequest.cpp
   )
 
 set(bi_include

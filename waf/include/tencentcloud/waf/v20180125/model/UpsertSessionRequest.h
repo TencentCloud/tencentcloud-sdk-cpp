@@ -210,6 +210,48 @@ namespace TencentCloud
                      */
                     bool EditionHasBeenSet() const;
 
+                    /**
+                     * 获取Session名
+                     * @return SessionName Session名
+                     * 
+                     */
+                    std::string GetSessionName() const;
+
+                    /**
+                     * 设置Session名
+                     * @param _sessionName Session名
+                     * 
+                     */
+                    void SetSessionName(const std::string& _sessionName);
+
+                    /**
+                     * 判断参数 SessionName 是否已赋值
+                     * @return SessionName 是否已赋值
+                     * 
+                     */
+                    bool SessionNameHasBeenSet() const;
+
+                    /**
+                     * 获取Session对应ID
+                     * @return SessionID Session对应ID
+                     * 
+                     */
+                    int64_t GetSessionID() const;
+
+                    /**
+                     * 设置Session对应ID
+                     * @param _sessionID Session对应ID
+                     * 
+                     */
+                    void SetSessionID(const int64_t& _sessionID);
+
+                    /**
+                     * 判断参数 SessionID 是否已赋值
+                     * @return SessionID 是否已赋值
+                     * 
+                     */
+                    bool SessionIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +301,18 @@ namespace TencentCloud
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
+
+                    /**
+                     * Session名
+                     */
+                    std::string m_sessionName;
+                    bool m_sessionNameHasBeenSet;
+
+                    /**
+                     * Session对应ID
+                     */
+                    int64_t m_sessionID;
+                    bool m_sessionIDHasBeenSet;
 
                 };
             }

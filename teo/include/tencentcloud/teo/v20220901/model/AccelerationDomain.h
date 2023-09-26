@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/OriginDetail.h>
+#include <tencentcloud/teo/v20220901/model/OwnershipVerification.h>
 
 
 namespace TencentCloud
@@ -48,50 +49,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源站信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginDetail 源站信息。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取站点 ID。
+                     * @return ZoneId 站点 ID。
                      * 
                      */
-                    OriginDetail GetOriginDetail() const;
+                    std::string GetZoneId() const;
 
                     /**
-                     * 设置源站信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _originDetail 源站信息。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置站点 ID。
+                     * @param _zoneId 站点 ID。
                      * 
                      */
-                    void SetOriginDetail(const OriginDetail& _originDetail);
+                    void SetZoneId(const std::string& _zoneId);
 
                     /**
-                     * 判断参数 OriginDetail 是否已赋值
-                     * @return OriginDetail 是否已赋值
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
                      * 
                      */
-                    bool OriginDetailHasBeenSet() const;
-
-                    /**
-                     * 获取创建时间。
-                     * @return CreatedOn 创建时间。
-                     * 
-                     */
-                    std::string GetCreatedOn() const;
-
-                    /**
-                     * 设置创建时间。
-                     * @param _createdOn 创建时间。
-                     * 
-                     */
-                    void SetCreatedOn(const std::string& _createdOn);
-
-                    /**
-                     * 判断参数 CreatedOn 是否已赋值
-                     * @return CreatedOn 是否已赋值
-                     * 
-                     */
-                    bool CreatedOnHasBeenSet() const;
+                    bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取加速域名名称。
@@ -113,48 +89,6 @@ namespace TencentCloud
                      * 
                      */
                     bool DomainNameHasBeenSet() const;
-
-                    /**
-                     * 获取修改时间。
-                     * @return ModifiedOn 修改时间。
-                     * 
-                     */
-                    std::string GetModifiedOn() const;
-
-                    /**
-                     * 设置修改时间。
-                     * @param _modifiedOn 修改时间。
-                     * 
-                     */
-                    void SetModifiedOn(const std::string& _modifiedOn);
-
-                    /**
-                     * 判断参数 ModifiedOn 是否已赋值
-                     * @return ModifiedOn 是否已赋值
-                     * 
-                     */
-                    bool ModifiedOnHasBeenSet() const;
-
-                    /**
-                     * 获取站点 ID。
-                     * @return ZoneId 站点 ID。
-                     * 
-                     */
-                    std::string GetZoneId() const;
-
-                    /**
-                     * 设置站点 ID。
-                     * @param _zoneId 站点 ID。
-                     * 
-                     */
-                    void SetZoneId(const std::string& _zoneId);
-
-                    /**
-                     * 判断参数 ZoneId 是否已赋值
-                     * @return ZoneId 是否已赋值
-                     * 
-                     */
-                    bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取加速域名状态，取值有：
@@ -196,6 +130,31 @@ namespace TencentCloud
                      * 
                      */
                     bool DomainStatusHasBeenSet() const;
+
+                    /**
+                     * 获取源站信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginDetail 源站信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    OriginDetail GetOriginDetail() const;
+
+                    /**
+                     * 设置源站信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _originDetail 源站信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOriginDetail(const OriginDetail& _originDetail);
+
+                    /**
+                     * 判断参数 OriginDetail 是否已赋值
+                     * @return OriginDetail 是否已赋值
+                     * 
+                     */
+                    bool OriginDetailHasBeenSet() const;
 
                     /**
                      * 获取CNAME 地址。
@@ -243,38 +202,86 @@ namespace TencentCloud
                      */
                     bool IdentificationStatusHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取创建时间。
+                     * @return CreatedOn 创建时间。
+                     * 
+                     */
+                    std::string GetCreatedOn() const;
 
                     /**
-                     * 源站信息。
+                     * 设置创建时间。
+                     * @param _createdOn 创建时间。
+                     * 
+                     */
+                    void SetCreatedOn(const std::string& _createdOn);
+
+                    /**
+                     * 判断参数 CreatedOn 是否已赋值
+                     * @return CreatedOn 是否已赋值
+                     * 
+                     */
+                    bool CreatedOnHasBeenSet() const;
+
+                    /**
+                     * 获取修改时间。
+                     * @return ModifiedOn 修改时间。
+                     * 
+                     */
+                    std::string GetModifiedOn() const;
+
+                    /**
+                     * 设置修改时间。
+                     * @param _modifiedOn 修改时间。
+                     * 
+                     */
+                    void SetModifiedOn(const std::string& _modifiedOn);
+
+                    /**
+                     * 判断参数 ModifiedOn 是否已赋值
+                     * @return ModifiedOn 是否已赋值
+                     * 
+                     */
+                    bool ModifiedOnHasBeenSet() const;
+
+                    /**
+                     * 获取当域名需要进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnershipVerification 当域名需要进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
-                    OriginDetail m_originDetail;
-                    bool m_originDetailHasBeenSet;
+                    OwnershipVerification GetOwnershipVerification() const;
 
                     /**
-                     * 创建时间。
+                     * 设置当域名需要进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownershipVerification 当域名需要进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
-                    std::string m_createdOn;
-                    bool m_createdOnHasBeenSet;
+                    void SetOwnershipVerification(const OwnershipVerification& _ownershipVerification);
 
                     /**
-                     * 加速域名名称。
+                     * 判断参数 OwnershipVerification 是否已赋值
+                     * @return OwnershipVerification 是否已赋值
+                     * 
                      */
-                    std::string m_domainName;
-                    bool m_domainNameHasBeenSet;
+                    bool OwnershipVerificationHasBeenSet() const;
 
-                    /**
-                     * 修改时间。
-                     */
-                    std::string m_modifiedOn;
-                    bool m_modifiedOnHasBeenSet;
+                private:
 
                     /**
                      * 站点 ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 加速域名名称。
+                     */
+                    std::string m_domainName;
+                    bool m_domainNameHasBeenSet;
 
                     /**
                      * 加速域名状态，取值有：
@@ -288,6 +295,13 @@ namespace TencentCloud
                     bool m_domainStatusHasBeenSet;
 
                     /**
+                     * 源站信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OriginDetail m_originDetail;
+                    bool m_originDetailHasBeenSet;
+
+                    /**
                      * CNAME 地址。
                      */
                     std::string m_cname;
@@ -299,6 +313,25 @@ namespace TencentCloud
                      */
                     std::string m_identificationStatus;
                     bool m_identificationStatusHasBeenSet;
+
+                    /**
+                     * 创建时间。
+                     */
+                    std::string m_createdOn;
+                    bool m_createdOnHasBeenSet;
+
+                    /**
+                     * 修改时间。
+                     */
+                    std::string m_modifiedOn;
+                    bool m_modifiedOnHasBeenSet;
+
+                    /**
+                     * 当域名需要进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OwnershipVerification m_ownershipVerification;
+                    bool m_ownershipVerificationHasBeenSet;
 
                 };
             }

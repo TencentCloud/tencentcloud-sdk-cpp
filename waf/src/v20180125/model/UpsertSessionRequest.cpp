@@ -30,7 +30,9 @@ UpsertSessionRequest::UpsertSessionRequest() :
     m_endMatHasBeenSet(false),
     m_startOffsetHasBeenSet(false),
     m_endOffsetHasBeenSet(false),
-    m_editionHasBeenSet(false)
+    m_editionHasBeenSet(false),
+    m_sessionNameHasBeenSet(false),
+    m_sessionIDHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,22 @@ string UpsertSessionRequest::ToJsonString() const
         string key = "Edition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sessionID, allocator);
     }
 
 
@@ -239,6 +257,38 @@ void UpsertSessionRequest::SetEdition(const string& _edition)
 bool UpsertSessionRequest::EditionHasBeenSet() const
 {
     return m_editionHasBeenSet;
+}
+
+string UpsertSessionRequest::GetSessionName() const
+{
+    return m_sessionName;
+}
+
+void UpsertSessionRequest::SetSessionName(const string& _sessionName)
+{
+    m_sessionName = _sessionName;
+    m_sessionNameHasBeenSet = true;
+}
+
+bool UpsertSessionRequest::SessionNameHasBeenSet() const
+{
+    return m_sessionNameHasBeenSet;
+}
+
+int64_t UpsertSessionRequest::GetSessionID() const
+{
+    return m_sessionID;
+}
+
+void UpsertSessionRequest::SetSessionID(const int64_t& _sessionID)
+{
+    m_sessionID = _sessionID;
+    m_sessionIDHasBeenSet = true;
+}
+
+bool UpsertSessionRequest::SessionIDHasBeenSet() const
+{
+    return m_sessionIDHasBeenSet;
 }
 
 

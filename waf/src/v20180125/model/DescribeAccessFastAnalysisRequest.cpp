@@ -27,7 +27,9 @@ DescribeAccessFastAnalysisRequest::DescribeAccessFastAnalysisRequest() :
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_fieldNameHasBeenSet(false)
+    m_fieldNameHasBeenSet(false),
+    m_sortHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string DescribeAccessFastAnalysisRequest::ToJsonString() const
         string key = "FieldName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fieldName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_count, allocator);
     }
 
 
@@ -164,6 +182,38 @@ void DescribeAccessFastAnalysisRequest::SetFieldName(const string& _fieldName)
 bool DescribeAccessFastAnalysisRequest::FieldNameHasBeenSet() const
 {
     return m_fieldNameHasBeenSet;
+}
+
+string DescribeAccessFastAnalysisRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void DescribeAccessFastAnalysisRequest::SetSort(const string& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool DescribeAccessFastAnalysisRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
+}
+
+int64_t DescribeAccessFastAnalysisRequest::GetCount() const
+{
+    return m_count;
+}
+
+void DescribeAccessFastAnalysisRequest::SetCount(const int64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool DescribeAccessFastAnalysisRequest::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 
 

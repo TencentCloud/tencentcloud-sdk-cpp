@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteSessionRequest::DeleteSessionRequest() :
     m_domainHasBeenSet(false),
-    m_editionHasBeenSet(false)
+    m_editionHasBeenSet(false),
+    m_sessionIDHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteSessionRequest::ToJsonString() const
         string key = "Edition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sessionID, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteSessionRequest::SetEdition(const string& _edition)
 bool DeleteSessionRequest::EditionHasBeenSet() const
 {
     return m_editionHasBeenSet;
+}
+
+int64_t DeleteSessionRequest::GetSessionID() const
+{
+    return m_sessionID;
+}
+
+void DeleteSessionRequest::SetSessionID(const int64_t& _sessionID)
+{
+    m_sessionID = _sessionID;
+    m_sessionIDHasBeenSet = true;
+}
+
+bool DeleteSessionRequest::SessionIDHasBeenSet() const
+{
+    return m_sessionIDHasBeenSet;
 }
 
 

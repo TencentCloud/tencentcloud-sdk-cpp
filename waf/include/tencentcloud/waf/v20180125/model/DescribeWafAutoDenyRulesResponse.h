@@ -99,6 +99,20 @@ namespace TencentCloud
                      */
                     bool DefenseStatusHasBeenSet() const;
 
+                    /**
+                     * 获取重保护网域名状态
+                     * @return HWState 重保护网域名状态
+                     * 
+                     */
+                    int64_t GetHWState() const;
+
+                    /**
+                     * 判断参数 HWState 是否已赋值
+                     * @return HWState 是否已赋值
+                     * 
+                     */
+                    bool HWStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +138,12 @@ namespace TencentCloud
                      */
                     int64_t m_defenseStatus;
                     bool m_defenseStatusHasBeenSet;
+
+                    /**
+                     * 重保护网域名状态
+                     */
+                    int64_t m_hWState;
+                    bool m_hWStateHasBeenSet;
 
                 };
             }

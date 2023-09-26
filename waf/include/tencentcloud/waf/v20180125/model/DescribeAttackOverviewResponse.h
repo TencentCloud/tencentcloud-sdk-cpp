@@ -143,6 +143,54 @@ namespace TencentCloud
                      */
                     bool ApiRiskEventCountHasBeenSet() const;
 
+                    /**
+                     * 获取黑名单总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IPBlackCount 黑名单总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIPBlackCount() const;
+
+                    /**
+                     * 判断参数 IPBlackCount 是否已赋值
+                     * @return IPBlackCount 是否已赋值
+                     * 
+                     */
+                    bool IPBlackCountHasBeenSet() const;
+
+                    /**
+                     * 获取防篡改总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TamperCount 防篡改总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTamperCount() const;
+
+                    /**
+                     * 判断参数 TamperCount 是否已赋值
+                     * @return TamperCount 是否已赋值
+                     * 
+                     */
+                    bool TamperCountHasBeenSet() const;
+
+                    /**
+                     * 获取信息泄露总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LeakCount 信息泄露总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetLeakCount() const;
+
+                    /**
+                     * 判断参数 LeakCount 是否已赋值
+                     * @return LeakCount 是否已赋值
+                     * 
+                     */
+                    bool LeakCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +235,27 @@ namespace TencentCloud
                      */
                     uint64_t m_apiRiskEventCount;
                     bool m_apiRiskEventCountHasBeenSet;
+
+                    /**
+                     * 黑名单总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_iPBlackCount;
+                    bool m_iPBlackCountHasBeenSet;
+
+                    /**
+                     * 防篡改总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_tamperCount;
+                    bool m_tamperCountHasBeenSet;
+
+                    /**
+                     * 信息泄露总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_leakCount;
+                    bool m_leakCountHasBeenSet;
 
                 };
             }

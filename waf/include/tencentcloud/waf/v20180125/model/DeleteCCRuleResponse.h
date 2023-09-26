@@ -59,6 +59,20 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取操作的规则Id
+                     * @return RuleId 操作的规则Id
+                     * 
+                     */
+                    int64_t GetRuleId() const;
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +81,12 @@ namespace TencentCloud
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 操作的规则Id
+                     */
+                    int64_t m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }

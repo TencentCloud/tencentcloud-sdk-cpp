@@ -24,7 +24,8 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 AddAntiFakeUrlResponse::AddAntiFakeUrlResponse() :
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome AddAntiFakeUrlResponse::Deserialize(const string &payload)
         m_resultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Id") && !rsp["Id"].IsNull())
+    {
+        if (!rsp["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(rsp["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string AddAntiFakeUrlResponse::ToJsonString() const
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string AddAntiFakeUrlResponse::GetResult() const
 bool AddAntiFakeUrlResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string AddAntiFakeUrlResponse::GetId() const
+{
+    return m_id;
+}
+
+bool AddAntiFakeUrlResponse::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 

@@ -82,6 +82,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/GetAttackTotalCountResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesResponse.h
   include/tencentcloud/waf/v20180125/model/SessionItem.h
+  include/tencentcloud/waf/v20180125/model/MajorEventsPkg.h
   include/tencentcloud/waf/v20180125/model/ModifySpartaProtectionResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyHostFlowModeRequest.h
   include/tencentcloud/waf/v20180125/model/UpsertCCRuleResponse.h
@@ -184,6 +185,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/StrategyForAntiInfoLeak.h
   include/tencentcloud/waf/v20180125/model/AddSpartaProtectionResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeUserDomainInfoRequest.h
+  include/tencentcloud/waf/v20180125/model/HybridPkg.h
   include/tencentcloud/waf/v20180125/model/IpAccessControlData.h
   include/tencentcloud/waf/v20180125/model/PortItem.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleRequest.h
@@ -380,6 +382,7 @@ set(waf_src
   src/v20180125/model/GetAttackTotalCountResponse.cpp
   src/v20180125/model/DescribeAntiInfoLeakageRulesResponse.cpp
   src/v20180125/model/SessionItem.cpp
+  src/v20180125/model/MajorEventsPkg.cpp
   src/v20180125/model/ModifySpartaProtectionResponse.cpp
   src/v20180125/model/ModifyHostFlowModeRequest.cpp
   src/v20180125/model/UpsertCCRuleResponse.cpp
@@ -482,6 +485,7 @@ set(waf_src
   src/v20180125/model/StrategyForAntiInfoLeak.cpp
   src/v20180125/model/AddSpartaProtectionResponse.cpp
   src/v20180125/model/DescribeUserDomainInfoRequest.cpp
+  src/v20180125/model/HybridPkg.cpp
   src/v20180125/model/IpAccessControlData.cpp
   src/v20180125/model/PortItem.cpp
   src/v20180125/model/ModifyCustomRuleRequest.cpp

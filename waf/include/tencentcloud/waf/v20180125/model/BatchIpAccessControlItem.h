@@ -47,6 +47,31 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取mongo表自增Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id mongo表自增Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置mongo表自增Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _id mongo表自增Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
                      * 获取黑名单42或白名单40
                      * @return ActionType 黑名单42或白名单40
                      * 
@@ -194,6 +219,13 @@ namespace TencentCloud
                     bool HostsHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * mongo表自增Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                     /**
                      * 黑名单42或白名单40

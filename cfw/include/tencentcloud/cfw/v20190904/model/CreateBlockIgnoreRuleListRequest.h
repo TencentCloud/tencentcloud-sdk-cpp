@@ -85,6 +85,27 @@ namespace TencentCloud
                      */
                     bool RuleTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     * @return CoverDuplicate 是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     * 
+                     */
+                    int64_t GetCoverDuplicate() const;
+
+                    /**
+                     * 设置是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     * @param _coverDuplicate 是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     * 
+                     */
+                    void SetCoverDuplicate(const int64_t& _coverDuplicate);
+
+                    /**
+                     * 判断参数 CoverDuplicate 是否已赋值
+                     * @return CoverDuplicate 是否已赋值
+                     * 
+                     */
+                    bool CoverDuplicateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +119,12 @@ namespace TencentCloud
                      */
                     int64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * 是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     */
+                    int64_t m_coverDuplicate;
+                    bool m_coverDuplicateHasBeenSet;
 
                 };
             }

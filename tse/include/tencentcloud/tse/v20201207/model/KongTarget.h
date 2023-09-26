@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Host
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host Host
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置Host
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host Host
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取端口
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 端口
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取权重
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 权重
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置权重
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight 权重
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const int64_t& _weight);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取健康状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Health 健康状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHealth() const;
 
                     /**
                      * 设置健康状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _health 健康状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealth(const std::string& _health);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -153,14 +173,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Target的来源
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source Target的来源
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置Target的来源
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source Target的来源
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -176,36 +200,42 @@ namespace TencentCloud
 
                     /**
                      * Host
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
                      * 端口
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 权重
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
                      * 健康状态
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_health;
                     bool m_healthHasBeenSet;
 
                     /**
                      * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * Target的来源
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;

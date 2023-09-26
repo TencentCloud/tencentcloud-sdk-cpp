@@ -22,32 +22,41 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateConsumerGroupRequest.h
+  include/tencentcloud/trocket/v20230308/model/CreateRoleResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceListRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h
   include/tencentcloud/trocket/v20230308/model/DeleteInstanceResponse.h
+  include/tencentcloud/trocket/v20230308/model/TopicItem.h
   include/tencentcloud/trocket/v20230308/model/ModifyConsumerGroupRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerGroupRequest.h
   include/tencentcloud/trocket/v20230308/model/IpRule.h
-  include/tencentcloud/trocket/v20230308/model/TopicItem.h
+  include/tencentcloud/trocket/v20230308/model/ModifyRoleResponse.h
   include/tencentcloud/trocket/v20230308/model/SubscriptionData.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerGroupResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h
+  include/tencentcloud/trocket/v20230308/model/CreateRoleRequest.h
   include/tencentcloud/trocket/v20230308/model/VpcInfo.h
   include/tencentcloud/trocket/v20230308/model/DeleteTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteConsumerGroupResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/Endpoint.h
+  include/tencentcloud/trocket/v20230308/model/DeleteRoleResponse.h
+  include/tencentcloud/trocket/v20230308/model/ModifyRoleRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicStatsOpRequest.h
+  include/tencentcloud/trocket/v20230308/model/RoleItem.h
   include/tencentcloud/trocket/v20230308/model/CreateTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/TagFilter.h
   include/tencentcloud/trocket/v20230308/model/Filter.h
-  include/tencentcloud/trocket/v20230308/model/DescribeTopicStatsOpResponse.h
+  include/tencentcloud/trocket/v20230308/model/DeleteRoleRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeRoleListRequest.h
   include/tencentcloud/trocket/v20230308/model/ModifyTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeTopicStatsOpResponse.h
   include/tencentcloud/trocket/v20230308/model/DeleteConsumerGroupRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateConsumerGroupResponse.h
@@ -65,32 +74,41 @@ set(trocket_src
   src/v20230308/model/ModifyInstanceResponse.cpp
   src/v20230308/model/CreateTopicResponse.cpp
   src/v20230308/model/CreateConsumerGroupRequest.cpp
+  src/v20230308/model/CreateRoleResponse.cpp
+  src/v20230308/model/DescribeRoleListResponse.cpp
   src/v20230308/model/ModifyInstanceRequest.cpp
   src/v20230308/model/DescribeTopicListRequest.cpp
   src/v20230308/model/DescribeInstanceListRequest.cpp
   src/v20230308/model/CreateInstanceResponse.cpp
   src/v20230308/model/DescribeTopicListResponse.cpp
   src/v20230308/model/DeleteInstanceResponse.cpp
+  src/v20230308/model/TopicItem.cpp
   src/v20230308/model/ModifyConsumerGroupRequest.cpp
   src/v20230308/model/DescribeConsumerGroupRequest.cpp
   src/v20230308/model/IpRule.cpp
-  src/v20230308/model/TopicItem.cpp
+  src/v20230308/model/ModifyRoleResponse.cpp
   src/v20230308/model/SubscriptionData.cpp
   src/v20230308/model/DescribeConsumerGroupResponse.cpp
   src/v20230308/model/CreateInstanceRequest.cpp
+  src/v20230308/model/CreateRoleRequest.cpp
   src/v20230308/model/VpcInfo.cpp
   src/v20230308/model/DeleteTopicRequest.cpp
   src/v20230308/model/DeleteConsumerGroupResponse.cpp
   src/v20230308/model/ModifyTopicResponse.cpp
   src/v20230308/model/DescribeTopicResponse.cpp
   src/v20230308/model/Endpoint.cpp
+  src/v20230308/model/DeleteRoleResponse.cpp
+  src/v20230308/model/ModifyRoleRequest.cpp
   src/v20230308/model/DescribeTopicStatsOpRequest.cpp
+  src/v20230308/model/RoleItem.cpp
   src/v20230308/model/CreateTopicRequest.cpp
   src/v20230308/model/TagFilter.cpp
   src/v20230308/model/Filter.cpp
-  src/v20230308/model/DescribeTopicStatsOpResponse.cpp
+  src/v20230308/model/DeleteRoleRequest.cpp
+  src/v20230308/model/DescribeRoleListRequest.cpp
   src/v20230308/model/ModifyTopicRequest.cpp
   src/v20230308/model/DescribeInstanceResponse.cpp
+  src/v20230308/model/DescribeTopicStatsOpResponse.cpp
   src/v20230308/model/DeleteConsumerGroupRequest.cpp
   src/v20230308/model/DeleteTopicResponse.cpp
   src/v20230308/model/CreateConsumerGroupResponse.cpp

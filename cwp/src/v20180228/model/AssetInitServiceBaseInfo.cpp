@@ -35,7 +35,8 @@ AssetInitServiceBaseInfo::AssetInitServiceBaseInfo() :
     m_firstTimeHasBeenSet(false),
     m_isNewHasBeenSet(false),
     m_machineWanIpHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_isAutoRunHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,16 @@ CoreInternalOutcome AssetInitServiceBaseInfo::Deserialize(const rapidjson::Value
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAutoRun") && !value["IsAutoRun"].IsNull())
+    {
+        if (!value["IsAutoRun"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetInitServiceBaseInfo.IsAutoRun` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAutoRun = value["IsAutoRun"].GetInt64();
+        m_isAutoRunHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void AssetInitServiceBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isAutoRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAutoRun";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAutoRun, allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void AssetInitServiceBaseInfo::SetMachineExtraInfo(const MachineExtraInfo& _mach
 bool AssetInitServiceBaseInfo::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+int64_t AssetInitServiceBaseInfo::GetIsAutoRun() const
+{
+    return m_isAutoRun;
+}
+
+void AssetInitServiceBaseInfo::SetIsAutoRun(const int64_t& _isAutoRun)
+{
+    m_isAutoRun = _isAutoRun;
+    m_isAutoRunHasBeenSet = true;
+}
+
+bool AssetInitServiceBaseInfo::IsAutoRunHasBeenSet() const
+{
+    return m_isAutoRunHasBeenSet;
 }
 

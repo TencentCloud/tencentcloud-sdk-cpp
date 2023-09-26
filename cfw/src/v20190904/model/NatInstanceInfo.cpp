@@ -39,7 +39,8 @@ NatInstanceInfo::NatInstanceInfo() :
     m_ruleUsedHasBeenSet(false),
     m_ruleMaxHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_updateEnableHasBeenSet(false)
+    m_updateEnableHasBeenSet(false),
+    m_needProbeEngineUpdateHasBeenSet(false)
 {
 }
 
@@ -247,6 +248,16 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_updateEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("NeedProbeEngineUpdate") && !value["NeedProbeEngineUpdate"].IsNull())
+    {
+        if (!value["NeedProbeEngineUpdate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.NeedProbeEngineUpdate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_needProbeEngineUpdate = value["NeedProbeEngineUpdate"].GetInt64();
+        m_needProbeEngineUpdateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -419,6 +430,14 @@ void NatInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UpdateEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateEnable, allocator);
+    }
+
+    if (m_needProbeEngineUpdateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedProbeEngineUpdate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needProbeEngineUpdate, allocator);
     }
 
 }
@@ -726,5 +745,21 @@ void NatInstanceInfo::SetUpdateEnable(const int64_t& _updateEnable)
 bool NatInstanceInfo::UpdateEnableHasBeenSet() const
 {
     return m_updateEnableHasBeenSet;
+}
+
+int64_t NatInstanceInfo::GetNeedProbeEngineUpdate() const
+{
+    return m_needProbeEngineUpdate;
+}
+
+void NatInstanceInfo::SetNeedProbeEngineUpdate(const int64_t& _needProbeEngineUpdate)
+{
+    m_needProbeEngineUpdate = _needProbeEngineUpdate;
+    m_needProbeEngineUpdateHasBeenSet = true;
+}
+
+bool NatInstanceInfo::NeedProbeEngineUpdateHasBeenSet() const
+{
+    return m_needProbeEngineUpdateHasBeenSet;
 }
 

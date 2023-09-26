@@ -25,7 +25,8 @@ using namespace std;
 DeleteCCRuleRequest::DeleteCCRuleRequest() :
     m_domainHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_editionHasBeenSet(false)
+    m_editionHasBeenSet(false),
+    m_ruleIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DeleteCCRuleRequest::ToJsonString() const
         string key = "Edition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ruleId, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DeleteCCRuleRequest::SetEdition(const string& _edition)
 bool DeleteCCRuleRequest::EditionHasBeenSet() const
 {
     return m_editionHasBeenSet;
+}
+
+int64_t DeleteCCRuleRequest::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void DeleteCCRuleRequest::SetRuleId(const int64_t& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool DeleteCCRuleRequest::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
 }
 
 

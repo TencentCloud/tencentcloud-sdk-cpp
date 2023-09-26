@@ -24,7 +24,9 @@ using namespace std;
 
 ModifyEdgeIpSwitchRequest::ModifyEdgeIpSwitchRequest() :
     m_enableHasBeenSet(false),
-    m_edgeIpSwitchLstHasBeenSet(false)
+    m_edgeIpSwitchLstHasBeenSet(false),
+    m_autoChooseSubnetHasBeenSet(false),
+    m_switchModeHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,22 @@ string ModifyEdgeIpSwitchRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoChooseSubnetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoChooseSubnet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoChooseSubnet, allocator);
+    }
+
+    if (m_switchModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_switchMode, allocator);
     }
 
 
@@ -96,6 +114,38 @@ void ModifyEdgeIpSwitchRequest::SetEdgeIpSwitchLst(const vector<EdgeIpSwitch>& _
 bool ModifyEdgeIpSwitchRequest::EdgeIpSwitchLstHasBeenSet() const
 {
     return m_edgeIpSwitchLstHasBeenSet;
+}
+
+int64_t ModifyEdgeIpSwitchRequest::GetAutoChooseSubnet() const
+{
+    return m_autoChooseSubnet;
+}
+
+void ModifyEdgeIpSwitchRequest::SetAutoChooseSubnet(const int64_t& _autoChooseSubnet)
+{
+    m_autoChooseSubnet = _autoChooseSubnet;
+    m_autoChooseSubnetHasBeenSet = true;
+}
+
+bool ModifyEdgeIpSwitchRequest::AutoChooseSubnetHasBeenSet() const
+{
+    return m_autoChooseSubnetHasBeenSet;
+}
+
+int64_t ModifyEdgeIpSwitchRequest::GetSwitchMode() const
+{
+    return m_switchMode;
+}
+
+void ModifyEdgeIpSwitchRequest::SetSwitchMode(const int64_t& _switchMode)
+{
+    m_switchMode = _switchMode;
+    m_switchModeHasBeenSet = true;
+}
+
+bool ModifyEdgeIpSwitchRequest::SwitchModeHasBeenSet() const
+{
+    return m_switchModeHasBeenSet;
 }
 
 

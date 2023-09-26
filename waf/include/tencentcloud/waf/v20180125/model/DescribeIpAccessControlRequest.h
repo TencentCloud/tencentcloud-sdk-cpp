@@ -294,6 +294,27 @@ namespace TencentCloud
                      */
                     bool IpHasBeenSet() const;
 
+                    /**
+                     * 获取生效状态
+                     * @return ValidStatus 生效状态
+                     * 
+                     */
+                    int64_t GetValidStatus() const;
+
+                    /**
+                     * 设置生效状态
+                     * @param _validStatus 生效状态
+                     * 
+                     */
+                    void SetValidStatus(const int64_t& _validStatus);
+
+                    /**
+                     * 判断参数 ValidStatus 是否已赋值
+                     * @return ValidStatus 是否已赋值
+                     * 
+                     */
+                    bool ValidStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +388,12 @@ namespace TencentCloud
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
+
+                    /**
+                     * 生效状态
+                     */
+                    int64_t m_validStatus;
+                    bool m_validStatusHasBeenSet;
 
                 };
             }

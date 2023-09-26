@@ -24,12 +24,12 @@ using namespace std;
 
 DescribeAccelerationDomainsRequest::DescribeAccelerationDomainsRequest() :
     m_zoneIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_directionHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_directionHasBeenSet(false),
+    m_matchHasBeenSet(false)
 {
 }
 
@@ -48,6 +48,22 @@ string DescribeAccelerationDomainsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -61,6 +77,14 @@ string DescribeAccelerationDomainsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directionHasBeenSet)
@@ -77,30 +101,6 @@ string DescribeAccelerationDomainsRequest::ToJsonString() const
         string key = "Match";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_match.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_orderHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Order";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -127,6 +127,38 @@ bool DescribeAccelerationDomainsRequest::ZoneIdHasBeenSet() const
     return m_zoneIdHasBeenSet;
 }
 
+int64_t DescribeAccelerationDomainsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeAccelerationDomainsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeAccelerationDomainsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeAccelerationDomainsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeAccelerationDomainsRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeAccelerationDomainsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
 vector<AdvancedFilter> DescribeAccelerationDomainsRequest::GetFilters() const
 {
     return m_filters;
@@ -141,6 +173,22 @@ void DescribeAccelerationDomainsRequest::SetFilters(const vector<AdvancedFilter>
 bool DescribeAccelerationDomainsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeAccelerationDomainsRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeAccelerationDomainsRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeAccelerationDomainsRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
 }
 
 string DescribeAccelerationDomainsRequest::GetDirection() const
@@ -173,54 +221,6 @@ void DescribeAccelerationDomainsRequest::SetMatch(const string& _match)
 bool DescribeAccelerationDomainsRequest::MatchHasBeenSet() const
 {
     return m_matchHasBeenSet;
-}
-
-int64_t DescribeAccelerationDomainsRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void DescribeAccelerationDomainsRequest::SetLimit(const int64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool DescribeAccelerationDomainsRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
-
-int64_t DescribeAccelerationDomainsRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeAccelerationDomainsRequest::SetOffset(const int64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeAccelerationDomainsRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
-string DescribeAccelerationDomainsRequest::GetOrder() const
-{
-    return m_order;
-}
-
-void DescribeAccelerationDomainsRequest::SetOrder(const string& _order)
-{
-    m_order = _order;
-    m_orderHasBeenSet = true;
-}
-
-bool DescribeAccelerationDomainsRequest::OrderHasBeenSet() const
-{
-    return m_orderHasBeenSet;
 }
 
 

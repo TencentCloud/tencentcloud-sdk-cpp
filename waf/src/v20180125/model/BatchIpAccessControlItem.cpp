@@ -21,6 +21,7 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 BatchIpAccessControlItem::BatchIpAccessControlItem() :
+    m_idHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_noteHasBeenSet(false),
@@ -35,6 +36,16 @@ CoreInternalOutcome BatchIpAccessControlItem::Deserialize(const rapidjson::Value
 {
     string requestId = "";
 
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchIpAccessControlItem.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
 
     if (value.HasMember("ActionType") && !value["ActionType"].IsNull())
     {
@@ -116,6 +127,14 @@ CoreInternalOutcome BatchIpAccessControlItem::Deserialize(const rapidjson::Value
 void BatchIpAccessControlItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_actionTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -179,6 +198,22 @@ void BatchIpAccessControlItem::ToJsonObject(rapidjson::Value &value, rapidjson::
 
 }
 
+
+string BatchIpAccessControlItem::GetId() const
+{
+    return m_id;
+}
+
+void BatchIpAccessControlItem::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool BatchIpAccessControlItem::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
 
 int64_t BatchIpAccessControlItem::GetActionType() const
 {

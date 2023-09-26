@@ -426,6 +426,27 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取开机自启动[0:否|1:是]
+                     * @return IsAutoRun 开机自启动[0:否|1:是]
+                     * 
+                     */
+                    int64_t GetIsAutoRun() const;
+
+                    /**
+                     * 设置开机自启动[0:否|1:是]
+                     * @param _isAutoRun 开机自启动[0:否|1:是]
+                     * 
+                     */
+                    void SetIsAutoRun(const int64_t& _isAutoRun);
+
+                    /**
+                     * 判断参数 IsAutoRun 是否已赋值
+                     * @return IsAutoRun 是否已赋值
+                     * 
+                     */
+                    bool IsAutoRunHasBeenSet() const;
+
                 private:
 
                     /**
@@ -533,6 +554,12 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 开机自启动[0:否|1:是]
+                     */
+                    int64_t m_isAutoRun;
+                    bool m_isAutoRunHasBeenSet;
 
                 };
             }

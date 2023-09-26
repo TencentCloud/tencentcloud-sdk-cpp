@@ -40,7 +40,8 @@ EdgeIpInfo::EdgeIpInfo() :
     m_statusHasBeenSet(false),
     m_endpointIdHasBeenSet(false),
     m_endpointIpHasBeenSet(false),
-    m_switchModeHasBeenSet(false)
+    m_switchModeHasBeenSet(false),
+    m_switchWeightHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome EdgeIpInfo::Deserialize(const rapidjson::Value &value)
         m_switchModeHasBeenSet = true;
     }
 
+    if (value.HasMember("SwitchWeight") && !value["SwitchWeight"].IsNull())
+    {
+        if (!value["SwitchWeight"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeIpInfo.SwitchWeight` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_switchWeight = value["SwitchWeight"].GetInt64();
+        m_switchWeightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void EdgeIpInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SwitchMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_switchMode, allocator);
+    }
+
+    if (m_switchWeightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchWeight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_switchWeight, allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void EdgeIpInfo::SetSwitchMode(const uint64_t& _switchMode)
 bool EdgeIpInfo::SwitchModeHasBeenSet() const
 {
     return m_switchModeHasBeenSet;
+}
+
+int64_t EdgeIpInfo::GetSwitchWeight() const
+{
+    return m_switchWeight;
+}
+
+void EdgeIpInfo::SetSwitchWeight(const int64_t& _switchWeight)
+{
+    m_switchWeight = _switchWeight;
+    m_switchWeightHasBeenSet = true;
+}
+
+bool EdgeIpInfo::SwitchWeightHasBeenSet() const
+{
+    return m_switchWeightHasBeenSet;
 }
 

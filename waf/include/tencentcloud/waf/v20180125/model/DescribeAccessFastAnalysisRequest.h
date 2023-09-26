@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool FieldNameHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段,升序asc,降序desc，默认降序desc 
+                     * @return Sort 排序字段,升序asc,降序desc，默认降序desc 
+                     * 
+                     */
+                    std::string GetSort() const;
+
+                    /**
+                     * 设置排序字段,升序asc,降序desc，默认降序desc 
+                     * @param _sort 排序字段,升序asc,降序desc，默认降序desc 
+                     * 
+                     */
+                    void SetSort(const std::string& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     * 
+                     */
+                    bool SortHasBeenSet() const;
+
+                    /**
+                     * 获取返回的top数，默认返回top5
+                     * @return Count 返回的top数，默认返回top5
+                     * 
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 设置返回的top数，默认返回top5
+                     * @param _count 返回的top数，默认返回top5
+                     * 
+                     */
+                    void SetCount(const int64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     * 
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     std::string m_fieldName;
                     bool m_fieldNameHasBeenSet;
+
+                    /**
+                     * 排序字段,升序asc,降序desc，默认降序desc 
+                     */
+                    std::string m_sort;
+                    bool m_sortHasBeenSet;
+
+                    /**
+                     * 返回的top数，默认返回top5
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

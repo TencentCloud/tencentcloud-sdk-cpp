@@ -54,14 +54,14 @@ namespace TencentCloud
 <li>ORIGIN_GROUP：源站组类型源站；</li>
 <li>AWS_S3：S3兼容对象存储源站；</li>
 <li>LB: 负载均衡类型源站；</li>
-<li>SPACE：EdgeOne Shield Space 存储。</li>
+<li>SPACE：EdgeOne Shield Space 存储。</li>  
                      * @return OriginType 源站类型，取值有：
 <li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>
 <li>COS：COS 源；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
 <li>AWS_S3：S3兼容对象存储源站；</li>
 <li>LB: 负载均衡类型源站；</li>
-<li>SPACE：EdgeOne Shield Space 存储。</li>
+<li>SPACE：EdgeOne Shield Space 存储。</li>  
                      * 
                      */
                     std::string GetOriginType() const;
@@ -73,14 +73,14 @@ namespace TencentCloud
 <li>ORIGIN_GROUP：源站组类型源站；</li>
 <li>AWS_S3：S3兼容对象存储源站；</li>
 <li>LB: 负载均衡类型源站；</li>
-<li>SPACE：EdgeOne Shield Space 存储。</li>
+<li>SPACE：EdgeOne Shield Space 存储。</li>  
                      * @param _originType 源站类型，取值有：
 <li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>
 <li>COS：COS 源；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
 <li>AWS_S3：S3兼容对象存储源站；</li>
 <li>LB: 负载均衡类型源站；</li>
-<li>SPACE：EdgeOne Shield Space 存储。</li>
+<li>SPACE：EdgeOne Shield Space 存储。</li>  
                      * 
                      */
                     void SetOriginType(const std::string& _originType);
@@ -193,7 +193,7 @@ namespace TencentCloud
 <li>ORIGIN_GROUP：源站组类型源站；</li>
 <li>AWS_S3：S3兼容对象存储源站；</li>
 <li>LB: 负载均衡类型源站；</li>
-<li>SPACE：EdgeOne Shield Space 存储。</li>
+<li>SPACE：EdgeOne Shield Space 存储。</li>  
                      */
                     std::string m_originType;
                     bool m_originTypeHasBeenSet;

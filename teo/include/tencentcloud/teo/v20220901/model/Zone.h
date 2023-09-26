@@ -28,6 +28,7 @@
 #include <tencentcloud/teo/v20220901/model/Resource.h>
 #include <tencentcloud/teo/v20220901/model/VanityNameServers.h>
 #include <tencentcloud/teo/v20220901/model/VanityNameServersIps.h>
+#include <tencentcloud/teo/v20220901/model/OwnershipVerification.h>
 
 
 namespace TencentCloud
@@ -51,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID。
-                     * @return ZoneId 站点ID。
+                     * 获取站点 ID。
+                     * @return ZoneId 站点 ID。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID。
-                     * @param _zoneId 站点ID。
+                     * 设置站点 ID。
+                     * @param _zoneId 站点 ID。
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -140,11 +141,13 @@ namespace TencentCloud
 <li> pending：NS 未切换；</li>
 <li> moved：NS 已切走；</li>
 <li> deactivated：被封禁。 </li>
+<li> initializing：待绑定套餐。 </li>
                      * @return Status 站点状态，取值有：
 <li> active：NS 已切换； </li>
 <li> pending：NS 未切换；</li>
 <li> moved：NS 已切走；</li>
 <li> deactivated：被封禁。 </li>
+<li> initializing：待绑定套餐。 </li>
                      * 
                      */
                     std::string GetStatus() const;
@@ -155,11 +158,13 @@ namespace TencentCloud
 <li> pending：NS 未切换；</li>
 <li> moved：NS 已切走；</li>
 <li> deactivated：被封禁。 </li>
+<li> initializing：待绑定套餐。 </li>
                      * @param _status 站点状态，取值有：
 <li> active：NS 已切换； </li>
 <li> pending：NS 未切换；</li>
 <li> moved：NS 已切走；</li>
 <li> deactivated：被封禁。 </li>
+<li> initializing：待绑定套餐。 </li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -172,27 +177,31 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取站点接入方式，取值有
-<li> full：NS 接入； </li>
+                     * 获取站点接入方式，取值有：
+<li> full：NS 接入；</li>
 <li> partial：CNAME 接入；</li>
-<li> noDomainAccess：无域名接入。</li>
-                     * @return Type 站点接入方式，取值有
-<li> full：NS 接入； </li>
+<li> noDomainAccess：无域名接入；</li>
+<li> vodeo：vodeo默认站点。</li>
+                     * @return Type 站点接入方式，取值有：
+<li> full：NS 接入；</li>
 <li> partial：CNAME 接入；</li>
-<li> noDomainAccess：无域名接入。</li>
+<li> noDomainAccess：无域名接入；</li>
+<li> vodeo：vodeo默认站点。</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置站点接入方式，取值有
-<li> full：NS 接入； </li>
+                     * 设置站点接入方式，取值有：
+<li> full：NS 接入；</li>
 <li> partial：CNAME 接入；</li>
-<li> noDomainAccess：无域名接入。</li>
-                     * @param _type 站点接入方式，取值有
-<li> full：NS 接入； </li>
+<li> noDomainAccess：无域名接入；</li>
+<li> vodeo：vodeo默认站点。</li>
+                     * @param _type 站点接入方式，取值有：
+<li> full：NS 接入；</li>
 <li> partial：CNAME 接入；</li>
-<li> noDomainAccess：无域名接入。</li>
+<li> noDomainAccess：无域名接入；</li>
+<li> vodeo：vodeo默认站点。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -538,15 +547,15 @@ namespace TencentCloud
                     bool IsFakeHasBeenSet() const;
 
                     /**
-                     * 获取锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>
-                     * @return LockStatus 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>
+                     * 获取锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作；</li><li> plan_migrate：套餐迁移中，不允许进行修改操作。</li>
+                     * @return LockStatus 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作；</li><li> plan_migrate：套餐迁移中，不允许进行修改操作。</li>
                      * 
                      */
                     std::string GetLockStatus() const;
 
                     /**
-                     * 设置锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>
-                     * @param _lockStatus 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>
+                     * 设置锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作；</li><li> plan_migrate：套餐迁移中，不允许进行修改操作。</li>
+                     * @param _lockStatus 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作；</li><li> plan_migrate：套餐迁移中，不允许进行修改操作。</li>
                      * 
                      */
                     void SetLockStatus(const std::string& _lockStatus);
@@ -558,10 +567,35 @@ namespace TencentCloud
                      */
                     bool LockStatusHasBeenSet() const;
 
+                    /**
+                     * 获取归属权验证信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnershipVerification 归属权验证信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    OwnershipVerification GetOwnershipVerification() const;
+
+                    /**
+                     * 设置归属权验证信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownershipVerification 归属权验证信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnershipVerification(const OwnershipVerification& _ownershipVerification);
+
+                    /**
+                     * 判断参数 OwnershipVerification 是否已赋值
+                     * @return OwnershipVerification 是否已赋值
+                     * 
+                     */
+                    bool OwnershipVerificationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 站点ID。
+                     * 站点 ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
@@ -590,15 +624,17 @@ namespace TencentCloud
 <li> pending：NS 未切换；</li>
 <li> moved：NS 已切走；</li>
 <li> deactivated：被封禁。 </li>
+<li> initializing：待绑定套餐。 </li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 站点接入方式，取值有
-<li> full：NS 接入； </li>
+                     * 站点接入方式，取值有：
+<li> full：NS 接入；</li>
 <li> partial：CNAME 接入；</li>
-<li> noDomainAccess：无域名接入。</li>
+<li> noDomainAccess：无域名接入；</li>
+<li> vodeo：vodeo默认站点。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -697,10 +733,17 @@ namespace TencentCloud
                     bool m_isFakeHasBeenSet;
 
                     /**
-                     * 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>
+                     * 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作；</li><li> plan_migrate：套餐迁移中，不允许进行修改操作。</li>
                      */
                     std::string m_lockStatus;
                     bool m_lockStatusHasBeenSet;
+
+                    /**
+                     * 归属权验证信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OwnershipVerification m_ownershipVerification;
+                    bool m_ownershipVerificationHasBeenSet;
 
                 };
             }

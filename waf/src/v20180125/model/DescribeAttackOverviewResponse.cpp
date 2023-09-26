@@ -30,7 +30,10 @@ DescribeAttackOverviewResponse::DescribeAttackOverviewResponse() :
     m_cCCountHasBeenSet(false),
     m_botCountHasBeenSet(false),
     m_apiAssetsCountHasBeenSet(false),
-    m_apiRiskEventCountHasBeenSet(false)
+    m_apiRiskEventCountHasBeenSet(false),
+    m_iPBlackCountHasBeenSet(false),
+    m_tamperCountHasBeenSet(false),
+    m_leakCountHasBeenSet(false)
 {
 }
 
@@ -138,6 +141,36 @@ CoreInternalOutcome DescribeAttackOverviewResponse::Deserialize(const string &pa
         m_apiRiskEventCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IPBlackCount") && !rsp["IPBlackCount"].IsNull())
+    {
+        if (!rsp["IPBlackCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IPBlackCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPBlackCount = rsp["IPBlackCount"].GetUint64();
+        m_iPBlackCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TamperCount") && !rsp["TamperCount"].IsNull())
+    {
+        if (!rsp["TamperCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TamperCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tamperCount = rsp["TamperCount"].GetUint64();
+        m_tamperCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LeakCount") && !rsp["LeakCount"].IsNull())
+    {
+        if (!rsp["LeakCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LeakCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_leakCount = rsp["LeakCount"].GetUint64();
+        m_leakCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +235,30 @@ string DescribeAttackOverviewResponse::ToJsonString() const
         string key = "ApiRiskEventCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apiRiskEventCount, allocator);
+    }
+
+    if (m_iPBlackCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPBlackCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iPBlackCount, allocator);
+    }
+
+    if (m_tamperCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TamperCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tamperCount, allocator);
+    }
+
+    if (m_leakCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LeakCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_leakCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -284,6 +341,36 @@ uint64_t DescribeAttackOverviewResponse::GetApiRiskEventCount() const
 bool DescribeAttackOverviewResponse::ApiRiskEventCountHasBeenSet() const
 {
     return m_apiRiskEventCountHasBeenSet;
+}
+
+uint64_t DescribeAttackOverviewResponse::GetIPBlackCount() const
+{
+    return m_iPBlackCount;
+}
+
+bool DescribeAttackOverviewResponse::IPBlackCountHasBeenSet() const
+{
+    return m_iPBlackCountHasBeenSet;
+}
+
+uint64_t DescribeAttackOverviewResponse::GetTamperCount() const
+{
+    return m_tamperCount;
+}
+
+bool DescribeAttackOverviewResponse::TamperCountHasBeenSet() const
+{
+    return m_tamperCountHasBeenSet;
+}
+
+uint64_t DescribeAttackOverviewResponse::GetLeakCount() const
+{
+    return m_leakCount;
+}
+
+bool DescribeAttackOverviewResponse::LeakCountHasBeenSet() const
+{
+    return m_leakCountHasBeenSet;
 }
 
 

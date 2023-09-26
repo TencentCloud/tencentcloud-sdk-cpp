@@ -29,6 +29,8 @@
 #include <tencentcloud/waf/v20180125/model/FraudPkg.h>
 #include <tencentcloud/waf/v20180125/model/BotPkg.h>
 #include <tencentcloud/waf/v20180125/model/BotQPS.h>
+#include <tencentcloud/waf/v20180125/model/MajorEventsPkg.h>
+#include <tencentcloud/waf/v20180125/model/HybridPkg.h>
 
 
 namespace TencentCloud
@@ -746,6 +748,56 @@ namespace TencentCloud
                      */
                     bool IsAPISecurityTrialHasBeenSet() const;
 
+                    /**
+                     * 获取重保包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MajorEventsPkg 重保包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MajorEventsPkg GetMajorEventsPkg() const;
+
+                    /**
+                     * 设置重保包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _majorEventsPkg 重保包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMajorEventsPkg(const MajorEventsPkg& _majorEventsPkg);
+
+                    /**
+                     * 判断参数 MajorEventsPkg 是否已赋值
+                     * @return MajorEventsPkg 是否已赋值
+                     * 
+                     */
+                    bool MajorEventsPkgHasBeenSet() const;
+
+                    /**
+                     * 获取混合云子节点包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HybridPkg 混合云子节点包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    HybridPkg GetHybridPkg() const;
+
+                    /**
+                     * 设置混合云子节点包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hybridPkg 混合云子节点包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHybridPkg(const HybridPkg& _hybridPkg);
+
+                    /**
+                     * 判断参数 HybridPkg 是否已赋值
+                     * @return HybridPkg 是否已赋值
+                     * 
+                     */
+                    bool HybridPkgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -944,6 +996,20 @@ namespace TencentCloud
                      */
                     uint64_t m_isAPISecurityTrial;
                     bool m_isAPISecurityTrialHasBeenSet;
+
+                    /**
+                     * 重保包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MajorEventsPkg m_majorEventsPkg;
+                    bool m_majorEventsPkgHasBeenSet;
+
+                    /**
+                     * 混合云子节点包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HybridPkg m_hybridPkg;
+                    bool m_hybridPkgHasBeenSet;
 
                 };
             }

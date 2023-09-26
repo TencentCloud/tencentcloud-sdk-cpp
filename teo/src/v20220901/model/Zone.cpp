@@ -40,7 +40,8 @@ Zone::Zone() :
     m_activeStatusHasBeenSet(false),
     m_aliasZoneNameHasBeenSet(false),
     m_isFakeHasBeenSet(false),
-    m_lockStatusHasBeenSet(false)
+    m_lockStatusHasBeenSet(false),
+    m_ownershipVerificationHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,23 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_lockStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("OwnershipVerification") && !value["OwnershipVerification"].IsNull())
+    {
+        if (!value["OwnershipVerification"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.OwnershipVerification` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ownershipVerification.Deserialize(value["OwnershipVerification"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ownershipVerificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -489,6 +507,15 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "LockStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lockStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownershipVerificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnershipVerification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -812,5 +839,21 @@ void Zone::SetLockStatus(const string& _lockStatus)
 bool Zone::LockStatusHasBeenSet() const
 {
     return m_lockStatusHasBeenSet;
+}
+
+OwnershipVerification Zone::GetOwnershipVerification() const
+{
+    return m_ownershipVerification;
+}
+
+void Zone::SetOwnershipVerification(const OwnershipVerification& _ownershipVerification)
+{
+    m_ownershipVerification = _ownershipVerification;
+    m_ownershipVerificationHasBeenSet = true;
+}
+
+bool Zone::OwnershipVerificationHasBeenSet() const
+{
+    return m_ownershipVerificationHasBeenSet;
 }
 

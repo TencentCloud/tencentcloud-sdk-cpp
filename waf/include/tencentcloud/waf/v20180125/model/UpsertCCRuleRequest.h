@@ -357,6 +357,48 @@ namespace TencentCloud
                      */
                     bool EventIdHasBeenSet() const;
 
+                    /**
+                     * 获取规则需要启用的SessionID
+                     * @return SessionApplied 规则需要启用的SessionID
+                     * 
+                     */
+                    std::vector<int64_t> GetSessionApplied() const;
+
+                    /**
+                     * 设置规则需要启用的SessionID
+                     * @param _sessionApplied 规则需要启用的SessionID
+                     * 
+                     */
+                    void SetSessionApplied(const std::vector<int64_t>& _sessionApplied);
+
+                    /**
+                     * 判断参数 SessionApplied 是否已赋值
+                     * @return SessionApplied 是否已赋值
+                     * 
+                     */
+                    bool SessionAppliedHasBeenSet() const;
+
+                    /**
+                     * 获取规则ID，新增时填0
+                     * @return RuleId 规则ID，新增时填0
+                     * 
+                     */
+                    int64_t GetRuleId() const;
+
+                    /**
+                     * 设置规则ID，新增时填0
+                     * @param _ruleId 规则ID，新增时填0
+                     * 
+                     */
+                    void SetRuleId(const int64_t& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,6 +490,18 @@ namespace TencentCloud
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
+
+                    /**
+                     * 规则需要启用的SessionID
+                     */
+                    std::vector<int64_t> m_sessionApplied;
+                    bool m_sessionAppliedHasBeenSet;
+
+                    /**
+                     * 规则ID，新增时填0
+                     */
+                    int64_t m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }

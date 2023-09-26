@@ -27,7 +27,8 @@ DescribeWafAutoDenyRulesResponse::DescribeWafAutoDenyRulesResponse() :
     m_attackThresholdHasBeenSet(false),
     m_timeThresholdHasBeenSet(false),
     m_denyTimeThresholdHasBeenSet(false),
-    m_defenseStatusHasBeenSet(false)
+    m_defenseStatusHasBeenSet(false),
+    m_hWStateHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeWafAutoDenyRulesResponse::Deserialize(const string &
         m_defenseStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HWState") && !rsp["HWState"].IsNull())
+    {
+        if (!rsp["HWState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HWState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hWState = rsp["HWState"].GetInt64();
+        m_hWStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string DescribeWafAutoDenyRulesResponse::ToJsonString() const
         string key = "DefenseStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defenseStatus, allocator);
+    }
+
+    if (m_hWStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HWState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hWState, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ int64_t DescribeWafAutoDenyRulesResponse::GetDefenseStatus() const
 bool DescribeWafAutoDenyRulesResponse::DefenseStatusHasBeenSet() const
 {
     return m_defenseStatusHasBeenSet;
+}
+
+int64_t DescribeWafAutoDenyRulesResponse::GetHWState() const
+{
+    return m_hWState;
+}
+
+bool DescribeWafAutoDenyRulesResponse::HWStateHasBeenSet() const
+{
+    return m_hWStateHasBeenSet;
 }
 
 

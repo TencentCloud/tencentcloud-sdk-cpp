@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加速域名所属站点ID。
-                     * @return ZoneId 加速域名所属站点ID。
+                     * 获取加速域名所属站点 ID。
+                     * @return ZoneId 加速域名所属站点 ID。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置加速域名所属站点ID。
-                     * @param _zoneId 加速域名所属站点ID。
+                     * 设置加速域名所属站点 ID。
+                     * @param _zoneId 加速域名所属站点 ID。
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取加速域名名称。
-                     * @return DomainName 加速域名名称。
+                     * 获取加速域名。
+                     * @return DomainName 加速域名。
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置加速域名名称。
-                     * @param _domainName 加速域名名称。
+                     * 设置加速域名。
+                     * @param _domainName 加速域名。
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -109,13 +109,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加速域名所属站点ID。
+                     * 加速域名所属站点 ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 加速域名名称。
+                     * 加速域名。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
