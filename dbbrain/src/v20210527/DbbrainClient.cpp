@@ -1287,6 +1287,92 @@ DbbrainClient::DescribeHealthScoreOutcomeCallable DbbrainClient::DescribeHealthS
     return task->get_future();
 }
 
+DbbrainClient::DescribeIndexRecommendAggregationSlowLogsOutcome DbbrainClient::DescribeIndexRecommendAggregationSlowLogs(const DescribeIndexRecommendAggregationSlowLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIndexRecommendAggregationSlowLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIndexRecommendAggregationSlowLogsResponse rsp = DescribeIndexRecommendAggregationSlowLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIndexRecommendAggregationSlowLogsOutcome(rsp);
+        else
+            return DescribeIndexRecommendAggregationSlowLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIndexRecommendAggregationSlowLogsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeIndexRecommendAggregationSlowLogsAsync(const DescribeIndexRecommendAggregationSlowLogsRequest& request, const DescribeIndexRecommendAggregationSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIndexRecommendAggregationSlowLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeIndexRecommendAggregationSlowLogsOutcomeCallable DbbrainClient::DescribeIndexRecommendAggregationSlowLogsCallable(const DescribeIndexRecommendAggregationSlowLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIndexRecommendAggregationSlowLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIndexRecommendAggregationSlowLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeIndexRecommendInfoOutcome DbbrainClient::DescribeIndexRecommendInfo(const DescribeIndexRecommendInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIndexRecommendInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIndexRecommendInfoResponse rsp = DescribeIndexRecommendInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIndexRecommendInfoOutcome(rsp);
+        else
+            return DescribeIndexRecommendInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIndexRecommendInfoOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeIndexRecommendInfoAsync(const DescribeIndexRecommendInfoRequest& request, const DescribeIndexRecommendInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIndexRecommendInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeIndexRecommendInfoOutcomeCallable DbbrainClient::DescribeIndexRecommendInfoCallable(const DescribeIndexRecommendInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIndexRecommendInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIndexRecommendInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeMailProfileOutcome DbbrainClient::DescribeMailProfile(const DescribeMailProfileRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMailProfile");
@@ -1495,6 +1581,49 @@ DbbrainClient::DescribeProxySessionKillTasksOutcomeCallable DbbrainClient::Descr
         [this, request]()
         {
             return this->DescribeProxySessionKillTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisProcessListOutcome DbbrainClient::DescribeRedisProcessList(const DescribeRedisProcessListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisProcessList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisProcessListResponse rsp = DescribeRedisProcessListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisProcessListOutcome(rsp);
+        else
+            return DescribeRedisProcessListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisProcessListOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisProcessListAsync(const DescribeRedisProcessListRequest& request, const DescribeRedisProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisProcessList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisProcessListOutcomeCallable DbbrainClient::DescribeRedisProcessListCallable(const DescribeRedisProcessListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisProcessListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisProcessList(request);
         }
     );
 

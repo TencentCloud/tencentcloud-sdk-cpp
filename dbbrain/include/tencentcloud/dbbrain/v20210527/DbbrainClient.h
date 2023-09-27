@@ -81,6 +81,10 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDiagDBInstancesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendAggregationSlowLogsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendAggregationSlowLogsResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendInfoRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendInfoResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListRequest.h>
@@ -91,6 +95,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxyProcessStatisticsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisProcessListRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisProcessListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListRequest.h>
@@ -240,6 +246,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHealthScoreResponse> DescribeHealthScoreOutcome;
                 typedef std::future<DescribeHealthScoreOutcome> DescribeHealthScoreOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeHealthScoreRequest&, DescribeHealthScoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthScoreAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIndexRecommendAggregationSlowLogsResponse> DescribeIndexRecommendAggregationSlowLogsOutcome;
+                typedef std::future<DescribeIndexRecommendAggregationSlowLogsOutcome> DescribeIndexRecommendAggregationSlowLogsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeIndexRecommendAggregationSlowLogsRequest&, DescribeIndexRecommendAggregationSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexRecommendAggregationSlowLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIndexRecommendInfoResponse> DescribeIndexRecommendInfoOutcome;
+                typedef std::future<DescribeIndexRecommendInfoOutcome> DescribeIndexRecommendInfoOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeIndexRecommendInfoRequest&, DescribeIndexRecommendInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexRecommendInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMailProfileResponse> DescribeMailProfileOutcome;
                 typedef std::future<DescribeMailProfileOutcome> DescribeMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeMailProfileRequest&, DescribeMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMailProfileAsyncHandler;
@@ -255,6 +267,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProxySessionKillTasksResponse> DescribeProxySessionKillTasksOutcome;
                 typedef std::future<DescribeProxySessionKillTasksOutcome> DescribeProxySessionKillTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeProxySessionKillTasksRequest&, DescribeProxySessionKillTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySessionKillTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisProcessListResponse> DescribeRedisProcessListOutcome;
+                typedef std::future<DescribeRedisProcessListOutcome> DescribeRedisProcessListOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisProcessListRequest&, DescribeRedisProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisProcessListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRedisTopBigKeysResponse> DescribeRedisTopBigKeysOutcome;
                 typedef std::future<DescribeRedisTopBigKeysOutcome> DescribeRedisTopBigKeysOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisTopBigKeysRequest&, DescribeRedisTopBigKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisTopBigKeysAsyncHandler;
@@ -592,6 +607,24 @@ namespace TencentCloud
                 DescribeHealthScoreOutcomeCallable DescribeHealthScoreCallable(const Model::DescribeHealthScoreRequest& request);
 
                 /**
+                 *查询某张表的慢查模板概览
+                 * @param req DescribeIndexRecommendAggregationSlowLogsRequest
+                 * @return DescribeIndexRecommendAggregationSlowLogsOutcome
+                 */
+                DescribeIndexRecommendAggregationSlowLogsOutcome DescribeIndexRecommendAggregationSlowLogs(const Model::DescribeIndexRecommendAggregationSlowLogsRequest &request);
+                void DescribeIndexRecommendAggregationSlowLogsAsync(const Model::DescribeIndexRecommendAggregationSlowLogsRequest& request, const DescribeIndexRecommendAggregationSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIndexRecommendAggregationSlowLogsOutcomeCallable DescribeIndexRecommendAggregationSlowLogsCallable(const Model::DescribeIndexRecommendAggregationSlowLogsRequest& request);
+
+                /**
+                 *查询实例的索引推荐信息，包括索引统计相关信息，推荐索引列表，无效索引列表等。
+                 * @param req DescribeIndexRecommendInfoRequest
+                 * @return DescribeIndexRecommendInfoOutcome
+                 */
+                DescribeIndexRecommendInfoOutcome DescribeIndexRecommendInfo(const Model::DescribeIndexRecommendInfoRequest &request);
+                void DescribeIndexRecommendInfoAsync(const Model::DescribeIndexRecommendInfoRequest& request, const DescribeIndexRecommendInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIndexRecommendInfoOutcomeCallable DescribeIndexRecommendInfoCallable(const Model::DescribeIndexRecommendInfoRequest& request);
+
+                /**
                  *获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。
                  * @param req DescribeMailProfileRequest
                  * @return DescribeMailProfileOutcome
@@ -635,6 +668,15 @@ namespace TencentCloud
                 DescribeProxySessionKillTasksOutcome DescribeProxySessionKillTasks(const Model::DescribeProxySessionKillTasksRequest &request);
                 void DescribeProxySessionKillTasksAsync(const Model::DescribeProxySessionKillTasksRequest& request, const DescribeProxySessionKillTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProxySessionKillTasksOutcomeCallable DescribeProxySessionKillTasksCallable(const Model::DescribeProxySessionKillTasksRequest& request);
+
+                /**
+                 *获取 Redis 实例所有 proxy 节点的实时会话详情列表。
+                 * @param req DescribeRedisProcessListRequest
+                 * @return DescribeRedisProcessListOutcome
+                 */
+                DescribeRedisProcessListOutcome DescribeRedisProcessList(const Model::DescribeRedisProcessListRequest &request);
+                void DescribeRedisProcessListAsync(const Model::DescribeRedisProcessListRequest& request, const DescribeRedisProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisProcessListOutcomeCallable DescribeRedisProcessListCallable(const Model::DescribeRedisProcessListRequest& request);
 
                 /**
                  *查询redis实例大key列表。

@@ -29,7 +29,8 @@ AccelerationDomain::AccelerationDomain() :
     m_identificationStatusHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_modifiedOnHasBeenSet(false),
-    m_ownershipVerificationHasBeenSet(false)
+    m_ownershipVerificationHasBeenSet(false),
+    m_certificateHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,23 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         m_ownershipVerificationHasBeenSet = true;
     }
 
+    if (value.HasMember("Certificate") && !value["Certificate"].IsNull())
+    {
+        if (!value["Certificate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.Certificate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_certificate.Deserialize(value["Certificate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_certificateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +239,15 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_certificateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Certificate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_certificate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -368,5 +395,21 @@ void AccelerationDomain::SetOwnershipVerification(const OwnershipVerification& _
 bool AccelerationDomain::OwnershipVerificationHasBeenSet() const
 {
     return m_ownershipVerificationHasBeenSet;
+}
+
+AccelerationDomainCertificate AccelerationDomain::GetCertificate() const
+{
+    return m_certificate;
+}
+
+void AccelerationDomain::SetCertificate(const AccelerationDomainCertificate& _certificate)
+{
+    m_certificate = _certificate;
+    m_certificateHasBeenSet = true;
+}
+
+bool AccelerationDomain::CertificateHasBeenSet() const
+{
+    return m_certificateHasBeenSet;
 }
 

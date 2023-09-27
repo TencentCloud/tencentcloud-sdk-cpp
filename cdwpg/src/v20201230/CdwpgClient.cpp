@@ -1,0 +1,128 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cdwpg/v20201230/CdwpgClient.h>
+#include <tencentcloud/core/Executor.h>
+#include <tencentcloud/core/Runnable.h>
+
+using namespace TencentCloud;
+using namespace TencentCloud::Cdwpg::V20201230;
+using namespace TencentCloud::Cdwpg::V20201230::Model;
+using namespace std;
+
+namespace
+{
+    const string VERSION = "2020-12-30";
+    const string ENDPOINT = "cdwpg.tencentcloudapi.com";
+}
+
+CdwpgClient::CdwpgClient(const Credential &credential, const string &region) :
+    CdwpgClient(credential, region, ClientProfile())
+{
+}
+
+CdwpgClient::CdwpgClient(const Credential &credential, const string &region, const ClientProfile &profile) :
+    AbstractClient(ENDPOINT, VERSION, credential, region, profile)
+{
+}
+
+
+CdwpgClient::CreateInstanceByApiOutcome CdwpgClient::CreateInstanceByApi(const CreateInstanceByApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstanceByApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceByApiResponse rsp = CreateInstanceByApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceByApiOutcome(rsp);
+        else
+            return CreateInstanceByApiOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceByApiOutcome(outcome.GetError());
+    }
+}
+
+void CdwpgClient::CreateInstanceByApiAsync(const CreateInstanceByApiRequest& request, const CreateInstanceByApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInstanceByApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwpgClient::CreateInstanceByApiOutcomeCallable CdwpgClient::CreateInstanceByApiCallable(const CreateInstanceByApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInstanceByApiOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInstanceByApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwpgClient::DestroyInstanceByApiOutcome CdwpgClient::DestroyInstanceByApi(const DestroyInstanceByApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyInstanceByApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyInstanceByApiResponse rsp = DestroyInstanceByApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyInstanceByApiOutcome(rsp);
+        else
+            return DestroyInstanceByApiOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyInstanceByApiOutcome(outcome.GetError());
+    }
+}
+
+void CdwpgClient::DestroyInstanceByApiAsync(const DestroyInstanceByApiRequest& request, const DestroyInstanceByApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyInstanceByApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwpgClient::DestroyInstanceByApiOutcomeCallable CdwpgClient::DestroyInstanceByApiCallable(const DestroyInstanceByApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyInstanceByApiOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyInstanceByApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
