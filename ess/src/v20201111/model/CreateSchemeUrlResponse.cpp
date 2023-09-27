@@ -24,7 +24,8 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreateSchemeUrlResponse::CreateSchemeUrlResponse() :
-    m_schemeUrlHasBeenSet(false)
+    m_schemeUrlHasBeenSet(false),
+    m_schemeQrcodeUrlHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateSchemeUrlResponse::Deserialize(const string &payload)
         m_schemeUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SchemeQrcodeUrl") && !rsp["SchemeQrcodeUrl"].IsNull())
+    {
+        if (!rsp["SchemeQrcodeUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SchemeQrcodeUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemeQrcodeUrl = string(rsp["SchemeQrcodeUrl"].GetString());
+        m_schemeQrcodeUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateSchemeUrlResponse::ToJsonString() const
         string key = "SchemeUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_schemeUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemeQrcodeUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemeQrcodeUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemeQrcodeUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string CreateSchemeUrlResponse::GetSchemeUrl() const
 bool CreateSchemeUrlResponse::SchemeUrlHasBeenSet() const
 {
     return m_schemeUrlHasBeenSet;
+}
+
+string CreateSchemeUrlResponse::GetSchemeQrcodeUrl() const
+{
+    return m_schemeQrcodeUrl;
+}
+
+bool CreateSchemeUrlResponse::SchemeQrcodeUrlHasBeenSet() const
+{
+    return m_schemeQrcodeUrlHasBeenSet;
 }
 
 

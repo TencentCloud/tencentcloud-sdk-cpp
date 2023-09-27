@@ -346,8 +346,8 @@ video 纯视频
                     bool VideoOrientationHasBeenSet() const;
 
                     /**
-                     * 获取开启课后评分。 0：不开启(默认)  1：开启
-                     * @return IsGradingRequiredPostClass 开启课后评分。 0：不开启(默认)  1：开启
+                     * 获取该房间是否开启了课后评分功能。0：未开启  1：开启
+                     * @return IsGradingRequiredPostClass 该房间是否开启了课后评分功能。0：未开启  1：开启
                      * 
                      */
                     int64_t GetIsGradingRequiredPostClass() const;
@@ -536,7 +536,7 @@ video 纯视频
                     bool m_videoOrientationHasBeenSet;
 
                     /**
-                     * 开启课后评分。 0：不开启(默认)  1：开启
+                     * 该房间是否开启了课后评分功能。0：未开启  1：开启
                      */
                     int64_t m_isGradingRequiredPostClass;
                     bool m_isGradingRequiredPostClassHasBeenSet;

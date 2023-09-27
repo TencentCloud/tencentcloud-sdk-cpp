@@ -167,6 +167,31 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取多云资产唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Arn 多云资产唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetArn() const;
+
+                    /**
+                     * 设置多云资产唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _arn 多云资产唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetArn(const std::string& _arn);
+
+                    /**
+                     * 判断参数 Arn 是否已赋值
+                     * @return Arn 是否已赋值
+                     * 
+                     */
+                    bool ArnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +227,13 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 多云资产唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_arn;
+                    bool m_arnHasBeenSet;
 
                 };
             }

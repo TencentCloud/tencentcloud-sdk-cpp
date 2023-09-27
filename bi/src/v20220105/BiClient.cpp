@@ -857,6 +857,49 @@ BiClient::ModifyProjectOutcomeCallable BiClient::ModifyProjectCallable(const Mod
     return task->get_future();
 }
 
+BiClient::ModifyUserRoleOutcome BiClient::ModifyUserRole(const ModifyUserRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserRoleResponse rsp = ModifyUserRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserRoleOutcome(rsp);
+        else
+            return ModifyUserRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserRoleOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::ModifyUserRoleAsync(const ModifyUserRoleRequest& request, const ModifyUserRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BiClient::ModifyUserRoleOutcomeCallable BiClient::ModifyUserRoleCallable(const ModifyUserRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BiClient::ModifyUserRoleProjectOutcome BiClient::ModifyUserRoleProject(const ModifyUserRoleProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUserRoleProject");

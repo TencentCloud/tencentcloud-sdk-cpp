@@ -228,14 +228,18 @@ namespace TencentCloud
 
                     /**
                      * 获取执行任务开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 执行任务开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置执行任务开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 执行任务开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -249,14 +253,18 @@ namespace TencentCloud
 
                     /**
                      * 获取执行任务结束时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 执行任务结束时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置执行任务结束时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 执行任务结束时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -426,12 +434,14 @@ namespace TencentCloud
 
                     /**
                      * 执行任务开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 执行任务结束时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

@@ -424,6 +424,31 @@ namespace TencentCloud
                      */
                     bool SignIdHasBeenSet() const;
 
+                    /**
+                     * 获取自定义签署人角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApproverRoleName 自定义签署人角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApproverRoleName() const;
+
+                    /**
+                     * 设置自定义签署人角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _approverRoleName 自定义签署人角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApproverRoleName(const std::string& _approverRoleName);
+
+                    /**
+                     * 判断参数 ApproverRoleName 是否已赋值
+                     * @return ApproverRoleName 是否已赋值
+                     * 
+                     */
+                    bool ApproverRoleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -530,6 +555,13 @@ namespace TencentCloud
                      */
                     std::string m_signId;
                     bool m_signIdHasBeenSet;
+
+                    /**
+                     * 自定义签署人角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_approverRoleName;
+                    bool m_approverRoleNameHasBeenSet;
 
                 };
             }

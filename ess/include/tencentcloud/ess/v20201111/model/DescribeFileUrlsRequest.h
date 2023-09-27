@@ -72,17 +72,17 @@ namespace TencentCloud
                     /**
                      * 获取文件对应的业务类型，目前支持：
 <ul>
-<li>FLOW 如需下载合同文件请选择此项</li>
-<li>TEMPLATE 如需下载模板文件请选择此项</li>
-<li>DOCUMENT 如需下载文档文件请选择此项</li>
-<li>SEAL 如需下载印章图片请选择此项</li>
+<li>**FLOW ** : 如需下载合同文件请选择此项</li>
+<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>
+<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>
+<li>**SEAL  **: 如需下载印章图片请选择此项</li>
 </ul>
                      * @return BusinessType 文件对应的业务类型，目前支持：
 <ul>
-<li>FLOW 如需下载合同文件请选择此项</li>
-<li>TEMPLATE 如需下载模板文件请选择此项</li>
-<li>DOCUMENT 如需下载文档文件请选择此项</li>
-<li>SEAL 如需下载印章图片请选择此项</li>
+<li>**FLOW ** : 如需下载合同文件请选择此项</li>
+<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>
+<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>
+<li>**SEAL  **: 如需下载印章图片请选择此项</li>
 </ul>
                      * 
                      */
@@ -91,17 +91,17 @@ namespace TencentCloud
                     /**
                      * 设置文件对应的业务类型，目前支持：
 <ul>
-<li>FLOW 如需下载合同文件请选择此项</li>
-<li>TEMPLATE 如需下载模板文件请选择此项</li>
-<li>DOCUMENT 如需下载文档文件请选择此项</li>
-<li>SEAL 如需下载印章图片请选择此项</li>
+<li>**FLOW ** : 如需下载合同文件请选择此项</li>
+<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>
+<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>
+<li>**SEAL  **: 如需下载印章图片请选择此项</li>
 </ul>
                      * @param _businessType 文件对应的业务类型，目前支持：
 <ul>
-<li>FLOW 如需下载合同文件请选择此项</li>
-<li>TEMPLATE 如需下载模板文件请选择此项</li>
-<li>DOCUMENT 如需下载文档文件请选择此项</li>
-<li>SEAL 如需下载印章图片请选择此项</li>
+<li>**FLOW ** : 如需下载合同文件请选择此项</li>
+<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>
+<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>
+<li>**SEAL  **: 如需下载印章图片请选择此项</li>
 </ul>
                      * 
                      */
@@ -367,10 +367,10 @@ namespace TencentCloud
                     /**
                      * 文件对应的业务类型，目前支持：
 <ul>
-<li>FLOW 如需下载合同文件请选择此项</li>
-<li>TEMPLATE 如需下载模板文件请选择此项</li>
-<li>DOCUMENT 如需下载文档文件请选择此项</li>
-<li>SEAL 如需下载印章图片请选择此项</li>
+<li>**FLOW ** : 如需下载合同文件请选择此项</li>
+<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>
+<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>
+<li>**SEAL  **: 如需下载印章图片请选择此项</li>
 </ul>
                      */
                     std::string m_businessType;

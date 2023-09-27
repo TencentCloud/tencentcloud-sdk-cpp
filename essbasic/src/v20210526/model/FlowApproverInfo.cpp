@@ -43,7 +43,8 @@ FlowApproverInfo::FlowApproverInfo() :
     m_approverSignTypesHasBeenSet(false),
     m_signIdHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
-    m_addSignComponentsLimitsHasBeenSet(false)
+    m_addSignComponentsLimitsHasBeenSet(false),
+    m_approverRoleNameHasBeenSet(false)
 {
 }
 
@@ -318,6 +319,16 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_addSignComponentsLimitsHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverRoleName") && !value["ApproverRoleName"].IsNull())
+    {
+        if (!value["ApproverRoleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.ApproverRoleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverRoleName = string(value["ApproverRoleName"].GetString());
+        m_approverRoleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -537,6 +548,14 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_approverRoleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverRoleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverRoleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -908,5 +927,21 @@ void FlowApproverInfo::SetAddSignComponentsLimits(const vector<ComponentLimit>& 
 bool FlowApproverInfo::AddSignComponentsLimitsHasBeenSet() const
 {
     return m_addSignComponentsLimitsHasBeenSet;
+}
+
+string FlowApproverInfo::GetApproverRoleName() const
+{
+    return m_approverRoleName;
+}
+
+void FlowApproverInfo::SetApproverRoleName(const string& _approverRoleName)
+{
+    m_approverRoleName = _approverRoleName;
+    m_approverRoleNameHasBeenSet = true;
+}
+
+bool FlowApproverInfo::ApproverRoleNameHasBeenSet() const
+{
+    return m_approverRoleNameHasBeenSet;
 }
 

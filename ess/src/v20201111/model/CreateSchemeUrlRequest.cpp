@@ -33,7 +33,8 @@ CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_pathTypeHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_hidesHasBeenSet(false)
+    m_hidesHasBeenSet(false),
+    m_recipientIdHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,14 @@ string CreateSchemeUrlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_recipientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecipientId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -321,6 +330,22 @@ void CreateSchemeUrlRequest::SetHides(const vector<int64_t>& _hides)
 bool CreateSchemeUrlRequest::HidesHasBeenSet() const
 {
     return m_hidesHasBeenSet;
+}
+
+string CreateSchemeUrlRequest::GetRecipientId() const
+{
+    return m_recipientId;
+}
+
+void CreateSchemeUrlRequest::SetRecipientId(const string& _recipientId)
+{
+    m_recipientId = _recipientId;
+    m_recipientIdHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::RecipientIdHasBeenSet() const
+{
+    return m_recipientIdHasBeenSet;
 }
 
 

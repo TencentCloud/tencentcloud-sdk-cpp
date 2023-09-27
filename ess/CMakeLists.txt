@@ -60,6 +60,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFlowComponentsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportResponse.h
   include/tencentcloud/ess/v20201111/model/CallbackInfo.h
+  include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesResponse.h
   include/tencentcloud/ess/v20201111/model/TemplateInfo.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
@@ -156,7 +157,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FailedCreateStaffData.h
   include/tencentcloud/ess/v20201111/model/ApproverRestriction.h
   include/tencentcloud/ess/v20201111/model/CreateWebThemeConfigRequest.h
-  include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
+  include/tencentcloud/ess/v20201111/model/ApproverItem.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlRequest.h
   include/tencentcloud/ess/v20201111/model/IntegrateRole.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowResponse.h
@@ -253,6 +254,7 @@ set(ess_src
   src/v20201111/model/DescribeFlowComponentsResponse.cpp
   src/v20201111/model/DescribeFlowEvidenceReportResponse.cpp
   src/v20201111/model/CallbackInfo.cpp
+  src/v20201111/model/DeleteSealPoliciesRequest.cpp
   src/v20201111/model/CreateFlowGroupByTemplatesResponse.cpp
   src/v20201111/model/TemplateInfo.cpp
   src/v20201111/model/CreateDocumentResponse.cpp
@@ -349,7 +351,7 @@ set(ess_src
   src/v20201111/model/FailedCreateStaffData.cpp
   src/v20201111/model/ApproverRestriction.cpp
   src/v20201111/model/CreateWebThemeConfigRequest.cpp
-  src/v20201111/model/DeleteSealPoliciesRequest.cpp
+  src/v20201111/model/ApproverItem.cpp
   src/v20201111/model/CreateOrganizationBatchSignUrlRequest.cpp
   src/v20201111/model/IntegrateRole.cpp
   src/v20201111/model/CreatePrepareFlowResponse.cpp

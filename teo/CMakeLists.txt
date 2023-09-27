@@ -36,6 +36,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeZonesRequest.h
   include/tencentcloud/teo/v20220901/model/L4OfflineLog.h
   include/tencentcloud/teo/v20220901/model/DiffIPWhitelist.h
+  include/tencentcloud/teo/v20220901/model/VerifyOwnershipRequest.h
   include/tencentcloud/teo/v20220901/model/DeleteSecurityIPGroupResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyRuleRequest.h
   include/tencentcloud/teo/v20220901/model/OriginRecord.h
@@ -156,6 +157,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/Task.h
   include/tencentcloud/teo/v20220901/model/ModifyRuleResponse.h
   include/tencentcloud/teo/v20220901/model/AscriptionInfo.h
+  include/tencentcloud/teo/v20220901/model/VerifyOwnershipResponse.h
   include/tencentcloud/teo/v20220901/model/RuleItem.h
   include/tencentcloud/teo/v20220901/model/FirstPartConfig.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventResponse.h
@@ -329,6 +331,7 @@ set(teo_src
   src/v20220901/model/DescribeZonesRequest.cpp
   src/v20220901/model/L4OfflineLog.cpp
   src/v20220901/model/DiffIPWhitelist.cpp
+  src/v20220901/model/VerifyOwnershipRequest.cpp
   src/v20220901/model/DeleteSecurityIPGroupResponse.cpp
   src/v20220901/model/ModifyRuleRequest.cpp
   src/v20220901/model/OriginRecord.cpp
@@ -449,6 +452,7 @@ set(teo_src
   src/v20220901/model/Task.cpp
   src/v20220901/model/ModifyRuleResponse.cpp
   src/v20220901/model/AscriptionInfo.cpp
+  src/v20220901/model/VerifyOwnershipResponse.cpp
   src/v20220901/model/RuleItem.cpp
   src/v20220901/model/FirstPartConfig.cpp
   src/v20220901/model/DescribeDDoSAttackEventResponse.cpp

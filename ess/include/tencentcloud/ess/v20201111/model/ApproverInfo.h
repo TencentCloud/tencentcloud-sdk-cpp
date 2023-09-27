@@ -359,6 +359,27 @@ namespace TencentCloud
                     bool ApproverRoleHasBeenSet() const;
 
                     /**
+                     * 获取自定义签署人角色名：收款人、开具人、见证人
+                     * @return ApproverRoleName 自定义签署人角色名：收款人、开具人、见证人
+                     * 
+                     */
+                    std::string GetApproverRoleName() const;
+
+                    /**
+                     * 设置自定义签署人角色名：收款人、开具人、见证人
+                     * @param _approverRoleName 自定义签署人角色名：收款人、开具人、见证人
+                     * 
+                     */
+                    void SetApproverRoleName(const std::string& _approverRoleName);
+
+                    /**
+                     * 判断参数 ApproverRoleName 是否已赋值
+                     * @return ApproverRoleName 是否已赋值
+                     * 
+                     */
+                    bool ApproverRoleNameHasBeenSet() const;
+
+                    /**
                      * 获取签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
 注: 将要废弃, 用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
@@ -789,6 +810,12 @@ namespace TencentCloud
                      */
                     int64_t m_approverRole;
                     bool m_approverRoleHasBeenSet;
+
+                    /**
+                     * 自定义签署人角色名：收款人、开具人、见证人
+                     */
+                    std::string m_approverRoleName;
+                    bool m_approverRoleNameHasBeenSet;
 
                     /**
                      * 签署意愿确认渠道，默认为WEIXINAPP:人脸识别

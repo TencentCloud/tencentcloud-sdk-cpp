@@ -64,6 +64,27 @@ namespace TencentCloud
                      */
                     bool FilterHasBeenSet() const;
 
+                    /**
+                     * 获取资产类型:MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
+                     * @return AssetTypes 资产类型:MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
+                     * 
+                     */
+                    std::vector<std::string> GetAssetTypes() const;
+
+                    /**
+                     * 设置资产类型:MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
+                     * @param _assetTypes 资产类型:MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
+                     * 
+                     */
+                    void SetAssetTypes(const std::vector<std::string>& _assetTypes);
+
+                    /**
+                     * 判断参数 AssetTypes 是否已赋值
+                     * @return AssetTypes 是否已赋值
+                     * 
+                     */
+                    bool AssetTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +92,12 @@ namespace TencentCloud
                      */
                     Filter m_filter;
                     bool m_filterHasBeenSet;
+
+                    /**
+                     * 资产类型:MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
+                     */
+                    std::vector<std::string> m_assetTypes;
+                    bool m_assetTypesHasBeenSet;
 
                 };
             }

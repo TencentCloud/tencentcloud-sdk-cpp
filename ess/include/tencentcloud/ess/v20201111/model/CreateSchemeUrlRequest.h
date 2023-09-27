@@ -363,6 +363,27 @@ namespace TencentCloud
                      */
                     bool HidesHasBeenSet() const;
 
+                    /**
+                     * 获取签署节点ID，用于生成动态签署人链接完成领取
+                     * @return RecipientId 签署节点ID，用于生成动态签署人链接完成领取
+                     * 
+                     */
+                    std::string GetRecipientId() const;
+
+                    /**
+                     * 设置签署节点ID，用于生成动态签署人链接完成领取
+                     * @param _recipientId 签署节点ID，用于生成动态签署人链接完成领取
+                     * 
+                     */
+                    void SetRecipientId(const std::string& _recipientId);
+
+                    /**
+                     * 判断参数 RecipientId 是否已赋值
+                     * @return RecipientId 是否已赋值
+                     * 
+                     */
+                    bool RecipientIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +473,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_hides;
                     bool m_hidesHasBeenSet;
+
+                    /**
+                     * 签署节点ID，用于生成动态签署人链接完成领取
+                     */
+                    std::string m_recipientId;
+                    bool m_recipientIdHasBeenSet;
 
                 };
             }

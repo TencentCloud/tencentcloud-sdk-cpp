@@ -31,7 +31,8 @@ FlowApproverDetail::FlowApproverDetail() :
     m_approveStatusHasBeenSet(false),
     m_approveMessageHasBeenSet(false),
     m_approveTimeHasBeenSet(false),
-    m_approveTypeHasBeenSet(false)
+    m_approveTypeHasBeenSet(false),
+    m_approverRoleNameHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome FlowApproverDetail::Deserialize(const rapidjson::Value &valu
         m_approveTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverRoleName") && !value["ApproverRoleName"].IsNull())
+    {
+        if (!value["ApproverRoleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverDetail.ApproverRoleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverRoleName = string(value["ApproverRoleName"].GetString());
+        m_approverRoleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void FlowApproverDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ApproveType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approveType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverRoleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverRoleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverRoleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void FlowApproverDetail::SetApproveType(const string& _approveType)
 bool FlowApproverDetail::ApproveTypeHasBeenSet() const
 {
     return m_approveTypeHasBeenSet;
+}
+
+string FlowApproverDetail::GetApproverRoleName() const
+{
+    return m_approverRoleName;
+}
+
+void FlowApproverDetail::SetApproverRoleName(const string& _approverRoleName)
+{
+    m_approverRoleName = _approverRoleName;
+    m_approverRoleNameHasBeenSet = true;
+}
+
+bool FlowApproverDetail::ApproverRoleNameHasBeenSet() const
+{
+    return m_approverRoleNameHasBeenSet;
 }
 

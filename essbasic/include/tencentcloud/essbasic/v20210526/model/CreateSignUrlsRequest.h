@@ -410,6 +410,27 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                      */
                     bool HidesHasBeenSet() const;
 
+                    /**
+                     * 获取签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致
+                     * @return RecipientIds 签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致
+                     * 
+                     */
+                    std::vector<std::string> GetRecipientIds() const;
+
+                    /**
+                     * 设置签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致
+                     * @param _recipientIds 签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致
+                     * 
+                     */
+                    void SetRecipientIds(const std::vector<std::string>& _recipientIds);
+
+                    /**
+                     * 判断参数 RecipientIds 是否已赋值
+                     * @return RecipientIds 是否已赋值
+                     * 
+                     */
+                    bool RecipientIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,6 +534,12 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                      */
                     std::vector<int64_t> m_hides;
                     bool m_hidesHasBeenSet;
+
+                    /**
+                     * 签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致
+                     */
+                    std::vector<std::string> m_recipientIds;
+                    bool m_recipientIdsHasBeenSet;
 
                 };
             }

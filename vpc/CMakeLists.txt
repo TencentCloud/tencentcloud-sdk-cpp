@@ -103,6 +103,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest.h
   include/tencentcloud/vpc/v20170312/model/ResetRoutesRequest.h
   include/tencentcloud/vpc/v20170312/model/CheckDefaultSubnetRequest.h
+  include/tencentcloud/vpc/v20170312/model/PeerConnection.h
   include/tencentcloud/vpc/v20170312/model/CheckNetDetectStateRequest.h
   include/tencentcloud/vpc/v20170312/model/RouteTableAssociation.h
   include/tencentcloud/vpc/v20170312/model/ModifyCustomerGatewayAttributeRequest.h
@@ -864,6 +865,7 @@ set(vpc_src
   src/v20170312/model/DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest.cpp
   src/v20170312/model/ResetRoutesRequest.cpp
   src/v20170312/model/CheckDefaultSubnetRequest.cpp
+  src/v20170312/model/PeerConnection.cpp
   src/v20170312/model/CheckNetDetectStateRequest.cpp
   src/v20170312/model/RouteTableAssociation.cpp
   src/v20170312/model/ModifyCustomerGatewayAttributeRequest.cpp

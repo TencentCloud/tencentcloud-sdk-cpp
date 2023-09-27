@@ -46,9 +46,9 @@ namespace TencentCloud
 
                     /**
                      * 获取文件URL信息；
-链接不是永久链接，有效期5分钟后链接失效。
+链接不是永久链接,  过期时间收UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。
                      * @return FileUrls 文件URL信息；
-链接不是永久链接，有效期5分钟后链接失效。
+链接不是永久链接,  过期时间收UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。
                      * 
                      */
                     std::vector<FileUrl> GetFileUrls() const;
@@ -78,7 +78,7 @@ namespace TencentCloud
 
                     /**
                      * 文件URL信息；
-链接不是永久链接，有效期5分钟后链接失效。
+链接不是永久链接,  过期时间收UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。
                      */
                     std::vector<FileUrl> m_fileUrls;
                     bool m_fileUrlsHasBeenSet;

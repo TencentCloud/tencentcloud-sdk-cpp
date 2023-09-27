@@ -29,7 +29,9 @@ BotPkg::BotPkg() :
     m_inquireNumHasBeenSet(false),
     m_usedNumHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_botCPWafHasBeenSet(false),
+    m_botNPWafHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
         m_renewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("BotCPWaf") && !value["BotCPWaf"].IsNull())
+    {
+        if (!value["BotCPWaf"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotPkg.BotCPWaf` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_botCPWaf = value["BotCPWaf"].GetInt64();
+        m_botCPWafHasBeenSet = true;
+    }
+
+    if (value.HasMember("BotNPWaf") && !value["BotNPWaf"].IsNull())
+    {
+        if (!value["BotNPWaf"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotPkg.BotNPWaf` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_botNPWaf = value["BotNPWaf"].GetInt64();
+        m_botNPWafHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void BotPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_botCPWafHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotCPWaf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_botCPWaf, allocator);
+    }
+
+    if (m_botNPWafHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotNPWaf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_botNPWaf, allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void BotPkg::SetRenewFlag(const uint64_t& _renewFlag)
 bool BotPkg::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+int64_t BotPkg::GetBotCPWaf() const
+{
+    return m_botCPWaf;
+}
+
+void BotPkg::SetBotCPWaf(const int64_t& _botCPWaf)
+{
+    m_botCPWaf = _botCPWaf;
+    m_botCPWafHasBeenSet = true;
+}
+
+bool BotPkg::BotCPWafHasBeenSet() const
+{
+    return m_botCPWafHasBeenSet;
+}
+
+int64_t BotPkg::GetBotNPWaf() const
+{
+    return m_botNPWaf;
+}
+
+void BotPkg::SetBotNPWaf(const int64_t& _botNPWaf)
+{
+    m_botNPWaf = _botNPWaf;
+    m_botNPWafHasBeenSet = true;
+}
+
+bool BotPkg::BotNPWafHasBeenSet() const
+{
+    return m_botNPWafHasBeenSet;
 }
 

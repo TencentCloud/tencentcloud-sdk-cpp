@@ -23,7 +23,8 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 DescribeDbAssetsRequest::DescribeDbAssetsRequest() :
-    m_filterHasBeenSet(false)
+    m_filterHasBeenSet(false),
+    m_assetTypesHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,19 @@ string DescribeDbAssetsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_filter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_assetTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_assetTypes.begin(); itr != m_assetTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -65,6 +79,22 @@ void DescribeDbAssetsRequest::SetFilter(const Filter& _filter)
 bool DescribeDbAssetsRequest::FilterHasBeenSet() const
 {
     return m_filterHasBeenSet;
+}
+
+vector<string> DescribeDbAssetsRequest::GetAssetTypes() const
+{
+    return m_assetTypes;
+}
+
+void DescribeDbAssetsRequest::SetAssetTypes(const vector<string>& _assetTypes)
+{
+    m_assetTypes = _assetTypes;
+    m_assetTypesHasBeenSet = true;
+}
+
+bool DescribeDbAssetsRequest::AssetTypesHasBeenSet() const
+{
+    return m_assetTypesHasBeenSet;
 }
 
 

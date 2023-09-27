@@ -65,6 +65,20 @@ namespace TencentCloud
                      */
                     bool SchemeUrlHasBeenSet() const;
 
+                    /**
+                     * 获取二维码，在生成动态签署人跳转封面页链接时返回
+                     * @return SchemeQrcodeUrl 二维码，在生成动态签署人跳转封面页链接时返回
+                     * 
+                     */
+                    std::string GetSchemeQrcodeUrl() const;
+
+                    /**
+                     * 判断参数 SchemeQrcodeUrl 是否已赋值
+                     * @return SchemeQrcodeUrl 是否已赋值
+                     * 
+                     */
+                    bool SchemeQrcodeUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -76,6 +90,12 @@ namespace TencentCloud
                      */
                     std::string m_schemeUrl;
                     bool m_schemeUrlHasBeenSet;
+
+                    /**
+                     * 二维码，在生成动态签署人跳转封面页链接时返回
+                     */
+                    std::string m_schemeQrcodeUrl;
+                    bool m_schemeQrcodeUrlHasBeenSet;
 
                 };
             }

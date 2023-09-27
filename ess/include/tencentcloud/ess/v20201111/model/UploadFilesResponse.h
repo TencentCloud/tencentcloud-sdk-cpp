@@ -44,8 +44,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件id数组
-                     * @return FileIds 文件id数组
+                     * 获取文件资源ID数组，每个文件资源ID为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+                     * @return FileIds 文件资源ID数组，每个文件资源ID为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
@@ -74,7 +76,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件id数组
+                     * 文件资源ID数组，每个文件资源ID为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;

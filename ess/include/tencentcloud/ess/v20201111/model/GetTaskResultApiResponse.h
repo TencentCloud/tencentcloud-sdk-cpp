@@ -59,19 +59,19 @@ namespace TencentCloud
 
                     /**
                      * 获取任务状态，需要关注的状态
-0  :NeedTranform   - 任务已提交
-4  :Processing     - 文档转换中
-8  :TaskEnd        - 任务处理完成
--2 :DownloadFailed - 下载失败
--6 :ProcessFailed  - 转换失败
--13:ProcessTimeout - 转换文件超时
+<ul><li>**0**  :NeedTranform   - 任务已提交</li>
+<li>**4**  :Processing     - 文档转换中</li>
+<li>**8**  :TaskEnd        - 任务处理完成</li>
+<li>**-2** :DownloadFailed - 下载失败</li>
+<li>**-6** :ProcessFailed  - 转换失败</li>
+<li>**-13**:ProcessTimeout - 转换文件超时</li></ul>
                      * @return TaskStatus 任务状态，需要关注的状态
-0  :NeedTranform   - 任务已提交
-4  :Processing     - 文档转换中
-8  :TaskEnd        - 任务处理完成
--2 :DownloadFailed - 下载失败
--6 :ProcessFailed  - 转换失败
--13:ProcessTimeout - 转换文件超时
+<ul><li>**0**  :NeedTranform   - 任务已提交</li>
+<li>**4**  :Processing     - 文档转换中</li>
+<li>**8**  :TaskEnd        - 任务处理完成</li>
+<li>**-2** :DownloadFailed - 下载失败</li>
+<li>**-6** :ProcessFailed  - 转换失败</li>
+<li>**-13**:ProcessTimeout - 转换文件超时</li></ul>
                      * 
                      */
                     int64_t GetTaskStatus() const;
@@ -85,19 +85,19 @@ namespace TencentCloud
 
                     /**
                      * 获取状态描述，需要关注的状态
-NeedTranform   - 任务已提交
-Processing     - 文档转换中
-TaskEnd        - 任务处理完成
-DownloadFailed - 下载失败
-ProcessFailed  - 转换失败
-ProcessTimeout - 转换文件超时
+<ul><li> **NeedTranform** : 任务已提交</li>
+<li> **Processing** : 文档转换中</li>
+<li> **TaskEnd** : 任务处理完成</li>
+<li> **DownloadFailed** : 下载失败</li>
+<li> **ProcessFailed** : 转换失败</li>
+<li> **ProcessTimeout** : 转换文件超时</li></ul>
                      * @return TaskMessage 状态描述，需要关注的状态
-NeedTranform   - 任务已提交
-Processing     - 文档转换中
-TaskEnd        - 任务处理完成
-DownloadFailed - 下载失败
-ProcessFailed  - 转换失败
-ProcessTimeout - 转换文件超时
+<ul><li> **NeedTranform** : 任务已提交</li>
+<li> **Processing** : 文档转换中</li>
+<li> **TaskEnd** : 任务处理完成</li>
+<li> **DownloadFailed** : 下载失败</li>
+<li> **ProcessFailed** : 转换失败</li>
+<li> **ProcessTimeout** : 转换文件超时</li></ul>
                      * 
                      */
                     std::string GetTaskMessage() const;
@@ -133,24 +133,24 @@ ProcessTimeout - 转换文件超时
 
                     /**
                      * 任务状态，需要关注的状态
-0  :NeedTranform   - 任务已提交
-4  :Processing     - 文档转换中
-8  :TaskEnd        - 任务处理完成
--2 :DownloadFailed - 下载失败
--6 :ProcessFailed  - 转换失败
--13:ProcessTimeout - 转换文件超时
+<ul><li>**0**  :NeedTranform   - 任务已提交</li>
+<li>**4**  :Processing     - 文档转换中</li>
+<li>**8**  :TaskEnd        - 任务处理完成</li>
+<li>**-2** :DownloadFailed - 下载失败</li>
+<li>**-6** :ProcessFailed  - 转换失败</li>
+<li>**-13**:ProcessTimeout - 转换文件超时</li></ul>
                      */
                     int64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
                      * 状态描述，需要关注的状态
-NeedTranform   - 任务已提交
-Processing     - 文档转换中
-TaskEnd        - 任务处理完成
-DownloadFailed - 下载失败
-ProcessFailed  - 转换失败
-ProcessTimeout - 转换文件超时
+<ul><li> **NeedTranform** : 任务已提交</li>
+<li> **Processing** : 文档转换中</li>
+<li> **TaskEnd** : 任务处理完成</li>
+<li> **DownloadFailed** : 下载失败</li>
+<li> **ProcessFailed** : 转换失败</li>
+<li> **ProcessTimeout** : 转换文件超时</li></ul>
                      */
                     std::string m_taskMessage;
                     bool m_taskMessageHasBeenSet;

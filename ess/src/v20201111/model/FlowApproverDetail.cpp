@@ -34,7 +34,8 @@ FlowApproverDetail::FlowApproverDetail() :
     m_customApproverTagHasBeenSet(false),
     m_organizationIdHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
-    m_signIdHasBeenSet(false)
+    m_signIdHasBeenSet(false),
+    m_approverRoleNameHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome FlowApproverDetail::Deserialize(const rapidjson::Value &valu
         m_signIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverRoleName") && !value["ApproverRoleName"].IsNull())
+    {
+        if (!value["ApproverRoleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverDetail.ApproverRoleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverRoleName = string(value["ApproverRoleName"].GetString());
+        m_approverRoleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void FlowApproverDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SignId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_signId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverRoleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverRoleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverRoleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void FlowApproverDetail::SetSignId(const string& _signId)
 bool FlowApproverDetail::SignIdHasBeenSet() const
 {
     return m_signIdHasBeenSet;
+}
+
+string FlowApproverDetail::GetApproverRoleName() const
+{
+    return m_approverRoleName;
+}
+
+void FlowApproverDetail::SetApproverRoleName(const string& _approverRoleName)
+{
+    m_approverRoleName = _approverRoleName;
+    m_approverRoleNameHasBeenSet = true;
+}
+
+bool FlowApproverDetail::ApproverRoleNameHasBeenSet() const
+{
+    return m_approverRoleNameHasBeenSet;
 }
 

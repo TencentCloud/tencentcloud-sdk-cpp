@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/TaskInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/FlowApproverItem.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,20 @@ namespace TencentCloud
                      */
                     bool TaskInfosHasBeenSet() const;
 
+                    /**
+                     * 获取签署方信息，如角色ID、角色名称等
+                     * @return FlowApprovers 签署方信息，如角色ID、角色名称等
+                     * 
+                     */
+                    std::vector<FlowApproverItem> GetFlowApprovers() const;
+
+                    /**
+                     * 判断参数 FlowApprovers 是否已赋值
+                     * @return FlowApprovers 是否已赋值
+                     * 
+                     */
+                    bool FlowApproversHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +166,12 @@ namespace TencentCloud
                      */
                     std::vector<TaskInfo> m_taskInfos;
                     bool m_taskInfosHasBeenSet;
+
+                    /**
+                     * 签署方信息，如角色ID、角色名称等
+                     */
+                    std::vector<FlowApproverItem> m_flowApprovers;
+                    bool m_flowApproversHasBeenSet;
 
                 };
             }

@@ -379,6 +379,31 @@ PERSON 自然人
                      */
                     bool FlowGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取二维码，在生成动态签署人跳转封面页链接时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SignQrcodeUrl 二维码，在生成动态签署人跳转封面页链接时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSignQrcodeUrl() const;
+
+                    /**
+                     * 设置二维码，在生成动态签署人跳转封面页链接时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _signQrcodeUrl 二维码，在生成动态签署人跳转封面页链接时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSignQrcodeUrl(const std::string& _signQrcodeUrl);
+
+                    /**
+                     * 判断参数 SignQrcodeUrl 是否已赋值
+                     * @return SignQrcodeUrl 是否已赋值
+                     * 
+                     */
+                    bool SignQrcodeUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -473,6 +498,13 @@ PERSON 自然人
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
+
+                    /**
+                     * 二维码，在生成动态签署人跳转封面页链接时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_signQrcodeUrl;
+                    bool m_signQrcodeUrlHasBeenSet;
 
                 };
             }

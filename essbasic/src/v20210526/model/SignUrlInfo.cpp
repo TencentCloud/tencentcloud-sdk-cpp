@@ -33,7 +33,8 @@ SignUrlInfo::SignUrlInfo() :
     m_idCardNumberHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_openIdHasBeenSet(false),
-    m_flowGroupIdHasBeenSet(false)
+    m_flowGroupIdHasBeenSet(false),
+    m_signQrcodeUrlHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome SignUrlInfo::Deserialize(const rapidjson::Value &value)
         m_flowGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SignQrcodeUrl") && !value["SignQrcodeUrl"].IsNull())
+    {
+        if (!value["SignQrcodeUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SignUrlInfo.SignQrcodeUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signQrcodeUrl = string(value["SignQrcodeUrl"].GetString());
+        m_signQrcodeUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void SignUrlInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "FlowGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signQrcodeUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignQrcodeUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signQrcodeUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void SignUrlInfo::SetFlowGroupId(const string& _flowGroupId)
 bool SignUrlInfo::FlowGroupIdHasBeenSet() const
 {
     return m_flowGroupIdHasBeenSet;
+}
+
+string SignUrlInfo::GetSignQrcodeUrl() const
+{
+    return m_signQrcodeUrl;
+}
+
+void SignUrlInfo::SetSignQrcodeUrl(const string& _signQrcodeUrl)
+{
+    m_signQrcodeUrl = _signQrcodeUrl;
+    m_signQrcodeUrlHasBeenSet = true;
+}
+
+bool SignUrlInfo::SignQrcodeUrlHasBeenSet() const
+{
+    return m_signQrcodeUrlHasBeenSet;
 }
 

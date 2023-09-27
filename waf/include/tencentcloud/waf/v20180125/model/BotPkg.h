@@ -271,6 +271,56 @@ namespace TencentCloud
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取购买页bot6折
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BotCPWaf 购买页bot6折
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBotCPWaf() const;
+
+                    /**
+                     * 设置购买页bot6折
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _botCPWaf 购买页bot6折
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBotCPWaf(const int64_t& _botCPWaf);
+
+                    /**
+                     * 判断参数 BotCPWaf 是否已赋值
+                     * @return BotCPWaf 是否已赋值
+                     * 
+                     */
+                    bool BotCPWafHasBeenSet() const;
+
+                    /**
+                     * 获取控制台买bot5折
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BotNPWaf 控制台买bot5折
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBotNPWaf() const;
+
+                    /**
+                     * 设置控制台买bot5折
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _botNPWaf 控制台买bot5折
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBotNPWaf(const int64_t& _botNPWaf);
+
+                    /**
+                     * 判断参数 BotNPWaf 是否已赋值
+                     * @return BotNPWaf 是否已赋值
+                     * 
+                     */
+                    bool BotNPWafHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +385,20 @@ namespace TencentCloud
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 购买页bot6折
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_botCPWaf;
+                    bool m_botCPWafHasBeenSet;
+
+                    /**
+                     * 控制台买bot5折
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_botNPWaf;
+                    bool m_botNPWafHasBeenSet;
 
                 };
             }

@@ -21,7 +21,8 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ApproverOption::ApproverOption() :
-    m_hideOneKeySignHasBeenSet(false)
+    m_hideOneKeySignHasBeenSet(false),
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome ApproverOption::Deserialize(const rapidjson::Value &value)
         m_hideOneKeySignHasBeenSet = true;
     }
 
+    if (value.HasMember("FillType") && !value["FillType"].IsNull())
+    {
+        if (!value["FillType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverOption.FillType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fillType = value["FillType"].GetInt64();
+        m_fillTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void ApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "HideOneKeySign";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hideOneKeySign, allocator);
+    }
+
+    if (m_fillTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fillType, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void ApproverOption::SetHideOneKeySign(const bool& _hideOneKeySign)
 bool ApproverOption::HideOneKeySignHasBeenSet() const
 {
     return m_hideOneKeySignHasBeenSet;
+}
+
+int64_t ApproverOption::GetFillType() const
+{
+    return m_fillType;
+}
+
+void ApproverOption::SetFillType(const int64_t& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool ApproverOption::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
 }
 

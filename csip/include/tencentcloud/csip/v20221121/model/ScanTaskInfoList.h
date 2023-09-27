@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取corn
+                     * 获取cron格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScanPlanContent corn
+                     * @return ScanPlanContent cron格式
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanPlanContent() const;
 
                     /**
-                     * 设置corn
+                     * 设置cron格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scanPlanContent corn
+                     * @param _scanPlanContent cron格式
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -348,18 +348,18 @@ namespace TencentCloud
                     bool AssetNumberHasBeenSet() const;
 
                     /**
-                     * 获取扫描状态 0 初始值  1正在扫描  2扫描完成  3扫描出错
+                     * 获取扫描状态, 0-初始值，1-正在扫描，2-扫描完成，3-扫描出错，4-停止扫描
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScanStatus 扫描状态 0 初始值  1正在扫描  2扫描完成  3扫描出错
+                     * @return ScanStatus 扫描状态, 0-初始值，1-正在扫描，2-扫描完成，3-扫描出错，4-停止扫描
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanStatus() const;
 
                     /**
-                     * 设置扫描状态 0 初始值  1正在扫描  2扫描完成  3扫描出错
+                     * 设置扫描状态, 0-初始值，1-正在扫描，2-扫描完成，3-扫描出错，4-停止扫描
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scanStatus 扫描状态 0 初始值  1正在扫描  2扫描完成  3扫描出错
+                     * @param _scanStatus 扫描状态, 0-初始值，1-正在扫描，2-扫描完成，3-扫描出错，4-停止扫描
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1022,6 +1022,31 @@ namespace TencentCloud
                      */
                     bool IsDeleteHasBeenSet() const;
 
+                    /**
+                     * 获取任务源类型，0-默认，1-小助手，2-体检项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceType 任务源类型，0-默认，1-小助手，2-体检项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSourceType() const;
+
+                    /**
+                     * 设置任务源类型，0-默认，1-小助手，2-体检项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sourceType 任务源类型，0-默认，1-小助手，2-体检项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSourceType(const int64_t& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1046,7 +1071,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * corn
+                     * cron格式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanPlanContent;
@@ -1109,7 +1134,7 @@ namespace TencentCloud
                     bool m_assetNumberHasBeenSet;
 
                     /**
-                     * 扫描状态 0 初始值  1正在扫描  2扫描完成  3扫描出错
+                     * 扫描状态, 0-初始值，1-正在扫描，2-扫描完成，3-扫描出错，4-停止扫描
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanStatus;
@@ -1296,6 +1321,13 @@ namespace TencentCloud
                      */
                     int64_t m_isDelete;
                     bool m_isDeleteHasBeenSet;
+
+                    /**
+                     * 任务源类型，0-默认，1-小助手，2-体检项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
 
                 };
             }

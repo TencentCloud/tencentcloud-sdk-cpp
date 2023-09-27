@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ess/v20201111/model/ApproverItem.h>
 
 
 namespace TencentCloud
@@ -85,6 +86,22 @@ namespace TencentCloud
                      */
                     bool PreviewUrlHasBeenSet() const;
 
+                    /**
+                     * 获取签署方信息，如角色ID、角色名称等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Approvers 签署方信息，如角色ID、角色名称等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ApproverItem> GetApprovers() const;
+
+                    /**
+                     * 判断参数 Approvers 是否已赋值
+                     * @return Approvers 是否已赋值
+                     * 
+                     */
+                    bool ApproversHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +122,13 @@ namespace TencentCloud
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;
+
+                    /**
+                     * 签署方信息，如角色ID、角色名称等
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ApproverItem> m_approvers;
+                    bool m_approversHasBeenSet;
 
                 };
             }

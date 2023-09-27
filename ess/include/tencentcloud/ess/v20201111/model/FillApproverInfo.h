@@ -178,6 +178,27 @@ WEWORKAPP: 企业微信
                      */
                     bool ApproverMobileHasBeenSet() const;
 
+                    /**
+                     * 获取补充企业动态签署人时，需要指定对应企业名称
+                     * @return OrganizationName 补充企业动态签署人时，需要指定对应企业名称
+                     * 
+                     */
+                    std::string GetOrganizationName() const;
+
+                    /**
+                     * 设置补充企业动态签署人时，需要指定对应企业名称
+                     * @param _organizationName 补充企业动态签署人时，需要指定对应企业名称
+                     * 
+                     */
+                    void SetOrganizationName(const std::string& _organizationName);
+
+                    /**
+                     * 判断参数 OrganizationName 是否已赋值
+                     * @return OrganizationName 是否已赋值
+                     * 
+                     */
+                    bool OrganizationNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +236,12 @@ WEWORKAPP: 企业微信
                      */
                     std::string m_approverMobile;
                     bool m_approverMobileHasBeenSet;
+
+                    /**
+                     * 补充企业动态签署人时，需要指定对应企业名称
+                     */
+                    std::string m_organizationName;
+                    bool m_organizationNameHasBeenSet;
 
                 };
             }

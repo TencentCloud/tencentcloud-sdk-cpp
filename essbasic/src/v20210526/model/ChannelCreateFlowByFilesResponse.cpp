@@ -24,7 +24,8 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ChannelCreateFlowByFilesResponse::ChannelCreateFlowByFilesResponse() :
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_approversHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome ChannelCreateFlowByFilesResponse::Deserialize(const string &
         m_flowIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Approvers") && !rsp["Approvers"].IsNull())
+    {
+        if (!rsp["Approvers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Approvers` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Approvers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ApproverItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_approvers.push_back(item);
+        }
+        m_approversHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string ChannelCreateFlowByFilesResponse::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approversHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Approvers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_approvers.begin(); itr != m_approvers.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ string ChannelCreateFlowByFilesResponse::GetFlowId() const
 bool ChannelCreateFlowByFilesResponse::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+vector<ApproverItem> ChannelCreateFlowByFilesResponse::GetApprovers() const
+{
+    return m_approvers;
+}
+
+bool ChannelCreateFlowByFilesResponse::ApproversHasBeenSet() const
+{
+    return m_approversHasBeenSet;
 }
 
 

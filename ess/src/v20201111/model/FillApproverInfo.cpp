@@ -25,7 +25,8 @@ FillApproverInfo::FillApproverInfo() :
     m_approverSourceHasBeenSet(false),
     m_customUserIdHasBeenSet(false),
     m_approverNameHasBeenSet(false),
-    m_approverMobileHasBeenSet(false)
+    m_approverMobileHasBeenSet(false),
+    m_organizationNameHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome FillApproverInfo::Deserialize(const rapidjson::Value &value)
         m_approverMobileHasBeenSet = true;
     }
 
+    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
+    {
+        if (!value["OrganizationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FillApproverInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationName = string(value["OrganizationName"].GetString());
+        m_organizationNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void FillApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ApproverMobile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverMobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void FillApproverInfo::SetApproverMobile(const string& _approverMobile)
 bool FillApproverInfo::ApproverMobileHasBeenSet() const
 {
     return m_approverMobileHasBeenSet;
+}
+
+string FillApproverInfo::GetOrganizationName() const
+{
+    return m_organizationName;
+}
+
+void FillApproverInfo::SetOrganizationName(const string& _organizationName)
+{
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
+}
+
+bool FillApproverInfo::OrganizationNameHasBeenSet() const
+{
+    return m_organizationNameHasBeenSet;
 }
 

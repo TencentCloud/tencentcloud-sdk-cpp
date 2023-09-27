@@ -61,6 +61,8 @@
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceCloudResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyProjectRequest.h>
 #include <tencentcloud/bi/v20220105/model/ModifyProjectResponse.h>
+#include <tencentcloud/bi/v20220105/model/ModifyUserRoleRequest.h>
+#include <tencentcloud/bi/v20220105/model/ModifyUserRoleResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyUserRoleProjectRequest.h>
 #include <tencentcloud/bi/v20220105/model/ModifyUserRoleProjectResponse.h>
 
@@ -134,6 +136,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyProjectResponse> ModifyProjectOutcome;
                 typedef std::future<ModifyProjectOutcome> ModifyProjectOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ModifyProjectRequest&, ModifyProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserRoleResponse> ModifyUserRoleOutcome;
+                typedef std::future<ModifyUserRoleOutcome> ModifyUserRoleOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::ModifyUserRoleRequest&, ModifyUserRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserRoleProjectResponse> ModifyUserRoleProjectOutcome;
                 typedef std::future<ModifyUserRoleProjectOutcome> ModifyUserRoleProjectOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ModifyUserRoleProjectRequest&, ModifyUserRoleProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserRoleProjectAsyncHandler;
@@ -310,6 +315,15 @@ namespace TencentCloud
                 ModifyProjectOutcome ModifyProject(const Model::ModifyProjectRequest &request);
                 void ModifyProjectAsync(const Model::ModifyProjectRequest& request, const ModifyProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProjectOutcomeCallable ModifyProjectCallable(const Model::ModifyProjectRequest& request);
+
+                /**
+                 *修改用户角色信息
+                 * @param req ModifyUserRoleRequest
+                 * @return ModifyUserRoleOutcome
+                 */
+                ModifyUserRoleOutcome ModifyUserRole(const Model::ModifyUserRoleRequest &request);
+                void ModifyUserRoleAsync(const Model::ModifyUserRoleRequest& request, const ModifyUserRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserRoleOutcomeCallable ModifyUserRoleCallable(const Model::ModifyUserRoleRequest& request);
 
                 /**
                  *项目-修改用户角色信息

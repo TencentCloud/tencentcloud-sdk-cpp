@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-DescribeVpcPeeringConnectionsResponse::DescribeVpcPeeringConnectionsResponse()
+DescribeVpcPeeringConnectionsResponse::DescribeVpcPeeringConnectionsResponse() :
+    m_totalCountHasBeenSet(false),
+    m_peerConnectionSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeVpcPeeringConnectionsResponse::Deserialize(const str
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PeerConnectionSet") && !rsp["PeerConnectionSet"].IsNull())
+    {
+        if (!rsp["PeerConnectionSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PeerConnectionSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PeerConnectionSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PeerConnection item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_peerConnectionSet.push_back(item);
+        }
+        m_peerConnectionSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeVpcPeeringConnectionsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_peerConnectionSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeerConnectionSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_peerConnectionSet.begin(); itr != m_peerConnectionSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeVpcPeeringConnectionsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeVpcPeeringConnectionsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeVpcPeeringConnectionsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<PeerConnection> DescribeVpcPeeringConnectionsResponse::GetPeerConnectionSet() const
+{
+    return m_peerConnectionSet;
+}
+
+bool DescribeVpcPeeringConnectionsResponse::PeerConnectionSetHasBeenSet() const
+{
+    return m_peerConnectionSetHasBeenSet;
+}
 
 

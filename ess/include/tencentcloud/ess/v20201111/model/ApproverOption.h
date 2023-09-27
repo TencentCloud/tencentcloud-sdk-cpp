@@ -112,6 +112,39 @@ namespace TencentCloud
                      */
                     bool NoTransferHasBeenSet() const;
 
+                    /**
+                     * 获取签署人信息补充类型，默认无需补充。
+
+<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）</li>
+</ul>
+                     * @return FillType 签署人信息补充类型，默认无需补充。
+
+<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）</li>
+</ul>
+                     * 
+                     */
+                    int64_t GetFillType() const;
+
+                    /**
+                     * 设置签署人信息补充类型，默认无需补充。
+
+<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）</li>
+</ul>
+                     * @param _fillType 签署人信息补充类型，默认无需补充。
+
+<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）</li>
+</ul>
+                     * 
+                     */
+                    void SetFillType(const int64_t& _fillType);
+
+                    /**
+                     * 判断参数 FillType 是否已赋值
+                     * @return FillType 是否已赋值
+                     * 
+                     */
+                    bool FillTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -131,6 +164,15 @@ namespace TencentCloud
                      */
                     bool m_noTransfer;
                     bool m_noTransferHasBeenSet;
+
+                    /**
+                     * 签署人信息补充类型，默认无需补充。
+
+<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）</li>
+</ul>
+                     */
+                    int64_t m_fillType;
+                    bool m_fillTypeHasBeenSet;
 
                 };
             }

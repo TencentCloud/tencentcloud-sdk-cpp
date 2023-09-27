@@ -30,6 +30,7 @@ ApproverInfo::ApproverInfo() :
     m_approverIdCardNumberHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
     m_approverRoleHasBeenSet(false),
+    m_approverRoleNameHasBeenSet(false),
     m_verifyChannelHasBeenSet(false),
     m_preReadTimeHasBeenSet(false),
     m_userIdHasBeenSet(false),
@@ -146,6 +147,16 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         }
         m_approverRole = value["ApproverRole"].GetInt64();
         m_approverRoleHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverRoleName") && !value["ApproverRoleName"].IsNull())
+    {
+        if (!value["ApproverRoleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.ApproverRoleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverRoleName = string(value["ApproverRoleName"].GetString());
+        m_approverRoleNameHasBeenSet = true;
     }
 
     if (value.HasMember("VerifyChannel") && !value["VerifyChannel"].IsNull())
@@ -358,6 +369,14 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ApproverRole";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_approverRole, allocator);
+    }
+
+    if (m_approverRoleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverRoleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverRoleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_verifyChannelHasBeenSet)
@@ -608,6 +627,22 @@ void ApproverInfo::SetApproverRole(const int64_t& _approverRole)
 bool ApproverInfo::ApproverRoleHasBeenSet() const
 {
     return m_approverRoleHasBeenSet;
+}
+
+string ApproverInfo::GetApproverRoleName() const
+{
+    return m_approverRoleName;
+}
+
+void ApproverInfo::SetApproverRoleName(const string& _approverRoleName)
+{
+    m_approverRoleName = _approverRoleName;
+    m_approverRoleNameHasBeenSet = true;
+}
+
+bool ApproverInfo::ApproverRoleNameHasBeenSet() const
+{
+    return m_approverRoleNameHasBeenSet;
 }
 
 vector<string> ApproverInfo::GetVerifyChannel() const

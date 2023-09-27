@@ -615,7 +615,7 @@ namespace TencentCloud
                 DescribeQuestionListOutcomeCallable DescribeQuestionListCallable(const Model::DescribeQuestionListRequest& request);
 
                 /**
-                 *获取房间信息
+                 *获取房间配置信息
                  * @param req DescribeRoomRequest
                  * @return DescribeRoomOutcome
                  */

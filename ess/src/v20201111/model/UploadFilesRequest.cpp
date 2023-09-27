@@ -29,7 +29,8 @@ UploadFilesRequest::UploadFilesRequest() :
     m_fileTypeHasBeenSet(false),
     m_coverRectHasBeenSet(false),
     m_customIdsHasBeenSet(false),
-    m_fileUrlsHasBeenSet(false)
+    m_fileUrlsHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,15 @@ string UploadFilesRequest::ToJsonString() const
         string key = "FileUrls";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileUrls.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -227,6 +237,22 @@ void UploadFilesRequest::SetFileUrls(const string& _fileUrls)
 bool UploadFilesRequest::FileUrlsHasBeenSet() const
 {
     return m_fileUrlsHasBeenSet;
+}
+
+Agent UploadFilesRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void UploadFilesRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool UploadFilesRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

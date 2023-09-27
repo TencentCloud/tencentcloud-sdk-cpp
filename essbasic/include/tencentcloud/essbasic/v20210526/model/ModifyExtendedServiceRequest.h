@@ -142,6 +142,35 @@ CLOSE:关闭
                      */
                     bool OperateHasBeenSet() const;
 
+                    /**
+                     * 获取链接跳转类型，支持以下类型
+<ul><li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>
+<li>APP : 第三方APP或小程序跳转电子签小程序</li></ul>
+                     * @return Endpoint 链接跳转类型，支持以下类型
+<ul><li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>
+<li>APP : 第三方APP或小程序跳转电子签小程序</li></ul>
+                     * 
+                     */
+                    std::string GetEndpoint() const;
+
+                    /**
+                     * 设置链接跳转类型，支持以下类型
+<ul><li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>
+<li>APP : 第三方APP或小程序跳转电子签小程序</li></ul>
+                     * @param _endpoint 链接跳转类型，支持以下类型
+<ul><li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>
+<li>APP : 第三方APP或小程序跳转电子签小程序</li></ul>
+                     * 
+                     */
+                    void SetEndpoint(const std::string& _endpoint);
+
+                    /**
+                     * 判断参数 Endpoint 是否已赋值
+                     * @return Endpoint 是否已赋值
+                     * 
+                     */
+                    bool EndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +199,14 @@ CLOSE:关闭
                      */
                     std::string m_operate;
                     bool m_operateHasBeenSet;
+
+                    /**
+                     * 链接跳转类型，支持以下类型
+<ul><li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>
+<li>APP : 第三方APP或小程序跳转电子签小程序</li></ul>
+                     */
+                    std::string m_endpoint;
+                    bool m_endpointHasBeenSet;
 
                 };
             }

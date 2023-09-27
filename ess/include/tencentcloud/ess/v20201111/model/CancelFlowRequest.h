@@ -71,18 +71,22 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程ID, 为32位字符串。
-建议开发者保存此流程ID方便后续其他操作。
+
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
                      * @return FlowId 合同流程ID, 为32位字符串。
-建议开发者保存此流程ID方便后续其他操作。
+
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置合同流程ID, 为32位字符串。
-建议开发者保存此流程ID方便后续其他操作。
+
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
                      * @param _flowId 合同流程ID, 为32位字符串。
-建议开发者保存此流程ID方便后续其他操作。
+
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -95,15 +99,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取撤销此合同(流程)的原因，最长200个字。
-                     * @return CancelMessage 撤销此合同(流程)的原因，最长200个字。
+                     * 获取撤销此合同流程的原因，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。
+                     * @return CancelMessage 撤销此合同流程的原因，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。
                      * 
                      */
                     std::string GetCancelMessage() const;
 
                     /**
-                     * 设置撤销此合同(流程)的原因，最长200个字。
-                     * @param _cancelMessage 撤销此合同(流程)的原因，最长200个字。
+                     * 设置撤销此合同流程的原因，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。
+                     * @param _cancelMessage 撤销此合同流程的原因，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。
                      * 
                      */
                     void SetCancelMessage(const std::string& _cancelMessage);
@@ -151,13 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 合同流程ID, 为32位字符串。
-建议开发者保存此流程ID方便后续其他操作。
+
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 撤销此合同(流程)的原因，最长200个字。
+                     * 撤销此合同流程的原因，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。
                      */
                     std::string m_cancelMessage;
                     bool m_cancelMessageHasBeenSet;

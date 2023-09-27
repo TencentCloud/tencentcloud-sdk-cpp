@@ -25,7 +25,8 @@ TaskAssetObject::TaskAssetObject() :
     m_instanceTypeHasBeenSet(false),
     m_assetTypeHasBeenSet(false),
     m_assetHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome TaskAssetObject::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("Arn") && !value["Arn"].IsNull())
+    {
+        if (!value["Arn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAssetObject.Arn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arn = string(value["Arn"].GetString());
+        m_arnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void TaskAssetObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_arnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Arn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arn.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void TaskAssetObject::SetRegion(const string& _region)
 bool TaskAssetObject::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+string TaskAssetObject::GetArn() const
+{
+    return m_arn;
+}
+
+void TaskAssetObject::SetArn(const string& _arn)
+{
+    m_arn = _arn;
+    m_arnHasBeenSet = true;
+}
+
+bool TaskAssetObject::ArnHasBeenSet() const
+{
+    return m_arnHasBeenSet;
 }
 

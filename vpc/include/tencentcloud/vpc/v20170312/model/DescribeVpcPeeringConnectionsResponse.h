@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/PeerConnection.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取满足条件的对等连接实例个数。
+                     * @return TotalCount 满足条件的对等连接实例个数。
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取对等连接实例列表。
+                     * @return PeerConnectionSet 对等连接实例列表。
+                     * 
+                     */
+                    std::vector<PeerConnection> GetPeerConnectionSet() const;
+
+                    /**
+                     * 判断参数 PeerConnectionSet 是否已赋值
+                     * @return PeerConnectionSet 是否已赋值
+                     * 
+                     */
+                    bool PeerConnectionSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 满足条件的对等连接实例个数。
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 对等连接实例列表。
+                     */
+                    std::vector<PeerConnection> m_peerConnectionSet;
+                    bool m_peerConnectionSetHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ CreateFlowsByTemplatesResponse::CreateFlowsByTemplatesResponse() :
     m_customerDataHasBeenSet(false),
     m_errorMessagesHasBeenSet(false),
     m_previewUrlsHasBeenSet(false),
-    m_taskInfosHasBeenSet(false)
+    m_taskInfosHasBeenSet(false),
+    m_flowApproversHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,26 @@ CoreInternalOutcome CreateFlowsByTemplatesResponse::Deserialize(const string &pa
         m_taskInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowApprovers") && !rsp["FlowApprovers"].IsNull())
+    {
+        if (!rsp["FlowApprovers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowApprovers` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FlowApprovers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FlowApproverItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_flowApprovers.push_back(item);
+        }
+        m_flowApproversHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -215,6 +236,21 @@ string CreateFlowsByTemplatesResponse::ToJsonString() const
         }
     }
 
+    if (m_flowApproversHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowApprovers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_flowApprovers.begin(); itr != m_flowApprovers.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -275,6 +311,16 @@ vector<TaskInfo> CreateFlowsByTemplatesResponse::GetTaskInfos() const
 bool CreateFlowsByTemplatesResponse::TaskInfosHasBeenSet() const
 {
     return m_taskInfosHasBeenSet;
+}
+
+vector<FlowApproverItem> CreateFlowsByTemplatesResponse::GetFlowApprovers() const
+{
+    return m_flowApprovers;
+}
+
+bool CreateFlowsByTemplatesResponse::FlowApproversHasBeenSet() const
+{
+    return m_flowApproversHasBeenSet;
 }
 
 

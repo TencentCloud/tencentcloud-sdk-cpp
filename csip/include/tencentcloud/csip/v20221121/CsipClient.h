@@ -257,7 +257,7 @@ namespace TencentCloud
                 DescribeDbAssetInfoOutcomeCallable DescribeDbAssetInfoCallable(const Model::DescribeDbAssetInfoRequest& request);
 
                 /**
-                 *资产列表
+                 *数据库资产列表
                  * @param req DescribeDbAssetsRequest
                  * @return DescribeDbAssetsOutcome
                  */

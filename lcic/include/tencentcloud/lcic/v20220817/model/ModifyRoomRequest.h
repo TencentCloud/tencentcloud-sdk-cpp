@@ -206,19 +206,19 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取最大连麦人数（不包括老师）。取值范围[0, 17)
-直播开始后不允许修改。
-                     * @return MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 17)
-直播开始后不允许修改。
+                     * 获取设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。
+取值范围[0,16]，当取值为0时表示当前课堂/直播，不支持连麦互动。
+                     * @return MaxMicNumber 设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。
+取值范围[0,16]，当取值为0时表示当前课堂/直播，不支持连麦互动。
                      * 
                      */
                     uint64_t GetMaxMicNumber() const;
 
                     /**
-                     * 设置最大连麦人数（不包括老师）。取值范围[0, 17)
-直播开始后不允许修改。
-                     * @param _maxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 17)
-直播开始后不允许修改。
+                     * 设置设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。
+取值范围[0,16]，当取值为0时表示当前课堂/直播，不支持连麦互动。
+                     * @param _maxMicNumber 设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。
+取值范围[0,16]，当取值为0时表示当前课堂/直播，不支持连麦互动。
                      * 
                      */
                     void SetMaxMicNumber(const uint64_t& _maxMicNumber);
@@ -497,15 +497,15 @@ video 纯视频
                     bool IsGradingRequiredPostClassHasBeenSet() const;
 
                     /**
-                     * 获取房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
-                     * @return RoomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+                     * 获取房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 （预留参数、暂未开放)
+                     * @return RoomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 （预留参数、暂未开放)
                      * 
                      */
                     uint64_t GetRoomType() const;
 
                     /**
-                     * 设置房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
-                     * @param _roomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+                     * 设置房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 （预留参数、暂未开放)
+                     * @param _roomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 （预留参数、暂未开放)
                      * 
                      */
                     void SetRoomType(const uint64_t& _roomType);
@@ -608,8 +608,8 @@ video 纯视频
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 最大连麦人数（不包括老师）。取值范围[0, 17)
-直播开始后不允许修改。
+                     * 设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。
+取值范围[0,16]，当取值为0时表示当前课堂/直播，不支持连麦互动。
                      */
                     uint64_t m_maxMicNumber;
                     bool m_maxMicNumberHasBeenSet;
@@ -689,7 +689,7 @@ video 纯视频
                     bool m_isGradingRequiredPostClassHasBeenSet;
 
                     /**
-                     * 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+                     * 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 （预留参数、暂未开放)
                      */
                     uint64_t m_roomType;
                     bool m_roomTypeHasBeenSet;

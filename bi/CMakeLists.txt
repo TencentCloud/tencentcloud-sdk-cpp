@@ -37,10 +37,12 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/ProjectConfigList.h
   include/tencentcloud/bi/v20220105/model/DeleteUserRoleRequest.h
   include/tencentcloud/bi/v20220105/model/CreateUserRoleRequest.h
+  include/tencentcloud/bi/v20220105/model/ModifyUserRoleRequest.h
   include/tencentcloud/bi/v20220105/model/DatasourceInfoData.h
   include/tencentcloud/bi/v20220105/model/DescribeProjectListResponse.h
   include/tencentcloud/bi/v20220105/model/CorpUserListData.h
   include/tencentcloud/bi/v20220105/model/IdDTO.h
+  include/tencentcloud/bi/v20220105/model/ModifyUserRoleResponse.h
   include/tencentcloud/bi/v20220105/model/CreateEmbedTokenRequest.h
   include/tencentcloud/bi/v20220105/model/CreateUserRoleProjectResponse.h
   include/tencentcloud/bi/v20220105/model/DescribeProjectInfoRequest.h
@@ -101,10 +103,12 @@ set(bi_src
   src/v20220105/model/ProjectConfigList.cpp
   src/v20220105/model/DeleteUserRoleRequest.cpp
   src/v20220105/model/CreateUserRoleRequest.cpp
+  src/v20220105/model/ModifyUserRoleRequest.cpp
   src/v20220105/model/DatasourceInfoData.cpp
   src/v20220105/model/DescribeProjectListResponse.cpp
   src/v20220105/model/CorpUserListData.cpp
   src/v20220105/model/IdDTO.cpp
+  src/v20220105/model/ModifyUserRoleResponse.cpp
   src/v20220105/model/CreateEmbedTokenRequest.cpp
   src/v20220105/model/CreateUserRoleProjectResponse.cpp
   src/v20220105/model/DescribeProjectInfoRequest.cpp

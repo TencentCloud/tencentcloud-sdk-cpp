@@ -25,7 +25,8 @@ using namespace std;
 ModifyExtendedServiceRequest::ModifyExtendedServiceRequest() :
     m_agentHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
-    m_operateHasBeenSet(false)
+    m_operateHasBeenSet(false),
+    m_endpointHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string ModifyExtendedServiceRequest::ToJsonString() const
         string key = "Operate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Endpoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void ModifyExtendedServiceRequest::SetOperate(const string& _operate)
 bool ModifyExtendedServiceRequest::OperateHasBeenSet() const
 {
     return m_operateHasBeenSet;
+}
+
+string ModifyExtendedServiceRequest::GetEndpoint() const
+{
+    return m_endpoint;
+}
+
+void ModifyExtendedServiceRequest::SetEndpoint(const string& _endpoint)
+{
+    m_endpoint = _endpoint;
+    m_endpointHasBeenSet = true;
+}
+
+bool ModifyExtendedServiceRequest::EndpointHasBeenSet() const
+{
+    return m_endpointHasBeenSet;
 }
 
 

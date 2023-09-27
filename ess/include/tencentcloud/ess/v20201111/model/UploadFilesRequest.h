@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/Caller.h>
 #include <tencentcloud/ess/v20201111/model/UploadFile.h>
+#include <tencentcloud/ess/v20201111/model/Agent.h>
 
 
 namespace TencentCloud
@@ -45,27 +46,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件对应业务类型
-1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
-2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
-3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
-                     * @return BusinessType 文件对应业务类型
-1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
-2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
-3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
+                     * 获取文件对应业务类型,可以选择的类型如下
+<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
+<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
+<li> **DOCUMENT** : 此文件用于合同图片控件的填充，文件类型支持.jpg/.png</li>
+<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>
+                     * @return BusinessType 文件对应业务类型,可以选择的类型如下
+<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
+<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
+<li> **DOCUMENT** : 此文件用于合同图片控件的填充，文件类型支持.jpg/.png</li>
+<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>
                      * 
                      */
                     std::string GetBusinessType() const;
 
                     /**
-                     * 设置文件对应业务类型
-1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
-2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
-3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
-                     * @param _businessType 文件对应业务类型
-1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
-2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
-3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
+                     * 设置文件对应业务类型,可以选择的类型如下
+<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
+<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
+<li> **DOCUMENT** : 此文件用于合同图片控件的填充，文件类型支持.jpg/.png</li>
+<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>
+                     * @param _businessType 文件对应业务类型,可以选择的类型如下
+<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
+<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
+<li> **DOCUMENT** : 此文件用于合同图片控件的填充，文件类型支持.jpg/.png</li>
+<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>
                      * 
                      */
                     void SetBusinessType(const std::string& _businessType);
@@ -78,15 +83,19 @@ namespace TencentCloud
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
-                     * 获取调用方信息，其中OperatorId为必填字段，即用户的UserId
-                     * @return Caller 调用方信息，其中OperatorId为必填字段，即用户的UserId
+                     * 获取执行本接口操作的员工信息。其中OperatorId为必填字段，即用户的UserId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Caller 执行本接口操作的员工信息。其中OperatorId为必填字段，即用户的UserId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     Caller GetCaller() const;
 
                     /**
-                     * 设置调用方信息，其中OperatorId为必填字段，即用户的UserId
-                     * @param _caller 调用方信息，其中OperatorId为必填字段，即用户的UserId
+                     * 设置执行本接口操作的员工信息。其中OperatorId为必填字段，即用户的UserId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _caller 执行本接口操作的员工信息。其中OperatorId为必填字段，即用户的UserId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetCaller(const Caller& _caller);
@@ -99,15 +108,15 @@ namespace TencentCloud
                     bool CallerHasBeenSet() const;
 
                     /**
-                     * 获取上传文件内容数组，最多支持20个文件
-                     * @return FileInfos 上传文件内容数组，最多支持20个文件
+                     * 获取上传文件内容数组，最多支持上传20个文件。
+                     * @return FileInfos 上传文件内容数组，最多支持上传20个文件。
                      * 
                      */
                     std::vector<UploadFile> GetFileInfos() const;
 
                     /**
-                     * 设置上传文件内容数组，最多支持20个文件
-                     * @param _fileInfos 上传文件内容数组，最多支持20个文件
+                     * 设置上传文件内容数组，最多支持上传20个文件。
+                     * @param _fileInfos 上传文件内容数组，最多支持上传20个文件。
                      * 
                      */
                     void SetFileInfos(const std::vector<UploadFile>& _fileInfos);
@@ -120,19 +129,59 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
-如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
-                     * @return FileType 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
-如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
+                     * 获取文件类型， 默认通过文件内容和文件后缀一起解析得到文件类型，调用接口时可以显示的指定上传文件的类型。
+可支持的指定类型如下:
+<ul><li>pdf</li>
+<li>doc</li>
+<li>docx</li>
+<li>xls</li>
+<li>xlsx</li>
+<li>html</li>
+<li>jpg</li>
+<li>jpeg</li>
+<li>png</li></ul>
+如：pdf 表示上传的文件 张三入职合同.pdf的文件类型是 pdf
+                     * @return FileType 文件类型， 默认通过文件内容和文件后缀一起解析得到文件类型，调用接口时可以显示的指定上传文件的类型。
+可支持的指定类型如下:
+<ul><li>pdf</li>
+<li>doc</li>
+<li>docx</li>
+<li>xls</li>
+<li>xlsx</li>
+<li>html</li>
+<li>jpg</li>
+<li>jpeg</li>
+<li>png</li></ul>
+如：pdf 表示上传的文件 张三入职合同.pdf的文件类型是 pdf
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
-如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
-                     * @param _fileType 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
-如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
+                     * 设置文件类型， 默认通过文件内容和文件后缀一起解析得到文件类型，调用接口时可以显示的指定上传文件的类型。
+可支持的指定类型如下:
+<ul><li>pdf</li>
+<li>doc</li>
+<li>docx</li>
+<li>xls</li>
+<li>xlsx</li>
+<li>html</li>
+<li>jpg</li>
+<li>jpeg</li>
+<li>png</li></ul>
+如：pdf 表示上传的文件 张三入职合同.pdf的文件类型是 pdf
+                     * @param _fileType 文件类型， 默认通过文件内容和文件后缀一起解析得到文件类型，调用接口时可以显示的指定上传文件的类型。
+可支持的指定类型如下:
+<ul><li>pdf</li>
+<li>doc</li>
+<li>docx</li>
+<li>xls</li>
+<li>xlsx</li>
+<li>html</li>
+<li>jpg</li>
+<li>jpeg</li>
+<li>png</li></ul>
+如：pdf 表示上传的文件 张三入职合同.pdf的文件类型是 pdf
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -145,23 +194,31 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
-true--是，处理置白
-默认为false--否，不处理
-                     * @return CoverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
-true--是，处理置白
-默认为false--否，不处理
+                     * 获取此参数仅对上传的PDF文件有效。其主要作用是确定是否将PDF中的灰色矩阵置为白色。
+<ul><li>**true**：将灰色矩阵置为白色。</li>
+<li>**false**：无需处理，不会将灰色矩阵置为白色（默认）。</li></ul>
+
+注: `该参数仅在关键字定位时，需要去除关键字所在的灰框场景下使用。`
+                     * @return CoverRect 此参数仅对上传的PDF文件有效。其主要作用是确定是否将PDF中的灰色矩阵置为白色。
+<ul><li>**true**：将灰色矩阵置为白色。</li>
+<li>**false**：无需处理，不会将灰色矩阵置为白色（默认）。</li></ul>
+
+注: `该参数仅在关键字定位时，需要去除关键字所在的灰框场景下使用。`
                      * 
                      */
                     bool GetCoverRect() const;
 
                     /**
-                     * 设置此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
-true--是，处理置白
-默认为false--否，不处理
-                     * @param _coverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
-true--是，处理置白
-默认为false--否，不处理
+                     * 设置此参数仅对上传的PDF文件有效。其主要作用是确定是否将PDF中的灰色矩阵置为白色。
+<ul><li>**true**：将灰色矩阵置为白色。</li>
+<li>**false**：无需处理，不会将灰色矩阵置为白色（默认）。</li></ul>
+
+注: `该参数仅在关键字定位时，需要去除关键字所在的灰框场景下使用。`
+                     * @param _coverRect 此参数仅对上传的PDF文件有效。其主要作用是确定是否将PDF中的灰色矩阵置为白色。
+<ul><li>**true**：将灰色矩阵置为白色。</li>
+<li>**false**：无需处理，不会将灰色矩阵置为白色（默认）。</li></ul>
+
+注: `该参数仅在关键字定位时，需要去除关键字所在的灰框场景下使用。`
                      * 
                      */
                     void SetCoverRect(const bool& _coverRect);
@@ -175,14 +232,22 @@ true--是，处理置白
 
                     /**
                      * 获取用户自定义ID数组，与上传文件一一对应
+
+注: `历史遗留问题，已经废弃，调用接口时不用赋值`
                      * @return CustomIds 用户自定义ID数组，与上传文件一一对应
+
+注: `历史遗留问题，已经废弃，调用接口时不用赋值`
                      * 
                      */
                     std::vector<std::string> GetCustomIds() const;
 
                     /**
                      * 设置用户自定义ID数组，与上传文件一一对应
+
+注: `历史遗留问题，已经废弃，调用接口时不用赋值`
                      * @param _customIds 用户自定义ID数组，与上传文件一一对应
+
+注: `历史遗留问题，已经废弃，调用接口时不用赋值`
                      * 
                      */
                     void SetCustomIds(const std::vector<std::string>& _customIds);
@@ -215,46 +280,87 @@ true--是，处理置白
                      */
                     bool FileUrlsHasBeenSet() const;
 
+                    /**
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     * 
+                     */
+                    bool AgentHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 文件对应业务类型
-1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
-2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
-3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
+                     * 文件对应业务类型,可以选择的类型如下
+<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
+<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
+<li> **DOCUMENT** : 此文件用于合同图片控件的填充，文件类型支持.jpg/.png</li>
+<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>
                      */
                     std::string m_businessType;
                     bool m_businessTypeHasBeenSet;
 
                     /**
-                     * 调用方信息，其中OperatorId为必填字段，即用户的UserId
+                     * 执行本接口操作的员工信息。其中OperatorId为必填字段，即用户的UserId。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     Caller m_caller;
                     bool m_callerHasBeenSet;
 
                     /**
-                     * 上传文件内容数组，最多支持20个文件
+                     * 上传文件内容数组，最多支持上传20个文件。
                      */
                     std::vector<UploadFile> m_fileInfos;
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
-如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
+                     * 文件类型， 默认通过文件内容和文件后缀一起解析得到文件类型，调用接口时可以显示的指定上传文件的类型。
+可支持的指定类型如下:
+<ul><li>pdf</li>
+<li>doc</li>
+<li>docx</li>
+<li>xls</li>
+<li>xlsx</li>
+<li>html</li>
+<li>jpg</li>
+<li>jpeg</li>
+<li>png</li></ul>
+如：pdf 表示上传的文件 张三入职合同.pdf的文件类型是 pdf
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
-true--是，处理置白
-默认为false--否，不处理
+                     * 此参数仅对上传的PDF文件有效。其主要作用是确定是否将PDF中的灰色矩阵置为白色。
+<ul><li>**true**：将灰色矩阵置为白色。</li>
+<li>**false**：无需处理，不会将灰色矩阵置为白色（默认）。</li></ul>
+
+注: `该参数仅在关键字定位时，需要去除关键字所在的灰框场景下使用。`
                      */
                     bool m_coverRect;
                     bool m_coverRectHasBeenSet;
 
                     /**
                      * 用户自定义ID数组，与上传文件一一对应
+
+注: `历史遗留问题，已经废弃，调用接口时不用赋值`
                      */
                     std::vector<std::string> m_customIds;
                     bool m_customIdsHasBeenSet;
@@ -264,6 +370,13 @@ true--是，处理置白
                      */
                     std::string m_fileUrls;
                     bool m_fileUrlsHasBeenSet;
+
+                    /**
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }

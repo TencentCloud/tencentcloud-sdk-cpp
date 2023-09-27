@@ -59,7 +59,8 @@ ScanTaskInfoList::ScanTaskInfoList() :
     m_taskModeHasBeenSet(false),
     m_scanFromHasBeenSet(false),
     m_isFreeHasBeenSet(false),
-    m_isDeleteHasBeenSet(false)
+    m_isDeleteHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false)
 {
 }
 
@@ -471,6 +472,16 @@ CoreInternalOutcome ScanTaskInfoList::Deserialize(const rapidjson::Value &value)
         m_isDeleteHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    {
+        if (!value["SourceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanTaskInfoList.SourceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = value["SourceType"].GetInt64();
+        m_sourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -800,6 +811,14 @@ void ScanTaskInfoList::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IsDelete";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDelete, allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sourceType, allocator);
     }
 
 }
@@ -1427,5 +1446,21 @@ void ScanTaskInfoList::SetIsDelete(const int64_t& _isDelete)
 bool ScanTaskInfoList::IsDeleteHasBeenSet() const
 {
     return m_isDeleteHasBeenSet;
+}
+
+int64_t ScanTaskInfoList::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void ScanTaskInfoList::SetSourceType(const int64_t& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool ScanTaskInfoList::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
 }
 

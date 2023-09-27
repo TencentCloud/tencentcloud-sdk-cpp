@@ -2878,3 +2878,46 @@ TeoClient::ModifyZoneStatusOutcomeCallable TeoClient::ModifyZoneStatusCallable(c
     return task->get_future();
 }
 
+TeoClient::VerifyOwnershipOutcome TeoClient::VerifyOwnership(const VerifyOwnershipRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyOwnership");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyOwnershipResponse rsp = VerifyOwnershipResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyOwnershipOutcome(rsp);
+        else
+            return VerifyOwnershipOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyOwnershipOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::VerifyOwnershipAsync(const VerifyOwnershipRequest& request, const VerifyOwnershipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyOwnership(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::VerifyOwnershipOutcomeCallable TeoClient::VerifyOwnershipCallable(const VerifyOwnershipRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyOwnershipOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyOwnership(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

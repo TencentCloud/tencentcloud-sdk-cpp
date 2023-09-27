@@ -41,11 +41,14 @@ namespace TencentCloud
                 * 创建签署流程签署人入参。
 
 其中签署方FlowApproverInfo需要传递的参数
-非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识
-1-个人：Name、Mobile必传
-2-第三方平台子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；
-3-第三方平台子客企业不指定经办人：OrgName必传、OrgOpenId必传；
-4-非第三方平台子客企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。
+非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。
+
+其他身份标识
+
+<ul><li>1-个人：Name、Mobile必传</li>
+<li>2-第三方平台子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；</li>
+<li>3-第三方平台子客企业不指定经办人：OrgName必传、OrgOpenId必传；</li>
+<li>4-非第三方平台子客企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。</li></ul>
 
 RecipientId参数：
 从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId。
@@ -654,6 +657,27 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                      */
                     bool AddSignComponentsLimitsHasBeenSet() const;
 
+                    /**
+                     * 获取自定义签署方角色名称
+                     * @return ApproverRoleName 自定义签署方角色名称
+                     * 
+                     */
+                    std::string GetApproverRoleName() const;
+
+                    /**
+                     * 设置自定义签署方角色名称
+                     * @param _approverRoleName 自定义签署方角色名称
+                     * 
+                     */
+                    void SetApproverRoleName(const std::string& _approverRoleName);
+
+                    /**
+                     * 判断参数 ApproverRoleName 是否已赋值
+                     * @return ApproverRoleName 是否已赋值
+                     * 
+                     */
+                    bool ApproverRoleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -821,6 +845,12 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                      */
                     std::vector<ComponentLimit> m_addSignComponentsLimits;
                     bool m_addSignComponentsLimitsHasBeenSet;
+
+                    /**
+                     * 自定义签署方角色名称
+                     */
+                    std::string m_approverRoleName;
+                    bool m_approverRoleNameHasBeenSet;
 
                 };
             }

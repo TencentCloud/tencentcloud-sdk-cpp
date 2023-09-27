@@ -25,7 +25,8 @@ using namespace std;
 
 CreateDocumentResponse::CreateDocumentResponse() :
     m_documentIdHasBeenSet(false),
-    m_previewFileUrlHasBeenSet(false)
+    m_previewFileUrlHasBeenSet(false),
+    m_approversHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome CreateDocumentResponse::Deserialize(const string &payload)
         m_previewFileUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Approvers") && !rsp["Approvers"].IsNull())
+    {
+        if (!rsp["Approvers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Approvers` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Approvers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ApproverItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_approvers.push_back(item);
+        }
+        m_approversHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +128,21 @@ string CreateDocumentResponse::ToJsonString() const
         string key = "PreviewFileUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_previewFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approversHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Approvers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_approvers.begin(); itr != m_approvers.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +175,16 @@ string CreateDocumentResponse::GetPreviewFileUrl() const
 bool CreateDocumentResponse::PreviewFileUrlHasBeenSet() const
 {
     return m_previewFileUrlHasBeenSet;
+}
+
+vector<ApproverItem> CreateDocumentResponse::GetApprovers() const
+{
+    return m_approvers;
+}
+
+bool CreateDocumentResponse::ApproversHasBeenSet() const
+{
+    return m_approversHasBeenSet;
 }
 
 
