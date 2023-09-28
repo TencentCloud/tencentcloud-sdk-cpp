@@ -29,7 +29,8 @@ ModifyOutputInfo::ModifyOutputInfo() :
     m_rTPSettingsHasBeenSet(false),
     m_rTMPSettingsHasBeenSet(false),
     m_allowIpListHasBeenSet(false),
-    m_maxConcurrentHasBeenSet(false)
+    m_maxConcurrentHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,19 @@ CoreInternalOutcome ModifyOutputInfo::Deserialize(const rapidjson::Value &value)
         m_maxConcurrentHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModifyOutputInfo.SecurityGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +251,19 @@ void ModifyOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "MaxConcurrent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxConcurrent, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -384,5 +411,21 @@ void ModifyOutputInfo::SetMaxConcurrent(const uint64_t& _maxConcurrent)
 bool ModifyOutputInfo::MaxConcurrentHasBeenSet() const
 {
     return m_maxConcurrentHasBeenSet;
+}
+
+vector<string> ModifyOutputInfo::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void ModifyOutputInfo::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool ModifyOutputInfo::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 

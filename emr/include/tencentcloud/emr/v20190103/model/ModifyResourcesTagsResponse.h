@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/ClusterIDToFlowID.h>
 
 
 namespace TencentCloud
@@ -91,6 +92,22 @@ namespace TencentCloud
                      */
                     bool PartSuccessListHasBeenSet() const;
 
+                    /**
+                     * 获取集群id与流程id的映射列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterToFlowIdList 集群id与流程id的映射列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ClusterIDToFlowID> GetClusterToFlowIdList() const;
+
+                    /**
+                     * 判断参数 ClusterToFlowIdList 是否已赋值
+                     * @return ClusterToFlowIdList 是否已赋值
+                     * 
+                     */
+                    bool ClusterToFlowIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +130,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_partSuccessList;
                     bool m_partSuccessListHasBeenSet;
+
+                    /**
+                     * 集群id与流程id的映射列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClusterIDToFlowID> m_clusterToFlowIdList;
+                    bool m_clusterToFlowIdListHasBeenSet;
 
                 };
             }

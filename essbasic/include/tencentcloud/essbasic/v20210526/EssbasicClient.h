@@ -101,6 +101,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateChannelOrganizationInfoChangeUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateChannelOrganizationInfoChangeUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesRequest.h>
@@ -266,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateChannelFlowEvidenceReportResponse> CreateChannelFlowEvidenceReportOutcome;
                 typedef std::future<CreateChannelFlowEvidenceReportOutcome> CreateChannelFlowEvidenceReportOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateChannelFlowEvidenceReportRequest&, CreateChannelFlowEvidenceReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChannelFlowEvidenceReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateChannelOrganizationInfoChangeUrlResponse> CreateChannelOrganizationInfoChangeUrlOutcome;
+                typedef std::future<CreateChannelOrganizationInfoChangeUrlOutcome> CreateChannelOrganizationInfoChangeUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreateChannelOrganizationInfoChangeUrlRequest&, CreateChannelOrganizationInfoChangeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChannelOrganizationInfoChangeUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConsoleLoginUrlResponse> CreateConsoleLoginUrlOutcome;
                 typedef std::future<CreateConsoleLoginUrlOutcome> CreateConsoleLoginUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateConsoleLoginUrlRequest&, CreateConsoleLoginUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsoleLoginUrlAsyncHandler;
@@ -742,6 +747,15 @@ namespace TencentCloud
                 CreateChannelFlowEvidenceReportOutcome CreateChannelFlowEvidenceReport(const Model::CreateChannelFlowEvidenceReportRequest &request);
                 void CreateChannelFlowEvidenceReportAsync(const Model::CreateChannelFlowEvidenceReportRequest& request, const CreateChannelFlowEvidenceReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateChannelFlowEvidenceReportOutcomeCallable CreateChannelFlowEvidenceReportCallable(const Model::CreateChannelFlowEvidenceReportRequest& request);
+
+                /**
+                 *此接口（CreateChannelOrganizationInfoChangeUrl）用于创建子客企业信息变更链接，支持创建企业超管变更链接或企业基础信息变更链接，通过入参ChangeType指定。
+                 * @param req CreateChannelOrganizationInfoChangeUrlRequest
+                 * @return CreateChannelOrganizationInfoChangeUrlOutcome
+                 */
+                CreateChannelOrganizationInfoChangeUrlOutcome CreateChannelOrganizationInfoChangeUrl(const Model::CreateChannelOrganizationInfoChangeUrlRequest &request);
+                void CreateChannelOrganizationInfoChangeUrlAsync(const Model::CreateChannelOrganizationInfoChangeUrlRequest& request, const CreateChannelOrganizationInfoChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateChannelOrganizationInfoChangeUrlOutcomeCallable CreateChannelOrganizationInfoChangeUrlCallable(const Model::CreateChannelOrganizationInfoChangeUrlRequest& request);
 
                 /**
                  *此接口（CreateConsoleLoginUrl）用于创建第三方平台子客企业控制台Web/移动登录链接。支持web控制台、电子签小程序和H5链接。登录链接是进入子客控制台的唯一入口。

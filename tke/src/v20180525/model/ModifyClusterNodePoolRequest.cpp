@@ -40,7 +40,8 @@ ModifyClusterNodePoolRequest::ModifyClusterNodePoolRequest() :
     m_tagsHasBeenSet(false),
     m_unschedulableHasBeenSet(false),
     m_deletionProtectionHasBeenSet(false),
-    m_dockerGraphPathHasBeenSet(false)
+    m_dockerGraphPathHasBeenSet(false),
+    m_preStartUserScriptHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,14 @@ string ModifyClusterNodePoolRequest::ToJsonString() const
         string key = "DockerGraphPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dockerGraphPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preStartUserScriptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStartUserScript";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_preStartUserScript.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -512,6 +521,22 @@ void ModifyClusterNodePoolRequest::SetDockerGraphPath(const string& _dockerGraph
 bool ModifyClusterNodePoolRequest::DockerGraphPathHasBeenSet() const
 {
     return m_dockerGraphPathHasBeenSet;
+}
+
+string ModifyClusterNodePoolRequest::GetPreStartUserScript() const
+{
+    return m_preStartUserScript;
+}
+
+void ModifyClusterNodePoolRequest::SetPreStartUserScript(const string& _preStartUserScript)
+{
+    m_preStartUserScript = _preStartUserScript;
+    m_preStartUserScriptHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::PreStartUserScriptHasBeenSet() const
+{
+    return m_preStartUserScriptHasBeenSet;
 }
 
 

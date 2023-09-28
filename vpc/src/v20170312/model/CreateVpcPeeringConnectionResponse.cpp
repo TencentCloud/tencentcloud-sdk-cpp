@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-CreateVpcPeeringConnectionResponse::CreateVpcPeeringConnectionResponse()
+CreateVpcPeeringConnectionResponse::CreateVpcPeeringConnectionResponse() :
+    m_peeringConnectionIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateVpcPeeringConnectionResponse::Deserialize(const string
     }
 
 
+    if (rsp.HasMember("PeeringConnectionId") && !rsp["PeeringConnectionId"].IsNull())
+    {
+        if (!rsp["PeeringConnectionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeeringConnectionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_peeringConnectionId = string(rsp["PeeringConnectionId"].GetString());
+        m_peeringConnectionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateVpcPeeringConnectionResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_peeringConnectionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeeringConnectionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peeringConnectionId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateVpcPeeringConnectionResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateVpcPeeringConnectionResponse::GetPeeringConnectionId() const
+{
+    return m_peeringConnectionId;
+}
+
+bool CreateVpcPeeringConnectionResponse::PeeringConnectionIdHasBeenSet() const
+{
+    return m_peeringConnectionIdHasBeenSet;
+}
 
 

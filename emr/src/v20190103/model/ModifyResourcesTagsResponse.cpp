@@ -26,7 +26,8 @@ using namespace std;
 ModifyResourcesTagsResponse::ModifyResourcesTagsResponse() :
     m_successListHasBeenSet(false),
     m_failListHasBeenSet(false),
-    m_partSuccessListHasBeenSet(false)
+    m_partSuccessListHasBeenSet(false),
+    m_clusterToFlowIdListHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,26 @@ CoreInternalOutcome ModifyResourcesTagsResponse::Deserialize(const string &paylo
         m_partSuccessListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClusterToFlowIdList") && !rsp["ClusterToFlowIdList"].IsNull())
+    {
+        if (!rsp["ClusterToFlowIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterToFlowIdList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ClusterToFlowIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClusterIDToFlowID item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clusterToFlowIdList.push_back(item);
+        }
+        m_clusterToFlowIdListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -152,6 +173,21 @@ string ModifyResourcesTagsResponse::ToJsonString() const
         }
     }
 
+    if (m_clusterToFlowIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterToFlowIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterToFlowIdList.begin(); itr != m_clusterToFlowIdList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -192,6 +228,16 @@ vector<string> ModifyResourcesTagsResponse::GetPartSuccessList() const
 bool ModifyResourcesTagsResponse::PartSuccessListHasBeenSet() const
 {
     return m_partSuccessListHasBeenSet;
+}
+
+vector<ClusterIDToFlowID> ModifyResourcesTagsResponse::GetClusterToFlowIdList() const
+{
+    return m_clusterToFlowIdList;
+}
+
+bool ModifyResourcesTagsResponse::ClusterToFlowIdListHasBeenSet() const
+{
+    return m_clusterToFlowIdListHasBeenSet;
 }
 
 

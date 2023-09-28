@@ -126,6 +126,49 @@ AsClient::AttachLoadBalancersOutcomeCallable AsClient::AttachLoadBalancersCallab
     return task->get_future();
 }
 
+AsClient::CancelInstanceRefreshOutcome AsClient::CancelInstanceRefresh(const CancelInstanceRefreshRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelInstanceRefresh");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelInstanceRefreshResponse rsp = CancelInstanceRefreshResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelInstanceRefreshOutcome(rsp);
+        else
+            return CancelInstanceRefreshOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelInstanceRefreshOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::CancelInstanceRefreshAsync(const CancelInstanceRefreshRequest& request, const CancelInstanceRefreshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelInstanceRefresh(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::CancelInstanceRefreshOutcomeCallable AsClient::CancelInstanceRefreshCallable(const CancelInstanceRefreshRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelInstanceRefreshOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelInstanceRefresh(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::ClearLaunchConfigurationAttributesOutcome AsClient::ClearLaunchConfigurationAttributes(const ClearLaunchConfigurationAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ClearLaunchConfigurationAttributes");
@@ -1158,6 +1201,49 @@ AsClient::DescribeNotificationConfigurationsOutcomeCallable AsClient::DescribeNo
     return task->get_future();
 }
 
+AsClient::DescribeRefreshActivitiesOutcome AsClient::DescribeRefreshActivities(const DescribeRefreshActivitiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRefreshActivities");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRefreshActivitiesResponse rsp = DescribeRefreshActivitiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRefreshActivitiesOutcome(rsp);
+        else
+            return DescribeRefreshActivitiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRefreshActivitiesOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::DescribeRefreshActivitiesAsync(const DescribeRefreshActivitiesRequest& request, const DescribeRefreshActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRefreshActivities(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::DescribeRefreshActivitiesOutcomeCallable AsClient::DescribeRefreshActivitiesCallable(const DescribeRefreshActivitiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRefreshActivitiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRefreshActivities(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::DescribeScalingPoliciesOutcome AsClient::DescribeScalingPolicies(const DescribeScalingPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScalingPolicies");
@@ -1452,6 +1538,49 @@ AsClient::ExecuteScalingPolicyOutcomeCallable AsClient::ExecuteScalingPolicyCall
         [this, request]()
         {
             return this->ExecuteScalingPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsClient::ExitStandbyOutcome AsClient::ExitStandby(const ExitStandbyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExitStandby");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExitStandbyResponse rsp = ExitStandbyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExitStandbyOutcome(rsp);
+        else
+            return ExitStandbyOutcome(o.GetError());
+    }
+    else
+    {
+        return ExitStandbyOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::ExitStandbyAsync(const ExitStandbyRequest& request, const ExitStandbyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExitStandby(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::ExitStandbyOutcomeCallable AsClient::ExitStandbyCallable(const ExitStandbyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExitStandbyOutcome()>>(
+        [this, request]()
+        {
+            return this->ExitStandby(request);
         }
     );
 
@@ -1889,6 +2018,92 @@ AsClient::RemoveInstancesOutcomeCallable AsClient::RemoveInstancesCallable(const
     return task->get_future();
 }
 
+AsClient::ResumeInstanceRefreshOutcome AsClient::ResumeInstanceRefresh(const ResumeInstanceRefreshRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeInstanceRefresh");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeInstanceRefreshResponse rsp = ResumeInstanceRefreshResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeInstanceRefreshOutcome(rsp);
+        else
+            return ResumeInstanceRefreshOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeInstanceRefreshOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::ResumeInstanceRefreshAsync(const ResumeInstanceRefreshRequest& request, const ResumeInstanceRefreshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResumeInstanceRefresh(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::ResumeInstanceRefreshOutcomeCallable AsClient::ResumeInstanceRefreshCallable(const ResumeInstanceRefreshRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResumeInstanceRefreshOutcome()>>(
+        [this, request]()
+        {
+            return this->ResumeInstanceRefresh(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsClient::RollbackInstanceRefreshOutcome AsClient::RollbackInstanceRefresh(const RollbackInstanceRefreshRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackInstanceRefresh");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackInstanceRefreshResponse rsp = RollbackInstanceRefreshResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackInstanceRefreshOutcome(rsp);
+        else
+            return RollbackInstanceRefreshOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackInstanceRefreshOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::RollbackInstanceRefreshAsync(const RollbackInstanceRefreshRequest& request, const RollbackInstanceRefreshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollbackInstanceRefresh(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::RollbackInstanceRefreshOutcomeCallable AsClient::RollbackInstanceRefreshCallable(const RollbackInstanceRefreshRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollbackInstanceRefreshOutcome()>>(
+        [this, request]()
+        {
+            return this->RollbackInstanceRefresh(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::ScaleInInstancesOutcome AsClient::ScaleInInstances(const ScaleInInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "ScaleInInstances");
@@ -2061,6 +2276,49 @@ AsClient::StartAutoScalingInstancesOutcomeCallable AsClient::StartAutoScalingIns
     return task->get_future();
 }
 
+AsClient::StartInstanceRefreshOutcome AsClient::StartInstanceRefresh(const StartInstanceRefreshRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartInstanceRefresh");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartInstanceRefreshResponse rsp = StartInstanceRefreshResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartInstanceRefreshOutcome(rsp);
+        else
+            return StartInstanceRefreshOutcome(o.GetError());
+    }
+    else
+    {
+        return StartInstanceRefreshOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::StartInstanceRefreshAsync(const StartInstanceRefreshRequest& request, const StartInstanceRefreshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartInstanceRefresh(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::StartInstanceRefreshOutcomeCallable AsClient::StartInstanceRefreshCallable(const StartInstanceRefreshRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartInstanceRefreshOutcome()>>(
+        [this, request]()
+        {
+            return this->StartInstanceRefresh(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::StopAutoScalingInstancesOutcome AsClient::StopAutoScalingInstances(const StopAutoScalingInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "StopAutoScalingInstances");
@@ -2097,6 +2355,49 @@ AsClient::StopAutoScalingInstancesOutcomeCallable AsClient::StopAutoScalingInsta
         [this, request]()
         {
             return this->StopAutoScalingInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsClient::StopInstanceRefreshOutcome AsClient::StopInstanceRefresh(const StopInstanceRefreshRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopInstanceRefresh");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopInstanceRefreshResponse rsp = StopInstanceRefreshResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopInstanceRefreshOutcome(rsp);
+        else
+            return StopInstanceRefreshOutcome(o.GetError());
+    }
+    else
+    {
+        return StopInstanceRefreshOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::StopInstanceRefreshAsync(const StopInstanceRefreshRequest& request, const StopInstanceRefreshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopInstanceRefresh(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::StopInstanceRefreshOutcomeCallable AsClient::StopInstanceRefreshCallable(const StopInstanceRefreshRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopInstanceRefreshOutcome()>>(
+        [this, request]()
+        {
+            return this->StopInstanceRefresh(request);
         }
     );
 

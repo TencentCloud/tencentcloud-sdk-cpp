@@ -28,6 +28,9 @@
 #include <tencentcloud/tke/v20180525/model/Taint.h>
 #include <tencentcloud/tke/v20180525/model/NodeCountSummary.h>
 #include <tencentcloud/tke/v20180525/model/Tag.h>
+#include <tencentcloud/tke/v20180525/model/InstanceExtraArgs.h>
+#include <tencentcloud/tke/v20180525/model/GPUArgs.h>
+#include <tencentcloud/tke/v20180525/model/DataDisk.h>
 
 
 namespace TencentCloud
@@ -514,6 +517,156 @@ namespace TencentCloud
                      */
                     bool DeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtraArgs 节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    InstanceExtraArgs GetExtraArgs() const;
+
+                    /**
+                     * 设置节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extraArgs 节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtraArgs(const InstanceExtraArgs& _extraArgs);
+
+                    /**
+                     * 判断参数 ExtraArgs 是否已赋值
+                     * @return ExtraArgs 是否已赋值
+                     * 
+                     */
+                    bool ExtraArgsHasBeenSet() const;
+
+                    /**
+                     * 获取GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GPUArgs GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    GPUArgs GetGPUArgs() const;
+
+                    /**
+                     * 设置GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gPUArgs GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGPUArgs(const GPUArgs& _gPUArgs);
+
+                    /**
+                     * 判断参数 GPUArgs 是否已赋值
+                     * @return GPUArgs 是否已赋值
+                     * 
+                     */
+                    bool GPUArgsHasBeenSet() const;
+
+                    /**
+                     * 获取dockerd --graph 指定值, 默认为 /var/lib/docker
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDockerGraphPath() const;
+
+                    /**
+                     * 设置dockerd --graph 指定值, 默认为 /var/lib/docker
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDockerGraphPath(const std::string& _dockerGraphPath);
+
+                    /**
+                     * 判断参数 DockerGraphPath 是否已赋值
+                     * @return DockerGraphPath 是否已赋值
+                     * 
+                     */
+                    bool DockerGraphPathHasBeenSet() const;
+
+                    /**
+                     * 获取多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataDisks 多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DataDisk> GetDataDisks() const;
+
+                    /**
+                     * 设置多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataDisks 多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
+
+                    /**
+                     * 判断参数 DataDisks 是否已赋值
+                     * @return DataDisks 是否已赋值
+                     * 
+                     */
+                    bool DataDisksHasBeenSet() const;
+
+                    /**
+                     * 获取是否不可调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Unschedulable 是否不可调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetUnschedulable() const;
+
+                    /**
+                     * 设置是否不可调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _unschedulable 是否不可调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUnschedulable(const int64_t& _unschedulable);
+
+                    /**
+                     * 判断参数 Unschedulable 是否已赋值
+                     * @return Unschedulable 是否已赋值
+                     * 
+                     */
+                    bool UnschedulableHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义脚本,在UserScript前执行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PreStartUserScript 用户自定义脚本,在UserScript前执行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPreStartUserScript() const;
+
+                    /**
+                     * 设置用户自定义脚本,在UserScript前执行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _preStartUserScript 用户自定义脚本,在UserScript前执行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPreStartUserScript(const std::string& _preStartUserScript);
+
+                    /**
+                     * 判断参数 PreStartUserScript 是否已赋值
+                     * @return PreStartUserScript 是否已赋值
+                     * 
+                     */
+                    bool PreStartUserScriptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -646,6 +799,48 @@ namespace TencentCloud
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
+
+                    /**
+                     * 节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceExtraArgs m_extraArgs;
+                    bool m_extraArgsHasBeenSet;
+
+                    /**
+                     * GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GPUArgs m_gPUArgs;
+                    bool m_gPUArgsHasBeenSet;
+
+                    /**
+                     * dockerd --graph 指定值, 默认为 /var/lib/docker
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dockerGraphPath;
+                    bool m_dockerGraphPathHasBeenSet;
+
+                    /**
+                     * 多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DataDisk> m_dataDisks;
+                    bool m_dataDisksHasBeenSet;
+
+                    /**
+                     * 是否不可调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_unschedulable;
+                    bool m_unschedulableHasBeenSet;
+
+                    /**
+                     * 用户自定义脚本,在UserScript前执行
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_preStartUserScript;
+                    bool m_preStartUserScriptHasBeenSet;
 
                 };
             }

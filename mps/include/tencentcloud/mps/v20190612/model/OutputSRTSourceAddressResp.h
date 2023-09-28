@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取监听IP。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 监听IP。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置监听IP。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip 监听IP。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取监听端口。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 监听端口。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置监听端口。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 监听端口。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 监听IP。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 监听端口。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

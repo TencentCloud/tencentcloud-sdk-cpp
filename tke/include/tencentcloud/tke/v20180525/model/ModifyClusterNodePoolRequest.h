@@ -425,6 +425,27 @@ namespace TencentCloud
                      */
                     bool DockerGraphPathHasBeenSet() const;
 
+                    /**
+                     * 获取base64编码后的自定义脚本
+                     * @return PreStartUserScript base64编码后的自定义脚本
+                     * 
+                     */
+                    std::string GetPreStartUserScript() const;
+
+                    /**
+                     * 设置base64编码后的自定义脚本
+                     * @param _preStartUserScript base64编码后的自定义脚本
+                     * 
+                     */
+                    void SetPreStartUserScript(const std::string& _preStartUserScript);
+
+                    /**
+                     * 判断参数 PreStartUserScript 是否已赋值
+                     * @return PreStartUserScript 是否已赋值
+                     * 
+                     */
+                    bool PreStartUserScriptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -534,6 +555,12 @@ namespace TencentCloud
                      */
                     std::string m_dockerGraphPath;
                     bool m_dockerGraphPathHasBeenSet;
+
+                    /**
+                     * base64编码后的自定义脚本
+                     */
+                    std::string m_preStartUserScript;
+                    bool m_preStartUserScriptHasBeenSet;
 
                 };
             }

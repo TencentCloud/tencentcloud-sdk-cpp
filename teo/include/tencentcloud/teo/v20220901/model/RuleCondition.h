@@ -84,43 +84,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取匹配类型，取值有：
-<li> filename：文件名； </li>
-<li> extension：文件后缀； </li>
-<li> host：HOST； </li>
-<li> full_url：URL Full，当前站点下完整 URL 路径，必须包含 HTTP 协议，Host 和 路径； </li>
-<li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li>
-<li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li>
-<li> request_header：HTTP请求头部。 </li>
-                     * @return Target 匹配类型，取值有：
-<li> filename：文件名； </li>
-<li> extension：文件后缀； </li>
-<li> host：HOST； </li>
-<li> full_url：URL Full，当前站点下完整 URL 路径，必须包含 HTTP 协议，Host 和 路径； </li>
-<li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li>
-<li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li>
-<li> request_header：HTTP请求头部。 </li>
+                     * 获取匹配类型，取值有： <li> filename：文件名； </li> <li> extension：文件后缀； </li> <li> host：HOST； </li> <li> full_url：URL Full，当前站点下完整 URL 路径，必须包含 HTTP 协议，Host 和 路径； </li> <li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li> <li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li> <li> request_header：HTTP请求头部。 </li>
+                     * @return Target 匹配类型，取值有： <li> filename：文件名； </li> <li> extension：文件后缀； </li> <li> host：HOST； </li> <li> full_url：URL Full，当前站点下完整 URL 路径，必须包含 HTTP 协议，Host 和 路径； </li> <li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li> <li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li> <li> request_header：HTTP请求头部。 </li>
                      * 
                      */
                     std::string GetTarget() const;
 
                     /**
-                     * 设置匹配类型，取值有：
-<li> filename：文件名； </li>
-<li> extension：文件后缀； </li>
-<li> host：HOST； </li>
-<li> full_url：URL Full，当前站点下完整 URL 路径，必须包含 HTTP 协议，Host 和 路径； </li>
-<li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li>
-<li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li>
-<li> request_header：HTTP请求头部。 </li>
-                     * @param _target 匹配类型，取值有：
-<li> filename：文件名； </li>
-<li> extension：文件后缀； </li>
-<li> host：HOST； </li>
-<li> full_url：URL Full，当前站点下完整 URL 路径，必须包含 HTTP 协议，Host 和 路径； </li>
-<li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li>
-<li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li>
-<li> request_header：HTTP请求头部。 </li>
+                     * 设置匹配类型，取值有： <li> filename：文件名； </li> <li> extension：文件后缀； </li> <li> host：HOST； </li> <li> full_url：URL Full，当前站点下完整 URL 路径，必须包含 HTTP 协议，Host 和 路径； </li> <li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li> <li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li> <li> request_header：HTTP请求头部。 </li>
+                     * @param _target 匹配类型，取值有： <li> filename：文件名； </li> <li> extension：文件后缀； </li> <li> host：HOST； </li> <li> full_url：URL Full，当前站点下完整 URL 路径，必须包含 HTTP 协议，Host 和 路径； </li> <li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li> <li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li> <li> request_header：HTTP请求头部。 </li>
                      * 
                      */
                     void SetTarget(const std::string& _target);
@@ -244,7 +216,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoreNameCase 是否忽略参数名称的大小写，默认值为 false。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     bool GetIgnoreNameCase() const;
 
@@ -253,14 +225,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ignoreNameCase 是否忽略参数名称的大小写，默认值为 false。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetIgnoreNameCase(const bool& _ignoreNameCase);
 
                     /**
                      * 判断参数 IgnoreNameCase 是否已赋值
                      * @return IgnoreNameCase 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IgnoreNameCaseHasBeenSet() const;
 
@@ -277,14 +249,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 匹配类型，取值有：
-<li> filename：文件名； </li>
-<li> extension：文件后缀； </li>
-<li> host：HOST； </li>
-<li> full_url：URL Full，当前站点下完整 URL 路径，必须包含 HTTP 协议，Host 和 路径； </li>
-<li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li>
-<li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li>
-<li> request_header：HTTP请求头部。 </li>
+                     * 匹配类型，取值有： <li> filename：文件名； </li> <li> extension：文件后缀； </li> <li> host：HOST； </li> <li> full_url：URL Full，当前站点下完整 URL 路径，必须包含 HTTP 协议，Host 和 路径； </li> <li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li> <li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li> <li> request_header：HTTP请求头部。 </li>
                      */
                     std::string m_target;
                     bool m_targetHasBeenSet;

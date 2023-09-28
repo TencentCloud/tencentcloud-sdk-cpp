@@ -22,7 +22,8 @@
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-RejectVpcPeeringConnectionRequest::RejectVpcPeeringConnectionRequest()
+RejectVpcPeeringConnectionRequest::RejectVpcPeeringConnectionRequest() :
+    m_peeringConnectionIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string RejectVpcPeeringConnectionRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_peeringConnectionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeeringConnectionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_peeringConnectionId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string RejectVpcPeeringConnectionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string RejectVpcPeeringConnectionRequest::GetPeeringConnectionId() const
+{
+    return m_peeringConnectionId;
+}
+
+void RejectVpcPeeringConnectionRequest::SetPeeringConnectionId(const string& _peeringConnectionId)
+{
+    m_peeringConnectionId = _peeringConnectionId;
+    m_peeringConnectionIdHasBeenSet = true;
+}
+
+bool RejectVpcPeeringConnectionRequest::PeeringConnectionIdHasBeenSet() const
+{
+    return m_peeringConnectionIdHasBeenSet;
+}
 
 

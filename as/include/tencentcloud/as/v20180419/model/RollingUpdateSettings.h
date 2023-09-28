@@ -1,0 +1,111 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_AS_V20180419_MODEL_ROLLINGUPDATESETTINGS_H_
+#define TENCENTCLOUD_AS_V20180419_MODEL_ROLLINGUPDATESETTINGS_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace As
+    {
+        namespace V20180419
+        {
+            namespace Model
+            {
+                /**
+                * 滚动更新设置。
+                */
+                class RollingUpdateSettings : public AbstractModel
+                {
+                public:
+                    RollingUpdateSettings();
+                    ~RollingUpdateSettings() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取批次数量。批次数量为大于 0 的正整数，但不能大于待刷新实例数量。
+                     * @return BatchNumber 批次数量。批次数量为大于 0 的正整数，但不能大于待刷新实例数量。
+                     * 
+                     */
+                    uint64_t GetBatchNumber() const;
+
+                    /**
+                     * 设置批次数量。批次数量为大于 0 的正整数，但不能大于待刷新实例数量。
+                     * @param _batchNumber 批次数量。批次数量为大于 0 的正整数，但不能大于待刷新实例数量。
+                     * 
+                     */
+                    void SetBatchNumber(const uint64_t& _batchNumber);
+
+                    /**
+                     * 判断参数 BatchNumber 是否已赋值
+                     * @return BatchNumber 是否已赋值
+                     * 
+                     */
+                    bool BatchNumberHasBeenSet() const;
+
+                    /**
+                     * 获取批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停
+                     * @return BatchPause 批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停
+                     * 
+                     */
+                    std::string GetBatchPause() const;
+
+                    /**
+                     * 设置批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停
+                     * @param _batchPause 批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停
+                     * 
+                     */
+                    void SetBatchPause(const std::string& _batchPause);
+
+                    /**
+                     * 判断参数 BatchPause 是否已赋值
+                     * @return BatchPause 是否已赋值
+                     * 
+                     */
+                    bool BatchPauseHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 批次数量。批次数量为大于 0 的正整数，但不能大于待刷新实例数量。
+                     */
+                    uint64_t m_batchNumber;
+                    bool m_batchNumberHasBeenSet;
+
+                    /**
+                     * 批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停
+                     */
+                    std::string m_batchPause;
+                    bool m_batchPauseHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_AS_V20180419_MODEL_ROLLINGUPDATESETTINGS_H_

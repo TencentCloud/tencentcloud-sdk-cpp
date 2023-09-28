@@ -31,7 +31,8 @@ CreateInput::CreateInput() :
     m_rTMPPullSettingsHasBeenSet(false),
     m_rTSPPullSettingsHasBeenSet(false),
     m_hLSPullSettingsHasBeenSet(false),
-    m_resilientStreamHasBeenSet(false)
+    m_resilientStreamHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,19 @@ CoreInternalOutcome CreateInput::Deserialize(const rapidjson::Value &value)
         m_resilientStreamHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CreateInput.SecurityGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -299,6 +313,19 @@ void CreateInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resilientStream.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -478,5 +505,21 @@ void CreateInput::SetResilientStream(const ResilientStreamConf& _resilientStream
 bool CreateInput::ResilientStreamHasBeenSet() const
 {
     return m_resilientStreamHasBeenSet;
+}
+
+vector<string> CreateInput::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateInput::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateInput::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 

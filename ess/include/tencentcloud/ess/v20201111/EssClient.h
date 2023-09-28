@@ -71,6 +71,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h>
@@ -233,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOrganizationBatchSignUrlResponse> CreateOrganizationBatchSignUrlOutcome;
                 typedef std::future<CreateOrganizationBatchSignUrlOutcome> CreateOrganizationBatchSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateOrganizationBatchSignUrlRequest&, CreateOrganizationBatchSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationBatchSignUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrganizationInfoChangeUrlResponse> CreateOrganizationInfoChangeUrlOutcome;
+                typedef std::future<CreateOrganizationInfoChangeUrlOutcome> CreateOrganizationInfoChangeUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateOrganizationInfoChangeUrlRequest&, CreateOrganizationInfoChangeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationInfoChangeUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePersonAuthCertificateImageResponse> CreatePersonAuthCertificateImageOutcome;
                 typedef std::future<CreatePersonAuthCertificateImageOutcome> CreatePersonAuthCertificateImageOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreatePersonAuthCertificateImageRequest&, CreatePersonAuthCertificateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonAuthCertificateImageAsyncHandler;
@@ -671,6 +676,15 @@ namespace TencentCloud
                 CreateOrganizationBatchSignUrlOutcome CreateOrganizationBatchSignUrl(const Model::CreateOrganizationBatchSignUrlRequest &request);
                 void CreateOrganizationBatchSignUrlAsync(const Model::CreateOrganizationBatchSignUrlRequest& request, const CreateOrganizationBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateOrganizationBatchSignUrlOutcomeCallable CreateOrganizationBatchSignUrlCallable(const Model::CreateOrganizationBatchSignUrlRequest& request);
+
+                /**
+                 *此接口（CreateOrganizationInfoChangeUrl）用于创建企业信息变更链接，支持创建企业超管变更链接或企业基础信息变更链接，通过入参ChangeType指定。
+                 * @param req CreateOrganizationInfoChangeUrlRequest
+                 * @return CreateOrganizationInfoChangeUrlOutcome
+                 */
+                CreateOrganizationInfoChangeUrlOutcome CreateOrganizationInfoChangeUrl(const Model::CreateOrganizationInfoChangeUrlRequest &request);
+                void CreateOrganizationInfoChangeUrlAsync(const Model::CreateOrganizationInfoChangeUrlRequest& request, const CreateOrganizationInfoChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrganizationInfoChangeUrlOutcomeCallable CreateOrganizationInfoChangeUrlCallable(const Model::CreateOrganizationInfoChangeUrlRequest& request);
 
                 /**
                  *获取个人用户认证证书图片下载URL

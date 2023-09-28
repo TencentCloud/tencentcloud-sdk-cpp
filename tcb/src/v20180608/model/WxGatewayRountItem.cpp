@@ -36,7 +36,8 @@ WxGatewayRountItem::WxGatewayRountItem() :
     m_gatewayRouteMethodHasBeenSet(false),
     m_gatewayRoutePortHasBeenSet(false),
     m_gatewayRouteEnvIdHasBeenSet(false),
-    m_gatewayRoutePathMatchTypeHasBeenSet(false)
+    m_gatewayRoutePathMatchTypeHasBeenSet(false),
+    m_customHeaderHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,23 @@ CoreInternalOutcome WxGatewayRountItem::Deserialize(const rapidjson::Value &valu
         m_gatewayRoutePathMatchTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomHeader") && !value["CustomHeader"].IsNull())
+    {
+        if (!value["CustomHeader"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WxGatewayRountItem.CustomHeader` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customHeader.Deserialize(value["CustomHeader"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customHeaderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +373,15 @@ void WxGatewayRountItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "GatewayRoutePathMatchType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gatewayRoutePathMatchType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customHeaderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomHeader";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customHeader.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -614,5 +641,21 @@ void WxGatewayRountItem::SetGatewayRoutePathMatchType(const string& _gatewayRout
 bool WxGatewayRountItem::GatewayRoutePathMatchTypeHasBeenSet() const
 {
     return m_gatewayRoutePathMatchTypeHasBeenSet;
+}
+
+CustomHeader WxGatewayRountItem::GetCustomHeader() const
+{
+    return m_customHeader;
+}
+
+void WxGatewayRountItem::SetCustomHeader(const CustomHeader& _customHeader)
+{
+    m_customHeader = _customHeader;
+    m_customHeaderHasBeenSet = true;
+}
+
+bool WxGatewayRountItem::CustomHeaderHasBeenSet() const
+{
+    return m_customHeaderHasBeenSet;
 }
 

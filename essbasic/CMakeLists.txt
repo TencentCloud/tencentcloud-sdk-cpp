@@ -162,6 +162,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelUserAutoSignEnableUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ModifyExtendedServiceRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
+  include/tencentcloud/essbasic/v20210526/model/CreateChannelOrganizationInfoChangeUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/RemindFlowRecords.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchSignUrlResponse.h
@@ -286,6 +287,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsRequest.h
+  include/tencentcloud/essbasic/v20210526/model/CreateChannelOrganizationInfoChangeUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelModifyRoleRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.h
@@ -462,6 +464,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCancelUserAutoSignEnableUrlResponse.cpp
   src/v20210526/model/ModifyExtendedServiceRequest.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
+  src/v20210526/model/CreateChannelOrganizationInfoChangeUrlResponse.cpp
   src/v20210526/model/RemindFlowRecords.cpp
   src/v20210526/model/ChannelCreateFlowSignUrlResponse.cpp
   src/v20210526/model/ChannelCreateBatchSignUrlResponse.cpp
@@ -586,6 +589,7 @@ set(essbasic_src
   src/v20210526/model/GetDownloadFlowUrlRequest.cpp
   src/v20210526/model/ChannelCreateEmbedWebUrlResponse.cpp
   src/v20210526/model/ChannelBatchCancelFlowsRequest.cpp
+  src/v20210526/model/CreateChannelOrganizationInfoChangeUrlRequest.cpp
   src/v20210526/model/ChannelModifyRoleRequest.cpp
   src/v20210526/model/ChannelUpdateSealStatusRequest.cpp
   src/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.cpp

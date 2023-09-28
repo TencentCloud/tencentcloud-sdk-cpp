@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取对端IP。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 对端IP。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置对端IP。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip 对端IP。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取对端端口。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 对端端口。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置对端端口。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 对端端口。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 对端IP。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 对端端口。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

@@ -1717,6 +1717,49 @@ EssbasicClient::CreateChannelFlowEvidenceReportOutcomeCallable EssbasicClient::C
     return task->get_future();
 }
 
+EssbasicClient::CreateChannelOrganizationInfoChangeUrlOutcome EssbasicClient::CreateChannelOrganizationInfoChangeUrl(const CreateChannelOrganizationInfoChangeUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateChannelOrganizationInfoChangeUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateChannelOrganizationInfoChangeUrlResponse rsp = CreateChannelOrganizationInfoChangeUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateChannelOrganizationInfoChangeUrlOutcome(rsp);
+        else
+            return CreateChannelOrganizationInfoChangeUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateChannelOrganizationInfoChangeUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateChannelOrganizationInfoChangeUrlAsync(const CreateChannelOrganizationInfoChangeUrlRequest& request, const CreateChannelOrganizationInfoChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateChannelOrganizationInfoChangeUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateChannelOrganizationInfoChangeUrlOutcomeCallable EssbasicClient::CreateChannelOrganizationInfoChangeUrlCallable(const CreateChannelOrganizationInfoChangeUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateChannelOrganizationInfoChangeUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateChannelOrganizationInfoChangeUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateConsoleLoginUrlOutcome EssbasicClient::CreateConsoleLoginUrl(const CreateConsoleLoginUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConsoleLoginUrl");

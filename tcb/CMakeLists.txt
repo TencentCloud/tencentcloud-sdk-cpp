@@ -108,6 +108,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunVersionFlowItem.h
   include/tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvPostpaidDeductRequest.h
+  include/tencentcloud/tcb/v20180608/model/CustomHeader.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/BindEnvGatewayResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsResponse.h
@@ -238,6 +239,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeUserActivityInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/Tag.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunPodListRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyEndUserResponse.h
@@ -257,7 +259,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/TurnOnStandaloneGatewayResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/PostpayEnvQuota.h
-  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.h
+  include/tencentcloud/tcb/v20180608/model/CustomRequestToAdd.h
   include/tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasResponse.h
   include/tencentcloud/tcb/v20180608/model/OneClickTaskStepInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoResponse.h
@@ -357,6 +359,7 @@ set(tcb_src
   src/v20180608/model/CloudBaseRunVersionFlowItem.cpp
   src/v20180608/model/DeleteWxGatewayRouteRequest.cpp
   src/v20180608/model/DescribeEnvPostpaidDeductRequest.cpp
+  src/v20180608/model/CustomHeader.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoRequest.cpp
   src/v20180608/model/BindEnvGatewayResponse.cpp
   src/v20180608/model/DescribeWxCloudBaseRunSubNetsResponse.cpp
@@ -487,6 +490,7 @@ set(tcb_src
   src/v20180608/model/DescribeCloudBaseRunServerResponse.cpp
   src/v20180608/model/DescribeUserActivityInfoRequest.cpp
   src/v20180608/model/Tag.cpp
+  src/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.cpp
   src/v20180608/model/DescribeCloudBaseRunPodListRequest.cpp
   src/v20180608/model/CreateCloudBaseRunResourceRequest.cpp
   src/v20180608/model/ModifyEndUserResponse.cpp
@@ -506,7 +510,7 @@ set(tcb_src
   src/v20180608/model/TurnOnStandaloneGatewayResponse.cpp
   src/v20180608/model/ModifyEnvRequest.cpp
   src/v20180608/model/PostpayEnvQuota.cpp
-  src/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.cpp
+  src/v20180608/model/CustomRequestToAdd.cpp
   src/v20180608/model/DescribePostpayPackageFreeQuotasResponse.cpp
   src/v20180608/model/OneClickTaskStepInfo.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoResponse.cpp

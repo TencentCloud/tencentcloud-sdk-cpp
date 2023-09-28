@@ -34,6 +34,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h
   include/tencentcloud/ess/v20201111/model/FlowApproverUrlInfo.h
   include/tencentcloud/ess/v20201111/model/ReviewerInfo.h
+  include/tencentcloud/ess/v20201111/model/FlowBrief.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h
   include/tencentcloud/ess/v20201111/model/HasAuthUser.h
   include/tencentcloud/ess/v20201111/model/DisableUserAutoSignResponse.h
@@ -75,7 +76,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateReleaseFlowResponse.h
   include/tencentcloud/ess/v20201111/model/CreateWebThemeConfigResponse.h
   include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.h
-  include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/Permission.h
   include/tencentcloud/ess/v20201111/model/Staff.h
   include/tencentcloud/ess/v20201111/model/ComponentLimit.h
@@ -199,13 +200,14 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h
+  include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusRequest.h
   include/tencentcloud/ess/v20201111/model/FilledComponent.h
   include/tencentcloud/ess/v20201111/model/FileUrl.h
-  include/tencentcloud/ess/v20201111/model/FlowBrief.h
+  include/tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/CcInfo.h
@@ -228,6 +230,7 @@ set(ess_src
   src/v20201111/model/CreateMultiFlowSignQRCodeResponse.cpp
   src/v20201111/model/FlowApproverUrlInfo.cpp
   src/v20201111/model/ReviewerInfo.cpp
+  src/v20201111/model/FlowBrief.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeResponse.cpp
   src/v20201111/model/HasAuthUser.cpp
   src/v20201111/model/DisableUserAutoSignResponse.cpp
@@ -269,7 +272,7 @@ set(ess_src
   src/v20201111/model/CreateReleaseFlowResponse.cpp
   src/v20201111/model/CreateWebThemeConfigResponse.cpp
   src/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.cpp
-  src/v20201111/model/DescribeIntegrationDepartmentsRequest.cpp
+  src/v20201111/model/CreateOrganizationInfoChangeUrlResponse.cpp
   src/v20201111/model/Permission.cpp
   src/v20201111/model/Staff.cpp
   src/v20201111/model/ComponentLimit.cpp
@@ -393,13 +396,14 @@ set(ess_src
   src/v20201111/model/CreateBatchCancelFlowUrlRequest.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/DescribeFlowInfoRequest.cpp
+  src/v20201111/model/DescribeIntegrationDepartmentsRequest.cpp
   src/v20201111/model/DescribeFlowInfoResponse.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeResponse.cpp
   src/v20201111/model/CreateFlowResponse.cpp
   src/v20201111/model/DescribeUserAutoSignStatusRequest.cpp
   src/v20201111/model/FilledComponent.cpp
   src/v20201111/model/FileUrl.cpp
-  src/v20201111/model/FlowBrief.cpp
+  src/v20201111/model/CreateOrganizationInfoChangeUrlRequest.cpp
   src/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.cpp
   src/v20201111/model/DescribeExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/CcInfo.cpp

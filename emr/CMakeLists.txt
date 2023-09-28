@@ -48,6 +48,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/TopologyInfo.h
   include/tencentcloud/emr/v20190103/model/NodeDetailPriceResult.h
   include/tencentcloud/emr/v20190103/model/Tag.h
+  include/tencentcloud/emr/v20190103/model/ClusterIDToFlowID.h
   include/tencentcloud/emr/v20190103/model/EmrListInstance.h
   include/tencentcloud/emr/v20190103/model/AddUsersForUserManagerResponse.h
   include/tencentcloud/emr/v20190103/model/EmrProductConfigOutter.h
@@ -200,6 +201,7 @@ set(emr_src
   src/v20190103/model/TopologyInfo.cpp
   src/v20190103/model/NodeDetailPriceResult.cpp
   src/v20190103/model/Tag.cpp
+  src/v20190103/model/ClusterIDToFlowID.cpp
   src/v20190103/model/EmrListInstance.cpp
   src/v20190103/model/AddUsersForUserManagerResponse.cpp
   src/v20190103/model/EmrProductConfigOutter.cpp

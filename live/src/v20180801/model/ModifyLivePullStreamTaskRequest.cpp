@@ -35,6 +35,7 @@ ModifyLivePullStreamTaskRequest::ModifyLivePullStreamTaskRequest() :
     m_callbackUrlHasBeenSet(false),
     m_fileIndexHasBeenSet(false),
     m_offsetTimeHasBeenSet(false),
+    m_toUrlHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_backupSourceTypeHasBeenSet(false),
     m_backupSourceUrlHasBeenSet(false),
@@ -154,6 +155,14 @@ string ModifyLivePullStreamTaskRequest::ToJsonString() const
         string key = "OffsetTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offsetTime, allocator);
+    }
+
+    if (m_toUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_toUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commentHasBeenSet)
@@ -401,6 +410,22 @@ void ModifyLivePullStreamTaskRequest::SetOffsetTime(const int64_t& _offsetTime)
 bool ModifyLivePullStreamTaskRequest::OffsetTimeHasBeenSet() const
 {
     return m_offsetTimeHasBeenSet;
+}
+
+string ModifyLivePullStreamTaskRequest::GetToUrl() const
+{
+    return m_toUrl;
+}
+
+void ModifyLivePullStreamTaskRequest::SetToUrl(const string& _toUrl)
+{
+    m_toUrl = _toUrl;
+    m_toUrlHasBeenSet = true;
+}
+
+bool ModifyLivePullStreamTaskRequest::ToUrlHasBeenSet() const
+{
+    return m_toUrlHasBeenSet;
 }
 
 string ModifyLivePullStreamTaskRequest::GetComment() const

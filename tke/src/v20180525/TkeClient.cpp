@@ -1502,6 +1502,49 @@ TkeClient::CreatePrometheusTemplateOutcomeCallable TkeClient::CreatePrometheusTe
     return task->get_future();
 }
 
+TkeClient::CreateReservedInstancesOutcome TkeClient::CreateReservedInstances(const CreateReservedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateReservedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateReservedInstancesResponse rsp = CreateReservedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateReservedInstancesOutcome(rsp);
+        else
+            return CreateReservedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateReservedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateReservedInstancesAsync(const CreateReservedInstancesRequest& request, const CreateReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateReservedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateReservedInstancesOutcomeCallable TkeClient::CreateReservedInstancesCallable(const CreateReservedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateReservedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateReservedInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreateTKEEdgeClusterOutcome TkeClient::CreateTKEEdgeCluster(const CreateTKEEdgeClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTKEEdgeCluster");
@@ -2699,6 +2742,49 @@ TkeClient::DeletePrometheusTemplateSyncOutcomeCallable TkeClient::DeletePromethe
         [this, request]()
         {
             return this->DeletePrometheusTemplateSync(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteReservedInstancesOutcome TkeClient::DeleteReservedInstances(const DeleteReservedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReservedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReservedInstancesResponse rsp = DeleteReservedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReservedInstancesOutcome(rsp);
+        else
+            return DeleteReservedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReservedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteReservedInstancesAsync(const DeleteReservedInstancesRequest& request, const DeleteReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReservedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteReservedInstancesOutcomeCallable TkeClient::DeleteReservedInstancesCallable(const DeleteReservedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReservedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReservedInstances(request);
         }
     );
 
@@ -4899,6 +4985,135 @@ TkeClient::DescribeImagesOutcomeCallable TkeClient::DescribeImagesCallable(const
     return task->get_future();
 }
 
+TkeClient::DescribePodDeductionRateOutcome TkeClient::DescribePodDeductionRate(const DescribePodDeductionRateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePodDeductionRate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePodDeductionRateResponse rsp = DescribePodDeductionRateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePodDeductionRateOutcome(rsp);
+        else
+            return DescribePodDeductionRateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePodDeductionRateOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePodDeductionRateAsync(const DescribePodDeductionRateRequest& request, const DescribePodDeductionRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePodDeductionRate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePodDeductionRateOutcomeCallable TkeClient::DescribePodDeductionRateCallable(const DescribePodDeductionRateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePodDeductionRateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePodDeductionRate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribePodsBySpecOutcome TkeClient::DescribePodsBySpec(const DescribePodsBySpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePodsBySpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePodsBySpecResponse rsp = DescribePodsBySpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePodsBySpecOutcome(rsp);
+        else
+            return DescribePodsBySpecOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePodsBySpecOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePodsBySpecAsync(const DescribePodsBySpecRequest& request, const DescribePodsBySpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePodsBySpec(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePodsBySpecOutcomeCallable TkeClient::DescribePodsBySpecCallable(const DescribePodsBySpecRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePodsBySpecOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePodsBySpec(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribePostNodeResourcesOutcome TkeClient::DescribePostNodeResources(const DescribePostNodeResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePostNodeResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePostNodeResourcesResponse rsp = DescribePostNodeResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePostNodeResourcesOutcome(rsp);
+        else
+            return DescribePostNodeResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePostNodeResourcesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePostNodeResourcesAsync(const DescribePostNodeResourcesRequest& request, const DescribePostNodeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePostNodeResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePostNodeResourcesOutcomeCallable TkeClient::DescribePostNodeResourcesCallable(const DescribePostNodeResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePostNodeResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePostNodeResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribePrometheusAgentInstancesOutcome TkeClient::DescribePrometheusAgentInstances(const DescribePrometheusAgentInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusAgentInstances");
@@ -5716,6 +5931,49 @@ TkeClient::DescribePrometheusTemplatesOutcomeCallable TkeClient::DescribePrometh
     return task->get_future();
 }
 
+TkeClient::DescribeRIUtilizationDetailOutcome TkeClient::DescribeRIUtilizationDetail(const DescribeRIUtilizationDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRIUtilizationDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRIUtilizationDetailResponse rsp = DescribeRIUtilizationDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRIUtilizationDetailOutcome(rsp);
+        else
+            return DescribeRIUtilizationDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRIUtilizationDetailOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeRIUtilizationDetailAsync(const DescribeRIUtilizationDetailRequest& request, const DescribeRIUtilizationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRIUtilizationDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeRIUtilizationDetailOutcomeCallable TkeClient::DescribeRIUtilizationDetailCallable(const DescribeRIUtilizationDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRIUtilizationDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRIUtilizationDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeRegionsOutcome TkeClient::DescribeRegions(const DescribeRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRegions");
@@ -5752,6 +6010,49 @@ TkeClient::DescribeRegionsOutcomeCallable TkeClient::DescribeRegionsCallable(con
         [this, request]()
         {
             return this->DescribeRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeReservedInstancesOutcome TkeClient::DescribeReservedInstances(const DescribeReservedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReservedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReservedInstancesResponse rsp = DescribeReservedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReservedInstancesOutcome(rsp);
+        else
+            return DescribeReservedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReservedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeReservedInstancesAsync(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReservedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeReservedInstancesOutcomeCallable TkeClient::DescribeReservedInstancesCallable(const DescribeReservedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReservedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReservedInstances(request);
         }
     );
 
@@ -7823,6 +8124,49 @@ TkeClient::ModifyPrometheusTemplateOutcomeCallable TkeClient::ModifyPrometheusTe
     return task->get_future();
 }
 
+TkeClient::ModifyReservedInstanceScopeOutcome TkeClient::ModifyReservedInstanceScope(const ModifyReservedInstanceScopeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyReservedInstanceScope");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyReservedInstanceScopeResponse rsp = ModifyReservedInstanceScopeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyReservedInstanceScopeOutcome(rsp);
+        else
+            return ModifyReservedInstanceScopeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyReservedInstanceScopeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyReservedInstanceScopeAsync(const ModifyReservedInstanceScopeRequest& request, const ModifyReservedInstanceScopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyReservedInstanceScope(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyReservedInstanceScopeOutcomeCallable TkeClient::ModifyReservedInstanceScopeCallable(const ModifyReservedInstanceScopeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyReservedInstanceScopeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyReservedInstanceScope(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::RemoveNodeFromNodePoolOutcome TkeClient::RemoveNodeFromNodePool(const RemoveNodeFromNodePoolRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveNodeFromNodePool");
@@ -7859,6 +8203,49 @@ TkeClient::RemoveNodeFromNodePoolOutcomeCallable TkeClient::RemoveNodeFromNodePo
         [this, request]()
         {
             return this->RemoveNodeFromNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::RenewReservedInstancesOutcome TkeClient::RenewReservedInstances(const RenewReservedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewReservedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewReservedInstancesResponse rsp = RenewReservedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewReservedInstancesOutcome(rsp);
+        else
+            return RenewReservedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewReservedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::RenewReservedInstancesAsync(const RenewReservedInstancesRequest& request, const RenewReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewReservedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::RenewReservedInstancesOutcomeCallable TkeClient::RenewReservedInstancesCallable(const RenewReservedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewReservedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewReservedInstances(request);
         }
     );
 

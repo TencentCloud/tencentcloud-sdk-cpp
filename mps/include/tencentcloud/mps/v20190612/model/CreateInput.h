@@ -283,6 +283,27 @@ namespace TencentCloud
                      */
                     bool ResilientStreamHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的输入安全组 ID。 
+                     * @return SecurityGroupIds 绑定的输入安全组 ID。 
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置绑定的输入安全组 ID。 
+                     * @param _securityGroupIds 绑定的输入安全组 ID。 
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,6 +371,12 @@ namespace TencentCloud
                      */
                     ResilientStreamConf m_resilientStream;
                     bool m_resilientStreamHasBeenSet;
+
+                    /**
+                     * 绑定的输入安全组 ID。 
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

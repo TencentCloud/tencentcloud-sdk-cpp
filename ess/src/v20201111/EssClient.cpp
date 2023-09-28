@@ -1072,6 +1072,49 @@ EssClient::CreateOrganizationBatchSignUrlOutcomeCallable EssClient::CreateOrgani
     return task->get_future();
 }
 
+EssClient::CreateOrganizationInfoChangeUrlOutcome EssClient::CreateOrganizationInfoChangeUrl(const CreateOrganizationInfoChangeUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrganizationInfoChangeUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrganizationInfoChangeUrlResponse rsp = CreateOrganizationInfoChangeUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrganizationInfoChangeUrlOutcome(rsp);
+        else
+            return CreateOrganizationInfoChangeUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrganizationInfoChangeUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateOrganizationInfoChangeUrlAsync(const CreateOrganizationInfoChangeUrlRequest& request, const CreateOrganizationInfoChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrganizationInfoChangeUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateOrganizationInfoChangeUrlOutcomeCallable EssClient::CreateOrganizationInfoChangeUrlCallable(const CreateOrganizationInfoChangeUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrganizationInfoChangeUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrganizationInfoChangeUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreatePersonAuthCertificateImageOutcome EssClient::CreatePersonAuthCertificateImage(const CreatePersonAuthCertificateImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePersonAuthCertificateImage");

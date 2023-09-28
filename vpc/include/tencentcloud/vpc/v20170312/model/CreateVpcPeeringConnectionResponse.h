@@ -43,7 +43,30 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取对等连接ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PeeringConnectionId 对等连接ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPeeringConnectionId() const;
+
+                    /**
+                     * 判断参数 PeeringConnectionId 是否已赋值
+                     * @return PeeringConnectionId 是否已赋值
+                     * 
+                     */
+                    bool PeeringConnectionIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 对等连接ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_peeringConnectionId;
+                    bool m_peeringConnectionIdHasBeenSet;
 
                 };
             }

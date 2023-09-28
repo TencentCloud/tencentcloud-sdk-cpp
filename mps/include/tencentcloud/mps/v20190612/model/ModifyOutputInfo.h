@@ -242,6 +242,27 @@ namespace TencentCloud
                      */
                     bool MaxConcurrentHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的安全组 ID。 仅支持关联一组安全组。	
+                     * @return SecurityGroupIds 绑定的安全组 ID。 仅支持关联一组安全组。	
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置绑定的安全组 ID。 仅支持关联一组安全组。	
+                     * @param _securityGroupIds 绑定的安全组 ID。 仅支持关联一组安全组。	
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -298,6 +319,12 @@ namespace TencentCloud
                      */
                     uint64_t m_maxConcurrent;
                     bool m_maxConcurrentHasBeenSet;
+
+                    /**
+                     * 绑定的安全组 ID。 仅支持关联一组安全组。	
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

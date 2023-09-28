@@ -412,6 +412,31 @@ ResetTaskConfig：任务更新回调。
                     bool OffsetTimeHasBeenSet() const;
 
                     /**
+                     * 获取目标 Url。
+换目标地址，会断流重推到新地址。
+                     * @return ToUrl 目标 Url。
+换目标地址，会断流重推到新地址。
+                     * 
+                     */
+                    std::string GetToUrl() const;
+
+                    /**
+                     * 设置目标 Url。
+换目标地址，会断流重推到新地址。
+                     * @param _toUrl 目标 Url。
+换目标地址，会断流重推到新地址。
+                     * 
+                     */
+                    void SetToUrl(const std::string& _toUrl);
+
+                    /**
+                     * 判断参数 ToUrl 是否已赋值
+                     * @return ToUrl 是否已赋值
+                     * 
+                     */
+                    bool ToUrlHasBeenSet() const;
+
+                    /**
                      * 获取任务备注。
                      * @return Comment 任务备注。
                      * 
@@ -694,6 +719,13 @@ ResetTaskConfig：任务更新回调。
                      */
                     int64_t m_offsetTime;
                     bool m_offsetTimeHasBeenSet;
+
+                    /**
+                     * 目标 Url。
+换目标地址，会断流重推到新地址。
+                     */
+                    std::string m_toUrl;
+                    bool m_toUrlHasBeenSet;
 
                     /**
                      * 任务备注。

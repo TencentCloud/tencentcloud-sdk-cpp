@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/FrequencyLimitConfig.h>
+#include <tencentcloud/tcb/v20180608/model/CustomHeader.h>
 
 
 namespace TencentCloud
@@ -423,6 +424,31 @@ namespace TencentCloud
                      */
                     bool GatewayRoutePathMatchTypeHasBeenSet() const;
 
+                    /**
+                     * 获取安全网关自定义头部
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomHeader 安全网关自定义头部
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CustomHeader GetCustomHeader() const;
+
+                    /**
+                     * 设置安全网关自定义头部
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customHeader 安全网关自定义头部
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomHeader(const CustomHeader& _customHeader);
+
+                    /**
+                     * 判断参数 CustomHeader 是否已赋值
+                     * @return CustomHeader 是否已赋值
+                     * 
+                     */
+                    bool CustomHeaderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -530,6 +556,13 @@ namespace TencentCloud
                      */
                     std::string m_gatewayRoutePathMatchType;
                     bool m_gatewayRoutePathMatchTypeHasBeenSet;
+
+                    /**
+                     * 安全网关自定义头部
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CustomHeader m_customHeader;
+                    bool m_customHeaderHasBeenSet;
 
                 };
             }
