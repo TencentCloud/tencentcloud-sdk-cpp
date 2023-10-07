@@ -22,7 +22,9 @@
 using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
-CreateChannelOrganizationInfoChangeUrlRequest::CreateChannelOrganizationInfoChangeUrlRequest()
+CreateChannelOrganizationInfoChangeUrlRequest::CreateChannelOrganizationInfoChangeUrlRequest() :
+    m_agentHasBeenSet(false),
+    m_changeTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,23 @@ string CreateChannelOrganizationInfoChangeUrlRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_changeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChangeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_changeType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +59,37 @@ string CreateChannelOrganizationInfoChangeUrlRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+Agent CreateChannelOrganizationInfoChangeUrlRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateChannelOrganizationInfoChangeUrlRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateChannelOrganizationInfoChangeUrlRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
+}
+
+uint64_t CreateChannelOrganizationInfoChangeUrlRequest::GetChangeType() const
+{
+    return m_changeType;
+}
+
+void CreateChannelOrganizationInfoChangeUrlRequest::SetChangeType(const uint64_t& _changeType)
+{
+    m_changeType = _changeType;
+    m_changeTypeHasBeenSet = true;
+}
+
+bool CreateChannelOrganizationInfoChangeUrlRequest::ChangeTypeHasBeenSet() const
+{
+    return m_changeTypeHasBeenSet;
+}
 
 

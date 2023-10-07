@@ -31,7 +31,8 @@ GoodsDetailNew::GoodsDetailNew() :
     m_labelTypesHasBeenSet(false),
     m_labelCountsHasBeenSet(false),
     m_curDeadlineHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,16 @@ CoreInternalOutcome GoodsDetailNew::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceId") && !value["ResourceId"].IsNull())
+    {
+        if (!value["ResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GoodsDetailNew.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceId = string(value["ResourceId"].GetString());
+        m_resourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ void GoodsDetailNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -438,5 +457,21 @@ void GoodsDetailNew::SetInstanceId(const string& _instanceId)
 bool GoodsDetailNew::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string GoodsDetailNew::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void GoodsDetailNew::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool GoodsDetailNew::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 

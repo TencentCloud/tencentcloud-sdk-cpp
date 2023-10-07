@@ -43,7 +43,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取创建的企业信息变更链接。
+                     * @return Url 创建的企业信息变更链接。
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
+                    /**
+                     * 获取链接过期时间。链接7天有效。
+                     * @return ExpiredTime 链接过期时间。链接7天有效。
+                     * 
+                     */
+                    int64_t GetExpiredTime() const;
+
+                    /**
+                     * 判断参数 ExpiredTime 是否已赋值
+                     * @return ExpiredTime 是否已赋值
+                     * 
+                     */
+                    bool ExpiredTimeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 创建的企业信息变更链接。
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
+
+                    /**
+                     * 链接过期时间。链接7天有效。
+                     */
+                    int64_t m_expiredTime;
+                    bool m_expiredTimeHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/essbasic/v20210526/model/Agent.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,66 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @return Agent 关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @param _agent 关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     * 
+                     */
+                    bool AgentHasBeenSet() const;
+
+                    /**
+                     * 获取企业信息变更类型，可选类型如下：
+<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
+                     * @return ChangeType 企业信息变更类型，可选类型如下：
+<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
+                     * 
+                     */
+                    uint64_t GetChangeType() const;
+
+                    /**
+                     * 设置企业信息变更类型，可选类型如下：
+<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
+                     * @param _changeType 企业信息变更类型，可选类型如下：
+<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
+                     * 
+                     */
+                    void SetChangeType(const uint64_t& _changeType);
+
+                    /**
+                     * 判断参数 ChangeType 是否已赋值
+                     * @return ChangeType 是否已赋值
+                     * 
+                     */
+                    bool ChangeTypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
+
+                    /**
+                     * 企业信息变更类型，可选类型如下：
+<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
+                     */
+                    uint64_t m_changeType;
+                    bool m_changeTypeHasBeenSet;
 
                 };
             }

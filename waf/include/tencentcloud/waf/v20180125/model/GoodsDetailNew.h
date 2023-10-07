@@ -489,6 +489,31 @@ Saas 域名扩展包  sv_wsm_waf_domain
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceId 资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceId 资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -609,6 +634,13 @@ Saas 域名扩展包  sv_wsm_waf_domain
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
-CreateChannelOrganizationInfoChangeUrlResponse::CreateChannelOrganizationInfoChangeUrlResponse()
+CreateChannelOrganizationInfoChangeUrlResponse::CreateChannelOrganizationInfoChangeUrlResponse() :
+    m_urlHasBeenSet(false),
+    m_expiredTimeHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome CreateChannelOrganizationInfoChangeUrlResponse::Deserialize(
     }
 
 
+    if (rsp.HasMember("Url") && !rsp["Url"].IsNull())
+    {
+        if (!rsp["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(rsp["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpiredTime") && !rsp["ExpiredTime"].IsNull())
+    {
+        if (!rsp["ExpiredTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpiredTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiredTime = rsp["ExpiredTime"].GetInt64();
+        m_expiredTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string CreateChannelOrganizationInfoChangeUrlResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expiredTime, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string CreateChannelOrganizationInfoChangeUrlResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateChannelOrganizationInfoChangeUrlResponse::GetUrl() const
+{
+    return m_url;
+}
+
+bool CreateChannelOrganizationInfoChangeUrlResponse::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
+}
+
+int64_t CreateChannelOrganizationInfoChangeUrlResponse::GetExpiredTime() const
+{
+    return m_expiredTime;
+}
+
+bool CreateChannelOrganizationInfoChangeUrlResponse::ExpiredTimeHasBeenSet() const
+{
+    return m_expiredTimeHasBeenSet;
+}
 
 
