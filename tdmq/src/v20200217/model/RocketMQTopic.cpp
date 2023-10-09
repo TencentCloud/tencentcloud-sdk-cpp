@@ -27,7 +27,10 @@ RocketMQTopic::RocketMQTopic() :
     m_remarkHasBeenSet(false),
     m_partitionNumHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_lastUpdateTimeHasBeenSet(false),
+    m_subscriptionCountHasBeenSet(false),
+    m_subscriptionDataHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,46 @@ CoreInternalOutcome RocketMQTopic::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LastUpdateTime") && !value["LastUpdateTime"].IsNull())
+    {
+        if (!value["LastUpdateTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQTopic.LastUpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastUpdateTime = value["LastUpdateTime"].GetInt64();
+        m_lastUpdateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubscriptionCount") && !value["SubscriptionCount"].IsNull())
+    {
+        if (!value["SubscriptionCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQTopic.SubscriptionCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscriptionCount = value["SubscriptionCount"].GetInt64();
+        m_subscriptionCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubscriptionData") && !value["SubscriptionData"].IsNull())
+    {
+        if (!value["SubscriptionData"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RocketMQTopic.SubscriptionData` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubscriptionData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RocketMQSubscription item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_subscriptionData.push_back(item);
+        }
+        m_subscriptionDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +210,37 @@ void RocketMQTopic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_lastUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastUpdateTime, allocator);
+    }
+
+    if (m_subscriptionCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subscriptionCount, allocator);
+    }
+
+    if (m_subscriptionDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subscriptionData.begin(); itr != m_subscriptionData.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -282,5 +356,53 @@ void RocketMQTopic::SetUpdateTime(const uint64_t& _updateTime)
 bool RocketMQTopic::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+int64_t RocketMQTopic::GetLastUpdateTime() const
+{
+    return m_lastUpdateTime;
+}
+
+void RocketMQTopic::SetLastUpdateTime(const int64_t& _lastUpdateTime)
+{
+    m_lastUpdateTime = _lastUpdateTime;
+    m_lastUpdateTimeHasBeenSet = true;
+}
+
+bool RocketMQTopic::LastUpdateTimeHasBeenSet() const
+{
+    return m_lastUpdateTimeHasBeenSet;
+}
+
+int64_t RocketMQTopic::GetSubscriptionCount() const
+{
+    return m_subscriptionCount;
+}
+
+void RocketMQTopic::SetSubscriptionCount(const int64_t& _subscriptionCount)
+{
+    m_subscriptionCount = _subscriptionCount;
+    m_subscriptionCountHasBeenSet = true;
+}
+
+bool RocketMQTopic::SubscriptionCountHasBeenSet() const
+{
+    return m_subscriptionCountHasBeenSet;
+}
+
+vector<RocketMQSubscription> RocketMQTopic::GetSubscriptionData() const
+{
+    return m_subscriptionData;
+}
+
+void RocketMQTopic::SetSubscriptionData(const vector<RocketMQSubscription>& _subscriptionData)
+{
+    m_subscriptionData = _subscriptionData;
+    m_subscriptionDataHasBeenSet = true;
+}
+
+bool RocketMQTopic::SubscriptionDataHasBeenSet() const
+{
+    return m_subscriptionDataHasBeenSet;
 }
 

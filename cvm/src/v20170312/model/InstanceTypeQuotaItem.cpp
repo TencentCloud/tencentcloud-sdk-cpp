@@ -42,7 +42,8 @@ InstanceTypeQuotaItem::InstanceTypeQuotaItem() :
     m_fpgaHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_gpuCountHasBeenSet(false),
-    m_frequencyHasBeenSet(false)
+    m_frequencyHasBeenSet(false),
+    m_statusCategoryHasBeenSet(false)
 {
 }
 
@@ -295,6 +296,16 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
         m_frequencyHasBeenSet = true;
     }
 
+    if (value.HasMember("StatusCategory") && !value["StatusCategory"].IsNull())
+    {
+        if (!value["StatusCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.StatusCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusCategory = string(value["StatusCategory"].GetString());
+        m_statusCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -485,6 +496,14 @@ void InstanceTypeQuotaItem::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Frequency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_frequency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusCategory.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -840,5 +859,21 @@ void InstanceTypeQuotaItem::SetFrequency(const string& _frequency)
 bool InstanceTypeQuotaItem::FrequencyHasBeenSet() const
 {
     return m_frequencyHasBeenSet;
+}
+
+string InstanceTypeQuotaItem::GetStatusCategory() const
+{
+    return m_statusCategory;
+}
+
+void InstanceTypeQuotaItem::SetStatusCategory(const string& _statusCategory)
+{
+    m_statusCategory = _statusCategory;
+    m_statusCategoryHasBeenSet = true;
+}
+
+bool InstanceTypeQuotaItem::StatusCategoryHasBeenSet() const
+{
+    return m_statusCategoryHasBeenSet;
 }
 

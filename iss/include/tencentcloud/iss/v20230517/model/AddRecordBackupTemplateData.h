@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 新增录像上云模版返回数据
+                * 新增录像上云模板返回数据
                 */
                 class AddRecordBackupTemplateData : public AbstractModel
                 {

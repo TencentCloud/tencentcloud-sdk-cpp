@@ -41,6 +41,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowApproversRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowApproversResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationBatchSignUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationBatchSignUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowRequest.h>
@@ -178,6 +182,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateEmbedWebUrlResponse> ChannelCreateEmbedWebUrlOutcome;
                 typedef std::future<ChannelCreateEmbedWebUrlOutcome> ChannelCreateEmbedWebUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateEmbedWebUrlRequest&, ChannelCreateEmbedWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateEmbedWebUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateFlowApproversResponse> ChannelCreateFlowApproversOutcome;
+                typedef std::future<ChannelCreateFlowApproversOutcome> ChannelCreateFlowApproversOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateFlowApproversRequest&, ChannelCreateFlowApproversOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateFlowApproversAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateFlowByFilesResponse> ChannelCreateFlowByFilesOutcome;
                 typedef std::future<ChannelCreateFlowByFilesOutcome> ChannelCreateFlowByFilesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateFlowByFilesRequest&, ChannelCreateFlowByFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateFlowByFilesAsyncHandler;
@@ -199,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateMultiFlowSignQRCodeResponse> ChannelCreateMultiFlowSignQRCodeOutcome;
                 typedef std::future<ChannelCreateMultiFlowSignQRCodeOutcome> ChannelCreateMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateMultiFlowSignQRCodeRequest&, ChannelCreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateMultiFlowSignQRCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateOrganizationBatchSignUrlResponse> ChannelCreateOrganizationBatchSignUrlOutcome;
+                typedef std::future<ChannelCreateOrganizationBatchSignUrlOutcome> ChannelCreateOrganizationBatchSignUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateOrganizationBatchSignUrlRequest&, ChannelCreateOrganizationBatchSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateOrganizationBatchSignUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateOrganizationModifyQrCodeResponse> ChannelCreateOrganizationModifyQrCodeOutcome;
                 typedef std::future<ChannelCreateOrganizationModifyQrCodeOutcome> ChannelCreateOrganizationModifyQrCodeOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateOrganizationModifyQrCodeRequest&, ChannelCreateOrganizationModifyQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateOrganizationModifyQrCodeAsyncHandler;
@@ -436,6 +446,20 @@ namespace TencentCloud
                 ChannelCreateEmbedWebUrlOutcomeCallable ChannelCreateEmbedWebUrlCallable(const Model::ChannelCreateEmbedWebUrlRequest& request);
 
                 /**
+                 *适用场景：
+当通过模板或文件发起合同时，若未指定企业签署人信息，则可调用此接口动态补充签署人。同一签署人只允许补充一人，最终实际签署人取决于谁先领取合同完成签署。
+
+限制条件：
+1. 本企业（发起方企业）企业签署人仅支持通过企业名称+姓名+手机号进行补充。
+2. 个人签署人仅支持通过姓名+手机号进行补充。
+                 * @param req ChannelCreateFlowApproversRequest
+                 * @return ChannelCreateFlowApproversOutcome
+                 */
+                ChannelCreateFlowApproversOutcome ChannelCreateFlowApprovers(const Model::ChannelCreateFlowApproversRequest &request);
+                void ChannelCreateFlowApproversAsync(const Model::ChannelCreateFlowApproversRequest& request, const ChannelCreateFlowApproversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateFlowApproversOutcomeCallable ChannelCreateFlowApproversCallable(const Model::ChannelCreateFlowApproversRequest& request);
+
+                /**
                  *接口（ChannelCreateFlowByFiles）用于通过文件创建签署流程。此接口静默签能力不可直接使用，请联系客户经理申请使用
                  * @param req ChannelCreateFlowByFilesRequest
                  * @return ChannelCreateFlowByFilesOutcome
@@ -521,6 +545,20 @@ namespace TencentCloud
                 ChannelCreateMultiFlowSignQRCodeOutcome ChannelCreateMultiFlowSignQRCode(const Model::ChannelCreateMultiFlowSignQRCodeRequest &request);
                 void ChannelCreateMultiFlowSignQRCodeAsync(const Model::ChannelCreateMultiFlowSignQRCodeRequest& request, const ChannelCreateMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelCreateMultiFlowSignQRCodeOutcomeCallable ChannelCreateMultiFlowSignQRCodeCallable(const Model::ChannelCreateMultiFlowSignQRCodeRequest& request);
+
+                /**
+                 *通过此接口，创建小程序批量签署链接，可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。
+
+注：
+- 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方或者领取方。
+- 仅支持传入待签署或者待领取的合同，待填写暂不支持。
+- 员工批量签署，支持多种签名方式，包括手写签名、临摹签名、系统签名、个人印章，暂不支持签批控件
+                 * @param req ChannelCreateOrganizationBatchSignUrlRequest
+                 * @return ChannelCreateOrganizationBatchSignUrlOutcome
+                 */
+                ChannelCreateOrganizationBatchSignUrlOutcome ChannelCreateOrganizationBatchSignUrl(const Model::ChannelCreateOrganizationBatchSignUrlRequest &request);
+                void ChannelCreateOrganizationBatchSignUrlAsync(const Model::ChannelCreateOrganizationBatchSignUrlRequest& request, const ChannelCreateOrganizationBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateOrganizationBatchSignUrlOutcomeCallable ChannelCreateOrganizationBatchSignUrlCallable(const Model::ChannelCreateOrganizationBatchSignUrlRequest& request);
 
                 /**
                  *生成渠道子客编辑企业信息二维码

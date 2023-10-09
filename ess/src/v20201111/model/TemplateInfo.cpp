@@ -41,6 +41,7 @@ TemplateInfo::TemplateInfo() :
     m_previewUrlHasBeenSet(false),
     m_templateVersionHasBeenSet(false),
     m_publishedHasBeenSet(false),
+    m_shareTemplateIdHasBeenSet(false),
     m_templateSealsHasBeenSet(false),
     m_sealsHasBeenSet(false)
 {
@@ -307,6 +308,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_publishedHasBeenSet = true;
     }
 
+    if (value.HasMember("ShareTemplateId") && !value["ShareTemplateId"].IsNull())
+    {
+        if (!value["ShareTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.ShareTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shareTemplateId = string(value["ShareTemplateId"].GetString());
+        m_shareTemplateIdHasBeenSet = true;
+    }
+
     if (value.HasMember("TemplateSeals") && !value["TemplateSeals"].IsNull())
     {
         if (!value["TemplateSeals"].IsArray())
@@ -556,6 +567,14 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Published";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_published, allocator);
+    }
+
+    if (m_shareTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shareTemplateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templateSealsHasBeenSet)
@@ -909,6 +928,22 @@ void TemplateInfo::SetPublished(const bool& _published)
 bool TemplateInfo::PublishedHasBeenSet() const
 {
     return m_publishedHasBeenSet;
+}
+
+string TemplateInfo::GetShareTemplateId() const
+{
+    return m_shareTemplateId;
+}
+
+void TemplateInfo::SetShareTemplateId(const string& _shareTemplateId)
+{
+    m_shareTemplateId = _shareTemplateId;
+    m_shareTemplateIdHasBeenSet = true;
+}
+
+bool TemplateInfo::ShareTemplateIdHasBeenSet() const
+{
+    return m_shareTemplateIdHasBeenSet;
 }
 
 vector<SealInfo> TemplateInfo::GetTemplateSeals() const

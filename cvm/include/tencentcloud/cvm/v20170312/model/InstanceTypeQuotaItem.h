@@ -519,6 +519,31 @@ namespace TencentCloud
                      */
                     bool FrequencyHasBeenSet() const;
 
+                    /**
+                     * 获取描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br><li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br><li> WithoutStock：表示对应库存已经售罄
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusCategory 描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br><li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br><li> WithoutStock：表示对应库存已经售罄
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatusCategory() const;
+
+                    /**
+                     * 设置描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br><li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br><li> WithoutStock：表示对应库存已经售罄
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _statusCategory 描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br><li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br><li> WithoutStock：表示对应库存已经售罄
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatusCategory(const std::string& _statusCategory);
+
+                    /**
+                     * 判断参数 StatusCategory 是否已赋值
+                     * @return StatusCategory 是否已赋值
+                     * 
+                     */
+                    bool StatusCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -654,6 +679,13 @@ namespace TencentCloud
                      */
                     std::string m_frequency;
                     bool m_frequencyHasBeenSet;
+
+                    /**
+                     * 描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br><li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br><li> WithoutStock：表示对应库存已经售罄
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_statusCategory;
+                    bool m_statusCategoryHasBeenSet;
 
                 };
             }

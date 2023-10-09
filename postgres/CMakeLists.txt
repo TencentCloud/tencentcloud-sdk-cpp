@@ -54,6 +54,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeBackupOverviewRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeRegionsResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyBaseBackupExpireTimeResponse.h
+  include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceMajorVersionResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyBackupDownloadRestrictionRequest.h
   include/tencentcloud/postgres/v20170312/model/DBInstanceNetInfo.h
   include/tencentcloud/postgres/v20170312/model/BackupDownloadRestriction.h
@@ -169,6 +170,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/postgres/v20170312/model/DBNode.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameResponse.h
+  include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceMajorVersionRequest.h
   include/tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeBackupDownloadRestrictionResponse.h
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyDBInstanceRequest.h
@@ -278,6 +280,7 @@ set(postgres_src
   src/v20170312/model/DescribeBackupOverviewRequest.cpp
   src/v20170312/model/DescribeRegionsResponse.cpp
   src/v20170312/model/ModifyBaseBackupExpireTimeResponse.cpp
+  src/v20170312/model/UpgradeDBInstanceMajorVersionResponse.cpp
   src/v20170312/model/ModifyBackupDownloadRestrictionRequest.cpp
   src/v20170312/model/DBInstanceNetInfo.cpp
   src/v20170312/model/BackupDownloadRestriction.cpp
@@ -393,6 +396,7 @@ set(postgres_src
   src/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20170312/model/DBNode.cpp
   src/v20170312/model/ModifyDBInstanceNameResponse.cpp
+  src/v20170312/model/UpgradeDBInstanceMajorVersionRequest.cpp
   src/v20170312/model/CloseDBExtranetAccessResponse.cpp
   src/v20170312/model/DescribeBackupDownloadRestrictionResponse.cpp
   src/v20170312/model/CreateReadOnlyDBInstanceRequest.cpp

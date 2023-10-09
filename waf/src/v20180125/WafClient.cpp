@@ -1502,6 +1502,49 @@ WafClient::DescribeCCRuleListOutcomeCallable WafClient::DescribeCCRuleListCallab
     return task->get_future();
 }
 
+WafClient::DescribeCertificateVerifyResultOutcome WafClient::DescribeCertificateVerifyResult(const DescribeCertificateVerifyResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCertificateVerifyResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCertificateVerifyResultResponse rsp = DescribeCertificateVerifyResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCertificateVerifyResultOutcome(rsp);
+        else
+            return DescribeCertificateVerifyResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCertificateVerifyResultOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeCertificateVerifyResultAsync(const DescribeCertificateVerifyResultRequest& request, const DescribeCertificateVerifyResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCertificateVerifyResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeCertificateVerifyResultOutcomeCallable WafClient::DescribeCertificateVerifyResultCallable(const DescribeCertificateVerifyResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCertificateVerifyResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCertificateVerifyResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeCiphersDetailOutcome WafClient::DescribeCiphersDetail(const DescribeCiphersDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCiphersDetail");

@@ -34,7 +34,9 @@ DescribeRocketMQTopicMsgsRequest::DescribeRocketMQTopicMsgsRequest() :
     m_limitHasBeenSet(false),
     m_taskRequestIdHasBeenSet(false),
     m_queryDlqMsgHasBeenSet(false),
-    m_numOfLatestMsgHasBeenSet(false)
+    m_numOfLatestMsgHasBeenSet(false),
+    m_tagHasBeenSet(false),
+    m_queryDeadLetterMessageHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,22 @@ string DescribeRocketMQTopicMsgsRequest::ToJsonString() const
         string key = "NumOfLatestMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_numOfLatestMsg, allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryDeadLetterMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryDeadLetterMessage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryDeadLetterMessage, allocator);
     }
 
 
@@ -339,6 +357,38 @@ void DescribeRocketMQTopicMsgsRequest::SetNumOfLatestMsg(const int64_t& _numOfLa
 bool DescribeRocketMQTopicMsgsRequest::NumOfLatestMsgHasBeenSet() const
 {
     return m_numOfLatestMsgHasBeenSet;
+}
+
+string DescribeRocketMQTopicMsgsRequest::GetTag() const
+{
+    return m_tag;
+}
+
+void DescribeRocketMQTopicMsgsRequest::SetTag(const string& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool DescribeRocketMQTopicMsgsRequest::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
+}
+
+bool DescribeRocketMQTopicMsgsRequest::GetQueryDeadLetterMessage() const
+{
+    return m_queryDeadLetterMessage;
+}
+
+void DescribeRocketMQTopicMsgsRequest::SetQueryDeadLetterMessage(const bool& _queryDeadLetterMessage)
+{
+    m_queryDeadLetterMessage = _queryDeadLetterMessage;
+    m_queryDeadLetterMessageHasBeenSet = true;
+}
+
+bool DescribeRocketMQTopicMsgsRequest::QueryDeadLetterMessageHasBeenSet() const
+{
+    return m_queryDeadLetterMessageHasBeenSet;
 }
 
 

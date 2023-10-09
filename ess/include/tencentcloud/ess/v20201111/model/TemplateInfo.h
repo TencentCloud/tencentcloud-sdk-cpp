@@ -536,6 +536,31 @@ false-未发布
                     bool PublishedHasBeenSet() const;
 
                     /**
+                     * 获取分享来源的模板ID。用在集团账号子企业模板里
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShareTemplateId 分享来源的模板ID。用在集团账号子企业模板里
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetShareTemplateId() const;
+
+                    /**
+                     * 设置分享来源的模板ID。用在集团账号子企业模板里
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shareTemplateId 分享来源的模板ID。用在集团账号子企业模板里
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShareTemplateId(const std::string& _shareTemplateId);
+
+                    /**
+                     * 判断参数 ShareTemplateId 是否已赋值
+                     * @return ShareTemplateId 是否已赋值
+                     * 
+                     */
+                    bool ShareTemplateIdHasBeenSet() const;
+
+                    /**
                      * 获取模板内部指定的印章列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateSeals 模板内部指定的印章列表
@@ -720,6 +745,13 @@ false-未发布
                      */
                     bool m_published;
                     bool m_publishedHasBeenSet;
+
+                    /**
+                     * 分享来源的模板ID。用在集团账号子企业模板里
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_shareTemplateId;
+                    bool m_shareTemplateIdHasBeenSet;
 
                     /**
                      * 模板内部指定的印章列表

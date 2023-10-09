@@ -427,6 +427,49 @@ EssbasicClient::ChannelCreateEmbedWebUrlOutcomeCallable EssbasicClient::ChannelC
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateFlowApproversOutcome EssbasicClient::ChannelCreateFlowApprovers(const ChannelCreateFlowApproversRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateFlowApprovers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateFlowApproversResponse rsp = ChannelCreateFlowApproversResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateFlowApproversOutcome(rsp);
+        else
+            return ChannelCreateFlowApproversOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateFlowApproversOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateFlowApproversAsync(const ChannelCreateFlowApproversRequest& request, const ChannelCreateFlowApproversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateFlowApprovers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateFlowApproversOutcomeCallable EssbasicClient::ChannelCreateFlowApproversCallable(const ChannelCreateFlowApproversRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateFlowApproversOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateFlowApprovers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateFlowByFilesOutcome EssbasicClient::ChannelCreateFlowByFiles(const ChannelCreateFlowByFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateFlowByFiles");
@@ -721,6 +764,49 @@ EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcomeCallable EssbasicClient::
         [this, request]()
         {
             return this->ChannelCreateMultiFlowSignQRCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelCreateOrganizationBatchSignUrlOutcome EssbasicClient::ChannelCreateOrganizationBatchSignUrl(const ChannelCreateOrganizationBatchSignUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateOrganizationBatchSignUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateOrganizationBatchSignUrlResponse rsp = ChannelCreateOrganizationBatchSignUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateOrganizationBatchSignUrlOutcome(rsp);
+        else
+            return ChannelCreateOrganizationBatchSignUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateOrganizationBatchSignUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateOrganizationBatchSignUrlAsync(const ChannelCreateOrganizationBatchSignUrlRequest& request, const ChannelCreateOrganizationBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateOrganizationBatchSignUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateOrganizationBatchSignUrlOutcomeCallable EssbasicClient::ChannelCreateOrganizationBatchSignUrlCallable(const ChannelCreateOrganizationBatchSignUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateOrganizationBatchSignUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateOrganizationBatchSignUrl(request);
         }
     );
 

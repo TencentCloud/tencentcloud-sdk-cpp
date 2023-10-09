@@ -255,21 +255,21 @@ namespace TencentCloud
                     /**
                      * 获取死信查询时该值为true，只对Rocketmq有效
                      * @return QueryDlqMsg 死信查询时该值为true，只对Rocketmq有效
-                     * 
+                     * @deprecated
                      */
                     bool GetQueryDlqMsg() const;
 
                     /**
                      * 设置死信查询时该值为true，只对Rocketmq有效
                      * @param _queryDlqMsg 死信查询时该值为true，只对Rocketmq有效
-                     * 
+                     * @deprecated
                      */
                     void SetQueryDlqMsg(const bool& _queryDlqMsg);
 
                     /**
                      * 判断参数 QueryDlqMsg 是否已赋值
                      * @return QueryDlqMsg 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool QueryDlqMsgHasBeenSet() const;
 
@@ -293,6 +293,48 @@ namespace TencentCloud
                      * 
                      */
                     bool NumOfLatestMsgHasBeenSet() const;
+
+                    /**
+                     * 获取TAG表达式
+                     * @return Tag TAG表达式
+                     * 
+                     */
+                    std::string GetTag() const;
+
+                    /**
+                     * 设置TAG表达式
+                     * @param _tag TAG表达式
+                     * 
+                     */
+                    void SetTag(const std::string& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
+                    /**
+                     * 获取死信查询时该值为true，只对Rocketmq有效
+                     * @return QueryDeadLetterMessage 死信查询时该值为true，只对Rocketmq有效
+                     * 
+                     */
+                    bool GetQueryDeadLetterMessage() const;
+
+                    /**
+                     * 设置死信查询时该值为true，只对Rocketmq有效
+                     * @param _queryDeadLetterMessage 死信查询时该值为true，只对Rocketmq有效
+                     * 
+                     */
+                    void SetQueryDeadLetterMessage(const bool& _queryDeadLetterMessage);
+
+                    /**
+                     * 判断参数 QueryDeadLetterMessage 是否已赋值
+                     * @return QueryDeadLetterMessage 是否已赋值
+                     * 
+                     */
+                    bool QueryDeadLetterMessageHasBeenSet() const;
 
                 private:
 
@@ -367,6 +409,18 @@ namespace TencentCloud
                      */
                     int64_t m_numOfLatestMsg;
                     bool m_numOfLatestMsgHasBeenSet;
+
+                    /**
+                     * TAG表达式
+                     */
+                    std::string m_tag;
+                    bool m_tagHasBeenSet;
+
+                    /**
+                     * 死信查询时该值为true，只对Rocketmq有效
+                     */
+                    bool m_queryDeadLetterMessage;
+                    bool m_queryDeadLetterMessageHasBeenSet;
 
                 };
             }

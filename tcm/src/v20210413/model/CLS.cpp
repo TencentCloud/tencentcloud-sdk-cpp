@@ -24,7 +24,8 @@ CLS::CLS() :
     m_enableHasBeenSet(false),
     m_logSetHasBeenSet(false),
     m_topicHasBeenSet(false),
-    m_needDeleteHasBeenSet(false)
+    m_needDeleteHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CLS::Deserialize(const rapidjson::Value &value)
         m_needDeleteHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CLS.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CLS::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "NeedDelete";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needDelete, allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CLS::SetNeedDelete(const bool& _needDelete)
 bool CLS::NeedDeleteHasBeenSet() const
 {
     return m_needDeleteHasBeenSet;
+}
+
+string CLS::GetRegion() const
+{
+    return m_region;
+}
+
+void CLS::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool CLS::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

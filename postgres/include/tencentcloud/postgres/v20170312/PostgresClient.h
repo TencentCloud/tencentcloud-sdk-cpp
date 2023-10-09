@@ -201,6 +201,8 @@
 #include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceKernelVersionRequest.h>
 #include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceKernelVersionResponse.h>
+#include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceMajorVersionRequest.h>
+#include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceMajorVersionResponse.h>
 
 
 namespace TencentCloud
@@ -482,6 +484,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpgradeDBInstanceKernelVersionResponse> UpgradeDBInstanceKernelVersionOutcome;
                 typedef std::future<UpgradeDBInstanceKernelVersionOutcome> UpgradeDBInstanceKernelVersionOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::UpgradeDBInstanceKernelVersionRequest&, UpgradeDBInstanceKernelVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceKernelVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeDBInstanceMajorVersionResponse> UpgradeDBInstanceMajorVersionOutcome;
+                typedef std::future<UpgradeDBInstanceMajorVersionOutcome> UpgradeDBInstanceMajorVersionOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::UpgradeDBInstanceMajorVersionRequest&, UpgradeDBInstanceMajorVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceMajorVersionAsyncHandler;
 
 
 
@@ -1294,6 +1299,15 @@ namespace TencentCloud
                 UpgradeDBInstanceKernelVersionOutcome UpgradeDBInstanceKernelVersion(const Model::UpgradeDBInstanceKernelVersionRequest &request);
                 void UpgradeDBInstanceKernelVersionAsync(const Model::UpgradeDBInstanceKernelVersionRequest& request, const UpgradeDBInstanceKernelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeDBInstanceKernelVersionOutcomeCallable UpgradeDBInstanceKernelVersionCallable(const Model::UpgradeDBInstanceKernelVersionRequest& request);
+
+                /**
+                 *本接口（UpgradeDBInstanceMajorVersion）用于升级实例内核大版本，例如从PostgreSQL 12升级到PostgreSQL 15。
+                 * @param req UpgradeDBInstanceMajorVersionRequest
+                 * @return UpgradeDBInstanceMajorVersionOutcome
+                 */
+                UpgradeDBInstanceMajorVersionOutcome UpgradeDBInstanceMajorVersion(const Model::UpgradeDBInstanceMajorVersionRequest &request);
+                void UpgradeDBInstanceMajorVersionAsync(const Model::UpgradeDBInstanceMajorVersionRequest& request, const UpgradeDBInstanceMajorVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeDBInstanceMajorVersionOutcomeCallable UpgradeDBInstanceMajorVersionCallable(const Model::UpgradeDBInstanceMajorVersionRequest& request);
 
             };
         }

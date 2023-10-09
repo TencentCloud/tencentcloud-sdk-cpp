@@ -23,6 +23,7 @@ using namespace std;
 IndexMetaField::IndexMetaField() :
     m_indexTypeHasBeenSet(false),
     m_indexNameHasBeenSet(false),
+    m_indexMetaJsonHasBeenSet(false),
     m_indexStatusHasBeenSet(false),
     m_indexStorageHasBeenSet(false),
     m_indexCreateTimeHasBeenSet(false),
@@ -61,6 +62,16 @@ CoreInternalOutcome IndexMetaField::Deserialize(const rapidjson::Value &value)
         }
         m_indexName = string(value["IndexName"].GetString());
         m_indexNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IndexMetaJson") && !value["IndexMetaJson"].IsNull())
+    {
+        if (!value["IndexMetaJson"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.IndexMetaJson` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexMetaJson = string(value["IndexMetaJson"].GetString());
+        m_indexMetaJsonHasBeenSet = true;
     }
 
     if (value.HasMember("IndexStatus") && !value["IndexStatus"].IsNull())
@@ -237,6 +248,14 @@ void IndexMetaField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_indexName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_indexMetaJsonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexMetaJson";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexMetaJson.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_indexStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -376,6 +395,22 @@ void IndexMetaField::SetIndexName(const string& _indexName)
 bool IndexMetaField::IndexNameHasBeenSet() const
 {
     return m_indexNameHasBeenSet;
+}
+
+string IndexMetaField::GetIndexMetaJson() const
+{
+    return m_indexMetaJson;
+}
+
+void IndexMetaField::SetIndexMetaJson(const string& _indexMetaJson)
+{
+    m_indexMetaJson = _indexMetaJson;
+    m_indexMetaJsonHasBeenSet = true;
+}
+
+bool IndexMetaField::IndexMetaJsonHasBeenSet() const
+{
+    return m_indexMetaJsonHasBeenSet;
 }
 
 string IndexMetaField::GetIndexStatus() const

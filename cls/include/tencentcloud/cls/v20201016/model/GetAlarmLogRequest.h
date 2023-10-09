@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询的日志的起始时间，Unix时间戳，单位ms
-                     * @return From 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * 获取要查询的执行详情的起始时间，Unix时间戳，单位ms
+                     * @return From 要查询的执行详情的起始时间，Unix时间戳，单位ms
                      * 
                      */
                     int64_t GetFrom() const;
 
                     /**
-                     * 设置要查询的日志的起始时间，Unix时间戳，单位ms
-                     * @param _from 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * 设置要查询的执行详情的起始时间，Unix时间戳，单位ms
+                     * @param _from 要查询的执行详情的起始时间，Unix时间戳，单位ms
                      * 
                      */
                     void SetFrom(const int64_t& _from);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取要查询的日志的结束时间，Unix时间戳，单位ms
-                     * @return To 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * 获取要查询的执行详情的结束时间，Unix时间戳，单位ms
+                     * @return To 要查询的执行详情的结束时间，Unix时间戳，单位ms
                      * 
                      */
                     int64_t GetTo() const;
 
                     /**
-                     * 设置要查询的日志的结束时间，Unix时间戳，单位ms
-                     * @param _to 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * 设置要查询的执行详情的结束时间，Unix时间戳，单位ms
+                     * @param _to 要查询的执行详情的结束时间，Unix时间戳，单位ms
                      * 
                      */
                     void SetTo(const int64_t& _to);
@@ -85,15 +85,27 @@ namespace TencentCloud
                     bool ToHasBeenSet() const;
 
                     /**
-                     * 获取查询语句，语句长度最大为1024
-                     * @return Query 查询语句，语句长度最大为1024
+                     * 获取查询过滤条件，例如：
+- 按告警策略ID查询：`alert_id:"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971"`
+- 按监控对象ID查询：`monitored_object:"823d8bfa-76a7-xxxx-8399-8cda74d4009b") `
+- 按告警策略ID及监控对象ID查询：`alert_id:"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971" AND monitored_object:"823d8bfa-76a7-xxxx-8399-8cda74d4009b")`
+                     * @return Query 查询过滤条件，例如：
+- 按告警策略ID查询：`alert_id:"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971"`
+- 按监控对象ID查询：`monitored_object:"823d8bfa-76a7-xxxx-8399-8cda74d4009b") `
+- 按告警策略ID及监控对象ID查询：`alert_id:"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971" AND monitored_object:"823d8bfa-76a7-xxxx-8399-8cda74d4009b")`
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询语句，语句长度最大为1024
-                     * @param _query 查询语句，语句长度最大为1024
+                     * 设置查询过滤条件，例如：
+- 按告警策略ID查询：`alert_id:"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971"`
+- 按监控对象ID查询：`monitored_object:"823d8bfa-76a7-xxxx-8399-8cda74d4009b") `
+- 按告警策略ID及监控对象ID查询：`alert_id:"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971" AND monitored_object:"823d8bfa-76a7-xxxx-8399-8cda74d4009b")`
+                     * @param _query 查询过滤条件，例如：
+- 按告警策略ID查询：`alert_id:"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971"`
+- 按监控对象ID查询：`monitored_object:"823d8bfa-76a7-xxxx-8399-8cda74d4009b") `
+- 按告警策略ID及监控对象ID查询：`alert_id:"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971" AND monitored_object:"823d8bfa-76a7-xxxx-8399-8cda74d4009b")`
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -106,15 +118,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取单次查询返回的日志条数，最大值为1000
-                     * @return Limit 单次查询返回的日志条数，最大值为1000
+                     * 获取单次查询返回的执行详情条数，最大值为1000
+                     * @return Limit 单次查询返回的执行详情条数，最大值为1000
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次查询返回的日志条数，最大值为1000
-                     * @param _limit 单次查询返回的日志条数，最大值为1000
+                     * 设置单次查询返回的执行详情条数，最大值为1000
+                     * @param _limit 单次查询返回的执行详情条数，最大值为1000
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +139,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
-                     * @return Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 获取加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情
+                     * @return Context 加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情
                      * 
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
-                     * @param _context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 设置加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情
+                     * @param _context 加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情
                      * 
                      */
                     void SetContext(const std::string& _context);
@@ -148,15 +160,15 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-                     * @return Sort 日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 获取执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * @return Sort 执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
                      * 
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-                     * @param _sort 日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 设置执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * @param _sort 执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
                      * 
                      */
                     void SetSort(const std::string& _sort);
@@ -169,15 +181,15 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
-                     * @return UseNewAnalysis 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * 获取如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效
+                     * @return UseNewAnalysis 如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效
                      * 
                      */
                     bool GetUseNewAnalysis() const;
 
                     /**
-                     * 设置为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
-                     * @param _useNewAnalysis 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * 设置如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效
+                     * @param _useNewAnalysis 如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效
                      * 
                      */
                     void SetUseNewAnalysis(const bool& _useNewAnalysis);
@@ -192,43 +204,46 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * 要查询的执行详情的起始时间，Unix时间戳，单位ms
                      */
                     int64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * 要查询的执行详情的结束时间，Unix时间戳，单位ms
                      */
                     int64_t m_to;
                     bool m_toHasBeenSet;
 
                     /**
-                     * 查询语句，语句长度最大为1024
+                     * 查询过滤条件，例如：
+- 按告警策略ID查询：`alert_id:"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971"`
+- 按监控对象ID查询：`monitored_object:"823d8bfa-76a7-xxxx-8399-8cda74d4009b") `
+- 按告警策略ID及监控对象ID查询：`alert_id:"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971" AND monitored_object:"823d8bfa-76a7-xxxx-8399-8cda74d4009b")`
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 单次查询返回的日志条数，最大值为1000
+                     * 单次查询返回的执行详情条数，最大值为1000
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * 如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效
                      */
                     bool m_useNewAnalysis;
                     bool m_useNewAnalysisHasBeenSet;

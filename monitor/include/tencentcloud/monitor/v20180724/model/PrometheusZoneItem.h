@@ -151,6 +151,31 @@ namespace TencentCloud
                      */
                     bool ZoneNameHasBeenSet() const;
 
+                    /**
+                     * 获取可用区资源状态(0:资源不足，不可使用；1:资源足够)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneResourceState 可用区资源状态(0:资源不足，不可使用；1:资源足够)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetZoneResourceState() const;
+
+                    /**
+                     * 设置可用区资源状态(0:资源不足，不可使用；1:资源足够)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneResourceState 可用区资源状态(0:资源不足，不可使用；1:资源足够)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneResourceState(const int64_t& _zoneResourceState);
+
+                    /**
+                     * 判断参数 ZoneResourceState 是否已赋值
+                     * @return ZoneResourceState 是否已赋值
+                     * 
+                     */
+                    bool ZoneResourceStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +207,13 @@ namespace TencentCloud
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 可用区资源状态(0:资源不足，不可使用；1:资源足够)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_zoneResourceState;
+                    bool m_zoneResourceStateHasBeenSet;
 
                 };
             }

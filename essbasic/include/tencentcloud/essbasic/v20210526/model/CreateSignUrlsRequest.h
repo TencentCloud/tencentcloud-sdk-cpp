@@ -156,6 +156,7 @@ namespace TencentCloud
 - NOT_CHANNEL：非第三方平台子客企业企业
 - PERSON：个人
 - FOLLOWER：关注方，目前是合同抄送方
+- RECIPIENT：获取RecipientId对应的签署链接，可用于生成动态签署人补充链接
                      * @return GenerateType 签署链接生成类型，可以选择的类型如下
 
 - ALL：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接(默认类型)
@@ -163,6 +164,7 @@ namespace TencentCloud
 - NOT_CHANNEL：非第三方平台子客企业企业
 - PERSON：个人
 - FOLLOWER：关注方，目前是合同抄送方
+- RECIPIENT：获取RecipientId对应的签署链接，可用于生成动态签署人补充链接
                      * 
                      */
                     std::string GetGenerateType() const;
@@ -175,6 +177,7 @@ namespace TencentCloud
 - NOT_CHANNEL：非第三方平台子客企业企业
 - PERSON：个人
 - FOLLOWER：关注方，目前是合同抄送方
+- RECIPIENT：获取RecipientId对应的签署链接，可用于生成动态签署人补充链接
                      * @param _generateType 签署链接生成类型，可以选择的类型如下
 
 - ALL：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接(默认类型)
@@ -182,6 +185,7 @@ namespace TencentCloud
 - NOT_CHANNEL：非第三方平台子客企业企业
 - PERSON：个人
 - FOLLOWER：关注方，目前是合同抄送方
+- RECIPIENT：获取RecipientId对应的签署链接，可用于生成动态签署人补充链接
                      * 
                      */
                     void SetGenerateType(const std::string& _generateType);
@@ -411,15 +415,15 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool HidesHasBeenSet() const;
 
                     /**
-                     * 获取签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致
-                     * @return RecipientIds 签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致
+                     * 获取签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致并且一一对应
+                     * @return RecipientIds 签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致并且一一对应
                      * 
                      */
                     std::vector<std::string> GetRecipientIds() const;
 
                     /**
-                     * 设置签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致
-                     * @param _recipientIds 签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致
+                     * 设置签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致并且一一对应
+                     * @param _recipientIds 签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致并且一一对应
                      * 
                      */
                     void SetRecipientIds(const std::vector<std::string>& _recipientIds);
@@ -470,6 +474,7 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
 - NOT_CHANNEL：非第三方平台子客企业企业
 - PERSON：个人
 - FOLLOWER：关注方，目前是合同抄送方
+- RECIPIENT：获取RecipientId对应的签署链接，可用于生成动态签署人补充链接
                      */
                     std::string m_generateType;
                     bool m_generateTypeHasBeenSet;
@@ -536,7 +541,7 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool m_hidesHasBeenSet;
 
                     /**
-                     * 签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致
+                     * 签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致并且一一对应
                      */
                     std::vector<std::string> m_recipientIds;
                     bool m_recipientIdsHasBeenSet;

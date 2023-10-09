@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/RocketMQSubscription.h>
 
 
 namespace TencentCloud
@@ -197,6 +198,81 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取最后写入时间，单位为秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastUpdateTime 最后写入时间，单位为秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLastUpdateTime() const;
+
+                    /**
+                     * 设置最后写入时间，单位为秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastUpdateTime 最后写入时间，单位为秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastUpdateTime(const int64_t& _lastUpdateTime);
+
+                    /**
+                     * 判断参数 LastUpdateTime 是否已赋值
+                     * @return LastUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool LastUpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取订阅数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubscriptionCount 订阅数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSubscriptionCount() const;
+
+                    /**
+                     * 设置订阅数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subscriptionCount 订阅数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubscriptionCount(const int64_t& _subscriptionCount);
+
+                    /**
+                     * 判断参数 SubscriptionCount 是否已赋值
+                     * @return SubscriptionCount 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionCountHasBeenSet() const;
+
+                    /**
+                     * 获取订阅关系列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubscriptionData 订阅关系列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<RocketMQSubscription> GetSubscriptionData() const;
+
+                    /**
+                     * 设置订阅关系列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subscriptionData 订阅关系列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubscriptionData(const std::vector<RocketMQSubscription>& _subscriptionData);
+
+                    /**
+                     * 判断参数 SubscriptionData 是否已赋值
+                     * @return SubscriptionData 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +317,27 @@ namespace TencentCloud
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 最后写入时间，单位为秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_lastUpdateTime;
+                    bool m_lastUpdateTimeHasBeenSet;
+
+                    /**
+                     * 订阅数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_subscriptionCount;
+                    bool m_subscriptionCountHasBeenSet;
+
+                    /**
+                     * 订阅关系列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RocketMQSubscription> m_subscriptionData;
+                    bool m_subscriptionDataHasBeenSet;
 
                 };
             }

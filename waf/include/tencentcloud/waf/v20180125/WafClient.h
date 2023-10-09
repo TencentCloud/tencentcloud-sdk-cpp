@@ -91,6 +91,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeCCRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCCRuleListRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCCRuleListResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeCertificateVerifyResultRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeCertificateVerifyResultResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCiphersDetailRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCiphersDetailResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCustomRuleListRequest.h>
@@ -359,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCCRuleListResponse> DescribeCCRuleListOutcome;
                 typedef std::future<DescribeCCRuleListOutcome> DescribeCCRuleListOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeCCRuleListRequest&, DescribeCCRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCertificateVerifyResultResponse> DescribeCertificateVerifyResultOutcome;
+                typedef std::future<DescribeCertificateVerifyResultOutcome> DescribeCertificateVerifyResultOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeCertificateVerifyResultRequest&, DescribeCertificateVerifyResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateVerifyResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCiphersDetailResponse> DescribeCiphersDetailOutcome;
                 typedef std::future<DescribeCiphersDetailOutcome> DescribeCiphersDetailOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeCiphersDetailRequest&, DescribeCiphersDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCiphersDetailAsyncHandler;
@@ -900,6 +905,15 @@ namespace TencentCloud
                 DescribeCCRuleListOutcome DescribeCCRuleList(const Model::DescribeCCRuleListRequest &request);
                 void DescribeCCRuleListAsync(const Model::DescribeCCRuleListRequest& request, const DescribeCCRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCCRuleListOutcomeCallable DescribeCCRuleListCallable(const Model::DescribeCCRuleListRequest& request);
+
+                /**
+                 *获取证书的检查结果
+                 * @param req DescribeCertificateVerifyResultRequest
+                 * @return DescribeCertificateVerifyResultOutcome
+                 */
+                DescribeCertificateVerifyResultOutcome DescribeCertificateVerifyResult(const Model::DescribeCertificateVerifyResultRequest &request);
+                void DescribeCertificateVerifyResultAsync(const Model::DescribeCertificateVerifyResultRequest& request, const DescribeCertificateVerifyResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCertificateVerifyResultOutcomeCallable DescribeCertificateVerifyResultCallable(const Model::DescribeCertificateVerifyResultRequest& request);
 
                 /**
                  *Saas型WAF接入查询加密套件信息

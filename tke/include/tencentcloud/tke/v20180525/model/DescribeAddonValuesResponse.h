@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数列表，如果addon已安装，会使用已设置的的参数做渲染，是一个json格式的字符串
-                     * @return Values 参数列表，如果addon已安装，会使用已设置的的参数做渲染，是一个json格式的字符串
+                     * 获取参数列表，如果addon已安装，会使用已设置的参数做渲染，是一个json格式的字符串
+                     * @return Values 参数列表，如果addon已安装，会使用已设置的参数做渲染，是一个json格式的字符串
                      * 
                      */
                     std::string GetValues() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数列表，如果addon已安装，会使用已设置的的参数做渲染，是一个json格式的字符串
+                     * 参数列表，如果addon已安装，会使用已设置的参数做渲染，是一个json格式的字符串
                      */
                     std::string m_values;
                     bool m_valuesHasBeenSet;

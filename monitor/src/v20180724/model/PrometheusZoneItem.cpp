@@ -25,7 +25,8 @@ PrometheusZoneItem::PrometheusZoneItem() :
     m_zoneIdHasBeenSet(false),
     m_zoneStateHasBeenSet(false),
     m_regionIdHasBeenSet(false),
-    m_zoneNameHasBeenSet(false)
+    m_zoneNameHasBeenSet(false),
+    m_zoneResourceStateHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome PrometheusZoneItem::Deserialize(const rapidjson::Value &valu
         m_zoneNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneResourceState") && !value["ZoneResourceState"].IsNull())
+    {
+        if (!value["ZoneResourceState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusZoneItem.ZoneResourceState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneResourceState = value["ZoneResourceState"].GetInt64();
+        m_zoneResourceStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void PrometheusZoneItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneResourceStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneResourceState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneResourceState, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void PrometheusZoneItem::SetZoneName(const string& _zoneName)
 bool PrometheusZoneItem::ZoneNameHasBeenSet() const
 {
     return m_zoneNameHasBeenSet;
+}
+
+int64_t PrometheusZoneItem::GetZoneResourceState() const
+{
+    return m_zoneResourceState;
+}
+
+void PrometheusZoneItem::SetZoneResourceState(const int64_t& _zoneResourceState)
+{
+    m_zoneResourceState = _zoneResourceState;
+    m_zoneResourceStateHasBeenSet = true;
+}
+
+bool PrometheusZoneItem::ZoneResourceStateHasBeenSet() const
+{
+    return m_zoneResourceStateHasBeenSet;
 }
 

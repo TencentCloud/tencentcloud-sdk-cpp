@@ -130,6 +130,31 @@ namespace TencentCloud
                      */
                     bool NeedDeleteHasBeenSet() const;
 
+                    /**
+                     * 获取cls 主题创建的地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region cls 主题创建的地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置cls 主题创建的地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _region cls 主题创建的地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +180,13 @@ namespace TencentCloud
                      */
                     bool m_needDelete;
                     bool m_needDeleteHasBeenSet;
+
+                    /**
+                     * cls 主题创建的地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

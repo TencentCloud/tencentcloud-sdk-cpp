@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取视频剪辑的起始偏移时间偏移，单位：秒。
-                     * @return StartTimeOffset 视频剪辑的起始偏移时间偏移，单位：秒。
+                     * 获取视频剪辑起始的偏移时间，单位：秒。
+                     * @return StartTimeOffset 视频剪辑起始的偏移时间，单位：秒。
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置视频剪辑的起始偏移时间偏移，单位：秒。
-                     * @param _startTimeOffset 视频剪辑的起始偏移时间偏移，单位：秒。
+                     * 设置视频剪辑起始的偏移时间，单位：秒。
+                     * @param _startTimeOffset 视频剪辑起始的偏移时间，单位：秒。
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取视频剪辑的起始结束时间偏移，单位：秒。
-                     * @return EndTimeOffset 视频剪辑的起始结束时间偏移，单位：秒。
+                     * 获取视频剪辑结束的偏移时间，单位：秒。
+                     * @return EndTimeOffset 视频剪辑结束的偏移时间，单位：秒。
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置视频剪辑的起始结束时间偏移，单位：秒。
-                     * @param _endTimeOffset 视频剪辑的起始结束时间偏移，单位：秒。
+                     * 设置视频剪辑结束的偏移时间，单位：秒。
+                     * @param _endTimeOffset 视频剪辑结束的偏移时间，单位：秒。
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 视频剪辑的起始偏移时间偏移，单位：秒。
+                     * 视频剪辑起始的偏移时间，单位：秒。
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * 视频剪辑的起始结束时间偏移，单位：秒。
+                     * 视频剪辑结束的偏移时间，单位：秒。
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

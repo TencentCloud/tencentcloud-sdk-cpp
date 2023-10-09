@@ -556,6 +556,135 @@ DlcClient::CancelTaskOutcomeCallable DlcClient::CancelTaskCallable(const CancelT
     return task->get_future();
 }
 
+DlcClient::CheckDataEngineConfigPairsValidityOutcome DlcClient::CheckDataEngineConfigPairsValidity(const CheckDataEngineConfigPairsValidityRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckDataEngineConfigPairsValidity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckDataEngineConfigPairsValidityResponse rsp = CheckDataEngineConfigPairsValidityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckDataEngineConfigPairsValidityOutcome(rsp);
+        else
+            return CheckDataEngineConfigPairsValidityOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckDataEngineConfigPairsValidityOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckDataEngineConfigPairsValidityAsync(const CheckDataEngineConfigPairsValidityRequest& request, const CheckDataEngineConfigPairsValidityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckDataEngineConfigPairsValidity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CheckDataEngineConfigPairsValidityOutcomeCallable DlcClient::CheckDataEngineConfigPairsValidityCallable(const CheckDataEngineConfigPairsValidityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckDataEngineConfigPairsValidityOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckDataEngineConfigPairsValidity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CheckDataEngineImageCanBeRollbackOutcome DlcClient::CheckDataEngineImageCanBeRollback(const CheckDataEngineImageCanBeRollbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckDataEngineImageCanBeRollback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckDataEngineImageCanBeRollbackResponse rsp = CheckDataEngineImageCanBeRollbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckDataEngineImageCanBeRollbackOutcome(rsp);
+        else
+            return CheckDataEngineImageCanBeRollbackOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckDataEngineImageCanBeRollbackOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckDataEngineImageCanBeRollbackAsync(const CheckDataEngineImageCanBeRollbackRequest& request, const CheckDataEngineImageCanBeRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckDataEngineImageCanBeRollback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CheckDataEngineImageCanBeRollbackOutcomeCallable DlcClient::CheckDataEngineImageCanBeRollbackCallable(const CheckDataEngineImageCanBeRollbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckDataEngineImageCanBeRollbackOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckDataEngineImageCanBeRollback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CheckDataEngineImageCanBeUpgradeOutcome DlcClient::CheckDataEngineImageCanBeUpgrade(const CheckDataEngineImageCanBeUpgradeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckDataEngineImageCanBeUpgrade");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckDataEngineImageCanBeUpgradeResponse rsp = CheckDataEngineImageCanBeUpgradeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckDataEngineImageCanBeUpgradeOutcome(rsp);
+        else
+            return CheckDataEngineImageCanBeUpgradeOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckDataEngineImageCanBeUpgradeOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckDataEngineImageCanBeUpgradeAsync(const CheckDataEngineImageCanBeUpgradeRequest& request, const CheckDataEngineImageCanBeUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckDataEngineImageCanBeUpgrade(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CheckDataEngineImageCanBeUpgradeOutcomeCallable DlcClient::CheckDataEngineImageCanBeUpgradeCallable(const CheckDataEngineImageCanBeUpgradeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckDataEngineImageCanBeUpgradeOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckDataEngineImageCanBeUpgrade(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CheckLockMetaDataOutcome DlcClient::CheckLockMetaData(const CheckLockMetaDataRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckLockMetaData");
@@ -1545,6 +1674,49 @@ DlcClient::CreateWorkGroupOutcomeCallable DlcClient::CreateWorkGroupCallable(con
     return task->get_future();
 }
 
+DlcClient::DeleteDataEngineOutcome DlcClient::DeleteDataEngine(const DeleteDataEngineRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDataEngine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDataEngineResponse rsp = DeleteDataEngineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDataEngineOutcome(rsp);
+        else
+            return DeleteDataEngineOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDataEngineOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteDataEngineAsync(const DeleteDataEngineRequest& request, const DeleteDataEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDataEngine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DeleteDataEngineOutcomeCallable DlcClient::DeleteDataEngineCallable(const DeleteDataEngineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDataEngineOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDataEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DeleteNotebookSessionOutcome DlcClient::DeleteNotebookSession(const DeleteNotebookSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteNotebookSession");
@@ -1968,6 +2140,135 @@ DlcClient::DescribeDMSTablesOutcomeCallable DlcClient::DescribeDMSTablesCallable
         [this, request]()
         {
             return this->DescribeDMSTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeDataEngineOutcome DlcClient::DescribeDataEngine(const DescribeDataEngineRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataEngine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataEngineResponse rsp = DescribeDataEngineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataEngineOutcome(rsp);
+        else
+            return DescribeDataEngineOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataEngineOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDataEngineAsync(const DescribeDataEngineRequest& request, const DescribeDataEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataEngine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDataEngineOutcomeCallable DlcClient::DescribeDataEngineCallable(const DescribeDataEngineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataEngineOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeDataEngineImageVersionsOutcome DlcClient::DescribeDataEngineImageVersions(const DescribeDataEngineImageVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataEngineImageVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataEngineImageVersionsResponse rsp = DescribeDataEngineImageVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataEngineImageVersionsOutcome(rsp);
+        else
+            return DescribeDataEngineImageVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataEngineImageVersionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDataEngineImageVersionsAsync(const DescribeDataEngineImageVersionsRequest& request, const DescribeDataEngineImageVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataEngineImageVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDataEngineImageVersionsOutcomeCallable DlcClient::DescribeDataEngineImageVersionsCallable(const DescribeDataEngineImageVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataEngineImageVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataEngineImageVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeDataEnginePythonSparkImagesOutcome DlcClient::DescribeDataEnginePythonSparkImages(const DescribeDataEnginePythonSparkImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataEnginePythonSparkImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataEnginePythonSparkImagesResponse rsp = DescribeDataEnginePythonSparkImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataEnginePythonSparkImagesOutcome(rsp);
+        else
+            return DescribeDataEnginePythonSparkImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataEnginePythonSparkImagesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDataEnginePythonSparkImagesAsync(const DescribeDataEnginePythonSparkImagesRequest& request, const DescribeDataEnginePythonSparkImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataEnginePythonSparkImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDataEnginePythonSparkImagesOutcomeCallable DlcClient::DescribeDataEnginePythonSparkImagesCallable(const DescribeDataEnginePythonSparkImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataEnginePythonSparkImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataEnginePythonSparkImages(request);
         }
     );
 
@@ -3050,6 +3351,92 @@ DlcClient::DescribeTasksOutcomeCallable DlcClient::DescribeTasksCallable(const D
     return task->get_future();
 }
 
+DlcClient::DescribeUserDataEngineConfigOutcome DlcClient::DescribeUserDataEngineConfig(const DescribeUserDataEngineConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserDataEngineConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserDataEngineConfigResponse rsp = DescribeUserDataEngineConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserDataEngineConfigOutcome(rsp);
+        else
+            return DescribeUserDataEngineConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserDataEngineConfigOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeUserDataEngineConfigAsync(const DescribeUserDataEngineConfigRequest& request, const DescribeUserDataEngineConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserDataEngineConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeUserDataEngineConfigOutcomeCallable DlcClient::DescribeUserDataEngineConfigCallable(const DescribeUserDataEngineConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserDataEngineConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserDataEngineConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeUserInfoOutcome DlcClient::DescribeUserInfo(const DescribeUserInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserInfoResponse rsp = DescribeUserInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserInfoOutcome(rsp);
+        else
+            return DescribeUserInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserInfoOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeUserInfoAsync(const DescribeUserInfoRequest& request, const DescribeUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeUserInfoOutcomeCallable DlcClient::DescribeUserInfoCallable(const DescribeUserInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeUserRolesOutcome DlcClient::DescribeUserRoles(const DescribeUserRolesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserRoles");
@@ -3086,6 +3473,49 @@ DlcClient::DescribeUserRolesOutcomeCallable DlcClient::DescribeUserRolesCallable
         [this, request]()
         {
             return this->DescribeUserRoles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeUserTypeOutcome DlcClient::DescribeUserType(const DescribeUserTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserTypeResponse rsp = DescribeUserTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserTypeOutcome(rsp);
+        else
+            return DescribeUserTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserTypeOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeUserTypeAsync(const DescribeUserTypeRequest& request, const DescribeUserTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeUserTypeOutcomeCallable DlcClient::DescribeUserTypeCallable(const DescribeUserTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserType(request);
         }
     );
 
@@ -3172,6 +3602,49 @@ DlcClient::DescribeViewsOutcomeCallable DlcClient::DescribeViewsCallable(const D
         [this, request]()
         {
             return this->DescribeViews(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeWorkGroupInfoOutcome DlcClient::DescribeWorkGroupInfo(const DescribeWorkGroupInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkGroupInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkGroupInfoResponse rsp = DescribeWorkGroupInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkGroupInfoOutcome(rsp);
+        else
+            return DescribeWorkGroupInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkGroupInfoOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeWorkGroupInfoAsync(const DescribeWorkGroupInfoRequest& request, const DescribeWorkGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWorkGroupInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeWorkGroupInfoOutcomeCallable DlcClient::DescribeWorkGroupInfoCallable(const DescribeWorkGroupInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWorkGroupInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWorkGroupInfo(request);
         }
     );
 
@@ -3566,6 +4039,49 @@ DlcClient::LockMetaDataOutcomeCallable DlcClient::LockMetaDataCallable(const Loc
     return task->get_future();
 }
 
+DlcClient::ModifyDataEngineDescriptionOutcome DlcClient::ModifyDataEngineDescription(const ModifyDataEngineDescriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDataEngineDescription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDataEngineDescriptionResponse rsp = ModifyDataEngineDescriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDataEngineDescriptionOutcome(rsp);
+        else
+            return ModifyDataEngineDescriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDataEngineDescriptionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifyDataEngineDescriptionAsync(const ModifyDataEngineDescriptionRequest& request, const ModifyDataEngineDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDataEngineDescription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::ModifyDataEngineDescriptionOutcomeCallable DlcClient::ModifyDataEngineDescriptionCallable(const ModifyDataEngineDescriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDataEngineDescriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDataEngineDescription(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::ModifyGovernEventRuleOutcome DlcClient::ModifyGovernEventRule(const ModifyGovernEventRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyGovernEventRule");
@@ -3738,6 +4254,49 @@ DlcClient::ModifyUserOutcomeCallable DlcClient::ModifyUserCallable(const ModifyU
     return task->get_future();
 }
 
+DlcClient::ModifyUserTypeOutcome DlcClient::ModifyUserType(const ModifyUserTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserTypeResponse rsp = ModifyUserTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserTypeOutcome(rsp);
+        else
+            return ModifyUserTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserTypeOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifyUserTypeAsync(const ModifyUserTypeRequest& request, const ModifyUserTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::ModifyUserTypeOutcomeCallable DlcClient::ModifyUserTypeCallable(const ModifyUserTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::ModifyWorkGroupOutcome DlcClient::ModifyWorkGroup(const ModifyWorkGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWorkGroup");
@@ -3824,6 +4383,49 @@ DlcClient::QueryResultOutcomeCallable DlcClient::QueryResultCallable(const Query
     return task->get_future();
 }
 
+DlcClient::RenewDataEngineOutcome DlcClient::RenewDataEngine(const RenewDataEngineRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewDataEngine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewDataEngineResponse rsp = RenewDataEngineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewDataEngineOutcome(rsp);
+        else
+            return RenewDataEngineOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewDataEngineOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::RenewDataEngineAsync(const RenewDataEngineRequest& request, const RenewDataEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewDataEngine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::RenewDataEngineOutcomeCallable DlcClient::RenewDataEngineCallable(const RenewDataEngineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewDataEngineOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewDataEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::ReportHeartbeatMetaDataOutcome DlcClient::ReportHeartbeatMetaData(const ReportHeartbeatMetaDataRequest &request)
 {
     auto outcome = MakeRequest(request, "ReportHeartbeatMetaData");
@@ -3860,6 +4462,92 @@ DlcClient::ReportHeartbeatMetaDataOutcomeCallable DlcClient::ReportHeartbeatMeta
         [this, request]()
         {
             return this->ReportHeartbeatMetaData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::RestartDataEngineOutcome DlcClient::RestartDataEngine(const RestartDataEngineRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartDataEngine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartDataEngineResponse rsp = RestartDataEngineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartDataEngineOutcome(rsp);
+        else
+            return RestartDataEngineOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartDataEngineOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::RestartDataEngineAsync(const RestartDataEngineRequest& request, const RestartDataEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartDataEngine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::RestartDataEngineOutcomeCallable DlcClient::RestartDataEngineCallable(const RestartDataEngineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartDataEngineOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartDataEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::RollbackDataEngineImageOutcome DlcClient::RollbackDataEngineImage(const RollbackDataEngineImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackDataEngineImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackDataEngineImageResponse rsp = RollbackDataEngineImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackDataEngineImageOutcome(rsp);
+        else
+            return RollbackDataEngineImageOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackDataEngineImageOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::RollbackDataEngineImageAsync(const RollbackDataEngineImageRequest& request, const RollbackDataEngineImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollbackDataEngineImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::RollbackDataEngineImageOutcomeCallable DlcClient::RollbackDataEngineImageCallable(const RollbackDataEngineImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollbackDataEngineImageOutcome()>>(
+        [this, request]()
+        {
+            return this->RollbackDataEngineImage(request);
         }
     );
 
@@ -3953,6 +4641,49 @@ DlcClient::SwitchDataEngineOutcomeCallable DlcClient::SwitchDataEngineCallable(c
     return task->get_future();
 }
 
+DlcClient::SwitchDataEngineImageOutcome DlcClient::SwitchDataEngineImage(const SwitchDataEngineImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchDataEngineImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchDataEngineImageResponse rsp = SwitchDataEngineImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchDataEngineImageOutcome(rsp);
+        else
+            return SwitchDataEngineImageOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchDataEngineImageOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::SwitchDataEngineImageAsync(const SwitchDataEngineImageRequest& request, const SwitchDataEngineImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchDataEngineImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::SwitchDataEngineImageOutcomeCallable DlcClient::SwitchDataEngineImageCallable(const SwitchDataEngineImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchDataEngineImageOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchDataEngineImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::UnbindWorkGroupsFromUserOutcome DlcClient::UnbindWorkGroupsFromUser(const UnbindWorkGroupsFromUserRequest &request)
 {
     auto outcome = MakeRequest(request, "UnbindWorkGroupsFromUser");
@@ -4039,6 +4770,92 @@ DlcClient::UnlockMetaDataOutcomeCallable DlcClient::UnlockMetaDataCallable(const
     return task->get_future();
 }
 
+DlcClient::UpdateDataEngineOutcome DlcClient::UpdateDataEngine(const UpdateDataEngineRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDataEngine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDataEngineResponse rsp = UpdateDataEngineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDataEngineOutcome(rsp);
+        else
+            return UpdateDataEngineOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDataEngineOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::UpdateDataEngineAsync(const UpdateDataEngineRequest& request, const UpdateDataEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDataEngine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::UpdateDataEngineOutcomeCallable DlcClient::UpdateDataEngineCallable(const UpdateDataEngineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDataEngineOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDataEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::UpdateDataEngineConfigOutcome DlcClient::UpdateDataEngineConfig(const UpdateDataEngineConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDataEngineConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDataEngineConfigResponse rsp = UpdateDataEngineConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDataEngineConfigOutcome(rsp);
+        else
+            return UpdateDataEngineConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDataEngineConfigOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::UpdateDataEngineConfigAsync(const UpdateDataEngineConfigRequest& request, const UpdateDataEngineConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDataEngineConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::UpdateDataEngineConfigOutcomeCallable DlcClient::UpdateDataEngineConfigCallable(const UpdateDataEngineConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDataEngineConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDataEngineConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::UpdateRowFilterOutcome DlcClient::UpdateRowFilter(const UpdateRowFilterRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateRowFilter");
@@ -4075,6 +4892,92 @@ DlcClient::UpdateRowFilterOutcomeCallable DlcClient::UpdateRowFilterCallable(con
         [this, request]()
         {
             return this->UpdateRowFilter(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::UpdateUserDataEngineConfigOutcome DlcClient::UpdateUserDataEngineConfig(const UpdateUserDataEngineConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateUserDataEngineConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateUserDataEngineConfigResponse rsp = UpdateUserDataEngineConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateUserDataEngineConfigOutcome(rsp);
+        else
+            return UpdateUserDataEngineConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateUserDataEngineConfigOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::UpdateUserDataEngineConfigAsync(const UpdateUserDataEngineConfigRequest& request, const UpdateUserDataEngineConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateUserDataEngineConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::UpdateUserDataEngineConfigOutcomeCallable DlcClient::UpdateUserDataEngineConfigCallable(const UpdateUserDataEngineConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateUserDataEngineConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateUserDataEngineConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::UpgradeDataEngineImageOutcome DlcClient::UpgradeDataEngineImage(const UpgradeDataEngineImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeDataEngineImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeDataEngineImageResponse rsp = UpgradeDataEngineImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeDataEngineImageOutcome(rsp);
+        else
+            return UpgradeDataEngineImageOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeDataEngineImageOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::UpgradeDataEngineImageAsync(const UpgradeDataEngineImageRequest& request, const UpgradeDataEngineImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeDataEngineImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::UpgradeDataEngineImageOutcomeCallable DlcClient::UpgradeDataEngineImageCallable(const UpgradeDataEngineImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeDataEngineImageOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeDataEngineImage(request);
         }
     );
 

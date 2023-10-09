@@ -3867,3 +3867,46 @@ PostgresClient::UpgradeDBInstanceKernelVersionOutcomeCallable PostgresClient::Up
     return task->get_future();
 }
 
+PostgresClient::UpgradeDBInstanceMajorVersionOutcome PostgresClient::UpgradeDBInstanceMajorVersion(const UpgradeDBInstanceMajorVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeDBInstanceMajorVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeDBInstanceMajorVersionResponse rsp = UpgradeDBInstanceMajorVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeDBInstanceMajorVersionOutcome(rsp);
+        else
+            return UpgradeDBInstanceMajorVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeDBInstanceMajorVersionOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::UpgradeDBInstanceMajorVersionAsync(const UpgradeDBInstanceMajorVersionRequest& request, const UpgradeDBInstanceMajorVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeDBInstanceMajorVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::UpgradeDBInstanceMajorVersionOutcomeCallable PostgresClient::UpgradeDBInstanceMajorVersionCallable(const UpgradeDBInstanceMajorVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeDBInstanceMajorVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeDBInstanceMajorVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
