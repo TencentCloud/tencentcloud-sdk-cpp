@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool HotPeriodHasBeenSet() const;
 
                     /**
-                     * 获取webtracking开关； false: 关闭 true: 开启
-                     * @return IsWebTracking webtracking开关； false: 关闭 true: 开启
+                     * 获取免鉴权开关； false: 关闭 true: 开启
+                     * @return IsWebTracking 免鉴权开关； false: 关闭 true: 开启
                      * 
                      */
                     bool GetIsWebTracking() const;
 
                     /**
-                     * 设置webtracking开关； false: 关闭 true: 开启
-                     * @param _isWebTracking webtracking开关； false: 关闭 true: 开启
+                     * 设置免鉴权开关； false: 关闭 true: 开启
+                     * @param _isWebTracking 免鉴权开关； false: 关闭 true: 开启
                      * 
                      */
                     void SetIsWebTracking(const bool& _isWebTracking);
@@ -315,7 +315,7 @@ namespace TencentCloud
                     bool m_hotPeriodHasBeenSet;
 
                     /**
-                     * webtracking开关； false: 关闭 true: 开启
+                     * 免鉴权开关； false: 关闭 true: 开启
                      */
                     bool m_isWebTracking;
                     bool m_isWebTrackingHasBeenSet;

@@ -205,6 +205,8 @@
 #include <tencentcloud/dlc/v20210125/model/DropDMSTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlResponse.h>
+#include <tencentcloud/dlc/v20210125/model/GetOptimizerPolicyRequest.h>
+#include <tencentcloud/dlc/v20210125/model/GetOptimizerPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/LockMetaDataRequest.h>
@@ -540,6 +542,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GenerateCreateMangedTableSqlResponse> GenerateCreateMangedTableSqlOutcome;
                 typedef std::future<GenerateCreateMangedTableSqlOutcome> GenerateCreateMangedTableSqlOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GenerateCreateMangedTableSqlRequest&, GenerateCreateMangedTableSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateCreateMangedTableSqlAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetOptimizerPolicyResponse> GetOptimizerPolicyOutcome;
+                typedef std::future<GetOptimizerPolicyOutcome> GetOptimizerPolicyOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::GetOptimizerPolicyRequest&, GetOptimizerPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOptimizerPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTaskJobLogDetailResponse> ListTaskJobLogDetailOutcome;
                 typedef std::future<ListTaskJobLogDetailOutcome> ListTaskJobLogDetailOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListTaskJobLogDetailRequest&, ListTaskJobLogDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskJobLogDetailAsyncHandler;
@@ -1433,6 +1438,15 @@ namespace TencentCloud
                 GenerateCreateMangedTableSqlOutcome GenerateCreateMangedTableSql(const Model::GenerateCreateMangedTableSqlRequest &request);
                 void GenerateCreateMangedTableSqlAsync(const Model::GenerateCreateMangedTableSqlRequest& request, const GenerateCreateMangedTableSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GenerateCreateMangedTableSqlOutcomeCallable GenerateCreateMangedTableSqlCallable(const Model::GenerateCreateMangedTableSqlRequest& request);
+
+                /**
+                 *GetOptimizerPolicy
+                 * @param req GetOptimizerPolicyRequest
+                 * @return GetOptimizerPolicyOutcome
+                 */
+                GetOptimizerPolicyOutcome GetOptimizerPolicy(const Model::GetOptimizerPolicyRequest &request);
+                void GetOptimizerPolicyAsync(const Model::GetOptimizerPolicyRequest& request, const GetOptimizerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetOptimizerPolicyOutcomeCallable GetOptimizerPolicyCallable(const Model::GetOptimizerPolicyRequest& request);
 
                 /**
                  *本接口（ListTaskJobLogDetail）用于获取spark 作业任务日志详情

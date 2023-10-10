@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/DataGovernPolicy.h>
+#include <tencentcloud/dlc/v20210125/model/SmartPolicy.h>
 
 
 namespace TencentCloud
@@ -289,6 +290,31 @@ namespace TencentCloud
                      */
                     bool DbGovernPolicyIsDisableHasBeenSet() const;
 
+                    /**
+                     * 获取智能数据治理配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SmartPolicy 智能数据治理配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SmartPolicy GetSmartPolicy() const;
+
+                    /**
+                     * 设置智能数据治理配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _smartPolicy 智能数据治理配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSmartPolicy(const SmartPolicy& _smartPolicy);
+
+                    /**
+                     * 判断参数 SmartPolicy 是否已赋值
+                     * @return SmartPolicy 是否已赋值
+                     * 
+                     */
+                    bool SmartPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -358,6 +384,13 @@ namespace TencentCloud
                      */
                     std::string m_dbGovernPolicyIsDisable;
                     bool m_dbGovernPolicyIsDisableHasBeenSet;
+
+                    /**
+                     * 智能数据治理配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartPolicy m_smartPolicy;
+                    bool m_smartPolicyHasBeenSet;
 
                 };
             }

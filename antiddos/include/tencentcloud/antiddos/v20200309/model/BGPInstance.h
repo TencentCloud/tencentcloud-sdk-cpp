@@ -463,6 +463,31 @@ namespace TencentCloud
                     bool LineHasBeenSet() const;
 
                     /**
+                     * 获取不计费的业务带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FreeServiceBandwidth 不计费的业务带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetFreeServiceBandwidth() const;
+
+                    /**
+                     * 设置不计费的业务带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _freeServiceBandwidth 不计费的业务带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFreeServiceBandwidth(const uint64_t& _freeServiceBandwidth);
+
+                    /**
+                     * 判断参数 FreeServiceBandwidth 是否已赋值
+                     * @return FreeServiceBandwidth 是否已赋值
+                     * 
+                     */
+                    bool FreeServiceBandwidthHasBeenSet() const;
+
+                    /**
                      * 获取弹性业务带宽开关
                      * @return ElasticServiceBandwidth 弹性业务带宽开关
                      * 
@@ -670,6 +695,13 @@ namespace TencentCloud
                      */
                     uint64_t m_line;
                     bool m_lineHasBeenSet;
+
+                    /**
+                     * 不计费的业务带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_freeServiceBandwidth;
+                    bool m_freeServiceBandwidthHasBeenSet;
 
                     /**
                      * 弹性业务带宽开关

@@ -38,6 +38,7 @@ BGPInstance::BGPInstance() :
     m_ipCountNewFlagHasBeenSet(false),
     m_vitalityVersionHasBeenSet(false),
     m_lineHasBeenSet(false),
+    m_freeServiceBandwidthHasBeenSet(false),
     m_elasticServiceBandwidthHasBeenSet(false),
     m_giftServiceBandWidthHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
@@ -275,6 +276,16 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
         m_lineHasBeenSet = true;
     }
 
+    if (value.HasMember("FreeServiceBandwidth") && !value["FreeServiceBandwidth"].IsNull())
+    {
+        if (!value["FreeServiceBandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.FreeServiceBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_freeServiceBandwidth = value["FreeServiceBandwidth"].GetUint64();
+        m_freeServiceBandwidthHasBeenSet = true;
+    }
+
     if (value.HasMember("ElasticServiceBandwidth") && !value["ElasticServiceBandwidth"].IsNull())
     {
         if (!value["ElasticServiceBandwidth"].IsUint64())
@@ -475,6 +486,14 @@ void BGPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Line";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_line, allocator);
+    }
+
+    if (m_freeServiceBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreeServiceBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_freeServiceBandwidth, allocator);
     }
 
     if (m_elasticServiceBandwidthHasBeenSet)
@@ -782,6 +801,22 @@ void BGPInstance::SetLine(const uint64_t& _line)
 bool BGPInstance::LineHasBeenSet() const
 {
     return m_lineHasBeenSet;
+}
+
+uint64_t BGPInstance::GetFreeServiceBandwidth() const
+{
+    return m_freeServiceBandwidth;
+}
+
+void BGPInstance::SetFreeServiceBandwidth(const uint64_t& _freeServiceBandwidth)
+{
+    m_freeServiceBandwidth = _freeServiceBandwidth;
+    m_freeServiceBandwidthHasBeenSet = true;
+}
+
+bool BGPInstance::FreeServiceBandwidthHasBeenSet() const
+{
+    return m_freeServiceBandwidthHasBeenSet;
 }
 
 uint64_t BGPInstance::GetElasticServiceBandwidth() const

@@ -73,6 +73,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignSealUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignSealUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigRequest.h>
@@ -230,6 +232,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateUserAutoSignEnableUrlResponse> ChannelCreateUserAutoSignEnableUrlOutcome;
                 typedef std::future<ChannelCreateUserAutoSignEnableUrlOutcome> ChannelCreateUserAutoSignEnableUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateUserAutoSignEnableUrlRequest&, ChannelCreateUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateUserAutoSignEnableUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateUserAutoSignSealUrlResponse> ChannelCreateUserAutoSignSealUrlOutcome;
+                typedef std::future<ChannelCreateUserAutoSignSealUrlOutcome> ChannelCreateUserAutoSignSealUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateUserAutoSignSealUrlRequest&, ChannelCreateUserAutoSignSealUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateUserAutoSignSealUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateUserRolesResponse> ChannelCreateUserRolesOutcome;
                 typedef std::future<ChannelCreateUserRolesOutcome> ChannelCreateUserRolesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateUserRolesRequest&, ChannelCreateUserRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateUserRolesAsyncHandler;
@@ -631,6 +636,22 @@ namespace TencentCloud
                 ChannelCreateUserAutoSignEnableUrlOutcome ChannelCreateUserAutoSignEnableUrl(const Model::ChannelCreateUserAutoSignEnableUrlRequest &request);
                 void ChannelCreateUserAutoSignEnableUrlAsync(const Model::ChannelCreateUserAutoSignEnableUrlRequest& request, const ChannelCreateUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelCreateUserAutoSignEnableUrlOutcomeCallable ChannelCreateUserAutoSignEnableUrlCallable(const Model::ChannelCreateUserAutoSignEnableUrlRequest& request);
+
+                /**
+                 *获取设置自动签印章小程序链接。
+
+注意：
+<ul><li>需要<code>企业开通自动签</code>后使用。</li>
+<li>仅支持<code>已经开通了自动签的个人</code>更换自动签印章。</li>
+<li>链接有效期默认7天，<code>最多30天</code>。</li>
+<li>该接口的链接适用于<code>小程序</code>端。</li>
+<li>该接口不会扣除您的合同套餐，暂不参与计费。</li></ul>
+                 * @param req ChannelCreateUserAutoSignSealUrlRequest
+                 * @return ChannelCreateUserAutoSignSealUrlOutcome
+                 */
+                ChannelCreateUserAutoSignSealUrlOutcome ChannelCreateUserAutoSignSealUrl(const Model::ChannelCreateUserAutoSignSealUrlRequest &request);
+                void ChannelCreateUserAutoSignSealUrlAsync(const Model::ChannelCreateUserAutoSignSealUrlRequest& request, const ChannelCreateUserAutoSignSealUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateUserAutoSignSealUrlOutcomeCallable ChannelCreateUserAutoSignSealUrlCallable(const Model::ChannelCreateUserAutoSignSealUrlRequest& request);
 
                 /**
                  *通过此接口，绑定员工角色，支持以电子签userId、客户系统userId两种方式调用。

@@ -45,7 +45,8 @@ RiskDnsEvent::RiskDnsEvent() :
     m_firstTimeHasBeenSet(false),
     m_lastTimeHasBeenSet(false),
     m_hostStatusHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_osTypeHasBeenSet(false)
 {
 }
 
@@ -314,6 +315,16 @@ CoreInternalOutcome RiskDnsEvent::Deserialize(const rapidjson::Value &value)
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("OsType") && !value["OsType"].IsNull())
+    {
+        if (!value["OsType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskDnsEvent.OsType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_osType = value["OsType"].GetInt64();
+        m_osTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -525,6 +536,14 @@ void RiskDnsEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_osTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_osType, allocator);
     }
 
 }
@@ -928,5 +947,21 @@ void RiskDnsEvent::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo
 bool RiskDnsEvent::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+int64_t RiskDnsEvent::GetOsType() const
+{
+    return m_osType;
+}
+
+void RiskDnsEvent::SetOsType(const int64_t& _osType)
+{
+    m_osType = _osType;
+    m_osTypeHasBeenSet = true;
+}
+
+bool RiskDnsEvent::OsTypeHasBeenSet() const
+{
+    return m_osTypeHasBeenSet;
 }
 

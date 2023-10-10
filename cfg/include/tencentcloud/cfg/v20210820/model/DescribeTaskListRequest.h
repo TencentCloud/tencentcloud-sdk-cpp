@@ -233,6 +233,69 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取演练ID
+                     * @return TaskId 演练ID
+                     * 
+                     */
+                    std::vector<uint64_t> GetTaskId() const;
+
+                    /**
+                     * 设置演练ID
+                     * @param _taskId 演练ID
+                     * 
+                     */
+                    void SetTaskId(const std::vector<uint64_t>& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取关联应用ID筛选
+                     * @return ApplicationId 关联应用ID筛选
+                     * 
+                     */
+                    std::vector<std::string> GetApplicationId() const;
+
+                    /**
+                     * 设置关联应用ID筛选
+                     * @param _applicationId 关联应用ID筛选
+                     * 
+                     */
+                    void SetApplicationId(const std::vector<std::string>& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取关联应用筛选
+                     * @return ApplicationName 关联应用筛选
+                     * 
+                     */
+                    std::vector<std::string> GetApplicationName() const;
+
+                    /**
+                     * 设置关联应用筛选
+                     * @param _applicationName 关联应用筛选
+                     * 
+                     */
+                    void SetApplicationName(const std::vector<std::string>& _applicationName);
+
+                    /**
+                     * 判断参数 ApplicationName 是否已赋值
+                     * @return ApplicationName 是否已赋值
+                     * 
+                     */
+                    bool ApplicationNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +351,24 @@ namespace TencentCloud
                      */
                     std::vector<ActionFilter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 演练ID
+                     */
+                    std::vector<uint64_t> m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 关联应用ID筛选
+                     */
+                    std::vector<std::string> m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * 关联应用筛选
+                     */
+                    std::vector<std::string> m_applicationName;
+                    bool m_applicationNameHasBeenSet;
 
                 };
             }

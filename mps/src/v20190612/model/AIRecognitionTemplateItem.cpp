@@ -29,6 +29,7 @@ AIRecognitionTemplateItem::AIRecognitionTemplateItem() :
     m_ocrWordsConfigureHasBeenSet(false),
     m_asrFullTextConfigureHasBeenSet(false),
     m_asrWordsConfigureHasBeenSet(false),
+    m_translateConfigureHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_typeHasBeenSet(false)
@@ -155,6 +156,23 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
         m_asrWordsConfigureHasBeenSet = true;
     }
 
+    if (value.HasMember("TranslateConfigure") && !value["TranslateConfigure"].IsNull())
+    {
+        if (!value["TranslateConfigure"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.TranslateConfigure` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_translateConfigure.Deserialize(value["TranslateConfigure"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_translateConfigureHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -259,6 +277,15 @@ void AIRecognitionTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_asrWordsConfigure.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_translateConfigureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TranslateConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_translateConfigure.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -414,6 +441,22 @@ void AIRecognitionTemplateItem::SetAsrWordsConfigure(const AsrWordsConfigureInfo
 bool AIRecognitionTemplateItem::AsrWordsConfigureHasBeenSet() const
 {
     return m_asrWordsConfigureHasBeenSet;
+}
+
+TranslateConfigureInfo AIRecognitionTemplateItem::GetTranslateConfigure() const
+{
+    return m_translateConfigure;
+}
+
+void AIRecognitionTemplateItem::SetTranslateConfigure(const TranslateConfigureInfo& _translateConfigure)
+{
+    m_translateConfigure = _translateConfigure;
+    m_translateConfigureHasBeenSet = true;
+}
+
+bool AIRecognitionTemplateItem::TranslateConfigureHasBeenSet() const
+{
+    return m_translateConfigureHasBeenSet;
 }
 
 string AIRecognitionTemplateItem::GetCreateTime() const

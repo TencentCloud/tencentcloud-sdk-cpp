@@ -85,6 +85,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h
   include/tencentcloud/ess/v20201111/model/OrganizationInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlResponse.h
   include/tencentcloud/ess/v20201111/model/FillApproverInfo.h
   include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
   include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h
@@ -107,6 +108,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/RegisterInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/FormField.h
+  include/tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlRequest.h
   include/tencentcloud/ess/v20201111/model/UserInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversRequest.h
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h
@@ -281,6 +283,7 @@ set(ess_src
   src/v20201111/model/DeleteSealPoliciesResponse.cpp
   src/v20201111/model/OrganizationInfo.cpp
   src/v20201111/model/DescribeUserAutoSignStatusResponse.cpp
+  src/v20201111/model/CreateUserAutoSignSealUrlResponse.cpp
   src/v20201111/model/FillApproverInfo.cpp
   src/v20201111/model/OccupiedSeal.cpp
   src/v20201111/model/CreatePersonAuthCertificateImageResponse.cpp
@@ -303,6 +306,7 @@ set(ess_src
   src/v20201111/model/RegisterInfo.cpp
   src/v20201111/model/DescribeFileUrlsRequest.cpp
   src/v20201111/model/FormField.cpp
+  src/v20201111/model/CreateUserAutoSignSealUrlRequest.cpp
   src/v20201111/model/UserInfo.cpp
   src/v20201111/model/CreateFlowApproversRequest.cpp
   src/v20201111/model/ModifyIntegrationRoleResponse.cpp

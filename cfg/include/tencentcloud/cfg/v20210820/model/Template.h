@@ -28,6 +28,7 @@
 #include <tencentcloud/cfg/v20210820/model/TemplateMonitor.h>
 #include <tencentcloud/cfg/v20210820/model/TemplatePolicy.h>
 #include <tencentcloud/cfg/v20210820/model/TagWithDescribe.h>
+#include <tencentcloud/cfg/v20210820/model/ApmServiceInfo.h>
 
 
 namespace TencentCloud
@@ -402,6 +403,56 @@ namespace TencentCloud
                      */
                     bool TemplateSourceHasBeenSet() const;
 
+                    /**
+                     * 获取apm应用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApmServiceList apm应用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ApmServiceInfo> GetApmServiceList() const;
+
+                    /**
+                     * 设置apm应用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apmServiceList apm应用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApmServiceList(const std::vector<ApmServiceInfo>& _apmServiceList);
+
+                    /**
+                     * 判断参数 ApmServiceList 是否已赋值
+                     * @return ApmServiceList 是否已赋值
+                     * 
+                     */
+                    bool ApmServiceListHasBeenSet() const;
+
+                    /**
+                     * 获取告警指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmPolicy 告警指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetAlarmPolicy() const;
+
+                    /**
+                     * 设置告警指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmPolicy 告警指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmPolicy(const std::vector<std::string>& _alarmPolicy);
+
+                    /**
+                     * 判断参数 AlarmPolicy 是否已赋值
+                     * @return AlarmPolicy 是否已赋值
+                     * 
+                     */
+                    bool AlarmPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -503,6 +554,20 @@ namespace TencentCloud
                      */
                     int64_t m_templateSource;
                     bool m_templateSourceHasBeenSet;
+
+                    /**
+                     * apm应用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ApmServiceInfo> m_apmServiceList;
+                    bool m_apmServiceListHasBeenSet;
+
+                    /**
+                     * 告警指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_alarmPolicy;
+                    bool m_alarmPolicyHasBeenSet;
 
                 };
             }

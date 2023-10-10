@@ -43,7 +43,11 @@ Task::Task() :
     m_taskPolicyHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_taskPlanIdHasBeenSet(false),
-    m_taskPlanTitleHasBeenSet(false)
+    m_taskPlanTitleHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
+    m_applicationNameHasBeenSet(false),
+    m_alarmPolicyHasBeenSet(false),
+    m_apmServiceListHasBeenSet(false)
 {
 }
 
@@ -319,6 +323,59 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
         m_taskPlanTitleHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
+    {
+        if (!value["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(value["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationName") && !value["ApplicationName"].IsNull())
+    {
+        if (!value["ApplicationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationName = string(value["ApplicationName"].GetString());
+        m_applicationNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmPolicy") && !value["AlarmPolicy"].IsNull())
+    {
+        if (!value["AlarmPolicy"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Task.AlarmPolicy` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AlarmPolicy"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_alarmPolicy.push_back((*itr).GetString());
+        }
+        m_alarmPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApmServiceList") && !value["ApmServiceList"].IsNull())
+    {
+        if (!value["ApmServiceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Task.ApmServiceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApmServiceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ApmServiceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_apmServiceList.push_back(item);
+        }
+        m_apmServiceListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -530,6 +587,50 @@ void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "TaskPlanTitle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskPlanTitle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_alarmPolicy.begin(); itr != m_alarmPolicy.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_apmServiceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApmServiceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_apmServiceList.begin(); itr != m_apmServiceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -901,5 +1002,69 @@ void Task::SetTaskPlanTitle(const string& _taskPlanTitle)
 bool Task::TaskPlanTitleHasBeenSet() const
 {
     return m_taskPlanTitleHasBeenSet;
+}
+
+string Task::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void Task::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool Task::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
+}
+
+string Task::GetApplicationName() const
+{
+    return m_applicationName;
+}
+
+void Task::SetApplicationName(const string& _applicationName)
+{
+    m_applicationName = _applicationName;
+    m_applicationNameHasBeenSet = true;
+}
+
+bool Task::ApplicationNameHasBeenSet() const
+{
+    return m_applicationNameHasBeenSet;
+}
+
+vector<string> Task::GetAlarmPolicy() const
+{
+    return m_alarmPolicy;
+}
+
+void Task::SetAlarmPolicy(const vector<string>& _alarmPolicy)
+{
+    m_alarmPolicy = _alarmPolicy;
+    m_alarmPolicyHasBeenSet = true;
+}
+
+bool Task::AlarmPolicyHasBeenSet() const
+{
+    return m_alarmPolicyHasBeenSet;
+}
+
+vector<ApmServiceInfo> Task::GetApmServiceList() const
+{
+    return m_apmServiceList;
+}
+
+void Task::SetApmServiceList(const vector<ApmServiceInfo>& _apmServiceList)
+{
+    m_apmServiceList = _apmServiceList;
+    m_apmServiceListHasBeenSet = true;
+}
+
+bool Task::ApmServiceListHasBeenSet() const
+{
+    return m_apmServiceListHasBeenSet;
 }
 

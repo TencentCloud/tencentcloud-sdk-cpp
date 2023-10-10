@@ -550,6 +550,27 @@ namespace TencentCloud
                      */
                     bool ReimburseOnlyMarkHasBeenSet() const;
 
+                    /**
+                     * 获取是否有退票费标识（0：没有，1：有）
+                     * @return RefundMark 是否有退票费标识（0：没有，1：有）
+                     * 
+                     */
+                    int64_t GetRefundMark() const;
+
+                    /**
+                     * 设置是否有退票费标识（0：没有，1：有）
+                     * @param _refundMark 是否有退票费标识（0：没有，1：有）
+                     * 
+                     */
+                    void SetRefundMark(const int64_t& _refundMark);
+
+                    /**
+                     * 判断参数 RefundMark 是否已赋值
+                     * @return RefundMark 是否已赋值
+                     * 
+                     */
+                    bool RefundMarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -695,6 +716,12 @@ namespace TencentCloud
                      */
                     int64_t m_reimburseOnlyMark;
                     bool m_reimburseOnlyMarkHasBeenSet;
+
+                    /**
+                     * 是否有退票费标识（0：没有，1：有）
+                     */
+                    int64_t m_refundMark;
+                    bool m_refundMarkHasBeenSet;
 
                 };
             }

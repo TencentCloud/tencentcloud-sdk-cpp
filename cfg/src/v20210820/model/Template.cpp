@@ -36,7 +36,9 @@ Template::Template() :
     m_templateMonitorsHasBeenSet(false),
     m_templatePolicyHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_templateSourceHasBeenSet(false)
+    m_templateSourceHasBeenSet(false),
+    m_apmServiceListHasBeenSet(false),
+    m_alarmPolicyHasBeenSet(false)
 {
 }
 
@@ -242,6 +244,39 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_templateSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("ApmServiceList") && !value["ApmServiceList"].IsNull())
+    {
+        if (!value["ApmServiceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Template.ApmServiceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApmServiceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ApmServiceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_apmServiceList.push_back(item);
+        }
+        m_apmServiceListHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmPolicy") && !value["AlarmPolicy"].IsNull())
+    {
+        if (!value["AlarmPolicy"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Template.AlarmPolicy` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AlarmPolicy"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_alarmPolicy.push_back((*itr).GetString());
+        }
+        m_alarmPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -397,6 +432,34 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "TemplateSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateSource, allocator);
+    }
+
+    if (m_apmServiceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApmServiceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_apmServiceList.begin(); itr != m_apmServiceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_alarmPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_alarmPolicy.begin(); itr != m_alarmPolicy.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -656,5 +719,37 @@ void Template::SetTemplateSource(const int64_t& _templateSource)
 bool Template::TemplateSourceHasBeenSet() const
 {
     return m_templateSourceHasBeenSet;
+}
+
+vector<ApmServiceInfo> Template::GetApmServiceList() const
+{
+    return m_apmServiceList;
+}
+
+void Template::SetApmServiceList(const vector<ApmServiceInfo>& _apmServiceList)
+{
+    m_apmServiceList = _apmServiceList;
+    m_apmServiceListHasBeenSet = true;
+}
+
+bool Template::ApmServiceListHasBeenSet() const
+{
+    return m_apmServiceListHasBeenSet;
+}
+
+vector<string> Template::GetAlarmPolicy() const
+{
+    return m_alarmPolicy;
+}
+
+void Template::SetAlarmPolicy(const vector<string>& _alarmPolicy)
+{
+    m_alarmPolicy = _alarmPolicy;
+    m_alarmPolicyHasBeenSet = true;
+}
+
+bool Template::AlarmPolicyHasBeenSet() const
+{
+    return m_alarmPolicyHasBeenSet;
 }
 

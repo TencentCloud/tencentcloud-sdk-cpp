@@ -23,11 +23,18 @@ using namespace TencentCloud::Ssl::V20191205::Model;
 using namespace std;
 
 UpdateCertificateInstanceRequest::UpdateCertificateInstanceRequest() :
-    m_certificateIdHasBeenSet(false),
     m_oldCertificateIdHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
+    m_certificateIdHasBeenSet(false),
     m_regionsHasBeenSet(false),
-    m_resourceTypesRegionsHasBeenSet(false)
+    m_resourceTypesRegionsHasBeenSet(false),
+    m_certificatePublicKeyHasBeenSet(false),
+    m_certificatePrivateKeyHasBeenSet(false),
+    m_expiringNotificationSwitchHasBeenSet(false),
+    m_repeatableHasBeenSet(false),
+    m_allowDownloadHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -37,14 +44,6 @@ string UpdateCertificateInstanceRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_certificateIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CertificateId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_oldCertificateIdHasBeenSet)
     {
@@ -65,6 +64,14 @@ string UpdateCertificateInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_certificateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionsHasBeenSet)
@@ -95,6 +102,69 @@ string UpdateCertificateInstanceRequest::ToJsonString() const
         }
     }
 
+    if (m_certificatePublicKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificatePublicKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certificatePublicKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certificatePrivateKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificatePrivateKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certificatePrivateKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiringNotificationSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiringNotificationSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expiringNotificationSwitch, allocator);
+    }
+
+    if (m_repeatableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Repeatable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_repeatable, allocator);
+    }
+
+    if (m_allowDownloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowDownload";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allowDownload, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -102,22 +172,6 @@ string UpdateCertificateInstanceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string UpdateCertificateInstanceRequest::GetCertificateId() const
-{
-    return m_certificateId;
-}
-
-void UpdateCertificateInstanceRequest::SetCertificateId(const string& _certificateId)
-{
-    m_certificateId = _certificateId;
-    m_certificateIdHasBeenSet = true;
-}
-
-bool UpdateCertificateInstanceRequest::CertificateIdHasBeenSet() const
-{
-    return m_certificateIdHasBeenSet;
-}
 
 string UpdateCertificateInstanceRequest::GetOldCertificateId() const
 {
@@ -151,6 +205,22 @@ bool UpdateCertificateInstanceRequest::ResourceTypesHasBeenSet() const
     return m_resourceTypesHasBeenSet;
 }
 
+string UpdateCertificateInstanceRequest::GetCertificateId() const
+{
+    return m_certificateId;
+}
+
+void UpdateCertificateInstanceRequest::SetCertificateId(const string& _certificateId)
+{
+    m_certificateId = _certificateId;
+    m_certificateIdHasBeenSet = true;
+}
+
+bool UpdateCertificateInstanceRequest::CertificateIdHasBeenSet() const
+{
+    return m_certificateIdHasBeenSet;
+}
+
 vector<string> UpdateCertificateInstanceRequest::GetRegions() const
 {
     return m_regions;
@@ -181,6 +251,118 @@ void UpdateCertificateInstanceRequest::SetResourceTypesRegions(const vector<Reso
 bool UpdateCertificateInstanceRequest::ResourceTypesRegionsHasBeenSet() const
 {
     return m_resourceTypesRegionsHasBeenSet;
+}
+
+string UpdateCertificateInstanceRequest::GetCertificatePublicKey() const
+{
+    return m_certificatePublicKey;
+}
+
+void UpdateCertificateInstanceRequest::SetCertificatePublicKey(const string& _certificatePublicKey)
+{
+    m_certificatePublicKey = _certificatePublicKey;
+    m_certificatePublicKeyHasBeenSet = true;
+}
+
+bool UpdateCertificateInstanceRequest::CertificatePublicKeyHasBeenSet() const
+{
+    return m_certificatePublicKeyHasBeenSet;
+}
+
+string UpdateCertificateInstanceRequest::GetCertificatePrivateKey() const
+{
+    return m_certificatePrivateKey;
+}
+
+void UpdateCertificateInstanceRequest::SetCertificatePrivateKey(const string& _certificatePrivateKey)
+{
+    m_certificatePrivateKey = _certificatePrivateKey;
+    m_certificatePrivateKeyHasBeenSet = true;
+}
+
+bool UpdateCertificateInstanceRequest::CertificatePrivateKeyHasBeenSet() const
+{
+    return m_certificatePrivateKeyHasBeenSet;
+}
+
+uint64_t UpdateCertificateInstanceRequest::GetExpiringNotificationSwitch() const
+{
+    return m_expiringNotificationSwitch;
+}
+
+void UpdateCertificateInstanceRequest::SetExpiringNotificationSwitch(const uint64_t& _expiringNotificationSwitch)
+{
+    m_expiringNotificationSwitch = _expiringNotificationSwitch;
+    m_expiringNotificationSwitchHasBeenSet = true;
+}
+
+bool UpdateCertificateInstanceRequest::ExpiringNotificationSwitchHasBeenSet() const
+{
+    return m_expiringNotificationSwitchHasBeenSet;
+}
+
+bool UpdateCertificateInstanceRequest::GetRepeatable() const
+{
+    return m_repeatable;
+}
+
+void UpdateCertificateInstanceRequest::SetRepeatable(const bool& _repeatable)
+{
+    m_repeatable = _repeatable;
+    m_repeatableHasBeenSet = true;
+}
+
+bool UpdateCertificateInstanceRequest::RepeatableHasBeenSet() const
+{
+    return m_repeatableHasBeenSet;
+}
+
+bool UpdateCertificateInstanceRequest::GetAllowDownload() const
+{
+    return m_allowDownload;
+}
+
+void UpdateCertificateInstanceRequest::SetAllowDownload(const bool& _allowDownload)
+{
+    m_allowDownload = _allowDownload;
+    m_allowDownloadHasBeenSet = true;
+}
+
+bool UpdateCertificateInstanceRequest::AllowDownloadHasBeenSet() const
+{
+    return m_allowDownloadHasBeenSet;
+}
+
+vector<Tags> UpdateCertificateInstanceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void UpdateCertificateInstanceRequest::SetTags(const vector<Tags>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool UpdateCertificateInstanceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+uint64_t UpdateCertificateInstanceRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void UpdateCertificateInstanceRequest::SetProjectId(const uint64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool UpdateCertificateInstanceRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

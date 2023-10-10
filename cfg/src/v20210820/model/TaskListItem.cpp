@@ -30,7 +30,9 @@ TaskListItem::TaskListItem() :
     m_taskUpdateTimeHasBeenSet(false),
     m_taskPreCheckStatusHasBeenSet(false),
     m_taskPreCheckSuccessHasBeenSet(false),
-    m_taskExpectHasBeenSet(false)
+    m_taskExpectHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
+    m_applicationNameHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome TaskListItem::Deserialize(const rapidjson::Value &value)
         m_taskExpectHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
+    {
+        if (!value["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskListItem.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(value["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationName") && !value["ApplicationName"].IsNull())
+    {
+        if (!value["ApplicationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskListItem.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationName = string(value["ApplicationName"].GetString());
+        m_applicationNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void TaskListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TaskExpect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskExpect, allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void TaskListItem::SetTaskExpect(const int64_t& _taskExpect)
 bool TaskListItem::TaskExpectHasBeenSet() const
 {
     return m_taskExpectHasBeenSet;
+}
+
+string TaskListItem::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void TaskListItem::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool TaskListItem::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
+}
+
+string TaskListItem::GetApplicationName() const
+{
+    return m_applicationName;
+}
+
+void TaskListItem::SetApplicationName(const string& _applicationName)
+{
+    m_applicationName = _applicationName;
+    m_applicationNameHasBeenSet = true;
+}
+
+bool TaskListItem::ApplicationNameHasBeenSet() const
+{
+    return m_applicationNameHasBeenSet;
 }
 

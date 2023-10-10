@@ -21,6 +21,7 @@ set(cfg_public_header
 set(cfg_public_header_model
   include/tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusResponse.h
   include/tencentcloud/cfg/v20210820/model/TaskGroupAction.h
+  include/tencentcloud/cfg/v20210820/model/ApmServiceInfo.h
   include/tencentcloud/cfg/v20210820/model/TaskGroupInstancesExecuteRules.h
   include/tencentcloud/cfg/v20210820/model/TaskConfig.h
   include/tencentcloud/cfg/v20210820/model/DeleteTaskRequest.h
@@ -66,6 +67,7 @@ set(cfg_src
   src/v20210820/CfgClient.cpp
   src/v20210820/model/ModifyTaskRunStatusResponse.cpp
   src/v20210820/model/TaskGroupAction.cpp
+  src/v20210820/model/ApmServiceInfo.cpp
   src/v20210820/model/TaskGroupInstancesExecuteRules.cpp
   src/v20210820/model/TaskConfig.cpp
   src/v20210820/model/DeleteTaskRequest.cpp

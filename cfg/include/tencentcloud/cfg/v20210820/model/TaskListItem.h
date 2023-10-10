@@ -272,6 +272,56 @@ namespace TencentCloud
                      */
                     bool TaskExpectHasBeenSet() const;
 
+                    /**
+                     * 获取关联应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId 关联应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置关联应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationId 关联应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取关联应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationName 关联应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationName() const;
+
+                    /**
+                     * 设置关联应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationName 关联应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationName(const std::string& _applicationName);
+
+                    /**
+                     * 判断参数 ApplicationName 是否已赋值
+                     * @return ApplicationName 是否已赋值
+                     * 
+                     */
+                    bool ApplicationNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +387,20 @@ namespace TencentCloud
                      */
                     int64_t m_taskExpect;
                     bool m_taskExpectHasBeenSet;
+
+                    /**
+                     * 关联应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * 关联应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationName;
+                    bool m_applicationNameHasBeenSet;
 
                 };
             }

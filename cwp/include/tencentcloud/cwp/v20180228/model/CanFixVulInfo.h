@@ -1,0 +1,186 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_CANFIXVULINFO_H_
+#define TENCENTCLOUD_CWP_V20180228_MODEL_CANFIXVULINFO_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/VulInfoHostInfo.h>
+
+
+namespace TencentCloud
+{
+    namespace Cwp
+    {
+        namespace V20180228
+        {
+            namespace Model
+            {
+                /**
+                * 批量修复漏洞二次弹窗 漏洞主机信息
+                */
+                class CanFixVulInfo : public AbstractModel
+                {
+                public:
+                    CanFixVulInfo();
+                    ~CanFixVulInfo() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取漏洞id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VulId 漏洞id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetVulId() const;
+
+                    /**
+                     * 设置漏洞id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vulId 漏洞id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVulId(const uint64_t& _vulId);
+
+                    /**
+                     * 判断参数 VulId 是否已赋值
+                     * @return VulId 是否已赋值
+                     * 
+                     */
+                    bool VulIdHasBeenSet() const;
+
+                    /**
+                     * 获取漏洞名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VulName 漏洞名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVulName() const;
+
+                    /**
+                     * 设置漏洞名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vulName 漏洞名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVulName(const std::string& _vulName);
+
+                    /**
+                     * 判断参数 VulName 是否已赋值
+                     * @return VulName 是否已赋值
+                     * 
+                     */
+                    bool VulNameHasBeenSet() const;
+
+                    /**
+                     * 获取该漏洞可修复的主机信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostList 该漏洞可修复的主机信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<VulInfoHostInfo> GetHostList() const;
+
+                    /**
+                     * 设置该漏洞可修复的主机信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hostList 该漏洞可修复的主机信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHostList(const std::vector<VulInfoHostInfo>& _hostList);
+
+                    /**
+                     * 判断参数 HostList 是否已赋值
+                     * @return HostList 是否已赋值
+                     * 
+                     */
+                    bool HostListHasBeenSet() const;
+
+                    /**
+                     * 获取修复提示tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FixTag 修复提示tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetFixTag() const;
+
+                    /**
+                     * 设置修复提示tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fixTag 修复提示tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFixTag(const std::vector<std::string>& _fixTag);
+
+                    /**
+                     * 判断参数 FixTag 是否已赋值
+                     * @return FixTag 是否已赋值
+                     * 
+                     */
+                    bool FixTagHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 漏洞id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vulId;
+                    bool m_vulIdHasBeenSet;
+
+                    /**
+                     * 漏洞名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vulName;
+                    bool m_vulNameHasBeenSet;
+
+                    /**
+                     * 该漏洞可修复的主机信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VulInfoHostInfo> m_hostList;
+                    bool m_hostListHasBeenSet;
+
+                    /**
+                     * 修复提示tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_fixTag;
+                    bool m_fixTagHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_CANFIXVULINFO_H_

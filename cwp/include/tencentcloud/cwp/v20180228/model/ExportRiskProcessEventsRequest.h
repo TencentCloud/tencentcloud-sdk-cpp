@@ -1,0 +1,175 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_EXPORTRISKPROCESSEVENTSREQUEST_H_
+#define TENCENTCLOUD_CWP_V20180228_MODEL_EXPORTRISKPROCESSEVENTSREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/Filter.h>
+
+
+namespace TencentCloud
+{
+    namespace Cwp
+    {
+        namespace V20180228
+        {
+            namespace Model
+            {
+                /**
+                * ExportRiskProcessEvents请求参数结构体
+                */
+                class ExportRiskProcessEventsRequest : public AbstractModel
+                {
+                public:
+                    ExportRiskProcessEventsRequest();
+                    ~ExportRiskProcessEventsRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取过滤条件。
+<li>HostId - String - 是否必填：否 - 主机ID</li>
+<li>IpOrName - String - 是否必填：否 - 主机IP或主机名</li>
+<li>VirusName - String - 是否必填：否 - 病毒名</li>
+<li>ProcessId - String - 是否必填：否 - 进程ID</li>
+<li>ProcessPath - String - 是否必填：否 - 进程路径</li>
+<li>BeginTime - String - 是否必填：否 - 进程启动时间-开始</li>
+<li>EndTime - String - 是否必填：否 - 进程启动时间-结束</li>
+<li>Status - String - 是否必填：否 - 状态筛选 0待处理；1查杀中；2已查杀；3已退出;4已信任</li>
+                     * @return Filters 过滤条件。
+<li>HostId - String - 是否必填：否 - 主机ID</li>
+<li>IpOrName - String - 是否必填：否 - 主机IP或主机名</li>
+<li>VirusName - String - 是否必填：否 - 病毒名</li>
+<li>ProcessId - String - 是否必填：否 - 进程ID</li>
+<li>ProcessPath - String - 是否必填：否 - 进程路径</li>
+<li>BeginTime - String - 是否必填：否 - 进程启动时间-开始</li>
+<li>EndTime - String - 是否必填：否 - 进程启动时间-结束</li>
+<li>Status - String - 是否必填：否 - 状态筛选 0待处理；1查杀中；2已查杀；3已退出;4已信任</li>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件。
+<li>HostId - String - 是否必填：否 - 主机ID</li>
+<li>IpOrName - String - 是否必填：否 - 主机IP或主机名</li>
+<li>VirusName - String - 是否必填：否 - 病毒名</li>
+<li>ProcessId - String - 是否必填：否 - 进程ID</li>
+<li>ProcessPath - String - 是否必填：否 - 进程路径</li>
+<li>BeginTime - String - 是否必填：否 - 进程启动时间-开始</li>
+<li>EndTime - String - 是否必填：否 - 进程启动时间-结束</li>
+<li>Status - String - 是否必填：否 - 状态筛选 0待处理；1查杀中；2已查杀；3已退出;4已信任</li>
+                     * @param _filters 过滤条件。
+<li>HostId - String - 是否必填：否 - 主机ID</li>
+<li>IpOrName - String - 是否必填：否 - 主机IP或主机名</li>
+<li>VirusName - String - 是否必填：否 - 病毒名</li>
+<li>ProcessId - String - 是否必填：否 - 进程ID</li>
+<li>ProcessPath - String - 是否必填：否 - 进程路径</li>
+<li>BeginTime - String - 是否必填：否 - 进程启动时间-开始</li>
+<li>EndTime - String - 是否必填：否 - 进程启动时间-结束</li>
+<li>Status - String - 是否必填：否 - 状态筛选 0待处理；1查杀中；2已查杀；3已退出;4已信任</li>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式：[ASC:升序|DESC:降序]
+                     * @return Order 排序方式：[ASC:升序|DESC:降序]
+                     * 
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置排序方式：[ASC:升序|DESC:降序]
+                     * @param _order 排序方式：[ASC:升序|DESC:降序]
+                     * 
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     * 
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
+                     * 获取[StartTime:进程启动时间|DetectTime:最后检测时间]
+                     * @return By [StartTime:进程启动时间|DetectTime:最后检测时间]
+                     * 
+                     */
+                    std::string GetBy() const;
+
+                    /**
+                     * 设置[StartTime:进程启动时间|DetectTime:最后检测时间]
+                     * @param _by [StartTime:进程启动时间|DetectTime:最后检测时间]
+                     * 
+                     */
+                    void SetBy(const std::string& _by);
+
+                    /**
+                     * 判断参数 By 是否已赋值
+                     * @return By 是否已赋值
+                     * 
+                     */
+                    bool ByHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 过滤条件。
+<li>HostId - String - 是否必填：否 - 主机ID</li>
+<li>IpOrName - String - 是否必填：否 - 主机IP或主机名</li>
+<li>VirusName - String - 是否必填：否 - 病毒名</li>
+<li>ProcessId - String - 是否必填：否 - 进程ID</li>
+<li>ProcessPath - String - 是否必填：否 - 进程路径</li>
+<li>BeginTime - String - 是否必填：否 - 进程启动时间-开始</li>
+<li>EndTime - String - 是否必填：否 - 进程启动时间-结束</li>
+<li>Status - String - 是否必填：否 - 状态筛选 0待处理；1查杀中；2已查杀；3已退出;4已信任</li>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 排序方式：[ASC:升序|DESC:降序]
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
+                     * [StartTime:进程启动时间|DetectTime:最后检测时间]
+                     */
+                    std::string m_by;
+                    bool m_byHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_EXPORTRISKPROCESSEVENTSREQUEST_H_

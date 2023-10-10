@@ -31,7 +31,10 @@ DescribeTaskListRequest::DescribeTaskListRequest() :
     m_taskStartTimeHasBeenSet(false),
     m_taskEndTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_taskIdHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
+    m_applicationNameHasBeenSet(false)
 {
 }
 
@@ -130,6 +133,45 @@ string DescribeTaskListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskId.begin(); itr != m_taskId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_applicationId.begin(); itr != m_applicationId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_applicationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_applicationName.begin(); itr != m_applicationName.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -283,6 +325,54 @@ void DescribeTaskListRequest::SetFilters(const vector<ActionFilter>& _filters)
 bool DescribeTaskListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<uint64_t> DescribeTaskListRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void DescribeTaskListRequest::SetTaskId(const vector<uint64_t>& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
+
+vector<string> DescribeTaskListRequest::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void DescribeTaskListRequest::SetApplicationId(const vector<string>& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
+}
+
+vector<string> DescribeTaskListRequest::GetApplicationName() const
+{
+    return m_applicationName;
+}
+
+void DescribeTaskListRequest::SetApplicationName(const vector<string>& _applicationName)
+{
+    m_applicationName = _applicationName;
+    m_applicationNameHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::ApplicationNameHasBeenSet() const
+{
+    return m_applicationNameHasBeenSet;
 }
 
 

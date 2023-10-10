@@ -30,7 +30,8 @@ TableBaseInfo::TableBaseInfo() :
     m_userAliasHasBeenSet(false),
     m_userSubUinHasBeenSet(false),
     m_governPolicyHasBeenSet(false),
-    m_dbGovernPolicyIsDisableHasBeenSet(false)
+    m_dbGovernPolicyIsDisableHasBeenSet(false),
+    m_smartPolicyHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,23 @@ CoreInternalOutcome TableBaseInfo::Deserialize(const rapidjson::Value &value)
         m_dbGovernPolicyIsDisableHasBeenSet = true;
     }
 
+    if (value.HasMember("SmartPolicy") && !value["SmartPolicy"].IsNull())
+    {
+        if (!value["SmartPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.SmartPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_smartPolicy.Deserialize(value["SmartPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_smartPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +250,15 @@ void TableBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DbGovernPolicyIsDisable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dbGovernPolicyIsDisable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_smartPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -395,5 +422,21 @@ void TableBaseInfo::SetDbGovernPolicyIsDisable(const string& _dbGovernPolicyIsDi
 bool TableBaseInfo::DbGovernPolicyIsDisableHasBeenSet() const
 {
     return m_dbGovernPolicyIsDisableHasBeenSet;
+}
+
+SmartPolicy TableBaseInfo::GetSmartPolicy() const
+{
+    return m_smartPolicy;
+}
+
+void TableBaseInfo::SetSmartPolicy(const SmartPolicy& _smartPolicy)
+{
+    m_smartPolicy = _smartPolicy;
+    m_smartPolicyHasBeenSet = true;
+}
+
+bool TableBaseInfo::SmartPolicyHasBeenSet() const
+{
+    return m_smartPolicyHasBeenSet;
 }
 

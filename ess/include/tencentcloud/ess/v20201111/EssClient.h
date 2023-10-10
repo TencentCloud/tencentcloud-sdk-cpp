@@ -89,6 +89,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateWebThemeConfigRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateWebThemeConfigResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentRequest.h>
@@ -262,6 +264,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserAutoSignEnableUrlResponse> CreateUserAutoSignEnableUrlOutcome;
                 typedef std::future<CreateUserAutoSignEnableUrlOutcome> CreateUserAutoSignEnableUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateUserAutoSignEnableUrlRequest&, CreateUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAutoSignEnableUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserAutoSignSealUrlResponse> CreateUserAutoSignSealUrlOutcome;
+                typedef std::future<CreateUserAutoSignSealUrlOutcome> CreateUserAutoSignSealUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateUserAutoSignSealUrlRequest&, CreateUserAutoSignSealUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAutoSignSealUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWebThemeConfigResponse> CreateWebThemeConfigOutcome;
                 typedef std::future<CreateWebThemeConfigOutcome> CreateWebThemeConfigOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateWebThemeConfigRequest&, CreateWebThemeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWebThemeConfigAsyncHandler;
@@ -796,6 +801,22 @@ namespace TencentCloud
                 CreateUserAutoSignEnableUrlOutcome CreateUserAutoSignEnableUrl(const Model::CreateUserAutoSignEnableUrlRequest &request);
                 void CreateUserAutoSignEnableUrlAsync(const Model::CreateUserAutoSignEnableUrlRequest& request, const CreateUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserAutoSignEnableUrlOutcomeCallable CreateUserAutoSignEnableUrlCallable(const Model::CreateUserAutoSignEnableUrlRequest& request);
+
+                /**
+                 *获取设置自动签印章小程序链接。
+
+注意：
+<ul><li>需要<code>企业开通自动签</code>后使用。</li>
+<li>仅支持<code>已经开通了自动签的个人</code>更换自动签印章。</li>
+<li>链接有效期默认7天，<code>最多30天</code>。</li>
+<li>该接口的链接适用于<code>小程序</code>端。</li>
+<li>该接口不会扣除您的合同套餐，暂不参与计费。</li></ul>
+                 * @param req CreateUserAutoSignSealUrlRequest
+                 * @return CreateUserAutoSignSealUrlOutcome
+                 */
+                CreateUserAutoSignSealUrlOutcome CreateUserAutoSignSealUrl(const Model::CreateUserAutoSignSealUrlRequest &request);
+                void CreateUserAutoSignSealUrlAsync(const Model::CreateUserAutoSignSealUrlRequest& request, const CreateUserAutoSignSealUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserAutoSignSealUrlOutcomeCallable CreateUserAutoSignSealUrlCallable(const Model::CreateUserAutoSignSealUrlRequest& request);
 
                 /**
                  *用来设置本企业嵌入式页面个性化主题配置（例如是否展示电子签logo、定义主题色等），设置后获取的web签署界面都会使用此配置进行展示。

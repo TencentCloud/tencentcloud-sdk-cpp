@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取删除状态信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteStatus 删除状态信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeleteStatus() const;
 
                     /**
                      * 设置删除状态信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deleteStatus 删除状态信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeleteStatus(const std::string& _deleteStatus);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取删除时间，UNIX 时间戳（单位：秒）。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteTime 删除时间，UNIX 时间戳（单位：秒）。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeleteTime() const;
 
                     /**
                      * 设置删除时间，UNIX 时间戳（单位：秒）。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deleteTime 删除时间，UNIX 时间戳（单位：秒）。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeleteTime(const uint64_t& _deleteTime);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 删除状态信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deleteStatus;
                     bool m_deleteStatusHasBeenSet;
 
                     /**
                      * 删除时间，UNIX 时间戳（单位：秒）。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deleteTime;
                     bool m_deleteTimeHasBeenSet;

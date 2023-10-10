@@ -28,6 +28,7 @@
 #include <tencentcloud/cfg/v20210820/model/TaskMonitor.h>
 #include <tencentcloud/cfg/v20210820/model/DescribePolicy.h>
 #include <tencentcloud/cfg/v20210820/model/TagWithDescribe.h>
+#include <tencentcloud/cfg/v20210820/model/ApmServiceInfo.h>
 
 
 namespace TencentCloud
@@ -581,6 +582,106 @@ namespace TencentCloud
                      */
                     bool TaskPlanTitleHasBeenSet() const;
 
+                    /**
+                     * 获取关联的应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId 关联的应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置关联的应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationId 关联的应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取关联的应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationName 关联的应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationName() const;
+
+                    /**
+                     * 设置关联的应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationName 关联的应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationName(const std::string& _applicationName);
+
+                    /**
+                     * 判断参数 ApplicationName 是否已赋值
+                     * @return ApplicationName 是否已赋值
+                     * 
+                     */
+                    bool ApplicationNameHasBeenSet() const;
+
+                    /**
+                     * 获取关联的告警指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmPolicy 关联的告警指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetAlarmPolicy() const;
+
+                    /**
+                     * 设置关联的告警指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmPolicy 关联的告警指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmPolicy(const std::vector<std::string>& _alarmPolicy);
+
+                    /**
+                     * 判断参数 AlarmPolicy 是否已赋值
+                     * @return AlarmPolicy 是否已赋值
+                     * 
+                     */
+                    bool AlarmPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取关联的APM服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApmServiceList 关联的APM服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ApmServiceInfo> GetApmServiceList() const;
+
+                    /**
+                     * 设置关联的APM服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apmServiceList 关联的APM服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApmServiceList(const std::vector<ApmServiceInfo>& _apmServiceList);
+
+                    /**
+                     * 判断参数 ApmServiceList 是否已赋值
+                     * @return ApmServiceList 是否已赋值
+                     * 
+                     */
+                    bool ApmServiceListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -732,6 +833,34 @@ namespace TencentCloud
                      */
                     std::string m_taskPlanTitle;
                     bool m_taskPlanTitleHasBeenSet;
+
+                    /**
+                     * 关联的应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * 关联的应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationName;
+                    bool m_applicationNameHasBeenSet;
+
+                    /**
+                     * 关联的告警指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_alarmPolicy;
+                    bool m_alarmPolicyHasBeenSet;
+
+                    /**
+                     * 关联的APM服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ApmServiceInfo> m_apmServiceList;
+                    bool m_apmServiceListHasBeenSet;
 
                 };
             }

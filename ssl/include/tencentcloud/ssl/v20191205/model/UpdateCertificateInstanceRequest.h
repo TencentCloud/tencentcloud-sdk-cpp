@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ssl/v20191205/model/ResourceTypeRegions.h>
+#include <tencentcloud/ssl/v20191205/model/Tags.h>
 
 
 namespace TencentCloud
@@ -42,27 +43,6 @@ namespace TencentCloud
                     ~UpdateCertificateInstanceRequest() = default;
                     std::string ToJsonString() const;
 
-
-                    /**
-                     * 获取一键更新新证书ID
-                     * @return CertificateId 一键更新新证书ID
-                     * 
-                     */
-                    std::string GetCertificateId() const;
-
-                    /**
-                     * 设置一键更新新证书ID
-                     * @param _certificateId 一键更新新证书ID
-                     * 
-                     */
-                    void SetCertificateId(const std::string& _certificateId);
-
-                    /**
-                     * 判断参数 CertificateId 是否已赋值
-                     * @return CertificateId 是否已赋值
-                     * 
-                     */
-                    bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取一键更新原证书ID
@@ -107,6 +87,27 @@ namespace TencentCloud
                     bool ResourceTypesHasBeenSet() const;
 
                     /**
+                     * 获取一键更新新证书ID
+                     * @return CertificateId 一键更新新证书ID
+                     * 
+                     */
+                    std::string GetCertificateId() const;
+
+                    /**
+                     * 设置一键更新新证书ID
+                     * @param _certificateId 一键更新新证书ID
+                     * 
+                     */
+                    void SetCertificateId(const std::string& _certificateId);
+
+                    /**
+                     * 判断参数 CertificateId 是否已赋值
+                     * @return CertificateId 是否已赋值
+                     * 
+                     */
+                    bool CertificateIdHasBeenSet() const;
+
+                    /**
                      * 获取需要部署的地域列表（废弃）
                      * @return Regions 需要部署的地域列表（废弃）
                      * @deprecated
@@ -148,13 +149,154 @@ namespace TencentCloud
                      */
                     bool ResourceTypesRegionsHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取证书公钥， 若上传证书公钥， 则CertificateId不用传
+                     * @return CertificatePublicKey 证书公钥， 若上传证书公钥， 则CertificateId不用传
+                     * 
+                     */
+                    std::string GetCertificatePublicKey() const;
 
                     /**
-                     * 一键更新新证书ID
+                     * 设置证书公钥， 若上传证书公钥， 则CertificateId不用传
+                     * @param _certificatePublicKey 证书公钥， 若上传证书公钥， 则CertificateId不用传
+                     * 
                      */
-                    std::string m_certificateId;
-                    bool m_certificateIdHasBeenSet;
+                    void SetCertificatePublicKey(const std::string& _certificatePublicKey);
+
+                    /**
+                     * 判断参数 CertificatePublicKey 是否已赋值
+                     * @return CertificatePublicKey 是否已赋值
+                     * 
+                     */
+                    bool CertificatePublicKeyHasBeenSet() const;
+
+                    /**
+                     * 获取证书私钥，若上传证书公钥， 则证书私钥必填
+                     * @return CertificatePrivateKey 证书私钥，若上传证书公钥， 则证书私钥必填
+                     * 
+                     */
+                    std::string GetCertificatePrivateKey() const;
+
+                    /**
+                     * 设置证书私钥，若上传证书公钥， 则证书私钥必填
+                     * @param _certificatePrivateKey 证书私钥，若上传证书公钥， 则证书私钥必填
+                     * 
+                     */
+                    void SetCertificatePrivateKey(const std::string& _certificatePrivateKey);
+
+                    /**
+                     * 判断参数 CertificatePrivateKey 是否已赋值
+                     * @return CertificatePrivateKey 是否已赋值
+                     * 
+                     */
+                    bool CertificatePrivateKeyHasBeenSet() const;
+
+                    /**
+                     * 获取旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知
+                     * @return ExpiringNotificationSwitch 旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知
+                     * 
+                     */
+                    uint64_t GetExpiringNotificationSwitch() const;
+
+                    /**
+                     * 设置旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知
+                     * @param _expiringNotificationSwitch 旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知
+                     * 
+                     */
+                    void SetExpiringNotificationSwitch(const uint64_t& _expiringNotificationSwitch);
+
+                    /**
+                     * 判断参数 ExpiringNotificationSwitch 是否已赋值
+                     * @return ExpiringNotificationSwitch 是否已赋值
+                     * 
+                     */
+                    bool ExpiringNotificationSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数
+                     * @return Repeatable 相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数
+                     * 
+                     */
+                    bool GetRepeatable() const;
+
+                    /**
+                     * 设置相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数
+                     * @param _repeatable 相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数
+                     * 
+                     */
+                    void SetRepeatable(const bool& _repeatable);
+
+                    /**
+                     * 判断参数 Repeatable 是否已赋值
+                     * @return Repeatable 是否已赋值
+                     * 
+                     */
+                    bool RepeatableHasBeenSet() const;
+
+                    /**
+                     * 获取是否允许下载，若上传证书公钥， 则可以配置该参数
+                     * @return AllowDownload 是否允许下载，若上传证书公钥， 则可以配置该参数
+                     * 
+                     */
+                    bool GetAllowDownload() const;
+
+                    /**
+                     * 设置是否允许下载，若上传证书公钥， 则可以配置该参数
+                     * @param _allowDownload 是否允许下载，若上传证书公钥， 则可以配置该参数
+                     * 
+                     */
+                    void SetAllowDownload(const bool& _allowDownload);
+
+                    /**
+                     * 判断参数 AllowDownload 是否已赋值
+                     * @return AllowDownload 是否已赋值
+                     * 
+                     */
+                    bool AllowDownloadHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表，若上传证书公钥， 则可以配置该参数
+                     * @return Tags 标签列表，若上传证书公钥， 则可以配置该参数
+                     * 
+                     */
+                    std::vector<Tags> GetTags() const;
+
+                    /**
+                     * 设置标签列表，若上传证书公钥， 则可以配置该参数
+                     * @param _tags 标签列表，若上传证书公钥， 则可以配置该参数
+                     * 
+                     */
+                    void SetTags(const std::vector<Tags>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取项目 ID，若上传证书公钥， 则可以配置该参数
+                     * @return ProjectId 项目 ID，若上传证书公钥， 则可以配置该参数
+                     * 
+                     */
+                    uint64_t GetProjectId() const;
+
+                    /**
+                     * 设置项目 ID，若上传证书公钥， 则可以配置该参数
+                     * @param _projectId 项目 ID，若上传证书公钥， 则可以配置该参数
+                     * 
+                     */
+                    void SetProjectId(const uint64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 一键更新原证书ID
@@ -169,6 +311,12 @@ namespace TencentCloud
                     bool m_resourceTypesHasBeenSet;
 
                     /**
+                     * 一键更新新证书ID
+                     */
+                    std::string m_certificateId;
+                    bool m_certificateIdHasBeenSet;
+
+                    /**
                      * 需要部署的地域列表（废弃）
                      */
                     std::vector<std::string> m_regions;
@@ -179,6 +327,48 @@ namespace TencentCloud
                      */
                     std::vector<ResourceTypeRegions> m_resourceTypesRegions;
                     bool m_resourceTypesRegionsHasBeenSet;
+
+                    /**
+                     * 证书公钥， 若上传证书公钥， 则CertificateId不用传
+                     */
+                    std::string m_certificatePublicKey;
+                    bool m_certificatePublicKeyHasBeenSet;
+
+                    /**
+                     * 证书私钥，若上传证书公钥， 则证书私钥必填
+                     */
+                    std::string m_certificatePrivateKey;
+                    bool m_certificatePrivateKeyHasBeenSet;
+
+                    /**
+                     * 旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知
+                     */
+                    uint64_t m_expiringNotificationSwitch;
+                    bool m_expiringNotificationSwitchHasBeenSet;
+
+                    /**
+                     * 相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数
+                     */
+                    bool m_repeatable;
+                    bool m_repeatableHasBeenSet;
+
+                    /**
+                     * 是否允许下载，若上传证书公钥， 则可以配置该参数
+                     */
+                    bool m_allowDownload;
+                    bool m_allowDownloadHasBeenSet;
+
+                    /**
+                     * 标签列表，若上传证书公钥， 则可以配置该参数
+                     */
+                    std::vector<Tags> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 项目 ID，若上传证书公钥， 则可以配置该参数
+                     */
+                    uint64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                 };
             }

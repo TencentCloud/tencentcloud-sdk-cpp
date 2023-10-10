@@ -932,15 +932,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool DealModeHasBeenSet() const;
 
                     /**
-                     * 获取参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
-                     * @return ParamTemplateId 参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
+                     * 获取参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
+                     * @return ParamTemplateId 参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
                      * 
                      */
                     int64_t GetParamTemplateId() const;
 
                     /**
-                     * 设置参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
-                     * @param _paramTemplateId 参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
+                     * 设置参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
+                     * @param _paramTemplateId 参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
                      * 
                      */
                     void SetParamTemplateId(const int64_t& _paramTemplateId);
@@ -1247,7 +1247,7 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_dealModeHasBeenSet;
 
                     /**
-                     * 参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
+                     * 参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
                      */
                     int64_t m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;

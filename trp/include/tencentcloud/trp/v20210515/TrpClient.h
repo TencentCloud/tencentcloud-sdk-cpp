@@ -59,6 +59,8 @@
 #include <tencentcloud/trp/v20210515/model/DescribeAgentCorpsResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodeBatchByIdRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodeBatchByIdResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCodeBatchesRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCodeBatchesResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodeBatchsRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodeBatchsResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodePackStatusRequest.h>
@@ -191,6 +193,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCodeBatchByIdResponse> DescribeCodeBatchByIdOutcome;
                 typedef std::future<DescribeCodeBatchByIdOutcome> DescribeCodeBatchByIdOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeCodeBatchByIdRequest&, DescribeCodeBatchByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodeBatchByIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCodeBatchesResponse> DescribeCodeBatchesOutcome;
+                typedef std::future<DescribeCodeBatchesOutcome> DescribeCodeBatchesOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeCodeBatchesRequest&, DescribeCodeBatchesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodeBatchesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCodeBatchsResponse> DescribeCodeBatchsOutcome;
                 typedef std::future<DescribeCodeBatchsOutcome> DescribeCodeBatchsOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeCodeBatchsRequest&, DescribeCodeBatchsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodeBatchsAsyncHandler;
@@ -454,6 +459,17 @@ namespace TencentCloud
 
                 /**
                  *查询批次列表
+                 * @param req DescribeCodeBatchesRequest
+                 * @return DescribeCodeBatchesOutcome
+                 */
+                DescribeCodeBatchesOutcome DescribeCodeBatches(const Model::DescribeCodeBatchesRequest &request);
+                void DescribeCodeBatchesAsync(const Model::DescribeCodeBatchesRequest& request, const DescribeCodeBatchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCodeBatchesOutcomeCallable DescribeCodeBatchesCallable(const Model::DescribeCodeBatchesRequest& request);
+
+                /**
+                 *查询批次列表
+
+旧版接口已经弃用，新业务请使用用新版的接口 DescribeCodeBatches
                  * @param req DescribeCodeBatchsRequest
                  * @return DescribeCodeBatchsOutcome
                  */

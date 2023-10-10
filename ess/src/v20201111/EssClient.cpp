@@ -1459,6 +1459,49 @@ EssClient::CreateUserAutoSignEnableUrlOutcomeCallable EssClient::CreateUserAutoS
     return task->get_future();
 }
 
+EssClient::CreateUserAutoSignSealUrlOutcome EssClient::CreateUserAutoSignSealUrl(const CreateUserAutoSignSealUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserAutoSignSealUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserAutoSignSealUrlResponse rsp = CreateUserAutoSignSealUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserAutoSignSealUrlOutcome(rsp);
+        else
+            return CreateUserAutoSignSealUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserAutoSignSealUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateUserAutoSignSealUrlAsync(const CreateUserAutoSignSealUrlRequest& request, const CreateUserAutoSignSealUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserAutoSignSealUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateUserAutoSignSealUrlOutcomeCallable EssClient::CreateUserAutoSignSealUrlCallable(const CreateUserAutoSignSealUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserAutoSignSealUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserAutoSignSealUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateWebThemeConfigOutcome EssClient::CreateWebThemeConfig(const CreateWebThemeConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateWebThemeConfig");

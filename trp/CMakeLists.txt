@@ -71,6 +71,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeCorpQuotasRequest.h
   include/tencentcloud/trp/v20210515/model/AuthorizedTransferRequest.h
   include/tencentcloud/trp/v20210515/model/ReportBatchCallbackStatusRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeCodeBatchesResponse.h
   include/tencentcloud/trp/v20210515/model/CreateProductRequest.h
   include/tencentcloud/trp/v20210515/model/CreateCustomPackRequest.h
   include/tencentcloud/trp/v20210515/model/Ext.h
@@ -118,7 +119,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DeleteTraceDataRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeScanLogsRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceCodeUnlinkResponse.h
-  include/tencentcloud/trp/v20210515/model/DescribeTraceDataByIdRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeCodeBatchesRequest.h
   include/tencentcloud/trp/v20210515/model/InputEncryptData.h
   include/tencentcloud/trp/v20210515/model/Merchant.h
   include/tencentcloud/trp/v20210515/model/Product.h
@@ -134,6 +135,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DeleteCodeBatchResponse.h
   include/tencentcloud/trp/v20210515/model/CreateTraceChainRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeMerchantByIdRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeTraceDataByIdRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeProductByIdResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeCodePacksRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeJobFileUrlResponse.h
@@ -199,6 +201,7 @@ set(trp_src
   src/v20210515/model/DescribeCorpQuotasRequest.cpp
   src/v20210515/model/AuthorizedTransferRequest.cpp
   src/v20210515/model/ReportBatchCallbackStatusRequest.cpp
+  src/v20210515/model/DescribeCodeBatchesResponse.cpp
   src/v20210515/model/CreateProductRequest.cpp
   src/v20210515/model/CreateCustomPackRequest.cpp
   src/v20210515/model/Ext.cpp
@@ -246,7 +249,7 @@ set(trp_src
   src/v20210515/model/DeleteTraceDataRequest.cpp
   src/v20210515/model/DescribeScanLogsRequest.cpp
   src/v20210515/model/ModifyTraceCodeUnlinkResponse.cpp
-  src/v20210515/model/DescribeTraceDataByIdRequest.cpp
+  src/v20210515/model/DescribeCodeBatchesRequest.cpp
   src/v20210515/model/InputEncryptData.cpp
   src/v20210515/model/Merchant.cpp
   src/v20210515/model/Product.cpp
@@ -262,6 +265,7 @@ set(trp_src
   src/v20210515/model/DeleteCodeBatchResponse.cpp
   src/v20210515/model/CreateTraceChainRequest.cpp
   src/v20210515/model/DescribeMerchantByIdRequest.cpp
+  src/v20210515/model/DescribeTraceDataByIdRequest.cpp
   src/v20210515/model/DescribeProductByIdResponse.cpp
   src/v20210515/model/DescribeCodePacksRequest.cpp
   src/v20210515/model/DescribeJobFileUrlResponse.cpp

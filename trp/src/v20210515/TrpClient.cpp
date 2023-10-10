@@ -814,6 +814,49 @@ TrpClient::DescribeCodeBatchByIdOutcomeCallable TrpClient::DescribeCodeBatchById
     return task->get_future();
 }
 
+TrpClient::DescribeCodeBatchesOutcome TrpClient::DescribeCodeBatches(const DescribeCodeBatchesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCodeBatches");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCodeBatchesResponse rsp = DescribeCodeBatchesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCodeBatchesOutcome(rsp);
+        else
+            return DescribeCodeBatchesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCodeBatchesOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeCodeBatchesAsync(const DescribeCodeBatchesRequest& request, const DescribeCodeBatchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCodeBatches(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeCodeBatchesOutcomeCallable TrpClient::DescribeCodeBatchesCallable(const DescribeCodeBatchesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCodeBatchesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCodeBatches(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::DescribeCodeBatchsOutcome TrpClient::DescribeCodeBatchs(const DescribeCodeBatchsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCodeBatchs");

@@ -1115,6 +1115,49 @@ EmrClient::ModifyResourcesTagsOutcomeCallable EmrClient::ModifyResourcesTagsCall
     return task->get_future();
 }
 
+EmrClient::ModifyUserManagerPwdOutcome EmrClient::ModifyUserManagerPwd(const ModifyUserManagerPwdRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserManagerPwd");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserManagerPwdResponse rsp = ModifyUserManagerPwdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserManagerPwdOutcome(rsp);
+        else
+            return ModifyUserManagerPwdOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserManagerPwdOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyUserManagerPwdAsync(const ModifyUserManagerPwdRequest& request, const ModifyUserManagerPwdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserManagerPwd(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyUserManagerPwdOutcomeCallable EmrClient::ModifyUserManagerPwdCallable(const ModifyUserManagerPwdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserManagerPwdOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserManagerPwd(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::RunJobFlowOutcome EmrClient::RunJobFlow(const RunJobFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "RunJobFlow");

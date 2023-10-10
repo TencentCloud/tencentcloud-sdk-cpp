@@ -3953,6 +3953,49 @@ DlcClient::GenerateCreateMangedTableSqlOutcomeCallable DlcClient::GenerateCreate
     return task->get_future();
 }
 
+DlcClient::GetOptimizerPolicyOutcome DlcClient::GetOptimizerPolicy(const GetOptimizerPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetOptimizerPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetOptimizerPolicyResponse rsp = GetOptimizerPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetOptimizerPolicyOutcome(rsp);
+        else
+            return GetOptimizerPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return GetOptimizerPolicyOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::GetOptimizerPolicyAsync(const GetOptimizerPolicyRequest& request, const GetOptimizerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetOptimizerPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::GetOptimizerPolicyOutcomeCallable DlcClient::GetOptimizerPolicyCallable(const GetOptimizerPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetOptimizerPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->GetOptimizerPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::ListTaskJobLogDetailOutcome DlcClient::ListTaskJobLogDetail(const ListTaskJobLogDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "ListTaskJobLogDetail");

@@ -1803,6 +1803,49 @@ WafClient::DescribeDomainDetailsSaasOutcomeCallable WafClient::DescribeDomainDet
     return task->get_future();
 }
 
+WafClient::DescribeDomainRulesOutcome WafClient::DescribeDomainRules(const DescribeDomainRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainRulesResponse rsp = DescribeDomainRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainRulesOutcome(rsp);
+        else
+            return DescribeDomainRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainRulesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeDomainRulesAsync(const DescribeDomainRulesRequest& request, const DescribeDomainRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeDomainRulesOutcomeCallable WafClient::DescribeDomainRulesCallable(const DescribeDomainRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeDomainVerifyResultOutcome WafClient::DescribeDomainVerifyResult(const DescribeDomainVerifyResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainVerifyResult");
@@ -2699,6 +2742,49 @@ WafClient::DescribeUserDomainInfoOutcomeCallable WafClient::DescribeUserDomainIn
         [this, request]()
         {
             return this->DescribeUserDomainInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeUserSignatureRuleOutcome WafClient::DescribeUserSignatureRule(const DescribeUserSignatureRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserSignatureRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserSignatureRuleResponse rsp = DescribeUserSignatureRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserSignatureRuleOutcome(rsp);
+        else
+            return DescribeUserSignatureRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserSignatureRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeUserSignatureRuleAsync(const DescribeUserSignatureRuleRequest& request, const DescribeUserSignatureRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserSignatureRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeUserSignatureRuleOutcomeCallable WafClient::DescribeUserSignatureRuleCallable(const DescribeUserSignatureRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserSignatureRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserSignatureRule(request);
         }
     );
 
@@ -4168,6 +4254,49 @@ WafClient::ModifyInstanceRenewFlagOutcomeCallable WafClient::ModifyInstanceRenew
     return task->get_future();
 }
 
+WafClient::ModifyModuleStatusOutcome WafClient::ModifyModuleStatus(const ModifyModuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModuleStatusResponse rsp = ModifyModuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModuleStatusOutcome(rsp);
+        else
+            return ModifyModuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyModuleStatusAsync(const ModifyModuleStatusRequest& request, const ModifyModuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyModuleStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyModuleStatusOutcomeCallable WafClient::ModifyModuleStatusCallable(const ModifyModuleStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyModuleStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyModuleStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyProtectionStatusOutcome WafClient::ModifyProtectionStatus(const ModifyProtectionStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyProtectionStatus");
@@ -4297,6 +4426,92 @@ WafClient::ModifySpartaProtectionModeOutcomeCallable WafClient::ModifySpartaProt
     return task->get_future();
 }
 
+WafClient::ModifyUserLevelOutcome WafClient::ModifyUserLevel(const ModifyUserLevelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserLevel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserLevelResponse rsp = ModifyUserLevelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserLevelOutcome(rsp);
+        else
+            return ModifyUserLevelOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserLevelOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyUserLevelAsync(const ModifyUserLevelRequest& request, const ModifyUserLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserLevel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyUserLevelOutcomeCallable WafClient::ModifyUserLevelCallable(const ModifyUserLevelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserLevelOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserLevel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyUserSignatureRuleOutcome WafClient::ModifyUserSignatureRule(const ModifyUserSignatureRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserSignatureRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserSignatureRuleResponse rsp = ModifyUserSignatureRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserSignatureRuleOutcome(rsp);
+        else
+            return ModifyUserSignatureRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserSignatureRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyUserSignatureRuleAsync(const ModifyUserSignatureRuleRequest& request, const ModifyUserSignatureRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserSignatureRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyUserSignatureRuleOutcomeCallable WafClient::ModifyUserSignatureRuleCallable(const ModifyUserSignatureRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserSignatureRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserSignatureRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyWafAutoDenyRulesOutcome WafClient::ModifyWafAutoDenyRules(const ModifyWafAutoDenyRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWafAutoDenyRules");
@@ -4419,6 +4634,49 @@ WafClient::ModifyWafThreatenIntelligenceOutcomeCallable WafClient::ModifyWafThre
         [this, request]()
         {
             return this->ModifyWafThreatenIntelligence(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyWebshellStatusOutcome WafClient::ModifyWebshellStatus(const ModifyWebshellStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWebshellStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWebshellStatusResponse rsp = ModifyWebshellStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWebshellStatusOutcome(rsp);
+        else
+            return ModifyWebshellStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWebshellStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyWebshellStatusAsync(const ModifyWebshellStatusRequest& request, const ModifyWebshellStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWebshellStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyWebshellStatusOutcomeCallable WafClient::ModifyWebshellStatusCallable(const ModifyWebshellStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWebshellStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWebshellStatus(request);
         }
     );
 

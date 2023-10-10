@@ -1115,6 +1115,49 @@ EssbasicClient::ChannelCreateUserAutoSignEnableUrlOutcomeCallable EssbasicClient
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateUserAutoSignSealUrlOutcome EssbasicClient::ChannelCreateUserAutoSignSealUrl(const ChannelCreateUserAutoSignSealUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateUserAutoSignSealUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateUserAutoSignSealUrlResponse rsp = ChannelCreateUserAutoSignSealUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateUserAutoSignSealUrlOutcome(rsp);
+        else
+            return ChannelCreateUserAutoSignSealUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateUserAutoSignSealUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateUserAutoSignSealUrlAsync(const ChannelCreateUserAutoSignSealUrlRequest& request, const ChannelCreateUserAutoSignSealUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateUserAutoSignSealUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateUserAutoSignSealUrlOutcomeCallable EssbasicClient::ChannelCreateUserAutoSignSealUrlCallable(const ChannelCreateUserAutoSignSealUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateUserAutoSignSealUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateUserAutoSignSealUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateUserRolesOutcome EssbasicClient::ChannelCreateUserRoles(const ChannelCreateUserRolesRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateUserRoles");
