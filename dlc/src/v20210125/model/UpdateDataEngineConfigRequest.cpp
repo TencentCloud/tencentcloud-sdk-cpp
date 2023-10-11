@@ -22,7 +22,9 @@
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-UpdateDataEngineConfigRequest::UpdateDataEngineConfigRequest()
+UpdateDataEngineConfigRequest::UpdateDataEngineConfigRequest() :
+    m_dataEngineIdsHasBeenSet(false),
+    m_dataEngineConfigCommandHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string UpdateDataEngineConfigRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_dataEngineIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dataEngineIds.begin(); itr != m_dataEngineIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_dataEngineConfigCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineConfigCommand";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataEngineConfigCommand.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string UpdateDataEngineConfigRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> UpdateDataEngineConfigRequest::GetDataEngineIds() const
+{
+    return m_dataEngineIds;
+}
+
+void UpdateDataEngineConfigRequest::SetDataEngineIds(const vector<string>& _dataEngineIds)
+{
+    m_dataEngineIds = _dataEngineIds;
+    m_dataEngineIdsHasBeenSet = true;
+}
+
+bool UpdateDataEngineConfigRequest::DataEngineIdsHasBeenSet() const
+{
+    return m_dataEngineIdsHasBeenSet;
+}
+
+string UpdateDataEngineConfigRequest::GetDataEngineConfigCommand() const
+{
+    return m_dataEngineConfigCommand;
+}
+
+void UpdateDataEngineConfigRequest::SetDataEngineConfigCommand(const string& _dataEngineConfigCommand)
+{
+    m_dataEngineConfigCommand = _dataEngineConfigCommand;
+    m_dataEngineConfigCommandHasBeenSet = true;
+}
+
+bool UpdateDataEngineConfigRequest::DataEngineConfigCommandHasBeenSet() const
+{
+    return m_dataEngineConfigCommandHasBeenSet;
+}
 
 

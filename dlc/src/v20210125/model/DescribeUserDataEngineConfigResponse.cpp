@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeUserDataEngineConfigResponse::DescribeUserDataEngineConfigResponse()
+DescribeUserDataEngineConfigResponse::DescribeUserDataEngineConfigResponse() :
+    m_dataEngineConfigInstanceInfosHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeUserDataEngineConfigResponse::Deserialize(const stri
     }
 
 
+    if (rsp.HasMember("DataEngineConfigInstanceInfos") && !rsp["DataEngineConfigInstanceInfos"].IsNull())
+    {
+        if (!rsp["DataEngineConfigInstanceInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataEngineConfigInstanceInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DataEngineConfigInstanceInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DataEngineConfigInstanceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataEngineConfigInstanceInfos.push_back(item);
+        }
+        m_dataEngineConfigInstanceInfosHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeUserDataEngineConfigResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_dataEngineConfigInstanceInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineConfigInstanceInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataEngineConfigInstanceInfos.begin(); itr != m_dataEngineConfigInstanceInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeUserDataEngineConfigResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<DataEngineConfigInstanceInfo> DescribeUserDataEngineConfigResponse::GetDataEngineConfigInstanceInfos() const
+{
+    return m_dataEngineConfigInstanceInfos;
+}
+
+bool DescribeUserDataEngineConfigResponse::DataEngineConfigInstanceInfosHasBeenSet() const
+{
+    return m_dataEngineConfigInstanceInfosHasBeenSet;
+}
+
+uint64_t DescribeUserDataEngineConfigResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeUserDataEngineConfigResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

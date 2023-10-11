@@ -33,7 +33,11 @@ RateLimitUserRule::RateLimitUserRule() :
     m_ruleIDHasBeenSet(false),
     m_freqFieldsHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_freqScopeHasBeenSet(false)
+    m_freqScopeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_customResponseIdHasBeenSet(false),
+    m_responseCodeHasBeenSet(false),
+    m_redirectUrlHasBeenSet(false)
 {
 }
 
@@ -188,6 +192,46 @@ CoreInternalOutcome RateLimitUserRule::Deserialize(const rapidjson::Value &value
         m_freqScopeHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitUserRule.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomResponseId") && !value["CustomResponseId"].IsNull())
+    {
+        if (!value["CustomResponseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitUserRule.CustomResponseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customResponseId = string(value["CustomResponseId"].GetString());
+        m_customResponseIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResponseCode") && !value["ResponseCode"].IsNull())
+    {
+        if (!value["ResponseCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitUserRule.ResponseCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseCode = value["ResponseCode"].GetInt64();
+        m_responseCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RedirectUrl") && !value["RedirectUrl"].IsNull())
+    {
+        if (!value["RedirectUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitUserRule.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_redirectUrl = string(value["RedirectUrl"].GetString());
+        m_redirectUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -314,6 +358,38 @@ void RateLimitUserRule::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customResponseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomResponseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customResponseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_responseCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_responseCode, allocator);
+    }
+
+    if (m_redirectUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedirectUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_redirectUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -525,5 +601,69 @@ void RateLimitUserRule::SetFreqScope(const vector<string>& _freqScope)
 bool RateLimitUserRule::FreqScopeHasBeenSet() const
 {
     return m_freqScopeHasBeenSet;
+}
+
+string RateLimitUserRule::GetName() const
+{
+    return m_name;
+}
+
+void RateLimitUserRule::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool RateLimitUserRule::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string RateLimitUserRule::GetCustomResponseId() const
+{
+    return m_customResponseId;
+}
+
+void RateLimitUserRule::SetCustomResponseId(const string& _customResponseId)
+{
+    m_customResponseId = _customResponseId;
+    m_customResponseIdHasBeenSet = true;
+}
+
+bool RateLimitUserRule::CustomResponseIdHasBeenSet() const
+{
+    return m_customResponseIdHasBeenSet;
+}
+
+int64_t RateLimitUserRule::GetResponseCode() const
+{
+    return m_responseCode;
+}
+
+void RateLimitUserRule::SetResponseCode(const int64_t& _responseCode)
+{
+    m_responseCode = _responseCode;
+    m_responseCodeHasBeenSet = true;
+}
+
+bool RateLimitUserRule::ResponseCodeHasBeenSet() const
+{
+    return m_responseCodeHasBeenSet;
+}
+
+string RateLimitUserRule::GetRedirectUrl() const
+{
+    return m_redirectUrl;
+}
+
+void RateLimitUserRule::SetRedirectUrl(const string& _redirectUrl)
+{
+    m_redirectUrl = _redirectUrl;
+    m_redirectUrlHasBeenSet = true;
+}
+
+bool RateLimitUserRule::RedirectUrlHasBeenSet() const
+{
+    return m_redirectUrlHasBeenSet;
 }
 

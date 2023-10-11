@@ -22,7 +22,8 @@
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-UpgradeDataEngineImageRequest::UpgradeDataEngineImageRequest()
+UpgradeDataEngineImageRequest::UpgradeDataEngineImageRequest() :
+    m_dataEngineIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string UpgradeDataEngineImageRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_dataEngineIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataEngineId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string UpgradeDataEngineImageRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string UpgradeDataEngineImageRequest::GetDataEngineId() const
+{
+    return m_dataEngineId;
+}
+
+void UpgradeDataEngineImageRequest::SetDataEngineId(const string& _dataEngineId)
+{
+    m_dataEngineId = _dataEngineId;
+    m_dataEngineIdHasBeenSet = true;
+}
+
+bool UpgradeDataEngineImageRequest::DataEngineIdHasBeenSet() const
+{
+    return m_dataEngineIdHasBeenSet;
+}
 
 

@@ -26,7 +26,8 @@ AiAnalysisResult::AiAnalysisResult() :
     m_coverTaskHasBeenSet(false),
     m_tagTaskHasBeenSet(false),
     m_frameTagTaskHasBeenSet(false),
-    m_highlightTaskHasBeenSet(false)
+    m_highlightTaskHasBeenSet(false),
+    m_deLogoTaskHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,23 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_highlightTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("DeLogoTask") && !value["DeLogoTask"].IsNull())
+    {
+        if (!value["DeLogoTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.DeLogoTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_deLogoTask.Deserialize(value["DeLogoTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_deLogoTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -188,6 +206,15 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_highlightTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_deLogoTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeLogoTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_deLogoTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -287,5 +314,21 @@ void AiAnalysisResult::SetHighlightTask(const AiAnalysisTaskHighlightResult& _hi
 bool AiAnalysisResult::HighlightTaskHasBeenSet() const
 {
     return m_highlightTaskHasBeenSet;
+}
+
+AiAnalysisTaskDelLogoResult AiAnalysisResult::GetDeLogoTask() const
+{
+    return m_deLogoTask;
+}
+
+void AiAnalysisResult::SetDeLogoTask(const AiAnalysisTaskDelLogoResult& _deLogoTask)
+{
+    m_deLogoTask = _deLogoTask;
+    m_deLogoTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::DeLogoTaskHasBeenSet() const
+{
+    return m_deLogoTaskHasBeenSet;
 }
 

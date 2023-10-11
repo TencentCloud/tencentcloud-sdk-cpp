@@ -43,6 +43,8 @@
 #include <tencentcloud/dasb/v20191018/model/CreateDeviceAccountResponse.h>
 #include <tencentcloud/dasb/v20191018/model/CreateDeviceGroupRequest.h>
 #include <tencentcloud/dasb/v20191018/model/CreateDeviceGroupResponse.h>
+#include <tencentcloud/dasb/v20191018/model/CreateResourceRequest.h>
+#include <tencentcloud/dasb/v20191018/model/CreateResourceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/CreateUserRequest.h>
 #include <tencentcloud/dasb/v20191018/model/CreateUserResponse.h>
 #include <tencentcloud/dasb/v20191018/model/CreateUserGroupRequest.h>
@@ -105,6 +107,8 @@
 #include <tencentcloud/dasb/v20191018/model/ModifyDeviceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyDeviceGroupRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyDeviceGroupResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyResourceRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyResourceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyUserRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyUserResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ResetDeviceAccountPasswordRequest.h>
@@ -171,6 +175,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeviceGroupResponse> CreateDeviceGroupOutcome;
                 typedef std::future<CreateDeviceGroupOutcome> CreateDeviceGroupOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::CreateDeviceGroupRequest&, CreateDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateResourceResponse> CreateResourceOutcome;
+                typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::CreateResourceRequest&, CreateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
@@ -264,6 +271,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDeviceGroupResponse> ModifyDeviceGroupOutcome;
                 typedef std::future<ModifyDeviceGroupOutcome> ModifyDeviceGroupOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyDeviceGroupRequest&, ModifyDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourceResponse> ModifyResourceOutcome;
+                typedef std::future<ModifyResourceOutcome> ModifyResourceOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ModifyResourceRequest&, ModifyResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
@@ -389,6 +399,15 @@ namespace TencentCloud
                 CreateDeviceGroupOutcome CreateDeviceGroup(const Model::CreateDeviceGroupRequest &request);
                 void CreateDeviceGroupAsync(const Model::CreateDeviceGroupRequest& request, const CreateDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDeviceGroupOutcomeCallable CreateDeviceGroupCallable(const Model::CreateDeviceGroupRequest& request);
+
+                /**
+                 *创建堡垒机实例
+                 * @param req CreateResourceRequest
+                 * @return CreateResourceOutcome
+                 */
+                CreateResourceOutcome CreateResource(const Model::CreateResourceRequest &request);
+                void CreateResourceAsync(const Model::CreateResourceRequest& request, const CreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateResourceOutcomeCallable CreateResourceCallable(const Model::CreateResourceRequest& request);
 
                 /**
                  *新建用户
@@ -668,6 +687,15 @@ namespace TencentCloud
                 ModifyDeviceGroupOutcome ModifyDeviceGroup(const Model::ModifyDeviceGroupRequest &request);
                 void ModifyDeviceGroupAsync(const Model::ModifyDeviceGroupRequest& request, const ModifyDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDeviceGroupOutcomeCallable ModifyDeviceGroupCallable(const Model::ModifyDeviceGroupRequest& request);
+
+                /**
+                 *资源变配
+                 * @param req ModifyResourceRequest
+                 * @return ModifyResourceOutcome
+                 */
+                ModifyResourceOutcome ModifyResource(const Model::ModifyResourceRequest &request);
+                void ModifyResourceAsync(const Model::ModifyResourceRequest& request, const ModifyResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceOutcomeCallable ModifyResourceCallable(const Model::ModifyResourceRequest& request);
 
                 /**
                  *修改用户信息

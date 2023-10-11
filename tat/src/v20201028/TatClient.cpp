@@ -255,6 +255,49 @@ TatClient::DeleteCommandOutcomeCallable TatClient::DeleteCommandCallable(const D
     return task->get_future();
 }
 
+TatClient::DeleteCommandsOutcome TatClient::DeleteCommands(const DeleteCommandsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCommands");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCommandsResponse rsp = DeleteCommandsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCommandsOutcome(rsp);
+        else
+            return DeleteCommandsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCommandsOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DeleteCommandsAsync(const DeleteCommandsRequest& request, const DeleteCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCommands(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DeleteCommandsOutcomeCallable TatClient::DeleteCommandsCallable(const DeleteCommandsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCommandsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCommands(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TatClient::DeleteInvokerOutcome TatClient::DeleteInvoker(const DeleteInvokerRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteInvoker");
@@ -635,6 +678,49 @@ TatClient::DescribeInvokersOutcomeCallable TatClient::DescribeInvokersCallable(c
         [this, request]()
         {
             return this->DescribeInvokers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TatClient::DescribeQuotasOutcome TatClient::DescribeQuotas(const DescribeQuotasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQuotas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQuotasResponse rsp = DescribeQuotasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQuotasOutcome(rsp);
+        else
+            return DescribeQuotasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQuotasOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DescribeQuotasAsync(const DescribeQuotasRequest& request, const DescribeQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeQuotas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DescribeQuotasOutcomeCallable TatClient::DescribeQuotasCallable(const DescribeQuotasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeQuotasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeQuotas(request);
         }
     );
 

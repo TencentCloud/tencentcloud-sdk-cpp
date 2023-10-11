@@ -134,6 +134,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationRoleRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByFilesResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesResponse.h
+  include/tencentcloud/ess/v20201111/model/FillError.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignUrlRequest.h
@@ -332,6 +333,7 @@ set(ess_src
   src/v20201111/model/ModifyIntegrationRoleRequest.cpp
   src/v20201111/model/CreateFlowGroupByFilesResponse.cpp
   src/v20201111/model/CreateIntegrationEmployeesResponse.cpp
+  src/v20201111/model/FillError.cpp
   src/v20201111/model/DeleteIntegrationRoleUsersRequest.cpp
   src/v20201111/model/CreateFlowByFilesRequest.cpp
   src/v20201111/model/CreateFlowSignUrlRequest.cpp

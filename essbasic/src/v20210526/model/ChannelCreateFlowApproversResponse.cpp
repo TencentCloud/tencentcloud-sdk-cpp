@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
-ChannelCreateFlowApproversResponse::ChannelCreateFlowApproversResponse()
+ChannelCreateFlowApproversResponse::ChannelCreateFlowApproversResponse() :
+    m_fillErrorHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome ChannelCreateFlowApproversResponse::Deserialize(const string
     }
 
 
+    if (rsp.HasMember("FillError") && !rsp["FillError"].IsNull())
+    {
+        if (!rsp["FillError"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FillError` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FillError"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FillError item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_fillError.push_back(item);
+        }
+        m_fillErrorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string ChannelCreateFlowApproversResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_fillErrorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FillError";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fillError.begin(); itr != m_fillError.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string ChannelCreateFlowApproversResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<FillError> ChannelCreateFlowApproversResponse::GetFillError() const
+{
+    return m_fillError;
+}
+
+bool ChannelCreateFlowApproversResponse::FillErrorHasBeenSet() const
+{
+    return m_fillErrorHasBeenSet;
+}
 
 

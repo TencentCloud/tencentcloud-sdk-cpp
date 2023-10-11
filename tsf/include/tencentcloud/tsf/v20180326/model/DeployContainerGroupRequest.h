@@ -639,15 +639,15 @@ namespace TencentCloud
                     bool DeployAgentHasBeenSet() const;
 
                     /**
-                     * 获取节点调度策略。若不指定改参数，则默认不使用节点调度策略。
-                     * @return SchedulingStrategy 节点调度策略。若不指定改参数，则默认不使用节点调度策略。
+                     * 获取节点调度策略。若不指定该参数，则默认不使用节点调度策略。
+                     * @return SchedulingStrategy 节点调度策略。若不指定该参数，则默认不使用节点调度策略。
                      * 
                      */
                     SchedulingStrategy GetSchedulingStrategy() const;
 
                     /**
-                     * 设置节点调度策略。若不指定改参数，则默认不使用节点调度策略。
-                     * @param _schedulingStrategy 节点调度策略。若不指定改参数，则默认不使用节点调度策略。
+                     * 设置节点调度策略。若不指定该参数，则默认不使用节点调度策略。
+                     * @param _schedulingStrategy 节点调度策略。若不指定该参数，则默认不使用节点调度策略。
                      * 
                      */
                     void SetSchedulingStrategy(const SchedulingStrategy& _schedulingStrategy);
@@ -1019,7 +1019,7 @@ namespace TencentCloud
                     bool m_deployAgentHasBeenSet;
 
                     /**
-                     * 节点调度策略。若不指定改参数，则默认不使用节点调度策略。
+                     * 节点调度策略。若不指定该参数，则默认不使用节点调度策略。
                      */
                     SchedulingStrategy m_schedulingStrategy;
                     bool m_schedulingStrategyHasBeenSet;

@@ -29,6 +29,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskTagResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskFrameTagResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHighlightResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDelLogoResult.h>
 
 
 namespace TencentCloud
@@ -217,6 +218,31 @@ namespace TencentCloud
                      */
                     bool HighlightTaskHasBeenSet() const;
 
+                    /**
+                     * 获取视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeLogoTask 视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskDelLogoResult GetDeLogoTask() const;
+
+                    /**
+                     * 设置视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deLogoTask 视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeLogoTask(const AiAnalysisTaskDelLogoResult& _deLogoTask);
+
+                    /**
+                     * 判断参数 DeLogoTask 是否已赋值
+                     * @return DeLogoTask 是否已赋值
+                     * 
+                     */
+                    bool DeLogoTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +290,13 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskHighlightResult m_highlightTask;
                     bool m_highlightTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskDelLogoResult m_deLogoTask;
+                    bool m_deLogoTaskHasBeenSet;
 
                 };
             }

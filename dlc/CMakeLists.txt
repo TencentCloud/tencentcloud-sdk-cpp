@@ -65,7 +65,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h
   include/tencentcloud/dlc/v20210125/model/TableInfo.h
   include/tencentcloud/dlc/v20210125/model/Task.h
-  include/tencentcloud/dlc/v20210125/model/ElasticsearchInfo.h
+  include/tencentcloud/dlc/v20210125/model/DataEngineConfigInstanceInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeWorkGroupsRequest.h
   include/tencentcloud/dlc/v20210125/model/CrontabResumeSuspendStrategy.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSTableResponse.h
@@ -84,6 +84,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeUserTypeRequest.h
   include/tencentcloud/dlc/v20210125/model/SwitchDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/CheckDataEngineConfigPairsValidityRequest.h
+  include/tencentcloud/dlc/v20210125/model/ElasticsearchInfo.h
   include/tencentcloud/dlc/v20210125/model/CSVSerde.h
   include/tencentcloud/dlc/v20210125/model/DescribeLakeFsInfoRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifySparkAppRequest.h
@@ -392,7 +393,7 @@ set(dlc_src
   src/v20210125/model/DeleteScriptResponse.cpp
   src/v20210125/model/TableInfo.cpp
   src/v20210125/model/Task.cpp
-  src/v20210125/model/ElasticsearchInfo.cpp
+  src/v20210125/model/DataEngineConfigInstanceInfo.cpp
   src/v20210125/model/DescribeWorkGroupsRequest.cpp
   src/v20210125/model/CrontabResumeSuspendStrategy.cpp
   src/v20210125/model/AlterDMSTableResponse.cpp
@@ -411,6 +412,7 @@ set(dlc_src
   src/v20210125/model/DescribeUserTypeRequest.cpp
   src/v20210125/model/SwitchDataEngineResponse.cpp
   src/v20210125/model/CheckDataEngineConfigPairsValidityRequest.cpp
+  src/v20210125/model/ElasticsearchInfo.cpp
   src/v20210125/model/CSVSerde.cpp
   src/v20210125/model/DescribeLakeFsInfoRequest.cpp
   src/v20210125/model/ModifySparkAppRequest.cpp

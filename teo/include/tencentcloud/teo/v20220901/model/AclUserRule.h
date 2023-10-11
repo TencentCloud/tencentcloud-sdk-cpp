@@ -73,18 +73,18 @@ namespace TencentCloud
 <li>trans：放行；</li>
 <li>drop：拦截；</li>
 <li>monitor：观察；</li>
-<li>ban：IP封禁；</li>
+<li>ban：IP 封禁；</li>
 <li>redirect：重定向；</li>
 <li>page：指定页面；</li>
-<li>alg：Javascript挑战。</li>
+<li>alg：JavaScript 挑战。</li>
                      * @return Action 处罚动作，取值有：
 <li>trans：放行；</li>
 <li>drop：拦截；</li>
 <li>monitor：观察；</li>
-<li>ban：IP封禁；</li>
+<li>ban：IP 封禁；</li>
 <li>redirect：重定向；</li>
 <li>page：指定页面；</li>
-<li>alg：Javascript挑战。</li>
+<li>alg：JavaScript 挑战。</li>
                      * 
                      */
                     std::string GetAction() const;
@@ -94,18 +94,18 @@ namespace TencentCloud
 <li>trans：放行；</li>
 <li>drop：拦截；</li>
 <li>monitor：观察；</li>
-<li>ban：IP封禁；</li>
+<li>ban：IP 封禁；</li>
 <li>redirect：重定向；</li>
 <li>page：指定页面；</li>
-<li>alg：Javascript挑战。</li>
+<li>alg：JavaScript 挑战。</li>
                      * @param _action 处罚动作，取值有：
 <li>trans：放行；</li>
 <li>drop：拦截；</li>
 <li>monitor：观察；</li>
-<li>ban：IP封禁；</li>
+<li>ban：IP 封禁；</li>
 <li>redirect：重定向；</li>
 <li>page：指定页面；</li>
-<li>alg：Javascript挑战。</li>
+<li>alg：JavaScript 挑战。</li>
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -189,19 +189,15 @@ namespace TencentCloud
                     bool RulePriorityHasBeenSet() const;
 
                     /**
-                     * 获取规则Id。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleID 规则Id。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取规则 Id。仅出参使用。
+                     * @return RuleID 规则 Id。仅出参使用。
                      * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
-                     * 设置规则Id。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleID 规则Id。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置规则 Id。仅出参使用。
+                     * @param _ruleID 规则 Id。仅出参使用。
                      * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
@@ -215,18 +211,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -239,19 +231,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取ip封禁的惩罚时间，取值范围0-2天。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PunishTime ip封禁的惩罚时间，取值范围0-2天。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取ip 封禁的惩罚时间。Action 是 ban 时必填，且不能为空，取值范围0-2天。
+                     * @return PunishTime ip 封禁的惩罚时间。Action 是 ban 时必填，且不能为空，取值范围0-2天。
                      * 
                      */
                     int64_t GetPunishTime() const;
 
                     /**
-                     * 设置ip封禁的惩罚时间，取值范围0-2天。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _punishTime ip封禁的惩罚时间，取值范围0-2天。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置ip 封禁的惩罚时间。Action 是 ban 时必填，且不能为空，取值范围0-2天。
+                     * @param _punishTime ip 封禁的惩罚时间。Action 是 ban 时必填，且不能为空，取值范围0-2天。
                      * 
                      */
                     void SetPunishTime(const int64_t& _punishTime);
@@ -264,31 +252,27 @@ namespace TencentCloud
                     bool PunishTimeHasBeenSet() const;
 
                     /**
-                     * 获取ip封禁的惩罚时间单位，取值有：
+                     * 获取ip 封禁的惩罚时间单位，取值有：
 <li>second：秒；</li>
 <li>minutes：分；</li>
-<li>hour：小时。</li>默认为second。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PunishTimeUnit ip封禁的惩罚时间单位，取值有：
+<li>hour：小时。</li>默认为 second。
+                     * @return PunishTimeUnit ip 封禁的惩罚时间单位，取值有：
 <li>second：秒；</li>
 <li>minutes：分；</li>
-<li>hour：小时。</li>默认为second。
-注意：此字段可能返回 null，表示取不到有效值。
+<li>hour：小时。</li>默认为 second。
                      * 
                      */
                     std::string GetPunishTimeUnit() const;
 
                     /**
-                     * 设置ip封禁的惩罚时间单位，取值有：
+                     * 设置ip 封禁的惩罚时间单位，取值有：
 <li>second：秒；</li>
 <li>minutes：分；</li>
-<li>hour：小时。</li>默认为second。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _punishTimeUnit ip封禁的惩罚时间单位，取值有：
+<li>hour：小时。</li>默认为 second。
+                     * @param _punishTimeUnit ip 封禁的惩罚时间单位，取值有：
 <li>second：秒；</li>
 <li>minutes：分；</li>
-<li>hour：小时。</li>默认为second。
-注意：此字段可能返回 null，表示取不到有效值。
+<li>hour：小时。</li>默认为 second。
                      * 
                      */
                     void SetPunishTimeUnit(const std::string& _punishTimeUnit);
@@ -301,19 +285,15 @@ namespace TencentCloud
                     bool PunishTimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取自定义返回页面的名称。默认为空字符串。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 自定义返回页面的名称。默认为空字符串。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取自定义返回页面的名称。Action 是 page 时必填，且不能为空。	
+                     * @return Name 自定义返回页面的名称。Action 是 page 时必填，且不能为空。	
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置自定义返回页面的名称。默认为空字符串。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 自定义返回页面的名称。默认为空字符串。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置自定义返回页面的名称。Action 是 page 时必填，且不能为空。	
+                     * @param _name 自定义返回页面的名称。Action 是 page 时必填，且不能为空。	
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -326,19 +306,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取自定义返回页面的实例id。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageId 自定义返回页面的实例id。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取自定义返回页面的实例 Id。默认为0，代表使用系统默认拦截页面。该参数已废弃。
+                     * @return PageId 自定义返回页面的实例 Id。默认为0，代表使用系统默认拦截页面。该参数已废弃。
                      * 
                      */
                     int64_t GetPageId() const;
 
                     /**
-                     * 设置自定义返回页面的实例id。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pageId 自定义返回页面的实例id。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置自定义返回页面的实例 Id。默认为0，代表使用系统默认拦截页面。该参数已废弃。
+                     * @param _pageId 自定义返回页面的实例 Id。默认为0，代表使用系统默认拦截页面。该参数已废弃。
                      * 
                      */
                     void SetPageId(const int64_t& _pageId);
@@ -351,44 +327,36 @@ namespace TencentCloud
                     bool PageIdHasBeenSet() const;
 
                     /**
-                     * 获取重定向时候的地址，必须为本用户接入的站点子域名。默认为空字符串。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RedirectUrl 重定向时候的地址，必须为本用户接入的站点子域名。默认为空字符串。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Action 是 page 时必填，且不能为空。	
+                     * @return CustomResponseId 自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Action 是 page 时必填，且不能为空。	
                      * 
                      */
-                    std::string GetRedirectUrl() const;
+                    std::string GetCustomResponseId() const;
 
                     /**
-                     * 设置重定向时候的地址，必须为本用户接入的站点子域名。默认为空字符串。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _redirectUrl 重定向时候的地址，必须为本用户接入的站点子域名。默认为空字符串。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Action 是 page 时必填，且不能为空。	
+                     * @param _customResponseId 自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Action 是 page 时必填，且不能为空。	
                      * 
                      */
-                    void SetRedirectUrl(const std::string& _redirectUrl);
+                    void SetCustomResponseId(const std::string& _customResponseId);
 
                     /**
-                     * 判断参数 RedirectUrl 是否已赋值
-                     * @return RedirectUrl 是否已赋值
+                     * 判断参数 CustomResponseId 是否已赋值
+                     * @return CustomResponseId 是否已赋值
                      * 
                      */
-                    bool RedirectUrlHasBeenSet() const;
+                    bool CustomResponseIdHasBeenSet() const;
 
                     /**
-                     * 获取重定向时候的返回码。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResponseCode 重定向时候的返回码。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取自定义返回页面的响应码。Action 是 page 时必填，且不能为空，取值: 100~600，不支持 3xx 响应码。默认值：567。
+                     * @return ResponseCode 自定义返回页面的响应码。Action 是 page 时必填，且不能为空，取值: 100~600，不支持 3xx 响应码。默认值：567。
                      * 
                      */
                     int64_t GetResponseCode() const;
 
                     /**
-                     * 设置重定向时候的返回码。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _responseCode 重定向时候的返回码。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置自定义返回页面的响应码。Action 是 page 时必填，且不能为空，取值: 100~600，不支持 3xx 响应码。默认值：567。
+                     * @param _responseCode 自定义返回页面的响应码。Action 是 page 时必填，且不能为空，取值: 100~600，不支持 3xx 响应码。默认值：567。
                      * 
                      */
                     void SetResponseCode(const int64_t& _responseCode);
@@ -399,6 +367,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ResponseCodeHasBeenSet() const;
+
+                    /**
+                     * 获取重定向时候的地址。Action 是 redirect 时必填，且不能为空。	
+                     * @return RedirectUrl 重定向时候的地址。Action 是 redirect 时必填，且不能为空。	
+                     * 
+                     */
+                    std::string GetRedirectUrl() const;
+
+                    /**
+                     * 设置重定向时候的地址。Action 是 redirect 时必填，且不能为空。	
+                     * @param _redirectUrl 重定向时候的地址。Action 是 redirect 时必填，且不能为空。	
+                     * 
+                     */
+                    void SetRedirectUrl(const std::string& _redirectUrl);
+
+                    /**
+                     * 判断参数 RedirectUrl 是否已赋值
+                     * @return RedirectUrl 是否已赋值
+                     * 
+                     */
+                    bool RedirectUrlHasBeenSet() const;
 
                 private:
 
@@ -413,10 +402,10 @@ namespace TencentCloud
 <li>trans：放行；</li>
 <li>drop：拦截；</li>
 <li>monitor：观察；</li>
-<li>ban：IP封禁；</li>
+<li>ban：IP 封禁；</li>
 <li>redirect：重定向；</li>
 <li>page：指定页面；</li>
-<li>alg：Javascript挑战。</li>
+<li>alg：JavaScript 挑战。</li>
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
@@ -442,63 +431,61 @@ namespace TencentCloud
                     bool m_rulePriorityHasBeenSet;
 
                     /**
-                     * 规则Id。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 规则 Id。仅出参使用。
                      */
                     int64_t m_ruleID;
                     bool m_ruleIDHasBeenSet;
 
                     /**
                      * 更新时间。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * ip封禁的惩罚时间，取值范围0-2天。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * ip 封禁的惩罚时间。Action 是 ban 时必填，且不能为空，取值范围0-2天。
                      */
                     int64_t m_punishTime;
                     bool m_punishTimeHasBeenSet;
 
                     /**
-                     * ip封禁的惩罚时间单位，取值有：
+                     * ip 封禁的惩罚时间单位，取值有：
 <li>second：秒；</li>
 <li>minutes：分；</li>
-<li>hour：小时。</li>默认为second。
-注意：此字段可能返回 null，表示取不到有效值。
+<li>hour：小时。</li>默认为 second。
                      */
                     std::string m_punishTimeUnit;
                     bool m_punishTimeUnitHasBeenSet;
 
                     /**
-                     * 自定义返回页面的名称。默认为空字符串。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 自定义返回页面的名称。Action 是 page 时必填，且不能为空。	
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 自定义返回页面的实例id。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 自定义返回页面的实例 Id。默认为0，代表使用系统默认拦截页面。该参数已废弃。
                      */
                     int64_t m_pageId;
                     bool m_pageIdHasBeenSet;
 
                     /**
-                     * 重定向时候的地址，必须为本用户接入的站点子域名。默认为空字符串。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Action 是 page 时必填，且不能为空。	
                      */
-                    std::string m_redirectUrl;
-                    bool m_redirectUrlHasBeenSet;
+                    std::string m_customResponseId;
+                    bool m_customResponseIdHasBeenSet;
 
                     /**
-                     * 重定向时候的返回码。默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 自定义返回页面的响应码。Action 是 page 时必填，且不能为空，取值: 100~600，不支持 3xx 响应码。默认值：567。
                      */
                     int64_t m_responseCode;
                     bool m_responseCodeHasBeenSet;
+
+                    /**
+                     * 重定向时候的地址。Action 是 redirect 时必填，且不能为空。	
+                     */
+                    std::string m_redirectUrl;
+                    bool m_redirectUrlHasBeenSet;
 
                 };
             }

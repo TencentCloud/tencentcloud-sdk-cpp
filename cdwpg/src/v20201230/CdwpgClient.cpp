@@ -83,6 +83,49 @@ CdwpgClient::CreateInstanceByApiOutcomeCallable CdwpgClient::CreateInstanceByApi
     return task->get_future();
 }
 
+CdwpgClient::DescribeSimpleInstancesOutcome CdwpgClient::DescribeSimpleInstances(const DescribeSimpleInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSimpleInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSimpleInstancesResponse rsp = DescribeSimpleInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSimpleInstancesOutcome(rsp);
+        else
+            return DescribeSimpleInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSimpleInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CdwpgClient::DescribeSimpleInstancesAsync(const DescribeSimpleInstancesRequest& request, const DescribeSimpleInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSimpleInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwpgClient::DescribeSimpleInstancesOutcomeCallable CdwpgClient::DescribeSimpleInstancesCallable(const DescribeSimpleInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSimpleInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSimpleInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwpgClient::DestroyInstanceByApiOutcome CdwpgClient::DestroyInstanceByApi(const DestroyInstanceByApiRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyInstanceByApi");

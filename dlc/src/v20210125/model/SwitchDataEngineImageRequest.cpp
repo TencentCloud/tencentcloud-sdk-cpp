@@ -22,7 +22,9 @@
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-SwitchDataEngineImageRequest::SwitchDataEngineImageRequest()
+SwitchDataEngineImageRequest::SwitchDataEngineImageRequest() :
+    m_dataEngineIdHasBeenSet(false),
+    m_newImageVersionIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string SwitchDataEngineImageRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_dataEngineIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataEngineId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newImageVersionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewImageVersionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_newImageVersionId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string SwitchDataEngineImageRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string SwitchDataEngineImageRequest::GetDataEngineId() const
+{
+    return m_dataEngineId;
+}
+
+void SwitchDataEngineImageRequest::SetDataEngineId(const string& _dataEngineId)
+{
+    m_dataEngineId = _dataEngineId;
+    m_dataEngineIdHasBeenSet = true;
+}
+
+bool SwitchDataEngineImageRequest::DataEngineIdHasBeenSet() const
+{
+    return m_dataEngineIdHasBeenSet;
+}
+
+string SwitchDataEngineImageRequest::GetNewImageVersionId() const
+{
+    return m_newImageVersionId;
+}
+
+void SwitchDataEngineImageRequest::SetNewImageVersionId(const string& _newImageVersionId)
+{
+    m_newImageVersionId = _newImageVersionId;
+    m_newImageVersionIdHasBeenSet = true;
+}
+
+bool SwitchDataEngineImageRequest::NewImageVersionIdHasBeenSet() const
+{
+    return m_newImageVersionIdHasBeenSet;
+}
 
 

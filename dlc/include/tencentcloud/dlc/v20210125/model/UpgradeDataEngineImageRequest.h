@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取引擎ID
+                     * @return DataEngineId 引擎ID
+                     * 
+                     */
+                    std::string GetDataEngineId() const;
+
+                    /**
+                     * 设置引擎ID
+                     * @param _dataEngineId 引擎ID
+                     * 
+                     */
+                    void SetDataEngineId(const std::string& _dataEngineId);
+
+                    /**
+                     * 判断参数 DataEngineId 是否已赋值
+                     * @return DataEngineId 是否已赋值
+                     * 
+                     */
+                    bool DataEngineIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 引擎ID
+                     */
+                    std::string m_dataEngineId;
+                    bool m_dataEngineIdHasBeenSet;
 
                 };
             }

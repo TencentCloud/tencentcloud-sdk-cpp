@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/DataEngineConfigPair.h>
+#include <tencentcloud/dlc/v20210125/model/SessionResourceTemplate.h>
 
 
 namespace TencentCloud
@@ -42,7 +44,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取引擎ID
+                     * @return DataEngineId 引擎ID
+                     * 
+                     */
+                    std::string GetDataEngineId() const;
+
+                    /**
+                     * 设置引擎ID
+                     * @param _dataEngineId 引擎ID
+                     * 
+                     */
+                    void SetDataEngineId(const std::string& _dataEngineId);
+
+                    /**
+                     * 判断参数 DataEngineId 是否已赋值
+                     * @return DataEngineId 是否已赋值
+                     * 
+                     */
+                    bool DataEngineIdHasBeenSet() const;
+
+                    /**
+                     * 获取引擎配置项
+                     * @return DataEngineConfigPairs 引擎配置项
+                     * 
+                     */
+                    std::vector<DataEngineConfigPair> GetDataEngineConfigPairs() const;
+
+                    /**
+                     * 设置引擎配置项
+                     * @param _dataEngineConfigPairs 引擎配置项
+                     * 
+                     */
+                    void SetDataEngineConfigPairs(const std::vector<DataEngineConfigPair>& _dataEngineConfigPairs);
+
+                    /**
+                     * 判断参数 DataEngineConfigPairs 是否已赋值
+                     * @return DataEngineConfigPairs 是否已赋值
+                     * 
+                     */
+                    bool DataEngineConfigPairsHasBeenSet() const;
+
+                    /**
+                     * 获取作业引擎资源配置模版
+                     * @return SessionResourceTemplate 作业引擎资源配置模版
+                     * 
+                     */
+                    SessionResourceTemplate GetSessionResourceTemplate() const;
+
+                    /**
+                     * 设置作业引擎资源配置模版
+                     * @param _sessionResourceTemplate 作业引擎资源配置模版
+                     * 
+                     */
+                    void SetSessionResourceTemplate(const SessionResourceTemplate& _sessionResourceTemplate);
+
+                    /**
+                     * 判断参数 SessionResourceTemplate 是否已赋值
+                     * @return SessionResourceTemplate 是否已赋值
+                     * 
+                     */
+                    bool SessionResourceTemplateHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 引擎ID
+                     */
+                    std::string m_dataEngineId;
+                    bool m_dataEngineIdHasBeenSet;
+
+                    /**
+                     * 引擎配置项
+                     */
+                    std::vector<DataEngineConfigPair> m_dataEngineConfigPairs;
+                    bool m_dataEngineConfigPairsHasBeenSet;
+
+                    /**
+                     * 作业引擎资源配置模版
+                     */
+                    SessionResourceTemplate m_sessionResourceTemplate;
+                    bool m_sessionResourceTemplateHasBeenSet;
 
                 };
             }

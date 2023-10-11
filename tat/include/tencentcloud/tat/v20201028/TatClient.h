@@ -33,6 +33,8 @@
 #include <tencentcloud/tat/v20201028/model/CreateRegisterCodeResponse.h>
 #include <tencentcloud/tat/v20201028/model/DeleteCommandRequest.h>
 #include <tencentcloud/tat/v20201028/model/DeleteCommandResponse.h>
+#include <tencentcloud/tat/v20201028/model/DeleteCommandsRequest.h>
+#include <tencentcloud/tat/v20201028/model/DeleteCommandsResponse.h>
 #include <tencentcloud/tat/v20201028/model/DeleteInvokerRequest.h>
 #include <tencentcloud/tat/v20201028/model/DeleteInvokerResponse.h>
 #include <tencentcloud/tat/v20201028/model/DeleteRegisterCodesRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/tat/v20201028/model/DescribeInvokerRecordsResponse.h>
 #include <tencentcloud/tat/v20201028/model/DescribeInvokersRequest.h>
 #include <tencentcloud/tat/v20201028/model/DescribeInvokersResponse.h>
+#include <tencentcloud/tat/v20201028/model/DescribeQuotasRequest.h>
+#include <tencentcloud/tat/v20201028/model/DescribeQuotasResponse.h>
 #include <tencentcloud/tat/v20201028/model/DescribeRegionsRequest.h>
 #include <tencentcloud/tat/v20201028/model/DescribeRegionsResponse.h>
 #include <tencentcloud/tat/v20201028/model/DescribeRegisterCodesRequest.h>
@@ -104,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCommandResponse> DeleteCommandOutcome;
                 typedef std::future<DeleteCommandOutcome> DeleteCommandOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::DeleteCommandRequest&, DeleteCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCommandsResponse> DeleteCommandsOutcome;
+                typedef std::future<DeleteCommandsOutcome> DeleteCommandsOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::DeleteCommandsRequest&, DeleteCommandsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCommandsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInvokerResponse> DeleteInvokerOutcome;
                 typedef std::future<DeleteInvokerOutcome> DeleteInvokerOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::DeleteInvokerRequest&, DeleteInvokerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInvokerAsyncHandler;
@@ -131,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInvokersResponse> DescribeInvokersOutcome;
                 typedef std::future<DescribeInvokersOutcome> DescribeInvokersOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::DescribeInvokersRequest&, DescribeInvokersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvokersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQuotasResponse> DescribeQuotasOutcome;
+                typedef std::future<DescribeQuotasOutcome> DescribeQuotasOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::DescribeQuotasRequest&, DescribeQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -220,6 +230,15 @@ namespace TencentCloud
                 DeleteCommandOutcomeCallable DeleteCommandCallable(const Model::DeleteCommandRequest& request);
 
                 /**
+                 *批量删除命令接口
+                 * @param req DeleteCommandsRequest
+                 * @return DeleteCommandsOutcome
+                 */
+                DeleteCommandsOutcome DeleteCommands(const Model::DeleteCommandsRequest &request);
+                void DeleteCommandsAsync(const Model::DeleteCommandsRequest& request, const DeleteCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCommandsOutcomeCallable DeleteCommandsCallable(const Model::DeleteCommandsRequest& request);
+
+                /**
                  *此接口用于删除执行器。
                  * @param req DeleteInvokerRequest
                  * @return DeleteInvokerOutcome
@@ -299,6 +318,15 @@ namespace TencentCloud
                 DescribeInvokersOutcome DescribeInvokers(const Model::DescribeInvokersRequest &request);
                 void DescribeInvokersAsync(const Model::DescribeInvokersRequest& request, const DescribeInvokersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInvokersOutcomeCallable DescribeInvokersCallable(const Model::DescribeInvokersRequest& request);
+
+                /**
+                 *此接口用于获取配额信息
+                 * @param req DescribeQuotasRequest
+                 * @return DescribeQuotasOutcome
+                 */
+                DescribeQuotasOutcome DescribeQuotas(const Model::DescribeQuotasRequest &request);
+                void DescribeQuotasAsync(const Model::DescribeQuotasRequest& request, const DescribeQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQuotasOutcomeCallable DescribeQuotasCallable(const Model::DescribeQuotasRequest& request);
 
                 /**
                  *此接口用于查询 TAT 产品后台地域列表。

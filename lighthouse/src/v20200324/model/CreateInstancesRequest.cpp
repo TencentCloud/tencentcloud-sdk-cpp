@@ -34,7 +34,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_loginConfigurationHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_firewallTemplateIdHasBeenSet(false)
+    m_firewallTemplateIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,21 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "FirewallTemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_firewallTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -353,6 +369,22 @@ void CreateInstancesRequest::SetFirewallTemplateId(const string& _firewallTempla
 bool CreateInstancesRequest::FirewallTemplateIdHasBeenSet() const
 {
     return m_firewallTemplateIdHasBeenSet;
+}
+
+vector<Tag> CreateInstancesRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateInstancesRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

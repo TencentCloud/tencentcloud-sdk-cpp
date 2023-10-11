@@ -32,8 +32,9 @@ AclUserRule::AclUserRule() :
     m_punishTimeUnitHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pageIdHasBeenSet(false),
-    m_redirectUrlHasBeenSet(false),
-    m_responseCodeHasBeenSet(false)
+    m_customResponseIdHasBeenSet(false),
+    m_responseCodeHasBeenSet(false),
+    m_redirectUrlHasBeenSet(false)
 {
 }
 
@@ -162,14 +163,14 @@ CoreInternalOutcome AclUserRule::Deserialize(const rapidjson::Value &value)
         m_pageIdHasBeenSet = true;
     }
 
-    if (value.HasMember("RedirectUrl") && !value["RedirectUrl"].IsNull())
+    if (value.HasMember("CustomResponseId") && !value["CustomResponseId"].IsNull())
     {
-        if (!value["RedirectUrl"].IsString())
+        if (!value["CustomResponseId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AclUserRule.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AclUserRule.CustomResponseId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_redirectUrl = string(value["RedirectUrl"].GetString());
-        m_redirectUrlHasBeenSet = true;
+        m_customResponseId = string(value["CustomResponseId"].GetString());
+        m_customResponseIdHasBeenSet = true;
     }
 
     if (value.HasMember("ResponseCode") && !value["ResponseCode"].IsNull())
@@ -180,6 +181,16 @@ CoreInternalOutcome AclUserRule::Deserialize(const rapidjson::Value &value)
         }
         m_responseCode = value["ResponseCode"].GetInt64();
         m_responseCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RedirectUrl") && !value["RedirectUrl"].IsNull())
+    {
+        if (!value["RedirectUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AclUserRule.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_redirectUrl = string(value["RedirectUrl"].GetString());
+        m_redirectUrlHasBeenSet = true;
     }
 
 
@@ -284,12 +295,12 @@ void AclUserRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_pageId, allocator);
     }
 
-    if (m_redirectUrlHasBeenSet)
+    if (m_customResponseIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RedirectUrl";
+        string key = "CustomResponseId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_redirectUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customResponseId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_responseCodeHasBeenSet)
@@ -298,6 +309,14 @@ void AclUserRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ResponseCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_responseCode, allocator);
+    }
+
+    if (m_redirectUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedirectUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_redirectUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -479,20 +498,20 @@ bool AclUserRule::PageIdHasBeenSet() const
     return m_pageIdHasBeenSet;
 }
 
-string AclUserRule::GetRedirectUrl() const
+string AclUserRule::GetCustomResponseId() const
 {
-    return m_redirectUrl;
+    return m_customResponseId;
 }
 
-void AclUserRule::SetRedirectUrl(const string& _redirectUrl)
+void AclUserRule::SetCustomResponseId(const string& _customResponseId)
 {
-    m_redirectUrl = _redirectUrl;
-    m_redirectUrlHasBeenSet = true;
+    m_customResponseId = _customResponseId;
+    m_customResponseIdHasBeenSet = true;
 }
 
-bool AclUserRule::RedirectUrlHasBeenSet() const
+bool AclUserRule::CustomResponseIdHasBeenSet() const
 {
-    return m_redirectUrlHasBeenSet;
+    return m_customResponseIdHasBeenSet;
 }
 
 int64_t AclUserRule::GetResponseCode() const
@@ -509,5 +528,21 @@ void AclUserRule::SetResponseCode(const int64_t& _responseCode)
 bool AclUserRule::ResponseCodeHasBeenSet() const
 {
     return m_responseCodeHasBeenSet;
+}
+
+string AclUserRule::GetRedirectUrl() const
+{
+    return m_redirectUrl;
+}
+
+void AclUserRule::SetRedirectUrl(const string& _redirectUrl)
+{
+    m_redirectUrl = _redirectUrl;
+    m_redirectUrlHasBeenSet = true;
+}
+
+bool AclUserRule::RedirectUrlHasBeenSet() const
+{
+    return m_redirectUrlHasBeenSet;
 }
 

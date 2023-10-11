@@ -24,7 +24,8 @@ DropPageDetail::DropPageDetail() :
     m_pageIdHasBeenSet(false),
     m_statusCodeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_customResponseIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome DropPageDetail::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomResponseId") && !value["CustomResponseId"].IsNull())
+    {
+        if (!value["CustomResponseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DropPageDetail.CustomResponseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customResponseId = string(value["CustomResponseId"].GetString());
+        m_customResponseIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void DropPageDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customResponseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomResponseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customResponseId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void DropPageDetail::SetType(const string& _type)
 bool DropPageDetail::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string DropPageDetail::GetCustomResponseId() const
+{
+    return m_customResponseId;
+}
+
+void DropPageDetail::SetCustomResponseId(const string& _customResponseId)
+{
+    m_customResponseId = _customResponseId;
+    m_customResponseIdHasBeenSet = true;
+}
+
+bool DropPageDetail::CustomResponseIdHasBeenSet() const
+{
+    return m_customResponseIdHasBeenSet;
 }
 

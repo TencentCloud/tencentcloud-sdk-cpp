@@ -30,6 +30,7 @@ set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/DescribeRegisterInstancesRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteRegisterCodesRequest.h
   include/tencentcloud/tat/v20201028/model/Invocation.h
+  include/tencentcloud/tat/v20201028/model/GeneralResourceQuotaSet.h
   include/tencentcloud/tat/v20201028/model/RunCommandRequest.h
   include/tencentcloud/tat/v20201028/model/InvokeCommandRequest.h
   include/tencentcloud/tat/v20201028/model/DescribeInvocationTasksRequest.h
@@ -40,7 +41,9 @@ set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/TaskResult.h
   include/tencentcloud/tat/v20201028/model/ModifyInvokerRequest.h
   include/tencentcloud/tat/v20201028/model/InvocationTaskBasicInfo.h
+  include/tencentcloud/tat/v20201028/model/DeleteCommandsRequest.h
   include/tencentcloud/tat/v20201028/model/EnableInvokerResponse.h
+  include/tencentcloud/tat/v20201028/model/DescribeQuotasRequest.h
   include/tencentcloud/tat/v20201028/model/EnableInvokerRequest.h
   include/tencentcloud/tat/v20201028/model/DefaultParameterConf.h
   include/tencentcloud/tat/v20201028/model/DescribeRegisterInstancesResponse.h
@@ -76,13 +79,15 @@ set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/CancelInvocationRequest.h
   include/tencentcloud/tat/v20201028/model/DescribeRegisterCodesRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteCommandRequest.h
-  include/tencentcloud/tat/v20201028/model/DeleteInvokerRequest.h
+  include/tencentcloud/tat/v20201028/model/DeleteCommandsResponse.h
   include/tencentcloud/tat/v20201028/model/DeleteRegisterCodesResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeInvokerRecordsRequest.h
+  include/tencentcloud/tat/v20201028/model/DeleteInvokerRequest.h
   include/tencentcloud/tat/v20201028/model/ModifyRegisterInstanceRequest.h
   include/tencentcloud/tat/v20201028/model/Tag.h
   include/tencentcloud/tat/v20201028/model/RunCommandResponse.h
   include/tencentcloud/tat/v20201028/model/DisableRegisterCodesResponse.h
+  include/tencentcloud/tat/v20201028/model/DescribeQuotasResponse.h
   include/tencentcloud/tat/v20201028/model/RegisterCodeInfo.h
   include/tencentcloud/tat/v20201028/model/DescribeRegionsResponse.h
   include/tencentcloud/tat/v20201028/model/CreateCommandRequest.h
@@ -102,6 +107,7 @@ set(tat_src
   src/v20201028/model/DescribeRegisterInstancesRequest.cpp
   src/v20201028/model/DeleteRegisterCodesRequest.cpp
   src/v20201028/model/Invocation.cpp
+  src/v20201028/model/GeneralResourceQuotaSet.cpp
   src/v20201028/model/RunCommandRequest.cpp
   src/v20201028/model/InvokeCommandRequest.cpp
   src/v20201028/model/DescribeInvocationTasksRequest.cpp
@@ -112,7 +118,9 @@ set(tat_src
   src/v20201028/model/TaskResult.cpp
   src/v20201028/model/ModifyInvokerRequest.cpp
   src/v20201028/model/InvocationTaskBasicInfo.cpp
+  src/v20201028/model/DeleteCommandsRequest.cpp
   src/v20201028/model/EnableInvokerResponse.cpp
+  src/v20201028/model/DescribeQuotasRequest.cpp
   src/v20201028/model/EnableInvokerRequest.cpp
   src/v20201028/model/DefaultParameterConf.cpp
   src/v20201028/model/DescribeRegisterInstancesResponse.cpp
@@ -148,13 +156,15 @@ set(tat_src
   src/v20201028/model/CancelInvocationRequest.cpp
   src/v20201028/model/DescribeRegisterCodesRequest.cpp
   src/v20201028/model/DeleteCommandRequest.cpp
-  src/v20201028/model/DeleteInvokerRequest.cpp
+  src/v20201028/model/DeleteCommandsResponse.cpp
   src/v20201028/model/DeleteRegisterCodesResponse.cpp
   src/v20201028/model/DescribeInvokerRecordsRequest.cpp
+  src/v20201028/model/DeleteInvokerRequest.cpp
   src/v20201028/model/ModifyRegisterInstanceRequest.cpp
   src/v20201028/model/Tag.cpp
   src/v20201028/model/RunCommandResponse.cpp
   src/v20201028/model/DisableRegisterCodesResponse.cpp
+  src/v20201028/model/DescribeQuotasResponse.cpp
   src/v20201028/model/RegisterCodeInfo.cpp
   src/v20201028/model/DescribeRegionsResponse.cpp
   src/v20201028/model/CreateCommandRequest.cpp

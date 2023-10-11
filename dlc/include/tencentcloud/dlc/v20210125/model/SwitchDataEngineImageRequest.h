@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取引擎ID
+                     * @return DataEngineId 引擎ID
+                     * 
+                     */
+                    std::string GetDataEngineId() const;
+
+                    /**
+                     * 设置引擎ID
+                     * @param _dataEngineId 引擎ID
+                     * 
+                     */
+                    void SetDataEngineId(const std::string& _dataEngineId);
+
+                    /**
+                     * 判断参数 DataEngineId 是否已赋值
+                     * @return DataEngineId 是否已赋值
+                     * 
+                     */
+                    bool DataEngineIdHasBeenSet() const;
+
+                    /**
+                     * 获取新镜像版本ID
+                     * @return NewImageVersionId 新镜像版本ID
+                     * 
+                     */
+                    std::string GetNewImageVersionId() const;
+
+                    /**
+                     * 设置新镜像版本ID
+                     * @param _newImageVersionId 新镜像版本ID
+                     * 
+                     */
+                    void SetNewImageVersionId(const std::string& _newImageVersionId);
+
+                    /**
+                     * 判断参数 NewImageVersionId 是否已赋值
+                     * @return NewImageVersionId 是否已赋值
+                     * 
+                     */
+                    bool NewImageVersionIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 引擎ID
+                     */
+                    std::string m_dataEngineId;
+                    bool m_dataEngineIdHasBeenSet;
+
+                    /**
+                     * 新镜像版本ID
+                     */
+                    std::string m_newImageVersionId;
+                    bool m_newImageVersionIdHasBeenSet;
 
                 };
             }

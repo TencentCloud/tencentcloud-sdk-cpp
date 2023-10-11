@@ -30,7 +30,11 @@ BotUserRule::BotUserRule() :
     m_extendActionsHasBeenSet(false),
     m_freqFieldsHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_freqScopeHasBeenSet(false)
+    m_freqScopeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_customResponseIdHasBeenSet(false),
+    m_responseCodeHasBeenSet(false),
+    m_redirectUrlHasBeenSet(false)
 {
 }
 
@@ -165,6 +169,46 @@ CoreInternalOutcome BotUserRule::Deserialize(const rapidjson::Value &value)
         m_freqScopeHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotUserRule.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomResponseId") && !value["CustomResponseId"].IsNull())
+    {
+        if (!value["CustomResponseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotUserRule.CustomResponseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customResponseId = string(value["CustomResponseId"].GetString());
+        m_customResponseIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResponseCode") && !value["ResponseCode"].IsNull())
+    {
+        if (!value["ResponseCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotUserRule.ResponseCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseCode = value["ResponseCode"].GetInt64();
+        m_responseCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RedirectUrl") && !value["RedirectUrl"].IsNull())
+    {
+        if (!value["RedirectUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotUserRule.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_redirectUrl = string(value["RedirectUrl"].GetString());
+        m_redirectUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -274,6 +318,38 @@ void BotUserRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customResponseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomResponseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customResponseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_responseCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_responseCode, allocator);
+    }
+
+    if (m_redirectUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedirectUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_redirectUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -437,5 +513,69 @@ void BotUserRule::SetFreqScope(const vector<string>& _freqScope)
 bool BotUserRule::FreqScopeHasBeenSet() const
 {
     return m_freqScopeHasBeenSet;
+}
+
+string BotUserRule::GetName() const
+{
+    return m_name;
+}
+
+void BotUserRule::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool BotUserRule::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string BotUserRule::GetCustomResponseId() const
+{
+    return m_customResponseId;
+}
+
+void BotUserRule::SetCustomResponseId(const string& _customResponseId)
+{
+    m_customResponseId = _customResponseId;
+    m_customResponseIdHasBeenSet = true;
+}
+
+bool BotUserRule::CustomResponseIdHasBeenSet() const
+{
+    return m_customResponseIdHasBeenSet;
+}
+
+int64_t BotUserRule::GetResponseCode() const
+{
+    return m_responseCode;
+}
+
+void BotUserRule::SetResponseCode(const int64_t& _responseCode)
+{
+    m_responseCode = _responseCode;
+    m_responseCodeHasBeenSet = true;
+}
+
+bool BotUserRule::ResponseCodeHasBeenSet() const
+{
+    return m_responseCodeHasBeenSet;
+}
+
+string BotUserRule::GetRedirectUrl() const
+{
+    return m_redirectUrl;
+}
+
+void BotUserRule::SetRedirectUrl(const string& _redirectUrl)
+{
+    m_redirectUrl = _redirectUrl;
+    m_redirectUrlHasBeenSet = true;
+}
+
+bool BotUserRule::RedirectUrlHasBeenSet() const
+{
+    return m_redirectUrlHasBeenSet;
 }
 

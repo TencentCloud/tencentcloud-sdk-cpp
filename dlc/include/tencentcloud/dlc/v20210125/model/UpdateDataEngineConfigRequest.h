@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取引擎ID
+                     * @return DataEngineIds 引擎ID
+                     * 
+                     */
+                    std::vector<std::string> GetDataEngineIds() const;
+
+                    /**
+                     * 设置引擎ID
+                     * @param _dataEngineIds 引擎ID
+                     * 
+                     */
+                    void SetDataEngineIds(const std::vector<std::string>& _dataEngineIds);
+
+                    /**
+                     * 判断参数 DataEngineIds 是否已赋值
+                     * @return DataEngineIds 是否已赋值
+                     * 
+                     */
+                    bool DataEngineIdsHasBeenSet() const;
+
+                    /**
+                     * 获取引擎配置命令，支持UpdateSparkSQLLakefsPath（更新原生表配置）、UpdateSparkSQLResultPath（更新结果路径配置）
+                     * @return DataEngineConfigCommand 引擎配置命令，支持UpdateSparkSQLLakefsPath（更新原生表配置）、UpdateSparkSQLResultPath（更新结果路径配置）
+                     * 
+                     */
+                    std::string GetDataEngineConfigCommand() const;
+
+                    /**
+                     * 设置引擎配置命令，支持UpdateSparkSQLLakefsPath（更新原生表配置）、UpdateSparkSQLResultPath（更新结果路径配置）
+                     * @param _dataEngineConfigCommand 引擎配置命令，支持UpdateSparkSQLLakefsPath（更新原生表配置）、UpdateSparkSQLResultPath（更新结果路径配置）
+                     * 
+                     */
+                    void SetDataEngineConfigCommand(const std::string& _dataEngineConfigCommand);
+
+                    /**
+                     * 判断参数 DataEngineConfigCommand 是否已赋值
+                     * @return DataEngineConfigCommand 是否已赋值
+                     * 
+                     */
+                    bool DataEngineConfigCommandHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 引擎ID
+                     */
+                    std::vector<std::string> m_dataEngineIds;
+                    bool m_dataEngineIdsHasBeenSet;
+
+                    /**
+                     * 引擎配置命令，支持UpdateSparkSQLLakefsPath（更新原生表配置）、UpdateSparkSQLResultPath（更新结果路径配置）
+                     */
+                    std::string m_dataEngineConfigCommand;
+                    bool m_dataEngineConfigCommandHasBeenSet;
 
                 };
             }

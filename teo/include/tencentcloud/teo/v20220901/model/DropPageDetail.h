@@ -47,19 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取拦截页面的唯一Id。系统默认包含一个自带拦截页面，Id值为0。
-该Id可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。
-                     * @return PageId 拦截页面的唯一Id。系统默认包含一个自带拦截页面，Id值为0。
-该Id可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。
+                     * 获取拦截页面的唯一 Id。系统默认包含一个自带拦截页面，Id 值为0。
+该 Id 可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。该参数已废弃。
+                     * @return PageId 拦截页面的唯一 Id。系统默认包含一个自带拦截页面，Id 值为0。
+该 Id 可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。该参数已废弃。
                      * 
                      */
                     int64_t GetPageId() const;
 
                     /**
-                     * 设置拦截页面的唯一Id。系统默认包含一个自带拦截页面，Id值为0。
-该Id可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。
-                     * @param _pageId 拦截页面的唯一Id。系统默认包含一个自带拦截页面，Id值为0。
-该Id可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。
+                     * 设置拦截页面的唯一 Id。系统默认包含一个自带拦截页面，Id 值为0。
+该 Id 可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。该参数已废弃。
+                     * @param _pageId 拦截页面的唯一 Id。系统默认包含一个自带拦截页面，Id 值为0。
+该 Id 可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。该参数已废弃。
                      * 
                      */
                     void SetPageId(const int64_t& _pageId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool PageIdHasBeenSet() const;
 
                     /**
-                     * 获取拦截页面的HTTP状态码。状态码范围是100-600。
-                     * @return StatusCode 拦截页面的HTTP状态码。状态码范围是100-600。
+                     * 获取拦截页面的 HTTP 状态码。状态码取值：100～600，不支持 3xx 状态码。托管规则拦截页面默认：566，安全防护（除托管规则外）拦截页面默认：567.
+                     * @return StatusCode 拦截页面的 HTTP 状态码。状态码取值：100～600，不支持 3xx 状态码。托管规则拦截页面默认：566，安全防护（除托管规则外）拦截页面默认：567.
                      * 
                      */
                     int64_t GetStatusCode() const;
 
                     /**
-                     * 设置拦截页面的HTTP状态码。状态码范围是100-600。
-                     * @param _statusCode 拦截页面的HTTP状态码。状态码范围是100-600。
+                     * 设置拦截页面的 HTTP 状态码。状态码取值：100～600，不支持 3xx 状态码。托管规则拦截页面默认：566，安全防护（除托管规则外）拦截页面默认：567.
+                     * @param _statusCode 拦截页面的 HTTP 状态码。状态码取值：100～600，不支持 3xx 状态码。托管规则拦截页面默认：566，安全防护（除托管规则外）拦截页面默认：567.
                      * 
                      */
                     void SetStatusCode(const int64_t& _statusCode);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool StatusCodeHasBeenSet() const;
 
                     /**
-                     * 获取页面文件名或url。
-                     * @return Name 页面文件名或url。
+                     * 获取页面文件名或 url。
+                     * @return Name 页面文件名或 url。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置页面文件名或url。
-                     * @param _name 页面文件名或url。
+                     * 设置页面文件名或 url。
+                     * @param _name 页面文件名或 url。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -115,22 +115,22 @@ namespace TencentCloud
 
                     /**
                      * 获取页面的类型，取值有：
-<li> file：页面文件内容；</li>
-<li> url：上传的url地址。</li>
+<li>page：指定页面。</li>
+
                      * @return Type 页面的类型，取值有：
-<li> file：页面文件内容；</li>
-<li> url：上传的url地址。</li>
+<li>page：指定页面。</li>
+
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置页面的类型，取值有：
-<li> file：页面文件内容；</li>
-<li> url：上传的url地址。</li>
+<li>page：指定页面。</li>
+
                      * @param _type 页面的类型，取值有：
-<li> file：页面文件内容；</li>
-<li> url：上传的url地址。</li>
+<li>page：指定页面。</li>
+
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -142,34 +142,61 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Type 类型是 page 时必填，且不能为空。
+                     * @return CustomResponseId 自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Type 类型是 page 时必填，且不能为空。
+                     * 
+                     */
+                    std::string GetCustomResponseId() const;
+
+                    /**
+                     * 设置自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Type 类型是 page 时必填，且不能为空。
+                     * @param _customResponseId 自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Type 类型是 page 时必填，且不能为空。
+                     * 
+                     */
+                    void SetCustomResponseId(const std::string& _customResponseId);
+
+                    /**
+                     * 判断参数 CustomResponseId 是否已赋值
+                     * @return CustomResponseId 是否已赋值
+                     * 
+                     */
+                    bool CustomResponseIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 拦截页面的唯一Id。系统默认包含一个自带拦截页面，Id值为0。
-该Id可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。
+                     * 拦截页面的唯一 Id。系统默认包含一个自带拦截页面，Id 值为0。
+该 Id 可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。该参数已废弃。
                      */
                     int64_t m_pageId;
                     bool m_pageIdHasBeenSet;
 
                     /**
-                     * 拦截页面的HTTP状态码。状态码范围是100-600。
+                     * 拦截页面的 HTTP 状态码。状态码取值：100～600，不支持 3xx 状态码。托管规则拦截页面默认：566，安全防护（除托管规则外）拦截页面默认：567.
                      */
                     int64_t m_statusCode;
                     bool m_statusCodeHasBeenSet;
 
                     /**
-                     * 页面文件名或url。
+                     * 页面文件名或 url。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 页面的类型，取值有：
-<li> file：页面文件内容；</li>
-<li> url：上传的url地址。</li>
+<li>page：指定页面。</li>
+
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Type 类型是 page 时必填，且不能为空。
+                     */
+                    std::string m_customResponseId;
+                    bool m_customResponseIdHasBeenSet;
 
                 };
             }

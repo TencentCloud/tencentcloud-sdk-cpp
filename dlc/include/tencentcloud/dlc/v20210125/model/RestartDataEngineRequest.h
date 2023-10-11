@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取引擎ID
+                     * @return DataEngineId 引擎ID
+                     * 
+                     */
+                    std::string GetDataEngineId() const;
+
+                    /**
+                     * 设置引擎ID
+                     * @param _dataEngineId 引擎ID
+                     * 
+                     */
+                    void SetDataEngineId(const std::string& _dataEngineId);
+
+                    /**
+                     * 判断参数 DataEngineId 是否已赋值
+                     * @return DataEngineId 是否已赋值
+                     * 
+                     */
+                    bool DataEngineIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否强制重启，忽略任务
+                     * @return ForcedOperation 是否强制重启，忽略任务
+                     * 
+                     */
+                    bool GetForcedOperation() const;
+
+                    /**
+                     * 设置是否强制重启，忽略任务
+                     * @param _forcedOperation 是否强制重启，忽略任务
+                     * 
+                     */
+                    void SetForcedOperation(const bool& _forcedOperation);
+
+                    /**
+                     * 判断参数 ForcedOperation 是否已赋值
+                     * @return ForcedOperation 是否已赋值
+                     * 
+                     */
+                    bool ForcedOperationHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 引擎ID
+                     */
+                    std::string m_dataEngineId;
+                    bool m_dataEngineIdHasBeenSet;
+
+                    /**
+                     * 是否强制重启，忽略任务
+                     */
+                    bool m_forcedOperation;
+                    bool m_forcedOperationHasBeenSet;
 
                 };
             }

@@ -22,7 +22,9 @@
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-RestartDataEngineRequest::RestartDataEngineRequest()
+RestartDataEngineRequest::RestartDataEngineRequest() :
+    m_dataEngineIdHasBeenSet(false),
+    m_forcedOperationHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string RestartDataEngineRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_dataEngineIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataEngineId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forcedOperationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForcedOperation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forcedOperation, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string RestartDataEngineRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string RestartDataEngineRequest::GetDataEngineId() const
+{
+    return m_dataEngineId;
+}
+
+void RestartDataEngineRequest::SetDataEngineId(const string& _dataEngineId)
+{
+    m_dataEngineId = _dataEngineId;
+    m_dataEngineIdHasBeenSet = true;
+}
+
+bool RestartDataEngineRequest::DataEngineIdHasBeenSet() const
+{
+    return m_dataEngineIdHasBeenSet;
+}
+
+bool RestartDataEngineRequest::GetForcedOperation() const
+{
+    return m_forcedOperation;
+}
+
+void RestartDataEngineRequest::SetForcedOperation(const bool& _forcedOperation)
+{
+    m_forcedOperation = _forcedOperation;
+    m_forcedOperationHasBeenSet = true;
+}
+
+bool RestartDataEngineRequest::ForcedOperationHasBeenSet() const
+{
+    return m_forcedOperationHasBeenSet;
+}
 
 

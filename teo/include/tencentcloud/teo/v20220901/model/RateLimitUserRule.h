@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>	
-                     * @return Action 处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>	
+                     * 获取处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li><li> redirect：重定向；</li><li> page：指定页面；</li><li>alg：JavaScript 挑战。</li>	
+                     * @return Action 处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li><li> redirect：重定向；</li><li> page：指定页面；</li><li>alg：JavaScript 挑战。</li>	
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>	
-                     * @param _action 处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>	
+                     * 设置处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li><li> redirect：重定向；</li><li> page：指定页面；</li><li>alg：JavaScript 挑战。</li>	
+                     * @param _action 处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li><li> redirect：重定向；</li><li> page：指定页面；</li><li>alg：JavaScript 挑战。</li>	
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -188,10 +188,10 @@ namespace TencentCloud
                     /**
                      * 获取规则状态，取值有：
 <li>on：生效；</li>
-<li>off：不生效。</li>默认on生效。
+<li>off：不生效。</li>默认 on 生效。
                      * @return RuleStatus 规则状态，取值有：
 <li>on：生效；</li>
-<li>off：不生效。</li>默认on生效。
+<li>off：不生效。</li>默认 on 生效。
                      * 
                      */
                     std::string GetRuleStatus() const;
@@ -199,10 +199,10 @@ namespace TencentCloud
                     /**
                      * 设置规则状态，取值有：
 <li>on：生效；</li>
-<li>off：不生效。</li>默认on生效。
+<li>off：不生效。</li>默认 on 生效。
                      * @param _ruleStatus 规则状态，取值有：
 <li>on：生效；</li>
-<li>off：不生效。</li>默认on生效。
+<li>off：不生效。</li>默认 on 生效。
                      * 
                      */
                     void SetRuleStatus(const std::string& _ruleStatus);
@@ -258,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则 Id。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleID 规则 Id。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
                      * 设置规则 Id。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleID 规则 Id。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
@@ -283,22 +279,22 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤词，取值有：
-<li>sip：客户端ip。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>sip：客户端 ip。</li>
+默认为空字符串。
                      * @return FreqFields 过滤词，取值有：
-<li>sip：客户端ip。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>sip：客户端 ip。</li>
+默认为空字符串。
                      * 
                      */
                     std::vector<std::string> GetFreqFields() const;
 
                     /**
                      * 设置过滤词，取值有：
-<li>sip：客户端ip。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>sip：客户端 ip。</li>
+默认为空字符串。
                      * @param _freqFields 过滤词，取值有：
-<li>sip：客户端ip。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>sip：客户端 ip。</li>
+默认为空字符串。
                      * 
                      */
                     void SetFreqFields(const std::vector<std::string>& _freqFields);
@@ -311,19 +307,15 @@ namespace TencentCloud
                     bool FreqFieldsHasBeenSet() const;
 
                     /**
-                     * 获取更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取更新时间。仅出参使用。修改时默认为当前时间。
+                     * @return UpdateTime 更新时间。仅出参使用。修改时默认为当前时间。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置更新时间。仅出参使用。修改时默认为当前时间。
+                     * @param _updateTime 更新时间。仅出参使用。修改时默认为当前时间。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -336,27 +328,27 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计范围，字段为 null 时，代表 source_to_eo。取值有：
-<li>source_to_eo：（响应）源站到EdgeOne。</li>
-<li>client_to_eo：（请求）客户端到EdgeOne；</li>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FreqScope 统计范围，字段为 null 时，代表 source_to_eo。取值有：
-<li>source_to_eo：（响应）源站到EdgeOne。</li>
-<li>client_to_eo：（请求）客户端到EdgeOne；</li>
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取统计范围。取值有：
+<li>source_to_eo：（响应）源站到  EdgeOne；</li>
+<li>client_to_eo：（请求）客户端到  EdgeOne。</li>
+默认为 source_to_eo。
+                     * @return FreqScope 统计范围。取值有：
+<li>source_to_eo：（响应）源站到  EdgeOne；</li>
+<li>client_to_eo：（请求）客户端到  EdgeOne。</li>
+默认为 source_to_eo。
                      * 
                      */
                     std::vector<std::string> GetFreqScope() const;
 
                     /**
-                     * 设置统计范围，字段为 null 时，代表 source_to_eo。取值有：
-<li>source_to_eo：（响应）源站到EdgeOne。</li>
-<li>client_to_eo：（请求）客户端到EdgeOne；</li>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _freqScope 统计范围，字段为 null 时，代表 source_to_eo。取值有：
-<li>source_to_eo：（响应）源站到EdgeOne。</li>
-<li>client_to_eo：（请求）客户端到EdgeOne；</li>
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置统计范围。取值有：
+<li>source_to_eo：（响应）源站到  EdgeOne；</li>
+<li>client_to_eo：（请求）客户端到  EdgeOne。</li>
+默认为 source_to_eo。
+                     * @param _freqScope 统计范围。取值有：
+<li>source_to_eo：（响应）源站到  EdgeOne；</li>
+<li>client_to_eo：（请求）客户端到  EdgeOne。</li>
+默认为 source_to_eo。
                      * 
                      */
                     void SetFreqScope(const std::vector<std::string>& _freqScope);
@@ -367,6 +359,90 @@ namespace TencentCloud
                      * 
                      */
                     bool FreqScopeHasBeenSet() const;
+
+                    /**
+                     * 获取自定义返回页面的名称。Action 是 page 时必填，且不能为空。
+                     * @return Name 自定义返回页面的名称。Action 是 page 时必填，且不能为空。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置自定义返回页面的名称。Action 是 page 时必填，且不能为空。
+                     * @param _name 自定义返回页面的名称。Action 是 page 时必填，且不能为空。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Action 是 page 时必填，且不能为空。	
+                     * @return CustomResponseId 自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Action 是 page 时必填，且不能为空。	
+                     * 
+                     */
+                    std::string GetCustomResponseId() const;
+
+                    /**
+                     * 设置自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Action 是 page 时必填，且不能为空。	
+                     * @param _customResponseId 自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Action 是 page 时必填，且不能为空。	
+                     * 
+                     */
+                    void SetCustomResponseId(const std::string& _customResponseId);
+
+                    /**
+                     * 判断参数 CustomResponseId 是否已赋值
+                     * @return CustomResponseId 是否已赋值
+                     * 
+                     */
+                    bool CustomResponseIdHasBeenSet() const;
+
+                    /**
+                     * 获取自定义返回页面的响应码。Action 是 page 时必填，且不能为空，取值: 100~600，不支持 3xx 响应码。默认值：567。
+                     * @return ResponseCode 自定义返回页面的响应码。Action 是 page 时必填，且不能为空，取值: 100~600，不支持 3xx 响应码。默认值：567。
+                     * 
+                     */
+                    int64_t GetResponseCode() const;
+
+                    /**
+                     * 设置自定义返回页面的响应码。Action 是 page 时必填，且不能为空，取值: 100~600，不支持 3xx 响应码。默认值：567。
+                     * @param _responseCode 自定义返回页面的响应码。Action 是 page 时必填，且不能为空，取值: 100~600，不支持 3xx 响应码。默认值：567。
+                     * 
+                     */
+                    void SetResponseCode(const int64_t& _responseCode);
+
+                    /**
+                     * 判断参数 ResponseCode 是否已赋值
+                     * @return ResponseCode 是否已赋值
+                     * 
+                     */
+                    bool ResponseCodeHasBeenSet() const;
+
+                    /**
+                     * 获取重定向时候的地址。Action 是 redirect 时必填，且不能为空。
+                     * @return RedirectUrl 重定向时候的地址。Action 是 redirect 时必填，且不能为空。
+                     * 
+                     */
+                    std::string GetRedirectUrl() const;
+
+                    /**
+                     * 设置重定向时候的地址。Action 是 redirect 时必填，且不能为空。
+                     * @param _redirectUrl 重定向时候的地址。Action 是 redirect 时必填，且不能为空。
+                     * 
+                     */
+                    void SetRedirectUrl(const std::string& _redirectUrl);
+
+                    /**
+                     * 判断参数 RedirectUrl 是否已赋值
+                     * @return RedirectUrl 是否已赋值
+                     * 
+                     */
+                    bool RedirectUrlHasBeenSet() const;
 
                 private:
 
@@ -389,7 +465,7 @@ namespace TencentCloud
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>	
+                     * 处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li><li> redirect：重定向；</li><li> page：指定页面；</li><li>alg：JavaScript 挑战。</li>	
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
@@ -412,7 +488,7 @@ namespace TencentCloud
                     /**
                      * 规则状态，取值有：
 <li>on：生效；</li>
-<li>off：不生效。</li>默认on生效。
+<li>off：不生效。</li>默认 on 生效。
                      */
                     std::string m_ruleStatus;
                     bool m_ruleStatusHasBeenSet;
@@ -431,34 +507,56 @@ namespace TencentCloud
 
                     /**
                      * 规则 Id。仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleID;
                     bool m_ruleIDHasBeenSet;
 
                     /**
                      * 过滤词，取值有：
-<li>sip：客户端ip。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>sip：客户端 ip。</li>
+默认为空字符串。
                      */
                     std::vector<std::string> m_freqFields;
                     bool m_freqFieldsHasBeenSet;
 
                     /**
-                     * 更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 更新时间。仅出参使用。修改时默认为当前时间。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 统计范围，字段为 null 时，代表 source_to_eo。取值有：
-<li>source_to_eo：（响应）源站到EdgeOne。</li>
-<li>client_to_eo：（请求）客户端到EdgeOne；</li>
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 统计范围。取值有：
+<li>source_to_eo：（响应）源站到  EdgeOne；</li>
+<li>client_to_eo：（请求）客户端到  EdgeOne。</li>
+默认为 source_to_eo。
                      */
                     std::vector<std::string> m_freqScope;
                     bool m_freqScopeHasBeenSet;
+
+                    /**
+                     * 自定义返回页面的名称。Action 是 page 时必填，且不能为空。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 自定义响应 Id。该 Id 可通过查询自定义错误页列表接口获取。默认值为default，使用系统默认页面。Action 是 page 时必填，且不能为空。	
+                     */
+                    std::string m_customResponseId;
+                    bool m_customResponseIdHasBeenSet;
+
+                    /**
+                     * 自定义返回页面的响应码。Action 是 page 时必填，且不能为空，取值: 100~600，不支持 3xx 响应码。默认值：567。
+                     */
+                    int64_t m_responseCode;
+                    bool m_responseCodeHasBeenSet;
+
+                    /**
+                     * 重定向时候的地址。Action 是 redirect 时必填，且不能为空。
+                     */
+                    std::string m_redirectUrl;
+                    bool m_redirectUrlHasBeenSet;
 
                 };
             }

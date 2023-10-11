@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取引擎ID
+                     * @return DataEngineId 引擎ID
+                     * 
+                     */
+                    std::string GetDataEngineId() const;
+
+                    /**
+                     * 设置引擎ID
+                     * @param _dataEngineId 引擎ID
+                     * 
+                     */
+                    void SetDataEngineId(const std::string& _dataEngineId);
+
+                    /**
+                     * 判断参数 DataEngineId 是否已赋值
+                     * @return DataEngineId 是否已赋值
+                     * 
+                     */
+                    bool DataEngineIdHasBeenSet() const;
+
+                    /**
+                     * 获取检查是否能回滚的接口返回的FromRecordId参数
+                     * @return FromRecordId 检查是否能回滚的接口返回的FromRecordId参数
+                     * 
+                     */
+                    std::string GetFromRecordId() const;
+
+                    /**
+                     * 设置检查是否能回滚的接口返回的FromRecordId参数
+                     * @param _fromRecordId 检查是否能回滚的接口返回的FromRecordId参数
+                     * 
+                     */
+                    void SetFromRecordId(const std::string& _fromRecordId);
+
+                    /**
+                     * 判断参数 FromRecordId 是否已赋值
+                     * @return FromRecordId 是否已赋值
+                     * 
+                     */
+                    bool FromRecordIdHasBeenSet() const;
+
+                    /**
+                     * 获取检查是否能回滚的接口返回的ToRecordId参数
+                     * @return ToRecordId 检查是否能回滚的接口返回的ToRecordId参数
+                     * 
+                     */
+                    std::string GetToRecordId() const;
+
+                    /**
+                     * 设置检查是否能回滚的接口返回的ToRecordId参数
+                     * @param _toRecordId 检查是否能回滚的接口返回的ToRecordId参数
+                     * 
+                     */
+                    void SetToRecordId(const std::string& _toRecordId);
+
+                    /**
+                     * 判断参数 ToRecordId 是否已赋值
+                     * @return ToRecordId 是否已赋值
+                     * 
+                     */
+                    bool ToRecordIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 引擎ID
+                     */
+                    std::string m_dataEngineId;
+                    bool m_dataEngineIdHasBeenSet;
+
+                    /**
+                     * 检查是否能回滚的接口返回的FromRecordId参数
+                     */
+                    std::string m_fromRecordId;
+                    bool m_fromRecordIdHasBeenSet;
+
+                    /**
+                     * 检查是否能回滚的接口返回的ToRecordId参数
+                     */
+                    std::string m_toRecordId;
+                    bool m_toRecordIdHasBeenSet;
 
                 };
             }

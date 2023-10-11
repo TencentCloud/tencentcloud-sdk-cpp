@@ -22,7 +22,12 @@
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeUserDataEngineConfigRequest::DescribeUserDataEngineConfigRequest()
+DescribeUserDataEngineConfigRequest::DescribeUserDataEngineConfigRequest() :
+    m_sortingHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_sortByHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -33,6 +38,53 @@ string DescribeUserDataEngineConfigRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_sortingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sorting";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sorting.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_sortByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +92,85 @@ string DescribeUserDataEngineConfigRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeUserDataEngineConfigRequest::GetSorting() const
+{
+    return m_sorting;
+}
+
+void DescribeUserDataEngineConfigRequest::SetSorting(const string& _sorting)
+{
+    m_sorting = _sorting;
+    m_sortingHasBeenSet = true;
+}
+
+bool DescribeUserDataEngineConfigRequest::SortingHasBeenSet() const
+{
+    return m_sortingHasBeenSet;
+}
+
+int64_t DescribeUserDataEngineConfigRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeUserDataEngineConfigRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeUserDataEngineConfigRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeUserDataEngineConfigRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeUserDataEngineConfigRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeUserDataEngineConfigRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+string DescribeUserDataEngineConfigRequest::GetSortBy() const
+{
+    return m_sortBy;
+}
+
+void DescribeUserDataEngineConfigRequest::SetSortBy(const string& _sortBy)
+{
+    m_sortBy = _sortBy;
+    m_sortByHasBeenSet = true;
+}
+
+bool DescribeUserDataEngineConfigRequest::SortByHasBeenSet() const
+{
+    return m_sortByHasBeenSet;
+}
+
+vector<Filter> DescribeUserDataEngineConfigRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeUserDataEngineConfigRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeUserDataEngineConfigRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 

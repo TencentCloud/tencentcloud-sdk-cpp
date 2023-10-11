@@ -24,6 +24,7 @@
 #include <tencentcloud/lighthouse/v20200324/model/InstanceChargePrepaid.h>
 #include <tencentcloud/lighthouse/v20200324/model/LoginConfiguration.h>
 #include <tencentcloud/lighthouse/v20200324/model/DockerContainerConfiguration.h>
+#include <tencentcloud/lighthouse/v20200324/model/Tag.h>
 
 
 namespace TencentCloud
@@ -151,15 +152,19 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取可用区列表。默认为随机可用区
-                     * @return Zones 可用区列表。默认为随机可用区
+                     * 获取可用区列表。
+不填此参数，表示为随机可用区。
+                     * @return Zones 可用区列表。
+不填此参数，表示为随机可用区。
                      * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置可用区列表。默认为随机可用区
-                     * @param _zones 可用区列表。默认为随机可用区
+                     * 设置可用区列表。
+不填此参数，表示为随机可用区。
+                     * @param _zones 可用区列表。
+不填此参数，表示为随机可用区。
                      * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
@@ -230,15 +235,15 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。
-                     * @return LoginConfiguration 实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。
+                     * 获取实例登录密码信息配置。默认缺失情况下代表用户选择实例创建后设置登录密码。
+                     * @return LoginConfiguration 实例登录密码信息配置。默认缺失情况下代表用户选择实例创建后设置登录密码。
                      * 
                      */
                     LoginConfiguration GetLoginConfiguration() const;
 
                     /**
-                     * 设置实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。
-                     * @param _loginConfiguration 实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。
+                     * 设置实例登录密码信息配置。默认缺失情况下代表用户选择实例创建后设置登录密码。
+                     * @param _loginConfiguration 实例登录密码信息配置。默认缺失情况下代表用户选择实例创建后设置登录密码。
                      * 
                      */
                     void SetLoginConfiguration(const LoginConfiguration& _loginConfiguration);
@@ -313,6 +318,43 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool FirewallTemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签键和标签值。
+如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。
+同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。
+如果标签不存在会为您自动创建标签。
+数组最多支持10个元素。
+                     * @return Tags 标签键和标签值。
+如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。
+同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。
+如果标签不存在会为您自动创建标签。
+数组最多支持10个元素。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签键和标签值。
+如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。
+同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。
+如果标签不存在会为您自动创建标签。
+数组最多支持10个元素。
+                     * @param _tags 标签键和标签值。
+如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。
+同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。
+如果标签不存在会为您自动创建标签。
+数组最多支持10个元素。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,7 +388,8 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 可用区列表。默认为随机可用区
+                     * 可用区列表。
+不填此参数，表示为随机可用区。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
@@ -368,7 +411,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。
+                     * 实例登录密码信息配置。默认缺失情况下代表用户选择实例创建后设置登录密码。
                      */
                     LoginConfiguration m_loginConfiguration;
                     bool m_loginConfigurationHasBeenSet;
@@ -390,6 +433,16 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     std::string m_firewallTemplateId;
                     bool m_firewallTemplateIdHasBeenSet;
+
+                    /**
+                     * 标签键和标签值。
+如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。
+同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。
+如果标签不存在会为您自动创建标签。
+数组最多支持10个元素。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

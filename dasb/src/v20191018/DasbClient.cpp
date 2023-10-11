@@ -470,6 +470,49 @@ DasbClient::CreateDeviceGroupOutcomeCallable DasbClient::CreateDeviceGroupCallab
     return task->get_future();
 }
 
+DasbClient::CreateResourceOutcome DasbClient::CreateResource(const CreateResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateResourceResponse rsp = CreateResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateResourceOutcome(rsp);
+        else
+            return CreateResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateResourceOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::CreateResourceAsync(const CreateResourceRequest& request, const CreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::CreateResourceOutcomeCallable DasbClient::CreateResourceCallable(const CreateResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::CreateUserOutcome DasbClient::CreateUser(const CreateUserRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUser");
@@ -1796,6 +1839,49 @@ DasbClient::ModifyDeviceGroupOutcomeCallable DasbClient::ModifyDeviceGroupCallab
         [this, request]()
         {
             return this->ModifyDeviceGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::ModifyResourceOutcome DasbClient::ModifyResource(const ModifyResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourceResponse rsp = ModifyResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourceOutcome(rsp);
+        else
+            return ModifyResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourceOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ModifyResourceAsync(const ModifyResourceRequest& request, const ModifyResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ModifyResourceOutcomeCallable DasbClient::ModifyResourceCallable(const ModifyResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyResource(request);
         }
     );
 
