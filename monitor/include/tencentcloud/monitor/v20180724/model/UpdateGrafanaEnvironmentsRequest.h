@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取环境变量字符串
-                     * @return Envs 环境变量字符串
+                     * 获取JSON 序列化后的环境变量字符串，如 "{\"key1\":\"key2\"}"
+
+                     * @return Envs JSON 序列化后的环境变量字符串，如 "{\"key1\":\"key2\"}"
+
                      * 
                      */
                     std::string GetEnvs() const;
 
                     /**
-                     * 设置环境变量字符串
-                     * @param _envs 环境变量字符串
+                     * 设置JSON 序列化后的环境变量字符串，如 "{\"key1\":\"key2\"}"
+
+                     * @param _envs JSON 序列化后的环境变量字符串，如 "{\"key1\":\"key2\"}"
+
                      * 
                      */
                     void SetEnvs(const std::string& _envs);
@@ -93,7 +97,8 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 环境变量字符串
+                     * JSON 序列化后的环境变量字符串，如 "{\"key1\":\"key2\"}"
+
                      */
                     std::string m_envs;
                     bool m_envsHasBeenSet;

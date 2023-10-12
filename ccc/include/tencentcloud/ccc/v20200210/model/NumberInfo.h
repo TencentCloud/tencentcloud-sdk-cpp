@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool CallOutSkillGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取号码状态，1-正常，2-欠费停用，4-管理员停用，5-违规停用
+                     * @return State 号码状态，1-正常，2-欠费停用，4-管理员停用，5-违规停用
+                     * 
+                     */
+                    int64_t GetState() const;
+
+                    /**
+                     * 设置号码状态，1-正常，2-欠费停用，4-管理员停用，5-违规停用
+                     * @param _state 号码状态，1-正常，2-欠费停用，4-管理员停用，5-违规停用
+                     * 
+                     */
+                    void SetState(const int64_t& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     * 
+                     */
+                    bool StateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_callOutSkillGroupIds;
                     bool m_callOutSkillGroupIdsHasBeenSet;
+
+                    /**
+                     * 号码状态，1-正常，2-欠费停用，4-管理员停用，5-违规停用
+                     */
+                    int64_t m_state;
+                    bool m_stateHasBeenSet;
 
                 };
             }

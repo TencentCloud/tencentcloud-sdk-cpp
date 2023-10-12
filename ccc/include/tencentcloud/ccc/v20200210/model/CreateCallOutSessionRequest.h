@@ -171,23 +171,44 @@ namespace TencentCloud
                     /**
                      * 获取自定义数据，长度限制 1024 字节
                      * @return Uui 自定义数据，长度限制 1024 字节
-                     * 
+                     * @deprecated
                      */
                     std::string GetUui() const;
 
                     /**
                      * 设置自定义数据，长度限制 1024 字节
                      * @param _uui 自定义数据，长度限制 1024 字节
-                     * 
+                     * @deprecated
                      */
                     void SetUui(const std::string& _uui);
 
                     /**
                      * 判断参数 Uui 是否已赋值
                      * @return Uui 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UuiHasBeenSet() const;
+
+                    /**
+                     * 获取自定义数据，长度限制 1024 字节
+                     * @return UUI 自定义数据，长度限制 1024 字节
+                     * 
+                     */
+                    std::string GetUUI() const;
+
+                    /**
+                     * 设置自定义数据，长度限制 1024 字节
+                     * @param _uUI 自定义数据，长度限制 1024 字节
+                     * 
+                     */
+                    void SetUUI(const std::string& _uUI);
+
+                    /**
+                     * 判断参数 UUI 是否已赋值
+                     * @return UUI 是否已赋值
+                     * 
+                     */
+                    bool UUIHasBeenSet() const;
 
                 private:
 
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_uui;
                     bool m_uuiHasBeenSet;
+
+                    /**
+                     * 自定义数据，长度限制 1024 字节
+                     */
+                    std::string m_uUI;
+                    bool m_uUIHasBeenSet;
 
                 };
             }

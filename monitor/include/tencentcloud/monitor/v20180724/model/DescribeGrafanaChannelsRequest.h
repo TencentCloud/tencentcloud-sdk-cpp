@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ChannelIdsHasBeenSet() const;
 
                     /**
-                     * 获取告警通道状态
-                     * @return ChannelState 告警通道状态
+                     * 获取告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)
+                     * @return ChannelState 告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)
                      * 
                      */
                     int64_t GetChannelState() const;
 
                     /**
-                     * 设置告警通道状态
-                     * @param _channelState 告警通道状态
+                     * 设置告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)
+                     * @param _channelState 告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)
                      * 
                      */
                     void SetChannelState(const int64_t& _channelState);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_channelIdsHasBeenSet;
 
                     /**
-                     * 告警通道状态
+                     * 告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)
                      */
                     int64_t m_channelState;
                     bool m_channelStateHasBeenSet;

@@ -1545,6 +1545,49 @@ LcicClient::DescribeRoomStatisticsOutcomeCallable LcicClient::DescribeRoomStatis
     return task->get_future();
 }
 
+LcicClient::DescribeScoreListOutcome LcicClient::DescribeScoreList(const DescribeScoreListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScoreList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScoreListResponse rsp = DescribeScoreListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScoreListOutcome(rsp);
+        else
+            return DescribeScoreListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScoreListOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeScoreListAsync(const DescribeScoreListRequest& request, const DescribeScoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScoreList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeScoreListOutcomeCallable LcicClient::DescribeScoreListCallable(const DescribeScoreListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScoreListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScoreList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeSdkAppIdUsersOutcome LcicClient::DescribeSdkAppIdUsers(const DescribeSdkAppIdUsersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSdkAppIdUsers");

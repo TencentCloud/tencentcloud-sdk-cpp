@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道 ID 数组。例如：nchannel-abcd1234
-                     * @return ChannelIDs 通道 ID 数组。例如：nchannel-abcd1234
+                     * 获取通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取
+                     * @return ChannelIDs 通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取
                      * 
                      */
                     std::vector<std::string> GetChannelIDs() const;
 
                     /**
-                     * 设置通道 ID 数组。例如：nchannel-abcd1234
-                     * @param _channelIDs 通道 ID 数组。例如：nchannel-abcd1234
+                     * 设置通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取
+                     * @param _channelIDs 通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取
                      * 
                      */
                     void SetChannelIDs(const std::vector<std::string>& _channelIDs);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道 ID 数组。例如：nchannel-abcd1234
+                     * 通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取
                      */
                     std::vector<std::string> m_channelIDs;
                     bool m_channelIDsHasBeenSet;

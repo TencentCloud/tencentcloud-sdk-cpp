@@ -88,16 +88,30 @@ namespace TencentCloud
                     /**
                      * 获取音频套餐包消耗分钟数
                      * @return VoipCallInCount 音频套餐包消耗分钟数
-                     * 
+                     * @deprecated
                      */
                     int64_t GetVoipCallInCount() const;
 
                     /**
                      * 判断参数 VoipCallInCount 是否已赋值
                      * @return VoipCallInCount 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VoipCallInCountHasBeenSet() const;
+
+                    /**
+                     * 获取音频套餐包消耗分钟数
+                     * @return VOIPCallInCount 音频套餐包消耗分钟数
+                     * 
+                     */
+                    int64_t GetVOIPCallInCount() const;
+
+                    /**
+                     * 判断参数 VOIPCallInCount 是否已赋值
+                     * @return VOIPCallInCount 是否已赋值
+                     * 
+                     */
+                    bool VOIPCallInCountHasBeenSet() const;
 
                     /**
                      * 获取离线语音转文字套餐包消耗分钟数
@@ -152,6 +166,12 @@ namespace TencentCloud
                      */
                     int64_t m_voipCallInCount;
                     bool m_voipCallInCountHasBeenSet;
+
+                    /**
+                     * 音频套餐包消耗分钟数
+                     */
+                    int64_t m_vOIPCallInCount;
+                    bool m_vOIPCallInCountHasBeenSet;
 
                     /**
                      * 离线语音转文字套餐包消耗分钟数

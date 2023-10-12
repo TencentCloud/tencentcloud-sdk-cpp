@@ -129,6 +129,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeObjectsRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeObjectsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePeakPointsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribePeakPointsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePeakValueRequest.h>
@@ -221,6 +223,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyInstanceRenewFlagResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyObjectRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyObjectResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifySpartaProtectionRequest.h>
@@ -430,6 +434,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpHitItemsResponse> DescribeIpHitItemsOutcome;
                 typedef std::future<DescribeIpHitItemsOutcome> DescribeIpHitItemsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeIpHitItemsRequest&, DescribeIpHitItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpHitItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeObjectsResponse> DescribeObjectsOutcome;
+                typedef std::future<DescribeObjectsOutcome> DescribeObjectsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeObjectsRequest&, DescribeObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeObjectsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePeakPointsResponse> DescribePeakPointsOutcome;
                 typedef std::future<DescribePeakPointsOutcome> DescribePeakPointsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribePeakPointsRequest&, DescribePeakPointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePeakPointsAsyncHandler;
@@ -568,6 +575,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyModuleStatusResponse> ModifyModuleStatusOutcome;
                 typedef std::future<ModifyModuleStatusOutcome> ModifyModuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyModuleStatusRequest&, ModifyModuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyObjectResponse> ModifyObjectOutcome;
+                typedef std::future<ModifyObjectOutcome> ModifyObjectOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyObjectRequest&, ModifyObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyObjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProtectionStatusResponse> ModifyProtectionStatusOutcome;
                 typedef std::future<ModifyProtectionStatusOutcome> ModifyProtectionStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyProtectionStatusRequest&, ModifyProtectionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtectionStatusAsyncHandler;
@@ -1108,6 +1118,15 @@ namespace TencentCloud
                 DescribeIpHitItemsOutcomeCallable DescribeIpHitItemsCallable(const Model::DescribeIpHitItemsRequest& request);
 
                 /**
+                 *查看防护对象列表
+                 * @param req DescribeObjectsRequest
+                 * @return DescribeObjectsOutcome
+                 */
+                DescribeObjectsOutcome DescribeObjects(const Model::DescribeObjectsRequest &request);
+                void DescribeObjectsAsync(const Model::DescribeObjectsRequest& request, const DescribeObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeObjectsOutcomeCallable DescribeObjectsCallable(const Model::DescribeObjectsRequest& request);
+
+                /**
                  *查询业务和攻击概要趋势
                  * @param req DescribePeakPointsRequest
                  * @return DescribePeakPointsOutcome
@@ -1524,6 +1543,15 @@ namespace TencentCloud
                 ModifyModuleStatusOutcome ModifyModuleStatus(const Model::ModifyModuleStatusRequest &request);
                 void ModifyModuleStatusAsync(const Model::ModifyModuleStatusRequest& request, const ModifyModuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyModuleStatusOutcomeCallable ModifyModuleStatusCallable(const Model::ModifyModuleStatusRequest& request);
+
+                /**
+                 *修改防护对象
+                 * @param req ModifyObjectRequest
+                 * @return ModifyObjectOutcome
+                 */
+                ModifyObjectOutcome ModifyObject(const Model::ModifyObjectRequest &request);
+                void ModifyObjectAsync(const Model::ModifyObjectRequest& request, const ModifyObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyObjectOutcomeCallable ModifyObjectCallable(const Model::ModifyObjectRequest& request);
 
                 /**
                  *waf斯巴达-waf开关

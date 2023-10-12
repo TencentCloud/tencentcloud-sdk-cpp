@@ -40,7 +40,8 @@ ApproverInfo::ApproverInfo() :
     m_approverVerifyTypesHasBeenSet(false),
     m_approverSignTypesHasBeenSet(false),
     m_approverNeedSignReviewHasBeenSet(false),
-    m_addSignComponentsLimitsHasBeenSet(false)
+    m_addSignComponentsLimitsHasBeenSet(false),
+    m_signInstructionContentHasBeenSet(false)
 {
 }
 
@@ -285,6 +286,16 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_addSignComponentsLimitsHasBeenSet = true;
     }
 
+    if (value.HasMember("SignInstructionContent") && !value["SignInstructionContent"].IsNull())
+    {
+        if (!value["SignInstructionContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.SignInstructionContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signInstructionContent = string(value["SignInstructionContent"].GetString());
+        m_signInstructionContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -480,6 +491,14 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_signInstructionContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignInstructionContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signInstructionContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -803,5 +822,21 @@ void ApproverInfo::SetAddSignComponentsLimits(const vector<ComponentLimit>& _add
 bool ApproverInfo::AddSignComponentsLimitsHasBeenSet() const
 {
     return m_addSignComponentsLimitsHasBeenSet;
+}
+
+string ApproverInfo::GetSignInstructionContent() const
+{
+    return m_signInstructionContent;
+}
+
+void ApproverInfo::SetSignInstructionContent(const string& _signInstructionContent)
+{
+    m_signInstructionContent = _signInstructionContent;
+    m_signInstructionContentHasBeenSet = true;
+}
+
+bool ApproverInfo::SignInstructionContentHasBeenSet() const
+{
+    return m_signInstructionContentHasBeenSet;
 }
 

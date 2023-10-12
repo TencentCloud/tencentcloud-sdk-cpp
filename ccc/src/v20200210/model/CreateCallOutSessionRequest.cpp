@@ -29,7 +29,8 @@ CreateCallOutSessionRequest::CreateCallOutSessionRequest() :
     m_callerHasBeenSet(false),
     m_callersHasBeenSet(false),
     m_isForceUseMobileHasBeenSet(false),
-    m_uuiHasBeenSet(false)
+    m_uuiHasBeenSet(false),
+    m_uUIHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string CreateCallOutSessionRequest::ToJsonString() const
         string key = "Uui";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uui.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uUIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UUI";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uUI.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -219,6 +228,22 @@ void CreateCallOutSessionRequest::SetUui(const string& _uui)
 bool CreateCallOutSessionRequest::UuiHasBeenSet() const
 {
     return m_uuiHasBeenSet;
+}
+
+string CreateCallOutSessionRequest::GetUUI() const
+{
+    return m_uUI;
+}
+
+void CreateCallOutSessionRequest::SetUUI(const string& _uUI)
+{
+    m_uUI = _uUI;
+    m_uUIHasBeenSet = true;
+}
+
+bool CreateCallOutSessionRequest::UUIHasBeenSet() const
+{
+    return m_uUIHasBeenSet;
 }
 
 

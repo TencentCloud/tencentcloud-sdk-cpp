@@ -1062,6 +1062,27 @@ namespace TencentCloud
                     bool ServiceScfFunctionTypeHasBeenSet() const;
 
                     /**
+                     * 获取是否开启SCF Event异步调用。
+                     * @return ServiceScfEventIsAsyncCall 是否开启SCF Event异步调用。
+                     * 
+                     */
+                    bool GetServiceScfEventIsAsyncCall() const;
+
+                    /**
+                     * 设置是否开启SCF Event异步调用。
+                     * @param _serviceScfEventIsAsyncCall 是否开启SCF Event异步调用。
+                     * 
+                     */
+                    void SetServiceScfEventIsAsyncCall(const bool& _serviceScfEventIsAsyncCall);
+
+                    /**
+                     * 判断参数 ServiceScfEventIsAsyncCall 是否已赋值
+                     * @return ServiceScfEventIsAsyncCall 是否已赋值
+                     * 
+                     */
+                    bool ServiceScfEventIsAsyncCallHasBeenSet() const;
+
+                    /**
                      * 获取EIAM应用类型。
                      * @return EIAMAppType EIAM应用类型。
                      * 
@@ -1455,6 +1476,12 @@ namespace TencentCloud
                      */
                     std::string m_serviceScfFunctionType;
                     bool m_serviceScfFunctionTypeHasBeenSet;
+
+                    /**
+                     * 是否开启SCF Event异步调用。
+                     */
+                    bool m_serviceScfEventIsAsyncCall;
+                    bool m_serviceScfEventIsAsyncCallHasBeenSet;
 
                     /**
                      * EIAM应用类型。

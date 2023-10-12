@@ -151,6 +151,52 @@ namespace TencentCloud
                      */
                     bool NotNullHasBeenSet() const;
 
+                    /**
+                     * 获取表示整个 numeric 的长度,取值1-38
+                     * @return Precision 表示整个 numeric 的长度,取值1-38
+                     * 
+                     */
+                    int64_t GetPrecision() const;
+
+                    /**
+                     * 设置表示整个 numeric 的长度,取值1-38
+                     * @param _precision 表示整个 numeric 的长度,取值1-38
+                     * 
+                     */
+                    void SetPrecision(const int64_t& _precision);
+
+                    /**
+                     * 判断参数 Precision 是否已赋值
+                     * @return Precision 是否已赋值
+                     * 
+                     */
+                    bool PrecisionHasBeenSet() const;
+
+                    /**
+                     * 获取表示小数部分的长度
+Scale小于Precision
+                     * @return Scale 表示小数部分的长度
+Scale小于Precision
+                     * 
+                     */
+                    int64_t GetScale() const;
+
+                    /**
+                     * 设置表示小数部分的长度
+Scale小于Precision
+                     * @param _scale 表示小数部分的长度
+Scale小于Precision
+                     * 
+                     */
+                    void SetScale(const int64_t& _scale);
+
+                    /**
+                     * 判断参数 Scale 是否已赋值
+                     * @return Scale 是否已赋值
+                     * 
+                     */
+                    bool ScaleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +228,19 @@ namespace TencentCloud
                      */
                     bool m_notNull;
                     bool m_notNullHasBeenSet;
+
+                    /**
+                     * 表示整个 numeric 的长度,取值1-38
+                     */
+                    int64_t m_precision;
+                    bool m_precisionHasBeenSet;
+
+                    /**
+                     * 表示小数部分的长度
+Scale小于Precision
+                     */
+                    int64_t m_scale;
+                    bool m_scaleHasBeenSet;
 
                 };
             }

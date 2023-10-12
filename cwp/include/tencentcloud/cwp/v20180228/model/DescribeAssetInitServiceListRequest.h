@@ -87,7 +87,9 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+<li>IP - String - 是否必填：否 - 主机ip</li>
+<li>MachineName - String - 是否必填：否 - 主机名称</li>
+<li>InstanceID - string - 是否必填：否 - 实例ID</li>
 <li>Name- string - 是否必填：否 - 包名</li>
 <li>User- string - 是否必填：否 - 用户</li>
 <li>IsAutoRun - string - 是否必填：否 - 是否开机自启动：0否，1是</li>
@@ -108,7 +110,9 @@ namespace TencentCloud
 13:驱动服务
 14:登录</li>
                      * @return Filters 过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+<li>IP - String - 是否必填：否 - 主机ip</li>
+<li>MachineName - String - 是否必填：否 - 主机名称</li>
+<li>InstanceID - string - 是否必填：否 - 实例ID</li>
 <li>Name- string - 是否必填：否 - 包名</li>
 <li>User- string - 是否必填：否 - 用户</li>
 <li>IsAutoRun - string - 是否必填：否 - 是否开机自启动：0否，1是</li>
@@ -134,7 +138,9 @@ namespace TencentCloud
 
                     /**
                      * 设置过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+<li>IP - String - 是否必填：否 - 主机ip</li>
+<li>MachineName - String - 是否必填：否 - 主机名称</li>
+<li>InstanceID - string - 是否必填：否 - 实例ID</li>
 <li>Name- string - 是否必填：否 - 包名</li>
 <li>User- string - 是否必填：否 - 用户</li>
 <li>IsAutoRun - string - 是否必填：否 - 是否开机自启动：0否，1是</li>
@@ -155,7 +161,9 @@ namespace TencentCloud
 13:驱动服务
 14:登录</li>
                      * @param _filters 过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+<li>IP - String - 是否必填：否 - 主机ip</li>
+<li>MachineName - String - 是否必填：否 - 主机名称</li>
+<li>InstanceID - string - 是否必填：否 - 实例ID</li>
 <li>Name- string - 是否必填：否 - 包名</li>
 <li>User- string - 是否必填：否 - 用户</li>
 <li>IsAutoRun - string - 是否必填：否 - 是否开机自启动：0否，1是</li>
@@ -286,7 +294,9 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+<li>IP - String - 是否必填：否 - 主机ip</li>
+<li>MachineName - String - 是否必填：否 - 主机名称</li>
+<li>InstanceID - string - 是否必填：否 - 实例ID</li>
 <li>Name- string - 是否必填：否 - 包名</li>
 <li>User- string - 是否必填：否 - 用户</li>
 <li>IsAutoRun - string - 是否必填：否 - 是否开机自启动：0否，1是</li>

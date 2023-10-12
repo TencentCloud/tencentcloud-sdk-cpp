@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取容量单位是GB, 比如4608(4.5TB)
-                     * @return Capacity 容量单位是GB, 比如4608(4.5TB)
+                     * 获取容量单位是GB, 例如4608(4.5TB)
+                     * @return Capacity 容量单位是GB, 例如4608(4.5TB)
                      * 
                      */
                     uint64_t GetCapacity() const;
 
                     /**
-                     * 设置容量单位是GB, 比如4608(4.5TB)
-                     * @param _capacity 容量单位是GB, 比如4608(4.5TB)
+                     * 设置容量单位是GB, 例如4608(4.5TB)
+                     * @param _capacity 容量单位是GB, 例如4608(4.5TB)
                      * 
                      */
                     void SetCapacity(const uint64_t& _capacity);
@@ -119,7 +119,7 @@ namespace TencentCloud
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 容量单位是GB, 比如4608(4.5TB)
+                     * 容量单位是GB, 例如4608(4.5TB)
                      */
                     uint64_t m_capacity;
                     bool m_capacityHasBeenSet;

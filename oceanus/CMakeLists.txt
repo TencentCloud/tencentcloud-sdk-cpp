@@ -45,6 +45,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeClustersRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResourceRefDetail.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobResponse.h
+  include/tencentcloud/oceanus/v20190422/model/SqlGatewayItem.h
   include/tencentcloud/oceanus/v20190422/model/JobGraph.h
   include/tencentcloud/oceanus/v20190422/model/StopJobDescription.h
   include/tencentcloud/oceanus/v20190422/model/CreateFolderRequest.h
@@ -57,7 +58,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h
-  include/tencentcloud/oceanus/v20190422/model/WorkSpaceClusterItem.h
+  include/tencentcloud/oceanus/v20190422/model/GatewayRefItem.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateFolderResponse.h
@@ -68,6 +69,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/ResourceRef.h
   include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/ClazzLevel.h
+  include/tencentcloud/oceanus/v20190422/model/WorkSpaceClusterItem.h
   include/tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h
   include/tencentcloud/oceanus/v20190422/model/StopJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
@@ -143,6 +145,7 @@ set(oceanus_src
   src/v20190422/model/DescribeClustersRequest.cpp
   src/v20190422/model/ResourceRefDetail.cpp
   src/v20190422/model/CreateJobResponse.cpp
+  src/v20190422/model/SqlGatewayItem.cpp
   src/v20190422/model/JobGraph.cpp
   src/v20190422/model/StopJobDescription.cpp
   src/v20190422/model/CreateFolderRequest.cpp
@@ -155,7 +158,7 @@ set(oceanus_src
   src/v20190422/model/DeleteResourceConfigsRequest.cpp
   src/v20190422/model/DescribeJobSavepointResponse.cpp
   src/v20190422/model/DescribeWorkSpacesResponse.cpp
-  src/v20190422/model/WorkSpaceClusterItem.cpp
+  src/v20190422/model/GatewayRefItem.cpp
   src/v20190422/model/CreateResourceResponse.cpp
   src/v20190422/model/DescribeSystemResourcesRequest.cpp
   src/v20190422/model/CreateFolderResponse.cpp
@@ -166,6 +169,7 @@ set(oceanus_src
   src/v20190422/model/ResourceRef.cpp
   src/v20190422/model/DescribeSystemResourcesResponse.cpp
   src/v20190422/model/ClazzLevel.cpp
+  src/v20190422/model/WorkSpaceClusterItem.cpp
   src/v20190422/model/CheckSavepointRequest.cpp
   src/v20190422/model/StopJobsRequest.cpp
   src/v20190422/model/RunJobsRequest.cpp

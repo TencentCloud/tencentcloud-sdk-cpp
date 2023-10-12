@@ -71,6 +71,7 @@ CreateApiRequest::CreateApiRequest() :
     m_isBase64EncodedHasBeenSet(false),
     m_eventBusIdHasBeenSet(false),
     m_serviceScfFunctionTypeHasBeenSet(false),
+    m_serviceScfEventIsAsyncCallHasBeenSet(false),
     m_eIAMAppTypeHasBeenSet(false),
     m_eIAMAuthTypeHasBeenSet(false),
     m_tokenTimeoutHasBeenSet(false),
@@ -516,6 +517,14 @@ string CreateApiRequest::ToJsonString() const
         string key = "ServiceScfFunctionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceScfFunctionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceScfEventIsAsyncCallHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceScfEventIsAsyncCall";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_serviceScfEventIsAsyncCall, allocator);
     }
 
     if (m_eIAMAppTypeHasBeenSet)
@@ -1332,6 +1341,22 @@ void CreateApiRequest::SetServiceScfFunctionType(const string& _serviceScfFuncti
 bool CreateApiRequest::ServiceScfFunctionTypeHasBeenSet() const
 {
     return m_serviceScfFunctionTypeHasBeenSet;
+}
+
+bool CreateApiRequest::GetServiceScfEventIsAsyncCall() const
+{
+    return m_serviceScfEventIsAsyncCall;
+}
+
+void CreateApiRequest::SetServiceScfEventIsAsyncCall(const bool& _serviceScfEventIsAsyncCall)
+{
+    m_serviceScfEventIsAsyncCall = _serviceScfEventIsAsyncCall;
+    m_serviceScfEventIsAsyncCallHasBeenSet = true;
+}
+
+bool CreateApiRequest::ServiceScfEventIsAsyncCallHasBeenSet() const
+{
+    return m_serviceScfEventIsAsyncCallHasBeenSet;
 }
 
 string CreateApiRequest::GetEIAMAppType() const

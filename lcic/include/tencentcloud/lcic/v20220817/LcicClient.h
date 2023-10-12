@@ -93,6 +93,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeScoreListRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeScoreListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeSdkAppIdUsersRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeSdkAppIdUsersResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeSupervisorsRequest.h>
@@ -252,6 +254,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRoomStatisticsResponse> DescribeRoomStatisticsOutcome;
                 typedef std::future<DescribeRoomStatisticsOutcome> DescribeRoomStatisticsOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeRoomStatisticsRequest&, DescribeRoomStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScoreListResponse> DescribeScoreListOutcome;
+                typedef std::future<DescribeScoreListOutcome> DescribeScoreListOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeScoreListRequest&, DescribeScoreListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScoreListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSdkAppIdUsersResponse> DescribeSdkAppIdUsersOutcome;
                 typedef std::future<DescribeSdkAppIdUsersOutcome> DescribeSdkAppIdUsersOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeSdkAppIdUsersRequest&, DescribeSdkAppIdUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSdkAppIdUsersAsyncHandler;
@@ -631,6 +636,15 @@ namespace TencentCloud
                 DescribeRoomStatisticsOutcome DescribeRoomStatistics(const Model::DescribeRoomStatisticsRequest &request);
                 void DescribeRoomStatisticsAsync(const Model::DescribeRoomStatisticsRequest& request, const DescribeRoomStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRoomStatisticsOutcomeCallable DescribeRoomStatisticsCallable(const Model::DescribeRoomStatisticsRequest& request);
+
+                /**
+                 *获取课堂评分列表
+                 * @param req DescribeScoreListRequest
+                 * @return DescribeScoreListOutcome
+                 */
+                DescribeScoreListOutcome DescribeScoreList(const Model::DescribeScoreListRequest &request);
+                void DescribeScoreListAsync(const Model::DescribeScoreListRequest& request, const DescribeScoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScoreListOutcomeCallable DescribeScoreListCallable(const Model::DescribeScoreListRequest& request);
 
                 /**
                  *此接口用于获取指定应用ID下用户列表

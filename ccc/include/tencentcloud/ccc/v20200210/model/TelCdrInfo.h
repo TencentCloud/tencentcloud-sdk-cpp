@@ -996,7 +996,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uui 客户自定义数据（User-to-User Interface）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetUui() const;
 
@@ -1005,16 +1005,41 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uui 客户自定义数据（User-to-User Interface）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetUui(const std::string& _uui);
 
                     /**
                      * 判断参数 Uui 是否已赋值
                      * @return Uui 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UuiHasBeenSet() const;
+
+                    /**
+                     * 获取客户自定义数据（User-to-User Interface）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UUI 客户自定义数据（User-to-User Interface）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUUI() const;
+
+                    /**
+                     * 设置客户自定义数据（User-to-User Interface）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _uUI 客户自定义数据（User-to-User Interface）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUUI(const std::string& _uUI);
+
+                    /**
+                     * 判断参数 UUI 是否已赋值
+                     * @return UUI 是否已赋值
+                     * 
+                     */
+                    bool UUIHasBeenSet() const;
 
                     /**
                      * 获取IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
@@ -1454,6 +1479,13 @@ namespace TencentCloud
                      */
                     std::string m_uui;
                     bool m_uuiHasBeenSet;
+
+                    /**
+                     * 客户自定义数据（User-to-User Interface）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uUI;
+                    bool m_uUIHasBeenSet;
 
                     /**
                      * IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）

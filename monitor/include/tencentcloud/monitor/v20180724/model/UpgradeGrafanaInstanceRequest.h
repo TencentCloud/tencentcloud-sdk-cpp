@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取版本别名，例如：v7.4.2
-                     * @return Alias 版本别名，例如：v7.4.2
+                     * 获取版本别名，目前固定为 v9.1.5
+                     * @return Alias 版本别名，目前固定为 v9.1.5
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置版本别名，例如：v7.4.2
-                     * @param _alias 版本别名，例如：v7.4.2
+                     * 设置版本别名，目前固定为 v9.1.5
+                     * @param _alias 版本别名，目前固定为 v9.1.5
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 版本别名，例如：v7.4.2
+                     * 版本别名，目前固定为 v9.1.5
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;

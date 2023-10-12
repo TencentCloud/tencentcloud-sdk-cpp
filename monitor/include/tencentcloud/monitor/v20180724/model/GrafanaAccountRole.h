@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool OrganizationHasBeenSet() const;
 
                     /**
-                     * 获取权限
-                     * @return Role 权限
+                     * 获取权限(Admin、Editor、Viewer)
+                     * @return Role 权限(Admin、Editor、Viewer)
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置权限
-                     * @param _role 权限
+                     * 设置权限(Admin、Editor、Viewer)
+                     * @param _role 权限(Admin、Editor、Viewer)
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_organizationHasBeenSet;
 
                     /**
-                     * 权限
+                     * 权限(Admin、Editor、Viewer)
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;

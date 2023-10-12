@@ -83,6 +83,49 @@ CdwpgClient::CreateInstanceByApiOutcomeCallable CdwpgClient::CreateInstanceByApi
     return task->get_future();
 }
 
+CdwpgClient::DescribeInstanceStateOutcome CdwpgClient::DescribeInstanceState(const DescribeInstanceStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceStateResponse rsp = DescribeInstanceStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceStateOutcome(rsp);
+        else
+            return DescribeInstanceStateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceStateOutcome(outcome.GetError());
+    }
+}
+
+void CdwpgClient::DescribeInstanceStateAsync(const DescribeInstanceStateRequest& request, const DescribeInstanceStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwpgClient::DescribeInstanceStateOutcomeCallable CdwpgClient::DescribeInstanceStateCallable(const DescribeInstanceStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceStateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwpgClient::DescribeSimpleInstancesOutcome CdwpgClient::DescribeSimpleInstances(const DescribeSimpleInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSimpleInstances");
@@ -162,6 +205,49 @@ CdwpgClient::DestroyInstanceByApiOutcomeCallable CdwpgClient::DestroyInstanceByA
         [this, request]()
         {
             return this->DestroyInstanceByApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwpgClient::ModifyInstanceOutcome CdwpgClient::ModifyInstance(const ModifyInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceResponse rsp = ModifyInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceOutcome(rsp);
+        else
+            return ModifyInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CdwpgClient::ModifyInstanceAsync(const ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwpgClient::ModifyInstanceOutcomeCallable CdwpgClient::ModifyInstanceCallable(const ModifyInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstance(request);
         }
     );
 

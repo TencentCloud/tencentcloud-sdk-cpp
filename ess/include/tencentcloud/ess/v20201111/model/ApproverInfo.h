@@ -725,6 +725,27 @@ namespace TencentCloud
                      */
                     bool AddSignComponentsLimitsHasBeenSet() const;
 
+                    /**
+                     * 获取签署须知：支持传入富文本，最长字数：500个中文字符
+                     * @return SignInstructionContent 签署须知：支持传入富文本，最长字数：500个中文字符
+                     * 
+                     */
+                    std::string GetSignInstructionContent() const;
+
+                    /**
+                     * 设置签署须知：支持传入富文本，最长字数：500个中文字符
+                     * @param _signInstructionContent 签署须知：支持传入富文本，最长字数：500个中文字符
+                     * 
+                     */
+                    void SetSignInstructionContent(const std::string& _signInstructionContent);
+
+                    /**
+                     * 判断参数 SignInstructionContent 是否已赋值
+                     * @return SignInstructionContent 是否已赋值
+                     * 
+                     */
+                    bool SignInstructionContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -910,6 +931,12 @@ namespace TencentCloud
                      */
                     std::vector<ComponentLimit> m_addSignComponentsLimits;
                     bool m_addSignComponentsLimitsHasBeenSet;
+
+                    /**
+                     * 签署须知：支持传入富文本，最长字数：500个中文字符
+                     */
+                    std::string m_signInstructionContent;
+                    bool m_signInstructionContentHasBeenSet;
 
                 };
             }

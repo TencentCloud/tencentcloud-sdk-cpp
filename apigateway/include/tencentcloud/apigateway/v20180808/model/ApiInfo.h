@@ -1333,6 +1333,31 @@ namespace TencentCloud
                      */
                     bool Base64EncodedTriggerRulesHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启SCF Event异步调用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceScfEventIsAsyncCall 是否开启SCF Event异步调用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetServiceScfEventIsAsyncCall() const;
+
+                    /**
+                     * 设置是否开启SCF Event异步调用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceScfEventIsAsyncCall 是否开启SCF Event异步调用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceScfEventIsAsyncCall(const bool& _serviceScfEventIsAsyncCall);
+
+                    /**
+                     * 判断参数 ServiceScfEventIsAsyncCall 是否已赋值
+                     * @return ServiceScfEventIsAsyncCall 是否已赋值
+                     * 
+                     */
+                    bool ServiceScfEventIsAsyncCallHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1691,6 +1716,13 @@ namespace TencentCloud
                      */
                     std::vector<Base64EncodedTriggerRule> m_base64EncodedTriggerRules;
                     bool m_base64EncodedTriggerRulesHasBeenSet;
+
+                    /**
+                     * 是否开启SCF Event异步调用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_serviceScfEventIsAsyncCall;
+                    bool m_serviceScfEventIsAsyncCallHasBeenSet;
 
                 };
             }

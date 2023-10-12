@@ -48,6 +48,7 @@ TelCdrInfo::TelCdrInfo() :
     m_protectedCallerHasBeenSet(false),
     m_protectedCalleeHasBeenSet(false),
     m_uuiHasBeenSet(false),
+    m_uUIHasBeenSet(false),
     m_iVRKeyPressedExHasBeenSet(false),
     m_asrUrlHasBeenSet(false),
     m_customRecordURLHasBeenSet(false),
@@ -361,6 +362,16 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         }
         m_uui = string(value["Uui"].GetString());
         m_uuiHasBeenSet = true;
+    }
+
+    if (value.HasMember("UUI") && !value["UUI"].IsNull())
+    {
+        if (!value["UUI"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.UUI` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uUI = string(value["UUI"].GetString());
+        m_uUIHasBeenSet = true;
     }
 
     if (value.HasMember("IVRKeyPressedEx") && !value["IVRKeyPressedEx"].IsNull())
@@ -690,6 +701,14 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Uui";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uui.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uUIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UUI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uUI.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iVRKeyPressedExHasBeenSet)
@@ -1198,6 +1217,22 @@ void TelCdrInfo::SetUui(const string& _uui)
 bool TelCdrInfo::UuiHasBeenSet() const
 {
     return m_uuiHasBeenSet;
+}
+
+string TelCdrInfo::GetUUI() const
+{
+    return m_uUI;
+}
+
+void TelCdrInfo::SetUUI(const string& _uUI)
+{
+    m_uUI = _uUI;
+    m_uUIHasBeenSet = true;
+}
+
+bool TelCdrInfo::UUIHasBeenSet() const
+{
+    return m_uUIHasBeenSet;
 }
 
 vector<IVRKeyPressedElement> TelCdrInfo::GetIVRKeyPressedEx() const

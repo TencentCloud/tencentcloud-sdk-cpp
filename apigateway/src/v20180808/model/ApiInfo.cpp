@@ -71,7 +71,8 @@ ApiInfo::ApiInfo() :
     m_environmentsHasBeenSet(false),
     m_isBase64EncodedHasBeenSet(false),
     m_isBase64TriggerHasBeenSet(false),
-    m_base64EncodedTriggerRulesHasBeenSet(false)
+    m_base64EncodedTriggerRulesHasBeenSet(false),
+    m_serviceScfEventIsAsyncCallHasBeenSet(false)
 {
 }
 
@@ -701,6 +702,16 @@ CoreInternalOutcome ApiInfo::Deserialize(const rapidjson::Value &value)
         m_base64EncodedTriggerRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceScfEventIsAsyncCall") && !value["ServiceScfEventIsAsyncCall"].IsNull())
+    {
+        if (!value["ServiceScfEventIsAsyncCall"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiInfo.ServiceScfEventIsAsyncCall` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceScfEventIsAsyncCall = value["ServiceScfEventIsAsyncCall"].GetBool();
+        m_serviceScfEventIsAsyncCallHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1178,6 +1189,14 @@ void ApiInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_serviceScfEventIsAsyncCallHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceScfEventIsAsyncCall";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serviceScfEventIsAsyncCall, allocator);
     }
 
 }
@@ -1997,5 +2016,21 @@ void ApiInfo::SetBase64EncodedTriggerRules(const vector<Base64EncodedTriggerRule
 bool ApiInfo::Base64EncodedTriggerRulesHasBeenSet() const
 {
     return m_base64EncodedTriggerRulesHasBeenSet;
+}
+
+bool ApiInfo::GetServiceScfEventIsAsyncCall() const
+{
+    return m_serviceScfEventIsAsyncCall;
+}
+
+void ApiInfo::SetServiceScfEventIsAsyncCall(const bool& _serviceScfEventIsAsyncCall)
+{
+    m_serviceScfEventIsAsyncCall = _serviceScfEventIsAsyncCall;
+    m_serviceScfEventIsAsyncCallHasBeenSet = true;
+}
+
+bool ApiInfo::ServiceScfEventIsAsyncCallHasBeenSet() const
+{
+    return m_serviceScfEventIsAsyncCallHasBeenSet;
 }
 

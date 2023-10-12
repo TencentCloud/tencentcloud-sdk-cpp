@@ -59,7 +59,8 @@ Cluster::Cluster() :
     m_clusterSessionsHasBeenSet(false),
     m_archGenerationHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
-    m_ordersHasBeenSet(false)
+    m_ordersHasBeenSet(false),
+    m_sqlGatewaysHasBeenSet(false)
 {
 }
 
@@ -515,6 +516,26 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_ordersHasBeenSet = true;
     }
 
+    if (value.HasMember("SqlGateways") && !value["SqlGateways"].IsNull())
+    {
+        if (!value["SqlGateways"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.SqlGateways` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SqlGateways"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SqlGatewayItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sqlGateways.push_back(item);
+        }
+        m_sqlGatewaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -864,6 +885,21 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
 
         int i=0;
         for (auto itr = m_orders.begin(); itr != m_orders.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_sqlGatewaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SqlGateways";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sqlGateways.begin(); itr != m_sqlGateways.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -1495,5 +1531,21 @@ void Cluster::SetOrders(const vector<Order>& _orders)
 bool Cluster::OrdersHasBeenSet() const
 {
     return m_ordersHasBeenSet;
+}
+
+vector<SqlGatewayItem> Cluster::GetSqlGateways() const
+{
+    return m_sqlGateways;
+}
+
+void Cluster::SetSqlGateways(const vector<SqlGatewayItem>& _sqlGateways)
+{
+    m_sqlGateways = _sqlGateways;
+    m_sqlGatewaysHasBeenSet = true;
+}
+
+bool Cluster::SqlGatewaysHasBeenSet() const
+{
+    return m_sqlGatewaysHasBeenSet;
 }
 

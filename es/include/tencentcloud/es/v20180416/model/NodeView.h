@@ -403,6 +403,27 @@ namespace TencentCloud
                      */
                     bool HiddenHasBeenSet() const;
 
+                    /**
+                     * 获取是否充当协调节点的角色
+                     * @return IsCoordinationNode 是否充当协调节点的角色
+                     * 
+                     */
+                    bool GetIsCoordinationNode() const;
+
+                    /**
+                     * 设置是否充当协调节点的角色
+                     * @param _isCoordinationNode 是否充当协调节点的角色
+                     * 
+                     */
+                    void SetIsCoordinationNode(const bool& _isCoordinationNode);
+
+                    /**
+                     * 判断参数 IsCoordinationNode 是否已赋值
+                     * @return IsCoordinationNode 是否已赋值
+                     * 
+                     */
+                    bool IsCoordinationNodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -506,6 +527,12 @@ namespace TencentCloud
                      */
                     bool m_hidden;
                     bool m_hiddenHasBeenSet;
+
+                    /**
+                     * 是否充当协调节点的角色
+                     */
+                    bool m_isCoordinationNode;
+                    bool m_isCoordinationNodeHasBeenSet;
 
                 };
             }

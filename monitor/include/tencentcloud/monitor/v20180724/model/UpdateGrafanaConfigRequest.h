@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取JSON 编码后的字符串
-                     * @return Config JSON 编码后的字符串
+                     * 获取JSON 编码后的字符串，如 "{"server":{"root_url":"http://custom.domain"}}"
+                     * @return Config JSON 编码后的字符串，如 "{"server":{"root_url":"http://custom.domain"}}"
                      * 
                      */
                     std::string GetConfig() const;
 
                     /**
-                     * 设置JSON 编码后的字符串
-                     * @param _config JSON 编码后的字符串
+                     * 设置JSON 编码后的字符串，如 "{"server":{"root_url":"http://custom.domain"}}"
+                     * @param _config JSON 编码后的字符串，如 "{"server":{"root_url":"http://custom.domain"}}"
                      * 
                      */
                     void SetConfig(const std::string& _config);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * JSON 编码后的字符串
+                     * JSON 编码后的字符串，如 "{"server":{"root_url":"http://custom.domain"}}"
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;

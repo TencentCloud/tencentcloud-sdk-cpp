@@ -37,7 +37,8 @@ NodeView::NodeView() :
     m_jvmMemUsageHasBeenSet(false),
     m_shardNumHasBeenSet(false),
     m_diskIdsHasBeenSet(false),
-    m_hiddenHasBeenSet(false)
+    m_hiddenHasBeenSet(false),
+    m_isCoordinationNodeHasBeenSet(false)
 {
 }
 
@@ -219,6 +220,16 @@ CoreInternalOutcome NodeView::Deserialize(const rapidjson::Value &value)
         m_hiddenHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCoordinationNode") && !value["IsCoordinationNode"].IsNull())
+    {
+        if (!value["IsCoordinationNode"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeView.IsCoordinationNode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCoordinationNode = value["IsCoordinationNode"].GetBool();
+        m_isCoordinationNodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +376,14 @@ void NodeView::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Hidden";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hidden, allocator);
+    }
+
+    if (m_isCoordinationNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCoordinationNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCoordinationNode, allocator);
     }
 
 }
@@ -640,5 +659,21 @@ void NodeView::SetHidden(const bool& _hidden)
 bool NodeView::HiddenHasBeenSet() const
 {
     return m_hiddenHasBeenSet;
+}
+
+bool NodeView::GetIsCoordinationNode() const
+{
+    return m_isCoordinationNode;
+}
+
+void NodeView::SetIsCoordinationNode(const bool& _isCoordinationNode)
+{
+    m_isCoordinationNode = _isCoordinationNode;
+    m_isCoordinationNodeHasBeenSet = true;
+}
+
+bool NodeView::IsCoordinationNodeHasBeenSet() const
+{
+    return m_isCoordinationNodeHasBeenSet;
 }
 

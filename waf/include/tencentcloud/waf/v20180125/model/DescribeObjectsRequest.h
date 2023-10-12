@@ -1,0 +1,111 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBEOBJECTSREQUEST_H_
+#define TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBEOBJECTSREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/FiltersItemNew.h>
+
+
+namespace TencentCloud
+{
+    namespace Waf
+    {
+        namespace V20180125
+        {
+            namespace Model
+            {
+                /**
+                * DescribeObjects请求参数结构体
+                */
+                class DescribeObjectsRequest : public AbstractModel
+                {
+                public:
+                    DescribeObjectsRequest();
+                    ~DescribeObjectsRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取支持的过滤器:
+	ObjectId: clb实例ID
+	VIP: clb实例的公网IP
+	InstanceId: waf实例ID
+	Domain: 精准域名
+	Status: waf防护开关状态: 0关闭，1开启
+	ClsStatus: waf日志开关: 0关闭，1开启
+                     * @return Filters 支持的过滤器:
+	ObjectId: clb实例ID
+	VIP: clb实例的公网IP
+	InstanceId: waf实例ID
+	Domain: 精准域名
+	Status: waf防护开关状态: 0关闭，1开启
+	ClsStatus: waf日志开关: 0关闭，1开启
+                     * 
+                     */
+                    std::vector<FiltersItemNew> GetFilters() const;
+
+                    /**
+                     * 设置支持的过滤器:
+	ObjectId: clb实例ID
+	VIP: clb实例的公网IP
+	InstanceId: waf实例ID
+	Domain: 精准域名
+	Status: waf防护开关状态: 0关闭，1开启
+	ClsStatus: waf日志开关: 0关闭，1开启
+                     * @param _filters 支持的过滤器:
+	ObjectId: clb实例ID
+	VIP: clb实例的公网IP
+	InstanceId: waf实例ID
+	Domain: 精准域名
+	Status: waf防护开关状态: 0关闭，1开启
+	ClsStatus: waf日志开关: 0关闭，1开启
+                     * 
+                     */
+                    void SetFilters(const std::vector<FiltersItemNew>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 支持的过滤器:
+	ObjectId: clb实例ID
+	VIP: clb实例的公网IP
+	InstanceId: waf实例ID
+	Domain: 精准域名
+	Status: waf防护开关状态: 0关闭，1开启
+	ClsStatus: waf日志开关: 0关闭，1开启
+                     */
+                    std::vector<FiltersItemNew> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBEOBJECTSREQUEST_H_

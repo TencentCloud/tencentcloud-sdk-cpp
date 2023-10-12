@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeProtectedTelCdrResponse::DescribeProtectedTelCdrResponse() :
     m_totalCountHasBeenSet(false),
-    m_telCdrsHasBeenSet(false)
+    m_telCdrsHasBeenSet(false),
+    m_telCdrListHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeProtectedTelCdrResponse::Deserialize(const string &p
         m_telCdrsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TelCdrList") && !rsp["TelCdrList"].IsNull())
+    {
+        if (!rsp["TelCdrList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TelCdrList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["TelCdrList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TelCdrInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_telCdrList.push_back(item);
+        }
+        m_telCdrListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +141,21 @@ string DescribeProtectedTelCdrResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_telCdrs.begin(); itr != m_telCdrs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_telCdrListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TelCdrList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_telCdrList.begin(); itr != m_telCdrList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -156,6 +192,16 @@ vector<TelCdrInfo> DescribeProtectedTelCdrResponse::GetTelCdrs() const
 bool DescribeProtectedTelCdrResponse::TelCdrsHasBeenSet() const
 {
     return m_telCdrsHasBeenSet;
+}
+
+vector<TelCdrInfo> DescribeProtectedTelCdrResponse::GetTelCdrList() const
+{
+    return m_telCdrList;
+}
+
+bool DescribeProtectedTelCdrResponse::TelCdrListHasBeenSet() const
+{
+    return m_telCdrListHasBeenSet;
 }
 
 

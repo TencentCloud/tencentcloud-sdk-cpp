@@ -22,7 +22,8 @@ using namespace std;
 
 NumberInfo::NumberInfo() :
     m_numberHasBeenSet(false),
-    m_callOutSkillGroupIdsHasBeenSet(false)
+    m_callOutSkillGroupIdsHasBeenSet(false),
+    m_stateHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome NumberInfo::Deserialize(const rapidjson::Value &value)
         m_callOutSkillGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("State") && !value["State"].IsNull())
+    {
+        if (!value["State"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NumberInfo.State` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_state = value["State"].GetInt64();
+        m_stateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void NumberInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_stateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_state, allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void NumberInfo::SetCallOutSkillGroupIds(const vector<uint64_t>& _callOutSkillGr
 bool NumberInfo::CallOutSkillGroupIdsHasBeenSet() const
 {
     return m_callOutSkillGroupIdsHasBeenSet;
+}
+
+int64_t NumberInfo::GetState() const
+{
+    return m_state;
+}
+
+void NumberInfo::SetState(const int64_t& _state)
+{
+    m_state = _state;
+    m_stateHasBeenSet = true;
+}
+
+bool NumberInfo::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
 }
 

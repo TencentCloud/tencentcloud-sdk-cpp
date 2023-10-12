@@ -25,7 +25,9 @@ TColumn::TColumn() :
     m_typeHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_defaultHasBeenSet(false),
-    m_notNullHasBeenSet(false)
+    m_notNullHasBeenSet(false),
+    m_precisionHasBeenSet(false),
+    m_scaleHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome TColumn::Deserialize(const rapidjson::Value &value)
         m_notNullHasBeenSet = true;
     }
 
+    if (value.HasMember("Precision") && !value["Precision"].IsNull())
+    {
+        if (!value["Precision"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TColumn.Precision` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_precision = value["Precision"].GetInt64();
+        m_precisionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Scale") && !value["Scale"].IsNull())
+    {
+        if (!value["Scale"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TColumn.Scale` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scale = value["Scale"].GetInt64();
+        m_scaleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void TColumn::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "NotNull";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notNull, allocator);
+    }
+
+    if (m_precisionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Precision";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_precision, allocator);
+    }
+
+    if (m_scaleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scale";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scale, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void TColumn::SetNotNull(const bool& _notNull)
 bool TColumn::NotNullHasBeenSet() const
 {
     return m_notNullHasBeenSet;
+}
+
+int64_t TColumn::GetPrecision() const
+{
+    return m_precision;
+}
+
+void TColumn::SetPrecision(const int64_t& _precision)
+{
+    m_precision = _precision;
+    m_precisionHasBeenSet = true;
+}
+
+bool TColumn::PrecisionHasBeenSet() const
+{
+    return m_precisionHasBeenSet;
+}
+
+int64_t TColumn::GetScale() const
+{
+    return m_scale;
+}
+
+void TColumn::SetScale(const int64_t& _scale)
+{
+    m_scale = _scale;
+    m_scaleHasBeenSet = true;
+}
+
+bool TColumn::ScaleHasBeenSet() const
+{
+    return m_scaleHasBeenSet;
 }
 

@@ -2319,6 +2319,49 @@ WafClient::DescribeIpHitItemsOutcomeCallable WafClient::DescribeIpHitItemsCallab
     return task->get_future();
 }
 
+WafClient::DescribeObjectsOutcome WafClient::DescribeObjects(const DescribeObjectsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeObjects");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeObjectsResponse rsp = DescribeObjectsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeObjectsOutcome(rsp);
+        else
+            return DescribeObjectsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeObjectsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeObjectsAsync(const DescribeObjectsRequest& request, const DescribeObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeObjects(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeObjectsOutcomeCallable WafClient::DescribeObjectsCallable(const DescribeObjectsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeObjectsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeObjects(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribePeakPointsOutcome WafClient::DescribePeakPoints(const DescribePeakPointsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePeakPoints");
@@ -4290,6 +4333,49 @@ WafClient::ModifyModuleStatusOutcomeCallable WafClient::ModifyModuleStatusCallab
         [this, request]()
         {
             return this->ModifyModuleStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyObjectOutcome WafClient::ModifyObject(const ModifyObjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyObject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyObjectResponse rsp = ModifyObjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyObjectOutcome(rsp);
+        else
+            return ModifyObjectOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyObjectOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyObjectAsync(const ModifyObjectRequest& request, const ModifyObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyObject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyObjectOutcomeCallable WafClient::ModifyObjectCallable(const ModifyObjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyObjectOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyObject(request);
         }
     );
 

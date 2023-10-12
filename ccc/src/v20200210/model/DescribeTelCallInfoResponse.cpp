@@ -28,6 +28,7 @@ DescribeTelCallInfoResponse::DescribeTelCallInfoResponse() :
     m_telCallInCountHasBeenSet(false),
     m_seatUsedCountHasBeenSet(false),
     m_voipCallInCountHasBeenSet(false),
+    m_vOIPCallInCountHasBeenSet(false),
     m_asrOfflineCountHasBeenSet(false),
     m_asrRealtimeCountHasBeenSet(false)
 {
@@ -107,6 +108,16 @@ CoreInternalOutcome DescribeTelCallInfoResponse::Deserialize(const string &paylo
         m_voipCallInCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VOIPCallInCount") && !rsp["VOIPCallInCount"].IsNull())
+    {
+        if (!rsp["VOIPCallInCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VOIPCallInCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vOIPCallInCount = rsp["VOIPCallInCount"].GetInt64();
+        m_vOIPCallInCountHasBeenSet = true;
+    }
+
     if (rsp.HasMember("AsrOfflineCount") && !rsp["AsrOfflineCount"].IsNull())
     {
         if (!rsp["AsrOfflineCount"].IsInt64())
@@ -167,6 +178,14 @@ string DescribeTelCallInfoResponse::ToJsonString() const
         string key = "VoipCallInCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_voipCallInCount, allocator);
+    }
+
+    if (m_vOIPCallInCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VOIPCallInCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vOIPCallInCount, allocator);
     }
 
     if (m_asrOfflineCountHasBeenSet)
@@ -235,6 +254,16 @@ int64_t DescribeTelCallInfoResponse::GetVoipCallInCount() const
 bool DescribeTelCallInfoResponse::VoipCallInCountHasBeenSet() const
 {
     return m_voipCallInCountHasBeenSet;
+}
+
+int64_t DescribeTelCallInfoResponse::GetVOIPCallInCount() const
+{
+    return m_vOIPCallInCount;
+}
+
+bool DescribeTelCallInfoResponse::VOIPCallInCountHasBeenSet() const
+{
+    return m_vOIPCallInCountHasBeenSet;
 }
 
 int64_t DescribeTelCallInfoResponse::GetAsrOfflineCount() const

@@ -30,6 +30,7 @@
 #include <tencentcloud/oceanus/v20190422/model/WorkSpaceClusterItem.h>
 #include <tencentcloud/oceanus/v20190422/model/ClusterSession.h>
 #include <tencentcloud/oceanus/v20190422/model/Order.h>
+#include <tencentcloud/oceanus/v20190422/model/SqlGatewayItem.h>
 
 
 namespace TencentCloud
@@ -959,6 +960,31 @@ namespace TencentCloud
                      */
                     bool OrdersHasBeenSet() const;
 
+                    /**
+                     * 获取Gateway信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SqlGateways Gateway信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SqlGatewayItem> GetSqlGateways() const;
+
+                    /**
+                     * 设置Gateway信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sqlGateways Gateway信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSqlGateways(const std::vector<SqlGatewayItem>& _sqlGateways);
+
+                    /**
+                     * 判断参数 SqlGateways 是否已赋值
+                     * @return SqlGateways 是否已赋值
+                     * 
+                     */
+                    bool SqlGatewaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1216,6 +1242,13 @@ namespace TencentCloud
                      */
                     std::vector<Order> m_orders;
                     bool m_ordersHasBeenSet;
+
+                    /**
+                     * Gateway信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SqlGatewayItem> m_sqlGateways;
+                    bool m_sqlGatewaysHasBeenSet;
 
                 };
             }

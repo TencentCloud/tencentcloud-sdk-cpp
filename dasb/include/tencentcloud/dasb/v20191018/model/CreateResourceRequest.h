@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取部署region
+                     * @return DeployRegion 部署region
+                     * 
+                     */
+                    std::string GetDeployRegion() const;
+
+                    /**
+                     * 设置部署region
+                     * @param _deployRegion 部署region
+                     * 
+                     */
+                    void SetDeployRegion(const std::string& _deployRegion);
+
+                    /**
+                     * 判断参数 DeployRegion 是否已赋值
+                     * @return DeployRegion 是否已赋值
+                     * 
+                     */
+                    bool DeployRegionHasBeenSet() const;
+
+                    /**
                      * 获取部署堡垒机的VpcId
                      * @return VpcId 部署堡垒机的VpcId
                      * 
@@ -84,7 +105,160 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取资源类型。取值:standard/pro
+                     * @return ResourceEdition 资源类型。取值:standard/pro
+                     * 
+                     */
+                    std::string GetResourceEdition() const;
+
+                    /**
+                     * 设置资源类型。取值:standard/pro
+                     * @param _resourceEdition 资源类型。取值:standard/pro
+                     * 
+                     */
+                    void SetResourceEdition(const std::string& _resourceEdition);
+
+                    /**
+                     * 判断参数 ResourceEdition 是否已赋值
+                     * @return ResourceEdition 是否已赋值
+                     * 
+                     */
+                    bool ResourceEditionHasBeenSet() const;
+
+                    /**
+                     * 获取资源节点数
+                     * @return ResourceNode 资源节点数
+                     * 
+                     */
+                    int64_t GetResourceNode() const;
+
+                    /**
+                     * 设置资源节点数
+                     * @param _resourceNode 资源节点数
+                     * 
+                     */
+                    void SetResourceNode(const int64_t& _resourceNode);
+
+                    /**
+                     * 判断参数 ResourceNode 是否已赋值
+                     * @return ResourceNode 是否已赋值
+                     * 
+                     */
+                    bool ResourceNodeHasBeenSet() const;
+
+                    /**
+                     * 获取计费周期
+                     * @return TimeUnit 计费周期
+                     * 
+                     */
+                    std::string GetTimeUnit() const;
+
+                    /**
+                     * 设置计费周期
+                     * @param _timeUnit 计费周期
+                     * 
+                     */
+                    void SetTimeUnit(const std::string& _timeUnit);
+
+                    /**
+                     * 判断参数 TimeUnit 是否已赋值
+                     * @return TimeUnit 是否已赋值
+                     * 
+                     */
+                    bool TimeUnitHasBeenSet() const;
+
+                    /**
+                     * 获取计费时长
+                     * @return TimeSpan 计费时长
+                     * 
+                     */
+                    int64_t GetTimeSpan() const;
+
+                    /**
+                     * 设置计费时长
+                     * @param _timeSpan 计费时长
+                     * 
+                     */
+                    void SetTimeSpan(const int64_t& _timeSpan);
+
+                    /**
+                     * 判断参数 TimeSpan 是否已赋值
+                     * @return TimeSpan 是否已赋值
+                     * 
+                     */
+                    bool TimeSpanHasBeenSet() const;
+
+                    /**
+                     * 获取计费模式 1预付费
+                     * @return PayMode 计费模式 1预付费
+                     * 
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置计费模式 1预付费
+                     * @param _payMode 计费模式 1预付费
+                     * 
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费
+                     * @return AutoRenewFlag 自动续费
+                     * 
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置自动续费
+                     * @param _autoRenewFlag 自动续费
+                     * 
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取部署zone
+                     * @return DeployZone 部署zone
+                     * 
+                     */
+                    std::string GetDeployZone() const;
+
+                    /**
+                     * 设置部署zone
+                     * @param _deployZone 部署zone
+                     * 
+                     */
+                    void SetDeployZone(const std::string& _deployZone);
+
+                    /**
+                     * 判断参数 DeployZone 是否已赋值
+                     * @return DeployZone 是否已赋值
+                     * 
+                     */
+                    bool DeployZoneHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 部署region
+                     */
+                    std::string m_deployRegion;
+                    bool m_deployRegionHasBeenSet;
 
                     /**
                      * 部署堡垒机的VpcId
@@ -97,6 +271,48 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 资源类型。取值:standard/pro
+                     */
+                    std::string m_resourceEdition;
+                    bool m_resourceEditionHasBeenSet;
+
+                    /**
+                     * 资源节点数
+                     */
+                    int64_t m_resourceNode;
+                    bool m_resourceNodeHasBeenSet;
+
+                    /**
+                     * 计费周期
+                     */
+                    std::string m_timeUnit;
+                    bool m_timeUnitHasBeenSet;
+
+                    /**
+                     * 计费时长
+                     */
+                    int64_t m_timeSpan;
+                    bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 计费模式 1预付费
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 自动续费
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 部署zone
+                     */
+                    std::string m_deployZone;
+                    bool m_deployZoneHasBeenSet;
 
                 };
             }

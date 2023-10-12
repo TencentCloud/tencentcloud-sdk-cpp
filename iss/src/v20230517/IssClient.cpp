@@ -2190,6 +2190,49 @@ IssClient::DescribeUserDeviceOutcomeCallable IssClient::DescribeUserDeviceCallab
     return task->get_future();
 }
 
+IssClient::DescribeVideoBitRateOutcome IssClient::DescribeVideoBitRate(const DescribeVideoBitRateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoBitRate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoBitRateResponse rsp = DescribeVideoBitRateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoBitRateOutcome(rsp);
+        else
+            return DescribeVideoBitRateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoBitRateOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::DescribeVideoBitRateAsync(const DescribeVideoBitRateRequest& request, const DescribeVideoBitRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoBitRate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::DescribeVideoBitRateOutcomeCallable IssClient::DescribeVideoBitRateCallable(const DescribeVideoBitRateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoBitRateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoBitRate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::DescribeVideoDownloadUrlOutcome IssClient::DescribeVideoDownloadUrl(const DescribeVideoDownloadUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVideoDownloadUrl");

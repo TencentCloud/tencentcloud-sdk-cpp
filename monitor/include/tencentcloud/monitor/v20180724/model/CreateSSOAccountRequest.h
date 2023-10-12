@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取权限
-                     * @return Role 权限
+                     * 获取权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)
+                     * @return Role 权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)
                      * 
                      */
                     std::vector<GrafanaAccountRole> GetRole() const;
 
                     /**
-                     * 设置权限
-                     * @param _role 权限
+                     * 设置权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)
+                     * @param _role 权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)
                      * 
                      */
                     void SetRole(const std::vector<GrafanaAccountRole>& _role);
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 权限
+                     * 权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)
                      */
                     std::vector<GrafanaAccountRole> m_role;
                     bool m_roleHasBeenSet;

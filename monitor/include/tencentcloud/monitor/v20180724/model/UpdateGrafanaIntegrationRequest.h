@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取集成内容
-                     * @return Content 集成内容
+                     * 获取集成内容，请查看示例
+                     * @return Content 集成内容，请查看示例
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置集成内容
-                     * @param _content 集成内容
+                     * 设置集成内容，请查看示例
+                     * @param _content 集成内容，请查看示例
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_kindHasBeenSet;
 
                     /**
-                     * 集成内容
+                     * 集成内容，请查看示例
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

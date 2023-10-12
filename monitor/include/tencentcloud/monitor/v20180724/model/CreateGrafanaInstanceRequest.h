@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID
-                     * @return VpcId VPC ID
+                     * 获取VPC ID (私有网络 ID)
+                     * @return VpcId VPC ID (私有网络 ID)
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC ID
-                     * @param _vpcId VPC ID
+                     * 设置VPC ID (私有网络 ID)
+                     * @param _vpcId VPC ID (私有网络 ID)
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID 数组
-                     * @return SubnetIds 子网 ID 数组
+                     * 获取子网 ID 数组(VPC ID下的子网 ID，只取第一个)
+                     * @return SubnetIds 子网 ID 数组(VPC ID下的子网 ID，只取第一个)
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置子网 ID 数组
-                     * @param _subnetIds 子网 ID 数组
+                     * 设置子网 ID 数组(VPC ID下的子网 ID，只取第一个)
+                     * @param _subnetIds 子网 ID 数组(VPC ID下的子网 ID，只取第一个)
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool EnableInternetHasBeenSet() const;
 
                     /**
-                     * 获取Grafana 初始密码
-                     * @return GrafanaInitPassword Grafana 初始密码
+                     * 获取Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)
+                     * @return GrafanaInitPassword Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)
                      * 
                      */
                     std::string GetGrafanaInitPassword() const;
 
                     /**
-                     * 设置Grafana 初始密码
-                     * @param _grafanaInitPassword Grafana 初始密码
+                     * 设置Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)
+                     * @param _grafanaInitPassword Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)
                      * 
                      */
                     void SetGrafanaInitPassword(const std::string& _grafanaInitPassword);
@@ -178,13 +178,13 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * VPC ID
+                     * VPC ID (私有网络 ID)
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网 ID 数组
+                     * 子网 ID 数组(VPC ID下的子网 ID，只取第一个)
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_enableInternetHasBeenSet;
 
                     /**
-                     * Grafana 初始密码
+                     * Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)
                      */
                     std::string m_grafanaInitPassword;
                     bool m_grafanaInitPasswordHasBeenSet;

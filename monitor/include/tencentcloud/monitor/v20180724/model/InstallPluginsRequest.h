@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取插件信息
-                     * @return Plugins 插件信息
+                     * 获取插件信息(可通过 DescribePluginOverviews 接口获取)
+                     * @return Plugins 插件信息(可通过 DescribePluginOverviews 接口获取)
                      * 
                      */
                     std::vector<GrafanaPlugin> GetPlugins() const;
 
                     /**
-                     * 设置插件信息
-                     * @param _plugins 插件信息
+                     * 设置插件信息(可通过 DescribePluginOverviews 接口获取)
+                     * @param _plugins 插件信息(可通过 DescribePluginOverviews 接口获取)
                      * 
                      */
                     void SetPlugins(const std::vector<GrafanaPlugin>& _plugins);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 插件信息
+                     * 插件信息(可通过 DescribePluginOverviews 接口获取)
                      */
                     std::vector<GrafanaPlugin> m_plugins;
                     bool m_pluginsHasBeenSet;

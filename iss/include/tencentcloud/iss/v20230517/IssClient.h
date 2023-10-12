@@ -123,6 +123,8 @@
 #include <tencentcloud/iss/v20230517/model/DescribeTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeUserDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeUserDeviceResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVideoBitRateRequest.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVideoBitRateResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListAITasksRequest.h>
@@ -349,6 +351,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserDeviceResponse> DescribeUserDeviceOutcome;
                 typedef std::future<DescribeUserDeviceOutcome> DescribeUserDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeUserDeviceRequest&, DescribeUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoBitRateResponse> DescribeVideoBitRateOutcome;
+                typedef std::future<DescribeVideoBitRateOutcome> DescribeVideoBitRateOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DescribeVideoBitRateRequest&, DescribeVideoBitRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoBitRateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVideoDownloadUrlResponse> DescribeVideoDownloadUrlOutcome;
                 typedef std::future<DescribeVideoDownloadUrlOutcome> DescribeVideoDownloadUrlOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeVideoDownloadUrlRequest&, DescribeVideoDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoDownloadUrlAsyncHandler;
@@ -898,6 +903,15 @@ namespace TencentCloud
                 DescribeUserDeviceOutcome DescribeUserDevice(const Model::DescribeUserDeviceRequest &request);
                 void DescribeUserDeviceAsync(const Model::DescribeUserDeviceRequest& request, const DescribeUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserDeviceOutcomeCallable DescribeUserDeviceCallable(const Model::DescribeUserDeviceRequest& request);
+
+                /**
+                 *用于获取视频通道的码率信息
+                 * @param req DescribeVideoBitRateRequest
+                 * @return DescribeVideoBitRateOutcome
+                 */
+                DescribeVideoBitRateOutcome DescribeVideoBitRate(const Model::DescribeVideoBitRateRequest &request);
+                void DescribeVideoBitRateAsync(const Model::DescribeVideoBitRateRequest& request, const DescribeVideoBitRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoBitRateOutcomeCallable DescribeVideoBitRateCallable(const Model::DescribeVideoBitRateRequest& request);
 
                 /**
                  *用于获取云录像下载 url

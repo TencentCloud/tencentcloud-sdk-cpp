@@ -67,7 +67,9 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件。
 <li>AppName- string - 是否必填：否 - 应用名搜索</li>
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+<li>IP - String - 是否必填：否 - 主机ip</li>
+<li>MachineName - String - 是否必填：否 - 主机名称</li>
+<li>InstanceID - string - 是否必填：否 - 实例ID</li>
 <li>Type - int - 是否必填：否 - 类型	: 仅linux
 0: 全部
 1: 运维
@@ -81,7 +83,9 @@ namespace TencentCloud
 <li>OsType - uint64 - 是否必填：否 - windows/linux</li>
                      * @return Filters 过滤条件。
 <li>AppName- string - 是否必填：否 - 应用名搜索</li>
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+<li>IP - String - 是否必填：否 - 主机ip</li>
+<li>MachineName - String - 是否必填：否 - 主机名称</li>
+<li>InstanceID - string - 是否必填：否 - 实例ID</li>
 <li>Type - int - 是否必填：否 - 类型	: 仅linux
 0: 全部
 1: 运维
@@ -100,7 +104,9 @@ namespace TencentCloud
                     /**
                      * 设置过滤条件。
 <li>AppName- string - 是否必填：否 - 应用名搜索</li>
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+<li>IP - String - 是否必填：否 - 主机ip</li>
+<li>MachineName - String - 是否必填：否 - 主机名称</li>
+<li>InstanceID - string - 是否必填：否 - 实例ID</li>
 <li>Type - int - 是否必填：否 - 类型	: 仅linux
 0: 全部
 1: 运维
@@ -114,7 +120,9 @@ namespace TencentCloud
 <li>OsType - uint64 - 是否必填：否 - windows/linux</li>
                      * @param _filters 过滤条件。
 <li>AppName- string - 是否必填：否 - 应用名搜索</li>
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+<li>IP - String - 是否必填：否 - 主机ip</li>
+<li>MachineName - String - 是否必填：否 - 主机名称</li>
+<li>InstanceID - string - 是否必填：否 - 实例ID</li>
 <li>Type - int - 是否必填：否 - 类型	: 仅linux
 0: 全部
 1: 运维
@@ -190,7 +198,9 @@ namespace TencentCloud
                     /**
                      * 过滤条件。
 <li>AppName- string - 是否必填：否 - 应用名搜索</li>
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+<li>IP - String - 是否必填：否 - 主机ip</li>
+<li>MachineName - String - 是否必填：否 - 主机名称</li>
+<li>InstanceID - string - 是否必填：否 - 实例ID</li>
 <li>Type - int - 是否必填：否 - 类型	: 仅linux
 0: 全部
 1: 运维
