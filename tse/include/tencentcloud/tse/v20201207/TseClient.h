@@ -103,6 +103,8 @@
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCertificateRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCertificateResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayRouteRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayRouteResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayRouteRateLimitRequest.h>
@@ -253,6 +255,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayCanaryRuleResponse> ModifyCloudNativeAPIGatewayCanaryRuleOutcome;
                 typedef std::future<ModifyCloudNativeAPIGatewayCanaryRuleOutcome> ModifyCloudNativeAPIGatewayCanaryRuleOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyCloudNativeAPIGatewayCanaryRuleRequest&, ModifyCloudNativeAPIGatewayCanaryRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayCanaryRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayCertificateResponse> ModifyCloudNativeAPIGatewayCertificateOutcome;
+                typedef std::future<ModifyCloudNativeAPIGatewayCertificateOutcome> ModifyCloudNativeAPIGatewayCertificateOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyCloudNativeAPIGatewayCertificateRequest&, ModifyCloudNativeAPIGatewayCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayRouteResponse> ModifyCloudNativeAPIGatewayRouteOutcome;
                 typedef std::future<ModifyCloudNativeAPIGatewayRouteOutcome> ModifyCloudNativeAPIGatewayRouteOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyCloudNativeAPIGatewayRouteRequest&, ModifyCloudNativeAPIGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayRouteAsyncHandler;
@@ -639,6 +644,15 @@ namespace TencentCloud
                 ModifyCloudNativeAPIGatewayCanaryRuleOutcome ModifyCloudNativeAPIGatewayCanaryRule(const Model::ModifyCloudNativeAPIGatewayCanaryRuleRequest &request);
                 void ModifyCloudNativeAPIGatewayCanaryRuleAsync(const Model::ModifyCloudNativeAPIGatewayCanaryRuleRequest& request, const ModifyCloudNativeAPIGatewayCanaryRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCloudNativeAPIGatewayCanaryRuleOutcomeCallable ModifyCloudNativeAPIGatewayCanaryRuleCallable(const Model::ModifyCloudNativeAPIGatewayCanaryRuleRequest& request);
+
+                /**
+                 *更新云原生网关证书
+                 * @param req ModifyCloudNativeAPIGatewayCertificateRequest
+                 * @return ModifyCloudNativeAPIGatewayCertificateOutcome
+                 */
+                ModifyCloudNativeAPIGatewayCertificateOutcome ModifyCloudNativeAPIGatewayCertificate(const Model::ModifyCloudNativeAPIGatewayCertificateRequest &request);
+                void ModifyCloudNativeAPIGatewayCertificateAsync(const Model::ModifyCloudNativeAPIGatewayCertificateRequest& request, const ModifyCloudNativeAPIGatewayCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudNativeAPIGatewayCertificateOutcomeCallable ModifyCloudNativeAPIGatewayCertificateCallable(const Model::ModifyCloudNativeAPIGatewayCertificateRequest& request);
 
                 /**
                  *修改云原生网关路由

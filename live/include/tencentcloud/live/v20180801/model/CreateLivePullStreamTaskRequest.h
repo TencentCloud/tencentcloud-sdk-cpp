@@ -550,6 +550,39 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
                     bool ExtraCmdHasBeenSet() const;
 
                     /**
+                     * 获取自定义任务 ID。
+注：
+1. 该自定义 ID 为可选参数，如果传入，请确保该账号下传入的 ID 唯一。
+2. 该自定义 ID 用于防止重复发起请求时产生重复任务。后面也可以用 SpecifyTaskId 来修改或删除任务。
+                     * @return SpecifyTaskId 自定义任务 ID。
+注：
+1. 该自定义 ID 为可选参数，如果传入，请确保该账号下传入的 ID 唯一。
+2. 该自定义 ID 用于防止重复发起请求时产生重复任务。后面也可以用 SpecifyTaskId 来修改或删除任务。
+                     * 
+                     */
+                    std::string GetSpecifyTaskId() const;
+
+                    /**
+                     * 设置自定义任务 ID。
+注：
+1. 该自定义 ID 为可选参数，如果传入，请确保该账号下传入的 ID 唯一。
+2. 该自定义 ID 用于防止重复发起请求时产生重复任务。后面也可以用 SpecifyTaskId 来修改或删除任务。
+                     * @param _specifyTaskId 自定义任务 ID。
+注：
+1. 该自定义 ID 为可选参数，如果传入，请确保该账号下传入的 ID 唯一。
+2. 该自定义 ID 用于防止重复发起请求时产生重复任务。后面也可以用 SpecifyTaskId 来修改或删除任务。
+                     * 
+                     */
+                    void SetSpecifyTaskId(const std::string& _specifyTaskId);
+
+                    /**
+                     * 判断参数 SpecifyTaskId 是否已赋值
+                     * @return SpecifyTaskId 是否已赋值
+                     * 
+                     */
+                    bool SpecifyTaskIdHasBeenSet() const;
+
+                    /**
                      * 获取任务描述，限制 512 字节。
                      * @return Comment 任务描述，限制 512 字节。
                      * 
@@ -914,6 +947,15 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
                      */
                     std::string m_extraCmd;
                     bool m_extraCmdHasBeenSet;
+
+                    /**
+                     * 自定义任务 ID。
+注：
+1. 该自定义 ID 为可选参数，如果传入，请确保该账号下传入的 ID 唯一。
+2. 该自定义 ID 用于防止重复发起请求时产生重复任务。后面也可以用 SpecifyTaskId 来修改或删除任务。
+                     */
+                    std::string m_specifyTaskId;
+                    bool m_specifyTaskIdHasBeenSet;
 
                     /**
                      * 任务描述，限制 512 字节。

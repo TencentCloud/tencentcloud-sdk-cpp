@@ -412,6 +412,35 @@ ResetTaskConfig：任务更新回调。
                     bool OffsetTimeHasBeenSet() const;
 
                     /**
+                     * 获取指定任务 ID 修改任务。
+
+注意：该自定义任务 ID 只有在创建任务时指定了，才可在此处修改时使用。否则请使用系统返回的任务 ID。
+                     * @return SpecifyTaskId 指定任务 ID 修改任务。
+
+注意：该自定义任务 ID 只有在创建任务时指定了，才可在此处修改时使用。否则请使用系统返回的任务 ID。
+                     * 
+                     */
+                    std::string GetSpecifyTaskId() const;
+
+                    /**
+                     * 设置指定任务 ID 修改任务。
+
+注意：该自定义任务 ID 只有在创建任务时指定了，才可在此处修改时使用。否则请使用系统返回的任务 ID。
+                     * @param _specifyTaskId 指定任务 ID 修改任务。
+
+注意：该自定义任务 ID 只有在创建任务时指定了，才可在此处修改时使用。否则请使用系统返回的任务 ID。
+                     * 
+                     */
+                    void SetSpecifyTaskId(const std::string& _specifyTaskId);
+
+                    /**
+                     * 判断参数 SpecifyTaskId 是否已赋值
+                     * @return SpecifyTaskId 是否已赋值
+                     * 
+                     */
+                    bool SpecifyTaskIdHasBeenSet() const;
+
+                    /**
                      * 获取目标 Url。
 换目标地址，会断流重推到新地址。
                      * @return ToUrl 目标 Url。
@@ -719,6 +748,14 @@ ResetTaskConfig：任务更新回调。
                      */
                     int64_t m_offsetTime;
                     bool m_offsetTimeHasBeenSet;
+
+                    /**
+                     * 指定任务 ID 修改任务。
+
+注意：该自定义任务 ID 只有在创建任务时指定了，才可在此处修改时使用。否则请使用系统返回的任务 ID。
+                     */
+                    std::string m_specifyTaskId;
+                    bool m_specifyTaskIdHasBeenSet;
 
                     /**
                      * 目标 Url。

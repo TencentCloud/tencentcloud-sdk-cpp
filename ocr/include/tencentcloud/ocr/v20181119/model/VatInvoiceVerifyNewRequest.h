@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool RegionCodeHasBeenSet() const;
 
                     /**
-                     * 获取销方税号，通用机打电子发票必填
-                     * @return SellerTaxCode 销方税号，通用机打电子发票必填
+                     * 获取销方税号，通用机打电子发票必填，区块链发票时必填
+                     * @return SellerTaxCode 销方税号，通用机打电子发票必填，区块链发票时必填
                      * 
                      */
                     std::string GetSellerTaxCode() const;
 
                     /**
-                     * 设置销方税号，通用机打电子发票必填
-                     * @param _sellerTaxCode 销方税号，通用机打电子发票必填
+                     * 设置销方税号，通用机打电子发票必填，区块链发票时必填
+                     * @param _sellerTaxCode 销方税号，通用机打电子发票必填，区块链发票时必填
                      * 
                      */
                     void SetSellerTaxCode(const std::string& _sellerTaxCode);
@@ -286,7 +286,7 @@ namespace TencentCloud
                     bool m_regionCodeHasBeenSet;
 
                     /**
-                     * 销方税号，通用机打电子发票必填
+                     * 销方税号，通用机打电子发票必填，区块链发票时必填
                      */
                     std::string m_sellerTaxCode;
                     bool m_sellerTaxCodeHasBeenSet;

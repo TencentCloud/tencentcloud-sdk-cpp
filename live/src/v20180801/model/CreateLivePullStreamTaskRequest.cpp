@@ -37,6 +37,7 @@ CreateLivePullStreamTaskRequest::CreateLivePullStreamTaskRequest() :
     m_vodRefreshTypeHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_extraCmdHasBeenSet(false),
+    m_specifyTaskIdHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_toUrlHasBeenSet(false),
     m_backupSourceTypeHasBeenSet(false),
@@ -174,6 +175,14 @@ string CreateLivePullStreamTaskRequest::ToJsonString() const
         string key = "ExtraCmd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extraCmd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specifyTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecifyTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_specifyTaskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commentHasBeenSet)
@@ -469,6 +478,22 @@ void CreateLivePullStreamTaskRequest::SetExtraCmd(const string& _extraCmd)
 bool CreateLivePullStreamTaskRequest::ExtraCmdHasBeenSet() const
 {
     return m_extraCmdHasBeenSet;
+}
+
+string CreateLivePullStreamTaskRequest::GetSpecifyTaskId() const
+{
+    return m_specifyTaskId;
+}
+
+void CreateLivePullStreamTaskRequest::SetSpecifyTaskId(const string& _specifyTaskId)
+{
+    m_specifyTaskId = _specifyTaskId;
+    m_specifyTaskIdHasBeenSet = true;
+}
+
+bool CreateLivePullStreamTaskRequest::SpecifyTaskIdHasBeenSet() const
+{
+    return m_specifyTaskIdHasBeenSet;
 }
 
 string CreateLivePullStreamTaskRequest::GetComment() const

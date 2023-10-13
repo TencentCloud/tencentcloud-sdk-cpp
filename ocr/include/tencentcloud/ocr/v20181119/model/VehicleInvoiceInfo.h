@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool MotorTaxRateHasBeenSet() const;
 
                     /**
-                     * 获取开户行
-                     * @return MotorBankName 开户行
+                     * 获取银行账号
+                     * @return MotorBankName 银行账号
                      * 
                      */
                     std::string GetMotorBankName() const;
 
                     /**
-                     * 设置开户行
-                     * @param _motorBankName 开户行
+                     * 设置银行账号
+                     * @param _motorBankName 银行账号
                      * 
                      */
                     void SetMotorBankName(const std::string& _motorBankName);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool MotorBankNameHasBeenSet() const;
 
                     /**
-                     * 获取账号
-                     * @return MotorBankAccount 账号
+                     * 获取开户行
+                     * @return MotorBankAccount 开户行
                      * 
                      */
                     std::string GetMotorBankAccount() const;
 
                     /**
-                     * 设置账号
-                     * @param _motorBankAccount 账号
+                     * 设置开户行
+                     * @param _motorBankAccount 开户行
                      * 
                      */
                     void SetMotorBankAccount(const std::string& _motorBankAccount);
@@ -532,13 +532,13 @@ namespace TencentCloud
                     bool m_motorTaxRateHasBeenSet;
 
                     /**
-                     * 开户行
+                     * 银行账号
                      */
                     std::string m_motorBankName;
                     bool m_motorBankNameHasBeenSet;
 
                     /**
-                     * 账号
+                     * 开户行
                      */
                     std::string m_motorBankAccount;
                     bool m_motorBankAccountHasBeenSet;

@@ -45,21 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID（废弃）
                      * @return InstanceId 实例 ID（废弃）
-                     * 
+                     * @deprecated
                      */
                     int64_t GetInstanceId() const;
 
                     /**
                      * 设置实例 ID（废弃）
                      * @param _instanceId 实例 ID（废弃）
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceId(const int64_t& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceIdHasBeenSet() const;
 

@@ -61,16 +61,32 @@ namespace TencentCloud
                     /**
                      * 获取服务记录列表
                      * @return IMCdrs 服务记录列表
-                     * 
+                     * @deprecated
                      */
                     std::vector<IMCdrInfo> GetIMCdrs() const;
 
                     /**
                      * 判断参数 IMCdrs 是否已赋值
                      * @return IMCdrs 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IMCdrsHasBeenSet() const;
+
+                    /**
+                     * 获取服务记录列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IMCdrList 服务记录列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<IMCdrInfo> GetIMCdrList() const;
+
+                    /**
+                     * 判断参数 IMCdrList 是否已赋值
+                     * @return IMCdrList 是否已赋值
+                     * 
+                     */
+                    bool IMCdrListHasBeenSet() const;
 
                 private:
 
@@ -85,6 +101,13 @@ namespace TencentCloud
                      */
                     std::vector<IMCdrInfo> m_iMCdrs;
                     bool m_iMCdrsHasBeenSet;
+
+                    /**
+                     * 服务记录列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IMCdrInfo> m_iMCdrList;
+                    bool m_iMCdrListHasBeenSet;
 
                 };
             }

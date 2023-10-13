@@ -400,15 +400,15 @@ namespace TencentCloud
                     bool DeviceHasBeenSet() const;
 
                     /**
-                     * 获取是否海外
-                     * @return IsAbroad 是否海外
+                     * 获取显示是否海外
+                     * @return IsAbroad 显示是否海外
                      * 
                      */
                     std::string GetIsAbroad() const;
 
                     /**
-                     * 设置是否海外
-                     * @param _isAbroad 是否海外
+                     * 设置显示是否海外
+                     * @param _isAbroad 显示是否海外
                      * 
                      */
                     void SetIsAbroad(const std::string& _isAbroad);
@@ -507,6 +507,27 @@ namespace TencentCloud
                      * 
                      */
                     bool GroupByTypeHasBeenSet() const;
+
+                    /**
+                     * 获取无需关注，是否查询zhiyan
+                     * @return IsNewData 无需关注，是否查询zhiyan
+                     * 
+                     */
+                    int64_t GetIsNewData() const;
+
+                    /**
+                     * 设置无需关注，是否查询zhiyan
+                     * @param _isNewData 无需关注，是否查询zhiyan
+                     * 
+                     */
+                    void SetIsNewData(const int64_t& _isNewData);
+
+                    /**
+                     * 判断参数 IsNewData 是否已赋值
+                     * @return IsNewData 是否已赋值
+                     * 
+                     */
+                    bool IsNewDataHasBeenSet() const;
 
                 private:
 
@@ -613,7 +634,7 @@ namespace TencentCloud
                     bool m_deviceHasBeenSet;
 
                     /**
-                     * 是否海外
+                     * 显示是否海外
                      */
                     std::string m_isAbroad;
                     bool m_isAbroadHasBeenSet;
@@ -642,6 +663,12 @@ namespace TencentCloud
                      */
                     int64_t m_groupByType;
                     bool m_groupByTypeHasBeenSet;
+
+                    /**
+                     * 无需关注，是否查询zhiyan
+                     */
+                    int64_t m_isNewData;
+                    bool m_isNewDataHasBeenSet;
 
                 };
             }

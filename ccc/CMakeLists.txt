@@ -43,7 +43,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTasksResponse.h
   include/tencentcloud/ccc/v20200210/model/PackageBuyInfo.h
   include/tencentcloud/ccc/v20200210/model/ModifyExtensionResponse.h
-  include/tencentcloud/ccc/v20200210/model/SeatUserInfo.h
+  include/tencentcloud/ccc/v20200210/model/DescribeIMCdrListResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeNumbersResponse.h
@@ -61,6 +61,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateCarrierPrivilegeNumberApplicantResponse.h
   include/tencentcloud/ccc/v20200210/model/AutoCalloutTaskCalleeInfo.h
+  include/tencentcloud/ccc/v20200210/model/SeatUserInfo.h
   include/tencentcloud/ccc/v20200210/model/CarrierPrivilegeNumberApplicant.h
   include/tencentcloud/ccc/v20200210/model/ErrStaffItem.h
   include/tencentcloud/ccc/v20200210/model/PSTNSession.h
@@ -117,6 +118,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/SdkAppIdBuyInfo.h
   include/tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListResponse.h
   include/tencentcloud/ccc/v20200210/model/IMCdrInfo.h
+  include/tencentcloud/ccc/v20200210/model/DescribeIMCdrListRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTasksRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h
@@ -160,7 +162,7 @@ set(ccc_src
   src/v20200210/model/DescribeAutoCalloutTasksResponse.cpp
   src/v20200210/model/PackageBuyInfo.cpp
   src/v20200210/model/ModifyExtensionResponse.cpp
-  src/v20200210/model/SeatUserInfo.cpp
+  src/v20200210/model/DescribeIMCdrListResponse.cpp
   src/v20200210/model/CreateStaffResponse.cpp
   src/v20200210/model/DescribeSkillGroupInfoListResponse.cpp
   src/v20200210/model/DescribeNumbersResponse.cpp
@@ -178,6 +180,7 @@ set(ccc_src
   src/v20200210/model/DescribeSkillGroupInfoListRequest.cpp
   src/v20200210/model/CreateCarrierPrivilegeNumberApplicantResponse.cpp
   src/v20200210/model/AutoCalloutTaskCalleeInfo.cpp
+  src/v20200210/model/SeatUserInfo.cpp
   src/v20200210/model/CarrierPrivilegeNumberApplicant.cpp
   src/v20200210/model/ErrStaffItem.cpp
   src/v20200210/model/PSTNSession.cpp
@@ -234,6 +237,7 @@ set(ccc_src
   src/v20200210/model/SdkAppIdBuyInfo.cpp
   src/v20200210/model/DescribePSTNActiveSessionListResponse.cpp
   src/v20200210/model/IMCdrInfo.cpp
+  src/v20200210/model/DescribeIMCdrListRequest.cpp
   src/v20200210/model/DescribeAutoCalloutTasksRequest.cpp
   src/v20200210/model/DescribeChatMessagesRequest.cpp
   src/v20200210/model/DescribeTelSessionResponse.cpp

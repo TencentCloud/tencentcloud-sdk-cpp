@@ -30,6 +30,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayRouteRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupResponse.h
+  include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCertificateResponse.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayRouteRateLimitResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleResponse.h
@@ -50,6 +51,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServiceRequest.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayBalancedService.h
   include/tencentcloud/tse/v20201207/model/ExternalRedis.h
+  include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCertificateRequest.h
   include/tencentcloud/tse/v20201207/model/EnvAddressInfo.h
   include/tencentcloud/tse/v20201207/model/SREInstance.h
   include/tencentcloud/tse/v20201207/model/InstanceTagInfo.h
@@ -197,6 +199,7 @@ set(tse_src
   src/v20201207/model/DescribeCloudNativeAPIGatewayNodesRequest.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayRouteRequest.cpp
   src/v20201207/model/DeleteNativeGatewayServerGroupResponse.cpp
+  src/v20201207/model/ModifyCloudNativeAPIGatewayCertificateResponse.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayRouteRateLimitResponse.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressResponse.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleResponse.cpp
@@ -217,6 +220,7 @@ set(tse_src
   src/v20201207/model/CreateCloudNativeAPIGatewayServiceRequest.cpp
   src/v20201207/model/CloudNativeAPIGatewayBalancedService.cpp
   src/v20201207/model/ExternalRedis.cpp
+  src/v20201207/model/ModifyCloudNativeAPIGatewayCertificateRequest.cpp
   src/v20201207/model/EnvAddressInfo.cpp
   src/v20201207/model/SREInstance.cpp
   src/v20201207/model/InstanceTagInfo.cpp

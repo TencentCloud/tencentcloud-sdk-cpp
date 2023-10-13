@@ -67,6 +67,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionsRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionsResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeIMCdrListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeIMCdrListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeNumbersRequest.h>
@@ -183,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExtensionsResponse> DescribeExtensionsOutcome;
                 typedef std::future<DescribeExtensionsOutcome> DescribeExtensionsOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeExtensionsRequest&, DescribeExtensionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtensionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIMCdrListResponse> DescribeIMCdrListOutcome;
+                typedef std::future<DescribeIMCdrListOutcome> DescribeIMCdrListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeIMCdrListRequest&, DescribeIMCdrListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIMCdrListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIMCdrsResponse> DescribeIMCdrsOutcome;
                 typedef std::future<DescribeIMCdrsOutcome> DescribeIMCdrsOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeIMCdrsRequest&, DescribeIMCdrsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIMCdrsAsyncHandler;
@@ -439,6 +444,15 @@ namespace TencentCloud
                 DescribeExtensionsOutcome DescribeExtensions(const Model::DescribeExtensionsRequest &request);
                 void DescribeExtensionsAsync(const Model::DescribeExtensionsRequest& request, const DescribeExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExtensionsOutcomeCallable DescribeExtensionsCallable(const Model::DescribeExtensionsRequest& request);
+
+                /**
+                 *获取包括全媒体和文本会话两种类型的服务记录。
+                 * @param req DescribeIMCdrListRequest
+                 * @return DescribeIMCdrListOutcome
+                 */
+                DescribeIMCdrListOutcome DescribeIMCdrList(const Model::DescribeIMCdrListRequest &request);
+                void DescribeIMCdrListAsync(const Model::DescribeIMCdrListRequest& request, const DescribeIMCdrListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIMCdrListOutcomeCallable DescribeIMCdrListCallable(const Model::DescribeIMCdrListRequest& request);
 
                 /**
                  *获取包括全媒体和文本会话两种类型的服务记录。

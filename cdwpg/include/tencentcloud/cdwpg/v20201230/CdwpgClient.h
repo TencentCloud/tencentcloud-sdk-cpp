@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cdwpg/v20201230/model/CreateInstanceByApiRequest.h>
 #include <tencentcloud/cdwpg/v20201230/model/CreateInstanceByApiResponse.h>
+#include <tencentcloud/cdwpg/v20201230/model/DescribeInstanceRequest.h>
+#include <tencentcloud/cdwpg/v20201230/model/DescribeInstanceResponse.h>
 #include <tencentcloud/cdwpg/v20201230/model/DescribeInstanceStateRequest.h>
 #include <tencentcloud/cdwpg/v20201230/model/DescribeInstanceStateResponse.h>
 #include <tencentcloud/cdwpg/v20201230/model/DescribeSimpleInstancesRequest.h>
@@ -50,6 +52,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceByApiResponse> CreateInstanceByApiOutcome;
                 typedef std::future<CreateInstanceByApiOutcome> CreateInstanceByApiOutcomeCallable;
                 typedef std::function<void(const CdwpgClient*, const Model::CreateInstanceByApiRequest&, CreateInstanceByApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceByApiAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
+                typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
+                typedef std::function<void(const CdwpgClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceStateResponse> DescribeInstanceStateOutcome;
                 typedef std::future<DescribeInstanceStateOutcome> DescribeInstanceStateOutcomeCallable;
                 typedef std::function<void(const CdwpgClient*, const Model::DescribeInstanceStateRequest&, DescribeInstanceStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceStateAsyncHandler;
@@ -73,6 +78,15 @@ namespace TencentCloud
                 CreateInstanceByApiOutcome CreateInstanceByApi(const Model::CreateInstanceByApiRequest &request);
                 void CreateInstanceByApiAsync(const Model::CreateInstanceByApiRequest& request, const CreateInstanceByApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstanceByApiOutcomeCallable CreateInstanceByApiCallable(const Model::CreateInstanceByApiRequest& request);
+
+                /**
+                 *根据实例ID查询某个实例的具体信息
+                 * @param req DescribeInstanceRequest
+                 * @return DescribeInstanceOutcome
+                 */
+                DescribeInstanceOutcome DescribeInstance(const Model::DescribeInstanceRequest &request);
+                void DescribeInstanceAsync(const Model::DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceOutcomeCallable DescribeInstanceCallable(const Model::DescribeInstanceRequest& request);
 
                 /**
                  *集群详情页中显示集群状态、流程进度等

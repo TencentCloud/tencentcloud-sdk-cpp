@@ -44,7 +44,8 @@ DescribeDataPvUrlStatisticsRequest::DescribeDataPvUrlStatisticsRequest() :
     m_osHasBeenSet(false),
     m_browserHasBeenSet(false),
     m_envHasBeenSet(false),
-    m_groupByTypeHasBeenSet(false)
+    m_groupByTypeHasBeenSet(false),
+    m_isNewDataHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,14 @@ string DescribeDataPvUrlStatisticsRequest::ToJsonString() const
         string key = "GroupByType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_groupByType, allocator);
+    }
+
+    if (m_isNewDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNewData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isNewData, allocator);
     }
 
 
@@ -589,6 +598,22 @@ void DescribeDataPvUrlStatisticsRequest::SetGroupByType(const int64_t& _groupByT
 bool DescribeDataPvUrlStatisticsRequest::GroupByTypeHasBeenSet() const
 {
     return m_groupByTypeHasBeenSet;
+}
+
+int64_t DescribeDataPvUrlStatisticsRequest::GetIsNewData() const
+{
+    return m_isNewData;
+}
+
+void DescribeDataPvUrlStatisticsRequest::SetIsNewData(const int64_t& _isNewData)
+{
+    m_isNewData = _isNewData;
+    m_isNewDataHasBeenSet = true;
+}
+
+bool DescribeDataPvUrlStatisticsRequest::IsNewDataHasBeenSet() const
+{
+    return m_isNewDataHasBeenSet;
 }
 
 

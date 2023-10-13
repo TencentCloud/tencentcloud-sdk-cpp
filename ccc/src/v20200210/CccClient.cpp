@@ -986,6 +986,49 @@ CccClient::DescribeExtensionsOutcomeCallable CccClient::DescribeExtensionsCallab
     return task->get_future();
 }
 
+CccClient::DescribeIMCdrListOutcome CccClient::DescribeIMCdrList(const DescribeIMCdrListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIMCdrList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIMCdrListResponse rsp = DescribeIMCdrListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIMCdrListOutcome(rsp);
+        else
+            return DescribeIMCdrListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIMCdrListOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeIMCdrListAsync(const DescribeIMCdrListRequest& request, const DescribeIMCdrListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIMCdrList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeIMCdrListOutcomeCallable CccClient::DescribeIMCdrListCallable(const DescribeIMCdrListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIMCdrListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIMCdrList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeIMCdrsOutcome CccClient::DescribeIMCdrs(const DescribeIMCdrsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIMCdrs");

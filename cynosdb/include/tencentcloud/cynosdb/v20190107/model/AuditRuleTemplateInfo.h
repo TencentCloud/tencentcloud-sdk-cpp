@@ -232,18 +232,18 @@ namespace TencentCloud
                     bool AlarmPolicyHasBeenSet() const;
 
                     /**
-                     * 获取模版状态。0-无任务 ，1-修改中。
+                     * 获取模板状态。0-无任务 ，1-修改中。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 模版状态。0-无任务 ，1-修改中。
+                     * @return Status 模板状态。0-无任务 ，1-修改中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置模版状态。0-无任务 ，1-修改中。
+                     * 设置模板状态。0-无任务 ，1-修改中。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 模版状态。0-无任务 ，1-修改中。
+                     * @param _status 模板状态。0-无任务 ，1-修改中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_alarmPolicyHasBeenSet;
 
                     /**
-                     * 模版状态。0-无任务 ，1-修改中。
+                     * 模板状态。0-无任务 ，1-修改中。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;

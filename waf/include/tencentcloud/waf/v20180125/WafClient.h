@@ -27,6 +27,8 @@
 #include <tencentcloud/waf/v20180125/model/AddAntiFakeUrlResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddAntiInfoLeakRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddAntiInfoLeakRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/AddAttackWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/AddAttackWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomWhiteRuleRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/waf/v20180125/model/DeleteAntiInfoLeakRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteAttackWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteAttackWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteCCRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteCCRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteCustomRuleRequest.h>
@@ -83,6 +87,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackOverviewRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackOverviewResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAttackWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAttackWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBatchIpAccessControlRequest.h>
@@ -189,6 +195,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyApiAnalyzeStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleRequest.h>
@@ -281,6 +289,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddAntiInfoLeakRulesResponse> AddAntiInfoLeakRulesOutcome;
                 typedef std::future<AddAntiInfoLeakRulesOutcome> AddAntiInfoLeakRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddAntiInfoLeakRulesRequest&, AddAntiInfoLeakRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAntiInfoLeakRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddAttackWhiteRuleResponse> AddAttackWhiteRuleOutcome;
+                typedef std::future<AddAttackWhiteRuleOutcome> AddAttackWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::AddAttackWhiteRuleRequest&, AddAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAttackWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddCustomRuleResponse> AddCustomRuleOutcome;
                 typedef std::future<AddCustomRuleOutcome> AddCustomRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddCustomRuleRequest&, AddCustomRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomRuleAsyncHandler;
@@ -311,6 +322,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAttackDownloadRecordResponse> DeleteAttackDownloadRecordOutcome;
                 typedef std::future<DeleteAttackDownloadRecordOutcome> DeleteAttackDownloadRecordOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAttackDownloadRecordRequest&, DeleteAttackDownloadRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAttackDownloadRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAttackWhiteRuleResponse> DeleteAttackWhiteRuleOutcome;
+                typedef std::future<DeleteAttackWhiteRuleOutcome> DeleteAttackWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteAttackWhiteRuleRequest&, DeleteAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAttackWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCCRuleResponse> DeleteCCRuleOutcome;
                 typedef std::future<DeleteCCRuleOutcome> DeleteCCRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteCCRuleRequest&, DeleteCCRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCRuleAsyncHandler;
@@ -365,6 +379,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAttackOverviewResponse> DescribeAttackOverviewOutcome;
                 typedef std::future<DescribeAttackOverviewOutcome> DescribeAttackOverviewOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAttackOverviewRequest&, DescribeAttackOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAttackWhiteRuleResponse> DescribeAttackWhiteRuleOutcome;
+                typedef std::future<DescribeAttackWhiteRuleOutcome> DescribeAttackWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeAttackWhiteRuleRequest&, DescribeAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoDenyIPResponse> DescribeAutoDenyIPOutcome;
                 typedef std::future<DescribeAutoDenyIPOutcome> DescribeAutoDenyIPOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAutoDenyIPRequest&, DescribeAutoDenyIPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoDenyIPAsyncHandler;
@@ -524,6 +541,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAreaBanStatusResponse> ModifyAreaBanStatusOutcome;
                 typedef std::future<ModifyAreaBanStatusOutcome> ModifyAreaBanStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAreaBanStatusRequest&, ModifyAreaBanStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAreaBanStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAttackWhiteRuleResponse> ModifyAttackWhiteRuleOutcome;
+                typedef std::future<ModifyAttackWhiteRuleOutcome> ModifyAttackWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyAttackWhiteRuleRequest&, ModifyAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAttackWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBotStatusResponse> ModifyBotStatusOutcome;
                 typedef std::future<ModifyBotStatusOutcome> ModifyBotStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyBotStatusRequest&, ModifyBotStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBotStatusAsyncHandler;
@@ -654,6 +674,15 @@ namespace TencentCloud
                 AddAntiInfoLeakRulesOutcomeCallable AddAntiInfoLeakRulesCallable(const Model::AddAntiInfoLeakRulesRequest& request);
 
                 /**
+                 *供用户控制台调用，增加Tiga规则引擎白名单。
+                 * @param req AddAttackWhiteRuleRequest
+                 * @return AddAttackWhiteRuleOutcome
+                 */
+                AddAttackWhiteRuleOutcome AddAttackWhiteRule(const Model::AddAttackWhiteRuleRequest &request);
+                void AddAttackWhiteRuleAsync(const Model::AddAttackWhiteRuleRequest& request, const AddAttackWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddAttackWhiteRuleOutcomeCallable AddAttackWhiteRuleCallable(const Model::AddAttackWhiteRuleRequest& request);
+
+                /**
                  *增加访问控制（自定义策略）
                  * @param req AddCustomRuleRequest
                  * @return AddCustomRuleOutcome
@@ -742,6 +771,15 @@ namespace TencentCloud
                 DeleteAttackDownloadRecordOutcome DeleteAttackDownloadRecord(const Model::DeleteAttackDownloadRecordRequest &request);
                 void DeleteAttackDownloadRecordAsync(const Model::DeleteAttackDownloadRecordRequest& request, const DeleteAttackDownloadRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAttackDownloadRecordOutcomeCallable DeleteAttackDownloadRecordCallable(const Model::DeleteAttackDownloadRecordRequest& request);
+
+                /**
+                 *供用户控制台调用，删除Tiga规则引擎白名单。
+                 * @param req DeleteAttackWhiteRuleRequest
+                 * @return DeleteAttackWhiteRuleOutcome
+                 */
+                DeleteAttackWhiteRuleOutcome DeleteAttackWhiteRule(const Model::DeleteAttackWhiteRuleRequest &request);
+                void DeleteAttackWhiteRuleAsync(const Model::DeleteAttackWhiteRuleRequest& request, const DeleteAttackWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAttackWhiteRuleOutcomeCallable DeleteAttackWhiteRuleCallable(const Model::DeleteAttackWhiteRuleRequest& request);
 
                 /**
                  *Waf  CC V2 Delete接口
@@ -907,6 +945,15 @@ namespace TencentCloud
                 DescribeAttackOverviewOutcome DescribeAttackOverview(const Model::DescribeAttackOverviewRequest &request);
                 void DescribeAttackOverviewAsync(const Model::DescribeAttackOverviewRequest& request, const DescribeAttackOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAttackOverviewOutcomeCallable DescribeAttackOverviewCallable(const Model::DescribeAttackOverviewRequest& request);
+
+                /**
+                 *获取用户规则白名单列表
+                 * @param req DescribeAttackWhiteRuleRequest
+                 * @return DescribeAttackWhiteRuleOutcome
+                 */
+                DescribeAttackWhiteRuleOutcome DescribeAttackWhiteRule(const Model::DescribeAttackWhiteRuleRequest &request);
+                void DescribeAttackWhiteRuleAsync(const Model::DescribeAttackWhiteRuleRequest& request, const DescribeAttackWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAttackWhiteRuleOutcomeCallable DescribeAttackWhiteRuleCallable(const Model::DescribeAttackWhiteRuleRequest& request);
 
                 /**
                  *接口已废弃
@@ -1389,6 +1436,15 @@ namespace TencentCloud
                 ModifyAreaBanStatusOutcome ModifyAreaBanStatus(const Model::ModifyAreaBanStatusRequest &request);
                 void ModifyAreaBanStatusAsync(const Model::ModifyAreaBanStatusRequest& request, const ModifyAreaBanStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAreaBanStatusOutcomeCallable ModifyAreaBanStatusCallable(const Model::ModifyAreaBanStatusRequest& request);
+
+                /**
+                 *供用户控制台调用，修改Tiga规则引擎白名单。
+                 * @param req ModifyAttackWhiteRuleRequest
+                 * @return ModifyAttackWhiteRuleOutcome
+                 */
+                ModifyAttackWhiteRuleOutcome ModifyAttackWhiteRule(const Model::ModifyAttackWhiteRuleRequest &request);
+                void ModifyAttackWhiteRuleAsync(const Model::ModifyAttackWhiteRuleRequest& request, const ModifyAttackWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAttackWhiteRuleOutcomeCallable ModifyAttackWhiteRuleCallable(const Model::ModifyAttackWhiteRuleRequest& request);
 
                 /**
                  *Bot_V2 bot总开关更新

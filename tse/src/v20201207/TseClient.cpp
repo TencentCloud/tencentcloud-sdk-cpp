@@ -1760,6 +1760,49 @@ TseClient::ModifyCloudNativeAPIGatewayCanaryRuleOutcomeCallable TseClient::Modif
     return task->get_future();
 }
 
+TseClient::ModifyCloudNativeAPIGatewayCertificateOutcome TseClient::ModifyCloudNativeAPIGatewayCertificate(const ModifyCloudNativeAPIGatewayCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayCertificateResponse rsp = ModifyCloudNativeAPIGatewayCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayCertificateOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayCertificateOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewayCertificateAsync(const ModifyCloudNativeAPIGatewayCertificateRequest& request, const ModifyCloudNativeAPIGatewayCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudNativeAPIGatewayCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyCloudNativeAPIGatewayCertificateOutcomeCallable TseClient::ModifyCloudNativeAPIGatewayCertificateCallable(const ModifyCloudNativeAPIGatewayCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudNativeAPIGatewayCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudNativeAPIGatewayCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::ModifyCloudNativeAPIGatewayRouteOutcome TseClient::ModifyCloudNativeAPIGatewayRoute(const ModifyCloudNativeAPIGatewayRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayRoute");

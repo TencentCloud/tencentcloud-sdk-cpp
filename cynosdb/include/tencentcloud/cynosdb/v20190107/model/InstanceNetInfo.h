@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool WanDomainHasBeenSet() const;
 
                     /**
-                     * 获取外网Ip
+                     * 获取外网IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WanIP 外网Ip
+                     * @return WanIP 外网IP
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWanIP() const;
 
                     /**
-                     * 设置外网Ip
+                     * 设置外网IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _wanIP 外网Ip
+                     * @param _wanIP 外网IP
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -380,7 +380,7 @@ namespace TencentCloud
                     bool m_wanDomainHasBeenSet;
 
                     /**
-                     * 外网Ip
+                     * 外网IP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wanIP;

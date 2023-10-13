@@ -771,6 +771,49 @@ CsipClient::DescribeRiskCenterAssetViewWeakPasswordRiskListOutcomeCallable CsipC
     return task->get_future();
 }
 
+CsipClient::DescribeRiskCenterPortViewPortRiskListOutcome CsipClient::DescribeRiskCenterPortViewPortRiskList(const DescribeRiskCenterPortViewPortRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskCenterPortViewPortRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskCenterPortViewPortRiskListResponse rsp = DescribeRiskCenterPortViewPortRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskCenterPortViewPortRiskListOutcome(rsp);
+        else
+            return DescribeRiskCenterPortViewPortRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskCenterPortViewPortRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskCenterPortViewPortRiskListAsync(const DescribeRiskCenterPortViewPortRiskListRequest& request, const DescribeRiskCenterPortViewPortRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskCenterPortViewPortRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskCenterPortViewPortRiskListOutcomeCallable CsipClient::DescribeRiskCenterPortViewPortRiskListCallable(const DescribeRiskCenterPortViewPortRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskCenterPortViewPortRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskCenterPortViewPortRiskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeRiskCenterServerRiskListOutcome CsipClient::DescribeRiskCenterServerRiskList(const DescribeRiskCenterServerRiskListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRiskCenterServerRiskList");
@@ -807,6 +850,49 @@ CsipClient::DescribeRiskCenterServerRiskListOutcomeCallable CsipClient::Describe
         [this, request]()
         {
             return this->DescribeRiskCenterServerRiskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeRiskCenterVULViewVULRiskListOutcome CsipClient::DescribeRiskCenterVULViewVULRiskList(const DescribeRiskCenterVULViewVULRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskCenterVULViewVULRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskCenterVULViewVULRiskListResponse rsp = DescribeRiskCenterVULViewVULRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskCenterVULViewVULRiskListOutcome(rsp);
+        else
+            return DescribeRiskCenterVULViewVULRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskCenterVULViewVULRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskCenterVULViewVULRiskListAsync(const DescribeRiskCenterVULViewVULRiskListRequest& request, const DescribeRiskCenterVULViewVULRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskCenterVULViewVULRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskCenterVULViewVULRiskListOutcomeCallable CsipClient::DescribeRiskCenterVULViewVULRiskListCallable(const DescribeRiskCenterVULViewVULRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskCenterVULViewVULRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskCenterVULViewVULRiskList(request);
         }
     );
 
@@ -1151,6 +1237,49 @@ CsipClient::DescribeVpcAssetsOutcomeCallable CsipClient::DescribeVpcAssetsCallab
         [this, request]()
         {
             return this->DescribeVpcAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::ModifyRiskCenterRiskStatusOutcome CsipClient::ModifyRiskCenterRiskStatus(const ModifyRiskCenterRiskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRiskCenterRiskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRiskCenterRiskStatusResponse rsp = ModifyRiskCenterRiskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRiskCenterRiskStatusOutcome(rsp);
+        else
+            return ModifyRiskCenterRiskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRiskCenterRiskStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyRiskCenterRiskStatusAsync(const ModifyRiskCenterRiskStatusRequest& request, const ModifyRiskCenterRiskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRiskCenterRiskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::ModifyRiskCenterRiskStatusOutcomeCallable CsipClient::ModifyRiskCenterRiskStatusCallable(const ModifyRiskCenterRiskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRiskCenterRiskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRiskCenterRiskStatus(request);
         }
     );
 
