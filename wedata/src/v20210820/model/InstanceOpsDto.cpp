@@ -72,7 +72,9 @@ InstanceOpsDto::InstanceOpsDto() :
     m_projectIdentHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_tenantIdHasBeenSet(false),
-    m_instanceKeyHasBeenSet(false)
+    m_instanceKeyHasBeenSet(false),
+    m_executorGroupIdHasBeenSet(false),
+    m_executorGroupNameHasBeenSet(false)
 {
 }
 
@@ -608,6 +610,26 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_instanceKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecutorGroupId") && !value["ExecutorGroupId"].IsNull())
+    {
+        if (!value["ExecutorGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.ExecutorGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executorGroupId = string(value["ExecutorGroupId"].GetString());
+        m_executorGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecutorGroupName") && !value["ExecutorGroupName"].IsNull())
+    {
+        if (!value["ExecutorGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.ExecutorGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executorGroupName = string(value["ExecutorGroupName"].GetString());
+        m_executorGroupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1030,6 +1052,22 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "InstanceKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executorGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutorGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executorGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executorGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutorGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executorGroupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1865,5 +1903,37 @@ void InstanceOpsDto::SetInstanceKey(const string& _instanceKey)
 bool InstanceOpsDto::InstanceKeyHasBeenSet() const
 {
     return m_instanceKeyHasBeenSet;
+}
+
+string InstanceOpsDto::GetExecutorGroupId() const
+{
+    return m_executorGroupId;
+}
+
+void InstanceOpsDto::SetExecutorGroupId(const string& _executorGroupId)
+{
+    m_executorGroupId = _executorGroupId;
+    m_executorGroupIdHasBeenSet = true;
+}
+
+bool InstanceOpsDto::ExecutorGroupIdHasBeenSet() const
+{
+    return m_executorGroupIdHasBeenSet;
+}
+
+string InstanceOpsDto::GetExecutorGroupName() const
+{
+    return m_executorGroupName;
+}
+
+void InstanceOpsDto::SetExecutorGroupName(const string& _executorGroupName)
+{
+    m_executorGroupName = _executorGroupName;
+    m_executorGroupNameHasBeenSet = true;
+}
+
+bool InstanceOpsDto::ExecutorGroupNameHasBeenSet() const
+{
+    return m_executorGroupNameHasBeenSet;
 }
 

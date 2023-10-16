@@ -192,6 +192,27 @@ namespace TencentCloud
                     bool SelfDefiningAssetsHasBeenSet() const;
 
                     /**
+                     * 获取请求发起源，默认为vss表示漏洞扫描服务，云安全中心的用户请填充csip
+                     * @return ScanFrom 请求发起源，默认为vss表示漏洞扫描服务，云安全中心的用户请填充csip
+                     * 
+                     */
+                    std::string GetScanFrom() const;
+
+                    /**
+                     * 设置请求发起源，默认为vss表示漏洞扫描服务，云安全中心的用户请填充csip
+                     * @param _scanFrom 请求发起源，默认为vss表示漏洞扫描服务，云安全中心的用户请填充csip
+                     * 
+                     */
+                    void SetScanFrom(const std::string& _scanFrom);
+
+                    /**
+                     * 判断参数 ScanFrom 是否已赋值
+                     * @return ScanFrom 是否已赋值
+                     * 
+                     */
+                    bool ScanFromHasBeenSet() const;
+
+                    /**
                      * 获取高级配置
                      * @return TaskAdvanceCFG 高级配置
                      * 
@@ -276,6 +297,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_selfDefiningAssets;
                     bool m_selfDefiningAssetsHasBeenSet;
+
+                    /**
+                     * 请求发起源，默认为vss表示漏洞扫描服务，云安全中心的用户请填充csip
+                     */
+                    std::string m_scanFrom;
+                    bool m_scanFromHasBeenSet;
 
                     /**
                      * 高级配置

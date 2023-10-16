@@ -217,7 +217,7 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      CallinBlockedContact  呼入黑名单 
+电话呼入	            100	      blackList 呼入黑名单 
 
 电话呼出               2	              unconnected	未接通
                          
@@ -259,7 +259,7 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      CallinBlockedContact  呼入黑名单 
+电话呼入	            100	      blackList 呼入黑名单 
 
 电话呼出               2	              unconnected	未接通
                          
@@ -306,7 +306,7 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      CallinBlockedContact  呼入黑名单 
+电话呼入	            100	      blackList 呼入黑名单 
 
 电话呼出               2	              unconnected	未接通
                          
@@ -348,7 +348,7 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      CallinBlockedContact  呼入黑名单 
+电话呼入	            100	      blackList 呼入黑名单 
 
 电话呼出               2	              unconnected	未接通
                          
@@ -644,7 +644,7 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      CallinBlockedContact  呼入黑名单 
+电话呼入	            100	      blackList 呼入黑名单 
 
 电话呼出               2	              unconnected	未接通
                          
@@ -688,7 +688,7 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      CallinBlockedContact  呼入黑名单 
+电话呼入	            100	      blackList 呼入黑名单 
 
 电话呼出               2	              unconnected	未接通
                          
@@ -737,7 +737,7 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      CallinBlockedContact  呼入黑名单 
+电话呼入	            100	      blackList 呼入黑名单 
 
 电话呼出               2	              unconnected	未接通
                          
@@ -781,7 +781,7 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      CallinBlockedContact  呼入黑名单 
+电话呼入	            100	      blackList 呼入黑名单 
 
 电话呼出               2	              unconnected	未接通
                          
@@ -1281,7 +1281,7 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      CallinBlockedContact  呼入黑名单 
+电话呼入	            100	      blackList 呼入黑名单 
 
 电话呼出               2	              unconnected	未接通
                          
@@ -1396,7 +1396,7 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      CallinBlockedContact  呼入黑名单 
+电话呼入	            100	      blackList 呼入黑名单 
 
 电话呼出               2	              unconnected	未接通
                          

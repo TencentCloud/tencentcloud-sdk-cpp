@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TriggerNameHasBeenSet() const;
 
                     /**
-                     * 获取触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。
-                     * @return Type 触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。
+                     * 获取触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建函数URL请在此填写 http 。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。
+                     * @return Type 触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建函数URL请在此填写 http 。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。
-                     * @param _type 触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。
+                     * 设置触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建函数URL请在此填写 http 。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。
+                     * @param _type 触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建函数URL请在此填写 http 。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -246,7 +246,7 @@ namespace TencentCloud
                     bool m_triggerNameHasBeenSet;
 
                     /**
-                     * 触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。
+                     * 触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建函数URL请在此填写 http 。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

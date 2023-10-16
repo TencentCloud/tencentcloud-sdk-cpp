@@ -2534,6 +2534,49 @@ IotexplorerClient::GetDeviceLocationHistoryOutcomeCallable IotexplorerClient::Ge
     return task->get_future();
 }
 
+IotexplorerClient::GetDeviceSumStatisticsOutcome IotexplorerClient::GetDeviceSumStatistics(const GetDeviceSumStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDeviceSumStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDeviceSumStatisticsResponse rsp = GetDeviceSumStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDeviceSumStatisticsOutcome(rsp);
+        else
+            return GetDeviceSumStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDeviceSumStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetDeviceSumStatisticsAsync(const GetDeviceSumStatisticsRequest& request, const GetDeviceSumStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDeviceSumStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetDeviceSumStatisticsOutcomeCallable IotexplorerClient::GetDeviceSumStatisticsCallable(const GetDeviceSumStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDeviceSumStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDeviceSumStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::GetFamilyDeviceUserListOutcome IotexplorerClient::GetFamilyDeviceUserList(const GetFamilyDeviceUserListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetFamilyDeviceUserList");

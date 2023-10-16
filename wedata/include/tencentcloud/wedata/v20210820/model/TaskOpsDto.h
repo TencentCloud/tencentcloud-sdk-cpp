@@ -2048,6 +2048,56 @@ namespace TencentCloud
                      */
                     bool SubmitHasBeenSet() const;
 
+                    /**
+                     * 获取资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutorGroupId 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExecutorGroupId() const;
+
+                    /**
+                     * 设置资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executorGroupId 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutorGroupId(const std::string& _executorGroupId);
+
+                    /**
+                     * 判断参数 ExecutorGroupId 是否已赋值
+                     * @return ExecutorGroupId 是否已赋值
+                     * 
+                     */
+                    bool ExecutorGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutorGroupName 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExecutorGroupName() const;
+
+                    /**
+                     * 设置资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executorGroupName 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutorGroupName(const std::string& _executorGroupName);
+
+                    /**
+                     * 判断参数 ExecutorGroupName 是否已赋值
+                     * @return ExecutorGroupName 是否已赋值
+                     * 
+                     */
+                    bool ExecutorGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2609,6 +2659,20 @@ namespace TencentCloud
                      */
                     bool m_submit;
                     bool m_submitHasBeenSet;
+
+                    /**
+                     * 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executorGroupId;
+                    bool m_executorGroupIdHasBeenSet;
+
+                    /**
+                     * 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executorGroupName;
+                    bool m_executorGroupNameHasBeenSet;
 
                 };
             }

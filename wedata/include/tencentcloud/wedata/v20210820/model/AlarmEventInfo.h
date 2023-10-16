@@ -460,6 +460,81 @@ namespace TencentCloud
                      */
                     bool RegularIdHasBeenSet() const;
 
+                    /**
+                     * 获取告警接收人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmRecipientName 告警接收人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmRecipientName() const;
+
+                    /**
+                     * 设置告警接收人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmRecipientName 告警接收人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmRecipientName(const std::string& _alarmRecipientName);
+
+                    /**
+                     * 判断参数 AlarmRecipientName 是否已赋值
+                     * @return AlarmRecipientName 是否已赋值
+                     * 
+                     */
+                    bool AlarmRecipientNameHasBeenSet() const;
+
+                    /**
+                     * 获取告警任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskType 告警任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置告警任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskType 告警任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取发送结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SendResult 发送结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSendResult() const;
+
+                    /**
+                     * 设置发送结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sendResult 发送结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSendResult(const std::string& _sendResult);
+
+                    /**
+                     * 判断参数 SendResult 是否已赋值
+                     * @return SendResult 是否已赋值
+                     * 
+                     */
+                    bool SendResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -578,6 +653,27 @@ namespace TencentCloud
                      */
                     std::string m_regularId;
                     bool m_regularIdHasBeenSet;
+
+                    /**
+                     * 告警接收人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmRecipientName;
+                    bool m_alarmRecipientNameHasBeenSet;
+
+                    /**
+                     * 告警任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 发送结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sendResult;
+                    bool m_sendResultHasBeenSet;
 
                 };
             }

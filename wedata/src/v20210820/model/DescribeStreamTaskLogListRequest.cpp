@@ -31,7 +31,8 @@ DescribeStreamTaskLogListRequest::DescribeStreamTaskLogListRequest() :
     m_containerHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_orderTypeHasBeenSet(false),
-    m_runningOrderIdHasBeenSet(false)
+    m_runningOrderIdHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string DescribeStreamTaskLogListRequest::ToJsonString() const
         string key = "RunningOrderId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_runningOrderId, allocator);
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void DescribeStreamTaskLogListRequest::SetRunningOrderId(const uint64_t& _runnin
 bool DescribeStreamTaskLogListRequest::RunningOrderIdHasBeenSet() const
 {
     return m_runningOrderIdHasBeenSet;
+}
+
+string DescribeStreamTaskLogListRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeStreamTaskLogListRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeStreamTaskLogListRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 

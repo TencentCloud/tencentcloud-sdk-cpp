@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查看的实时任务的任务Id
-                     * @return TaskId 要查看的实时任务的任务Id
+                     * 获取要查看的实时任务的任务ID，可在任务列表页面中获得
+                     * @return TaskId 要查看的实时任务的任务ID，可在任务列表页面中获得
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置要查看的实时任务的任务Id
-                     * @param _taskId 要查看的实时任务的任务Id
+                     * 设置要查看的实时任务的任务ID，可在任务列表页面中获得
+                     * @param _taskId 要查看的实时任务的任务ID，可在任务列表页面中获得
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProjectId 无
+                     * 获取要查看的项目ID
+                     * @return ProjectId 要查看的项目ID
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置无
-                     * @param _projectId 无
+                     * 设置要查看的项目ID
+                     * @param _projectId 要查看的项目ID
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查看的实时任务的任务Id
+                     * 要查看的实时任务的任务ID，可在任务列表页面中获得
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 无
+                     * 要查看的项目ID
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

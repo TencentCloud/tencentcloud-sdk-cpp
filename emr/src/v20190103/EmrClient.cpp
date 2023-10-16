@@ -212,6 +212,49 @@ EmrClient::DeleteUserManagerUserListOutcomeCallable EmrClient::DeleteUserManager
     return task->get_future();
 }
 
+EmrClient::DescribeAutoScaleRecordsOutcome EmrClient::DescribeAutoScaleRecords(const DescribeAutoScaleRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoScaleRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoScaleRecordsResponse rsp = DescribeAutoScaleRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoScaleRecordsOutcome(rsp);
+        else
+            return DescribeAutoScaleRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoScaleRecordsOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeAutoScaleRecordsAsync(const DescribeAutoScaleRecordsRequest& request, const DescribeAutoScaleRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoScaleRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeAutoScaleRecordsOutcomeCallable EmrClient::DescribeAutoScaleRecordsCallable(const DescribeAutoScaleRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoScaleRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoScaleRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeClusterNodesOutcome EmrClient::DescribeClusterNodes(const DescribeClusterNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterNodes");

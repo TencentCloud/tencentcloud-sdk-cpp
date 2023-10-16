@@ -678,6 +678,27 @@ namespace TencentCloud
                      */
                     bool DataTimeCycleHasBeenSet() const;
 
+                    /**
+                     * 获取资源组id,多个资源组id用英文逗号分隔
+                     * @return ExecutorGroupIdList 资源组id,多个资源组id用英文逗号分隔
+                     * 
+                     */
+                    std::vector<std::string> GetExecutorGroupIdList() const;
+
+                    /**
+                     * 设置资源组id,多个资源组id用英文逗号分隔
+                     * @param _executorGroupIdList 资源组id,多个资源组id用英文逗号分隔
+                     * 
+                     */
+                    void SetExecutorGroupIdList(const std::vector<std::string>& _executorGroupIdList);
+
+                    /**
+                     * 判断参数 ExecutorGroupIdList 是否已赋值
+                     * @return ExecutorGroupIdList 是否已赋值
+                     * 
+                     */
+                    bool ExecutorGroupIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -859,6 +880,12 @@ namespace TencentCloud
                      */
                     std::string m_dataTimeCycle;
                     bool m_dataTimeCycleHasBeenSet;
+
+                    /**
+                     * 资源组id,多个资源组id用英文逗号分隔
+                     */
+                    std::vector<std::string> m_executorGroupIdList;
+                    bool m_executorGroupIdListHasBeenSet;
 
                 };
             }

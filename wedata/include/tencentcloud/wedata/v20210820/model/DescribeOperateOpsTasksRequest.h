@@ -462,6 +462,27 @@ namespace TencentCloud
                      */
                     bool AlarmTypeHasBeenSet() const;
 
+                    /**
+                     * 获取资源组id,多个资源组id之间以英文字符逗号分隔
+                     * @return ExecutorGroupIdList 资源组id,多个资源组id之间以英文字符逗号分隔
+                     * 
+                     */
+                    std::string GetExecutorGroupIdList() const;
+
+                    /**
+                     * 设置资源组id,多个资源组id之间以英文字符逗号分隔
+                     * @param _executorGroupIdList 资源组id,多个资源组id之间以英文字符逗号分隔
+                     * 
+                     */
+                    void SetExecutorGroupIdList(const std::string& _executorGroupIdList);
+
+                    /**
+                     * 判断参数 ExecutorGroupIdList 是否已赋值
+                     * @return ExecutorGroupIdList 是否已赋值
+                     * 
+                     */
+                    bool ExecutorGroupIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -583,6 +604,12 @@ namespace TencentCloud
                      */
                     std::string m_alarmType;
                     bool m_alarmTypeHasBeenSet;
+
+                    /**
+                     * 资源组id,多个资源组id之间以英文字符逗号分隔
+                     */
+                    std::string m_executorGroupIdList;
+                    bool m_executorGroupIdListHasBeenSet;
 
                 };
             }

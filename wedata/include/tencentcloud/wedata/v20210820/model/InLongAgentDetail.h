@@ -361,6 +361,56 @@ namespace TencentCloud
                      */
                     bool LifeDaysHasBeenSet() const;
 
+                    /**
+                     * 获取集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterId 集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterId 集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取agent地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentRegion agent地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAgentRegion() const;
+
+                    /**
+                     * 设置agent地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agentRegion agent地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgentRegion(const std::string& _agentRegion);
+
+                    /**
+                     * 判断参数 AgentRegion 是否已赋值
+                     * @return AgentRegion 是否已赋值
+                     * 
+                     */
+                    bool AgentRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -451,6 +501,20 @@ namespace TencentCloud
                      */
                     int64_t m_lifeDays;
                     bool m_lifeDaysHasBeenSet;
+
+                    /**
+                     * 集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * agent地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_agentRegion;
+                    bool m_agentRegionHasBeenSet;
 
                 };
             }

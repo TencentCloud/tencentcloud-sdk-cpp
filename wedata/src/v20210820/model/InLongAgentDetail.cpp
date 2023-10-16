@@ -34,7 +34,9 @@ InLongAgentDetail::InLongAgentDetail() :
     m_agentGroupIdHasBeenSet(false),
     m_cvmAgentStatusListHasBeenSet(false),
     m_agentTotalHasBeenSet(false),
-    m_lifeDaysHasBeenSet(false)
+    m_lifeDaysHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_agentRegionHasBeenSet(false)
 {
 }
 
@@ -193,6 +195,26 @@ CoreInternalOutcome InLongAgentDetail::Deserialize(const rapidjson::Value &value
         m_lifeDaysHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InLongAgentDetail.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AgentRegion") && !value["AgentRegion"].IsNull())
+    {
+        if (!value["AgentRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InLongAgentDetail.AgentRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentRegion = string(value["AgentRegion"].GetString());
+        m_agentRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +339,22 @@ void InLongAgentDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "LifeDays";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lifeDays, allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +582,37 @@ void InLongAgentDetail::SetLifeDays(const int64_t& _lifeDays)
 bool InLongAgentDetail::LifeDaysHasBeenSet() const
 {
     return m_lifeDaysHasBeenSet;
+}
+
+string InLongAgentDetail::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void InLongAgentDetail::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool InLongAgentDetail::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string InLongAgentDetail::GetAgentRegion() const
+{
+    return m_agentRegion;
+}
+
+void InLongAgentDetail::SetAgentRegion(const string& _agentRegion)
+{
+    m_agentRegion = _agentRegion;
+    m_agentRegionHasBeenSet = true;
+}
+
+bool InLongAgentDetail::AgentRegionHasBeenSet() const
+{
+    return m_agentRegionHasBeenSet;
 }
 

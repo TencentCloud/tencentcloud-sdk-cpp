@@ -118,14 +118,14 @@ namespace TencentCloud
                     /**
                      * 获取已废弃，不再保存语音音频文件下载地址
                      * @return AudioUrl 已废弃，不再保存语音音频文件下载地址
-                     * 
+                     * @deprecated
                      */
                     std::string GetAudioUrl() const;
 
                     /**
                      * 判断参数 AudioUrl 是否已赋值
                      * @return AudioUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AudioUrlHasBeenSet() const;
 

@@ -38,7 +38,10 @@ AlarmEventInfo::AlarmEventInfo() :
     m_isSendSuccessHasBeenSet(false),
     m_messageIdHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_regularIdHasBeenSet(false)
+    m_regularIdHasBeenSet(false),
+    m_alarmRecipientNameHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_sendResultHasBeenSet(false)
 {
 }
 
@@ -227,6 +230,36 @@ CoreInternalOutcome AlarmEventInfo::Deserialize(const rapidjson::Value &value)
         m_regularIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmRecipientName") && !value["AlarmRecipientName"].IsNull())
+    {
+        if (!value["AlarmRecipientName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.AlarmRecipientName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmRecipientName = string(value["AlarmRecipientName"].GetString());
+        m_alarmRecipientNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskType") && !value["TaskType"].IsNull())
+    {
+        if (!value["TaskType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.TaskType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskType = value["TaskType"].GetInt64();
+        m_taskTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SendResult") && !value["SendResult"].IsNull())
+    {
+        if (!value["SendResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.SendResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sendResult = string(value["SendResult"].GetString());
+        m_sendResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +409,30 @@ void AlarmEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RegularId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_regularId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmRecipientNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmRecipientName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmRecipientName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_sendResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sendResult.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +724,53 @@ void AlarmEventInfo::SetRegularId(const string& _regularId)
 bool AlarmEventInfo::RegularIdHasBeenSet() const
 {
     return m_regularIdHasBeenSet;
+}
+
+string AlarmEventInfo::GetAlarmRecipientName() const
+{
+    return m_alarmRecipientName;
+}
+
+void AlarmEventInfo::SetAlarmRecipientName(const string& _alarmRecipientName)
+{
+    m_alarmRecipientName = _alarmRecipientName;
+    m_alarmRecipientNameHasBeenSet = true;
+}
+
+bool AlarmEventInfo::AlarmRecipientNameHasBeenSet() const
+{
+    return m_alarmRecipientNameHasBeenSet;
+}
+
+int64_t AlarmEventInfo::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void AlarmEventInfo::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool AlarmEventInfo::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+string AlarmEventInfo::GetSendResult() const
+{
+    return m_sendResult;
+}
+
+void AlarmEventInfo::SetSendResult(const string& _sendResult)
+{
+    m_sendResult = _sendResult;
+    m_sendResultHasBeenSet = true;
+}
+
+bool AlarmEventInfo::SendResultHasBeenSet() const
+{
+    return m_sendResultHasBeenSet;
 }
 

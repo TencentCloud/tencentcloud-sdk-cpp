@@ -139,6 +139,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetDeviceSumStatisticsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetDeviceSumStatisticsResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetFamilyDeviceUserListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetFamilyDeviceUserListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetGatewaySubDeviceListRequest.h>
@@ -393,6 +395,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDeviceLocationHistoryResponse> GetDeviceLocationHistoryOutcome;
                 typedef std::future<GetDeviceLocationHistoryOutcome> GetDeviceLocationHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetDeviceLocationHistoryRequest&, GetDeviceLocationHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceLocationHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDeviceSumStatisticsResponse> GetDeviceSumStatisticsOutcome;
+                typedef std::future<GetDeviceSumStatisticsOutcome> GetDeviceSumStatisticsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetDeviceSumStatisticsRequest&, GetDeviceSumStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceSumStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFamilyDeviceUserListResponse> GetFamilyDeviceUserListOutcome;
                 typedef std::future<GetFamilyDeviceUserListOutcome> GetFamilyDeviceUserListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetFamilyDeviceUserListRequest&, GetFamilyDeviceUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFamilyDeviceUserListAsyncHandler;
@@ -1016,6 +1021,15 @@ namespace TencentCloud
                 GetDeviceLocationHistoryOutcome GetDeviceLocationHistory(const Model::GetDeviceLocationHistoryRequest &request);
                 void GetDeviceLocationHistoryAsync(const Model::GetDeviceLocationHistoryRequest& request, const GetDeviceLocationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetDeviceLocationHistoryOutcomeCallable GetDeviceLocationHistoryCallable(const Model::GetDeviceLocationHistoryRequest& request);
+
+                /**
+                 *拉取设备统计汇总数据 
+                 * @param req GetDeviceSumStatisticsRequest
+                 * @return GetDeviceSumStatisticsOutcome
+                 */
+                GetDeviceSumStatisticsOutcome GetDeviceSumStatistics(const Model::GetDeviceSumStatisticsRequest &request);
+                void GetDeviceSumStatisticsAsync(const Model::GetDeviceSumStatisticsRequest& request, const GetDeviceSumStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDeviceSumStatisticsOutcomeCallable GetDeviceSumStatisticsCallable(const Model::GetDeviceSumStatisticsRequest& request);
 
                 /**
                  *用于获取设备绑定的用户列表

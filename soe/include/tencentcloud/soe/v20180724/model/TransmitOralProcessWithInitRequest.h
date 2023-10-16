@@ -394,7 +394,7 @@ namespace TencentCloud
 注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
                      * @return StorageMode 音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
 注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetStorageMode() const;
 
@@ -403,14 +403,14 @@ namespace TencentCloud
 注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
                      * @param _storageMode 音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
 注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
-                     * 
+                     * @deprecated
                      */
                     void SetStorageMode(const int64_t& _storageMode);
 
                     /**
                      * 判断参数 StorageMode 是否已赋值
                      * @return StorageMode 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StorageModeHasBeenSet() const;
 
@@ -580,6 +580,27 @@ namespace TencentCloud
                      */
                     bool KeywordHasBeenSet() const;
 
+                    /**
+                     * 获取音频存储路径，支持通过子路径指定文件夹名称
+                     * @return COSBucketURL 音频存储路径，支持通过子路径指定文件夹名称
+                     * 
+                     */
+                    std::string GetCOSBucketURL() const;
+
+                    /**
+                     * 设置音频存储路径，支持通过子路径指定文件夹名称
+                     * @param _cOSBucketURL 音频存储路径，支持通过子路径指定文件夹名称
+                     * 
+                     */
+                    void SetCOSBucketURL(const std::string& _cOSBucketURL);
+
+                    /**
+                     * 判断参数 COSBucketURL 是否已赋值
+                     * @return COSBucketURL 是否已赋值
+                     * 
+                     */
+                    bool COSBucketURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -729,6 +750,12 @@ namespace TencentCloud
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
+
+                    /**
+                     * 音频存储路径，支持通过子路径指定文件夹名称
+                     */
+                    std::string m_cOSBucketURL;
+                    bool m_cOSBucketURLHasBeenSet;
 
                 };
             }

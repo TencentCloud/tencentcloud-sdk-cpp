@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型：HIVE、SPARK
-                     * @return Type 类型：HIVE、SPARK
+                     * 获取枚举值：HIVE、SPARK、DLC
+                     * @return Type 枚举值：HIVE、SPARK、DLC
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型：HIVE、SPARK
-                     * @param _type 类型：HIVE、SPARK
+                     * 设置枚举值：HIVE、SPARK、DLC
+                     * @param _type 枚举值：HIVE、SPARK、DLC
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取分类：窗口函数、聚合函数、日期函数......
-                     * @return Kind 分类：窗口函数、聚合函数、日期函数......
+                     * 获取枚举值：ANALYSIS(函数)、ENCRYPTION(加密函数)、AGGREGATE(聚合函数)、LOGIC(逻辑函数)、DATE_AND_TIME(日期与时间函数)、MATH(数学函数)、CONVERSION(转换函数)、STRING(字符串函数)、IP_AND_DOMAIN(IP和域名函数)、WINDOW(窗口函数)、OTHER(其他函数)
+                     * @return Kind 枚举值：ANALYSIS(函数)、ENCRYPTION(加密函数)、AGGREGATE(聚合函数)、LOGIC(逻辑函数)、DATE_AND_TIME(日期与时间函数)、MATH(数学函数)、CONVERSION(转换函数)、STRING(字符串函数)、IP_AND_DOMAIN(IP和域名函数)、WINDOW(窗口函数)、OTHER(其他函数)
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置分类：窗口函数、聚合函数、日期函数......
-                     * @param _kind 分类：窗口函数、聚合函数、日期函数......
+                     * 设置枚举值：ANALYSIS(函数)、ENCRYPTION(加密函数)、AGGREGATE(聚合函数)、LOGIC(逻辑函数)、DATE_AND_TIME(日期与时间函数)、MATH(数学函数)、CONVERSION(转换函数)、STRING(字符串函数)、IP_AND_DOMAIN(IP和域名函数)、WINDOW(窗口函数)、OTHER(其他函数)
+                     * @param _kind 枚举值：ANALYSIS(函数)、ENCRYPTION(加密函数)、AGGREGATE(聚合函数)、LOGIC(逻辑函数)、DATE_AND_TIME(日期与时间函数)、MATH(数学函数)、CONVERSION(转换函数)、STRING(字符串函数)、IP_AND_DOMAIN(IP和域名函数)、WINDOW(窗口函数)、OTHER(其他函数)
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -171,13 +171,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 类型：HIVE、SPARK
+                     * 枚举值：HIVE、SPARK、DLC
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 分类：窗口函数、聚合函数、日期函数......
+                     * 枚举值：ANALYSIS(函数)、ENCRYPTION(加密函数)、AGGREGATE(聚合函数)、LOGIC(逻辑函数)、DATE_AND_TIME(日期与时间函数)、MATH(数学函数)、CONVERSION(转换函数)、STRING(字符串函数)、IP_AND_DOMAIN(IP和域名函数)、WINDOW(窗口函数)、OTHER(其他函数)
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;

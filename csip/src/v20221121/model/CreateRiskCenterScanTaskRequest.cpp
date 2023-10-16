@@ -30,6 +30,7 @@ CreateRiskCenterScanTaskRequest::CreateRiskCenterScanTaskRequest() :
     m_assetsHasBeenSet(false),
     m_scanPlanContentHasBeenSet(false),
     m_selfDefiningAssetsHasBeenSet(false),
+    m_scanFromHasBeenSet(false),
     m_taskAdvanceCFGHasBeenSet(false),
     m_taskModeHasBeenSet(false)
 {
@@ -113,6 +114,14 @@ string CreateRiskCenterScanTaskRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_scanFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scanFrom.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskAdvanceCFGHasBeenSet)
@@ -250,6 +259,22 @@ void CreateRiskCenterScanTaskRequest::SetSelfDefiningAssets(const vector<string>
 bool CreateRiskCenterScanTaskRequest::SelfDefiningAssetsHasBeenSet() const
 {
     return m_selfDefiningAssetsHasBeenSet;
+}
+
+string CreateRiskCenterScanTaskRequest::GetScanFrom() const
+{
+    return m_scanFrom;
+}
+
+void CreateRiskCenterScanTaskRequest::SetScanFrom(const string& _scanFrom)
+{
+    m_scanFrom = _scanFrom;
+    m_scanFromHasBeenSet = true;
+}
+
+bool CreateRiskCenterScanTaskRequest::ScanFromHasBeenSet() const
+{
+    return m_scanFromHasBeenSet;
 }
 
 TaskAdvanceCFG CreateRiskCenterScanTaskRequest::GetTaskAdvanceCFG() const

@@ -42,7 +42,8 @@ DescribeOperateOpsTasksRequest::DescribeOperateOpsTasksRequest() :
     m_sourceServiceTypeHasBeenSet(false),
     m_targetServiceIdHasBeenSet(false),
     m_targetServiceTypeHasBeenSet(false),
-    m_alarmTypeHasBeenSet(false)
+    m_alarmTypeHasBeenSet(false),
+    m_executorGroupIdListHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,14 @@ string DescribeOperateOpsTasksRequest::ToJsonString() const
         string key = "AlarmType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_alarmType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executorGroupIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutorGroupIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_executorGroupIdList.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -539,6 +548,22 @@ void DescribeOperateOpsTasksRequest::SetAlarmType(const string& _alarmType)
 bool DescribeOperateOpsTasksRequest::AlarmTypeHasBeenSet() const
 {
     return m_alarmTypeHasBeenSet;
+}
+
+string DescribeOperateOpsTasksRequest::GetExecutorGroupIdList() const
+{
+    return m_executorGroupIdList;
+}
+
+void DescribeOperateOpsTasksRequest::SetExecutorGroupIdList(const string& _executorGroupIdList)
+{
+    m_executorGroupIdList = _executorGroupIdList;
+    m_executorGroupIdListHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::ExecutorGroupIdListHasBeenSet() const
+{
+    return m_executorGroupIdListHasBeenSet;
 }
 
 

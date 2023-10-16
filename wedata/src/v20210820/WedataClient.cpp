@@ -1502,6 +1502,49 @@ WedataClient::CreateDataSourceOutcomeCallable WedataClient::CreateDataSourceCall
     return task->get_future();
 }
 
+WedataClient::CreateDsFolderOutcome WedataClient::CreateDsFolder(const CreateDsFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDsFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDsFolderResponse rsp = CreateDsFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDsFolderOutcome(rsp);
+        else
+            return CreateDsFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDsFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateDsFolderAsync(const CreateDsFolderRequest& request, const CreateDsFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDsFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::CreateDsFolderOutcomeCallable WedataClient::CreateDsFolderCallable(const CreateDsFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDsFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDsFolder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::CreateFolderOutcome WedataClient::CreateFolder(const CreateFolderRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFolder");
@@ -2312,6 +2355,49 @@ WedataClient::DeleteDataSourcesOutcomeCallable WedataClient::DeleteDataSourcesCa
         [this, request]()
         {
             return this->DeleteDataSources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DeleteDsFolderOutcome WedataClient::DeleteDsFolder(const DeleteDsFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDsFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDsFolderResponse rsp = DeleteDsFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDsFolderOutcome(rsp);
+        else
+            return DeleteDsFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDsFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteDsFolderAsync(const DeleteDsFolderRequest& request, const DeleteDsFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDsFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteDsFolderOutcomeCallable WedataClient::DeleteDsFolderCallable(const DeleteDsFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDsFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDsFolder(request);
         }
     );
 
@@ -4462,6 +4548,92 @@ WedataClient::DescribeDrSonInstanceOutcomeCallable WedataClient::DescribeDrSonIn
         [this, request]()
         {
             return this->DescribeDrSonInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeDsFolderTreeOutcome WedataClient::DescribeDsFolderTree(const DescribeDsFolderTreeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDsFolderTree");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDsFolderTreeResponse rsp = DescribeDsFolderTreeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDsFolderTreeOutcome(rsp);
+        else
+            return DescribeDsFolderTreeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDsFolderTreeOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDsFolderTreeAsync(const DescribeDsFolderTreeRequest& request, const DescribeDsFolderTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDsFolderTree(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDsFolderTreeOutcomeCallable WedataClient::DescribeDsFolderTreeCallable(const DescribeDsFolderTreeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDsFolderTreeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDsFolderTree(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeDsParentFolderTreeOutcome WedataClient::DescribeDsParentFolderTree(const DescribeDsParentFolderTreeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDsParentFolderTree");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDsParentFolderTreeResponse rsp = DescribeDsParentFolderTreeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDsParentFolderTreeOutcome(rsp);
+        else
+            return DescribeDsParentFolderTreeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDsParentFolderTreeOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDsParentFolderTreeAsync(const DescribeDsParentFolderTreeRequest& request, const DescribeDsParentFolderTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDsParentFolderTree(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDsParentFolderTreeOutcomeCallable WedataClient::DescribeDsParentFolderTreeCallable(const DescribeDsParentFolderTreeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDsParentFolderTreeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDsParentFolderTree(request);
         }
     );
 
@@ -9930,6 +10102,49 @@ WedataClient::EditBaselineOutcomeCallable WedataClient::EditBaselineCallable(con
     return task->get_future();
 }
 
+WedataClient::FindAllFolderOutcome WedataClient::FindAllFolder(const FindAllFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "FindAllFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FindAllFolderResponse rsp = FindAllFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FindAllFolderOutcome(rsp);
+        else
+            return FindAllFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return FindAllFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::FindAllFolderAsync(const FindAllFolderRequest& request, const FindAllFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FindAllFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::FindAllFolderOutcomeCallable WedataClient::FindAllFolderCallable(const FindAllFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FindAllFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->FindAllFolder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::ForceSucInstancesOutcome WedataClient::ForceSucInstances(const ForceSucInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "ForceSucInstances");
@@ -10869,6 +11084,49 @@ WedataClient::ModifyDimensionWeightOutcomeCallable WedataClient::ModifyDimension
         [this, request]()
         {
             return this->ModifyDimensionWeight(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::ModifyDsFolderOutcome WedataClient::ModifyDsFolder(const ModifyDsFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDsFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDsFolderResponse rsp = ModifyDsFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDsFolderOutcome(rsp);
+        else
+            return ModifyDsFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDsFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ModifyDsFolderAsync(const ModifyDsFolderRequest& request, const ModifyDsFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDsFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::ModifyDsFolderOutcomeCallable WedataClient::ModifyDsFolderCallable(const ModifyDsFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDsFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDsFolder(request);
         }
     );
 
@@ -11901,6 +12159,92 @@ WedataClient::RobAndLockIntegrationTaskOutcomeCallable WedataClient::RobAndLockI
         [this, request]()
         {
             return this->RobAndLockIntegrationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::RunForceSucScheduleInstancesOutcome WedataClient::RunForceSucScheduleInstances(const RunForceSucScheduleInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunForceSucScheduleInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunForceSucScheduleInstancesResponse rsp = RunForceSucScheduleInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunForceSucScheduleInstancesOutcome(rsp);
+        else
+            return RunForceSucScheduleInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RunForceSucScheduleInstancesOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::RunForceSucScheduleInstancesAsync(const RunForceSucScheduleInstancesRequest& request, const RunForceSucScheduleInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunForceSucScheduleInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::RunForceSucScheduleInstancesOutcomeCallable WedataClient::RunForceSucScheduleInstancesCallable(const RunForceSucScheduleInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunForceSucScheduleInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->RunForceSucScheduleInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::RunRerunScheduleInstancesOutcome WedataClient::RunRerunScheduleInstances(const RunRerunScheduleInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunRerunScheduleInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunRerunScheduleInstancesResponse rsp = RunRerunScheduleInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunRerunScheduleInstancesOutcome(rsp);
+        else
+            return RunRerunScheduleInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RunRerunScheduleInstancesOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::RunRerunScheduleInstancesAsync(const RunRerunScheduleInstancesRequest& request, const RunRerunScheduleInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunRerunScheduleInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::RunRerunScheduleInstancesOutcomeCallable WedataClient::RunRerunScheduleInstancesCallable(const RunRerunScheduleInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunRerunScheduleInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->RunRerunScheduleInstances(request);
         }
     );
 

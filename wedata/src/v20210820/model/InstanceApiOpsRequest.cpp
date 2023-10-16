@@ -50,7 +50,8 @@ InstanceApiOpsRequest::InstanceApiOpsRequest() :
     m_dagDependentHasBeenSet(false),
     m_dagDepthHasBeenSet(false),
     m_tenantIdHasBeenSet(false),
-    m_dataTimeCycleHasBeenSet(false)
+    m_dataTimeCycleHasBeenSet(false),
+    m_executorGroupIdListHasBeenSet(false)
 {
 }
 
@@ -406,6 +407,19 @@ CoreInternalOutcome InstanceApiOpsRequest::Deserialize(const rapidjson::Value &v
         m_dataTimeCycleHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecutorGroupIdList") && !value["ExecutorGroupIdList"].IsNull())
+    {
+        if (!value["ExecutorGroupIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceApiOpsRequest.ExecutorGroupIdList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExecutorGroupIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_executorGroupIdList.push_back((*itr).GetString());
+        }
+        m_executorGroupIdListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -709,6 +723,19 @@ void InstanceApiOpsRequest::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "DataTimeCycle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dataTimeCycle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executorGroupIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutorGroupIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_executorGroupIdList.begin(); itr != m_executorGroupIdList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1192,5 +1219,21 @@ void InstanceApiOpsRequest::SetDataTimeCycle(const string& _dataTimeCycle)
 bool InstanceApiOpsRequest::DataTimeCycleHasBeenSet() const
 {
     return m_dataTimeCycleHasBeenSet;
+}
+
+vector<string> InstanceApiOpsRequest::GetExecutorGroupIdList() const
+{
+    return m_executorGroupIdList;
+}
+
+void InstanceApiOpsRequest::SetExecutorGroupIdList(const vector<string>& _executorGroupIdList)
+{
+    m_executorGroupIdList = _executorGroupIdList;
+    m_executorGroupIdListHasBeenSet = true;
+}
+
+bool InstanceApiOpsRequest::ExecutorGroupIdListHasBeenSet() const
+{
+    return m_executorGroupIdListHasBeenSet;
 }
 
