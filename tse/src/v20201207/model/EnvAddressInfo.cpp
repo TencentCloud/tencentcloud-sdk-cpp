@@ -26,7 +26,8 @@ EnvAddressInfo::EnvAddressInfo() :
     m_configInternetServiceIpHasBeenSet(false),
     m_configIntranetAddressHasBeenSet(false),
     m_enableConfigIntranetHasBeenSet(false),
-    m_internetBandWidthHasBeenSet(false)
+    m_internetBandWidthHasBeenSet(false),
+    m_cLBMultiRegionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,23 @@ CoreInternalOutcome EnvAddressInfo::Deserialize(const rapidjson::Value &value)
         m_internetBandWidthHasBeenSet = true;
     }
 
+    if (value.HasMember("CLBMultiRegion") && !value["CLBMultiRegion"].IsNull())
+    {
+        if (!value["CLBMultiRegion"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvAddressInfo.CLBMultiRegion` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cLBMultiRegion.Deserialize(value["CLBMultiRegion"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cLBMultiRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +166,15 @@ void EnvAddressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "InternetBandWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_internetBandWidth, allocator);
+    }
+
+    if (m_cLBMultiRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CLBMultiRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cLBMultiRegion.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -247,5 +274,21 @@ void EnvAddressInfo::SetInternetBandWidth(const int64_t& _internetBandWidth)
 bool EnvAddressInfo::InternetBandWidthHasBeenSet() const
 {
     return m_internetBandWidthHasBeenSet;
+}
+
+CLBMultiRegion EnvAddressInfo::GetCLBMultiRegion() const
+{
+    return m_cLBMultiRegion;
+}
+
+void EnvAddressInfo::SetCLBMultiRegion(const CLBMultiRegion& _cLBMultiRegion)
+{
+    m_cLBMultiRegion = _cLBMultiRegion;
+    m_cLBMultiRegionHasBeenSet = true;
+}
+
+bool EnvAddressInfo::CLBMultiRegionHasBeenSet() const
+{
+    return m_cLBMultiRegionHasBeenSet;
 }
 

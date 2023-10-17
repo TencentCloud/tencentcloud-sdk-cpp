@@ -47,10 +47,10 @@ namespace TencentCloud
 
                     /**
                      * 获取发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
-如需填写发件人说明，请按照如下方式： 
+如需填写发件人说明，请按照如下方式(别名与邮箱地址之间使用一个空格隔开)： 
 别名 <邮箱地址>
                      * @return FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
-如需填写发件人说明，请按照如下方式： 
+如需填写发件人说明，请按照如下方式(别名与邮箱地址之间使用一个空格隔开)： 
 别名 <邮箱地址>
                      * 
                      */
@@ -58,10 +58,10 @@ namespace TencentCloud
 
                     /**
                      * 设置发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
-如需填写发件人说明，请按照如下方式： 
+如需填写发件人说明，请按照如下方式(别名与邮箱地址之间使用一个空格隔开)： 
 别名 <邮箱地址>
                      * @param _fromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
-如需填写发件人说明，请按照如下方式： 
+如需填写发件人说明，请按照如下方式(别名与邮箱地址之间使用一个空格隔开)： 
 别名 <邮箱地址>
                      * 
                      */
@@ -288,7 +288,7 @@ namespace TencentCloud
 
                     /**
                      * 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
-如需填写发件人说明，请按照如下方式： 
+如需填写发件人说明，请按照如下方式(别名与邮箱地址之间使用一个空格隔开)： 
 别名 <邮箱地址>
                      */
                     std::string m_fromEmailAddress;

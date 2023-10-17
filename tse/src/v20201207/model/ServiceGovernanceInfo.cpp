@@ -28,7 +28,8 @@ ServiceGovernanceInfo::ServiceGovernanceInfo() :
     m_featuresHasBeenSet(false),
     m_mainPasswordHasBeenSet(false),
     m_pgwVpcInfosHasBeenSet(false),
-    m_limiterVpcInfosHasBeenSet(false)
+    m_limiterVpcInfosHasBeenSet(false),
+    m_cLSTopicsHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,26 @@ CoreInternalOutcome ServiceGovernanceInfo::Deserialize(const rapidjson::Value &v
         m_limiterVpcInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("CLSTopics") && !value["CLSTopics"].IsNull())
+    {
+        if (!value["CLSTopics"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceGovernanceInfo.CLSTopics` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CLSTopics"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PolarisCLSTopicInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cLSTopics.push_back(item);
+        }
+        m_cLSTopicsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,6 +279,21 @@ void ServiceGovernanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
 
         int i=0;
         for (auto itr = m_limiterVpcInfos.begin(); itr != m_limiterVpcInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cLSTopicsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CLSTopics";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cLSTopics.begin(); itr != m_cLSTopics.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -393,5 +429,21 @@ void ServiceGovernanceInfo::SetLimiterVpcInfos(const vector<VpcInfo>& _limiterVp
 bool ServiceGovernanceInfo::LimiterVpcInfosHasBeenSet() const
 {
     return m_limiterVpcInfosHasBeenSet;
+}
+
+vector<PolarisCLSTopicInfo> ServiceGovernanceInfo::GetCLSTopics() const
+{
+    return m_cLSTopics;
+}
+
+void ServiceGovernanceInfo::SetCLSTopics(const vector<PolarisCLSTopicInfo>& _cLSTopics)
+{
+    m_cLSTopics = _cLSTopics;
+    m_cLSTopicsHasBeenSet = true;
+}
+
+bool ServiceGovernanceInfo::CLSTopicsHasBeenSet() const
+{
+    return m_cLSTopicsHasBeenSet;
 }
 

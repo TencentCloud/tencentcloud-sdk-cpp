@@ -1029,6 +1029,49 @@ OceanusClient::DescribeWorkSpacesOutcomeCallable OceanusClient::DescribeWorkSpac
     return task->get_future();
 }
 
+OceanusClient::FetchSqlGatewayStatementResultOutcome OceanusClient::FetchSqlGatewayStatementResult(const FetchSqlGatewayStatementResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "FetchSqlGatewayStatementResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FetchSqlGatewayStatementResultResponse rsp = FetchSqlGatewayStatementResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FetchSqlGatewayStatementResultOutcome(rsp);
+        else
+            return FetchSqlGatewayStatementResultOutcome(o.GetError());
+    }
+    else
+    {
+        return FetchSqlGatewayStatementResultOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::FetchSqlGatewayStatementResultAsync(const FetchSqlGatewayStatementResultRequest& request, const FetchSqlGatewayStatementResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FetchSqlGatewayStatementResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::FetchSqlGatewayStatementResultOutcomeCallable OceanusClient::FetchSqlGatewayStatementResultCallable(const FetchSqlGatewayStatementResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FetchSqlGatewayStatementResultOutcome()>>(
+        [this, request]()
+        {
+            return this->FetchSqlGatewayStatementResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::ModifyJobOutcome OceanusClient::ModifyJob(const ModifyJobRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyJob");
@@ -1108,6 +1151,49 @@ OceanusClient::RunJobsOutcomeCallable OceanusClient::RunJobsCallable(const RunJo
         [this, request]()
         {
             return this->RunJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::RunSqlGatewayStatementOutcome OceanusClient::RunSqlGatewayStatement(const RunSqlGatewayStatementRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunSqlGatewayStatement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunSqlGatewayStatementResponse rsp = RunSqlGatewayStatementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunSqlGatewayStatementOutcome(rsp);
+        else
+            return RunSqlGatewayStatementOutcome(o.GetError());
+    }
+    else
+    {
+        return RunSqlGatewayStatementOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::RunSqlGatewayStatementAsync(const RunSqlGatewayStatementRequest& request, const RunSqlGatewayStatementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunSqlGatewayStatement(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::RunSqlGatewayStatementOutcomeCallable OceanusClient::RunSqlGatewayStatementCallable(const RunSqlGatewayStatementRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunSqlGatewayStatementOutcome()>>(
+        [this, request]()
+        {
+            return this->RunSqlGatewayStatement(request);
         }
     );
 

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取如果是hive这里写rpc，如果是其他类型不传
-                     * @return ConnectionType 如果是hive这里写rpc，如果是其他类型不传
+                     * 获取连接类型
+                     * @return ConnectionType 连接类型
                      * 
                      */
                     std::string GetConnectionType() const;
 
                     /**
-                     * 设置如果是hive这里写rpc，如果是其他类型不传
-                     * @param _connectionType 如果是hive这里写rpc，如果是其他类型不传
+                     * 设置连接类型
+                     * @param _connectionType 连接类型
                      * 
                      */
                     void SetConnectionType(const std::string& _connectionType);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 如果是hive这里写rpc，如果是其他类型不传
+                     * 连接类型
                      */
                     std::string m_connectionType;
                     bool m_connectionTypeHasBeenSet;

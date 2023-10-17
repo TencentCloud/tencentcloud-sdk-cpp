@@ -117,6 +117,31 @@ namespace TencentCloud
                      */
                     bool SyncModeHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的kubernetes集群所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BindRegion 绑定的kubernetes集群所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBindRegion() const;
+
+                    /**
+                     * 设置绑定的kubernetes集群所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bindRegion 绑定的kubernetes集群所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBindRegion(const std::string& _bindRegion);
+
+                    /**
+                     * 判断参数 BindRegion 是否已赋值
+                     * @return BindRegion 是否已赋值
+                     * 
+                     */
+                    bool BindRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,6 +163,13 @@ namespace TencentCloud
                      */
                     std::string m_syncMode;
                     bool m_syncModeHasBeenSet;
+
+                    /**
+                     * 绑定的kubernetes集群所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bindRegion;
+                    bool m_bindRegionHasBeenSet;
 
                 };
             }

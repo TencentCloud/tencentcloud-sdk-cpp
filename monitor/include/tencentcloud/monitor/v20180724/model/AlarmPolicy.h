@@ -940,6 +940,31 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持告警标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportAlarmTag 是否支持告警标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsSupportAlarmTag() const;
+
+                    /**
+                     * 设置是否支持告警标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSupportAlarmTag 是否支持告警标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSupportAlarmTag(const int64_t& _isSupportAlarmTag);
+
+                    /**
+                     * 判断参数 IsSupportAlarmTag 是否已赋值
+                     * @return IsSupportAlarmTag 是否已赋值
+                     * 
+                     */
+                    bool IsSupportAlarmTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1189,6 +1214,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否支持告警标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isSupportAlarmTag;
+                    bool m_isSupportAlarmTagHasBeenSet;
 
                 };
             }

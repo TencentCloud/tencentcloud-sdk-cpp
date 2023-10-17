@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型：201. stream,   202. offline
-                     * @return TaskType 任务类型：201. stream,   202. offline
+                     * 获取任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型
+                     * @return TaskType 任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型
                      * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型：201. stream,   202. offline
-                     * @param _taskType 任务类型：201. stream,   202. offline
+                     * 设置任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型
+                     * @param _taskType 任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型
                      * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务类型：201. stream,   202. offline
+                     * 任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;

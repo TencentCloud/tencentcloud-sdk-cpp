@@ -31,7 +31,8 @@ DescribeSREInstanceAccessAddressResponse::DescribeSREInstanceAccessAddressRespon
     m_consoleIntranetAddressHasBeenSet(false),
     m_internetBandWidthHasBeenSet(false),
     m_consoleInternetBandWidthHasBeenSet(false),
-    m_limiterAddressInfosHasBeenSet(false)
+    m_limiterAddressInfosHasBeenSet(false),
+    m_cLBMultiRegionHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,23 @@ CoreInternalOutcome DescribeSREInstanceAccessAddressResponse::Deserialize(const 
         m_limiterAddressInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CLBMultiRegion") && !rsp["CLBMultiRegion"].IsNull())
+    {
+        if (!rsp["CLBMultiRegion"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CLBMultiRegion` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cLBMultiRegion.Deserialize(rsp["CLBMultiRegion"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cLBMultiRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -255,6 +273,15 @@ string DescribeSREInstanceAccessAddressResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cLBMultiRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CLBMultiRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cLBMultiRegion.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -347,6 +374,16 @@ vector<PolarisLimiterAddress> DescribeSREInstanceAccessAddressResponse::GetLimit
 bool DescribeSREInstanceAccessAddressResponse::LimiterAddressInfosHasBeenSet() const
 {
     return m_limiterAddressInfosHasBeenSet;
+}
+
+CLBMultiRegion DescribeSREInstanceAccessAddressResponse::GetCLBMultiRegion() const
+{
+    return m_cLBMultiRegion;
+}
+
+bool DescribeSREInstanceAccessAddressResponse::CLBMultiRegionHasBeenSet() const
+{
+    return m_cLBMultiRegionHasBeenSet;
 }
 
 

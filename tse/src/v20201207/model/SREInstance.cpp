@@ -53,7 +53,8 @@ SREInstance::SREInstance() :
     m_regionInfosHasBeenSet(false),
     m_eKSTypeHasBeenSet(false),
     m_featureVersionHasBeenSet(false),
-    m_enableClientIntranetHasBeenSet(false)
+    m_enableClientIntranetHasBeenSet(false),
+    m_storageOptionHasBeenSet(false)
 {
 }
 
@@ -445,6 +446,26 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_enableClientIntranetHasBeenSet = true;
     }
 
+    if (value.HasMember("StorageOption") && !value["StorageOption"].IsNull())
+    {
+        if (!value["StorageOption"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SREInstance.StorageOption` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StorageOption"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StorageOption item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_storageOption.push_back(item);
+        }
+        m_storageOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -754,6 +775,21 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EnableClientIntranet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableClientIntranet, allocator);
+    }
+
+    if (m_storageOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_storageOption.begin(); itr != m_storageOption.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1285,5 +1321,21 @@ void SREInstance::SetEnableClientIntranet(const bool& _enableClientIntranet)
 bool SREInstance::EnableClientIntranetHasBeenSet() const
 {
     return m_enableClientIntranetHasBeenSet;
+}
+
+vector<StorageOption> SREInstance::GetStorageOption() const
+{
+    return m_storageOption;
+}
+
+void SREInstance::SetStorageOption(const vector<StorageOption>& _storageOption)
+{
+    m_storageOption = _storageOption;
+    m_storageOptionHasBeenSet = true;
+}
+
+bool SREInstance::StorageOptionHasBeenSet() const
+{
+    return m_storageOptionHasBeenSet;
 }
 

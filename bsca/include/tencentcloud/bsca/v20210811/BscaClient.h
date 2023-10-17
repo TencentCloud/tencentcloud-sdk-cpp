@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/bsca/v20210811/model/DescribeKBComponentRequest.h>
 #include <tencentcloud/bsca/v20210811/model/DescribeKBComponentResponse.h>
+#include <tencentcloud/bsca/v20210811/model/DescribeKBComponentVersionListRequest.h>
+#include <tencentcloud/bsca/v20210811/model/DescribeKBComponentVersionListResponse.h>
 #include <tencentcloud/bsca/v20210811/model/DescribeKBComponentVulnerabilityRequest.h>
 #include <tencentcloud/bsca/v20210811/model/DescribeKBComponentVulnerabilityResponse.h>
 #include <tencentcloud/bsca/v20210811/model/DescribeKBLicenseRequest.h>
@@ -33,6 +35,8 @@
 #include <tencentcloud/bsca/v20210811/model/DescribeKBVulnerabilityResponse.h>
 #include <tencentcloud/bsca/v20210811/model/MatchKBPURLListRequest.h>
 #include <tencentcloud/bsca/v20210811/model/MatchKBPURLListResponse.h>
+#include <tencentcloud/bsca/v20210811/model/SearchKBComponentRequest.h>
+#include <tencentcloud/bsca/v20210811/model/SearchKBComponentResponse.h>
 
 
 namespace TencentCloud
@@ -50,6 +54,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKBComponentResponse> DescribeKBComponentOutcome;
                 typedef std::future<DescribeKBComponentOutcome> DescribeKBComponentOutcomeCallable;
                 typedef std::function<void(const BscaClient*, const Model::DescribeKBComponentRequest&, DescribeKBComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBComponentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKBComponentVersionListResponse> DescribeKBComponentVersionListOutcome;
+                typedef std::future<DescribeKBComponentVersionListOutcome> DescribeKBComponentVersionListOutcomeCallable;
+                typedef std::function<void(const BscaClient*, const Model::DescribeKBComponentVersionListRequest&, DescribeKBComponentVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBComponentVersionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKBComponentVulnerabilityResponse> DescribeKBComponentVulnerabilityOutcome;
                 typedef std::future<DescribeKBComponentVulnerabilityOutcome> DescribeKBComponentVulnerabilityOutcomeCallable;
                 typedef std::function<void(const BscaClient*, const Model::DescribeKBComponentVulnerabilityRequest&, DescribeKBComponentVulnerabilityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBComponentVulnerabilityAsyncHandler;
@@ -62,6 +69,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::MatchKBPURLListResponse> MatchKBPURLListOutcome;
                 typedef std::future<MatchKBPURLListOutcome> MatchKBPURLListOutcomeCallable;
                 typedef std::function<void(const BscaClient*, const Model::MatchKBPURLListRequest&, MatchKBPURLListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MatchKBPURLListAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchKBComponentResponse> SearchKBComponentOutcome;
+                typedef std::future<SearchKBComponentOutcome> SearchKBComponentOutcomeCallable;
+                typedef std::function<void(const BscaClient*, const Model::SearchKBComponentRequest&, SearchKBComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchKBComponentAsyncHandler;
 
 
 
@@ -73,6 +83,15 @@ namespace TencentCloud
                 DescribeKBComponentOutcome DescribeKBComponent(const Model::DescribeKBComponentRequest &request);
                 void DescribeKBComponentAsync(const Model::DescribeKBComponentRequest& request, const DescribeKBComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKBComponentOutcomeCallable DescribeKBComponentCallable(const Model::DescribeKBComponentRequest& request);
+
+                /**
+                 *查询特定组件的版本列表
+                 * @param req DescribeKBComponentVersionListRequest
+                 * @return DescribeKBComponentVersionListOutcome
+                 */
+                DescribeKBComponentVersionListOutcome DescribeKBComponentVersionList(const Model::DescribeKBComponentVersionListRequest &request);
+                void DescribeKBComponentVersionListAsync(const Model::DescribeKBComponentVersionListRequest& request, const DescribeKBComponentVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKBComponentVersionListOutcomeCallable DescribeKBComponentVersionListCallable(const Model::DescribeKBComponentVersionListRequest& request);
 
                 /**
                  *本接口(DescribeKBComponentVulnerability)用于在知识库中查询开源组件的漏洞信息。
@@ -109,6 +128,15 @@ namespace TencentCloud
                 MatchKBPURLListOutcome MatchKBPURLList(const Model::MatchKBPURLListRequest &request);
                 void MatchKBPURLListAsync(const Model::MatchKBPURLListRequest& request, const MatchKBPURLListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 MatchKBPURLListOutcomeCallable MatchKBPURLListCallable(const Model::MatchKBPURLListRequest& request);
+
+                /**
+                 *根据输入的组件名、组件类型搜索相应的组件，返回符合条件的组件列表
+                 * @param req SearchKBComponentRequest
+                 * @return SearchKBComponentOutcome
+                 */
+                SearchKBComponentOutcome SearchKBComponent(const Model::SearchKBComponentRequest &request);
+                void SearchKBComponentAsync(const Model::SearchKBComponentRequest& request, const SearchKBComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchKBComponentOutcomeCallable SearchKBComponentCallable(const Model::SearchKBComponentRequest& request);
 
             };
         }

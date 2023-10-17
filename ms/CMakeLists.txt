@@ -42,6 +42,7 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/SDKResult.h
   include/tencentcloud/ms/v20180408/model/RequestLocalTaskResponse.h
   include/tencentcloud/ms/v20180408/model/UpdateLocalTaskResultRequest.h
+  include/tencentcloud/ms/v20180408/model/IOSInfo.h
   include/tencentcloud/ms/v20180408/model/ShieldPlanInfo.h
   include/tencentcloud/ms/v20180408/model/CreateBindInstanceRequest.h
   include/tencentcloud/ms/v20180408/model/CreateShieldInstanceResponse.h
@@ -118,6 +119,7 @@ set(ms_src
   src/v20180408/model/SDKResult.cpp
   src/v20180408/model/RequestLocalTaskResponse.cpp
   src/v20180408/model/UpdateLocalTaskResultRequest.cpp
+  src/v20180408/model/IOSInfo.cpp
   src/v20180408/model/ShieldPlanInfo.cpp
   src/v20180408/model/CreateBindInstanceRequest.cpp
   src/v20180408/model/CreateShieldInstanceResponse.cpp

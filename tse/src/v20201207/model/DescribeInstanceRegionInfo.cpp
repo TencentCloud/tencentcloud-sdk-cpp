@@ -25,7 +25,11 @@ DescribeInstanceRegionInfo::DescribeInstanceRegionInfo() :
     m_replicaHasBeenSet(false),
     m_specIdHasBeenSet(false),
     m_intranetVpcInfosHasBeenSet(false),
-    m_enableClientInternetHasBeenSet(false)
+    m_consoleIntranetVpcInfosHasBeenSet(false),
+    m_enableClientInternetHasBeenSet(false),
+    m_limiterIntranetVpcInfosHasBeenSet(false),
+    m_mainRegionHasBeenSet(false),
+    m_eKSClusterIDHasBeenSet(false)
 {
 }
 
@@ -84,6 +88,26 @@ CoreInternalOutcome DescribeInstanceRegionInfo::Deserialize(const rapidjson::Val
         m_intranetVpcInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsoleIntranetVpcInfos") && !value["ConsoleIntranetVpcInfos"].IsNull())
+    {
+        if (!value["ConsoleIntranetVpcInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceRegionInfo.ConsoleIntranetVpcInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConsoleIntranetVpcInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_consoleIntranetVpcInfos.push_back(item);
+        }
+        m_consoleIntranetVpcInfosHasBeenSet = true;
+    }
+
     if (value.HasMember("EnableClientInternet") && !value["EnableClientInternet"].IsNull())
     {
         if (!value["EnableClientInternet"].IsBool())
@@ -92,6 +116,46 @@ CoreInternalOutcome DescribeInstanceRegionInfo::Deserialize(const rapidjson::Val
         }
         m_enableClientInternet = value["EnableClientInternet"].GetBool();
         m_enableClientInternetHasBeenSet = true;
+    }
+
+    if (value.HasMember("LimiterIntranetVpcInfos") && !value["LimiterIntranetVpcInfos"].IsNull())
+    {
+        if (!value["LimiterIntranetVpcInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceRegionInfo.LimiterIntranetVpcInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LimiterIntranetVpcInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_limiterIntranetVpcInfos.push_back(item);
+        }
+        m_limiterIntranetVpcInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("MainRegion") && !value["MainRegion"].IsNull())
+    {
+        if (!value["MainRegion"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceRegionInfo.MainRegion` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mainRegion = value["MainRegion"].GetBool();
+        m_mainRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("EKSClusterID") && !value["EKSClusterID"].IsNull())
+    {
+        if (!value["EKSClusterID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceRegionInfo.EKSClusterID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eKSClusterID = string(value["EKSClusterID"].GetString());
+        m_eKSClusterIDHasBeenSet = true;
     }
 
 
@@ -140,12 +204,58 @@ void DescribeInstanceRegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         }
     }
 
+    if (m_consoleIntranetVpcInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsoleIntranetVpcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_consoleIntranetVpcInfos.begin(); itr != m_consoleIntranetVpcInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_enableClientInternetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableClientInternet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableClientInternet, allocator);
+    }
+
+    if (m_limiterIntranetVpcInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimiterIntranetVpcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_limiterIntranetVpcInfos.begin(); itr != m_limiterIntranetVpcInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_mainRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MainRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mainRegion, allocator);
+    }
+
+    if (m_eKSClusterIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EKSClusterID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eKSClusterID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -215,6 +325,22 @@ bool DescribeInstanceRegionInfo::IntranetVpcInfosHasBeenSet() const
     return m_intranetVpcInfosHasBeenSet;
 }
 
+vector<VpcInfo> DescribeInstanceRegionInfo::GetConsoleIntranetVpcInfos() const
+{
+    return m_consoleIntranetVpcInfos;
+}
+
+void DescribeInstanceRegionInfo::SetConsoleIntranetVpcInfos(const vector<VpcInfo>& _consoleIntranetVpcInfos)
+{
+    m_consoleIntranetVpcInfos = _consoleIntranetVpcInfos;
+    m_consoleIntranetVpcInfosHasBeenSet = true;
+}
+
+bool DescribeInstanceRegionInfo::ConsoleIntranetVpcInfosHasBeenSet() const
+{
+    return m_consoleIntranetVpcInfosHasBeenSet;
+}
+
 bool DescribeInstanceRegionInfo::GetEnableClientInternet() const
 {
     return m_enableClientInternet;
@@ -229,5 +355,53 @@ void DescribeInstanceRegionInfo::SetEnableClientInternet(const bool& _enableClie
 bool DescribeInstanceRegionInfo::EnableClientInternetHasBeenSet() const
 {
     return m_enableClientInternetHasBeenSet;
+}
+
+vector<VpcInfo> DescribeInstanceRegionInfo::GetLimiterIntranetVpcInfos() const
+{
+    return m_limiterIntranetVpcInfos;
+}
+
+void DescribeInstanceRegionInfo::SetLimiterIntranetVpcInfos(const vector<VpcInfo>& _limiterIntranetVpcInfos)
+{
+    m_limiterIntranetVpcInfos = _limiterIntranetVpcInfos;
+    m_limiterIntranetVpcInfosHasBeenSet = true;
+}
+
+bool DescribeInstanceRegionInfo::LimiterIntranetVpcInfosHasBeenSet() const
+{
+    return m_limiterIntranetVpcInfosHasBeenSet;
+}
+
+bool DescribeInstanceRegionInfo::GetMainRegion() const
+{
+    return m_mainRegion;
+}
+
+void DescribeInstanceRegionInfo::SetMainRegion(const bool& _mainRegion)
+{
+    m_mainRegion = _mainRegion;
+    m_mainRegionHasBeenSet = true;
+}
+
+bool DescribeInstanceRegionInfo::MainRegionHasBeenSet() const
+{
+    return m_mainRegionHasBeenSet;
+}
+
+string DescribeInstanceRegionInfo::GetEKSClusterID() const
+{
+    return m_eKSClusterID;
+}
+
+void DescribeInstanceRegionInfo::SetEKSClusterID(const string& _eKSClusterID)
+{
+    m_eKSClusterID = _eKSClusterID;
+    m_eKSClusterIDHasBeenSet = true;
+}
+
+bool DescribeInstanceRegionInfo::EKSClusterIDHasBeenSet() const
+{
+    return m_eKSClusterIDHasBeenSet;
 }
 

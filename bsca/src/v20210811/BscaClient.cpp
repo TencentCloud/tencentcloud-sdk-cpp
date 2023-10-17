@@ -83,6 +83,49 @@ BscaClient::DescribeKBComponentOutcomeCallable BscaClient::DescribeKBComponentCa
     return task->get_future();
 }
 
+BscaClient::DescribeKBComponentVersionListOutcome BscaClient::DescribeKBComponentVersionList(const DescribeKBComponentVersionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKBComponentVersionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKBComponentVersionListResponse rsp = DescribeKBComponentVersionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKBComponentVersionListOutcome(rsp);
+        else
+            return DescribeKBComponentVersionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKBComponentVersionListOutcome(outcome.GetError());
+    }
+}
+
+void BscaClient::DescribeKBComponentVersionListAsync(const DescribeKBComponentVersionListRequest& request, const DescribeKBComponentVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKBComponentVersionList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BscaClient::DescribeKBComponentVersionListOutcomeCallable BscaClient::DescribeKBComponentVersionListCallable(const DescribeKBComponentVersionListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKBComponentVersionListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKBComponentVersionList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BscaClient::DescribeKBComponentVulnerabilityOutcome BscaClient::DescribeKBComponentVulnerability(const DescribeKBComponentVulnerabilityRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeKBComponentVulnerability");
@@ -248,6 +291,49 @@ BscaClient::MatchKBPURLListOutcomeCallable BscaClient::MatchKBPURLListCallable(c
         [this, request]()
         {
             return this->MatchKBPURLList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BscaClient::SearchKBComponentOutcome BscaClient::SearchKBComponent(const SearchKBComponentRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchKBComponent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchKBComponentResponse rsp = SearchKBComponentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchKBComponentOutcome(rsp);
+        else
+            return SearchKBComponentOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchKBComponentOutcome(outcome.GetError());
+    }
+}
+
+void BscaClient::SearchKBComponentAsync(const SearchKBComponentRequest& request, const SearchKBComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchKBComponent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BscaClient::SearchKBComponentOutcomeCallable BscaClient::SearchKBComponentCallable(const SearchKBComponentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchKBComponentOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchKBComponent(request);
         }
     );
 

@@ -205,21 +205,21 @@ CMCC：中国移动
                     /**
                      * 获取该字段没有使用（已过期）。
                      * @return Ipv6ISP 该字段没有使用（已过期）。
-                     * 
+                     * @deprecated
                      */
                     std::string GetIpv6ISP() const;
 
                     /**
                      * 设置该字段没有使用（已过期）。
                      * @param _ipv6ISP 该字段没有使用（已过期）。
-                     * 
+                     * @deprecated
                      */
                     void SetIpv6ISP(const std::string& _ipv6ISP);
 
                     /**
                      * 判断参数 Ipv6ISP 是否已赋值
                      * @return Ipv6ISP 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool Ipv6ISPHasBeenSet() const;
 

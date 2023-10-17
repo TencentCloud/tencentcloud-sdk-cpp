@@ -24,6 +24,7 @@
 #include <tencentcloud/ms/v20180408/model/AndroidAppInfo.h>
 #include <tencentcloud/ms/v20180408/model/AndroidPlan.h>
 #include <tencentcloud/ms/v20180408/model/AppletInfo.h>
+#include <tencentcloud/ms/v20180408/model/IOSInfo.h>
 
 
 namespace TencentCloud
@@ -192,6 +193,27 @@ namespace TencentCloud
                      */
                     bool AppletInfoHasBeenSet() const;
 
+                    /**
+                     * 获取iOS混淆信息
+                     * @return IOSInfo iOS混淆信息
+                     * 
+                     */
+                    IOSInfo GetIOSInfo() const;
+
+                    /**
+                     * 设置iOS混淆信息
+                     * @param _iOSInfo iOS混淆信息
+                     * 
+                     */
+                    void SetIOSInfo(const IOSInfo& _iOSInfo);
+
+                    /**
+                     * 判断参数 IOSInfo 是否已赋值
+                     * @return IOSInfo 是否已赋值
+                     * 
+                     */
+                    bool IOSInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +257,12 @@ namespace TencentCloud
                      */
                     AppletInfo m_appletInfo;
                     bool m_appletInfoHasBeenSet;
+
+                    /**
+                     * iOS混淆信息
+                     */
+                    IOSInfo m_iOSInfo;
+                    bool m_iOSInfoHasBeenSet;
 
                 };
             }

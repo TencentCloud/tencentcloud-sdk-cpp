@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取表类型
-                     * @return MsType 表类型
+                     * 获取数据源的类型（例如MYSQL、HIVE、KAFKA等）
+                     * @return MsType 数据源的类型（例如MYSQL、HIVE、KAFKA等）
                      * 
                      */
                     std::string GetMsType() const;
 
                     /**
-                     * 设置表类型
-                     * @param _msType 表类型
+                     * 设置数据源的类型（例如MYSQL、HIVE、KAFKA等）
+                     * @param _msType 数据源的类型（例如MYSQL、HIVE、KAFKA等）
                      * 
                      */
                     void SetMsType(const std::string& _msType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DatasourceIdHasBeenSet() const;
 
                     /**
-                     * 获取HIVE传rpc
-                     * @return ConnectionType HIVE传rpc
+                     * 获取连接类型（示例值rpc）
+                     * @return ConnectionType 连接类型（示例值rpc）
                      * 
                      */
                     std::string GetConnectionType() const;
 
                     /**
-                     * 设置HIVE传rpc
-                     * @param _connectionType HIVE传rpc
+                     * 设置连接类型（示例值rpc）
+                     * @param _connectionType 连接类型（示例值rpc）
                      * 
                      */
                     void SetConnectionType(const std::string& _connectionType);
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 表类型
+                     * 数据源的类型（例如MYSQL、HIVE、KAFKA等）
                      */
                     std::string m_msType;
                     bool m_msTypeHasBeenSet;
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_datasourceIdHasBeenSet;
 
                     /**
-                     * HIVE传rpc
+                     * 连接类型（示例值rpc）
                      */
                     std::string m_connectionType;
                     bool m_connectionTypeHasBeenSet;

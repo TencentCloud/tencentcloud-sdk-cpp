@@ -43,12 +43,12 @@ namespace TencentCloud
 其中签署方FlowApproverInfo需要传递的参数
 非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。
 
-其他身份标识
+其他身份标识，注：`如果发起的是动态签署方（即ApproverOption.FillType指定为1），可以不指定具体签署人信息`
 
 <ul><li>1-个人：Name、Mobile必传</li>
 <li>2-第三方平台子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；</li>
 <li>3-第三方平台子客企业不指定经办人：OrgName必传、OrgOpenId必传；</li>
-<li>4-非第三方平台子客企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。</li></ul>
+<li>4-非第三方平台子客企业(平台企业)：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。</li></ul>
 
 RecipientId参数：
 从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId。
@@ -63,15 +63,19 @@ RecipientId参数：
 
 
                     /**
-                     * 获取签署人姓名，最大长度50个字符
-                     * @return Name 签署人姓名，最大长度50个字符
+                     * 获取签署方经办人的姓名。
+经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
+                     * @return Name 签署方经办人的姓名。
+经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置签署人姓名，最大长度50个字符
-                     * @param _name 签署人姓名，最大长度50个字符
+                     * 设置签署方经办人的姓名。
+经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
+                     * @param _name 签署方经办人的姓名。
+经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -84,31 +88,39 @@ RecipientId参数：
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取签署人的证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
-                     * @return IdCardType 签署人的证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
+                     * 获取签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他证件</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
+                     * @return IdCardType 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他证件</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
                      * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置签署人的证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
-                     * @param _idCardType 签署人的证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
+                     * 设置签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他证件</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
+                     * @param _idCardType 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他证件</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -121,15 +133,27 @@ RecipientId参数：
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署人证件号（长度不超过18位）
-                     * @return IdCardNumber 签署人证件号（长度不超过18位）
+                     * 获取签署方经办人的证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @return IdCardNumber 签署方经办人的证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置签署人证件号（长度不超过18位）
-                     * @param _idCardNumber 签署人证件号（长度不超过18位）
+                     * 设置签署方经办人的证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @param _idCardNumber 签署方经办人的证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -142,15 +166,19 @@ RecipientId参数：
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。
-                     * @return Mobile 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。
+                     * 获取签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)， 不支持海外手机号。
+请确认手机号所有方为此合同签署方。
+                     * @return Mobile 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)， 不支持海外手机号。
+请确认手机号所有方为此合同签署方。
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。
-                     * @param _mobile 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。
+                     * 设置签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)， 不支持海外手机号。
+请确认手机号所有方为此合同签署方。
+                     * @param _mobile 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)， 不支持海外手机号。
+请确认手机号所有方为此合同签署方。
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -163,15 +191,23 @@ RecipientId参数：
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；
-                     * @return OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     * 获取组织机构名称。
+请确认该名称与企业营业执照中注册的名称一致。
+如果名称中包含英文括号()，请使用中文括号（）代替。
+                     * @return OrganizationName 组织机构名称。
+请确认该名称与企业营业执照中注册的名称一致。
+如果名称中包含英文括号()，请使用中文括号（）代替。
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；
-                     * @param _organizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     * 设置组织机构名称。
+请确认该名称与企业营业执照中注册的名称一致。
+如果名称中包含英文括号()，请使用中文括号（）代替。
+                     * @param _organizationName 组织机构名称。
+请确认该名称与企业营业执照中注册的名称一致。
+如果名称中包含英文括号()，请使用中文括号（）代替。
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -184,19 +220,35 @@ RecipientId参数：
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取指定签署人非第三方平台子客企业下员工，在ApproverType为ORGANIZATION时指定。
-默认为false，即签署人位于同一个第三方平台应用号下；默认为false，即签署人位于同一个第三方应用号下；
-                     * @return NotChannelOrganization 指定签署人非第三方平台子客企业下员工，在ApproverType为ORGANIZATION时指定。
-默认为false，即签署人位于同一个第三方平台应用号下；默认为false，即签署人位于同一个第三方应用号下；
+                     * 获取指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。
+<ul>
+<li>false: 默认值，第三方平台子客企业下员工</li>
+<li>true: SaaS平台企业下的员工</li>
+</ul>
+
+                     * @return NotChannelOrganization 指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。
+<ul>
+<li>false: 默认值，第三方平台子客企业下员工</li>
+<li>true: SaaS平台企业下的员工</li>
+</ul>
+
                      * 
                      */
                     bool GetNotChannelOrganization() const;
 
                     /**
-                     * 设置指定签署人非第三方平台子客企业下员工，在ApproverType为ORGANIZATION时指定。
-默认为false，即签署人位于同一个第三方平台应用号下；默认为false，即签署人位于同一个第三方应用号下；
-                     * @param _notChannelOrganization 指定签署人非第三方平台子客企业下员工，在ApproverType为ORGANIZATION时指定。
-默认为false，即签署人位于同一个第三方平台应用号下；默认为false，即签署人位于同一个第三方应用号下；
+                     * 设置指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。
+<ul>
+<li>false: 默认值，第三方平台子客企业下员工</li>
+<li>true: SaaS平台企业下的员工</li>
+</ul>
+
+                     * @param _notChannelOrganization 指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。
+<ul>
+<li>false: 默认值，第三方平台子客企业下员工</li>
+<li>true: SaaS平台企业下的员工</li>
+</ul>
+
                      * 
                      */
                     void SetNotChannelOrganization(const bool& _notChannelOrganization);
@@ -209,18 +261,22 @@ RecipientId参数：
                     bool NotChannelOrganizationHasBeenSet() const;
 
                     /**
-                     * 获取用户侧第三方id，最大长度64个字符
+                     * 获取第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成
+
 当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程
-                     * @return OpenId 用户侧第三方id，最大长度64个字符
+                     * @return OpenId 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成
+
 当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户侧第三方id，最大长度64个字符
+                     * 设置第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成
+
 当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程
-                     * @param _openId 用户侧第三方id，最大长度64个字符
+                     * @param _openId 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成
+
 当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程
                      * 
                      */
@@ -234,15 +290,15 @@ RecipientId参数：
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取企业签署方在同一第三方平台应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；
-                     * @return OrganizationOpenId 企业签署方在同一第三方平台应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     * 获取同应用下第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * @return OrganizationOpenId 同应用下第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样，签署方为非发起方企业场景下必传，最大长度64个字符
                      * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置企业签署方在同一第三方平台应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；
-                     * @param _organizationOpenId 企业签署方在同一第三方平台应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     * 设置同应用下第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * @param _organizationOpenId 同应用下第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样，签署方为非发起方企业场景下必传，最大长度64个字符
                      * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
@@ -255,55 +311,59 @@ RecipientId参数：
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取签署人类型
-PERSON-个人/自然人；
-PERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景
-注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
-ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
-ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的本方企业自动签）
+                     * 获取在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:
+<ul><li> **PERSON** :个人/自然人</li>
+<li> **PERSON_AUTO_SIGN** :个人/自然人自动签署，适用于个人自动签场景</li>
+<li> **ORGANIZATION** :企业/企业员工（企业签署方或模板发起时的企业静默签）</li>
+<li> **ENTERPRISESERVER** :企业/企业员自动签（他方企业自动签署或文件发起时的本方企业自动签）</li></ul>
 
-若要实现他方企业（同一应用下）自动签，需要满足3个条件：
-条件1：ApproverType 设置为ENTERPRISESERVER
-条件2：子客之间完成授权
-条件3：联系对接的客户经理沟通
-                     * @return ApproverType 签署人类型
-PERSON-个人/自然人；
-PERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景
-注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
-ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
-ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的本方企业自动签）
+注:  
+`1. 个人自动签场景(PERSON_AUTO_SIGN)为白名单功能, 使用前请联系对接的客户经理沟通。`
+`2. 若要实现他方企业（同一应用下）自动签，需要满足3个条件：`
+<ul><li>条件1：ApproverType 设置为ENTERPRISESERVER</li>
+<li>条件2：子客之间完成授权</li>
+<li>条件3：联系对接的客户经理沟通如何使用</li></ul>
+                     * @return ApproverType 在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:
+<ul><li> **PERSON** :个人/自然人</li>
+<li> **PERSON_AUTO_SIGN** :个人/自然人自动签署，适用于个人自动签场景</li>
+<li> **ORGANIZATION** :企业/企业员工（企业签署方或模板发起时的企业静默签）</li>
+<li> **ENTERPRISESERVER** :企业/企业员自动签（他方企业自动签署或文件发起时的本方企业自动签）</li></ul>
 
-若要实现他方企业（同一应用下）自动签，需要满足3个条件：
-条件1：ApproverType 设置为ENTERPRISESERVER
-条件2：子客之间完成授权
-条件3：联系对接的客户经理沟通
+注:  
+`1. 个人自动签场景(PERSON_AUTO_SIGN)为白名单功能, 使用前请联系对接的客户经理沟通。`
+`2. 若要实现他方企业（同一应用下）自动签，需要满足3个条件：`
+<ul><li>条件1：ApproverType 设置为ENTERPRISESERVER</li>
+<li>条件2：子客之间完成授权</li>
+<li>条件3：联系对接的客户经理沟通如何使用</li></ul>
                      * 
                      */
                     std::string GetApproverType() const;
 
                     /**
-                     * 设置签署人类型
-PERSON-个人/自然人；
-PERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景
-注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
-ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
-ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的本方企业自动签）
+                     * 设置在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:
+<ul><li> **PERSON** :个人/自然人</li>
+<li> **PERSON_AUTO_SIGN** :个人/自然人自动签署，适用于个人自动签场景</li>
+<li> **ORGANIZATION** :企业/企业员工（企业签署方或模板发起时的企业静默签）</li>
+<li> **ENTERPRISESERVER** :企业/企业员自动签（他方企业自动签署或文件发起时的本方企业自动签）</li></ul>
 
-若要实现他方企业（同一应用下）自动签，需要满足3个条件：
-条件1：ApproverType 设置为ENTERPRISESERVER
-条件2：子客之间完成授权
-条件3：联系对接的客户经理沟通
-                     * @param _approverType 签署人类型
-PERSON-个人/自然人；
-PERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景
-注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
-ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
-ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的本方企业自动签）
+注:  
+`1. 个人自动签场景(PERSON_AUTO_SIGN)为白名单功能, 使用前请联系对接的客户经理沟通。`
+`2. 若要实现他方企业（同一应用下）自动签，需要满足3个条件：`
+<ul><li>条件1：ApproverType 设置为ENTERPRISESERVER</li>
+<li>条件2：子客之间完成授权</li>
+<li>条件3：联系对接的客户经理沟通如何使用</li></ul>
+                     * @param _approverType 在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:
+<ul><li> **PERSON** :个人/自然人</li>
+<li> **PERSON_AUTO_SIGN** :个人/自然人自动签署，适用于个人自动签场景</li>
+<li> **ORGANIZATION** :企业/企业员工（企业签署方或模板发起时的企业静默签）</li>
+<li> **ENTERPRISESERVER** :企业/企业员自动签（他方企业自动签署或文件发起时的本方企业自动签）</li></ul>
 
-若要实现他方企业（同一应用下）自动签，需要满足3个条件：
-条件1：ApproverType 设置为ENTERPRISESERVER
-条件2：子客之间完成授权
-条件3：联系对接的客户经理沟通
+注:  
+`1. 个人自动签场景(PERSON_AUTO_SIGN)为白名单功能, 使用前请联系对接的客户经理沟通。`
+`2. 若要实现他方企业（同一应用下）自动签，需要满足3个条件：`
+<ul><li>条件1：ApproverType 设置为ENTERPRISESERVER</li>
+<li>条件2：子客之间完成授权</li>
+<li>条件3：联系对接的客户经理沟通如何使用</li></ul>
                      * 
                      */
                     void SetApproverType(const std::string& _approverType);
@@ -337,15 +397,19 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取签署截止时间戳，默认一年
-                     * @return Deadline 签署截止时间戳，默认一年
+                     * 获取本签署人在此合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。
+如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     * @return Deadline 本签署人在此合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。
+如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
                      * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置签署截止时间戳，默认一年
-                     * @param _deadline 签署截止时间戳，默认一年
+                     * 设置本签署人在此合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。
+如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     * @param _deadline 本签署人在此合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。
+如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
                      * 
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -437,15 +501,43 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                     bool ComponentLimitTypeHasBeenSet() const;
 
                     /**
-                     * 获取合同的强制预览时间：3~300s，未指定则按合同页数计算
-                     * @return PreReadTime 合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     * 获取签署方在签署合同之前，需要强制阅读合同的时长，可指定为3秒至300秒之间的任意值。
+
+若未指定阅读时间，则会按照合同页数大小计算阅读时间，计算规则如下：
+<ul>
+<li>合同页数少于等于2页，阅读时间为3秒；</li>
+<li>合同页数为3到5页，阅读时间为5秒；</li>
+<li>合同页数大于等于6页，阅读时间为10秒。</li>
+</ul>
+                     * @return PreReadTime 签署方在签署合同之前，需要强制阅读合同的时长，可指定为3秒至300秒之间的任意值。
+
+若未指定阅读时间，则会按照合同页数大小计算阅读时间，计算规则如下：
+<ul>
+<li>合同页数少于等于2页，阅读时间为3秒；</li>
+<li>合同页数为3到5页，阅读时间为5秒；</li>
+<li>合同页数大于等于6页，阅读时间为10秒。</li>
+</ul>
                      * 
                      */
                     int64_t GetPreReadTime() const;
 
                     /**
-                     * 设置合同的强制预览时间：3~300s，未指定则按合同页数计算
-                     * @param _preReadTime 合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     * 设置签署方在签署合同之前，需要强制阅读合同的时长，可指定为3秒至300秒之间的任意值。
+
+若未指定阅读时间，则会按照合同页数大小计算阅读时间，计算规则如下：
+<ul>
+<li>合同页数少于等于2页，阅读时间为3秒；</li>
+<li>合同页数为3到5页，阅读时间为5秒；</li>
+<li>合同页数大于等于6页，阅读时间为10秒。</li>
+</ul>
+                     * @param _preReadTime 签署方在签署合同之前，需要强制阅读合同的时长，可指定为3秒至300秒之间的任意值。
+
+若未指定阅读时间，则会按照合同页数大小计算阅读时间，计算规则如下：
+<ul>
+<li>合同页数少于等于2页，阅读时间为3秒；</li>
+<li>合同页数为3到5页，阅读时间为5秒；</li>
+<li>合同页数大于等于6页，阅读时间为10秒。</li>
+</ul>
                      * 
                      */
                     void SetPreReadTime(const int64_t& _preReadTime);
@@ -479,15 +571,19 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                     bool JumpUrlHasBeenSet() const;
 
                     /**
-                     * 获取签署人个性化能力值
-                     * @return ApproverOption 签署人个性化能力值
+                     * 获取可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。
+详细操作可以参考开发者中心的ApproverOption结构体。
+                     * @return ApproverOption 可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。
+详细操作可以参考开发者中心的ApproverOption结构体。
                      * 
                      */
                     ApproverOption GetApproverOption() const;
 
                     /**
-                     * 设置签署人个性化能力值
-                     * @param _approverOption 签署人个性化能力值
+                     * 设置可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。
+详细操作可以参考开发者中心的ApproverOption结构体。
+                     * @param _approverOption 可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。
+详细操作可以参考开发者中心的ApproverOption结构体。
                      * 
                      */
                     void SetApproverOption(const ApproverOption& _approverOption);
@@ -604,19 +700,31 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                     bool SignIdHasBeenSet() const;
 
                     /**
-                     * 获取SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息
-默认为SMS(签署方为子客时该字段不生效)
-                     * @return NotifyType SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息
-默认为SMS(签署方为子客时该字段不生效)
+                     * 获取通知签署方经办人的方式, 有以下途径:
+<ul><li> **SMS** :(默认)短信</li>
+<li> **NONE** : 不通知</li></ul>
+
+注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`
+                     * @return NotifyType 通知签署方经办人的方式, 有以下途径:
+<ul><li> **SMS** :(默认)短信</li>
+<li> **NONE** : 不通知</li></ul>
+
+注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`
                      * 
                      */
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息
-默认为SMS(签署方为子客时该字段不生效)
-                     * @param _notifyType SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息
-默认为SMS(签署方为子客时该字段不生效)
+                     * 设置通知签署方经办人的方式, 有以下途径:
+<ul><li> **SMS** :(默认)短信</li>
+<li> **NONE** : 不通知</li></ul>
+
+注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`
+                     * @param _notifyType 通知签署方经办人的方式, 有以下途径:
+<ul><li> **SMS** :(默认)短信</li>
+<li> **NONE** : 不通知</li></ul>
+
+注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`
                      * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -658,15 +766,15 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                     bool AddSignComponentsLimitsHasBeenSet() const;
 
                     /**
-                     * 获取自定义签署方角色名称
-                     * @return ApproverRoleName 自定义签署方角色名称
+                     * 获取自定义签署人角色名，如收款人、开具人、见证人等
+                     * @return ApproverRoleName 自定义签署人角色名，如收款人、开具人、见证人等
                      * 
                      */
                     std::string GetApproverRoleName() const;
 
                     /**
-                     * 设置自定义签署方角色名称
-                     * @param _approverRoleName 自定义签署方角色名称
+                     * 设置自定义签署人角色名，如收款人、开具人、见证人等
+                     * @param _approverRoleName 自定义签署人角色名，如收款人、开具人、见证人等
                      * 
                      */
                     void SetApproverRoleName(const std::string& _approverRoleName);
@@ -681,71 +789,86 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                 private:
 
                     /**
-                     * 签署人姓名，最大长度50个字符
+                     * 签署方经办人的姓名。
+经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 签署人的证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）
+                     * 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他证件</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 签署人证件号（长度不超过18位）
+                     * 签署方经办人的证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。
+                     * 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)， 不支持海外手机号。
+请确认手机号所有方为此合同签署方。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     * 组织机构名称。
+请确认该名称与企业营业执照中注册的名称一致。
+如果名称中包含英文括号()，请使用中文括号（）代替。
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 指定签署人非第三方平台子客企业下员工，在ApproverType为ORGANIZATION时指定。
-默认为false，即签署人位于同一个第三方平台应用号下；默认为false，即签署人位于同一个第三方应用号下；
+                     * 指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。
+<ul>
+<li>false: 默认值，第三方平台子客企业下员工</li>
+<li>true: SaaS平台企业下的员工</li>
+</ul>
+
                      */
                     bool m_notChannelOrganization;
                     bool m_notChannelOrganizationHasBeenSet;
 
                     /**
-                     * 用户侧第三方id，最大长度64个字符
+                     * 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成
+
 当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * 企业签署方在同一第三方平台应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     * 同应用下第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样，签署方为非发起方企业场景下必传，最大长度64个字符
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
-                     * 签署人类型
-PERSON-个人/自然人；
-PERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景
-注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。
-ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
-ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的本方企业自动签）
+                     * 在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:
+<ul><li> **PERSON** :个人/自然人</li>
+<li> **PERSON_AUTO_SIGN** :个人/自然人自动签署，适用于个人自动签场景</li>
+<li> **ORGANIZATION** :企业/企业员工（企业签署方或模板发起时的企业静默签）</li>
+<li> **ENTERPRISESERVER** :企业/企业员自动签（他方企业自动签署或文件发起时的本方企业自动签）</li></ul>
 
-若要实现他方企业（同一应用下）自动签，需要满足3个条件：
-条件1：ApproverType 设置为ENTERPRISESERVER
-条件2：子客之间完成授权
-条件3：联系对接的客户经理沟通
+注:  
+`1. 个人自动签场景(PERSON_AUTO_SIGN)为白名单功能, 使用前请联系对接的客户经理沟通。`
+`2. 若要实现他方企业（同一应用下）自动签，需要满足3个条件：`
+<ul><li>条件1：ApproverType 设置为ENTERPRISESERVER</li>
+<li>条件2：子客之间完成授权</li>
+<li>条件3：联系对接的客户经理沟通如何使用</li></ul>
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;
@@ -757,7 +880,8 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 签署截止时间戳，默认一年
+                     * 本签署人在此合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。
+如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
@@ -785,7 +909,14 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                     bool m_componentLimitTypeHasBeenSet;
 
                     /**
-                     * 合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     * 签署方在签署合同之前，需要强制阅读合同的时长，可指定为3秒至300秒之间的任意值。
+
+若未指定阅读时间，则会按照合同页数大小计算阅读时间，计算规则如下：
+<ul>
+<li>合同页数少于等于2页，阅读时间为3秒；</li>
+<li>合同页数为3到5页，阅读时间为5秒；</li>
+<li>合同页数大于等于6页，阅读时间为10秒。</li>
+</ul>
                      */
                     int64_t m_preReadTime;
                     bool m_preReadTimeHasBeenSet;
@@ -797,7 +928,8 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                     bool m_jumpUrlHasBeenSet;
 
                     /**
-                     * 签署人个性化能力值
+                     * 可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。
+详细操作可以参考开发者中心的ApproverOption结构体。
                      */
                     ApproverOption m_approverOption;
                     bool m_approverOptionHasBeenSet;
@@ -832,8 +964,11 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                     bool m_signIdHasBeenSet;
 
                     /**
-                     * SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息
-默认为SMS(签署方为子客时该字段不生效)
+                     * 通知签署方经办人的方式, 有以下途径:
+<ul><li> **SMS** :(默认)短信</li>
+<li> **NONE** : 不通知</li></ul>
+
+注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;
@@ -847,7 +982,7 @@ ENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的
                     bool m_addSignComponentsLimitsHasBeenSet;
 
                     /**
-                     * 自定义签署方角色名称
+                     * 自定义签署人角色名，如收款人、开具人、见证人等
                      */
                     std::string m_approverRoleName;
                     bool m_approverRoleNameHasBeenSet;

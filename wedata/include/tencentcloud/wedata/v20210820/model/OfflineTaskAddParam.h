@@ -431,6 +431,56 @@ namespace TencentCloud
                      */
                     bool ExecutionStartTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动提交
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskAutoSubmit 是否自动提交
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetTaskAutoSubmit() const;
+
+                    /**
+                     * 设置是否自动提交
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskAutoSubmit 是否自动提交
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskAutoSubmit(const bool& _taskAutoSubmit);
+
+                    /**
+                     * 判断参数 TaskAutoSubmit 是否已赋值
+                     * @return TaskAutoSubmit 是否已赋值
+                     * 
+                     */
+                    bool TaskAutoSubmitHasBeenSet() const;
+
+                    /**
+                     * 获取实例初始化策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceInitStrategy 实例初始化策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceInitStrategy() const;
+
+                    /**
+                     * 设置实例初始化策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceInitStrategy 实例初始化策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceInitStrategy(const std::string& _instanceInitStrategy);
+
+                    /**
+                     * 判断参数 InstanceInitStrategy 是否已赋值
+                     * @return InstanceInitStrategy 是否已赋值
+                     * 
+                     */
+                    bool InstanceInitStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -541,6 +591,20 @@ namespace TencentCloud
                      */
                     std::string m_executionStartTime;
                     bool m_executionStartTimeHasBeenSet;
+
+                    /**
+                     * 是否自动提交
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_taskAutoSubmit;
+                    bool m_taskAutoSubmitHasBeenSet;
+
+                    /**
+                     * 实例初始化策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceInitStrategy;
+                    bool m_instanceInitStrategyHasBeenSet;
 
                 };
             }

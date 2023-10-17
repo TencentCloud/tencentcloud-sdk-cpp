@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取加固任务结果Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultId 加固任务结果Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResultId() const;
 
                     /**
                      * 设置加固任务结果Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resultId 加固任务结果Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResultId(const std::string& _resultId);
@@ -67,13 +71,366 @@ namespace TencentCloud
                      */
                     bool ResultIdHasBeenSet() const;
 
+                    /**
+                     * 获取用户uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpUin 用户uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetOpUin() const;
+
+                    /**
+                     * 设置用户uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _opUin 用户uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOpUin(const int64_t& _opUin);
+
+                    /**
+                     * 判断参数 OpUin 是否已赋值
+                     * @return OpUin 是否已赋值
+                     * 
+                     */
+                    bool OpUinHasBeenSet() const;
+
+                    /**
+                     * 获取加固类型，这里为ios
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptType 加固类型，这里为ios
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEncryptType() const;
+
+                    /**
+                     * 设置加固类型，这里为ios
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _encryptType 加固类型，这里为ios
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEncryptType(const std::string& _encryptType);
+
+                    /**
+                     * 判断参数 EncryptType 是否已赋值
+                     * @return EncryptType 是否已赋值
+                     * 
+                     */
+                    bool EncryptTypeHasBeenSet() const;
+
+                    /**
+                     * 获取资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceId 资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceId 资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取加固状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptState 加固状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEncryptState() const;
+
+                    /**
+                     * 设置加固状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _encryptState 加固状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEncryptState(const int64_t& _encryptState);
+
+                    /**
+                     * 判断参数 EncryptState 是否已赋值
+                     * @return EncryptState 是否已赋值
+                     * 
+                     */
+                    bool EncryptStateHasBeenSet() const;
+
+                    /**
+                     * 获取业务错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptErrno 业务错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEncryptErrno() const;
+
+                    /**
+                     * 设置业务错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _encryptErrno 业务错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEncryptErrno(const int64_t& _encryptErrno);
+
+                    /**
+                     * 判断参数 EncryptErrno 是否已赋值
+                     * @return EncryptErrno 是否已赋值
+                     * 
+                     */
+                    bool EncryptErrnoHasBeenSet() const;
+
+                    /**
+                     * 获取业务错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptErrDesc 业务错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEncryptErrDesc() const;
+
+                    /**
+                     * 设置业务错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _encryptErrDesc 业务错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEncryptErrDesc(const std::string& _encryptErrDesc);
+
+                    /**
+                     * 判断参数 EncryptErrDesc 是否已赋值
+                     * @return EncryptErrDesc 是否已赋值
+                     * 
+                     */
+                    bool EncryptErrDescHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreatTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creatTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreatTime(const std::string& _creatTime);
+
+                    /**
+                     * 判断参数 CreatTime 是否已赋值
+                     * @return CreatTime 是否已赋值
+                     * 
+                     */
+                    bool CreatTimeHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartTime 开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _startTime 开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndTime 结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _endTime 结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取消耗时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CostTime 消耗时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCostTime() const;
+
+                    /**
+                     * 设置消耗时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _costTime 消耗时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCostTime(const int64_t& _costTime);
+
+                    /**
+                     * 判断参数 CostTime 是否已赋值
+                     * @return CostTime 是否已赋值
+                     * 
+                     */
+                    bool CostTimeHasBeenSet() const;
+
+                    /**
+                     * 获取加固（混淆）包结果url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptPkgUrl 加固（混淆）包结果url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEncryptPkgUrl() const;
+
+                    /**
+                     * 设置加固（混淆）包结果url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _encryptPkgUrl 加固（混淆）包结果url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEncryptPkgUrl(const std::string& _encryptPkgUrl);
+
+                    /**
+                     * 判断参数 EncryptPkgUrl 是否已赋值
+                     * @return EncryptPkgUrl 是否已赋值
+                     * 
+                     */
+                    bool EncryptPkgUrlHasBeenSet() const;
+
                 private:
 
                     /**
                      * 加固任务结果Id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resultId;
                     bool m_resultIdHasBeenSet;
+
+                    /**
+                     * 用户uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_opUin;
+                    bool m_opUinHasBeenSet;
+
+                    /**
+                     * 加固类型，这里为ios
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptType;
+                    bool m_encryptTypeHasBeenSet;
+
+                    /**
+                     * 资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 加固状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_encryptState;
+                    bool m_encryptStateHasBeenSet;
+
+                    /**
+                     * 业务错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_encryptErrno;
+                    bool m_encryptErrnoHasBeenSet;
+
+                    /**
+                     * 业务错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptErrDesc;
+                    bool m_encryptErrDescHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creatTime;
+                    bool m_creatTimeHasBeenSet;
+
+                    /**
+                     * 开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 消耗时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_costTime;
+                    bool m_costTimeHasBeenSet;
+
+                    /**
+                     * 加固（混淆）包结果url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptPkgUrl;
+                    bool m_encryptPkgUrlHasBeenSet;
 
                 };
             }

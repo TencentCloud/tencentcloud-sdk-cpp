@@ -37,7 +37,9 @@ OfflineTaskAddParam::OfflineTaskAddParam() :
     m_selfDependHasBeenSet(false),
     m_taskActionHasBeenSet(false),
     m_executionEndTimeHasBeenSet(false),
-    m_executionStartTimeHasBeenSet(false)
+    m_executionStartTimeHasBeenSet(false),
+    m_taskAutoSubmitHasBeenSet(false),
+    m_instanceInitStrategyHasBeenSet(false)
 {
 }
 
@@ -216,6 +218,26 @@ CoreInternalOutcome OfflineTaskAddParam::Deserialize(const rapidjson::Value &val
         m_executionStartTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskAutoSubmit") && !value["TaskAutoSubmit"].IsNull())
+    {
+        if (!value["TaskAutoSubmit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `OfflineTaskAddParam.TaskAutoSubmit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskAutoSubmit = value["TaskAutoSubmit"].GetBool();
+        m_taskAutoSubmitHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceInitStrategy") && !value["InstanceInitStrategy"].IsNull())
+    {
+        if (!value["InstanceInitStrategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OfflineTaskAddParam.InstanceInitStrategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceInitStrategy = string(value["InstanceInitStrategy"].GetString());
+        m_instanceInitStrategyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +379,22 @@ void OfflineTaskAddParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ExecutionStartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executionStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskAutoSubmitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskAutoSubmit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskAutoSubmit, allocator);
+    }
+
+    if (m_instanceInitStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceInitStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceInitStrategy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +670,37 @@ void OfflineTaskAddParam::SetExecutionStartTime(const string& _executionStartTim
 bool OfflineTaskAddParam::ExecutionStartTimeHasBeenSet() const
 {
     return m_executionStartTimeHasBeenSet;
+}
+
+bool OfflineTaskAddParam::GetTaskAutoSubmit() const
+{
+    return m_taskAutoSubmit;
+}
+
+void OfflineTaskAddParam::SetTaskAutoSubmit(const bool& _taskAutoSubmit)
+{
+    m_taskAutoSubmit = _taskAutoSubmit;
+    m_taskAutoSubmitHasBeenSet = true;
+}
+
+bool OfflineTaskAddParam::TaskAutoSubmitHasBeenSet() const
+{
+    return m_taskAutoSubmitHasBeenSet;
+}
+
+string OfflineTaskAddParam::GetInstanceInitStrategy() const
+{
+    return m_instanceInitStrategy;
+}
+
+void OfflineTaskAddParam::SetInstanceInitStrategy(const string& _instanceInitStrategy)
+{
+    m_instanceInitStrategy = _instanceInitStrategy;
+    m_instanceInitStrategyHasBeenSet = true;
+}
+
+bool OfflineTaskAddParam::InstanceInitStrategyHasBeenSet() const
+{
+    return m_instanceInitStrategyHasBeenSet;
 }
 

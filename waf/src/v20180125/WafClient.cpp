@@ -1416,6 +1416,49 @@ WafClient::DescribeAttackOverviewOutcomeCallable WafClient::DescribeAttackOvervi
     return task->get_future();
 }
 
+WafClient::DescribeAttackTypeOutcome WafClient::DescribeAttackType(const DescribeAttackTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAttackType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAttackTypeResponse rsp = DescribeAttackTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAttackTypeOutcome(rsp);
+        else
+            return DescribeAttackTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAttackTypeOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeAttackTypeAsync(const DescribeAttackTypeRequest& request, const DescribeAttackTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAttackType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeAttackTypeOutcomeCallable WafClient::DescribeAttackTypeCallable(const DescribeAttackTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAttackTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAttackType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeAttackWhiteRuleOutcome WafClient::DescribeAttackWhiteRule(const DescribeAttackWhiteRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAttackWhiteRule");
@@ -2190,6 +2233,49 @@ WafClient::DescribeFlowTrendOutcomeCallable WafClient::DescribeFlowTrendCallable
     return task->get_future();
 }
 
+WafClient::DescribeHistogramOutcome WafClient::DescribeHistogram(const DescribeHistogramRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHistogram");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHistogramResponse rsp = DescribeHistogramResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHistogramOutcome(rsp);
+        else
+            return DescribeHistogramOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHistogramOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeHistogramAsync(const DescribeHistogramRequest& request, const DescribeHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHistogram(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeHistogramOutcomeCallable WafClient::DescribeHistogramCallable(const DescribeHistogramRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHistogramOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHistogram(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeHostOutcome WafClient::DescribeHost(const DescribeHostRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHost");
@@ -2785,6 +2871,49 @@ WafClient::DescribeTlsVersionOutcomeCallable WafClient::DescribeTlsVersionCallab
         [this, request]()
         {
             return this->DescribeTlsVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeTopAttackDomainOutcome WafClient::DescribeTopAttackDomain(const DescribeTopAttackDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopAttackDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopAttackDomainResponse rsp = DescribeTopAttackDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopAttackDomainOutcome(rsp);
+        else
+            return DescribeTopAttackDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopAttackDomainOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeTopAttackDomainAsync(const DescribeTopAttackDomainRequest& request, const DescribeTopAttackDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopAttackDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeTopAttackDomainOutcomeCallable WafClient::DescribeTopAttackDomainCallable(const DescribeTopAttackDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopAttackDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopAttackDomain(request);
         }
     );
 

@@ -87,6 +87,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackOverviewRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackOverviewResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAttackTypeRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAttackTypeResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPRequest.h>
@@ -123,6 +125,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeFindDomainListResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeFlowTrendRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeFlowTrendResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeHistogramRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeHistogramResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeHostRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeHostLimitRequest.h>
@@ -151,6 +155,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeSessionResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeTlsVersionRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeTlsVersionResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeTopAttackDomainRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeTopAttackDomainResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h>
@@ -379,6 +385,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAttackOverviewResponse> DescribeAttackOverviewOutcome;
                 typedef std::future<DescribeAttackOverviewOutcome> DescribeAttackOverviewOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAttackOverviewRequest&, DescribeAttackOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAttackTypeResponse> DescribeAttackTypeOutcome;
+                typedef std::future<DescribeAttackTypeOutcome> DescribeAttackTypeOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeAttackTypeRequest&, DescribeAttackTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAttackWhiteRuleResponse> DescribeAttackWhiteRuleOutcome;
                 typedef std::future<DescribeAttackWhiteRuleOutcome> DescribeAttackWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAttackWhiteRuleRequest&, DescribeAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackWhiteRuleAsyncHandler;
@@ -433,6 +442,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowTrendResponse> DescribeFlowTrendOutcome;
                 typedef std::future<DescribeFlowTrendOutcome> DescribeFlowTrendOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeFlowTrendRequest&, DescribeFlowTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHistogramResponse> DescribeHistogramOutcome;
+                typedef std::future<DescribeHistogramOutcome> DescribeHistogramOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeHistogramRequest&, DescribeHistogramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistogramAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHostResponse> DescribeHostOutcome;
                 typedef std::future<DescribeHostOutcome> DescribeHostOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeHostRequest&, DescribeHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostAsyncHandler;
@@ -475,6 +487,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTlsVersionResponse> DescribeTlsVersionOutcome;
                 typedef std::future<DescribeTlsVersionOutcome> DescribeTlsVersionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeTlsVersionRequest&, DescribeTlsVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTlsVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopAttackDomainResponse> DescribeTopAttackDomainOutcome;
+                typedef std::future<DescribeTopAttackDomainOutcome> DescribeTopAttackDomainOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeTopAttackDomainRequest&, DescribeTopAttackDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopAttackDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserCdcClbWafRegionsResponse> DescribeUserCdcClbWafRegionsOutcome;
                 typedef std::future<DescribeUserCdcClbWafRegionsOutcome> DescribeUserCdcClbWafRegionsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeUserCdcClbWafRegionsRequest&, DescribeUserCdcClbWafRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCdcClbWafRegionsAsyncHandler;
@@ -947,6 +962,15 @@ namespace TencentCloud
                 DescribeAttackOverviewOutcomeCallable DescribeAttackOverviewCallable(const Model::DescribeAttackOverviewRequest& request);
 
                 /**
+                 *查询指定域名TOP N攻击类型
+                 * @param req DescribeAttackTypeRequest
+                 * @return DescribeAttackTypeOutcome
+                 */
+                DescribeAttackTypeOutcome DescribeAttackType(const Model::DescribeAttackTypeRequest &request);
+                void DescribeAttackTypeAsync(const Model::DescribeAttackTypeRequest& request, const DescribeAttackTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAttackTypeOutcomeCallable DescribeAttackTypeCallable(const Model::DescribeAttackTypeRequest& request);
+
+                /**
                  *获取用户规则白名单列表
                  * @param req DescribeAttackWhiteRuleRequest
                  * @return DescribeAttackWhiteRuleOutcome
@@ -1111,6 +1135,15 @@ namespace TencentCloud
                 DescribeFlowTrendOutcomeCallable DescribeFlowTrendCallable(const Model::DescribeFlowTrendRequest& request);
 
                 /**
+                 *查询多种条件的聚类分析
+                 * @param req DescribeHistogramRequest
+                 * @return DescribeHistogramOutcome
+                 */
+                DescribeHistogramOutcome DescribeHistogram(const Model::DescribeHistogramRequest &request);
+                void DescribeHistogramAsync(const Model::DescribeHistogramRequest& request, const DescribeHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHistogramOutcomeCallable DescribeHistogramCallable(const Model::DescribeHistogramRequest& request);
+
+                /**
                  *clb-waf获取防护域名详情
                  * @param req DescribeHostRequest
                  * @return DescribeHostOutcome
@@ -1235,6 +1268,15 @@ namespace TencentCloud
                 DescribeTlsVersionOutcome DescribeTlsVersion(const Model::DescribeTlsVersionRequest &request);
                 void DescribeTlsVersionAsync(const Model::DescribeTlsVersionRequest& request, const DescribeTlsVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTlsVersionOutcomeCallable DescribeTlsVersionCallable(const Model::DescribeTlsVersionRequest& request);
+
+                /**
+                 *查询Top5的攻击域名
+                 * @param req DescribeTopAttackDomainRequest
+                 * @return DescribeTopAttackDomainOutcome
+                 */
+                DescribeTopAttackDomainOutcome DescribeTopAttackDomain(const Model::DescribeTopAttackDomainRequest &request);
+                void DescribeTopAttackDomainAsync(const Model::DescribeTopAttackDomainRequest& request, const DescribeTopAttackDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopAttackDomainOutcomeCallable DescribeTopAttackDomainCallable(const Model::DescribeTopAttackDomainRequest& request);
 
                 /**
                  *在CDC场景下，负载均衡型WAF的添加、编辑域名配置的时候，需要展示CDC负载均衡型WAF（cdc-clb-waf)支持的地域列表，通过DescribeUserCdcClbWafRegions既可以获得当前对客户已经开放的地域列表

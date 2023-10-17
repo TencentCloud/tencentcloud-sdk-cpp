@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/BoundK8SInfo.h>
 #include <tencentcloud/tse/v20201207/model/VpcInfo.h>
+#include <tencentcloud/tse/v20201207/model/PolarisCLSTopicInfo.h>
 
 
 namespace TencentCloud
@@ -216,6 +217,31 @@ namespace TencentCloud
                      */
                     bool LimiterVpcInfosHasBeenSet() const;
 
+                    /**
+                     * 获取引擎关联CLS日志主题信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CLSTopics 引擎关联CLS日志主题信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<PolarisCLSTopicInfo> GetCLSTopics() const;
+
+                    /**
+                     * 设置引擎关联CLS日志主题信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cLSTopics 引擎关联CLS日志主题信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCLSTopics(const std::vector<PolarisCLSTopicInfo>& _cLSTopics);
+
+                    /**
+                     * 判断参数 CLSTopics 是否已赋值
+                     * @return CLSTopics 是否已赋值
+                     * 
+                     */
+                    bool CLSTopicsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -265,6 +291,13 @@ namespace TencentCloud
                      */
                     std::vector<VpcInfo> m_limiterVpcInfos;
                     bool m_limiterVpcInfosHasBeenSet;
+
+                    /**
+                     * 引擎关联CLS日志主题信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PolarisCLSTopicInfo> m_cLSTopics;
+                    bool m_cLSTopicsHasBeenSet;
 
                 };
             }

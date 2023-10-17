@@ -69,10 +69,14 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/StopJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/StopJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/TriggerJobSavepointRequest.h>
@@ -160,12 +164,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWorkSpacesResponse> DescribeWorkSpacesOutcome;
                 typedef std::future<DescribeWorkSpacesOutcome> DescribeWorkSpacesOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeWorkSpacesRequest&, DescribeWorkSpacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkSpacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::FetchSqlGatewayStatementResultResponse> FetchSqlGatewayStatementResultOutcome;
+                typedef std::future<FetchSqlGatewayStatementResultOutcome> FetchSqlGatewayStatementResultOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::FetchSqlGatewayStatementResultRequest&, FetchSqlGatewayStatementResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchSqlGatewayStatementResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyJobResponse> ModifyJobOutcome;
                 typedef std::future<ModifyJobOutcome> ModifyJobOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ModifyJobRequest&, ModifyJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobsResponse> RunJobsOutcome;
                 typedef std::future<RunJobsOutcome> RunJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::RunJobsRequest&, RunJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunSqlGatewayStatementResponse> RunSqlGatewayStatementOutcome;
+                typedef std::future<RunSqlGatewayStatementOutcome> RunSqlGatewayStatementOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::RunSqlGatewayStatementRequest&, RunSqlGatewayStatementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunSqlGatewayStatementAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopJobsResponse> StopJobsOutcome;
                 typedef std::future<StopJobsOutcome> StopJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::StopJobsRequest&, StopJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopJobsAsyncHandler;
@@ -383,6 +393,15 @@ namespace TencentCloud
                 DescribeWorkSpacesOutcomeCallable DescribeWorkSpacesCallable(const Model::DescribeWorkSpacesRequest& request);
 
                 /**
+                 *查询Sql Gateway的Statement执行结果
+                 * @param req FetchSqlGatewayStatementResultRequest
+                 * @return FetchSqlGatewayStatementResultOutcome
+                 */
+                FetchSqlGatewayStatementResultOutcome FetchSqlGatewayStatementResult(const Model::FetchSqlGatewayStatementResultRequest &request);
+                void FetchSqlGatewayStatementResultAsync(const Model::FetchSqlGatewayStatementResultRequest& request, const FetchSqlGatewayStatementResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FetchSqlGatewayStatementResultOutcomeCallable FetchSqlGatewayStatementResultCallable(const Model::FetchSqlGatewayStatementResultRequest& request);
+
+                /**
                  *更新作业属性，仅允许以下3种操作，不支持组合操作：
 (1)	更新作业名称
 (2)	更新作业备注 
@@ -409,6 +428,15 @@ namespace TencentCloud
                 RunJobsOutcome RunJobs(const Model::RunJobsRequest &request);
                 void RunJobsAsync(const Model::RunJobsRequest& request, const RunJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunJobsOutcomeCallable RunJobsCallable(const Model::RunJobsRequest& request);
+
+                /**
+                 *通过Sql gateway执行satement
+                 * @param req RunSqlGatewayStatementRequest
+                 * @return RunSqlGatewayStatementOutcome
+                 */
+                RunSqlGatewayStatementOutcome RunSqlGatewayStatement(const Model::RunSqlGatewayStatementRequest &request);
+                void RunSqlGatewayStatementAsync(const Model::RunSqlGatewayStatementRequest& request, const RunSqlGatewayStatementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunSqlGatewayStatementOutcomeCallable RunSqlGatewayStatementCallable(const Model::RunSqlGatewayStatementRequest& request);
 
                 /**
                  *批量停止作业，批量操作数量上限为20

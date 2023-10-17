@@ -29,7 +29,8 @@ CreateEncryptInstanceRequest::CreateEncryptInstanceRequest() :
     m_resourceIdHasBeenSet(false),
     m_androidAppInfoHasBeenSet(false),
     m_androidPlanHasBeenSet(false),
-    m_appletInfoHasBeenSet(false)
+    m_appletInfoHasBeenSet(false),
+    m_iOSInfoHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,15 @@ string CreateEncryptInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_appletInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_iOSInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IOSInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iOSInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -217,6 +227,22 @@ void CreateEncryptInstanceRequest::SetAppletInfo(const AppletInfo& _appletInfo)
 bool CreateEncryptInstanceRequest::AppletInfoHasBeenSet() const
 {
     return m_appletInfoHasBeenSet;
+}
+
+IOSInfo CreateEncryptInstanceRequest::GetIOSInfo() const
+{
+    return m_iOSInfo;
+}
+
+void CreateEncryptInstanceRequest::SetIOSInfo(const IOSInfo& _iOSInfo)
+{
+    m_iOSInfo = _iOSInfo;
+    m_iOSInfoHasBeenSet = true;
+}
+
+bool CreateEncryptInstanceRequest::IOSInfoHasBeenSet() const
+{
+    return m_iOSInfoHasBeenSet;
 }
 
 

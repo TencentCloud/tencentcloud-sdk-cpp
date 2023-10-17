@@ -29,6 +29,7 @@
 #include <tencentcloud/tse/v20201207/model/ServiceGovernanceInfo.h>
 #include <tencentcloud/tse/v20201207/model/KVPair.h>
 #include <tencentcloud/tse/v20201207/model/DescribeInstanceRegionInfo.h>
+#include <tencentcloud/tse/v20201207/model/StorageOption.h>
 
 
 namespace TencentCloud
@@ -844,6 +845,31 @@ namespace TencentCloud
                      */
                     bool EnableClientIntranetHasBeenSet() const;
 
+                    /**
+                     * 获取存储额外配置选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageOption 存储额外配置选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<StorageOption> GetStorageOption() const;
+
+                    /**
+                     * 设置存储额外配置选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _storageOption 存储额外配置选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStorageOption(const std::vector<StorageOption>& _storageOption);
+
+                    /**
+                     * 判断参数 StorageOption 是否已赋值
+                     * @return StorageOption 是否已赋值
+                     * 
+                     */
+                    bool StorageOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1068,6 +1094,13 @@ namespace TencentCloud
                      */
                     bool m_enableClientIntranet;
                     bool m_enableClientIntranetHasBeenSet;
+
+                    /**
+                     * 存储额外配置选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<StorageOption> m_storageOption;
+                    bool m_storageOptionHasBeenSet;
 
                 };
             }

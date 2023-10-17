@@ -53,6 +53,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ExternalRedis.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCertificateRequest.h
   include/tencentcloud/tse/v20201207/model/EnvAddressInfo.h
+  include/tencentcloud/tse/v20201207/model/CLBMultiRegion.h
   include/tencentcloud/tse/v20201207/model/SREInstance.h
   include/tencentcloud/tse/v20201207/model/InstanceTagInfo.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.h
@@ -69,6 +70,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.h
   include/tencentcloud/tse/v20201207/model/InstancePort.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayResult.h
+  include/tencentcloud/tse/v20201207/model/PolarisCLSTopicInfo.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayRouteResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayPortsResponse.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayRouteRateLimitRequest.h
@@ -96,6 +98,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServiceRateLimitResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceRequest.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayCertificateResponse.h
+  include/tencentcloud/tse/v20201207/model/StorageOption.h
   include/tencentcloud/tse/v20201207/model/EnvInfo.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayCanaryRuleRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupRequest.h
@@ -222,6 +225,7 @@ set(tse_src
   src/v20201207/model/ExternalRedis.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayCertificateRequest.cpp
   src/v20201207/model/EnvAddressInfo.cpp
+  src/v20201207/model/CLBMultiRegion.cpp
   src/v20201207/model/SREInstance.cpp
   src/v20201207/model/InstanceTagInfo.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.cpp
@@ -238,6 +242,7 @@ set(tse_src
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.cpp
   src/v20201207/model/InstancePort.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayResult.cpp
+  src/v20201207/model/PolarisCLSTopicInfo.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayRouteResponse.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayPortsResponse.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayRouteRateLimitRequest.cpp
@@ -265,6 +270,7 @@ set(tse_src
   src/v20201207/model/DescribeCloudNativeAPIGatewayServiceRateLimitResponse.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceRequest.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayCertificateResponse.cpp
+  src/v20201207/model/StorageOption.cpp
   src/v20201207/model/EnvInfo.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayCanaryRuleRequest.cpp
   src/v20201207/model/ModifyNativeGatewayServerGroupRequest.cpp

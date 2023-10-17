@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool SpecIdHasBeenSet() const;
 
                     /**
-                     * 获取内网的网络信息
+                     * 获取客户端内网的网络信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntranetVpcInfos 内网的网络信息
+                     * @return IntranetVpcInfos 客户端内网的网络信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcInfo> GetIntranetVpcInfos() const;
 
                     /**
-                     * 设置内网的网络信息
+                     * 设置客户端内网的网络信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _intranetVpcInfos 内网的网络信息
+                     * @param _intranetVpcInfos 客户端内网的网络信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -146,6 +146,31 @@ namespace TencentCloud
                      * 
                      */
                     bool IntranetVpcInfosHasBeenSet() const;
+
+                    /**
+                     * 获取控制台内网的网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConsoleIntranetVpcInfos 控制台内网的网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<VpcInfo> GetConsoleIntranetVpcInfos() const;
+
+                    /**
+                     * 设置控制台内网的网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _consoleIntranetVpcInfos 控制台内网的网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConsoleIntranetVpcInfos(const std::vector<VpcInfo>& _consoleIntranetVpcInfos);
+
+                    /**
+                     * 判断参数 ConsoleIntranetVpcInfos 是否已赋值
+                     * @return ConsoleIntranetVpcInfos 是否已赋值
+                     * 
+                     */
+                    bool ConsoleIntranetVpcInfosHasBeenSet() const;
 
                     /**
                      * 获取是否开公网
@@ -172,6 +197,81 @@ namespace TencentCloud
                      */
                     bool EnableClientInternetHasBeenSet() const;
 
+                    /**
+                     * 获取限流客户端内网的网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LimiterIntranetVpcInfos 限流客户端内网的网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<VpcInfo> GetLimiterIntranetVpcInfos() const;
+
+                    /**
+                     * 设置限流客户端内网的网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _limiterIntranetVpcInfos 限流客户端内网的网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLimiterIntranetVpcInfos(const std::vector<VpcInfo>& _limiterIntranetVpcInfos);
+
+                    /**
+                     * 判断参数 LimiterIntranetVpcInfos 是否已赋值
+                     * @return LimiterIntranetVpcInfos 是否已赋值
+                     * 
+                     */
+                    bool LimiterIntranetVpcInfosHasBeenSet() const;
+
+                    /**
+                     * 获取是否为主地域，仅在服务治理中心多地域有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MainRegion 是否为主地域，仅在服务治理中心多地域有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetMainRegion() const;
+
+                    /**
+                     * 设置是否为主地域，仅在服务治理中心多地域有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mainRegion 是否为主地域，仅在服务治理中心多地域有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMainRegion(const bool& _mainRegion);
+
+                    /**
+                     * 判断参数 MainRegion 是否已赋值
+                     * @return MainRegion 是否已赋值
+                     * 
+                     */
+                    bool MainRegionHasBeenSet() const;
+
+                    /**
+                     * 获取该地域所在的EKS集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EKSClusterID 该地域所在的EKS集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEKSClusterID() const;
+
+                    /**
+                     * 设置该地域所在的EKS集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _eKSClusterID 该地域所在的EKS集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEKSClusterID(const std::string& _eKSClusterID);
+
+                    /**
+                     * 判断参数 EKSClusterID 是否已赋值
+                     * @return EKSClusterID 是否已赋值
+                     * 
+                     */
+                    bool EKSClusterIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -196,11 +296,18 @@ namespace TencentCloud
                     bool m_specIdHasBeenSet;
 
                     /**
-                     * 内网的网络信息
+                     * 客户端内网的网络信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcInfo> m_intranetVpcInfos;
                     bool m_intranetVpcInfosHasBeenSet;
+
+                    /**
+                     * 控制台内网的网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VpcInfo> m_consoleIntranetVpcInfos;
+                    bool m_consoleIntranetVpcInfosHasBeenSet;
 
                     /**
                      * 是否开公网
@@ -208,6 +315,27 @@ namespace TencentCloud
                      */
                     bool m_enableClientInternet;
                     bool m_enableClientInternetHasBeenSet;
+
+                    /**
+                     * 限流客户端内网的网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VpcInfo> m_limiterIntranetVpcInfos;
+                    bool m_limiterIntranetVpcInfosHasBeenSet;
+
+                    /**
+                     * 是否为主地域，仅在服务治理中心多地域有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_mainRegion;
+                    bool m_mainRegionHasBeenSet;
+
+                    /**
+                     * 该地域所在的EKS集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eKSClusterID;
+                    bool m_eKSClusterIDHasBeenSet;
 
                 };
             }

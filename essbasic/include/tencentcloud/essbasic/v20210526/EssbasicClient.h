@@ -465,7 +465,9 @@ namespace TencentCloud
                 ChannelCreateFlowApproversOutcomeCallable ChannelCreateFlowApproversCallable(const Model::ChannelCreateFlowApproversRequest& request);
 
                 /**
-                 *接口（ChannelCreateFlowByFiles）用于通过文件创建签署流程。此接口静默签能力不可直接使用，请联系客户经理申请使用
+                 *接口（ChannelCreateFlowByFiles）用PDF文件创建签署流程。
+
+注: `此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。`
                  * @param req ChannelCreateFlowByFilesRequest
                  * @return ChannelCreateFlowByFilesOutcome
                  */

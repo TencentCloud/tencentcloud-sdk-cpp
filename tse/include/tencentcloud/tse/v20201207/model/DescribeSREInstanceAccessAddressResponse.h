@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/EnvAddressInfo.h>
 #include <tencentcloud/tse/v20201207/model/PolarisLimiterAddress.h>
+#include <tencentcloud/tse/v20201207/model/CLBMultiRegion.h>
 
 
 namespace TencentCloud
@@ -167,6 +168,22 @@ namespace TencentCloud
                      */
                     bool LimiterAddressInfosHasBeenSet() const;
 
+                    /**
+                     * 获取InternetAddress 的公网 CLB 多可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CLBMultiRegion InternetAddress 的公网 CLB 多可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CLBMultiRegion GetCLBMultiRegion() const;
+
+                    /**
+                     * 判断参数 CLBMultiRegion 是否已赋值
+                     * @return CLBMultiRegion 是否已赋值
+                     * 
+                     */
+                    bool CLBMultiRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +238,13 @@ namespace TencentCloud
                      */
                     std::vector<PolarisLimiterAddress> m_limiterAddressInfos;
                     bool m_limiterAddressInfosHasBeenSet;
+
+                    /**
+                     * InternetAddress 的公网 CLB 多可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CLBMultiRegion m_cLBMultiRegion;
+                    bool m_cLBMultiRegionHasBeenSet;
 
                 };
             }

@@ -23,7 +23,9 @@ using namespace std;
 EngineRegionInfo::EngineRegionInfo() :
     m_engineRegionHasBeenSet(false),
     m_replicaHasBeenSet(false),
-    m_vpcInfosHasBeenSet(false)
+    m_vpcInfosHasBeenSet(false),
+    m_mainRegionHasBeenSet(false),
+    m_specIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome EngineRegionInfo::Deserialize(const rapidjson::Value &value)
         m_vpcInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("MainRegion") && !value["MainRegion"].IsNull())
+    {
+        if (!value["MainRegion"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EngineRegionInfo.MainRegion` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mainRegion = value["MainRegion"].GetBool();
+        m_mainRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpecId") && !value["SpecId"].IsNull())
+    {
+        if (!value["SpecId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EngineRegionInfo.SpecId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specId = string(value["SpecId"].GetString());
+        m_specIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +130,22 @@ void EngineRegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_mainRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MainRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mainRegion, allocator);
+    }
+
+    if (m_specIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +197,37 @@ void EngineRegionInfo::SetVpcInfos(const vector<VpcInfo>& _vpcInfos)
 bool EngineRegionInfo::VpcInfosHasBeenSet() const
 {
     return m_vpcInfosHasBeenSet;
+}
+
+bool EngineRegionInfo::GetMainRegion() const
+{
+    return m_mainRegion;
+}
+
+void EngineRegionInfo::SetMainRegion(const bool& _mainRegion)
+{
+    m_mainRegion = _mainRegion;
+    m_mainRegionHasBeenSet = true;
+}
+
+bool EngineRegionInfo::MainRegionHasBeenSet() const
+{
+    return m_mainRegionHasBeenSet;
+}
+
+string EngineRegionInfo::GetSpecId() const
+{
+    return m_specId;
+}
+
+void EngineRegionInfo::SetSpecId(const string& _specId)
+{
+    m_specId = _specId;
+    m_specIdHasBeenSet = true;
+}
+
+bool EngineRegionInfo::SpecIdHasBeenSet() const
+{
+    return m_specIdHasBeenSet;
 }
 

@@ -110,6 +110,48 @@ namespace TencentCloud
                      */
                     bool VpcInfosHasBeenSet() const;
 
+                    /**
+                     * 获取是否为主地域
+                     * @return MainRegion 是否为主地域
+                     * 
+                     */
+                    bool GetMainRegion() const;
+
+                    /**
+                     * 设置是否为主地域
+                     * @param _mainRegion 是否为主地域
+                     * 
+                     */
+                    void SetMainRegion(const bool& _mainRegion);
+
+                    /**
+                     * 判断参数 MainRegion 是否已赋值
+                     * @return MainRegion 是否已赋值
+                     * 
+                     */
+                    bool MainRegionHasBeenSet() const;
+
+                    /**
+                     * 获取引擎规格ID
+                     * @return SpecId 引擎规格ID
+                     * 
+                     */
+                    std::string GetSpecId() const;
+
+                    /**
+                     * 设置引擎规格ID
+                     * @param _specId 引擎规格ID
+                     * 
+                     */
+                    void SetSpecId(const std::string& _specId);
+
+                    /**
+                     * 判断参数 SpecId 是否已赋值
+                     * @return SpecId 是否已赋值
+                     * 
+                     */
+                    bool SpecIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +171,18 @@ namespace TencentCloud
                      */
                     std::vector<VpcInfo> m_vpcInfos;
                     bool m_vpcInfosHasBeenSet;
+
+                    /**
+                     * 是否为主地域
+                     */
+                    bool m_mainRegion;
+                    bool m_mainRegionHasBeenSet;
+
+                    /**
+                     * 引擎规格ID
+                     */
+                    std::string m_specId;
+                    bool m_specIdHasBeenSet;
 
                 };
             }
