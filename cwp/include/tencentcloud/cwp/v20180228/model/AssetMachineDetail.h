@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool CpuSizeHasBeenSet() const;
 
                     /**
-                     * 获取Cpu使用率百分比
-                     * @return CpuLoad Cpu使用率百分比
+                     * 获取Cpu负载
+                     * @return CpuLoad Cpu负载
                      * 
                      */
                     std::string GetCpuLoad() const;
 
                     /**
-                     * 设置Cpu使用率百分比
-                     * @param _cpuLoad Cpu使用率百分比
+                     * 设置Cpu负载
+                     * @param _cpuLoad Cpu负载
                      * 
                      */
                     void SetCpuLoad(const std::string& _cpuLoad);
@@ -821,6 +821,56 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取CpuLoadVul
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CpuLoadVul CpuLoadVul
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCpuLoadVul() const;
+
+                    /**
+                     * 设置CpuLoadVul
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cpuLoadVul CpuLoadVul
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCpuLoadVul(const std::string& _cpuLoadVul);
+
+                    /**
+                     * 判断参数 CpuLoadVul 是否已赋值
+                     * @return CpuLoadVul 是否已赋值
+                     * 
+                     */
+                    bool CpuLoadVulHasBeenSet() const;
+
+                    /**
+                     * 获取时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FirstTime 时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFirstTime() const;
+
+                    /**
+                     * 设置时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _firstTime 时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFirstTime(const std::string& _firstTime);
+
+                    /**
+                     * 判断参数 FirstTime 是否已赋值
+                     * @return FirstTime 是否已赋值
+                     * 
+                     */
+                    bool FirstTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -902,7 +952,7 @@ namespace TencentCloud
                     bool m_cpuSizeHasBeenSet;
 
                     /**
-                     * Cpu使用率百分比
+                     * Cpu负载
                      */
                     std::string m_cpuLoad;
                     bool m_cpuLoadHasBeenSet;
@@ -1042,6 +1092,20 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * CpuLoadVul
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cpuLoadVul;
+                    bool m_cpuLoadVulHasBeenSet;
+
+                    /**
+                     * 时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_firstTime;
+                    bool m_firstTimeHasBeenSet;
 
                 };
             }

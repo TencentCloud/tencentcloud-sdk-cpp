@@ -56,7 +56,9 @@ AssetMachineDetail::AssetMachineDetail() :
     m_offlineTimeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_cpuLoadVulHasBeenSet(false),
+    m_firstTimeHasBeenSet(false)
 {
 }
 
@@ -452,6 +454,26 @@ CoreInternalOutcome AssetMachineDetail::Deserialize(const rapidjson::Value &valu
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuLoadVul") && !value["CpuLoadVul"].IsNull())
+    {
+        if (!value["CpuLoadVul"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetMachineDetail.CpuLoadVul` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuLoadVul = string(value["CpuLoadVul"].GetString());
+        m_cpuLoadVulHasBeenSet = true;
+    }
+
+    if (value.HasMember("FirstTime") && !value["FirstTime"].IsNull())
+    {
+        if (!value["FirstTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetMachineDetail.FirstTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstTime = string(value["FirstTime"].GetString());
+        m_firstTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -760,6 +782,22 @@ void AssetMachineDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cpuLoadVulHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuLoadVul";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cpuLoadVul.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firstTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1339,5 +1377,37 @@ void AssetMachineDetail::SetMachineExtraInfo(const MachineExtraInfo& _machineExt
 bool AssetMachineDetail::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+string AssetMachineDetail::GetCpuLoadVul() const
+{
+    return m_cpuLoadVul;
+}
+
+void AssetMachineDetail::SetCpuLoadVul(const string& _cpuLoadVul)
+{
+    m_cpuLoadVul = _cpuLoadVul;
+    m_cpuLoadVulHasBeenSet = true;
+}
+
+bool AssetMachineDetail::CpuLoadVulHasBeenSet() const
+{
+    return m_cpuLoadVulHasBeenSet;
+}
+
+string AssetMachineDetail::GetFirstTime() const
+{
+    return m_firstTime;
+}
+
+void AssetMachineDetail::SetFirstTime(const string& _firstTime)
+{
+    m_firstTime = _firstTime;
+    m_firstTimeHasBeenSet = true;
+}
+
+bool AssetMachineDetail::FirstTimeHasBeenSet() const
+{
+    return m_firstTimeHasBeenSet;
 }
 

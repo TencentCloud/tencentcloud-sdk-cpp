@@ -2104,6 +2104,49 @@ LiveClient::DescribeAreaBillBandwidthAndFluxListOutcomeCallable LiveClient::Desc
     return task->get_future();
 }
 
+LiveClient::DescribeBackupStreamListOutcome LiveClient::DescribeBackupStreamList(const DescribeBackupStreamListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupStreamList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupStreamListResponse rsp = DescribeBackupStreamListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupStreamListOutcome(rsp);
+        else
+            return DescribeBackupStreamListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupStreamListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeBackupStreamListAsync(const DescribeBackupStreamListRequest& request, const DescribeBackupStreamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupStreamList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeBackupStreamListOutcomeCallable LiveClient::DescribeBackupStreamListCallable(const DescribeBackupStreamListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupStreamListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupStreamList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeBillBandwidthAndFluxListOutcome LiveClient::DescribeBillBandwidthAndFluxList(const DescribeBillBandwidthAndFluxListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillBandwidthAndFluxList");
@@ -5329,6 +5372,49 @@ LiveClient::EnableLiveDomainOutcomeCallable LiveClient::EnableLiveDomainCallable
     return task->get_future();
 }
 
+LiveClient::EnableOptimalSwitchingOutcome LiveClient::EnableOptimalSwitching(const EnableOptimalSwitchingRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableOptimalSwitching");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableOptimalSwitchingResponse rsp = EnableOptimalSwitchingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableOptimalSwitchingOutcome(rsp);
+        else
+            return EnableOptimalSwitchingOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableOptimalSwitchingOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::EnableOptimalSwitchingAsync(const EnableOptimalSwitchingRequest& request, const EnableOptimalSwitchingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableOptimalSwitching(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::EnableOptimalSwitchingOutcomeCallable LiveClient::EnableOptimalSwitchingCallable(const EnableOptimalSwitchingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableOptimalSwitchingOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableOptimalSwitching(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::ForbidLiveDomainOutcome LiveClient::ForbidLiveDomain(const ForbidLiveDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "ForbidLiveDomain");
@@ -6397,6 +6483,49 @@ LiveClient::StopScreenshotTaskOutcomeCallable LiveClient::StopScreenshotTaskCall
         [this, request]()
         {
             return this->StopScreenshotTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::SwitchBackupStreamOutcome LiveClient::SwitchBackupStream(const SwitchBackupStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchBackupStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchBackupStreamResponse rsp = SwitchBackupStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchBackupStreamOutcome(rsp);
+        else
+            return SwitchBackupStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchBackupStreamOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::SwitchBackupStreamAsync(const SwitchBackupStreamRequest& request, const SwitchBackupStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchBackupStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::SwitchBackupStreamOutcomeCallable LiveClient::SwitchBackupStreamCallable(const SwitchBackupStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchBackupStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchBackupStream(request);
         }
     );
 

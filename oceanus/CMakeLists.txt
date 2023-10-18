@@ -35,11 +35,13 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/ResourceLocParam.h
   include/tencentcloud/oceanus/v20190422/model/WorkSpaceSetItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h
+  include/tencentcloud/oceanus/v20190422/model/ResultColumn.h
   include/tencentcloud/oceanus/v20190422/model/ResourceItem.h
   include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
   include/tencentcloud/oceanus/v20190422/model/CCN.h
   include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResourceRefJobInfo.h
+  include/tencentcloud/oceanus/v20190422/model/LogicalType.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeClustersRequest.h
@@ -50,6 +52,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/StopJobDescription.h
   include/tencentcloud/oceanus/v20190422/model/CreateFolderRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigRequest.h
+  include/tencentcloud/oceanus/v20190422/model/StatementResult.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
   include/tencentcloud/oceanus/v20190422/model/SlotSharingGroupSpec.h
@@ -91,6 +94,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/ClusterGroupSetItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h
+  include/tencentcloud/oceanus/v20190422/model/ResultData.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Cluster.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSubmissionLogRequest.h
@@ -139,11 +143,13 @@ set(oceanus_src
   src/v20190422/model/ResourceLocParam.cpp
   src/v20190422/model/WorkSpaceSetItem.cpp
   src/v20190422/model/DescribeJobSavepointRequest.cpp
+  src/v20190422/model/ResultColumn.cpp
   src/v20190422/model/ResourceItem.cpp
   src/v20190422/model/ResourceLoc.cpp
   src/v20190422/model/CCN.cpp
   src/v20190422/model/DescribeWorkSpacesRequest.cpp
   src/v20190422/model/ResourceRefJobInfo.cpp
+  src/v20190422/model/LogicalType.cpp
   src/v20190422/model/DescribeTreeResourcesRequest.cpp
   src/v20190422/model/DescribeResourceConfigsResponse.cpp
   src/v20190422/model/DescribeClustersRequest.cpp
@@ -154,6 +160,7 @@ set(oceanus_src
   src/v20190422/model/StopJobDescription.cpp
   src/v20190422/model/CreateFolderRequest.cpp
   src/v20190422/model/DeleteTableConfigRequest.cpp
+  src/v20190422/model/StatementResult.cpp
   src/v20190422/model/DeleteResourcesResponse.cpp
   src/v20190422/model/ModifyJobResponse.cpp
   src/v20190422/model/SlotSharingGroupSpec.cpp
@@ -195,6 +202,7 @@ set(oceanus_src
   src/v20190422/model/ClusterGroupSetItem.cpp
   src/v20190422/model/DescribeJobConfigsRequest.cpp
   src/v20190422/model/ModifyJobRequest.cpp
+  src/v20190422/model/ResultData.cpp
   src/v20190422/model/DeleteResourceConfigsResponse.cpp
   src/v20190422/model/Cluster.cpp
   src/v20190422/model/DescribeJobSubmissionLogRequest.cpp

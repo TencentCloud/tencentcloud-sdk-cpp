@@ -169,6 +169,49 @@ DomainClient::CheckDomainOutcomeCallable DomainClient::CheckDomainCallable(const
     return task->get_future();
 }
 
+DomainClient::CreateCustomDnsHostOutcome DomainClient::CreateCustomDnsHost(const CreateCustomDnsHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomDnsHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomDnsHostResponse rsp = CreateCustomDnsHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomDnsHostOutcome(rsp);
+        else
+            return CreateCustomDnsHostOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomDnsHostOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::CreateCustomDnsHostAsync(const CreateCustomDnsHostRequest& request, const CreateCustomDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomDnsHost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::CreateCustomDnsHostOutcomeCallable DomainClient::CreateCustomDnsHostCallable(const CreateCustomDnsHostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomDnsHostOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomDnsHost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::CreateDomainBatchOutcome DomainClient::CreateDomainBatch(const CreateDomainBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDomainBatch");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全部同步
-                     * @return All 全部同步
+                     * 获取全部同步，俩参数必选一个 All优先
+                     * @return All 全部同步，俩参数必选一个 All优先
                      * 
                      */
                     bool GetAll() const;
 
                     /**
-                     * 设置全部同步
-                     * @param _all 全部同步
+                     * 设置全部同步，俩参数必选一个 All优先
+                     * @param _all 全部同步，俩参数必选一个 All优先
                      * 
                      */
                     void SetAll(const bool& _all);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AllHasBeenSet() const;
 
                     /**
-                     * 获取要同步的主机列表 两个参数必选一个 All优先
-                     * @return Hosts 要同步的主机列表 两个参数必选一个 All优先
+                     * 获取要同步的主机列表uuid ，俩参数必选一个 All优先
+                     * @return Hosts 要同步的主机列表uuid ，俩参数必选一个 All优先
                      * 
                      */
                     std::vector<std::string> GetHosts() const;
 
                     /**
-                     * 设置要同步的主机列表 两个参数必选一个 All优先
-                     * @param _hosts 要同步的主机列表 两个参数必选一个 All优先
+                     * 设置要同步的主机列表uuid ，俩参数必选一个 All优先
+                     * @param _hosts 要同步的主机列表uuid ，俩参数必选一个 All优先
                      * 
                      */
                     void SetHosts(const std::vector<std::string>& _hosts);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全部同步
+                     * 全部同步，俩参数必选一个 All优先
                      */
                     bool m_all;
                     bool m_allHasBeenSet;
 
                     /**
-                     * 要同步的主机列表 两个参数必选一个 All优先
+                     * 要同步的主机列表uuid ，俩参数必选一个 All优先
                      */
                     std::vector<std::string> m_hosts;
                     bool m_hostsHasBeenSet;

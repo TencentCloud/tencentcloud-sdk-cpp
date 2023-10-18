@@ -65,7 +65,8 @@ DataEngineInfo::DataEngineInfo() :
     m_tolerableQueueTimeHasBeenSet(false),
     m_userAppIdHasBeenSet(false),
     m_userUinHasBeenSet(false),
-    m_sessionResourceTemplateHasBeenSet(false)
+    m_sessionResourceTemplateHasBeenSet(false),
+    m_autoAuthorizationHasBeenSet(false)
 {
 }
 
@@ -561,6 +562,16 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_sessionResourceTemplateHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoAuthorization") && !value["AutoAuthorization"].IsNull())
+    {
+        if (!value["AutoAuthorization"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.AutoAuthorization` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoAuthorization = value["AutoAuthorization"].GetBool();
+        m_autoAuthorizationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -947,6 +958,14 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sessionResourceTemplate.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_autoAuthorizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoAuthorization";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoAuthorization, allocator);
     }
 
 }
@@ -1670,5 +1689,21 @@ void DataEngineInfo::SetSessionResourceTemplate(const SessionResourceTemplate& _
 bool DataEngineInfo::SessionResourceTemplateHasBeenSet() const
 {
     return m_sessionResourceTemplateHasBeenSet;
+}
+
+bool DataEngineInfo::GetAutoAuthorization() const
+{
+    return m_autoAuthorization;
+}
+
+void DataEngineInfo::SetAutoAuthorization(const bool& _autoAuthorization)
+{
+    m_autoAuthorization = _autoAuthorization;
+    m_autoAuthorizationHasBeenSet = true;
+}
+
+bool DataEngineInfo::AutoAuthorizationHasBeenSet() const
+{
+    return m_autoAuthorizationHasBeenSet;
 }
 

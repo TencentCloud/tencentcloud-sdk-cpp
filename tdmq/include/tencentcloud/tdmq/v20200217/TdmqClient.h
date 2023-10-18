@@ -157,6 +157,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClustersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGroupsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGroupsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMigratingTopicListRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMigratingTopicListResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgTraceRequest.h>
@@ -165,6 +167,14 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessPointRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessPointResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSmoothMigrationTaskRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSmoothMigrationTaskResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSmoothMigrationTaskListRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSmoothMigrationTaskListResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterGroupListRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterGroupListResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterTopicListRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterTopicListResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsRequest.h>
@@ -179,6 +189,10 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ImportRocketMQConsumerGroupsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ImportRocketMQConsumerGroupsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ImportRocketMQTopicsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ImportRocketMQTopicsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyAMQPClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyAMQPClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyClusterRequest.h>
@@ -454,6 +468,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQGroupsResponse> DescribeRocketMQGroupsOutcome;
                 typedef std::future<DescribeRocketMQGroupsOutcome> DescribeRocketMQGroupsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQGroupsRequest&, DescribeRocketMQGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQMigratingTopicListResponse> DescribeRocketMQMigratingTopicListOutcome;
+                typedef std::future<DescribeRocketMQMigratingTopicListOutcome> DescribeRocketMQMigratingTopicListOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQMigratingTopicListRequest&, DescribeRocketMQMigratingTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQMigratingTopicListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQMsgResponse> DescribeRocketMQMsgOutcome;
                 typedef std::future<DescribeRocketMQMsgOutcome> DescribeRocketMQMsgOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQMsgRequest&, DescribeRocketMQMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQMsgAsyncHandler;
@@ -466,6 +483,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQPublicAccessPointResponse> DescribeRocketMQPublicAccessPointOutcome;
                 typedef std::future<DescribeRocketMQPublicAccessPointOutcome> DescribeRocketMQPublicAccessPointOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQPublicAccessPointRequest&, DescribeRocketMQPublicAccessPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQPublicAccessPointAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQSmoothMigrationTaskResponse> DescribeRocketMQSmoothMigrationTaskOutcome;
+                typedef std::future<DescribeRocketMQSmoothMigrationTaskOutcome> DescribeRocketMQSmoothMigrationTaskOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSmoothMigrationTaskRequest&, DescribeRocketMQSmoothMigrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSmoothMigrationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQSmoothMigrationTaskListResponse> DescribeRocketMQSmoothMigrationTaskListOutcome;
+                typedef std::future<DescribeRocketMQSmoothMigrationTaskListOutcome> DescribeRocketMQSmoothMigrationTaskListOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSmoothMigrationTaskListRequest&, DescribeRocketMQSmoothMigrationTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSmoothMigrationTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQSourceClusterGroupListResponse> DescribeRocketMQSourceClusterGroupListOutcome;
+                typedef std::future<DescribeRocketMQSourceClusterGroupListOutcome> DescribeRocketMQSourceClusterGroupListOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSourceClusterGroupListRequest&, DescribeRocketMQSourceClusterGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSourceClusterGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQSourceClusterTopicListResponse> DescribeRocketMQSourceClusterTopicListOutcome;
+                typedef std::future<DescribeRocketMQSourceClusterTopicListOutcome> DescribeRocketMQSourceClusterTopicListOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSourceClusterTopicListRequest&, DescribeRocketMQSourceClusterTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSourceClusterTopicListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQTopicMsgsResponse> DescribeRocketMQTopicMsgsOutcome;
                 typedef std::future<DescribeRocketMQTopicMsgsOutcome> DescribeRocketMQTopicMsgsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicMsgsRequest&, DescribeRocketMQTopicMsgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicMsgsAsyncHandler;
@@ -487,6 +516,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
                 typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportRocketMQConsumerGroupsResponse> ImportRocketMQConsumerGroupsOutcome;
+                typedef std::future<ImportRocketMQConsumerGroupsOutcome> ImportRocketMQConsumerGroupsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ImportRocketMQConsumerGroupsRequest&, ImportRocketMQConsumerGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportRocketMQConsumerGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportRocketMQTopicsResponse> ImportRocketMQTopicsOutcome;
+                typedef std::future<ImportRocketMQTopicsOutcome> ImportRocketMQTopicsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ImportRocketMQTopicsRequest&, ImportRocketMQTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportRocketMQTopicsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAMQPClusterResponse> ModifyAMQPClusterOutcome;
                 typedef std::future<ModifyAMQPClusterOutcome> ModifyAMQPClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyAMQPClusterRequest&, ModifyAMQPClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAMQPClusterAsyncHandler;
@@ -1184,6 +1219,15 @@ namespace TencentCloud
                 DescribeRocketMQGroupsOutcomeCallable DescribeRocketMQGroupsCallable(const Model::DescribeRocketMQGroupsRequest& request);
 
                 /**
+                 *查询Topic迁移状态列表，源集群和目标集群客户端数量信息需要配合DescribeRocketMQSmoothMigrationTaskTopicInsNum接口查询
+                 * @param req DescribeRocketMQMigratingTopicListRequest
+                 * @return DescribeRocketMQMigratingTopicListOutcome
+                 */
+                DescribeRocketMQMigratingTopicListOutcome DescribeRocketMQMigratingTopicList(const Model::DescribeRocketMQMigratingTopicListRequest &request);
+                void DescribeRocketMQMigratingTopicListAsync(const Model::DescribeRocketMQMigratingTopicListRequest& request, const DescribeRocketMQMigratingTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQMigratingTopicListOutcomeCallable DescribeRocketMQMigratingTopicListCallable(const Model::DescribeRocketMQMigratingTopicListRequest& request);
+
+                /**
                  *rocketmq消息详情
                  * @param req DescribeRocketMQMsgRequest
                  * @return DescribeRocketMQMsgOutcome
@@ -1218,6 +1262,42 @@ namespace TencentCloud
                 DescribeRocketMQPublicAccessPointOutcome DescribeRocketMQPublicAccessPoint(const Model::DescribeRocketMQPublicAccessPointRequest &request);
                 void DescribeRocketMQPublicAccessPointAsync(const Model::DescribeRocketMQPublicAccessPointRequest& request, const DescribeRocketMQPublicAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRocketMQPublicAccessPointOutcomeCallable DescribeRocketMQPublicAccessPointCallable(const Model::DescribeRocketMQPublicAccessPointRequest& request);
+
+                /**
+                 *用于获取RocketMQ平滑迁移任务详情
+                 * @param req DescribeRocketMQSmoothMigrationTaskRequest
+                 * @return DescribeRocketMQSmoothMigrationTaskOutcome
+                 */
+                DescribeRocketMQSmoothMigrationTaskOutcome DescribeRocketMQSmoothMigrationTask(const Model::DescribeRocketMQSmoothMigrationTaskRequest &request);
+                void DescribeRocketMQSmoothMigrationTaskAsync(const Model::DescribeRocketMQSmoothMigrationTaskRequest& request, const DescribeRocketMQSmoothMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQSmoothMigrationTaskOutcomeCallable DescribeRocketMQSmoothMigrationTaskCallable(const Model::DescribeRocketMQSmoothMigrationTaskRequest& request);
+
+                /**
+                 *用于查询RocketMQ平滑迁移任务列表
+                 * @param req DescribeRocketMQSmoothMigrationTaskListRequest
+                 * @return DescribeRocketMQSmoothMigrationTaskListOutcome
+                 */
+                DescribeRocketMQSmoothMigrationTaskListOutcome DescribeRocketMQSmoothMigrationTaskList(const Model::DescribeRocketMQSmoothMigrationTaskListRequest &request);
+                void DescribeRocketMQSmoothMigrationTaskListAsync(const Model::DescribeRocketMQSmoothMigrationTaskListRequest& request, const DescribeRocketMQSmoothMigrationTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQSmoothMigrationTaskListOutcomeCallable DescribeRocketMQSmoothMigrationTaskListCallable(const Model::DescribeRocketMQSmoothMigrationTaskListRequest& request);
+
+                /**
+                 *平滑迁移过程获取源集群group列表接口
+                 * @param req DescribeRocketMQSourceClusterGroupListRequest
+                 * @return DescribeRocketMQSourceClusterGroupListOutcome
+                 */
+                DescribeRocketMQSourceClusterGroupListOutcome DescribeRocketMQSourceClusterGroupList(const Model::DescribeRocketMQSourceClusterGroupListRequest &request);
+                void DescribeRocketMQSourceClusterGroupListAsync(const Model::DescribeRocketMQSourceClusterGroupListRequest& request, const DescribeRocketMQSourceClusterGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQSourceClusterGroupListOutcomeCallable DescribeRocketMQSourceClusterGroupListCallable(const Model::DescribeRocketMQSourceClusterGroupListRequest& request);
+
+                /**
+                 *平滑迁移过程获取源集群topic列表接口
+                 * @param req DescribeRocketMQSourceClusterTopicListRequest
+                 * @return DescribeRocketMQSourceClusterTopicListOutcome
+                 */
+                DescribeRocketMQSourceClusterTopicListOutcome DescribeRocketMQSourceClusterTopicList(const Model::DescribeRocketMQSourceClusterTopicListRequest &request);
+                void DescribeRocketMQSourceClusterTopicListAsync(const Model::DescribeRocketMQSourceClusterTopicListRequest& request, const DescribeRocketMQSourceClusterTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQSourceClusterTopicListOutcomeCallable DescribeRocketMQSourceClusterTopicListCallable(const Model::DescribeRocketMQSourceClusterTopicListRequest& request);
 
                 /**
                  *rocketmq 消息查询
@@ -1281,6 +1361,24 @@ namespace TencentCloud
                 DescribeTopicsOutcome DescribeTopics(const Model::DescribeTopicsRequest &request);
                 void DescribeTopicsAsync(const Model::DescribeTopicsRequest& request, const DescribeTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicsOutcomeCallable DescribeTopicsCallable(const Model::DescribeTopicsRequest& request);
+
+                /**
+                 *输入迁移任务id和要导入的Group，导入后台
+                 * @param req ImportRocketMQConsumerGroupsRequest
+                 * @return ImportRocketMQConsumerGroupsOutcome
+                 */
+                ImportRocketMQConsumerGroupsOutcome ImportRocketMQConsumerGroups(const Model::ImportRocketMQConsumerGroupsRequest &request);
+                void ImportRocketMQConsumerGroupsAsync(const Model::ImportRocketMQConsumerGroupsRequest& request, const ImportRocketMQConsumerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportRocketMQConsumerGroupsOutcomeCallable ImportRocketMQConsumerGroupsCallable(const Model::ImportRocketMQConsumerGroupsRequest& request);
+
+                /**
+                 *导入topic列表
+                 * @param req ImportRocketMQTopicsRequest
+                 * @return ImportRocketMQTopicsOutcome
+                 */
+                ImportRocketMQTopicsOutcome ImportRocketMQTopics(const Model::ImportRocketMQTopicsRequest &request);
+                void ImportRocketMQTopicsAsync(const Model::ImportRocketMQTopicsRequest& request, const ImportRocketMQTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportRocketMQTopicsOutcomeCallable ImportRocketMQTopicsCallable(const Model::ImportRocketMQTopicsRequest& request);
 
                 /**
                  *更新Amqp集群信息

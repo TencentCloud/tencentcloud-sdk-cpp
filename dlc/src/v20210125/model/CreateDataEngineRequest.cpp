@@ -52,7 +52,8 @@ CreateDataEngineRequest::CreateDataEngineRequest() :
     m_mainClusterNameHasBeenSet(false),
     m_elasticSwitchHasBeenSet(false),
     m_elasticLimitHasBeenSet(false),
-    m_sessionResourceTemplateHasBeenSet(false)
+    m_sessionResourceTemplateHasBeenSet(false),
+    m_autoAuthorizationHasBeenSet(false)
 {
 }
 
@@ -317,6 +318,14 @@ string CreateDataEngineRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sessionResourceTemplate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoAuthorizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoAuthorization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoAuthorization, allocator);
     }
 
 
@@ -805,6 +814,22 @@ void CreateDataEngineRequest::SetSessionResourceTemplate(const SessionResourceTe
 bool CreateDataEngineRequest::SessionResourceTemplateHasBeenSet() const
 {
     return m_sessionResourceTemplateHasBeenSet;
+}
+
+bool CreateDataEngineRequest::GetAutoAuthorization() const
+{
+    return m_autoAuthorization;
+}
+
+void CreateDataEngineRequest::SetAutoAuthorization(const bool& _autoAuthorization)
+{
+    m_autoAuthorization = _autoAuthorization;
+    m_autoAuthorizationHasBeenSet = true;
+}
+
+bool CreateDataEngineRequest::AutoAuthorizationHasBeenSet() const
+{
+    return m_autoAuthorizationHasBeenSet;
 }
 
 

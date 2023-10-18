@@ -10446,6 +10446,49 @@ WedataClient::GenHiveTableDDLSqlOutcomeCallable WedataClient::GenHiveTableDDLSql
     return task->get_future();
 }
 
+WedataClient::GetFileInfoOutcome WedataClient::GetFileInfo(const GetFileInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFileInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFileInfoResponse rsp = GetFileInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFileInfoOutcome(rsp);
+        else
+            return GetFileInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFileInfoOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetFileInfoAsync(const GetFileInfoRequest& request, const GetFileInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFileInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::GetFileInfoOutcomeCallable WedataClient::GetFileInfoCallable(const GetFileInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFileInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFileInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::GetIntegrationNodeColumnSchemaOutcome WedataClient::GetIntegrationNodeColumnSchema(const GetIntegrationNodeColumnSchemaRequest &request)
 {
     auto outcome = MakeRequest(request, "GetIntegrationNodeColumnSchema");

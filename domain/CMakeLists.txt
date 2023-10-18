@@ -50,7 +50,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainNameListResponse.h
-  include/tencentcloud/domain/v20180808/model/PhoneEmailData.h
+  include/tencentcloud/domain/v20180808/model/CreateCustomDnsHostResponse.h
   include/tencentcloud/domain/v20180808/model/ContactInfo.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h
   include/tencentcloud/domain/v20180808/model/CreateTemplateResponse.h
@@ -62,6 +62,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/BatchStatus.h
   include/tencentcloud/domain/v20180808/model/DomainList.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainPriceListRequest.h
+  include/tencentcloud/domain/v20180808/model/SetDomainAutoRenewRequest.h
   include/tencentcloud/domain/v20180808/model/CreateDomainBatchRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoRequest.h
@@ -73,6 +74,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/CheckDomainRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsResponse.h
   include/tencentcloud/domain/v20180808/model/TransferProhibitionBatchResponse.h
+  include/tencentcloud/domain/v20180808/model/CreateCustomDnsHostRequest.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsResponse.h
   include/tencentcloud/domain/v20180808/model/DescribePhoneEmailListResponse.h
@@ -80,7 +82,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DeletePhoneEmailResponse.h
   include/tencentcloud/domain/v20180808/model/CreateDomainRedemptionRequest.h
   include/tencentcloud/domain/v20180808/model/CreatePhoneEmailResponse.h
-  include/tencentcloud/domain/v20180808/model/SetDomainAutoRenewRequest.h
+  include/tencentcloud/domain/v20180808/model/PhoneEmailData.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchRequest.h
   include/tencentcloud/domain/v20180808/model/SendPhoneEmailCodeRequest.h
   include/tencentcloud/domain/v20180808/model/DomainBatchLogSet.h
@@ -119,7 +121,7 @@ set(domain_src
   src/v20180808/model/DescribeTemplateListRequest.cpp
   src/v20180808/model/DescribeBatchOperationLogDetailsRequest.cpp
   src/v20180808/model/DescribeDomainNameListResponse.cpp
-  src/v20180808/model/PhoneEmailData.cpp
+  src/v20180808/model/CreateCustomDnsHostResponse.cpp
   src/v20180808/model/ContactInfo.cpp
   src/v20180808/model/DescribeDomainPriceListResponse.cpp
   src/v20180808/model/CreateTemplateResponse.cpp
@@ -131,6 +133,7 @@ set(domain_src
   src/v20180808/model/BatchStatus.cpp
   src/v20180808/model/DomainList.cpp
   src/v20180808/model/DescribeDomainPriceListRequest.cpp
+  src/v20180808/model/SetDomainAutoRenewRequest.cpp
   src/v20180808/model/CreateDomainBatchRequest.cpp
   src/v20180808/model/DescribeDomainSimpleInfoResponse.cpp
   src/v20180808/model/DescribeDomainBaseInfoRequest.cpp
@@ -142,6 +145,7 @@ set(domain_src
   src/v20180808/model/CheckDomainRequest.cpp
   src/v20180808/model/DescribeBatchOperationLogsResponse.cpp
   src/v20180808/model/TransferProhibitionBatchResponse.cpp
+  src/v20180808/model/CreateCustomDnsHostRequest.cpp
   src/v20180808/model/ModifyDomainDNSBatchRequest.cpp
   src/v20180808/model/DescribeBatchOperationLogDetailsResponse.cpp
   src/v20180808/model/DescribePhoneEmailListResponse.cpp
@@ -149,7 +153,7 @@ set(domain_src
   src/v20180808/model/DeletePhoneEmailResponse.cpp
   src/v20180808/model/CreateDomainRedemptionRequest.cpp
   src/v20180808/model/CreatePhoneEmailResponse.cpp
-  src/v20180808/model/SetDomainAutoRenewRequest.cpp
+  src/v20180808/model/PhoneEmailData.cpp
   src/v20180808/model/ModifyDomainOwnerBatchRequest.cpp
   src/v20180808/model/SendPhoneEmailCodeRequest.cpp
   src/v20180808/model/DomainBatchLogSet.cpp

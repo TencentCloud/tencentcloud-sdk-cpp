@@ -86,8 +86,10 @@ namespace TencentCloud
                     bool AuditTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户号正则表达式
-                     * @return UserIdRegex 用户号正则表达式
+                     * 获取用户号正则表达式。
+符合此正则表达式规则的用户号将被送检。示例：^6.*（表示所有以6开头的用户号将被送检）
+                     * @return UserIdRegex 用户号正则表达式。
+符合此正则表达式规则的用户号将被送检。示例：^6.*（表示所有以6开头的用户号将被送检）
                      * 
                      */
                     std::vector<std::string> GetUserIdRegex() const;
@@ -100,8 +102,10 @@ namespace TencentCloud
                     bool UserIdRegexHasBeenSet() const;
 
                     /**
-                     * 获取房间号正则表达式
-                     * @return RoomIdRegex 房间号正则表达式
+                     * 获取房间号正则表达式。
+符合此正则表达式规则的房间号将被送检。示例：^6.*（表示所有以6开头的房间号将被送检）
+                     * @return RoomIdRegex 房间号正则表达式。
+符合此正则表达式规则的房间号将被送检。示例：^6.*（表示所有以6开头的房间号将被送检）
                      * 
                      */
                     std::vector<std::string> GetRoomIdRegex() const;
@@ -162,13 +166,15 @@ namespace TencentCloud
                     bool m_auditTypeHasBeenSet;
 
                     /**
-                     * 用户号正则表达式
+                     * 用户号正则表达式。
+符合此正则表达式规则的用户号将被送检。示例：^6.*（表示所有以6开头的用户号将被送检）
                      */
                     std::vector<std::string> m_userIdRegex;
                     bool m_userIdRegexHasBeenSet;
 
                     /**
-                     * 房间号正则表达式
+                     * 房间号正则表达式。
+符合此正则表达式规则的房间号将被送检。示例：^6.*（表示所有以6开头的房间号将被送检）
                      */
                     std::vector<std::string> m_roomIdRegex;
                     bool m_roomIdRegexHasBeenSet;

@@ -676,6 +676,27 @@ namespace TencentCloud
                      */
                     bool SessionResourceTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取自动授权
+                     * @return AutoAuthorization 自动授权
+                     * 
+                     */
+                    bool GetAutoAuthorization() const;
+
+                    /**
+                     * 设置自动授权
+                     * @param _autoAuthorization 自动授权
+                     * 
+                     */
+                    void SetAutoAuthorization(const bool& _autoAuthorization);
+
+                    /**
+                     * 判断参数 AutoAuthorization 是否已赋值
+                     * @return AutoAuthorization 是否已赋值
+                     * 
+                     */
+                    bool AutoAuthorizationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -857,6 +878,12 @@ namespace TencentCloud
                      */
                     SessionResourceTemplate m_sessionResourceTemplate;
                     bool m_sessionResourceTemplateHasBeenSet;
+
+                    /**
+                     * 自动授权
+                     */
+                    bool m_autoAuthorization;
+                    bool m_autoAuthorizationHasBeenSet;
 
                 };
             }

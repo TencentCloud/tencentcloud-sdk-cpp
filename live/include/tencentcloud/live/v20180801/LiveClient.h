@@ -119,6 +119,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeBackupStreamListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeBackupStreamListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCallbackRecordsListRequest.h>
@@ -269,6 +271,8 @@
 #include <tencentcloud/live/v20180801/model/DropLiveStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/EnableLiveDomainRequest.h>
 #include <tencentcloud/live/v20180801/model/EnableLiveDomainResponse.h>
+#include <tencentcloud/live/v20180801/model/EnableOptimalSwitchingRequest.h>
+#include <tencentcloud/live/v20180801/model/EnableOptimalSwitchingResponse.h>
 #include <tencentcloud/live/v20180801/model/ForbidLiveDomainRequest.h>
 #include <tencentcloud/live/v20180801/model/ForbidLiveDomainResponse.h>
 #include <tencentcloud/live/v20180801/model/ForbidLiveStreamRequest.h>
@@ -319,6 +323,8 @@
 #include <tencentcloud/live/v20180801/model/StopRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/StopScreenshotTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/StopScreenshotTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/SwitchBackupStreamRequest.h>
+#include <tencentcloud/live/v20180801/model/SwitchBackupStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/UnBindLiveDomainCertRequest.h>
 #include <tencentcloud/live/v20180801/model/UnBindLiveDomainCertResponse.h>
 #include <tencentcloud/live/v20180801/model/UpdateLiveWatermarkRequest.h>
@@ -481,6 +487,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAreaBillBandwidthAndFluxListResponse> DescribeAreaBillBandwidthAndFluxListOutcome;
                 typedef std::future<DescribeAreaBillBandwidthAndFluxListOutcome> DescribeAreaBillBandwidthAndFluxListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeAreaBillBandwidthAndFluxListRequest&, DescribeAreaBillBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBillBandwidthAndFluxListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupStreamListResponse> DescribeBackupStreamListOutcome;
+                typedef std::future<DescribeBackupStreamListOutcome> DescribeBackupStreamListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeBackupStreamListRequest&, DescribeBackupStreamListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupStreamListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillBandwidthAndFluxListResponse> DescribeBillBandwidthAndFluxListOutcome;
                 typedef std::future<DescribeBillBandwidthAndFluxListOutcome> DescribeBillBandwidthAndFluxListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeBillBandwidthAndFluxListRequest&, DescribeBillBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillBandwidthAndFluxListAsyncHandler;
@@ -706,6 +715,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableLiveDomainResponse> EnableLiveDomainOutcome;
                 typedef std::future<EnableLiveDomainOutcome> EnableLiveDomainOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::EnableLiveDomainRequest&, EnableLiveDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableLiveDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableOptimalSwitchingResponse> EnableOptimalSwitchingOutcome;
+                typedef std::future<EnableOptimalSwitchingOutcome> EnableOptimalSwitchingOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::EnableOptimalSwitchingRequest&, EnableOptimalSwitchingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableOptimalSwitchingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ForbidLiveDomainResponse> ForbidLiveDomainOutcome;
                 typedef std::future<ForbidLiveDomainOutcome> ForbidLiveDomainOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ForbidLiveDomainRequest&, ForbidLiveDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidLiveDomainAsyncHandler;
@@ -781,6 +793,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopScreenshotTaskResponse> StopScreenshotTaskOutcome;
                 typedef std::future<StopScreenshotTaskOutcome> StopScreenshotTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopScreenshotTaskRequest&, StopScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopScreenshotTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchBackupStreamResponse> SwitchBackupStreamOutcome;
+                typedef std::future<SwitchBackupStreamOutcome> SwitchBackupStreamOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::SwitchBackupStreamRequest&, SwitchBackupStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchBackupStreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnBindLiveDomainCertResponse> UnBindLiveDomainCertOutcome;
                 typedef std::future<UnBindLiveDomainCertOutcome> UnBindLiveDomainCertOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::UnBindLiveDomainCertRequest&, UnBindLiveDomainCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindLiveDomainCertAsyncHandler;
@@ -1283,6 +1298,19 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeAreaBillBandwidthAndFluxListOutcome DescribeAreaBillBandwidthAndFluxList(const Model::DescribeAreaBillBandwidthAndFluxListRequest &request);
                 void DescribeAreaBillBandwidthAndFluxListAsync(const Model::DescribeAreaBillBandwidthAndFluxListRequest& request, const DescribeAreaBillBandwidthAndFluxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAreaBillBandwidthAndFluxListOutcomeCallable DescribeAreaBillBandwidthAndFluxListCallable(const Model::DescribeAreaBillBandwidthAndFluxListRequest& request);
+
+                /**
+                 *返回正在直播中的流列表。适用于推流成功后查询在线流信息。
+
+注意：
+1. 该接口仅提供辅助查询在线流列表功能，业务重要场景不可强依赖该接口。
+2. 该接口仅适用于流数少于2万路的情况，对于流数较大用户请联系售后。
+                 * @param req DescribeBackupStreamListRequest
+                 * @return DescribeBackupStreamListOutcome
+                 */
+                DescribeBackupStreamListOutcome DescribeBackupStreamList(const Model::DescribeBackupStreamListRequest &request);
+                void DescribeBackupStreamListAsync(const Model::DescribeBackupStreamListRequest& request, const DescribeBackupStreamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupStreamListOutcomeCallable DescribeBackupStreamListCallable(const Model::DescribeBackupStreamListRequest& request);
 
                 /**
                  *直播播放带宽和流量数据查询。
@@ -2010,6 +2038,16 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 EnableLiveDomainOutcomeCallable EnableLiveDomainCallable(const Model::EnableLiveDomainRequest& request);
 
                 /**
+                 *启用择优调度。
+注意：流维度的择优调度，当主备流结束后自动失效。
+                 * @param req EnableOptimalSwitchingRequest
+                 * @return EnableOptimalSwitchingOutcome
+                 */
+                EnableOptimalSwitchingOutcome EnableOptimalSwitching(const Model::EnableOptimalSwitchingRequest &request);
+                void EnableOptimalSwitchingAsync(const Model::EnableOptimalSwitchingRequest& request, const EnableOptimalSwitchingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableOptimalSwitchingOutcomeCallable EnableOptimalSwitchingCallable(const Model::EnableOptimalSwitchingRequest& request);
+
+                /**
                  *停止使用某个直播域名。
                  * @param req ForbidLiveDomainRequest
                  * @return ForbidLiveDomainOutcome
@@ -2243,6 +2281,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 StopScreenshotTaskOutcome StopScreenshotTask(const Model::StopScreenshotTaskRequest &request);
                 void StopScreenshotTaskAsync(const Model::StopScreenshotTaskRequest& request, const StopScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopScreenshotTaskOutcomeCallable StopScreenshotTaskCallable(const Model::StopScreenshotTaskRequest& request);
+
+                /**
+                 *调用该接口实现切换当前播放所使用的主备流。
+                 * @param req SwitchBackupStreamRequest
+                 * @return SwitchBackupStreamOutcome
+                 */
+                SwitchBackupStreamOutcome SwitchBackupStream(const Model::SwitchBackupStreamRequest &request);
+                void SwitchBackupStreamAsync(const Model::SwitchBackupStreamRequest& request, const SwitchBackupStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchBackupStreamOutcomeCallable SwitchBackupStreamCallable(const Model::SwitchBackupStreamRequest& request);
 
                 /**
                  *解绑域名证书

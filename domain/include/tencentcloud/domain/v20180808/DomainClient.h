@@ -29,6 +29,8 @@
 #include <tencentcloud/domain/v20180808/model/CheckBatchStatusResponse.h>
 #include <tencentcloud/domain/v20180808/model/CheckDomainRequest.h>
 #include <tencentcloud/domain/v20180808/model/CheckDomainResponse.h>
+#include <tencentcloud/domain/v20180808/model/CreateCustomDnsHostRequest.h>
+#include <tencentcloud/domain/v20180808/model/CreateCustomDnsHostResponse.h>
 #include <tencentcloud/domain/v20180808/model/CreateDomainBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/CreateDomainBatchResponse.h>
 #include <tencentcloud/domain/v20180808/model/CreateDomainRedemptionRequest.h>
@@ -100,6 +102,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckDomainResponse> CheckDomainOutcome;
                 typedef std::future<CheckDomainOutcome> CheckDomainOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CheckDomainRequest&, CheckDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomDnsHostResponse> CreateCustomDnsHostOutcome;
+                typedef std::future<CreateCustomDnsHostOutcome> CreateCustomDnsHostOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::CreateCustomDnsHostRequest&, CreateCustomDnsHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomDnsHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDomainBatchResponse> CreateDomainBatchOutcome;
                 typedef std::future<CreateDomainBatchOutcome> CreateDomainBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CreateDomainBatchRequest&, CreateDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainBatchAsyncHandler;
@@ -201,6 +206,15 @@ namespace TencentCloud
                 CheckDomainOutcome CheckDomain(const Model::CheckDomainRequest &request);
                 void CheckDomainAsync(const Model::CheckDomainRequest& request, const CheckDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckDomainOutcomeCallable CheckDomainCallable(const Model::CheckDomainRequest& request);
+
+                /**
+                 *创建自定义DNS Host
+                 * @param req CreateCustomDnsHostRequest
+                 * @return CreateCustomDnsHostOutcome
+                 */
+                CreateCustomDnsHostOutcome CreateCustomDnsHost(const Model::CreateCustomDnsHostRequest &request);
+                void CreateCustomDnsHostAsync(const Model::CreateCustomDnsHostRequest& request, const CreateCustomDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomDnsHostOutcomeCallable CreateCustomDnsHostCallable(const Model::CreateCustomDnsHostRequest& request);
 
                 /**
                  *本接口 ( CreateDomainBatch ) 用于批量域名注册 。

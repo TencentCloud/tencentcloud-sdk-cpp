@@ -275,6 +275,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/OpsTaskLinkInfoDto.h
   include/tencentcloud/wedata/v20210820/model/IntegrationNodeInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsTaskStatusRequest.h
+  include/tencentcloud/wedata/v20210820/model/GetFileInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/BatchDeleteTasksNewResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeBelongToResponse.h
   include/tencentcloud/wedata/v20210820/model/WorkFlowExecuteDto.h
@@ -310,6 +311,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeAllTaskTypeRequest.h
   include/tencentcloud/wedata/v20210820/model/SimpleDataSourceInfo.h
   include/tencentcloud/wedata/v20210820/model/InstanceLogInfo.h
+  include/tencentcloud/wedata/v20210820/model/GetFileInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeSonInstancesRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeBaselinesResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskInstancesData.h
@@ -1131,6 +1133,7 @@ set(wedata_src
   src/v20210820/model/OpsTaskLinkInfoDto.cpp
   src/v20210820/model/IntegrationNodeInfo.cpp
   src/v20210820/model/DescribeIntegrationStatisticsTaskStatusRequest.cpp
+  src/v20210820/model/GetFileInfoResponse.cpp
   src/v20210820/model/BatchDeleteTasksNewResponse.cpp
   src/v20210820/model/DescribeBelongToResponse.cpp
   src/v20210820/model/WorkFlowExecuteDto.cpp
@@ -1166,6 +1169,7 @@ set(wedata_src
   src/v20210820/model/DescribeAllTaskTypeRequest.cpp
   src/v20210820/model/SimpleDataSourceInfo.cpp
   src/v20210820/model/InstanceLogInfo.cpp
+  src/v20210820/model/GetFileInfoRequest.cpp
   src/v20210820/model/DescribeSonInstancesRequest.cpp
   src/v20210820/model/DescribeBaselinesResponse.cpp
   src/v20210820/model/DescribeTaskInstancesData.cpp

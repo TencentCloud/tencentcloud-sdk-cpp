@@ -108,6 +108,20 @@ namespace TencentCloud
                      */
                     bool VerifySerialNoHasBeenSet() const;
 
+                    /**
+                     * 获取合同文件MD5哈希值
+                     * @return PdfResourceMd5 合同文件MD5哈希值
+                     * 
+                     */
+                    std::string GetPdfResourceMd5() const;
+
+                    /**
+                     * 判断参数 PdfResourceMd5 是否已赋值
+                     * @return PdfResourceMd5 是否已赋值
+                     * 
+                     */
+                    bool PdfResourceMd5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,6 +152,12 @@ namespace TencentCloud
                      */
                     std::string m_verifySerialNo;
                     bool m_verifySerialNoHasBeenSet;
+
+                    /**
+                     * 合同文件MD5哈希值
+                     */
+                    std::string m_pdfResourceMd5;
+                    bool m_pdfResourceMd5HasBeenSet;
 
                 };
             }

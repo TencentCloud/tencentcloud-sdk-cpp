@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
 using namespace std;
 
-RunSqlGatewayStatementResponse::RunSqlGatewayStatementResponse()
+RunSqlGatewayStatementResponse::RunSqlGatewayStatementResponse() :
+    m_errorMessageHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_operationHandleIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,39 @@ CoreInternalOutcome RunSqlGatewayStatementResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("ErrorMessage") && !rsp["ErrorMessage"].IsNull())
+    {
+        if (!rsp["ErrorMessage"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ErrorMessage` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ErrorMessage"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_errorMessage.push_back((*itr).GetString());
+        }
+        m_errorMessageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
+    {
+        if (!rsp["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(rsp["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OperationHandleId") && !rsp["OperationHandleId"].IsNull())
+    {
+        if (!rsp["OperationHandleId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OperationHandleId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationHandleId = string(rsp["OperationHandleId"].GetString());
+        m_operationHandleIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +106,35 @@ string RunSqlGatewayStatementResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_errorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_errorMessage.begin(); itr != m_errorMessage.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationHandleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationHandleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationHandleId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +147,35 @@ string RunSqlGatewayStatementResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> RunSqlGatewayStatementResponse::GetErrorMessage() const
+{
+    return m_errorMessage;
+}
+
+bool RunSqlGatewayStatementResponse::ErrorMessageHasBeenSet() const
+{
+    return m_errorMessageHasBeenSet;
+}
+
+string RunSqlGatewayStatementResponse::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+bool RunSqlGatewayStatementResponse::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+string RunSqlGatewayStatementResponse::GetOperationHandleId() const
+{
+    return m_operationHandleId;
+}
+
+bool RunSqlGatewayStatementResponse::OperationHandleIdHasBeenSet() const
+{
+    return m_operationHandleIdHasBeenSet;
+}
 
 

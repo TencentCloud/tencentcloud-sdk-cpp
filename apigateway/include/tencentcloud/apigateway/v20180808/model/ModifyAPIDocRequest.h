@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取API文档ID
-                     * @return ApiDocId API文档ID
-                     * 
-                     */
-                    std::string GetApiDocId() const;
-
-                    /**
-                     * 设置API文档ID
-                     * @param _apiDocId API文档ID
-                     * 
-                     */
-                    void SetApiDocId(const std::string& _apiDocId);
-
-                    /**
-                     * 判断参数 ApiDocId 是否已赋值
-                     * @return ApiDocId 是否已赋值
-                     * 
-                     */
-                    bool ApiDocIdHasBeenSet() const;
-
-                    /**
                      * 获取API文档名称
                      * @return ApiDocName API文档名称
                      * 
@@ -147,13 +126,28 @@ namespace TencentCloud
                      */
                     bool ApiIdsHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取API文档ID
+                     * @return ApiDocId API文档ID
+                     * 
+                     */
+                    std::string GetApiDocId() const;
 
                     /**
-                     * API文档ID
+                     * 设置API文档ID
+                     * @param _apiDocId API文档ID
+                     * 
                      */
-                    std::string m_apiDocId;
-                    bool m_apiDocIdHasBeenSet;
+                    void SetApiDocId(const std::string& _apiDocId);
+
+                    /**
+                     * 判断参数 ApiDocId 是否已赋值
+                     * @return ApiDocId 是否已赋值
+                     * 
+                     */
+                    bool ApiDocIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * API文档名称
@@ -178,6 +172,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_apiIds;
                     bool m_apiIdsHasBeenSet;
+
+                    /**
+                     * API文档ID
+                     */
+                    std::string m_apiDocId;
+                    bool m_apiDocIdHasBeenSet;
 
                 };
             }

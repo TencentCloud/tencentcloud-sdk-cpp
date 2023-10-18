@@ -26,7 +26,8 @@ using namespace std;
 VerifyPdfResponse::VerifyPdfResponse() :
     m_verifyResultHasBeenSet(false),
     m_pdfVerifyResultsHasBeenSet(false),
-    m_verifySerialNoHasBeenSet(false)
+    m_verifySerialNoHasBeenSet(false),
+    m_pdfResourceMd5HasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome VerifyPdfResponse::Deserialize(const string &payload)
         m_verifySerialNoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PdfResourceMd5") && !rsp["PdfResourceMd5"].IsNull())
+    {
+        if (!rsp["PdfResourceMd5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PdfResourceMd5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pdfResourceMd5 = string(rsp["PdfResourceMd5"].GetString());
+        m_pdfResourceMd5HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string VerifyPdfResponse::ToJsonString() const
         string key = "VerifySerialNo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_verifySerialNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pdfResourceMd5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfResourceMd5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pdfResourceMd5.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ string VerifyPdfResponse::GetVerifySerialNo() const
 bool VerifyPdfResponse::VerifySerialNoHasBeenSet() const
 {
     return m_verifySerialNoHasBeenSet;
+}
+
+string VerifyPdfResponse::GetPdfResourceMd5() const
+{
+    return m_pdfResourceMd5;
+}
+
+bool VerifyPdfResponse::PdfResourceMd5HasBeenSet() const
+{
+    return m_pdfResourceMd5HasBeenSet;
 }
 
 

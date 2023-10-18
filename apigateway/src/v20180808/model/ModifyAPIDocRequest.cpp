@@ -23,11 +23,11 @@ using namespace TencentCloud::Apigateway::V20180808::Model;
 using namespace std;
 
 ModifyAPIDocRequest::ModifyAPIDocRequest() :
-    m_apiDocIdHasBeenSet(false),
     m_apiDocNameHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
     m_environmentHasBeenSet(false),
-    m_apiIdsHasBeenSet(false)
+    m_apiIdsHasBeenSet(false),
+    m_apiDocIdHasBeenSet(false)
 {
 }
 
@@ -37,14 +37,6 @@ string ModifyAPIDocRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_apiDocIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ApiDocId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_apiDocId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_apiDocNameHasBeenSet)
     {
@@ -83,6 +75,14 @@ string ModifyAPIDocRequest::ToJsonString() const
         }
     }
 
+    if (m_apiDocIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiDocId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apiDocId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -90,22 +90,6 @@ string ModifyAPIDocRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ModifyAPIDocRequest::GetApiDocId() const
-{
-    return m_apiDocId;
-}
-
-void ModifyAPIDocRequest::SetApiDocId(const string& _apiDocId)
-{
-    m_apiDocId = _apiDocId;
-    m_apiDocIdHasBeenSet = true;
-}
-
-bool ModifyAPIDocRequest::ApiDocIdHasBeenSet() const
-{
-    return m_apiDocIdHasBeenSet;
-}
 
 string ModifyAPIDocRequest::GetApiDocName() const
 {
@@ -169,6 +153,22 @@ void ModifyAPIDocRequest::SetApiIds(const vector<string>& _apiIds)
 bool ModifyAPIDocRequest::ApiIdsHasBeenSet() const
 {
     return m_apiIdsHasBeenSet;
+}
+
+string ModifyAPIDocRequest::GetApiDocId() const
+{
+    return m_apiDocId;
+}
+
+void ModifyAPIDocRequest::SetApiDocId(const string& _apiDocId)
+{
+    m_apiDocId = _apiDocId;
+    m_apiDocIdHasBeenSet = true;
+}
+
+bool ModifyAPIDocRequest::ApiDocIdHasBeenSet() const
+{
+    return m_apiDocIdHasBeenSet;
 }
 
 
