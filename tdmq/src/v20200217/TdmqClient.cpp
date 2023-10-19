@@ -2878,6 +2878,49 @@ TdmqClient::DescribeRocketMQClustersOutcomeCallable TdmqClient::DescribeRocketMQ
     return task->get_future();
 }
 
+TdmqClient::DescribeRocketMQConsumerConnectionsOutcome TdmqClient::DescribeRocketMQConsumerConnections(const DescribeRocketMQConsumerConnectionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQConsumerConnections");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQConsumerConnectionsResponse rsp = DescribeRocketMQConsumerConnectionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQConsumerConnectionsOutcome(rsp);
+        else
+            return DescribeRocketMQConsumerConnectionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQConsumerConnectionsOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQConsumerConnectionsAsync(const DescribeRocketMQConsumerConnectionsRequest& request, const DescribeRocketMQConsumerConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQConsumerConnections(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQConsumerConnectionsOutcomeCallable TdmqClient::DescribeRocketMQConsumerConnectionsCallable(const DescribeRocketMQConsumerConnectionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQConsumerConnectionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQConsumerConnections(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQGroupsOutcome TdmqClient::DescribeRocketMQGroups(const DescribeRocketMQGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQGroups");

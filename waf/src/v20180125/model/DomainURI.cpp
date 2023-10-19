@@ -22,7 +22,8 @@ using namespace std;
 
 DomainURI::DomainURI() :
     m_domainHasBeenSet(false),
-    m_editionHasBeenSet(false)
+    m_editionHasBeenSet(false),
+    m_instanceIDHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome DomainURI::Deserialize(const rapidjson::Value &value)
         m_editionHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceID") && !value["InstanceID"].IsNull())
+    {
+        if (!value["InstanceID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainURI.InstanceID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceID = string(value["InstanceID"].GetString());
+        m_instanceIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void DomainURI::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Edition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void DomainURI::SetEdition(const string& _edition)
 bool DomainURI::EditionHasBeenSet() const
 {
     return m_editionHasBeenSet;
+}
+
+string DomainURI::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+void DomainURI::SetInstanceID(const string& _instanceID)
+{
+    m_instanceID = _instanceID;
+    m_instanceIDHasBeenSet = true;
+}
+
+bool DomainURI::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
 }
 

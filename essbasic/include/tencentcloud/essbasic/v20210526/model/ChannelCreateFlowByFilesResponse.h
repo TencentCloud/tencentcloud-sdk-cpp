@@ -45,9 +45,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同签署流程ID
+                     * 获取合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowId 合同签署流程ID
+                     * @return FlowId 合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,7 +81,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同签署流程ID
+                     * 合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowId;

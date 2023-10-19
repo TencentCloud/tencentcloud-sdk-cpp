@@ -33,6 +33,7 @@ CloudNativeAPIGatewayConfig::CloudNativeAPIGatewayConfig() :
     m_vpcIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_slaTypeHasBeenSet(false),
+    m_slaNameHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_multiZoneFlagHasBeenSet(false),
@@ -174,6 +175,16 @@ CoreInternalOutcome CloudNativeAPIGatewayConfig::Deserialize(const rapidjson::Va
         }
         m_slaType = string(value["SlaType"].GetString());
         m_slaTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SlaName") && !value["SlaName"].IsNull())
+    {
+        if (!value["SlaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayConfig.SlaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_slaName = string(value["SlaName"].GetString());
+        m_slaNameHasBeenSet = true;
     }
 
     if (value.HasMember("Vip") && !value["Vip"].IsNull())
@@ -358,6 +369,14 @@ void CloudNativeAPIGatewayConfig::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "SlaType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_slaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_slaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_slaName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vipHasBeenSet)
@@ -617,6 +636,22 @@ void CloudNativeAPIGatewayConfig::SetSlaType(const string& _slaType)
 bool CloudNativeAPIGatewayConfig::SlaTypeHasBeenSet() const
 {
     return m_slaTypeHasBeenSet;
+}
+
+string CloudNativeAPIGatewayConfig::GetSlaName() const
+{
+    return m_slaName;
+}
+
+void CloudNativeAPIGatewayConfig::SetSlaName(const string& _slaName)
+{
+    m_slaName = _slaName;
+    m_slaNameHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayConfig::SlaNameHasBeenSet() const
+{
+    return m_slaNameHasBeenSet;
 }
 
 string CloudNativeAPIGatewayConfig::GetVip() const

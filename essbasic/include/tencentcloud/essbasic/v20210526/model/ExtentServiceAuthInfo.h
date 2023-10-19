@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 企业扩展服务授权信息
+                * 扩展服务开通和授权的详细信息
                 */
                 class ExtentServiceAuthInfo : public AbstractModel
                 {
@@ -49,7 +49,7 @@ namespace TencentCloud
                     /**
                      * 获取扩展服务类型
 <ul>
-  <li>AUTO_SIGN             企业静默签（自动签署）</li>
+  <li>AUTO_SIGN             企业自动签（自动签署）</li>
 <li>  OVERSEA_SIGN          企业与港澳台居民*签署合同</li>
 <li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>
  <li> PAGING_SEAL           骑缝章</li>
@@ -58,7 +58,7 @@ namespace TencentCloud
 </ul>
                      * @return Type 扩展服务类型
 <ul>
-  <li>AUTO_SIGN             企业静默签（自动签署）</li>
+  <li>AUTO_SIGN             企业自动签（自动签署）</li>
 <li>  OVERSEA_SIGN          企业与港澳台居民*签署合同</li>
 <li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>
  <li> PAGING_SEAL           骑缝章</li>
@@ -72,7 +72,7 @@ namespace TencentCloud
                     /**
                      * 设置扩展服务类型
 <ul>
-  <li>AUTO_SIGN             企业静默签（自动签署）</li>
+  <li>AUTO_SIGN             企业自动签（自动签署）</li>
 <li>  OVERSEA_SIGN          企业与港澳台居民*签署合同</li>
 <li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>
  <li> PAGING_SEAL           骑缝章</li>
@@ -81,7 +81,7 @@ namespace TencentCloud
 </ul>
                      * @param _type 扩展服务类型
 <ul>
-  <li>AUTO_SIGN             企业静默签（自动签署）</li>
+  <li>AUTO_SIGN             企业自动签（自动签署）</li>
 <li>  OVERSEA_SIGN          企业与港澳台居民*签署合同</li>
 <li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>
  <li> PAGING_SEAL           骑缝章</li>
@@ -121,23 +121,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取服务状态 
-ENABLE 开启 
-DISABLE 关闭
-                     * @return Status 服务状态 
-ENABLE 开启 
-DISABLE 关闭
+                     * 获取扩展服务的开通状态： ENABLE：开通 DISABLE：未开通	
+                     * @return Status 扩展服务的开通状态： ENABLE：开通 DISABLE：未开通	
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置服务状态 
-ENABLE 开启 
-DISABLE 关闭
-                     * @param _status 服务状态 
-ENABLE 开启 
-DISABLE 关闭
+                     * 设置扩展服务的开通状态： ENABLE：开通 DISABLE：未开通	
+                     * @param _status 扩展服务的开通状态： ENABLE：开通 DISABLE：未开通	
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -150,18 +142,18 @@ DISABLE 关闭
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取最近操作人第三方应用平台的用户openid
+                     * 获取操作扩展服务的操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperatorOpenId 最近操作人第三方应用平台的用户openid
+                     * @return OperatorOpenId 操作扩展服务的操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperatorOpenId() const;
 
                     /**
-                     * 设置最近操作人第三方应用平台的用户openid
+                     * 设置操作扩展服务的操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operatorOpenId 最近操作人第三方应用平台的用户openid
+                     * @param _operatorOpenId 操作扩展服务的操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,18 +167,18 @@ DISABLE 关闭
                     bool OperatorOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取最近操作时间戳，单位秒
+                     * 获取扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperateOn 最近操作时间戳，单位秒
+                     * @return OperateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOperateOn() const;
 
                     /**
-                     * 设置最近操作时间戳，单位秒
+                     * 设置扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operateOn 最近操作时间戳，单位秒
+                     * @param _operateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -204,7 +196,7 @@ DISABLE 关闭
                     /**
                      * 扩展服务类型
 <ul>
-  <li>AUTO_SIGN             企业静默签（自动签署）</li>
+  <li>AUTO_SIGN             企业自动签（自动签署）</li>
 <li>  OVERSEA_SIGN          企业与港澳台居民*签署合同</li>
 <li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>
  <li> PAGING_SEAL           骑缝章</li>
@@ -222,22 +214,20 @@ DISABLE 关闭
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 服务状态 
-ENABLE 开启 
-DISABLE 关闭
+                     * 扩展服务的开通状态： ENABLE：开通 DISABLE：未开通	
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 最近操作人第三方应用平台的用户openid
+                     * 操作扩展服务的操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operatorOpenId;
                     bool m_operatorOpenIdHasBeenSet;
 
                     /**
-                     * 最近操作时间戳，单位秒
+                     * 扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operateOn;

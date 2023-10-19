@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/CMEExportInfo.h>
 #include <tencentcloud/cme/v20191029/model/VODExportInfo.h>
+#include <tencentcloud/cme/v20191029/model/VideoExportExtensionArgs.h>
 
 
 namespace TencentCloud
@@ -241,6 +242,27 @@ namespace TencentCloud
                     bool VODExportInfoHasBeenSet() const;
 
                     /**
+                     * 获取视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。
+                     * @return ExportExtensionArgs 视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。
+                     * 
+                     */
+                    VideoExportExtensionArgs GetExportExtensionArgs() const;
+
+                    /**
+                     * 设置视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。
+                     * @param _exportExtensionArgs 视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。
+                     * 
+                     */
+                    void SetExportExtensionArgs(const VideoExportExtensionArgs& _exportExtensionArgs);
+
+                    /**
+                     * 判断参数 ExportExtensionArgs 是否已赋值
+                     * @return ExportExtensionArgs 是否已赋值
+                     * 
+                     */
+                    bool ExportExtensionArgsHasBeenSet() const;
+
+                    /**
                      * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使用的媒资该操作者需要拥有使用权限。
                      * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使用的媒资该操作者需要拥有使用权限。
                      * 
@@ -317,6 +339,12 @@ namespace TencentCloud
                      */
                     VODExportInfo m_vODExportInfo;
                     bool m_vODExportInfoHasBeenSet;
+
+                    /**
+                     * 视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。
+                     */
+                    VideoExportExtensionArgs m_exportExtensionArgs;
+                    bool m_exportExtensionArgsHasBeenSet;
 
                     /**
                      * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使用的媒资该操作者需要拥有使用权限。

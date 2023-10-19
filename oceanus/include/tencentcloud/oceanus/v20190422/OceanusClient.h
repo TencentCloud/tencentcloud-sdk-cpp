@@ -37,6 +37,12 @@
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateWorkSpaceRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateWorkSpaceResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteFoldersRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteFoldersResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteJobConfigsRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteJobConfigsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h>
@@ -71,8 +77,12 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyFolderRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementRequest.h>
@@ -116,6 +126,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateResourceConfigResponse> CreateResourceConfigOutcome;
                 typedef std::future<CreateResourceConfigOutcome> CreateResourceConfigOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateResourceConfigRequest&, CreateResourceConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWorkSpaceResponse> CreateWorkSpaceOutcome;
+                typedef std::future<CreateWorkSpaceOutcome> CreateWorkSpaceOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CreateWorkSpaceRequest&, CreateWorkSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFoldersResponse> DeleteFoldersOutcome;
+                typedef std::future<DeleteFoldersOutcome> DeleteFoldersOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DeleteFoldersRequest&, DeleteFoldersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFoldersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteJobConfigsResponse> DeleteJobConfigsOutcome;
+                typedef std::future<DeleteJobConfigsOutcome> DeleteJobConfigsOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DeleteJobConfigsRequest&, DeleteJobConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteJobsResponse> DeleteJobsOutcome;
                 typedef std::future<DeleteJobsOutcome> DeleteJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DeleteJobsRequest&, DeleteJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobsAsyncHandler;
@@ -167,9 +186,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FetchSqlGatewayStatementResultResponse> FetchSqlGatewayStatementResultOutcome;
                 typedef std::future<FetchSqlGatewayStatementResultOutcome> FetchSqlGatewayStatementResultOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::FetchSqlGatewayStatementResultRequest&, FetchSqlGatewayStatementResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchSqlGatewayStatementResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFolderResponse> ModifyFolderOutcome;
+                typedef std::future<ModifyFolderOutcome> ModifyFolderOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::ModifyFolderRequest&, ModifyFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFolderAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyJobResponse> ModifyJobOutcome;
                 typedef std::future<ModifyJobOutcome> ModifyJobOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ModifyJobRequest&, ModifyJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWorkSpaceResponse> ModifyWorkSpaceOutcome;
+                typedef std::future<ModifyWorkSpaceOutcome> ModifyWorkSpaceOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::ModifyWorkSpaceRequest&, ModifyWorkSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobsResponse> RunJobsOutcome;
                 typedef std::future<RunJobsOutcome> RunJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::RunJobsRequest&, RunJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobsAsyncHandler;
@@ -247,6 +272,33 @@ namespace TencentCloud
                 CreateResourceConfigOutcome CreateResourceConfig(const Model::CreateResourceConfigRequest &request);
                 void CreateResourceConfigAsync(const Model::CreateResourceConfigRequest& request, const CreateResourceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateResourceConfigOutcomeCallable CreateResourceConfigCallable(const Model::CreateResourceConfigRequest& request);
+
+                /**
+                 *创建工作空间
+                 * @param req CreateWorkSpaceRequest
+                 * @return CreateWorkSpaceOutcome
+                 */
+                CreateWorkSpaceOutcome CreateWorkSpace(const Model::CreateWorkSpaceRequest &request);
+                void CreateWorkSpaceAsync(const Model::CreateWorkSpaceRequest& request, const CreateWorkSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWorkSpaceOutcomeCallable CreateWorkSpaceCallable(const Model::CreateWorkSpaceRequest& request);
+
+                /**
+                 *作业列表删除文件夹
+                 * @param req DeleteFoldersRequest
+                 * @return DeleteFoldersOutcome
+                 */
+                DeleteFoldersOutcome DeleteFolders(const Model::DeleteFoldersRequest &request);
+                void DeleteFoldersAsync(const Model::DeleteFoldersRequest& request, const DeleteFoldersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFoldersOutcomeCallable DeleteFoldersCallable(const Model::DeleteFoldersRequest& request);
+
+                /**
+                 *删除作业配置
+                 * @param req DeleteJobConfigsRequest
+                 * @return DeleteJobConfigsOutcome
+                 */
+                DeleteJobConfigsOutcome DeleteJobConfigs(const Model::DeleteJobConfigsRequest &request);
+                void DeleteJobConfigsAsync(const Model::DeleteJobConfigsRequest& request, const DeleteJobConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteJobConfigsOutcomeCallable DeleteJobConfigsCallable(const Model::DeleteJobConfigsRequest& request);
 
                 /**
                  *批量删除作业接口，批量操作数量上限20
@@ -402,6 +454,15 @@ namespace TencentCloud
                 FetchSqlGatewayStatementResultOutcomeCallable FetchSqlGatewayStatementResultCallable(const Model::FetchSqlGatewayStatementResultRequest& request);
 
                 /**
+                 *自定义树状结构页面拖拽文件夹
+                 * @param req ModifyFolderRequest
+                 * @return ModifyFolderOutcome
+                 */
+                ModifyFolderOutcome ModifyFolder(const Model::ModifyFolderRequest &request);
+                void ModifyFolderAsync(const Model::ModifyFolderRequest& request, const ModifyFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFolderOutcomeCallable ModifyFolderCallable(const Model::ModifyFolderRequest& request);
+
+                /**
                  *更新作业属性，仅允许以下3种操作，不支持组合操作：
 (1)	更新作业名称
 (2)	更新作业备注 
@@ -419,6 +480,15 @@ namespace TencentCloud
                 ModifyJobOutcome ModifyJob(const Model::ModifyJobRequest &request);
                 void ModifyJobAsync(const Model::ModifyJobRequest& request, const ModifyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyJobOutcomeCallable ModifyJobCallable(const Model::ModifyJobRequest& request);
+
+                /**
+                 *修改工作空间
+                 * @param req ModifyWorkSpaceRequest
+                 * @return ModifyWorkSpaceOutcome
+                 */
+                ModifyWorkSpaceOutcome ModifyWorkSpace(const Model::ModifyWorkSpaceRequest &request);
+                void ModifyWorkSpaceAsync(const Model::ModifyWorkSpaceRequest& request, const ModifyWorkSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWorkSpaceOutcomeCallable ModifyWorkSpaceCallable(const Model::ModifyWorkSpaceRequest& request);
 
                 /**
                  *批量启动或者恢复作业，批量操作数量上限20

@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取规则名称,例如: cwp
+                     * @return RuleName 规则名称,例如: cwp
+                     * 
+                     */
+                    std::string GetRuleName() const;
+
+                    /**
+                     * 设置规则名称,例如: cwp
+                     * @param _ruleName 规则名称,例如: cwp
+                     * 
+                     */
+                    void SetRuleName(const std::string& _ruleName);
+
+                    /**
+                     * 判断参数 RuleName 是否已赋值
+                     * @return RuleName 是否已赋值
+                     * 
+                     */
+                    bool RuleNameHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 规则名称,例如: cwp
+                     */
+                    std::string m_ruleName;
+                    bool m_ruleNameHasBeenSet;
 
                 };
             }

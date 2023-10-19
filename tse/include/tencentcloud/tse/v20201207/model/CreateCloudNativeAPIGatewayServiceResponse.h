@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tse/v20201207/model/CreateGatewayServiceResult.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,30 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取网关服务创建结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Result 网关服务创建结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CreateGatewayServiceResult GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 网关服务创建结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CreateGatewayServiceResult m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

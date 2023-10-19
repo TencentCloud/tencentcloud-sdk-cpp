@@ -169,6 +169,49 @@ ClbClient::BatchDeregisterTargetsOutcomeCallable ClbClient::BatchDeregisterTarge
     return task->get_future();
 }
 
+ClbClient::BatchModifyTargetTagOutcome ClbClient::BatchModifyTargetTag(const BatchModifyTargetTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchModifyTargetTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchModifyTargetTagResponse rsp = BatchModifyTargetTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchModifyTargetTagOutcome(rsp);
+        else
+            return BatchModifyTargetTagOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchModifyTargetTagOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::BatchModifyTargetTagAsync(const BatchModifyTargetTagRequest& request, const BatchModifyTargetTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchModifyTargetTag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::BatchModifyTargetTagOutcomeCallable ClbClient::BatchModifyTargetTagCallable(const BatchModifyTargetTagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchModifyTargetTagOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchModifyTargetTag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::BatchModifyTargetWeightOutcome ClbClient::BatchModifyTargetWeight(const BatchModifyTargetWeightRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchModifyTargetWeight");

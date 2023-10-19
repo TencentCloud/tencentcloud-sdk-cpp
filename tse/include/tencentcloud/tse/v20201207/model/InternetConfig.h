@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡的规格类型，传 "SLA" 表示性能容量型，不传为共享型。
-                     * @return SlaType 负载均衡的规格类型，传 "SLA" 表示性能容量型，不传为共享型。
+                     * 获取负载均衡的规格类型，支持clb.c2.medium、clb.c3.small、clb.c3.medium、clb.c4.small、clb.c4.medium、clb.c4.large、clb.c4.xlarge，不传为共享型。
+                     * @return SlaType 负载均衡的规格类型，支持clb.c2.medium、clb.c3.small、clb.c3.medium、clb.c4.small、clb.c4.medium、clb.c4.large、clb.c4.xlarge，不传为共享型。
                      * 
                      */
                     std::string GetSlaType() const;
 
                     /**
-                     * 设置负载均衡的规格类型，传 "SLA" 表示性能容量型，不传为共享型。
-                     * @param _slaType 负载均衡的规格类型，传 "SLA" 表示性能容量型，不传为共享型。
+                     * 设置负载均衡的规格类型，支持clb.c2.medium、clb.c3.small、clb.c3.medium、clb.c4.small、clb.c4.medium、clb.c4.large、clb.c4.xlarge，不传为共享型。
+                     * @param _slaType 负载均衡的规格类型，支持clb.c2.medium、clb.c3.small、clb.c3.medium、clb.c4.small、clb.c4.medium、clb.c4.large、clb.c4.xlarge，不传为共享型。
                      * 
                      */
                     void SetSlaType(const std::string& _slaType);
@@ -241,7 +241,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 负载均衡的规格类型，传 "SLA" 表示性能容量型，不传为共享型。
+                     * 负载均衡的规格类型，支持clb.c2.medium、clb.c3.small、clb.c3.medium、clb.c4.small、clb.c4.medium、clb.c4.large、clb.c4.xlarge，不传为共享型。
                      */
                     std::string m_slaType;
                     bool m_slaTypeHasBeenSet;

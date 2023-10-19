@@ -2276,6 +2276,92 @@ LcicClient::RegisterUserOutcomeCallable LcicClient::RegisterUserCallable(const R
     return task->get_future();
 }
 
+LcicClient::SendRoomNormalMessageOutcome LcicClient::SendRoomNormalMessage(const SendRoomNormalMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendRoomNormalMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendRoomNormalMessageResponse rsp = SendRoomNormalMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendRoomNormalMessageOutcome(rsp);
+        else
+            return SendRoomNormalMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return SendRoomNormalMessageOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::SendRoomNormalMessageAsync(const SendRoomNormalMessageRequest& request, const SendRoomNormalMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendRoomNormalMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::SendRoomNormalMessageOutcomeCallable LcicClient::SendRoomNormalMessageCallable(const SendRoomNormalMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendRoomNormalMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->SendRoomNormalMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::SendRoomNotificationMessageOutcome LcicClient::SendRoomNotificationMessage(const SendRoomNotificationMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendRoomNotificationMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendRoomNotificationMessageResponse rsp = SendRoomNotificationMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendRoomNotificationMessageOutcome(rsp);
+        else
+            return SendRoomNotificationMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return SendRoomNotificationMessageOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::SendRoomNotificationMessageAsync(const SendRoomNotificationMessageRequest& request, const SendRoomNotificationMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendRoomNotificationMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::SendRoomNotificationMessageOutcomeCallable LcicClient::SendRoomNotificationMessageCallable(const SendRoomNotificationMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendRoomNotificationMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->SendRoomNotificationMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::SetAppCustomContentOutcome LcicClient::SetAppCustomContent(const SetAppCustomContentRequest &request)
 {
     auto outcome = MakeRequest(request, "SetAppCustomContent");

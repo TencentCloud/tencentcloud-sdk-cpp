@@ -311,18 +311,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡的规格类型，传 "SLA" 表示性能容量型，返回空为共享型
+                     * 获取负载均衡的规格类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SlaType 负载均衡的规格类型，传 "SLA" 表示性能容量型，返回空为共享型
+                     * @return SlaType 负载均衡的规格类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSlaType() const;
 
                     /**
-                     * 设置负载均衡的规格类型，传 "SLA" 表示性能容量型，返回空为共享型
+                     * 设置负载均衡的规格类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _slaType 负载均衡的规格类型，传 "SLA" 表示性能容量型，返回空为共享型
+                     * @param _slaType 负载均衡的规格类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -334,6 +334,31 @@ namespace TencentCloud
                      * 
                      */
                     bool SlaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取clb规格名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaName clb规格名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSlaName() const;
+
+                    /**
+                     * 设置clb规格名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _slaName clb规格名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSlaName(const std::string& _slaName);
+
+                    /**
+                     * 判断参数 SlaName 是否已赋值
+                     * @return SlaName 是否已赋值
+                     * 
+                     */
+                    bool SlaNameHasBeenSet() const;
 
                     /**
                      * 获取clb vip
@@ -612,11 +637,18 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 负载均衡的规格类型，传 "SLA" 表示性能容量型，返回空为共享型
+                     * 负载均衡的规格类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_slaType;
                     bool m_slaTypeHasBeenSet;
+
+                    /**
+                     * clb规格名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_slaName;
+                    bool m_slaNameHasBeenSet;
 
                     /**
                      * clb vip

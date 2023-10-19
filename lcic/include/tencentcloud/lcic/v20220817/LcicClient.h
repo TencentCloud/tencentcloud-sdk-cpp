@@ -127,6 +127,10 @@
 #include <tencentcloud/lcic/v20220817/model/ModifyUserProfileResponse.h>
 #include <tencentcloud/lcic/v20220817/model/RegisterUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/RegisterUserResponse.h>
+#include <tencentcloud/lcic/v20220817/model/SendRoomNormalMessageRequest.h>
+#include <tencentcloud/lcic/v20220817/model/SendRoomNormalMessageResponse.h>
+#include <tencentcloud/lcic/v20220817/model/SendRoomNotificationMessageRequest.h>
+#include <tencentcloud/lcic/v20220817/model/SendRoomNotificationMessageResponse.h>
 #include <tencentcloud/lcic/v20220817/model/SetAppCustomContentRequest.h>
 #include <tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h>
 #include <tencentcloud/lcic/v20220817/model/SetWatermarkRequest.h>
@@ -305,6 +309,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RegisterUserResponse> RegisterUserOutcome;
                 typedef std::future<RegisterUserOutcome> RegisterUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::RegisterUserRequest&, RegisterUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendRoomNormalMessageResponse> SendRoomNormalMessageOutcome;
+                typedef std::future<SendRoomNormalMessageOutcome> SendRoomNormalMessageOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::SendRoomNormalMessageRequest&, SendRoomNormalMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendRoomNormalMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendRoomNotificationMessageResponse> SendRoomNotificationMessageOutcome;
+                typedef std::future<SendRoomNotificationMessageOutcome> SendRoomNotificationMessageOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::SendRoomNotificationMessageRequest&, SendRoomNotificationMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendRoomNotificationMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetAppCustomContentResponse> SetAppCustomContentOutcome;
                 typedef std::future<SetAppCustomContentOutcome> SetAppCustomContentOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::SetAppCustomContentRequest&, SetAppCustomContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAppCustomContentAsyncHandler;
@@ -789,6 +799,24 @@ namespace TencentCloud
                 RegisterUserOutcome RegisterUser(const Model::RegisterUserRequest &request);
                 void RegisterUserAsync(const Model::RegisterUserRequest& request, const RegisterUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RegisterUserOutcomeCallable RegisterUserCallable(const Model::RegisterUserRequest& request);
+
+                /**
+                 *1、按照指定身份发送消息，目前支持表情消息、图片消息、文本消息。
+                 * @param req SendRoomNormalMessageRequest
+                 * @return SendRoomNormalMessageOutcome
+                 */
+                SendRoomNormalMessageOutcome SendRoomNormalMessage(const Model::SendRoomNormalMessageRequest &request);
+                void SendRoomNormalMessageAsync(const Model::SendRoomNormalMessageRequest& request, const SendRoomNormalMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendRoomNormalMessageOutcomeCallable SendRoomNormalMessageCallable(const Model::SendRoomNormalMessageRequest& request);
+
+                /**
+                 *App 管理员可以通过该接口在群组中发送通知、公告等。目前仅支持文本消息。
+                 * @param req SendRoomNotificationMessageRequest
+                 * @return SendRoomNotificationMessageOutcome
+                 */
+                SendRoomNotificationMessageOutcome SendRoomNotificationMessage(const Model::SendRoomNotificationMessageRequest &request);
+                void SendRoomNotificationMessageAsync(const Model::SendRoomNotificationMessageRequest& request, const SendRoomNotificationMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendRoomNotificationMessageOutcomeCallable SendRoomNotificationMessageCallable(const Model::SendRoomNotificationMessageRequest& request);
 
                 /**
                  *设置应用的自定义内容，包括应用图标，自定义的代码等。如果已存在，则为更新。更新js、css内容后，要生效也需要调用该接口

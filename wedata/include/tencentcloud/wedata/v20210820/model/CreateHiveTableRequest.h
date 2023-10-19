@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DatasourceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库
-                     * @return Database 数据库
+                     * 获取数据库名称
+                     * @return Database 数据库名称
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
-                     * 设置数据库
-                     * @param _database 数据库
+                     * 设置数据库名称
+                     * @param _database 数据库名称
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_datasourceIdHasBeenSet;
 
                     /**
-                     * 数据库
+                     * 数据库名称
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;

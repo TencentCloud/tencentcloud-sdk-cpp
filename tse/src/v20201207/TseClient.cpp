@@ -2147,3 +2147,46 @@ TseClient::UpdateEngineInternetAccessOutcomeCallable TseClient::UpdateEngineInte
     return task->get_future();
 }
 
+TseClient::UpdateUpstreamTargetsOutcome TseClient::UpdateUpstreamTargets(const UpdateUpstreamTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateUpstreamTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateUpstreamTargetsResponse rsp = UpdateUpstreamTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateUpstreamTargetsOutcome(rsp);
+        else
+            return UpdateUpstreamTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateUpstreamTargetsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::UpdateUpstreamTargetsAsync(const UpdateUpstreamTargetsRequest& request, const UpdateUpstreamTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateUpstreamTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::UpdateUpstreamTargetsOutcomeCallable TseClient::UpdateUpstreamTargetsCallable(const UpdateUpstreamTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateUpstreamTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateUpstreamTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

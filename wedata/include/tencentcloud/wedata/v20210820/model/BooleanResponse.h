@@ -92,6 +92,31 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取基线Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BaselineId 基线Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBaselineId() const;
+
+                    /**
+                     * 设置基线Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _baselineId 基线Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBaselineId(const int64_t& _baselineId);
+
+                    /**
+                     * 判断参数 BaselineId 是否已赋值
+                     * @return BaselineId 是否已赋值
+                     * 
+                     */
+                    bool BaselineIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +131,13 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 基线Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_baselineId;
+                    bool m_baselineIdHasBeenSet;
 
                 };
             }

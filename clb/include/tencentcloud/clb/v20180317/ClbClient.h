@@ -29,6 +29,8 @@
 #include <tencentcloud/clb/v20180317/model/AutoRewriteResponse.h>
 #include <tencentcloud/clb/v20180317/model/BatchDeregisterTargetsRequest.h>
 #include <tencentcloud/clb/v20180317/model/BatchDeregisterTargetsResponse.h>
+#include <tencentcloud/clb/v20180317/model/BatchModifyTargetTagRequest.h>
+#include <tencentcloud/clb/v20180317/model/BatchModifyTargetTagResponse.h>
 #include <tencentcloud/clb/v20180317/model/BatchModifyTargetWeightRequest.h>
 #include <tencentcloud/clb/v20180317/model/BatchModifyTargetWeightResponse.h>
 #include <tencentcloud/clb/v20180317/model/BatchRegisterTargetsRequest.h>
@@ -214,6 +216,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchDeregisterTargetsResponse> BatchDeregisterTargetsOutcome;
                 typedef std::future<BatchDeregisterTargetsOutcome> BatchDeregisterTargetsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::BatchDeregisterTargetsRequest&, BatchDeregisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeregisterTargetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchModifyTargetTagResponse> BatchModifyTargetTagOutcome;
+                typedef std::future<BatchModifyTargetTagOutcome> BatchModifyTargetTagOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::BatchModifyTargetTagRequest&, BatchModifyTargetTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyTargetTagAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchModifyTargetWeightResponse> BatchModifyTargetWeightOutcome;
                 typedef std::future<BatchModifyTargetWeightOutcome> BatchModifyTargetWeightOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::BatchModifyTargetWeightRequest&, BatchModifyTargetWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyTargetWeightAsyncHandler;
@@ -488,6 +493,15 @@ namespace TencentCloud
                 BatchDeregisterTargetsOutcome BatchDeregisterTargets(const Model::BatchDeregisterTargetsRequest &request);
                 void BatchDeregisterTargetsAsync(const Model::BatchDeregisterTargetsRequest& request, const BatchDeregisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchDeregisterTargetsOutcomeCallable BatchDeregisterTargetsCallable(const Model::BatchDeregisterTargetsRequest& request);
+
+                /**
+                 *BatchModifyTargetTag 接口用于批量修改负载均衡监听器绑定的后端机器的标签。批量修改的资源数量上限为500。本接口为同步接口。<br/>负载均衡的4层和7层监听器支持此接口，传统型负载均衡不支持。
+                 * @param req BatchModifyTargetTagRequest
+                 * @return BatchModifyTargetTagOutcome
+                 */
+                BatchModifyTargetTagOutcome BatchModifyTargetTag(const Model::BatchModifyTargetTagRequest &request);
+                void BatchModifyTargetTagAsync(const Model::BatchModifyTargetTagRequest& request, const BatchModifyTargetTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchModifyTargetTagOutcomeCallable BatchModifyTargetTagCallable(const Model::BatchModifyTargetTagRequest& request);
 
                 /**
                  *BatchModifyTargetWeight 接口用于批量修改负载均衡监听器绑定的后端机器的转发权重。批量修改的资源数量上限为500。本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。<br/>负载均衡的4层和7层监听器支持此接口，传统型负载均衡不支持。

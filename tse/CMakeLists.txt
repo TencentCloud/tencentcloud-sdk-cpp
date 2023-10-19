@@ -57,16 +57,19 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/SREInstance.h
   include/tencentcloud/tse/v20201207/model/InstanceTagInfo.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.h
+  include/tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesResponse.h
   include/tencentcloud/tse/v20201207/model/NacosReplica.h
   include/tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessRequest.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayCanaryRuleResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstancesRequest.h
+  include/tencentcloud/tse/v20201207/model/CreateGatewayServiceResult.h
   include/tencentcloud/tse/v20201207/model/KongCertificate.h
   include/tencentcloud/tse/v20201207/model/KVPair.h
   include/tencentcloud/tse/v20201207/model/DeleteEngineResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRoutesResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasRequest.h
+  include/tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.h
   include/tencentcloud/tse/v20201207/model/InstancePort.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayResult.h
@@ -229,16 +232,19 @@ set(tse_src
   src/v20201207/model/SREInstance.cpp
   src/v20201207/model/InstanceTagInfo.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.cpp
+  src/v20201207/model/UpdateUpstreamTargetsResponse.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesResponse.cpp
   src/v20201207/model/NacosReplica.cpp
   src/v20201207/model/UpdateEngineInternetAccessRequest.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayCanaryRuleResponse.cpp
   src/v20201207/model/DescribeSREInstancesRequest.cpp
+  src/v20201207/model/CreateGatewayServiceResult.cpp
   src/v20201207/model/KongCertificate.cpp
   src/v20201207/model/KVPair.cpp
   src/v20201207/model/DeleteEngineResponse.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayRoutesResponse.cpp
   src/v20201207/model/DescribeZookeeperReplicasRequest.cpp
+  src/v20201207/model/UpdateUpstreamTargetsRequest.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.cpp
   src/v20201207/model/InstancePort.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayResult.cpp

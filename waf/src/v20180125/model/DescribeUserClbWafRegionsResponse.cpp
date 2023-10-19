@@ -24,7 +24,8 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 DescribeUserClbWafRegionsResponse::DescribeUserClbWafRegionsResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_richDatasHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,26 @@ CoreInternalOutcome DescribeUserClbWafRegionsResponse::Deserialize(const string 
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RichDatas") && !rsp["RichDatas"].IsNull())
+    {
+        if (!rsp["RichDatas"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RichDatas` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RichDatas"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClbWafRegionItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_richDatas.push_back(item);
+        }
+        m_richDatasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +119,21 @@ string DescribeUserClbWafRegionsResponse::ToJsonString() const
         }
     }
 
+    if (m_richDatasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RichDatas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_richDatas.begin(); itr != m_richDatas.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -118,6 +154,16 @@ vector<string> DescribeUserClbWafRegionsResponse::GetData() const
 bool DescribeUserClbWafRegionsResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+vector<ClbWafRegionItem> DescribeUserClbWafRegionsResponse::GetRichDatas() const
+{
+    return m_richDatas;
+}
+
+bool DescribeUserClbWafRegionsResponse::RichDatasHasBeenSet() const
+{
+    return m_richDatasHasBeenSet;
 }
 
 

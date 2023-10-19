@@ -141,6 +141,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsDirSummaryResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionLogRequest.h>
@@ -446,6 +448,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLakeFsInfoResponse> DescribeLakeFsInfoOutcome;
                 typedef std::future<DescribeLakeFsInfoOutcome> DescribeLakeFsInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeLakeFsInfoRequest&, DescribeLakeFsInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLakeFsInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLakeFsTaskResultResponse> DescribeLakeFsTaskResultOutcome;
+                typedef std::future<DescribeLakeFsTaskResultOutcome> DescribeLakeFsTaskResultOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeLakeFsTaskResultRequest&, DescribeLakeFsTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLakeFsTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNotebookSessionResponse> DescribeNotebookSessionOutcome;
                 typedef std::future<DescribeNotebookSessionOutcome> DescribeNotebookSessionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeNotebookSessionRequest&, DescribeNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookSessionAsyncHandler;
@@ -1150,6 +1155,15 @@ namespace TencentCloud
                 DescribeLakeFsInfoOutcome DescribeLakeFsInfo(const Model::DescribeLakeFsInfoRequest &request);
                 void DescribeLakeFsInfoAsync(const Model::DescribeLakeFsInfoRequest& request, const DescribeLakeFsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLakeFsInfoOutcomeCallable DescribeLakeFsInfoCallable(const Model::DescribeLakeFsInfoRequest& request);
+
+                /**
+                 *获取LakeFs上task执行结果访问信息
+                 * @param req DescribeLakeFsTaskResultRequest
+                 * @return DescribeLakeFsTaskResultOutcome
+                 */
+                DescribeLakeFsTaskResultOutcome DescribeLakeFsTaskResult(const Model::DescribeLakeFsTaskResultRequest &request);
+                void DescribeLakeFsTaskResultAsync(const Model::DescribeLakeFsTaskResultRequest& request, const DescribeLakeFsTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLakeFsTaskResultOutcomeCallable DescribeLakeFsTaskResultCallable(const Model::DescribeLakeFsTaskResultRequest& request);
 
                 /**
                  *本接口（DescribeNotebookSession）用于查询交互式 session详情信息

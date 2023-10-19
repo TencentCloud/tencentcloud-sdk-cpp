@@ -121,6 +121,8 @@
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewaySpecResponse.h>
 #include <tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessRequest.h>
 #include <tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessResponse.h>
+#include <tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsRequest.h>
+#include <tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsResponse.h>
 
 
 namespace TencentCloud
@@ -282,6 +284,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateEngineInternetAccessResponse> UpdateEngineInternetAccessOutcome;
                 typedef std::future<UpdateEngineInternetAccessOutcome> UpdateEngineInternetAccessOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::UpdateEngineInternetAccessRequest&, UpdateEngineInternetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEngineInternetAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateUpstreamTargetsResponse> UpdateUpstreamTargetsOutcome;
+                typedef std::future<UpdateUpstreamTargetsOutcome> UpdateUpstreamTargetsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::UpdateUpstreamTargetsRequest&, UpdateUpstreamTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUpstreamTargetsAsyncHandler;
 
 
 
@@ -725,6 +730,15 @@ namespace TencentCloud
                 UpdateEngineInternetAccessOutcome UpdateEngineInternetAccess(const Model::UpdateEngineInternetAccessRequest &request);
                 void UpdateEngineInternetAccessAsync(const Model::UpdateEngineInternetAccessRequest& request, const UpdateEngineInternetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateEngineInternetAccessOutcomeCallable UpdateEngineInternetAccessCallable(const Model::UpdateEngineInternetAccessRequest& request);
+
+                /**
+                 *更新网关上游实例列表，仅支持IPList服务类型
+                 * @param req UpdateUpstreamTargetsRequest
+                 * @return UpdateUpstreamTargetsOutcome
+                 */
+                UpdateUpstreamTargetsOutcome UpdateUpstreamTargets(const Model::UpdateUpstreamTargetsRequest &request);
+                void UpdateUpstreamTargetsAsync(const Model::UpdateUpstreamTargetsRequest& request, const UpdateUpstreamTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateUpstreamTargetsOutcomeCallable UpdateUpstreamTargetsCallable(const Model::UpdateUpstreamTargetsRequest& request);
 
             };
         }

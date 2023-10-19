@@ -2835,6 +2835,49 @@ WafClient::DescribeSessionOutcomeCallable WafClient::DescribeSessionCallable(con
     return task->get_future();
 }
 
+WafClient::DescribeSpartaProtectionInfoOutcome WafClient::DescribeSpartaProtectionInfo(const DescribeSpartaProtectionInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSpartaProtectionInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSpartaProtectionInfoResponse rsp = DescribeSpartaProtectionInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSpartaProtectionInfoOutcome(rsp);
+        else
+            return DescribeSpartaProtectionInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSpartaProtectionInfoOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeSpartaProtectionInfoAsync(const DescribeSpartaProtectionInfoRequest& request, const DescribeSpartaProtectionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSpartaProtectionInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeSpartaProtectionInfoOutcomeCallable WafClient::DescribeSpartaProtectionInfoCallable(const DescribeSpartaProtectionInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSpartaProtectionInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSpartaProtectionInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeTlsVersionOutcome WafClient::DescribeTlsVersion(const DescribeTlsVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTlsVersion");
@@ -3043,6 +3086,49 @@ WafClient::DescribeUserDomainInfoOutcomeCallable WafClient::DescribeUserDomainIn
         [this, request]()
         {
             return this->DescribeUserDomainInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeUserLevelOutcome WafClient::DescribeUserLevel(const DescribeUserLevelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserLevel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserLevelResponse rsp = DescribeUserLevelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserLevelOutcome(rsp);
+        else
+            return DescribeUserLevelOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserLevelOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeUserLevelAsync(const DescribeUserLevelRequest& request, const DescribeUserLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserLevel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeUserLevelOutcomeCallable WafClient::DescribeUserLevelCallable(const DescribeUserLevelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserLevelOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserLevel(request);
         }
     );
 
@@ -3301,6 +3387,49 @@ WafClient::DescribeWafThreatenIntelligenceOutcomeCallable WafClient::DescribeWaf
         [this, request]()
         {
             return this->DescribeWafThreatenIntelligence(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeWebshellStatusOutcome WafClient::DescribeWebshellStatus(const DescribeWebshellStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWebshellStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWebshellStatusResponse rsp = DescribeWebshellStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWebshellStatusOutcome(rsp);
+        else
+            return DescribeWebshellStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWebshellStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeWebshellStatusAsync(const DescribeWebshellStatusRequest& request, const DescribeWebshellStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWebshellStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeWebshellStatusOutcomeCallable WafClient::DescribeWebshellStatusCallable(const DescribeWebshellStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWebshellStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWebshellStatus(request);
         }
     );
 

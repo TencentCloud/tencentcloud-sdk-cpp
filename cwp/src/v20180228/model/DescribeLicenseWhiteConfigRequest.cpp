@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-DescribeLicenseWhiteConfigRequest::DescribeLicenseWhiteConfigRequest()
+DescribeLicenseWhiteConfigRequest::DescribeLicenseWhiteConfigRequest() :
+    m_ruleNameHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeLicenseWhiteConfigRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_ruleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeLicenseWhiteConfigRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeLicenseWhiteConfigRequest::GetRuleName() const
+{
+    return m_ruleName;
+}
+
+void DescribeLicenseWhiteConfigRequest::SetRuleName(const string& _ruleName)
+{
+    m_ruleName = _ruleName;
+    m_ruleNameHasBeenSet = true;
+}
+
+bool DescribeLicenseWhiteConfigRequest::RuleNameHasBeenSet() const
+{
+    return m_ruleNameHasBeenSet;
+}
 
 

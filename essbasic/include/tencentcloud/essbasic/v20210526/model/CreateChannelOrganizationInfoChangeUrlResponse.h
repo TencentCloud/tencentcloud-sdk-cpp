@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建的企业信息变更链接。
-                     * @return Url 创建的企业信息变更链接。
+                     * 获取创建的企业信息变更链接。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。
+                     * @return Url 创建的企业信息变更链接。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。
                      * 
                      */
                     std::string GetUrl() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建的企业信息变更链接。
+                     * 创建的企业信息变更链接。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

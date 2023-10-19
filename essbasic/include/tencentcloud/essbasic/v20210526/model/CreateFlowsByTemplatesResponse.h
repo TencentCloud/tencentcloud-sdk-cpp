@@ -46,8 +46,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取多个合同ID
-                     * @return FlowIds 多个合同ID
+                     * 获取生成的合同流程ID数组，合同流程ID为32位字符串。
+建议开发者妥善保存此流程ID数组，以便于顺利进行后续操作。
+                     * @return FlowIds 生成的合同流程ID数组，合同流程ID为32位字符串。
+建议开发者妥善保存此流程ID数组，以便于顺利进行后续操作。
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
@@ -90,8 +92,12 @@ namespace TencentCloud
                     bool ErrorMessagesHasBeenSet() const;
 
                     /**
-                     * 获取预览模式下返回的预览文件url数组
-                     * @return PreviewUrls 预览模式下返回的预览文件url数组
+                     * 获取合同预览链接URL数组。
+
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
+                     * @return PreviewUrls 合同预览链接URL数组。
+
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
                      * 
                      */
                     std::vector<std::string> GetPreviewUrls() const;
@@ -136,7 +142,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 多个合同ID
+                     * 生成的合同流程ID数组，合同流程ID为32位字符串。
+建议开发者妥善保存此流程ID数组，以便于顺利进行后续操作。
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
@@ -155,7 +162,9 @@ namespace TencentCloud
                     bool m_errorMessagesHasBeenSet;
 
                     /**
-                     * 预览模式下返回的预览文件url数组
+                     * 合同预览链接URL数组。
+
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
                      */
                     std::vector<std::string> m_previewUrls;
                     bool m_previewUrlsHasBeenSet;

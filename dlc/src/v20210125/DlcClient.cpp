@@ -2577,6 +2577,49 @@ DlcClient::DescribeLakeFsInfoOutcomeCallable DlcClient::DescribeLakeFsInfoCallab
     return task->get_future();
 }
 
+DlcClient::DescribeLakeFsTaskResultOutcome DlcClient::DescribeLakeFsTaskResult(const DescribeLakeFsTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLakeFsTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLakeFsTaskResultResponse rsp = DescribeLakeFsTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLakeFsTaskResultOutcome(rsp);
+        else
+            return DescribeLakeFsTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLakeFsTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeLakeFsTaskResultAsync(const DescribeLakeFsTaskResultRequest& request, const DescribeLakeFsTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLakeFsTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeLakeFsTaskResultOutcomeCallable DlcClient::DescribeLakeFsTaskResultCallable(const DescribeLakeFsTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLakeFsTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLakeFsTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeNotebookSessionOutcome DlcClient::DescribeNotebookSession(const DescribeNotebookSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNotebookSession");

@@ -29,6 +29,8 @@
 #include <tencentcloud/cdwpg/v20201230/model/DescribeInstanceResponse.h>
 #include <tencentcloud/cdwpg/v20201230/model/DescribeInstanceStateRequest.h>
 #include <tencentcloud/cdwpg/v20201230/model/DescribeInstanceStateResponse.h>
+#include <tencentcloud/cdwpg/v20201230/model/DescribeInstancesRequest.h>
+#include <tencentcloud/cdwpg/v20201230/model/DescribeInstancesResponse.h>
 #include <tencentcloud/cdwpg/v20201230/model/DescribeSimpleInstancesRequest.h>
 #include <tencentcloud/cdwpg/v20201230/model/DescribeSimpleInstancesResponse.h>
 #include <tencentcloud/cdwpg/v20201230/model/DestroyInstanceByApiRequest.h>
@@ -58,6 +60,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceStateResponse> DescribeInstanceStateOutcome;
                 typedef std::future<DescribeInstanceStateOutcome> DescribeInstanceStateOutcomeCallable;
                 typedef std::function<void(const CdwpgClient*, const Model::DescribeInstanceStateRequest&, DescribeInstanceStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
+                typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
+                typedef std::function<void(const CdwpgClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSimpleInstancesResponse> DescribeSimpleInstancesOutcome;
                 typedef std::future<DescribeSimpleInstancesOutcome> DescribeSimpleInstancesOutcomeCallable;
                 typedef std::function<void(const CdwpgClient*, const Model::DescribeSimpleInstancesRequest&, DescribeSimpleInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSimpleInstancesAsyncHandler;
@@ -96,6 +101,15 @@ namespace TencentCloud
                 DescribeInstanceStateOutcome DescribeInstanceState(const Model::DescribeInstanceStateRequest &request);
                 void DescribeInstanceStateAsync(const Model::DescribeInstanceStateRequest& request, const DescribeInstanceStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceStateOutcomeCallable DescribeInstanceStateCallable(const Model::DescribeInstanceStateRequest& request);
+
+                /**
+                 *获取云原生实例列表
+                 * @param req DescribeInstancesRequest
+                 * @return DescribeInstancesOutcome
+                 */
+                DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
+                void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
                  *获取集群实例列表

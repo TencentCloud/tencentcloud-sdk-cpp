@@ -341,6 +341,135 @@ OceanusClient::CreateResourceConfigOutcomeCallable OceanusClient::CreateResource
     return task->get_future();
 }
 
+OceanusClient::CreateWorkSpaceOutcome OceanusClient::CreateWorkSpace(const CreateWorkSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWorkSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWorkSpaceResponse rsp = CreateWorkSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWorkSpaceOutcome(rsp);
+        else
+            return CreateWorkSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWorkSpaceOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::CreateWorkSpaceAsync(const CreateWorkSpaceRequest& request, const CreateWorkSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWorkSpace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::CreateWorkSpaceOutcomeCallable OceanusClient::CreateWorkSpaceCallable(const CreateWorkSpaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWorkSpaceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWorkSpace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::DeleteFoldersOutcome OceanusClient::DeleteFolders(const DeleteFoldersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFolders");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFoldersResponse rsp = DeleteFoldersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFoldersOutcome(rsp);
+        else
+            return DeleteFoldersOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFoldersOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DeleteFoldersAsync(const DeleteFoldersRequest& request, const DeleteFoldersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFolders(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DeleteFoldersOutcomeCallable OceanusClient::DeleteFoldersCallable(const DeleteFoldersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFoldersOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFolders(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::DeleteJobConfigsOutcome OceanusClient::DeleteJobConfigs(const DeleteJobConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteJobConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteJobConfigsResponse rsp = DeleteJobConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteJobConfigsOutcome(rsp);
+        else
+            return DeleteJobConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteJobConfigsOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DeleteJobConfigsAsync(const DeleteJobConfigsRequest& request, const DeleteJobConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteJobConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DeleteJobConfigsOutcomeCallable OceanusClient::DeleteJobConfigsCallable(const DeleteJobConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteJobConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteJobConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::DeleteJobsOutcome OceanusClient::DeleteJobs(const DeleteJobsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteJobs");
@@ -1072,6 +1201,49 @@ OceanusClient::FetchSqlGatewayStatementResultOutcomeCallable OceanusClient::Fetc
     return task->get_future();
 }
 
+OceanusClient::ModifyFolderOutcome OceanusClient::ModifyFolder(const ModifyFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFolderResponse rsp = ModifyFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFolderOutcome(rsp);
+        else
+            return ModifyFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFolderOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::ModifyFolderAsync(const ModifyFolderRequest& request, const ModifyFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::ModifyFolderOutcomeCallable OceanusClient::ModifyFolderCallable(const ModifyFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFolder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::ModifyJobOutcome OceanusClient::ModifyJob(const ModifyJobRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyJob");
@@ -1108,6 +1280,49 @@ OceanusClient::ModifyJobOutcomeCallable OceanusClient::ModifyJobCallable(const M
         [this, request]()
         {
             return this->ModifyJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::ModifyWorkSpaceOutcome OceanusClient::ModifyWorkSpace(const ModifyWorkSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWorkSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWorkSpaceResponse rsp = ModifyWorkSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWorkSpaceOutcome(rsp);
+        else
+            return ModifyWorkSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWorkSpaceOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::ModifyWorkSpaceAsync(const ModifyWorkSpaceRequest& request, const ModifyWorkSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWorkSpace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::ModifyWorkSpaceOutcomeCallable OceanusClient::ModifyWorkSpaceCallable(const ModifyWorkSpaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWorkSpaceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWorkSpace(request);
         }
     );
 

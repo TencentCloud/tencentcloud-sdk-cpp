@@ -88,6 +88,31 @@ namespace TencentCloud
                      */
                     bool EditionHasBeenSet() const;
 
+                    /**
+                     * 获取实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceID 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 设置实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceID 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceID(const std::string& _instanceID);
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     * 
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +126,13 @@ namespace TencentCloud
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
+
+                    /**
+                     * 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
 
                 };
             }

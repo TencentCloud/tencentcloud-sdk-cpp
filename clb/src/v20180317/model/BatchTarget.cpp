@@ -26,7 +26,8 @@ BatchTarget::BatchTarget() :
     m_instanceIdHasBeenSet(false),
     m_eniIpHasBeenSet(false),
     m_weightHasBeenSet(false),
-    m_locationIdHasBeenSet(false)
+    m_locationIdHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome BatchTarget::Deserialize(const rapidjson::Value &value)
         m_locationIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchTarget.Tag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tag = string(value["Tag"].GetString());
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void BatchTarget::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "LocationId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_locationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void BatchTarget::SetLocationId(const string& _locationId)
 bool BatchTarget::LocationIdHasBeenSet() const
 {
     return m_locationIdHasBeenSet;
+}
+
+string BatchTarget::GetTag() const
+{
+    return m_tag;
+}
+
+void BatchTarget::SetTag(const string& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool BatchTarget::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

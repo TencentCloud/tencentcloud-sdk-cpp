@@ -33,14 +33,20 @@
 #include <tencentcloud/organization/v20210331/model/CancelOrganizationMemberAuthAccountResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreateOrganizationIdentityRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreateOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMemberRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMemberResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMemberAuthIdentityRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMemberAuthIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMemberPolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMemberPolicyResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreateOrganizationMembersPolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreateOrganizationMembersPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationResponse.h>
+#include <tencentcloud/organization/v20210331/model/DeleteOrganizationIdentityRequest.h>
+#include <tencentcloud/organization/v20210331/model/DeleteOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationMemberAuthIdentityRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationMemberAuthIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationMembersRequest.h>
@@ -77,6 +83,8 @@
 #include <tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersResponse.h>
 #include <tencentcloud/organization/v20210331/model/QuitOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/QuitOrganizationResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateOrganizationIdentityRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberEmailBindRequest.h>
@@ -112,6 +120,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOrganizationResponse> CreateOrganizationOutcome;
                 typedef std::future<CreateOrganizationOutcome> CreateOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateOrganizationRequest&, CreateOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrganizationIdentityResponse> CreateOrganizationIdentityOutcome;
+                typedef std::future<CreateOrganizationIdentityOutcome> CreateOrganizationIdentityOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreateOrganizationIdentityRequest&, CreateOrganizationIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationIdentityAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrganizationMemberResponse> CreateOrganizationMemberOutcome;
                 typedef std::future<CreateOrganizationMemberOutcome> CreateOrganizationMemberOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateOrganizationMemberRequest&, CreateOrganizationMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationMemberAsyncHandler;
@@ -121,9 +132,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOrganizationMemberPolicyResponse> CreateOrganizationMemberPolicyOutcome;
                 typedef std::future<CreateOrganizationMemberPolicyOutcome> CreateOrganizationMemberPolicyOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateOrganizationMemberPolicyRequest&, CreateOrganizationMemberPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationMemberPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrganizationMembersPolicyResponse> CreateOrganizationMembersPolicyOutcome;
+                typedef std::future<CreateOrganizationMembersPolicyOutcome> CreateOrganizationMembersPolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreateOrganizationMembersPolicyRequest&, CreateOrganizationMembersPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationMembersPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOrganizationResponse> DeleteOrganizationOutcome;
                 typedef std::future<DeleteOrganizationOutcome> DeleteOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteOrganizationRequest&, DeleteOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOrganizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOrganizationIdentityResponse> DeleteOrganizationIdentityOutcome;
+                typedef std::future<DeleteOrganizationIdentityOutcome> DeleteOrganizationIdentityOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DeleteOrganizationIdentityRequest&, DeleteOrganizationIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOrganizationIdentityAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOrganizationMemberAuthIdentityResponse> DeleteOrganizationMemberAuthIdentityOutcome;
                 typedef std::future<DeleteOrganizationMemberAuthIdentityOutcome> DeleteOrganizationMemberAuthIdentityOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteOrganizationMemberAuthIdentityRequest&, DeleteOrganizationMemberAuthIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOrganizationMemberAuthIdentityAsyncHandler;
@@ -178,6 +195,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QuitOrganizationResponse> QuitOrganizationOutcome;
                 typedef std::future<QuitOrganizationOutcome> QuitOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::QuitOrganizationRequest&, QuitOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuitOrganizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateOrganizationIdentityResponse> UpdateOrganizationIdentityOutcome;
+                typedef std::future<UpdateOrganizationIdentityOutcome> UpdateOrganizationIdentityOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateOrganizationIdentityRequest&, UpdateOrganizationIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationIdentityAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateOrganizationMemberResponse> UpdateOrganizationMemberOutcome;
                 typedef std::future<UpdateOrganizationMemberOutcome> UpdateOrganizationMemberOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateOrganizationMemberRequest&, UpdateOrganizationMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationMemberAsyncHandler;
@@ -237,6 +257,15 @@ namespace TencentCloud
                 CreateOrganizationOutcomeCallable CreateOrganizationCallable(const Model::CreateOrganizationRequest& request);
 
                 /**
+                 *添加组织身份
+                 * @param req CreateOrganizationIdentityRequest
+                 * @return CreateOrganizationIdentityOutcome
+                 */
+                CreateOrganizationIdentityOutcome CreateOrganizationIdentity(const Model::CreateOrganizationIdentityRequest &request);
+                void CreateOrganizationIdentityAsync(const Model::CreateOrganizationIdentityRequest& request, const CreateOrganizationIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrganizationIdentityOutcomeCallable CreateOrganizationIdentityCallable(const Model::CreateOrganizationIdentityRequest& request);
+
+                /**
                  *创建组织成员
                  * @param req CreateOrganizationMemberRequest
                  * @return CreateOrganizationMemberOutcome
@@ -264,6 +293,15 @@ namespace TencentCloud
                 CreateOrganizationMemberPolicyOutcomeCallable CreateOrganizationMemberPolicyCallable(const Model::CreateOrganizationMemberPolicyRequest& request);
 
                 /**
+                 *创建组织成员访问策略
+                 * @param req CreateOrganizationMembersPolicyRequest
+                 * @return CreateOrganizationMembersPolicyOutcome
+                 */
+                CreateOrganizationMembersPolicyOutcome CreateOrganizationMembersPolicy(const Model::CreateOrganizationMembersPolicyRequest &request);
+                void CreateOrganizationMembersPolicyAsync(const Model::CreateOrganizationMembersPolicyRequest& request, const CreateOrganizationMembersPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrganizationMembersPolicyOutcomeCallable CreateOrganizationMembersPolicyCallable(const Model::CreateOrganizationMembersPolicyRequest& request);
+
+                /**
                  *删除企业组织
                  * @param req DeleteOrganizationRequest
                  * @return DeleteOrganizationOutcome
@@ -271,6 +309,15 @@ namespace TencentCloud
                 DeleteOrganizationOutcome DeleteOrganization(const Model::DeleteOrganizationRequest &request);
                 void DeleteOrganizationAsync(const Model::DeleteOrganizationRequest& request, const DeleteOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteOrganizationOutcomeCallable DeleteOrganizationCallable(const Model::DeleteOrganizationRequest& request);
+
+                /**
+                 *删除组织身份
+                 * @param req DeleteOrganizationIdentityRequest
+                 * @return DeleteOrganizationIdentityOutcome
+                 */
+                DeleteOrganizationIdentityOutcome DeleteOrganizationIdentity(const Model::DeleteOrganizationIdentityRequest &request);
+                void DeleteOrganizationIdentityAsync(const Model::DeleteOrganizationIdentityRequest& request, const DeleteOrganizationIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOrganizationIdentityOutcomeCallable DeleteOrganizationIdentityCallable(const Model::DeleteOrganizationIdentityRequest& request);
 
                 /**
                  *删除组织成员访问授权
@@ -433,6 +480,15 @@ namespace TencentCloud
                 QuitOrganizationOutcome QuitOrganization(const Model::QuitOrganizationRequest &request);
                 void QuitOrganizationAsync(const Model::QuitOrganizationRequest& request, const QuitOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QuitOrganizationOutcomeCallable QuitOrganizationCallable(const Model::QuitOrganizationRequest& request);
+
+                /**
+                 *更新组织身份
+                 * @param req UpdateOrganizationIdentityRequest
+                 * @return UpdateOrganizationIdentityOutcome
+                 */
+                UpdateOrganizationIdentityOutcome UpdateOrganizationIdentity(const Model::UpdateOrganizationIdentityRequest &request);
+                void UpdateOrganizationIdentityAsync(const Model::UpdateOrganizationIdentityRequest& request, const UpdateOrganizationIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateOrganizationIdentityOutcomeCallable UpdateOrganizationIdentityCallable(const Model::UpdateOrganizationIdentityRequest& request);
 
                 /**
                  *更新组织成员信息

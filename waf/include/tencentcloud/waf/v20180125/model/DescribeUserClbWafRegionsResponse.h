@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/ClbWafRegionItem.h>
 
 
 namespace TencentCloud
@@ -59,6 +60,22 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取包含详细属性的地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RichDatas 包含详细属性的地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ClbWafRegionItem> GetRichDatas() const;
+
+                    /**
+                     * 判断参数 RichDatas 是否已赋值
+                     * @return RichDatas 是否已赋值
+                     * 
+                     */
+                    bool RichDatasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +84,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 包含详细属性的地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClbWafRegionItem> m_richDatas;
+                    bool m_richDatasHasBeenSet;
 
                 };
             }

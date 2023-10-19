@@ -176,6 +176,27 @@ namespace TencentCloud
                      */
                     bool LocationIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签。
+                     * @return Tag 标签。
+                     * 
+                     */
+                    std::string GetTag() const;
+
+                    /**
+                     * 设置标签。
+                     * @param _tag 标签。
+                     * 
+                     */
+                    void SetTag(const std::string& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -214,6 +235,12 @@ namespace TencentCloud
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;
+
+                    /**
+                     * 标签。
+                     */
+                    std::string m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }
