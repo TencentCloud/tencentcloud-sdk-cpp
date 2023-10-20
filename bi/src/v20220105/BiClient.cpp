@@ -728,6 +728,49 @@ BiClient::DescribeUserRoleListOutcomeCallable BiClient::DescribeUserRoleListCall
     return task->get_future();
 }
 
+BiClient::DescribeUserRoleProjectListOutcome BiClient::DescribeUserRoleProjectList(const DescribeUserRoleProjectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserRoleProjectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserRoleProjectListResponse rsp = DescribeUserRoleProjectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserRoleProjectListOutcome(rsp);
+        else
+            return DescribeUserRoleProjectListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserRoleProjectListOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribeUserRoleProjectListAsync(const DescribeUserRoleProjectListRequest& request, const DescribeUserRoleProjectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserRoleProjectList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BiClient::DescribeUserRoleProjectListOutcomeCallable BiClient::DescribeUserRoleProjectListCallable(const DescribeUserRoleProjectListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserRoleProjectListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserRoleProjectList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BiClient::ModifyDatasourceOutcome BiClient::ModifyDatasource(const ModifyDatasourceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDatasource");

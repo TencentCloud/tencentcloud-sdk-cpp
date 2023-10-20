@@ -14,57 +14,56 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBELAKEFSTASKRESULTRESPONSE_H_
-#define TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBELAKEFSTASKRESULTRESPONSE_H_
+#ifndef TENCENTCLOUD_DOMAIN_V20180808_MODEL_DELETECUSTOMDNSHOSTRESPONSE_H_
+#define TENCENTCLOUD_DOMAIN_V20180808_MODEL_DELETECUSTOMDNSHOSTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dlc/v20210125/model/LakeFileSystemToken.h>
 
 
 namespace TencentCloud
 {
-    namespace Dlc
+    namespace Domain
     {
-        namespace V20210125
+        namespace V20180808
         {
             namespace Model
             {
                 /**
-                * DescribeLakeFsTaskResult返回参数结构体
+                * DeleteCustomDnsHost返回参数结构体
                 */
-                class DescribeLakeFsTaskResultResponse : public AbstractModel
+                class DeleteCustomDnsHostResponse : public AbstractModel
                 {
                 public:
-                    DescribeLakeFsTaskResultResponse();
-                    ~DescribeLakeFsTaskResultResponse() = default;
+                    DeleteCustomDnsHostResponse();
+                    ~DeleteCustomDnsHostResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取路径的访问实例
-                     * @return AccessToken 路径的访问实例
+                     * 获取异步任务ID
+                     * @return LogId 异步任务ID
                      * 
                      */
-                    LakeFileSystemToken GetAccessToken() const;
+                    uint64_t GetLogId() const;
 
                     /**
-                     * 判断参数 AccessToken 是否已赋值
-                     * @return AccessToken 是否已赋值
+                     * 判断参数 LogId 是否已赋值
+                     * @return LogId 是否已赋值
                      * 
                      */
-                    bool AccessTokenHasBeenSet() const;
+                    bool LogIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 路径的访问实例
+                     * 异步任务ID
                      */
-                    LakeFileSystemToken m_accessToken;
-                    bool m_accessTokenHasBeenSet;
+                    uint64_t m_logId;
+                    bool m_logIdHasBeenSet;
 
                 };
             }
@@ -72,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBELAKEFSTASKRESULTRESPONSE_H_
+#endif // !TENCENTCLOUD_DOMAIN_V20180808_MODEL_DELETECUSTOMDNSHOSTRESPONSE_H_

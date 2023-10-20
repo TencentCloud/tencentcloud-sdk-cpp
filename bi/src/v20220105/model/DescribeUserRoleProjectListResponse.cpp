@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultResponse.h>
+#include <tencentcloud/bi/v20220105/model/DescribeUserRoleProjectListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Dlc::V20210125::Model;
+using namespace TencentCloud::Bi::V20220105::Model;
 using namespace std;
 
-DescribeLakeFsTaskResultResponse::DescribeLakeFsTaskResultResponse() :
-    m_accessTokenHasBeenSet(false)
+DescribeUserRoleProjectListResponse::DescribeUserRoleProjectListResponse() :
+    m_extraHasBeenSet(false),
+    m_dataHasBeenSet(false),
+    m_msgHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeLakeFsTaskResultResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeUserRoleProjectListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +64,76 @@ CoreInternalOutcome DescribeLakeFsTaskResultResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("AccessToken") && !rsp["AccessToken"].IsNull())
+    if (rsp.HasMember("Extra") && !rsp["Extra"].IsNull())
     {
-        if (!rsp["AccessToken"].IsObject())
+        if (!rsp["Extra"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AccessToken` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Extra` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extra = string(rsp["Extra"].GetString());
+        m_extraHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_accessToken.Deserialize(rsp["AccessToken"]);
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_accessTokenHasBeenSet = true;
+        m_dataHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Msg") && !rsp["Msg"].IsNull())
+    {
+        if (!rsp["Msg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Msg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_msg = string(rsp["Msg"].GetString());
+        m_msgHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeLakeFsTaskResultResponse::ToJsonString() const
+string DescribeUserRoleProjectListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_accessTokenHasBeenSet)
+    if (m_extraHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccessToken";
+        string key = "Extra";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_accessToken.ToJsonObject(value[key.c_str()], allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_msgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Msg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msg.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +148,34 @@ string DescribeLakeFsTaskResultResponse::ToJsonString() const
 }
 
 
-LakeFileSystemToken DescribeLakeFsTaskResultResponse::GetAccessToken() const
+string DescribeUserRoleProjectListResponse::GetExtra() const
 {
-    return m_accessToken;
+    return m_extra;
 }
 
-bool DescribeLakeFsTaskResultResponse::AccessTokenHasBeenSet() const
+bool DescribeUserRoleProjectListResponse::ExtraHasBeenSet() const
 {
-    return m_accessTokenHasBeenSet;
+    return m_extraHasBeenSet;
+}
+
+UserRoleListData DescribeUserRoleProjectListResponse::GetData() const
+{
+    return m_data;
+}
+
+bool DescribeUserRoleProjectListResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
+}
+
+string DescribeUserRoleProjectListResponse::GetMsg() const
+{
+    return m_msg;
+}
+
+bool DescribeUserRoleProjectListResponse::MsgHasBeenSet() const
+{
+    return m_msgHasBeenSet;
 }
 
 

@@ -39,6 +39,8 @@
 #include <tencentcloud/domain/v20180808/model/CreatePhoneEmailResponse.h>
 #include <tencentcloud/domain/v20180808/model/CreateTemplateRequest.h>
 #include <tencentcloud/domain/v20180808/model/CreateTemplateResponse.h>
+#include <tencentcloud/domain/v20180808/model/DeleteCustomDnsHostRequest.h>
+#include <tencentcloud/domain/v20180808/model/DeleteCustomDnsHostResponse.h>
 #include <tencentcloud/domain/v20180808/model/DeletePhoneEmailRequest.h>
 #include <tencentcloud/domain/v20180808/model/DeletePhoneEmailResponse.h>
 #include <tencentcloud/domain/v20180808/model/DeleteTemplateRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeCustomDnsHostSetRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeCustomDnsHostSetResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainNameListRequest.h>
@@ -61,16 +65,22 @@
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListResponse.h>
+#include <tencentcloud/domain/v20180808/model/ModifyCustomDnsHostRequest.h>
+#include <tencentcloud/domain/v20180808/model/ModifyCustomDnsHostResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/ModifyIntlCustomDnsHostRequest.h>
+#include <tencentcloud/domain/v20180808/model/ModifyIntlCustomDnsHostResponse.h>
 #include <tencentcloud/domain/v20180808/model/RenewDomainBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/RenewDomainBatchResponse.h>
 #include <tencentcloud/domain/v20180808/model/SendPhoneEmailCodeRequest.h>
 #include <tencentcloud/domain/v20180808/model/SendPhoneEmailCodeResponse.h>
 #include <tencentcloud/domain/v20180808/model/SetDomainAutoRenewRequest.h>
 #include <tencentcloud/domain/v20180808/model/SetDomainAutoRenewResponse.h>
+#include <tencentcloud/domain/v20180808/model/SyncCustomDnsHostRequest.h>
+#include <tencentcloud/domain/v20180808/model/SyncCustomDnsHostResponse.h>
 #include <tencentcloud/domain/v20180808/model/TransferInDomainBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/TransferInDomainBatchResponse.h>
 #include <tencentcloud/domain/v20180808/model/TransferProhibitionBatchRequest.h>
@@ -117,6 +127,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTemplateResponse> CreateTemplateOutcome;
                 typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CreateTemplateRequest&, CreateTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomDnsHostResponse> DeleteCustomDnsHostOutcome;
+                typedef std::future<DeleteCustomDnsHostOutcome> DeleteCustomDnsHostOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DeleteCustomDnsHostRequest&, DeleteCustomDnsHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomDnsHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePhoneEmailResponse> DeletePhoneEmailOutcome;
                 typedef std::future<DeletePhoneEmailOutcome> DeletePhoneEmailOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DeletePhoneEmailRequest&, DeletePhoneEmailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePhoneEmailAsyncHandler;
@@ -129,6 +142,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBatchOperationLogsResponse> DescribeBatchOperationLogsOutcome;
                 typedef std::future<DescribeBatchOperationLogsOutcome> DescribeBatchOperationLogsOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeBatchOperationLogsRequest&, DescribeBatchOperationLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOperationLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomDnsHostSetResponse> DescribeCustomDnsHostSetOutcome;
+                typedef std::future<DescribeCustomDnsHostSetOutcome> DescribeCustomDnsHostSetOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeCustomDnsHostSetRequest&, DescribeCustomDnsHostSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomDnsHostSetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainBaseInfoResponse> DescribeDomainBaseInfoOutcome;
                 typedef std::future<DescribeDomainBaseInfoOutcome> DescribeDomainBaseInfoOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeDomainBaseInfoRequest&, DescribeDomainBaseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainBaseInfoAsyncHandler;
@@ -150,12 +166,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTemplateListResponse> DescribeTemplateListOutcome;
                 typedef std::future<DescribeTemplateListOutcome> DescribeTemplateListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeTemplateListRequest&, DescribeTemplateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCustomDnsHostResponse> ModifyCustomDnsHostOutcome;
+                typedef std::future<ModifyCustomDnsHostOutcome> ModifyCustomDnsHostOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::ModifyCustomDnsHostRequest&, ModifyCustomDnsHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomDnsHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainDNSBatchResponse> ModifyDomainDNSBatchOutcome;
                 typedef std::future<ModifyDomainDNSBatchOutcome> ModifyDomainDNSBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::ModifyDomainDNSBatchRequest&, ModifyDomainDNSBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainDNSBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainOwnerBatchResponse> ModifyDomainOwnerBatchOutcome;
                 typedef std::future<ModifyDomainOwnerBatchOutcome> ModifyDomainOwnerBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::ModifyDomainOwnerBatchRequest&, ModifyDomainOwnerBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainOwnerBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyIntlCustomDnsHostResponse> ModifyIntlCustomDnsHostOutcome;
+                typedef std::future<ModifyIntlCustomDnsHostOutcome> ModifyIntlCustomDnsHostOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::ModifyIntlCustomDnsHostRequest&, ModifyIntlCustomDnsHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntlCustomDnsHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewDomainBatchResponse> RenewDomainBatchOutcome;
                 typedef std::future<RenewDomainBatchOutcome> RenewDomainBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::RenewDomainBatchRequest&, RenewDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDomainBatchAsyncHandler;
@@ -165,6 +187,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetDomainAutoRenewResponse> SetDomainAutoRenewOutcome;
                 typedef std::future<SetDomainAutoRenewOutcome> SetDomainAutoRenewOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::SetDomainAutoRenewRequest&, SetDomainAutoRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainAutoRenewAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncCustomDnsHostResponse> SyncCustomDnsHostOutcome;
+                typedef std::future<SyncCustomDnsHostOutcome> SyncCustomDnsHostOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::SyncCustomDnsHostRequest&, SyncCustomDnsHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncCustomDnsHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::TransferInDomainBatchResponse> TransferInDomainBatchOutcome;
                 typedef std::future<TransferInDomainBatchOutcome> TransferInDomainBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::TransferInDomainBatchRequest&, TransferInDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferInDomainBatchAsyncHandler;
@@ -253,6 +278,15 @@ namespace TencentCloud
                 CreateTemplateOutcomeCallable CreateTemplateCallable(const Model::CreateTemplateRequest& request);
 
                 /**
+                 *删除自定义DNS Host
+                 * @param req DeleteCustomDnsHostRequest
+                 * @return DeleteCustomDnsHostOutcome
+                 */
+                DeleteCustomDnsHostOutcome DeleteCustomDnsHost(const Model::DeleteCustomDnsHostRequest &request);
+                void DeleteCustomDnsHostAsync(const Model::DeleteCustomDnsHostRequest& request, const DeleteCustomDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomDnsHostOutcomeCallable DeleteCustomDnsHostCallable(const Model::DeleteCustomDnsHostRequest& request);
+
+                /**
                  *此接口用于删除已验证的手机邮箱
                  * @param req DeletePhoneEmailRequest
                  * @return DeletePhoneEmailOutcome
@@ -287,6 +321,15 @@ namespace TencentCloud
                 DescribeBatchOperationLogsOutcome DescribeBatchOperationLogs(const Model::DescribeBatchOperationLogsRequest &request);
                 void DescribeBatchOperationLogsAsync(const Model::DescribeBatchOperationLogsRequest& request, const DescribeBatchOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBatchOperationLogsOutcomeCallable DescribeBatchOperationLogsCallable(const Model::DescribeBatchOperationLogsRequest& request);
+
+                /**
+                 *查询自定义DNS Host
+                 * @param req DescribeCustomDnsHostSetRequest
+                 * @return DescribeCustomDnsHostSetOutcome
+                 */
+                DescribeCustomDnsHostSetOutcome DescribeCustomDnsHostSet(const Model::DescribeCustomDnsHostSetRequest &request);
+                void DescribeCustomDnsHostSetAsync(const Model::DescribeCustomDnsHostSetRequest& request, const DescribeCustomDnsHostSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomDnsHostSetOutcomeCallable DescribeCustomDnsHostSetCallable(const Model::DescribeCustomDnsHostSetRequest& request);
 
                 /**
                  *本接口 (  DescribeDomainBaseInfo) 获取域名基本信息。
@@ -354,6 +397,15 @@ namespace TencentCloud
                 DescribeTemplateListOutcomeCallable DescribeTemplateListCallable(const Model::DescribeTemplateListRequest& request);
 
                 /**
+                 *修改自定义DNS Host
+                 * @param req ModifyCustomDnsHostRequest
+                 * @return ModifyCustomDnsHostOutcome
+                 */
+                ModifyCustomDnsHostOutcome ModifyCustomDnsHost(const Model::ModifyCustomDnsHostRequest &request);
+                void ModifyCustomDnsHostAsync(const Model::ModifyCustomDnsHostRequest& request, const ModifyCustomDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomDnsHostOutcomeCallable ModifyCustomDnsHostCallable(const Model::ModifyCustomDnsHostRequest& request);
+
+                /**
                  *本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。
                  * @param req ModifyDomainDNSBatchRequest
                  * @return ModifyDomainDNSBatchOutcome
@@ -370,6 +422,15 @@ namespace TencentCloud
                 ModifyDomainOwnerBatchOutcome ModifyDomainOwnerBatch(const Model::ModifyDomainOwnerBatchRequest &request);
                 void ModifyDomainOwnerBatchAsync(const Model::ModifyDomainOwnerBatchRequest& request, const ModifyDomainOwnerBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainOwnerBatchOutcomeCallable ModifyDomainOwnerBatchCallable(const Model::ModifyDomainOwnerBatchRequest& request);
+
+                /**
+                 *国际站-修改DNS Host
+                 * @param req ModifyIntlCustomDnsHostRequest
+                 * @return ModifyIntlCustomDnsHostOutcome
+                 */
+                ModifyIntlCustomDnsHostOutcome ModifyIntlCustomDnsHost(const Model::ModifyIntlCustomDnsHostRequest &request);
+                void ModifyIntlCustomDnsHostAsync(const Model::ModifyIntlCustomDnsHostRequest& request, const ModifyIntlCustomDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIntlCustomDnsHostOutcomeCallable ModifyIntlCustomDnsHostCallable(const Model::ModifyIntlCustomDnsHostRequest& request);
 
                 /**
                  *本接口 ( RenewDomainBatch ) 用于批量续费域名 。
@@ -398,6 +459,15 @@ namespace TencentCloud
                 SetDomainAutoRenewOutcome SetDomainAutoRenew(const Model::SetDomainAutoRenewRequest &request);
                 void SetDomainAutoRenewAsync(const Model::SetDomainAutoRenewRequest& request, const SetDomainAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetDomainAutoRenewOutcomeCallable SetDomainAutoRenewCallable(const Model::SetDomainAutoRenewRequest& request);
+
+                /**
+                 *同步自定义DNS Host
+                 * @param req SyncCustomDnsHostRequest
+                 * @return SyncCustomDnsHostOutcome
+                 */
+                SyncCustomDnsHostOutcome SyncCustomDnsHost(const Model::SyncCustomDnsHostRequest &request);
+                void SyncCustomDnsHostAsync(const Model::SyncCustomDnsHostRequest& request, const SyncCustomDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncCustomDnsHostOutcomeCallable SyncCustomDnsHostCallable(const Model::SyncCustomDnsHostRequest& request);
 
                 /**
                  *本接口 ( TransferInDomainBatch ) 用于批量转入域名 。

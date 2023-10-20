@@ -55,6 +55,8 @@
 #include <tencentcloud/bi/v20220105/model/DescribeUserProjectListResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeUserRoleListRequest.h>
 #include <tencentcloud/bi/v20220105/model/DescribeUserRoleListResponse.h>
+#include <tencentcloud/bi/v20220105/model/DescribeUserRoleProjectListRequest.h>
+#include <tencentcloud/bi/v20220105/model/DescribeUserRoleProjectListResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceRequest.h>
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceCloudRequest.h>
@@ -127,6 +129,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserRoleListResponse> DescribeUserRoleListOutcome;
                 typedef std::future<DescribeUserRoleListOutcome> DescribeUserRoleListOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DescribeUserRoleListRequest&, DescribeUserRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserRoleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserRoleProjectListResponse> DescribeUserRoleProjectListOutcome;
+                typedef std::future<DescribeUserRoleProjectListOutcome> DescribeUserRoleProjectListOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::DescribeUserRoleProjectListRequest&, DescribeUserRoleProjectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserRoleProjectListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDatasourceResponse> ModifyDatasourceOutcome;
                 typedef std::future<ModifyDatasourceOutcome> ModifyDatasourceOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ModifyDatasourceRequest&, ModifyDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatasourceAsyncHandler;
@@ -288,6 +293,15 @@ namespace TencentCloud
                 DescribeUserRoleListOutcome DescribeUserRoleList(const Model::DescribeUserRoleListRequest &request);
                 void DescribeUserRoleListAsync(const Model::DescribeUserRoleListRequest& request, const DescribeUserRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserRoleListOutcomeCallable DescribeUserRoleListCallable(const Model::DescribeUserRoleListRequest& request);
+
+                /**
+                 *项目内-用户角色列表
+                 * @param req DescribeUserRoleProjectListRequest
+                 * @return DescribeUserRoleProjectListOutcome
+                 */
+                DescribeUserRoleProjectListOutcome DescribeUserRoleProjectList(const Model::DescribeUserRoleProjectListRequest &request);
+                void DescribeUserRoleProjectListAsync(const Model::DescribeUserRoleProjectListRequest& request, const DescribeUserRoleProjectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserRoleProjectListOutcomeCallable DescribeUserRoleProjectListCallable(const Model::DescribeUserRoleProjectListRequest& request);
 
                 /**
                  *更新数据源

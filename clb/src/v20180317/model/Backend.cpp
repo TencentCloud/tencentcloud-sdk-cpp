@@ -29,7 +29,8 @@ Backend::Backend() :
     m_privateIpAddressesHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_registeredTimeHasBeenSet(false),
-    m_eniIdHasBeenSet(false)
+    m_eniIdHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,16 @@ CoreInternalOutcome Backend::Deserialize(const rapidjson::Value &value)
         m_eniIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Backend.Tag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tag = string(value["Tag"].GetString());
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ void Backend::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "EniId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eniId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -368,5 +387,21 @@ void Backend::SetEniId(const string& _eniId)
 bool Backend::EniIdHasBeenSet() const
 {
     return m_eniIdHasBeenSet;
+}
+
+string Backend::GetTag() const
+{
+    return m_tag;
+}
+
+void Backend::SetTag(const string& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool Backend::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

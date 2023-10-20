@@ -96,6 +96,56 @@ namespace TencentCloud
                      */
                     bool HttpsPortHasBeenSet() const;
 
+                    /**
+                     * 获取监听的 tcp 端口范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TcpPort 监听的 tcp 端口范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTcpPort() const;
+
+                    /**
+                     * 设置监听的 tcp 端口范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tcpPort 监听的 tcp 端口范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTcpPort(const std::string& _tcpPort);
+
+                    /**
+                     * 判断参数 TcpPort 是否已赋值
+                     * @return TcpPort 是否已赋值
+                     * 
+                     */
+                    bool TcpPortHasBeenSet() const;
+
+                    /**
+                     * 获取监听的 udp 端口范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UdpPort 监听的 udp 端口范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUdpPort() const;
+
+                    /**
+                     * 设置监听的 udp 端口范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _udpPort 监听的 udp 端口范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUdpPort(const std::string& _udpPort);
+
+                    /**
+                     * 判断参数 UdpPort 是否已赋值
+                     * @return UdpPort 是否已赋值
+                     * 
+                     */
+                    bool UdpPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +161,20 @@ namespace TencentCloud
                      */
                     std::string m_httpsPort;
                     bool m_httpsPortHasBeenSet;
+
+                    /**
+                     * 监听的 tcp 端口范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tcpPort;
+                    bool m_tcpPortHasBeenSet;
+
+                    /**
+                     * 监听的 udp 端口范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_udpPort;
+                    bool m_udpPortHasBeenSet;
 
                 };
             }

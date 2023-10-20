@@ -100,6 +100,55 @@ namespace TencentCloud
                      */
                     bool FillTypeHasBeenSet() const;
 
+                    /**
+                     * 获取签署人阅读合同限制参数
+ <br/>取值：
+<ul>
+<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
+<li> LimitReadTime，阅读合同仅限制阅读时长</li>
+<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
+<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
+</ul>
+                     * @return FlowReadLimit 签署人阅读合同限制参数
+ <br/>取值：
+<ul>
+<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
+<li> LimitReadTime，阅读合同仅限制阅读时长</li>
+<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
+<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
+</ul>
+                     * 
+                     */
+                    std::string GetFlowReadLimit() const;
+
+                    /**
+                     * 设置签署人阅读合同限制参数
+ <br/>取值：
+<ul>
+<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
+<li> LimitReadTime，阅读合同仅限制阅读时长</li>
+<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
+<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
+</ul>
+                     * @param _flowReadLimit 签署人阅读合同限制参数
+ <br/>取值：
+<ul>
+<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
+<li> LimitReadTime，阅读合同仅限制阅读时长</li>
+<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
+<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
+</ul>
+                     * 
+                     */
+                    void SetFlowReadLimit(const std::string& _flowReadLimit);
+
+                    /**
+                     * 判断参数 FlowReadLimit 是否已赋值
+                     * @return FlowReadLimit 是否已赋值
+                     * 
+                     */
+                    bool FlowReadLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +165,19 @@ namespace TencentCloud
                      */
                     int64_t m_fillType;
                     bool m_fillTypeHasBeenSet;
+
+                    /**
+                     * 签署人阅读合同限制参数
+ <br/>取值：
+<ul>
+<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
+<li> LimitReadTime，阅读合同仅限制阅读时长</li>
+<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
+<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
+</ul>
+                     */
+                    std::string m_flowReadLimit;
+                    bool m_flowReadLimitHasBeenSet;
 
                 };
             }

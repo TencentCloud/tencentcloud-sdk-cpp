@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBELAKEFSTASKRESULTREQUEST_H_
-#define TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBELAKEFSTASKRESULTREQUEST_H_
+#ifndef TENCENTCLOUD_DOMAIN_V20180808_MODEL_SYNCCUSTOMDNSHOSTREQUEST_H_
+#define TENCENTCLOUD_DOMAIN_V20180808_MODEL_SYNCCUSTOMDNSHOSTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Dlc
+    namespace Domain
     {
-        namespace V20210125
+        namespace V20180808
         {
             namespace Model
             {
                 /**
-                * DescribeLakeFsTaskResult请求参数结构体
+                * SyncCustomDnsHost请求参数结构体
                 */
-                class DescribeLakeFsTaskResultRequest : public AbstractModel
+                class SyncCustomDnsHostRequest : public AbstractModel
                 {
                 public:
-                    DescribeLakeFsTaskResultRequest();
-                    ~DescribeLakeFsTaskResultRequest() = default;
+                    SyncCustomDnsHostRequest();
+                    ~SyncCustomDnsHostRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取需要访问的任务结果路径
-                     * @return FsPath 需要访问的任务结果路径
+                     * 获取域名实例ID
+                     * @return DomainId 域名实例ID
                      * 
                      */
-                    std::string GetFsPath() const;
+                    std::string GetDomainId() const;
 
                     /**
-                     * 设置需要访问的任务结果路径
-                     * @param _fsPath 需要访问的任务结果路径
+                     * 设置域名实例ID
+                     * @param _domainId 域名实例ID
                      * 
                      */
-                    void SetFsPath(const std::string& _fsPath);
+                    void SetDomainId(const std::string& _domainId);
 
                     /**
-                     * 判断参数 FsPath 是否已赋值
-                     * @return FsPath 是否已赋值
+                     * 判断参数 DomainId 是否已赋值
+                     * @return DomainId 是否已赋值
                      * 
                      */
-                    bool FsPathHasBeenSet() const;
+                    bool DomainIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 需要访问的任务结果路径
+                     * 域名实例ID
                      */
-                    std::string m_fsPath;
-                    bool m_fsPathHasBeenSet;
+                    std::string m_domainId;
+                    bool m_domainIdHasBeenSet;
 
                 };
             }
@@ -77,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBELAKEFSTASKRESULTREQUEST_H_
+#endif // !TENCENTCLOUD_DOMAIN_V20180808_MODEL_SYNCCUSTOMDNSHOSTREQUEST_H_

@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultResponse.h>
+#include <tencentcloud/domain/v20180808/model/DeleteCustomDnsHostResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Dlc::V20210125::Model;
+using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
-DescribeLakeFsTaskResultResponse::DescribeLakeFsTaskResultResponse() :
-    m_accessTokenHasBeenSet(false)
+DeleteCustomDnsHostResponse::DeleteCustomDnsHostResponse() :
+    m_logIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeLakeFsTaskResultResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteCustomDnsHostResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome DescribeLakeFsTaskResultResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("AccessToken") && !rsp["AccessToken"].IsNull())
+    if (rsp.HasMember("LogId") && !rsp["LogId"].IsNull())
     {
-        if (!rsp["AccessToken"].IsObject())
+        if (!rsp["LogId"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `AccessToken` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_accessToken.Deserialize(rsp["AccessToken"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_accessTokenHasBeenSet = true;
+        m_logId = rsp["LogId"].GetUint64();
+        m_logIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeLakeFsTaskResultResponse::ToJsonString() const
+string DeleteCustomDnsHostResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_accessTokenHasBeenSet)
+    if (m_logIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccessToken";
+        string key = "LogId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_accessToken.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_logId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string DescribeLakeFsTaskResultResponse::ToJsonString() const
 }
 
 
-LakeFileSystemToken DescribeLakeFsTaskResultResponse::GetAccessToken() const
+uint64_t DeleteCustomDnsHostResponse::GetLogId() const
 {
-    return m_accessToken;
+    return m_logId;
 }
 
-bool DescribeLakeFsTaskResultResponse::AccessTokenHasBeenSet() const
+bool DeleteCustomDnsHostResponse::LogIdHasBeenSet() const
 {
-    return m_accessTokenHasBeenSet;
+    return m_logIdHasBeenSet;
 }
 
 

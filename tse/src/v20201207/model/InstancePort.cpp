@@ -22,7 +22,9 @@ using namespace std;
 
 InstancePort::InstancePort() :
     m_httpPortHasBeenSet(false),
-    m_httpsPortHasBeenSet(false)
+    m_httpsPortHasBeenSet(false),
+    m_tcpPortHasBeenSet(false),
+    m_udpPortHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome InstancePort::Deserialize(const rapidjson::Value &value)
         m_httpsPortHasBeenSet = true;
     }
 
+    if (value.HasMember("TcpPort") && !value["TcpPort"].IsNull())
+    {
+        if (!value["TcpPort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstancePort.TcpPort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tcpPort = string(value["TcpPort"].GetString());
+        m_tcpPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("UdpPort") && !value["UdpPort"].IsNull())
+    {
+        if (!value["UdpPort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstancePort.UdpPort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_udpPort = string(value["UdpPort"].GetString());
+        m_udpPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void InstancePort::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HttpsPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_httpsPort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tcpPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcpPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tcpPort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_udpPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UdpPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_udpPort.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void InstancePort::SetHttpsPort(const string& _httpsPort)
 bool InstancePort::HttpsPortHasBeenSet() const
 {
     return m_httpsPortHasBeenSet;
+}
+
+string InstancePort::GetTcpPort() const
+{
+    return m_tcpPort;
+}
+
+void InstancePort::SetTcpPort(const string& _tcpPort)
+{
+    m_tcpPort = _tcpPort;
+    m_tcpPortHasBeenSet = true;
+}
+
+bool InstancePort::TcpPortHasBeenSet() const
+{
+    return m_tcpPortHasBeenSet;
+}
+
+string InstancePort::GetUdpPort() const
+{
+    return m_udpPort;
+}
+
+void InstancePort::SetUdpPort(const string& _udpPort)
+{
+    m_udpPort = _udpPort;
+    m_udpPortHasBeenSet = true;
+}
+
+bool InstancePort::UdpPortHasBeenSet() const
+{
+    return m_udpPortHasBeenSet;
 }
 

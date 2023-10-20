@@ -22,7 +22,8 @@ using namespace std;
 
 ApproverOption::ApproverOption() :
     m_hideOneKeySignHasBeenSet(false),
-    m_fillTypeHasBeenSet(false)
+    m_fillTypeHasBeenSet(false),
+    m_flowReadLimitHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ApproverOption::Deserialize(const rapidjson::Value &value)
         m_fillTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowReadLimit") && !value["FlowReadLimit"].IsNull())
+    {
+        if (!value["FlowReadLimit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverOption.FlowReadLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowReadLimit = string(value["FlowReadLimit"].GetString());
+        m_flowReadLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FillType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fillType, allocator);
+    }
+
+    if (m_flowReadLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowReadLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowReadLimit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ApproverOption::SetFillType(const int64_t& _fillType)
 bool ApproverOption::FillTypeHasBeenSet() const
 {
     return m_fillTypeHasBeenSet;
+}
+
+string ApproverOption::GetFlowReadLimit() const
+{
+    return m_flowReadLimit;
+}
+
+void ApproverOption::SetFlowReadLimit(const string& _flowReadLimit)
+{
+    m_flowReadLimit = _flowReadLimit;
+    m_flowReadLimitHasBeenSet = true;
+}
+
+bool ApproverOption::FlowReadLimitHasBeenSet() const
+{
+    return m_flowReadLimitHasBeenSet;
 }
 

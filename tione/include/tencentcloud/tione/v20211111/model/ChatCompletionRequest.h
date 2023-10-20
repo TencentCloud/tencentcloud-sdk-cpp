@@ -45,10 +45,8 @@ namespace TencentCloud
 
                     /**
                      * 获取对话的目标模型ID。
-多行业多场景大模型在线体验聊天：tj_llm_clm-v1。
 自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-xxyyzz。
                      * @return Model 对话的目标模型ID。
-多行业多场景大模型在线体验聊天：tj_llm_clm-v1。
 自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-xxyyzz。
                      * 
                      */
@@ -56,10 +54,8 @@ namespace TencentCloud
 
                     /**
                      * 设置对话的目标模型ID。
-多行业多场景大模型在线体验聊天：tj_llm_clm-v1。
 自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-xxyyzz。
                      * @param _model 对话的目标模型ID。
-多行业多场景大模型在线体验聊天：tj_llm_clm-v1。
 自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-xxyyzz。
                      * 
                      */
@@ -160,7 +156,6 @@ namespace TencentCloud
 
                     /**
                      * 对话的目标模型ID。
-多行业多场景大模型在线体验聊天：tj_llm_clm-v1。
 自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-xxyyzz。
                      */
                     std::string m_model;

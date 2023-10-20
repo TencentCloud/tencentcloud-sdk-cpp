@@ -49,8 +49,9 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/BaseStateAction.h
   include/tencentcloud/bi/v20220105/model/Data.h
   include/tencentcloud/bi/v20220105/model/ModifyUserRoleProjectResponse.h
-  include/tencentcloud/bi/v20220105/model/ModifyDatasourceCloudRequest.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserRoleProjectListResponse.h
   include/tencentcloud/bi/v20220105/model/ModifyDatasourceCloudResponse.h
+  include/tencentcloud/bi/v20220105/model/ModifyDatasourceCloudRequest.h
   include/tencentcloud/bi/v20220105/model/ModifyDatasourceRequest.h
   include/tencentcloud/bi/v20220105/model/ModifyProjectRequest.h
   include/tencentcloud/bi/v20220105/model/ModifyUserRoleProjectRequest.h
@@ -68,6 +69,7 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/DescribeUserRoleListRequest.h
   include/tencentcloud/bi/v20220105/model/DeleteProjectResponse.h
   include/tencentcloud/bi/v20220105/model/ProjectListData.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserRoleProjectListRequest.h
   include/tencentcloud/bi/v20220105/model/PermissionGroup.h
   include/tencentcloud/bi/v20220105/model/CreateEmbedTokenResponse.h
   include/tencentcloud/bi/v20220105/model/CreateUserRoleProjectRequest.h
@@ -115,8 +117,9 @@ set(bi_src
   src/v20220105/model/BaseStateAction.cpp
   src/v20220105/model/Data.cpp
   src/v20220105/model/ModifyUserRoleProjectResponse.cpp
-  src/v20220105/model/ModifyDatasourceCloudRequest.cpp
+  src/v20220105/model/DescribeUserRoleProjectListResponse.cpp
   src/v20220105/model/ModifyDatasourceCloudResponse.cpp
+  src/v20220105/model/ModifyDatasourceCloudRequest.cpp
   src/v20220105/model/ModifyDatasourceRequest.cpp
   src/v20220105/model/ModifyProjectRequest.cpp
   src/v20220105/model/ModifyUserRoleProjectRequest.cpp
@@ -134,6 +137,7 @@ set(bi_src
   src/v20220105/model/DescribeUserRoleListRequest.cpp
   src/v20220105/model/DeleteProjectResponse.cpp
   src/v20220105/model/ProjectListData.cpp
+  src/v20220105/model/DescribeUserRoleProjectListRequest.cpp
   src/v20220105/model/PermissionGroup.cpp
   src/v20220105/model/CreateEmbedTokenResponse.cpp
   src/v20220105/model/CreateUserRoleProjectRequest.cpp

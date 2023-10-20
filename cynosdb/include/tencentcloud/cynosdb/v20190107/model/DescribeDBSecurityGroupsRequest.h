@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例组ID
-                     * @return InstanceId 实例组ID
+                     * 获取实例组ID。可以通过接口DescribeClusterInstanceGrps获取。
+                     * @return InstanceId 实例组ID。可以通过接口DescribeClusterInstanceGrps获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例组ID
-                     * @param _instanceId 实例组ID
+                     * 设置实例组ID。可以通过接口DescribeClusterInstanceGrps获取。
+                     * @param _instanceId 实例组ID。可以通过接口DescribeClusterInstanceGrps获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例组ID
+                     * 实例组ID。可以通过接口DescribeClusterInstanceGrps获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

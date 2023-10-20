@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ExpireTimeRequiredHasBeenSet() const;
 
                     /**
-                     * 获取Url组成格式，如：${private_key}${schema}${host}${full_uri。
-                     * @return Format Url组成格式，如：${private_key}${schema}${host}${full_uri。
+                     * 获取URL 组成格式，如：${private_key}${schema}${host}${full_uri}。
+                     * @return Format URL 组成格式，如：${private_key}${schema}${host}${full_uri}。
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置Url组成格式，如：${private_key}${schema}${host}${full_uri。
-                     * @param _format Url组成格式，如：${private_key}${schema}${host}${full_uri。
+                     * 设置URL 组成格式，如：${private_key}${schema}${host}${full_uri}。
+                     * @param _format URL 组成格式，如：${private_key}${schema}${host}${full_uri}。
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -310,7 +310,7 @@ namespace TencentCloud
                     bool m_expireTimeRequiredHasBeenSet;
 
                     /**
-                     * Url组成格式，如：${private_key}${schema}${host}${full_uri。
+                     * URL 组成格式，如：${private_key}${schema}${host}${full_uri}。
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

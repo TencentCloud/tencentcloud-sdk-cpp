@@ -19,7 +19,7 @@ set(dlc_public_header
   )
 
 set(dlc_public_header_model
-  include/tencentcloud/dlc/v20210125/model/UserDetailInfo.h
+  include/tencentcloud/dlc/v20210125/model/LakeFileSystemToken.h
   include/tencentcloud/dlc/v20210125/model/UpdateDataEngineRequest.h
   include/tencentcloud/dlc/v20210125/model/CheckDataEngineConfigPairsValidityResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h
@@ -65,6 +65,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/RestartDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/ModifyUserResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h
+  include/tencentcloud/dlc/v20210125/model/UserDetailInfo.h
   include/tencentcloud/dlc/v20210125/model/TableInfo.h
   include/tencentcloud/dlc/v20210125/model/Task.h
   include/tencentcloud/dlc/v20210125/model/DataEngineConfigInstanceInfo.h
@@ -349,7 +350,7 @@ set(dlc_public_header_model
 
 set(dlc_src
   src/v20210125/DlcClient.cpp
-  src/v20210125/model/UserDetailInfo.cpp
+  src/v20210125/model/LakeFileSystemToken.cpp
   src/v20210125/model/UpdateDataEngineRequest.cpp
   src/v20210125/model/CheckDataEngineConfigPairsValidityResponse.cpp
   src/v20210125/model/DescribeResultDownloadResponse.cpp
@@ -395,6 +396,7 @@ set(dlc_src
   src/v20210125/model/RestartDataEngineResponse.cpp
   src/v20210125/model/ModifyUserResponse.cpp
   src/v20210125/model/DeleteScriptResponse.cpp
+  src/v20210125/model/UserDetailInfo.cpp
   src/v20210125/model/TableInfo.cpp
   src/v20210125/model/Task.cpp
   src/v20210125/model/DataEngineConfigInstanceInfo.cpp

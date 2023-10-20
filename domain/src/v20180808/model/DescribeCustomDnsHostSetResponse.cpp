@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeCustomDnsHostSetResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Dlc::V20210125::Model;
+using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
-DescribeLakeFsTaskResultResponse::DescribeLakeFsTaskResultResponse() :
-    m_accessTokenHasBeenSet(false)
+DescribeCustomDnsHostSetResponse::DescribeCustomDnsHostSetResponse() :
+    m_dnsHostSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeLakeFsTaskResultResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeCustomDnsHostSetResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +63,67 @@ CoreInternalOutcome DescribeLakeFsTaskResultResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("AccessToken") && !rsp["AccessToken"].IsNull())
+    if (rsp.HasMember("DnsHostSet") && !rsp["DnsHostSet"].IsNull())
     {
-        if (!rsp["AccessToken"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccessToken` is not object type").SetRequestId(requestId));
-        }
+        if (!rsp["DnsHostSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DnsHostSet` is not array type"));
 
-        CoreInternalOutcome outcome = m_accessToken.Deserialize(rsp["AccessToken"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = rsp["DnsHostSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            CustomDnsHost item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dnsHostSet.push_back(item);
         }
+        m_dnsHostSetHasBeenSet = true;
+    }
 
-        m_accessTokenHasBeenSet = true;
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeLakeFsTaskResultResponse::ToJsonString() const
+string DescribeCustomDnsHostSetResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_accessTokenHasBeenSet)
+    if (m_dnsHostSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccessToken";
+        string key = "DnsHostSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_accessToken.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dnsHostSet.begin(); itr != m_dnsHostSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +138,24 @@ string DescribeLakeFsTaskResultResponse::ToJsonString() const
 }
 
 
-LakeFileSystemToken DescribeLakeFsTaskResultResponse::GetAccessToken() const
+vector<CustomDnsHost> DescribeCustomDnsHostSetResponse::GetDnsHostSet() const
 {
-    return m_accessToken;
+    return m_dnsHostSet;
 }
 
-bool DescribeLakeFsTaskResultResponse::AccessTokenHasBeenSet() const
+bool DescribeCustomDnsHostSetResponse::DnsHostSetHasBeenSet() const
 {
-    return m_accessTokenHasBeenSet;
+    return m_dnsHostSetHasBeenSet;
+}
+
+uint64_t DescribeCustomDnsHostSetResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeCustomDnsHostSetResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

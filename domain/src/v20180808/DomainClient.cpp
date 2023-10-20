@@ -384,6 +384,49 @@ DomainClient::CreateTemplateOutcomeCallable DomainClient::CreateTemplateCallable
     return task->get_future();
 }
 
+DomainClient::DeleteCustomDnsHostOutcome DomainClient::DeleteCustomDnsHost(const DeleteCustomDnsHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomDnsHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomDnsHostResponse rsp = DeleteCustomDnsHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomDnsHostOutcome(rsp);
+        else
+            return DeleteCustomDnsHostOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomDnsHostOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DeleteCustomDnsHostAsync(const DeleteCustomDnsHostRequest& request, const DeleteCustomDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCustomDnsHost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DeleteCustomDnsHostOutcomeCallable DomainClient::DeleteCustomDnsHostCallable(const DeleteCustomDnsHostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCustomDnsHostOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCustomDnsHost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DeletePhoneEmailOutcome DomainClient::DeletePhoneEmail(const DeletePhoneEmailRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePhoneEmail");
@@ -549,6 +592,49 @@ DomainClient::DescribeBatchOperationLogsOutcomeCallable DomainClient::DescribeBa
         [this, request]()
         {
             return this->DescribeBatchOperationLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeCustomDnsHostSetOutcome DomainClient::DescribeCustomDnsHostSet(const DescribeCustomDnsHostSetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomDnsHostSet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomDnsHostSetResponse rsp = DescribeCustomDnsHostSetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomDnsHostSetOutcome(rsp);
+        else
+            return DescribeCustomDnsHostSetOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomDnsHostSetOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeCustomDnsHostSetAsync(const DescribeCustomDnsHostSetRequest& request, const DescribeCustomDnsHostSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCustomDnsHostSet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeCustomDnsHostSetOutcomeCallable DomainClient::DescribeCustomDnsHostSetCallable(const DescribeCustomDnsHostSetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCustomDnsHostSetOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCustomDnsHostSet(request);
         }
     );
 
@@ -857,6 +943,49 @@ DomainClient::DescribeTemplateListOutcomeCallable DomainClient::DescribeTemplate
     return task->get_future();
 }
 
+DomainClient::ModifyCustomDnsHostOutcome DomainClient::ModifyCustomDnsHost(const ModifyCustomDnsHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomDnsHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomDnsHostResponse rsp = ModifyCustomDnsHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomDnsHostOutcome(rsp);
+        else
+            return ModifyCustomDnsHostOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomDnsHostOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::ModifyCustomDnsHostAsync(const ModifyCustomDnsHostRequest& request, const ModifyCustomDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomDnsHost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::ModifyCustomDnsHostOutcomeCallable DomainClient::ModifyCustomDnsHostCallable(const ModifyCustomDnsHostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomDnsHostOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomDnsHost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::ModifyDomainDNSBatchOutcome DomainClient::ModifyDomainDNSBatch(const ModifyDomainDNSBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDomainDNSBatch");
@@ -936,6 +1065,49 @@ DomainClient::ModifyDomainOwnerBatchOutcomeCallable DomainClient::ModifyDomainOw
         [this, request]()
         {
             return this->ModifyDomainOwnerBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::ModifyIntlCustomDnsHostOutcome DomainClient::ModifyIntlCustomDnsHost(const ModifyIntlCustomDnsHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIntlCustomDnsHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIntlCustomDnsHostResponse rsp = ModifyIntlCustomDnsHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIntlCustomDnsHostOutcome(rsp);
+        else
+            return ModifyIntlCustomDnsHostOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIntlCustomDnsHostOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::ModifyIntlCustomDnsHostAsync(const ModifyIntlCustomDnsHostRequest& request, const ModifyIntlCustomDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyIntlCustomDnsHost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::ModifyIntlCustomDnsHostOutcomeCallable DomainClient::ModifyIntlCustomDnsHostCallable(const ModifyIntlCustomDnsHostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyIntlCustomDnsHostOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyIntlCustomDnsHost(request);
         }
     );
 
@@ -1065,6 +1237,49 @@ DomainClient::SetDomainAutoRenewOutcomeCallable DomainClient::SetDomainAutoRenew
         [this, request]()
         {
             return this->SetDomainAutoRenew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::SyncCustomDnsHostOutcome DomainClient::SyncCustomDnsHost(const SyncCustomDnsHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncCustomDnsHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncCustomDnsHostResponse rsp = SyncCustomDnsHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncCustomDnsHostOutcome(rsp);
+        else
+            return SyncCustomDnsHostOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncCustomDnsHostOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::SyncCustomDnsHostAsync(const SyncCustomDnsHostRequest& request, const SyncCustomDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SyncCustomDnsHost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::SyncCustomDnsHostOutcomeCallable DomainClient::SyncCustomDnsHostCallable(const SyncCustomDnsHostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SyncCustomDnsHostOutcome()>>(
+        [this, request]()
+        {
+            return this->SyncCustomDnsHost(request);
         }
     );
 

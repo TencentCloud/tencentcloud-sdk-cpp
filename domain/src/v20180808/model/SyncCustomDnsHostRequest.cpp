@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultRequest.h>
+#include <tencentcloud/domain/v20180808/model/SyncCustomDnsHostRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Dlc::V20210125::Model;
+using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
-DescribeLakeFsTaskResultRequest::DescribeLakeFsTaskResultRequest() :
-    m_fsPathHasBeenSet(false)
+SyncCustomDnsHostRequest::SyncCustomDnsHostRequest() :
+    m_domainIdHasBeenSet(false)
 {
 }
 
-string DescribeLakeFsTaskResultRequest::ToJsonString() const
+string SyncCustomDnsHostRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_fsPathHasBeenSet)
+    if (m_domainIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FsPath";
+        string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_fsPath.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string DescribeLakeFsTaskResultRequest::ToJsonString() const
 }
 
 
-string DescribeLakeFsTaskResultRequest::GetFsPath() const
+string SyncCustomDnsHostRequest::GetDomainId() const
 {
-    return m_fsPath;
+    return m_domainId;
 }
 
-void DescribeLakeFsTaskResultRequest::SetFsPath(const string& _fsPath)
+void SyncCustomDnsHostRequest::SetDomainId(const string& _domainId)
 {
-    m_fsPath = _fsPath;
-    m_fsPathHasBeenSet = true;
+    m_domainId = _domainId;
+    m_domainIdHasBeenSet = true;
 }
 
-bool DescribeLakeFsTaskResultRequest::FsPathHasBeenSet() const
+bool SyncCustomDnsHostRequest::DomainIdHasBeenSet() const
 {
-    return m_fsPathHasBeenSet;
+    return m_domainIdHasBeenSet;
 }
 
 

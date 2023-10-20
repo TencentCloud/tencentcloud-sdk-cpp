@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取后端服务的类型，可取：CVM、ENI
-                     * @return Type 后端服务的类型，可取：CVM、ENI
+                     * 获取后端服务的类型，可取：CVM、ENI、CCN
+                     * @return Type 后端服务的类型，可取：CVM、ENI、CCN
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置后端服务的类型，可取：CVM、ENI
-                     * @param _type 后端服务的类型，可取：CVM、ENI
+                     * 设置后端服务的类型，可取：CVM、ENI、CCN
+                     * @param _type 后端服务的类型，可取：CVM、ENI、CCN
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -255,10 +255,35 @@ namespace TencentCloud
                      */
                     bool EniIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tag 标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTag() const;
+
+                    /**
+                     * 设置标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tag 标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTag(const std::string& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 后端服务的类型，可取：CVM、ENI
+                     * 后端服务的类型，可取：CVM、ENI、CCN
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -315,6 +340,13 @@ namespace TencentCloud
                      */
                     std::string m_eniId;
                     bool m_eniIdHasBeenSet;
+
+                    /**
+                     * 标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }
