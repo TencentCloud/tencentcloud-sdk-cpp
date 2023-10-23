@@ -21,7 +21,8 @@ using namespace TencentCloud::Mrs::V20200910::Model;
 using namespace std;
 
 Indicator::Indicator() :
-    m_indicatorsHasBeenSet(false)
+    m_indicatorsHasBeenSet(false),
+    m_blockTitleHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,26 @@ CoreInternalOutcome Indicator::Deserialize(const rapidjson::Value &value)
         m_indicatorsHasBeenSet = true;
     }
 
+    if (value.HasMember("BlockTitle") && !value["BlockTitle"].IsNull())
+    {
+        if (!value["BlockTitle"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Indicator.BlockTitle` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BlockTitle"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BlockTitle item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_blockTitle.push_back(item);
+        }
+        m_blockTitleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -66,6 +87,21 @@ void Indicator::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
 
         int i=0;
         for (auto itr = m_indicators.begin(); itr != m_indicators.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_blockTitleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockTitle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_blockTitle.begin(); itr != m_blockTitle.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -89,5 +125,21 @@ void Indicator::SetIndicators(const vector<IndicatorItem>& _indicators)
 bool Indicator::IndicatorsHasBeenSet() const
 {
     return m_indicatorsHasBeenSet;
+}
+
+vector<BlockTitle> Indicator::GetBlockTitle() const
+{
+    return m_blockTitle;
+}
+
+void Indicator::SetBlockTitle(const vector<BlockTitle>& _blockTitle)
+{
+    m_blockTitle = _blockTitle;
+    m_blockTitleHasBeenSet = true;
+}
+
+bool Indicator::BlockTitleHasBeenSet() const
+{
+    return m_blockTitleHasBeenSet;
 }
 

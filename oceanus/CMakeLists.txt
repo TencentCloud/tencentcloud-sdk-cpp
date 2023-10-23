@@ -66,6 +66,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteFoldersRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h
   include/tencentcloud/oceanus/v20190422/model/GatewayRefItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsRequest.h
@@ -84,6 +85,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteJobConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/StopJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Property.h
   include/tencentcloud/oceanus/v20190422/model/JobGraphEdge.h
@@ -184,6 +186,7 @@ set(oceanus_src
   src/v20190422/model/DeleteResourceConfigsRequest.cpp
   src/v20190422/model/DescribeJobSavepointResponse.cpp
   src/v20190422/model/DeleteFoldersRequest.cpp
+  src/v20190422/model/DeleteWorkSpaceRequest.cpp
   src/v20190422/model/DescribeWorkSpacesResponse.cpp
   src/v20190422/model/GatewayRefItem.cpp
   src/v20190422/model/DescribeJobsRequest.cpp
@@ -202,6 +205,7 @@ set(oceanus_src
   src/v20190422/model/DeleteJobConfigsRequest.cpp
   src/v20190422/model/StopJobsRequest.cpp
   src/v20190422/model/RunJobsRequest.cpp
+  src/v20190422/model/DeleteWorkSpaceResponse.cpp
   src/v20190422/model/DeleteJobsResponse.cpp
   src/v20190422/model/Property.cpp
   src/v20190422/model/JobGraphEdge.cpp

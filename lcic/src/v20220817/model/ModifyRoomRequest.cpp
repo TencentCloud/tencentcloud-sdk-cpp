@@ -43,7 +43,10 @@ ModifyRoomRequest::ModifyRoomRequest() :
     m_isGradingRequiredPostClassHasBeenSet(false),
     m_roomTypeHasBeenSet(false),
     m_recordLayoutHasBeenSet(false),
-    m_endDelayTimeHasBeenSet(false)
+    m_endDelayTimeHasBeenSet(false),
+    m_liveTypeHasBeenSet(false),
+    m_recordLiveUrlHasBeenSet(false),
+    m_enableAutoStartHasBeenSet(false)
 {
 }
 
@@ -225,6 +228,30 @@ string ModifyRoomRequest::ToJsonString() const
         string key = "EndDelayTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endDelayTime, allocator);
+    }
+
+    if (m_liveTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiveType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_liveType, allocator);
+    }
+
+    if (m_recordLiveUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordLiveUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordLiveUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableAutoStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAutoStart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableAutoStart, allocator);
     }
 
 
@@ -569,6 +596,54 @@ void ModifyRoomRequest::SetEndDelayTime(const int64_t& _endDelayTime)
 bool ModifyRoomRequest::EndDelayTimeHasBeenSet() const
 {
     return m_endDelayTimeHasBeenSet;
+}
+
+uint64_t ModifyRoomRequest::GetLiveType() const
+{
+    return m_liveType;
+}
+
+void ModifyRoomRequest::SetLiveType(const uint64_t& _liveType)
+{
+    m_liveType = _liveType;
+    m_liveTypeHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::LiveTypeHasBeenSet() const
+{
+    return m_liveTypeHasBeenSet;
+}
+
+string ModifyRoomRequest::GetRecordLiveUrl() const
+{
+    return m_recordLiveUrl;
+}
+
+void ModifyRoomRequest::SetRecordLiveUrl(const string& _recordLiveUrl)
+{
+    m_recordLiveUrl = _recordLiveUrl;
+    m_recordLiveUrlHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::RecordLiveUrlHasBeenSet() const
+{
+    return m_recordLiveUrlHasBeenSet;
+}
+
+uint64_t ModifyRoomRequest::GetEnableAutoStart() const
+{
+    return m_enableAutoStart;
+}
+
+void ModifyRoomRequest::SetEnableAutoStart(const uint64_t& _enableAutoStart)
+{
+    m_enableAutoStart = _enableAutoStart;
+    m_enableAutoStartHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::EnableAutoStartHasBeenSet() const
+{
+    return m_enableAutoStartHasBeenSet;
 }
 
 

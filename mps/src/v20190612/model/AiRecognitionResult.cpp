@@ -27,7 +27,8 @@ AiRecognitionResult::AiRecognitionResult() :
     m_asrFullTextTaskHasBeenSet(false),
     m_ocrWordsTaskHasBeenSet(false),
     m_ocrFullTextTaskHasBeenSet(false),
-    m_transTextTaskHasBeenSet(false)
+    m_transTextTaskHasBeenSet(false),
+    m_objectTaskHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,23 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const rapidjson::Value &val
         m_transTextTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("ObjectTask") && !value["ObjectTask"].IsNull())
+    {
+        if (!value["ObjectTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionResult.ObjectTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_objectTask.Deserialize(value["ObjectTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_objectTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -215,6 +233,15 @@ void AiRecognitionResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_transTextTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_objectTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_objectTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -330,5 +357,21 @@ void AiRecognitionResult::SetTransTextTask(const AiRecognitionTaskTransTextResul
 bool AiRecognitionResult::TransTextTaskHasBeenSet() const
 {
     return m_transTextTaskHasBeenSet;
+}
+
+AiRecognitionTaskObjectResult AiRecognitionResult::GetObjectTask() const
+{
+    return m_objectTask;
+}
+
+void AiRecognitionResult::SetObjectTask(const AiRecognitionTaskObjectResult& _objectTask)
+{
+    m_objectTask = _objectTask;
+    m_objectTaskHasBeenSet = true;
+}
+
+bool AiRecognitionResult::ObjectTaskHasBeenSet() const
+{
+    return m_objectTaskHasBeenSet;
 }
 

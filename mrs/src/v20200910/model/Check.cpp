@@ -22,7 +22,8 @@ using namespace std;
 
 Check::Check() :
     m_descHasBeenSet(false),
-    m_summaryHasBeenSet(false)
+    m_summaryHasBeenSet(false),
+    m_blockTitleHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,26 @@ CoreInternalOutcome Check::Deserialize(const rapidjson::Value &value)
         m_summaryHasBeenSet = true;
     }
 
+    if (value.HasMember("BlockTitle") && !value["BlockTitle"].IsNull())
+    {
+        if (!value["BlockTitle"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Check.BlockTitle` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BlockTitle"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BlockTitle item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_blockTitle.push_back(item);
+        }
+        m_blockTitleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ void Check::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_summary.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_blockTitleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockTitle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_blockTitle.begin(); itr != m_blockTitle.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -123,5 +159,21 @@ void Check::SetSummary(const Summary& _summary)
 bool Check::SummaryHasBeenSet() const
 {
     return m_summaryHasBeenSet;
+}
+
+vector<BlockTitle> Check::GetBlockTitle() const
+{
+    return m_blockTitle;
+}
+
+void Check::SetBlockTitle(const vector<BlockTitle>& _blockTitle)
+{
+    m_blockTitle = _blockTitle;
+    m_blockTitleHasBeenSet = true;
+}
+
+bool Check::BlockTitleHasBeenSet() const
+{
+    return m_blockTitleHasBeenSet;
 }
 

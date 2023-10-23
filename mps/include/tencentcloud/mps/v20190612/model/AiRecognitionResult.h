@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskOcrWordsResult.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskOcrFullTextResult.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskTransTextResult.h>
+#include <tencentcloud/mps/v20190612/model/AiRecognitionTaskObjectResult.h>
 
 
 namespace TencentCloud
@@ -275,6 +276,39 @@ TransTextRecognition 时有效。
                      */
                     bool TransTextTaskHasBeenSet() const;
 
+                    /**
+                     * 获取物体识别结果，当Type 为
+
+ObjectRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ObjectTask 物体识别结果，当Type 为
+
+ObjectRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiRecognitionTaskObjectResult GetObjectTask() const;
+
+                    /**
+                     * 设置物体识别结果，当Type 为
+
+ObjectRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _objectTask 物体识别结果，当Type 为
+
+ObjectRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetObjectTask(const AiRecognitionTaskObjectResult& _objectTask);
+
+                    /**
+                     * 判断参数 ObjectTask 是否已赋值
+                     * @return ObjectTask 是否已赋值
+                     * 
+                     */
+                    bool ObjectTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +371,15 @@ TransTextRecognition 时有效。
                      */
                     AiRecognitionTaskTransTextResult m_transTextTask;
                     bool m_transTextTaskHasBeenSet;
+
+                    /**
+                     * 物体识别结果，当Type 为
+
+ObjectRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiRecognitionTaskObjectResult m_objectTask;
+                    bool m_objectTaskHasBeenSet;
 
                 };
             }

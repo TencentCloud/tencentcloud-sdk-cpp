@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，如 2019-09-04 00:00:00
-                     * @return StartTime 开始时间，如 2019-09-04 00:00:00
+                     * 获取开始时间
+                     * @return StartTime 开始时间
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，如 2019-09-04 00:00:00
-                     * @param _startTime 开始时间，如 2019-09-04 00:00:00
+                     * 设置开始时间
+                     * @param _startTime 开始时间
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，如 2019-09-04 12:00:00
-                     * @return EndTime 结束时间，如 2019-09-04 12:00:00
+                     * 获取结束时间
+                     * @return EndTime 结束时间
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，如 2019-09-04 12:00:00
-                     * @param _endTime 结束时间，如 2019-09-04 12:00:00
+                     * 设置结束时间
+                     * @param _endTime 结束时间
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -148,31 +148,27 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取指定区域下载日志
-mainland：获取境内加速日志包下载链接
-overseas：获取境外加速日志包下载链接
-global：同时获取境内、境外加速日志包下载链接（分开打包）
-不指定时默认为 mainland
-                     * @return Area 指定区域下载日志
-mainland：获取境内加速日志包下载链接
-overseas：获取境外加速日志包下载链接
-global：同时获取境内、境外加速日志包下载链接（分开打包）
-不指定时默认为 mainland
+                     * 获取指定区域下载日志，默认为 mainland，可取值有：
+<li>mainland：获取境内加速日志包下载链接</li>
+<li>overseas：获取境外加速日志包下载链接</li>
+<li>global：同时获取境内、境外加速日志包下载链接（分开打包）</li>
+                     * @return Area 指定区域下载日志，默认为 mainland，可取值有：
+<li>mainland：获取境内加速日志包下载链接</li>
+<li>overseas：获取境外加速日志包下载链接</li>
+<li>global：同时获取境内、境外加速日志包下载链接（分开打包）</li>
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置指定区域下载日志
-mainland：获取境内加速日志包下载链接
-overseas：获取境外加速日志包下载链接
-global：同时获取境内、境外加速日志包下载链接（分开打包）
-不指定时默认为 mainland
-                     * @param _area 指定区域下载日志
-mainland：获取境内加速日志包下载链接
-overseas：获取境外加速日志包下载链接
-global：同时获取境内、境外加速日志包下载链接（分开打包）
-不指定时默认为 mainland
+                     * 设置指定区域下载日志，默认为 mainland，可取值有：
+<li>mainland：获取境内加速日志包下载链接</li>
+<li>overseas：获取境外加速日志包下载链接</li>
+<li>global：同时获取境内、境外加速日志包下载链接（分开打包）</li>
+                     * @param _area 指定区域下载日志，默认为 mainland，可取值有：
+<li>mainland：获取境内加速日志包下载链接</li>
+<li>overseas：获取境外加速日志包下载链接</li>
+<li>global：同时获取境内、境外加速日志包下载链接（分开打包）</li>
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -185,19 +181,19 @@ global：同时获取境内、境外加速日志包下载链接（分开打包�
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取指定下载日志的类型，目前仅支持访问日志（access）。
-access：访问日志
-                     * @return LogType 指定下载日志的类型，目前仅支持访问日志（access）。
-access：访问日志
+                     * 获取指定下载日志的类型，可取值有：
+<li>access：访问日志</li>
+                     * @return LogType 指定下载日志的类型，可取值有：
+<li>access：访问日志</li>
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置指定下载日志的类型，目前仅支持访问日志（access）。
-access：访问日志
-                     * @param _logType 指定下载日志的类型，目前仅支持访问日志（access）。
-access：访问日志
+                     * 设置指定下载日志的类型，可取值有：
+<li>access：访问日志</li>
+                     * @param _logType 指定下载日志的类型，可取值有：
+<li>access：访问日志</li>
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -218,13 +214,13 @@ access：访问日志
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 开始时间，如 2019-09-04 00:00:00
+                     * 开始时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，如 2019-09-04 12:00:00
+                     * 结束时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -242,18 +238,17 @@ access：访问日志
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 指定区域下载日志
-mainland：获取境内加速日志包下载链接
-overseas：获取境外加速日志包下载链接
-global：同时获取境内、境外加速日志包下载链接（分开打包）
-不指定时默认为 mainland
+                     * 指定区域下载日志，默认为 mainland，可取值有：
+<li>mainland：获取境内加速日志包下载链接</li>
+<li>overseas：获取境外加速日志包下载链接</li>
+<li>global：同时获取境内、境外加速日志包下载链接（分开打包）</li>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 指定下载日志的类型，目前仅支持访问日志（access）。
-access：访问日志
+                     * 指定下载日志的类型，可取值有：
+<li>access：访问日志</li>
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;

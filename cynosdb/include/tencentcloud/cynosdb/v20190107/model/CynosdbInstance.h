@@ -1186,6 +1186,31 @@ pause
                      */
                     bool ResourcePackagesHasBeenSet() const;
 
+                    /**
+                     * 获取实例索引形态,可选值【mixedRowColumn（行列混存），onlyRowIndex（仅行存）】
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceIndexMode 实例索引形态,可选值【mixedRowColumn（行列混存），onlyRowIndex（仅行存）】
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceIndexMode() const;
+
+                    /**
+                     * 设置实例索引形态,可选值【mixedRowColumn（行列混存），onlyRowIndex（仅行存）】
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceIndexMode 实例索引形态,可选值【mixedRowColumn（行列混存），onlyRowIndex（仅行存）】
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceIndexMode(const std::string& _instanceIndexMode);
+
+                    /**
+                     * 判断参数 InstanceIndexMode 是否已赋值
+                     * @return InstanceIndexMode 是否已赋值
+                     * 
+                     */
+                    bool InstanceIndexModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1510,6 +1535,13 @@ pause
                      */
                     std::vector<ResourcePackage> m_resourcePackages;
                     bool m_resourcePackagesHasBeenSet;
+
+                    /**
+                     * 实例索引形态,可选值【mixedRowColumn（行列混存），onlyRowIndex（仅行存）】
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceIndexMode;
+                    bool m_instanceIndexModeHasBeenSet;
 
                 };
             }

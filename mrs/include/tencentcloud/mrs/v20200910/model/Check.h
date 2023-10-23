@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mrs/v20200910/model/Desc.h>
 #include <tencentcloud/mrs/v20200910/model/Summary.h>
+#include <tencentcloud/mrs/v20200910/model/BlockTitle.h>
 
 
 namespace TencentCloud
@@ -98,6 +99,31 @@ namespace TencentCloud
                      */
                     bool SummaryHasBeenSet() const;
 
+                    /**
+                     * 获取检查报告块标题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BlockTitle 检查报告块标题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<BlockTitle> GetBlockTitle() const;
+
+                    /**
+                     * 设置检查报告块标题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _blockTitle 检查报告块标题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBlockTitle(const std::vector<BlockTitle>& _blockTitle);
+
+                    /**
+                     * 判断参数 BlockTitle 是否已赋值
+                     * @return BlockTitle 是否已赋值
+                     * 
+                     */
+                    bool BlockTitleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +139,13 @@ namespace TencentCloud
                      */
                     Summary m_summary;
                     bool m_summaryHasBeenSet;
+
+                    /**
+                     * 检查报告块标题
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BlockTitle> m_blockTitle;
+                    bool m_blockTitleHasBeenSet;
 
                 };
             }

@@ -1975,6 +1975,49 @@ DlcClient::DeleteWorkGroupOutcomeCallable DlcClient::DeleteWorkGroupCallable(con
     return task->get_future();
 }
 
+DlcClient::DescribeAdvancedStoreLocationOutcome DlcClient::DescribeAdvancedStoreLocation(const DescribeAdvancedStoreLocationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAdvancedStoreLocation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAdvancedStoreLocationResponse rsp = DescribeAdvancedStoreLocationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAdvancedStoreLocationOutcome(rsp);
+        else
+            return DescribeAdvancedStoreLocationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAdvancedStoreLocationOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeAdvancedStoreLocationAsync(const DescribeAdvancedStoreLocationRequest& request, const DescribeAdvancedStoreLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAdvancedStoreLocation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeAdvancedStoreLocationOutcomeCallable DlcClient::DescribeAdvancedStoreLocationCallable(const DescribeAdvancedStoreLocationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAdvancedStoreLocationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAdvancedStoreLocation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeDMSDatabaseOutcome DlcClient::DescribeDMSDatabase(const DescribeDMSDatabaseRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDMSDatabase");
@@ -4118,6 +4161,49 @@ DlcClient::LockMetaDataOutcomeCallable DlcClient::LockMetaDataCallable(const Loc
         [this, request]()
         {
             return this->LockMetaData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::ModifyAdvancedStoreLocationOutcome DlcClient::ModifyAdvancedStoreLocation(const ModifyAdvancedStoreLocationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAdvancedStoreLocation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAdvancedStoreLocationResponse rsp = ModifyAdvancedStoreLocationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAdvancedStoreLocationOutcome(rsp);
+        else
+            return ModifyAdvancedStoreLocationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAdvancedStoreLocationOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifyAdvancedStoreLocationAsync(const ModifyAdvancedStoreLocationRequest& request, const ModifyAdvancedStoreLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAdvancedStoreLocation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::ModifyAdvancedStoreLocationOutcomeCallable DlcClient::ModifyAdvancedStoreLocationCallable(const ModifyAdvancedStoreLocationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAdvancedStoreLocationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAdvancedStoreLocation(request);
         }
     );
 

@@ -2577,6 +2577,49 @@ CdbClient::DescribeDBInstanceInfoOutcomeCallable CdbClient::DescribeDBInstanceIn
     return task->get_future();
 }
 
+CdbClient::DescribeDBInstanceLogToCLSOutcome CdbClient::DescribeDBInstanceLogToCLS(const DescribeDBInstanceLogToCLSRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceLogToCLS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceLogToCLSResponse rsp = DescribeDBInstanceLogToCLSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceLogToCLSOutcome(rsp);
+        else
+            return DescribeDBInstanceLogToCLSOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceLogToCLSOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeDBInstanceLogToCLSAsync(const DescribeDBInstanceLogToCLSRequest& request, const DescribeDBInstanceLogToCLSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceLogToCLS(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeDBInstanceLogToCLSOutcomeCallable CdbClient::DescribeDBInstanceLogToCLSCallable(const DescribeDBInstanceLogToCLSRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceLogToCLSOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceLogToCLS(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeDBInstanceRebootTimeOutcome CdbClient::DescribeDBInstanceRebootTime(const DescribeDBInstanceRebootTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstanceRebootTime");
@@ -4720,6 +4763,49 @@ CdbClient::ModifyCdbProxyParamOutcomeCallable CdbClient::ModifyCdbProxyParamCall
         [this, request]()
         {
             return this->ModifyCdbProxyParam(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ModifyDBInstanceLogToCLSOutcome CdbClient::ModifyDBInstanceLogToCLS(const ModifyDBInstanceLogToCLSRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceLogToCLS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceLogToCLSResponse rsp = ModifyDBInstanceLogToCLSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceLogToCLSOutcome(rsp);
+        else
+            return ModifyDBInstanceLogToCLSOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceLogToCLSOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyDBInstanceLogToCLSAsync(const ModifyDBInstanceLogToCLSRequest& request, const ModifyDBInstanceLogToCLSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceLogToCLS(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyDBInstanceLogToCLSOutcomeCallable CdbClient::ModifyDBInstanceLogToCLSCallable(const ModifyDBInstanceLogToCLSRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceLogToCLSOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceLogToCLS(request);
         }
     );
 

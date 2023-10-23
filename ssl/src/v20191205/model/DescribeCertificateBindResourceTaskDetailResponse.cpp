@@ -35,7 +35,8 @@ DescribeCertificateBindResourceTaskDetailResponse::DescribeCertificateBindResour
     m_tCBHasBeenSet(false),
     m_tEOHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_cacheTimeHasBeenSet(false)
+    m_cacheTimeHasBeenSet(false),
+    m_tSEHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,26 @@ CoreInternalOutcome DescribeCertificateBindResourceTaskDetailResponse::Deseriali
         m_cacheTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TSE") && !rsp["TSE"].IsNull())
+    {
+        if (!rsp["TSE"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TSE` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["TSE"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TSEInstanceList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tSE.push_back(item);
+        }
+        m_tSEHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +490,21 @@ string DescribeCertificateBindResourceTaskDetailResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_cacheTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_tSEHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TSE";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tSE.begin(); itr != m_tSE.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -599,6 +635,16 @@ string DescribeCertificateBindResourceTaskDetailResponse::GetCacheTime() const
 bool DescribeCertificateBindResourceTaskDetailResponse::CacheTimeHasBeenSet() const
 {
     return m_cacheTimeHasBeenSet;
+}
+
+vector<TSEInstanceList> DescribeCertificateBindResourceTaskDetailResponse::GetTSE() const
+{
+    return m_tSE;
+}
+
+bool DescribeCertificateBindResourceTaskDetailResponse::TSEHasBeenSet() const
+{
+    return m_tSEHasBeenSet;
 }
 
 

@@ -42,7 +42,10 @@ RoomInfo::RoomInfo() :
     m_videoOrientationHasBeenSet(false),
     m_isGradingRequiredPostClassHasBeenSet(false),
     m_roomTypeHasBeenSet(false),
-    m_endDelayTimeHasBeenSet(false)
+    m_endDelayTimeHasBeenSet(false),
+    m_liveTypeHasBeenSet(false),
+    m_recordLiveUrlHasBeenSet(false),
+    m_enableAutoStartHasBeenSet(false)
 {
 }
 
@@ -274,6 +277,36 @@ CoreInternalOutcome RoomInfo::Deserialize(const rapidjson::Value &value)
         m_endDelayTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LiveType") && !value["LiveType"].IsNull())
+    {
+        if (!value["LiveType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomInfo.LiveType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_liveType = value["LiveType"].GetUint64();
+        m_liveTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordLiveUrl") && !value["RecordLiveUrl"].IsNull())
+    {
+        if (!value["RecordLiveUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomInfo.RecordLiveUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordLiveUrl = string(value["RecordLiveUrl"].GetString());
+        m_recordLiveUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableAutoStart") && !value["EnableAutoStart"].IsNull())
+    {
+        if (!value["EnableAutoStart"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomInfo.EnableAutoStart` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableAutoStart = value["EnableAutoStart"].GetUint64();
+        m_enableAutoStartHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +493,30 @@ void RoomInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "EndDelayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endDelayTime, allocator);
+    }
+
+    if (m_liveTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiveType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_liveType, allocator);
+    }
+
+    if (m_recordLiveUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordLiveUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordLiveUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableAutoStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAutoStart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableAutoStart, allocator);
     }
 
 }
@@ -815,5 +872,53 @@ void RoomInfo::SetEndDelayTime(const int64_t& _endDelayTime)
 bool RoomInfo::EndDelayTimeHasBeenSet() const
 {
     return m_endDelayTimeHasBeenSet;
+}
+
+uint64_t RoomInfo::GetLiveType() const
+{
+    return m_liveType;
+}
+
+void RoomInfo::SetLiveType(const uint64_t& _liveType)
+{
+    m_liveType = _liveType;
+    m_liveTypeHasBeenSet = true;
+}
+
+bool RoomInfo::LiveTypeHasBeenSet() const
+{
+    return m_liveTypeHasBeenSet;
+}
+
+string RoomInfo::GetRecordLiveUrl() const
+{
+    return m_recordLiveUrl;
+}
+
+void RoomInfo::SetRecordLiveUrl(const string& _recordLiveUrl)
+{
+    m_recordLiveUrl = _recordLiveUrl;
+    m_recordLiveUrlHasBeenSet = true;
+}
+
+bool RoomInfo::RecordLiveUrlHasBeenSet() const
+{
+    return m_recordLiveUrlHasBeenSet;
+}
+
+uint64_t RoomInfo::GetEnableAutoStart() const
+{
+    return m_enableAutoStart;
+}
+
+void RoomInfo::SetEnableAutoStart(const uint64_t& _enableAutoStart)
+{
+    m_enableAutoStart = _enableAutoStart;
+    m_enableAutoStartHasBeenSet = true;
+}
+
+bool RoomInfo::EnableAutoStartHasBeenSet() const
+{
+    return m_enableAutoStartHasBeenSet;
 }
 

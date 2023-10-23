@@ -98,6 +98,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/AspectRatio.h
   include/tencentcloud/mrs/v20200910/model/PersonalHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/NeonatalInfo.h
+  include/tencentcloud/mrs/v20200910/model/Size.h
   include/tencentcloud/mrs/v20200910/model/EyeItem.h
   include/tencentcloud/mrs/v20200910/model/FamilyMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/OphthalmologyCorrectedVisualAcuity.h
@@ -192,7 +193,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/TextTypeListBlock.h
   include/tencentcloud/mrs/v20200910/model/ObstetricalHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/SurgerySpinalExtremities.h
-  include/tencentcloud/mrs/v20200910/model/Size.h
+  include/tencentcloud/mrs/v20200910/model/BlockTitle.h
   include/tencentcloud/mrs/v20200910/model/DischargeConditionBlock.h
   include/tencentcloud/mrs/v20200910/model/LymphTotal.h
   include/tencentcloud/mrs/v20200910/model/OtherInfo.h
@@ -331,6 +332,7 @@ set(mrs_src
   src/v20200910/model/AspectRatio.cpp
   src/v20200910/model/PersonalHistoryBlock.cpp
   src/v20200910/model/NeonatalInfo.cpp
+  src/v20200910/model/Size.cpp
   src/v20200910/model/EyeItem.cpp
   src/v20200910/model/FamilyMedicalHistory.cpp
   src/v20200910/model/OphthalmologyCorrectedVisualAcuity.cpp
@@ -425,7 +427,7 @@ set(mrs_src
   src/v20200910/model/TextTypeListBlock.cpp
   src/v20200910/model/ObstetricalHistoryBlock.cpp
   src/v20200910/model/SurgerySpinalExtremities.cpp
-  src/v20200910/model/Size.cpp
+  src/v20200910/model/BlockTitle.cpp
   src/v20200910/model/DischargeConditionBlock.cpp
   src/v20200910/model/LymphTotal.cpp
   src/v20200910/model/OtherInfo.cpp

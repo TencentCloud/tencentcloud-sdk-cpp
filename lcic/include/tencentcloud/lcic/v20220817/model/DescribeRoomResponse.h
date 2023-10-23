@@ -401,6 +401,48 @@ video 纯视频
                      */
                     bool EndDelayTimeHasBeenSet() const;
 
+                    /**
+                     * 获取直播方式：0 常规模式（默认）1 回放直播模式（伪直播）
+                     * @return LiveType 直播方式：0 常规模式（默认）1 回放直播模式（伪直播）
+                     * 
+                     */
+                    uint64_t GetLiveType() const;
+
+                    /**
+                     * 判断参数 LiveType 是否已赋值
+                     * @return LiveType 是否已赋值
+                     * 
+                     */
+                    bool LiveTypeHasBeenSet() const;
+
+                    /**
+                     * 获取伪直播链接
+                     * @return RecordLiveUrl 伪直播链接
+                     * 
+                     */
+                    std::string GetRecordLiveUrl() const;
+
+                    /**
+                     * 判断参数 RecordLiveUrl 是否已赋值
+                     * @return RecordLiveUrl 是否已赋值
+                     * 
+                     */
+                    bool RecordLiveUrlHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
+                     * @return EnableAutoStart 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
+                     * 
+                     */
+                    uint64_t GetEnableAutoStart() const;
+
+                    /**
+                     * 判断参数 EnableAutoStart 是否已赋值
+                     * @return EnableAutoStart 是否已赋值
+                     * 
+                     */
+                    bool EnableAutoStartHasBeenSet() const;
+
                 private:
 
                     /**
@@ -558,6 +600,24 @@ video 纯视频
                      */
                     int64_t m_endDelayTime;
                     bool m_endDelayTimeHasBeenSet;
+
+                    /**
+                     * 直播方式：0 常规模式（默认）1 回放直播模式（伪直播）
+                     */
+                    uint64_t m_liveType;
+                    bool m_liveTypeHasBeenSet;
+
+                    /**
+                     * 伪直播链接
+                     */
+                    std::string m_recordLiveUrl;
+                    bool m_recordLiveUrlHasBeenSet;
+
+                    /**
+                     * 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
+                     */
+                    uint64_t m_enableAutoStart;
+                    bool m_enableAutoStartHasBeenSet;
 
                 };
             }

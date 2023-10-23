@@ -642,6 +642,49 @@ OceanusClient::DeleteTableConfigOutcomeCallable OceanusClient::DeleteTableConfig
     return task->get_future();
 }
 
+OceanusClient::DeleteWorkSpaceOutcome OceanusClient::DeleteWorkSpace(const DeleteWorkSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWorkSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWorkSpaceResponse rsp = DeleteWorkSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWorkSpaceOutcome(rsp);
+        else
+            return DeleteWorkSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWorkSpaceOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DeleteWorkSpaceAsync(const DeleteWorkSpaceRequest& request, const DeleteWorkSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWorkSpace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DeleteWorkSpaceOutcomeCallable OceanusClient::DeleteWorkSpaceCallable(const DeleteWorkSpaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWorkSpaceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWorkSpace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::DescribeClustersOutcome OceanusClient::DescribeClusters(const DescribeClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusters");

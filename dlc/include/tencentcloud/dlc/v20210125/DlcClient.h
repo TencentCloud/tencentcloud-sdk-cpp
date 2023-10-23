@@ -113,6 +113,8 @@
 #include <tencentcloud/dlc/v20210125/model/DeleteUsersFromWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteWorkGroupResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeAdvancedStoreLocationRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeAdvancedStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDMSDatabaseRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDMSDatabaseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDMSPartitionsRequest.h>
@@ -213,6 +215,8 @@
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/LockMetaDataRequest.h>
 #include <tencentcloud/dlc/v20210125/model/LockMetaDataResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ModifyAdvancedStoreLocationRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ModifyAdvancedStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyDataEngineDescriptionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyDataEngineDescriptionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleRequest.h>
@@ -406,6 +410,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteWorkGroupResponse> DeleteWorkGroupOutcome;
                 typedef std::future<DeleteWorkGroupOutcome> DeleteWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteWorkGroupRequest&, DeleteWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAdvancedStoreLocationResponse> DescribeAdvancedStoreLocationOutcome;
+                typedef std::future<DescribeAdvancedStoreLocationOutcome> DescribeAdvancedStoreLocationOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeAdvancedStoreLocationRequest&, DescribeAdvancedStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdvancedStoreLocationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDMSDatabaseResponse> DescribeDMSDatabaseOutcome;
                 typedef std::future<DescribeDMSDatabaseOutcome> DescribeDMSDatabaseOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDMSDatabaseRequest&, DescribeDMSDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDMSDatabaseAsyncHandler;
@@ -556,6 +563,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::LockMetaDataResponse> LockMetaDataOutcome;
                 typedef std::future<LockMetaDataOutcome> LockMetaDataOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::LockMetaDataRequest&, LockMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LockMetaDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAdvancedStoreLocationResponse> ModifyAdvancedStoreLocationOutcome;
+                typedef std::future<ModifyAdvancedStoreLocationOutcome> ModifyAdvancedStoreLocationOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ModifyAdvancedStoreLocationRequest&, ModifyAdvancedStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAdvancedStoreLocationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDataEngineDescriptionResponse> ModifyDataEngineDescriptionOutcome;
                 typedef std::future<ModifyDataEngineDescriptionOutcome> ModifyDataEngineDescriptionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifyDataEngineDescriptionRequest&, ModifyDataEngineDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataEngineDescriptionAsyncHandler;
@@ -1031,6 +1041,15 @@ namespace TencentCloud
                 DeleteWorkGroupOutcomeCallable DeleteWorkGroupCallable(const Model::DeleteWorkGroupRequest& request);
 
                 /**
+                 *查询sql查询界面高级设置
+                 * @param req DescribeAdvancedStoreLocationRequest
+                 * @return DescribeAdvancedStoreLocationOutcome
+                 */
+                DescribeAdvancedStoreLocationOutcome DescribeAdvancedStoreLocation(const Model::DescribeAdvancedStoreLocationRequest &request);
+                void DescribeAdvancedStoreLocationAsync(const Model::DescribeAdvancedStoreLocationRequest& request, const DescribeAdvancedStoreLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAdvancedStoreLocationOutcomeCallable DescribeAdvancedStoreLocationCallable(const Model::DescribeAdvancedStoreLocationRequest& request);
+
+                /**
                  *DMS元数据获取库
                  * @param req DescribeDMSDatabaseRequest
                  * @return DescribeDMSDatabaseOutcome
@@ -1479,6 +1498,15 @@ namespace TencentCloud
                 LockMetaDataOutcome LockMetaData(const Model::LockMetaDataRequest &request);
                 void LockMetaDataAsync(const Model::LockMetaDataRequest& request, const LockMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 LockMetaDataOutcomeCallable LockMetaDataCallable(const Model::LockMetaDataRequest& request);
+
+                /**
+                 *修改sql查询界面高级设置。
+                 * @param req ModifyAdvancedStoreLocationRequest
+                 * @return ModifyAdvancedStoreLocationOutcome
+                 */
+                ModifyAdvancedStoreLocationOutcome ModifyAdvancedStoreLocation(const Model::ModifyAdvancedStoreLocationRequest &request);
+                void ModifyAdvancedStoreLocationAsync(const Model::ModifyAdvancedStoreLocationRequest& request, const ModifyAdvancedStoreLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAdvancedStoreLocationOutcomeCallable ModifyAdvancedStoreLocationCallable(const Model::ModifyAdvancedStoreLocationRequest& request);
 
                 /**
                  *修改引擎描述信息

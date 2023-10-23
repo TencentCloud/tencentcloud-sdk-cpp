@@ -92,21 +92,21 @@ namespace TencentCloud
                     /**
                      * 获取实例数量
                      * @return ProvederInstanceNum 实例数量
-                     * 
+                     * @deprecated
                      */
                     int64_t GetProvederInstanceNum() const;
 
                     /**
                      * 设置实例数量
                      * @param _provederInstanceNum 实例数量
-                     * 
+                     * @deprecated
                      */
                     void SetProvederInstanceNum(const int64_t& _provederInstanceNum);
 
                     /**
                      * 判断参数 ProvederInstanceNum 是否已赋值
                      * @return ProvederInstanceNum 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ProvederInstanceNumHasBeenSet() const;
 
@@ -130,6 +130,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ZoneInstanceInfoSetHasBeenSet() const;
+
+                    /**
+                     * 获取实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProviderInstanceNum 实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetProviderInstanceNum() const;
+
+                    /**
+                     * 设置实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _providerInstanceNum 实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProviderInstanceNum(const int64_t& _providerInstanceNum);
+
+                    /**
+                     * 判断参数 ProviderInstanceNum 是否已赋值
+                     * @return ProviderInstanceNum 是否已赋值
+                     * 
+                     */
+                    bool ProviderInstanceNumHasBeenSet() const;
 
                 private:
 
@@ -156,6 +181,13 @@ namespace TencentCloud
                      */
                     std::vector<ZoneInstanceInfo> m_zoneInstanceInfoSet;
                     bool m_zoneInstanceInfoSetHasBeenSet;
+
+                    /**
+                     * 实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_providerInstanceNum;
+                    bool m_providerInstanceNumHasBeenSet;
 
                 };
             }

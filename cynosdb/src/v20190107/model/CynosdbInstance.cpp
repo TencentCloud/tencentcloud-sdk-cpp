@@ -72,7 +72,8 @@ CynosdbInstance::CynosdbInstance() :
     m_masterZoneHasBeenSet(false),
     m_slaveZonesHasBeenSet(false),
     m_instanceNetInfoHasBeenSet(false),
-    m_resourcePackagesHasBeenSet(false)
+    m_resourcePackagesHasBeenSet(false),
+    m_instanceIndexModeHasBeenSet(false)
 {
 }
 
@@ -644,6 +645,16 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         m_resourcePackagesHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceIndexMode") && !value["InstanceIndexMode"].IsNull())
+    {
+        if (!value["InstanceIndexMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.InstanceIndexMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceIndexMode = string(value["InstanceIndexMode"].GetString());
+        m_instanceIndexModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1098,6 +1109,14 @@ void CynosdbInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceIndexModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIndexMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceIndexMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1933,5 +1952,21 @@ void CynosdbInstance::SetResourcePackages(const vector<ResourcePackage>& _resour
 bool CynosdbInstance::ResourcePackagesHasBeenSet() const
 {
     return m_resourcePackagesHasBeenSet;
+}
+
+string CynosdbInstance::GetInstanceIndexMode() const
+{
+    return m_instanceIndexMode;
+}
+
+void CynosdbInstance::SetInstanceIndexMode(const string& _instanceIndexMode)
+{
+    m_instanceIndexMode = _instanceIndexMode;
+    m_instanceIndexModeHasBeenSet = true;
+}
+
+bool CynosdbInstance::InstanceIndexModeHasBeenSet() const
+{
+    return m_instanceIndexModeHasBeenSet;
 }
 

@@ -51,6 +51,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteTableConfigRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeClustersRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeClustersResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h>
@@ -147,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTableConfigResponse> DeleteTableConfigOutcome;
                 typedef std::future<DeleteTableConfigOutcome> DeleteTableConfigOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DeleteTableConfigRequest&, DeleteTableConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWorkSpaceResponse> DeleteWorkSpaceOutcome;
+                typedef std::future<DeleteWorkSpaceOutcome> DeleteWorkSpaceOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DeleteWorkSpaceRequest&, DeleteWorkSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
@@ -335,6 +340,15 @@ namespace TencentCloud
                 DeleteTableConfigOutcome DeleteTableConfig(const Model::DeleteTableConfigRequest &request);
                 void DeleteTableConfigAsync(const Model::DeleteTableConfigRequest& request, const DeleteTableConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTableConfigOutcomeCallable DeleteTableConfigCallable(const Model::DeleteTableConfigRequest& request);
+
+                /**
+                 *删除工作空间
+                 * @param req DeleteWorkSpaceRequest
+                 * @return DeleteWorkSpaceOutcome
+                 */
+                DeleteWorkSpaceOutcome DeleteWorkSpace(const Model::DeleteWorkSpaceRequest &request);
+                void DeleteWorkSpaceAsync(const Model::DeleteWorkSpaceRequest& request, const DeleteWorkSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWorkSpaceOutcomeCallable DeleteWorkSpaceCallable(const Model::DeleteWorkSpaceRequest& request);
 
                 /**
                  *查询集群

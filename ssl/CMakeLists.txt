@@ -20,7 +20,7 @@ set(ssl_public_header
 
 set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateBindResourceTaskDetailRequest.h
-  include/tencentcloud/ssl/v20191205/model/ResourceTypeRegions.h
+  include/tencentcloud/ssl/v20191205/model/GatewayCertificate.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostDdosInstanceListRequest.h
   include/tencentcloud/ssl/v20191205/model/CompleteCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DownloadCertificateResponse.h
@@ -80,6 +80,8 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/VodInstanceDetail.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/PackageTransferOutInfo.h
+  include/tencentcloud/ssl/v20191205/model/TSEInstanceDetail.h
+  include/tencentcloud/ssl/v20191205/model/ResourceTypeRegions.h
   include/tencentcloud/ssl/v20191205/model/DeleteManagerRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostUpdateRecordResponse.h
   include/tencentcloud/ssl/v20191205/model/UpdateCertificateRecordRollbackResponse.h
@@ -193,6 +195,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DeployRecordInfo.h
   include/tencentcloud/ssl/v20191205/model/DescribePackagesResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeManagersRequest.h
+  include/tencentcloud/ssl/v20191205/model/TSEInstanceList.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostLighthouseInstanceListResponse.h
   include/tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/VODInstanceList.h
@@ -201,7 +204,7 @@ set(ssl_public_header_model
 set(ssl_src
   src/v20191205/SslClient.cpp
   src/v20191205/model/DescribeCertificateBindResourceTaskDetailRequest.cpp
-  src/v20191205/model/ResourceTypeRegions.cpp
+  src/v20191205/model/GatewayCertificate.cpp
   src/v20191205/model/DescribeHostDdosInstanceListRequest.cpp
   src/v20191205/model/CompleteCertificateRequest.cpp
   src/v20191205/model/DownloadCertificateResponse.cpp
@@ -261,6 +264,8 @@ set(ssl_src
   src/v20191205/model/VodInstanceDetail.cpp
   src/v20191205/model/DescribeCertificateResponse.cpp
   src/v20191205/model/PackageTransferOutInfo.cpp
+  src/v20191205/model/TSEInstanceDetail.cpp
+  src/v20191205/model/ResourceTypeRegions.cpp
   src/v20191205/model/DeleteManagerRequest.cpp
   src/v20191205/model/DescribeHostUpdateRecordResponse.cpp
   src/v20191205/model/UpdateCertificateRecordRollbackResponse.cpp
@@ -374,6 +379,7 @@ set(ssl_src
   src/v20191205/model/DeployRecordInfo.cpp
   src/v20191205/model/DescribePackagesResponse.cpp
   src/v20191205/model/DescribeManagersRequest.cpp
+  src/v20191205/model/TSEInstanceList.cpp
   src/v20191205/model/DescribeHostLighthouseInstanceListResponse.cpp
   src/v20191205/model/CompleteCertificateResponse.cpp
   src/v20191205/model/VODInstanceList.cpp

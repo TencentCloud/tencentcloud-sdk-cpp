@@ -31,6 +31,7 @@
 #include <tencentcloud/ssl/v20191205/model/ApiGatewayInstanceList.h>
 #include <tencentcloud/ssl/v20191205/model/TCBInstanceList.h>
 #include <tencentcloud/ssl/v20191205/model/TeoInstanceList.h>
+#include <tencentcloud/ssl/v20191205/model/TSEInstanceList.h>
 
 
 namespace TencentCloud
@@ -241,6 +242,22 @@ namespace TencentCloud
                      */
                     bool CacheTimeHasBeenSet() const;
 
+                    /**
+                     * 获取关联tse资源详情	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TSE 关联tse资源详情	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TSEInstanceList> GetTSE() const;
+
+                    /**
+                     * 判断参数 TSE 是否已赋值
+                     * @return TSE 是否已赋值
+                     * 
+                     */
+                    bool TSEHasBeenSet() const;
+
                 private:
 
                     /**
@@ -324,6 +341,13 @@ namespace TencentCloud
                      */
                     std::string m_cacheTime;
                     bool m_cacheTimeHasBeenSet;
+
+                    /**
+                     * 关联tse资源详情	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TSEInstanceList> m_tSE;
+                    bool m_tSEHasBeenSet;
 
                 };
             }
