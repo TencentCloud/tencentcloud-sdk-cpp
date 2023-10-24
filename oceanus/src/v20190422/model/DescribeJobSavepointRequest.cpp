@@ -26,7 +26,8 @@ DescribeJobSavepointRequest::DescribeJobSavepointRequest() :
     m_jobIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_recordTypesHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,19 @@ string DescribeJobSavepointRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_recordTypes.begin(); itr != m_recordTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -139,6 +153,22 @@ void DescribeJobSavepointRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool DescribeJobSavepointRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+vector<int64_t> DescribeJobSavepointRequest::GetRecordTypes() const
+{
+    return m_recordTypes;
+}
+
+void DescribeJobSavepointRequest::SetRecordTypes(const vector<int64_t>& _recordTypes)
+{
+    m_recordTypes = _recordTypes;
+    m_recordTypesHasBeenSet = true;
+}
+
+bool DescribeJobSavepointRequest::RecordTypesHasBeenSet() const
+{
+    return m_recordTypesHasBeenSet;
 }
 
 

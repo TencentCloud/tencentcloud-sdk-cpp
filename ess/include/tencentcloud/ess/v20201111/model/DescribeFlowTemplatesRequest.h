@@ -312,6 +312,27 @@ Key：template-id Values：需要查询的模板Id列表
                      */
                     bool GenerateSourceHasBeenSet() const;
 
+                    /**
+                     * 获取是否获取模板预览链接
+                     * @return WithPreviewUrl 是否获取模板预览链接
+                     * 
+                     */
+                    bool GetWithPreviewUrl() const;
+
+                    /**
+                     * 设置是否获取模板预览链接
+                     * @param _withPreviewUrl 是否获取模板预览链接
+                     * 
+                     */
+                    void SetWithPreviewUrl(const bool& _withPreviewUrl);
+
+                    /**
+                     * 判断参数 WithPreviewUrl 是否已赋值
+                     * @return WithPreviewUrl 是否已赋值
+                     * 
+                     */
+                    bool WithPreviewUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -387,6 +408,12 @@ Key：template-id Values：需要查询的模板Id列表
                      */
                     uint64_t m_generateSource;
                     bool m_generateSourceHasBeenSet;
+
+                    /**
+                     * 是否获取模板预览链接
+                     */
+                    bool m_withPreviewUrl;
+                    bool m_withPreviewUrlHasBeenSet;
 
                 };
             }

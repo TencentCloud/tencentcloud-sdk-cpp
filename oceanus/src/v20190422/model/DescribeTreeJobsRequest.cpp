@@ -23,6 +23,7 @@ using namespace TencentCloud::Oceanus::V20190422::Model;
 using namespace std;
 
 DescribeTreeJobsRequest::DescribeTreeJobsRequest() :
+    m_filtersHasBeenSet(false),
     m_workSpaceIdHasBeenSet(false)
 {
 }
@@ -33,6 +34,21 @@ string DescribeTreeJobsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
 
     if (m_workSpaceIdHasBeenSet)
     {
@@ -49,6 +65,22 @@ string DescribeTreeJobsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Filter> DescribeTreeJobsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeTreeJobsRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeTreeJobsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 string DescribeTreeJobsRequest::GetWorkSpaceId() const
 {

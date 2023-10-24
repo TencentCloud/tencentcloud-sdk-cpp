@@ -37,7 +37,9 @@ DescribeVoucherInfoRequest::DescribeVoucherInfoRequest() :
     m_sortOrderHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_paySceneHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_voucherMainTypeHasBeenSet(false),
+    m_voucherSubTypeHasBeenSet(false)
 {
 }
 
@@ -166,6 +168,22 @@ string DescribeVoucherInfoRequest::ToJsonString() const
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voucherMainTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoucherMainType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_voucherMainType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voucherSubTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoucherSubType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_voucherSubType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -414,6 +432,38 @@ void DescribeVoucherInfoRequest::SetOperator(const string& _operator)
 bool DescribeVoucherInfoRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string DescribeVoucherInfoRequest::GetVoucherMainType() const
+{
+    return m_voucherMainType;
+}
+
+void DescribeVoucherInfoRequest::SetVoucherMainType(const string& _voucherMainType)
+{
+    m_voucherMainType = _voucherMainType;
+    m_voucherMainTypeHasBeenSet = true;
+}
+
+bool DescribeVoucherInfoRequest::VoucherMainTypeHasBeenSet() const
+{
+    return m_voucherMainTypeHasBeenSet;
+}
+
+string DescribeVoucherInfoRequest::GetVoucherSubType() const
+{
+    return m_voucherSubType;
+}
+
+void DescribeVoucherInfoRequest::SetVoucherSubType(const string& _voucherSubType)
+{
+    m_voucherSubType = _voucherSubType;
+    m_voucherSubTypeHasBeenSet = true;
+}
+
+bool DescribeVoucherInfoRequest::VoucherSubTypeHasBeenSet() const
+{
+    return m_voucherSubTypeHasBeenSet;
 }
 
 

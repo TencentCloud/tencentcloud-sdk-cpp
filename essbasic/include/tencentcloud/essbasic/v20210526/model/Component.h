@@ -40,7 +40,7 @@ namespace TencentCloud
 在通过文件发起合同时，对应的component有三种定位方式
 1. 绝对定位方式
 2. 表单域(FIELD)定位方式
-3. 关键字(KEYWORD)定位方式
+3. 关键字(KEYWORD)定位方式，使用关键字定位时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找
 可以参考官网说明
 https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.8D.E5.AE.9A.E4.BD.8D.E6.96.B9.E5.BC.8F.E8.AF.B4.E6.98.8E
                 */
@@ -307,11 +307,11 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                      * 获取控件生成的方式：
 NORMAL - 普通控件
 FIELD - 表单域
-KEYWORD - 关键字
+KEYWORD - 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）
                      * @return GenerateMode 控件生成的方式：
 NORMAL - 普通控件
 FIELD - 表单域
-KEYWORD - 关键字
+KEYWORD - 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）
                      * 
                      */
                     std::string GetGenerateMode() const;
@@ -320,11 +320,11 @@ KEYWORD - 关键字
                      * 设置控件生成的方式：
 NORMAL - 普通控件
 FIELD - 表单域
-KEYWORD - 关键字
+KEYWORD - 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）
                      * @param _generateMode 控件生成的方式：
 NORMAL - 普通控件
 FIELD - 表单域
-KEYWORD - 关键字
+KEYWORD - 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）
                      * 
                      */
                     void SetGenerateMode(const std::string& _generateMode);
@@ -1353,7 +1353,7 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                      * 控件生成的方式：
 NORMAL - 普通控件
 FIELD - 表单域
-KEYWORD - 关键字
+KEYWORD - 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）
                      */
                     std::string m_generateMode;
                     bool m_generateModeHasBeenSet;

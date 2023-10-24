@@ -44,7 +44,11 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_autoRecoverHasBeenSet(false),
     m_clazzLevelsHasBeenSet(false),
     m_expertModeOnHasBeenSet(false),
-    m_expertModeConfigurationHasBeenSet(false)
+    m_expertModeConfigurationHasBeenSet(false),
+    m_traceModeOnHasBeenSet(false),
+    m_traceModeConfigurationHasBeenSet(false),
+    m_checkpointRetainedNumHasBeenSet(false),
+    m_jobGraphHasBeenSet(false)
 {
 }
 
@@ -251,6 +255,40 @@ string CreateJobConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_expertModeConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_traceModeOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceModeOn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_traceModeOn, allocator);
+    }
+
+    if (m_traceModeConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceModeConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_traceModeConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_checkpointRetainedNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointRetainedNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkpointRetainedNum, allocator);
+    }
+
+    if (m_jobGraphHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobGraph";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobGraph.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -611,6 +649,70 @@ void CreateJobConfigRequest::SetExpertModeConfiguration(const ExpertModeConfigur
 bool CreateJobConfigRequest::ExpertModeConfigurationHasBeenSet() const
 {
     return m_expertModeConfigurationHasBeenSet;
+}
+
+bool CreateJobConfigRequest::GetTraceModeOn() const
+{
+    return m_traceModeOn;
+}
+
+void CreateJobConfigRequest::SetTraceModeOn(const bool& _traceModeOn)
+{
+    m_traceModeOn = _traceModeOn;
+    m_traceModeOnHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::TraceModeOnHasBeenSet() const
+{
+    return m_traceModeOnHasBeenSet;
+}
+
+TraceModeConfiguration CreateJobConfigRequest::GetTraceModeConfiguration() const
+{
+    return m_traceModeConfiguration;
+}
+
+void CreateJobConfigRequest::SetTraceModeConfiguration(const TraceModeConfiguration& _traceModeConfiguration)
+{
+    m_traceModeConfiguration = _traceModeConfiguration;
+    m_traceModeConfigurationHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::TraceModeConfigurationHasBeenSet() const
+{
+    return m_traceModeConfigurationHasBeenSet;
+}
+
+int64_t CreateJobConfigRequest::GetCheckpointRetainedNum() const
+{
+    return m_checkpointRetainedNum;
+}
+
+void CreateJobConfigRequest::SetCheckpointRetainedNum(const int64_t& _checkpointRetainedNum)
+{
+    m_checkpointRetainedNum = _checkpointRetainedNum;
+    m_checkpointRetainedNumHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::CheckpointRetainedNumHasBeenSet() const
+{
+    return m_checkpointRetainedNumHasBeenSet;
+}
+
+JobGraph CreateJobConfigRequest::GetJobGraph() const
+{
+    return m_jobGraph;
+}
+
+void CreateJobConfigRequest::SetJobGraph(const JobGraph& _jobGraph)
+{
+    m_jobGraph = _jobGraph;
+    m_jobGraphHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::JobGraphHasBeenSet() const
+{
+    return m_jobGraphHasBeenSet;
 }
 
 

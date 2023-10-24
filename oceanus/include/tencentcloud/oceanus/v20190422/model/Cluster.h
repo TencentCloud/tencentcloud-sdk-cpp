@@ -985,6 +985,31 @@ namespace TencentCloud
                      */
                     bool SqlGatewaysHasBeenSet() const;
 
+                    /**
+                     * 获取0 公网访问 // 1 内网访问	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WebUIType 0 公网访问 // 1 内网访问	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetWebUIType() const;
+
+                    /**
+                     * 设置0 公网访问 // 1 内网访问	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _webUIType 0 公网访问 // 1 内网访问	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWebUIType(const int64_t& _webUIType);
+
+                    /**
+                     * 判断参数 WebUIType 是否已赋值
+                     * @return WebUIType 是否已赋值
+                     * 
+                     */
+                    bool WebUITypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1249,6 +1274,13 @@ namespace TencentCloud
                      */
                     std::vector<SqlGatewayItem> m_sqlGateways;
                     bool m_sqlGatewaysHasBeenSet;
+
+                    /**
+                     * 0 公网访问 // 1 内网访问	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_webUIType;
+                    bool m_webUITypeHasBeenSet;
 
                 };
             }

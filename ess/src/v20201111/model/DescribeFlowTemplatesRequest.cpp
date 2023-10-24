@@ -32,7 +32,8 @@ DescribeFlowTemplatesRequest::DescribeFlowTemplatesRequest() :
     m_applicationIdHasBeenSet(false),
     m_isChannelHasBeenSet(false),
     m_organizationHasBeenSet(false),
-    m_generateSourceHasBeenSet(false)
+    m_generateSourceHasBeenSet(false),
+    m_withPreviewUrlHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string DescribeFlowTemplatesRequest::ToJsonString() const
         string key = "GenerateSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_generateSource, allocator);
+    }
+
+    if (m_withPreviewUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithPreviewUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_withPreviewUrl, allocator);
     }
 
 
@@ -299,6 +308,22 @@ void DescribeFlowTemplatesRequest::SetGenerateSource(const uint64_t& _generateSo
 bool DescribeFlowTemplatesRequest::GenerateSourceHasBeenSet() const
 {
     return m_generateSourceHasBeenSet;
+}
+
+bool DescribeFlowTemplatesRequest::GetWithPreviewUrl() const
+{
+    return m_withPreviewUrl;
+}
+
+void DescribeFlowTemplatesRequest::SetWithPreviewUrl(const bool& _withPreviewUrl)
+{
+    m_withPreviewUrl = _withPreviewUrl;
+    m_withPreviewUrlHasBeenSet = true;
+}
+
+bool DescribeFlowTemplatesRequest::WithPreviewUrlHasBeenSet() const
+{
+    return m_withPreviewUrlHasBeenSet;
 }
 
 

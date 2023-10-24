@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取策略组id
-                     * @return GroupId 策略组id
+                     * 获取策略组id,即1.0的告警策略id,可以从策略详情获取
+                     * @return GroupId 策略组id,即1.0的告警策略id,可以从策略详情获取
                      * 
                      */
                     std::vector<int64_t> GetGroupId() const;
 
                     /**
-                     * 设置策略组id
-                     * @param _groupId 策略组id
+                     * 设置策略组id,即1.0的告警策略id,可以从策略详情获取
+                     * @param _groupId 策略组id,即1.0的告警策略id,可以从策略详情获取
                      * 
                      */
                     void SetGroupId(const std::vector<int64_t>& _groupId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 策略组id
+                     * 策略组id,即1.0的告警策略id,可以从策略详情获取
                      */
                     std::vector<int64_t> m_groupId;
                     bool m_groupIdHasBeenSet;

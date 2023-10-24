@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取task version path
-                     * @return TaskVersionPath task version path
+                     * 获取该任务选定版本的存储路径：
+DescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 TaskInfo.TaskExt.Properties 下 Base64.encode($region | $bucket | $ftp.file.name) 值
+                     * @return TaskVersionPath 该任务选定版本的存储路径：
+DescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 TaskInfo.TaskExt.Properties 下 Base64.encode($region | $bucket | $ftp.file.name) 值
                      * 
                      */
                     std::string GetTaskVersionPath() const;
 
                     /**
-                     * 设置task version path
-                     * @param _taskVersionPath task version path
+                     * 设置该任务选定版本的存储路径：
+DescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 TaskInfo.TaskExt.Properties 下 Base64.encode($region | $bucket | $ftp.file.name) 值
+                     * @param _taskVersionPath 该任务选定版本的存储路径：
+DescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 TaskInfo.TaskExt.Properties 下 Base64.encode($region | $bucket | $ftp.file.name) 值
                      * 
                      */
                     void SetTaskVersionPath(const std::string& _taskVersionPath);
@@ -106,15 +110,19 @@ namespace TencentCloud
                     bool TaskVersionPathHasBeenSet() const;
 
                     /**
-                     * 获取task version
-                     * @return TaskVersion task version
+                     * 获取该任务选定版本id：
+DescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 VersionId 取值
+                     * @return TaskVersion 该任务选定版本id：
+DescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 VersionId 取值
                      * 
                      */
                     std::string GetTaskVersion() const;
 
                     /**
-                     * 设置task version
-                     * @param _taskVersion task version
+                     * 设置该任务选定版本id：
+DescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 VersionId 取值
+                     * @param _taskVersion 该任务选定版本id：
+DescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 VersionId 取值
                      * 
                      */
                     void SetTaskVersion(const std::string& _taskVersion);
@@ -141,13 +149,15 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * task version path
+                     * 该任务选定版本的存储路径：
+DescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 TaskInfo.TaskExt.Properties 下 Base64.encode($region | $bucket | $ftp.file.name) 值
                      */
                     std::string m_taskVersionPath;
                     bool m_taskVersionPathHasBeenSet;
 
                     /**
-                     * task version
+                     * 该任务选定版本id：
+DescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 VersionId 取值
                      */
                     std::string m_taskVersion;
                     bool m_taskVersionHasBeenSet;

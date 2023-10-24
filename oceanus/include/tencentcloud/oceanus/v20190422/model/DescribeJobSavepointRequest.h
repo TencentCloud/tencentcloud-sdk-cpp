@@ -126,6 +126,35 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取2 是checkpoint
+1 是触发savepoint
+3 停止触发的savepoint
+                     * @return RecordTypes 2 是checkpoint
+1 是触发savepoint
+3 停止触发的savepoint
+                     * 
+                     */
+                    std::vector<int64_t> GetRecordTypes() const;
+
+                    /**
+                     * 设置2 是checkpoint
+1 是触发savepoint
+3 停止触发的savepoint
+                     * @param _recordTypes 2 是checkpoint
+1 是触发savepoint
+3 停止触发的savepoint
+                     * 
+                     */
+                    void SetRecordTypes(const std::vector<int64_t>& _recordTypes);
+
+                    /**
+                     * 判断参数 RecordTypes 是否已赋值
+                     * @return RecordTypes 是否已赋值
+                     * 
+                     */
+                    bool RecordTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +180,14 @@ namespace TencentCloud
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * 2 是checkpoint
+1 是触发savepoint
+3 停止触发的savepoint
+                     */
+                    std::vector<int64_t> m_recordTypes;
+                    bool m_recordTypesHasBeenSet;
 
                 };
             }

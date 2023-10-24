@@ -23,7 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
 using namespace std;
 
-DescribeTreeJobsResponse::DescribeTreeJobsResponse()
+DescribeTreeJobsResponse::DescribeTreeJobsResponse() :
+    m_parentIdHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_jobSetHasBeenSet(false),
+    m_childrenHasBeenSet(false)
 {
 }
 
@@ -61,6 +66,76 @@ CoreInternalOutcome DescribeTreeJobsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ParentId") && !rsp["ParentId"].IsNull())
+    {
+        if (!rsp["ParentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentId = string(rsp["ParentId"].GetString());
+        m_parentIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Id") && !rsp["Id"].IsNull())
+    {
+        if (!rsp["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(rsp["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Name") && !rsp["Name"].IsNull())
+    {
+        if (!rsp["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(rsp["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("JobSet") && !rsp["JobSet"].IsNull())
+    {
+        if (!rsp["JobSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `JobSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["JobSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TreeJobSets item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_jobSet.push_back(item);
+        }
+        m_jobSetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Children") && !rsp["Children"].IsNull())
+    {
+        if (!rsp["Children"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Children` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Children"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DescribeTreeJobsRsp item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_children.push_back(item);
+        }
+        m_childrenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +145,60 @@ string DescribeTreeJobsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_parentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_jobSet.begin(); itr != m_jobSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_childrenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Children";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +211,55 @@ string DescribeTreeJobsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeTreeJobsResponse::GetParentId() const
+{
+    return m_parentId;
+}
+
+bool DescribeTreeJobsResponse::ParentIdHasBeenSet() const
+{
+    return m_parentIdHasBeenSet;
+}
+
+string DescribeTreeJobsResponse::GetId() const
+{
+    return m_id;
+}
+
+bool DescribeTreeJobsResponse::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+string DescribeTreeJobsResponse::GetName() const
+{
+    return m_name;
+}
+
+bool DescribeTreeJobsResponse::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+vector<TreeJobSets> DescribeTreeJobsResponse::GetJobSet() const
+{
+    return m_jobSet;
+}
+
+bool DescribeTreeJobsResponse::JobSetHasBeenSet() const
+{
+    return m_jobSetHasBeenSet;
+}
+
+vector<DescribeTreeJobsRsp> DescribeTreeJobsResponse::GetChildren() const
+{
+    return m_children;
+}
+
+bool DescribeTreeJobsResponse::ChildrenHasBeenSet() const
+{
+    return m_childrenHasBeenSet;
+}
 
 

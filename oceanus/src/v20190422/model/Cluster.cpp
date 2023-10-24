@@ -60,7 +60,8 @@ Cluster::Cluster() :
     m_archGenerationHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
     m_ordersHasBeenSet(false),
-    m_sqlGatewaysHasBeenSet(false)
+    m_sqlGatewaysHasBeenSet(false),
+    m_webUITypeHasBeenSet(false)
 {
 }
 
@@ -536,6 +537,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_sqlGatewaysHasBeenSet = true;
     }
 
+    if (value.HasMember("WebUIType") && !value["WebUIType"].IsNull())
+    {
+        if (!value["WebUIType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.WebUIType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_webUIType = value["WebUIType"].GetInt64();
+        m_webUITypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -904,6 +915,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_webUITypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebUIType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webUIType, allocator);
     }
 
 }
@@ -1547,5 +1566,21 @@ void Cluster::SetSqlGateways(const vector<SqlGatewayItem>& _sqlGateways)
 bool Cluster::SqlGatewaysHasBeenSet() const
 {
     return m_sqlGatewaysHasBeenSet;
+}
+
+int64_t Cluster::GetWebUIType() const
+{
+    return m_webUIType;
+}
+
+void Cluster::SetWebUIType(const int64_t& _webUIType)
+{
+    m_webUIType = _webUIType;
+    m_webUITypeHasBeenSet = true;
+}
+
+bool Cluster::WebUITypeHasBeenSet() const
+{
+    return m_webUITypeHasBeenSet;
 }
 

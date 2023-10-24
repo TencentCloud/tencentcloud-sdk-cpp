@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/oceanus/v20190422/model/Filter.h>
 
 
 namespace TencentCloud
@@ -41,6 +42,27 @@ namespace TencentCloud
                     ~DescribeTreeJobsRequest() = default;
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取筛选条件字段
+                     * @return Filters 筛选条件字段
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置筛选条件字段
+                     * @param _filters 筛选条件字段
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取工作空间 Serialid
@@ -64,6 +86,12 @@ namespace TencentCloud
                     bool WorkSpaceIdHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 筛选条件字段
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                     /**
                      * 工作空间 Serialid

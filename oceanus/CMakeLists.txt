@@ -38,6 +38,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/WorkSpaceSetItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResultColumn.h
+  include/tencentcloud/oceanus/v20190422/model/TreeJobSets.h
   include/tencentcloud/oceanus/v20190422/model/ResourceItem.h
   include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
   include/tencentcloud/oceanus/v20190422/model/CCN.h
@@ -56,6 +57,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteJobConfigsResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigRequest.h
   include/tencentcloud/oceanus/v20190422/model/StatementResult.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeTreeJobsRsp.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
   include/tencentcloud/oceanus/v20190422/model/SlotSharingGroupSpec.h
@@ -84,6 +86,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/StopJobsRequest.h
+  include/tencentcloud/oceanus/v20190422/model/TraceModeConfiguration.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h
@@ -158,6 +161,7 @@ set(oceanus_src
   src/v20190422/model/WorkSpaceSetItem.cpp
   src/v20190422/model/DescribeJobSavepointRequest.cpp
   src/v20190422/model/ResultColumn.cpp
+  src/v20190422/model/TreeJobSets.cpp
   src/v20190422/model/ResourceItem.cpp
   src/v20190422/model/ResourceLoc.cpp
   src/v20190422/model/CCN.cpp
@@ -176,6 +180,7 @@ set(oceanus_src
   src/v20190422/model/DeleteJobConfigsResponse.cpp
   src/v20190422/model/DeleteTableConfigRequest.cpp
   src/v20190422/model/StatementResult.cpp
+  src/v20190422/model/DescribeTreeJobsRsp.cpp
   src/v20190422/model/DeleteResourcesResponse.cpp
   src/v20190422/model/ModifyJobResponse.cpp
   src/v20190422/model/SlotSharingGroupSpec.cpp
@@ -204,6 +209,7 @@ set(oceanus_src
   src/v20190422/model/CheckSavepointRequest.cpp
   src/v20190422/model/DeleteJobConfigsRequest.cpp
   src/v20190422/model/StopJobsRequest.cpp
+  src/v20190422/model/TraceModeConfiguration.cpp
   src/v20190422/model/RunJobsRequest.cpp
   src/v20190422/model/DeleteWorkSpaceResponse.cpp
   src/v20190422/model/DeleteJobsResponse.cpp

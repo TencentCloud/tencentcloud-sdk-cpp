@@ -357,6 +357,48 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取代金券主类型 has_price 为有价现金券 no_price 为无价代金券
+                     * @return VoucherMainType 代金券主类型 has_price 为有价现金券 no_price 为无价代金券
+                     * 
+                     */
+                    std::string GetVoucherMainType() const;
+
+                    /**
+                     * 设置代金券主类型 has_price 为有价现金券 no_price 为无价代金券
+                     * @param _voucherMainType 代金券主类型 has_price 为有价现金券 no_price 为无价代金券
+                     * 
+                     */
+                    void SetVoucherMainType(const std::string& _voucherMainType);
+
+                    /**
+                     * 判断参数 VoucherMainType 是否已赋值
+                     * @return VoucherMainType 是否已赋值
+                     * 
+                     */
+                    bool VoucherMainTypeHasBeenSet() const;
+
+                    /**
+                     * 获取代金券副类型 discount 为折扣券 deduct 为抵扣券
+                     * @return VoucherSubType 代金券副类型 discount 为折扣券 deduct 为抵扣券
+                     * 
+                     */
+                    std::string GetVoucherSubType() const;
+
+                    /**
+                     * 设置代金券副类型 discount 为折扣券 deduct 为抵扣券
+                     * @param _voucherSubType 代金券副类型 discount 为折扣券 deduct 为抵扣券
+                     * 
+                     */
+                    void SetVoucherSubType(const std::string& _voucherSubType);
+
+                    /**
+                     * 判断参数 VoucherSubType 是否已赋值
+                     * @return VoucherSubType 是否已赋值
+                     * 
+                     */
+                    bool VoucherSubTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,6 +490,18 @@ namespace TencentCloud
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 代金券主类型 has_price 为有价现金券 no_price 为无价代金券
+                     */
+                    std::string m_voucherMainType;
+                    bool m_voucherMainTypeHasBeenSet;
+
+                    /**
+                     * 代金券副类型 discount 为折扣券 deduct 为抵扣券
+                     */
+                    std::string m_voucherSubType;
+                    bool m_voucherSubTypeHasBeenSet;
 
                 };
             }

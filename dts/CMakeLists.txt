@@ -120,6 +120,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/ResumeSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyCompareTaskNameResponse.h
   include/tencentcloud/dts/v20211206/model/StartSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ModifyMigrateRuntimeAttributeResponse.h
   include/tencentcloud/dts/v20211206/model/PauseSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/CreateMigrateCheckJobResponse.h
   include/tencentcloud/dts/v20211206/model/ModifySyncJobConfigRequest.h
@@ -229,6 +230,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/RecoverMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/OnlineDDL.h
   include/tencentcloud/dts/v20211206/model/DatabaseTableObject.h
+  include/tencentcloud/dts/v20211206/model/ModifyMigrateRuntimeAttributeRequest.h
   include/tencentcloud/dts/v20211206/model/PauseMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/Table.h
   include/tencentcloud/dts/v20211206/model/CompareDetailInfo.h
@@ -339,6 +341,7 @@ set(dts_src
   src/v20211206/model/ResumeSyncJobResponse.cpp
   src/v20211206/model/ModifyCompareTaskNameResponse.cpp
   src/v20211206/model/StartSyncJobRequest.cpp
+  src/v20211206/model/ModifyMigrateRuntimeAttributeResponse.cpp
   src/v20211206/model/PauseSyncJobRequest.cpp
   src/v20211206/model/CreateMigrateCheckJobResponse.cpp
   src/v20211206/model/ModifySyncJobConfigRequest.cpp
@@ -448,6 +451,7 @@ set(dts_src
   src/v20211206/model/RecoverMigrateJobRequest.cpp
   src/v20211206/model/OnlineDDL.cpp
   src/v20211206/model/DatabaseTableObject.cpp
+  src/v20211206/model/ModifyMigrateRuntimeAttributeRequest.cpp
   src/v20211206/model/PauseMigrateJobResponse.cpp
   src/v20211206/model/Table.cpp
   src/v20211206/model/CompareDetailInfo.cpp

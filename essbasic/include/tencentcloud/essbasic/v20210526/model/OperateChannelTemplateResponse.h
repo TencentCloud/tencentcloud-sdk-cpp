@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方应用平台模板库模板唯一标识
+                     * 获取合同模板ID，为32位字符串。此处为第三方应用平台模板库模板ID，非子客模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateId 第三方应用平台模板库模板唯一标识
+                     * @return TemplateId 合同模板ID，为32位字符串。此处为第三方应用平台模板库模板ID，非子客模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,14 +78,18 @@ namespace TencentCloud
 
                     /**
                      * 获取描述模板可见性更改的结果，和参数中Available无关。
-全部成功-"all-success",
-部分成功-"part-success", 
-全部失败-"fail"，失败的会在FailMessageList中展示。
+<ul>
+<li>全部成功-"all-success"</li>
+<li>部分成功-"part-success"</li>
+<li>全部失败-"fail"，失败的会在FailMessageList中展示</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateResult 描述模板可见性更改的结果，和参数中Available无关。
-全部成功-"all-success",
-部分成功-"part-success", 
-全部失败-"fail"，失败的会在FailMessageList中展示。
+<ul>
+<li>全部成功-"all-success"</li>
+<li>部分成功-"part-success"</li>
+<li>全部失败-"fail"，失败的会在FailMessageList中展示</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,12 +104,16 @@ namespace TencentCloud
 
                     /**
                      * 获取模板可见性, 
-全部可见-"all", 
-部分可见-"part"
+<ul>
+<li>全部可见-"all"</li>
+<li>部分可见-"part"</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthTag 模板可见性, 
-全部可见-"all", 
-部分可见-"part"
+<ul>
+<li>全部可见-"all"</li>
+<li>部分可见-"part"</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -119,9 +127,13 @@ namespace TencentCloud
                     bool AuthTagHasBeenSet() const;
 
                     /**
-                     * 获取合作企业方第三方机构唯一标识数据
+                     * 获取第三方平台子客企业的唯一标识，长度不能超过64，只能由字母和数字组成。开发者可自定义此字段的值，并需要保存此 ID 以便进行后续操作。
+
+一个第三方平台子客企业主体与子客企业 ProxyOrganizationOpenId 是一一对应的，不可更改，不可重复使用。例如，可以使用企业名称的哈希值，或者社会统一信用代码的哈希值，或者随机哈希值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据
+                     * @return ProxyOrganizationOpenIds 第三方平台子客企业的唯一标识，长度不能超过64，只能由字母和数字组成。开发者可自定义此字段的值，并需要保存此 ID 以便进行后续操作。
+
+一个第三方平台子客企业主体与子客企业 ProxyOrganizationOpenId 是一一对应的，不可更改，不可重复使用。例如，可以使用企业名称的哈希值，或者社会统一信用代码的哈希值，或者随机哈希值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,7 +172,7 @@ namespace TencentCloud
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 第三方应用平台模板库模板唯一标识
+                     * 合同模板ID，为32位字符串。此处为第三方应用平台模板库模板ID，非子客模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateId;
@@ -168,9 +180,11 @@ namespace TencentCloud
 
                     /**
                      * 描述模板可见性更改的结果，和参数中Available无关。
-全部成功-"all-success",
-部分成功-"part-success", 
-全部失败-"fail"，失败的会在FailMessageList中展示。
+<ul>
+<li>全部成功-"all-success"</li>
+<li>部分成功-"part-success"</li>
+<li>全部失败-"fail"，失败的会在FailMessageList中展示</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operateResult;
@@ -178,15 +192,19 @@ namespace TencentCloud
 
                     /**
                      * 模板可见性, 
-全部可见-"all", 
-部分可见-"part"
+<ul>
+<li>全部可见-"all"</li>
+<li>部分可见-"part"</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authTag;
                     bool m_authTagHasBeenSet;
 
                     /**
-                     * 合作企业方第三方机构唯一标识数据
+                     * 第三方平台子客企业的唯一标识，长度不能超过64，只能由字母和数字组成。开发者可自定义此字段的值，并需要保存此 ID 以便进行后续操作。
+
+一个第三方平台子客企业主体与子客企业 ProxyOrganizationOpenId 是一一对应的，不可更改，不可重复使用。例如，可以使用企业名称的哈希值，或者社会统一信用代码的哈希值，或者随机哈希值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_proxyOrganizationOpenIds;

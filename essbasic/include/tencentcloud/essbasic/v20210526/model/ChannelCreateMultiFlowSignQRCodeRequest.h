@@ -23,8 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
 #include <tencentcloud/essbasic/v20210526/model/ApproverRestriction.h>
-#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/ApproverComponentLimitType.h>
+#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
 
 namespace TencentCloud
@@ -47,19 +47,43 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。
-此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @return Agent 应用相关信息。
-此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。
-此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @param _agent 应用相关信息。
-此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -72,15 +96,19 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取模版ID
-                     * @return TemplateId 模版ID
+                     * 获取合同模板ID，为32位字符串。
+建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。
+                     * @return TemplateId 合同模板ID，为32位字符串。
+建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模版ID
-                     * @param _templateId 模版ID
+                     * 设置合同模板ID，为32位字符串。
+建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。
+                     * @param _templateId 合同模板ID，为32位字符串。
+建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -93,15 +121,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取签署流程名称，最大长度200个字符。
-                     * @return FlowName 签署流程名称，最大长度200个字符。
+                     * 获取合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。 该名称还将用于合同签署完成后的下载文件名。
+                     * @return FlowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。 该名称还将用于合同签署完成后的下载文件名。
                      * 
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置签署流程名称，最大长度200个字符。
-                     * @param _flowName 签署流程名称，最大长度200个字符。
+                     * 设置合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。 该名称还将用于合同签署完成后的下载文件名。
+                     * @param _flowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。 该名称还将用于合同签署完成后的下载文件名。
                      * 
                      */
                     void SetFlowName(const std::string& _flowName);
@@ -114,23 +142,15 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取最大可发起签署流程份数
-<br/>默认5份
-<br/>备注：发起签署流程数量超过此上限后，二维码自动失效。
-                     * @return MaxFlowNum 最大可发起签署流程份数
-<br/>默认5份
-<br/>备注：发起签署流程数量超过此上限后，二维码自动失效。
+                     * 获取通过此二维码可发起的流程最大限额，如未明确指定，默认为5份。 一旦发起流程数超越该限制，该二维码将自动失效。	
+                     * @return MaxFlowNum 通过此二维码可发起的流程最大限额，如未明确指定，默认为5份。 一旦发起流程数超越该限制，该二维码将自动失效。	
                      * 
                      */
                     int64_t GetMaxFlowNum() const;
 
                     /**
-                     * 设置最大可发起签署流程份数
-<br/>默认5份
-<br/>备注：发起签署流程数量超过此上限后，二维码自动失效。
-                     * @param _maxFlowNum 最大可发起签署流程份数
-<br/>默认5份
-<br/>备注：发起签署流程数量超过此上限后，二维码自动失效。
+                     * 设置通过此二维码可发起的流程最大限额，如未明确指定，默认为5份。 一旦发起流程数超越该限制，该二维码将自动失效。	
+                     * @param _maxFlowNum 通过此二维码可发起的流程最大限额，如未明确指定，默认为5份。 一旦发起流程数超越该限制，该二维码将自动失效。	
                      * 
                      */
                     void SetMaxFlowNum(const int64_t& _maxFlowNum);
@@ -143,15 +163,15 @@ namespace TencentCloud
                     bool MaxFlowNumHasBeenSet() const;
 
                     /**
-                     * 获取签署流程有效天数 默认7天 最高设置不超过30天
-                     * @return FlowEffectiveDay 签署流程有效天数 默认7天 最高设置不超过30天
+                     * 获取合同流程的签署有效期限，若未设定签署截止日期，则默认为自合同流程创建起的7天内截止。 若在签署截止日期前未完成签署，合同状态将变更为已过期，从而导致合同无效。 最长设定期限不得超过30天。	
+                     * @return FlowEffectiveDay 合同流程的签署有效期限，若未设定签署截止日期，则默认为自合同流程创建起的7天内截止。 若在签署截止日期前未完成签署，合同状态将变更为已过期，从而导致合同无效。 最长设定期限不得超过30天。	
                      * 
                      */
                     int64_t GetFlowEffectiveDay() const;
 
                     /**
-                     * 设置签署流程有效天数 默认7天 最高设置不超过30天
-                     * @param _flowEffectiveDay 签署流程有效天数 默认7天 最高设置不超过30天
+                     * 设置合同流程的签署有效期限，若未设定签署截止日期，则默认为自合同流程创建起的7天内截止。 若在签署截止日期前未完成签署，合同状态将变更为已过期，从而导致合同无效。 最长设定期限不得超过30天。	
+                     * @param _flowEffectiveDay 合同流程的签署有效期限，若未设定签署截止日期，则默认为自合同流程创建起的7天内截止。 若在签署截止日期前未完成签署，合同状态将变更为已过期，从而导致合同无效。 最长设定期限不得超过30天。	
                      * 
                      */
                     void SetFlowEffectiveDay(const int64_t& _flowEffectiveDay);
@@ -164,15 +184,15 @@ namespace TencentCloud
                     bool FlowEffectiveDayHasBeenSet() const;
 
                     /**
-                     * 获取二维码有效天数 默认7天 最高设置不超过90天
-                     * @return QrEffectiveDay 二维码有效天数 默认7天 最高设置不超过90天
+                     * 获取二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。	
+                     * @return QrEffectiveDay 二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。	
                      * 
                      */
                     int64_t GetQrEffectiveDay() const;
 
                     /**
-                     * 设置二维码有效天数 默认7天 最高设置不超过90天
-                     * @param _qrEffectiveDay 二维码有效天数 默认7天 最高设置不超过90天
+                     * 设置二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。	
+                     * @param _qrEffectiveDay 二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。	
                      * 
                      */
                     void SetQrEffectiveDay(const int64_t& _qrEffectiveDay);
@@ -185,19 +205,15 @@ namespace TencentCloud
                     bool QrEffectiveDayHasBeenSet() const;
 
                     /**
-                     * 获取指定的签署二维码签署人
-<br/>指定后，只允许知道的人操作和签署
-                     * @return Restrictions 指定的签署二维码签署人
-<br/>指定后，只允许知道的人操作和签署
+                     * 获取指定签署人信息。 在指定签署人后，仅允许特定签署人通过扫描二维码进行签署。	
+                     * @return Restrictions 指定签署人信息。 在指定签署人后，仅允许特定签署人通过扫描二维码进行签署。	
                      * 
                      */
                     std::vector<ApproverRestriction> GetRestrictions() const;
 
                     /**
-                     * 设置指定的签署二维码签署人
-<br/>指定后，只允许知道的人操作和签署
-                     * @param _restrictions 指定的签署二维码签署人
-<br/>指定后，只允许知道的人操作和签署
+                     * 设置指定签署人信息。 在指定签署人后，仅允许特定签署人通过扫描二维码进行签署。	
+                     * @param _restrictions 指定签署人信息。 在指定签署人后，仅允许特定签署人通过扫描二维码进行签署。	
                      * 
                      */
                     void SetRestrictions(const std::vector<ApproverRestriction>& _restrictions);
@@ -208,6 +224,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RestrictionsHasBeenSet() const;
+
+                    /**
+                     * 获取指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
+                     * @return ApproverComponentLimitTypes 指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
+                     * 
+                     */
+                    std::vector<ApproverComponentLimitType> GetApproverComponentLimitTypes() const;
+
+                    /**
+                     * 设置指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
+                     * @param _approverComponentLimitTypes 指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
+                     * 
+                     */
+                    void SetApproverComponentLimitTypes(const std::vector<ApproverComponentLimitType>& _approverComponentLimitTypes);
+
+                    /**
+                     * 判断参数 ApproverComponentLimitTypes 是否已赋值
+                     * @return ApproverComponentLimitTypes 是否已赋值
+                     * 
+                     */
+                    bool ApproverComponentLimitTypesHasBeenSet() const;
 
                     /**
                      * 获取已废弃，回调配置统一使用企业应用管理-应用集成-第三方应用中的配置
@@ -280,74 +317,63 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
-                    /**
-                     * 获取指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
-                     * @return ApproverComponentLimitTypes 指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
-                     * 
-                     */
-                    std::vector<ApproverComponentLimitType> GetApproverComponentLimitTypes() const;
-
-                    /**
-                     * 设置指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
-                     * @param _approverComponentLimitTypes 指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
-                     * 
-                     */
-                    void SetApproverComponentLimitTypes(const std::vector<ApproverComponentLimitType>& _approverComponentLimitTypes);
-
-                    /**
-                     * 判断参数 ApproverComponentLimitTypes 是否已赋值
-                     * @return ApproverComponentLimitTypes 是否已赋值
-                     * 
-                     */
-                    bool ApproverComponentLimitTypesHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 应用相关信息。
-此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 模版ID
+                     * 合同模板ID，为32位字符串。
+建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 签署流程名称，最大长度200个字符。
+                     * 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。 该名称还将用于合同签署完成后的下载文件名。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 最大可发起签署流程份数
-<br/>默认5份
-<br/>备注：发起签署流程数量超过此上限后，二维码自动失效。
+                     * 通过此二维码可发起的流程最大限额，如未明确指定，默认为5份。 一旦发起流程数超越该限制，该二维码将自动失效。	
                      */
                     int64_t m_maxFlowNum;
                     bool m_maxFlowNumHasBeenSet;
 
                     /**
-                     * 签署流程有效天数 默认7天 最高设置不超过30天
+                     * 合同流程的签署有效期限，若未设定签署截止日期，则默认为自合同流程创建起的7天内截止。 若在签署截止日期前未完成签署，合同状态将变更为已过期，从而导致合同无效。 最长设定期限不得超过30天。	
                      */
                     int64_t m_flowEffectiveDay;
                     bool m_flowEffectiveDayHasBeenSet;
 
                     /**
-                     * 二维码有效天数 默认7天 最高设置不超过90天
+                     * 二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。	
                      */
                     int64_t m_qrEffectiveDay;
                     bool m_qrEffectiveDayHasBeenSet;
 
                     /**
-                     * 指定的签署二维码签署人
-<br/>指定后，只允许知道的人操作和签署
+                     * 指定签署人信息。 在指定签署人后，仅允许特定签署人通过扫描二维码进行签署。	
                      */
                     std::vector<ApproverRestriction> m_restrictions;
                     bool m_restrictionsHasBeenSet;
+
+                    /**
+                     * 指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
+                     */
+                    std::vector<ApproverComponentLimitType> m_approverComponentLimitTypes;
+                    bool m_approverComponentLimitTypesHasBeenSet;
 
                     /**
                      * 已废弃，回调配置统一使用企业应用管理-应用集成-第三方应用中的配置
@@ -368,12 +394,6 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
-
-                    /**
-                     * 指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。
-                     */
-                    std::vector<ApproverComponentLimitType> m_approverComponentLimitTypes;
-                    bool m_approverComponentLimitTypesHasBeenSet;
 
                 };
             }

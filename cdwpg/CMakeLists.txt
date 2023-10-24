@@ -20,21 +20,25 @@ set(cdwpg_public_header
 
 set(cdwpg_public_header_model
   include/tencentcloud/cdwpg/v20201230/model/ModifyInstanceResponse.h
+  include/tencentcloud/cdwpg/v20201230/model/DescribeInstanceInfoRequest.h
+  include/tencentcloud/cdwpg/v20201230/model/InstanceStateInfo.h
   include/tencentcloud/cdwpg/v20201230/model/DescribeInstanceStateRequest.h
   include/tencentcloud/cdwpg/v20201230/model/ChargeProperties.h
   include/tencentcloud/cdwpg/v20201230/model/DestroyInstanceByApiRequest.h
   include/tencentcloud/cdwpg/v20201230/model/InstanceNodeGroup.h
   include/tencentcloud/cdwpg/v20201230/model/CBSSpec.h
   include/tencentcloud/cdwpg/v20201230/model/ModifyInstanceRequest.h
-  include/tencentcloud/cdwpg/v20201230/model/InstanceStateInfo.h
+  include/tencentcloud/cdwpg/v20201230/model/DescribeSimpleInstancesResponse.h
+  include/tencentcloud/cdwpg/v20201230/model/ResourceInfo.h
   include/tencentcloud/cdwpg/v20201230/model/InstanceInfo.h
   include/tencentcloud/cdwpg/v20201230/model/DescribeInstancesResponse.h
   include/tencentcloud/cdwpg/v20201230/model/ResourceSpecNew.h
   include/tencentcloud/cdwpg/v20201230/model/DescribeInstancesRequest.h
   include/tencentcloud/cdwpg/v20201230/model/CreateInstanceByApiResponse.h
-  include/tencentcloud/cdwpg/v20201230/model/DescribeSimpleInstancesResponse.h
+  include/tencentcloud/cdwpg/v20201230/model/SimpleInstanceInfo.h
   include/tencentcloud/cdwpg/v20201230/model/DescribeInstanceResponse.h
   include/tencentcloud/cdwpg/v20201230/model/DestroyInstanceByApiResponse.h
+  include/tencentcloud/cdwpg/v20201230/model/CBSSpecInfo.h
   include/tencentcloud/cdwpg/v20201230/model/CreateInstanceByApiRequest.h
   include/tencentcloud/cdwpg/v20201230/model/SearchTags.h
   include/tencentcloud/cdwpg/v20201230/model/DescribeInstanceRequest.h
@@ -42,26 +46,31 @@ set(cdwpg_public_header_model
   include/tencentcloud/cdwpg/v20201230/model/DescribeInstanceStateResponse.h
   include/tencentcloud/cdwpg/v20201230/model/InstanceSimpleInfoNew.h
   include/tencentcloud/cdwpg/v20201230/model/DescribeSimpleInstancesRequest.h
+  include/tencentcloud/cdwpg/v20201230/model/DescribeInstanceInfoResponse.h
   )
 
 set(cdwpg_src
   src/v20201230/CdwpgClient.cpp
   src/v20201230/model/ModifyInstanceResponse.cpp
+  src/v20201230/model/DescribeInstanceInfoRequest.cpp
+  src/v20201230/model/InstanceStateInfo.cpp
   src/v20201230/model/DescribeInstanceStateRequest.cpp
   src/v20201230/model/ChargeProperties.cpp
   src/v20201230/model/DestroyInstanceByApiRequest.cpp
   src/v20201230/model/InstanceNodeGroup.cpp
   src/v20201230/model/CBSSpec.cpp
   src/v20201230/model/ModifyInstanceRequest.cpp
-  src/v20201230/model/InstanceStateInfo.cpp
+  src/v20201230/model/DescribeSimpleInstancesResponse.cpp
+  src/v20201230/model/ResourceInfo.cpp
   src/v20201230/model/InstanceInfo.cpp
   src/v20201230/model/DescribeInstancesResponse.cpp
   src/v20201230/model/ResourceSpecNew.cpp
   src/v20201230/model/DescribeInstancesRequest.cpp
   src/v20201230/model/CreateInstanceByApiResponse.cpp
-  src/v20201230/model/DescribeSimpleInstancesResponse.cpp
+  src/v20201230/model/SimpleInstanceInfo.cpp
   src/v20201230/model/DescribeInstanceResponse.cpp
   src/v20201230/model/DestroyInstanceByApiResponse.cpp
+  src/v20201230/model/CBSSpecInfo.cpp
   src/v20201230/model/CreateInstanceByApiRequest.cpp
   src/v20201230/model/SearchTags.cpp
   src/v20201230/model/DescribeInstanceRequest.cpp
@@ -69,6 +78,7 @@ set(cdwpg_src
   src/v20201230/model/DescribeInstanceStateResponse.cpp
   src/v20201230/model/InstanceSimpleInfoNew.cpp
   src/v20201230/model/DescribeSimpleInstancesRequest.cpp
+  src/v20201230/model/DescribeInstanceInfoResponse.cpp
   )
 
 set(cdwpg_include

@@ -24,7 +24,8 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 CreateSparkSessionBatchSQLResponse::CreateSparkSessionBatchSQLResponse() :
-    m_batchIdHasBeenSet(false)
+    m_batchIdHasBeenSet(false),
+    m_statementsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome CreateSparkSessionBatchSQLResponse::Deserialize(const string
         m_batchIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Statements") && !rsp["Statements"].IsNull())
+    {
+        if (!rsp["Statements"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Statements` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Statements"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StatementInformation item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_statements.push_back(item);
+        }
+        m_statementsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string CreateSparkSessionBatchSQLResponse::ToJsonString() const
         string key = "BatchId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statementsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Statements";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_statements.begin(); itr != m_statements.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ string CreateSparkSessionBatchSQLResponse::GetBatchId() const
 bool CreateSparkSessionBatchSQLResponse::BatchIdHasBeenSet() const
 {
     return m_batchIdHasBeenSet;
+}
+
+vector<StatementInformation> CreateSparkSessionBatchSQLResponse::GetStatements() const
+{
+    return m_statements;
+}
+
+bool CreateSparkSessionBatchSQLResponse::StatementsHasBeenSet() const
+{
+    return m_statementsHasBeenSet;
 }
 
 

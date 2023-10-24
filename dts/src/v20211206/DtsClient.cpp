@@ -1287,6 +1287,49 @@ DtsClient::ModifyMigrateRateLimitOutcomeCallable DtsClient::ModifyMigrateRateLim
     return task->get_future();
 }
 
+DtsClient::ModifyMigrateRuntimeAttributeOutcome DtsClient::ModifyMigrateRuntimeAttribute(const ModifyMigrateRuntimeAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMigrateRuntimeAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMigrateRuntimeAttributeResponse rsp = ModifyMigrateRuntimeAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMigrateRuntimeAttributeOutcome(rsp);
+        else
+            return ModifyMigrateRuntimeAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMigrateRuntimeAttributeOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifyMigrateRuntimeAttributeAsync(const ModifyMigrateRuntimeAttributeRequest& request, const ModifyMigrateRuntimeAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMigrateRuntimeAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ModifyMigrateRuntimeAttributeOutcomeCallable DtsClient::ModifyMigrateRuntimeAttributeCallable(const ModifyMigrateRuntimeAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMigrateRuntimeAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMigrateRuntimeAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::ModifyMigrationJobOutcome DtsClient::ModifyMigrationJob(const ModifyMigrationJobRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMigrationJob");

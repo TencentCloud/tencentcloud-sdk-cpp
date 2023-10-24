@@ -126,6 +126,49 @@ CdwpgClient::DescribeInstanceOutcomeCallable CdwpgClient::DescribeInstanceCallab
     return task->get_future();
 }
 
+CdwpgClient::DescribeInstanceInfoOutcome CdwpgClient::DescribeInstanceInfo(const DescribeInstanceInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceInfoResponse rsp = DescribeInstanceInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceInfoOutcome(rsp);
+        else
+            return DescribeInstanceInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceInfoOutcome(outcome.GetError());
+    }
+}
+
+void CdwpgClient::DescribeInstanceInfoAsync(const DescribeInstanceInfoRequest& request, const DescribeInstanceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwpgClient::DescribeInstanceInfoOutcomeCallable CdwpgClient::DescribeInstanceInfoCallable(const DescribeInstanceInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwpgClient::DescribeInstanceStateOutcome CdwpgClient::DescribeInstanceState(const DescribeInstanceStateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceState");

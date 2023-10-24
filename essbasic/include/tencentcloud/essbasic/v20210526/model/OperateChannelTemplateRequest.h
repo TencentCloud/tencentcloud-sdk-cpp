@@ -45,19 +45,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 
-此接口Agent.AppId必填。
-                     * @return Agent 应用相关信息。 
-此接口Agent.AppId必填。
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 
-此接口Agent.AppId必填。
-                     * @param _agent 应用相关信息。 
-此接口Agent.AppId必填。
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -71,26 +87,34 @@ namespace TencentCloud
 
                     /**
                      * 获取操作类型，
-查询:"SELECT"，
-删除:"DELETE"，
-更新:"UPDATE"
+<ul>
+<li>查询:"SELECT"</li>
+<li>删除:"DELETE"</li>
+<li>更新:"UPDATE"</li>
+</ul>
                      * @return OperateType 操作类型，
-查询:"SELECT"，
-删除:"DELETE"，
-更新:"UPDATE"
+<ul>
+<li>查询:"SELECT"</li>
+<li>删除:"DELETE"</li>
+<li>更新:"UPDATE"</li>
+</ul>
                      * 
                      */
                     std::string GetOperateType() const;
 
                     /**
                      * 设置操作类型，
-查询:"SELECT"，
-删除:"DELETE"，
-更新:"UPDATE"
+<ul>
+<li>查询:"SELECT"</li>
+<li>删除:"DELETE"</li>
+<li>更新:"UPDATE"</li>
+</ul>
                      * @param _operateType 操作类型，
-查询:"SELECT"，
-删除:"DELETE"，
-更新:"UPDATE"
+<ul>
+<li>查询:"SELECT"</li>
+<li>删除:"DELETE"</li>
+<li>更新:"UPDATE"</li>
+</ul>
                      * 
                      */
                     void SetOperateType(const std::string& _operateType);
@@ -103,15 +127,15 @@ namespace TencentCloud
                     bool OperateTypeHasBeenSet() const;
 
                     /**
-                     * 获取第三方应用平台模板库模板唯一标识
-                     * @return TemplateId 第三方应用平台模板库模板唯一标识
+                     * 获取合同模板ID，为32位字符串。此处为第三方应用平台模板库模板ID，非子客模板ID。
+                     * @return TemplateId 合同模板ID，为32位字符串。此处为第三方应用平台模板库模板ID，非子客模板ID。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置第三方应用平台模板库模板唯一标识
-                     * @param _templateId 第三方应用平台模板库模板唯一标识
+                     * 设置合同模板ID，为32位字符串。此处为第三方应用平台模板库模板ID，非子客模板ID。
+                     * @param _templateId 合同模板ID，为32位字符串。此处为第三方应用平台模板库模板ID，非子客模板ID。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -124,19 +148,23 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取合作企业方第三方机构唯一标识数据.
-支持多个， 用","进行分隔
-                     * @return ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据.
-支持多个， 用","进行分隔
+                     * 获取第三方平台子客企业的唯一标识，长度不能超过64，只能由字母和数字组成。开发者可自定义此字段的值，并需要保存此 ID 以便进行后续操作。
+
+一个第三方平台子客企业主体与子客企业 ProxyOrganizationOpenId 是一一对应的，不可更改，不可重复使用。例如，可以使用企业名称的哈希值，或者社会统一信用代码的哈希值，或者随机哈希值。
+                     * @return ProxyOrganizationOpenIds 第三方平台子客企业的唯一标识，长度不能超过64，只能由字母和数字组成。开发者可自定义此字段的值，并需要保存此 ID 以便进行后续操作。
+
+一个第三方平台子客企业主体与子客企业 ProxyOrganizationOpenId 是一一对应的，不可更改，不可重复使用。例如，可以使用企业名称的哈希值，或者社会统一信用代码的哈希值，或者随机哈希值。
                      * 
                      */
                     std::string GetProxyOrganizationOpenIds() const;
 
                     /**
-                     * 设置合作企业方第三方机构唯一标识数据.
-支持多个， 用","进行分隔
-                     * @param _proxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据.
-支持多个， 用","进行分隔
+                     * 设置第三方平台子客企业的唯一标识，长度不能超过64，只能由字母和数字组成。开发者可自定义此字段的值，并需要保存此 ID 以便进行后续操作。
+
+一个第三方平台子客企业主体与子客企业 ProxyOrganizationOpenId 是一一对应的，不可更改，不可重复使用。例如，可以使用企业名称的哈希值，或者社会统一信用代码的哈希值，或者随机哈希值。
+                     * @param _proxyOrganizationOpenIds 第三方平台子客企业的唯一标识，长度不能超过64，只能由字母和数字组成。开发者可自定义此字段的值，并需要保存此 ID 以便进行后续操作。
+
+一个第三方平台子客企业主体与子客企业 ProxyOrganizationOpenId 是一一对应的，不可更改，不可重复使用。例如，可以使用企业名称的哈希值，或者社会统一信用代码的哈希值，或者随机哈希值。
                      * 
                      */
                     void SetProxyOrganizationOpenIds(const std::string& _proxyOrganizationOpenIds);
@@ -150,22 +178,30 @@ namespace TencentCloud
 
                     /**
                      * 获取模板可见性, 
-全部可见-"all",
- 部分可见-"part"
+<ul>
+<li>全部可见-"all"</li>
+<li>部分可见-"part"</li>
+</ul>
                      * @return AuthTag 模板可见性, 
-全部可见-"all",
- 部分可见-"part"
+<ul>
+<li>全部可见-"all"</li>
+<li>部分可见-"part"</li>
+</ul>
                      * 
                      */
                     std::string GetAuthTag() const;
 
                     /**
                      * 设置模板可见性, 
-全部可见-"all",
- 部分可见-"part"
+<ul>
+<li>全部可见-"all"</li>
+<li>部分可见-"part"</li>
+</ul>
                      * @param _authTag 模板可见性, 
-全部可见-"all",
- 部分可见-"part"
+<ul>
+<li>全部可见-"all"</li>
+<li>部分可见-"part"</li>
+</ul>
                      * 
                      */
                     void SetAuthTag(const std::string& _authTag);
@@ -179,30 +215,46 @@ namespace TencentCloud
 
                     /**
                      * 获取当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
-若此字段值为0，则不会修改模板Available，
-1为启用模板，
-2为停用模板。
-启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
+<ul>
+<li>若此字段值为0，则不会修改模板Available</li>
+<li>1为启用模板</li>
+<li>2为停用模板</li>
+</ul>
+启用后模板可以正常领取。
+停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。
+如果Available更新失败，会直接返回错误。
                      * @return Available 当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
-若此字段值为0，则不会修改模板Available，
-1为启用模板，
-2为停用模板。
-启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
+<ul>
+<li>若此字段值为0，则不会修改模板Available</li>
+<li>1为启用模板</li>
+<li>2为停用模板</li>
+</ul>
+启用后模板可以正常领取。
+停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。
+如果Available更新失败，会直接返回错误。
                      * 
                      */
                     int64_t GetAvailable() const;
 
                     /**
                      * 设置当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
-若此字段值为0，则不会修改模板Available，
-1为启用模板，
-2为停用模板。
-启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
+<ul>
+<li>若此字段值为0，则不会修改模板Available</li>
+<li>1为启用模板</li>
+<li>2为停用模板</li>
+</ul>
+启用后模板可以正常领取。
+停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。
+如果Available更新失败，会直接返回错误。
                      * @param _available 当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
-若此字段值为0，则不会修改模板Available，
-1为启用模板，
-2为停用模板。
-启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
+<ul>
+<li>若此字段值为0，则不会修改模板Available</li>
+<li>1为启用模板</li>
+<li>2为停用模板</li>
+</ul>
+启用后模板可以正常领取。
+停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。
+如果Available更新失败，会直接返回错误。
                      * 
                      */
                     void SetAvailable(const int64_t& _available);
@@ -238,48 +290,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用相关信息。 
-此接口Agent.AppId必填。
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
                      * 操作类型，
-查询:"SELECT"，
-删除:"DELETE"，
-更新:"UPDATE"
+<ul>
+<li>查询:"SELECT"</li>
+<li>删除:"DELETE"</li>
+<li>更新:"UPDATE"</li>
+</ul>
                      */
                     std::string m_operateType;
                     bool m_operateTypeHasBeenSet;
 
                     /**
-                     * 第三方应用平台模板库模板唯一标识
+                     * 合同模板ID，为32位字符串。此处为第三方应用平台模板库模板ID，非子客模板ID。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 合作企业方第三方机构唯一标识数据.
-支持多个， 用","进行分隔
+                     * 第三方平台子客企业的唯一标识，长度不能超过64，只能由字母和数字组成。开发者可自定义此字段的值，并需要保存此 ID 以便进行后续操作。
+
+一个第三方平台子客企业主体与子客企业 ProxyOrganizationOpenId 是一一对应的，不可更改，不可重复使用。例如，可以使用企业名称的哈希值，或者社会统一信用代码的哈希值，或者随机哈希值。
                      */
                     std::string m_proxyOrganizationOpenIds;
                     bool m_proxyOrganizationOpenIdsHasBeenSet;
 
                     /**
                      * 模板可见性, 
-全部可见-"all",
- 部分可见-"part"
+<ul>
+<li>全部可见-"all"</li>
+<li>部分可见-"part"</li>
+</ul>
                      */
                     std::string m_authTag;
                     bool m_authTagHasBeenSet;
 
                     /**
                      * 当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
-若此字段值为0，则不会修改模板Available，
-1为启用模板，
-2为停用模板。
-启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
+<ul>
+<li>若此字段值为0，则不会修改模板Available</li>
+<li>1为启用模板</li>
+<li>2为停用模板</li>
+</ul>
+启用后模板可以正常领取。
+停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。
+如果Available更新失败，会直接返回错误。
                      */
                     int64_t m_available;
                     bool m_availableHasBeenSet;

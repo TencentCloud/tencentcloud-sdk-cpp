@@ -44,7 +44,11 @@ JobConfig::JobConfig() :
     m_logLevelHasBeenSet(false),
     m_clazzLevelsHasBeenSet(false),
     m_expertModeOnHasBeenSet(false),
-    m_expertModeConfigurationHasBeenSet(false)
+    m_expertModeConfigurationHasBeenSet(false),
+    m_traceModeOnHasBeenSet(false),
+    m_traceModeConfigurationHasBeenSet(false),
+    m_checkpointRetainedNumHasBeenSet(false),
+    m_jobGraphHasBeenSet(false)
 {
 }
 
@@ -330,6 +334,60 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_expertModeConfigurationHasBeenSet = true;
     }
 
+    if (value.HasMember("TraceModeOn") && !value["TraceModeOn"].IsNull())
+    {
+        if (!value["TraceModeOn"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.TraceModeOn` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceModeOn = value["TraceModeOn"].GetBool();
+        m_traceModeOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("TraceModeConfiguration") && !value["TraceModeConfiguration"].IsNull())
+    {
+        if (!value["TraceModeConfiguration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.TraceModeConfiguration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_traceModeConfiguration.Deserialize(value["TraceModeConfiguration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_traceModeConfigurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckpointRetainedNum") && !value["CheckpointRetainedNum"].IsNull())
+    {
+        if (!value["CheckpointRetainedNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.CheckpointRetainedNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkpointRetainedNum = value["CheckpointRetainedNum"].GetInt64();
+        m_checkpointRetainedNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobGraph") && !value["JobGraph"].IsNull())
+    {
+        if (!value["JobGraph"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.JobGraph` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jobGraph.Deserialize(value["JobGraph"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jobGraphHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -549,6 +607,40 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_expertModeConfiguration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_traceModeOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceModeOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_traceModeOn, allocator);
+    }
+
+    if (m_traceModeConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceModeConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_traceModeConfiguration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_checkpointRetainedNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointRetainedNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkpointRetainedNum, allocator);
+    }
+
+    if (m_jobGraphHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobGraph";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobGraph.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -936,5 +1028,69 @@ void JobConfig::SetExpertModeConfiguration(const ExpertModeConfiguration& _exper
 bool JobConfig::ExpertModeConfigurationHasBeenSet() const
 {
     return m_expertModeConfigurationHasBeenSet;
+}
+
+bool JobConfig::GetTraceModeOn() const
+{
+    return m_traceModeOn;
+}
+
+void JobConfig::SetTraceModeOn(const bool& _traceModeOn)
+{
+    m_traceModeOn = _traceModeOn;
+    m_traceModeOnHasBeenSet = true;
+}
+
+bool JobConfig::TraceModeOnHasBeenSet() const
+{
+    return m_traceModeOnHasBeenSet;
+}
+
+TraceModeConfiguration JobConfig::GetTraceModeConfiguration() const
+{
+    return m_traceModeConfiguration;
+}
+
+void JobConfig::SetTraceModeConfiguration(const TraceModeConfiguration& _traceModeConfiguration)
+{
+    m_traceModeConfiguration = _traceModeConfiguration;
+    m_traceModeConfigurationHasBeenSet = true;
+}
+
+bool JobConfig::TraceModeConfigurationHasBeenSet() const
+{
+    return m_traceModeConfigurationHasBeenSet;
+}
+
+int64_t JobConfig::GetCheckpointRetainedNum() const
+{
+    return m_checkpointRetainedNum;
+}
+
+void JobConfig::SetCheckpointRetainedNum(const int64_t& _checkpointRetainedNum)
+{
+    m_checkpointRetainedNum = _checkpointRetainedNum;
+    m_checkpointRetainedNumHasBeenSet = true;
+}
+
+bool JobConfig::CheckpointRetainedNumHasBeenSet() const
+{
+    return m_checkpointRetainedNumHasBeenSet;
+}
+
+JobGraph JobConfig::GetJobGraph() const
+{
+    return m_jobGraph;
+}
+
+void JobConfig::SetJobGraph(const JobGraph& _jobGraph)
+{
+    m_jobGraph = _jobGraph;
+    m_jobGraphHasBeenSet = true;
+}
+
+bool JobConfig::JobGraphHasBeenSet() const
+{
+    return m_jobGraphHasBeenSet;
 }
 

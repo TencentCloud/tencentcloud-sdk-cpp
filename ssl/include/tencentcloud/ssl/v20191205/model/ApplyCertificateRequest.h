@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool CsrEncryptAlgoHasBeenSet() const;
 
                     /**
-                     * 获取密钥对参数，RSA仅支持2048。ECC仅支持prime256v1
-                     * @return CsrKeyParameter 密钥对参数，RSA仅支持2048。ECC仅支持prime256v1
+                     * 获取密钥对参数，RSA仅支持2048。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填
+                     * @return CsrKeyParameter 密钥对参数，RSA仅支持2048。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填
                      * 
                      */
                     std::string GetCsrKeyParameter() const;
 
                     /**
-                     * 设置密钥对参数，RSA仅支持2048。ECC仅支持prime256v1
-                     * @param _csrKeyParameter 密钥对参数，RSA仅支持2048。ECC仅支持prime256v1
+                     * 设置密钥对参数，RSA仅支持2048。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填
+                     * @param _csrKeyParameter 密钥对参数，RSA仅支持2048。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填
                      * 
                      */
                     void SetCsrKeyParameter(const std::string& _csrKeyParameter);
@@ -387,7 +387,7 @@ namespace TencentCloud
                     bool m_csrEncryptAlgoHasBeenSet;
 
                     /**
-                     * 密钥对参数，RSA仅支持2048。ECC仅支持prime256v1
+                     * 密钥对参数，RSA仅支持2048。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填
                      */
                     std::string m_csrKeyParameter;
                     bool m_csrKeyParameterHasBeenSet;

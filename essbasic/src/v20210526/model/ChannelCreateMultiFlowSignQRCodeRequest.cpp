@@ -30,10 +30,10 @@ ChannelCreateMultiFlowSignQRCodeRequest::ChannelCreateMultiFlowSignQRCodeRequest
     m_flowEffectiveDayHasBeenSet(false),
     m_qrEffectiveDayHasBeenSet(false),
     m_restrictionsHasBeenSet(false),
+    m_approverComponentLimitTypesHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_approverRestrictionsHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_approverComponentLimitTypesHasBeenSet(false)
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -108,6 +108,21 @@ string ChannelCreateMultiFlowSignQRCodeRequest::ToJsonString() const
         }
     }
 
+    if (m_approverComponentLimitTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverComponentLimitTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_approverComponentLimitTypes.begin(); itr != m_approverComponentLimitTypes.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_callbackUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -132,21 +147,6 @@ string ChannelCreateMultiFlowSignQRCodeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_approverComponentLimitTypesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ApproverComponentLimitTypes";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_approverComponentLimitTypes.begin(); itr != m_approverComponentLimitTypes.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
 
@@ -269,6 +269,22 @@ bool ChannelCreateMultiFlowSignQRCodeRequest::RestrictionsHasBeenSet() const
     return m_restrictionsHasBeenSet;
 }
 
+vector<ApproverComponentLimitType> ChannelCreateMultiFlowSignQRCodeRequest::GetApproverComponentLimitTypes() const
+{
+    return m_approverComponentLimitTypes;
+}
+
+void ChannelCreateMultiFlowSignQRCodeRequest::SetApproverComponentLimitTypes(const vector<ApproverComponentLimitType>& _approverComponentLimitTypes)
+{
+    m_approverComponentLimitTypes = _approverComponentLimitTypes;
+    m_approverComponentLimitTypesHasBeenSet = true;
+}
+
+bool ChannelCreateMultiFlowSignQRCodeRequest::ApproverComponentLimitTypesHasBeenSet() const
+{
+    return m_approverComponentLimitTypesHasBeenSet;
+}
+
 string ChannelCreateMultiFlowSignQRCodeRequest::GetCallbackUrl() const
 {
     return m_callbackUrl;
@@ -315,22 +331,6 @@ void ChannelCreateMultiFlowSignQRCodeRequest::SetOperator(const UserInfo& _opera
 bool ChannelCreateMultiFlowSignQRCodeRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
-}
-
-vector<ApproverComponentLimitType> ChannelCreateMultiFlowSignQRCodeRequest::GetApproverComponentLimitTypes() const
-{
-    return m_approverComponentLimitTypes;
-}
-
-void ChannelCreateMultiFlowSignQRCodeRequest::SetApproverComponentLimitTypes(const vector<ApproverComponentLimitType>& _approverComponentLimitTypes)
-{
-    m_approverComponentLimitTypes = _approverComponentLimitTypes;
-    m_approverComponentLimitTypesHasBeenSet = true;
-}
-
-bool ChannelCreateMultiFlowSignQRCodeRequest::ApproverComponentLimitTypesHasBeenSet() const
-{
-    return m_approverComponentLimitTypesHasBeenSet;
 }
 
 

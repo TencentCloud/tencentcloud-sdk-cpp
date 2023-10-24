@@ -328,6 +328,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementsRequest.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/CheckDataEngineImageCanBeUpgradeRequest.h
+  include/tencentcloud/dlc/v20210125/model/StatementInformation.h
   include/tencentcloud/dlc/v20210125/model/SQLTask.h
   include/tencentcloud/dlc/v20210125/model/UserMessage.h
   include/tencentcloud/dlc/v20210125/model/WorkGroups.h
@@ -663,6 +664,7 @@ set(dlc_src
   src/v20210125/model/DescribeNotebookSessionStatementsRequest.cpp
   src/v20210125/model/AlterDMSDatabaseRequest.cpp
   src/v20210125/model/CheckDataEngineImageCanBeUpgradeRequest.cpp
+  src/v20210125/model/StatementInformation.cpp
   src/v20210125/model/SQLTask.cpp
   src/v20210125/model/UserMessage.cpp
   src/v20210125/model/WorkGroups.cpp

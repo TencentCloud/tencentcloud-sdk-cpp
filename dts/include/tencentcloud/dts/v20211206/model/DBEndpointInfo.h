@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool DatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点类型，为空或者"simple":表示普通节点，"cluster": 集群节点
+                     * 获取节点类型，为空或者"simple"表示普通节点、"cluster"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeType 节点类型，为空或者"simple":表示普通节点，"cluster": 集群节点
+                     * @return NodeType 节点类型，为空或者"simple"表示普通节点、"cluster"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点类型，为空或者"simple":表示普通节点，"cluster": 集群节点
+                     * 设置节点类型，为空或者"simple"表示普通节点、"cluster"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodeType 节点类型，为空或者"simple":表示普通节点，"cluster": 集群节点
+                     * @param _nodeType 节点类型，为空或者"simple"表示普通节点、"cluster"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -276,7 +276,7 @@ namespace TencentCloud
                     bool m_databaseTypeHasBeenSet;
 
                     /**
-                     * 节点类型，为空或者"simple":表示普通节点，"cluster": 集群节点
+                     * 节点类型，为空或者"simple"表示普通节点、"cluster"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeType;

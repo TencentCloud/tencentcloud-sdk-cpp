@@ -25,6 +25,8 @@
 #include <tencentcloud/oceanus/v20190422/model/Property.h>
 #include <tencentcloud/oceanus/v20190422/model/ClazzLevel.h>
 #include <tencentcloud/oceanus/v20190422/model/ExpertModeConfiguration.h>
+#include <tencentcloud/oceanus/v20190422/model/TraceModeConfiguration.h>
+#include <tencentcloud/oceanus/v20190422/model/JobGraph.h>
 
 
 namespace TencentCloud
@@ -508,6 +510,90 @@ namespace TencentCloud
                      */
                     bool ExpertModeConfigurationHasBeenSet() const;
 
+                    /**
+                     * 获取trace链路
+                     * @return TraceModeOn trace链路
+                     * 
+                     */
+                    bool GetTraceModeOn() const;
+
+                    /**
+                     * 设置trace链路
+                     * @param _traceModeOn trace链路
+                     * 
+                     */
+                    void SetTraceModeOn(const bool& _traceModeOn);
+
+                    /**
+                     * 判断参数 TraceModeOn 是否已赋值
+                     * @return TraceModeOn 是否已赋值
+                     * 
+                     */
+                    bool TraceModeOnHasBeenSet() const;
+
+                    /**
+                     * 获取trace链路配置
+                     * @return TraceModeConfiguration trace链路配置
+                     * 
+                     */
+                    TraceModeConfiguration GetTraceModeConfiguration() const;
+
+                    /**
+                     * 设置trace链路配置
+                     * @param _traceModeConfiguration trace链路配置
+                     * 
+                     */
+                    void SetTraceModeConfiguration(const TraceModeConfiguration& _traceModeConfiguration);
+
+                    /**
+                     * 判断参数 TraceModeConfiguration 是否已赋值
+                     * @return TraceModeConfiguration 是否已赋值
+                     * 
+                     */
+                    bool TraceModeConfigurationHasBeenSet() const;
+
+                    /**
+                     * 获取checkpoint保留个数
+                     * @return CheckpointRetainedNum checkpoint保留个数
+                     * 
+                     */
+                    int64_t GetCheckpointRetainedNum() const;
+
+                    /**
+                     * 设置checkpoint保留个数
+                     * @param _checkpointRetainedNum checkpoint保留个数
+                     * 
+                     */
+                    void SetCheckpointRetainedNum(const int64_t& _checkpointRetainedNum);
+
+                    /**
+                     * 判断参数 CheckpointRetainedNum 是否已赋值
+                     * @return CheckpointRetainedNum 是否已赋值
+                     * 
+                     */
+                    bool CheckpointRetainedNumHasBeenSet() const;
+
+                    /**
+                     * 获取算子拓扑图
+                     * @return JobGraph 算子拓扑图
+                     * 
+                     */
+                    JobGraph GetJobGraph() const;
+
+                    /**
+                     * 设置算子拓扑图
+                     * @param _jobGraph 算子拓扑图
+                     * 
+                     */
+                    void SetJobGraph(const JobGraph& _jobGraph);
+
+                    /**
+                     * 判断参数 JobGraph 是否已赋值
+                     * @return JobGraph 是否已赋值
+                     * 
+                     */
+                    bool JobGraphHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,6 +727,30 @@ namespace TencentCloud
                      */
                     ExpertModeConfiguration m_expertModeConfiguration;
                     bool m_expertModeConfigurationHasBeenSet;
+
+                    /**
+                     * trace链路
+                     */
+                    bool m_traceModeOn;
+                    bool m_traceModeOnHasBeenSet;
+
+                    /**
+                     * trace链路配置
+                     */
+                    TraceModeConfiguration m_traceModeConfiguration;
+                    bool m_traceModeConfigurationHasBeenSet;
+
+                    /**
+                     * checkpoint保留个数
+                     */
+                    int64_t m_checkpointRetainedNum;
+                    bool m_checkpointRetainedNumHasBeenSet;
+
+                    /**
+                     * 算子拓扑图
+                     */
+                    JobGraph m_jobGraph;
+                    bool m_jobGraphHasBeenSet;
 
                 };
             }

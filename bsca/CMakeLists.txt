@@ -21,6 +21,7 @@ set(bsca_public_header
 set(bsca_public_header_model
   include/tencentcloud/bsca/v20210811/model/MatchKBPURLListResponse.h
   include/tencentcloud/bsca/v20210811/model/DescribeKBComponentVulnerabilityRequest.h
+  include/tencentcloud/bsca/v20210811/model/AffectedComponent.h
   include/tencentcloud/bsca/v20210811/model/DescribeKBComponentVersionListRequest.h
   include/tencentcloud/bsca/v20210811/model/ComponentVulnerabilityUnion.h
   include/tencentcloud/bsca/v20210811/model/LicenseUnion.h
@@ -54,6 +55,7 @@ set(bsca_src
   src/v20210811/BscaClient.cpp
   src/v20210811/model/MatchKBPURLListResponse.cpp
   src/v20210811/model/DescribeKBComponentVulnerabilityRequest.cpp
+  src/v20210811/model/AffectedComponent.cpp
   src/v20210811/model/DescribeKBComponentVersionListRequest.cpp
   src/v20210811/model/ComponentVulnerabilityUnion.cpp
   src/v20210811/model/LicenseUnion.cpp
