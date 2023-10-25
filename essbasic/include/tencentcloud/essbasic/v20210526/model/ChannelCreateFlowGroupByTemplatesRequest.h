@@ -45,15 +45,51 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 均必填。
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 均必填。
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+
+子客企业和子客企业中的员工比较走完创建和实名过程
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+
+子客企业和子客企业中的员工比较走完创建和实名过程
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 均必填。
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 均必填。
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+
+子客企业和子客企业中的员工比较走完创建和实名过程
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+
+子客企业和子客企业中的员工比较走完创建和实名过程
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -66,15 +102,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取每个子合同的发起所需的信息，数量限制2-50（合同组暂不支持抄送功能）
-                     * @return FlowInfos 每个子合同的发起所需的信息，数量限制2-50（合同组暂不支持抄送功能）
+                     * 获取合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
+                     * @return FlowInfos 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
                      * 
                      */
                     std::vector<FlowInfo> GetFlowInfos() const;
 
                     /**
-                     * 设置每个子合同的发起所需的信息，数量限制2-50（合同组暂不支持抄送功能）
-                     * @param _flowInfos 每个子合同的发起所需的信息，数量限制2-50（合同组暂不支持抄送功能）
+                     * 设置合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
+                     * @param _flowInfos 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
                      * 
                      */
                     void SetFlowInfos(const std::vector<FlowInfo>& _flowInfos);
@@ -87,15 +123,15 @@ namespace TencentCloud
                     bool FlowInfosHasBeenSet() const;
 
                     /**
-                     * 获取合同组名称，长度不超过200个字符
-                     * @return FlowGroupName 合同组名称，长度不超过200个字符
+                     * 获取合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * @return FlowGroupName 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     std::string GetFlowGroupName() const;
 
                     /**
-                     * 设置合同组名称，长度不超过200个字符
-                     * @param _flowGroupName 合同组名称，长度不超过200个字符
+                     * 设置合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * @param _flowGroupName 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     void SetFlowGroupName(const std::string& _flowGroupName);
@@ -110,19 +146,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 均必填。
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+
+子客企业和子客企业中的员工比较走完创建和实名过程
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 每个子合同的发起所需的信息，数量限制2-50（合同组暂不支持抄送功能）
+                     * 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
                      */
                     std::vector<FlowInfo> m_flowInfos;
                     bool m_flowInfosHasBeenSet;
 
                     /**
-                     * 合同组名称，长度不超过200个字符
+                     * 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      */
                     std::string m_flowGroupName;
                     bool m_flowGroupNameHasBeenSet;

@@ -35,7 +35,8 @@ DescribeDetailedSingleProbeDataRequest::DescribeDetailedSingleProbeDataRequest()
     m_operatorsHasBeenSet(false),
     m_districtsHasBeenSet(false),
     m_errorTypesHasBeenSet(false),
-    m_cityHasBeenSet(false)
+    m_cityHasBeenSet(false),
+    m_scrollIDHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,14 @@ string DescribeDetailedSingleProbeDataRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_scrollIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScrollID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scrollID.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -394,6 +403,22 @@ void DescribeDetailedSingleProbeDataRequest::SetCity(const vector<string>& _city
 bool DescribeDetailedSingleProbeDataRequest::CityHasBeenSet() const
 {
     return m_cityHasBeenSet;
+}
+
+string DescribeDetailedSingleProbeDataRequest::GetScrollID() const
+{
+    return m_scrollID;
+}
+
+void DescribeDetailedSingleProbeDataRequest::SetScrollID(const string& _scrollID)
+{
+    m_scrollID = _scrollID;
+    m_scrollIDHasBeenSet = true;
+}
+
+bool DescribeDetailedSingleProbeDataRequest::ScrollIDHasBeenSet() const
+{
+    return m_scrollIDHasBeenSet;
 }
 
 

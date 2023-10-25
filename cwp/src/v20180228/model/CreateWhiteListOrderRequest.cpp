@@ -27,6 +27,7 @@ CreateWhiteListOrderRequest::CreateWhiteListOrderRequest() :
     m_licenseNumHasBeenSet(false),
     m_deadlineHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
     m_regionIdHasBeenSet(false),
     m_extraParamHasBeenSet(false)
 {
@@ -69,6 +70,14 @@ string CreateWhiteListOrderRequest::ToJsonString() const
         string key = "RuleName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sourceType, allocator);
     }
 
     if (m_regionIdHasBeenSet)
@@ -157,6 +166,22 @@ void CreateWhiteListOrderRequest::SetRuleName(const string& _ruleName)
 bool CreateWhiteListOrderRequest::RuleNameHasBeenSet() const
 {
     return m_ruleNameHasBeenSet;
+}
+
+uint64_t CreateWhiteListOrderRequest::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void CreateWhiteListOrderRequest::SetSourceType(const uint64_t& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool CreateWhiteListOrderRequest::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
 }
 
 uint64_t CreateWhiteListOrderRequest::GetRegionId() const

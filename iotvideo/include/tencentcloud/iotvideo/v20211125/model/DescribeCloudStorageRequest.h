@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取通道ID 非NVR设备不填 NVR设备必填 默认为无	
+                     * @return ChannelId 通道ID 非NVR设备不填 NVR设备必填 默认为无	
+                     * 
+                     */
+                    uint64_t GetChannelId() const;
+
+                    /**
+                     * 设置通道ID 非NVR设备不填 NVR设备必填 默认为无	
+                     * @param _channelId 通道ID 非NVR设备不填 NVR设备必填 默认为无	
+                     * 
+                     */
+                    void SetChannelId(const uint64_t& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     * 
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 通道ID 非NVR设备不填 NVR设备必填 默认为无	
+                     */
+                    uint64_t m_channelId;
+                    bool m_channelIdHasBeenSet;
 
                 };
             }

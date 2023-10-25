@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每个子合同的发起所需的信息，数量限制2-50
-                     * @return FlowFileInfos 每个子合同的发起所需的信息，数量限制2-50
+                     * 获取合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
+                     * @return FlowFileInfos 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
                      * 
                      */
                     std::vector<FlowFileInfo> GetFlowFileInfos() const;
 
                     /**
-                     * 设置每个子合同的发起所需的信息，数量限制2-50
-                     * @param _flowFileInfos 每个子合同的发起所需的信息，数量限制2-50
+                     * 设置合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
+                     * @param _flowFileInfos 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
                      * 
                      */
                     void SetFlowFileInfos(const std::vector<FlowFileInfo>& _flowFileInfos);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FlowFileInfosHasBeenSet() const;
 
                     /**
-                     * 获取合同组名称，长度不超过200个字符
-                     * @return FlowGroupName 合同组名称，长度不超过200个字符
+                     * 获取合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * @return FlowGroupName 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     std::string GetFlowGroupName() const;
 
                     /**
-                     * 设置合同组名称，长度不超过200个字符
-                     * @param _flowGroupName 合同组名称，长度不超过200个字符
+                     * 设置合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * @param _flowGroupName 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     void SetFlowGroupName(const std::string& _flowGroupName);
@@ -89,15 +89,51 @@ namespace TencentCloud
                     bool FlowGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+
+子客企业和子客企业中的员工比较走完创建和实名过程
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+
+子客企业和子客企业中的员工比较走完创建和实名过程
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+
+子客企业和子客企业中的员工比较走完创建和实名过程
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+
+子客企业和子客企业中的员工比较走完创建和实名过程
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -110,27 +146,35 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取签署人校验方式
-VerifyCheck: 人脸识别（默认）
-MobileCheck：手机号验证
-参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。
-                     * @return ApproverVerifyType 签署人校验方式
-VerifyCheck: 人脸识别（默认）
-MobileCheck：手机号验证
-参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。
+                     * 获取合同组中签署人校验和认证的方式：
+<ul><li>**VerifyCheck**：人脸识别（默认）</li>
+<li>**MobileCheck**：手机号验证</li></ul>
+注意：
+`1. MobileCheck 方式，未实名的个人/自然人签署方无需进行人脸识别实名认证即可查看合同（但签署合同时仍然需要人脸实名），企业签署方需经过人脸认证。`
+`2. 合同组的校验和认证的方式会优先使用，会覆盖合同组中单个合同和合同签署方认证方式的限制配置。`
+                     * @return ApproverVerifyType 合同组中签署人校验和认证的方式：
+<ul><li>**VerifyCheck**：人脸识别（默认）</li>
+<li>**MobileCheck**：手机号验证</li></ul>
+注意：
+`1. MobileCheck 方式，未实名的个人/自然人签署方无需进行人脸识别实名认证即可查看合同（但签署合同时仍然需要人脸实名），企业签署方需经过人脸认证。`
+`2. 合同组的校验和认证的方式会优先使用，会覆盖合同组中单个合同和合同签署方认证方式的限制配置。`
                      * 
                      */
                     std::string GetApproverVerifyType() const;
 
                     /**
-                     * 设置签署人校验方式
-VerifyCheck: 人脸识别（默认）
-MobileCheck：手机号验证
-参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。
-                     * @param _approverVerifyType 签署人校验方式
-VerifyCheck: 人脸识别（默认）
-MobileCheck：手机号验证
-参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。
+                     * 设置合同组中签署人校验和认证的方式：
+<ul><li>**VerifyCheck**：人脸识别（默认）</li>
+<li>**MobileCheck**：手机号验证</li></ul>
+注意：
+`1. MobileCheck 方式，未实名的个人/自然人签署方无需进行人脸识别实名认证即可查看合同（但签署合同时仍然需要人脸实名），企业签署方需经过人脸认证。`
+`2. 合同组的校验和认证的方式会优先使用，会覆盖合同组中单个合同和合同签署方认证方式的限制配置。`
+                     * @param _approverVerifyType 合同组中签署人校验和认证的方式：
+<ul><li>**VerifyCheck**：人脸识别（默认）</li>
+<li>**MobileCheck**：手机号验证</li></ul>
+注意：
+`1. MobileCheck 方式，未实名的个人/自然人签署方无需进行人脸识别实名认证即可查看合同（但签署合同时仍然需要人脸实名），企业签署方需经过人脸认证。`
+`2. 合同组的校验和认证的方式会优先使用，会覆盖合同组中单个合同和合同签署方认证方式的限制配置。`
                      * 
                      */
                     void SetApproverVerifyType(const std::string& _approverVerifyType);
@@ -143,15 +187,15 @@ MobileCheck：手机号验证
                     bool ApproverVerifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
-                     * @return FlowGroupOptions 合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
+                     * 获取合同组的签署配置项信息，例如在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
+                     * @return FlowGroupOptions 合同组的签署配置项信息，例如在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
                      * 
                      */
                     FlowGroupOptions GetFlowGroupOptions() const;
 
                     /**
-                     * 设置合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
-                     * @param _flowGroupOptions 合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
+                     * 设置合同组的签署配置项信息，例如在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
+                     * @param _flowGroupOptions 合同组的签署配置项信息，例如在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
                      * 
                      */
                     void SetFlowGroupOptions(const FlowGroupOptions& _flowGroupOptions);
@@ -187,34 +231,45 @@ MobileCheck：手机号验证
                 private:
 
                     /**
-                     * 每个子合同的发起所需的信息，数量限制2-50
+                     * 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
                      */
                     std::vector<FlowFileInfo> m_flowFileInfos;
                     bool m_flowFileInfosHasBeenSet;
 
                     /**
-                     * 合同组名称，长度不超过200个字符
+                     * 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      */
                     std::string m_flowGroupName;
                     bool m_flowGroupNameHasBeenSet;
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent.AppId</li>
+</ul>
+
+子客企业和子客企业中的员工比较走完创建和实名过程
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 签署人校验方式
-VerifyCheck: 人脸识别（默认）
-MobileCheck：手机号验证
-参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。
+                     * 合同组中签署人校验和认证的方式：
+<ul><li>**VerifyCheck**：人脸识别（默认）</li>
+<li>**MobileCheck**：手机号验证</li></ul>
+注意：
+`1. MobileCheck 方式，未实名的个人/自然人签署方无需进行人脸识别实名认证即可查看合同（但签署合同时仍然需要人脸实名），企业签署方需经过人脸认证。`
+`2. 合同组的校验和认证的方式会优先使用，会覆盖合同组中单个合同和合同签署方认证方式的限制配置。`
                      */
                     std::string m_approverVerifyType;
                     bool m_approverVerifyTypeHasBeenSet;
 
                     /**
-                     * 合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
+                     * 合同组的签署配置项信息，例如在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。
                      */
                     FlowGroupOptions m_flowGroupOptions;
                     bool m_flowGroupOptionsHasBeenSet;

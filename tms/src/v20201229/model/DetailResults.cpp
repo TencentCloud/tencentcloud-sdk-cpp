@@ -29,7 +29,8 @@ DetailResults::DetailResults() :
     m_libIdHasBeenSet(false),
     m_libNameHasBeenSet(false),
     m_subLabelHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_hitInfosHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,26 @@ CoreInternalOutcome DetailResults::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("HitInfos") && !value["HitInfos"].IsNull())
+    {
+        if (!value["HitInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DetailResults.HitInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HitInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HitInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_hitInfos.push_back(item);
+        }
+        m_hitInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -226,6 +247,21 @@ void DetailResults::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hitInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hitInfos.begin(); itr != m_hitInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -377,5 +413,21 @@ void DetailResults::SetTags(const vector<Tag>& _tags)
 bool DetailResults::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<HitInfo> DetailResults::GetHitInfos() const
+{
+    return m_hitInfos;
+}
+
+void DetailResults::SetHitInfos(const vector<HitInfo>& _hitInfos)
+{
+    m_hitInfos = _hitInfos;
+    m_hitInfosHasBeenSet = true;
+}
+
+bool DetailResults::HitInfosHasBeenSet() const
+{
+    return m_hitInfosHasBeenSet;
 }
 

@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool SubnetSetHasBeenSet() const;
 
                     /**
-                     * 获取网络ACl入站规则。
-                     * @return IngressEntries 网络ACl入站规则。
+                     * 获取该参数仅对三元组ACL有效，网络ACl入站规则。
+                     * @return IngressEntries 该参数仅对三元组ACL有效，网络ACl入站规则。
                      * 
                      */
                     std::vector<NetworkAclEntry> GetIngressEntries() const;
 
                     /**
-                     * 设置网络ACl入站规则。
-                     * @param _ingressEntries 网络ACl入站规则。
+                     * 设置该参数仅对三元组ACL有效，网络ACl入站规则。
+                     * @param _ingressEntries 该参数仅对三元组ACL有效，网络ACl入站规则。
                      * 
                      */
                     void SetIngressEntries(const std::vector<NetworkAclEntry>& _ingressEntries);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool IngressEntriesHasBeenSet() const;
 
                     /**
-                     * 获取网络ACL出站规则。
-                     * @return EgressEntries 网络ACL出站规则。
+                     * 获取该参数仅对三元组ACL有效，网络ACL出站规则。
+                     * @return EgressEntries 该参数仅对三元组ACL有效，网络ACL出站规则。
                      * 
                      */
                     std::vector<NetworkAclEntry> GetEgressEntries() const;
 
                     /**
-                     * 设置网络ACL出站规则。
-                     * @param _egressEntries 网络ACL出站规则。
+                     * 设置该参数仅对三元组ACL有效，网络ACL出站规则。
+                     * @param _egressEntries 该参数仅对三元组ACL有效，网络ACL出站规则。
                      * 
                      */
                     void SetEgressEntries(const std::vector<NetworkAclEntry>& _egressEntries);
@@ -271,13 +271,13 @@ namespace TencentCloud
                     bool m_subnetSetHasBeenSet;
 
                     /**
-                     * 网络ACl入站规则。
+                     * 该参数仅对三元组ACL有效，网络ACl入站规则。
                      */
                     std::vector<NetworkAclEntry> m_ingressEntries;
                     bool m_ingressEntriesHasBeenSet;
 
                     /**
-                     * 网络ACL出站规则。
+                     * 该参数仅对三元组ACL有效，网络ACL出站规则。
                      */
                     std::vector<NetworkAclEntry> m_egressEntries;
                     bool m_egressEntriesHasBeenSet;

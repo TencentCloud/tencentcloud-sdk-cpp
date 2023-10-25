@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tms/v20201229/model/Tag.h>
+#include <tencentcloud/tms/v20201229/model/HitInfo.h>
 
 
 namespace TencentCloud
@@ -268,6 +269,31 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回违规文本命中信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HitInfos 该字段用于返回违规文本命中信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<HitInfo> GetHitInfos() const;
+
+                    /**
+                     * 设置该字段用于返回违规文本命中信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hitInfos 该字段用于返回违规文本命中信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHitInfos(const std::vector<HitInfo>& _hitInfos);
+
+                    /**
+                     * 判断参数 HitInfos 是否已赋值
+                     * @return HitInfos 是否已赋值
+                     * 
+                     */
+                    bool HitInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +357,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 该字段用于返回违规文本命中信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HitInfo> m_hitInfos;
+                    bool m_hitInfosHasBeenSet;
 
                 };
             }

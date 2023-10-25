@@ -127,6 +127,27 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
+                     * 获取订单类型, 1 试用 2 赠送 3 体验 4 SSL-证书赠送 5 cvm赠送
+                     * @return SourceType 订单类型, 1 试用 2 赠送 3 体验 4 SSL-证书赠送 5 cvm赠送
+                     * 
+                     */
+                    uint64_t GetSourceType() const;
+
+                    /**
+                     * 设置订单类型, 1 试用 2 赠送 3 体验 4 SSL-证书赠送 5 cvm赠送
+                     * @param _sourceType 订单类型, 1 试用 2 赠送 3 体验 4 SSL-证书赠送 5 cvm赠送
+                     * 
+                     */
+                    void SetSourceType(const uint64_t& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
+                    /**
                      * 获取地域, 1 广州 9新加坡, 默认为 1. 非必要情况不要选9
                      * @return RegionId 地域, 1 广州 9新加坡, 默认为 1. 非必要情况不要选9
                      * 
@@ -193,6 +214,12 @@ namespace TencentCloud
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 订单类型, 1 试用 2 赠送 3 体验 4 SSL-证书赠送 5 cvm赠送
+                     */
+                    uint64_t m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
 
                     /**
                      * 地域, 1 广州 9新加坡, 默认为 1. 非必要情况不要选9

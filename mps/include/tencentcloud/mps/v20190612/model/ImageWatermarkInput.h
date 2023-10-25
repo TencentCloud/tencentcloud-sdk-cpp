@@ -71,11 +71,11 @@ namespace TencentCloud
                      * 获取水印的宽度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>
-默认值：10%。
+当宽高都不填或者为0时，默认为 10%。
                      * @return Width 水印的宽度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>
-默认值：10%。
+当宽高都不填或者为0时，默认为 10%。
                      * 
                      */
                     std::string GetWidth() const;
@@ -84,11 +84,11 @@ namespace TencentCloud
                      * 设置水印的宽度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>
-默认值：10%。
+当宽高都不填或者为0时，默认为 10%。
                      * @param _width 水印的宽度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>
-默认值：10%。
+当宽高都不填或者为0时，默认为 10%。
                      * 
                      */
                     void SetWidth(const std::string& _width);
@@ -178,7 +178,7 @@ namespace TencentCloud
                      * 水印的宽度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>
-默认值：10%。
+当宽高都不填或者为0时，默认为 10%。
                      */
                     std::string m_width;
                     bool m_widthHasBeenSet;

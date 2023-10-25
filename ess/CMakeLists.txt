@@ -28,8 +28,10 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/Department.h
   include/tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsResponse.h
+  include/tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosRequest.h
   include/tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h
   include/tencentcloud/ess/v20201111/model/FlowApproverUrlInfo.h
@@ -159,6 +161,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FileInfo.h
   include/tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlRequest.h
   include/tencentcloud/ess/v20201111/model/FailedCreateStaffData.h
+  include/tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/ApproverRestriction.h
   include/tencentcloud/ess/v20201111/model/CreateWebThemeConfigRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverItem.h
@@ -203,6 +206,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h
+  include/tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h
@@ -227,8 +231,10 @@ set(ess_src
   src/v20201111/model/Department.cpp
   src/v20201111/model/CreatePreparedPersonalEsignRequest.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsResponse.cpp
+  src/v20201111/model/DeleteExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/CreateFlowApproversResponse.cpp
   src/v20201111/model/DescribeFileUrlsResponse.cpp
+  src/v20201111/model/CreateExtendedServiceAuthInfosRequest.cpp
   src/v20201111/model/ModifyApplicationCallbackInfoResponse.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeResponse.cpp
   src/v20201111/model/FlowApproverUrlInfo.cpp
@@ -358,6 +364,7 @@ set(ess_src
   src/v20201111/model/FileInfo.cpp
   src/v20201111/model/CancelUserAutoSignEnableUrlRequest.cpp
   src/v20201111/model/FailedCreateStaffData.cpp
+  src/v20201111/model/CreateExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/ApproverRestriction.cpp
   src/v20201111/model/CreateWebThemeConfigRequest.cpp
   src/v20201111/model/ApproverItem.cpp
@@ -402,6 +409,7 @@ set(ess_src
   src/v20201111/model/CreateBatchCancelFlowUrlRequest.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/DescribeFlowInfoRequest.cpp
+  src/v20201111/model/DeleteExtendedServiceAuthInfosRequest.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsRequest.cpp
   src/v20201111/model/DescribeFlowInfoResponse.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeResponse.cpp

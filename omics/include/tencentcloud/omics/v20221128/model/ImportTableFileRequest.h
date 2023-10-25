@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取表格名称，支持20个字符内的英文字符、数字和下划线。
-                     * @return Name 表格名称，支持20个字符内的英文字符、数字和下划线。
+                     * 获取表格名称。最多支持200个字符。
+                     * @return Name 表格名称。最多支持200个字符。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置表格名称，支持20个字符内的英文字符、数字和下划线。
-                     * @param _name 表格名称，支持20个字符内的英文字符、数字和下划线。
+                     * 设置表格名称。最多支持200个字符。
+                     * @param _name 表格名称。最多支持200个字符。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DataTypeHasBeenSet() const;
 
                     /**
-                     * 获取表格描述。
-                     * @return Description 表格描述。
+                     * 获取表格描述。最多支持500个字符。
+                     * @return Description 表格描述。最多支持500个字符。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置表格描述。
-                     * @param _description 表格描述。
+                     * 设置表格描述。最多支持500个字符。
+                     * @param _description 表格描述。最多支持500个字符。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 表格名称，支持20个字符内的英文字符、数字和下划线。
+                     * 表格名称。最多支持200个字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_dataTypeHasBeenSet;
 
                     /**
-                     * 表格描述。
+                     * 表格描述。最多支持500个字符。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

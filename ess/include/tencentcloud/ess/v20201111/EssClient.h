@@ -41,6 +41,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateDocumentResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowApproversRequest.h>
@@ -93,6 +95,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateWebThemeConfigRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateWebThemeConfigResponse.h>
+#include <tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosRequest.h>
+#include <tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h>
@@ -192,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEmbedWebUrlResponse> CreateEmbedWebUrlOutcome;
                 typedef std::future<CreateEmbedWebUrlOutcome> CreateEmbedWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateEmbedWebUrlRequest&, CreateEmbedWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmbedWebUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExtendedServiceAuthInfosResponse> CreateExtendedServiceAuthInfosOutcome;
+                typedef std::future<CreateExtendedServiceAuthInfosOutcome> CreateExtendedServiceAuthInfosOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateExtendedServiceAuthInfosRequest&, CreateExtendedServiceAuthInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExtendedServiceAuthInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowResponse> CreateFlowOutcome;
                 typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowRequest&, CreateFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowAsyncHandler;
@@ -270,6 +277,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWebThemeConfigResponse> CreateWebThemeConfigOutcome;
                 typedef std::future<CreateWebThemeConfigOutcome> CreateWebThemeConfigOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateWebThemeConfigRequest&, CreateWebThemeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWebThemeConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteExtendedServiceAuthInfosResponse> DeleteExtendedServiceAuthInfosOutcome;
+                typedef std::future<DeleteExtendedServiceAuthInfosOutcome> DeleteExtendedServiceAuthInfosOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DeleteExtendedServiceAuthInfosRequest&, DeleteExtendedServiceAuthInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExtendedServiceAuthInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIntegrationDepartmentResponse> DeleteIntegrationDepartmentOutcome;
                 typedef std::future<DeleteIntegrationDepartmentOutcome> DeleteIntegrationDepartmentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteIntegrationDepartmentRequest&, DeleteIntegrationDepartmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIntegrationDepartmentAsyncHandler;
@@ -433,13 +443,13 @@ namespace TencentCloud
                 CreateBatchSignUrlOutcomeCallable CreateBatchSignUrlCallable(const Model::CreateBatchSignUrlRequest& request);
 
                 /**
-                 *此接口（CreateConvertTaskApi）用来将word、excel、图片、txt类型文件转换为PDF文件。<br />
+                 *此接口（CreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />
 前提条件：源文件已经通过 <a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles" target="_blank">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />
 适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同
 适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />
 转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi" target="_blank">查询转换任务状态</a>接口获取任务状态。<br />
 注: 
-1. `支持的文件类型有doc、docx、xls、xlsx、jpg、jpeg、png、bmp、txt`
+1. `支持的文件类型有doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt`
 2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`
                  * @param req CreateConvertTaskApiRequest
                  * @return CreateConvertTaskApiOutcome
@@ -478,6 +488,17 @@ namespace TencentCloud
                 CreateEmbedWebUrlOutcome CreateEmbedWebUrl(const Model::CreateEmbedWebUrlRequest &request);
                 void CreateEmbedWebUrlAsync(const Model::CreateEmbedWebUrlRequest& request, const CreateEmbedWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEmbedWebUrlOutcomeCallable CreateEmbedWebUrlCallable(const Model::CreateEmbedWebUrlRequest& request);
+
+                /**
+                 *创建企业扩展服务授权，当前仅支持授权 “企业自动签” 给企业员工。
+
+注：支持集团代子企业操作，请联系运营开通此功能。
+                 * @param req CreateExtendedServiceAuthInfosRequest
+                 * @return CreateExtendedServiceAuthInfosOutcome
+                 */
+                CreateExtendedServiceAuthInfosOutcome CreateExtendedServiceAuthInfos(const Model::CreateExtendedServiceAuthInfosRequest &request);
+                void CreateExtendedServiceAuthInfosAsync(const Model::CreateExtendedServiceAuthInfosRequest& request, const CreateExtendedServiceAuthInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExtendedServiceAuthInfosOutcomeCallable CreateExtendedServiceAuthInfosCallable(const Model::CreateExtendedServiceAuthInfosRequest& request);
 
                 /**
                  *通过模板创建签署流程<br/>
@@ -862,6 +883,17 @@ namespace TencentCloud
                 CreateWebThemeConfigOutcome CreateWebThemeConfig(const Model::CreateWebThemeConfigRequest &request);
                 void CreateWebThemeConfigAsync(const Model::CreateWebThemeConfigRequest& request, const CreateWebThemeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateWebThemeConfigOutcomeCallable CreateWebThemeConfigCallable(const Model::CreateWebThemeConfigRequest& request);
+
+                /**
+                 *删除企业扩展服务授权，当前仅支持 “企业自动签” 取消授权。
+
+注：支持集团代子企业操作，请联系运营开通此功能。
+                 * @param req DeleteExtendedServiceAuthInfosRequest
+                 * @return DeleteExtendedServiceAuthInfosOutcome
+                 */
+                DeleteExtendedServiceAuthInfosOutcome DeleteExtendedServiceAuthInfos(const Model::DeleteExtendedServiceAuthInfosRequest &request);
+                void DeleteExtendedServiceAuthInfosAsync(const Model::DeleteExtendedServiceAuthInfosRequest& request, const DeleteExtendedServiceAuthInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteExtendedServiceAuthInfosOutcomeCallable DeleteExtendedServiceAuthInfosCallable(const Model::DeleteExtendedServiceAuthInfosRequest& request);
 
                 /**
                  *此接口（DeleteIntegrationDepartment）用于删除企业的部门信息。

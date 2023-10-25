@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool TotalNumberHasBeenSet() const;
 
+                    /**
+                     * 获取es scroll查询的id
+                     * @return ScrollID es scroll查询的id
+                     * 
+                     */
+                    std::string GetScrollID() const;
+
+                    /**
+                     * 判断参数 ScrollID 是否已赋值
+                     * @return ScrollID 是否已赋值
+                     * 
+                     */
+                    bool ScrollIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     int64_t m_totalNumber;
                     bool m_totalNumberHasBeenSet;
+
+                    /**
+                     * es scroll查询的id
+                     */
+                    std::string m_scrollID;
+                    bool m_scrollIDHasBeenSet;
 
                 };
             }

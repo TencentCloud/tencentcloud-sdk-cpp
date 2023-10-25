@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 催办接口返回详细信息
+                * 催办接口返回的详细信息。
                 */
                 class RemindFlowRecords : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否能够催办，true-是，false-否
-                     * @return CanRemind 是否能够催办，true-是，false-否
+                     * 获取合同流程是否可以催办： true - 可以，false - 不可以。 若无法催办，将返回RemindMessage以解释原因。	
+                     * @return CanRemind 合同流程是否可以催办： true - 可以，false - 不可以。 若无法催办，将返回RemindMessage以解释原因。	
                      * 
                      */
                     bool GetCanRemind() const;
 
                     /**
-                     * 设置是否能够催办，true-是，false-否
-                     * @param _canRemind 是否能够催办，true-是，false-否
+                     * 设置合同流程是否可以催办： true - 可以，false - 不可以。 若无法催办，将返回RemindMessage以解释原因。	
+                     * @param _canRemind 合同流程是否可以催办： true - 可以，false - 不可以。 若无法催办，将返回RemindMessage以解释原因。	
                      * 
                      */
                     void SetCanRemind(const bool& _canRemind);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CanRemindHasBeenSet() const;
 
                     /**
-                     * 获取合同id
-                     * @return FlowId 合同id
+                     * 获取合同流程ID，为32位字符串。	
+                     * @return FlowId 合同流程ID，为32位字符串。	
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置合同id
-                     * @param _flowId 合同id
+                     * 设置合同流程ID，为32位字符串。	
+                     * @param _flowId 合同流程ID，为32位字符串。	
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取催办详情信息
-                     * @return RemindMessage 催办详情信息
+                     * 获取在合同流程无法催办的情况下，系统将返回RemindMessage以阐述原因。	
+                     * @return RemindMessage 在合同流程无法催办的情况下，系统将返回RemindMessage以阐述原因。	
                      * 
                      */
                     std::string GetRemindMessage() const;
 
                     /**
-                     * 设置催办详情信息
-                     * @param _remindMessage 催办详情信息
+                     * 设置在合同流程无法催办的情况下，系统将返回RemindMessage以阐述原因。	
+                     * @param _remindMessage 在合同流程无法催办的情况下，系统将返回RemindMessage以阐述原因。	
                      * 
                      */
                     void SetRemindMessage(const std::string& _remindMessage);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否能够催办，true-是，false-否
+                     * 合同流程是否可以催办： true - 可以，false - 不可以。 若无法催办，将返回RemindMessage以解释原因。	
                      */
                     bool m_canRemind;
                     bool m_canRemindHasBeenSet;
 
                     /**
-                     * 合同id
+                     * 合同流程ID，为32位字符串。	
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 催办详情信息
+                     * 在合同流程无法催办的情况下，系统将返回RemindMessage以阐述原因。	
                      */
                     std::string m_remindMessage;
                     bool m_remindMessageHasBeenSet;

@@ -26,7 +26,8 @@ DescribeScheduledSqlInfoRequest::DescribeScheduledSqlInfoRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string DescribeScheduledSqlInfoRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void DescribeScheduledSqlInfoRequest::SetTaskId(const string& _taskId)
 bool DescribeScheduledSqlInfoRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+vector<Filter> DescribeScheduledSqlInfoRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeScheduledSqlInfoRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeScheduledSqlInfoRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

@@ -57,21 +57,21 @@ namespace TencentCloud
 <td>场景一</td>
 <td>第三方子企业A员工</td>
 <td>第三方子企业A员工</td>
-<td>OpenId、OrgName、OrgOpenId必传 ,ApproverType设置为ORGANIZATION</td>
+<td>OpenId、OrganizationName、OrganizationOpenId必传 ,ApproverType设置为ORGANIZATION</td>
 </tr>
 
 <tr>
 <td>场景二</td>
 <td>第三方子企业A员工</td>
 <td>第三方子企业B(不指定经办人)</td>
-<td>OrgName、OrgOpenId必传 ,ApproverType设置为ORGANIZATION</td>
+<td>OrganizationName、OrganizationOpenId必传 ,ApproverType设置为ORGANIZATION</td>
 </tr>
 
 <tr>
 <td>场景三</td>
 <td>第三方子企业A员工</td>
 <td>第三方子企业B员工</td>
-<td>OpenId、OrgName、OrgOpenId必传, ApproverType设置为ORGANIZATION</td>
+<td>OpenId、OrganizationOpenId、OrganizationName必传, ApproverType设置为ORGANIZATION</td>
 </tr>
 
 <tr>
@@ -85,7 +85,7 @@ namespace TencentCloud
 <td>场景五</td>
 <td>第三方子企业A员工</td>
 <td>SaaS平台企业员工</td>
-<td>Name、Mobile、OrgName必传，且NotChannelOrganization=True。 ApproverType设置为ORGANIZATION</td>
+<td>Name、Mobile、OrganizationName必传，且NotChannelOrganization=True。 ApproverType设置为ORGANIZATION</td>
 </tr>
 </tbody>
 </table>

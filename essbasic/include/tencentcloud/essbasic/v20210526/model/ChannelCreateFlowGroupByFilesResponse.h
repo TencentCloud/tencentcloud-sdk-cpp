@@ -44,9 +44,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同组ID
+                     * 获取合同组ID，为32位字符串。
+建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowGroupId 合同组ID
+                     * @return FlowGroupId 合同组ID，为32位字符串。
+建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,9 +62,15 @@ namespace TencentCloud
                     bool FlowGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取子合同ID列表
+                     * 获取合同组中每个合同流程ID，每个ID均为32位字符串。
+
+注:
+`此数组的顺序和入参中的FlowGroupInfos顺序回不一致`
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowIds 子合同ID列表
+                     * @return FlowIds 合同组中每个合同流程ID，每个ID均为32位字符串。
+
+注:
+`此数组的顺序和入参中的FlowGroupInfos顺序回不一致`
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,14 +86,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同组ID
+                     * 合同组ID，为32位字符串。
+建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
-                     * 子合同ID列表
+                     * 合同组中每个合同流程ID，每个ID均为32位字符串。
+
+注:
+`此数组的顺序和入参中的FlowGroupInfos顺序回不一致`
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_flowIds;

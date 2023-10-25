@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeDetailedSingleProbeDataResponse::DescribeDetailedSingleProbeDataResponse() :
     m_dataSetHasBeenSet(false),
-    m_totalNumberHasBeenSet(false)
+    m_totalNumberHasBeenSet(false),
+    m_scrollIDHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeDetailedSingleProbeDataResponse::Deserialize(const s
         m_totalNumberHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScrollID") && !rsp["ScrollID"].IsNull())
+    {
+        if (!rsp["ScrollID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScrollID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scrollID = string(rsp["ScrollID"].GetString());
+        m_scrollIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeDetailedSingleProbeDataResponse::ToJsonString() const
         value.AddMember(iKey, m_totalNumber, allocator);
     }
 
+    if (m_scrollIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScrollID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scrollID.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ int64_t DescribeDetailedSingleProbeDataResponse::GetTotalNumber() const
 bool DescribeDetailedSingleProbeDataResponse::TotalNumberHasBeenSet() const
 {
     return m_totalNumberHasBeenSet;
+}
+
+string DescribeDetailedSingleProbeDataResponse::GetScrollID() const
+{
+    return m_scrollID;
+}
+
+bool DescribeDetailedSingleProbeDataResponse::ScrollIDHasBeenSet() const
+{
+    return m_scrollIDHasBeenSet;
 }
 
 

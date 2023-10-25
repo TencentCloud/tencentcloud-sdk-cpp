@@ -427,6 +427,49 @@ EssClient::CreateEmbedWebUrlOutcomeCallable EssClient::CreateEmbedWebUrlCallable
     return task->get_future();
 }
 
+EssClient::CreateExtendedServiceAuthInfosOutcome EssClient::CreateExtendedServiceAuthInfos(const CreateExtendedServiceAuthInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExtendedServiceAuthInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExtendedServiceAuthInfosResponse rsp = CreateExtendedServiceAuthInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExtendedServiceAuthInfosOutcome(rsp);
+        else
+            return CreateExtendedServiceAuthInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExtendedServiceAuthInfosOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateExtendedServiceAuthInfosAsync(const CreateExtendedServiceAuthInfosRequest& request, const CreateExtendedServiceAuthInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExtendedServiceAuthInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateExtendedServiceAuthInfosOutcomeCallable EssClient::CreateExtendedServiceAuthInfosCallable(const CreateExtendedServiceAuthInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExtendedServiceAuthInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExtendedServiceAuthInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateFlowOutcome EssClient::CreateFlow(const CreateFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlow");
@@ -1538,6 +1581,49 @@ EssClient::CreateWebThemeConfigOutcomeCallable EssClient::CreateWebThemeConfigCa
         [this, request]()
         {
             return this->CreateWebThemeConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DeleteExtendedServiceAuthInfosOutcome EssClient::DeleteExtendedServiceAuthInfos(const DeleteExtendedServiceAuthInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteExtendedServiceAuthInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteExtendedServiceAuthInfosResponse rsp = DeleteExtendedServiceAuthInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteExtendedServiceAuthInfosOutcome(rsp);
+        else
+            return DeleteExtendedServiceAuthInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteExtendedServiceAuthInfosOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DeleteExtendedServiceAuthInfosAsync(const DeleteExtendedServiceAuthInfosRequest& request, const DeleteExtendedServiceAuthInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteExtendedServiceAuthInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DeleteExtendedServiceAuthInfosOutcomeCallable EssClient::DeleteExtendedServiceAuthInfosCallable(const DeleteExtendedServiceAuthInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteExtendedServiceAuthInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteExtendedServiceAuthInfos(request);
         }
     );
 

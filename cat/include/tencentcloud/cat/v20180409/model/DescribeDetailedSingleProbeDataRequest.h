@@ -423,6 +423,27 @@ AnalyzeTaskType_MediaStream：音视频体验
                      */
                     bool CityHasBeenSet() const;
 
+                    /**
+                     * 获取es scroll查询id
+                     * @return ScrollID es scroll查询id
+                     * 
+                     */
+                    std::string GetScrollID() const;
+
+                    /**
+                     * 设置es scroll查询id
+                     * @param _scrollID es scroll查询id
+                     * 
+                     */
+                    void SetScrollID(const std::string& _scrollID);
+
+                    /**
+                     * 判断参数 ScrollID 是否已赋值
+                     * @return ScrollID 是否已赋值
+                     * 
+                     */
+                    bool ScrollIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -529,6 +550,12 @@ AnalyzeTaskType_MediaStream：音视频体验
                      */
                     std::vector<std::string> m_city;
                     bool m_cityHasBeenSet;
+
+                    /**
+                     * es scroll查询id
+                     */
+                    std::string m_scrollID;
+                    bool m_scrollIDHasBeenSet;
 
                 };
             }
