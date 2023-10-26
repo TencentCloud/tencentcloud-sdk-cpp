@@ -25,6 +25,10 @@ AccelerationDomain::AccelerationDomain() :
     m_domainNameHasBeenSet(false),
     m_domainStatusHasBeenSet(false),
     m_originDetailHasBeenSet(false),
+    m_originProtocolHasBeenSet(false),
+    m_httpOriginPortHasBeenSet(false),
+    m_httpsOriginPortHasBeenSet(false),
+    m_iPv6StatusHasBeenSet(false),
     m_cnameHasBeenSet(false),
     m_identificationStatusHasBeenSet(false),
     m_createdOnHasBeenSet(false),
@@ -84,6 +88,46 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         }
 
         m_originDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginProtocol") && !value["OriginProtocol"].IsNull())
+    {
+        if (!value["OriginProtocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.OriginProtocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originProtocol = string(value["OriginProtocol"].GetString());
+        m_originProtocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("HttpOriginPort") && !value["HttpOriginPort"].IsNull())
+    {
+        if (!value["HttpOriginPort"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.HttpOriginPort` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_httpOriginPort = value["HttpOriginPort"].GetUint64();
+        m_httpOriginPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("HttpsOriginPort") && !value["HttpsOriginPort"].IsNull())
+    {
+        if (!value["HttpsOriginPort"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.HttpsOriginPort` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_httpsOriginPort = value["HttpsOriginPort"].GetUint64();
+        m_httpsOriginPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPv6Status") && !value["IPv6Status"].IsNull())
+    {
+        if (!value["IPv6Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.IPv6Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPv6Status = string(value["IPv6Status"].GetString());
+        m_iPv6StatusHasBeenSet = true;
     }
 
     if (value.HasMember("Cname") && !value["Cname"].IsNull())
@@ -198,6 +242,38 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_originDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_originProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_httpOriginPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpOriginPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_httpOriginPort, allocator);
+    }
+
+    if (m_httpsOriginPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpsOriginPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_httpsOriginPort, allocator);
+    }
+
+    if (m_iPv6StatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPv6Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPv6Status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cnameHasBeenSet)
@@ -315,6 +391,70 @@ void AccelerationDomain::SetOriginDetail(const OriginDetail& _originDetail)
 bool AccelerationDomain::OriginDetailHasBeenSet() const
 {
     return m_originDetailHasBeenSet;
+}
+
+string AccelerationDomain::GetOriginProtocol() const
+{
+    return m_originProtocol;
+}
+
+void AccelerationDomain::SetOriginProtocol(const string& _originProtocol)
+{
+    m_originProtocol = _originProtocol;
+    m_originProtocolHasBeenSet = true;
+}
+
+bool AccelerationDomain::OriginProtocolHasBeenSet() const
+{
+    return m_originProtocolHasBeenSet;
+}
+
+uint64_t AccelerationDomain::GetHttpOriginPort() const
+{
+    return m_httpOriginPort;
+}
+
+void AccelerationDomain::SetHttpOriginPort(const uint64_t& _httpOriginPort)
+{
+    m_httpOriginPort = _httpOriginPort;
+    m_httpOriginPortHasBeenSet = true;
+}
+
+bool AccelerationDomain::HttpOriginPortHasBeenSet() const
+{
+    return m_httpOriginPortHasBeenSet;
+}
+
+uint64_t AccelerationDomain::GetHttpsOriginPort() const
+{
+    return m_httpsOriginPort;
+}
+
+void AccelerationDomain::SetHttpsOriginPort(const uint64_t& _httpsOriginPort)
+{
+    m_httpsOriginPort = _httpsOriginPort;
+    m_httpsOriginPortHasBeenSet = true;
+}
+
+bool AccelerationDomain::HttpsOriginPortHasBeenSet() const
+{
+    return m_httpsOriginPortHasBeenSet;
+}
+
+string AccelerationDomain::GetIPv6Status() const
+{
+    return m_iPv6Status;
+}
+
+void AccelerationDomain::SetIPv6Status(const string& _iPv6Status)
+{
+    m_iPv6Status = _iPv6Status;
+    m_iPv6StatusHasBeenSet = true;
+}
+
+bool AccelerationDomain::IPv6StatusHasBeenSet() const
+{
+    return m_iPv6StatusHasBeenSet;
 }
 
 string AccelerationDomain::GetCname() const

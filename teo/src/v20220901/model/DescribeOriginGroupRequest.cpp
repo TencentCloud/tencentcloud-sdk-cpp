@@ -23,6 +23,7 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 DescribeOriginGroupRequest::DescribeOriginGroupRequest() :
+    m_zoneIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false)
@@ -35,6 +36,14 @@ string DescribeOriginGroupRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_offsetHasBeenSet)
     {
@@ -74,6 +83,22 @@ string DescribeOriginGroupRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeOriginGroupRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void DescribeOriginGroupRequest::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool DescribeOriginGroupRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
 
 uint64_t DescribeOriginGroupRequest::GetOffset() const
 {

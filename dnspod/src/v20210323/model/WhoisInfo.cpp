@@ -30,7 +30,8 @@ WhoisInfo::WhoisInfo() :
     m_rawHasBeenSet(false),
     m_registrarHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
+    m_updatedDateHasBeenSet(false),
+    m_dnssecHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,16 @@ CoreInternalOutcome WhoisInfo::Deserialize(const rapidjson::Value &value)
         m_updatedDateHasBeenSet = true;
     }
 
+    if (value.HasMember("Dnssec") && !value["Dnssec"].IsNull())
+    {
+        if (!value["Dnssec"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WhoisInfo.Dnssec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dnssec = string(value["Dnssec"].GetString());
+        m_dnssecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -264,6 +275,14 @@ void WhoisInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "UpdatedDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updatedDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dnssecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Dnssec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dnssec.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -427,5 +446,21 @@ void WhoisInfo::SetUpdatedDate(const string& _updatedDate)
 bool WhoisInfo::UpdatedDateHasBeenSet() const
 {
     return m_updatedDateHasBeenSet;
+}
+
+string WhoisInfo::GetDnssec() const
+{
+    return m_dnssec;
+}
+
+void WhoisInfo::SetDnssec(const string& _dnssec)
+{
+    m_dnssec = _dnssec;
+    m_dnssecHasBeenSet = true;
+}
+
+bool WhoisInfo::DnssecHasBeenSet() const
+{
+    return m_dnssecHasBeenSet;
 }
 

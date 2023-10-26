@@ -4383,6 +4383,49 @@ WafClient::ModifyDomainsCLSStatusOutcomeCallable WafClient::ModifyDomainsCLSStat
     return task->get_future();
 }
 
+WafClient::ModifyGenerateDealsOutcome WafClient::ModifyGenerateDeals(const ModifyGenerateDealsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGenerateDeals");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGenerateDealsResponse rsp = ModifyGenerateDealsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGenerateDealsOutcome(rsp);
+        else
+            return ModifyGenerateDealsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGenerateDealsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyGenerateDealsAsync(const ModifyGenerateDealsRequest& request, const ModifyGenerateDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGenerateDeals(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyGenerateDealsOutcomeCallable WafClient::ModifyGenerateDealsCallable(const ModifyGenerateDealsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGenerateDealsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGenerateDeals(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyHostOutcome WafClient::ModifyHost(const ModifyHostRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyHost");

@@ -69,6 +69,39 @@ namespace TencentCloud
                     bool RecordHasBeenSet() const;
 
                     /**
+                     * 获取源站类型，取值有：
+<li>IP_DOMAIN：IPV4、IPV6、域名类型源站；</li>
+<li>COS：COS源。</li>
+<li>AWS_S3：AWS S3对象存储源站。</li>
+                     * @return Type 源站类型，取值有：
+<li>IP_DOMAIN：IPV4、IPV6、域名类型源站；</li>
+<li>COS：COS源。</li>
+<li>AWS_S3：AWS S3对象存储源站。</li>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置源站类型，取值有：
+<li>IP_DOMAIN：IPV4、IPV6、域名类型源站；</li>
+<li>COS：COS源。</li>
+<li>AWS_S3：AWS S3对象存储源站。</li>
+                     * @param _type 源站类型，取值有：
+<li>IP_DOMAIN：IPV4、IPV6、域名类型源站；</li>
+<li>COS：COS源。</li>
+<li>AWS_S3：AWS S3对象存储源站。</li>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
                      * 获取源站记录ID。
                      * @return RecordId 源站记录ID。
                      * 
@@ -90,56 +123,19 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取源站端口，取值范围：[1-65535]。
-                     * @return Port 源站端口，取值范围：[1-65535]。
-                     * 
-                     */
-                    uint64_t GetPort() const;
-
-                    /**
-                     * 设置源站端口，取值范围：[1-65535]。
-                     * @param _port 源站端口，取值范围：[1-65535]。
-                     * 
-                     */
-                    void SetPort(const uint64_t& _port);
-
-                    /**
-                     * 判断参数 Port 是否已赋值
-                     * @return Port 是否已赋值
-                     * 
-                     */
-                    bool PortHasBeenSet() const;
-
-                    /**
-                     * 获取当源站配置类型ConfigurationType=weight时，表示权重。
-不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。
-配置权重信息时，取值为[1-100]，多个源站权重总和应为100，表示多个源站按照权重回源。
-当源站配置类型ConfigurationType=proto时，表示权重。
-不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。
-配置权重信息时，取值为[1-100]，源站组内Proto相同的多个源站权重总和应为100，表示多个源站按照权重回源。
-                     * @return Weight 当源站配置类型ConfigurationType=weight时，表示权重。
-不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。
-配置权重信息时，取值为[1-100]，多个源站权重总和应为100，表示多个源站按照权重回源。
-当源站配置类型ConfigurationType=proto时，表示权重。
-不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。
-配置权重信息时，取值为[1-100]，源站组内Proto相同的多个源站权重总和应为100，表示多个源站按照权重回源。
+                     * 获取源站权重，取值为0-100, 不填表示不设置权重，由系统自由调度，填0表示权重为0, 流量将不会调度到此源站。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Weight 源站权重，取值为0-100, 不填表示不设置权重，由系统自由调度，填0表示权重为0, 流量将不会调度到此源站。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置当源站配置类型ConfigurationType=weight时，表示权重。
-不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。
-配置权重信息时，取值为[1-100]，多个源站权重总和应为100，表示多个源站按照权重回源。
-当源站配置类型ConfigurationType=proto时，表示权重。
-不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。
-配置权重信息时，取值为[1-100]，源站组内Proto相同的多个源站权重总和应为100，表示多个源站按照权重回源。
-                     * @param _weight 当源站配置类型ConfigurationType=weight时，表示权重。
-不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。
-配置权重信息时，取值为[1-100]，多个源站权重总和应为100，表示多个源站按照权重回源。
-当源站配置类型ConfigurationType=proto时，表示权重。
-不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。
-配置权重信息时，取值为[1-100]，源站组内Proto相同的多个源站权重总和应为100，表示多个源站按照权重回源。
+                     * 设置源站权重，取值为0-100, 不填表示不设置权重，由系统自由调度，填0表示权重为0, 流量将不会调度到此源站。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _weight 源站权重，取值为0-100, 不填表示不设置权重，由系统自由调度，填0表示权重为0, 流量将不会调度到此源站。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -152,97 +148,27 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取当源站配置类型ConfigurationType=proto时，表示源站的协议类型，将按照客户端请求协议回到相应的源站，取值有：
-<li>http：HTTP协议源站；</li>
-<li>https：HTTPS协议源站。</li>
-                     * @return Proto 当源站配置类型ConfigurationType=proto时，表示源站的协议类型，将按照客户端请求协议回到相应的源站，取值有：
-<li>http：HTTP协议源站；</li>
-<li>https：HTTPS协议源站。</li>
-                     * 
-                     */
-                    std::string GetProto() const;
-
-                    /**
-                     * 设置当源站配置类型ConfigurationType=proto时，表示源站的协议类型，将按照客户端请求协议回到相应的源站，取值有：
-<li>http：HTTP协议源站；</li>
-<li>https：HTTPS协议源站。</li>
-                     * @param _proto 当源站配置类型ConfigurationType=proto时，表示源站的协议类型，将按照客户端请求协议回到相应的源站，取值有：
-<li>http：HTTP协议源站；</li>
-<li>https：HTTPS协议源站。</li>
-                     * 
-                     */
-                    void SetProto(const std::string& _proto);
-
-                    /**
-                     * 判断参数 Proto 是否已赋值
-                     * @return Proto 是否已赋值
-                     * 
-                     */
-                    bool ProtoHasBeenSet() const;
-
-                    /**
-                     * 获取当源站配置类型ConfigurationType=area时，表示区域，为空表示全部地区。取值为iso-3166中alpha-2编码或者大洲区域代码。大洲区域代码取值为：
-<li>Asia：亚洲；</li>
-<li>Europe：欧洲；</li>
-<li>Africa：非洲；</li>
-<li>Oceania：大洋洲；</li>
-<li>Americas：美洲。</li>源站组记录中，至少需要有一项为全部地区。
-                     * @return Area 当源站配置类型ConfigurationType=area时，表示区域，为空表示全部地区。取值为iso-3166中alpha-2编码或者大洲区域代码。大洲区域代码取值为：
-<li>Asia：亚洲；</li>
-<li>Europe：欧洲；</li>
-<li>Africa：非洲；</li>
-<li>Oceania：大洋洲；</li>
-<li>Americas：美洲。</li>源站组记录中，至少需要有一项为全部地区。
-                     * 
-                     */
-                    std::vector<std::string> GetArea() const;
-
-                    /**
-                     * 设置当源站配置类型ConfigurationType=area时，表示区域，为空表示全部地区。取值为iso-3166中alpha-2编码或者大洲区域代码。大洲区域代码取值为：
-<li>Asia：亚洲；</li>
-<li>Europe：欧洲；</li>
-<li>Africa：非洲；</li>
-<li>Oceania：大洋洲；</li>
-<li>Americas：美洲。</li>源站组记录中，至少需要有一项为全部地区。
-                     * @param _area 当源站配置类型ConfigurationType=area时，表示区域，为空表示全部地区。取值为iso-3166中alpha-2编码或者大洲区域代码。大洲区域代码取值为：
-<li>Asia：亚洲；</li>
-<li>Europe：欧洲；</li>
-<li>Africa：非洲；</li>
-<li>Oceania：大洋洲；</li>
-<li>Americas：美洲。</li>源站组记录中，至少需要有一项为全部地区。
-                     * 
-                     */
-                    void SetArea(const std::vector<std::string>& _area);
-
-                    /**
-                     * 判断参数 Area 是否已赋值
-                     * @return Area 是否已赋值
-                     * 
-                     */
-                    bool AreaHasBeenSet() const;
-
-                    /**
-                     * 获取当源站类型OriginType=third_part时有效
-是否私有鉴权，取值有：
+                     * 获取是否私有鉴权，当源站类型 RecordType=COS/AWS_S3 时生效，取值有：
 <li>true：使用私有鉴权；</li>
 <li>false：不使用私有鉴权。</li>不填写，默认值为：false。
-                     * @return Private 当源站类型OriginType=third_part时有效
-是否私有鉴权，取值有：
+
+                     * @return Private 是否私有鉴权，当源站类型 RecordType=COS/AWS_S3 时生效，取值有：
 <li>true：使用私有鉴权；</li>
 <li>false：不使用私有鉴权。</li>不填写，默认值为：false。
+
                      * 
                      */
                     bool GetPrivate() const;
 
                     /**
-                     * 设置当源站类型OriginType=third_part时有效
-是否私有鉴权，取值有：
+                     * 设置是否私有鉴权，当源站类型 RecordType=COS/AWS_S3 时生效，取值有：
 <li>true：使用私有鉴权；</li>
 <li>false：不使用私有鉴权。</li>不填写，默认值为：false。
-                     * @param _private 当源站类型OriginType=third_part时有效
-是否私有鉴权，取值有：
+
+                     * @param _private 是否私有鉴权，当源站类型 RecordType=COS/AWS_S3 时生效，取值有：
 <li>true：使用私有鉴权；</li>
 <li>false：不使用私有鉴权。</li>不填写，默认值为：false。
+
                      * 
                      */
                     void SetPrivate(const bool& _private);
@@ -255,15 +181,15 @@ namespace TencentCloud
                     bool PrivateHasBeenSet() const;
 
                     /**
-                     * 获取当源站类型Private=true时有效，表示私有鉴权使用参数。
-                     * @return PrivateParameters 当源站类型Private=true时有效，表示私有鉴权使用参数。
+                     * 获取私有鉴权参数，当源站类型Private=true时有效。
+                     * @return PrivateParameters 私有鉴权参数，当源站类型Private=true时有效。
                      * 
                      */
                     std::vector<PrivateParameter> GetPrivateParameters() const;
 
                     /**
-                     * 设置当源站类型Private=true时有效，表示私有鉴权使用参数。
-                     * @param _privateParameters 当源站类型Private=true时有效，表示私有鉴权使用参数。
+                     * 设置私有鉴权参数，当源站类型Private=true时有效。
+                     * @param _privateParameters 私有鉴权参数，当源站类型Private=true时有效。
                      * 
                      */
                     void SetPrivateParameters(const std::vector<PrivateParameter>& _privateParameters);
@@ -284,58 +210,38 @@ namespace TencentCloud
                     bool m_recordHasBeenSet;
 
                     /**
+                     * 源站类型，取值有：
+<li>IP_DOMAIN：IPV4、IPV6、域名类型源站；</li>
+<li>COS：COS源。</li>
+<li>AWS_S3：AWS S3对象存储源站。</li>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
                      * 源站记录ID。
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 源站端口，取值范围：[1-65535]。
-                     */
-                    uint64_t m_port;
-                    bool m_portHasBeenSet;
-
-                    /**
-                     * 当源站配置类型ConfigurationType=weight时，表示权重。
-不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。
-配置权重信息时，取值为[1-100]，多个源站权重总和应为100，表示多个源站按照权重回源。
-当源站配置类型ConfigurationType=proto时，表示权重。
-不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。
-配置权重信息时，取值为[1-100]，源站组内Proto相同的多个源站权重总和应为100，表示多个源站按照权重回源。
+                     * 源站权重，取值为0-100, 不填表示不设置权重，由系统自由调度，填0表示权重为0, 流量将不会调度到此源站。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 当源站配置类型ConfigurationType=proto时，表示源站的协议类型，将按照客户端请求协议回到相应的源站，取值有：
-<li>http：HTTP协议源站；</li>
-<li>https：HTTPS协议源站。</li>
-                     */
-                    std::string m_proto;
-                    bool m_protoHasBeenSet;
-
-                    /**
-                     * 当源站配置类型ConfigurationType=area时，表示区域，为空表示全部地区。取值为iso-3166中alpha-2编码或者大洲区域代码。大洲区域代码取值为：
-<li>Asia：亚洲；</li>
-<li>Europe：欧洲；</li>
-<li>Africa：非洲；</li>
-<li>Oceania：大洋洲；</li>
-<li>Americas：美洲。</li>源站组记录中，至少需要有一项为全部地区。
-                     */
-                    std::vector<std::string> m_area;
-                    bool m_areaHasBeenSet;
-
-                    /**
-                     * 当源站类型OriginType=third_part时有效
-是否私有鉴权，取值有：
+                     * 是否私有鉴权，当源站类型 RecordType=COS/AWS_S3 时生效，取值有：
 <li>true：使用私有鉴权；</li>
 <li>false：不使用私有鉴权。</li>不填写，默认值为：false。
+
                      */
                     bool m_private;
                     bool m_privateHasBeenSet;
 
                     /**
-                     * 当源站类型Private=true时有效，表示私有鉴权使用参数。
+                     * 私有鉴权参数，当源站类型Private=true时有效。
                      */
                     std::vector<PrivateParameter> m_privateParameters;
                     bool m_privateParametersHasBeenSet;

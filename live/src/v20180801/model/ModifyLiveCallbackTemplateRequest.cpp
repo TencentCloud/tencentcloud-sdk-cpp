@@ -29,6 +29,7 @@ ModifyLiveCallbackTemplateRequest::ModifyLiveCallbackTemplateRequest() :
     m_streamBeginNotifyUrlHasBeenSet(false),
     m_streamEndNotifyUrlHasBeenSet(false),
     m_recordNotifyUrlHasBeenSet(false),
+    m_recordStatusNotifyUrlHasBeenSet(false),
     m_snapshotNotifyUrlHasBeenSet(false),
     m_pornCensorshipNotifyUrlHasBeenSet(false),
     m_callbackKeyHasBeenSet(false),
@@ -90,6 +91,14 @@ string ModifyLiveCallbackTemplateRequest::ToJsonString() const
         string key = "RecordNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recordNotifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordStatusNotifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordStatusNotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordStatusNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_snapshotNotifyUrlHasBeenSet)
@@ -234,6 +243,22 @@ void ModifyLiveCallbackTemplateRequest::SetRecordNotifyUrl(const string& _record
 bool ModifyLiveCallbackTemplateRequest::RecordNotifyUrlHasBeenSet() const
 {
     return m_recordNotifyUrlHasBeenSet;
+}
+
+string ModifyLiveCallbackTemplateRequest::GetRecordStatusNotifyUrl() const
+{
+    return m_recordStatusNotifyUrl;
+}
+
+void ModifyLiveCallbackTemplateRequest::SetRecordStatusNotifyUrl(const string& _recordStatusNotifyUrl)
+{
+    m_recordStatusNotifyUrl = _recordStatusNotifyUrl;
+    m_recordStatusNotifyUrlHasBeenSet = true;
+}
+
+bool ModifyLiveCallbackTemplateRequest::RecordStatusNotifyUrlHasBeenSet() const
+{
+    return m_recordStatusNotifyUrlHasBeenSet;
 }
 
 string ModifyLiveCallbackTemplateRequest::GetSnapshotNotifyUrl() const

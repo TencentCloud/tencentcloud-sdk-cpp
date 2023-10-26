@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool StreamEndNotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取录制回调 URL。
-                     * @return RecordNotifyUrl 录制回调 URL。
+                     * 获取录制文件回调 URL。
+                     * @return RecordNotifyUrl 录制文件回调 URL。
                      * 
                      */
                     std::string GetRecordNotifyUrl() const;
 
                     /**
-                     * 设置录制回调 URL。
-                     * @param _recordNotifyUrl 录制回调 URL。
+                     * 设置录制文件回调 URL。
+                     * @param _recordNotifyUrl 录制文件回调 URL。
                      * 
                      */
                     void SetRecordNotifyUrl(const std::string& _recordNotifyUrl);
@@ -345,7 +345,7 @@ namespace TencentCloud
                     bool m_streamEndNotifyUrlHasBeenSet;
 
                     /**
-                     * 录制回调 URL。
+                     * 录制文件回调 URL。
                      */
                     std::string m_recordNotifyUrl;
                     bool m_recordNotifyUrlHasBeenSet;

@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-DescribeLicenseWhiteConfigResponse::DescribeLicenseWhiteConfigResponse()
+DescribeLicenseWhiteConfigResponse::DescribeLicenseWhiteConfigResponse() :
+    m_flagShipHasBeenSet(false),
+    m_professionalHasBeenSet(false),
+    m_prattWhitneyHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,57 @@ CoreInternalOutcome DescribeLicenseWhiteConfigResponse::Deserialize(const string
     }
 
 
+    if (rsp.HasMember("FlagShip") && !rsp["FlagShip"].IsNull())
+    {
+        if (!rsp["FlagShip"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlagShip` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_flagShip.Deserialize(rsp["FlagShip"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_flagShipHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Professional") && !rsp["Professional"].IsNull())
+    {
+        if (!rsp["Professional"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Professional` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_professional.Deserialize(rsp["Professional"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_professionalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PrattWhitney") && !rsp["PrattWhitney"].IsNull())
+    {
+        if (!rsp["PrattWhitney"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrattWhitney` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_prattWhitney.Deserialize(rsp["PrattWhitney"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_prattWhitneyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +124,33 @@ string DescribeLicenseWhiteConfigResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_flagShipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlagShip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flagShip.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_professionalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Professional";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_professional.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_prattWhitneyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrattWhitney";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_prattWhitney.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +163,35 @@ string DescribeLicenseWhiteConfigResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+VersionWhiteConfig DescribeLicenseWhiteConfigResponse::GetFlagShip() const
+{
+    return m_flagShip;
+}
+
+bool DescribeLicenseWhiteConfigResponse::FlagShipHasBeenSet() const
+{
+    return m_flagShipHasBeenSet;
+}
+
+VersionWhiteConfig DescribeLicenseWhiteConfigResponse::GetProfessional() const
+{
+    return m_professional;
+}
+
+bool DescribeLicenseWhiteConfigResponse::ProfessionalHasBeenSet() const
+{
+    return m_professionalHasBeenSet;
+}
+
+VersionWhiteConfig DescribeLicenseWhiteConfigResponse::GetPrattWhitney() const
+{
+    return m_prattWhitney;
+}
+
+bool DescribeLicenseWhiteConfigResponse::PrattWhitneyHasBeenSet() const
+{
+    return m_prattWhitneyHasBeenSet;
+}
 
 

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/OriginRecord.h>
+#include <tencentcloud/teo/v20220901/model/OriginGroupReference.h>
 
 
 namespace TencentCloud
@@ -48,175 +49,138 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID。
-                     * @return ZoneId 站点ID。
-                     * 
-                     */
-                    std::string GetZoneId() const;
-
-                    /**
-                     * 设置站点ID。
-                     * @param _zoneId 站点ID。
-                     * 
-                     */
-                    void SetZoneId(const std::string& _zoneId);
-
-                    /**
-                     * 判断参数 ZoneId 是否已赋值
-                     * @return ZoneId 是否已赋值
-                     * 
-                     */
-                    bool ZoneIdHasBeenSet() const;
-
-                    /**
-                     * 获取站点名称。
-                     * @return ZoneName 站点名称。
-                     * 
-                     */
-                    std::string GetZoneName() const;
-
-                    /**
-                     * 设置站点名称。
-                     * @param _zoneName 站点名称。
-                     * 
-                     */
-                    void SetZoneName(const std::string& _zoneName);
-
-                    /**
-                     * 判断参数 ZoneName 是否已赋值
-                     * @return ZoneName 是否已赋值
-                     * 
-                     */
-                    bool ZoneNameHasBeenSet() const;
-
-                    /**
                      * 获取源站组ID。
-                     * @return OriginGroupId 源站组ID。
+                     * @return GroupId 源站组ID。
                      * 
                      */
-                    std::string GetOriginGroupId() const;
+                    std::string GetGroupId() const;
 
                     /**
                      * 设置源站组ID。
-                     * @param _originGroupId 源站组ID。
+                     * @param _groupId 源站组ID。
                      * 
                      */
-                    void SetOriginGroupId(const std::string& _originGroupId);
+                    void SetGroupId(const std::string& _groupId);
 
                     /**
-                     * 判断参数 OriginGroupId 是否已赋值
-                     * @return OriginGroupId 是否已赋值
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
                      * 
                      */
-                    bool OriginGroupIdHasBeenSet() const;
-
-                    /**
-                     * 获取源站类型，取值有：
-<li>self：自有源站；</li>
-<li>third_party：第三方源站；</li>
-<li>cos：腾讯云COS源站。</li>
-                     * @return OriginType 源站类型，取值有：
-<li>self：自有源站；</li>
-<li>third_party：第三方源站；</li>
-<li>cos：腾讯云COS源站。</li>
-                     * 
-                     */
-                    std::string GetOriginType() const;
-
-                    /**
-                     * 设置源站类型，取值有：
-<li>self：自有源站；</li>
-<li>third_party：第三方源站；</li>
-<li>cos：腾讯云COS源站。</li>
-                     * @param _originType 源站类型，取值有：
-<li>self：自有源站；</li>
-<li>third_party：第三方源站；</li>
-<li>cos：腾讯云COS源站。</li>
-                     * 
-                     */
-                    void SetOriginType(const std::string& _originType);
-
-                    /**
-                     * 判断参数 OriginType 是否已赋值
-                     * @return OriginType 是否已赋值
-                     * 
-                     */
-                    bool OriginTypeHasBeenSet() const;
+                    bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取源站组名称。
-                     * @return OriginGroupName 源站组名称。
+                     * @return Name 源站组名称。
                      * 
                      */
-                    std::string GetOriginGroupName() const;
+                    std::string GetName() const;
 
                     /**
                      * 设置源站组名称。
-                     * @param _originGroupName 源站组名称。
+                     * @param _name 源站组名称。
                      * 
                      */
-                    void SetOriginGroupName(const std::string& _originGroupName);
+                    void SetName(const std::string& _name);
 
                     /**
-                     * 判断参数 OriginGroupName 是否已赋值
-                     * @return OriginGroupName 是否已赋值
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
                      * 
                      */
-                    bool OriginGroupNameHasBeenSet() const;
+                    bool NameHasBeenSet() const;
 
                     /**
-                     * 获取源站配置类型，当OriginType=self时，取值有：
-<li>area：按区域配置；</li>
-<li>weight： 按权重配置。</li>
-<li>proto： 按HTTP协议配置。</li>当OriginType=third_party/cos时放空。
-                     * @return ConfigurationType 源站配置类型，当OriginType=self时，取值有：
-<li>area：按区域配置；</li>
-<li>weight： 按权重配置。</li>
-<li>proto： 按HTTP协议配置。</li>当OriginType=third_party/cos时放空。
+                     * 获取源站组类型，取值有：
+<li>GENERAL：通用型源站组；</li>
+<li>HTTP： HTTP专用型源站组。</li>
+                     * @return Type 源站组类型，取值有：
+<li>GENERAL：通用型源站组；</li>
+<li>HTTP： HTTP专用型源站组。</li>
                      * 
                      */
-                    std::string GetConfigurationType() const;
+                    std::string GetType() const;
 
                     /**
-                     * 设置源站配置类型，当OriginType=self时，取值有：
-<li>area：按区域配置；</li>
-<li>weight： 按权重配置。</li>
-<li>proto： 按HTTP协议配置。</li>当OriginType=third_party/cos时放空。
-                     * @param _configurationType 源站配置类型，当OriginType=self时，取值有：
-<li>area：按区域配置；</li>
-<li>weight： 按权重配置。</li>
-<li>proto： 按HTTP协议配置。</li>当OriginType=third_party/cos时放空。
+                     * 设置源站组类型，取值有：
+<li>GENERAL：通用型源站组；</li>
+<li>HTTP： HTTP专用型源站组。</li>
+                     * @param _type 源站组类型，取值有：
+<li>GENERAL：通用型源站组；</li>
+<li>HTTP： HTTP专用型源站组。</li>
                      * 
                      */
-                    void SetConfigurationType(const std::string& _configurationType);
+                    void SetType(const std::string& _type);
 
                     /**
-                     * 判断参数 ConfigurationType 是否已赋值
-                     * @return ConfigurationType 是否已赋值
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
                      * 
                      */
-                    bool ConfigurationTypeHasBeenSet() const;
+                    bool TypeHasBeenSet() const;
 
                     /**
                      * 获取源站记录信息。
-                     * @return OriginRecords 源站记录信息。
+                     * @return Records 源站记录信息。
                      * 
                      */
-                    std::vector<OriginRecord> GetOriginRecords() const;
+                    std::vector<OriginRecord> GetRecords() const;
 
                     /**
                      * 设置源站记录信息。
-                     * @param _originRecords 源站记录信息。
+                     * @param _records 源站记录信息。
                      * 
                      */
-                    void SetOriginRecords(const std::vector<OriginRecord>& _originRecords);
+                    void SetRecords(const std::vector<OriginRecord>& _records);
 
                     /**
-                     * 判断参数 OriginRecords 是否已赋值
-                     * @return OriginRecords 是否已赋值
+                     * 判断参数 Records 是否已赋值
+                     * @return Records 是否已赋值
                      * 
                      */
-                    bool OriginRecordsHasBeenSet() const;
+                    bool RecordsHasBeenSet() const;
+
+                    /**
+                     * 获取源站组被引用实例列表。	
+                     * @return References 源站组被引用实例列表。	
+                     * 
+                     */
+                    std::vector<OriginGroupReference> GetReferences() const;
+
+                    /**
+                     * 设置源站组被引用实例列表。	
+                     * @param _references 源站组被引用实例列表。	
+                     * 
+                     */
+                    void SetReferences(const std::vector<OriginGroupReference>& _references);
+
+                    /**
+                     * 判断参数 References 是否已赋值
+                     * @return References 是否已赋值
+                     * 
+                     */
+                    bool ReferencesHasBeenSet() const;
+
+                    /**
+                     * 获取源站组创建时间。
+                     * @return CreateTime 源站组创建时间。
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置源站组创建时间。
+                     * @param _createTime 源站组创建时间。
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取源站组更新时间。
@@ -239,93 +203,51 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
-                    /**
-                     * 获取当OriginType=self时，表示回源Host。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HostHeader 当OriginType=self时，表示回源Host。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetHostHeader() const;
-
-                    /**
-                     * 设置当OriginType=self时，表示回源Host。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hostHeader 当OriginType=self时，表示回源Host。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetHostHeader(const std::string& _hostHeader);
-
-                    /**
-                     * 判断参数 HostHeader 是否已赋值
-                     * @return HostHeader 是否已赋值
-                     * 
-                     */
-                    bool HostHeaderHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 站点ID。
-                     */
-                    std::string m_zoneId;
-                    bool m_zoneIdHasBeenSet;
-
-                    /**
-                     * 站点名称。
-                     */
-                    std::string m_zoneName;
-                    bool m_zoneNameHasBeenSet;
 
                     /**
                      * 源站组ID。
                      */
-                    std::string m_originGroupId;
-                    bool m_originGroupIdHasBeenSet;
-
-                    /**
-                     * 源站类型，取值有：
-<li>self：自有源站；</li>
-<li>third_party：第三方源站；</li>
-<li>cos：腾讯云COS源站。</li>
-                     */
-                    std::string m_originType;
-                    bool m_originTypeHasBeenSet;
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                     /**
                      * 源站组名称。
                      */
-                    std::string m_originGroupName;
-                    bool m_originGroupNameHasBeenSet;
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                     /**
-                     * 源站配置类型，当OriginType=self时，取值有：
-<li>area：按区域配置；</li>
-<li>weight： 按权重配置。</li>
-<li>proto： 按HTTP协议配置。</li>当OriginType=third_party/cos时放空。
+                     * 源站组类型，取值有：
+<li>GENERAL：通用型源站组；</li>
+<li>HTTP： HTTP专用型源站组。</li>
                      */
-                    std::string m_configurationType;
-                    bool m_configurationTypeHasBeenSet;
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                     /**
                      * 源站记录信息。
                      */
-                    std::vector<OriginRecord> m_originRecords;
-                    bool m_originRecordsHasBeenSet;
+                    std::vector<OriginRecord> m_records;
+                    bool m_recordsHasBeenSet;
+
+                    /**
+                     * 源站组被引用实例列表。	
+                     */
+                    std::vector<OriginGroupReference> m_references;
+                    bool m_referencesHasBeenSet;
+
+                    /**
+                     * 源站组创建时间。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                     /**
                      * 源站组更新时间。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
-
-                    /**
-                     * 当OriginType=self时，表示回源Host。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_hostHeader;
-                    bool m_hostHeaderHasBeenSet;
 
                 };
             }

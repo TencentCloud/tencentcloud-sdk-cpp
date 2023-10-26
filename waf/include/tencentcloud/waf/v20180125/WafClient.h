@@ -225,6 +225,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyDomainWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyDomainsCLSStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyDomainsCLSStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyGenerateDealsRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyGenerateDealsResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyHostRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyHostFlowModeRequest.h>
@@ -598,6 +600,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDomainsCLSStatusResponse> ModifyDomainsCLSStatusOutcome;
                 typedef std::future<ModifyDomainsCLSStatusOutcome> ModifyDomainsCLSStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyDomainsCLSStatusRequest&, ModifyDomainsCLSStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainsCLSStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGenerateDealsResponse> ModifyGenerateDealsOutcome;
+                typedef std::future<ModifyGenerateDealsOutcome> ModifyGenerateDealsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyGenerateDealsRequest&, ModifyGenerateDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGenerateDealsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyHostResponse> ModifyHostOutcome;
                 typedef std::future<ModifyHostOutcome> ModifyHostOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyHostRequest&, ModifyHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHostAsyncHandler;
@@ -1601,6 +1606,15 @@ namespace TencentCloud
                 ModifyDomainsCLSStatusOutcome ModifyDomainsCLSStatus(const Model::ModifyDomainsCLSStatusRequest &request);
                 void ModifyDomainsCLSStatusAsync(const Model::ModifyDomainsCLSStatusRequest& request, const ModifyDomainsCLSStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainsCLSStatusOutcomeCallable ModifyDomainsCLSStatusCallable(const Model::ModifyDomainsCLSStatusRequest& request);
+
+                /**
+                 *提供给clb等使用的waf实例下单接口，目前只支持clb旗舰版实例的下单，该接口会进行入参校验，然后调用是否为收购用户，然后调用计费接口下单。目前只支持预付费下单，计费侧接口：https://tcb.woa.com/magical-brush/docs/754661947
+                 * @param req ModifyGenerateDealsRequest
+                 * @return ModifyGenerateDealsOutcome
+                 */
+                ModifyGenerateDealsOutcome ModifyGenerateDeals(const Model::ModifyGenerateDealsRequest &request);
+                void ModifyGenerateDealsAsync(const Model::ModifyGenerateDealsRequest& request, const ModifyGenerateDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGenerateDealsOutcomeCallable ModifyGenerateDealsCallable(const Model::ModifyGenerateDealsRequest& request);
 
                 /**
                  *clb-waf编辑防护域名配置

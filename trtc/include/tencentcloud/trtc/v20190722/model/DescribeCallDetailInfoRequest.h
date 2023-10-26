@@ -90,18 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 获取查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
-注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
+注意：查询起止时间需小于1小时，超过则返回null，即与StartTime间隔时间不超过1小时。
                      * @return EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
-注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
+注意：查询起止时间需小于1小时，超过则返回null，即与StartTime间隔时间不超过1小时。
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
-注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
+注意：查询起止时间需小于1小时，超过则返回null，即与StartTime间隔时间不超过1小时。
                      * @param _endTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
-注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
+注意：查询起止时间需小于1小时，超过则返回null，即与StartTime间隔时间不超过1小时。
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -303,7 +303,7 @@ DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
 
                     /**
                      * 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
-注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
+注意：查询起止时间需小于1小时，超过则返回null，即与StartTime间隔时间不超过1小时。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

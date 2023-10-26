@@ -36,7 +36,10 @@ ModifyAlarmRequest::ModifyAlarmRequest() :
     m_statusHasBeenSet(false),
     m_messageTemplateHasBeenSet(false),
     m_callBackHasBeenSet(false),
-    m_analysisHasBeenSet(false)
+    m_analysisHasBeenSet(false),
+    m_groupTriggerStatusHasBeenSet(false),
+    m_groupTriggerConditionHasBeenSet(false),
+    m_monitorObjectTypeHasBeenSet(false)
 {
 }
 
@@ -185,6 +188,35 @@ string ModifyAlarmRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_groupTriggerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupTriggerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_groupTriggerStatus, allocator);
+    }
+
+    if (m_groupTriggerConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupTriggerCondition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupTriggerCondition.begin(); itr != m_groupTriggerCondition.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_monitorObjectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorObjectType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_monitorObjectType, allocator);
     }
 
 
@@ -417,6 +449,54 @@ void ModifyAlarmRequest::SetAnalysis(const vector<AnalysisDimensional>& _analysi
 bool ModifyAlarmRequest::AnalysisHasBeenSet() const
 {
     return m_analysisHasBeenSet;
+}
+
+bool ModifyAlarmRequest::GetGroupTriggerStatus() const
+{
+    return m_groupTriggerStatus;
+}
+
+void ModifyAlarmRequest::SetGroupTriggerStatus(const bool& _groupTriggerStatus)
+{
+    m_groupTriggerStatus = _groupTriggerStatus;
+    m_groupTriggerStatusHasBeenSet = true;
+}
+
+bool ModifyAlarmRequest::GroupTriggerStatusHasBeenSet() const
+{
+    return m_groupTriggerStatusHasBeenSet;
+}
+
+vector<string> ModifyAlarmRequest::GetGroupTriggerCondition() const
+{
+    return m_groupTriggerCondition;
+}
+
+void ModifyAlarmRequest::SetGroupTriggerCondition(const vector<string>& _groupTriggerCondition)
+{
+    m_groupTriggerCondition = _groupTriggerCondition;
+    m_groupTriggerConditionHasBeenSet = true;
+}
+
+bool ModifyAlarmRequest::GroupTriggerConditionHasBeenSet() const
+{
+    return m_groupTriggerConditionHasBeenSet;
+}
+
+uint64_t ModifyAlarmRequest::GetMonitorObjectType() const
+{
+    return m_monitorObjectType;
+}
+
+void ModifyAlarmRequest::SetMonitorObjectType(const uint64_t& _monitorObjectType)
+{
+    m_monitorObjectType = _monitorObjectType;
+    m_monitorObjectTypeHasBeenSet = true;
+}
+
+bool ModifyAlarmRequest::MonitorObjectTypeHasBeenSet() const
+{
+    return m_monitorObjectTypeHasBeenSet;
 }
 
 

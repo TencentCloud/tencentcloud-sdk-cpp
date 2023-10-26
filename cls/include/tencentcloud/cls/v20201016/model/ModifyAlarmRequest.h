@@ -385,6 +385,77 @@ namespace TencentCloud
                      */
                     bool AnalysisHasBeenSet() const;
 
+                    /**
+                     * 获取分组触发状态。true：开启，false：关闭（默认）
+                     * @return GroupTriggerStatus 分组触发状态。true：开启，false：关闭（默认）
+                     * 
+                     */
+                    bool GetGroupTriggerStatus() const;
+
+                    /**
+                     * 设置分组触发状态。true：开启，false：关闭（默认）
+                     * @param _groupTriggerStatus 分组触发状态。true：开启，false：关闭（默认）
+                     * 
+                     */
+                    void SetGroupTriggerStatus(const bool& _groupTriggerStatus);
+
+                    /**
+                     * 判断参数 GroupTriggerStatus 是否已赋值
+                     * @return GroupTriggerStatus 是否已赋值
+                     * 
+                     */
+                    bool GroupTriggerStatusHasBeenSet() const;
+
+                    /**
+                     * 获取分组触发条件。
+                     * @return GroupTriggerCondition 分组触发条件。
+                     * 
+                     */
+                    std::vector<std::string> GetGroupTriggerCondition() const;
+
+                    /**
+                     * 设置分组触发条件。
+                     * @param _groupTriggerCondition 分组触发条件。
+                     * 
+                     */
+                    void SetGroupTriggerCondition(const std::vector<std::string>& _groupTriggerCondition);
+
+                    /**
+                     * 判断参数 GroupTriggerCondition 是否已赋值
+                     * @return GroupTriggerCondition 是否已赋值
+                     * 
+                     */
+                    bool GroupTriggerConditionHasBeenSet() const;
+
+                    /**
+                     * 获取监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
+<li> 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
+
+                     * @return MonitorObjectType 监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
+<li> 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
+
+                     * 
+                     */
+                    uint64_t GetMonitorObjectType() const;
+
+                    /**
+                     * 设置监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
+<li> 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
+
+                     * @param _monitorObjectType 监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
+<li> 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
+
+                     * 
+                     */
+                    void SetMonitorObjectType(const uint64_t& _monitorObjectType);
+
+                    /**
+                     * 判断参数 MonitorObjectType 是否已赋值
+                     * @return MonitorObjectType 是否已赋值
+                     * 
+                     */
+                    bool MonitorObjectTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -481,6 +552,26 @@ namespace TencentCloud
                      */
                     std::vector<AnalysisDimensional> m_analysis;
                     bool m_analysisHasBeenSet;
+
+                    /**
+                     * 分组触发状态。true：开启，false：关闭（默认）
+                     */
+                    bool m_groupTriggerStatus;
+                    bool m_groupTriggerStatusHasBeenSet;
+
+                    /**
+                     * 分组触发条件。
+                     */
+                    std::vector<std::string> m_groupTriggerCondition;
+                    bool m_groupTriggerConditionHasBeenSet;
+
+                    /**
+                     * 监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
+<li> 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
+
+                     */
+                    uint64_t m_monitorObjectType;
+                    bool m_monitorObjectTypeHasBeenSet;
 
                 };
             }

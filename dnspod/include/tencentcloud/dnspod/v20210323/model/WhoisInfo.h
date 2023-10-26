@@ -297,6 +297,31 @@ namespace TencentCloud
                      */
                     bool UpdatedDateHasBeenSet() const;
 
+                    /**
+                     * 获取dnssec
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Dnssec dnssec
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDnssec() const;
+
+                    /**
+                     * 设置dnssec
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dnssec dnssec
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDnssec(const std::string& _dnssec);
+
+                    /**
+                     * 判断参数 Dnssec 是否已赋值
+                     * @return Dnssec 是否已赋值
+                     * 
+                     */
+                    bool DnssecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +393,13 @@ namespace TencentCloud
                      */
                     std::string m_updatedDate;
                     bool m_updatedDateHasBeenSet;
+
+                    /**
+                     * dnssec
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dnssec;
+                    bool m_dnssecHasBeenSet;
 
                 };
             }

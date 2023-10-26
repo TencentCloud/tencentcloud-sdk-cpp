@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool StreamEndNotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取录制回调 URL。
-                     * @return RecordNotifyUrl 录制回调 URL。
+                     * 获取录制文件回调 URL。
+                     * @return RecordNotifyUrl 录制文件回调 URL。
                      * 
                      */
                     std::string GetRecordNotifyUrl() const;
 
                     /**
-                     * 设置录制回调 URL。
-                     * @param _recordNotifyUrl 录制回调 URL。
+                     * 设置录制文件回调 URL。
+                     * @param _recordNotifyUrl 录制文件回调 URL。
                      * 
                      */
                     void SetRecordNotifyUrl(const std::string& _recordNotifyUrl);
@@ -167,6 +167,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RecordNotifyUrlHasBeenSet() const;
+
+                    /**
+                     * 获取录制状态回调 URL 。
+                     * @return RecordStatusNotifyUrl 录制状态回调 URL 。
+                     * 
+                     */
+                    std::string GetRecordStatusNotifyUrl() const;
+
+                    /**
+                     * 设置录制状态回调 URL 。
+                     * @param _recordStatusNotifyUrl 录制状态回调 URL 。
+                     * 
+                     */
+                    void SetRecordStatusNotifyUrl(const std::string& _recordStatusNotifyUrl);
+
+                    /**
+                     * 判断参数 RecordStatusNotifyUrl 是否已赋值
+                     * @return RecordStatusNotifyUrl 是否已赋值
+                     * 
+                     */
+                    bool RecordStatusNotifyUrlHasBeenSet() const;
 
                     /**
                      * 获取截图回调 URL。
@@ -310,10 +331,16 @@ namespace TencentCloud
                     bool m_streamEndNotifyUrlHasBeenSet;
 
                     /**
-                     * 录制回调 URL。
+                     * 录制文件回调 URL。
                      */
                     std::string m_recordNotifyUrl;
                     bool m_recordNotifyUrlHasBeenSet;
+
+                    /**
+                     * 录制状态回调 URL 。
+                     */
+                    std::string m_recordStatusNotifyUrl;
+                    bool m_recordStatusNotifyUrlHasBeenSet;
 
                     /**
                      * 截图回调 URL。

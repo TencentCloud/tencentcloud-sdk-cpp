@@ -22,11 +22,9 @@ using namespace std;
 
 OriginRecord::OriginRecord() :
     m_recordHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_recordIdHasBeenSet(false),
-    m_portHasBeenSet(false),
     m_weightHasBeenSet(false),
-    m_protoHasBeenSet(false),
-    m_areaHasBeenSet(false),
     m_privateHasBeenSet(false),
     m_privateParametersHasBeenSet(false)
 {
@@ -47,6 +45,16 @@ CoreInternalOutcome OriginRecord::Deserialize(const rapidjson::Value &value)
         m_recordHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginRecord.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
     if (value.HasMember("RecordId") && !value["RecordId"].IsNull())
     {
         if (!value["RecordId"].IsString())
@@ -57,16 +65,6 @@ CoreInternalOutcome OriginRecord::Deserialize(const rapidjson::Value &value)
         m_recordIdHasBeenSet = true;
     }
 
-    if (value.HasMember("Port") && !value["Port"].IsNull())
-    {
-        if (!value["Port"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `OriginRecord.Port` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_port = value["Port"].GetUint64();
-        m_portHasBeenSet = true;
-    }
-
     if (value.HasMember("Weight") && !value["Weight"].IsNull())
     {
         if (!value["Weight"].IsUint64())
@@ -75,29 +73,6 @@ CoreInternalOutcome OriginRecord::Deserialize(const rapidjson::Value &value)
         }
         m_weight = value["Weight"].GetUint64();
         m_weightHasBeenSet = true;
-    }
-
-    if (value.HasMember("Proto") && !value["Proto"].IsNull())
-    {
-        if (!value["Proto"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `OriginRecord.Proto` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_proto = string(value["Proto"].GetString());
-        m_protoHasBeenSet = true;
-    }
-
-    if (value.HasMember("Area") && !value["Area"].IsNull())
-    {
-        if (!value["Area"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `OriginRecord.Area` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Area"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_area.push_back((*itr).GetString());
-        }
-        m_areaHasBeenSet = true;
     }
 
     if (value.HasMember("Private") && !value["Private"].IsNull())
@@ -145,6 +120,14 @@ void OriginRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_record.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_recordIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -153,41 +136,12 @@ void OriginRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_portHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Port";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_port, allocator);
-    }
-
     if (m_weightHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weight, allocator);
-    }
-
-    if (m_protoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Proto";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_proto.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_areaHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Area";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_area.begin(); itr != m_area.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
     if (m_privateHasBeenSet)
@@ -232,6 +186,22 @@ bool OriginRecord::RecordHasBeenSet() const
     return m_recordHasBeenSet;
 }
 
+string OriginRecord::GetType() const
+{
+    return m_type;
+}
+
+void OriginRecord::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool OriginRecord::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
 string OriginRecord::GetRecordId() const
 {
     return m_recordId;
@@ -248,22 +218,6 @@ bool OriginRecord::RecordIdHasBeenSet() const
     return m_recordIdHasBeenSet;
 }
 
-uint64_t OriginRecord::GetPort() const
-{
-    return m_port;
-}
-
-void OriginRecord::SetPort(const uint64_t& _port)
-{
-    m_port = _port;
-    m_portHasBeenSet = true;
-}
-
-bool OriginRecord::PortHasBeenSet() const
-{
-    return m_portHasBeenSet;
-}
-
 uint64_t OriginRecord::GetWeight() const
 {
     return m_weight;
@@ -278,38 +232,6 @@ void OriginRecord::SetWeight(const uint64_t& _weight)
 bool OriginRecord::WeightHasBeenSet() const
 {
     return m_weightHasBeenSet;
-}
-
-string OriginRecord::GetProto() const
-{
-    return m_proto;
-}
-
-void OriginRecord::SetProto(const string& _proto)
-{
-    m_proto = _proto;
-    m_protoHasBeenSet = true;
-}
-
-bool OriginRecord::ProtoHasBeenSet() const
-{
-    return m_protoHasBeenSet;
-}
-
-vector<string> OriginRecord::GetArea() const
-{
-    return m_area;
-}
-
-void OriginRecord::SetArea(const vector<string>& _area)
-{
-    m_area = _area;
-    m_areaHasBeenSet = true;
-}
-
-bool OriginRecord::AreaHasBeenSet() const
-{
-    return m_areaHasBeenSet;
 }
 
 bool OriginRecord::GetPrivate() const

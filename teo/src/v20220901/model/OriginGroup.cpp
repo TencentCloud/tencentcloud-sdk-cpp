@@ -21,15 +21,13 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 OriginGroup::OriginGroup() :
-    m_zoneIdHasBeenSet(false),
-    m_zoneNameHasBeenSet(false),
-    m_originGroupIdHasBeenSet(false),
-    m_originTypeHasBeenSet(false),
-    m_originGroupNameHasBeenSet(false),
-    m_configurationTypeHasBeenSet(false),
-    m_originRecordsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_hostHeaderHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_recordsHasBeenSet(false),
+    m_referencesHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -38,72 +36,42 @@ CoreInternalOutcome OriginGroup::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
     {
-        if (!value["ZoneId"].IsString())
+        if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `OriginGroup.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_zoneId = string(value["ZoneId"].GetString());
-        m_zoneIdHasBeenSet = true;
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
     }
 
-    if (value.HasMember("ZoneName") && !value["ZoneName"].IsNull())
+    if (value.HasMember("Name") && !value["Name"].IsNull())
     {
-        if (!value["ZoneName"].IsString())
+        if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `OriginGroup.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginGroup.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_zoneName = string(value["ZoneName"].GetString());
-        m_zoneNameHasBeenSet = true;
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
     }
 
-    if (value.HasMember("OriginGroupId") && !value["OriginGroupId"].IsNull())
+    if (value.HasMember("Type") && !value["Type"].IsNull())
     {
-        if (!value["OriginGroupId"].IsString())
+        if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `OriginGroup.OriginGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginGroup.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_originGroupId = string(value["OriginGroupId"].GetString());
-        m_originGroupIdHasBeenSet = true;
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
     }
 
-    if (value.HasMember("OriginType") && !value["OriginType"].IsNull())
+    if (value.HasMember("Records") && !value["Records"].IsNull())
     {
-        if (!value["OriginType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `OriginGroup.OriginType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_originType = string(value["OriginType"].GetString());
-        m_originTypeHasBeenSet = true;
-    }
+        if (!value["Records"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OriginGroup.Records` is not array type"));
 
-    if (value.HasMember("OriginGroupName") && !value["OriginGroupName"].IsNull())
-    {
-        if (!value["OriginGroupName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `OriginGroup.OriginGroupName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_originGroupName = string(value["OriginGroupName"].GetString());
-        m_originGroupNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("ConfigurationType") && !value["ConfigurationType"].IsNull())
-    {
-        if (!value["ConfigurationType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `OriginGroup.ConfigurationType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_configurationType = string(value["ConfigurationType"].GetString());
-        m_configurationTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("OriginRecords") && !value["OriginRecords"].IsNull())
-    {
-        if (!value["OriginRecords"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `OriginGroup.OriginRecords` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["OriginRecords"];
+        const rapidjson::Value &tmpValue = value["Records"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             OriginRecord item;
@@ -113,9 +81,39 @@ CoreInternalOutcome OriginGroup::Deserialize(const rapidjson::Value &value)
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_originRecords.push_back(item);
+            m_records.push_back(item);
         }
-        m_originRecordsHasBeenSet = true;
+        m_recordsHasBeenSet = true;
+    }
+
+    if (value.HasMember("References") && !value["References"].IsNull())
+    {
+        if (!value["References"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OriginGroup.References` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["References"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OriginGroupReference item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_references.push_back(item);
+        }
+        m_referencesHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
     }
 
     if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
@@ -128,16 +126,6 @@ CoreInternalOutcome OriginGroup::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("HostHeader") && !value["HostHeader"].IsNull())
-    {
-        if (!value["HostHeader"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `OriginGroup.HostHeader` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_hostHeader = string(value["HostHeader"].GetString());
-        m_hostHeaderHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -145,67 +133,66 @@ CoreInternalOutcome OriginGroup::Deserialize(const rapidjson::Value &value)
 void OriginGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_zoneIdHasBeenSet)
+    if (m_groupIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneId";
+        string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_zoneNameHasBeenSet)
+    if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneName";
+        string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_originGroupIdHasBeenSet)
+    if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OriginGroupId";
+        string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_originGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_originTypeHasBeenSet)
+    if (m_recordsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OriginType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_originType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_originGroupNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OriginGroupName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_originGroupName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_configurationTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ConfigurationType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_configurationType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_originRecordsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OriginRecords";
+        string key = "Records";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_originRecords.begin(); itr != m_originRecords.end(); ++itr, ++i)
+        for (auto itr = m_records.begin(); itr != m_records.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_referencesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "References";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_references.begin(); itr != m_references.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
@@ -216,127 +203,103 @@ void OriginGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_hostHeaderHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HostHeader";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_hostHeader.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
 
-string OriginGroup::GetZoneId() const
+string OriginGroup::GetGroupId() const
 {
-    return m_zoneId;
+    return m_groupId;
 }
 
-void OriginGroup::SetZoneId(const string& _zoneId)
+void OriginGroup::SetGroupId(const string& _groupId)
 {
-    m_zoneId = _zoneId;
-    m_zoneIdHasBeenSet = true;
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
 }
 
-bool OriginGroup::ZoneIdHasBeenSet() const
+bool OriginGroup::GroupIdHasBeenSet() const
 {
-    return m_zoneIdHasBeenSet;
+    return m_groupIdHasBeenSet;
 }
 
-string OriginGroup::GetZoneName() const
+string OriginGroup::GetName() const
 {
-    return m_zoneName;
+    return m_name;
 }
 
-void OriginGroup::SetZoneName(const string& _zoneName)
+void OriginGroup::SetName(const string& _name)
 {
-    m_zoneName = _zoneName;
-    m_zoneNameHasBeenSet = true;
+    m_name = _name;
+    m_nameHasBeenSet = true;
 }
 
-bool OriginGroup::ZoneNameHasBeenSet() const
+bool OriginGroup::NameHasBeenSet() const
 {
-    return m_zoneNameHasBeenSet;
+    return m_nameHasBeenSet;
 }
 
-string OriginGroup::GetOriginGroupId() const
+string OriginGroup::GetType() const
 {
-    return m_originGroupId;
+    return m_type;
 }
 
-void OriginGroup::SetOriginGroupId(const string& _originGroupId)
+void OriginGroup::SetType(const string& _type)
 {
-    m_originGroupId = _originGroupId;
-    m_originGroupIdHasBeenSet = true;
+    m_type = _type;
+    m_typeHasBeenSet = true;
 }
 
-bool OriginGroup::OriginGroupIdHasBeenSet() const
+bool OriginGroup::TypeHasBeenSet() const
 {
-    return m_originGroupIdHasBeenSet;
+    return m_typeHasBeenSet;
 }
 
-string OriginGroup::GetOriginType() const
+vector<OriginRecord> OriginGroup::GetRecords() const
 {
-    return m_originType;
+    return m_records;
 }
 
-void OriginGroup::SetOriginType(const string& _originType)
+void OriginGroup::SetRecords(const vector<OriginRecord>& _records)
 {
-    m_originType = _originType;
-    m_originTypeHasBeenSet = true;
+    m_records = _records;
+    m_recordsHasBeenSet = true;
 }
 
-bool OriginGroup::OriginTypeHasBeenSet() const
+bool OriginGroup::RecordsHasBeenSet() const
 {
-    return m_originTypeHasBeenSet;
+    return m_recordsHasBeenSet;
 }
 
-string OriginGroup::GetOriginGroupName() const
+vector<OriginGroupReference> OriginGroup::GetReferences() const
 {
-    return m_originGroupName;
+    return m_references;
 }
 
-void OriginGroup::SetOriginGroupName(const string& _originGroupName)
+void OriginGroup::SetReferences(const vector<OriginGroupReference>& _references)
 {
-    m_originGroupName = _originGroupName;
-    m_originGroupNameHasBeenSet = true;
+    m_references = _references;
+    m_referencesHasBeenSet = true;
 }
 
-bool OriginGroup::OriginGroupNameHasBeenSet() const
+bool OriginGroup::ReferencesHasBeenSet() const
 {
-    return m_originGroupNameHasBeenSet;
+    return m_referencesHasBeenSet;
 }
 
-string OriginGroup::GetConfigurationType() const
+string OriginGroup::GetCreateTime() const
 {
-    return m_configurationType;
+    return m_createTime;
 }
 
-void OriginGroup::SetConfigurationType(const string& _configurationType)
+void OriginGroup::SetCreateTime(const string& _createTime)
 {
-    m_configurationType = _configurationType;
-    m_configurationTypeHasBeenSet = true;
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
 }
 
-bool OriginGroup::ConfigurationTypeHasBeenSet() const
+bool OriginGroup::CreateTimeHasBeenSet() const
 {
-    return m_configurationTypeHasBeenSet;
-}
-
-vector<OriginRecord> OriginGroup::GetOriginRecords() const
-{
-    return m_originRecords;
-}
-
-void OriginGroup::SetOriginRecords(const vector<OriginRecord>& _originRecords)
-{
-    m_originRecords = _originRecords;
-    m_originRecordsHasBeenSet = true;
-}
-
-bool OriginGroup::OriginRecordsHasBeenSet() const
-{
-    return m_originRecordsHasBeenSet;
+    return m_createTimeHasBeenSet;
 }
 
 string OriginGroup::GetUpdateTime() const
@@ -353,21 +316,5 @@ void OriginGroup::SetUpdateTime(const string& _updateTime)
 bool OriginGroup::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
-}
-
-string OriginGroup::GetHostHeader() const
-{
-    return m_hostHeader;
-}
-
-void OriginGroup::SetHostHeader(const string& _hostHeader)
-{
-    m_hostHeader = _hostHeader;
-    m_hostHeaderHasBeenSet = true;
-}
-
-bool OriginGroup::HostHeaderHasBeenSet() const
-{
-    return m_hostHeaderHasBeenSet;
 }
 

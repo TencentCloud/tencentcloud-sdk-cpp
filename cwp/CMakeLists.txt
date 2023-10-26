@@ -1017,6 +1017,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ExportBaselineWeakPasswordListRequest.h
   include/tencentcloud/cwp/v20180228/model/Filter.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetMachineTagTopRequest.h
+  include/tencentcloud/cwp/v20180228/model/VersionWhiteConfig.h
   include/tencentcloud/cwp/v20180228/model/DescribeAgentInstallationTokenRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulDefencePluginDetailResponse.h
   include/tencentcloud/cwp/v20180228/model/JavaMemShellPluginInfo.h
@@ -2314,6 +2315,7 @@ set(cwp_src
   src/v20180228/model/ExportBaselineWeakPasswordListRequest.cpp
   src/v20180228/model/Filter.cpp
   src/v20180228/model/DescribeAssetMachineTagTopRequest.cpp
+  src/v20180228/model/VersionWhiteConfig.cpp
   src/v20180228/model/DescribeAgentInstallationTokenRequest.cpp
   src/v20180228/model/DescribeVulDefencePluginDetailResponse.cpp
   src/v20180228/model/JavaMemShellPluginInfo.cpp

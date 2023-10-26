@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音画质检测模板号。
-                     * @return Definition 音画质检测模板号。
+                     * 获取音画质检测模板 ID。
+                     * @return Definition 音画质检测模板 ID。
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置音画质检测模板号。
-                     * @param _definition 音画质检测模板号。
+                     * 设置音画质检测模板 ID。
+                     * @param _definition 音画质检测模板 ID。
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音画质检测模板号。
+                     * 音画质检测模板 ID。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

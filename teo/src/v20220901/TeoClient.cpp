@@ -298,6 +298,49 @@ TeoClient::CreateApplicationProxyRuleOutcomeCallable TeoClient::CreateApplicatio
     return task->get_future();
 }
 
+TeoClient::CreateOriginGroupOutcome TeoClient::CreateOriginGroup(const CreateOriginGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOriginGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOriginGroupResponse rsp = CreateOriginGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOriginGroupOutcome(rsp);
+        else
+            return CreateOriginGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOriginGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateOriginGroupAsync(const CreateOriginGroupRequest& request, const CreateOriginGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOriginGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateOriginGroupOutcomeCallable TeoClient::CreateOriginGroupCallable(const CreateOriginGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOriginGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOriginGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreatePlanForZoneOutcome TeoClient::CreatePlanForZone(const CreatePlanForZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePlanForZone");
@@ -764,6 +807,49 @@ TeoClient::DeleteApplicationProxyRuleOutcomeCallable TeoClient::DeleteApplicatio
         [this, request]()
         {
             return this->DeleteApplicationProxyRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteOriginGroupOutcome TeoClient::DeleteOriginGroup(const DeleteOriginGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOriginGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOriginGroupResponse rsp = DeleteOriginGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOriginGroupOutcome(rsp);
+        else
+            return DeleteOriginGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOriginGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteOriginGroupAsync(const DeleteOriginGroupRequest& request, const DeleteOriginGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOriginGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteOriginGroupOutcomeCallable TeoClient::DeleteOriginGroupCallable(const DeleteOriginGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOriginGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOriginGroup(request);
         }
     );
 
@@ -2484,6 +2570,49 @@ TeoClient::ModifyHostsCertificateOutcomeCallable TeoClient::ModifyHostsCertifica
         [this, request]()
         {
             return this->ModifyHostsCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyOriginGroupOutcome TeoClient::ModifyOriginGroup(const ModifyOriginGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOriginGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOriginGroupResponse rsp = ModifyOriginGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOriginGroupOutcome(rsp);
+        else
+            return ModifyOriginGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOriginGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyOriginGroupAsync(const ModifyOriginGroupRequest& request, const ModifyOriginGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOriginGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyOriginGroupOutcomeCallable TeoClient::ModifyOriginGroupCallable(const ModifyOriginGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOriginGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOriginGroup(request);
         }
     );
 

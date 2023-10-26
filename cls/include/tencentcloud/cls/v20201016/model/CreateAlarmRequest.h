@@ -26,6 +26,7 @@
 #include <tencentcloud/cls/v20201016/model/MultiCondition.h>
 #include <tencentcloud/cls/v20201016/model/CallBackInfo.h>
 #include <tencentcloud/cls/v20201016/model/AnalysisDimensional.h>
+#include <tencentcloud/cls/v20201016/model/Tag.h>
 
 
 namespace TencentCloud
@@ -132,15 +133,31 @@ namespace TencentCloud
                     bool TriggerCountHasBeenSet() const;
 
                     /**
-                     * 获取告警重复的周期。单位是分钟。取值范围是0~1440。
-                     * @return AlarmPeriod 告警重复的周期。单位是分钟。取值范围是0~1440。
+                     * 获取告警重复的周期。
+
+单位是分钟。
+
+取值范围是0~1440。
+                     * @return AlarmPeriod 告警重复的周期。
+
+单位是分钟。
+
+取值范围是0~1440。
                      * 
                      */
                     int64_t GetAlarmPeriod() const;
 
                     /**
-                     * 设置告警重复的周期。单位是分钟。取值范围是0~1440。
-                     * @param _alarmPeriod 告警重复的周期。单位是分钟。取值范围是0~1440。
+                     * 设置告警重复的周期。
+
+单位是分钟。
+
+取值范围是0~1440。
+                     * @param _alarmPeriod 告警重复的周期。
+
+单位是分钟。
+
+取值范围是0~1440。
                      * 
                      */
                     void SetAlarmPeriod(const int64_t& _alarmPeriod);
@@ -215,17 +232,62 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
+                     * 获取告警级别。
+
+0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
+
+注意:  
+- 不填则默认为0。
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * @return AlarmLevel 告警级别。
+
+0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
+
+注意:  
+- 不填则默认为0。
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * 
+                     */
+                    uint64_t GetAlarmLevel() const;
+
+                    /**
+                     * 设置告警级别。
+
+0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
+
+注意:  
+- 不填则默认为0。
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * @param _alarmLevel 告警级别。
+
+0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
+
+注意:  
+- 不填则默认为0。
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     * 
+                     */
+                    void SetAlarmLevel(const uint64_t& _alarmLevel);
+
+                    /**
+                     * 判断参数 AlarmLevel 是否已赋值
+                     * @return AlarmLevel 是否已赋值
+                     * 
+                     */
+                    bool AlarmLevelHasBeenSet() const;
+
+                    /**
                      * 获取多触发条件。
 
  注意:  
-- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
 
 
                      * @return MultiConditions 多触发条件。
 
  注意:  
-- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
 
 
@@ -237,14 +299,14 @@ namespace TencentCloud
                      * 设置多触发条件。
 
  注意:  
-- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
 
 
                      * @param _multiConditions 多触发条件。
 
  注意:  
-- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
 
 
@@ -260,15 +322,23 @@ namespace TencentCloud
                     bool MultiConditionsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启告警策略。默认值为true
-                     * @return Status 是否开启告警策略。默认值为true
+                     * 获取是否开启告警策略。
+
+默认值为true
+                     * @return Status 是否开启告警策略。
+
+默认值为true
                      * 
                      */
                     bool GetStatus() const;
 
                     /**
-                     * 设置是否开启告警策略。默认值为true
-                     * @param _status 是否开启告警策略。默认值为true
+                     * 设置是否开启告警策略。
+
+默认值为true
+                     * @param _status 是否开启告警策略。
+
+默认值为true
                      * 
                      */
                     void SetStatus(const bool& _status);
@@ -343,6 +413,126 @@ namespace TencentCloud
                      */
                     bool AnalysisHasBeenSet() const;
 
+                    /**
+                     * 获取分组触发状态。
+
+默认值false
+                     * @return GroupTriggerStatus 分组触发状态。
+
+默认值false
+                     * 
+                     */
+                    bool GetGroupTriggerStatus() const;
+
+                    /**
+                     * 设置分组触发状态。
+
+默认值false
+                     * @param _groupTriggerStatus 分组触发状态。
+
+默认值false
+                     * 
+                     */
+                    void SetGroupTriggerStatus(const bool& _groupTriggerStatus);
+
+                    /**
+                     * 判断参数 GroupTriggerStatus 是否已赋值
+                     * @return GroupTriggerStatus 是否已赋值
+                     * 
+                     */
+                    bool GroupTriggerStatusHasBeenSet() const;
+
+                    /**
+                     * 获取分组触发条件。
+                     * @return GroupTriggerCondition 分组触发条件。
+                     * 
+                     */
+                    std::vector<std::string> GetGroupTriggerCondition() const;
+
+                    /**
+                     * 设置分组触发条件。
+                     * @param _groupTriggerCondition 分组触发条件。
+                     * 
+                     */
+                    void SetGroupTriggerCondition(const std::vector<std::string>& _groupTriggerCondition);
+
+                    /**
+                     * 判断参数 GroupTriggerCondition 是否已赋值
+                     * @return GroupTriggerCondition 是否已赋值
+                     * 
+                     */
+                    bool GroupTriggerConditionHasBeenSet() const;
+
+                    /**
+                     * 获取标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。
+
+最大支持10个标签键值对，并且不能有重复的键值对。
+                     * @return Tags 标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。
+
+最大支持10个标签键值对，并且不能有重复的键值对。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。
+
+最大支持10个标签键值对，并且不能有重复的键值对。
+                     * @param _tags 标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。
+
+最大支持10个标签键值对，并且不能有重复的键值对。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
+
+不填则默认为0。
+
+当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
+
+                     * @return MonitorObjectType 监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
+
+不填则默认为0。
+
+当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
+
+                     * 
+                     */
+                    uint64_t GetMonitorObjectType() const;
+
+                    /**
+                     * 设置监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
+
+不填则默认为0。
+
+当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
+
+                     * @param _monitorObjectType 监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
+
+不填则默认为0。
+
+当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
+
+                     * 
+                     */
+                    void SetMonitorObjectType(const uint64_t& _monitorObjectType);
+
+                    /**
+                     * 判断参数 MonitorObjectType 是否已赋值
+                     * @return MonitorObjectType 是否已赋值
+                     * 
+                     */
+                    bool MonitorObjectTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -370,7 +560,11 @@ namespace TencentCloud
                     bool m_triggerCountHasBeenSet;
 
                     /**
-                     * 告警重复的周期。单位是分钟。取值范围是0~1440。
+                     * 告警重复的周期。
+
+单位是分钟。
+
+取值范围是0~1440。
                      */
                     int64_t m_alarmPeriod;
                     bool m_alarmPeriodHasBeenSet;
@@ -393,10 +587,22 @@ namespace TencentCloud
                     bool m_conditionHasBeenSet;
 
                     /**
+                     * 告警级别。
+
+0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
+
+注意:  
+- 不填则默认为0。
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
+                     */
+                    uint64_t m_alarmLevel;
+                    bool m_alarmLevelHasBeenSet;
+
+                    /**
                      * 多触发条件。
 
  注意:  
-- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>
+- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
 
 
@@ -405,7 +611,9 @@ namespace TencentCloud
                     bool m_multiConditionsHasBeenSet;
 
                     /**
-                     * 是否开启告警策略。默认值为true
+                     * 是否开启告警策略。
+
+默认值为true
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
@@ -427,6 +635,39 @@ namespace TencentCloud
                      */
                     std::vector<AnalysisDimensional> m_analysis;
                     bool m_analysisHasBeenSet;
+
+                    /**
+                     * 分组触发状态。
+
+默认值false
+                     */
+                    bool m_groupTriggerStatus;
+                    bool m_groupTriggerStatusHasBeenSet;
+
+                    /**
+                     * 分组触发条件。
+                     */
+                    std::vector<std::string> m_groupTriggerCondition;
+                    bool m_groupTriggerConditionHasBeenSet;
+
+                    /**
+                     * 标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。
+
+最大支持10个标签键值对，并且不能有重复的键值对。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
+
+不填则默认为0。
+
+当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
+
+                     */
+                    uint64_t m_monitorObjectType;
+                    bool m_monitorObjectTypeHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/VersionWhiteConfig.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,67 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取旗舰版 配置信息
+                     * @return FlagShip 旗舰版 配置信息
+                     * 
+                     */
+                    VersionWhiteConfig GetFlagShip() const;
+
+                    /**
+                     * 判断参数 FlagShip 是否已赋值
+                     * @return FlagShip 是否已赋值
+                     * 
+                     */
+                    bool FlagShipHasBeenSet() const;
+
+                    /**
+                     * 获取专业版 配置信息
+                     * @return Professional 专业版 配置信息
+                     * 
+                     */
+                    VersionWhiteConfig GetProfessional() const;
+
+                    /**
+                     * 判断参数 Professional 是否已赋值
+                     * @return Professional 是否已赋值
+                     * 
+                     */
+                    bool ProfessionalHasBeenSet() const;
+
+                    /**
+                     * 获取普惠版 配置信息
+                     * @return PrattWhitney 普惠版 配置信息
+                     * 
+                     */
+                    VersionWhiteConfig GetPrattWhitney() const;
+
+                    /**
+                     * 判断参数 PrattWhitney 是否已赋值
+                     * @return PrattWhitney 是否已赋值
+                     * 
+                     */
+                    bool PrattWhitneyHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 旗舰版 配置信息
+                     */
+                    VersionWhiteConfig m_flagShip;
+                    bool m_flagShipHasBeenSet;
+
+                    /**
+                     * 专业版 配置信息
+                     */
+                    VersionWhiteConfig m_professional;
+                    bool m_professionalHasBeenSet;
+
+                    /**
+                     * 普惠版 配置信息
+                     */
+                    VersionWhiteConfig m_prattWhitney;
+                    bool m_prattWhitneyHasBeenSet;
 
                 };
             }

@@ -30,11 +30,16 @@ CreateAlarmRequest::CreateAlarmRequest() :
     m_alarmPeriodHasBeenSet(false),
     m_alarmNoticeIdsHasBeenSet(false),
     m_conditionHasBeenSet(false),
+    m_alarmLevelHasBeenSet(false),
     m_multiConditionsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageTemplateHasBeenSet(false),
     m_callBackHasBeenSet(false),
-    m_analysisHasBeenSet(false)
+    m_analysisHasBeenSet(false),
+    m_groupTriggerStatusHasBeenSet(false),
+    m_groupTriggerConditionHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_monitorObjectTypeHasBeenSet(false)
 {
 }
 
@@ -114,6 +119,14 @@ string CreateAlarmRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_condition.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_alarmLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alarmLevel, allocator);
+    }
+
     if (m_multiConditionsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -167,6 +180,50 @@ string CreateAlarmRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_groupTriggerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupTriggerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_groupTriggerStatus, allocator);
+    }
+
+    if (m_groupTriggerConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupTriggerCondition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupTriggerCondition.begin(); itr != m_groupTriggerCondition.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_monitorObjectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorObjectType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_monitorObjectType, allocator);
     }
 
 
@@ -289,6 +346,22 @@ bool CreateAlarmRequest::ConditionHasBeenSet() const
     return m_conditionHasBeenSet;
 }
 
+uint64_t CreateAlarmRequest::GetAlarmLevel() const
+{
+    return m_alarmLevel;
+}
+
+void CreateAlarmRequest::SetAlarmLevel(const uint64_t& _alarmLevel)
+{
+    m_alarmLevel = _alarmLevel;
+    m_alarmLevelHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::AlarmLevelHasBeenSet() const
+{
+    return m_alarmLevelHasBeenSet;
+}
+
 vector<MultiCondition> CreateAlarmRequest::GetMultiConditions() const
 {
     return m_multiConditions;
@@ -367,6 +440,70 @@ void CreateAlarmRequest::SetAnalysis(const vector<AnalysisDimensional>& _analysi
 bool CreateAlarmRequest::AnalysisHasBeenSet() const
 {
     return m_analysisHasBeenSet;
+}
+
+bool CreateAlarmRequest::GetGroupTriggerStatus() const
+{
+    return m_groupTriggerStatus;
+}
+
+void CreateAlarmRequest::SetGroupTriggerStatus(const bool& _groupTriggerStatus)
+{
+    m_groupTriggerStatus = _groupTriggerStatus;
+    m_groupTriggerStatusHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::GroupTriggerStatusHasBeenSet() const
+{
+    return m_groupTriggerStatusHasBeenSet;
+}
+
+vector<string> CreateAlarmRequest::GetGroupTriggerCondition() const
+{
+    return m_groupTriggerCondition;
+}
+
+void CreateAlarmRequest::SetGroupTriggerCondition(const vector<string>& _groupTriggerCondition)
+{
+    m_groupTriggerCondition = _groupTriggerCondition;
+    m_groupTriggerConditionHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::GroupTriggerConditionHasBeenSet() const
+{
+    return m_groupTriggerConditionHasBeenSet;
+}
+
+vector<Tag> CreateAlarmRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateAlarmRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+uint64_t CreateAlarmRequest::GetMonitorObjectType() const
+{
+    return m_monitorObjectType;
+}
+
+void CreateAlarmRequest::SetMonitorObjectType(const uint64_t& _monitorObjectType)
+{
+    m_monitorObjectType = _monitorObjectType;
+    m_monitorObjectTypeHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::MonitorObjectTypeHasBeenSet() const
+{
+    return m_monitorObjectTypeHasBeenSet;
 }
 
 

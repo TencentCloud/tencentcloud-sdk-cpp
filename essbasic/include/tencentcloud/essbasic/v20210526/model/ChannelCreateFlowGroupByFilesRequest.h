@@ -97,7 +97,6 @@ namespace TencentCloud
 <li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
 <li>第三方平台子客企业中的员工标识: Agent.AppId</li>
 </ul>
-
 子客企业和子客企业中的员工比较走完创建和实名过程
                      * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
 
@@ -107,7 +106,6 @@ namespace TencentCloud
 <li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
 <li>第三方平台子客企业中的员工标识: Agent.AppId</li>
 </ul>
-
 子客企业和子客企业中的员工比较走完创建和实名过程
                      * 
                      */
@@ -122,7 +120,6 @@ namespace TencentCloud
 <li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
 <li>第三方平台子客企业中的员工标识: Agent.AppId</li>
 </ul>
-
 子客企业和子客企业中的员工比较走完创建和实名过程
                      * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
 
@@ -132,7 +129,6 @@ namespace TencentCloud
 <li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
 <li>第三方平台子客企业中的员工标识: Agent.AppId</li>
 </ul>
-
 子客企业和子客企业中的员工比较走完创建和实名过程
                      * 
                      */
@@ -251,7 +247,6 @@ namespace TencentCloud
 <li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>
 <li>第三方平台子客企业中的员工标识: Agent.AppId</li>
 </ul>
-
 子客企业和子客企业中的员工比较走完创建和实名过程
                      */
                     Agent m_agent;
