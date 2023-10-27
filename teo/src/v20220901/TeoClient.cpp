@@ -1760,6 +1760,49 @@ TeoClient::DescribeRulesSettingOutcomeCallable TeoClient::DescribeRulesSettingCa
     return task->get_future();
 }
 
+TeoClient::DescribeSecurityTemplateBindingsOutcome TeoClient::DescribeSecurityTemplateBindings(const DescribeSecurityTemplateBindingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityTemplateBindings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityTemplateBindingsResponse rsp = DescribeSecurityTemplateBindingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityTemplateBindingsOutcome(rsp);
+        else
+            return DescribeSecurityTemplateBindingsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityTemplateBindingsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeSecurityTemplateBindingsAsync(const DescribeSecurityTemplateBindingsRequest& request, const DescribeSecurityTemplateBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityTemplateBindings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeSecurityTemplateBindingsOutcomeCallable TeoClient::DescribeSecurityTemplateBindingsCallable(const DescribeSecurityTemplateBindingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityTemplateBindingsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityTemplateBindings(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeTimingL4DataOutcome TeoClient::DescribeTimingL4Data(const DescribeTimingL4DataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTimingL4Data");

@@ -46,7 +46,9 @@ MySQLParam::MySQLParam() :
     m_recordWithSchemaHasBeenSet(false),
     m_signalDatabaseHasBeenSet(false),
     m_isTableRegularHasBeenSet(false),
-    m_signalTableHasBeenSet(false)
+    m_signalTableHasBeenSet(false),
+    m_dateTimeZoneHasBeenSet(false),
+    m_selfBuiltHasBeenSet(false)
 {
 }
 
@@ -332,6 +334,26 @@ CoreInternalOutcome MySQLParam::Deserialize(const rapidjson::Value &value)
         m_signalTableHasBeenSet = true;
     }
 
+    if (value.HasMember("DateTimeZone") && !value["DateTimeZone"].IsNull())
+    {
+        if (!value["DateTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.DateTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dateTimeZone = string(value["DateTimeZone"].GetString());
+        m_dateTimeZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("SelfBuilt") && !value["SelfBuilt"].IsNull())
+    {
+        if (!value["SelfBuilt"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.SelfBuilt` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_selfBuilt = value["SelfBuilt"].GetBool();
+        m_selfBuiltHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +575,22 @@ void MySQLParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SignalTable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_signalTable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dateTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DateTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dateTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_selfBuiltHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfBuilt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_selfBuilt, allocator);
     }
 
 }
@@ -972,5 +1010,37 @@ void MySQLParam::SetSignalTable(const string& _signalTable)
 bool MySQLParam::SignalTableHasBeenSet() const
 {
     return m_signalTableHasBeenSet;
+}
+
+string MySQLParam::GetDateTimeZone() const
+{
+    return m_dateTimeZone;
+}
+
+void MySQLParam::SetDateTimeZone(const string& _dateTimeZone)
+{
+    m_dateTimeZone = _dateTimeZone;
+    m_dateTimeZoneHasBeenSet = true;
+}
+
+bool MySQLParam::DateTimeZoneHasBeenSet() const
+{
+    return m_dateTimeZoneHasBeenSet;
+}
+
+bool MySQLParam::GetSelfBuilt() const
+{
+    return m_selfBuilt;
+}
+
+void MySQLParam::SetSelfBuilt(const bool& _selfBuilt)
+{
+    m_selfBuilt = _selfBuilt;
+    m_selfBuiltHasBeenSet = true;
+}
+
+bool MySQLParam::SelfBuiltHasBeenSet() const
+{
+    return m_selfBuiltHasBeenSet;
 }
 

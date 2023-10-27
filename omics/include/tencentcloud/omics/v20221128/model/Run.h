@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/omics/v20221128/model/RunOption.h>
 #include <tencentcloud/omics/v20221128/model/ExecutionTime.h>
+#include <tencentcloud/omics/v20221128/model/CacheInfo.h>
 
 
 namespace TencentCloud
@@ -313,6 +314,31 @@ namespace TencentCloud
                     bool ExecutionTimeHasBeenSet() const;
 
                     /**
+                     * 获取缓存信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Cache 缓存信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CacheInfo GetCache() const;
+
+                    /**
+                     * 设置缓存信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cache 缓存信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCache(const CacheInfo& _cache);
+
+                    /**
+                     * 判断参数 Cache 是否已赋值
+                     * @return Cache 是否已赋值
+                     * 
+                     */
+                    bool CacheHasBeenSet() const;
+
+                    /**
                      * 获取错误信息。
                      * @return ErrorMessage 错误信息。
                      * 
@@ -451,6 +477,13 @@ namespace TencentCloud
                      */
                     ExecutionTime m_executionTime;
                     bool m_executionTimeHasBeenSet;
+
+                    /**
+                     * 缓存信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CacheInfo m_cache;
+                    bool m_cacheHasBeenSet;
 
                     /**
                      * 错误信息。

@@ -24,8 +24,8 @@ using namespace std;
 
 GetRunCallsRequest::GetRunCallsRequest() :
     m_runUuidHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -44,20 +44,20 @@ string GetRunCallsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_runUuid.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_projectIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_pathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -84,22 +84,6 @@ bool GetRunCallsRequest::RunUuidHasBeenSet() const
     return m_runUuidHasBeenSet;
 }
 
-string GetRunCallsRequest::GetProjectId() const
-{
-    return m_projectId;
-}
-
-void GetRunCallsRequest::SetProjectId(const string& _projectId)
-{
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
-}
-
-bool GetRunCallsRequest::ProjectIdHasBeenSet() const
-{
-    return m_projectIdHasBeenSet;
-}
-
 string GetRunCallsRequest::GetPath() const
 {
     return m_path;
@@ -114,6 +98,22 @@ void GetRunCallsRequest::SetPath(const string& _path)
 bool GetRunCallsRequest::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+string GetRunCallsRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void GetRunCallsRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool GetRunCallsRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

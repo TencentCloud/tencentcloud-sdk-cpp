@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool DstResourcesHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启投递服务日志。1关闭，2开启
+                     * @return HasServicesLog 是否开启投递服务日志。1关闭，2开启
+                     * 
+                     */
+                    uint64_t GetHasServicesLog() const;
+
+                    /**
+                     * 设置是否开启投递服务日志。1关闭，2开启
+                     * @param _hasServicesLog 是否开启投递服务日志。1关闭，2开启
+                     * 
+                     */
+                    void SetHasServicesLog(const uint64_t& _hasServicesLog);
+
+                    /**
+                     * 判断参数 HasServicesLog 是否已赋值
+                     * @return HasServicesLog 是否已赋值
+                     * 
+                     */
+                    bool HasServicesLogHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::vector<DataTransformResouceInfo> m_dstResources;
                     bool m_dstResourcesHasBeenSet;
+
+                    /**
+                     * 是否开启投递服务日志。1关闭，2开启
+                     */
+                    uint64_t m_hasServicesLog;
+                    bool m_hasServicesLogHasBeenSet;
 
                 };
             }

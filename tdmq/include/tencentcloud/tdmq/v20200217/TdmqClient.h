@@ -141,6 +141,10 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribePulsarProInstancesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQQueueDetailRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQQueueDetailResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQQueuesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQQueuesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQUserRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQUserResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVipInstanceRequest.h>
@@ -446,6 +450,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRabbitMQNodeListResponse> DescribeRabbitMQNodeListOutcome;
                 typedef std::future<DescribeRabbitMQNodeListOutcome> DescribeRabbitMQNodeListOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQNodeListRequest&, DescribeRabbitMQNodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQNodeListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRabbitMQQueueDetailResponse> DescribeRabbitMQQueueDetailOutcome;
+                typedef std::future<DescribeRabbitMQQueueDetailOutcome> DescribeRabbitMQQueueDetailOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQQueueDetailRequest&, DescribeRabbitMQQueueDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQQueueDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRabbitMQQueuesResponse> DescribeRabbitMQQueuesOutcome;
+                typedef std::future<DescribeRabbitMQQueuesOutcome> DescribeRabbitMQQueuesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQQueuesRequest&, DescribeRabbitMQQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQQueuesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRabbitMQUserResponse> DescribeRabbitMQUserOutcome;
                 typedef std::future<DescribeRabbitMQUserOutcome> DescribeRabbitMQUserOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQUserRequest&, DescribeRabbitMQUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQUserAsyncHandler;
@@ -1150,6 +1160,24 @@ namespace TencentCloud
                 DescribeRabbitMQNodeListOutcome DescribeRabbitMQNodeList(const Model::DescribeRabbitMQNodeListRequest &request);
                 void DescribeRabbitMQNodeListAsync(const Model::DescribeRabbitMQNodeListRequest& request, const DescribeRabbitMQNodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRabbitMQNodeListOutcomeCallable DescribeRabbitMQNodeListCallable(const Model::DescribeRabbitMQNodeListRequest& request);
+
+                /**
+                 *查询RabbitMQ队列详情
+                 * @param req DescribeRabbitMQQueueDetailRequest
+                 * @return DescribeRabbitMQQueueDetailOutcome
+                 */
+                DescribeRabbitMQQueueDetailOutcome DescribeRabbitMQQueueDetail(const Model::DescribeRabbitMQQueueDetailRequest &request);
+                void DescribeRabbitMQQueueDetailAsync(const Model::DescribeRabbitMQQueueDetailRequest& request, const DescribeRabbitMQQueueDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRabbitMQQueueDetailOutcomeCallable DescribeRabbitMQQueueDetailCallable(const Model::DescribeRabbitMQQueueDetailRequest& request);
+
+                /**
+                 *查询RabbitMQ队列列表
+                 * @param req DescribeRabbitMQQueuesRequest
+                 * @return DescribeRabbitMQQueuesOutcome
+                 */
+                DescribeRabbitMQQueuesOutcome DescribeRabbitMQQueues(const Model::DescribeRabbitMQQueuesRequest &request);
+                void DescribeRabbitMQQueuesAsync(const Model::DescribeRabbitMQQueuesRequest& request, const DescribeRabbitMQQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRabbitMQQueuesOutcomeCallable DescribeRabbitMQQueuesCallable(const Model::DescribeRabbitMQQueuesRequest& request);
 
                 /**
                  *查询RabbitMQ用户列表

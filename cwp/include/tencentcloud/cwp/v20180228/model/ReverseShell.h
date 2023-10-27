@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool ProcTreeHasBeenSet() const;
 
                     /**
-                     * 获取检测方法
-                     * @return DetectBy 检测方法
+                     * 获取检测方法: 0行为分析; 1命令特征检测
+                     * @return DetectBy 检测方法: 0行为分析; 1命令特征检测
                      * 
                      */
                     uint64_t GetDetectBy() const;
 
                     /**
-                     * 设置检测方法
-                     * @param _detectBy 检测方法
+                     * 设置检测方法: 0行为分析; 1命令特征检测
+                     * @param _detectBy 检测方法: 0行为分析; 1命令特征检测
                      * 
                      */
                     void SetDetectBy(const uint64_t& _detectBy);
@@ -516,6 +516,31 @@ namespace TencentCloud
                      * 
                      */
                     bool PidHasBeenSet() const;
+
+                    /**
+                     * 获取威胁等级：0中危，1高危
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskLevel 威胁等级：0中危，1高危
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRiskLevel() const;
+
+                    /**
+                     * 设置威胁等级：0中危，1高危
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _riskLevel 威胁等级：0中危，1高危
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRiskLevel(const uint64_t& _riskLevel);
+
+                    /**
+                     * 判断参数 RiskLevel 是否已赋值
+                     * @return RiskLevel 是否已赋值
+                     * 
+                     */
+                    bool RiskLevelHasBeenSet() const;
 
                 private:
 
@@ -634,7 +659,7 @@ namespace TencentCloud
                     bool m_procTreeHasBeenSet;
 
                     /**
-                     * 检测方法
+                     * 检测方法: 0行为分析; 1命令特征检测
                      */
                     uint64_t m_detectBy;
                     bool m_detectByHasBeenSet;
@@ -652,6 +677,13 @@ namespace TencentCloud
                      */
                     int64_t m_pid;
                     bool m_pidHasBeenSet;
+
+                    /**
+                     * 威胁等级：0中危，1高危
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_riskLevel;
+                    bool m_riskLevelHasBeenSet;
 
                 };
             }

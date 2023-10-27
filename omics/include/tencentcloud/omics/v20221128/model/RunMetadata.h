@@ -546,6 +546,31 @@ namespace TencentCloud
                      */
                     bool StderrHasBeenSet() const;
 
+                    /**
+                     * 获取其他信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Meta 其他信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMeta() const;
+
+                    /**
+                     * 设置其他信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _meta 其他信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMeta(const std::string& _meta);
+
+                    /**
+                     * 判断参数 Meta 是否已赋值
+                     * @return Meta 是否已赋值
+                     * 
+                     */
+                    bool MetaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -687,6 +712,13 @@ namespace TencentCloud
                      */
                     std::string m_stderr;
                     bool m_stderrHasBeenSet;
+
+                    /**
+                     * 其他信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_meta;
+                    bool m_metaHasBeenSet;
 
                 };
             }

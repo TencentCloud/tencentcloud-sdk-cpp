@@ -40,8 +40,6 @@ namespace TencentCloud
             {
                 /**
                 * Span对象
-
-
                 */
                 class Span : public AbstractModel
                 {
@@ -327,6 +325,31 @@ namespace TencentCloud
                      */
                     bool StartTimeMillisHasBeenSet() const;
 
+                    /**
+                     * 获取Parent Span Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParentSpanID Parent Span Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParentSpanID() const;
+
+                    /**
+                     * 设置Parent Span Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _parentSpanID Parent Span Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParentSpanID(const std::string& _parentSpanID);
+
+                    /**
+                     * 判断参数 ParentSpanID 是否已赋值
+                     * @return ParentSpanID 是否已赋值
+                     * 
+                     */
+                    bool ParentSpanIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -405,6 +428,13 @@ namespace TencentCloud
                      */
                     int64_t m_startTimeMillis;
                     bool m_startTimeMillisHasBeenSet;
+
+                    /**
+                     * Parent Span Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_parentSpanID;
+                    bool m_parentSpanIDHasBeenSet;
 
                 };
             }

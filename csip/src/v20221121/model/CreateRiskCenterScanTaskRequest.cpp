@@ -32,7 +32,8 @@ CreateRiskCenterScanTaskRequest::CreateRiskCenterScanTaskRequest() :
     m_selfDefiningAssetsHasBeenSet(false),
     m_scanFromHasBeenSet(false),
     m_taskAdvanceCFGHasBeenSet(false),
-    m_taskModeHasBeenSet(false)
+    m_taskModeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,15 @@ string CreateRiskCenterScanTaskRequest::ToJsonString() const
         string key = "TaskMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskMode, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tags.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -307,6 +317,22 @@ void CreateRiskCenterScanTaskRequest::SetTaskMode(const int64_t& _taskMode)
 bool CreateRiskCenterScanTaskRequest::TaskModeHasBeenSet() const
 {
     return m_taskModeHasBeenSet;
+}
+
+AssetTag CreateRiskCenterScanTaskRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateRiskCenterScanTaskRequest::SetTags(const AssetTag& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateRiskCenterScanTaskRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

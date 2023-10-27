@@ -618,6 +618,31 @@ namespace TencentCloud
                      */
                     bool LocationHasBeenSet() const;
 
+                    /**
+                     * 获取威胁等级：0低危，1中危，2高危
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskLevel 威胁等级：0低危，1中危，2高危
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRiskLevel() const;
+
+                    /**
+                     * 设置威胁等级：0低危，1中危，2高危
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _riskLevel 威胁等级：0低危，1中危，2高危
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRiskLevel(const uint64_t& _riskLevel);
+
+                    /**
+                     * 判断参数 RiskLevel 是否已赋值
+                     * @return RiskLevel 是否已赋值
+                     * 
+                     */
+                    bool RiskLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -779,6 +804,13 @@ namespace TencentCloud
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
+
+                    /**
+                     * 威胁等级：0低危，1中危，2高危
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_riskLevel;
+                    bool m_riskLevelHasBeenSet;
 
                 };
             }

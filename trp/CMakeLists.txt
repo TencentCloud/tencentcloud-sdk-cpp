@@ -22,6 +22,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/CodeBatch.h
   include/tencentcloud/trp/v20210515/model/DescribeScanLogsResponse.h
   include/tencentcloud/trp/v20210515/model/Quota.h
+  include/tencentcloud/trp/v20210515/model/PlanQRCode.h
   include/tencentcloud/trp/v20210515/model/ScanLog.h
   include/tencentcloud/trp/v20210515/model/DescribeProductsRequest.h
   include/tencentcloud/trp/v20210515/model/CreateCorporationOrderResponse.h
@@ -47,6 +48,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/ModifyTraceDataResponse.h
   include/tencentcloud/trp/v20210515/model/AuthorizedTransferResponse.h
   include/tencentcloud/trp/v20210515/model/CreateCodeBatchResponse.h
+  include/tencentcloud/trp/v20210515/model/DescribeCustomRulesRequest.h
   include/tencentcloud/trp/v20210515/model/CorpQuota.h
   include/tencentcloud/trp/v20210515/model/CreateCustomRuleRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeCodePackStatusRequest.h
@@ -109,7 +111,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeJobFileUrlRequest.h
   include/tencentcloud/trp/v20210515/model/CreateTraceCodesAsyncResponse.h
   include/tencentcloud/trp/v20210515/model/RawScanLog.h
-  include/tencentcloud/trp/v20210515/model/DescribeCustomRulesRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribePlanQRCodesRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyCodeBatchRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeProductByIdRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodesResponse.h
@@ -139,6 +141,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeProductByIdResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeCodePacksRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeJobFileUrlResponse.h
+  include/tencentcloud/trp/v20210515/model/DescribePlanQRCodesResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodeByIdRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyCodeBatchResponse.h
   include/tencentcloud/trp/v20210515/model/ScanStat.h
@@ -152,6 +155,7 @@ set(trp_src
   src/v20210515/model/CodeBatch.cpp
   src/v20210515/model/DescribeScanLogsResponse.cpp
   src/v20210515/model/Quota.cpp
+  src/v20210515/model/PlanQRCode.cpp
   src/v20210515/model/ScanLog.cpp
   src/v20210515/model/DescribeProductsRequest.cpp
   src/v20210515/model/CreateCorporationOrderResponse.cpp
@@ -177,6 +181,7 @@ set(trp_src
   src/v20210515/model/ModifyTraceDataResponse.cpp
   src/v20210515/model/AuthorizedTransferResponse.cpp
   src/v20210515/model/CreateCodeBatchResponse.cpp
+  src/v20210515/model/DescribeCustomRulesRequest.cpp
   src/v20210515/model/CorpQuota.cpp
   src/v20210515/model/CreateCustomRuleRequest.cpp
   src/v20210515/model/DescribeCodePackStatusRequest.cpp
@@ -239,7 +244,7 @@ set(trp_src
   src/v20210515/model/DescribeJobFileUrlRequest.cpp
   src/v20210515/model/CreateTraceCodesAsyncResponse.cpp
   src/v20210515/model/RawScanLog.cpp
-  src/v20210515/model/DescribeCustomRulesRequest.cpp
+  src/v20210515/model/DescribePlanQRCodesRequest.cpp
   src/v20210515/model/ModifyCodeBatchRequest.cpp
   src/v20210515/model/DescribeProductByIdRequest.cpp
   src/v20210515/model/DescribeTraceCodesResponse.cpp
@@ -269,6 +274,7 @@ set(trp_src
   src/v20210515/model/DescribeProductByIdResponse.cpp
   src/v20210515/model/DescribeCodePacksRequest.cpp
   src/v20210515/model/DescribeJobFileUrlResponse.cpp
+  src/v20210515/model/DescribePlanQRCodesResponse.cpp
   src/v20210515/model/DescribeTraceCodeByIdRequest.cpp
   src/v20210515/model/ModifyCodeBatchResponse.cpp
   src/v20210515/model/ScanStat.cpp

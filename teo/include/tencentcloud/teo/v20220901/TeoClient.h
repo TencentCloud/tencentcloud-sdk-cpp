@@ -103,6 +103,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeRulesSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeRulesSettingResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataRequest.h>
@@ -291,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRulesSettingResponse> DescribeRulesSettingOutcome;
                 typedef std::future<DescribeRulesSettingOutcome> DescribeRulesSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeRulesSettingRequest&, DescribeRulesSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityTemplateBindingsResponse> DescribeSecurityTemplateBindingsOutcome;
+                typedef std::future<DescribeSecurityTemplateBindingsOutcome> DescribeSecurityTemplateBindingsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityTemplateBindingsRequest&, DescribeSecurityTemplateBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityTemplateBindingsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTimingL4DataResponse> DescribeTimingL4DataOutcome;
                 typedef std::future<DescribeTimingL4DataOutcome> DescribeTimingL4DataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTimingL4DataRequest&, DescribeTimingL4DataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL4DataAsyncHandler;
@@ -432,7 +437,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateApplicationProxyRuleOutcomeCallable CreateApplicationProxyRuleCallable(const Model::CreateApplicationProxyRuleRequest& request);
 
                 /**
-                 *创建源站组
+                 *创建源站组，以源站组的方式管理业务源站。此处配置的源站组可于**添加加速域名**和**四层代理**等功能中引用。
                  * @param req CreateOriginGroupRequest
                  * @return CreateOriginGroupOutcome
                  */
@@ -742,6 +747,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeRulesSettingOutcomeCallable DescribeRulesSettingCallable(const Model::DescribeRulesSettingRequest& request);
 
                 /**
+                 *查询指定策略模板的绑定关系列表。
+                 * @param req DescribeSecurityTemplateBindingsRequest
+                 * @return DescribeSecurityTemplateBindingsOutcome
+                 */
+                DescribeSecurityTemplateBindingsOutcome DescribeSecurityTemplateBindings(const Model::DescribeSecurityTemplateBindingsRequest &request);
+                void DescribeSecurityTemplateBindingsAsync(const Model::DescribeSecurityTemplateBindingsRequest& request, const DescribeSecurityTemplateBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityTemplateBindingsOutcomeCallable DescribeSecurityTemplateBindingsCallable(const Model::DescribeSecurityTemplateBindingsRequest& request);
+
+                /**
                  *本接口（DescribeTimingL4Data）用于查询四层时序流量数据列表。
                  * @param req DescribeTimingL4DataRequest
                  * @return DescribeTimingL4DataOutcome
@@ -915,7 +929,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyHostsCertificateOutcomeCallable ModifyHostsCertificateCallable(const Model::ModifyHostsCertificateRequest& request);
 
                 /**
-                 *修改源站组
+                 *修改源站组配置，新提交的源站记录将会覆盖原有源站组中的源站记录。
                  * @param req ModifyOriginGroupRequest
                  * @return ModifyOriginGroupOutcome
                  */

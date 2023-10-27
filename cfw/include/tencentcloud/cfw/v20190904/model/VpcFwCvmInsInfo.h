@@ -221,6 +221,56 @@ namespace TencentCloud
                      */
                     bool BandWidthHasBeenSet() const;
 
+                    /**
+                     * 获取实例主机所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone 实例主机所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置实例主机所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zone 实例主机所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取实例备机所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneBak 实例备机所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZoneBak() const;
+
+                    /**
+                     * 设置实例备机所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneBak 实例备机所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneBak(const std::string& _zoneBak);
+
+                    /**
+                     * 判断参数 ZoneBak 是否已赋值
+                     * @return ZoneBak 是否已赋值
+                     * 
+                     */
+                    bool ZoneBakHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +321,20 @@ namespace TencentCloud
                      */
                     int64_t m_bandWidth;
                     bool m_bandWidthHasBeenSet;
+
+                    /**
+                     * 实例主机所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 实例备机所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneBak;
+                    bool m_zoneBakHasBeenSet;
 
                 };
             }

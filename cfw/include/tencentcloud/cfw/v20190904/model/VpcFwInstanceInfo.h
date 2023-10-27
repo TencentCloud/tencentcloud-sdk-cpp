@@ -620,6 +620,31 @@ namespace TencentCloud
                      */
                     bool UpdateEnableHasBeenSet() const;
 
+                    /**
+                     * 获取引擎运行模式，Normal:正常, OnlyRoute:透明模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTrafficMode() const;
+
+                    /**
+                     * 设置引擎运行模式，Normal:正常, OnlyRoute:透明模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrafficMode(const std::string& _trafficMode);
+
+                    /**
+                     * 判断参数 TrafficMode 是否已赋值
+                     * @return TrafficMode 是否已赋值
+                     * 
+                     */
+                    bool TrafficModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -781,6 +806,13 @@ namespace TencentCloud
                      */
                     int64_t m_updateEnable;
                     bool m_updateEnableHasBeenSet;
+
+                    /**
+                     * 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_trafficMode;
+                    bool m_trafficModeHasBeenSet;
 
                 };
             }

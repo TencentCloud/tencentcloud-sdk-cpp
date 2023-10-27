@@ -23,7 +23,8 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 DescribePublicIpAssetsRequest::DescribePublicIpAssetsRequest() :
-    m_filterHasBeenSet(false)
+    m_filterHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,21 @@ string DescribePublicIpAssetsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_filter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -65,6 +81,22 @@ void DescribePublicIpAssetsRequest::SetFilter(const Filter& _filter)
 bool DescribePublicIpAssetsRequest::FilterHasBeenSet() const
 {
     return m_filterHasBeenSet;
+}
+
+vector<AssetTag> DescribePublicIpAssetsRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribePublicIpAssetsRequest::SetTags(const vector<AssetTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribePublicIpAssetsRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

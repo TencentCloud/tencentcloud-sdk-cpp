@@ -23,8 +23,9 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 DescribeTaskLogURLRequest::DescribeTaskLogURLRequest() :
+    m_typeHasBeenSet(false),
     m_reportItemKeyListHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_reportTaskIdListHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,14 @@ string DescribeTaskLogURLRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
+    }
 
     if (m_reportItemKeyListHasBeenSet)
     {
@@ -50,12 +59,19 @@ string DescribeTaskLogURLRequest::ToJsonString() const
         }
     }
 
-    if (m_typeHasBeenSet)
+    if (m_reportTaskIdListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
+        string key = "ReportTaskIdList";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_type, allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_reportTaskIdList.begin(); itr != m_reportTaskIdList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -65,6 +81,22 @@ string DescribeTaskLogURLRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeTaskLogURLRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeTaskLogURLRequest::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeTaskLogURLRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
 
 vector<ReportItemKey> DescribeTaskLogURLRequest::GetReportItemKeyList() const
 {
@@ -82,20 +114,20 @@ bool DescribeTaskLogURLRequest::ReportItemKeyListHasBeenSet() const
     return m_reportItemKeyListHasBeenSet;
 }
 
-int64_t DescribeTaskLogURLRequest::GetType() const
+vector<ReportTaskIdList> DescribeTaskLogURLRequest::GetReportTaskIdList() const
 {
-    return m_type;
+    return m_reportTaskIdList;
 }
 
-void DescribeTaskLogURLRequest::SetType(const int64_t& _type)
+void DescribeTaskLogURLRequest::SetReportTaskIdList(const vector<ReportTaskIdList>& _reportTaskIdList)
 {
-    m_type = _type;
-    m_typeHasBeenSet = true;
+    m_reportTaskIdList = _reportTaskIdList;
+    m_reportTaskIdListHasBeenSet = true;
 }
 
-bool DescribeTaskLogURLRequest::TypeHasBeenSet() const
+bool DescribeTaskLogURLRequest::ReportTaskIdListHasBeenSet() const
 {
-    return m_typeHasBeenSet;
+    return m_reportTaskIdListHasBeenSet;
 }
 
 

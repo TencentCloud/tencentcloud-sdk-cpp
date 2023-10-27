@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID。
-                     * @return ZoneId 站点ID。
+                     * 获取站点 ID
+                     * @return ZoneId 站点 ID
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID。
-                     * @param _zoneId 站点ID。
+                     * 设置站点 ID
+                     * @param _zoneId 站点 ID
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取源站组ID，此参数必填。
-                     * @return GroupId 源站组ID，此参数必填。
+                     * 获取源站组 ID，此参数必填。
+                     * @return GroupId 源站组 ID，此参数必填。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置源站组ID，此参数必填。
-                     * @param _groupId 源站组ID，此参数必填。
+                     * 设置源站组 ID，此参数必填。
+                     * @param _groupId 源站组 ID，此参数必填。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取源站组名称，不填保持原有配置，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。	
-                     * @return Name 源站组名称，不填保持原有配置，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。	
+                     * 获取源站组名称，不填保持原有配置，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。	
+                     * @return Name 源站组名称，不填保持原有配置，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。	
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置源站组名称，不填保持原有配置，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。	
-                     * @param _name 源站组名称，不填保持原有配置，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。	
+                     * 设置源站组名称，不填保持原有配置，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。	
+                     * @param _name 源站组名称，不填保持原有配置，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。	
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -156,22 +156,43 @@ namespace TencentCloud
                      */
                     bool RecordsHasBeenSet() const;
 
+                    /**
+                     * 获取回源 Host Header，仅 Type = HTTP 时生效， 不填或者填空表示不配置回源Host，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
+                     * @return HostHeader 回源 Host Header，仅 Type = HTTP 时生效， 不填或者填空表示不配置回源Host，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
+                     * 
+                     */
+                    std::string GetHostHeader() const;
+
+                    /**
+                     * 设置回源 Host Header，仅 Type = HTTP 时生效， 不填或者填空表示不配置回源Host，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
+                     * @param _hostHeader 回源 Host Header，仅 Type = HTTP 时生效， 不填或者填空表示不配置回源Host，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
+                     * 
+                     */
+                    void SetHostHeader(const std::string& _hostHeader);
+
+                    /**
+                     * 判断参数 HostHeader 是否已赋值
+                     * @return HostHeader 是否已赋值
+                     * 
+                     */
+                    bool HostHeaderHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 站点ID。
+                     * 站点 ID
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 源站组ID，此参数必填。
+                     * 源站组 ID，此参数必填。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 源站组名称，不填保持原有配置，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。	
+                     * 源站组名称，不填保持原有配置，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。	
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -189,6 +210,12 @@ namespace TencentCloud
                      */
                     std::vector<OriginRecord> m_records;
                     bool m_recordsHasBeenSet;
+
+                    /**
+                     * 回源 Host Header，仅 Type = HTTP 时生效， 不填或者填空表示不配置回源Host，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
+                     */
+                    std::string m_hostHeader;
+                    bool m_hostHeaderHasBeenSet;
 
                 };
             }

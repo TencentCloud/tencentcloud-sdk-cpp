@@ -1330,6 +1330,49 @@ TrpClient::DescribeMerchantsOutcomeCallable TrpClient::DescribeMerchantsCallable
     return task->get_future();
 }
 
+TrpClient::DescribePlanQRCodesOutcome TrpClient::DescribePlanQRCodes(const DescribePlanQRCodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlanQRCodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlanQRCodesResponse rsp = DescribePlanQRCodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlanQRCodesOutcome(rsp);
+        else
+            return DescribePlanQRCodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlanQRCodesOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribePlanQRCodesAsync(const DescribePlanQRCodesRequest& request, const DescribePlanQRCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePlanQRCodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribePlanQRCodesOutcomeCallable TrpClient::DescribePlanQRCodesCallable(const DescribePlanQRCodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePlanQRCodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePlanQRCodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::DescribeProductByIdOutcome TrpClient::DescribeProductById(const DescribeProductByIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProductById");

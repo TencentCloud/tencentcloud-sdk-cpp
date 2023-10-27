@@ -35,12 +35,17 @@ RunGroup::RunGroup() :
     m_statusHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_optionHasBeenSet(false),
+    m_nFOptionHasBeenSet(false),
     m_totalRunHasBeenSet(false),
     m_runStatusCountsHasBeenSet(false),
     m_executionTimeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_creatorHasBeenSet(false),
+    m_creatorIdHasBeenSet(false),
+    m_resultNotifyHasBeenSet(false),
+    m_applicationVersionHasBeenSet(false)
 {
 }
 
@@ -196,6 +201,23 @@ CoreInternalOutcome RunGroup::Deserialize(const rapidjson::Value &value)
         m_optionHasBeenSet = true;
     }
 
+    if (value.HasMember("NFOption") && !value["NFOption"].IsNull())
+    {
+        if (!value["NFOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.NFOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_nFOption.Deserialize(value["NFOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_nFOptionHasBeenSet = true;
+    }
+
     if (value.HasMember("TotalRun") && !value["TotalRun"].IsNull())
     {
         if (!value["TotalRun"].IsUint64())
@@ -271,6 +293,53 @@ CoreInternalOutcome RunGroup::Deserialize(const rapidjson::Value &value)
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatorId") && !value["CreatorId"].IsNull())
+    {
+        if (!value["CreatorId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.CreatorId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creatorId = string(value["CreatorId"].GetString());
+        m_creatorIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResultNotify") && !value["ResultNotify"].IsNull())
+    {
+        if (!value["ResultNotify"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.ResultNotify` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultNotify = string(value["ResultNotify"].GetString());
+        m_resultNotifyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationVersion") && !value["ApplicationVersion"].IsNull())
+    {
+        if (!value["ApplicationVersion"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.ApplicationVersion` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_applicationVersion.Deserialize(value["ApplicationVersion"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_applicationVersionHasBeenSet = true;
     }
 
 
@@ -393,6 +462,15 @@ void RunGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         m_option.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_nFOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NFOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_nFOption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_totalRunHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -447,6 +525,39 @@ void RunGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatorId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatorId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultNotifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultNotify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultNotify.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_applicationVersion.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -676,6 +787,22 @@ bool RunGroup::OptionHasBeenSet() const
     return m_optionHasBeenSet;
 }
 
+NFOption RunGroup::GetNFOption() const
+{
+    return m_nFOption;
+}
+
+void RunGroup::SetNFOption(const NFOption& _nFOption)
+{
+    m_nFOption = _nFOption;
+    m_nFOptionHasBeenSet = true;
+}
+
+bool RunGroup::NFOptionHasBeenSet() const
+{
+    return m_nFOptionHasBeenSet;
+}
+
 uint64_t RunGroup::GetTotalRun() const
 {
     return m_totalRun;
@@ -770,5 +897,69 @@ void RunGroup::SetUpdateTime(const string& _updateTime)
 bool RunGroup::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string RunGroup::GetCreator() const
+{
+    return m_creator;
+}
+
+void RunGroup::SetCreator(const string& _creator)
+{
+    m_creator = _creator;
+    m_creatorHasBeenSet = true;
+}
+
+bool RunGroup::CreatorHasBeenSet() const
+{
+    return m_creatorHasBeenSet;
+}
+
+string RunGroup::GetCreatorId() const
+{
+    return m_creatorId;
+}
+
+void RunGroup::SetCreatorId(const string& _creatorId)
+{
+    m_creatorId = _creatorId;
+    m_creatorIdHasBeenSet = true;
+}
+
+bool RunGroup::CreatorIdHasBeenSet() const
+{
+    return m_creatorIdHasBeenSet;
+}
+
+string RunGroup::GetResultNotify() const
+{
+    return m_resultNotify;
+}
+
+void RunGroup::SetResultNotify(const string& _resultNotify)
+{
+    m_resultNotify = _resultNotify;
+    m_resultNotifyHasBeenSet = true;
+}
+
+bool RunGroup::ResultNotifyHasBeenSet() const
+{
+    return m_resultNotifyHasBeenSet;
+}
+
+ApplicationVersion RunGroup::GetApplicationVersion() const
+{
+    return m_applicationVersion;
+}
+
+void RunGroup::SetApplicationVersion(const ApplicationVersion& _applicationVersion)
+{
+    m_applicationVersion = _applicationVersion;
+    m_applicationVersionHasBeenSet = true;
+}
+
+bool RunGroup::ApplicationVersionHasBeenSet() const
+{
+    return m_applicationVersionHasBeenSet;
 }
 

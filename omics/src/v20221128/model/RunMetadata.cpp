@@ -40,7 +40,8 @@ RunMetadata::RunMetadata() :
     m_postProcessHasBeenSet(false),
     m_callCachedHasBeenSet(false),
     m_stdoutHasBeenSet(false),
-    m_stderrHasBeenSet(false)
+    m_stderrHasBeenSet(false),
+    m_metaHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome RunMetadata::Deserialize(const rapidjson::Value &value)
         m_stderrHasBeenSet = true;
     }
 
+    if (value.HasMember("Meta") && !value["Meta"].IsNull())
+    {
+        if (!value["Meta"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunMetadata.Meta` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_meta = string(value["Meta"].GetString());
+        m_metaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void RunMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Stderr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_stderr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Meta";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_meta.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void RunMetadata::SetStderr(const string& _stderr)
 bool RunMetadata::StderrHasBeenSet() const
 {
     return m_stderrHasBeenSet;
+}
+
+string RunMetadata::GetMeta() const
+{
+    return m_meta;
+}
+
+void RunMetadata::SetMeta(const string& _meta)
+{
+    m_meta = _meta;
+    m_metaHasBeenSet = true;
+}
+
+bool RunMetadata::MetaHasBeenSet() const
+{
+    return m_metaHasBeenSet;
 }
 

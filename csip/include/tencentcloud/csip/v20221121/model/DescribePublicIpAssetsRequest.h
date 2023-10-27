@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/Filter.h>
+#include <tencentcloud/csip/v20221121/model/AssetTag.h>
 
 
 namespace TencentCloud
@@ -64,6 +65,27 @@ namespace TencentCloud
                      */
                     bool FilterHasBeenSet() const;
 
+                    /**
+                     * 获取安全中心自定义标签
+                     * @return Tags 安全中心自定义标签
+                     * 
+                     */
+                    std::vector<AssetTag> GetTags() const;
+
+                    /**
+                     * 设置安全中心自定义标签
+                     * @param _tags 安全中心自定义标签
+                     * 
+                     */
+                    void SetTags(const std::vector<AssetTag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +93,12 @@ namespace TencentCloud
                      */
                     Filter m_filter;
                     bool m_filterHasBeenSet;
+
+                    /**
+                     * 安全中心自定义标签
+                     */
+                    std::vector<AssetTag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

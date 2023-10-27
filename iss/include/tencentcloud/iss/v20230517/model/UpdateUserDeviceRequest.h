@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool UsernameHasBeenSet() const;
 
+                    /**
+                     * 获取网关设备接入协议（仅网关接入支持）
+                     * @return ProtocolType 网关设备接入协议（仅网关接入支持）
+                     * 
+                     */
+                    int64_t GetProtocolType() const;
+
+                    /**
+                     * 设置网关设备接入协议（仅网关接入支持）
+                     * @param _protocolType 网关设备接入协议（仅网关接入支持）
+                     * 
+                     */
+                    void SetProtocolType(const int64_t& _protocolType);
+
+                    /**
+                     * 判断参数 ProtocolType 是否已赋值
+                     * @return ProtocolType 是否已赋值
+                     * 
+                     */
+                    bool ProtocolTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
+
+                    /**
+                     * 网关设备接入协议（仅网关接入支持）
+                     */
+                    int64_t m_protocolType;
+                    bool m_protocolTypeHasBeenSet;
 
                 };
             }

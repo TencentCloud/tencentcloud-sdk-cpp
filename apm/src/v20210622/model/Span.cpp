@@ -31,7 +31,8 @@ Span::Span() :
     m_startTimeHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_spanIDHasBeenSet(false),
-    m_startTimeMillisHasBeenSet(false)
+    m_startTimeMillisHasBeenSet(false),
+    m_parentSpanIDHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,16 @@ CoreInternalOutcome Span::Deserialize(const rapidjson::Value &value)
         m_startTimeMillisHasBeenSet = true;
     }
 
+    if (value.HasMember("ParentSpanID") && !value["ParentSpanID"].IsNull())
+    {
+        if (!value["ParentSpanID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Span.ParentSpanID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentSpanID = string(value["ParentSpanID"].GetString());
+        m_parentSpanIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -302,6 +313,14 @@ void Span::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "StartTimeMillis";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeMillis, allocator);
+    }
+
+    if (m_parentSpanIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentSpanID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentSpanID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -481,5 +500,21 @@ void Span::SetStartTimeMillis(const int64_t& _startTimeMillis)
 bool Span::StartTimeMillisHasBeenSet() const
 {
     return m_startTimeMillisHasBeenSet;
+}
+
+string Span::GetParentSpanID() const
+{
+    return m_parentSpanID;
+}
+
+void Span::SetParentSpanID(const string& _parentSpanID)
+{
+    m_parentSpanID = _parentSpanID;
+    m_parentSpanIDHasBeenSet = true;
+}
+
+bool Span::ParentSpanIDHasBeenSet() const
+{
+    return m_parentSpanIDHasBeenSet;
 }
 

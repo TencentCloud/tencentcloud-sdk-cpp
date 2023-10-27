@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool RunUuidHasBeenSet() const;
 
                     /**
-                     * 获取项目ID。
-                     * @return ProjectId 项目ID。
-                     * 
-                     */
-                    std::string GetProjectId() const;
-
-                    /**
-                     * 设置项目ID。
-                     * @param _projectId 项目ID。
-                     * 
-                     */
-                    void SetProjectId(const std::string& _projectId);
-
-                    /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
-                     * 
-                     */
-                    bool ProjectIdHasBeenSet() const;
-
-                    /**
                      * 获取作业路径
                      * @return Path 作业路径
                      * 
@@ -105,6 +84,27 @@ namespace TencentCloud
                      */
                     bool PathHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID。
+                     * @return ProjectId 项目ID。
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目ID。
+                     * @param _projectId 项目ID。
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,16 +114,16 @@ namespace TencentCloud
                     bool m_runUuidHasBeenSet;
 
                     /**
-                     * 项目ID。
-                     */
-                    std::string m_projectId;
-                    bool m_projectIdHasBeenSet;
-
-                    /**
                      * 作业路径
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
+
+                    /**
+                     * 项目ID。
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                 };
             }

@@ -835,6 +835,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DagInstancesRequest.h
   include/tencentcloud/wedata/v20210820/model/DryRunDIOfflineTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/FolderOpsDto.h
+  include/tencentcloud/wedata/v20210820/model/TaskTag.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskLockStatusRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeBaselinesRequest.h
   include/tencentcloud/wedata/v20210820/model/OfflineTaskAddParam.h
@@ -1693,6 +1694,7 @@ set(wedata_src
   src/v20210820/model/DagInstancesRequest.cpp
   src/v20210820/model/DryRunDIOfflineTaskResponse.cpp
   src/v20210820/model/FolderOpsDto.cpp
+  src/v20210820/model/TaskTag.cpp
   src/v20210820/model/DescribeTaskLockStatusRequest.cpp
   src/v20210820/model/DescribeBaselinesRequest.cpp
   src/v20210820/model/OfflineTaskAddParam.cpp

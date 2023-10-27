@@ -40,7 +40,10 @@ NatInstanceInfo::NatInstanceInfo() :
     m_ruleMaxHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_updateEnableHasBeenSet(false),
-    m_needProbeEngineUpdateHasBeenSet(false)
+    m_needProbeEngineUpdateHasBeenSet(false),
+    m_trafficModeHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_zoneBakHasBeenSet(false)
 {
 }
 
@@ -258,6 +261,36 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_needProbeEngineUpdateHasBeenSet = true;
     }
 
+    if (value.HasMember("TrafficMode") && !value["TrafficMode"].IsNull())
+    {
+        if (!value["TrafficMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.TrafficMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trafficMode = string(value["TrafficMode"].GetString());
+        m_trafficModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneBak") && !value["ZoneBak"].IsNull())
+    {
+        if (!value["ZoneBak"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.ZoneBak` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneBak = string(value["ZoneBak"].GetString());
+        m_zoneBakHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -438,6 +471,30 @@ void NatInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "NeedProbeEngineUpdate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needProbeEngineUpdate, allocator);
+    }
+
+    if (m_trafficModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trafficMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneBakHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneBak";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneBak.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -761,5 +818,53 @@ void NatInstanceInfo::SetNeedProbeEngineUpdate(const int64_t& _needProbeEngineUp
 bool NatInstanceInfo::NeedProbeEngineUpdateHasBeenSet() const
 {
     return m_needProbeEngineUpdateHasBeenSet;
+}
+
+string NatInstanceInfo::GetTrafficMode() const
+{
+    return m_trafficMode;
+}
+
+void NatInstanceInfo::SetTrafficMode(const string& _trafficMode)
+{
+    m_trafficMode = _trafficMode;
+    m_trafficModeHasBeenSet = true;
+}
+
+bool NatInstanceInfo::TrafficModeHasBeenSet() const
+{
+    return m_trafficModeHasBeenSet;
+}
+
+string NatInstanceInfo::GetZone() const
+{
+    return m_zone;
+}
+
+void NatInstanceInfo::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool NatInstanceInfo::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+string NatInstanceInfo::GetZoneBak() const
+{
+    return m_zoneBak;
+}
+
+void NatInstanceInfo::SetZoneBak(const string& _zoneBak)
+{
+    m_zoneBak = _zoneBak;
+    m_zoneBakHasBeenSet = true;
+}
+
+bool NatInstanceInfo::ZoneBakHasBeenSet() const
+{
+    return m_zoneBakHasBeenSet;
 }
 

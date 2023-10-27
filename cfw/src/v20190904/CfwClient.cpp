@@ -341,6 +341,135 @@ CfwClient::CreateAddressTemplateOutcomeCallable CfwClient::CreateAddressTemplate
     return task->get_future();
 }
 
+CfwClient::CreateAlertCenterIsolateOutcome CfwClient::CreateAlertCenterIsolate(const CreateAlertCenterIsolateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlertCenterIsolate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlertCenterIsolateResponse rsp = CreateAlertCenterIsolateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlertCenterIsolateOutcome(rsp);
+        else
+            return CreateAlertCenterIsolateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlertCenterIsolateOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateAlertCenterIsolateAsync(const CreateAlertCenterIsolateRequest& request, const CreateAlertCenterIsolateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAlertCenterIsolate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateAlertCenterIsolateOutcomeCallable CfwClient::CreateAlertCenterIsolateCallable(const CreateAlertCenterIsolateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAlertCenterIsolateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAlertCenterIsolate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::CreateAlertCenterOmitOutcome CfwClient::CreateAlertCenterOmit(const CreateAlertCenterOmitRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlertCenterOmit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlertCenterOmitResponse rsp = CreateAlertCenterOmitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlertCenterOmitOutcome(rsp);
+        else
+            return CreateAlertCenterOmitOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlertCenterOmitOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateAlertCenterOmitAsync(const CreateAlertCenterOmitRequest& request, const CreateAlertCenterOmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAlertCenterOmit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateAlertCenterOmitOutcomeCallable CfwClient::CreateAlertCenterOmitCallable(const CreateAlertCenterOmitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAlertCenterOmitOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAlertCenterOmit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::CreateAlertCenterRuleOutcome CfwClient::CreateAlertCenterRule(const CreateAlertCenterRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlertCenterRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlertCenterRuleResponse rsp = CreateAlertCenterRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlertCenterRuleOutcome(rsp);
+        else
+            return CreateAlertCenterRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlertCenterRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateAlertCenterRuleAsync(const CreateAlertCenterRuleRequest& request, const CreateAlertCenterRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAlertCenterRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateAlertCenterRuleOutcomeCallable CfwClient::CreateAlertCenterRuleCallable(const CreateAlertCenterRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAlertCenterRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAlertCenterRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::CreateBlockIgnoreRuleListOutcome CfwClient::CreateBlockIgnoreRuleList(const CreateBlockIgnoreRuleListRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBlockIgnoreRuleList");

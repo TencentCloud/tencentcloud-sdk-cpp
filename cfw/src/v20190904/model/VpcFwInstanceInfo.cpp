@@ -43,7 +43,8 @@ VpcFwInstanceInfo::VpcFwInstanceInfo() :
     m_joinInsIdLstHasBeenSet(false),
     m_flowMaxHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_updateEnableHasBeenSet(false)
+    m_updateEnableHasBeenSet(false),
+    m_trafficModeHasBeenSet(false)
 {
 }
 
@@ -327,6 +328,16 @@ CoreInternalOutcome VpcFwInstanceInfo::Deserialize(const rapidjson::Value &value
         m_updateEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("TrafficMode") && !value["TrafficMode"].IsNull())
+    {
+        if (!value["TrafficMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcFwInstanceInfo.TrafficMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trafficMode = string(value["TrafficMode"].GetString());
+        m_trafficModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -562,6 +573,14 @@ void VpcFwInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UpdateEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateEnable, allocator);
+    }
+
+    if (m_trafficModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trafficMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -933,5 +952,21 @@ void VpcFwInstanceInfo::SetUpdateEnable(const int64_t& _updateEnable)
 bool VpcFwInstanceInfo::UpdateEnableHasBeenSet() const
 {
     return m_updateEnableHasBeenSet;
+}
+
+string VpcFwInstanceInfo::GetTrafficMode() const
+{
+    return m_trafficMode;
+}
+
+void VpcFwInstanceInfo::SetTrafficMode(const string& _trafficMode)
+{
+    m_trafficMode = _trafficMode;
+    m_trafficModeHasBeenSet = true;
+}
+
+bool VpcFwInstanceInfo::TrafficModeHasBeenSet() const
+{
+    return m_trafficModeHasBeenSet;
 }
 

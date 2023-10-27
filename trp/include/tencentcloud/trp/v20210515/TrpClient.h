@@ -83,6 +83,8 @@
 #include <tencentcloud/trp/v20210515/model/DescribeMerchantByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeMerchantsRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeMerchantsResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribePlanQRCodesRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribePlanQRCodesResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeProductByIdRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeProductByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeProductsRequest.h>
@@ -229,6 +231,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMerchantsResponse> DescribeMerchantsOutcome;
                 typedef std::future<DescribeMerchantsOutcome> DescribeMerchantsOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeMerchantsRequest&, DescribeMerchantsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMerchantsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlanQRCodesResponse> DescribePlanQRCodesOutcome;
+                typedef std::future<DescribePlanQRCodesOutcome> DescribePlanQRCodesOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribePlanQRCodesRequest&, DescribePlanQRCodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlanQRCodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProductByIdResponse> DescribeProductByIdOutcome;
                 typedef std::future<DescribeProductByIdOutcome> DescribeProductByIdOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeProductByIdRequest&, DescribeProductByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductByIdAsyncHandler;
@@ -566,6 +571,15 @@ namespace TencentCloud
                 DescribeMerchantsOutcome DescribeMerchants(const Model::DescribeMerchantsRequest &request);
                 void DescribeMerchantsAsync(const Model::DescribeMerchantsRequest& request, const DescribeMerchantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMerchantsOutcomeCallable DescribeMerchantsCallable(const Model::DescribeMerchantsRequest& request);
+
+                /**
+                 *查询安心计划二维码列表
+                 * @param req DescribePlanQRCodesRequest
+                 * @return DescribePlanQRCodesOutcome
+                 */
+                DescribePlanQRCodesOutcome DescribePlanQRCodes(const Model::DescribePlanQRCodesRequest &request);
+                void DescribePlanQRCodesAsync(const Model::DescribePlanQRCodesRequest& request, const DescribePlanQRCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlanQRCodesOutcomeCallable DescribePlanQRCodesCallable(const Model::DescribePlanQRCodesRequest& request);
 
                 /**
                  *查询商品信息

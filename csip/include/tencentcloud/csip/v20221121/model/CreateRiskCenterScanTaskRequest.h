@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/TaskAssetObject.h>
 #include <tencentcloud/csip/v20221121/model/TaskAdvanceCFG.h>
+#include <tencentcloud/csip/v20221121/model/AssetTag.h>
 
 
 namespace TencentCloud
@@ -254,6 +255,27 @@ namespace TencentCloud
                      */
                     bool TaskModeHasBeenSet() const;
 
+                    /**
+                     * 获取资产标签
+                     * @return Tags 资产标签
+                     * 
+                     */
+                    AssetTag GetTags() const;
+
+                    /**
+                     * 设置资产标签
+                     * @param _tags 资产标签
+                     * 
+                     */
+                    void SetTags(const AssetTag& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +337,12 @@ namespace TencentCloud
                      */
                     int64_t m_taskMode;
                     bool m_taskModeHasBeenSet;
+
+                    /**
+                     * 资产标签
+                     */
+                    AssetTag m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

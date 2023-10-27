@@ -23,7 +23,11 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 DescribeAntiInfoLeakageRulesRequest::DescribeAntiInfoLeakageRulesRequest() :
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -40,6 +44,45 @@ string DescribeAntiInfoLeakageRulesRequest::ToJsonString() const
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -64,6 +107,70 @@ void DescribeAntiInfoLeakageRulesRequest::SetDomain(const string& _domain)
 bool DescribeAntiInfoLeakageRulesRequest::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+uint64_t DescribeAntiInfoLeakageRulesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeAntiInfoLeakageRulesRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeAntiInfoLeakageRulesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeAntiInfoLeakageRulesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeAntiInfoLeakageRulesRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeAntiInfoLeakageRulesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string DescribeAntiInfoLeakageRulesRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeAntiInfoLeakageRulesRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeAntiInfoLeakageRulesRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+vector<FiltersItemNew> DescribeAntiInfoLeakageRulesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAntiInfoLeakageRulesRequest::SetFilters(const vector<FiltersItemNew>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAntiInfoLeakageRulesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

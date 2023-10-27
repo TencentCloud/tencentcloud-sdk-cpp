@@ -37,6 +37,12 @@
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAddressTemplateRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAddressTemplateResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateAlertCenterIsolateRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateAlertCenterIsolateResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateAlertCenterOmitRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateAlertCenterOmitResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateAlertCenterRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateAlertCenterRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h>
@@ -268,6 +274,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAddressTemplateResponse> CreateAddressTemplateOutcome;
                 typedef std::future<CreateAddressTemplateOutcome> CreateAddressTemplateOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateAddressTemplateRequest&, CreateAddressTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAddressTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAlertCenterIsolateResponse> CreateAlertCenterIsolateOutcome;
+                typedef std::future<CreateAlertCenterIsolateOutcome> CreateAlertCenterIsolateOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateAlertCenterIsolateRequest&, CreateAlertCenterIsolateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertCenterIsolateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAlertCenterOmitResponse> CreateAlertCenterOmitOutcome;
+                typedef std::future<CreateAlertCenterOmitOutcome> CreateAlertCenterOmitOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateAlertCenterOmitRequest&, CreateAlertCenterOmitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertCenterOmitAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAlertCenterRuleResponse> CreateAlertCenterRuleOutcome;
+                typedef std::future<CreateAlertCenterRuleOutcome> CreateAlertCenterRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateAlertCenterRuleRequest&, CreateAlertCenterRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertCenterRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBlockIgnoreRuleListResponse> CreateBlockIgnoreRuleListOutcome;
                 typedef std::future<CreateBlockIgnoreRuleListOutcome> CreateBlockIgnoreRuleListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateBlockIgnoreRuleListRequest&, CreateBlockIgnoreRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlockIgnoreRuleListAsyncHandler;
@@ -627,6 +642,33 @@ namespace TencentCloud
                 CreateAddressTemplateOutcome CreateAddressTemplate(const Model::CreateAddressTemplateRequest &request);
                 void CreateAddressTemplateAsync(const Model::CreateAddressTemplateRequest& request, const CreateAddressTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAddressTemplateOutcomeCallable CreateAddressTemplateCallable(const Model::CreateAddressTemplateRequest& request);
+
+                /**
+                 *用户告警中心-封隔离处置按钮
+                 * @param req CreateAlertCenterIsolateRequest
+                 * @return CreateAlertCenterIsolateOutcome
+                 */
+                CreateAlertCenterIsolateOutcome CreateAlertCenterIsolate(const Model::CreateAlertCenterIsolateRequest &request);
+                void CreateAlertCenterIsolateAsync(const Model::CreateAlertCenterIsolateRequest& request, const CreateAlertCenterIsolateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAlertCenterIsolateOutcomeCallable CreateAlertCenterIsolateCallable(const Model::CreateAlertCenterIsolateRequest& request);
+
+                /**
+                 *用户告警中心-忽略处置按钮
+                 * @param req CreateAlertCenterOmitRequest
+                 * @return CreateAlertCenterOmitOutcome
+                 */
+                CreateAlertCenterOmitOutcome CreateAlertCenterOmit(const Model::CreateAlertCenterOmitRequest &request);
+                void CreateAlertCenterOmitAsync(const Model::CreateAlertCenterOmitRequest& request, const CreateAlertCenterOmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAlertCenterOmitOutcomeCallable CreateAlertCenterOmitCallable(const Model::CreateAlertCenterOmitRequest& request);
+
+                /**
+                 *用户告警中心-封禁、放通处置按钮
+                 * @param req CreateAlertCenterRuleRequest
+                 * @return CreateAlertCenterRuleOutcome
+                 */
+                CreateAlertCenterRuleOutcome CreateAlertCenterRule(const Model::CreateAlertCenterRuleRequest &request);
+                void CreateAlertCenterRuleAsync(const Model::CreateAlertCenterRuleRequest& request, const CreateAlertCenterRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAlertCenterRuleOutcomeCallable CreateAlertCenterRuleCallable(const Model::CreateAlertCenterRuleRequest& request);
 
                 /**
                  *批量添加入侵防御封禁列表、放通列表规则

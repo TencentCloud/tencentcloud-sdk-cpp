@@ -43,7 +43,8 @@ BruteAttackInfo::BruteAttackInfo() :
     m_instanceIdHasBeenSet(false),
     m_dataStatusHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_riskLevelHasBeenSet(false)
 {
 }
 
@@ -289,6 +290,16 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
         m_locationHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskLevel") && !value["RiskLevel"].IsNull())
+    {
+        if (!value["RiskLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.RiskLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskLevel = value["RiskLevel"].GetUint64();
+        m_riskLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -479,6 +490,14 @@ void BruteAttackInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Location";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskLevel, allocator);
     }
 
 }
@@ -850,5 +869,21 @@ void BruteAttackInfo::SetLocation(const string& _location)
 bool BruteAttackInfo::LocationHasBeenSet() const
 {
     return m_locationHasBeenSet;
+}
+
+uint64_t BruteAttackInfo::GetRiskLevel() const
+{
+    return m_riskLevel;
+}
+
+void BruteAttackInfo::SetRiskLevel(const uint64_t& _riskLevel)
+{
+    m_riskLevel = _riskLevel;
+    m_riskLevelHasBeenSet = true;
+}
+
+bool BruteAttackInfo::RiskLevelHasBeenSet() const
+{
+    return m_riskLevelHasBeenSet;
 }
 

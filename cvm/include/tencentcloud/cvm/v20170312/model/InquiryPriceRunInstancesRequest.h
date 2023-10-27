@@ -31,6 +31,7 @@
 #include <tencentcloud/cvm/v20170312/model/EnhancedService.h>
 #include <tencentcloud/cvm/v20170312/model/TagSpecification.h>
 #include <tencentcloud/cvm/v20170312/model/InstanceMarketOptionsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/LaunchTemplate.h>
 
 
 namespace TencentCloud
@@ -355,15 +356,15 @@ namespace TencentCloud
                     bool EnhancedServiceHasBeenSet() const;
 
                     /**
-                     * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性。
-                     * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性。
+                     * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性。
-                     * @param _clientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性。
+                     * 设置用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * @param _clientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -459,6 +460,27 @@ namespace TencentCloud
                      */
                     bool HpcClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例启动模板。
+                     * @return LaunchTemplate 实例启动模板。
+                     * 
+                     */
+                    LaunchTemplate GetLaunchTemplate() const;
+
+                    /**
+                     * 设置实例启动模板。
+                     * @param _launchTemplate 实例启动模板。
+                     * 
+                     */
+                    void SetLaunchTemplate(const LaunchTemplate& _launchTemplate);
+
+                    /**
+                     * 判断参数 LaunchTemplate 是否已赋值
+                     * @return LaunchTemplate 是否已赋值
+                     * 
+                     */
+                    bool LaunchTemplateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -548,7 +570,7 @@ namespace TencentCloud
                     bool m_enhancedServiceHasBeenSet;
 
                     /**
-                     * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性。
+                     * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
@@ -576,6 +598,12 @@ namespace TencentCloud
                      */
                     std::string m_hpcClusterId;
                     bool m_hpcClusterIdHasBeenSet;
+
+                    /**
+                     * 实例启动模板。
+                     */
+                    LaunchTemplate m_launchTemplate;
+                    bool m_launchTemplateHasBeenSet;
 
                 };
             }

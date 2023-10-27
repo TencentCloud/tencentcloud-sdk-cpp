@@ -416,18 +416,18 @@ namespace TencentCloud
                     bool FwInsRegionHasBeenSet() const;
 
                     /**
-                     * 获取0 观察 1 拦截 2 严格 3 关闭
+                     * 获取0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpsAction 0 观察 1 拦截 2 严格 3 关闭
+                     * @return IpsAction 0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpsAction() const;
 
                     /**
-                     * 设置0 观察 1 拦截 2 严格 3 关闭
+                     * 设置0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipsAction 0 观察 1 拦截 2 严格 3 关闭
+                     * @param _ipsAction 0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -604,7 +604,7 @@ namespace TencentCloud
                     bool m_fwInsRegionHasBeenSet;
 
                     /**
-                     * 0 观察 1 拦截 2 严格 3 关闭
+                     * 0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipsAction;

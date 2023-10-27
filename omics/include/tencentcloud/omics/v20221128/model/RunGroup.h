@@ -25,8 +25,10 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/omics/v20221128/model/RunOption.h>
+#include <tencentcloud/omics/v20221128/model/NFOption.h>
 #include <tencentcloud/omics/v20221128/model/RunStatusCount.h>
 #include <tencentcloud/omics/v20221128/model/ExecutionTime.h>
+#include <tencentcloud/omics/v20221128/model/ApplicationVersion.h>
 
 
 namespace TencentCloud
@@ -327,15 +329,15 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取运行选项。
-                     * @return Option 运行选项。
+                     * 获取WDL运行选项。
+                     * @return Option WDL运行选项。
                      * 
                      */
                     RunOption GetOption() const;
 
                     /**
-                     * 设置运行选项。
-                     * @param _option 运行选项。
+                     * 设置WDL运行选项。
+                     * @param _option WDL运行选项。
                      * 
                      */
                     void SetOption(const RunOption& _option);
@@ -346,6 +348,31 @@ namespace TencentCloud
                      * 
                      */
                     bool OptionHasBeenSet() const;
+
+                    /**
+                     * 获取Nextflow运行选项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NFOption Nextflow运行选项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    NFOption GetNFOption() const;
+
+                    /**
+                     * 设置Nextflow运行选项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nFOption Nextflow运行选项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNFOption(const NFOption& _nFOption);
+
+                    /**
+                     * 判断参数 NFOption 是否已赋值
+                     * @return NFOption 是否已赋值
+                     * 
+                     */
+                    bool NFOptionHasBeenSet() const;
 
                     /**
                      * 获取任务总数量。
@@ -473,6 +500,106 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取创建者。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Creator 创建者。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreator() const;
+
+                    /**
+                     * 设置创建者。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creator 创建者。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreator(const std::string& _creator);
+
+                    /**
+                     * 判断参数 Creator 是否已赋值
+                     * @return Creator 是否已赋值
+                     * 
+                     */
+                    bool CreatorHasBeenSet() const;
+
+                    /**
+                     * 获取创建者ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatorId 创建者ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreatorId() const;
+
+                    /**
+                     * 设置创建者ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creatorId 创建者ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreatorId(const std::string& _creatorId);
+
+                    /**
+                     * 判断参数 CreatorId 是否已赋值
+                     * @return CreatorId 是否已赋值
+                     * 
+                     */
+                    bool CreatorIdHasBeenSet() const;
+
+                    /**
+                     * 获取运行结果通知方式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResultNotify 运行结果通知方式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResultNotify() const;
+
+                    /**
+                     * 设置运行结果通知方式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resultNotify 运行结果通知方式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResultNotify(const std::string& _resultNotify);
+
+                    /**
+                     * 判断参数 ResultNotify 是否已赋值
+                     * @return ResultNotify 是否已赋值
+                     * 
+                     */
+                    bool ResultNotifyHasBeenSet() const;
+
+                    /**
+                     * 获取应用版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationVersion 应用版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ApplicationVersion GetApplicationVersion() const;
+
+                    /**
+                     * 设置应用版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationVersion 应用版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationVersion(const ApplicationVersion& _applicationVersion);
+
+                    /**
+                     * 判断参数 ApplicationVersion 是否已赋值
+                     * @return ApplicationVersion 是否已赋值
+                     * 
+                     */
+                    bool ApplicationVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -555,10 +682,17 @@ namespace TencentCloud
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 运行选项。
+                     * WDL运行选项。
                      */
                     RunOption m_option;
                     bool m_optionHasBeenSet;
+
+                    /**
+                     * Nextflow运行选项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    NFOption m_nFOption;
+                    bool m_nFOptionHasBeenSet;
 
                     /**
                      * 任务总数量。
@@ -595,6 +729,34 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 创建者。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creator;
+                    bool m_creatorHasBeenSet;
+
+                    /**
+                     * 创建者ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creatorId;
+                    bool m_creatorIdHasBeenSet;
+
+                    /**
+                     * 运行结果通知方式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resultNotify;
+                    bool m_resultNotifyHasBeenSet;
+
+                    /**
+                     * 应用版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ApplicationVersion m_applicationVersion;
+                    bool m_applicationVersionHasBeenSet;
 
                 };
             }

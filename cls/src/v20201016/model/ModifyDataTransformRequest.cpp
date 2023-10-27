@@ -27,7 +27,8 @@ ModifyDataTransformRequest::ModifyDataTransformRequest() :
     m_nameHasBeenSet(false),
     m_etlContentHasBeenSet(false),
     m_enableFlagHasBeenSet(false),
-    m_dstResourcesHasBeenSet(false)
+    m_dstResourcesHasBeenSet(false),
+    m_hasServicesLogHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string ModifyDataTransformRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hasServicesLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasServicesLog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hasServicesLog, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void ModifyDataTransformRequest::SetDstResources(const vector<DataTransformResou
 bool ModifyDataTransformRequest::DstResourcesHasBeenSet() const
 {
     return m_dstResourcesHasBeenSet;
+}
+
+uint64_t ModifyDataTransformRequest::GetHasServicesLog() const
+{
+    return m_hasServicesLog;
+}
+
+void ModifyDataTransformRequest::SetHasServicesLog(const uint64_t& _hasServicesLog)
+{
+    m_hasServicesLog = _hasServicesLog;
+    m_hasServicesLogHasBeenSet = true;
+}
+
+bool ModifyDataTransformRequest::HasServicesLogHasBeenSet() const
+{
+    return m_hasServicesLogHasBeenSet;
 }
 
 

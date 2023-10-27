@@ -257,6 +257,27 @@ DatasourceConnectionType   （数据源连接连接类型）
                      */
                     bool DatasourceConnectionTypesHasBeenSet() const;
 
+                    /**
+                     * 获取返回指定hive版本的数据源，该参数指定后，会过滤掉该参数指定版本以外的hive数据源，非hive数据源正常返回
+                     * @return HiveVersion 返回指定hive版本的数据源，该参数指定后，会过滤掉该参数指定版本以外的hive数据源，非hive数据源正常返回
+                     * 
+                     */
+                    std::vector<std::string> GetHiveVersion() const;
+
+                    /**
+                     * 设置返回指定hive版本的数据源，该参数指定后，会过滤掉该参数指定版本以外的hive数据源，非hive数据源正常返回
+                     * @param _hiveVersion 返回指定hive版本的数据源，该参数指定后，会过滤掉该参数指定版本以外的hive数据源，非hive数据源正常返回
+                     * 
+                     */
+                    void SetHiveVersion(const std::vector<std::string>& _hiveVersion);
+
+                    /**
+                     * 判断参数 HiveVersion 是否已赋值
+                     * @return HiveVersion 是否已赋值
+                     * 
+                     */
+                    bool HiveVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +340,12 @@ DatasourceConnectionType   （数据源连接连接类型）
                      */
                     std::vector<std::string> m_datasourceConnectionTypes;
                     bool m_datasourceConnectionTypesHasBeenSet;
+
+                    /**
+                     * 返回指定hive版本的数据源，该参数指定后，会过滤掉该参数指定版本以外的hive数据源，非hive数据源正常返回
+                     */
+                    std::vector<std::string> m_hiveVersion;
+                    bool m_hiveVersionHasBeenSet;
 
                 };
             }

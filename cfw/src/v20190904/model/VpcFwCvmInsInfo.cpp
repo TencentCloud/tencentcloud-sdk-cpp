@@ -27,7 +27,9 @@ VpcFwCvmInsInfo::VpcFwCvmInsInfo() :
     m_regionDetailHasBeenSet(false),
     m_zoneZhHasBeenSet(false),
     m_zoneZhBackHasBeenSet(false),
-    m_bandWidthHasBeenSet(false)
+    m_bandWidthHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_zoneBakHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome VpcFwCvmInsInfo::Deserialize(const rapidjson::Value &value)
         m_bandWidthHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcFwCvmInsInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneBak") && !value["ZoneBak"].IsNull())
+    {
+        if (!value["ZoneBak"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcFwCvmInsInfo.ZoneBak` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneBak = string(value["ZoneBak"].GetString());
+        m_zoneBakHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void VpcFwCvmInsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "BandWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandWidth, allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneBakHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneBak";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneBak.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void VpcFwCvmInsInfo::SetBandWidth(const int64_t& _bandWidth)
 bool VpcFwCvmInsInfo::BandWidthHasBeenSet() const
 {
     return m_bandWidthHasBeenSet;
+}
+
+string VpcFwCvmInsInfo::GetZone() const
+{
+    return m_zone;
+}
+
+void VpcFwCvmInsInfo::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool VpcFwCvmInsInfo::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+string VpcFwCvmInsInfo::GetZoneBak() const
+{
+    return m_zoneBak;
+}
+
+void VpcFwCvmInsInfo::SetZoneBak(const string& _zoneBak)
+{
+    m_zoneBak = _zoneBak;
+    m_zoneBakHasBeenSet = true;
+}
+
+bool VpcFwCvmInsInfo::ZoneBakHasBeenSet() const
+{
+    return m_zoneBakHasBeenSet;
 }
 

@@ -25,7 +25,9 @@ using namespace std;
 DeleteDomainAndIpRequest::DeleteDomainAndIpRequest() :
     m_contentHasBeenSet(false),
     m_retainPathHasBeenSet(false),
-    m_ignoreAssetHasBeenSet(false)
+    m_ignoreAssetHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,29 @@ string DeleteDomainAndIpRequest::ToJsonString() const
         string key = "IgnoreAsset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ignoreAsset, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +146,38 @@ void DeleteDomainAndIpRequest::SetIgnoreAsset(const int64_t& _ignoreAsset)
 bool DeleteDomainAndIpRequest::IgnoreAssetHasBeenSet() const
 {
     return m_ignoreAssetHasBeenSet;
+}
+
+vector<AssetTag> DeleteDomainAndIpRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DeleteDomainAndIpRequest::SetTags(const vector<AssetTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DeleteDomainAndIpRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string DeleteDomainAndIpRequest::GetType() const
+{
+    return m_type;
+}
+
+void DeleteDomainAndIpRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DeleteDomainAndIpRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

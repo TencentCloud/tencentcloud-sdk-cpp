@@ -38,8 +38,10 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/VPCOption.h
   include/tencentcloud/omics/v20221128/model/RetryRunsRequest.h
   include/tencentcloud/omics/v20221128/model/ImportTableFileRequest.h
+  include/tencentcloud/omics/v20221128/model/CacheInfo.h
   include/tencentcloud/omics/v20221128/model/ClusterOption.h
   include/tencentcloud/omics/v20221128/model/RunApplicationRequest.h
+  include/tencentcloud/omics/v20221128/model/ApplicationVersion.h
   include/tencentcloud/omics/v20221128/model/DeleteEnvironmentRequest.h
   include/tencentcloud/omics/v20221128/model/RunGroup.h
   include/tencentcloud/omics/v20221128/model/DatabaseOption.h
@@ -57,6 +59,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/DescribeTablesRequest.h
   include/tencentcloud/omics/v20221128/model/DescribeEnvironmentsRequest.h
   include/tencentcloud/omics/v20221128/model/RunOption.h
+  include/tencentcloud/omics/v20221128/model/NFOption.h
   include/tencentcloud/omics/v20221128/model/Table.h
   include/tencentcloud/omics/v20221128/model/CVMOption.h
   include/tencentcloud/omics/v20221128/model/RunMetadata.h
@@ -84,8 +87,10 @@ set(omics_src
   src/v20221128/model/VPCOption.cpp
   src/v20221128/model/RetryRunsRequest.cpp
   src/v20221128/model/ImportTableFileRequest.cpp
+  src/v20221128/model/CacheInfo.cpp
   src/v20221128/model/ClusterOption.cpp
   src/v20221128/model/RunApplicationRequest.cpp
+  src/v20221128/model/ApplicationVersion.cpp
   src/v20221128/model/DeleteEnvironmentRequest.cpp
   src/v20221128/model/RunGroup.cpp
   src/v20221128/model/DatabaseOption.cpp
@@ -103,6 +108,7 @@ set(omics_src
   src/v20221128/model/DescribeTablesRequest.cpp
   src/v20221128/model/DescribeEnvironmentsRequest.cpp
   src/v20221128/model/RunOption.cpp
+  src/v20221128/model/NFOption.cpp
   src/v20221128/model/Table.cpp
   src/v20221128/model/CVMOption.cpp
   src/v20221128/model/RunMetadata.cpp

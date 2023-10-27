@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID。
-                     * @return ZoneId 站点ID。
+                     * 获取站点 ID
+                     * @return ZoneId 站点 ID
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID。
-                     * @param _zoneId 站点ID。
+                     * 设置站点 ID
+                     * @param _zoneId 站点 ID
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取源站组名称，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。
-                     * @return Name 源站组名称，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。
+                     * 获取源站组名称，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。
+                     * @return Name 源站组名称，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置源站组名称，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。
-                     * @param _name 源站组名称，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。
+                     * 设置源站组名称，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。
+                     * @param _name 源站组名称，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -87,22 +87,22 @@ namespace TencentCloud
 
                     /**
                      * 获取源站组类型，此参数必填，取值有：
-<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡引用；</li>
-<li>HTTP： HTTP专用型源站组，支持添加 IP/域名、对象存储源站，无法被四层代理引用。</li>
+<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡、HTTP 专用型负载均衡引用；</li>
+<li>HTTP： HTTP 专用型源站组，支持添加 IP/域名、对象存储源站作为源站，无法被四层代理引用，仅支持被添加加速域名、规则引擎-修改源站、HTTP 专用型负载均衡引用。</li>
                      * @return Type 源站组类型，此参数必填，取值有：
-<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡引用；</li>
-<li>HTTP： HTTP专用型源站组，支持添加 IP/域名、对象存储源站，无法被四层代理引用。</li>
+<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡、HTTP 专用型负载均衡引用；</li>
+<li>HTTP： HTTP 专用型源站组，支持添加 IP/域名、对象存储源站作为源站，无法被四层代理引用，仅支持被添加加速域名、规则引擎-修改源站、HTTP 专用型负载均衡引用。</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置源站组类型，此参数必填，取值有：
-<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡引用；</li>
-<li>HTTP： HTTP专用型源站组，支持添加 IP/域名、对象存储源站，无法被四层代理引用。</li>
+<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡、HTTP 专用型负载均衡引用；</li>
+<li>HTTP： HTTP 专用型源站组，支持添加 IP/域名、对象存储源站作为源站，无法被四层代理引用，仅支持被添加加速域名、规则引擎-修改源站、HTTP 专用型负载均衡引用。</li>
                      * @param _type 源站组类型，此参数必填，取值有：
-<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡引用；</li>
-<li>HTTP： HTTP专用型源站组，支持添加 IP/域名、对象存储源站，无法被四层代理引用。</li>
+<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡、HTTP 专用型负载均衡引用；</li>
+<li>HTTP： HTTP 专用型源站组，支持添加 IP/域名、对象存储源站作为源站，无法被四层代理引用，仅支持被添加加速域名、规则引擎-修改源站、HTTP 专用型负载均衡引用。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -135,24 +135,45 @@ namespace TencentCloud
                      */
                     bool RecordsHasBeenSet() const;
 
+                    /**
+                     * 获取回源 Host Header，仅 Type = HTTP 时传入生效，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
+                     * @return HostHeader 回源 Host Header，仅 Type = HTTP 时传入生效，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
+                     * 
+                     */
+                    std::string GetHostHeader() const;
+
+                    /**
+                     * 设置回源 Host Header，仅 Type = HTTP 时传入生效，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
+                     * @param _hostHeader 回源 Host Header，仅 Type = HTTP 时传入生效，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
+                     * 
+                     */
+                    void SetHostHeader(const std::string& _hostHeader);
+
+                    /**
+                     * 判断参数 HostHeader 是否已赋值
+                     * @return HostHeader 是否已赋值
+                     * 
+                     */
+                    bool HostHeaderHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 站点ID。
+                     * 站点 ID
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 源站组名称，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。
+                     * 源站组名称，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 源站组类型，此参数必填，取值有：
-<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡引用；</li>
-<li>HTTP： HTTP专用型源站组，支持添加 IP/域名、对象存储源站，无法被四层代理引用。</li>
+<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡、HTTP 专用型负载均衡引用；</li>
+<li>HTTP： HTTP 专用型源站组，支持添加 IP/域名、对象存储源站作为源站，无法被四层代理引用，仅支持被添加加速域名、规则引擎-修改源站、HTTP 专用型负载均衡引用。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -162,6 +183,12 @@ namespace TencentCloud
                      */
                     std::vector<OriginRecord> m_records;
                     bool m_recordsHasBeenSet;
+
+                    /**
+                     * 回源 Host Header，仅 Type = HTTP 时传入生效，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
+                     */
+                    std::string m_hostHeader;
+                    bool m_hostHeaderHasBeenSet;
 
                 };
             }

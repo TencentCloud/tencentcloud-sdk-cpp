@@ -30,7 +30,8 @@ UpdateUserDeviceRequest::UpdateUserDeviceRequest() :
     m_descriptionHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_protocolTypeHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string UpdateUserDeviceRequest::ToJsonString() const
         string key = "Username";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_protocolType, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void UpdateUserDeviceRequest::SetUsername(const string& _username)
 bool UpdateUserDeviceRequest::UsernameHasBeenSet() const
 {
     return m_usernameHasBeenSet;
+}
+
+int64_t UpdateUserDeviceRequest::GetProtocolType() const
+{
+    return m_protocolType;
+}
+
+void UpdateUserDeviceRequest::SetProtocolType(const int64_t& _protocolType)
+{
+    m_protocolType = _protocolType;
+    m_protocolTypeHasBeenSet = true;
+}
+
+bool UpdateUserDeviceRequest::ProtocolTypeHasBeenSet() const
+{
+    return m_protocolTypeHasBeenSet;
 }
 
 

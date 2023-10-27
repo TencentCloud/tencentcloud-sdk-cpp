@@ -23,6 +23,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/OrgMember.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationAuthNodeResponse.h
   include/tencentcloud/organization/v20210331/model/OrgPermission.h
+  include/tencentcloud/organization/v20210331/model/DeleteAccountRequest.h
   include/tencentcloud/organization/v20210331/model/OrgMemberPolicy.h
   include/tencentcloud/organization/v20210331/model/OrgProductFinancial.h
   include/tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountRequest.h
@@ -102,6 +103,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/UpdateOrganizationMemberEmailBindRequest.h
   include/tencentcloud/organization/v20210331/model/OrgNode.h
   include/tencentcloud/organization/v20210331/model/DeleteOrganizationMemberAuthIdentityRequest.h
+  include/tencentcloud/organization/v20210331/model/DeleteAccountResponse.h
   include/tencentcloud/organization/v20181225/model/MoveOrganizationMembersToNodeRequest.h
   include/tencentcloud/organization/v20181225/model/GetOrganizationRequest.h
   include/tencentcloud/organization/v20181225/model/ListOrganizationMembersRequest.h
@@ -153,6 +155,7 @@ set(organization_src
   src/v20210331/model/OrgMember.cpp
   src/v20210331/model/DescribeOrganizationAuthNodeResponse.cpp
   src/v20210331/model/OrgPermission.cpp
+  src/v20210331/model/DeleteAccountRequest.cpp
   src/v20210331/model/OrgMemberPolicy.cpp
   src/v20210331/model/OrgProductFinancial.cpp
   src/v20210331/model/BindOrganizationMemberAuthAccountRequest.cpp
@@ -232,6 +235,7 @@ set(organization_src
   src/v20210331/model/UpdateOrganizationMemberEmailBindRequest.cpp
   src/v20210331/model/OrgNode.cpp
   src/v20210331/model/DeleteOrganizationMemberAuthIdentityRequest.cpp
+  src/v20210331/model/DeleteAccountResponse.cpp
   src/v20181225/model/MoveOrganizationMembersToNodeRequest.cpp
   src/v20181225/model/GetOrganizationRequest.cpp
   src/v20181225/model/ListOrganizationMembersRequest.cpp

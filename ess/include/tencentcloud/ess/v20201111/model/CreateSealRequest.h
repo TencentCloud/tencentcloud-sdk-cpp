@@ -444,22 +444,22 @@ namespace TencentCloud
 
                     /**
                      * 获取印章样式, 可以选择的样式如下: 
-<ul><li>**cycle**:(默认)圆形印章</li>
-<li>**ellipse**:椭圆印章</li>
+<ul><li>**circle**:(默认)圆形印章</li>
+<li>**ellipse**:椭圆印章</li></ul>
                      * @return SealStyle 印章样式, 可以选择的样式如下: 
-<ul><li>**cycle**:(默认)圆形印章</li>
-<li>**ellipse**:椭圆印章</li>
+<ul><li>**circle**:(默认)圆形印章</li>
+<li>**ellipse**:椭圆印章</li></ul>
                      * 
                      */
                     std::string GetSealStyle() const;
 
                     /**
                      * 设置印章样式, 可以选择的样式如下: 
-<ul><li>**cycle**:(默认)圆形印章</li>
-<li>**ellipse**:椭圆印章</li>
+<ul><li>**circle**:(默认)圆形印章</li>
+<li>**ellipse**:椭圆印章</li></ul>
                      * @param _sealStyle 印章样式, 可以选择的样式如下: 
-<ul><li>**cycle**:(默认)圆形印章</li>
-<li>**ellipse**:椭圆印章</li>
+<ul><li>**circle**:(默认)圆形印章</li>
+<li>**ellipse**:椭圆印章</li></ul>
                      * 
                      */
                     void SetSealStyle(const std::string& _sealStyle);
@@ -618,8 +618,8 @@ namespace TencentCloud
 
                     /**
                      * 印章样式, 可以选择的样式如下: 
-<ul><li>**cycle**:(默认)圆形印章</li>
-<li>**ellipse**:椭圆印章</li>
+<ul><li>**circle**:(默认)圆形印章</li>
+<li>**ellipse**:椭圆印章</li></ul>
                      */
                     std::string m_sealStyle;
                     bool m_sealStyleHasBeenSet;

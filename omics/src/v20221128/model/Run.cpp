@@ -33,6 +33,7 @@ Run::Run() :
     m_inputHasBeenSet(false),
     m_optionHasBeenSet(false),
     m_executionTimeHasBeenSet(false),
+    m_cacheHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
@@ -178,6 +179,23 @@ CoreInternalOutcome Run::Deserialize(const rapidjson::Value &value)
         m_executionTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Cache") && !value["Cache"].IsNull())
+    {
+        if (!value["Cache"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Run.Cache` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cache.Deserialize(value["Cache"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cacheHasBeenSet = true;
+    }
+
     if (value.HasMember("ErrorMessage") && !value["ErrorMessage"].IsNull())
     {
         if (!value["ErrorMessage"].IsString())
@@ -311,6 +329,15 @@ void Run::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_executionTime.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cacheHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cache";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cache.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_errorMessageHasBeenSet)
@@ -530,6 +557,22 @@ void Run::SetExecutionTime(const ExecutionTime& _executionTime)
 bool Run::ExecutionTimeHasBeenSet() const
 {
     return m_executionTimeHasBeenSet;
+}
+
+CacheInfo Run::GetCache() const
+{
+    return m_cache;
+}
+
+void Run::SetCache(const CacheInfo& _cache)
+{
+    m_cache = _cache;
+    m_cacheHasBeenSet = true;
+}
+
+bool Run::CacheHasBeenSet() const
+{
+    return m_cacheHasBeenSet;
 }
 
 string Run::GetErrorMessage() const

@@ -43,7 +43,8 @@ DescribeOperateOpsTasksRequest::DescribeOperateOpsTasksRequest() :
     m_targetServiceIdHasBeenSet(false),
     m_targetServiceTypeHasBeenSet(false),
     m_alarmTypeHasBeenSet(false),
-    m_executorGroupIdListHasBeenSet(false)
+    m_executorGroupIdListHasBeenSet(false),
+    m_taskTagsHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,21 @@ string DescribeOperateOpsTasksRequest::ToJsonString() const
         string key = "ExecutorGroupIdList";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_executorGroupIdList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taskTags.begin(); itr != m_taskTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -564,6 +580,22 @@ void DescribeOperateOpsTasksRequest::SetExecutorGroupIdList(const string& _execu
 bool DescribeOperateOpsTasksRequest::ExecutorGroupIdListHasBeenSet() const
 {
     return m_executorGroupIdListHasBeenSet;
+}
+
+vector<TaskTag> DescribeOperateOpsTasksRequest::GetTaskTags() const
+{
+    return m_taskTags;
+}
+
+void DescribeOperateOpsTasksRequest::SetTaskTags(const vector<TaskTag>& _taskTags)
+{
+    m_taskTags = _taskTags;
+    m_taskTagsHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::TaskTagsHasBeenSet() const
+{
+    return m_taskTagsHasBeenSet;
 }
 
 

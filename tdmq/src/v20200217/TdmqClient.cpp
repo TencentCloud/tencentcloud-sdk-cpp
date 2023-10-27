@@ -2577,6 +2577,92 @@ TdmqClient::DescribeRabbitMQNodeListOutcomeCallable TdmqClient::DescribeRabbitMQ
     return task->get_future();
 }
 
+TdmqClient::DescribeRabbitMQQueueDetailOutcome TdmqClient::DescribeRabbitMQQueueDetail(const DescribeRabbitMQQueueDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRabbitMQQueueDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRabbitMQQueueDetailResponse rsp = DescribeRabbitMQQueueDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRabbitMQQueueDetailOutcome(rsp);
+        else
+            return DescribeRabbitMQQueueDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRabbitMQQueueDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRabbitMQQueueDetailAsync(const DescribeRabbitMQQueueDetailRequest& request, const DescribeRabbitMQQueueDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRabbitMQQueueDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRabbitMQQueueDetailOutcomeCallable TdmqClient::DescribeRabbitMQQueueDetailCallable(const DescribeRabbitMQQueueDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQQueueDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRabbitMQQueueDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeRabbitMQQueuesOutcome TdmqClient::DescribeRabbitMQQueues(const DescribeRabbitMQQueuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRabbitMQQueues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRabbitMQQueuesResponse rsp = DescribeRabbitMQQueuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRabbitMQQueuesOutcome(rsp);
+        else
+            return DescribeRabbitMQQueuesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRabbitMQQueuesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRabbitMQQueuesAsync(const DescribeRabbitMQQueuesRequest& request, const DescribeRabbitMQQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRabbitMQQueues(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRabbitMQQueuesOutcomeCallable TdmqClient::DescribeRabbitMQQueuesCallable(const DescribeRabbitMQQueuesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQQueuesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRabbitMQQueues(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRabbitMQUserOutcome TdmqClient::DescribeRabbitMQUser(const DescribeRabbitMQUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRabbitMQUser");

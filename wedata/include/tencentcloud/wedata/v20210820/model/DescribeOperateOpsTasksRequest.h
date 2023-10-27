@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/TaskTag.h>
 
 
 namespace TencentCloud
@@ -483,6 +484,27 @@ namespace TencentCloud
                      */
                     bool ExecutorGroupIdListHasBeenSet() const;
 
+                    /**
+                     * 获取任务标签
+                     * @return TaskTags 任务标签
+                     * 
+                     */
+                    std::vector<TaskTag> GetTaskTags() const;
+
+                    /**
+                     * 设置任务标签
+                     * @param _taskTags 任务标签
+                     * 
+                     */
+                    void SetTaskTags(const std::vector<TaskTag>& _taskTags);
+
+                    /**
+                     * 判断参数 TaskTags 是否已赋值
+                     * @return TaskTags 是否已赋值
+                     * 
+                     */
+                    bool TaskTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -610,6 +632,12 @@ namespace TencentCloud
                      */
                     std::string m_executorGroupIdList;
                     bool m_executorGroupIdListHasBeenSet;
+
+                    /**
+                     * 任务标签
+                     */
+                    std::vector<TaskTag> m_taskTags;
+                    bool m_taskTagsHasBeenSet;
 
                 };
             }

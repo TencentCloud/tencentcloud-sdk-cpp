@@ -86,15 +86,39 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取Name 可取值：risk_level风险等级, risk_target检查对象，风险对象,risk_type风险类别,risk_attri检测项所属的风险类型
-                     * @return Filters Name 可取值：risk_level风险等级, risk_target检查对象，风险对象,risk_type风险类别,risk_attri检测项所属的风险类型
+                     * 获取Name 可取值：
+Name: 检查项名称
+RiskType: 风险类别
+RiskLevel: 风险等级
+RiskTarget: 检查对象
+RiskAttribute: 检测项所属分型线类型
+Enable: 检查项是否开启(0:关闭 1:开启)
+                     * @return Filters Name 可取值：
+Name: 检查项名称
+RiskType: 风险类别
+RiskLevel: 风险等级
+RiskTarget: 检查对象
+RiskAttribute: 检测项所属分型线类型
+Enable: 检查项是否开启(0:关闭 1:开启)
                      * 
                      */
                     std::vector<ComplianceFilters> GetFilters() const;
 
                     /**
-                     * 设置Name 可取值：risk_level风险等级, risk_target检查对象，风险对象,risk_type风险类别,risk_attri检测项所属的风险类型
-                     * @param _filters Name 可取值：risk_level风险等级, risk_target检查对象，风险对象,risk_type风险类别,risk_attri检测项所属的风险类型
+                     * 设置Name 可取值：
+Name: 检查项名称
+RiskType: 风险类别
+RiskLevel: 风险等级
+RiskTarget: 检查对象
+RiskAttribute: 检测项所属分型线类型
+Enable: 检查项是否开启(0:关闭 1:开启)
+                     * @param _filters Name 可取值：
+Name: 检查项名称
+RiskType: 风险类别
+RiskLevel: 风险等级
+RiskTarget: 检查对象
+RiskAttribute: 检测项所属分型线类型
+Enable: 检查项是否开启(0:关闭 1:开启)
                      * 
                      */
                     void SetFilters(const std::vector<ComplianceFilters>& _filters);
@@ -121,7 +145,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * Name 可取值：risk_level风险等级, risk_target检查对象，风险对象,risk_type风险类别,risk_attri检测项所属的风险类型
+                     * Name 可取值：
+Name: 检查项名称
+RiskType: 风险类别
+RiskLevel: 风险等级
+RiskTarget: 检查对象
+RiskAttribute: 检测项所属分型线类型
+Enable: 检查项是否开启(0:关闭 1:开启)
                      */
                     std::vector<ComplianceFilters> m_filters;
                     bool m_filtersHasBeenSet;

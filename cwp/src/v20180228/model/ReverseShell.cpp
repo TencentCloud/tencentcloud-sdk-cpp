@@ -42,7 +42,8 @@ ReverseShell::ReverseShell() :
     m_procTreeHasBeenSet(false),
     m_detectByHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false),
-    m_pidHasBeenSet(false)
+    m_pidHasBeenSet(false),
+    m_riskLevelHasBeenSet(false)
 {
 }
 
@@ -278,6 +279,16 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
         m_pidHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskLevel") && !value["RiskLevel"].IsNull())
+    {
+        if (!value["RiskLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.RiskLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskLevel = value["RiskLevel"].GetUint64();
+        m_riskLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +471,14 @@ void ReverseShell::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
+    }
+
+    if (m_riskLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskLevel, allocator);
     }
 
 }
@@ -815,5 +834,21 @@ void ReverseShell::SetPid(const int64_t& _pid)
 bool ReverseShell::PidHasBeenSet() const
 {
     return m_pidHasBeenSet;
+}
+
+uint64_t ReverseShell::GetRiskLevel() const
+{
+    return m_riskLevel;
+}
+
+void ReverseShell::SetRiskLevel(const uint64_t& _riskLevel)
+{
+    m_riskLevel = _riskLevel;
+    m_riskLevelHasBeenSet = true;
+}
+
+bool ReverseShell::RiskLevelHasBeenSet() const
+{
+    return m_riskLevelHasBeenSet;
 }
 

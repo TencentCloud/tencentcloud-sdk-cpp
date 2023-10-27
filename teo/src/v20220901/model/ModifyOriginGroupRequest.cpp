@@ -27,7 +27,8 @@ ModifyOriginGroupRequest::ModifyOriginGroupRequest() :
     m_groupIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_recordsHasBeenSet(false)
+    m_recordsHasBeenSet(false),
+    m_hostHeaderHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string ModifyOriginGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hostHeaderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostHeader";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hostHeader.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +180,22 @@ void ModifyOriginGroupRequest::SetRecords(const vector<OriginRecord>& _records)
 bool ModifyOriginGroupRequest::RecordsHasBeenSet() const
 {
     return m_recordsHasBeenSet;
+}
+
+string ModifyOriginGroupRequest::GetHostHeader() const
+{
+    return m_hostHeader;
+}
+
+void ModifyOriginGroupRequest::SetHostHeader(const string& _hostHeader)
+{
+    m_hostHeader = _hostHeader;
+    m_hostHeaderHasBeenSet = true;
+}
+
+bool ModifyOriginGroupRequest::HostHeaderHasBeenSet() const
+{
+    return m_hostHeaderHasBeenSet;
 }
 
 

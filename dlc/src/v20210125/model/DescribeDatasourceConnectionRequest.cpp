@@ -32,7 +32,8 @@ DescribeDatasourceConnectionRequest::DescribeDatasourceConnectionRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_datasourceConnectionNamesHasBeenSet(false),
-    m_datasourceConnectionTypesHasBeenSet(false)
+    m_datasourceConnectionTypesHasBeenSet(false),
+    m_hiveVersionHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,19 @@ string DescribeDatasourceConnectionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_datasourceConnectionTypes.begin(); itr != m_datasourceConnectionTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_hiveVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HiveVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_hiveVersion.begin(); itr != m_hiveVersion.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -311,6 +325,22 @@ void DescribeDatasourceConnectionRequest::SetDatasourceConnectionTypes(const vec
 bool DescribeDatasourceConnectionRequest::DatasourceConnectionTypesHasBeenSet() const
 {
     return m_datasourceConnectionTypesHasBeenSet;
+}
+
+vector<string> DescribeDatasourceConnectionRequest::GetHiveVersion() const
+{
+    return m_hiveVersion;
+}
+
+void DescribeDatasourceConnectionRequest::SetHiveVersion(const vector<string>& _hiveVersion)
+{
+    m_hiveVersion = _hiveVersion;
+    m_hiveVersionHasBeenSet = true;
+}
+
+bool DescribeDatasourceConnectionRequest::HiveVersionHasBeenSet() const
+{
+    return m_hiveVersionHasBeenSet;
 }
 
 

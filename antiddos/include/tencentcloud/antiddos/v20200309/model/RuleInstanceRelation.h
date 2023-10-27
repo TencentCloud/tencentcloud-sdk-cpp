@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 四七层规则的
+                * 四七层规则对应实例与IP的关系
                 */
                 class RuleInstanceRelation : public AbstractModel
                 {

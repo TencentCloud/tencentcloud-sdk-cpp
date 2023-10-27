@@ -514,6 +514,81 @@ namespace TencentCloud
                      */
                     bool NeedProbeEngineUpdateHasBeenSet() const;
 
+                    /**
+                     * 获取引擎运行模式，Normal:正常, OnlyRoute:透明模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTrafficMode() const;
+
+                    /**
+                     * 设置引擎运行模式，Normal:正常, OnlyRoute:透明模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrafficMode(const std::string& _trafficMode);
+
+                    /**
+                     * 判断参数 TrafficMode 是否已赋值
+                     * @return TrafficMode 是否已赋值
+                     * 
+                     */
+                    bool TrafficModeHasBeenSet() const;
+
+                    /**
+                     * 获取实例主所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone 实例主所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置实例主所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zone 实例主所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取实例备所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneBak 实例备所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZoneBak() const;
+
+                    /**
+                     * 设置实例备所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneBak 实例备所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneBak(const std::string& _zoneBak);
+
+                    /**
+                     * 判断参数 ZoneBak 是否已赋值
+                     * @return ZoneBak 是否已赋值
+                     * 
+                     */
+                    bool ZoneBakHasBeenSet() const;
+
                 private:
 
                     /**
@@ -647,6 +722,27 @@ namespace TencentCloud
                      */
                     int64_t m_needProbeEngineUpdate;
                     bool m_needProbeEngineUpdateHasBeenSet;
+
+                    /**
+                     * 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_trafficMode;
+                    bool m_trafficModeHasBeenSet;
+
+                    /**
+                     * 实例主所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 实例备所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneBak;
+                    bool m_zoneBakHasBeenSet;
 
                 };
             }
