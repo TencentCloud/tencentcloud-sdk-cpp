@@ -274,21 +274,21 @@ namespace TencentCloud
                     /**
                      * 获取运行选项。
                      * @return Option 运行选项。
-                     * 
+                     * @deprecated
                      */
                     RunOption GetOption() const;
 
                     /**
                      * 设置运行选项。
                      * @param _option 运行选项。
-                     * 
+                     * @deprecated
                      */
                     void SetOption(const RunOption& _option);
 
                     /**
                      * 判断参数 Option 是否已赋值
                      * @return Option 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OptionHasBeenSet() const;
 

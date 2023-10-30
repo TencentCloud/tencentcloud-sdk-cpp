@@ -75,7 +75,9 @@ DescribeDCDBInstanceDetailResponse::DescribeDCDBInstanceDetailResponse() :
     m_exclusterTypeHasBeenSet(false),
     m_rsAccessStrategyHasBeenSet(false),
     m_reservedNetResourcesHasBeenSet(false),
-    m_isPhysicalReplicationSupportedHasBeenSet(false)
+    m_isPhysicalReplicationSupportedHasBeenSet(false),
+    m_isDcnStrongSyncSupportedHasBeenSet(false),
+    m_isDcnSwitchSupportedHasBeenSet(false)
 {
 }
 
@@ -666,6 +668,26 @@ CoreInternalOutcome DescribeDCDBInstanceDetailResponse::Deserialize(const string
         m_isPhysicalReplicationSupportedHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsDcnStrongSyncSupported") && !rsp["IsDcnStrongSyncSupported"].IsNull())
+    {
+        if (!rsp["IsDcnStrongSyncSupported"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDcnStrongSyncSupported` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDcnStrongSyncSupported = rsp["IsDcnStrongSyncSupported"].GetInt64();
+        m_isDcnStrongSyncSupportedHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsDcnSwitchSupported") && !rsp["IsDcnSwitchSupported"].IsNull())
+    {
+        if (!rsp["IsDcnSwitchSupported"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDcnSwitchSupported` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDcnSwitchSupported = rsp["IsDcnSwitchSupported"].GetInt64();
+        m_isDcnSwitchSupportedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1116,6 +1138,22 @@ string DescribeDCDBInstanceDetailResponse::ToJsonString() const
         string key = "IsPhysicalReplicationSupported";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isPhysicalReplicationSupported, allocator);
+    }
+
+    if (m_isDcnStrongSyncSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDcnStrongSyncSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDcnStrongSyncSupported, allocator);
+    }
+
+    if (m_isDcnSwitchSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDcnSwitchSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDcnSwitchSupported, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1648,6 +1686,26 @@ bool DescribeDCDBInstanceDetailResponse::GetIsPhysicalReplicationSupported() con
 bool DescribeDCDBInstanceDetailResponse::IsPhysicalReplicationSupportedHasBeenSet() const
 {
     return m_isPhysicalReplicationSupportedHasBeenSet;
+}
+
+int64_t DescribeDCDBInstanceDetailResponse::GetIsDcnStrongSyncSupported() const
+{
+    return m_isDcnStrongSyncSupported;
+}
+
+bool DescribeDCDBInstanceDetailResponse::IsDcnStrongSyncSupportedHasBeenSet() const
+{
+    return m_isDcnStrongSyncSupportedHasBeenSet;
+}
+
+int64_t DescribeDCDBInstanceDetailResponse::GetIsDcnSwitchSupported() const
+{
+    return m_isDcnSwitchSupported;
+}
+
+bool DescribeDCDBInstanceDetailResponse::IsDcnSwitchSupportedHasBeenSet() const
+{
+    return m_isDcnSwitchSupportedHasBeenSet;
 }
 
 

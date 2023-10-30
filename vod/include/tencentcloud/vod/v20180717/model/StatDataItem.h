@@ -83,6 +83,7 @@ namespace TencentCloud
 <li>带宽数据，单位是比特每秒。</li>
 <li>直播剪辑数据，单位是秒。</li>
 <li>轮播数据，单位是秒。</li>
+<li>子应用数量数据，单位是个。</li>
                      * @return Value 数据大小。
 <li>存储空间的数据，单位是字节。</li>
 <li>转码时长的数据，单位是秒。</li>
@@ -90,6 +91,7 @@ namespace TencentCloud
 <li>带宽数据，单位是比特每秒。</li>
 <li>直播剪辑数据，单位是秒。</li>
 <li>轮播数据，单位是秒。</li>
+<li>子应用数量数据，单位是个。</li>
                      * 
                      */
                     int64_t GetValue() const;
@@ -102,6 +104,7 @@ namespace TencentCloud
 <li>带宽数据，单位是比特每秒。</li>
 <li>直播剪辑数据，单位是秒。</li>
 <li>轮播数据，单位是秒。</li>
+<li>子应用数量数据，单位是个。</li>
                      * @param _value 数据大小。
 <li>存储空间的数据，单位是字节。</li>
 <li>转码时长的数据，单位是秒。</li>
@@ -109,6 +112,7 @@ namespace TencentCloud
 <li>带宽数据，单位是比特每秒。</li>
 <li>直播剪辑数据，单位是秒。</li>
 <li>轮播数据，单位是秒。</li>
+<li>子应用数量数据，单位是个。</li>
                      * 
                      */
                     void SetValue(const int64_t& _value);
@@ -138,6 +142,7 @@ namespace TencentCloud
 <li>带宽数据，单位是比特每秒。</li>
 <li>直播剪辑数据，单位是秒。</li>
 <li>轮播数据，单位是秒。</li>
+<li>子应用数量数据，单位是个。</li>
                      */
                     int64_t m_value;
                     bool m_valueHasBeenSet;

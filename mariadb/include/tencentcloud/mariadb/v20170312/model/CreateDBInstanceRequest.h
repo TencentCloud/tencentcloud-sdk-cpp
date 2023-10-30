@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
-                     * @return Zones 实例节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+                     * 获取实例节点可用区分布，可填写多个可用区。
+                     * @return Zones 实例节点可用区分布，可填写多个可用区。
                      * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置实例节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
-                     * @param _zones 实例节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+                     * 设置实例节点可用区分布，可填写多个可用区。
+                     * @param _zones 实例节点可用区分布，可填写多个可用区。
                      * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
@@ -476,10 +476,31 @@ namespace TencentCloud
                      */
                     bool DcnInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取DCN同步模式，0：异步， 1：强同步
+                     * @return DcnSyncMode DCN同步模式，0：异步， 1：强同步
+                     * 
+                     */
+                    int64_t GetDcnSyncMode() const;
+
+                    /**
+                     * 设置DCN同步模式，0：异步， 1：强同步
+                     * @param _dcnSyncMode DCN同步模式，0：异步， 1：强同步
+                     * 
+                     */
+                    void SetDcnSyncMode(const int64_t& _dcnSyncMode);
+
+                    /**
+                     * 判断参数 DcnSyncMode 是否已赋值
+                     * @return DcnSyncMode 是否已赋值
+                     * 
+                     */
+                    bool DcnSyncModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+                     * 实例节点可用区分布，可填写多个可用区。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
@@ -600,6 +621,12 @@ namespace TencentCloud
                      */
                     std::string m_dcnInstanceId;
                     bool m_dcnInstanceIdHasBeenSet;
+
+                    /**
+                     * DCN同步模式，0：异步， 1：强同步
+                     */
+                    int64_t m_dcnSyncMode;
+                    bool m_dcnSyncModeHasBeenSet;
 
                 };
             }

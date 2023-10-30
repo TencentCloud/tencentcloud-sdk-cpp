@@ -39,6 +39,8 @@
 #include <tencentcloud/omics/v20221128/model/DescribeTablesRowsResponse.h>
 #include <tencentcloud/omics/v20221128/model/GetRunCallsRequest.h>
 #include <tencentcloud/omics/v20221128/model/GetRunCallsResponse.h>
+#include <tencentcloud/omics/v20221128/model/GetRunMetadataFileRequest.h>
+#include <tencentcloud/omics/v20221128/model/GetRunMetadataFileResponse.h>
 #include <tencentcloud/omics/v20221128/model/GetRunStatusRequest.h>
 #include <tencentcloud/omics/v20221128/model/GetRunStatusResponse.h>
 #include <tencentcloud/omics/v20221128/model/ImportTableFileRequest.h>
@@ -47,6 +49,10 @@
 #include <tencentcloud/omics/v20221128/model/RetryRunsResponse.h>
 #include <tencentcloud/omics/v20221128/model/RunApplicationRequest.h>
 #include <tencentcloud/omics/v20221128/model/RunApplicationResponse.h>
+#include <tencentcloud/omics/v20221128/model/RunWorkflowRequest.h>
+#include <tencentcloud/omics/v20221128/model/RunWorkflowResponse.h>
+#include <tencentcloud/omics/v20221128/model/TerminateRunGroupRequest.h>
+#include <tencentcloud/omics/v20221128/model/TerminateRunGroupResponse.h>
 
 
 namespace TencentCloud
@@ -85,6 +91,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetRunCallsResponse> GetRunCallsOutcome;
                 typedef std::future<GetRunCallsOutcome> GetRunCallsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::GetRunCallsRequest&, GetRunCallsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRunCallsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetRunMetadataFileResponse> GetRunMetadataFileOutcome;
+                typedef std::future<GetRunMetadataFileOutcome> GetRunMetadataFileOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::GetRunMetadataFileRequest&, GetRunMetadataFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRunMetadataFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRunStatusResponse> GetRunStatusOutcome;
                 typedef std::future<GetRunStatusOutcome> GetRunStatusOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::GetRunStatusRequest&, GetRunStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRunStatusAsyncHandler;
@@ -97,6 +106,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunApplicationResponse> RunApplicationOutcome;
                 typedef std::future<RunApplicationOutcome> RunApplicationOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::RunApplicationRequest&, RunApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunWorkflowResponse> RunWorkflowOutcome;
+                typedef std::future<RunWorkflowOutcome> RunWorkflowOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::RunWorkflowRequest&, RunWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateRunGroupResponse> TerminateRunGroupOutcome;
+                typedef std::future<TerminateRunGroupOutcome> TerminateRunGroupOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::TerminateRunGroupRequest&, TerminateRunGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateRunGroupAsyncHandler;
 
 
 
@@ -173,6 +188,15 @@ namespace TencentCloud
                 GetRunCallsOutcomeCallable GetRunCallsCallable(const Model::GetRunCallsRequest& request);
 
                 /**
+                 *查询任务详情文件。
+                 * @param req GetRunMetadataFileRequest
+                 * @return GetRunMetadataFileOutcome
+                 */
+                GetRunMetadataFileOutcome GetRunMetadataFile(const Model::GetRunMetadataFileRequest &request);
+                void GetRunMetadataFileAsync(const Model::GetRunMetadataFileRequest& request, const GetRunMetadataFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRunMetadataFileOutcomeCallable GetRunMetadataFileCallable(const Model::GetRunMetadataFileRequest& request);
+
+                /**
                  *查询任务详情。
                  * @param req GetRunStatusRequest
                  * @return GetRunStatusOutcome
@@ -207,6 +231,24 @@ namespace TencentCloud
                 RunApplicationOutcome RunApplication(const Model::RunApplicationRequest &request);
                 void RunApplicationAsync(const Model::RunApplicationRequest& request, const RunApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunApplicationOutcomeCallable RunApplicationCallable(const Model::RunApplicationRequest& request);
+
+                /**
+                 *运行工作流。
+                 * @param req RunWorkflowRequest
+                 * @return RunWorkflowOutcome
+                 */
+                RunWorkflowOutcome RunWorkflow(const Model::RunWorkflowRequest &request);
+                void RunWorkflowAsync(const Model::RunWorkflowRequest& request, const RunWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunWorkflowOutcomeCallable RunWorkflowCallable(const Model::RunWorkflowRequest& request);
+
+                /**
+                 *终止任务批次。
+                 * @param req TerminateRunGroupRequest
+                 * @return TerminateRunGroupOutcome
+                 */
+                TerminateRunGroupOutcome TerminateRunGroup(const Model::TerminateRunGroupRequest &request);
+                void TerminateRunGroupAsync(const Model::TerminateRunGroupRequest& request, const TerminateRunGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateRunGroupOutcomeCallable TerminateRunGroupCallable(const Model::TerminateRunGroupRequest& request);
 
             };
         }

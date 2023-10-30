@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityRequest.h>
+#include <tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityResponse.h>
 #include <tencentcloud/teo/v20220901/model/BindZoneToPlanRequest.h>
 #include <tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h>
 #include <tencentcloud/teo/v20220901/model/CheckCnameStatusRequest.h>
@@ -173,6 +175,9 @@ namespace TencentCloud
                 TeoClient(const Credential &credential, const std::string &region);
                 TeoClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindSecurityTemplateToEntityResponse> BindSecurityTemplateToEntityOutcome;
+                typedef std::future<BindSecurityTemplateToEntityOutcome> BindSecurityTemplateToEntityOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::BindSecurityTemplateToEntityRequest&, BindSecurityTemplateToEntityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindSecurityTemplateToEntityAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindZoneToPlanResponse> BindZoneToPlanOutcome;
                 typedef std::future<BindZoneToPlanOutcome> BindZoneToPlanOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::BindZoneToPlanRequest&, BindZoneToPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindZoneToPlanAsyncHandler;
@@ -379,6 +384,15 @@ namespace TencentCloud
                 typedef std::function<void(const TeoClient*, const Model::VerifyOwnershipRequest&, VerifyOwnershipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyOwnershipAsyncHandler;
 
 
+
+                /**
+                 *操作安全策略模板，支持将域名绑定或换绑到指定的策略模板，或者从指定的策略模板解绑。
+                 * @param req BindSecurityTemplateToEntityRequest
+                 * @return BindSecurityTemplateToEntityOutcome
+                 */
+                BindSecurityTemplateToEntityOutcome BindSecurityTemplateToEntity(const Model::BindSecurityTemplateToEntityRequest &request);
+                void BindSecurityTemplateToEntityAsync(const Model::BindSecurityTemplateToEntityRequest& request, const BindSecurityTemplateToEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindSecurityTemplateToEntityOutcomeCallable BindSecurityTemplateToEntityCallable(const Model::BindSecurityTemplateToEntityRequest& request);
 
                 /**
                  *将未绑定套餐的站点绑定到已有套餐

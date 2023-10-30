@@ -42,7 +42,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_resourceTagsHasBeenSet(false),
     m_initParamsHasBeenSet(false),
     m_dcnRegionHasBeenSet(false),
-    m_dcnInstanceIdHasBeenSet(false)
+    m_dcnInstanceIdHasBeenSet(false),
+    m_dcnSyncModeHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,14 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "DcnInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dcnInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dcnSyncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DcnSyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dcnSyncMode, allocator);
     }
 
 
@@ -568,6 +577,22 @@ void CreateDBInstanceRequest::SetDcnInstanceId(const string& _dcnInstanceId)
 bool CreateDBInstanceRequest::DcnInstanceIdHasBeenSet() const
 {
     return m_dcnInstanceIdHasBeenSet;
+}
+
+int64_t CreateDBInstanceRequest::GetDcnSyncMode() const
+{
+    return m_dcnSyncMode;
+}
+
+void CreateDBInstanceRequest::SetDcnSyncMode(const int64_t& _dcnSyncMode)
+{
+    m_dcnSyncMode = _dcnSyncMode;
+    m_dcnSyncModeHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::DcnSyncModeHasBeenSet() const
+{
+    return m_dcnSyncModeHasBeenSet;
 }
 
 

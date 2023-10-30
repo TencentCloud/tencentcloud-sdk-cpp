@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取姓名
-                     * @return Name 姓名
+                     * 获取驾驶证正页姓名
+                     * @return Name 驾驶证正页姓名
                      * 
                      */
                     std::string GetName() const;
@@ -172,8 +172,8 @@ namespace TencentCloud
                     bool EndDateHasBeenSet() const;
 
                     /**
-                     * 获取证号
-                     * @return CardCode 证号
+                     * 获取驾驶证正页证号
+                     * @return CardCode 驾驶证正页证号
                      * 
                      */
                     std::string GetCardCode() const;
@@ -323,10 +323,38 @@ WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
                      */
                     bool GenerateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取驾驶证副页姓名
+                     * @return BackPageName 驾驶证副页姓名
+                     * 
+                     */
+                    std::string GetBackPageName() const;
+
+                    /**
+                     * 判断参数 BackPageName 是否已赋值
+                     * @return BackPageName 是否已赋值
+                     * 
+                     */
+                    bool BackPageNameHasBeenSet() const;
+
+                    /**
+                     * 获取驾驶证副页证号
+                     * @return BackPageCardCode 驾驶证副页证号
+                     * 
+                     */
+                    std::string GetBackPageCardCode() const;
+
+                    /**
+                     * 判断参数 BackPageCardCode 是否已赋值
+                     * @return BackPageCardCode 是否已赋值
+                     * 
+                     */
+                    bool BackPageCardCodeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 姓名
+                     * 驾驶证正页姓名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -381,7 +409,7 @@ WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
                     bool m_endDateHasBeenSet;
 
                     /**
-                     * 证号
+                     * 驾驶证正页证号
                      */
                     std::string m_cardCode;
                     bool m_cardCodeHasBeenSet;
@@ -445,6 +473,18 @@ WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
                      */
                     std::string m_generateTime;
                     bool m_generateTimeHasBeenSet;
+
+                    /**
+                     * 驾驶证副页姓名
+                     */
+                    std::string m_backPageName;
+                    bool m_backPageNameHasBeenSet;
+
+                    /**
+                     * 驾驶证副页证号
+                     */
+                    std::string m_backPageCardCode;
+                    bool m_backPageCardCodeHasBeenSet;
 
                 };
             }

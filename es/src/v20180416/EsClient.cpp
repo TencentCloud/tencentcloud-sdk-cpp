@@ -341,6 +341,49 @@ EsClient::DeleteLogstashPipelinesOutcomeCallable EsClient::DeleteLogstashPipelin
     return task->get_future();
 }
 
+EsClient::DescribeDiagnoseOutcome EsClient::DescribeDiagnose(const DescribeDiagnoseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDiagnose");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDiagnoseResponse rsp = DescribeDiagnoseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDiagnoseOutcome(rsp);
+        else
+            return DescribeDiagnoseOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDiagnoseOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeDiagnoseAsync(const DescribeDiagnoseRequest& request, const DescribeDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDiagnose(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeDiagnoseOutcomeCallable EsClient::DescribeDiagnoseCallable(const DescribeDiagnoseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDiagnoseOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDiagnose(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::DescribeIndexListOutcome EsClient::DescribeIndexList(const DescribeIndexListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIndexList");
@@ -506,6 +549,49 @@ EsClient::DescribeInstanceOperationsOutcomeCallable EsClient::DescribeInstanceOp
         [this, request]()
         {
             return this->DescribeInstanceOperations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::DescribeInstancePluginListOutcome EsClient::DescribeInstancePluginList(const DescribeInstancePluginListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancePluginList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancePluginListResponse rsp = DescribeInstancePluginListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancePluginListOutcome(rsp);
+        else
+            return DescribeInstancePluginListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancePluginListOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeInstancePluginListAsync(const DescribeInstancePluginListRequest& request, const DescribeInstancePluginListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancePluginList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeInstancePluginListOutcomeCallable EsClient::DescribeInstancePluginListCallable(const DescribeInstancePluginListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancePluginListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancePluginList(request);
         }
     );
 
@@ -807,6 +893,49 @@ EsClient::DiagnoseInstanceOutcomeCallable EsClient::DiagnoseInstanceCallable(con
         [this, request]()
         {
             return this->DiagnoseInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::GetDiagnoseSettingsOutcome EsClient::GetDiagnoseSettings(const GetDiagnoseSettingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDiagnoseSettings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDiagnoseSettingsResponse rsp = GetDiagnoseSettingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDiagnoseSettingsOutcome(rsp);
+        else
+            return GetDiagnoseSettingsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDiagnoseSettingsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::GetDiagnoseSettingsAsync(const GetDiagnoseSettingsRequest& request, const GetDiagnoseSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDiagnoseSettings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::GetDiagnoseSettingsOutcomeCallable EsClient::GetDiagnoseSettingsCallable(const GetDiagnoseSettingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDiagnoseSettingsOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDiagnoseSettings(request);
         }
     );
 

@@ -502,15 +502,15 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取DCN同步模式，0：普通DCN同步，1：一致性同步
-                     * @return DcnSyncMode DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * 获取DCN同步模式，0：异步， 1：强同步
+                     * @return DcnSyncMode DCN同步模式，0：异步， 1：强同步
                      * 
                      */
                     int64_t GetDcnSyncMode() const;
 
                     /**
-                     * 设置DCN同步模式，0：普通DCN同步，1：一致性同步
-                     * @param _dcnSyncMode DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * 设置DCN同步模式，0：异步， 1：强同步
+                     * @param _dcnSyncMode DCN同步模式，0：异步， 1：强同步
                      * 
                      */
                     void SetDcnSyncMode(const int64_t& _dcnSyncMode);
@@ -655,7 +655,7 @@ namespace TencentCloud
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * DCN同步模式，0：异步， 1：强同步
                      */
                     int64_t m_dcnSyncMode;
                     bool m_dcnSyncModeHasBeenSet;

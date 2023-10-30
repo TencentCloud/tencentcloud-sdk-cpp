@@ -884,6 +884,34 @@ namespace TencentCloud
                      */
                     bool IsPhysicalReplicationSupportedHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持强同步DCN
+                     * @return IsDcnStrongSyncSupported 是否支持强同步DCN
+                     * 
+                     */
+                    int64_t GetIsDcnStrongSyncSupported() const;
+
+                    /**
+                     * 判断参数 IsDcnStrongSyncSupported 是否已赋值
+                     * @return IsDcnStrongSyncSupported 是否已赋值
+                     * 
+                     */
+                    bool IsDcnStrongSyncSupportedHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持DCN切换
+                     * @return IsDcnSwitchSupported 是否支持DCN切换
+                     * 
+                     */
+                    int64_t GetIsDcnSwitchSupported() const;
+
+                    /**
+                     * 判断参数 IsDcnSwitchSupported 是否已赋值
+                     * @return IsDcnSwitchSupported 是否已赋值
+                     * 
+                     */
+                    bool IsDcnSwitchSupportedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1246,6 +1274,18 @@ namespace TencentCloud
                      */
                     bool m_isPhysicalReplicationSupported;
                     bool m_isPhysicalReplicationSupportedHasBeenSet;
+
+                    /**
+                     * 是否支持强同步DCN
+                     */
+                    int64_t m_isDcnStrongSyncSupported;
+                    bool m_isDcnStrongSyncSupportedHasBeenSet;
+
+                    /**
+                     * 是否支持DCN切换
+                     */
+                    int64_t m_isDcnSwitchSupported;
+                    bool m_isDcnSwitchSupportedHasBeenSet;
 
                 };
             }

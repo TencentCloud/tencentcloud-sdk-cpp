@@ -40,6 +40,49 @@ TeoClient::TeoClient(const Credential &credential, const string &region, const C
 }
 
 
+TeoClient::BindSecurityTemplateToEntityOutcome TeoClient::BindSecurityTemplateToEntity(const BindSecurityTemplateToEntityRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindSecurityTemplateToEntity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindSecurityTemplateToEntityResponse rsp = BindSecurityTemplateToEntityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindSecurityTemplateToEntityOutcome(rsp);
+        else
+            return BindSecurityTemplateToEntityOutcome(o.GetError());
+    }
+    else
+    {
+        return BindSecurityTemplateToEntityOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::BindSecurityTemplateToEntityAsync(const BindSecurityTemplateToEntityRequest& request, const BindSecurityTemplateToEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindSecurityTemplateToEntity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::BindSecurityTemplateToEntityOutcomeCallable TeoClient::BindSecurityTemplateToEntityCallable(const BindSecurityTemplateToEntityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindSecurityTemplateToEntityOutcome()>>(
+        [this, request]()
+        {
+            return this->BindSecurityTemplateToEntity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::BindZoneToPlanOutcome TeoClient::BindZoneToPlan(const BindZoneToPlanRequest &request)
 {
     auto outcome = MakeRequest(request, "BindZoneToPlan");

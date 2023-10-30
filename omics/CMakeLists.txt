@@ -26,9 +26,12 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/GetRunStatusRequest.h
   include/tencentcloud/omics/v20221128/model/DescribeRunsResponse.h
   include/tencentcloud/omics/v20221128/model/ImportTableFileResponse.h
+  include/tencentcloud/omics/v20221128/model/RunApplicationRequest.h
+  include/tencentcloud/omics/v20221128/model/GetRunMetadataFileResponse.h
   include/tencentcloud/omics/v20221128/model/DeleteEnvironmentResponse.h
   include/tencentcloud/omics/v20221128/model/Environment.h
   include/tencentcloud/omics/v20221128/model/GetRunCallsRequest.h
+  include/tencentcloud/omics/v20221128/model/RunWorkflowRequest.h
   include/tencentcloud/omics/v20221128/model/DescribeRunsRequest.h
   include/tencentcloud/omics/v20221128/model/Run.h
   include/tencentcloud/omics/v20221128/model/TableColumn.h
@@ -40,7 +43,8 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/ImportTableFileRequest.h
   include/tencentcloud/omics/v20221128/model/CacheInfo.h
   include/tencentcloud/omics/v20221128/model/ClusterOption.h
-  include/tencentcloud/omics/v20221128/model/RunApplicationRequest.h
+  include/tencentcloud/omics/v20221128/model/TerminateRunGroupResponse.h
+  include/tencentcloud/omics/v20221128/model/GitInfo.h
   include/tencentcloud/omics/v20221128/model/ApplicationVersion.h
   include/tencentcloud/omics/v20221128/model/DeleteEnvironmentRequest.h
   include/tencentcloud/omics/v20221128/model/RunGroup.h
@@ -49,9 +53,12 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/Filter.h
   include/tencentcloud/omics/v20221128/model/ResourceIds.h
   include/tencentcloud/omics/v20221128/model/DescribeRunGroupsResponse.h
+  include/tencentcloud/omics/v20221128/model/TerminateRunGroupRequest.h
   include/tencentcloud/omics/v20221128/model/EnvironmentConfig.h
   include/tencentcloud/omics/v20221128/model/DescribeTablesRowsResponse.h
   include/tencentcloud/omics/v20221128/model/CreateEnvironmentResponse.h
+  include/tencentcloud/omics/v20221128/model/GetRunMetadataFileRequest.h
+  include/tencentcloud/omics/v20221128/model/RunWorkflowResponse.h
   include/tencentcloud/omics/v20221128/model/TableRow.h
   include/tencentcloud/omics/v20221128/model/DescribeRunGroupsRequest.h
   include/tencentcloud/omics/v20221128/model/GetRunStatusResponse.h
@@ -75,9 +82,12 @@ set(omics_src
   src/v20221128/model/GetRunStatusRequest.cpp
   src/v20221128/model/DescribeRunsResponse.cpp
   src/v20221128/model/ImportTableFileResponse.cpp
+  src/v20221128/model/RunApplicationRequest.cpp
+  src/v20221128/model/GetRunMetadataFileResponse.cpp
   src/v20221128/model/DeleteEnvironmentResponse.cpp
   src/v20221128/model/Environment.cpp
   src/v20221128/model/GetRunCallsRequest.cpp
+  src/v20221128/model/RunWorkflowRequest.cpp
   src/v20221128/model/DescribeRunsRequest.cpp
   src/v20221128/model/Run.cpp
   src/v20221128/model/TableColumn.cpp
@@ -89,7 +99,8 @@ set(omics_src
   src/v20221128/model/ImportTableFileRequest.cpp
   src/v20221128/model/CacheInfo.cpp
   src/v20221128/model/ClusterOption.cpp
-  src/v20221128/model/RunApplicationRequest.cpp
+  src/v20221128/model/TerminateRunGroupResponse.cpp
+  src/v20221128/model/GitInfo.cpp
   src/v20221128/model/ApplicationVersion.cpp
   src/v20221128/model/DeleteEnvironmentRequest.cpp
   src/v20221128/model/RunGroup.cpp
@@ -98,9 +109,12 @@ set(omics_src
   src/v20221128/model/Filter.cpp
   src/v20221128/model/ResourceIds.cpp
   src/v20221128/model/DescribeRunGroupsResponse.cpp
+  src/v20221128/model/TerminateRunGroupRequest.cpp
   src/v20221128/model/EnvironmentConfig.cpp
   src/v20221128/model/DescribeTablesRowsResponse.cpp
   src/v20221128/model/CreateEnvironmentResponse.cpp
+  src/v20221128/model/GetRunMetadataFileRequest.cpp
+  src/v20221128/model/RunWorkflowResponse.cpp
   src/v20221128/model/TableRow.cpp
   src/v20221128/model/DescribeRunGroupsRequest.cpp
   src/v20221128/model/GetRunStatusResponse.cpp

@@ -41,7 +41,16 @@ DcnDetailItem::DcnDetailItem() :
     m_instanceTypeHasBeenSet(false),
     m_replicaConfigHasBeenSet(false),
     m_replicaStatusHasBeenSet(false),
-    m_encryptStatusHasBeenSet(false)
+    m_encryptStatusHasBeenSet(false),
+    m_dcnStatusDescHasBeenSet(false),
+    m_polarisInstanceIdHasBeenSet(false),
+    m_polarisInstanceNameHasBeenSet(false),
+    m_polarisNamespaceHasBeenSet(false),
+    m_polarisServiceHasBeenSet(false),
+    m_polarisServiceStatusHasBeenSet(false),
+    m_polarisServiceStatusDescHasBeenSet(false),
+    m_polarisRegionHasBeenSet(false),
+    m_isDcnSwitchSupportedHasBeenSet(false)
 {
 }
 
@@ -274,6 +283,96 @@ CoreInternalOutcome DcnDetailItem::Deserialize(const rapidjson::Value &value)
         m_encryptStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("DcnStatusDesc") && !value["DcnStatusDesc"].IsNull())
+    {
+        if (!value["DcnStatusDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.DcnStatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dcnStatusDesc = string(value["DcnStatusDesc"].GetString());
+        m_dcnStatusDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolarisInstanceId") && !value["PolarisInstanceId"].IsNull())
+    {
+        if (!value["PolarisInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.PolarisInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_polarisInstanceId = string(value["PolarisInstanceId"].GetString());
+        m_polarisInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolarisInstanceName") && !value["PolarisInstanceName"].IsNull())
+    {
+        if (!value["PolarisInstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.PolarisInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_polarisInstanceName = string(value["PolarisInstanceName"].GetString());
+        m_polarisInstanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolarisNamespace") && !value["PolarisNamespace"].IsNull())
+    {
+        if (!value["PolarisNamespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.PolarisNamespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_polarisNamespace = string(value["PolarisNamespace"].GetString());
+        m_polarisNamespaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolarisService") && !value["PolarisService"].IsNull())
+    {
+        if (!value["PolarisService"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.PolarisService` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_polarisService = string(value["PolarisService"].GetString());
+        m_polarisServiceHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolarisServiceStatus") && !value["PolarisServiceStatus"].IsNull())
+    {
+        if (!value["PolarisServiceStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.PolarisServiceStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_polarisServiceStatus = value["PolarisServiceStatus"].GetInt64();
+        m_polarisServiceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolarisServiceStatusDesc") && !value["PolarisServiceStatusDesc"].IsNull())
+    {
+        if (!value["PolarisServiceStatusDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.PolarisServiceStatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_polarisServiceStatusDesc = string(value["PolarisServiceStatusDesc"].GetString());
+        m_polarisServiceStatusDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolarisRegion") && !value["PolarisRegion"].IsNull())
+    {
+        if (!value["PolarisRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.PolarisRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_polarisRegion = string(value["PolarisRegion"].GetString());
+        m_polarisRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDcnSwitchSupported") && !value["IsDcnSwitchSupported"].IsNull())
+    {
+        if (!value["IsDcnSwitchSupported"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.IsDcnSwitchSupported` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDcnSwitchSupported = value["IsDcnSwitchSupported"].GetInt64();
+        m_isDcnSwitchSupportedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -449,6 +548,78 @@ void DcnDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "EncryptStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_encryptStatus, allocator);
+    }
+
+    if (m_dcnStatusDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DcnStatusDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dcnStatusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polarisInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolarisInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_polarisInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polarisInstanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolarisInstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_polarisInstanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polarisNamespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolarisNamespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_polarisNamespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polarisServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolarisService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_polarisService.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polarisServiceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolarisServiceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_polarisServiceStatus, allocator);
+    }
+
+    if (m_polarisServiceStatusDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolarisServiceStatusDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_polarisServiceStatusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polarisRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolarisRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_polarisRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDcnSwitchSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDcnSwitchSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDcnSwitchSupported, allocator);
     }
 
 }
@@ -788,5 +959,149 @@ void DcnDetailItem::SetEncryptStatus(const int64_t& _encryptStatus)
 bool DcnDetailItem::EncryptStatusHasBeenSet() const
 {
     return m_encryptStatusHasBeenSet;
+}
+
+string DcnDetailItem::GetDcnStatusDesc() const
+{
+    return m_dcnStatusDesc;
+}
+
+void DcnDetailItem::SetDcnStatusDesc(const string& _dcnStatusDesc)
+{
+    m_dcnStatusDesc = _dcnStatusDesc;
+    m_dcnStatusDescHasBeenSet = true;
+}
+
+bool DcnDetailItem::DcnStatusDescHasBeenSet() const
+{
+    return m_dcnStatusDescHasBeenSet;
+}
+
+string DcnDetailItem::GetPolarisInstanceId() const
+{
+    return m_polarisInstanceId;
+}
+
+void DcnDetailItem::SetPolarisInstanceId(const string& _polarisInstanceId)
+{
+    m_polarisInstanceId = _polarisInstanceId;
+    m_polarisInstanceIdHasBeenSet = true;
+}
+
+bool DcnDetailItem::PolarisInstanceIdHasBeenSet() const
+{
+    return m_polarisInstanceIdHasBeenSet;
+}
+
+string DcnDetailItem::GetPolarisInstanceName() const
+{
+    return m_polarisInstanceName;
+}
+
+void DcnDetailItem::SetPolarisInstanceName(const string& _polarisInstanceName)
+{
+    m_polarisInstanceName = _polarisInstanceName;
+    m_polarisInstanceNameHasBeenSet = true;
+}
+
+bool DcnDetailItem::PolarisInstanceNameHasBeenSet() const
+{
+    return m_polarisInstanceNameHasBeenSet;
+}
+
+string DcnDetailItem::GetPolarisNamespace() const
+{
+    return m_polarisNamespace;
+}
+
+void DcnDetailItem::SetPolarisNamespace(const string& _polarisNamespace)
+{
+    m_polarisNamespace = _polarisNamespace;
+    m_polarisNamespaceHasBeenSet = true;
+}
+
+bool DcnDetailItem::PolarisNamespaceHasBeenSet() const
+{
+    return m_polarisNamespaceHasBeenSet;
+}
+
+string DcnDetailItem::GetPolarisService() const
+{
+    return m_polarisService;
+}
+
+void DcnDetailItem::SetPolarisService(const string& _polarisService)
+{
+    m_polarisService = _polarisService;
+    m_polarisServiceHasBeenSet = true;
+}
+
+bool DcnDetailItem::PolarisServiceHasBeenSet() const
+{
+    return m_polarisServiceHasBeenSet;
+}
+
+int64_t DcnDetailItem::GetPolarisServiceStatus() const
+{
+    return m_polarisServiceStatus;
+}
+
+void DcnDetailItem::SetPolarisServiceStatus(const int64_t& _polarisServiceStatus)
+{
+    m_polarisServiceStatus = _polarisServiceStatus;
+    m_polarisServiceStatusHasBeenSet = true;
+}
+
+bool DcnDetailItem::PolarisServiceStatusHasBeenSet() const
+{
+    return m_polarisServiceStatusHasBeenSet;
+}
+
+string DcnDetailItem::GetPolarisServiceStatusDesc() const
+{
+    return m_polarisServiceStatusDesc;
+}
+
+void DcnDetailItem::SetPolarisServiceStatusDesc(const string& _polarisServiceStatusDesc)
+{
+    m_polarisServiceStatusDesc = _polarisServiceStatusDesc;
+    m_polarisServiceStatusDescHasBeenSet = true;
+}
+
+bool DcnDetailItem::PolarisServiceStatusDescHasBeenSet() const
+{
+    return m_polarisServiceStatusDescHasBeenSet;
+}
+
+string DcnDetailItem::GetPolarisRegion() const
+{
+    return m_polarisRegion;
+}
+
+void DcnDetailItem::SetPolarisRegion(const string& _polarisRegion)
+{
+    m_polarisRegion = _polarisRegion;
+    m_polarisRegionHasBeenSet = true;
+}
+
+bool DcnDetailItem::PolarisRegionHasBeenSet() const
+{
+    return m_polarisRegionHasBeenSet;
+}
+
+int64_t DcnDetailItem::GetIsDcnSwitchSupported() const
+{
+    return m_isDcnSwitchSupported;
+}
+
+void DcnDetailItem::SetIsDcnSwitchSupported(const int64_t& _isDcnSwitchSupported)
+{
+    m_isDcnSwitchSupported = _isDcnSwitchSupported;
+    m_isDcnSwitchSupportedHasBeenSet = true;
+}
+
+bool DcnDetailItem::IsDcnSwitchSupportedHasBeenSet() const
+{
+    return m_isDcnSwitchSupportedHasBeenSet;
 }
 

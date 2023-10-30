@@ -12209,6 +12209,49 @@ VpcClient::ModifyVpnGatewayRoutesOutcomeCallable VpcClient::ModifyVpnGatewayRout
     return task->get_future();
 }
 
+VpcClient::ModifyVpnGatewaySslServerOutcome VpcClient::ModifyVpnGatewaySslServer(const ModifyVpnGatewaySslServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVpnGatewaySslServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVpnGatewaySslServerResponse rsp = ModifyVpnGatewaySslServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVpnGatewaySslServerOutcome(rsp);
+        else
+            return ModifyVpnGatewaySslServerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVpnGatewaySslServerOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyVpnGatewaySslServerAsync(const ModifyVpnGatewaySslServerRequest& request, const ModifyVpnGatewaySslServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVpnGatewaySslServer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyVpnGatewaySslServerOutcomeCallable VpcClient::ModifyVpnGatewaySslServerCallable(const ModifyVpnGatewaySslServerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVpnGatewaySslServerOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVpnGatewaySslServer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::NotifyRoutesOutcome VpcClient::NotifyRoutes(const NotifyRoutesRequest &request)
 {
     auto outcome = MakeRequest(request, "NotifyRoutes");

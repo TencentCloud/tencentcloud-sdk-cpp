@@ -83,6 +83,49 @@ BillingClient::CreateAllocationTagOutcomeCallable BillingClient::CreateAllocatio
     return task->get_future();
 }
 
+BillingClient::CreateSavingPlanOrderOutcome BillingClient::CreateSavingPlanOrder(const CreateSavingPlanOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSavingPlanOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSavingPlanOrderResponse rsp = CreateSavingPlanOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSavingPlanOrderOutcome(rsp);
+        else
+            return CreateSavingPlanOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSavingPlanOrderOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::CreateSavingPlanOrderAsync(const CreateSavingPlanOrderRequest& request, const CreateSavingPlanOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSavingPlanOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::CreateSavingPlanOrderOutcomeCallable BillingClient::CreateSavingPlanOrderCallable(const CreateSavingPlanOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSavingPlanOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSavingPlanOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::DeleteAllocationTagOutcome BillingClient::DeleteAllocationTag(const DeleteAllocationTagRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAllocationTag");
@@ -1065,6 +1108,135 @@ BillingClient::DescribeDosageDetailByDateOutcomeCallable BillingClient::Describe
         [this, request]()
         {
             return this->DescribeDosageDetailByDate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BillingClient::DescribeSavingPlanCoverageOutcome BillingClient::DescribeSavingPlanCoverage(const DescribeSavingPlanCoverageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSavingPlanCoverage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSavingPlanCoverageResponse rsp = DescribeSavingPlanCoverageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSavingPlanCoverageOutcome(rsp);
+        else
+            return DescribeSavingPlanCoverageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSavingPlanCoverageOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeSavingPlanCoverageAsync(const DescribeSavingPlanCoverageRequest& request, const DescribeSavingPlanCoverageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSavingPlanCoverage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeSavingPlanCoverageOutcomeCallable BillingClient::DescribeSavingPlanCoverageCallable(const DescribeSavingPlanCoverageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanCoverageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSavingPlanCoverage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BillingClient::DescribeSavingPlanOverviewOutcome BillingClient::DescribeSavingPlanOverview(const DescribeSavingPlanOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSavingPlanOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSavingPlanOverviewResponse rsp = DescribeSavingPlanOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSavingPlanOverviewOutcome(rsp);
+        else
+            return DescribeSavingPlanOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSavingPlanOverviewOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeSavingPlanOverviewAsync(const DescribeSavingPlanOverviewRequest& request, const DescribeSavingPlanOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSavingPlanOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeSavingPlanOverviewOutcomeCallable BillingClient::DescribeSavingPlanOverviewCallable(const DescribeSavingPlanOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSavingPlanOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BillingClient::DescribeSavingPlanUsageOutcome BillingClient::DescribeSavingPlanUsage(const DescribeSavingPlanUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSavingPlanUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSavingPlanUsageResponse rsp = DescribeSavingPlanUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSavingPlanUsageOutcome(rsp);
+        else
+            return DescribeSavingPlanUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSavingPlanUsageOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeSavingPlanUsageAsync(const DescribeSavingPlanUsageRequest& request, const DescribeSavingPlanUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSavingPlanUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeSavingPlanUsageOutcomeCallable BillingClient::DescribeSavingPlanUsageCallable(const DescribeSavingPlanUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSavingPlanUsage(request);
         }
     );
 

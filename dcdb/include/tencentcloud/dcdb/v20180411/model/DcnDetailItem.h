@@ -445,6 +445,195 @@ namespace TencentCloud
                      */
                     bool EncryptStatusHasBeenSet() const;
 
+                    /**
+                     * 获取实例DCN状态描述信息
+                     * @return DcnStatusDesc 实例DCN状态描述信息
+                     * 
+                     */
+                    std::string GetDcnStatusDesc() const;
+
+                    /**
+                     * 设置实例DCN状态描述信息
+                     * @param _dcnStatusDesc 实例DCN状态描述信息
+                     * 
+                     */
+                    void SetDcnStatusDesc(const std::string& _dcnStatusDesc);
+
+                    /**
+                     * 判断参数 DcnStatusDesc 是否已赋值
+                     * @return DcnStatusDesc 是否已赋值
+                     * 
+                     */
+                    bool DcnStatusDescHasBeenSet() const;
+
+                    /**
+                     * 获取DCN实例绑定的北极星服务所属的北极星实例Id，若未绑定则为空
+                     * @return PolarisInstanceId DCN实例绑定的北极星服务所属的北极星实例Id，若未绑定则为空
+                     * 
+                     */
+                    std::string GetPolarisInstanceId() const;
+
+                    /**
+                     * 设置DCN实例绑定的北极星服务所属的北极星实例Id，若未绑定则为空
+                     * @param _polarisInstanceId DCN实例绑定的北极星服务所属的北极星实例Id，若未绑定则为空
+                     * 
+                     */
+                    void SetPolarisInstanceId(const std::string& _polarisInstanceId);
+
+                    /**
+                     * 判断参数 PolarisInstanceId 是否已赋值
+                     * @return PolarisInstanceId 是否已赋值
+                     * 
+                     */
+                    bool PolarisInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取DCN实例绑定的北极星服务所属的北极星实例名，若未绑定则为空
+                     * @return PolarisInstanceName DCN实例绑定的北极星服务所属的北极星实例名，若未绑定则为空
+                     * 
+                     */
+                    std::string GetPolarisInstanceName() const;
+
+                    /**
+                     * 设置DCN实例绑定的北极星服务所属的北极星实例名，若未绑定则为空
+                     * @param _polarisInstanceName DCN实例绑定的北极星服务所属的北极星实例名，若未绑定则为空
+                     * 
+                     */
+                    void SetPolarisInstanceName(const std::string& _polarisInstanceName);
+
+                    /**
+                     * 判断参数 PolarisInstanceName 是否已赋值
+                     * @return PolarisInstanceName 是否已赋值
+                     * 
+                     */
+                    bool PolarisInstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取DCN实例绑定的北极星服务所属的北极星命名空间，若未绑定则为空
+                     * @return PolarisNamespace DCN实例绑定的北极星服务所属的北极星命名空间，若未绑定则为空
+                     * 
+                     */
+                    std::string GetPolarisNamespace() const;
+
+                    /**
+                     * 设置DCN实例绑定的北极星服务所属的北极星命名空间，若未绑定则为空
+                     * @param _polarisNamespace DCN实例绑定的北极星服务所属的北极星命名空间，若未绑定则为空
+                     * 
+                     */
+                    void SetPolarisNamespace(const std::string& _polarisNamespace);
+
+                    /**
+                     * 判断参数 PolarisNamespace 是否已赋值
+                     * @return PolarisNamespace 是否已赋值
+                     * 
+                     */
+                    bool PolarisNamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取DCN实例绑定的北极星服务，若未绑定则为空
+                     * @return PolarisService DCN实例绑定的北极星服务，若未绑定则为空
+                     * 
+                     */
+                    std::string GetPolarisService() const;
+
+                    /**
+                     * 设置DCN实例绑定的北极星服务，若未绑定则为空
+                     * @param _polarisService DCN实例绑定的北极星服务，若未绑定则为空
+                     * 
+                     */
+                    void SetPolarisService(const std::string& _polarisService);
+
+                    /**
+                     * 判断参数 PolarisService 是否已赋值
+                     * @return PolarisService 是否已赋值
+                     * 
+                     */
+                    bool PolarisServiceHasBeenSet() const;
+
+                    /**
+                     * 获取DCN实例在北极星服务中的状态 0:未开启; 1:已开启; 2:已隔离; 3:切换中
+                     * @return PolarisServiceStatus DCN实例在北极星服务中的状态 0:未开启; 1:已开启; 2:已隔离; 3:切换中
+                     * 
+                     */
+                    int64_t GetPolarisServiceStatus() const;
+
+                    /**
+                     * 设置DCN实例在北极星服务中的状态 0:未开启; 1:已开启; 2:已隔离; 3:切换中
+                     * @param _polarisServiceStatus DCN实例在北极星服务中的状态 0:未开启; 1:已开启; 2:已隔离; 3:切换中
+                     * 
+                     */
+                    void SetPolarisServiceStatus(const int64_t& _polarisServiceStatus);
+
+                    /**
+                     * 判断参数 PolarisServiceStatus 是否已赋值
+                     * @return PolarisServiceStatus 是否已赋值
+                     * 
+                     */
+                    bool PolarisServiceStatusHasBeenSet() const;
+
+                    /**
+                     * 获取DCN实例在北极星服务中的状态的描述信息
+                     * @return PolarisServiceStatusDesc DCN实例在北极星服务中的状态的描述信息
+                     * 
+                     */
+                    std::string GetPolarisServiceStatusDesc() const;
+
+                    /**
+                     * 设置DCN实例在北极星服务中的状态的描述信息
+                     * @param _polarisServiceStatusDesc DCN实例在北极星服务中的状态的描述信息
+                     * 
+                     */
+                    void SetPolarisServiceStatusDesc(const std::string& _polarisServiceStatusDesc);
+
+                    /**
+                     * 判断参数 PolarisServiceStatusDesc 是否已赋值
+                     * @return PolarisServiceStatusDesc 是否已赋值
+                     * 
+                     */
+                    bool PolarisServiceStatusDescHasBeenSet() const;
+
+                    /**
+                     * 获取北极星管控地域
+                     * @return PolarisRegion 北极星管控地域
+                     * 
+                     */
+                    std::string GetPolarisRegion() const;
+
+                    /**
+                     * 设置北极星管控地域
+                     * @param _polarisRegion 北极星管控地域
+                     * 
+                     */
+                    void SetPolarisRegion(const std::string& _polarisRegion);
+
+                    /**
+                     * 判断参数 PolarisRegion 是否已赋值
+                     * @return PolarisRegion 是否已赋值
+                     * 
+                     */
+                    bool PolarisRegionHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持DCN切换
+                     * @return IsDcnSwitchSupported 是否支持DCN切换
+                     * 
+                     */
+                    int64_t GetIsDcnSwitchSupported() const;
+
+                    /**
+                     * 设置是否支持DCN切换
+                     * @param _isDcnSwitchSupported 是否支持DCN切换
+                     * 
+                     */
+                    void SetIsDcnSwitchSupported(const int64_t& _isDcnSwitchSupported);
+
+                    /**
+                     * 判断参数 IsDcnSwitchSupported 是否已赋值
+                     * @return IsDcnSwitchSupported 是否已赋值
+                     * 
+                     */
+                    bool IsDcnSwitchSupportedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +749,60 @@ namespace TencentCloud
                      */
                     int64_t m_encryptStatus;
                     bool m_encryptStatusHasBeenSet;
+
+                    /**
+                     * 实例DCN状态描述信息
+                     */
+                    std::string m_dcnStatusDesc;
+                    bool m_dcnStatusDescHasBeenSet;
+
+                    /**
+                     * DCN实例绑定的北极星服务所属的北极星实例Id，若未绑定则为空
+                     */
+                    std::string m_polarisInstanceId;
+                    bool m_polarisInstanceIdHasBeenSet;
+
+                    /**
+                     * DCN实例绑定的北极星服务所属的北极星实例名，若未绑定则为空
+                     */
+                    std::string m_polarisInstanceName;
+                    bool m_polarisInstanceNameHasBeenSet;
+
+                    /**
+                     * DCN实例绑定的北极星服务所属的北极星命名空间，若未绑定则为空
+                     */
+                    std::string m_polarisNamespace;
+                    bool m_polarisNamespaceHasBeenSet;
+
+                    /**
+                     * DCN实例绑定的北极星服务，若未绑定则为空
+                     */
+                    std::string m_polarisService;
+                    bool m_polarisServiceHasBeenSet;
+
+                    /**
+                     * DCN实例在北极星服务中的状态 0:未开启; 1:已开启; 2:已隔离; 3:切换中
+                     */
+                    int64_t m_polarisServiceStatus;
+                    bool m_polarisServiceStatusHasBeenSet;
+
+                    /**
+                     * DCN实例在北极星服务中的状态的描述信息
+                     */
+                    std::string m_polarisServiceStatusDesc;
+                    bool m_polarisServiceStatusDescHasBeenSet;
+
+                    /**
+                     * 北极星管控地域
+                     */
+                    std::string m_polarisRegion;
+                    bool m_polarisRegionHasBeenSet;
+
+                    /**
+                     * 是否支持DCN切换
+                     */
+                    int64_t m_isDcnSwitchSupported;
+                    bool m_isDcnSwitchSupportedHasBeenSet;
 
                 };
             }

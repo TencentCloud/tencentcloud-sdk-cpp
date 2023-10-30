@@ -1201,6 +1201,49 @@ CsipClient::DescribeTaskLogURLOutcomeCallable CsipClient::DescribeTaskLogURLCall
     return task->get_future();
 }
 
+CsipClient::DescribeVULRiskAdvanceCFGListOutcome CsipClient::DescribeVULRiskAdvanceCFGList(const DescribeVULRiskAdvanceCFGListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVULRiskAdvanceCFGList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVULRiskAdvanceCFGListResponse rsp = DescribeVULRiskAdvanceCFGListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVULRiskAdvanceCFGListOutcome(rsp);
+        else
+            return DescribeVULRiskAdvanceCFGListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVULRiskAdvanceCFGListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeVULRiskAdvanceCFGListAsync(const DescribeVULRiskAdvanceCFGListRequest& request, const DescribeVULRiskAdvanceCFGListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVULRiskAdvanceCFGList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeVULRiskAdvanceCFGListOutcomeCallable CsipClient::DescribeVULRiskAdvanceCFGListCallable(const DescribeVULRiskAdvanceCFGListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVULRiskAdvanceCFGListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVULRiskAdvanceCFGList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeVpcAssetsOutcome CsipClient::DescribeVpcAssets(const DescribeVpcAssetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVpcAssets");

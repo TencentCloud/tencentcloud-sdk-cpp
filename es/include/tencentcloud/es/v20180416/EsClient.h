@@ -37,6 +37,8 @@
 #include <tencentcloud/es/v20180416/model/DeleteLogstashInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/DeleteLogstashPipelinesRequest.h>
 #include <tencentcloud/es/v20180416/model/DeleteLogstashPipelinesResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeDiagnoseRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeDiagnoseResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexListRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexListResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexMetaRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeInstanceLogsResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeInstancePluginListRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeInstancePluginListResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstancesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstancesResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeLogstashInstanceLogsRequest.h>
@@ -59,6 +63,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeViewsResponse.h>
 #include <tencentcloud/es/v20180416/model/DiagnoseInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/DiagnoseInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/GetDiagnoseSettingsRequest.h>
+#include <tencentcloud/es/v20180416/model/GetDiagnoseSettingsResponse.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesResponse.h>
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h>
@@ -134,6 +140,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLogstashPipelinesResponse> DeleteLogstashPipelinesOutcome;
                 typedef std::future<DeleteLogstashPipelinesOutcome> DeleteLogstashPipelinesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DeleteLogstashPipelinesRequest&, DeleteLogstashPipelinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogstashPipelinesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDiagnoseResponse> DescribeDiagnoseOutcome;
+                typedef std::future<DescribeDiagnoseOutcome> DescribeDiagnoseOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeDiagnoseRequest&, DescribeDiagnoseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnoseAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIndexListResponse> DescribeIndexListOutcome;
                 typedef std::future<DescribeIndexListOutcome> DescribeIndexListOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeIndexListRequest&, DescribeIndexListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexListAsyncHandler;
@@ -146,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceOperationsResponse> DescribeInstanceOperationsOutcome;
                 typedef std::future<DescribeInstanceOperationsOutcome> DescribeInstanceOperationsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeInstanceOperationsRequest&, DescribeInstanceOperationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceOperationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancePluginListResponse> DescribeInstancePluginListOutcome;
+                typedef std::future<DescribeInstancePluginListOutcome> DescribeInstancePluginListOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeInstancePluginListRequest&, DescribeInstancePluginListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancePluginListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
@@ -167,6 +179,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DiagnoseInstanceResponse> DiagnoseInstanceOutcome;
                 typedef std::future<DiagnoseInstanceOutcome> DiagnoseInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DiagnoseInstanceRequest&, DiagnoseInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DiagnoseInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDiagnoseSettingsResponse> GetDiagnoseSettingsOutcome;
+                typedef std::future<GetDiagnoseSettingsOutcome> GetDiagnoseSettingsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::GetDiagnoseSettingsRequest&, GetDiagnoseSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDiagnoseSettingsAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRequestTargetNodeTypesResponse> GetRequestTargetNodeTypesOutcome;
                 typedef std::future<GetRequestTargetNodeTypesOutcome> GetRequestTargetNodeTypesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::GetRequestTargetNodeTypesRequest&, GetRequestTargetNodeTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRequestTargetNodeTypesAsyncHandler;
@@ -294,6 +309,15 @@ namespace TencentCloud
                 DeleteLogstashPipelinesOutcomeCallable DeleteLogstashPipelinesCallable(const Model::DeleteLogstashPipelinesRequest& request);
 
                 /**
+                 *查询智能运维诊断结果报告
+                 * @param req DescribeDiagnoseRequest
+                 * @return DescribeDiagnoseOutcome
+                 */
+                DescribeDiagnoseOutcome DescribeDiagnose(const Model::DescribeDiagnoseRequest &request);
+                void DescribeDiagnoseAsync(const Model::DescribeDiagnoseRequest& request, const DescribeDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDiagnoseOutcomeCallable DescribeDiagnoseCallable(const Model::DescribeDiagnoseRequest& request);
+
+                /**
                  *获取索引列表
                  * @param req DescribeIndexListRequest
                  * @return DescribeIndexListOutcome
@@ -328,6 +352,15 @@ namespace TencentCloud
                 DescribeInstanceOperationsOutcome DescribeInstanceOperations(const Model::DescribeInstanceOperationsRequest &request);
                 void DescribeInstanceOperationsAsync(const Model::DescribeInstanceOperationsRequest& request, const DescribeInstanceOperationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceOperationsOutcomeCallable DescribeInstanceOperationsCallable(const Model::DescribeInstanceOperationsRequest& request);
+
+                /**
+                 *查询实例插件列表
+                 * @param req DescribeInstancePluginListRequest
+                 * @return DescribeInstancePluginListOutcome
+                 */
+                DescribeInstancePluginListOutcome DescribeInstancePluginList(const Model::DescribeInstancePluginListRequest &request);
+                void DescribeInstancePluginListAsync(const Model::DescribeInstancePluginListRequest& request, const DescribeInstancePluginListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancePluginListOutcomeCallable DescribeInstancePluginListCallable(const Model::DescribeInstancePluginListRequest& request);
 
                 /**
                  *查询用户该地域下符合条件的所有实例
@@ -391,6 +424,15 @@ namespace TencentCloud
                 DiagnoseInstanceOutcome DiagnoseInstance(const Model::DiagnoseInstanceRequest &request);
                 void DiagnoseInstanceAsync(const Model::DiagnoseInstanceRequest& request, const DiagnoseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DiagnoseInstanceOutcomeCallable DiagnoseInstanceCallable(const Model::DiagnoseInstanceRequest& request);
+
+                /**
+                 *查看智能运维配置
+                 * @param req GetDiagnoseSettingsRequest
+                 * @return GetDiagnoseSettingsOutcome
+                 */
+                GetDiagnoseSettingsOutcome GetDiagnoseSettings(const Model::GetDiagnoseSettingsRequest &request);
+                void GetDiagnoseSettingsAsync(const Model::GetDiagnoseSettingsRequest& request, const GetDiagnoseSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDiagnoseSettingsOutcomeCallable GetDiagnoseSettingsCallable(const Model::GetDiagnoseSettingsRequest& request);
 
                 /**
                  *获取接收客户端请求的节点类型

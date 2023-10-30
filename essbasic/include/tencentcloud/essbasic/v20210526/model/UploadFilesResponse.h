@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取上传成功文件数量
+注: `如果一个文件上传失败, 则全部文件皆上传失败`
                      * @return TotalCount 上传成功文件数量
+注: `如果一个文件上传失败, 则全部文件皆上传失败`
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -58,8 +60,12 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取文件id数组，有效期一个小时；有效期内此文件id可以反复使用
-                     * @return FileIds 文件id数组，有效期一个小时；有效期内此文件id可以反复使用
+                     * 获取文件资源ID数组，每个文件资源ID为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注:`有效期一个小时, 有效期内此文件id可以反复使用, 超过有效期无法使用`
+                     * @return FileIds 文件资源ID数组，每个文件资源ID为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注:`有效期一个小时, 有效期内此文件id可以反复使用, 超过有效期无法使用`
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
@@ -72,8 +78,8 @@ namespace TencentCloud
                     bool FileIdsHasBeenSet() const;
 
                     /**
-                     * 获取文件Url
-                     * @return FileUrls 文件Url
+                     * 获取对应上传文件的下载链接，过期时间5分钟
+                     * @return FileUrls 对应上传文件的下载链接，过期时间5分钟
                      * 
                      */
                     std::vector<std::string> GetFileUrls() const;
@@ -89,18 +95,21 @@ namespace TencentCloud
 
                     /**
                      * 上传成功文件数量
+注: `如果一个文件上传失败, 则全部文件皆上传失败`
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 文件id数组，有效期一个小时；有效期内此文件id可以反复使用
+                     * 文件资源ID数组，每个文件资源ID为32位字符串。
+建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注:`有效期一个小时, 有效期内此文件id可以反复使用, 超过有效期无法使用`
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;
 
                     /**
-                     * 文件Url
+                     * 对应上传文件的下载链接，过期时间5分钟
                      */
                     std::vector<std::string> m_fileUrls;
                     bool m_fileUrlsHasBeenSet;

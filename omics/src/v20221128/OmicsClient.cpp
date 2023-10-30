@@ -384,6 +384,49 @@ OmicsClient::GetRunCallsOutcomeCallable OmicsClient::GetRunCallsCallable(const G
     return task->get_future();
 }
 
+OmicsClient::GetRunMetadataFileOutcome OmicsClient::GetRunMetadataFile(const GetRunMetadataFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRunMetadataFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRunMetadataFileResponse rsp = GetRunMetadataFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRunMetadataFileOutcome(rsp);
+        else
+            return GetRunMetadataFileOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRunMetadataFileOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::GetRunMetadataFileAsync(const GetRunMetadataFileRequest& request, const GetRunMetadataFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetRunMetadataFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::GetRunMetadataFileOutcomeCallable OmicsClient::GetRunMetadataFileCallable(const GetRunMetadataFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetRunMetadataFileOutcome()>>(
+        [this, request]()
+        {
+            return this->GetRunMetadataFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OmicsClient::GetRunStatusOutcome OmicsClient::GetRunStatus(const GetRunStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "GetRunStatus");
@@ -549,6 +592,92 @@ OmicsClient::RunApplicationOutcomeCallable OmicsClient::RunApplicationCallable(c
         [this, request]()
         {
             return this->RunApplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OmicsClient::RunWorkflowOutcome OmicsClient::RunWorkflow(const RunWorkflowRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunWorkflow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunWorkflowResponse rsp = RunWorkflowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunWorkflowOutcome(rsp);
+        else
+            return RunWorkflowOutcome(o.GetError());
+    }
+    else
+    {
+        return RunWorkflowOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::RunWorkflowAsync(const RunWorkflowRequest& request, const RunWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunWorkflow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::RunWorkflowOutcomeCallable OmicsClient::RunWorkflowCallable(const RunWorkflowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunWorkflowOutcome()>>(
+        [this, request]()
+        {
+            return this->RunWorkflow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OmicsClient::TerminateRunGroupOutcome OmicsClient::TerminateRunGroup(const TerminateRunGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateRunGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateRunGroupResponse rsp = TerminateRunGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateRunGroupOutcome(rsp);
+        else
+            return TerminateRunGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateRunGroupOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::TerminateRunGroupAsync(const TerminateRunGroupRequest& request, const TerminateRunGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateRunGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::TerminateRunGroupOutcomeCallable OmicsClient::TerminateRunGroupCallable(const TerminateRunGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateRunGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateRunGroup(request);
         }
     );
 

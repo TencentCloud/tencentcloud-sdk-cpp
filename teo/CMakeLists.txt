@@ -113,6 +113,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyAccelerationDomainStatusesResponse.h
   include/tencentcloud/teo/v20220901/model/Zone.h
   include/tencentcloud/teo/v20220901/model/DescribeRulesSettingResponse.h
+  include/tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityResponse.h
   include/tencentcloud/teo/v20220901/model/RuleExtraParameter.h
   include/tencentcloud/teo/v20220901/model/RulesSettingAction.h
   include/tencentcloud/teo/v20220901/model/DDoSAttackEvent.h
@@ -167,7 +168,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CreatePrefetchTaskResponse.h
   include/tencentcloud/teo/v20220901/model/NoCache.h
   include/tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeAliasDomainsResponse.h
+  include/tencentcloud/teo/v20220901/model/BindZoneToPlanRequest.h
   include/tencentcloud/teo/v20220901/model/SecurityType.h
   include/tencentcloud/teo/v20220901/model/IPWhitelist.h
   include/tencentcloud/teo/v20220901/model/DDoS.h
@@ -218,6 +219,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CertificateInfo.h
   include/tencentcloud/teo/v20220901/model/CreatePlanForZoneRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyAliasDomainStatusRequest.h
+  include/tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityRequest.h
   include/tencentcloud/teo/v20220901/model/TimingDataItem.h
   include/tencentcloud/teo/v20220901/model/CreateApplicationProxyRequest.h
   include/tencentcloud/teo/v20220901/model/CC.h
@@ -253,7 +255,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CreateOriginGroupResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusRequest.h
   include/tencentcloud/teo/v20220901/model/AccelerateType.h
-  include/tencentcloud/teo/v20220901/model/BindZoneToPlanRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeAliasDomainsResponse.h
   include/tencentcloud/teo/v20220901/model/CreateAccelerationDomainRequest.h
   include/tencentcloud/teo/v20220901/model/FollowOrigin.h
   include/tencentcloud/teo/v20220901/model/DeleteZoneRequest.h
@@ -416,6 +418,7 @@ set(teo_src
   src/v20220901/model/ModifyAccelerationDomainStatusesResponse.cpp
   src/v20220901/model/Zone.cpp
   src/v20220901/model/DescribeRulesSettingResponse.cpp
+  src/v20220901/model/BindSecurityTemplateToEntityResponse.cpp
   src/v20220901/model/RuleExtraParameter.cpp
   src/v20220901/model/RulesSettingAction.cpp
   src/v20220901/model/DDoSAttackEvent.cpp
@@ -470,7 +473,7 @@ set(teo_src
   src/v20220901/model/CreatePrefetchTaskResponse.cpp
   src/v20220901/model/NoCache.cpp
   src/v20220901/model/DescribeDefaultCertificatesRequest.cpp
-  src/v20220901/model/DescribeAliasDomainsResponse.cpp
+  src/v20220901/model/BindZoneToPlanRequest.cpp
   src/v20220901/model/SecurityType.cpp
   src/v20220901/model/IPWhitelist.cpp
   src/v20220901/model/DDoS.cpp
@@ -521,6 +524,7 @@ set(teo_src
   src/v20220901/model/CertificateInfo.cpp
   src/v20220901/model/CreatePlanForZoneRequest.cpp
   src/v20220901/model/ModifyAliasDomainStatusRequest.cpp
+  src/v20220901/model/BindSecurityTemplateToEntityRequest.cpp
   src/v20220901/model/TimingDataItem.cpp
   src/v20220901/model/CreateApplicationProxyRequest.cpp
   src/v20220901/model/CC.cpp
@@ -556,7 +560,7 @@ set(teo_src
   src/v20220901/model/CreateOriginGroupResponse.cpp
   src/v20220901/model/ModifyApplicationProxyRuleStatusRequest.cpp
   src/v20220901/model/AccelerateType.cpp
-  src/v20220901/model/BindZoneToPlanRequest.cpp
+  src/v20220901/model/DescribeAliasDomainsResponse.cpp
   src/v20220901/model/CreateAccelerationDomainRequest.cpp
   src/v20220901/model/FollowOrigin.cpp
   src/v20220901/model/DeleteZoneRequest.cpp

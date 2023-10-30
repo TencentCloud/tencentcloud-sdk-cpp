@@ -571,15 +571,27 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址搜索实例。
-                     * @return SearchKeys 设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址搜索实例。
+                     * 获取该参数为数组类型，支持配置实例名称、实例 ID、IP地址，其中实例名称为模糊匹配，实例 ID 和 IP 地址精确匹配。
+
+- 数组中每一个元素取并集进行匹配查询。
+- **InstanceId** 与 **SearchKeys** 同时配置，则取二者交集进行匹配查询。
+                     * @return SearchKeys 该参数为数组类型，支持配置实例名称、实例 ID、IP地址，其中实例名称为模糊匹配，实例 ID 和 IP 地址精确匹配。
+
+- 数组中每一个元素取并集进行匹配查询。
+- **InstanceId** 与 **SearchKeys** 同时配置，则取二者交集进行匹配查询。
                      * 
                      */
                     std::vector<std::string> GetSearchKeys() const;
 
                     /**
-                     * 设置设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址搜索实例。
-                     * @param _searchKeys 设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址搜索实例。
+                     * 设置该参数为数组类型，支持配置实例名称、实例 ID、IP地址，其中实例名称为模糊匹配，实例 ID 和 IP 地址精确匹配。
+
+- 数组中每一个元素取并集进行匹配查询。
+- **InstanceId** 与 **SearchKeys** 同时配置，则取二者交集进行匹配查询。
+                     * @param _searchKeys 该参数为数组类型，支持配置实例名称、实例 ID、IP地址，其中实例名称为模糊匹配，实例 ID 和 IP 地址精确匹配。
+
+- 数组中每一个元素取并集进行匹配查询。
+- **InstanceId** 与 **SearchKeys** 同时配置，则取二者交集进行匹配查询。
                      * 
                      */
                     void SetSearchKeys(const std::vector<std::string>& _searchKeys);
@@ -903,7 +915,10 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址搜索实例。
+                     * 该参数为数组类型，支持配置实例名称、实例 ID、IP地址，其中实例名称为模糊匹配，实例 ID 和 IP 地址精确匹配。
+
+- 数组中每一个元素取并集进行匹配查询。
+- **InstanceId** 与 **SearchKeys** 同时配置，则取二者交集进行匹配查询。
                      */
                     std::vector<std::string> m_searchKeys;
                     bool m_searchKeysHasBeenSet;

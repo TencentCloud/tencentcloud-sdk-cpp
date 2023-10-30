@@ -431,15 +431,15 @@ innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0
                     bool RollbackTimeHasBeenSet() const;
 
                     /**
-                     * 获取DCN同步模式，0：普通DCN同步，1：一致性同步
-                     * @return DcnSyncMode DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * 获取DCN同步模式，0：异步， 1：强同步
+                     * @return DcnSyncMode DCN同步模式，0：异步， 1：强同步
                      * 
                      */
                     int64_t GetDcnSyncMode() const;
 
                     /**
-                     * 设置DCN同步模式，0：普通DCN同步，1：一致性同步
-                     * @param _dcnSyncMode DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * 设置DCN同步模式，0：异步， 1：强同步
+                     * @param _dcnSyncMode DCN同步模式，0：异步， 1：强同步
                      * 
                      */
                     void SetDcnSyncMode(const int64_t& _dcnSyncMode);
@@ -564,7 +564,7 @@ innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0
                     bool m_rollbackTimeHasBeenSet;
 
                     /**
-                     * DCN同步模式，0：普通DCN同步，1：一致性同步
+                     * DCN同步模式，0：异步， 1：强同步
                      */
                     int64_t m_dcnSyncMode;
                     bool m_dcnSyncModeHasBeenSet;

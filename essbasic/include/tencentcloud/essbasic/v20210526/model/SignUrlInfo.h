@@ -247,26 +247,26 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取参与者类型:
-ORGANIZATION 企业经办人
-PERSON 自然人
+                     * 获取参与者类型, 类型如下:
+**ORGANIZATION**:企业经办人
+**PERSON**: 自然人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproverType 参与者类型:
-ORGANIZATION 企业经办人
-PERSON 自然人
+                     * @return ApproverType 参与者类型, 类型如下:
+**ORGANIZATION**:企业经办人
+**PERSON**: 自然人
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproverType() const;
 
                     /**
-                     * 设置参与者类型:
-ORGANIZATION 企业经办人
-PERSON 自然人
+                     * 设置参与者类型, 类型如下:
+**ORGANIZATION**:企业经办人
+**PERSON**: 自然人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _approverType 参与者类型:
-ORGANIZATION 企业经办人
-PERSON 自然人
+                     * @param _approverType 参与者类型, 类型如下:
+**ORGANIZATION**:企业经办人
+**PERSON**: 自然人
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -463,9 +463,9 @@ PERSON 自然人
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 参与者类型:
-ORGANIZATION 企业经办人
-PERSON 自然人
+                     * 参与者类型, 类型如下:
+**ORGANIZATION**:企业经办人
+**PERSON**: 自然人
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approverType;

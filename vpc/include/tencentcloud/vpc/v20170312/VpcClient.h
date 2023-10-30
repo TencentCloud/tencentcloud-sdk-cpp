@@ -589,6 +589,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayCcnRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewaySslServerRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewaySslServerResponse.h>
 #include <tencentcloud/vpc/v20170312/model/NotifyRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/NotifyRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/RefreshDirectConnectGatewayRouteToNatGatewayRequest.h>
@@ -1516,6 +1518,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyVpnGatewayRoutesResponse> ModifyVpnGatewayRoutesOutcome;
                 typedef std::future<ModifyVpnGatewayRoutesOutcome> ModifyVpnGatewayRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpnGatewayRoutesRequest&, ModifyVpnGatewayRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpnGatewayRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVpnGatewaySslServerResponse> ModifyVpnGatewaySslServerOutcome;
+                typedef std::future<ModifyVpnGatewaySslServerOutcome> ModifyVpnGatewaySslServerOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyVpnGatewaySslServerRequest&, ModifyVpnGatewaySslServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpnGatewaySslServerAsyncHandler;
                 typedef Outcome<Core::Error, Model::NotifyRoutesResponse> NotifyRoutesOutcome;
                 typedef std::future<NotifyRoutesOutcome> NotifyRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::NotifyRoutesRequest&, NotifyRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> NotifyRoutesAsyncHandler;
@@ -4404,6 +4409,15 @@ LimitTypes取值范围：
                 ModifyVpnGatewayRoutesOutcome ModifyVpnGatewayRoutes(const Model::ModifyVpnGatewayRoutesRequest &request);
                 void ModifyVpnGatewayRoutesAsync(const Model::ModifyVpnGatewayRoutesRequest& request, const ModifyVpnGatewayRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVpnGatewayRoutesOutcomeCallable ModifyVpnGatewayRoutesCallable(const Model::ModifyVpnGatewayRoutesRequest& request);
+
+                /**
+                 *本接口用于修改 SSL-VPN 服务端属性
+                 * @param req ModifyVpnGatewaySslServerRequest
+                 * @return ModifyVpnGatewaySslServerOutcome
+                 */
+                ModifyVpnGatewaySslServerOutcome ModifyVpnGatewaySslServer(const Model::ModifyVpnGatewaySslServerRequest &request);
+                void ModifyVpnGatewaySslServerAsync(const Model::ModifyVpnGatewaySslServerRequest& request, const ModifyVpnGatewaySslServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVpnGatewaySslServerOutcomeCallable ModifyVpnGatewaySslServerCallable(const Model::ModifyVpnGatewaySslServerRequest& request);
 
                 /**
                  *本接口（NotifyRoutes）用于路由表列表页操作增加“发布到云联网”，发布路由到云联网。

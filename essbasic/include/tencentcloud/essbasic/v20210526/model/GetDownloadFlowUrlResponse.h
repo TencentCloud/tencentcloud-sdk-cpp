@@ -44,8 +44,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同（流程）下载地址
-                     * @return DownLoadUrl 合同（流程）下载地址
+                     * 获取跳转控制台合同下载页面链接 , 5分钟之内有效，且只能访问一次
+
+                     * @return DownLoadUrl 跳转控制台合同下载页面链接 , 5分钟之内有效，且只能访问一次
+
                      * 
                      */
                     std::string GetDownLoadUrl() const;
@@ -60,7 +62,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同（流程）下载地址
+                     * 跳转控制台合同下载页面链接 , 5分钟之内有效，且只能访问一次
+
                      */
                     std::string m_downLoadUrl;
                     bool m_downLoadUrlHasBeenSet;

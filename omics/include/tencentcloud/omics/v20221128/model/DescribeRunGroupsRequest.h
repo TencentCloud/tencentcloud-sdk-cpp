@@ -45,14 +45,18 @@ namespace TencentCloud
 
                     /**
                      * 获取项目ID。
+（不填使用指定地域下的默认项目）
                      * @return ProjectId 项目ID。
+（不填使用指定地域下的默认项目）
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID。
+（不填使用指定地域下的默认项目）
                      * @param _projectId 项目ID。
+（不填使用指定地域下的默认项目）
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -143,6 +147,7 @@ namespace TencentCloud
 
                     /**
                      * 项目ID。
+（不填使用指定地域下的默认项目）
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
