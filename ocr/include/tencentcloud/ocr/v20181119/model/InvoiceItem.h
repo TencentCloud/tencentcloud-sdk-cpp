@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Polygon.h>
 #include <tencentcloud/ocr/v20181119/model/SingleInvoiceItem.h>
+#include <tencentcloud/ocr/v20181119/model/ItemPolygonInfo.h>
 
 
 namespace TencentCloud
@@ -247,15 +248,15 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取发票详细类型，详见上方 SubType 返回值说明
-                     * @return SubType 发票详细类型，详见上方 SubType 返回值说明
+                     * 获取发票详细类型，详见票据识别（高级版）接口文档说明中 SubType 返回值说明
+                     * @return SubType 发票详细类型，详见票据识别（高级版）接口文档说明中 SubType 返回值说明
                      * 
                      */
                     std::string GetSubType() const;
 
                     /**
-                     * 设置发票详细类型，详见上方 SubType 返回值说明
-                     * @param _subType 发票详细类型，详见上方 SubType 返回值说明
+                     * 设置发票详细类型，详见票据识别（高级版）接口文档说明中 SubType 返回值说明
+                     * @param _subType 发票详细类型，详见票据识别（高级版）接口文档说明中 SubType 返回值说明
                      * 
                      */
                     void SetSubType(const std::string& _subType);
@@ -268,15 +269,15 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool SubTypeHasBeenSet() const;
 
                     /**
-                     * 获取发票类型描述，详见上方 TypeDescription  返回值说明
-                     * @return TypeDescription 发票类型描述，详见上方 TypeDescription  返回值说明
+                     * 获取发票类型描述，详见票据识别（高级版）接口文档说明中 TypeDescription  返回值说明
+                     * @return TypeDescription 发票类型描述，详见票据识别（高级版）接口文档说明中 TypeDescription  返回值说明
                      * 
                      */
                     std::string GetTypeDescription() const;
 
                     /**
-                     * 设置发票类型描述，详见上方 TypeDescription  返回值说明
-                     * @param _typeDescription 发票类型描述，详见上方 TypeDescription  返回值说明
+                     * 设置发票类型描述，详见票据识别（高级版）接口文档说明中 TypeDescription  返回值说明
+                     * @param _typeDescription 发票类型描述，详见票据识别（高级版）接口文档说明中 TypeDescription  返回值说明
                      * 
                      */
                     void SetTypeDescription(const std::string& _typeDescription);
@@ -329,6 +330,27 @@ FailedOperation.UnKnowError：表示识别失败；
                      * 
                      */
                     bool SubTypeDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取该发票中所有字段坐标信息。包括字段英文名称、字段值所在位置四点坐标、字段所属行号，具体内容请点击左侧链接。
+                     * @return ItemPolygon 该发票中所有字段坐标信息。包括字段英文名称、字段值所在位置四点坐标、字段所属行号，具体内容请点击左侧链接。
+                     * 
+                     */
+                    std::vector<ItemPolygonInfo> GetItemPolygon() const;
+
+                    /**
+                     * 设置该发票中所有字段坐标信息。包括字段英文名称、字段值所在位置四点坐标、字段所属行号，具体内容请点击左侧链接。
+                     * @param _itemPolygon 该发票中所有字段坐标信息。包括字段英文名称、字段值所在位置四点坐标、字段所属行号，具体内容请点击左侧链接。
+                     * 
+                     */
+                    void SetItemPolygon(const std::vector<ItemPolygonInfo>& _itemPolygon);
+
+                    /**
+                     * 判断参数 ItemPolygon 是否已赋值
+                     * @return ItemPolygon 是否已赋值
+                     * 
+                     */
+                    bool ItemPolygonHasBeenSet() const;
 
                 private:
 
@@ -387,13 +409,13 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 发票详细类型，详见上方 SubType 返回值说明
+                     * 发票详细类型，详见票据识别（高级版）接口文档说明中 SubType 返回值说明
                      */
                     std::string m_subType;
                     bool m_subTypeHasBeenSet;
 
                     /**
-                     * 发票类型描述，详见上方 TypeDescription  返回值说明
+                     * 发票类型描述，详见票据识别（高级版）接口文档说明中 TypeDescription  返回值说明
                      */
                     std::string m_typeDescription;
                     bool m_typeDescriptionHasBeenSet;
@@ -409,6 +431,12 @@ FailedOperation.UnKnowError：表示识别失败；
                      */
                     std::string m_subTypeDescription;
                     bool m_subTypeDescriptionHasBeenSet;
+
+                    /**
+                     * 该发票中所有字段坐标信息。包括字段英文名称、字段值所在位置四点坐标、字段所属行号，具体内容请点击左侧链接。
+                     */
+                    std::vector<ItemPolygonInfo> m_itemPolygon;
+                    bool m_itemPolygonHasBeenSet;
 
                 };
             }

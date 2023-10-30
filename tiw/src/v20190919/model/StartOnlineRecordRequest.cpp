@@ -37,7 +37,9 @@ StartOnlineRecordRequest::StartOnlineRecordRequest() :
     m_recordModeHasBeenSet(false),
     m_chatGroupIdHasBeenSet(false),
     m_autoStopTimeoutHasBeenSet(false),
-    m_extraDataHasBeenSet(false)
+    m_extraDataHasBeenSet(false),
+    m_tRTCRoomIdHasBeenSet(false),
+    m_tRTCRoomIdStrHasBeenSet(false)
 {
 }
 
@@ -175,6 +177,22 @@ string StartOnlineRecordRequest::ToJsonString() const
         string key = "ExtraData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extraData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tRTCRoomIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TRTCRoomId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tRTCRoomId, allocator);
+    }
+
+    if (m_tRTCRoomIdStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TRTCRoomIdStr";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tRTCRoomIdStr.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -423,6 +441,38 @@ void StartOnlineRecordRequest::SetExtraData(const string& _extraData)
 bool StartOnlineRecordRequest::ExtraDataHasBeenSet() const
 {
     return m_extraDataHasBeenSet;
+}
+
+int64_t StartOnlineRecordRequest::GetTRTCRoomId() const
+{
+    return m_tRTCRoomId;
+}
+
+void StartOnlineRecordRequest::SetTRTCRoomId(const int64_t& _tRTCRoomId)
+{
+    m_tRTCRoomId = _tRTCRoomId;
+    m_tRTCRoomIdHasBeenSet = true;
+}
+
+bool StartOnlineRecordRequest::TRTCRoomIdHasBeenSet() const
+{
+    return m_tRTCRoomIdHasBeenSet;
+}
+
+string StartOnlineRecordRequest::GetTRTCRoomIdStr() const
+{
+    return m_tRTCRoomIdStr;
+}
+
+void StartOnlineRecordRequest::SetTRTCRoomIdStr(const string& _tRTCRoomIdStr)
+{
+    m_tRTCRoomIdStr = _tRTCRoomIdStr;
+    m_tRTCRoomIdStrHasBeenSet = true;
+}
+
+bool StartOnlineRecordRequest::TRTCRoomIdStrHasBeenSet() const
+{
+    return m_tRTCRoomIdStrHasBeenSet;
 }
 
 

@@ -315,6 +315,27 @@ namespace TencentCloud
                      */
                     bool ConfParamsHasBeenSet() const;
 
+                    /**
+                     * 获取脚本内容是否base64加密
+                     * @return ScriptEncryption 脚本内容是否base64加密
+                     * 
+                     */
+                    bool GetScriptEncryption() const;
+
+                    /**
+                     * 设置脚本内容是否base64加密
+                     * @param _scriptEncryption 脚本内容是否base64加密
+                     * 
+                     */
+                    void SetScriptEncryption(const bool& _scriptEncryption);
+
+                    /**
+                     * 判断参数 ScriptEncryption 是否已赋值
+                     * @return ScriptEncryption 是否已赋值
+                     * 
+                     */
+                    bool ScriptEncryptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +415,12 @@ namespace TencentCloud
                      */
                     std::string m_confParams;
                     bool m_confParamsHasBeenSet;
+
+                    /**
+                     * 脚本内容是否base64加密
+                     */
+                    bool m_scriptEncryption;
+                    bool m_scriptEncryptionHasBeenSet;
 
                 };
             }

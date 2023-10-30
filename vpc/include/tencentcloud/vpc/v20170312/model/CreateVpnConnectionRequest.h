@@ -25,6 +25,8 @@
 #include <tencentcloud/vpc/v20170312/model/IKEOptionsSpecification.h>
 #include <tencentcloud/vpc/v20170312/model/IPSECOptionsSpecification.h>
 #include <tencentcloud/vpc/v20170312/model/Tag.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpnConnRoute.h>
+#include <tencentcloud/vpc/v20170312/model/BgpConfig.h>
 
 
 namespace TencentCloud
@@ -407,6 +409,48 @@ CCN VPN 形的通道 可以不传VPCID
                      */
                     bool DpdActionHasBeenSet() const;
 
+                    /**
+                     * 获取创建通道路由信息。
+                     * @return Route 创建通道路由信息。
+                     * 
+                     */
+                    CreateVpnConnRoute GetRoute() const;
+
+                    /**
+                     * 设置创建通道路由信息。
+                     * @param _route 创建通道路由信息。
+                     * 
+                     */
+                    void SetRoute(const CreateVpnConnRoute& _route);
+
+                    /**
+                     * 判断参数 Route 是否已赋值
+                     * @return Route 是否已赋值
+                     * 
+                     */
+                    bool RouteHasBeenSet() const;
+
+                    /**
+                     * 获取BGP配置。
+                     * @return BgpConfig BGP配置。
+                     * 
+                     */
+                    BgpConfig GetBgpConfig() const;
+
+                    /**
+                     * 设置BGP配置。
+                     * @param _bgpConfig BGP配置。
+                     * 
+                     */
+                    void SetBgpConfig(const BgpConfig& _bgpConfig);
+
+                    /**
+                     * 判断参数 BgpConfig 是否已赋值
+                     * @return BgpConfig 是否已赋值
+                     * 
+                     */
+                    bool BgpConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -511,6 +555,18 @@ CCN VPN 形的通道 可以不传VPCID
                      */
                     std::string m_dpdAction;
                     bool m_dpdActionHasBeenSet;
+
+                    /**
+                     * 创建通道路由信息。
+                     */
+                    CreateVpnConnRoute m_route;
+                    bool m_routeHasBeenSet;
+
+                    /**
+                     * BGP配置。
+                     */
+                    BgpConfig m_bgpConfig;
+                    bool m_bgpConfigHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ RecognizeGeneralInvoiceRequest::RecognizeGeneralInvoiceRequest() :
     m_enablePdfHasBeenSet(false),
     m_pdfPageNumberHasBeenSet(false),
     m_enableMultiplePageHasBeenSet(false),
-    m_enableCutImageHasBeenSet(false)
+    m_enableCutImageHasBeenSet(false),
+    m_enableItemPolygonHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,14 @@ string RecognizeGeneralInvoiceRequest::ToJsonString() const
         string key = "EnableCutImage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableCutImage, allocator);
+    }
+
+    if (m_enableItemPolygonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableItemPolygon";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableItemPolygon, allocator);
     }
 
 
@@ -244,6 +253,22 @@ void RecognizeGeneralInvoiceRequest::SetEnableCutImage(const bool& _enableCutIma
 bool RecognizeGeneralInvoiceRequest::EnableCutImageHasBeenSet() const
 {
     return m_enableCutImageHasBeenSet;
+}
+
+bool RecognizeGeneralInvoiceRequest::GetEnableItemPolygon() const
+{
+    return m_enableItemPolygon;
+}
+
+void RecognizeGeneralInvoiceRequest::SetEnableItemPolygon(const bool& _enableItemPolygon)
+{
+    m_enableItemPolygon = _enableItemPolygon;
+    m_enableItemPolygonHasBeenSet = true;
+}
+
+bool RecognizeGeneralInvoiceRequest::EnableItemPolygonHasBeenSet() const
+{
+    return m_enableItemPolygonHasBeenSet;
 }
 
 

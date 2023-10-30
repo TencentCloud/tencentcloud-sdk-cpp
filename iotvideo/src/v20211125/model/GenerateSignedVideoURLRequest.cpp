@@ -24,7 +24,8 @@ using namespace std;
 
 GenerateSignedVideoURLRequest::GenerateSignedVideoURLRequest() :
     m_videoURLHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string GenerateSignedVideoURLRequest::ToJsonString() const
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void GenerateSignedVideoURLRequest::SetExpireTime(const uint64_t& _expireTime)
 bool GenerateSignedVideoURLRequest::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+uint64_t GenerateSignedVideoURLRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void GenerateSignedVideoURLRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool GenerateSignedVideoURLRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 

@@ -69,12 +69,12 @@ namespace TencentCloud
                     /**
                      * 获取需要推流的白板房间号，取值范围: (1, 4294967295)。
 
-1. 白板推流默认以RoomId的字符串表达形式作为IM群组的GroupID（比如RoomId为1234，则IM群组的GroupID为"1234"）加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。
-2. 在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。
+1. 在没有指定`GroupId`的情况下，白板推流默认以`RoomId`的字符串表达形式作为IM群组ID（比如RoomId为1234，则IM群组ID为"1234"），并加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。
+2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为白板流进行推流的TRTC房间号。
                      * @return RoomId 需要推流的白板房间号，取值范围: (1, 4294967295)。
 
-1. 白板推流默认以RoomId的字符串表达形式作为IM群组的GroupID（比如RoomId为1234，则IM群组的GroupID为"1234"）加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。
-2. 在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。
+1. 在没有指定`GroupId`的情况下，白板推流默认以`RoomId`的字符串表达形式作为IM群组ID（比如RoomId为1234，则IM群组ID为"1234"），并加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。
+2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为白板流进行推流的TRTC房间号。
                      * 
                      */
                     int64_t GetRoomId() const;
@@ -82,12 +82,12 @@ namespace TencentCloud
                     /**
                      * 设置需要推流的白板房间号，取值范围: (1, 4294967295)。
 
-1. 白板推流默认以RoomId的字符串表达形式作为IM群组的GroupID（比如RoomId为1234，则IM群组的GroupID为"1234"）加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。
-2. 在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。
+1. 在没有指定`GroupId`的情况下，白板推流默认以`RoomId`的字符串表达形式作为IM群组ID（比如RoomId为1234，则IM群组ID为"1234"），并加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。
+2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为白板流进行推流的TRTC房间号。
                      * @param _roomId 需要推流的白板房间号，取值范围: (1, 4294967295)。
 
-1. 白板推流默认以RoomId的字符串表达形式作为IM群组的GroupID（比如RoomId为1234，则IM群组的GroupID为"1234"）加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。
-2. 在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。
+1. 在没有指定`GroupId`的情况下，白板推流默认以`RoomId`的字符串表达形式作为IM群组ID（比如RoomId为1234，则IM群组ID为"1234"），并加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。
+2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为白板流进行推流的TRTC房间号。
                      * 
                      */
                     void SetRoomId(const int64_t& _roomId);
@@ -125,15 +125,15 @@ namespace TencentCloud
                     bool PushUserIdHasBeenSet() const;
 
                     /**
-                     * 获取与PushUserId对应的IM签名(usersig)。
-                     * @return PushUserSig 与PushUserId对应的IM签名(usersig)。
+                     * 获取与`PushUserId`对应的IM签名(usersig)。
+                     * @return PushUserSig 与`PushUserId`对应的IM签名(usersig)。
                      * 
                      */
                     std::string GetPushUserSig() const;
 
                     /**
-                     * 设置与PushUserId对应的IM签名(usersig)。
-                     * @param _pushUserSig 与PushUserId对应的IM签名(usersig)。
+                     * 设置与`PushUserId`对应的IM签名(usersig)。
+                     * @param _pushUserSig 与`PushUserId`对应的IM签名(usersig)。
                      * 
                      */
                     void SetPushUserSig(const std::string& _pushUserSig);
@@ -354,7 +354,7 @@ namespace TencentCloud
                     bool AutoRecordHasBeenSet() const;
 
                     /**
-                     * 获取指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
+                     * 获取指定白板推流这路流在音视频云端录制中的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
 
 限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
 
@@ -366,7 +366,7 @@ urlencode(SdkAppID_RoomID_PushUserID)
 例如：
 SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
 那么：RecordId = 12345678_12345_push_user_1
-                     * @return UserDefinedRecordId 指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
+                     * @return UserDefinedRecordId 指定白板推流这路流在音视频云端录制中的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
 
 限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
 
@@ -383,7 +383,7 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     std::string GetUserDefinedRecordId() const;
 
                     /**
-                     * 设置指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
+                     * 设置指定白板推流这路流在音视频云端录制中的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
 
 限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
 
@@ -395,7 +395,7 @@ urlencode(SdkAppID_RoomID_PushUserID)
 例如：
 SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
 那么：RecordId = 12345678_12345_push_user_1
-                     * @param _userDefinedRecordId 指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
+                     * @param _userDefinedRecordId 指定白板推流这路流在音视频云端录制中的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
 
 限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
 
@@ -456,7 +456,7 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     bool AutoPublishHasBeenSet() const;
 
                     /**
-                     * 获取指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
+                     * 获取指定实时音视频在旁路白板推流这路流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
 
 限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
 
@@ -468,7 +468,7 @@ urlencode(SdkAppID_RoomID_PushUserID_main)
 例如：
 SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
 那么：StreamID = 12345678_12345_push_user_1_main
-                     * @return UserDefinedStreamId 指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
+                     * @return UserDefinedStreamId 指定实时音视频在旁路白板推流这路流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
 
 限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
 
@@ -485,7 +485,7 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     std::string GetUserDefinedStreamId() const;
 
                     /**
-                     * 设置指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
+                     * 设置指定实时音视频在旁路白板推流这路流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
 
 限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
 
@@ -497,7 +497,7 @@ urlencode(SdkAppID_RoomID_PushUserID_main)
 例如：
 SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
 那么：StreamID = 12345678_12345_push_user_1_main
-                     * @param _userDefinedStreamId 指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
+                     * @param _userDefinedStreamId 指定实时音视频在旁路白板推流这路流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
 
 限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
 
@@ -544,14 +544,14 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     /**
                      * 获取TRTC数字类型房间号，取值范围: (1, 4294967295)。
 
-在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
+在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为白板流进行推流的TRTC房间号。
 
-当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
+当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。
                      * @return TRTCRoomId TRTC数字类型房间号，取值范围: (1, 4294967295)。
 
-在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
+在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为白板流进行推流的TRTC房间号。
 
-当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
+当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。
                      * 
                      */
                     int64_t GetTRTCRoomId() const;
@@ -559,14 +559,14 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     /**
                      * 设置TRTC数字类型房间号，取值范围: (1, 4294967295)。
 
-在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
+在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为白板流进行推流的TRTC房间号。
 
-当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
+当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。
                      * @param _tRTCRoomId TRTC数字类型房间号，取值范围: (1, 4294967295)。
 
-在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
+在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为白板流进行推流的TRTC房间号。
 
-当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
+当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。
                      * 
                      */
                     void SetTRTCRoomId(const int64_t& _tRTCRoomId);
@@ -581,10 +581,10 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     /**
                      * 获取TRTC字符串类型房间号。
 
-在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
+在指定了`TRTCRoomIdStr`的情况下，会优先使用`TRTCRoomIdStr`作为白板流进行推流的TRTC房间号。
                      * @return TRTCRoomIdStr TRTC字符串类型房间号。
 
-在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
+在指定了`TRTCRoomIdStr`的情况下，会优先使用`TRTCRoomIdStr`作为白板流进行推流的TRTC房间号。
                      * 
                      */
                     std::string GetTRTCRoomIdStr() const;
@@ -592,10 +592,10 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     /**
                      * 设置TRTC字符串类型房间号。
 
-在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
+在指定了`TRTCRoomIdStr`的情况下，会优先使用`TRTCRoomIdStr`作为白板流进行推流的TRTC房间号。
                      * @param _tRTCRoomIdStr TRTC字符串类型房间号。
 
-在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
+在指定了`TRTCRoomIdStr`的情况下，会优先使用`TRTCRoomIdStr`作为白板流进行推流的TRTC房间号。
                      * 
                      */
                     void SetTRTCRoomIdStr(const std::string& _tRTCRoomIdStr);
@@ -706,6 +706,35 @@ TRTCAppSceneLIVE - 直播场景，即绝大多数时间都是一人直播，偶�
                      */
                     bool TRTCEnterRoomModeHasBeenSet() const;
 
+                    /**
+                     * 获取白板进行信令同步的 IM 群组 ID。
+在没有指定`GroupId`的情况下，白板推流服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。
+在指定了`GroupId`的情况下，白板推流将优先`GroupId`作为同步白板信令的群组ID。请在开始推流前确保指定的IM群组已创建完成，否则会导致推流失败。
+                     * @return GroupId 白板进行信令同步的 IM 群组 ID。
+在没有指定`GroupId`的情况下，白板推流服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。
+在指定了`GroupId`的情况下，白板推流将优先`GroupId`作为同步白板信令的群组ID。请在开始推流前确保指定的IM群组已创建完成，否则会导致推流失败。
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置白板进行信令同步的 IM 群组 ID。
+在没有指定`GroupId`的情况下，白板推流服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。
+在指定了`GroupId`的情况下，白板推流将优先`GroupId`作为同步白板信令的群组ID。请在开始推流前确保指定的IM群组已创建完成，否则会导致推流失败。
+                     * @param _groupId 白板进行信令同步的 IM 群组 ID。
+在没有指定`GroupId`的情况下，白板推流服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。
+在指定了`GroupId`的情况下，白板推流将优先`GroupId`作为同步白板信令的群组ID。请在开始推流前确保指定的IM群组已创建完成，否则会导致推流失败。
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -717,8 +746,8 @@ TRTCAppSceneLIVE - 直播场景，即绝大多数时间都是一人直播，偶�
                     /**
                      * 需要推流的白板房间号，取值范围: (1, 4294967295)。
 
-1. 白板推流默认以RoomId的字符串表达形式作为IM群组的GroupID（比如RoomId为1234，则IM群组的GroupID为"1234"）加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。
-2. 在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。
+1. 在没有指定`GroupId`的情况下，白板推流默认以`RoomId`的字符串表达形式作为IM群组ID（比如RoomId为1234，则IM群组ID为"1234"），并加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。
+2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为白板流进行推流的TRTC房间号。
                      */
                     int64_t m_roomId;
                     bool m_roomIdHasBeenSet;
@@ -731,7 +760,7 @@ TRTCAppSceneLIVE - 直播场景，即绝大多数时间都是一人直播，偶�
                     bool m_pushUserIdHasBeenSet;
 
                     /**
-                     * 与PushUserId对应的IM签名(usersig)。
+                     * 与`PushUserId`对应的IM签名(usersig)。
                      */
                     std::string m_pushUserSig;
                     bool m_pushUserSigHasBeenSet;
@@ -795,7 +824,7 @@ TRTCAppSceneLIVE - 直播场景，即绝大多数时间都是一人直播，偶�
                     bool m_autoRecordHasBeenSet;
 
                     /**
-                     * 指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
+                     * 指定白板推流这路流在音视频云端录制中的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
 
 限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
 
@@ -822,7 +851,7 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     bool m_autoPublishHasBeenSet;
 
                     /**
-                     * 指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
+                     * 指定实时音视频在旁路白板推流这路流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
 
 限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
 
@@ -847,9 +876,9 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     /**
                      * TRTC数字类型房间号，取值范围: (1, 4294967295)。
 
-在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。
+在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为白板流进行推流的TRTC房间号。
 
-当指定了TRTCRoomIdStr的情况下，此字段将被忽略。
+当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。
                      */
                     int64_t m_tRTCRoomId;
                     bool m_tRTCRoomIdHasBeenSet;
@@ -857,7 +886,7 @@ SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
                     /**
                      * TRTC字符串类型房间号。
 
-在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。
+在指定了`TRTCRoomIdStr`的情况下，会优先使用`TRTCRoomIdStr`作为白板流进行推流的TRTC房间号。
                      */
                     std::string m_tRTCRoomIdStr;
                     bool m_tRTCRoomIdStrHasBeenSet;
@@ -888,6 +917,14 @@ TRTCAppSceneLIVE - 直播场景，即绝大多数时间都是一人直播，偶�
                      */
                     std::string m_tRTCEnterRoomMode;
                     bool m_tRTCEnterRoomModeHasBeenSet;
+
+                    /**
+                     * 白板进行信令同步的 IM 群组 ID。
+在没有指定`GroupId`的情况下，白板推流服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。
+在指定了`GroupId`的情况下，白板推流将优先`GroupId`作为同步白板信令的群组ID。请在开始推流前确保指定的IM群组已创建完成，否则会导致推流失败。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

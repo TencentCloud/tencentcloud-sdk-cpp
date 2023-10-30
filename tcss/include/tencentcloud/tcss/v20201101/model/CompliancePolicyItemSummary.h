@@ -446,6 +446,56 @@ RESULT_FAILED: 未通过
                      */
                     bool ApplicableVersionHasBeenSet() const;
 
+                    /**
+                     * 获取检查项描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 检查项描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置检查项描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description 检查项描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取检查项审计方法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AuditProcedure 检查项审计方法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAuditProcedure() const;
+
+                    /**
+                     * 设置检查项审计方法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _auditProcedure 检查项审计方法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAuditProcedure(const std::string& _auditProcedure);
+
+                    /**
+                     * 判断参数 AuditProcedure 是否已赋值
+                     * @return AuditProcedure 是否已赋值
+                     * 
+                     */
+                    bool AuditProcedureHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +609,20 @@ RESULT_FAILED: 未通过
                      */
                     std::string m_applicableVersion;
                     bool m_applicableVersionHasBeenSet;
+
+                    /**
+                     * 检查项描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 检查项审计方法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_auditProcedure;
+                    bool m_auditProcedureHasBeenSet;
 
                 };
             }

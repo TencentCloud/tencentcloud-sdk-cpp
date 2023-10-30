@@ -47,6 +47,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取风险ID
+                     * @return RiskId 风险ID
+                     * 
+                     */
+                    std::string GetRiskId() const;
+
+                    /**
+                     * 设置风险ID
+                     * @param _riskId 风险ID
+                     * 
+                     */
+                    void SetRiskId(const std::string& _riskId);
+
+                    /**
+                     * 判断参数 RiskId 是否已赋值
+                     * @return RiskId 是否已赋值
+                     * 
+                     */
+                    bool RiskIdHasBeenSet() const;
+
+                    /**
                      * 获取漏洞名称
                      * @return VULName 漏洞名称
                      * 
@@ -348,6 +369,12 @@ namespace TencentCloud
                     bool ImpactComponentHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 风险ID
+                     */
+                    std::string m_riskId;
+                    bool m_riskIdHasBeenSet;
 
                     /**
                      * 漏洞名称

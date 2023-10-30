@@ -44,7 +44,8 @@ VpnConnection::VpnConnection() :
     m_dpdTimeoutHasBeenSet(false),
     m_dpdActionHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_negotiationTypeHasBeenSet(false)
+    m_negotiationTypeHasBeenSet(false),
+    m_bgpConfigHasBeenSet(false)
 {
 }
 
@@ -327,6 +328,23 @@ CoreInternalOutcome VpnConnection::Deserialize(const rapidjson::Value &value)
         m_negotiationTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BgpConfig") && !value["BgpConfig"].IsNull())
+    {
+        if (!value["BgpConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnConnection.BgpConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_bgpConfig.Deserialize(value["BgpConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bgpConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -540,6 +558,15 @@ void VpnConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "NegotiationType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_negotiationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bgpConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BgpConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bgpConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -927,5 +954,21 @@ void VpnConnection::SetNegotiationType(const string& _negotiationType)
 bool VpnConnection::NegotiationTypeHasBeenSet() const
 {
     return m_negotiationTypeHasBeenSet;
+}
+
+BgpConfigAndAsn VpnConnection::GetBgpConfig() const
+{
+    return m_bgpConfig;
+}
+
+void VpnConnection::SetBgpConfig(const BgpConfigAndAsn& _bgpConfig)
+{
+    m_bgpConfig = _bgpConfig;
+    m_bgpConfigHasBeenSet = true;
+}
+
+bool VpnConnection::BgpConfigHasBeenSet() const
+{
+    return m_bgpConfigHasBeenSet;
 }
 

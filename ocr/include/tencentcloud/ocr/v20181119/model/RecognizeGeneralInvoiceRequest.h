@@ -310,6 +310,27 @@ namespace TencentCloud
                      */
                     bool EnableCutImageHasBeenSet() const;
 
+                    /**
+                     * 获取是否打开字段坐标返回。默认为false。
+                     * @return EnableItemPolygon 是否打开字段坐标返回。默认为false。
+                     * 
+                     */
+                    bool GetEnableItemPolygon() const;
+
+                    /**
+                     * 设置是否打开字段坐标返回。默认为false。
+                     * @param _enableItemPolygon 是否打开字段坐标返回。默认为false。
+                     * 
+                     */
+                    void SetEnableItemPolygon(const bool& _enableItemPolygon);
+
+                    /**
+                     * 判断参数 EnableItemPolygon 是否已赋值
+                     * @return EnableItemPolygon 是否已赋值
+                     * 
+                     */
+                    bool EnableItemPolygonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +405,12 @@ namespace TencentCloud
                      */
                     bool m_enableCutImage;
                     bool m_enableCutImageHasBeenSet;
+
+                    /**
+                     * 是否打开字段坐标返回。默认为false。
+                     */
+                    bool m_enableItemPolygon;
+                    bool m_enableItemPolygonHasBeenSet;
 
                 };
             }

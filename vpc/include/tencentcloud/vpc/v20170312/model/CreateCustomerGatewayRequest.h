@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取BGP ASN。ASN取值范围为1- 4294967295，其中139341、45090和58835不可用。
+                     * @return BgpAsn BGP ASN。ASN取值范围为1- 4294967295，其中139341、45090和58835不可用。
+                     * 
+                     */
+                    int64_t GetBgpAsn() const;
+
+                    /**
+                     * 设置BGP ASN。ASN取值范围为1- 4294967295，其中139341、45090和58835不可用。
+                     * @param _bgpAsn BGP ASN。ASN取值范围为1- 4294967295，其中139341、45090和58835不可用。
+                     * 
+                     */
+                    void SetBgpAsn(const int64_t& _bgpAsn);
+
+                    /**
+                     * 判断参数 BgpAsn 是否已赋值
+                     * @return BgpAsn 是否已赋值
+                     * 
+                     */
+                    bool BgpAsnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * BGP ASN。ASN取值范围为1- 4294967295，其中139341、45090和58835不可用。
+                     */
+                    int64_t m_bgpAsn;
+                    bool m_bgpAsnHasBeenSet;
 
                 };
             }

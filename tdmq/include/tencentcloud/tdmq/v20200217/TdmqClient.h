@@ -181,6 +181,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterGroupListResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterTopicListRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterTopicListResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSubscriptionsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSubscriptionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsRequest.h>
@@ -510,6 +512,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQSourceClusterTopicListResponse> DescribeRocketMQSourceClusterTopicListOutcome;
                 typedef std::future<DescribeRocketMQSourceClusterTopicListOutcome> DescribeRocketMQSourceClusterTopicListOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSourceClusterTopicListRequest&, DescribeRocketMQSourceClusterTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSourceClusterTopicListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQSubscriptionsResponse> DescribeRocketMQSubscriptionsOutcome;
+                typedef std::future<DescribeRocketMQSubscriptionsOutcome> DescribeRocketMQSubscriptionsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSubscriptionsRequest&, DescribeRocketMQSubscriptionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSubscriptionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQTopicMsgsResponse> DescribeRocketMQTopicMsgsOutcome;
                 typedef std::future<DescribeRocketMQTopicMsgsOutcome> DescribeRocketMQTopicMsgsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicMsgsRequest&, DescribeRocketMQTopicMsgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicMsgsAsyncHandler;
@@ -1340,6 +1345,15 @@ namespace TencentCloud
                 DescribeRocketMQSourceClusterTopicListOutcome DescribeRocketMQSourceClusterTopicList(const Model::DescribeRocketMQSourceClusterTopicListRequest &request);
                 void DescribeRocketMQSourceClusterTopicListAsync(const Model::DescribeRocketMQSourceClusterTopicListRequest& request, const DescribeRocketMQSourceClusterTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRocketMQSourceClusterTopicListOutcomeCallable DescribeRocketMQSourceClusterTopicListCallable(const Model::DescribeRocketMQSourceClusterTopicListRequest& request);
+
+                /**
+                 *用于获取RocketMQ消费组订阅关系数据
+                 * @param req DescribeRocketMQSubscriptionsRequest
+                 * @return DescribeRocketMQSubscriptionsOutcome
+                 */
+                DescribeRocketMQSubscriptionsOutcome DescribeRocketMQSubscriptions(const Model::DescribeRocketMQSubscriptionsRequest &request);
+                void DescribeRocketMQSubscriptionsAsync(const Model::DescribeRocketMQSubscriptionsRequest& request, const DescribeRocketMQSubscriptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQSubscriptionsOutcomeCallable DescribeRocketMQSubscriptionsCallable(const Model::DescribeRocketMQSubscriptionsRequest& request);
 
                 /**
                  *rocketmq 消息查询

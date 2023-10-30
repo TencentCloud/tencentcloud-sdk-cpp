@@ -21,6 +21,7 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 VULRiskAdvanceCFGList::VULRiskAdvanceCFGList() :
+    m_riskIdHasBeenSet(false),
     m_vULNameHasBeenSet(false),
     m_riskLevelHasBeenSet(false),
     m_checkFromHasBeenSet(false),
@@ -41,6 +42,16 @@ CoreInternalOutcome VULRiskAdvanceCFGList::Deserialize(const rapidjson::Value &v
 {
     string requestId = "";
 
+
+    if (value.HasMember("RiskId") && !value["RiskId"].IsNull())
+    {
+        if (!value["RiskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VULRiskAdvanceCFGList.RiskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskId = string(value["RiskId"].GetString());
+        m_riskIdHasBeenSet = true;
+    }
 
     if (value.HasMember("VULName") && !value["VULName"].IsNull())
     {
@@ -185,6 +196,14 @@ CoreInternalOutcome VULRiskAdvanceCFGList::Deserialize(const rapidjson::Value &v
 void VULRiskAdvanceCFGList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_riskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_vULNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -301,6 +320,22 @@ void VULRiskAdvanceCFGList::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
 
 }
 
+
+string VULRiskAdvanceCFGList::GetRiskId() const
+{
+    return m_riskId;
+}
+
+void VULRiskAdvanceCFGList::SetRiskId(const string& _riskId)
+{
+    m_riskId = _riskId;
+    m_riskIdHasBeenSet = true;
+}
+
+bool VULRiskAdvanceCFGList::RiskIdHasBeenSet() const
+{
+    return m_riskIdHasBeenSet;
+}
 
 string VULRiskAdvanceCFGList::GetVULName() const
 {

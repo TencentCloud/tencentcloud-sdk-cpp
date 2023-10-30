@@ -30,7 +30,8 @@ InvoiceItem::InvoiceItem() :
     m_subTypeHasBeenSet(false),
     m_typeDescriptionHasBeenSet(false),
     m_cutImageHasBeenSet(false),
-    m_subTypeDescriptionHasBeenSet(false)
+    m_subTypeDescriptionHasBeenSet(false),
+    m_itemPolygonHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,26 @@ CoreInternalOutcome InvoiceItem::Deserialize(const rapidjson::Value &value)
         m_subTypeDescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ItemPolygon") && !value["ItemPolygon"].IsNull())
+    {
+        if (!value["ItemPolygon"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InvoiceItem.ItemPolygon` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ItemPolygon"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ItemPolygonInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_itemPolygon.push_back(item);
+        }
+        m_itemPolygonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +261,21 @@ void InvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SubTypeDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subTypeDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemPolygonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ItemPolygon";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_itemPolygon.begin(); itr != m_itemPolygon.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -403,5 +439,21 @@ void InvoiceItem::SetSubTypeDescription(const string& _subTypeDescription)
 bool InvoiceItem::SubTypeDescriptionHasBeenSet() const
 {
     return m_subTypeDescriptionHasBeenSet;
+}
+
+vector<ItemPolygonInfo> InvoiceItem::GetItemPolygon() const
+{
+    return m_itemPolygon;
+}
+
+void InvoiceItem::SetItemPolygon(const vector<ItemPolygonInfo>& _itemPolygon)
+{
+    m_itemPolygon = _itemPolygon;
+    m_itemPolygonHasBeenSet = true;
+}
+
+bool InvoiceItem::ItemPolygonHasBeenSet() const
+{
+    return m_itemPolygonHasBeenSet;
 }
 

@@ -28,6 +28,7 @@
 #include <tencentcloud/vpc/v20170312/model/IKEOptionsSpecification.h>
 #include <tencentcloud/vpc/v20170312/model/IPSECOptionsSpecification.h>
 #include <tencentcloud/vpc/v20170312/model/Tag.h>
+#include <tencentcloud/vpc/v20170312/model/BgpConfigAndAsn.h>
 
 
 namespace TencentCloud
@@ -570,6 +571,31 @@ namespace TencentCloud
                      */
                     bool NegotiationTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Bgp配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BgpConfig Bgp配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BgpConfigAndAsn GetBgpConfig() const;
+
+                    /**
+                     * 设置Bgp配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bgpConfig Bgp配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBgpConfig(const BgpConfigAndAsn& _bgpConfig);
+
+                    /**
+                     * 判断参数 BgpConfig 是否已赋值
+                     * @return BgpConfig 是否已赋值
+                     * 
+                     */
+                    bool BgpConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -719,6 +745,13 @@ namespace TencentCloud
                      */
                     std::string m_negotiationType;
                     bool m_negotiationTypeHasBeenSet;
+
+                    /**
+                     * Bgp配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BgpConfigAndAsn m_bgpConfig;
+                    bool m_bgpConfigHasBeenSet;
 
                 };
             }

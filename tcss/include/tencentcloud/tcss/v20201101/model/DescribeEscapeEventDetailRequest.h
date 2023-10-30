@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool EventIdHasBeenSet() const;
 
+                    /**
+                     * 获取事件类型
+                     * @return EventType 事件类型
+                     * 
+                     */
+                    std::string GetEventType() const;
+
+                    /**
+                     * 设置事件类型
+                     * @param _eventType 事件类型
+                     * 
+                     */
+                    void SetEventType(const std::string& _eventType);
+
+                    /**
+                     * 判断参数 EventType 是否已赋值
+                     * @return EventType 是否已赋值
+                     * 
+                     */
+                    bool EventTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
+
+                    /**
+                     * 事件类型
+                     */
+                    std::string m_eventType;
+                    bool m_eventTypeHasBeenSet;
 
                 };
             }

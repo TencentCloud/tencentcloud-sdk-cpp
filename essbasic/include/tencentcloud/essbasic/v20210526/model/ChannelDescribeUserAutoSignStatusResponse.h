@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开通
-                     * @return IsOpen 是否开通
+                     * 获取查询用户是否已开通自动签
+                     * @return IsOpen 查询用户是否已开通自动签
                      * 
                      */
                     bool GetIsOpen() const;
@@ -58,8 +58,12 @@ namespace TencentCloud
                     bool IsOpenHasBeenSet() const;
 
                     /**
-                     * 获取自动签许可生效时间。当且仅当已开通自动签时有值。
-                     * @return LicenseFrom 自动签许可生效时间。当且仅当已开通自动签时有值。
+                     * 获取自动签许可生效时间。当且仅当已通过许可开通自动签时有值。
+
+值为unix时间戳,单位为秒。
+                     * @return LicenseFrom 自动签许可生效时间。当且仅当已通过许可开通自动签时有值。
+
+值为unix时间戳,单位为秒。
                      * 
                      */
                     int64_t GetLicenseFrom() const;
@@ -72,8 +76,12 @@ namespace TencentCloud
                     bool LicenseFromHasBeenSet() const;
 
                     /**
-                     * 获取自动签许可到期时间。当且仅当已开通自动签时有值。
-                     * @return LicenseTo 自动签许可到期时间。当且仅当已开通自动签时有值。
+                     * 获取自动签许可到期时间。当且仅当已通过许可开通自动签时有值。
+
+值为unix时间戳,单位为秒。
+                     * @return LicenseTo 自动签许可到期时间。当且仅当已通过许可开通自动签时有值。
+
+值为unix时间戳,单位为秒。
                      * 
                      */
                     int64_t GetLicenseTo() const;
@@ -86,8 +94,12 @@ namespace TencentCloud
                     bool LicenseToHasBeenSet() const;
 
                     /**
-                     * 获取设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
-                     * @return LicenseType 设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
+                     * 获取设置用户开通自动签时是否绑定个人自动签账号许可。
+
+<ul><li>**0**: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li></ul>
+                     * @return LicenseType 设置用户开通自动签时是否绑定个人自动签账号许可。
+
+<ul><li>**0**: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li></ul>
                      * 
                      */
                     int64_t GetLicenseType() const;
@@ -102,25 +114,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开通
+                     * 查询用户是否已开通自动签
                      */
                     bool m_isOpen;
                     bool m_isOpenHasBeenSet;
 
                     /**
-                     * 自动签许可生效时间。当且仅当已开通自动签时有值。
+                     * 自动签许可生效时间。当且仅当已通过许可开通自动签时有值。
+
+值为unix时间戳,单位为秒。
                      */
                     int64_t m_licenseFrom;
                     bool m_licenseFromHasBeenSet;
 
                     /**
-                     * 自动签许可到期时间。当且仅当已开通自动签时有值。
+                     * 自动签许可到期时间。当且仅当已通过许可开通自动签时有值。
+
+值为unix时间戳,单位为秒。
                      */
                     int64_t m_licenseTo;
                     bool m_licenseToHasBeenSet;
 
                     /**
-                     * 设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
+                     * 设置用户开通自动签时是否绑定个人自动签账号许可。
+
+<ul><li>**0**: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li></ul>
                      */
                     int64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;

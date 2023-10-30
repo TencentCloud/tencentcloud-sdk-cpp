@@ -43,7 +43,8 @@ StartWhiteboardPushRequest::StartWhiteboardPushRequest() :
     m_tRTCRoomIdStrHasBeenSet(false),
     m_iMAuthParamHasBeenSet(false),
     m_tRTCAuthParamHasBeenSet(false),
-    m_tRTCEnterRoomModeHasBeenSet(false)
+    m_tRTCEnterRoomModeHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -224,6 +225,14 @@ string StartWhiteboardPushRequest::ToJsonString() const
         string key = "TRTCEnterRoomMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tRTCEnterRoomMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -568,6 +577,22 @@ void StartWhiteboardPushRequest::SetTRTCEnterRoomMode(const string& _tRTCEnterRo
 bool StartWhiteboardPushRequest::TRTCEnterRoomModeHasBeenSet() const
 {
     return m_tRTCEnterRoomModeHasBeenSet;
+}
+
+string StartWhiteboardPushRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void StartWhiteboardPushRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

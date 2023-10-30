@@ -68,15 +68,27 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取需要录制的房间号，取值范围: (1, 4294967295)
-                     * @return RoomId 需要录制的房间号，取值范围: (1, 4294967295)
+                     * 获取需要录制的白板房间号，取值范围: (1, 4294967295)。
+
+1. 在没有指定`GroupId`的情况下，实时录制默认以`RoomId`的字符串表达形式作为同步白板信令的IM群组ID（比如`RoomId`为1234，则IM群组ID为"1234"），并加群进行信令同步，请在开始录制前确保相应IM群组已创建完成，否则会导致录制失败。
+2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为TRTC房间号进房拉流进行录制。
+                     * @return RoomId 需要录制的白板房间号，取值范围: (1, 4294967295)。
+
+1. 在没有指定`GroupId`的情况下，实时录制默认以`RoomId`的字符串表达形式作为同步白板信令的IM群组ID（比如`RoomId`为1234，则IM群组ID为"1234"），并加群进行信令同步，请在开始录制前确保相应IM群组已创建完成，否则会导致录制失败。
+2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为TRTC房间号进房拉流进行录制。
                      * 
                      */
                     int64_t GetRoomId() const;
 
                     /**
-                     * 设置需要录制的房间号，取值范围: (1, 4294967295)
-                     * @param _roomId 需要录制的房间号，取值范围: (1, 4294967295)
+                     * 设置需要录制的白板房间号，取值范围: (1, 4294967295)。
+
+1. 在没有指定`GroupId`的情况下，实时录制默认以`RoomId`的字符串表达形式作为同步白板信令的IM群组ID（比如`RoomId`为1234，则IM群组ID为"1234"），并加群进行信令同步，请在开始录制前确保相应IM群组已创建完成，否则会导致录制失败。
+2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为TRTC房间号进房拉流进行录制。
+                     * @param _roomId 需要录制的白板房间号，取值范围: (1, 4294967295)。
+
+1. 在没有指定`GroupId`的情况下，实时录制默认以`RoomId`的字符串表达形式作为同步白板信令的IM群组ID（比如`RoomId`为1234，则IM群组ID为"1234"），并加群进行信令同步，请在开始录制前确保相应IM群组已创建完成，否则会导致录制失败。
+2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为TRTC房间号进房拉流进行录制。
                      * 
                      */
                     void SetRoomId(const int64_t& _roomId);
@@ -114,15 +126,15 @@ namespace TencentCloud
                     bool RecordUserIdHasBeenSet() const;
 
                     /**
-                     * 获取与RecordUserId对应的签名
-                     * @return RecordUserSig 与RecordUserId对应的签名
+                     * 获取与`RecordUserId`对应的IM签名
+                     * @return RecordUserSig 与`RecordUserId`对应的IM签名
                      * 
                      */
                     std::string GetRecordUserSig() const;
 
                     /**
-                     * 设置与RecordUserId对应的签名
-                     * @param _recordUserSig 与RecordUserId对应的签名
+                     * 设置与`RecordUserId`对应的IM签名
+                     * @param _recordUserSig 与`RecordUserId`对应的IM签名
                      * 
                      */
                     void SetRecordUserSig(const std::string& _recordUserSig);
@@ -135,15 +147,23 @@ namespace TencentCloud
                     bool RecordUserSigHasBeenSet() const;
 
                     /**
-                     * 获取（已废弃，设置无效）白板的 IM 群组 Id，默认同房间号
-                     * @return GroupId （已废弃，设置无效）白板的 IM 群组 Id，默认同房间号
+                     * 获取白板进行信令同步的 IM 群组 ID。
+在没有指定`GroupId`的情况下，实时录制服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。
+在指定了`GroupId`的情况下，实时录制将优先使用`GroupId`作为同步白板信令的群组ID。请在开始录制前确保相应的IM群组已创建完成，否则会导致录制失败。
+                     * @return GroupId 白板进行信令同步的 IM 群组 ID。
+在没有指定`GroupId`的情况下，实时录制服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。
+在指定了`GroupId`的情况下，实时录制将优先使用`GroupId`作为同步白板信令的群组ID。请在开始录制前确保相应的IM群组已创建完成，否则会导致录制失败。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置（已废弃，设置无效）白板的 IM 群组 Id，默认同房间号
-                     * @param _groupId （已废弃，设置无效）白板的 IM 群组 Id，默认同房间号
+                     * 设置白板进行信令同步的 IM 群组 ID。
+在没有指定`GroupId`的情况下，实时录制服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。
+在指定了`GroupId`的情况下，实时录制将优先使用`GroupId`作为同步白板信令的群组ID。请在开始录制前确保相应的IM群组已创建完成，否则会导致录制失败。
+                     * @param _groupId 白板进行信令同步的 IM 群组 ID。
+在没有指定`GroupId`的情况下，实时录制服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。
+在指定了`GroupId`的情况下，实时录制将优先使用`GroupId`作为同步白板信令的群组ID。请在开始录制前确保相应的IM群组已创建完成，否则会导致录制失败。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -413,6 +433,72 @@ VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通�
                      */
                     bool ExtraDataHasBeenSet() const;
 
+                    /**
+                     * 获取TRTC数字类型房间号，取值范围: (1, 4294967295)。
+
+在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为实时录制拉TRTC流的TRTC房间号。
+
+当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。
+                     * @return TRTCRoomId TRTC数字类型房间号，取值范围: (1, 4294967295)。
+
+在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为实时录制拉TRTC流的TRTC房间号。
+
+当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。
+                     * 
+                     */
+                    int64_t GetTRTCRoomId() const;
+
+                    /**
+                     * 设置TRTC数字类型房间号，取值范围: (1, 4294967295)。
+
+在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为实时录制拉TRTC流的TRTC房间号。
+
+当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。
+                     * @param _tRTCRoomId TRTC数字类型房间号，取值范围: (1, 4294967295)。
+
+在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为实时录制拉TRTC流的TRTC房间号。
+
+当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。
+                     * 
+                     */
+                    void SetTRTCRoomId(const int64_t& _tRTCRoomId);
+
+                    /**
+                     * 判断参数 TRTCRoomId 是否已赋值
+                     * @return TRTCRoomId 是否已赋值
+                     * 
+                     */
+                    bool TRTCRoomIdHasBeenSet() const;
+
+                    /**
+                     * 获取TRTC字符串类型房间号。
+
+在指定了`TRTCRoomIdStr`的情况下，会优先使用`TRTCRoomIdStr`作为实时录制拉TRTC流的TRTC房间号。
+                     * @return TRTCRoomIdStr TRTC字符串类型房间号。
+
+在指定了`TRTCRoomIdStr`的情况下，会优先使用`TRTCRoomIdStr`作为实时录制拉TRTC流的TRTC房间号。
+                     * 
+                     */
+                    std::string GetTRTCRoomIdStr() const;
+
+                    /**
+                     * 设置TRTC字符串类型房间号。
+
+在指定了`TRTCRoomIdStr`的情况下，会优先使用`TRTCRoomIdStr`作为实时录制拉TRTC流的TRTC房间号。
+                     * @param _tRTCRoomIdStr TRTC字符串类型房间号。
+
+在指定了`TRTCRoomIdStr`的情况下，会优先使用`TRTCRoomIdStr`作为实时录制拉TRTC流的TRTC房间号。
+                     * 
+                     */
+                    void SetTRTCRoomIdStr(const std::string& _tRTCRoomIdStr);
+
+                    /**
+                     * 判断参数 TRTCRoomIdStr 是否已赋值
+                     * @return TRTCRoomIdStr 是否已赋值
+                     * 
+                     */
+                    bool TRTCRoomIdStrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,7 +508,10 @@ VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通�
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 需要录制的房间号，取值范围: (1, 4294967295)
+                     * 需要录制的白板房间号，取值范围: (1, 4294967295)。
+
+1. 在没有指定`GroupId`的情况下，实时录制默认以`RoomId`的字符串表达形式作为同步白板信令的IM群组ID（比如`RoomId`为1234，则IM群组ID为"1234"），并加群进行信令同步，请在开始录制前确保相应IM群组已创建完成，否则会导致录制失败。
+2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为TRTC房间号进房拉流进行录制。
                      */
                     int64_t m_roomId;
                     bool m_roomIdHasBeenSet;
@@ -435,13 +524,15 @@ VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通�
                     bool m_recordUserIdHasBeenSet;
 
                     /**
-                     * 与RecordUserId对应的签名
+                     * 与`RecordUserId`对应的IM签名
                      */
                     std::string m_recordUserSig;
                     bool m_recordUserSigHasBeenSet;
 
                     /**
-                     * （已废弃，设置无效）白板的 IM 群组 Id，默认同房间号
+                     * 白板进行信令同步的 IM 群组 ID。
+在没有指定`GroupId`的情况下，实时录制服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。
+在指定了`GroupId`的情况下，实时录制将优先使用`GroupId`作为同步白板信令的群组ID。请在开始录制前确保相应的IM群组已创建完成，否则会导致录制失败。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -517,6 +608,24 @@ VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通�
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
+
+                    /**
+                     * TRTC数字类型房间号，取值范围: (1, 4294967295)。
+
+在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为实时录制拉TRTC流的TRTC房间号。
+
+当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。
+                     */
+                    int64_t m_tRTCRoomId;
+                    bool m_tRTCRoomIdHasBeenSet;
+
+                    /**
+                     * TRTC字符串类型房间号。
+
+在指定了`TRTCRoomIdStr`的情况下，会优先使用`TRTCRoomIdStr`作为实时录制拉TRTC流的TRTC房间号。
+                     */
+                    std::string m_tRTCRoomIdStr;
+                    bool m_tRTCRoomIdStrHasBeenSet;
 
                 };
             }

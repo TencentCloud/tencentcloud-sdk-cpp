@@ -24,7 +24,8 @@ CustomerGateway::CustomerGateway() :
     m_customerGatewayIdHasBeenSet(false),
     m_customerGatewayNameHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_bgpAsnHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
         m_createdTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("BgpAsn") && !value["BgpAsn"].IsNull())
+    {
+        if (!value["BgpAsn"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.BgpAsn` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bgpAsn = value["BgpAsn"].GetUint64();
+        m_bgpAsnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CustomerGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bgpAsnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BgpAsn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bgpAsn, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CustomerGateway::SetCreatedTime(const string& _createdTime)
 bool CustomerGateway::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+uint64_t CustomerGateway::GetBgpAsn() const
+{
+    return m_bgpAsn;
+}
+
+void CustomerGateway::SetBgpAsn(const uint64_t& _bgpAsn)
+{
+    m_bgpAsn = _bgpAsn;
+    m_bgpAsnHasBeenSet = true;
+}
+
+bool CustomerGateway::BgpAsnHasBeenSet() const
+{
+    return m_bgpAsnHasBeenSet;
 }
 

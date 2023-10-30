@@ -357,6 +357,31 @@ reject：拒绝，高风险恶意
                      */
                     bool ConstIdHasBeenSet() const;
 
+                    /**
+                     * 获取扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskInformation 扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRiskInformation() const;
+
+                    /**
+                     * 设置扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _riskInformation 扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRiskInformation(const std::string& _riskInformation);
+
+                    /**
+                     * 判断参数 RiskInformation 是否已赋值
+                     * @return RiskInformation 是否已赋值
+                     * 
+                     */
+                    bool RiskInformationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -441,6 +466,13 @@ reject：拒绝，高风险恶意
                      */
                     std::string m_constId;
                     bool m_constIdHasBeenSet;
+
+                    /**
+                     * 扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_riskInformation;
+                    bool m_riskInformationHasBeenSet;
 
                 };
             }

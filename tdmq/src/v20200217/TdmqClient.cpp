@@ -3437,6 +3437,49 @@ TdmqClient::DescribeRocketMQSourceClusterTopicListOutcomeCallable TdmqClient::De
     return task->get_future();
 }
 
+TdmqClient::DescribeRocketMQSubscriptionsOutcome TdmqClient::DescribeRocketMQSubscriptions(const DescribeRocketMQSubscriptionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQSubscriptions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQSubscriptionsResponse rsp = DescribeRocketMQSubscriptionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQSubscriptionsOutcome(rsp);
+        else
+            return DescribeRocketMQSubscriptionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQSubscriptionsOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQSubscriptionsAsync(const DescribeRocketMQSubscriptionsRequest& request, const DescribeRocketMQSubscriptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQSubscriptions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQSubscriptionsOutcomeCallable TdmqClient::DescribeRocketMQSubscriptionsCallable(const DescribeRocketMQSubscriptionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQSubscriptionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQSubscriptions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQTopicMsgsOutcome TdmqClient::DescribeRocketMQTopicMsgs(const DescribeRocketMQTopicMsgsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQTopicMsgs");

@@ -35,7 +35,8 @@ SubmitSqlTaskRequest::SubmitSqlTaskRequest() :
     m_datasourceTypeHasBeenSet(false),
     m_computeResourceHasBeenSet(false),
     m_runParamsHasBeenSet(false),
-    m_confParamsHasBeenSet(false)
+    m_confParamsHasBeenSet(false),
+    m_scriptEncryptionHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string SubmitSqlTaskRequest::ToJsonString() const
         string key = "ConfParams";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_confParams.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scriptEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScriptEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scriptEncryption, allocator);
     }
 
 
@@ -364,6 +373,22 @@ void SubmitSqlTaskRequest::SetConfParams(const string& _confParams)
 bool SubmitSqlTaskRequest::ConfParamsHasBeenSet() const
 {
     return m_confParamsHasBeenSet;
+}
+
+bool SubmitSqlTaskRequest::GetScriptEncryption() const
+{
+    return m_scriptEncryption;
+}
+
+void SubmitSqlTaskRequest::SetScriptEncryption(const bool& _scriptEncryption)
+{
+    m_scriptEncryption = _scriptEncryption;
+    m_scriptEncryptionHasBeenSet = true;
+}
+
+bool SubmitSqlTaskRequest::ScriptEncryptionHasBeenSet() const
+{
+    return m_scriptEncryptionHasBeenSet;
 }
 
 

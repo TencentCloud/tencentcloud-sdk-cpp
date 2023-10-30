@@ -39,7 +39,9 @@ CreateVpnConnectionRequest::CreateVpnConnectionRequest() :
     m_negotiationTypeHasBeenSet(false),
     m_dpdEnableHasBeenSet(false),
     m_dpdTimeoutHasBeenSet(false),
-    m_dpdActionHasBeenSet(false)
+    m_dpdActionHasBeenSet(false),
+    m_routeHasBeenSet(false),
+    m_bgpConfigHasBeenSet(false)
 {
 }
 
@@ -200,6 +202,24 @@ string CreateVpnConnectionRequest::ToJsonString() const
         string key = "DpdAction";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dpdAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Route";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_route.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_bgpConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BgpConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bgpConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -480,6 +500,38 @@ void CreateVpnConnectionRequest::SetDpdAction(const string& _dpdAction)
 bool CreateVpnConnectionRequest::DpdActionHasBeenSet() const
 {
     return m_dpdActionHasBeenSet;
+}
+
+CreateVpnConnRoute CreateVpnConnectionRequest::GetRoute() const
+{
+    return m_route;
+}
+
+void CreateVpnConnectionRequest::SetRoute(const CreateVpnConnRoute& _route)
+{
+    m_route = _route;
+    m_routeHasBeenSet = true;
+}
+
+bool CreateVpnConnectionRequest::RouteHasBeenSet() const
+{
+    return m_routeHasBeenSet;
+}
+
+BgpConfig CreateVpnConnectionRequest::GetBgpConfig() const
+{
+    return m_bgpConfig;
+}
+
+void CreateVpnConnectionRequest::SetBgpConfig(const BgpConfig& _bgpConfig)
+{
+    m_bgpConfig = _bgpConfig;
+    m_bgpConfigHasBeenSet = true;
+}
+
+bool CreateVpnConnectionRequest::BgpConfigHasBeenSet() const
+{
+    return m_bgpConfigHasBeenSet;
 }
 
 

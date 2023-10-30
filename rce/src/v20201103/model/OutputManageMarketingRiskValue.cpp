@@ -27,7 +27,8 @@ OutputManageMarketingRiskValue::OutputManageMarketingRiskValue() :
     m_userIpHasBeenSet(false),
     m_riskLevelHasBeenSet(false),
     m_riskTypeHasBeenSet(false),
-    m_constIdHasBeenSet(false)
+    m_constIdHasBeenSet(false),
+    m_riskInformationHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const rapidjson:
         m_constIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskInformation") && !value["RiskInformation"].IsNull())
+    {
+        if (!value["RiskInformation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRiskValue.RiskInformation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskInformation = string(value["RiskInformation"].GetString());
+        m_riskInformationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void OutputManageMarketingRiskValue::ToJsonObject(rapidjson::Value &value, rapid
         string key = "ConstId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_constId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskInformationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskInformation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskInformation.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void OutputManageMarketingRiskValue::SetConstId(const string& _constId)
 bool OutputManageMarketingRiskValue::ConstIdHasBeenSet() const
 {
     return m_constIdHasBeenSet;
+}
+
+string OutputManageMarketingRiskValue::GetRiskInformation() const
+{
+    return m_riskInformation;
+}
+
+void OutputManageMarketingRiskValue::SetRiskInformation(const string& _riskInformation)
+{
+    m_riskInformation = _riskInformation;
+    m_riskInformationHasBeenSet = true;
+}
+
+bool OutputManageMarketingRiskValue::RiskInformationHasBeenSet() const
+{
+    return m_riskInformationHasBeenSet;
 }
 
