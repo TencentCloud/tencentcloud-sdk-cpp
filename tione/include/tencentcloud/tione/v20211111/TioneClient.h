@@ -73,6 +73,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeBatchTasksResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceRequest.h>
@@ -252,6 +254,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBillingResourceGroupsResponse> DescribeBillingResourceGroupsOutcome;
                 typedef std::future<DescribeBillingResourceGroupsOutcome> DescribeBillingResourceGroupsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeBillingResourceGroupsRequest&, DescribeBillingResourceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingResourceGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillingResourceInstanceRunningJobsResponse> DescribeBillingResourceInstanceRunningJobsOutcome;
+                typedef std::future<DescribeBillingResourceInstanceRunningJobsOutcome> DescribeBillingResourceInstanceRunningJobsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeBillingResourceInstanceRunningJobsRequest&, DescribeBillingResourceInstanceRunningJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingResourceInstanceRunningJobsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillingSpecsResponse> DescribeBillingSpecsOutcome;
                 typedef std::future<DescribeBillingSpecsOutcome> DescribeBillingSpecsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeBillingSpecsRequest&, DescribeBillingSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingSpecsAsyncHandler;
@@ -614,6 +619,15 @@ namespace TencentCloud
                 DescribeBillingResourceGroupsOutcome DescribeBillingResourceGroups(const Model::DescribeBillingResourceGroupsRequest &request);
                 void DescribeBillingResourceGroupsAsync(const Model::DescribeBillingResourceGroupsRequest& request, const DescribeBillingResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillingResourceGroupsOutcomeCallable DescribeBillingResourceGroupsCallable(const Model::DescribeBillingResourceGroupsRequest& request);
+
+                /**
+                 *查询资源组节点运行中的任务
+                 * @param req DescribeBillingResourceInstanceRunningJobsRequest
+                 * @return DescribeBillingResourceInstanceRunningJobsOutcome
+                 */
+                DescribeBillingResourceInstanceRunningJobsOutcome DescribeBillingResourceInstanceRunningJobs(const Model::DescribeBillingResourceInstanceRunningJobsRequest &request);
+                void DescribeBillingResourceInstanceRunningJobsAsync(const Model::DescribeBillingResourceInstanceRunningJobsRequest& request, const DescribeBillingResourceInstanceRunningJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillingResourceInstanceRunningJobsOutcomeCallable DescribeBillingResourceInstanceRunningJobsCallable(const Model::DescribeBillingResourceInstanceRunningJobsRequest& request);
 
                 /**
                  *本接口(DescribeBillingSpecs)用于查询计费项列表

@@ -78,6 +78,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeEventCasesRequest.h
   include/tencentcloud/wedata/v20210820/model/EventPage.h
+  include/tencentcloud/wedata/v20210820/model/ModifyDimensionWeightResponse.h
   include/tencentcloud/wedata/v20210820/model/BatchResumeIntegrationTasksResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleExecResultsByPageResponse.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupExecResult.h
@@ -220,7 +221,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/OpsTaskCanvasInfoList.h
   include/tencentcloud/wedata/v20210820/model/DescribeDependTaskListsRequest.h
   include/tencentcloud/wedata/v20210820/model/CollectionFolderOpsDto.h
-  include/tencentcloud/wedata/v20210820/model/RerunInstancesRequest.h
+  include/tencentcloud/wedata/v20210820/model/DatabaseMeta.h
   include/tencentcloud/wedata/v20210820/model/DlcRemoveOrphanFilesInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeEventsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeAllByFolderNewRequest.h
@@ -456,6 +457,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/EventCaseAuditLogOptDto.h
   include/tencentcloud/wedata/v20210820/model/RealTimeTaskInstanceNodeInfo.h
   include/tencentcloud/wedata/v20210820/model/DeleteResourceFilesResponse.h
+  include/tencentcloud/wedata/v20210820/model/RerunInstancesRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeEventIsAlarmTypesRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateOpsMakePlanResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeStreamTaskLogListResponse.h
@@ -477,7 +479,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeWorkflowInfoByIdResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeBaselineByIdRequest.h
   include/tencentcloud/wedata/v20210820/model/RuleDimStat.h
-  include/tencentcloud/wedata/v20210820/model/ModifyDimensionWeightResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeDatabaseMetasResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskAlarmRegularResponse.h
   include/tencentcloud/wedata/v20210820/model/InstanceSearchCondition.h
   include/tencentcloud/wedata/v20210820/model/CreateRuleResponse.h
@@ -526,7 +528,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/AdhocRecord.h
   include/tencentcloud/wedata/v20210820/model/OperateResult.h
   include/tencentcloud/wedata/v20210820/model/CreateTaskRequest.h
-  include/tencentcloud/wedata/v20210820/model/ModifyDimensionWeightRequest.h
+  include/tencentcloud/wedata/v20210820/model/DescribeDatabaseMetasRequest.h
   include/tencentcloud/wedata/v20210820/model/SimpleTaskInfo.h
   include/tencentcloud/wedata/v20210820/model/CreateFolderResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskInstanceNodeInfoRequest.h
@@ -539,6 +541,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/OperationOpsDto.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskByStatusReportResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeMonitorsByPageRequest.h
+  include/tencentcloud/wedata/v20210820/model/ModifyDimensionWeightRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateMakeDatetimeInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleGroupsByPageResponse.h
   include/tencentcloud/wedata/v20210820/model/InstanceApiOpsRequest.h
@@ -937,6 +940,7 @@ set(wedata_src
   src/v20210820/model/UpdateWorkflowOwnerRequest.cpp
   src/v20210820/model/DescribeEventCasesRequest.cpp
   src/v20210820/model/EventPage.cpp
+  src/v20210820/model/ModifyDimensionWeightResponse.cpp
   src/v20210820/model/BatchResumeIntegrationTasksResponse.cpp
   src/v20210820/model/DescribeRuleExecResultsByPageResponse.cpp
   src/v20210820/model/RuleGroupExecResult.cpp
@@ -1079,7 +1083,7 @@ set(wedata_src
   src/v20210820/model/OpsTaskCanvasInfoList.cpp
   src/v20210820/model/DescribeDependTaskListsRequest.cpp
   src/v20210820/model/CollectionFolderOpsDto.cpp
-  src/v20210820/model/RerunInstancesRequest.cpp
+  src/v20210820/model/DatabaseMeta.cpp
   src/v20210820/model/DlcRemoveOrphanFilesInfo.cpp
   src/v20210820/model/DescribeEventsRequest.cpp
   src/v20210820/model/DescribeAllByFolderNewRequest.cpp
@@ -1315,6 +1319,7 @@ set(wedata_src
   src/v20210820/model/EventCaseAuditLogOptDto.cpp
   src/v20210820/model/RealTimeTaskInstanceNodeInfo.cpp
   src/v20210820/model/DeleteResourceFilesResponse.cpp
+  src/v20210820/model/RerunInstancesRequest.cpp
   src/v20210820/model/DescribeEventIsAlarmTypesRequest.cpp
   src/v20210820/model/CreateOpsMakePlanResponse.cpp
   src/v20210820/model/DescribeStreamTaskLogListResponse.cpp
@@ -1336,7 +1341,7 @@ set(wedata_src
   src/v20210820/model/DescribeWorkflowInfoByIdResponse.cpp
   src/v20210820/model/DescribeBaselineByIdRequest.cpp
   src/v20210820/model/RuleDimStat.cpp
-  src/v20210820/model/ModifyDimensionWeightResponse.cpp
+  src/v20210820/model/DescribeDatabaseMetasResponse.cpp
   src/v20210820/model/ModifyTaskAlarmRegularResponse.cpp
   src/v20210820/model/InstanceSearchCondition.cpp
   src/v20210820/model/CreateRuleResponse.cpp
@@ -1385,7 +1390,7 @@ set(wedata_src
   src/v20210820/model/AdhocRecord.cpp
   src/v20210820/model/OperateResult.cpp
   src/v20210820/model/CreateTaskRequest.cpp
-  src/v20210820/model/ModifyDimensionWeightRequest.cpp
+  src/v20210820/model/DescribeDatabaseMetasRequest.cpp
   src/v20210820/model/SimpleTaskInfo.cpp
   src/v20210820/model/CreateFolderResponse.cpp
   src/v20210820/model/DescribeRealTimeTaskInstanceNodeInfoRequest.cpp
@@ -1398,6 +1403,7 @@ set(wedata_src
   src/v20210820/model/OperationOpsDto.cpp
   src/v20210820/model/DescribeTaskByStatusReportResponse.cpp
   src/v20210820/model/DescribeMonitorsByPageRequest.cpp
+  src/v20210820/model/ModifyDimensionWeightRequest.cpp
   src/v20210820/model/CreateMakeDatetimeInfo.cpp
   src/v20210820/model/DescribeRuleGroupsByPageResponse.cpp
   src/v20210820/model/InstanceApiOpsRequest.cpp

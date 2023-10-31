@@ -424,6 +424,27 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool SlaTypeHasBeenSet() const;
 
                     /**
+                     * 获取集群ID，集群标识，在需要配置公有云独占集群或本地专有集群时使用。公有云独占集群申请请[提交工单](https://console.cloud.tencent.com/workorder/category)，本地专有集群请参考[本地专有集群](https://cloud.tencent.com/document/product/1346)描述。
+                     * @return ClusterIds 集群ID，集群标识，在需要配置公有云独占集群或本地专有集群时使用。公有云独占集群申请请[提交工单](https://console.cloud.tencent.com/workorder/category)，本地专有集群请参考[本地专有集群](https://cloud.tencent.com/document/product/1346)描述。
+                     * 
+                     */
+                    std::vector<std::string> GetClusterIds() const;
+
+                    /**
+                     * 设置集群ID，集群标识，在需要配置公有云独占集群或本地专有集群时使用。公有云独占集群申请请[提交工单](https://console.cloud.tencent.com/workorder/category)，本地专有集群请参考[本地专有集群](https://cloud.tencent.com/document/product/1346)描述。
+                     * @param _clusterIds 集群ID，集群标识，在需要配置公有云独占集群或本地专有集群时使用。公有云独占集群申请请[提交工单](https://console.cloud.tencent.com/workorder/category)，本地专有集群请参考[本地专有集群](https://cloud.tencent.com/document/product/1346)描述。
+                     * 
+                     */
+                    void SetClusterIds(const std::vector<std::string>& _clusterIds);
+
+                    /**
+                     * 判断参数 ClusterIds 是否已赋值
+                     * @return ClusterIds 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdsHasBeenSet() const;
+
+                    /**
                      * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      * 
@@ -724,6 +745,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_slaType;
                     bool m_slaTypeHasBeenSet;
+
+                    /**
+                     * 集群ID，集群标识，在需要配置公有云独占集群或本地专有集群时使用。公有云独占集群申请请[提交工单](https://console.cloud.tencent.com/workorder/category)，本地专有集群请参考[本地专有集群](https://cloud.tencent.com/document/product/1346)描述。
+                     */
+                    std::vector<std::string> m_clusterIds;
+                    bool m_clusterIdsHasBeenSet;
 
                     /**
                      * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。

@@ -126,18 +126,26 @@ LOCAL_GATEWAY：本地网关。
 
                     /**
                      * 获取下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。
-特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
+特殊说明：
+GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
+GatewayType为EIP时，GatewayId填写0。
                      * @return GatewayId 下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。
-特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
+特殊说明：
+GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
+GatewayType为EIP时，GatewayId填写0。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。
-特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
+特殊说明：
+GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
+GatewayType为EIP时，GatewayId填写0。
                      * @param _gatewayId 下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。
-特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
+特殊说明：
+GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
+GatewayType为EIP时，GatewayId填写0。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -276,14 +284,18 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
 
                     /**
                      * 获取目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationIpv6CidrBlock 目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestinationIpv6CidrBlock() const;
 
                     /**
                      * 设置目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destinationIpv6CidrBlock 目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestinationIpv6CidrBlock(const std::string& _destinationIpv6CidrBlock);
@@ -387,7 +399,9 @@ LOCAL_GATEWAY：本地网关。
 
                     /**
                      * 下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。
-特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
+特殊说明：
+GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
+GatewayType为EIP时，GatewayId填写0。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
@@ -429,6 +443,7 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
 
                     /**
                      * 目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destinationIpv6CidrBlock;
                     bool m_destinationIpv6CidrBlockHasBeenSet;

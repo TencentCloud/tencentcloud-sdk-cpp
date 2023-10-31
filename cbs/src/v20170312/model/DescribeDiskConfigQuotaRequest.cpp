@@ -30,7 +30,8 @@ DescribeDiskConfigQuotaRequest::DescribeDiskConfigQuotaRequest() :
     m_zonesHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_diskUsageHasBeenSet(false),
-    m_cPUHasBeenSet(false)
+    m_cPUHasBeenSet(false),
+    m_dedicatedClusterIdHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,14 @@ string DescribeDiskConfigQuotaRequest::ToJsonString() const
         string key = "CPU";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cPU, allocator);
+    }
+
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -254,6 +263,22 @@ void DescribeDiskConfigQuotaRequest::SetCPU(const uint64_t& _cPU)
 bool DescribeDiskConfigQuotaRequest::CPUHasBeenSet() const
 {
     return m_cPUHasBeenSet;
+}
+
+string DescribeDiskConfigQuotaRequest::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void DescribeDiskConfigQuotaRequest::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool DescribeDiskConfigQuotaRequest::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
 }
 
 

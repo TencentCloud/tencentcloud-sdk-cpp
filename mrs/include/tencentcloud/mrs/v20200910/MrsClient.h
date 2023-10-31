@@ -33,6 +33,10 @@
 #include <tencentcloud/mrs/v20200910/model/TextToObjectResponse.h>
 #include <tencentcloud/mrs/v20200910/model/TurnPDFToObjectRequest.h>
 #include <tencentcloud/mrs/v20200910/model/TurnPDFToObjectResponse.h>
+#include <tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncRequest.h>
+#include <tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncResponse.h>
+#include <tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncGetResultRequest.h>
+#include <tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncGetResultResponse.h>
 
 
 namespace TencentCloud
@@ -62,6 +66,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TurnPDFToObjectResponse> TurnPDFToObjectOutcome;
                 typedef std::future<TurnPDFToObjectOutcome> TurnPDFToObjectOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::TurnPDFToObjectRequest&, TurnPDFToObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnPDFToObjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::TurnPDFToObjectAsyncResponse> TurnPDFToObjectAsyncOutcome;
+                typedef std::future<TurnPDFToObjectAsyncOutcome> TurnPDFToObjectAsyncOutcomeCallable;
+                typedef std::function<void(const MrsClient*, const Model::TurnPDFToObjectAsyncRequest&, TurnPDFToObjectAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnPDFToObjectAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::TurnPDFToObjectAsyncGetResultResponse> TurnPDFToObjectAsyncGetResultOutcome;
+                typedef std::future<TurnPDFToObjectAsyncGetResultOutcome> TurnPDFToObjectAsyncGetResultOutcomeCallable;
+                typedef std::function<void(const MrsClient*, const Model::TurnPDFToObjectAsyncGetResultRequest&, TurnPDFToObjectAsyncGetResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnPDFToObjectAsyncGetResultAsyncHandler;
 
 
 
@@ -112,6 +122,24 @@ namespace TencentCloud
                 TurnPDFToObjectOutcome TurnPDFToObject(const Model::TurnPDFToObjectRequest &request);
                 void TurnPDFToObjectAsync(const Model::TurnPDFToObjectRequest& request, const TurnPDFToObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TurnPDFToObjectOutcomeCallable TurnPDFToObjectCallable(const Model::TurnPDFToObjectRequest& request);
+
+                /**
+                 *体检报告PDF文件结构化-异步接口
+                 * @param req TurnPDFToObjectAsyncRequest
+                 * @return TurnPDFToObjectAsyncOutcome
+                 */
+                TurnPDFToObjectAsyncOutcome TurnPDFToObjectAsync(const Model::TurnPDFToObjectAsyncRequest &request);
+                void TurnPDFToObjectAsyncAsync(const Model::TurnPDFToObjectAsyncRequest& request, const TurnPDFToObjectAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TurnPDFToObjectAsyncOutcomeCallable TurnPDFToObjectAsyncCallable(const Model::TurnPDFToObjectAsyncRequest& request);
+
+                /**
+                 *体检报告PDF文件结构化异步获取结果接口
+                 * @param req TurnPDFToObjectAsyncGetResultRequest
+                 * @return TurnPDFToObjectAsyncGetResultOutcome
+                 */
+                TurnPDFToObjectAsyncGetResultOutcome TurnPDFToObjectAsyncGetResult(const Model::TurnPDFToObjectAsyncGetResultRequest &request);
+                void TurnPDFToObjectAsyncGetResultAsync(const Model::TurnPDFToObjectAsyncGetResultRequest& request, const TurnPDFToObjectAsyncGetResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TurnPDFToObjectAsyncGetResultOutcomeCallable TurnPDFToObjectAsyncGetResultCallable(const Model::TurnPDFToObjectAsyncGetResultRequest& request);
 
             };
         }

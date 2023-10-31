@@ -213,6 +213,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeDataTypesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatabaseInfoListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatabaseInfoListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDatabaseMetasRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDatabaseMetasResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatasourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatasourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDependOpsTaskListRequest.h>
@@ -932,6 +934,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatabaseInfoListResponse> DescribeDatabaseInfoListOutcome;
                 typedef std::future<DescribeDatabaseInfoListOutcome> DescribeDatabaseInfoListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDatabaseInfoListRequest&, DescribeDatabaseInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabaseMetasResponse> DescribeDatabaseMetasOutcome;
+                typedef std::future<DescribeDatabaseMetasOutcome> DescribeDatabaseMetasOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDatabaseMetasRequest&, DescribeDatabaseMetasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseMetasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatasourceResponse> DescribeDatasourceOutcome;
                 typedef std::future<DescribeDatasourceOutcome> DescribeDatasourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDatasourceRequest&, DescribeDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatasourceAsyncHandler;
@@ -2432,6 +2437,15 @@ namespace TencentCloud
                 DescribeDatabaseInfoListOutcome DescribeDatabaseInfoList(const Model::DescribeDatabaseInfoListRequest &request);
                 void DescribeDatabaseInfoListAsync(const Model::DescribeDatabaseInfoListRequest& request, const DescribeDatabaseInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabaseInfoListOutcomeCallable DescribeDatabaseInfoListCallable(const Model::DescribeDatabaseInfoListRequest& request);
+
+                /**
+                 *查询数据库列表
+                 * @param req DescribeDatabaseMetasRequest
+                 * @return DescribeDatabaseMetasOutcome
+                 */
+                DescribeDatabaseMetasOutcome DescribeDatabaseMetas(const Model::DescribeDatabaseMetasRequest &request);
+                void DescribeDatabaseMetasAsync(const Model::DescribeDatabaseMetasRequest& request, const DescribeDatabaseMetasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabaseMetasOutcomeCallable DescribeDatabaseMetasCallable(const Model::DescribeDatabaseMetasRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>

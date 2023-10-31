@@ -255,3 +255,89 @@ MrsClient::TurnPDFToObjectOutcomeCallable MrsClient::TurnPDFToObjectCallable(con
     return task->get_future();
 }
 
+MrsClient::TurnPDFToObjectAsyncOutcome MrsClient::TurnPDFToObjectAsync(const TurnPDFToObjectAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "TurnPDFToObjectAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TurnPDFToObjectAsyncResponse rsp = TurnPDFToObjectAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TurnPDFToObjectAsyncOutcome(rsp);
+        else
+            return TurnPDFToObjectAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return TurnPDFToObjectAsyncOutcome(outcome.GetError());
+    }
+}
+
+void MrsClient::TurnPDFToObjectAsyncAsync(const TurnPDFToObjectAsyncRequest& request, const TurnPDFToObjectAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TurnPDFToObjectAsync(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MrsClient::TurnPDFToObjectAsyncOutcomeCallable MrsClient::TurnPDFToObjectAsyncCallable(const TurnPDFToObjectAsyncRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TurnPDFToObjectAsyncOutcome()>>(
+        [this, request]()
+        {
+            return this->TurnPDFToObjectAsync(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MrsClient::TurnPDFToObjectAsyncGetResultOutcome MrsClient::TurnPDFToObjectAsyncGetResult(const TurnPDFToObjectAsyncGetResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "TurnPDFToObjectAsyncGetResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TurnPDFToObjectAsyncGetResultResponse rsp = TurnPDFToObjectAsyncGetResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TurnPDFToObjectAsyncGetResultOutcome(rsp);
+        else
+            return TurnPDFToObjectAsyncGetResultOutcome(o.GetError());
+    }
+    else
+    {
+        return TurnPDFToObjectAsyncGetResultOutcome(outcome.GetError());
+    }
+}
+
+void MrsClient::TurnPDFToObjectAsyncGetResultAsync(const TurnPDFToObjectAsyncGetResultRequest& request, const TurnPDFToObjectAsyncGetResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TurnPDFToObjectAsyncGetResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MrsClient::TurnPDFToObjectAsyncGetResultOutcomeCallable MrsClient::TurnPDFToObjectAsyncGetResultCallable(const TurnPDFToObjectAsyncGetResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TurnPDFToObjectAsyncGetResultOutcome()>>(
+        [this, request]()
+        {
+            return this->TurnPDFToObjectAsyncGetResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

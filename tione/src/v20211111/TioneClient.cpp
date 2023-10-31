@@ -1115,6 +1115,49 @@ TioneClient::DescribeBillingResourceGroupsOutcomeCallable TioneClient::DescribeB
     return task->get_future();
 }
 
+TioneClient::DescribeBillingResourceInstanceRunningJobsOutcome TioneClient::DescribeBillingResourceInstanceRunningJobs(const DescribeBillingResourceInstanceRunningJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillingResourceInstanceRunningJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillingResourceInstanceRunningJobsResponse rsp = DescribeBillingResourceInstanceRunningJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillingResourceInstanceRunningJobsOutcome(rsp);
+        else
+            return DescribeBillingResourceInstanceRunningJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillingResourceInstanceRunningJobsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeBillingResourceInstanceRunningJobsAsync(const DescribeBillingResourceInstanceRunningJobsRequest& request, const DescribeBillingResourceInstanceRunningJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillingResourceInstanceRunningJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeBillingResourceInstanceRunningJobsOutcomeCallable TioneClient::DescribeBillingResourceInstanceRunningJobsCallable(const DescribeBillingResourceInstanceRunningJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillingResourceInstanceRunningJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillingResourceInstanceRunningJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DescribeBillingSpecsOutcome TioneClient::DescribeBillingSpecs(const DescribeBillingSpecsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillingSpecs");

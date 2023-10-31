@@ -56,7 +56,8 @@ DescribeAssetImageRegistryDetailResponse::DescribeAssetImageRegistryDetailRespon
     m_imageIdHasBeenSet(false),
     m_registryRegionHasBeenSet(false),
     m_imageCreateTimeHasBeenSet(false),
-    m_sensitiveInfoCntHasBeenSet(false)
+    m_sensitiveInfoCntHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -424,6 +425,16 @@ CoreInternalOutcome DescribeAssetImageRegistryDetailResponse::Deserialize(const 
         m_sensitiveInfoCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Id") && !rsp["Id"].IsNull())
+    {
+        if (!rsp["Id"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Id` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = rsp["Id"].GetUint64();
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -696,6 +707,14 @@ string DescribeAssetImageRegistryDetailResponse::ToJsonString() const
         string key = "SensitiveInfoCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sensitiveInfoCnt, allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1038,6 +1057,16 @@ uint64_t DescribeAssetImageRegistryDetailResponse::GetSensitiveInfoCnt() const
 bool DescribeAssetImageRegistryDetailResponse::SensitiveInfoCntHasBeenSet() const
 {
     return m_sensitiveInfoCntHasBeenSet;
+}
+
+uint64_t DescribeAssetImageRegistryDetailResponse::GetId() const
+{
+    return m_id;
+}
+
+bool DescribeAssetImageRegistryDetailResponse::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 

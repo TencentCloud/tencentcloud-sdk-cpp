@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自动签开通个人用户的三要素
-                     * @return UserInfo 自动签开通个人用户的三要素
+                     * 获取自动签开通个人用户信息, 包括名字,身份证等
+                     * @return UserInfo 自动签开通个人用户信息, 包括名字,身份证等
                      * 
                      */
                     UserThreeFactor GetUserInfo() const;
 
                     /**
-                     * 设置自动签开通个人用户的三要素
-                     * @param _userInfo 自动签开通个人用户的三要素
+                     * 设置自动签开通个人用户信息, 包括名字,身份证等
+                     * @param _userInfo 自动签开通个人用户信息, 包括名字,身份证等
                      * 
                      */
                     void SetUserInfo(const UserThreeFactor& _userInfo);
@@ -69,15 +69,23 @@ namespace TencentCloud
                     bool UserInfoHasBeenSet() const;
 
                     /**
-                     * 获取是否回调证书信息
-                     * @return CertInfoCallback 是否回调证书信息
+                     * 获取是否回调证书信息:
+<ul><li>**false**: 不需要(默认)</li>
+<li>**true**:需要</li></ul>
+                     * @return CertInfoCallback 是否回调证书信息:
+<ul><li>**false**: 不需要(默认)</li>
+<li>**true**:需要</li></ul>
                      * 
                      */
                     bool GetCertInfoCallback() const;
 
                     /**
-                     * 设置是否回调证书信息
-                     * @param _certInfoCallback 是否回调证书信息
+                     * 设置是否回调证书信息:
+<ul><li>**false**: 不需要(默认)</li>
+<li>**true**:需要</li></ul>
+                     * @param _certInfoCallback 是否回调证书信息:
+<ul><li>**false**: 不需要(默认)</li>
+<li>**true**:需要</li></ul>
                      * 
                      */
                     void SetCertInfoCallback(const bool& _certInfoCallback);
@@ -90,15 +98,23 @@ namespace TencentCloud
                     bool CertInfoCallbackHasBeenSet() const;
 
                     /**
-                     * 获取是否支持用户自定义签名印章
-                     * @return UserDefineSeal 是否支持用户自定义签名印章
+                     * 获取是否支持用户自定义签名印章:
+<ul><li>**false**: 不能自己定义(默认)</li>
+<li>**true**: 可以自己定义</li></ul>
+                     * @return UserDefineSeal 是否支持用户自定义签名印章:
+<ul><li>**false**: 不能自己定义(默认)</li>
+<li>**true**: 可以自己定义</li></ul>
                      * 
                      */
                     bool GetUserDefineSeal() const;
 
                     /**
-                     * 设置是否支持用户自定义签名印章
-                     * @param _userDefineSeal 是否支持用户自定义签名印章
+                     * 设置是否支持用户自定义签名印章:
+<ul><li>**false**: 不能自己定义(默认)</li>
+<li>**true**: 可以自己定义</li></ul>
+                     * @param _userDefineSeal 是否支持用户自定义签名印章:
+<ul><li>**false**: 不能自己定义(默认)</li>
+<li>**true**: 可以自己定义</li></ul>
                      * 
                      */
                     void SetUserDefineSeal(const bool& _userDefineSeal);
@@ -111,15 +127,23 @@ namespace TencentCloud
                     bool UserDefineSealHasBeenSet() const;
 
                     /**
-                     * 获取是否需要回调的时候返回印章(签名) 图片的 base64
-                     * @return SealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64
+                     * 获取回调中是否需要自动签将要使用的印章（签名）图片的 base64:
+<ul><li>**false**: 不需要(默认)</li>
+<li>**true**: 需要</li></ul>
+                     * @return SealImgCallback 回调中是否需要自动签将要使用的印章（签名）图片的 base64:
+<ul><li>**false**: 不需要(默认)</li>
+<li>**true**: 需要</li></ul>
                      * 
                      */
                     bool GetSealImgCallback() const;
 
                     /**
-                     * 设置是否需要回调的时候返回印章(签名) 图片的 base64
-                     * @param _sealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64
+                     * 设置回调中是否需要自动签将要使用的印章（签名）图片的 base64:
+<ul><li>**false**: 不需要(默认)</li>
+<li>**true**: 需要</li></ul>
+                     * @param _sealImgCallback 回调中是否需要自动签将要使用的印章（签名）图片的 base64:
+<ul><li>**false**: 不需要(默认)</li>
+<li>**true**: 需要</li></ul>
                      * 
                      */
                     void SetSealImgCallback(const bool& _sealImgCallback);
@@ -153,15 +177,39 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
-                     * @return VerifyChannels 开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
+                     * 获取开通时候的身份验证方式, 取值为：
+<ul><li>**WEIXINAPP** : 微信人脸识别</li>
+<li>**INSIGHT** : 慧眼人脸认别</li>
+<li>**TELECOM** : 运营商三要素验证</li></ul>
+注：
+<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>
+<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>
+                     * @return VerifyChannels 开通时候的身份验证方式, 取值为：
+<ul><li>**WEIXINAPP** : 微信人脸识别</li>
+<li>**INSIGHT** : 慧眼人脸认别</li>
+<li>**TELECOM** : 运营商三要素验证</li></ul>
+注：
+<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>
+<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>
                      * 
                      */
                     std::vector<std::string> GetVerifyChannels() const;
 
                     /**
-                     * 设置开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
-                     * @param _verifyChannels 开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
+                     * 设置开通时候的身份验证方式, 取值为：
+<ul><li>**WEIXINAPP** : 微信人脸识别</li>
+<li>**INSIGHT** : 慧眼人脸认别</li>
+<li>**TELECOM** : 运营商三要素验证</li></ul>
+注：
+<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>
+<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>
+                     * @param _verifyChannels 开通时候的身份验证方式, 取值为：
+<ul><li>**WEIXINAPP** : 微信人脸识别</li>
+<li>**INSIGHT** : 慧眼人脸认别</li>
+<li>**TELECOM** : 运营商三要素验证</li></ul>
+注：
+<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>
+<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>
                      * 
                      */
                     void SetVerifyChannels(const std::vector<std::string>& _verifyChannels);
@@ -174,15 +222,27 @@ namespace TencentCloud
                     bool VerifyChannelsHasBeenSet() const;
 
                     /**
-                     * 获取设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
-                     * @return LicenseType 设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
+                     * 获取设置用户开通自动签时是否绑定个人自动签账号许可。
+
+<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>
+</ul>
+                     * @return LicenseType 设置用户开通自动签时是否绑定个人自动签账号许可。
+
+<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>
+</ul>
                      * 
                      */
                     int64_t GetLicenseType() const;
 
                     /**
-                     * 设置设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
-                     * @param _licenseType 设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
+                     * 设置设置用户开通自动签时是否绑定个人自动签账号许可。
+
+<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>
+</ul>
+                     * @param _licenseType 设置用户开通自动签时是否绑定个人自动签账号许可。
+
+<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>
+</ul>
                      * 
                      */
                     void SetLicenseType(const int64_t& _licenseType);
@@ -197,25 +257,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自动签开通个人用户的三要素
+                     * 自动签开通个人用户信息, 包括名字,身份证等
                      */
                     UserThreeFactor m_userInfo;
                     bool m_userInfoHasBeenSet;
 
                     /**
-                     * 是否回调证书信息
+                     * 是否回调证书信息:
+<ul><li>**false**: 不需要(默认)</li>
+<li>**true**:需要</li></ul>
                      */
                     bool m_certInfoCallback;
                     bool m_certInfoCallbackHasBeenSet;
 
                     /**
-                     * 是否支持用户自定义签名印章
+                     * 是否支持用户自定义签名印章:
+<ul><li>**false**: 不能自己定义(默认)</li>
+<li>**true**: 可以自己定义</li></ul>
                      */
                     bool m_userDefineSeal;
                     bool m_userDefineSealHasBeenSet;
 
                     /**
-                     * 是否需要回调的时候返回印章(签名) 图片的 base64
+                     * 回调中是否需要自动签将要使用的印章（签名）图片的 base64:
+<ul><li>**false**: 不需要(默认)</li>
+<li>**true**: 需要</li></ul>
                      */
                     bool m_sealImgCallback;
                     bool m_sealImgCallbackHasBeenSet;
@@ -227,13 +293,22 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
+                     * 开通时候的身份验证方式, 取值为：
+<ul><li>**WEIXINAPP** : 微信人脸识别</li>
+<li>**INSIGHT** : 慧眼人脸认别</li>
+<li>**TELECOM** : 运营商三要素验证</li></ul>
+注：
+<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>
+<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>
                      */
                     std::vector<std::string> m_verifyChannels;
                     bool m_verifyChannelsHasBeenSet;
 
                     /**
-                     * 设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次
+                     * 设置用户开通自动签时是否绑定个人自动签账号许可。
+
+<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>
+</ul>
                      */
                     int64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;

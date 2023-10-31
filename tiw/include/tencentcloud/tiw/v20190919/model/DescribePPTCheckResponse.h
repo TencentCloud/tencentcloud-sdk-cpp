@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tiw/v20190919/model/PPTErrSlide.h>
+#include <tencentcloud/tiw/v20190919/model/PPTErr.h>
 
 
 namespace TencentCloud
@@ -132,6 +133,22 @@ namespace TencentCloud
                      */
                     bool ProgressHasBeenSet() const;
 
+                    /**
+                     * 获取错误列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Errs 错误列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<PPTErr> GetErrs() const;
+
+                    /**
+                     * 判断参数 Errs 是否已赋值
+                     * @return Errs 是否已赋值
+                     * 
+                     */
+                    bool ErrsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,6 +188,13 @@ namespace TencentCloud
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
+
+                    /**
+                     * 错误列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PPTErr> m_errs;
+                    bool m_errsHasBeenSet;
 
                 };
             }

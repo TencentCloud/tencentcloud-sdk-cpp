@@ -67,6 +67,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/OphthalmologyColourVision.h
   include/tencentcloud/mrs/v20200910/model/CovidItemsInfo.h
   include/tencentcloud/mrs/v20200910/model/BloodPressureBlock.h
+  include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncRequest.h
   include/tencentcloud/mrs/v20200910/model/HistologyLevel.h
   include/tencentcloud/mrs/v20200910/model/EcgDescription.h
   include/tencentcloud/mrs/v20200910/model/SurgeryThyroid.h
@@ -74,6 +75,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/EyeItemsInfo.h
   include/tencentcloud/mrs/v20200910/model/SurgerySkin.h
   include/tencentcloud/mrs/v20200910/model/IndicatorItemV2.h
+  include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncResponse.h
   include/tencentcloud/mrs/v20200910/model/NormSize.h
   include/tencentcloud/mrs/v20200910/model/GynaecologyBriefSummary.h
   include/tencentcloud/mrs/v20200910/model/TextToObjectResponse.h
@@ -89,6 +91,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/InternalMedicineHeart.h
   include/tencentcloud/mrs/v20200910/model/ReportInfo.h
   include/tencentcloud/mrs/v20200910/model/GeneralExaminationVitalSign.h
+  include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncGetResultResponse.h
   include/tencentcloud/mrs/v20200910/model/PhysicalBaseItem.h
   include/tencentcloud/mrs/v20200910/model/Exame.h
   include/tencentcloud/mrs/v20200910/model/PathologyV2.h
@@ -188,6 +191,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/BaseInfo.h
   include/tencentcloud/mrs/v20200910/model/PhysicalExamination.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineRespiratorySystem.h
+  include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncGetResultRequest.h
   include/tencentcloud/mrs/v20200910/model/BloodPressureItem.h
   include/tencentcloud/mrs/v20200910/model/TextToClassRequest.h
   include/tencentcloud/mrs/v20200910/model/TextTypeListBlock.h
@@ -301,6 +305,7 @@ set(mrs_src
   src/v20200910/model/OphthalmologyColourVision.cpp
   src/v20200910/model/CovidItemsInfo.cpp
   src/v20200910/model/BloodPressureBlock.cpp
+  src/v20200910/model/TurnPDFToObjectAsyncRequest.cpp
   src/v20200910/model/HistologyLevel.cpp
   src/v20200910/model/EcgDescription.cpp
   src/v20200910/model/SurgeryThyroid.cpp
@@ -308,6 +313,7 @@ set(mrs_src
   src/v20200910/model/EyeItemsInfo.cpp
   src/v20200910/model/SurgerySkin.cpp
   src/v20200910/model/IndicatorItemV2.cpp
+  src/v20200910/model/TurnPDFToObjectAsyncResponse.cpp
   src/v20200910/model/NormSize.cpp
   src/v20200910/model/GynaecologyBriefSummary.cpp
   src/v20200910/model/TextToObjectResponse.cpp
@@ -323,6 +329,7 @@ set(mrs_src
   src/v20200910/model/InternalMedicineHeart.cpp
   src/v20200910/model/ReportInfo.cpp
   src/v20200910/model/GeneralExaminationVitalSign.cpp
+  src/v20200910/model/TurnPDFToObjectAsyncGetResultResponse.cpp
   src/v20200910/model/PhysicalBaseItem.cpp
   src/v20200910/model/Exame.cpp
   src/v20200910/model/PathologyV2.cpp
@@ -422,6 +429,7 @@ set(mrs_src
   src/v20200910/model/BaseInfo.cpp
   src/v20200910/model/PhysicalExamination.cpp
   src/v20200910/model/InternalMedicineRespiratorySystem.cpp
+  src/v20200910/model/TurnPDFToObjectAsyncGetResultRequest.cpp
   src/v20200910/model/BloodPressureItem.cpp
   src/v20200910/model/TextToClassRequest.cpp
   src/v20200910/model/TextTypeListBlock.cpp

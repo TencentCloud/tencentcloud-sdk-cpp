@@ -29,7 +29,8 @@ DescribePPTCheckResponse::DescribePPTCheckResponse() :
     m_resultUrlHasBeenSet(false),
     m_slidesHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_errsHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,26 @@ CoreInternalOutcome DescribePPTCheckResponse::Deserialize(const string &payload)
         m_progressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Errs") && !rsp["Errs"].IsNull())
+    {
+        if (!rsp["Errs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Errs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Errs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PPTErr item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_errs.push_back(item);
+        }
+        m_errsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +221,21 @@ string DescribePPTCheckResponse::ToJsonString() const
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_errsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Errs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_errs.begin(); itr != m_errs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -272,6 +308,16 @@ int64_t DescribePPTCheckResponse::GetProgress() const
 bool DescribePPTCheckResponse::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+vector<PPTErr> DescribePPTCheckResponse::GetErrs() const
+{
+    return m_errs;
+}
+
+bool DescribePPTCheckResponse::ErrsHasBeenSet() const
+{
+    return m_errsHasBeenSet;
 }
 
 

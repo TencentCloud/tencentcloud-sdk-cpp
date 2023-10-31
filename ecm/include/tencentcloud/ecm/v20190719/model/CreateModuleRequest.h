@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool ModuleNameHasBeenSet() const;
 
                     /**
-                     * 获取默认带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。
-                     * @return DefaultBandWidth 默认带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。
+                     * 获取默认带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
+                     * @return DefaultBandWidth 默认带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      * 
                      */
                     int64_t GetDefaultBandWidth() const;
 
                     /**
-                     * 设置默认带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。
-                     * @param _defaultBandWidth 默认带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。
+                     * 设置默认带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
+                     * @param _defaultBandWidth 默认带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      * 
                      */
                     void SetDefaultBandWidth(const int64_t& _defaultBandWidth);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看DescribeConfig。
-                     * @return DefaultSystemDiskSize 默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看DescribeConfig。
+                     * 获取默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
+                     * @return DefaultSystemDiskSize 默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      * 
                      */
                     int64_t GetDefaultSystemDiskSize() const;
 
                     /**
-                     * 设置默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看DescribeConfig。
-                     * @param _defaultSystemDiskSize 默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看DescribeConfig。
+                     * 设置默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
+                     * @param _defaultSystemDiskSize 默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      * 
                      */
                     void SetDefaultSystemDiskSize(const int64_t& _defaultSystemDiskSize);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool DefaultSystemDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看DescribeConfig。
-                     * @return DefaultDataDiskSize 默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看DescribeConfig。
+                     * 获取默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
+                     * @return DefaultDataDiskSize 默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      * 
                      */
                     int64_t GetDefaultDataDiskSize() const;
 
                     /**
-                     * 设置默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看DescribeConfig。
-                     * @param _defaultDataDiskSize 默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看DescribeConfig。
+                     * 设置默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
+                     * @param _defaultDataDiskSize 默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      * 
                      */
                     void SetDefaultDataDiskSize(const int64_t& _defaultDataDiskSize);
@@ -243,15 +243,15 @@ false：表示开通IP直通
                     bool SecurityGroupsHasBeenSet() const;
 
                     /**
-                     * 获取默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。
-                     * @return DefaultBandWidthIn 默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。
+                     * 获取默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
+                     * @return DefaultBandWidthIn 默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      * 
                      */
                     int64_t GetDefaultBandWidthIn() const;
 
                     /**
-                     * 设置默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。
-                     * @param _defaultBandWidthIn 默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。
+                     * 设置默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
+                     * @param _defaultBandWidthIn 默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      * 
                      */
                     void SetDefaultBandWidthIn(const int64_t& _defaultBandWidthIn);
@@ -335,7 +335,7 @@ false：表示开通IP直通
                     bool m_moduleNameHasBeenSet;
 
                     /**
-                     * 默认带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。
+                     * 默认带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      */
                     int64_t m_defaultBandWidth;
                     bool m_defaultBandWidthHasBeenSet;
@@ -353,13 +353,13 @@ false：表示开通IP直通
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看DescribeConfig。
+                     * 默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      */
                     int64_t m_defaultSystemDiskSize;
                     bool m_defaultSystemDiskSizeHasBeenSet;
 
                     /**
-                     * 默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看DescribeConfig。
+                     * 默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      */
                     int64_t m_defaultDataDiskSize;
                     bool m_defaultDataDiskSizeHasBeenSet;
@@ -385,7 +385,7 @@ false：表示开通IP直通
                     bool m_securityGroupsHasBeenSet;
 
                     /**
-                     * 默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。
+                     * 默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。
                      */
                     int64_t m_defaultBandWidthIn;
                     bool m_defaultBandWidthInHasBeenSet;

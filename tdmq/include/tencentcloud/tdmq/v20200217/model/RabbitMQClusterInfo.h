@@ -437,6 +437,56 @@ namespace TencentCloud
                      */
                     bool ClusterStatusHasBeenSet() const;
 
+                    /**
+                     * 获取自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启镜像队列策略。1表示开启，0表示没开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MirrorQueuePolicyFlag 是否开启镜像队列策略。1表示开启，0表示没开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMirrorQueuePolicyFlag() const;
+
+                    /**
+                     * 设置是否开启镜像队列策略。1表示开启，0表示没开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mirrorQueuePolicyFlag 是否开启镜像队列策略。1表示开启，0表示没开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMirrorQueuePolicyFlag(const int64_t& _mirrorQueuePolicyFlag);
+
+                    /**
+                     * 判断参数 MirrorQueuePolicyFlag 是否已赋值
+                     * @return MirrorQueuePolicyFlag 是否已赋值
+                     * 
+                     */
+                    bool MirrorQueuePolicyFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -549,6 +599,20 @@ namespace TencentCloud
                      */
                     int64_t m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
+
+                    /**
+                     * 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 是否开启镜像队列策略。1表示开启，0表示没开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_mirrorQueuePolicyFlag;
+                    bool m_mirrorQueuePolicyFlagHasBeenSet;
 
                 };
             }

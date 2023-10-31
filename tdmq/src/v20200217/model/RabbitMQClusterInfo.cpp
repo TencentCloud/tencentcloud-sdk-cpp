@@ -38,7 +38,9 @@ RabbitMQClusterInfo::RabbitMQClusterInfo() :
     m_consumerNumberHasBeenSet(false),
     m_exchangeNumberHasBeenSet(false),
     m_exceptionInformationHasBeenSet(false),
-    m_clusterStatusHasBeenSet(false)
+    m_clusterStatusHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false),
+    m_mirrorQueuePolicyFlagHasBeenSet(false)
 {
 }
 
@@ -240,6 +242,26 @@ CoreInternalOutcome RabbitMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_clusterStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
+    {
+        if (!value["AutoRenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("MirrorQueuePolicyFlag") && !value["MirrorQueuePolicyFlag"].IsNull())
+    {
+        if (!value["MirrorQueuePolicyFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.MirrorQueuePolicyFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mirrorQueuePolicyFlag = value["MirrorQueuePolicyFlag"].GetInt64();
+        m_mirrorQueuePolicyFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -401,6 +423,22 @@ void RabbitMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ClusterStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterStatus, allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_mirrorQueuePolicyFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MirrorQueuePolicyFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mirrorQueuePolicyFlag, allocator);
     }
 
 }
@@ -692,5 +730,37 @@ void RabbitMQClusterInfo::SetClusterStatus(const int64_t& _clusterStatus)
 bool RabbitMQClusterInfo::ClusterStatusHasBeenSet() const
 {
     return m_clusterStatusHasBeenSet;
+}
+
+int64_t RabbitMQClusterInfo::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void RabbitMQClusterInfo::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
+}
+
+int64_t RabbitMQClusterInfo::GetMirrorQueuePolicyFlag() const
+{
+    return m_mirrorQueuePolicyFlag;
+}
+
+void RabbitMQClusterInfo::SetMirrorQueuePolicyFlag(const int64_t& _mirrorQueuePolicyFlag)
+{
+    m_mirrorQueuePolicyFlag = _mirrorQueuePolicyFlag;
+    m_mirrorQueuePolicyFlagHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::MirrorQueuePolicyFlagHasBeenSet() const
+{
+    return m_mirrorQueuePolicyFlagHasBeenSet;
 }
 

@@ -4125,6 +4125,49 @@ WedataClient::DescribeDatabaseInfoListOutcomeCallable WedataClient::DescribeData
     return task->get_future();
 }
 
+WedataClient::DescribeDatabaseMetasOutcome WedataClient::DescribeDatabaseMetas(const DescribeDatabaseMetasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabaseMetas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabaseMetasResponse rsp = DescribeDatabaseMetasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabaseMetasOutcome(rsp);
+        else
+            return DescribeDatabaseMetasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabaseMetasOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDatabaseMetasAsync(const DescribeDatabaseMetasRequest& request, const DescribeDatabaseMetasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatabaseMetas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDatabaseMetasOutcomeCallable WedataClient::DescribeDatabaseMetasCallable(const DescribeDatabaseMetasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatabaseMetasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatabaseMetas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeDatasourceOutcome WedataClient::DescribeDatasource(const DescribeDatasourceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatasource");

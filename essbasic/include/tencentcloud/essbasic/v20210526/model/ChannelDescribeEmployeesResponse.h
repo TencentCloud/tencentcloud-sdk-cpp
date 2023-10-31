@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取员工数据列表
+                     * 获取员工信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Employees 员工数据列表
+                     * @return Employees 员工信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool EmployeesHasBeenSet() const;
 
                     /**
-                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
+                     * 获取指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
+                     * @return Offset 指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,8 +77,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取指定每页多少条数据，单页最大20
-                     * @return Limit 指定每页多少条数据，单页最大20
+                     * 获取指定分页每页返回的数据条数，单页最大支持 20。
+                     * @return Limit 指定分页每页返回的数据条数，单页最大支持 20。
                      * 
                      */
                     int64_t GetLimit() const;
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的员工数量
-                     * @return TotalCount 符合条件的员工数量
+                     * 获取符合条件的员工数量。
+                     * @return TotalCount 符合条件的员工数量。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -107,27 +107,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 员工数据列表
+                     * 员工信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Staff> m_employees;
                     bool m_employeesHasBeenSet;
 
                     /**
-                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000
+                     * 指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 指定每页多少条数据，单页最大20
+                     * 指定分页每页返回的数据条数，单页最大支持 20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 符合条件的员工数量
+                     * 符合条件的员工数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

@@ -571,6 +571,20 @@ namespace TencentCloud
                      */
                     bool SensitiveInfoCntHasBeenSet() const;
 
+                    /**
+                     * 获取Id
+                     * @return Id Id
+                     * 
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -803,6 +817,12 @@ namespace TencentCloud
                      */
                     uint64_t m_sensitiveInfoCnt;
                     bool m_sensitiveInfoCntHasBeenSet;
+
+                    /**
+                     * Id
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }
