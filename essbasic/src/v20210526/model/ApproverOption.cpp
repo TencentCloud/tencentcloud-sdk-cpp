@@ -21,6 +21,7 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ApproverOption::ApproverOption() :
+    m_noRefuseHasBeenSet(false),
     m_hideOneKeySignHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
     m_flowReadLimitHasBeenSet(false)
@@ -31,6 +32,16 @@ CoreInternalOutcome ApproverOption::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("NoRefuse") && !value["NoRefuse"].IsNull())
+    {
+        if (!value["NoRefuse"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverOption.NoRefuse` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_noRefuse = value["NoRefuse"].GetBool();
+        m_noRefuseHasBeenSet = true;
+    }
 
     if (value.HasMember("HideOneKeySign") && !value["HideOneKeySign"].IsNull())
     {
@@ -69,6 +80,14 @@ CoreInternalOutcome ApproverOption::Deserialize(const rapidjson::Value &value)
 void ApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_noRefuseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoRefuse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_noRefuse, allocator);
+    }
+
     if (m_hideOneKeySignHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -95,6 +114,22 @@ void ApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
 
 }
 
+
+bool ApproverOption::GetNoRefuse() const
+{
+    return m_noRefuse;
+}
+
+void ApproverOption::SetNoRefuse(const bool& _noRefuse)
+{
+    m_noRefuse = _noRefuse;
+    m_noRefuseHasBeenSet = true;
+}
+
+bool ApproverOption::NoRefuseHasBeenSet() const
+{
+    return m_noRefuseHasBeenSet;
+}
 
 bool ApproverOption::GetHideOneKeySign() const
 {

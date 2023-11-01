@@ -29,7 +29,8 @@ BandwidthPackage::BandwidthPackage() :
     m_statusHasBeenSet(false),
     m_resourceSetHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_egressHasBeenSet(false)
+    m_egressHasBeenSet(false),
+    m_deadlineHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome BandwidthPackage::Deserialize(const rapidjson::Value &value)
         m_egressHasBeenSet = true;
     }
 
+    if (value.HasMember("Deadline") && !value["Deadline"].IsNull())
+    {
+        if (!value["Deadline"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BandwidthPackage.Deadline` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadline = string(value["Deadline"].GetString());
+        m_deadlineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void BandwidthPackage::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Egress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadline.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void BandwidthPackage::SetEgress(const string& _egress)
 bool BandwidthPackage::EgressHasBeenSet() const
 {
     return m_egressHasBeenSet;
+}
+
+string BandwidthPackage::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void BandwidthPackage::SetDeadline(const string& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool BandwidthPackage::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
 }
 

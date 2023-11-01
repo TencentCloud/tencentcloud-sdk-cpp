@@ -359,15 +359,23 @@ namespace TencentCloud
                     bool ApproverRoleHasBeenSet() const;
 
                     /**
-                     * 获取自定义签署人角色名：收款人、开具人、见证人
-                     * @return ApproverRoleName 自定义签署人角色名：收款人、开具人、见证人
+                     * 获取可以自定义签署人角色名：收款人、开具人、见证人等，长度不能超过20，只能由中文、字母、数字和下划线组成。
+
+注: `如果是用模板发起, 优先使用此处上传的, 如果不传则用模板的配置的`
+                     * @return ApproverRoleName 可以自定义签署人角色名：收款人、开具人、见证人等，长度不能超过20，只能由中文、字母、数字和下划线组成。
+
+注: `如果是用模板发起, 优先使用此处上传的, 如果不传则用模板的配置的`
                      * 
                      */
                     std::string GetApproverRoleName() const;
 
                     /**
-                     * 设置自定义签署人角色名：收款人、开具人、见证人
-                     * @param _approverRoleName 自定义签署人角色名：收款人、开具人、见证人
+                     * 设置可以自定义签署人角色名：收款人、开具人、见证人等，长度不能超过20，只能由中文、字母、数字和下划线组成。
+
+注: `如果是用模板发起, 优先使用此处上传的, 如果不传则用模板的配置的`
+                     * @param _approverRoleName 可以自定义签署人角色名：收款人、开具人、见证人等，长度不能超过20，只能由中文、字母、数字和下划线组成。
+
+注: `如果是用模板发起, 优先使用此处上传的, 如果不传则用模板的配置的`
                      * 
                      */
                     void SetApproverRoleName(const std::string& _approverRoleName);
@@ -564,14 +572,14 @@ namespace TencentCloud
 </li></ul>
 注: 
 <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
-<li>此字段不可传多个校验方式</li></ul>
+<li>此字段可传多个校验方式</li></ul>
                      * @return ApproverVerifyTypes 指定个人签署方查看合同的校验方式,可以传值如下:
 <ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
 <li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
 </li></ul>
 注: 
 <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
-<li>此字段不可传多个校验方式</li></ul>
+<li>此字段可传多个校验方式</li></ul>
                      * 
                      */
                     std::vector<int64_t> GetApproverVerifyTypes() const;
@@ -583,14 +591,14 @@ namespace TencentCloud
 </li></ul>
 注: 
 <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
-<li>此字段不可传多个校验方式</li></ul>
+<li>此字段可传多个校验方式</li></ul>
                      * @param _approverVerifyTypes 指定个人签署方查看合同的校验方式,可以传值如下:
 <ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
 <li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
 </li></ul>
 注: 
 <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
-<li>此字段不可传多个校验方式</li></ul>
+<li>此字段可传多个校验方式</li></ul>
                      * 
                      */
                     void SetApproverVerifyTypes(const std::vector<int64_t>& _approverVerifyTypes);
@@ -833,7 +841,9 @@ namespace TencentCloud
                     bool m_approverRoleHasBeenSet;
 
                     /**
-                     * 自定义签署人角色名：收款人、开具人、见证人
+                     * 可以自定义签署人角色名：收款人、开具人、见证人等，长度不能超过20，只能由中文、字母、数字和下划线组成。
+
+注: `如果是用模板发起, 优先使用此处上传的, 如果不传则用模板的配置的`
                      */
                     std::string m_approverRoleName;
                     bool m_approverRoleNameHasBeenSet;
@@ -894,7 +904,7 @@ namespace TencentCloud
 </li></ul>
 注: 
 <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
-<li>此字段不可传多个校验方式</li></ul>
+<li>此字段可传多个校验方式</li></ul>
                      */
                     std::vector<int64_t> m_approverVerifyTypes;
                     bool m_approverVerifyTypesHasBeenSet;

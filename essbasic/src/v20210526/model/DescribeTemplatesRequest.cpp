@@ -26,13 +26,14 @@ DescribeTemplatesRequest::DescribeTemplatesRequest() :
     m_agentHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
+    m_templateIdsHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_queryAllComponentsHasBeenSet(false),
     m_templateNameHasBeenSet(false),
+    m_channelTemplateIdHasBeenSet(false),
+    m_queryAllComponentsHasBeenSet(false),
     m_withPreviewUrlHasBeenSet(false),
     m_withPdfUrlHasBeenSet(false),
-    m_channelTemplateIdHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -69,6 +70,19 @@ string DescribeTemplatesRequest::ToJsonString() const
         d.AddMember(iKey, m_contentType, allocator);
     }
 
+    if (m_templateIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_templateIds.begin(); itr != m_templateIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -85,20 +99,28 @@ string DescribeTemplatesRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
-    if (m_queryAllComponentsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "QueryAllComponents";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_queryAllComponents, allocator);
-    }
-
     if (m_templateNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channelTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryAllComponentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryAllComponents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryAllComponents, allocator);
     }
 
     if (m_withPreviewUrlHasBeenSet)
@@ -115,14 +137,6 @@ string DescribeTemplatesRequest::ToJsonString() const
         string key = "WithPdfUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_withPdfUrl, allocator);
-    }
-
-    if (m_channelTemplateIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ChannelTemplateId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_channelTemplateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -190,6 +204,22 @@ bool DescribeTemplatesRequest::ContentTypeHasBeenSet() const
     return m_contentTypeHasBeenSet;
 }
 
+vector<string> DescribeTemplatesRequest::GetTemplateIds() const
+{
+    return m_templateIds;
+}
+
+void DescribeTemplatesRequest::SetTemplateIds(const vector<string>& _templateIds)
+{
+    m_templateIds = _templateIds;
+    m_templateIdsHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::TemplateIdsHasBeenSet() const
+{
+    return m_templateIdsHasBeenSet;
+}
+
 uint64_t DescribeTemplatesRequest::GetLimit() const
 {
     return m_limit;
@@ -222,22 +252,6 @@ bool DescribeTemplatesRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-bool DescribeTemplatesRequest::GetQueryAllComponents() const
-{
-    return m_queryAllComponents;
-}
-
-void DescribeTemplatesRequest::SetQueryAllComponents(const bool& _queryAllComponents)
-{
-    m_queryAllComponents = _queryAllComponents;
-    m_queryAllComponentsHasBeenSet = true;
-}
-
-bool DescribeTemplatesRequest::QueryAllComponentsHasBeenSet() const
-{
-    return m_queryAllComponentsHasBeenSet;
-}
-
 string DescribeTemplatesRequest::GetTemplateName() const
 {
     return m_templateName;
@@ -252,6 +266,38 @@ void DescribeTemplatesRequest::SetTemplateName(const string& _templateName)
 bool DescribeTemplatesRequest::TemplateNameHasBeenSet() const
 {
     return m_templateNameHasBeenSet;
+}
+
+string DescribeTemplatesRequest::GetChannelTemplateId() const
+{
+    return m_channelTemplateId;
+}
+
+void DescribeTemplatesRequest::SetChannelTemplateId(const string& _channelTemplateId)
+{
+    m_channelTemplateId = _channelTemplateId;
+    m_channelTemplateIdHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::ChannelTemplateIdHasBeenSet() const
+{
+    return m_channelTemplateIdHasBeenSet;
+}
+
+bool DescribeTemplatesRequest::GetQueryAllComponents() const
+{
+    return m_queryAllComponents;
+}
+
+void DescribeTemplatesRequest::SetQueryAllComponents(const bool& _queryAllComponents)
+{
+    m_queryAllComponents = _queryAllComponents;
+    m_queryAllComponentsHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::QueryAllComponentsHasBeenSet() const
+{
+    return m_queryAllComponentsHasBeenSet;
 }
 
 bool DescribeTemplatesRequest::GetWithPreviewUrl() const
@@ -284,22 +330,6 @@ void DescribeTemplatesRequest::SetWithPdfUrl(const bool& _withPdfUrl)
 bool DescribeTemplatesRequest::WithPdfUrlHasBeenSet() const
 {
     return m_withPdfUrlHasBeenSet;
-}
-
-string DescribeTemplatesRequest::GetChannelTemplateId() const
-{
-    return m_channelTemplateId;
-}
-
-void DescribeTemplatesRequest::SetChannelTemplateId(const string& _channelTemplateId)
-{
-    m_channelTemplateId = _channelTemplateId;
-    m_channelTemplateIdHasBeenSet = true;
-}
-
-bool DescribeTemplatesRequest::ChannelTemplateIdHasBeenSet() const
-{
-    return m_channelTemplateIdHasBeenSet;
 }
 
 UserInfo DescribeTemplatesRequest::GetOperator() const

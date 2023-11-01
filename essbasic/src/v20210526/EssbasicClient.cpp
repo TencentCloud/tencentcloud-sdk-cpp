@@ -255,6 +255,49 @@ EssbasicClient::ChannelCreateBatchCancelFlowUrlOutcomeCallable EssbasicClient::C
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateBatchQuickSignUrlOutcome EssbasicClient::ChannelCreateBatchQuickSignUrl(const ChannelCreateBatchQuickSignUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateBatchQuickSignUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateBatchQuickSignUrlResponse rsp = ChannelCreateBatchQuickSignUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateBatchQuickSignUrlOutcome(rsp);
+        else
+            return ChannelCreateBatchQuickSignUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateBatchQuickSignUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateBatchQuickSignUrlAsync(const ChannelCreateBatchQuickSignUrlRequest& request, const ChannelCreateBatchQuickSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateBatchQuickSignUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateBatchQuickSignUrlOutcomeCallable EssbasicClient::ChannelCreateBatchQuickSignUrlCallable(const ChannelCreateBatchQuickSignUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateBatchQuickSignUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateBatchQuickSignUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateBatchSignUrlOutcome EssbasicClient::ChannelCreateBatchSignUrl(const ChannelCreateBatchSignUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateBatchSignUrl");

@@ -47,6 +47,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * @return NoRefuse 是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * 
+                     */
+                    bool GetNoRefuse() const;
+
+                    /**
+                     * 设置是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * @param _noRefuse 是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * 
+                     */
+                    void SetNoRefuse(const bool& _noRefuse);
+
+                    /**
+                     * 判断参数 NoRefuse 是否已赋值
+                     * @return NoRefuse 是否已赋值
+                     * 
+                     */
+                    bool NoRefuseHasBeenSet() const;
+
+                    /**
                      * 获取是否隐藏一键签署 默认false-不隐藏true-隐藏
                      * @return HideOneKeySign 是否隐藏一键签署 默认false-不隐藏true-隐藏
                      * 
@@ -150,6 +171,12 @@ namespace TencentCloud
                     bool FlowReadLimitHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     */
+                    bool m_noRefuse;
+                    bool m_noRefuseHasBeenSet;
 
                     /**
                      * 是否隐藏一键签署 默认false-不隐藏true-隐藏

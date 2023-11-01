@@ -255,6 +255,49 @@ DrmClient::DescribeAllKeysOutcomeCallable DrmClient::DescribeAllKeysCallable(con
     return task->get_future();
 }
 
+DrmClient::DescribeDRMLicenseOutcome DrmClient::DescribeDRMLicense(const DescribeDRMLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDRMLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDRMLicenseResponse rsp = DescribeDRMLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDRMLicenseOutcome(rsp);
+        else
+            return DescribeDRMLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDRMLicenseOutcome(outcome.GetError());
+    }
+}
+
+void DrmClient::DescribeDRMLicenseAsync(const DescribeDRMLicenseRequest& request, const DescribeDRMLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDRMLicense(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DrmClient::DescribeDRMLicenseOutcomeCallable DrmClient::DescribeDRMLicenseCallable(const DescribeDRMLicenseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDRMLicenseOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDRMLicense(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DrmClient::DescribeFairPlayPemOutcome DrmClient::DescribeFairPlayPem(const DescribeFairPlayPemRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFairPlayPem");

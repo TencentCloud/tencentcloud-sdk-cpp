@@ -2964,6 +2964,49 @@ TdmqClient::DescribeRocketMQClustersOutcomeCallable TdmqClient::DescribeRocketMQ
     return task->get_future();
 }
 
+TdmqClient::DescribeRocketMQConsumeStatsOutcome TdmqClient::DescribeRocketMQConsumeStats(const DescribeRocketMQConsumeStatsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQConsumeStats");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQConsumeStatsResponse rsp = DescribeRocketMQConsumeStatsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQConsumeStatsOutcome(rsp);
+        else
+            return DescribeRocketMQConsumeStatsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQConsumeStatsOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQConsumeStatsAsync(const DescribeRocketMQConsumeStatsRequest& request, const DescribeRocketMQConsumeStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQConsumeStats(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQConsumeStatsOutcomeCallable TdmqClient::DescribeRocketMQConsumeStatsCallable(const DescribeRocketMQConsumeStatsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQConsumeStatsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQConsumeStats(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQConsumerConnectionsOutcome TdmqClient::DescribeRocketMQConsumerConnections(const DescribeRocketMQConsumerConnectionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQConsumerConnections");
@@ -5150,6 +5193,49 @@ TdmqClient::UnbindCmqDeadLetterOutcomeCallable TdmqClient::UnbindCmqDeadLetterCa
         [this, request]()
         {
             return this->UnbindCmqDeadLetter(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::VerifyRocketMQConsumeOutcome TdmqClient::VerifyRocketMQConsume(const VerifyRocketMQConsumeRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyRocketMQConsume");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyRocketMQConsumeResponse rsp = VerifyRocketMQConsumeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyRocketMQConsumeOutcome(rsp);
+        else
+            return VerifyRocketMQConsumeOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyRocketMQConsumeOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::VerifyRocketMQConsumeAsync(const VerifyRocketMQConsumeRequest& request, const VerifyRocketMQConsumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyRocketMQConsume(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::VerifyRocketMQConsumeOutcomeCallable TdmqClient::VerifyRocketMQConsumeCallable(const VerifyRocketMQConsumeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyRocketMQConsumeOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyRocketMQConsume(request);
         }
     );
 

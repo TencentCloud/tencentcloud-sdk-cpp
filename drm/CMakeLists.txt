@@ -30,11 +30,13 @@ set(drm_public_header_model
   include/tencentcloud/drm/v20181115/model/ModifyFairPlayPemResponse.h
   include/tencentcloud/drm/v20181115/model/DescribeFairPlayPemResponse.h
   include/tencentcloud/drm/v20181115/model/Key.h
+  include/tencentcloud/drm/v20181115/model/DescribeDRMLicenseResponse.h
   include/tencentcloud/drm/v20181115/model/PlaybackPolicy.h
   include/tencentcloud/drm/v20181115/model/AddFairPlayPemResponse.h
   include/tencentcloud/drm/v20181115/model/AddFairPlayPemRequest.h
   include/tencentcloud/drm/v20181115/model/DeleteFairPlayPemRequest.h
   include/tencentcloud/drm/v20181115/model/DescribeKeysResponse.h
+  include/tencentcloud/drm/v20181115/model/DescribeDRMLicenseRequest.h
   include/tencentcloud/drm/v20181115/model/DescribeAllKeysResponse.h
   include/tencentcloud/drm/v20181115/model/StartEncryptionRequest.h
   include/tencentcloud/drm/v20181115/model/ModifyFairPlayPemRequest.h
@@ -59,11 +61,13 @@ set(drm_src
   src/v20181115/model/ModifyFairPlayPemResponse.cpp
   src/v20181115/model/DescribeFairPlayPemResponse.cpp
   src/v20181115/model/Key.cpp
+  src/v20181115/model/DescribeDRMLicenseResponse.cpp
   src/v20181115/model/PlaybackPolicy.cpp
   src/v20181115/model/AddFairPlayPemResponse.cpp
   src/v20181115/model/AddFairPlayPemRequest.cpp
   src/v20181115/model/DeleteFairPlayPemRequest.cpp
   src/v20181115/model/DescribeKeysResponse.cpp
+  src/v20181115/model/DescribeDRMLicenseRequest.cpp
   src/v20181115/model/DescribeAllKeysResponse.cpp
   src/v20181115/model/StartEncryptionRequest.cpp
   src/v20181115/model/ModifyFairPlayPemRequest.cpp

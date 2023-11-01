@@ -50,6 +50,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/StartFlowResponse.h
   include/tencentcloud/ess/v20201111/model/SealInfo.h
   include/tencentcloud/ess/v20201111/model/StaffRole.h
+  include/tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationRoleRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersResponse.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h
@@ -213,6 +214,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusRequest.h
   include/tencentcloud/ess/v20201111/model/FilledComponent.h
+  include/tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlRequest.h
   include/tencentcloud/ess/v20201111/model/FileUrl.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.h
@@ -253,6 +255,7 @@ set(ess_src
   src/v20201111/model/StartFlowResponse.cpp
   src/v20201111/model/SealInfo.cpp
   src/v20201111/model/StaffRole.cpp
+  src/v20201111/model/CreateBatchQuickSignUrlResponse.cpp
   src/v20201111/model/CreateIntegrationRoleRequest.cpp
   src/v20201111/model/DeleteIntegrationRoleUsersResponse.cpp
   src/v20201111/model/CreateConvertTaskApiRequest.cpp
@@ -416,6 +419,7 @@ set(ess_src
   src/v20201111/model/CreateFlowResponse.cpp
   src/v20201111/model/DescribeUserAutoSignStatusRequest.cpp
   src/v20201111/model/FilledComponent.cpp
+  src/v20201111/model/CreateBatchQuickSignUrlRequest.cpp
   src/v20201111/model/FileUrl.cpp
   src/v20201111/model/CreateOrganizationInfoChangeUrlRequest.cpp
   src/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.cpp

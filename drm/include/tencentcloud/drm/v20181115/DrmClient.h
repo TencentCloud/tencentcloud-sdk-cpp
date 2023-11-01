@@ -33,6 +33,8 @@
 #include <tencentcloud/drm/v20181115/model/DeleteFairPlayPemResponse.h>
 #include <tencentcloud/drm/v20181115/model/DescribeAllKeysRequest.h>
 #include <tencentcloud/drm/v20181115/model/DescribeAllKeysResponse.h>
+#include <tencentcloud/drm/v20181115/model/DescribeDRMLicenseRequest.h>
+#include <tencentcloud/drm/v20181115/model/DescribeDRMLicenseResponse.h>
 #include <tencentcloud/drm/v20181115/model/DescribeFairPlayPemRequest.h>
 #include <tencentcloud/drm/v20181115/model/DescribeFairPlayPemResponse.h>
 #include <tencentcloud/drm/v20181115/model/DescribeKeysRequest.h>
@@ -70,6 +72,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAllKeysResponse> DescribeAllKeysOutcome;
                 typedef std::future<DescribeAllKeysOutcome> DescribeAllKeysOutcomeCallable;
                 typedef std::function<void(const DrmClient*, const Model::DescribeAllKeysRequest&, DescribeAllKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllKeysAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDRMLicenseResponse> DescribeDRMLicenseOutcome;
+                typedef std::future<DescribeDRMLicenseOutcome> DescribeDRMLicenseOutcomeCallable;
+                typedef std::function<void(const DrmClient*, const Model::DescribeDRMLicenseRequest&, DescribeDRMLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDRMLicenseAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFairPlayPemResponse> DescribeFairPlayPemOutcome;
                 typedef std::future<DescribeFairPlayPemOutcome> DescribeFairPlayPemOutcomeCallable;
                 typedef std::function<void(const DrmClient*, const Model::DescribeFairPlayPemRequest&, DescribeFairPlayPemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFairPlayPemAsyncHandler;
@@ -134,6 +139,16 @@ namespace TencentCloud
                 DescribeAllKeysOutcome DescribeAllKeys(const Model::DescribeAllKeysRequest &request);
                 void DescribeAllKeysAsync(const Model::DescribeAllKeysRequest& request, const DescribeAllKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAllKeysOutcomeCallable DescribeAllKeysCallable(const Model::DescribeAllKeysRequest& request);
+
+                /**
+                 *开发者需要指定使用的DRM类型取值 NORMALAES、和需要加密的Track类型取值 SD,ContentType取值 LiveVideo
+
+                 * @param req DescribeDRMLicenseRequest
+                 * @return DescribeDRMLicenseOutcome
+                 */
+                DescribeDRMLicenseOutcome DescribeDRMLicense(const Model::DescribeDRMLicenseRequest &request);
+                void DescribeDRMLicenseAsync(const Model::DescribeDRMLicenseRequest& request, const DescribeDRMLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDRMLicenseOutcomeCallable DescribeDRMLicenseCallable(const Model::DescribeDRMLicenseRequest& request);
 
                 /**
                  *该接口用来查询设置的FairPlay私钥校验信息。可用该接口校验设置的私钥与本身的私钥是否一致。
