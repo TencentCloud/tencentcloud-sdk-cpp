@@ -201,6 +201,43 @@ namespace TencentCloud
                      */
                     bool SkillGroupNameListHasBeenSet() const;
 
+                    /**
+                     * 获取1:管理员
+2:质检员
+3:普通座席
+else:自定义角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Role 1:管理员
+2:质检员
+3:普通座席
+else:自定义角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRole() const;
+
+                    /**
+                     * 设置1:管理员
+2:质检员
+3:普通座席
+else:自定义角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _role 1:管理员
+2:质检员
+3:普通座席
+else:自定义角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRole(const int64_t& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     * 
+                     */
+                    bool RoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +283,16 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_skillGroupNameList;
                     bool m_skillGroupNameListHasBeenSet;
+
+                    /**
+                     * 1:管理员
+2:质检员
+3:普通座席
+else:自定义角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_role;
+                    bool m_roleHasBeenSet;
 
                 };
             }

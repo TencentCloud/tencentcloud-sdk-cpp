@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量撤销url
-                     * @return BatchCancelFlowUrl 批量撤销url
+                     * 获取批量撤销合同的URL链接, 需要在手机端打开, 有效期24小时
+                     * @return BatchCancelFlowUrl 批量撤销合同的URL链接, 需要在手机端打开, 有效期24小时
                      * 
                      */
                     std::string GetBatchCancelFlowUrl() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool BatchCancelFlowUrlHasBeenSet() const;
 
                     /**
-                     * 获取签署流程批量撤销失败原因
-                     * @return FailMessages 签署流程批量撤销失败原因
+                     * 获取与入参的FlowIds数组一致,   成功生成到撤销链接中,则为"",   不能撤销合同则为失败原因
+                     * @return FailMessages 与入参的FlowIds数组一致,   成功生成到撤销链接中,则为"",   不能撤销合同则为失败原因
                      * 
                      */
                     std::vector<std::string> GetFailMessages() const;
@@ -72,8 +72,12 @@ namespace TencentCloud
                     bool FailMessagesHasBeenSet() const;
 
                     /**
-                     * 获取签署撤销url过期时间-年月日-时分秒
-                     * @return UrlExpireOn 签署撤销url过期时间-年月日-时分秒
+                     * 获取签署撤销链接的过期时间(格式为:年-月-日 时:分:秒), 默认是生成链接的24小时后失效
+
+
+                     * @return UrlExpireOn 签署撤销链接的过期时间(格式为:年-月-日 时:分:秒), 默认是生成链接的24小时后失效
+
+
                      * 
                      */
                     std::string GetUrlExpireOn() const;
@@ -88,19 +92,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量撤销url
+                     * 批量撤销合同的URL链接, 需要在手机端打开, 有效期24小时
                      */
                     std::string m_batchCancelFlowUrl;
                     bool m_batchCancelFlowUrlHasBeenSet;
 
                     /**
-                     * 签署流程批量撤销失败原因
+                     * 与入参的FlowIds数组一致,   成功生成到撤销链接中,则为"",   不能撤销合同则为失败原因
                      */
                     std::vector<std::string> m_failMessages;
                     bool m_failMessagesHasBeenSet;
 
                     /**
-                     * 签署撤销url过期时间-年月日-时分秒
+                     * 签署撤销链接的过期时间(格式为:年-月-日 时:分:秒), 默认是生成链接的24小时后失效
+
+
                      */
                     std::string m_urlExpireOn;
                     bool m_urlExpireOnHasBeenSet;

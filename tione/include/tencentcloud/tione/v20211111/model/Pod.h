@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/Container.h>
+#include <tencentcloud/tione/v20211111/model/CrossTenantENIInfo.h>
 
 
 namespace TencentCloud
@@ -247,6 +248,31 @@ namespace TencentCloud
                      */
                     bool ContainerInfosHasBeenSet() const;
 
+                    /**
+                     * 获取容器调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CrossTenantENIInfo 容器调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CrossTenantENIInfo GetCrossTenantENIInfo() const;
+
+                    /**
+                     * 设置容器调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _crossTenantENIInfo 容器调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCrossTenantENIInfo(const CrossTenantENIInfo& _crossTenantENIInfo);
+
+                    /**
+                     * 判断参数 CrossTenantENIInfo 是否已赋值
+                     * @return CrossTenantENIInfo 是否已赋值
+                     * 
+                     */
+                    bool CrossTenantENIInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +330,13 @@ namespace TencentCloud
                      */
                     std::vector<Container> m_containerInfos;
                     bool m_containerInfosHasBeenSet;
+
+                    /**
+                     * 容器调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CrossTenantENIInfo m_crossTenantENIInfo;
+                    bool m_crossTenantENIInfoHasBeenSet;
 
                 };
             }

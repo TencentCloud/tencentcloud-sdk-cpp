@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跳转短链
-                     * @return Url 跳转短链
+                     * 获取个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。
+                     * @return Url 个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。
                      * 
                      */
                     std::string GetUrl() const;
@@ -58,8 +58,12 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取小程序AppId
-                     * @return AppId 小程序AppId
+                     * 获取腾讯电子签小程序的 AppID，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用
+
+注: `如果获取的是H5链接, 则不会返回此值`
+                     * @return AppId 腾讯电子签小程序的 AppID，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用
+
+注: `如果获取的是H5链接, 则不会返回此值`
                      * 
                      */
                     std::string GetAppId() const;
@@ -72,8 +76,12 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取小程序 原始 Id
-                     * @return AppOriginalId 小程序 原始 Id
+                     * 获取腾讯电子签小程序的原始 Id,  ，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用
+
+注: `如果获取的是H5链接, 则不会返回此值`
+                     * @return AppOriginalId 腾讯电子签小程序的原始 Id,  ，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用
+
+注: `如果获取的是H5链接, 则不会返回此值`
                      * 
                      */
                     std::string GetAppOriginalId() const;
@@ -86,8 +94,12 @@ namespace TencentCloud
                     bool AppOriginalIdHasBeenSet() const;
 
                     /**
-                     * 获取跳转路径
-                     * @return Path 跳转路径
+                     * 获取腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用
+
+注: `如果获取的是H5链接, 则不会返回此值`
+                     * @return Path 腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用
+
+注: `如果获取的是H5链接, 则不会返回此值`
                      * 
                      */
                     std::string GetPath() const;
@@ -100,8 +112,12 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取base64格式跳转二维码
-                     * @return QrCode base64格式跳转二维码
+                     * 获取base64 格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。
+
+注: `如果获取的是H5链接, 则不会返回此二维码图片`
+                     * @return QrCode base64 格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。
+
+注: `如果获取的是H5链接, 则不会返回此二维码图片`
                      * 
                      */
                     std::string GetQrCode() const;
@@ -114,8 +130,12 @@ namespace TencentCloud
                     bool QrCodeHasBeenSet() const;
 
                     /**
-                     * 获取链接类型，空-默认小程序端链接，H5SIGN-h5端链接
-                     * @return UrlType 链接类型，空-默认小程序端链接，H5SIGN-h5端链接
+                     * 获取返回的链接类型
+<ul><li> 空: 默认小程序端链接</li>
+<li> **H5SIGN** : h5端链接</li></ul>
+                     * @return UrlType 返回的链接类型
+<ul><li> 空: 默认小程序端链接</li>
+<li> **H5SIGN** : h5端链接</li></ul>
                      * 
                      */
                     std::string GetUrlType() const;
@@ -130,37 +150,47 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 跳转短链
+                     * 个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 小程序AppId
+                     * 腾讯电子签小程序的 AppID，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用
+
+注: `如果获取的是H5链接, 则不会返回此值`
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 小程序 原始 Id
+                     * 腾讯电子签小程序的原始 Id,  ，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用
+
+注: `如果获取的是H5链接, 则不会返回此值`
                      */
                     std::string m_appOriginalId;
                     bool m_appOriginalIdHasBeenSet;
 
                     /**
-                     * 跳转路径
+                     * 腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用
+
+注: `如果获取的是H5链接, 则不会返回此值`
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * base64格式跳转二维码
+                     * base64 格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。
+
+注: `如果获取的是H5链接, 则不会返回此二维码图片`
                      */
                     std::string m_qrCode;
                     bool m_qrCodeHasBeenSet;
 
                     /**
-                     * 链接类型，空-默认小程序端链接，H5SIGN-h5端链接
+                     * 返回的链接类型
+<ul><li> 空: 默认小程序端链接</li>
+<li> **H5SIGN** : h5端链接</li></ul>
                      */
                     std::string m_urlType;
                     bool m_urlTypeHasBeenSet;

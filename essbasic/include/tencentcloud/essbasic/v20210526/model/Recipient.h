@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 流程中参与方的信息结构
+                * 流程中签署方和填写方(如果有填写控件存证时)的信息
                 */
                 class Recipient : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署人唯一标识，在通过模板发起合同的时候对应签署方ID
-                     * @return RecipientId 签署人唯一标识，在通过模板发起合同的时候对应签署方ID
+                     * 获取合同参与方的角色ID
+                     * @return RecipientId 合同参与方的角色ID
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置签署人唯一标识，在通过模板发起合同的时候对应签署方ID
-                     * @param _recipientId 签署人唯一标识，在通过模板发起合同的时候对应签署方ID
+                     * 设置合同参与方的角色ID
+                     * @param _recipientId 合同参与方的角色ID
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -68,27 +68,27 @@ namespace TencentCloud
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取参与者类型，默认为空。
-ENTERPRISE-企业；
-INDIVIDUAL-个人；
-PROMOTER-发起方
-                     * @return RecipientType 参与者类型，默认为空。
-ENTERPRISE-企业；
-INDIVIDUAL-个人；
-PROMOTER-发起方
+                     * 获取参与者类型, 可以选择的类型如下:
+<ul><li> **ENTERPRISE** :此角色为企业参与方</li>
+<li> **INDIVIDUAL** :此角色为个人参与方</li>
+<li> **PROMOTER** :此角色是发起方</li></ul>
+                     * @return RecipientType 参与者类型, 可以选择的类型如下:
+<ul><li> **ENTERPRISE** :此角色为企业参与方</li>
+<li> **INDIVIDUAL** :此角色为个人参与方</li>
+<li> **PROMOTER** :此角色是发起方</li></ul>
                      * 
                      */
                     std::string GetRecipientType() const;
 
                     /**
-                     * 设置参与者类型，默认为空。
-ENTERPRISE-企业；
-INDIVIDUAL-个人；
-PROMOTER-发起方
-                     * @param _recipientType 参与者类型，默认为空。
-ENTERPRISE-企业；
-INDIVIDUAL-个人；
-PROMOTER-发起方
+                     * 设置参与者类型, 可以选择的类型如下:
+<ul><li> **ENTERPRISE** :此角色为企业参与方</li>
+<li> **INDIVIDUAL** :此角色为个人参与方</li>
+<li> **PROMOTER** :此角色是发起方</li></ul>
+                     * @param _recipientType 参与者类型, 可以选择的类型如下:
+<ul><li> **ENTERPRISE** :此角色为企业参与方</li>
+<li> **INDIVIDUAL** :此角色为个人参与方</li>
+<li> **PROMOTER** :此角色是发起方</li></ul>
                      * 
                      */
                     void SetRecipientType(const std::string& _recipientType);
@@ -101,15 +101,15 @@ PROMOTER-发起方
                     bool RecipientTypeHasBeenSet() const;
 
                     /**
-                     * 获取描述信息	
-                     * @return Description 描述信息	
+                     * 获取合同参与方的角色描述，长度不能超过100，只能由中文、字母、数字和下划线组成。
+                     * @return Description 合同参与方的角色描述，长度不能超过100，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述信息	
-                     * @param _description 描述信息	
+                     * 设置合同参与方的角色描述，长度不能超过100，只能由中文、字母、数字和下划线组成。
+                     * @param _description 合同参与方的角色描述，长度不能超过100，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -122,15 +122,15 @@ PROMOTER-发起方
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取角色名称	
-                     * @return RoleName 角色名称	
+                     * 获取合同参与方的角色名字，长度不能超过20，只能由中文、字母、数字和下划线组成。
+                     * @return RoleName 合同参与方的角色名字，长度不能超过20，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置角色名称	
-                     * @param _roleName 角色名称	
+                     * 设置合同参与方的角色名字，长度不能超过20，只能由中文、字母、数字和下划线组成。
+                     * @param _roleName 合同参与方的角色名字，长度不能超过20，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     void SetRoleName(const std::string& _roleName);
@@ -274,28 +274,28 @@ false-否
                 private:
 
                     /**
-                     * 签署人唯一标识，在通过模板发起合同的时候对应签署方ID
+                     * 合同参与方的角色ID
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 参与者类型，默认为空。
-ENTERPRISE-企业；
-INDIVIDUAL-个人；
-PROMOTER-发起方
+                     * 参与者类型, 可以选择的类型如下:
+<ul><li> **ENTERPRISE** :此角色为企业参与方</li>
+<li> **INDIVIDUAL** :此角色为个人参与方</li>
+<li> **PROMOTER** :此角色是发起方</li></ul>
                      */
                     std::string m_recipientType;
                     bool m_recipientTypeHasBeenSet;
 
                     /**
-                     * 描述信息	
+                     * 合同参与方的角色描述，长度不能超过100，只能由中文、字母、数字和下划线组成。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 角色名称	
+                     * 合同参与方的角色名字，长度不能超过20，只能由中文、字母、数字和下划线组成。
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;

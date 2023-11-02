@@ -26,7 +26,8 @@ using namespace std;
 DescribeTaskLogListResponse::DescribeTaskLogListResponse() :
     m_totalCountHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_notViewNumberHasBeenSet(false)
+    m_notViewNumberHasBeenSet(false),
+    m_reportTemplateNumberHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeTaskLogListResponse::Deserialize(const string &paylo
         m_notViewNumberHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ReportTemplateNumber") && !rsp["ReportTemplateNumber"].IsNull())
+    {
+        if (!rsp["ReportTemplateNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportTemplateNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportTemplateNumber = rsp["ReportTemplateNumber"].GetInt64();
+        m_reportTemplateNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribeTaskLogListResponse::ToJsonString() const
         string key = "NotViewNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notViewNumber, allocator);
+    }
+
+    if (m_reportTemplateNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportTemplateNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reportTemplateNumber, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ int64_t DescribeTaskLogListResponse::GetNotViewNumber() const
 bool DescribeTaskLogListResponse::NotViewNumberHasBeenSet() const
 {
     return m_notViewNumberHasBeenSet;
+}
+
+int64_t DescribeTaskLogListResponse::GetReportTemplateNumber() const
+{
+    return m_reportTemplateNumber;
+}
+
+bool DescribeTaskLogListResponse::ReportTemplateNumberHasBeenSet() const
+{
+    return m_reportTemplateNumberHasBeenSet;
 }
 
 

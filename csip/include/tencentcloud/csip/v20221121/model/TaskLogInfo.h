@@ -342,6 +342,56 @@ namespace TencentCloud
                      */
                     bool UserNameHasBeenSet() const;
 
+                    /**
+                     * 获取报告类型： 1安全体检 2日报 3周报 4月报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportType 报告类型： 1安全体检 2日报 3周报 4月报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetReportType() const;
+
+                    /**
+                     * 设置报告类型： 1安全体检 2日报 3周报 4月报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reportType 报告类型： 1安全体检 2日报 3周报 4月报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReportType(const int64_t& _reportType);
+
+                    /**
+                     * 判断参数 ReportType 是否已赋值
+                     * @return ReportType 是否已赋值
+                     * 
+                     */
+                    bool ReportTypeHasBeenSet() const;
+
+                    /**
+                     * 获取报告模板id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TemplateId 报告模板id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTemplateId() const;
+
+                    /**
+                     * 设置报告模板id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _templateId 报告模板id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTemplateId(const int64_t& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     * 
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +476,20 @@ namespace TencentCloud
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
+
+                    /**
+                     * 报告类型： 1安全体检 2日报 3周报 4月报
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_reportType;
+                    bool m_reportTypeHasBeenSet;
+
+                    /**
+                     * 报告模板id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_templateId;
+                    bool m_templateIdHasBeenSet;
 
                 };
             }

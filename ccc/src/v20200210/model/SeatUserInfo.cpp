@@ -27,7 +27,8 @@ SeatUserInfo::SeatUserInfo() :
     m_phoneHasBeenSet(false),
     m_nickHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_skillGroupNameListHasBeenSet(false)
+    m_skillGroupNameListHasBeenSet(false),
+    m_roleHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
         m_skillGroupNameListHasBeenSet = true;
     }
 
+    if (value.HasMember("Role") && !value["Role"].IsNull())
+    {
+        if (!value["Role"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.Role` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_role = value["Role"].GetInt64();
+        m_roleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void SeatUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_role, allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void SeatUserInfo::SetSkillGroupNameList(const vector<string>& _skillGroupNameLi
 bool SeatUserInfo::SkillGroupNameListHasBeenSet() const
 {
     return m_skillGroupNameListHasBeenSet;
+}
+
+int64_t SeatUserInfo::GetRole() const
+{
+    return m_role;
+}
+
+void SeatUserInfo::SetRole(const int64_t& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool SeatUserInfo::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
 }
 

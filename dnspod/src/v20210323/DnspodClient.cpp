@@ -298,6 +298,49 @@ DnspodClient::CreateDomainBatchOutcomeCallable DnspodClient::CreateDomainBatchCa
     return task->get_future();
 }
 
+DnspodClient::CreateDomainCustomLineOutcome DnspodClient::CreateDomainCustomLine(const CreateDomainCustomLineRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDomainCustomLine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDomainCustomLineResponse rsp = CreateDomainCustomLineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDomainCustomLineOutcome(rsp);
+        else
+            return CreateDomainCustomLineOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDomainCustomLineOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateDomainCustomLineAsync(const CreateDomainCustomLineRequest& request, const CreateDomainCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDomainCustomLine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CreateDomainCustomLineOutcomeCallable DnspodClient::CreateDomainCustomLineCallable(const CreateDomainCustomLineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDomainCustomLineOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDomainCustomLine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::CreateDomainGroupOutcome DnspodClient::CreateDomainGroup(const CreateDomainGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDomainGroup");
@@ -635,6 +678,49 @@ DnspodClient::DeleteDomainBatchOutcomeCallable DnspodClient::DeleteDomainBatchCa
         [this, request]()
         {
             return this->DeleteDomainBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DeleteDomainCustomLineOutcome DnspodClient::DeleteDomainCustomLine(const DeleteDomainCustomLineRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDomainCustomLine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDomainCustomLineResponse rsp = DeleteDomainCustomLineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDomainCustomLineOutcome(rsp);
+        else
+            return DeleteDomainCustomLineOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDomainCustomLineOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DeleteDomainCustomLineAsync(const DeleteDomainCustomLineRequest& request, const DeleteDomainCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDomainCustomLine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DeleteDomainCustomLineOutcomeCallable DnspodClient::DeleteDomainCustomLineCallable(const DeleteDomainCustomLineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDomainCustomLineOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDomainCustomLine(request);
         }
     );
 
@@ -1022,6 +1108,49 @@ DnspodClient::DescribeDomainAnalyticsOutcomeCallable DnspodClient::DescribeDomai
         [this, request]()
         {
             return this->DescribeDomainAnalytics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeDomainCustomLineListOutcome DnspodClient::DescribeDomainCustomLineList(const DescribeDomainCustomLineListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainCustomLineList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainCustomLineListResponse rsp = DescribeDomainCustomLineListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainCustomLineListOutcome(rsp);
+        else
+            return DescribeDomainCustomLineListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainCustomLineListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeDomainCustomLineListAsync(const DescribeDomainCustomLineListRequest& request, const DescribeDomainCustomLineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainCustomLineList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeDomainCustomLineListOutcomeCallable DnspodClient::DescribeDomainCustomLineListCallable(const DescribeDomainCustomLineListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainCustomLineListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainCustomLineList(request);
         }
     );
 
@@ -2097,6 +2226,49 @@ DnspodClient::DownloadSnapshotOutcomeCallable DnspodClient::DownloadSnapshotCall
         [this, request]()
         {
             return this->DownloadSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::ModifyDomainCustomLineOutcome DnspodClient::ModifyDomainCustomLine(const ModifyDomainCustomLineRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDomainCustomLine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDomainCustomLineResponse rsp = ModifyDomainCustomLineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDomainCustomLineOutcome(rsp);
+        else
+            return ModifyDomainCustomLineOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDomainCustomLineOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyDomainCustomLineAsync(const ModifyDomainCustomLineRequest& request, const ModifyDomainCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDomainCustomLine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyDomainCustomLineOutcomeCallable DnspodClient::ModifyDomainCustomLineCallable(const ModifyDomainCustomLineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDomainCustomLineOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDomainCustomLine(request);
         }
     );
 

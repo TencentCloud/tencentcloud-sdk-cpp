@@ -247,15 +247,15 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取任务类型 1:在线 2:离线  默认为1
-                     * @return ModelType 任务类型 1:在线 2:离线  默认为1
+                     * 获取模型类型 1:在线 2:离线  默认为1
+                     * @return ModelType 模型类型 1:在线 2:离线  默认为1
                      * 
                      */
                     int64_t GetModelType() const;
 
                     /**
-                     * 设置任务类型 1:在线 2:离线  默认为1
-                     * @param _modelType 任务类型 1:在线 2:离线  默认为1
+                     * 设置模型类型 1:在线 2:离线  默认为1
+                     * @param _modelType 模型类型 1:在线 2:离线  默认为1
                      * 
                      */
                     void SetModelType(const int64_t& _modelType);
@@ -266,6 +266,52 @@ namespace TencentCloud
                      * 
                      */
                     bool ModelTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务类型 0:默认类型 1:轻量级复刻
+默认为0
+                     * @return TaskType 任务类型 0:默认类型 1:轻量级复刻
+默认为0
+                     * 
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置任务类型 0:默认类型 1:轻量级复刻
+默认为0
+                     * @param _taskType 任务类型 0:默认类型 1:轻量级复刻
+默认为0
+                     * 
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取校验音频ID
+                     * @return VPRAudioId 校验音频ID
+                     * 
+                     */
+                    std::string GetVPRAudioId() const;
+
+                    /**
+                     * 设置校验音频ID
+                     * @param _vPRAudioId 校验音频ID
+                     * 
+                     */
+                    void SetVPRAudioId(const std::string& _vPRAudioId);
+
+                    /**
+                     * 判断参数 VPRAudioId 是否已赋值
+                     * @return VPRAudioId 是否已赋值
+                     * 
+                     */
+                    bool VPRAudioIdHasBeenSet() const;
 
                 private:
 
@@ -327,10 +373,23 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 任务类型 1:在线 2:离线  默认为1
+                     * 模型类型 1:在线 2:离线  默认为1
                      */
                     int64_t m_modelType;
                     bool m_modelTypeHasBeenSet;
+
+                    /**
+                     * 任务类型 0:默认类型 1:轻量级复刻
+默认为0
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 校验音频ID
+                     */
+                    std::string m_vPRAudioId;
+                    bool m_vPRAudioIdHasBeenSet;
 
                 };
             }

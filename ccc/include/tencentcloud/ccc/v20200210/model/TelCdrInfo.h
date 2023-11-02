@@ -176,6 +176,31 @@ namespace TencentCloud
                     bool RecordURLHasBeenSet() const;
 
                     /**
+                     * 获取录音 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecordId 录音 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRecordId() const;
+
+                    /**
+                     * 设置录音 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _recordId 录音 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRecordId(const std::string& _recordId);
+
+                    /**
+                     * 判断参数 RecordId 是否已赋值
+                     * @return RecordId 是否已赋值
+                     * 
+                     */
+                    bool RecordIdHasBeenSet() const;
+
+                    /**
                      * 获取坐席信息
                      * @return SeatUser 坐席信息
                      * 
@@ -1253,6 +1278,13 @@ namespace TencentCloud
                      */
                     std::string m_recordURL;
                     bool m_recordURLHasBeenSet;
+
+                    /**
+                     * 录音 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recordId;
+                    bool m_recordIdHasBeenSet;
 
                     /**
                      * 坐席信息

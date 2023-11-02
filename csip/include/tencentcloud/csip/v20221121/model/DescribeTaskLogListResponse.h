@@ -92,6 +92,22 @@ namespace TencentCloud
                      */
                     bool NotViewNumberHasBeenSet() const;
 
+                    /**
+                     * 获取报告模板数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportTemplateNumber 报告模板数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetReportTemplateNumber() const;
+
+                    /**
+                     * 判断参数 ReportTemplateNumber 是否已赋值
+                     * @return ReportTemplateNumber 是否已赋值
+                     * 
+                     */
+                    bool ReportTemplateNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,6 +130,13 @@ namespace TencentCloud
                      */
                     int64_t m_notViewNumber;
                     bool m_notViewNumberHasBeenSet;
+
+                    /**
+                     * 报告模板数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_reportTemplateNumber;
+                    bool m_reportTemplateNumberHasBeenSet;
 
                 };
             }

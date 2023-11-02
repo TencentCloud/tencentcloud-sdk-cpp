@@ -30,7 +30,8 @@ ChannelCreateReleaseFlowRequest::ChannelCreateReleaseFlowRequest() :
     m_callbackUrlHasBeenSet(false),
     m_organizationHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_deadlineHasBeenSet(false)
+    m_deadlineHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,14 @@ string ChannelCreateReleaseFlowRequest::ToJsonString() const
         string key = "Deadline";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deadline, allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -250,6 +259,22 @@ void ChannelCreateReleaseFlowRequest::SetDeadline(const int64_t& _deadline)
 bool ChannelCreateReleaseFlowRequest::DeadlineHasBeenSet() const
 {
     return m_deadlineHasBeenSet;
+}
+
+string ChannelCreateReleaseFlowRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void ChannelCreateReleaseFlowRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool ChannelCreateReleaseFlowRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 

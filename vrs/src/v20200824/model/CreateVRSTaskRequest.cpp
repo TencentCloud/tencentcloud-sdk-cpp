@@ -31,7 +31,9 @@ CreateVRSTaskRequest::CreateVRSTaskRequest() :
     m_codecHasBeenSet(false),
     m_audioIdListHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
-    m_modelTypeHasBeenSet(false)
+    m_modelTypeHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_vPRAudioIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,22 @@ string CreateVRSTaskRequest::ToJsonString() const
         string key = "ModelType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_modelType, allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_vPRAudioIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VPRAudioId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vPRAudioId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -269,6 +287,38 @@ void CreateVRSTaskRequest::SetModelType(const int64_t& _modelType)
 bool CreateVRSTaskRequest::ModelTypeHasBeenSet() const
 {
     return m_modelTypeHasBeenSet;
+}
+
+int64_t CreateVRSTaskRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void CreateVRSTaskRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool CreateVRSTaskRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+string CreateVRSTaskRequest::GetVPRAudioId() const
+{
+    return m_vPRAudioId;
+}
+
+void CreateVRSTaskRequest::SetVPRAudioId(const string& _vPRAudioId)
+{
+    m_vPRAudioId = _vPRAudioId;
+    m_vPRAudioIdHasBeenSet = true;
+}
+
+bool CreateVRSTaskRequest::VPRAudioIdHasBeenSet() const
+{
+    return m_vPRAudioIdHasBeenSet;
 }
 
 

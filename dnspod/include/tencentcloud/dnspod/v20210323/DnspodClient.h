@@ -35,6 +35,8 @@
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainAliasResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainBatchRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainBatchResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateDomainCustomLineRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateDomainCustomLineResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainGroupRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainAliasResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainBatchRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainBatchResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteDomainCustomLineRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteDomainCustomLineResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordBatchRequest.h>
@@ -69,6 +73,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAliasListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainCustomLineListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainCustomLineListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainFilterListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainFilterListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainGroupListRequest.h>
@@ -119,6 +125,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeVASStatisticResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyDomainCustomLineRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyDomainCustomLineResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainLockRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainLockResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainOwnerRequest.h>
@@ -191,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDomainBatchResponse> CreateDomainBatchOutcome;
                 typedef std::future<CreateDomainBatchOutcome> CreateDomainBatchOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateDomainBatchRequest&, CreateDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDomainCustomLineResponse> CreateDomainCustomLineOutcome;
+                typedef std::future<CreateDomainCustomLineOutcome> CreateDomainCustomLineOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateDomainCustomLineRequest&, CreateDomainCustomLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainCustomLineAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDomainGroupResponse> CreateDomainGroupOutcome;
                 typedef std::future<CreateDomainGroupOutcome> CreateDomainGroupOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateDomainGroupRequest&, CreateDomainGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainGroupAsyncHandler;
@@ -215,6 +226,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDomainBatchResponse> DeleteDomainBatchOutcome;
                 typedef std::future<DeleteDomainBatchOutcome> DeleteDomainBatchOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteDomainBatchRequest&, DeleteDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDomainCustomLineResponse> DeleteDomainCustomLineOutcome;
+                typedef std::future<DeleteDomainCustomLineOutcome> DeleteDomainCustomLineOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DeleteDomainCustomLineRequest&, DeleteDomainCustomLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainCustomLineAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRecordResponse> DeleteRecordOutcome;
                 typedef std::future<DeleteRecordOutcome> DeleteRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteRecordRequest&, DeleteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordAsyncHandler;
@@ -242,6 +256,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainAnalyticsResponse> DescribeDomainAnalyticsOutcome;
                 typedef std::future<DescribeDomainAnalyticsOutcome> DescribeDomainAnalyticsOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainAnalyticsRequest&, DescribeDomainAnalyticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAnalyticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainCustomLineListResponse> DescribeDomainCustomLineListOutcome;
+                typedef std::future<DescribeDomainCustomLineListOutcome> DescribeDomainCustomLineListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainCustomLineListRequest&, DescribeDomainCustomLineListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainCustomLineListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainFilterListResponse> DescribeDomainFilterListOutcome;
                 typedef std::future<DescribeDomainFilterListOutcome> DescribeDomainFilterListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainFilterListRequest&, DescribeDomainFilterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainFilterListAsyncHandler;
@@ -317,6 +334,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadSnapshotResponse> DownloadSnapshotOutcome;
                 typedef std::future<DownloadSnapshotOutcome> DownloadSnapshotOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DownloadSnapshotRequest&, DownloadSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDomainCustomLineResponse> ModifyDomainCustomLineOutcome;
+                typedef std::future<ModifyDomainCustomLineOutcome> ModifyDomainCustomLineOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyDomainCustomLineRequest&, ModifyDomainCustomLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainCustomLineAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainLockResponse> ModifyDomainLockOutcome;
                 typedef std::future<ModifyDomainLockOutcome> ModifyDomainLockOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyDomainLockRequest&, ModifyDomainLockOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainLockAsyncHandler;
@@ -435,6 +455,15 @@ namespace TencentCloud
                 CreateDomainBatchOutcomeCallable CreateDomainBatchCallable(const Model::CreateDomainBatchRequest& request);
 
                 /**
+                 *创建域名的自定义线路
+                 * @param req CreateDomainCustomLineRequest
+                 * @return CreateDomainCustomLineOutcome
+                 */
+                CreateDomainCustomLineOutcome CreateDomainCustomLine(const Model::CreateDomainCustomLineRequest &request);
+                void CreateDomainCustomLineAsync(const Model::CreateDomainCustomLineRequest& request, const CreateDomainCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDomainCustomLineOutcomeCallable CreateDomainCustomLineCallable(const Model::CreateDomainCustomLineRequest& request);
+
+                /**
                  *创建域名分组
                  * @param req CreateDomainGroupRequest
                  * @return CreateDomainGroupOutcome
@@ -505,6 +534,15 @@ namespace TencentCloud
                 DeleteDomainBatchOutcome DeleteDomainBatch(const Model::DeleteDomainBatchRequest &request);
                 void DeleteDomainBatchAsync(const Model::DeleteDomainBatchRequest& request, const DeleteDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDomainBatchOutcomeCallable DeleteDomainBatchCallable(const Model::DeleteDomainBatchRequest& request);
+
+                /**
+                 *删除域名的自定义线路
+                 * @param req DeleteDomainCustomLineRequest
+                 * @return DeleteDomainCustomLineOutcome
+                 */
+                DeleteDomainCustomLineOutcome DeleteDomainCustomLine(const Model::DeleteDomainCustomLineRequest &request);
+                void DeleteDomainCustomLineAsync(const Model::DeleteDomainCustomLineRequest& request, const DeleteDomainCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDomainCustomLineOutcomeCallable DeleteDomainCustomLineCallable(const Model::DeleteDomainCustomLineRequest& request);
 
                 /**
                  *删除记录
@@ -586,6 +624,15 @@ namespace TencentCloud
                 DescribeDomainAnalyticsOutcome DescribeDomainAnalytics(const Model::DescribeDomainAnalyticsRequest &request);
                 void DescribeDomainAnalyticsAsync(const Model::DescribeDomainAnalyticsRequest& request, const DescribeDomainAnalyticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainAnalyticsOutcomeCallable DescribeDomainAnalyticsCallable(const Model::DescribeDomainAnalyticsRequest& request);
+
+                /**
+                 *获取域名的自定义线路列表
+                 * @param req DescribeDomainCustomLineListRequest
+                 * @return DescribeDomainCustomLineListOutcome
+                 */
+                DescribeDomainCustomLineListOutcome DescribeDomainCustomLineList(const Model::DescribeDomainCustomLineListRequest &request);
+                void DescribeDomainCustomLineListAsync(const Model::DescribeDomainCustomLineListRequest& request, const DescribeDomainCustomLineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainCustomLineListOutcomeCallable DescribeDomainCustomLineListCallable(const Model::DescribeDomainCustomLineListRequest& request);
 
                 /**
                  *获取域名筛选列表
@@ -811,6 +858,15 @@ namespace TencentCloud
                 DownloadSnapshotOutcome DownloadSnapshot(const Model::DownloadSnapshotRequest &request);
                 void DownloadSnapshotAsync(const Model::DownloadSnapshotRequest& request, const DownloadSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadSnapshotOutcomeCallable DownloadSnapshotCallable(const Model::DownloadSnapshotRequest& request);
+
+                /**
+                 *修改域名的自定义线路
+                 * @param req ModifyDomainCustomLineRequest
+                 * @return ModifyDomainCustomLineOutcome
+                 */
+                ModifyDomainCustomLineOutcome ModifyDomainCustomLine(const Model::ModifyDomainCustomLineRequest &request);
+                void ModifyDomainCustomLineAsync(const Model::ModifyDomainCustomLineRequest& request, const ModifyDomainCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDomainCustomLineOutcomeCallable ModifyDomainCustomLineCallable(const Model::ModifyDomainCustomLineRequest& request);
 
                 /**
                  *锁定域名

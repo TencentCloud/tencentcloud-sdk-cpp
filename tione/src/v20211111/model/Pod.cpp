@@ -28,7 +28,8 @@ Pod::Pod() :
     m_iPHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_containersHasBeenSet(false),
-    m_containerInfosHasBeenSet(false)
+    m_containerInfosHasBeenSet(false),
+    m_crossTenantENIInfoHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,23 @@ CoreInternalOutcome Pod::Deserialize(const rapidjson::Value &value)
         m_containerInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("CrossTenantENIInfo") && !value["CrossTenantENIInfo"].IsNull())
+    {
+        if (!value["CrossTenantENIInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.CrossTenantENIInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_crossTenantENIInfo.Deserialize(value["CrossTenantENIInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_crossTenantENIInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +229,15 @@ void Pod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_crossTenantENIInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossTenantENIInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_crossTenantENIInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -342,5 +369,21 @@ void Pod::SetContainerInfos(const vector<Container>& _containerInfos)
 bool Pod::ContainerInfosHasBeenSet() const
 {
     return m_containerInfosHasBeenSet;
+}
+
+CrossTenantENIInfo Pod::GetCrossTenantENIInfo() const
+{
+    return m_crossTenantENIInfo;
+}
+
+void Pod::SetCrossTenantENIInfo(const CrossTenantENIInfo& _crossTenantENIInfo)
+{
+    m_crossTenantENIInfo = _crossTenantENIInfo;
+    m_crossTenantENIInfoHasBeenSet = true;
+}
+
+bool Pod::CrossTenantENIInfoHasBeenSet() const
+{
+    return m_crossTenantENIInfoHasBeenSet;
 }
 

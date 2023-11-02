@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入图片base64
-                     * @return Image 输入图片base64
+                     * 获取输入图片base64。
+                     * @return Image 输入图片base64。
                      * 
                      */
                     std::string GetImage() const;
 
                     /**
-                     * 设置输入图片base64
-                     * @param _image 输入图片base64
+                     * 设置输入图片base64。
+                     * @param _image 输入图片base64。
                      * 
                      */
                     void SetImage(const std::string& _image);
@@ -69,15 +69,19 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取输入图片url
-                     * @return Url 输入图片url
+                     * 获取输入图片url。
+Url、Image必须提供一个，如果都提供，只使用 Url。
+                     * @return Url 输入图片url。
+Url、Image必须提供一个，如果都提供，只使用 Url。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置输入图片url
-                     * @param _url 输入图片url
+                     * 设置输入图片url。
+Url、Image必须提供一个，如果都提供，只使用 Url。
+                     * @param _url 输入图片url。
+Url、Image必须提供一个，如果都提供，只使用 Url。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -90,15 +94,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取上传的图片人脸位置信息（人脸框）
-                     * @return InputImageFaceRect 上传的图片人脸位置信息（人脸框）
+                     * 获取输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。
+                     * @return InputImageFaceRect 输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。
                      * 
                      */
                     FaceRect GetInputImageFaceRect() const;
 
                     /**
-                     * 设置上传的图片人脸位置信息（人脸框）
-                     * @param _inputImageFaceRect 上传的图片人脸位置信息（人脸框）
+                     * 设置输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。
+                     * @param _inputImageFaceRect 输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。
                      * 
                      */
                     void SetInputImageFaceRect(const FaceRect& _inputImageFaceRect);
@@ -111,15 +115,15 @@ namespace TencentCloud
                     bool InputImageFaceRectHasBeenSet() const;
 
                     /**
-                     * 获取控制台上传的素材人脸ID，不填默认取最大人脸
-                     * @return TemplateFaceID 控制台上传的素材人脸ID，不填默认取最大人脸
+                     * 获取素材人脸ID，不填默认取素材中最大人脸。
+                     * @return TemplateFaceID 素材人脸ID，不填默认取素材中最大人脸。
                      * 
                      */
                     std::string GetTemplateFaceID() const;
 
                     /**
-                     * 设置控制台上传的素材人脸ID，不填默认取最大人脸
-                     * @param _templateFaceID 控制台上传的素材人脸ID，不填默认取最大人脸
+                     * 设置素材人脸ID，不填默认取素材中最大人脸。
+                     * @param _templateFaceID 素材人脸ID，不填默认取素材中最大人脸。
                      * 
                      */
                     void SetTemplateFaceID(const std::string& _templateFaceID);
@@ -134,25 +138,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入图片base64
+                     * 输入图片base64。
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 输入图片url
+                     * 输入图片url。
+Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 上传的图片人脸位置信息（人脸框）
+                     * 输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。
                      */
                     FaceRect m_inputImageFaceRect;
                     bool m_inputImageFaceRectHasBeenSet;
 
                     /**
-                     * 控制台上传的素材人脸ID，不填默认取最大人脸
+                     * 素材人脸ID，不填默认取素材中最大人脸。
                      */
                     std::string m_templateFaceID;
                     bool m_templateFaceIDHasBeenSet;

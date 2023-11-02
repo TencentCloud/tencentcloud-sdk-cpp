@@ -197,6 +197,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeTopicMsgsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeTopicMsgsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ImportRocketMQConsumerGroupsRequest.h>
@@ -540,6 +542,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSubscriptionsResponse> DescribeSubscriptionsOutcome;
                 typedef std::future<DescribeSubscriptionsOutcome> DescribeSubscriptionsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeSubscriptionsRequest&, DescribeSubscriptionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscriptionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopicMsgsResponse> DescribeTopicMsgsOutcome;
+                typedef std::future<DescribeTopicMsgsOutcome> DescribeTopicMsgsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeTopicMsgsRequest&, DescribeTopicMsgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicMsgsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
                 typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
@@ -1427,6 +1432,15 @@ namespace TencentCloud
                 DescribeSubscriptionsOutcome DescribeSubscriptions(const Model::DescribeSubscriptionsRequest &request);
                 void DescribeSubscriptionsAsync(const Model::DescribeSubscriptionsRequest& request, const DescribeSubscriptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSubscriptionsOutcomeCallable DescribeSubscriptionsCallable(const Model::DescribeSubscriptionsRequest& request);
+
+                /**
+                 *消息查询
+                 * @param req DescribeTopicMsgsRequest
+                 * @return DescribeTopicMsgsOutcome
+                 */
+                DescribeTopicMsgsOutcome DescribeTopicMsgs(const Model::DescribeTopicMsgsRequest &request);
+                void DescribeTopicMsgsAsync(const Model::DescribeTopicMsgsRequest& request, const DescribeTopicMsgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopicMsgsOutcomeCallable DescribeTopicMsgsCallable(const Model::DescribeTopicMsgsRequest& request);
 
                 /**
                  *获取环境下主题列表

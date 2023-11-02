@@ -27,6 +27,7 @@ TelCdrInfo::TelCdrInfo() :
     m_directionHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_recordURLHasBeenSet(false),
+    m_recordIdHasBeenSet(false),
     m_seatUserHasBeenSet(false),
     m_endStatusHasBeenSet(false),
     m_skillGroupHasBeenSet(false),
@@ -122,6 +123,16 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         }
         m_recordURL = string(value["RecordURL"].GetString());
         m_recordURLHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordId") && !value["RecordId"].IsNull())
+    {
+        if (!value["RecordId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.RecordId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordId = string(value["RecordId"].GetString());
+        m_recordIdHasBeenSet = true;
     }
 
     if (value.HasMember("SeatUser") && !value["SeatUser"].IsNull())
@@ -515,6 +526,14 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_recordURL.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_seatUserHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -881,6 +900,22 @@ void TelCdrInfo::SetRecordURL(const string& _recordURL)
 bool TelCdrInfo::RecordURLHasBeenSet() const
 {
     return m_recordURLHasBeenSet;
+}
+
+string TelCdrInfo::GetRecordId() const
+{
+    return m_recordId;
+}
+
+void TelCdrInfo::SetRecordId(const string& _recordId)
+{
+    m_recordId = _recordId;
+    m_recordIdHasBeenSet = true;
+}
+
+bool TelCdrInfo::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
 }
 
 SeatUserInfo TelCdrInfo::GetSeatUser() const

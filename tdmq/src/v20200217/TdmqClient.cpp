@@ -3781,6 +3781,49 @@ TdmqClient::DescribeSubscriptionsOutcomeCallable TdmqClient::DescribeSubscriptio
     return task->get_future();
 }
 
+TdmqClient::DescribeTopicMsgsOutcome TdmqClient::DescribeTopicMsgs(const DescribeTopicMsgsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopicMsgs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopicMsgsResponse rsp = DescribeTopicMsgsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopicMsgsOutcome(rsp);
+        else
+            return DescribeTopicMsgsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopicMsgsOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeTopicMsgsAsync(const DescribeTopicMsgsRequest& request, const DescribeTopicMsgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopicMsgs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeTopicMsgsOutcomeCallable TdmqClient::DescribeTopicMsgsCallable(const DescribeTopicMsgsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopicMsgsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopicMsgs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeTopicsOutcome TdmqClient::DescribeTopics(const DescribeTopicsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopics");

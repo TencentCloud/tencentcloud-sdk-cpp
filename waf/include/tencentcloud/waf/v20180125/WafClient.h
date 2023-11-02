@@ -946,7 +946,9 @@ namespace TencentCloud
                 DescribeAntiFakeRulesOutcomeCallable DescribeAntiFakeRulesCallable(const Model::DescribeAntiFakeRulesRequest& request);
 
                 /**
-                 *获取防篡改url
+                 *废弃接口
+
+获取防篡改url
                  * @param req DescribeAntiFakeUrlRequest
                  * @return DescribeAntiFakeUrlOutcome
                  */
@@ -1022,7 +1024,9 @@ namespace TencentCloud
                 DescribeBatchIpAccessControlOutcomeCallable DescribeBatchIpAccessControlCallable(const Model::DescribeBatchIpAccessControlRequest& request);
 
                 /**
-                 *Waf  CC V2 Query接口
+                 *没有在使用。
+
+Waf  CC V2 Query接口
                  * @param req DescribeCCRuleRequest
                  * @return DescribeCCRuleOutcome
                  */

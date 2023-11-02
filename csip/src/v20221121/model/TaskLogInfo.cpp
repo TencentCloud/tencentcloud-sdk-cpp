@@ -32,7 +32,9 @@ TaskLogInfo::TaskLogInfo() :
     m_taskCenterTaskIdHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uINHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_reportTypeHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome TaskLogInfo::Deserialize(const rapidjson::Value &value)
         m_userNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ReportType") && !value["ReportType"].IsNull())
+    {
+        if (!value["ReportType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskLogInfo.ReportType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportType = value["ReportType"].GetInt64();
+        m_reportTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TemplateId") && !value["TemplateId"].IsNull())
+    {
+        if (!value["TemplateId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskLogInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateId = value["TemplateId"].GetInt64();
+        m_templateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void TaskLogInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reportTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reportType, allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_templateId, allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void TaskLogInfo::SetUserName(const string& _userName)
 bool TaskLogInfo::UserNameHasBeenSet() const
 {
     return m_userNameHasBeenSet;
+}
+
+int64_t TaskLogInfo::GetReportType() const
+{
+    return m_reportType;
+}
+
+void TaskLogInfo::SetReportType(const int64_t& _reportType)
+{
+    m_reportType = _reportType;
+    m_reportTypeHasBeenSet = true;
+}
+
+bool TaskLogInfo::ReportTypeHasBeenSet() const
+{
+    return m_reportTypeHasBeenSet;
+}
+
+int64_t TaskLogInfo::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void TaskLogInfo::SetTemplateId(const int64_t& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool TaskLogInfo::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 

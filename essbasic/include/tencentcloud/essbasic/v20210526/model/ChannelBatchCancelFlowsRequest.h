@@ -45,15 +45,47 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -66,15 +98,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取签署流程Id数组，最多100个，超过100不处理
-                     * @return FlowIds 签署流程Id数组，最多100个，超过100不处理
+                     * 获取要撤销的合同流程ID列表，最多100个，超过100不处理
+                     * @return FlowIds 要撤销的合同流程ID列表，最多100个，超过100不处理
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置签署流程Id数组，最多100个，超过100不处理
-                     * @param _flowIds 签署流程Id数组，最多100个，超过100不处理
+                     * 设置要撤销的合同流程ID列表，最多100个，超过100不处理
+                     * @param _flowIds 要撤销的合同流程ID列表，最多100个，超过100不处理
                      * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
@@ -87,15 +119,23 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取撤销理由,不超过200个字符
-                     * @return CancelMessage 撤销理由,不超过200个字符
+                     * 获取撤回原因，长度不能超过200，只能由中文、字母、数字和下划线组成。
+
+备注:`如果不传递撤回原因，那么默认撤回原因是 "自动撤销（通过接口实现）"`
+                     * @return CancelMessage 撤回原因，长度不能超过200，只能由中文、字母、数字和下划线组成。
+
+备注:`如果不传递撤回原因，那么默认撤回原因是 "自动撤销（通过接口实现）"`
                      * 
                      */
                     std::string GetCancelMessage() const;
 
                     /**
-                     * 设置撤销理由,不超过200个字符
-                     * @param _cancelMessage 撤销理由,不超过200个字符
+                     * 设置撤回原因，长度不能超过200，只能由中文、字母、数字和下划线组成。
+
+备注:`如果不传递撤回原因，那么默认撤回原因是 "自动撤销（通过接口实现）"`
+                     * @param _cancelMessage 撤回原因，长度不能超过200，只能由中文、字母、数字和下划线组成。
+
+备注:`如果不传递撤回原因，那么默认撤回原因是 "自动撤销（通过接口实现）"`
                      * 
                      */
                     void SetCancelMessage(const std::string& _cancelMessage);
@@ -108,63 +148,59 @@ namespace TencentCloud
                     bool CancelMessageHasBeenSet() const;
 
                     /**
-                     * 获取撤销理由自定义格式，支持以下格式
-<ul><li>0 : 默认值</li>
-<li>1 : 只保留身份信息</li>
-<li>2 : 保留身份信息+企业名称</li>
-<li>3 : 保留身份信息+企业名称+经办人名称</li></ul>
-例如,假设合同的发起方是典子谦示例企业的经办人张三，撤销理由是"合同内容错误，需要修正",合同撤销后，各签署方看到的撤销理由是会是
+                     * 获取撤销理由自定义格式,  会展示在合同预览的界面中,  可以选择下面的组合方式：
 
-0: 发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同
-1: 发起方以"合同内容错误，需要修正"的理由撤销当前合同
-2: 发起方-典子谦示例企业以"合同内容错误，需要修正"的理由撤销当前合同
-3: 发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同</br>
+**0** : 默认格式,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同
+**1** :  合同封面页面会展示为:  发起方以**CancelMessage**的理由撤销当前合同
+**2** : 保留企业名称,  合同封面页面会展示为:  发起方-企业名称以**CancelMessage**的理由撤销当前合同
+**3** : 保留企业名称+经办人名字,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同
 
-备注:`如果不传递撤销理由，那么默认撤销理由是 "自动撤销（通过接口实现）"`
-                     * @return CancelMessageFormat 撤销理由自定义格式，支持以下格式
-<ul><li>0 : 默认值</li>
-<li>1 : 只保留身份信息</li>
-<li>2 : 保留身份信息+企业名称</li>
-<li>3 : 保留身份信息+企业名称+经办人名称</li></ul>
-例如,假设合同的发起方是典子谦示例企业的经办人张三，撤销理由是"合同内容错误，需要修正",合同撤销后，各签署方看到的撤销理由是会是
+注: `CancelMessage为撤销当前合同的理由`
 
-0: 发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同
-1: 发起方以"合同内容错误，需要修正"的理由撤销当前合同
-2: 发起方-典子谦示例企业以"合同内容错误，需要修正"的理由撤销当前合同
-3: 发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同</br>
+![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)
 
-备注:`如果不传递撤销理由，那么默认撤销理由是 "自动撤销（通过接口实现）"`
+
+                     * @return CancelMessageFormat 撤销理由自定义格式,  会展示在合同预览的界面中,  可以选择下面的组合方式：
+
+**0** : 默认格式,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同
+**1** :  合同封面页面会展示为:  发起方以**CancelMessage**的理由撤销当前合同
+**2** : 保留企业名称,  合同封面页面会展示为:  发起方-企业名称以**CancelMessage**的理由撤销当前合同
+**3** : 保留企业名称+经办人名字,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同
+
+注: `CancelMessage为撤销当前合同的理由`
+
+![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)
+
+
                      * 
                      */
                     int64_t GetCancelMessageFormat() const;
 
                     /**
-                     * 设置撤销理由自定义格式，支持以下格式
-<ul><li>0 : 默认值</li>
-<li>1 : 只保留身份信息</li>
-<li>2 : 保留身份信息+企业名称</li>
-<li>3 : 保留身份信息+企业名称+经办人名称</li></ul>
-例如,假设合同的发起方是典子谦示例企业的经办人张三，撤销理由是"合同内容错误，需要修正",合同撤销后，各签署方看到的撤销理由是会是
+                     * 设置撤销理由自定义格式,  会展示在合同预览的界面中,  可以选择下面的组合方式：
 
-0: 发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同
-1: 发起方以"合同内容错误，需要修正"的理由撤销当前合同
-2: 发起方-典子谦示例企业以"合同内容错误，需要修正"的理由撤销当前合同
-3: 发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同</br>
+**0** : 默认格式,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同
+**1** :  合同封面页面会展示为:  发起方以**CancelMessage**的理由撤销当前合同
+**2** : 保留企业名称,  合同封面页面会展示为:  发起方-企业名称以**CancelMessage**的理由撤销当前合同
+**3** : 保留企业名称+经办人名字,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同
 
-备注:`如果不传递撤销理由，那么默认撤销理由是 "自动撤销（通过接口实现）"`
-                     * @param _cancelMessageFormat 撤销理由自定义格式，支持以下格式
-<ul><li>0 : 默认值</li>
-<li>1 : 只保留身份信息</li>
-<li>2 : 保留身份信息+企业名称</li>
-<li>3 : 保留身份信息+企业名称+经办人名称</li></ul>
-例如,假设合同的发起方是典子谦示例企业的经办人张三，撤销理由是"合同内容错误，需要修正",合同撤销后，各签署方看到的撤销理由是会是
+注: `CancelMessage为撤销当前合同的理由`
 
-0: 发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同
-1: 发起方以"合同内容错误，需要修正"的理由撤销当前合同
-2: 发起方-典子谦示例企业以"合同内容错误，需要修正"的理由撤销当前合同
-3: 发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同</br>
+![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)
 
-备注:`如果不传递撤销理由，那么默认撤销理由是 "自动撤销（通过接口实现）"`
+
+                     * @param _cancelMessageFormat 撤销理由自定义格式,  会展示在合同预览的界面中,  可以选择下面的组合方式：
+
+**0** : 默认格式,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同
+**1** :  合同封面页面会展示为:  发起方以**CancelMessage**的理由撤销当前合同
+**2** : 保留企业名称,  合同封面页面会展示为:  发起方-企业名称以**CancelMessage**的理由撤销当前合同
+**3** : 保留企业名称+经办人名字,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同
+
+注: `CancelMessage为撤销当前合同的理由`
+
+![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)
+
+
                      * 
                      */
                     void SetCancelMessageFormat(const int64_t& _cancelMessageFormat);
@@ -200,37 +236,46 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 签署流程Id数组，最多100个，超过100不处理
+                     * 要撤销的合同流程ID列表，最多100个，超过100不处理
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 撤销理由,不超过200个字符
+                     * 撤回原因，长度不能超过200，只能由中文、字母、数字和下划线组成。
+
+备注:`如果不传递撤回原因，那么默认撤回原因是 "自动撤销（通过接口实现）"`
                      */
                     std::string m_cancelMessage;
                     bool m_cancelMessageHasBeenSet;
 
                     /**
-                     * 撤销理由自定义格式，支持以下格式
-<ul><li>0 : 默认值</li>
-<li>1 : 只保留身份信息</li>
-<li>2 : 保留身份信息+企业名称</li>
-<li>3 : 保留身份信息+企业名称+经办人名称</li></ul>
-例如,假设合同的发起方是典子谦示例企业的经办人张三，撤销理由是"合同内容错误，需要修正",合同撤销后，各签署方看到的撤销理由是会是
+                     * 撤销理由自定义格式,  会展示在合同预览的界面中,  可以选择下面的组合方式：
 
-0: 发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同
-1: 发起方以"合同内容错误，需要修正"的理由撤销当前合同
-2: 发起方-典子谦示例企业以"合同内容错误，需要修正"的理由撤销当前合同
-3: 发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同</br>
+**0** : 默认格式,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同
+**1** :  合同封面页面会展示为:  发起方以**CancelMessage**的理由撤销当前合同
+**2** : 保留企业名称,  合同封面页面会展示为:  发起方-企业名称以**CancelMessage**的理由撤销当前合同
+**3** : 保留企业名称+经办人名字,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同
 
-备注:`如果不传递撤销理由，那么默认撤销理由是 "自动撤销（通过接口实现）"`
+注: `CancelMessage为撤销当前合同的理由`
+
+![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)
+
+
                      */
                     int64_t m_cancelMessageFormat;
                     bool m_cancelMessageFormatHasBeenSet;
