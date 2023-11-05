@@ -262,6 +262,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/Parameter.h
   include/tencentcloud/sqlserver/v20180328/model/DeleteDBInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeNameResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/StopMigrationResponse.h
   include/tencentcloud/sqlserver/v20180328/model/CreateAccountResponse.h
   include/tencentcloud/sqlserver/v20180328/model/RenewPostpaidDBInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupUploadSizeRequest.h
@@ -283,7 +284,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceProjectRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyBackupNameRequest.h
-  include/tencentcloud/sqlserver/v20180328/model/StopMigrationResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/SlowLog.h
   include/tencentcloud/sqlserver/v20180328/model/DBRenameRes.h
   include/tencentcloud/sqlserver/v20180328/model/CreatePublishSubscribeResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeUploadBackupInfoRequest.h
@@ -555,6 +556,7 @@ set(sqlserver_src
   src/v20180328/model/Parameter.cpp
   src/v20180328/model/DeleteDBInstanceRequest.cpp
   src/v20180328/model/ModifyPublishSubscribeNameResponse.cpp
+  src/v20180328/model/StopMigrationResponse.cpp
   src/v20180328/model/CreateAccountResponse.cpp
   src/v20180328/model/RenewPostpaidDBInstanceResponse.cpp
   src/v20180328/model/DescribeBackupUploadSizeRequest.cpp
@@ -576,7 +578,7 @@ set(sqlserver_src
   src/v20180328/model/ModifyDBInstanceProjectRequest.cpp
   src/v20180328/model/DisassociateSecurityGroupsRequest.cpp
   src/v20180328/model/ModifyBackupNameRequest.cpp
-  src/v20180328/model/StopMigrationResponse.cpp
+  src/v20180328/model/SlowLog.cpp
   src/v20180328/model/DBRenameRes.cpp
   src/v20180328/model/CreatePublishSubscribeResponse.cpp
   src/v20180328/model/DescribeUploadBackupInfoRequest.cpp

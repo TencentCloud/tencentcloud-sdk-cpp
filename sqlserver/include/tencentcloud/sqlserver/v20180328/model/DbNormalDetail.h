@@ -196,21 +196,21 @@ namespace TencentCloud
                     /**
                      * 获取是否全文启用 0：否 1：是
                      * @return IsFulltextEnabled 是否全文启用 0：否 1：是
-                     * 
+                     * @deprecated
                      */
                     std::string GetIsFulltextEnabled() const;
 
                     /**
                      * 设置是否全文启用 0：否 1：是
                      * @param _isFulltextEnabled 是否全文启用 0：否 1：是
-                     * 
+                     * @deprecated
                      */
                     void SetIsFulltextEnabled(const std::string& _isFulltextEnabled);
 
                     /**
                      * 判断参数 IsFulltextEnabled 是否已赋值
                      * @return IsFulltextEnabled 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsFulltextEnabledHasBeenSet() const;
 
@@ -445,6 +445,31 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否全文启用 0：否 1：是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsFullTextEnabled 是否全文启用 0：否 1：是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIsFullTextEnabled() const;
+
+                    /**
+                     * 设置是否全文启用 0：否 1：是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isFullTextEnabled 是否全文启用 0：否 1：是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsFullTextEnabled(const std::string& _isFullTextEnabled);
+
+                    /**
+                     * 判断参数 IsFullTextEnabled 是否已赋值
+                     * @return IsFullTextEnabled 是否已赋值
+                     * 
+                     */
+                    bool IsFullTextEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +585,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 是否全文启用 0：否 1：是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isFullTextEnabled;
+                    bool m_isFullTextEnabledHasBeenSet;
 
                 };
             }

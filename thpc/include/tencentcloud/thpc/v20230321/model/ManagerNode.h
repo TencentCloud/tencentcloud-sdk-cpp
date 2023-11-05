@@ -28,6 +28,7 @@
 #include <tencentcloud/thpc/v20230321/model/SystemDisk.h>
 #include <tencentcloud/thpc/v20230321/model/DataDisk.h>
 #include <tencentcloud/thpc/v20230321/model/InternetAccessible.h>
+#include <tencentcloud/thpc/v20230321/model/EnhancedService.h>
 
 
 namespace TencentCloud
@@ -238,6 +239,27 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务、自动化助手服务。
+                     * @return EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务、自动化助手服务。
+                     * 
+                     */
+                    EnhancedService GetEnhancedService() const;
+
+                    /**
+                     * 设置增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务、自动化助手服务。
+                     * @param _enhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务、自动化助手服务。
+                     * 
+                     */
+                    void SetEnhancedService(const EnhancedService& _enhancedService);
+
+                    /**
+                     * 判断参数 EnhancedService 是否已赋值
+                     * @return EnhancedService 是否已赋值
+                     * 
+                     */
+                    bool EnhancedServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,6 +314,12 @@ namespace TencentCloud
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务、自动化助手服务。
+                     */
+                    EnhancedService m_enhancedService;
+                    bool m_enhancedServiceHasBeenSet;
 
                 };
             }

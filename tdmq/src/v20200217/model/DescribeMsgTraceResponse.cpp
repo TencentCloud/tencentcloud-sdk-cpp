@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeMsgTraceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Sqlserver::V20180328::Model;
+using namespace TencentCloud::Tdmq::V20200217::Model;
 using namespace std;
 
-ModifyBackupStrategyResponse::ModifyBackupStrategyResponse() :
-    m_errnoHasBeenSet(false),
-    m_msgHasBeenSet(false),
-    m_codeHasBeenSet(false)
+DescribeMsgTraceResponse::DescribeMsgTraceResponse() :
+    m_producerLogHasBeenSet(false),
+    m_serverLogHasBeenSet(false),
+    m_consumerLogsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyBackupStrategyResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeMsgTraceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,68 +64,92 @@ CoreInternalOutcome ModifyBackupStrategyResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("Errno") && !rsp["Errno"].IsNull())
+    if (rsp.HasMember("ProducerLog") && !rsp["ProducerLog"].IsNull())
     {
-        if (!rsp["Errno"].IsInt64())
+        if (!rsp["ProducerLog"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `Errno` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProducerLog` is not object type").SetRequestId(requestId));
         }
-        m_errno = rsp["Errno"].GetInt64();
-        m_errnoHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_producerLog.Deserialize(rsp["ProducerLog"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_producerLogHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Msg") && !rsp["Msg"].IsNull())
+    if (rsp.HasMember("ServerLog") && !rsp["ServerLog"].IsNull())
     {
-        if (!rsp["Msg"].IsString())
+        if (!rsp["ServerLog"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `Msg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerLog` is not object type").SetRequestId(requestId));
         }
-        m_msg = string(rsp["Msg"].GetString());
-        m_msgHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_serverLog.Deserialize(rsp["ServerLog"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_serverLogHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Code") && !rsp["Code"].IsNull())
+    if (rsp.HasMember("ConsumerLogs") && !rsp["ConsumerLogs"].IsNull())
     {
-        if (!rsp["Code"].IsInt64())
+        if (!rsp["ConsumerLogs"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerLogs` is not object type").SetRequestId(requestId));
         }
-        m_code = rsp["Code"].GetInt64();
-        m_codeHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_consumerLogs.Deserialize(rsp["ConsumerLogs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_consumerLogsHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ModifyBackupStrategyResponse::ToJsonString() const
+string DescribeMsgTraceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_errnoHasBeenSet)
+    if (m_producerLogHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Errno";
+        string key = "ProducerLog";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_errno, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_producerLog.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_msgHasBeenSet)
+    if (m_serverLogHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Msg";
+        string key = "ServerLog";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_msg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serverLog.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_codeHasBeenSet)
+    if (m_consumerLogsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Code";
+        string key = "ConsumerLogs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_code, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_consumerLogs.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +164,34 @@ string ModifyBackupStrategyResponse::ToJsonString() const
 }
 
 
-int64_t ModifyBackupStrategyResponse::GetErrno() const
+ProducerLog DescribeMsgTraceResponse::GetProducerLog() const
 {
-    return m_errno;
+    return m_producerLog;
 }
 
-bool ModifyBackupStrategyResponse::ErrnoHasBeenSet() const
+bool DescribeMsgTraceResponse::ProducerLogHasBeenSet() const
 {
-    return m_errnoHasBeenSet;
+    return m_producerLogHasBeenSet;
 }
 
-string ModifyBackupStrategyResponse::GetMsg() const
+ServerLog DescribeMsgTraceResponse::GetServerLog() const
 {
-    return m_msg;
+    return m_serverLog;
 }
 
-bool ModifyBackupStrategyResponse::MsgHasBeenSet() const
+bool DescribeMsgTraceResponse::ServerLogHasBeenSet() const
 {
-    return m_msgHasBeenSet;
+    return m_serverLogHasBeenSet;
 }
 
-int64_t ModifyBackupStrategyResponse::GetCode() const
+ConsumerLogs DescribeMsgTraceResponse::GetConsumerLogs() const
 {
-    return m_code;
+    return m_consumerLogs;
 }
 
-bool ModifyBackupStrategyResponse::CodeHasBeenSet() const
+bool DescribeMsgTraceResponse::ConsumerLogsHasBeenSet() const
 {
-    return m_codeHasBeenSet;
+    return m_consumerLogsHasBeenSet;
 }
 
 

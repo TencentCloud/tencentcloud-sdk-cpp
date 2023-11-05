@@ -46,14 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回错误码
                      * @return Errno 返回错误码
-                     * 
+                     * @deprecated
                      */
                     int64_t GetErrno() const;
 
                     /**
                      * 判断参数 Errno 是否已赋值
                      * @return Errno 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ErrnoHasBeenSet() const;
 
@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool MsgHasBeenSet() const;
 
+                    /**
+                     * 获取返回错误码
+                     * @return Code 返回错误码
+                     * 
+                     */
+                    int64_t GetCode() const;
+
+                    /**
+                     * 判断参数 Code 是否已赋值
+                     * @return Code 是否已赋值
+                     * 
+                     */
+                    bool CodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,12 @@ namespace TencentCloud
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;
+
+                    /**
+                     * 返回错误码
+                     */
+                    int64_t m_code;
+                    bool m_codeHasBeenSet;
 
                 };
             }

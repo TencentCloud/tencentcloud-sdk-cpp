@@ -127,6 +127,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeMsgTraceRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeMsgTraceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeNodeHealthOptRequest.h>
@@ -437,6 +439,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
                 typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMsgTraceResponse> DescribeMsgTraceOutcome;
+                typedef std::future<DescribeMsgTraceOutcome> DescribeMsgTraceOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeMsgTraceRequest&, DescribeMsgTraceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMsgTraceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNamespaceBundlesOptResponse> DescribeNamespaceBundlesOptOutcome;
                 typedef std::future<DescribeNamespaceBundlesOptOutcome> DescribeNamespaceBundlesOptOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeNamespaceBundlesOptRequest&, DescribeNamespaceBundlesOptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNamespaceBundlesOptAsyncHandler;
@@ -1117,6 +1122,15 @@ namespace TencentCloud
                 DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest &request);
                 void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request);
+
+                /**
+                 *查询消息轨迹
+                 * @param req DescribeMsgTraceRequest
+                 * @return DescribeMsgTraceOutcome
+                 */
+                DescribeMsgTraceOutcome DescribeMsgTrace(const Model::DescribeMsgTraceRequest &request);
+                void DescribeMsgTraceAsync(const Model::DescribeMsgTraceRequest& request, const DescribeMsgTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMsgTraceOutcomeCallable DescribeMsgTraceCallable(const Model::DescribeMsgTraceRequest& request);
 
                 /**
                  *运营端获取命名空间bundle列表

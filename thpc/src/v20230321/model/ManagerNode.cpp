@@ -28,7 +28,8 @@ ManagerNode::ManagerNode() :
     m_dataDisksHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_enhancedServiceHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,23 @@ CoreInternalOutcome ManagerNode::Deserialize(const rapidjson::Value &value)
         m_projectIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EnhancedService") && !value["EnhancedService"].IsNull())
+    {
+        if (!value["EnhancedService"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManagerNode.EnhancedService` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_enhancedService.Deserialize(value["EnhancedService"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_enhancedServiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -227,6 +245,15 @@ void ManagerNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_enhancedServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhancedService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enhancedService.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -358,5 +385,21 @@ void ManagerNode::SetProjectId(const int64_t& _projectId)
 bool ManagerNode::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+EnhancedService ManagerNode::GetEnhancedService() const
+{
+    return m_enhancedService;
+}
+
+void ManagerNode::SetEnhancedService(const EnhancedService& _enhancedService)
+{
+    m_enhancedService = _enhancedService;
+    m_enhancedServiceHasBeenSet = true;
+}
+
+bool ManagerNode::EnhancedServiceHasBeenSet() const
+{
+    return m_enhancedServiceHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第三方平台应用号Id
-                     * @return ApplicationId 第三方平台应用号Id
+                     * 获取合同归属的第三方平台应用号ID
+                     * @return ApplicationId 合同归属的第三方平台应用号ID
                      * 
                      */
                     std::string GetApplicationId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业OpenId
-                     * @return ProxyOrganizationOpenId 第三方平台子客企业OpenId
+                     * 获取合同归属的第三方平台子客企业OpenId
+                     * @return ProxyOrganizationOpenId 合同归属的第三方平台子客企业OpenId
                      * 
                      */
                     std::string GetProxyOrganizationOpenId() const;
@@ -73,9 +73,11 @@ namespace TencentCloud
                     bool ProxyOrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取合同(签署流程)的具体详细描述信息
+                     * 获取合同流程的详细信息。
+如果查询的是合同组信息，则返回的是组内所有子合同流程的详细信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowInfo 合同(签署流程)的具体详细描述信息
+                     * @return FlowInfo 合同流程的详细信息。
+如果查询的是合同组信息，则返回的是组内所有子合同流程的详细信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -89,9 +91,9 @@ namespace TencentCloud
                     bool FlowInfoHasBeenSet() const;
 
                     /**
-                     * 获取合同组编号
+                     * 获取合同组ID，只有在查询合同组信息时才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowGroupId 合同组编号
+                     * @return FlowGroupId 合同组ID，只有在查询合同组信息时才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -105,9 +107,9 @@ namespace TencentCloud
                     bool FlowGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取合同组名称
+                     * 获取合同组名称，只有在查询合同组信息时才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowGroupName 合同组名称
+                     * @return FlowGroupName 合同组名称，只有在查询合同组信息时才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,33 +125,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 第三方平台应用号Id
+                     * 合同归属的第三方平台应用号ID
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业OpenId
+                     * 合同归属的第三方平台子客企业OpenId
                      */
                     std::string m_proxyOrganizationOpenId;
                     bool m_proxyOrganizationOpenIdHasBeenSet;
 
                     /**
-                     * 合同(签署流程)的具体详细描述信息
+                     * 合同流程的详细信息。
+如果查询的是合同组信息，则返回的是组内所有子合同流程的详细信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FlowDetailInfo> m_flowInfo;
                     bool m_flowInfoHasBeenSet;
 
                     /**
-                     * 合同组编号
+                     * 合同组ID，只有在查询合同组信息时才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
-                     * 合同组名称
+                     * 合同组名称，只有在查询合同组信息时才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowGroupName;

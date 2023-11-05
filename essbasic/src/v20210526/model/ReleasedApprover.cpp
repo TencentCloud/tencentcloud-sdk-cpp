@@ -21,13 +21,13 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ReleasedApprover::ReleasedApprover() :
-    m_organizationNameHasBeenSet(false),
     m_approverNumberHasBeenSet(false),
     m_approverTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_idCardTypeHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
     m_mobileHasBeenSet(false),
+    m_organizationNameHasBeenSet(false),
     m_organizationOpenIdHasBeenSet(false),
     m_openIdHasBeenSet(false),
     m_approverSignComponentTypeHasBeenSet(false),
@@ -39,16 +39,6 @@ CoreInternalOutcome ReleasedApprover::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
-    {
-        if (!value["OrganizationName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ReleasedApprover.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_organizationName = string(value["OrganizationName"].GetString());
-        m_organizationNameHasBeenSet = true;
-    }
 
     if (value.HasMember("ApproverNumber") && !value["ApproverNumber"].IsNull())
     {
@@ -110,6 +100,16 @@ CoreInternalOutcome ReleasedApprover::Deserialize(const rapidjson::Value &value)
         m_mobileHasBeenSet = true;
     }
 
+    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
+    {
+        if (!value["OrganizationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleasedApprover.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationName = string(value["OrganizationName"].GetString());
+        m_organizationNameHasBeenSet = true;
+    }
+
     if (value.HasMember("OrganizationOpenId") && !value["OrganizationOpenId"].IsNull())
     {
         if (!value["OrganizationOpenId"].IsString())
@@ -156,14 +156,6 @@ CoreInternalOutcome ReleasedApprover::Deserialize(const rapidjson::Value &value)
 
 void ReleasedApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_organizationNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrganizationName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_approverNumberHasBeenSet)
     {
@@ -213,6 +205,14 @@ void ReleasedApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_organizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_organizationOpenIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -247,22 +247,6 @@ void ReleasedApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Document
 
 }
 
-
-string ReleasedApprover::GetOrganizationName() const
-{
-    return m_organizationName;
-}
-
-void ReleasedApprover::SetOrganizationName(const string& _organizationName)
-{
-    m_organizationName = _organizationName;
-    m_organizationNameHasBeenSet = true;
-}
-
-bool ReleasedApprover::OrganizationNameHasBeenSet() const
-{
-    return m_organizationNameHasBeenSet;
-}
 
 uint64_t ReleasedApprover::GetApproverNumber() const
 {
@@ -358,6 +342,22 @@ void ReleasedApprover::SetMobile(const string& _mobile)
 bool ReleasedApprover::MobileHasBeenSet() const
 {
     return m_mobileHasBeenSet;
+}
+
+string ReleasedApprover::GetOrganizationName() const
+{
+    return m_organizationName;
+}
+
+void ReleasedApprover::SetOrganizationName(const string& _organizationName)
+{
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
+}
+
+bool ReleasedApprover::OrganizationNameHasBeenSet() const
+{
+    return m_organizationNameHasBeenSet;
 }
 
 string ReleasedApprover::GetOrganizationOpenId() const

@@ -39,7 +39,8 @@ DbNormalDetail::DbNormalDetail() :
     m_retentionPeriodHasBeenSet(false),
     m_stateDescHasBeenSet(false),
     m_userAccessDescHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_isFullTextEnabledHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsFullTextEnabled") && !value["IsFullTextEnabled"].IsNull())
+    {
+        if (!value["IsFullTextEnabled"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsFullTextEnabled` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isFullTextEnabled = string(value["IsFullTextEnabled"].GetString());
+        m_isFullTextEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +406,14 @@ void DbNormalDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isFullTextEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFullTextEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isFullTextEnabled.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +721,21 @@ void DbNormalDetail::SetCreateTime(const string& _createTime)
 bool DbNormalDetail::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string DbNormalDetail::GetIsFullTextEnabled() const
+{
+    return m_isFullTextEnabled;
+}
+
+void DbNormalDetail::SetIsFullTextEnabled(const string& _isFullTextEnabled)
+{
+    m_isFullTextEnabled = _isFullTextEnabled;
+    m_isFullTextEnabledHasBeenSet = true;
+}
+
+bool DbNormalDetail::IsFullTextEnabledHasBeenSet() const
+{
+    return m_isFullTextEnabledHasBeenSet;
 }
 

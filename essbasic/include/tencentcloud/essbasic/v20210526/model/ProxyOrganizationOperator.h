@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 合作企业经办人列表信息
+                * 同步的员工的信息
                 */
                 class ProxyOrganizationOperator : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
-                     * @return Id 对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * 获取员工的唯一标识(即OpenId),  定义Agent中的OpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>
+                     * @return Id 员工的唯一标识(即OpenId),  定义Agent中的OpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
-                     * @param _id 对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * 设置员工的唯一标识(即OpenId),  定义Agent中的OpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>
+                     * @param _id 员工的唯一标识(即OpenId),  定义Agent中的OpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -68,15 +68,19 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取经办人姓名，最大长度50个字符
-                     * @return Name 经办人姓名，最大长度50个字符
+                     * 获取员工的姓名，最大长度50个字符
+员工的姓名将用于身份认证和电子签名，请确保填写的姓名为真实姓名，而非昵称等代名。
+                     * @return Name 员工的姓名，最大长度50个字符
+员工的姓名将用于身份认证和电子签名，请确保填写的姓名为真实姓名，而非昵称等代名。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置经办人姓名，最大长度50个字符
-                     * @param _name 经办人姓名，最大长度50个字符
+                     * 设置员工的姓名，最大长度50个字符
+员工的姓名将用于身份认证和电子签名，请确保填写的姓名为真实姓名，而非昵称等代名。
+                     * @param _name 员工的姓名，最大长度50个字符
+员工的姓名将用于身份认证和电子签名，请确保填写的姓名为真实姓名，而非昵称等代名。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,27 +93,31 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取经办人身份证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-                     * @return IdCardType 经办人身份证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * 获取签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+
+                     * @return IdCardType 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+
                      * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置经办人身份证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-                     * @param _idCardType 经办人身份证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * 设置签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+
+                     * @param _idCardType 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -143,15 +151,15 @@ namespace TencentCloud
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
-                     * @return Mobile 经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
+                     * 获取员工的手机号，支持国内手机号11位数字(无需加+86前缀或其他字符)，不支持海外手机号。
+                     * @return Mobile 员工的手机号，支持国内手机号11位数字(无需加+86前缀或其他字符)，不支持海外手机号。
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
-                     * @param _mobile 经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
+                     * 设置员工的手机号，支持国内手机号11位数字(无需加+86前缀或其他字符)，不支持海外手机号。
+                     * @param _mobile 员工的手机号，支持国内手机号11位数字(无需加+86前缀或其他字符)，不支持海外手机号。
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -164,27 +172,19 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取默认角色，值为以下三个对应的英文：
-业务管理员：admin
-经办人：channel-normal-operator
-业务员：channel-sales-man
-                     * @return DefaultRole 默认角色，值为以下三个对应的英文：
-业务管理员：admin
-经办人：channel-normal-operator
-业务员：channel-sales-man
+                     * 获取预先分配员工的角色, 可以分配的角色如下:
+<table> <thead> <tr> <th>可以分配的角色</th> <th>角色名称</th> <th>角色描述</th> </tr> </thead> <tbody> <tr> <td>admin</td> <td>业务管理员（IT 系统负责人，e.g. CTO）</td> <td>有企业合同模块、印章模块、模板模块等全量功能及数据权限。</td> </tr> <tr> <td>channel-normal-operator</td> <td>经办人（企业法务负责人）</td> <td>有发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看企业所有合同数据。</td> </tr> <tr> <td>channel-sales-man</td> <td>业务员（一般为销售员、采购员）</td> <td>有发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看自己相关所有合同数据。</td> </tr> </tbody> </table>
+                     * @return DefaultRole 预先分配员工的角色, 可以分配的角色如下:
+<table> <thead> <tr> <th>可以分配的角色</th> <th>角色名称</th> <th>角色描述</th> </tr> </thead> <tbody> <tr> <td>admin</td> <td>业务管理员（IT 系统负责人，e.g. CTO）</td> <td>有企业合同模块、印章模块、模板模块等全量功能及数据权限。</td> </tr> <tr> <td>channel-normal-operator</td> <td>经办人（企业法务负责人）</td> <td>有发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看企业所有合同数据。</td> </tr> <tr> <td>channel-sales-man</td> <td>业务员（一般为销售员、采购员）</td> <td>有发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看自己相关所有合同数据。</td> </tr> </tbody> </table>
                      * 
                      */
                     std::string GetDefaultRole() const;
 
                     /**
-                     * 设置默认角色，值为以下三个对应的英文：
-业务管理员：admin
-经办人：channel-normal-operator
-业务员：channel-sales-man
-                     * @param _defaultRole 默认角色，值为以下三个对应的英文：
-业务管理员：admin
-经办人：channel-normal-operator
-业务员：channel-sales-man
+                     * 设置预先分配员工的角色, 可以分配的角色如下:
+<table> <thead> <tr> <th>可以分配的角色</th> <th>角色名称</th> <th>角色描述</th> </tr> </thead> <tbody> <tr> <td>admin</td> <td>业务管理员（IT 系统负责人，e.g. CTO）</td> <td>有企业合同模块、印章模块、模板模块等全量功能及数据权限。</td> </tr> <tr> <td>channel-normal-operator</td> <td>经办人（企业法务负责人）</td> <td>有发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看企业所有合同数据。</td> </tr> <tr> <td>channel-sales-man</td> <td>业务员（一般为销售员、采购员）</td> <td>有发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看自己相关所有合同数据。</td> </tr> </tbody> </table>
+                     * @param _defaultRole 预先分配员工的角色, 可以分配的角色如下:
+<table> <thead> <tr> <th>可以分配的角色</th> <th>角色名称</th> <th>角色描述</th> </tr> </thead> <tbody> <tr> <td>admin</td> <td>业务管理员（IT 系统负责人，e.g. CTO）</td> <td>有企业合同模块、印章模块、模板模块等全量功能及数据权限。</td> </tr> <tr> <td>channel-normal-operator</td> <td>经办人（企业法务负责人）</td> <td>有发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看企业所有合同数据。</td> </tr> <tr> <td>channel-sales-man</td> <td>业务员（一般为销售员、采购员）</td> <td>有发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看自己相关所有合同数据。</td> </tr> </tbody> </table>
                      * 
                      */
                     void SetDefaultRole(const std::string& _defaultRole);
@@ -199,22 +199,24 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * 员工的唯一标识(即OpenId),  定义Agent中的OpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 经办人姓名，最大长度50个字符
+                     * 员工的姓名，最大长度50个字符
+员工的姓名将用于身份认证和电子签名，请确保填写的姓名为真实姓名，而非昵称等代名。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 经办人身份证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
@@ -226,16 +228,14 @@ namespace TencentCloud
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
+                     * 员工的手机号，支持国内手机号11位数字(无需加+86前缀或其他字符)，不支持海外手机号。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 默认角色，值为以下三个对应的英文：
-业务管理员：admin
-经办人：channel-normal-operator
-业务员：channel-sales-man
+                     * 预先分配员工的角色, 可以分配的角色如下:
+<table> <thead> <tr> <th>可以分配的角色</th> <th>角色名称</th> <th>角色描述</th> </tr> </thead> <tbody> <tr> <td>admin</td> <td>业务管理员（IT 系统负责人，e.g. CTO）</td> <td>有企业合同模块、印章模块、模板模块等全量功能及数据权限。</td> </tr> <tr> <td>channel-normal-operator</td> <td>经办人（企业法务负责人）</td> <td>有发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看企业所有合同数据。</td> </tr> <tr> <td>channel-sales-man</td> <td>业务员（一般为销售员、采购员）</td> <td>有发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看自己相关所有合同数据。</td> </tr> </tbody> </table>
                      */
                     std::string m_defaultRole;
                     bool m_defaultRoleHasBeenSet;

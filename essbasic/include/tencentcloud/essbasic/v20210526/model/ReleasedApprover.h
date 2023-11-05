@@ -35,16 +35,17 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 解除协议的签署人，如不指定，默认使用待解除流程（即原流程）中的签署人。
-注意：不支持更换C端（个人身份类型）签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。
-注意：目前不支持替换C端（个人身份类型）签署人，但是可以指定C端签署人的签署方自定义控件别名，具体见参数ApproverSignRole描述。 
-注意：当指定C端签署人的签署方自定义控件别名不空时，除参数ApproverNumber外，可以只参数ApproverSignRole。
+                * 解除协议的签署人，如不指定，默认使用待解除流程(原流程)中的签署人。</br>
+`注意`:
+ - 不支持更换C端(个人身份类型)签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。
+ - 目前不支持替换C端(个人身份类型)签署人，但是可以指定C端签署人的签署方自定义控件别名，具体见参数ApproverSignRole描述。 
+ - 当指定C端签署人的签署方自定义控件别名不空时，除参数ApproverNumber外，可以只传参数ApproverSignRole。
 
-如果需要指定B端（机构身份类型）签署人，其中ReleasedApprover需要传递的参数如下：
-ApproverNumber, OrganizationName, ApproverType必传。
-对于其他身份标识
-- 子客企业指定经办人：OpenId必传，OrganizationOpenId必传；
-- 非子客企业：Name、Mobile必传。
+如果需要指定B端(企业身份类型)签署人，其中ReleasedApprover需要传递的参数如下：
+`ApproverNumber`, `OrganizationName`, `ApproverType`必传。</br>
+对于其他身份标识：
+- **子客企业指定经办人**：OpenId必传，OrganizationOpenId必传；
+- **非子客企业经办人**：Name、Mobile必传。
                 */
                 class ReleasedApprover : public AbstractModel
                 {
@@ -56,36 +57,19 @@ ApproverNumber, OrganizationName, ApproverType必传。
 
 
                     /**
-                     * 获取企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符
-                     * @return OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符
-                     * 
-                     */
-                    std::string GetOrganizationName() const;
-
-                    /**
-                     * 设置企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符
-                     * @param _organizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符
-                     * 
-                     */
-                    void SetOrganizationName(const std::string& _organizationName);
-
-                    /**
-                     * 判断参数 OrganizationName 是否已赋值
-                     * @return OrganizationName 是否已赋值
-                     * 
-                     */
-                    bool OrganizationNameHasBeenSet() const;
-
-                    /**
-                     * 获取签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看
-                     * @return ApproverNumber 签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看
+                     * 获取签署人在原合同签署人列表中的顺序序号(从0开始，按顺序依次递增)。</br>
+可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo" target="_blank">DescribeFlowDetailInfo</a>接口查看原流程中的签署人列表。
+                     * @return ApproverNumber 签署人在原合同签署人列表中的顺序序号(从0开始，按顺序依次递增)。</br>
+可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo" target="_blank">DescribeFlowDetailInfo</a>接口查看原流程中的签署人列表。
                      * 
                      */
                     uint64_t GetApproverNumber() const;
 
                     /**
-                     * 设置签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看
-                     * @param _approverNumber 签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看
+                     * 设置签署人在原合同签署人列表中的顺序序号(从0开始，按顺序依次递增)。</br>
+可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo" target="_blank">DescribeFlowDetailInfo</a>接口查看原流程中的签署人列表。
+                     * @param _approverNumber 签署人在原合同签署人列表中的顺序序号(从0开始，按顺序依次递增)。</br>
+可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo" target="_blank">DescribeFlowDetailInfo</a>接口查看原流程中的签署人列表。
                      * 
                      */
                     void SetApproverNumber(const uint64_t& _approverNumber);
@@ -98,23 +82,23 @@ ApproverNumber, OrganizationName, ApproverType必传。
                     bool ApproverNumberHasBeenSet() const;
 
                     /**
-                     * 获取签署人类型，目前仅支持
-ORGANIZATION-企业
-ENTERPRISESERVER-企业静默签
-                     * @return ApproverType 签署人类型，目前仅支持
-ORGANIZATION-企业
-ENTERPRISESERVER-企业静默签
+                     * 获取指定签署人类型，目前支持
+<ul><li> **ORGANIZATION**：企业（默认值）</li>
+<li> **ENTERPRISESERVER**：企业静默签</li></ul>
+                     * @return ApproverType 指定签署人类型，目前支持
+<ul><li> **ORGANIZATION**：企业（默认值）</li>
+<li> **ENTERPRISESERVER**：企业静默签</li></ul>
                      * 
                      */
                     std::string GetApproverType() const;
 
                     /**
-                     * 设置签署人类型，目前仅支持
-ORGANIZATION-企业
-ENTERPRISESERVER-企业静默签
-                     * @param _approverType 签署人类型，目前仅支持
-ORGANIZATION-企业
-ENTERPRISESERVER-企业静默签
+                     * 设置指定签署人类型，目前支持
+<ul><li> **ORGANIZATION**：企业（默认值）</li>
+<li> **ENTERPRISESERVER**：企业静默签</li></ul>
+                     * @param _approverType 指定签署人类型，目前支持
+<ul><li> **ORGANIZATION**：企业（默认值）</li>
+<li> **ENTERPRISESERVER**：企业静默签</li></ul>
                      * 
                      */
                     void SetApproverType(const std::string& _approverType);
@@ -127,15 +111,15 @@ ENTERPRISESERVER-企业静默签
                     bool ApproverTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署人姓名，最大长度50个字符
-                     * @return Name 签署人姓名，最大长度50个字符
+                     * 获取签署人姓名，最大长度50个字。
+                     * @return Name 签署人姓名，最大长度50个字。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置签署人姓名，最大长度50个字符
-                     * @param _name 签署人姓名，最大长度50个字符
+                     * 设置签署人姓名，最大长度50个字。
+                     * @param _name 签署人姓名，最大长度50个字。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -148,27 +132,27 @@ ENTERPRISESERVER-企业静默签
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取签署人身份证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-                     * @return IdCardType 签署人身份证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * 获取签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+                     * @return IdCardType 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
                      * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置签署人身份证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-                     * @param _idCardType 签署人身份证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * 设置签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+                     * @param _idCardType 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -181,15 +165,27 @@ ENTERPRISESERVER-企业静默签
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署人证件号
-                     * @return IdCardNumber 签署人证件号
+                     * 获取证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @return IdCardNumber 证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置签署人证件号
-                     * @param _idCardNumber 签署人证件号
+                     * 设置证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @param _idCardNumber 证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -202,15 +198,15 @@ ENTERPRISESERVER-企业静默签
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号
-                     * @return Mobile 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号
+                     * 获取签署人手机号。
+                     * @return Mobile 签署人手机号。
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号
-                     * @param _mobile 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号
+                     * 设置签署人手机号。
+                     * @param _mobile 签署人手机号。
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -223,15 +219,52 @@ ENTERPRISESERVER-企业静默签
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
-                     * @return OrganizationOpenId 企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * 获取组织机构名称。
+请确认该名称与企业营业执照中注册的名称一致。
+如果名称中包含英文括号()，请使用中文括号（）代替。
+如果签署方是企业签署方(approverType = 0 或者 approverType = 3)， 则企业名称必填。
+                     * @return OrganizationName 组织机构名称。
+请确认该名称与企业营业执照中注册的名称一致。
+如果名称中包含英文括号()，请使用中文括号（）代替。
+如果签署方是企业签署方(approverType = 0 或者 approverType = 3)， 则企业名称必填。
+                     * 
+                     */
+                    std::string GetOrganizationName() const;
+
+                    /**
+                     * 设置组织机构名称。
+请确认该名称与企业营业执照中注册的名称一致。
+如果名称中包含英文括号()，请使用中文括号（）代替。
+如果签署方是企业签署方(approverType = 0 或者 approverType = 3)， 则企业名称必填。
+                     * @param _organizationName 组织机构名称。
+请确认该名称与企业营业执照中注册的名称一致。
+如果名称中包含英文括号()，请使用中文括号（）代替。
+如果签署方是企业签署方(approverType = 0 或者 approverType = 3)， 则企业名称必填。
+                     * 
+                     */
+                    void SetOrganizationName(const std::string& _organizationName);
+
+                    /**
+                     * 判断参数 OrganizationName 是否已赋值
+                     * @return OrganizationName 是否已赋值
+                     * 
+                     */
+                    bool OrganizationNameHasBeenSet() const;
+
+                    /**
+                     * 获取第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。</br>
+当为子客企业指定经办人时，此OrganizationOpenId必传。
+                     * @return OrganizationOpenId 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。</br>
+当为子客企业指定经办人时，此OrganizationOpenId必传。
                      * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
-                     * @param _organizationOpenId 企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * 设置第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。</br>
+当为子客企业指定经办人时，此OrganizationOpenId必传。
+                     * @param _organizationOpenId 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。</br>
+当为子客企业指定经办人时，此OrganizationOpenId必传。
                      * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
@@ -244,19 +277,19 @@ ENTERPRISESERVER-企业静默签
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取用户侧第三方id，最大长度64个字符
-当签署方为同一第三方应用下的员工时，该字必传
-                     * @return OpenId 用户侧第三方id，最大长度64个字符
-当签署方为同一第三方应用下的员工时，该字必传
+                     * 获取第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。</br>
+当签署方为同一第三方平台下的员工时，此OpenId必传。
+                     * @return OpenId 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。</br>
+当签署方为同一第三方平台下的员工时，此OpenId必传。
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户侧第三方id，最大长度64个字符
-当签署方为同一第三方应用下的员工时，该字必传
-                     * @param _openId 用户侧第三方id，最大长度64个字符
-当签署方为同一第三方应用下的员工时，该字必传
+                     * 设置第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。</br>
+当签署方为同一第三方平台下的员工时，此OpenId必传。
+                     * @param _openId 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。</br>
+当签署方为同一第三方平台下的员工时，此OpenId必传。
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -269,23 +302,23 @@ ENTERPRISESERVER-企业静默签
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”
-- SIGN_SEAL-默认为印章控件类型
-- SIGN_SIGNATURE-手写签名控件类型
-                     * @return ApproverSignComponentType 签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”
-- SIGN_SEAL-默认为印章控件类型
-- SIGN_SIGNATURE-手写签名控件类型
+                     * 获取签署控件类型，支持自定义企业签署方的签署控件类型
+<ul><li> **SIGN_SEAL**：默认为印章控件类型(默认值)</li>
+<li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
+                     * @return ApproverSignComponentType 签署控件类型，支持自定义企业签署方的签署控件类型
+<ul><li> **SIGN_SEAL**：默认为印章控件类型(默认值)</li>
+<li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
                      * 
                      */
                     std::string GetApproverSignComponentType() const;
 
                     /**
-                     * 设置签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”
-- SIGN_SEAL-默认为印章控件类型
-- SIGN_SIGNATURE-手写签名控件类型
-                     * @param _approverSignComponentType 签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”
-- SIGN_SEAL-默认为印章控件类型
-- SIGN_SIGNATURE-手写签名控件类型
+                     * 设置签署控件类型，支持自定义企业签署方的签署控件类型
+<ul><li> **SIGN_SEAL**：默认为印章控件类型(默认值)</li>
+<li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
+                     * @param _approverSignComponentType 签署控件类型，支持自定义企业签署方的签署控件类型
+<ul><li> **SIGN_SEAL**：默认为印章控件类型(默认值)</li>
+<li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
                      * 
                      */
                     void SetApproverSignComponentType(const std::string& _approverSignComponentType);
@@ -298,15 +331,19 @@ ENTERPRISESERVER-企业静默签
                     bool ApproverSignComponentTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署方自定义控件别名，最大长度20个字符
-                     * @return ApproverSignRole 签署方自定义控件别名，最大长度20个字符
+                     * 获取参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。</br>
+如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。
+                     * @return ApproverSignRole 参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。</br>
+如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。
                      * 
                      */
                     std::string GetApproverSignRole() const;
 
                     /**
-                     * 设置签署方自定义控件别名，最大长度20个字符
-                     * @param _approverSignRole 签署方自定义控件别名，最大长度20个字符
+                     * 设置参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。</br>
+如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。
+                     * @param _approverSignRole 参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。</br>
+如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。
                      * 
                      */
                     void SetApproverSignRole(const std::string& _approverSignRole);
@@ -321,75 +358,84 @@ ENTERPRISESERVER-企业静默签
                 private:
 
                     /**
-                     * 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符
-                     */
-                    std::string m_organizationName;
-                    bool m_organizationNameHasBeenSet;
-
-                    /**
-                     * 签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看
+                     * 签署人在原合同签署人列表中的顺序序号(从0开始，按顺序依次递增)。</br>
+可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo" target="_blank">DescribeFlowDetailInfo</a>接口查看原流程中的签署人列表。
                      */
                     uint64_t m_approverNumber;
                     bool m_approverNumberHasBeenSet;
 
                     /**
-                     * 签署人类型，目前仅支持
-ORGANIZATION-企业
-ENTERPRISESERVER-企业静默签
+                     * 指定签署人类型，目前支持
+<ul><li> **ORGANIZATION**：企业（默认值）</li>
+<li> **ENTERPRISESERVER**：企业静默签</li></ul>
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;
 
                     /**
-                     * 签署人姓名，最大长度50个字符
+                     * 签署人姓名，最大长度50个字。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 签署人身份证件类型
-1.ID_CARD 居民身份证
-2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
-3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 签署人证件号
+                     * 证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号
+                     * 签署人手机号。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * 组织机构名称。
+请确认该名称与企业营业执照中注册的名称一致。
+如果名称中包含英文括号()，请使用中文括号（）代替。
+如果签署方是企业签署方(approverType = 0 或者 approverType = 3)， 则企业名称必填。
+                     */
+                    std::string m_organizationName;
+                    bool m_organizationNameHasBeenSet;
+
+                    /**
+                     * 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。</br>
+当为子客企业指定经办人时，此OrganizationOpenId必传。
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
-                     * 用户侧第三方id，最大长度64个字符
-当签署方为同一第三方应用下的员工时，该字必传
+                     * 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。</br>
+当签署方为同一第三方平台下的员工时，此OpenId必传。
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * 签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”
-- SIGN_SEAL-默认为印章控件类型
-- SIGN_SIGNATURE-手写签名控件类型
+                     * 签署控件类型，支持自定义企业签署方的签署控件类型
+<ul><li> **SIGN_SEAL**：默认为印章控件类型(默认值)</li>
+<li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
                      */
                     std::string m_approverSignComponentType;
                     bool m_approverSignComponentTypeHasBeenSet;
 
                     /**
-                     * 签署方自定义控件别名，最大长度20个字符
+                     * 参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。</br>
+如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。
                      */
                     std::string m_approverSignRole;
                     bool m_approverSignRoleHasBeenSet;

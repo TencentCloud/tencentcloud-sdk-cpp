@@ -2276,6 +2276,49 @@ TdmqClient::DescribeEnvironmentsOutcomeCallable TdmqClient::DescribeEnvironments
     return task->get_future();
 }
 
+TdmqClient::DescribeMsgTraceOutcome TdmqClient::DescribeMsgTrace(const DescribeMsgTraceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMsgTrace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMsgTraceResponse rsp = DescribeMsgTraceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMsgTraceOutcome(rsp);
+        else
+            return DescribeMsgTraceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMsgTraceOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeMsgTraceAsync(const DescribeMsgTraceRequest& request, const DescribeMsgTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMsgTrace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeMsgTraceOutcomeCallable TdmqClient::DescribeMsgTraceCallable(const DescribeMsgTraceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMsgTraceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMsgTrace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeNamespaceBundlesOptOutcome TdmqClient::DescribeNamespaceBundlesOpt(const DescribeNamespaceBundlesOptRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNamespaceBundlesOpt");

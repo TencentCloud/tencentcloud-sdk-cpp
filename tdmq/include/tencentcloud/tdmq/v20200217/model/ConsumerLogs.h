@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ESSBASIC_V20210526_MODEL_SYNCFAILREASON_H_
-#define TENCENTCLOUD_ESSBASIC_V20210526_MODEL_SYNCFAILREASON_H_
+#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_CONSUMERLOGS_H_
+#define TENCENTCLOUD_TDMQ_V20200217_MODEL_CONSUMERLOGS_H_
 
 #include <string>
 #include <vector>
@@ -24,88 +24,94 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/ConsumerLog.h>
 
 
 namespace TencentCloud
 {
-    namespace Essbasic
+    namespace Tdmq
     {
-        namespace V20210526
+        namespace V20200217
         {
             namespace Model
             {
                 /**
-                * 同步员工失败原因
+                * 消费信息
                 */
-                class SyncFailReason : public AbstractModel
+                class ConsumerLogs : public AbstractModel
                 {
                 public:
-                    SyncFailReason();
-                    ~SyncFailReason() = default;
+                    ConsumerLogs();
+                    ~ConsumerLogs() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取企业员工标识(即OpenId)
-                     * @return Id 企业员工标识(即OpenId)
-                     * 
-                     */
-                    std::string GetId() const;
-
-                    /**
-                     * 设置企业员工标识(即OpenId)
-                     * @param _id 企业员工标识(即OpenId)
-                     * 
-                     */
-                    void SetId(const std::string& _id);
-
-                    /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
-                     * 
-                     */
-                    bool IdHasBeenSet() const;
-
-                    /**
-                     * 获取新增员工或者员工离职失败原因, 可能存证ID不符合规范、证件号码不合法等原因
+                     * 获取记录数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Message 新增员工或者员工离职失败原因, 可能存证ID不符合规范、证件号码不合法等原因
+                     * @return TotalCount 记录数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetMessage() const;
+                    uint64_t GetTotalCount() const;
 
                     /**
-                     * 设置新增员工或者员工离职失败原因, 可能存证ID不符合规范、证件号码不合法等原因
+                     * 设置记录数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _message 新增员工或者员工离职失败原因, 可能存证ID不符合规范、证件号码不合法等原因
+                     * @param _totalCount 记录数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetMessage(const std::string& _message);
+                    void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
-                     * 判断参数 Message 是否已赋值
-                     * @return Message 是否已赋值
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
                      * 
                      */
-                    bool MessageHasBeenSet() const;
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取消费日志。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConsumerLogSets 消费日志。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ConsumerLog> GetConsumerLogSets() const;
+
+                    /**
+                     * 设置消费日志。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _consumerLogSets 消费日志。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConsumerLogSets(const std::vector<ConsumerLog>& _consumerLogSets);
+
+                    /**
+                     * 判断参数 ConsumerLogSets 是否已赋值
+                     * @return ConsumerLogSets 是否已赋值
+                     * 
+                     */
+                    bool ConsumerLogSetsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 企业员工标识(即OpenId)
-                     */
-                    std::string m_id;
-                    bool m_idHasBeenSet;
-
-                    /**
-                     * 新增员工或者员工离职失败原因, 可能存证ID不符合规范、证件号码不合法等原因
+                     * 记录数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_message;
-                    bool m_messageHasBeenSet;
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 消费日志。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ConsumerLog> m_consumerLogSets;
+                    bool m_consumerLogSetsHasBeenSet;
 
                 };
             }
@@ -113,4 +119,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ESSBASIC_V20210526_MODEL_SYNCFAILREASON_H_
+#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_CONSUMERLOGS_H_

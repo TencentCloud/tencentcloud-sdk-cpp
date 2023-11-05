@@ -45,13 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Status 同步状态,全部同步失败接口会直接报错
-1-成功 
-2-部分成功
+                     * 获取 同步的状态,  全部同步失败接口是接口会直接报错
+
+<ul><li> **1** :全部成功</li>
+<li> **2** :部分成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status Status 同步状态,全部同步失败接口会直接报错
-1-成功 
-2-部分成功
+                     * @return Status  同步的状态,  全部同步失败接口是接口会直接报错
+
+<ul><li> **1** :全部成功</li>
+<li> **2** :部分成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -65,9 +67,9 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取同步失败经办人及其失败原因
+                     * 获取同步失败员工ID及其失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FailedList 同步失败经办人及其失败原因
+                     * @return FailedList 同步失败员工ID及其失败原因
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -83,16 +85,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Status 同步状态,全部同步失败接口会直接报错
-1-成功 
-2-部分成功
+                     *  同步的状态,  全部同步失败接口是接口会直接报错
+
+<ul><li> **1** :全部成功</li>
+<li> **2** :部分成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 同步失败经办人及其失败原因
+                     * 同步失败员工ID及其失败原因
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SyncFailReason> m_failedList;
