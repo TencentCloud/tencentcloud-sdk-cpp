@@ -298,6 +298,49 @@ LighthouseClient::AttachDisksOutcomeCallable LighthouseClient::AttachDisksCallab
     return task->get_future();
 }
 
+LighthouseClient::CancelShareBlueprintAcrossAccountsOutcome LighthouseClient::CancelShareBlueprintAcrossAccounts(const CancelShareBlueprintAcrossAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelShareBlueprintAcrossAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelShareBlueprintAcrossAccountsResponse rsp = CancelShareBlueprintAcrossAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelShareBlueprintAcrossAccountsOutcome(rsp);
+        else
+            return CancelShareBlueprintAcrossAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelShareBlueprintAcrossAccountsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::CancelShareBlueprintAcrossAccountsAsync(const CancelShareBlueprintAcrossAccountsRequest& request, const CancelShareBlueprintAcrossAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelShareBlueprintAcrossAccounts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::CancelShareBlueprintAcrossAccountsOutcomeCallable LighthouseClient::CancelShareBlueprintAcrossAccountsCallable(const CancelShareBlueprintAcrossAccountsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelShareBlueprintAcrossAccountsOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelShareBlueprintAcrossAccounts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::CreateBlueprintOutcome LighthouseClient::CreateBlueprint(const CreateBlueprintRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBlueprint");
@@ -4290,6 +4333,49 @@ LighthouseClient::RunDockerContainersOutcomeCallable LighthouseClient::RunDocker
         [this, request]()
         {
             return this->RunDockerContainers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ShareBlueprintAcrossAccountsOutcome LighthouseClient::ShareBlueprintAcrossAccounts(const ShareBlueprintAcrossAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ShareBlueprintAcrossAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ShareBlueprintAcrossAccountsResponse rsp = ShareBlueprintAcrossAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ShareBlueprintAcrossAccountsOutcome(rsp);
+        else
+            return ShareBlueprintAcrossAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return ShareBlueprintAcrossAccountsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ShareBlueprintAcrossAccountsAsync(const ShareBlueprintAcrossAccountsRequest& request, const ShareBlueprintAcrossAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ShareBlueprintAcrossAccounts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ShareBlueprintAcrossAccountsOutcomeCallable LighthouseClient::ShareBlueprintAcrossAccountsCallable(const ShareBlueprintAcrossAccountsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ShareBlueprintAcrossAccountsOutcome()>>(
+        [this, request]()
+        {
+            return this->ShareBlueprintAcrossAccounts(request);
         }
     );
 

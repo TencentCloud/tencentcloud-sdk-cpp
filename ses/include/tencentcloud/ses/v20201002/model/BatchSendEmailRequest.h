@@ -162,14 +162,18 @@ namespace TencentCloud
 
                     /**
                      * 获取使用模板发送时，填写的模板相关参数
+<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
                      * @return Template 使用模板发送时，填写的模板相关参数
+<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
                      * 
                      */
                     Template GetTemplate() const;
 
                     /**
                      * 设置使用模板发送时，填写的模板相关参数
+<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
                      * @param _template 使用模板发送时，填写的模板相关参数
+<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
                      * 
                      */
                     void SetTemplate(const Template& _template);
@@ -183,14 +187,18 @@ namespace TencentCloud
 
                     /**
                      * 获取已废弃
+<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert> 
                      * @return Simple 已废弃
+<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert> 
                      * 
                      */
                     Simple GetSimple() const;
 
                     /**
                      * 设置已废弃
+<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert> 
                      * @param _simple 已废弃
+<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert> 
                      * 
                      */
                     void SetSimple(const Simple& _simple);
@@ -343,12 +351,14 @@ namespace TencentCloud
 
                     /**
                      * 使用模板发送时，填写的模板相关参数
+<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
                      */
                     Template m_template;
                     bool m_templateHasBeenSet;
 
                     /**
                      * 已废弃
+<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert> 
                      */
                     Simple m_simple;
                     bool m_simpleHasBeenSet;

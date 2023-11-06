@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 合同文件验签单个结果结构体
+                * 合同验签每个签署区的信息
                 */
                 class PdfVerifyResult : public AbstractModel
                 {
@@ -47,15 +47,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。
-                     * @return VerifyResult 验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。
+                     * 获取验签结果详情，每个签名域对应的验签结果。状态值如下
+<ul><li> **1** :验签成功，在电子签签署</li>
+<li> **2** :验签成功，在其他平台签署</li>
+<li> **3** :验签失败</li>
+<li> **4** :pdf文件没有签名域</li>
+<li> **5** :文件签名格式错误</li></ul>
+                     * @return VerifyResult 验签结果详情，每个签名域对应的验签结果。状态值如下
+<ul><li> **1** :验签成功，在电子签签署</li>
+<li> **2** :验签成功，在其他平台签署</li>
+<li> **3** :验签失败</li>
+<li> **4** :pdf文件没有签名域</li>
+<li> **5** :文件签名格式错误</li></ul>
                      * 
                      */
                     int64_t GetVerifyResult() const;
 
                     /**
-                     * 设置验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。
-                     * @param _verifyResult 验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。
+                     * 设置验签结果详情，每个签名域对应的验签结果。状态值如下
+<ul><li> **1** :验签成功，在电子签签署</li>
+<li> **2** :验签成功，在其他平台签署</li>
+<li> **3** :验签失败</li>
+<li> **4** :pdf文件没有签名域</li>
+<li> **5** :文件签名格式错误</li></ul>
+                     * @param _verifyResult 验签结果详情，每个签名域对应的验签结果。状态值如下
+<ul><li> **1** :验签成功，在电子签签署</li>
+<li> **2** :验签成功，在其他平台签署</li>
+<li> **3** :验签失败</li>
+<li> **4** :pdf文件没有签名域</li>
+<li> **5** :文件签名格式错误</li></ul>
                      * 
                      */
                     void SetVerifyResult(const int64_t& _verifyResult);
@@ -68,15 +88,23 @@ namespace TencentCloud
                     bool VerifyResultHasBeenSet() const;
 
                     /**
-                     * 获取签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。
-                     * @return SignPlatform 签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。
+                     * 获取签署平台
+如果文件是在腾讯电子签平台签署，则为**腾讯电子签**，
+如果文件不在腾讯电子签平台签署，则为**其他平台**。
+                     * @return SignPlatform 签署平台
+如果文件是在腾讯电子签平台签署，则为**腾讯电子签**，
+如果文件不在腾讯电子签平台签署，则为**其他平台**。
                      * 
                      */
                     std::string GetSignPlatform() const;
 
                     /**
-                     * 设置签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。
-                     * @param _signPlatform 签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。
+                     * 设置签署平台
+如果文件是在腾讯电子签平台签署，则为**腾讯电子签**，
+如果文件不在腾讯电子签平台签署，则为**其他平台**。
+                     * @param _signPlatform 签署平台
+如果文件是在腾讯电子签平台签署，则为**腾讯电子签**，
+如果文件不在腾讯电子签平台签署，则为**其他平台**。
                      * 
                      */
                     void SetSignPlatform(const std::string& _signPlatform);
@@ -89,15 +117,39 @@ namespace TencentCloud
                     bool SignPlatformHasBeenSet() const;
 
                     /**
-                     * 获取签署人名称
-                     * @return SignerName 签署人名称
+                     * 获取申请证书的主体的名字
+
+如果是在腾讯电子签平台签署, 则对应的主体的名字个数如下
+**企业**:  ESS@企业名称@编码
+**个人**: ESS@个人姓名@证件号@808854
+
+如果在其他平台签署的, 主体的名字参考其他平台的说明
+                     * @return SignerName 申请证书的主体的名字
+
+如果是在腾讯电子签平台签署, 则对应的主体的名字个数如下
+**企业**:  ESS@企业名称@编码
+**个人**: ESS@个人姓名@证件号@808854
+
+如果在其他平台签署的, 主体的名字参考其他平台的说明
                      * 
                      */
                     std::string GetSignerName() const;
 
                     /**
-                     * 设置签署人名称
-                     * @param _signerName 签署人名称
+                     * 设置申请证书的主体的名字
+
+如果是在腾讯电子签平台签署, 则对应的主体的名字个数如下
+**企业**:  ESS@企业名称@编码
+**个人**: ESS@个人姓名@证件号@808854
+
+如果在其他平台签署的, 主体的名字参考其他平台的说明
+                     * @param _signerName 申请证书的主体的名字
+
+如果是在腾讯电子签平台签署, 则对应的主体的名字个数如下
+**企业**:  ESS@企业名称@编码
+**个人**: ESS@个人姓名@证件号@808854
+
+如果在其他平台签署的, 主体的名字参考其他平台的说明
                      * 
                      */
                     void SetSignerName(const std::string& _signerName);
@@ -110,15 +162,15 @@ namespace TencentCloud
                     bool SignerNameHasBeenSet() const;
 
                     /**
-                     * 获取签署时间戳，单位秒
-                     * @return SignTime 签署时间戳，单位秒
+                     * 获取签署时间的Unix时间戳，单位毫秒
+                     * @return SignTime 签署时间的Unix时间戳，单位毫秒
                      * 
                      */
                     int64_t GetSignTime() const;
 
                     /**
-                     * 设置签署时间戳，单位秒
-                     * @param _signTime 签署时间戳，单位秒
+                     * 设置签署时间的Unix时间戳，单位毫秒
+                     * @param _signTime 签署时间的Unix时间戳，单位毫秒
                      * 
                      */
                     void SetSignTime(const int64_t& _signTime);
@@ -131,15 +183,15 @@ namespace TencentCloud
                     bool SignTimeHasBeenSet() const;
 
                     /**
-                     * 获取签名算法
-                     * @return SignAlgorithm 签名算法
+                     * 获取证书签名算法,  如SHA1withRSA等算法
+                     * @return SignAlgorithm 证书签名算法,  如SHA1withRSA等算法
                      * 
                      */
                     std::string GetSignAlgorithm() const;
 
                     /**
-                     * 设置签名算法
-                     * @param _signAlgorithm 签名算法
+                     * 设置证书签名算法,  如SHA1withRSA等算法
+                     * @param _signAlgorithm 证书签名算法,  如SHA1withRSA等算法
                      * 
                      */
                     void SetSignAlgorithm(const std::string& _signAlgorithm);
@@ -152,15 +204,23 @@ namespace TencentCloud
                     bool SignAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取签名证书序列号
-                     * @return CertSn 签名证书序列号
+                     * 获取CA供应商下发给用户的证书编号
+
+注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下`。
+                     * @return CertSn CA供应商下发给用户的证书编号
+
+注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下`。
                      * 
                      */
                     std::string GetCertSn() const;
 
                     /**
-                     * 设置签名证书序列号
-                     * @param _certSn 签名证书序列号
+                     * 设置CA供应商下发给用户的证书编号
+
+注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下`。
+                     * @param _certSn CA供应商下发给用户的证书编号
+
+注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下`。
                      * 
                      */
                     void SetCertSn(const std::string& _certSn);
@@ -173,15 +233,15 @@ namespace TencentCloud
                     bool CertSnHasBeenSet() const;
 
                     /**
-                     * 获取证书起始时间戳，单位秒
-                     * @return CertNotBefore 证书起始时间戳，单位秒
+                     * 获取证书起始时间的Unix时间戳，单位毫秒
+                     * @return CertNotBefore 证书起始时间的Unix时间戳，单位毫秒
                      * 
                      */
                     int64_t GetCertNotBefore() const;
 
                     /**
-                     * 设置证书起始时间戳，单位秒
-                     * @param _certNotBefore 证书起始时间戳，单位秒
+                     * 设置证书起始时间的Unix时间戳，单位毫秒
+                     * @param _certNotBefore 证书起始时间的Unix时间戳，单位毫秒
                      * 
                      */
                     void SetCertNotBefore(const int64_t& _certNotBefore);
@@ -194,15 +254,15 @@ namespace TencentCloud
                     bool CertNotBeforeHasBeenSet() const;
 
                     /**
-                     * 获取证书过期时间戳，单位秒
-                     * @return CertNotAfter 证书过期时间戳，单位秒
+                     * 获取证书过期时间的时间戳，单位毫秒
+                     * @return CertNotAfter 证书过期时间的时间戳，单位毫秒
                      * 
                      */
                     int64_t GetCertNotAfter() const;
 
                     /**
-                     * 设置证书过期时间戳，单位秒
-                     * @param _certNotAfter 证书过期时间戳，单位秒
+                     * 设置证书过期时间的时间戳，单位毫秒
+                     * @param _certNotAfter 证书过期时间的时间戳，单位毫秒
                      * 
                      */
                     void SetCertNotAfter(const int64_t& _certNotAfter);
@@ -215,15 +275,23 @@ namespace TencentCloud
                     bool CertNotAfterHasBeenSet() const;
 
                     /**
-                     * 获取签名类型
-                     * @return SignType 签名类型
+                     * 获取签名类型, 保留字段, 现在全部为0
+
+
+                     * @return SignType 签名类型, 保留字段, 现在全部为0
+
+
                      * 
                      */
                     int64_t GetSignType() const;
 
                     /**
-                     * 设置签名类型
-                     * @param _signType 签名类型
+                     * 设置签名类型, 保留字段, 现在全部为0
+
+
+                     * @param _signType 签名类型, 保留字段, 现在全部为0
+
+
                      * 
                      */
                     void SetSignType(const int64_t& _signType);
@@ -343,55 +411,72 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。
+                     * 验签结果详情，每个签名域对应的验签结果。状态值如下
+<ul><li> **1** :验签成功，在电子签签署</li>
+<li> **2** :验签成功，在其他平台签署</li>
+<li> **3** :验签失败</li>
+<li> **4** :pdf文件没有签名域</li>
+<li> **5** :文件签名格式错误</li></ul>
                      */
                     int64_t m_verifyResult;
                     bool m_verifyResultHasBeenSet;
 
                     /**
-                     * 签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。
+                     * 签署平台
+如果文件是在腾讯电子签平台签署，则为**腾讯电子签**，
+如果文件不在腾讯电子签平台签署，则为**其他平台**。
                      */
                     std::string m_signPlatform;
                     bool m_signPlatformHasBeenSet;
 
                     /**
-                     * 签署人名称
+                     * 申请证书的主体的名字
+
+如果是在腾讯电子签平台签署, 则对应的主体的名字个数如下
+**企业**:  ESS@企业名称@编码
+**个人**: ESS@个人姓名@证件号@808854
+
+如果在其他平台签署的, 主体的名字参考其他平台的说明
                      */
                     std::string m_signerName;
                     bool m_signerNameHasBeenSet;
 
                     /**
-                     * 签署时间戳，单位秒
+                     * 签署时间的Unix时间戳，单位毫秒
                      */
                     int64_t m_signTime;
                     bool m_signTimeHasBeenSet;
 
                     /**
-                     * 签名算法
+                     * 证书签名算法,  如SHA1withRSA等算法
                      */
                     std::string m_signAlgorithm;
                     bool m_signAlgorithmHasBeenSet;
 
                     /**
-                     * 签名证书序列号
+                     * CA供应商下发给用户的证书编号
+
+注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下`。
                      */
                     std::string m_certSn;
                     bool m_certSnHasBeenSet;
 
                     /**
-                     * 证书起始时间戳，单位秒
+                     * 证书起始时间的Unix时间戳，单位毫秒
                      */
                     int64_t m_certNotBefore;
                     bool m_certNotBeforeHasBeenSet;
 
                     /**
-                     * 证书过期时间戳，单位秒
+                     * 证书过期时间的时间戳，单位毫秒
                      */
                     int64_t m_certNotAfter;
                     bool m_certNotAfterHasBeenSet;
 
                     /**
-                     * 签名类型
+                     * 签名类型, 保留字段, 现在全部为0
+
+
                      */
                     int64_t m_signType;
                     bool m_signTypeHasBeenSet;

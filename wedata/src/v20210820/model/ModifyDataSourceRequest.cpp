@@ -40,7 +40,8 @@ ModifyDataSourceRequest::ModifyDataSourceRequest() :
     m_ownerProjectNameHasBeenSet(false),
     m_ownerProjectIdentHasBeenSet(false),
     m_cOSBucketHasBeenSet(false),
-    m_cOSRegionHasBeenSet(false)
+    m_cOSRegionHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,14 @@ string ModifyDataSourceRequest::ToJsonString() const
         string key = "COSRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cOSRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -489,6 +498,22 @@ void ModifyDataSourceRequest::SetCOSRegion(const string& _cOSRegion)
 bool ModifyDataSourceRequest::COSRegionHasBeenSet() const
 {
     return m_cOSRegionHasBeenSet;
+}
+
+string ModifyDataSourceRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void ModifyDataSourceRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool ModifyDataSourceRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

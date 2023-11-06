@@ -35,6 +35,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/AttachCcnResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/AttachDisksRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/AttachDisksResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CancelShareBlueprintAcrossAccountsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CancelShareBlueprintAcrossAccountsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateDiskBackupRequest.h>
@@ -221,6 +223,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/RestartDockerContainersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RunDockerContainersRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RunDockerContainersResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ShareBlueprintAcrossAccountsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ShareBlueprintAcrossAccountsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartDockerContainersRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartDockerContainersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h>
@@ -265,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AttachDisksResponse> AttachDisksOutcome;
                 typedef std::future<AttachDisksOutcome> AttachDisksOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::AttachDisksRequest&, AttachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelShareBlueprintAcrossAccountsResponse> CancelShareBlueprintAcrossAccountsOutcome;
+                typedef std::future<CancelShareBlueprintAcrossAccountsOutcome> CancelShareBlueprintAcrossAccountsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CancelShareBlueprintAcrossAccountsRequest&, CancelShareBlueprintAcrossAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelShareBlueprintAcrossAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBlueprintResponse> CreateBlueprintOutcome;
                 typedef std::future<CreateBlueprintOutcome> CreateBlueprintOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateBlueprintRequest&, CreateBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlueprintAsyncHandler;
@@ -544,6 +551,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunDockerContainersResponse> RunDockerContainersOutcome;
                 typedef std::future<RunDockerContainersOutcome> RunDockerContainersOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RunDockerContainersRequest&, RunDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunDockerContainersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ShareBlueprintAcrossAccountsResponse> ShareBlueprintAcrossAccountsOutcome;
+                typedef std::future<ShareBlueprintAcrossAccountsOutcome> ShareBlueprintAcrossAccountsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ShareBlueprintAcrossAccountsRequest&, ShareBlueprintAcrossAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ShareBlueprintAcrossAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartDockerContainersResponse> StartDockerContainersOutcome;
                 typedef std::future<StartDockerContainersOutcome> StartDockerContainersOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StartDockerContainersRequest&, StartDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartDockerContainersAsyncHandler;
@@ -633,6 +643,16 @@ namespace TencentCloud
                 AttachDisksOutcome AttachDisks(const Model::AttachDisksRequest &request);
                 void AttachDisksAsync(const Model::AttachDisksRequest& request, const AttachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachDisksOutcomeCallable AttachDisksCallable(const Model::AttachDisksRequest& request);
+
+                /**
+                 *本接口（CancelShareBlueprintAcrossAccounts）用于取消镜像跨账号共享。
+指定的镜像ID必须为自定义镜像，且指定账号ID必须已进行共享。
+                 * @param req CancelShareBlueprintAcrossAccountsRequest
+                 * @return CancelShareBlueprintAcrossAccountsOutcome
+                 */
+                CancelShareBlueprintAcrossAccountsOutcome CancelShareBlueprintAcrossAccounts(const Model::CancelShareBlueprintAcrossAccountsRequest &request);
+                void CancelShareBlueprintAcrossAccountsAsync(const Model::CancelShareBlueprintAcrossAccountsRequest& request, const CancelShareBlueprintAcrossAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelShareBlueprintAcrossAccountsOutcomeCallable CancelShareBlueprintAcrossAccountsCallable(const Model::CancelShareBlueprintAcrossAccountsRequest& request);
 
                 /**
                  *本接口 (CreateBlueprint) 用于创建镜像。
@@ -1578,6 +1598,17 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 RunDockerContainersOutcome RunDockerContainers(const Model::RunDockerContainersRequest &request);
                 void RunDockerContainersAsync(const Model::RunDockerContainersRequest& request, const RunDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunDockerContainersOutcomeCallable RunDockerContainersCallable(const Model::RunDockerContainersRequest& request);
+
+                /**
+                 *本接口（ShareBlueprintAcrossAccounts）用于跨账号共享镜像。
+仅支持共享自定义镜像， 且用于共享的镜像状态必须为NORMAL。
+共享的账号必须为主账号。
+                 * @param req ShareBlueprintAcrossAccountsRequest
+                 * @return ShareBlueprintAcrossAccountsOutcome
+                 */
+                ShareBlueprintAcrossAccountsOutcome ShareBlueprintAcrossAccounts(const Model::ShareBlueprintAcrossAccountsRequest &request);
+                void ShareBlueprintAcrossAccountsAsync(const Model::ShareBlueprintAcrossAccountsRequest& request, const ShareBlueprintAcrossAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ShareBlueprintAcrossAccountsOutcomeCallable ShareBlueprintAcrossAccountsCallable(const Model::ShareBlueprintAcrossAccountsRequest& request);
 
                 /**
                  *启动实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询启动情况。

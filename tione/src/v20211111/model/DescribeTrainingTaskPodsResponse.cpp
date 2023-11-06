@@ -89,18 +89,21 @@ CoreInternalOutcome DescribeTrainingTaskPodsResponse::Deserialize(const string &
 
     if (rsp.HasMember("PodInfoList") && !rsp["PodInfoList"].IsNull())
     {
-        if (!rsp["PodInfoList"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `PodInfoList` is not object type").SetRequestId(requestId));
-        }
+        if (!rsp["PodInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PodInfoList` is not array type"));
 
-        CoreInternalOutcome outcome = m_podInfoList.Deserialize(rsp["PodInfoList"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = rsp["PodInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            PodInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_podInfoList.push_back(item);
         }
-
         m_podInfoListHasBeenSet = true;
     }
 
@@ -140,8 +143,14 @@ string DescribeTrainingTaskPodsResponse::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PodInfoList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_podInfoList.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_podInfoList.begin(); itr != m_podInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,7 +185,7 @@ bool DescribeTrainingTaskPodsResponse::TotalCountHasBeenSet() const
     return m_totalCountHasBeenSet;
 }
 
-PodInfo DescribeTrainingTaskPodsResponse::GetPodInfoList() const
+vector<PodInfo> DescribeTrainingTaskPodsResponse::GetPodInfoList() const
 {
     return m_podInfoList;
 }

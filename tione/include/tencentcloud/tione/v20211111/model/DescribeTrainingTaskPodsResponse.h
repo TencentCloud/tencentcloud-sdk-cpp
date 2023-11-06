@@ -77,7 +77,7 @@ namespace TencentCloud
                      * @return PodInfoList pod详细信息
                      * 
                      */
-                    PodInfo GetPodInfoList() const;
+                    std::vector<PodInfo> GetPodInfoList() const;
 
                     /**
                      * 判断参数 PodInfoList 是否已赋值
@@ -103,7 +103,7 @@ namespace TencentCloud
                     /**
                      * pod详细信息
                      */
-                    PodInfo m_podInfoList;
+                    std::vector<PodInfo> m_podInfoList;
                     bool m_podInfoListHasBeenSet;
 
                 };

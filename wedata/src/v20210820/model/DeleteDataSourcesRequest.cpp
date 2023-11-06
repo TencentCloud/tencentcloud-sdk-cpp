@@ -23,7 +23,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DeleteDataSourcesRequest::DeleteDataSourcesRequest() :
-    m_idsHasBeenSet(false)
+    m_idsHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string DeleteDataSourcesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -69,6 +78,22 @@ void DeleteDataSourcesRequest::SetIds(const vector<uint64_t>& _ids)
 bool DeleteDataSourcesRequest::IdsHasBeenSet() const
 {
     return m_idsHasBeenSet;
+}
+
+string DeleteDataSourcesRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DeleteDataSourcesRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DeleteDataSourcesRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

@@ -31,6 +31,7 @@
 #include <tencentcloud/waf/v20180125/model/BotQPS.h>
 #include <tencentcloud/waf/v20180125/model/MajorEventsPkg.h>
 #include <tencentcloud/waf/v20180125/model/HybridPkg.h>
+#include <tencentcloud/waf/v20180125/model/ApiPkg.h>
 
 
 namespace TencentCloud
@@ -798,6 +799,31 @@ namespace TencentCloud
                      */
                     bool HybridPkgHasBeenSet() const;
 
+                    /**
+                     * 获取API安全资源包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiPkg API安全资源包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ApiPkg GetApiPkg() const;
+
+                    /**
+                     * 设置API安全资源包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apiPkg API安全资源包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApiPkg(const ApiPkg& _apiPkg);
+
+                    /**
+                     * 判断参数 ApiPkg 是否已赋值
+                     * @return ApiPkg 是否已赋值
+                     * 
+                     */
+                    bool ApiPkgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1010,6 +1036,13 @@ namespace TencentCloud
                      */
                     HybridPkg m_hybridPkg;
                     bool m_hybridPkgHasBeenSet;
+
+                    /**
+                     * API安全资源包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ApiPkg m_apiPkg;
+                    bool m_apiPkgHasBeenSet;
 
                 };
             }

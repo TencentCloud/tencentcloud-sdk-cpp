@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/waf/v20180125/model/BotPkg.h>
+#include <tencentcloud/waf/v20180125/model/ApiPkg.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-BotPkg::BotPkg() :
+ApiPkg::ApiPkg() :
     m_resourceIdsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_regionHasBeenSet(false),
@@ -28,15 +28,15 @@ BotPkg::BotPkg() :
     m_endTimeHasBeenSet(false),
     m_inquireNumHasBeenSet(false),
     m_usedNumHasBeenSet(false),
-    m_typeHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
-    m_botCPWafHasBeenSet(false),
-    m_botNPWafHasBeenSet(false),
-    m_isBotTrialHasBeenSet(false)
+    m_billingItemHasBeenSet(false),
+    m_aPICPWafHasBeenSet(false),
+    m_aPINPWafHasBeenSet(false),
+    m_isAPISecurityTrialHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
+CoreInternalOutcome ApiPkg::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,7 +45,7 @@ CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceIds"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.ResourceIds` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.ResourceIds` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceIds = string(value["ResourceIds"].GetString());
         m_resourceIdsHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.Region` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.Region` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_region = value["Region"].GetInt64();
         m_regionHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginTime"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginTime = string(value["BeginTime"].GetString());
         m_beginTimeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InquireNum"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.InquireNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.InquireNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_inquireNum = value["InquireNum"].GetInt64();
         m_inquireNumHasBeenSet = true;
@@ -105,67 +105,67 @@ CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsedNum"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.UsedNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.UsedNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_usedNum = value["UsedNum"].GetInt64();
         m_usedNumHasBeenSet = true;
-    }
-
-    if (value.HasMember("Type") && !value["Type"].IsNull())
-    {
-        if (!value["Type"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.Type` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_type = string(value["Type"].GetString());
-        m_typeHasBeenSet = true;
     }
 
     if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
     {
         if (!value["RenewFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.RenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.RenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_renewFlag = value["RenewFlag"].GetUint64();
         m_renewFlagHasBeenSet = true;
     }
 
-    if (value.HasMember("BotCPWaf") && !value["BotCPWaf"].IsNull())
+    if (value.HasMember("BillingItem") && !value["BillingItem"].IsNull())
     {
-        if (!value["BotCPWaf"].IsInt64())
+        if (!value["BillingItem"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.BotCPWaf` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.BillingItem` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_botCPWaf = value["BotCPWaf"].GetInt64();
-        m_botCPWafHasBeenSet = true;
+        m_billingItem = string(value["BillingItem"].GetString());
+        m_billingItemHasBeenSet = true;
     }
 
-    if (value.HasMember("BotNPWaf") && !value["BotNPWaf"].IsNull())
+    if (value.HasMember("APICPWaf") && !value["APICPWaf"].IsNull())
     {
-        if (!value["BotNPWaf"].IsInt64())
+        if (!value["APICPWaf"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.BotNPWaf` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.APICPWaf` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_botNPWaf = value["BotNPWaf"].GetInt64();
-        m_botNPWafHasBeenSet = true;
+        m_aPICPWaf = value["APICPWaf"].GetInt64();
+        m_aPICPWafHasBeenSet = true;
     }
 
-    if (value.HasMember("IsBotTrial") && !value["IsBotTrial"].IsNull())
+    if (value.HasMember("APINPWaf") && !value["APINPWaf"].IsNull())
     {
-        if (!value["IsBotTrial"].IsInt64())
+        if (!value["APINPWaf"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `BotPkg.IsBotTrial` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.APINPWaf` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_isBotTrial = value["IsBotTrial"].GetInt64();
-        m_isBotTrialHasBeenSet = true;
+        m_aPINPWaf = value["APINPWaf"].GetInt64();
+        m_aPINPWafHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsAPISecurityTrial") && !value["IsAPISecurityTrial"].IsNull())
+    {
+        if (!value["IsAPISecurityTrial"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiPkg.IsAPISecurityTrial` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAPISecurityTrial = value["IsAPISecurityTrial"].GetInt64();
+        m_isAPISecurityTrialHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-void BotPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+void ApiPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceIdsHasBeenSet)
@@ -224,14 +224,6 @@ void BotPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, m_usedNum, allocator);
     }
 
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_renewFlagHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -240,222 +232,230 @@ void BotPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, m_renewFlag, allocator);
     }
 
-    if (m_botCPWafHasBeenSet)
+    if (m_billingItemHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BotCPWaf";
+        string key = "BillingItem";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_botCPWaf, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingItem.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_botNPWafHasBeenSet)
+    if (m_aPICPWafHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BotNPWaf";
+        string key = "APICPWaf";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_botNPWaf, allocator);
+        value.AddMember(iKey, m_aPICPWaf, allocator);
     }
 
-    if (m_isBotTrialHasBeenSet)
+    if (m_aPINPWafHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsBotTrial";
+        string key = "APINPWaf";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isBotTrial, allocator);
+        value.AddMember(iKey, m_aPINPWaf, allocator);
+    }
+
+    if (m_isAPISecurityTrialHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAPISecurityTrial";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAPISecurityTrial, allocator);
     }
 
 }
 
 
-string BotPkg::GetResourceIds() const
+string ApiPkg::GetResourceIds() const
 {
     return m_resourceIds;
 }
 
-void BotPkg::SetResourceIds(const string& _resourceIds)
+void ApiPkg::SetResourceIds(const string& _resourceIds)
 {
     m_resourceIds = _resourceIds;
     m_resourceIdsHasBeenSet = true;
 }
 
-bool BotPkg::ResourceIdsHasBeenSet() const
+bool ApiPkg::ResourceIdsHasBeenSet() const
 {
     return m_resourceIdsHasBeenSet;
 }
 
-int64_t BotPkg::GetStatus() const
+int64_t ApiPkg::GetStatus() const
 {
     return m_status;
 }
 
-void BotPkg::SetStatus(const int64_t& _status)
+void ApiPkg::SetStatus(const int64_t& _status)
 {
     m_status = _status;
     m_statusHasBeenSet = true;
 }
 
-bool BotPkg::StatusHasBeenSet() const
+bool ApiPkg::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
 }
 
-int64_t BotPkg::GetRegion() const
+int64_t ApiPkg::GetRegion() const
 {
     return m_region;
 }
 
-void BotPkg::SetRegion(const int64_t& _region)
+void ApiPkg::SetRegion(const int64_t& _region)
 {
     m_region = _region;
     m_regionHasBeenSet = true;
 }
 
-bool BotPkg::RegionHasBeenSet() const
+bool ApiPkg::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
 }
 
-string BotPkg::GetBeginTime() const
+string ApiPkg::GetBeginTime() const
 {
     return m_beginTime;
 }
 
-void BotPkg::SetBeginTime(const string& _beginTime)
+void ApiPkg::SetBeginTime(const string& _beginTime)
 {
     m_beginTime = _beginTime;
     m_beginTimeHasBeenSet = true;
 }
 
-bool BotPkg::BeginTimeHasBeenSet() const
+bool ApiPkg::BeginTimeHasBeenSet() const
 {
     return m_beginTimeHasBeenSet;
 }
 
-string BotPkg::GetEndTime() const
+string ApiPkg::GetEndTime() const
 {
     return m_endTime;
 }
 
-void BotPkg::SetEndTime(const string& _endTime)
+void ApiPkg::SetEndTime(const string& _endTime)
 {
     m_endTime = _endTime;
     m_endTimeHasBeenSet = true;
 }
 
-bool BotPkg::EndTimeHasBeenSet() const
+bool ApiPkg::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
 }
 
-int64_t BotPkg::GetInquireNum() const
+int64_t ApiPkg::GetInquireNum() const
 {
     return m_inquireNum;
 }
 
-void BotPkg::SetInquireNum(const int64_t& _inquireNum)
+void ApiPkg::SetInquireNum(const int64_t& _inquireNum)
 {
     m_inquireNum = _inquireNum;
     m_inquireNumHasBeenSet = true;
 }
 
-bool BotPkg::InquireNumHasBeenSet() const
+bool ApiPkg::InquireNumHasBeenSet() const
 {
     return m_inquireNumHasBeenSet;
 }
 
-int64_t BotPkg::GetUsedNum() const
+int64_t ApiPkg::GetUsedNum() const
 {
     return m_usedNum;
 }
 
-void BotPkg::SetUsedNum(const int64_t& _usedNum)
+void ApiPkg::SetUsedNum(const int64_t& _usedNum)
 {
     m_usedNum = _usedNum;
     m_usedNumHasBeenSet = true;
 }
 
-bool BotPkg::UsedNumHasBeenSet() const
+bool ApiPkg::UsedNumHasBeenSet() const
 {
     return m_usedNumHasBeenSet;
 }
 
-string BotPkg::GetType() const
-{
-    return m_type;
-}
-
-void BotPkg::SetType(const string& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool BotPkg::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
-}
-
-uint64_t BotPkg::GetRenewFlag() const
+uint64_t ApiPkg::GetRenewFlag() const
 {
     return m_renewFlag;
 }
 
-void BotPkg::SetRenewFlag(const uint64_t& _renewFlag)
+void ApiPkg::SetRenewFlag(const uint64_t& _renewFlag)
 {
     m_renewFlag = _renewFlag;
     m_renewFlagHasBeenSet = true;
 }
 
-bool BotPkg::RenewFlagHasBeenSet() const
+bool ApiPkg::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
 }
 
-int64_t BotPkg::GetBotCPWaf() const
+string ApiPkg::GetBillingItem() const
 {
-    return m_botCPWaf;
+    return m_billingItem;
 }
 
-void BotPkg::SetBotCPWaf(const int64_t& _botCPWaf)
+void ApiPkg::SetBillingItem(const string& _billingItem)
 {
-    m_botCPWaf = _botCPWaf;
-    m_botCPWafHasBeenSet = true;
+    m_billingItem = _billingItem;
+    m_billingItemHasBeenSet = true;
 }
 
-bool BotPkg::BotCPWafHasBeenSet() const
+bool ApiPkg::BillingItemHasBeenSet() const
 {
-    return m_botCPWafHasBeenSet;
+    return m_billingItemHasBeenSet;
 }
 
-int64_t BotPkg::GetBotNPWaf() const
+int64_t ApiPkg::GetAPICPWaf() const
 {
-    return m_botNPWaf;
+    return m_aPICPWaf;
 }
 
-void BotPkg::SetBotNPWaf(const int64_t& _botNPWaf)
+void ApiPkg::SetAPICPWaf(const int64_t& _aPICPWaf)
 {
-    m_botNPWaf = _botNPWaf;
-    m_botNPWafHasBeenSet = true;
+    m_aPICPWaf = _aPICPWaf;
+    m_aPICPWafHasBeenSet = true;
 }
 
-bool BotPkg::BotNPWafHasBeenSet() const
+bool ApiPkg::APICPWafHasBeenSet() const
 {
-    return m_botNPWafHasBeenSet;
+    return m_aPICPWafHasBeenSet;
 }
 
-int64_t BotPkg::GetIsBotTrial() const
+int64_t ApiPkg::GetAPINPWaf() const
 {
-    return m_isBotTrial;
+    return m_aPINPWaf;
 }
 
-void BotPkg::SetIsBotTrial(const int64_t& _isBotTrial)
+void ApiPkg::SetAPINPWaf(const int64_t& _aPINPWaf)
 {
-    m_isBotTrial = _isBotTrial;
-    m_isBotTrialHasBeenSet = true;
+    m_aPINPWaf = _aPINPWaf;
+    m_aPINPWafHasBeenSet = true;
 }
 
-bool BotPkg::IsBotTrialHasBeenSet() const
+bool ApiPkg::APINPWafHasBeenSet() const
 {
-    return m_isBotTrialHasBeenSet;
+    return m_aPINPWafHasBeenSet;
+}
+
+int64_t ApiPkg::GetIsAPISecurityTrial() const
+{
+    return m_isAPISecurityTrial;
+}
+
+void ApiPkg::SetIsAPISecurityTrial(const int64_t& _isAPISecurityTrial)
+{
+    m_isAPISecurityTrial = _isAPISecurityTrial;
+    m_isAPISecurityTrialHasBeenSet = true;
+}
+
+bool ApiPkg::IsAPISecurityTrialHasBeenSet() const
+{
+    return m_isAPISecurityTrialHasBeenSet;
 }
 

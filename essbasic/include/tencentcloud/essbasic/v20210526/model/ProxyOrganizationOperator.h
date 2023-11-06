@@ -96,12 +96,12 @@ namespace TencentCloud
                      * 获取签署方经办人的证件类型，支持以下类型
 <ul><li>ID_CARD : 居民身份证  (默认值)</li>
 <li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
                      * @return IdCardType 签署方经办人的证件类型，支持以下类型
 <ul><li>ID_CARD : 居民身份证  (默认值)</li>
 <li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
                      * 
                      */
@@ -111,12 +111,12 @@ namespace TencentCloud
                      * 设置签署方经办人的证件类型，支持以下类型
 <ul><li>ID_CARD : 居民身份证  (默认值)</li>
 <li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
                      * @param _idCardType 签署方经办人的证件类型，支持以下类型
 <ul><li>ID_CARD : 居民身份证  (默认值)</li>
 <li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
                      * 
                      */
@@ -215,7 +215,7 @@ namespace TencentCloud
                      * 签署方经办人的证件类型，支持以下类型
 <ul><li>ID_CARD : 居民身份证  (默认值)</li>
 <li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
                      */
                     std::string m_idCardType;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 签署人签署链接信息
+                * 签署人签署链接信息。
                 */
                 class FlowApproverUrlInfo : public AbstractModel
                 {
@@ -47,15 +47,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署短链接，不支持小程序嵌入，只支持移动端浏览器打开。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
-                     * @return SignUrl 签署短链接，不支持小程序嵌入，只支持移动端浏览器打开。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 获取签署短链接。</br>
+注意:
+- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。
+- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。
+                     * @return SignUrl 签署短链接。</br>
+注意:
+- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。
+- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。
                      * 
                      */
                     std::string GetSignUrl() const;
 
                     /**
-                     * 设置签署短链接，不支持小程序嵌入，只支持移动端浏览器打开。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
-                     * @param _signUrl 签署短链接，不支持小程序嵌入，只支持移动端浏览器打开。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 设置签署短链接。</br>
+注意:
+- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。
+- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。
+                     * @param _signUrl 签署短链接。</br>
+注意:
+- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。
+- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。
                      * 
                      */
                     void SetSignUrl(const std::string& _signUrl);
@@ -68,15 +80,19 @@ namespace TencentCloud
                     bool SignUrlHasBeenSet() const;
 
                     /**
-                     * 获取签署人类型 PERSON-个人
-                     * @return ApproverType 签署人类型 PERSON-个人
+                     * 获取签署人类型。
+- **PERSON**: 个人
+                     * @return ApproverType 签署人类型。
+- **PERSON**: 个人
                      * 
                      */
                     std::string GetApproverType() const;
 
                     /**
-                     * 设置签署人类型 PERSON-个人
-                     * @param _approverType 签署人类型 PERSON-个人
+                     * 设置签署人类型。
+- **PERSON**: 个人
+                     * @param _approverType 签署人类型。
+- **PERSON**: 个人
                      * 
                      */
                     void SetApproverType(const std::string& _approverType);
@@ -89,15 +105,15 @@ namespace TencentCloud
                     bool ApproverTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署人姓名
-                     * @return Name 签署人姓名
+                     * 获取签署人姓名。
+                     * @return Name 签署人姓名。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置签署人姓名
-                     * @param _name 签署人姓名
+                     * 设置签署人姓名。
+                     * @param _name 签署人姓名。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -110,15 +126,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取签署人手机号
-                     * @return Mobile 签署人手机号
+                     * 获取签署人手机号。
+                     * @return Mobile 签署人手机号。
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置签署人手机号
-                     * @param _mobile 签署人手机号
+                     * 设置签署人手机号。
+                     * @param _mobile 签署人手机号。
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -131,18 +147,30 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取签署长链接，支持小程序嵌入。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 获取签署长链接。</br>
+注意:
+- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。
+- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LongUrl 签署长链接，支持小程序嵌入。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * @return LongUrl 签署长链接。</br>
+注意:
+- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。
+- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLongUrl() const;
 
                     /**
-                     * 设置签署长链接，支持小程序嵌入。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 设置签署长链接。</br>
+注意:
+- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。
+- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _longUrl 签署长链接，支持小程序嵌入。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * @param _longUrl 签署长链接。</br>
+注意:
+- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。
+- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -158,31 +186,38 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署短链接，不支持小程序嵌入，只支持移动端浏览器打开。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 签署短链接。</br>
+注意:
+- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。
+- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。
                      */
                     std::string m_signUrl;
                     bool m_signUrlHasBeenSet;
 
                     /**
-                     * 签署人类型 PERSON-个人
+                     * 签署人类型。
+- **PERSON**: 个人
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;
 
                     /**
-                     * 签署人姓名
+                     * 签署人姓名。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 签署人手机号
+                     * 签署人手机号。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 签署长链接，支持小程序嵌入。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 签署长链接。</br>
+注意:
+- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。
+- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_longUrl;

@@ -40,6 +40,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeDomainRulesRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteDownloadRecordRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h
+  include/tencentcloud/waf/v20180125/model/DescribeModuleStatusResponse.h
   include/tencentcloud/waf/v20180125/model/AccessKeyValueInfo.h
   include/tencentcloud/waf/v20180125/model/KVInt.h
   include/tencentcloud/waf/v20180125/model/AddAntiInfoLeakRulesRequest.h
@@ -113,6 +114,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/AddCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/SwitchElasticModeRequest.h
   include/tencentcloud/waf/v20180125/model/HostDel.h
+  include/tencentcloud/waf/v20180125/model/DescribeModuleStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiFakeUrlRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteAttackWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeHostsResponse.h
@@ -139,6 +141,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/GetInstanceQpsLimitResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/SearchItem.h
+  include/tencentcloud/waf/v20180125/model/ApiPkg.h
   include/tencentcloud/waf/v20180125/model/DescribePortsRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeTlsVersionRequest.h
@@ -393,6 +396,7 @@ set(waf_src
   src/v20180125/model/DescribeDomainRulesRequest.cpp
   src/v20180125/model/DeleteDownloadRecordRequest.cpp
   src/v20180125/model/DeleteAccessExportResponse.cpp
+  src/v20180125/model/DescribeModuleStatusResponse.cpp
   src/v20180125/model/AccessKeyValueInfo.cpp
   src/v20180125/model/KVInt.cpp
   src/v20180125/model/AddAntiInfoLeakRulesRequest.cpp
@@ -466,6 +470,7 @@ set(waf_src
   src/v20180125/model/AddCustomWhiteRuleResponse.cpp
   src/v20180125/model/SwitchElasticModeRequest.cpp
   src/v20180125/model/HostDel.cpp
+  src/v20180125/model/DescribeModuleStatusRequest.cpp
   src/v20180125/model/DescribeAntiFakeUrlRequest.cpp
   src/v20180125/model/DeleteAttackWhiteRuleRequest.cpp
   src/v20180125/model/DescribeHostsResponse.cpp
@@ -492,6 +497,7 @@ set(waf_src
   src/v20180125/model/GetInstanceQpsLimitResponse.cpp
   src/v20180125/model/ModifyCustomWhiteRuleResponse.cpp
   src/v20180125/model/SearchItem.cpp
+  src/v20180125/model/ApiPkg.cpp
   src/v20180125/model/DescribePortsRequest.cpp
   src/v20180125/model/DescribeWafAutoDenyStatusResponse.cpp
   src/v20180125/model/DescribeTlsVersionRequest.cpp

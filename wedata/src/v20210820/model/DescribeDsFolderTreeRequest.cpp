@@ -29,7 +29,8 @@ DescribeDsFolderTreeRequest::DescribeDsFolderTreeRequest() :
     m_workflowIdHasBeenSet(false),
     m_keywordHasBeenSet(false),
     m_includeWorkflowHasBeenSet(false),
-    m_includeTaskHasBeenSet(false)
+    m_includeTaskHasBeenSet(false),
+    m_includeVirtualTaskHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeDsFolderTreeRequest::ToJsonString() const
         string key = "IncludeTask";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_includeTask, allocator);
+    }
+
+    if (m_includeVirtualTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeVirtualTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeVirtualTask, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeDsFolderTreeRequest::SetIncludeTask(const bool& _includeTask)
 bool DescribeDsFolderTreeRequest::IncludeTaskHasBeenSet() const
 {
     return m_includeTaskHasBeenSet;
+}
+
+bool DescribeDsFolderTreeRequest::GetIncludeVirtualTask() const
+{
+    return m_includeVirtualTask;
+}
+
+void DescribeDsFolderTreeRequest::SetIncludeVirtualTask(const bool& _includeVirtualTask)
+{
+    m_includeVirtualTask = _includeVirtualTask;
+    m_includeVirtualTaskHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::IncludeVirtualTaskHasBeenSet() const
+{
+    return m_includeVirtualTaskHasBeenSet;
 }
 
 

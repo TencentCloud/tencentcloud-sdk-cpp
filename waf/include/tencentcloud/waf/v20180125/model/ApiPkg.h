@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_BOTPKG_H_
-#define TENCENTCLOUD_WAF_V20180125_MODEL_BOTPKG_H_
+#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_APIPKG_H_
+#define TENCENTCLOUD_WAF_V20180125_MODEL_APIPKG_H_
 
 #include <string>
 #include <vector>
@@ -35,13 +35,13 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Bot资源信息
+                * API安全资源信息
                 */
-                class BotPkg : public AbstractModel
+                class ApiPkg : public AbstractModel
                 {
                 public:
-                    BotPkg();
-                    ~BotPkg() = default;
+                    ApiPkg();
+                    ~ApiPkg() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
@@ -222,43 +222,18 @@ namespace TencentCloud
                     bool UsedNumHasBeenSet() const;
 
                     /**
-                     * 获取子产品code
+                     * 获取续费标志
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 子产品code
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetType() const;
-
-                    /**
-                     * 设置子产品code
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 子产品code
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetType(const std::string& _type);
-
-                    /**
-                     * 判断参数 Type 是否已赋值
-                     * @return Type 是否已赋值
-                     * 
-                     */
-                    bool TypeHasBeenSet() const;
-
-                    /**
-                     * 获取续费标志	
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenewFlag 续费标志	
+                     * @return RenewFlag 续费标志
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
-                     * 设置续费标志	
+                     * 设置续费标志
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _renewFlag 续费标志	
+                     * @param _renewFlag 续费标志
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,79 +247,108 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取购买页bot6折
+                     * 获取计费项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BotCPWaf 购买页bot6折
+                     * @return BillingItem 计费项
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    int64_t GetBotCPWaf() const;
+                    std::string GetBillingItem() const;
 
                     /**
-                     * 设置购买页bot6折
+                     * 设置计费项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _botCPWaf 购买页bot6折
+                     * @param _billingItem 计费项
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetBotCPWaf(const int64_t& _botCPWaf);
+                    void SetBillingItem(const std::string& _billingItem);
 
                     /**
-                     * 判断参数 BotCPWaf 是否已赋值
-                     * @return BotCPWaf 是否已赋值
+                     * 判断参数 BillingItem 是否已赋值
+                     * @return BillingItem 是否已赋值
                      * 
                      */
-                    bool BotCPWafHasBeenSet() const;
+                    bool BillingItemHasBeenSet() const;
 
                     /**
-                     * 获取控制台买bot5折
+                     * 获取1 API安全6折
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BotNPWaf 控制台买bot5折
+                     * @return APICPWaf 1 API安全6折
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    int64_t GetBotNPWaf() const;
+                    int64_t GetAPICPWaf() const;
 
                     /**
-                     * 设置控制台买bot5折
+                     * 设置1 API安全6折
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _botNPWaf 控制台买bot5折
+                     * @param _aPICPWaf 1 API安全6折
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetBotNPWaf(const int64_t& _botNPWaf);
+                    void SetAPICPWaf(const int64_t& _aPICPWaf);
 
                     /**
-                     * 判断参数 BotNPWaf 是否已赋值
-                     * @return BotNPWaf 是否已赋值
+                     * 判断参数 APICPWaf 是否已赋值
+                     * @return APICPWaf 是否已赋值
                      * 
                      */
-                    bool BotNPWafHasBeenSet() const;
+                    bool APICPWafHasBeenSet() const;
 
                     /**
-                     * 获取7天bot试用标识 1 试用 0 没有试用
+                     * 获取1 表示5折折扣
+2 表示4折折扣
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsBotTrial 7天bot试用标识 1 试用 0 没有试用
+                     * @return APINPWaf 1 表示5折折扣
+2 表示4折折扣
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    int64_t GetIsBotTrial() const;
+                    int64_t GetAPINPWaf() const;
 
                     /**
-                     * 设置7天bot试用标识 1 试用 0 没有试用
+                     * 设置1 表示5折折扣
+2 表示4折折扣
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isBotTrial 7天bot试用标识 1 试用 0 没有试用
+                     * @param _aPINPWaf 1 表示5折折扣
+2 表示4折折扣
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetIsBotTrial(const int64_t& _isBotTrial);
+                    void SetAPINPWaf(const int64_t& _aPINPWaf);
 
                     /**
-                     * 判断参数 IsBotTrial 是否已赋值
-                     * @return IsBotTrial 是否已赋值
+                     * 判断参数 APINPWaf 是否已赋值
+                     * @return APINPWaf 是否已赋值
                      * 
                      */
-                    bool IsBotTrialHasBeenSet() const;
+                    bool APINPWafHasBeenSet() const;
+
+                    /**
+                     * 获取api安全7天试用标识。1试用。0没试用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAPISecurityTrial api安全7天试用标识。1试用。0没试用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsAPISecurityTrial() const;
+
+                    /**
+                     * 设置api安全7天试用标识。1试用。0没试用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isAPISecurityTrial api安全7天试用标识。1试用。0没试用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsAPISecurityTrial(const int64_t& _isAPISecurityTrial);
+
+                    /**
+                     * 判断参数 IsAPISecurityTrial 是否已赋值
+                     * @return IsAPISecurityTrial 是否已赋值
+                     * 
+                     */
+                    bool IsAPISecurityTrialHasBeenSet() const;
 
                 private:
 
@@ -398,39 +402,40 @@ namespace TencentCloud
                     bool m_usedNumHasBeenSet;
 
                     /**
-                     * 子产品code
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_type;
-                    bool m_typeHasBeenSet;
-
-                    /**
-                     * 续费标志	
+                     * 续费标志
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 购买页bot6折
+                     * 计费项
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_botCPWaf;
-                    bool m_botCPWafHasBeenSet;
+                    std::string m_billingItem;
+                    bool m_billingItemHasBeenSet;
 
                     /**
-                     * 控制台买bot5折
+                     * 1 API安全6折
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_botNPWaf;
-                    bool m_botNPWafHasBeenSet;
+                    int64_t m_aPICPWaf;
+                    bool m_aPICPWafHasBeenSet;
 
                     /**
-                     * 7天bot试用标识 1 试用 0 没有试用
+                     * 1 表示5折折扣
+2 表示4折折扣
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_isBotTrial;
-                    bool m_isBotTrialHasBeenSet;
+                    int64_t m_aPINPWaf;
+                    bool m_aPINPWafHasBeenSet;
+
+                    /**
+                     * api安全7天试用标识。1试用。0没试用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isAPISecurityTrial;
+                    bool m_isAPISecurityTrialHasBeenSet;
 
                 };
             }
@@ -438,4 +443,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_BOTPKG_H_
+#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_APIPKG_H_

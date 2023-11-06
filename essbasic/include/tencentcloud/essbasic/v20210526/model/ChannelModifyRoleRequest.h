@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取权限树，权限树内容 PermissionGroups 可参考接口 DescribeIntegrationRoles 的输出
-                     * @return PermissionGroups 权限树，权限树内容 PermissionGroups 可参考接口 DescribeIntegrationRoles 的输出
+                     * 获取权限树，权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles的输出
+                     * @return PermissionGroups 权限树，权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles的输出
                      * 
                      */
                     std::vector<PermissionGroup> GetPermissionGroups() const;
 
                     /**
-                     * 设置权限树，权限树内容 PermissionGroups 可参考接口 DescribeIntegrationRoles 的输出
-                     * @param _permissionGroups 权限树，权限树内容 PermissionGroups 可参考接口 DescribeIntegrationRoles 的输出
+                     * 设置权限树，权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles的输出
+                     * @param _permissionGroups 权限树，权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles的输出
                      * 
                      */
                     void SetPermissionGroups(const std::vector<PermissionGroup>& _permissionGroups);
@@ -176,7 +176,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 权限树，权限树内容 PermissionGroups 可参考接口 DescribeIntegrationRoles 的输出
+                     * 权限树，权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles的输出
                      */
                     std::vector<PermissionGroup> m_permissionGroups;
                     bool m_permissionGroupsHasBeenSet;

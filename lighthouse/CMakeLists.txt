@@ -40,6 +40,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceCreateDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyBundle.h
   include/tencentcloud/lighthouse/v20200324/model/DetachCcnResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/ShareBlueprintAcrossAccountsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/BlueprintPrice.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeScenesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesResponse.h
@@ -71,7 +72,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/CreateDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DockerContainer.h
-  include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/CancelShareBlueprintAcrossAccountsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/TerminateDisksResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DiskBackup.h
@@ -82,7 +83,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeDockerContainerConfigurationRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewDisksRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/TrafficPackage.h
+  include/tencentcloud/lighthouse/v20200324/model/ShareBlueprintAcrossAccountsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/FirewallTemplateRuleInfo.h
   include/tencentcloud/lighthouse/v20200324/model/Disk.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h
@@ -135,6 +136,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/SceneInfo.h
   include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDockerActivitiesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.h
   include/tencentcloud/lighthouse/v20200324/model/IsolateInstancesRequest.h
@@ -212,6 +214,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesReturnableResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ContainerEnv.h
+  include/tencentcloud/lighthouse/v20200324/model/TrafficPackage.h
   include/tencentcloud/lighthouse/v20200324/model/FirewallRule.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/FirewallRuleInfo.h
@@ -285,6 +288,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/AttachDetail.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/CancelShareBlueprintAcrossAccountsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/BlueprintInstance.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceCreateDisksResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceChargePrepaid.h
@@ -317,6 +321,7 @@ set(lighthouse_src
   src/v20200324/model/InquirePriceCreateDisksRequest.cpp
   src/v20200324/model/ModifyBundle.cpp
   src/v20200324/model/DetachCcnResponse.cpp
+  src/v20200324/model/ShareBlueprintAcrossAccountsRequest.cpp
   src/v20200324/model/BlueprintPrice.cpp
   src/v20200324/model/DescribeScenesResponse.cpp
   src/v20200324/model/InquirePriceRenewInstancesResponse.cpp
@@ -348,7 +353,7 @@ set(lighthouse_src
   src/v20200324/model/CreateDisksRequest.cpp
   src/v20200324/model/AssociateInstancesKeyPairsRequest.cpp
   src/v20200324/model/DockerContainer.cpp
-  src/v20200324/model/ImportKeyPairResponse.cpp
+  src/v20200324/model/CancelShareBlueprintAcrossAccountsResponse.cpp
   src/v20200324/model/DescribeSnapshotsRequest.cpp
   src/v20200324/model/TerminateDisksResponse.cpp
   src/v20200324/model/DiskBackup.cpp
@@ -359,7 +364,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeDockerContainerConfigurationRequest.cpp
   src/v20200324/model/ModifyBlueprintAttributeRequest.cpp
   src/v20200324/model/InquirePriceRenewDisksRequest.cpp
-  src/v20200324/model/TrafficPackage.cpp
+  src/v20200324/model/ShareBlueprintAcrossAccountsResponse.cpp
   src/v20200324/model/FirewallTemplateRuleInfo.cpp
   src/v20200324/model/Disk.cpp
   src/v20200324/model/ModifyFirewallRulesResponse.cpp
@@ -412,6 +417,7 @@ set(lighthouse_src
   src/v20200324/model/SceneInfo.cpp
   src/v20200324/model/ImportKeyPairRequest.cpp
   src/v20200324/model/DescribeDockerActivitiesRequest.cpp
+  src/v20200324/model/ImportKeyPairResponse.cpp
   src/v20200324/model/DeleteBlueprintsResponse.cpp
   src/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.cpp
   src/v20200324/model/IsolateInstancesRequest.cpp
@@ -489,6 +495,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeFirewallRulesResponse.cpp
   src/v20200324/model/DescribeInstancesReturnableResponse.cpp
   src/v20200324/model/ContainerEnv.cpp
+  src/v20200324/model/TrafficPackage.cpp
   src/v20200324/model/FirewallRule.cpp
   src/v20200324/model/DeleteBlueprintsRequest.cpp
   src/v20200324/model/FirewallRuleInfo.cpp
@@ -562,6 +569,7 @@ set(lighthouse_src
   src/v20200324/model/AttachDetail.cpp
   src/v20200324/model/ModifyDisksAttributeResponse.cpp
   src/v20200324/model/CreateInstanceSnapshotRequest.cpp
+  src/v20200324/model/CancelShareBlueprintAcrossAccountsRequest.cpp
   src/v20200324/model/BlueprintInstance.cpp
   src/v20200324/model/InquirePriceCreateDisksResponse.cpp
   src/v20200324/model/InstanceChargePrepaid.cpp

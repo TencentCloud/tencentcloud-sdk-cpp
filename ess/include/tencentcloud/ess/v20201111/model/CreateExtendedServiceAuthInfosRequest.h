@@ -91,35 +91,27 @@ namespace TencentCloud
                     bool UserIdsHasBeenSet() const;
 
                     /**
-                     * 获取要查询的扩展服务类型。
-默认为空，即查询当前支持的所有扩展服务信息。
-若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
+                     * 获取取值
 <ul><li>OPEN_SERVER_SIGN：企业自动签</li>
+<li>BATCH_SIGN：批量签署</li>
 </ul>
-
-                     * @return ExtendServiceType 要查询的扩展服务类型。
-默认为空，即查询当前支持的所有扩展服务信息。
-若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
+                     * @return ExtendServiceType 取值
 <ul><li>OPEN_SERVER_SIGN：企业自动签</li>
+<li>BATCH_SIGN：批量签署</li>
 </ul>
-
                      * 
                      */
                     std::string GetExtendServiceType() const;
 
                     /**
-                     * 设置要查询的扩展服务类型。
-默认为空，即查询当前支持的所有扩展服务信息。
-若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
+                     * 设置取值
 <ul><li>OPEN_SERVER_SIGN：企业自动签</li>
+<li>BATCH_SIGN：批量签署</li>
 </ul>
-
-                     * @param _extendServiceType 要查询的扩展服务类型。
-默认为空，即查询当前支持的所有扩展服务信息。
-若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
+                     * @param _extendServiceType 取值
 <ul><li>OPEN_SERVER_SIGN：企业自动签</li>
+<li>BATCH_SIGN：批量签署</li>
 </ul>
-
                      * 
                      */
                     void SetExtendServiceType(const std::string& _extendServiceType);
@@ -172,12 +164,10 @@ namespace TencentCloud
                     bool m_userIdsHasBeenSet;
 
                     /**
-                     * 要查询的扩展服务类型。
-默认为空，即查询当前支持的所有扩展服务信息。
-若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
+                     * 取值
 <ul><li>OPEN_SERVER_SIGN：企业自动签</li>
+<li>BATCH_SIGN：批量签署</li>
 </ul>
-
                      */
                     std::string m_extendServiceType;
                     bool m_extendServiceTypeHasBeenSet;

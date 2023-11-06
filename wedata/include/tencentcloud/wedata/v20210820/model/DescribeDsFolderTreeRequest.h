@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool IncludeTaskHasBeenSet() const;
 
+                    /**
+                     * 获取是否包含虚拟任务，当 IncludeTask 为 true 的时候，该参数才生效，默认为 true
+                     * @return IncludeVirtualTask 是否包含虚拟任务，当 IncludeTask 为 true 的时候，该参数才生效，默认为 true
+                     * 
+                     */
+                    bool GetIncludeVirtualTask() const;
+
+                    /**
+                     * 设置是否包含虚拟任务，当 IncludeTask 为 true 的时候，该参数才生效，默认为 true
+                     * @param _includeVirtualTask 是否包含虚拟任务，当 IncludeTask 为 true 的时候，该参数才生效，默认为 true
+                     * 
+                     */
+                    void SetIncludeVirtualTask(const bool& _includeVirtualTask);
+
+                    /**
+                     * 判断参数 IncludeVirtualTask 是否已赋值
+                     * @return IncludeVirtualTask 是否已赋值
+                     * 
+                     */
+                    bool IncludeVirtualTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     bool m_includeTask;
                     bool m_includeTaskHasBeenSet;
+
+                    /**
+                     * 是否包含虚拟任务，当 IncludeTask 为 true 的时候，该参数才生效，默认为 true
+                     */
+                    bool m_includeVirtualTask;
+                    bool m_includeVirtualTaskHasBeenSet;
 
                 };
             }

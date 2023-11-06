@@ -139,6 +139,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeModuleStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeModuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeObjectsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeObjectsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePeakPointsRequest.h>
@@ -471,6 +473,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpHitItemsResponse> DescribeIpHitItemsOutcome;
                 typedef std::future<DescribeIpHitItemsOutcome> DescribeIpHitItemsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeIpHitItemsRequest&, DescribeIpHitItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpHitItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModuleStatusResponse> DescribeModuleStatusOutcome;
+                typedef std::future<DescribeModuleStatusOutcome> DescribeModuleStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeModuleStatusRequest&, DescribeModuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeObjectsResponse> DescribeObjectsOutcome;
                 typedef std::future<DescribeObjectsOutcome> DescribeObjectsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeObjectsRequest&, DescribeObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeObjectsAsyncHandler;
@@ -1222,6 +1227,15 @@ Waf  CC V2 Query接口
                 DescribeIpHitItemsOutcome DescribeIpHitItems(const Model::DescribeIpHitItemsRequest &request);
                 void DescribeIpHitItemsAsync(const Model::DescribeIpHitItemsRequest& request, const DescribeIpHitItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIpHitItemsOutcomeCallable DescribeIpHitItemsCallable(const Model::DescribeIpHitItemsRequest& request);
+
+                /**
+                 *查询各个waf基础安全模块的开关状态，看每个模块是否开启
+                 * @param req DescribeModuleStatusRequest
+                 * @return DescribeModuleStatusOutcome
+                 */
+                DescribeModuleStatusOutcome DescribeModuleStatus(const Model::DescribeModuleStatusRequest &request);
+                void DescribeModuleStatusAsync(const Model::DescribeModuleStatusRequest& request, const DescribeModuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModuleStatusOutcomeCallable DescribeModuleStatusCallable(const Model::DescribeModuleStatusRequest& request);
 
                 /**
                  *查看防护对象列表

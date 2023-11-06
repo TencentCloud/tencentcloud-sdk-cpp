@@ -2534,6 +2534,49 @@ WafClient::DescribeIpHitItemsOutcomeCallable WafClient::DescribeIpHitItemsCallab
     return task->get_future();
 }
 
+WafClient::DescribeModuleStatusOutcome WafClient::DescribeModuleStatus(const DescribeModuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModuleStatusResponse rsp = DescribeModuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModuleStatusOutcome(rsp);
+        else
+            return DescribeModuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeModuleStatusAsync(const DescribeModuleStatusRequest& request, const DescribeModuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeModuleStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeModuleStatusOutcomeCallable WafClient::DescribeModuleStatusCallable(const DescribeModuleStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeModuleStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeModuleStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeObjectsOutcome WafClient::DescribeObjects(const DescribeObjectsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeObjects");

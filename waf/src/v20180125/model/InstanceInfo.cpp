@@ -53,7 +53,8 @@ InstanceInfo::InstanceInfo() :
     m_sandboxQpsHasBeenSet(false),
     m_isAPISecurityTrialHasBeenSet(false),
     m_majorEventsPkgHasBeenSet(false),
-    m_hybridPkgHasBeenSet(false)
+    m_hybridPkgHasBeenSet(false),
+    m_apiPkgHasBeenSet(false)
 {
 }
 
@@ -441,6 +442,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_hybridPkgHasBeenSet = true;
     }
 
+    if (value.HasMember("ApiPkg") && !value["ApiPkg"].IsNull())
+    {
+        if (!value["ApiPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ApiPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_apiPkg.Deserialize(value["ApiPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_apiPkgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -717,6 +735,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hybridPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_apiPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_apiPkg.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1248,5 +1275,21 @@ void InstanceInfo::SetHybridPkg(const HybridPkg& _hybridPkg)
 bool InstanceInfo::HybridPkgHasBeenSet() const
 {
     return m_hybridPkgHasBeenSet;
+}
+
+ApiPkg InstanceInfo::GetApiPkg() const
+{
+    return m_apiPkg;
+}
+
+void InstanceInfo::SetApiPkg(const ApiPkg& _apiPkg)
+{
+    m_apiPkg = _apiPkg;
+    m_apiPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::ApiPkgHasBeenSet() const
+{
+    return m_apiPkgHasBeenSet;
 }
 
