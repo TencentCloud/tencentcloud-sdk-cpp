@@ -83,6 +83,49 @@ TeoClient::BindSecurityTemplateToEntityOutcomeCallable TeoClient::BindSecurityTe
     return task->get_future();
 }
 
+TeoClient::BindSharedCNAMEOutcome TeoClient::BindSharedCNAME(const BindSharedCNAMERequest &request)
+{
+    auto outcome = MakeRequest(request, "BindSharedCNAME");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindSharedCNAMEResponse rsp = BindSharedCNAMEResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindSharedCNAMEOutcome(rsp);
+        else
+            return BindSharedCNAMEOutcome(o.GetError());
+    }
+    else
+    {
+        return BindSharedCNAMEOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::BindSharedCNAMEAsync(const BindSharedCNAMERequest& request, const BindSharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindSharedCNAME(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::BindSharedCNAMEOutcomeCallable TeoClient::BindSharedCNAMECallable(const BindSharedCNAMERequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindSharedCNAMEOutcome()>>(
+        [this, request]()
+        {
+            return this->BindSharedCNAME(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::BindZoneToPlanOutcome TeoClient::BindZoneToPlan(const BindZoneToPlanRequest &request)
 {
     auto outcome = MakeRequest(request, "BindZoneToPlan");
@@ -979,6 +1022,49 @@ TeoClient::DeleteSecurityIPGroupOutcomeCallable TeoClient::DeleteSecurityIPGroup
         [this, request]()
         {
             return this->DeleteSecurityIPGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteSharedCNAMEOutcome TeoClient::DeleteSharedCNAME(const DeleteSharedCNAMERequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSharedCNAME");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSharedCNAMEResponse rsp = DeleteSharedCNAMEResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSharedCNAMEOutcome(rsp);
+        else
+            return DeleteSharedCNAMEOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSharedCNAMEOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteSharedCNAMEAsync(const DeleteSharedCNAMERequest& request, const DeleteSharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSharedCNAME(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteSharedCNAMEOutcomeCallable TeoClient::DeleteSharedCNAMECallable(const DeleteSharedCNAMERequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSharedCNAMEOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSharedCNAME(request);
         }
     );
 

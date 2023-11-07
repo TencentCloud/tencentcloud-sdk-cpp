@@ -30,7 +30,8 @@ SyncProxyOrganizationRequest::SyncProxyOrganizationRequest() :
     m_proxyLegalNameHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_proxyLegalIdCardTypeHasBeenSet(false),
-    m_proxyLegalIdCardNumberHasBeenSet(false)
+    m_proxyLegalIdCardNumberHasBeenSet(false),
+    m_proxyAddressHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string SyncProxyOrganizationRequest::ToJsonString() const
         string key = "ProxyLegalIdCardNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_proxyLegalIdCardNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyAddress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -241,6 +250,22 @@ void SyncProxyOrganizationRequest::SetProxyLegalIdCardNumber(const string& _prox
 bool SyncProxyOrganizationRequest::ProxyLegalIdCardNumberHasBeenSet() const
 {
     return m_proxyLegalIdCardNumberHasBeenSet;
+}
+
+string SyncProxyOrganizationRequest::GetProxyAddress() const
+{
+    return m_proxyAddress;
+}
+
+void SyncProxyOrganizationRequest::SetProxyAddress(const string& _proxyAddress)
+{
+    m_proxyAddress = _proxyAddress;
+    m_proxyAddressHasBeenSet = true;
+}
+
+bool SyncProxyOrganizationRequest::ProxyAddressHasBeenSet() const
+{
+    return m_proxyAddressHasBeenSet;
 }
 
 

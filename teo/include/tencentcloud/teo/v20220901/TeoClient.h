@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityRequest.h>
 #include <tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityResponse.h>
+#include <tencentcloud/teo/v20220901/model/BindSharedCNAMERequest.h>
+#include <tencentcloud/teo/v20220901/model/BindSharedCNAMEResponse.h>
 #include <tencentcloud/teo/v20220901/model/BindZoneToPlanRequest.h>
 #include <tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h>
 #include <tencentcloud/teo/v20220901/model/CheckCnameStatusRequest.h>
@@ -67,6 +69,8 @@
 #include <tencentcloud/teo/v20220901/model/DeleteRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteSecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteSecurityIPGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSharedCNAMERequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSharedCNAMEResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteZoneRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteZoneResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAccelerationDomainsRequest.h>
@@ -178,6 +182,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindSecurityTemplateToEntityResponse> BindSecurityTemplateToEntityOutcome;
                 typedef std::future<BindSecurityTemplateToEntityOutcome> BindSecurityTemplateToEntityOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::BindSecurityTemplateToEntityRequest&, BindSecurityTemplateToEntityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindSecurityTemplateToEntityAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindSharedCNAMEResponse> BindSharedCNAMEOutcome;
+                typedef std::future<BindSharedCNAMEOutcome> BindSharedCNAMEOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::BindSharedCNAMERequest&, BindSharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindSharedCNAMEAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindZoneToPlanResponse> BindZoneToPlanOutcome;
                 typedef std::future<BindZoneToPlanOutcome> BindZoneToPlanOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::BindZoneToPlanRequest&, BindZoneToPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindZoneToPlanAsyncHandler;
@@ -241,6 +248,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSecurityIPGroupResponse> DeleteSecurityIPGroupOutcome;
                 typedef std::future<DeleteSecurityIPGroupOutcome> DeleteSecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteSecurityIPGroupRequest&, DeleteSecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityIPGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSharedCNAMEResponse> DeleteSharedCNAMEOutcome;
+                typedef std::future<DeleteSharedCNAMEOutcome> DeleteSharedCNAMEOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteSharedCNAMERequest&, DeleteSharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSharedCNAMEAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteZoneResponse> DeleteZoneOutcome;
                 typedef std::future<DeleteZoneOutcome> DeleteZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteZoneRequest&, DeleteZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteZoneAsyncHandler;
@@ -395,6 +405,15 @@ namespace TencentCloud
                 BindSecurityTemplateToEntityOutcomeCallable BindSecurityTemplateToEntityCallable(const Model::BindSecurityTemplateToEntityRequest& request);
 
                 /**
+                 *用于加速域名绑定或解绑共享 CNAME，该功能白名单内测中。
+                 * @param req BindSharedCNAMERequest
+                 * @return BindSharedCNAMEOutcome
+                 */
+                BindSharedCNAMEOutcome BindSharedCNAME(const Model::BindSharedCNAMERequest &request);
+                void BindSharedCNAMEAsync(const Model::BindSharedCNAMERequest& request, const BindSharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindSharedCNAMEOutcomeCallable BindSharedCNAMECallable(const Model::BindSharedCNAMERequest& request);
+
+                /**
                  *将未绑定套餐的站点绑定到已有套餐
                  * @param req BindZoneToPlanRequest
                  * @return BindZoneToPlanOutcome
@@ -507,7 +526,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateSecurityIPGroupOutcomeCallable CreateSecurityIPGroupCallable(const Model::CreateSecurityIPGroupRequest& request);
 
                 /**
-                 *创建共享 CNAME
+                 *用于创建共享 CNAME，该功能白名单内测中。
                  * @param req CreateSharedCNAMERequest
                  * @return CreateSharedCNAMEOutcome
                  */
@@ -588,6 +607,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteSecurityIPGroupOutcome DeleteSecurityIPGroup(const Model::DeleteSecurityIPGroupRequest &request);
                 void DeleteSecurityIPGroupAsync(const Model::DeleteSecurityIPGroupRequest& request, const DeleteSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSecurityIPGroupOutcomeCallable DeleteSecurityIPGroupCallable(const Model::DeleteSecurityIPGroupRequest& request);
+
+                /**
+                 *用于删除共享 CNAME，该功能白名单内测中。
+                 * @param req DeleteSharedCNAMERequest
+                 * @return DeleteSharedCNAMEOutcome
+                 */
+                DeleteSharedCNAMEOutcome DeleteSharedCNAME(const Model::DeleteSharedCNAMERequest &request);
+                void DeleteSharedCNAMEAsync(const Model::DeleteSharedCNAMERequest& request, const DeleteSharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSharedCNAMEOutcomeCallable DeleteSharedCNAMECallable(const Model::DeleteSharedCNAMERequest& request);
 
                 /**
                  *删除站点。

@@ -27,6 +27,8 @@
 #include <tencentcloud/cls/v20201016/model/AddMachineGroupInfoResponse.h>
 #include <tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupResponse.h>
+#include <tencentcloud/cls/v20201016/model/CheckFunctionRequest.h>
+#include <tencentcloud/cls/v20201016/model/CheckFunctionResponse.h>
 #include <tencentcloud/cls/v20201016/model/CheckRechargeKafkaServerRequest.h>
 #include <tencentcloud/cls/v20201016/model/CheckRechargeKafkaServerResponse.h>
 #include <tencentcloud/cls/v20201016/model/CloseKafkaConsumerRequest.h>
@@ -217,6 +219,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyConfigToMachineGroupResponse> ApplyConfigToMachineGroupOutcome;
                 typedef std::future<ApplyConfigToMachineGroupOutcome> ApplyConfigToMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ApplyConfigToMachineGroupRequest&, ApplyConfigToMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyConfigToMachineGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckFunctionResponse> CheckFunctionOutcome;
+                typedef std::future<CheckFunctionOutcome> CheckFunctionOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CheckFunctionRequest&, CheckFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckRechargeKafkaServerResponse> CheckRechargeKafkaServerOutcome;
                 typedef std::future<CheckRechargeKafkaServerOutcome> CheckRechargeKafkaServerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CheckRechargeKafkaServerRequest&, CheckRechargeKafkaServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckRechargeKafkaServerAsyncHandler;
@@ -492,6 +497,15 @@ namespace TencentCloud
                 ApplyConfigToMachineGroupOutcome ApplyConfigToMachineGroup(const Model::ApplyConfigToMachineGroupRequest &request);
                 void ApplyConfigToMachineGroupAsync(const Model::ApplyConfigToMachineGroupRequest& request, const ApplyConfigToMachineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyConfigToMachineGroupOutcomeCallable ApplyConfigToMachineGroupCallable(const Model::ApplyConfigToMachineGroupRequest& request);
+
+                /**
+                 *本接口用于数据加工DSL函数的语法校验。
+                 * @param req CheckFunctionRequest
+                 * @return CheckFunctionOutcome
+                 */
+                CheckFunctionOutcome CheckFunction(const Model::CheckFunctionRequest &request);
+                void CheckFunctionAsync(const Model::CheckFunctionRequest& request, const CheckFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckFunctionOutcomeCallable CheckFunctionCallable(const Model::CheckFunctionRequest& request);
 
                 /**
                  *本接口用于校验Kafka服务集群是否可以正常访问

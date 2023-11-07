@@ -448,6 +448,156 @@ namespace TencentCloud
                      */
                     bool HttpInternalEndpointHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启ACL鉴权，专享实例支持关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AclEnabled 是否开启ACL鉴权，专享实例支持关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAclEnabled() const;
+
+                    /**
+                     * 设置是否开启ACL鉴权，专享实例支持关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aclEnabled 是否开启ACL鉴权，专享实例支持关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAclEnabled(const bool& _aclEnabled);
+
+                    /**
+                     * 判断参数 AclEnabled 是否已赋值
+                     * @return AclEnabled 是否已赋值
+                     * 
+                     */
+                    bool AclEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取公网CLB实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicClbId 公网CLB实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPublicClbId() const;
+
+                    /**
+                     * 设置公网CLB实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _publicClbId 公网CLB实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPublicClbId(const std::string& _publicClbId);
+
+                    /**
+                     * 判断参数 PublicClbId 是否已赋值
+                     * @return PublicClbId 是否已赋值
+                     * 
+                     */
+                    bool PublicClbIdHasBeenSet() const;
+
+                    /**
+                     * 获取vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Vip vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVip() const;
+
+                    /**
+                     * 设置vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vip vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVip(const std::string& _vip);
+
+                    /**
+                     * 判断参数 Vip 是否已赋值
+                     * @return Vip 是否已赋值
+                     * 
+                     */
+                    bool VipHasBeenSet() const;
+
+                    /**
+                     * 获取所属VPC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcId 所属VPC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置所属VPC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vpcId 所属VPC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持迁移
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportMigration 是否支持迁移
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSupportMigration() const;
+
+                    /**
+                     * 设置是否支持迁移
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _supportMigration 是否支持迁移
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSupportMigration(const bool& _supportMigration);
+
+                    /**
+                     * 判断参数 SupportMigration 是否已赋值
+                     * @return SupportMigration 是否已赋值
+                     * 
+                     */
+                    bool SupportMigrationHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetInstanceStatus() const;
+
+                    /**
+                     * 设置实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceStatus(const int64_t& _instanceStatus);
+
+                    /**
+                     * 判断参数 InstanceStatus 是否已赋值
+                     * @return InstanceStatus 是否已赋值
+                     * 
+                     */
+                    bool InstanceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -562,6 +712,48 @@ namespace TencentCloud
                      */
                     std::string m_httpInternalEndpoint;
                     bool m_httpInternalEndpointHasBeenSet;
+
+                    /**
+                     * 是否开启ACL鉴权，专享实例支持关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_aclEnabled;
+                    bool m_aclEnabledHasBeenSet;
+
+                    /**
+                     * 公网CLB实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicClbId;
+                    bool m_publicClbIdHasBeenSet;
+
+                    /**
+                     * vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vip;
+                    bool m_vipHasBeenSet;
+
+                    /**
+                     * 所属VPC
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 是否支持迁移
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_supportMigration;
+                    bool m_supportMigrationHasBeenSet;
+
+                    /**
+                     * 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_instanceStatus;
+                    bool m_instanceStatusHasBeenSet;
 
                 };
             }

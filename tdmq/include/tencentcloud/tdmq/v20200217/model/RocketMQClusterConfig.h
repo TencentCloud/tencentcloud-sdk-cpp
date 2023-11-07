@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/RocketMQTopicDistribution.h>
 
 
 namespace TencentCloud
@@ -260,6 +261,31 @@ namespace TencentCloud
                      */
                     bool MaxQueuesPerTopicHasBeenSet() const;
 
+                    /**
+                     * 获取topic分布
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicDistribution topic分布
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<RocketMQTopicDistribution> GetTopicDistribution() const;
+
+                    /**
+                     * 设置topic分布
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topicDistribution topic分布
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopicDistribution(const std::vector<RocketMQTopicDistribution>& _topicDistribution);
+
+                    /**
+                     * 判断参数 TopicDistribution 是否已赋值
+                     * @return TopicDistribution 是否已赋值
+                     * 
+                     */
+                    bool TopicDistributionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -322,6 +348,13 @@ namespace TencentCloud
                      */
                     uint64_t m_maxQueuesPerTopic;
                     bool m_maxQueuesPerTopicHasBeenSet;
+
+                    /**
+                     * topic分布
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RocketMQTopicDistribution> m_topicDistribution;
+                    bool m_topicDistributionHasBeenSet;
 
                 };
             }

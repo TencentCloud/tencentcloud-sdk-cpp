@@ -37,7 +37,13 @@ RocketMQClusterInfo::RocketMQClusterInfo() :
     m_httpPublicEndpointHasBeenSet(false),
     m_httpVpcEndpointHasBeenSet(false),
     m_internalEndpointHasBeenSet(false),
-    m_httpInternalEndpointHasBeenSet(false)
+    m_httpInternalEndpointHasBeenSet(false),
+    m_aclEnabledHasBeenSet(false),
+    m_publicClbIdHasBeenSet(false),
+    m_vipHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_supportMigrationHasBeenSet(false),
+    m_instanceStatusHasBeenSet(false)
 {
 }
 
@@ -226,6 +232,66 @@ CoreInternalOutcome RocketMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_httpInternalEndpointHasBeenSet = true;
     }
 
+    if (value.HasMember("AclEnabled") && !value["AclEnabled"].IsNull())
+    {
+        if (!value["AclEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.AclEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_aclEnabled = value["AclEnabled"].GetBool();
+        m_aclEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicClbId") && !value["PublicClbId"].IsNull())
+    {
+        if (!value["PublicClbId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.PublicClbId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicClbId = string(value["PublicClbId"].GetString());
+        m_publicClbIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vip") && !value["Vip"].IsNull())
+    {
+        if (!value["Vip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vip = string(value["Vip"].GetString());
+        m_vipHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportMigration") && !value["SupportMigration"].IsNull())
+    {
+        if (!value["SupportMigration"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.SupportMigration` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportMigration = value["SupportMigration"].GetBool();
+        m_supportMigrationHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceStatus") && !value["InstanceStatus"].IsNull())
+    {
+        if (!value["InstanceStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.InstanceStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceStatus = value["InstanceStatus"].GetInt64();
+        m_instanceStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -374,6 +440,54 @@ void RocketMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "HttpInternalEndpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_httpInternalEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aclEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aclEnabled, allocator);
+    }
+
+    if (m_publicClbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicClbId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicClbId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportMigrationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportMigration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportMigration, allocator);
+    }
+
+    if (m_instanceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceStatus, allocator);
     }
 
 }
@@ -649,5 +763,101 @@ void RocketMQClusterInfo::SetHttpInternalEndpoint(const string& _httpInternalEnd
 bool RocketMQClusterInfo::HttpInternalEndpointHasBeenSet() const
 {
     return m_httpInternalEndpointHasBeenSet;
+}
+
+bool RocketMQClusterInfo::GetAclEnabled() const
+{
+    return m_aclEnabled;
+}
+
+void RocketMQClusterInfo::SetAclEnabled(const bool& _aclEnabled)
+{
+    m_aclEnabled = _aclEnabled;
+    m_aclEnabledHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::AclEnabledHasBeenSet() const
+{
+    return m_aclEnabledHasBeenSet;
+}
+
+string RocketMQClusterInfo::GetPublicClbId() const
+{
+    return m_publicClbId;
+}
+
+void RocketMQClusterInfo::SetPublicClbId(const string& _publicClbId)
+{
+    m_publicClbId = _publicClbId;
+    m_publicClbIdHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::PublicClbIdHasBeenSet() const
+{
+    return m_publicClbIdHasBeenSet;
+}
+
+string RocketMQClusterInfo::GetVip() const
+{
+    return m_vip;
+}
+
+void RocketMQClusterInfo::SetVip(const string& _vip)
+{
+    m_vip = _vip;
+    m_vipHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::VipHasBeenSet() const
+{
+    return m_vipHasBeenSet;
+}
+
+string RocketMQClusterInfo::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void RocketMQClusterInfo::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+bool RocketMQClusterInfo::GetSupportMigration() const
+{
+    return m_supportMigration;
+}
+
+void RocketMQClusterInfo::SetSupportMigration(const bool& _supportMigration)
+{
+    m_supportMigration = _supportMigration;
+    m_supportMigrationHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::SupportMigrationHasBeenSet() const
+{
+    return m_supportMigrationHasBeenSet;
+}
+
+int64_t RocketMQClusterInfo::GetInstanceStatus() const
+{
+    return m_instanceStatus;
+}
+
+void RocketMQClusterInfo::SetInstanceStatus(const int64_t& _instanceStatus)
+{
+    m_instanceStatus = _instanceStatus;
+    m_instanceStatusHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::InstanceStatusHasBeenSet() const
+{
+    return m_instanceStatusHasBeenSet;
 }
 

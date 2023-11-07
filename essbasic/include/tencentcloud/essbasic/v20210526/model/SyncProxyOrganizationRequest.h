@@ -45,19 +45,43 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用信息
-此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填
-                     * @return Agent 应用信息
-此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+</ul>
+
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+</ul>
+
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用信息
-此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填
-                     * @param _agent 应用信息
-此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+</ul>
+
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+</ul>
+
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -70,15 +94,19 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业名称，最大长度64个字符
-                     * @return ProxyOrganizationName 第三方平台子客企业名称，最大长度64个字符
+                     * 获取第三方平台子客企业名称，请确认该名称与企业营业执照中注册的名称一致。
+注: `如果名称中包含英文括号()，请使用中文括号（）代替。`
+                     * @return ProxyOrganizationName 第三方平台子客企业名称，请确认该名称与企业营业执照中注册的名称一致。
+注: `如果名称中包含英文括号()，请使用中文括号（）代替。`
                      * 
                      */
                     std::string GetProxyOrganizationName() const;
 
                     /**
-                     * 设置第三方平台子客企业名称，最大长度64个字符
-                     * @param _proxyOrganizationName 第三方平台子客企业名称，最大长度64个字符
+                     * 设置第三方平台子客企业名称，请确认该名称与企业营业执照中注册的名称一致。
+注: `如果名称中包含英文括号()，请使用中文括号（）代替。`
+                     * @param _proxyOrganizationName 第三方平台子客企业名称，请确认该名称与企业营业执照中注册的名称一致。
+注: `如果名称中包含英文括号()，请使用中文括号（）代替。`
                      * 
                      */
                     void SetProxyOrganizationName(const std::string& _proxyOrganizationName);
@@ -133,15 +161,15 @@ namespace TencentCloud
                     bool UniformSocialCreditCodeHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业法人/负责人姓名
-                     * @return ProxyLegalName 第三方平台子客企业法人/负责人姓名
+                     * 获取第三方平台子客企业法定代表人的名字
+                     * @return ProxyLegalName 第三方平台子客企业法定代表人的名字
                      * 
                      */
                     std::string GetProxyLegalName() const;
 
                     /**
-                     * 设置第三方平台子客企业法人/负责人姓名
-                     * @param _proxyLegalName 第三方平台子客企业法人/负责人姓名
+                     * 设置第三方平台子客企业法定代表人的名字
+                     * @param _proxyLegalName 第三方平台子客企业法定代表人的名字
                      * 
                      */
                     void SetProxyLegalName(const std::string& _proxyLegalName);
@@ -175,15 +203,23 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型
-                     * @return ProxyLegalIdCardType 第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型
+                     * 获取第三方平台子客企业法定代表人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证 (默认值)</li></ul>
+注: `现在仅支持ID_CARD居民身份证类型`
+                     * @return ProxyLegalIdCardType 第三方平台子客企业法定代表人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证 (默认值)</li></ul>
+注: `现在仅支持ID_CARD居民身份证类型`
                      * 
                      */
                     std::string GetProxyLegalIdCardType() const;
 
                     /**
-                     * 设置第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型
-                     * @param _proxyLegalIdCardType 第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型
+                     * 设置第三方平台子客企业法定代表人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证 (默认值)</li></ul>
+注: `现在仅支持ID_CARD居民身份证类型`
+                     * @param _proxyLegalIdCardType 第三方平台子客企业法定代表人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证 (默认值)</li></ul>
+注: `现在仅支持ID_CARD居民身份证类型`
                      * 
                      */
                     void SetProxyLegalIdCardType(const std::string& _proxyLegalIdCardType);
@@ -196,15 +232,19 @@ namespace TencentCloud
                     bool ProxyLegalIdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业法人/负责人证件号
-                     * @return ProxyLegalIdCardNumber 第三方平台子客企业法人/负责人证件号
+                     * 获取第三方平台子客企业法定代表人的证件号码, 应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+                     * @return ProxyLegalIdCardNumber 第三方平台子客企业法定代表人的证件号码, 应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
                      * 
                      */
                     std::string GetProxyLegalIdCardNumber() const;
 
                     /**
-                     * 设置第三方平台子客企业法人/负责人证件号
-                     * @param _proxyLegalIdCardNumber 第三方平台子客企业法人/负责人证件号
+                     * 设置第三方平台子客企业法定代表人的证件号码, 应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+                     * @param _proxyLegalIdCardNumber 第三方平台子客企业法定代表人的证件号码, 应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
                      * 
                      */
                     void SetProxyLegalIdCardNumber(const std::string& _proxyLegalIdCardNumber);
@@ -216,17 +256,53 @@ namespace TencentCloud
                      */
                     bool ProxyLegalIdCardNumberHasBeenSet() const;
 
+                    /**
+                     * 获取第三方平台子客企业详细住所，最大长度500个字符
+
+注：`需要符合省市区详情的格式例如： XX省XX市XX区街道具体地址`
+                     * @return ProxyAddress 第三方平台子客企业详细住所，最大长度500个字符
+
+注：`需要符合省市区详情的格式例如： XX省XX市XX区街道具体地址`
+                     * 
+                     */
+                    std::string GetProxyAddress() const;
+
+                    /**
+                     * 设置第三方平台子客企业详细住所，最大长度500个字符
+
+注：`需要符合省市区详情的格式例如： XX省XX市XX区街道具体地址`
+                     * @param _proxyAddress 第三方平台子客企业详细住所，最大长度500个字符
+
+注：`需要符合省市区详情的格式例如： XX省XX市XX区街道具体地址`
+                     * 
+                     */
+                    void SetProxyAddress(const std::string& _proxyAddress);
+
+                    /**
+                     * 判断参数 ProxyAddress 是否已赋值
+                     * @return ProxyAddress 是否已赋值
+                     * 
+                     */
+                    bool ProxyAddressHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用信息
-此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+</ul>
+
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业名称，最大长度64个字符
+                     * 第三方平台子客企业名称，请确认该名称与企业营业执照中注册的名称一致。
+注: `如果名称中包含英文括号()，请使用中文括号（）代替。`
                      */
                     std::string m_proxyOrganizationName;
                     bool m_proxyOrganizationNameHasBeenSet;
@@ -244,7 +320,7 @@ namespace TencentCloud
                     bool m_uniformSocialCreditCodeHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业法人/负责人姓名
+                     * 第三方平台子客企业法定代表人的名字
                      */
                     std::string m_proxyLegalName;
                     bool m_proxyLegalNameHasBeenSet;
@@ -256,16 +332,27 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型
+                     * 第三方平台子客企业法定代表人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证 (默认值)</li></ul>
+注: `现在仅支持ID_CARD居民身份证类型`
                      */
                     std::string m_proxyLegalIdCardType;
                     bool m_proxyLegalIdCardTypeHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业法人/负责人证件号
+                     * 第三方平台子客企业法定代表人的证件号码, 应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
                      */
                     std::string m_proxyLegalIdCardNumber;
                     bool m_proxyLegalIdCardNumberHasBeenSet;
+
+                    /**
+                     * 第三方平台子客企业详细住所，最大长度500个字符
+
+注：`需要符合省市区详情的格式例如： XX省XX市XX区街道具体地址`
+                     */
+                    std::string m_proxyAddress;
+                    bool m_proxyAddressHasBeenSet;
 
                 };
             }

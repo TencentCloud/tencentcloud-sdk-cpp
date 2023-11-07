@@ -43,6 +43,8 @@
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetMultiFlowStatisticRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetMultiFlowStatisticResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetNetMonitorRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetNetMonitorResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetPublicKeyRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetPublicKeyResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataRequest.h>
@@ -93,6 +95,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetMultiFlowStatisticResponse> GetMultiFlowStatisticOutcome;
                 typedef std::future<GetMultiFlowStatisticOutcome> GetMultiFlowStatisticOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetMultiFlowStatisticRequest&, GetMultiFlowStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMultiFlowStatisticAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetNetMonitorResponse> GetNetMonitorOutcome;
+                typedef std::future<GetNetMonitorOutcome> GetNetMonitorOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetNetMonitorRequest&, GetNetMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetNetMonitorAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetPublicKeyResponse> GetPublicKeyOutcome;
                 typedef std::future<GetPublicKeyOutcome> GetPublicKeyOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetPublicKeyRequest&, GetPublicKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPublicKeyAsyncHandler;
@@ -194,6 +199,15 @@ namespace TencentCloud
                 GetMultiFlowStatisticOutcome GetMultiFlowStatistic(const Model::GetMultiFlowStatisticRequest &request);
                 void GetMultiFlowStatisticAsync(const Model::GetMultiFlowStatisticRequest& request, const GetMultiFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetMultiFlowStatisticOutcomeCallable GetMultiFlowStatisticCallable(const Model::GetMultiFlowStatisticRequest& request);
+
+                /**
+                 *获取单设备的实时流量统计指标
+                 * @param req GetNetMonitorRequest
+                 * @return GetNetMonitorOutcome
+                 */
+                GetNetMonitorOutcome GetNetMonitor(const Model::GetNetMonitorRequest &request);
+                void GetNetMonitorAsync(const Model::GetNetMonitorRequest& request, const GetNetMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetNetMonitorOutcomeCallable GetNetMonitorCallable(const Model::GetNetMonitorRequest& request);
 
                 /**
                  *获取公钥用于验签

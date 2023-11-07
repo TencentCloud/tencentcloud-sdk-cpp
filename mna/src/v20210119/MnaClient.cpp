@@ -470,6 +470,49 @@ MnaClient::GetMultiFlowStatisticOutcomeCallable MnaClient::GetMultiFlowStatistic
     return task->get_future();
 }
 
+MnaClient::GetNetMonitorOutcome MnaClient::GetNetMonitor(const GetNetMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetNetMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetNetMonitorResponse rsp = GetNetMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetNetMonitorOutcome(rsp);
+        else
+            return GetNetMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return GetNetMonitorOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetNetMonitorAsync(const GetNetMonitorRequest& request, const GetNetMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetNetMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetNetMonitorOutcomeCallable MnaClient::GetNetMonitorCallable(const GetNetMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetNetMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->GetNetMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::GetPublicKeyOutcome MnaClient::GetPublicKey(const GetPublicKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "GetPublicKey");

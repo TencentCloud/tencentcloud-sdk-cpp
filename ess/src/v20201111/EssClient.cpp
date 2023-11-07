@@ -1846,6 +1846,49 @@ EssClient::DeleteSealPoliciesOutcomeCallable EssClient::DeleteSealPoliciesCallab
     return task->get_future();
 }
 
+EssClient::DescribeBillUsageDetailOutcome EssClient::DescribeBillUsageDetail(const DescribeBillUsageDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillUsageDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillUsageDetailResponse rsp = DescribeBillUsageDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillUsageDetailOutcome(rsp);
+        else
+            return DescribeBillUsageDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillUsageDetailOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeBillUsageDetailAsync(const DescribeBillUsageDetailRequest& request, const DescribeBillUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillUsageDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeBillUsageDetailOutcomeCallable EssClient::DescribeBillUsageDetailCallable(const DescribeBillUsageDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillUsageDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillUsageDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeExtendedServiceAuthInfosOutcome EssClient::DescribeExtendedServiceAuthInfos(const DescribeExtendedServiceAuthInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExtendedServiceAuthInfos");

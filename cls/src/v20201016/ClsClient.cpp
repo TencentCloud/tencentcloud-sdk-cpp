@@ -126,6 +126,49 @@ ClsClient::ApplyConfigToMachineGroupOutcomeCallable ClsClient::ApplyConfigToMach
     return task->get_future();
 }
 
+ClsClient::CheckFunctionOutcome ClsClient::CheckFunction(const CheckFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckFunctionResponse rsp = CheckFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckFunctionOutcome(rsp);
+        else
+            return CheckFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckFunctionOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CheckFunctionAsync(const CheckFunctionRequest& request, const CheckFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckFunction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CheckFunctionOutcomeCallable ClsClient::CheckFunctionCallable(const CheckFunctionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckFunctionOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CheckRechargeKafkaServerOutcome ClsClient::CheckRechargeKafkaServer(const CheckRechargeKafkaServerRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckRechargeKafkaServer");

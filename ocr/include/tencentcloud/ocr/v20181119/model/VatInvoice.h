@@ -628,6 +628,98 @@ Y: 有清单 N：无清单
                      */
                     bool TrafficFreeFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否为红票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RedLetterInvoiceMark 是否为红票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetRedLetterInvoiceMark() const;
+
+                    /**
+                     * 设置是否为红票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _redLetterInvoiceMark 是否为红票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRedLetterInvoiceMark(const bool& _redLetterInvoiceMark);
+
+                    /**
+                     * 判断参数 RedLetterInvoiceMark 是否已赋值
+                     * @return RedLetterInvoiceMark 是否已赋值
+                     * 
+                     */
+                    bool RedLetterInvoiceMarkHasBeenSet() const;
+
+                    /**
+                     * 获取开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IssuingTypeMark 开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIssuingTypeMark() const;
+
+                    /**
+                     * 设置开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _issuingTypeMark 开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIssuingTypeMark(const int64_t& _issuingTypeMark);
+
+                    /**
+                     * 判断参数 IssuingTypeMark 是否已赋值
+                     * @return IssuingTypeMark 是否已赋值
+                     * 
+                     */
+                    bool IssuingTypeMarkHasBeenSet() const;
+
+                    /**
+                     * 获取代开销售方名称
+                     * @return SellerAgentName 代开销售方名称
+                     * 
+                     */
+                    std::string GetSellerAgentName() const;
+
+                    /**
+                     * 设置代开销售方名称
+                     * @param _sellerAgentName 代开销售方名称
+                     * 
+                     */
+                    void SetSellerAgentName(const std::string& _sellerAgentName);
+
+                    /**
+                     * 判断参数 SellerAgentName 是否已赋值
+                     * @return SellerAgentName 是否已赋值
+                     * 
+                     */
+                    bool SellerAgentNameHasBeenSet() const;
+
+                    /**
+                     * 获取代开销售方税号
+                     * @return SellerAgentTaxID 代开销售方税号
+                     * 
+                     */
+                    std::string GetSellerAgentTaxID() const;
+
+                    /**
+                     * 设置代开销售方税号
+                     * @param _sellerAgentTaxID 代开销售方税号
+                     * 
+                     */
+                    void SetSellerAgentTaxID(const std::string& _sellerAgentTaxID);
+
+                    /**
+                     * 判断参数 SellerAgentTaxID 是否已赋值
+                     * @return SellerAgentTaxID 是否已赋值
+                     * 
+                     */
+                    bool SellerAgentTaxIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -793,6 +885,32 @@ Y: 有清单 N：无清单
                      */
                     std::string m_trafficFreeFlag;
                     bool m_trafficFreeFlagHasBeenSet;
+
+                    /**
+                     * 是否为红票
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_redLetterInvoiceMark;
+                    bool m_redLetterInvoiceMarkHasBeenSet;
+
+                    /**
+                     * 开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_issuingTypeMark;
+                    bool m_issuingTypeMarkHasBeenSet;
+
+                    /**
+                     * 代开销售方名称
+                     */
+                    std::string m_sellerAgentName;
+                    bool m_sellerAgentNameHasBeenSet;
+
+                    /**
+                     * 代开销售方税号
+                     */
+                    std::string m_sellerAgentTaxID;
+                    bool m_sellerAgentTaxIDHasBeenSet;
 
                 };
             }

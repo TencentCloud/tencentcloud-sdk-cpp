@@ -33,7 +33,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ParquetKeyInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeCosRechargesResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeShipperTasksResponse.h
-  include/tencentcloud/cls/v20201016/model/CreateMachineGroupResponse.h
+  include/tencentcloud/cls/v20201016/model/CheckFunctionRequest.h
   include/tencentcloud/cls/v20201016/model/Filter.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyConfigExtraResponse.h
@@ -51,6 +51,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteTopicRequest.h
   include/tencentcloud/cls/v20201016/model/DescribePartitionsRequest.h
   include/tencentcloud/cls/v20201016/model/ContainerStdoutInfo.h
+  include/tencentcloud/cls/v20201016/model/CheckFunctionResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyAlarmResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeShipperTasksRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeAlarmsRequest.h
@@ -112,7 +113,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ExcludePathInfo.h
   include/tencentcloud/cls/v20201016/model/FilterRuleInfo.h
   include/tencentcloud/cls/v20201016/model/ConfigExtraInfo.h
-  include/tencentcloud/cls/v20201016/model/RetryShipperTaskResponse.h
+  include/tencentcloud/cls/v20201016/model/CreateMachineGroupResponse.h
   include/tencentcloud/cls/v20201016/model/SplitPartitionRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsResponse.h
   include/tencentcloud/cls/v20201016/model/CheckRechargeKafkaServerRequest.h
@@ -137,7 +138,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/QueryRangeMetricResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteIndexRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeConsumerResponse.h
-  include/tencentcloud/cls/v20201016/model/SearchLogTopics.h
+  include/tencentcloud/cls/v20201016/model/RetryShipperTaskResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyConsumerResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeAlertRecordHistoryRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigsRequest.h
@@ -235,6 +236,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/MachineInfo.h
   include/tencentcloud/cls/v20201016/model/ModifyLogsetResponse.h
   include/tencentcloud/cls/v20201016/model/MonitorTime.h
+  include/tencentcloud/cls/v20201016/model/SearchLogTopics.h
   include/tencentcloud/cls/v20201016/model/SearchLogRequest.h
   include/tencentcloud/cls/v20201016/model/CreateMachineGroupRequest.h
   include/tencentcloud/cls/v20201016/model/Tag.h
@@ -288,7 +290,7 @@ set(cls_src
   src/v20201016/model/ParquetKeyInfo.cpp
   src/v20201016/model/DescribeCosRechargesResponse.cpp
   src/v20201016/model/DescribeShipperTasksResponse.cpp
-  src/v20201016/model/CreateMachineGroupResponse.cpp
+  src/v20201016/model/CheckFunctionRequest.cpp
   src/v20201016/model/Filter.cpp
   src/v20201016/model/DescribeConfigMachineGroupsRequest.cpp
   src/v20201016/model/ModifyConfigExtraResponse.cpp
@@ -306,6 +308,7 @@ set(cls_src
   src/v20201016/model/DeleteTopicRequest.cpp
   src/v20201016/model/DescribePartitionsRequest.cpp
   src/v20201016/model/ContainerStdoutInfo.cpp
+  src/v20201016/model/CheckFunctionResponse.cpp
   src/v20201016/model/ModifyAlarmResponse.cpp
   src/v20201016/model/DescribeShipperTasksRequest.cpp
   src/v20201016/model/DescribeAlarmsRequest.cpp
@@ -367,7 +370,7 @@ set(cls_src
   src/v20201016/model/ExcludePathInfo.cpp
   src/v20201016/model/FilterRuleInfo.cpp
   src/v20201016/model/ConfigExtraInfo.cpp
-  src/v20201016/model/RetryShipperTaskResponse.cpp
+  src/v20201016/model/CreateMachineGroupResponse.cpp
   src/v20201016/model/SplitPartitionRequest.cpp
   src/v20201016/model/DescribeMachineGroupConfigsResponse.cpp
   src/v20201016/model/CheckRechargeKafkaServerRequest.cpp
@@ -392,7 +395,7 @@ set(cls_src
   src/v20201016/model/QueryRangeMetricResponse.cpp
   src/v20201016/model/DeleteIndexRequest.cpp
   src/v20201016/model/DescribeConsumerResponse.cpp
-  src/v20201016/model/SearchLogTopics.cpp
+  src/v20201016/model/RetryShipperTaskResponse.cpp
   src/v20201016/model/ModifyConsumerResponse.cpp
   src/v20201016/model/DescribeAlertRecordHistoryRequest.cpp
   src/v20201016/model/DescribeConfigsRequest.cpp
@@ -490,6 +493,7 @@ set(cls_src
   src/v20201016/model/MachineInfo.cpp
   src/v20201016/model/ModifyLogsetResponse.cpp
   src/v20201016/model/MonitorTime.cpp
+  src/v20201016/model/SearchLogTopics.cpp
   src/v20201016/model/SearchLogRequest.cpp
   src/v20201016/model/CreateMachineGroupRequest.cpp
   src/v20201016/model/Tag.cpp

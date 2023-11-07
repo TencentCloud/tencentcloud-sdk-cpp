@@ -25,7 +25,10 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/Capacity.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticRequest.h
   include/tencentcloud/mna/v20210119/model/DestAddressInfo.h
+  include/tencentcloud/mna/v20210119/model/GetNetMonitorResponse.h
+  include/tencentcloud/mna/v20210119/model/SlotNetInfo.h
   include/tencentcloud/mna/v20210119/model/DeleteQosRequest.h
+  include/tencentcloud/mna/v20210119/model/GetNetMonitorRequest.h
   include/tencentcloud/mna/v20210119/model/NetDetails.h
   include/tencentcloud/mna/v20210119/model/DeviceNetInfo.h
   include/tencentcloud/mna/v20210119/model/GetMultiFlowStatisticResponse.h
@@ -51,11 +54,12 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/GetDeviceRequest.h
   include/tencentcloud/mna/v20210119/model/GetDevicesResponse.h
   include/tencentcloud/mna/v20210119/model/DescribeQosRequest.h
-  include/tencentcloud/mna/v20210119/model/NetworkData.h
+  include/tencentcloud/mna/v20210119/model/MonitorData.h
   include/tencentcloud/mna/v20210119/model/DeleteDeviceResponse.h
   include/tencentcloud/mna/v20210119/model/GetStatisticDataResponse.h
   include/tencentcloud/mna/v20210119/model/DeviceInfo.h
   include/tencentcloud/mna/v20210119/model/GetDevicesRequest.h
+  include/tencentcloud/mna/v20210119/model/NetworkData.h
   include/tencentcloud/mna/v20210119/model/AddDeviceRequest.h
   include/tencentcloud/mna/v20210119/model/GetPublicKeyRequest.h
   )
@@ -68,7 +72,10 @@ set(mna_src
   src/v20210119/model/Capacity.cpp
   src/v20210119/model/GetFlowStatisticRequest.cpp
   src/v20210119/model/DestAddressInfo.cpp
+  src/v20210119/model/GetNetMonitorResponse.cpp
+  src/v20210119/model/SlotNetInfo.cpp
   src/v20210119/model/DeleteQosRequest.cpp
+  src/v20210119/model/GetNetMonitorRequest.cpp
   src/v20210119/model/NetDetails.cpp
   src/v20210119/model/DeviceNetInfo.cpp
   src/v20210119/model/GetMultiFlowStatisticResponse.cpp
@@ -94,11 +101,12 @@ set(mna_src
   src/v20210119/model/GetDeviceRequest.cpp
   src/v20210119/model/GetDevicesResponse.cpp
   src/v20210119/model/DescribeQosRequest.cpp
-  src/v20210119/model/NetworkData.cpp
+  src/v20210119/model/MonitorData.cpp
   src/v20210119/model/DeleteDeviceResponse.cpp
   src/v20210119/model/GetStatisticDataResponse.cpp
   src/v20210119/model/DeviceInfo.cpp
   src/v20210119/model/GetDevicesRequest.cpp
+  src/v20210119/model/NetworkData.cpp
   src/v20210119/model/AddDeviceRequest.cpp
   src/v20210119/model/GetPublicKeyRequest.cpp
   )
