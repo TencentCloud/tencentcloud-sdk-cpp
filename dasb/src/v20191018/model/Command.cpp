@@ -30,6 +30,7 @@ Command::Command() :
     m_accountHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_fromIpHasBeenSet(false),
+    m_sessionTimeHasBeenSet(false),
     m_sessTimeHasBeenSet(false),
     m_confirmTimeHasBeenSet(false),
     m_userDepartmentIdHasBeenSet(false),
@@ -132,6 +133,16 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
         }
         m_fromIp = string(value["FromIp"].GetString());
         m_fromIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionTime") && !value["SessionTime"].IsNull())
+    {
+        if (!value["SessionTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.SessionTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionTime = string(value["SessionTime"].GetString());
+        m_sessionTimeHasBeenSet = true;
     }
 
     if (value.HasMember("SessTime") && !value["SessTime"].IsNull())
@@ -271,6 +282,14 @@ void Command::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "FromIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fromIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessTimeHasBeenSet)
@@ -466,6 +485,22 @@ void Command::SetFromIp(const string& _fromIp)
 bool Command::FromIpHasBeenSet() const
 {
     return m_fromIpHasBeenSet;
+}
+
+string Command::GetSessionTime() const
+{
+    return m_sessionTime;
+}
+
+void Command::SetSessionTime(const string& _sessionTime)
+{
+    m_sessionTime = _sessionTime;
+    m_sessionTimeHasBeenSet = true;
+}
+
+bool Command::SessionTimeHasBeenSet() const
+{
+    return m_sessionTimeHasBeenSet;
 }
 
 string Command::GetSessTime() const

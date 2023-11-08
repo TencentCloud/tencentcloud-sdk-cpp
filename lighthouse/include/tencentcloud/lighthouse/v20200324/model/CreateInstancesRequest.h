@@ -298,15 +298,15 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取防火墙模版ID。若不指定该参数，则使用默认防火墙策略。
-                     * @return FirewallTemplateId 防火墙模版ID。若不指定该参数，则使用默认防火墙策略。
+                     * 获取防火墙模板ID。若不指定该参数，则使用默认防火墙策略。
+                     * @return FirewallTemplateId 防火墙模板ID。若不指定该参数，则使用默认防火墙策略。
                      * 
                      */
                     std::string GetFirewallTemplateId() const;
 
                     /**
-                     * 设置防火墙模版ID。若不指定该参数，则使用默认防火墙策略。
-                     * @param _firewallTemplateId 防火墙模版ID。若不指定该参数，则使用默认防火墙策略。
+                     * 设置防火墙模板ID。若不指定该参数，则使用默认防火墙策略。
+                     * @param _firewallTemplateId 防火墙模板ID。若不指定该参数，则使用默认防火墙策略。
                      * 
                      */
                     void SetFirewallTemplateId(const std::string& _firewallTemplateId);
@@ -429,7 +429,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 防火墙模版ID。若不指定该参数，则使用默认防火墙策略。
+                     * 防火墙模板ID。若不指定该参数，则使用默认防火墙策略。
                      */
                     std::string m_firewallTemplateId;
                     bool m_firewallTemplateIdHasBeenSet;

@@ -23,7 +23,13 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-DescribeModuleStatusResponse::DescribeModuleStatusResponse()
+DescribeModuleStatusResponse::DescribeModuleStatusResponse() :
+    m_webSecurityHasBeenSet(false),
+    m_accessControlHasBeenSet(false),
+    m_ccProtectionHasBeenSet(false),
+    m_antiTamperHasBeenSet(false),
+    m_antiLeakageHasBeenSet(false),
+    m_apiProtectionHasBeenSet(false)
 {
 }
 
@@ -61,6 +67,66 @@ CoreInternalOutcome DescribeModuleStatusResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("WebSecurity") && !rsp["WebSecurity"].IsNull())
+    {
+        if (!rsp["WebSecurity"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebSecurity` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_webSecurity = rsp["WebSecurity"].GetUint64();
+        m_webSecurityHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AccessControl") && !rsp["AccessControl"].IsNull())
+    {
+        if (!rsp["AccessControl"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessControl` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessControl = rsp["AccessControl"].GetInt64();
+        m_accessControlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CcProtection") && !rsp["CcProtection"].IsNull())
+    {
+        if (!rsp["CcProtection"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcProtection` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccProtection = rsp["CcProtection"].GetUint64();
+        m_ccProtectionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AntiTamper") && !rsp["AntiTamper"].IsNull())
+    {
+        if (!rsp["AntiTamper"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AntiTamper` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_antiTamper = rsp["AntiTamper"].GetUint64();
+        m_antiTamperHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AntiLeakage") && !rsp["AntiLeakage"].IsNull())
+    {
+        if (!rsp["AntiLeakage"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AntiLeakage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_antiLeakage = rsp["AntiLeakage"].GetUint64();
+        m_antiLeakageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ApiProtection") && !rsp["ApiProtection"].IsNull())
+    {
+        if (!rsp["ApiProtection"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiProtection` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiProtection = rsp["ApiProtection"].GetUint64();
+        m_apiProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +136,54 @@ string DescribeModuleStatusResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_webSecurityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebSecurity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webSecurity, allocator);
+    }
+
+    if (m_accessControlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessControl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accessControl, allocator);
+    }
+
+    if (m_ccProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ccProtection, allocator);
+    }
+
+    if (m_antiTamperHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AntiTamper";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_antiTamper, allocator);
+    }
+
+    if (m_antiLeakageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AntiLeakage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_antiLeakage, allocator);
+    }
+
+    if (m_apiProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apiProtection, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +196,65 @@ string DescribeModuleStatusResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeModuleStatusResponse::GetWebSecurity() const
+{
+    return m_webSecurity;
+}
+
+bool DescribeModuleStatusResponse::WebSecurityHasBeenSet() const
+{
+    return m_webSecurityHasBeenSet;
+}
+
+int64_t DescribeModuleStatusResponse::GetAccessControl() const
+{
+    return m_accessControl;
+}
+
+bool DescribeModuleStatusResponse::AccessControlHasBeenSet() const
+{
+    return m_accessControlHasBeenSet;
+}
+
+uint64_t DescribeModuleStatusResponse::GetCcProtection() const
+{
+    return m_ccProtection;
+}
+
+bool DescribeModuleStatusResponse::CcProtectionHasBeenSet() const
+{
+    return m_ccProtectionHasBeenSet;
+}
+
+uint64_t DescribeModuleStatusResponse::GetAntiTamper() const
+{
+    return m_antiTamper;
+}
+
+bool DescribeModuleStatusResponse::AntiTamperHasBeenSet() const
+{
+    return m_antiTamperHasBeenSet;
+}
+
+uint64_t DescribeModuleStatusResponse::GetAntiLeakage() const
+{
+    return m_antiLeakage;
+}
+
+bool DescribeModuleStatusResponse::AntiLeakageHasBeenSet() const
+{
+    return m_antiLeakageHasBeenSet;
+}
+
+uint64_t DescribeModuleStatusResponse::GetApiProtection() const
+{
+    return m_apiProtection;
+}
+
+bool DescribeModuleStatusResponse::ApiProtectionHasBeenSet() const
+{
+    return m_apiProtectionHasBeenSet;
+}
 
 

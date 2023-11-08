@@ -1502,6 +1502,49 @@ LcicClient::DescribeRoomOutcomeCallable LcicClient::DescribeRoomCallable(const D
     return task->get_future();
 }
 
+LcicClient::DescribeRoomForbiddenUserOutcome LcicClient::DescribeRoomForbiddenUser(const DescribeRoomForbiddenUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoomForbiddenUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoomForbiddenUserResponse rsp = DescribeRoomForbiddenUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoomForbiddenUserOutcome(rsp);
+        else
+            return DescribeRoomForbiddenUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoomForbiddenUserOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeRoomForbiddenUserAsync(const DescribeRoomForbiddenUserRequest& request, const DescribeRoomForbiddenUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoomForbiddenUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeRoomForbiddenUserOutcomeCallable LcicClient::DescribeRoomForbiddenUserCallable(const DescribeRoomForbiddenUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoomForbiddenUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoomForbiddenUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeRoomStatisticsOutcome LcicClient::DescribeRoomStatistics(const DescribeRoomStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRoomStatistics");
@@ -1753,6 +1796,49 @@ LcicClient::EndRoomOutcomeCallable LcicClient::EndRoomCallable(const EndRoomRequ
         [this, request]()
         {
             return this->EndRoom(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::ForbidSendMsgOutcome LcicClient::ForbidSendMsg(const ForbidSendMsgRequest &request)
+{
+    auto outcome = MakeRequest(request, "ForbidSendMsg");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ForbidSendMsgResponse rsp = ForbidSendMsgResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ForbidSendMsgOutcome(rsp);
+        else
+            return ForbidSendMsgOutcome(o.GetError());
+    }
+    else
+    {
+        return ForbidSendMsgOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::ForbidSendMsgAsync(const ForbidSendMsgRequest& request, const ForbidSendMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ForbidSendMsg(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::ForbidSendMsgOutcomeCallable LcicClient::ForbidSendMsgCallable(const ForbidSendMsgRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ForbidSendMsgOutcome()>>(
+        [this, request]()
+        {
+            return this->ForbidSendMsg(request);
         }
     );
 

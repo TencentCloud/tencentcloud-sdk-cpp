@@ -27,7 +27,8 @@ SendRoomNormalMessageRequest::SendRoomNormalMessageRequest() :
     m_roomIdHasBeenSet(false),
     m_fromAccountHasBeenSet(false),
     m_msgBodyHasBeenSet(false),
-    m_cloudCustomDataHasBeenSet(false)
+    m_cloudCustomDataHasBeenSet(false),
+    m_nickNameHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string SendRoomNormalMessageRequest::ToJsonString() const
         string key = "CloudCustomData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cloudCustomData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nickNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NickName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nickName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +180,22 @@ void SendRoomNormalMessageRequest::SetCloudCustomData(const string& _cloudCustom
 bool SendRoomNormalMessageRequest::CloudCustomDataHasBeenSet() const
 {
     return m_cloudCustomDataHasBeenSet;
+}
+
+string SendRoomNormalMessageRequest::GetNickName() const
+{
+    return m_nickName;
+}
+
+void SendRoomNormalMessageRequest::SetNickName(const string& _nickName)
+{
+    m_nickName = _nickName;
+    m_nickNameHasBeenSet = true;
+}
+
+bool SendRoomNormalMessageRequest::NickNameHasBeenSet() const
+{
+    return m_nickNameHasBeenSet;
 }
 
 

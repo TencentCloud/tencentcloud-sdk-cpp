@@ -1009,9 +1009,7 @@ namespace TencentCloud
                 DescribeAttackWhiteRuleOutcomeCallable DescribeAttackWhiteRuleCallable(const Model::DescribeAttackWhiteRuleRequest& request);
 
                 /**
-                 *接口已废弃
-
-描述WAF自动封禁IP详情,对齐自动封堵状态
+                 *描述WAF自动封禁IP详情,对齐自动封堵状态
                  * @param req DescribeAutoDenyIPRequest
                  * @return DescribeAutoDenyIPOutcome
                  */

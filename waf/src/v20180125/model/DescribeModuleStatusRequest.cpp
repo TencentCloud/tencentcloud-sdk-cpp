@@ -22,7 +22,8 @@
 using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-DescribeModuleStatusRequest::DescribeModuleStatusRequest()
+DescribeModuleStatusRequest::DescribeModuleStatusRequest() :
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeModuleStatusRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeModuleStatusRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeModuleStatusRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void DescribeModuleStatusRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DescribeModuleStatusRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
 
 

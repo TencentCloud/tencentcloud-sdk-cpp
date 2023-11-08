@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool TcrRepoInfoHasBeenSet() const;
 
+                    /**
+                     * 获取仓库名
+                     * @return RepoName 仓库名
+                     * 
+                     */
+                    std::string GetRepoName() const;
+
+                    /**
+                     * 设置仓库名
+                     * @param _repoName 仓库名
+                     * 
+                     */
+                    void SetRepoName(const std::string& _repoName);
+
+                    /**
+                     * 判断参数 RepoName 是否已赋值
+                     * @return RepoName 是否已赋值
+                     * 
+                     */
+                    bool RepoNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     TcrRepoInfo m_tcrRepoInfo;
                     bool m_tcrRepoInfoHasBeenSet;
+
+                    /**
+                     * 仓库名
+                     */
+                    std::string m_repoName;
+                    bool m_repoNameHasBeenSet;
 
                 };
             }

@@ -43,7 +43,127 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取WEB安全规则是否开启
+                     * @return WebSecurity WEB安全规则是否开启
+                     * 
+                     */
+                    uint64_t GetWebSecurity() const;
+
+                    /**
+                     * 判断参数 WebSecurity 是否已赋值
+                     * @return WebSecurity 是否已赋值
+                     * 
+                     */
+                    bool WebSecurityHasBeenSet() const;
+
+                    /**
+                     * 获取访问控制规则是否开启
+                     * @return AccessControl 访问控制规则是否开启
+                     * 
+                     */
+                    int64_t GetAccessControl() const;
+
+                    /**
+                     * 判断参数 AccessControl 是否已赋值
+                     * @return AccessControl 是否已赋值
+                     * 
+                     */
+                    bool AccessControlHasBeenSet() const;
+
+                    /**
+                     * 获取CC防护是否开启
+                     * @return CcProtection CC防护是否开启
+                     * 
+                     */
+                    uint64_t GetCcProtection() const;
+
+                    /**
+                     * 判断参数 CcProtection 是否已赋值
+                     * @return CcProtection 是否已赋值
+                     * 
+                     */
+                    bool CcProtectionHasBeenSet() const;
+
+                    /**
+                     * 获取网页防篡改是否开启
+                     * @return AntiTamper 网页防篡改是否开启
+                     * 
+                     */
+                    uint64_t GetAntiTamper() const;
+
+                    /**
+                     * 判断参数 AntiTamper 是否已赋值
+                     * @return AntiTamper 是否已赋值
+                     * 
+                     */
+                    bool AntiTamperHasBeenSet() const;
+
+                    /**
+                     * 获取信息防泄漏是否开启
+                     * @return AntiLeakage 信息防泄漏是否开启
+                     * 
+                     */
+                    uint64_t GetAntiLeakage() const;
+
+                    /**
+                     * 判断参数 AntiLeakage 是否已赋值
+                     * @return AntiLeakage 是否已赋值
+                     * 
+                     */
+                    bool AntiLeakageHasBeenSet() const;
+
+                    /**
+                     * 获取API安全是否开启
+                     * @return ApiProtection API安全是否开启
+                     * 
+                     */
+                    uint64_t GetApiProtection() const;
+
+                    /**
+                     * 判断参数 ApiProtection 是否已赋值
+                     * @return ApiProtection 是否已赋值
+                     * 
+                     */
+                    bool ApiProtectionHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * WEB安全规则是否开启
+                     */
+                    uint64_t m_webSecurity;
+                    bool m_webSecurityHasBeenSet;
+
+                    /**
+                     * 访问控制规则是否开启
+                     */
+                    int64_t m_accessControl;
+                    bool m_accessControlHasBeenSet;
+
+                    /**
+                     * CC防护是否开启
+                     */
+                    uint64_t m_ccProtection;
+                    bool m_ccProtectionHasBeenSet;
+
+                    /**
+                     * 网页防篡改是否开启
+                     */
+                    uint64_t m_antiTamper;
+                    bool m_antiTamperHasBeenSet;
+
+                    /**
+                     * 信息防泄漏是否开启
+                     */
+                    uint64_t m_antiLeakage;
+                    bool m_antiLeakageHasBeenSet;
+
+                    /**
+                     * API安全是否开启
+                     */
+                    uint64_t m_apiProtection;
+                    bool m_apiProtectionHasBeenSet;
 
                 };
             }

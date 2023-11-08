@@ -2137,7 +2137,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeGroupsWithPluginOutcomeCallable DescribeGroupsWithPluginCallable(const Model::DescribeGroupsWithPluginRequest& request);
 
                 /**
-                 *镜像仓库列表 
+                 *查询镜像仓库列表
                  * @param req DescribeImageRepositoryRequest
                  * @return DescribeImageRepositoryOutcome
                  */

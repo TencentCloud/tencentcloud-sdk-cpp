@@ -43,7 +43,30 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取资产ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceIdSet 资产ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<uint64_t> GetDeviceIdSet() const;
+
+                    /**
+                     * 判断参数 DeviceIdSet 是否已赋值
+                     * @return DeviceIdSet 是否已赋值
+                     * 
+                     */
+                    bool DeviceIdSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 资产ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<uint64_t> m_deviceIdSet;
+                    bool m_deviceIdSetHasBeenSet;
 
                 };
             }

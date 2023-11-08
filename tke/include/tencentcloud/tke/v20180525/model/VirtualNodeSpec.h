@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 虚拟节点
+                * 超级节点
                 */
                 class VirtualNodeSpec : public AbstractModel
                 {

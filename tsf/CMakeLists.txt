@@ -301,6 +301,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/HealthCheckSetting.h
   include/tencentcloud/tsf/v20180326/model/DeleteLaneRuleRequest.h
   include/tencentcloud/tsf/v20180326/model/MetricDimension.h
+  include/tencentcloud/tsf/v20180326/model/GroupContainerInfo.h
   include/tencentcloud/tsf/v20180326/model/CreateUnitRuleWithDetailRespResponse.h
   include/tencentcloud/tsf/v20180326/model/GatewayDeployGroup.h
   include/tencentcloud/tsf/v20180326/model/PkgList.h
@@ -922,6 +923,7 @@ set(tsf_src
   src/v20180326/model/HealthCheckSetting.cpp
   src/v20180326/model/DeleteLaneRuleRequest.cpp
   src/v20180326/model/MetricDimension.cpp
+  src/v20180326/model/GroupContainerInfo.cpp
   src/v20180326/model/CreateUnitRuleWithDetailRespResponse.cpp
   src/v20180326/model/GatewayDeployGroup.cpp
   src/v20180326/model/PkgList.cpp

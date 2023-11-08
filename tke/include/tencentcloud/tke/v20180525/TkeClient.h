@@ -1254,7 +1254,7 @@ namespace TencentCloud
                 CreateClusterRouteTableOutcomeCallable CreateClusterRouteTableCallable(const Model::CreateClusterRouteTableRequest& request);
 
                 /**
-                 *创建虚拟节点
+                 *创建按量计费超级节点
                  * @param req CreateClusterVirtualNodeRequest
                  * @return CreateClusterVirtualNodeOutcome
                  */
@@ -1263,7 +1263,7 @@ namespace TencentCloud
                 CreateClusterVirtualNodeOutcomeCallable CreateClusterVirtualNodeCallable(const Model::CreateClusterVirtualNodeRequest& request);
 
                 /**
-                 *创建虚拟节点池
+                 *创建超级节点池
                  * @param req CreateClusterVirtualNodePoolRequest
                  * @return CreateClusterVirtualNodePoolOutcome
                  */
@@ -1515,7 +1515,7 @@ namespace TencentCloud
                 DeleteClusterRouteTableOutcomeCallable DeleteClusterRouteTableCallable(const Model::DeleteClusterRouteTableRequest& request);
 
                 /**
-                 *删除虚拟节点
+                 *删除超级节点
                  * @param req DeleteClusterVirtualNodeRequest
                  * @return DeleteClusterVirtualNodeOutcome
                  */
@@ -1524,7 +1524,7 @@ namespace TencentCloud
                 DeleteClusterVirtualNodeOutcomeCallable DeleteClusterVirtualNodeCallable(const Model::DeleteClusterVirtualNodeRequest& request);
 
                 /**
-                 *删除虚拟节点池
+                 *删除超级节点池
                  * @param req DeleteClusterVirtualNodePoolRequest
                  * @return DeleteClusterVirtualNodePoolOutcome
                  */
@@ -1938,7 +1938,7 @@ namespace TencentCloud
                 DescribeClusterStatusOutcomeCallable DescribeClusterStatusCallable(const Model::DescribeClusterStatusRequest& request);
 
                 /**
-                 *查看虚拟节点列表
+                 *查看超级节点列表
                  * @param req DescribeClusterVirtualNodeRequest
                  * @return DescribeClusterVirtualNodeOutcome
                  */
@@ -1947,7 +1947,7 @@ namespace TencentCloud
                 DescribeClusterVirtualNodeOutcomeCallable DescribeClusterVirtualNodeCallable(const Model::DescribeClusterVirtualNodeRequest& request);
 
                 /**
-                 *查看虚拟节点池列表
+                 *查看超级节点池列表
                  * @param req DescribeClusterVirtualNodePoolsRequest
                  * @return DescribeClusterVirtualNodePoolsOutcome
                  */
@@ -2487,7 +2487,7 @@ namespace TencentCloud
                 DisableVpcCniNetworkTypeOutcomeCallable DisableVpcCniNetworkTypeCallable(const Model::DisableVpcCniNetworkTypeRequest& request);
 
                 /**
-                 *驱逐虚拟节点
+                 *驱逐超级节点
                  * @param req DrainClusterVirtualNodeRequest
                  * @return DrainClusterVirtualNodeOutcome
                  */
@@ -2694,7 +2694,7 @@ namespace TencentCloud
                 ModifyClusterNodePoolOutcomeCallable ModifyClusterNodePoolCallable(const Model::ModifyClusterNodePoolRequest& request);
 
                 /**
-                 *修改虚拟节点池
+                 *修改超级节点池
                  * @param req ModifyClusterVirtualNodePoolRequest
                  * @return ModifyClusterVirtualNodePoolOutcome
                  */

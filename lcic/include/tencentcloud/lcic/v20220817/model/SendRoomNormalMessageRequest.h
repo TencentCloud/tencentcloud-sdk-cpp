@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool CloudCustomDataHasBeenSet() const;
 
+                    /**
+                     * 获取昵称，当FromAccount没有在房间中，需要填写NickName，当FromAccount在房间中，填写NickName无意义
+                     * @return NickName 昵称，当FromAccount没有在房间中，需要填写NickName，当FromAccount在房间中，填写NickName无意义
+                     * 
+                     */
+                    std::string GetNickName() const;
+
+                    /**
+                     * 设置昵称，当FromAccount没有在房间中，需要填写NickName，当FromAccount在房间中，填写NickName无意义
+                     * @param _nickName 昵称，当FromAccount没有在房间中，需要填写NickName，当FromAccount在房间中，填写NickName无意义
+                     * 
+                     */
+                    void SetNickName(const std::string& _nickName);
+
+                    /**
+                     * 判断参数 NickName 是否已赋值
+                     * @return NickName 是否已赋值
+                     * 
+                     */
+                    bool NickNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::string m_cloudCustomData;
                     bool m_cloudCustomDataHasBeenSet;
+
+                    /**
+                     * 昵称，当FromAccount没有在房间中，需要填写NickName，当FromAccount在房间中，填写NickName无意义
+                     */
+                    std::string m_nickName;
+                    bool m_nickNameHasBeenSet;
 
                 };
             }

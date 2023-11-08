@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -87,15 +87,27 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取身份证件号码
-                     * @return IdCardNumber 身份证件号码
+                     * 获取证件号码, 应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @return IdCardNumber 证件号码, 应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置身份证件号码
-                     * @param _idCardNumber 身份证件号码
+                     * 设置证件号码, 应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @param _idCardNumber 证件号码, 应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -108,15 +120,19 @@ namespace TencentCloud
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取印章名称
-                     * @return SealName 印章名称
+                     * 获取电子印章名字，1-50个中文字符
+注:`同一企业下电子印章名字不能相同`
+                     * @return SealName 电子印章名字，1-50个中文字符
+注:`同一企业下电子印章名字不能相同`
                      * 
                      */
                     std::string GetSealName() const;
 
                     /**
-                     * 设置印章名称
-                     * @param _sealName 印章名称
+                     * 设置电子印章名字，1-50个中文字符
+注:`同一企业下电子印章名字不能相同`
+                     * @param _sealName 电子印章名字，1-50个中文字符
+注:`同一企业下电子印章名字不能相同`
                      * 
                      */
                     void SetSealName(const std::string& _sealName);
@@ -129,15 +145,23 @@ namespace TencentCloud
                     bool SealNameHasBeenSet() const;
 
                     /**
-                     * 获取印章图片的base64，最大不超过 8M
-                     * @return SealImage 印章图片的base64，最大不超过 8M
+                     * 获取电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。
+
+
+                     * @return SealImage 电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。
+
+
                      * 
                      */
                     std::string GetSealImage() const;
 
                     /**
-                     * 设置印章图片的base64，最大不超过 8M
-                     * @param _sealImage 印章图片的base64，最大不超过 8M
+                     * 设置电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。
+
+
+                     * @param _sealImage 电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。
+
+
                      * 
                      */
                     void SetSealImage(const std::string& _sealImage);
@@ -150,15 +174,19 @@ namespace TencentCloud
                     bool SealImageHasBeenSet() const;
 
                     /**
-                     * 获取操作者信息
-                     * @return Operator 操作者信息
+                     * 获取执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作者信息
-                     * @param _operator 操作者信息
+                     * 设置执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -171,15 +199,39 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取身份证件类型
-                     * @return IdCardType 身份证件类型
+                     * 获取证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证 (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
+                     * @return IdCardType 证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证 (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
                      * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置身份证件类型
-                     * @param _idCardType 身份证件类型
+                     * 设置证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证 (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
+                     * @param _idCardType 证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证 (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -278,7 +330,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
@@ -290,31 +342,44 @@ namespace TencentCloud
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 身份证件号码
+                     * 证件号码, 应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 印章名称
+                     * 电子印章名字，1-50个中文字符
+注:`同一企业下电子印章名字不能相同`
                      */
                     std::string m_sealName;
                     bool m_sealNameHasBeenSet;
 
                     /**
-                     * 印章图片的base64，最大不超过 8M
+                     * 电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。
+
+
                      */
                     std::string m_sealImage;
                     bool m_sealImageHasBeenSet;
 
                     /**
-                     * 操作者信息
+                     * 执行本接口操作的员工信息。
+注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 身份证件类型
+                     * 证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证 (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;

@@ -91,6 +91,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeRoomForbiddenUserRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeRoomForbiddenUserResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeScoreListRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeUserResponse.h>
 #include <tencentcloud/lcic/v20220817/model/EndRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/EndRoomResponse.h>
+#include <tencentcloud/lcic/v20220817/model/ForbidSendMsgRequest.h>
+#include <tencentcloud/lcic/v20220817/model/ForbidSendMsgResponse.h>
 #include <tencentcloud/lcic/v20220817/model/GetRoomEventRequest.h>
 #include <tencentcloud/lcic/v20220817/model/GetRoomEventResponse.h>
 #include <tencentcloud/lcic/v20220817/model/GetRoomMessageRequest.h>
@@ -255,6 +259,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRoomResponse> DescribeRoomOutcome;
                 typedef std::future<DescribeRoomOutcome> DescribeRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeRoomRequest&, DescribeRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRoomForbiddenUserResponse> DescribeRoomForbiddenUserOutcome;
+                typedef std::future<DescribeRoomForbiddenUserOutcome> DescribeRoomForbiddenUserOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeRoomForbiddenUserRequest&, DescribeRoomForbiddenUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomForbiddenUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoomStatisticsResponse> DescribeRoomStatisticsOutcome;
                 typedef std::future<DescribeRoomStatisticsOutcome> DescribeRoomStatisticsOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeRoomStatisticsRequest&, DescribeRoomStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomStatisticsAsyncHandler;
@@ -273,6 +280,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EndRoomResponse> EndRoomOutcome;
                 typedef std::future<EndRoomOutcome> EndRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::EndRoomRequest&, EndRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EndRoomAsyncHandler;
+                typedef Outcome<Core::Error, Model::ForbidSendMsgResponse> ForbidSendMsgOutcome;
+                typedef std::future<ForbidSendMsgOutcome> ForbidSendMsgOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::ForbidSendMsgRequest&, ForbidSendMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidSendMsgAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRoomEventResponse> GetRoomEventOutcome;
                 typedef std::future<GetRoomEventOutcome> GetRoomEventOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::GetRoomEventRequest&, GetRoomEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRoomEventAsyncHandler;
@@ -639,6 +649,15 @@ namespace TencentCloud
                 DescribeRoomOutcomeCallable DescribeRoomCallable(const Model::DescribeRoomRequest& request);
 
                 /**
+                 *根据房间ID获取群组中被禁言的用户列表。
+                 * @param req DescribeRoomForbiddenUserRequest
+                 * @return DescribeRoomForbiddenUserOutcome
+                 */
+                DescribeRoomForbiddenUserOutcome DescribeRoomForbiddenUser(const Model::DescribeRoomForbiddenUserRequest &request);
+                void DescribeRoomForbiddenUserAsync(const Model::DescribeRoomForbiddenUserRequest& request, const DescribeRoomForbiddenUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoomForbiddenUserOutcomeCallable DescribeRoomForbiddenUserCallable(const Model::DescribeRoomForbiddenUserRequest& request);
+
+                /**
                  *获取房间统计信息，仅可在房间结束后调用。
                  * @param req DescribeRoomStatisticsRequest
                  * @return DescribeRoomStatisticsOutcome
@@ -691,6 +710,17 @@ namespace TencentCloud
                 EndRoomOutcome EndRoom(const Model::EndRoomRequest &request);
                 void EndRoomAsync(const Model::EndRoomRequest& request, const EndRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EndRoomOutcomeCallable EndRoomCallable(const Model::EndRoomRequest& request);
+
+                /**
+                 *禁止指定房间中某些用户在一段时间内发言。
+取消对某些用户的禁言。
+被禁言用户退出房间之后再进入同一房间，禁言仍然有效。
+                 * @param req ForbidSendMsgRequest
+                 * @return ForbidSendMsgOutcome
+                 */
+                ForbidSendMsgOutcome ForbidSendMsg(const Model::ForbidSendMsgRequest &request);
+                void ForbidSendMsgAsync(const Model::ForbidSendMsgRequest& request, const ForbidSendMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ForbidSendMsgOutcomeCallable ForbidSendMsgCallable(const Model::ForbidSendMsgRequest& request);
 
                 /**
                  *获取房间事件,仅在课堂结束1小时内有效。

@@ -32,6 +32,7 @@
 #include <tencentcloud/tsf/v20180326/model/VolumeMountInfo.h>
 #include <tencentcloud/tsf/v20180326/model/WarmupSetting.h>
 #include <tencentcloud/tsf/v20180326/model/GatewayConfig.h>
+#include <tencentcloud/tsf/v20180326/model/GroupContainerInfo.h>
 
 
 namespace TencentCloud
@@ -1004,6 +1005,81 @@ namespace TencentCloud
                      */
                     bool GatewayConfigHasBeenSet() const;
 
+                    /**
+                     * 获取容器名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerName 容器名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetContainerName() const;
+
+                    /**
+                     * 设置容器名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _containerName 容器名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContainerName(const std::string& _containerName);
+
+                    /**
+                     * 判断参数 ContainerName 是否已赋值
+                     * @return ContainerName 是否已赋值
+                     * 
+                     */
+                    bool ContainerNameHasBeenSet() const;
+
+                    /**
+                     * 获取附加容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdditionalContainerList 附加容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<GroupContainerInfo> GetAdditionalContainerList() const;
+
+                    /**
+                     * 设置附加容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _additionalContainerList 附加容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAdditionalContainerList(const std::vector<GroupContainerInfo>& _additionalContainerList);
+
+                    /**
+                     * 判断参数 AdditionalContainerList 是否已赋值
+                     * @return AdditionalContainerList 是否已赋值
+                     * 
+                     */
+                    bool AdditionalContainerListHasBeenSet() const;
+
+                    /**
+                     * 获取内部容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternalContainerList 内部容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<GroupContainerInfo> GetInternalContainerList() const;
+
+                    /**
+                     * 设置内部容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _internalContainerList 内部容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInternalContainerList(const std::vector<GroupContainerInfo>& _internalContainerList);
+
+                    /**
+                     * 判断参数 InternalContainerList 是否已赋值
+                     * @return InternalContainerList 是否已赋值
+                     * 
+                     */
+                    bool InternalContainerListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1271,6 +1347,27 @@ namespace TencentCloud
                      */
                     GatewayConfig m_gatewayConfig;
                     bool m_gatewayConfigHasBeenSet;
+
+                    /**
+                     * 容器名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerName;
+                    bool m_containerNameHasBeenSet;
+
+                    /**
+                     * 附加容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<GroupContainerInfo> m_additionalContainerList;
+                    bool m_additionalContainerListHasBeenSet;
+
+                    /**
+                     * 内部容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<GroupContainerInfo> m_internalContainerList;
+                    bool m_internalContainerListHasBeenSet;
 
                 };
             }

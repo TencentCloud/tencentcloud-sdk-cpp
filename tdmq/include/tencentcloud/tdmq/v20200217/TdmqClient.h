@@ -41,6 +41,8 @@
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateProClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateProClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRabbitMQUserRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRabbitMQUserResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRabbitMQVipInstanceRequest.h>
@@ -310,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEnvironmentRoleResponse> CreateEnvironmentRoleOutcome;
                 typedef std::future<CreateEnvironmentRoleOutcome> CreateEnvironmentRoleOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateEnvironmentRoleRequest&, CreateEnvironmentRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProClusterResponse> CreateProClusterOutcome;
+                typedef std::future<CreateProClusterOutcome> CreateProClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateProClusterRequest&, CreateProClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRabbitMQUserResponse> CreateRabbitMQUserOutcome;
                 typedef std::future<CreateRabbitMQUserOutcome> CreateRabbitMQUserOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateRabbitMQUserRequest&, CreateRabbitMQUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRabbitMQUserAsyncHandler;
@@ -735,6 +740,15 @@ namespace TencentCloud
                 CreateEnvironmentRoleOutcome CreateEnvironmentRole(const Model::CreateEnvironmentRoleRequest &request);
                 void CreateEnvironmentRoleAsync(const Model::CreateEnvironmentRoleRequest& request, const CreateEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEnvironmentRoleOutcomeCallable CreateEnvironmentRoleCallable(const Model::CreateEnvironmentRoleRequest& request);
+
+                /**
+                 *创建专业集群——预付费，仅通过api调用
+                 * @param req CreateProClusterRequest
+                 * @return CreateProClusterOutcome
+                 */
+                CreateProClusterOutcome CreateProCluster(const Model::CreateProClusterRequest &request);
+                void CreateProClusterAsync(const Model::CreateProClusterRequest& request, const CreateProClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProClusterOutcomeCallable CreateProClusterCallable(const Model::CreateProClusterRequest& request);
 
                 /**
                  *创建RabbitMQ的用户

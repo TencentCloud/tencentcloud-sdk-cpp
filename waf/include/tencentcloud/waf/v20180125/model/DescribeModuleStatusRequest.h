@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取要查询状态的域名
+                     * @return Domain 要查询状态的域名
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置要查询状态的域名
+                     * @param _domain 要查询状态的域名
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 要查询状态的域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

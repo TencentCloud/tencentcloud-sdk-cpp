@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dasb::V20191018::Model;
 using namespace std;
 
-ImportExternalDeviceResponse::ImportExternalDeviceResponse()
+ImportExternalDeviceResponse::ImportExternalDeviceResponse() :
+    m_deviceIdSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome ImportExternalDeviceResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("DeviceIdSet") && !rsp["DeviceIdSet"].IsNull())
+    {
+        if (!rsp["DeviceIdSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeviceIdSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DeviceIdSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_deviceIdSet.push_back((*itr).GetUint64());
+        }
+        m_deviceIdSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +84,19 @@ string ImportExternalDeviceResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_deviceIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deviceIdSet.begin(); itr != m_deviceIdSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string ImportExternalDeviceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<uint64_t> ImportExternalDeviceResponse::GetDeviceIdSet() const
+{
+    return m_deviceIdSet;
+}
+
+bool ImportExternalDeviceResponse::DeviceIdSetHasBeenSet() const
+{
+    return m_deviceIdSetHasBeenSet;
+}
 
 

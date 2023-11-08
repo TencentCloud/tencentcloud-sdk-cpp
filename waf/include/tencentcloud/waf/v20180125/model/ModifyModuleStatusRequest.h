@@ -42,7 +42,196 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取需要设置的domain
+                     * @return Domain 需要设置的domain
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置需要设置的domain
+                     * @param _domain 需要设置的domain
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取WEB 安全模块开关，0或1
+                     * @return WebSecurity WEB 安全模块开关，0或1
+                     * 
+                     */
+                    uint64_t GetWebSecurity() const;
+
+                    /**
+                     * 设置WEB 安全模块开关，0或1
+                     * @param _webSecurity WEB 安全模块开关，0或1
+                     * 
+                     */
+                    void SetWebSecurity(const uint64_t& _webSecurity);
+
+                    /**
+                     * 判断参数 WebSecurity 是否已赋值
+                     * @return WebSecurity 是否已赋值
+                     * 
+                     */
+                    bool WebSecurityHasBeenSet() const;
+
+                    /**
+                     * 获取访问控制模块开关，0或者1
+                     * @return AccessControl 访问控制模块开关，0或者1
+                     * 
+                     */
+                    uint64_t GetAccessControl() const;
+
+                    /**
+                     * 设置访问控制模块开关，0或者1
+                     * @param _accessControl 访问控制模块开关，0或者1
+                     * 
+                     */
+                    void SetAccessControl(const uint64_t& _accessControl);
+
+                    /**
+                     * 判断参数 AccessControl 是否已赋值
+                     * @return AccessControl 是否已赋值
+                     * 
+                     */
+                    bool AccessControlHasBeenSet() const;
+
+                    /**
+                     * 获取CC模块开关，0或者1
+                     * @return CcProtection CC模块开关，0或者1
+                     * 
+                     */
+                    uint64_t GetCcProtection() const;
+
+                    /**
+                     * 设置CC模块开关，0或者1
+                     * @param _ccProtection CC模块开关，0或者1
+                     * 
+                     */
+                    void SetCcProtection(const uint64_t& _ccProtection);
+
+                    /**
+                     * 判断参数 CcProtection 是否已赋值
+                     * @return CcProtection 是否已赋值
+                     * 
+                     */
+                    bool CcProtectionHasBeenSet() const;
+
+                    /**
+                     * 获取API安全模块开关，0或者1
+                     * @return ApiProtection API安全模块开关，0或者1
+                     * 
+                     */
+                    uint64_t GetApiProtection() const;
+
+                    /**
+                     * 设置API安全模块开关，0或者1
+                     * @param _apiProtection API安全模块开关，0或者1
+                     * 
+                     */
+                    void SetApiProtection(const uint64_t& _apiProtection);
+
+                    /**
+                     * 判断参数 ApiProtection 是否已赋值
+                     * @return ApiProtection 是否已赋值
+                     * 
+                     */
+                    bool ApiProtectionHasBeenSet() const;
+
+                    /**
+                     * 获取防篡改模块开关，0或者1
+                     * @return AntiTamper 防篡改模块开关，0或者1
+                     * 
+                     */
+                    uint64_t GetAntiTamper() const;
+
+                    /**
+                     * 设置防篡改模块开关，0或者1
+                     * @param _antiTamper 防篡改模块开关，0或者1
+                     * 
+                     */
+                    void SetAntiTamper(const uint64_t& _antiTamper);
+
+                    /**
+                     * 判断参数 AntiTamper 是否已赋值
+                     * @return AntiTamper 是否已赋值
+                     * 
+                     */
+                    bool AntiTamperHasBeenSet() const;
+
+                    /**
+                     * 获取防泄漏模块开关，0或者1
+                     * @return AntiLeakage 防泄漏模块开关，0或者1
+                     * 
+                     */
+                    uint64_t GetAntiLeakage() const;
+
+                    /**
+                     * 设置防泄漏模块开关，0或者1
+                     * @param _antiLeakage 防泄漏模块开关，0或者1
+                     * 
+                     */
+                    void SetAntiLeakage(const uint64_t& _antiLeakage);
+
+                    /**
+                     * 判断参数 AntiLeakage 是否已赋值
+                     * @return AntiLeakage 是否已赋值
+                     * 
+                     */
+                    bool AntiLeakageHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 需要设置的domain
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * WEB 安全模块开关，0或1
+                     */
+                    uint64_t m_webSecurity;
+                    bool m_webSecurityHasBeenSet;
+
+                    /**
+                     * 访问控制模块开关，0或者1
+                     */
+                    uint64_t m_accessControl;
+                    bool m_accessControlHasBeenSet;
+
+                    /**
+                     * CC模块开关，0或者1
+                     */
+                    uint64_t m_ccProtection;
+                    bool m_ccProtectionHasBeenSet;
+
+                    /**
+                     * API安全模块开关，0或者1
+                     */
+                    uint64_t m_apiProtection;
+                    bool m_apiProtectionHasBeenSet;
+
+                    /**
+                     * 防篡改模块开关，0或者1
+                     */
+                    uint64_t m_antiTamper;
+                    bool m_antiTamperHasBeenSet;
+
+                    /**
+                     * 防泄漏模块开关，0或者1
+                     */
+                    uint64_t m_antiLeakage;
+                    bool m_antiLeakageHasBeenSet;
 
                 };
             }

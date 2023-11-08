@@ -34,6 +34,7 @@ SearchCommandResult::SearchCommandResult() :
     m_timeOffsetHasBeenSet(false),
     m_accountHasBeenSet(false),
     m_fromIpHasBeenSet(false),
+    m_sessionTimeHasBeenSet(false),
     m_sessTimeHasBeenSet(false),
     m_confirmTimeHasBeenSet(false),
     m_userDepartmentIdHasBeenSet(false),
@@ -176,6 +177,16 @@ CoreInternalOutcome SearchCommandResult::Deserialize(const rapidjson::Value &val
         }
         m_fromIp = string(value["FromIp"].GetString());
         m_fromIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionTime") && !value["SessionTime"].IsNull())
+    {
+        if (!value["SessionTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchCommandResult.SessionTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionTime = string(value["SessionTime"].GetString());
+        m_sessionTimeHasBeenSet = true;
     }
 
     if (value.HasMember("SessTime") && !value["SessTime"].IsNull())
@@ -347,6 +358,14 @@ void SearchCommandResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "FromIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fromIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessTimeHasBeenSet)
@@ -606,6 +625,22 @@ void SearchCommandResult::SetFromIp(const string& _fromIp)
 bool SearchCommandResult::FromIpHasBeenSet() const
 {
     return m_fromIpHasBeenSet;
+}
+
+string SearchCommandResult::GetSessionTime() const
+{
+    return m_sessionTime;
+}
+
+void SearchCommandResult::SetSessionTime(const string& _sessionTime)
+{
+    m_sessionTime = _sessionTime;
+    m_sessionTimeHasBeenSet = true;
+}
+
+bool SearchCommandResult::SessionTimeHasBeenSet() const
+{
+    return m_sessionTimeHasBeenSet;
 }
 
 string SearchCommandResult::GetSessTime() const

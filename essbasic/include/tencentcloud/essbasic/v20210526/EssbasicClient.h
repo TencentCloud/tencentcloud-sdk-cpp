@@ -119,6 +119,8 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeBillUsageDetailRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeBillUsageDetailResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoRequest.h>
@@ -303,6 +305,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSignUrlsResponse> CreateSignUrlsOutcome;
                 typedef std::future<CreateSignUrlsOutcome> CreateSignUrlsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateSignUrlsRequest&, CreateSignUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSignUrlsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillUsageDetailResponse> DescribeBillUsageDetailOutcome;
+                typedef std::future<DescribeBillUsageDetailOutcome> DescribeBillUsageDetailOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::DescribeBillUsageDetailRequest&, DescribeBillUsageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillUsageDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeChannelFlowEvidenceReportResponse> DescribeChannelFlowEvidenceReportOutcome;
                 typedef std::future<DescribeChannelFlowEvidenceReportOutcome> DescribeChannelFlowEvidenceReportOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeChannelFlowEvidenceReportRequest&, DescribeChannelFlowEvidenceReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelFlowEvidenceReportAsyncHandler;
@@ -703,12 +708,15 @@ namespace TencentCloud
                 ChannelCreateFlowGroupByTemplatesOutcomeCallable ChannelCreateFlowGroupByTemplatesCallable(const Model::ChannelCreateFlowGroupByTemplatesRequest& request);
 
                 /**
-                 *指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办：
+                 *指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办
+1. 合同中当前状态为 **待签署** 的签署人是催办的对象
+2. **每个合同只能催办一次**
 
-1. 合同中当前状态为“待签署”的签署人是催办的对象
-2. 每个合同只能催办一次
+**催办的效果**: 对方会受到如下的短信通知
+![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)
 
-注意：该接口无法直接调用，请联系客户经理申请使用。
+
+**注**：`合同催办是白名单功能，请联系客户经理申请开白后使用`
                  * @param req ChannelCreateFlowRemindsRequest
                  * @return ChannelCreateFlowRemindsOutcome
                  */
@@ -770,12 +778,12 @@ namespace TencentCloud
                 ChannelCreateMultiFlowSignQRCodeOutcomeCallable ChannelCreateMultiFlowSignQRCodeCallable(const Model::ChannelCreateMultiFlowSignQRCodeRequest& request);
 
                 /**
-                 *通过此接口，创建小程序批量签署链接，可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。
+                 *通过此接口，可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。
 
 注：
 - 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方或者领取方。
 - 仅支持传入待签署或者待领取的合同，待填写暂不支持。
-- 员工批量签署，支持多种签名方式，包括手写签名、临摹签名、系统签名、个人印章，暂不支持签批控件
+- 员工批量签署，支持多种签名方式，包括手写签名、临摹签名、系统签名、个人印章、签批控件等。
                  * @param req ChannelCreateOrganizationBatchSignUrlRequest
                  * @return ChannelCreateOrganizationBatchSignUrlOutcome
                  */
@@ -1134,6 +1142,9 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
 
 1. 若在激活过程中，**更换用户OpenID重新生成链接，之前的认证会被清理**。因此不要在企业认证过程生成多个链接给多人同时操作，会导致认证过程互相影响。
 2. 若您认证中发现信息有误需要重新认证，**可通过更换用户OpenID重新生成链接的方式，来清理掉已有的流程**。
+
+系统的渠道企业, 应用, 子客企业, 子客员工的组织形式
+![image](https://qcloudimg.tencent-cloud.cn/raw/bee4b7375fe7a097f3573b18a1c1e30b.png)
                  * @param req CreateConsoleLoginUrlRequest
                  * @return CreateConsoleLoginUrlOutcome
                  */
@@ -1243,6 +1254,15 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 CreateSignUrlsOutcomeCallable CreateSignUrlsCallable(const Model::CreateSignUrlsRequest& request);
 
                 /**
+                 *通过此接口（DescribeBillUsageDetail）查询该第三方平台子客企业的套餐消耗详情。
+                 * @param req DescribeBillUsageDetailRequest
+                 * @return DescribeBillUsageDetailOutcome
+                 */
+                DescribeBillUsageDetailOutcome DescribeBillUsageDetail(const Model::DescribeBillUsageDetailRequest &request);
+                void DescribeBillUsageDetailAsync(const Model::DescribeBillUsageDetailRequest& request, const DescribeBillUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillUsageDetailOutcomeCallable DescribeBillUsageDetailCallable(const Model::DescribeBillUsageDetailRequest& request);
+
+                /**
                  *获取出证报告任务执行结果，返回报告 URL。
 
 注意：
@@ -1297,10 +1317,10 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
 **第一种**:   需第三方应用的子企业登录控制台进行授权,  授权在**企业中心**的**授权管理**区域,  界面如下图
 授权过程需要**子企业超管**扫描跳转到电子签小程序签署<<渠道端下载渠道子客合同功能授权委托书>>
 
-![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeResourceUrlsByFlows2.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/8b483dfebdeafac85051279406944048.png)
 
 **第二种**: 第三方应用的配置接口打开全第三个应用下的所有自己起开通, 需要**渠道方企业的超管**扫描二维码跳转到电子签小程序签署 <<渠道端下载渠道子客合同功能开通知情同意书>>
-![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeResourceUrlsByFlows_appilications2.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/238979ef51dd381ccbdbc755a593debc/channel_DescribeResourceUrlsByFlows_appilications2.png)
                  * @param req DescribeResourceUrlsByFlowsRequest
                  * @return DescribeResourceUrlsByFlowsOutcome
                  */
@@ -1311,6 +1331,15 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 /**
                  *通过此接口（DescribeTemplates）查询该第三方平台子客企业在电子签拥有的有效模板，不包括第三方平台模板。
 
+**适用场景**
+ 该接口常用来配合<a href="https://qian.tencent.com/developers/partnerApis/startFlows/CreateFlowsByTemplates" target="_blank">用模板创建签署流程</a>和<a href="https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByTemplates" target="_blank">通过多模板创建合同组签署流程</a>接口，作为创建合同的前置接口使用。 
+通过此接口查询到模板信息后，再通过调用创建合同的接口，指定模板ID，指定模板中需要的填写控件内容等，完成合同文档的的创建。
+
+**模版的来源**
+子客企业的模板有两种途径获取
+- 渠道方(平台方)配置完成后, 分发给同应用的各个子企业
+- 子客企业通过CreateConsoleLoginUrl创建的链接登录子客控制台自己创建
+
 **一个模板通常会包含以下结构信息** 
 
 - 模板模版ID, 模板名字等基本信息
@@ -1320,14 +1349,8 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
 
 ![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeTemplates.png)
 
-**适用场景**
- 该接口常用来配合<a href="https://qian.tencent.com/developers/partnerApis/startFlows/CreateFlowsByTemplates" target="_blank">用模板创建签署流程</a>和<a href="https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByTemplates" target="_blank">通过多模板创建合同组签署流程</a>接口，作为创建合同的前置接口使用。 
-通过此接口查询到模板信息后，再通过调用创建合同的接口，指定模板ID，指定模板中需要的填写控件内容等，完成合同文档的的创建。
-
-**模版的来源**
-子客企业的模板有两种途径获取
-- 渠道方(平台方)配置完成后, 分发给同应用的各个子企业
-- 子客企业通过CreateConsoleLoginUrl创建的链接登录子客控制台自己创建
+模版中各元素的层级关系, 所有的填写控件和签署控件都归属某一个角色(通过控件的ComponentRecipientId来关联)
+![image](https://qcloudimg.tencent-cloud.cn/raw/45c638bd93f9c8024763add9ab47c27f.png)
 
 
 **注意**

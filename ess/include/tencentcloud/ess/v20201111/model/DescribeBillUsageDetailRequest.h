@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询开始时间，时间跨度不能大于31天
-                     * @return StartTime 查询开始时间，时间跨度不能大于31天
+                     * 获取查询开始时间字符串，格式为yyyymmdd,时间跨度不能大于31天
+                     * @return StartTime 查询开始时间字符串，格式为yyyymmdd,时间跨度不能大于31天
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，时间跨度不能大于31天
-                     * @param _startTime 查询开始时间，时间跨度不能大于31天
+                     * 设置查询开始时间字符串，格式为yyyymmdd,时间跨度不能大于31天
+                     * @param _startTime 查询开始时间字符串，格式为yyyymmdd,时间跨度不能大于31天
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，时间跨度不能大于31天
-                     * @return EndTime 查询结束时间，时间跨度不能大于31天
+                     * 获取查询结束时间字符串，格式为yyyymmdd,时间跨度不能大于31天
+                     * @return EndTime 查询结束时间字符串，格式为yyyymmdd,时间跨度不能大于31天
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，时间跨度不能大于31天
-                     * @param _endTime 查询结束时间，时间跨度不能大于31天
+                     * 设置查询结束时间字符串，格式为yyyymmdd,时间跨度不能大于31天
+                     * @param _endTime 查询结束时间字符串，格式为yyyymmdd,时间跨度不能大于31天
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -209,19 +209,19 @@ AuthService-企业工商信息查询
                     bool QuotaTypeHasBeenSet() const;
 
                     /**
-                     * 获取非必填，查询某个渠道企业的消耗情况。
-关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-                     * @return Agent 非必填，查询某个渠道企业的消耗情况。
-关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 获取代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @return Agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置非必填，查询某个渠道企业的消耗情况。
-关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-                     * @param _agent 非必填，查询某个渠道企业的消耗情况。
-关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 设置代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * @param _agent 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -236,13 +236,13 @@ AuthService-企业工商信息查询
                 private:
 
                     /**
-                     * 查询开始时间，时间跨度不能大于31天
+                     * 查询开始时间字符串，格式为yyyymmdd,时间跨度不能大于31天
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，时间跨度不能大于31天
+                     * 查询结束时间字符串，格式为yyyymmdd,时间跨度不能大于31天
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -281,8 +281,8 @@ AuthService-企业工商信息查询
                     bool m_quotaTypeHasBeenSet;
 
                     /**
-                     * 非必填，查询某个渠道企业的消耗情况。
-关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 代理企业和员工的信息。
+在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

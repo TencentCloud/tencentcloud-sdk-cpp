@@ -58,7 +58,10 @@ ContainerGroupDeploy::ContainerGroupDeploy() :
     m_kubeInjectEnableHasBeenSet(false),
     m_repoTypeHasBeenSet(false),
     m_warmupSettingHasBeenSet(false),
-    m_gatewayConfigHasBeenSet(false)
+    m_gatewayConfigHasBeenSet(false),
+    m_containerNameHasBeenSet(false),
+    m_additionalContainerListHasBeenSet(false),
+    m_internalContainerListHasBeenSet(false)
 {
 }
 
@@ -515,6 +518,56 @@ CoreInternalOutcome ContainerGroupDeploy::Deserialize(const rapidjson::Value &va
         m_gatewayConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerName") && !value["ContainerName"].IsNull())
+    {
+        if (!value["ContainerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDeploy.ContainerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerName = string(value["ContainerName"].GetString());
+        m_containerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdditionalContainerList") && !value["AdditionalContainerList"].IsNull())
+    {
+        if (!value["AdditionalContainerList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDeploy.AdditionalContainerList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AdditionalContainerList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GroupContainerInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_additionalContainerList.push_back(item);
+        }
+        m_additionalContainerListHasBeenSet = true;
+    }
+
+    if (value.HasMember("InternalContainerList") && !value["InternalContainerList"].IsNull())
+    {
+        if (!value["InternalContainerList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDeploy.InternalContainerList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InternalContainerList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GroupContainerInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_internalContainerList.push_back(item);
+        }
+        m_internalContainerListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -856,6 +909,44 @@ void ContainerGroupDeploy::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gatewayConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_containerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_additionalContainerListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdditionalContainerList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_additionalContainerList.begin(); itr != m_additionalContainerList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_internalContainerListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalContainerList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_internalContainerList.begin(); itr != m_internalContainerList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1467,5 +1558,53 @@ void ContainerGroupDeploy::SetGatewayConfig(const GatewayConfig& _gatewayConfig)
 bool ContainerGroupDeploy::GatewayConfigHasBeenSet() const
 {
     return m_gatewayConfigHasBeenSet;
+}
+
+string ContainerGroupDeploy::GetContainerName() const
+{
+    return m_containerName;
+}
+
+void ContainerGroupDeploy::SetContainerName(const string& _containerName)
+{
+    m_containerName = _containerName;
+    m_containerNameHasBeenSet = true;
+}
+
+bool ContainerGroupDeploy::ContainerNameHasBeenSet() const
+{
+    return m_containerNameHasBeenSet;
+}
+
+vector<GroupContainerInfo> ContainerGroupDeploy::GetAdditionalContainerList() const
+{
+    return m_additionalContainerList;
+}
+
+void ContainerGroupDeploy::SetAdditionalContainerList(const vector<GroupContainerInfo>& _additionalContainerList)
+{
+    m_additionalContainerList = _additionalContainerList;
+    m_additionalContainerListHasBeenSet = true;
+}
+
+bool ContainerGroupDeploy::AdditionalContainerListHasBeenSet() const
+{
+    return m_additionalContainerListHasBeenSet;
+}
+
+vector<GroupContainerInfo> ContainerGroupDeploy::GetInternalContainerList() const
+{
+    return m_internalContainerList;
+}
+
+void ContainerGroupDeploy::SetInternalContainerList(const vector<GroupContainerInfo>& _internalContainerList)
+{
+    m_internalContainerList = _internalContainerList;
+    m_internalContainerListHasBeenSet = true;
+}
+
+bool ContainerGroupDeploy::InternalContainerListHasBeenSet() const
+{
+    return m_internalContainerListHasBeenSet;
 }
 

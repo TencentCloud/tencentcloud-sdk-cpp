@@ -80,18 +80,22 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取经办人名称
+                     * 获取合同经办人名称
+如果有多个经办人用分号隔开。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperatorName 经办人名称
+                     * @return OperatorName 合同经办人名称
+如果有多个经办人用分号隔开。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperatorName() const;
 
                     /**
-                     * 设置经办人名称
+                     * 设置合同经办人名称
+如果有多个经办人用分号隔开。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operatorName 经办人名称
+                     * @param _operatorName 合同经办人名称
+如果有多个经办人用分号隔开。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,18 +163,66 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取0 还没有发起 1等待签署 2部分签署 3拒签 4已签署 5已过期 6已撤销 7还没有预发起 8等待填写 9部分填写 10拒填 11已解除
+                     * 获取当前合同状态,如下是状态码对应的状态。
+0-还没有发起
+1-等待签署
+2-部分签署 
+3-拒签
+4-已签署 
+5-已过期 
+6-已撤销 
+7-还没有预发起
+8-等待填写
+9-部分填写 
+10-拒填
+11-已解除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 0 还没有发起 1等待签署 2部分签署 3拒签 4已签署 5已过期 6已撤销 7还没有预发起 8等待填写 9部分填写 10拒填 11已解除
+                     * @return Status 当前合同状态,如下是状态码对应的状态。
+0-还没有发起
+1-等待签署
+2-部分签署 
+3-拒签
+4-已签署 
+5-已过期 
+6-已撤销 
+7-还没有预发起
+8-等待填写
+9-部分填写 
+10-拒填
+11-已解除
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置0 还没有发起 1等待签署 2部分签署 3拒签 4已签署 5已过期 6已撤销 7还没有预发起 8等待填写 9部分填写 10拒填 11已解除
+                     * 设置当前合同状态,如下是状态码对应的状态。
+0-还没有发起
+1-等待签署
+2-部分签署 
+3-拒签
+4-已签署 
+5-已过期 
+6-已撤销 
+7-还没有预发起
+8-等待填写
+9-部分填写 
+10-拒填
+11-已解除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 0 还没有发起 1等待签署 2部分签署 3拒签 4已签署 5已过期 6已撤销 7还没有预发起 8等待填写 9部分填写 10拒填 11已解除
+                     * @param _status 当前合同状态,如下是状态码对应的状态。
+0-还没有发起
+1-等待签署
+2-部分签署 
+3-拒签
+4-已签署 
+5-已过期 
+6-已撤销 
+7-还没有预发起
+8-等待填写
+9-部分填写 
+10-拒填
+11-已解除
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -185,8 +237,38 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐类型
+对应关系如下
+CloudEnterprise-企业版合同
+SingleSignature-单方签章
+CloudProve-签署报告
+CloudOnlineSign-腾讯会议在线签约
+ChannelWeCard-微工卡
+SignFlow-合同套餐
+SignFace-签署意愿（人脸识别）
+SignPassword-签署意愿（密码）
+SignSMS-签署意愿（短信）
+PersonalEssAuth-签署人实名（腾讯电子签认证）
+PersonalThirdAuth-签署人实名（信任第三方认证）
+OrgEssAuth-签署企业实名
+FlowNotify-短信通知
+AuthService-企业工商信息查询
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaType 套餐类型
+对应关系如下
+CloudEnterprise-企业版合同
+SingleSignature-单方签章
+CloudProve-签署报告
+CloudOnlineSign-腾讯会议在线签约
+ChannelWeCard-微工卡
+SignFlow-合同套餐
+SignFace-签署意愿（人脸识别）
+SignPassword-签署意愿（密码）
+SignSMS-签署意愿（短信）
+PersonalEssAuth-签署人实名（腾讯电子签认证）
+PersonalThirdAuth-签署人实名（信任第三方认证）
+OrgEssAuth-签署企业实名
+FlowNotify-短信通知
+AuthService-企业工商信息查询
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -194,8 +276,38 @@ namespace TencentCloud
 
                     /**
                      * 设置套餐类型
+对应关系如下
+CloudEnterprise-企业版合同
+SingleSignature-单方签章
+CloudProve-签署报告
+CloudOnlineSign-腾讯会议在线签约
+ChannelWeCard-微工卡
+SignFlow-合同套餐
+SignFace-签署意愿（人脸识别）
+SignPassword-签署意愿（密码）
+SignSMS-签署意愿（短信）
+PersonalEssAuth-签署人实名（腾讯电子签认证）
+PersonalThirdAuth-签署人实名（信任第三方认证）
+OrgEssAuth-签署企业实名
+FlowNotify-短信通知
+AuthService-企业工商信息查询
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quotaType 套餐类型
+对应关系如下
+CloudEnterprise-企业版合同
+SingleSignature-单方签章
+CloudProve-签署报告
+CloudOnlineSign-腾讯会议在线签约
+ChannelWeCard-微工卡
+SignFlow-合同套餐
+SignFace-签署意愿（人脸识别）
+SignPassword-签署意愿（密码）
+SignSMS-签署意愿（短信）
+PersonalEssAuth-签署人实名（腾讯电子签认证）
+PersonalThirdAuth-签署人实名（信任第三方认证）
+OrgEssAuth-签署企业实名
+FlowNotify-短信通知
+AuthService-企业工商信息查询
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -234,18 +346,18 @@ namespace TencentCloud
                     bool UseCountHasBeenSet() const;
 
                     /**
-                     * 获取消耗的时间戳
+                     * 获取消耗的时间戳，格式为Unix标准时间戳（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CostTime 消耗的时间戳
+                     * @return CostTime 消耗的时间戳，格式为Unix标准时间戳（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCostTime() const;
 
                     /**
-                     * 设置消耗的时间戳
+                     * 设置消耗的时间戳，格式为Unix标准时间戳（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _costTime 消耗的时间戳
+                     * @param _costTime 消耗的时间戳，格式为Unix标准时间戳（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -259,18 +371,18 @@ namespace TencentCloud
                     bool CostTimeHasBeenSet() const;
 
                     /**
-                     * 获取套餐名称
+                     * 获取消耗的套餐名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QuotaName 套餐名称
+                     * @return QuotaName 消耗的套餐名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuotaName() const;
 
                     /**
-                     * 设置套餐名称
+                     * 设置消耗的套餐名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _quotaName 套餐名称
+                     * @param _quotaName 消耗的套餐名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -284,18 +396,22 @@ namespace TencentCloud
                     bool QuotaNameHasBeenSet() const;
 
                     /**
-                     * 获取 消耗类型	1.扣费 2.撤销返还
+                     * 获取消耗类型
+1.扣费 2.撤销返还
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CostType  消耗类型	1.扣费 2.撤销返还
+                     * @return CostType 消耗类型
+1.扣费 2.撤销返还
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCostType() const;
 
                     /**
-                     * 设置 消耗类型	1.扣费 2.撤销返还
+                     * 设置消耗类型
+1.扣费 2.撤销返还
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _costType  消耗类型	1.扣费 2.撤销返还
+                     * @param _costType 消耗类型
+1.扣费 2.撤销返还
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -345,7 +461,8 @@ namespace TencentCloud
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 经办人名称
+                     * 合同经办人名称
+如果有多个经办人用分号隔开。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operatorName;
@@ -367,7 +484,19 @@ namespace TencentCloud
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 0 还没有发起 1等待签署 2部分签署 3拒签 4已签署 5已过期 6已撤销 7还没有预发起 8等待填写 9部分填写 10拒填 11已解除
+                     * 当前合同状态,如下是状态码对应的状态。
+0-还没有发起
+1-等待签署
+2-部分签署 
+3-拒签
+4-已签署 
+5-已过期 
+6-已撤销 
+7-还没有预发起
+8-等待填写
+9-部分填写 
+10-拒填
+11-已解除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
@@ -375,6 +504,21 @@ namespace TencentCloud
 
                     /**
                      * 套餐类型
+对应关系如下
+CloudEnterprise-企业版合同
+SingleSignature-单方签章
+CloudProve-签署报告
+CloudOnlineSign-腾讯会议在线签约
+ChannelWeCard-微工卡
+SignFlow-合同套餐
+SignFace-签署意愿（人脸识别）
+SignPassword-签署意愿（密码）
+SignSMS-签署意愿（短信）
+PersonalEssAuth-签署人实名（腾讯电子签认证）
+PersonalThirdAuth-签署人实名（信任第三方认证）
+OrgEssAuth-签署企业实名
+FlowNotify-短信通知
+AuthService-企业工商信息查询
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quotaType;
@@ -388,21 +532,22 @@ namespace TencentCloud
                     bool m_useCountHasBeenSet;
 
                     /**
-                     * 消耗的时间戳
+                     * 消耗的时间戳，格式为Unix标准时间戳（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_costTime;
                     bool m_costTimeHasBeenSet;
 
                     /**
-                     * 套餐名称
+                     * 消耗的套餐名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quotaName;
                     bool m_quotaNameHasBeenSet;
 
                     /**
-                     *  消耗类型	1.扣费 2.撤销返还
+                     * 消耗类型
+1.扣费 2.撤销返还
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_costType;

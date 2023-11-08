@@ -59,9 +59,11 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DeleteCfsRuleRequest.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsRuleResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteMigrationTaskResponse.h
+  include/tencentcloud/cfs/v20190719/model/UpdateFileSystemBandwidthLimitResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeSnapshotOperationLogsResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemPGroupResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsFileSystemRequest.h
+  include/tencentcloud/cfs/v20190719/model/UpdateFileSystemBandwidthLimitRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsPGroupResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsServiceStatusRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteUserQuotaResponse.h
@@ -168,9 +170,11 @@ set(cfs_src
   src/v20190719/model/DeleteCfsRuleRequest.cpp
   src/v20190719/model/UpdateCfsRuleResponse.cpp
   src/v20190719/model/DeleteMigrationTaskResponse.cpp
+  src/v20190719/model/UpdateFileSystemBandwidthLimitResponse.cpp
   src/v20190719/model/DescribeSnapshotOperationLogsResponse.cpp
   src/v20190719/model/UpdateCfsFileSystemPGroupResponse.cpp
   src/v20190719/model/DeleteCfsFileSystemRequest.cpp
+  src/v20190719/model/UpdateFileSystemBandwidthLimitRequest.cpp
   src/v20190719/model/CreateCfsPGroupResponse.cpp
   src/v20190719/model/DescribeCfsServiceStatusRequest.cpp
   src/v20190719/model/DeleteUserQuotaResponse.cpp

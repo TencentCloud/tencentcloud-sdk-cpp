@@ -427,6 +427,49 @@ TdmqClient::CreateEnvironmentRoleOutcomeCallable TdmqClient::CreateEnvironmentRo
     return task->get_future();
 }
 
+TdmqClient::CreateProClusterOutcome TdmqClient::CreateProCluster(const CreateProClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProClusterResponse rsp = CreateProClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProClusterOutcome(rsp);
+        else
+            return CreateProClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProClusterOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateProClusterAsync(const CreateProClusterRequest& request, const CreateProClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateProCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateProClusterOutcomeCallable TdmqClient::CreateProClusterCallable(const CreateProClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateProClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateProCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::CreateRabbitMQUserOutcome TdmqClient::CreateRabbitMQUser(const CreateRabbitMQUserRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRabbitMQUser");

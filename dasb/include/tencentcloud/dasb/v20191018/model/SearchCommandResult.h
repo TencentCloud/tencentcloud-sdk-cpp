@@ -330,25 +330,50 @@ namespace TencentCloud
                     /**
                      * 获取该命令所属会话的会话开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SessTime 该命令所属会话的会话开始时间
+                     * @return SessionTime 该命令所属会话的会话开始时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetSessTime() const;
+                    std::string GetSessionTime() const;
 
                     /**
                      * 设置该命令所属会话的会话开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sessTime 该命令所属会话的会话开始时间
+                     * @param _sessionTime 该命令所属会话的会话开始时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
+                     */
+                    void SetSessionTime(const std::string& _sessionTime);
+
+                    /**
+                     * 判断参数 SessionTime 是否已赋值
+                     * @return SessionTime 是否已赋值
+                     * 
+                     */
+                    bool SessionTimeHasBeenSet() const;
+
+                    /**
+                     * 获取该命令所属会话的会话开始时间（废弃，使用SessionTime）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessTime 该命令所属会话的会话开始时间（废弃，使用SessionTime）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    std::string GetSessTime() const;
+
+                    /**
+                     * 设置该命令所属会话的会话开始时间（废弃，使用SessionTime）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sessTime 该命令所属会话的会话开始时间（废弃，使用SessionTime）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
                      */
                     void SetSessTime(const std::string& _sessTime);
 
                     /**
                      * 判断参数 SessTime 是否已赋值
                      * @return SessTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SessTimeHasBeenSet() const;
 
@@ -561,6 +586,13 @@ namespace TencentCloud
 
                     /**
                      * 该命令所属会话的会话开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionTime;
+                    bool m_sessionTimeHasBeenSet;
+
+                    /**
+                     * 该命令所属会话的会话开始时间（废弃，使用SessionTime）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessTime;

@@ -28,7 +28,8 @@ DescribeImageRepositoryRequest::DescribeImageRepositoryRequest() :
     m_limitHasBeenSet(false),
     m_repoTypeHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
-    m_tcrRepoInfoHasBeenSet(false)
+    m_tcrRepoInfoHasBeenSet(false),
+    m_repoNameHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string DescribeImageRepositoryRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tcrRepoInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_repoNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_repoName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void DescribeImageRepositoryRequest::SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoI
 bool DescribeImageRepositoryRequest::TcrRepoInfoHasBeenSet() const
 {
     return m_tcrRepoInfoHasBeenSet;
+}
+
+string DescribeImageRepositoryRequest::GetRepoName() const
+{
+    return m_repoName;
+}
+
+void DescribeImageRepositoryRequest::SetRepoName(const string& _repoName)
+{
+    m_repoName = _repoName;
+    m_repoNameHasBeenSet = true;
+}
+
+bool DescribeImageRepositoryRequest::RepoNameHasBeenSet() const
+{
+    return m_repoNameHasBeenSet;
 }
 
 

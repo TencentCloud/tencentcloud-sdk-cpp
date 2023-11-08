@@ -107,6 +107,8 @@
 #include <tencentcloud/cfs/v20190719/model/UpdateCfsRuleResponse.h>
 #include <tencentcloud/cfs/v20190719/model/UpdateCfsSnapshotAttributeRequest.h>
 #include <tencentcloud/cfs/v20190719/model/UpdateCfsSnapshotAttributeResponse.h>
+#include <tencentcloud/cfs/v20190719/model/UpdateFileSystemBandwidthLimitRequest.h>
+#include <tencentcloud/cfs/v20190719/model/UpdateFileSystemBandwidthLimitResponse.h>
 
 
 namespace TencentCloud
@@ -247,6 +249,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateCfsSnapshotAttributeResponse> UpdateCfsSnapshotAttributeOutcome;
                 typedef std::future<UpdateCfsSnapshotAttributeOutcome> UpdateCfsSnapshotAttributeOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::UpdateCfsSnapshotAttributeRequest&, UpdateCfsSnapshotAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCfsSnapshotAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateFileSystemBandwidthLimitResponse> UpdateFileSystemBandwidthLimitOutcome;
+                typedef std::future<UpdateFileSystemBandwidthLimitOutcome> UpdateFileSystemBandwidthLimitOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::UpdateFileSystemBandwidthLimitRequest&, UpdateFileSystemBandwidthLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFileSystemBandwidthLimitAsyncHandler;
 
 
 
@@ -632,6 +637,15 @@ namespace TencentCloud
                 UpdateCfsSnapshotAttributeOutcome UpdateCfsSnapshotAttribute(const Model::UpdateCfsSnapshotAttributeRequest &request);
                 void UpdateCfsSnapshotAttributeAsync(const Model::UpdateCfsSnapshotAttributeRequest& request, const UpdateCfsSnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateCfsSnapshotAttributeOutcomeCallable UpdateCfsSnapshotAttributeCallable(const Model::UpdateCfsSnapshotAttributeRequest& request);
+
+                /**
+                 *更新文件系统带宽
+                 * @param req UpdateFileSystemBandwidthLimitRequest
+                 * @return UpdateFileSystemBandwidthLimitOutcome
+                 */
+                UpdateFileSystemBandwidthLimitOutcome UpdateFileSystemBandwidthLimit(const Model::UpdateFileSystemBandwidthLimitRequest &request);
+                void UpdateFileSystemBandwidthLimitAsync(const Model::UpdateFileSystemBandwidthLimitRequest& request, const UpdateFileSystemBandwidthLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateFileSystemBandwidthLimitOutcomeCallable UpdateFileSystemBandwidthLimitCallable(const Model::UpdateFileSystemBandwidthLimitRequest& request);
 
             };
         }

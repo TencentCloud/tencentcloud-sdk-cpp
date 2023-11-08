@@ -24,7 +24,8 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreatePrepareFlowResponse::CreatePrepareFlowResponse() :
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreatePrepareFlowResponse::Deserialize(const string &payload
         m_urlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = string(rsp["FlowId"].GetString());
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreatePrepareFlowResponse::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string CreatePrepareFlowResponse::GetUrl() const
 bool CreatePrepareFlowResponse::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string CreatePrepareFlowResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool CreatePrepareFlowResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 
 
