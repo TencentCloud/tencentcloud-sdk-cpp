@@ -246,18 +246,18 @@ Block 确认违规
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取如果命中场景为涉政，则该数据为人物姓名列表，否则null
+                     * 获取人物名称列表，如未识别，则为null
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Names 如果命中场景为涉政，则该数据为人物姓名列表，否则null
+                     * @return Names 人物名称列表，如未识别，则为null
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
-                     * 设置如果命中场景为涉政，则该数据为人物姓名列表，否则null
+                     * 设置人物名称列表，如未识别，则为null
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _names 如果命中场景为涉政，则该数据为人物姓名列表，否则null
+                     * @param _names 人物名称列表，如未识别，则为null
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -377,7 +377,7 @@ Block 确认违规
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 如果命中场景为涉政，则该数据为人物姓名列表，否则null
+                     * 人物名称列表，如未识别，则为null
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_names;

@@ -157,6 +157,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/LifecycleHook.h
   include/tencentcloud/as/v20180419/model/ForwardLoadBalancer.h
   include/tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesRequest.h
+  include/tencentcloud/as/v20180419/model/InstanceNameIndexSettings.h
   include/tencentcloud/as/v20180419/model/ForwardLoadBalancerIdentification.h
   include/tencentcloud/as/v20180419/model/AutoScalingAdvice.h
   include/tencentcloud/as/v20180419/model/StartAutoScalingInstancesRequest.h
@@ -322,6 +323,7 @@ set(as_src
   src/v20180419/model/LifecycleHook.cpp
   src/v20180419/model/ForwardLoadBalancer.cpp
   src/v20180419/model/ClearLaunchConfigurationAttributesRequest.cpp
+  src/v20180419/model/InstanceNameIndexSettings.cpp
   src/v20180419/model/ForwardLoadBalancerIdentification.cpp
   src/v20180419/model/AutoScalingAdvice.cpp
   src/v20180419/model/StartAutoScalingInstancesRequest.cpp

@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/as/v20180419/model/ServiceSettings.h>
 #include <tencentcloud/as/v20180419/model/SpotMixedAllocationPolicy.h>
+#include <tencentcloud/as/v20180419/model/InstanceNameIndexSettings.h>
 
 
 namespace TencentCloud
@@ -602,6 +603,27 @@ INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加�
                      */
                     bool CapacityRebalanceHasBeenSet() const;
 
+                    /**
+                     * 获取实例名称序号相关设置。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。
+                     * @return InstanceNameIndexSettings 实例名称序号相关设置。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。
+                     * 
+                     */
+                    InstanceNameIndexSettings GetInstanceNameIndexSettings() const;
+
+                    /**
+                     * 设置实例名称序号相关设置。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。
+                     * @param _instanceNameIndexSettings 实例名称序号相关设置。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。
+                     * 
+                     */
+                    void SetInstanceNameIndexSettings(const InstanceNameIndexSettings& _instanceNameIndexSettings);
+
+                    /**
+                     * 判断参数 InstanceNameIndexSettings 是否已赋值
+                     * @return InstanceNameIndexSettings 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameIndexSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -759,6 +781,12 @@ INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加�
                      */
                     bool m_capacityRebalance;
                     bool m_capacityRebalanceHasBeenSet;
+
+                    /**
+                     * 实例名称序号相关设置。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。
+                     */
+                    InstanceNameIndexSettings m_instanceNameIndexSettings;
+                    bool m_instanceNameIndexSettingsHasBeenSet;
 
                 };
             }

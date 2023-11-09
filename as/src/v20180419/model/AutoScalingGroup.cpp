@@ -51,7 +51,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_loadBalancerHealthCheckGracePeriodHasBeenSet(false),
     m_instanceAllocationPolicyHasBeenSet(false),
     m_spotMixedAllocationPolicyHasBeenSet(false),
-    m_capacityRebalanceHasBeenSet(false)
+    m_capacityRebalanceHasBeenSet(false),
+    m_instanceNameIndexSettingsHasBeenSet(false)
 {
 }
 
@@ -416,6 +417,23 @@ CoreInternalOutcome AutoScalingGroup::Deserialize(const rapidjson::Value &value)
         m_capacityRebalanceHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceNameIndexSettings") && !value["InstanceNameIndexSettings"].IsNull())
+    {
+        if (!value["InstanceNameIndexSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingGroup.InstanceNameIndexSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceNameIndexSettings.Deserialize(value["InstanceNameIndexSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceNameIndexSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -705,6 +723,15 @@ void AutoScalingGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CapacityRebalance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_capacityRebalance, allocator);
+    }
+
+    if (m_instanceNameIndexSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceNameIndexSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceNameIndexSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1204,5 +1231,21 @@ void AutoScalingGroup::SetCapacityRebalance(const bool& _capacityRebalance)
 bool AutoScalingGroup::CapacityRebalanceHasBeenSet() const
 {
     return m_capacityRebalanceHasBeenSet;
+}
+
+InstanceNameIndexSettings AutoScalingGroup::GetInstanceNameIndexSettings() const
+{
+    return m_instanceNameIndexSettings;
+}
+
+void AutoScalingGroup::SetInstanceNameIndexSettings(const InstanceNameIndexSettings& _instanceNameIndexSettings)
+{
+    m_instanceNameIndexSettings = _instanceNameIndexSettings;
+    m_instanceNameIndexSettingsHasBeenSet = true;
+}
+
+bool AutoScalingGroup::InstanceNameIndexSettingsHasBeenSet() const
+{
+    return m_instanceNameIndexSettingsHasBeenSet;
 }
 

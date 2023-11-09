@@ -104,6 +104,7 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20210922/model/RecognitionResult.h
   include/tencentcloud/vm/v20210922/model/CancelTaskResponse.h
   include/tencentcloud/vm/v20210922/model/AudioResultDetailTextResult.h
+  include/tencentcloud/vm/v20210922/model/SegmentCosUrlList.h
   include/tencentcloud/vm/v20210922/model/RcbAsr.h
   include/tencentcloud/vm/v20210922/model/AudioResult.h
   include/tencentcloud/vm/v20210922/model/AudioResultDetailMoanResult.h
@@ -202,6 +203,7 @@ set(vm_src
   src/v20210922/model/RecognitionResult.cpp
   src/v20210922/model/CancelTaskResponse.cpp
   src/v20210922/model/AudioResultDetailTextResult.cpp
+  src/v20210922/model/SegmentCosUrlList.cpp
   src/v20210922/model/RcbAsr.cpp
   src/v20210922/model/AudioResult.cpp
   src/v20210922/model/AudioResultDetailMoanResult.cpp

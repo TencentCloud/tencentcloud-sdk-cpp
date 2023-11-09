@@ -384,6 +384,49 @@ DrmClient::DescribeKeysOutcomeCallable DrmClient::DescribeKeysCallable(const Des
     return task->get_future();
 }
 
+DrmClient::GenerateTDRMKeyOutcome DrmClient::GenerateTDRMKey(const GenerateTDRMKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateTDRMKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateTDRMKeyResponse rsp = GenerateTDRMKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateTDRMKeyOutcome(rsp);
+        else
+            return GenerateTDRMKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateTDRMKeyOutcome(outcome.GetError());
+    }
+}
+
+void DrmClient::GenerateTDRMKeyAsync(const GenerateTDRMKeyRequest& request, const GenerateTDRMKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateTDRMKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DrmClient::GenerateTDRMKeyOutcomeCallable DrmClient::GenerateTDRMKeyCallable(const GenerateTDRMKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateTDRMKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateTDRMKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DrmClient::ModifyFairPlayPemOutcome DrmClient::ModifyFairPlayPem(const ModifyFairPlayPemRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyFairPlayPem");

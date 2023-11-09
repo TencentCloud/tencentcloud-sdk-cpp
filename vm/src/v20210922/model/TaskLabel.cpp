@@ -23,7 +23,8 @@ using namespace std;
 TaskLabel::TaskLabel() :
     m_labelHasBeenSet(false),
     m_suggestionHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_subLabelHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome TaskLabel::Deserialize(const rapidjson::Value &value)
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLabel") && !value["SubLabel"].IsNull())
+    {
+        if (!value["SubLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskLabel.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subLabel = string(value["SubLabel"].GetString());
+        m_subLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void TaskLabel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_subLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void TaskLabel::SetScore(const int64_t& _score)
 bool TaskLabel::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+string TaskLabel::GetSubLabel() const
+{
+    return m_subLabel;
+}
+
+void TaskLabel::SetSubLabel(const string& _subLabel)
+{
+    m_subLabel = _subLabel;
+    m_subLabelHasBeenSet = true;
+}
+
+bool TaskLabel::SubLabelHasBeenSet() const
+{
+    return m_subLabelHasBeenSet;
 }
 

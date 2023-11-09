@@ -43,7 +43,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_errorDescriptionHasBeenSet(false),
     m_labelHasBeenSet(false),
     m_audioTextHasBeenSet(false),
-    m_asrsHasBeenSet(false)
+    m_asrsHasBeenSet(false),
+    m_segmentCosUrlListHasBeenSet(false)
 {
 }
 
@@ -335,6 +336,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_asrsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SegmentCosUrlList") && !rsp["SegmentCosUrlList"].IsNull())
+    {
+        if (!rsp["SegmentCosUrlList"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentCosUrlList` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_segmentCosUrlList.Deserialize(rsp["SegmentCosUrlList"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_segmentCosUrlListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -533,6 +551,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_segmentCosUrlListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentCosUrlList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_segmentCosUrlList.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -745,6 +772,16 @@ vector<RcbAsr> DescribeTaskDetailResponse::GetAsrs() const
 bool DescribeTaskDetailResponse::AsrsHasBeenSet() const
 {
     return m_asrsHasBeenSet;
+}
+
+SegmentCosUrlList DescribeTaskDetailResponse::GetSegmentCosUrlList() const
+{
+    return m_segmentCosUrlList;
+}
+
+bool DescribeTaskDetailResponse::SegmentCosUrlListHasBeenSet() const
+{
+    return m_segmentCosUrlListHasBeenSet;
 }
 
 

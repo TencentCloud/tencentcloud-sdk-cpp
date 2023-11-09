@@ -47,7 +47,8 @@ Task::Task() :
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_alarmPolicyHasBeenSet(false),
-    m_apmServiceListHasBeenSet(false)
+    m_apmServiceListHasBeenSet(false),
+    m_verifyIdHasBeenSet(false)
 {
 }
 
@@ -376,6 +377,16 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
         m_apmServiceListHasBeenSet = true;
     }
 
+    if (value.HasMember("VerifyId") && !value["VerifyId"].IsNull())
+    {
+        if (!value["VerifyId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.VerifyId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifyId = value["VerifyId"].GetUint64();
+        m_verifyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -631,6 +642,14 @@ void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_verifyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_verifyId, allocator);
     }
 
 }
@@ -1066,5 +1085,21 @@ void Task::SetApmServiceList(const vector<ApmServiceInfo>& _apmServiceList)
 bool Task::ApmServiceListHasBeenSet() const
 {
     return m_apmServiceListHasBeenSet;
+}
+
+uint64_t Task::GetVerifyId() const
+{
+    return m_verifyId;
+}
+
+void Task::SetVerifyId(const uint64_t& _verifyId)
+{
+    m_verifyId = _verifyId;
+    m_verifyIdHasBeenSet = true;
+}
+
+bool Task::VerifyIdHasBeenSet() const
+{
+    return m_verifyIdHasBeenSet;
 }
 

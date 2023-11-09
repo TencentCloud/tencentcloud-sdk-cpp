@@ -48,26 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowId 合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -82,10 +74,8 @@ namespace TencentCloud
                     /**
                      * 获取合同经办人名称
 如果有多个经办人用分号隔开。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatorName 合同经办人名称
 如果有多个经办人用分号隔开。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperatorName() const;
@@ -93,10 +83,8 @@ namespace TencentCloud
                     /**
                      * 设置合同经办人名称
 如果有多个经办人用分号隔开。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operatorName 合同经办人名称
 如果有多个经办人用分号隔开。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperatorName(const std::string& _operatorName);
@@ -110,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发起方组织机构名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateOrganizationName 发起方组织机构名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateOrganizationName() const;
 
                     /**
                      * 设置发起方组织机构名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createOrganizationName 发起方组织机构名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateOrganizationName(const std::string& _createOrganizationName);
@@ -134,23 +118,15 @@ namespace TencentCloud
                     bool CreateOrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-该名称还将用于合同签署完成后的下载文件名。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-该名称还将用于合同签署完成后的下载文件名。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取合同流程的名称。
+                     * @return FlowName 合同流程的名称。
                      * 
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-该名称还将用于合同签署完成后的下载文件名。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _flowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-该名称还将用于合同签署完成后的下载文件名。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置合同流程的名称。
+                     * @param _flowName 合同流程的名称。
                      * 
                      */
                     void SetFlowName(const std::string& _flowName);
@@ -164,66 +140,70 @@ namespace TencentCloud
 
                     /**
                      * 获取当前合同状态,如下是状态码对应的状态。
-0-还没有发起
-1-等待签署
-2-部分签署 
-3-拒签
-4-已签署 
-5-已过期 
-6-已撤销 
-7-还没有预发起
-8-等待填写
-9-部分填写 
-10-拒填
-11-已解除
-注意：此字段可能返回 null，表示取不到有效值。
+<ul>
+<li>**0**: 还没有发起</li>
+<li>**1**: 等待签署</li>
+<li>**2**: 部分签署 </li>
+<li>**3**: 拒签</li>
+<li>**4**: 已签署 </li>
+<li>**5**: 已过期 </li>
+<li>**6**: 已撤销 </li>
+<li>**7**: 还没有预发起</li>
+<li>**8**: 等待填写</li>
+<li>**9**: 部分填写 </li>
+<li>**10**: 拒填</li>
+<li>**11**: 已解除</li>
+</ul>
                      * @return Status 当前合同状态,如下是状态码对应的状态。
-0-还没有发起
-1-等待签署
-2-部分签署 
-3-拒签
-4-已签署 
-5-已过期 
-6-已撤销 
-7-还没有预发起
-8-等待填写
-9-部分填写 
-10-拒填
-11-已解除
-注意：此字段可能返回 null，表示取不到有效值。
+<ul>
+<li>**0**: 还没有发起</li>
+<li>**1**: 等待签署</li>
+<li>**2**: 部分签署 </li>
+<li>**3**: 拒签</li>
+<li>**4**: 已签署 </li>
+<li>**5**: 已过期 </li>
+<li>**6**: 已撤销 </li>
+<li>**7**: 还没有预发起</li>
+<li>**8**: 等待填写</li>
+<li>**9**: 部分填写 </li>
+<li>**10**: 拒填</li>
+<li>**11**: 已解除</li>
+</ul>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置当前合同状态,如下是状态码对应的状态。
-0-还没有发起
-1-等待签署
-2-部分签署 
-3-拒签
-4-已签署 
-5-已过期 
-6-已撤销 
-7-还没有预发起
-8-等待填写
-9-部分填写 
-10-拒填
-11-已解除
-注意：此字段可能返回 null，表示取不到有效值。
+<ul>
+<li>**0**: 还没有发起</li>
+<li>**1**: 等待签署</li>
+<li>**2**: 部分签署 </li>
+<li>**3**: 拒签</li>
+<li>**4**: 已签署 </li>
+<li>**5**: 已过期 </li>
+<li>**6**: 已撤销 </li>
+<li>**7**: 还没有预发起</li>
+<li>**8**: 等待填写</li>
+<li>**9**: 部分填写 </li>
+<li>**10**: 拒填</li>
+<li>**11**: 已解除</li>
+</ul>
                      * @param _status 当前合同状态,如下是状态码对应的状态。
-0-还没有发起
-1-等待签署
-2-部分签署 
-3-拒签
-4-已签署 
-5-已过期 
-6-已撤销 
-7-还没有预发起
-8-等待填写
-9-部分填写 
-10-拒填
-11-已解除
-注意：此字段可能返回 null，表示取不到有效值。
+<ul>
+<li>**0**: 还没有发起</li>
+<li>**1**: 等待签署</li>
+<li>**2**: 部分签署 </li>
+<li>**3**: 拒签</li>
+<li>**4**: 已签署 </li>
+<li>**5**: 已过期 </li>
+<li>**6**: 已撤销 </li>
+<li>**7**: 还没有预发起</li>
+<li>**8**: 等待填写</li>
+<li>**9**: 部分填写 </li>
+<li>**10**: 拒填</li>
+<li>**11**: 已解除</li>
+</ul>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -236,79 +216,83 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取套餐类型
-对应关系如下
-CloudEnterprise-企业版合同
-SingleSignature-单方签章
-CloudProve-签署报告
-CloudOnlineSign-腾讯会议在线签约
-ChannelWeCard-微工卡
-SignFlow-合同套餐
-SignFace-签署意愿（人脸识别）
-SignPassword-签署意愿（密码）
-SignSMS-签署意愿（短信）
-PersonalEssAuth-签署人实名（腾讯电子签认证）
-PersonalThirdAuth-签署人实名（信任第三方认证）
-OrgEssAuth-签署企业实名
-FlowNotify-短信通知
-AuthService-企业工商信息查询
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QuotaType 套餐类型
-对应关系如下
-CloudEnterprise-企业版合同
-SingleSignature-单方签章
-CloudProve-签署报告
-CloudOnlineSign-腾讯会议在线签约
-ChannelWeCard-微工卡
-SignFlow-合同套餐
-SignFace-签署意愿（人脸识别）
-SignPassword-签署意愿（密码）
-SignSMS-签署意愿（短信）
-PersonalEssAuth-签署人实名（腾讯电子签认证）
-PersonalThirdAuth-签署人实名（信任第三方认证）
-OrgEssAuth-签署企业实名
-FlowNotify-短信通知
-AuthService-企业工商信息查询
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取查询的套餐类型
+对应关系如下:
+<ul>
+<li>**CloudEnterprise**: 企业版合同</li>
+<li>**SingleSignature**: 单方签章</li>
+<li>**CloudProve**: 签署报告</li>
+<li>**CloudOnlineSign**: 腾讯会议在线签约</li>
+<li>**ChannelWeCard**: 微工卡</li>
+<li>**SignFlow**: 合同套餐</li>
+<li>**SignFace**: 签署意愿（人脸识别）</li>
+<li>**SignPassword**: 签署意愿（密码）</li>
+<li>**SignSMS**: 签署意愿（短信）</li>
+<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>
+<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>
+<li>**OrgEssAuth**: 签署企业实名</li>
+<li>**FlowNotify**: 短信通知</li>
+<li>**AuthService**: 企业工商信息查询</li>
+</ul>
+                     * @return QuotaType 查询的套餐类型
+对应关系如下:
+<ul>
+<li>**CloudEnterprise**: 企业版合同</li>
+<li>**SingleSignature**: 单方签章</li>
+<li>**CloudProve**: 签署报告</li>
+<li>**CloudOnlineSign**: 腾讯会议在线签约</li>
+<li>**ChannelWeCard**: 微工卡</li>
+<li>**SignFlow**: 合同套餐</li>
+<li>**SignFace**: 签署意愿（人脸识别）</li>
+<li>**SignPassword**: 签署意愿（密码）</li>
+<li>**SignSMS**: 签署意愿（短信）</li>
+<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>
+<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>
+<li>**OrgEssAuth**: 签署企业实名</li>
+<li>**FlowNotify**: 短信通知</li>
+<li>**AuthService**: 企业工商信息查询</li>
+</ul>
                      * 
                      */
                     std::string GetQuotaType() const;
 
                     /**
-                     * 设置套餐类型
-对应关系如下
-CloudEnterprise-企业版合同
-SingleSignature-单方签章
-CloudProve-签署报告
-CloudOnlineSign-腾讯会议在线签约
-ChannelWeCard-微工卡
-SignFlow-合同套餐
-SignFace-签署意愿（人脸识别）
-SignPassword-签署意愿（密码）
-SignSMS-签署意愿（短信）
-PersonalEssAuth-签署人实名（腾讯电子签认证）
-PersonalThirdAuth-签署人实名（信任第三方认证）
-OrgEssAuth-签署企业实名
-FlowNotify-短信通知
-AuthService-企业工商信息查询
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _quotaType 套餐类型
-对应关系如下
-CloudEnterprise-企业版合同
-SingleSignature-单方签章
-CloudProve-签署报告
-CloudOnlineSign-腾讯会议在线签约
-ChannelWeCard-微工卡
-SignFlow-合同套餐
-SignFace-签署意愿（人脸识别）
-SignPassword-签署意愿（密码）
-SignSMS-签署意愿（短信）
-PersonalEssAuth-签署人实名（腾讯电子签认证）
-PersonalThirdAuth-签署人实名（信任第三方认证）
-OrgEssAuth-签署企业实名
-FlowNotify-短信通知
-AuthService-企业工商信息查询
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置查询的套餐类型
+对应关系如下:
+<ul>
+<li>**CloudEnterprise**: 企业版合同</li>
+<li>**SingleSignature**: 单方签章</li>
+<li>**CloudProve**: 签署报告</li>
+<li>**CloudOnlineSign**: 腾讯会议在线签约</li>
+<li>**ChannelWeCard**: 微工卡</li>
+<li>**SignFlow**: 合同套餐</li>
+<li>**SignFace**: 签署意愿（人脸识别）</li>
+<li>**SignPassword**: 签署意愿（密码）</li>
+<li>**SignSMS**: 签署意愿（短信）</li>
+<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>
+<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>
+<li>**OrgEssAuth**: 签署企业实名</li>
+<li>**FlowNotify**: 短信通知</li>
+<li>**AuthService**: 企业工商信息查询</li>
+</ul>
+                     * @param _quotaType 查询的套餐类型
+对应关系如下:
+<ul>
+<li>**CloudEnterprise**: 企业版合同</li>
+<li>**SingleSignature**: 单方签章</li>
+<li>**CloudProve**: 签署报告</li>
+<li>**CloudOnlineSign**: 腾讯会议在线签约</li>
+<li>**ChannelWeCard**: 微工卡</li>
+<li>**SignFlow**: 合同套餐</li>
+<li>**SignFace**: 签署意愿（人脸识别）</li>
+<li>**SignPassword**: 签署意愿（密码）</li>
+<li>**SignSMS**: 签署意愿（短信）</li>
+<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>
+<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>
+<li>**OrgEssAuth**: 签署企业实名</li>
+<li>**FlowNotify**: 短信通知</li>
+<li>**AuthService**: 企业工商信息查询</li>
+</ul>
                      * 
                      */
                     void SetQuotaType(const std::string& _quotaType);
@@ -322,18 +306,18 @@ AuthService-企业工商信息查询
 
                     /**
                      * 获取合同使用量
-注意：此字段可能返回 null，表示取不到有效值。
+注: `如果消耗类型是撤销返还，此值为负值代表返还的合同数量`
                      * @return UseCount 合同使用量
-注意：此字段可能返回 null，表示取不到有效值。
+注: `如果消耗类型是撤销返还，此值为负值代表返还的合同数量`
                      * 
                      */
                     int64_t GetUseCount() const;
 
                     /**
                      * 设置合同使用量
-注意：此字段可能返回 null，表示取不到有效值。
+注: `如果消耗类型是撤销返还，此值为负值代表返还的合同数量`
                      * @param _useCount 合同使用量
-注意：此字段可能返回 null，表示取不到有效值。
+注: `如果消耗类型是撤销返还，此值为负值代表返还的合同数量`
                      * 
                      */
                     void SetUseCount(const int64_t& _useCount);
@@ -347,18 +331,14 @@ AuthService-企业工商信息查询
 
                     /**
                      * 获取消耗的时间戳，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CostTime 消耗的时间戳，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCostTime() const;
 
                     /**
                      * 设置消耗的时间戳，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _costTime 消耗的时间戳，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCostTime(const int64_t& _costTime);
@@ -372,18 +352,14 @@ AuthService-企业工商信息查询
 
                     /**
                      * 获取消耗的套餐名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaName 消耗的套餐名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuotaName() const;
 
                     /**
                      * 设置消耗的套餐名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quotaName 消耗的套餐名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuotaName(const std::string& _quotaName);
@@ -397,22 +373,22 @@ AuthService-企业工商信息查询
 
                     /**
                      * 获取消耗类型
-1.扣费 2.撤销返还
-注意：此字段可能返回 null，表示取不到有效值。
+**1**.扣费
+**2**.撤销返还
                      * @return CostType 消耗类型
-1.扣费 2.撤销返还
-注意：此字段可能返回 null，表示取不到有效值。
+**1**.扣费
+**2**.撤销返还
                      * 
                      */
                     int64_t GetCostType() const;
 
                     /**
                      * 设置消耗类型
-1.扣费 2.撤销返还
-注意：此字段可能返回 null，表示取不到有效值。
+**1**.扣费
+**2**.撤销返还
                      * @param _costType 消耗类型
-1.扣费 2.撤销返还
-注意：此字段可能返回 null，表示取不到有效值。
+**1**.扣费
+**2**.撤销返还
                      * 
                      */
                     void SetCostType(const int64_t& _costType);
@@ -426,18 +402,14 @@ AuthService-企业工商信息查询
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -453,9 +425,7 @@ AuthService-企业工商信息查询
 
                     /**
                      * 合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
@@ -463,99 +433,94 @@ AuthService-企业工商信息查询
                     /**
                      * 合同经办人名称
 如果有多个经办人用分号隔开。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operatorName;
                     bool m_operatorNameHasBeenSet;
 
                     /**
                      * 发起方组织机构名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createOrganizationName;
                     bool m_createOrganizationNameHasBeenSet;
 
                     /**
-                     * 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-该名称还将用于合同签署完成后的下载文件名。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 合同流程的名称。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
                      * 当前合同状态,如下是状态码对应的状态。
-0-还没有发起
-1-等待签署
-2-部分签署 
-3-拒签
-4-已签署 
-5-已过期 
-6-已撤销 
-7-还没有预发起
-8-等待填写
-9-部分填写 
-10-拒填
-11-已解除
-注意：此字段可能返回 null，表示取不到有效值。
+<ul>
+<li>**0**: 还没有发起</li>
+<li>**1**: 等待签署</li>
+<li>**2**: 部分签署 </li>
+<li>**3**: 拒签</li>
+<li>**4**: 已签署 </li>
+<li>**5**: 已过期 </li>
+<li>**6**: 已撤销 </li>
+<li>**7**: 还没有预发起</li>
+<li>**8**: 等待填写</li>
+<li>**9**: 部分填写 </li>
+<li>**10**: 拒填</li>
+<li>**11**: 已解除</li>
+</ul>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 套餐类型
-对应关系如下
-CloudEnterprise-企业版合同
-SingleSignature-单方签章
-CloudProve-签署报告
-CloudOnlineSign-腾讯会议在线签约
-ChannelWeCard-微工卡
-SignFlow-合同套餐
-SignFace-签署意愿（人脸识别）
-SignPassword-签署意愿（密码）
-SignSMS-签署意愿（短信）
-PersonalEssAuth-签署人实名（腾讯电子签认证）
-PersonalThirdAuth-签署人实名（信任第三方认证）
-OrgEssAuth-签署企业实名
-FlowNotify-短信通知
-AuthService-企业工商信息查询
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 查询的套餐类型
+对应关系如下:
+<ul>
+<li>**CloudEnterprise**: 企业版合同</li>
+<li>**SingleSignature**: 单方签章</li>
+<li>**CloudProve**: 签署报告</li>
+<li>**CloudOnlineSign**: 腾讯会议在线签约</li>
+<li>**ChannelWeCard**: 微工卡</li>
+<li>**SignFlow**: 合同套餐</li>
+<li>**SignFace**: 签署意愿（人脸识别）</li>
+<li>**SignPassword**: 签署意愿（密码）</li>
+<li>**SignSMS**: 签署意愿（短信）</li>
+<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>
+<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>
+<li>**OrgEssAuth**: 签署企业实名</li>
+<li>**FlowNotify**: 短信通知</li>
+<li>**AuthService**: 企业工商信息查询</li>
+</ul>
                      */
                     std::string m_quotaType;
                     bool m_quotaTypeHasBeenSet;
 
                     /**
                      * 合同使用量
-注意：此字段可能返回 null，表示取不到有效值。
+注: `如果消耗类型是撤销返还，此值为负值代表返还的合同数量`
                      */
                     int64_t m_useCount;
                     bool m_useCountHasBeenSet;
 
                     /**
                      * 消耗的时间戳，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_costTime;
                     bool m_costTimeHasBeenSet;
 
                     /**
                      * 消耗的套餐名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quotaName;
                     bool m_quotaNameHasBeenSet;
 
                     /**
                      * 消耗类型
-1.扣费 2.撤销返还
-注意：此字段可能返回 null，表示取不到有效值。
+**1**.扣费
+**2**.撤销返还
                      */
                     int64_t m_costType;
                     bool m_costTypeHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

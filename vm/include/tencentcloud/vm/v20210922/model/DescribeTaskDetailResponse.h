@@ -27,6 +27,7 @@
 #include <tencentcloud/vm/v20210922/model/ImageSegments.h>
 #include <tencentcloud/vm/v20210922/model/AudioSegments.h>
 #include <tencentcloud/vm/v20210922/model/RcbAsr.h>
+#include <tencentcloud/vm/v20210922/model/SegmentCosUrlList.h>
 
 
 namespace TencentCloud
@@ -292,13 +293,23 @@ namespace TencentCloud
                     bool AudioSegmentsHasBeenSet() const;
 
                     /**
-                     * 获取当任务状态为Error时，返回对应错误的类型，取值：**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）
+                     * 获取当任务状态为Error时，返回对应错误的类型，取值：
+**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）
 **URL_ERROR**：下载地址验证失败。
-**TIMEOUT_ERROR**：处理超时。任务状态非Error时默认返回为空。
+**TIMEOUT_ERROR**：处理超时。
+**CALLBACK_ERRORR**：回调错误。
+**MODERATION_ERROR**：审核失败。
+**URL_NOT_SUPPORTED**：源文件太大或没有图片音频帧
+任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorType 当任务状态为Error时，返回对应错误的类型，取值：**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）
+                     * @return ErrorType 当任务状态为Error时，返回对应错误的类型，取值：
+**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）
 **URL_ERROR**：下载地址验证失败。
-**TIMEOUT_ERROR**：处理超时。任务状态非Error时默认返回为空。
+**TIMEOUT_ERROR**：处理超时。
+**CALLBACK_ERRORR**：回调错误。
+**MODERATION_ERROR**：审核失败。
+**URL_NOT_SUPPORTED**：源文件太大或没有图片音频帧
+任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -374,6 +385,22 @@ namespace TencentCloud
                      * 
                      */
                     bool AsrsHasBeenSet() const;
+
+                    /**
+                     * 获取该字段用于返回检测结果明细数据相关的cos url	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SegmentCosUrlList 该字段用于返回检测结果明细数据相关的cos url	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SegmentCosUrlList GetSegmentCosUrlList() const;
+
+                    /**
+                     * 判断参数 SegmentCosUrlList 是否已赋值
+                     * @return SegmentCosUrlList 是否已赋值
+                     * 
+                     */
+                    bool SegmentCosUrlListHasBeenSet() const;
 
                 private:
 
@@ -484,9 +511,14 @@ namespace TencentCloud
                     bool m_audioSegmentsHasBeenSet;
 
                     /**
-                     * 当任务状态为Error时，返回对应错误的类型，取值：**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）
+                     * 当任务状态为Error时，返回对应错误的类型，取值：
+**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）
 **URL_ERROR**：下载地址验证失败。
-**TIMEOUT_ERROR**：处理超时。任务状态非Error时默认返回为空。
+**TIMEOUT_ERROR**：处理超时。
+**CALLBACK_ERRORR**：回调错误。
+**MODERATION_ERROR**：审核失败。
+**URL_NOT_SUPPORTED**：源文件太大或没有图片音频帧
+任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorType;
@@ -519,6 +551,13 @@ namespace TencentCloud
                      */
                     std::vector<RcbAsr> m_asrs;
                     bool m_asrsHasBeenSet;
+
+                    /**
+                     * 该字段用于返回检测结果明细数据相关的cos url	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SegmentCosUrlList m_segmentCosUrlList;
+                    bool m_segmentCosUrlListHasBeenSet;
 
                 };
             }

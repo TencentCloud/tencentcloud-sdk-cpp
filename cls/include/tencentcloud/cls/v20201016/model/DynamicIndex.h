@@ -35,9 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 动态更新索引配置
-
-注意：该功能尚处于内测阶段，如需使用请联系技术支持
+                * 动态索引配置，启用后将自动把日志内的字段添加到键值索引字段列表中，包括日志中新增的字段。
                 */
                 class DynamicIndex : public AbstractModel
                 {

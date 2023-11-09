@@ -3586,7 +3586,7 @@ namespace TencentCloud
                 DescribeTasksByPageOutcomeCallable DescribeTasksByPageCallable(const Model::DescribeTasksByPageRequest& request);
 
                 /**
-                 *查询规则模版维度分布情况
+                 *查询规则模板维度分布情况
                  * @param req DescribeTemplateDimCountRequest
                  * @return DescribeTemplateDimCountOutcome
                  */
@@ -3595,7 +3595,7 @@ namespace TencentCloud
                 DescribeTemplateDimCountOutcomeCallable DescribeTemplateDimCountCallable(const Model::DescribeTemplateDimCountRequest& request);
 
                 /**
-                 *查询规则模版操作记录
+                 *查询规则模板操作记录
                  * @param req DescribeTemplateHistoryRequest
                  * @return DescribeTemplateHistoryOutcome
                  */
@@ -4011,7 +4011,7 @@ namespace TencentCloud
                 ModifyRuleGroupSubscriptionOutcomeCallable ModifyRuleGroupSubscriptionCallable(const Model::ModifyRuleGroupSubscriptionRequest& request);
 
                 /**
-                 *编辑规则模版
+                 *编辑规则模板
                  * @param req ModifyRuleTemplateRequest
                  * @return ModifyRuleTemplateOutcome
                  */

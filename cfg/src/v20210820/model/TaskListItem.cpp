@@ -32,7 +32,9 @@ TaskListItem::TaskListItem() :
     m_taskPreCheckSuccessHasBeenSet(false),
     m_taskExpectHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false)
+    m_applicationNameHasBeenSet(false),
+    m_verifyIdHasBeenSet(false),
+    m_taskStatusTypeHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome TaskListItem::Deserialize(const rapidjson::Value &value)
         m_applicationNameHasBeenSet = true;
     }
 
+    if (value.HasMember("VerifyId") && !value["VerifyId"].IsNull())
+    {
+        if (!value["VerifyId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskListItem.VerifyId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifyId = value["VerifyId"].GetUint64();
+        m_verifyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskStatusType") && !value["TaskStatusType"].IsNull())
+    {
+        if (!value["TaskStatusType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskListItem.TaskStatusType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskStatusType = value["TaskStatusType"].GetUint64();
+        m_taskStatusTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void TaskListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ApplicationName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_applicationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verifyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_verifyId, allocator);
+    }
+
+    if (m_taskStatusTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatusType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskStatusType, allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void TaskListItem::SetApplicationName(const string& _applicationName)
 bool TaskListItem::ApplicationNameHasBeenSet() const
 {
     return m_applicationNameHasBeenSet;
+}
+
+uint64_t TaskListItem::GetVerifyId() const
+{
+    return m_verifyId;
+}
+
+void TaskListItem::SetVerifyId(const uint64_t& _verifyId)
+{
+    m_verifyId = _verifyId;
+    m_verifyIdHasBeenSet = true;
+}
+
+bool TaskListItem::VerifyIdHasBeenSet() const
+{
+    return m_verifyIdHasBeenSet;
+}
+
+uint64_t TaskListItem::GetTaskStatusType() const
+{
+    return m_taskStatusType;
+}
+
+void TaskListItem::SetTaskStatusType(const uint64_t& _taskStatusType)
+{
+    m_taskStatusType = _taskStatusType;
+    m_taskStatusTypeHasBeenSet = true;
+}
+
+bool TaskListItem::TaskStatusTypeHasBeenSet() const
+{
+    return m_taskStatusTypeHasBeenSet;
 }
 

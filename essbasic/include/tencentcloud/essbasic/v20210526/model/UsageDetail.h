@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子客企业唯一标识
-                     * @return ProxyOrganizationOpenId 子客企业唯一标识
+                     * 获取子客企业标识
+                     * @return ProxyOrganizationOpenId 子客企业标识
                      * 
                      */
                     std::string GetProxyOrganizationOpenId() const;
 
                     /**
-                     * 设置子客企业唯一标识
-                     * @param _proxyOrganizationOpenId 子客企业唯一标识
+                     * 设置子客企业标识
+                     * @param _proxyOrganizationOpenId 子客企业标识
                      * 
                      */
                     void SetProxyOrganizationOpenId(const std::string& _proxyOrganizationOpenId);
@@ -93,18 +93,18 @@ namespace TencentCloud
                     bool ProxyOrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取日期，当需要汇总数据时日期为空
+                     * 获取对应的消耗日期, **如果是汇总数据则为1970-01-01**
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Date 日期，当需要汇总数据时日期为空
+                     * @return Date 对应的消耗日期, **如果是汇总数据则为1970-01-01**
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置日期，当需要汇总数据时日期为空
+                     * 设置对应的消耗日期, **如果是汇总数据则为1970-01-01**
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _date 日期，当需要汇总数据时日期为空
+                     * @param _date 对应的消耗日期, **如果是汇总数据则为1970-01-01**
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取消耗数量
-                     * @return Usage 消耗数量
+                     * 获取消耗合同数量
+                     * @return Usage 消耗合同数量
                      * 
                      */
                     uint64_t GetUsage() const;
 
                     /**
-                     * 设置消耗数量
-                     * @param _usage 消耗数量
+                     * 设置消耗合同数量
+                     * @param _usage 消耗合同数量
                      * 
                      */
                     void SetUsage(const uint64_t& _usage);
@@ -139,18 +139,18 @@ namespace TencentCloud
                     bool UsageHasBeenSet() const;
 
                     /**
-                     * 获取撤回数量
+                     * 获取撤回合同数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cancel 撤回数量
+                     * @return Cancel 撤回合同数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCancel() const;
 
                     /**
-                     * 设置撤回数量
+                     * 设置撤回合同数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cancel 撤回数量
+                     * @param _cancel 撤回合同数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -191,7 +191,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子客企业唯一标识
+                     * 子客企业标识
                      */
                     std::string m_proxyOrganizationOpenId;
                     bool m_proxyOrganizationOpenIdHasBeenSet;
@@ -204,20 +204,20 @@ namespace TencentCloud
                     bool m_proxyOrganizationNameHasBeenSet;
 
                     /**
-                     * 日期，当需要汇总数据时日期为空
+                     * 对应的消耗日期, **如果是汇总数据则为1970-01-01**
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 消耗数量
+                     * 消耗合同数量
                      */
                     uint64_t m_usage;
                     bool m_usageHasBeenSet;
 
                     /**
-                     * 撤回数量
+                     * 撤回合同数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cancel;

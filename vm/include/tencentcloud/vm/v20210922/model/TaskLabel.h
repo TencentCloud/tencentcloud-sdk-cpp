@@ -161,6 +161,31 @@ Block 确认违规
                      */
                     bool ScoreHasBeenSet() const;
 
+                    /**
+                     * 获取命中的二级标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubLabel 命中的二级标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubLabel() const;
+
+                    /**
+                     * 设置命中的二级标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subLabel 命中的二级标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubLabel(const std::string& _subLabel);
+
+                    /**
+                     * 判断参数 SubLabel 是否已赋值
+                     * @return SubLabel 是否已赋值
+                     * 
+                     */
+                    bool SubLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +218,13 @@ Block 确认违规
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
+
+                    /**
+                     * 命中的二级标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subLabel;
+                    bool m_subLabelHasBeenSet;
 
                 };
             }

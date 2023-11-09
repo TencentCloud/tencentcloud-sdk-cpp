@@ -28,6 +28,7 @@
 #include <tencentcloud/as/v20180419/model/Tag.h>
 #include <tencentcloud/as/v20180419/model/ServiceSettings.h>
 #include <tencentcloud/as/v20180419/model/SpotMixedAllocationPolicy.h>
+#include <tencentcloud/as/v20180419/model/InstanceNameIndexSettings.h>
 
 
 namespace TencentCloud
@@ -769,6 +770,31 @@ namespace TencentCloud
                      */
                     bool CapacityRebalanceHasBeenSet() const;
 
+                    /**
+                     * 获取实例名称序号相关设置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceNameIndexSettings 实例名称序号相关设置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    InstanceNameIndexSettings GetInstanceNameIndexSettings() const;
+
+                    /**
+                     * 设置实例名称序号相关设置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceNameIndexSettings 实例名称序号相关设置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceNameIndexSettings(const InstanceNameIndexSettings& _instanceNameIndexSettings);
+
+                    /**
+                     * 判断参数 InstanceNameIndexSettings 是否已赋值
+                     * @return InstanceNameIndexSettings 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameIndexSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -973,6 +999,13 @@ namespace TencentCloud
                      */
                     bool m_capacityRebalance;
                     bool m_capacityRebalanceHasBeenSet;
+
+                    /**
+                     * 实例名称序号相关设置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceNameIndexSettings m_instanceNameIndexSettings;
+                    bool m_instanceNameIndexSettingsHasBeenSet;
 
                 };
             }

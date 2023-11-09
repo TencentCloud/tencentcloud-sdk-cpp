@@ -1416,6 +1416,49 @@ EssbasicClient::ChannelDeleteSealPoliciesOutcomeCallable EssbasicClient::Channel
     return task->get_future();
 }
 
+EssbasicClient::ChannelDescribeBillUsageDetailOutcome EssbasicClient::ChannelDescribeBillUsageDetail(const ChannelDescribeBillUsageDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelDescribeBillUsageDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelDescribeBillUsageDetailResponse rsp = ChannelDescribeBillUsageDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelDescribeBillUsageDetailOutcome(rsp);
+        else
+            return ChannelDescribeBillUsageDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelDescribeBillUsageDetailOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelDescribeBillUsageDetailAsync(const ChannelDescribeBillUsageDetailRequest& request, const ChannelDescribeBillUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelDescribeBillUsageDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelDescribeBillUsageDetailOutcomeCallable EssbasicClient::ChannelDescribeBillUsageDetailCallable(const ChannelDescribeBillUsageDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelDescribeBillUsageDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelDescribeBillUsageDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelDescribeEmployeesOutcome EssbasicClient::ChannelDescribeEmployees(const ChannelDescribeEmployeesRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelDescribeEmployees");

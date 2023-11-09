@@ -158,15 +158,15 @@ namespace TencentCloud
                     bool LifeCycleStateHasBeenSet() const;
 
                     /**
-                     * 获取文件系统已使用容量,单位Byte
-                     * @return SizeByte 文件系统已使用容量,单位Byte
+                     * 获取文件系统已使用容量。单位：Byte
+                     * @return SizeByte 文件系统已使用容量。单位：Byte
                      * 
                      */
                     uint64_t GetSizeByte() const;
 
                     /**
-                     * 设置文件系统已使用容量,单位Byte
-                     * @param _sizeByte 文件系统已使用容量,单位Byte
+                     * 设置文件系统已使用容量。单位：Byte
+                     * @param _sizeByte 文件系统已使用容量。单位：Byte
                      * 
                      */
                     void SetSizeByte(const uint64_t& _sizeByte);
@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool SizeByteHasBeenSet() const;
 
                     /**
-                     * 获取文件系统最大空间限制,GiB
-                     * @return SizeLimit 文件系统最大空间限制,GiB
+                     * 获取文件系统最大空间限制。单位:GiB
+                     * @return SizeLimit 文件系统最大空间限制。单位:GiB
                      * 
                      */
                     uint64_t GetSizeLimit() const;
 
                     /**
-                     * 设置文件系统最大空间限制,GiB
-                     * @param _sizeLimit 文件系统最大空间限制,GiB
+                     * 设置文件系统最大空间限制。单位:GiB
+                     * @param _sizeLimit 文件系统最大空间限制。单位:GiB
                      * 
                      */
                     void SetSizeLimit(const uint64_t& _sizeLimit);
@@ -453,14 +453,18 @@ namespace TencentCloud
 
                     /**
                      * 获取文件系统总容量
+单位:GiB
                      * @return Capacity 文件系统总容量
+单位:GiB
                      * 
                      */
                     uint64_t GetCapacity() const;
 
                     /**
                      * 设置文件系统总容量
+单位:GiB
                      * @param _capacity 文件系统总容量
+单位:GiB
                      * 
                      */
                     void SetCapacity(const uint64_t& _capacity);
@@ -580,13 +584,13 @@ Available:可用
                     bool m_lifeCycleStateHasBeenSet;
 
                     /**
-                     * 文件系统已使用容量,单位Byte
+                     * 文件系统已使用容量。单位：Byte
                      */
                     uint64_t m_sizeByte;
                     bool m_sizeByteHasBeenSet;
 
                     /**
-                     * 文件系统最大空间限制,GiB
+                     * 文件系统最大空间限制。单位:GiB
                      */
                     uint64_t m_sizeLimit;
                     bool m_sizeLimitHasBeenSet;
@@ -665,6 +669,7 @@ Available:可用
 
                     /**
                      * 文件系统总容量
+单位:GiB
                      */
                     uint64_t m_capacity;
                     bool m_capacityHasBeenSet;

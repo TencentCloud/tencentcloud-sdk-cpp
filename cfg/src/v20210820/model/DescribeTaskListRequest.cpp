@@ -30,11 +30,13 @@ DescribeTaskListRequest::DescribeTaskListRequest() :
     m_taskStatusHasBeenSet(false),
     m_taskStartTimeHasBeenSet(false),
     m_taskEndTimeHasBeenSet(false),
+    m_taskUpdateTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false)
+    m_applicationNameHasBeenSet(false),
+    m_taskStatusListHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,14 @@ string DescribeTaskListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_taskEndTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_taskUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskUpdateTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tagsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -172,6 +182,19 @@ string DescribeTaskListRequest::ToJsonString() const
         for (auto itr = m_applicationName.begin(); itr != m_applicationName.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_taskStatusListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatusList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskStatusList.begin(); itr != m_taskStatusList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
@@ -295,6 +318,22 @@ bool DescribeTaskListRequest::TaskEndTimeHasBeenSet() const
     return m_taskEndTimeHasBeenSet;
 }
 
+string DescribeTaskListRequest::GetTaskUpdateTime() const
+{
+    return m_taskUpdateTime;
+}
+
+void DescribeTaskListRequest::SetTaskUpdateTime(const string& _taskUpdateTime)
+{
+    m_taskUpdateTime = _taskUpdateTime;
+    m_taskUpdateTimeHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::TaskUpdateTimeHasBeenSet() const
+{
+    return m_taskUpdateTimeHasBeenSet;
+}
+
 vector<TagWithDescribe> DescribeTaskListRequest::GetTags() const
 {
     return m_tags;
@@ -373,6 +412,22 @@ void DescribeTaskListRequest::SetApplicationName(const vector<string>& _applicat
 bool DescribeTaskListRequest::ApplicationNameHasBeenSet() const
 {
     return m_applicationNameHasBeenSet;
+}
+
+vector<uint64_t> DescribeTaskListRequest::GetTaskStatusList() const
+{
+    return m_taskStatusList;
+}
+
+void DescribeTaskListRequest::SetTaskStatusList(const vector<uint64_t>& _taskStatusList)
+{
+    m_taskStatusList = _taskStatusList;
+    m_taskStatusListHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::TaskStatusListHasBeenSet() const
+{
+    return m_taskStatusListHasBeenSet;
 }
 
 

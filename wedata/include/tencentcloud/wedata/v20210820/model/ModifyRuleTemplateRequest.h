@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版ID
-                     * @return TemplateId 模版ID
+                     * 获取模板ID
+                     * @return TemplateId 模板ID
                      * 
                      */
                     uint64_t GetTemplateId() const;
 
                     /**
-                     * 设置模版ID
-                     * @param _templateId 模版ID
+                     * 设置模板ID
+                     * @param _templateId 模板ID
                      * 
                      */
                     void SetTemplateId(const uint64_t& _templateId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模版类型  1.系统模版   2.自定义模版
-                     * @return Type 模版类型  1.系统模版   2.自定义模版
+                     * 获取模板类型  1.系统模板   2.自定义模板
+                     * @return Type 模板类型  1.系统模板   2.自定义模板
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置模版类型  1.系统模版   2.自定义模版
-                     * @param _type 模版类型  1.系统模版   2.自定义模版
+                     * 设置模板类型  1.系统模板   2.自定义模板
+                     * @param _type 模板类型  1.系统模板   2.自定义模板
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取模版名称
-                     * @return Name 模版名称
+                     * 获取模板名称
+                     * @return Name 模板名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置模版名称
-                     * @param _name 模版名称
+                     * 设置模板名称
+                     * @param _name 模板名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -276,19 +276,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版ID
+                     * 模板ID
                      */
                     uint64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模版类型  1.系统模版   2.自定义模版
+                     * 模板类型  1.系统模板   2.自定义模板
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 模版名称
+                     * 模板名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

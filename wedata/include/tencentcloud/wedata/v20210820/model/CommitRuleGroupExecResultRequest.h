@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取preject id
-                     * @return ProjectId preject id
+                     * 获取项目ID
+                     * @return ProjectId 项目ID
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置preject id
-                     * @param _projectId preject id
+                     * 设置项目ID
+                     * @param _projectId 项目ID
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取rule group exec id
-                     * @return RuleGroupExecId rule group exec id
+                     * 获取规则组执行ID
+                     * @return RuleGroupExecId 规则组执行ID
                      * 
                      */
                     uint64_t GetRuleGroupExecId() const;
 
                     /**
-                     * 设置rule group exec id
-                     * @param _ruleGroupExecId rule group exec id
+                     * 设置规则组执行ID
+                     * @param _ruleGroupExecId 规则组执行ID
                      * 
                      */
                     void SetRuleGroupExecId(const uint64_t& _ruleGroupExecId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RuleGroupExecIdHasBeenSet() const;
 
                     /**
-                     * 获取group exec state
-                     * @return RuleGroupState group exec state
+                     * 获取规则组执行状态
+                     * @return RuleGroupState 规则组执行状态
                      * 
                      */
                     std::string GetRuleGroupState() const;
 
                     /**
-                     * 设置group exec state
-                     * @param _ruleGroupState group exec state
+                     * 设置规则组执行状态
+                     * @param _ruleGroupState 规则组执行状态
                      * 
                      */
                     void SetRuleGroupState(const std::string& _ruleGroupState);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool RuleGroupStateHasBeenSet() const;
 
                     /**
-                     * 获取runner rule exec result list
-                     * @return RuleExecResults runner rule exec result list
+                     * 获取规则执行结果集合
+                     * @return RuleExecResults 规则执行结果集合
                      * 
                      */
                     std::vector<RunnerRuleExecResult> GetRuleExecResults() const;
 
                     /**
-                     * 设置runner rule exec result list
-                     * @param _ruleExecResults runner rule exec result list
+                     * 设置规则执行结果集合
+                     * @param _ruleExecResults 规则执行结果集合
                      * 
                      */
                     void SetRuleExecResults(const std::vector<RunnerRuleExecResult>& _ruleExecResults);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * preject id
+                     * 项目ID
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * rule group exec id
+                     * 规则组执行ID
                      */
                     uint64_t m_ruleGroupExecId;
                     bool m_ruleGroupExecIdHasBeenSet;
 
                     /**
-                     * group exec state
+                     * 规则组执行状态
                      */
                     std::string m_ruleGroupState;
                     bool m_ruleGroupStateHasBeenSet;
 
                     /**
-                     * runner rule exec result list
+                     * 规则执行结果集合
                      */
                     std::vector<RunnerRuleExecResult> m_ruleExecResults;
                     bool m_ruleExecResultsHasBeenSet;

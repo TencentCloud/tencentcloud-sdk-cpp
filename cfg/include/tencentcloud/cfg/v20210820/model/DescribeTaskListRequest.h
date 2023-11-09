@@ -192,6 +192,27 @@ namespace TencentCloud
                     bool TaskEndTimeHasBeenSet() const;
 
                     /**
+                     * 获取更新时间，固定格式%Y-%m-%d %H:%M:%S
+                     * @return TaskUpdateTime 更新时间，固定格式%Y-%m-%d %H:%M:%S
+                     * 
+                     */
+                    std::string GetTaskUpdateTime() const;
+
+                    /**
+                     * 设置更新时间，固定格式%Y-%m-%d %H:%M:%S
+                     * @param _taskUpdateTime 更新时间，固定格式%Y-%m-%d %H:%M:%S
+                     * 
+                     */
+                    void SetTaskUpdateTime(const std::string& _taskUpdateTime);
+
+                    /**
+                     * 判断参数 TaskUpdateTime 是否已赋值
+                     * @return TaskUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool TaskUpdateTimeHasBeenSet() const;
+
+                    /**
                      * 获取标签对
                      * @return Tags 标签对
                      * 
@@ -296,6 +317,27 @@ namespace TencentCloud
                      */
                     bool ApplicationNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务状态筛选--支持多选 任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)
+                     * @return TaskStatusList 任务状态筛选--支持多选 任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)
+                     * 
+                     */
+                    std::vector<uint64_t> GetTaskStatusList() const;
+
+                    /**
+                     * 设置任务状态筛选--支持多选 任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)
+                     * @param _taskStatusList 任务状态筛选--支持多选 任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)
+                     * 
+                     */
+                    void SetTaskStatusList(const std::vector<uint64_t>& _taskStatusList);
+
+                    /**
+                     * 判断参数 TaskStatusList 是否已赋值
+                     * @return TaskStatusList 是否已赋值
+                     * 
+                     */
+                    bool TaskStatusListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +383,12 @@ namespace TencentCloud
                     bool m_taskEndTimeHasBeenSet;
 
                     /**
+                     * 更新时间，固定格式%Y-%m-%d %H:%M:%S
+                     */
+                    std::string m_taskUpdateTime;
+                    bool m_taskUpdateTimeHasBeenSet;
+
+                    /**
                      * 标签对
                      */
                     std::vector<TagWithDescribe> m_tags;
@@ -369,6 +417,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_applicationName;
                     bool m_applicationNameHasBeenSet;
+
+                    /**
+                     * 任务状态筛选--支持多选 任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)
+                     */
+                    std::vector<uint64_t> m_taskStatusList;
+                    bool m_taskStatusListHasBeenSet;
 
                 };
             }

@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参与方Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecipientId 参与方Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取参与方的角色ID
+                     * @return RecipientId 参与方的角色ID
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置参与方Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recipientId 参与方Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置参与方的角色ID
+                     * @param _recipientId 参与方的角色ID
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -74,18 +70,26 @@ namespace TencentCloud
 
                     /**
                      * 获取参与方填写状态
-注意：此字段可能返回 null，表示取不到有效值。
+
+<ul><li> **0** : 还没有填写</li>
+<li> **1** : 已经填写</li></ul>
                      * @return RecipientFillStatus 参与方填写状态
-注意：此字段可能返回 null，表示取不到有效值。
+
+<ul><li> **0** : 还没有填写</li>
+<li> **1** : 已经填写</li></ul>
                      * 
                      */
                     std::string GetRecipientFillStatus() const;
 
                     /**
                      * 设置参与方填写状态
-注意：此字段可能返回 null，表示取不到有效值。
+
+<ul><li> **0** : 还没有填写</li>
+<li> **1** : 已经填写</li></ul>
                      * @param _recipientFillStatus 参与方填写状态
-注意：此字段可能返回 null，表示取不到有效值。
+
+<ul><li> **0** : 还没有填写</li>
+<li> **1** : 已经填写</li></ul>
                      * 
                      */
                     void SetRecipientFillStatus(const std::string& _recipientFillStatus);
@@ -98,18 +102,30 @@ namespace TencentCloud
                     bool RecipientFillStatusHasBeenSet() const;
 
                     /**
-                     * 获取是否发起方
+                     * 获取此角色是否是发起方角色
+
+<ul><li> **true** : 是发起方角色</li>
+<li> **false** : 不是发起方角色</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsPromoter 是否发起方
+                     * @return IsPromoter 此角色是否是发起方角色
+
+<ul><li> **true** : 是发起方角色</li>
+<li> **false** : 不是发起方角色</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsPromoter() const;
 
                     /**
-                     * 设置是否发起方
+                     * 设置此角色是否是发起方角色
+
+<ul><li> **true** : 是发起方角色</li>
+<li> **false** : 不是发起方角色</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isPromoter 是否发起方
+                     * @param _isPromoter 此角色是否是发起方角色
+
+<ul><li> **true** : 是发起方角色</li>
+<li> **false** : 不是发起方角色</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +139,18 @@ namespace TencentCloud
                     bool IsPromoterHasBeenSet() const;
 
                     /**
-                     * 获取填写控件内容
+                     * 获取此角色的填写控件列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Components 填写控件内容
+                     * @return Components 此角色的填写控件列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilledComponent> GetComponents() const;
 
                     /**
-                     * 设置填写控件内容
+                     * 设置此角色的填写控件列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _components 填写控件内容
+                     * @param _components 此角色的填写控件列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,28 +166,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参与方Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 参与方的角色ID
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
 
                     /**
                      * 参与方填写状态
-注意：此字段可能返回 null，表示取不到有效值。
+
+<ul><li> **0** : 还没有填写</li>
+<li> **1** : 已经填写</li></ul>
                      */
                     std::string m_recipientFillStatus;
                     bool m_recipientFillStatusHasBeenSet;
 
                     /**
-                     * 是否发起方
+                     * 此角色是否是发起方角色
+
+<ul><li> **true** : 是发起方角色</li>
+<li> **false** : 不是发起方角色</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPromoter;
                     bool m_isPromoterHasBeenSet;
 
                     /**
-                     * 填写控件内容
+                     * 此角色的填写控件列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilledComponent> m_components;

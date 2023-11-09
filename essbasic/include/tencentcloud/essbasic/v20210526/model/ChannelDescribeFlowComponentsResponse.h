@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流程关联的填写控件信息，控件会按照参与方进行分类。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecipientComponentInfos 流程关联的填写控件信息，控件会按照参与方进行分类。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取合同填写控件信息列表，填写控件会按照参与方角色进行分类。
+                     * @return RecipientComponentInfos 合同填写控件信息列表，填写控件会按照参与方角色进行分类。
                      * 
                      */
                     std::vector<RecipientComponentInfo> GetRecipientComponentInfos() const;
@@ -63,8 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流程关联的填写控件信息，控件会按照参与方进行分类。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 合同填写控件信息列表，填写控件会按照参与方角色进行分类。
                      */
                     std::vector<RecipientComponentInfo> m_recipientComponentInfos;
                     bool m_recipientComponentInfosHasBeenSet;

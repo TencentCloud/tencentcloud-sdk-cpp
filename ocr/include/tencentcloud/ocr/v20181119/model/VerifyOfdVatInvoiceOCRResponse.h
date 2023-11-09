@@ -23,6 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceUserInfo.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceGoodsInfo.h>
+#include <tencentcloud/ocr/v20181119/model/AirTicketInfo.h>
+#include <tencentcloud/ocr/v20181119/model/RailwayTicketInfo.h>
 
 
 namespace TencentCloud
@@ -291,6 +293,34 @@ namespace TencentCloud
                      */
                     bool GoodsInfosHasBeenSet() const;
 
+                    /**
+                     * 获取航空运输电子客票行程单信息
+                     * @return AirTicketInfo 航空运输电子客票行程单信息
+                     * 
+                     */
+                    AirTicketInfo GetAirTicketInfo() const;
+
+                    /**
+                     * 判断参数 AirTicketInfo 是否已赋值
+                     * @return AirTicketInfo 是否已赋值
+                     * 
+                     */
+                    bool AirTicketInfoHasBeenSet() const;
+
+                    /**
+                     * 获取铁路电子客票
+                     * @return RailwayTicketInfo 铁路电子客票
+                     * 
+                     */
+                    RailwayTicketInfo GetRailwayTicketInfo() const;
+
+                    /**
+                     * 判断参数 RailwayTicketInfo 是否已赋值
+                     * @return RailwayTicketInfo 是否已赋值
+                     * 
+                     */
+                    bool RailwayTicketInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +428,18 @@ namespace TencentCloud
                      */
                     std::vector<VatInvoiceGoodsInfo> m_goodsInfos;
                     bool m_goodsInfosHasBeenSet;
+
+                    /**
+                     * 航空运输电子客票行程单信息
+                     */
+                    AirTicketInfo m_airTicketInfo;
+                    bool m_airTicketInfoHasBeenSet;
+
+                    /**
+                     * 铁路电子客票
+                     */
+                    RailwayTicketInfo m_railwayTicketInfo;
+                    bool m_railwayTicketInfoHasBeenSet;
 
                 };
             }

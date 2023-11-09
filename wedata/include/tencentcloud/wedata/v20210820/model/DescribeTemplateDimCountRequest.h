@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版类型
-                     * @return Type 模版类型
+                     * 获取模板类型
+                     * @return Type 模板类型
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置模版类型
-                     * @param _type 模版类型
+                     * 设置模板类型
+                     * @param _type 模板类型
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版类型
+                     * 模板类型
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

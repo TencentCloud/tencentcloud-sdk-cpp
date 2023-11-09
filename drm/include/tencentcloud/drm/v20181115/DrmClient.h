@@ -39,6 +39,8 @@
 #include <tencentcloud/drm/v20181115/model/DescribeFairPlayPemResponse.h>
 #include <tencentcloud/drm/v20181115/model/DescribeKeysRequest.h>
 #include <tencentcloud/drm/v20181115/model/DescribeKeysResponse.h>
+#include <tencentcloud/drm/v20181115/model/GenerateTDRMKeyRequest.h>
+#include <tencentcloud/drm/v20181115/model/GenerateTDRMKeyResponse.h>
 #include <tencentcloud/drm/v20181115/model/ModifyFairPlayPemRequest.h>
 #include <tencentcloud/drm/v20181115/model/ModifyFairPlayPemResponse.h>
 #include <tencentcloud/drm/v20181115/model/StartEncryptionRequest.h>
@@ -81,6 +83,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKeysResponse> DescribeKeysOutcome;
                 typedef std::future<DescribeKeysOutcome> DescribeKeysOutcomeCallable;
                 typedef std::function<void(const DrmClient*, const Model::DescribeKeysRequest&, DescribeKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeysAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenerateTDRMKeyResponse> GenerateTDRMKeyOutcome;
+                typedef std::future<GenerateTDRMKeyOutcome> GenerateTDRMKeyOutcomeCallable;
+                typedef std::function<void(const DrmClient*, const Model::GenerateTDRMKeyRequest&, GenerateTDRMKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateTDRMKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFairPlayPemResponse> ModifyFairPlayPemOutcome;
                 typedef std::future<ModifyFairPlayPemOutcome> ModifyFairPlayPemOutcomeCallable;
                 typedef std::function<void(const DrmClient*, const Model::ModifyFairPlayPemRequest&, ModifyFairPlayPemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFairPlayPemAsyncHandler;
@@ -169,6 +174,15 @@ namespace TencentCloud
                 DescribeKeysOutcome DescribeKeys(const Model::DescribeKeysRequest &request);
                 void DescribeKeysAsync(const Model::DescribeKeysRequest& request, const DescribeKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKeysOutcomeCallable DescribeKeysCallable(const Model::DescribeKeysRequest& request);
+
+                /**
+                 *开发者需要指定使用的DRM类型取值 NORMALAES、和需要加密的Track类型取值 SD,ContentType取值 LiveVideo
+                 * @param req GenerateTDRMKeyRequest
+                 * @return GenerateTDRMKeyOutcome
+                 */
+                GenerateTDRMKeyOutcome GenerateTDRMKey(const Model::GenerateTDRMKeyRequest &request);
+                void GenerateTDRMKeyAsync(const Model::GenerateTDRMKeyRequest& request, const GenerateTDRMKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateTDRMKeyOutcomeCallable GenerateTDRMKeyCallable(const Model::GenerateTDRMKeyRequest& request);
 
                 /**
                  *本接口用来设置fairplay方案所需的私钥、私钥密钥、ask等信息。

@@ -682,6 +682,31 @@ namespace TencentCloud
                      */
                     bool ApmServiceListHasBeenSet() const;
 
+                    /**
+                     * 获取关联的隐患验证项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VerifyId 关联的隐患验证项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetVerifyId() const;
+
+                    /**
+                     * 设置关联的隐患验证项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _verifyId 关联的隐患验证项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVerifyId(const uint64_t& _verifyId);
+
+                    /**
+                     * 判断参数 VerifyId 是否已赋值
+                     * @return VerifyId 是否已赋值
+                     * 
+                     */
+                    bool VerifyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -861,6 +886,13 @@ namespace TencentCloud
                      */
                     std::vector<ApmServiceInfo> m_apmServiceList;
                     bool m_apmServiceListHasBeenSet;
+
+                    /**
+                     * 关联的隐患验证项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_verifyId;
+                    bool m_verifyIdHasBeenSet;
 
                 };
             }

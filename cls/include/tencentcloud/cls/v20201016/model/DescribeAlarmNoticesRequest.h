@@ -61,6 +61,12 @@ namespace TencentCloud
 类型：String
 必选：否
 
+<li> deliverFlag
+按照【投递状态】进行过滤。
+类型：String
+必选：否
+可选值： "1":未启用,  "2": 已启用, "3":投递异常
+
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * @return Filters <li> name
 按照【通知渠道组名称】进行过滤。
@@ -78,6 +84,12 @@ namespace TencentCloud
 按照【接收用户组ID】进行过滤。
 类型：String
 必选：否
+
+<li> deliverFlag
+按照【投递状态】进行过滤。
+类型：String
+必选：否
+可选值： "1":未启用,  "2": 已启用, "3":投递异常
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * 
@@ -102,6 +114,12 @@ namespace TencentCloud
 类型：String
 必选：否
 
+<li> deliverFlag
+按照【投递状态】进行过滤。
+类型：String
+必选：否
+可选值： "1":未启用,  "2": 已启用, "3":投递异常
+
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * @param _filters <li> name
 按照【通知渠道组名称】进行过滤。
@@ -119,6 +137,12 @@ namespace TencentCloud
 按照【接收用户组ID】进行过滤。
 类型：String
 必选：否
+
+<li> deliverFlag
+按照【投递状态】进行过滤。
+类型：String
+必选：否
+可选值： "1":未启用,  "2": 已启用, "3":投递异常
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * 
@@ -193,6 +217,12 @@ namespace TencentCloud
 按照【接收用户组ID】进行过滤。
 类型：String
 必选：否
+
+<li> deliverFlag
+按照【投递状态】进行过滤。
+类型：String
+必选：否
+可选值： "1":未启用,  "2": 已启用, "3":投递异常
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */

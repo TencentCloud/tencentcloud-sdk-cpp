@@ -322,6 +322,56 @@ namespace TencentCloud
                      */
                     bool ApplicationNameHasBeenSet() const;
 
+                    /**
+                     * 获取验证项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VerifyId 验证项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetVerifyId() const;
+
+                    /**
+                     * 设置验证项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _verifyId 验证项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVerifyId(const uint64_t& _verifyId);
+
+                    /**
+                     * 判断参数 VerifyId 是否已赋值
+                     * @return VerifyId 是否已赋值
+                     * 
+                     */
+                    bool VerifyIdHasBeenSet() const;
+
+                    /**
+                     * 获取状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskStatusType 状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTaskStatusType() const;
+
+                    /**
+                     * 设置状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskStatusType 状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskStatusType(const uint64_t& _taskStatusType);
+
+                    /**
+                     * 判断参数 TaskStatusType 是否已赋值
+                     * @return TaskStatusType 是否已赋值
+                     * 
+                     */
+                    bool TaskStatusTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -401,6 +451,20 @@ namespace TencentCloud
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
+
+                    /**
+                     * 验证项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_verifyId;
+                    bool m_verifyIdHasBeenSet;
+
+                    /**
+                     * 状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_taskStatusType;
+                    bool m_taskStatusTypeHasBeenSet;
 
                 };
             }
