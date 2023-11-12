@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取资产唯一id
-                     * @return Id 资产唯一id
+                     * 获取风险ID
+                     * @return Id 风险ID
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置资产唯一id
-                     * @param _id 资产唯一id
+                     * 设置风险ID
+                     * @param _id 风险ID
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -433,15 +433,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取来源
-                     * @return From 来源
+                     * 获取识别来源，详细看枚举返回。
+                     * @return From 识别来源，详细看枚举返回。
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置来源
-                     * @param _from 来源
+                     * 设置识别来源，详细看枚举返回。
+                     * @param _from 识别来源，详细看枚举返回。
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -522,7 +522,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 资产唯一id
+                     * 风险ID
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
@@ -566,7 +566,7 @@ namespace TencentCloud
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 来源
+                     * 识别来源，详细看枚举返回。
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;

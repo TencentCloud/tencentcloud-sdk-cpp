@@ -125,6 +125,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDMSTablesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEngineRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEngineResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDataEngineEventsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDataEngineEventsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEngineImageVersionsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEngineImageVersionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginePythonSparkImagesRequest.h>
@@ -428,6 +430,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataEngineResponse> DescribeDataEngineOutcome;
                 typedef std::future<DescribeDataEngineOutcome> DescribeDataEngineOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDataEngineRequest&, DescribeDataEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataEngineEventsResponse> DescribeDataEngineEventsOutcome;
+                typedef std::future<DescribeDataEngineEventsOutcome> DescribeDataEngineEventsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDataEngineEventsRequest&, DescribeDataEngineEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEngineEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataEngineImageVersionsResponse> DescribeDataEngineImageVersionsOutcome;
                 typedef std::future<DescribeDataEngineImageVersionsOutcome> DescribeDataEngineImageVersionsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDataEngineImageVersionsRequest&, DescribeDataEngineImageVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEngineImageVersionsAsyncHandler;
@@ -1093,6 +1098,15 @@ namespace TencentCloud
                 DescribeDataEngineOutcome DescribeDataEngine(const Model::DescribeDataEngineRequest &request);
                 void DescribeDataEngineAsync(const Model::DescribeDataEngineRequest& request, const DescribeDataEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataEngineOutcomeCallable DescribeDataEngineCallable(const Model::DescribeDataEngineRequest& request);
+
+                /**
+                 *查询数据引擎事件
+                 * @param req DescribeDataEngineEventsRequest
+                 * @return DescribeDataEngineEventsOutcome
+                 */
+                DescribeDataEngineEventsOutcome DescribeDataEngineEvents(const Model::DescribeDataEngineEventsRequest &request);
+                void DescribeDataEngineEventsAsync(const Model::DescribeDataEngineEventsRequest& request, const DescribeDataEngineEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataEngineEventsOutcomeCallable DescribeDataEngineEventsCallable(const Model::DescribeDataEngineEventsRequest& request);
 
                 /**
                  *本接口（DescribeDataEngineImageVersions）用于获取独享集群大版本镜像列表。

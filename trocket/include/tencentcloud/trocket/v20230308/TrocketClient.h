@@ -41,6 +41,8 @@
 #include <tencentcloud/trocket/v20230308/model/DeleteTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceListRequest.h>
@@ -102,6 +104,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConsumerGroupResponse> DescribeConsumerGroupOutcome;
                 typedef std::future<DescribeConsumerGroupOutcome> DescribeConsumerGroupOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerGroupRequest&, DescribeConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumerGroupListResponse> DescribeConsumerGroupListOutcome;
+                typedef std::future<DescribeConsumerGroupListOutcome> DescribeConsumerGroupListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerGroupListRequest&, DescribeConsumerGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
                 typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
@@ -215,6 +220,18 @@ namespace TencentCloud
                 DescribeConsumerGroupOutcome DescribeConsumerGroup(const Model::DescribeConsumerGroupRequest &request);
                 void DescribeConsumerGroupAsync(const Model::DescribeConsumerGroupRequest& request, const DescribeConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConsumerGroupOutcomeCallable DescribeConsumerGroupCallable(const Model::DescribeConsumerGroupRequest& request);
+
+                /**
+                 *获取消费组列表，Filter参数使用说明如下：
+
+1. ConsumerGroupName，名称模糊查询
+2. ConsumeMessageOrderly，投递顺序性。"true":顺序投递；"false":并发投递
+                 * @param req DescribeConsumerGroupListRequest
+                 * @return DescribeConsumerGroupListOutcome
+                 */
+                DescribeConsumerGroupListOutcome DescribeConsumerGroupList(const Model::DescribeConsumerGroupListRequest &request);
+                void DescribeConsumerGroupListAsync(const Model::DescribeConsumerGroupListRequest& request, const DescribeConsumerGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumerGroupListOutcomeCallable DescribeConsumerGroupListCallable(const Model::DescribeConsumerGroupListRequest& request);
 
                 /**
                  *查询实例信息

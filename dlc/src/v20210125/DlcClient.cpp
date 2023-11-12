@@ -2233,6 +2233,49 @@ DlcClient::DescribeDataEngineOutcomeCallable DlcClient::DescribeDataEngineCallab
     return task->get_future();
 }
 
+DlcClient::DescribeDataEngineEventsOutcome DlcClient::DescribeDataEngineEvents(const DescribeDataEngineEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataEngineEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataEngineEventsResponse rsp = DescribeDataEngineEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataEngineEventsOutcome(rsp);
+        else
+            return DescribeDataEngineEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataEngineEventsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDataEngineEventsAsync(const DescribeDataEngineEventsRequest& request, const DescribeDataEngineEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataEngineEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDataEngineEventsOutcomeCallable DlcClient::DescribeDataEngineEventsCallable(const DescribeDataEngineEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataEngineEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataEngineEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeDataEngineImageVersionsOutcome DlcClient::DescribeDataEngineImageVersions(const DescribeDataEngineImageVersionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataEngineImageVersions");

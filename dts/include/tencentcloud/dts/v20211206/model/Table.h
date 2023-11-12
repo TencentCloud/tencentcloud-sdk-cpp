@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool ColumnModeHasBeenSet() const;
 
                     /**
-                     * 获取同步的的列信息，当ColumnMode为Partial时，必填
+                     * 获取同步的列信息，当ColumnMode为Partial时，必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Columns 同步的的列信息，当ColumnMode为Partial时，必填
+                     * @return Columns 同步的列信息，当ColumnMode为Partial时，必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Column> GetColumns() const;
 
                     /**
-                     * 设置同步的的列信息，当ColumnMode为Partial时，必填
+                     * 设置同步的列信息，当ColumnMode为Partial时，必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _columns 同步的的列信息，当ColumnMode为Partial时，必填
+                     * @param _columns 同步的列信息，当ColumnMode为Partial时，必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -253,7 +253,7 @@ namespace TencentCloud
                     bool m_columnModeHasBeenSet;
 
                     /**
-                     * 同步的的列信息，当ColumnMode为Partial时，必填
+                     * 同步的列信息，当ColumnMode为Partial时，必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Column> m_columns;

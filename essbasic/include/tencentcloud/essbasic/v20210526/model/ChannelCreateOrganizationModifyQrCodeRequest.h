@@ -44,15 +44,43 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.AppId 必填。
-                     * @return Agent 应用相关信息。 此接口Agent.AppId 必填。
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+
+渠道应用标识: Agent.AppId
+第三方平台子客企业标识: Agent.ProxyOrganizationOpenId
+第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId
+第三方平台子客企业和员工必须已经经过实名认证
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+
+渠道应用标识: Agent.AppId
+第三方平台子客企业标识: Agent.ProxyOrganizationOpenId
+第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId
+第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.AppId 必填。
-                     * @param _agent 应用相关信息。 此接口Agent.AppId 必填。
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+
+渠道应用标识: Agent.AppId
+第三方平台子客企业标识: Agent.ProxyOrganizationOpenId
+第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId
+第三方平台子客企业和员工必须已经经过实名认证
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+
+渠道应用标识: Agent.AppId
+第三方平台子客企业标识: Agent.ProxyOrganizationOpenId
+第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId
+第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -67,7 +95,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用相关信息。 此接口Agent.AppId 必填。
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+
+渠道应用标识: Agent.AppId
+第三方平台子客企业标识: Agent.ProxyOrganizationOpenId
+第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId
+第三方平台子客企业和员工必须已经经过实名认证
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

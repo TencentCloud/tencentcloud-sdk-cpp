@@ -205,18 +205,18 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回音频文件的时长，单位为秒。
+                     * 获取该字段用于返回音频文件的时长，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Duration 该字段用于返回音频文件的时长，单位为秒。
+                     * @return Duration 该字段用于返回音频文件的时长，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDuration() const;
 
                     /**
-                     * 设置该字段用于返回音频文件的时长，单位为秒。
+                     * 设置该字段用于返回音频文件的时长，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _duration 该字段用于返回音频文件的时长，单位为秒。
+                     * @param _duration 该字段用于返回音频文件的时长，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -425,7 +425,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 该字段用于返回音频文件的时长，单位为秒。
+                     * 该字段用于返回音频文件的时长，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_duration;

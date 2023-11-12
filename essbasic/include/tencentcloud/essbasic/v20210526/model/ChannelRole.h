@@ -99,18 +99,14 @@ namespace TencentCloud
 
                     /**
                      * 获取角色状态：1-启用；2-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleStatus 角色状态：1-启用；2-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRoleStatus() const;
 
                     /**
                      * 设置角色状态：1-启用；2-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roleStatus 角色状态：1-启用；2-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoleStatus(const uint64_t& _roleStatus);
@@ -165,7 +161,6 @@ namespace TencentCloud
 
                     /**
                      * 角色状态：1-启用；2-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_roleStatus;
                     bool m_roleStatusHasBeenSet;

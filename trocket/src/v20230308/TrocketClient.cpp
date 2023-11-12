@@ -427,6 +427,49 @@ TrocketClient::DescribeConsumerGroupOutcomeCallable TrocketClient::DescribeConsu
     return task->get_future();
 }
 
+TrocketClient::DescribeConsumerGroupListOutcome TrocketClient::DescribeConsumerGroupList(const DescribeConsumerGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumerGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumerGroupListResponse rsp = DescribeConsumerGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumerGroupListOutcome(rsp);
+        else
+            return DescribeConsumerGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumerGroupListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeConsumerGroupListAsync(const DescribeConsumerGroupListRequest& request, const DescribeConsumerGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConsumerGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeConsumerGroupListOutcomeCallable TrocketClient::DescribeConsumerGroupListCallable(const DescribeConsumerGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConsumerGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConsumerGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::DescribeInstanceOutcome TrocketClient::DescribeInstance(const DescribeInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstance");
