@@ -31,7 +31,8 @@ GetDetectInfoEnhancedResponse::GetDetectInfoEnhancedResponse() :
     m_encryptionHasBeenSet(false),
     m_intentionVerifyDataHasBeenSet(false),
     m_intentionQuestionResultHasBeenSet(false),
-    m_intentionActionResultHasBeenSet(false)
+    m_intentionActionResultHasBeenSet(false),
+    m_encryptedBodyHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
         m_intentionActionResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EncryptedBody") && !rsp["EncryptedBody"].IsNull())
+    {
+        if (!rsp["EncryptedBody"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptedBody` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptedBody = string(rsp["EncryptedBody"].GetString());
+        m_encryptedBodyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -285,6 +296,14 @@ string GetDetectInfoEnhancedResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intentionActionResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_encryptedBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptedBody";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptedBody.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -377,6 +396,16 @@ IntentionActionResult GetDetectInfoEnhancedResponse::GetIntentionActionResult() 
 bool GetDetectInfoEnhancedResponse::IntentionActionResultHasBeenSet() const
 {
     return m_intentionActionResultHasBeenSet;
+}
+
+string GetDetectInfoEnhancedResponse::GetEncryptedBody() const
+{
+    return m_encryptedBody;
+}
+
+bool GetDetectInfoEnhancedResponse::EncryptedBodyHasBeenSet() const
+{
+    return m_encryptedBodyHasBeenSet;
 }
 
 

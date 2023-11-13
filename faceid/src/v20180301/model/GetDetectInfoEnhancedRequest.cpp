@@ -30,7 +30,8 @@ GetDetectInfoEnhancedRequest::GetDetectInfoEnhancedRequest() :
     m_isCutIdCardImageHasBeenSet(false),
     m_isNeedIdCardAvatarHasBeenSet(false),
     m_isEncryptHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+    m_encryptionHasBeenSet(false),
+    m_isEncryptResponseHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string GetDetectInfoEnhancedRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_encryption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_isEncryptResponseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEncryptResponse";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isEncryptResponse, allocator);
     }
 
 
@@ -240,6 +249,22 @@ void GetDetectInfoEnhancedRequest::SetEncryption(const Encryption& _encryption)
 bool GetDetectInfoEnhancedRequest::EncryptionHasBeenSet() const
 {
     return m_encryptionHasBeenSet;
+}
+
+bool GetDetectInfoEnhancedRequest::GetIsEncryptResponse() const
+{
+    return m_isEncryptResponse;
+}
+
+void GetDetectInfoEnhancedRequest::SetIsEncryptResponse(const bool& _isEncryptResponse)
+{
+    m_isEncryptResponse = _isEncryptResponse;
+    m_isEncryptResponseHasBeenSet = true;
+}
+
+bool GetDetectInfoEnhancedRequest::IsEncryptResponseHasBeenSet() const
+{
+    return m_isEncryptResponseHasBeenSet;
 }
 
 

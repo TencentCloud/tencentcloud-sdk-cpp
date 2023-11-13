@@ -219,6 +219,27 @@ namespace TencentCloud
                      */
                     bool EncryptionHasBeenSet() const;
 
+                    /**
+                     * 获取是否对回包整体进行加密
+                     * @return IsEncryptResponse 是否对回包整体进行加密
+                     * 
+                     */
+                    bool GetIsEncryptResponse() const;
+
+                    /**
+                     * 设置是否对回包整体进行加密
+                     * @param _isEncryptResponse 是否对回包整体进行加密
+                     * 
+                     */
+                    void SetIsEncryptResponse(const bool& _isEncryptResponse);
+
+                    /**
+                     * 判断参数 IsEncryptResponse 是否已赋值
+                     * @return IsEncryptResponse 是否已赋值
+                     * 
+                     */
+                    bool IsEncryptResponseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -270,6 +291,12 @@ namespace TencentCloud
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;
+
+                    /**
+                     * 是否对回包整体进行加密
+                     */
+                    bool m_isEncryptResponse;
+                    bool m_isEncryptResponseHasBeenSet;
 
                 };
             }

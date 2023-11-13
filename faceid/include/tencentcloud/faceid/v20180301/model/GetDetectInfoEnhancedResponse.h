@@ -179,6 +179,22 @@ namespace TencentCloud
                      */
                     bool IntentionActionResultHasBeenSet() const;
 
+                    /**
+                     * 获取加密后的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptedBody 加密后的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEncryptedBody() const;
+
+                    /**
+                     * 判断参数 EncryptedBody 是否已赋值
+                     * @return EncryptedBody 是否已赋值
+                     * 
+                     */
+                    bool EncryptedBodyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +252,13 @@ namespace TencentCloud
                      */
                     IntentionActionResult m_intentionActionResult;
                     bool m_intentionActionResultHasBeenSet;
+
+                    /**
+                     * 加密后的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptedBody;
+                    bool m_encryptedBodyHasBeenSet;
 
                 };
             }
