@@ -268,18 +268,18 @@ namespace TencentCloud
                     bool ModelTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型 0:默认类型 1:轻量级复刻
+                     * 获取任务类型 0:轻量版复刻
 默认为0
-                     * @return TaskType 任务类型 0:默认类型 1:轻量级复刻
+                     * @return TaskType 任务类型 0:轻量版复刻
 默认为0
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型 0:默认类型 1:轻量级复刻
+                     * 设置任务类型 0:轻量版复刻
 默认为0
-                     * @param _taskType 任务类型 0:默认类型 1:轻量级复刻
+                     * @param _taskType 任务类型 0:轻量版复刻
 默认为0
                      * 
                      */
@@ -379,7 +379,7 @@ namespace TencentCloud
                     bool m_modelTypeHasBeenSet;
 
                     /**
-                     * 任务类型 0:默认类型 1:轻量级复刻
+                     * 任务类型 0:轻量版复刻
 默认为0
                      */
                     int64_t m_taskType;

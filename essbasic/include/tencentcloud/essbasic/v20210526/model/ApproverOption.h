@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool NoRefuseHasBeenSet() const;
 
                     /**
+                     * 获取是否可以转发 默认false-可以转发 true-不可以转发
+                     * @return NoTransfer 是否可以转发 默认false-可以转发 true-不可以转发
+                     * 
+                     */
+                    bool GetNoTransfer() const;
+
+                    /**
+                     * 设置是否可以转发 默认false-可以转发 true-不可以转发
+                     * @param _noTransfer 是否可以转发 默认false-可以转发 true-不可以转发
+                     * 
+                     */
+                    void SetNoTransfer(const bool& _noTransfer);
+
+                    /**
+                     * 判断参数 NoTransfer 是否已赋值
+                     * @return NoTransfer 是否已赋值
+                     * 
+                     */
+                    bool NoTransferHasBeenSet() const;
+
+                    /**
                      * 获取是否隐藏一键签署 默认false-不隐藏true-隐藏
                      * @return HideOneKeySign 是否隐藏一键签署 默认false-不隐藏true-隐藏
                      * 
@@ -177,6 +198,12 @@ namespace TencentCloud
                      */
                     bool m_noRefuse;
                     bool m_noRefuseHasBeenSet;
+
+                    /**
+                     * 是否可以转发 默认false-可以转发 true-不可以转发
+                     */
+                    bool m_noTransfer;
+                    bool m_noTransferHasBeenSet;
 
                     /**
                      * 是否隐藏一键签署 默认false-不隐藏true-隐藏

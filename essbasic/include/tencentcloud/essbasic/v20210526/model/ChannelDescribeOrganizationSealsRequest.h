@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0，最大为20000
-                     * @return Offset 偏移量，默认为0，最大为20000
+                     * 获取分页查询偏移量，默认为0，最大为20000
+                     * @return Offset 分页查询偏移量，默认为0，最大为20000
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0，最大为20000
-                     * @param _offset 偏移量，默认为0，最大为20000
+                     * 设置分页查询偏移量，默认为0，最大为20000
+                     * @param _offset 分页查询偏移量，默认为0，最大为20000
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,31 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询信息类型，为1时返回授权用户，为其他值时不返回
-                     * @return InfoType 查询信息类型，为1时返回授权用户，为其他值时不返回
+                     * 获取查询信息类型
+支持的值如下：
+<ul><li>0-默认，不返回授权用户信息</li>
+<li>1-返回授权用户信息</li>
+</ul>
+                     * @return InfoType 查询信息类型
+支持的值如下：
+<ul><li>0-默认，不返回授权用户信息</li>
+<li>1-返回授权用户信息</li>
+</ul>
                      * 
                      */
                     int64_t GetInfoType() const;
 
                     /**
-                     * 设置查询信息类型，为1时返回授权用户，为其他值时不返回
-                     * @param _infoType 查询信息类型，为1时返回授权用户，为其他值时不返回
+                     * 设置查询信息类型
+支持的值如下：
+<ul><li>0-默认，不返回授权用户信息</li>
+<li>1-返回授权用户信息</li>
+</ul>
+                     * @param _infoType 查询信息类型
+支持的值如下：
+<ul><li>0-默认，不返回授权用户信息</li>
+<li>1-返回授权用户信息</li>
+</ul>
                      * 
                      */
                     void SetInfoType(const int64_t& _infoType);
@@ -129,14 +145,22 @@ namespace TencentCloud
 
                     /**
                      * 获取印章id（没有输入返回所有）
+
+注:  `没有输入返回所有记录，最大返回100条。`
                      * @return SealId 印章id（没有输入返回所有）
+
+注:  `没有输入返回所有记录，最大返回100条。`
                      * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 设置印章id（没有输入返回所有）
+
+注:  `没有输入返回所有记录，最大返回100条。`
                      * @param _sealId 印章id（没有输入返回所有）
+
+注:  `没有输入返回所有记录，最大返回100条。`
                      * 
                      */
                     void SetSealId(const std::string& _sealId);
@@ -149,39 +173,43 @@ namespace TencentCloud
                     bool SealIdHasBeenSet() const;
 
                     /**
-                     * 获取印章类型列表（都是组织机构印章）。
-为空时查询所有类型的印章。
-目前支持以下类型：
-OFFICIAL：企业公章；
-CONTRACT：合同专用章；
-ORGANIZATION_SEAL：企业印章(图片上传创建)；
-LEGAL_PERSON_SEAL：法定代表人章
-                     * @return SealTypes 印章类型列表（都是组织机构印章）。
-为空时查询所有类型的印章。
-目前支持以下类型：
-OFFICIAL：企业公章；
-CONTRACT：合同专用章；
-ORGANIZATION_SEAL：企业印章(图片上传创建)；
-LEGAL_PERSON_SEAL：法定代表人章
+                     * 获取印章类型列表，目前支持传入以下类型：
+<ul><li>OFFICIAL-企业公章</li>
+<li>CONTRACT-合同专用章</li>
+<li>ORGANIZATION_SEAL-企业印章(图片上传创建)</li>
+<li>LEGAL_PERSON_SEAL-法定代表人章</li>
+</ul>
+
+注:  `为空时查询所有类型的印章。`
+                     * @return SealTypes 印章类型列表，目前支持传入以下类型：
+<ul><li>OFFICIAL-企业公章</li>
+<li>CONTRACT-合同专用章</li>
+<li>ORGANIZATION_SEAL-企业印章(图片上传创建)</li>
+<li>LEGAL_PERSON_SEAL-法定代表人章</li>
+</ul>
+
+注:  `为空时查询所有类型的印章。`
                      * 
                      */
                     std::vector<std::string> GetSealTypes() const;
 
                     /**
-                     * 设置印章类型列表（都是组织机构印章）。
-为空时查询所有类型的印章。
-目前支持以下类型：
-OFFICIAL：企业公章；
-CONTRACT：合同专用章；
-ORGANIZATION_SEAL：企业印章(图片上传创建)；
-LEGAL_PERSON_SEAL：法定代表人章
-                     * @param _sealTypes 印章类型列表（都是组织机构印章）。
-为空时查询所有类型的印章。
-目前支持以下类型：
-OFFICIAL：企业公章；
-CONTRACT：合同专用章；
-ORGANIZATION_SEAL：企业印章(图片上传创建)；
-LEGAL_PERSON_SEAL：法定代表人章
+                     * 设置印章类型列表，目前支持传入以下类型：
+<ul><li>OFFICIAL-企业公章</li>
+<li>CONTRACT-合同专用章</li>
+<li>ORGANIZATION_SEAL-企业印章(图片上传创建)</li>
+<li>LEGAL_PERSON_SEAL-法定代表人章</li>
+</ul>
+
+注:  `为空时查询所有类型的印章。`
+                     * @param _sealTypes 印章类型列表，目前支持传入以下类型：
+<ul><li>OFFICIAL-企业公章</li>
+<li>CONTRACT-合同专用章</li>
+<li>ORGANIZATION_SEAL-企业印章(图片上传创建)</li>
+<li>LEGAL_PERSON_SEAL-法定代表人章</li>
+</ul>
+
+注:  `为空时查询所有类型的印章。`
                      * 
                      */
                     void SetSealTypes(const std::vector<std::string>& _sealTypes);
@@ -196,7 +224,7 @@ LEGAL_PERSON_SEAL：法定代表人章
                 private:
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
@@ -208,31 +236,38 @@ LEGAL_PERSON_SEAL：法定代表人章
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0，最大为20000
+                     * 分页查询偏移量，默认为0，最大为20000
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询信息类型，为1时返回授权用户，为其他值时不返回
+                     * 查询信息类型
+支持的值如下：
+<ul><li>0-默认，不返回授权用户信息</li>
+<li>1-返回授权用户信息</li>
+</ul>
                      */
                     int64_t m_infoType;
                     bool m_infoTypeHasBeenSet;
 
                     /**
                      * 印章id（没有输入返回所有）
+
+注:  `没有输入返回所有记录，最大返回100条。`
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;
 
                     /**
-                     * 印章类型列表（都是组织机构印章）。
-为空时查询所有类型的印章。
-目前支持以下类型：
-OFFICIAL：企业公章；
-CONTRACT：合同专用章；
-ORGANIZATION_SEAL：企业印章(图片上传创建)；
-LEGAL_PERSON_SEAL：法定代表人章
+                     * 印章类型列表，目前支持传入以下类型：
+<ul><li>OFFICIAL-企业公章</li>
+<li>CONTRACT-合同专用章</li>
+<li>ORGANIZATION_SEAL-企业印章(图片上传创建)</li>
+<li>LEGAL_PERSON_SEAL-法定代表人章</li>
+</ul>
+
+注:  `为空时查询所有类型的印章。`
                      */
                     std::vector<std::string> m_sealTypes;
                     bool m_sealTypesHasBeenSet;

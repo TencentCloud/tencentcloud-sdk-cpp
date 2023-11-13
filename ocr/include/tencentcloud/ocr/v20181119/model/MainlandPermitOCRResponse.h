@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/MainlandTravelPermitBackInfos.h>
 
 
 namespace TencentCloud
@@ -197,6 +198,20 @@ namespace TencentCloud
                      */
                     bool ProfileHasBeenSet() const;
 
+                    /**
+                     * 获取背面字段信息
+                     * @return MainlandTravelPermitBackInfos 背面字段信息
+                     * 
+                     */
+                    MainlandTravelPermitBackInfos GetMainlandTravelPermitBackInfos() const;
+
+                    /**
+                     * 判断参数 MainlandTravelPermitBackInfos 是否已赋值
+                     * @return MainlandTravelPermitBackInfos 是否已赋值
+                     * 
+                     */
+                    bool MainlandTravelPermitBackInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +279,12 @@ namespace TencentCloud
                      */
                     std::string m_profile;
                     bool m_profileHasBeenSet;
+
+                    /**
+                     * 背面字段信息
+                     */
+                    MainlandTravelPermitBackInfos m_mainlandTravelPermitBackInfos;
+                    bool m_mainlandTravelPermitBackInfosHasBeenSet;
 
                 };
             }

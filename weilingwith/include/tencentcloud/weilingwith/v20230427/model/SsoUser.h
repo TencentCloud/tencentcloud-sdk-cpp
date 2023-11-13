@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool RealNameHasBeenSet() const;
 
                     /**
-                     * 获取用户类型
+                     * 获取用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserType 用户类型
+                     * @return UserType 用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
-                     * 设置用户类型
+                     * 设置用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userType 用户类型
+                     * @param _userType 用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户状态
+                     * 获取用户状态，0待审核，1正常启用，2禁用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 用户状态
+                     * @return Status 用户状态，0待审核，1正常启用，2禁用
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置用户状态
+                     * 设置用户状态，0待审核，1正常启用，2禁用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 用户状态
+                     * @param _status 用户状态，0待审核，1正常启用，2禁用
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool UpdateAtHasBeenSet() const;
 
                     /**
-                     * 获取是否属于团队
+                     * 获取是否属于团队，0不可用，1属于，2不属
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BelongTeam 是否属于团队
+                     * @return BelongTeam 是否属于团队，0不可用，1属于，2不属
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBelongTeam() const;
 
                     /**
-                     * 设置是否属于团队
+                     * 设置是否属于团队，0不可用，1属于，2不属
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _belongTeam 是否属于团队
+                     * @param _belongTeam 是否属于团队，0不可用，1属于，2不属
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +347,18 @@ namespace TencentCloud
                     bool BelongTeamHasBeenSet() const;
 
                     /**
-                     * 获取ID
+                     * 获取部门ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DepartmentId ID
+                     * @return DepartmentId 部门ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
-                     * 设置ID
+                     * 设置部门ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _departmentId ID
+                     * @param _departmentId 部门ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -372,18 +372,18 @@ namespace TencentCloud
                     bool DepartmentIdHasBeenSet() const;
 
                     /**
-                     * 获取名称
+                     * 获取部门名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DepartmentName 名称
+                     * @return DepartmentName 部门名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDepartmentName() const;
 
                     /**
-                     * 设置名称
+                     * 设置部门名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _departmentName 名称
+                     * @param _departmentName 部门名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -470,7 +470,7 @@ namespace TencentCloud
                     bool m_realNameHasBeenSet;
 
                     /**
-                     * 用户类型
+                     * 用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userType;
@@ -505,7 +505,7 @@ namespace TencentCloud
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 用户状态
+                     * 用户状态，0待审核，1正常启用，2禁用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
@@ -526,21 +526,21 @@ namespace TencentCloud
                     bool m_updateAtHasBeenSet;
 
                     /**
-                     * 是否属于团队
+                     * 是否属于团队，0不可用，1属于，2不属
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_belongTeam;
                     bool m_belongTeamHasBeenSet;
 
                     /**
-                     * ID
+                     * 部门ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
 
                     /**
-                     * 名称
+                     * 部门名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_departmentName;

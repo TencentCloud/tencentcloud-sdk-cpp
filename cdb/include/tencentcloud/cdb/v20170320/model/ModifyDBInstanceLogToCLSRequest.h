@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取日志类型：errorLog/slowLog
-                     * @return LogType 日志类型：errorLog/slowLog
+                     * 获取日志类型：error/slowLog
+                     * @return LogType 日志类型：error/slowLog
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置日志类型：errorLog/slowLog
-                     * @param _logType 日志类型：errorLog/slowLog
+                     * 设置日志类型：error/slowLog
+                     * @param _logType 日志类型：error/slowLog
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -240,7 +240,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 日志类型：errorLog/slowLog
+                     * 日志类型：error/slowLog
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;

@@ -39,6 +39,8 @@
 #include <tencentcloud/faceid/v20180301/model/CheckIdNameDateResponse.h>
 #include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameRequest.h>
 #include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameResponse.h>
+#include <tencentcloud/faceid/v20180301/model/DetectAIFakeFacesRequest.h>
+#include <tencentcloud/faceid/v20180301/model/DetectAIFakeFacesResponse.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthRequest.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthResponse.h>
 #include <tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationRequest.h>
@@ -127,6 +129,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckPhoneAndNameResponse> CheckPhoneAndNameOutcome;
                 typedef std::future<CheckPhoneAndNameOutcome> CheckPhoneAndNameOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::CheckPhoneAndNameRequest&, CheckPhoneAndNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckPhoneAndNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetectAIFakeFacesResponse> DetectAIFakeFacesOutcome;
+                typedef std::future<DetectAIFakeFacesOutcome> DetectAIFakeFacesOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::DetectAIFakeFacesRequest&, DetectAIFakeFacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectAIFakeFacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectAuthResponse> DetectAuthOutcome;
                 typedef std::future<DetectAuthOutcome> DetectAuthOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::DetectAuthRequest&, DetectAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectAuthAsyncHandler;
@@ -277,6 +282,15 @@ namespace TencentCloud
                 CheckPhoneAndNameOutcome CheckPhoneAndName(const Model::CheckPhoneAndNameRequest &request);
                 void CheckPhoneAndNameAsync(const Model::CheckPhoneAndNameRequest& request, const CheckPhoneAndNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckPhoneAndNameOutcomeCallable CheckPhoneAndNameCallable(const Model::CheckPhoneAndNameRequest& request);
+
+                /**
+                 *提供对人脸图片/视频的AI合成、翻拍、水印等攻击痕迹的检测，增强图片/视频防伪能力
+                 * @param req DetectAIFakeFacesRequest
+                 * @return DetectAIFakeFacesOutcome
+                 */
+                DetectAIFakeFacesOutcome DetectAIFakeFaces(const Model::DetectAIFakeFacesRequest &request);
+                void DetectAIFakeFacesAsync(const Model::DetectAIFakeFacesRequest& request, const DetectAIFakeFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectAIFakeFacesOutcomeCallable DetectAIFakeFacesCallable(const Model::DetectAIFakeFacesRequest& request);
 
                 /**
                  *每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。

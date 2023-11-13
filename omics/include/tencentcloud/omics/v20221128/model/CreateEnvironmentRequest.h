@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取是否为默认环境。
+                     * @return IsDefault 是否为默认环境。
+                     * 
+                     */
+                    bool GetIsDefault() const;
+
+                    /**
+                     * 设置是否为默认环境。
+                     * @param _isDefault 是否为默认环境。
+                     * 
+                     */
+                    void SetIsDefault(const bool& _isDefault);
+
+                    /**
+                     * 判断参数 IsDefault 是否已赋值
+                     * @return IsDefault 是否已赋值
+                     * 
+                     */
+                    bool IsDefaultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 是否为默认环境。
+                     */
+                    bool m_isDefault;
+                    bool m_isDefaultHasBeenSet;
 
                 };
             }

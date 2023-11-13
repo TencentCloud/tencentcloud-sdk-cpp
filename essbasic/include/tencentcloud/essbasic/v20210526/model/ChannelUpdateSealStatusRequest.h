@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -66,15 +66,19 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取操作的印章状态，DISABLE-停用印章
-                     * @return Status 操作的印章状态，DISABLE-停用印章
+                     * 获取印章状态，目前支持传入以下类型：
+<ul><li>DISABLE-停用印章</li></ul>
+                     * @return Status 印章状态，目前支持传入以下类型：
+<ul><li>DISABLE-停用印章</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置操作的印章状态，DISABLE-停用印章
-                     * @param _status 操作的印章状态，DISABLE-停用印章
+                     * 设置印章状态，目前支持传入以下类型：
+<ul><li>DISABLE-停用印章</li></ul>
+                     * @param _status 印章状态，目前支持传入以下类型：
+<ul><li>DISABLE-停用印章</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -152,13 +156,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 操作的印章状态，DISABLE-停用印章
+                     * 印章状态，目前支持传入以下类型：
+<ul><li>DISABLE-停用印章</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

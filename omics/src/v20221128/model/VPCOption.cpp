@@ -21,6 +21,8 @@ using namespace TencentCloud::Omics::V20221128::Model;
 using namespace std;
 
 VPCOption::VPCOption() :
+    m_vPCIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
     m_subnetZoneHasBeenSet(false),
     m_vPCCIDRBlockHasBeenSet(false),
     m_subnetCIDRBlockHasBeenSet(false)
@@ -31,6 +33,26 @@ CoreInternalOutcome VPCOption::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("VPCId") && !value["VPCId"].IsNull())
+    {
+        if (!value["VPCId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VPCOption.VPCId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vPCId = string(value["VPCId"].GetString());
+        m_vPCIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VPCOption.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
 
     if (value.HasMember("SubnetZone") && !value["SubnetZone"].IsNull())
     {
@@ -69,6 +91,22 @@ CoreInternalOutcome VPCOption::Deserialize(const rapidjson::Value &value)
 void VPCOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_vPCIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VPCId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vPCId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_subnetZoneHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -95,6 +133,38 @@ void VPCOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
 
 }
 
+
+string VPCOption::GetVPCId() const
+{
+    return m_vPCId;
+}
+
+void VPCOption::SetVPCId(const string& _vPCId)
+{
+    m_vPCId = _vPCId;
+    m_vPCIdHasBeenSet = true;
+}
+
+bool VPCOption::VPCIdHasBeenSet() const
+{
+    return m_vPCIdHasBeenSet;
+}
+
+string VPCOption::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void VPCOption::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool VPCOption::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
 
 string VPCOption::GetSubnetZone() const
 {

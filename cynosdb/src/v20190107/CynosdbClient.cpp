@@ -1717,6 +1717,49 @@ CynosdbClient::DescribeBinlogsOutcomeCallable CynosdbClient::DescribeBinlogsCall
     return task->get_future();
 }
 
+CynosdbClient::DescribeClusterDatabasesOutcome CynosdbClient::DescribeClusterDatabases(const DescribeClusterDatabasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterDatabases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterDatabasesResponse rsp = DescribeClusterDatabasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterDatabasesOutcome(rsp);
+        else
+            return DescribeClusterDatabasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterDatabasesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeClusterDatabasesAsync(const DescribeClusterDatabasesRequest& request, const DescribeClusterDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterDatabases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeClusterDatabasesOutcomeCallable CynosdbClient::DescribeClusterDatabasesCallable(const DescribeClusterDatabasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterDatabasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterDatabases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeClusterDetailOutcome CynosdbClient::DescribeClusterDetail(const DescribeClusterDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterDetail");

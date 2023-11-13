@@ -41,7 +41,8 @@ ModifyLivePullStreamTaskRequest::ModifyLivePullStreamTaskRequest() :
     m_backupSourceTypeHasBeenSet(false),
     m_backupSourceUrlHasBeenSet(false),
     m_watermarkListHasBeenSet(false),
-    m_vodLocalModeHasBeenSet(false)
+    m_vodLocalModeHasBeenSet(false),
+    m_backupToUrlHasBeenSet(false)
 {
 }
 
@@ -219,6 +220,14 @@ string ModifyLivePullStreamTaskRequest::ToJsonString() const
         string key = "VodLocalMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_vodLocalMode, allocator);
+    }
+
+    if (m_backupToUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupToUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupToUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -531,6 +540,22 @@ void ModifyLivePullStreamTaskRequest::SetVodLocalMode(const int64_t& _vodLocalMo
 bool ModifyLivePullStreamTaskRequest::VodLocalModeHasBeenSet() const
 {
     return m_vodLocalModeHasBeenSet;
+}
+
+string ModifyLivePullStreamTaskRequest::GetBackupToUrl() const
+{
+    return m_backupToUrl;
+}
+
+void ModifyLivePullStreamTaskRequest::SetBackupToUrl(const string& _backupToUrl)
+{
+    m_backupToUrl = _backupToUrl;
+    m_backupToUrlHasBeenSet = true;
+}
+
+bool ModifyLivePullStreamTaskRequest::BackupToUrlHasBeenSet() const
+{
+    return m_backupToUrlHasBeenSet;
 }
 
 

@@ -25,7 +25,8 @@ EnvironmentConfig::EnvironmentConfig() :
     m_clusterOptionHasBeenSet(false),
     m_databaseOptionHasBeenSet(false),
     m_storageOptionHasBeenSet(false),
-    m_cVMOptionHasBeenSet(false)
+    m_cVMOptionHasBeenSet(false),
+    m_securityGroupOptionHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,23 @@ CoreInternalOutcome EnvironmentConfig::Deserialize(const rapidjson::Value &value
         m_cVMOptionHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupOption") && !value["SecurityGroupOption"].IsNull())
+    {
+        if (!value["SecurityGroupOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvironmentConfig.SecurityGroupOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_securityGroupOption.Deserialize(value["SecurityGroupOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_securityGroupOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -169,6 +187,15 @@ void EnvironmentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cVMOption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_securityGroupOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityGroupOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -252,5 +279,21 @@ void EnvironmentConfig::SetCVMOption(const CVMOption& _cVMOption)
 bool EnvironmentConfig::CVMOptionHasBeenSet() const
 {
     return m_cVMOptionHasBeenSet;
+}
+
+SecurityGroupOption EnvironmentConfig::GetSecurityGroupOption() const
+{
+    return m_securityGroupOption;
+}
+
+void EnvironmentConfig::SetSecurityGroupOption(const SecurityGroupOption& _securityGroupOption)
+{
+    m_securityGroupOption = _securityGroupOption;
+    m_securityGroupOptionHasBeenSet = true;
+}
+
+bool EnvironmentConfig::SecurityGroupOptionHasBeenSet() const
+{
+    return m_securityGroupOptionHasBeenSet;
 }
 

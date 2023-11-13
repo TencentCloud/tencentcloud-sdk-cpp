@@ -972,6 +972,31 @@ CrossBorder表示跨境通道。
                      */
                     bool FeatureBitmapHasBeenSet() const;
 
+                    /**
+                     * 获取是否是开启了auto scale的通道，0表示否，1表示是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAutoScaleProxy 是否是开启了auto scale的通道，0表示否，1表示是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsAutoScaleProxy() const;
+
+                    /**
+                     * 设置是否是开启了auto scale的通道，0表示否，1表示是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isAutoScaleProxy 是否是开启了auto scale的通道，0表示否，1表示是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsAutoScaleProxy(const int64_t& _isAutoScaleProxy);
+
+                    /**
+                     * 判断参数 IsAutoScaleProxy 是否已赋值
+                     * @return IsAutoScaleProxy 是否已赋值
+                     * 
+                     */
+                    bool IsAutoScaleProxyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1230,6 +1255,13 @@ CrossBorder表示跨境通道。
                      */
                     int64_t m_featureBitmap;
                     bool m_featureBitmapHasBeenSet;
+
+                    /**
+                     * 是否是开启了auto scale的通道，0表示否，1表示是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isAutoScaleProxy;
+                    bool m_isAutoScaleProxyHasBeenSet;
 
                 };
             }

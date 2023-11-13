@@ -22,7 +22,9 @@ using namespace std;
 
 ClusterOption::ClusterOption() :
     m_zoneHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_resourceQuotaHasBeenSet(false),
+    m_limitRangeHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,40 @@ CoreInternalOutcome ClusterOption::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceQuota") && !value["ResourceQuota"].IsNull())
+    {
+        if (!value["ResourceQuota"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOption.ResourceQuota` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_resourceQuota.Deserialize(value["ResourceQuota"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resourceQuotaHasBeenSet = true;
+    }
+
+    if (value.HasMember("LimitRange") && !value["LimitRange"].IsNull())
+    {
+        if (!value["LimitRange"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOption.LimitRange` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_limitRange.Deserialize(value["LimitRange"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_limitRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +108,24 @@ void ClusterOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceQuota.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_limitRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_limitRange.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -107,5 +161,37 @@ void ClusterOption::SetType(const string& _type)
 bool ClusterOption::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+ResourceQuota ClusterOption::GetResourceQuota() const
+{
+    return m_resourceQuota;
+}
+
+void ClusterOption::SetResourceQuota(const ResourceQuota& _resourceQuota)
+{
+    m_resourceQuota = _resourceQuota;
+    m_resourceQuotaHasBeenSet = true;
+}
+
+bool ClusterOption::ResourceQuotaHasBeenSet() const
+{
+    return m_resourceQuotaHasBeenSet;
+}
+
+LimitRange ClusterOption::GetLimitRange() const
+{
+    return m_limitRange;
+}
+
+void ClusterOption::SetLimitRange(const LimitRange& _limitRange)
+{
+    m_limitRange = _limitRange;
+    m_limitRangeHasBeenSet = true;
+}
+
+bool ClusterOption::LimitRangeHasBeenSet() const
+{
+    return m_limitRangeHasBeenSet;
 }
 

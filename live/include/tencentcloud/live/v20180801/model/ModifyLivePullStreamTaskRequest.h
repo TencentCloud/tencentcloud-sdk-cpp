@@ -646,6 +646,31 @@ PullVodPushLive -点播。
                      */
                     bool VodLocalModeHasBeenSet() const;
 
+                    /**
+                     * 获取新的目标地址。传空值，则取消该地址的推流。
+传入新值，则替换原有地址。
+                     * @return BackupToUrl 新的目标地址。传空值，则取消该地址的推流。
+传入新值，则替换原有地址。
+                     * 
+                     */
+                    std::string GetBackupToUrl() const;
+
+                    /**
+                     * 设置新的目标地址。传空值，则取消该地址的推流。
+传入新值，则替换原有地址。
+                     * @param _backupToUrl 新的目标地址。传空值，则取消该地址的推流。
+传入新值，则替换原有地址。
+                     * 
+                     */
+                    void SetBackupToUrl(const std::string& _backupToUrl);
+
+                    /**
+                     * 判断参数 BackupToUrl 是否已赋值
+                     * @return BackupToUrl 是否已赋值
+                     * 
+                     */
+                    bool BackupToUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -812,6 +837,13 @@ PullVodPushLive -点播。
                      */
                     int64_t m_vodLocalMode;
                     bool m_vodLocalModeHasBeenSet;
+
+                    /**
+                     * 新的目标地址。传空值，则取消该地址的推流。
+传入新值，则替换原有地址。
+                     */
+                    std::string m_backupToUrl;
+                    bool m_backupToUrlHasBeenSet;
 
                 };
             }

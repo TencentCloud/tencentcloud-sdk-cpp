@@ -34,7 +34,8 @@ MainlandPermitOCRResponse::MainlandPermitOCRResponse() :
     m_issueAddressHasBeenSet(false),
     m_issueNumberHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_profileHasBeenSet(false)
+    m_profileHasBeenSet(false),
+    m_mainlandTravelPermitBackInfosHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,23 @@ CoreInternalOutcome MainlandPermitOCRResponse::Deserialize(const string &payload
         m_profileHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MainlandTravelPermitBackInfos") && !rsp["MainlandTravelPermitBackInfos"].IsNull())
+    {
+        if (!rsp["MainlandTravelPermitBackInfos"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MainlandTravelPermitBackInfos` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mainlandTravelPermitBackInfos.Deserialize(rsp["MainlandTravelPermitBackInfos"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mainlandTravelPermitBackInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +296,15 @@ string MainlandPermitOCRResponse::ToJsonString() const
         string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mainlandTravelPermitBackInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MainlandTravelPermitBackInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mainlandTravelPermitBackInfos.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -400,6 +427,16 @@ string MainlandPermitOCRResponse::GetProfile() const
 bool MainlandPermitOCRResponse::ProfileHasBeenSet() const
 {
     return m_profileHasBeenSet;
+}
+
+MainlandTravelPermitBackInfos MainlandPermitOCRResponse::GetMainlandTravelPermitBackInfos() const
+{
+    return m_mainlandTravelPermitBackInfos;
+}
+
+bool MainlandPermitOCRResponse::MainlandTravelPermitBackInfosHasBeenSet() const
+{
+    return m_mainlandTravelPermitBackInfosHasBeenSet;
 }
 
 

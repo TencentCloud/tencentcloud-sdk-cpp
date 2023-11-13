@@ -22,6 +22,7 @@ using namespace std;
 
 ApproverOption::ApproverOption() :
     m_noRefuseHasBeenSet(false),
+    m_noTransferHasBeenSet(false),
     m_hideOneKeySignHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
     m_flowReadLimitHasBeenSet(false)
@@ -41,6 +42,16 @@ CoreInternalOutcome ApproverOption::Deserialize(const rapidjson::Value &value)
         }
         m_noRefuse = value["NoRefuse"].GetBool();
         m_noRefuseHasBeenSet = true;
+    }
+
+    if (value.HasMember("NoTransfer") && !value["NoTransfer"].IsNull())
+    {
+        if (!value["NoTransfer"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverOption.NoTransfer` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_noTransfer = value["NoTransfer"].GetBool();
+        m_noTransferHasBeenSet = true;
     }
 
     if (value.HasMember("HideOneKeySign") && !value["HideOneKeySign"].IsNull())
@@ -88,6 +99,14 @@ void ApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_noRefuse, allocator);
     }
 
+    if (m_noTransferHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoTransfer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_noTransfer, allocator);
+    }
+
     if (m_hideOneKeySignHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -129,6 +148,22 @@ void ApproverOption::SetNoRefuse(const bool& _noRefuse)
 bool ApproverOption::NoRefuseHasBeenSet() const
 {
     return m_noRefuseHasBeenSet;
+}
+
+bool ApproverOption::GetNoTransfer() const
+{
+    return m_noTransfer;
+}
+
+void ApproverOption::SetNoTransfer(const bool& _noTransfer)
+{
+    m_noTransfer = _noTransfer;
+    m_noTransferHasBeenSet = true;
+}
+
+bool ApproverOption::NoTransferHasBeenSet() const
+{
+    return m_noTransferHasBeenSet;
 }
 
 bool ApproverOption::GetHideOneKeySign() const

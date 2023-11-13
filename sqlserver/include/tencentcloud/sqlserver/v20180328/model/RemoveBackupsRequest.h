@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。
-                     * @return BackupNames 待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。
+                     * 获取待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得，单次请求批量删除备份数不能超过10个。当StartTime、EndTime为空时，此字段必填。
+                     * @return BackupNames 待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得，单次请求批量删除备份数不能超过10个。当StartTime、EndTime为空时，此字段必填。
                      * 
                      */
                     std::vector<std::string> GetBackupNames() const;
 
                     /**
-                     * 设置待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。
-                     * @param _backupNames 待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。
+                     * 设置待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得，单次请求批量删除备份数不能超过10个。当StartTime、EndTime为空时，此字段必填。
+                     * @param _backupNames 待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得，单次请求批量删除备份数不能超过10个。当StartTime、EndTime为空时，此字段必填。
                      * 
                      */
                     void SetBackupNames(const std::vector<std::string>& _backupNames);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BackupNamesHasBeenSet() const;
 
                     /**
-                     * 获取批量删除手动备份起始时间
-                     * @return StartTime 批量删除手动备份起始时间
+                     * 获取批量删除手动备份起始时间。当BackupNames为空时，此字段必填。
+                     * @return StartTime 批量删除手动备份起始时间。当BackupNames为空时，此字段必填。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置批量删除手动备份起始时间
-                     * @param _startTime 批量删除手动备份起始时间
+                     * 设置批量删除手动备份起始时间。当BackupNames为空时，此字段必填。
+                     * @param _startTime 批量删除手动备份起始时间。当BackupNames为空时，此字段必填。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取批量删除手动备份截止时间
-                     * @return EndTime 批量删除手动备份截止时间
+                     * 获取批量删除手动备份截止时间。当BackupNames为空时，此字段必填。
+                     * @return EndTime 批量删除手动备份截止时间。当BackupNames为空时，此字段必填。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置批量删除手动备份截止时间
-                     * @param _endTime 批量删除手动备份截止时间
+                     * 设置批量删除手动备份截止时间。当BackupNames为空时，此字段必填。
+                     * @param _endTime 批量删除手动备份截止时间。当BackupNames为空时，此字段必填。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -135,19 +135,19 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。
+                     * 待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得，单次请求批量删除备份数不能超过10个。当StartTime、EndTime为空时，此字段必填。
                      */
                     std::vector<std::string> m_backupNames;
                     bool m_backupNamesHasBeenSet;
 
                     /**
-                     * 批量删除手动备份起始时间
+                     * 批量删除手动备份起始时间。当BackupNames为空时，此字段必填。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 批量删除手动备份截止时间
+                     * 批量删除手动备份截止时间。当BackupNames为空时，此字段必填。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

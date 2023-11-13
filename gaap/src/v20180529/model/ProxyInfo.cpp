@@ -55,7 +55,8 @@ ProxyInfo::ProxyInfo() :
     m_iPListHasBeenSet(false),
     m_http3SupportedHasBeenSet(false),
     m_inBanBlacklistHasBeenSet(false),
-    m_featureBitmapHasBeenSet(false)
+    m_featureBitmapHasBeenSet(false),
+    m_isAutoScaleProxyHasBeenSet(false)
 {
 }
 
@@ -457,6 +458,16 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
         m_featureBitmapHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAutoScaleProxy") && !value["IsAutoScaleProxy"].IsNull())
+    {
+        if (!value["IsAutoScaleProxy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.IsAutoScaleProxy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAutoScaleProxy = value["IsAutoScaleProxy"].GetInt64();
+        m_isAutoScaleProxyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -773,6 +784,14 @@ void ProxyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "FeatureBitmap";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_featureBitmap, allocator);
+    }
+
+    if (m_isAutoScaleProxyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAutoScaleProxy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAutoScaleProxy, allocator);
     }
 
 }
@@ -1336,5 +1355,21 @@ void ProxyInfo::SetFeatureBitmap(const int64_t& _featureBitmap)
 bool ProxyInfo::FeatureBitmapHasBeenSet() const
 {
     return m_featureBitmapHasBeenSet;
+}
+
+int64_t ProxyInfo::GetIsAutoScaleProxy() const
+{
+    return m_isAutoScaleProxy;
+}
+
+void ProxyInfo::SetIsAutoScaleProxy(const int64_t& _isAutoScaleProxy)
+{
+    m_isAutoScaleProxy = _isAutoScaleProxy;
+    m_isAutoScaleProxyHasBeenSet = true;
+}
+
+bool ProxyInfo::IsAutoScaleProxyHasBeenSet() const
+{
+    return m_isAutoScaleProxyHasBeenSet;
 }
 

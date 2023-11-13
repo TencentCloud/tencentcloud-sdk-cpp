@@ -35,10 +35,13 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/DescribeRunsRequest.h
   include/tencentcloud/omics/v20221128/model/Run.h
   include/tencentcloud/omics/v20221128/model/TableColumn.h
+  include/tencentcloud/omics/v20221128/model/SecurityGroupOption.h
   include/tencentcloud/omics/v20221128/model/DescribeTablesRowsRequest.h
   include/tencentcloud/omics/v20221128/model/DescribeEnvironmentsResponse.h
+  include/tencentcloud/omics/v20221128/model/LimitRange.h
   include/tencentcloud/omics/v20221128/model/DescribeTablesResponse.h
   include/tencentcloud/omics/v20221128/model/VPCOption.h
+  include/tencentcloud/omics/v20221128/model/ResourceQuota.h
   include/tencentcloud/omics/v20221128/model/RetryRunsRequest.h
   include/tencentcloud/omics/v20221128/model/ImportTableFileRequest.h
   include/tencentcloud/omics/v20221128/model/CacheInfo.h
@@ -91,10 +94,13 @@ set(omics_src
   src/v20221128/model/DescribeRunsRequest.cpp
   src/v20221128/model/Run.cpp
   src/v20221128/model/TableColumn.cpp
+  src/v20221128/model/SecurityGroupOption.cpp
   src/v20221128/model/DescribeTablesRowsRequest.cpp
   src/v20221128/model/DescribeEnvironmentsResponse.cpp
+  src/v20221128/model/LimitRange.cpp
   src/v20221128/model/DescribeTablesResponse.cpp
   src/v20221128/model/VPCOption.cpp
+  src/v20221128/model/ResourceQuota.cpp
   src/v20221128/model/RetryRunsRequest.cpp
   src/v20221128/model/ImportTableFileRequest.cpp
   src/v20221128/model/CacheInfo.cpp

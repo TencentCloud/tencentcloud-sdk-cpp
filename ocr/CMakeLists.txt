@@ -254,6 +254,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseInfo.h
   include/tencentcloud/ocr/v20181119/model/InsuranceBillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/QrcodeOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/MainlandTravelPermitBackInfos.h
   include/tencentcloud/ocr/v20181119/model/TableCell.h
   include/tencentcloud/ocr/v20181119/model/TableOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/DetectedWordCoordPoint.h
@@ -523,6 +524,7 @@ set(ocr_src
   src/v20181119/model/EnterpriseLicenseInfo.cpp
   src/v20181119/model/InsuranceBillOCRRequest.cpp
   src/v20181119/model/QrcodeOCRRequest.cpp
+  src/v20181119/model/MainlandTravelPermitBackInfos.cpp
   src/v20181119/model/TableCell.cpp
   src/v20181119/model/TableOCRResponse.cpp
   src/v20181119/model/DetectedWordCoordPoint.cpp

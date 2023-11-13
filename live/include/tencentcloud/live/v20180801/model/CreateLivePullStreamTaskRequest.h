@@ -809,6 +809,27 @@ PullVodPushLive -点播。
                      */
                     bool RecordTemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取新的目标地址，用于任务同时推两路场景。
+                     * @return BackupToUrl 新的目标地址，用于任务同时推两路场景。
+                     * 
+                     */
+                    std::string GetBackupToUrl() const;
+
+                    /**
+                     * 设置新的目标地址，用于任务同时推两路场景。
+                     * @param _backupToUrl 新的目标地址，用于任务同时推两路场景。
+                     * 
+                     */
+                    void SetBackupToUrl(const std::string& _backupToUrl);
+
+                    /**
+                     * 判断参数 BackupToUrl 是否已赋值
+                     * @return BackupToUrl 是否已赋值
+                     * 
+                     */
+                    bool BackupToUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1018,6 +1039,12 @@ PullVodPushLive -点播。
                      */
                     std::string m_recordTemplateId;
                     bool m_recordTemplateIdHasBeenSet;
+
+                    /**
+                     * 新的目标地址，用于任务同时推两路场景。
+                     */
+                    std::string m_backupToUrl;
+                    bool m_backupToUrlHasBeenSet;
 
                 };
             }

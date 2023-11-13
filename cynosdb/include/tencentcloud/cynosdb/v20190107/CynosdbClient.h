@@ -101,6 +101,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogSaveDaysResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabasesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabasesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailDatabasesRequest.h>
@@ -412,6 +414,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBinlogsResponse> DescribeBinlogsOutcome;
                 typedef std::future<DescribeBinlogsOutcome> DescribeBinlogsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeBinlogsRequest&, DescribeBinlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterDatabasesResponse> DescribeClusterDatabasesOutcome;
+                typedef std::future<DescribeClusterDatabasesOutcome> DescribeClusterDatabasesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterDatabasesRequest&, DescribeClusterDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterDatabasesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterDetailResponse> DescribeClusterDetailOutcome;
                 typedef std::future<DescribeClusterDetailOutcome> DescribeClusterDetailOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterDetailRequest&, DescribeClusterDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterDetailAsyncHandler;
@@ -1035,6 +1040,15 @@ namespace TencentCloud
                 DescribeBinlogsOutcome DescribeBinlogs(const Model::DescribeBinlogsRequest &request);
                 void DescribeBinlogsAsync(const Model::DescribeBinlogsRequest& request, const DescribeBinlogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBinlogsOutcomeCallable DescribeBinlogsCallable(const Model::DescribeBinlogsRequest& request);
+
+                /**
+                 *获取database列表
+                 * @param req DescribeClusterDatabasesRequest
+                 * @return DescribeClusterDatabasesOutcome
+                 */
+                DescribeClusterDatabasesOutcome DescribeClusterDatabases(const Model::DescribeClusterDatabasesRequest &request);
+                void DescribeClusterDatabasesAsync(const Model::DescribeClusterDatabasesRequest& request, const DescribeClusterDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterDatabasesOutcomeCallable DescribeClusterDatabasesCallable(const Model::DescribeClusterDatabasesRequest& request);
 
                 /**
                  *该接口（DescribeClusterDetail）显示集群详情

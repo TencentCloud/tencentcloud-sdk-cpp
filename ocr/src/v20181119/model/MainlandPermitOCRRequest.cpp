@@ -25,7 +25,8 @@ using namespace std;
 MainlandPermitOCRRequest::MainlandPermitOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_retProfileHasBeenSet(false)
+    m_retProfileHasBeenSet(false),
+    m_cardSideHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string MainlandPermitOCRRequest::ToJsonString() const
         string key = "RetProfile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_retProfile, allocator);
+    }
+
+    if (m_cardSideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardSide";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cardSide.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void MainlandPermitOCRRequest::SetRetProfile(const bool& _retProfile)
 bool MainlandPermitOCRRequest::RetProfileHasBeenSet() const
 {
     return m_retProfileHasBeenSet;
+}
+
+string MainlandPermitOCRRequest::GetCardSide() const
+{
+    return m_cardSide;
+}
+
+void MainlandPermitOCRRequest::SetCardSide(const string& _cardSide)
+{
+    m_cardSide = _cardSide;
+    m_cardSideHasBeenSet = true;
+}
+
+bool MainlandPermitOCRRequest::CardSideHasBeenSet() const
+{
+    return m_cardSideHasBeenSet;
 }
 
 

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取命名空间，目前只支持QCE/TKE2
-                     * @return Namespace 命名空间，目前只支持QCE/TKE2
+                     * 获取命名空间，目前支持QCE/TKE2(Conditions必填),QCE/KEEWIDB,QCE/CAMP
+                     * @return Namespace 命名空间，目前支持QCE/TKE2(Conditions必填),QCE/KEEWIDB,QCE/CAMP
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间，目前只支持QCE/TKE2
-                     * @param _namespace 命名空间，目前只支持QCE/TKE2
+                     * 设置命名空间，目前支持QCE/TKE2(Conditions必填),QCE/KEEWIDB,QCE/CAMP
+                     * @param _namespace 命名空间，目前支持QCE/TKE2(Conditions必填),QCE/KEEWIDB,QCE/CAMP
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -108,14 +108,18 @@ namespace TencentCloud
 
                     /**
                      * 获取维度条件，操作符支持=、in
+配置文档参考：https://cloud.tencent.com/document/product/248/53821
                      * @return Conditions 维度条件，操作符支持=、in
+配置文档参考：https://cloud.tencent.com/document/product/248/53821
                      * 
                      */
                     std::vector<MidQueryCondition> GetConditions() const;
 
                     /**
                      * 设置维度条件，操作符支持=、in
+配置文档参考：https://cloud.tencent.com/document/product/248/53821
                      * @param _conditions 维度条件，操作符支持=、in
+配置文档参考：https://cloud.tencent.com/document/product/248/53821
                      * 
                      */
                     void SetConditions(const std::vector<MidQueryCondition>& _conditions);
@@ -240,7 +244,7 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 命名空间，目前只支持QCE/TKE2
+                     * 命名空间，目前支持QCE/TKE2(Conditions必填),QCE/KEEWIDB,QCE/CAMP
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
@@ -253,6 +257,7 @@ namespace TencentCloud
 
                     /**
                      * 维度条件，操作符支持=、in
+配置文档参考：https://cloud.tencent.com/document/product/248/53821
                      */
                     std::vector<MidQueryCondition> m_conditions;
                     bool m_conditionsHasBeenSet;

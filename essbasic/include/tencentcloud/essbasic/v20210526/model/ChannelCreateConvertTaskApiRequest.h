@@ -109,6 +109,7 @@ namespace TencentCloud
 <li>jpeg</li>
 <li>png</li>
 <li>bmp</li>
+<li>html</li>
 <li>txt</li></ul>
                      * @return ResourceType 需要进行转换的资源文件类型
 支持的文件类型如下：
@@ -120,6 +121,7 @@ namespace TencentCloud
 <li>jpeg</li>
 <li>png</li>
 <li>bmp</li>
+<li>html</li>
 <li>txt</li></ul>
                      * 
                      */
@@ -136,6 +138,7 @@ namespace TencentCloud
 <li>jpeg</li>
 <li>png</li>
 <li>bmp</li>
+<li>html</li>
 <li>txt</li></ul>
                      * @param _resourceType 需要进行转换的资源文件类型
 支持的文件类型如下：
@@ -147,6 +150,7 @@ namespace TencentCloud
 <li>jpeg</li>
 <li>png</li>
 <li>bmp</li>
+<li>html</li>
 <li>txt</li></ul>
                      * 
                      */
@@ -286,6 +290,7 @@ namespace TencentCloud
 <li>jpeg</li>
 <li>png</li>
 <li>bmp</li>
+<li>html</li>
 <li>txt</li></ul>
                      */
                     std::string m_resourceType;

@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool BackupDayHasBeenSet() const;
 
                     /**
-                     * 获取备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
-                     * @return BackupModel 备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
+                     * 获取备份模式（必填），master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
+                     * @return BackupModel 备份模式（必填），master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
                      * 
                      */
                     std::string GetBackupModel() const;
 
                     /**
-                     * 设置备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
-                     * @param _backupModel 备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
+                     * 设置备份模式（必填），master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
+                     * @param _backupModel 备份模式（必填），master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
                      * 
                      */
                     void SetBackupModel(const std::string& _backupModel);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool BackupCycleHasBeenSet() const;
 
                     /**
-                     * 获取数据(日志)备份保留时间，取值[3-1830]天，默认7天
-                     * @return BackupSaveDays 数据(日志)备份保留时间，取值[3-1830]天，默认7天
+                     * 获取数据(日志)备份保留天数（必填），取值[3-1830]天，默认7天
+                     * @return BackupSaveDays 数据(日志)备份保留天数（必填），取值[3-1830]天，默认7天
                      * 
                      */
                     uint64_t GetBackupSaveDays() const;
 
                     /**
-                     * 设置数据(日志)备份保留时间，取值[3-1830]天，默认7天
-                     * @param _backupSaveDays 数据(日志)备份保留时间，取值[3-1830]天，默认7天
+                     * 设置数据(日志)备份保留天数（必填），取值[3-1830]天，默认7天
+                     * @param _backupSaveDays 数据(日志)备份保留天数（必填），取值[3-1830]天，默认7天
                      * 
                      */
                     void SetBackupSaveDays(const uint64_t& _backupSaveDays);
@@ -321,7 +321,7 @@ namespace TencentCloud
                     bool m_backupDayHasBeenSet;
 
                     /**
-                     * 备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
+                     * 备份模式（必填），master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。
                      */
                     std::string m_backupModel;
                     bool m_backupModelHasBeenSet;
@@ -333,7 +333,7 @@ namespace TencentCloud
                     bool m_backupCycleHasBeenSet;
 
                     /**
-                     * 数据(日志)备份保留时间，取值[3-1830]天，默认7天
+                     * 数据(日志)备份保留天数（必填），取值[3-1830]天，默认7天
                      */
                     uint64_t m_backupSaveDays;
                     bool m_backupSaveDaysHasBeenSet;

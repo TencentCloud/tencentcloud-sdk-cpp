@@ -25,7 +25,8 @@ using namespace std;
 CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_nameHasBeenSet(false),
     m_configHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_isDefaultHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string CreateEnvironmentRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDefaultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefault";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDefault, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void CreateEnvironmentRequest::SetDescription(const string& _description)
 bool CreateEnvironmentRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+bool CreateEnvironmentRequest::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void CreateEnvironmentRequest::SetIsDefault(const bool& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool CreateEnvironmentRequest::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
 }
 
 

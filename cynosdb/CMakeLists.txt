@@ -96,6 +96,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailDatabasesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstanceGrp.h
   include/tencentcloud/cynosdb/v20190107/model/CreateParamTemplateResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ZoneStockInfo.h
   include/tencentcloud/cynosdb/v20190107/model/ActivateInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DatabaseTables.h
@@ -166,6 +167,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/SearchClusterDatabasesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterPasswordComplexityResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditRuleWithInstanceIdsRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabasesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RefundResourcePackageRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ExportInstanceErrorLogsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DbTable.h
@@ -351,7 +353,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/InputAccount.h
   include/tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/InstanceAuditLogFilter.h
-  include/tencentcloud/cynosdb/v20190107/model/ZoneStockInfo.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabasesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InquirePriceRenewResponse.h
   include/tencentcloud/cynosdb/v20190107/model/Tag.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAuditRuleTemplatesResponse.h
@@ -436,6 +438,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClusterDetailDatabasesResponse.cpp
   src/v20190107/model/CynosdbInstanceGrp.cpp
   src/v20190107/model/CreateParamTemplateResponse.cpp
+  src/v20190107/model/ZoneStockInfo.cpp
   src/v20190107/model/ActivateInstanceRequest.cpp
   src/v20190107/model/RevokeAccountPrivilegesResponse.cpp
   src/v20190107/model/DatabaseTables.cpp
@@ -506,6 +509,7 @@ set(cynosdb_src
   src/v20190107/model/SearchClusterDatabasesRequest.cpp
   src/v20190107/model/DescribeClusterPasswordComplexityResponse.cpp
   src/v20190107/model/DescribeAuditRuleWithInstanceIdsRequest.cpp
+  src/v20190107/model/DescribeClusterDatabasesResponse.cpp
   src/v20190107/model/RefundResourcePackageRequest.cpp
   src/v20190107/model/ExportInstanceErrorLogsResponse.cpp
   src/v20190107/model/DbTable.cpp
@@ -691,7 +695,7 @@ set(cynosdb_src
   src/v20190107/model/InputAccount.cpp
   src/v20190107/model/DisassociateSecurityGroupsResponse.cpp
   src/v20190107/model/InstanceAuditLogFilter.cpp
-  src/v20190107/model/ZoneStockInfo.cpp
+  src/v20190107/model/DescribeClusterDatabasesRequest.cpp
   src/v20190107/model/InquirePriceRenewResponse.cpp
   src/v20190107/model/Tag.cpp
   src/v20190107/model/ModifyAuditRuleTemplatesResponse.cpp

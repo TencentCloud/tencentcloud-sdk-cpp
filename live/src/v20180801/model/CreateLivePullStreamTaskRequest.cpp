@@ -44,7 +44,8 @@ CreateLivePullStreamTaskRequest::CreateLivePullStreamTaskRequest() :
     m_backupSourceUrlHasBeenSet(false),
     m_watermarkListHasBeenSet(false),
     m_vodLocalModeHasBeenSet(false),
-    m_recordTemplateIdHasBeenSet(false)
+    m_recordTemplateIdHasBeenSet(false),
+    m_backupToUrlHasBeenSet(false)
 {
 }
 
@@ -246,6 +247,14 @@ string CreateLivePullStreamTaskRequest::ToJsonString() const
         string key = "RecordTemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recordTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupToUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupToUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupToUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -606,6 +615,22 @@ void CreateLivePullStreamTaskRequest::SetRecordTemplateId(const string& _recordT
 bool CreateLivePullStreamTaskRequest::RecordTemplateIdHasBeenSet() const
 {
     return m_recordTemplateIdHasBeenSet;
+}
+
+string CreateLivePullStreamTaskRequest::GetBackupToUrl() const
+{
+    return m_backupToUrl;
+}
+
+void CreateLivePullStreamTaskRequest::SetBackupToUrl(const string& _backupToUrl)
+{
+    m_backupToUrl = _backupToUrl;
+    m_backupToUrlHasBeenSet = true;
+}
+
+bool CreateLivePullStreamTaskRequest::BackupToUrlHasBeenSet() const
+{
+    return m_backupToUrlHasBeenSet;
 }
 
 

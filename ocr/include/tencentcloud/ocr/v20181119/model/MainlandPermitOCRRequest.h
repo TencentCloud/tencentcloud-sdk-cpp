@@ -133,6 +133,31 @@ namespace TencentCloud
                      */
                     bool RetProfileHasBeenSet() const;
 
+                    /**
+                     * 获取图片正反面
+FRONT：正面、BACK：反面，默认为FRONT
+                     * @return CardSide 图片正反面
+FRONT：正面、BACK：反面，默认为FRONT
+                     * 
+                     */
+                    std::string GetCardSide() const;
+
+                    /**
+                     * 设置图片正反面
+FRONT：正面、BACK：反面，默认为FRONT
+                     * @param _cardSide 图片正反面
+FRONT：正面、BACK：反面，默认为FRONT
+                     * 
+                     */
+                    void SetCardSide(const std::string& _cardSide);
+
+                    /**
+                     * 判断参数 CardSide 是否已赋值
+                     * @return CardSide 是否已赋值
+                     * 
+                     */
+                    bool CardSideHasBeenSet() const;
+
                 private:
 
                     /**
@@ -159,6 +184,13 @@ namespace TencentCloud
                      */
                     bool m_retProfile;
                     bool m_retProfileHasBeenSet;
+
+                    /**
+                     * 图片正反面
+FRONT：正面、BACK：反面，默认为FRONT
+                     */
+                    std::string m_cardSide;
+                    bool m_cardSideHasBeenSet;
 
                 };
             }

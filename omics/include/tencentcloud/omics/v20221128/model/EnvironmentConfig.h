@@ -29,6 +29,7 @@
 #include <tencentcloud/omics/v20221128/model/DatabaseOption.h>
 #include <tencentcloud/omics/v20221128/model/StorageOption.h>
 #include <tencentcloud/omics/v20221128/model/CVMOption.h>
+#include <tencentcloud/omics/v20221128/model/SecurityGroupOption.h>
 
 
 namespace TencentCloud
@@ -156,6 +157,27 @@ namespace TencentCloud
                      */
                     bool CVMOptionHasBeenSet() const;
 
+                    /**
+                     * 获取安全组配置。
+                     * @return SecurityGroupOption 安全组配置。
+                     * 
+                     */
+                    SecurityGroupOption GetSecurityGroupOption() const;
+
+                    /**
+                     * 设置安全组配置。
+                     * @param _securityGroupOption 安全组配置。
+                     * 
+                     */
+                    void SetSecurityGroupOption(const SecurityGroupOption& _securityGroupOption);
+
+                    /**
+                     * 判断参数 SecurityGroupOption 是否已赋值
+                     * @return SecurityGroupOption 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +209,12 @@ namespace TencentCloud
                      */
                     CVMOption m_cVMOption;
                     bool m_cVMOptionHasBeenSet;
+
+                    /**
+                     * 安全组配置。
+                     */
+                    SecurityGroupOption m_securityGroupOption;
+                    bool m_securityGroupOptionHasBeenSet;
 
                 };
             }

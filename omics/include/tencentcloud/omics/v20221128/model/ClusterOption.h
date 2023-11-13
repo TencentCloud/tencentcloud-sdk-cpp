@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/omics/v20221128/model/ResourceQuota.h>
+#include <tencentcloud/omics/v20221128/model/LimitRange.h>
 
 
 namespace TencentCloud
@@ -92,6 +94,48 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取资源配额。
+                     * @return ResourceQuota 资源配额。
+                     * 
+                     */
+                    ResourceQuota GetResourceQuota() const;
+
+                    /**
+                     * 设置资源配额。
+                     * @param _resourceQuota 资源配额。
+                     * 
+                     */
+                    void SetResourceQuota(const ResourceQuota& _resourceQuota);
+
+                    /**
+                     * 判断参数 ResourceQuota 是否已赋值
+                     * @return ResourceQuota 是否已赋值
+                     * 
+                     */
+                    bool ResourceQuotaHasBeenSet() const;
+
+                    /**
+                     * 获取限制范围。
+                     * @return LimitRange 限制范围。
+                     * 
+                     */
+                    LimitRange GetLimitRange() const;
+
+                    /**
+                     * 设置限制范围。
+                     * @param _limitRange 限制范围。
+                     * 
+                     */
+                    void SetLimitRange(const LimitRange& _limitRange);
+
+                    /**
+                     * 判断参数 LimitRange 是否已赋值
+                     * @return LimitRange 是否已赋值
+                     * 
+                     */
+                    bool LimitRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +150,18 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 资源配额。
+                     */
+                    ResourceQuota m_resourceQuota;
+                    bool m_resourceQuotaHasBeenSet;
+
+                    /**
+                     * 限制范围。
+                     */
+                    LimitRange m_limitRange;
+                    bool m_limitRangeHasBeenSet;
 
                 };
             }

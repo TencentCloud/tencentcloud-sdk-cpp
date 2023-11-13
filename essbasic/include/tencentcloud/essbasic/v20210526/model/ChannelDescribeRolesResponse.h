@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
-                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * 获取查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。
+                     * @return Offset 查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。
                      * 
                      */
                     uint64_t GetOffset() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取指定每页多少条数据，单页最大200
-                     * @return Limit 指定每页多少条数据，单页最大200
+                     * 获取指定每页返回的数据条数，和Offset参数配合使用，单页最大200。
+                     * @return Limit 指定每页返回的数据条数，和Offset参数配合使用，单页最大200。
                      * 
                      */
                     uint64_t GetLimit() const;
@@ -87,9 +87,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取角色信息
+                     * 获取查询的角色信息列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChannelRoles 角色信息
+                     * @return ChannelRoles 查询的角色信息列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -105,13 +105,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000
+                     * 查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 指定每页多少条数据，单页最大200
+                     * 指定每页返回的数据条数，和Offset参数配合使用，单页最大200。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 角色信息
+                     * 查询的角色信息列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ChannelRole> m_channelRoles;

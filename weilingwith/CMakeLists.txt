@@ -20,6 +20,7 @@ set(weilingwith_public_header
 
 set(weilingwith_public_header_model
   include/tencentcloud/weilingwith/v20230427/model/DescribeWorkSpaceBuildingCountAndAreaRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/ApplicationList.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceDeviceRelationListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmTypeListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceStatusStatRequest.h
@@ -64,6 +65,7 @@ set(weilingwith_public_header_model
   include/tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceUserListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribePropertyListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeProductListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/ApplicationLogo.h
   include/tencentcloud/weilingwith/v20230427/model/ControlCameraPTZResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceTypeListResponse.h
@@ -71,6 +73,7 @@ set(weilingwith_public_header_model
   include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmLevelListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/BatchReportAppMessageRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceStatusStatResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceShadowRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeBuildingModelRequest.h
   include/tencentcloud/weilingwith/v20230427/model/AddAlarmProcessRecordResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceDeviceIdListResponse.h
@@ -98,6 +101,7 @@ set(weilingwith_public_header_model
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceTagListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeBuildingProfileResponse.h
   include/tencentcloud/weilingwith/v20230427/model/ReportAppMessageRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/ApplicationInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeFileUploadURLRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceStatusListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeVideoCloudRecordRequest.h
@@ -122,6 +126,7 @@ set(weilingwith_public_header_model
   include/tencentcloud/weilingwith/v20230427/model/DescribeAdministrationByTagResponse.h
   include/tencentcloud/weilingwith/v20230427/model/SsoDepartment.h
   include/tencentcloud/weilingwith/v20230427/model/BatchKillAlarmResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceShadowInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceTypeListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceShadowListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSceneListResponse.h
@@ -144,6 +149,7 @@ set(weilingwith_public_header_model
 set(weilingwith_src
   src/v20230427/WeilingwithClient.cpp
   src/v20230427/model/DescribeWorkSpaceBuildingCountAndAreaRequest.cpp
+  src/v20230427/model/ApplicationList.cpp
   src/v20230427/model/DescribeSpaceDeviceRelationListRequest.cpp
   src/v20230427/model/DescribeAlarmTypeListResponse.cpp
   src/v20230427/model/DescribeDeviceStatusStatRequest.cpp
@@ -188,6 +194,7 @@ set(weilingwith_src
   src/v20230427/model/DescribeWorkspaceUserListResponse.cpp
   src/v20230427/model/DescribePropertyListRequest.cpp
   src/v20230427/model/DescribeProductListRequest.cpp
+  src/v20230427/model/ApplicationLogo.cpp
   src/v20230427/model/ControlCameraPTZResponse.cpp
   src/v20230427/model/DescribeWorkspaceListRequest.cpp
   src/v20230427/model/DescribeDeviceTypeListResponse.cpp
@@ -195,6 +202,7 @@ set(weilingwith_src
   src/v20230427/model/DescribeAlarmLevelListRequest.cpp
   src/v20230427/model/BatchReportAppMessageRequest.cpp
   src/v20230427/model/DescribeDeviceStatusStatResponse.cpp
+  src/v20230427/model/DeviceShadowRes.cpp
   src/v20230427/model/DescribeBuildingModelRequest.cpp
   src/v20230427/model/AddAlarmProcessRecordResponse.cpp
   src/v20230427/model/DescribeSpaceDeviceIdListResponse.cpp
@@ -222,6 +230,7 @@ set(weilingwith_src
   src/v20230427/model/DescribeDeviceTagListRequest.cpp
   src/v20230427/model/DescribeBuildingProfileResponse.cpp
   src/v20230427/model/ReportAppMessageRequest.cpp
+  src/v20230427/model/ApplicationInfo.cpp
   src/v20230427/model/DescribeFileUploadURLRequest.cpp
   src/v20230427/model/DescribeDeviceStatusListRequest.cpp
   src/v20230427/model/DescribeVideoCloudRecordRequest.cpp
@@ -246,6 +255,7 @@ set(weilingwith_src
   src/v20230427/model/DescribeAdministrationByTagResponse.cpp
   src/v20230427/model/SsoDepartment.cpp
   src/v20230427/model/BatchKillAlarmResponse.cpp
+  src/v20230427/model/DeviceShadowInfo.cpp
   src/v20230427/model/DescribeDeviceTypeListRequest.cpp
   src/v20230427/model/DescribeDeviceShadowListRequest.cpp
   src/v20230427/model/DescribeSceneListResponse.cpp

@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool RealNameHasBeenSet() const;
 
                     /**
-                     * 获取用户类型
+                     * 获取用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserType 用户类型
+                     * @return UserType 用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
-                     * 设置用户类型
+                     * 设置用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userType 用户类型
+                     * @param _userType 用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -338,7 +338,7 @@ namespace TencentCloud
                     bool m_realNameHasBeenSet;
 
                     /**
-                     * 用户类型
+                     * 用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userType;
