@@ -15,11 +15,13 @@
 #
 
 set(mgobe_public_header
-  include/tencentcloud/mgobe/v20201014/MgobeClient.h
   include/tencentcloud/mgobe/v20190929/MgobeClient.h
+  include/tencentcloud/mgobe/v20201014/MgobeClient.h
   )
 
 set(mgobe_public_header_model
+  include/tencentcloud/mgobe/v20190929/model/DismissRoomRequest.h
+  include/tencentcloud/mgobe/v20190929/model/DismissRoomResponse.h
   include/tencentcloud/mgobe/v20201014/model/DismissRoomRequest.h
   include/tencentcloud/mgobe/v20201014/model/ChangeRoomPlayerProfileResponse.h
   include/tencentcloud/mgobe/v20201014/model/ModifyRoomRequest.h
@@ -37,13 +39,13 @@ set(mgobe_public_header_model
   include/tencentcloud/mgobe/v20201014/model/DescribeRoomRequest.h
   include/tencentcloud/mgobe/v20201014/model/RemoveRoomPlayerRequest.h
   include/tencentcloud/mgobe/v20201014/model/Team.h
-  include/tencentcloud/mgobe/v20190929/model/DismissRoomRequest.h
-  include/tencentcloud/mgobe/v20190929/model/DismissRoomResponse.h
   )
 
 set(mgobe_src
-  src/v20201014/MgobeClient.cpp
   src/v20190929/MgobeClient.cpp
+  src/v20201014/MgobeClient.cpp
+  src/v20190929/model/DismissRoomRequest.cpp
+  src/v20190929/model/DismissRoomResponse.cpp
   src/v20201014/model/DismissRoomRequest.cpp
   src/v20201014/model/ChangeRoomPlayerProfileResponse.cpp
   src/v20201014/model/ModifyRoomRequest.cpp
@@ -61,8 +63,6 @@ set(mgobe_src
   src/v20201014/model/DescribeRoomRequest.cpp
   src/v20201014/model/RemoveRoomPlayerRequest.cpp
   src/v20201014/model/Team.cpp
-  src/v20190929/model/DismissRoomRequest.cpp
-  src/v20190929/model/DismissRoomResponse.cpp
   )
 
 set(mgobe_include
@@ -91,9 +91,9 @@ target_link_libraries(mgobe
   core)
 
 #install(FILES ${mgobe_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/mgobe/v20190929)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/mgobe/v20201014)
 #install(FILES ${mgobe_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/mgobe/v20190929/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/mgobe/v20201014/model)
 install(DIRECTORY ${mgobe_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

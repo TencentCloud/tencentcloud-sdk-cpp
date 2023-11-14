@@ -30,8 +30,6 @@ ApiPkg::ApiPkg() :
     m_usedNumHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_billingItemHasBeenSet(false),
-    m_aPICPWafHasBeenSet(false),
-    m_aPINPWafHasBeenSet(false),
     m_isAPISecurityTrialHasBeenSet(false)
 {
 }
@@ -131,26 +129,6 @@ CoreInternalOutcome ApiPkg::Deserialize(const rapidjson::Value &value)
         m_billingItemHasBeenSet = true;
     }
 
-    if (value.HasMember("APICPWaf") && !value["APICPWaf"].IsNull())
-    {
-        if (!value["APICPWaf"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApiPkg.APICPWaf` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_aPICPWaf = value["APICPWaf"].GetInt64();
-        m_aPICPWafHasBeenSet = true;
-    }
-
-    if (value.HasMember("APINPWaf") && !value["APINPWaf"].IsNull())
-    {
-        if (!value["APINPWaf"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApiPkg.APINPWaf` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_aPINPWaf = value["APINPWaf"].GetInt64();
-        m_aPINPWafHasBeenSet = true;
-    }
-
     if (value.HasMember("IsAPISecurityTrial") && !value["IsAPISecurityTrial"].IsNull())
     {
         if (!value["IsAPISecurityTrial"].IsInt64())
@@ -238,22 +216,6 @@ void ApiPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "BillingItem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billingItem.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_aPICPWafHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "APICPWaf";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_aPICPWaf, allocator);
-    }
-
-    if (m_aPINPWafHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "APINPWaf";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_aPINPWaf, allocator);
     }
 
     if (m_isAPISecurityTrialHasBeenSet)
@@ -409,38 +371,6 @@ void ApiPkg::SetBillingItem(const string& _billingItem)
 bool ApiPkg::BillingItemHasBeenSet() const
 {
     return m_billingItemHasBeenSet;
-}
-
-int64_t ApiPkg::GetAPICPWaf() const
-{
-    return m_aPICPWaf;
-}
-
-void ApiPkg::SetAPICPWaf(const int64_t& _aPICPWaf)
-{
-    m_aPICPWaf = _aPICPWaf;
-    m_aPICPWafHasBeenSet = true;
-}
-
-bool ApiPkg::APICPWafHasBeenSet() const
-{
-    return m_aPICPWafHasBeenSet;
-}
-
-int64_t ApiPkg::GetAPINPWaf() const
-{
-    return m_aPINPWaf;
-}
-
-void ApiPkg::SetAPINPWaf(const int64_t& _aPINPWaf)
-{
-    m_aPINPWaf = _aPINPWaf;
-    m_aPINPWafHasBeenSet = true;
-}
-
-bool ApiPkg::APINPWafHasBeenSet() const
-{
-    return m_aPINPWafHasBeenSet;
 }
 
 int64_t ApiPkg::GetIsAPISecurityTrial() const

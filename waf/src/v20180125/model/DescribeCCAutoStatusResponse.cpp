@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/waf/v20180125/model/DescribeCCRuleListResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeCCAutoStatusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,12 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-DescribeCCRuleListResponse::DescribeCCRuleListResponse() :
-    m_dataHasBeenSet(false)
+DescribeCCAutoStatusResponse::DescribeCCAutoStatusResponse() :
+    m_autoCCSwitchHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeCCRuleListResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeCCAutoStatusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome DescribeCCRuleListResponse::Deserialize(const string &payloa
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    if (rsp.HasMember("AutoCCSwitch") && !rsp["AutoCCSwitch"].IsNull())
     {
-        if (!rsp["Data"].IsObject())
+        if (!rsp["AutoCCSwitch"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoCCSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_dataHasBeenSet = true;
+        m_autoCCSwitch = rsp["AutoCCSwitch"].GetInt64();
+        m_autoCCSwitchHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeCCRuleListResponse::ToJsonString() const
+string DescribeCCAutoStatusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dataHasBeenSet)
+    if (m_autoCCSwitchHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "AutoCCSwitch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_data.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_autoCCSwitch, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string DescribeCCRuleListResponse::ToJsonString() const
 }
 
 
-CCRuleLists DescribeCCRuleListResponse::GetData() const
+int64_t DescribeCCAutoStatusResponse::GetAutoCCSwitch() const
 {
-    return m_data;
+    return m_autoCCSwitch;
 }
 
-bool DescribeCCRuleListResponse::DataHasBeenSet() const
+bool DescribeCCAutoStatusResponse::AutoCCSwitchHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_autoCCSwitchHasBeenSet;
 }
 
 

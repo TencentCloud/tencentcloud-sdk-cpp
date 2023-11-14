@@ -1588,6 +1588,49 @@ WafClient::DescribeBatchIpAccessControlOutcomeCallable WafClient::DescribeBatchI
     return task->get_future();
 }
 
+WafClient::DescribeCCAutoStatusOutcome WafClient::DescribeCCAutoStatus(const DescribeCCAutoStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCCAutoStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCCAutoStatusResponse rsp = DescribeCCAutoStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCCAutoStatusOutcome(rsp);
+        else
+            return DescribeCCAutoStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCCAutoStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeCCAutoStatusAsync(const DescribeCCAutoStatusRequest& request, const DescribeCCAutoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCCAutoStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeCCAutoStatusOutcomeCallable WafClient::DescribeCCAutoStatusCallable(const DescribeCCAutoStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCCAutoStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCCAutoStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeCCRuleOutcome WafClient::DescribeCCRule(const DescribeCCRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCCRule");
@@ -5157,49 +5200,6 @@ WafClient::ModifyWafAutoDenyRulesOutcomeCallable WafClient::ModifyWafAutoDenyRul
     return task->get_future();
 }
 
-WafClient::ModifyWafAutoDenyStatusOutcome WafClient::ModifyWafAutoDenyStatus(const ModifyWafAutoDenyStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyWafAutoDenyStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyWafAutoDenyStatusResponse rsp = ModifyWafAutoDenyStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyWafAutoDenyStatusOutcome(rsp);
-        else
-            return ModifyWafAutoDenyStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyWafAutoDenyStatusOutcome(outcome.GetError());
-    }
-}
-
-void WafClient::ModifyWafAutoDenyStatusAsync(const ModifyWafAutoDenyStatusRequest& request, const ModifyWafAutoDenyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWafAutoDenyStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WafClient::ModifyWafAutoDenyStatusOutcomeCallable WafClient::ModifyWafAutoDenyStatusCallable(const ModifyWafAutoDenyStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyWafAutoDenyStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWafAutoDenyStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WafClient::ModifyWafThreatenIntelligenceOutcome WafClient::ModifyWafThreatenIntelligence(const ModifyWafThreatenIntelligenceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWafThreatenIntelligence");
@@ -5537,6 +5537,49 @@ WafClient::SwitchElasticModeOutcomeCallable WafClient::SwitchElasticModeCallable
         [this, request]()
         {
             return this->SwitchElasticMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::UpsertCCAutoStatusOutcome WafClient::UpsertCCAutoStatus(const UpsertCCAutoStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpsertCCAutoStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpsertCCAutoStatusResponse rsp = UpsertCCAutoStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpsertCCAutoStatusOutcome(rsp);
+        else
+            return UpsertCCAutoStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return UpsertCCAutoStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::UpsertCCAutoStatusAsync(const UpsertCCAutoStatusRequest& request, const UpsertCCAutoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpsertCCAutoStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::UpsertCCAutoStatusOutcomeCallable WafClient::UpsertCCAutoStatusCallable(const UpsertCCAutoStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpsertCCAutoStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->UpsertCCAutoStatus(request);
         }
     );
 

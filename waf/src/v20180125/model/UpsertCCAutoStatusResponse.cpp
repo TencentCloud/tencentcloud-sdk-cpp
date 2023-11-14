@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/UpsertCCAutoStatusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,12 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-ModifyWafAutoDenyStatusResponse::ModifyWafAutoDenyStatusResponse() :
-    m_wafAutoDenyDetailsHasBeenSet(false)
+UpsertCCAutoStatusResponse::UpsertCCAutoStatusResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyWafAutoDenyStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome UpsertCCAutoStatusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome ModifyWafAutoDenyStatusResponse::Deserialize(const string &p
     }
 
 
-    if (rsp.HasMember("WafAutoDenyDetails") && !rsp["WafAutoDenyDetails"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["WafAutoDenyDetails"].IsObject())
+        if (!rsp["Data"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `WafAutoDenyDetails` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_wafAutoDenyDetails.Deserialize(rsp["WafAutoDenyDetails"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_wafAutoDenyDetailsHasBeenSet = true;
+        m_data = string(rsp["Data"].GetString());
+        m_dataHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ModifyWafAutoDenyStatusResponse::ToJsonString() const
+string UpsertCCAutoStatusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_wafAutoDenyDetailsHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "WafAutoDenyDetails";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_wafAutoDenyDetails.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string ModifyWafAutoDenyStatusResponse::ToJsonString() const
 }
 
 
-AutoDenyDetail ModifyWafAutoDenyStatusResponse::GetWafAutoDenyDetails() const
+string UpsertCCAutoStatusResponse::GetData() const
 {
-    return m_wafAutoDenyDetails;
+    return m_data;
 }
 
-bool ModifyWafAutoDenyStatusResponse::WafAutoDenyDetailsHasBeenSet() const
+bool UpsertCCAutoStatusResponse::DataHasBeenSet() const
 {
-    return m_wafAutoDenyDetailsHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeCCAutoStatusRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -22,25 +22,24 @@
 using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-ModifyWafAutoDenyStatusRequest::ModifyWafAutoDenyStatusRequest() :
-    m_wafAutoDenyDetailsHasBeenSet(false)
+DescribeCCAutoStatusRequest::DescribeCCAutoStatusRequest() :
+    m_domainHasBeenSet(false)
 {
 }
 
-string ModifyWafAutoDenyStatusRequest::ToJsonString() const
+string DescribeCCAutoStatusRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_wafAutoDenyDetailsHasBeenSet)
+    if (m_domainHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "WafAutoDenyDetails";
+        string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_wafAutoDenyDetails.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -51,20 +50,20 @@ string ModifyWafAutoDenyStatusRequest::ToJsonString() const
 }
 
 
-AutoDenyDetail ModifyWafAutoDenyStatusRequest::GetWafAutoDenyDetails() const
+string DescribeCCAutoStatusRequest::GetDomain() const
 {
-    return m_wafAutoDenyDetails;
+    return m_domain;
 }
 
-void ModifyWafAutoDenyStatusRequest::SetWafAutoDenyDetails(const AutoDenyDetail& _wafAutoDenyDetails)
+void DescribeCCAutoStatusRequest::SetDomain(const string& _domain)
 {
-    m_wafAutoDenyDetails = _wafAutoDenyDetails;
-    m_wafAutoDenyDetailsHasBeenSet = true;
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
 }
 
-bool ModifyWafAutoDenyStatusRequest::WafAutoDenyDetailsHasBeenSet() const
+bool DescribeCCAutoStatusRequest::DomainHasBeenSet() const
 {
-    return m_wafAutoDenyDetailsHasBeenSet;
+    return m_domainHasBeenSet;
 }
 
 

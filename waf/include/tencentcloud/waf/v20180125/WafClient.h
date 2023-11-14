@@ -95,6 +95,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBatchIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBatchIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeCCAutoStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeCCAutoStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCCRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCCRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCCRuleListRequest.h>
@@ -261,8 +263,6 @@
 #include <tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyRulesResponse.h>
-#include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusRequest.h>
-#include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafThreatenIntelligenceRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafThreatenIntelligenceResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWebshellStatusRequest.h>
@@ -279,6 +279,8 @@
 #include <tencentcloud/waf/v20180125/model/SwitchDomainRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/SwitchElasticModeRequest.h>
 #include <tencentcloud/waf/v20180125/model/SwitchElasticModeResponse.h>
+#include <tencentcloud/waf/v20180125/model/UpsertCCAutoStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/UpsertCCAutoStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertIpAccessControlRequest.h>
@@ -407,6 +409,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBatchIpAccessControlResponse> DescribeBatchIpAccessControlOutcome;
                 typedef std::future<DescribeBatchIpAccessControlOutcome> DescribeBatchIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeBatchIpAccessControlRequest&, DescribeBatchIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCCAutoStatusResponse> DescribeCCAutoStatusOutcome;
+                typedef std::future<DescribeCCAutoStatusOutcome> DescribeCCAutoStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeCCAutoStatusRequest&, DescribeCCAutoStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCAutoStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCCRuleResponse> DescribeCCRuleOutcome;
                 typedef std::future<DescribeCCRuleOutcome> DescribeCCRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeCCRuleRequest&, DescribeCCRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCRuleAsyncHandler;
@@ -656,9 +661,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWafAutoDenyRulesResponse> ModifyWafAutoDenyRulesOutcome;
                 typedef std::future<ModifyWafAutoDenyRulesOutcome> ModifyWafAutoDenyRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyWafAutoDenyRulesRequest&, ModifyWafAutoDenyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWafAutoDenyRulesAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyWafAutoDenyStatusResponse> ModifyWafAutoDenyStatusOutcome;
-                typedef std::future<ModifyWafAutoDenyStatusOutcome> ModifyWafAutoDenyStatusOutcomeCallable;
-                typedef std::function<void(const WafClient*, const Model::ModifyWafAutoDenyStatusRequest&, ModifyWafAutoDenyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWafAutoDenyStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWafThreatenIntelligenceResponse> ModifyWafThreatenIntelligenceOutcome;
                 typedef std::future<ModifyWafThreatenIntelligenceOutcome> ModifyWafThreatenIntelligenceOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyWafThreatenIntelligenceRequest&, ModifyWafThreatenIntelligenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWafThreatenIntelligenceAsyncHandler;
@@ -683,6 +685,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchElasticModeResponse> SwitchElasticModeOutcome;
                 typedef std::future<SwitchElasticModeOutcome> SwitchElasticModeOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::SwitchElasticModeRequest&, SwitchElasticModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchElasticModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpsertCCAutoStatusResponse> UpsertCCAutoStatusOutcome;
+                typedef std::future<UpsertCCAutoStatusOutcome> UpsertCCAutoStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::UpsertCCAutoStatusRequest&, UpsertCCAutoStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpsertCCAutoStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpsertCCRuleResponse> UpsertCCRuleOutcome;
                 typedef std::future<UpsertCCRuleOutcome> UpsertCCRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::UpsertCCRuleRequest&, UpsertCCRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpsertCCRuleAsyncHandler;
@@ -1027,9 +1032,16 @@ namespace TencentCloud
                 DescribeBatchIpAccessControlOutcomeCallable DescribeBatchIpAccessControlCallable(const Model::DescribeBatchIpAccessControlRequest& request);
 
                 /**
-                 *没有在使用。
+                 *Waf 斯巴达版本查询cc自动封堵状态
+                 * @param req DescribeCCAutoStatusRequest
+                 * @return DescribeCCAutoStatusOutcome
+                 */
+                DescribeCCAutoStatusOutcome DescribeCCAutoStatus(const Model::DescribeCCAutoStatusRequest &request);
+                void DescribeCCAutoStatusAsync(const Model::DescribeCCAutoStatusRequest& request, const DescribeCCAutoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCCAutoStatusOutcomeCallable DescribeCCAutoStatusCallable(const Model::DescribeCCAutoStatusRequest& request);
 
-Waf  CC V2 Query接口
+                /**
+                 *Waf  CC V2 Query接口
                  * @param req DescribeCCRuleRequest
                  * @return DescribeCCRuleOutcome
                  */
@@ -1780,15 +1792,6 @@ Waf  CC V2 Query接口
                 ModifyWafAutoDenyRulesOutcomeCallable ModifyWafAutoDenyRulesCallable(const Model::ModifyWafAutoDenyRulesRequest& request);
 
                 /**
-                 *配置WAF自动封禁模块状态
-                 * @param req ModifyWafAutoDenyStatusRequest
-                 * @return ModifyWafAutoDenyStatusOutcome
-                 */
-                ModifyWafAutoDenyStatusOutcome ModifyWafAutoDenyStatus(const Model::ModifyWafAutoDenyStatusRequest &request);
-                void ModifyWafAutoDenyStatusAsync(const Model::ModifyWafAutoDenyStatusRequest& request, const ModifyWafAutoDenyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyWafAutoDenyStatusOutcomeCallable ModifyWafAutoDenyStatusCallable(const Model::ModifyWafAutoDenyStatusRequest& request);
-
-                /**
                  *配置WAF威胁情报封禁模块详情
                  * @param req ModifyWafThreatenIntelligenceRequest
                  * @return ModifyWafThreatenIntelligenceOutcome
@@ -1859,6 +1862,15 @@ Waf  CC V2 Query接口
                 SwitchElasticModeOutcome SwitchElasticMode(const Model::SwitchElasticModeRequest &request);
                 void SwitchElasticModeAsync(const Model::SwitchElasticModeRequest& request, const SwitchElasticModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchElasticModeOutcomeCallable SwitchElasticModeCallable(const Model::SwitchElasticModeRequest& request);
+
+                /**
+                 *Waf 斯巴达版本更新cc自动封堵状态
+                 * @param req UpsertCCAutoStatusRequest
+                 * @return UpsertCCAutoStatusOutcome
+                 */
+                UpsertCCAutoStatusOutcome UpsertCCAutoStatus(const Model::UpsertCCAutoStatusRequest &request);
+                void UpsertCCAutoStatusAsync(const Model::UpsertCCAutoStatusRequest& request, const UpsertCCAutoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpsertCCAutoStatusOutcomeCallable UpsertCCAutoStatusCallable(const Model::UpsertCCAutoStatusRequest& request);
 
                 /**
                  *Waf  CC V2 Upsert接口

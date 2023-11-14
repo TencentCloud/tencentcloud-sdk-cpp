@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYWAFAUTODENYSTATUSREQUEST_H_
-#define TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYWAFAUTODENYSTATUSREQUEST_H_
+#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECCAUTOSTATUSREQUEST_H_
+#define TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECCAUTOSTATUSREQUEST_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/waf/v20180125/model/AutoDenyDetail.h>
 
 
 namespace TencentCloud
@@ -33,44 +32,44 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ModifyWafAutoDenyStatus请求参数结构体
+                * DescribeCCAutoStatus请求参数结构体
                 */
-                class ModifyWafAutoDenyStatusRequest : public AbstractModel
+                class DescribeCCAutoStatusRequest : public AbstractModel
                 {
                 public:
-                    ModifyWafAutoDenyStatusRequest();
-                    ~ModifyWafAutoDenyStatusRequest() = default;
+                    DescribeCCAutoStatusRequest();
+                    ~DescribeCCAutoStatusRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取WAF 自动封禁配置项
-                     * @return WafAutoDenyDetails WAF 自动封禁配置项
+                     * 获取域名
+                     * @return Domain 域名
                      * 
                      */
-                    AutoDenyDetail GetWafAutoDenyDetails() const;
+                    std::string GetDomain() const;
 
                     /**
-                     * 设置WAF 自动封禁配置项
-                     * @param _wafAutoDenyDetails WAF 自动封禁配置项
+                     * 设置域名
+                     * @param _domain 域名
                      * 
                      */
-                    void SetWafAutoDenyDetails(const AutoDenyDetail& _wafAutoDenyDetails);
+                    void SetDomain(const std::string& _domain);
 
                     /**
-                     * 判断参数 WafAutoDenyDetails 是否已赋值
-                     * @return WafAutoDenyDetails 是否已赋值
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
                      * 
                      */
-                    bool WafAutoDenyDetailsHasBeenSet() const;
+                    bool DomainHasBeenSet() const;
 
                 private:
 
                     /**
-                     * WAF 自动封禁配置项
+                     * 域名
                      */
-                    AutoDenyDetail m_wafAutoDenyDetails;
-                    bool m_wafAutoDenyDetailsHasBeenSet;
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }
@@ -78,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYWAFAUTODENYSTATUSREQUEST_H_
+#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECCAUTOSTATUSREQUEST_H_

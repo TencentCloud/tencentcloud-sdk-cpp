@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYWAFAUTODENYSTATUSRESPONSE_H_
-#define TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYWAFAUTODENYSTATUSRESPONSE_H_
+#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_UPSERTCCAUTOSTATUSRESPONSE_H_
+#define TENCENTCLOUD_WAF_V20180125_MODEL_UPSERTCCAUTOSTATUSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/waf/v20180125/model/AutoDenyDetail.h>
 
 
 namespace TencentCloud
@@ -33,38 +32,41 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ModifyWafAutoDenyStatus返回参数结构体
+                * UpsertCCAutoStatus返回参数结构体
                 */
-                class ModifyWafAutoDenyStatusResponse : public AbstractModel
+                class UpsertCCAutoStatusResponse : public AbstractModel
                 {
                 public:
-                    ModifyWafAutoDenyStatusResponse();
-                    ~ModifyWafAutoDenyStatusResponse() = default;
+                    UpsertCCAutoStatusResponse();
+                    ~UpsertCCAutoStatusResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取WAF 自动封禁配置项
-                     * @return WafAutoDenyDetails WAF 自动封禁配置项
+                     * 获取正常情况为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data 正常情况为null
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    AutoDenyDetail GetWafAutoDenyDetails() const;
+                    std::string GetData() const;
 
                     /**
-                     * 判断参数 WafAutoDenyDetails 是否已赋值
-                     * @return WafAutoDenyDetails 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool WafAutoDenyDetailsHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * WAF 自动封禁配置项
+                     * 正常情况为null
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    AutoDenyDetail m_wafAutoDenyDetails;
-                    bool m_wafAutoDenyDetailsHasBeenSet;
+                    std::string m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -72,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYWAFAUTODENYSTATUSRESPONSE_H_
+#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_UPSERTCCAUTOSTATUSRESPONSE_H_

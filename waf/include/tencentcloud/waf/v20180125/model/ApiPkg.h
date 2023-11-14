@@ -272,60 +272,6 @@ namespace TencentCloud
                     bool BillingItemHasBeenSet() const;
 
                     /**
-                     * 获取1 API安全6折
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return APICPWaf 1 API安全6折
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetAPICPWaf() const;
-
-                    /**
-                     * 设置1 API安全6折
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aPICPWaf 1 API安全6折
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetAPICPWaf(const int64_t& _aPICPWaf);
-
-                    /**
-                     * 判断参数 APICPWaf 是否已赋值
-                     * @return APICPWaf 是否已赋值
-                     * 
-                     */
-                    bool APICPWafHasBeenSet() const;
-
-                    /**
-                     * 获取1 表示5折折扣
-2 表示4折折扣
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return APINPWaf 1 表示5折折扣
-2 表示4折折扣
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetAPINPWaf() const;
-
-                    /**
-                     * 设置1 表示5折折扣
-2 表示4折折扣
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aPINPWaf 1 表示5折折扣
-2 表示4折折扣
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetAPINPWaf(const int64_t& _aPINPWaf);
-
-                    /**
-                     * 判断参数 APINPWaf 是否已赋值
-                     * @return APINPWaf 是否已赋值
-                     * 
-                     */
-                    bool APINPWafHasBeenSet() const;
-
-                    /**
                      * 获取api安全7天试用标识。1试用。0没试用
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAPISecurityTrial api安全7天试用标识。1试用。0没试用
@@ -414,21 +360,6 @@ namespace TencentCloud
                      */
                     std::string m_billingItem;
                     bool m_billingItemHasBeenSet;
-
-                    /**
-                     * 1 API安全6折
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_aPICPWaf;
-                    bool m_aPICPWafHasBeenSet;
-
-                    /**
-                     * 1 表示5折折扣
-2 表示4折折扣
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_aPINPWaf;
-                    bool m_aPINPWafHasBeenSet;
 
                     /**
                      * api安全7天试用标识。1试用。0没试用

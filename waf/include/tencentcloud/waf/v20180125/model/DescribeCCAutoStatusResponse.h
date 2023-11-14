@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECCRULELISTRESPONSE_H_
-#define TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECCRULELISTRESPONSE_H_
+#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECCAUTOSTATUSRESPONSE_H_
+#define TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECCAUTOSTATUSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/waf/v20180125/model/CCRuleLists.h>
 
 
 namespace TencentCloud
@@ -33,41 +32,38 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeCCRuleList返回参数结构体
+                * DescribeCCAutoStatus返回参数结构体
                 */
-                class DescribeCCRuleListResponse : public AbstractModel
+                class DescribeCCAutoStatusResponse : public AbstractModel
                 {
                 public:
-                    DescribeCCRuleListResponse();
-                    ~DescribeCCRuleListResponse() = default;
+                    DescribeCCAutoStatusResponse();
+                    ~DescribeCCAutoStatusResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取查询到的CC规则的列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 查询到的CC规则的列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取配置状态
+                     * @return AutoCCSwitch 配置状态
                      * 
                      */
-                    CCRuleLists GetData() const;
+                    int64_t GetAutoCCSwitch() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 AutoCCSwitch 是否已赋值
+                     * @return AutoCCSwitch 是否已赋值
                      * 
                      */
-                    bool DataHasBeenSet() const;
+                    bool AutoCCSwitchHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 查询到的CC规则的列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 配置状态
                      */
-                    CCRuleLists m_data;
-                    bool m_dataHasBeenSet;
+                    int64_t m_autoCCSwitch;
+                    bool m_autoCCSwitchHasBeenSet;
 
                 };
             }
@@ -75,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECCRULELISTRESPONSE_H_
+#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECCAUTOSTATUSRESPONSE_H_

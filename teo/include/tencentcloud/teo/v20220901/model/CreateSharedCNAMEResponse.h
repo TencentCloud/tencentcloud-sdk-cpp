@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取共享 CNAME。格式为：<自定义前缀>+<ZoneId中的12位随机字符串>+"share.dnse[0-5].com"。
-                     * @return SharedCNAME 共享 CNAME。格式为：<自定义前缀>+<ZoneId中的12位随机字符串>+"share.dnse[0-5].com"。
+                     * 获取共享 CNAME。格式为：`<自定义前缀>+<ZoneId中的12位随机字符串>+share.dnse[0-5].com`。
+                     * @return SharedCNAME 共享 CNAME。格式为：`<自定义前缀>+<ZoneId中的12位随机字符串>+share.dnse[0-5].com`。
                      * 
                      */
                     std::string GetSharedCNAME() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 共享 CNAME。格式为：<自定义前缀>+<ZoneId中的12位随机字符串>+"share.dnse[0-5].com"。
+                     * 共享 CNAME。格式为：`<自定义前缀>+<ZoneId中的12位随机字符串>+share.dnse[0-5].com`。
                      */
                     std::string m_sharedCNAME;
                     bool m_sharedCNAMEHasBeenSet;
