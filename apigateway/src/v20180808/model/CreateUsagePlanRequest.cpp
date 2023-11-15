@@ -26,7 +26,8 @@ CreateUsagePlanRequest::CreateUsagePlanRequest() :
     m_usagePlanNameHasBeenSet(false),
     m_usagePlanDescHasBeenSet(false),
     m_maxRequestNumHasBeenSet(false),
-    m_maxRequestNumPreSecHasBeenSet(false)
+    m_maxRequestNumPreSecHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string CreateUsagePlanRequest::ToJsonString() const
         string key = "MaxRequestNumPreSec";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxRequestNumPreSec, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void CreateUsagePlanRequest::SetMaxRequestNumPreSec(const int64_t& _maxRequestNu
 bool CreateUsagePlanRequest::MaxRequestNumPreSecHasBeenSet() const
 {
     return m_maxRequestNumPreSecHasBeenSet;
+}
+
+vector<Tag> CreateUsagePlanRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateUsagePlanRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateUsagePlanRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

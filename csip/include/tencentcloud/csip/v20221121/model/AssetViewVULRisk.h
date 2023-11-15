@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取资产唯一id
-                     * @return Id 资产唯一id
+                     * 获取风险ID
+                     * @return Id 风险ID
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置资产唯一id
-                     * @param _id 资产唯一id
+                     * 设置风险ID
+                     * @param _id 风险ID
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -412,15 +412,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Describe 描述
+                     * 获取漏洞描述
+                     * @return Describe 漏洞描述
                      * 
                      */
                     std::string GetDescribe() const;
 
                     /**
-                     * 设置描述
-                     * @param _describe 描述
+                     * 设置漏洞描述
+                     * @param _describe 漏洞描述
                      * 
                      */
                     void SetDescribe(const std::string& _describe);
@@ -433,15 +433,15 @@ namespace TencentCloud
                     bool DescribeHasBeenSet() const;
 
                     /**
-                     * 获取版本名
-                     * @return AppName 版本名
+                     * 获取漏洞影响组件
+                     * @return AppName 漏洞影响组件
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置版本名
-                     * @param _appName 版本名
+                     * 设置漏洞影响组件
+                     * @param _appName 漏洞影响组件
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -454,15 +454,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取相关信息
-                     * @return References 相关信息
+                     * 获取技术参考
+                     * @return References 技术参考
                      * 
                      */
                     std::string GetReferences() const;
 
                     /**
-                     * 设置相关信息
-                     * @param _references 相关信息
+                     * 设置技术参考
+                     * @param _references 技术参考
                      * 
                      */
                     void SetReferences(const std::string& _references);
@@ -475,15 +475,15 @@ namespace TencentCloud
                     bool ReferencesHasBeenSet() const;
 
                     /**
-                     * 获取版本
-                     * @return AppVersion 版本
+                     * 获取漏洞影响版本
+                     * @return AppVersion 漏洞影响版本
                      * 
                      */
                     std::string GetAppVersion() const;
 
                     /**
-                     * 设置版本
-                     * @param _appVersion 版本
+                     * 设置漏洞影响版本
+                     * @param _appVersion 漏洞影响版本
                      * 
                      */
                     void SetAppVersion(const std::string& _appVersion);
@@ -496,15 +496,15 @@ namespace TencentCloud
                     bool AppVersionHasBeenSet() const;
 
                     /**
-                     * 获取漏洞url
-                     * @return VULURL 漏洞url
+                     * 获取风险点
+                     * @return VULURL 风险点
                      * 
                      */
                     std::string GetVULURL() const;
 
                     /**
-                     * 设置漏洞url
-                     * @param _vULURL 漏洞url
+                     * 设置风险点
+                     * @param _vULURL 风险点
                      * 
                      */
                     void SetVULURL(const std::string& _vULURL);
@@ -559,15 +559,15 @@ namespace TencentCloud
                     bool CVEHasBeenSet() const;
 
                     /**
-                     * 获取修复建议
-                     * @return Fix 修复建议
+                     * 获取修复方案
+                     * @return Fix 修复方案
                      * 
                      */
                     std::string GetFix() const;
 
                     /**
-                     * 设置修复建议
-                     * @param _fix 修复建议
+                     * 设置修复方案
+                     * @param _fix 修复方案
                      * 
                      */
                     void SetFix(const std::string& _fix);
@@ -601,15 +601,15 @@ namespace TencentCloud
                     bool POCIdHasBeenSet() const;
 
                     /**
-                     * 获取来源
-                     * @return From 来源
+                     * 获取扫描来源
+                     * @return From 扫描来源
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置来源
-                     * @param _from 来源
+                     * 设置扫描来源
+                     * @param _from 扫描来源
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -706,15 +706,15 @@ namespace TencentCloud
                     bool InstanceUUIDHasBeenSet() const;
 
                     /**
-                     * 获取负载
-                     * @return Payload 负载
+                     * 获取攻击载荷
+                     * @return Payload 攻击载荷
                      * 
                      */
                     std::string GetPayload() const;
 
                     /**
-                     * 设置负载
-                     * @param _payload 负载
+                     * 设置攻击载荷
+                     * @param _payload 攻击载荷
                      * 
                      */
                     void SetPayload(const std::string& _payload);
@@ -802,7 +802,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 资产唯一id
+                     * 风险ID
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
@@ -858,31 +858,31 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 描述
+                     * 漏洞描述
                      */
                     std::string m_describe;
                     bool m_describeHasBeenSet;
 
                     /**
-                     * 版本名
+                     * 漏洞影响组件
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 相关信息
+                     * 技术参考
                      */
                     std::string m_references;
                     bool m_referencesHasBeenSet;
 
                     /**
-                     * 版本
+                     * 漏洞影响版本
                      */
                     std::string m_appVersion;
                     bool m_appVersionHasBeenSet;
 
                     /**
-                     * 漏洞url
+                     * 风险点
                      */
                     std::string m_vULURL;
                     bool m_vULURLHasBeenSet;
@@ -900,7 +900,7 @@ namespace TencentCloud
                     bool m_cVEHasBeenSet;
 
                     /**
-                     * 修复建议
+                     * 修复方案
                      */
                     std::string m_fix;
                     bool m_fixHasBeenSet;
@@ -912,7 +912,7 @@ namespace TencentCloud
                     bool m_pOCIdHasBeenSet;
 
                     /**
-                     * 来源
+                     * 扫描来源
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
@@ -942,7 +942,7 @@ namespace TencentCloud
                     bool m_instanceUUIDHasBeenSet;
 
                     /**
-                     * 负载
+                     * 攻击载荷
                      */
                     std::string m_payload;
                     bool m_payloadHasBeenSet;

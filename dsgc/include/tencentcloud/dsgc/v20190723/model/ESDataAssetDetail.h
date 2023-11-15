@@ -446,6 +446,48 @@ namespace TencentCloud
                      */
                     bool RuleNameHasBeenSet() const;
 
+                    /**
+                     * 获取0系统识别，1人工打标
+                     * @return IdentifyType 0系统识别，1人工打标
+                     * 
+                     */
+                    int64_t GetIdentifyType() const;
+
+                    /**
+                     * 设置0系统识别，1人工打标
+                     * @param _identifyType 0系统识别，1人工打标
+                     * 
+                     */
+                    void SetIdentifyType(const int64_t& _identifyType);
+
+                    /**
+                     * 判断参数 IdentifyType 是否已赋值
+                     * @return IdentifyType 是否已赋值
+                     * 
+                     */
+                    bool IdentifyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取0未核查，1已核查
+                     * @return CheckStatus 0未核查，1已核查
+                     * 
+                     */
+                    int64_t GetCheckStatus() const;
+
+                    /**
+                     * 设置0未核查，1已核查
+                     * @param _checkStatus 0未核查，1已核查
+                     * 
+                     */
+                    void SetCheckStatus(const int64_t& _checkStatus);
+
+                    /**
+                     * 判断参数 CheckStatus 是否已赋值
+                     * @return CheckStatus 是否已赋值
+                     * 
+                     */
+                    bool CheckStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +601,18 @@ namespace TencentCloud
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 0系统识别，1人工打标
+                     */
+                    int64_t m_identifyType;
+                    bool m_identifyTypeHasBeenSet;
+
+                    /**
+                     * 0未核查，1已核查
+                     */
+                    int64_t m_checkStatus;
+                    bool m_checkStatusHasBeenSet;
 
                 };
             }

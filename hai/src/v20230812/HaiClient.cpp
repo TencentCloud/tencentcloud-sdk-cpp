@@ -40,6 +40,307 @@ HaiClient::HaiClient(const Credential &credential, const string &region, const C
 }
 
 
+HaiClient::DescribeApplicationsOutcome HaiClient::DescribeApplications(const DescribeApplicationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationsResponse rsp = DescribeApplicationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationsOutcome(rsp);
+        else
+            return DescribeApplicationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationsOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeApplicationsAsync(const DescribeApplicationsRequest& request, const DescribeApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApplications(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::DescribeApplicationsOutcomeCallable HaiClient::DescribeApplicationsCallable(const DescribeApplicationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApplicationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApplications(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::DescribeInstanceNetworkStatusOutcome HaiClient::DescribeInstanceNetworkStatus(const DescribeInstanceNetworkStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceNetworkStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceNetworkStatusResponse rsp = DescribeInstanceNetworkStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceNetworkStatusOutcome(rsp);
+        else
+            return DescribeInstanceNetworkStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceNetworkStatusOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeInstanceNetworkStatusAsync(const DescribeInstanceNetworkStatusRequest& request, const DescribeInstanceNetworkStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceNetworkStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::DescribeInstanceNetworkStatusOutcomeCallable HaiClient::DescribeInstanceNetworkStatusCallable(const DescribeInstanceNetworkStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceNetworkStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceNetworkStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::DescribeInstancesOutcome HaiClient::DescribeInstances(const DescribeInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesResponse rsp = DescribeInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesOutcome(rsp);
+        else
+            return DescribeInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::DescribeInstancesOutcomeCallable HaiClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::DescribeRegionsOutcome HaiClient::DescribeRegions(const DescribeRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegionsResponse rsp = DescribeRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegionsOutcome(rsp);
+        else
+            return DescribeRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegionsOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::DescribeRegionsOutcomeCallable HaiClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::DescribeScenesOutcome HaiClient::DescribeScenes(const DescribeScenesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScenes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScenesResponse rsp = DescribeScenesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScenesOutcome(rsp);
+        else
+            return DescribeScenesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScenesOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeScenesAsync(const DescribeScenesRequest& request, const DescribeScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScenes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::DescribeScenesOutcomeCallable HaiClient::DescribeScenesCallable(const DescribeScenesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScenesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScenes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::DescribeServiceLoginSettingsOutcome HaiClient::DescribeServiceLoginSettings(const DescribeServiceLoginSettingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceLoginSettings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceLoginSettingsResponse rsp = DescribeServiceLoginSettingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceLoginSettingsOutcome(rsp);
+        else
+            return DescribeServiceLoginSettingsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceLoginSettingsOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeServiceLoginSettingsAsync(const DescribeServiceLoginSettingsRequest& request, const DescribeServiceLoginSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceLoginSettings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::DescribeServiceLoginSettingsOutcomeCallable HaiClient::DescribeServiceLoginSettingsCallable(const DescribeServiceLoginSettingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceLoginSettingsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceLoginSettings(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::InquirePriceRunInstancesOutcome HaiClient::InquirePriceRunInstances(const InquirePriceRunInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceRunInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceRunInstancesResponse rsp = InquirePriceRunInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceRunInstancesOutcome(rsp);
+        else
+            return InquirePriceRunInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceRunInstancesOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::InquirePriceRunInstancesAsync(const InquirePriceRunInstancesRequest& request, const InquirePriceRunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceRunInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::InquirePriceRunInstancesOutcomeCallable HaiClient::InquirePriceRunInstancesCallable(const InquirePriceRunInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceRunInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceRunInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HaiClient::RunInstancesOutcome HaiClient::RunInstances(const RunInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RunInstances");

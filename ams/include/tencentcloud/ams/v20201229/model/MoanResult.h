@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表改音频中无呻吟/娇喘相关违规内容；
+                     * 获取固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label 固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表改音频中无呻吟/娇喘相关违规内容；
+                     * @return Label 固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表改音频中无呻吟/娇喘相关违规内容；
+                     * 设置固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _label 固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表改音频中无呻吟/娇喘相关违规内容；
+                     * @param _label 固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -195,7 +195,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表改音频中无呻吟/娇喘相关违规内容；
+                     * 固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;

@@ -53,7 +53,17 @@ UsedCarPurchaseInvoice::UsedCarPurchaseInvoice() :
     m_remarkHasBeenSet(false),
     m_formTypeHasBeenSet(false),
     m_formNameHasBeenSet(false),
-    m_companySealMarkHasBeenSet(false)
+    m_companySealMarkHasBeenSet(false),
+    m_auctionOrgNameHasBeenSet(false),
+    m_auctionOrgAddressHasBeenSet(false),
+    m_auctionOrgTaxIDHasBeenSet(false),
+    m_auctionOrgBankAccountHasBeenSet(false),
+    m_auctionOrgPhoneHasBeenSet(false),
+    m_issuerHasBeenSet(false),
+    m_taxCodeHasBeenSet(false),
+    m_machineSerialNumberHasBeenSet(false),
+    m_machineCodeHasBeenSet(false),
+    m_machineNumberHasBeenSet(false)
 {
 }
 
@@ -392,6 +402,106 @@ CoreInternalOutcome UsedCarPurchaseInvoice::Deserialize(const rapidjson::Value &
         m_companySealMarkHasBeenSet = true;
     }
 
+    if (value.HasMember("AuctionOrgName") && !value["AuctionOrgName"].IsNull())
+    {
+        if (!value["AuctionOrgName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedCarPurchaseInvoice.AuctionOrgName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_auctionOrgName = string(value["AuctionOrgName"].GetString());
+        m_auctionOrgNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuctionOrgAddress") && !value["AuctionOrgAddress"].IsNull())
+    {
+        if (!value["AuctionOrgAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedCarPurchaseInvoice.AuctionOrgAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_auctionOrgAddress = string(value["AuctionOrgAddress"].GetString());
+        m_auctionOrgAddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuctionOrgTaxID") && !value["AuctionOrgTaxID"].IsNull())
+    {
+        if (!value["AuctionOrgTaxID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedCarPurchaseInvoice.AuctionOrgTaxID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_auctionOrgTaxID = string(value["AuctionOrgTaxID"].GetString());
+        m_auctionOrgTaxIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuctionOrgBankAccount") && !value["AuctionOrgBankAccount"].IsNull())
+    {
+        if (!value["AuctionOrgBankAccount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedCarPurchaseInvoice.AuctionOrgBankAccount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_auctionOrgBankAccount = string(value["AuctionOrgBankAccount"].GetString());
+        m_auctionOrgBankAccountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuctionOrgPhone") && !value["AuctionOrgPhone"].IsNull())
+    {
+        if (!value["AuctionOrgPhone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedCarPurchaseInvoice.AuctionOrgPhone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_auctionOrgPhone = string(value["AuctionOrgPhone"].GetString());
+        m_auctionOrgPhoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("Issuer") && !value["Issuer"].IsNull())
+    {
+        if (!value["Issuer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedCarPurchaseInvoice.Issuer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issuer = string(value["Issuer"].GetString());
+        m_issuerHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxCode") && !value["TaxCode"].IsNull())
+    {
+        if (!value["TaxCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedCarPurchaseInvoice.TaxCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxCode = string(value["TaxCode"].GetString());
+        m_taxCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineSerialNumber") && !value["MachineSerialNumber"].IsNull())
+    {
+        if (!value["MachineSerialNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedCarPurchaseInvoice.MachineSerialNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineSerialNumber = string(value["MachineSerialNumber"].GetString());
+        m_machineSerialNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineCode") && !value["MachineCode"].IsNull())
+    {
+        if (!value["MachineCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedCarPurchaseInvoice.MachineCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineCode = string(value["MachineCode"].GetString());
+        m_machineCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineNumber") && !value["MachineNumber"].IsNull())
+    {
+        if (!value["MachineNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedCarPurchaseInvoice.MachineNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineNumber = string(value["MachineNumber"].GetString());
+        m_machineNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -661,6 +771,86 @@ void UsedCarPurchaseInvoice::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "CompanySealMark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_companySealMark, allocator);
+    }
+
+    if (m_auctionOrgNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuctionOrgName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auctionOrgName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_auctionOrgAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuctionOrgAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auctionOrgAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_auctionOrgTaxIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuctionOrgTaxID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auctionOrgTaxID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_auctionOrgBankAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuctionOrgBankAccount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auctionOrgBankAccount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_auctionOrgPhoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuctionOrgPhone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auctionOrgPhone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issuerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Issuer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issuer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineSerialNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineSerialNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineSerialNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1192,5 +1382,165 @@ void UsedCarPurchaseInvoice::SetCompanySealMark(const int64_t& _companySealMark)
 bool UsedCarPurchaseInvoice::CompanySealMarkHasBeenSet() const
 {
     return m_companySealMarkHasBeenSet;
+}
+
+string UsedCarPurchaseInvoice::GetAuctionOrgName() const
+{
+    return m_auctionOrgName;
+}
+
+void UsedCarPurchaseInvoice::SetAuctionOrgName(const string& _auctionOrgName)
+{
+    m_auctionOrgName = _auctionOrgName;
+    m_auctionOrgNameHasBeenSet = true;
+}
+
+bool UsedCarPurchaseInvoice::AuctionOrgNameHasBeenSet() const
+{
+    return m_auctionOrgNameHasBeenSet;
+}
+
+string UsedCarPurchaseInvoice::GetAuctionOrgAddress() const
+{
+    return m_auctionOrgAddress;
+}
+
+void UsedCarPurchaseInvoice::SetAuctionOrgAddress(const string& _auctionOrgAddress)
+{
+    m_auctionOrgAddress = _auctionOrgAddress;
+    m_auctionOrgAddressHasBeenSet = true;
+}
+
+bool UsedCarPurchaseInvoice::AuctionOrgAddressHasBeenSet() const
+{
+    return m_auctionOrgAddressHasBeenSet;
+}
+
+string UsedCarPurchaseInvoice::GetAuctionOrgTaxID() const
+{
+    return m_auctionOrgTaxID;
+}
+
+void UsedCarPurchaseInvoice::SetAuctionOrgTaxID(const string& _auctionOrgTaxID)
+{
+    m_auctionOrgTaxID = _auctionOrgTaxID;
+    m_auctionOrgTaxIDHasBeenSet = true;
+}
+
+bool UsedCarPurchaseInvoice::AuctionOrgTaxIDHasBeenSet() const
+{
+    return m_auctionOrgTaxIDHasBeenSet;
+}
+
+string UsedCarPurchaseInvoice::GetAuctionOrgBankAccount() const
+{
+    return m_auctionOrgBankAccount;
+}
+
+void UsedCarPurchaseInvoice::SetAuctionOrgBankAccount(const string& _auctionOrgBankAccount)
+{
+    m_auctionOrgBankAccount = _auctionOrgBankAccount;
+    m_auctionOrgBankAccountHasBeenSet = true;
+}
+
+bool UsedCarPurchaseInvoice::AuctionOrgBankAccountHasBeenSet() const
+{
+    return m_auctionOrgBankAccountHasBeenSet;
+}
+
+string UsedCarPurchaseInvoice::GetAuctionOrgPhone() const
+{
+    return m_auctionOrgPhone;
+}
+
+void UsedCarPurchaseInvoice::SetAuctionOrgPhone(const string& _auctionOrgPhone)
+{
+    m_auctionOrgPhone = _auctionOrgPhone;
+    m_auctionOrgPhoneHasBeenSet = true;
+}
+
+bool UsedCarPurchaseInvoice::AuctionOrgPhoneHasBeenSet() const
+{
+    return m_auctionOrgPhoneHasBeenSet;
+}
+
+string UsedCarPurchaseInvoice::GetIssuer() const
+{
+    return m_issuer;
+}
+
+void UsedCarPurchaseInvoice::SetIssuer(const string& _issuer)
+{
+    m_issuer = _issuer;
+    m_issuerHasBeenSet = true;
+}
+
+bool UsedCarPurchaseInvoice::IssuerHasBeenSet() const
+{
+    return m_issuerHasBeenSet;
+}
+
+string UsedCarPurchaseInvoice::GetTaxCode() const
+{
+    return m_taxCode;
+}
+
+void UsedCarPurchaseInvoice::SetTaxCode(const string& _taxCode)
+{
+    m_taxCode = _taxCode;
+    m_taxCodeHasBeenSet = true;
+}
+
+bool UsedCarPurchaseInvoice::TaxCodeHasBeenSet() const
+{
+    return m_taxCodeHasBeenSet;
+}
+
+string UsedCarPurchaseInvoice::GetMachineSerialNumber() const
+{
+    return m_machineSerialNumber;
+}
+
+void UsedCarPurchaseInvoice::SetMachineSerialNumber(const string& _machineSerialNumber)
+{
+    m_machineSerialNumber = _machineSerialNumber;
+    m_machineSerialNumberHasBeenSet = true;
+}
+
+bool UsedCarPurchaseInvoice::MachineSerialNumberHasBeenSet() const
+{
+    return m_machineSerialNumberHasBeenSet;
+}
+
+string UsedCarPurchaseInvoice::GetMachineCode() const
+{
+    return m_machineCode;
+}
+
+void UsedCarPurchaseInvoice::SetMachineCode(const string& _machineCode)
+{
+    m_machineCode = _machineCode;
+    m_machineCodeHasBeenSet = true;
+}
+
+bool UsedCarPurchaseInvoice::MachineCodeHasBeenSet() const
+{
+    return m_machineCodeHasBeenSet;
+}
+
+string UsedCarPurchaseInvoice::GetMachineNumber() const
+{
+    return m_machineNumber;
+}
+
+void UsedCarPurchaseInvoice::SetMachineNumber(const string& _machineNumber)
+{
+    m_machineNumber = _machineNumber;
+    m_machineNumberHasBeenSet = true;
+}
+
+bool UsedCarPurchaseInvoice::MachineNumberHasBeenSet() const
+{
+    return m_machineNumberHasBeenSet;
 }
 

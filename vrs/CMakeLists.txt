@@ -19,50 +19,58 @@ set(vrs_public_header
   )
 
 set(vrs_public_header_model
-  include/tencentcloud/vrs/v20200824/model/TrainingTexts.h
   include/tencentcloud/vrs/v20200824/model/CancelVRSTaskRequest.h
-  include/tencentcloud/vrs/v20200824/model/CancelVRSTaskResponse.h
   include/tencentcloud/vrs/v20200824/model/DescribeVRSTaskStatusResponse.h
-  include/tencentcloud/vrs/v20200824/model/CreateVRSTaskResponse.h
-  include/tencentcloud/vrs/v20200824/model/DownloadVRSModelRsp.h
-  include/tencentcloud/vrs/v20200824/model/CreateVRSTaskRespData.h
-  include/tencentcloud/vrs/v20200824/model/DetectionEnvAndSoundQualityRespData.h
-  include/tencentcloud/vrs/v20200824/model/GetTrainingTextResponse.h
-  include/tencentcloud/vrs/v20200824/model/Words.h
-  include/tencentcloud/vrs/v20200824/model/DescribeVRSTaskStatusRequest.h
-  include/tencentcloud/vrs/v20200824/model/DetectEnvAndSoundQualityRequest.h
-  include/tencentcloud/vrs/v20200824/model/DescribeVRSTaskStatusRespData.h
-  include/tencentcloud/vrs/v20200824/model/DownloadVRSModelResponse.h
-  include/tencentcloud/vrs/v20200824/model/DownloadVRSModelRequest.h
-  include/tencentcloud/vrs/v20200824/model/TrainingText.h
-  include/tencentcloud/vrs/v20200824/model/CancelVRSTaskRsp.h
   include/tencentcloud/vrs/v20200824/model/GetTrainingTextRequest.h
+  include/tencentcloud/vrs/v20200824/model/DownloadVRSModelRequest.h
+  include/tencentcloud/vrs/v20200824/model/DownloadVRSModelResponse.h
+  include/tencentcloud/vrs/v20200824/model/GetVRSVoiceTypesResponse.h
+  include/tencentcloud/vrs/v20200824/model/CancelVRSTaskResponse.h
+  include/tencentcloud/vrs/v20200824/model/CreateVRSTaskResponse.h
+  include/tencentcloud/vrs/v20200824/model/GetVRSVoiceTypesRequest.h
+  include/tencentcloud/vrs/v20200824/model/DescribeVRSTaskStatusRespData.h
+  include/tencentcloud/vrs/v20200824/model/VoiceTypeListData.h
+  include/tencentcloud/vrs/v20200824/model/Words.h
+  include/tencentcloud/vrs/v20200824/model/CreateVRSTaskRespData.h
+  include/tencentcloud/vrs/v20200824/model/GetTrainingTextResponse.h
+  include/tencentcloud/vrs/v20200824/model/DescribeVRSTaskStatusRequest.h
+  include/tencentcloud/vrs/v20200824/model/DownloadVRSModelRsp.h
   include/tencentcloud/vrs/v20200824/model/CreateVRSTaskRequest.h
+  include/tencentcloud/vrs/v20200824/model/TrainingText.h
   include/tencentcloud/vrs/v20200824/model/DetectEnvAndSoundQualityResponse.h
+  include/tencentcloud/vrs/v20200824/model/DetectionEnvAndSoundQualityRespData.h
+  include/tencentcloud/vrs/v20200824/model/VoiceTypeInfo.h
+  include/tencentcloud/vrs/v20200824/model/DetectEnvAndSoundQualityRequest.h
+  include/tencentcloud/vrs/v20200824/model/TrainingTexts.h
+  include/tencentcloud/vrs/v20200824/model/CancelVRSTaskRsp.h
   )
 
 set(vrs_src
   src/v20200824/VrsClient.cpp
-  src/v20200824/model/TrainingTexts.cpp
   src/v20200824/model/CancelVRSTaskRequest.cpp
-  src/v20200824/model/CancelVRSTaskResponse.cpp
   src/v20200824/model/DescribeVRSTaskStatusResponse.cpp
-  src/v20200824/model/CreateVRSTaskResponse.cpp
-  src/v20200824/model/DownloadVRSModelRsp.cpp
-  src/v20200824/model/CreateVRSTaskRespData.cpp
-  src/v20200824/model/DetectionEnvAndSoundQualityRespData.cpp
-  src/v20200824/model/GetTrainingTextResponse.cpp
-  src/v20200824/model/Words.cpp
-  src/v20200824/model/DescribeVRSTaskStatusRequest.cpp
-  src/v20200824/model/DetectEnvAndSoundQualityRequest.cpp
-  src/v20200824/model/DescribeVRSTaskStatusRespData.cpp
-  src/v20200824/model/DownloadVRSModelResponse.cpp
-  src/v20200824/model/DownloadVRSModelRequest.cpp
-  src/v20200824/model/TrainingText.cpp
-  src/v20200824/model/CancelVRSTaskRsp.cpp
   src/v20200824/model/GetTrainingTextRequest.cpp
+  src/v20200824/model/DownloadVRSModelRequest.cpp
+  src/v20200824/model/DownloadVRSModelResponse.cpp
+  src/v20200824/model/GetVRSVoiceTypesResponse.cpp
+  src/v20200824/model/CancelVRSTaskResponse.cpp
+  src/v20200824/model/CreateVRSTaskResponse.cpp
+  src/v20200824/model/GetVRSVoiceTypesRequest.cpp
+  src/v20200824/model/DescribeVRSTaskStatusRespData.cpp
+  src/v20200824/model/VoiceTypeListData.cpp
+  src/v20200824/model/Words.cpp
+  src/v20200824/model/CreateVRSTaskRespData.cpp
+  src/v20200824/model/GetTrainingTextResponse.cpp
+  src/v20200824/model/DescribeVRSTaskStatusRequest.cpp
+  src/v20200824/model/DownloadVRSModelRsp.cpp
   src/v20200824/model/CreateVRSTaskRequest.cpp
+  src/v20200824/model/TrainingText.cpp
   src/v20200824/model/DetectEnvAndSoundQualityResponse.cpp
+  src/v20200824/model/DetectionEnvAndSoundQualityRespData.cpp
+  src/v20200824/model/VoiceTypeInfo.cpp
+  src/v20200824/model/DetectEnvAndSoundQualityRequest.cpp
+  src/v20200824/model/TrainingTexts.cpp
+  src/v20200824/model/CancelVRSTaskRsp.cpp
   )
 
 set(vrs_include

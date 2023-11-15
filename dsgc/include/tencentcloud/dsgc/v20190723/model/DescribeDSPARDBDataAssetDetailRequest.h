@@ -84,6 +84,31 @@ namespace TencentCloud
                      */
                     bool ComplianceIdHasBeenSet() const;
 
+                    /**
+                     * 获取可信分排序，ASC-升序
+DESC降序
+                     * @return CreditScore 可信分排序，ASC-升序
+DESC降序
+                     * 
+                     */
+                    std::string GetCreditScore() const;
+
+                    /**
+                     * 设置可信分排序，ASC-升序
+DESC降序
+                     * @param _creditScore 可信分排序，ASC-升序
+DESC降序
+                     * 
+                     */
+                    void SetCreditScore(const std::string& _creditScore);
+
+                    /**
+                     * 判断参数 CreditScore 是否已赋值
+                     * @return CreditScore 是否已赋值
+                     * 
+                     */
+                    bool CreditScoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +122,13 @@ namespace TencentCloud
                      */
                     int64_t m_complianceId;
                     bool m_complianceIdHasBeenSet;
+
+                    /**
+                     * 可信分排序，ASC-升序
+DESC降序
+                     */
+                    std::string m_creditScore;
+                    bool m_creditScoreHasBeenSet;
 
                 };
             }

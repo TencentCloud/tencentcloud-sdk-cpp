@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeDSPARDBDataAssetDetailRequest::DescribeDSPARDBDataAssetDetailRequest() :
     m_dspaIdHasBeenSet(false),
-    m_complianceIdHasBeenSet(false)
+    m_complianceIdHasBeenSet(false),
+    m_creditScoreHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeDSPARDBDataAssetDetailRequest::ToJsonString() const
         string key = "ComplianceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_complianceId, allocator);
+    }
+
+    if (m_creditScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreditScore";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_creditScore.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeDSPARDBDataAssetDetailRequest::SetComplianceId(const int64_t& _comp
 bool DescribeDSPARDBDataAssetDetailRequest::ComplianceIdHasBeenSet() const
 {
     return m_complianceIdHasBeenSet;
+}
+
+string DescribeDSPARDBDataAssetDetailRequest::GetCreditScore() const
+{
+    return m_creditScore;
+}
+
+void DescribeDSPARDBDataAssetDetailRequest::SetCreditScore(const string& _creditScore)
+{
+    m_creditScore = _creditScore;
+    m_creditScoreHasBeenSet = true;
+}
+
+bool DescribeDSPARDBDataAssetDetailRequest::CreditScoreHasBeenSet() const
+{
+    return m_creditScoreHasBeenSet;
 }
 
 

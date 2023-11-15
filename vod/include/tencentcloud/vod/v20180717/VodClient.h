@@ -55,6 +55,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateImageProcessingTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreatePersonSampleRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreatePersonSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateProcedureTemplateRequest.h>
@@ -105,6 +107,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteImageProcessingTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteImageSpriteTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteImageSpriteTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeletePersonSampleRequest.h>
@@ -179,6 +183,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeImageReviewUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeJustInTimeTranscodeTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeJustInTimeTranscodeTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosRequest.h>
@@ -269,6 +275,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyHeadTailTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyImageSpriteTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyImageSpriteTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyJustInTimeTranscodeTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyJustInTimeTranscodeTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaStorageClassRequest.h>
@@ -409,6 +417,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateImageSpriteTemplateResponse> CreateImageSpriteTemplateOutcome;
                 typedef std::future<CreateImageSpriteTemplateOutcome> CreateImageSpriteTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateImageSpriteTemplateRequest&, CreateImageSpriteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageSpriteTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateJustInTimeTranscodeTemplateResponse> CreateJustInTimeTranscodeTemplateOutcome;
+                typedef std::future<CreateJustInTimeTranscodeTemplateOutcome> CreateJustInTimeTranscodeTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateJustInTimeTranscodeTemplateRequest&, CreateJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJustInTimeTranscodeTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePersonSampleResponse> CreatePersonSampleOutcome;
                 typedef std::future<CreatePersonSampleOutcome> CreatePersonSampleOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreatePersonSampleRequest&, CreatePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonSampleAsyncHandler;
@@ -484,6 +495,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteImageSpriteTemplateResponse> DeleteImageSpriteTemplateOutcome;
                 typedef std::future<DeleteImageSpriteTemplateOutcome> DeleteImageSpriteTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteImageSpriteTemplateRequest&, DeleteImageSpriteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageSpriteTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteJustInTimeTranscodeTemplateResponse> DeleteJustInTimeTranscodeTemplateOutcome;
+                typedef std::future<DeleteJustInTimeTranscodeTemplateOutcome> DeleteJustInTimeTranscodeTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteJustInTimeTranscodeTemplateRequest&, DeleteJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJustInTimeTranscodeTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteMediaResponse> DeleteMediaOutcome;
                 typedef std::future<DeleteMediaOutcome> DeleteMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteMediaRequest&, DeleteMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMediaAsyncHandler;
@@ -595,6 +609,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImageSpriteTemplatesResponse> DescribeImageSpriteTemplatesOutcome;
                 typedef std::future<DescribeImageSpriteTemplatesOutcome> DescribeImageSpriteTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeImageSpriteTemplatesRequest&, DescribeImageSpriteTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSpriteTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJustInTimeTranscodeTemplatesResponse> DescribeJustInTimeTranscodeTemplatesOutcome;
+                typedef std::future<DescribeJustInTimeTranscodeTemplatesOutcome> DescribeJustInTimeTranscodeTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeJustInTimeTranscodeTemplatesRequest&, DescribeJustInTimeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJustInTimeTranscodeTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLicenseUsageDataResponse> DescribeLicenseUsageDataOutcome;
                 typedef std::future<DescribeLicenseUsageDataOutcome> DescribeLicenseUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeLicenseUsageDataRequest&, DescribeLicenseUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicenseUsageDataAsyncHandler;
@@ -730,6 +747,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyImageSpriteTemplateResponse> ModifyImageSpriteTemplateOutcome;
                 typedef std::future<ModifyImageSpriteTemplateOutcome> ModifyImageSpriteTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyImageSpriteTemplateRequest&, ModifyImageSpriteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageSpriteTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyJustInTimeTranscodeTemplateResponse> ModifyJustInTimeTranscodeTemplateOutcome;
+                typedef std::future<ModifyJustInTimeTranscodeTemplateOutcome> ModifyJustInTimeTranscodeTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyJustInTimeTranscodeTemplateRequest&, ModifyJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJustInTimeTranscodeTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMediaInfoResponse> ModifyMediaInfoOutcome;
                 typedef std::future<ModifyMediaInfoOutcome> ModifyMediaInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyMediaInfoRequest&, ModifyMediaInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMediaInfoAsyncHandler;
@@ -1014,6 +1034,15 @@ namespace TencentCloud
                 CreateImageSpriteTemplateOutcomeCallable CreateImageSpriteTemplateCallable(const Model::CreateImageSpriteTemplateRequest& request);
 
                 /**
+                 *创建即时转码模板。
+                 * @param req CreateJustInTimeTranscodeTemplateRequest
+                 * @return CreateJustInTimeTranscodeTemplateOutcome
+                 */
+                CreateJustInTimeTranscodeTemplateOutcome CreateJustInTimeTranscodeTemplate(const Model::CreateJustInTimeTranscodeTemplateRequest &request);
+                void CreateJustInTimeTranscodeTemplateAsync(const Model::CreateJustInTimeTranscodeTemplateRequest& request, const CreateJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateJustInTimeTranscodeTemplateOutcomeCallable CreateJustInTimeTranscodeTemplateCallable(const Model::CreateJustInTimeTranscodeTemplateRequest& request);
+
+                /**
                  *该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、不适宜视频识别等视频处理。
                  * @param req CreatePersonSampleRequest
                  * @return CreatePersonSampleOutcome
@@ -1248,6 +1277,15 @@ namespace TencentCloud
                 DeleteImageSpriteTemplateOutcome DeleteImageSpriteTemplate(const Model::DeleteImageSpriteTemplateRequest &request);
                 void DeleteImageSpriteTemplateAsync(const Model::DeleteImageSpriteTemplateRequest& request, const DeleteImageSpriteTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteImageSpriteTemplateOutcomeCallable DeleteImageSpriteTemplateCallable(const Model::DeleteImageSpriteTemplateRequest& request);
+
+                /**
+                 *删除即时转码模板。
+                 * @param req DeleteJustInTimeTranscodeTemplateRequest
+                 * @return DeleteJustInTimeTranscodeTemplateOutcome
+                 */
+                DeleteJustInTimeTranscodeTemplateOutcome DeleteJustInTimeTranscodeTemplate(const Model::DeleteJustInTimeTranscodeTemplateRequest &request);
+                void DeleteJustInTimeTranscodeTemplateAsync(const Model::DeleteJustInTimeTranscodeTemplateRequest& request, const DeleteJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteJustInTimeTranscodeTemplateOutcomeCallable DeleteJustInTimeTranscodeTemplateCallable(const Model::DeleteJustInTimeTranscodeTemplateRequest& request);
 
                 /**
                  ** 删除媒体及其对应的视频处理文件（原始文件、如转码视频、雪碧图、截图、微信发布视频等）；
@@ -1626,6 +1664,15 @@ namespace TencentCloud
                 DescribeImageSpriteTemplatesOutcome DescribeImageSpriteTemplates(const Model::DescribeImageSpriteTemplatesRequest &request);
                 void DescribeImageSpriteTemplatesAsync(const Model::DescribeImageSpriteTemplatesRequest& request, const DescribeImageSpriteTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImageSpriteTemplatesOutcomeCallable DescribeImageSpriteTemplatesCallable(const Model::DescribeImageSpriteTemplatesRequest& request);
+
+                /**
+                 *获取即时转码模板列表。
+                 * @param req DescribeJustInTimeTranscodeTemplatesRequest
+                 * @return DescribeJustInTimeTranscodeTemplatesOutcome
+                 */
+                DescribeJustInTimeTranscodeTemplatesOutcome DescribeJustInTimeTranscodeTemplates(const Model::DescribeJustInTimeTranscodeTemplatesRequest &request);
+                void DescribeJustInTimeTranscodeTemplatesAsync(const Model::DescribeJustInTimeTranscodeTemplatesRequest& request, const DescribeJustInTimeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJustInTimeTranscodeTemplatesOutcomeCallable DescribeJustInTimeTranscodeTemplatesCallable(const Model::DescribeJustInTimeTranscodeTemplatesRequest& request);
 
                 /**
                  *该接口返回查询时间范围内每天 License 请求次数信息。
@@ -2113,6 +2160,15 @@ namespace TencentCloud
                 ModifyImageSpriteTemplateOutcome ModifyImageSpriteTemplate(const Model::ModifyImageSpriteTemplateRequest &request);
                 void ModifyImageSpriteTemplateAsync(const Model::ModifyImageSpriteTemplateRequest& request, const ModifyImageSpriteTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyImageSpriteTemplateOutcomeCallable ModifyImageSpriteTemplateCallable(const Model::ModifyImageSpriteTemplateRequest& request);
+
+                /**
+                 *修改即时转码模板。
+                 * @param req ModifyJustInTimeTranscodeTemplateRequest
+                 * @return ModifyJustInTimeTranscodeTemplateOutcome
+                 */
+                ModifyJustInTimeTranscodeTemplateOutcome ModifyJustInTimeTranscodeTemplate(const Model::ModifyJustInTimeTranscodeTemplateRequest &request);
+                void ModifyJustInTimeTranscodeTemplateAsync(const Model::ModifyJustInTimeTranscodeTemplateRequest& request, const ModifyJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyJustInTimeTranscodeTemplateOutcomeCallable ModifyJustInTimeTranscodeTemplateCallable(const Model::ModifyJustInTimeTranscodeTemplateRequest& request);
 
                 /**
                  *修改媒体文件的属性，包括分类、名称、描述、标签、过期时间、打点信息、视频封面、字幕信息等。

@@ -33,7 +33,9 @@ DescribeDataEnginesRequest::DescribeDataEnginesRequest() :
     m_accessTypesHasBeenSet(false),
     m_engineExecTypeHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
-    m_datasourceConnectionNameSetHasBeenSet(false)
+    m_datasourceConnectionNameSetHasBeenSet(false),
+    m_engineGenerationHasBeenSet(false),
+    m_engineTypeDetailHasBeenSet(false)
 {
 }
 
@@ -147,6 +149,22 @@ string DescribeDataEnginesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_engineGenerationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineGeneration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineGeneration.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineTypeDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineTypeDetail";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineTypeDetail.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -331,6 +349,38 @@ void DescribeDataEnginesRequest::SetDatasourceConnectionNameSet(const vector<str
 bool DescribeDataEnginesRequest::DatasourceConnectionNameSetHasBeenSet() const
 {
     return m_datasourceConnectionNameSetHasBeenSet;
+}
+
+string DescribeDataEnginesRequest::GetEngineGeneration() const
+{
+    return m_engineGeneration;
+}
+
+void DescribeDataEnginesRequest::SetEngineGeneration(const string& _engineGeneration)
+{
+    m_engineGeneration = _engineGeneration;
+    m_engineGenerationHasBeenSet = true;
+}
+
+bool DescribeDataEnginesRequest::EngineGenerationHasBeenSet() const
+{
+    return m_engineGenerationHasBeenSet;
+}
+
+string DescribeDataEnginesRequest::GetEngineTypeDetail() const
+{
+    return m_engineTypeDetail;
+}
+
+void DescribeDataEnginesRequest::SetEngineTypeDetail(const string& _engineTypeDetail)
+{
+    m_engineTypeDetail = _engineTypeDetail;
+    m_engineTypeDetailHasBeenSet = true;
+}
+
+bool DescribeDataEnginesRequest::EngineTypeDetailHasBeenSet() const
+{
+    return m_engineTypeDetailHasBeenSet;
 }
 
 

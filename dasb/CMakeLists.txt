@@ -58,7 +58,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/DescribeUserGroupMembersRequest.h
   include/tencentcloud/dasb/v20191018/model/OperationEvent.h
   include/tencentcloud/dasb/v20191018/model/ModifyCmdTemplateRequest.h
-  include/tencentcloud/dasb/v20191018/model/SessionResult.h
+  include/tencentcloud/dasb/v20191018/model/ModifyUserGroupResponse.h
   include/tencentcloud/dasb/v20191018/model/CreateUserResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeAssetSyncStatusResponse.h
   include/tencentcloud/dasb/v20191018/model/CreateAclRequest.h
@@ -123,6 +123,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/DescribeDeviceAccountsRequest.h
   include/tencentcloud/dasb/v20191018/model/DescribeDasbImageIdsResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeCmdTemplatesRequest.h
+  include/tencentcloud/dasb/v20191018/model/ModifyUserGroupRequest.h
   include/tencentcloud/dasb/v20191018/model/DeleteAclsResponse.h
   include/tencentcloud/dasb/v20191018/model/CreateUserGroupResponse.h
   include/tencentcloud/dasb/v20191018/model/DeleteDevicesRequest.h
@@ -133,6 +134,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/DeleteDeviceGroupsRequest.h
   include/tencentcloud/dasb/v20191018/model/DescribeDeviceGroupMembersResponse.h
   include/tencentcloud/dasb/v20191018/model/SearchAuditLogResponse.h
+  include/tencentcloud/dasb/v20191018/model/SessionResult.h
   include/tencentcloud/dasb/v20191018/model/Resource.h
   include/tencentcloud/dasb/v20191018/model/BindDeviceResourceRequest.h
   include/tencentcloud/dasb/v20191018/model/Acl.h
@@ -194,7 +196,7 @@ set(dasb_src
   src/v20191018/model/DescribeUserGroupMembersRequest.cpp
   src/v20191018/model/OperationEvent.cpp
   src/v20191018/model/ModifyCmdTemplateRequest.cpp
-  src/v20191018/model/SessionResult.cpp
+  src/v20191018/model/ModifyUserGroupResponse.cpp
   src/v20191018/model/CreateUserResponse.cpp
   src/v20191018/model/DescribeAssetSyncStatusResponse.cpp
   src/v20191018/model/CreateAclRequest.cpp
@@ -259,6 +261,7 @@ set(dasb_src
   src/v20191018/model/DescribeDeviceAccountsRequest.cpp
   src/v20191018/model/DescribeDasbImageIdsResponse.cpp
   src/v20191018/model/DescribeCmdTemplatesRequest.cpp
+  src/v20191018/model/ModifyUserGroupRequest.cpp
   src/v20191018/model/DeleteAclsResponse.cpp
   src/v20191018/model/CreateUserGroupResponse.cpp
   src/v20191018/model/DeleteDevicesRequest.cpp
@@ -269,6 +272,7 @@ set(dasb_src
   src/v20191018/model/DeleteDeviceGroupsRequest.cpp
   src/v20191018/model/DescribeDeviceGroupMembersResponse.cpp
   src/v20191018/model/SearchAuditLogResponse.cpp
+  src/v20191018/model/SessionResult.cpp
   src/v20191018/model/Resource.cpp
   src/v20191018/model/BindDeviceResourceRequest.cpp
   src/v20191018/model/Acl.cpp

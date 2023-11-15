@@ -28,7 +28,8 @@ McuWaterMarkText::McuWaterMarkText() :
     m_locationYHasBeenSet(false),
     m_fontSizeHasBeenSet(false),
     m_fontColorHasBeenSet(false),
-    m_backGroundColorHasBeenSet(false)
+    m_backGroundColorHasBeenSet(false),
+    m_dynamicPosTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome McuWaterMarkText::Deserialize(const rapidjson::Value &value)
         m_backGroundColorHasBeenSet = true;
     }
 
+    if (value.HasMember("DynamicPosType") && !value["DynamicPosType"].IsNull())
+    {
+        if (!value["DynamicPosType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuWaterMarkText.DynamicPosType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dynamicPosType = value["DynamicPosType"].GetUint64();
+        m_dynamicPosTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void McuWaterMarkText::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "BackGroundColor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backGroundColor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dynamicPosTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamicPosType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dynamicPosType, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void McuWaterMarkText::SetBackGroundColor(const string& _backGroundColor)
 bool McuWaterMarkText::BackGroundColorHasBeenSet() const
 {
     return m_backGroundColorHasBeenSet;
+}
+
+uint64_t McuWaterMarkText::GetDynamicPosType() const
+{
+    return m_dynamicPosType;
+}
+
+void McuWaterMarkText::SetDynamicPosType(const uint64_t& _dynamicPosType)
+{
+    m_dynamicPosType = _dynamicPosType;
+    m_dynamicPosTypeHasBeenSet = true;
+}
+
+bool McuWaterMarkText::DynamicPosTypeHasBeenSet() const
+{
+    return m_dynamicPosTypeHasBeenSet;
 }
 

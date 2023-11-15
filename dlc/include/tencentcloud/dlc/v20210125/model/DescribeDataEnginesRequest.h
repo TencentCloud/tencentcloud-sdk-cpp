@@ -274,6 +274,48 @@ namespace TencentCloud
                      */
                     bool DatasourceConnectionNameSetHasBeenSet() const;
 
+                    /**
+                     * 获取引擎版本，有效值：Native/SuperSQL，为空时默认获取SuperSQL引擎
+                     * @return EngineGeneration 引擎版本，有效值：Native/SuperSQL，为空时默认获取SuperSQL引擎
+                     * 
+                     */
+                    std::string GetEngineGeneration() const;
+
+                    /**
+                     * 设置引擎版本，有效值：Native/SuperSQL，为空时默认获取SuperSQL引擎
+                     * @param _engineGeneration 引擎版本，有效值：Native/SuperSQL，为空时默认获取SuperSQL引擎
+                     * 
+                     */
+                    void SetEngineGeneration(const std::string& _engineGeneration);
+
+                    /**
+                     * 判断参数 EngineGeneration 是否已赋值
+                     * @return EngineGeneration 是否已赋值
+                     * 
+                     */
+                    bool EngineGenerationHasBeenSet() const;
+
+                    /**
+                     * 获取引擎类型，支持：SparkSQL、SparkBatch、PrestoSQL、Kyuubi
+                     * @return EngineTypeDetail 引擎类型，支持：SparkSQL、SparkBatch、PrestoSQL、Kyuubi
+                     * 
+                     */
+                    std::string GetEngineTypeDetail() const;
+
+                    /**
+                     * 设置引擎类型，支持：SparkSQL、SparkBatch、PrestoSQL、Kyuubi
+                     * @param _engineTypeDetail 引擎类型，支持：SparkSQL、SparkBatch、PrestoSQL、Kyuubi
+                     * 
+                     */
+                    void SetEngineTypeDetail(const std::string& _engineTypeDetail);
+
+                    /**
+                     * 判断参数 EngineTypeDetail 是否已赋值
+                     * @return EngineTypeDetail 是否已赋值
+                     * 
+                     */
+                    bool EngineTypeDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +383,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_datasourceConnectionNameSet;
                     bool m_datasourceConnectionNameSetHasBeenSet;
+
+                    /**
+                     * 引擎版本，有效值：Native/SuperSQL，为空时默认获取SuperSQL引擎
+                     */
+                    std::string m_engineGeneration;
+                    bool m_engineGenerationHasBeenSet;
+
+                    /**
+                     * 引擎类型，支持：SparkSQL、SparkBatch、PrestoSQL、Kyuubi
+                     */
+                    std::string m_engineTypeDetail;
+                    bool m_engineTypeDetailHasBeenSet;
 
                 };
             }

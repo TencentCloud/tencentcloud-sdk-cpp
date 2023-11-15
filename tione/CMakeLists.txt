@@ -89,6 +89,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreateTrainingModelRequest.h
   include/tencentcloud/tione/v20211111/model/SchemaInfo.h
   include/tencentcloud/tione/v20211111/model/StartCmdInfo.h
+  include/tencentcloud/tione/v20211111/model/Event.h
   include/tencentcloud/tione/v20211111/model/DescribeAPIConfigsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.h
@@ -126,6 +127,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeTrainingFrameworksRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeBatchTasksResponse.h
   include/tencentcloud/tione/v20211111/model/CronScaleJob.h
+  include/tencentcloud/tione/v20211111/model/DescribeNotebooksResponse.h
   include/tencentcloud/tione/v20211111/model/InferTemplateGroup.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceHotUpdatedResponse.h
   include/tencentcloud/tione/v20211111/model/DatasetInfo.h
@@ -161,7 +163,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/TextLabelDistributionDetailInfoFifthClass.h
   include/tencentcloud/tione/v20211111/model/BatchTaskInstance.h
   include/tencentcloud/tione/v20211111/model/CreateBatchTaskResponse.h
-  include/tencentcloud/tione/v20211111/model/DescribeNotebooksResponse.h
+  include/tencentcloud/tione/v20211111/model/DescribeEventsResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/DatasetGroup.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelsRequest.h
@@ -170,6 +172,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/Pod.h
   include/tencentcloud/tione/v20211111/model/DescribeLatestTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/ResourceInfo.h
+  include/tencentcloud/tione/v20211111/model/OcrLabelInfo.h
   include/tencentcloud/tione/v20211111/model/DeleteBatchTaskRequest.h
   include/tencentcloud/tione/v20211111/model/GroupResource.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceCallInfoResponse.h
@@ -249,7 +252,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsResponse.h
   include/tencentcloud/tione/v20211111/model/ModelAccelerateTask.h
   include/tencentcloud/tione/v20211111/model/EnvVar.h
-  include/tencentcloud/tione/v20211111/model/OcrLabelInfo.h
+  include/tencentcloud/tione/v20211111/model/DescribeEventsRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelRequest.h
   include/tencentcloud/tione/v20211111/model/PointInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceHotUpdatedRequest.h
@@ -407,6 +410,7 @@ set(tione_src
   src/v20211111/model/CreateTrainingModelRequest.cpp
   src/v20211111/model/SchemaInfo.cpp
   src/v20211111/model/StartCmdInfo.cpp
+  src/v20211111/model/Event.cpp
   src/v20211111/model/DescribeAPIConfigsRequest.cpp
   src/v20211111/model/DescribeModelServiceGroupsResponse.cpp
   src/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.cpp
@@ -444,6 +448,7 @@ set(tione_src
   src/v20211111/model/DescribeTrainingFrameworksRequest.cpp
   src/v20211111/model/DescribeBatchTasksResponse.cpp
   src/v20211111/model/CronScaleJob.cpp
+  src/v20211111/model/DescribeNotebooksResponse.cpp
   src/v20211111/model/InferTemplateGroup.cpp
   src/v20211111/model/DescribeModelServiceHotUpdatedResponse.cpp
   src/v20211111/model/DatasetInfo.cpp
@@ -479,7 +484,7 @@ set(tione_src
   src/v20211111/model/TextLabelDistributionDetailInfoFifthClass.cpp
   src/v20211111/model/BatchTaskInstance.cpp
   src/v20211111/model/CreateBatchTaskResponse.cpp
-  src/v20211111/model/DescribeNotebooksResponse.cpp
+  src/v20211111/model/DescribeEventsResponse.cpp
   src/v20211111/model/DeleteModelServiceResponse.cpp
   src/v20211111/model/DatasetGroup.cpp
   src/v20211111/model/DescribeTrainingModelsRequest.cpp
@@ -488,6 +493,7 @@ set(tione_src
   src/v20211111/model/Pod.cpp
   src/v20211111/model/DescribeLatestTrainingMetricsRequest.cpp
   src/v20211111/model/ResourceInfo.cpp
+  src/v20211111/model/OcrLabelInfo.cpp
   src/v20211111/model/DeleteBatchTaskRequest.cpp
   src/v20211111/model/GroupResource.cpp
   src/v20211111/model/DescribeModelServiceCallInfoResponse.cpp
@@ -567,7 +573,7 @@ set(tione_src
   src/v20211111/model/DescribeTrainingTaskPodsResponse.cpp
   src/v20211111/model/ModelAccelerateTask.cpp
   src/v20211111/model/EnvVar.cpp
-  src/v20211111/model/OcrLabelInfo.cpp
+  src/v20211111/model/DescribeEventsRequest.cpp
   src/v20211111/model/DeleteTrainingModelRequest.cpp
   src/v20211111/model/PointInfo.cpp
   src/v20211111/model/DescribeModelServiceHotUpdatedRequest.cpp

@@ -38,7 +38,10 @@ DspaRDBDataAssetDetail::DspaRDBDataAssetDetail() :
     m_categoryIdHasBeenSet(false),
     m_dataSourceNameHasBeenSet(false),
     m_safeGuardHasBeenSet(false),
-    m_categoryFullPathHasBeenSet(false)
+    m_categoryFullPathHasBeenSet(false),
+    m_identifyTypeHasBeenSet(false),
+    m_checkStatusHasBeenSet(false),
+    m_isSensitiveDataHasBeenSet(false)
 {
 }
 
@@ -234,6 +237,36 @@ CoreInternalOutcome DspaRDBDataAssetDetail::Deserialize(const rapidjson::Value &
         m_categoryFullPathHasBeenSet = true;
     }
 
+    if (value.HasMember("IdentifyType") && !value["IdentifyType"].IsNull())
+    {
+        if (!value["IdentifyType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaRDBDataAssetDetail.IdentifyType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_identifyType = value["IdentifyType"].GetInt64();
+        m_identifyTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckStatus") && !value["CheckStatus"].IsNull())
+    {
+        if (!value["CheckStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaRDBDataAssetDetail.CheckStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkStatus = value["CheckStatus"].GetInt64();
+        m_checkStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsSensitiveData") && !value["IsSensitiveData"].IsNull())
+    {
+        if (!value["IsSensitiveData"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaRDBDataAssetDetail.IsSensitiveData` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSensitiveData = value["IsSensitiveData"].GetInt64();
+        m_isSensitiveDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +417,30 @@ void DspaRDBDataAssetDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "CategoryFullPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_categoryFullPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_identifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_identifyType, allocator);
+    }
+
+    if (m_checkStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkStatus, allocator);
+    }
+
+    if (m_isSensitiveDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSensitiveData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSensitiveData, allocator);
     }
 
 }
@@ -675,5 +732,53 @@ void DspaRDBDataAssetDetail::SetCategoryFullPath(const string& _categoryFullPath
 bool DspaRDBDataAssetDetail::CategoryFullPathHasBeenSet() const
 {
     return m_categoryFullPathHasBeenSet;
+}
+
+int64_t DspaRDBDataAssetDetail::GetIdentifyType() const
+{
+    return m_identifyType;
+}
+
+void DspaRDBDataAssetDetail::SetIdentifyType(const int64_t& _identifyType)
+{
+    m_identifyType = _identifyType;
+    m_identifyTypeHasBeenSet = true;
+}
+
+bool DspaRDBDataAssetDetail::IdentifyTypeHasBeenSet() const
+{
+    return m_identifyTypeHasBeenSet;
+}
+
+int64_t DspaRDBDataAssetDetail::GetCheckStatus() const
+{
+    return m_checkStatus;
+}
+
+void DspaRDBDataAssetDetail::SetCheckStatus(const int64_t& _checkStatus)
+{
+    m_checkStatus = _checkStatus;
+    m_checkStatusHasBeenSet = true;
+}
+
+bool DspaRDBDataAssetDetail::CheckStatusHasBeenSet() const
+{
+    return m_checkStatusHasBeenSet;
+}
+
+int64_t DspaRDBDataAssetDetail::GetIsSensitiveData() const
+{
+    return m_isSensitiveData;
+}
+
+void DspaRDBDataAssetDetail::SetIsSensitiveData(const int64_t& _isSensitiveData)
+{
+    m_isSensitiveData = _isSensitiveData;
+    m_isSensitiveDataHasBeenSet = true;
+}
+
+bool DspaRDBDataAssetDetail::IsSensitiveDataHasBeenSet() const
+{
+    return m_isSensitiveDataHasBeenSet;
 }
 

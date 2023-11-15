@@ -27,6 +27,7 @@ DescribeLogsRequest::DescribeLogsRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_serviceIdHasBeenSet(false),
     m_podNameHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
@@ -72,6 +73,14 @@ string DescribeLogsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_serviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_podNameHasBeenSet)
@@ -191,6 +200,22 @@ void DescribeLogsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeLogsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeLogsRequest::GetServiceId() const
+{
+    return m_serviceId;
+}
+
+void DescribeLogsRequest::SetServiceId(const string& _serviceId)
+{
+    m_serviceId = _serviceId;
+    m_serviceIdHasBeenSet = true;
+}
+
+bool DescribeLogsRequest::ServiceIdHasBeenSet() const
+{
+    return m_serviceIdHasBeenSet;
 }
 
 string DescribeLogsRequest::GetPodName() const

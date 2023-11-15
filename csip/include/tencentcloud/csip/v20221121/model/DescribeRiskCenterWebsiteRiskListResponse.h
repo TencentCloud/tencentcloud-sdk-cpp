@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取资产视角的端口风险列表
-                     * @return Data 资产视角的端口风险列表
+                     * 获取内容风险列表
+                     * @return Data 内容风险列表
                      * 
                      */
                     std::vector<WebsiteRisk> GetData() const;
@@ -138,7 +138,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 资产视角的端口风险列表
+                     * 内容风险列表
                      */
                     std::vector<WebsiteRisk> m_data;
                     bool m_dataHasBeenSet;

@@ -35,6 +35,8 @@
 #include <tencentcloud/vrs/v20200824/model/DownloadVRSModelResponse.h>
 #include <tencentcloud/vrs/v20200824/model/GetTrainingTextRequest.h>
 #include <tencentcloud/vrs/v20200824/model/GetTrainingTextResponse.h>
+#include <tencentcloud/vrs/v20200824/model/GetVRSVoiceTypesRequest.h>
+#include <tencentcloud/vrs/v20200824/model/GetVRSVoiceTypesResponse.h>
 
 
 namespace TencentCloud
@@ -67,6 +69,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTrainingTextResponse> GetTrainingTextOutcome;
                 typedef std::future<GetTrainingTextOutcome> GetTrainingTextOutcomeCallable;
                 typedef std::function<void(const VrsClient*, const Model::GetTrainingTextRequest&, GetTrainingTextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTrainingTextAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetVRSVoiceTypesResponse> GetVRSVoiceTypesOutcome;
+                typedef std::future<GetVRSVoiceTypesOutcome> GetVRSVoiceTypesOutcomeCallable;
+                typedef std::function<void(const VrsClient*, const Model::GetVRSVoiceTypesRequest&, GetVRSVoiceTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVRSVoiceTypesAsyncHandler;
 
 
 
@@ -133,6 +138,15 @@ namespace TencentCloud
                 GetTrainingTextOutcome GetTrainingText(const Model::GetTrainingTextRequest &request);
                 void GetTrainingTextAsync(const Model::GetTrainingTextRequest& request, const GetTrainingTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTrainingTextOutcomeCallable GetTrainingTextCallable(const Model::GetTrainingTextRequest& request);
+
+                /**
+                 *查询复刻音色
+                 * @param req GetVRSVoiceTypesRequest
+                 * @return GetVRSVoiceTypesOutcome
+                 */
+                GetVRSVoiceTypesOutcome GetVRSVoiceTypes(const Model::GetVRSVoiceTypesRequest &request);
+                void GetVRSVoiceTypesAsync(const Model::GetVRSVoiceTypesRequest& request, const GetVRSVoiceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetVRSVoiceTypesOutcomeCallable GetVRSVoiceTypesCallable(const Model::GetVRSVoiceTypesRequest& request);
 
             };
         }

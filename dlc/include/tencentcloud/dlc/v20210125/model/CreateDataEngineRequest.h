@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认3600
-                     * @return TimeSpan 资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认3600
+                     * 获取资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
+                     * @return TimeSpan 资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认3600
-                     * @param _timeSpan 资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认3600
+                     * 设置资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
+                     * @param _timeSpan 资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -697,6 +697,48 @@ namespace TencentCloud
                      */
                     bool AutoAuthorizationHasBeenSet() const;
 
+                    /**
+                     * 获取引擎网络ID
+                     * @return EngineNetworkId 引擎网络ID
+                     * 
+                     */
+                    std::string GetEngineNetworkId() const;
+
+                    /**
+                     * 设置引擎网络ID
+                     * @param _engineNetworkId 引擎网络ID
+                     * 
+                     */
+                    void SetEngineNetworkId(const std::string& _engineNetworkId);
+
+                    /**
+                     * 判断参数 EngineNetworkId 是否已赋值
+                     * @return EngineNetworkId 是否已赋值
+                     * 
+                     */
+                    bool EngineNetworkIdHasBeenSet() const;
+
+                    /**
+                     * 获取引擎世代，SuperSQL：代表supersql引擎，Native：代表标准引擎。默认值为SuperSQL
+                     * @return EngineGeneration 引擎世代，SuperSQL：代表supersql引擎，Native：代表标准引擎。默认值为SuperSQL
+                     * 
+                     */
+                    std::string GetEngineGeneration() const;
+
+                    /**
+                     * 设置引擎世代，SuperSQL：代表supersql引擎，Native：代表标准引擎。默认值为SuperSQL
+                     * @param _engineGeneration 引擎世代，SuperSQL：代表supersql引擎，Native：代表标准引擎。默认值为SuperSQL
+                     * 
+                     */
+                    void SetEngineGeneration(const std::string& _engineGeneration);
+
+                    /**
+                     * 判断参数 EngineGeneration 是否已赋值
+                     * @return EngineGeneration 是否已赋值
+                     * 
+                     */
+                    bool EngineGenerationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -772,7 +814,7 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认3600
+                     * 资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
@@ -884,6 +926,18 @@ namespace TencentCloud
                      */
                     bool m_autoAuthorization;
                     bool m_autoAuthorizationHasBeenSet;
+
+                    /**
+                     * 引擎网络ID
+                     */
+                    std::string m_engineNetworkId;
+                    bool m_engineNetworkIdHasBeenSet;
+
+                    /**
+                     * 引擎世代，SuperSQL：代表supersql引擎，Native：代表标准引擎。默认值为SuperSQL
+                     */
+                    std::string m_engineGeneration;
+                    bool m_engineGenerationHasBeenSet;
 
                 };
             }

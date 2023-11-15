@@ -376,7 +376,7 @@ namespace TencentCloud
                 DescribeRiskCenterVULViewVULRiskListOutcomeCallable DescribeRiskCenterVULViewVULRiskListCallable(const Model::DescribeRiskCenterVULViewVULRiskListRequest& request);
 
                 /**
-                 *获取网站风险列表
+                 *获取内容风险列表
                  * @param req DescribeRiskCenterWebsiteRiskListRequest
                  * @return DescribeRiskCenterWebsiteRiskListOutcome
                  */

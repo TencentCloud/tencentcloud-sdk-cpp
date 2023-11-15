@@ -148,6 +148,31 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取可信分排序，ASC升序
+DESC降序
+                     * @return CreditScore 可信分排序，ASC升序
+DESC降序
+                     * 
+                     */
+                    std::string GetCreditScore() const;
+
+                    /**
+                     * 设置可信分排序，ASC升序
+DESC降序
+                     * @param _creditScore 可信分排序，ASC升序
+DESC降序
+                     * 
+                     */
+                    void SetCreditScore(const std::string& _creditScore);
+
+                    /**
+                     * 判断参数 CreditScore 是否已赋值
+                     * @return CreditScore 是否已赋值
+                     * 
+                     */
+                    bool CreditScoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +204,13 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 可信分排序，ASC升序
+DESC降序
+                     */
+                    std::string m_creditScore;
+                    bool m_creditScoreHasBeenSet;
 
                 };
             }

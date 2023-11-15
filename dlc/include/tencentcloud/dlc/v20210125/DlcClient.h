@@ -183,6 +183,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeUpdatableDataEnginesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeUpdatableDataEnginesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserDataEngineConfigRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserDataEngineConfigResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserInfoRequest.h>
@@ -517,6 +519,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
                 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUpdatableDataEnginesResponse> DescribeUpdatableDataEnginesOutcome;
+                typedef std::future<DescribeUpdatableDataEnginesOutcome> DescribeUpdatableDataEnginesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeUpdatableDataEnginesRequest&, DescribeUpdatableDataEnginesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpdatableDataEnginesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserDataEngineConfigResponse> DescribeUserDataEngineConfigOutcome;
                 typedef std::future<DescribeUserDataEngineConfigOutcome> DescribeUserDataEngineConfigOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeUserDataEngineConfigRequest&, DescribeUserDataEngineConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDataEngineConfigAsyncHandler;
@@ -1359,6 +1364,15 @@ namespace TencentCloud
                 DescribeTasksOutcome DescribeTasks(const Model::DescribeTasksRequest &request);
                 void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
+
+                /**
+                 *查询可更新配置的引擎列表
+                 * @param req DescribeUpdatableDataEnginesRequest
+                 * @return DescribeUpdatableDataEnginesOutcome
+                 */
+                DescribeUpdatableDataEnginesOutcome DescribeUpdatableDataEngines(const Model::DescribeUpdatableDataEnginesRequest &request);
+                void DescribeUpdatableDataEnginesAsync(const Model::DescribeUpdatableDataEnginesRequest& request, const DescribeUpdatableDataEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUpdatableDataEnginesOutcomeCallable DescribeUpdatableDataEnginesCallable(const Model::DescribeUpdatableDataEnginesRequest& request);
 
                 /**
                  *查询用户自定义引擎参数

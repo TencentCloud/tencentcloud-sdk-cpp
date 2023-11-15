@@ -23,6 +23,20 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/hai/v20230812/model/DescribeApplicationsRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeInstancesRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeInstancesResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeRegionsRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeRegionsResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeScenesRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeScenesResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsResponse.h>
+#include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h>
+#include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesResponse.h>
 #include <tencentcloud/hai/v20230812/model/TerminateInstancesRequest.h>
@@ -41,6 +55,27 @@ namespace TencentCloud
                 HaiClient(const Credential &credential, const std::string &region);
                 HaiClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
+                typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceNetworkStatusResponse> DescribeInstanceNetworkStatusOutcome;
+                typedef std::future<DescribeInstanceNetworkStatusOutcome> DescribeInstanceNetworkStatusOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeInstanceNetworkStatusRequest&, DescribeInstanceNetworkStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceNetworkStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
+                typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
+                typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScenesResponse> DescribeScenesOutcome;
+                typedef std::future<DescribeScenesOutcome> DescribeScenesOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeScenesRequest&, DescribeScenesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScenesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServiceLoginSettingsResponse> DescribeServiceLoginSettingsOutcome;
+                typedef std::future<DescribeServiceLoginSettingsOutcome> DescribeServiceLoginSettingsOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeServiceLoginSettingsRequest&, DescribeServiceLoginSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceLoginSettingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceRunInstancesResponse> InquirePriceRunInstancesOutcome;
+                typedef std::future<InquirePriceRunInstancesOutcome> InquirePriceRunInstancesOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::InquirePriceRunInstancesRequest&, InquirePriceRunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRunInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunInstancesResponse> RunInstancesOutcome;
                 typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::RunInstancesRequest&, RunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
@@ -49,6 +84,69 @@ namespace TencentCloud
                 typedef std::function<void(const HaiClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
 
 
+
+                /**
+                 *查询应用
+                 * @param req DescribeApplicationsRequest
+                 * @return DescribeApplicationsOutcome
+                 */
+                DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest &request);
+                void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request);
+
+                /**
+                 *查询实例的网络配置及消耗情况
+                 * @param req DescribeInstanceNetworkStatusRequest
+                 * @return DescribeInstanceNetworkStatusOutcome
+                 */
+                DescribeInstanceNetworkStatusOutcome DescribeInstanceNetworkStatus(const Model::DescribeInstanceNetworkStatusRequest &request);
+                void DescribeInstanceNetworkStatusAsync(const Model::DescribeInstanceNetworkStatusRequest& request, const DescribeInstanceNetworkStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceNetworkStatusOutcomeCallable DescribeInstanceNetworkStatusCallable(const Model::DescribeInstanceNetworkStatusRequest& request);
+
+                /**
+                 *查询实例
+                 * @param req DescribeInstancesRequest
+                 * @return DescribeInstancesOutcome
+                 */
+                DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
+                void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *查询地域列表
+                 * @param req DescribeRegionsRequest
+                 * @return DescribeRegionsOutcome
+                 */
+                DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest &request);
+                void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
+
+                /**
+                 *查询场景
+                 * @param req DescribeScenesRequest
+                 * @return DescribeScenesOutcome
+                 */
+                DescribeScenesOutcome DescribeScenes(const Model::DescribeScenesRequest &request);
+                void DescribeScenesAsync(const Model::DescribeScenesRequest& request, const DescribeScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScenesOutcomeCallable DescribeScenesCallable(const Model::DescribeScenesRequest& request);
+
+                /**
+                 *查询服务登录配置
+                 * @param req DescribeServiceLoginSettingsRequest
+                 * @return DescribeServiceLoginSettingsOutcome
+                 */
+                DescribeServiceLoginSettingsOutcome DescribeServiceLoginSettings(const Model::DescribeServiceLoginSettingsRequest &request);
+                void DescribeServiceLoginSettingsAsync(const Model::DescribeServiceLoginSettingsRequest& request, const DescribeServiceLoginSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceLoginSettingsOutcomeCallable DescribeServiceLoginSettingsCallable(const Model::DescribeServiceLoginSettingsRequest& request);
+
+                /**
+                 *本接口 (InquirePriceRunInstances) 用于实例询价。
+                 * @param req InquirePriceRunInstancesRequest
+                 * @return InquirePriceRunInstancesOutcome
+                 */
+                InquirePriceRunInstancesOutcome InquirePriceRunInstances(const Model::InquirePriceRunInstancesRequest &request);
+                void InquirePriceRunInstancesAsync(const Model::InquirePriceRunInstancesRequest& request, const InquirePriceRunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceRunInstancesOutcomeCallable InquirePriceRunInstancesCallable(const Model::InquirePriceRunInstancesRequest& request);
 
                 /**
                  *本接口 (RunInstances) 用于创建一个或多个指定配置的实例。

@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool ZOrderHasBeenSet() const;
 
+                    /**
+                     * 获取动态水印类型，默认为0。0:关闭；1:随机位置，每秒变动一次；2:边界扫描反弹，每帧变动一次。
+                     * @return DynamicPosType 动态水印类型，默认为0。0:关闭；1:随机位置，每秒变动一次；2:边界扫描反弹，每帧变动一次。
+                     * 
+                     */
+                    uint64_t GetDynamicPosType() const;
+
+                    /**
+                     * 设置动态水印类型，默认为0。0:关闭；1:随机位置，每秒变动一次；2:边界扫描反弹，每帧变动一次。
+                     * @param _dynamicPosType 动态水印类型，默认为0。0:关闭；1:随机位置，每秒变动一次；2:边界扫描反弹，每帧变动一次。
+                     * 
+                     */
+                    void SetDynamicPosType(const uint64_t& _dynamicPosType);
+
+                    /**
+                     * 判断参数 DynamicPosType 是否已赋值
+                     * @return DynamicPosType 是否已赋值
+                     * 
+                     */
+                    bool DynamicPosTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     uint64_t m_zOrder;
                     bool m_zOrderHasBeenSet;
+
+                    /**
+                     * 动态水印类型，默认为0。0:关闭；1:随机位置，每秒变动一次；2:边界扫描反弹，每帧变动一次。
+                     */
+                    uint64_t m_dynamicPosType;
+                    bool m_dynamicPosTypeHasBeenSet;
 
                 };
             }

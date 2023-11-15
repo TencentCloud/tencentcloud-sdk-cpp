@@ -44,15 +44,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询哪个服务的事件（可选值为TRAIN, NOTEBOOK, INFER）
-                     * @return Service 查询哪个服务的事件（可选值为TRAIN, NOTEBOOK, INFER）
+                     * 获取服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测
+枚举值：
+- TRAIN
+- NOTEBOOK
+- INFER
+- BATCH
+                     * @return Service 服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测
+枚举值：
+- TRAIN
+- NOTEBOOK
+- INFER
+- BATCH
                      * 
                      */
                     std::string GetService() const;
 
                     /**
-                     * 设置查询哪个服务的事件（可选值为TRAIN, NOTEBOOK, INFER）
-                     * @param _service 查询哪个服务的事件（可选值为TRAIN, NOTEBOOK, INFER）
+                     * 设置服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测
+枚举值：
+- TRAIN
+- NOTEBOOK
+- INFER
+- BATCH
+                     * @param _service 服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测
+枚举值：
+- TRAIN
+- NOTEBOOK
+- INFER
+- BATCH
                      * 
                      */
                     void SetService(const std::string& _service);
@@ -128,15 +148,104 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询哪个Pod的日志（支持结尾通配符*)
-                     * @return PodName 查询哪个Pod的日志（支持结尾通配符*)
+                     * 获取服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：
+- Service类型为TRAIN：
+  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId
+- Service类型为NOTEBOOK：
+  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName
+- Service类型为INFER：
+  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId
+- Service类型为BATCH：
+  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId
+                     * @return ServiceId 服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：
+- Service类型为TRAIN：
+  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId
+- Service类型为NOTEBOOK：
+  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName
+- Service类型为INFER：
+  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId
+- Service类型为BATCH：
+  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId
+                     * 
+                     */
+                    std::string GetServiceId() const;
+
+                    /**
+                     * 设置服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：
+- Service类型为TRAIN：
+  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId
+- Service类型为NOTEBOOK：
+  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName
+- Service类型为INFER：
+  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId
+- Service类型为BATCH：
+  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId
+                     * @param _serviceId 服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：
+- Service类型为TRAIN：
+  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId
+- Service类型为NOTEBOOK：
+  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName
+- Service类型为INFER：
+  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId
+- Service类型为BATCH：
+  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId
+                     * 
+                     */
+                    void SetServiceId(const std::string& _serviceId);
+
+                    /**
+                     * 判断参数 ServiceId 是否已赋值
+                     * @return ServiceId 是否已赋值
+                     * 
+                     */
+                    bool ServiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：
+- Service类型为TRAIN：
+  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames
+- Service类型为NOTEBOOK：
+  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName
+- Service类型为INFER：
+  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos
+- Service类型为BATCH：
+  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList
+注：支持结尾通配符*
+                     * @return PodName Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：
+- Service类型为TRAIN：
+  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames
+- Service类型为NOTEBOOK：
+  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName
+- Service类型为INFER：
+  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos
+- Service类型为BATCH：
+  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList
+注：支持结尾通配符*
                      * 
                      */
                     std::string GetPodName() const;
 
                     /**
-                     * 设置查询哪个Pod的日志（支持结尾通配符*)
-                     * @param _podName 查询哪个Pod的日志（支持结尾通配符*)
+                     * 设置Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：
+- Service类型为TRAIN：
+  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames
+- Service类型为NOTEBOOK：
+  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName
+- Service类型为INFER：
+  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos
+- Service类型为BATCH：
+  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList
+注：支持结尾通配符*
+                     * @param _podName Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：
+- Service类型为TRAIN：
+  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames
+- Service类型为NOTEBOOK：
+  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName
+- Service类型为INFER：
+  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos
+- Service类型为BATCH：
+  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList
+注：支持结尾通配符*
                      * 
                      */
                     void SetPodName(const std::string& _podName);
@@ -251,7 +360,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询哪个服务的事件（可选值为TRAIN, NOTEBOOK, INFER）
+                     * 服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测
+枚举值：
+- TRAIN
+- NOTEBOOK
+- INFER
+- BATCH
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;
@@ -275,7 +389,30 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询哪个Pod的日志（支持结尾通配符*)
+                     * 服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：
+- Service类型为TRAIN：
+  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId
+- Service类型为NOTEBOOK：
+  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName
+- Service类型为INFER：
+  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId
+- Service类型为BATCH：
+  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId
+                     */
+                    std::string m_serviceId;
+                    bool m_serviceIdHasBeenSet;
+
+                    /**
+                     * Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：
+- Service类型为TRAIN：
+  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames
+- Service类型为NOTEBOOK：
+  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName
+- Service类型为INFER：
+  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos
+- Service类型为BATCH：
+  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList
+注：支持结尾通配符*
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;

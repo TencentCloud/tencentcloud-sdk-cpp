@@ -58,6 +58,8 @@ MotorVehicleSaleInvoice::MotorVehicleSaleInvoice() :
     m_formNameHasBeenSet(false),
     m_issuerHasBeenSet(false),
     m_taxNumHasBeenSet(false),
+    m_taxPayNumHasBeenSet(false),
+    m_taxCodeHasBeenSet(false),
     m_maxPeopleNumHasBeenSet(false),
     m_originHasBeenSet(false),
     m_machineCodeHasBeenSet(false),
@@ -441,6 +443,26 @@ CoreInternalOutcome MotorVehicleSaleInvoice::Deserialize(const rapidjson::Value 
         m_taxNumHasBeenSet = true;
     }
 
+    if (value.HasMember("TaxPayNum") && !value["TaxPayNum"].IsNull())
+    {
+        if (!value["TaxPayNum"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MotorVehicleSaleInvoice.TaxPayNum` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxPayNum = string(value["TaxPayNum"].GetString());
+        m_taxPayNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxCode") && !value["TaxCode"].IsNull())
+    {
+        if (!value["TaxCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MotorVehicleSaleInvoice.TaxCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxCode = string(value["TaxCode"].GetString());
+        m_taxCodeHasBeenSet = true;
+    }
+
     if (value.HasMember("MaxPeopleNum") && !value["MaxPeopleNum"].IsNull())
     {
         if (!value["MaxPeopleNum"].IsString())
@@ -792,6 +814,22 @@ void MotorVehicleSaleInvoice::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "TaxNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taxNum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxPayNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxPayNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxPayNum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxPeopleNumHasBeenSet)
@@ -1427,6 +1465,38 @@ void MotorVehicleSaleInvoice::SetTaxNum(const string& _taxNum)
 bool MotorVehicleSaleInvoice::TaxNumHasBeenSet() const
 {
     return m_taxNumHasBeenSet;
+}
+
+string MotorVehicleSaleInvoice::GetTaxPayNum() const
+{
+    return m_taxPayNum;
+}
+
+void MotorVehicleSaleInvoice::SetTaxPayNum(const string& _taxPayNum)
+{
+    m_taxPayNum = _taxPayNum;
+    m_taxPayNumHasBeenSet = true;
+}
+
+bool MotorVehicleSaleInvoice::TaxPayNumHasBeenSet() const
+{
+    return m_taxPayNumHasBeenSet;
+}
+
+string MotorVehicleSaleInvoice::GetTaxCode() const
+{
+    return m_taxCode;
+}
+
+void MotorVehicleSaleInvoice::SetTaxCode(const string& _taxCode)
+{
+    m_taxCode = _taxCode;
+    m_taxCodeHasBeenSet = true;
+}
+
+bool MotorVehicleSaleInvoice::TaxCodeHasBeenSet() const
+{
+    return m_taxCodeHasBeenSet;
 }
 
 string MotorVehicleSaleInvoice::GetMaxPeopleNum() const

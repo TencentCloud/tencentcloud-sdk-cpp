@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/oceanus/v20190422/model/Filter.h>
 
 
 namespace TencentCloud
@@ -43,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取筛选条件字段
+                     * @return Filters 筛选条件字段
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置筛选条件字段
+                     * @param _filters 筛选条件字段
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
                      * 
@@ -63,13 +85,73 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取分页游标
+                     * @return Offset 分页游标
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置分页游标
+                     * @param _offset 分页游标
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取单页显示数
+                     * @return Limit 单页显示数
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置单页显示数
+                     * @param _limit 单页显示数
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 筛选条件字段
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                     /**
                      * 工作空间 SerialId
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * 分页游标
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 单页显示数
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取排除扫描资产信息
+                     * 获取自定义指定扫描资产信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SelfDefiningAssets 排除扫描资产信息
+                     * @return SelfDefiningAssets 自定义指定扫描资产信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSelfDefiningAssets() const;
 
                     /**
-                     * 设置排除扫描资产信息
+                     * 设置自定义指定扫描资产信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _selfDefiningAssets 排除扫描资产信息
+                     * @param _selfDefiningAssets 自定义指定扫描资产信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -423,18 +423,18 @@ namespace TencentCloud
                     bool ScanItemHasBeenSet() const;
 
                     /**
-                     * 获取0-全扫，1-指定资产扫，2-排除资产扫
+                     * 获取0-全扫，1-指定资产扫，2-排除资产扫，3-自定义指定资产扫描
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScanAssetType 0-全扫，1-指定资产扫，2-排除资产扫
+                     * @return ScanAssetType 0-全扫，1-指定资产扫，2-排除资产扫，3-自定义指定资产扫描
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanAssetType() const;
 
                     /**
-                     * 设置0-全扫，1-指定资产扫，2-排除资产扫
+                     * 设置0-全扫，1-指定资产扫，2-排除资产扫，3-自定义指定资产扫描
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scanAssetType 0-全扫，1-指定资产扫，2-排除资产扫
+                     * @param _scanAssetType 0-全扫，1-指定资产扫，2-排除资产扫，3-自定义指定资产扫描
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1099,7 +1099,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 排除扫描资产信息
+                     * 自定义指定扫描资产信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_selfDefiningAssets;
@@ -1155,7 +1155,7 @@ namespace TencentCloud
                     bool m_scanItemHasBeenSet;
 
                     /**
-                     * 0-全扫，1-指定资产扫，2-排除资产扫
+                     * 0-全扫，1-指定资产扫，2-排除资产扫，3-自定义指定资产扫描
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanAssetType;

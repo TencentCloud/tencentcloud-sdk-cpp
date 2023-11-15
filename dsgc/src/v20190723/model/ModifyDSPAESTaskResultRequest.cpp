@@ -29,7 +29,11 @@ ModifyDSPAESTaskResultRequest::ModifyDSPAESTaskResultRequest() :
     m_isSetNonSensitiveFieldHasBeenSet(false),
     m_destRuleIdHasBeenSet(false),
     m_destCategoryIdHasBeenSet(false),
-    m_destLevelIdHasBeenSet(false)
+    m_destLevelIdHasBeenSet(false),
+    m_srcRuleIdHasBeenSet(false),
+    m_srcCategoryIdHasBeenSet(false),
+    m_srcLevelIdHasBeenSet(false),
+    m_identifyTypeHasBeenSet(false)
 {
 }
 
@@ -94,6 +98,38 @@ string ModifyDSPAESTaskResultRequest::ToJsonString() const
         string key = "DestLevelId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_destLevelId, allocator);
+    }
+
+    if (m_srcRuleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcRuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_srcRuleId, allocator);
+    }
+
+    if (m_srcCategoryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcCategoryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_srcCategoryId, allocator);
+    }
+
+    if (m_srcLevelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcLevelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_srcLevelId, allocator);
+    }
+
+    if (m_identifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_identifyType, allocator);
     }
 
 
@@ -214,6 +250,70 @@ void ModifyDSPAESTaskResultRequest::SetDestLevelId(const int64_t& _destLevelId)
 bool ModifyDSPAESTaskResultRequest::DestLevelIdHasBeenSet() const
 {
     return m_destLevelIdHasBeenSet;
+}
+
+int64_t ModifyDSPAESTaskResultRequest::GetSrcRuleId() const
+{
+    return m_srcRuleId;
+}
+
+void ModifyDSPAESTaskResultRequest::SetSrcRuleId(const int64_t& _srcRuleId)
+{
+    m_srcRuleId = _srcRuleId;
+    m_srcRuleIdHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::SrcRuleIdHasBeenSet() const
+{
+    return m_srcRuleIdHasBeenSet;
+}
+
+int64_t ModifyDSPAESTaskResultRequest::GetSrcCategoryId() const
+{
+    return m_srcCategoryId;
+}
+
+void ModifyDSPAESTaskResultRequest::SetSrcCategoryId(const int64_t& _srcCategoryId)
+{
+    m_srcCategoryId = _srcCategoryId;
+    m_srcCategoryIdHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::SrcCategoryIdHasBeenSet() const
+{
+    return m_srcCategoryIdHasBeenSet;
+}
+
+int64_t ModifyDSPAESTaskResultRequest::GetSrcLevelId() const
+{
+    return m_srcLevelId;
+}
+
+void ModifyDSPAESTaskResultRequest::SetSrcLevelId(const int64_t& _srcLevelId)
+{
+    m_srcLevelId = _srcLevelId;
+    m_srcLevelIdHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::SrcLevelIdHasBeenSet() const
+{
+    return m_srcLevelIdHasBeenSet;
+}
+
+int64_t ModifyDSPAESTaskResultRequest::GetIdentifyType() const
+{
+    return m_identifyType;
+}
+
+void ModifyDSPAESTaskResultRequest::SetIdentifyType(const int64_t& _identifyType)
+{
+    m_identifyType = _identifyType;
+    m_identifyTypeHasBeenSet = true;
+}
+
+bool ModifyDSPAESTaskResultRequest::IdentifyTypeHasBeenSet() const
+{
+    return m_identifyTypeHasBeenSet;
 }
 
 

@@ -1932,6 +1932,49 @@ DasbClient::ModifyUserOutcomeCallable DasbClient::ModifyUserCallable(const Modif
     return task->get_future();
 }
 
+DasbClient::ModifyUserGroupOutcome DasbClient::ModifyUserGroup(const ModifyUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserGroupResponse rsp = ModifyUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserGroupOutcome(rsp);
+        else
+            return ModifyUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ModifyUserGroupAsync(const ModifyUserGroupRequest& request, const ModifyUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ModifyUserGroupOutcomeCallable DasbClient::ModifyUserGroupCallable(const ModifyUserGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::ResetDeviceAccountPasswordOutcome DasbClient::ResetDeviceAccountPassword(const ResetDeviceAccountPasswordRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetDeviceAccountPassword");

@@ -3480,6 +3480,49 @@ DlcClient::DescribeTasksOutcomeCallable DlcClient::DescribeTasksCallable(const D
     return task->get_future();
 }
 
+DlcClient::DescribeUpdatableDataEnginesOutcome DlcClient::DescribeUpdatableDataEngines(const DescribeUpdatableDataEnginesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUpdatableDataEngines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUpdatableDataEnginesResponse rsp = DescribeUpdatableDataEnginesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUpdatableDataEnginesOutcome(rsp);
+        else
+            return DescribeUpdatableDataEnginesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUpdatableDataEnginesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeUpdatableDataEnginesAsync(const DescribeUpdatableDataEnginesRequest& request, const DescribeUpdatableDataEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUpdatableDataEngines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeUpdatableDataEnginesOutcomeCallable DlcClient::DescribeUpdatableDataEnginesCallable(const DescribeUpdatableDataEnginesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUpdatableDataEnginesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUpdatableDataEngines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeUserDataEngineConfigOutcome DlcClient::DescribeUserDataEngineConfig(const DescribeUserDataEngineConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserDataEngineConfig");

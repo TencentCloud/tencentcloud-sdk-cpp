@@ -728,6 +728,49 @@ VodClient::CreateImageSpriteTemplateOutcomeCallable VodClient::CreateImageSprite
     return task->get_future();
 }
 
+VodClient::CreateJustInTimeTranscodeTemplateOutcome VodClient::CreateJustInTimeTranscodeTemplate(const CreateJustInTimeTranscodeTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateJustInTimeTranscodeTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateJustInTimeTranscodeTemplateResponse rsp = CreateJustInTimeTranscodeTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateJustInTimeTranscodeTemplateOutcome(rsp);
+        else
+            return CreateJustInTimeTranscodeTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateJustInTimeTranscodeTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateJustInTimeTranscodeTemplateAsync(const CreateJustInTimeTranscodeTemplateRequest& request, const CreateJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateJustInTimeTranscodeTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateJustInTimeTranscodeTemplateOutcomeCallable VodClient::CreateJustInTimeTranscodeTemplateCallable(const CreateJustInTimeTranscodeTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateJustInTimeTranscodeTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateJustInTimeTranscodeTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreatePersonSampleOutcome VodClient::CreatePersonSample(const CreatePersonSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePersonSample");
@@ -1796,6 +1839,49 @@ VodClient::DeleteImageSpriteTemplateOutcomeCallable VodClient::DeleteImageSprite
         [this, request]()
         {
             return this->DeleteImageSpriteTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DeleteJustInTimeTranscodeTemplateOutcome VodClient::DeleteJustInTimeTranscodeTemplate(const DeleteJustInTimeTranscodeTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteJustInTimeTranscodeTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteJustInTimeTranscodeTemplateResponse rsp = DeleteJustInTimeTranscodeTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteJustInTimeTranscodeTemplateOutcome(rsp);
+        else
+            return DeleteJustInTimeTranscodeTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteJustInTimeTranscodeTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteJustInTimeTranscodeTemplateAsync(const DeleteJustInTimeTranscodeTemplateRequest& request, const DeleteJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteJustInTimeTranscodeTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DeleteJustInTimeTranscodeTemplateOutcomeCallable VodClient::DeleteJustInTimeTranscodeTemplateCallable(const DeleteJustInTimeTranscodeTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteJustInTimeTranscodeTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteJustInTimeTranscodeTemplate(request);
         }
     );
 
@@ -3387,6 +3473,49 @@ VodClient::DescribeImageSpriteTemplatesOutcomeCallable VodClient::DescribeImageS
         [this, request]()
         {
             return this->DescribeImageSpriteTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DescribeJustInTimeTranscodeTemplatesOutcome VodClient::DescribeJustInTimeTranscodeTemplates(const DescribeJustInTimeTranscodeTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJustInTimeTranscodeTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJustInTimeTranscodeTemplatesResponse rsp = DescribeJustInTimeTranscodeTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJustInTimeTranscodeTemplatesOutcome(rsp);
+        else
+            return DescribeJustInTimeTranscodeTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJustInTimeTranscodeTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeJustInTimeTranscodeTemplatesAsync(const DescribeJustInTimeTranscodeTemplatesRequest& request, const DescribeJustInTimeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJustInTimeTranscodeTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeJustInTimeTranscodeTemplatesOutcomeCallable VodClient::DescribeJustInTimeTranscodeTemplatesCallable(const DescribeJustInTimeTranscodeTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJustInTimeTranscodeTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJustInTimeTranscodeTemplates(request);
         }
     );
 
@@ -5322,6 +5451,49 @@ VodClient::ModifyImageSpriteTemplateOutcomeCallable VodClient::ModifyImageSprite
         [this, request]()
         {
             return this->ModifyImageSpriteTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::ModifyJustInTimeTranscodeTemplateOutcome VodClient::ModifyJustInTimeTranscodeTemplate(const ModifyJustInTimeTranscodeTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyJustInTimeTranscodeTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyJustInTimeTranscodeTemplateResponse rsp = ModifyJustInTimeTranscodeTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyJustInTimeTranscodeTemplateOutcome(rsp);
+        else
+            return ModifyJustInTimeTranscodeTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyJustInTimeTranscodeTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyJustInTimeTranscodeTemplateAsync(const ModifyJustInTimeTranscodeTemplateRequest& request, const ModifyJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyJustInTimeTranscodeTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyJustInTimeTranscodeTemplateOutcomeCallable VodClient::ModifyJustInTimeTranscodeTemplateCallable(const ModifyJustInTimeTranscodeTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyJustInTimeTranscodeTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyJustInTimeTranscodeTemplate(request);
         }
     );
 

@@ -26,7 +26,8 @@ CreateAPIDocRequest::CreateAPIDocRequest() :
     m_apiDocNameHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
     m_environmentHasBeenSet(false),
-    m_apiIdsHasBeenSet(false)
+    m_apiIdsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,21 @@ string CreateAPIDocRequest::ToJsonString() const
         for (auto itr = m_apiIds.begin(); itr != m_apiIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -144,6 +160,22 @@ void CreateAPIDocRequest::SetApiIds(const vector<string>& _apiIds)
 bool CreateAPIDocRequest::ApiIdsHasBeenSet() const
 {
     return m_apiIdsHasBeenSet;
+}
+
+vector<Tag> CreateAPIDocRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateAPIDocRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateAPIDocRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

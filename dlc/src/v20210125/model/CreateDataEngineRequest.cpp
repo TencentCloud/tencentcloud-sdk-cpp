@@ -53,7 +53,9 @@ CreateDataEngineRequest::CreateDataEngineRequest() :
     m_elasticSwitchHasBeenSet(false),
     m_elasticLimitHasBeenSet(false),
     m_sessionResourceTemplateHasBeenSet(false),
-    m_autoAuthorizationHasBeenSet(false)
+    m_autoAuthorizationHasBeenSet(false),
+    m_engineNetworkIdHasBeenSet(false),
+    m_engineGenerationHasBeenSet(false)
 {
 }
 
@@ -326,6 +328,22 @@ string CreateDataEngineRequest::ToJsonString() const
         string key = "AutoAuthorization";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoAuthorization, allocator);
+    }
+
+    if (m_engineNetworkIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineNetworkId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineNetworkId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineGenerationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineGeneration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineGeneration.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -830,6 +848,38 @@ void CreateDataEngineRequest::SetAutoAuthorization(const bool& _autoAuthorizatio
 bool CreateDataEngineRequest::AutoAuthorizationHasBeenSet() const
 {
     return m_autoAuthorizationHasBeenSet;
+}
+
+string CreateDataEngineRequest::GetEngineNetworkId() const
+{
+    return m_engineNetworkId;
+}
+
+void CreateDataEngineRequest::SetEngineNetworkId(const string& _engineNetworkId)
+{
+    m_engineNetworkId = _engineNetworkId;
+    m_engineNetworkIdHasBeenSet = true;
+}
+
+bool CreateDataEngineRequest::EngineNetworkIdHasBeenSet() const
+{
+    return m_engineNetworkIdHasBeenSet;
+}
+
+string CreateDataEngineRequest::GetEngineGeneration() const
+{
+    return m_engineGeneration;
+}
+
+void CreateDataEngineRequest::SetEngineGeneration(const string& _engineGeneration)
+{
+    m_engineGeneration = _engineGeneration;
+    m_engineGenerationHasBeenSet = true;
+}
+
+bool CreateDataEngineRequest::EngineGenerationHasBeenSet() const
+{
+    return m_engineGenerationHasBeenSet;
 }
 
 

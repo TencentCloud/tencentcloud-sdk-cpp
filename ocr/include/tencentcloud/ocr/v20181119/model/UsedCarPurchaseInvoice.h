@@ -739,6 +739,216 @@ namespace TencentCloud
                      */
                     bool CompanySealMarkHasBeenSet() const;
 
+                    /**
+                     * 获取经营拍卖单位
+                     * @return AuctionOrgName 经营拍卖单位
+                     * 
+                     */
+                    std::string GetAuctionOrgName() const;
+
+                    /**
+                     * 设置经营拍卖单位
+                     * @param _auctionOrgName 经营拍卖单位
+                     * 
+                     */
+                    void SetAuctionOrgName(const std::string& _auctionOrgName);
+
+                    /**
+                     * 判断参数 AuctionOrgName 是否已赋值
+                     * @return AuctionOrgName 是否已赋值
+                     * 
+                     */
+                    bool AuctionOrgNameHasBeenSet() const;
+
+                    /**
+                     * 获取经营拍卖单位地址
+                     * @return AuctionOrgAddress 经营拍卖单位地址
+                     * 
+                     */
+                    std::string GetAuctionOrgAddress() const;
+
+                    /**
+                     * 设置经营拍卖单位地址
+                     * @param _auctionOrgAddress 经营拍卖单位地址
+                     * 
+                     */
+                    void SetAuctionOrgAddress(const std::string& _auctionOrgAddress);
+
+                    /**
+                     * 判断参数 AuctionOrgAddress 是否已赋值
+                     * @return AuctionOrgAddress 是否已赋值
+                     * 
+                     */
+                    bool AuctionOrgAddressHasBeenSet() const;
+
+                    /**
+                     * 获取经营拍卖单位纳税人识别号
+                     * @return AuctionOrgTaxID 经营拍卖单位纳税人识别号
+                     * 
+                     */
+                    std::string GetAuctionOrgTaxID() const;
+
+                    /**
+                     * 设置经营拍卖单位纳税人识别号
+                     * @param _auctionOrgTaxID 经营拍卖单位纳税人识别号
+                     * 
+                     */
+                    void SetAuctionOrgTaxID(const std::string& _auctionOrgTaxID);
+
+                    /**
+                     * 判断参数 AuctionOrgTaxID 是否已赋值
+                     * @return AuctionOrgTaxID 是否已赋值
+                     * 
+                     */
+                    bool AuctionOrgTaxIDHasBeenSet() const;
+
+                    /**
+                     * 获取经营拍卖单位开户银行账号
+                     * @return AuctionOrgBankAccount 经营拍卖单位开户银行账号
+                     * 
+                     */
+                    std::string GetAuctionOrgBankAccount() const;
+
+                    /**
+                     * 设置经营拍卖单位开户银行账号
+                     * @param _auctionOrgBankAccount 经营拍卖单位开户银行账号
+                     * 
+                     */
+                    void SetAuctionOrgBankAccount(const std::string& _auctionOrgBankAccount);
+
+                    /**
+                     * 判断参数 AuctionOrgBankAccount 是否已赋值
+                     * @return AuctionOrgBankAccount 是否已赋值
+                     * 
+                     */
+                    bool AuctionOrgBankAccountHasBeenSet() const;
+
+                    /**
+                     * 获取经营拍卖单位电话
+                     * @return AuctionOrgPhone 经营拍卖单位电话
+                     * 
+                     */
+                    std::string GetAuctionOrgPhone() const;
+
+                    /**
+                     * 设置经营拍卖单位电话
+                     * @param _auctionOrgPhone 经营拍卖单位电话
+                     * 
+                     */
+                    void SetAuctionOrgPhone(const std::string& _auctionOrgPhone);
+
+                    /**
+                     * 判断参数 AuctionOrgPhone 是否已赋值
+                     * @return AuctionOrgPhone 是否已赋值
+                     * 
+                     */
+                    bool AuctionOrgPhoneHasBeenSet() const;
+
+                    /**
+                     * 获取开票人
+                     * @return Issuer 开票人
+                     * 
+                     */
+                    std::string GetIssuer() const;
+
+                    /**
+                     * 设置开票人
+                     * @param _issuer 开票人
+                     * 
+                     */
+                    void SetIssuer(const std::string& _issuer);
+
+                    /**
+                     * 判断参数 Issuer 是否已赋值
+                     * @return Issuer 是否已赋值
+                     * 
+                     */
+                    bool IssuerHasBeenSet() const;
+
+                    /**
+                     * 获取税控码
+                     * @return TaxCode 税控码
+                     * 
+                     */
+                    std::string GetTaxCode() const;
+
+                    /**
+                     * 设置税控码
+                     * @param _taxCode 税控码
+                     * 
+                     */
+                    void SetTaxCode(const std::string& _taxCode);
+
+                    /**
+                     * 判断参数 TaxCode 是否已赋值
+                     * @return TaxCode 是否已赋值
+                     * 
+                     */
+                    bool TaxCodeHasBeenSet() const;
+
+                    /**
+                     * 获取机器编号
+                     * @return MachineSerialNumber 机器编号
+                     * 
+                     */
+                    std::string GetMachineSerialNumber() const;
+
+                    /**
+                     * 设置机器编号
+                     * @param _machineSerialNumber 机器编号
+                     * 
+                     */
+                    void SetMachineSerialNumber(const std::string& _machineSerialNumber);
+
+                    /**
+                     * 判断参数 MachineSerialNumber 是否已赋值
+                     * @return MachineSerialNumber 是否已赋值
+                     * 
+                     */
+                    bool MachineSerialNumberHasBeenSet() const;
+
+                    /**
+                     * 获取机打发票代码
+                     * @return MachineCode 机打发票代码
+                     * 
+                     */
+                    std::string GetMachineCode() const;
+
+                    /**
+                     * 设置机打发票代码
+                     * @param _machineCode 机打发票代码
+                     * 
+                     */
+                    void SetMachineCode(const std::string& _machineCode);
+
+                    /**
+                     * 判断参数 MachineCode 是否已赋值
+                     * @return MachineCode 是否已赋值
+                     * 
+                     */
+                    bool MachineCodeHasBeenSet() const;
+
+                    /**
+                     * 获取机打发票号码
+                     * @return MachineNumber 机打发票号码
+                     * 
+                     */
+                    std::string GetMachineNumber() const;
+
+                    /**
+                     * 设置机打发票号码
+                     * @param _machineNumber 机打发票号码
+                     * 
+                     */
+                    void SetMachineNumber(const std::string& _machineNumber);
+
+                    /**
+                     * 判断参数 MachineNumber 是否已赋值
+                     * @return MachineNumber 是否已赋值
+                     * 
+                     */
+                    bool MachineNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -938,6 +1148,66 @@ namespace TencentCloud
                      */
                     int64_t m_companySealMark;
                     bool m_companySealMarkHasBeenSet;
+
+                    /**
+                     * 经营拍卖单位
+                     */
+                    std::string m_auctionOrgName;
+                    bool m_auctionOrgNameHasBeenSet;
+
+                    /**
+                     * 经营拍卖单位地址
+                     */
+                    std::string m_auctionOrgAddress;
+                    bool m_auctionOrgAddressHasBeenSet;
+
+                    /**
+                     * 经营拍卖单位纳税人识别号
+                     */
+                    std::string m_auctionOrgTaxID;
+                    bool m_auctionOrgTaxIDHasBeenSet;
+
+                    /**
+                     * 经营拍卖单位开户银行账号
+                     */
+                    std::string m_auctionOrgBankAccount;
+                    bool m_auctionOrgBankAccountHasBeenSet;
+
+                    /**
+                     * 经营拍卖单位电话
+                     */
+                    std::string m_auctionOrgPhone;
+                    bool m_auctionOrgPhoneHasBeenSet;
+
+                    /**
+                     * 开票人
+                     */
+                    std::string m_issuer;
+                    bool m_issuerHasBeenSet;
+
+                    /**
+                     * 税控码
+                     */
+                    std::string m_taxCode;
+                    bool m_taxCodeHasBeenSet;
+
+                    /**
+                     * 机器编号
+                     */
+                    std::string m_machineSerialNumber;
+                    bool m_machineSerialNumberHasBeenSet;
+
+                    /**
+                     * 机打发票代码
+                     */
+                    std::string m_machineCode;
+                    bool m_machineCodeHasBeenSet;
+
+                    /**
+                     * 机打发票号码
+                     */
+                    std::string m_machineNumber;
+                    bool m_machineNumberHasBeenSet;
 
                 };
             }

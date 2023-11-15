@@ -27,7 +27,8 @@ DescribeDSPAESDataAssetDetailRequest::DescribeDSPAESDataAssetDetailRequest() :
     m_complianceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_creditScoreHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string DescribeDSPAESDataAssetDetailRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_creditScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreditScore";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_creditScore.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +180,22 @@ void DescribeDSPAESDataAssetDetailRequest::SetFilters(const vector<Filter>& _fil
 bool DescribeDSPAESDataAssetDetailRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeDSPAESDataAssetDetailRequest::GetCreditScore() const
+{
+    return m_creditScore;
+}
+
+void DescribeDSPAESDataAssetDetailRequest::SetCreditScore(const string& _creditScore)
+{
+    m_creditScore = _creditScore;
+    m_creditScoreHasBeenSet = true;
+}
+
+bool DescribeDSPAESDataAssetDetailRequest::CreditScoreHasBeenSet() const
+{
+    return m_creditScoreHasBeenSet;
 }
 
 

@@ -803,15 +803,15 @@ namespace TencentCloud
                     bool IssuerHasBeenSet() const;
 
                     /**
-                     * 获取完税凭证号码
-                     * @return TaxNum 完税凭证号码
+                     * 获取进口证明书号
+                     * @return TaxNum 进口证明书号
                      * 
                      */
                     std::string GetTaxNum() const;
 
                     /**
-                     * 设置完税凭证号码
-                     * @param _taxNum 完税凭证号码
+                     * 设置进口证明书号
+                     * @param _taxNum 进口证明书号
                      * 
                      */
                     void SetTaxNum(const std::string& _taxNum);
@@ -822,6 +822,48 @@ namespace TencentCloud
                      * 
                      */
                     bool TaxNumHasBeenSet() const;
+
+                    /**
+                     * 获取完税凭证号码
+                     * @return TaxPayNum 完税凭证号码
+                     * 
+                     */
+                    std::string GetTaxPayNum() const;
+
+                    /**
+                     * 设置完税凭证号码
+                     * @param _taxPayNum 完税凭证号码
+                     * 
+                     */
+                    void SetTaxPayNum(const std::string& _taxPayNum);
+
+                    /**
+                     * 判断参数 TaxPayNum 是否已赋值
+                     * @return TaxPayNum 是否已赋值
+                     * 
+                     */
+                    bool TaxPayNumHasBeenSet() const;
+
+                    /**
+                     * 获取税控码
+                     * @return TaxCode 税控码
+                     * 
+                     */
+                    std::string GetTaxCode() const;
+
+                    /**
+                     * 设置税控码
+                     * @param _taxCode 税控码
+                     * 
+                     */
+                    void SetTaxCode(const std::string& _taxCode);
+
+                    /**
+                     * 判断参数 TaxCode 是否已赋值
+                     * @return TaxCode 是否已赋值
+                     * 
+                     */
+                    bool TaxCodeHasBeenSet() const;
 
                     /**
                      * 获取限乘人数
@@ -1147,10 +1189,22 @@ namespace TencentCloud
                     bool m_issuerHasBeenSet;
 
                     /**
-                     * 完税凭证号码
+                     * 进口证明书号
                      */
                     std::string m_taxNum;
                     bool m_taxNumHasBeenSet;
+
+                    /**
+                     * 完税凭证号码
+                     */
+                    std::string m_taxPayNum;
+                    bool m_taxPayNumHasBeenSet;
+
+                    /**
+                     * 税控码
+                     */
+                    std::string m_taxCode;
+                    bool m_taxCodeHasBeenSet;
 
                     /**
                      * 限乘人数

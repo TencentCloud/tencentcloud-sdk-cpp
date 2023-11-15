@@ -189,6 +189,98 @@ namespace TencentCloud
                      */
                     bool DestLevelIdHasBeenSet() const;
 
+                    /**
+                     * 获取调整前的规则ID
+
+                     * @return SrcRuleId 调整前的规则ID
+
+                     * 
+                     */
+                    int64_t GetSrcRuleId() const;
+
+                    /**
+                     * 设置调整前的规则ID
+
+                     * @param _srcRuleId 调整前的规则ID
+
+                     * 
+                     */
+                    void SetSrcRuleId(const int64_t& _srcRuleId);
+
+                    /**
+                     * 判断参数 SrcRuleId 是否已赋值
+                     * @return SrcRuleId 是否已赋值
+                     * 
+                     */
+                    bool SrcRuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取调整之前的分类id
+                     * @return SrcCategoryId 调整之前的分类id
+                     * 
+                     */
+                    int64_t GetSrcCategoryId() const;
+
+                    /**
+                     * 设置调整之前的分类id
+                     * @param _srcCategoryId 调整之前的分类id
+                     * 
+                     */
+                    void SetSrcCategoryId(const int64_t& _srcCategoryId);
+
+                    /**
+                     * 判断参数 SrcCategoryId 是否已赋值
+                     * @return SrcCategoryId 是否已赋值
+                     * 
+                     */
+                    bool SrcCategoryIdHasBeenSet() const;
+
+                    /**
+                     * 获取调整之前的分级id
+                     * @return SrcLevelId 调整之前的分级id
+                     * 
+                     */
+                    int64_t GetSrcLevelId() const;
+
+                    /**
+                     * 设置调整之前的分级id
+                     * @param _srcLevelId 调整之前的分级id
+                     * 
+                     */
+                    void SetSrcLevelId(const int64_t& _srcLevelId);
+
+                    /**
+                     * 判断参数 SrcLevelId 是否已赋值
+                     * @return SrcLevelId 是否已赋值
+                     * 
+                     */
+                    bool SrcLevelIdHasBeenSet() const;
+
+                    /**
+                     * 获取识别方式
+0-系统识别，1-人工打标
+                     * @return IdentifyType 识别方式
+0-系统识别，1-人工打标
+                     * 
+                     */
+                    int64_t GetIdentifyType() const;
+
+                    /**
+                     * 设置识别方式
+0-系统识别，1-人工打标
+                     * @param _identifyType 识别方式
+0-系统识别，1-人工打标
+                     * 
+                     */
+                    void SetIdentifyType(const int64_t& _identifyType);
+
+                    /**
+                     * 判断参数 IdentifyType 是否已赋值
+                     * @return IdentifyType 是否已赋值
+                     * 
+                     */
+                    bool IdentifyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +324,32 @@ namespace TencentCloud
                      */
                     int64_t m_destLevelId;
                     bool m_destLevelIdHasBeenSet;
+
+                    /**
+                     * 调整前的规则ID
+
+                     */
+                    int64_t m_srcRuleId;
+                    bool m_srcRuleIdHasBeenSet;
+
+                    /**
+                     * 调整之前的分类id
+                     */
+                    int64_t m_srcCategoryId;
+                    bool m_srcCategoryIdHasBeenSet;
+
+                    /**
+                     * 调整之前的分级id
+                     */
+                    int64_t m_srcLevelId;
+                    bool m_srcLevelIdHasBeenSet;
+
+                    /**
+                     * 识别方式
+0-系统识别，1-人工打标
+                     */
+                    int64_t m_identifyType;
+                    bool m_identifyTypeHasBeenSet;
 
                 };
             }

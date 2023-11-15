@@ -465,6 +465,81 @@ namespace TencentCloud
                      */
                     bool CategoryFullPathHasBeenSet() const;
 
+                    /**
+                     * 获取0.系统识别，1人工打标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdentifyType 0.系统识别，1人工打标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIdentifyType() const;
+
+                    /**
+                     * 设置0.系统识别，1人工打标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _identifyType 0.系统识别，1人工打标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIdentifyType(const int64_t& _identifyType);
+
+                    /**
+                     * 判断参数 IdentifyType 是否已赋值
+                     * @return IdentifyType 是否已赋值
+                     * 
+                     */
+                    bool IdentifyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取0未核查 1已核查
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckStatus 0未核查 1已核查
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCheckStatus() const;
+
+                    /**
+                     * 设置0未核查 1已核查
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _checkStatus 0未核查 1已核查
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCheckStatus(const int64_t& _checkStatus);
+
+                    /**
+                     * 判断参数 CheckStatus 是否已赋值
+                     * @return CheckStatus 是否已赋值
+                     * 
+                     */
+                    bool CheckStatusHasBeenSet() const;
+
+                    /**
+                     * 获取0非敏感，1敏感
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSensitiveData 0非敏感，1敏感
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsSensitiveData() const;
+
+                    /**
+                     * 设置0非敏感，1敏感
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSensitiveData 0非敏感，1敏感
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSensitiveData(const int64_t& _isSensitiveData);
+
+                    /**
+                     * 判断参数 IsSensitiveData 是否已赋值
+                     * @return IsSensitiveData 是否已赋值
+                     * 
+                     */
+                    bool IsSensitiveDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -584,6 +659,27 @@ namespace TencentCloud
                      */
                     std::string m_categoryFullPath;
                     bool m_categoryFullPathHasBeenSet;
+
+                    /**
+                     * 0.系统识别，1人工打标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_identifyType;
+                    bool m_identifyTypeHasBeenSet;
+
+                    /**
+                     * 0未核查 1已核查
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_checkStatus;
+                    bool m_checkStatusHasBeenSet;
+
+                    /**
+                     * 0非敏感，1敏感
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isSensitiveData;
+                    bool m_isSensitiveDataHasBeenSet;
 
                 };
             }

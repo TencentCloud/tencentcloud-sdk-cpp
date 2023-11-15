@@ -111,6 +111,8 @@
 #include <tencentcloud/dasb/v20191018/model/ModifyResourceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyUserRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyUserResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyUserGroupRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyUserGroupResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ResetDeviceAccountPasswordRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ResetDeviceAccountPasswordResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ResetDeviceAccountPrivateKeyRequest.h>
@@ -277,6 +279,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserGroupResponse> ModifyUserGroupOutcome;
+                typedef std::future<ModifyUserGroupOutcome> ModifyUserGroupOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ModifyUserGroupRequest&, ModifyUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetDeviceAccountPasswordResponse> ResetDeviceAccountPasswordOutcome;
                 typedef std::future<ResetDeviceAccountPasswordOutcome> ResetDeviceAccountPasswordOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ResetDeviceAccountPasswordRequest&, ResetDeviceAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDeviceAccountPasswordAsyncHandler;
@@ -705,6 +710,15 @@ namespace TencentCloud
                 ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest &request);
                 void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
+
+                /**
+                 *修改用户组
+                 * @param req ModifyUserGroupRequest
+                 * @return ModifyUserGroupOutcome
+                 */
+                ModifyUserGroupOutcome ModifyUserGroup(const Model::ModifyUserGroupRequest &request);
+                void ModifyUserGroupAsync(const Model::ModifyUserGroupRequest& request, const ModifyUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserGroupOutcomeCallable ModifyUserGroupCallable(const Model::ModifyUserGroupRequest& request);
 
                 /**
                  *清除设备账号绑定密码

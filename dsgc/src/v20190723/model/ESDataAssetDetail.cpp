@@ -36,7 +36,9 @@ ESDataAssetDetail::ESDataAssetDetail() :
     m_levelRiskScoreHasBeenSet(false),
     m_trustedScoreHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_ruleNameHasBeenSet(false)
+    m_ruleNameHasBeenSet(false),
+    m_identifyTypeHasBeenSet(false),
+    m_checkStatusHasBeenSet(false)
 {
 }
 
@@ -208,6 +210,26 @@ CoreInternalOutcome ESDataAssetDetail::Deserialize(const rapidjson::Value &value
         m_ruleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("IdentifyType") && !value["IdentifyType"].IsNull())
+    {
+        if (!value["IdentifyType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ESDataAssetDetail.IdentifyType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_identifyType = value["IdentifyType"].GetInt64();
+        m_identifyTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckStatus") && !value["CheckStatus"].IsNull())
+    {
+        if (!value["CheckStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ESDataAssetDetail.CheckStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkStatus = value["CheckStatus"].GetInt64();
+        m_checkStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +368,22 @@ void ESDataAssetDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "RuleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_identifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_identifyType, allocator);
+    }
+
+    if (m_checkStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkStatus, allocator);
     }
 
 }
@@ -605,5 +643,37 @@ void ESDataAssetDetail::SetRuleName(const string& _ruleName)
 bool ESDataAssetDetail::RuleNameHasBeenSet() const
 {
     return m_ruleNameHasBeenSet;
+}
+
+int64_t ESDataAssetDetail::GetIdentifyType() const
+{
+    return m_identifyType;
+}
+
+void ESDataAssetDetail::SetIdentifyType(const int64_t& _identifyType)
+{
+    m_identifyType = _identifyType;
+    m_identifyTypeHasBeenSet = true;
+}
+
+bool ESDataAssetDetail::IdentifyTypeHasBeenSet() const
+{
+    return m_identifyTypeHasBeenSet;
+}
+
+int64_t ESDataAssetDetail::GetCheckStatus() const
+{
+    return m_checkStatus;
+}
+
+void ESDataAssetDetail::SetCheckStatus(const int64_t& _checkStatus)
+{
+    m_checkStatus = _checkStatus;
+    m_checkStatusHasBeenSet = true;
+}
+
+bool ESDataAssetDetail::CheckStatusHasBeenSet() const
+{
+    return m_checkStatusHasBeenSet;
 }
 
