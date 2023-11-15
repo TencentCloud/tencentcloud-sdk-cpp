@@ -30,6 +30,7 @@ DescribeDeviceShadowListRequest::DescribeDeviceShadowListRequest() :
     m_applicationTokenHasBeenSet(false),
     m_deviceTypeSetHasBeenSet(false),
     m_productIdSetHasBeenSet(false),
+    m_tagIdSetHasBeenSet(false),
     m_spaceCodeSetHasBeenSet(false),
     m_deviceTagSetHasBeenSet(false)
 {
@@ -108,6 +109,19 @@ string DescribeDeviceShadowListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_productIdSet.begin(); itr != m_productIdSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_tagIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagIdSet.begin(); itr != m_tagIdSet.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
@@ -257,6 +271,22 @@ void DescribeDeviceShadowListRequest::SetProductIdSet(const vector<int64_t>& _pr
 bool DescribeDeviceShadowListRequest::ProductIdSetHasBeenSet() const
 {
     return m_productIdSetHasBeenSet;
+}
+
+vector<int64_t> DescribeDeviceShadowListRequest::GetTagIdSet() const
+{
+    return m_tagIdSet;
+}
+
+void DescribeDeviceShadowListRequest::SetTagIdSet(const vector<int64_t>& _tagIdSet)
+{
+    m_tagIdSet = _tagIdSet;
+    m_tagIdSetHasBeenSet = true;
+}
+
+bool DescribeDeviceShadowListRequest::TagIdSetHasBeenSet() const
+{
+    return m_tagIdSetHasBeenSet;
 }
 
 vector<string> DescribeDeviceShadowListRequest::GetSpaceCodeSet() const

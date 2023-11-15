@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesResponse.h>
+#include <tencentcloud/hai/v20230812/model/TerminateInstancesRequest.h>
+#include <tencentcloud/hai/v20230812/model/TerminateInstancesResponse.h>
 
 
 namespace TencentCloud
@@ -42,6 +44,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunInstancesResponse> RunInstancesOutcome;
                 typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::RunInstancesRequest&, RunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateInstancesResponse> TerminateInstancesOutcome;
+                typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
 
 
 
@@ -53,6 +58,15 @@ namespace TencentCloud
                 RunInstancesOutcome RunInstances(const Model::RunInstancesRequest &request);
                 void RunInstancesAsync(const Model::RunInstancesRequest& request, const RunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunInstancesOutcomeCallable RunInstancesCallable(const Model::RunInstancesRequest& request);
+
+                /**
+                 *本接口 (TerminateInstances) 用于主动退还实例。
+                 * @param req TerminateInstancesRequest
+                 * @return TerminateInstancesOutcome
+                 */
+                TerminateInstancesOutcome TerminateInstances(const Model::TerminateInstancesRequest &request);
+                void TerminateInstancesAsync(const Model::TerminateInstancesRequest& request, const TerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateInstancesOutcomeCallable TerminateInstancesCallable(const Model::TerminateInstancesRequest& request);
 
             };
         }

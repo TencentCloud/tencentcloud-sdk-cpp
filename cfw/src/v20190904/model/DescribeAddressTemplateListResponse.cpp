@@ -26,7 +26,10 @@ using namespace std;
 DescribeAddressTemplateListResponse::DescribeAddressTemplateListResponse() :
     m_totalHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_nameListHasBeenSet(false)
+    m_nameListHasBeenSet(false),
+    m_ipTemplateCountHasBeenSet(false),
+    m_domainTemplateCountHasBeenSet(false),
+    m_portTemplateCountHasBeenSet(false)
 {
 }
 
@@ -107,6 +110,36 @@ CoreInternalOutcome DescribeAddressTemplateListResponse::Deserialize(const strin
         m_nameListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IpTemplateCount") && !rsp["IpTemplateCount"].IsNull())
+    {
+        if (!rsp["IpTemplateCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpTemplateCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipTemplateCount = rsp["IpTemplateCount"].GetInt64();
+        m_ipTemplateCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DomainTemplateCount") && !rsp["DomainTemplateCount"].IsNull())
+    {
+        if (!rsp["DomainTemplateCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainTemplateCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainTemplateCount = rsp["DomainTemplateCount"].GetInt64();
+        m_domainTemplateCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PortTemplateCount") && !rsp["PortTemplateCount"].IsNull())
+    {
+        if (!rsp["PortTemplateCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PortTemplateCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_portTemplateCount = rsp["PortTemplateCount"].GetInt64();
+        m_portTemplateCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +186,30 @@ string DescribeAddressTemplateListResponse::ToJsonString() const
         }
     }
 
+    if (m_ipTemplateCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpTemplateCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipTemplateCount, allocator);
+    }
+
+    if (m_domainTemplateCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainTemplateCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_domainTemplateCount, allocator);
+    }
+
+    if (m_portTemplateCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortTemplateCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_portTemplateCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -193,6 +250,36 @@ vector<string> DescribeAddressTemplateListResponse::GetNameList() const
 bool DescribeAddressTemplateListResponse::NameListHasBeenSet() const
 {
     return m_nameListHasBeenSet;
+}
+
+int64_t DescribeAddressTemplateListResponse::GetIpTemplateCount() const
+{
+    return m_ipTemplateCount;
+}
+
+bool DescribeAddressTemplateListResponse::IpTemplateCountHasBeenSet() const
+{
+    return m_ipTemplateCountHasBeenSet;
+}
+
+int64_t DescribeAddressTemplateListResponse::GetDomainTemplateCount() const
+{
+    return m_domainTemplateCount;
+}
+
+bool DescribeAddressTemplateListResponse::DomainTemplateCountHasBeenSet() const
+{
+    return m_domainTemplateCountHasBeenSet;
+}
+
+int64_t DescribeAddressTemplateListResponse::GetPortTemplateCount() const
+{
+    return m_portTemplateCount;
+}
+
+bool DescribeAddressTemplateListResponse::PortTemplateCountHasBeenSet() const
+{
+    return m_portTemplateCountHasBeenSet;
 }
 
 

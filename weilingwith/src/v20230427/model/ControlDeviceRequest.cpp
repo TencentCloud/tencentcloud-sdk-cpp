@@ -22,7 +22,11 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-ControlDeviceRequest::ControlDeviceRequest()
+ControlDeviceRequest::ControlDeviceRequest() :
+    m_workspaceIdHasBeenSet(false),
+    m_wIDSetHasBeenSet(false),
+    m_controlDataHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,43 @@ string ControlDeviceRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_workspaceId, allocator);
+    }
+
+    if (m_wIDSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WIDSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_wIDSet.begin(); itr != m_wIDSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_controlDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ControlData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_controlData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +81,69 @@ string ControlDeviceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t ControlDeviceRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void ControlDeviceRequest::SetWorkspaceId(const int64_t& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool ControlDeviceRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+vector<string> ControlDeviceRequest::GetWIDSet() const
+{
+    return m_wIDSet;
+}
+
+void ControlDeviceRequest::SetWIDSet(const vector<string>& _wIDSet)
+{
+    m_wIDSet = _wIDSet;
+    m_wIDSetHasBeenSet = true;
+}
+
+bool ControlDeviceRequest::WIDSetHasBeenSet() const
+{
+    return m_wIDSetHasBeenSet;
+}
+
+string ControlDeviceRequest::GetControlData() const
+{
+    return m_controlData;
+}
+
+void ControlDeviceRequest::SetControlData(const string& _controlData)
+{
+    m_controlData = _controlData;
+    m_controlDataHasBeenSet = true;
+}
+
+bool ControlDeviceRequest::ControlDataHasBeenSet() const
+{
+    return m_controlDataHasBeenSet;
+}
+
+string ControlDeviceRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void ControlDeviceRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool ControlDeviceRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
 
 

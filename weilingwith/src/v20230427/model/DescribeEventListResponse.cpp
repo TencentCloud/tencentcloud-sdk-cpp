@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeEventListResponse::DescribeEventListResponse()
+DescribeEventListResponse::DescribeEventListResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeEventListResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    {
+        if (!rsp["Result"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DescribeEventListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_resultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Result";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_result.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeEventListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+DescribeEventListRes DescribeEventListResponse::GetResult() const
+{
+    return m_result;
+}
+
+bool DescribeEventListResponse::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
+}
 
 

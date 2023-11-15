@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/DeviceTypeSet.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取设备的设备类型列表
+                     * @return Result 设备的设备类型列表
+                     * 
+                     */
+                    DeviceTypeSet GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 设备的设备类型列表
+                     */
+                    DeviceTypeSet m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/FileDownloadURL.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取文件下载URL地址
+                     * @return Result 文件下载URL地址
+                     * 
+                     */
+                    FileDownloadURL GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 文件下载URL地址
+                     */
+                    FileDownloadURL m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

@@ -22,7 +22,10 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeSpaceInfoByDeviceIdRequest::DescribeSpaceInfoByDeviceIdRequest()
+DescribeSpaceInfoByDeviceIdRequest::DescribeSpaceInfoByDeviceIdRequest() :
+    m_deviceIdHasBeenSet(false),
+    m_workspaceIdHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string DescribeSpaceInfoByDeviceIdRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_deviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workspaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string DescribeSpaceInfoByDeviceIdRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSpaceInfoByDeviceIdRequest::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void DescribeSpaceInfoByDeviceIdRequest::SetDeviceId(const string& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool DescribeSpaceInfoByDeviceIdRequest::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
+}
+
+string DescribeSpaceInfoByDeviceIdRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void DescribeSpaceInfoByDeviceIdRequest::SetWorkspaceId(const string& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool DescribeSpaceInfoByDeviceIdRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+string DescribeSpaceInfoByDeviceIdRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void DescribeSpaceInfoByDeviceIdRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool DescribeSpaceInfoByDeviceIdRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
 
 

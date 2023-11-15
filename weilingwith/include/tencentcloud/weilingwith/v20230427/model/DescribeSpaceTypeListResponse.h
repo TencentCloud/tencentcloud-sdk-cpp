@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/SpaceTypeListRes.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取空间分类列表出参
+                     * @return Result 空间分类列表出参
+                     * 
+                     */
+                    SpaceTypeListRes GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 空间分类列表出参
+                     */
+                    SpaceTypeListRes m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

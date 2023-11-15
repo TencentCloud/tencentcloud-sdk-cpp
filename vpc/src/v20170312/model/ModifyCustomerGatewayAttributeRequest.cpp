@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyCustomerGatewayAttributeRequest::ModifyCustomerGatewayAttributeRequest() :
     m_customerGatewayIdHasBeenSet(false),
-    m_customerGatewayNameHasBeenSet(false)
+    m_customerGatewayNameHasBeenSet(false),
+    m_bgpAsnHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyCustomerGatewayAttributeRequest::ToJsonString() const
         string key = "CustomerGatewayName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customerGatewayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bgpAsnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BgpAsn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bgpAsn, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyCustomerGatewayAttributeRequest::SetCustomerGatewayName(const string&
 bool ModifyCustomerGatewayAttributeRequest::CustomerGatewayNameHasBeenSet() const
 {
     return m_customerGatewayNameHasBeenSet;
+}
+
+uint64_t ModifyCustomerGatewayAttributeRequest::GetBgpAsn() const
+{
+    return m_bgpAsn;
+}
+
+void ModifyCustomerGatewayAttributeRequest::SetBgpAsn(const uint64_t& _bgpAsn)
+{
+    m_bgpAsn = _bgpAsn;
+    m_bgpAsnHasBeenSet = true;
+}
+
+bool ModifyCustomerGatewayAttributeRequest::BgpAsnHasBeenSet() const
+{
+    return m_bgpAsnHasBeenSet;
 }
 
 

@@ -77,6 +77,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteProClustersRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteProClustersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQUserRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQUserResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQVipInstanceRequest.h>
@@ -366,6 +368,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEnvironmentsResponse> DeleteEnvironmentsOutcome;
                 typedef std::future<DeleteEnvironmentsOutcome> DeleteEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteEnvironmentsRequest&, DeleteEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProClustersResponse> DeleteProClustersOutcome;
+                typedef std::future<DeleteProClustersOutcome> DeleteProClustersOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteProClustersRequest&, DeleteProClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRabbitMQUserResponse> DeleteRabbitMQUserOutcome;
                 typedef std::future<DeleteRabbitMQUserOutcome> DeleteRabbitMQUserOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteRabbitMQUserRequest&, DeleteRabbitMQUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRabbitMQUserAsyncHandler;
@@ -902,6 +907,15 @@ namespace TencentCloud
                 DeleteEnvironmentsOutcome DeleteEnvironments(const Model::DeleteEnvironmentsRequest &request);
                 void DeleteEnvironmentsAsync(const Model::DeleteEnvironmentsRequest& request, const DeleteEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEnvironmentsOutcomeCallable DeleteEnvironmentsCallable(const Model::DeleteEnvironmentsRequest& request);
+
+                /**
+                 *删除专业集群——预付费，仅通过API 调用，支持同时删除多个集群
+                 * @param req DeleteProClustersRequest
+                 * @return DeleteProClustersOutcome
+                 */
+                DeleteProClustersOutcome DeleteProClusters(const Model::DeleteProClustersRequest &request);
+                void DeleteProClustersAsync(const Model::DeleteProClustersRequest& request, const DeleteProClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProClustersOutcomeCallable DeleteProClustersCallable(const Model::DeleteProClustersRequest& request);
 
                 /**
                  *删除RabbitMQ的用户

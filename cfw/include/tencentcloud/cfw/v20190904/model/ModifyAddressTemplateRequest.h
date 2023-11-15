@@ -155,6 +155,27 @@ Type为5，域名模板eg：www.qq.com,www.tencent.com
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取协议端口模板，协议类型，4:4层协议，7:7层协议。Type=6时必填。
+                     * @return ProtocolType 协议端口模板，协议类型，4:4层协议，7:7层协议。Type=6时必填。
+                     * 
+                     */
+                    std::string GetProtocolType() const;
+
+                    /**
+                     * 设置协议端口模板，协议类型，4:4层协议，7:7层协议。Type=6时必填。
+                     * @param _protocolType 协议端口模板，协议类型，4:4层协议，7:7层协议。Type=6时必填。
+                     * 
+                     */
+                    void SetProtocolType(const std::string& _protocolType);
+
+                    /**
+                     * 判断参数 ProtocolType 是否已赋值
+                     * @return ProtocolType 是否已赋值
+                     * 
+                     */
+                    bool ProtocolTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +209,12 @@ Type为5，域名模板eg：www.qq.com,www.tencent.com
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 协议端口模板，协议类型，4:4层协议，7:7层协议。Type=6时必填。
+                     */
+                    std::string m_protocolType;
+                    bool m_protocolTypeHasBeenSet;
 
                 };
             }

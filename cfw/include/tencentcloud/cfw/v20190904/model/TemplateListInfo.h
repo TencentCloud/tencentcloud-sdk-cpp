@@ -246,6 +246,56 @@ namespace TencentCloud
                      */
                     bool RulesNumHasBeenSet() const;
 
+                    /**
+                     * 获取模板Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TemplateId 模板Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置模板Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _templateId 模板Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     * 
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取协议端口模板，协议类型，4:4层协议，7:7层协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProtocolType 协议端口模板，协议类型，4:4层协议，7:7层协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProtocolType() const;
+
+                    /**
+                     * 设置协议端口模板，协议类型，4:4层协议，7:7层协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _protocolType 协议端口模板，协议类型，4:4层协议，7:7层协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProtocolType(const std::string& _protocolType);
+
+                    /**
+                     * 判断参数 ProtocolType 是否已赋值
+                     * @return ProtocolType 是否已赋值
+                     * 
+                     */
+                    bool ProtocolTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +353,20 @@ namespace TencentCloud
                      */
                     int64_t m_rulesNum;
                     bool m_rulesNumHasBeenSet;
+
+                    /**
+                     * 模板Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 协议端口模板，协议类型，4:4层协议，7:7层协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_protocolType;
+                    bool m_protocolTypeHasBeenSet;
 
                 };
             }

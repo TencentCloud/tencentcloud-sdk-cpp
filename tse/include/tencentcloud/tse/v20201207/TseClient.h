@@ -81,6 +81,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServiceRateLimitResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewaysRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewaysResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstancesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeUpstreamHealthCheckConfigRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeUpstreamHealthCheckConfigResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesRequest.h>
@@ -115,12 +119,16 @@
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceRateLimitResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyUpstreamNodeStatusRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyUpstreamNodeStatusResponse.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoRequest.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoResponse.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewaySpecRequest.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewaySpecResponse.h>
 #include <tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessRequest.h>
 #include <tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessResponse.h>
+#include <tencentcloud/tse/v20201207/model/UpdateUpstreamHealthCheckConfigRequest.h>
+#include <tencentcloud/tse/v20201207/model/UpdateUpstreamHealthCheckConfigResponse.h>
 #include <tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsRequest.h>
 #include <tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsResponse.h>
 
@@ -224,6 +232,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayServicesResponse> DescribeCloudNativeAPIGatewayServicesOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayServicesOutcome> DescribeCloudNativeAPIGatewayServicesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayServicesRequest&, DescribeCloudNativeAPIGatewayServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayServicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayUpstreamResponse> DescribeCloudNativeAPIGatewayUpstreamOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayUpstreamOutcome> DescribeCloudNativeAPIGatewayUpstreamOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayUpstreamRequest&, DescribeCloudNativeAPIGatewayUpstreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayUpstreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewaysResponse> DescribeCloudNativeAPIGatewaysOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewaysOutcome> DescribeCloudNativeAPIGatewaysOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewaysRequest&, DescribeCloudNativeAPIGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewaysAsyncHandler;
@@ -245,6 +256,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSREInstancesResponse> DescribeSREInstancesOutcome;
                 typedef std::future<DescribeSREInstancesOutcome> DescribeSREInstancesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeSREInstancesRequest&, DescribeSREInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSREInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUpstreamHealthCheckConfigResponse> DescribeUpstreamHealthCheckConfigOutcome;
+                typedef std::future<DescribeUpstreamHealthCheckConfigOutcome> DescribeUpstreamHealthCheckConfigOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeUpstreamHealthCheckConfigRequest&, DescribeUpstreamHealthCheckConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpstreamHealthCheckConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZookeeperReplicasResponse> DescribeZookeeperReplicasOutcome;
                 typedef std::future<DescribeZookeeperReplicasOutcome> DescribeZookeeperReplicasOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeZookeeperReplicasRequest&, DescribeZookeeperReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZookeeperReplicasAsyncHandler;
@@ -275,6 +289,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNativeGatewayServerGroupResponse> ModifyNativeGatewayServerGroupOutcome;
                 typedef std::future<ModifyNativeGatewayServerGroupOutcome> ModifyNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyNativeGatewayServerGroupRequest&, ModifyNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNativeGatewayServerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUpstreamNodeStatusResponse> ModifyUpstreamNodeStatusOutcome;
+                typedef std::future<ModifyUpstreamNodeStatusOutcome> ModifyUpstreamNodeStatusOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyUpstreamNodeStatusRequest&, ModifyUpstreamNodeStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUpstreamNodeStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateCloudNativeAPIGatewayCertificateInfoResponse> UpdateCloudNativeAPIGatewayCertificateInfoOutcome;
                 typedef std::future<UpdateCloudNativeAPIGatewayCertificateInfoOutcome> UpdateCloudNativeAPIGatewayCertificateInfoOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::UpdateCloudNativeAPIGatewayCertificateInfoRequest&, UpdateCloudNativeAPIGatewayCertificateInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCloudNativeAPIGatewayCertificateInfoAsyncHandler;
@@ -284,6 +301,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateEngineInternetAccessResponse> UpdateEngineInternetAccessOutcome;
                 typedef std::future<UpdateEngineInternetAccessOutcome> UpdateEngineInternetAccessOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::UpdateEngineInternetAccessRequest&, UpdateEngineInternetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEngineInternetAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateUpstreamHealthCheckConfigResponse> UpdateUpstreamHealthCheckConfigOutcome;
+                typedef std::future<UpdateUpstreamHealthCheckConfigOutcome> UpdateUpstreamHealthCheckConfigOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::UpdateUpstreamHealthCheckConfigRequest&, UpdateUpstreamHealthCheckConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUpstreamHealthCheckConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateUpstreamTargetsResponse> UpdateUpstreamTargetsOutcome;
                 typedef std::future<UpdateUpstreamTargetsOutcome> UpdateUpstreamTargetsOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::UpdateUpstreamTargetsRequest&, UpdateUpstreamTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUpstreamTargetsAsyncHandler;
@@ -552,6 +572,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayServicesOutcomeCallable DescribeCloudNativeAPIGatewayServicesCallable(const Model::DescribeCloudNativeAPIGatewayServicesRequest& request);
 
                 /**
+                 *获取云原生网关服务详情下的Upstream列表
+                 * @param req DescribeCloudNativeAPIGatewayUpstreamRequest
+                 * @return DescribeCloudNativeAPIGatewayUpstreamOutcome
+                 */
+                DescribeCloudNativeAPIGatewayUpstreamOutcome DescribeCloudNativeAPIGatewayUpstream(const Model::DescribeCloudNativeAPIGatewayUpstreamRequest &request);
+                void DescribeCloudNativeAPIGatewayUpstreamAsync(const Model::DescribeCloudNativeAPIGatewayUpstreamRequest& request, const DescribeCloudNativeAPIGatewayUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayUpstreamOutcomeCallable DescribeCloudNativeAPIGatewayUpstreamCallable(const Model::DescribeCloudNativeAPIGatewayUpstreamRequest& request);
+
+                /**
                  *获取云原生API网关实例列表
                  * @param req DescribeCloudNativeAPIGatewaysRequest
                  * @return DescribeCloudNativeAPIGatewaysOutcome
@@ -613,6 +642,15 @@ namespace TencentCloud
                 DescribeSREInstancesOutcome DescribeSREInstances(const Model::DescribeSREInstancesRequest &request);
                 void DescribeSREInstancesAsync(const Model::DescribeSREInstancesRequest& request, const DescribeSREInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSREInstancesOutcomeCallable DescribeSREInstancesCallable(const Model::DescribeSREInstancesRequest& request);
+
+                /**
+                 *获取云原生网关服务健康检查配置
+                 * @param req DescribeUpstreamHealthCheckConfigRequest
+                 * @return DescribeUpstreamHealthCheckConfigOutcome
+                 */
+                DescribeUpstreamHealthCheckConfigOutcome DescribeUpstreamHealthCheckConfig(const Model::DescribeUpstreamHealthCheckConfigRequest &request);
+                void DescribeUpstreamHealthCheckConfigAsync(const Model::DescribeUpstreamHealthCheckConfigRequest& request, const DescribeUpstreamHealthCheckConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUpstreamHealthCheckConfigOutcomeCallable DescribeUpstreamHealthCheckConfigCallable(const Model::DescribeUpstreamHealthCheckConfigRequest& request);
 
                 /**
                  *查询Zookeeper类型注册引擎实例副本信息
@@ -705,6 +743,15 @@ namespace TencentCloud
                 ModifyNativeGatewayServerGroupOutcomeCallable ModifyNativeGatewayServerGroupCallable(const Model::ModifyNativeGatewayServerGroupRequest& request);
 
                 /**
+                 *修改云原生网关上游实例节点健康状态
+                 * @param req ModifyUpstreamNodeStatusRequest
+                 * @return ModifyUpstreamNodeStatusOutcome
+                 */
+                ModifyUpstreamNodeStatusOutcome ModifyUpstreamNodeStatus(const Model::ModifyUpstreamNodeStatusRequest &request);
+                void ModifyUpstreamNodeStatusAsync(const Model::ModifyUpstreamNodeStatusRequest& request, const ModifyUpstreamNodeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUpstreamNodeStatusOutcomeCallable ModifyUpstreamNodeStatusCallable(const Model::ModifyUpstreamNodeStatusRequest& request);
+
+                /**
                  *修改云原生网关证书信息
                  * @param req UpdateCloudNativeAPIGatewayCertificateInfoRequest
                  * @return UpdateCloudNativeAPIGatewayCertificateInfoOutcome
@@ -730,6 +777,15 @@ namespace TencentCloud
                 UpdateEngineInternetAccessOutcome UpdateEngineInternetAccess(const Model::UpdateEngineInternetAccessRequest &request);
                 void UpdateEngineInternetAccessAsync(const Model::UpdateEngineInternetAccessRequest& request, const UpdateEngineInternetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateEngineInternetAccessOutcomeCallable UpdateEngineInternetAccessCallable(const Model::UpdateEngineInternetAccessRequest& request);
+
+                /**
+                 *更新云原生网关健康检查配置
+                 * @param req UpdateUpstreamHealthCheckConfigRequest
+                 * @return UpdateUpstreamHealthCheckConfigOutcome
+                 */
+                UpdateUpstreamHealthCheckConfigOutcome UpdateUpstreamHealthCheckConfig(const Model::UpdateUpstreamHealthCheckConfigRequest &request);
+                void UpdateUpstreamHealthCheckConfigAsync(const Model::UpdateUpstreamHealthCheckConfigRequest& request, const UpdateUpstreamHealthCheckConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateUpstreamHealthCheckConfigOutcomeCallable UpdateUpstreamHealthCheckConfigCallable(const Model::UpdateUpstreamHealthCheckConfigRequest& request);
 
                 /**
                  *更新网关上游实例列表，仅支持IPList服务类型

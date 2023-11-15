@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/WorkspaceInfoList.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取项目空间列表
+                     * @return Result 项目空间列表
+                     * 
+                     */
+                    WorkspaceInfoList GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 项目空间列表
+                     */
+                    WorkspaceInfoList m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

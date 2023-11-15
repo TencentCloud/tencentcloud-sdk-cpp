@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/ControlDeviceSet.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取设备控制后结果集
+                     * @return Result 设备控制后结果集
+                     * 
+                     */
+                    ControlDeviceSet GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 设备控制后结果集
+                     */
+                    ControlDeviceSet m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

@@ -153,6 +153,31 @@ namespace TencentCloud
                      */
                     bool AudioChannelHasBeenSet() const;
 
+                    /**
+                     * 获取音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。
+当取值为 0，将自动设置音频码率。
+                     * @return Bitrate 音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。
+当取值为 0，将自动设置音频码率。
+                     * 
+                     */
+                    int64_t GetBitrate() const;
+
+                    /**
+                     * 设置音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。
+当取值为 0，将自动设置音频码率。
+                     * @param _bitrate 音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。
+当取值为 0，将自动设置音频码率。
+                     * 
+                     */
+                    void SetBitrate(const int64_t& _bitrate);
+
+                    /**
+                     * 判断参数 Bitrate 是否已赋值
+                     * @return Bitrate 是否已赋值
+                     * 
+                     */
+                    bool BitrateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +208,13 @@ namespace TencentCloud
                      */
                     int64_t m_audioChannel;
                     bool m_audioChannelHasBeenSet;
+
+                    /**
+                     * 音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。
+当取值为 0，将自动设置音频码率。
+                     */
+                    int64_t m_bitrate;
+                    bool m_bitrateHasBeenSet;
 
                 };
             }

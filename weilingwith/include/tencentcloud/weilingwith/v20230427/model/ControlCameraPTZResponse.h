@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/EmptyRes.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取控制摄像头结果返回
+                     * @return Result 控制摄像头结果返回
+                     * 
+                     */
+                    EmptyRes GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 控制摄像头结果返回
+                     */
+                    EmptyRes m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

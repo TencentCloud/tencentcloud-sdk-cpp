@@ -1201,6 +1201,49 @@ TdmqClient::DeleteEnvironmentsOutcomeCallable TdmqClient::DeleteEnvironmentsCall
     return task->get_future();
 }
 
+TdmqClient::DeleteProClustersOutcome TdmqClient::DeleteProClusters(const DeleteProClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProClustersResponse rsp = DeleteProClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProClustersOutcome(rsp);
+        else
+            return DeleteProClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProClustersOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteProClustersAsync(const DeleteProClustersRequest& request, const DeleteProClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteProClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteProClustersOutcomeCallable TdmqClient::DeleteProClustersCallable(const DeleteProClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteProClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteProClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DeleteRabbitMQUserOutcome TdmqClient::DeleteRabbitMQUser(const DeleteRabbitMQUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRabbitMQUser");

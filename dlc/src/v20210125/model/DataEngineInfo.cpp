@@ -66,7 +66,9 @@ DataEngineInfo::DataEngineInfo() :
     m_userAppIdHasBeenSet(false),
     m_userUinHasBeenSet(false),
     m_sessionResourceTemplateHasBeenSet(false),
-    m_autoAuthorizationHasBeenSet(false)
+    m_autoAuthorizationHasBeenSet(false),
+    m_engineGenerationHasBeenSet(false),
+    m_engineTypeDetailHasBeenSet(false)
 {
 }
 
@@ -572,6 +574,26 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_autoAuthorizationHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineGeneration") && !value["EngineGeneration"].IsNull())
+    {
+        if (!value["EngineGeneration"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.EngineGeneration` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineGeneration = string(value["EngineGeneration"].GetString());
+        m_engineGenerationHasBeenSet = true;
+    }
+
+    if (value.HasMember("EngineTypeDetail") && !value["EngineTypeDetail"].IsNull())
+    {
+        if (!value["EngineTypeDetail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.EngineTypeDetail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineTypeDetail = string(value["EngineTypeDetail"].GetString());
+        m_engineTypeDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -966,6 +988,22 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AutoAuthorization";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoAuthorization, allocator);
+    }
+
+    if (m_engineGenerationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineGeneration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineGeneration.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineTypeDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineTypeDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineTypeDetail.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1705,5 +1743,37 @@ void DataEngineInfo::SetAutoAuthorization(const bool& _autoAuthorization)
 bool DataEngineInfo::AutoAuthorizationHasBeenSet() const
 {
     return m_autoAuthorizationHasBeenSet;
+}
+
+string DataEngineInfo::GetEngineGeneration() const
+{
+    return m_engineGeneration;
+}
+
+void DataEngineInfo::SetEngineGeneration(const string& _engineGeneration)
+{
+    m_engineGeneration = _engineGeneration;
+    m_engineGenerationHasBeenSet = true;
+}
+
+bool DataEngineInfo::EngineGenerationHasBeenSet() const
+{
+    return m_engineGenerationHasBeenSet;
+}
+
+string DataEngineInfo::GetEngineTypeDetail() const
+{
+    return m_engineTypeDetail;
+}
+
+void DataEngineInfo::SetEngineTypeDetail(const string& _engineTypeDetail)
+{
+    m_engineTypeDetail = _engineTypeDetail;
+    m_engineTypeDetailHasBeenSet = true;
+}
+
+bool DataEngineInfo::EngineTypeDetailHasBeenSet() const
+{
+    return m_engineTypeDetailHasBeenSet;
 }
 

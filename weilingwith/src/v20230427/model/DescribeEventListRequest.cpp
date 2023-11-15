@@ -22,7 +22,13 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeEventListRequest::DescribeEventListRequest()
+DescribeEventListRequest::DescribeEventListRequest() :
+    m_workspaceIdHasBeenSet(false),
+    m_pageNumberHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false),
+    m_triggerTypeHasBeenSet(false),
+    m_idSetHasBeenSet(false)
 {
 }
 
@@ -33,6 +39,59 @@ string DescribeEventListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_workspaceId, allocator);
+    }
+
+    if (m_pageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_triggerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_idSet.begin(); itr != m_idSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +99,101 @@ string DescribeEventListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeEventListRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void DescribeEventListRequest::SetWorkspaceId(const int64_t& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool DescribeEventListRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+int64_t DescribeEventListRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void DescribeEventListRequest::SetPageNumber(const int64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool DescribeEventListRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
+}
+
+int64_t DescribeEventListRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeEventListRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeEventListRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
+
+string DescribeEventListRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void DescribeEventListRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool DescribeEventListRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
+
+string DescribeEventListRequest::GetTriggerType() const
+{
+    return m_triggerType;
+}
+
+void DescribeEventListRequest::SetTriggerType(const string& _triggerType)
+{
+    m_triggerType = _triggerType;
+    m_triggerTypeHasBeenSet = true;
+}
+
+bool DescribeEventListRequest::TriggerTypeHasBeenSet() const
+{
+    return m_triggerTypeHasBeenSet;
+}
+
+vector<int64_t> DescribeEventListRequest::GetIdSet() const
+{
+    return m_idSet;
+}
+
+void DescribeEventListRequest::SetIdSet(const vector<int64_t>& _idSet)
+{
+    m_idSet = _idSet;
+    m_idSetHasBeenSet = true;
+}
+
+bool DescribeEventListRequest::IdSetHasBeenSet() const
+{
+    return m_idSetHasBeenSet;
+}
 
 

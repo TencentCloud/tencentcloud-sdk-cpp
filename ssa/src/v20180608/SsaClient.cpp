@@ -212,49 +212,6 @@ SsaClient::DescribeAssetListOutcomeCallable SsaClient::DescribeAssetListCallable
     return task->get_future();
 }
 
-SsaClient::DescribeAssetsMappingListOutcome SsaClient::DescribeAssetsMappingList(const DescribeAssetsMappingListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAssetsMappingList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAssetsMappingListResponse rsp = DescribeAssetsMappingListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAssetsMappingListOutcome(rsp);
-        else
-            return DescribeAssetsMappingListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAssetsMappingListOutcome(outcome.GetError());
-    }
-}
-
-void SsaClient::DescribeAssetsMappingListAsync(const DescribeAssetsMappingListRequest& request, const DescribeAssetsMappingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetsMappingList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-SsaClient::DescribeAssetsMappingListOutcomeCallable SsaClient::DescribeAssetsMappingListCallable(const DescribeAssetsMappingListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAssetsMappingListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetsMappingList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 SsaClient::DescribeCheckConfigAssetListOutcome SsaClient::DescribeCheckConfigAssetList(const DescribeCheckConfigAssetListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCheckConfigAssetList");
@@ -685,49 +642,6 @@ SsaClient::DescribeMappingResultsOutcomeCallable SsaClient::DescribeMappingResul
     return task->get_future();
 }
 
-SsaClient::DescribeSafetyEventListOutcome SsaClient::DescribeSafetyEventList(const DescribeSafetyEventListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSafetyEventList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSafetyEventListResponse rsp = DescribeSafetyEventListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSafetyEventListOutcome(rsp);
-        else
-            return DescribeSafetyEventListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSafetyEventListOutcome(outcome.GetError());
-    }
-}
-
-void SsaClient::DescribeSafetyEventListAsync(const DescribeSafetyEventListRequest& request, const DescribeSafetyEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSafetyEventList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-SsaClient::DescribeSafetyEventListOutcomeCallable SsaClient::DescribeSafetyEventListCallable(const DescribeSafetyEventListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSafetyEventListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSafetyEventList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 SsaClient::DescribeSocAlertDetailsOutcome SsaClient::DescribeSocAlertDetails(const DescribeSocAlertDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSocAlertDetails");
@@ -1022,49 +936,6 @@ SsaClient::DescribeVulListOutcomeCallable SsaClient::DescribeVulListCallable(con
         [this, request]()
         {
             return this->DescribeVulList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-SsaClient::SaDivulgeDataQueryPubOutcome SsaClient::SaDivulgeDataQueryPub(const SaDivulgeDataQueryPubRequest &request)
-{
-    auto outcome = MakeRequest(request, "SaDivulgeDataQueryPub");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SaDivulgeDataQueryPubResponse rsp = SaDivulgeDataQueryPubResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SaDivulgeDataQueryPubOutcome(rsp);
-        else
-            return SaDivulgeDataQueryPubOutcome(o.GetError());
-    }
-    else
-    {
-        return SaDivulgeDataQueryPubOutcome(outcome.GetError());
-    }
-}
-
-void SsaClient::SaDivulgeDataQueryPubAsync(const SaDivulgeDataQueryPubRequest& request, const SaDivulgeDataQueryPubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SaDivulgeDataQueryPub(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-SsaClient::SaDivulgeDataQueryPubOutcomeCallable SsaClient::SaDivulgeDataQueryPubCallable(const SaDivulgeDataQueryPubRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<SaDivulgeDataQueryPubOutcome()>>(
-        [this, request]()
-        {
-            return this->SaDivulgeDataQueryPub(request);
         }
     );
 

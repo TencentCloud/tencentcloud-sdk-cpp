@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取行政区编码集合
+                     * @return AdministrativeCodeSet 行政区编码集合
+                     * 
+                     */
+                    std::vector<std::string> GetAdministrativeCodeSet() const;
+
+                    /**
+                     * 设置行政区编码集合
+                     * @param _administrativeCodeSet 行政区编码集合
+                     * 
+                     */
+                    void SetAdministrativeCodeSet(const std::vector<std::string>& _administrativeCodeSet);
+
+                    /**
+                     * 判断参数 AdministrativeCodeSet 是否已赋值
+                     * @return AdministrativeCodeSet 是否已赋值
+                     * 
+                     */
+                    bool AdministrativeCodeSetHasBeenSet() const;
+
+                    /**
+                     * 获取应用token
+                     * @return ApplicationToken 应用token
+                     * 
+                     */
+                    std::string GetApplicationToken() const;
+
+                    /**
+                     * 设置应用token
+                     * @param _applicationToken 应用token
+                     * 
+                     */
+                    void SetApplicationToken(const std::string& _applicationToken);
+
+                    /**
+                     * 判断参数 ApplicationToken 是否已赋值
+                     * @return ApplicationToken 是否已赋值
+                     * 
+                     */
+                    bool ApplicationTokenHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 行政区编码集合
+                     */
+                    std::vector<std::string> m_administrativeCodeSet;
+                    bool m_administrativeCodeSetHasBeenSet;
+
+                    /**
+                     * 应用token
+                     */
+                    std::string m_applicationToken;
+                    bool m_applicationTokenHasBeenSet;
 
                 };
             }

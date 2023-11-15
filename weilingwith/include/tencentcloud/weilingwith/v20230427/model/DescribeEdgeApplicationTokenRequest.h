@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取应用token
+                     * @return ApplicationToken 应用token
+                     * 
+                     */
+                    std::string GetApplicationToken() const;
+
+                    /**
+                     * 设置应用token
+                     * @param _applicationToken 应用token
+                     * 
+                     */
+                    void SetApplicationToken(const std::string& _applicationToken);
+
+                    /**
+                     * 判断参数 ApplicationToken 是否已赋值
+                     * @return ApplicationToken 是否已赋值
+                     * 
+                     */
+                    bool ApplicationTokenHasBeenSet() const;
+
+                    /**
+                     * 获取是否刷新token，默认为false
+                     * @return Refresh 是否刷新token，默认为false
+                     * 
+                     */
+                    bool GetRefresh() const;
+
+                    /**
+                     * 设置是否刷新token，默认为false
+                     * @param _refresh 是否刷新token，默认为false
+                     * 
+                     */
+                    void SetRefresh(const bool& _refresh);
+
+                    /**
+                     * 判断参数 Refresh 是否已赋值
+                     * @return Refresh 是否已赋值
+                     * 
+                     */
+                    bool RefreshHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 应用token
+                     */
+                    std::string m_applicationToken;
+                    bool m_applicationTokenHasBeenSet;
+
+                    /**
+                     * 是否刷新token，默认为false
+                     */
+                    bool m_refresh;
+                    bool m_refreshHasBeenSet;
 
                 };
             }

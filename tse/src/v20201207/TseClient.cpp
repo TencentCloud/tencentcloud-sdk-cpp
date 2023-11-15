@@ -1287,6 +1287,49 @@ TseClient::DescribeCloudNativeAPIGatewayServicesOutcomeCallable TseClient::Descr
     return task->get_future();
 }
 
+TseClient::DescribeCloudNativeAPIGatewayUpstreamOutcome TseClient::DescribeCloudNativeAPIGatewayUpstream(const DescribeCloudNativeAPIGatewayUpstreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayUpstream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayUpstreamResponse rsp = DescribeCloudNativeAPIGatewayUpstreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayUpstreamOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayUpstreamOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayUpstreamOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayUpstreamAsync(const DescribeCloudNativeAPIGatewayUpstreamRequest& request, const DescribeCloudNativeAPIGatewayUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayUpstream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayUpstreamOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayUpstreamCallable(const DescribeCloudNativeAPIGatewayUpstreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayUpstreamOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayUpstream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeCloudNativeAPIGatewaysOutcome TseClient::DescribeCloudNativeAPIGateways(const DescribeCloudNativeAPIGatewaysRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGateways");
@@ -1581,6 +1624,49 @@ TseClient::DescribeSREInstancesOutcomeCallable TseClient::DescribeSREInstancesCa
         [this, request]()
         {
             return this->DescribeSREInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeUpstreamHealthCheckConfigOutcome TseClient::DescribeUpstreamHealthCheckConfig(const DescribeUpstreamHealthCheckConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUpstreamHealthCheckConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUpstreamHealthCheckConfigResponse rsp = DescribeUpstreamHealthCheckConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUpstreamHealthCheckConfigOutcome(rsp);
+        else
+            return DescribeUpstreamHealthCheckConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUpstreamHealthCheckConfigOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeUpstreamHealthCheckConfigAsync(const DescribeUpstreamHealthCheckConfigRequest& request, const DescribeUpstreamHealthCheckConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUpstreamHealthCheckConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeUpstreamHealthCheckConfigOutcomeCallable TseClient::DescribeUpstreamHealthCheckConfigCallable(const DescribeUpstreamHealthCheckConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUpstreamHealthCheckConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUpstreamHealthCheckConfig(request);
         }
     );
 
@@ -2018,6 +2104,49 @@ TseClient::ModifyNativeGatewayServerGroupOutcomeCallable TseClient::ModifyNative
     return task->get_future();
 }
 
+TseClient::ModifyUpstreamNodeStatusOutcome TseClient::ModifyUpstreamNodeStatus(const ModifyUpstreamNodeStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUpstreamNodeStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUpstreamNodeStatusResponse rsp = ModifyUpstreamNodeStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUpstreamNodeStatusOutcome(rsp);
+        else
+            return ModifyUpstreamNodeStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUpstreamNodeStatusOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyUpstreamNodeStatusAsync(const ModifyUpstreamNodeStatusRequest& request, const ModifyUpstreamNodeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUpstreamNodeStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyUpstreamNodeStatusOutcomeCallable TseClient::ModifyUpstreamNodeStatusCallable(const ModifyUpstreamNodeStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUpstreamNodeStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUpstreamNodeStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::UpdateCloudNativeAPIGatewayCertificateInfoOutcome TseClient::UpdateCloudNativeAPIGatewayCertificateInfo(const UpdateCloudNativeAPIGatewayCertificateInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateCloudNativeAPIGatewayCertificateInfo");
@@ -2140,6 +2269,49 @@ TseClient::UpdateEngineInternetAccessOutcomeCallable TseClient::UpdateEngineInte
         [this, request]()
         {
             return this->UpdateEngineInternetAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::UpdateUpstreamHealthCheckConfigOutcome TseClient::UpdateUpstreamHealthCheckConfig(const UpdateUpstreamHealthCheckConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateUpstreamHealthCheckConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateUpstreamHealthCheckConfigResponse rsp = UpdateUpstreamHealthCheckConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateUpstreamHealthCheckConfigOutcome(rsp);
+        else
+            return UpdateUpstreamHealthCheckConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateUpstreamHealthCheckConfigOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::UpdateUpstreamHealthCheckConfigAsync(const UpdateUpstreamHealthCheckConfigRequest& request, const UpdateUpstreamHealthCheckConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateUpstreamHealthCheckConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::UpdateUpstreamHealthCheckConfigOutcomeCallable TseClient::UpdateUpstreamHealthCheckConfigCallable(const UpdateUpstreamHealthCheckConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateUpstreamHealthCheckConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateUpstreamHealthCheckConfig(request);
         }
     );
 

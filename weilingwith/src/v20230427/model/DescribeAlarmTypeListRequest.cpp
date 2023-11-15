@@ -22,7 +22,10 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeAlarmTypeListRequest::DescribeAlarmTypeListRequest()
+DescribeAlarmTypeListRequest::DescribeAlarmTypeListRequest() :
+    m_workspaceIdHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false),
+    m_parentTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string DescribeAlarmTypeListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_workspaceId, allocator);
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_parentType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string DescribeAlarmTypeListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeAlarmTypeListRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void DescribeAlarmTypeListRequest::SetWorkspaceId(const int64_t& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool DescribeAlarmTypeListRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+string DescribeAlarmTypeListRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void DescribeAlarmTypeListRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool DescribeAlarmTypeListRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
+
+string DescribeAlarmTypeListRequest::GetParentType() const
+{
+    return m_parentType;
+}
+
+void DescribeAlarmTypeListRequest::SetParentType(const string& _parentType)
+{
+    m_parentType = _parentType;
+    m_parentTypeHasBeenSet = true;
+}
+
+bool DescribeAlarmTypeListRequest::ParentTypeHasBeenSet() const
+{
+    return m_parentTypeHasBeenSet;
+}
 
 

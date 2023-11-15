@@ -22,7 +22,11 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-UpdateWorkspaceParkAttributesRequest::UpdateWorkspaceParkAttributesRequest()
+UpdateWorkspaceParkAttributesRequest::UpdateWorkspaceParkAttributesRequest() :
+    m_workspaceIdHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false),
+    m_parkNameHasBeenSet(false),
+    m_parkNumHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,38 @@ string UpdateWorkspaceParkAttributesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_workspaceId, allocator);
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parkNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParkName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_parkName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parkNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParkNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_parkNum.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +76,69 @@ string UpdateWorkspaceParkAttributesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t UpdateWorkspaceParkAttributesRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void UpdateWorkspaceParkAttributesRequest::SetWorkspaceId(const int64_t& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool UpdateWorkspaceParkAttributesRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+string UpdateWorkspaceParkAttributesRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void UpdateWorkspaceParkAttributesRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool UpdateWorkspaceParkAttributesRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
+
+string UpdateWorkspaceParkAttributesRequest::GetParkName() const
+{
+    return m_parkName;
+}
+
+void UpdateWorkspaceParkAttributesRequest::SetParkName(const string& _parkName)
+{
+    m_parkName = _parkName;
+    m_parkNameHasBeenSet = true;
+}
+
+bool UpdateWorkspaceParkAttributesRequest::ParkNameHasBeenSet() const
+{
+    return m_parkNameHasBeenSet;
+}
+
+string UpdateWorkspaceParkAttributesRequest::GetParkNum() const
+{
+    return m_parkNum;
+}
+
+void UpdateWorkspaceParkAttributesRequest::SetParkNum(const string& _parkNum)
+{
+    m_parkNum = _parkNum;
+    m_parkNumHasBeenSet = true;
+}
+
+bool UpdateWorkspaceParkAttributesRequest::ParkNumHasBeenSet() const
+{
+    return m_parkNumHasBeenSet;
+}
 
 

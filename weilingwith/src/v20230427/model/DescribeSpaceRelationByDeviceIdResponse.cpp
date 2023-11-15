@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeSpaceRelationByDeviceIdResponse::DescribeSpaceRelationByDeviceIdResponse()
+DescribeSpaceRelationByDeviceIdResponse::DescribeSpaceRelationByDeviceIdResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeSpaceRelationByDeviceIdResponse::Deserialize(const s
     }
 
 
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    {
+        if (!rsp["Result"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DescribeSpaceRelationByDeviceIdResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_resultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Result";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_result.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeSpaceRelationByDeviceIdResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+SpaceRelationRes DescribeSpaceRelationByDeviceIdResponse::GetResult() const
+{
+    return m_result;
+}
+
+bool DescribeSpaceRelationByDeviceIdResponse::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
+}
 
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/DeviceSpaceInfoRes.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取设备绑定的空间信息出参
+                     * @return Result 设备绑定的空间信息出参
+                     * 
+                     */
+                    DeviceSpaceInfoRes GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 设备绑定的空间信息出参
+                     */
+                    DeviceSpaceInfoRes m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

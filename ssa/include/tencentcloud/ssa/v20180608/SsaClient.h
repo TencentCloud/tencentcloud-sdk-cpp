@@ -31,8 +31,6 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetDetailListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetListResponse.h>
-#include <tencentcloud/ssa/v20180608/model/DescribeAssetsMappingListRequest.h>
-#include <tencentcloud/ssa/v20180608/model/DescribeAssetsMappingListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeCheckConfigAssetListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeCheckConfigAssetListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeCheckConfigDetailRequest.h>
@@ -53,8 +51,6 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeMappingResultsRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeMappingResultsResponse.h>
-#include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListRequest.h>
-#include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertListRequest.h>
@@ -69,8 +65,6 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeVulDetailResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeVulListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeVulListResponse.h>
-#include <tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubRequest.h>
-#include <tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubResponse.h>
 #include <tencentcloud/ssa/v20180608/model/SaDivulgeScanRuleMutateRequest.h>
 #include <tencentcloud/ssa/v20180608/model/SaDivulgeScanRuleMutateResponse.h>
 #include <tencentcloud/ssa/v20180608/model/SaEventPubRequest.h>
@@ -101,9 +95,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssetListResponse> DescribeAssetListOutcome;
                 typedef std::future<DescribeAssetListOutcome> DescribeAssetListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeAssetListRequest&, DescribeAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAssetsMappingListResponse> DescribeAssetsMappingListOutcome;
-                typedef std::future<DescribeAssetsMappingListOutcome> DescribeAssetsMappingListOutcomeCallable;
-                typedef std::function<void(const SsaClient*, const Model::DescribeAssetsMappingListRequest&, DescribeAssetsMappingListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetsMappingListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCheckConfigAssetListResponse> DescribeCheckConfigAssetListOutcome;
                 typedef std::future<DescribeCheckConfigAssetListOutcome> DescribeCheckConfigAssetListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeCheckConfigAssetListRequest&, DescribeCheckConfigAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckConfigAssetListAsyncHandler;
@@ -134,9 +125,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMappingResultsResponse> DescribeMappingResultsOutcome;
                 typedef std::future<DescribeMappingResultsOutcome> DescribeMappingResultsOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeMappingResultsRequest&, DescribeMappingResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMappingResultsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSafetyEventListResponse> DescribeSafetyEventListOutcome;
-                typedef std::future<DescribeSafetyEventListOutcome> DescribeSafetyEventListOutcomeCallable;
-                typedef std::function<void(const SsaClient*, const Model::DescribeSafetyEventListRequest&, DescribeSafetyEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafetyEventListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSocAlertDetailsResponse> DescribeSocAlertDetailsOutcome;
                 typedef std::future<DescribeSocAlertDetailsOutcome> DescribeSocAlertDetailsOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSocAlertDetailsRequest&, DescribeSocAlertDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocAlertDetailsAsyncHandler;
@@ -158,9 +146,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVulListResponse> DescribeVulListOutcome;
                 typedef std::future<DescribeVulListOutcome> DescribeVulListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeVulListRequest&, DescribeVulListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulListAsyncHandler;
-                typedef Outcome<Core::Error, Model::SaDivulgeDataQueryPubResponse> SaDivulgeDataQueryPubOutcome;
-                typedef std::future<SaDivulgeDataQueryPubOutcome> SaDivulgeDataQueryPubOutcomeCallable;
-                typedef std::function<void(const SsaClient*, const Model::SaDivulgeDataQueryPubRequest&, SaDivulgeDataQueryPubOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaDivulgeDataQueryPubAsyncHandler;
                 typedef Outcome<Core::Error, Model::SaDivulgeScanRuleMutateResponse> SaDivulgeScanRuleMutateOutcome;
                 typedef std::future<SaDivulgeScanRuleMutateOutcome> SaDivulgeScanRuleMutateOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::SaDivulgeScanRuleMutateRequest&, SaDivulgeScanRuleMutateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaDivulgeScanRuleMutateAsyncHandler;
@@ -205,15 +190,6 @@ namespace TencentCloud
                 DescribeAssetListOutcome DescribeAssetList(const Model::DescribeAssetListRequest &request);
                 void DescribeAssetListAsync(const Model::DescribeAssetListRequest& request, const DescribeAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAssetListOutcomeCallable DescribeAssetListCallable(const Model::DescribeAssetListRequest& request);
-
-                /**
-                 *资产测绘-测绘列表
-                 * @param req DescribeAssetsMappingListRequest
-                 * @return DescribeAssetsMappingListOutcome
-                 */
-                DescribeAssetsMappingListOutcome DescribeAssetsMappingList(const Model::DescribeAssetsMappingListRequest &request);
-                void DescribeAssetsMappingListAsync(const Model::DescribeAssetsMappingListRequest& request, const DescribeAssetsMappingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAssetsMappingListOutcomeCallable DescribeAssetsMappingListCallable(const Model::DescribeAssetsMappingListRequest& request);
 
                 /**
                  *云安全配置管理资产组列表
@@ -306,15 +282,6 @@ namespace TencentCloud
                 DescribeMappingResultsOutcomeCallable DescribeMappingResultsCallable(const Model::DescribeMappingResultsRequest& request);
 
                 /**
-                 *获取安全事件列表
-                 * @param req DescribeSafetyEventListRequest
-                 * @return DescribeSafetyEventListOutcome
-                 */
-                DescribeSafetyEventListOutcome DescribeSafetyEventList(const Model::DescribeSafetyEventListRequest &request);
-                void DescribeSafetyEventListAsync(const Model::DescribeSafetyEventListRequest& request, const DescribeSafetyEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSafetyEventListOutcomeCallable DescribeSafetyEventListCallable(const Model::DescribeSafetyEventListRequest& request);
-
-                /**
                  *返回告警详情
                  * @param req DescribeSocAlertDetailsRequest
                  * @return DescribeSocAlertDetailsOutcome
@@ -376,15 +343,6 @@ namespace TencentCloud
                 DescribeVulListOutcome DescribeVulList(const Model::DescribeVulListRequest &request);
                 void DescribeVulListAsync(const Model::DescribeVulListRequest& request, const DescribeVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVulListOutcomeCallable DescribeVulListCallable(const Model::DescribeVulListRequest& request);
-
-                /**
-                 *查询【通用字段】【泄露监测数据列表】
-                 * @param req SaDivulgeDataQueryPubRequest
-                 * @return SaDivulgeDataQueryPubOutcome
-                 */
-                SaDivulgeDataQueryPubOutcome SaDivulgeDataQueryPub(const Model::SaDivulgeDataQueryPubRequest &request);
-                void SaDivulgeDataQueryPubAsync(const Model::SaDivulgeDataQueryPubRequest& request, const SaDivulgeDataQueryPubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SaDivulgeDataQueryPubOutcomeCallable SaDivulgeDataQueryPubCallable(const Model::SaDivulgeDataQueryPubRequest& request);
 
                 /**
                  *SaDivulgeScanRuleMutate

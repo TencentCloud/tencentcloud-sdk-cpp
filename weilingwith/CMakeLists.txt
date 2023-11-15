@@ -21,127 +21,228 @@ set(weilingwith_public_header
 set(weilingwith_public_header_model
   include/tencentcloud/weilingwith/v20230427/model/DescribeWorkSpaceBuildingCountAndAreaRequest.h
   include/tencentcloud/weilingwith/v20230427/model/ApplicationList.h
-  include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceDeviceRelationListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/ModelInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/AlarmInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceDataInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/BuildingProfileRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmTypeListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceStatusStatRequest.h
-  include/tencentcloud/weilingwith/v20230427/model/DescribeVideoLiveStreamResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/ProductSet.h
+  include/tencentcloud/weilingwith/v20230427/model/Action.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeTenantBuildingCountAndAreaRequest.h
   include/tencentcloud/weilingwith/v20230427/model/AddAlarmProcessRecordRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeInterfaceListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/MessageProfile.h
   include/tencentcloud/weilingwith/v20230427/model/ModifyDeviceNameResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeEdgeApplicationTokenResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceLocation.h
   include/tencentcloud/weilingwith/v20230427/model/SsoUserResult.h
   include/tencentcloud/weilingwith/v20230427/model/SsoTeamUser.h
+  include/tencentcloud/weilingwith/v20230427/model/AddDeviceInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/EmptyRes.h
+  include/tencentcloud/weilingwith/v20230427/model/ApiContent.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/ProductInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/ApiInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeModelListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeRuleDetailRequest.h
   include/tencentcloud/weilingwith/v20230427/model/BatchCreateDeviceResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/ElementPropertyRes.h
   include/tencentcloud/weilingwith/v20230427/model/CreateApplicationTokenResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeTenantUserListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/StopVideoStreamingResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceStatusListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/ModifyDeviceNameRequest.h
-  include/tencentcloud/weilingwith/v20230427/model/DescribeFileUploadURLResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmStatusListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeFileDownloadURLResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeRuleDetailResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/ReportMsgRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceInfoByDeviceIdResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeApplicationListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/ElementProfileTreeNode.h
+  include/tencentcloud/weilingwith/v20230427/model/WorkspaceInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSceneListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceRelationByDeviceIdRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/AlarmTypeDetailInfo.h
   include/tencentcloud/weilingwith/v20230427/model/ChangeAlarmStatusResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeBuildingModelResponse.h
   include/tencentcloud/weilingwith/v20230427/model/BatchReportAppMessageResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeElementProfilePageRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribePropertyListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceDeviceRelationListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/FileUploadURL.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeApplicationListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/ElementProperty.h
+  include/tencentcloud/weilingwith/v20230427/model/BuildingListRes.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceSpaceInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeFileDownloadURLRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceStatusStatRes.h
+  include/tencentcloud/weilingwith/v20230427/model/HandlerPersonInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/Event.h
   include/tencentcloud/weilingwith/v20230427/model/StopVideoStreamingRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceDataStats.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceTypeListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeModelListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/VideoCloudRecordRes.h
   include/tencentcloud/weilingwith/v20230427/model/SsoDepartmentsResult.h
+  include/tencentcloud/weilingwith/v20230427/model/VideoRecordStreamRes.h
+  include/tencentcloud/weilingwith/v20230427/model/ControlDeviceRes.h
+  include/tencentcloud/weilingwith/v20230427/model/WorkspaceInfoList.h
+  include/tencentcloud/weilingwith/v20230427/model/BuildingModelRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeBuildingListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceRelationRes.h
   include/tencentcloud/weilingwith/v20230427/model/SsoTeamUserResult.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceUserListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribePropertyListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeEventListRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeProductListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/ApplicationLogo.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeLinkRuleListRes.h
+  include/tencentcloud/weilingwith/v20230427/model/CreateDeviceFailed.h
+  include/tencentcloud/weilingwith/v20230427/model/ElementTranslate.h
   include/tencentcloud/weilingwith/v20230427/model/ControlCameraPTZResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/BuildingProfile.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceTypeListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/RecordInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeVideoRecordStreamResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/CreateDeviceSucceeded.h
+  include/tencentcloud/weilingwith/v20230427/model/SceneInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/RuleDetailRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmLevelListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/BatchReportAppMessageRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceStatusStatResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DeviceShadowRes.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmTypeListRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeBuildingModelRequest.h
-  include/tencentcloud/weilingwith/v20230427/model/AddAlarmProcessRecordResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/SsoUser.h
+  include/tencentcloud/weilingwith/v20230427/model/AdministrativeDetail.h
+  include/tencentcloud/weilingwith/v20230427/model/BuildingModel.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceDeviceRelation.h
+  include/tencentcloud/weilingwith/v20230427/model/ControlCameraPTZRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/AdministrationData.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceDeviceIdListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeElementProfileTreeResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeTenantDepartmentListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/BatchReportAppMessageRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeBuildingProfileRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceShadowListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceDataTotalStatsRes.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListRes.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceTypeSet.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeBuildingListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceDeviceRelationRes.h
+  include/tencentcloud/weilingwith/v20230427/model/StatLevel.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceUserListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/ControlDeviceSet.h
+  include/tencentcloud/weilingwith/v20230427/model/BatchCreateDeviceRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeVideoCloudRecordResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceListRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceDeviceRelationListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/UpdateWorkspaceParkAttributesRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeLinkRuleListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceTypeListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/ControlDeviceRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/ApplicationTokenInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmLevelListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/AlarmLevelInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/HandleRecordInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/ElementProfileTreeRes.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceTagRes.h
+  include/tencentcloud/weilingwith/v20230427/model/ActionDetail.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeAdministrationByTagRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/UpdateWorkspaceParkAttributesResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceTagListResponse.h
-  include/tencentcloud/weilingwith/v20230427/model/DescribeActionListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/BatchCreateDeviceRequest.h
   include/tencentcloud/weilingwith/v20230427/model/BatchKillAlarmRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeActionListRes.h
+  include/tencentcloud/weilingwith/v20230427/model/LinkRuleInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/StatDeviceType.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeElementProfileTreeRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeLinkRuleListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeEventListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceTagInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceType.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceTagListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceRelation.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeBuildingProfileResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/FileInfo.h
   include/tencentcloud/weilingwith/v20230427/model/ReportAppMessageRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/SsoDepartment.h
   include/tencentcloud/weilingwith/v20230427/model/ApplicationInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeFileUploadURLRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceStatusListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeVideoCloudRecordRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/ElementProfilePageRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeAdministrationByTagRequest.h
-  include/tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/ReportImg.h
+  include/tencentcloud/weilingwith/v20230427/model/EventDetail.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceModifyInfo.h
   include/tencentcloud/weilingwith/v20230427/model/ControlDeviceResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmLevelListRes.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmListRes.h
+  include/tencentcloud/weilingwith/v20230427/model/CameraExtendInfoRes.h
+  include/tencentcloud/weilingwith/v20230427/model/CustomField.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceRelationByDeviceIdResponse.h
-  include/tencentcloud/weilingwith/v20230427/model/ControlCameraPTZRequest.h
-  include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceInfoByDeviceIdRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/AddAlarmProcessRecordResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeActionListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeInterfaceListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceTypeOverview.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeProductListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/ReportAppMessage.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeVideoRecordStreamRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/SceneListRes.h
+  include/tencentcloud/weilingwith/v20230427/model/ApiInfoList.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmStatusListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/CreateApplicationTokenRequest.h
-  include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmStatusListRequest.h
-  include/tencentcloud/weilingwith/v20230427/model/UpdateWorkspaceParkAttributesResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeFileUploadURLResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/ElementProfile.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeTenantDepartmentListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeWorkSpaceBuildingCountAndAreaResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/EventObj.h
+  include/tencentcloud/weilingwith/v20230427/model/CustomFieldInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/AlarmTypeInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceTypeListRes.h
   include/tencentcloud/weilingwith/v20230427/model/ReportAppMessageResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeAdministrationByTagResponse.h
-  include/tencentcloud/weilingwith/v20230427/model/SsoDepartment.h
+  include/tencentcloud/weilingwith/v20230427/model/LinkRule.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceType.h
+  include/tencentcloud/weilingwith/v20230427/model/ActionObj.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceStatusInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceStatusRes.h
   include/tencentcloud/weilingwith/v20230427/model/BatchKillAlarmResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DeviceShadowInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/DeviceSpaceInfoRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceTypeListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceShadowListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/ProcessRecordInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSceneListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceListResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeTenantBuildingCountAndAreaResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceDataListStatsRes.h
+  include/tencentcloud/weilingwith/v20230427/model/RawInfo.h
+  include/tencentcloud/weilingwith/v20230427/model/FileDownloadURL.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeVideoLiveStreamRequest.h
-  include/tencentcloud/weilingwith/v20230427/model/SsoUser.h
+  include/tencentcloud/weilingwith/v20230427/model/ModelSet.h
   include/tencentcloud/weilingwith/v20230427/model/ChangeAlarmStatusRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmTypeListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeCameraExtendInfoResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceInfoByDeviceIdRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeCameraExtendInfoRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/ElementCoordinates.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeVideoLiveStreamResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeTenantUserListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/SpaceDeviceIdListRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeEventListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeElementProfilePageResponse.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeSpaceDeviceIdListRequest.h
+  include/tencentcloud/weilingwith/v20230427/model/RelatedProduct.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeActionListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeEdgeApplicationTokenRequest.h
   )
@@ -150,127 +251,228 @@ set(weilingwith_src
   src/v20230427/WeilingwithClient.cpp
   src/v20230427/model/DescribeWorkSpaceBuildingCountAndAreaRequest.cpp
   src/v20230427/model/ApplicationList.cpp
-  src/v20230427/model/DescribeSpaceDeviceRelationListRequest.cpp
+  src/v20230427/model/ModelInfo.cpp
+  src/v20230427/model/AlarmInfo.cpp
+  src/v20230427/model/DeviceDataInfo.cpp
+  src/v20230427/model/BuildingProfileRes.cpp
   src/v20230427/model/DescribeAlarmTypeListResponse.cpp
   src/v20230427/model/DescribeDeviceStatusStatRequest.cpp
-  src/v20230427/model/DescribeVideoLiveStreamResponse.cpp
+  src/v20230427/model/ProductSet.cpp
+  src/v20230427/model/Action.cpp
   src/v20230427/model/DescribeTenantBuildingCountAndAreaRequest.cpp
   src/v20230427/model/AddAlarmProcessRecordRequest.cpp
   src/v20230427/model/DescribeInterfaceListResponse.cpp
+  src/v20230427/model/MessageProfile.cpp
   src/v20230427/model/ModifyDeviceNameResponse.cpp
   src/v20230427/model/DescribeEdgeApplicationTokenResponse.cpp
+  src/v20230427/model/DeviceLocation.cpp
   src/v20230427/model/SsoUserResult.cpp
   src/v20230427/model/SsoTeamUser.cpp
+  src/v20230427/model/AddDeviceInfo.cpp
+  src/v20230427/model/EmptyRes.cpp
+  src/v20230427/model/ApiContent.cpp
   src/v20230427/model/DescribeWorkspaceListResponse.cpp
+  src/v20230427/model/ProductInfo.cpp
+  src/v20230427/model/ApiInfo.cpp
   src/v20230427/model/DescribeModelListResponse.cpp
   src/v20230427/model/DescribeRuleDetailRequest.cpp
   src/v20230427/model/BatchCreateDeviceResponse.cpp
+  src/v20230427/model/ElementPropertyRes.cpp
   src/v20230427/model/CreateApplicationTokenResponse.cpp
   src/v20230427/model/DescribeTenantUserListRequest.cpp
   src/v20230427/model/StopVideoStreamingResponse.cpp
   src/v20230427/model/DescribeDeviceStatusListResponse.cpp
   src/v20230427/model/ModifyDeviceNameRequest.cpp
-  src/v20230427/model/DescribeFileUploadURLResponse.cpp
+  src/v20230427/model/DescribeAlarmStatusListRequest.cpp
   src/v20230427/model/DescribeFileDownloadURLResponse.cpp
   src/v20230427/model/DescribeRuleDetailResponse.cpp
+  src/v20230427/model/ReportMsgRes.cpp
   src/v20230427/model/DescribeSpaceInfoByDeviceIdResponse.cpp
   src/v20230427/model/DescribeApplicationListRequest.cpp
+  src/v20230427/model/ElementProfileTreeNode.cpp
+  src/v20230427/model/WorkspaceInfo.cpp
   src/v20230427/model/DescribeSceneListRequest.cpp
   src/v20230427/model/DescribeDeviceListRequest.cpp
   src/v20230427/model/DescribeSpaceRelationByDeviceIdRequest.cpp
+  src/v20230427/model/AlarmTypeDetailInfo.cpp
   src/v20230427/model/ChangeAlarmStatusResponse.cpp
   src/v20230427/model/DescribeBuildingModelResponse.cpp
   src/v20230427/model/BatchReportAppMessageResponse.cpp
   src/v20230427/model/DescribeElementProfilePageRequest.cpp
   src/v20230427/model/DescribePropertyListResponse.cpp
+  src/v20230427/model/DescribeSpaceDeviceRelationListRequest.cpp
+  src/v20230427/model/FileUploadURL.cpp
   src/v20230427/model/DescribeApplicationListResponse.cpp
+  src/v20230427/model/ElementProperty.cpp
+  src/v20230427/model/BuildingListRes.cpp
+  src/v20230427/model/DeviceSpaceInfo.cpp
   src/v20230427/model/DescribeFileDownloadURLRequest.cpp
+  src/v20230427/model/DeviceStatusStatRes.cpp
+  src/v20230427/model/HandlerPersonInfo.cpp
+  src/v20230427/model/Event.cpp
   src/v20230427/model/StopVideoStreamingRequest.cpp
+  src/v20230427/model/SpaceDataStats.cpp
   src/v20230427/model/DescribeSpaceTypeListRequest.cpp
+  src/v20230427/model/SpaceInfo.cpp
   src/v20230427/model/DescribeModelListRequest.cpp
+  src/v20230427/model/VideoCloudRecordRes.cpp
   src/v20230427/model/SsoDepartmentsResult.cpp
+  src/v20230427/model/VideoRecordStreamRes.cpp
+  src/v20230427/model/ControlDeviceRes.cpp
+  src/v20230427/model/WorkspaceInfoList.cpp
+  src/v20230427/model/BuildingModelRes.cpp
   src/v20230427/model/DescribeBuildingListResponse.cpp
+  src/v20230427/model/SpaceRelationRes.cpp
   src/v20230427/model/SsoTeamUserResult.cpp
   src/v20230427/model/DescribeWorkspaceUserListResponse.cpp
   src/v20230427/model/DescribePropertyListRequest.cpp
+  src/v20230427/model/DescribeEventListRes.cpp
   src/v20230427/model/DescribeProductListRequest.cpp
   src/v20230427/model/ApplicationLogo.cpp
+  src/v20230427/model/DescribeLinkRuleListRes.cpp
+  src/v20230427/model/CreateDeviceFailed.cpp
+  src/v20230427/model/ElementTranslate.cpp
   src/v20230427/model/ControlCameraPTZResponse.cpp
   src/v20230427/model/DescribeWorkspaceListRequest.cpp
+  src/v20230427/model/BuildingProfile.cpp
   src/v20230427/model/DescribeDeviceTypeListResponse.cpp
+  src/v20230427/model/RecordInfo.cpp
   src/v20230427/model/DescribeVideoRecordStreamResponse.cpp
+  src/v20230427/model/CreateDeviceSucceeded.cpp
+  src/v20230427/model/SceneInfo.cpp
+  src/v20230427/model/RuleDetailRes.cpp
   src/v20230427/model/DescribeAlarmLevelListRequest.cpp
   src/v20230427/model/BatchReportAppMessageRequest.cpp
   src/v20230427/model/DescribeDeviceStatusStatResponse.cpp
   src/v20230427/model/DeviceShadowRes.cpp
+  src/v20230427/model/DescribeAlarmTypeListRes.cpp
   src/v20230427/model/DescribeBuildingModelRequest.cpp
-  src/v20230427/model/AddAlarmProcessRecordResponse.cpp
+  src/v20230427/model/SsoUser.cpp
+  src/v20230427/model/AdministrativeDetail.cpp
+  src/v20230427/model/BuildingModel.cpp
+  src/v20230427/model/SpaceDeviceRelation.cpp
+  src/v20230427/model/ControlCameraPTZRequest.cpp
+  src/v20230427/model/AdministrationData.cpp
   src/v20230427/model/DescribeSpaceDeviceIdListResponse.cpp
   src/v20230427/model/DescribeElementProfileTreeResponse.cpp
   src/v20230427/model/DescribeTenantDepartmentListRequest.cpp
+  src/v20230427/model/BatchReportAppMessageRes.cpp
   src/v20230427/model/DescribeBuildingProfileRequest.cpp
   src/v20230427/model/DescribeDeviceShadowListResponse.cpp
+  src/v20230427/model/SpaceDataTotalStatsRes.cpp
+  src/v20230427/model/DescribeCityWorkspaceListRes.cpp
+  src/v20230427/model/DeviceTypeSet.cpp
   src/v20230427/model/DescribeBuildingListRequest.cpp
+  src/v20230427/model/SpaceDeviceRelationRes.cpp
+  src/v20230427/model/StatLevel.cpp
   src/v20230427/model/DescribeWorkspaceUserListRequest.cpp
+  src/v20230427/model/ControlDeviceSet.cpp
+  src/v20230427/model/BatchCreateDeviceRes.cpp
   src/v20230427/model/DescribeVideoCloudRecordResponse.cpp
+  src/v20230427/model/DescribeDeviceListRes.cpp
   src/v20230427/model/DescribeSpaceDeviceRelationListResponse.cpp
   src/v20230427/model/UpdateWorkspaceParkAttributesRequest.cpp
   src/v20230427/model/DescribeLinkRuleListResponse.cpp
   src/v20230427/model/DescribeSpaceTypeListResponse.cpp
   src/v20230427/model/ControlDeviceRequest.cpp
+  src/v20230427/model/ApplicationTokenInfo.cpp
   src/v20230427/model/DescribeAlarmLevelListResponse.cpp
+  src/v20230427/model/AlarmLevelInfo.cpp
+  src/v20230427/model/HandleRecordInfo.cpp
+  src/v20230427/model/ElementProfileTreeRes.cpp
+  src/v20230427/model/DeviceTagRes.cpp
+  src/v20230427/model/ActionDetail.cpp
+  src/v20230427/model/DescribeAdministrationByTagRes.cpp
   src/v20230427/model/DescribeCityWorkspaceListRequest.cpp
+  src/v20230427/model/UpdateWorkspaceParkAttributesResponse.cpp
   src/v20230427/model/DescribeDeviceTagListResponse.cpp
-  src/v20230427/model/DescribeActionListResponse.cpp
+  src/v20230427/model/DescribeCityWorkspaceListResponse.cpp
   src/v20230427/model/BatchCreateDeviceRequest.cpp
   src/v20230427/model/BatchKillAlarmRequest.cpp
+  src/v20230427/model/DescribeActionListRes.cpp
+  src/v20230427/model/LinkRuleInfo.cpp
+  src/v20230427/model/StatDeviceType.cpp
   src/v20230427/model/DescribeElementProfileTreeRequest.cpp
   src/v20230427/model/DescribeLinkRuleListRequest.cpp
   src/v20230427/model/DescribeEventListResponse.cpp
+  src/v20230427/model/DeviceTagInfo.cpp
+  src/v20230427/model/DeviceType.cpp
   src/v20230427/model/DescribeDeviceTagListRequest.cpp
+  src/v20230427/model/SpaceRelation.cpp
   src/v20230427/model/DescribeBuildingProfileResponse.cpp
+  src/v20230427/model/FileInfo.cpp
   src/v20230427/model/ReportAppMessageRequest.cpp
+  src/v20230427/model/SsoDepartment.cpp
   src/v20230427/model/ApplicationInfo.cpp
   src/v20230427/model/DescribeFileUploadURLRequest.cpp
   src/v20230427/model/DescribeDeviceStatusListRequest.cpp
   src/v20230427/model/DescribeVideoCloudRecordRequest.cpp
+  src/v20230427/model/ElementProfilePageRes.cpp
   src/v20230427/model/DescribeAdministrationByTagRequest.cpp
-  src/v20230427/model/DescribeCityWorkspaceListResponse.cpp
+  src/v20230427/model/ReportImg.cpp
+  src/v20230427/model/EventDetail.cpp
+  src/v20230427/model/DeviceModifyInfo.cpp
   src/v20230427/model/ControlDeviceResponse.cpp
+  src/v20230427/model/DescribeAlarmLevelListRes.cpp
+  src/v20230427/model/DescribeAlarmListRes.cpp
+  src/v20230427/model/CameraExtendInfoRes.cpp
+  src/v20230427/model/CustomField.cpp
   src/v20230427/model/DescribeAlarmListResponse.cpp
   src/v20230427/model/DescribeSpaceRelationByDeviceIdResponse.cpp
-  src/v20230427/model/ControlCameraPTZRequest.cpp
-  src/v20230427/model/DescribeSpaceInfoByDeviceIdRequest.cpp
+  src/v20230427/model/AddAlarmProcessRecordResponse.cpp
+  src/v20230427/model/DescribeActionListResponse.cpp
   src/v20230427/model/DescribeInterfaceListRequest.cpp
+  src/v20230427/model/DeviceTypeOverview.cpp
   src/v20230427/model/DescribeProductListResponse.cpp
+  src/v20230427/model/ReportAppMessage.cpp
   src/v20230427/model/DescribeVideoRecordStreamRequest.cpp
+  src/v20230427/model/SceneListRes.cpp
+  src/v20230427/model/ApiInfoList.cpp
   src/v20230427/model/DescribeAlarmStatusListResponse.cpp
   src/v20230427/model/CreateApplicationTokenRequest.cpp
-  src/v20230427/model/DescribeAlarmStatusListRequest.cpp
-  src/v20230427/model/UpdateWorkspaceParkAttributesResponse.cpp
+  src/v20230427/model/DescribeFileUploadURLResponse.cpp
+  src/v20230427/model/ElementProfile.cpp
   src/v20230427/model/DescribeTenantDepartmentListResponse.cpp
   src/v20230427/model/DescribeWorkSpaceBuildingCountAndAreaResponse.cpp
+  src/v20230427/model/EventObj.cpp
+  src/v20230427/model/CustomFieldInfo.cpp
+  src/v20230427/model/AlarmTypeInfo.cpp
+  src/v20230427/model/SpaceTypeListRes.cpp
   src/v20230427/model/ReportAppMessageResponse.cpp
   src/v20230427/model/DescribeAlarmListRequest.cpp
   src/v20230427/model/DescribeAdministrationByTagResponse.cpp
-  src/v20230427/model/SsoDepartment.cpp
+  src/v20230427/model/LinkRule.cpp
+  src/v20230427/model/SpaceType.cpp
+  src/v20230427/model/ActionObj.cpp
+  src/v20230427/model/DeviceStatusInfo.cpp
+  src/v20230427/model/DeviceStatusRes.cpp
   src/v20230427/model/BatchKillAlarmResponse.cpp
   src/v20230427/model/DeviceShadowInfo.cpp
+  src/v20230427/model/DeviceSpaceInfoRes.cpp
   src/v20230427/model/DescribeDeviceTypeListRequest.cpp
   src/v20230427/model/DescribeDeviceShadowListRequest.cpp
+  src/v20230427/model/ProcessRecordInfo.cpp
   src/v20230427/model/DescribeSceneListResponse.cpp
   src/v20230427/model/DescribeDeviceListResponse.cpp
   src/v20230427/model/DescribeTenantBuildingCountAndAreaResponse.cpp
+  src/v20230427/model/SpaceDataListStatsRes.cpp
+  src/v20230427/model/RawInfo.cpp
+  src/v20230427/model/FileDownloadURL.cpp
   src/v20230427/model/DescribeVideoLiveStreamRequest.cpp
-  src/v20230427/model/SsoUser.cpp
+  src/v20230427/model/ModelSet.cpp
   src/v20230427/model/ChangeAlarmStatusRequest.cpp
   src/v20230427/model/DescribeAlarmTypeListRequest.cpp
   src/v20230427/model/DescribeCameraExtendInfoResponse.cpp
+  src/v20230427/model/DescribeSpaceInfoByDeviceIdRequest.cpp
   src/v20230427/model/DescribeCameraExtendInfoRequest.cpp
+  src/v20230427/model/ElementCoordinates.cpp
+  src/v20230427/model/DescribeVideoLiveStreamResponse.cpp
   src/v20230427/model/DescribeTenantUserListResponse.cpp
+  src/v20230427/model/SpaceDeviceIdListRes.cpp
   src/v20230427/model/DescribeEventListRequest.cpp
   src/v20230427/model/DescribeElementProfilePageResponse.cpp
   src/v20230427/model/DescribeSpaceDeviceIdListRequest.cpp
+  src/v20230427/model/RelatedProduct.cpp
   src/v20230427/model/DescribeActionListRequest.cpp
   src/v20230427/model/DescribeEdgeApplicationTokenRequest.cpp
   )

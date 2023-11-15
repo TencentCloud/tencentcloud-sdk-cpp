@@ -42,7 +42,115 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取工作空间id
+                     * @return WorkspaceId 工作空间id
+                     * 
+                     */
+                    int64_t GetWorkspaceId() const;
+
+                    /**
+                     * 设置工作空间id
+                     * @param _workspaceId 工作空间id
+                     * 
+                     */
+                    void SetWorkspaceId(const int64_t& _workspaceId);
+
+                    /**
+                     * 判断参数 WorkspaceId 是否已赋值
+                     * @return WorkspaceId 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取设备wid，最大100个
+                     * @return WIDSet 设备wid，最大100个
+                     * 
+                     */
+                    std::vector<std::string> GetWIDSet() const;
+
+                    /**
+                     * 设置设备wid，最大100个
+                     * @param _wIDSet 设备wid，最大100个
+                     * 
+                     */
+                    void SetWIDSet(const std::vector<std::string>& _wIDSet);
+
+                    /**
+                     * 判断参数 WIDSet 是否已赋值
+                     * @return WIDSet 是否已赋值
+                     * 
+                     */
+                    bool WIDSetHasBeenSet() const;
+
+                    /**
+                     * 获取控制内容
+                     * @return ControlData 控制内容
+                     * 
+                     */
+                    std::string GetControlData() const;
+
+                    /**
+                     * 设置控制内容
+                     * @param _controlData 控制内容
+                     * 
+                     */
+                    void SetControlData(const std::string& _controlData);
+
+                    /**
+                     * 判断参数 ControlData 是否已赋值
+                     * @return ControlData 是否已赋值
+                     * 
+                     */
+                    bool ControlDataHasBeenSet() const;
+
+                    /**
+                     * 获取应用token
+                     * @return ApplicationToken 应用token
+                     * 
+                     */
+                    std::string GetApplicationToken() const;
+
+                    /**
+                     * 设置应用token
+                     * @param _applicationToken 应用token
+                     * 
+                     */
+                    void SetApplicationToken(const std::string& _applicationToken);
+
+                    /**
+                     * 判断参数 ApplicationToken 是否已赋值
+                     * @return ApplicationToken 是否已赋值
+                     * 
+                     */
+                    bool ApplicationTokenHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 工作空间id
+                     */
+                    int64_t m_workspaceId;
+                    bool m_workspaceIdHasBeenSet;
+
+                    /**
+                     * 设备wid，最大100个
+                     */
+                    std::vector<std::string> m_wIDSet;
+                    bool m_wIDSetHasBeenSet;
+
+                    /**
+                     * 控制内容
+                     */
+                    std::string m_controlData;
+                    bool m_controlDataHasBeenSet;
+
+                    /**
+                     * 应用token
+                     */
+                    std::string m_applicationToken;
+                    bool m_applicationTokenHasBeenSet;
 
                 };
             }

@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取应用token
+                     * @return ApplicationToken 应用token
+                     * 
+                     */
+                    std::string GetApplicationToken() const;
+
+                    /**
+                     * 设置应用token
+                     * @param _applicationToken 应用token
+                     * 
+                     */
+                    void SetApplicationToken(const std::string& _applicationToken);
+
+                    /**
+                     * 判断参数 ApplicationToken 是否已赋值
+                     * @return ApplicationToken 是否已赋值
+                     * 
+                     */
+                    bool ApplicationTokenHasBeenSet() const;
+
+                    /**
+                     * 获取工作空间id，非必填，填了则表示根据id进行批量查询
+                     * @return WorkspaceId 工作空间id，非必填，填了则表示根据id进行批量查询
+                     * 
+                     */
+                    uint64_t GetWorkspaceId() const;
+
+                    /**
+                     * 设置工作空间id，非必填，填了则表示根据id进行批量查询
+                     * @param _workspaceId 工作空间id，非必填，填了则表示根据id进行批量查询
+                     * 
+                     */
+                    void SetWorkspaceId(const uint64_t& _workspaceId);
+
+                    /**
+                     * 判断参数 WorkspaceId 是否已赋值
+                     * @return WorkspaceId 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 应用token
+                     */
+                    std::string m_applicationToken;
+                    bool m_applicationTokenHasBeenSet;
+
+                    /**
+                     * 工作空间id，非必填，填了则表示根据id进行批量查询
+                     */
+                    uint64_t m_workspaceId;
+                    bool m_workspaceIdHasBeenSet;
 
                 };
             }

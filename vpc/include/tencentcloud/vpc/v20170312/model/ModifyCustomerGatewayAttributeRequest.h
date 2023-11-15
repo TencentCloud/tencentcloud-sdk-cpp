@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool CustomerGatewayNameHasBeenSet() const;
 
+                    /**
+                     * 获取BGP ASN。只有开启BGP白名单才可以修改此参数。
+                     * @return BgpAsn BGP ASN。只有开启BGP白名单才可以修改此参数。
+                     * 
+                     */
+                    uint64_t GetBgpAsn() const;
+
+                    /**
+                     * 设置BGP ASN。只有开启BGP白名单才可以修改此参数。
+                     * @param _bgpAsn BGP ASN。只有开启BGP白名单才可以修改此参数。
+                     * 
+                     */
+                    void SetBgpAsn(const uint64_t& _bgpAsn);
+
+                    /**
+                     * 判断参数 BgpAsn 是否已赋值
+                     * @return BgpAsn 是否已赋值
+                     * 
+                     */
+                    bool BgpAsnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_customerGatewayName;
                     bool m_customerGatewayNameHasBeenSet;
+
+                    /**
+                     * BGP ASN。只有开启BGP白名单才可以修改此参数。
+                     */
+                    uint64_t m_bgpAsn;
+                    bool m_bgpAsnHasBeenSet;
 
                 };
             }

@@ -24,17 +24,20 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServiceResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayRouteRateLimitResponse.h
   include/tencentcloud/tse/v20201207/model/ApolloEnvParam.h
+  include/tencentcloud/tse/v20201207/model/UpdateUpstreamHealthCheckConfigRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServiceRateLimitRequest.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayRequest.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayStrategyCronScalerConfig.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayRouteRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupResponse.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCertificateResponse.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayRouteRateLimitResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleResponse.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayNodeConfig.h
+  include/tencentcloud/tse/v20201207/model/DescribeUpstreamHealthCheckConfigRequest.h
   include/tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayResult.h
@@ -42,10 +45,13 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesResponse.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribeUpstreamHealthCheckConfigResponse.h
+  include/tencentcloud/tse/v20201207/model/KongActiveHealthCheck.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCertificateResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCanaryRuleRequest.h
   include/tencentcloud/tse/v20201207/model/GatewayInstanceSchemeAndPorts.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayRouteRateLimitRequest.h
+  include/tencentcloud/tse/v20201207/model/UpstreamHealthCheckConfig.h
   include/tencentcloud/tse/v20201207/model/NacosServerInterface.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServiceRequest.h
@@ -57,9 +63,10 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/SREInstance.h
   include/tencentcloud/tse/v20201207/model/InstanceTagInfo.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.h
-  include/tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesResponse.h
   include/tencentcloud/tse/v20201207/model/NacosReplica.h
+  include/tencentcloud/tse/v20201207/model/KongUpstreamPreview.h
   include/tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessRequest.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayCanaryRuleResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstancesRequest.h
@@ -83,8 +90,10 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ServiceGovernanceInfo.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosReplicasResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitRequest.h
+  include/tencentcloud/tse/v20201207/model/KongPassiveHealthCheck.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayVpcConfig.h
   include/tencentcloud/tse/v20201207/model/CloudAPIGatewayCanaryRuleList.h
+  include/tencentcloud/tse/v20201207/model/ModifyUpstreamNodeStatusRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayConfigResponse.h
   include/tencentcloud/tse/v20201207/model/KongRoutePreview.h
   include/tencentcloud/tse/v20201207/model/KongCertificatesList.h
@@ -121,6 +130,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceRateLimitRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCanaryRulesResponse.h
+  include/tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCertificateRequest.h
   include/tencentcloud/tse/v20201207/model/NativeGatewayServerGroup.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitResponse.h
@@ -135,6 +145,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCertificateDetailsResponse.h
   include/tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoRequest.h
+  include/tencentcloud/tse/v20201207/model/KongUpstreamList.h
   include/tencentcloud/tse/v20201207/model/EngineAdmin.h
   include/tencentcloud/tse/v20201207/model/PolarisLimiterAddress.h
   include/tencentcloud/tse/v20201207/model/DescribeOneCloudNativeAPIGatewayServiceResponse.h
@@ -143,6 +154,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/KongServices.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayCertificateRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayResponse.h
+  include/tencentcloud/tse/v20201207/model/ModifyUpstreamNodeStatusResponse.h
   include/tencentcloud/tse/v20201207/model/NetworkAccessControl.h
   include/tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRouteRateLimitResponse.h
@@ -161,6 +173,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayStrategyAutoScalerConfig.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesRequest.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayCanaryRuleCondition.h
+  include/tencentcloud/tse/v20201207/model/UpdateUpstreamHealthCheckConfigResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h
   include/tencentcloud/tse/v20201207/model/ZookeeperServerInterface.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServerGroupResult.h
@@ -199,17 +212,20 @@ set(tse_src
   src/v20201207/model/CreateCloudNativeAPIGatewayServiceResponse.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayRouteRateLimitResponse.cpp
   src/v20201207/model/ApolloEnvParam.cpp
+  src/v20201207/model/UpdateUpstreamHealthCheckConfigRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayServiceRateLimitRequest.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayRequest.cpp
   src/v20201207/model/CloudNativeAPIGatewayStrategyCronScalerConfig.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayNodesRequest.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayRouteRequest.cpp
+  src/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamRequest.cpp
   src/v20201207/model/DeleteNativeGatewayServerGroupResponse.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayCertificateResponse.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayRouteRateLimitResponse.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressResponse.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleResponse.cpp
   src/v20201207/model/CloudNativeAPIGatewayNodeConfig.cpp
+  src/v20201207/model/DescribeUpstreamHealthCheckConfigRequest.cpp
   src/v20201207/model/CreateNativeGatewayServerGroupRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesRequest.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayResult.cpp
@@ -217,10 +233,13 @@ set(tse_src
   src/v20201207/model/ModifyCloudNativeAPIGatewayServiceResponse.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayNodesResponse.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayResponse.cpp
+  src/v20201207/model/DescribeUpstreamHealthCheckConfigResponse.cpp
+  src/v20201207/model/KongActiveHealthCheck.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayCertificateResponse.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayCanaryRuleRequest.cpp
   src/v20201207/model/GatewayInstanceSchemeAndPorts.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayRouteRateLimitRequest.cpp
+  src/v20201207/model/UpstreamHealthCheckConfig.cpp
   src/v20201207/model/NacosServerInterface.cpp
   src/v20201207/model/DescribeNacosReplicasRequest.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayServiceRequest.cpp
@@ -232,9 +251,10 @@ set(tse_src
   src/v20201207/model/SREInstance.cpp
   src/v20201207/model/InstanceTagInfo.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.cpp
-  src/v20201207/model/UpdateUpstreamTargetsResponse.cpp
+  src/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamResponse.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesResponse.cpp
   src/v20201207/model/NacosReplica.cpp
+  src/v20201207/model/KongUpstreamPreview.cpp
   src/v20201207/model/UpdateEngineInternetAccessRequest.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayCanaryRuleResponse.cpp
   src/v20201207/model/DescribeSREInstancesRequest.cpp
@@ -258,8 +278,10 @@ set(tse_src
   src/v20201207/model/ServiceGovernanceInfo.cpp
   src/v20201207/model/DescribeNacosReplicasResponse.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitRequest.cpp
+  src/v20201207/model/KongPassiveHealthCheck.cpp
   src/v20201207/model/CloudNativeAPIGatewayVpcConfig.cpp
   src/v20201207/model/CloudAPIGatewayCanaryRuleList.cpp
+  src/v20201207/model/ModifyUpstreamNodeStatusRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayConfigResponse.cpp
   src/v20201207/model/KongRoutePreview.cpp
   src/v20201207/model/KongCertificatesList.cpp
@@ -296,6 +318,7 @@ set(tse_src
   src/v20201207/model/ModifyCloudNativeAPIGatewayServiceRateLimitRequest.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayCanaryRulesResponse.cpp
+  src/v20201207/model/UpdateUpstreamTargetsResponse.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayCertificateRequest.cpp
   src/v20201207/model/NativeGatewayServerGroup.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitResponse.cpp
@@ -310,6 +333,7 @@ set(tse_src
   src/v20201207/model/DeleteCloudNativeAPIGatewayRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayCertificateDetailsResponse.cpp
   src/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoRequest.cpp
+  src/v20201207/model/KongUpstreamList.cpp
   src/v20201207/model/EngineAdmin.cpp
   src/v20201207/model/PolarisLimiterAddress.cpp
   src/v20201207/model/DescribeOneCloudNativeAPIGatewayServiceResponse.cpp
@@ -318,6 +342,7 @@ set(tse_src
   src/v20201207/model/KongServices.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayCertificateRequest.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayResponse.cpp
+  src/v20201207/model/ModifyUpstreamNodeStatusResponse.cpp
   src/v20201207/model/NetworkAccessControl.cpp
   src/v20201207/model/DescribeZookeeperServerInterfacesRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayRouteRateLimitResponse.cpp
@@ -336,6 +361,7 @@ set(tse_src
   src/v20201207/model/CloudNativeAPIGatewayStrategyAutoScalerConfig.cpp
   src/v20201207/model/DescribeNacosServerInterfacesRequest.cpp
   src/v20201207/model/CloudNativeAPIGatewayCanaryRuleCondition.cpp
+  src/v20201207/model/UpdateUpstreamHealthCheckConfigResponse.cpp
   src/v20201207/model/DescribeSREInstancesResponse.cpp
   src/v20201207/model/ZookeeperServerInterface.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayServerGroupResult.cpp

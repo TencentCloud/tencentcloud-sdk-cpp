@@ -1148,6 +1148,56 @@ namespace TencentCloud
                      */
                     bool AutoAuthorizationHasBeenSet() const;
 
+                    /**
+                     * 获取引擎版本，支持Native/SuperSQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineGeneration 引擎版本，支持Native/SuperSQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineGeneration() const;
+
+                    /**
+                     * 设置引擎版本，支持Native/SuperSQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineGeneration 引擎版本，支持Native/SuperSQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineGeneration(const std::string& _engineGeneration);
+
+                    /**
+                     * 判断参数 EngineGeneration 是否已赋值
+                     * @return EngineGeneration 是否已赋值
+                     * 
+                     */
+                    bool EngineGenerationHasBeenSet() const;
+
+                    /**
+                     * 获取引擎详细类型，支持：SparkSQL/SparkBatch/PrestoSQL/Kyuubi
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineTypeDetail 引擎详细类型，支持：SparkSQL/SparkBatch/PrestoSQL/Kyuubi
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineTypeDetail() const;
+
+                    /**
+                     * 设置引擎详细类型，支持：SparkSQL/SparkBatch/PrestoSQL/Kyuubi
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineTypeDetail 引擎详细类型，支持：SparkSQL/SparkBatch/PrestoSQL/Kyuubi
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineTypeDetail(const std::string& _engineTypeDetail);
+
+                    /**
+                     * 判断参数 EngineTypeDetail 是否已赋值
+                     * @return EngineTypeDetail 是否已赋值
+                     * 
+                     */
+                    bool EngineTypeDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1458,6 +1508,20 @@ namespace TencentCloud
                      */
                     bool m_autoAuthorization;
                     bool m_autoAuthorizationHasBeenSet;
+
+                    /**
+                     * 引擎版本，支持Native/SuperSQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineGeneration;
+                    bool m_engineGenerationHasBeenSet;
+
+                    /**
+                     * 引擎详细类型，支持：SparkSQL/SparkBatch/PrestoSQL/Kyuubi
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineTypeDetail;
+                    bool m_engineTypeDetailHasBeenSet;
 
                 };
             }

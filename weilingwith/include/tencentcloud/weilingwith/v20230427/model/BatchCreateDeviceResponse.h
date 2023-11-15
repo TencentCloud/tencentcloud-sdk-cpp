@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/BatchCreateDeviceRes.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取批量新增设备返回结果
+                     * @return Result 批量新增设备返回结果
+                     * 
+                     */
+                    BatchCreateDeviceRes GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 批量新增设备返回结果
+                     */
+                    BatchCreateDeviceRes m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

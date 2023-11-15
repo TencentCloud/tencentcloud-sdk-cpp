@@ -42,7 +42,115 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取工作空间id
+                     * @return WorkspaceId 工作空间id
+                     * 
+                     */
+                    int64_t GetWorkspaceId() const;
+
+                    /**
+                     * 设置工作空间id
+                     * @param _workspaceId 工作空间id
+                     * 
+                     */
+                    void SetWorkspaceId(const int64_t& _workspaceId);
+
+                    /**
+                     * 判断参数 WorkspaceId 是否已赋值
+                     * @return WorkspaceId 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取应用token
+                     * @return ApplicationToken 应用token
+                     * 
+                     */
+                    std::string GetApplicationToken() const;
+
+                    /**
+                     * 设置应用token
+                     * @param _applicationToken 应用token
+                     * 
+                     */
+                    void SetApplicationToken(const std::string& _applicationToken);
+
+                    /**
+                     * 判断参数 ApplicationToken 是否已赋值
+                     * @return ApplicationToken 是否已赋值
+                     * 
+                     */
+                    bool ApplicationTokenHasBeenSet() const;
+
+                    /**
+                     * 获取园区简称
+                     * @return ParkName 园区简称
+                     * 
+                     */
+                    std::string GetParkName() const;
+
+                    /**
+                     * 设置园区简称
+                     * @param _parkName 园区简称
+                     * 
+                     */
+                    void SetParkName(const std::string& _parkName);
+
+                    /**
+                     * 判断参数 ParkName 是否已赋值
+                     * @return ParkName 是否已赋值
+                     * 
+                     */
+                    bool ParkNameHasBeenSet() const;
+
+                    /**
+                     * 获取园区编号
+                     * @return ParkNum 园区编号
+                     * 
+                     */
+                    std::string GetParkNum() const;
+
+                    /**
+                     * 设置园区编号
+                     * @param _parkNum 园区编号
+                     * 
+                     */
+                    void SetParkNum(const std::string& _parkNum);
+
+                    /**
+                     * 判断参数 ParkNum 是否已赋值
+                     * @return ParkNum 是否已赋值
+                     * 
+                     */
+                    bool ParkNumHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 工作空间id
+                     */
+                    int64_t m_workspaceId;
+                    bool m_workspaceIdHasBeenSet;
+
+                    /**
+                     * 应用token
+                     */
+                    std::string m_applicationToken;
+                    bool m_applicationTokenHasBeenSet;
+
+                    /**
+                     * 园区简称
+                     */
+                    std::string m_parkName;
+                    bool m_parkNameHasBeenSet;
+
+                    /**
+                     * 园区编号
+                     */
+                    std::string m_parkNum;
+                    bool m_parkNumHasBeenSet;
 
                 };
             }

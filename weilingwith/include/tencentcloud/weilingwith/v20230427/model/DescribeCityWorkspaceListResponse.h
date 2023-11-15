@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListRes.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,30 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取工作空间信息集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Result 工作空间信息集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DescribeCityWorkspaceListRes GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 工作空间信息集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeCityWorkspaceListRes m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

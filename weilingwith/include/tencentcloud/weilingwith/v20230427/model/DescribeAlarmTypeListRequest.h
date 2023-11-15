@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取工作空间id
+                     * @return WorkspaceId 工作空间id
+                     * 
+                     */
+                    int64_t GetWorkspaceId() const;
+
+                    /**
+                     * 设置工作空间id
+                     * @param _workspaceId 工作空间id
+                     * 
+                     */
+                    void SetWorkspaceId(const int64_t& _workspaceId);
+
+                    /**
+                     * 判断参数 WorkspaceId 是否已赋值
+                     * @return WorkspaceId 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取应用token
+                     * @return ApplicationToken 应用token
+                     * 
+                     */
+                    std::string GetApplicationToken() const;
+
+                    /**
+                     * 设置应用token
+                     * @param _applicationToken 应用token
+                     * 
+                     */
+                    void SetApplicationToken(const std::string& _applicationToken);
+
+                    /**
+                     * 判断参数 ApplicationToken 是否已赋值
+                     * @return ApplicationToken 是否已赋值
+                     * 
+                     */
+                    bool ApplicationTokenHasBeenSet() const;
+
+                    /**
+                     * 获取一级类型
+                     * @return ParentType 一级类型
+                     * 
+                     */
+                    std::string GetParentType() const;
+
+                    /**
+                     * 设置一级类型
+                     * @param _parentType 一级类型
+                     * 
+                     */
+                    void SetParentType(const std::string& _parentType);
+
+                    /**
+                     * 判断参数 ParentType 是否已赋值
+                     * @return ParentType 是否已赋值
+                     * 
+                     */
+                    bool ParentTypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 工作空间id
+                     */
+                    int64_t m_workspaceId;
+                    bool m_workspaceIdHasBeenSet;
+
+                    /**
+                     * 应用token
+                     */
+                    std::string m_applicationToken;
+                    bool m_applicationTokenHasBeenSet;
+
+                    /**
+                     * 一级类型
+                     */
+                    std::string m_parentType;
+                    bool m_parentTypeHasBeenSet;
 
                 };
             }

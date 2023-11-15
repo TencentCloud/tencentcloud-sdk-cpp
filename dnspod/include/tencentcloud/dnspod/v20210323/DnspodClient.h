@@ -572,7 +572,7 @@ namespace TencentCloud
                 DeleteRecordGroupOutcomeCallable DeleteRecordGroupCallable(const Model::DeleteRecordGroupRequest& request);
 
                 /**
-                 *删除域名共享
+                 *按账号删除域名共享
                  * @param req DeleteShareDomainRequest
                  * @return DeleteShareDomainOutcome
                  */

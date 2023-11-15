@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool FirstTimeHasBeenSet() const;
 
                     /**
-                     * 获取状态，0未处理、1已处置、2已忽略
-                     * @return AffectAssetCount 状态，0未处理、1已处置、2已忽略
+                     * 获取影响资产数量
+                     * @return AffectAssetCount 影响资产数量
                      * 
                      */
                     uint64_t GetAffectAssetCount() const;
 
                     /**
-                     * 设置状态，0未处理、1已处置、2已忽略
-                     * @param _affectAssetCount 状态，0未处理、1已处置、2已忽略
+                     * 设置影响资产数量
+                     * @param _affectAssetCount 影响资产数量
                      * 
                      */
                     void SetAffectAssetCount(const uint64_t& _affectAssetCount);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AffectAssetCountHasBeenSet() const;
 
                     /**
-                     * 获取资产唯一id
-                     * @return Id 资产唯一id
+                     * 获取风险ID
+                     * @return Id 风险ID
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置资产唯一id
-                     * @param _id 资产唯一id
+                     * 设置风险ID
+                     * @param _id 风险ID
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取资产子类型
-                     * @return From 资产子类型
+                     * 获取扫描来源，具体看接口返回枚举类型
+                     * @return From 扫描来源，具体看接口返回枚举类型
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置资产子类型
-                     * @param _from 资产子类型
+                     * 设置扫描来源，具体看接口返回枚举类型
+                     * @param _from 扫描来源，具体看接口返回枚举类型
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool DescribeHasBeenSet() const;
 
                     /**
-                     * 获取负载
-                     * @return Payload 负载
+                     * 获取漏洞payload
+                     * @return Payload 漏洞payload
                      * 
                      */
                     std::string GetPayload() const;
 
                     /**
-                     * 设置负载
-                     * @param _payload 负载
+                     * 设置漏洞payload
+                     * @param _payload 漏洞payload
                      * 
                      */
                     void SetPayload(const std::string& _payload);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool PayloadHasBeenSet() const;
 
                     /**
-                     * 获取版本名
-                     * @return AppName 版本名
+                     * 获取漏洞影响组件
+                     * @return AppName 漏洞影响组件
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置版本名
-                     * @param _appName 版本名
+                     * 设置漏洞影响组件
+                     * @param _appName 漏洞影响组件
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取相关引用
-                     * @return References 相关引用
+                     * 获取技术参考
+                     * @return References 技术参考
                      * 
                      */
                     std::string GetReferences() const;
 
                     /**
-                     * 设置相关引用
-                     * @param _references 相关引用
+                     * 设置技术参考
+                     * @param _references 技术参考
                      * 
                      */
                     void SetReferences(const std::string& _references);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool ReferencesHasBeenSet() const;
 
                     /**
-                     * 获取版本
-                     * @return AppVersion 版本
+                     * 获取漏洞影响版本
+                     * @return AppVersion 漏洞影响版本
                      * 
                      */
                     std::string GetAppVersion() const;
 
                     /**
-                     * 设置版本
-                     * @param _appVersion 版本
+                     * 设置漏洞影响版本
+                     * @param _appVersion 漏洞影响版本
                      * 
                      */
                     void SetAppVersion(const std::string& _appVersion);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool AppVersionHasBeenSet() const;
 
                     /**
-                     * 获取漏洞链接
-                     * @return VULURL 漏洞链接
+                     * 获取风险点
+                     * @return VULURL 风险点
                      * 
                      */
                     std::string GetVULURL() const;
 
                     /**
-                     * 设置漏洞链接
-                     * @param _vULURL 漏洞链接
+                     * 设置风险点
+                     * @param _vULURL 风险点
                      * 
                      */
                     void SetVULURL(const std::string& _vULURL);
@@ -605,19 +605,19 @@ namespace TencentCloud
                     bool m_firstTimeHasBeenSet;
 
                     /**
-                     * 状态，0未处理、1已处置、2已忽略
+                     * 影响资产数量
                      */
                     uint64_t m_affectAssetCount;
                     bool m_affectAssetCountHasBeenSet;
 
                     /**
-                     * 资产唯一id
+                     * 风险ID
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 资产子类型
+                     * 扫描来源，具体看接口返回枚举类型
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
@@ -653,31 +653,31 @@ namespace TencentCloud
                     bool m_describeHasBeenSet;
 
                     /**
-                     * 负载
+                     * 漏洞payload
                      */
                     std::string m_payload;
                     bool m_payloadHasBeenSet;
 
                     /**
-                     * 版本名
+                     * 漏洞影响组件
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 相关引用
+                     * 技术参考
                      */
                     std::string m_references;
                     bool m_referencesHasBeenSet;
 
                     /**
-                     * 版本
+                     * 漏洞影响版本
                      */
                     std::string m_appVersion;
                     bool m_appVersionHasBeenSet;
 
                     /**
-                     * 漏洞链接
+                     * 风险点
                      */
                     std::string m_vULURL;
                     bool m_vULURLHasBeenSet;

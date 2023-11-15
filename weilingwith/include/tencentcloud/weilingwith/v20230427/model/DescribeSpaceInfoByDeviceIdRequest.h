@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取设备id
+                     * @return DeviceId 设备id
+                     * 
+                     */
+                    std::string GetDeviceId() const;
+
+                    /**
+                     * 设置设备id
+                     * @param _deviceId 设备id
+                     * 
+                     */
+                    void SetDeviceId(const std::string& _deviceId);
+
+                    /**
+                     * 判断参数 DeviceId 是否已赋值
+                     * @return DeviceId 是否已赋值
+                     * 
+                     */
+                    bool DeviceIdHasBeenSet() const;
+
+                    /**
+                     * 获取项目空间id
+                     * @return WorkspaceId 项目空间id
+                     * 
+                     */
+                    std::string GetWorkspaceId() const;
+
+                    /**
+                     * 设置项目空间id
+                     * @param _workspaceId 项目空间id
+                     * 
+                     */
+                    void SetWorkspaceId(const std::string& _workspaceId);
+
+                    /**
+                     * 判断参数 WorkspaceId 是否已赋值
+                     * @return WorkspaceId 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取应用token
+                     * @return ApplicationToken 应用token
+                     * 
+                     */
+                    std::string GetApplicationToken() const;
+
+                    /**
+                     * 设置应用token
+                     * @param _applicationToken 应用token
+                     * 
+                     */
+                    void SetApplicationToken(const std::string& _applicationToken);
+
+                    /**
+                     * 判断参数 ApplicationToken 是否已赋值
+                     * @return ApplicationToken 是否已赋值
+                     * 
+                     */
+                    bool ApplicationTokenHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 设备id
+                     */
+                    std::string m_deviceId;
+                    bool m_deviceIdHasBeenSet;
+
+                    /**
+                     * 项目空间id
+                     */
+                    std::string m_workspaceId;
+                    bool m_workspaceIdHasBeenSet;
+
+                    /**
+                     * 应用token
+                     */
+                    std::string m_applicationToken;
+                    bool m_applicationTokenHasBeenSet;
 
                 };
             }

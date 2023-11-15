@@ -19,14 +19,18 @@ set(hai_public_header
   )
 
 set(hai_public_header_model
+  include/tencentcloud/hai/v20230812/model/TerminateInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/SystemDisk.h
+  include/tencentcloud/hai/v20230812/model/TerminateInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/RunInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/RunInstancesRequest.h
   )
 
 set(hai_src
   src/v20230812/HaiClient.cpp
+  src/v20230812/model/TerminateInstancesResponse.cpp
   src/v20230812/model/SystemDisk.cpp
+  src/v20230812/model/TerminateInstancesRequest.cpp
   src/v20230812/model/RunInstancesResponse.cpp
   src/v20230812/model/RunInstancesRequest.cpp
   )

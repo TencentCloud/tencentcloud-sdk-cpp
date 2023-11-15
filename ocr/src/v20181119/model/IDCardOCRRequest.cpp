@@ -27,7 +27,8 @@ IDCardOCRRequest::IDCardOCRRequest() :
     m_imageUrlHasBeenSet(false),
     m_cardSideHasBeenSet(false),
     m_configHasBeenSet(false),
-    m_enableRecognitionRectifyHasBeenSet(false)
+    m_enableRecognitionRectifyHasBeenSet(false),
+    m_enableReflectDetailHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string IDCardOCRRequest::ToJsonString() const
         string key = "EnableRecognitionRectify";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableRecognitionRectify, allocator);
+    }
+
+    if (m_enableReflectDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableReflectDetail";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableReflectDetail, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void IDCardOCRRequest::SetEnableRecognitionRectify(const bool& _enableRecognitio
 bool IDCardOCRRequest::EnableRecognitionRectifyHasBeenSet() const
 {
     return m_enableRecognitionRectifyHasBeenSet;
+}
+
+bool IDCardOCRRequest::GetEnableReflectDetail() const
+{
+    return m_enableReflectDetail;
+}
+
+void IDCardOCRRequest::SetEnableReflectDetail(const bool& _enableReflectDetail)
+{
+    m_enableReflectDetail = _enableReflectDetail;
+    m_enableReflectDetailHasBeenSet = true;
+}
+
+bool IDCardOCRRequest::EnableReflectDetailHasBeenSet() const
+{
+    return m_enableReflectDetailHasBeenSet;
 }
 
 

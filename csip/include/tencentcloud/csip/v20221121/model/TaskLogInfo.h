@@ -143,18 +143,18 @@ namespace TencentCloud
                     bool RiskNumberHasBeenSet() const;
 
                     /**
-                     * 获取报告生成时间,任务结束时间
+                     * 获取报告生成时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Time 报告生成时间,任务结束时间
+                     * @return Time 报告生成时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置报告生成时间,任务结束时间
+                     * 设置报告生成时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _time 报告生成时间,任务结束时间
+                     * @param _time 报告生成时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -422,7 +422,7 @@ namespace TencentCloud
                     bool m_riskNumberHasBeenSet;
 
                     /**
-                     * 报告生成时间,任务结束时间
+                     * 报告生成时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_time;

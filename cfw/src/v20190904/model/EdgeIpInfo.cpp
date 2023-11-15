@@ -41,7 +41,8 @@ EdgeIpInfo::EdgeIpInfo() :
     m_endpointIdHasBeenSet(false),
     m_endpointIpHasBeenSet(false),
     m_switchModeHasBeenSet(false),
-    m_switchWeightHasBeenSet(false)
+    m_switchWeightHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome EdgeIpInfo::Deserialize(const rapidjson::Value &value)
         m_switchWeightHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeIpInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void EdgeIpInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SwitchWeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_switchWeight, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +791,21 @@ void EdgeIpInfo::SetSwitchWeight(const int64_t& _switchWeight)
 bool EdgeIpInfo::SwitchWeightHasBeenSet() const
 {
     return m_switchWeightHasBeenSet;
+}
+
+string EdgeIpInfo::GetDomain() const
+{
+    return m_domain;
+}
+
+void EdgeIpInfo::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool EdgeIpInfo::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 

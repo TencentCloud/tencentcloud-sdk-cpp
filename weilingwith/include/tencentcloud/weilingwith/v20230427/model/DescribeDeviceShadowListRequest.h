@@ -190,6 +190,27 @@ namespace TencentCloud
                     bool ProductIdSetHasBeenSet() const;
 
                     /**
+                     * 获取设备标签id
+                     * @return TagIdSet 设备标签id
+                     * 
+                     */
+                    std::vector<int64_t> GetTagIdSet() const;
+
+                    /**
+                     * 设置设备标签id
+                     * @param _tagIdSet 设备标签id
+                     * 
+                     */
+                    void SetTagIdSet(const std::vector<int64_t>& _tagIdSet);
+
+                    /**
+                     * 判断参数 TagIdSet 是否已赋值
+                     * @return TagIdSet 是否已赋值
+                     * 
+                     */
+                    bool TagIdSetHasBeenSet() const;
+
+                    /**
                      * 获取空间层级，（支持空间多层，比如具体建筑、具体楼层）
                      * @return SpaceCodeSet 空间层级，（支持空间多层，比如具体建筑、具体楼层）
                      * 
@@ -274,6 +295,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_productIdSet;
                     bool m_productIdSetHasBeenSet;
+
+                    /**
+                     * 设备标签id
+                     */
+                    std::vector<int64_t> m_tagIdSet;
+                    bool m_tagIdSetHasBeenSet;
 
                     /**
                      * 空间层级，（支持空间多层，比如具体建筑、具体楼层）

@@ -37,7 +37,8 @@ DescribeFraudUltimateResponse::DescribeFraudUltimateResponse() :
     m_histRiskInfosHasBeenSet(false),
     m_openidHasBeenSet(false),
     m_sceneRiskInfosHasBeenSet(false),
-    m_suggestionLevelHasBeenSet(false)
+    m_suggestionLevelHasBeenSet(false),
+    m_unionidHasBeenSet(false)
 {
 }
 
@@ -245,6 +246,16 @@ CoreInternalOutcome DescribeFraudUltimateResponse::Deserialize(const string &pay
         m_suggestionLevelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Unionid") && !rsp["Unionid"].IsNull())
+    {
+        if (!rsp["Unionid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Unionid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unionid = string(rsp["Unionid"].GetString());
+        m_unionidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -386,6 +397,14 @@ string DescribeFraudUltimateResponse::ToJsonString() const
         string key = "SuggestionLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_suggestionLevel, allocator);
+    }
+
+    if (m_unionidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unionid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unionid.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -538,6 +557,16 @@ uint64_t DescribeFraudUltimateResponse::GetSuggestionLevel() const
 bool DescribeFraudUltimateResponse::SuggestionLevelHasBeenSet() const
 {
     return m_suggestionLevelHasBeenSet;
+}
+
+string DescribeFraudUltimateResponse::GetUnionid() const
+{
+    return m_unionid;
+}
+
+bool DescribeFraudUltimateResponse::UnionidHasBeenSet() const
+{
+    return m_unionidHasBeenSet;
 }
 
 

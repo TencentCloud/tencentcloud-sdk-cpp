@@ -28,7 +28,9 @@ DescribeAddressTemplateListRequest::DescribeAddressTemplateListRequest() :
     m_byHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_searchValueHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_templateTypeHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,22 @@ string DescribeAddressTemplateListRequest::ToJsonString() const
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +207,38 @@ void DescribeAddressTemplateListRequest::SetUuid(const string& _uuid)
 bool DescribeAddressTemplateListRequest::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+string DescribeAddressTemplateListRequest::GetTemplateType() const
+{
+    return m_templateType;
+}
+
+void DescribeAddressTemplateListRequest::SetTemplateType(const string& _templateType)
+{
+    m_templateType = _templateType;
+    m_templateTypeHasBeenSet = true;
+}
+
+bool DescribeAddressTemplateListRequest::TemplateTypeHasBeenSet() const
+{
+    return m_templateTypeHasBeenSet;
+}
+
+string DescribeAddressTemplateListRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void DescribeAddressTemplateListRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool DescribeAddressTemplateListRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 

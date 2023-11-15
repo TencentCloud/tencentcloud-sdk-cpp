@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务日志Id
+                     * 获取任务Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务日志Id
+                     * @return TaskId 任务Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务日志Id
+                     * 设置任务Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskId 任务日志Id
+                     * @param _taskId 任务Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务日志名称
+                     * 获取任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskName 任务日志名称
+                     * @return TaskName 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务日志名称
+                     * 设置任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskName 任务日志名称
+                     * @param _taskName 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取对应的展示时间
+                     * 获取任务完成时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskTime 对应的展示时间
+                     * @return TaskTime 任务完成时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskTime() const;
 
                     /**
-                     * 设置对应的展示时间
+                     * 设置任务完成时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskTime 对应的展示时间
+                     * @param _taskTime 任务完成时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool TaskTimeHasBeenSet() const;
 
                     /**
-                     * 获取报表id
+                     * 获取报告ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReportId 报表id
+                     * @return ReportId 报告ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportId() const;
 
                     /**
-                     * 设置报表id
+                     * 设置报告ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reportId 报表id
+                     * @param _reportId 报告ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool ReportIdHasBeenSet() const;
 
                     /**
-                     * 获取报表名称
+                     * 获取报告名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReportName 报表名称
+                     * @return ReportName 报告名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportName() const;
 
                     /**
-                     * 设置报表名称
+                     * 设置报告名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reportName 报表名称
+                     * @param _reportName 报告名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,14 +349,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务日志Id
+                     * 任务Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务日志名称
+                     * 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskName;
@@ -377,21 +377,21 @@ namespace TencentCloud
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 对应的展示时间
+                     * 任务完成时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskTime;
                     bool m_taskTimeHasBeenSet;
 
                     /**
-                     * 报表id
+                     * 报告ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportId;
                     bool m_reportIdHasBeenSet;
 
                     /**
-                     * 报表名称
+                     * 报告名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportName;

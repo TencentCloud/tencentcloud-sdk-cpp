@@ -22,7 +22,12 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeDeviceStatusStatRequest::DescribeDeviceStatusStatRequest()
+DescribeDeviceStatusStatRequest::DescribeDeviceStatusStatRequest() :
+    m_levelHasBeenSet(false),
+    m_workspaceIdHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false),
+    m_spaceCodeSetHasBeenSet(false),
+    m_deviceTypeSetHasBeenSet(false)
 {
 }
 
@@ -33,6 +38,56 @@ string DescribeDeviceStatusStatRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_levelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_level, allocator);
+    }
+
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_workspaceId, allocator);
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spaceCodeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceCodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_spaceCodeSet.begin(); itr != m_spaceCodeSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_deviceTypeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceTypeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deviceTypeSet.begin(); itr != m_deviceTypeSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +95,85 @@ string DescribeDeviceStatusStatRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeDeviceStatusStatRequest::GetLevel() const
+{
+    return m_level;
+}
+
+void DescribeDeviceStatusStatRequest::SetLevel(const int64_t& _level)
+{
+    m_level = _level;
+    m_levelHasBeenSet = true;
+}
+
+bool DescribeDeviceStatusStatRequest::LevelHasBeenSet() const
+{
+    return m_levelHasBeenSet;
+}
+
+int64_t DescribeDeviceStatusStatRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void DescribeDeviceStatusStatRequest::SetWorkspaceId(const int64_t& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool DescribeDeviceStatusStatRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+string DescribeDeviceStatusStatRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void DescribeDeviceStatusStatRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool DescribeDeviceStatusStatRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
+
+vector<string> DescribeDeviceStatusStatRequest::GetSpaceCodeSet() const
+{
+    return m_spaceCodeSet;
+}
+
+void DescribeDeviceStatusStatRequest::SetSpaceCodeSet(const vector<string>& _spaceCodeSet)
+{
+    m_spaceCodeSet = _spaceCodeSet;
+    m_spaceCodeSetHasBeenSet = true;
+}
+
+bool DescribeDeviceStatusStatRequest::SpaceCodeSetHasBeenSet() const
+{
+    return m_spaceCodeSetHasBeenSet;
+}
+
+vector<string> DescribeDeviceStatusStatRequest::GetDeviceTypeSet() const
+{
+    return m_deviceTypeSet;
+}
+
+void DescribeDeviceStatusStatRequest::SetDeviceTypeSet(const vector<string>& _deviceTypeSet)
+{
+    m_deviceTypeSet = _deviceTypeSet;
+    m_deviceTypeSetHasBeenSet = true;
+}
+
+bool DescribeDeviceStatusStatRequest::DeviceTypeSetHasBeenSet() const
+{
+    return m_deviceTypeSetHasBeenSet;
+}
 
 

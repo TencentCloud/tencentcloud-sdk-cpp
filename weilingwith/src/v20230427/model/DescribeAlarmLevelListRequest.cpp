@@ -22,7 +22,9 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeAlarmLevelListRequest::DescribeAlarmLevelListRequest()
+DescribeAlarmLevelListRequest::DescribeAlarmLevelListRequest() :
+    m_workspaceIdHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string DescribeAlarmLevelListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_workspaceId, allocator);
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string DescribeAlarmLevelListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeAlarmLevelListRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void DescribeAlarmLevelListRequest::SetWorkspaceId(const int64_t& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool DescribeAlarmLevelListRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+string DescribeAlarmLevelListRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void DescribeAlarmLevelListRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool DescribeAlarmLevelListRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
 
 

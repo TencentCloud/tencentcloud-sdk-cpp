@@ -22,7 +22,10 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeDeviceTypeListRequest::DescribeDeviceTypeListRequest()
+DescribeDeviceTypeListRequest::DescribeDeviceTypeListRequest() :
+    m_workspaceIdHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false),
+    m_flagHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string DescribeDeviceTypeListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_workspaceId, allocator);
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Flag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flag, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string DescribeDeviceTypeListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeDeviceTypeListRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void DescribeDeviceTypeListRequest::SetWorkspaceId(const int64_t& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool DescribeDeviceTypeListRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+string DescribeDeviceTypeListRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void DescribeDeviceTypeListRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool DescribeDeviceTypeListRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
+
+int64_t DescribeDeviceTypeListRequest::GetFlag() const
+{
+    return m_flag;
+}
+
+void DescribeDeviceTypeListRequest::SetFlag(const int64_t& _flag)
+{
+    m_flag = _flag;
+    m_flagHasBeenSet = true;
+}
+
+bool DescribeDeviceTypeListRequest::FlagHasBeenSet() const
+{
+    return m_flagHasBeenSet;
+}
 
 

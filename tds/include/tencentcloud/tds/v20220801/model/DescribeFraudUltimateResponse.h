@@ -240,6 +240,20 @@ namespace TencentCloud
                      */
                     bool SuggestionLevelHasBeenSet() const;
 
+                    /**
+                     * 获取图灵盾统一ID
+                     * @return Unionid 图灵盾统一ID
+                     * 
+                     */
+                    std::string GetUnionid() const;
+
+                    /**
+                     * 判断参数 Unionid 是否已赋值
+                     * @return Unionid 是否已赋值
+                     * 
+                     */
+                    bool UnionidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -325,6 +339,12 @@ namespace TencentCloud
                      */
                     uint64_t m_suggestionLevel;
                     bool m_suggestionLevelHasBeenSet;
+
+                    /**
+                     * 图灵盾统一ID
+                     */
+                    std::string m_unionid;
+                    bool m_unionidHasBeenSet;
 
                 };
             }

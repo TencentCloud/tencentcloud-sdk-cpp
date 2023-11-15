@@ -155,21 +155,21 @@ namespace TencentCloud
                     /**
                      * 获取Dex分离，0关闭，1开启
                      * @return SeperateDex Dex分离，0关闭，1开启
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetSeperateDex() const;
 
                     /**
                      * 设置Dex分离，0关闭，1开启
                      * @param _seperateDex Dex分离，0关闭，1开启
-                     * 
+                     * @deprecated
                      */
                     void SetSeperateDex(const uint64_t& _seperateDex);
 
                     /**
                      * 判断参数 SeperateDex 是否已赋值
                      * @return SeperateDex 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SeperateDexHasBeenSet() const;
 
@@ -197,21 +197,21 @@ namespace TencentCloud
                     /**
                      * 获取Dex签名校验，0关闭，1开启
                      * @return DexSig Dex签名校验，0关闭，1开启
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetDexSig() const;
 
                     /**
                      * 设置Dex签名校验，0关闭，1开启
                      * @param _dexSig Dex签名校验，0关闭，1开启
-                     * 
+                     * @deprecated
                      */
                     void SetDexSig(const uint64_t& _dexSig);
 
                     /**
                      * 判断参数 DexSig 是否已赋值
                      * @return DexSig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DexSigHasBeenSet() const;
 
@@ -302,21 +302,21 @@ namespace TencentCloud
                     /**
                      * 获取root检测，0关闭，1开启
                      * @return AntiQemuRoot root检测，0关闭，1开启
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetAntiQemuRoot() const;
 
                     /**
                      * 设置root检测，0关闭，1开启
                      * @param _antiQemuRoot root检测，0关闭，1开启
-                     * 
+                     * @deprecated
                      */
                     void SetAntiQemuRoot(const uint64_t& _antiQemuRoot);
 
                     /**
                      * 判断参数 AntiQemuRoot 是否已赋值
                      * @return AntiQemuRoot 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AntiQemuRootHasBeenSet() const;
 
@@ -382,6 +382,81 @@ namespace TencentCloud
                      * 
                      */
                     bool AntiSSLHasBeenSet() const;
+
+                    /**
+                     * 获取Dex分离，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SetFile Dex分离，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSetFile() const;
+
+                    /**
+                     * 设置Dex分离，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _setFile Dex分离，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSetFile(const std::string& _setFile);
+
+                    /**
+                     * 判断参数 SetFile 是否已赋值
+                     * @return SetFile 是否已赋值
+                     * 
+                     */
+                    bool SetFileHasBeenSet() const;
+
+                    /**
+                     * 获取Dex签名校验，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileSign Dex签名校验，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFileSign() const;
+
+                    /**
+                     * 设置Dex签名校验，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileSign Dex签名校验，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileSign(const std::string& _fileSign);
+
+                    /**
+                     * 判断参数 FileSign 是否已赋值
+                     * @return FileSign 是否已赋值
+                     * 
+                     */
+                    bool FileSignHasBeenSet() const;
+
+                    /**
+                     * 获取root检测，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AntiRoot root检测，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAntiRoot() const;
+
+                    /**
+                     * 设置root检测，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _antiRoot root检测，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAntiRoot(const std::string& _antiRoot);
+
+                    /**
+                     * 判断参数 AntiRoot 是否已赋值
+                     * @return AntiRoot 是否已赋值
+                     * 
+                     */
+                    bool AntiRootHasBeenSet() const;
 
                 private:
 
@@ -480,6 +555,27 @@ namespace TencentCloud
                      */
                     uint64_t m_antiSSL;
                     bool m_antiSSLHasBeenSet;
+
+                    /**
+                     * Dex分离，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_setFile;
+                    bool m_setFileHasBeenSet;
+
+                    /**
+                     * Dex签名校验，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileSign;
+                    bool m_fileSignHasBeenSet;
+
+                    /**
+                     * root检测，0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_antiRoot;
+                    bool m_antiRootHasBeenSet;
 
                 };
             }

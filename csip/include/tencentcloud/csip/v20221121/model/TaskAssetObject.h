@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool AssetNameHasBeenSet() const;
 
                     /**
-                     * 获取	资产类型
+                     * 获取资产类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceType 	资产类型
+                     * @return InstanceType 资产类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置	资产类型
+                     * 设置资产类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceType 	资产类型
+                     * @param _instanceType 资产类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_assetNameHasBeenSet;
 
                     /**
-                     * 	资产类型
+                     * 资产类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;

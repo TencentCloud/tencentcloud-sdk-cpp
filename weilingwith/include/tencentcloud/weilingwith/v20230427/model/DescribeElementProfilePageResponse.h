@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/ElementProfilePageRes.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取分页查询构件出参
+                     * @return Result 分页查询构件出参
+                     * 
+                     */
+                    ElementProfilePageRes GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 分页查询构件出参
+                     */
+                    ElementProfilePageRes m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

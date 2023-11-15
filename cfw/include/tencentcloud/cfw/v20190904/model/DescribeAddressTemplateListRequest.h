@@ -168,6 +168,48 @@ namespace TencentCloud
                      */
                     bool UuidHasBeenSet() const;
 
+                    /**
+                     * 获取1：ip模板，5：域名模板，6：协议端口模板
+                     * @return TemplateType 1：ip模板，5：域名模板，6：协议端口模板
+                     * 
+                     */
+                    std::string GetTemplateType() const;
+
+                    /**
+                     * 设置1：ip模板，5：域名模板，6：协议端口模板
+                     * @param _templateType 1：ip模板，5：域名模板，6：协议端口模板
+                     * 
+                     */
+                    void SetTemplateType(const std::string& _templateType);
+
+                    /**
+                     * 判断参数 TemplateType 是否已赋值
+                     * @return TemplateType 是否已赋值
+                     * 
+                     */
+                    bool TemplateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取模板Id
+                     * @return TemplateId 模板Id
+                     * 
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置模板Id
+                     * @param _templateId 模板Id
+                     * 
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     * 
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +247,18 @@ namespace TencentCloud
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 1：ip模板，5：域名模板，6：协议端口模板
+                     */
+                    std::string m_templateType;
+                    bool m_templateTypeHasBeenSet;
+
+                    /**
+                     * 模板Id
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
 
                 };
             }

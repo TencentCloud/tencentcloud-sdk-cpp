@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/DescribeLinkRuleListRes.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取联动规则列表查询结果
+                     * @return Result 联动规则列表查询结果
+                     * 
+                     */
+                    DescribeLinkRuleListRes GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 联动规则列表查询结果
+                     */
+                    DescribeLinkRuleListRes m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

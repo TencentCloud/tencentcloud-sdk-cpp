@@ -127,11 +127,11 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取查询模版的内容
+                     * 获取查询模板的内容
 
 <ul><li>**0**：（默认）模板列表及详情</li>
 <li>**1**：仅模板列表, 不会返回模板中的签署控件, 填写控件, 参与方角色列表等信息</li></ul>
-                     * @return ContentType 查询模版的内容
+                     * @return ContentType 查询模板的内容
 
 <ul><li>**0**：（默认）模板列表及详情</li>
 <li>**1**：仅模板列表, 不会返回模板中的签署控件, 填写控件, 参与方角色列表等信息</li></ul>
@@ -140,11 +140,11 @@ namespace TencentCloud
                     int64_t GetContentType() const;
 
                     /**
-                     * 设置查询模版的内容
+                     * 设置查询模板的内容
 
 <ul><li>**0**：（默认）模板列表及详情</li>
 <li>**1**：仅模板列表, 不会返回模板中的签署控件, 填写控件, 参与方角色列表等信息</li></ul>
-                     * @param _contentType 查询模版的内容
+                     * @param _contentType 查询模板的内容
 
 <ul><li>**0**：（默认）模板列表及详情</li>
 <li>**1**：仅模板列表, 不会返回模板中的签署控件, 填写控件, 参与方角色列表等信息</li></ul>
@@ -485,7 +485,7 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 查询模版的内容
+                     * 查询模板的内容
 
 <ul><li>**0**：（默认）模板列表及详情</li>
 <li>**1**：仅模板列表, 不会返回模板中的签署控件, 填写控件, 参与方角色列表等信息</li></ul>

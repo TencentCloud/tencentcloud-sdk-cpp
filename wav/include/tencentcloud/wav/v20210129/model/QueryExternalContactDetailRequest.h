@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取外部联系人的userid，注意不是企业成员的帐号
-                     * @return ExternalUserId 外部联系人的userid，注意不是企业成员的帐号
+                     * 获取外部联系人的userid，注意不是企业成员的账号
+                     * @return ExternalUserId 外部联系人的userid，注意不是企业成员的账号
                      * 
                      */
                     std::string GetExternalUserId() const;
 
                     /**
-                     * 设置外部联系人的userid，注意不是企业成员的帐号
-                     * @param _externalUserId 外部联系人的userid，注意不是企业成员的帐号
+                     * 设置外部联系人的userid，注意不是企业成员的账号
+                     * @param _externalUserId 外部联系人的userid，注意不是企业成员的账号
                      * 
                      */
                     void SetExternalUserId(const std::string& _externalUserId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 外部联系人的userid，注意不是企业成员的帐号
+                     * 外部联系人的userid，注意不是企业成员的账号
                      */
                     std::string m_externalUserId;
                     bool m_externalUserIdHasBeenSet;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/ElementPropertyRes.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取构件属性信息出参
+                     * @return Result 构件属性信息出参
+                     * 
+                     */
+                    ElementPropertyRes GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 构件属性信息出参
+                     */
+                    ElementPropertyRes m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

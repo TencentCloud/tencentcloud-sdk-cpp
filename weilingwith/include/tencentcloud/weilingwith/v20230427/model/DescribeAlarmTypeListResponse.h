@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/DescribeAlarmTypeListRes.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取告警类型列表查询
+                     * @return Result 告警类型列表查询
+                     * 
+                     */
+                    DescribeAlarmTypeListRes GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 告警类型列表查询
+                     */
+                    DescribeAlarmTypeListRes m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

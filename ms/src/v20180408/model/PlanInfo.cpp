@@ -36,7 +36,10 @@ PlanInfo::PlanInfo() :
     m_antiQemuRootHasBeenSet(false),
     m_antiAssetsHasBeenSet(false),
     m_antiScreenshotHasBeenSet(false),
-    m_antiSSLHasBeenSet(false)
+    m_antiSSLHasBeenSet(false),
+    m_setFileHasBeenSet(false),
+    m_fileSignHasBeenSet(false),
+    m_antiRootHasBeenSet(false)
 {
 }
 
@@ -215,6 +218,36 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
         m_antiSSLHasBeenSet = true;
     }
 
+    if (value.HasMember("SetFile") && !value["SetFile"].IsNull())
+    {
+        if (!value["SetFile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.SetFile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_setFile = string(value["SetFile"].GetString());
+        m_setFileHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileSign") && !value["FileSign"].IsNull())
+    {
+        if (!value["FileSign"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.FileSign` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSign = string(value["FileSign"].GetString());
+        m_fileSignHasBeenSet = true;
+    }
+
+    if (value.HasMember("AntiRoot") && !value["AntiRoot"].IsNull())
+    {
+        if (!value["AntiRoot"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.AntiRoot` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_antiRoot = string(value["AntiRoot"].GetString());
+        m_antiRootHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +387,30 @@ void PlanInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AntiSSL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_antiSSL, allocator);
+    }
+
+    if (m_setFileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetFile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_setFile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSignHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSign";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSign.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_antiRootHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AntiRoot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_antiRoot.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -613,5 +670,53 @@ void PlanInfo::SetAntiSSL(const uint64_t& _antiSSL)
 bool PlanInfo::AntiSSLHasBeenSet() const
 {
     return m_antiSSLHasBeenSet;
+}
+
+string PlanInfo::GetSetFile() const
+{
+    return m_setFile;
+}
+
+void PlanInfo::SetSetFile(const string& _setFile)
+{
+    m_setFile = _setFile;
+    m_setFileHasBeenSet = true;
+}
+
+bool PlanInfo::SetFileHasBeenSet() const
+{
+    return m_setFileHasBeenSet;
+}
+
+string PlanInfo::GetFileSign() const
+{
+    return m_fileSign;
+}
+
+void PlanInfo::SetFileSign(const string& _fileSign)
+{
+    m_fileSign = _fileSign;
+    m_fileSignHasBeenSet = true;
+}
+
+bool PlanInfo::FileSignHasBeenSet() const
+{
+    return m_fileSignHasBeenSet;
+}
+
+string PlanInfo::GetAntiRoot() const
+{
+    return m_antiRoot;
+}
+
+void PlanInfo::SetAntiRoot(const string& _antiRoot)
+{
+    m_antiRoot = _antiRoot;
+    m_antiRootHasBeenSet = true;
+}
+
+bool PlanInfo::AntiRootHasBeenSet() const
+{
+    return m_antiRootHasBeenSet;
 }
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/weilingwith/v20230427/model/DescribeAdministrationByTagRes.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取行政区划返回结构
+                     * @return Result 行政区划返回结构
+                     * 
+                     */
+                    DescribeAdministrationByTagRes GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 行政区划返回结构
+                     */
+                    DescribeAdministrationByTagRes m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

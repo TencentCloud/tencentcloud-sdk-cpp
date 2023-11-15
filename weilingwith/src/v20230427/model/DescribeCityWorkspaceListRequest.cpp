@@ -22,7 +22,9 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeCityWorkspaceListRequest::DescribeCityWorkspaceListRequest()
+DescribeCityWorkspaceListRequest::DescribeCityWorkspaceListRequest() :
+    m_administrativeCodeSetHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string DescribeCityWorkspaceListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_administrativeCodeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdministrativeCodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_administrativeCodeSet.begin(); itr != m_administrativeCodeSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string DescribeCityWorkspaceListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> DescribeCityWorkspaceListRequest::GetAdministrativeCodeSet() const
+{
+    return m_administrativeCodeSet;
+}
+
+void DescribeCityWorkspaceListRequest::SetAdministrativeCodeSet(const vector<string>& _administrativeCodeSet)
+{
+    m_administrativeCodeSet = _administrativeCodeSet;
+    m_administrativeCodeSetHasBeenSet = true;
+}
+
+bool DescribeCityWorkspaceListRequest::AdministrativeCodeSetHasBeenSet() const
+{
+    return m_administrativeCodeSetHasBeenSet;
+}
+
+string DescribeCityWorkspaceListRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void DescribeCityWorkspaceListRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool DescribeCityWorkspaceListRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
 
 

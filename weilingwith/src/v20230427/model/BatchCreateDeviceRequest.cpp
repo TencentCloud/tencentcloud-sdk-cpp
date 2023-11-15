@@ -22,7 +22,10 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-BatchCreateDeviceRequest::BatchCreateDeviceRequest()
+BatchCreateDeviceRequest::BatchCreateDeviceRequest() :
+    m_workspaceIdHasBeenSet(false),
+    m_addDeviceSetHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,37 @@ string BatchCreateDeviceRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_workspaceId, allocator);
+    }
+
+    if (m_addDeviceSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddDeviceSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addDeviceSet.begin(); itr != m_addDeviceSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +74,53 @@ string BatchCreateDeviceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t BatchCreateDeviceRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void BatchCreateDeviceRequest::SetWorkspaceId(const int64_t& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool BatchCreateDeviceRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+vector<AddDeviceInfo> BatchCreateDeviceRequest::GetAddDeviceSet() const
+{
+    return m_addDeviceSet;
+}
+
+void BatchCreateDeviceRequest::SetAddDeviceSet(const vector<AddDeviceInfo>& _addDeviceSet)
+{
+    m_addDeviceSet = _addDeviceSet;
+    m_addDeviceSetHasBeenSet = true;
+}
+
+bool BatchCreateDeviceRequest::AddDeviceSetHasBeenSet() const
+{
+    return m_addDeviceSetHasBeenSet;
+}
+
+string BatchCreateDeviceRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void BatchCreateDeviceRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool BatchCreateDeviceRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
 
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/ReflectDetailInfo.h>
 
 
 namespace TencentCloud
@@ -199,6 +200,20 @@ WarnInfos，告警信息，Code 告警码列表和释义：
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
+                    /**
+                     * 获取反光点覆盖区域详情结果，具体内容请点击左侧链接
+                     * @return ReflectDetailInfos 反光点覆盖区域详情结果，具体内容请点击左侧链接
+                     * 
+                     */
+                    std::vector<ReflectDetailInfo> GetReflectDetailInfos() const;
+
+                    /**
+                     * 判断参数 ReflectDetailInfos 是否已赋值
+                     * @return ReflectDetailInfos 是否已赋值
+                     * 
+                     */
+                    bool ReflectDetailInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +284,12 @@ WarnInfos，告警信息，Code 告警码列表和释义：
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
+
+                    /**
+                     * 反光点覆盖区域详情结果，具体内容请点击左侧链接
+                     */
+                    std::vector<ReflectDetailInfo> m_reflectDetailInfos;
+                    bool m_reflectDetailInfosHasBeenSet;
 
                 };
             }

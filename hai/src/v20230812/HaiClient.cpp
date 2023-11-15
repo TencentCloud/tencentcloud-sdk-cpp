@@ -83,3 +83,46 @@ HaiClient::RunInstancesOutcomeCallable HaiClient::RunInstancesCallable(const Run
     return task->get_future();
 }
 
+HaiClient::TerminateInstancesOutcome HaiClient::TerminateInstances(const TerminateInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateInstancesResponse rsp = TerminateInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateInstancesOutcome(rsp);
+        else
+            return TerminateInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateInstancesOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::TerminateInstancesAsync(const TerminateInstancesRequest& request, const TerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::TerminateInstancesOutcomeCallable HaiClient::TerminateInstancesCallable(const TerminateInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

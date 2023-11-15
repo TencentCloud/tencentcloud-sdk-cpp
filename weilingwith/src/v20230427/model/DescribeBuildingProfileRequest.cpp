@@ -22,7 +22,10 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeBuildingProfileRequest::DescribeBuildingProfileRequest()
+DescribeBuildingProfileRequest::DescribeBuildingProfileRequest() :
+    m_buildingIdHasBeenSet(false),
+    m_workspaceIdHasBeenSet(false),
+    m_applicationTokenHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string DescribeBuildingProfileRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_buildingIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildingId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_buildingId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workspaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string DescribeBuildingProfileRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeBuildingProfileRequest::GetBuildingId() const
+{
+    return m_buildingId;
+}
+
+void DescribeBuildingProfileRequest::SetBuildingId(const string& _buildingId)
+{
+    m_buildingId = _buildingId;
+    m_buildingIdHasBeenSet = true;
+}
+
+bool DescribeBuildingProfileRequest::BuildingIdHasBeenSet() const
+{
+    return m_buildingIdHasBeenSet;
+}
+
+string DescribeBuildingProfileRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void DescribeBuildingProfileRequest::SetWorkspaceId(const string& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool DescribeBuildingProfileRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+string DescribeBuildingProfileRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void DescribeBuildingProfileRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool DescribeBuildingProfileRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
 
 

@@ -22,7 +22,9 @@
 using namespace TencentCloud::Weilingwith::V20230427::Model;
 using namespace std;
 
-DescribeEdgeApplicationTokenRequest::DescribeEdgeApplicationTokenRequest()
+DescribeEdgeApplicationTokenRequest::DescribeEdgeApplicationTokenRequest() :
+    m_applicationTokenHasBeenSet(false),
+    m_refreshHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string DescribeEdgeApplicationTokenRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_applicationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_refreshHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Refresh";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_refresh, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string DescribeEdgeApplicationTokenRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeEdgeApplicationTokenRequest::GetApplicationToken() const
+{
+    return m_applicationToken;
+}
+
+void DescribeEdgeApplicationTokenRequest::SetApplicationToken(const string& _applicationToken)
+{
+    m_applicationToken = _applicationToken;
+    m_applicationTokenHasBeenSet = true;
+}
+
+bool DescribeEdgeApplicationTokenRequest::ApplicationTokenHasBeenSet() const
+{
+    return m_applicationTokenHasBeenSet;
+}
+
+bool DescribeEdgeApplicationTokenRequest::GetRefresh() const
+{
+    return m_refresh;
+}
+
+void DescribeEdgeApplicationTokenRequest::SetRefresh(const bool& _refresh)
+{
+    m_refresh = _refresh;
+    m_refreshHasBeenSet = true;
+}
+
+bool DescribeEdgeApplicationTokenRequest::RefreshHasBeenSet() const
+{
+    return m_refreshHasBeenSet;
+}
 
 

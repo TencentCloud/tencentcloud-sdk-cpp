@@ -28,7 +28,9 @@ TemplateListInfo::TemplateListInfo() :
     m_insertTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_rulesNumHasBeenSet(false)
+    m_rulesNumHasBeenSet(false),
+    m_templateIdHasBeenSet(false),
+    m_protocolTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome TemplateListInfo::Deserialize(const rapidjson::Value &value)
         m_rulesNumHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateId") && !value["TemplateId"].IsNull())
+    {
+        if (!value["TemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateListInfo.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateId = string(value["TemplateId"].GetString());
+        m_templateIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProtocolType") && !value["ProtocolType"].IsNull())
+    {
+        if (!value["ProtocolType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateListInfo.ProtocolType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocolType = string(value["ProtocolType"].GetString());
+        m_protocolTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void TemplateListInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "RulesNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rulesNum, allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocolType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void TemplateListInfo::SetRulesNum(const int64_t& _rulesNum)
 bool TemplateListInfo::RulesNumHasBeenSet() const
 {
     return m_rulesNumHasBeenSet;
+}
+
+string TemplateListInfo::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void TemplateListInfo::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool TemplateListInfo::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
+}
+
+string TemplateListInfo::GetProtocolType() const
+{
+    return m_protocolType;
+}
+
+void TemplateListInfo::SetProtocolType(const string& _protocolType)
+{
+    m_protocolType = _protocolType;
+    m_protocolTypeHasBeenSet = true;
+}
+
+bool TemplateListInfo::ProtocolTypeHasBeenSet() const
+{
+    return m_protocolTypeHasBeenSet;
 }
 
