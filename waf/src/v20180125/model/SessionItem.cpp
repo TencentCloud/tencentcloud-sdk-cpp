@@ -27,7 +27,11 @@ SessionItem::SessionItem() :
     m_startOffsetHasBeenSet(false),
     m_endOffsetHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_tsVersionHasBeenSet(false)
+    m_tsVersionHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_sessionNameHasBeenSet(false),
+    m_sessionInUsedHasBeenSet(false),
+    m_relatedRuleIDHasBeenSet(false)
 {
 }
 
@@ -106,6 +110,49 @@ CoreInternalOutcome SessionItem::Deserialize(const rapidjson::Value &value)
         m_tsVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionItem.SessionId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = value["SessionId"].GetInt64();
+        m_sessionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionName") && !value["SessionName"].IsNull())
+    {
+        if (!value["SessionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionItem.SessionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionName = string(value["SessionName"].GetString());
+        m_sessionNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionInUsed") && !value["SessionInUsed"].IsNull())
+    {
+        if (!value["SessionInUsed"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionItem.SessionInUsed` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionInUsed = value["SessionInUsed"].GetBool();
+        m_sessionInUsedHasBeenSet = true;
+    }
+
+    if (value.HasMember("RelatedRuleID") && !value["RelatedRuleID"].IsNull())
+    {
+        if (!value["RelatedRuleID"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionItem.RelatedRuleID` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RelatedRuleID"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_relatedRuleID.push_back((*itr).GetInt64());
+        }
+        m_relatedRuleIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +214,43 @@ void SessionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TsVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tsVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionId, allocator);
+    }
+
+    if (m_sessionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionInUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionInUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionInUsed, allocator);
+    }
+
+    if (m_relatedRuleIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelatedRuleID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_relatedRuleID.begin(); itr != m_relatedRuleID.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -282,5 +366,69 @@ void SessionItem::SetTsVersion(const string& _tsVersion)
 bool SessionItem::TsVersionHasBeenSet() const
 {
     return m_tsVersionHasBeenSet;
+}
+
+int64_t SessionItem::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void SessionItem::SetSessionId(const int64_t& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool SessionItem::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+string SessionItem::GetSessionName() const
+{
+    return m_sessionName;
+}
+
+void SessionItem::SetSessionName(const string& _sessionName)
+{
+    m_sessionName = _sessionName;
+    m_sessionNameHasBeenSet = true;
+}
+
+bool SessionItem::SessionNameHasBeenSet() const
+{
+    return m_sessionNameHasBeenSet;
+}
+
+bool SessionItem::GetSessionInUsed() const
+{
+    return m_sessionInUsed;
+}
+
+void SessionItem::SetSessionInUsed(const bool& _sessionInUsed)
+{
+    m_sessionInUsed = _sessionInUsed;
+    m_sessionInUsedHasBeenSet = true;
+}
+
+bool SessionItem::SessionInUsedHasBeenSet() const
+{
+    return m_sessionInUsedHasBeenSet;
+}
+
+vector<int64_t> SessionItem::GetRelatedRuleID() const
+{
+    return m_relatedRuleID;
+}
+
+void SessionItem::SetRelatedRuleID(const vector<int64_t>& _relatedRuleID)
+{
+    m_relatedRuleID = _relatedRuleID;
+    m_relatedRuleIDHasBeenSet = true;
+}
+
+bool SessionItem::RelatedRuleIDHasBeenSet() const
+{
+    return m_relatedRuleIDHasBeenSet;
 }
 
