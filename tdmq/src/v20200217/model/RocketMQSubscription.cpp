@@ -34,7 +34,8 @@ RocketMQSubscription::RocketMQSubscription() :
     m_consumeTypeHasBeenSet(false),
     m_consistencyHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_maxRetryTimesHasBeenSet(false)
+    m_maxRetryTimesHasBeenSet(false),
+    m_clientProtocolHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome RocketMQSubscription::Deserialize(const rapidjson::Value &va
         m_maxRetryTimesHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientProtocol") && !value["ClientProtocol"].IsNull())
+    {
+        if (!value["ClientProtocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQSubscription.ClientProtocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientProtocol = string(value["ClientProtocol"].GetString());
+        m_clientProtocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void RocketMQSubscription::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "MaxRetryTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxRetryTimes, allocator);
+    }
+
+    if (m_clientProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientProtocol.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void RocketMQSubscription::SetMaxRetryTimes(const int64_t& _maxRetryTimes)
 bool RocketMQSubscription::MaxRetryTimesHasBeenSet() const
 {
     return m_maxRetryTimesHasBeenSet;
+}
+
+string RocketMQSubscription::GetClientProtocol() const
+{
+    return m_clientProtocol;
+}
+
+void RocketMQSubscription::SetClientProtocol(const string& _clientProtocol)
+{
+    m_clientProtocol = _clientProtocol;
+    m_clientProtocolHasBeenSet = true;
+}
+
+bool RocketMQSubscription::ClientProtocolHasBeenSet() const
+{
+    return m_clientProtocolHasBeenSet;
 }
 

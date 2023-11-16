@@ -87,12 +87,20 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupFilesResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupMigrationResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeBackupMonitorRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeBackupMonitorResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeBackupStatisticalRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeBackupStatisticalResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeBackupSummaryRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeBackupSummaryResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupUploadSizeRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupUploadSizeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBusinessIntelligenceFileRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBusinessIntelligenceFileResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeCrossBackupStatisticalRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeCrossBackupStatisticalResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionZoneRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionZoneResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBCharsetsRequest.h>
@@ -109,6 +117,10 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsNormalRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsNormalResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDatabasesRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDatabasesResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDatabasesNormalRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDatabasesNormalResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeHASwitchLogRequest.h>
@@ -145,6 +157,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupListResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRegionsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRegionsResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeRegularBackupPlanRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeRegularBackupPlanResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRollbackTimeRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRollbackTimeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeSlowlogsRequest.h>
@@ -175,6 +189,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyBackupNameResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyCrossBackupStrategyRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyCrossBackupStrategyResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBEncryptAttributesRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBEncryptAttributesResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNameRequest.h>
@@ -197,6 +213,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseCTResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseMdfRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseMdfResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseShrinkMDFRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseShrinkMDFResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyIncrementalMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyIncrementalMigrationResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyInstanceEncryptAttributesRequest.h>
@@ -361,6 +379,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupMigrationResponse> DescribeBackupMigrationOutcome;
                 typedef std::future<DescribeBackupMigrationOutcome> DescribeBackupMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeBackupMigrationRequest&, DescribeBackupMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupMigrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupMonitorResponse> DescribeBackupMonitorOutcome;
+                typedef std::future<DescribeBackupMonitorOutcome> DescribeBackupMonitorOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeBackupMonitorRequest&, DescribeBackupMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupMonitorAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupStatisticalResponse> DescribeBackupStatisticalOutcome;
+                typedef std::future<DescribeBackupStatisticalOutcome> DescribeBackupStatisticalOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeBackupStatisticalRequest&, DescribeBackupStatisticalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupStatisticalAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupSummaryResponse> DescribeBackupSummaryOutcome;
+                typedef std::future<DescribeBackupSummaryOutcome> DescribeBackupSummaryOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeBackupSummaryRequest&, DescribeBackupSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupSummaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupUploadSizeResponse> DescribeBackupUploadSizeOutcome;
                 typedef std::future<DescribeBackupUploadSizeOutcome> DescribeBackupUploadSizeOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeBackupUploadSizeRequest&, DescribeBackupUploadSizeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupUploadSizeAsyncHandler;
@@ -370,6 +397,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBusinessIntelligenceFileResponse> DescribeBusinessIntelligenceFileOutcome;
                 typedef std::future<DescribeBusinessIntelligenceFileOutcome> DescribeBusinessIntelligenceFileOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeBusinessIntelligenceFileRequest&, DescribeBusinessIntelligenceFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBusinessIntelligenceFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCrossBackupStatisticalResponse> DescribeCrossBackupStatisticalOutcome;
+                typedef std::future<DescribeCrossBackupStatisticalOutcome> DescribeCrossBackupStatisticalOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeCrossBackupStatisticalRequest&, DescribeCrossBackupStatisticalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBackupStatisticalAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCrossRegionZoneResponse> DescribeCrossRegionZoneOutcome;
                 typedef std::future<DescribeCrossRegionZoneOutcome> DescribeCrossRegionZoneOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeCrossRegionZoneRequest&, DescribeCrossRegionZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossRegionZoneAsyncHandler;
@@ -394,6 +424,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBsNormalResponse> DescribeDBsNormalOutcome;
                 typedef std::future<DescribeDBsNormalOutcome> DescribeDBsNormalOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDBsNormalRequest&, DescribeDBsNormalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBsNormalAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
+                typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabasesNormalResponse> DescribeDatabasesNormalOutcome;
+                typedef std::future<DescribeDatabasesNormalOutcome> DescribeDatabasesNormalOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeDatabasesNormalRequest&, DescribeDatabasesNormalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesNormalAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFlowStatusResponse> DescribeFlowStatusOutcome;
                 typedef std::future<DescribeFlowStatusOutcome> DescribeFlowStatusOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeFlowStatusRequest&, DescribeFlowStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowStatusAsyncHandler;
@@ -448,6 +484,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRegularBackupPlanResponse> DescribeRegularBackupPlanOutcome;
+                typedef std::future<DescribeRegularBackupPlanOutcome> DescribeRegularBackupPlanOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeRegularBackupPlanRequest&, DescribeRegularBackupPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegularBackupPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRollbackTimeResponse> DescribeRollbackTimeOutcome;
                 typedef std::future<DescribeRollbackTimeOutcome> DescribeRollbackTimeOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeRollbackTimeRequest&, DescribeRollbackTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackTimeAsyncHandler;
@@ -493,6 +532,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupStrategyResponse> ModifyBackupStrategyOutcome;
                 typedef std::future<ModifyBackupStrategyOutcome> ModifyBackupStrategyOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyBackupStrategyRequest&, ModifyBackupStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCrossBackupStrategyResponse> ModifyCrossBackupStrategyOutcome;
+                typedef std::future<ModifyCrossBackupStrategyOutcome> ModifyCrossBackupStrategyOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyCrossBackupStrategyRequest&, ModifyCrossBackupStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCrossBackupStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBEncryptAttributesResponse> ModifyDBEncryptAttributesOutcome;
                 typedef std::future<ModifyDBEncryptAttributesOutcome> ModifyDBEncryptAttributesOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDBEncryptAttributesRequest&, ModifyDBEncryptAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBEncryptAttributesAsyncHandler;
@@ -526,6 +568,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDatabaseMdfResponse> ModifyDatabaseMdfOutcome;
                 typedef std::future<ModifyDatabaseMdfOutcome> ModifyDatabaseMdfOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDatabaseMdfRequest&, ModifyDatabaseMdfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseMdfAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDatabaseShrinkMDFResponse> ModifyDatabaseShrinkMDFOutcome;
+                typedef std::future<ModifyDatabaseShrinkMDFOutcome> ModifyDatabaseShrinkMDFOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyDatabaseShrinkMDFRequest&, ModifyDatabaseShrinkMDFOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseShrinkMDFAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyIncrementalMigrationResponse> ModifyIncrementalMigrationOutcome;
                 typedef std::future<ModifyIncrementalMigrationOutcome> ModifyIncrementalMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyIncrementalMigrationRequest&, ModifyIncrementalMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIncrementalMigrationAsyncHandler;
@@ -899,6 +944,33 @@ namespace TencentCloud
                 DescribeBackupMigrationOutcomeCallable DescribeBackupMigrationCallable(const Model::DescribeBackupMigrationRequest& request);
 
                 /**
+                 *本接口(DescribeBackupMonitor)用于查询备份空间使用详情。
+                 * @param req DescribeBackupMonitorRequest
+                 * @return DescribeBackupMonitorOutcome
+                 */
+                DescribeBackupMonitorOutcome DescribeBackupMonitor(const Model::DescribeBackupMonitorRequest &request);
+                void DescribeBackupMonitorAsync(const Model::DescribeBackupMonitorRequest& request, const DescribeBackupMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupMonitorOutcomeCallable DescribeBackupMonitorCallable(const Model::DescribeBackupMonitorRequest& request);
+
+                /**
+                 *本接口(DescribeBackupStatistical)用于查询备份实时统计列表。
+                 * @param req DescribeBackupStatisticalRequest
+                 * @return DescribeBackupStatisticalOutcome
+                 */
+                DescribeBackupStatisticalOutcome DescribeBackupStatistical(const Model::DescribeBackupStatisticalRequest &request);
+                void DescribeBackupStatisticalAsync(const Model::DescribeBackupStatisticalRequest& request, const DescribeBackupStatisticalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupStatisticalOutcomeCallable DescribeBackupStatisticalCallable(const Model::DescribeBackupStatisticalRequest& request);
+
+                /**
+                 *本接口(DescribeBackupSummary)用于查询数据库备份概览信息。
+                 * @param req DescribeBackupSummaryRequest
+                 * @return DescribeBackupSummaryOutcome
+                 */
+                DescribeBackupSummaryOutcome DescribeBackupSummary(const Model::DescribeBackupSummaryRequest &request);
+                void DescribeBackupSummaryAsync(const Model::DescribeBackupSummaryRequest& request, const DescribeBackupSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupSummaryOutcomeCallable DescribeBackupSummaryCallable(const Model::DescribeBackupSummaryRequest& request);
+
+                /**
                  *本接口（DescribeBackupUploadSize）用于查询上传的备份文件大小。在备份上传类型是COS_UPLOAD(备份放在业务的对象存储上)时有效。
                  * @param req DescribeBackupUploadSizeRequest
                  * @return DescribeBackupUploadSizeOutcome
@@ -924,6 +996,15 @@ namespace TencentCloud
                 DescribeBusinessIntelligenceFileOutcome DescribeBusinessIntelligenceFile(const Model::DescribeBusinessIntelligenceFileRequest &request);
                 void DescribeBusinessIntelligenceFileAsync(const Model::DescribeBusinessIntelligenceFileRequest& request, const DescribeBusinessIntelligenceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBusinessIntelligenceFileOutcomeCallable DescribeBusinessIntelligenceFileCallable(const Model::DescribeBusinessIntelligenceFileRequest& request);
+
+                /**
+                 *本接口(DescribeCrossBackupStatistical)用于查询跨地域备份实时统计列表。
+                 * @param req DescribeCrossBackupStatisticalRequest
+                 * @return DescribeCrossBackupStatisticalOutcome
+                 */
+                DescribeCrossBackupStatisticalOutcome DescribeCrossBackupStatistical(const Model::DescribeCrossBackupStatisticalRequest &request);
+                void DescribeCrossBackupStatisticalAsync(const Model::DescribeCrossBackupStatisticalRequest& request, const DescribeCrossBackupStatisticalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCrossBackupStatisticalOutcomeCallable DescribeCrossBackupStatisticalCallable(const Model::DescribeCrossBackupStatisticalRequest& request);
 
                 /**
                  *本接口(DescribeCrossRegionZone)根据主实例查询备机的容灾地域和可用区。
@@ -996,6 +1077,24 @@ namespace TencentCloud
                 DescribeDBsNormalOutcome DescribeDBsNormal(const Model::DescribeDBsNormalRequest &request);
                 void DescribeDBsNormalAsync(const Model::DescribeDBsNormalRequest& request, const DescribeDBsNormalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBsNormalOutcomeCallable DescribeDBsNormalCallable(const Model::DescribeDBsNormalRequest& request);
+
+                /**
+                 *本接口（DescribeDatabases）用于查询数据库列表。
+                 * @param req DescribeDatabasesRequest
+                 * @return DescribeDatabasesOutcome
+                 */
+                DescribeDatabasesOutcome DescribeDatabases(const Model::DescribeDatabasesRequest &request);
+                void DescribeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
+
+                /**
+                 *本接口(DescribeDBsNormal)用于查询数据库配置信息，此接口不包含数据库的关联账号
+                 * @param req DescribeDatabasesNormalRequest
+                 * @return DescribeDatabasesNormalOutcome
+                 */
+                DescribeDatabasesNormalOutcome DescribeDatabasesNormal(const Model::DescribeDatabasesNormalRequest &request);
+                void DescribeDatabasesNormalAsync(const Model::DescribeDatabasesNormalRequest& request, const DescribeDatabasesNormalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabasesNormalOutcomeCallable DescribeDatabasesNormalCallable(const Model::DescribeDatabasesNormalRequest& request);
 
                 /**
                  *本接口(DescribeFlowStatus)用于查询流程状态。
@@ -1160,6 +1259,15 @@ namespace TencentCloud
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
 
                 /**
+                 *本接口（DescribeRegularBackupPlan）用于查询实例定期备份保留计划
+                 * @param req DescribeRegularBackupPlanRequest
+                 * @return DescribeRegularBackupPlanOutcome
+                 */
+                DescribeRegularBackupPlanOutcome DescribeRegularBackupPlan(const Model::DescribeRegularBackupPlanRequest &request);
+                void DescribeRegularBackupPlanAsync(const Model::DescribeRegularBackupPlanRequest& request, const DescribeRegularBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRegularBackupPlanOutcomeCallable DescribeRegularBackupPlanCallable(const Model::DescribeRegularBackupPlanRequest& request);
+
+                /**
                  *本接口（DescribeRollbackTime）用于查询实例可回档时间范围
                  * @param req DescribeRollbackTimeRequest
                  * @return DescribeRollbackTimeOutcome
@@ -1295,6 +1403,15 @@ namespace TencentCloud
                 ModifyBackupStrategyOutcomeCallable ModifyBackupStrategyCallable(const Model::ModifyBackupStrategyRequest& request);
 
                 /**
+                 *本接口(ModifyCrossBackupStrategy)用于开启、关闭地域备份策略。
+                 * @param req ModifyCrossBackupStrategyRequest
+                 * @return ModifyCrossBackupStrategyOutcome
+                 */
+                ModifyCrossBackupStrategyOutcome ModifyCrossBackupStrategy(const Model::ModifyCrossBackupStrategyRequest &request);
+                void ModifyCrossBackupStrategyAsync(const Model::ModifyCrossBackupStrategyRequest& request, const ModifyCrossBackupStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCrossBackupStrategyOutcomeCallable ModifyCrossBackupStrategyCallable(const Model::ModifyCrossBackupStrategyRequest& request);
+
+                /**
                  *本接口（ModifyDBEncryptAttributes）用于开启、关闭数据库的TDE加密功能。
                  * @param req ModifyDBEncryptAttributesRequest
                  * @return ModifyDBEncryptAttributesOutcome
@@ -1392,6 +1509,15 @@ namespace TencentCloud
                 ModifyDatabaseMdfOutcome ModifyDatabaseMdf(const Model::ModifyDatabaseMdfRequest &request);
                 void ModifyDatabaseMdfAsync(const Model::ModifyDatabaseMdfRequest& request, const ModifyDatabaseMdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDatabaseMdfOutcomeCallable ModifyDatabaseMdfCallable(const Model::ModifyDatabaseMdfRequest& request);
+
+                /**
+                 *本接口(ModifyDatabaseShrinkDMF)用于收缩数据库mdf(Shrink mdf)。
+                 * @param req ModifyDatabaseShrinkMDFRequest
+                 * @return ModifyDatabaseShrinkMDFOutcome
+                 */
+                ModifyDatabaseShrinkMDFOutcome ModifyDatabaseShrinkMDF(const Model::ModifyDatabaseShrinkMDFRequest &request);
+                void ModifyDatabaseShrinkMDFAsync(const Model::ModifyDatabaseShrinkMDFRequest& request, const ModifyDatabaseShrinkMDFAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDatabaseShrinkMDFOutcomeCallable ModifyDatabaseShrinkMDFCallable(const Model::ModifyDatabaseShrinkMDFRequest& request);
 
                 /**
                  *本接口（ModifyIncrementalMigration）用于修改增量备份导入任务。

@@ -136,6 +136,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsRequest.h
   include/tencentcloud/tione/v20211111/model/ServiceEIPInfo.h
   include/tencentcloud/tione/v20211111/model/TextLabelDistributionDetailInfoSecondClass.h
+  include/tencentcloud/tione/v20211111/model/PreTrainModel.h
   include/tencentcloud/tione/v20211111/model/BatchTaskSetItem.h
   include/tencentcloud/tione/v20211111/model/ImageInfo.h
   include/tencentcloud/tione/v20211111/model/ServiceInfo.h
@@ -457,6 +458,7 @@ set(tione_src
   src/v20211111/model/DescribeModelServiceGroupsRequest.cpp
   src/v20211111/model/ServiceEIPInfo.cpp
   src/v20211111/model/TextLabelDistributionDetailInfoSecondClass.cpp
+  src/v20211111/model/PreTrainModel.cpp
   src/v20211111/model/BatchTaskSetItem.cpp
   src/v20211111/model/ImageInfo.cpp
   src/v20211111/model/ServiceInfo.cpp

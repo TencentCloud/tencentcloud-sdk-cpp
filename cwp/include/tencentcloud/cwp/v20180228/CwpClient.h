@@ -7111,7 +7111,7 @@ namespace TencentCloud
                 ScanTaskAgainOutcomeCallable ScanTaskAgainCallable(const Model::ScanTaskAgainRequest& request);
 
                 /**
-                 * 一键检测
+                 *漏洞一键检测
                  * @param req ScanVulRequest
                  * @return ScanVulOutcome
                  */

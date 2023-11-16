@@ -432,6 +432,31 @@ DeadLetter 死信
                      */
                     bool MaxRetryTimesHasBeenSet() const;
 
+                    /**
+                     * 获取协议类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientProtocol 协议类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClientProtocol() const;
+
+                    /**
+                     * 设置协议类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clientProtocol 协议类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClientProtocol(const std::string& _clientProtocol);
+
+                    /**
+                     * 判断参数 ClientProtocol 是否已赋值
+                     * @return ClientProtocol 是否已赋值
+                     * 
+                     */
+                    bool ClientProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -540,6 +565,13 @@ DeadLetter 死信
                      */
                     int64_t m_maxRetryTimes;
                     bool m_maxRetryTimesHasBeenSet;
+
+                    /**
+                     * 协议类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clientProtocol;
+                    bool m_clientProtocolHasBeenSet;
 
                 };
             }

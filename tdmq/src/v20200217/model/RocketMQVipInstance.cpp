@@ -37,7 +37,9 @@ RocketMQVipInstance::RocketMQVipInstance() :
     m_specNameHasBeenSet(false),
     m_maxRetentionHasBeenSet(false),
     m_minRetentionHasBeenSet(false),
-    m_retentionHasBeenSet(false)
+    m_retentionHasBeenSet(false),
+    m_aclEnabledHasBeenSet(false),
+    m_destroyTimeHasBeenSet(false)
 {
 }
 
@@ -216,6 +218,26 @@ CoreInternalOutcome RocketMQVipInstance::Deserialize(const rapidjson::Value &val
         m_retentionHasBeenSet = true;
     }
 
+    if (value.HasMember("AclEnabled") && !value["AclEnabled"].IsNull())
+    {
+        if (!value["AclEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQVipInstance.AclEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_aclEnabled = value["AclEnabled"].GetBool();
+        m_aclEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("DestroyTime") && !value["DestroyTime"].IsNull())
+    {
+        if (!value["DestroyTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQVipInstance.DestroyTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_destroyTime = value["DestroyTime"].GetUint64();
+        m_destroyTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +379,22 @@ void RocketMQVipInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Retention";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retention, allocator);
+    }
+
+    if (m_aclEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aclEnabled, allocator);
+    }
+
+    if (m_destroyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestroyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_destroyTime, allocator);
     }
 
 }
@@ -632,5 +670,37 @@ void RocketMQVipInstance::SetRetention(const int64_t& _retention)
 bool RocketMQVipInstance::RetentionHasBeenSet() const
 {
     return m_retentionHasBeenSet;
+}
+
+bool RocketMQVipInstance::GetAclEnabled() const
+{
+    return m_aclEnabled;
+}
+
+void RocketMQVipInstance::SetAclEnabled(const bool& _aclEnabled)
+{
+    m_aclEnabled = _aclEnabled;
+    m_aclEnabledHasBeenSet = true;
+}
+
+bool RocketMQVipInstance::AclEnabledHasBeenSet() const
+{
+    return m_aclEnabledHasBeenSet;
+}
+
+uint64_t RocketMQVipInstance::GetDestroyTime() const
+{
+    return m_destroyTime;
+}
+
+void RocketMQVipInstance::SetDestroyTime(const uint64_t& _destroyTime)
+{
+    m_destroyTime = _destroyTime;
+    m_destroyTimeHasBeenSet = true;
+}
+
+bool RocketMQVipInstance::DestroyTimeHasBeenSet() const
+{
+    return m_destroyTimeHasBeenSet;
 }
 

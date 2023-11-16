@@ -423,6 +423,56 @@ namespace TencentCloud
                      */
                     bool RetentionHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启ACL鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AclEnabled 是否开启ACL鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAclEnabled() const;
+
+                    /**
+                     * 设置是否开启ACL鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aclEnabled 是否开启ACL鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAclEnabled(const bool& _aclEnabled);
+
+                    /**
+                     * 判断参数 AclEnabled 是否已赋值
+                     * @return AclEnabled 是否已赋值
+                     * 
+                     */
+                    bool AclEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取销毁时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DestroyTime 销毁时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetDestroyTime() const;
+
+                    /**
+                     * 设置销毁时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _destroyTime 销毁时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDestroyTime(const uint64_t& _destroyTime);
+
+                    /**
+                     * 判断参数 DestroyTime 是否已赋值
+                     * @return DestroyTime 是否已赋值
+                     * 
+                     */
+                    bool DestroyTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -531,6 +581,20 @@ namespace TencentCloud
                      */
                     int64_t m_retention;
                     bool m_retentionHasBeenSet;
+
+                    /**
+                     * 是否开启ACL鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_aclEnabled;
+                    bool m_aclEnabledHasBeenSet;
+
+                    /**
+                     * 销毁时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_destroyTime;
+                    bool m_destroyTimeHasBeenSet;
 
                 };
             }

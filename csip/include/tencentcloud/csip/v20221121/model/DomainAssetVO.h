@@ -673,18 +673,18 @@ namespace TencentCloud
                     bool SeverIpHasBeenSet() const;
 
                     /**
-                     * 获取boi访问数量
+                     * 获取bot攻击数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BotCount boi访问数量
+                     * @return BotCount bot攻击数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBotCount() const;
 
                     /**
-                     * 设置boi访问数量
+                     * 设置bot攻击数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _botCount boi访问数量
+                     * @param _botCount bot攻击数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -998,18 +998,18 @@ namespace TencentCloud
                     bool VerifyStatusHasBeenSet() const;
 
                     /**
-                     * 获取bot访问数据
+                     * 获取bot访问数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BotAccessCount bot访问数据
+                     * @return BotAccessCount bot访问数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBotAccessCount() const;
 
                     /**
-                     * 设置bot访问数据
+                     * 设置bot访问数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _botAccessCount bot访问数据
+                     * @param _botAccessCount bot访问数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1200,7 +1200,7 @@ namespace TencentCloud
                     bool m_severIpHasBeenSet;
 
                     /**
-                     * boi访问数量
+                     * bot攻击数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_botCount;
@@ -1291,7 +1291,7 @@ namespace TencentCloud
                     bool m_verifyStatusHasBeenSet;
 
                     /**
-                     * bot访问数据
+                     * bot访问数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_botAccessCount;

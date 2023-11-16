@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取热Key
-                     * @return Key 热Key
+                     * 获取热 Key 的名称。
+                     * @return Key 热 Key 的名称。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置热Key
-                     * @param _key 热Key
+                     * 设置热 Key 的名称。
+                     * @param _key 热 Key 的名称。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Type 类型
+                     * 获取Key 类型。
+                     * @return Type Key 类型。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型
-                     * @param _type 类型
+                     * 设置Key 类型。
+                     * @param _type Key 类型。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取数量
-                     * @return Count 数量
+                     * 获取某段时间内热 Key 的访问次数
+                     * @return Count 某段时间内热 Key 的访问次数
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置数量
-                     * @param _count 数量
+                     * 设置某段时间内热 Key 的访问次数
+                     * @param _count 某段时间内热 Key 的访问次数
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 热Key
+                     * 热 Key 的名称。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 类型
+                     * Key 类型。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 数量
+                     * 某段时间内热 Key 的访问次数
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

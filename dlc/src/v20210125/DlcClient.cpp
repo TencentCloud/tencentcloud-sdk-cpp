@@ -3394,6 +3394,49 @@ DlcClient::DescribeTablesOutcomeCallable DlcClient::DescribeTablesCallable(const
     return task->get_future();
 }
 
+DlcClient::DescribeTablesNameOutcome DlcClient::DescribeTablesName(const DescribeTablesNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTablesName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTablesNameResponse rsp = DescribeTablesNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTablesNameOutcome(rsp);
+        else
+            return DescribeTablesNameOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTablesNameOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTablesNameAsync(const DescribeTablesNameRequest& request, const DescribeTablesNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTablesName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeTablesNameOutcomeCallable DlcClient::DescribeTablesNameCallable(const DescribeTablesNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTablesNameOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTablesName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeTaskResultOutcome DlcClient::DescribeTaskResult(const DescribeTaskResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskResult");

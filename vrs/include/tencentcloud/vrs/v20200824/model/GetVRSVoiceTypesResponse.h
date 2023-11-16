@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据
-                     * @return Data 数据
+                     * 获取复刻音色信息
+                     * @return Data 复刻音色信息
                      * 
                      */
                     VoiceTypeListData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据
+                     * 复刻音色信息
                      */
                     VoiceTypeListData m_data;
                     bool m_dataHasBeenSet;

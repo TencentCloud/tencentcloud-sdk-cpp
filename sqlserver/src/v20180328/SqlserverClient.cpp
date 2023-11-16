@@ -1416,6 +1416,135 @@ SqlserverClient::DescribeBackupMigrationOutcomeCallable SqlserverClient::Describ
     return task->get_future();
 }
 
+SqlserverClient::DescribeBackupMonitorOutcome SqlserverClient::DescribeBackupMonitor(const DescribeBackupMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupMonitorResponse rsp = DescribeBackupMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupMonitorOutcome(rsp);
+        else
+            return DescribeBackupMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupMonitorOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeBackupMonitorAsync(const DescribeBackupMonitorRequest& request, const DescribeBackupMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeBackupMonitorOutcomeCallable SqlserverClient::DescribeBackupMonitorCallable(const DescribeBackupMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::DescribeBackupStatisticalOutcome SqlserverClient::DescribeBackupStatistical(const DescribeBackupStatisticalRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupStatistical");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupStatisticalResponse rsp = DescribeBackupStatisticalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupStatisticalOutcome(rsp);
+        else
+            return DescribeBackupStatisticalOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupStatisticalOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeBackupStatisticalAsync(const DescribeBackupStatisticalRequest& request, const DescribeBackupStatisticalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupStatistical(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeBackupStatisticalOutcomeCallable SqlserverClient::DescribeBackupStatisticalCallable(const DescribeBackupStatisticalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupStatisticalOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupStatistical(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::DescribeBackupSummaryOutcome SqlserverClient::DescribeBackupSummary(const DescribeBackupSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupSummaryResponse rsp = DescribeBackupSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupSummaryOutcome(rsp);
+        else
+            return DescribeBackupSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupSummaryOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeBackupSummaryAsync(const DescribeBackupSummaryRequest& request, const DescribeBackupSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeBackupSummaryOutcomeCallable SqlserverClient::DescribeBackupSummaryCallable(const DescribeBackupSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::DescribeBackupUploadSizeOutcome SqlserverClient::DescribeBackupUploadSize(const DescribeBackupUploadSizeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupUploadSize");
@@ -1538,6 +1667,49 @@ SqlserverClient::DescribeBusinessIntelligenceFileOutcomeCallable SqlserverClient
         [this, request]()
         {
             return this->DescribeBusinessIntelligenceFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::DescribeCrossBackupStatisticalOutcome SqlserverClient::DescribeCrossBackupStatistical(const DescribeCrossBackupStatisticalRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCrossBackupStatistical");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCrossBackupStatisticalResponse rsp = DescribeCrossBackupStatisticalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCrossBackupStatisticalOutcome(rsp);
+        else
+            return DescribeCrossBackupStatisticalOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCrossBackupStatisticalOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeCrossBackupStatisticalAsync(const DescribeCrossBackupStatisticalRequest& request, const DescribeCrossBackupStatisticalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCrossBackupStatistical(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeCrossBackupStatisticalOutcomeCallable SqlserverClient::DescribeCrossBackupStatisticalCallable(const DescribeCrossBackupStatisticalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCrossBackupStatisticalOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCrossBackupStatistical(request);
         }
     );
 
@@ -1882,6 +2054,92 @@ SqlserverClient::DescribeDBsNormalOutcomeCallable SqlserverClient::DescribeDBsNo
         [this, request]()
         {
             return this->DescribeDBsNormal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::DescribeDatabasesOutcome SqlserverClient::DescribeDatabases(const DescribeDatabasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabasesResponse rsp = DescribeDatabasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabasesOutcome(rsp);
+        else
+            return DescribeDatabasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabasesOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeDatabasesAsync(const DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatabases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeDatabasesOutcomeCallable SqlserverClient::DescribeDatabasesCallable(const DescribeDatabasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatabasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatabases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::DescribeDatabasesNormalOutcome SqlserverClient::DescribeDatabasesNormal(const DescribeDatabasesNormalRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabasesNormal");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabasesNormalResponse rsp = DescribeDatabasesNormalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabasesNormalOutcome(rsp);
+        else
+            return DescribeDatabasesNormalOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabasesNormalOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeDatabasesNormalAsync(const DescribeDatabasesNormalRequest& request, const DescribeDatabasesNormalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatabasesNormal(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeDatabasesNormalOutcomeCallable SqlserverClient::DescribeDatabasesNormalCallable(const DescribeDatabasesNormalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatabasesNormalOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatabasesNormal(request);
         }
     );
 
@@ -2663,6 +2921,49 @@ SqlserverClient::DescribeRegionsOutcomeCallable SqlserverClient::DescribeRegions
     return task->get_future();
 }
 
+SqlserverClient::DescribeRegularBackupPlanOutcome SqlserverClient::DescribeRegularBackupPlan(const DescribeRegularBackupPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegularBackupPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegularBackupPlanResponse rsp = DescribeRegularBackupPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegularBackupPlanOutcome(rsp);
+        else
+            return DescribeRegularBackupPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegularBackupPlanOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeRegularBackupPlanAsync(const DescribeRegularBackupPlanRequest& request, const DescribeRegularBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRegularBackupPlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeRegularBackupPlanOutcomeCallable SqlserverClient::DescribeRegularBackupPlanCallable(const DescribeRegularBackupPlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRegularBackupPlanOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRegularBackupPlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::DescribeRollbackTimeOutcome SqlserverClient::DescribeRollbackTime(const DescribeRollbackTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRollbackTime");
@@ -3308,6 +3609,49 @@ SqlserverClient::ModifyBackupStrategyOutcomeCallable SqlserverClient::ModifyBack
     return task->get_future();
 }
 
+SqlserverClient::ModifyCrossBackupStrategyOutcome SqlserverClient::ModifyCrossBackupStrategy(const ModifyCrossBackupStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCrossBackupStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCrossBackupStrategyResponse rsp = ModifyCrossBackupStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCrossBackupStrategyOutcome(rsp);
+        else
+            return ModifyCrossBackupStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCrossBackupStrategyOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyCrossBackupStrategyAsync(const ModifyCrossBackupStrategyRequest& request, const ModifyCrossBackupStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCrossBackupStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyCrossBackupStrategyOutcomeCallable SqlserverClient::ModifyCrossBackupStrategyCallable(const ModifyCrossBackupStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCrossBackupStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCrossBackupStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::ModifyDBEncryptAttributesOutcome SqlserverClient::ModifyDBEncryptAttributes(const ModifyDBEncryptAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBEncryptAttributes");
@@ -3774,6 +4118,49 @@ SqlserverClient::ModifyDatabaseMdfOutcomeCallable SqlserverClient::ModifyDatabas
         [this, request]()
         {
             return this->ModifyDatabaseMdf(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::ModifyDatabaseShrinkMDFOutcome SqlserverClient::ModifyDatabaseShrinkMDF(const ModifyDatabaseShrinkMDFRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDatabaseShrinkMDF");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDatabaseShrinkMDFResponse rsp = ModifyDatabaseShrinkMDFResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDatabaseShrinkMDFOutcome(rsp);
+        else
+            return ModifyDatabaseShrinkMDFOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDatabaseShrinkMDFOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyDatabaseShrinkMDFAsync(const ModifyDatabaseShrinkMDFRequest& request, const ModifyDatabaseShrinkMDFAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDatabaseShrinkMDF(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyDatabaseShrinkMDFOutcomeCallable SqlserverClient::ModifyDatabaseShrinkMDFCallable(const ModifyDatabaseShrinkMDFRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDatabaseShrinkMDFOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDatabaseShrinkMDF(request);
         }
     );
 

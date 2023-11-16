@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 权限控制模版对象
+                * 权限控制模板对象
                 */
                 class ACTemplate : public AbstractModel
                 {
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版id
+                     * 获取模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateId 模版id
+                     * @return TemplateId 模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模版id
+                     * 设置模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateId 模版id
+                     * @param _templateId 模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模版名称
+                     * 获取模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateName 模版名称
+                     * @return TemplateName 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模版名称
+                     * 设置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateName 模版名称
+                     * @param _templateName 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取模版描述
+                     * 获取模板描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 模版描述
+                     * @return Description 模板描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置模版描述
+                     * 设置模板描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 模版描述
+                     * @param _description 模板描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版id
+                     * 模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模版名称
+                     * 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 模版描述
+                     * 模板描述
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;

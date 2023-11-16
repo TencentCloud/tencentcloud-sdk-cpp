@@ -28,6 +28,7 @@
 #include <tencentcloud/tione/v20211111/model/StartCmdInfo.h>
 #include <tencentcloud/tione/v20211111/model/DataConfig.h>
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
+#include <tencentcloud/tione/v20211111/model/PreTrainModel.h>
 
 
 namespace TencentCloud
@@ -515,6 +516,27 @@ POSTPAID_BY_HOUR 按量计费
                      */
                     bool CallbackUrlHasBeenSet() const;
 
+                    /**
+                     * 获取太极预训练模型ID
+                     * @return PreTrainModel 太极预训练模型ID
+                     * 
+                     */
+                    PreTrainModel GetPreTrainModel() const;
+
+                    /**
+                     * 设置太极预训练模型ID
+                     * @param _preTrainModel 太极预训练模型ID
+                     * 
+                     */
+                    void SetPreTrainModel(const PreTrainModel& _preTrainModel);
+
+                    /**
+                     * 判断参数 PreTrainModel 是否已赋值
+                     * @return PreTrainModel 是否已赋值
+                     * 
+                     */
+                    bool PreTrainModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -649,6 +671,12 @@ POSTPAID_BY_HOUR 按量计费
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 太极预训练模型ID
+                     */
+                    PreTrainModel m_preTrainModel;
+                    bool m_preTrainModelHasBeenSet;
 
                 };
             }

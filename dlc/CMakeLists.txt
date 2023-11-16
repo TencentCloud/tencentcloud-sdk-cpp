@@ -53,6 +53,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSDatabaseResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTablesNameRequest.h
   include/tencentcloud/dlc/v20210125/model/Policys.h
   include/tencentcloud/dlc/v20210125/model/DropDMSDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateScriptResponse.h
@@ -103,6 +104,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/UpdateDataEngineConfigResponse.h
   include/tencentcloud/dlc/v20210125/model/UserIdSetOfWorkGroupId.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSPartitionRequest.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTablesNameResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeAdvancedStoreLocationRequest.h
   include/tencentcloud/dlc/v20210125/model/CheckLockMetaDataRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobRequest.h
@@ -395,6 +397,7 @@ set(dlc_src
   src/v20210125/model/CreateStoreLocationResponse.cpp
   src/v20210125/model/DescribeNotebookSessionResponse.cpp
   src/v20210125/model/DescribeDMSDatabaseResponse.cpp
+  src/v20210125/model/DescribeTablesNameRequest.cpp
   src/v20210125/model/Policys.cpp
   src/v20210125/model/DropDMSDatabaseRequest.cpp
   src/v20210125/model/CreateScriptResponse.cpp
@@ -445,6 +448,7 @@ set(dlc_src
   src/v20210125/model/UpdateDataEngineConfigResponse.cpp
   src/v20210125/model/UserIdSetOfWorkGroupId.cpp
   src/v20210125/model/AlterDMSPartitionRequest.cpp
+  src/v20210125/model/DescribeTablesNameResponse.cpp
   src/v20210125/model/DescribeAdvancedStoreLocationRequest.cpp
   src/v20210125/model/CheckLockMetaDataRequest.cpp
   src/v20210125/model/DescribeSparkAppJobRequest.cpp

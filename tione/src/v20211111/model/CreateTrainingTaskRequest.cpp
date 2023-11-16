@@ -44,7 +44,8 @@ CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_logEnableHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_preTrainModelHasBeenSet(false)
 {
 }
 
@@ -255,6 +256,15 @@ string CreateTrainingTaskRequest::ToJsonString() const
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preTrainModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreTrainModel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_preTrainModel.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -615,6 +625,22 @@ void CreateTrainingTaskRequest::SetCallbackUrl(const string& _callbackUrl)
 bool CreateTrainingTaskRequest::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+PreTrainModel CreateTrainingTaskRequest::GetPreTrainModel() const
+{
+    return m_preTrainModel;
+}
+
+void CreateTrainingTaskRequest::SetPreTrainModel(const PreTrainModel& _preTrainModel)
+{
+    m_preTrainModel = _preTrainModel;
+    m_preTrainModelHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::PreTrainModelHasBeenSet() const
+{
+    return m_preTrainModelHasBeenSet;
 }
 
 
