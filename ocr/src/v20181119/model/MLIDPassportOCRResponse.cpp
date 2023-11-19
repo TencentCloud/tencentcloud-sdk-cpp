@@ -37,7 +37,9 @@ MLIDPassportOCRResponse::MLIDPassportOCRResponse() :
     m_codeSetHasBeenSet(false),
     m_codeCrcHasBeenSet(false),
     m_surnameHasBeenSet(false),
-    m_givenNameHasBeenSet(false)
+    m_givenNameHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_passportRecognizeInfosHasBeenSet(false)
 {
 }
 
@@ -218,6 +220,33 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
         m_givenNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Type") && !rsp["Type"].IsNull())
+    {
+        if (!rsp["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(rsp["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PassportRecognizeInfos") && !rsp["PassportRecognizeInfos"].IsNull())
+    {
+        if (!rsp["PassportRecognizeInfos"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PassportRecognizeInfos` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_passportRecognizeInfos.Deserialize(rsp["PassportRecognizeInfos"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_passportRecognizeInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -343,6 +372,23 @@ string MLIDPassportOCRResponse::ToJsonString() const
         string key = "GivenName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_givenName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passportRecognizeInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PassportRecognizeInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_passportRecognizeInfos.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -495,6 +541,26 @@ string MLIDPassportOCRResponse::GetGivenName() const
 bool MLIDPassportOCRResponse::GivenNameHasBeenSet() const
 {
     return m_givenNameHasBeenSet;
+}
+
+string MLIDPassportOCRResponse::GetType() const
+{
+    return m_type;
+}
+
+bool MLIDPassportOCRResponse::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+PassportRecognizeInfos MLIDPassportOCRResponse::GetPassportRecognizeInfos() const
+{
+    return m_passportRecognizeInfos;
+}
+
+bool MLIDPassportOCRResponse::PassportRecognizeInfosHasBeenSet() const
+{
+    return m_passportRecognizeInfosHasBeenSet;
 }
 
 

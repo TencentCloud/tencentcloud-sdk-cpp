@@ -149,6 +149,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/MotorVehicleSaleInvoice.h
   include/tencentcloud/ocr/v20181119/model/TableOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/UsedVehicleInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/PassportRecognizeInfos.h
   include/tencentcloud/ocr/v20181119/model/ImageEnhancementResponse.h
   include/tencentcloud/ocr/v20181119/model/QrcodeImgSize.h
   include/tencentcloud/ocr/v20181119/model/PassportOCRResponse.h
@@ -420,6 +421,7 @@ set(ocr_src
   src/v20181119/model/MotorVehicleSaleInvoice.cpp
   src/v20181119/model/TableOCRRequest.cpp
   src/v20181119/model/UsedVehicleInvoiceInfo.cpp
+  src/v20181119/model/PassportRecognizeInfos.cpp
   src/v20181119/model/ImageEnhancementResponse.cpp
   src/v20181119/model/QrcodeImgSize.cpp
   src/v20181119/model/PassportOCRResponse.cpp

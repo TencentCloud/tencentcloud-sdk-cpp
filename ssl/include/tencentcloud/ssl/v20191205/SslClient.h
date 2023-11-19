@@ -515,7 +515,7 @@ namespace TencentCloud
                 DescribeCompaniesOutcomeCallable DescribeCompaniesCallable(const Model::DescribeCompaniesRequest& request);
 
                 /**
-                 *证书查询关联资源
+                 *证书查询关联资源， 最新查询接口请使用CreateCertificateBindResourceSyncTask， 可以查询更多支持的云资源
                  * @param req DescribeDeployedResourcesRequest
                  * @return DescribeDeployedResourcesOutcome
                  */

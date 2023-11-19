@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/PassportRecognizeInfos.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取护照ID
-                     * @return ID 护照ID
+                     * 获取护照ID（机读码区的解析结果）
+                     * @return ID 护照ID（机读码区的解析结果）
                      * 
                      */
                     std::string GetID() const;
@@ -58,8 +59,8 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取姓名
-                     * @return Name 姓名
+                     * 获取姓名（机读码区的解析结果）
+                     * @return Name 姓名（机读码区的解析结果）
                      * 
                      */
                     std::string GetName() const;
@@ -72,8 +73,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取出生日期
-                     * @return DateOfBirth 出生日期
+                     * 获取出生日期（机读码区的解析结果）
+                     * @return DateOfBirth 出生日期（机读码区的解析结果）
                      * 
                      */
                     std::string GetDateOfBirth() const;
@@ -86,8 +87,8 @@ namespace TencentCloud
                     bool DateOfBirthHasBeenSet() const;
 
                     /**
-                     * 获取性别（F女，M男）
-                     * @return Sex 性别（F女，M男）
+                     * 获取性别（F女，M男）（机读码区的解析结果）
+                     * @return Sex 性别（F女，M男）（机读码区的解析结果）
                      * 
                      */
                     std::string GetSex() const;
@@ -100,8 +101,8 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取有效期
-                     * @return DateOfExpiration 有效期
+                     * 获取有效期（机读码区的解析结果）
+                     * @return DateOfExpiration 有效期（机读码区的解析结果）
                      * 
                      */
                     std::string GetDateOfExpiration() const;
@@ -114,8 +115,8 @@ namespace TencentCloud
                     bool DateOfExpirationHasBeenSet() const;
 
                     /**
-                     * 获取发行国
-                     * @return IssuingCountry 发行国
+                     * 获取发行国（机读码区的解析结果）
+                     * @return IssuingCountry 发行国（机读码区的解析结果）
                      * 
                      */
                     std::string GetIssuingCountry() const;
@@ -128,8 +129,8 @@ namespace TencentCloud
                     bool IssuingCountryHasBeenSet() const;
 
                     /**
-                     * 获取国家地区代码
-                     * @return Nationality 国家地区代码
+                     * 获取国家地区代码（机读码区的解析结果）
+                     * @return Nationality 国家地区代码（机读码区的解析结果）
                      * 
                      */
                     std::string GetNationality() const;
@@ -142,11 +143,11 @@ namespace TencentCloud
                     bool NationalityHasBeenSet() const;
 
                     /**
-                     * 获取告警码
+                     * 获取告警码：
 -9103	证照翻拍告警
 -9102	证照复印件告警（包括黑白复印件、彩色复印件）
 -9106       证件遮挡告警
-                     * @return Warn 告警码
+                     * @return Warn 告警码：
 -9103	证照翻拍告警
 -9102	证照复印件告警（包括黑白复印件、彩色复印件）
 -9106       证件遮挡告警
@@ -234,9 +235,9 @@ namespace TencentCloud
                     bool CodeCrcHasBeenSet() const;
 
                     /**
-                     * 获取姓
+                     * 获取姓（机读码区的解析结果）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Surname 姓
+                     * @return Surname 姓（机读码区的解析结果）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -250,9 +251,9 @@ namespace TencentCloud
                     bool SurnameHasBeenSet() const;
 
                     /**
-                     * 获取名
+                     * 获取名（机读码区的解析结果）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GivenName 名
+                     * @return GivenName 名（机读码区的解析结果）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -265,52 +266,80 @@ namespace TencentCloud
                      */
                     bool GivenNameHasBeenSet() const;
 
+                    /**
+                     * 获取类型（机读码区的解析结果）
+                     * @return Type 类型（机读码区的解析结果）
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取信息区证件内容
+                     * @return PassportRecognizeInfos 信息区证件内容
+                     * 
+                     */
+                    PassportRecognizeInfos GetPassportRecognizeInfos() const;
+
+                    /**
+                     * 判断参数 PassportRecognizeInfos 是否已赋值
+                     * @return PassportRecognizeInfos 是否已赋值
+                     * 
+                     */
+                    bool PassportRecognizeInfosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 护照ID
+                     * 护照ID（机读码区的解析结果）
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 姓名
+                     * 姓名（机读码区的解析结果）
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 出生日期
+                     * 出生日期（机读码区的解析结果）
                      */
                     std::string m_dateOfBirth;
                     bool m_dateOfBirthHasBeenSet;
 
                     /**
-                     * 性别（F女，M男）
+                     * 性别（F女，M男）（机读码区的解析结果）
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * 有效期
+                     * 有效期（机读码区的解析结果）
                      */
                     std::string m_dateOfExpiration;
                     bool m_dateOfExpirationHasBeenSet;
 
                     /**
-                     * 发行国
+                     * 发行国（机读码区的解析结果）
                      */
                     std::string m_issuingCountry;
                     bool m_issuingCountryHasBeenSet;
 
                     /**
-                     * 国家地区代码
+                     * 国家地区代码（机读码区的解析结果）
                      */
                     std::string m_nationality;
                     bool m_nationalityHasBeenSet;
 
                     /**
-                     * 告警码
+                     * 告警码：
 -9103	证照翻拍告警
 -9102	证照复印件告警（包括黑白复印件、彩色复印件）
 -9106       证件遮挡告警
@@ -351,18 +380,30 @@ namespace TencentCloud
                     bool m_codeCrcHasBeenSet;
 
                     /**
-                     * 姓
+                     * 姓（机读码区的解析结果）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_surname;
                     bool m_surnameHasBeenSet;
 
                     /**
-                     * 名
+                     * 名（机读码区的解析结果）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_givenName;
                     bool m_givenNameHasBeenSet;
+
+                    /**
+                     * 类型（机读码区的解析结果）
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 信息区证件内容
+                     */
+                    PassportRecognizeInfos m_passportRecognizeInfos;
+                    bool m_passportRecognizeInfosHasBeenSet;
 
                 };
             }
