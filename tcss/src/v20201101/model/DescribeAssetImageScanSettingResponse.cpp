@@ -31,7 +31,10 @@ DescribeAssetImageScanSettingResponse::DescribeAssetImageScanSettingResponse() :
     m_scanRiskHasBeenSet(false),
     m_scanVulHasBeenSet(false),
     m_allHasBeenSet(false),
-    m_imagesHasBeenSet(false)
+    m_imagesHasBeenSet(false),
+    m_containerRunningHasBeenSet(false),
+    m_scanScopeHasBeenSet(false),
+    m_scanEndTimeHasBeenSet(false)
 {
 }
 
@@ -152,6 +155,36 @@ CoreInternalOutcome DescribeAssetImageScanSettingResponse::Deserialize(const str
         m_imagesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ContainerRunning") && !rsp["ContainerRunning"].IsNull())
+    {
+        if (!rsp["ContainerRunning"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerRunning` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerRunning = rsp["ContainerRunning"].GetBool();
+        m_containerRunningHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ScanScope") && !rsp["ScanScope"].IsNull())
+    {
+        if (!rsp["ScanScope"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanScope` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanScope = rsp["ScanScope"].GetUint64();
+        m_scanScopeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ScanEndTime") && !rsp["ScanEndTime"].IsNull())
+    {
+        if (!rsp["ScanEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanEndTime = string(rsp["ScanEndTime"].GetString());
+        m_scanEndTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -229,6 +262,30 @@ string DescribeAssetImageScanSettingResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_containerRunningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerRunning";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_containerRunning, allocator);
+    }
+
+    if (m_scanScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scanScope, allocator);
+    }
+
+    if (m_scanEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanEndTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -321,6 +378,36 @@ vector<string> DescribeAssetImageScanSettingResponse::GetImages() const
 bool DescribeAssetImageScanSettingResponse::ImagesHasBeenSet() const
 {
     return m_imagesHasBeenSet;
+}
+
+bool DescribeAssetImageScanSettingResponse::GetContainerRunning() const
+{
+    return m_containerRunning;
+}
+
+bool DescribeAssetImageScanSettingResponse::ContainerRunningHasBeenSet() const
+{
+    return m_containerRunningHasBeenSet;
+}
+
+uint64_t DescribeAssetImageScanSettingResponse::GetScanScope() const
+{
+    return m_scanScope;
+}
+
+bool DescribeAssetImageScanSettingResponse::ScanScopeHasBeenSet() const
+{
+    return m_scanScopeHasBeenSet;
+}
+
+string DescribeAssetImageScanSettingResponse::GetScanEndTime() const
+{
+    return m_scanEndTime;
+}
+
+bool DescribeAssetImageScanSettingResponse::ScanEndTimeHasBeenSet() const
+{
+    return m_scanEndTimeHasBeenSet;
 }
 
 

@@ -126,6 +126,92 @@ TbaasClient::ApplyUserCertOutcomeCallable TbaasClient::ApplyUserCertCallable(con
     return task->get_future();
 }
 
+TbaasClient::DescribeFabricBlockOutcome TbaasClient::DescribeFabricBlock(const DescribeFabricBlockRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFabricBlock");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFabricBlockResponse rsp = DescribeFabricBlockResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFabricBlockOutcome(rsp);
+        else
+            return DescribeFabricBlockOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFabricBlockOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::DescribeFabricBlockAsync(const DescribeFabricBlockRequest& request, const DescribeFabricBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFabricBlock(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::DescribeFabricBlockOutcomeCallable TbaasClient::DescribeFabricBlockCallable(const DescribeFabricBlockRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFabricBlockOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFabricBlock(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::DescribeFabricTransactionOutcome TbaasClient::DescribeFabricTransaction(const DescribeFabricTransactionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFabricTransaction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFabricTransactionResponse rsp = DescribeFabricTransactionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFabricTransactionOutcome(rsp);
+        else
+            return DescribeFabricTransactionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFabricTransactionOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::DescribeFabricTransactionAsync(const DescribeFabricTransactionRequest& request, const DescribeFabricTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFabricTransaction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::DescribeFabricTransactionOutcomeCallable TbaasClient::DescribeFabricTransactionCallable(const DescribeFabricTransactionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFabricTransactionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFabricTransaction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::DownloadUserCertOutcome TbaasClient::DownloadUserCert(const DownloadUserCertRequest &request)
 {
     auto outcome = MakeRequest(request, "DownloadUserCert");
@@ -599,6 +685,49 @@ TbaasClient::InvokeChainMakerDemoContractOutcomeCallable TbaasClient::InvokeChai
     return task->get_future();
 }
 
+TbaasClient::InvokeFabricChaincodeOutcome TbaasClient::InvokeFabricChaincode(const InvokeFabricChaincodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "InvokeFabricChaincode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InvokeFabricChaincodeResponse rsp = InvokeFabricChaincodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InvokeFabricChaincodeOutcome(rsp);
+        else
+            return InvokeFabricChaincodeOutcome(o.GetError());
+    }
+    else
+    {
+        return InvokeFabricChaincodeOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::InvokeFabricChaincodeAsync(const InvokeFabricChaincodeRequest& request, const InvokeFabricChaincodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InvokeFabricChaincode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::InvokeFabricChaincodeOutcomeCallable TbaasClient::InvokeFabricChaincodeCallable(const InvokeFabricChaincodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InvokeFabricChaincodeOutcome()>>(
+        [this, request]()
+        {
+            return this->InvokeFabricChaincode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::QueryOutcome TbaasClient::Query(const QueryRequest &request)
 {
     auto outcome = MakeRequest(request, "Query");
@@ -893,6 +1022,49 @@ TbaasClient::QueryChainMakerTransactionOutcomeCallable TbaasClient::QueryChainMa
         [this, request]()
         {
             return this->QueryChainMakerTransaction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::QueryFabricChaincodeOutcome TbaasClient::QueryFabricChaincode(const QueryFabricChaincodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFabricChaincode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFabricChaincodeResponse rsp = QueryFabricChaincodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFabricChaincodeOutcome(rsp);
+        else
+            return QueryFabricChaincodeOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFabricChaincodeOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::QueryFabricChaincodeAsync(const QueryFabricChaincodeRequest& request, const QueryFabricChaincodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFabricChaincode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::QueryFabricChaincodeOutcomeCallable TbaasClient::QueryFabricChaincodeCallable(const QueryFabricChaincodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFabricChaincodeOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFabricChaincode(request);
         }
     );
 

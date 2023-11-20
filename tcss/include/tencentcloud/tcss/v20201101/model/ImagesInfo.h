@@ -487,6 +487,132 @@ namespace TencentCloud
                      */
                     bool ComponentCntHasBeenSet() const;
 
+                    /**
+                     * 获取严重漏洞数
+                     * @return CriticalLevelVulCnt 严重漏洞数
+                     * 
+                     */
+                    uint64_t GetCriticalLevelVulCnt() const;
+
+                    /**
+                     * 设置严重漏洞数
+                     * @param _criticalLevelVulCnt 严重漏洞数
+                     * 
+                     */
+                    void SetCriticalLevelVulCnt(const uint64_t& _criticalLevelVulCnt);
+
+                    /**
+                     * 判断参数 CriticalLevelVulCnt 是否已赋值
+                     * @return CriticalLevelVulCnt 是否已赋值
+                     * 
+                     */
+                    bool CriticalLevelVulCntHasBeenSet() const;
+
+                    /**
+                     * 获取高危漏洞数
+                     * @return HighLevelVulCnt 高危漏洞数
+                     * 
+                     */
+                    uint64_t GetHighLevelVulCnt() const;
+
+                    /**
+                     * 设置高危漏洞数
+                     * @param _highLevelVulCnt 高危漏洞数
+                     * 
+                     */
+                    void SetHighLevelVulCnt(const uint64_t& _highLevelVulCnt);
+
+                    /**
+                     * 判断参数 HighLevelVulCnt 是否已赋值
+                     * @return HighLevelVulCnt 是否已赋值
+                     * 
+                     */
+                    bool HighLevelVulCntHasBeenSet() const;
+
+                    /**
+                     * 获取中危漏洞数
+                     * @return MediumLevelVulCnt 中危漏洞数
+                     * 
+                     */
+                    uint64_t GetMediumLevelVulCnt() const;
+
+                    /**
+                     * 设置中危漏洞数
+                     * @param _mediumLevelVulCnt 中危漏洞数
+                     * 
+                     */
+                    void SetMediumLevelVulCnt(const uint64_t& _mediumLevelVulCnt);
+
+                    /**
+                     * 判断参数 MediumLevelVulCnt 是否已赋值
+                     * @return MediumLevelVulCnt 是否已赋值
+                     * 
+                     */
+                    bool MediumLevelVulCntHasBeenSet() const;
+
+                    /**
+                     * 获取低危漏洞数
+                     * @return LowLevelVulCnt 低危漏洞数
+                     * 
+                     */
+                    uint64_t GetLowLevelVulCnt() const;
+
+                    /**
+                     * 设置低危漏洞数
+                     * @param _lowLevelVulCnt 低危漏洞数
+                     * 
+                     */
+                    void SetLowLevelVulCnt(const uint64_t& _lowLevelVulCnt);
+
+                    /**
+                     * 判断参数 LowLevelVulCnt 是否已赋值
+                     * @return LowLevelVulCnt 是否已赋值
+                     * 
+                     */
+                    bool LowLevelVulCntHasBeenSet() const;
+
+                    /**
+                     * 获取是否最新版本镜像
+                     * @return IsLatestImage 是否最新版本镜像
+                     * 
+                     */
+                    bool GetIsLatestImage() const;
+
+                    /**
+                     * 设置是否最新版本镜像
+                     * @param _isLatestImage 是否最新版本镜像
+                     * 
+                     */
+                    void SetIsLatestImage(const bool& _isLatestImage);
+
+                    /**
+                     * 判断参数 IsLatestImage 是否已赋值
+                     * @return IsLatestImage 是否已赋值
+                     * 
+                     */
+                    bool IsLatestImageHasBeenSet() const;
+
+                    /**
+                     * 获取是否推荐处置
+                     * @return RecommendedFix 是否推荐处置
+                     * 
+                     */
+                    bool GetRecommendedFix() const;
+
+                    /**
+                     * 设置是否推荐处置
+                     * @param _recommendedFix 是否推荐处置
+                     * 
+                     */
+                    void SetRecommendedFix(const bool& _recommendedFix);
+
+                    /**
+                     * 判断参数 RecommendedFix 是否已赋值
+                     * @return RecommendedFix 是否已赋值
+                     * 
+                     */
+                    bool RecommendedFixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -614,6 +740,42 @@ namespace TencentCloud
                      */
                     uint64_t m_componentCnt;
                     bool m_componentCntHasBeenSet;
+
+                    /**
+                     * 严重漏洞数
+                     */
+                    uint64_t m_criticalLevelVulCnt;
+                    bool m_criticalLevelVulCntHasBeenSet;
+
+                    /**
+                     * 高危漏洞数
+                     */
+                    uint64_t m_highLevelVulCnt;
+                    bool m_highLevelVulCntHasBeenSet;
+
+                    /**
+                     * 中危漏洞数
+                     */
+                    uint64_t m_mediumLevelVulCnt;
+                    bool m_mediumLevelVulCntHasBeenSet;
+
+                    /**
+                     * 低危漏洞数
+                     */
+                    uint64_t m_lowLevelVulCnt;
+                    bool m_lowLevelVulCntHasBeenSet;
+
+                    /**
+                     * 是否最新版本镜像
+                     */
+                    bool m_isLatestImage;
+                    bool m_isLatestImageHasBeenSet;
+
+                    /**
+                     * 是否推荐处置
+                     */
+                    bool m_recommendedFix;
+                    bool m_recommendedFixHasBeenSet;
 
                 };
             }

@@ -108,42 +108,42 @@ namespace TencentCloud
                     /**
                      * 获取有效时间最小时间戳
                      * @return VtsMin 有效时间最小时间戳
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetVtsMin() const;
 
                     /**
                      * 设置有效时间最小时间戳
                      * @param _vtsMin 有效时间最小时间戳
-                     * 
+                     * @deprecated
                      */
                     void SetVtsMin(const uint64_t& _vtsMin);
 
                     /**
                      * 判断参数 VtsMin 是否已赋值
                      * @return VtsMin 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VtsMinHasBeenSet() const;
 
                     /**
                      * 获取有效时间最大时间戳
                      * @return VtsMax 有效时间最大时间戳
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetVtsMax() const;
 
                     /**
                      * 设置有效时间最大时间戳
                      * @param _vtsMax 有效时间最大时间戳
-                     * 
+                     * @deprecated
                      */
                     void SetVtsMax(const uint64_t& _vtsMax);
 
                     /**
                      * 判断参数 VtsMax 是否已赋值
                      * @return VtsMax 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VtsMaxHasBeenSet() const;
 
@@ -294,6 +294,48 @@ namespace TencentCloud
                      */
                     bool IpHasBeenSet() const;
 
+                    /**
+                     * 获取有效时间最小时间戳
+                     * @return ValidTimeStampMin 有效时间最小时间戳
+                     * 
+                     */
+                    uint64_t GetValidTimeStampMin() const;
+
+                    /**
+                     * 设置有效时间最小时间戳
+                     * @param _validTimeStampMin 有效时间最小时间戳
+                     * 
+                     */
+                    void SetValidTimeStampMin(const uint64_t& _validTimeStampMin);
+
+                    /**
+                     * 判断参数 ValidTimeStampMin 是否已赋值
+                     * @return ValidTimeStampMin 是否已赋值
+                     * 
+                     */
+                    bool ValidTimeStampMinHasBeenSet() const;
+
+                    /**
+                     * 获取有效时间最大时间戳
+                     * @return ValidTimeStampMax 有效时间最大时间戳
+                     * 
+                     */
+                    uint64_t GetValidTimeStampMax() const;
+
+                    /**
+                     * 设置有效时间最大时间戳
+                     * @param _validTimeStampMax 有效时间最大时间戳
+                     * 
+                     */
+                    void SetValidTimeStampMax(const uint64_t& _validTimeStampMax);
+
+                    /**
+                     * 判断参数 ValidTimeStampMax 是否已赋值
+                     * @return ValidTimeStampMax 是否已赋值
+                     * 
+                     */
+                    bool ValidTimeStampMaxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +409,18 @@ namespace TencentCloud
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
+
+                    /**
+                     * 有效时间最小时间戳
+                     */
+                    uint64_t m_validTimeStampMin;
+                    bool m_validTimeStampMinHasBeenSet;
+
+                    /**
+                     * 有效时间最大时间戳
+                     */
+                    uint64_t m_validTimeStampMax;
+                    bool m_validTimeStampMaxHasBeenSet;
 
                 };
             }

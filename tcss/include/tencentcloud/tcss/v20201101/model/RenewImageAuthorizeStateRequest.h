@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool ImageIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否授权后自动扫描
+                     * @return NeedScan 是否授权后自动扫描
+                     * 
+                     */
+                    bool GetNeedScan() const;
+
+                    /**
+                     * 设置是否授权后自动扫描
+                     * @param _needScan 是否授权后自动扫描
+                     * 
+                     */
+                    void SetNeedScan(const bool& _needScan);
+
+                    /**
+                     * 判断参数 NeedScan 是否已赋值
+                     * @return NeedScan 是否已赋值
+                     * 
+                     */
+                    bool NeedScanHasBeenSet() const;
+
+                    /**
+                     * 获取扫描类型
+                     * @return ScanType 扫描类型
+                     * 
+                     */
+                    std::vector<std::string> GetScanType() const;
+
+                    /**
+                     * 设置扫描类型
+                     * @param _scanType 扫描类型
+                     * 
+                     */
+                    void SetScanType(const std::vector<std::string>& _scanType);
+
+                    /**
+                     * 判断参数 ScanType 是否已赋值
+                     * @return ScanType 是否已赋值
+                     * 
+                     */
+                    bool ScanTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_imageIds;
                     bool m_imageIdsHasBeenSet;
+
+                    /**
+                     * 是否授权后自动扫描
+                     */
+                    bool m_needScan;
+                    bool m_needScanHasBeenSet;
+
+                    /**
+                     * 扫描类型
+                     */
+                    std::vector<std::string> m_scanType;
+                    bool m_scanTypeHasBeenSet;
 
                 };
             }

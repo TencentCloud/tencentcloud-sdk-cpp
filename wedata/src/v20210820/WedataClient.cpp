@@ -3480,6 +3480,49 @@ WedataClient::DescribeApproveListOutcomeCallable WedataClient::DescribeApproveLi
     return task->get_future();
 }
 
+WedataClient::DescribeApproveTypeListOutcome WedataClient::DescribeApproveTypeList(const DescribeApproveTypeListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApproveTypeList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApproveTypeListResponse rsp = DescribeApproveTypeListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApproveTypeListOutcome(rsp);
+        else
+            return DescribeApproveTypeListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApproveTypeListOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeApproveTypeListAsync(const DescribeApproveTypeListRequest& request, const DescribeApproveTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApproveTypeList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeApproveTypeListOutcomeCallable WedataClient::DescribeApproveTypeListCallable(const DescribeApproveTypeListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApproveTypeListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApproveTypeList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeBaselineAllTaskDagOutcome WedataClient::DescribeBaselineAllTaskDag(const DescribeBaselineAllTaskDagRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBaselineAllTaskDag");

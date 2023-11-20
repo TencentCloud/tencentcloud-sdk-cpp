@@ -31,7 +31,10 @@ DescribeCustomRulesRspRuleListItem::DescribeCustomRulesRspRuleListItem() :
     m_sortIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_strategiesHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false),
+    m_validStatusHasBeenSet(false),
+    m_sourceHasBeenSet(false)
 {
 }
 
@@ -160,6 +163,36 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
         m_eventIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ValidStatus") && !value["ValidStatus"].IsNull())
+    {
+        if (!value["ValidStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.ValidStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validStatus = value["ValidStatus"].GetInt64();
+        m_validStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Source") && !value["Source"].IsNull())
+    {
+        if (!value["Source"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.Source` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_source = string(value["Source"].GetString());
+        m_sourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +293,30 @@ void DescribeCustomRulesRspRuleListItem::ToJsonObject(rapidjson::Value &value, r
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validStatus, allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -439,5 +496,53 @@ void DescribeCustomRulesRspRuleListItem::SetEventId(const string& _eventId)
 bool DescribeCustomRulesRspRuleListItem::EventIdHasBeenSet() const
 {
     return m_eventIdHasBeenSet;
+}
+
+string DescribeCustomRulesRspRuleListItem::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
+}
+
+int64_t DescribeCustomRulesRspRuleListItem::GetValidStatus() const
+{
+    return m_validStatus;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetValidStatus(const int64_t& _validStatus)
+{
+    m_validStatus = _validStatus;
+    m_validStatusHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::ValidStatusHasBeenSet() const
+{
+    return m_validStatusHasBeenSet;
+}
+
+string DescribeCustomRulesRspRuleListItem::GetSource() const
+{
+    return m_source;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
 }
 

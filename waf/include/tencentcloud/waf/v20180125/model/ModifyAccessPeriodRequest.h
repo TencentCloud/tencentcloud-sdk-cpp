@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问日志保存期限，范围为[1, 30]
-                     * @return Period 访问日志保存期限，范围为[1, 30]
+                     * 获取访问日志保存期限，范围为[1, 180]
+                     * @return Period 访问日志保存期限，范围为[1, 180]
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置访问日志保存期限，范围为[1, 30]
-                     * @param _period 访问日志保存期限，范围为[1, 30]
+                     * 设置访问日志保存期限，范围为[1, 180]
+                     * @param _period 访问日志保存期限，范围为[1, 180]
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取日志主题
-                     * @return TopicId 日志主题
+                     * 获取日志主题，新版本不需要再传
+                     * @return TopicId 日志主题，新版本不需要再传
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题
-                     * @param _topicId 日志主题
+                     * 设置日志主题，新版本不需要再传
+                     * @param _topicId 日志主题，新版本不需要再传
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 访问日志保存期限，范围为[1, 30]
+                     * 访问日志保存期限，范围为[1, 180]
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 日志主题
+                     * 日志主题，新版本不需要再传
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

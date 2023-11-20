@@ -1009,6 +1009,27 @@ namespace TencentCloud
                      */
                     bool SensitiveInfoCntHasBeenSet() const;
 
+                    /**
+                     * 获取是否推荐处置
+                     * @return RecommendedFix 是否推荐处置
+                     * 
+                     */
+                    bool GetRecommendedFix() const;
+
+                    /**
+                     * 设置是否推荐处置
+                     * @param _recommendedFix 是否推荐处置
+                     * 
+                     */
+                    void SetRecommendedFix(const bool& _recommendedFix);
+
+                    /**
+                     * 判断参数 RecommendedFix 是否已赋值
+                     * @return RecommendedFix 是否已赋值
+                     * 
+                     */
+                    bool RecommendedFixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1283,6 +1304,12 @@ namespace TencentCloud
                      */
                     uint64_t m_sensitiveInfoCnt;
                     bool m_sensitiveInfoCntHasBeenSet;
+
+                    /**
+                     * 是否推荐处置
+                     */
+                    bool m_recommendedFix;
+                    bool m_recommendedFixHasBeenSet;
 
                 };
             }

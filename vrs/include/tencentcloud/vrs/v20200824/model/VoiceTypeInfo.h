@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool DateCreatedHasBeenSet() const;
 
+                    /**
+                     * 获取部署状态。若已部署，则可通过语音合成接口调用该音色
+                     * @return IsDeployed 部署状态。若已部署，则可通过语音合成接口调用该音色
+                     * 
+                     */
+                    bool GetIsDeployed() const;
+
+                    /**
+                     * 设置部署状态。若已部署，则可通过语音合成接口调用该音色
+                     * @param _isDeployed 部署状态。若已部署，则可通过语音合成接口调用该音色
+                     * 
+                     */
+                    void SetIsDeployed(const bool& _isDeployed);
+
+                    /**
+                     * 判断参数 IsDeployed 是否已赋值
+                     * @return IsDeployed 是否已赋值
+                     * 
+                     */
+                    bool IsDeployedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_dateCreated;
                     bool m_dateCreatedHasBeenSet;
+
+                    /**
+                     * 部署状态。若已部署，则可通过语音合成接口调用该音色
+                     */
+                    bool m_isDeployed;
+                    bool m_isDeployedHasBeenSet;
 
                 };
             }

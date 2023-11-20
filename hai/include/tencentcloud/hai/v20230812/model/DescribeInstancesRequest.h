@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取描述键值对过滤器，用于条件过滤查询。
-                     * @return Filters 描述键值对过滤器，用于条件过滤查询。
+                     * 获取描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态
+                     * @return Filters 描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置描述键值对过滤器，用于条件过滤查询。
-                     * @param _filters 描述键值对过滤器，用于条件过滤查询。
+                     * 设置描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态
+                     * @param _filters 描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 描述键值对过滤器，用于条件过滤查询。
+                     * 描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

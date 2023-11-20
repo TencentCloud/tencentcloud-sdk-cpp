@@ -183,15 +183,15 @@ namespace TencentCloud
                     bool BusinessOwnerHasBeenSet() const;
 
                     /**
-                     * 获取评估模版Id
-                     * @return TemplateId 评估模版Id
+                     * 获取评估模板Id
+                     * @return TemplateId 评估模板Id
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置评估模版Id
-                     * @param _templateId 评估模版Id
+                     * 设置评估模板Id
+                     * @param _templateId 评估模板Id
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -204,15 +204,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取评估模版名称
-                     * @return TemplateName 评估模版名称
+                     * 获取评估模板名称
+                     * @return TemplateName 评估模板名称
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置评估模版名称
-                     * @param _templateName 评估模版名称
+                     * 设置评估模板名称
+                     * @param _templateName 评估模板名称
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -225,15 +225,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取分类分级模版Id
-                     * @return ComplianceGroupId 分类分级模版Id
+                     * 获取分类分级模板Id
+                     * @return ComplianceGroupId 分类分级模板Id
                      * 
                      */
                     int64_t GetComplianceGroupId() const;
 
                     /**
-                     * 设置分类分级模版Id
-                     * @param _complianceGroupId 分类分级模版Id
+                     * 设置分类分级模板Id
+                     * @param _complianceGroupId 分类分级模板Id
                      * 
                      */
                     void SetComplianceGroupId(const int64_t& _complianceGroupId);
@@ -246,15 +246,15 @@ namespace TencentCloud
                     bool ComplianceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取分类分级模版名称
-                     * @return ComplianceGroupName 分类分级模版名称
+                     * 获取分类分级模板名称
+                     * @return ComplianceGroupName 分类分级模板名称
                      * 
                      */
                     std::string GetComplianceGroupName() const;
 
                     /**
-                     * 设置分类分级模版名称
-                     * @param _complianceGroupName 分类分级模版名称
+                     * 设置分类分级模板名称
+                     * @param _complianceGroupName 分类分级模板名称
                      * 
                      */
                     void SetComplianceGroupName(const std::string& _complianceGroupName);
@@ -443,18 +443,18 @@ namespace TencentCloud
                     bool ErrorInfoHasBeenSet() const;
 
                     /**
-                     * 获取模版主键id
+                     * 获取模板主键id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateUid 模版主键id
+                     * @return TemplateUid 模板主键id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateUid() const;
 
                     /**
-                     * 设置模版主键id
+                     * 设置模板主键id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateUid 模版主键id
+                     * @param _templateUid 模板主键id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -533,25 +533,25 @@ namespace TencentCloud
                     bool m_businessOwnerHasBeenSet;
 
                     /**
-                     * 评估模版Id
+                     * 评估模板Id
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 评估模版名称
+                     * 评估模板名称
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 分类分级模版Id
+                     * 分类分级模板Id
                      */
                     int64_t m_complianceGroupId;
                     bool m_complianceGroupIdHasBeenSet;
 
                     /**
-                     * 分类分级模版名称
+                     * 分类分级模板名称
                      */
                     std::string m_complianceGroupName;
                     bool m_complianceGroupNameHasBeenSet;
@@ -607,7 +607,7 @@ namespace TencentCloud
                     bool m_errorInfoHasBeenSet;
 
                     /**
-                     * 模版主键id
+                     * 模板主键id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateUid;

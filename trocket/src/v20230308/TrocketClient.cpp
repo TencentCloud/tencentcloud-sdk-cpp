@@ -728,6 +728,92 @@ TrocketClient::DescribeTopicStatsOpOutcomeCallable TrocketClient::DescribeTopicS
     return task->get_future();
 }
 
+TrocketClient::ImportSourceClusterConsumerGroupsOutcome TrocketClient::ImportSourceClusterConsumerGroups(const ImportSourceClusterConsumerGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportSourceClusterConsumerGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportSourceClusterConsumerGroupsResponse rsp = ImportSourceClusterConsumerGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportSourceClusterConsumerGroupsOutcome(rsp);
+        else
+            return ImportSourceClusterConsumerGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportSourceClusterConsumerGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::ImportSourceClusterConsumerGroupsAsync(const ImportSourceClusterConsumerGroupsRequest& request, const ImportSourceClusterConsumerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportSourceClusterConsumerGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::ImportSourceClusterConsumerGroupsOutcomeCallable TrocketClient::ImportSourceClusterConsumerGroupsCallable(const ImportSourceClusterConsumerGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportSourceClusterConsumerGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportSourceClusterConsumerGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::ImportSourceClusterTopicsOutcome TrocketClient::ImportSourceClusterTopics(const ImportSourceClusterTopicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportSourceClusterTopics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportSourceClusterTopicsResponse rsp = ImportSourceClusterTopicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportSourceClusterTopicsOutcome(rsp);
+        else
+            return ImportSourceClusterTopicsOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportSourceClusterTopicsOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::ImportSourceClusterTopicsAsync(const ImportSourceClusterTopicsRequest& request, const ImportSourceClusterTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportSourceClusterTopics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::ImportSourceClusterTopicsOutcomeCallable TrocketClient::ImportSourceClusterTopicsCallable(const ImportSourceClusterTopicsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportSourceClusterTopicsOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportSourceClusterTopics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::ModifyConsumerGroupOutcome TrocketClient::ModifyConsumerGroup(const ModifyConsumerGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyConsumerGroup");

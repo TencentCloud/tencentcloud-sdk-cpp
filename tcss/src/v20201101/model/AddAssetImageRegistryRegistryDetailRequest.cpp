@@ -33,7 +33,8 @@ AddAssetImageRegistryRegistryDetailRequest::AddAssetImageRegistryRegistryDetailR
     m_registryRegionHasBeenSet(false),
     m_speedLimitHasBeenSet(false),
     m_insecureHasBeenSet(false),
-    m_connDetectConfigHasBeenSet(false)
+    m_connDetectConfigHasBeenSet(false),
+    m_needScanHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,14 @@ string AddAssetImageRegistryRegistryDetailRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_needScanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedScan";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needScan, allocator);
     }
 
 
@@ -321,6 +330,22 @@ void AddAssetImageRegistryRegistryDetailRequest::SetConnDetectConfig(const vecto
 bool AddAssetImageRegistryRegistryDetailRequest::ConnDetectConfigHasBeenSet() const
 {
     return m_connDetectConfigHasBeenSet;
+}
+
+bool AddAssetImageRegistryRegistryDetailRequest::GetNeedScan() const
+{
+    return m_needScan;
+}
+
+void AddAssetImageRegistryRegistryDetailRequest::SetNeedScan(const bool& _needScan)
+{
+    m_needScan = _needScan;
+    m_needScanHasBeenSet = true;
+}
+
+bool AddAssetImageRegistryRegistryDetailRequest::NeedScanHasBeenSet() const
+{
+    return m_needScanHasBeenSet;
 }
 
 

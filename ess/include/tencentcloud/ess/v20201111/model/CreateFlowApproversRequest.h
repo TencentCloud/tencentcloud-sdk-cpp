@@ -137,6 +137,43 @@ namespace TencentCloud
                     bool ApproversHasBeenSet() const;
 
                     /**
+                     * 获取签署人信息补充方式
+
+<ul><li>**0**: 添加或签人候选人，或签支持一个节点传多个签署人，不传值默认或签。
+注: `或签只支持企业签署方`</li>
+<li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>
+                     * @return FillApproverType 签署人信息补充方式
+
+<ul><li>**0**: 添加或签人候选人，或签支持一个节点传多个签署人，不传值默认或签。
+注: `或签只支持企业签署方`</li>
+<li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>
+                     * 
+                     */
+                    int64_t GetFillApproverType() const;
+
+                    /**
+                     * 设置签署人信息补充方式
+
+<ul><li>**0**: 添加或签人候选人，或签支持一个节点传多个签署人，不传值默认或签。
+注: `或签只支持企业签署方`</li>
+<li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>
+                     * @param _fillApproverType 签署人信息补充方式
+
+<ul><li>**0**: 添加或签人候选人，或签支持一个节点传多个签署人，不传值默认或签。
+注: `或签只支持企业签署方`</li>
+<li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>
+                     * 
+                     */
+                    void SetFillApproverType(const int64_t& _fillApproverType);
+
+                    /**
+                     * 判断参数 FillApproverType 是否已赋值
+                     * @return FillApproverType 是否已赋值
+                     * 
+                     */
+                    bool FillApproverTypeHasBeenSet() const;
+
+                    /**
                      * 获取在可定制的企业微信通知中，发起人可以根据具体需求进行自定义设置。
                      * @return Initiator 在可定制的企业微信通知中，发起人可以根据具体需求进行自定义设置。
                      * 
@@ -182,39 +219,6 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
-                    /**
-                     * 获取签署人信息补充方式
-
-<ul><li>**0**: 补充或签人，支持补充多个企业经办签署人（默认）注: `不可补充个人签署人`</li>
-<li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>
-                     * @return FillApproverType 签署人信息补充方式
-
-<ul><li>**0**: 补充或签人，支持补充多个企业经办签署人（默认）注: `不可补充个人签署人`</li>
-<li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>
-                     * 
-                     */
-                    int64_t GetFillApproverType() const;
-
-                    /**
-                     * 设置签署人信息补充方式
-
-<ul><li>**0**: 补充或签人，支持补充多个企业经办签署人（默认）注: `不可补充个人签署人`</li>
-<li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>
-                     * @param _fillApproverType 签署人信息补充方式
-
-<ul><li>**0**: 补充或签人，支持补充多个企业经办签署人（默认）注: `不可补充个人签署人`</li>
-<li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>
-                     * 
-                     */
-                    void SetFillApproverType(const int64_t& _fillApproverType);
-
-                    /**
-                     * 判断参数 FillApproverType 是否已赋值
-                     * @return FillApproverType 是否已赋值
-                     * 
-                     */
-                    bool FillApproverTypeHasBeenSet() const;
-
                 private:
 
                     /**
@@ -243,6 +247,16 @@ namespace TencentCloud
                     bool m_approversHasBeenSet;
 
                     /**
+                     * 签署人信息补充方式
+
+<ul><li>**0**: 添加或签人候选人，或签支持一个节点传多个签署人，不传值默认或签。
+注: `或签只支持企业签署方`</li>
+<li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>
+                     */
+                    int64_t m_fillApproverType;
+                    bool m_fillApproverTypeHasBeenSet;
+
+                    /**
                      * 在可定制的企业微信通知中，发起人可以根据具体需求进行自定义设置。
                      */
                     std::string m_initiator;
@@ -254,15 +268,6 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
-
-                    /**
-                     * 签署人信息补充方式
-
-<ul><li>**0**: 补充或签人，支持补充多个企业经办签署人（默认）注: `不可补充个人签署人`</li>
-<li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>
-                     */
-                    int64_t m_fillApproverType;
-                    bool m_fillApproverTypeHasBeenSet;
 
                 };
             }

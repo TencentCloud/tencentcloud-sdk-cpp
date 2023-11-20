@@ -28,7 +28,9 @@ DescribeImageAutoAuthorizedRuleResponse::DescribeImageAutoAuthorizedRuleResponse
     m_rangeTypeHasBeenSet(false),
     m_hostCountHasBeenSet(false),
     m_maxDailyCountHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_autoScanEnabledHasBeenSet(false),
+    m_scanTypeHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,29 @@ CoreInternalOutcome DescribeImageAutoAuthorizedRuleResponse::Deserialize(const s
         m_ruleIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AutoScanEnabled") && !rsp["AutoScanEnabled"].IsNull())
+    {
+        if (!rsp["AutoScanEnabled"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScanEnabled` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoScanEnabled = rsp["AutoScanEnabled"].GetInt64();
+        m_autoScanEnabledHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ScanType") && !rsp["ScanType"].IsNull())
+    {
+        if (!rsp["ScanType"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ScanType` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ScanType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_scanType.push_back((*itr).GetString());
+        }
+        m_scanTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +189,27 @@ string DescribeImageAutoAuthorizedRuleResponse::ToJsonString() const
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ruleId, allocator);
+    }
+
+    if (m_autoScanEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScanEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoScanEnabled, allocator);
+    }
+
+    if (m_scanTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_scanType.begin(); itr != m_scanType.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +272,26 @@ int64_t DescribeImageAutoAuthorizedRuleResponse::GetRuleId() const
 bool DescribeImageAutoAuthorizedRuleResponse::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+int64_t DescribeImageAutoAuthorizedRuleResponse::GetAutoScanEnabled() const
+{
+    return m_autoScanEnabled;
+}
+
+bool DescribeImageAutoAuthorizedRuleResponse::AutoScanEnabledHasBeenSet() const
+{
+    return m_autoScanEnabledHasBeenSet;
+}
+
+vector<string> DescribeImageAutoAuthorizedRuleResponse::GetScanType() const
+{
+    return m_scanType;
+}
+
+bool DescribeImageAutoAuthorizedRuleResponse::ScanTypeHasBeenSet() const
+{
+    return m_scanTypeHasBeenSet;
 }
 
 

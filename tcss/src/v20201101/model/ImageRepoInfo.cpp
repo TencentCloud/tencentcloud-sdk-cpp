@@ -63,7 +63,8 @@ ImageRepoInfo::ImageRepoInfo() :
     m_componentCntHasBeenSet(false),
     m_isRunningHasBeenSet(false),
     m_hasNeedFixVulHasBeenSet(false),
-    m_sensitiveInfoCntHasBeenSet(false)
+    m_sensitiveInfoCntHasBeenSet(false),
+    m_recommendedFixHasBeenSet(false)
 {
 }
 
@@ -502,6 +503,16 @@ CoreInternalOutcome ImageRepoInfo::Deserialize(const rapidjson::Value &value)
         m_sensitiveInfoCntHasBeenSet = true;
     }
 
+    if (value.HasMember("RecommendedFix") && !value["RecommendedFix"].IsNull())
+    {
+        if (!value["RecommendedFix"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.RecommendedFix` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_recommendedFix = value["RecommendedFix"].GetBool();
+        m_recommendedFixHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -851,6 +862,14 @@ void ImageRepoInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "SensitiveInfoCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sensitiveInfoCnt, allocator);
+    }
+
+    if (m_recommendedFixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecommendedFix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recommendedFix, allocator);
     }
 
 }
@@ -1542,5 +1561,21 @@ void ImageRepoInfo::SetSensitiveInfoCnt(const uint64_t& _sensitiveInfoCnt)
 bool ImageRepoInfo::SensitiveInfoCntHasBeenSet() const
 {
     return m_sensitiveInfoCntHasBeenSet;
+}
+
+bool ImageRepoInfo::GetRecommendedFix() const
+{
+    return m_recommendedFix;
+}
+
+void ImageRepoInfo::SetRecommendedFix(const bool& _recommendedFix)
+{
+    m_recommendedFix = _recommendedFix;
+    m_recommendedFixHasBeenSet = true;
+}
+
+bool ImageRepoInfo::RecommendedFixHasBeenSet() const
+{
+    return m_recommendedFixHasBeenSet;
 }
 

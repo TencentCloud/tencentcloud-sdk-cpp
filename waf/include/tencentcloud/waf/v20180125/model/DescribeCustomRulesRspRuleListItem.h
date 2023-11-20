@@ -282,6 +282,81 @@ namespace TencentCloud
                      */
                     bool EventIdHasBeenSet() const;
 
+                    /**
+                     * 获取修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifyTime 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetModifyTime() const;
+
+                    /**
+                     * 设置修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modifyTime 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModifyTime(const std::string& _modifyTime);
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     * 
+                     */
+                    bool ModifyTimeHasBeenSet() const;
+
+                    /**
+                     * 获取生效状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValidStatus 生效状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetValidStatus() const;
+
+                    /**
+                     * 设置生效状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _validStatus 生效状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetValidStatus(const int64_t& _validStatus);
+
+                    /**
+                     * 判断参数 ValidStatus 是否已赋值
+                     * @return ValidStatus 是否已赋值
+                     * 
+                     */
+                    bool ValidStatusHasBeenSet() const;
+
+                    /**
+                     * 获取来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Source 来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _source 来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,6 +425,27 @@ namespace TencentCloud
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
+
+                    /**
+                     * 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 生效状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_validStatus;
+                    bool m_validStatusHasBeenSet;
+
+                    /**
+                     * 来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
 
                 };
             }

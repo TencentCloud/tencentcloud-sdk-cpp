@@ -26,7 +26,8 @@ VoiceTypeInfo::VoiceTypeInfo() :
     m_voiceGenderHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_taskIDHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false)
+    m_dateCreatedHasBeenSet(false),
+    m_isDeployedHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome VoiceTypeInfo::Deserialize(const rapidjson::Value &value)
         m_dateCreatedHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDeployed") && !value["IsDeployed"].IsNull())
+    {
+        if (!value["IsDeployed"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoiceTypeInfo.IsDeployed` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDeployed = value["IsDeployed"].GetBool();
+        m_isDeployedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void VoiceTypeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DateCreated";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dateCreated.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDeployedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeployed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDeployed, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void VoiceTypeInfo::SetDateCreated(const string& _dateCreated)
 bool VoiceTypeInfo::DateCreatedHasBeenSet() const
 {
     return m_dateCreatedHasBeenSet;
+}
+
+bool VoiceTypeInfo::GetIsDeployed() const
+{
+    return m_isDeployed;
+}
+
+void VoiceTypeInfo::SetIsDeployed(const bool& _isDeployed)
+{
+    m_isDeployed = _isDeployed;
+    m_isDeployedHasBeenSet = true;
+}
+
+bool VoiceTypeInfo::IsDeployedHasBeenSet() const
+{
+    return m_isDeployedHasBeenSet;
 }
 

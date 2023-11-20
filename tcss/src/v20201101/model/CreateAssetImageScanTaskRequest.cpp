@@ -29,7 +29,10 @@ CreateAssetImageScanTaskRequest::CreateAssetImageScanTaskRequest() :
     m_scanVirusHasBeenSet(false),
     m_scanRiskHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_excludeImageIdsHasBeenSet(false)
+    m_excludeImageIdsHasBeenSet(false),
+    m_containerRunningHasBeenSet(false),
+    m_scanScopeHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
 }
 
@@ -111,6 +114,30 @@ string CreateAssetImageScanTaskRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_containerRunningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerRunning";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_containerRunning, allocator);
+    }
+
+    if (m_scanScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scanScope, allocator);
+    }
+
+    if (m_timeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeout, allocator);
     }
 
 
@@ -231,6 +258,54 @@ void CreateAssetImageScanTaskRequest::SetExcludeImageIds(const vector<string>& _
 bool CreateAssetImageScanTaskRequest::ExcludeImageIdsHasBeenSet() const
 {
     return m_excludeImageIdsHasBeenSet;
+}
+
+bool CreateAssetImageScanTaskRequest::GetContainerRunning() const
+{
+    return m_containerRunning;
+}
+
+void CreateAssetImageScanTaskRequest::SetContainerRunning(const bool& _containerRunning)
+{
+    m_containerRunning = _containerRunning;
+    m_containerRunningHasBeenSet = true;
+}
+
+bool CreateAssetImageScanTaskRequest::ContainerRunningHasBeenSet() const
+{
+    return m_containerRunningHasBeenSet;
+}
+
+uint64_t CreateAssetImageScanTaskRequest::GetScanScope() const
+{
+    return m_scanScope;
+}
+
+void CreateAssetImageScanTaskRequest::SetScanScope(const uint64_t& _scanScope)
+{
+    m_scanScope = _scanScope;
+    m_scanScopeHasBeenSet = true;
+}
+
+bool CreateAssetImageScanTaskRequest::ScanScopeHasBeenSet() const
+{
+    return m_scanScopeHasBeenSet;
+}
+
+uint64_t CreateAssetImageScanTaskRequest::GetTimeout() const
+{
+    return m_timeout;
+}
+
+void CreateAssetImageScanTaskRequest::SetTimeout(const uint64_t& _timeout)
+{
+    m_timeout = _timeout;
+    m_timeoutHasBeenSet = true;
+}
+
+bool CreateAssetImageScanTaskRequest::TimeoutHasBeenSet() const
+{
+    return m_timeoutHasBeenSet;
 }
 
 

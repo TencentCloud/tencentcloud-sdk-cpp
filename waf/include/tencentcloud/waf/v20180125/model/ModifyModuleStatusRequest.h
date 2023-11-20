@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool AntiLeakageHasBeenSet() const;
 
+                    /**
+                     * 获取限流模块开关，0或1
+                     * @return RateLimit 限流模块开关，0或1
+                     * 
+                     */
+                    uint64_t GetRateLimit() const;
+
+                    /**
+                     * 设置限流模块开关，0或1
+                     * @param _rateLimit 限流模块开关，0或1
+                     * 
+                     */
+                    void SetRateLimit(const uint64_t& _rateLimit);
+
+                    /**
+                     * 判断参数 RateLimit 是否已赋值
+                     * @return RateLimit 是否已赋值
+                     * 
+                     */
+                    bool RateLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     uint64_t m_antiLeakage;
                     bool m_antiLeakageHasBeenSet;
+
+                    /**
+                     * 限流模块开关，0或1
+                     */
+                    uint64_t m_rateLimit;
+                    bool m_rateLimitHasBeenSet;
 
                 };
             }

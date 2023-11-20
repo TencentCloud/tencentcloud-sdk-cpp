@@ -35,7 +35,9 @@ DescribeIpAccessControlRequest::DescribeIpAccessControlRequest() :
     m_sourceHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_ipHasBeenSet(false),
-    m_validStatusHasBeenSet(false)
+    m_validStatusHasBeenSet(false),
+    m_validTimeStampMinHasBeenSet(false),
+    m_validTimeStampMaxHasBeenSet(false)
 {
 }
 
@@ -148,6 +150,22 @@ string DescribeIpAccessControlRequest::ToJsonString() const
         string key = "ValidStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_validStatus, allocator);
+    }
+
+    if (m_validTimeStampMinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidTimeStampMin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_validTimeStampMin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validTimeStampMaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidTimeStampMax";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_validTimeStampMax.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +382,38 @@ void DescribeIpAccessControlRequest::SetValidStatus(const int64_t& _validStatus)
 bool DescribeIpAccessControlRequest::ValidStatusHasBeenSet() const
 {
     return m_validStatusHasBeenSet;
+}
+
+string DescribeIpAccessControlRequest::GetValidTimeStampMin() const
+{
+    return m_validTimeStampMin;
+}
+
+void DescribeIpAccessControlRequest::SetValidTimeStampMin(const string& _validTimeStampMin)
+{
+    m_validTimeStampMin = _validTimeStampMin;
+    m_validTimeStampMinHasBeenSet = true;
+}
+
+bool DescribeIpAccessControlRequest::ValidTimeStampMinHasBeenSet() const
+{
+    return m_validTimeStampMinHasBeenSet;
+}
+
+string DescribeIpAccessControlRequest::GetValidTimeStampMax() const
+{
+    return m_validTimeStampMax;
+}
+
+void DescribeIpAccessControlRequest::SetValidTimeStampMax(const string& _validTimeStampMax)
+{
+    m_validTimeStampMax = _validTimeStampMax;
+    m_validTimeStampMaxHasBeenSet = true;
+}
+
+bool DescribeIpAccessControlRequest::ValidTimeStampMaxHasBeenSet() const
+{
+    return m_validTimeStampMaxHasBeenSet;
 }
 
 

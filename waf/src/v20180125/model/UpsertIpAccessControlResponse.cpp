@@ -25,7 +25,8 @@ using namespace std;
 
 UpsertIpAccessControlResponse::UpsertIpAccessControlResponse() :
     m_failedItemsHasBeenSet(false),
-    m_failedCountHasBeenSet(false)
+    m_failedCountHasBeenSet(false),
+    m_idsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,19 @@ CoreInternalOutcome UpsertIpAccessControlResponse::Deserialize(const string &pay
         m_failedCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Ids") && !rsp["Ids"].IsNull())
+    {
+        if (!rsp["Ids"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Ids` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Ids"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ids.push_back((*itr).GetString());
+        }
+        m_idsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +121,19 @@ string UpsertIpAccessControlResponse::ToJsonString() const
         string key = "FailedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failedCount, allocator);
+    }
+
+    if (m_idsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ids";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ids.begin(); itr != m_ids.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +166,16 @@ int64_t UpsertIpAccessControlResponse::GetFailedCount() const
 bool UpsertIpAccessControlResponse::FailedCountHasBeenSet() const
 {
     return m_failedCountHasBeenSet;
+}
+
+vector<string> UpsertIpAccessControlResponse::GetIds() const
+{
+    return m_ids;
+}
+
+bool UpsertIpAccessControlResponse::IdsHasBeenSet() const
+{
+    return m_idsHasBeenSet;
 }
 
 

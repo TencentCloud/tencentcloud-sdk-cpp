@@ -32,7 +32,12 @@ Apply::Apply() :
     m_approveTimeHasBeenSet(false),
     m_approveClassificationNameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_approveTypeNameHasBeenSet(false)
+    m_approveTypeNameHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
+    m_applyNameHasBeenSet(false),
+    m_approverIdHasBeenSet(false),
+    m_approverNameHasBeenSet(false),
+    m_approveProjectNameHasBeenSet(false)
 {
 }
 
@@ -161,6 +166,56 @@ CoreInternalOutcome Apply::Deserialize(const rapidjson::Value &value)
         m_approveTypeNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorMessage") && !value["ErrorMessage"].IsNull())
+    {
+        if (!value["ErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Apply.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMessage = string(value["ErrorMessage"].GetString());
+        m_errorMessageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplyName") && !value["ApplyName"].IsNull())
+    {
+        if (!value["ApplyName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Apply.ApplyName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applyName = string(value["ApplyName"].GetString());
+        m_applyNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverId") && !value["ApproverId"].IsNull())
+    {
+        if (!value["ApproverId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Apply.ApproverId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverId = string(value["ApproverId"].GetString());
+        m_approverIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverName") && !value["ApproverName"].IsNull())
+    {
+        if (!value["ApproverName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Apply.ApproverName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverName = string(value["ApproverName"].GetString());
+        m_approverNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproveProjectName") && !value["ApproveProjectName"].IsNull())
+    {
+        if (!value["ApproveProjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Apply.ApproveProjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approveProjectName = string(value["ApproveProjectName"].GetString());
+        m_approveProjectNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +317,46 @@ void Apply::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ApproveTypeName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approveTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplyName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approveProjectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproveProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approveProjectName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +552,85 @@ void Apply::SetApproveTypeName(const string& _approveTypeName)
 bool Apply::ApproveTypeNameHasBeenSet() const
 {
     return m_approveTypeNameHasBeenSet;
+}
+
+string Apply::GetErrorMessage() const
+{
+    return m_errorMessage;
+}
+
+void Apply::SetErrorMessage(const string& _errorMessage)
+{
+    m_errorMessage = _errorMessage;
+    m_errorMessageHasBeenSet = true;
+}
+
+bool Apply::ErrorMessageHasBeenSet() const
+{
+    return m_errorMessageHasBeenSet;
+}
+
+string Apply::GetApplyName() const
+{
+    return m_applyName;
+}
+
+void Apply::SetApplyName(const string& _applyName)
+{
+    m_applyName = _applyName;
+    m_applyNameHasBeenSet = true;
+}
+
+bool Apply::ApplyNameHasBeenSet() const
+{
+    return m_applyNameHasBeenSet;
+}
+
+string Apply::GetApproverId() const
+{
+    return m_approverId;
+}
+
+void Apply::SetApproverId(const string& _approverId)
+{
+    m_approverId = _approverId;
+    m_approverIdHasBeenSet = true;
+}
+
+bool Apply::ApproverIdHasBeenSet() const
+{
+    return m_approverIdHasBeenSet;
+}
+
+string Apply::GetApproverName() const
+{
+    return m_approverName;
+}
+
+void Apply::SetApproverName(const string& _approverName)
+{
+    m_approverName = _approverName;
+    m_approverNameHasBeenSet = true;
+}
+
+bool Apply::ApproverNameHasBeenSet() const
+{
+    return m_approverNameHasBeenSet;
+}
+
+string Apply::GetApproveProjectName() const
+{
+    return m_approveProjectName;
+}
+
+void Apply::SetApproveProjectName(const string& _approveProjectName)
+{
+    m_approveProjectName = _approveProjectName;
+    m_approveProjectNameHasBeenSet = true;
+}
+
+bool Apply::ApproveProjectNameHasBeenSet() const
+{
+    return m_approveProjectNameHasBeenSet;
 }
 

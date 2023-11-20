@@ -29,7 +29,8 @@ DescribeModuleStatusResponse::DescribeModuleStatusResponse() :
     m_ccProtectionHasBeenSet(false),
     m_antiTamperHasBeenSet(false),
     m_antiLeakageHasBeenSet(false),
-    m_apiProtectionHasBeenSet(false)
+    m_apiProtectionHasBeenSet(false),
+    m_rateLimitHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome DescribeModuleStatusResponse::Deserialize(const string &payl
         m_apiProtectionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RateLimit") && !rsp["RateLimit"].IsNull())
+    {
+        if (!rsp["RateLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rateLimit = rsp["RateLimit"].GetUint64();
+        m_rateLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ string DescribeModuleStatusResponse::ToJsonString() const
         string key = "ApiProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apiProtection, allocator);
+    }
+
+    if (m_rateLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rateLimit, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +274,16 @@ uint64_t DescribeModuleStatusResponse::GetApiProtection() const
 bool DescribeModuleStatusResponse::ApiProtectionHasBeenSet() const
 {
     return m_apiProtectionHasBeenSet;
+}
+
+uint64_t DescribeModuleStatusResponse::GetRateLimit() const
+{
+    return m_rateLimit;
+}
+
+bool DescribeModuleStatusResponse::RateLimitHasBeenSet() const
+{
+    return m_rateLimitHasBeenSet;
 }
 
 

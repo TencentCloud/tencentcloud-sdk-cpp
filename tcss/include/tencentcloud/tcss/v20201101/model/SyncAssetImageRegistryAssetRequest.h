@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取是否同步所有镜像仓库
+                     * @return All 是否同步所有镜像仓库
+                     * 
+                     */
+                    bool GetAll() const;
+
+                    /**
+                     * 设置是否同步所有镜像仓库
+                     * @param _all 是否同步所有镜像仓库
+                     * 
+                     */
+                    void SetAll(const bool& _all);
+
+                    /**
+                     * 判断参数 All 是否已赋值
+                     * @return All 是否已赋值
+                     * 
+                     */
+                    bool AllHasBeenSet() const;
+
+                    /**
+                     * 获取需要同步的部分镜像仓库
+                     * @return RegistryIds 需要同步的部分镜像仓库
+                     * 
+                     */
+                    std::vector<uint64_t> GetRegistryIds() const;
+
+                    /**
+                     * 设置需要同步的部分镜像仓库
+                     * @param _registryIds 需要同步的部分镜像仓库
+                     * 
+                     */
+                    void SetRegistryIds(const std::vector<uint64_t>& _registryIds);
+
+                    /**
+                     * 判断参数 RegistryIds 是否已赋值
+                     * @return RegistryIds 是否已赋值
+                     * 
+                     */
+                    bool RegistryIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 是否同步所有镜像仓库
+                     */
+                    bool m_all;
+                    bool m_allHasBeenSet;
+
+                    /**
+                     * 需要同步的部分镜像仓库
+                     */
+                    std::vector<uint64_t> m_registryIds;
+                    bool m_registryIdsHasBeenSet;
 
                 };
             }

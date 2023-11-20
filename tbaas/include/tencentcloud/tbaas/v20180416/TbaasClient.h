@@ -27,6 +27,10 @@
 #include <tencentcloud/tbaas/v20180416/model/ApplyChainMakerBatchUserCertResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/ApplyUserCertRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/ApplyUserCertResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/DescribeFabricBlockRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/DescribeFabricBlockResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/DescribeFabricTransactionRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/DescribeFabricTransactionResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/DownloadUserCertRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/DownloadUserCertResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetBlockListRequest.h>
@@ -49,6 +53,8 @@
 #include <tencentcloud/tbaas/v20180416/model/InvokeChainMakerContractResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeChainMakerDemoContractRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeChainMakerDemoContractResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/InvokeFabricChaincodeRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/InvokeFabricChaincodeResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryChainMakerBlockTransactionRequest.h>
@@ -63,6 +69,8 @@
 #include <tencentcloud/tbaas/v20180416/model/QueryChainMakerDemoTransactionResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/QueryFabricChaincodeRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/QueryFabricChaincodeResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/SrvInvokeRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/SrvInvokeResponse.h>
 
@@ -85,6 +93,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyUserCertResponse> ApplyUserCertOutcome;
                 typedef std::future<ApplyUserCertOutcome> ApplyUserCertOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::ApplyUserCertRequest&, ApplyUserCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyUserCertAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFabricBlockResponse> DescribeFabricBlockOutcome;
+                typedef std::future<DescribeFabricBlockOutcome> DescribeFabricBlockOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::DescribeFabricBlockRequest&, DescribeFabricBlockOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFabricBlockAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFabricTransactionResponse> DescribeFabricTransactionOutcome;
+                typedef std::future<DescribeFabricTransactionOutcome> DescribeFabricTransactionOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::DescribeFabricTransactionRequest&, DescribeFabricTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFabricTransactionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DownloadUserCertResponse> DownloadUserCertOutcome;
                 typedef std::future<DownloadUserCertOutcome> DownloadUserCertOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::DownloadUserCertRequest&, DownloadUserCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadUserCertAsyncHandler;
@@ -118,6 +132,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InvokeChainMakerDemoContractResponse> InvokeChainMakerDemoContractOutcome;
                 typedef std::future<InvokeChainMakerDemoContractOutcome> InvokeChainMakerDemoContractOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::InvokeChainMakerDemoContractRequest&, InvokeChainMakerDemoContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeChainMakerDemoContractAsyncHandler;
+                typedef Outcome<Core::Error, Model::InvokeFabricChaincodeResponse> InvokeFabricChaincodeOutcome;
+                typedef std::future<InvokeFabricChaincodeOutcome> InvokeFabricChaincodeOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::InvokeFabricChaincodeRequest&, InvokeFabricChaincodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeFabricChaincodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryResponse> QueryOutcome;
                 typedef std::future<QueryOutcome> QueryOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::QueryRequest&, QueryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAsyncHandler;
@@ -139,6 +156,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryChainMakerTransactionResponse> QueryChainMakerTransactionOutcome;
                 typedef std::future<QueryChainMakerTransactionOutcome> QueryChainMakerTransactionOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::QueryChainMakerTransactionRequest&, QueryChainMakerTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryChainMakerTransactionAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFabricChaincodeResponse> QueryFabricChaincodeOutcome;
+                typedef std::future<QueryFabricChaincodeOutcome> QueryFabricChaincodeOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::QueryFabricChaincodeRequest&, QueryFabricChaincodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFabricChaincodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::SrvInvokeResponse> SrvInvokeOutcome;
                 typedef std::future<SrvInvokeOutcome> SrvInvokeOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::SrvInvokeRequest&, SrvInvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SrvInvokeAsyncHandler;
@@ -162,6 +182,24 @@ namespace TencentCloud
                 ApplyUserCertOutcome ApplyUserCert(const Model::ApplyUserCertRequest &request);
                 void ApplyUserCertAsync(const Model::ApplyUserCertRequest& request, const ApplyUserCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyUserCertOutcomeCallable ApplyUserCertCallable(const Model::ApplyUserCertRequest& request);
+
+                /**
+                 *获取Fabric某区块的详细信息
+                 * @param req DescribeFabricBlockRequest
+                 * @return DescribeFabricBlockOutcome
+                 */
+                DescribeFabricBlockOutcome DescribeFabricBlock(const Model::DescribeFabricBlockRequest &request);
+                void DescribeFabricBlockAsync(const Model::DescribeFabricBlockRequest& request, const DescribeFabricBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFabricBlockOutcomeCallable DescribeFabricBlockCallable(const Model::DescribeFabricBlockRequest& request);
+
+                /**
+                 *获取Fabric交易的详细信息
+                 * @param req DescribeFabricTransactionRequest
+                 * @return DescribeFabricTransactionOutcome
+                 */
+                DescribeFabricTransactionOutcome DescribeFabricTransaction(const Model::DescribeFabricTransactionRequest &request);
+                void DescribeFabricTransactionAsync(const Model::DescribeFabricTransactionRequest& request, const DescribeFabricTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFabricTransactionOutcomeCallable DescribeFabricTransactionCallable(const Model::DescribeFabricTransactionRequest& request);
 
                 /**
                  *下载用户证书
@@ -263,6 +301,15 @@ namespace TencentCloud
                 InvokeChainMakerDemoContractOutcomeCallable InvokeChainMakerDemoContractCallable(const Model::InvokeChainMakerDemoContractRequest& request);
 
                 /**
+                 *调用Fabric用户合约执行交易
+                 * @param req InvokeFabricChaincodeRequest
+                 * @return InvokeFabricChaincodeOutcome
+                 */
+                InvokeFabricChaincodeOutcome InvokeFabricChaincode(const Model::InvokeFabricChaincodeRequest &request);
+                void InvokeFabricChaincodeAsync(const Model::InvokeFabricChaincodeRequest& request, const InvokeFabricChaincodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeFabricChaincodeOutcomeCallable InvokeFabricChaincodeCallable(const Model::InvokeFabricChaincodeRequest& request);
+
+                /**
                  *查询交易
                  * @param req QueryRequest
                  * @return QueryOutcome
@@ -324,6 +371,15 @@ namespace TencentCloud
                 QueryChainMakerTransactionOutcome QueryChainMakerTransaction(const Model::QueryChainMakerTransactionRequest &request);
                 void QueryChainMakerTransactionAsync(const Model::QueryChainMakerTransactionRequest& request, const QueryChainMakerTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryChainMakerTransactionOutcomeCallable QueryChainMakerTransactionCallable(const Model::QueryChainMakerTransactionRequest& request);
+
+                /**
+                 *调用Fabric用户合约查询
+                 * @param req QueryFabricChaincodeRequest
+                 * @return QueryFabricChaincodeOutcome
+                 */
+                QueryFabricChaincodeOutcome QueryFabricChaincode(const Model::QueryFabricChaincodeRequest &request);
+                void QueryFabricChaincodeAsync(const Model::QueryFabricChaincodeRequest& request, const QueryFabricChaincodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFabricChaincodeOutcomeCallable QueryFabricChaincodeCallable(const Model::QueryFabricChaincodeRequest& request);
 
                 /**
                  *trustsql服务统一接口

@@ -34,7 +34,9 @@ DescribeIpHitItemsRequest::DescribeIpHitItemsRequest() :
     m_limitHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sortHasBeenSet(false),
-    m_ipHasBeenSet(false)
+    m_ipHasBeenSet(false),
+    m_validTimeStampMinHasBeenSet(false),
+    m_validTimeStampMaxHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,22 @@ string DescribeIpHitItemsRequest::ToJsonString() const
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validTimeStampMinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidTimeStampMin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_validTimeStampMin, allocator);
+    }
+
+    if (m_validTimeStampMaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidTimeStampMax";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_validTimeStampMax, allocator);
     }
 
 
@@ -339,6 +357,38 @@ void DescribeIpHitItemsRequest::SetIp(const string& _ip)
 bool DescribeIpHitItemsRequest::IpHasBeenSet() const
 {
     return m_ipHasBeenSet;
+}
+
+uint64_t DescribeIpHitItemsRequest::GetValidTimeStampMin() const
+{
+    return m_validTimeStampMin;
+}
+
+void DescribeIpHitItemsRequest::SetValidTimeStampMin(const uint64_t& _validTimeStampMin)
+{
+    m_validTimeStampMin = _validTimeStampMin;
+    m_validTimeStampMinHasBeenSet = true;
+}
+
+bool DescribeIpHitItemsRequest::ValidTimeStampMinHasBeenSet() const
+{
+    return m_validTimeStampMinHasBeenSet;
+}
+
+uint64_t DescribeIpHitItemsRequest::GetValidTimeStampMax() const
+{
+    return m_validTimeStampMax;
+}
+
+void DescribeIpHitItemsRequest::SetValidTimeStampMax(const uint64_t& _validTimeStampMax)
+{
+    m_validTimeStampMax = _validTimeStampMax;
+    m_validTimeStampMaxHasBeenSet = true;
+}
+
+bool DescribeIpHitItemsRequest::ValidTimeStampMaxHasBeenSet() const
+{
+    return m_validTimeStampMaxHasBeenSet;
 }
 
 

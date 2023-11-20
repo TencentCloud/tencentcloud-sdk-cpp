@@ -29,7 +29,8 @@ ModifyModuleStatusRequest::ModifyModuleStatusRequest() :
     m_ccProtectionHasBeenSet(false),
     m_apiProtectionHasBeenSet(false),
     m_antiTamperHasBeenSet(false),
-    m_antiLeakageHasBeenSet(false)
+    m_antiLeakageHasBeenSet(false),
+    m_rateLimitHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string ModifyModuleStatusRequest::ToJsonString() const
         string key = "AntiLeakage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_antiLeakage, allocator);
+    }
+
+    if (m_rateLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rateLimit, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void ModifyModuleStatusRequest::SetAntiLeakage(const uint64_t& _antiLeakage)
 bool ModifyModuleStatusRequest::AntiLeakageHasBeenSet() const
 {
     return m_antiLeakageHasBeenSet;
+}
+
+uint64_t ModifyModuleStatusRequest::GetRateLimit() const
+{
+    return m_rateLimit;
+}
+
+void ModifyModuleStatusRequest::SetRateLimit(const uint64_t& _rateLimit)
+{
+    m_rateLimit = _rateLimit;
+    m_rateLimitHasBeenSet = true;
+}
+
+bool ModifyModuleStatusRequest::RateLimitHasBeenSet() const
+{
+    return m_rateLimitHasBeenSet;
 }
 
 

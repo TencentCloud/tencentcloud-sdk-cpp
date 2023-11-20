@@ -183,6 +183,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeAllUsedVersionSonResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeApproveListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeApproveListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeApproveTypeListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeApproveTypeListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBaselineAllTaskDagRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBaselineAllTaskDagResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBaselineByIdRequest.h>
@@ -899,6 +901,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApproveListResponse> DescribeApproveListOutcome;
                 typedef std::future<DescribeApproveListOutcome> DescribeApproveListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeApproveListRequest&, DescribeApproveListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApproveListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApproveTypeListResponse> DescribeApproveTypeListOutcome;
+                typedef std::future<DescribeApproveTypeListOutcome> DescribeApproveTypeListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeApproveTypeListRequest&, DescribeApproveTypeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApproveTypeListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBaselineAllTaskDagResponse> DescribeBaselineAllTaskDagOutcome;
                 typedef std::future<DescribeBaselineAllTaskDagOutcome> DescribeBaselineAllTaskDagOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeBaselineAllTaskDagRequest&, DescribeBaselineAllTaskDagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineAllTaskDagAsyncHandler;
@@ -2325,6 +2330,15 @@ namespace TencentCloud
                 DescribeApproveListOutcome DescribeApproveList(const Model::DescribeApproveListRequest &request);
                 void DescribeApproveListAsync(const Model::DescribeApproveListRequest& request, const DescribeApproveListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApproveListOutcomeCallable DescribeApproveListCallable(const Model::DescribeApproveListRequest& request);
+
+                /**
+                 *获取审批分类列表
+                 * @param req DescribeApproveTypeListRequest
+                 * @return DescribeApproveTypeListOutcome
+                 */
+                DescribeApproveTypeListOutcome DescribeApproveTypeList(const Model::DescribeApproveTypeListRequest &request);
+                void DescribeApproveTypeListAsync(const Model::DescribeApproveTypeListRequest& request, const DescribeApproveTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApproveTypeListOutcomeCallable DescribeApproveTypeListCallable(const Model::DescribeApproveTypeListRequest& request);
 
                 /**
                  *查询基线DAG

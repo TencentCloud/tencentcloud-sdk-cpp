@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。
-                     * @return InstanceIds 待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。
+                     * 获取待操作的实例ID数组。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+                     * @return InstanceIds 待操作的实例ID数组。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。
-                     * @param _instanceIds 待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。
+                     * 设置待操作的实例ID数组。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+                     * @param _instanceIds 待操作的实例ID数组。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。
+                     * 待操作的实例ID数组。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

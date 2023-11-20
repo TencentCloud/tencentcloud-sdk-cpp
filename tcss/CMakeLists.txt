@@ -291,6 +291,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/AccessControlEventInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeClusterSummaryResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeSecLogDeliveryClsOptionsResponse.h
+  include/tencentcloud/tcss/v20201101/model/ImageVulLayerInfo.h
   include/tencentcloud/tcss/v20201101/model/DeleteMachineRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateVulImageExportJobRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeValueAddedSrvInfoRequest.h
@@ -1118,6 +1119,7 @@ set(tcss_src
   src/v20201101/model/AccessControlEventInfo.cpp
   src/v20201101/model/DescribeClusterSummaryResponse.cpp
   src/v20201101/model/DescribeSecLogDeliveryClsOptionsResponse.cpp
+  src/v20201101/model/ImageVulLayerInfo.cpp
   src/v20201101/model/DeleteMachineRequest.cpp
   src/v20201101/model/CreateVulImageExportJobRequest.cpp
   src/v20201101/model/DescribeValueAddedSrvInfoRequest.cpp

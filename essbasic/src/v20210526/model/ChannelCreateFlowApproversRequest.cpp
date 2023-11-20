@@ -26,8 +26,8 @@ ChannelCreateFlowApproversRequest::ChannelCreateFlowApproversRequest() :
     m_agentHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_approversHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_fillApproverTypeHasBeenSet(false)
+    m_fillApproverTypeHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -70,6 +70,14 @@ string ChannelCreateFlowApproversRequest::ToJsonString() const
         }
     }
 
+    if (m_fillApproverTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FillApproverType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fillApproverType, allocator);
+    }
+
     if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -77,14 +85,6 @@ string ChannelCreateFlowApproversRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_fillApproverTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FillApproverType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_fillApproverType, allocator);
     }
 
 
@@ -143,22 +143,6 @@ bool ChannelCreateFlowApproversRequest::ApproversHasBeenSet() const
     return m_approversHasBeenSet;
 }
 
-UserInfo ChannelCreateFlowApproversRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void ChannelCreateFlowApproversRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool ChannelCreateFlowApproversRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 int64_t ChannelCreateFlowApproversRequest::GetFillApproverType() const
 {
     return m_fillApproverType;
@@ -173,6 +157,22 @@ void ChannelCreateFlowApproversRequest::SetFillApproverType(const int64_t& _fill
 bool ChannelCreateFlowApproversRequest::FillApproverTypeHasBeenSet() const
 {
     return m_fillApproverTypeHasBeenSet;
+}
+
+UserInfo ChannelCreateFlowApproversRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelCreateFlowApproversRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelCreateFlowApproversRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

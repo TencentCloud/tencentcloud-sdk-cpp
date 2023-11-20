@@ -3394,6 +3394,49 @@ TkeClient::DescribeClusterEndpointsOutcomeCallable TkeClient::DescribeClusterEnd
     return task->get_future();
 }
 
+TkeClient::DescribeClusterExtraArgsOutcome TkeClient::DescribeClusterExtraArgs(const DescribeClusterExtraArgsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterExtraArgs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterExtraArgsResponse rsp = DescribeClusterExtraArgsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterExtraArgsOutcome(rsp);
+        else
+            return DescribeClusterExtraArgsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterExtraArgsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterExtraArgsAsync(const DescribeClusterExtraArgsRequest& request, const DescribeClusterExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterExtraArgs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterExtraArgsOutcomeCallable TkeClient::DescribeClusterExtraArgsCallable(const DescribeClusterExtraArgsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterExtraArgsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterExtraArgs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClusterInspectionResultsOverviewOutcome TkeClient::DescribeClusterInspectionResultsOverview(const DescribeClusterInspectionResultsOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterInspectionResultsOverview");
@@ -4892,6 +4935,92 @@ TkeClient::DescribeExternalClusterSpecOutcomeCallable TkeClient::DescribeExterna
         [this, request]()
         {
             return this->DescribeExternalClusterSpec(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeExternalNodeSupportConfigOutcome TkeClient::DescribeExternalNodeSupportConfig(const DescribeExternalNodeSupportConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalNodeSupportConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalNodeSupportConfigResponse rsp = DescribeExternalNodeSupportConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalNodeSupportConfigOutcome(rsp);
+        else
+            return DescribeExternalNodeSupportConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalNodeSupportConfigOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeExternalNodeSupportConfigAsync(const DescribeExternalNodeSupportConfigRequest& request, const DescribeExternalNodeSupportConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExternalNodeSupportConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeExternalNodeSupportConfigOutcomeCallable TkeClient::DescribeExternalNodeSupportConfigCallable(const DescribeExternalNodeSupportConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExternalNodeSupportConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExternalNodeSupportConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeIPAMDOutcome TkeClient::DescribeIPAMD(const DescribeIPAMDRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIPAMD");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIPAMDResponse rsp = DescribeIPAMDResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIPAMDOutcome(rsp);
+        else
+            return DescribeIPAMDOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIPAMDOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeIPAMDAsync(const DescribeIPAMDRequest& request, const DescribeIPAMDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIPAMD(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeIPAMDOutcomeCallable TkeClient::DescribeIPAMDCallable(const DescribeIPAMDRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIPAMDOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIPAMD(request);
         }
     );
 

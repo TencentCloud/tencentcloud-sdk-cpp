@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/sqlserver/v20180328/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/AssociateSecurityGroupsResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/BalanceReadOnlyGroupRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/BalanceReadOnlyGroupResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/CloneDBRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/CloneDBResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/CloseInterCommunicationRequest.h>
@@ -77,6 +79,10 @@
 #include <tencentcloud/sqlserver/v20180328/model/DeleteMigrationResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DeletePublishSubscribeRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DeletePublishSubscribeResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DeleteRestoreTaskRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DeleteRestoreTaskResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeAccountPrivilegeByDBRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeAccountPrivilegeByDBResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeAccountsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeAccountsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupByFlowIdRequest.h>
@@ -99,10 +105,14 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBusinessIntelligenceFileRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBusinessIntelligenceFileResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeCollationTimeZoneRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeCollationTimeZoneResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeCrossBackupStatisticalRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeCrossBackupStatisticalResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionZoneRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionZoneResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionsRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBCharsetsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBCharsetsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstanceInterRequest.h>
@@ -111,12 +121,18 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesAttributeRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesAttributeResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDBPrivilegeByAccountRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDBPrivilegeByAccountResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDBRestoreTimeRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDBRestoreTimeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBSecurityGroupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsNormalRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsNormalResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDatabaseNamesRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDatabaseNamesResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDatabasesNormalRequest.h>
@@ -127,12 +143,18 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeHASwitchLogResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeIncrementalMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeIncrementalMigrationResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeInquiryPriceParameterRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeInquiryPriceParameterResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceByOrdersRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceByOrdersResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceParamRecordsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceTasksRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceTasksResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceTradeParameterRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeInstanceTradeParameterResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeMaintenanceSpanRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeMaintenanceSpanResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeMigrationDatabasesRequest.h>
@@ -145,10 +167,14 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeOrdersResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeProductConfigRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeProductConfigResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeProductSpecRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeProductSpecResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeProjectSecurityGroupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeProjectSecurityGroupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribePublishSubscribeRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribePublishSubscribeResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupAutoWeightRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupAutoWeightResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupByReadOnlyInstanceRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupByReadOnlyInstanceResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupDetailsRequest.h>
@@ -159,10 +185,16 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRegionsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRegularBackupPlanRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRegularBackupPlanResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeRestoreTaskRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeRestoreTaskResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRollbackTimeRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRollbackTimeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeSlowlogsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeSlowlogsResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeSpecSellStatusRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeSpecSellStatusResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeUpgradeInstanceCheckRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeUpgradeInstanceCheckResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeUploadBackupInfoRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeUploadBackupInfoResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeUploadIncrementalInfoRequest.h>
@@ -189,6 +221,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyBackupNameResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyCloseWanIpRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyCloseWanIpResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyCrossBackupStrategyRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyCrossBackupStrategyResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBEncryptAttributesRequest.h>
@@ -197,6 +231,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNameResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNetworkRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNetworkResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNoteRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNoteResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceProjectRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceProjectResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceRenewFlagRequest.h>
@@ -225,6 +261,10 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyMaintenanceSpanResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyMigrationResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyOpenWanIpRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyOpenWanIpResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeNameRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeNameResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyReadOnlyGroupDetailsRequest.h>
@@ -286,6 +326,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::BalanceReadOnlyGroupResponse> BalanceReadOnlyGroupOutcome;
+                typedef std::future<BalanceReadOnlyGroupOutcome> BalanceReadOnlyGroupOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::BalanceReadOnlyGroupRequest&, BalanceReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BalanceReadOnlyGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloneDBResponse> CloneDBOutcome;
                 typedef std::future<CloneDBOutcome> CloneDBOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::CloneDBRequest&, CloneDBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneDBAsyncHandler;
@@ -364,6 +407,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePublishSubscribeResponse> DeletePublishSubscribeOutcome;
                 typedef std::future<DeletePublishSubscribeOutcome> DeletePublishSubscribeOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DeletePublishSubscribeRequest&, DeletePublishSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePublishSubscribeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRestoreTaskResponse> DeleteRestoreTaskOutcome;
+                typedef std::future<DeleteRestoreTaskOutcome> DeleteRestoreTaskOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DeleteRestoreTaskRequest&, DeleteRestoreTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRestoreTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountPrivilegeByDBResponse> DescribeAccountPrivilegeByDBOutcome;
+                typedef std::future<DescribeAccountPrivilegeByDBOutcome> DescribeAccountPrivilegeByDBOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeAccountPrivilegeByDBRequest&, DescribeAccountPrivilegeByDBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountPrivilegeByDBAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
@@ -397,12 +446,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBusinessIntelligenceFileResponse> DescribeBusinessIntelligenceFileOutcome;
                 typedef std::future<DescribeBusinessIntelligenceFileOutcome> DescribeBusinessIntelligenceFileOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeBusinessIntelligenceFileRequest&, DescribeBusinessIntelligenceFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBusinessIntelligenceFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCollationTimeZoneResponse> DescribeCollationTimeZoneOutcome;
+                typedef std::future<DescribeCollationTimeZoneOutcome> DescribeCollationTimeZoneOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeCollationTimeZoneRequest&, DescribeCollationTimeZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCollationTimeZoneAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCrossBackupStatisticalResponse> DescribeCrossBackupStatisticalOutcome;
                 typedef std::future<DescribeCrossBackupStatisticalOutcome> DescribeCrossBackupStatisticalOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeCrossBackupStatisticalRequest&, DescribeCrossBackupStatisticalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBackupStatisticalAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCrossRegionZoneResponse> DescribeCrossRegionZoneOutcome;
                 typedef std::future<DescribeCrossRegionZoneOutcome> DescribeCrossRegionZoneOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeCrossRegionZoneRequest&, DescribeCrossRegionZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossRegionZoneAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCrossRegionsResponse> DescribeCrossRegionsOutcome;
+                typedef std::future<DescribeCrossRegionsOutcome> DescribeCrossRegionsOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeCrossRegionsRequest&, DescribeCrossRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossRegionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBCharsetsResponse> DescribeDBCharsetsOutcome;
                 typedef std::future<DescribeDBCharsetsOutcome> DescribeDBCharsetsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDBCharsetsRequest&, DescribeDBCharsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCharsetsAsyncHandler;
@@ -415,6 +470,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstancesAttributeResponse> DescribeDBInstancesAttributeOutcome;
                 typedef std::future<DescribeDBInstancesAttributeOutcome> DescribeDBInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDBInstancesAttributeRequest&, DescribeDBInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBPrivilegeByAccountResponse> DescribeDBPrivilegeByAccountOutcome;
+                typedef std::future<DescribeDBPrivilegeByAccountOutcome> DescribeDBPrivilegeByAccountOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeDBPrivilegeByAccountRequest&, DescribeDBPrivilegeByAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBPrivilegeByAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBRestoreTimeResponse> DescribeDBRestoreTimeOutcome;
+                typedef std::future<DescribeDBRestoreTimeOutcome> DescribeDBRestoreTimeOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeDBRestoreTimeRequest&, DescribeDBRestoreTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBRestoreTimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
                 typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
@@ -424,6 +485,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBsNormalResponse> DescribeDBsNormalOutcome;
                 typedef std::future<DescribeDBsNormalOutcome> DescribeDBsNormalOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDBsNormalRequest&, DescribeDBsNormalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBsNormalAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabaseNamesResponse> DescribeDatabaseNamesOutcome;
+                typedef std::future<DescribeDatabaseNamesOutcome> DescribeDatabaseNamesOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeDatabaseNamesRequest&, DescribeDatabaseNamesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseNamesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
@@ -439,6 +503,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIncrementalMigrationResponse> DescribeIncrementalMigrationOutcome;
                 typedef std::future<DescribeIncrementalMigrationOutcome> DescribeIncrementalMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeIncrementalMigrationRequest&, DescribeIncrementalMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIncrementalMigrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInquiryPriceParameterResponse> DescribeInquiryPriceParameterOutcome;
+                typedef std::future<DescribeInquiryPriceParameterOutcome> DescribeInquiryPriceParameterOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeInquiryPriceParameterRequest&, DescribeInquiryPriceParameterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInquiryPriceParameterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceByOrdersResponse> DescribeInstanceByOrdersOutcome;
                 typedef std::future<DescribeInstanceByOrdersOutcome> DescribeInstanceByOrdersOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeInstanceByOrdersRequest&, DescribeInstanceByOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceByOrdersAsyncHandler;
@@ -448,6 +515,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceTasksResponse> DescribeInstanceTasksOutcome;
+                typedef std::future<DescribeInstanceTasksOutcome> DescribeInstanceTasksOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeInstanceTasksRequest&, DescribeInstanceTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceTradeParameterResponse> DescribeInstanceTradeParameterOutcome;
+                typedef std::future<DescribeInstanceTradeParameterOutcome> DescribeInstanceTradeParameterOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeInstanceTradeParameterRequest&, DescribeInstanceTradeParameterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceTradeParameterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMaintenanceSpanResponse> DescribeMaintenanceSpanOutcome;
                 typedef std::future<DescribeMaintenanceSpanOutcome> DescribeMaintenanceSpanOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeMaintenanceSpanRequest&, DescribeMaintenanceSpanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintenanceSpanAsyncHandler;
@@ -466,12 +539,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductConfigResponse> DescribeProductConfigOutcome;
                 typedef std::future<DescribeProductConfigOutcome> DescribeProductConfigOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeProductConfigRequest&, DescribeProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProductSpecResponse> DescribeProductSpecOutcome;
+                typedef std::future<DescribeProductSpecOutcome> DescribeProductSpecOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeProductSpecRequest&, DescribeProductSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductSpecAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectSecurityGroupsResponse> DescribeProjectSecurityGroupsOutcome;
                 typedef std::future<DescribeProjectSecurityGroupsOutcome> DescribeProjectSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeProjectSecurityGroupsRequest&, DescribeProjectSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePublishSubscribeResponse> DescribePublishSubscribeOutcome;
                 typedef std::future<DescribePublishSubscribeOutcome> DescribePublishSubscribeOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribePublishSubscribeRequest&, DescribePublishSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublishSubscribeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReadOnlyGroupAutoWeightResponse> DescribeReadOnlyGroupAutoWeightOutcome;
+                typedef std::future<DescribeReadOnlyGroupAutoWeightOutcome> DescribeReadOnlyGroupAutoWeightOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeReadOnlyGroupAutoWeightRequest&, DescribeReadOnlyGroupAutoWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReadOnlyGroupAutoWeightAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReadOnlyGroupByReadOnlyInstanceResponse> DescribeReadOnlyGroupByReadOnlyInstanceOutcome;
                 typedef std::future<DescribeReadOnlyGroupByReadOnlyInstanceOutcome> DescribeReadOnlyGroupByReadOnlyInstanceOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeReadOnlyGroupByReadOnlyInstanceRequest&, DescribeReadOnlyGroupByReadOnlyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReadOnlyGroupByReadOnlyInstanceAsyncHandler;
@@ -487,12 +566,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRegularBackupPlanResponse> DescribeRegularBackupPlanOutcome;
                 typedef std::future<DescribeRegularBackupPlanOutcome> DescribeRegularBackupPlanOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeRegularBackupPlanRequest&, DescribeRegularBackupPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegularBackupPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRestoreTaskResponse> DescribeRestoreTaskOutcome;
+                typedef std::future<DescribeRestoreTaskOutcome> DescribeRestoreTaskOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeRestoreTaskRequest&, DescribeRestoreTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRollbackTimeResponse> DescribeRollbackTimeOutcome;
                 typedef std::future<DescribeRollbackTimeOutcome> DescribeRollbackTimeOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeRollbackTimeRequest&, DescribeRollbackTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackTimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSlowlogsResponse> DescribeSlowlogsOutcome;
                 typedef std::future<DescribeSlowlogsOutcome> DescribeSlowlogsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeSlowlogsRequest&, DescribeSlowlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowlogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSpecSellStatusResponse> DescribeSpecSellStatusOutcome;
+                typedef std::future<DescribeSpecSellStatusOutcome> DescribeSpecSellStatusOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeSpecSellStatusRequest&, DescribeSpecSellStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecSellStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUpgradeInstanceCheckResponse> DescribeUpgradeInstanceCheckOutcome;
+                typedef std::future<DescribeUpgradeInstanceCheckOutcome> DescribeUpgradeInstanceCheckOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeUpgradeInstanceCheckRequest&, DescribeUpgradeInstanceCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradeInstanceCheckAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUploadBackupInfoResponse> DescribeUploadBackupInfoOutcome;
                 typedef std::future<DescribeUploadBackupInfoOutcome> DescribeUploadBackupInfoOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeUploadBackupInfoRequest&, DescribeUploadBackupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUploadBackupInfoAsyncHandler;
@@ -532,6 +620,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupStrategyResponse> ModifyBackupStrategyOutcome;
                 typedef std::future<ModifyBackupStrategyOutcome> ModifyBackupStrategyOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyBackupStrategyRequest&, ModifyBackupStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloseWanIpResponse> ModifyCloseWanIpOutcome;
+                typedef std::future<ModifyCloseWanIpOutcome> ModifyCloseWanIpOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyCloseWanIpRequest&, ModifyCloseWanIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloseWanIpAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCrossBackupStrategyResponse> ModifyCrossBackupStrategyOutcome;
                 typedef std::future<ModifyCrossBackupStrategyOutcome> ModifyCrossBackupStrategyOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyCrossBackupStrategyRequest&, ModifyCrossBackupStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCrossBackupStrategyAsyncHandler;
@@ -544,6 +635,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNetworkResponse> ModifyDBInstanceNetworkOutcome;
                 typedef std::future<ModifyDBInstanceNetworkOutcome> ModifyDBInstanceNetworkOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDBInstanceNetworkRequest&, ModifyDBInstanceNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNetworkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceNoteResponse> ModifyDBInstanceNoteOutcome;
+                typedef std::future<ModifyDBInstanceNoteOutcome> ModifyDBInstanceNoteOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyDBInstanceNoteRequest&, ModifyDBInstanceNoteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNoteAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceProjectResponse> ModifyDBInstanceProjectOutcome;
                 typedef std::future<ModifyDBInstanceProjectOutcome> ModifyDBInstanceProjectOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDBInstanceProjectRequest&, ModifyDBInstanceProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceProjectAsyncHandler;
@@ -586,6 +680,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMigrationResponse> ModifyMigrationOutcome;
                 typedef std::future<ModifyMigrationOutcome> ModifyMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyMigrationRequest&, ModifyMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOpenWanIpResponse> ModifyOpenWanIpOutcome;
+                typedef std::future<ModifyOpenWanIpOutcome> ModifyOpenWanIpOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyOpenWanIpRequest&, ModifyOpenWanIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOpenWanIpAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPublishSubscribeResponse> ModifyPublishSubscribeOutcome;
+                typedef std::future<ModifyPublishSubscribeOutcome> ModifyPublishSubscribeOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyPublishSubscribeRequest&, ModifyPublishSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublishSubscribeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPublishSubscribeNameResponse> ModifyPublishSubscribeNameOutcome;
                 typedef std::future<ModifyPublishSubscribeNameOutcome> ModifyPublishSubscribeNameOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyPublishSubscribeNameRequest&, ModifyPublishSubscribeNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublishSubscribeNameAsyncHandler;
@@ -663,6 +763,15 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
                 void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
+
+                /**
+                 *本接口（BalanceReadOnlyGroup）用于根据预定义的权重平衡每个只读实例的路由权重。预定义权重可根据接口DescribeReadOnlyGroupAutoWeight查询。
+                 * @param req BalanceReadOnlyGroupRequest
+                 * @return BalanceReadOnlyGroupOutcome
+                 */
+                BalanceReadOnlyGroupOutcome BalanceReadOnlyGroup(const Model::BalanceReadOnlyGroupRequest &request);
+                void BalanceReadOnlyGroupAsync(const Model::BalanceReadOnlyGroupRequest& request, const BalanceReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BalanceReadOnlyGroupOutcomeCallable BalanceReadOnlyGroupCallable(const Model::BalanceReadOnlyGroupRequest& request);
 
                 /**
                  *本接口（CloneDB）用于克隆数据库，只支持克隆到本实例，克隆时必须指定新库名称。
@@ -899,6 +1008,24 @@ namespace TencentCloud
                 DeletePublishSubscribeOutcomeCallable DeletePublishSubscribeCallable(const Model::DeletePublishSubscribeRequest& request);
 
                 /**
+                 *本接口(DeleteRestoreTask)用于删除回档任务记录。
+                 * @param req DeleteRestoreTaskRequest
+                 * @return DeleteRestoreTaskOutcome
+                 */
+                DeleteRestoreTaskOutcome DeleteRestoreTask(const Model::DeleteRestoreTaskRequest &request);
+                void DeleteRestoreTaskAsync(const Model::DeleteRestoreTaskRequest& request, const DeleteRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRestoreTaskOutcomeCallable DeleteRestoreTaskCallable(const Model::DeleteRestoreTaskRequest& request);
+
+                /**
+                 *本接口(DescribeAccountPrivilegeByDB)用于查询数据库关联的账号和权限信息
+                 * @param req DescribeAccountPrivilegeByDBRequest
+                 * @return DescribeAccountPrivilegeByDBOutcome
+                 */
+                DescribeAccountPrivilegeByDBOutcome DescribeAccountPrivilegeByDB(const Model::DescribeAccountPrivilegeByDBRequest &request);
+                void DescribeAccountPrivilegeByDBAsync(const Model::DescribeAccountPrivilegeByDBRequest& request, const DescribeAccountPrivilegeByDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountPrivilegeByDBOutcomeCallable DescribeAccountPrivilegeByDBCallable(const Model::DescribeAccountPrivilegeByDBRequest& request);
+
+                /**
                  *本接口（DescribeAccounts）用于拉取实例账户列表。
                  * @param req DescribeAccountsRequest
                  * @return DescribeAccountsOutcome
@@ -998,6 +1125,15 @@ namespace TencentCloud
                 DescribeBusinessIntelligenceFileOutcomeCallable DescribeBusinessIntelligenceFileCallable(const Model::DescribeBusinessIntelligenceFileRequest& request);
 
                 /**
+                 *本接口(DescribeCollationTimeZone)用于查询实例支持的字符集和时区。
+                 * @param req DescribeCollationTimeZoneRequest
+                 * @return DescribeCollationTimeZoneOutcome
+                 */
+                DescribeCollationTimeZoneOutcome DescribeCollationTimeZone(const Model::DescribeCollationTimeZoneRequest &request);
+                void DescribeCollationTimeZoneAsync(const Model::DescribeCollationTimeZoneRequest& request, const DescribeCollationTimeZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCollationTimeZoneOutcomeCallable DescribeCollationTimeZoneCallable(const Model::DescribeCollationTimeZoneRequest& request);
+
+                /**
                  *本接口(DescribeCrossBackupStatistical)用于查询跨地域备份实时统计列表。
                  * @param req DescribeCrossBackupStatisticalRequest
                  * @return DescribeCrossBackupStatisticalOutcome
@@ -1014,6 +1150,15 @@ namespace TencentCloud
                 DescribeCrossRegionZoneOutcome DescribeCrossRegionZone(const Model::DescribeCrossRegionZoneRequest &request);
                 void DescribeCrossRegionZoneAsync(const Model::DescribeCrossRegionZoneRequest& request, const DescribeCrossRegionZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCrossRegionZoneOutcomeCallable DescribeCrossRegionZoneCallable(const Model::DescribeCrossRegionZoneRequest& request);
+
+                /**
+                 *本接口(DescribeCrossRegions)用于查询跨地域备份的目标地域。
+                 * @param req DescribeCrossRegionsRequest
+                 * @return DescribeCrossRegionsOutcome
+                 */
+                DescribeCrossRegionsOutcome DescribeCrossRegions(const Model::DescribeCrossRegionsRequest &request);
+                void DescribeCrossRegionsAsync(const Model::DescribeCrossRegionsRequest& request, const DescribeCrossRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCrossRegionsOutcomeCallable DescribeCrossRegionsCallable(const Model::DescribeCrossRegionsRequest& request);
 
                 /**
                  *本接口（DescribeDBCharsets）用于查询实例支持的数据库字符集。
@@ -1052,6 +1197,24 @@ namespace TencentCloud
                 DescribeDBInstancesAttributeOutcomeCallable DescribeDBInstancesAttributeCallable(const Model::DescribeDBInstancesAttributeRequest& request);
 
                 /**
+                 *本接口(DescribeDBPrivilegeByAccount)用于查询账号关联的数据库和权限信息
+                 * @param req DescribeDBPrivilegeByAccountRequest
+                 * @return DescribeDBPrivilegeByAccountOutcome
+                 */
+                DescribeDBPrivilegeByAccountOutcome DescribeDBPrivilegeByAccount(const Model::DescribeDBPrivilegeByAccountRequest &request);
+                void DescribeDBPrivilegeByAccountAsync(const Model::DescribeDBPrivilegeByAccountRequest& request, const DescribeDBPrivilegeByAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBPrivilegeByAccountOutcomeCallable DescribeDBPrivilegeByAccountCallable(const Model::DescribeDBPrivilegeByAccountRequest& request);
+
+                /**
+                 *本接口（DescribeDBRestoreTime）用于查询可回档的数据库
+                 * @param req DescribeDBRestoreTimeRequest
+                 * @return DescribeDBRestoreTimeOutcome
+                 */
+                DescribeDBRestoreTimeOutcome DescribeDBRestoreTime(const Model::DescribeDBRestoreTimeRequest &request);
+                void DescribeDBRestoreTimeAsync(const Model::DescribeDBRestoreTimeRequest& request, const DescribeDBRestoreTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBRestoreTimeOutcomeCallable DescribeDBRestoreTimeCallable(const Model::DescribeDBRestoreTimeRequest& request);
+
+                /**
                  *本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。
                  * @param req DescribeDBSecurityGroupsRequest
                  * @return DescribeDBSecurityGroupsOutcome
@@ -1077,6 +1240,15 @@ namespace TencentCloud
                 DescribeDBsNormalOutcome DescribeDBsNormal(const Model::DescribeDBsNormalRequest &request);
                 void DescribeDBsNormalAsync(const Model::DescribeDBsNormalRequest& request, const DescribeDBsNormalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBsNormalOutcomeCallable DescribeDBsNormalCallable(const Model::DescribeDBsNormalRequest& request);
+
+                /**
+                 *本接口（DescribeDatabaseNames）查询账户关联的数据库名称。
+                 * @param req DescribeDatabaseNamesRequest
+                 * @return DescribeDatabaseNamesOutcome
+                 */
+                DescribeDatabaseNamesOutcome DescribeDatabaseNames(const Model::DescribeDatabaseNamesRequest &request);
+                void DescribeDatabaseNamesAsync(const Model::DescribeDatabaseNamesRequest& request, const DescribeDatabaseNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabaseNamesOutcomeCallable DescribeDatabaseNamesCallable(const Model::DescribeDatabaseNamesRequest& request);
 
                 /**
                  *本接口（DescribeDatabases）用于查询数据库列表。
@@ -1124,6 +1296,15 @@ namespace TencentCloud
                 DescribeIncrementalMigrationOutcomeCallable DescribeIncrementalMigrationCallable(const Model::DescribeIncrementalMigrationRequest& request);
 
                 /**
+                 *本接口（DescribeInquiryPriceParameter）用于查询实例询价计费参数。当前接口查询实例新购的计费参数。内部接口用于活动页售卖场景。
+                 * @param req DescribeInquiryPriceParameterRequest
+                 * @return DescribeInquiryPriceParameterOutcome
+                 */
+                DescribeInquiryPriceParameterOutcome DescribeInquiryPriceParameter(const Model::DescribeInquiryPriceParameterRequest &request);
+                void DescribeInquiryPriceParameterAsync(const Model::DescribeInquiryPriceParameterRequest& request, const DescribeInquiryPriceParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInquiryPriceParameterOutcomeCallable DescribeInquiryPriceParameterCallable(const Model::DescribeInquiryPriceParameterRequest& request);
+
+                /**
                  *本接口（DescribeInstanceByOrders）用于根据订单号查询资源ID
                  * @param req DescribeInstanceByOrdersRequest
                  * @return DescribeInstanceByOrdersOutcome
@@ -1149,6 +1330,24 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcome DescribeInstanceParams(const Model::DescribeInstanceParamsRequest &request);
                 void DescribeInstanceParamsAsync(const Model::DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
+
+                /**
+                 *本接口（DescribeInstanceTasks）用于查询实例相关的异步任务列表。
+                 * @param req DescribeInstanceTasksRequest
+                 * @return DescribeInstanceTasksOutcome
+                 */
+                DescribeInstanceTasksOutcome DescribeInstanceTasks(const Model::DescribeInstanceTasksRequest &request);
+                void DescribeInstanceTasksAsync(const Model::DescribeInstanceTasksRequest& request, const DescribeInstanceTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceTasksOutcomeCallable DescribeInstanceTasksCallable(const Model::DescribeInstanceTasksRequest& request);
+
+                /**
+                 *本接口（DescribeInstanceTradeParameter）用于查询实例的计费参数，当前接口默认返回创建实例时需要的计费参数。内部接口用于活动页售卖场景。
+                 * @param req DescribeInstanceTradeParameterRequest
+                 * @return DescribeInstanceTradeParameterOutcome
+                 */
+                DescribeInstanceTradeParameterOutcome DescribeInstanceTradeParameter(const Model::DescribeInstanceTradeParameterRequest &request);
+                void DescribeInstanceTradeParameterAsync(const Model::DescribeInstanceTradeParameterRequest& request, const DescribeInstanceTradeParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceTradeParameterOutcomeCallable DescribeInstanceTradeParameterCallable(const Model::DescribeInstanceTradeParameterRequest& request);
 
                 /**
                  *本接口（DescribeMaintenanceSpan）根据实例ID查询该实例的可维护时间窗。
@@ -1205,6 +1404,15 @@ namespace TencentCloud
                 DescribeProductConfigOutcomeCallable DescribeProductConfigCallable(const Model::DescribeProductConfigRequest& request);
 
                 /**
+                 *本接口 (DescribeProductSpec) 用于查询全地域售卖规格配置（内部前端使用不公开）
+                 * @param req DescribeProductSpecRequest
+                 * @return DescribeProductSpecOutcome
+                 */
+                DescribeProductSpecOutcome DescribeProductSpec(const Model::DescribeProductSpecRequest &request);
+                void DescribeProductSpecAsync(const Model::DescribeProductSpecRequest& request, const DescribeProductSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductSpecOutcomeCallable DescribeProductSpecCallable(const Model::DescribeProductSpecRequest& request);
+
+                /**
                  *本接口(DescribeProjectSecurityGroups)用于查询项目的安全组详情。
                  * @param req DescribeProjectSecurityGroupsRequest
                  * @return DescribeProjectSecurityGroupsOutcome
@@ -1221,6 +1429,15 @@ namespace TencentCloud
                 DescribePublishSubscribeOutcome DescribePublishSubscribe(const Model::DescribePublishSubscribeRequest &request);
                 void DescribePublishSubscribeAsync(const Model::DescribePublishSubscribeRequest& request, const DescribePublishSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePublishSubscribeOutcomeCallable DescribePublishSubscribeCallable(const Model::DescribePublishSubscribeRequest& request);
+
+                /**
+                 *本接口（DescribeReadOnlyGroupAutoWeight）用于查询只读组的自动权重分配结果，在接口BalanceReadOnlyGroup接口中按照自动权重分配结果进行路由权重分配。
+                 * @param req DescribeReadOnlyGroupAutoWeightRequest
+                 * @return DescribeReadOnlyGroupAutoWeightOutcome
+                 */
+                DescribeReadOnlyGroupAutoWeightOutcome DescribeReadOnlyGroupAutoWeight(const Model::DescribeReadOnlyGroupAutoWeightRequest &request);
+                void DescribeReadOnlyGroupAutoWeightAsync(const Model::DescribeReadOnlyGroupAutoWeightRequest& request, const DescribeReadOnlyGroupAutoWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReadOnlyGroupAutoWeightOutcomeCallable DescribeReadOnlyGroupAutoWeightCallable(const Model::DescribeReadOnlyGroupAutoWeightRequest& request);
 
                 /**
                  *本接口（DescribeReadOnlyGroupByReadOnlyInstance）用于通过只读副本实例ID查询其所在的只读组。
@@ -1268,6 +1485,15 @@ namespace TencentCloud
                 DescribeRegularBackupPlanOutcomeCallable DescribeRegularBackupPlanCallable(const Model::DescribeRegularBackupPlanRequest& request);
 
                 /**
+                 *本接口（DescribeRestoreTask）用于查询回档任务列表。
+                 * @param req DescribeRestoreTaskRequest
+                 * @return DescribeRestoreTaskOutcome
+                 */
+                DescribeRestoreTaskOutcome DescribeRestoreTask(const Model::DescribeRestoreTaskRequest &request);
+                void DescribeRestoreTaskAsync(const Model::DescribeRestoreTaskRequest& request, const DescribeRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRestoreTaskOutcomeCallable DescribeRestoreTaskCallable(const Model::DescribeRestoreTaskRequest& request);
+
+                /**
                  *本接口（DescribeRollbackTime）用于查询实例可回档时间范围
                  * @param req DescribeRollbackTimeRequest
                  * @return DescribeRollbackTimeOutcome
@@ -1284,6 +1510,24 @@ namespace TencentCloud
                 DescribeSlowlogsOutcome DescribeSlowlogs(const Model::DescribeSlowlogsRequest &request);
                 void DescribeSlowlogsAsync(const Model::DescribeSlowlogsRequest& request, const DescribeSlowlogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSlowlogsOutcomeCallable DescribeSlowlogsCallable(const Model::DescribeSlowlogsRequest& request);
+
+                /**
+                 *本接口（DescribeSpecSellStatus）用于查询售卖规格状态信息，其中包括售卖状态，参考价格等(实际价格以询价接口为准)。
+                 * @param req DescribeSpecSellStatusRequest
+                 * @return DescribeSpecSellStatusOutcome
+                 */
+                DescribeSpecSellStatusOutcome DescribeSpecSellStatus(const Model::DescribeSpecSellStatusRequest &request);
+                void DescribeSpecSellStatusAsync(const Model::DescribeSpecSellStatusRequest& request, const DescribeSpecSellStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSpecSellStatusOutcomeCallable DescribeSpecSellStatusCallable(const Model::DescribeSpecSellStatusRequest& request);
+
+                /**
+                 *本接口（DescribeUpgradeInstanceCheck）用于在实例变配前，预检查实例变配的影响情况等。
+                 * @param req DescribeUpgradeInstanceCheckRequest
+                 * @return DescribeUpgradeInstanceCheckOutcome
+                 */
+                DescribeUpgradeInstanceCheckOutcome DescribeUpgradeInstanceCheck(const Model::DescribeUpgradeInstanceCheckRequest &request);
+                void DescribeUpgradeInstanceCheckAsync(const Model::DescribeUpgradeInstanceCheckRequest& request, const DescribeUpgradeInstanceCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUpgradeInstanceCheckOutcomeCallable DescribeUpgradeInstanceCheckCallable(const Model::DescribeUpgradeInstanceCheckRequest& request);
 
                 /**
                  *本接口（DescribeUploadBackupInfo）用于查询备份上传权限。
@@ -1403,6 +1647,15 @@ namespace TencentCloud
                 ModifyBackupStrategyOutcomeCallable ModifyBackupStrategyCallable(const Model::ModifyBackupStrategyRequest& request);
 
                 /**
+                 *本接口(ModifyCloseWanIp)用于关闭实例外网。
+                 * @param req ModifyCloseWanIpRequest
+                 * @return ModifyCloseWanIpOutcome
+                 */
+                ModifyCloseWanIpOutcome ModifyCloseWanIp(const Model::ModifyCloseWanIpRequest &request);
+                void ModifyCloseWanIpAsync(const Model::ModifyCloseWanIpRequest& request, const ModifyCloseWanIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloseWanIpOutcomeCallable ModifyCloseWanIpCallable(const Model::ModifyCloseWanIpRequest& request);
+
+                /**
                  *本接口(ModifyCrossBackupStrategy)用于开启、关闭地域备份策略。
                  * @param req ModifyCrossBackupStrategyRequest
                  * @return ModifyCrossBackupStrategyOutcome
@@ -1437,6 +1690,15 @@ namespace TencentCloud
                 ModifyDBInstanceNetworkOutcome ModifyDBInstanceNetwork(const Model::ModifyDBInstanceNetworkRequest &request);
                 void ModifyDBInstanceNetworkAsync(const Model::ModifyDBInstanceNetworkRequest& request, const ModifyDBInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceNetworkOutcomeCallable ModifyDBInstanceNetworkCallable(const Model::ModifyDBInstanceNetworkRequest& request);
+
+                /**
+                 *本接口（ModifyDBInstanceNote）用于修改实例备注信息。
+                 * @param req ModifyDBInstanceNoteRequest
+                 * @return ModifyDBInstanceNoteOutcome
+                 */
+                ModifyDBInstanceNoteOutcome ModifyDBInstanceNote(const Model::ModifyDBInstanceNoteRequest &request);
+                void ModifyDBInstanceNoteAsync(const Model::ModifyDBInstanceNoteRequest& request, const ModifyDBInstanceNoteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceNoteOutcomeCallable ModifyDBInstanceNoteCallable(const Model::ModifyDBInstanceNoteRequest& request);
 
                 /**
                  *本接口（ModifyDBInstanceProject）用于修改数据库实例所属项目。
@@ -1565,6 +1827,24 @@ namespace TencentCloud
                 ModifyMigrationOutcome ModifyMigration(const Model::ModifyMigrationRequest &request);
                 void ModifyMigrationAsync(const Model::ModifyMigrationRequest& request, const ModifyMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMigrationOutcomeCallable ModifyMigrationCallable(const Model::ModifyMigrationRequest& request);
+
+                /**
+                 *本接口(ModifyOpenWanIp)用于开通实例外网。
+                 * @param req ModifyOpenWanIpRequest
+                 * @return ModifyOpenWanIpOutcome
+                 */
+                ModifyOpenWanIpOutcome ModifyOpenWanIp(const Model::ModifyOpenWanIpRequest &request);
+                void ModifyOpenWanIpAsync(const Model::ModifyOpenWanIpRequest& request, const ModifyOpenWanIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOpenWanIpOutcomeCallable ModifyOpenWanIpCallable(const Model::ModifyOpenWanIpRequest& request);
+
+                /**
+                 *本接口（ModifyPublishSubscribe）用于修改实例的发布订阅关系。
+                 * @param req ModifyPublishSubscribeRequest
+                 * @return ModifyPublishSubscribeOutcome
+                 */
+                ModifyPublishSubscribeOutcome ModifyPublishSubscribe(const Model::ModifyPublishSubscribeRequest &request);
+                void ModifyPublishSubscribeAsync(const Model::ModifyPublishSubscribeRequest& request, const ModifyPublishSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPublishSubscribeOutcomeCallable ModifyPublishSubscribeCallable(const Model::ModifyPublishSubscribeRequest& request);
 
                 /**
                  *本接口（ModifyPublishSubscribeName）修改发布订阅的名称。

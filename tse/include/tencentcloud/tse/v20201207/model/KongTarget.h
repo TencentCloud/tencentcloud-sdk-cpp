@@ -196,6 +196,56 @@ namespace TencentCloud
                      */
                     bool SourceHasBeenSet() const;
 
+                    /**
+                     * 获取CVM实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CvmInstanceId CVM实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCvmInstanceId() const;
+
+                    /**
+                     * 设置CVM实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cvmInstanceId CVM实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCvmInstanceId(const std::string& _cvmInstanceId);
+
+                    /**
+                     * 判断参数 CvmInstanceId 是否已赋值
+                     * @return CvmInstanceId 是否已赋值
+                     * 
+                     */
+                    bool CvmInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取CVM实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CvmInstanceName CVM实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCvmInstanceName() const;
+
+                    /**
+                     * 设置CVM实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cvmInstanceName CVM实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCvmInstanceName(const std::string& _cvmInstanceName);
+
+                    /**
+                     * 判断参数 CvmInstanceName 是否已赋值
+                     * @return CvmInstanceName 是否已赋值
+                     * 
+                     */
+                    bool CvmInstanceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +289,20 @@ namespace TencentCloud
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
+
+                    /**
+                     * CVM实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cvmInstanceId;
+                    bool m_cvmInstanceIdHasBeenSet;
+
+                    /**
+                     * CVM实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cvmInstanceName;
+                    bool m_cvmInstanceNameHasBeenSet;
 
                 };
             }

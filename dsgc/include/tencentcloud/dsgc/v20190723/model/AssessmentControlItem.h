@@ -219,18 +219,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取评估项关联的模版数量
+                     * 获取评估项关联的模板数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateCount 评估项关联的模版数量
+                     * @return TemplateCount 评估项关联的模板数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateCount() const;
 
                     /**
-                     * 设置评估项关联的模版数量
+                     * 设置评估项关联的模板数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateCount 评估项关联的模版数量
+                     * @param _templateCount 评估项关联的模板数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -295,7 +295,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 评估项关联的模版数量
+                     * 评估项关联的模板数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateCount;

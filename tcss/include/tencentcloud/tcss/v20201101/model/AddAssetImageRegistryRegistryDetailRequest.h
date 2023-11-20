@@ -274,6 +274,27 @@ namespace TencentCloud
                      */
                     bool ConnDetectConfigHasBeenSet() const;
 
+                    /**
+                     * 获取”授权&扫描"开关
+                     * @return NeedScan ”授权&扫描"开关
+                     * 
+                     */
+                    bool GetNeedScan() const;
+
+                    /**
+                     * 设置”授权&扫描"开关
+                     * @param _needScan ”授权&扫描"开关
+                     * 
+                     */
+                    void SetNeedScan(const bool& _needScan);
+
+                    /**
+                     * 判断参数 NeedScan 是否已赋值
+                     * @return NeedScan 是否已赋值
+                     * 
+                     */
+                    bool NeedScanHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +362,12 @@ namespace TencentCloud
                      */
                     std::vector<ConnDetectConfig> m_connDetectConfig;
                     bool m_connDetectConfigHasBeenSet;
+
+                    /**
+                     * ”授权&扫描"开关
+                     */
+                    bool m_needScan;
+                    bool m_needScanHasBeenSet;
 
                 };
             }

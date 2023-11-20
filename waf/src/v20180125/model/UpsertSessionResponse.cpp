@@ -24,7 +24,8 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 UpsertSessionResponse::UpsertSessionResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_sessionIDHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome UpsertSessionResponse::Deserialize(const string &payload)
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SessionID") && !rsp["SessionID"].IsNull())
+    {
+        if (!rsp["SessionID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionID = rsp["SessionID"].GetInt64();
+        m_sessionIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string UpsertSessionResponse::ToJsonString() const
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionID, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string UpsertSessionResponse::GetData() const
 bool UpsertSessionResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+int64_t UpsertSessionResponse::GetSessionID() const
+{
+    return m_sessionID;
+}
+
+bool UpsertSessionResponse::SessionIDHasBeenSet() const
+{
+    return m_sessionIDHasBeenSet;
 }
 
 

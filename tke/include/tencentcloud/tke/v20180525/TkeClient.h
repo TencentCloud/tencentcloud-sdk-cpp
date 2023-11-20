@@ -179,6 +179,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterExtraArgsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterExtraArgsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInspectionResultsOverviewRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInspectionResultsOverviewResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInstancesRequest.h>
@@ -249,6 +251,10 @@
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeExternalNodeSupportConfigRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeExternalNodeSupportConfigResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeIPAMDRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeIPAMDResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImageCachesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImageCachesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesRequest.h>
@@ -695,6 +701,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterEndpointsResponse> DescribeClusterEndpointsOutcome;
                 typedef std::future<DescribeClusterEndpointsOutcome> DescribeClusterEndpointsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterEndpointsRequest&, DescribeClusterEndpointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterEndpointsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterExtraArgsResponse> DescribeClusterExtraArgsOutcome;
+                typedef std::future<DescribeClusterExtraArgsOutcome> DescribeClusterExtraArgsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterExtraArgsRequest&, DescribeClusterExtraArgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterExtraArgsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterInspectionResultsOverviewResponse> DescribeClusterInspectionResultsOverviewOutcome;
                 typedef std::future<DescribeClusterInspectionResultsOverviewOutcome> DescribeClusterInspectionResultsOverviewOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterInspectionResultsOverviewRequest&, DescribeClusterInspectionResultsOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInspectionResultsOverviewAsyncHandler;
@@ -800,6 +809,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExternalClusterSpecResponse> DescribeExternalClusterSpecOutcome;
                 typedef std::future<DescribeExternalClusterSpecOutcome> DescribeExternalClusterSpecOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeExternalClusterSpecRequest&, DescribeExternalClusterSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalClusterSpecAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExternalNodeSupportConfigResponse> DescribeExternalNodeSupportConfigOutcome;
+                typedef std::future<DescribeExternalNodeSupportConfigOutcome> DescribeExternalNodeSupportConfigOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeExternalNodeSupportConfigRequest&, DescribeExternalNodeSupportConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalNodeSupportConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIPAMDResponse> DescribeIPAMDOutcome;
+                typedef std::future<DescribeIPAMDOutcome> DescribeIPAMDOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeIPAMDRequest&, DescribeIPAMDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPAMDAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageCachesResponse> DescribeImageCachesOutcome;
                 typedef std::future<DescribeImageCachesOutcome> DescribeImageCachesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeImageCachesRequest&, DescribeImageCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageCachesAsyncHandler;
@@ -1803,6 +1818,15 @@ namespace TencentCloud
                 DescribeClusterEndpointsOutcomeCallable DescribeClusterEndpointsCallable(const Model::DescribeClusterEndpointsRequest& request);
 
                 /**
+                 *查询集群自定义参数
+                 * @param req DescribeClusterExtraArgsRequest
+                 * @return DescribeClusterExtraArgsOutcome
+                 */
+                DescribeClusterExtraArgsOutcome DescribeClusterExtraArgs(const Model::DescribeClusterExtraArgsRequest &request);
+                void DescribeClusterExtraArgsAsync(const Model::DescribeClusterExtraArgsRequest& request, const DescribeClusterExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterExtraArgsOutcomeCallable DescribeClusterExtraArgsCallable(const Model::DescribeClusterExtraArgsRequest& request);
+
+                /**
                  *查询用户单个Region下的所有集群巡检结果概览信息
                  * @param req DescribeClusterInspectionResultsOverviewRequest
                  * @return DescribeClusterInspectionResultsOverviewOutcome
@@ -2116,6 +2140,24 @@ namespace TencentCloud
                 DescribeExternalClusterSpecOutcome DescribeExternalClusterSpec(const Model::DescribeExternalClusterSpecRequest &request);
                 void DescribeExternalClusterSpecAsync(const Model::DescribeExternalClusterSpecRequest& request, const DescribeExternalClusterSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExternalClusterSpecOutcomeCallable DescribeExternalClusterSpecCallable(const Model::DescribeExternalClusterSpecRequest& request);
+
+                /**
+                 *查看开启第三方节点池配置信息
+                 * @param req DescribeExternalNodeSupportConfigRequest
+                 * @return DescribeExternalNodeSupportConfigOutcome
+                 */
+                DescribeExternalNodeSupportConfigOutcome DescribeExternalNodeSupportConfig(const Model::DescribeExternalNodeSupportConfigRequest &request);
+                void DescribeExternalNodeSupportConfigAsync(const Model::DescribeExternalNodeSupportConfigRequest& request, const DescribeExternalNodeSupportConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExternalNodeSupportConfigOutcomeCallable DescribeExternalNodeSupportConfigCallable(const Model::DescribeExternalNodeSupportConfigRequest& request);
+
+                /**
+                 *获取eniipamd组件信息
+                 * @param req DescribeIPAMDRequest
+                 * @return DescribeIPAMDOutcome
+                 */
+                DescribeIPAMDOutcome DescribeIPAMD(const Model::DescribeIPAMDRequest &request);
+                void DescribeIPAMDAsync(const Model::DescribeIPAMDRequest& request, const DescribeIPAMDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIPAMDOutcomeCallable DescribeIPAMDCallable(const Model::DescribeIPAMDRequest& request);
 
                 /**
                  *查询镜像缓存信息接口

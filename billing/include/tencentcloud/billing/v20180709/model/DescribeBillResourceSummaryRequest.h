@@ -108,21 +108,21 @@ namespace TencentCloud
                     /**
                      * 获取周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
                      * @return PeriodType 周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
-                     * 
+                     * @deprecated
                      */
                     std::string GetPeriodType() const;
 
                     /**
                      * 设置周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
                      * @param _periodType 周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。
-                     * 
+                     * @deprecated
                      */
                     void SetPeriodType(const std::string& _periodType);
 
                     /**
                      * 判断参数 PeriodType 是否已赋值
                      * @return PeriodType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PeriodTypeHasBeenSet() const;
 

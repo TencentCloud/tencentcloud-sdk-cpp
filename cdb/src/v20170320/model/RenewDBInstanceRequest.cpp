@@ -25,7 +25,8 @@ using namespace std;
 RenewDBInstanceRequest::RenewDBInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
-    m_modifyPayTypeHasBeenSet(false)
+    m_modifyPayTypeHasBeenSet(false),
+    m_autoRenewHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string RenewDBInstanceRequest::ToJsonString() const
         string key = "ModifyPayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modifyPayType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenew, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void RenewDBInstanceRequest::SetModifyPayType(const string& _modifyPayType)
 bool RenewDBInstanceRequest::ModifyPayTypeHasBeenSet() const
 {
     return m_modifyPayTypeHasBeenSet;
+}
+
+int64_t RenewDBInstanceRequest::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+void RenewDBInstanceRequest::SetAutoRenew(const int64_t& _autoRenew)
+{
+    m_autoRenew = _autoRenew;
+    m_autoRenewHasBeenSet = true;
+}
+
+bool RenewDBInstanceRequest::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
 }
 
 

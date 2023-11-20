@@ -121,6 +121,34 @@ namespace TencentCloud
                      */
                     bool RuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取自动扫描开关，0：关闭，1：开启
+                     * @return AutoScanEnabled 自动扫描开关，0：关闭，1：开启
+                     * 
+                     */
+                    int64_t GetAutoScanEnabled() const;
+
+                    /**
+                     * 判断参数 AutoScanEnabled 是否已赋值
+                     * @return AutoScanEnabled 是否已赋值
+                     * 
+                     */
+                    bool AutoScanEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取自动扫描范围
+                     * @return ScanType 自动扫描范围
+                     * 
+                     */
+                    std::vector<std::string> GetScanType() const;
+
+                    /**
+                     * 判断参数 ScanType 是否已赋值
+                     * @return ScanType 是否已赋值
+                     * 
+                     */
+                    bool ScanTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +184,18 @@ namespace TencentCloud
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 自动扫描开关，0：关闭，1：开启
+                     */
+                    int64_t m_autoScanEnabled;
+                    bool m_autoScanEnabledHasBeenSet;
+
+                    /**
+                     * 自动扫描范围
+                     */
+                    std::vector<std::string> m_scanType;
+                    bool m_scanTypeHasBeenSet;
 
                 };
             }

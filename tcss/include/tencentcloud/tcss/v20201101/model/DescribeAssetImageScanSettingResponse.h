@@ -130,14 +130,14 @@ namespace TencentCloud
                     /**
                      * 获取扫描全部镜像
                      * @return All 扫描全部镜像
-                     * 
+                     * @deprecated
                      */
                     bool GetAll() const;
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AllHasBeenSet() const;
 
@@ -154,6 +154,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ImagesHasBeenSet() const;
+
+                    /**
+                     * 获取镜像是否存在运行中的容器
+                     * @return ContainerRunning 镜像是否存在运行中的容器
+                     * 
+                     */
+                    bool GetContainerRunning() const;
+
+                    /**
+                     * 判断参数 ContainerRunning 是否已赋值
+                     * @return ContainerRunning 是否已赋值
+                     * 
+                     */
+                    bool ContainerRunningHasBeenSet() const;
+
+                    /**
+                     * 获取扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
+                     * @return ScanScope 扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
+                     * 
+                     */
+                    uint64_t GetScanScope() const;
+
+                    /**
+                     * 判断参数 ScanScope 是否已赋值
+                     * @return ScanScope 是否已赋值
+                     * 
+                     */
+                    bool ScanScopeHasBeenSet() const;
+
+                    /**
+                     * 获取扫描结束时间 02:00 时分
+                     * @return ScanEndTime 扫描结束时间 02:00 时分
+                     * 
+                     */
+                    std::string GetScanEndTime() const;
+
+                    /**
+                     * 判断参数 ScanEndTime 是否已赋值
+                     * @return ScanEndTime 是否已赋值
+                     * 
+                     */
+                    bool ScanEndTimeHasBeenSet() const;
 
                 private:
 
@@ -204,6 +246,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_images;
                     bool m_imagesHasBeenSet;
+
+                    /**
+                     * 镜像是否存在运行中的容器
+                     */
+                    bool m_containerRunning;
+                    bool m_containerRunningHasBeenSet;
+
+                    /**
+                     * 扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
+                     */
+                    uint64_t m_scanScope;
+                    bool m_scanScopeHasBeenSet;
+
+                    /**
+                     * 扫描结束时间 02:00 时分
+                     */
+                    std::string m_scanEndTime;
+                    bool m_scanEndTimeHasBeenSet;
 
                 };
             }

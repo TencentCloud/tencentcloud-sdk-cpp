@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版id
+                     * 获取模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateId 模版id
+                     * @return TemplateId 模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模版id
+                     * 设置模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateId 模版id
+                     * @param _templateId 模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模版名称
+                     * 获取模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateName 模版名称
+                     * @return TemplateName 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模版名称
+                     * 设置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateName 模版名称
+                     * @param _templateName 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版id
+                     * 模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模版名称
+                     * 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateName;

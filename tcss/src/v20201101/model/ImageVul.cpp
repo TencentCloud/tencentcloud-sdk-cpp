@@ -40,7 +40,8 @@ ImageVul::ImageVul() :
     m_tagHasBeenSet(false),
     m_componentHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_attackLevelHasBeenSet(false)
+    m_attackLevelHasBeenSet(false),
+    m_layerInfosHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,26 @@ CoreInternalOutcome ImageVul::Deserialize(const rapidjson::Value &value)
         m_attackLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("LayerInfos") && !value["LayerInfos"].IsNull())
+    {
+        if (!value["LayerInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageVul.LayerInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LayerInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ImageVulLayerInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_layerInfos.push_back(item);
+        }
+        m_layerInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -439,6 +460,21 @@ void ImageVul::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AttackLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_attackLevel, allocator);
+    }
+
+    if (m_layerInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LayerInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_layerInfos.begin(); itr != m_layerInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -762,5 +798,21 @@ void ImageVul::SetAttackLevel(const int64_t& _attackLevel)
 bool ImageVul::AttackLevelHasBeenSet() const
 {
     return m_attackLevelHasBeenSet;
+}
+
+vector<ImageVulLayerInfo> ImageVul::GetLayerInfos() const
+{
+    return m_layerInfos;
+}
+
+void ImageVul::SetLayerInfos(const vector<ImageVulLayerInfo>& _layerInfos)
+{
+    m_layerInfos = _layerInfos;
+    m_layerInfosHasBeenSet = true;
+}
+
+bool ImageVul::LayerInfosHasBeenSet() const
+{
+    return m_layerInfosHasBeenSet;
 }
 

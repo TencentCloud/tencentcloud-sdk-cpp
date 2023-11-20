@@ -26,7 +26,9 @@ KongTarget::KongTarget() :
     m_weightHasBeenSet(false),
     m_healthHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_cvmInstanceIdHasBeenSet(false),
+    m_cvmInstanceNameHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome KongTarget::Deserialize(const rapidjson::Value &value)
         m_sourceHasBeenSet = true;
     }
 
+    if (value.HasMember("CvmInstanceId") && !value["CvmInstanceId"].IsNull())
+    {
+        if (!value["CvmInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongTarget.CvmInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cvmInstanceId = string(value["CvmInstanceId"].GetString());
+        m_cvmInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CvmInstanceName") && !value["CvmInstanceName"].IsNull())
+    {
+        if (!value["CvmInstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongTarget.CvmInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cvmInstanceName = string(value["CvmInstanceName"].GetString());
+        m_cvmInstanceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void KongTarget::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cvmInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvmInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cvmInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cvmInstanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvmInstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cvmInstanceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void KongTarget::SetSource(const string& _source)
 bool KongTarget::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+string KongTarget::GetCvmInstanceId() const
+{
+    return m_cvmInstanceId;
+}
+
+void KongTarget::SetCvmInstanceId(const string& _cvmInstanceId)
+{
+    m_cvmInstanceId = _cvmInstanceId;
+    m_cvmInstanceIdHasBeenSet = true;
+}
+
+bool KongTarget::CvmInstanceIdHasBeenSet() const
+{
+    return m_cvmInstanceIdHasBeenSet;
+}
+
+string KongTarget::GetCvmInstanceName() const
+{
+    return m_cvmInstanceName;
+}
+
+void KongTarget::SetCvmInstanceName(const string& _cvmInstanceName)
+{
+    m_cvmInstanceName = _cvmInstanceName;
+    m_cvmInstanceNameHasBeenSet = true;
+}
+
+bool KongTarget::CvmInstanceNameHasBeenSet() const
+{
+    return m_cvmInstanceNameHasBeenSet;
 }
 

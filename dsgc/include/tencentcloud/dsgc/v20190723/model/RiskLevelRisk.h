@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool RiskLevelDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取引用的分类分级模版
+                     * 获取引用的分类分级模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdentifyComplianceName 引用的分类分级模版
+                     * @return IdentifyComplianceName 引用的分类分级模板
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentifyComplianceName() const;
 
                     /**
-                     * 设置引用的分类分级模版
+                     * 设置引用的分类分级模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _identifyComplianceName 引用的分类分级模版
+                     * @param _identifyComplianceName 引用的分类分级模板
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_riskLevelDescriptionHasBeenSet;
 
                     /**
-                     * 引用的分类分级模版
+                     * 引用的分类分级模板
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identifyComplianceName;

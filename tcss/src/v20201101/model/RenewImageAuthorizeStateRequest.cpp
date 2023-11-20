@@ -24,7 +24,9 @@ using namespace std;
 
 RenewImageAuthorizeStateRequest::RenewImageAuthorizeStateRequest() :
     m_allImagesHasBeenSet(false),
-    m_imageIdsHasBeenSet(false)
+    m_imageIdsHasBeenSet(false),
+    m_needScanHasBeenSet(false),
+    m_scanTypeHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,27 @@ string RenewImageAuthorizeStateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_imageIds.begin(); itr != m_imageIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_needScanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedScan";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needScan, allocator);
+    }
+
+    if (m_scanTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_scanType.begin(); itr != m_scanType.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -94,6 +117,38 @@ void RenewImageAuthorizeStateRequest::SetImageIds(const vector<string>& _imageId
 bool RenewImageAuthorizeStateRequest::ImageIdsHasBeenSet() const
 {
     return m_imageIdsHasBeenSet;
+}
+
+bool RenewImageAuthorizeStateRequest::GetNeedScan() const
+{
+    return m_needScan;
+}
+
+void RenewImageAuthorizeStateRequest::SetNeedScan(const bool& _needScan)
+{
+    m_needScan = _needScan;
+    m_needScanHasBeenSet = true;
+}
+
+bool RenewImageAuthorizeStateRequest::NeedScanHasBeenSet() const
+{
+    return m_needScanHasBeenSet;
+}
+
+vector<string> RenewImageAuthorizeStateRequest::GetScanType() const
+{
+    return m_scanType;
+}
+
+void RenewImageAuthorizeStateRequest::SetScanType(const vector<string>& _scanType)
+{
+    m_scanType = _scanType;
+    m_scanTypeHasBeenSet = true;
+}
+
+bool RenewImageAuthorizeStateRequest::ScanTypeHasBeenSet() const
+{
+    return m_scanTypeHasBeenSet;
 }
 
 

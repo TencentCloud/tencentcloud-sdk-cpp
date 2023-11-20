@@ -615,18 +615,18 @@ RecipientId参数获取：
                     bool JumpUrlHasBeenSet() const;
 
                     /**
-                     * 获取可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。
+                     * 获取可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人、是否为动态补充签署人等。
 详细操作可以参考开发者中心的ApproverOption结构体。
-                     * @return ApproverOption 可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。
+                     * @return ApproverOption 可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人、是否为动态补充签署人等。
 详细操作可以参考开发者中心的ApproverOption结构体。
                      * 
                      */
                     ApproverOption GetApproverOption() const;
 
                     /**
-                     * 设置可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。
+                     * 设置可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人、是否为动态补充签署人等。
 详细操作可以参考开发者中心的ApproverOption结构体。
-                     * @param _approverOption 可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。
+                     * @param _approverOption 可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人、是否为动态补充签署人等。
 详细操作可以参考开发者中心的ApproverOption结构体。
                      * 
                      */
@@ -1020,7 +1020,7 @@ RecipientId参数获取：
                     bool m_jumpUrlHasBeenSet;
 
                     /**
-                     * 可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。
+                     * 可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人、是否为动态补充签署人等。
 详细操作可以参考开发者中心的ApproverOption结构体。
                      */
                     ApproverOption m_approverOption;

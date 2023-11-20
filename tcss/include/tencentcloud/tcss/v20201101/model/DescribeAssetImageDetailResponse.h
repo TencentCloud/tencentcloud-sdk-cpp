@@ -72,6 +72,20 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
+                     * 获取镜像摘要
+                     * @return ImageDigest 镜像摘要
+                     * 
+                     */
+                    std::string GetImageDigest() const;
+
+                    /**
+                     * 判断参数 ImageDigest 是否已赋值
+                     * @return ImageDigest 是否已赋值
+                     * 
+                     */
+                    bool ImageDigestHasBeenSet() const;
+
+                    /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
                      * 
@@ -490,6 +504,12 @@ namespace TencentCloud
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
+
+                    /**
+                     * 镜像摘要
+                     */
+                    std::string m_imageDigest;
+                    bool m_imageDigestHasBeenSet;
 
                     /**
                      * 创建时间

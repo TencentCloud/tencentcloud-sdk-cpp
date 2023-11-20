@@ -31,7 +31,8 @@ DescribeClusterEndpointsResponse::DescribeClusterEndpointsResponse() :
     m_clusterExternalACLHasBeenSet(false),
     m_clusterExternalDomainHasBeenSet(false),
     m_clusterIntranetDomainHasBeenSet(false),
-    m_securityGroupHasBeenSet(false)
+    m_securityGroupHasBeenSet(false),
+    m_clusterIntranetSubnetIdHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,16 @@ CoreInternalOutcome DescribeClusterEndpointsResponse::Deserialize(const string &
         m_securityGroupHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClusterIntranetSubnetId") && !rsp["ClusterIntranetSubnetId"].IsNull())
+    {
+        if (!rsp["ClusterIntranetSubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterIntranetSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterIntranetSubnetId = string(rsp["ClusterIntranetSubnetId"].GetString());
+        m_clusterIntranetSubnetIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -229,6 +240,14 @@ string DescribeClusterEndpointsResponse::ToJsonString() const
         string key = "SecurityGroup";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_securityGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIntranetSubnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIntranetSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterIntranetSubnetId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -321,6 +340,16 @@ string DescribeClusterEndpointsResponse::GetSecurityGroup() const
 bool DescribeClusterEndpointsResponse::SecurityGroupHasBeenSet() const
 {
     return m_securityGroupHasBeenSet;
+}
+
+string DescribeClusterEndpointsResponse::GetClusterIntranetSubnetId() const
+{
+    return m_clusterIntranetSubnetId;
+}
+
+bool DescribeClusterEndpointsResponse::ClusterIntranetSubnetIdHasBeenSet() const
+{
+    return m_clusterIntranetSubnetIdHasBeenSet;
 }
 
 

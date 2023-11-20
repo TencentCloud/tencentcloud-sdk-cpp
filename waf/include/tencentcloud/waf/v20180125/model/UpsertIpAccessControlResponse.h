@@ -75,6 +75,22 @@ namespace TencentCloud
                      */
                     bool FailedCountHasBeenSet() const;
 
+                    /**
+                     * 获取添加或修改的IP数据Id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ids 添加或修改的IP数据Id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetIds() const;
+
+                    /**
+                     * 判断参数 Ids 是否已赋值
+                     * @return Ids 是否已赋值
+                     * 
+                     */
+                    bool IdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -90,6 +106,13 @@ namespace TencentCloud
                      */
                     int64_t m_failedCount;
                     bool m_failedCountHasBeenSet;
+
+                    /**
+                     * 添加或修改的IP数据Id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_ids;
+                    bool m_idsHasBeenSet;
 
                 };
             }

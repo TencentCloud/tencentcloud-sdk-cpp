@@ -127,6 +127,20 @@ namespace TencentCloud
                      */
                     bool ApiProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取限流模块开关
+                     * @return RateLimit 限流模块开关
+                     * 
+                     */
+                    uint64_t GetRateLimit() const;
+
+                    /**
+                     * 判断参数 RateLimit 是否已赋值
+                     * @return RateLimit 是否已赋值
+                     * 
+                     */
+                    bool RateLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +178,12 @@ namespace TencentCloud
                      */
                     uint64_t m_apiProtection;
                     bool m_apiProtectionHasBeenSet;
+
+                    /**
+                     * 限流模块开关
+                     */
+                    uint64_t m_rateLimit;
+                    bool m_rateLimitHasBeenSet;
 
                 };
             }

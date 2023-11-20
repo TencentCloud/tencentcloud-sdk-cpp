@@ -468,6 +468,31 @@ namespace TencentCloud
                      */
                     bool ACLHasBeenSet() const;
 
+                    /**
+                     * 获取小程序 qps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WxAccess 小程序 qps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetWxAccess() const;
+
+                    /**
+                     * 设置小程序 qps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _wxAccess 小程序 qps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWxAccess(const uint64_t& _wxAccess);
+
+                    /**
+                     * 判断参数 WxAccess 是否已赋值
+                     * @return WxAccess 是否已赋值
+                     * 
+                     */
+                    bool WxAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -588,6 +613,13 @@ namespace TencentCloud
                      */
                     uint64_t m_aCL;
                     bool m_aCLHasBeenSet;
+
+                    /**
+                     * 小程序 qps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_wxAccess;
+                    bool m_wxAccessHasBeenSet;
 
                 };
             }

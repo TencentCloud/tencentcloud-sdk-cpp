@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取评估模版Id
-                     * @return TemplateId 评估模版Id
+                     * 获取评估模板Id
+                     * @return TemplateId 评估模板Id
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置评估模版Id
-                     * @param _templateId 评估模版Id
+                     * 设置评估模板Id
+                     * @param _templateId 评估模板Id
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取评估模版名称
-                     * @return TemplateName 评估模版名称
+                     * 获取评估模板名称
+                     * @return TemplateName 评估模板名称
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置评估模版名称
-                     * @param _templateName 评估模版名称
+                     * 设置评估模板名称
+                     * @param _templateName 评估模板名称
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -139,15 +139,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模版来源，内置/用户自定，取值（system，user）
-                     * @return Source 模版来源，内置/用户自定，取值（system，user）
+                     * 获取模板来源，内置/用户自定，取值（system，user）
+                     * @return Source 模板来源，内置/用户自定，取值（system，user）
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置模版来源，内置/用户自定，取值（system，user）
-                     * @param _source 模版来源，内置/用户自定，取值（system，user）
+                     * 设置模板来源，内置/用户自定，取值（system，user）
+                     * @param _source 模板来源，内置/用户自定，取值（system，user）
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取模版类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等
-                     * @return UseType 模版类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等
+                     * 获取模板类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等
+                     * @return UseType 模板类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等
                      * 
                      */
                     std::string GetUseType() const;
 
                     /**
-                     * 设置模版类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等
-                     * @param _useType 模版类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等
+                     * 设置模板类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等
+                     * @param _useType 模板类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等
                      * 
                      */
                     void SetUseType(const std::string& _useType);
@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool UseTypeHasBeenSet() const;
 
                     /**
-                     * 获取评估模版创建时间
-                     * @return CreatedTime 评估模版创建时间
+                     * 获取评估模板创建时间
+                     * @return CreatedTime 评估模板创建时间
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置评估模版创建时间
-                     * @param _createdTime 评估模版创建时间
+                     * 设置评估模板创建时间
+                     * @param _createdTime 评估模板创建时间
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -202,15 +202,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取模版关联的评估项数量
-                     * @return ControlItemCount 模版关联的评估项数量
+                     * 获取模板关联的评估项数量
+                     * @return ControlItemCount 模板关联的评估项数量
                      * 
                      */
                     int64_t GetControlItemCount() const;
 
                     /**
-                     * 设置模版关联的评估项数量
-                     * @param _controlItemCount 模版关联的评估项数量
+                     * 设置模板关联的评估项数量
+                     * @param _controlItemCount 模板关联的评估项数量
                      * 
                      */
                     void SetControlItemCount(const int64_t& _controlItemCount);
@@ -223,15 +223,15 @@ namespace TencentCloud
                     bool ControlItemCountHasBeenSet() const;
 
                     /**
-                     * 获取模版已启用的评估项数量
-                     * @return AppliedItemCount 模版已启用的评估项数量
+                     * 获取模板已启用的评估项数量
+                     * @return AppliedItemCount 模板已启用的评估项数量
                      * 
                      */
                     int64_t GetAppliedItemCount() const;
 
                     /**
-                     * 设置模版已启用的评估项数量
-                     * @param _appliedItemCount 模版已启用的评估项数量
+                     * 设置模板已启用的评估项数量
+                     * @param _appliedItemCount 模板已启用的评估项数量
                      * 
                      */
                     void SetAppliedItemCount(const int64_t& _appliedItemCount);
@@ -244,15 +244,15 @@ namespace TencentCloud
                     bool AppliedItemCountHasBeenSet() const;
 
                     /**
-                     * 获取模版启用状态，草稿/已启用，取值draft / launched
-                     * @return Status 模版启用状态，草稿/已启用，取值draft / launched
+                     * 获取模板启用状态，草稿/已启用，取值draft / launched
+                     * @return Status 模板启用状态，草稿/已启用，取值draft / launched
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置模版启用状态，草稿/已启用，取值draft / launched
-                     * @param _status 模版启用状态，草稿/已启用，取值draft / launched
+                     * 设置模板启用状态，草稿/已启用，取值draft / launched
+                     * @param _status 模板启用状态，草稿/已启用，取值draft / launched
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -349,13 +349,13 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 评估模版Id
+                     * 评估模板Id
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 评估模版名称
+                     * 评估模板名称
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
@@ -368,37 +368,37 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 模版来源，内置/用户自定，取值（system，user）
+                     * 模板来源，内置/用户自定，取值（system，user）
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 模版类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等
+                     * 模板类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等
                      */
                     std::string m_useType;
                     bool m_useTypeHasBeenSet;
 
                     /**
-                     * 评估模版创建时间
+                     * 评估模板创建时间
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 模版关联的评估项数量
+                     * 模板关联的评估项数量
                      */
                     int64_t m_controlItemCount;
                     bool m_controlItemCountHasBeenSet;
 
                     /**
-                     * 模版已启用的评估项数量
+                     * 模板已启用的评估项数量
                      */
                     int64_t m_appliedItemCount;
                     bool m_appliedItemCountHasBeenSet;
 
                     /**
-                     * 模版启用状态，草稿/已启用，取值draft / launched
+                     * 模板启用状态，草稿/已启用，取值draft / launched
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

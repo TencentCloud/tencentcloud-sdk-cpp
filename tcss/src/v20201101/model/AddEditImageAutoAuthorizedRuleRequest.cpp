@@ -29,7 +29,9 @@ AddEditImageAutoAuthorizedRuleRequest::AddEditImageAutoAuthorizedRuleRequest() :
     m_hostIdSetHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_hostIdFiltersHasBeenSet(false),
-    m_excludeHostIdSetHasBeenSet(false)
+    m_excludeHostIdSetHasBeenSet(false),
+    m_autoScanEnabledHasBeenSet(false),
+    m_scanTypeHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,27 @@ string AddEditImageAutoAuthorizedRuleRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_excludeHostIdSet.begin(); itr != m_excludeHostIdSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_autoScanEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScanEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoScanEnabled, allocator);
+    }
+
+    if (m_scanTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_scanType.begin(); itr != m_scanType.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -231,6 +254,38 @@ void AddEditImageAutoAuthorizedRuleRequest::SetExcludeHostIdSet(const vector<str
 bool AddEditImageAutoAuthorizedRuleRequest::ExcludeHostIdSetHasBeenSet() const
 {
     return m_excludeHostIdSetHasBeenSet;
+}
+
+int64_t AddEditImageAutoAuthorizedRuleRequest::GetAutoScanEnabled() const
+{
+    return m_autoScanEnabled;
+}
+
+void AddEditImageAutoAuthorizedRuleRequest::SetAutoScanEnabled(const int64_t& _autoScanEnabled)
+{
+    m_autoScanEnabled = _autoScanEnabled;
+    m_autoScanEnabledHasBeenSet = true;
+}
+
+bool AddEditImageAutoAuthorizedRuleRequest::AutoScanEnabledHasBeenSet() const
+{
+    return m_autoScanEnabledHasBeenSet;
+}
+
+vector<string> AddEditImageAutoAuthorizedRuleRequest::GetScanType() const
+{
+    return m_scanType;
+}
+
+void AddEditImageAutoAuthorizedRuleRequest::SetScanType(const vector<string>& _scanType)
+{
+    m_scanType = _scanType;
+    m_scanTypeHasBeenSet = true;
+}
+
+bool AddEditImageAutoAuthorizedRuleRequest::ScanTypeHasBeenSet() const
+{
+    return m_scanTypeHasBeenSet;
 }
 
 

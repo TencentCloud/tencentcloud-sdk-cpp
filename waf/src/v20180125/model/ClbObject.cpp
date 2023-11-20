@@ -35,7 +35,9 @@ ClbObject::ClbObject() :
     m_vpcHasBeenSet(false),
     m_instanceLevelHasBeenSet(false),
     m_postCLSStatusHasBeenSet(false),
-    m_postCKafkaStatusHasBeenSet(false)
+    m_postCKafkaStatusHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -203,6 +205,26 @@ CoreInternalOutcome ClbObject::Deserialize(const rapidjson::Value &value)
         m_postCKafkaStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -343,6 +365,22 @@ void ClbObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "PostCKafkaStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_postCKafkaStatus, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -586,5 +624,37 @@ void ClbObject::SetPostCKafkaStatus(const int64_t& _postCKafkaStatus)
 bool ClbObject::PostCKafkaStatusHasBeenSet() const
 {
     return m_postCKafkaStatusHasBeenSet;
+}
+
+string ClbObject::GetType() const
+{
+    return m_type;
+}
+
+void ClbObject::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool ClbObject::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string ClbObject::GetRegion() const
+{
+    return m_region;
+}
+
+void ClbObject::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool ClbObject::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

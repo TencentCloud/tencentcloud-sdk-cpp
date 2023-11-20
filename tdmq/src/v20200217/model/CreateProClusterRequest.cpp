@@ -28,10 +28,10 @@ CreateProClusterRequest::CreateProClusterRequest() :
     m_storageSizeHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_vpcsHasBeenSet(false)
+    m_vpcsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -82,21 +82,6 @@ string CreateProClusterRequest::ToJsonString() const
         d.AddMember(iKey, m_timeSpan, allocator);
     }
 
-    if (m_tagsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Tags";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_clusterNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -120,6 +105,21 @@ string CreateProClusterRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_vpcs.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -210,22 +210,6 @@ bool CreateProClusterRequest::TimeSpanHasBeenSet() const
     return m_timeSpanHasBeenSet;
 }
 
-vector<Tag> CreateProClusterRequest::GetTags() const
-{
-    return m_tags;
-}
-
-void CreateProClusterRequest::SetTags(const vector<Tag>& _tags)
-{
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
-}
-
-bool CreateProClusterRequest::TagsHasBeenSet() const
-{
-    return m_tagsHasBeenSet;
-}
-
 string CreateProClusterRequest::GetClusterName() const
 {
     return m_clusterName;
@@ -272,6 +256,22 @@ void CreateProClusterRequest::SetVpcs(const VpcInfo& _vpcs)
 bool CreateProClusterRequest::VpcsHasBeenSet() const
 {
     return m_vpcsHasBeenSet;
+}
+
+vector<Tag> CreateProClusterRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateProClusterRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateProClusterRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

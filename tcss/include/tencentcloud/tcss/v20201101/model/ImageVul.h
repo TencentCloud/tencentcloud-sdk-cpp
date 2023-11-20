@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcss/v20201101/model/ComponentsInfo.h>
+#include <tencentcloud/tcss/v20201101/model/ImageVulLayerInfo.h>
 
 
 namespace TencentCloud
@@ -547,6 +548,31 @@ namespace TencentCloud
                      */
                     bool AttackLevelHasBeenSet() const;
 
+                    /**
+                     * 获取镜像层信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LayerInfos 镜像层信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ImageVulLayerInfo> GetLayerInfos() const;
+
+                    /**
+                     * 设置镜像层信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _layerInfos 镜像层信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLayerInfos(const std::vector<ImageVulLayerInfo>& _layerInfos);
+
+                    /**
+                     * 判断参数 LayerInfos 是否已赋值
+                     * @return LayerInfos 是否已赋值
+                     * 
+                     */
+                    bool LayerInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -688,6 +714,13 @@ namespace TencentCloud
                      */
                     int64_t m_attackLevel;
                     bool m_attackLevelHasBeenSet;
+
+                    /**
+                     * 镜像层信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ImageVulLayerInfo> m_layerInfos;
+                    bool m_layerInfosHasBeenSet;
 
                 };
             }

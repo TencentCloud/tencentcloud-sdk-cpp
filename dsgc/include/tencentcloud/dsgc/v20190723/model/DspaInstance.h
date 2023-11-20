@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool CosTotalQuotaHasBeenSet() const;
 
                     /**
-                     * 获取COS配额单位，比如TB。
-                     * @return CosQuotaUnit COS配额单位，比如TB。
+                     * 获取COS配额单位，例如:TB。
+                     * @return CosQuotaUnit COS配额单位，例如:TB。
                      * 
                      */
                     std::string GetCosQuotaUnit() const;
 
                     /**
-                     * 设置COS配额单位，比如TB。
-                     * @param _cosQuotaUnit COS配额单位，比如TB。
+                     * 设置COS配额单位，例如:TB。
+                     * @param _cosQuotaUnit COS配额单位，例如:TB。
                      * 
                      */
                     void SetCosQuotaUnit(const std::string& _cosQuotaUnit);
@@ -450,7 +450,7 @@ namespace TencentCloud
                     bool m_cosTotalQuotaHasBeenSet;
 
                     /**
-                     * COS配额单位，比如TB。
+                     * COS配额单位，例如:TB。
                      */
                     std::string m_cosQuotaUnit;
                     bool m_cosQuotaUnitHasBeenSet;

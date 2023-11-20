@@ -46,21 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
                      * @return All 是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
-                     * 
+                     * @deprecated
                      */
                     bool GetAll() const;
 
                     /**
                      * 设置是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
                      * @param _all 是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。
-                     * 
+                     * @deprecated
                      */
                     void SetAll(const bool& _all);
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AllHasBeenSet() const;
 
@@ -190,6 +190,69 @@ namespace TencentCloud
                      */
                     bool ExcludeImageIdsHasBeenSet() const;
 
+                    /**
+                     * 获取镜像是否存在运行中的容器
+                     * @return ContainerRunning 镜像是否存在运行中的容器
+                     * 
+                     */
+                    bool GetContainerRunning() const;
+
+                    /**
+                     * 设置镜像是否存在运行中的容器
+                     * @param _containerRunning 镜像是否存在运行中的容器
+                     * 
+                     */
+                    void SetContainerRunning(const bool& _containerRunning);
+
+                    /**
+                     * 判断参数 ContainerRunning 是否已赋值
+                     * @return ContainerRunning 是否已赋值
+                     * 
+                     */
+                    bool ContainerRunningHasBeenSet() const;
+
+                    /**
+                     * 获取扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
+                     * @return ScanScope 扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
+                     * 
+                     */
+                    uint64_t GetScanScope() const;
+
+                    /**
+                     * 设置扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
+                     * @param _scanScope 扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
+                     * 
+                     */
+                    void SetScanScope(const uint64_t& _scanScope);
+
+                    /**
+                     * 判断参数 ScanScope 是否已赋值
+                     * @return ScanScope 是否已赋值
+                     * 
+                     */
+                    bool ScanScopeHasBeenSet() const;
+
+                    /**
+                     * 获取任务超时时长单位秒，默认1小时
+                     * @return Timeout 任务超时时长单位秒，默认1小时
+                     * 
+                     */
+                    uint64_t GetTimeout() const;
+
+                    /**
+                     * 设置任务超时时长单位秒，默认1小时
+                     * @param _timeout 任务超时时长单位秒，默认1小时
+                     * 
+                     */
+                    void SetTimeout(const uint64_t& _timeout);
+
+                    /**
+                     * 判断参数 Timeout 是否已赋值
+                     * @return Timeout 是否已赋值
+                     * 
+                     */
+                    bool TimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +296,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_excludeImageIds;
                     bool m_excludeImageIdsHasBeenSet;
+
+                    /**
+                     * 镜像是否存在运行中的容器
+                     */
+                    bool m_containerRunning;
+                    bool m_containerRunningHasBeenSet;
+
+                    /**
+                     * 扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
+                     */
+                    uint64_t m_scanScope;
+                    bool m_scanScopeHasBeenSet;
+
+                    /**
+                     * 任务超时时长单位秒，默认1小时
+                     */
+                    uint64_t m_timeout;
+                    bool m_timeoutHasBeenSet;
 
                 };
             }

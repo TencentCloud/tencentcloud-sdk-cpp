@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool RiskDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取评估模版Id
-                     * @return TemplateId 评估模版Id
+                     * 获取评估模板Id
+                     * @return TemplateId 评估模板Id
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置评估模版Id
-                     * @param _templateId 评估模版Id
+                     * 设置评估模板Id
+                     * @param _templateId 评估模板Id
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取评估模版名称
-                     * @return TemplateName 评估模版名称
+                     * 获取评估模板名称
+                     * @return TemplateName 评估模板名称
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置评估模版名称
-                     * @param _templateName 评估模版名称
+                     * 设置评估模板名称
+                     * @param _templateName 评估模板名称
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -515,13 +515,13 @@ namespace TencentCloud
                     bool m_riskDescriptionHasBeenSet;
 
                     /**
-                     * 评估模版Id
+                     * 评估模板Id
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 评估模版名称
+                     * 评估模板名称
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;

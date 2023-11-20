@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
-                     * @return InstanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+                     * 获取一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+                     * @return InstanceIds 一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
-                     * @param _instanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+                     * 设置一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+                     * @param _instanceIds 一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取是否续费弹性数据盘。取值范围：<br><li>TRUE：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>FALSE：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：TRUE。
-                     * @return RenewPortableDataDisk 是否续费弹性数据盘。取值范围：<br><li>TRUE：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>FALSE：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：TRUE。
+                     * 获取是否续费弹性数据盘。取值范围：<br><li>true：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>false：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：true。
+                     * @return RenewPortableDataDisk 是否续费弹性数据盘。取值范围：<br><li>true：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>false：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：true。
                      * 
                      */
                     bool GetRenewPortableDataDisk() const;
 
                     /**
-                     * 设置是否续费弹性数据盘。取值范围：<br><li>TRUE：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>FALSE：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：TRUE。
-                     * @param _renewPortableDataDisk 是否续费弹性数据盘。取值范围：<br><li>TRUE：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>FALSE：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：TRUE。
+                     * 设置是否续费弹性数据盘。取值范围：<br><li>true：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>false：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：true。
+                     * @param _renewPortableDataDisk 是否续费弹性数据盘。取值范围：<br><li>true：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>false：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：true。
                      * 
                      */
                     void SetRenewPortableDataDisk(const bool& _renewPortableDataDisk);
@@ -113,7 +113,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+                     * 一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -126,7 +126,7 @@ namespace TencentCloud
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * 是否续费弹性数据盘。取值范围：<br><li>TRUE：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>FALSE：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：TRUE。
+                     * 是否续费弹性数据盘。取值范围：<br><li>true：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>false：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：true。
                      */
                     bool m_renewPortableDataDisk;
                     bool m_renewPortableDataDiskHasBeenSet;

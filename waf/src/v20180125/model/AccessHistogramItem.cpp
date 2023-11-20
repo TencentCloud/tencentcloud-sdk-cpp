@@ -22,7 +22,8 @@ using namespace std;
 
 AccessHistogramItem::AccessHistogramItem() :
     m_bTimeHasBeenSet(false),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_beginTimeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome AccessHistogramItem::Deserialize(const rapidjson::Value &val
         m_countHasBeenSet = true;
     }
 
+    if (value.HasMember("BeginTime") && !value["BeginTime"].IsNull())
+    {
+        if (!value["BeginTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessHistogramItem.BeginTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_beginTime = value["BeginTime"].GetInt64();
+        m_beginTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AccessHistogramItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_beginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_beginTime, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void AccessHistogramItem::SetCount(const int64_t& _count)
 bool AccessHistogramItem::CountHasBeenSet() const
 {
     return m_countHasBeenSet;
+}
+
+int64_t AccessHistogramItem::GetBeginTime() const
+{
+    return m_beginTime;
+}
+
+void AccessHistogramItem::SetBeginTime(const int64_t& _beginTime)
+{
+    m_beginTime = _beginTime;
+    m_beginTimeHasBeenSet = true;
+}
+
+bool AccessHistogramItem::BeginTimeHasBeenSet() const
+{
+    return m_beginTimeHasBeenSet;
 }
 

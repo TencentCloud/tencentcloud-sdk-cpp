@@ -190,6 +190,48 @@ namespace TencentCloud
                      */
                     bool ExcludeHostIdSetHasBeenSet() const;
 
+                    /**
+                     * 获取自动扫描开关
+                     * @return AutoScanEnabled 自动扫描开关
+                     * 
+                     */
+                    int64_t GetAutoScanEnabled() const;
+
+                    /**
+                     * 设置自动扫描开关
+                     * @param _autoScanEnabled 自动扫描开关
+                     * 
+                     */
+                    void SetAutoScanEnabled(const int64_t& _autoScanEnabled);
+
+                    /**
+                     * 判断参数 AutoScanEnabled 是否已赋值
+                     * @return AutoScanEnabled 是否已赋值
+                     * 
+                     */
+                    bool AutoScanEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取自动扫描范围
+                     * @return ScanType 自动扫描范围
+                     * 
+                     */
+                    std::vector<std::string> GetScanType() const;
+
+                    /**
+                     * 设置自动扫描范围
+                     * @param _scanType 自动扫描范围
+                     * 
+                     */
+                    void SetScanType(const std::vector<std::string>& _scanType);
+
+                    /**
+                     * 判断参数 ScanType 是否已赋值
+                     * @return ScanType 是否已赋值
+                     * 
+                     */
+                    bool ScanTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +275,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_excludeHostIdSet;
                     bool m_excludeHostIdSetHasBeenSet;
+
+                    /**
+                     * 自动扫描开关
+                     */
+                    int64_t m_autoScanEnabled;
+                    bool m_autoScanEnabledHasBeenSet;
+
+                    /**
+                     * 自动扫描范围
+                     */
+                    std::vector<std::string> m_scanType;
+                    bool m_scanTypeHasBeenSet;
 
                 };
             }

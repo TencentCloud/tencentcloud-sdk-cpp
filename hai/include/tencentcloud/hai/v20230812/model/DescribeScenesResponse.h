@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取scene info
+                     * 获取场景详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SceneSet scene info
+                     * @return SceneSet 场景详情
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * scene info
+                     * 场景详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SceneInfo> m_sceneSet;

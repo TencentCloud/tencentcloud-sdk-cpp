@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool RiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取关联模版个数
+                     * 获取关联模板个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReferTemplateCount 关联模版个数
+                     * @return ReferTemplateCount 关联模板个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReferTemplateCount() const;
 
                     /**
-                     * 设置关联模版个数
+                     * 设置关联模板个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _referTemplateCount 关联模版个数
+                     * @param _referTemplateCount 关联模板个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,18 +248,18 @@ namespace TencentCloud
                     bool RiskSideHasBeenSet() const;
 
                     /**
-                     * 获取关联模版列表
+                     * 获取关联模板列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReferTemplateList 关联模版列表
+                     * @return ReferTemplateList 关联模板列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TemplateInfo> GetReferTemplateList() const;
 
                     /**
-                     * 设置关联模版列表
+                     * 设置关联模板列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _referTemplateList 关联模版列表
+                     * @param _referTemplateList 关联模板列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -310,7 +310,7 @@ namespace TencentCloud
                     bool m_riskTypeHasBeenSet;
 
                     /**
-                     * 关联模版个数
+                     * 关联模板个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_referTemplateCount;
@@ -331,7 +331,7 @@ namespace TencentCloud
                     bool m_riskSideHasBeenSet;
 
                     /**
-                     * 关联模版列表
+                     * 关联模板列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TemplateInfo> m_referTemplateList;

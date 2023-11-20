@@ -26,6 +26,7 @@ using namespace std;
 DescribeAssetImageDetailResponse::DescribeAssetImageDetailResponse() :
     m_imageIDHasBeenSet(false),
     m_imageNameHasBeenSet(false),
+    m_imageDigestHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_hostCntHasBeenSet(false),
@@ -107,6 +108,16 @@ CoreInternalOutcome DescribeAssetImageDetailResponse::Deserialize(const string &
         }
         m_imageName = string(rsp["ImageName"].GetString());
         m_imageNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ImageDigest") && !rsp["ImageDigest"].IsNull())
+    {
+        if (!rsp["ImageDigest"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageDigest` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageDigest = string(rsp["ImageDigest"].GetString());
+        m_imageDigestHasBeenSet = true;
     }
 
     if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
@@ -395,6 +406,14 @@ string DescribeAssetImageDetailResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_imageName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_imageDigestHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageDigest";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageDigest.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -633,6 +652,16 @@ string DescribeAssetImageDetailResponse::GetImageName() const
 bool DescribeAssetImageDetailResponse::ImageNameHasBeenSet() const
 {
     return m_imageNameHasBeenSet;
+}
+
+string DescribeAssetImageDetailResponse::GetImageDigest() const
+{
+    return m_imageDigest;
+}
+
+bool DescribeAssetImageDetailResponse::ImageDigestHasBeenSet() const
+{
+    return m_imageDigestHasBeenSet;
 }
 
 string DescribeAssetImageDetailResponse::GetCreateTime() const

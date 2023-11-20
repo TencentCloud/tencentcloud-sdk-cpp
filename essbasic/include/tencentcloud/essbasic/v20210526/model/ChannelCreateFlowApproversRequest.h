@@ -157,6 +157,35 @@ namespace TencentCloud
                     bool ApproversHasBeenSet() const;
 
                     /**
+                     * 获取签署人信息补充方式
+
+<ul><li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>
+                     * @return FillApproverType 签署人信息补充方式
+
+<ul><li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>
+                     * 
+                     */
+                    int64_t GetFillApproverType() const;
+
+                    /**
+                     * 设置签署人信息补充方式
+
+<ul><li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>
+                     * @param _fillApproverType 签署人信息补充方式
+
+<ul><li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>
+                     * 
+                     */
+                    void SetFillApproverType(const int64_t& _fillApproverType);
+
+                    /**
+                     * 判断参数 FillApproverType 是否已赋值
+                     * @return FillApproverType 是否已赋值
+                     * 
+                     */
+                    bool FillApproverTypeHasBeenSet() const;
+
+                    /**
                      * 获取操作人信息
                      * @return Operator 操作人信息
                      * 
@@ -176,35 +205,6 @@ namespace TencentCloud
                      * 
                      */
                     bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取签署人信息补充方式
-
-<ul><li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>
-                     * @return FillApproverType 签署人信息补充方式
-
-<ul><li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>
-                     * 
-                     */
-                    int64_t GetFillApproverType() const;
-
-                    /**
-                     * 设置签署人信息补充方式
-
-<ul><li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>
-                     * @param _fillApproverType 签署人信息补充方式
-
-<ul><li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>
-                     * 
-                     */
-                    void SetFillApproverType(const int64_t& _fillApproverType);
-
-                    /**
-                     * 判断参数 FillApproverType 是否已赋值
-                     * @return FillApproverType 是否已赋值
-                     * 
-                     */
-                    bool FillApproverTypeHasBeenSet() const;
 
                 private:
 
@@ -239,18 +239,18 @@ namespace TencentCloud
                     bool m_approversHasBeenSet;
 
                     /**
+                     * 签署人信息补充方式
+
+<ul><li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>
+                     */
+                    int64_t m_fillApproverType;
+                    bool m_fillApproverTypeHasBeenSet;
+
+                    /**
                      * 操作人信息
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
-
-                    /**
-                     * 签署人信息补充方式
-
-<ul><li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>
-                     */
-                    int64_t m_fillApproverType;
-                    bool m_fillApproverTypeHasBeenSet;
 
                 };
             }

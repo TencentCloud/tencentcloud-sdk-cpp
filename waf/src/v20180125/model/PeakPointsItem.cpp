@@ -38,7 +38,8 @@ PeakPointsItem::PeakPointsItem() :
     m_blackIPHasBeenSet(false),
     m_tamperHasBeenSet(false),
     m_leakHasBeenSet(false),
-    m_aCLHasBeenSet(false)
+    m_aCLHasBeenSet(false),
+    m_wxAccessHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome PeakPointsItem::Deserialize(const rapidjson::Value &value)
         m_aCLHasBeenSet = true;
     }
 
+    if (value.HasMember("WxAccess") && !value["WxAccess"].IsNull())
+    {
+        if (!value["WxAccess"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.WxAccess` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wxAccess = value["WxAccess"].GetUint64();
+        m_wxAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void PeakPointsItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ACL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aCL, allocator);
+    }
+
+    if (m_wxAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WxAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wxAccess, allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void PeakPointsItem::SetACL(const uint64_t& _aCL)
 bool PeakPointsItem::ACLHasBeenSet() const
 {
     return m_aCLHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetWxAccess() const
+{
+    return m_wxAccess;
+}
+
+void PeakPointsItem::SetWxAccess(const uint64_t& _wxAccess)
+{
+    m_wxAccess = _wxAccess;
+    m_wxAccessHasBeenSet = true;
+}
+
+bool PeakPointsItem::WxAccessHasBeenSet() const
+{
+    return m_wxAccessHasBeenSet;
 }
 

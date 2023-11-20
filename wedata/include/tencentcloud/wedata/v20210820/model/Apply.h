@@ -310,6 +310,127 @@ namespace TencentCloud
                      */
                     bool ApproveTypeNameHasBeenSet() const;
 
+                    /**
+                     * 获取审批异常或者失败信息
+                     * @return ErrorMessage 审批异常或者失败信息
+                     * 
+                     */
+                    std::string GetErrorMessage() const;
+
+                    /**
+                     * 设置审批异常或者失败信息
+                     * @param _errorMessage 审批异常或者失败信息
+                     * 
+                     */
+                    void SetErrorMessage(const std::string& _errorMessage);
+
+                    /**
+                     * 判断参数 ErrorMessage 是否已赋值
+                     * @return ErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool ErrorMessageHasBeenSet() const;
+
+                    /**
+                     * 获取申请名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplyName 申请名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplyName() const;
+
+                    /**
+                     * 设置申请名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applyName 申请名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplyName(const std::string& _applyName);
+
+                    /**
+                     * 判断参数 ApplyName 是否已赋值
+                     * @return ApplyName 是否已赋值
+                     * 
+                     */
+                    bool ApplyNameHasBeenSet() const;
+
+                    /**
+                     * 获取审批人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApproverId 审批人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApproverId() const;
+
+                    /**
+                     * 设置审批人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _approverId 审批人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApproverId(const std::string& _approverId);
+
+                    /**
+                     * 判断参数 ApproverId 是否已赋值
+                     * @return ApproverId 是否已赋值
+                     * 
+                     */
+                    bool ApproverIdHasBeenSet() const;
+
+                    /**
+                     * 获取审批人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApproverName 审批人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApproverName() const;
+
+                    /**
+                     * 设置审批人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _approverName 审批人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApproverName(const std::string& _approverName);
+
+                    /**
+                     * 判断参数 ApproverName 是否已赋值
+                     * @return ApproverName 是否已赋值
+                     * 
+                     */
+                    bool ApproverNameHasBeenSet() const;
+
+                    /**
+                     * 获取审批所属项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApproveProjectName 审批所属项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApproveProjectName() const;
+
+                    /**
+                     * 设置审批所属项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _approveProjectName 审批所属项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApproveProjectName(const std::string& _approveProjectName);
+
+                    /**
+                     * 判断参数 ApproveProjectName 是否已赋值
+                     * @return ApproveProjectName 是否已赋值
+                     * 
+                     */
+                    bool ApproveProjectNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -386,6 +507,40 @@ namespace TencentCloud
                      */
                     std::string m_approveTypeName;
                     bool m_approveTypeNameHasBeenSet;
+
+                    /**
+                     * 审批异常或者失败信息
+                     */
+                    std::string m_errorMessage;
+                    bool m_errorMessageHasBeenSet;
+
+                    /**
+                     * 申请名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applyName;
+                    bool m_applyNameHasBeenSet;
+
+                    /**
+                     * 审批人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_approverId;
+                    bool m_approverIdHasBeenSet;
+
+                    /**
+                     * 审批人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_approverName;
+                    bool m_approverNameHasBeenSet;
+
+                    /**
+                     * 审批所属项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_approveProjectName;
+                    bool m_approveProjectNameHasBeenSet;
 
                 };
             }

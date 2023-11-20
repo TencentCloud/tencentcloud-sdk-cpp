@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取["sc-abcdefgh"]
-                     * @return SceneIds ["sc-abcdefgh"]
+                     * 获取场景id列表
+                     * @return SceneIds 场景id列表
                      * 
                      */
                     std::vector<std::string> GetSceneIds() const;
 
                     /**
-                     * 设置["sc-abcdefgh"]
-                     * @param _sceneIds ["sc-abcdefgh"]
+                     * 设置场景id列表
+                     * @param _sceneIds 场景id列表
                      * 
                      */
                     void SetSceneIds(const std::vector<std::string>& _sceneIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ["sc-abcdefgh"]
+                     * 场景id列表
                      */
                     std::vector<std::string> m_sceneIds;
                     bool m_sceneIdsHasBeenSet;

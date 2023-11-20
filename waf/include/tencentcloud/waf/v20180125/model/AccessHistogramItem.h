@@ -49,21 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取时间，单位ms
                      * @return BTime 时间，单位ms
-                     * 
+                     * @deprecated
                      */
                     int64_t GetBTime() const;
 
                     /**
                      * 设置时间，单位ms
                      * @param _bTime 时间，单位ms
-                     * 
+                     * @deprecated
                      */
                     void SetBTime(const int64_t& _bTime);
 
                     /**
                      * 判断参数 BTime 是否已赋值
                      * @return BTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BTimeHasBeenSet() const;
 
@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool CountHasBeenSet() const;
 
+                    /**
+                     * 获取时间，单位ms
+                     * @return BeginTime 时间，单位ms
+                     * 
+                     */
+                    int64_t GetBeginTime() const;
+
+                    /**
+                     * 设置时间，单位ms
+                     * @param _beginTime 时间，单位ms
+                     * 
+                     */
+                    void SetBeginTime(const int64_t& _beginTime);
+
+                    /**
+                     * 判断参数 BeginTime 是否已赋值
+                     * @return BeginTime 是否已赋值
+                     * 
+                     */
+                    bool BeginTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
+
+                    /**
+                     * 时间，单位ms
+                     */
+                    int64_t m_beginTime;
+                    bool m_beginTimeHasBeenSet;
 
                 };
             }

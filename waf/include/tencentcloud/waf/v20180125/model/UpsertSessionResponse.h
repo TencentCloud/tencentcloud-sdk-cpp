@@ -59,6 +59,22 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取SessionID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionID SessionID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSessionID() const;
+
+                    /**
+                     * 判断参数 SessionID 是否已赋值
+                     * @return SessionID 是否已赋值
+                     * 
+                     */
+                    bool SessionIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +83,13 @@ namespace TencentCloud
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * SessionID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sessionID;
+                    bool m_sessionIDHasBeenSet;
 
                 };
             }

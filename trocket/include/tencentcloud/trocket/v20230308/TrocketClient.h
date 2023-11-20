@@ -55,6 +55,10 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicStatsOpRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicStatsOpResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ImportSourceClusterTopicsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ImportSourceClusterTopicsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyConsumerGroupRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyInstanceRequest.h>
@@ -125,6 +129,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicStatsOpResponse> DescribeTopicStatsOpOutcome;
                 typedef std::future<DescribeTopicStatsOpOutcome> DescribeTopicStatsOpOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeTopicStatsOpRequest&, DescribeTopicStatsOpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicStatsOpAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportSourceClusterConsumerGroupsResponse> ImportSourceClusterConsumerGroupsOutcome;
+                typedef std::future<ImportSourceClusterConsumerGroupsOutcome> ImportSourceClusterConsumerGroupsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ImportSourceClusterConsumerGroupsRequest&, ImportSourceClusterConsumerGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportSourceClusterConsumerGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportSourceClusterTopicsResponse> ImportSourceClusterTopicsOutcome;
+                typedef std::future<ImportSourceClusterTopicsOutcome> ImportSourceClusterTopicsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ImportSourceClusterTopicsRequest&, ImportSourceClusterTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportSourceClusterTopicsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConsumerGroupResponse> ModifyConsumerGroupOutcome;
                 typedef std::future<ModifyConsumerGroupOutcome> ModifyConsumerGroupOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ModifyConsumerGroupRequest&, ModifyConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConsumerGroupAsyncHandler;
@@ -299,6 +309,24 @@ ConsumerGroup，消费组名称过滤
                 DescribeTopicStatsOpOutcome DescribeTopicStatsOp(const Model::DescribeTopicStatsOpRequest &request);
                 void DescribeTopicStatsOpAsync(const Model::DescribeTopicStatsOpRequest& request, const DescribeTopicStatsOpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicStatsOpOutcomeCallable DescribeTopicStatsOpCallable(const Model::DescribeTopicStatsOpRequest& request);
+
+                /**
+                 *导入消费者组列表
+                 * @param req ImportSourceClusterConsumerGroupsRequest
+                 * @return ImportSourceClusterConsumerGroupsOutcome
+                 */
+                ImportSourceClusterConsumerGroupsOutcome ImportSourceClusterConsumerGroups(const Model::ImportSourceClusterConsumerGroupsRequest &request);
+                void ImportSourceClusterConsumerGroupsAsync(const Model::ImportSourceClusterConsumerGroupsRequest& request, const ImportSourceClusterConsumerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportSourceClusterConsumerGroupsOutcomeCallable ImportSourceClusterConsumerGroupsCallable(const Model::ImportSourceClusterConsumerGroupsRequest& request);
+
+                /**
+                 *导入topic列表
+                 * @param req ImportSourceClusterTopicsRequest
+                 * @return ImportSourceClusterTopicsOutcome
+                 */
+                ImportSourceClusterTopicsOutcome ImportSourceClusterTopics(const Model::ImportSourceClusterTopicsRequest &request);
+                void ImportSourceClusterTopicsAsync(const Model::ImportSourceClusterTopicsRequest& request, const ImportSourceClusterTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportSourceClusterTopicsOutcomeCallable ImportSourceClusterTopicsCallable(const Model::ImportSourceClusterTopicsRequest& request);
 
                 /**
                  *修改消费组属性

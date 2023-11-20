@@ -351,6 +351,62 @@ namespace TencentCloud
                      */
                     bool SuperNodeRunningCntHasBeenSet() const;
 
+                    /**
+                     * 获取今日新增镜像个数
+                     * @return TodayNewImageCnt 今日新增镜像个数
+                     * 
+                     */
+                    uint64_t GetTodayNewImageCnt() const;
+
+                    /**
+                     * 判断参数 TodayNewImageCnt 是否已赋值
+                     * @return TodayNewImageCnt 是否已赋值
+                     * 
+                     */
+                    bool TodayNewImageCntHasBeenSet() const;
+
+                    /**
+                     * 获取今日新增风险镜像个数
+                     * @return TodayUnsafeImageCnt 今日新增风险镜像个数
+                     * 
+                     */
+                    uint64_t GetTodayUnsafeImageCnt() const;
+
+                    /**
+                     * 判断参数 TodayUnsafeImageCnt 是否已赋值
+                     * @return TodayUnsafeImageCnt 是否已赋值
+                     * 
+                     */
+                    bool TodayUnsafeImageCntHasBeenSet() const;
+
+                    /**
+                     * 获取推荐处置镜像个数
+                     * @return RecommendedFixImageCnt 推荐处置镜像个数
+                     * 
+                     */
+                    uint64_t GetRecommendedFixImageCnt() const;
+
+                    /**
+                     * 判断参数 RecommendedFixImageCnt 是否已赋值
+                     * @return RecommendedFixImageCnt 是否已赋值
+                     * 
+                     */
+                    bool RecommendedFixImageCntHasBeenSet() const;
+
+                    /**
+                     * 获取已扫描镜像个数
+                     * @return ScannedImageCnt 已扫描镜像个数
+                     * 
+                     */
+                    uint64_t GetScannedImageCnt() const;
+
+                    /**
+                     * 判断参数 ScannedImageCnt 是否已赋值
+                     * @return ScannedImageCnt 是否已赋值
+                     * 
+                     */
+                    bool ScannedImageCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -484,6 +540,30 @@ namespace TencentCloud
                      */
                     uint64_t m_superNodeRunningCnt;
                     bool m_superNodeRunningCntHasBeenSet;
+
+                    /**
+                     * 今日新增镜像个数
+                     */
+                    uint64_t m_todayNewImageCnt;
+                    bool m_todayNewImageCntHasBeenSet;
+
+                    /**
+                     * 今日新增风险镜像个数
+                     */
+                    uint64_t m_todayUnsafeImageCnt;
+                    bool m_todayUnsafeImageCntHasBeenSet;
+
+                    /**
+                     * 推荐处置镜像个数
+                     */
+                    uint64_t m_recommendedFixImageCnt;
+                    bool m_recommendedFixImageCntHasBeenSet;
+
+                    /**
+                     * 已扫描镜像个数
+                     */
+                    uint64_t m_scannedImageCnt;
+                    bool m_scannedImageCntHasBeenSet;
 
                 };
             }

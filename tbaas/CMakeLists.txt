@@ -20,49 +20,58 @@ set(tbaas_public_header
 
 set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerDemoBlockTransactionResponse.h
-  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerContractRequest.h
+  include/tencentcloud/tbaas/v20180416/model/DescribeFabricTransactionResponse.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerBlockTransactionRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockTransactionListForUserResponse.h
   include/tencentcloud/tbaas/v20180416/model/ApplyChainMakerBatchUserCertResponse.h
   include/tencentcloud/tbaas/v20180416/model/ApplyUserCertRequest.h
+  include/tencentcloud/tbaas/v20180416/model/SrvInvokeResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserResponse.h
   include/tencentcloud/tbaas/v20180416/model/SrvInvokeRequest.h
   include/tencentcloud/tbaas/v20180416/model/ApplyUserCertResponse.h
-  include/tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h
-  include/tencentcloud/tbaas/v20180416/model/InvokeResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetInvokeTxRequest.h
+  include/tencentcloud/tbaas/v20180416/model/InvokeFabricChaincodeResponse.h
   include/tencentcloud/tbaas/v20180416/model/SignCertCsr.h
   include/tencentcloud/tbaas/v20180416/model/DownloadUserCertResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h
+  include/tencentcloud/tbaas/v20180416/model/InvokeResponse.h
+  include/tencentcloud/tbaas/v20180416/model/QueryFabricChaincodeResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockListResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockTransactionListForUserRequest.h
+  include/tencentcloud/tbaas/v20180416/model/TransactionItem.h
   include/tencentcloud/tbaas/v20180416/model/InvokeChainMakerDemoContractRequest.h
   include/tencentcloud/tbaas/v20180416/model/InvokeChainMakerContractResponse.h
-  include/tencentcloud/tbaas/v20180416/model/SrvInvokeResponse.h
-  include/tencentcloud/tbaas/v20180416/model/GetInvokeTxRequest.h
+  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListResponse.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionResponse.h
-  include/tencentcloud/tbaas/v20180416/model/GetLatestTransactionListResponse.h
+  include/tencentcloud/tbaas/v20180416/model/DownloadUserCertRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetClusterSummaryResponse.h
+  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerDemoContractResponse.h
   include/tencentcloud/tbaas/v20180416/model/PeerSet.h
   include/tencentcloud/tbaas/v20180416/model/ChainMakerTransactionResult.h
   include/tencentcloud/tbaas/v20180416/model/GetLatestTransactionListRequest.h
+  include/tencentcloud/tbaas/v20180416/model/DescribeFabricBlockResponse.h
+  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerDemoContractRequest.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerDemoTransactionResponse.h
   include/tencentcloud/tbaas/v20180416/model/ApplyChainMakerBatchUserCertRequest.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerDemoTransactionRequest.h
-  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerDemoContractRequest.h
+  include/tencentcloud/tbaas/v20180416/model/DescribeFabricTransactionRequest.h
   include/tencentcloud/tbaas/v20180416/model/ChainMakerContractResult.h
   include/tencentcloud/tbaas/v20180416/model/GetClusterSummaryRequest.h
   include/tencentcloud/tbaas/v20180416/model/Block.h
-  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerDemoContractResponse.h
+  include/tencentcloud/tbaas/v20180416/model/DescribeFabricBlockRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockListRequest.h
+  include/tencentcloud/tbaas/v20180416/model/QueryFabricChaincodeRequest.h
+  include/tencentcloud/tbaas/v20180416/model/InvokeFabricChaincodeRequest.h
   include/tencentcloud/tbaas/v20180416/model/InvokeRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetInvokeTxResponse.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerContractResponse.h
-  include/tencentcloud/tbaas/v20180416/model/DownloadUserCertRequest.h
   include/tencentcloud/tbaas/v20180416/model/InvokeChainMakerContractRequest.h
-  include/tencentcloud/tbaas/v20180416/model/TransactionItem.h
-  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionRequest.h
+  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerContractRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetLatestTransactionListResponse.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerDemoBlockTransactionRequest.h
+  include/tencentcloud/tbaas/v20180416/model/Transaction.h
   include/tencentcloud/tbaas/v20180416/model/QueryRequest.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerBlockTransactionResponse.h
   include/tencentcloud/tbaas/v20180416/model/InvokeChainMakerDemoContractResponse.h
@@ -73,49 +82,58 @@ set(tbaas_public_header_model
 set(tbaas_src
   src/v20180416/TbaasClient.cpp
   src/v20180416/model/QueryChainMakerDemoBlockTransactionResponse.cpp
-  src/v20180416/model/QueryChainMakerContractRequest.cpp
+  src/v20180416/model/DescribeFabricTransactionResponse.cpp
   src/v20180416/model/QueryChainMakerBlockTransactionRequest.cpp
   src/v20180416/model/GetBlockTransactionListForUserResponse.cpp
   src/v20180416/model/ApplyChainMakerBatchUserCertResponse.cpp
   src/v20180416/model/ApplyUserCertRequest.cpp
+  src/v20180416/model/SrvInvokeResponse.cpp
   src/v20180416/model/GetTransactionDetailForUserResponse.cpp
   src/v20180416/model/SrvInvokeRequest.cpp
   src/v20180416/model/ApplyUserCertResponse.cpp
-  src/v20180416/model/GetLatesdTransactionListRequest.cpp
-  src/v20180416/model/InvokeResponse.cpp
+  src/v20180416/model/GetInvokeTxRequest.cpp
+  src/v20180416/model/InvokeFabricChaincodeResponse.cpp
   src/v20180416/model/SignCertCsr.cpp
   src/v20180416/model/DownloadUserCertResponse.cpp
+  src/v20180416/model/GetLatesdTransactionListRequest.cpp
+  src/v20180416/model/InvokeResponse.cpp
+  src/v20180416/model/QueryFabricChaincodeResponse.cpp
   src/v20180416/model/GetTransactionDetailForUserRequest.cpp
   src/v20180416/model/GetBlockListResponse.cpp
   src/v20180416/model/GetBlockTransactionListForUserRequest.cpp
+  src/v20180416/model/TransactionItem.cpp
   src/v20180416/model/InvokeChainMakerDemoContractRequest.cpp
   src/v20180416/model/InvokeChainMakerContractResponse.cpp
-  src/v20180416/model/SrvInvokeResponse.cpp
-  src/v20180416/model/GetInvokeTxRequest.cpp
+  src/v20180416/model/QueryChainMakerTransactionRequest.cpp
   src/v20180416/model/GetLatesdTransactionListResponse.cpp
   src/v20180416/model/QueryChainMakerTransactionResponse.cpp
-  src/v20180416/model/GetLatestTransactionListResponse.cpp
+  src/v20180416/model/DownloadUserCertRequest.cpp
   src/v20180416/model/GetClusterSummaryResponse.cpp
+  src/v20180416/model/QueryChainMakerDemoContractResponse.cpp
   src/v20180416/model/PeerSet.cpp
   src/v20180416/model/ChainMakerTransactionResult.cpp
   src/v20180416/model/GetLatestTransactionListRequest.cpp
+  src/v20180416/model/DescribeFabricBlockResponse.cpp
+  src/v20180416/model/QueryChainMakerDemoContractRequest.cpp
   src/v20180416/model/QueryChainMakerDemoTransactionResponse.cpp
   src/v20180416/model/ApplyChainMakerBatchUserCertRequest.cpp
   src/v20180416/model/QueryChainMakerDemoTransactionRequest.cpp
-  src/v20180416/model/QueryChainMakerDemoContractRequest.cpp
+  src/v20180416/model/DescribeFabricTransactionRequest.cpp
   src/v20180416/model/ChainMakerContractResult.cpp
   src/v20180416/model/GetClusterSummaryRequest.cpp
   src/v20180416/model/Block.cpp
-  src/v20180416/model/QueryChainMakerDemoContractResponse.cpp
+  src/v20180416/model/DescribeFabricBlockRequest.cpp
   src/v20180416/model/GetBlockListRequest.cpp
+  src/v20180416/model/QueryFabricChaincodeRequest.cpp
+  src/v20180416/model/InvokeFabricChaincodeRequest.cpp
   src/v20180416/model/InvokeRequest.cpp
   src/v20180416/model/GetInvokeTxResponse.cpp
   src/v20180416/model/QueryChainMakerContractResponse.cpp
-  src/v20180416/model/DownloadUserCertRequest.cpp
   src/v20180416/model/InvokeChainMakerContractRequest.cpp
-  src/v20180416/model/TransactionItem.cpp
-  src/v20180416/model/QueryChainMakerTransactionRequest.cpp
+  src/v20180416/model/QueryChainMakerContractRequest.cpp
+  src/v20180416/model/GetLatestTransactionListResponse.cpp
   src/v20180416/model/QueryChainMakerDemoBlockTransactionRequest.cpp
+  src/v20180416/model/Transaction.cpp
   src/v20180416/model/QueryRequest.cpp
   src/v20180416/model/QueryChainMakerBlockTransactionResponse.cpp
   src/v20180416/model/InvokeChainMakerDemoContractResponse.cpp

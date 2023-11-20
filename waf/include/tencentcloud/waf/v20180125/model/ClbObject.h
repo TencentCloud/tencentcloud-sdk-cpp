@@ -361,6 +361,56 @@ namespace TencentCloud
                      */
                     bool PostCKafkaStatusHasBeenSet() const;
 
+                    /**
+                     * 获取对象类型：CLB:负载均衡器，TSE:云原生网关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type 对象类型：CLB:负载均衡器，TSE:云原生网关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置对象类型：CLB:负载均衡器，TSE:云原生网关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _type 对象类型：CLB:负载均衡器，TSE:云原生网关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取对象地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 对象地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置对象地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _region 对象地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +502,20 @@ namespace TencentCloud
                      */
                     int64_t m_postCKafkaStatus;
                     bool m_postCKafkaStatusHasBeenSet;
+
+                    /**
+                     * 对象类型：CLB:负载均衡器，TSE:云原生网关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 对象地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

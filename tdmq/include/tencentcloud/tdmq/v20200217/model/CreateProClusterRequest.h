@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 #include <tencentcloud/tdmq/v20200217/model/VpcInfo.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -174,27 +174,6 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取集群的标签列表(已废弃)
-                     * @return Tags 集群的标签列表(已废弃)
-                     * 
-                     */
-                    std::vector<Tag> GetTags() const;
-
-                    /**
-                     * 设置集群的标签列表(已废弃)
-                     * @param _tags 集群的标签列表(已废弃)
-                     * 
-                     */
-                    void SetTags(const std::vector<Tag>& _tags);
-
-                    /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
-                     * 
-                     */
-                    bool TagsHasBeenSet() const;
-
-                    /**
                      * 获取集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
                      * @return ClusterName 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
                      * 
@@ -257,6 +236,27 @@ namespace TencentCloud
                      */
                     bool VpcsHasBeenSet() const;
 
+                    /**
+                     * 获取集群的标签列表(已废弃)
+                     * @return Tags 集群的标签列表(已废弃)
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置集群的标签列表(已废弃)
+                     * @param _tags 集群的标签列表(已废弃)
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -296,12 +296,6 @@ namespace TencentCloud
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 集群的标签列表(已废弃)
-                     */
-                    std::vector<Tag> m_tags;
-                    bool m_tagsHasBeenSet;
-
-                    /**
                      * 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
                      */
                     std::string m_clusterName;
@@ -318,6 +312,12 @@ namespace TencentCloud
                      */
                     VpcInfo m_vpcs;
                     bool m_vpcsHasBeenSet;
+
+                    /**
+                     * 集群的标签列表(已废弃)
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -559,18 +559,18 @@ FAILED：表示操作失败
                     bool MaxOutBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取每月免费流量，默认1000G
+                     * 获取每月免费流量，默认500G
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxFreeTraffic 每月免费流量，默认1000G
+                     * @return MaxFreeTraffic 每月免费流量，默认500G
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMaxFreeTraffic() const;
 
                     /**
-                     * 设置每月免费流量，默认1000G
+                     * 设置每月免费流量，默认500G
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxFreeTraffic 每月免费流量，默认1000G
+                     * @param _maxFreeTraffic 每月免费流量，默认500G
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -777,7 +777,7 @@ FAILED：表示操作失败
                     bool m_maxOutBandwidthHasBeenSet;
 
                     /**
-                     * 每月免费流量，默认1000G
+                     * 每月免费流量，默认500G
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_maxFreeTraffic;
