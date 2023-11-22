@@ -119,15 +119,15 @@ namespace TencentCloud
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取站点集合，不填默认选择全部站点。
-                     * @return ZoneIds 站点集合，不填默认选择全部站点。
+                     * 获取站点 ID 集合，此参数必填。
+                     * @return ZoneIds 站点 ID 集合，此参数必填。
                      * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点集合，不填默认选择全部站点。
-                     * @param _zoneIds 站点集合，不填默认选择全部站点。
+                     * 设置站点 ID 集合，此参数必填。
+                     * @param _zoneIds 站点 ID 集合，此参数必填。
                      * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 站点集合，不填默认选择全部站点。
+                     * 站点 ID 集合，此参数必填。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;

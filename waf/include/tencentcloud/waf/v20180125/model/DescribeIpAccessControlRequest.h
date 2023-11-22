@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool CtsMaxHasBeenSet() const;
 
                     /**
-                     * 获取分页开始条数
-                     * @return OffSet 分页开始条数
+                     * 获取分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
+                     * @return OffSet 分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
                      * 
                      */
                     uint64_t GetOffSet() const;
 
                     /**
-                     * 设置分页开始条数
-                     * @param _offSet 分页开始条数
+                     * 设置分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
+                     * @param _offSet 分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
                      * 
                      */
                     void SetOffSet(const uint64_t& _offSet);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool OffSetHasBeenSet() const;
 
                     /**
-                     * 获取每页的条数
-                     * @return Limit 每页的条数
+                     * 获取每页返回的数量
+                     * @return Limit 每页返回的数量
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页的条数
-                     * @param _limit 每页的条数
+                     * 设置每页返回的数量
+                     * @param _limit 每页返回的数量
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -402,13 +402,13 @@ namespace TencentCloud
                     bool m_ctsMaxHasBeenSet;
 
                     /**
-                     * 分页开始条数
+                     * 分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
                      */
                     uint64_t m_offSet;
                     bool m_offSetHasBeenSet;
 
                     /**
-                     * 每页的条数
+                     * 每页返回的数量
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

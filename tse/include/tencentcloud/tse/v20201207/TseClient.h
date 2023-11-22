@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tse/v20201207/model/CloseWafProtectionRequest.h>
+#include <tencentcloud/tse/v20201207/model/CloseWafProtectionResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayCanaryRuleRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/tse/v20201207/model/CreateEngineResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateWafDomainsRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateWafDomainsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCanaryRuleRequest.h>
@@ -121,6 +125,8 @@
 #include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyUpstreamNodeStatusRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyUpstreamNodeStatusResponse.h>
+#include <tencentcloud/tse/v20201207/model/OpenWafProtectionRequest.h>
+#include <tencentcloud/tse/v20201207/model/OpenWafProtectionResponse.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoRequest.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoResponse.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewaySpecRequest.h>
@@ -145,6 +151,9 @@ namespace TencentCloud
                 TseClient(const Credential &credential, const std::string &region);
                 TseClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CloseWafProtectionResponse> CloseWafProtectionOutcome;
+                typedef std::future<CloseWafProtectionOutcome> CloseWafProtectionOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CloseWafProtectionRequest&, CloseWafProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseWafProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewayResponse> CreateCloudNativeAPIGatewayOutcome;
                 typedef std::future<CreateCloudNativeAPIGatewayOutcome> CreateCloudNativeAPIGatewayOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateCloudNativeAPIGatewayRequest&, CreateCloudNativeAPIGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewayAsyncHandler;
@@ -172,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNativeGatewayServerGroupResponse> CreateNativeGatewayServerGroupOutcome;
                 typedef std::future<CreateNativeGatewayServerGroupOutcome> CreateNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateNativeGatewayServerGroupRequest&, CreateNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNativeGatewayServerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWafDomainsResponse> CreateWafDomainsOutcome;
+                typedef std::future<CreateWafDomainsOutcome> CreateWafDomainsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateWafDomainsRequest&, CreateWafDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWafDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayResponse> DeleteCloudNativeAPIGatewayOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayOutcome> DeleteCloudNativeAPIGatewayOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteCloudNativeAPIGatewayRequest&, DeleteCloudNativeAPIGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayAsyncHandler;
@@ -292,6 +304,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUpstreamNodeStatusResponse> ModifyUpstreamNodeStatusOutcome;
                 typedef std::future<ModifyUpstreamNodeStatusOutcome> ModifyUpstreamNodeStatusOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyUpstreamNodeStatusRequest&, ModifyUpstreamNodeStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUpstreamNodeStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenWafProtectionResponse> OpenWafProtectionOutcome;
+                typedef std::future<OpenWafProtectionOutcome> OpenWafProtectionOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::OpenWafProtectionRequest&, OpenWafProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenWafProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateCloudNativeAPIGatewayCertificateInfoResponse> UpdateCloudNativeAPIGatewayCertificateInfoOutcome;
                 typedef std::future<UpdateCloudNativeAPIGatewayCertificateInfoOutcome> UpdateCloudNativeAPIGatewayCertificateInfoOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::UpdateCloudNativeAPIGatewayCertificateInfoRequest&, UpdateCloudNativeAPIGatewayCertificateInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCloudNativeAPIGatewayCertificateInfoAsyncHandler;
@@ -309,6 +324,15 @@ namespace TencentCloud
                 typedef std::function<void(const TseClient*, const Model::UpdateUpstreamTargetsRequest&, UpdateUpstreamTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUpstreamTargetsAsyncHandler;
 
 
+
+                /**
+                 *关闭 WAF 防护
+                 * @param req CloseWafProtectionRequest
+                 * @return CloseWafProtectionOutcome
+                 */
+                CloseWafProtectionOutcome CloseWafProtection(const Model::CloseWafProtectionRequest &request);
+                void CloseWafProtectionAsync(const Model::CloseWafProtectionRequest& request, const CloseWafProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseWafProtectionOutcomeCallable CloseWafProtectionCallable(const Model::CloseWafProtectionRequest& request);
 
                 /**
                  *创建云原生API网关实例
@@ -390,6 +414,15 @@ namespace TencentCloud
                 CreateNativeGatewayServerGroupOutcome CreateNativeGatewayServerGroup(const Model::CreateNativeGatewayServerGroupRequest &request);
                 void CreateNativeGatewayServerGroupAsync(const Model::CreateNativeGatewayServerGroupRequest& request, const CreateNativeGatewayServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNativeGatewayServerGroupOutcomeCallable CreateNativeGatewayServerGroupCallable(const Model::CreateNativeGatewayServerGroupRequest& request);
+
+                /**
+                 *新建 WAF 防护域名
+                 * @param req CreateWafDomainsRequest
+                 * @return CreateWafDomainsOutcome
+                 */
+                CreateWafDomainsOutcome CreateWafDomains(const Model::CreateWafDomainsRequest &request);
+                void CreateWafDomainsAsync(const Model::CreateWafDomainsRequest& request, const CreateWafDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWafDomainsOutcomeCallable CreateWafDomainsCallable(const Model::CreateWafDomainsRequest& request);
 
                 /**
                  *删除云原生API网关实例
@@ -750,6 +783,15 @@ namespace TencentCloud
                 ModifyUpstreamNodeStatusOutcome ModifyUpstreamNodeStatus(const Model::ModifyUpstreamNodeStatusRequest &request);
                 void ModifyUpstreamNodeStatusAsync(const Model::ModifyUpstreamNodeStatusRequest& request, const ModifyUpstreamNodeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUpstreamNodeStatusOutcomeCallable ModifyUpstreamNodeStatusCallable(const Model::ModifyUpstreamNodeStatusRequest& request);
+
+                /**
+                 *开启 WAF 防护
+                 * @param req OpenWafProtectionRequest
+                 * @return OpenWafProtectionOutcome
+                 */
+                OpenWafProtectionOutcome OpenWafProtection(const Model::OpenWafProtectionRequest &request);
+                void OpenWafProtectionAsync(const Model::OpenWafProtectionRequest& request, const OpenWafProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenWafProtectionOutcomeCallable OpenWafProtectionCallable(const Model::OpenWafProtectionRequest& request);
 
                 /**
                  *修改云原生网关证书信息

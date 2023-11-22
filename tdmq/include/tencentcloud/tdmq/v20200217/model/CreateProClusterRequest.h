@@ -217,24 +217,24 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc网络标签
-                     * @return Vpcs vpc网络标签
+                     * @return Vpc vpc网络标签
                      * 
                      */
-                    VpcInfo GetVpcs() const;
+                    VpcInfo GetVpc() const;
 
                     /**
                      * 设置vpc网络标签
-                     * @param _vpcs vpc网络标签
+                     * @param _vpc vpc网络标签
                      * 
                      */
-                    void SetVpcs(const VpcInfo& _vpcs);
+                    void SetVpc(const VpcInfo& _vpc);
 
                     /**
-                     * 判断参数 Vpcs 是否已赋值
-                     * @return Vpcs 是否已赋值
+                     * 判断参数 Vpc 是否已赋值
+                     * @return Vpc 是否已赋值
                      * 
                      */
-                    bool VpcsHasBeenSet() const;
+                    bool VpcHasBeenSet() const;
 
                     /**
                      * 获取集群的标签列表(已废弃)
@@ -310,8 +310,8 @@ namespace TencentCloud
                     /**
                      * vpc网络标签
                      */
-                    VpcInfo m_vpcs;
-                    bool m_vpcsHasBeenSet;
+                    VpcInfo m_vpc;
+                    bool m_vpcHasBeenSet;
 
                     /**
                      * 集群的标签列表(已废弃)

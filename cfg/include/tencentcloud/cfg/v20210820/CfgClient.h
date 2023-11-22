@@ -33,6 +33,8 @@
 #include <tencentcloud/cfg/v20210820/model/DescribeTaskExecuteLogsResponse.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeTaskListRequest.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeTaskListResponse.h>
+#include <tencentcloud/cfg/v20210820/model/DescribeTaskPolicyTriggerLogRequest.h>
+#include <tencentcloud/cfg/v20210820/model/DescribeTaskPolicyTriggerLogResponse.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeTemplateRequest.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeTemplateResponse.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeTemplateListRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/cfg/v20210820/model/ExecuteTaskInstanceResponse.h>
 #include <tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusRequest.h>
 #include <tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusResponse.h>
+#include <tencentcloud/cfg/v20210820/model/TriggerPolicyRequest.h>
+#include <tencentcloud/cfg/v20210820/model/TriggerPolicyResponse.h>
 
 
 namespace TencentCloud
@@ -72,6 +76,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskListResponse> DescribeTaskListOutcome;
                 typedef std::future<DescribeTaskListOutcome> DescribeTaskListOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::DescribeTaskListRequest&, DescribeTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskPolicyTriggerLogResponse> DescribeTaskPolicyTriggerLogOutcome;
+                typedef std::future<DescribeTaskPolicyTriggerLogOutcome> DescribeTaskPolicyTriggerLogOutcomeCallable;
+                typedef std::function<void(const CfgClient*, const Model::DescribeTaskPolicyTriggerLogRequest&, DescribeTaskPolicyTriggerLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskPolicyTriggerLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTemplateResponse> DescribeTemplateOutcome;
                 typedef std::future<DescribeTemplateOutcome> DescribeTemplateOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::DescribeTemplateRequest&, DescribeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateAsyncHandler;
@@ -87,6 +94,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTaskRunStatusResponse> ModifyTaskRunStatusOutcome;
                 typedef std::future<ModifyTaskRunStatusOutcome> ModifyTaskRunStatusOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::ModifyTaskRunStatusRequest&, ModifyTaskRunStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskRunStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::TriggerPolicyResponse> TriggerPolicyOutcome;
+                typedef std::future<TriggerPolicyOutcome> TriggerPolicyOutcomeCallable;
+                typedef std::function<void(const CfgClient*, const Model::TriggerPolicyRequest&, TriggerPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerPolicyAsyncHandler;
 
 
 
@@ -136,6 +146,15 @@ namespace TencentCloud
                 DescribeTaskListOutcomeCallable DescribeTaskListCallable(const Model::DescribeTaskListRequest& request);
 
                 /**
+                 *获取护栏触发日志
+                 * @param req DescribeTaskPolicyTriggerLogRequest
+                 * @return DescribeTaskPolicyTriggerLogOutcome
+                 */
+                DescribeTaskPolicyTriggerLogOutcome DescribeTaskPolicyTriggerLog(const Model::DescribeTaskPolicyTriggerLogRequest &request);
+                void DescribeTaskPolicyTriggerLogAsync(const Model::DescribeTaskPolicyTriggerLogRequest& request, const DescribeTaskPolicyTriggerLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskPolicyTriggerLogOutcomeCallable DescribeTaskPolicyTriggerLogCallable(const Model::DescribeTaskPolicyTriggerLogRequest& request);
+
+                /**
                  *查询经验库
                  * @param req DescribeTemplateRequest
                  * @return DescribeTemplateOutcome
@@ -179,6 +198,15 @@ namespace TencentCloud
                 ModifyTaskRunStatusOutcome ModifyTaskRunStatus(const Model::ModifyTaskRunStatusRequest &request);
                 void ModifyTaskRunStatusAsync(const Model::ModifyTaskRunStatusRequest& request, const ModifyTaskRunStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTaskRunStatusOutcomeCallable ModifyTaskRunStatusCallable(const Model::ModifyTaskRunStatusRequest& request);
+
+                /**
+                 *用于触发混沌演练护栏（类型为触发和恢复2种）
+                 * @param req TriggerPolicyRequest
+                 * @return TriggerPolicyOutcome
+                 */
+                TriggerPolicyOutcome TriggerPolicy(const Model::TriggerPolicyRequest &request);
+                void TriggerPolicyAsync(const Model::TriggerPolicyRequest& request, const TriggerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TriggerPolicyOutcomeCallable TriggerPolicyCallable(const Model::TriggerPolicyRequest& request);
 
             };
         }

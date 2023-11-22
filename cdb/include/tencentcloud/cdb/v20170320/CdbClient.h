@@ -35,6 +35,8 @@
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadRequest.h>
 #include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CloseAuditServiceRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CloseAuditServiceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CloseCDBProxyRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CloseCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CloseCdbProxyAddressRequest.h>
@@ -49,6 +51,8 @@
 #include <tencentcloud/cdb/v20170320/model/CreateAuditPolicyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateAuditRuleRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateAuditRuleResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CreateAuditRuleTemplateRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CreateAuditRuleTemplateResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateBackupRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateBackupResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateCdbProxyRequest.h>
@@ -79,8 +83,12 @@
 #include <tencentcloud/cdb/v20170320/model/DeleteAuditPolicyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteAuditRuleRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteAuditRuleResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DeleteAuditRuleTemplatesRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DeleteAuditRuleTemplatesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteBackupRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteBackupResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DeleteDatabaseRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DeleteDatabaseResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteDeployGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteDeployGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteParamTemplateRequest.h>
@@ -95,12 +103,18 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeAsyncRequestInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditConfigRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditConfigResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeAuditInstanceListRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeAuditInstanceListResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditLogFilesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditLogFilesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditLogsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditLogsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditPoliciesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditPoliciesResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeAuditRuleTemplateModifyHistoryRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeAuditRuleTemplateModifyHistoryResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeAuditRuleTemplatesRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeAuditRuleTemplatesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditRulesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditRulesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupConfigRequest.h>
@@ -229,6 +243,10 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyAuditConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyAuditRuleRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyAuditRuleResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyAuditRuleTemplatesRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyAuditRuleTemplatesResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyAuditServiceRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyAuditServiceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyAutoRenewFlagRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyAutoRenewFlagResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupConfigRequest.h>
@@ -353,6 +371,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BalanceRoGroupLoadResponse> BalanceRoGroupLoadOutcome;
                 typedef std::future<BalanceRoGroupLoadOutcome> BalanceRoGroupLoadOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::BalanceRoGroupLoadRequest&, BalanceRoGroupLoadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BalanceRoGroupLoadAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseAuditServiceResponse> CloseAuditServiceOutcome;
+                typedef std::future<CloseAuditServiceOutcome> CloseAuditServiceOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CloseAuditServiceRequest&, CloseAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAuditServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseCDBProxyResponse> CloseCDBProxyOutcome;
                 typedef std::future<CloseCDBProxyOutcome> CloseCDBProxyOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CloseCDBProxyRequest&, CloseCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseCDBProxyAsyncHandler;
@@ -374,6 +395,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAuditRuleResponse> CreateAuditRuleOutcome;
                 typedef std::future<CreateAuditRuleOutcome> CreateAuditRuleOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateAuditRuleRequest&, CreateAuditRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuditRuleTemplateResponse> CreateAuditRuleTemplateOutcome;
+                typedef std::future<CreateAuditRuleTemplateOutcome> CreateAuditRuleTemplateOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CreateAuditRuleTemplateRequest&, CreateAuditRuleTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditRuleTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBackupResponse> CreateBackupOutcome;
                 typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateBackupRequest&, CreateBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupAsyncHandler;
@@ -419,9 +443,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAuditRuleResponse> DeleteAuditRuleOutcome;
                 typedef std::future<DeleteAuditRuleOutcome> DeleteAuditRuleOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DeleteAuditRuleRequest&, DeleteAuditRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuditRuleTemplatesResponse> DeleteAuditRuleTemplatesOutcome;
+                typedef std::future<DeleteAuditRuleTemplatesOutcome> DeleteAuditRuleTemplatesOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DeleteAuditRuleTemplatesRequest&, DeleteAuditRuleTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditRuleTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBackupResponse> DeleteBackupOutcome;
                 typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DeleteBackupRequest&, DeleteBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDatabaseResponse> DeleteDatabaseOutcome;
+                typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DeleteDatabaseRequest&, DeleteDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatabaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeployGroupsResponse> DeleteDeployGroupsOutcome;
                 typedef std::future<DeleteDeployGroupsOutcome> DeleteDeployGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DeleteDeployGroupsRequest&, DeleteDeployGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeployGroupsAsyncHandler;
@@ -443,6 +473,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditConfigResponse> DescribeAuditConfigOutcome;
                 typedef std::future<DescribeAuditConfigOutcome> DescribeAuditConfigOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeAuditConfigRequest&, DescribeAuditConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditInstanceListResponse> DescribeAuditInstanceListOutcome;
+                typedef std::future<DescribeAuditInstanceListOutcome> DescribeAuditInstanceListOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeAuditInstanceListRequest&, DescribeAuditInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditInstanceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuditLogFilesResponse> DescribeAuditLogFilesOutcome;
                 typedef std::future<DescribeAuditLogFilesOutcome> DescribeAuditLogFilesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeAuditLogFilesRequest&, DescribeAuditLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilesAsyncHandler;
@@ -452,6 +485,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditPoliciesResponse> DescribeAuditPoliciesOutcome;
                 typedef std::future<DescribeAuditPoliciesOutcome> DescribeAuditPoliciesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeAuditPoliciesRequest&, DescribeAuditPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditRuleTemplateModifyHistoryResponse> DescribeAuditRuleTemplateModifyHistoryOutcome;
+                typedef std::future<DescribeAuditRuleTemplateModifyHistoryOutcome> DescribeAuditRuleTemplateModifyHistoryOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeAuditRuleTemplateModifyHistoryRequest&, DescribeAuditRuleTemplateModifyHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditRuleTemplateModifyHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditRuleTemplatesResponse> DescribeAuditRuleTemplatesOutcome;
+                typedef std::future<DescribeAuditRuleTemplatesOutcome> DescribeAuditRuleTemplatesOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeAuditRuleTemplatesRequest&, DescribeAuditRuleTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditRuleTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuditRulesResponse> DescribeAuditRulesOutcome;
                 typedef std::future<DescribeAuditRulesOutcome> DescribeAuditRulesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeAuditRulesRequest&, DescribeAuditRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditRulesAsyncHandler;
@@ -644,6 +683,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAuditRuleResponse> ModifyAuditRuleOutcome;
                 typedef std::future<ModifyAuditRuleOutcome> ModifyAuditRuleOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyAuditRuleRequest&, ModifyAuditRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAuditRuleTemplatesResponse> ModifyAuditRuleTemplatesOutcome;
+                typedef std::future<ModifyAuditRuleTemplatesOutcome> ModifyAuditRuleTemplatesOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyAuditRuleTemplatesRequest&, ModifyAuditRuleTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditRuleTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAuditServiceResponse> ModifyAuditServiceOutcome;
+                typedef std::future<ModifyAuditServiceOutcome> ModifyAuditServiceOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyAuditServiceRequest&, ModifyAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAutoRenewFlagResponse> ModifyAutoRenewFlagOutcome;
                 typedef std::future<ModifyAutoRenewFlagOutcome> ModifyAutoRenewFlagOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyAutoRenewFlagRequest&, ModifyAutoRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoRenewFlagAsyncHandler;
@@ -840,6 +885,15 @@ namespace TencentCloud
                 BalanceRoGroupLoadOutcomeCallable BalanceRoGroupLoadCallable(const Model::BalanceRoGroupLoadRequest& request);
 
                 /**
+                 *实例关闭审计服务
+                 * @param req CloseAuditServiceRequest
+                 * @return CloseAuditServiceOutcome
+                 */
+                CloseAuditServiceOutcome CloseAuditService(const Model::CloseAuditServiceRequest &request);
+                void CloseAuditServiceAsync(const Model::CloseAuditServiceRequest& request, const CloseAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseAuditServiceOutcomeCallable CloseAuditServiceCallable(const Model::CloseAuditServiceRequest& request);
+
+                /**
                  *关闭数据库代理
                  * @param req CloseCDBProxyRequest
                  * @return CloseCDBProxyOutcome
@@ -901,6 +955,15 @@ namespace TencentCloud
                 CreateAuditRuleOutcome CreateAuditRule(const Model::CreateAuditRuleRequest &request);
                 void CreateAuditRuleAsync(const Model::CreateAuditRuleRequest& request, const CreateAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAuditRuleOutcomeCallable CreateAuditRuleCallable(const Model::CreateAuditRuleRequest& request);
+
+                /**
+                 *创建审计规则模板
+                 * @param req CreateAuditRuleTemplateRequest
+                 * @return CreateAuditRuleTemplateOutcome
+                 */
+                CreateAuditRuleTemplateOutcome CreateAuditRuleTemplate(const Model::CreateAuditRuleTemplateRequest &request);
+                void CreateAuditRuleTemplateAsync(const Model::CreateAuditRuleTemplateRequest& request, const CreateAuditRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuditRuleTemplateOutcomeCallable CreateAuditRuleTemplateCallable(const Model::CreateAuditRuleTemplateRequest& request);
 
                 /**
                  *本接口(CreateBackup)用于创建数据库备份。
@@ -1057,6 +1120,15 @@ namespace TencentCloud
                 DeleteAuditRuleOutcomeCallable DeleteAuditRuleCallable(const Model::DeleteAuditRuleRequest& request);
 
                 /**
+                 *删除审计规则模版
+                 * @param req DeleteAuditRuleTemplatesRequest
+                 * @return DeleteAuditRuleTemplatesOutcome
+                 */
+                DeleteAuditRuleTemplatesOutcome DeleteAuditRuleTemplates(const Model::DeleteAuditRuleTemplatesRequest &request);
+                void DeleteAuditRuleTemplatesAsync(const Model::DeleteAuditRuleTemplatesRequest& request, const DeleteAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuditRuleTemplatesOutcomeCallable DeleteAuditRuleTemplatesCallable(const Model::DeleteAuditRuleTemplatesRequest& request);
+
+                /**
                  *本接口(DeleteBackup)用于删除数据库备份。本接口只支持删除手动发起的备份。
                  * @param req DeleteBackupRequest
                  * @return DeleteBackupOutcome
@@ -1064,6 +1136,15 @@ namespace TencentCloud
                 DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest &request);
                 void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request);
+
+                /**
+                 *本接口(DeleteDatabase)用于在云数据库实例中删除数据库。
+                 * @param req DeleteDatabaseRequest
+                 * @return DeleteDatabaseOutcome
+                 */
+                DeleteDatabaseOutcome DeleteDatabase(const Model::DeleteDatabaseRequest &request);
+                void DeleteDatabaseAsync(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDatabaseOutcomeCallable DeleteDatabaseCallable(const Model::DeleteDatabaseRequest& request);
 
                 /**
                  *根据置放群组ID删除置放群组（置放群组中有资源存在时不能删除该置放群组）
@@ -1129,6 +1210,15 @@ namespace TencentCloud
                 DescribeAuditConfigOutcomeCallable DescribeAuditConfigCallable(const Model::DescribeAuditConfigRequest& request);
 
                 /**
+                 *获取审计实例列表
+                 * @param req DescribeAuditInstanceListRequest
+                 * @return DescribeAuditInstanceListOutcome
+                 */
+                DescribeAuditInstanceListOutcome DescribeAuditInstanceList(const Model::DescribeAuditInstanceListRequest &request);
+                void DescribeAuditInstanceListAsync(const Model::DescribeAuditInstanceListRequest& request, const DescribeAuditInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditInstanceListOutcomeCallable DescribeAuditInstanceListCallable(const Model::DescribeAuditInstanceListRequest& request);
+
+                /**
                  *本接口(DescribeAuditLogFiles)用于查询云数据库实例的审计日志文件。
                  * @param req DescribeAuditLogFilesRequest
                  * @return DescribeAuditLogFilesOutcome
@@ -1154,6 +1244,24 @@ namespace TencentCloud
                 DescribeAuditPoliciesOutcome DescribeAuditPolicies(const Model::DescribeAuditPoliciesRequest &request);
                 void DescribeAuditPoliciesAsync(const Model::DescribeAuditPoliciesRequest& request, const DescribeAuditPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuditPoliciesOutcomeCallable DescribeAuditPoliciesCallable(const Model::DescribeAuditPoliciesRequest& request);
+
+                /**
+                 *查询规则模板变更记录
+                 * @param req DescribeAuditRuleTemplateModifyHistoryRequest
+                 * @return DescribeAuditRuleTemplateModifyHistoryOutcome
+                 */
+                DescribeAuditRuleTemplateModifyHistoryOutcome DescribeAuditRuleTemplateModifyHistory(const Model::DescribeAuditRuleTemplateModifyHistoryRequest &request);
+                void DescribeAuditRuleTemplateModifyHistoryAsync(const Model::DescribeAuditRuleTemplateModifyHistoryRequest& request, const DescribeAuditRuleTemplateModifyHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditRuleTemplateModifyHistoryOutcomeCallable DescribeAuditRuleTemplateModifyHistoryCallable(const Model::DescribeAuditRuleTemplateModifyHistoryRequest& request);
+
+                /**
+                 *查询审计规则模板信息
+                 * @param req DescribeAuditRuleTemplatesRequest
+                 * @return DescribeAuditRuleTemplatesOutcome
+                 */
+                DescribeAuditRuleTemplatesOutcome DescribeAuditRuleTemplates(const Model::DescribeAuditRuleTemplatesRequest &request);
+                void DescribeAuditRuleTemplatesAsync(const Model::DescribeAuditRuleTemplatesRequest& request, const DescribeAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditRuleTemplatesOutcomeCallable DescribeAuditRuleTemplatesCallable(const Model::DescribeAuditRuleTemplatesRequest& request);
 
                 /**
                  *本接口(DescribeAuditRules)用于查询用户在当前地域的审计规则。
@@ -1739,6 +1847,24 @@ namespace TencentCloud
                 ModifyAuditRuleOutcome ModifyAuditRule(const Model::ModifyAuditRuleRequest &request);
                 void ModifyAuditRuleAsync(const Model::ModifyAuditRuleRequest& request, const ModifyAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAuditRuleOutcomeCallable ModifyAuditRuleCallable(const Model::ModifyAuditRuleRequest& request);
+
+                /**
+                 *修改审计规则模板
+                 * @param req ModifyAuditRuleTemplatesRequest
+                 * @return ModifyAuditRuleTemplatesOutcome
+                 */
+                ModifyAuditRuleTemplatesOutcome ModifyAuditRuleTemplates(const Model::ModifyAuditRuleTemplatesRequest &request);
+                void ModifyAuditRuleTemplatesAsync(const Model::ModifyAuditRuleTemplatesRequest& request, const ModifyAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAuditRuleTemplatesOutcomeCallable ModifyAuditRuleTemplatesCallable(const Model::ModifyAuditRuleTemplatesRequest& request);
+
+                /**
+                 *本接口(ModifyAuditService)用于修改云数据库审计日志保存时长、审计规则等服务配置
+                 * @param req ModifyAuditServiceRequest
+                 * @return ModifyAuditServiceOutcome
+                 */
+                ModifyAuditServiceOutcome ModifyAuditService(const Model::ModifyAuditServiceRequest &request);
+                void ModifyAuditServiceAsync(const Model::ModifyAuditServiceRequest& request, const ModifyAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAuditServiceOutcomeCallable ModifyAuditServiceCallable(const Model::ModifyAuditServiceRequest& request);
 
                 /**
                  *本接口(ModifyAutoRenewFlag)用于修改云数据库实例的自动续费标记。仅支持包年包月的实例设置自动续费标记。

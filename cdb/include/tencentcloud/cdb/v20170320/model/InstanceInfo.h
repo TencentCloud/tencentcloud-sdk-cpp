@@ -1062,6 +1062,31 @@ namespace TencentCloud
                      */
                     bool DiskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取当前扩容的CPU核心数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpandCpu 当前扩容的CPU核心数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetExpandCpu() const;
+
+                    /**
+                     * 设置当前扩容的CPU核心数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _expandCpu 当前扩容的CPU核心数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExpandCpu(const int64_t& _expandCpu);
+
+                    /**
+                     * 判断参数 ExpandCpu 是否已赋值
+                     * @return ExpandCpu 是否已赋值
+                     * 
+                     */
+                    bool ExpandCpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1350,6 +1375,13 @@ namespace TencentCloud
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * 当前扩容的CPU核心数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_expandCpu;
+                    bool m_expandCpuHasBeenSet;
 
                 };
             }

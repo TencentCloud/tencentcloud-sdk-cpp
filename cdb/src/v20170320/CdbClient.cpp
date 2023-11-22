@@ -298,6 +298,49 @@ CdbClient::BalanceRoGroupLoadOutcomeCallable CdbClient::BalanceRoGroupLoadCallab
     return task->get_future();
 }
 
+CdbClient::CloseAuditServiceOutcome CdbClient::CloseAuditService(const CloseAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseAuditServiceResponse rsp = CloseAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseAuditServiceOutcome(rsp);
+        else
+            return CloseAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::CloseAuditServiceAsync(const CloseAuditServiceRequest& request, const CloseAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseAuditService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::CloseAuditServiceOutcomeCallable CdbClient::CloseAuditServiceCallable(const CloseAuditServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseAuditServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseAuditService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::CloseCDBProxyOutcome CdbClient::CloseCDBProxy(const CloseCDBProxyRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseCDBProxy");
@@ -592,6 +635,49 @@ CdbClient::CreateAuditRuleOutcomeCallable CdbClient::CreateAuditRuleCallable(con
         [this, request]()
         {
             return this->CreateAuditRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::CreateAuditRuleTemplateOutcome CdbClient::CreateAuditRuleTemplate(const CreateAuditRuleTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuditRuleTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuditRuleTemplateResponse rsp = CreateAuditRuleTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuditRuleTemplateOutcome(rsp);
+        else
+            return CreateAuditRuleTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuditRuleTemplateOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::CreateAuditRuleTemplateAsync(const CreateAuditRuleTemplateRequest& request, const CreateAuditRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAuditRuleTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::CreateAuditRuleTemplateOutcomeCallable CdbClient::CreateAuditRuleTemplateCallable(const CreateAuditRuleTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAuditRuleTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAuditRuleTemplate(request);
         }
     );
 
@@ -1244,6 +1330,49 @@ CdbClient::DeleteAuditRuleOutcomeCallable CdbClient::DeleteAuditRuleCallable(con
     return task->get_future();
 }
 
+CdbClient::DeleteAuditRuleTemplatesOutcome CdbClient::DeleteAuditRuleTemplates(const DeleteAuditRuleTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuditRuleTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuditRuleTemplatesResponse rsp = DeleteAuditRuleTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuditRuleTemplatesOutcome(rsp);
+        else
+            return DeleteAuditRuleTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuditRuleTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DeleteAuditRuleTemplatesAsync(const DeleteAuditRuleTemplatesRequest& request, const DeleteAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAuditRuleTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DeleteAuditRuleTemplatesOutcomeCallable CdbClient::DeleteAuditRuleTemplatesCallable(const DeleteAuditRuleTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAuditRuleTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAuditRuleTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DeleteBackupOutcome CdbClient::DeleteBackup(const DeleteBackupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBackup");
@@ -1280,6 +1409,49 @@ CdbClient::DeleteBackupOutcomeCallable CdbClient::DeleteBackupCallable(const Del
         [this, request]()
         {
             return this->DeleteBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DeleteDatabaseOutcome CdbClient::DeleteDatabase(const DeleteDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDatabaseResponse rsp = DeleteDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDatabaseOutcome(rsp);
+        else
+            return DeleteDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DeleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDatabase(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DeleteDatabaseOutcomeCallable CdbClient::DeleteDatabaseCallable(const DeleteDatabaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDatabaseOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDatabase(request);
         }
     );
 
@@ -1588,6 +1760,49 @@ CdbClient::DescribeAuditConfigOutcomeCallable CdbClient::DescribeAuditConfigCall
     return task->get_future();
 }
 
+CdbClient::DescribeAuditInstanceListOutcome CdbClient::DescribeAuditInstanceList(const DescribeAuditInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditInstanceListResponse rsp = DescribeAuditInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditInstanceListOutcome(rsp);
+        else
+            return DescribeAuditInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeAuditInstanceListAsync(const DescribeAuditInstanceListRequest& request, const DescribeAuditInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditInstanceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeAuditInstanceListOutcomeCallable CdbClient::DescribeAuditInstanceListCallable(const DescribeAuditInstanceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditInstanceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditInstanceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeAuditLogFilesOutcome CdbClient::DescribeAuditLogFiles(const DescribeAuditLogFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAuditLogFiles");
@@ -1710,6 +1925,92 @@ CdbClient::DescribeAuditPoliciesOutcomeCallable CdbClient::DescribeAuditPolicies
         [this, request]()
         {
             return this->DescribeAuditPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DescribeAuditRuleTemplateModifyHistoryOutcome CdbClient::DescribeAuditRuleTemplateModifyHistory(const DescribeAuditRuleTemplateModifyHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditRuleTemplateModifyHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditRuleTemplateModifyHistoryResponse rsp = DescribeAuditRuleTemplateModifyHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditRuleTemplateModifyHistoryOutcome(rsp);
+        else
+            return DescribeAuditRuleTemplateModifyHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditRuleTemplateModifyHistoryOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeAuditRuleTemplateModifyHistoryAsync(const DescribeAuditRuleTemplateModifyHistoryRequest& request, const DescribeAuditRuleTemplateModifyHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditRuleTemplateModifyHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeAuditRuleTemplateModifyHistoryOutcomeCallable CdbClient::DescribeAuditRuleTemplateModifyHistoryCallable(const DescribeAuditRuleTemplateModifyHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditRuleTemplateModifyHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditRuleTemplateModifyHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DescribeAuditRuleTemplatesOutcome CdbClient::DescribeAuditRuleTemplates(const DescribeAuditRuleTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditRuleTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditRuleTemplatesResponse rsp = DescribeAuditRuleTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditRuleTemplatesOutcome(rsp);
+        else
+            return DescribeAuditRuleTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditRuleTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeAuditRuleTemplatesAsync(const DescribeAuditRuleTemplatesRequest& request, const DescribeAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditRuleTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeAuditRuleTemplatesOutcomeCallable CdbClient::DescribeAuditRuleTemplatesCallable(const DescribeAuditRuleTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditRuleTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditRuleTemplates(request);
         }
     );
 
@@ -4462,6 +4763,92 @@ CdbClient::ModifyAuditRuleOutcomeCallable CdbClient::ModifyAuditRuleCallable(con
         [this, request]()
         {
             return this->ModifyAuditRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ModifyAuditRuleTemplatesOutcome CdbClient::ModifyAuditRuleTemplates(const ModifyAuditRuleTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAuditRuleTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAuditRuleTemplatesResponse rsp = ModifyAuditRuleTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAuditRuleTemplatesOutcome(rsp);
+        else
+            return ModifyAuditRuleTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAuditRuleTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyAuditRuleTemplatesAsync(const ModifyAuditRuleTemplatesRequest& request, const ModifyAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAuditRuleTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyAuditRuleTemplatesOutcomeCallable CdbClient::ModifyAuditRuleTemplatesCallable(const ModifyAuditRuleTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAuditRuleTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAuditRuleTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ModifyAuditServiceOutcome CdbClient::ModifyAuditService(const ModifyAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAuditServiceResponse rsp = ModifyAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAuditServiceOutcome(rsp);
+        else
+            return ModifyAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyAuditServiceAsync(const ModifyAuditServiceRequest& request, const ModifyAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAuditService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyAuditServiceOutcomeCallable CdbClient::ModifyAuditServiceCallable(const ModifyAuditServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAuditServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAuditService(request);
         }
     );
 

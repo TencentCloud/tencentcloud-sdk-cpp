@@ -66,7 +66,8 @@ InstanceInfo::InstanceInfo() :
     m_tagListHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
     m_maxDelayTimeHasBeenSet(false),
-    m_diskTypeHasBeenSet(false)
+    m_diskTypeHasBeenSet(false),
+    m_expandCpuHasBeenSet(false)
 {
 }
 
@@ -586,6 +587,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_diskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpandCpu") && !value["ExpandCpu"].IsNull())
+    {
+        if (!value["ExpandCpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ExpandCpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expandCpu = value["ExpandCpu"].GetInt64();
+        m_expandCpuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -983,6 +994,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expandCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpandCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expandCpu, allocator);
     }
 
 }
@@ -1722,5 +1741,21 @@ void InstanceInfo::SetDiskType(const string& _diskType)
 bool InstanceInfo::DiskTypeHasBeenSet() const
 {
     return m_diskTypeHasBeenSet;
+}
+
+int64_t InstanceInfo::GetExpandCpu() const
+{
+    return m_expandCpu;
+}
+
+void InstanceInfo::SetExpandCpu(const int64_t& _expandCpu)
+{
+    m_expandCpu = _expandCpu;
+    m_expandCpuHasBeenSet = true;
+}
+
+bool InstanceInfo::ExpandCpuHasBeenSet() const
+{
+    return m_expandCpuHasBeenSet;
 }
 

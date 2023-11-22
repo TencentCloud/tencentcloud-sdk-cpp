@@ -137,6 +137,22 @@ namespace TencentCloud
                      */
                     bool SubnetIdsHasBeenSet() const;
 
+                    /**
+                     * 获取固定ip回收时间，已安装eniipamd组件才会有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClaimExpiredDuration 固定ip回收时间，已安装eniipamd组件才会有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClaimExpiredDuration() const;
+
+                    /**
+                     * 判断参数 ClaimExpiredDuration 是否已赋值
+                     * @return ClaimExpiredDuration 是否已赋值
+                     * 
+                     */
+                    bool ClaimExpiredDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +195,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
+
+                    /**
+                     * 固定ip回收时间，已安装eniipamd组件才会有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_claimExpiredDuration;
+                    bool m_claimExpiredDurationHasBeenSet;
 
                 };
             }

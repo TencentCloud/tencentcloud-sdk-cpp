@@ -255,6 +255,49 @@ CfgClient::DescribeTaskListOutcomeCallable CfgClient::DescribeTaskListCallable(c
     return task->get_future();
 }
 
+CfgClient::DescribeTaskPolicyTriggerLogOutcome CfgClient::DescribeTaskPolicyTriggerLog(const DescribeTaskPolicyTriggerLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskPolicyTriggerLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskPolicyTriggerLogResponse rsp = DescribeTaskPolicyTriggerLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskPolicyTriggerLogOutcome(rsp);
+        else
+            return DescribeTaskPolicyTriggerLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskPolicyTriggerLogOutcome(outcome.GetError());
+    }
+}
+
+void CfgClient::DescribeTaskPolicyTriggerLogAsync(const DescribeTaskPolicyTriggerLogRequest& request, const DescribeTaskPolicyTriggerLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskPolicyTriggerLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfgClient::DescribeTaskPolicyTriggerLogOutcomeCallable CfgClient::DescribeTaskPolicyTriggerLogCallable(const DescribeTaskPolicyTriggerLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskPolicyTriggerLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskPolicyTriggerLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfgClient::DescribeTemplateOutcome CfgClient::DescribeTemplate(const DescribeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTemplate");
@@ -463,6 +506,49 @@ CfgClient::ModifyTaskRunStatusOutcomeCallable CfgClient::ModifyTaskRunStatusCall
         [this, request]()
         {
             return this->ModifyTaskRunStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfgClient::TriggerPolicyOutcome CfgClient::TriggerPolicy(const TriggerPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "TriggerPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TriggerPolicyResponse rsp = TriggerPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TriggerPolicyOutcome(rsp);
+        else
+            return TriggerPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return TriggerPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CfgClient::TriggerPolicyAsync(const TriggerPolicyRequest& request, const TriggerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TriggerPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfgClient::TriggerPolicyOutcomeCallable CfgClient::TriggerPolicyCallable(const TriggerPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TriggerPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->TriggerPolicy(request);
         }
     );
 

@@ -48,7 +48,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_reviewAudioVideoTaskHasBeenSet(false),
     m_reduceMediaBitrateTaskHasBeenSet(false),
     m_describeFileAttributesTaskHasBeenSet(false),
-    m_qualityInspectTaskHasBeenSet(false)
+    m_qualityInspectTaskHasBeenSet(false),
+    m_qualityEnhanceTaskHasBeenSet(false)
 {
 }
 
@@ -476,6 +477,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_qualityInspectTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("QualityEnhanceTask") && !rsp["QualityEnhanceTask"].IsNull())
+    {
+        if (!rsp["QualityEnhanceTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityEnhanceTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_qualityEnhanceTask.Deserialize(rsp["QualityEnhanceTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_qualityEnhanceTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -704,6 +722,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qualityInspectTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_qualityEnhanceTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityEnhanceTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qualityEnhanceTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -966,6 +993,16 @@ QualityInspectTask DescribeTaskDetailResponse::GetQualityInspectTask() const
 bool DescribeTaskDetailResponse::QualityInspectTaskHasBeenSet() const
 {
     return m_qualityInspectTaskHasBeenSet;
+}
+
+QualityEnhanceTask DescribeTaskDetailResponse::GetQualityEnhanceTask() const
+{
+    return m_qualityEnhanceTask;
+}
+
+bool DescribeTaskDetailResponse::QualityEnhanceTaskHasBeenSet() const
+{
+    return m_qualityEnhanceTaskHasBeenSet;
 }
 
 

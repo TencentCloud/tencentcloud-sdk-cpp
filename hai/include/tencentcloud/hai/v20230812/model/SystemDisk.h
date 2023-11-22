@@ -96,6 +96,31 @@ namespace TencentCloud
                      */
                     bool DiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取系统盘分区盘符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskName 系统盘分区盘符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDiskName() const;
+
+                    /**
+                     * 设置系统盘分区盘符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _diskName 系统盘分区盘符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDiskName(const std::string& _diskName);
+
+                    /**
+                     * 判断参数 DiskName 是否已赋值
+                     * @return DiskName 是否已赋值
+                     * 
+                     */
+                    bool DiskNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +136,13 @@ namespace TencentCloud
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * 系统盘分区盘符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_diskName;
+                    bool m_diskNameHasBeenSet;
 
                 };
             }

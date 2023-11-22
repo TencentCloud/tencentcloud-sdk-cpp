@@ -23,6 +23,7 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 DescribePrefetchTasksRequest::DescribePrefetchTasksRequest() :
+    m_zoneIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_offsetHasBeenSet(false),
@@ -37,6 +38,14 @@ string DescribePrefetchTasksRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_startTimeHasBeenSet)
     {
@@ -92,6 +101,22 @@ string DescribePrefetchTasksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribePrefetchTasksRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void DescribePrefetchTasksRequest::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool DescribePrefetchTasksRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
 
 string DescribePrefetchTasksRequest::GetStartTime() const
 {

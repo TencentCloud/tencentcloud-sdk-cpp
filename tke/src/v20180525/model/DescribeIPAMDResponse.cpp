@@ -29,7 +29,8 @@ DescribeIPAMDResponse::DescribeIPAMDResponse() :
     m_disableVpcCniModeHasBeenSet(false),
     m_phaseHasBeenSet(false),
     m_reasonHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+    m_subnetIdsHasBeenSet(false),
+    m_claimExpiredDurationHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,16 @@ CoreInternalOutcome DescribeIPAMDResponse::Deserialize(const string &payload)
         m_subnetIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClaimExpiredDuration") && !rsp["ClaimExpiredDuration"].IsNull())
+    {
+        if (!rsp["ClaimExpiredDuration"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClaimExpiredDuration` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_claimExpiredDuration = string(rsp["ClaimExpiredDuration"].GetString());
+        m_claimExpiredDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -191,6 +202,14 @@ string DescribeIPAMDResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_claimExpiredDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClaimExpiredDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_claimExpiredDuration.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -263,6 +282,16 @@ vector<string> DescribeIPAMDResponse::GetSubnetIds() const
 bool DescribeIPAMDResponse::SubnetIdsHasBeenSet() const
 {
     return m_subnetIdsHasBeenSet;
+}
+
+string DescribeIPAMDResponse::GetClaimExpiredDuration() const
+{
+    return m_claimExpiredDuration;
+}
+
+bool DescribeIPAMDResponse::ClaimExpiredDurationHasBeenSet() const
+{
+    return m_claimExpiredDurationHasBeenSet;
 }
 
 

@@ -40,6 +40,49 @@ TseClient::TseClient(const Credential &credential, const string &region, const C
 }
 
 
+TseClient::CloseWafProtectionOutcome TseClient::CloseWafProtection(const CloseWafProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseWafProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseWafProtectionResponse rsp = CloseWafProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseWafProtectionOutcome(rsp);
+        else
+            return CloseWafProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseWafProtectionOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CloseWafProtectionAsync(const CloseWafProtectionRequest& request, const CloseWafProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseWafProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CloseWafProtectionOutcomeCallable TseClient::CloseWafProtectionCallable(const CloseWafProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseWafProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseWafProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::CreateCloudNativeAPIGatewayOutcome TseClient::CreateCloudNativeAPIGateway(const CreateCloudNativeAPIGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudNativeAPIGateway");
@@ -420,6 +463,49 @@ TseClient::CreateNativeGatewayServerGroupOutcomeCallable TseClient::CreateNative
         [this, request]()
         {
             return this->CreateNativeGatewayServerGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateWafDomainsOutcome TseClient::CreateWafDomains(const CreateWafDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWafDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWafDomainsResponse rsp = CreateWafDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWafDomainsOutcome(rsp);
+        else
+            return CreateWafDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWafDomainsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateWafDomainsAsync(const CreateWafDomainsRequest& request, const CreateWafDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWafDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateWafDomainsOutcomeCallable TseClient::CreateWafDomainsCallable(const CreateWafDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWafDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWafDomains(request);
         }
     );
 
@@ -2140,6 +2226,49 @@ TseClient::ModifyUpstreamNodeStatusOutcomeCallable TseClient::ModifyUpstreamNode
         [this, request]()
         {
             return this->ModifyUpstreamNodeStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::OpenWafProtectionOutcome TseClient::OpenWafProtection(const OpenWafProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenWafProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenWafProtectionResponse rsp = OpenWafProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenWafProtectionOutcome(rsp);
+        else
+            return OpenWafProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenWafProtectionOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::OpenWafProtectionAsync(const OpenWafProtectionRequest& request, const OpenWafProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenWafProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::OpenWafProtectionOutcomeCallable TseClient::OpenWafProtectionCallable(const OpenWafProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenWafProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenWafProtection(request);
         }
     );
 
