@@ -54,7 +54,9 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_cerebroPrivateAccessHasBeenSet(false),
     m_esConfigSetHasBeenSet(false),
     m_operationDurationHasBeenSet(false),
-    m_kibanaAlteringPublicAccessHasBeenSet(false)
+    m_kibanaAlteringPublicAccessHasBeenSet(false),
+    m_kibanaPrivateDomainHasBeenSet(false),
+    m_cerebroPrivateDomainHasBeenSet(false)
 {
 }
 
@@ -339,6 +341,22 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "KibanaAlteringPublicAccess";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_kibanaAlteringPublicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kibanaPrivateDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaPrivateDomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kibanaPrivateDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cerebroPrivateDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CerebroPrivateDomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cerebroPrivateDomain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -859,6 +877,38 @@ void UpdateInstanceRequest::SetKibanaAlteringPublicAccess(const string& _kibanaA
 bool UpdateInstanceRequest::KibanaAlteringPublicAccessHasBeenSet() const
 {
     return m_kibanaAlteringPublicAccessHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetKibanaPrivateDomain() const
+{
+    return m_kibanaPrivateDomain;
+}
+
+void UpdateInstanceRequest::SetKibanaPrivateDomain(const string& _kibanaPrivateDomain)
+{
+    m_kibanaPrivateDomain = _kibanaPrivateDomain;
+    m_kibanaPrivateDomainHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::KibanaPrivateDomainHasBeenSet() const
+{
+    return m_kibanaPrivateDomainHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetCerebroPrivateDomain() const
+{
+    return m_cerebroPrivateDomain;
+}
+
+void UpdateInstanceRequest::SetCerebroPrivateDomain(const string& _cerebroPrivateDomain)
+{
+    m_cerebroPrivateDomain = _cerebroPrivateDomain;
+    m_cerebroPrivateDomainHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::CerebroPrivateDomainHasBeenSet() const
+{
+    return m_cerebroPrivateDomainHasBeenSet;
 }
 
 

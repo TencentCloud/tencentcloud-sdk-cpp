@@ -25,7 +25,8 @@ using namespace std;
 RestartInstanceRequest::RestartInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_forceRestartHasBeenSet(false),
-    m_restartModeHasBeenSet(false)
+    m_restartModeHasBeenSet(false),
+    m_upgradeKernelHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string RestartInstanceRequest::ToJsonString() const
         string key = "RestartMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_restartMode, allocator);
+    }
+
+    if (m_upgradeKernelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeKernel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_upgradeKernel, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void RestartInstanceRequest::SetRestartMode(const int64_t& _restartMode)
 bool RestartInstanceRequest::RestartModeHasBeenSet() const
 {
     return m_restartModeHasBeenSet;
+}
+
+bool RestartInstanceRequest::GetUpgradeKernel() const
+{
+    return m_upgradeKernel;
+}
+
+void RestartInstanceRequest::SetUpgradeKernel(const bool& _upgradeKernel)
+{
+    m_upgradeKernel = _upgradeKernel;
+    m_upgradeKernelHasBeenSet = true;
+}
+
+bool RestartInstanceRequest::UpgradeKernelHasBeenSet() const
+{
+    return m_upgradeKernelHasBeenSet;
 }
 
 

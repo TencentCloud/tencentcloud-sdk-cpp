@@ -1064,18 +1064,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool MultiZoneInfoHasBeenSet() const;
 
                     /**
-                     * 获取部署模式<li>0：单可用区</li><li>1：多可用区</li>
+                     * 获取部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeployMode 部署模式<li>0：单可用区</li><li>1：多可用区</li>
+                     * @return DeployMode 部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeployMode() const;
 
                     /**
-                     * 设置部署模式<li>0：单可用区</li><li>1：多可用区</li>
+                     * 设置部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deployMode 部署模式<li>0：单可用区</li><li>1：多可用区</li>
+                     * @param _deployMode 部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1935,18 +1935,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ProcessPercentHasBeenSet() const;
 
                     /**
-                     * 获取Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+                     * 获取Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaAlteringPublicAccess Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+                     * @return KibanaAlteringPublicAccess Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKibanaAlteringPublicAccess() const;
 
                     /**
-                     * 设置Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+                     * 设置Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaAlteringPublicAccess Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+                     * @param _kibanaAlteringPublicAccess Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2008,6 +2008,56 @@ RENEW_FLAG_DEFAULT：不自动续费
                      * 
                      */
                     bool CdcIdHasBeenSet() const;
+
+                    /**
+                     * 获取kibana内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KibanaPrivateVip kibana内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetKibanaPrivateVip() const;
+
+                    /**
+                     * 设置kibana内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _kibanaPrivateVip kibana内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKibanaPrivateVip(const std::string& _kibanaPrivateVip);
+
+                    /**
+                     * 判断参数 KibanaPrivateVip 是否已赋值
+                     * @return KibanaPrivateVip 是否已赋值
+                     * 
+                     */
+                    bool KibanaPrivateVipHasBeenSet() const;
+
+                    /**
+                     * 获取自定义kibana内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomKibanaPrivateUrl 自定义kibana内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCustomKibanaPrivateUrl() const;
+
+                    /**
+                     * 设置自定义kibana内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customKibanaPrivateUrl 自定义kibana内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomKibanaPrivateUrl(const std::string& _customKibanaPrivateUrl);
+
+                    /**
+                     * 判断参数 CustomKibanaPrivateUrl 是否已赋值
+                     * @return CustomKibanaPrivateUrl 是否已赋值
+                     * 
+                     */
+                    bool CustomKibanaPrivateUrlHasBeenSet() const;
 
                 private:
 
@@ -2297,7 +2347,7 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool m_multiZoneInfoHasBeenSet;
 
                     /**
-                     * 部署模式<li>0：单可用区</li><li>1：多可用区</li>
+                     * 部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deployMode;
@@ -2541,7 +2591,7 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool m_processPercentHasBeenSet;
 
                     /**
-                     * Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+                     * Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kibanaAlteringPublicAccess;
@@ -2560,6 +2610,20 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * kibana内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kibanaPrivateVip;
+                    bool m_kibanaPrivateVipHasBeenSet;
+
+                    /**
+                     * 自定义kibana内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_customKibanaPrivateUrl;
+                    bool m_customKibanaPrivateUrlHasBeenSet;
 
                 };
             }

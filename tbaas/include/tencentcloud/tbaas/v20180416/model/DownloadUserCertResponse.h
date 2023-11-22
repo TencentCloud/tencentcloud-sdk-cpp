@@ -60,16 +60,30 @@ namespace TencentCloud
                     /**
                      * 获取证书内容
                      * @return CertCtx 证书内容
-                     * 
+                     * @deprecated
                      */
                     std::string GetCertCtx() const;
 
                     /**
                      * 判断参数 CertCtx 是否已赋值
                      * @return CertCtx 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CertCtxHasBeenSet() const;
+
+                    /**
+                     * 获取证书内容
+                     * @return Cert 证书内容
+                     * 
+                     */
+                    std::string GetCert() const;
+
+                    /**
+                     * 判断参数 Cert 是否已赋值
+                     * @return Cert 是否已赋值
+                     * 
+                     */
+                    bool CertHasBeenSet() const;
 
                 private:
 
@@ -84,6 +98,12 @@ namespace TencentCloud
                      */
                     std::string m_certCtx;
                     bool m_certCtxHasBeenSet;
+
+                    /**
+                     * 证书内容
+                     */
+                    std::string m_cert;
+                    bool m_certHasBeenSet;
 
                 };
             }

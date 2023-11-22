@@ -63,6 +63,8 @@
 #include <tencentcloud/tse/v20201207/model/DeleteEngineResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteWafDomainsRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteWafDomainsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCanaryRulesRequest.h>
@@ -103,6 +105,10 @@
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeUpstreamHealthCheckConfigRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeUpstreamHealthCheckConfigResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeWafDomainsRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeWafDomainsResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeWafProtectionRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeWafProtectionResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesRequest.h>
@@ -211,6 +217,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNativeGatewayServerGroupResponse> DeleteNativeGatewayServerGroupOutcome;
                 typedef std::future<DeleteNativeGatewayServerGroupOutcome> DeleteNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteNativeGatewayServerGroupRequest&, DeleteNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNativeGatewayServerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWafDomainsResponse> DeleteWafDomainsOutcome;
+                typedef std::future<DeleteWafDomainsOutcome> DeleteWafDomainsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteWafDomainsRequest&, DeleteWafDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWafDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayResponse> DescribeCloudNativeAPIGatewayOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayOutcome> DescribeCloudNativeAPIGatewayOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayRequest&, DescribeCloudNativeAPIGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayAsyncHandler;
@@ -271,6 +280,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUpstreamHealthCheckConfigResponse> DescribeUpstreamHealthCheckConfigOutcome;
                 typedef std::future<DescribeUpstreamHealthCheckConfigOutcome> DescribeUpstreamHealthCheckConfigOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeUpstreamHealthCheckConfigRequest&, DescribeUpstreamHealthCheckConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpstreamHealthCheckConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWafDomainsResponse> DescribeWafDomainsOutcome;
+                typedef std::future<DescribeWafDomainsOutcome> DescribeWafDomainsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeWafDomainsRequest&, DescribeWafDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWafProtectionResponse> DescribeWafProtectionOutcome;
+                typedef std::future<DescribeWafProtectionOutcome> DescribeWafProtectionOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeWafProtectionRequest&, DescribeWafProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZookeeperReplicasResponse> DescribeZookeeperReplicasOutcome;
                 typedef std::future<DescribeZookeeperReplicasOutcome> DescribeZookeeperReplicasOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeZookeeperReplicasRequest&, DescribeZookeeperReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZookeeperReplicasAsyncHandler;
@@ -506,6 +521,15 @@ namespace TencentCloud
                 DeleteNativeGatewayServerGroupOutcomeCallable DeleteNativeGatewayServerGroupCallable(const Model::DeleteNativeGatewayServerGroupRequest& request);
 
                 /**
+                 *删除 WAF 防护域名
+                 * @param req DeleteWafDomainsRequest
+                 * @return DeleteWafDomainsOutcome
+                 */
+                DeleteWafDomainsOutcome DeleteWafDomains(const Model::DeleteWafDomainsRequest &request);
+                void DeleteWafDomainsAsync(const Model::DeleteWafDomainsRequest& request, const DeleteWafDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWafDomainsOutcomeCallable DeleteWafDomainsCallable(const Model::DeleteWafDomainsRequest& request);
+
+                /**
                  *获取云原生API网关实例信息
                  * @param req DescribeCloudNativeAPIGatewayRequest
                  * @return DescribeCloudNativeAPIGatewayOutcome
@@ -684,6 +708,24 @@ namespace TencentCloud
                 DescribeUpstreamHealthCheckConfigOutcome DescribeUpstreamHealthCheckConfig(const Model::DescribeUpstreamHealthCheckConfigRequest &request);
                 void DescribeUpstreamHealthCheckConfigAsync(const Model::DescribeUpstreamHealthCheckConfigRequest& request, const DescribeUpstreamHealthCheckConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUpstreamHealthCheckConfigOutcomeCallable DescribeUpstreamHealthCheckConfigCallable(const Model::DescribeUpstreamHealthCheckConfigRequest& request);
+
+                /**
+                 *获取 WAF 防护域名
+                 * @param req DescribeWafDomainsRequest
+                 * @return DescribeWafDomainsOutcome
+                 */
+                DescribeWafDomainsOutcome DescribeWafDomains(const Model::DescribeWafDomainsRequest &request);
+                void DescribeWafDomainsAsync(const Model::DescribeWafDomainsRequest& request, const DescribeWafDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWafDomainsOutcomeCallable DescribeWafDomainsCallable(const Model::DescribeWafDomainsRequest& request);
+
+                /**
+                 *获取 WAF 防护状态
+                 * @param req DescribeWafProtectionRequest
+                 * @return DescribeWafProtectionOutcome
+                 */
+                DescribeWafProtectionOutcome DescribeWafProtection(const Model::DescribeWafProtectionRequest &request);
+                void DescribeWafProtectionAsync(const Model::DescribeWafProtectionRequest& request, const DescribeWafProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWafProtectionOutcomeCallable DescribeWafProtectionCallable(const Model::DescribeWafProtectionRequest& request);
 
                 /**
                  *查询Zookeeper类型注册引擎实例副本信息

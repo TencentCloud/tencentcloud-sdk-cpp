@@ -205,6 +205,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeClusterNamespaceListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnLineageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnLineageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeColumnsMetaRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeColumnsMetaResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataBasesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataBasesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataCheckStatRequest.h>
@@ -934,6 +936,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeColumnLineageResponse> DescribeColumnLineageOutcome;
                 typedef std::future<DescribeColumnLineageOutcome> DescribeColumnLineageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeColumnLineageRequest&, DescribeColumnLineageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnLineageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeColumnsMetaResponse> DescribeColumnsMetaOutcome;
+                typedef std::future<DescribeColumnsMetaOutcome> DescribeColumnsMetaOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeColumnsMetaRequest&, DescribeColumnsMetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnsMetaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataBasesResponse> DescribeDataBasesOutcome;
                 typedef std::future<DescribeDataBasesOutcome> DescribeDataBasesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDataBasesRequest&, DescribeDataBasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataBasesAsyncHandler;
@@ -2429,6 +2434,15 @@ namespace TencentCloud
                 DescribeColumnLineageOutcome DescribeColumnLineage(const Model::DescribeColumnLineageRequest &request);
                 void DescribeColumnLineageAsync(const Model::DescribeColumnLineageRequest& request, const DescribeColumnLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeColumnLineageOutcomeCallable DescribeColumnLineageCallable(const Model::DescribeColumnLineageRequest& request);
+
+                /**
+                 *查询表的所有列元数据
+                 * @param req DescribeColumnsMetaRequest
+                 * @return DescribeColumnsMetaOutcome
+                 */
+                DescribeColumnsMetaOutcome DescribeColumnsMeta(const Model::DescribeColumnsMetaRequest &request);
+                void DescribeColumnsMetaAsync(const Model::DescribeColumnsMetaRequest& request, const DescribeColumnsMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeColumnsMetaOutcomeCallable DescribeColumnsMetaCallable(const Model::DescribeColumnsMetaRequest& request);
 
                 /**
                  *查询数据来源列表

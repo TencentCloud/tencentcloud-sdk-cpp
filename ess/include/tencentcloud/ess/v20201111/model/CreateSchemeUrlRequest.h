@@ -141,6 +141,72 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
+                     * 获取证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证(默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * @return IdCardType 证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证(默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * 
+                     */
+                    std::string GetIdCardType() const;
+
+                    /**
+                     * 设置证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证(默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * @param _idCardType 证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证(默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * 
+                     */
+                    void SetIdCardType(const std::string& _idCardType);
+
+                    /**
+                     * 判断参数 IdCardType 是否已赋值
+                     * @return IdCardType 是否已赋值
+                     * 
+                     */
+                    bool IdCardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母(但“I”、“O”除外)，后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @return IdCardNumber 证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母(但“I”、“O”除外)，后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * 
+                     */
+                    std::string GetIdCardNumber() const;
+
+                    /**
+                     * 设置证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母(但“I”、“O”除外)，后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @param _idCardNumber 证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母(但“I”、“O”除外)，后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * 
+                     */
+                    void SetIdCardNumber(const std::string& _idCardNumber);
+
+                    /**
+                     * 判断参数 IdCardNumber 是否已赋值
+                     * @return IdCardNumber 是否已赋值
+                     * 
+                     */
+                    bool IdCardNumberHasBeenSet() const;
+
+                    /**
                      * 获取要跳转的链接类型
 
 <ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li>
@@ -424,6 +490,24 @@ namespace TencentCloud
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
+
+                    /**
+                     * 证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证(默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     */
+                    std::string m_idCardType;
+                    bool m_idCardTypeHasBeenSet;
+
+                    /**
+                     * 证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母(但“I”、“O”除外)，后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     */
+                    std::string m_idCardNumber;
+                    bool m_idCardNumberHasBeenSet;
 
                     /**
                      * 要跳转的链接类型

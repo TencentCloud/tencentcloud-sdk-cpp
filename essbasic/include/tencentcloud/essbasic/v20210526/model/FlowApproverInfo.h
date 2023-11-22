@@ -713,7 +713,9 @@ RecipientId参数获取：
 
 默认为1(人脸认证 ),2(签署密码)
 
-注: `用模版创建合同场景, 签署人的认证方式需要在配置模板的时候指定, 在此创建合同指定无效`
+注: 
+1. 用<font color='red'>模版创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
+2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明
                      * @return ApproverSignTypes 签署人签署合同时的认证方式
 <ul><li> **1** :人脸认证</li>
 <li> **2** :签署密码</li>
@@ -721,7 +723,9 @@ RecipientId参数获取：
 
 默认为1(人脸认证 ),2(签署密码)
 
-注: `用模版创建合同场景, 签署人的认证方式需要在配置模板的时候指定, 在此创建合同指定无效`
+注: 
+1. 用<font color='red'>模版创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
+2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明
                      * 
                      */
                     std::vector<int64_t> GetApproverSignTypes() const;
@@ -734,7 +738,9 @@ RecipientId参数获取：
 
 默认为1(人脸认证 ),2(签署密码)
 
-注: `用模版创建合同场景, 签署人的认证方式需要在配置模板的时候指定, 在此创建合同指定无效`
+注: 
+1. 用<font color='red'>模版创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
+2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明
                      * @param _approverSignTypes 签署人签署合同时的认证方式
 <ul><li> **1** :人脸认证</li>
 <li> **2** :签署密码</li>
@@ -742,7 +748,9 @@ RecipientId参数获取：
 
 默认为1(人脸认证 ),2(签署密码)
 
-注: `用模版创建合同场景, 签署人的认证方式需要在配置模板的时候指定, 在此创建合同指定无效`
+注: 
+1. 用<font color='red'>模版创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
+2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明
                      * 
                      */
                     void SetApproverSignTypes(const std::vector<int64_t>& _approverSignTypes);
@@ -1052,7 +1060,9 @@ RecipientId参数获取：
 
 默认为1(人脸认证 ),2(签署密码)
 
-注: `用模版创建合同场景, 签署人的认证方式需要在配置模板的时候指定, 在此创建合同指定无效`
+注: 
+1. 用<font color='red'>模版创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
+2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明
                      */
                     std::vector<int64_t> m_approverSignTypes;
                     bool m_approverSignTypesHasBeenSet;

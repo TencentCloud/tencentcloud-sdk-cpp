@@ -221,6 +221,56 @@ namespace TencentCloud
                      */
                     bool VersionHasBeenSet() const;
 
+                    /**
+                     * 获取web服务内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrivateVip web服务内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPrivateVip() const;
+
+                    /**
+                     * 设置web服务内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _privateVip web服务内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrivateVip(const std::string& _privateVip);
+
+                    /**
+                     * 判断参数 PrivateVip 是否已赋值
+                     * @return PrivateVip 是否已赋值
+                     * 
+                     */
+                    bool PrivateVipHasBeenSet() const;
+
+                    /**
+                     * 获取自定义cerebro内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomPrivateUrl 自定义cerebro内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCustomPrivateUrl() const;
+
+                    /**
+                     * 设置自定义cerebro内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customPrivateUrl 自定义cerebro内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomPrivateUrl(const std::string& _customPrivateUrl);
+
+                    /**
+                     * 判断参数 CustomPrivateUrl 是否已赋值
+                     * @return CustomPrivateUrl 是否已赋值
+                     * 
+                     */
+                    bool CustomPrivateUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +321,20 @@ namespace TencentCloud
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
+
+                    /**
+                     * web服务内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_privateVip;
+                    bool m_privateVipHasBeenSet;
+
+                    /**
+                     * 自定义cerebro内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_customPrivateUrl;
+                    bool m_customPrivateUrlHasBeenSet;
 
                 };
             }

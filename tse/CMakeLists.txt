@@ -24,7 +24,8 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServiceResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayRouteRateLimitResponse.h
   include/tencentcloud/tse/v20201207/model/ApolloEnvParam.h
-  include/tencentcloud/tse/v20201207/model/UpdateUpstreamHealthCheckConfigRequest.h
+  include/tencentcloud/tse/v20201207/model/DeleteWafDomainsRequest.h
+  include/tencentcloud/tse/v20201207/model/ServiceWafStatus.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServiceRateLimitRequest.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayRequest.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayStrategyCronScalerConfig.h
@@ -42,6 +43,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayResult.h
   include/tencentcloud/tse/v20201207/model/QpsThreshold.h
+  include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayResponse.h
   include/tencentcloud/tse/v20201207/model/CloseWafProtectionRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesResponse.h
@@ -77,9 +79,11 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/KVPair.h
   include/tencentcloud/tse/v20201207/model/DeleteEngineResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRoutesResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribeWafProtectionResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasRequest.h
   include/tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribeWafDomainsResult.h
   include/tencentcloud/tse/v20201207/model/InstancePort.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayResult.h
   include/tencentcloud/tse/v20201207/model/PolarisCLSTopicInfo.h
@@ -129,6 +133,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/AutoScalerBehavior.h
   include/tencentcloud/tse/v20201207/model/ListFilter.h
   include/tencentcloud/tse/v20201207/model/DeleteEngineRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeWafDomainsResponse.h
   include/tencentcloud/tse/v20201207/model/ZookeeperReplica.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceRateLimitRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h
@@ -138,6 +143,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/NativeGatewayServerGroup.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitResponse.h
   include/tencentcloud/tse/v20201207/model/CloseWafProtectionResponse.h
+  include/tencentcloud/tse/v20201207/model/UpdateUpstreamHealthCheckConfigRequest.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayStrategyAutoScalerConfigMetric.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayNode.h
   include/tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewaySpecResponse.h
@@ -157,7 +163,8 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayResponse.h
   include/tencentcloud/tse/v20201207/model/KongServices.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayCertificateRequest.h
-  include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribeWafDomainsRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeWafProtectionRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyUpstreamNodeStatusResponse.h
   include/tencentcloud/tse/v20201207/model/NetworkAccessControl.h
   include/tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesRequest.h
@@ -165,6 +172,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayResult.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeNativeGatewayServerGroupsResponse.h
+  include/tencentcloud/tse/v20201207/model/RouteWafStatus.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayStrategyCronScalerConfigParam.h
   include/tencentcloud/tse/v20201207/model/OpenWafProtectionRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayRouteRequest.h
@@ -197,6 +205,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleRequest.h
   include/tencentcloud/tse/v20201207/model/VpcInfo.h
   include/tencentcloud/tse/v20201207/model/KongServiceRouteList.h
+  include/tencentcloud/tse/v20201207/model/DeleteWafDomainsResponse.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayResult.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayRequest.h
   include/tencentcloud/tse/v20201207/model/KongServicePreview.h
@@ -208,6 +217,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupResponse.h
   include/tencentcloud/tse/v20201207/model/EngineRegionInfo.h
   include/tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribeWafProtectionResult.h
   include/tencentcloud/tse/v20201207/model/KongServiceDetail.h
   )
 
@@ -218,7 +228,8 @@ set(tse_src
   src/v20201207/model/CreateCloudNativeAPIGatewayServiceResponse.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayRouteRateLimitResponse.cpp
   src/v20201207/model/ApolloEnvParam.cpp
-  src/v20201207/model/UpdateUpstreamHealthCheckConfigRequest.cpp
+  src/v20201207/model/DeleteWafDomainsRequest.cpp
+  src/v20201207/model/ServiceWafStatus.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayServiceRateLimitRequest.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayRequest.cpp
   src/v20201207/model/CloudNativeAPIGatewayStrategyCronScalerConfig.cpp
@@ -236,6 +247,7 @@ set(tse_src
   src/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesRequest.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayResult.cpp
   src/v20201207/model/QpsThreshold.cpp
+  src/v20201207/model/ModifyCloudNativeAPIGatewayResponse.cpp
   src/v20201207/model/CloseWafProtectionRequest.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayServiceResponse.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayNodesResponse.cpp
@@ -271,9 +283,11 @@ set(tse_src
   src/v20201207/model/KVPair.cpp
   src/v20201207/model/DeleteEngineResponse.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayRoutesResponse.cpp
+  src/v20201207/model/DescribeWafProtectionResponse.cpp
   src/v20201207/model/DescribeZookeeperReplicasRequest.cpp
   src/v20201207/model/UpdateUpstreamTargetsRequest.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.cpp
+  src/v20201207/model/DescribeWafDomainsResult.cpp
   src/v20201207/model/InstancePort.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayResult.cpp
   src/v20201207/model/PolarisCLSTopicInfo.cpp
@@ -323,6 +337,7 @@ set(tse_src
   src/v20201207/model/AutoScalerBehavior.cpp
   src/v20201207/model/ListFilter.cpp
   src/v20201207/model/DeleteEngineRequest.cpp
+  src/v20201207/model/DescribeWafDomainsResponse.cpp
   src/v20201207/model/ZookeeperReplica.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayServiceRateLimitRequest.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressRequest.cpp
@@ -332,6 +347,7 @@ set(tse_src
   src/v20201207/model/NativeGatewayServerGroup.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitResponse.cpp
   src/v20201207/model/CloseWafProtectionResponse.cpp
+  src/v20201207/model/UpdateUpstreamHealthCheckConfigRequest.cpp
   src/v20201207/model/CloudNativeAPIGatewayStrategyAutoScalerConfigMetric.cpp
   src/v20201207/model/CloudNativeAPIGatewayNode.cpp
   src/v20201207/model/UpdateCloudNativeAPIGatewaySpecResponse.cpp
@@ -351,7 +367,8 @@ set(tse_src
   src/v20201207/model/DeleteCloudNativeAPIGatewayResponse.cpp
   src/v20201207/model/KongServices.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayCertificateRequest.cpp
-  src/v20201207/model/ModifyCloudNativeAPIGatewayResponse.cpp
+  src/v20201207/model/DescribeWafDomainsRequest.cpp
+  src/v20201207/model/DescribeWafProtectionRequest.cpp
   src/v20201207/model/ModifyUpstreamNodeStatusResponse.cpp
   src/v20201207/model/NetworkAccessControl.cpp
   src/v20201207/model/DescribeZookeeperServerInterfacesRequest.cpp
@@ -359,6 +376,7 @@ set(tse_src
   src/v20201207/model/UpdateCloudNativeAPIGatewayResult.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayRequest.cpp
   src/v20201207/model/DescribeNativeGatewayServerGroupsResponse.cpp
+  src/v20201207/model/RouteWafStatus.cpp
   src/v20201207/model/CloudNativeAPIGatewayStrategyCronScalerConfigParam.cpp
   src/v20201207/model/OpenWafProtectionRequest.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayRouteRequest.cpp
@@ -391,6 +409,7 @@ set(tse_src
   src/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleRequest.cpp
   src/v20201207/model/VpcInfo.cpp
   src/v20201207/model/KongServiceRouteList.cpp
+  src/v20201207/model/DeleteWafDomainsResponse.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayResult.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayRequest.cpp
   src/v20201207/model/KongServicePreview.cpp
@@ -402,6 +421,7 @@ set(tse_src
   src/v20201207/model/ModifyNativeGatewayServerGroupResponse.cpp
   src/v20201207/model/EngineRegionInfo.cpp
   src/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoResponse.cpp
+  src/v20201207/model/DescribeWafProtectionResult.cpp
   src/v20201207/model/KongServiceDetail.cpp
   )
 

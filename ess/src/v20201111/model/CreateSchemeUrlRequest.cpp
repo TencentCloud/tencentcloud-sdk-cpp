@@ -27,6 +27,8 @@ CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_organizationNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
+    m_idCardTypeHasBeenSet(false),
+    m_idCardNumberHasBeenSet(false),
     m_endPointHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_flowGroupIdHasBeenSet(false),
@@ -76,6 +78,22 @@ string CreateSchemeUrlRequest::ToJsonString() const
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_idCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idCardNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdCardNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_idCardNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endPointHasBeenSet)
@@ -218,6 +236,38 @@ void CreateSchemeUrlRequest::SetMobile(const string& _mobile)
 bool CreateSchemeUrlRequest::MobileHasBeenSet() const
 {
     return m_mobileHasBeenSet;
+}
+
+string CreateSchemeUrlRequest::GetIdCardType() const
+{
+    return m_idCardType;
+}
+
+void CreateSchemeUrlRequest::SetIdCardType(const string& _idCardType)
+{
+    m_idCardType = _idCardType;
+    m_idCardTypeHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::IdCardTypeHasBeenSet() const
+{
+    return m_idCardTypeHasBeenSet;
+}
+
+string CreateSchemeUrlRequest::GetIdCardNumber() const
+{
+    return m_idCardNumber;
+}
+
+void CreateSchemeUrlRequest::SetIdCardNumber(const string& _idCardNumber)
+{
+    m_idCardNumber = _idCardNumber;
+    m_idCardNumberHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::IdCardNumberHasBeenSet() const
+{
+    return m_idCardNumberHasBeenSet;
 }
 
 string CreateSchemeUrlRequest::GetEndPoint() const

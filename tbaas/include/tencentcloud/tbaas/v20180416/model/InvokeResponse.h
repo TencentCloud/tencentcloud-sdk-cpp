@@ -46,14 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取交易ID
                      * @return Txid 交易ID
-                     * 
+                     * @deprecated
                      */
                     std::string GetTxid() const;
 
                     /**
                      * 判断参数 Txid 是否已赋值
                      * @return Txid 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TxidHasBeenSet() const;
 
@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool EventsHasBeenSet() const;
 
+                    /**
+                     * 获取交易ID
+                     * @return TxId 交易ID
+                     * 
+                     */
+                    std::string GetTxId() const;
+
+                    /**
+                     * 判断参数 TxId 是否已赋值
+                     * @return TxId 是否已赋值
+                     * 
+                     */
+                    bool TxIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,12 @@ namespace TencentCloud
                      */
                     std::string m_events;
                     bool m_eventsHasBeenSet;
+
+                    /**
+                     * 交易ID
+                     */
+                    std::string m_txId;
+                    bool m_txIdHasBeenSet;
 
                 };
             }

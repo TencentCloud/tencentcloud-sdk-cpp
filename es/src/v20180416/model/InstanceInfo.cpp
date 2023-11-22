@@ -103,7 +103,9 @@ InstanceInfo::InstanceInfo() :
     m_processPercentHasBeenSet(false),
     m_kibanaAlteringPublicAccessHasBeenSet(false),
     m_hasKernelUpgradeHasBeenSet(false),
-    m_cdcIdHasBeenSet(false)
+    m_cdcIdHasBeenSet(false),
+    m_kibanaPrivateVipHasBeenSet(false),
+    m_customKibanaPrivateUrlHasBeenSet(false)
 {
 }
 
@@ -1051,6 +1053,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_cdcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("KibanaPrivateVip") && !value["KibanaPrivateVip"].IsNull())
+    {
+        if (!value["KibanaPrivateVip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.KibanaPrivateVip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kibanaPrivateVip = string(value["KibanaPrivateVip"].GetString());
+        m_kibanaPrivateVipHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomKibanaPrivateUrl") && !value["CustomKibanaPrivateUrl"].IsNull())
+    {
+        if (!value["CustomKibanaPrivateUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CustomKibanaPrivateUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customKibanaPrivateUrl = string(value["CustomKibanaPrivateUrl"].GetString());
+        m_customKibanaPrivateUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1768,6 +1790,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CdcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kibanaPrivateVipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaPrivateVip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kibanaPrivateVip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customKibanaPrivateUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomKibanaPrivateUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customKibanaPrivateUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3099,5 +3137,37 @@ void InstanceInfo::SetCdcId(const string& _cdcId)
 bool InstanceInfo::CdcIdHasBeenSet() const
 {
     return m_cdcIdHasBeenSet;
+}
+
+string InstanceInfo::GetKibanaPrivateVip() const
+{
+    return m_kibanaPrivateVip;
+}
+
+void InstanceInfo::SetKibanaPrivateVip(const string& _kibanaPrivateVip)
+{
+    m_kibanaPrivateVip = _kibanaPrivateVip;
+    m_kibanaPrivateVipHasBeenSet = true;
+}
+
+bool InstanceInfo::KibanaPrivateVipHasBeenSet() const
+{
+    return m_kibanaPrivateVipHasBeenSet;
+}
+
+string InstanceInfo::GetCustomKibanaPrivateUrl() const
+{
+    return m_customKibanaPrivateUrl;
+}
+
+void InstanceInfo::SetCustomKibanaPrivateUrl(const string& _customKibanaPrivateUrl)
+{
+    m_customKibanaPrivateUrl = _customKibanaPrivateUrl;
+    m_customKibanaPrivateUrlHasBeenSet = true;
+}
+
+bool InstanceInfo::CustomKibanaPrivateUrlHasBeenSet() const
+{
+    return m_customKibanaPrivateUrlHasBeenSet;
 }
 

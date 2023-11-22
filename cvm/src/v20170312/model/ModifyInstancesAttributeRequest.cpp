@@ -25,6 +25,7 @@ using namespace std;
 ModifyInstancesAttributeRequest::ModifyInstancesAttributeRequest() :
     m_instanceIdsHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
+    m_userDataHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
     m_hostNameHasBeenSet(false),
@@ -59,6 +60,14 @@ string ModifyInstancesAttributeRequest::ToJsonString() const
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_securityGroupsHasBeenSet)
@@ -144,6 +153,22 @@ void ModifyInstancesAttributeRequest::SetInstanceName(const string& _instanceNam
 bool ModifyInstancesAttributeRequest::InstanceNameHasBeenSet() const
 {
     return m_instanceNameHasBeenSet;
+}
+
+string ModifyInstancesAttributeRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void ModifyInstancesAttributeRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool ModifyInstancesAttributeRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 vector<string> ModifyInstancesAttributeRequest::GetSecurityGroups() const

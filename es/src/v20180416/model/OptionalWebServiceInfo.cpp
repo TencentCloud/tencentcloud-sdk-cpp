@@ -27,7 +27,9 @@ OptionalWebServiceInfo::OptionalWebServiceInfo() :
     m_privateUrlHasBeenSet(false),
     m_publicAccessHasBeenSet(false),
     m_privateAccessHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_privateVipHasBeenSet(false),
+    m_customPrivateUrlHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome OptionalWebServiceInfo::Deserialize(const rapidjson::Value &
         m_versionHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivateVip") && !value["PrivateVip"].IsNull())
+    {
+        if (!value["PrivateVip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OptionalWebServiceInfo.PrivateVip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privateVip = string(value["PrivateVip"].GetString());
+        m_privateVipHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomPrivateUrl") && !value["CustomPrivateUrl"].IsNull())
+    {
+        if (!value["CustomPrivateUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OptionalWebServiceInfo.CustomPrivateUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customPrivateUrl = string(value["CustomPrivateUrl"].GetString());
+        m_customPrivateUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void OptionalWebServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateVipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateVip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateVip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customPrivateUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomPrivateUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customPrivateUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void OptionalWebServiceInfo::SetVersion(const string& _version)
 bool OptionalWebServiceInfo::VersionHasBeenSet() const
 {
     return m_versionHasBeenSet;
+}
+
+string OptionalWebServiceInfo::GetPrivateVip() const
+{
+    return m_privateVip;
+}
+
+void OptionalWebServiceInfo::SetPrivateVip(const string& _privateVip)
+{
+    m_privateVip = _privateVip;
+    m_privateVipHasBeenSet = true;
+}
+
+bool OptionalWebServiceInfo::PrivateVipHasBeenSet() const
+{
+    return m_privateVipHasBeenSet;
+}
+
+string OptionalWebServiceInfo::GetCustomPrivateUrl() const
+{
+    return m_customPrivateUrl;
+}
+
+void OptionalWebServiceInfo::SetCustomPrivateUrl(const string& _customPrivateUrl)
+{
+    m_customPrivateUrl = _customPrivateUrl;
+    m_customPrivateUrlHasBeenSet = true;
+}
+
+bool OptionalWebServiceInfo::CustomPrivateUrlHasBeenSet() const
+{
+    return m_customPrivateUrlHasBeenSet;
 }
 

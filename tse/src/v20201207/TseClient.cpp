@@ -900,6 +900,49 @@ TseClient::DeleteNativeGatewayServerGroupOutcomeCallable TseClient::DeleteNative
     return task->get_future();
 }
 
+TseClient::DeleteWafDomainsOutcome TseClient::DeleteWafDomains(const DeleteWafDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWafDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWafDomainsResponse rsp = DeleteWafDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWafDomainsOutcome(rsp);
+        else
+            return DeleteWafDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWafDomainsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteWafDomainsAsync(const DeleteWafDomainsRequest& request, const DeleteWafDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWafDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteWafDomainsOutcomeCallable TseClient::DeleteWafDomainsCallable(const DeleteWafDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWafDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWafDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeCloudNativeAPIGatewayOutcome TseClient::DescribeCloudNativeAPIGateway(const DescribeCloudNativeAPIGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGateway");
@@ -1753,6 +1796,92 @@ TseClient::DescribeUpstreamHealthCheckConfigOutcomeCallable TseClient::DescribeU
         [this, request]()
         {
             return this->DescribeUpstreamHealthCheckConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeWafDomainsOutcome TseClient::DescribeWafDomains(const DescribeWafDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWafDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWafDomainsResponse rsp = DescribeWafDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWafDomainsOutcome(rsp);
+        else
+            return DescribeWafDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWafDomainsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeWafDomainsAsync(const DescribeWafDomainsRequest& request, const DescribeWafDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWafDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeWafDomainsOutcomeCallable TseClient::DescribeWafDomainsCallable(const DescribeWafDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWafDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWafDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeWafProtectionOutcome TseClient::DescribeWafProtection(const DescribeWafProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWafProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWafProtectionResponse rsp = DescribeWafProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWafProtectionOutcome(rsp);
+        else
+            return DescribeWafProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWafProtectionOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeWafProtectionAsync(const DescribeWafProtectionRequest& request, const DescribeWafProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWafProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeWafProtectionOutcomeCallable TseClient::DescribeWafProtectionCallable(const DescribeWafProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWafProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWafProtection(request);
         }
     );
 

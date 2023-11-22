@@ -98,11 +98,11 @@ CoreInternalOutcome FillApproverInfo::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("NotChannelOrganization") && !value["NotChannelOrganization"].IsNull())
     {
-        if (!value["NotChannelOrganization"].IsString())
+        if (!value["NotChannelOrganization"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `FillApproverInfo.NotChannelOrganization` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FillApproverInfo.NotChannelOrganization` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_notChannelOrganization = string(value["NotChannelOrganization"].GetString());
+        m_notChannelOrganization = value["NotChannelOrganization"].GetBool();
         m_notChannelOrganizationHasBeenSet = true;
     }
 
@@ -166,7 +166,7 @@ void FillApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotChannelOrganization";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_notChannelOrganization.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_notChannelOrganization, allocator);
     }
 
 }
@@ -268,12 +268,12 @@ bool FillApproverInfo::OrganizationOpenIdHasBeenSet() const
     return m_organizationOpenIdHasBeenSet;
 }
 
-string FillApproverInfo::GetNotChannelOrganization() const
+bool FillApproverInfo::GetNotChannelOrganization() const
 {
     return m_notChannelOrganization;
 }
 
-void FillApproverInfo::SetNotChannelOrganization(const string& _notChannelOrganization)
+void FillApproverInfo::SetNotChannelOrganization(const bool& _notChannelOrganization)
 {
     m_notChannelOrganization = _notChannelOrganization;
     m_notChannelOrganizationHasBeenSet = true;

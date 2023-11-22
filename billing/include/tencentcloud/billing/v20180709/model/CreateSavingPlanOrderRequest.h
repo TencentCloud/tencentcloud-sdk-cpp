@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool SpecifyEffectTimeHasBeenSet() const;
 
+                    /**
+                     * 获取可重入ID
+                     * @return ClientToken 可重入ID
+                     * 
+                     */
+                    std::string GetClientToken() const;
+
+                    /**
+                     * 设置可重入ID
+                     * @param _clientToken 可重入ID
+                     * 
+                     */
+                    void SetClientToken(const std::string& _clientToken);
+
+                    /**
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
+                     * 
+                     */
+                    bool ClientTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     std::string m_specifyEffectTime;
                     bool m_specifyEffectTimeHasBeenSet;
+
+                    /**
+                     * 可重入ID
+                     */
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 
 DownloadUserCertResponse::DownloadUserCertResponse() :
     m_certNameHasBeenSet(false),
-    m_certCtxHasBeenSet(false)
+    m_certCtxHasBeenSet(false),
+    m_certHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DownloadUserCertResponse::Deserialize(const string &payload)
         m_certCtxHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Cert") && !rsp["Cert"].IsNull())
+    {
+        if (!rsp["Cert"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cert` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cert = string(rsp["Cert"].GetString());
+        m_certHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DownloadUserCertResponse::ToJsonString() const
         string key = "CertCtx";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_certCtx.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cert.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string DownloadUserCertResponse::GetCertCtx() const
 bool DownloadUserCertResponse::CertCtxHasBeenSet() const
 {
     return m_certCtxHasBeenSet;
+}
+
+string DownloadUserCertResponse::GetCert() const
+{
+    return m_cert;
+}
+
+bool DownloadUserCertResponse::CertHasBeenSet() const
+{
+    return m_certHasBeenSet;
 }
 
 

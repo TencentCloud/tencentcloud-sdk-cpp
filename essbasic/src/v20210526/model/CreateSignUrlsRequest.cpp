@@ -31,6 +31,8 @@ CreateSignUrlsRequest::CreateSignUrlsRequest() :
     m_organizationNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
+    m_idCardTypeHasBeenSet(false),
+    m_idCardNumberHasBeenSet(false),
     m_organizationOpenIdHasBeenSet(false),
     m_openIdHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
@@ -116,6 +118,22 @@ string CreateSignUrlsRequest::ToJsonString() const
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_idCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idCardNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdCardNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_idCardNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_organizationOpenIdHasBeenSet)
@@ -319,6 +337,38 @@ void CreateSignUrlsRequest::SetMobile(const string& _mobile)
 bool CreateSignUrlsRequest::MobileHasBeenSet() const
 {
     return m_mobileHasBeenSet;
+}
+
+string CreateSignUrlsRequest::GetIdCardType() const
+{
+    return m_idCardType;
+}
+
+void CreateSignUrlsRequest::SetIdCardType(const string& _idCardType)
+{
+    m_idCardType = _idCardType;
+    m_idCardTypeHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::IdCardTypeHasBeenSet() const
+{
+    return m_idCardTypeHasBeenSet;
+}
+
+string CreateSignUrlsRequest::GetIdCardNumber() const
+{
+    return m_idCardNumber;
+}
+
+void CreateSignUrlsRequest::SetIdCardNumber(const string& _idCardNumber)
+{
+    m_idCardNumber = _idCardNumber;
+    m_idCardNumberHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::IdCardNumberHasBeenSet() const
+{
+    return m_idCardNumberHasBeenSet;
 }
 
 string CreateSignUrlsRequest::GetOrganizationOpenId() const

@@ -3953,6 +3953,49 @@ WedataClient::DescribeColumnLineageOutcomeCallable WedataClient::DescribeColumnL
     return task->get_future();
 }
 
+WedataClient::DescribeColumnsMetaOutcome WedataClient::DescribeColumnsMeta(const DescribeColumnsMetaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeColumnsMeta");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeColumnsMetaResponse rsp = DescribeColumnsMetaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeColumnsMetaOutcome(rsp);
+        else
+            return DescribeColumnsMetaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeColumnsMetaOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeColumnsMetaAsync(const DescribeColumnsMetaRequest& request, const DescribeColumnsMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeColumnsMeta(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeColumnsMetaOutcomeCallable WedataClient::DescribeColumnsMetaCallable(const DescribeColumnsMetaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeColumnsMetaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeColumnsMeta(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeDataBasesOutcome WedataClient::DescribeDataBases(const DescribeDataBasesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataBases");

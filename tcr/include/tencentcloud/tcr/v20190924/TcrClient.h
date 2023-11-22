@@ -651,7 +651,9 @@ namespace TencentCloud
                 CreateApplicationTriggerPersonalOutcomeCallable CreateApplicationTriggerPersonalCallable(const Model::CreateApplicationTriggerPersonalRequest& request);
 
                 /**
-                 *创建自定义账户
+                 *接口未使用
+
+创建自定义账户
                  * @param req CreateCustomAccountRequest
                  * @return CreateCustomAccountOutcome
                  */
@@ -849,7 +851,9 @@ namespace TencentCloud
                 DeleteApplicationTriggerPersonalOutcomeCallable DeleteApplicationTriggerPersonalCallable(const Model::DeleteApplicationTriggerPersonalRequest& request);
 
                 /**
-                 *删除自定义账号
+                 *接口未使用
+
+删除自定义账号
                  * @param req DeleteCustomAccountRequest
                  * @return DeleteCustomAccountOutcome
                  */
@@ -1076,7 +1080,9 @@ namespace TencentCloud
                 DescribeChartDownloadInfoOutcomeCallable DescribeChartDownloadInfoCallable(const Model::DescribeChartDownloadInfoRequest& request);
 
                 /**
-                 *查询自定义账号
+                 *接口未使用
+
+查询自定义账号
                  * @param req DescribeCustomAccountsRequest
                  * @return DescribeCustomAccountsOutcome
                  */
@@ -1481,7 +1487,9 @@ namespace TencentCloud
                 ModifyApplicationTriggerPersonalOutcomeCallable ModifyApplicationTriggerPersonalCallable(const Model::ModifyApplicationTriggerPersonalRequest& request);
 
                 /**
-                 *更新自定义账户
+                 *接口未使用
+
+更新自定义账户
                  * @param req ModifyCustomAccountRequest
                  * @return ModifyCustomAccountOutcome
                  */

@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool RestartModeHasBeenSet() const;
 
+                    /**
+                     * 获取重启时选择是否升级内核patch版本
+                     * @return UpgradeKernel 重启时选择是否升级内核patch版本
+                     * 
+                     */
+                    bool GetUpgradeKernel() const;
+
+                    /**
+                     * 设置重启时选择是否升级内核patch版本
+                     * @param _upgradeKernel 重启时选择是否升级内核patch版本
+                     * 
+                     */
+                    void SetUpgradeKernel(const bool& _upgradeKernel);
+
+                    /**
+                     * 判断参数 UpgradeKernel 是否已赋值
+                     * @return UpgradeKernel 是否已赋值
+                     * 
+                     */
+                    bool UpgradeKernelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     int64_t m_restartMode;
                     bool m_restartModeHasBeenSet;
+
+                    /**
+                     * 重启时选择是否升级内核patch版本
+                     */
+                    bool m_upgradeKernel;
+                    bool m_upgradeKernelHasBeenSet;
 
                 };
             }

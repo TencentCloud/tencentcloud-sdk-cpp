@@ -30,7 +30,8 @@ CreateSavingPlanOrderRequest::CreateSavingPlanOrderRequest() :
     m_timeUnitHasBeenSet(false),
     m_commodityCodeHasBeenSet(false),
     m_promiseUseAmountHasBeenSet(false),
-    m_specifyEffectTimeHasBeenSet(false)
+    m_specifyEffectTimeHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateSavingPlanOrderRequest::ToJsonString() const
         string key = "SpecifyEffectTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_specifyEffectTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CreateSavingPlanOrderRequest::SetSpecifyEffectTime(const string& _specifyEf
 bool CreateSavingPlanOrderRequest::SpecifyEffectTimeHasBeenSet() const
 {
     return m_specifyEffectTimeHasBeenSet;
+}
+
+string CreateSavingPlanOrderRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateSavingPlanOrderRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateSavingPlanOrderRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

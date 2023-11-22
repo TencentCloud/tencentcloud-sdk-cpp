@@ -138,22 +138,18 @@ namespace TencentCloud
 
                     /**
                      * 获取四层代理模式，取值有：
-<li>hostname：表示子域名模式；</li>
-<li>instance：表示实例模式。</li>不填写保持原有配置。
+<li>instance：表示实例模式。</li>不填写使用默认值instance。
                      * @return ProxyType 四层代理模式，取值有：
-<li>hostname：表示子域名模式；</li>
-<li>instance：表示实例模式。</li>不填写保持原有配置。
+<li>instance：表示实例模式。</li>不填写使用默认值instance。
                      * 
                      */
                     std::string GetProxyType() const;
 
                     /**
                      * 设置四层代理模式，取值有：
-<li>hostname：表示子域名模式；</li>
-<li>instance：表示实例模式。</li>不填写保持原有配置。
+<li>instance：表示实例模式。</li>不填写使用默认值instance。
                      * @param _proxyType 四层代理模式，取值有：
-<li>hostname：表示子域名模式；</li>
-<li>instance：表示实例模式。</li>不填写保持原有配置。
+<li>instance：表示实例模式。</li>不填写使用默认值instance。
                      * 
                      */
                     void SetProxyType(const std::string& _proxyType);
@@ -237,8 +233,7 @@ namespace TencentCloud
 
                     /**
                      * 四层代理模式，取值有：
-<li>hostname：表示子域名模式；</li>
-<li>instance：表示实例模式。</li>不填写保持原有配置。
+<li>instance：表示实例模式。</li>不填写使用默认值instance。
                      */
                     std::string m_proxyType;
                     bool m_proxyTypeHasBeenSet;

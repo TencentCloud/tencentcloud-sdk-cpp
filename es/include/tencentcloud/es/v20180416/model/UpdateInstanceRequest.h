@@ -794,6 +794,48 @@ CLOSE 关闭
                      */
                     bool KibanaAlteringPublicAccessHasBeenSet() const;
 
+                    /**
+                     * 获取kibana内网自定义域名
+                     * @return KibanaPrivateDomain kibana内网自定义域名
+                     * 
+                     */
+                    std::string GetKibanaPrivateDomain() const;
+
+                    /**
+                     * 设置kibana内网自定义域名
+                     * @param _kibanaPrivateDomain kibana内网自定义域名
+                     * 
+                     */
+                    void SetKibanaPrivateDomain(const std::string& _kibanaPrivateDomain);
+
+                    /**
+                     * 判断参数 KibanaPrivateDomain 是否已赋值
+                     * @return KibanaPrivateDomain 是否已赋值
+                     * 
+                     */
+                    bool KibanaPrivateDomainHasBeenSet() const;
+
+                    /**
+                     * 获取cerebro内网自定义域名
+                     * @return CerebroPrivateDomain cerebro内网自定义域名
+                     * 
+                     */
+                    std::string GetCerebroPrivateDomain() const;
+
+                    /**
+                     * 设置cerebro内网自定义域名
+                     * @param _cerebroPrivateDomain cerebro内网自定义域名
+                     * 
+                     */
+                    void SetCerebroPrivateDomain(const std::string& _cerebroPrivateDomain);
+
+                    /**
+                     * 判断参数 CerebroPrivateDomain 是否已赋值
+                     * @return CerebroPrivateDomain 是否已赋值
+                     * 
+                     */
+                    bool CerebroPrivateDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1005,6 +1047,18 @@ CLOSE 关闭
                      */
                     std::string m_kibanaAlteringPublicAccess;
                     bool m_kibanaAlteringPublicAccessHasBeenSet;
+
+                    /**
+                     * kibana内网自定义域名
+                     */
+                    std::string m_kibanaPrivateDomain;
+                    bool m_kibanaPrivateDomainHasBeenSet;
+
+                    /**
+                     * cerebro内网自定义域名
+                     */
+                    std::string m_cerebroPrivateDomain;
+                    bool m_cerebroPrivateDomainHasBeenSet;
 
                 };
             }

@@ -53,6 +53,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/MakeUpWorkflowNewResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstancesInfoWithTaskInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyBaselineTaskAlarmStatusResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeRuleGroupSubscriptionRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateIntegrationNodeResponse.h
   include/tencentcloud/wedata/v20210820/model/BatchDeleteTasksDsRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateDsFolderResponse.h
@@ -223,6 +224,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/TaskInnerInfo.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskAlarmRegularRequest.h
   include/tencentcloud/wedata/v20210820/model/BaselineInstanceVo.h
+  include/tencentcloud/wedata/v20210820/model/DescribeColumnsMetaRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeOrganizationalFunctionsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplateResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeKafkaTopicInfoResponse.h
@@ -401,6 +403,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/CreateIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationTasksResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeAlarmReceiverRequest.h
+  include/tencentcloud/wedata/v20210820/model/ColumnMeta.h
   include/tencentcloud/wedata/v20210820/model/SchedulerTaskInstanceInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeSchedulerTaskCntByStatusResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskExtInfo.h
@@ -591,7 +594,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ModifyTaskInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DataCheckStat.h
   include/tencentcloud/wedata/v20210820/model/CreateRuleRequest.h
-  include/tencentcloud/wedata/v20210820/model/DescribeRuleGroupSubscriptionRequest.h
+  include/tencentcloud/wedata/v20210820/model/DescribeColumnsMetaResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleExecResultsResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskByStatusReportRequest.h
   include/tencentcloud/wedata/v20210820/model/QualityScoreTrend.h
@@ -841,6 +844,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleExecDetailResponse.h
   include/tencentcloud/wedata/v20210820/model/Filter.h
+  include/tencentcloud/wedata/v20210820/model/Pair.h
   include/tencentcloud/wedata/v20210820/model/DeleteIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/TableBaseInfo.h
   include/tencentcloud/wedata/v20210820/model/ResumeIntegrationTaskRequest.h
@@ -957,6 +961,7 @@ set(wedata_src
   src/v20210820/model/MakeUpWorkflowNewResponse.cpp
   src/v20210820/model/DescribeInstancesInfoWithTaskInfoResponse.cpp
   src/v20210820/model/ModifyBaselineTaskAlarmStatusResponse.cpp
+  src/v20210820/model/DescribeRuleGroupSubscriptionRequest.cpp
   src/v20210820/model/CreateIntegrationNodeResponse.cpp
   src/v20210820/model/BatchDeleteTasksDsRequest.cpp
   src/v20210820/model/CreateDsFolderResponse.cpp
@@ -1127,6 +1132,7 @@ set(wedata_src
   src/v20210820/model/TaskInnerInfo.cpp
   src/v20210820/model/ModifyTaskAlarmRegularRequest.cpp
   src/v20210820/model/BaselineInstanceVo.cpp
+  src/v20210820/model/DescribeColumnsMetaRequest.cpp
   src/v20210820/model/DescribeOrganizationalFunctionsRequest.cpp
   src/v20210820/model/DescribeRuleTemplateResponse.cpp
   src/v20210820/model/DescribeKafkaTopicInfoResponse.cpp
@@ -1305,6 +1311,7 @@ set(wedata_src
   src/v20210820/model/CreateIntegrationTaskResponse.cpp
   src/v20210820/model/DescribeIntegrationTasksResponse.cpp
   src/v20210820/model/DescribeAlarmReceiverRequest.cpp
+  src/v20210820/model/ColumnMeta.cpp
   src/v20210820/model/SchedulerTaskInstanceInfo.cpp
   src/v20210820/model/DescribeSchedulerTaskCntByStatusResponse.cpp
   src/v20210820/model/TaskExtInfo.cpp
@@ -1495,7 +1502,7 @@ set(wedata_src
   src/v20210820/model/ModifyTaskInfoResponse.cpp
   src/v20210820/model/DataCheckStat.cpp
   src/v20210820/model/CreateRuleRequest.cpp
-  src/v20210820/model/DescribeRuleGroupSubscriptionRequest.cpp
+  src/v20210820/model/DescribeColumnsMetaResponse.cpp
   src/v20210820/model/DescribeRuleExecResultsResponse.cpp
   src/v20210820/model/DescribeTaskByStatusReportRequest.cpp
   src/v20210820/model/QualityScoreTrend.cpp
@@ -1745,6 +1752,7 @@ set(wedata_src
   src/v20210820/model/UnlockIntegrationTaskResponse.cpp
   src/v20210820/model/DescribeRuleExecDetailResponse.cpp
   src/v20210820/model/Filter.cpp
+  src/v20210820/model/Pair.cpp
   src/v20210820/model/DeleteIntegrationTaskResponse.cpp
   src/v20210820/model/TableBaseInfo.cpp
   src/v20210820/model/ResumeIntegrationTaskRequest.cpp
