@@ -214,9 +214,11 @@ namespace TencentCloud
 
                     /**
                      * 获取用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+如果使用模板发起接口，此参数为必填。
 
 可以通过<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl" target="_blank">生成子客登录链接</a>登录企业控制台, 在**企业模板**中得到合同模板ID。
                      * @return TemplateId 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+如果使用模板发起接口，此参数为必填。
 
 可以通过<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl" target="_blank">生成子客登录链接</a>登录企业控制台, 在**企业模板**中得到合同模板ID。
                      * 
@@ -225,9 +227,11 @@ namespace TencentCloud
 
                     /**
                      * 设置用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+如果使用模板发起接口，此参数为必填。
 
 可以通过<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl" target="_blank">生成子客登录链接</a>登录企业控制台, 在**企业模板**中得到合同模板ID。
                      * @param _templateId 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+如果使用模板发起接口，此参数为必填。
 
 可以通过<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl" target="_blank">生成子客登录链接</a>登录企业控制台, 在**企业模板**中得到合同模板ID。
                      * 
@@ -614,6 +618,7 @@ namespace TencentCloud
 
                     /**
                      * 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+如果使用模板发起接口，此参数为必填。
 
 可以通过<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl" target="_blank">生成子客登录链接</a>登录企业控制台, 在**企业模板**中得到合同模板ID。
                      */

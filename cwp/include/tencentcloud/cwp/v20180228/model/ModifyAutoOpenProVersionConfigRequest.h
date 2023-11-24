@@ -113,6 +113,27 @@ namespace TencentCloud
                      */
                     bool AutoRepurchaseRenewSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取手动购买的订单是否自动续费,默认0, 0关闭 ,1 开启
+                     * @return RepurchaseRenewSwitch 手动购买的订单是否自动续费,默认0, 0关闭 ,1 开启
+                     * 
+                     */
+                    uint64_t GetRepurchaseRenewSwitch() const;
+
+                    /**
+                     * 设置手动购买的订单是否自动续费,默认0, 0关闭 ,1 开启
+                     * @param _repurchaseRenewSwitch 手动购买的订单是否自动续费,默认0, 0关闭 ,1 开启
+                     * 
+                     */
+                    void SetRepurchaseRenewSwitch(const uint64_t& _repurchaseRenewSwitch);
+
+                    /**
+                     * 判断参数 RepurchaseRenewSwitch 是否已赋值
+                     * @return RepurchaseRenewSwitch 是否已赋值
+                     * 
+                     */
+                    bool RepurchaseRenewSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +155,12 @@ namespace TencentCloud
                      */
                     uint64_t m_autoRepurchaseRenewSwitch;
                     bool m_autoRepurchaseRenewSwitchHasBeenSet;
+
+                    /**
+                     * 手动购买的订单是否自动续费,默认0, 0关闭 ,1 开启
+                     */
+                    uint64_t m_repurchaseRenewSwitch;
+                    bool m_repurchaseRenewSwitchHasBeenSet;
 
                 };
             }

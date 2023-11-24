@@ -31,7 +31,8 @@ Instance::Instance() :
     m_autoRenewFlagHasBeenSet(false),
     m_specIdHasBeenSet(false),
     m_specAliasHasBeenSet(false),
-    m_specFeaturesHasBeenSet(false)
+    m_specFeaturesHasBeenSet(false),
+    m_cvmInstanceIdHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_specFeaturesHasBeenSet = true;
     }
 
+    if (value.HasMember("CvmInstanceId") && !value["CvmInstanceId"].IsNull())
+    {
+        if (!value["CvmInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.CvmInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cvmInstanceId = string(value["CvmInstanceId"].GetString());
+        m_cvmInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -267,6 +278,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_cvmInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvmInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cvmInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -446,5 +465,21 @@ void Instance::SetSpecFeatures(const vector<string>& _specFeatures)
 bool Instance::SpecFeaturesHasBeenSet() const
 {
     return m_specFeaturesHasBeenSet;
+}
+
+string Instance::GetCvmInstanceId() const
+{
+    return m_cvmInstanceId;
+}
+
+void Instance::SetCvmInstanceId(const string& _cvmInstanceId)
+{
+    m_cvmInstanceId = _cvmInstanceId;
+    m_cvmInstanceIdHasBeenSet = true;
+}
+
+bool Instance::CvmInstanceIdHasBeenSet() const
+{
+    return m_cvmInstanceIdHasBeenSet;
 }
 

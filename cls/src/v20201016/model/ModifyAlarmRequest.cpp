@@ -34,12 +34,15 @@ ModifyAlarmRequest::ModifyAlarmRequest() :
     m_alarmNoticeIdsHasBeenSet(false),
     m_alarmTargetsHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_enableHasBeenSet(false),
     m_messageTemplateHasBeenSet(false),
     m_callBackHasBeenSet(false),
     m_analysisHasBeenSet(false),
     m_groupTriggerStatusHasBeenSet(false),
     m_groupTriggerConditionHasBeenSet(false),
-    m_monitorObjectTypeHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_monitorObjectTypeHasBeenSet(false),
+    m_classificationsHasBeenSet(false)
 {
 }
 
@@ -158,6 +161,14 @@ string ModifyAlarmRequest::ToJsonString() const
         d.AddMember(iKey, m_status, allocator);
     }
 
+    if (m_enableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enable, allocator);
+    }
+
     if (m_messageTemplateHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -211,12 +222,42 @@ string ModifyAlarmRequest::ToJsonString() const
         }
     }
 
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_monitorObjectTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonitorObjectType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_monitorObjectType, allocator);
+    }
+
+    if (m_classificationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Classifications";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_classifications.begin(); itr != m_classifications.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -403,6 +444,22 @@ bool ModifyAlarmRequest::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
+bool ModifyAlarmRequest::GetEnable() const
+{
+    return m_enable;
+}
+
+void ModifyAlarmRequest::SetEnable(const bool& _enable)
+{
+    m_enable = _enable;
+    m_enableHasBeenSet = true;
+}
+
+bool ModifyAlarmRequest::EnableHasBeenSet() const
+{
+    return m_enableHasBeenSet;
+}
+
 string ModifyAlarmRequest::GetMessageTemplate() const
 {
     return m_messageTemplate;
@@ -483,6 +540,22 @@ bool ModifyAlarmRequest::GroupTriggerConditionHasBeenSet() const
     return m_groupTriggerConditionHasBeenSet;
 }
 
+vector<Tag> ModifyAlarmRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void ModifyAlarmRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ModifyAlarmRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
 uint64_t ModifyAlarmRequest::GetMonitorObjectType() const
 {
     return m_monitorObjectType;
@@ -497,6 +570,22 @@ void ModifyAlarmRequest::SetMonitorObjectType(const uint64_t& _monitorObjectType
 bool ModifyAlarmRequest::MonitorObjectTypeHasBeenSet() const
 {
     return m_monitorObjectTypeHasBeenSet;
+}
+
+vector<AlarmClassification> ModifyAlarmRequest::GetClassifications() const
+{
+    return m_classifications;
+}
+
+void ModifyAlarmRequest::SetClassifications(const vector<AlarmClassification>& _classifications)
+{
+    m_classifications = _classifications;
+    m_classificationsHasBeenSet = true;
+}
+
+bool ModifyAlarmRequest::ClassificationsHasBeenSet() const
+{
+    return m_classificationsHasBeenSet;
 }
 
 

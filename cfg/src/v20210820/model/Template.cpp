@@ -38,7 +38,8 @@ Template::Template() :
     m_tagsHasBeenSet(false),
     m_templateSourceHasBeenSet(false),
     m_apmServiceListHasBeenSet(false),
-    m_alarmPolicyHasBeenSet(false)
+    m_alarmPolicyHasBeenSet(false),
+    m_policyDealTypeHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,16 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_alarmPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyDealType") && !value["PolicyDealType"].IsNull())
+    {
+        if (!value["PolicyDealType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.PolicyDealType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyDealType = value["PolicyDealType"].GetInt64();
+        m_policyDealTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +471,14 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_policyDealTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyDealType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_policyDealType, allocator);
     }
 
 }
@@ -751,5 +770,21 @@ void Template::SetAlarmPolicy(const vector<string>& _alarmPolicy)
 bool Template::AlarmPolicyHasBeenSet() const
 {
     return m_alarmPolicyHasBeenSet;
+}
+
+int64_t Template::GetPolicyDealType() const
+{
+    return m_policyDealType;
+}
+
+void Template::SetPolicyDealType(const int64_t& _policyDealType)
+{
+    m_policyDealType = _policyDealType;
+    m_policyDealTypeHasBeenSet = true;
+}
+
+bool Template::PolicyDealTypeHasBeenSet() const
+{
+    return m_policyDealTypeHasBeenSet;
 }
 

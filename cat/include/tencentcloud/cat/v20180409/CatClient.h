@@ -29,6 +29,8 @@
 #include <tencentcloud/cat/v20180409/model/DeleteProbeTaskResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataRequest.h>
 #include <tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataResponse.h>
+#include <tencentcloud/cat/v20180409/model/DescribeInstantTasksRequest.h>
+#include <tencentcloud/cat/v20180409/model/DescribeInstantTasksResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeNodesRequest.h>
 #include <tencentcloud/cat/v20180409/model/DescribeNodesResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeProbeMetricDataRequest.h>
@@ -68,6 +70,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDetailedSingleProbeDataResponse> DescribeDetailedSingleProbeDataOutcome;
                 typedef std::future<DescribeDetailedSingleProbeDataOutcome> DescribeDetailedSingleProbeDataOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DescribeDetailedSingleProbeDataRequest&, DescribeDetailedSingleProbeDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetailedSingleProbeDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstantTasksResponse> DescribeInstantTasksOutcome;
+                typedef std::future<DescribeInstantTasksOutcome> DescribeInstantTasksOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::DescribeInstantTasksRequest&, DescribeInstantTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstantTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNodesResponse> DescribeNodesOutcome;
                 typedef std::future<DescribeNodesOutcome> DescribeNodesOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DescribeNodesRequest&, DescribeNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodesAsyncHandler;
@@ -121,6 +126,15 @@ namespace TencentCloud
                 DescribeDetailedSingleProbeDataOutcome DescribeDetailedSingleProbeData(const Model::DescribeDetailedSingleProbeDataRequest &request);
                 void DescribeDetailedSingleProbeDataAsync(const Model::DescribeDetailedSingleProbeDataRequest& request, const DescribeDetailedSingleProbeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDetailedSingleProbeDataOutcomeCallable DescribeDetailedSingleProbeDataCallable(const Model::DescribeDetailedSingleProbeDataRequest& request);
+
+                /**
+                 *获取历史即时拨测任务
+                 * @param req DescribeInstantTasksRequest
+                 * @return DescribeInstantTasksOutcome
+                 */
+                DescribeInstantTasksOutcome DescribeInstantTasks(const Model::DescribeInstantTasksRequest &request);
+                void DescribeInstantTasksAsync(const Model::DescribeInstantTasksRequest& request, const DescribeInstantTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstantTasksOutcomeCallable DescribeInstantTasksCallable(const Model::DescribeInstantTasksRequest& request);
 
                 /**
                  *获取拨测节点

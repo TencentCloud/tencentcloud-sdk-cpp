@@ -174,6 +174,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取护栏处理方式，1--顺序回滚，2--演练暂停
+                     * @return PolicyDealType 护栏处理方式，1--顺序回滚，2--演练暂停
+                     * 
+                     */
+                    int64_t GetPolicyDealType() const;
+
+                    /**
+                     * 设置护栏处理方式，1--顺序回滚，2--演练暂停
+                     * @param _policyDealType 护栏处理方式，1--顺序回滚，2--演练暂停
+                     * 
+                     */
+                    void SetPolicyDealType(const int64_t& _policyDealType);
+
+                    /**
+                     * 判断参数 PolicyDealType 是否已赋值
+                     * @return PolicyDealType 是否已赋值
+                     * 
+                     */
+                    bool PolicyDealTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +232,12 @@ namespace TencentCloud
                      */
                     std::vector<TagWithCreate> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 护栏处理方式，1--顺序回滚，2--演练暂停
+                     */
+                    int64_t m_policyDealType;
+                    bool m_policyDealTypeHasBeenSet;
 
                 };
             }

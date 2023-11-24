@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取授权服务，附加了此角色的腾讯云服务主体。
-                     * @return QCSServiceName 授权服务，附加了此角色的腾讯云服务主体。
+                     * 获取填写此角色的腾讯云服务载体，具体可查询文档（角色载体）字段
+https://cloud.tencent.com/document/product/598/85165
+                     * @return QCSServiceName 填写此角色的腾讯云服务载体，具体可查询文档（角色载体）字段
+https://cloud.tencent.com/document/product/598/85165
                      * 
                      */
                     std::vector<std::string> GetQCSServiceName() const;
 
                     /**
-                     * 设置授权服务，附加了此角色的腾讯云服务主体。
-                     * @param _qCSServiceName 授权服务，附加了此角色的腾讯云服务主体。
+                     * 设置填写此角色的腾讯云服务载体，具体可查询文档（角色载体）字段
+https://cloud.tencent.com/document/product/598/85165
+                     * @param _qCSServiceName 填写此角色的腾讯云服务载体，具体可查询文档（角色载体）字段
+https://cloud.tencent.com/document/product/598/85165
                      * 
                      */
                     void SetQCSServiceName(const std::vector<std::string>& _qCSServiceName);
@@ -130,7 +134,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 授权服务，附加了此角色的腾讯云服务主体。
+                     * 填写此角色的腾讯云服务载体，具体可查询文档（角色载体）字段
+https://cloud.tencent.com/document/product/598/85165
                      */
                     std::vector<std::string> m_qCSServiceName;
                     bool m_qCSServiceNameHasBeenSet;

@@ -295,6 +295,20 @@ namespace TencentCloud
                      */
                     bool DestroyOrderNumHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动续费开关,true 开启,false 关闭
+                     * @return RepurchaseRenewSwitch 是否自动续费开关,true 开启,false 关闭
+                     * 
+                     */
+                    bool GetRepurchaseRenewSwitch() const;
+
+                    /**
+                     * 判断参数 RepurchaseRenewSwitch 是否已赋值
+                     * @return RepurchaseRenewSwitch 是否已赋值
+                     * 
+                     */
+                    bool RepurchaseRenewSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -404,6 +418,12 @@ namespace TencentCloud
                      */
                     uint64_t m_destroyOrderNum;
                     bool m_destroyOrderNumHasBeenSet;
+
+                    /**
+                     * 是否自动续费开关,true 开启,false 关闭
+                     */
+                    bool m_repurchaseRenewSwitch;
+                    bool m_repurchaseRenewSwitchHasBeenSet;
 
                 };
             }

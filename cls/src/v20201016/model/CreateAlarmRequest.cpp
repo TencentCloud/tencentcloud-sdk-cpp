@@ -33,13 +33,15 @@ CreateAlarmRequest::CreateAlarmRequest() :
     m_alarmLevelHasBeenSet(false),
     m_multiConditionsHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_enableHasBeenSet(false),
     m_messageTemplateHasBeenSet(false),
     m_callBackHasBeenSet(false),
     m_analysisHasBeenSet(false),
     m_groupTriggerStatusHasBeenSet(false),
     m_groupTriggerConditionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_monitorObjectTypeHasBeenSet(false)
+    m_monitorObjectTypeHasBeenSet(false),
+    m_classificationsHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,14 @@ string CreateAlarmRequest::ToJsonString() const
         d.AddMember(iKey, m_status, allocator);
     }
 
+    if (m_enableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enable, allocator);
+    }
+
     if (m_messageTemplateHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -224,6 +234,21 @@ string CreateAlarmRequest::ToJsonString() const
         string key = "MonitorObjectType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_monitorObjectType, allocator);
+    }
+
+    if (m_classificationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Classifications";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_classifications.begin(); itr != m_classifications.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -394,6 +419,22 @@ bool CreateAlarmRequest::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
+bool CreateAlarmRequest::GetEnable() const
+{
+    return m_enable;
+}
+
+void CreateAlarmRequest::SetEnable(const bool& _enable)
+{
+    m_enable = _enable;
+    m_enableHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::EnableHasBeenSet() const
+{
+    return m_enableHasBeenSet;
+}
+
 string CreateAlarmRequest::GetMessageTemplate() const
 {
     return m_messageTemplate;
@@ -504,6 +545,22 @@ void CreateAlarmRequest::SetMonitorObjectType(const uint64_t& _monitorObjectType
 bool CreateAlarmRequest::MonitorObjectTypeHasBeenSet() const
 {
     return m_monitorObjectTypeHasBeenSet;
+}
+
+vector<AlarmClassification> CreateAlarmRequest::GetClassifications() const
+{
+    return m_classifications;
+}
+
+void CreateAlarmRequest::SetClassifications(const vector<AlarmClassification>& _classifications)
+{
+    m_classifications = _classifications;
+    m_classificationsHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::ClassificationsHasBeenSet() const
+{
+    return m_classificationsHasBeenSet;
 }
 
 

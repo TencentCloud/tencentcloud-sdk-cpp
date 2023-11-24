@@ -104,6 +104,31 @@ CurrentOrg：在普通企业场景下返回此值；或者在集团企业的场�
                      */
                     bool BelongToHasBeenSet() const;
 
+                    /**
+                     * 获取集团主企业id，当前企业为集团子企业时，该字段有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MainOrganizationId 集团主企业id，当前企业为集团子企业时，该字段有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMainOrganizationId() const;
+
+                    /**
+                     * 设置集团主企业id，当前企业为集团子企业时，该字段有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mainOrganizationId 集团主企业id，当前企业为集团子企业时，该字段有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMainOrganizationId(const std::string& _mainOrganizationId);
+
+                    /**
+                     * 判断参数 MainOrganizationId 是否已赋值
+                     * @return MainOrganizationId 是否已赋值
+                     * 
+                     */
+                    bool MainOrganizationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,6 +146,13 @@ CurrentOrg：在普通企业场景下返回此值；或者在集团企业的场�
                      */
                     std::string m_belongTo;
                     bool m_belongToHasBeenSet;
+
+                    /**
+                     * 集团主企业id，当前企业为集团子企业时，该字段有值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mainOrganizationId;
+                    bool m_mainOrganizationIdHasBeenSet;
 
                 };
             }

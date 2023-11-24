@@ -25,7 +25,8 @@ using namespace std;
 ModifyAutoOpenProVersionConfigRequest::ModifyAutoOpenProVersionConfigRequest() :
     m_statusHasBeenSet(false),
     m_autoRepurchaseSwitchHasBeenSet(false),
-    m_autoRepurchaseRenewSwitchHasBeenSet(false)
+    m_autoRepurchaseRenewSwitchHasBeenSet(false),
+    m_repurchaseRenewSwitchHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyAutoOpenProVersionConfigRequest::ToJsonString() const
         string key = "AutoRepurchaseRenewSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRepurchaseRenewSwitch, allocator);
+    }
+
+    if (m_repurchaseRenewSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepurchaseRenewSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_repurchaseRenewSwitch, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyAutoOpenProVersionConfigRequest::SetAutoRepurchaseRenewSwitch(const u
 bool ModifyAutoOpenProVersionConfigRequest::AutoRepurchaseRenewSwitchHasBeenSet() const
 {
     return m_autoRepurchaseRenewSwitchHasBeenSet;
+}
+
+uint64_t ModifyAutoOpenProVersionConfigRequest::GetRepurchaseRenewSwitch() const
+{
+    return m_repurchaseRenewSwitch;
+}
+
+void ModifyAutoOpenProVersionConfigRequest::SetRepurchaseRenewSwitch(const uint64_t& _repurchaseRenewSwitch)
+{
+    m_repurchaseRenewSwitch = _repurchaseRenewSwitch;
+    m_repurchaseRenewSwitchHasBeenSet = true;
+}
+
+bool ModifyAutoOpenProVersionConfigRequest::RepurchaseRenewSwitchHasBeenSet() const
+{
+    return m_repurchaseRenewSwitchHasBeenSet;
 }
 
 

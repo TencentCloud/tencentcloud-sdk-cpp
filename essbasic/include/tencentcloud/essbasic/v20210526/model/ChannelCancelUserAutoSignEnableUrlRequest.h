@@ -88,15 +88,19 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方
-                     * @return SceneKey 自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方
+                     * 获取自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * @return SceneKey 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
                      * 
                      */
                     std::string GetSceneKey() const;
 
                     /**
-                     * 设置自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方
-                     * @param _sceneKey 自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方
+                     * 设置自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * @param _sceneKey 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
                      * 
                      */
                     void SetSceneKey(const std::string& _sceneKey);
@@ -144,7 +148,8 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方
+                     * 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
                      */
                     std::string m_sceneKey;
                     bool m_sceneKeyHasBeenSet;

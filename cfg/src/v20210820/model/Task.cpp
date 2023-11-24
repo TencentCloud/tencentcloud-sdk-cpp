@@ -48,7 +48,8 @@ Task::Task() :
     m_applicationNameHasBeenSet(false),
     m_alarmPolicyHasBeenSet(false),
     m_apmServiceListHasBeenSet(false),
-    m_verifyIdHasBeenSet(false)
+    m_verifyIdHasBeenSet(false),
+    m_policyDealTypeHasBeenSet(false)
 {
 }
 
@@ -387,6 +388,16 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
         m_verifyIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyDealType") && !value["PolicyDealType"].IsNull())
+    {
+        if (!value["PolicyDealType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.PolicyDealType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyDealType = value["PolicyDealType"].GetInt64();
+        m_policyDealTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -650,6 +661,14 @@ void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "VerifyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_verifyId, allocator);
+    }
+
+    if (m_policyDealTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyDealType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_policyDealType, allocator);
     }
 
 }
@@ -1101,5 +1120,21 @@ void Task::SetVerifyId(const uint64_t& _verifyId)
 bool Task::VerifyIdHasBeenSet() const
 {
     return m_verifyIdHasBeenSet;
+}
+
+int64_t Task::GetPolicyDealType() const
+{
+    return m_policyDealType;
+}
+
+void Task::SetPolicyDealType(const int64_t& _policyDealType)
+{
+    m_policyDealType = _policyDealType;
+    m_policyDealTypeHasBeenSet = true;
+}
+
+bool Task::PolicyDealTypeHasBeenSet() const
+{
+    return m_policyDealTypeHasBeenSet;
 }
 

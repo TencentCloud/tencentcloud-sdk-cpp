@@ -90,6 +90,7 @@ set(eb_public_header_model
   include/tencentcloud/eb/v20210416/model/CheckTransformationRequest.h
   include/tencentcloud/eb/v20210416/model/UpdateConnectionResponse.h
   include/tencentcloud/eb/v20210416/model/UpdateEventBusResponse.h
+  include/tencentcloud/eb/v20210416/model/TDMQParams.h
   include/tencentcloud/eb/v20210416/model/GetEventBusResponse.h
   include/tencentcloud/eb/v20210416/model/DeleteRuleResponse.h
   include/tencentcloud/eb/v20210416/model/DescribeLogTagValueRequest.h
@@ -189,6 +190,7 @@ set(eb_src
   src/v20210416/model/CheckTransformationRequest.cpp
   src/v20210416/model/UpdateConnectionResponse.cpp
   src/v20210416/model/UpdateEventBusResponse.cpp
+  src/v20210416/model/TDMQParams.cpp
   src/v20210416/model/GetEventBusResponse.cpp
   src/v20210416/model/DeleteRuleResponse.cpp
   src/v20210416/model/DescribeLogTagValueRequest.cpp

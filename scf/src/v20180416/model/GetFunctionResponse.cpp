@@ -66,8 +66,11 @@ GetFunctionResponse::GetFunctionResponse() :
     m_statusReasonsHasBeenSet(false),
     m_asyncRunEnableHasBeenSet(false),
     m_traceEnableHasBeenSet(false),
+    m_imageConfigHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
-    m_protocolParamsHasBeenSet(false)
+    m_protocolParamsHasBeenSet(false),
+    m_dnsCacheHasBeenSet(false),
+    m_intranetConfigHasBeenSet(false)
 {
 }
 
@@ -614,6 +617,23 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_traceEnableHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageConfig") && !rsp["ImageConfig"].IsNull())
+    {
+        if (!rsp["ImageConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageConfig.Deserialize(rsp["ImageConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageConfigHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ProtocolType") && !rsp["ProtocolType"].IsNull())
     {
         if (!rsp["ProtocolType"].IsString())
@@ -639,6 +659,33 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         }
 
         m_protocolParamsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DnsCache") && !rsp["DnsCache"].IsNull())
+    {
+        if (!rsp["DnsCache"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DnsCache` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dnsCache = string(rsp["DnsCache"].GetString());
+        m_dnsCacheHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IntranetConfig") && !rsp["IntranetConfig"].IsNull())
+    {
+        if (!rsp["IntranetConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntranetConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_intranetConfig.Deserialize(rsp["IntranetConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_intranetConfigHasBeenSet = true;
     }
 
 
@@ -1022,6 +1069,15 @@ string GetFunctionResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_traceEnable.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_imageConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_protocolTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1037,6 +1093,23 @@ string GetFunctionResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_protocolParams.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dnsCacheHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsCache";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dnsCache.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intranetConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intranetConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1471,6 +1544,16 @@ bool GetFunctionResponse::TraceEnableHasBeenSet() const
     return m_traceEnableHasBeenSet;
 }
 
+ImageConfig GetFunctionResponse::GetImageConfig() const
+{
+    return m_imageConfig;
+}
+
+bool GetFunctionResponse::ImageConfigHasBeenSet() const
+{
+    return m_imageConfigHasBeenSet;
+}
+
 string GetFunctionResponse::GetProtocolType() const
 {
     return m_protocolType;
@@ -1489,6 +1572,26 @@ ProtocolParams GetFunctionResponse::GetProtocolParams() const
 bool GetFunctionResponse::ProtocolParamsHasBeenSet() const
 {
     return m_protocolParamsHasBeenSet;
+}
+
+string GetFunctionResponse::GetDnsCache() const
+{
+    return m_dnsCache;
+}
+
+bool GetFunctionResponse::DnsCacheHasBeenSet() const
+{
+    return m_dnsCacheHasBeenSet;
+}
+
+IntranetConfigOut GetFunctionResponse::GetIntranetConfig() const
+{
+    return m_intranetConfig;
+}
+
+bool GetFunctionResponse::IntranetConfigHasBeenSet() const
+{
+    return m_intranetConfigHasBeenSet;
 }
 
 

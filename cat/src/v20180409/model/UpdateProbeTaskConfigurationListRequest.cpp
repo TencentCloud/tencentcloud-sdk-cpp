@@ -28,7 +28,8 @@ UpdateProbeTaskConfigurationListRequest::UpdateProbeTaskConfigurationListRequest
     m_intervalHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_cronHasBeenSet(false),
-    m_resourceIDsHasBeenSet(false)
+    m_resourceIDsHasBeenSet(false),
+    m_nodeIpTypeHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,14 @@ string UpdateProbeTaskConfigurationListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_nodeIpTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIpType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_nodeIpType, allocator);
     }
 
 
@@ -204,6 +213,22 @@ void UpdateProbeTaskConfigurationListRequest::SetResourceIDs(const vector<string
 bool UpdateProbeTaskConfigurationListRequest::ResourceIDsHasBeenSet() const
 {
     return m_resourceIDsHasBeenSet;
+}
+
+int64_t UpdateProbeTaskConfigurationListRequest::GetNodeIpType() const
+{
+    return m_nodeIpType;
+}
+
+void UpdateProbeTaskConfigurationListRequest::SetNodeIpType(const int64_t& _nodeIpType)
+{
+    m_nodeIpType = _nodeIpType;
+    m_nodeIpTypeHasBeenSet = true;
+}
+
+bool UpdateProbeTaskConfigurationListRequest::NodeIpTypeHasBeenSet() const
+{
+    return m_nodeIpTypeHasBeenSet;
 }
 
 

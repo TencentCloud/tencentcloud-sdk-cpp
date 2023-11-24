@@ -24,7 +24,11 @@ ScheduledSqlResouceInfo::ScheduledSqlResouceInfo() :
     m_topicIdHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+    m_metricNameHasBeenSet(false),
+    m_metricNamesHasBeenSet(false),
+    m_metricLabelsHasBeenSet(false),
+    m_customTimeHasBeenSet(false),
+    m_customMetricLabelsHasBeenSet(false)
 {
 }
 
@@ -73,6 +77,62 @@ CoreInternalOutcome ScheduledSqlResouceInfo::Deserialize(const rapidjson::Value 
         m_metricNameHasBeenSet = true;
     }
 
+    if (value.HasMember("MetricNames") && !value["MetricNames"].IsNull())
+    {
+        if (!value["MetricNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ScheduledSqlResouceInfo.MetricNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MetricNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_metricNames.push_back((*itr).GetString());
+        }
+        m_metricNamesHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetricLabels") && !value["MetricLabels"].IsNull())
+    {
+        if (!value["MetricLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ScheduledSqlResouceInfo.MetricLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MetricLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_metricLabels.push_back((*itr).GetString());
+        }
+        m_metricLabelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomTime") && !value["CustomTime"].IsNull())
+    {
+        if (!value["CustomTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduledSqlResouceInfo.CustomTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customTime = string(value["CustomTime"].GetString());
+        m_customTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomMetricLabels") && !value["CustomMetricLabels"].IsNull())
+    {
+        if (!value["CustomMetricLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ScheduledSqlResouceInfo.CustomMetricLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomMetricLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MetricLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customMetricLabels.push_back(item);
+        }
+        m_customMetricLabelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +170,55 @@ void ScheduledSqlResouceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "MetricName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metricNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_metricNames.begin(); itr != m_metricNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_metricLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_metricLabels.begin(); itr != m_metricLabels.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_customTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customMetricLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomMetricLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customMetricLabels.begin(); itr != m_customMetricLabels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +286,69 @@ void ScheduledSqlResouceInfo::SetMetricName(const string& _metricName)
 bool ScheduledSqlResouceInfo::MetricNameHasBeenSet() const
 {
     return m_metricNameHasBeenSet;
+}
+
+vector<string> ScheduledSqlResouceInfo::GetMetricNames() const
+{
+    return m_metricNames;
+}
+
+void ScheduledSqlResouceInfo::SetMetricNames(const vector<string>& _metricNames)
+{
+    m_metricNames = _metricNames;
+    m_metricNamesHasBeenSet = true;
+}
+
+bool ScheduledSqlResouceInfo::MetricNamesHasBeenSet() const
+{
+    return m_metricNamesHasBeenSet;
+}
+
+vector<string> ScheduledSqlResouceInfo::GetMetricLabels() const
+{
+    return m_metricLabels;
+}
+
+void ScheduledSqlResouceInfo::SetMetricLabels(const vector<string>& _metricLabels)
+{
+    m_metricLabels = _metricLabels;
+    m_metricLabelsHasBeenSet = true;
+}
+
+bool ScheduledSqlResouceInfo::MetricLabelsHasBeenSet() const
+{
+    return m_metricLabelsHasBeenSet;
+}
+
+string ScheduledSqlResouceInfo::GetCustomTime() const
+{
+    return m_customTime;
+}
+
+void ScheduledSqlResouceInfo::SetCustomTime(const string& _customTime)
+{
+    m_customTime = _customTime;
+    m_customTimeHasBeenSet = true;
+}
+
+bool ScheduledSqlResouceInfo::CustomTimeHasBeenSet() const
+{
+    return m_customTimeHasBeenSet;
+}
+
+vector<MetricLabel> ScheduledSqlResouceInfo::GetCustomMetricLabels() const
+{
+    return m_customMetricLabels;
+}
+
+void ScheduledSqlResouceInfo::SetCustomMetricLabels(const vector<MetricLabel>& _customMetricLabels)
+{
+    m_customMetricLabels = _customMetricLabels;
+    m_customMetricLabelsHasBeenSet = true;
+}
+
+bool ScheduledSqlResouceInfo::CustomMetricLabelsHasBeenSet() const
+{
+    return m_customMetricLabelsHasBeenSet;
 }
 

@@ -25,6 +25,7 @@ ProbeTask::ProbeTask() :
     m_taskIdHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_nodesHasBeenSet(false),
+    m_nodeIpTypeHasBeenSet(false),
     m_intervalHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -85,6 +86,16 @@ CoreInternalOutcome ProbeTask::Deserialize(const rapidjson::Value &value)
             m_nodes.push_back((*itr).GetString());
         }
         m_nodesHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeIpType") && !value["NodeIpType"].IsNull())
+    {
+        if (!value["NodeIpType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProbeTask.NodeIpType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeIpType = value["NodeIpType"].GetInt64();
+        m_nodeIpTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Interval") && !value["Interval"].IsNull())
@@ -251,6 +262,14 @@ void ProbeTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         }
     }
 
+    if (m_nodeIpTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIpType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodeIpType, allocator);
+    }
+
     if (m_intervalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -411,6 +430,22 @@ void ProbeTask::SetNodes(const vector<string>& _nodes)
 bool ProbeTask::NodesHasBeenSet() const
 {
     return m_nodesHasBeenSet;
+}
+
+int64_t ProbeTask::GetNodeIpType() const
+{
+    return m_nodeIpType;
+}
+
+void ProbeTask::SetNodeIpType(const int64_t& _nodeIpType)
+{
+    m_nodeIpType = _nodeIpType;
+    m_nodeIpTypeHasBeenSet = true;
+}
+
+bool ProbeTask::NodeIpTypeHasBeenSet() const
+{
+    return m_nodeIpTypeHasBeenSet;
 }
 
 int64_t ProbeTask::GetInterval() const

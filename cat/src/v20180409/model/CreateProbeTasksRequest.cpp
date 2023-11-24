@@ -33,7 +33,8 @@ CreateProbeTasksRequest::CreateProbeTasksRequest() :
     m_tagHasBeenSet(false),
     m_probeTypeHasBeenSet(false),
     m_pluginSourceHasBeenSet(false),
-    m_clientNumHasBeenSet(false)
+    m_clientNumHasBeenSet(false),
+    m_nodeIpTypeHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,14 @@ string CreateProbeTasksRequest::ToJsonString() const
         string key = "ClientNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientNum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIpTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIpType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_nodeIpType, allocator);
     }
 
 
@@ -333,6 +342,22 @@ void CreateProbeTasksRequest::SetClientNum(const string& _clientNum)
 bool CreateProbeTasksRequest::ClientNumHasBeenSet() const
 {
     return m_clientNumHasBeenSet;
+}
+
+int64_t CreateProbeTasksRequest::GetNodeIpType() const
+{
+    return m_nodeIpType;
+}
+
+void CreateProbeTasksRequest::SetNodeIpType(const int64_t& _nodeIpType)
+{
+    m_nodeIpType = _nodeIpType;
+    m_nodeIpTypeHasBeenSet = true;
+}
+
+bool CreateProbeTasksRequest::NodeIpTypeHasBeenSet() const
+{
+    return m_nodeIpTypeHasBeenSet;
 }
 
 

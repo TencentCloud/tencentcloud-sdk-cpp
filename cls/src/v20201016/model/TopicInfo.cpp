@@ -36,7 +36,9 @@ TopicInfo::TopicInfo() :
     m_periodHasBeenSet(false),
     m_subAssumerNameHasBeenSet(false),
     m_describesHasBeenSet(false),
-    m_hotPeriodHasBeenSet(false)
+    m_hotPeriodHasBeenSet(false),
+    m_bizTypeHasBeenSet(false),
+    m_isWebTrackingHasBeenSet(false)
 {
 }
 
@@ -215,6 +217,26 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         m_hotPeriodHasBeenSet = true;
     }
 
+    if (value.HasMember("BizType") && !value["BizType"].IsNull())
+    {
+        if (!value["BizType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.BizType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bizType = value["BizType"].GetUint64();
+        m_bizTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsWebTracking") && !value["IsWebTracking"].IsNull())
+    {
+        if (!value["IsWebTracking"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.IsWebTracking` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isWebTracking = value["IsWebTracking"].GetBool();
+        m_isWebTrackingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +377,22 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "HotPeriod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hotPeriod, allocator);
+    }
+
+    if (m_bizTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bizType, allocator);
+    }
+
+    if (m_isWebTrackingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsWebTracking";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isWebTracking, allocator);
     }
 
 }
@@ -614,5 +652,37 @@ void TopicInfo::SetHotPeriod(const uint64_t& _hotPeriod)
 bool TopicInfo::HotPeriodHasBeenSet() const
 {
     return m_hotPeriodHasBeenSet;
+}
+
+uint64_t TopicInfo::GetBizType() const
+{
+    return m_bizType;
+}
+
+void TopicInfo::SetBizType(const uint64_t& _bizType)
+{
+    m_bizType = _bizType;
+    m_bizTypeHasBeenSet = true;
+}
+
+bool TopicInfo::BizTypeHasBeenSet() const
+{
+    return m_bizTypeHasBeenSet;
+}
+
+bool TopicInfo::GetIsWebTracking() const
+{
+    return m_isWebTracking;
+}
+
+void TopicInfo::SetIsWebTracking(const bool& _isWebTracking)
+{
+    m_isWebTracking = _isWebTracking;
+    m_isWebTrackingHasBeenSet = true;
+}
+
+bool TopicInfo::IsWebTrackingHasBeenSet() const
+{
+    return m_isWebTrackingHasBeenSet;
 }
 

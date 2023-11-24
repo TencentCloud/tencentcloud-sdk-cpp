@@ -49,6 +49,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeScaleInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeScaleInfoResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeStreamIngestRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityDataRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityDataResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityMetricDataRequest.h>
@@ -95,12 +97,16 @@
 #include <tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeByStrRoomIdResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StartPublishCdnStreamRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StartPublishCdnStreamResponse.h>
+#include <tencentcloud/trtc/v20190722/model/StartStreamIngestRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StartStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeByStrRoomIdRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeByStrRoomIdResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopPublishCdnStreamRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StopPublishCdnStreamResponse.h>
+#include <tencentcloud/trtc/v20190722/model/StopStreamIngestRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StopStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamRequest.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamResponse.h>
 
@@ -156,6 +162,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScaleInfoResponse> DescribeScaleInfoOutcome;
                 typedef std::future<DescribeScaleInfoOutcome> DescribeScaleInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeScaleInfoRequest&, DescribeScaleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScaleInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamIngestResponse> DescribeStreamIngestOutcome;
+                typedef std::future<DescribeStreamIngestOutcome> DescribeStreamIngestOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeStreamIngestRequest&, DescribeStreamIngestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamIngestAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTRTCMarketQualityDataResponse> DescribeTRTCMarketQualityDataOutcome;
                 typedef std::future<DescribeTRTCMarketQualityDataOutcome> DescribeTRTCMarketQualityDataOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCMarketQualityDataRequest&, DescribeTRTCMarketQualityDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCMarketQualityDataAsyncHandler;
@@ -225,6 +234,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartPublishCdnStreamResponse> StartPublishCdnStreamOutcome;
                 typedef std::future<StartPublishCdnStreamOutcome> StartPublishCdnStreamOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StartPublishCdnStreamRequest&, StartPublishCdnStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartPublishCdnStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartStreamIngestResponse> StartStreamIngestOutcome;
+                typedef std::future<StartStreamIngestOutcome> StartStreamIngestOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::StartStreamIngestRequest&, StartStreamIngestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartStreamIngestAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopMCUMixTranscodeResponse> StopMCUMixTranscodeOutcome;
                 typedef std::future<StopMCUMixTranscodeOutcome> StopMCUMixTranscodeOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StopMCUMixTranscodeRequest&, StopMCUMixTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMCUMixTranscodeAsyncHandler;
@@ -234,6 +246,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopPublishCdnStreamResponse> StopPublishCdnStreamOutcome;
                 typedef std::future<StopPublishCdnStreamOutcome> StopPublishCdnStreamOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StopPublishCdnStreamRequest&, StopPublishCdnStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopPublishCdnStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopStreamIngestResponse> StopStreamIngestOutcome;
+                typedef std::future<StopStreamIngestOutcome> StopStreamIngestOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::StopStreamIngestRequest&, StopStreamIngestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopStreamIngestAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePublishCdnStreamResponse> UpdatePublishCdnStreamOutcome;
                 typedef std::future<UpdatePublishCdnStreamOutcome> UpdatePublishCdnStreamOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::UpdatePublishCdnStreamRequest&, UpdatePublishCdnStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePublishCdnStreamAsyncHandler;
@@ -394,6 +409,15 @@ namespace TencentCloud
                 DescribeScaleInfoOutcome DescribeScaleInfo(const Model::DescribeScaleInfoRequest &request);
                 void DescribeScaleInfoAsync(const Model::DescribeScaleInfoRequest& request, const DescribeScaleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScaleInfoOutcomeCallable DescribeScaleInfoCallable(const Model::DescribeScaleInfoRequest& request);
+
+                /**
+                 *您可以查询转推任务的状态。
+                 * @param req DescribeStreamIngestRequest
+                 * @return DescribeStreamIngestOutcome
+                 */
+                DescribeStreamIngestOutcome DescribeStreamIngest(const Model::DescribeStreamIngestRequest &request);
+                void DescribeStreamIngestAsync(const Model::DescribeStreamIngestRequest& request, const DescribeStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamIngestOutcomeCallable DescribeStreamIngestCallable(const Model::DescribeStreamIngestRequest& request);
 
                 /**
                  *查询TRTC监控仪表盘-数据大盘质量指标（包括下列指标）
@@ -809,6 +833,15 @@ ver：可以忽略。
                 StartPublishCdnStreamOutcomeCallable StartPublishCdnStreamCallable(const Model::StartPublishCdnStreamRequest& request);
 
                 /**
+                 *将一个在线媒体流推到TRTC房间。
+                 * @param req StartStreamIngestRequest
+                 * @return StartStreamIngestOutcome
+                 */
+                StartStreamIngestOutcome StartStreamIngest(const Model::StartStreamIngestRequest &request);
+                void StartStreamIngestAsync(const Model::StartStreamIngestRequest& request, const StartStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartStreamIngestOutcomeCallable StartStreamIngestCallable(const Model::StartStreamIngestRequest& request);
+
+                /**
                  *接口说明：结束云端混流
                  * @param req StopMCUMixTranscodeRequest
                  * @return StopMCUMixTranscodeOutcome
@@ -834,6 +867,15 @@ ver：可以忽略。
                 StopPublishCdnStreamOutcome StopPublishCdnStream(const Model::StopPublishCdnStreamRequest &request);
                 void StopPublishCdnStreamAsync(const Model::StopPublishCdnStreamRequest& request, const StopPublishCdnStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopPublishCdnStreamOutcomeCallable StopPublishCdnStreamCallable(const Model::StopPublishCdnStreamRequest& request);
+
+                /**
+                 *停止一个拉流转推任务。
+                 * @param req StopStreamIngestRequest
+                 * @return StopStreamIngestOutcome
+                 */
+                StopStreamIngestOutcome StopStreamIngest(const Model::StopStreamIngestRequest &request);
+                void StopStreamIngestAsync(const Model::StopStreamIngestRequest& request, const StopStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopStreamIngestOutcomeCallable StopStreamIngestCallable(const Model::StopStreamIngestRequest& request);
 
                 /**
                  *更新转推任务。

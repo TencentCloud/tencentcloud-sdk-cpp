@@ -46,7 +46,93 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取Consumer Group Name
+                     * @return ConsumerGroupName Consumer Group Name
+                     * 
+                     */
+                    std::string GetConsumerGroupName() const;
+
+                    /**
+                     * 设置Consumer Group Name
+                     * @param _consumerGroupName Consumer Group Name
+                     * 
+                     */
+                    void SetConsumerGroupName(const std::string& _consumerGroupName);
+
+                    /**
+                     * 判断参数 ConsumerGroupName 是否已赋值
+                     * @return ConsumerGroupName 是否已赋值
+                     * 
+                     */
+                    bool ConsumerGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取账户名
+                     * @return Account 账户名
+                     * 
+                     */
+                    std::string GetAccount() const;
+
+                    /**
+                     * 设置账户名
+                     * @param _account 账户名
+                     * 
+                     */
+                    void SetAccount(const std::string& _account);
+
+                    /**
+                     * 判断参数 Account 是否已赋值
+                     * @return Account 是否已赋值
+                     * 
+                     */
+                    bool AccountHasBeenSet() const;
+
+                    /**
+                     * 获取密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Password 密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPassword() const;
+
+                    /**
+                     * 设置密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _password 密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPassword(const std::string& _password);
+
+                    /**
+                     * 判断参数 Password 是否已赋值
+                     * @return Password 是否已赋值
+                     * 
+                     */
+                    bool PasswordHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * Consumer Group Name
+                     */
+                    std::string m_consumerGroupName;
+                    bool m_consumerGroupNameHasBeenSet;
+
+                    /**
+                     * 账户名
+                     */
+                    std::string m_account;
+                    bool m_accountHasBeenSet;
+
+                    /**
+                     * 密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_password;
+                    bool m_passwordHasBeenSet;
 
                 };
             }

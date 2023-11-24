@@ -168,6 +168,31 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
+                     * 获取拨测任务所选的拨测点IP类型，0-不限，1-IPv4，2-IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeIpType 拨测任务所选的拨测点IP类型，0-不限，1-IPv4，2-IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetNodeIpType() const;
+
+                    /**
+                     * 设置拨测任务所选的拨测点IP类型，0-不限，1-IPv4，2-IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nodeIpType 拨测任务所选的拨测点IP类型，0-不限，1-IPv4，2-IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNodeIpType(const int64_t& _nodeIpType);
+
+                    /**
+                     * 判断参数 NodeIpType 是否已赋值
+                     * @return NodeIpType 是否已赋值
+                     * 
+                     */
+                    bool NodeIpTypeHasBeenSet() const;
+
+                    /**
                      * 获取拨测间隔
                      * @return Interval 拨测间隔
                      * 
@@ -516,6 +541,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_nodes;
                     bool m_nodesHasBeenSet;
+
+                    /**
+                     * 拨测任务所选的拨测点IP类型，0-不限，1-IPv4，2-IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_nodeIpType;
+                    bool m_nodeIpTypeHasBeenSet;
 
                     /**
                      * 拨测间隔

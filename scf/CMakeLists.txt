@@ -147,6 +147,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/PutProvisionedConcurrencyConfigRequest.h
   include/tencentcloud/scf/v20180416/model/Function.h
   include/tencentcloud/scf/v20180416/model/NamespaceUsage.h
+  include/tencentcloud/scf/v20180416/model/IntranetConfigOut.h
   include/tencentcloud/scf/v20180416/model/ListAliasesRequest.h
   include/tencentcloud/scf/v20180416/model/EipOutConfig.h
   include/tencentcloud/scf/v20180416/model/Alias.h
@@ -296,6 +297,7 @@ set(scf_src
   src/v20180416/model/PutProvisionedConcurrencyConfigRequest.cpp
   src/v20180416/model/Function.cpp
   src/v20180416/model/NamespaceUsage.cpp
+  src/v20180416/model/IntranetConfigOut.cpp
   src/v20180416/model/ListAliasesRequest.cpp
   src/v20180416/model/EipOutConfig.cpp
   src/v20180416/model/Alias.cpp

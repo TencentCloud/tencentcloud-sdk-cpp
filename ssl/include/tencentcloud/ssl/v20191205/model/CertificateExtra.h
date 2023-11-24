@@ -196,6 +196,31 @@ namespace TencentCloud
                      */
                     bool SMCertHasBeenSet() const;
 
+                    /**
+                     * 获取公司类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CompanyType 公司类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCompanyType() const;
+
+                    /**
+                     * 设置公司类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _companyType 公司类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCompanyType(const int64_t& _companyType);
+
+                    /**
+                     * 判断参数 CompanyType 是否已赋值
+                     * @return CompanyType 是否已赋值
+                     * 
+                     */
+                    bool CompanyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +264,13 @@ namespace TencentCloud
                      */
                     int64_t m_sMCert;
                     bool m_sMCertHasBeenSet;
+
+                    /**
+                     * 公司类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_companyType;
+                    bool m_companyTypeHasBeenSet;
 
                 };
             }

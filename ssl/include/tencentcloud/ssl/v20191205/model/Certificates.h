@@ -684,18 +684,18 @@ null = 用户上传证书（没有套餐类型），
                     bool IsVulnerabilityHasBeenSet() const;
 
                     /**
-                     * 获取是否可重颁发证书。
+                     * 获取是否可续费。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenewAble 是否可重颁发证书。
+                     * @return RenewAble 是否可续费。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRenewAble() const;
 
                     /**
-                     * 设置是否可重颁发证书。
+                     * 设置是否可续费。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _renewAble 是否可重颁发证书。
+                     * @param _renewAble 是否可续费。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1083,6 +1083,206 @@ null = 用户上传证书（没有套餐类型），
                      */
                     bool HostingRenewCertIdHasBeenSet() const;
 
+                    /**
+                     * 获取存在的续费证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasRenewOrder 存在的续费证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetHasRenewOrder() const;
+
+                    /**
+                     * 设置存在的续费证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hasRenewOrder 存在的续费证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHasRenewOrder(const std::string& _hasRenewOrder);
+
+                    /**
+                     * 判断参数 HasRenewOrder 是否已赋值
+                     * @return HasRenewOrder 是否已赋值
+                     * 
+                     */
+                    bool HasRenewOrderHasBeenSet() const;
+
+                    /**
+                     * 获取重颁发证书原证书是否删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplaceOriCertIsDelete 重颁发证书原证书是否删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetReplaceOriCertIsDelete() const;
+
+                    /**
+                     * 设置重颁发证书原证书是否删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _replaceOriCertIsDelete 重颁发证书原证书是否删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReplaceOriCertIsDelete(const bool& _replaceOriCertIsDelete);
+
+                    /**
+                     * 判断参数 ReplaceOriCertIsDelete 是否已赋值
+                     * @return ReplaceOriCertIsDelete 是否已赋值
+                     * 
+                     */
+                    bool ReplaceOriCertIsDeleteHasBeenSet() const;
+
+                    /**
+                     * 获取是否即将过期， 证书即将到期的30天内为即将过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsExpiring 是否即将过期， 证书即将到期的30天内为即将过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsExpiring() const;
+
+                    /**
+                     * 设置是否即将过期， 证书即将到期的30天内为即将过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isExpiring 是否即将过期， 证书即将到期的30天内为即将过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsExpiring(const bool& _isExpiring);
+
+                    /**
+                     * 判断参数 IsExpiring 是否已赋值
+                     * @return IsExpiring 是否已赋值
+                     * 
+                     */
+                    bool IsExpiringHasBeenSet() const;
+
+                    /**
+                     * 获取DV证书添加验证截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DVAuthDeadline DV证书添加验证截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDVAuthDeadline() const;
+
+                    /**
+                     * 设置DV证书添加验证截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dVAuthDeadline DV证书添加验证截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDVAuthDeadline(const std::string& _dVAuthDeadline);
+
+                    /**
+                     * 判断参数 DVAuthDeadline 是否已赋值
+                     * @return DVAuthDeadline 是否已赋值
+                     * 
+                     */
+                    bool DVAuthDeadlineHasBeenSet() const;
+
+                    /**
+                     * 获取域名验证通过时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValidationPassedTime 域名验证通过时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetValidationPassedTime() const;
+
+                    /**
+                     * 设置域名验证通过时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _validationPassedTime 域名验证通过时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetValidationPassedTime(const std::string& _validationPassedTime);
+
+                    /**
+                     * 判断参数 ValidationPassedTime 是否已赋值
+                     * @return ValidationPassedTime 是否已赋值
+                     * 
+                     */
+                    bool ValidationPassedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取证书关联的多域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertSANs 证书关联的多域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCertSANs() const;
+
+                    /**
+                     * 设置证书关联的多域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _certSANs 证书关联的多域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCertSANs(const std::vector<std::string>& _certSANs);
+
+                    /**
+                     * 判断参数 CertSANs 是否已赋值
+                     * @return CertSANs 是否已赋值
+                     * 
+                     */
+                    bool CertSANsHasBeenSet() const;
+
+                    /**
+                     * 获取域名验证驳回信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AwaitingValidationMsg 域名验证驳回信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAwaitingValidationMsg() const;
+
+                    /**
+                     * 设置域名验证驳回信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _awaitingValidationMsg 域名验证驳回信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAwaitingValidationMsg(const std::string& _awaitingValidationMsg);
+
+                    /**
+                     * 判断参数 AwaitingValidationMsg 是否已赋值
+                     * @return AwaitingValidationMsg 是否已赋值
+                     * 
+                     */
+                    bool AwaitingValidationMsgHasBeenSet() const;
+
+                    /**
+                     * 获取是否允许下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllowDownload 是否允许下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAllowDownload() const;
+
+                    /**
+                     * 设置是否允许下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _allowDownload 是否允许下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAllowDownload(const bool& _allowDownload);
+
+                    /**
+                     * 判断参数 AllowDownload 是否已赋值
+                     * @return AllowDownload 是否已赋值
+                     * 
+                     */
+                    bool AllowDownloadHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1263,7 +1463,7 @@ null = 用户上传证书（没有套餐类型），
                     bool m_isVulnerabilityHasBeenSet;
 
                     /**
-                     * 是否可重颁发证书。
+                     * 是否可续费。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_renewAble;
@@ -1373,6 +1573,62 @@ null = 用户上传证书（没有套餐类型），
                      */
                     std::string m_hostingRenewCertId;
                     bool m_hostingRenewCertIdHasBeenSet;
+
+                    /**
+                     * 存在的续费证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hasRenewOrder;
+                    bool m_hasRenewOrderHasBeenSet;
+
+                    /**
+                     * 重颁发证书原证书是否删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_replaceOriCertIsDelete;
+                    bool m_replaceOriCertIsDeleteHasBeenSet;
+
+                    /**
+                     * 是否即将过期， 证书即将到期的30天内为即将过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isExpiring;
+                    bool m_isExpiringHasBeenSet;
+
+                    /**
+                     * DV证书添加验证截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dVAuthDeadline;
+                    bool m_dVAuthDeadlineHasBeenSet;
+
+                    /**
+                     * 域名验证通过时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_validationPassedTime;
+                    bool m_validationPassedTimeHasBeenSet;
+
+                    /**
+                     * 证书关联的多域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_certSANs;
+                    bool m_certSANsHasBeenSet;
+
+                    /**
+                     * 域名验证驳回信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_awaitingValidationMsg;
+                    bool m_awaitingValidationMsgHasBeenSet;
+
+                    /**
+                     * 是否允许下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_allowDownload;
+                    bool m_allowDownloadHasBeenSet;
 
                 };
             }

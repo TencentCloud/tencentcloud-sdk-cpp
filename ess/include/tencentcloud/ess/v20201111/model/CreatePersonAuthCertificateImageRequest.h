@@ -93,14 +93,10 @@ namespace TencentCloud
                     /**
                      * 获取证件类型，支持以下类型
 <ul><li> ID_CARD  : 居民身份证 (默认值)</li>
-<li> PASSPORT  : 护照</li>
-<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>
 <li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>
 <li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>
                      * @return IdCardType 证件类型，支持以下类型
 <ul><li> ID_CARD  : 居民身份证 (默认值)</li>
-<li> PASSPORT  : 护照</li>
-<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>
 <li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>
 <li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>
                      * 
@@ -110,14 +106,10 @@ namespace TencentCloud
                     /**
                      * 设置证件类型，支持以下类型
 <ul><li> ID_CARD  : 居民身份证 (默认值)</li>
-<li> PASSPORT  : 护照</li>
-<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>
 <li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>
 <li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>
                      * @param _idCardType 证件类型，支持以下类型
 <ul><li> ID_CARD  : 居民身份证 (默认值)</li>
-<li> PASSPORT  : 护照</li>
-<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>
 <li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>
 <li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>
                      * 
@@ -189,6 +181,39 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+
+注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`
+                     * @return SceneKey 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+
+注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`
+                     * 
+                     */
+                    std::string GetSceneKey() const;
+
+                    /**
+                     * 设置自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+
+注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`
+                     * @param _sceneKey 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+
+注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`
+                     * 
+                     */
+                    void SetSceneKey(const std::string& _sceneKey);
+
+                    /**
+                     * 判断参数 SceneKey 是否已赋值
+                     * @return SceneKey 是否已赋值
+                     * 
+                     */
+                    bool SceneKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,8 +232,6 @@ namespace TencentCloud
                     /**
                      * 证件类型，支持以下类型
 <ul><li> ID_CARD  : 居民身份证 (默认值)</li>
-<li> PASSPORT  : 护照</li>
-<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>
 <li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>
 <li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>
                      */
@@ -230,6 +253,15 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+
+注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`
+                     */
+                    std::string m_sceneKey;
+                    bool m_sceneKeyHasBeenSet;
 
                 };
             }

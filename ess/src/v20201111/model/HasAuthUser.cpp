@@ -22,7 +22,8 @@ using namespace std;
 
 HasAuthUser::HasAuthUser() :
     m_userIdHasBeenSet(false),
-    m_belongToHasBeenSet(false)
+    m_belongToHasBeenSet(false),
+    m_mainOrganizationIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome HasAuthUser::Deserialize(const rapidjson::Value &value)
         m_belongToHasBeenSet = true;
     }
 
+    if (value.HasMember("MainOrganizationId") && !value["MainOrganizationId"].IsNull())
+    {
+        if (!value["MainOrganizationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HasAuthUser.MainOrganizationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mainOrganizationId = string(value["MainOrganizationId"].GetString());
+        m_mainOrganizationIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void HasAuthUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "BelongTo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_belongTo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mainOrganizationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MainOrganizationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mainOrganizationId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void HasAuthUser::SetBelongTo(const string& _belongTo)
 bool HasAuthUser::BelongToHasBeenSet() const
 {
     return m_belongToHasBeenSet;
+}
+
+string HasAuthUser::GetMainOrganizationId() const
+{
+    return m_mainOrganizationId;
+}
+
+void HasAuthUser::SetMainOrganizationId(const string& _mainOrganizationId)
+{
+    m_mainOrganizationId = _mainOrganizationId;
+    m_mainOrganizationIdHasBeenSet = true;
+}
+
+bool HasAuthUser::MainOrganizationIdHasBeenSet() const
+{
+    return m_mainOrganizationIdHasBeenSet;
 }
 

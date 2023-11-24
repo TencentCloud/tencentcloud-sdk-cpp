@@ -27,6 +27,7 @@
 #include <tencentcloud/cls/v20201016/model/CallBackInfo.h>
 #include <tencentcloud/cls/v20201016/model/AnalysisDimensional.h>
 #include <tencentcloud/cls/v20201016/model/Tag.h>
+#include <tencentcloud/cls/v20201016/model/AlarmClassification.h>
 
 
 namespace TencentCloud
@@ -351,6 +352,27 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取是否开启告警策略。默认值为true
+                     * @return Enable 是否开启告警策略。默认值为true
+                     * 
+                     */
+                    bool GetEnable() const;
+
+                    /**
+                     * 设置是否开启告警策略。默认值为true
+                     * @param _enable 是否开启告警策略。默认值为true
+                     * 
+                     */
+                    void SetEnable(const bool& _enable);
+
+                    /**
+                     * 判断参数 Enable 是否已赋值
+                     * @return Enable 是否已赋值
+                     * 
+                     */
+                    bool EnableHasBeenSet() const;
+
+                    /**
                      * 获取用户自定义告警内容
                      * @return MessageTemplate 用户自定义告警内容
                      * 
@@ -533,6 +555,51 @@ namespace TencentCloud
                      */
                     bool MonitorObjectTypeHasBeenSet() const;
 
+                    /**
+                     * 获取告警附加分类信息列表。
+
+Classifications元素个数不能超过20个。
+
+Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，字符规则 ^[a-z]([a-z0-9_]{0,49})$。
+
+Classifications元素的Value长度不能超过200个字符。
+                     * @return Classifications 告警附加分类信息列表。
+
+Classifications元素个数不能超过20个。
+
+Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，字符规则 ^[a-z]([a-z0-9_]{0,49})$。
+
+Classifications元素的Value长度不能超过200个字符。
+                     * 
+                     */
+                    std::vector<AlarmClassification> GetClassifications() const;
+
+                    /**
+                     * 设置告警附加分类信息列表。
+
+Classifications元素个数不能超过20个。
+
+Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，字符规则 ^[a-z]([a-z0-9_]{0,49})$。
+
+Classifications元素的Value长度不能超过200个字符。
+                     * @param _classifications 告警附加分类信息列表。
+
+Classifications元素个数不能超过20个。
+
+Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，字符规则 ^[a-z]([a-z0-9_]{0,49})$。
+
+Classifications元素的Value长度不能超过200个字符。
+                     * 
+                     */
+                    void SetClassifications(const std::vector<AlarmClassification>& _classifications);
+
+                    /**
+                     * 判断参数 Classifications 是否已赋值
+                     * @return Classifications 是否已赋值
+                     * 
+                     */
+                    bool ClassificationsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -619,6 +686,12 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
+                     * 是否开启告警策略。默认值为true
+                     */
+                    bool m_enable;
+                    bool m_enableHasBeenSet;
+
+                    /**
                      * 用户自定义告警内容
                      */
                     std::string m_messageTemplate;
@@ -668,6 +741,18 @@ namespace TencentCloud
                      */
                     uint64_t m_monitorObjectType;
                     bool m_monitorObjectTypeHasBeenSet;
+
+                    /**
+                     * 告警附加分类信息列表。
+
+Classifications元素个数不能超过20个。
+
+Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，字符规则 ^[a-z]([a-z0-9_]{0,49})$。
+
+Classifications元素的Value长度不能超过200个字符。
+                     */
+                    std::vector<AlarmClassification> m_classifications;
+                    bool m_classificationsHasBeenSet;
 
                 };
             }

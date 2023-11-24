@@ -384,6 +384,49 @@ TeoClient::CreateApplicationProxyRuleOutcomeCallable TeoClient::CreateApplicatio
     return task->get_future();
 }
 
+TeoClient::CreateConfigGroupVersionOutcome TeoClient::CreateConfigGroupVersion(const CreateConfigGroupVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConfigGroupVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConfigGroupVersionResponse rsp = CreateConfigGroupVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConfigGroupVersionOutcome(rsp);
+        else
+            return CreateConfigGroupVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConfigGroupVersionOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateConfigGroupVersionAsync(const CreateConfigGroupVersionRequest& request, const CreateConfigGroupVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConfigGroupVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateConfigGroupVersionOutcomeCallable TeoClient::CreateConfigGroupVersionCallable(const CreateConfigGroupVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConfigGroupVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConfigGroupVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateOriginGroupOutcome TeoClient::CreateOriginGroup(const CreateOriginGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOriginGroup");
@@ -1115,6 +1158,49 @@ TeoClient::DeleteZoneOutcomeCallable TeoClient::DeleteZoneCallable(const DeleteZ
     return task->get_future();
 }
 
+TeoClient::DeployConfigGroupVersionOutcome TeoClient::DeployConfigGroupVersion(const DeployConfigGroupVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeployConfigGroupVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployConfigGroupVersionResponse rsp = DeployConfigGroupVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployConfigGroupVersionOutcome(rsp);
+        else
+            return DeployConfigGroupVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeployConfigGroupVersionOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeployConfigGroupVersionAsync(const DeployConfigGroupVersionRequest& request, const DeployConfigGroupVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeployConfigGroupVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeployConfigGroupVersionOutcomeCallable TeoClient::DeployConfigGroupVersionCallable(const DeployConfigGroupVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeployConfigGroupVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeployConfigGroupVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeAccelerationDomainsOutcome TeoClient::DescribeAccelerationDomains(const DescribeAccelerationDomainsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAccelerationDomains");
@@ -1280,6 +1366,92 @@ TeoClient::DescribeAvailablePlansOutcomeCallable TeoClient::DescribeAvailablePla
         [this, request]()
         {
             return this->DescribeAvailablePlans(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeConfigGroupVersionDetailOutcome TeoClient::DescribeConfigGroupVersionDetail(const DescribeConfigGroupVersionDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigGroupVersionDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigGroupVersionDetailResponse rsp = DescribeConfigGroupVersionDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigGroupVersionDetailOutcome(rsp);
+        else
+            return DescribeConfigGroupVersionDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigGroupVersionDetailOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeConfigGroupVersionDetailAsync(const DescribeConfigGroupVersionDetailRequest& request, const DescribeConfigGroupVersionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigGroupVersionDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeConfigGroupVersionDetailOutcomeCallable TeoClient::DescribeConfigGroupVersionDetailCallable(const DescribeConfigGroupVersionDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigGroupVersionDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigGroupVersionDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeConfigGroupVersionsOutcome TeoClient::DescribeConfigGroupVersions(const DescribeConfigGroupVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigGroupVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigGroupVersionsResponse rsp = DescribeConfigGroupVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigGroupVersionsOutcome(rsp);
+        else
+            return DescribeConfigGroupVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigGroupVersionsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeConfigGroupVersionsAsync(const DescribeConfigGroupVersionsRequest& request, const DescribeConfigGroupVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigGroupVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeConfigGroupVersionsOutcomeCallable TeoClient::DescribeConfigGroupVersionsCallable(const DescribeConfigGroupVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigGroupVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigGroupVersions(request);
         }
     );
 
@@ -1495,6 +1667,92 @@ TeoClient::DescribeDefaultCertificatesOutcomeCallable TeoClient::DescribeDefault
         [this, request]()
         {
             return this->DescribeDefaultCertificates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeDeployHistoryOutcome TeoClient::DescribeDeployHistory(const DescribeDeployHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeployHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeployHistoryResponse rsp = DescribeDeployHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeployHistoryOutcome(rsp);
+        else
+            return DescribeDeployHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeployHistoryOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeDeployHistoryAsync(const DescribeDeployHistoryRequest& request, const DescribeDeployHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeployHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeDeployHistoryOutcomeCallable TeoClient::DescribeDeployHistoryCallable(const DescribeDeployHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeployHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeployHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeEnvironmentsOutcome TeoClient::DescribeEnvironments(const DescribeEnvironmentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvironments");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvironmentsResponse rsp = DescribeEnvironmentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvironmentsOutcome(rsp);
+        else
+            return DescribeEnvironmentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvironmentsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnvironments(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeEnvironmentsOutcomeCallable TeoClient::DescribeEnvironmentsCallable(const DescribeEnvironmentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnvironmentsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnvironments(request);
         }
     );
 

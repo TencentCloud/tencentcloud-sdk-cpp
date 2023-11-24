@@ -26,7 +26,8 @@ CertificateExtra::CertificateExtra() :
     m_replacedByHasBeenSet(false),
     m_replacedForHasBeenSet(false),
     m_renewOrderHasBeenSet(false),
-    m_sMCertHasBeenSet(false)
+    m_sMCertHasBeenSet(false),
+    m_companyTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome CertificateExtra::Deserialize(const rapidjson::Value &value)
         m_sMCertHasBeenSet = true;
     }
 
+    if (value.HasMember("CompanyType") && !value["CompanyType"].IsNull())
+    {
+        if (!value["CompanyType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertificateExtra.CompanyType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_companyType = value["CompanyType"].GetInt64();
+        m_companyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void CertificateExtra::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SMCert";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sMCert, allocator);
+    }
+
+    if (m_companyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompanyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_companyType, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void CertificateExtra::SetSMCert(const int64_t& _sMCert)
 bool CertificateExtra::SMCertHasBeenSet() const
 {
     return m_sMCertHasBeenSet;
+}
+
+int64_t CertificateExtra::GetCompanyType() const
+{
+    return m_companyType;
+}
+
+void CertificateExtra::SetCompanyType(const int64_t& _companyType)
+{
+    m_companyType = _companyType;
+    m_companyTypeHasBeenSet = true;
+}
+
+bool CertificateExtra::CompanyTypeHasBeenSet() const
+{
+    return m_companyTypeHasBeenSet;
 }
 

@@ -366,6 +366,27 @@ DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不�
                      */
                     bool SpecFeaturesHasBeenSet() const;
 
+                    /**
+                     * 获取纳管cvmid
+                     * @return CvmInstanceId 纳管cvmid
+                     * 
+                     */
+                    std::string GetCvmInstanceId() const;
+
+                    /**
+                     * 设置纳管cvmid
+                     * @param _cvmInstanceId 纳管cvmid
+                     * 
+                     */
+                    void SetCvmInstanceId(const std::string& _cvmInstanceId);
+
+                    /**
+                     * 判断参数 CvmInstanceId 是否已赋值
+                     * @return CvmInstanceId 是否已赋值
+                     * 
+                     */
+                    bool CvmInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -455,6 +476,12 @@ DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不�
                      */
                     std::vector<std::string> m_specFeatures;
                     bool m_specFeaturesHasBeenSet;
+
+                    /**
+                     * 纳管cvmid
+                     */
+                    std::string m_cvmInstanceId;
+                    bool m_cvmInstanceIdHasBeenSet;
 
                 };
             }

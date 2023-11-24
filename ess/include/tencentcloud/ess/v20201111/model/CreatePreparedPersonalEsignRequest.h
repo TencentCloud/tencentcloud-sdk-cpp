@@ -426,6 +426,39 @@ BLUE 蓝色。
                      */
                     bool LicenseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+
+注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`
+                     * @return SceneKey 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+
+注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`
+                     * 
+                     */
+                    std::string GetSceneKey() const;
+
+                    /**
+                     * 设置自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+
+注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`
+                     * @param _sceneKey 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+
+注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`
+                     * 
+                     */
+                    void SetSceneKey(const std::string& _sceneKey);
+
+                    /**
+                     * 判断参数 SceneKey 是否已赋值
+                     * @return SceneKey 是否已赋值
+                     * 
+                     */
+                    bool SceneKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -533,6 +566,15 @@ BLUE 蓝色。
                      */
                     int64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;
+
+                    /**
+                     * 自动签使用的场景值, 可以选择的场景值如下:
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+
+注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`
+                     */
+                    std::string m_sceneKey;
+                    bool m_sceneKeyHasBeenSet;
 
                 };
             }

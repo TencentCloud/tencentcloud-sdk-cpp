@@ -32,7 +32,9 @@
 #include <tencentcloud/scf/v20180416/model/PublicNetConfigOut.h>
 #include <tencentcloud/scf/v20180416/model/CfsConfig.h>
 #include <tencentcloud/scf/v20180416/model/StatusReason.h>
+#include <tencentcloud/scf/v20180416/model/ImageConfig.h>
 #include <tencentcloud/scf/v20180416/model/ProtocolParams.h>
+#include <tencentcloud/scf/v20180416/model/IntranetConfigOut.h>
 
 
 namespace TencentCloud
@@ -662,6 +664,22 @@ namespace TencentCloud
                     bool TraceEnableHasBeenSet() const;
 
                     /**
+                     * 获取镜像配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageConfig 镜像配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ImageConfig GetImageConfig() const;
+
+                    /**
+                     * 判断参数 ImageConfig 是否已赋值
+                     * @return ImageConfig 是否已赋值
+                     * 
+                     */
+                    bool ImageConfigHasBeenSet() const;
+
+                    /**
                      * 获取HTTP函数支持的访问协议。当前支持WebSockets协议。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtocolType HTTP函数支持的访问协议。当前支持WebSockets协议。
@@ -692,6 +710,38 @@ namespace TencentCloud
                      * 
                      */
                     bool ProtocolParamsHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启DNS缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DnsCache 是否开启DNS缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDnsCache() const;
+
+                    /**
+                     * 判断参数 DnsCache 是否已赋值
+                     * @return DnsCache 是否已赋值
+                     * 
+                     */
+                    bool DnsCacheHasBeenSet() const;
+
+                    /**
+                     * 获取内网访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntranetConfig 内网访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    IntranetConfigOut GetIntranetConfig() const;
+
+                    /**
+                     * 判断参数 IntranetConfig 是否已赋值
+                     * @return IntranetConfig 是否已赋值
+                     * 
+                     */
+                    bool IntranetConfigHasBeenSet() const;
 
                 private:
 
@@ -957,6 +1007,13 @@ namespace TencentCloud
                     bool m_traceEnableHasBeenSet;
 
                     /**
+                     * 镜像配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageConfig m_imageConfig;
+                    bool m_imageConfigHasBeenSet;
+
+                    /**
                      * HTTP函数支持的访问协议。当前支持WebSockets协议。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -969,6 +1026,20 @@ namespace TencentCloud
                      */
                     ProtocolParams m_protocolParams;
                     bool m_protocolParamsHasBeenSet;
+
+                    /**
+                     * 是否开启DNS缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dnsCache;
+                    bool m_dnsCacheHasBeenSet;
+
+                    /**
+                     * 内网访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntranetConfigOut m_intranetConfig;
+                    bool m_intranetConfigHasBeenSet;
 
                 };
             }

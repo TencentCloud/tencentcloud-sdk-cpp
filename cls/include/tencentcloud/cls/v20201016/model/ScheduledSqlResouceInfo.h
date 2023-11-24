@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/MetricLabel.h>
 
 
 namespace TencentCloud
@@ -130,6 +131,94 @@ namespace TencentCloud
                      */
                     bool MetricNameHasBeenSet() const;
 
+                    /**
+                     * 获取指标名称
+BizType为1时，优先使用MetricNames字段信息。多指标只能填充到MetricNames字段，单指标建议填充到MetricNames字段
+                     * @return MetricNames 指标名称
+BizType为1时，优先使用MetricNames字段信息。多指标只能填充到MetricNames字段，单指标建议填充到MetricNames字段
+                     * 
+                     */
+                    std::vector<std::string> GetMetricNames() const;
+
+                    /**
+                     * 设置指标名称
+BizType为1时，优先使用MetricNames字段信息。多指标只能填充到MetricNames字段，单指标建议填充到MetricNames字段
+                     * @param _metricNames 指标名称
+BizType为1时，优先使用MetricNames字段信息。多指标只能填充到MetricNames字段，单指标建议填充到MetricNames字段
+                     * 
+                     */
+                    void SetMetricNames(const std::vector<std::string>& _metricNames);
+
+                    /**
+                     * 判断参数 MetricNames 是否已赋值
+                     * @return MetricNames 是否已赋值
+                     * 
+                     */
+                    bool MetricNamesHasBeenSet() const;
+
+                    /**
+                     * 获取指标项
+                     * @return MetricLabels 指标项
+                     * 
+                     */
+                    std::vector<std::string> GetMetricLabels() const;
+
+                    /**
+                     * 设置指标项
+                     * @param _metricLabels 指标项
+                     * 
+                     */
+                    void SetMetricLabels(const std::vector<std::string>& _metricLabels);
+
+                    /**
+                     * 判断参数 MetricLabels 是否已赋值
+                     * @return MetricLabels 是否已赋值
+                     * 
+                     */
+                    bool MetricLabelsHasBeenSet() const;
+
+                    /**
+                     * 获取自定义时间
+                     * @return CustomTime 自定义时间
+                     * 
+                     */
+                    std::string GetCustomTime() const;
+
+                    /**
+                     * 设置自定义时间
+                     * @param _customTime 自定义时间
+                     * 
+                     */
+                    void SetCustomTime(const std::string& _customTime);
+
+                    /**
+                     * 判断参数 CustomTime 是否已赋值
+                     * @return CustomTime 是否已赋值
+                     * 
+                     */
+                    bool CustomTimeHasBeenSet() const;
+
+                    /**
+                     * 获取自定义标签
+                     * @return CustomMetricLabels 自定义标签
+                     * 
+                     */
+                    std::vector<MetricLabel> GetCustomMetricLabels() const;
+
+                    /**
+                     * 设置自定义标签
+                     * @param _customMetricLabels 自定义标签
+                     * 
+                     */
+                    void SetCustomMetricLabels(const std::vector<MetricLabel>& _customMetricLabels);
+
+                    /**
+                     * 判断参数 CustomMetricLabels 是否已赋值
+                     * @return CustomMetricLabels 是否已赋值
+                     * 
+                     */
+                    bool CustomMetricLabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +244,31 @@ namespace TencentCloud
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
+
+                    /**
+                     * 指标名称
+BizType为1时，优先使用MetricNames字段信息。多指标只能填充到MetricNames字段，单指标建议填充到MetricNames字段
+                     */
+                    std::vector<std::string> m_metricNames;
+                    bool m_metricNamesHasBeenSet;
+
+                    /**
+                     * 指标项
+                     */
+                    std::vector<std::string> m_metricLabels;
+                    bool m_metricLabelsHasBeenSet;
+
+                    /**
+                     * 自定义时间
+                     */
+                    std::string m_customTime;
+                    bool m_customTimeHasBeenSet;
+
+                    /**
+                     * 自定义标签
+                     */
+                    std::vector<MetricLabel> m_customMetricLabels;
+                    bool m_customMetricLabelsHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ ConnectionDescription::ConnectionDescription() :
     m_resourceDescriptionHasBeenSet(false),
     m_aPIGWParamsHasBeenSet(false),
     m_ckafkaParamsHasBeenSet(false),
-    m_dTSParamsHasBeenSet(false)
+    m_dTSParamsHasBeenSet(false),
+    m_tDMQParamsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,23 @@ CoreInternalOutcome ConnectionDescription::Deserialize(const rapidjson::Value &v
         m_dTSParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("TDMQParams") && !value["TDMQParams"].IsNull())
+    {
+        if (!value["TDMQParams"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConnectionDescription.TDMQParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tDMQParams.Deserialize(value["TDMQParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tDMQParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +152,15 @@ void ConnectionDescription::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dTSParams.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tDMQParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TDMQParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tDMQParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -201,5 +228,21 @@ void ConnectionDescription::SetDTSParams(const DTSParams& _dTSParams)
 bool ConnectionDescription::DTSParamsHasBeenSet() const
 {
     return m_dTSParamsHasBeenSet;
+}
+
+TDMQParams ConnectionDescription::GetTDMQParams() const
+{
+    return m_tDMQParams;
+}
+
+void ConnectionDescription::SetTDMQParams(const TDMQParams& _tDMQParams)
+{
+    m_tDMQParams = _tDMQParams;
+    m_tDMQParamsHasBeenSet = true;
+}
+
+bool ConnectionDescription::TDMQParamsHasBeenSet() const
+{
+    return m_tDMQParamsHasBeenSet;
 }
 

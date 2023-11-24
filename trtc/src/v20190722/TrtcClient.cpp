@@ -599,6 +599,49 @@ TrtcClient::DescribeScaleInfoOutcomeCallable TrtcClient::DescribeScaleInfoCallab
     return task->get_future();
 }
 
+TrtcClient::DescribeStreamIngestOutcome TrtcClient::DescribeStreamIngest(const DescribeStreamIngestRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamIngest");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamIngestResponse rsp = DescribeStreamIngestResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamIngestOutcome(rsp);
+        else
+            return DescribeStreamIngestOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamIngestOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeStreamIngestAsync(const DescribeStreamIngestRequest& request, const DescribeStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStreamIngest(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeStreamIngestOutcomeCallable TrtcClient::DescribeStreamIngestCallable(const DescribeStreamIngestRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStreamIngestOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStreamIngest(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeTRTCMarketQualityDataOutcome TrtcClient::DescribeTRTCMarketQualityData(const DescribeTRTCMarketQualityDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTRTCMarketQualityData");
@@ -1588,6 +1631,49 @@ TrtcClient::StartPublishCdnStreamOutcomeCallable TrtcClient::StartPublishCdnStre
     return task->get_future();
 }
 
+TrtcClient::StartStreamIngestOutcome TrtcClient::StartStreamIngest(const StartStreamIngestRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartStreamIngest");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartStreamIngestResponse rsp = StartStreamIngestResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartStreamIngestOutcome(rsp);
+        else
+            return StartStreamIngestOutcome(o.GetError());
+    }
+    else
+    {
+        return StartStreamIngestOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StartStreamIngestAsync(const StartStreamIngestRequest& request, const StartStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartStreamIngest(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StartStreamIngestOutcomeCallable TrtcClient::StartStreamIngestCallable(const StartStreamIngestRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartStreamIngestOutcome()>>(
+        [this, request]()
+        {
+            return this->StartStreamIngest(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::StopMCUMixTranscodeOutcome TrtcClient::StopMCUMixTranscode(const StopMCUMixTranscodeRequest &request)
 {
     auto outcome = MakeRequest(request, "StopMCUMixTranscode");
@@ -1710,6 +1796,49 @@ TrtcClient::StopPublishCdnStreamOutcomeCallable TrtcClient::StopPublishCdnStream
         [this, request]()
         {
             return this->StopPublishCdnStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::StopStreamIngestOutcome TrtcClient::StopStreamIngest(const StopStreamIngestRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopStreamIngest");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopStreamIngestResponse rsp = StopStreamIngestResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopStreamIngestOutcome(rsp);
+        else
+            return StopStreamIngestOutcome(o.GetError());
+    }
+    else
+    {
+        return StopStreamIngestOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StopStreamIngestAsync(const StopStreamIngestRequest& request, const StopStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopStreamIngest(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StopStreamIngestOutcomeCallable TrtcClient::StopStreamIngestCallable(const StopStreamIngestRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopStreamIngestOutcome()>>(
+        [this, request]()
+        {
+            return this->StopStreamIngest(request);
         }
     );
 

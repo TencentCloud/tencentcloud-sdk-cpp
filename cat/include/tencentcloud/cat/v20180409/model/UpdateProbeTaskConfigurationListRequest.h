@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务 ID
-                     * @return TaskIds 任务 ID
+                     * 获取任务 ID，如task-n1wchki8
+                     * @return TaskIds 任务 ID，如task-n1wchki8
                      * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
-                     * 设置任务 ID
-                     * @param _taskIds 任务 ID
+                     * 设置任务 ID，如task-n1wchki8
+                     * @param _taskIds 任务 ID，如task-n1wchki8
                      * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdsHasBeenSet() const;
 
                     /**
-                     * 获取拨测节点
-                     * @return Nodes 拨测节点
+                     * 获取拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。
+                     * @return Nodes 拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。
                      * 
                      */
                     std::vector<std::string> GetNodes() const;
 
                     /**
-                     * 设置拨测节点
-                     * @param _nodes 拨测节点
+                     * 设置拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。
+                     * @param _nodes 拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。
                      * 
                      */
                     void SetNodes(const std::vector<std::string>& _nodes);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取拨测间隔
-                     * @return Interval 拨测间隔
+                     * 获取拨测间隔，如30，单位为分钟。
+                     * @return Interval 拨测间隔，如30，单位为分钟。
                      * 
                      */
                     int64_t GetInterval() const;
 
                     /**
-                     * 设置拨测间隔
-                     * @param _interval 拨测间隔
+                     * 设置拨测间隔，如30，单位为分钟。
+                     * @param _interval 拨测间隔，如30，单位为分钟。
                      * 
                      */
                     void SetInterval(const int64_t& _interval);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取拨测参数
-                     * @return Parameters 拨测参数
+                     * 获取拨测参数，详细参数配置可参考云拨测官网文档。
+                     * @return Parameters 拨测参数，详细参数配置可参考云拨测官网文档。
                      * 
                      */
                     std::string GetParameters() const;
 
                     /**
-                     * 设置拨测参数
-                     * @param _parameters 拨测参数
+                     * 设置拨测参数，详细参数配置可参考云拨测官网文档。
+                     * @param _parameters 拨测参数，详细参数配置可参考云拨测官网文档。
                      * 
                      */
                     void SetParameters(const std::string& _parameters);
@@ -172,28 +172,49 @@ namespace TencentCloud
                      */
                     bool ResourceIDsHasBeenSet() const;
 
+                    /**
+                     * 获取拨测节点的IP类型，0-不限，1-IPv4，2-IPv6
+                     * @return NodeIpType 拨测节点的IP类型，0-不限，1-IPv4，2-IPv6
+                     * 
+                     */
+                    int64_t GetNodeIpType() const;
+
+                    /**
+                     * 设置拨测节点的IP类型，0-不限，1-IPv4，2-IPv6
+                     * @param _nodeIpType 拨测节点的IP类型，0-不限，1-IPv4，2-IPv6
+                     * 
+                     */
+                    void SetNodeIpType(const int64_t& _nodeIpType);
+
+                    /**
+                     * 判断参数 NodeIpType 是否已赋值
+                     * @return NodeIpType 是否已赋值
+                     * 
+                     */
+                    bool NodeIpTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务 ID
+                     * 任务 ID，如task-n1wchki8
                      */
                     std::vector<std::string> m_taskIds;
                     bool m_taskIdsHasBeenSet;
 
                     /**
-                     * 拨测节点
+                     * 拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。
                      */
                     std::vector<std::string> m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 拨测间隔
+                     * 拨测间隔，如30，单位为分钟。
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 拨测参数
+                     * 拨测参数，详细参数配置可参考云拨测官网文档。
                      */
                     std::string m_parameters;
                     bool m_parametersHasBeenSet;
@@ -210,6 +231,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_resourceIDs;
                     bool m_resourceIDsHasBeenSet;
+
+                    /**
+                     * 拨测节点的IP类型，0-不限，1-IPv4，2-IPv6
+                     */
+                    int64_t m_nodeIpType;
+                    bool m_nodeIpTypeHasBeenSet;
 
                 };
             }

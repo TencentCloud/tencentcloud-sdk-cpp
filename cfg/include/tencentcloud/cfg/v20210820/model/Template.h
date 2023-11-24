@@ -453,6 +453,31 @@ namespace TencentCloud
                      */
                     bool AlarmPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取护栏处理方式，1--顺序回滚，2--演练暂停
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolicyDealType 护栏处理方式，1--顺序回滚，2--演练暂停
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPolicyDealType() const;
+
+                    /**
+                     * 设置护栏处理方式，1--顺序回滚，2--演练暂停
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _policyDealType 护栏处理方式，1--顺序回滚，2--演练暂停
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPolicyDealType(const int64_t& _policyDealType);
+
+                    /**
+                     * 判断参数 PolicyDealType 是否已赋值
+                     * @return PolicyDealType 是否已赋值
+                     * 
+                     */
+                    bool PolicyDealTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -568,6 +593,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_alarmPolicy;
                     bool m_alarmPolicyHasBeenSet;
+
+                    /**
+                     * 护栏处理方式，1--顺序回滚，2--演练暂停
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_policyDealType;
+                    bool m_policyDealTypeHasBeenSet;
 
                 };
             }

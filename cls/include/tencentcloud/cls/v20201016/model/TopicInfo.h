@@ -423,6 +423,72 @@ namespace TencentCloud
                      */
                     bool HotPeriodHasBeenSet() const;
 
+                    /**
+                     * 获取主题类型。
+- 0: 日志主题 
+- 1: 指标主题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BizType 主题类型。
+- 0: 日志主题 
+- 1: 指标主题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetBizType() const;
+
+                    /**
+                     * 设置主题类型。
+- 0: 日志主题 
+- 1: 指标主题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bizType 主题类型。
+- 0: 日志主题 
+- 1: 指标主题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBizType(const uint64_t& _bizType);
+
+                    /**
+                     * 判断参数 BizType 是否已赋值
+                     * @return BizType 是否已赋值
+                     * 
+                     */
+                    bool BizTypeHasBeenSet() const;
+
+                    /**
+                     * 获取免鉴权开关。
+- false: 关闭
+- true: 开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsWebTracking 免鉴权开关。
+- false: 关闭
+- true: 开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsWebTracking() const;
+
+                    /**
+                     * 设置免鉴权开关。
+- false: 关闭
+- true: 开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isWebTracking 免鉴权开关。
+- false: 关闭
+- true: 开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsWebTracking(const bool& _isWebTracking);
+
+                    /**
+                     * 判断参数 IsWebTracking 是否已赋值
+                     * @return IsWebTracking 是否已赋值
+                     * 
+                     */
+                    bool IsWebTrackingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -530,6 +596,24 @@ namespace TencentCloud
                      */
                     uint64_t m_hotPeriod;
                     bool m_hotPeriodHasBeenSet;
+
+                    /**
+                     * 主题类型。
+- 0: 日志主题 
+- 1: 指标主题
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_bizType;
+                    bool m_bizTypeHasBeenSet;
+
+                    /**
+                     * 免鉴权开关。
+- false: 关闭
+- true: 开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isWebTracking;
+                    bool m_isWebTrackingHasBeenSet;
 
                 };
             }

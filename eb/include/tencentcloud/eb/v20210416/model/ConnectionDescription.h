@@ -27,6 +27,7 @@
 #include <tencentcloud/eb/v20210416/model/APIGWParams.h>
 #include <tencentcloud/eb/v20210416/model/CkafkaParams.h>
 #include <tencentcloud/eb/v20210416/model/DTSParams.h>
+#include <tencentcloud/eb/v20210416/model/TDMQParams.h>
 
 
 namespace TencentCloud
@@ -145,6 +146,31 @@ namespace TencentCloud
                      */
                     bool DTSParamsHasBeenSet() const;
 
+                    /**
+                     * 获取tdmq参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TDMQParams tdmq参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TDMQParams GetTDMQParams() const;
+
+                    /**
+                     * 设置tdmq参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tDMQParams tdmq参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTDMQParams(const TDMQParams& _tDMQParams);
+
+                    /**
+                     * 判断参数 TDMQParams 是否已赋值
+                     * @return TDMQParams 是否已赋值
+                     * 
+                     */
+                    bool TDMQParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +199,13 @@ namespace TencentCloud
                      */
                     DTSParams m_dTSParams;
                     bool m_dTSParamsHasBeenSet;
+
+                    /**
+                     * tdmq参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TDMQParams m_tDMQParams;
+                    bool m_tDMQParamsHasBeenSet;
 
                 };
             }

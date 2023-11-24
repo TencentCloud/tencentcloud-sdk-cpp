@@ -542,15 +542,15 @@ namespace TencentCloud
                     bool RegisterInfoHasBeenSet() const;
 
                     /**
-                     * 获取签署人个性化能力值，如是否可以转发他人处理、是否可以拒签等功能开关。
-                     * @return ApproverOption 签署人个性化能力值，如是否可以转发他人处理、是否可以拒签等功能开关。
+                     * 获取签署人个性化能力值，如是否可以转发他人处理、是否可以拒签、是否为动态补充签署人等功能开关。
+                     * @return ApproverOption 签署人个性化能力值，如是否可以转发他人处理、是否可以拒签、是否为动态补充签署人等功能开关。
                      * 
                      */
                     ApproverOption GetApproverOption() const;
 
                     /**
-                     * 设置签署人个性化能力值，如是否可以转发他人处理、是否可以拒签等功能开关。
-                     * @param _approverOption 签署人个性化能力值，如是否可以转发他人处理、是否可以拒签等功能开关。
+                     * 设置签署人个性化能力值，如是否可以转发他人处理、是否可以拒签、是否为动态补充签署人等功能开关。
+                     * @param _approverOption 签署人个性化能力值，如是否可以转发他人处理、是否可以拒签、是否为动态补充签署人等功能开关。
                      * 
                      */
                     void SetApproverOption(const ApproverOption& _approverOption);
@@ -1064,7 +1064,7 @@ namespace TencentCloud
                     bool m_registerInfoHasBeenSet;
 
                     /**
-                     * 签署人个性化能力值，如是否可以转发他人处理、是否可以拒签等功能开关。
+                     * 签署人个性化能力值，如是否可以转发他人处理、是否可以拒签、是否为动态补充签署人等功能开关。
                      */
                     ApproverOption m_approverOption;
                     bool m_approverOptionHasBeenSet;

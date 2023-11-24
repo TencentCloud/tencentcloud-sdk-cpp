@@ -27,7 +27,8 @@ CreatePersonAuthCertificateImageRequest::CreatePersonAuthCertificateImageRequest
     m_userNameHasBeenSet(false),
     m_idCardTypeHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_sceneKeyHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,14 @@ string CreatePersonAuthCertificateImageRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sceneKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sceneKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -166,6 +175,22 @@ void CreatePersonAuthCertificateImageRequest::SetAgent(const Agent& _agent)
 bool CreatePersonAuthCertificateImageRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string CreatePersonAuthCertificateImageRequest::GetSceneKey() const
+{
+    return m_sceneKey;
+}
+
+void CreatePersonAuthCertificateImageRequest::SetSceneKey(const string& _sceneKey)
+{
+    m_sceneKey = _sceneKey;
+    m_sceneKeyHasBeenSet = true;
+}
+
+bool CreatePersonAuthCertificateImageRequest::SceneKeyHasBeenSet() const
+{
+    return m_sceneKeyHasBeenSet;
 }
 
 

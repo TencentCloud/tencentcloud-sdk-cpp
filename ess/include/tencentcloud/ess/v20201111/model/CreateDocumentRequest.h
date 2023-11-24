@@ -68,18 +68,18 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程ID，为32位字符串。
-此接口的合同流程ID需要由<a href="https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow" target="_blank">创建签署流程</a>接口创建得到。
+此接口的合同流程ID需要由[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)接口创建得到。
                      * @return FlowId 合同流程ID，为32位字符串。
-此接口的合同流程ID需要由<a href="https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow" target="_blank">创建签署流程</a>接口创建得到。
+此接口的合同流程ID需要由[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)接口创建得到。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置合同流程ID，为32位字符串。
-此接口的合同流程ID需要由<a href="https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow" target="_blank">创建签署流程</a>接口创建得到。
+此接口的合同流程ID需要由[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)接口创建得到。
                      * @param _flowId 合同流程ID，为32位字符串。
-此接口的合同流程ID需要由<a href="https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow" target="_blank">创建签署流程</a>接口创建得到。
+此接口的合同流程ID需要由[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)接口创建得到。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -138,15 +138,15 @@ namespace TencentCloud
                     bool FileNamesHasBeenSet() const;
 
                     /**
-                     * 获取电子文档的填写控件的填充内容。具体方式可以参考<a href="https://qian.tencent.com/developers/companyApis/dataTypes/#formfield" target="_blank">FormField</a>结构体的定义。
-                     * @return FormFields 电子文档的填写控件的填充内容。具体方式可以参考<a href="https://qian.tencent.com/developers/companyApis/dataTypes/#formfield" target="_blank">FormField</a>结构体的定义。
+                     * 获取电子文档的填写控件的填充内容。具体方式可以参考[FormField](https://qian.tencent.com/developers/companyApis/dataTypes/#formfield)结构体的定义。
+                     * @return FormFields 电子文档的填写控件的填充内容。具体方式可以参考[FormField](https://qian.tencent.com/developers/companyApis/dataTypes/#formfield)结构体的定义。
                      * 
                      */
                     std::vector<FormField> GetFormFields() const;
 
                     /**
-                     * 设置电子文档的填写控件的填充内容。具体方式可以参考<a href="https://qian.tencent.com/developers/companyApis/dataTypes/#formfield" target="_blank">FormField</a>结构体的定义。
-                     * @param _formFields 电子文档的填写控件的填充内容。具体方式可以参考<a href="https://qian.tencent.com/developers/companyApis/dataTypes/#formfield" target="_blank">FormField</a>结构体的定义。
+                     * 设置电子文档的填写控件的填充内容。具体方式可以参考[FormField](https://qian.tencent.com/developers/companyApis/dataTypes/#formfield)结构体的定义。
+                     * @param _formFields 电子文档的填写控件的填充内容。具体方式可以参考[FormField](https://qian.tencent.com/developers/companyApis/dataTypes/#formfield)结构体的定义。
                      * 
                      */
                     void SetFormFields(const std::vector<FormField>& _formFields);
@@ -193,12 +193,12 @@ namespace TencentCloud
 
                     /**
                      * 获取预览模式下产生的预览链接类型 
-<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
 <li> **1** :H5链接 ,点开后在浏览器中展示合同的样子。</li></ul>
 注: `1.此参数在NeedPreview 为true时有效`
 `2.动态表格控件不支持H5链接方式预览`
                      * @return PreviewType 预览模式下产生的预览链接类型 
-<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
 <li> **1** :H5链接 ,点开后在浏览器中展示合同的样子。</li></ul>
 注: `1.此参数在NeedPreview 为true时有效`
 `2.动态表格控件不支持H5链接方式预览`
@@ -208,12 +208,12 @@ namespace TencentCloud
 
                     /**
                      * 设置预览模式下产生的预览链接类型 
-<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
 <li> **1** :H5链接 ,点开后在浏览器中展示合同的样子。</li></ul>
 注: `1.此参数在NeedPreview 为true时有效`
 `2.动态表格控件不支持H5链接方式预览`
                      * @param _previewType 预览模式下产生的预览链接类型 
-<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
 <li> **1** :H5链接 ,点开后在浏览器中展示合同的样子。</li></ul>
 注: `1.此参数在NeedPreview 为true时有效`
 `2.动态表格控件不支持H5链接方式预览`
@@ -284,7 +284,7 @@ namespace TencentCloud
 
                     /**
                      * 合同流程ID，为32位字符串。
-此接口的合同流程ID需要由<a href="https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow" target="_blank">创建签署流程</a>接口创建得到。
+此接口的合同流程ID需要由[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)接口创建得到。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
@@ -303,7 +303,7 @@ namespace TencentCloud
                     bool m_fileNamesHasBeenSet;
 
                     /**
-                     * 电子文档的填写控件的填充内容。具体方式可以参考<a href="https://qian.tencent.com/developers/companyApis/dataTypes/#formfield" target="_blank">FormField</a>结构体的定义。
+                     * 电子文档的填写控件的填充内容。具体方式可以参考[FormField](https://qian.tencent.com/developers/companyApis/dataTypes/#formfield)结构体的定义。
                      */
                     std::vector<FormField> m_formFields;
                     bool m_formFieldsHasBeenSet;
@@ -319,7 +319,7 @@ namespace TencentCloud
 
                     /**
                      * 预览模式下产生的预览链接类型 
-<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
 <li> **1** :H5链接 ,点开后在浏览器中展示合同的样子。</li></ul>
 注: `1.此参数在NeedPreview 为true时有效`
 `2.动态表格控件不支持H5链接方式预览`

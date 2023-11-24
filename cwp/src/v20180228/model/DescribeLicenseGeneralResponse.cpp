@@ -41,7 +41,8 @@ DescribeLicenseGeneralResponse::DescribeLicenseGeneralResponse() :
     m_availableLHLicenseCntHasBeenSet(false),
     m_autoRepurchaseSwitchHasBeenSet(false),
     m_autoRepurchaseRenewSwitchHasBeenSet(false),
-    m_destroyOrderNumHasBeenSet(false)
+    m_destroyOrderNumHasBeenSet(false),
+    m_repurchaseRenewSwitchHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome DescribeLicenseGeneralResponse::Deserialize(const string &pa
         m_destroyOrderNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RepurchaseRenewSwitch") && !rsp["RepurchaseRenewSwitch"].IsNull())
+    {
+        if (!rsp["RepurchaseRenewSwitch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RepurchaseRenewSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_repurchaseRenewSwitch = rsp["RepurchaseRenewSwitch"].GetBool();
+        m_repurchaseRenewSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +422,14 @@ string DescribeLicenseGeneralResponse::ToJsonString() const
         string key = "DestroyOrderNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_destroyOrderNum, allocator);
+    }
+
+    if (m_repurchaseRenewSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepurchaseRenewSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_repurchaseRenewSwitch, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -603,6 +622,16 @@ uint64_t DescribeLicenseGeneralResponse::GetDestroyOrderNum() const
 bool DescribeLicenseGeneralResponse::DestroyOrderNumHasBeenSet() const
 {
     return m_destroyOrderNumHasBeenSet;
+}
+
+bool DescribeLicenseGeneralResponse::GetRepurchaseRenewSwitch() const
+{
+    return m_repurchaseRenewSwitch;
+}
+
+bool DescribeLicenseGeneralResponse::RepurchaseRenewSwitchHasBeenSet() const
+{
+    return m_repurchaseRenewSwitchHasBeenSet;
 }
 
 

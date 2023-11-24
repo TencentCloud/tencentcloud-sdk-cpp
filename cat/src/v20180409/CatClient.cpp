@@ -169,6 +169,49 @@ CatClient::DescribeDetailedSingleProbeDataOutcomeCallable CatClient::DescribeDet
     return task->get_future();
 }
 
+CatClient::DescribeInstantTasksOutcome CatClient::DescribeInstantTasks(const DescribeInstantTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstantTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstantTasksResponse rsp = DescribeInstantTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstantTasksOutcome(rsp);
+        else
+            return DescribeInstantTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstantTasksOutcome(outcome.GetError());
+    }
+}
+
+void CatClient::DescribeInstantTasksAsync(const DescribeInstantTasksRequest& request, const DescribeInstantTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstantTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CatClient::DescribeInstantTasksOutcomeCallable CatClient::DescribeInstantTasksCallable(const DescribeInstantTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstantTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstantTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CatClient::DescribeNodesOutcome CatClient::DescribeNodes(const DescribeNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNodes");
