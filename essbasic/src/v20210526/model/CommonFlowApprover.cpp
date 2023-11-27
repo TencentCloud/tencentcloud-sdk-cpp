@@ -30,6 +30,8 @@ CommonFlowApprover::CommonFlowApprover() :
     m_openIdHasBeenSet(false),
     m_approverNameHasBeenSet(false),
     m_approverMobileHasBeenSet(false),
+    m_approverIdCardTypeHasBeenSet(false),
+    m_approverIdCardNumberHasBeenSet(false),
     m_recipientIdHasBeenSet(false),
     m_preReadTimeHasBeenSet(false),
     m_isFullTextHasBeenSet(false),
@@ -134,6 +136,26 @@ CoreInternalOutcome CommonFlowApprover::Deserialize(const rapidjson::Value &valu
         }
         m_approverMobile = string(value["ApproverMobile"].GetString());
         m_approverMobileHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverIdCardType") && !value["ApproverIdCardType"].IsNull())
+    {
+        if (!value["ApproverIdCardType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CommonFlowApprover.ApproverIdCardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverIdCardType = string(value["ApproverIdCardType"].GetString());
+        m_approverIdCardTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverIdCardNumber") && !value["ApproverIdCardNumber"].IsNull())
+    {
+        if (!value["ApproverIdCardNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CommonFlowApprover.ApproverIdCardNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverIdCardNumber = string(value["ApproverIdCardNumber"].GetString());
+        m_approverIdCardNumberHasBeenSet = true;
     }
 
     if (value.HasMember("RecipientId") && !value["RecipientId"].IsNull())
@@ -316,6 +338,22 @@ void CommonFlowApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ApproverMobile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverMobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverIdCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverIdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverIdCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverIdCardNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverIdCardNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverIdCardNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recipientIdHasBeenSet)
@@ -545,6 +583,38 @@ void CommonFlowApprover::SetApproverMobile(const string& _approverMobile)
 bool CommonFlowApprover::ApproverMobileHasBeenSet() const
 {
     return m_approverMobileHasBeenSet;
+}
+
+string CommonFlowApprover::GetApproverIdCardType() const
+{
+    return m_approverIdCardType;
+}
+
+void CommonFlowApprover::SetApproverIdCardType(const string& _approverIdCardType)
+{
+    m_approverIdCardType = _approverIdCardType;
+    m_approverIdCardTypeHasBeenSet = true;
+}
+
+bool CommonFlowApprover::ApproverIdCardTypeHasBeenSet() const
+{
+    return m_approverIdCardTypeHasBeenSet;
+}
+
+string CommonFlowApprover::GetApproverIdCardNumber() const
+{
+    return m_approverIdCardNumber;
+}
+
+void CommonFlowApprover::SetApproverIdCardNumber(const string& _approverIdCardNumber)
+{
+    m_approverIdCardNumber = _approverIdCardNumber;
+    m_approverIdCardNumberHasBeenSet = true;
+}
+
+bool CommonFlowApprover::ApproverIdCardNumberHasBeenSet() const
+{
+    return m_approverIdCardNumberHasBeenSet;
 }
 
 string CommonFlowApprover::GetRecipientId() const

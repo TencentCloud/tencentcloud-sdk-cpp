@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述了实例的增强服务启用情况与其设置，如云安全，云监控等实例 Agent
+                * 描述了实例的增强服务启用情况与其设置，如云安全，腾讯云可观测平台等实例 Agent
                 */
                 class EnhancedService : public AbstractModel
                 {
@@ -75,18 +75,18 @@ namespace TencentCloud
                     bool SecurityServiceHasBeenSet() const;
 
                     /**
-                     * 获取开启云监控服务。若不指定该参数，则默认开启云监控服务。
+                     * 获取开启腾讯云可观测平台服务。若不指定该参数，则默认开启腾讯云可观测平台服务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MonitorService 开启云监控服务。若不指定该参数，则默认开启云监控服务。
+                     * @return MonitorService 开启腾讯云可观测平台服务。若不指定该参数，则默认开启腾讯云可观测平台服务。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RunMonitorServiceEnabled GetMonitorService() const;
 
                     /**
-                     * 设置开启云监控服务。若不指定该参数，则默认开启云监控服务。
+                     * 设置开启腾讯云可观测平台服务。若不指定该参数，则默认开启腾讯云可观测平台服务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _monitorService 开启云监控服务。若不指定该参数，则默认开启云监控服务。
+                     * @param _monitorService 开启腾讯云可观测平台服务。若不指定该参数，则默认开启腾讯云可观测平台服务。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -134,7 +134,7 @@ namespace TencentCloud
                     bool m_securityServiceHasBeenSet;
 
                     /**
-                     * 开启云监控服务。若不指定该参数，则默认开启云监控服务。
+                     * 开启腾讯云可观测平台服务。若不指定该参数，则默认开启腾讯云可观测平台服务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RunMonitorServiceEnabled m_monitorService;

@@ -740,6 +740,56 @@ namespace TencentCloud
                      */
                     bool JobGraphHasBeenSet() const;
 
+                    /**
+                     * 获取es索引
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsServerlessIndex es索引
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEsServerlessIndex() const;
+
+                    /**
+                     * 设置es索引
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _esServerlessIndex es索引
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEsServerlessIndex(const std::string& _esServerlessIndex);
+
+                    /**
+                     * 判断参数 EsServerlessIndex 是否已赋值
+                     * @return EsServerlessIndex 是否已赋值
+                     * 
+                     */
+                    bool EsServerlessIndexHasBeenSet() const;
+
+                    /**
+                     * 获取es空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsServerlessSpace es空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEsServerlessSpace() const;
+
+                    /**
+                     * 设置es空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _esServerlessSpace es空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEsServerlessSpace(const std::string& _esServerlessSpace);
+
+                    /**
+                     * 判断参数 EsServerlessSpace 是否已赋值
+                     * @return EsServerlessSpace 是否已赋值
+                     * 
+                     */
+                    bool EsServerlessSpaceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -934,6 +984,20 @@ namespace TencentCloud
                      */
                     JobGraph m_jobGraph;
                     bool m_jobGraphHasBeenSet;
+
+                    /**
+                     * es索引
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_esServerlessIndex;
+                    bool m_esServerlessIndexHasBeenSet;
+
+                    /**
+                     * es空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_esServerlessSpace;
+                    bool m_esServerlessSpaceHasBeenSet;
 
                 };
             }

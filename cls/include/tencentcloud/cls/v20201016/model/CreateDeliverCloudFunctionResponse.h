@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TCR_V20190924_MODEL_DELETECUSTOMACCOUNTRESPONSE_H_
-#define TENCENTCLOUD_TCR_V20190924_MODEL_DELETECUSTOMACCOUNTRESPONSE_H_
+#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_CREATEDELIVERCLOUDFUNCTIONRESPONSE_H_
+#define TENCENTCLOUD_CLS_V20201016_MODEL_CREATEDELIVERCLOUDFUNCTIONRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Tcr
+    namespace Cls
     {
-        namespace V20190924
+        namespace V20201016
         {
             namespace Model
             {
                 /**
-                * DeleteCustomAccount返回参数结构体
+                * CreateDeliverCloudFunction返回参数结构体
                 */
-                class DeleteCustomAccountResponse : public AbstractModel
+                class CreateDeliverCloudFunctionResponse : public AbstractModel
                 {
                 public:
-                    DeleteCustomAccountResponse();
-                    ~DeleteCustomAccountResponse() = default;
+                    CreateDeliverCloudFunctionResponse();
+                    ~CreateDeliverCloudFunctionResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TCR_V20190924_MODEL_DELETECUSTOMACCOUNTRESPONSE_H_
+#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_CREATEDELIVERCLOUDFUNCTIONRESPONSE_H_

@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源id，与ResourceType对应
-                     * @return ResourceId 资源id，与ResourceType对应
+                     * 获取合同模板ID，为32位字符串。
+                     * @return ResourceId 合同模板ID，为32位字符串。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源id，与ResourceType对应
-                     * @param _resourceId 资源id，与ResourceType对应
+                     * 设置合同模板ID，为32位字符串。
+                     * @param _resourceId 合同模板ID，为32位字符串。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，与ResourceId对应1：模板   2: 文件
-                     * @return ResourceType 资源类型，与ResourceId对应1：模板   2: 文件
+                     * 获取资源类型，此接口固定为**1**表示为用模板发起
+                     * @return ResourceType 资源类型，此接口固定为**1**表示为用模板发起
                      * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型，与ResourceId对应1：模板   2: 文件
-                     * @param _resourceType 资源类型，与ResourceId对应1：模板   2: 文件
+                     * 设置资源类型，此接口固定为**1**表示为用模板发起
+                     * @param _resourceType 资源类型，此接口固定为**1**表示为用模板发起
                      * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取合同流程基础信息
-                     * @return FlowInfo 合同流程基础信息
+                     * 获取要创建的合同信息
+                     * @return FlowInfo 要创建的合同信息
                      * 
                      */
                     BaseFlowInfo GetFlowInfo() const;
 
                     /**
-                     * 设置合同流程基础信息
-                     * @param _flowInfo 合同流程基础信息
+                     * 设置要创建的合同信息
+                     * @param _flowInfo 要创建的合同信息
                      * 
                      */
                     void SetFlowInfo(const BaseFlowInfo& _flowInfo);
@@ -112,15 +112,47 @@ namespace TencentCloud
                     bool FlowInfoHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -133,15 +165,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取合同流程配置信息，用于配置发起合同时定制化
-                     * @return FlowOption 合同流程配置信息，用于配置发起合同时定制化
+                     * 获取合同流程配置信息，用于配置发起合同时定制化如是否允许修改，某些按钮的隐藏等逻辑
+                     * @return FlowOption 合同流程配置信息，用于配置发起合同时定制化如是否允许修改，某些按钮的隐藏等逻辑
                      * 
                      */
                     CreateFlowOption GetFlowOption() const;
 
                     /**
-                     * 设置合同流程配置信息，用于配置发起合同时定制化
-                     * @param _flowOption 合同流程配置信息，用于配置发起合同时定制化
+                     * 设置合同流程配置信息，用于配置发起合同时定制化如是否允许修改，某些按钮的隐藏等逻辑
+                     * @param _flowOption 合同流程配置信息，用于配置发起合同时定制化如是否允许修改，某些按钮的隐藏等逻辑
                      * 
                      */
                     void SetFlowOption(const CreateFlowOption& _flowOption);
@@ -175,15 +207,15 @@ namespace TencentCloud
                     bool FlowApproverListHasBeenSet() const;
 
                     /**
-                     * 获取通过flowid快速获得之前成功通过页面发起的合同生成链接
-                     * @return FlowId 通过flowid快速获得之前成功通过页面发起的合同生成链接
+                     * 获取用过去已经通过此接口发起的合同的ID复制个新的合同创建链接
+                     * @return FlowId 用过去已经通过此接口发起的合同的ID复制个新的合同创建链接
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置通过flowid快速获得之前成功通过页面发起的合同生成链接
-                     * @param _flowId 通过flowid快速获得之前成功通过页面发起的合同生成链接
+                     * 设置用过去已经通过此接口发起的合同的ID复制个新的合同创建链接
+                     * @param _flowId 用过去已经通过此接口发起的合同的ID复制个新的合同创建链接
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -261,31 +293,39 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源id，与ResourceType对应
+                     * 合同模板ID，为32位字符串。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源类型，与ResourceId对应1：模板   2: 文件
+                     * 资源类型，此接口固定为**1**表示为用模板发起
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 合同流程基础信息
+                     * 要创建的合同信息
                      */
                     BaseFlowInfo m_flowInfo;
                     bool m_flowInfoHasBeenSet;
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 合同流程配置信息，用于配置发起合同时定制化
+                     * 合同流程配置信息，用于配置发起合同时定制化如是否允许修改，某些按钮的隐藏等逻辑
                      */
                     CreateFlowOption m_flowOption;
                     bool m_flowOptionHasBeenSet;
@@ -297,7 +337,7 @@ namespace TencentCloud
                     bool m_flowApproverListHasBeenSet;
 
                     /**
-                     * 通过flowid快速获得之前成功通过页面发起的合同生成链接
+                     * 用过去已经通过此接口发起的合同的ID复制个新的合同创建链接
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

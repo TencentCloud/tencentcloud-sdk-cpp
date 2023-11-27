@@ -134,7 +134,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateKafkaRechargeResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyScheduledSqlRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigResponse.h
-  include/tencentcloud/cls/v20201016/model/ModifyIndexResponse.h
+  include/tencentcloud/cls/v20201016/model/CreateDeliverCloudFunctionRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/QueryRangeMetricResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteIndexRequest.h
@@ -158,6 +158,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteDataTransformRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupsResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigExtraRequest.h
+  include/tencentcloud/cls/v20201016/model/CreateDeliverCloudFunctionResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyConfigRequest.h
   include/tencentcloud/cls/v20201016/model/AddMachineGroupInfoRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeKafkaRechargesRequest.h
@@ -185,6 +186,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteShipperResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyKafkaConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/ExportInfo.h
+  include/tencentcloud/cls/v20201016/model/ModifyIndexResponse.h
   include/tencentcloud/cls/v20201016/model/GroupTriggerConditionInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeLogContextResponse.h
   include/tencentcloud/cls/v20201016/model/CheckFunctionResponse.h
@@ -393,7 +395,7 @@ set(cls_src
   src/v20201016/model/CreateKafkaRechargeResponse.cpp
   src/v20201016/model/ModifyScheduledSqlRequest.cpp
   src/v20201016/model/DeleteConfigResponse.cpp
-  src/v20201016/model/ModifyIndexResponse.cpp
+  src/v20201016/model/CreateDeliverCloudFunctionRequest.cpp
   src/v20201016/model/DeleteConsumerRequest.cpp
   src/v20201016/model/QueryRangeMetricResponse.cpp
   src/v20201016/model/DeleteIndexRequest.cpp
@@ -417,6 +419,7 @@ set(cls_src
   src/v20201016/model/DeleteDataTransformRequest.cpp
   src/v20201016/model/DescribeMachineGroupsResponse.cpp
   src/v20201016/model/DeleteConfigExtraRequest.cpp
+  src/v20201016/model/CreateDeliverCloudFunctionResponse.cpp
   src/v20201016/model/ModifyConfigRequest.cpp
   src/v20201016/model/AddMachineGroupInfoRequest.cpp
   src/v20201016/model/DescribeKafkaRechargesRequest.cpp
@@ -444,6 +447,7 @@ set(cls_src
   src/v20201016/model/DeleteShipperResponse.cpp
   src/v20201016/model/ModifyKafkaConsumerRequest.cpp
   src/v20201016/model/ExportInfo.cpp
+  src/v20201016/model/ModifyIndexResponse.cpp
   src/v20201016/model/GroupTriggerConditionInfo.cpp
   src/v20201016/model/DescribeLogContextResponse.cpp
   src/v20201016/model/CheckFunctionResponse.cpp

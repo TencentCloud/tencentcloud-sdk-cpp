@@ -26,7 +26,8 @@ CreateFlowOption::CreateFlowOption() :
     m_hideShowFlowTypeHasBeenSet(false),
     m_hideShowDeadlineHasBeenSet(false),
     m_canSkipAddApproverHasBeenSet(false),
-    m_customCreateFlowDescriptionHasBeenSet(false)
+    m_customCreateFlowDescriptionHasBeenSet(false),
+    m_forbidEditFillComponentHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_customCreateFlowDescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidEditFillComponent") && !value["ForbidEditFillComponent"].IsNull())
+    {
+        if (!value["ForbidEditFillComponent"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidEditFillComponent` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidEditFillComponent = value["ForbidEditFillComponent"].GetBool();
+        m_forbidEditFillComponentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CustomCreateFlowDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customCreateFlowDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forbidEditFillComponentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidEditFillComponent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidEditFillComponent, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void CreateFlowOption::SetCustomCreateFlowDescription(const string& _customCreat
 bool CreateFlowOption::CustomCreateFlowDescriptionHasBeenSet() const
 {
     return m_customCreateFlowDescriptionHasBeenSet;
+}
+
+bool CreateFlowOption::GetForbidEditFillComponent() const
+{
+    return m_forbidEditFillComponent;
+}
+
+void CreateFlowOption::SetForbidEditFillComponent(const bool& _forbidEditFillComponent)
+{
+    m_forbidEditFillComponent = _forbidEditFillComponent;
+    m_forbidEditFillComponentHasBeenSet = true;
+}
+
+bool CreateFlowOption::ForbidEditFillComponentHasBeenSet() const
+{
+    return m_forbidEditFillComponentHasBeenSet;
 }
 

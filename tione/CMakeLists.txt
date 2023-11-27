@@ -121,6 +121,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/TrainingTaskDetail.h
   include/tencentcloud/tione/v20211111/model/SendChatMessageResponse.h
   include/tencentcloud/tione/v20211111/model/ModifyNotebookTagsResponse.h
+  include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookImageRecordsResponse.h
   include/tencentcloud/tione/v20211111/model/CosPathInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsResponse.h
@@ -300,6 +301,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceGroupRequest.h
   include/tencentcloud/tione/v20211111/model/TrainingModelVersionDTO.h
   include/tencentcloud/tione/v20211111/model/StopBatchTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupRequest.h
   include/tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/ChatCompletionResponse.h
@@ -443,6 +445,7 @@ set(tione_src
   src/v20211111/model/TrainingTaskDetail.cpp
   src/v20211111/model/SendChatMessageResponse.cpp
   src/v20211111/model/ModifyNotebookTagsResponse.cpp
+  src/v20211111/model/DescribeBillingResourceGroupResponse.cpp
   src/v20211111/model/DescribeNotebookImageRecordsResponse.cpp
   src/v20211111/model/CosPathInfo.cpp
   src/v20211111/model/DescribeBillingResourceGroupsResponse.cpp
@@ -622,6 +625,7 @@ set(tione_src
   src/v20211111/model/DeleteModelServiceGroupRequest.cpp
   src/v20211111/model/TrainingModelVersionDTO.cpp
   src/v20211111/model/StopBatchTaskResponse.cpp
+  src/v20211111/model/DescribeBillingResourceGroupRequest.cpp
   src/v20211111/model/PushTrainingMetricsRequest.cpp
   src/v20211111/model/DescribeTrainingTaskRequest.cpp
   src/v20211111/model/ChatCompletionResponse.cpp

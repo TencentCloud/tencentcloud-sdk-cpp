@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TCR_V20190924_MODEL_MODIFYCUSTOMACCOUNTRESPONSE_H_
-#define TENCENTCLOUD_TCR_V20190924_MODEL_MODIFYCUSTOMACCOUNTRESPONSE_H_
+#ifndef TENCENTCLOUD_CONFIG_V20220802_MODEL_PUTEVALUATIONSRESPONSE_H_
+#define TENCENTCLOUD_CONFIG_V20220802_MODEL_PUTEVALUATIONSRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Tcr
+    namespace Config
     {
-        namespace V20190924
+        namespace V20220802
         {
             namespace Model
             {
                 /**
-                * ModifyCustomAccount返回参数结构体
+                * PutEvaluations返回参数结构体
                 */
-                class ModifyCustomAccountResponse : public AbstractModel
+                class PutEvaluationsResponse : public AbstractModel
                 {
                 public:
-                    ModifyCustomAccountResponse();
-                    ~ModifyCustomAccountResponse() = default;
+                    PutEvaluationsResponse();
+                    ~PutEvaluationsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TCR_V20190924_MODEL_MODIFYCUSTOMACCOUNTRESPONSE_H_
+#endif // !TENCENTCLOUD_CONFIG_V20220802_MODEL_PUTEVALUATIONSRESPONSE_H_

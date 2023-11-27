@@ -27,6 +27,8 @@
 #include <tencentcloud/config/v20220802/model/ListAggregateConfigRulesResponse.h>
 #include <tencentcloud/config/v20220802/model/ListConfigRulesRequest.h>
 #include <tencentcloud/config/v20220802/model/ListConfigRulesResponse.h>
+#include <tencentcloud/config/v20220802/model/PutEvaluationsRequest.h>
+#include <tencentcloud/config/v20220802/model/PutEvaluationsResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +49,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListConfigRulesResponse> ListConfigRulesOutcome;
                 typedef std::future<ListConfigRulesOutcome> ListConfigRulesOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::ListConfigRulesRequest&, ListConfigRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListConfigRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::PutEvaluationsResponse> PutEvaluationsOutcome;
+                typedef std::future<PutEvaluationsOutcome> PutEvaluationsOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::PutEvaluationsRequest&, PutEvaluationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutEvaluationsAsyncHandler;
 
 
 
@@ -67,6 +72,15 @@ namespace TencentCloud
                 ListConfigRulesOutcome ListConfigRules(const Model::ListConfigRulesRequest &request);
                 void ListConfigRulesAsync(const Model::ListConfigRulesRequest& request, const ListConfigRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListConfigRulesOutcomeCallable ListConfigRulesCallable(const Model::ListConfigRulesRequest& request);
+
+                /**
+                 *上报自定义规则评估结果
+                 * @param req PutEvaluationsRequest
+                 * @return PutEvaluationsOutcome
+                 */
+                PutEvaluationsOutcome PutEvaluations(const Model::PutEvaluationsRequest &request);
+                void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutEvaluationsOutcomeCallable PutEvaluationsCallable(const Model::PutEvaluationsRequest& request);
 
             };
         }

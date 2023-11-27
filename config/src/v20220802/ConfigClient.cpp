@@ -126,3 +126,46 @@ ConfigClient::ListConfigRulesOutcomeCallable ConfigClient::ListConfigRulesCallab
     return task->get_future();
 }
 
+ConfigClient::PutEvaluationsOutcome ConfigClient::PutEvaluations(const PutEvaluationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutEvaluations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutEvaluationsResponse rsp = PutEvaluationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutEvaluationsOutcome(rsp);
+        else
+            return PutEvaluationsOutcome(o.GetError());
+    }
+    else
+    {
+        return PutEvaluationsOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::PutEvaluationsAsync(const PutEvaluationsRequest& request, const PutEvaluationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutEvaluations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ConfigClient::PutEvaluationsOutcomeCallable ConfigClient::PutEvaluationsCallable(const PutEvaluationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutEvaluationsOutcome()>>(
+        [this, request]()
+        {
+            return this->PutEvaluations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

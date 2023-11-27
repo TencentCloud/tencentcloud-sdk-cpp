@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取该字在整句中的开始位置，从0开始。
-                     * @return BeginIndex 该字在整句中的开始位置，从0开始。
+                     * 获取该文本在时间戳数组中的开始位置，从0开始。
+                     * @return BeginIndex 该文本在时间戳数组中的开始位置，从0开始。
                      * 
                      */
                     int64_t GetBeginIndex() const;
 
                     /**
-                     * 设置该字在整句中的开始位置，从0开始。
-                     * @param _beginIndex 该字在整句中的开始位置，从0开始。
+                     * 设置该文本在时间戳数组中的开始位置，从0开始。
+                     * @param _beginIndex 该文本在时间戳数组中的开始位置，从0开始。
                      * 
                      */
                     void SetBeginIndex(const int64_t& _beginIndex);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool BeginIndexHasBeenSet() const;
 
                     /**
-                     * 获取该字在整句中的结束位置，从0开始。
-                     * @return EndIndex 该字在整句中的结束位置，从0开始。
+                     * 获取该文本在时间戳数组中的结束位置，从0开始。
+                     * @return EndIndex 该文本在时间戳数组中的结束位置，从0开始。
                      * 
                      */
                     int64_t GetEndIndex() const;
 
                     /**
-                     * 设置该字在整句中的结束位置，从0开始。
-                     * @param _endIndex 该字在整句中的结束位置，从0开始。
+                     * 设置该文本在时间戳数组中的结束位置，从0开始。
+                     * @param _endIndex 该文本在时间戳数组中的结束位置，从0开始。
                      * 
                      */
                     void SetEndIndex(const int64_t& _endIndex);
@@ -152,18 +152,18 @@ namespace TencentCloud
                     bool EndIndexHasBeenSet() const;
 
                     /**
-                     * 获取该字的音素
+                     * 获取该字的音素。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Phoneme 该字的音素
+                     * @return Phoneme 该字的音素。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhoneme() const;
 
                     /**
-                     * 设置该字的音素
+                     * 设置该字的音素。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phoneme 该字的音素
+                     * @param _phoneme 该字的音素。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,19 +197,19 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 该字在整句中的开始位置，从0开始。
+                     * 该文本在时间戳数组中的开始位置，从0开始。
                      */
                     int64_t m_beginIndex;
                     bool m_beginIndexHasBeenSet;
 
                     /**
-                     * 该字在整句中的结束位置，从0开始。
+                     * 该文本在时间戳数组中的结束位置，从0开始。
                      */
                     int64_t m_endIndex;
                     bool m_endIndexHasBeenSet;
 
                     /**
-                     * 该字的音素
+                     * 该字的音素。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phoneme;

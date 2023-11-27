@@ -556,6 +556,49 @@ ClsClient::CreateDataTransformOutcomeCallable ClsClient::CreateDataTransformCall
     return task->get_future();
 }
 
+ClsClient::CreateDeliverCloudFunctionOutcome ClsClient::CreateDeliverCloudFunction(const CreateDeliverCloudFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeliverCloudFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeliverCloudFunctionResponse rsp = CreateDeliverCloudFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeliverCloudFunctionOutcome(rsp);
+        else
+            return CreateDeliverCloudFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeliverCloudFunctionOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateDeliverCloudFunctionAsync(const CreateDeliverCloudFunctionRequest& request, const CreateDeliverCloudFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeliverCloudFunction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateDeliverCloudFunctionOutcomeCallable ClsClient::CreateDeliverCloudFunctionCallable(const CreateDeliverCloudFunctionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDeliverCloudFunctionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeliverCloudFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateExportOutcome ClsClient::CreateExport(const CreateExportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExport");

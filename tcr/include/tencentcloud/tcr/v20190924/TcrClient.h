@@ -33,8 +33,6 @@
 #include <tencentcloud/tcr/v20190924/model/CheckInstanceNameResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalResponse.h>
-#include <tencentcloud/tcr/v20190924/model/CreateCustomAccountRequest.h>
-#include <tencentcloud/tcr/v20190924/model/CreateCustomAccountResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImmutableTagRulesRequest.h>
@@ -77,8 +75,6 @@
 #include <tencentcloud/tcr/v20190924/model/CreateWebhookTriggerResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalResponse.h>
-#include <tencentcloud/tcr/v20190924/model/DeleteCustomAccountRequest.h>
-#include <tencentcloud/tcr/v20190924/model/DeleteCustomAccountResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageAccelerateServiceRequest.h>
@@ -217,8 +213,6 @@
 #include <tencentcloud/tcr/v20190924/model/ManageReplicationResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalResponse.h>
-#include <tencentcloud/tcr/v20190924/model/ModifyCustomAccountRequest.h>
-#include <tencentcloud/tcr/v20190924/model/ModifyCustomAccountResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyImmutableTagRulesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyImmutableTagRulesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceRequest.h>
@@ -278,9 +272,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApplicationTriggerPersonalResponse> CreateApplicationTriggerPersonalOutcome;
                 typedef std::future<CreateApplicationTriggerPersonalOutcome> CreateApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateApplicationTriggerPersonalRequest&, CreateApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationTriggerPersonalAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateCustomAccountResponse> CreateCustomAccountOutcome;
-                typedef std::future<CreateCustomAccountOutcome> CreateCustomAccountOutcomeCallable;
-                typedef std::function<void(const TcrClient*, const Model::CreateCustomAccountRequest&, CreateCustomAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateImageAccelerationServiceResponse> CreateImageAccelerationServiceOutcome;
                 typedef std::future<CreateImageAccelerationServiceOutcome> CreateImageAccelerationServiceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateImageAccelerationServiceRequest&, CreateImageAccelerationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAccelerationServiceAsyncHandler;
@@ -344,9 +335,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteApplicationTriggerPersonalResponse> DeleteApplicationTriggerPersonalOutcome;
                 typedef std::future<DeleteApplicationTriggerPersonalOutcome> DeleteApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteApplicationTriggerPersonalRequest&, DeleteApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationTriggerPersonalAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteCustomAccountResponse> DeleteCustomAccountOutcome;
-                typedef std::future<DeleteCustomAccountOutcome> DeleteCustomAccountOutcomeCallable;
-                typedef std::function<void(const TcrClient*, const Model::DeleteCustomAccountRequest&, DeleteCustomAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteImageResponse> DeleteImageOutcome;
                 typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteImageRequest&, DeleteImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageAsyncHandler;
@@ -554,9 +542,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApplicationTriggerPersonalResponse> ModifyApplicationTriggerPersonalOutcome;
                 typedef std::future<ModifyApplicationTriggerPersonalOutcome> ModifyApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyApplicationTriggerPersonalRequest&, ModifyApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationTriggerPersonalAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyCustomAccountResponse> ModifyCustomAccountOutcome;
-                typedef std::future<ModifyCustomAccountOutcome> ModifyCustomAccountOutcomeCallable;
-                typedef std::function<void(const TcrClient*, const Model::ModifyCustomAccountRequest&, ModifyCustomAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyImmutableTagRulesResponse> ModifyImmutableTagRulesOutcome;
                 typedef std::future<ModifyImmutableTagRulesOutcome> ModifyImmutableTagRulesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyImmutableTagRulesRequest&, ModifyImmutableTagRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImmutableTagRulesAsyncHandler;
@@ -649,17 +634,6 @@ namespace TencentCloud
                 CreateApplicationTriggerPersonalOutcome CreateApplicationTriggerPersonal(const Model::CreateApplicationTriggerPersonalRequest &request);
                 void CreateApplicationTriggerPersonalAsync(const Model::CreateApplicationTriggerPersonalRequest& request, const CreateApplicationTriggerPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateApplicationTriggerPersonalOutcomeCallable CreateApplicationTriggerPersonalCallable(const Model::CreateApplicationTriggerPersonalRequest& request);
-
-                /**
-                 *接口未使用
-
-创建自定义账户
-                 * @param req CreateCustomAccountRequest
-                 * @return CreateCustomAccountOutcome
-                 */
-                CreateCustomAccountOutcome CreateCustomAccount(const Model::CreateCustomAccountRequest &request);
-                void CreateCustomAccountAsync(const Model::CreateCustomAccountRequest& request, const CreateCustomAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateCustomAccountOutcomeCallable CreateCustomAccountCallable(const Model::CreateCustomAccountRequest& request);
 
                 /**
                  *创建镜像加速服务
@@ -849,17 +823,6 @@ namespace TencentCloud
                 DeleteApplicationTriggerPersonalOutcome DeleteApplicationTriggerPersonal(const Model::DeleteApplicationTriggerPersonalRequest &request);
                 void DeleteApplicationTriggerPersonalAsync(const Model::DeleteApplicationTriggerPersonalRequest& request, const DeleteApplicationTriggerPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteApplicationTriggerPersonalOutcomeCallable DeleteApplicationTriggerPersonalCallable(const Model::DeleteApplicationTriggerPersonalRequest& request);
-
-                /**
-                 *接口未使用
-
-删除自定义账号
-                 * @param req DeleteCustomAccountRequest
-                 * @return DeleteCustomAccountOutcome
-                 */
-                DeleteCustomAccountOutcome DeleteCustomAccount(const Model::DeleteCustomAccountRequest &request);
-                void DeleteCustomAccountAsync(const Model::DeleteCustomAccountRequest& request, const DeleteCustomAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteCustomAccountOutcomeCallable DeleteCustomAccountCallable(const Model::DeleteCustomAccountRequest& request);
 
                 /**
                  *删除指定镜像
@@ -1485,17 +1448,6 @@ namespace TencentCloud
                 ModifyApplicationTriggerPersonalOutcome ModifyApplicationTriggerPersonal(const Model::ModifyApplicationTriggerPersonalRequest &request);
                 void ModifyApplicationTriggerPersonalAsync(const Model::ModifyApplicationTriggerPersonalRequest& request, const ModifyApplicationTriggerPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApplicationTriggerPersonalOutcomeCallable ModifyApplicationTriggerPersonalCallable(const Model::ModifyApplicationTriggerPersonalRequest& request);
-
-                /**
-                 *接口未使用
-
-更新自定义账户
-                 * @param req ModifyCustomAccountRequest
-                 * @return ModifyCustomAccountOutcome
-                 */
-                ModifyCustomAccountOutcome ModifyCustomAccount(const Model::ModifyCustomAccountRequest &request);
-                void ModifyCustomAccountAsync(const Model::ModifyCustomAccountRequest& request, const ModifyCustomAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyCustomAccountOutcomeCallable ModifyCustomAccountCallable(const Model::ModifyCustomAccountRequest& request);
 
                 /**
                  *更新镜像不可变规则

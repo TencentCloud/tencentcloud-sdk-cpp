@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool DatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点类型，为空或者"simple"表示普通节点、"cluster"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)
+                     * 获取节点类型，为空或者simple表示普通节点、cluster表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；对于redis实例，为空或simple(单节点)、cluster(集群)、cluster-cache(cache集群)、cluster-proxy(代理集群)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeType 节点类型，为空或者"simple"表示普通节点、"cluster"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)
+                     * @return NodeType 节点类型，为空或者simple表示普通节点、cluster表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；对于redis实例，为空或simple(单节点)、cluster(集群)、cluster-cache(cache集群)、cluster-proxy(代理集群)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点类型，为空或者"simple"表示普通节点、"cluster"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)
+                     * 设置节点类型，为空或者simple表示普通节点、cluster表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；对于redis实例，为空或simple(单节点)、cluster(集群)、cluster-cache(cache集群)、cluster-proxy(代理集群)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodeType 节点类型，为空或者"simple"表示普通节点、"cluster"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)
+                     * @param _nodeType 节点类型，为空或者simple表示普通节点、cluster表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；对于redis实例，为空或simple(单节点)、cluster(集群)、cluster-cache(cache集群)、cluster-proxy(代理集群)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -276,7 +276,7 @@ namespace TencentCloud
                     bool m_databaseTypeHasBeenSet;
 
                     /**
-                     * 节点类型，为空或者"simple"表示普通节点、"cluster"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)
+                     * 节点类型，为空或者simple表示普通节点、cluster表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；对于redis实例，为空或simple(单节点)、cluster(集群)、cluster-cache(cache集群)、cluster-proxy(代理集群)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeType;

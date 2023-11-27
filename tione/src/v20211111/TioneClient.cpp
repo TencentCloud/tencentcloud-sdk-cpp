@@ -1072,6 +1072,49 @@ TioneClient::DescribeBatchTasksOutcomeCallable TioneClient::DescribeBatchTasksCa
     return task->get_future();
 }
 
+TioneClient::DescribeBillingResourceGroupOutcome TioneClient::DescribeBillingResourceGroup(const DescribeBillingResourceGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillingResourceGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillingResourceGroupResponse rsp = DescribeBillingResourceGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillingResourceGroupOutcome(rsp);
+        else
+            return DescribeBillingResourceGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillingResourceGroupOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeBillingResourceGroupAsync(const DescribeBillingResourceGroupRequest& request, const DescribeBillingResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillingResourceGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeBillingResourceGroupOutcomeCallable TioneClient::DescribeBillingResourceGroupCallable(const DescribeBillingResourceGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillingResourceGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillingResourceGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DescribeBillingResourceGroupsOutcome TioneClient::DescribeBillingResourceGroups(const DescribeBillingResourceGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillingResourceGroups");

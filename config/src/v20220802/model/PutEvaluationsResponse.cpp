@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcr/v20190924/model/ModifyCustomAccountResponse.h>
+#include <tencentcloud/config/v20220802/model/PutEvaluationsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcr::V20190924::Model;
+using namespace TencentCloud::Config::V20220802::Model;
 using namespace std;
 
-ModifyCustomAccountResponse::ModifyCustomAccountResponse()
+PutEvaluationsResponse::PutEvaluationsResponse()
 {
 }
 
-CoreInternalOutcome ModifyCustomAccountResponse::Deserialize(const string &payload)
+CoreInternalOutcome PutEvaluationsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome ModifyCustomAccountResponse::Deserialize(const string &paylo
     return CoreInternalOutcome(true);
 }
 
-string ModifyCustomAccountResponse::ToJsonString() const
+string PutEvaluationsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

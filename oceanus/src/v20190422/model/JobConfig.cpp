@@ -48,7 +48,9 @@ JobConfig::JobConfig() :
     m_traceModeOnHasBeenSet(false),
     m_traceModeConfigurationHasBeenSet(false),
     m_checkpointRetainedNumHasBeenSet(false),
-    m_jobGraphHasBeenSet(false)
+    m_jobGraphHasBeenSet(false),
+    m_esServerlessIndexHasBeenSet(false),
+    m_esServerlessSpaceHasBeenSet(false)
 {
 }
 
@@ -388,6 +390,26 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_jobGraphHasBeenSet = true;
     }
 
+    if (value.HasMember("EsServerlessIndex") && !value["EsServerlessIndex"].IsNull())
+    {
+        if (!value["EsServerlessIndex"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.EsServerlessIndex` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esServerlessIndex = string(value["EsServerlessIndex"].GetString());
+        m_esServerlessIndexHasBeenSet = true;
+    }
+
+    if (value.HasMember("EsServerlessSpace") && !value["EsServerlessSpace"].IsNull())
+    {
+        if (!value["EsServerlessSpace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.EsServerlessSpace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esServerlessSpace = string(value["EsServerlessSpace"].GetString());
+        m_esServerlessSpaceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -641,6 +663,22 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_jobGraph.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_esServerlessIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsServerlessIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_esServerlessIndex.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esServerlessSpaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsServerlessSpace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_esServerlessSpace.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1092,5 +1130,37 @@ void JobConfig::SetJobGraph(const JobGraph& _jobGraph)
 bool JobConfig::JobGraphHasBeenSet() const
 {
     return m_jobGraphHasBeenSet;
+}
+
+string JobConfig::GetEsServerlessIndex() const
+{
+    return m_esServerlessIndex;
+}
+
+void JobConfig::SetEsServerlessIndex(const string& _esServerlessIndex)
+{
+    m_esServerlessIndex = _esServerlessIndex;
+    m_esServerlessIndexHasBeenSet = true;
+}
+
+bool JobConfig::EsServerlessIndexHasBeenSet() const
+{
+    return m_esServerlessIndexHasBeenSet;
+}
+
+string JobConfig::GetEsServerlessSpace() const
+{
+    return m_esServerlessSpace;
+}
+
+void JobConfig::SetEsServerlessSpace(const string& _esServerlessSpace)
+{
+    m_esServerlessSpace = _esServerlessSpace;
+    m_esServerlessSpaceHasBeenSet = true;
+}
+
+bool JobConfig::EsServerlessSpaceHasBeenSet() const
+{
+    return m_esServerlessSpaceHasBeenSet;
 }
 

@@ -49,15 +49,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定当前签署人为第三方应用集成子客，默认false：当前签署人为第三方应用集成子客，true：当前签署人为saas企业用户
-                     * @return NotChannelOrganization 指定当前签署人为第三方应用集成子客，默认false：当前签署人为第三方应用集成子客，true：当前签署人为saas企业用户
+                     * 获取指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。
+<ul>
+<li>false: 默认值，第三方平台子客企业下员工</li>
+<li>true: SaaS平台企业下的员工</li>
+</ul>
+
+                     * @return NotChannelOrganization 指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。
+<ul>
+<li>false: 默认值，第三方平台子客企业下员工</li>
+<li>true: SaaS平台企业下的员工</li>
+</ul>
+
                      * 
                      */
                     bool GetNotChannelOrganization() const;
 
                     /**
-                     * 设置指定当前签署人为第三方应用集成子客，默认false：当前签署人为第三方应用集成子客，true：当前签署人为saas企业用户
-                     * @param _notChannelOrganization 指定当前签署人为第三方应用集成子客，默认false：当前签署人为第三方应用集成子客，true：当前签署人为saas企业用户
+                     * 设置指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。
+<ul>
+<li>false: 默认值，第三方平台子客企业下员工</li>
+<li>true: SaaS平台企业下的员工</li>
+</ul>
+
+                     * @param _notChannelOrganization 指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。
+<ul>
+<li>false: 默认值，第三方平台子客企业下员工</li>
+<li>true: SaaS平台企业下的员工</li>
+</ul>
+
                      * 
                      */
                     void SetNotChannelOrganization(const bool& _notChannelOrganization);
@@ -70,15 +90,43 @@ namespace TencentCloud
                     bool NotChannelOrganizationHasBeenSet() const;
 
                     /**
-                     * 获取签署人类型,目前支持：0-企业签署人，1-个人签署人，3-企业静默签署人
-                     * @return ApproverType 签署人类型,目前支持：0-企业签署人，1-个人签署人，3-企业静默签署人
+                     * 获取在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:
+
+ **0** :企业/企业员工（企业签署方或模板发起时的企业静默签）
+ **1** :个人/自然人
+**3** :企业/企业员工自动签（他方企业自动签署或文件发起时的本方企业自动签）
+
+注：类型为3（企业/企业员工自动签）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
+
+                     * @return ApproverType 在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:
+
+ **0** :企业/企业员工（企业签署方或模板发起时的企业静默签）
+ **1** :个人/自然人
+**3** :企业/企业员工自动签（他方企业自动签署或文件发起时的本方企业自动签）
+
+注：类型为3（企业/企业员工自动签）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
+
                      * 
                      */
                     int64_t GetApproverType() const;
 
                     /**
-                     * 设置签署人类型,目前支持：0-企业签署人，1-个人签署人，3-企业静默签署人
-                     * @param _approverType 签署人类型,目前支持：0-企业签署人，1-个人签署人，3-企业静默签署人
+                     * 设置在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:
+
+ **0** :企业/企业员工（企业签署方或模板发起时的企业静默签）
+ **1** :个人/自然人
+**3** :企业/企业员工自动签（他方企业自动签署或文件发起时的本方企业自动签）
+
+注：类型为3（企业/企业员工自动签）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
+
+                     * @param _approverType 在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:
+
+ **0** :企业/企业员工（企业签署方或模板发起时的企业静默签）
+ **1** :个人/自然人
+**3** :企业/企业员工自动签（他方企业自动签署或文件发起时的本方企业自动签）
+
+注：类型为3（企业/企业员工自动签）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
+
                      * 
                      */
                     void SetApproverType(const int64_t& _approverType);
@@ -91,15 +139,15 @@ namespace TencentCloud
                     bool ApproverTypeHasBeenSet() const;
 
                     /**
-                     * 获取企业id
-                     * @return OrganizationId 企业id
+                     * 获取电子签平台给企业生成的企业id
+                     * @return OrganizationId 电子签平台给企业生成的企业id
                      * 
                      */
                     std::string GetOrganizationId() const;
 
                     /**
-                     * 设置企业id
-                     * @param _organizationId 企业id
+                     * 设置电子签平台给企业生成的企业id
+                     * @param _organizationId 电子签平台给企业生成的企业id
                      * 
                      */
                     void SetOrganizationId(const std::string& _organizationId);
@@ -154,15 +202,15 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取用户id
-                     * @return UserId 用户id
+                     * 获取电子签平台给企业员工或者自热人生成的用户id
+                     * @return UserId 电子签平台给企业员工或者自热人生成的用户id
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户id
-                     * @param _userId 用户id
+                     * 设置电子签平台给企业员工或者自热人生成的用户id
+                     * @param _userId 电子签平台给企业员工或者自热人生成的用户id
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -175,15 +223,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户openId，第三方应用集成非静默签子客企业签署人必传
-                     * @return OpenId 用户openId，第三方应用集成非静默签子客企业签署人必传
+                     * 获取第三方平台子客企业员工的唯一标识
+                     * @return OpenId 第三方平台子客企业员工的唯一标识
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户openId，第三方应用集成非静默签子客企业签署人必传
-                     * @param _openId 用户openId，第三方应用集成非静默签子客企业签署人必传
+                     * 设置第三方平台子客企业员工的唯一标识
+                     * @param _openId 第三方平台子客企业员工的唯一标识
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -196,15 +244,19 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取签署人名称，saas企业签署人，个人签署人必传
-                     * @return ApproverName 签署人名称，saas企业签署人，个人签署人必传
+                     * 获取签署方经办人的姓名。
+经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
+                     * @return ApproverName 签署方经办人的姓名。
+经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
                      * 
                      */
                     std::string GetApproverName() const;
 
                     /**
-                     * 设置签署人名称，saas企业签署人，个人签署人必传
-                     * @param _approverName 签署人名称，saas企业签署人，个人签署人必传
+                     * 设置签署方经办人的姓名。
+经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
+                     * @param _approverName 签署方经办人的姓名。
+经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
                      * 
                      */
                     void SetApproverName(const std::string& _approverName);
@@ -236,6 +288,84 @@ namespace TencentCloud
                      * 
                      */
                     bool ApproverMobileHasBeenSet() const;
+
+                    /**
+                     * 获取签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他证件</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
+                     * @return ApproverIdCardType 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他证件</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
+                     * 
+                     */
+                    std::string GetApproverIdCardType() const;
+
+                    /**
+                     * 设置签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他证件</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
+                     * @param _approverIdCardType 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他证件</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
+                     * 
+                     */
+                    void SetApproverIdCardType(const std::string& _approverIdCardType);
+
+                    /**
+                     * 判断参数 ApproverIdCardType 是否已赋值
+                     * @return ApproverIdCardType 是否已赋值
+                     * 
+                     */
+                    bool ApproverIdCardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取签署方经办人的证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @return ApproverIdCardNumber 签署方经办人的证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * 
+                     */
+                    std::string GetApproverIdCardNumber() const;
+
+                    /**
+                     * 设置签署方经办人的证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * @param _approverIdCardNumber 签署方经办人的证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     * 
+                     */
+                    void SetApproverIdCardNumber(const std::string& _approverIdCardNumber);
+
+                    /**
+                     * 判断参数 ApproverIdCardNumber 是否已赋值
+                     * @return ApproverIdCardNumber 是否已赋值
+                     * 
+                     */
+                    bool ApproverIdCardNumberHasBeenSet() const;
 
                     /**
                      * 获取签署人Id，使用模板发起是，对应模板配置中的签署人RecipientId
@@ -305,15 +435,31 @@ namespace TencentCloud
                     bool IsFullTextHasBeenSet() const;
 
                     /**
-                     * 获取通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
-                     * @return NotifyType 通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
+                     * 获取通知签署方经办人的方式, 有以下途径:
+<ul><li> **SMS** :(默认)短信</li>
+<li> **NONE** : 不通知</li></ul>
+
+注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`
+                     * @return NotifyType 通知签署方经办人的方式, 有以下途径:
+<ul><li> **SMS** :(默认)短信</li>
+<li> **NONE** : 不通知</li></ul>
+
+注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`
                      * 
                      */
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
-                     * @param _notifyType 通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
+                     * 设置通知签署方经办人的方式, 有以下途径:
+<ul><li> **SMS** :(默认)短信</li>
+<li> **NONE** : 不通知</li></ul>
+
+注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`
+                     * @param _notifyType 通知签署方经办人的方式, 有以下途径:
+<ul><li> **SMS** :(默认)短信</li>
+<li> **NONE** : 不通知</li></ul>
+
+注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`
                      * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -347,15 +493,15 @@ namespace TencentCloud
                     bool ApproverOptionHasBeenSet() const;
 
                     /**
-                     * 获取签署控件：文件发起使用
-                     * @return SignComponents 签署控件：文件发起使用
+                     * 获取使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+                     * @return SignComponents 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置签署控件：文件发起使用
-                     * @param _signComponents 签署控件：文件发起使用
+                     * 设置使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+                     * @param _signComponents 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
                      * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
@@ -368,15 +514,39 @@ namespace TencentCloud
                     bool SignComponentsHasBeenSet() const;
 
                     /**
-                     * 获取签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1 查看合同的认证方式 Flow层级的优先于approver层级的 （当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）
-                     * @return ApproverVerifyTypes 签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1 查看合同的认证方式 Flow层级的优先于approver层级的 （当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）
+                     * 获取指定个人签署方查看合同的校验方式,可以传值如下:
+<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
+<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
+</li></ul>
+注: 
+<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
+<li>此字段可传多个校验方式</li></ul>
+                     * @return ApproverVerifyTypes 指定个人签署方查看合同的校验方式,可以传值如下:
+<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
+<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
+</li></ul>
+注: 
+<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
+<li>此字段可传多个校验方式</li></ul>
                      * 
                      */
                     std::vector<int64_t> GetApproverVerifyTypes() const;
 
                     /**
-                     * 设置签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1 查看合同的认证方式 Flow层级的优先于approver层级的 （当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）
-                     * @param _approverVerifyTypes 签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1 查看合同的认证方式 Flow层级的优先于approver层级的 （当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）
+                     * 设置指定个人签署方查看合同的校验方式,可以传值如下:
+<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
+<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
+</li></ul>
+注: 
+<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
+<li>此字段可传多个校验方式</li></ul>
+                     * @param _approverVerifyTypes 指定个人签署方查看合同的校验方式,可以传值如下:
+<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
+<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
+</li></ul>
+注: 
+<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
+<li>此字段可传多个校验方式</li></ul>
                      * 
                      */
                     void SetApproverVerifyTypes(const std::vector<int64_t>& _approverVerifyTypes);
@@ -389,15 +559,51 @@ namespace TencentCloud
                     bool ApproverVerifyTypesHasBeenSet() const;
 
                     /**
-                     * 获取签署人签署合同时的认证方式 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)	
-                     * @return ApproverSignTypes 签署人签署合同时的认证方式 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)	
+                     * 获取签署人签署合同时的认证方式
+<ul><li> **1** :人脸认证</li>
+<li> **2** :签署密码</li>
+<li> **3** :运营商三要素</li></ul>
+
+默认为1(人脸认证 ),2(签署密码)
+
+注: 
+1. 用<font color='red'>模版创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
+2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明
+                     * @return ApproverSignTypes 签署人签署合同时的认证方式
+<ul><li> **1** :人脸认证</li>
+<li> **2** :签署密码</li>
+<li> **3** :运营商三要素</li></ul>
+
+默认为1(人脸认证 ),2(签署密码)
+
+注: 
+1. 用<font color='red'>模版创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
+2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明
                      * 
                      */
                     std::vector<int64_t> GetApproverSignTypes() const;
 
                     /**
-                     * 设置签署人签署合同时的认证方式 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)	
-                     * @param _approverSignTypes 签署人签署合同时的认证方式 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)	
+                     * 设置签署人签署合同时的认证方式
+<ul><li> **1** :人脸认证</li>
+<li> **2** :签署密码</li>
+<li> **3** :运营商三要素</li></ul>
+
+默认为1(人脸认证 ),2(签署密码)
+
+注: 
+1. 用<font color='red'>模版创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
+2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明
+                     * @param _approverSignTypes 签署人签署合同时的认证方式
+<ul><li> **1** :人脸认证</li>
+<li> **2** :签署密码</li>
+<li> **3** :运营商三要素</li></ul>
+
+默认为1(人脸认证 ),2(签署密码)
+
+注: 
+1. 用<font color='red'>模版创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
+2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明
                      * 
                      */
                     void SetApproverSignTypes(const std::vector<int64_t>& _approverSignTypes);
@@ -412,19 +618,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定当前签署人为第三方应用集成子客，默认false：当前签署人为第三方应用集成子客，true：当前签署人为saas企业用户
+                     * 指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。
+<ul>
+<li>false: 默认值，第三方平台子客企业下员工</li>
+<li>true: SaaS平台企业下的员工</li>
+</ul>
+
                      */
                     bool m_notChannelOrganization;
                     bool m_notChannelOrganizationHasBeenSet;
 
                     /**
-                     * 签署人类型,目前支持：0-企业签署人，1-个人签署人，3-企业静默签署人
+                     * 在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:
+
+ **0** :企业/企业员工（企业签署方或模板发起时的企业静默签）
+ **1** :个人/自然人
+**3** :企业/企业员工自动签（他方企业自动签署或文件发起时的本方企业自动签）
+
+注：类型为3（企业/企业员工自动签）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
+
                      */
                     int64_t m_approverType;
                     bool m_approverTypeHasBeenSet;
 
                     /**
-                     * 企业id
+                     * 电子签平台给企业生成的企业id
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
@@ -442,19 +660,20 @@ namespace TencentCloud
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 用户id
+                     * 电子签平台给企业员工或者自热人生成的用户id
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户openId，第三方应用集成非静默签子客企业签署人必传
+                     * 第三方平台子客企业员工的唯一标识
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * 签署人名称，saas企业签署人，个人签署人必传
+                     * 签署方经办人的姓名。
+经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
                      */
                     std::string m_approverName;
                     bool m_approverNameHasBeenSet;
@@ -464,6 +683,27 @@ namespace TencentCloud
                      */
                     std::string m_approverMobile;
                     bool m_approverMobileHasBeenSet;
+
+                    /**
+                     * 签署方经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>OTHER_CARD_TYPE : 其他证件</li></ul>
+
+注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
+                     */
+                    std::string m_approverIdCardType;
+                    bool m_approverIdCardTypeHasBeenSet;
+
+                    /**
+                     * 签署方经办人的证件号码，应符合以下规则
+<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>
+<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+                     */
+                    std::string m_approverIdCardNumber;
+                    bool m_approverIdCardNumberHasBeenSet;
 
                     /**
                      * 签署人Id，使用模板发起是，对应模板配置中的签署人RecipientId
@@ -485,7 +725,11 @@ namespace TencentCloud
                     bool m_isFullTextHasBeenSet;
 
                     /**
-                     * 通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
+                     * 通知签署方经办人的方式, 有以下途径:
+<ul><li> **SMS** :(默认)短信</li>
+<li> **NONE** : 不通知</li></ul>
+
+注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;
@@ -497,19 +741,34 @@ namespace TencentCloud
                     bool m_approverOptionHasBeenSet;
 
                     /**
-                     * 签署控件：文件发起使用
+                     * 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
 
                     /**
-                     * 签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1 查看合同的认证方式 Flow层级的优先于approver层级的 （当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）
+                     * 指定个人签署方查看合同的校验方式,可以传值如下:
+<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
+<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
+</li></ul>
+注: 
+<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
+<li>此字段可传多个校验方式</li></ul>
                      */
                     std::vector<int64_t> m_approverVerifyTypes;
                     bool m_approverVerifyTypesHasBeenSet;
 
                     /**
-                     * 签署人签署合同时的认证方式 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)	
+                     * 签署人签署合同时的认证方式
+<ul><li> **1** :人脸认证</li>
+<li> **2** :签署密码</li>
+<li> **3** :运营商三要素</li></ul>
+
+默认为1(人脸认证 ),2(签署密码)
+
+注: 
+1. 用<font color='red'>模版创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
+2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明
                      */
                     std::vector<int64_t> m_approverSignTypes;
                     bool m_approverSignTypesHasBeenSet;

@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool CommodityCodeHasBeenSet() const;
 
                     /**
-                     * 获取承诺时长内的小额金额（单位：分）
-                     * @return PromiseUseAmount 承诺时长内的小额金额（单位：分）
+                     * 获取承诺时长内的小额金额（单位：元）
+                     * @return PromiseUseAmount 承诺时长内的小额金额（单位：元）
                      * 
                      */
                     uint64_t GetPromiseUseAmount() const;
 
                     /**
-                     * 设置承诺时长内的小额金额（单位：分）
-                     * @param _promiseUseAmount 承诺时长内的小额金额（单位：分）
+                     * 设置承诺时长内的小额金额（单位：元）
+                     * @param _promiseUseAmount 承诺时长内的小额金额（单位：元）
                      * 
                      */
                     void SetPromiseUseAmount(const uint64_t& _promiseUseAmount);
@@ -270,7 +270,7 @@ namespace TencentCloud
                     bool m_commodityCodeHasBeenSet;
 
                     /**
-                     * 承诺时长内的小额金额（单位：分）
+                     * 承诺时长内的小额金额（单位：元）
                      */
                     uint64_t m_promiseUseAmount;
                     bool m_promiseUseAmountHasBeenSet;

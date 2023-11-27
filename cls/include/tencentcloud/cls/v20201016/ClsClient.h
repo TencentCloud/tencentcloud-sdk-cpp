@@ -47,6 +47,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateCosRechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateDataTransformRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateDataTransformResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateDeliverCloudFunctionRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateDeliverCloudFunctionResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateIndexRequest.h>
@@ -249,6 +251,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDataTransformResponse> CreateDataTransformOutcome;
                 typedef std::future<CreateDataTransformOutcome> CreateDataTransformOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateDataTransformRequest&, CreateDataTransformOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataTransformAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDeliverCloudFunctionResponse> CreateDeliverCloudFunctionOutcome;
+                typedef std::future<CreateDeliverCloudFunctionOutcome> CreateDeliverCloudFunctionOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateDeliverCloudFunctionRequest&, CreateDeliverCloudFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeliverCloudFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExportResponse> CreateExportOutcome;
                 typedef std::future<CreateExportOutcome> CreateExportOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateExportRequest&, CreateExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExportAsyncHandler;
@@ -587,6 +592,15 @@ namespace TencentCloud
                 CreateDataTransformOutcome CreateDataTransform(const Model::CreateDataTransformRequest &request);
                 void CreateDataTransformAsync(const Model::CreateDataTransformRequest& request, const CreateDataTransformAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDataTransformOutcomeCallable CreateDataTransformCallable(const Model::CreateDataTransformRequest& request);
+
+                /**
+                 *本接口用于创建投递SCF任务
+                 * @param req CreateDeliverCloudFunctionRequest
+                 * @return CreateDeliverCloudFunctionOutcome
+                 */
+                CreateDeliverCloudFunctionOutcome CreateDeliverCloudFunction(const Model::CreateDeliverCloudFunctionRequest &request);
+                void CreateDeliverCloudFunctionAsync(const Model::CreateDeliverCloudFunctionRequest& request, const CreateDeliverCloudFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeliverCloudFunctionOutcomeCallable CreateDeliverCloudFunctionCallable(const Model::CreateDeliverCloudFunctionRequest& request);
 
                 /**
                  *本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449

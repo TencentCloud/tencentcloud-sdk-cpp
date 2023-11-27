@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同流程名称
-                     * @return FlowName 合同流程名称
+                     * 获取合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * @return FlowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置合同流程名称
-                     * @param _flowName 合同流程名称
+                     * 设置合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * @param _flowName 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      * 
                      */
                     void SetFlowName(const std::string& _flowName);
@@ -71,19 +71,15 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取合同流程类型
-<br/>客户自定义，用于合同分类展示
-                     * @return FlowType 合同流程类型
-<br/>客户自定义，用于合同分类展示
+                     * 获取合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
+                     * @return FlowType 合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
                      * 
                      */
                     std::string GetFlowType() const;
 
                     /**
-                     * 设置合同流程类型
-<br/>客户自定义，用于合同分类展示
-                     * @param _flowType 合同流程类型
-<br/>客户自定义，用于合同分类展示
+                     * 设置合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
+                     * @param _flowType 合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
                      * 
                      */
                     void SetFlowType(const std::string& _flowType);
@@ -96,15 +92,15 @@ namespace TencentCloud
                     bool FlowTypeHasBeenSet() const;
 
                     /**
-                     * 获取合同流程描述信息
-                     * @return FlowDescription 合同流程描述信息
+                     * 获取合同流程描述信息(可自定义此描述)，最大长度1000个字符。
+                     * @return FlowDescription 合同流程描述信息(可自定义此描述)，最大长度1000个字符。
                      * 
                      */
                     std::string GetFlowDescription() const;
 
                     /**
-                     * 设置合同流程描述信息
-                     * @param _flowDescription 合同流程描述信息
+                     * 设置合同流程描述信息(可自定义此描述)，最大长度1000个字符。
+                     * @param _flowDescription 合同流程描述信息(可自定义此描述)，最大长度1000个字符。
                      * 
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
@@ -117,15 +113,15 @@ namespace TencentCloud
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取合同流程截止时间，unix时间戳，单位秒
-                     * @return Deadline 合同流程截止时间，unix时间戳，单位秒
+                     * 获取合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     * @return Deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
                      * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置合同流程截止时间，unix时间戳，单位秒
-                     * @param _deadline 合同流程截止时间，unix时间戳，单位秒
+                     * 设置合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     * @param _deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
                      * 
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -138,19 +134,23 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
-                     * 获取是否顺序签署(true:无序签,false:顺序签)
-<br/>默认false，有序签署合同
-                     * @return Unordered 是否顺序签署(true:无序签,false:顺序签)
-<br/>默认false，有序签署合同
+                     * 获取合同流程的签署顺序类型：
+**false**：(默认)有序签署, 本合同多个参与人需要依次签署
+**true**：无序签署, 本合同多个参与人没有先后签署限制
+                     * @return Unordered 合同流程的签署顺序类型：
+**false**：(默认)有序签署, 本合同多个参与人需要依次签署
+**true**：无序签署, 本合同多个参与人没有先后签署限制
                      * 
                      */
                     bool GetUnordered() const;
 
                     /**
-                     * 设置是否顺序签署(true:无序签,false:顺序签)
-<br/>默认false，有序签署合同
-                     * @param _unordered 是否顺序签署(true:无序签,false:顺序签)
-<br/>默认false，有序签署合同
+                     * 设置合同流程的签署顺序类型：
+**false**：(默认)有序签署, 本合同多个参与人需要依次签署
+**true**：无序签署, 本合同多个参与人没有先后签署限制
+                     * @param _unordered 合同流程的签署顺序类型：
+**false**：(默认)有序签署, 本合同多个参与人需要依次签署
+**true**：无序签署, 本合同多个参与人没有先后签署限制
                      * 
                      */
                     void SetUnordered(const bool& _unordered);
@@ -184,15 +184,15 @@ namespace TencentCloud
                     bool IntelligentStatusHasBeenSet() const;
 
                     /**
-                     * 获取填写控件内容
-                     * @return FormFields 填写控件内容
+                     * 获取填写控件内容， 填写的控制的ID-填写的内容对列表
+                     * @return FormFields 填写控件内容， 填写的控制的ID-填写的内容对列表
                      * 
                      */
                     std::vector<FormField> GetFormFields() const;
 
                     /**
-                     * 设置填写控件内容
-                     * @param _formFields 填写控件内容
+                     * 设置填写控件内容， 填写的控制的ID-填写的内容对列表
+                     * @param _formFields 填写控件内容， 填写的控制的ID-填写的内容对列表
                      * 
                      */
                     void SetFormFields(const std::vector<FormField>& _formFields);
@@ -205,27 +205,39 @@ namespace TencentCloud
                     bool FormFieldsHasBeenSet() const;
 
                     /**
-                     * 获取本企业(发起方企业)是否需要签署审批
-<br/>true：开启发起方签署审批
-<br/>false：不开启发起方签署审批
-<br/>开启后，使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
-                     * @return NeedSignReview 本企业(发起方企业)是否需要签署审批
-<br/>true：开启发起方签署审批
-<br/>false：不开启发起方签署审批
-<br/>开启后，使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
+                     * 获取发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+                     * @return NeedSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
                      * 
                      */
                     bool GetNeedSignReview() const;
 
                     /**
-                     * 设置本企业(发起方企业)是否需要签署审批
-<br/>true：开启发起方签署审批
-<br/>false：不开启发起方签署审批
-<br/>开启后，使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
-                     * @param _needSignReview 本企业(发起方企业)是否需要签署审批
-<br/>true：开启发起方签署审批
-<br/>false：不开启发起方签署审批
-<br/>开启后，使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
+                     * 设置发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+                     * @param _needSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
                      * 
                      */
                     void SetNeedSignReview(const bool& _needSignReview);
@@ -238,15 +250,23 @@ namespace TencentCloud
                     bool NeedSignReviewHasBeenSet() const;
 
                     /**
-                     * 获取用户流程自定义数据参数
-                     * @return UserData 用户流程自定义数据参数
+                     * 获取调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为1000长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的回调通知模块。
+                     * @return UserData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为1000长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的回调通知模块。
                      * 
                      */
                     std::string GetUserData() const;
 
                     /**
-                     * 设置用户流程自定义数据参数
-                     * @param _userData 用户流程自定义数据参数
+                     * 设置调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为1000长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的回调通知模块。
+                     * @param _userData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为1000长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的回调通知模块。
                      * 
                      */
                     void SetUserData(const std::string& _userData);
@@ -259,15 +279,23 @@ namespace TencentCloud
                     bool UserDataHasBeenSet() const;
 
                     /**
-                     * 获取抄送人信息
-                     * @return CcInfos 抄送人信息
+                     * 获取合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
+
+注:`此功能为白名单功能，使用前请联系对接的客户经理沟通。`
+                     * @return CcInfos 合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
+
+注:`此功能为白名单功能，使用前请联系对接的客户经理沟通。`
                      * 
                      */
                     std::vector<CcInfo> GetCcInfos() const;
 
                     /**
-                     * 设置抄送人信息
-                     * @param _ccInfos 抄送人信息
+                     * 设置合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
+
+注:`此功能为白名单功能，使用前请联系对接的客户经理沟通。`
+                     * @param _ccInfos 合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
+
+注:`此功能为白名单功能，使用前请联系对接的客户经理沟通。`
                      * 
                      */
                     void SetCcInfos(const std::vector<CcInfo>& _ccInfos);
@@ -280,27 +308,31 @@ namespace TencentCloud
                     bool CcInfosHasBeenSet() const;
 
                     /**
-                     * 获取是否需要开启发起方发起前审核
-<br/>true：开启发起方发起前审核
-<br/>false：不开启发起方发起前审核
-<br/>当指定NeedCreateReview=true，则提交审核后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
-                     * @return NeedCreateReview 是否需要开启发起方发起前审核
-<br/>true：开启发起方发起前审核
-<br/>false：不开启发起方发起前审核
-<br/>当指定NeedCreateReview=true，则提交审核后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     * 获取发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+
+若设置为true，发起审核结果需通过接口 [提交企业签署流程审批结果](https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignReview)通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。
+
+
+                     * @return NeedCreateReview 发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+
+若设置为true，发起审核结果需通过接口 [提交企业签署流程审批结果](https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignReview)通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。
+
+
                      * 
                      */
                     bool GetNeedCreateReview() const;
 
                     /**
-                     * 设置是否需要开启发起方发起前审核
-<br/>true：开启发起方发起前审核
-<br/>false：不开启发起方发起前审核
-<br/>当指定NeedCreateReview=true，则提交审核后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
-                     * @param _needCreateReview 是否需要开启发起方发起前审核
-<br/>true：开启发起方发起前审核
-<br/>false：不开启发起方发起前审核
-<br/>当指定NeedCreateReview=true，则提交审核后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     * 设置发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+
+若设置为true，发起审核结果需通过接口 [提交企业签署流程审批结果](https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignReview)通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。
+
+
+                     * @param _needCreateReview 发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+
+若设置为true，发起审核结果需通过接口 [提交企业签署流程审批结果](https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignReview)通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。
+
+
                      * 
                      */
                     void SetNeedCreateReview(const bool& _needCreateReview);
@@ -336,33 +368,33 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同流程名称
+                     * 合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 合同流程类型
-<br/>客户自定义，用于合同分类展示
+                     * 合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
 
                     /**
-                     * 合同流程描述信息
+                     * 合同流程描述信息(可自定义此描述)，最大长度1000个字符。
                      */
                     std::string m_flowDescription;
                     bool m_flowDescriptionHasBeenSet;
 
                     /**
-                     * 合同流程截止时间，unix时间戳，单位秒
+                     * 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
 
                     /**
-                     * 是否顺序签署(true:无序签,false:顺序签)
-<br/>默认false，有序签署合同
+                     * 合同流程的签署顺序类型：
+**false**：(默认)有序签署, 本合同多个参与人需要依次签署
+**true**：无序签署, 本合同多个参与人没有先后签署限制
                      */
                     bool m_unordered;
                     bool m_unorderedHasBeenSet;
@@ -374,37 +406,45 @@ namespace TencentCloud
                     bool m_intelligentStatusHasBeenSet;
 
                     /**
-                     * 填写控件内容
+                     * 填写控件内容， 填写的控制的ID-填写的内容对列表
                      */
                     std::vector<FormField> m_formFields;
                     bool m_formFieldsHasBeenSet;
 
                     /**
-                     * 本企业(发起方企业)是否需要签署审批
-<br/>true：开启发起方签署审批
-<br/>false：不开启发起方签署审批
-<br/>开启后，使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
+                     * 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
                      */
                     bool m_needSignReview;
                     bool m_needSignReviewHasBeenSet;
 
                     /**
-                     * 用户流程自定义数据参数
+                     * 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为1000长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的回调通知模块。
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
 
                     /**
-                     * 抄送人信息
+                     * 合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
+
+注:`此功能为白名单功能，使用前请联系对接的客户经理沟通。`
                      */
                     std::vector<CcInfo> m_ccInfos;
                     bool m_ccInfosHasBeenSet;
 
                     /**
-                     * 是否需要开启发起方发起前审核
-<br/>true：开启发起方发起前审核
-<br/>false：不开启发起方发起前审核
-<br/>当指定NeedCreateReview=true，则提交审核后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     * 发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。
+
+若设置为true，发起审核结果需通过接口 [提交企业签署流程审批结果](https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignReview)通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。
+
+
                      */
                     bool m_needCreateReview;
                     bool m_needCreateReviewHasBeenSet;
