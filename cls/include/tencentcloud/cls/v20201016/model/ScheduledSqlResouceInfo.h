@@ -133,18 +133,18 @@ namespace TencentCloud
 
                     /**
                      * 获取指标名称
-BizType为1时，优先使用MetricNames字段信息。多指标只能填充到MetricNames字段，单指标建议填充到MetricNames字段
+BizType为1时，优先使用MetricNames字段多指标只能填充到MetricNames字段，单指标建议填充到MetricName字段
                      * @return MetricNames 指标名称
-BizType为1时，优先使用MetricNames字段信息。多指标只能填充到MetricNames字段，单指标建议填充到MetricNames字段
+BizType为1时，优先使用MetricNames字段多指标只能填充到MetricNames字段，单指标建议填充到MetricName字段
                      * 
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
                      * 设置指标名称
-BizType为1时，优先使用MetricNames字段信息。多指标只能填充到MetricNames字段，单指标建议填充到MetricNames字段
+BizType为1时，优先使用MetricNames字段多指标只能填充到MetricNames字段，单指标建议填充到MetricName字段
                      * @param _metricNames 指标名称
-BizType为1时，优先使用MetricNames字段信息。多指标只能填充到MetricNames字段，单指标建议填充到MetricNames字段
+BizType为1时，优先使用MetricNames字段多指标只能填充到MetricNames字段，单指标建议填充到MetricName字段
                      * 
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
@@ -157,15 +157,15 @@ BizType为1时，优先使用MetricNames字段信息。多指标只能填充到M
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取指标项
-                     * @return MetricLabels 指标项
+                     * 获取指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。
+                     * @return MetricLabels 指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。
                      * 
                      */
                     std::vector<std::string> GetMetricLabels() const;
 
                     /**
-                     * 设置指标项
-                     * @param _metricLabels 指标项
+                     * 设置指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。
+                     * @param _metricLabels 指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。
                      * 
                      */
                     void SetMetricLabels(const std::vector<std::string>& _metricLabels);
@@ -178,15 +178,15 @@ BizType为1时，优先使用MetricNames字段信息。多指标只能填充到M
                     bool MetricLabelsHasBeenSet() const;
 
                     /**
-                     * 获取自定义时间
-                     * @return CustomTime 自定义时间
+                     * 获取指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间，精度毫秒）为指标时间戳。
+                     * @return CustomTime 指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间，精度毫秒）为指标时间戳。
                      * 
                      */
                     std::string GetCustomTime() const;
 
                     /**
-                     * 设置自定义时间
-                     * @param _customTime 自定义时间
+                     * 设置指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间，精度毫秒）为指标时间戳。
+                     * @param _customTime 指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间，精度毫秒）为指标时间戳。
                      * 
                      */
                     void SetCustomTime(const std::string& _customTime);
@@ -199,15 +199,15 @@ BizType为1时，优先使用MetricNames字段信息。多指标只能填充到M
                     bool CustomTimeHasBeenSet() const;
 
                     /**
-                     * 获取自定义标签
-                     * @return CustomMetricLabels 自定义标签
+                     * 获取除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。
+                     * @return CustomMetricLabels 除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。
                      * 
                      */
                     std::vector<MetricLabel> GetCustomMetricLabels() const;
 
                     /**
-                     * 设置自定义标签
-                     * @param _customMetricLabels 自定义标签
+                     * 设置除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。
+                     * @param _customMetricLabels 除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。
                      * 
                      */
                     void SetCustomMetricLabels(const std::vector<MetricLabel>& _customMetricLabels);
@@ -247,25 +247,25 @@ BizType为1时，优先使用MetricNames字段信息。多指标只能填充到M
 
                     /**
                      * 指标名称
-BizType为1时，优先使用MetricNames字段信息。多指标只能填充到MetricNames字段，单指标建议填充到MetricNames字段
+BizType为1时，优先使用MetricNames字段多指标只能填充到MetricNames字段，单指标建议填充到MetricName字段
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 指标项
+                     * 指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。
                      */
                     std::vector<std::string> m_metricLabels;
                     bool m_metricLabelsHasBeenSet;
 
                     /**
-                     * 自定义时间
+                     * 指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间，精度毫秒）为指标时间戳。
                      */
                     std::string m_customTime;
                     bool m_customTimeHasBeenSet;
 
                     /**
-                     * 自定义标签
+                     * 除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。
                      */
                     std::vector<MetricLabel> m_customMetricLabels;
                     bool m_customMetricLabelsHasBeenSet;

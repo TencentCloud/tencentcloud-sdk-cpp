@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeResourceGroupRequest::DescribeResourceGroupRequest() :
     m_queryTypeHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_showTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeResourceGroupRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_showTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeResourceGroupRequest::SetGroupId(const string& _groupId)
 bool DescribeResourceGroupRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+string DescribeResourceGroupRequest::GetShowType() const
+{
+    return m_showType;
+}
+
+void DescribeResourceGroupRequest::SetShowType(const string& _showType)
+{
+    m_showType = _showType;
+    m_showTypeHasBeenSet = true;
+}
+
+bool DescribeResourceGroupRequest::ShowTypeHasBeenSet() const
+{
+    return m_showTypeHasBeenSet;
 }
 
 

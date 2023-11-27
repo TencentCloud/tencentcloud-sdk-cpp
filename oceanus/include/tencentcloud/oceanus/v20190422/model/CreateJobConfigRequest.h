@@ -594,6 +594,48 @@ namespace TencentCloud
                      */
                     bool JobGraphHasBeenSet() const;
 
+                    /**
+                     * 获取es索引名称
+                     * @return EsServerlessIndex es索引名称
+                     * 
+                     */
+                    std::string GetEsServerlessIndex() const;
+
+                    /**
+                     * 设置es索引名称
+                     * @param _esServerlessIndex es索引名称
+                     * 
+                     */
+                    void SetEsServerlessIndex(const std::string& _esServerlessIndex);
+
+                    /**
+                     * 判断参数 EsServerlessIndex 是否已赋值
+                     * @return EsServerlessIndex 是否已赋值
+                     * 
+                     */
+                    bool EsServerlessIndexHasBeenSet() const;
+
+                    /**
+                     * 获取es索引空间
+                     * @return EsServerlessSpace es索引空间
+                     * 
+                     */
+                    std::string GetEsServerlessSpace() const;
+
+                    /**
+                     * 设置es索引空间
+                     * @param _esServerlessSpace es索引空间
+                     * 
+                     */
+                    void SetEsServerlessSpace(const std::string& _esServerlessSpace);
+
+                    /**
+                     * 判断参数 EsServerlessSpace 是否已赋值
+                     * @return EsServerlessSpace 是否已赋值
+                     * 
+                     */
+                    bool EsServerlessSpaceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -751,6 +793,18 @@ namespace TencentCloud
                      */
                     JobGraph m_jobGraph;
                     bool m_jobGraphHasBeenSet;
+
+                    /**
+                     * es索引名称
+                     */
+                    std::string m_esServerlessIndex;
+                    bool m_esServerlessIndexHasBeenSet;
+
+                    /**
+                     * es索引空间
+                     */
+                    std::string m_esServerlessSpace;
+                    bool m_esServerlessSpaceHasBeenSet;
 
                 };
             }

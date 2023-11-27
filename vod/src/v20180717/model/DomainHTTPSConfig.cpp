@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 DomainHTTPSConfig::DomainHTTPSConfig() :
-    m_certExpireTimeHasBeenSet(false)
+    m_certExpireTimeHasBeenSet(false),
+    m_cloudCertIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome DomainHTTPSConfig::Deserialize(const rapidjson::Value &value
         m_certExpireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudCertId") && !value["CloudCertId"].IsNull())
+    {
+        if (!value["CloudCertId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainHTTPSConfig.CloudCertId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudCertId = string(value["CloudCertId"].GetString());
+        m_cloudCertIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void DomainHTTPSConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CertExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_certExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloudCertIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudCertId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cloudCertId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void DomainHTTPSConfig::SetCertExpireTime(const string& _certExpireTime)
 bool DomainHTTPSConfig::CertExpireTimeHasBeenSet() const
 {
     return m_certExpireTimeHasBeenSet;
+}
+
+string DomainHTTPSConfig::GetCloudCertId() const
+{
+    return m_cloudCertId;
+}
+
+void DomainHTTPSConfig::SetCloudCertId(const string& _cloudCertId)
+{
+    m_cloudCertId = _cloudCertId;
+    m_cloudCertIdHasBeenSet = true;
+}
+
+bool DomainHTTPSConfig::CloudCertIdHasBeenSet() const
+{
+    return m_cloudCertIdHasBeenSet;
 }
 

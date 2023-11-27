@@ -40,6 +40,49 @@ MnaClient::MnaClient(const Credential &credential, const string &region, const C
 }
 
 
+MnaClient::ActivateHardwareOutcome MnaClient::ActivateHardware(const ActivateHardwareRequest &request)
+{
+    auto outcome = MakeRequest(request, "ActivateHardware");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ActivateHardwareResponse rsp = ActivateHardwareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ActivateHardwareOutcome(rsp);
+        else
+            return ActivateHardwareOutcome(o.GetError());
+    }
+    else
+    {
+        return ActivateHardwareOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::ActivateHardwareAsync(const ActivateHardwareRequest& request, const ActivateHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ActivateHardware(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::ActivateHardwareOutcomeCallable MnaClient::ActivateHardwareCallable(const ActivateHardwareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ActivateHardwareOutcome()>>(
+        [this, request]()
+        {
+            return this->ActivateHardware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::AddDeviceOutcome MnaClient::AddDevice(const AddDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "AddDevice");
@@ -76,6 +119,49 @@ MnaClient::AddDeviceOutcomeCallable MnaClient::AddDeviceCallable(const AddDevice
         [this, request]()
         {
             return this->AddDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::AddHardwareOutcome MnaClient::AddHardware(const AddHardwareRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddHardware");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddHardwareResponse rsp = AddHardwareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddHardwareOutcome(rsp);
+        else
+            return AddHardwareOutcome(o.GetError());
+    }
+    else
+    {
+        return AddHardwareOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::AddHardwareAsync(const AddHardwareRequest& request, const AddHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddHardware(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::AddHardwareOutcomeCallable MnaClient::AddHardwareCallable(const AddHardwareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddHardwareOutcome()>>(
+        [this, request]()
+        {
+            return this->AddHardware(request);
         }
     );
 
@@ -427,6 +513,49 @@ MnaClient::GetFlowStatisticOutcomeCallable MnaClient::GetFlowStatisticCallable(c
     return task->get_future();
 }
 
+MnaClient::GetHardwareListOutcome MnaClient::GetHardwareList(const GetHardwareListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetHardwareList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetHardwareListResponse rsp = GetHardwareListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetHardwareListOutcome(rsp);
+        else
+            return GetHardwareListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetHardwareListOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetHardwareListAsync(const GetHardwareListRequest& request, const GetHardwareListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetHardwareList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetHardwareListOutcomeCallable MnaClient::GetHardwareListCallable(const GetHardwareListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetHardwareListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetHardwareList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::GetMultiFlowStatisticOutcome MnaClient::GetMultiFlowStatistic(const GetMultiFlowStatisticRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMultiFlowStatistic");
@@ -599,6 +728,49 @@ MnaClient::GetStatisticDataOutcomeCallable MnaClient::GetStatisticDataCallable(c
     return task->get_future();
 }
 
+MnaClient::GetVendorHardwareOutcome MnaClient::GetVendorHardware(const GetVendorHardwareRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetVendorHardware");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetVendorHardwareResponse rsp = GetVendorHardwareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetVendorHardwareOutcome(rsp);
+        else
+            return GetVendorHardwareOutcome(o.GetError());
+    }
+    else
+    {
+        return GetVendorHardwareOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetVendorHardwareAsync(const GetVendorHardwareRequest& request, const GetVendorHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetVendorHardware(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetVendorHardwareOutcomeCallable MnaClient::GetVendorHardwareCallable(const GetVendorHardwareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetVendorHardwareOutcome()>>(
+        [this, request]()
+        {
+            return this->GetVendorHardware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::UpdateDeviceOutcome MnaClient::UpdateDevice(const UpdateDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateDevice");
@@ -635,6 +807,49 @@ MnaClient::UpdateDeviceOutcomeCallable MnaClient::UpdateDeviceCallable(const Upd
         [this, request]()
         {
             return this->UpdateDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::UpdateHardwareOutcome MnaClient::UpdateHardware(const UpdateHardwareRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateHardware");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateHardwareResponse rsp = UpdateHardwareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateHardwareOutcome(rsp);
+        else
+            return UpdateHardwareOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateHardwareOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::UpdateHardwareAsync(const UpdateHardwareRequest& request, const UpdateHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateHardware(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::UpdateHardwareOutcomeCallable MnaClient::UpdateHardwareCallable(const UpdateHardwareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateHardwareOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateHardware(request);
         }
     );
 

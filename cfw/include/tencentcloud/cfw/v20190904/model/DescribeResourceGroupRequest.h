@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取all  包含子组 own自己
+                     * @return ShowType all  包含子组 own自己
+                     * 
+                     */
+                    std::string GetShowType() const;
+
+                    /**
+                     * 设置all  包含子组 own自己
+                     * @param _showType all  包含子组 own自己
+                     * 
+                     */
+                    void SetShowType(const std::string& _showType);
+
+                    /**
+                     * 判断参数 ShowType 是否已赋值
+                     * @return ShowType 是否已赋值
+                     * 
+                     */
+                    bool ShowTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * all  包含子组 own自己
+                     */
+                    std::string m_showType;
+                    bool m_showTypeHasBeenSet;
 
                 };
             }

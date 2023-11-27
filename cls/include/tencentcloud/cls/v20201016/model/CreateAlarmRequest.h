@@ -134,31 +134,15 @@ namespace TencentCloud
                     bool TriggerCountHasBeenSet() const;
 
                     /**
-                     * 获取告警重复的周期。
-
-单位是分钟。
-
-取值范围是0~1440。
-                     * @return AlarmPeriod 告警重复的周期。
-
-单位是分钟。
-
-取值范围是0~1440。
+                     * 获取告警重复的周期，单位是分钟。取值范围是0~1440。
+                     * @return AlarmPeriod 告警重复的周期，单位是分钟。取值范围是0~1440。
                      * 
                      */
                     int64_t GetAlarmPeriod() const;
 
                     /**
-                     * 设置告警重复的周期。
-
-单位是分钟。
-
-取值范围是0~1440。
-                     * @param _alarmPeriod 告警重复的周期。
-
-单位是分钟。
-
-取值范围是0~1440。
+                     * 设置告警重复的周期，单位是分钟。取值范围是0~1440。
+                     * @param _alarmPeriod 告警重复的周期，单位是分钟。取值范围是0~1440。
                      * 
                      */
                     void SetAlarmPeriod(const int64_t& _alarmPeriod);
@@ -192,16 +176,12 @@ namespace TencentCloud
                     bool AlarmNoticeIdsHasBeenSet() const;
 
                     /**
-                     * 获取触发条件。
-
+                     * 获取触发条件
  注意:  
-
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
-                     * @return Condition 触发条件。
-
+                     * @return Condition 触发条件
  注意:  
-
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
                      * 
@@ -209,16 +189,12 @@ namespace TencentCloud
                     std::string GetCondition() const;
 
                     /**
-                     * 设置触发条件。
-
+                     * 设置触发条件
  注意:  
-
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
-                     * @param _condition 触发条件。
-
+                     * @param _condition 触发条件
  注意:  
-
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
                      * 
@@ -233,17 +209,13 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取告警级别。
-
+                     * 获取告警级别
 0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-
 注意:  
 - 不填则默认为0。
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
-                     * @return AlarmLevel 告警级别。
-
+                     * @return AlarmLevel 告警级别
 0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-
 注意:  
 - 不填则默认为0。
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
@@ -252,17 +224,13 @@ namespace TencentCloud
                     uint64_t GetAlarmLevel() const;
 
                     /**
-                     * 设置告警级别。
-
+                     * 设置告警级别
 0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-
 注意:  
 - 不填则默认为0。
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
-                     * @param _alarmLevel 告警级别。
-
+                     * @param _alarmLevel 告警级别
 0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-
 注意:  
 - 不填则默认为0。
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
@@ -278,15 +246,13 @@ namespace TencentCloud
                     bool AlarmLevelHasBeenSet() const;
 
                     /**
-                     * 获取多触发条件。
-
+                     * 获取多触发条件
  注意:  
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
 
 
-                     * @return MultiConditions 多触发条件。
-
+                     * @return MultiConditions 多触发条件
  注意:  
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
@@ -297,15 +263,13 @@ namespace TencentCloud
                     std::vector<MultiCondition> GetMultiConditions() const;
 
                     /**
-                     * 设置多触发条件。
-
+                     * 设置多触发条件
  注意:  
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
 
 
-                     * @param _multiConditions 多触发条件。
-
+                     * @param _multiConditions 多触发条件
  注意:  
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
@@ -324,10 +288,8 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启告警策略。
-
 默认值为true
                      * @return Status 是否开启告警策略。
-
 默认值为true
                      * 
                      */
@@ -335,10 +297,8 @@ namespace TencentCloud
 
                     /**
                      * 设置是否开启告警策略。
-
 默认值为true
                      * @param _status 是否开启告警策略。
-
 默认值为true
                      * 
                      */
@@ -352,15 +312,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否开启告警策略。默认值为true
-                     * @return Enable 是否开启告警策略。默认值为true
+                     * 获取该参数已废弃，请使用Status参数控制是否开启告警策略。
+                     * @return Enable 该参数已废弃，请使用Status参数控制是否开启告警策略。
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置是否开启告警策略。默认值为true
-                     * @param _enable 是否开启告警策略。默认值为true
+                     * 设置该参数已废弃，请使用Status参数控制是否开启告警策略。
+                     * @param _enable 该参数已废弃，请使用Status参数控制是否开启告警策略。
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -437,10 +397,8 @@ namespace TencentCloud
 
                     /**
                      * 获取分组触发状态。
-
 默认值false
                      * @return GroupTriggerStatus 分组触发状态。
-
 默认值false
                      * 
                      */
@@ -448,10 +406,8 @@ namespace TencentCloud
 
                     /**
                      * 设置分组触发状态。
-
 默认值false
                      * @param _groupTriggerStatus 分组触发状态。
-
 默认值false
                      * 
                      */
@@ -516,15 +472,11 @@ namespace TencentCloud
 
                     /**
                      * 获取监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-
 不填则默认为0。
-
 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
 
                      * @return MonitorObjectType 监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-
 不填则默认为0。
-
 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
 
                      * 
@@ -533,15 +485,11 @@ namespace TencentCloud
 
                     /**
                      * 设置监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-
 不填则默认为0。
-
 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
 
                      * @param _monitorObjectType 监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-
 不填则默认为0。
-
 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
 
                      * 
@@ -557,18 +505,12 @@ namespace TencentCloud
 
                     /**
                      * 获取告警附加分类信息列表。
-
 Classifications元素个数不能超过20个。
-
-Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，字符规则 ^[a-z]([a-z0-9_]{0,49})$。
-
+Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 `^[a-z]([a-z0-9_]{0,49})$`。
 Classifications元素的Value长度不能超过200个字符。
                      * @return Classifications 告警附加分类信息列表。
-
 Classifications元素个数不能超过20个。
-
-Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，字符规则 ^[a-z]([a-z0-9_]{0,49})$。
-
+Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 `^[a-z]([a-z0-9_]{0,49})$`。
 Classifications元素的Value长度不能超过200个字符。
                      * 
                      */
@@ -576,18 +518,12 @@ Classifications元素的Value长度不能超过200个字符。
 
                     /**
                      * 设置告警附加分类信息列表。
-
 Classifications元素个数不能超过20个。
-
-Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，字符规则 ^[a-z]([a-z0-9_]{0,49})$。
-
+Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 `^[a-z]([a-z0-9_]{0,49})$`。
 Classifications元素的Value长度不能超过200个字符。
                      * @param _classifications 告警附加分类信息列表。
-
 Classifications元素个数不能超过20个。
-
-Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，字符规则 ^[a-z]([a-z0-9_]{0,49})$。
-
+Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 `^[a-z]([a-z0-9_]{0,49})$`。
 Classifications元素的Value长度不能超过200个字符。
                      * 
                      */
@@ -627,11 +563,7 @@ Classifications元素的Value长度不能超过200个字符。
                     bool m_triggerCountHasBeenSet;
 
                     /**
-                     * 告警重复的周期。
-
-单位是分钟。
-
-取值范围是0~1440。
+                     * 告警重复的周期，单位是分钟。取值范围是0~1440。
                      */
                     int64_t m_alarmPeriod;
                     bool m_alarmPeriodHasBeenSet;
@@ -643,10 +575,8 @@ Classifications元素的Value长度不能超过200个字符。
                     bool m_alarmNoticeIdsHasBeenSet;
 
                     /**
-                     * 触发条件。
-
+                     * 触发条件
  注意:  
-
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
                      */
@@ -654,10 +584,8 @@ Classifications元素的Value长度不能超过200个字符。
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 告警级别。
-
+                     * 告警级别
 0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-
 注意:  
 - 不填则默认为0。
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
@@ -666,8 +594,7 @@ Classifications元素的Value长度不能超过200个字符。
                     bool m_alarmLevelHasBeenSet;
 
                     /**
-                     * 多触发条件。
-
+                     * 多触发条件
  注意:  
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
 
@@ -679,14 +606,13 @@ Classifications元素的Value长度不能超过200个字符。
 
                     /**
                      * 是否开启告警策略。
-
 默认值为true
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否开启告警策略。默认值为true
+                     * 该参数已废弃，请使用Status参数控制是否开启告警策略。
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
@@ -711,7 +637,6 @@ Classifications元素的Value长度不能超过200个字符。
 
                     /**
                      * 分组触发状态。
-
 默认值false
                      */
                     bool m_groupTriggerStatus;
@@ -733,9 +658,7 @@ Classifications元素的Value长度不能超过200个字符。
 
                     /**
                      * 监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-
 不填则默认为0。
-
 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。
 
                      */
@@ -744,11 +667,8 @@ Classifications元素的Value长度不能超过200个字符。
 
                     /**
                      * 告警附加分类信息列表。
-
 Classifications元素个数不能超过20个。
-
-Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，字符规则 ^[a-z]([a-z0-9_]{0,49})$。
-
+Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 `^[a-z]([a-z0-9_]{0,49})$`。
 Classifications元素的Value长度不能超过200个字符。
                      */
                     std::vector<AlarmClassification> m_classifications;

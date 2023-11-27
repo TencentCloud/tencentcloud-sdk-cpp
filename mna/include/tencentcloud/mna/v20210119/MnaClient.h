@@ -23,8 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/mna/v20210119/model/ActivateHardwareRequest.h>
+#include <tencentcloud/mna/v20210119/model/ActivateHardwareResponse.h>
 #include <tencentcloud/mna/v20210119/model/AddDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/AddDeviceResponse.h>
+#include <tencentcloud/mna/v20210119/model/AddHardwareRequest.h>
+#include <tencentcloud/mna/v20210119/model/AddHardwareResponse.h>
 #include <tencentcloud/mna/v20210119/model/CreateEncryptedKeyRequest.h>
 #include <tencentcloud/mna/v20210119/model/CreateEncryptedKeyResponse.h>
 #include <tencentcloud/mna/v20210119/model/CreateQosRequest.h>
@@ -41,6 +45,8 @@
 #include <tencentcloud/mna/v20210119/model/GetDevicesResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetHardwareListRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetHardwareListResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetMultiFlowStatisticRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetMultiFlowStatisticResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetNetMonitorRequest.h>
@@ -49,8 +55,12 @@
 #include <tencentcloud/mna/v20210119/model/GetPublicKeyResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetVendorHardwareRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetVendorHardwareResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceResponse.h>
+#include <tencentcloud/mna/v20210119/model/UpdateHardwareRequest.h>
+#include <tencentcloud/mna/v20210119/model/UpdateHardwareResponse.h>
 
 
 namespace TencentCloud
@@ -65,9 +75,15 @@ namespace TencentCloud
                 MnaClient(const Credential &credential, const std::string &region);
                 MnaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ActivateHardwareResponse> ActivateHardwareOutcome;
+                typedef std::future<ActivateHardwareOutcome> ActivateHardwareOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::ActivateHardwareRequest&, ActivateHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateHardwareAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddDeviceResponse> AddDeviceOutcome;
                 typedef std::future<AddDeviceOutcome> AddDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::AddDeviceRequest&, AddDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddHardwareResponse> AddHardwareOutcome;
+                typedef std::future<AddHardwareOutcome> AddHardwareOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::AddHardwareRequest&, AddHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddHardwareAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEncryptedKeyResponse> CreateEncryptedKeyOutcome;
                 typedef std::future<CreateEncryptedKeyOutcome> CreateEncryptedKeyOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::CreateEncryptedKeyRequest&, CreateEncryptedKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEncryptedKeyAsyncHandler;
@@ -92,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFlowStatisticResponse> GetFlowStatisticOutcome;
                 typedef std::future<GetFlowStatisticOutcome> GetFlowStatisticOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticRequest&, GetFlowStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetHardwareListResponse> GetHardwareListOutcome;
+                typedef std::future<GetHardwareListOutcome> GetHardwareListOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetHardwareListRequest&, GetHardwareListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetHardwareListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetMultiFlowStatisticResponse> GetMultiFlowStatisticOutcome;
                 typedef std::future<GetMultiFlowStatisticOutcome> GetMultiFlowStatisticOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetMultiFlowStatisticRequest&, GetMultiFlowStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMultiFlowStatisticAsyncHandler;
@@ -104,11 +123,26 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetStatisticDataResponse> GetStatisticDataOutcome;
                 typedef std::future<GetStatisticDataOutcome> GetStatisticDataOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetStatisticDataRequest&, GetStatisticDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetStatisticDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetVendorHardwareResponse> GetVendorHardwareOutcome;
+                typedef std::future<GetVendorHardwareOutcome> GetVendorHardwareOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetVendorHardwareRequest&, GetVendorHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVendorHardwareAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDeviceResponse> UpdateDeviceOutcome;
                 typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::UpdateDeviceRequest&, UpdateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateHardwareResponse> UpdateHardwareOutcome;
+                typedef std::future<UpdateHardwareOutcome> UpdateHardwareOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::UpdateHardwareRequest&, UpdateHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateHardwareAsyncHandler;
 
 
+
+                /**
+                 *激活硬件设备
+                 * @param req ActivateHardwareRequest
+                 * @return ActivateHardwareOutcome
+                 */
+                ActivateHardwareOutcome ActivateHardware(const Model::ActivateHardwareRequest &request);
+                void ActivateHardwareAsync(const Model::ActivateHardwareRequest& request, const ActivateHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateHardwareOutcomeCallable ActivateHardwareCallable(const Model::ActivateHardwareRequest& request);
 
                 /**
                  *新建设备记录
@@ -118,6 +152,15 @@ namespace TencentCloud
                 AddDeviceOutcome AddDevice(const Model::AddDeviceRequest &request);
                 void AddDeviceAsync(const Model::AddDeviceRequest& request, const AddDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddDeviceOutcomeCallable AddDeviceCallable(const Model::AddDeviceRequest& request);
+
+                /**
+                 *添加硬件设备，生成未激活的硬件设备，可支持批量添加
+                 * @param req AddHardwareRequest
+                 * @return AddHardwareOutcome
+                 */
+                AddHardwareOutcome AddHardware(const Model::AddHardwareRequest &request);
+                void AddHardwareAsync(const Model::AddHardwareRequest& request, const AddHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddHardwareOutcomeCallable AddHardwareCallable(const Model::AddHardwareRequest& request);
 
                 /**
                  *通过此接口设置和更新预置密钥
@@ -192,6 +235,15 @@ namespace TencentCloud
                 GetFlowStatisticOutcomeCallable GetFlowStatisticCallable(const Model::GetFlowStatisticRequest& request);
 
                 /**
+                 *租户获取厂商硬件列表
+                 * @param req GetHardwareListRequest
+                 * @return GetHardwareListOutcome
+                 */
+                GetHardwareListOutcome GetHardwareList(const Model::GetHardwareListRequest &request);
+                void GetHardwareListAsync(const Model::GetHardwareListRequest& request, const GetHardwareListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetHardwareListOutcomeCallable GetHardwareListCallable(const Model::GetHardwareListRequest& request);
+
+                /**
                  *批量获取设备流量统计曲线
                  * @param req GetMultiFlowStatisticRequest
                  * @return GetMultiFlowStatisticOutcome
@@ -228,6 +280,15 @@ namespace TencentCloud
                 GetStatisticDataOutcomeCallable GetStatisticDataCallable(const Model::GetStatisticDataRequest& request);
 
                 /**
+                 *获取厂商硬件设备列表
+                 * @param req GetVendorHardwareRequest
+                 * @return GetVendorHardwareOutcome
+                 */
+                GetVendorHardwareOutcome GetVendorHardware(const Model::GetVendorHardwareRequest &request);
+                void GetVendorHardwareAsync(const Model::GetVendorHardwareRequest& request, const GetVendorHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetVendorHardwareOutcomeCallable GetVendorHardwareCallable(const Model::GetVendorHardwareRequest& request);
+
+                /**
                  *更新设备信息
                  * @param req UpdateDeviceRequest
                  * @return UpdateDeviceOutcome
@@ -235,6 +296,15 @@ namespace TencentCloud
                 UpdateDeviceOutcome UpdateDevice(const Model::UpdateDeviceRequest &request);
                 void UpdateDeviceAsync(const Model::UpdateDeviceRequest& request, const UpdateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateDeviceOutcomeCallable UpdateDeviceCallable(const Model::UpdateDeviceRequest& request);
+
+                /**
+                 *更新硬件信息
+                 * @param req UpdateHardwareRequest
+                 * @return UpdateHardwareOutcome
+                 */
+                UpdateHardwareOutcome UpdateHardware(const Model::UpdateHardwareRequest &request);
+                void UpdateHardwareAsync(const Model::UpdateHardwareRequest& request, const UpdateHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateHardwareOutcomeCallable UpdateHardwareCallable(const Model::UpdateHardwareRequest& request);
 
             };
         }

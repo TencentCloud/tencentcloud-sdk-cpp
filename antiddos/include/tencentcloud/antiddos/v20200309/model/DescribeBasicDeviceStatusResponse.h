@@ -80,6 +80,22 @@ namespace TencentCloud
                      */
                     bool CLBDataHasBeenSet() const;
 
+                    /**
+                     * 获取cnamewaf资源状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CnameWafData cnamewaf资源状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<KeyValue> GetCnameWafData() const;
+
+                    /**
+                     * 判断参数 CnameWafData 是否已赋值
+                     * @return CnameWafData 是否已赋值
+                     * 
+                     */
+                    bool CnameWafDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +113,13 @@ namespace TencentCloud
                      */
                     std::vector<KeyValue> m_cLBData;
                     bool m_cLBDataHasBeenSet;
+
+                    /**
+                     * cnamewaf资源状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyValue> m_cnameWafData;
+                    bool m_cnameWafDataHasBeenSet;
 
                 };
             }

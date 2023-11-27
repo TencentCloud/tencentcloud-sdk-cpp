@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SecurityTypeHasBeenSet() const;
 
                     /**
-                     * 获取安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905
-                     * @return LogType 安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905
+                     * 获取安全模块下的日志类型，
+                     * @return LogType 安全模块下的日志类型，
                      * 
                      */
                     std::vector<uint64_t> GetLogType() const;
 
                     /**
-                     * 设置安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905
-                     * @param _logType 安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905
+                     * 设置安全模块下的日志类型，
+                     * @param _logType 安全模块下的日志类型，
                      * 
                      */
                     void SetLogType(const std::vector<uint64_t>& _logType);
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_securityTypeHasBeenSet;
 
                     /**
-                     * 安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905
+                     * 安全模块下的日志类型，
                      */
                     std::vector<uint64_t> m_logType;
                     bool m_logTypeHasBeenSet;

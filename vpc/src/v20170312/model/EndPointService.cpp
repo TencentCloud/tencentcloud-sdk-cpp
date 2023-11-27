@@ -31,7 +31,9 @@ EndPointService::EndPointService() :
     m_endPointCountHasBeenSet(false),
     m_endPointSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false)
+    m_serviceTypeHasBeenSet(false),
+    m_serviceUinHasBeenSet(false),
+    m_businessIpTypeHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,26 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
         m_serviceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceUin") && !value["ServiceUin"].IsNull())
+    {
+        if (!value["ServiceUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndPointService.ServiceUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceUin = string(value["ServiceUin"].GetString());
+        m_serviceUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("BusinessIpType") && !value["BusinessIpType"].IsNull())
+    {
+        if (!value["BusinessIpType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndPointService.BusinessIpType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessIpType = value["BusinessIpType"].GetInt64();
+        m_businessIpTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +282,22 @@ void EndPointService::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessIpTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessIpType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_businessIpType, allocator);
     }
 
 }
@@ -439,5 +477,37 @@ void EndPointService::SetServiceType(const string& _serviceType)
 bool EndPointService::ServiceTypeHasBeenSet() const
 {
     return m_serviceTypeHasBeenSet;
+}
+
+string EndPointService::GetServiceUin() const
+{
+    return m_serviceUin;
+}
+
+void EndPointService::SetServiceUin(const string& _serviceUin)
+{
+    m_serviceUin = _serviceUin;
+    m_serviceUinHasBeenSet = true;
+}
+
+bool EndPointService::ServiceUinHasBeenSet() const
+{
+    return m_serviceUinHasBeenSet;
+}
+
+int64_t EndPointService::GetBusinessIpType() const
+{
+    return m_businessIpType;
+}
+
+void EndPointService::SetBusinessIpType(const int64_t& _businessIpType)
+{
+    m_businessIpType = _businessIpType;
+    m_businessIpTypeHasBeenSet = true;
+}
+
+bool EndPointService::BusinessIpTypeHasBeenSet() const
+{
+    return m_businessIpTypeHasBeenSet;
 }
 

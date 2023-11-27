@@ -48,7 +48,9 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_traceModeOnHasBeenSet(false),
     m_traceModeConfigurationHasBeenSet(false),
     m_checkpointRetainedNumHasBeenSet(false),
-    m_jobGraphHasBeenSet(false)
+    m_jobGraphHasBeenSet(false),
+    m_esServerlessIndexHasBeenSet(false),
+    m_esServerlessSpaceHasBeenSet(false)
 {
 }
 
@@ -289,6 +291,22 @@ string CreateJobConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_jobGraph.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_esServerlessIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsServerlessIndex";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_esServerlessIndex.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esServerlessSpaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsServerlessSpace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_esServerlessSpace.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -713,6 +731,38 @@ void CreateJobConfigRequest::SetJobGraph(const JobGraph& _jobGraph)
 bool CreateJobConfigRequest::JobGraphHasBeenSet() const
 {
     return m_jobGraphHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetEsServerlessIndex() const
+{
+    return m_esServerlessIndex;
+}
+
+void CreateJobConfigRequest::SetEsServerlessIndex(const string& _esServerlessIndex)
+{
+    m_esServerlessIndex = _esServerlessIndex;
+    m_esServerlessIndexHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::EsServerlessIndexHasBeenSet() const
+{
+    return m_esServerlessIndexHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetEsServerlessSpace() const
+{
+    return m_esServerlessSpace;
+}
+
+void CreateJobConfigRequest::SetEsServerlessSpace(const string& _esServerlessSpace)
+{
+    m_esServerlessSpace = _esServerlessSpace;
+    m_esServerlessSpaceHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::EsServerlessSpaceHasBeenSet() const
+{
+    return m_esServerlessSpaceHasBeenSet;
 }
 
 

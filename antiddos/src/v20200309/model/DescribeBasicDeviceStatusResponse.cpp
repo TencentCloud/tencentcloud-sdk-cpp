@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeBasicDeviceStatusResponse::DescribeBasicDeviceStatusResponse() :
     m_dataHasBeenSet(false),
-    m_cLBDataHasBeenSet(false)
+    m_cLBDataHasBeenSet(false),
+    m_cnameWafDataHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,26 @@ CoreInternalOutcome DescribeBasicDeviceStatusResponse::Deserialize(const string 
         m_cLBDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CnameWafData") && !rsp["CnameWafData"].IsNull())
+    {
+        if (!rsp["CnameWafData"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CnameWafData` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CnameWafData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyValue item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cnameWafData.push_back(item);
+        }
+        m_cnameWafDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +164,21 @@ string DescribeBasicDeviceStatusResponse::ToJsonString() const
         }
     }
 
+    if (m_cnameWafDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CnameWafData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cnameWafData.begin(); itr != m_cnameWafData.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -173,6 +209,16 @@ vector<KeyValue> DescribeBasicDeviceStatusResponse::GetCLBData() const
 bool DescribeBasicDeviceStatusResponse::CLBDataHasBeenSet() const
 {
     return m_cLBDataHasBeenSet;
+}
+
+vector<KeyValue> DescribeBasicDeviceStatusResponse::GetCnameWafData() const
+{
+    return m_cnameWafData;
+}
+
+bool DescribeBasicDeviceStatusResponse::CnameWafDataHasBeenSet() const
+{
+    return m_cnameWafDataHasBeenSet;
 }
 
 

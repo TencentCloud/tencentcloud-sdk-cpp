@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取注册实列名称前缀。
-                     * @return InstanceNamePrefix 注册实列名称前缀。
+                     * 获取注册实例名称前缀。
+                     * @return InstanceNamePrefix 注册实例名称前缀。
                      * 
                      */
                     std::string GetInstanceNamePrefix() const;
 
                     /**
-                     * 设置注册实列名称前缀。
-                     * @param _instanceNamePrefix 注册实列名称前缀。
+                     * 设置注册实例名称前缀。
+                     * @param _instanceNamePrefix 注册实例名称前缀。
                      * 
                      */
                     void SetInstanceNamePrefix(const std::string& _instanceNamePrefix);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceNamePrefixHasBeenSet() const;
 
                     /**
-                     * 获取该注册码允许注册的实列数目。默认限制为10个。
-                     * @return RegisterLimit 该注册码允许注册的实列数目。默认限制为10个。
+                     * 获取该注册码允许注册的实例数目。默认限制为10个。
+                     * @return RegisterLimit 该注册码允许注册的实例数目。默认限制为10个。
                      * 
                      */
                     int64_t GetRegisterLimit() const;
 
                     /**
-                     * 设置该注册码允许注册的实列数目。默认限制为10个。
-                     * @param _registerLimit 该注册码允许注册的实列数目。默认限制为10个。
+                     * 设置该注册码允许注册的实例数目。默认限制为10个。
+                     * @param _registerLimit 该注册码允许注册的实例数目。默认限制为10个。
                      * 
                      */
                     void SetRegisterLimit(const int64_t& _registerLimit);
@@ -156,13 +156,13 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 注册实列名称前缀。
+                     * 注册实例名称前缀。
                      */
                     std::string m_instanceNamePrefix;
                     bool m_instanceNamePrefixHasBeenSet;
 
                     /**
-                     * 该注册码允许注册的实列数目。默认限制为10个。
+                     * 该注册码允许注册的实例数目。默认限制为10个。
                      */
                     int64_t m_registerLimit;
                     bool m_registerLimitHasBeenSet;

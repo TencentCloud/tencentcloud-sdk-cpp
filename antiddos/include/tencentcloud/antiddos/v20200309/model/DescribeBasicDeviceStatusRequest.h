@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool FilterRegionHasBeenSet() const;
 
+                    /**
+                     * 获取cnameWaf资源
+                     * @return CnameWafIdList cnameWaf资源
+                     * 
+                     */
+                    std::vector<std::string> GetCnameWafIdList() const;
+
+                    /**
+                     * 设置cnameWaf资源
+                     * @param _cnameWafIdList cnameWaf资源
+                     * 
+                     */
+                    void SetCnameWafIdList(const std::vector<std::string>& _cnameWafIdList);
+
+                    /**
+                     * 判断参数 CnameWafIdList 是否已赋值
+                     * @return CnameWafIdList 是否已赋值
+                     * 
+                     */
+                    bool CnameWafIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_filterRegion;
                     bool m_filterRegionHasBeenSet;
+
+                    /**
+                     * cnameWaf资源
+                     */
+                    std::vector<std::string> m_cnameWafIdList;
+                    bool m_cnameWafIdListHasBeenSet;
 
                 };
             }

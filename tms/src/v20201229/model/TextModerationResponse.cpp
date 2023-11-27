@@ -34,7 +34,8 @@ TextModerationResponse::TextModerationResponse() :
     m_extraHasBeenSet(false),
     m_dataIdHasBeenSet(false),
     m_subLabelHasBeenSet(false),
-    m_contextTextHasBeenSet(false)
+    m_contextTextHasBeenSet(false),
+    m_sentimentAnalysisHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,23 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
         m_contextTextHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SentimentAnalysis") && !rsp["SentimentAnalysis"].IsNull())
+    {
+        if (!rsp["SentimentAnalysis"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SentimentAnalysis` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sentimentAnalysis.Deserialize(rsp["SentimentAnalysis"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sentimentAnalysisHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -320,6 +338,15 @@ string TextModerationResponse::ToJsonString() const
         string key = "ContextText";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_contextText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sentimentAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SentimentAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sentimentAnalysis.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -442,6 +469,16 @@ string TextModerationResponse::GetContextText() const
 bool TextModerationResponse::ContextTextHasBeenSet() const
 {
     return m_contextTextHasBeenSet;
+}
+
+SentimentAnalysis TextModerationResponse::GetSentimentAnalysis() const
+{
+    return m_sentimentAnalysis;
+}
+
+bool TextModerationResponse::SentimentAnalysisHasBeenSet() const
+{
+    return m_sentimentAnalysisHasBeenSet;
 }
 
 

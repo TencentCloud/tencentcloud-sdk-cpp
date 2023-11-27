@@ -325,15 +325,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否开启告警策略。默认值为true
-                     * @return Enable 是否开启告警策略。默认值为true
+                     * 获取该参数已废弃，请使用Status参数控制是否开启告警策略。
+                     * @return Enable 该参数已废弃，请使用Status参数控制是否开启告警策略。
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置是否开启告警策略。默认值为true
-                     * @param _enable 是否开启告警策略。默认值为true
+                     * 设置该参数已废弃，请使用Status参数控制是否开启告警策略。
+                     * @param _enable 该参数已废弃，请使用Status参数控制是否开启告警策略。
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -613,7 +613,7 @@ Classifications元素的Value长度不能超过200个字符。
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否开启告警策略。默认值为true
+                     * 该参数已废弃，请使用Status参数控制是否开启告警策略。
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;

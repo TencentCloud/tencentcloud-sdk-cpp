@@ -47,7 +47,12 @@ string CreateProClusterRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneIds";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zoneIds.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     if (m_productNameHasBeenSet)
@@ -130,12 +135,12 @@ string CreateProClusterRequest::ToJsonString() const
 }
 
 
-string CreateProClusterRequest::GetZoneIds() const
+vector<int64_t> CreateProClusterRequest::GetZoneIds() const
 {
     return m_zoneIds;
 }
 
-void CreateProClusterRequest::SetZoneIds(const string& _zoneIds)
+void CreateProClusterRequest::SetZoneIds(const vector<int64_t>& _zoneIds)
 {
     m_zoneIds = _zoneIds;
     m_zoneIdsHasBeenSet = true;

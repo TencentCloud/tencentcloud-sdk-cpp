@@ -25,7 +25,8 @@ using namespace std;
 DescribeBasicDeviceStatusRequest::DescribeBasicDeviceStatusRequest() :
     m_ipListHasBeenSet(false),
     m_idListHasBeenSet(false),
-    m_filterRegionHasBeenSet(false)
+    m_filterRegionHasBeenSet(false),
+    m_cnameWafIdListHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,19 @@ string DescribeBasicDeviceStatusRequest::ToJsonString() const
         string key = "FilterRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterRegion, allocator);
+    }
+
+    if (m_cnameWafIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CnameWafIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cnameWafIdList.begin(); itr != m_cnameWafIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -124,6 +138,22 @@ void DescribeBasicDeviceStatusRequest::SetFilterRegion(const uint64_t& _filterRe
 bool DescribeBasicDeviceStatusRequest::FilterRegionHasBeenSet() const
 {
     return m_filterRegionHasBeenSet;
+}
+
+vector<string> DescribeBasicDeviceStatusRequest::GetCnameWafIdList() const
+{
+    return m_cnameWafIdList;
+}
+
+void DescribeBasicDeviceStatusRequest::SetCnameWafIdList(const vector<string>& _cnameWafIdList)
+{
+    m_cnameWafIdList = _cnameWafIdList;
+    m_cnameWafIdListHasBeenSet = true;
+}
+
+bool DescribeBasicDeviceStatusRequest::CnameWafIdListHasBeenSet() const
+{
+    return m_cnameWafIdListHasBeenSet;
 }
 
 

@@ -286,6 +286,56 @@ namespace TencentCloud
                      */
                     bool ServiceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceUin Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetServiceUin() const;
+
+                    /**
+                     * 设置Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceUin Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceUin(const std::string& _serviceUin);
+
+                    /**
+                     * 判断参数 ServiceUin 是否已赋值
+                     * @return ServiceUin 是否已赋值
+                     * 
+                     */
+                    bool ServiceUinHasBeenSet() const;
+
+                    /**
+                     * 获取服务IP类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BusinessIpType 服务IP类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBusinessIpType() const;
+
+                    /**
+                     * 设置服务IP类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _businessIpType 服务IP类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBusinessIpType(const int64_t& _businessIpType);
+
+                    /**
+                     * 判断参数 BusinessIpType 是否已赋值
+                     * @return BusinessIpType 是否已赋值
+                     * 
+                     */
+                    bool BusinessIpTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +405,20 @@ namespace TencentCloud
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
+
+                    /**
+                     * Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serviceUin;
+                    bool m_serviceUinHasBeenSet;
+
+                    /**
+                     * 服务IP类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_businessIpType;
+                    bool m_businessIpTypeHasBeenSet;
 
                 };
             }

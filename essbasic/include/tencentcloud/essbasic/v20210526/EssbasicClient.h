@@ -924,7 +924,8 @@ namespace TencentCloud
                 ChannelCreateUserAutoSignSealUrlOutcomeCallable ChannelCreateUserAutoSignSealUrlCallable(const Model::ChannelCreateUserAutoSignSealUrlRequest& request);
 
                 /**
-                 *通过此接口，绑定员工角色，支持以电子签userId、客户系统userId两种方式调用。
+                 *使用此接口，用来绑定企业实名员工的角色，
+支持以电子签userId、客户系统openId两种方式进行绑定。
                  * @param req ChannelCreateUserRolesRequest
                  * @return ChannelCreateUserRolesOutcome
                  */
