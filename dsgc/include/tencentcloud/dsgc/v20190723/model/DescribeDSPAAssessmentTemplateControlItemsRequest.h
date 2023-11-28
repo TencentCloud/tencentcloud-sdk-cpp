@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DspaIdHasBeenSet() const;
 
                     /**
-                     * 获取评估模版Id。格式“template-xxxxxxxx”
-                     * @return TemplateId 评估模版Id。格式“template-xxxxxxxx”
+                     * 获取评估模板Id。格式“template-xxxxxxxx”
+                     * @return TemplateId 评估模板Id。格式“template-xxxxxxxx”
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置评估模版Id。格式“template-xxxxxxxx”
-                     * @param _templateId 评估模版Id。格式“template-xxxxxxxx”
+                     * 设置评估模板Id。格式“template-xxxxxxxx”
+                     * @param _templateId 评估模板Id。格式“template-xxxxxxxx”
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -181,7 +181,7 @@ Status：评估项启用状态，draft / launched
                     bool m_dspaIdHasBeenSet;
 
                     /**
-                     * 评估模版Id。格式“template-xxxxxxxx”
+                     * 评估模板Id。格式“template-xxxxxxxx”
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

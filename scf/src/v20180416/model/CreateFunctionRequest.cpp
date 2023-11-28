@@ -51,7 +51,9 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_autoCreateClsTopicHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
     m_protocolParamsHasBeenSet(false),
-    m_instanceConcurrencyConfigHasBeenSet(false)
+    m_instanceConcurrencyConfigHasBeenSet(false),
+    m_dnsCacheHasBeenSet(false),
+    m_intranetConfigHasBeenSet(false)
 {
 }
 
@@ -314,6 +316,23 @@ string CreateFunctionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceConcurrencyConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dnsCacheHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsCache";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dnsCache.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intranetConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intranetConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -786,6 +805,38 @@ void CreateFunctionRequest::SetInstanceConcurrencyConfig(const InstanceConcurren
 bool CreateFunctionRequest::InstanceConcurrencyConfigHasBeenSet() const
 {
     return m_instanceConcurrencyConfigHasBeenSet;
+}
+
+string CreateFunctionRequest::GetDnsCache() const
+{
+    return m_dnsCache;
+}
+
+void CreateFunctionRequest::SetDnsCache(const string& _dnsCache)
+{
+    m_dnsCache = _dnsCache;
+    m_dnsCacheHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::DnsCacheHasBeenSet() const
+{
+    return m_dnsCacheHasBeenSet;
+}
+
+IntranetConfigIn CreateFunctionRequest::GetIntranetConfig() const
+{
+    return m_intranetConfig;
+}
+
+void CreateFunctionRequest::SetIntranetConfig(const IntranetConfigIn& _intranetConfig)
+{
+    m_intranetConfig = _intranetConfig;
+    m_intranetConfigHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::IntranetConfigHasBeenSet() const
+{
+    return m_intranetConfigHasBeenSet;
 }
 
 

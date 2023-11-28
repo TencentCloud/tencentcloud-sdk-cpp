@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取评估模版Id，格式“template-xxxxxxxx”
-                     * @return TemplateId 评估模版Id，格式“template-xxxxxxxx”
+                     * 获取评估模板Id，格式“template-xxxxxxxx”
+                     * @return TemplateId 评估模板Id，格式“template-xxxxxxxx”
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置评估模版Id，格式“template-xxxxxxxx”
-                     * @param _templateId 评估模版Id，格式“template-xxxxxxxx”
+                     * 设置评估模板Id，格式“template-xxxxxxxx”
+                     * @param _templateId 评估模板Id，格式“template-xxxxxxxx”
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool BusinessOwnerHasBeenSet() const;
 
                     /**
-                     * 获取分类分级模版Id
-                     * @return ComplianceId 分类分级模版Id
+                     * 获取分类分级模板Id
+                     * @return ComplianceId 分类分级模板Id
                      * 
                      */
                     int64_t GetComplianceId() const;
 
                     /**
-                     * 设置分类分级模版Id
-                     * @param _complianceId 分类分级模版Id
+                     * 设置分类分级模板Id
+                     * @param _complianceId 分类分级模板Id
                      * 
                      */
                     void SetComplianceId(const int64_t& _complianceId);
@@ -247,7 +247,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 评估模版Id，格式“template-xxxxxxxx”
+                     * 评估模板Id，格式“template-xxxxxxxx”
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -271,7 +271,7 @@ namespace TencentCloud
                     bool m_businessOwnerHasBeenSet;
 
                     /**
-                     * 分类分级模版Id
+                     * 分类分级模板Id
                      */
                     int64_t m_complianceId;
                     bool m_complianceIdHasBeenSet;

@@ -857,6 +857,34 @@ EVENT_ADD_WHITE：已加白
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取Namespace
+                     * @return Namespace Namespace
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取工作负载类型
+                     * @return WorkloadType 工作负载类型
+                     * 
+                     */
+                    std::string GetWorkloadType() const;
+
+                    /**
+                     * 判断参数 WorkloadType 是否已赋值
+                     * @return WorkloadType 是否已赋值
+                     * 
+                     */
+                    bool WorkloadTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1211,6 +1239,18 @@ EVENT_ADD_WHITE：已加白
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * Namespace
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 工作负载类型
+                     */
+                    std::string m_workloadType;
+                    bool m_workloadTypeHasBeenSet;
 
                 };
             }

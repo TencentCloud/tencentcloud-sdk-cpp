@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool IdentifyComplianceIdHasBeenSet() const;
 
                     /**
-                     * 获取分类分级模版名称
-                     * @return IdentifyComplianceName 分类分级模版名称
+                     * 获取分类分级模板名称
+                     * @return IdentifyComplianceName 分类分级模板名称
                      * 
                      */
                     std::string GetIdentifyComplianceName() const;
@@ -143,7 +143,7 @@ namespace TencentCloud
                     bool m_identifyComplianceIdHasBeenSet;
 
                     /**
-                     * 分类分级模版名称
+                     * 分类分级模板名称
                      */
                     std::string m_identifyComplianceName;
                     bool m_identifyComplianceNameHasBeenSet;

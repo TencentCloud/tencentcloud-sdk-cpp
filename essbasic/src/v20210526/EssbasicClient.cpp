@@ -2233,6 +2233,49 @@ EssbasicClient::DescribeChannelFlowEvidenceReportOutcomeCallable EssbasicClient:
     return task->get_future();
 }
 
+EssbasicClient::DescribeChannelSealPolicyWorkflowUrlOutcome EssbasicClient::DescribeChannelSealPolicyWorkflowUrl(const DescribeChannelSealPolicyWorkflowUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChannelSealPolicyWorkflowUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChannelSealPolicyWorkflowUrlResponse rsp = DescribeChannelSealPolicyWorkflowUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChannelSealPolicyWorkflowUrlOutcome(rsp);
+        else
+            return DescribeChannelSealPolicyWorkflowUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChannelSealPolicyWorkflowUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeChannelSealPolicyWorkflowUrlAsync(const DescribeChannelSealPolicyWorkflowUrlRequest& request, const DescribeChannelSealPolicyWorkflowUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChannelSealPolicyWorkflowUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeChannelSealPolicyWorkflowUrlOutcomeCallable EssbasicClient::DescribeChannelSealPolicyWorkflowUrlCallable(const DescribeChannelSealPolicyWorkflowUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChannelSealPolicyWorkflowUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChannelSealPolicyWorkflowUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::DescribeExtendedServiceAuthInfoOutcome EssbasicClient::DescribeExtendedServiceAuthInfo(const DescribeExtendedServiceAuthInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExtendedServiceAuthInfo");

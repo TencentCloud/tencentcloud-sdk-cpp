@@ -84,15 +84,15 @@ AnalyzeTaskType_MediaStream：音视频体验
                     bool AnalyzeTaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取指标类型，指标查询默认传gauge
-                     * @return MetricType 指标类型，指标查询默认传gauge
+                     * 获取指标类型（counter、gauge以及histogram），指标查询默认传gauge
+                     * @return MetricType 指标类型（counter、gauge以及histogram），指标查询默认传gauge
                      * 
                      */
                     std::string GetMetricType() const;
 
                     /**
-                     * 设置指标类型，指标查询默认传gauge
-                     * @param _metricType 指标类型，指标查询默认传gauge
+                     * 设置指标类型（counter、gauge以及histogram），指标查询默认传gauge
+                     * @param _metricType 指标类型（counter、gauge以及histogram），指标查询默认传gauge
                      * 
                      */
                     void SetMetricType(const std::string& _metricType);
@@ -105,15 +105,15 @@ AnalyzeTaskType_MediaStream：音视频体验
                     bool MetricTypeHasBeenSet() const;
 
                     /**
-                     * 获取指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如："avg(ping_time)"代表整体时延(ms)
-                     * @return Field 指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如："avg(ping_time)"代表整体时延(ms)
+                     * 获取指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如："avg(ping_time)"代表整体时延(ms)；不同的任务类型支持不同的field查询，以及聚合规则，详情可联系云拨测。
+                     * @return Field 指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如："avg(ping_time)"代表整体时延(ms)；不同的任务类型支持不同的field查询，以及聚合规则，详情可联系云拨测。
                      * 
                      */
                     std::string GetField() const;
 
                     /**
-                     * 设置指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如："avg(ping_time)"代表整体时延(ms)
-                     * @param _field 指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如："avg(ping_time)"代表整体时延(ms)
+                     * 设置指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如："avg(ping_time)"代表整体时延(ms)；不同的任务类型支持不同的field查询，以及聚合规则，详情可联系云拨测。
+                     * @param _field 指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如："avg(ping_time)"代表整体时延(ms)；不同的任务类型支持不同的field查询，以及聚合规则，详情可联系云拨测。
                      * 
                      */
                     void SetField(const std::string& _field);
@@ -206,13 +206,13 @@ AnalyzeTaskType_MediaStream：音视频体验
                     bool m_analyzeTaskTypeHasBeenSet;
 
                     /**
-                     * 指标类型，指标查询默认传gauge
+                     * 指标类型（counter、gauge以及histogram），指标查询默认传gauge
                      */
                     std::string m_metricType;
                     bool m_metricTypeHasBeenSet;
 
                     /**
-                     * 指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如："avg(ping_time)"代表整体时延(ms)
+                     * 指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如："avg(ping_time)"代表整体时延(ms)；不同的任务类型支持不同的field查询，以及聚合规则，详情可联系云拨测。
                      */
                     std::string m_field;
                     bool m_fieldHasBeenSet;

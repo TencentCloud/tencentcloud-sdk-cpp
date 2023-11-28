@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DSGC_V20190723_MODEL_COPYDSPATEMPLATERESPONSE_H_
-#define TENCENTCLOUD_DSGC_V20190723_MODEL_COPYDSPATEMPLATERESPONSE_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_SETVODDOMAINCERTIFICATERESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_SETVODDOMAINCERTIFICATERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,25 @@
 
 namespace TencentCloud
 {
-    namespace Dsgc
+    namespace Vod
     {
-        namespace V20190723
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * CopyDSPATemplate返回参数结构体
+                * SetVodDomainCertificate返回参数结构体
                 */
-                class CopyDSPATemplateResponse : public AbstractModel
+                class SetVodDomainCertificateResponse : public AbstractModel
                 {
                 public:
-                    CopyDSPATemplateResponse();
-                    ~CopyDSPATemplateResponse() = default;
+                    SetVodDomainCertificateResponse();
+                    ~SetVodDomainCertificateResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
-                    /**
-                     * 获取模板id
-                     * @return TemplateId 模板id
-                     * 
-                     */
-                    int64_t GetTemplateId() const;
-
-                    /**
-                     * 判断参数 TemplateId 是否已赋值
-                     * @return TemplateId 是否已赋值
-                     * 
-                     */
-                    bool TemplateIdHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 模板id
-                     */
-                    int64_t m_templateId;
-                    bool m_templateIdHasBeenSet;
 
                 };
             }
@@ -71,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DSGC_V20190723_MODEL_COPYDSPATEMPLATERESPONSE_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_SETVODDOMAINCERTIFICATERESPONSE_H_

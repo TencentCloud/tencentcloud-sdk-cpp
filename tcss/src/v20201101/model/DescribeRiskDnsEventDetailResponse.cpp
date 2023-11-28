@@ -77,7 +77,9 @@ DescribeRiskDnsEventDetailResponse::DescribeRiskDnsEventDetailResponse() :
     m_podStatusHasBeenSet(false),
     m_nodeUniqueIDHasBeenSet(false),
     m_nodeIDHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_workloadTypeHasBeenSet(false)
 {
 }
 
@@ -658,6 +660,26 @@ CoreInternalOutcome DescribeRiskDnsEventDetailResponse::Deserialize(const string
         m_clusterNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Namespace") && !rsp["Namespace"].IsNull())
+    {
+        if (!rsp["Namespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Namespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespace = string(rsp["Namespace"].GetString());
+        m_namespaceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WorkloadType") && !rsp["WorkloadType"].IsNull())
+    {
+        if (!rsp["WorkloadType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkloadType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workloadType = string(rsp["WorkloadType"].GetString());
+        m_workloadTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1103,6 +1125,22 @@ string DescribeRiskDnsEventDetailResponse::ToJsonString() const
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workloadTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkloadType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workloadType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1655,6 +1693,26 @@ string DescribeRiskDnsEventDetailResponse::GetClusterName() const
 bool DescribeRiskDnsEventDetailResponse::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string DescribeRiskDnsEventDetailResponse::GetNamespace() const
+{
+    return m_namespace;
+}
+
+bool DescribeRiskDnsEventDetailResponse::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string DescribeRiskDnsEventDetailResponse::GetWorkloadType() const
+{
+    return m_workloadType;
+}
+
+bool DescribeRiskDnsEventDetailResponse::WorkloadTypeHasBeenSet() const
+{
+    return m_workloadTypeHasBeenSet;
 }
 
 

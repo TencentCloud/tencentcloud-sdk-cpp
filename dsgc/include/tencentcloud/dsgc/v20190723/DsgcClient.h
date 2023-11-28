@@ -808,7 +808,7 @@ namespace TencentCloud
                 BindDSPAResourceDatabasesOutcomeCallable BindDSPAResourceDatabasesCallable(const Model::BindDSPAResourceDatabasesRequest& request);
 
                 /**
-                 *复制合规组模版
+                 *复制合规组模板
                  * @param req CopyDSPATemplateRequest
                  * @return CopyDSPATemplateOutcome
                  */
@@ -853,7 +853,7 @@ namespace TencentCloud
                 CreateDSPAAssessmentRiskLevelOutcomeCallable CreateDSPAAssessmentRiskLevelCallable(const Model::CreateDSPAAssessmentRiskLevelRequest& request);
 
                 /**
-                 *风险评估模版---创建风险评估模版
+                 *风险评估模板---创建风险评估模板
                  * @param req CreateDSPAAssessmentRiskTemplateRequest
                  * @return CreateDSPAAssessmentRiskTemplateOutcome
                  */
@@ -1313,7 +1313,7 @@ namespace TencentCloud
                 DescribeDSPAAssessmentRiskSideListOutcomeCallable DescribeDSPAAssessmentRiskSideListCallable(const Model::DescribeDSPAAssessmentRiskSideListRequest& request);
 
                 /**
-                 *风险项页面--查看评估模版详情
+                 *风险项页面--查看评估模板详情
                  * @param req DescribeDSPAAssessmentRiskTemplateDetailRequest
                  * @return DescribeDSPAAssessmentRiskTemplateDetailOutcome
                  */
@@ -1322,7 +1322,7 @@ namespace TencentCloud
                 DescribeDSPAAssessmentRiskTemplateDetailOutcomeCallable DescribeDSPAAssessmentRiskTemplateDetailCallable(const Model::DescribeDSPAAssessmentRiskTemplateDetailRequest& request);
 
                 /**
-                 *风险模版页面--查询风险模版中的脆弱项配置
+                 *风险模板页面--查询风险模板中的脆弱项配置
                  * @param req DescribeDSPAAssessmentRiskTemplateVulnerableListRequest
                  * @return DescribeDSPAAssessmentRiskTemplateVulnerableListOutcome
                  */
@@ -1910,7 +1910,7 @@ namespace TencentCloud
                 ModifyDSPAAssessmentRiskLevelOutcomeCallable ModifyDSPAAssessmentRiskLevelCallable(const Model::ModifyDSPAAssessmentRiskLevelRequest& request);
 
                 /**
-                 *风险模版---修改风险模版
+                 *风险模板---修改风险模板
                  * @param req ModifyDSPAAssessmentRiskTemplateRequest
                  * @return ModifyDSPAAssessmentRiskTemplateOutcome
                  */

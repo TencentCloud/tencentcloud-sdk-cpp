@@ -57,6 +57,40 @@ namespace TencentCloud
                      */
                     bool AssetSyncLastTimeHasBeenSet() const;
 
+                    /**
+                     * 获取任务状态
+PENDING:待处理
+PROCESSING:处理中
+PROCESSED:已完成
+                     * @return TaskStatus 任务状态
+PENDING:待处理
+PROCESSING:处理中
+PROCESSED:已完成
+                     * 
+                     */
+                    std::string GetTaskStatus() const;
+
+                    /**
+                     * 判断参数 TaskStatus 是否已赋值
+                     * @return TaskStatus 是否已赋值
+                     * 
+                     */
+                    bool TaskStatusHasBeenSet() const;
+
+                    /**
+                     * 获取任务进度(百分比)
+                     * @return TaskProcess 任务进度(百分比)
+                     * 
+                     */
+                    int64_t GetTaskProcess() const;
+
+                    /**
+                     * 判断参数 TaskProcess 是否已赋值
+                     * @return TaskProcess 是否已赋值
+                     * 
+                     */
+                    bool TaskProcessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +98,21 @@ namespace TencentCloud
                      */
                     std::string m_assetSyncLastTime;
                     bool m_assetSyncLastTimeHasBeenSet;
+
+                    /**
+                     * 任务状态
+PENDING:待处理
+PROCESSING:处理中
+PROCESSED:已完成
+                     */
+                    std::string m_taskStatus;
+                    bool m_taskStatusHasBeenSet;
+
+                    /**
+                     * 任务进度(百分比)
+                     */
+                    int64_t m_taskProcess;
+                    bool m_taskProcessHasBeenSet;
 
                 };
             }

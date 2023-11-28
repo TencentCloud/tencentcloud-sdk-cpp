@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取评估模版id
-                     * @return TemplateId 评估模版id
+                     * 获取评估模板id
+                     * @return TemplateId 评估模板id
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置评估模版id
-                     * @param _templateId 评估模版id
+                     * 设置评估模板id
+                     * @param _templateId 评估模板id
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 评估模版id
+                     * 评估模板id
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

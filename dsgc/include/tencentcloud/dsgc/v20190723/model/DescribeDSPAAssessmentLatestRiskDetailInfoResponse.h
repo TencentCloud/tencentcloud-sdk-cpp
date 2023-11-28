@@ -96,9 +96,9 @@ namespace TencentCloud
                     bool AssetNameHasBeenSet() const;
 
                     /**
-                     * 获取风险评估模版id
+                     * 获取风险评估模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AssessmentTemplateId 风险评估模版id
+                     * @return AssessmentTemplateId 风险评估模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -112,9 +112,9 @@ namespace TencentCloud
                     bool AssessmentTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取分类分级的模版id
+                     * 获取分类分级的模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdentifyTemplateId 分类分级的模版id
+                     * @return IdentifyTemplateId 分类分级的模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -375,14 +375,14 @@ namespace TencentCloud
                     bool m_assetNameHasBeenSet;
 
                     /**
-                     * 风险评估模版id
+                     * 风险评估模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_assessmentTemplateId;
                     bool m_assessmentTemplateIdHasBeenSet;
 
                     /**
-                     * 分类分级的模版id
+                     * 分类分级的模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_identifyTemplateId;

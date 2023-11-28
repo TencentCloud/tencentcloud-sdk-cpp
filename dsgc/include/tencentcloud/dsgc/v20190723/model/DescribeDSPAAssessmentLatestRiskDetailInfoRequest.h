@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DspaIdHasBeenSet() const;
 
                     /**
-                     * 获取评估模版id
-                     * @return TemplateId 评估模版id
+                     * 获取评估模板id
+                     * @return TemplateId 评估模板id
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置评估模版id
-                     * @param _templateId 评估模版id
+                     * 设置评估模板id
+                     * @param _templateId 评估模板id
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_dspaIdHasBeenSet;
 
                     /**
-                     * 评估模版id
+                     * 评估模板id
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

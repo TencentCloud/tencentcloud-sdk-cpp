@@ -155,6 +155,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ResourceTag.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrFullTextResultOutput.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskHighlightResult.h
+  include/tencentcloud/vod/v20180717/model/SetVodDomainCertificateRequest.h
   include/tencentcloud/vod/v20180717/model/CreateRebuildMediaTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrWordsResultOutput.h
   include/tencentcloud/vod/v20180717/model/AiSampleFaceInfo.h
@@ -379,6 +380,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/CopyRightWatermarkInput.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskHeadTailResultOutput.h
   include/tencentcloud/vod/v20180717/model/ModifyImageSpriteTemplateResponse.h
+  include/tencentcloud/vod/v20180717/model/SetVodDomainCertificateResponse.h
   include/tencentcloud/vod/v20180717/model/ExtractTraceWatermarkTaskOutput.h
   include/tencentcloud/vod/v20180717/model/MediaProcessTaskCoverBySnapshotResult.h
   include/tencentcloud/vod/v20180717/model/CreateWatermarkTemplateRequest.h
@@ -930,6 +932,7 @@ set(vod_src
   src/v20180717/model/ResourceTag.cpp
   src/v20180717/model/AiRecognitionTaskOcrFullTextResultOutput.cpp
   src/v20180717/model/AiAnalysisTaskHighlightResult.cpp
+  src/v20180717/model/SetVodDomainCertificateRequest.cpp
   src/v20180717/model/CreateRebuildMediaTemplateResponse.cpp
   src/v20180717/model/AiRecognitionTaskOcrWordsResultOutput.cpp
   src/v20180717/model/AiSampleFaceInfo.cpp
@@ -1154,6 +1157,7 @@ set(vod_src
   src/v20180717/model/CopyRightWatermarkInput.cpp
   src/v20180717/model/AiRecognitionTaskHeadTailResultOutput.cpp
   src/v20180717/model/ModifyImageSpriteTemplateResponse.cpp
+  src/v20180717/model/SetVodDomainCertificateResponse.cpp
   src/v20180717/model/ExtractTraceWatermarkTaskOutput.cpp
   src/v20180717/model/MediaProcessTaskCoverBySnapshotResult.cpp
   src/v20180717/model/CreateWatermarkTemplateRequest.cpp

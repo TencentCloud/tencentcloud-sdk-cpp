@@ -56,6 +56,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowRemindsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyResponse.h
+  include/tencentcloud/essbasic/v20210526/model/FormField.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverUrlInfo.h
@@ -106,7 +107,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoRequest.h
-  include/tencentcloud/essbasic/v20210526/model/FormField.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeChannelSealPolicyWorkflowUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/FlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/UserInfo.h
   include/tencentcloud/essbasic/v20210526/model/TaskInfo.h
@@ -193,6 +194,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/UsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateRequest.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeChannelSealPolicyWorkflowUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportResponse.h
   include/tencentcloud/essbasic/v20210526/model/SyncFailReason.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesResponse.h
@@ -374,6 +376,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreatePrepareFlowRequest.cpp
   src/v20210526/model/ChannelCreateFlowRemindsRequest.cpp
   src/v20210526/model/ChannelCreateSealPolicyResponse.cpp
+  src/v20210526/model/FormField.cpp
   src/v20210526/model/ChannelCancelFlowResponse.cpp
   src/v20210526/model/DownloadFlowInfo.cpp
   src/v20210526/model/FlowApproverUrlInfo.cpp
@@ -424,7 +427,7 @@ set(essbasic_src
   src/v20210526/model/ChannelDescribeOrganizationSealsRequest.cpp
   src/v20210526/model/DescribeUsageRequest.cpp
   src/v20210526/model/DescribeExtendedServiceAuthInfoRequest.cpp
-  src/v20210526/model/FormField.cpp
+  src/v20210526/model/DescribeChannelSealPolicyWorkflowUrlRequest.cpp
   src/v20210526/model/FlowInfo.cpp
   src/v20210526/model/UserInfo.cpp
   src/v20210526/model/TaskInfo.cpp
@@ -511,6 +514,7 @@ set(essbasic_src
   src/v20210526/model/UsageDetail.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.cpp
   src/v20210526/model/OperateChannelTemplateRequest.cpp
+  src/v20210526/model/DescribeChannelSealPolicyWorkflowUrlResponse.cpp
   src/v20210526/model/CreateChannelFlowEvidenceReportResponse.cpp
   src/v20210526/model/SyncFailReason.cpp
   src/v20210526/model/ChannelDescribeEmployeesResponse.cpp

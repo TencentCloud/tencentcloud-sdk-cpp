@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DspaIdHasBeenSet() const;
 
                     /**
-                     * 获取模版名称
-                     * @return TemplateName 模版名称
+                     * 获取模板名称
+                     * @return TemplateName 模板名称
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模版名称
-                     * @param _templateName 模版名称
+                     * 设置模板名称
+                     * @param _templateName 模板名称
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取模版的描述
-                     * @return TemplateDescription 模版的描述
+                     * 获取模板的描述
+                     * @return TemplateDescription 模板的描述
                      * 
                      */
                     std::string GetTemplateDescription() const;
 
                     /**
-                     * 设置模版的描述
-                     * @param _templateDescription 模版的描述
+                     * 设置模板的描述
+                     * @param _templateDescription 模板的描述
                      * 
                      */
                     void SetTemplateDescription(const std::string& _templateDescription);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TemplateDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模版id
-                     * @return TemplateId 模版id
+                     * 获取模板id
+                     * @return TemplateId 模板id
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模版id
-                     * @param _templateId 模版id
+                     * 设置模板id
+                     * @param _templateId 模板id
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -177,19 +177,19 @@ namespace TencentCloud
                     bool m_dspaIdHasBeenSet;
 
                     /**
-                     * 模版名称
+                     * 模板名称
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 模版的描述
+                     * 模板的描述
                      */
                     std::string m_templateDescription;
                     bool m_templateDescriptionHasBeenSet;
 
                     /**
-                     * 模版id
+                     * 模板id
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

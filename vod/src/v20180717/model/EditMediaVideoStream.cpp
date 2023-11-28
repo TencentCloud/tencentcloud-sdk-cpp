@@ -21,6 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 EditMediaVideoStream::EditMediaVideoStream() :
+    m_codecHasBeenSet(false),
+    m_bitrateHasBeenSet(false),
     m_resolutionAdaptiveHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
@@ -32,6 +34,26 @@ CoreInternalOutcome EditMediaVideoStream::Deserialize(const rapidjson::Value &va
 {
     string requestId = "";
 
+
+    if (value.HasMember("Codec") && !value["Codec"].IsNull())
+    {
+        if (!value["Codec"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EditMediaVideoStream.Codec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codec = string(value["Codec"].GetString());
+        m_codecHasBeenSet = true;
+    }
+
+    if (value.HasMember("Bitrate") && !value["Bitrate"].IsNull())
+    {
+        if (!value["Bitrate"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EditMediaVideoStream.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bitrate = value["Bitrate"].GetUint64();
+        m_bitrateHasBeenSet = true;
+    }
 
     if (value.HasMember("ResolutionAdaptive") && !value["ResolutionAdaptive"].IsNull())
     {
@@ -80,6 +102,22 @@ CoreInternalOutcome EditMediaVideoStream::Deserialize(const rapidjson::Value &va
 void EditMediaVideoStream::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_codecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Codec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bitrateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bitrate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bitrate, allocator);
+    }
+
     if (m_resolutionAdaptiveHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -114,6 +152,38 @@ void EditMediaVideoStream::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
 
 }
 
+
+string EditMediaVideoStream::GetCodec() const
+{
+    return m_codec;
+}
+
+void EditMediaVideoStream::SetCodec(const string& _codec)
+{
+    m_codec = _codec;
+    m_codecHasBeenSet = true;
+}
+
+bool EditMediaVideoStream::CodecHasBeenSet() const
+{
+    return m_codecHasBeenSet;
+}
+
+uint64_t EditMediaVideoStream::GetBitrate() const
+{
+    return m_bitrate;
+}
+
+void EditMediaVideoStream::SetBitrate(const uint64_t& _bitrate)
+{
+    m_bitrate = _bitrate;
+    m_bitrateHasBeenSet = true;
+}
+
+bool EditMediaVideoStream::BitrateHasBeenSet() const
+{
+    return m_bitrateHasBeenSet;
+}
 
 string EditMediaVideoStream::GetResolutionAdaptive() const
 {

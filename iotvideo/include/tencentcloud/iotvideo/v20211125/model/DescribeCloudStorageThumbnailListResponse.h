@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DSGC_V20190723_MODEL_COPYDSPATEMPLATERESPONSE_H_
-#define TENCENTCLOUD_DSGC_V20190723_MODEL_COPYDSPATEMPLATERESPONSE_H_
+#ifndef TENCENTCLOUD_IOTVIDEO_V20211125_MODEL_DESCRIBECLOUDSTORAGETHUMBNAILLISTRESPONSE_H_
+#define TENCENTCLOUD_IOTVIDEO_V20211125_MODEL_DESCRIBECLOUDSTORAGETHUMBNAILLISTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotvideo/v20211125/model/ThumbnailURLInfoList.h>
 
 
 namespace TencentCloud
 {
-    namespace Dsgc
+    namespace Iotvideo
     {
-        namespace V20190723
+        namespace V20211125
         {
             namespace Model
             {
                 /**
-                * CopyDSPATemplate返回参数结构体
+                * DescribeCloudStorageThumbnailList返回参数结构体
                 */
-                class CopyDSPATemplateResponse : public AbstractModel
+                class DescribeCloudStorageThumbnailListResponse : public AbstractModel
                 {
                 public:
-                    CopyDSPATemplateResponse();
-                    ~CopyDSPATemplateResponse() = default;
+                    DescribeCloudStorageThumbnailListResponse();
+                    ~DescribeCloudStorageThumbnailListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取模板id
-                     * @return TemplateId 模板id
+                     * 获取缩略图访问地址
+                     * @return ThumbnailURLInfoList 缩略图访问地址
                      * 
                      */
-                    int64_t GetTemplateId() const;
+                    std::vector<ThumbnailURLInfoList> GetThumbnailURLInfoList() const;
 
                     /**
-                     * 判断参数 TemplateId 是否已赋值
-                     * @return TemplateId 是否已赋值
+                     * 判断参数 ThumbnailURLInfoList 是否已赋值
+                     * @return ThumbnailURLInfoList 是否已赋值
                      * 
                      */
-                    bool TemplateIdHasBeenSet() const;
+                    bool ThumbnailURLInfoListHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 模板id
+                     * 缩略图访问地址
                      */
-                    int64_t m_templateId;
-                    bool m_templateIdHasBeenSet;
+                    std::vector<ThumbnailURLInfoList> m_thumbnailURLInfoList;
+                    bool m_thumbnailURLInfoListHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DSGC_V20190723_MODEL_COPYDSPATEMPLATERESPONSE_H_
+#endif // !TENCENTCLOUD_IOTVIDEO_V20211125_MODEL_DESCRIBECLOUDSTORAGETHUMBNAILLISTRESPONSE_H_

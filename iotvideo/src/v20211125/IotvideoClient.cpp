@@ -1846,6 +1846,49 @@ IotvideoClient::DescribeCloudStorageThumbnailOutcomeCallable IotvideoClient::Des
     return task->get_future();
 }
 
+IotvideoClient::DescribeCloudStorageThumbnailListOutcome IotvideoClient::DescribeCloudStorageThumbnailList(const DescribeCloudStorageThumbnailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageThumbnailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageThumbnailListResponse rsp = DescribeCloudStorageThumbnailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageThumbnailListOutcome(rsp);
+        else
+            return DescribeCloudStorageThumbnailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageThumbnailListOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCloudStorageThumbnailListAsync(const DescribeCloudStorageThumbnailListRequest& request, const DescribeCloudStorageThumbnailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageThumbnailList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCloudStorageThumbnailListOutcomeCallable IotvideoClient::DescribeCloudStorageThumbnailListCallable(const DescribeCloudStorageThumbnailListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageThumbnailListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageThumbnailList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeCloudStorageTimeOutcome IotvideoClient::DescribeCloudStorageTime(const DescribeCloudStorageTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudStorageTime");

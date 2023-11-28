@@ -43,7 +43,8 @@ Address::Address() :
     m_deadlineDateHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_egressHasBeenSet(false),
-    m_antiDDoSPackageIdHasBeenSet(false)
+    m_antiDDoSPackageIdHasBeenSet(false),
+    m_renewFlagHasBeenSet(false)
 {
 }
 
@@ -299,6 +300,16 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
         m_antiDDoSPackageIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    {
+        if (!value["RenewFlag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Address.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = string(value["RenewFlag"].GetString());
+        m_renewFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +507,14 @@ void Address::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "AntiDDoSPackageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_antiDDoSPackageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -867,5 +886,21 @@ void Address::SetAntiDDoSPackageId(const string& _antiDDoSPackageId)
 bool Address::AntiDDoSPackageIdHasBeenSet() const
 {
     return m_antiDDoSPackageIdHasBeenSet;
+}
+
+string Address::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void Address::SetRenewFlag(const string& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool Address::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
 }
 

@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool CosRemainQuotaHasBeenSet() const;
 
                     /**
-                     * 获取COS存储量单位，比如TB。
-                     * @return CosQuotaUnit COS存储量单位，比如TB。
+                     * 获取COS存储量单位，例如TB。
+                     * @return CosQuotaUnit COS存储量单位，例如TB。
                      * 
                      */
                     std::string GetCosQuotaUnit() const;
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_cosRemainQuotaHasBeenSet;
 
                     /**
-                     * COS存储量单位，比如TB。
+                     * COS存储量单位，例如TB。
                      */
                     std::string m_cosQuotaUnit;
                     bool m_cosQuotaUnitHasBeenSet;

@@ -595,6 +595,35 @@ namespace TencentCloud
                      */
                     bool AntiDDoSPackageIdHasBeenSet() const;
 
+                    /**
+                     * 获取当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:
+<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
+
+                     * @return RenewFlag 当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:
+<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
+
+                     * 
+                     */
+                    std::string GetRenewFlag() const;
+
+                    /**
+                     * 设置当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:
+<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
+
+                     * @param _renewFlag 当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:
+<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
+
+                     * 
+                     */
+                    void SetRenewFlag(const std::string& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     * 
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -750,6 +779,14 @@ namespace TencentCloud
                      */
                     std::string m_antiDDoSPackageId;
                     bool m_antiDDoSPackageIdHasBeenSet;
+
+                    /**
+                     * 当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:
+<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
+
+                     */
+                    std::string m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
 
                 };
             }

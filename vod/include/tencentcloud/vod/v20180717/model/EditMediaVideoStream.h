@@ -47,6 +47,68 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取视频流的编码格式，可选值：
+<li>libx264：H.264 编码；</li>
+<li>libx265：H.265 编码；</li>
+<li>av1：AOMedia Video 1 编码；</li>
+<li>H.266：H.266 编码。</li>
+                     * @return Codec 视频流的编码格式，可选值：
+<li>libx264：H.264 编码；</li>
+<li>libx265：H.265 编码；</li>
+<li>av1：AOMedia Video 1 编码；</li>
+<li>H.266：H.266 编码。</li>
+                     * 
+                     */
+                    std::string GetCodec() const;
+
+                    /**
+                     * 设置视频流的编码格式，可选值：
+<li>libx264：H.264 编码；</li>
+<li>libx265：H.265 编码；</li>
+<li>av1：AOMedia Video 1 编码；</li>
+<li>H.266：H.266 编码。</li>
+                     * @param _codec 视频流的编码格式，可选值：
+<li>libx264：H.264 编码；</li>
+<li>libx265：H.265 编码；</li>
+<li>av1：AOMedia Video 1 编码；</li>
+<li>H.266：H.266 编码。</li>
+                     * 
+                     */
+                    void SetCodec(const std::string& _codec);
+
+                    /**
+                     * 判断参数 Codec 是否已赋值
+                     * @return Codec 是否已赋值
+                     * 
+                     */
+                    bool CodecHasBeenSet() const;
+
+                    /**
+                     * 获取视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+当取值为 0 或不填时，表示自动选择最佳视频码率。
+                     * @return Bitrate 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+当取值为 0 或不填时，表示自动选择最佳视频码率。
+                     * 
+                     */
+                    uint64_t GetBitrate() const;
+
+                    /**
+                     * 设置视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+当取值为 0 或不填时，表示自动选择最佳视频码率。
+                     * @param _bitrate 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+当取值为 0 或不填时，表示自动选择最佳视频码率。
+                     * 
+                     */
+                    void SetBitrate(const uint64_t& _bitrate);
+
+                    /**
+                     * 判断参数 Bitrate 是否已赋值
+                     * @return Bitrate 是否已赋值
+                     * 
+                     */
+                    bool BitrateHasBeenSet() const;
+
+                    /**
                      * 获取分辨率自适应，可选值：
 <li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>
 <li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>
@@ -191,6 +253,23 @@ namespace TencentCloud
                     bool FpsHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 视频流的编码格式，可选值：
+<li>libx264：H.264 编码；</li>
+<li>libx265：H.265 编码；</li>
+<li>av1：AOMedia Video 1 编码；</li>
+<li>H.266：H.266 编码。</li>
+                     */
+                    std::string m_codec;
+                    bool m_codecHasBeenSet;
+
+                    /**
+                     * 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+当取值为 0 或不填时，表示自动选择最佳视频码率。
+                     */
+                    uint64_t m_bitrate;
+                    bool m_bitrateHasBeenSet;
 
                     /**
                      * 分辨率自适应，可选值：

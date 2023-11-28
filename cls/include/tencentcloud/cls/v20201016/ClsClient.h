@@ -999,7 +999,7 @@ namespace TencentCloud
                 DescribeMachineGroupsOutcomeCallable DescribeMachineGroupsCallable(const Model::DescribeMachineGroupsRequest& request);
 
                 /**
-                 *获取制定机器组下的机器状态
+                 *获取指定机器组下的机器状态
                  * @param req DescribeMachinesRequest
                  * @return DescribeMachinesOutcome
                  */

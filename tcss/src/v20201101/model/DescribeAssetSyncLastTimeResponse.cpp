@@ -24,7 +24,9 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeAssetSyncLastTimeResponse::DescribeAssetSyncLastTimeResponse() :
-    m_assetSyncLastTimeHasBeenSet(false)
+    m_assetSyncLastTimeHasBeenSet(false),
+    m_taskStatusHasBeenSet(false),
+    m_taskProcessHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome DescribeAssetSyncLastTimeResponse::Deserialize(const string 
         m_assetSyncLastTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskStatus") && !rsp["TaskStatus"].IsNull())
+    {
+        if (!rsp["TaskStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskStatus = string(rsp["TaskStatus"].GetString());
+        m_taskStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TaskProcess") && !rsp["TaskProcess"].IsNull())
+    {
+        if (!rsp["TaskProcess"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskProcess` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskProcess = rsp["TaskProcess"].GetInt64();
+        m_taskProcessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string DescribeAssetSyncLastTimeResponse::ToJsonString() const
         string key = "AssetSyncLastTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_assetSyncLastTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskProcessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskProcess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskProcess, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ string DescribeAssetSyncLastTimeResponse::GetAssetSyncLastTime() const
 bool DescribeAssetSyncLastTimeResponse::AssetSyncLastTimeHasBeenSet() const
 {
     return m_assetSyncLastTimeHasBeenSet;
+}
+
+string DescribeAssetSyncLastTimeResponse::GetTaskStatus() const
+{
+    return m_taskStatus;
+}
+
+bool DescribeAssetSyncLastTimeResponse::TaskStatusHasBeenSet() const
+{
+    return m_taskStatusHasBeenSet;
+}
+
+int64_t DescribeAssetSyncLastTimeResponse::GetTaskProcess() const
+{
+    return m_taskProcess;
+}
+
+bool DescribeAssetSyncLastTimeResponse::TaskProcessHasBeenSet() const
+{
+    return m_taskProcessHasBeenSet;
 }
 
 

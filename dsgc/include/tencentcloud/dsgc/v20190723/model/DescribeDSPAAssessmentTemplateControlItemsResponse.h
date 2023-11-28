@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取模版关联的评估项列表
-                     * @return Items 模版关联的评估项列表
+                     * 获取模板关联的评估项列表
+                     * @return Items 模板关联的评估项列表
                      * 
                      */
                     std::vector<AssessmentControlItem> GetItems() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 模版关联的评估项列表
+                     * 模板关联的评估项列表
                      */
                     std::vector<AssessmentControlItem> m_items;
                     bool m_itemsHasBeenSet;

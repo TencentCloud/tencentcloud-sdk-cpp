@@ -64,7 +64,9 @@ VulDefenceEventDetail::VulDefenceEventDetail() :
     m_nodeUniqueIDHasBeenSet(false),
     m_nodeSubNetIDHasBeenSet(false),
     m_clusterIDHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_workloadTypeHasBeenSet(false)
 {
 }
 
@@ -526,6 +528,26 @@ CoreInternalOutcome VulDefenceEventDetail::Deserialize(const rapidjson::Value &v
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
+    {
+        if (!value["Namespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespace = string(value["Namespace"].GetString());
+        m_namespaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkloadType") && !value["WorkloadType"].IsNull())
+    {
+        if (!value["WorkloadType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.WorkloadType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workloadType = string(value["WorkloadType"].GetString());
+        m_workloadTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -895,6 +917,22 @@ void VulDefenceEventDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workloadTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkloadType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workloadType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1602,5 +1640,37 @@ void VulDefenceEventDetail::SetClusterName(const string& _clusterName)
 bool VulDefenceEventDetail::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void VulDefenceEventDetail::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetWorkloadType() const
+{
+    return m_workloadType;
+}
+
+void VulDefenceEventDetail::SetWorkloadType(const string& _workloadType)
+{
+    m_workloadType = _workloadType;
+    m_workloadTypeHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::WorkloadTypeHasBeenSet() const
+{
+    return m_workloadTypeHasBeenSet;
 }
 

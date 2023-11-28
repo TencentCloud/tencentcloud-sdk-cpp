@@ -49,7 +49,9 @@ RunTimeEventBaseInfo::RunTimeEventBaseInfo() :
     m_clusterIDHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_nodeUniqueIDHasBeenSet(false),
-    m_hostIDHasBeenSet(false)
+    m_hostIDHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_workloadTypeHasBeenSet(false)
 {
 }
 
@@ -348,6 +350,26 @@ CoreInternalOutcome RunTimeEventBaseInfo::Deserialize(const rapidjson::Value &va
         m_hostIDHasBeenSet = true;
     }
 
+    if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
+    {
+        if (!value["Namespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunTimeEventBaseInfo.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespace = string(value["Namespace"].GetString());
+        m_namespaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkloadType") && !value["WorkloadType"].IsNull())
+    {
+        if (!value["WorkloadType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunTimeEventBaseInfo.WorkloadType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workloadType = string(value["WorkloadType"].GetString());
+        m_workloadTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +607,22 @@ void RunTimeEventBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "HostID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workloadTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkloadType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workloadType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1052,5 +1090,37 @@ void RunTimeEventBaseInfo::SetHostID(const string& _hostID)
 bool RunTimeEventBaseInfo::HostIDHasBeenSet() const
 {
     return m_hostIDHasBeenSet;
+}
+
+string RunTimeEventBaseInfo::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void RunTimeEventBaseInfo::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool RunTimeEventBaseInfo::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string RunTimeEventBaseInfo::GetWorkloadType() const
+{
+    return m_workloadType;
+}
+
+void RunTimeEventBaseInfo::SetWorkloadType(const string& _workloadType)
+{
+    m_workloadType = _workloadType;
+    m_workloadTypeHasBeenSet = true;
+}
+
+bool RunTimeEventBaseInfo::WorkloadTypeHasBeenSet() const
+{
+    return m_workloadTypeHasBeenSet;
 }
 

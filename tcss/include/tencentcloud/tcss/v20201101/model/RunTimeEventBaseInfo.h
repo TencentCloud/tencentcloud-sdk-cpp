@@ -791,6 +791,48 @@ MountNamespace逃逸、
                      */
                     bool HostIDHasBeenSet() const;
 
+                    /**
+                     * 获取Namespace
+                     * @return Namespace Namespace
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置Namespace
+                     * @param _namespace Namespace
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取WorkloadType
+                     * @return WorkloadType WorkloadType
+                     * 
+                     */
+                    std::string GetWorkloadType() const;
+
+                    /**
+                     * 设置WorkloadType
+                     * @param _workloadType WorkloadType
+                     * 
+                     */
+                    void SetWorkloadType(const std::string& _workloadType);
+
+                    /**
+                     * 判断参数 WorkloadType 是否已赋值
+                     * @return WorkloadType 是否已赋值
+                     * 
+                     */
+                    bool WorkloadTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1000,6 +1042,18 @@ MountNamespace逃逸、
                      */
                     std::string m_hostID;
                     bool m_hostIDHasBeenSet;
+
+                    /**
+                     * Namespace
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * WorkloadType
+                     */
+                    std::string m_workloadType;
+                    bool m_workloadTypeHasBeenSet;
 
                 };
             }

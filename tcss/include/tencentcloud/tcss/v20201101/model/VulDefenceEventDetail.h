@@ -1107,6 +1107,48 @@ namespace TencentCloud
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取Namespace
+                     * @return Namespace Namespace
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置Namespace
+                     * @param _namespace Namespace
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取工作负载
+                     * @return WorkloadType 工作负载
+                     * 
+                     */
+                    std::string GetWorkloadType() const;
+
+                    /**
+                     * 设置工作负载
+                     * @param _workloadType 工作负载
+                     * 
+                     */
+                    void SetWorkloadType(const std::string& _workloadType);
+
+                    /**
+                     * 判断参数 WorkloadType 是否已赋值
+                     * @return WorkloadType 是否已赋值
+                     * 
+                     */
+                    bool WorkloadTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1406,6 +1448,18 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * Namespace
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 工作负载
+                     */
+                    std::string m_workloadType;
+                    bool m_workloadTypeHasBeenSet;
 
                 };
             }

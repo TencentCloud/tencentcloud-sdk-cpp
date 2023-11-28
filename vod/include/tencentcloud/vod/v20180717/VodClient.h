@@ -347,6 +347,8 @@
 #include <tencentcloud/vod/v20180717/model/SearchMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoResponse.h>
+#include <tencentcloud/vod/v20180717/model/SetVodDomainCertificateRequest.h>
+#include <tencentcloud/vod/v20180717/model/SetVodDomainCertificateResponse.h>
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipRequest.h>
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/SplitMediaRequest.h>
@@ -855,6 +857,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetDrmKeyProviderInfoResponse> SetDrmKeyProviderInfoOutcome;
                 typedef std::future<SetDrmKeyProviderInfoOutcome> SetDrmKeyProviderInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SetDrmKeyProviderInfoRequest&, SetDrmKeyProviderInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDrmKeyProviderInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetVodDomainCertificateResponse> SetVodDomainCertificateOutcome;
+                typedef std::future<SetVodDomainCertificateOutcome> SetVodDomainCertificateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::SetVodDomainCertificateRequest&, SetVodDomainCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVodDomainCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::SimpleHlsClipResponse> SimpleHlsClipOutcome;
                 typedef std::future<SimpleHlsClipOutcome> SimpleHlsClipOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SimpleHlsClipRequest&, SimpleHlsClipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SimpleHlsClipAsyncHandler;
@@ -2583,6 +2588,15 @@ namespace TencentCloud
                 SetDrmKeyProviderInfoOutcome SetDrmKeyProviderInfo(const Model::SetDrmKeyProviderInfoRequest &request);
                 void SetDrmKeyProviderInfoAsync(const Model::SetDrmKeyProviderInfoRequest& request, const SetDrmKeyProviderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetDrmKeyProviderInfoOutcomeCallable SetDrmKeyProviderInfoCallable(const Model::SetDrmKeyProviderInfoRequest& request);
+
+                /**
+                 *设置点播域名 HTTPS 证书。
+                 * @param req SetVodDomainCertificateRequest
+                 * @return SetVodDomainCertificateOutcome
+                 */
+                SetVodDomainCertificateOutcome SetVodDomainCertificate(const Model::SetVodDomainCertificateRequest &request);
+                void SetVodDomainCertificateAsync(const Model::SetVodDomainCertificateRequest& request, const SetVodDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetVodDomainCertificateOutcomeCallable SetVodDomainCertificateCallable(const Model::SetVodDomainCertificateRequest& request);
 
                 /**
                  *对 HLS 视频进行按时间段裁剪，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。

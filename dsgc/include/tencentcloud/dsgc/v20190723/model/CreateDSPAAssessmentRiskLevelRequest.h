@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RiskLevelNameHasBeenSet() const;
 
                     /**
-                     * 获取识别模版
-                     * @return IdentifyComplianceId 识别模版
+                     * 获取识别模板
+                     * @return IdentifyComplianceId 识别模板
                      * 
                      */
                     int64_t GetIdentifyComplianceId() const;
 
                     /**
-                     * 设置识别模版
-                     * @param _identifyComplianceId 识别模版
+                     * 设置识别模板
+                     * @param _identifyComplianceId 识别模板
                      * 
                      */
                     void SetIdentifyComplianceId(const int64_t& _identifyComplianceId);
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_riskLevelNameHasBeenSet;
 
                     /**
-                     * 识别模版
+                     * 识别模板
                      */
                     int64_t m_identifyComplianceId;
                     bool m_identifyComplianceIdHasBeenSet;

@@ -107,6 +107,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageStreamDataResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageThumbnailRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageThumbnailResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageThumbnailListRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageThumbnailListResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageTimeRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageTimeResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageUsersRequest.h>
@@ -361,6 +363,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageThumbnailResponse> DescribeCloudStorageThumbnailOutcome;
                 typedef std::future<DescribeCloudStorageThumbnailOutcome> DescribeCloudStorageThumbnailOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageThumbnailRequest&, DescribeCloudStorageThumbnailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageThumbnailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageThumbnailListResponse> DescribeCloudStorageThumbnailListOutcome;
+                typedef std::future<DescribeCloudStorageThumbnailListOutcome> DescribeCloudStorageThumbnailListOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageThumbnailListRequest&, DescribeCloudStorageThumbnailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageThumbnailListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageTimeResponse> DescribeCloudStorageTimeOutcome;
                 typedef std::future<DescribeCloudStorageTimeOutcome> DescribeCloudStorageTimeOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageTimeRequest&, DescribeCloudStorageTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageTimeAsyncHandler;
@@ -912,6 +917,15 @@ namespace TencentCloud
                 DescribeCloudStorageThumbnailOutcome DescribeCloudStorageThumbnail(const Model::DescribeCloudStorageThumbnailRequest &request);
                 void DescribeCloudStorageThumbnailAsync(const Model::DescribeCloudStorageThumbnailRequest& request, const DescribeCloudStorageThumbnailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudStorageThumbnailOutcomeCallable DescribeCloudStorageThumbnailCallable(const Model::DescribeCloudStorageThumbnailRequest& request);
+
+                /**
+                 *批量拉取云存事件缩略图
+                 * @param req DescribeCloudStorageThumbnailListRequest
+                 * @return DescribeCloudStorageThumbnailListOutcome
+                 */
+                DescribeCloudStorageThumbnailListOutcome DescribeCloudStorageThumbnailList(const Model::DescribeCloudStorageThumbnailListRequest &request);
+                void DescribeCloudStorageThumbnailListAsync(const Model::DescribeCloudStorageThumbnailListRequest& request, const DescribeCloudStorageThumbnailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageThumbnailListOutcomeCallable DescribeCloudStorageThumbnailListCallable(const Model::DescribeCloudStorageThumbnailListRequest& request);
 
                 /**
                  *获取某一天云存时间轴

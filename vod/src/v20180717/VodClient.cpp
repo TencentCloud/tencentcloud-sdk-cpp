@@ -7006,6 +7006,49 @@ VodClient::SetDrmKeyProviderInfoOutcomeCallable VodClient::SetDrmKeyProviderInfo
     return task->get_future();
 }
 
+VodClient::SetVodDomainCertificateOutcome VodClient::SetVodDomainCertificate(const SetVodDomainCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetVodDomainCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetVodDomainCertificateResponse rsp = SetVodDomainCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetVodDomainCertificateOutcome(rsp);
+        else
+            return SetVodDomainCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return SetVodDomainCertificateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::SetVodDomainCertificateAsync(const SetVodDomainCertificateRequest& request, const SetVodDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetVodDomainCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::SetVodDomainCertificateOutcomeCallable VodClient::SetVodDomainCertificateCallable(const SetVodDomainCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetVodDomainCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->SetVodDomainCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::SimpleHlsClipOutcome VodClient::SimpleHlsClip(const SimpleHlsClipRequest &request)
 {
     auto outcome = MakeRequest(request, "SimpleHlsClip");
