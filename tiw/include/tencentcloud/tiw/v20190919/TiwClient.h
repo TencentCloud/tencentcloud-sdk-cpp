@@ -27,8 +27,6 @@
 #include <tencentcloud/tiw/v20190919/model/ApplyTiwTrialResponse.h>
 #include <tencentcloud/tiw/v20190919/model/CreateApplicationRequest.h>
 #include <tencentcloud/tiw/v20190919/model/CreateApplicationResponse.h>
-#include <tencentcloud/tiw/v20190919/model/CreateOfflineRecordRequest.h>
-#include <tencentcloud/tiw/v20190919/model/CreateOfflineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/CreatePPTCheckTaskRequest.h>
 #include <tencentcloud/tiw/v20190919/model/CreatePPTCheckTaskResponse.h>
 #include <tencentcloud/tiw/v20190919/model/CreateSnapshotTaskRequest.h>
@@ -47,10 +45,6 @@
 #include <tencentcloud/tiw/v20190919/model/DescribeBoardSDKLogResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeIMApplicationsRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeIMApplicationsResponse.h>
-#include <tencentcloud/tiw/v20190919/model/DescribeOfflineRecordRequest.h>
-#include <tencentcloud/tiw/v20190919/model/DescribeOfflineRecordResponse.h>
-#include <tencentcloud/tiw/v20190919/model/DescribeOfflineRecordCallbackRequest.h>
-#include <tencentcloud/tiw/v20190919/model/DescribeOfflineRecordCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackRequest.h>
@@ -119,8 +113,6 @@
 #include <tencentcloud/tiw/v20190919/model/PauseOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/ResumeOnlineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/ResumeOnlineRecordResponse.h>
-#include <tencentcloud/tiw/v20190919/model/SetOfflineRecordCallbackRequest.h>
-#include <tencentcloud/tiw/v20190919/model/SetOfflineRecordCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyRequest.h>
@@ -171,9 +163,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApplicationResponse> CreateApplicationOutcome;
                 typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::CreateApplicationRequest&, CreateApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateOfflineRecordResponse> CreateOfflineRecordOutcome;
-                typedef std::future<CreateOfflineRecordOutcome> CreateOfflineRecordOutcomeCallable;
-                typedef std::function<void(const TiwClient*, const Model::CreateOfflineRecordRequest&, CreateOfflineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOfflineRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePPTCheckTaskResponse> CreatePPTCheckTaskOutcome;
                 typedef std::future<CreatePPTCheckTaskOutcome> CreatePPTCheckTaskOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::CreatePPTCheckTaskRequest&, CreatePPTCheckTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePPTCheckTaskAsyncHandler;
@@ -201,12 +190,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIMApplicationsResponse> DescribeIMApplicationsOutcome;
                 typedef std::future<DescribeIMApplicationsOutcome> DescribeIMApplicationsOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeIMApplicationsRequest&, DescribeIMApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIMApplicationsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeOfflineRecordResponse> DescribeOfflineRecordOutcome;
-                typedef std::future<DescribeOfflineRecordOutcome> DescribeOfflineRecordOutcomeCallable;
-                typedef std::function<void(const TiwClient*, const Model::DescribeOfflineRecordRequest&, DescribeOfflineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineRecordAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeOfflineRecordCallbackResponse> DescribeOfflineRecordCallbackOutcome;
-                typedef std::future<DescribeOfflineRecordCallbackOutcome> DescribeOfflineRecordCallbackOutcomeCallable;
-                typedef std::function<void(const TiwClient*, const Model::DescribeOfflineRecordCallbackRequest&, DescribeOfflineRecordCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineRecordCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOnlineRecordResponse> DescribeOnlineRecordOutcome;
                 typedef std::future<DescribeOnlineRecordOutcome> DescribeOnlineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeOnlineRecordRequest&, DescribeOnlineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOnlineRecordAsyncHandler;
@@ -309,9 +292,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResumeOnlineRecordResponse> ResumeOnlineRecordOutcome;
                 typedef std::future<ResumeOnlineRecordOutcome> ResumeOnlineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::ResumeOnlineRecordRequest&, ResumeOnlineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeOnlineRecordAsyncHandler;
-                typedef Outcome<Core::Error, Model::SetOfflineRecordCallbackResponse> SetOfflineRecordCallbackOutcome;
-                typedef std::future<SetOfflineRecordCallbackOutcome> SetOfflineRecordCallbackOutcomeCallable;
-                typedef std::function<void(const TiwClient*, const Model::SetOfflineRecordCallbackRequest&, SetOfflineRecordCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetOfflineRecordCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetOnlineRecordCallbackResponse> SetOnlineRecordCallbackOutcome;
                 typedef std::future<SetOnlineRecordCallbackOutcome> SetOnlineRecordCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::SetOnlineRecordCallbackRequest&, SetOnlineRecordCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetOnlineRecordCallbackAsyncHandler;
@@ -377,17 +357,6 @@ namespace TencentCloud
                 CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest &request);
                 void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request);
-
-                /**
-                 *课后录制服务已下线
-
-创建课后录制任务
-                 * @param req CreateOfflineRecordRequest
-                 * @return CreateOfflineRecordOutcome
-                 */
-                CreateOfflineRecordOutcome CreateOfflineRecord(const Model::CreateOfflineRecordRequest &request);
-                void CreateOfflineRecordAsync(const Model::CreateOfflineRecordRequest& request, const CreateOfflineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateOfflineRecordOutcomeCallable CreateOfflineRecordCallable(const Model::CreateOfflineRecordRequest& request);
 
                 /**
                  *检测PPT文件，识别PPT中包含的动态转码任务（Transcode）不支持的元素
@@ -469,28 +438,6 @@ namespace TencentCloud
                 DescribeIMApplicationsOutcome DescribeIMApplications(const Model::DescribeIMApplicationsRequest &request);
                 void DescribeIMApplicationsAsync(const Model::DescribeIMApplicationsRequest& request, const DescribeIMApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIMApplicationsOutcomeCallable DescribeIMApplicationsCallable(const Model::DescribeIMApplicationsRequest& request);
-
-                /**
-                 *课后录制服务已下线
-
-查询课后录制任务的进度与录制结果等相关信息
-                 * @param req DescribeOfflineRecordRequest
-                 * @return DescribeOfflineRecordOutcome
-                 */
-                DescribeOfflineRecordOutcome DescribeOfflineRecord(const Model::DescribeOfflineRecordRequest &request);
-                void DescribeOfflineRecordAsync(const Model::DescribeOfflineRecordRequest& request, const DescribeOfflineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeOfflineRecordOutcomeCallable DescribeOfflineRecordCallable(const Model::DescribeOfflineRecordRequest& request);
-
-                /**
-                 *课后录制服务已下线
-
-查询课后录制回调地址
-                 * @param req DescribeOfflineRecordCallbackRequest
-                 * @return DescribeOfflineRecordCallbackOutcome
-                 */
-                DescribeOfflineRecordCallbackOutcome DescribeOfflineRecordCallback(const Model::DescribeOfflineRecordCallbackRequest &request);
-                void DescribeOfflineRecordCallbackAsync(const Model::DescribeOfflineRecordCallbackRequest& request, const DescribeOfflineRecordCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeOfflineRecordCallbackOutcomeCallable DescribeOfflineRecordCallbackCallable(const Model::DescribeOfflineRecordCallbackRequest& request);
 
                 /**
                  *查询录制任务状态与结果
@@ -804,17 +751,6 @@ namespace TencentCloud
                 ResumeOnlineRecordOutcome ResumeOnlineRecord(const Model::ResumeOnlineRecordRequest &request);
                 void ResumeOnlineRecordAsync(const Model::ResumeOnlineRecordRequest& request, const ResumeOnlineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResumeOnlineRecordOutcomeCallable ResumeOnlineRecordCallable(const Model::ResumeOnlineRecordRequest& request);
-
-                /**
-                 *课后录制服务已下线
-
-设置课后录制回调地址
-                 * @param req SetOfflineRecordCallbackRequest
-                 * @return SetOfflineRecordCallbackOutcome
-                 */
-                SetOfflineRecordCallbackOutcome SetOfflineRecordCallback(const Model::SetOfflineRecordCallbackRequest &request);
-                void SetOfflineRecordCallbackAsync(const Model::SetOfflineRecordCallbackRequest& request, const SetOfflineRecordCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SetOfflineRecordCallbackOutcomeCallable SetOfflineRecordCallbackCallable(const Model::SetOfflineRecordCallbackRequest& request);
 
                 /**
                  *设置实时录制回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40258

@@ -22,7 +22,8 @@ using namespace std;
 
 WaterMarkTimestamp::WaterMarkTimestamp() :
     m_posHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
+    m_timeZoneHasBeenSet(false),
+    m_fontHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome WaterMarkTimestamp::Deserialize(const rapidjson::Value &valu
         m_timeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("Font") && !value["Font"].IsNull())
+    {
+        if (!value["Font"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WaterMarkTimestamp.Font` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_font = string(value["Font"].GetString());
+        m_fontHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void WaterMarkTimestamp::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "TimeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeZone, allocator);
+    }
+
+    if (m_fontHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Font";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_font.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void WaterMarkTimestamp::SetTimeZone(const uint64_t& _timeZone)
 bool WaterMarkTimestamp::TimeZoneHasBeenSet() const
 {
     return m_timeZoneHasBeenSet;
+}
+
+string WaterMarkTimestamp::GetFont() const
+{
+    return m_font;
+}
+
+void WaterMarkTimestamp::SetFont(const string& _font)
+{
+    m_font = _font;
+    m_fontHasBeenSet = true;
+}
+
+bool WaterMarkTimestamp::FontHasBeenSet() const
+{
+    return m_fontHasBeenSet;
 }
 

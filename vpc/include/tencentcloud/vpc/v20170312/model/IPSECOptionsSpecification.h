@@ -76,7 +76,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntegrityAlgorith 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetIntegrityAlgorith() const;
 
@@ -85,14 +85,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _integrityAlgorith 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetIntegrityAlgorith(const std::string& _integrityAlgorith);
 
                     /**
                      * 判断参数 IntegrityAlgorith 是否已赋值
                      * @return IntegrityAlgorith 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IntegrityAlgorithHasBeenSet() const;
 
@@ -171,6 +171,31 @@ namespace TencentCloud
                      */
                     bool IPSECSaLifetimeTrafficHasBeenSet() const;
 
+                    /**
+                     * 获取认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntegrityAlgorithm 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIntegrityAlgorithm() const;
+
+                    /**
+                     * 设置认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _integrityAlgorithm 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIntegrityAlgorithm(const std::string& _integrityAlgorithm);
+
+                    /**
+                     * 判断参数 IntegrityAlgorithm 是否已赋值
+                     * @return IntegrityAlgorithm 是否已赋值
+                     * 
+                     */
+                    bool IntegrityAlgorithmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +232,13 @@ namespace TencentCloud
                      */
                     uint64_t m_iPSECSaLifetimeTraffic;
                     bool m_iPSECSaLifetimeTrafficHasBeenSet;
+
+                    /**
+                     * 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_integrityAlgorithm;
+                    bool m_integrityAlgorithmHasBeenSet;
 
                 };
             }

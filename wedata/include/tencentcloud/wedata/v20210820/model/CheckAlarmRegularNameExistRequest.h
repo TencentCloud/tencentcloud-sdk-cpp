@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool TaskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
+                     * @return MonitorType 监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
+                     * 
+                     */
+                    uint64_t GetMonitorType() const;
+
+                    /**
+                     * 设置监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
+                     * @param _monitorType 监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
+                     * 
+                     */
+                    void SetMonitorType(const uint64_t& _monitorType);
+
+                    /**
+                     * 判断参数 MonitorType 是否已赋值
+                     * @return MonitorType 是否已赋值
+                     * 
+                     */
+                    bool MonitorTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
+                     */
+                    uint64_t m_monitorType;
+                    bool m_monitorTypeHasBeenSet;
 
                 };
             }

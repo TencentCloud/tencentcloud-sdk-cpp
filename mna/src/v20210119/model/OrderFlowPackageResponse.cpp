@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tiw/v20190919/model/DescribeOfflineRecordResponse.h>
+#include <tencentcloud/mna/v20210119/model/OrderFlowPackageResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tiw::V20190919::Model;
+using namespace TencentCloud::Mna::V20210119::Model;
 using namespace std;
 
-DescribeOfflineRecordResponse::DescribeOfflineRecordResponse()
+OrderFlowPackageResponse::OrderFlowPackageResponse() :
+    m_resourceIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeOfflineRecordResponse::Deserialize(const string &payload)
+CoreInternalOutcome OrderFlowPackageResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,33 @@ CoreInternalOutcome DescribeOfflineRecordResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("ResourceId") && !rsp["ResourceId"].IsNull())
+    {
+        if (!rsp["ResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceId = string(rsp["ResourceId"].GetString());
+        m_resourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeOfflineRecordResponse::ToJsonString() const
+string OrderFlowPackageResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string DescribeOfflineRecordResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string OrderFlowPackageResponse::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+bool OrderFlowPackageResponse::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
+}
 
 

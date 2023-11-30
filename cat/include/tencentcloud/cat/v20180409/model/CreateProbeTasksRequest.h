@@ -221,15 +221,15 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取测试类型，包含定时测试与即时测试。1-定时拨测，其它表示即时拨测。
-                     * @return ProbeType 测试类型，包含定时测试与即时测试。1-定时拨测，其它表示即时拨测。
+                     * 获取测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
+                     * @return ProbeType 测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
                      * 
                      */
                     uint64_t GetProbeType() const;
 
                     /**
-                     * 设置测试类型，包含定时测试与即时测试。1-定时拨测，其它表示即时拨测。
-                     * @param _probeType 测试类型，包含定时测试与即时测试。1-定时拨测，其它表示即时拨测。
+                     * 设置测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
+                     * @param _probeType 测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
                      * 
                      */
                     void SetProbeType(const uint64_t& _probeType);
@@ -357,7 +357,7 @@ namespace TencentCloud
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 测试类型，包含定时测试与即时测试。1-定时拨测，其它表示即时拨测。
+                     * 测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
                      */
                     uint64_t m_probeType;
                     bool m_probeTypeHasBeenSet;

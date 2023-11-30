@@ -1,0 +1,221 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_MNA_V20210119_MODEL_ORDERFLOWPACKAGEREQUEST_H_
+#define TENCENTCLOUD_MNA_V20210119_MODEL_ORDERFLOWPACKAGEREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Mna
+    {
+        namespace V20210119
+        {
+            namespace Model
+            {
+                /**
+                * OrderFlowPackage请求参数结构体
+                */
+                class OrderFlowPackageRequest : public AbstractModel
+                {
+                public:
+                    OrderFlowPackageRequest();
+                    ~OrderFlowPackageRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取流量包规格类型。可取值如下：
+DEVICE_1_FLOW_20G、DEVICE_2_FLOW_50G、
+DEVICE_3_FLOW_100G、
+DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
+档位也影响流量包可绑定的设备数量上限：
+20G：最多绑定1个设备
+50G：最多绑定2个设备
+100G：最多绑定3个设备
+500G：最多绑定5个设备
+                     * @return PackageType 流量包规格类型。可取值如下：
+DEVICE_1_FLOW_20G、DEVICE_2_FLOW_50G、
+DEVICE_3_FLOW_100G、
+DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
+档位也影响流量包可绑定的设备数量上限：
+20G：最多绑定1个设备
+50G：最多绑定2个设备
+100G：最多绑定3个设备
+500G：最多绑定5个设备
+                     * 
+                     */
+                    std::string GetPackageType() const;
+
+                    /**
+                     * 设置流量包规格类型。可取值如下：
+DEVICE_1_FLOW_20G、DEVICE_2_FLOW_50G、
+DEVICE_3_FLOW_100G、
+DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
+档位也影响流量包可绑定的设备数量上限：
+20G：最多绑定1个设备
+50G：最多绑定2个设备
+100G：最多绑定3个设备
+500G：最多绑定5个设备
+                     * @param _packageType 流量包规格类型。可取值如下：
+DEVICE_1_FLOW_20G、DEVICE_2_FLOW_50G、
+DEVICE_3_FLOW_100G、
+DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
+档位也影响流量包可绑定的设备数量上限：
+20G：最多绑定1个设备
+50G：最多绑定2个设备
+100G：最多绑定3个设备
+500G：最多绑定5个设备
+                     * 
+                     */
+                    void SetPackageType(const std::string& _packageType);
+
+                    /**
+                     * 判断参数 PackageType 是否已赋值
+                     * @return PackageType 是否已赋值
+                     * 
+                     */
+                    bool PackageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取流量包绑定的设备ID列表。捆绑设备个数上限取决于包的规格档位：
+20G：最多绑定1个设备
+50G：最多绑定2个设备
+100G：最多绑定3个设备
+500G：最多绑定5个设备
+                     * @return DeviceList 流量包绑定的设备ID列表。捆绑设备个数上限取决于包的规格档位：
+20G：最多绑定1个设备
+50G：最多绑定2个设备
+100G：最多绑定3个设备
+500G：最多绑定5个设备
+                     * 
+                     */
+                    std::vector<std::string> GetDeviceList() const;
+
+                    /**
+                     * 设置流量包绑定的设备ID列表。捆绑设备个数上限取决于包的规格档位：
+20G：最多绑定1个设备
+50G：最多绑定2个设备
+100G：最多绑定3个设备
+500G：最多绑定5个设备
+                     * @param _deviceList 流量包绑定的设备ID列表。捆绑设备个数上限取决于包的规格档位：
+20G：最多绑定1个设备
+50G：最多绑定2个设备
+100G：最多绑定3个设备
+500G：最多绑定5个设备
+                     * 
+                     */
+                    void SetDeviceList(const std::vector<std::string>& _deviceList);
+
+                    /**
+                     * 判断参数 DeviceList 是否已赋值
+                     * @return DeviceList 是否已赋值
+                     * 
+                     */
+                    bool DeviceListHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动续费
+                     * @return AutoRenewFlag 是否自动续费
+                     * 
+                     */
+                    bool GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置是否自动续费
+                     * @param _autoRenewFlag 是否自动续费
+                     * 
+                     */
+                    void SetAutoRenewFlag(const bool& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取区域标识，0：国内，1：国外
+                     * @return PackageRegion 区域标识，0：国内，1：国外
+                     * 
+                     */
+                    int64_t GetPackageRegion() const;
+
+                    /**
+                     * 设置区域标识，0：国内，1：国外
+                     * @param _packageRegion 区域标识，0：国内，1：国外
+                     * 
+                     */
+                    void SetPackageRegion(const int64_t& _packageRegion);
+
+                    /**
+                     * 判断参数 PackageRegion 是否已赋值
+                     * @return PackageRegion 是否已赋值
+                     * 
+                     */
+                    bool PackageRegionHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 流量包规格类型。可取值如下：
+DEVICE_1_FLOW_20G、DEVICE_2_FLOW_50G、
+DEVICE_3_FLOW_100G、
+DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
+档位也影响流量包可绑定的设备数量上限：
+20G：最多绑定1个设备
+50G：最多绑定2个设备
+100G：最多绑定3个设备
+500G：最多绑定5个设备
+                     */
+                    std::string m_packageType;
+                    bool m_packageTypeHasBeenSet;
+
+                    /**
+                     * 流量包绑定的设备ID列表。捆绑设备个数上限取决于包的规格档位：
+20G：最多绑定1个设备
+50G：最多绑定2个设备
+100G：最多绑定3个设备
+500G：最多绑定5个设备
+                     */
+                    std::vector<std::string> m_deviceList;
+                    bool m_deviceListHasBeenSet;
+
+                    /**
+                     * 是否自动续费
+                     */
+                    bool m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 区域标识，0：国内，1：国外
+                     */
+                    int64_t m_packageRegion;
+                    bool m_packageRegionHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_MNA_V20210119_MODEL_ORDERFLOWPACKAGEREQUEST_H_

@@ -49,15 +49,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同模板ID，为32位字符串。
-                     * @return ResourceId 合同模板ID，为32位字符串。
+                     * 获取资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
+                     * @return ResourceId 资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置合同模板ID，为32位字符串。
-                     * @param _resourceId 合同模板ID，为32位字符串。
+                     * 设置资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
+                     * @param _resourceId 资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -70,15 +86,23 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，此接口固定为**1**表示为用模板发起
-                     * @return ResourceType 资源类型，此接口固定为**1**表示为用模板发起
+                     * 获取资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
+                     * @return ResourceType 资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
                      * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型，此接口固定为**1**表示为用模板发起
-                     * @param _resourceType 资源类型，此接口固定为**1**表示为用模板发起
+                     * 设置资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
+                     * @param _resourceType 资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
                      * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
@@ -207,15 +231,19 @@ namespace TencentCloud
                     bool FlowApproverListHasBeenSet() const;
 
                     /**
-                     * 获取用过去已经通过此接口发起的合同的ID复制个新的合同创建链接
-                     * @return FlowId 用过去已经通过此接口发起的合同的ID复制个新的合同创建链接
+                     * 获取合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
+注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
+                     * @return FlowId 合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
+注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置用过去已经通过此接口发起的合同的ID复制个新的合同创建链接
-                     * @param _flowId 用过去已经通过此接口发起的合同的ID复制个新的合同创建链接
+                     * 设置合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
+注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
+                     * @param _flowId 合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
+注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -293,13 +321,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同模板ID，为32位字符串。
+                     * 资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源类型，此接口固定为**1**表示为用模板发起
+                     * 资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;
@@ -337,7 +371,8 @@ namespace TencentCloud
                     bool m_flowApproverListHasBeenSet;
 
                     /**
-                     * 用过去已经通过此接口发起的合同的ID复制个新的合同创建链接
+                     * 合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
+注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

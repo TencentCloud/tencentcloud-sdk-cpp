@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     * 获取告警指标,0任务失败,1任务运行超时,2任务停止,3任务暂停, 4读取速度,5写入速度,6读取吞吐 7写入吞吐, 8脏数据字节数,9脏数据条数,10任务异常,11任务检测异常, 12重启次数, 13任务延时, 14近20分内的重启次数 15传输延迟,16业务延迟, 50离线包CPU使用率, 51离线包内存使用率, 52离线包并行度使用率, 53离线包排队中的实例数, 54实时包资源使用率, 55实时包运行中的任务数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     * @return AlarmIndicator 告警指标,0任务失败,1任务运行超时,2任务停止,3任务暂停, 4读取速度,5写入速度,6读取吞吐 7写入吞吐, 8脏数据字节数,9脏数据条数,10任务异常,11任务检测异常, 12重启次数, 13任务延时, 14近20分内的重启次数 15传输延迟,16业务延迟, 50离线包CPU使用率, 51离线包内存使用率, 52离线包并行度使用率, 53离线包排队中的实例数, 54实时包资源使用率, 55实时包运行中的任务数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAlarmIndicator() const;
 
                     /**
-                     * 设置告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     * 设置告警指标,0任务失败,1任务运行超时,2任务停止,3任务暂停, 4读取速度,5写入速度,6读取吞吐 7写入吞吐, 8脏数据字节数,9脏数据条数,10任务异常,11任务检测异常, 12重启次数, 13任务延时, 14近20分内的重启次数 15传输延迟,16业务延迟, 50离线包CPU使用率, 51离线包内存使用率, 52离线包并行度使用率, 53离线包排队中的实例数, 54实时包资源使用率, 55实时包运行中的任务数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     * @param _alarmIndicator 告警指标,0任务失败,1任务运行超时,2任务停止,3任务暂停, 4读取速度,5写入速度,6读取吞吐 7写入吞吐, 8脏数据字节数,9脏数据条数,10任务异常,11任务检测异常, 12重启次数, 13任务延时, 14近20分内的重启次数 15传输延迟,16业务延迟, 50离线包CPU使用率, 51离线包内存使用率, 52离线包并行度使用率, 53离线包排队中的实例数, 54实时包资源使用率, 55实时包运行中的任务数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool EstimatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取实时任务告警需要的参数
+                     * 获取告警阈值的算子,1 大于,2 小于
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Operator 实时任务告警需要的参数
+                     * @return Operator 告警阈值的算子,1 大于,2 小于
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOperator() const;
 
                     /**
-                     * 设置实时任务告警需要的参数
+                     * 设置告警阈值的算子,1 大于,2 小于
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operator 实时任务告警需要的参数
+                     * @param _operator 告警阈值的算子,1 大于,2 小于
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -243,15 +243,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取告警周期单位
-                     * @return DurationUnit 告警周期单位
+                     * 获取告警周期单位:hour,minute,day
+                     * @return DurationUnit 告警周期单位:hour,minute,day
                      * 
                      */
                     std::string GetDurationUnit() const;
 
                     /**
-                     * 设置告警周期单位
-                     * @param _durationUnit 告警周期单位
+                     * 设置告警周期单位:hour,minute,day
+                     * @param _durationUnit 告警周期单位:hour,minute,day
                      * 
                      */
                     void SetDurationUnit(const std::string& _durationUnit);
@@ -284,6 +284,31 @@ namespace TencentCloud
                      */
                     bool MaxTimesHasBeenSet() const;
 
+                    /**
+                     * 获取指标阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Threshold 指标阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetThreshold() const;
+
+                    /**
+                     * 设置指标阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _threshold 指标阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetThreshold(const double& _threshold);
+
+                    /**
+                     * 判断参数 Threshold 是否已赋值
+                     * @return Threshold 是否已赋值
+                     * 
+                     */
+                    bool ThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,7 +319,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     * 告警指标,0任务失败,1任务运行超时,2任务停止,3任务暂停, 4读取速度,5写入速度,6读取吞吐 7写入吞吐, 8脏数据字节数,9脏数据条数,10任务异常,11任务检测异常, 12重启次数, 13任务延时, 14近20分内的重启次数 15传输延迟,16业务延迟, 50离线包CPU使用率, 51离线包内存使用率, 52离线包并行度使用率, 53离线包排队中的实例数, 54实时包资源使用率, 55实时包运行中的任务数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_alarmIndicator;
@@ -322,7 +347,7 @@ namespace TencentCloud
                     bool m_estimatedTimeHasBeenSet;
 
                     /**
-                     * 实时任务告警需要的参数
+                     * 告警阈值的算子,1 大于,2 小于
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_operator;
@@ -342,7 +367,7 @@ namespace TencentCloud
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 告警周期单位
+                     * 告警周期单位:hour,minute,day
                      */
                     std::string m_durationUnit;
                     bool m_durationUnitHasBeenSet;
@@ -352,6 +377,13 @@ namespace TencentCloud
                      */
                     int64_t m_maxTimes;
                     bool m_maxTimesHasBeenSet;
+
+                    /**
+                     * 指标阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_threshold;
+                    bool m_thresholdHasBeenSet;
 
                 };
             }

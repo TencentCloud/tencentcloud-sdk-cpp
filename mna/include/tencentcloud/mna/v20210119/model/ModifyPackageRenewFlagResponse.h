@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TIW_V20190919_MODEL_SETOFFLINERECORDCALLBACKRESPONSE_H_
-#define TENCENTCLOUD_TIW_V20190919_MODEL_SETOFFLINERECORDCALLBACKRESPONSE_H_
+#ifndef TENCENTCLOUD_MNA_V20210119_MODEL_MODIFYPACKAGERENEWFLAGRESPONSE_H_
+#define TENCENTCLOUD_MNA_V20210119_MODEL_MODIFYPACKAGERENEWFLAGRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Tiw
+    namespace Mna
     {
-        namespace V20190919
+        namespace V20210119
         {
             namespace Model
             {
                 /**
-                * SetOfflineRecordCallback返回参数结构体
+                * ModifyPackageRenewFlag返回参数结构体
                 */
-                class SetOfflineRecordCallbackResponse : public AbstractModel
+                class ModifyPackageRenewFlagResponse : public AbstractModel
                 {
                 public:
-                    SetOfflineRecordCallbackResponse();
-                    ~SetOfflineRecordCallbackResponse() = default;
+                    ModifyPackageRenewFlagResponse();
+                    ~ModifyPackageRenewFlagResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TIW_V20190919_MODEL_SETOFFLINERECORDCALLBACKRESPONSE_H_
+#endif // !TENCENTCLOUD_MNA_V20210119_MODEL_MODIFYPACKAGERENEWFLAGRESPONSE_H_

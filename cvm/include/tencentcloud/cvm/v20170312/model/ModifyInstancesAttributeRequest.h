@@ -222,6 +222,39 @@ namespace TencentCloud
                      */
                     bool CamRoleTypeHasBeenSet() const;
 
+                    /**
+                     * 获取修改实例主机名是否自动重启实例，不传默认自动重启。
+- true: 修改主机名，并自动重启实例；
+- false: 修改主机名，不自动重启实例，需要手动重启使新主机名生效。
+注意点：本参数仅对修改主机名生效。
+                     * @return AutoReboot 修改实例主机名是否自动重启实例，不传默认自动重启。
+- true: 修改主机名，并自动重启实例；
+- false: 修改主机名，不自动重启实例，需要手动重启使新主机名生效。
+注意点：本参数仅对修改主机名生效。
+                     * 
+                     */
+                    bool GetAutoReboot() const;
+
+                    /**
+                     * 设置修改实例主机名是否自动重启实例，不传默认自动重启。
+- true: 修改主机名，并自动重启实例；
+- false: 修改主机名，不自动重启实例，需要手动重启使新主机名生效。
+注意点：本参数仅对修改主机名生效。
+                     * @param _autoReboot 修改实例主机名是否自动重启实例，不传默认自动重启。
+- true: 修改主机名，并自动重启实例；
+- false: 修改主机名，不自动重启实例，需要手动重启使新主机名生效。
+注意点：本参数仅对修改主机名生效。
+                     * 
+                     */
+                    void SetAutoReboot(const bool& _autoReboot);
+
+                    /**
+                     * 判断参数 AutoReboot 是否已赋值
+                     * @return AutoReboot 是否已赋值
+                     * 
+                     */
+                    bool AutoRebootHasBeenSet() const;
+
                 private:
 
                     /**
@@ -274,6 +307,15 @@ namespace TencentCloud
                      */
                     std::string m_camRoleType;
                     bool m_camRoleTypeHasBeenSet;
+
+                    /**
+                     * 修改实例主机名是否自动重启实例，不传默认自动重启。
+- true: 修改主机名，并自动重启实例；
+- false: 修改主机名，不自动重启实例，需要手动重启使新主机名生效。
+注意点：本参数仅对修改主机名生效。
+                     */
+                    bool m_autoReboot;
+                    bool m_autoRebootHasBeenSet;
 
                 };
             }

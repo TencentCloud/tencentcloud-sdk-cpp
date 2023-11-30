@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool InputBase64HasBeenSet() const;
 
                     /**
-                     * 获取任务缓存清理时间。不填表示不清理。
-                     * @return CacheClearDelay 任务缓存清理时间。不填表示不清理。
+                     * 获取任务缓存清理时间（小时）。不填表示不清理。
+                     * @return CacheClearDelay 任务缓存清理时间（小时）。不填表示不清理。
                      * 
                      */
                     uint64_t GetCacheClearDelay() const;
 
                     /**
-                     * 设置任务缓存清理时间。不填表示不清理。
-                     * @param _cacheClearDelay 任务缓存清理时间。不填表示不清理。
+                     * 设置任务缓存清理时间（小时）。不填表示不清理。
+                     * @param _cacheClearDelay 任务缓存清理时间（小时）。不填表示不清理。
                      * 
                      */
                     void SetCacheClearDelay(const uint64_t& _cacheClearDelay);
@@ -307,7 +307,7 @@ namespace TencentCloud
                     bool m_inputBase64HasBeenSet;
 
                     /**
-                     * 任务缓存清理时间。不填表示不清理。
+                     * 任务缓存清理时间（小时）。不填表示不清理。
                      */
                     uint64_t m_cacheClearDelay;
                     bool m_cacheClearDelayHasBeenSet;

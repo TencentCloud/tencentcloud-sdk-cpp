@@ -45,6 +45,69 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取项目ID
+                     * @return ProjectId 项目ID
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目ID
+                     * @param _projectId 项目ID
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取当前页
+                     * @return PageNumber 当前页
+                     * 
+                     */
+                    uint64_t GetPageNumber() const;
+
+                    /**
+                     * 设置当前页
+                     * @param _pageNumber 当前页
+                     * 
+                     */
+                    void SetPageNumber(const uint64_t& _pageNumber);
+
+                    /**
+                     * 判断参数 PageNumber 是否已赋值
+                     * @return PageNumber 是否已赋值
+                     * 
+                     */
+                    bool PageNumberHasBeenSet() const;
+
+                    /**
+                     * 获取每页记录数
+                     * @return PageSize 每页记录数
+                     * 
+                     */
+                    uint64_t GetPageSize() const;
+
+                    /**
+                     * 设置每页记录数
+                     * @param _pageSize 每页记录数
+                     * 
+                     */
+                    void SetPageSize(const uint64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
                      * 获取过滤条件(key可以是：AlarmLevel,AlarmIndicator,KeyWord)
                      * @return Filters 过滤条件(key可以是：AlarmLevel,AlarmIndicator,KeyWord)
                      * 
@@ -150,69 +213,45 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
+                     * @return MonitorType 监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
                      * 
                      */
-                    std::string GetProjectId() const;
+                    uint64_t GetMonitorType() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
+                     * @param _monitorType 监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
                      * 
                      */
-                    void SetProjectId(const std::string& _projectId);
+                    void SetMonitorType(const uint64_t& _monitorType);
 
                     /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
+                     * 判断参数 MonitorType 是否已赋值
+                     * @return MonitorType 是否已赋值
                      * 
                      */
-                    bool ProjectIdHasBeenSet() const;
-
-                    /**
-                     * 获取当前页
-                     * @return PageNumber 当前页
-                     * 
-                     */
-                    uint64_t GetPageNumber() const;
-
-                    /**
-                     * 设置当前页
-                     * @param _pageNumber 当前页
-                     * 
-                     */
-                    void SetPageNumber(const uint64_t& _pageNumber);
-
-                    /**
-                     * 判断参数 PageNumber 是否已赋值
-                     * @return PageNumber 是否已赋值
-                     * 
-                     */
-                    bool PageNumberHasBeenSet() const;
-
-                    /**
-                     * 获取每页记录数
-                     * @return PageSize 每页记录数
-                     * 
-                     */
-                    uint64_t GetPageSize() const;
-
-                    /**
-                     * 设置每页记录数
-                     * @param _pageSize 每页记录数
-                     * 
-                     */
-                    void SetPageSize(const uint64_t& _pageSize);
-
-                    /**
-                     * 判断参数 PageSize 是否已赋值
-                     * @return PageSize 是否已赋值
-                     * 
-                     */
-                    bool PageSizeHasBeenSet() const;
+                    bool MonitorTypeHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 项目ID
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 当前页
+                     */
+                    uint64_t m_pageNumber;
+                    bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 每页记录数
+                     */
+                    uint64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
 
                     /**
                      * 过滤条件(key可以是：AlarmLevel,AlarmIndicator,KeyWord)
@@ -245,22 +284,10 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * 监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
                      */
-                    std::string m_projectId;
-                    bool m_projectIdHasBeenSet;
-
-                    /**
-                     * 当前页
-                     */
-                    uint64_t m_pageNumber;
-                    bool m_pageNumberHasBeenSet;
-
-                    /**
-                     * 每页记录数
-                     */
-                    uint64_t m_pageSize;
-                    bool m_pageSizeHasBeenSet;
+                    uint64_t m_monitorType;
+                    bool m_monitorTypeHasBeenSet;
 
                 };
             }

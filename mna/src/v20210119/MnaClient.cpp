@@ -427,6 +427,49 @@ MnaClient::GetDeviceOutcomeCallable MnaClient::GetDeviceCallable(const GetDevice
     return task->get_future();
 }
 
+MnaClient::GetDevicePayModeOutcome MnaClient::GetDevicePayMode(const GetDevicePayModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDevicePayMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDevicePayModeResponse rsp = GetDevicePayModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDevicePayModeOutcome(rsp);
+        else
+            return GetDevicePayModeOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDevicePayModeOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetDevicePayModeAsync(const GetDevicePayModeRequest& request, const GetDevicePayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDevicePayMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetDevicePayModeOutcomeCallable MnaClient::GetDevicePayModeCallable(const GetDevicePayModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDevicePayModeOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDevicePayMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::GetDevicesOutcome MnaClient::GetDevices(const GetDevicesRequest &request)
 {
     auto outcome = MakeRequest(request, "GetDevices");
@@ -463,6 +506,49 @@ MnaClient::GetDevicesOutcomeCallable MnaClient::GetDevicesCallable(const GetDevi
         [this, request]()
         {
             return this->GetDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::GetFlowPackagesOutcome MnaClient::GetFlowPackages(const GetFlowPackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFlowPackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFlowPackagesResponse rsp = GetFlowPackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFlowPackagesOutcome(rsp);
+        else
+            return GetFlowPackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFlowPackagesOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetFlowPackagesAsync(const GetFlowPackagesRequest& request, const GetFlowPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFlowPackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetFlowPackagesOutcomeCallable MnaClient::GetFlowPackagesCallable(const GetFlowPackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFlowPackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFlowPackages(request);
         }
     );
 
@@ -764,6 +850,92 @@ MnaClient::GetVendorHardwareOutcomeCallable MnaClient::GetVendorHardwareCallable
         [this, request]()
         {
             return this->GetVendorHardware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::ModifyPackageRenewFlagOutcome MnaClient::ModifyPackageRenewFlag(const ModifyPackageRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPackageRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPackageRenewFlagResponse rsp = ModifyPackageRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPackageRenewFlagOutcome(rsp);
+        else
+            return ModifyPackageRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPackageRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::ModifyPackageRenewFlagAsync(const ModifyPackageRenewFlagRequest& request, const ModifyPackageRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPackageRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::ModifyPackageRenewFlagOutcomeCallable MnaClient::ModifyPackageRenewFlagCallable(const ModifyPackageRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPackageRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPackageRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::OrderFlowPackageOutcome MnaClient::OrderFlowPackage(const OrderFlowPackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "OrderFlowPackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OrderFlowPackageResponse rsp = OrderFlowPackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OrderFlowPackageOutcome(rsp);
+        else
+            return OrderFlowPackageOutcome(o.GetError());
+    }
+    else
+    {
+        return OrderFlowPackageOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::OrderFlowPackageAsync(const OrderFlowPackageRequest& request, const OrderFlowPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OrderFlowPackage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::OrderFlowPackageOutcomeCallable MnaClient::OrderFlowPackageCallable(const OrderFlowPackageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OrderFlowPackageOutcome()>>(
+        [this, request]()
+        {
+            return this->OrderFlowPackage(request);
         }
     );
 

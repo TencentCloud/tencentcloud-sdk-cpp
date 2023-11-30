@@ -237,6 +237,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceProjectResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceRenewFlagRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceRenewFlagResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceSSLRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceSSLResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceSecurityGroupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBNameRequest.h>
@@ -644,6 +646,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceRenewFlagResponse> ModifyDBInstanceRenewFlagOutcome;
                 typedef std::future<ModifyDBInstanceRenewFlagOutcome> ModifyDBInstanceRenewFlagOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDBInstanceRenewFlagRequest&, ModifyDBInstanceRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceSSLResponse> ModifyDBInstanceSSLOutcome;
+                typedef std::future<ModifyDBInstanceSSLOutcome> ModifyDBInstanceSSLOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyDBInstanceSSLRequest&, ModifyDBInstanceSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
                 typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
@@ -1717,6 +1722,15 @@ namespace TencentCloud
                 ModifyDBInstanceRenewFlagOutcome ModifyDBInstanceRenewFlag(const Model::ModifyDBInstanceRenewFlagRequest &request);
                 void ModifyDBInstanceRenewFlagAsync(const Model::ModifyDBInstanceRenewFlagRequest& request, const ModifyDBInstanceRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceRenewFlagOutcomeCallable ModifyDBInstanceRenewFlagCallable(const Model::ModifyDBInstanceRenewFlagRequest& request);
+
+                /**
+                 *本接口（DescribeDBInstancesAttribute）用于开启\关闭\更新SSL加密
+                 * @param req ModifyDBInstanceSSLRequest
+                 * @return ModifyDBInstanceSSLOutcome
+                 */
+                ModifyDBInstanceSSLOutcome ModifyDBInstanceSSL(const Model::ModifyDBInstanceSSLRequest &request);
+                void ModifyDBInstanceSSLAsync(const Model::ModifyDBInstanceSSLRequest& request, const ModifyDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceSSLOutcomeCallable ModifyDBInstanceSSLCallable(const Model::ModifyDBInstanceSSLRequest& request);
 
                 /**
                  *本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。

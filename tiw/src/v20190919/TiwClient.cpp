@@ -126,49 +126,6 @@ TiwClient::CreateApplicationOutcomeCallable TiwClient::CreateApplicationCallable
     return task->get_future();
 }
 
-TiwClient::CreateOfflineRecordOutcome TiwClient::CreateOfflineRecord(const CreateOfflineRecordRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateOfflineRecord");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateOfflineRecordResponse rsp = CreateOfflineRecordResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateOfflineRecordOutcome(rsp);
-        else
-            return CreateOfflineRecordOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateOfflineRecordOutcome(outcome.GetError());
-    }
-}
-
-void TiwClient::CreateOfflineRecordAsync(const CreateOfflineRecordRequest& request, const CreateOfflineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOfflineRecord(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TiwClient::CreateOfflineRecordOutcomeCallable TiwClient::CreateOfflineRecordCallable(const CreateOfflineRecordRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateOfflineRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOfflineRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TiwClient::CreatePPTCheckTaskOutcome TiwClient::CreatePPTCheckTask(const CreatePPTCheckTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePPTCheckTask");
@@ -549,92 +506,6 @@ TiwClient::DescribeIMApplicationsOutcomeCallable TiwClient::DescribeIMApplicatio
         [this, request]()
         {
             return this->DescribeIMApplications(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TiwClient::DescribeOfflineRecordOutcome TiwClient::DescribeOfflineRecord(const DescribeOfflineRecordRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeOfflineRecord");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeOfflineRecordResponse rsp = DescribeOfflineRecordResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeOfflineRecordOutcome(rsp);
-        else
-            return DescribeOfflineRecordOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeOfflineRecordOutcome(outcome.GetError());
-    }
-}
-
-void TiwClient::DescribeOfflineRecordAsync(const DescribeOfflineRecordRequest& request, const DescribeOfflineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOfflineRecord(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TiwClient::DescribeOfflineRecordOutcomeCallable TiwClient::DescribeOfflineRecordCallable(const DescribeOfflineRecordRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeOfflineRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOfflineRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TiwClient::DescribeOfflineRecordCallbackOutcome TiwClient::DescribeOfflineRecordCallback(const DescribeOfflineRecordCallbackRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeOfflineRecordCallback");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeOfflineRecordCallbackResponse rsp = DescribeOfflineRecordCallbackResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeOfflineRecordCallbackOutcome(rsp);
-        else
-            return DescribeOfflineRecordCallbackOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeOfflineRecordCallbackOutcome(outcome.GetError());
-    }
-}
-
-void TiwClient::DescribeOfflineRecordCallbackAsync(const DescribeOfflineRecordCallbackRequest& request, const DescribeOfflineRecordCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOfflineRecordCallback(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TiwClient::DescribeOfflineRecordCallbackOutcomeCallable TiwClient::DescribeOfflineRecordCallbackCallable(const DescribeOfflineRecordCallbackRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeOfflineRecordCallbackOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOfflineRecordCallback(request);
         }
     );
 
@@ -2097,49 +1968,6 @@ TiwClient::ResumeOnlineRecordOutcomeCallable TiwClient::ResumeOnlineRecordCallab
         [this, request]()
         {
             return this->ResumeOnlineRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TiwClient::SetOfflineRecordCallbackOutcome TiwClient::SetOfflineRecordCallback(const SetOfflineRecordCallbackRequest &request)
-{
-    auto outcome = MakeRequest(request, "SetOfflineRecordCallback");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SetOfflineRecordCallbackResponse rsp = SetOfflineRecordCallbackResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SetOfflineRecordCallbackOutcome(rsp);
-        else
-            return SetOfflineRecordCallbackOutcome(o.GetError());
-    }
-    else
-    {
-        return SetOfflineRecordCallbackOutcome(outcome.GetError());
-    }
-}
-
-void TiwClient::SetOfflineRecordCallbackAsync(const SetOfflineRecordCallbackRequest& request, const SetOfflineRecordCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetOfflineRecordCallback(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TiwClient::SetOfflineRecordCallbackOutcomeCallable TiwClient::SetOfflineRecordCallbackCallable(const SetOfflineRecordCallbackRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<SetOfflineRecordCallbackOutcome()>>(
-        [this, request]()
-        {
-            return this->SetOfflineRecordCallback(request);
         }
     );
 

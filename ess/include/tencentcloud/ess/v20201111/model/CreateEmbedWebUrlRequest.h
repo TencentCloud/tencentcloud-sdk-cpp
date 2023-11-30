@@ -132,11 +132,13 @@ namespace TencentCloud
                      * 获取WEB嵌入的业务资源ID
 <ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>
 <li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>
-<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>
+<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li>
+</ul>
                      * @return BusinessId WEB嵌入的业务资源ID
 <ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>
 <li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>
-<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>
+<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li>
+</ul>
                      * 
                      */
                     std::string GetBusinessId() const;
@@ -145,11 +147,13 @@ namespace TencentCloud
                      * 设置WEB嵌入的业务资源ID
 <ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>
 <li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>
-<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>
+<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li>
+</ul>
                      * @param _businessId WEB嵌入的业务资源ID
 <ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>
 <li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>
-<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>
+<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li>
+</ul>
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -228,6 +232,67 @@ namespace TencentCloud
                      */
                     bool OptionHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义参数
+<ul>
+<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>
+<li>指定后，创建，编辑，删除模版时，回调都会携带该userData</li>
+<li>支持的格式：json字符串的BASE64编码字符串</li>
+<li>示例：<ul>
+                 <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>
+                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>
+</ul>
+</li>
+</ul>
+                     * @return UserData 用户自定义参数
+<ul>
+<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>
+<li>指定后，创建，编辑，删除模版时，回调都会携带该userData</li>
+<li>支持的格式：json字符串的BASE64编码字符串</li>
+<li>示例：<ul>
+                 <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>
+                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>
+</ul>
+</li>
+</ul>
+                     * 
+                     */
+                    std::string GetUserData() const;
+
+                    /**
+                     * 设置用户自定义参数
+<ul>
+<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>
+<li>指定后，创建，编辑，删除模版时，回调都会携带该userData</li>
+<li>支持的格式：json字符串的BASE64编码字符串</li>
+<li>示例：<ul>
+                 <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>
+                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>
+</ul>
+</li>
+</ul>
+                     * @param _userData 用户自定义参数
+<ul>
+<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>
+<li>指定后，创建，编辑，删除模版时，回调都会携带该userData</li>
+<li>支持的格式：json字符串的BASE64编码字符串</li>
+<li>示例：<ul>
+                 <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>
+                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>
+</ul>
+</li>
+</ul>
+                     * 
+                     */
+                    void SetUserData(const std::string& _userData);
+
+                    /**
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
+                     * 
+                     */
+                    bool UserDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,7 +321,8 @@ namespace TencentCloud
                      * WEB嵌入的业务资源ID
 <ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>
 <li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>
-<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>
+<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li>
+</ul>
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;
@@ -279,6 +345,22 @@ namespace TencentCloud
                      */
                     EmbedUrlOption m_option;
                     bool m_optionHasBeenSet;
+
+                    /**
+                     * 用户自定义参数
+<ul>
+<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>
+<li>指定后，创建，编辑，删除模版时，回调都会携带该userData</li>
+<li>支持的格式：json字符串的BASE64编码字符串</li>
+<li>示例：<ul>
+                 <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>
+                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>
+</ul>
+</li>
+</ul>
+                     */
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
 
                 };
             }

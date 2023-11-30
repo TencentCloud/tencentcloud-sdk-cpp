@@ -27,7 +27,8 @@ CreateFlowOption::CreateFlowOption() :
     m_hideShowDeadlineHasBeenSet(false),
     m_canSkipAddApproverHasBeenSet(false),
     m_customCreateFlowDescriptionHasBeenSet(false),
-    m_forbidEditFillComponentHasBeenSet(false)
+    m_forbidEditFillComponentHasBeenSet(false),
+    m_skipUploadFileHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_forbidEditFillComponentHasBeenSet = true;
     }
 
+    if (value.HasMember("SkipUploadFile") && !value["SkipUploadFile"].IsNull())
+    {
+        if (!value["SkipUploadFile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.SkipUploadFile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_skipUploadFile = string(value["SkipUploadFile"].GetString());
+        m_skipUploadFileHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ForbidEditFillComponent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forbidEditFillComponent, allocator);
+    }
+
+    if (m_skipUploadFileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipUploadFile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_skipUploadFile.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void CreateFlowOption::SetForbidEditFillComponent(const bool& _forbidEditFillCom
 bool CreateFlowOption::ForbidEditFillComponentHasBeenSet() const
 {
     return m_forbidEditFillComponentHasBeenSet;
+}
+
+string CreateFlowOption::GetSkipUploadFile() const
+{
+    return m_skipUploadFile;
+}
+
+void CreateFlowOption::SetSkipUploadFile(const string& _skipUploadFile)
+{
+    m_skipUploadFile = _skipUploadFile;
+    m_skipUploadFileHasBeenSet = true;
+}
+
+bool CreateFlowOption::SkipUploadFileHasBeenSet() const
+{
+    return m_skipUploadFileHasBeenSet;
 }
 

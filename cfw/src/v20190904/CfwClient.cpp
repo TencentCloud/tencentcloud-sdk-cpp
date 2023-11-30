@@ -599,6 +599,49 @@ CfwClient::CreateDatabaseWhiteListRulesOutcomeCallable CfwClient::CreateDatabase
     return task->get_future();
 }
 
+CfwClient::CreateIdsWhiteRuleOutcome CfwClient::CreateIdsWhiteRule(const CreateIdsWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIdsWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIdsWhiteRuleResponse rsp = CreateIdsWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIdsWhiteRuleOutcome(rsp);
+        else
+            return CreateIdsWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIdsWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateIdsWhiteRuleAsync(const CreateIdsWhiteRuleRequest& request, const CreateIdsWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateIdsWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateIdsWhiteRuleOutcomeCallable CfwClient::CreateIdsWhiteRuleCallable(const CreateIdsWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateIdsWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateIdsWhiteRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::CreateNatFwInstanceOutcome CfwClient::CreateNatFwInstance(const CreateNatFwInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNatFwInstance");
@@ -936,6 +979,49 @@ CfwClient::DeleteBlockIgnoreRuleListOutcomeCallable CfwClient::DeleteBlockIgnore
         [this, request]()
         {
             return this->DeleteBlockIgnoreRuleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DeleteIdsWhiteRuleOutcome CfwClient::DeleteIdsWhiteRule(const DeleteIdsWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteIdsWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteIdsWhiteRuleResponse rsp = DeleteIdsWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteIdsWhiteRuleOutcome(rsp);
+        else
+            return DeleteIdsWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteIdsWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DeleteIdsWhiteRuleAsync(const DeleteIdsWhiteRuleRequest& request, const DeleteIdsWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteIdsWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DeleteIdsWhiteRuleOutcomeCallable CfwClient::DeleteIdsWhiteRuleCallable(const DeleteIdsWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteIdsWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteIdsWhiteRule(request);
         }
     );
 
@@ -1882,6 +1968,49 @@ CfwClient::DescribeIPStatusListOutcomeCallable CfwClient::DescribeIPStatusListCa
         [this, request]()
         {
             return this->DescribeIPStatusList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeIdsWhiteRuleOutcome CfwClient::DescribeIdsWhiteRule(const DescribeIdsWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIdsWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIdsWhiteRuleResponse rsp = DescribeIdsWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIdsWhiteRuleOutcome(rsp);
+        else
+            return DescribeIdsWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIdsWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeIdsWhiteRuleAsync(const DescribeIdsWhiteRuleRequest& request, const DescribeIdsWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIdsWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeIdsWhiteRuleOutcomeCallable CfwClient::DescribeIdsWhiteRuleCallable(const DescribeIdsWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIdsWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIdsWhiteRule(request);
         }
     );
 

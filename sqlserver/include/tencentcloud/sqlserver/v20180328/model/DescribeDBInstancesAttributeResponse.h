@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/sqlserver/v20180328/model/TDEConfigAttribute.h>
+#include <tencentcloud/sqlserver/v20180328/model/SSLConfig.h>
 
 
 namespace TencentCloud
@@ -170,6 +171,20 @@ namespace TencentCloud
                      */
                     bool TDEConfigHasBeenSet() const;
 
+                    /**
+                     * 获取SSL加密
+                     * @return SSLConfig SSL加密
+                     * 
+                     */
+                    SSLConfig GetSSLConfig() const;
+
+                    /**
+                     * 判断参数 SSLConfig 是否已赋值
+                     * @return SSLConfig 是否已赋值
+                     * 
+                     */
+                    bool SSLConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -225,6 +240,12 @@ namespace TencentCloud
                      */
                     TDEConfigAttribute m_tDEConfig;
                     bool m_tDEConfigHasBeenSet;
+
+                    /**
+                     * SSL加密
+                     */
+                    SSLConfig m_sSLConfig;
+                    bool m_sSLConfigHasBeenSet;
 
                 };
             }

@@ -535,6 +535,81 @@ namespace TencentCloud
                      */
                     bool SendResultHasBeenSet() const;
 
+                    /**
+                     * 获取监控对象id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MonitorObjectId 监控对象id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMonitorObjectId() const;
+
+                    /**
+                     * 设置监控对象id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _monitorObjectId 监控对象id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMonitorObjectId(const std::string& _monitorObjectId);
+
+                    /**
+                     * 判断参数 MonitorObjectId 是否已赋值
+                     * @return MonitorObjectId 是否已赋值
+                     * 
+                     */
+                    bool MonitorObjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取监控对象名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MonitorObjectName 监控对象名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMonitorObjectName() const;
+
+                    /**
+                     * 设置监控对象名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _monitorObjectName 监控对象名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMonitorObjectName(const std::string& _monitorObjectName);
+
+                    /**
+                     * 判断参数 MonitorObjectName 是否已赋值
+                     * @return MonitorObjectName 是否已赋值
+                     * 
+                     */
+                    bool MonitorObjectNameHasBeenSet() const;
+
+                    /**
+                     * 获取指标阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Threshold 指标阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetThreshold() const;
+
+                    /**
+                     * 设置指标阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _threshold 指标阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetThreshold(const double& _threshold);
+
+                    /**
+                     * 判断参数 Threshold 是否已赋值
+                     * @return Threshold 是否已赋值
+                     * 
+                     */
+                    bool ThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -674,6 +749,27 @@ namespace TencentCloud
                      */
                     std::string m_sendResult;
                     bool m_sendResultHasBeenSet;
+
+                    /**
+                     * 监控对象id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_monitorObjectId;
+                    bool m_monitorObjectIdHasBeenSet;
+
+                    /**
+                     * 监控对象名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_monitorObjectName;
+                    bool m_monitorObjectNameHasBeenSet;
+
+                    /**
+                     * 指标阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_threshold;
+                    bool m_thresholdHasBeenSet;
 
                 };
             }

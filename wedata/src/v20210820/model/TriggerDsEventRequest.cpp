@@ -24,7 +24,8 @@ using namespace std;
 
 TriggerDsEventRequest::TriggerDsEventRequest() :
     m_projectIdHasBeenSet(false),
-    m_eventCaseListHasBeenSet(false)
+    m_eventCaseListHasBeenSet(false),
+    m_eventBatchCaseListHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,21 @@ string TriggerDsEventRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_eventCaseList.begin(); itr != m_eventCaseList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_eventBatchCaseListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventBatchCaseList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_eventBatchCaseList.begin(); itr != m_eventBatchCaseList.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -96,6 +112,22 @@ void TriggerDsEventRequest::SetEventCaseList(const vector<EventCaseDTO>& _eventC
 bool TriggerDsEventRequest::EventCaseListHasBeenSet() const
 {
     return m_eventCaseListHasBeenSet;
+}
+
+vector<EventBatchCaseDTO> TriggerDsEventRequest::GetEventBatchCaseList() const
+{
+    return m_eventBatchCaseList;
+}
+
+void TriggerDsEventRequest::SetEventBatchCaseList(const vector<EventBatchCaseDTO>& _eventBatchCaseList)
+{
+    m_eventBatchCaseList = _eventBatchCaseList;
+    m_eventBatchCaseListHasBeenSet = true;
+}
+
+bool TriggerDsEventRequest::EventBatchCaseListHasBeenSet() const
+{
+    return m_eventBatchCaseListHasBeenSet;
 }
 
 

@@ -214,6 +214,35 @@ namespace TencentCloud
                      */
                     bool BackGroundColorHasBeenSet() const;
 
+                    /**
+                     * 获取文字水印的字体，支持设置以下值：
+1. Tencent （默认）
+2. SourceHanSans
+                     * @return Font 文字水印的字体，支持设置以下值：
+1. Tencent （默认）
+2. SourceHanSans
+                     * 
+                     */
+                    std::string GetFont() const;
+
+                    /**
+                     * 设置文字水印的字体，支持设置以下值：
+1. Tencent （默认）
+2. SourceHanSans
+                     * @param _font 文字水印的字体，支持设置以下值：
+1. Tencent （默认）
+2. SourceHanSans
+                     * 
+                     */
+                    void SetFont(const std::string& _font);
+
+                    /**
+                     * 判断参数 Font 是否已赋值
+                     * @return Font 是否已赋值
+                     * 
+                     */
+                    bool FontHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +292,14 @@ namespace TencentCloud
                      */
                     std::string m_backGroundColor;
                     bool m_backGroundColorHasBeenSet;
+
+                    /**
+                     * 文字水印的字体，支持设置以下值：
+1. Tencent （默认）
+2. SourceHanSans
+                     */
+                    std::string m_font;
+                    bool m_fontHasBeenSet;
 
                 };
             }

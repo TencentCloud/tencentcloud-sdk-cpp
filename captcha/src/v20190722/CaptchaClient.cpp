@@ -427,6 +427,49 @@ CaptchaClient::DescribeCaptchaOperDataOutcomeCallable CaptchaClient::DescribeCap
     return task->get_future();
 }
 
+CaptchaClient::DescribeCaptchaRceResultOutcome CaptchaClient::DescribeCaptchaRceResult(const DescribeCaptchaRceResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaRceResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaRceResultResponse rsp = DescribeCaptchaRceResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaRceResultOutcome(rsp);
+        else
+            return DescribeCaptchaRceResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaRceResultOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaRceResultAsync(const DescribeCaptchaRceResultRequest& request, const DescribeCaptchaRceResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaRceResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaRceResultOutcomeCallable CaptchaClient::DescribeCaptchaRceResultCallable(const DescribeCaptchaRceResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaRceResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaRceResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CaptchaClient::DescribeCaptchaResultOutcome CaptchaClient::DescribeCaptchaResult(const DescribeCaptchaResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCaptchaResult");

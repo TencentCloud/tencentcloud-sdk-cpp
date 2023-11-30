@@ -23,14 +23,15 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeAlarmEventsRequest::DescribeAlarmEventsRequest() :
+    m_projectIdHasBeenSet(false),
+    m_pageNumberHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_orderFieldsHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_monitorTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,30 @@ string DescribeAlarmEventsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
 
     if (m_filtersHasBeenSet)
     {
@@ -95,28 +120,12 @@ string DescribeAlarmEventsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_projectIdHasBeenSet)
+    if (m_monitorTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectId";
+        string key = "MonitorType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_pageNumberHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PageNumber";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_pageNumber, allocator);
-    }
-
-    if (m_pageSizeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PageSize";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_pageSize, allocator);
+        d.AddMember(iKey, m_monitorType, allocator);
     }
 
 
@@ -126,6 +135,54 @@ string DescribeAlarmEventsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeAlarmEventsRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DescribeAlarmEventsRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DescribeAlarmEventsRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+uint64_t DescribeAlarmEventsRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void DescribeAlarmEventsRequest::SetPageNumber(const uint64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool DescribeAlarmEventsRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
+}
+
+uint64_t DescribeAlarmEventsRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeAlarmEventsRequest::SetPageSize(const uint64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeAlarmEventsRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
 
 vector<Filter> DescribeAlarmEventsRequest::GetFilters() const
 {
@@ -207,52 +264,20 @@ bool DescribeAlarmEventsRequest::EndTimeHasBeenSet() const
     return m_endTimeHasBeenSet;
 }
 
-string DescribeAlarmEventsRequest::GetProjectId() const
+uint64_t DescribeAlarmEventsRequest::GetMonitorType() const
 {
-    return m_projectId;
+    return m_monitorType;
 }
 
-void DescribeAlarmEventsRequest::SetProjectId(const string& _projectId)
+void DescribeAlarmEventsRequest::SetMonitorType(const uint64_t& _monitorType)
 {
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
+    m_monitorType = _monitorType;
+    m_monitorTypeHasBeenSet = true;
 }
 
-bool DescribeAlarmEventsRequest::ProjectIdHasBeenSet() const
+bool DescribeAlarmEventsRequest::MonitorTypeHasBeenSet() const
 {
-    return m_projectIdHasBeenSet;
-}
-
-uint64_t DescribeAlarmEventsRequest::GetPageNumber() const
-{
-    return m_pageNumber;
-}
-
-void DescribeAlarmEventsRequest::SetPageNumber(const uint64_t& _pageNumber)
-{
-    m_pageNumber = _pageNumber;
-    m_pageNumberHasBeenSet = true;
-}
-
-bool DescribeAlarmEventsRequest::PageNumberHasBeenSet() const
-{
-    return m_pageNumberHasBeenSet;
-}
-
-uint64_t DescribeAlarmEventsRequest::GetPageSize() const
-{
-    return m_pageSize;
-}
-
-void DescribeAlarmEventsRequest::SetPageSize(const uint64_t& _pageSize)
-{
-    m_pageSize = _pageSize;
-    m_pageSizeHasBeenSet = true;
-}
-
-bool DescribeAlarmEventsRequest::PageSizeHasBeenSet() const
-{
-    return m_pageSizeHasBeenSet;
+    return m_monitorTypeHasBeenSet;
 }
 
 

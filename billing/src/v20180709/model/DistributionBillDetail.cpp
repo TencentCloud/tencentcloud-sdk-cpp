@@ -47,7 +47,9 @@ DistributionBillDetail::DistributionBillDetail() :
     m_priceInfoHasBeenSet(false),
     m_associatedOrderHasBeenSet(false),
     m_formulaHasBeenSet(false),
-    m_formulaUrlHasBeenSet(false)
+    m_formulaUrlHasBeenSet(false),
+    m_billMonthHasBeenSet(false),
+    m_billDayHasBeenSet(false)
 {
 }
 
@@ -356,6 +358,26 @@ CoreInternalOutcome DistributionBillDetail::Deserialize(const rapidjson::Value &
         m_formulaUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("BillMonth") && !value["BillMonth"].IsNull())
+    {
+        if (!value["BillMonth"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DistributionBillDetail.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billMonth = string(value["BillMonth"].GetString());
+        m_billMonthHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillDay") && !value["BillDay"].IsNull())
+    {
+        if (!value["BillDay"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DistributionBillDetail.BillDay` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billDay = string(value["BillDay"].GetString());
+        m_billDayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -597,6 +619,22 @@ void DistributionBillDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "FormulaUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_formulaUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billMonthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillMonth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billMonth.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillDay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billDay.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1032,5 +1070,37 @@ void DistributionBillDetail::SetFormulaUrl(const string& _formulaUrl)
 bool DistributionBillDetail::FormulaUrlHasBeenSet() const
 {
     return m_formulaUrlHasBeenSet;
+}
+
+string DistributionBillDetail::GetBillMonth() const
+{
+    return m_billMonth;
+}
+
+void DistributionBillDetail::SetBillMonth(const string& _billMonth)
+{
+    m_billMonth = _billMonth;
+    m_billMonthHasBeenSet = true;
+}
+
+bool DistributionBillDetail::BillMonthHasBeenSet() const
+{
+    return m_billMonthHasBeenSet;
+}
+
+string DistributionBillDetail::GetBillDay() const
+{
+    return m_billDay;
+}
+
+void DistributionBillDetail::SetBillDay(const string& _billDay)
+{
+    m_billDay = _billDay;
+    m_billDayHasBeenSet = true;
+}
+
+bool DistributionBillDetail::BillDayHasBeenSet() const
+{
+    return m_billDayHasBeenSet;
 }
 

@@ -245,6 +245,39 @@ namespace TencentCloud
                      */
                     bool ForbidEditFillComponentHasBeenSet() const;
 
+                    /**
+                     * 获取跳过上传文件步骤
+
+**true**：跳过
+**false**：（默认）不跳过，需要传ResourceId
+                     * @return SkipUploadFile 跳过上传文件步骤
+
+**true**：跳过
+**false**：（默认）不跳过，需要传ResourceId
+                     * 
+                     */
+                    std::string GetSkipUploadFile() const;
+
+                    /**
+                     * 设置跳过上传文件步骤
+
+**true**：跳过
+**false**：（默认）不跳过，需要传ResourceId
+                     * @param _skipUploadFile 跳过上传文件步骤
+
+**true**：跳过
+**false**：（默认）不跳过，需要传ResourceId
+                     * 
+                     */
+                    void SetSkipUploadFile(const std::string& _skipUploadFile);
+
+                    /**
+                     * 判断参数 SkipUploadFile 是否已赋值
+                     * @return SkipUploadFile 是否已赋值
+                     * 
+                     */
+                    bool SkipUploadFileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -301,6 +334,15 @@ namespace TencentCloud
                      */
                     bool m_forbidEditFillComponent;
                     bool m_forbidEditFillComponentHasBeenSet;
+
+                    /**
+                     * 跳过上传文件步骤
+
+**true**：跳过
+**false**：（默认）不跳过，需要传ResourceId
+                     */
+                    std::string m_skipUploadFile;
+                    bool m_skipUploadFileHasBeenSet;
 
                 };
             }

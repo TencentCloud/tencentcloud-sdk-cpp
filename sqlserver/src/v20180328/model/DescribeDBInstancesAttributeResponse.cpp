@@ -32,7 +32,8 @@ DescribeDBInstancesAttributeResponse::DescribeDBInstancesAttributeResponse() :
     m_regularBackupStartTimeHasBeenSet(false),
     m_blockedThresholdHasBeenSet(false),
     m_eventSaveDaysHasBeenSet(false),
-    m_tDEConfigHasBeenSet(false)
+    m_tDEConfigHasBeenSet(false),
+    m_sSLConfigHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,23 @@ CoreInternalOutcome DescribeDBInstancesAttributeResponse::Deserialize(const stri
         m_tDEConfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SSLConfig") && !rsp["SSLConfig"].IsNull())
+    {
+        if (!rsp["SSLConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSLConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sSLConfig.Deserialize(rsp["SSLConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sSLConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -248,6 +266,15 @@ string DescribeDBInstancesAttributeResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tDEConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sSLConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sSLConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -350,6 +377,16 @@ TDEConfigAttribute DescribeDBInstancesAttributeResponse::GetTDEConfig() const
 bool DescribeDBInstancesAttributeResponse::TDEConfigHasBeenSet() const
 {
     return m_tDEConfigHasBeenSet;
+}
+
+SSLConfig DescribeDBInstancesAttributeResponse::GetSSLConfig() const
+{
+    return m_sSLConfig;
+}
+
+bool DescribeDBInstancesAttributeResponse::SSLConfigHasBeenSet() const
+{
+    return m_sSLConfigHasBeenSet;
 }
 
 

@@ -512,15 +512,15 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool MetaTagsHasBeenSet() const;
 
                     /**
-                     * 获取windows事件日志采集
-                     * @return EventLogRules windows事件日志采集
+                     * 获取Windows事件日志采集
+                     * @return EventLogRules Windows事件日志采集
                      * 
                      */
                     std::vector<EventLog> GetEventLogRules() const;
 
                     /**
-                     * 设置windows事件日志采集
-                     * @param _eventLogRules windows事件日志采集
+                     * 设置Windows事件日志采集
+                     * @param _eventLogRules Windows事件日志采集
                      * 
                      */
                     void SetEventLogRules(const std::vector<EventLog>& _eventLogRules);
@@ -664,7 +664,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool m_metaTagsHasBeenSet;
 
                     /**
-                     * windows事件日志采集
+                     * Windows事件日志采集
                      */
                     std::vector<EventLog> m_eventLogRules;
                     bool m_eventLogRulesHasBeenSet;

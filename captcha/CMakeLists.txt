@@ -25,8 +25,10 @@ set(captcha_public_header_model
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniOperDataResponse.h
   include/tencentcloud/captcha/v20190722/model/GetTotalTicketStatisticsRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniDataSumResponse.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaRceResultResponse.h
   include/tencentcloud/captcha/v20190722/model/GetRequestStatisticsResponse.h
   include/tencentcloud/captcha/v20190722/model/GetRequestStatisticsRequest.h
+  include/tencentcloud/captcha/v20190722/model/RceResult.h
   include/tencentcloud/captcha/v20190722/model/OutputManageMarketingRiskValue.h
   include/tencentcloud/captcha/v20190722/model/CaptchaOperDataRes.h
   include/tencentcloud/captcha/v20190722/model/GetTicketStatisticsRequest.h
@@ -62,6 +64,7 @@ set(captcha_public_header_model
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniOperDataRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaAppIdInfoRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaAppIdInfoResponse.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaRceResultRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaUserAllAppIdResponse.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniResultRequest.h
@@ -79,8 +82,10 @@ set(captcha_src
   src/v20190722/model/DescribeCaptchaMiniOperDataResponse.cpp
   src/v20190722/model/GetTotalTicketStatisticsRequest.cpp
   src/v20190722/model/DescribeCaptchaMiniDataSumResponse.cpp
+  src/v20190722/model/DescribeCaptchaRceResultResponse.cpp
   src/v20190722/model/GetRequestStatisticsResponse.cpp
   src/v20190722/model/GetRequestStatisticsRequest.cpp
+  src/v20190722/model/RceResult.cpp
   src/v20190722/model/OutputManageMarketingRiskValue.cpp
   src/v20190722/model/CaptchaOperDataRes.cpp
   src/v20190722/model/GetTicketStatisticsRequest.cpp
@@ -116,6 +121,7 @@ set(captcha_src
   src/v20190722/model/DescribeCaptchaMiniOperDataRequest.cpp
   src/v20190722/model/DescribeCaptchaAppIdInfoRequest.cpp
   src/v20190722/model/DescribeCaptchaAppIdInfoResponse.cpp
+  src/v20190722/model/DescribeCaptchaRceResultRequest.cpp
   src/v20190722/model/DescribeCaptchaUserAllAppIdResponse.cpp
   src/v20190722/model/DescribeCaptchaDataRequest.cpp
   src/v20190722/model/DescribeCaptchaMiniResultRequest.cpp

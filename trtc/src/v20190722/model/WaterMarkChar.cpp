@@ -28,7 +28,8 @@ WaterMarkChar::WaterMarkChar() :
     m_charsHasBeenSet(false),
     m_fontSizeHasBeenSet(false),
     m_fontColorHasBeenSet(false),
-    m_backGroundColorHasBeenSet(false)
+    m_backGroundColorHasBeenSet(false),
+    m_fontHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome WaterMarkChar::Deserialize(const rapidjson::Value &value)
         m_backGroundColorHasBeenSet = true;
     }
 
+    if (value.HasMember("Font") && !value["Font"].IsNull())
+    {
+        if (!value["Font"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WaterMarkChar.Font` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_font = string(value["Font"].GetString());
+        m_fontHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void WaterMarkChar::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "BackGroundColor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backGroundColor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fontHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Font";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_font.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void WaterMarkChar::SetBackGroundColor(const string& _backGroundColor)
 bool WaterMarkChar::BackGroundColorHasBeenSet() const
 {
     return m_backGroundColorHasBeenSet;
+}
+
+string WaterMarkChar::GetFont() const
+{
+    return m_font;
+}
+
+void WaterMarkChar::SetFont(const string& _font)
+{
+    m_font = _font;
+    m_fontHasBeenSet = true;
+}
+
+bool WaterMarkChar::FontHasBeenSet() const
+{
+    return m_fontHasBeenSet;
 }
 

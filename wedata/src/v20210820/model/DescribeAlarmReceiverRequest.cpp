@@ -31,7 +31,8 @@ DescribeAlarmReceiverRequest::DescribeAlarmReceiverRequest() :
     m_taskTypeHasBeenSet(false),
     m_alarmRecipientHasBeenSet(false),
     m_alarmRecipientNameHasBeenSet(false),
-    m_alarmTimeHasBeenSet(false)
+    m_alarmTimeHasBeenSet(false),
+    m_monitorTypeHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string DescribeAlarmReceiverRequest::ToJsonString() const
         string key = "AlarmTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_alarmTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_monitorType, allocator);
     }
 
 
@@ -264,6 +273,22 @@ void DescribeAlarmReceiverRequest::SetAlarmTime(const string& _alarmTime)
 bool DescribeAlarmReceiverRequest::AlarmTimeHasBeenSet() const
 {
     return m_alarmTimeHasBeenSet;
+}
+
+uint64_t DescribeAlarmReceiverRequest::GetMonitorType() const
+{
+    return m_monitorType;
+}
+
+void DescribeAlarmReceiverRequest::SetMonitorType(const uint64_t& _monitorType)
+{
+    m_monitorType = _monitorType;
+    m_monitorTypeHasBeenSet = true;
+}
+
+bool DescribeAlarmReceiverRequest::MonitorTypeHasBeenSet() const
+{
+    return m_monitorTypeHasBeenSet;
 }
 
 

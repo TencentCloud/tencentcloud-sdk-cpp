@@ -27,7 +27,8 @@ CheckAlarmRegularNameExistRequest::CheckAlarmRegularNameExistRequest() :
     m_alarmRegularNameHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_monitorTypeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string CheckAlarmRegularNameExistRequest::ToJsonString() const
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_monitorTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_monitorType, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void CheckAlarmRegularNameExistRequest::SetTaskType(const int64_t& _taskType)
 bool CheckAlarmRegularNameExistRequest::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+uint64_t CheckAlarmRegularNameExistRequest::GetMonitorType() const
+{
+    return m_monitorType;
+}
+
+void CheckAlarmRegularNameExistRequest::SetMonitorType(const uint64_t& _monitorType)
+{
+    m_monitorType = _monitorType;
+    m_monitorTypeHasBeenSet = true;
+}
+
+bool CheckAlarmRegularNameExistRequest::MonitorTypeHasBeenSet() const
+{
+    return m_monitorTypeHasBeenSet;
 }
 
 

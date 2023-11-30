@@ -38,7 +38,10 @@ DescribeEventCasesRequest::DescribeEventCasesRequest() :
     m_eventTriggeredTimeEndHasBeenSet(false),
     m_logTimeStartHasBeenSet(false),
     m_logTimeEndHasBeenSet(false),
-    m_dimensionHasBeenSet(false)
+    m_dimensionHasBeenSet(false),
+    m_timeToLiveHasBeenSet(false),
+    m_sortItemHasBeenSet(false),
+    m_sortTypeHasBeenSet(false)
 {
 }
 
@@ -175,6 +178,30 @@ string DescribeEventCasesRequest::ToJsonString() const
         string key = "Dimension";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dimension.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeToLiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeToLive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeToLive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortItem";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -439,6 +466,54 @@ void DescribeEventCasesRequest::SetDimension(const string& _dimension)
 bool DescribeEventCasesRequest::DimensionHasBeenSet() const
 {
     return m_dimensionHasBeenSet;
+}
+
+string DescribeEventCasesRequest::GetTimeToLive() const
+{
+    return m_timeToLive;
+}
+
+void DescribeEventCasesRequest::SetTimeToLive(const string& _timeToLive)
+{
+    m_timeToLive = _timeToLive;
+    m_timeToLiveHasBeenSet = true;
+}
+
+bool DescribeEventCasesRequest::TimeToLiveHasBeenSet() const
+{
+    return m_timeToLiveHasBeenSet;
+}
+
+string DescribeEventCasesRequest::GetSortItem() const
+{
+    return m_sortItem;
+}
+
+void DescribeEventCasesRequest::SetSortItem(const string& _sortItem)
+{
+    m_sortItem = _sortItem;
+    m_sortItemHasBeenSet = true;
+}
+
+bool DescribeEventCasesRequest::SortItemHasBeenSet() const
+{
+    return m_sortItemHasBeenSet;
+}
+
+string DescribeEventCasesRequest::GetSortType() const
+{
+    return m_sortType;
+}
+
+void DescribeEventCasesRequest::SetSortType(const string& _sortType)
+{
+    m_sortType = _sortType;
+    m_sortTypeHasBeenSet = true;
+}
+
+bool DescribeEventCasesRequest::SortTypeHasBeenSet() const
+{
+    return m_sortTypeHasBeenSet;
 }
 
 

@@ -4641,6 +4641,49 @@ SqlserverClient::ModifyDBInstanceRenewFlagOutcomeCallable SqlserverClient::Modif
     return task->get_future();
 }
 
+SqlserverClient::ModifyDBInstanceSSLOutcome SqlserverClient::ModifyDBInstanceSSL(const ModifyDBInstanceSSLRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceSSL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceSSLResponse rsp = ModifyDBInstanceSSLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceSSLOutcome(rsp);
+        else
+            return ModifyDBInstanceSSLOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceSSLOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyDBInstanceSSLAsync(const ModifyDBInstanceSSLRequest& request, const ModifyDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceSSL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyDBInstanceSSLOutcomeCallable SqlserverClient::ModifyDBInstanceSSLCallable(const ModifyDBInstanceSSLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSSLOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceSSL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::ModifyDBInstanceSecurityGroupsOutcome SqlserverClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroups");

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取编辑成功: true / 编辑失败: false
-                     * @return Result 编辑成功: true / 编辑失败: false
+                     * 获取更新成功: true / 更新失败: false
+                     * @return Result 更新成功: true / 更新失败: false
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 编辑成功: true / 编辑失败: false
+                     * 更新成功: true / 更新失败: false
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

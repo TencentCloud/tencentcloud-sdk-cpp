@@ -57,7 +57,8 @@ BillDistributionResourceSummary::BillDistributionResourceSummary() :
     m_instanceTypeHasBeenSet(false),
     m_originalCostWithRIHasBeenSet(false),
     m_sPDeductionHasBeenSet(false),
-    m_originalCostWithSPHasBeenSet(false)
+    m_originalCostWithSPHasBeenSet(false),
+    m_billMonthHasBeenSet(false)
 {
 }
 
@@ -446,6 +447,16 @@ CoreInternalOutcome BillDistributionResourceSummary::Deserialize(const rapidjson
         m_originalCostWithSPHasBeenSet = true;
     }
 
+    if (value.HasMember("BillMonth") && !value["BillMonth"].IsNull())
+    {
+        if (!value["BillMonth"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDistributionResourceSummary.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billMonth = string(value["BillMonth"].GetString());
+        m_billMonthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -754,6 +765,14 @@ void BillDistributionResourceSummary::ToJsonObject(rapidjson::Value &value, rapi
         string key = "OriginalCostWithSP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_originalCostWithSP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billMonthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillMonth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billMonth.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1349,5 +1368,21 @@ void BillDistributionResourceSummary::SetOriginalCostWithSP(const string& _origi
 bool BillDistributionResourceSummary::OriginalCostWithSPHasBeenSet() const
 {
     return m_originalCostWithSPHasBeenSet;
+}
+
+string BillDistributionResourceSummary::GetBillMonth() const
+{
+    return m_billMonth;
+}
+
+void BillDistributionResourceSummary::SetBillMonth(const string& _billMonth)
+{
+    m_billMonth = _billMonth;
+    m_billMonthHasBeenSet = true;
+}
+
+bool BillDistributionResourceSummary::BillMonthHasBeenSet() const
+{
+    return m_billMonthHasBeenSet;
 }
 

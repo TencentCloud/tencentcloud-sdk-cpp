@@ -64,15 +64,31 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取事件实例目录
-                     * @return Category 事件实例目录
+                     * 获取事件实例目录,示例取值:
+- 已过期: expired
+- 未过期: consuming
+- 全部: all
+
+                     * @return Category 事件实例目录,示例取值:
+- 已过期: expired
+- 未过期: consuming
+- 全部: all
+
                      * 
                      */
                     std::string GetCategory() const;
 
                     /**
-                     * 设置事件实例目录
-                     * @param _category 事件实例目录
+                     * 设置事件实例目录,示例取值:
+- 已过期: expired
+- 未过期: consuming
+- 全部: all
+
+                     * @param _category 事件实例目录,示例取值:
+- 已过期: expired
+- 未过期: consuming
+- 全部: all
+
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -150,21 +166,21 @@ namespace TencentCloud
                     /**
                      * 获取事件类型
                      * @return EventType 事件类型
-                     * 
+                     * @deprecated
                      */
                     std::string GetEventType() const;
 
                     /**
                      * 设置事件类型
                      * @param _eventType 事件类型
-                     * 
+                     * @deprecated
                      */
                     void SetEventType(const std::string& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EventTypeHasBeenSet() const;
 
@@ -192,42 +208,58 @@ namespace TencentCloud
                     /**
                      * 获取事件广播类型
                      * @return EventBroadcastType 事件广播类型
-                     * 
+                     * @deprecated
                      */
                     std::string GetEventBroadcastType() const;
 
                     /**
                      * 设置事件广播类型
                      * @param _eventBroadcastType 事件广播类型
-                     * 
+                     * @deprecated
                      */
                     void SetEventBroadcastType(const std::string& _eventBroadcastType);
 
                     /**
                      * 判断参数 EventBroadcastType 是否已赋值
                      * @return EventBroadcastType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EventBroadcastTypeHasBeenSet() const;
 
                     /**
-                     * 获取事件实例状态
-                     * @return Status 事件实例状态
-                     * 
+                     * 获取事件实例状态,示例取值:
+- 已消费: COMSUMED
+- 已过期: EXPIRED
+- 待消费: ACTIVE
+- 消费中: CONSUMING
+                     * @return Status 事件实例状态,示例取值:
+- 已消费: COMSUMED
+- 已过期: EXPIRED
+- 待消费: ACTIVE
+- 消费中: CONSUMING
+                     * @deprecated
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置事件实例状态
-                     * @param _status 事件实例状态
-                     * 
+                     * 设置事件实例状态,示例取值:
+- 已消费: COMSUMED
+- 已过期: EXPIRED
+- 待消费: ACTIVE
+- 消费中: CONSUMING
+                     * @param _status 事件实例状态,示例取值:
+- 已消费: COMSUMED
+- 已过期: EXPIRED
+- 待消费: ACTIVE
+- 消费中: CONSUMING
+                     * @deprecated
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StatusHasBeenSet() const;
 
@@ -378,6 +410,69 @@ namespace TencentCloud
                      */
                     bool DimensionHasBeenSet() const;
 
+                    /**
+                     * 获取事件实例有效时间
+                     * @return TimeToLive 事件实例有效时间
+                     * 
+                     */
+                    std::string GetTimeToLive() const;
+
+                    /**
+                     * 设置事件实例有效时间
+                     * @param _timeToLive 事件实例有效时间
+                     * 
+                     */
+                    void SetTimeToLive(const std::string& _timeToLive);
+
+                    /**
+                     * 判断参数 TimeToLive 是否已赋值
+                     * @return TimeToLive 是否已赋值
+                     * 
+                     */
+                    bool TimeToLiveHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段
+                     * @return SortItem 排序字段
+                     * 
+                     */
+                    std::string GetSortItem() const;
+
+                    /**
+                     * 设置排序字段
+                     * @param _sortItem 排序字段
+                     * 
+                     */
+                    void SetSortItem(const std::string& _sortItem);
+
+                    /**
+                     * 判断参数 SortItem 是否已赋值
+                     * @return SortItem 是否已赋值
+                     * 
+                     */
+                    bool SortItemHasBeenSet() const;
+
+                    /**
+                     * 获取排序顺序
+                     * @return SortType 排序顺序
+                     * 
+                     */
+                    std::string GetSortType() const;
+
+                    /**
+                     * 设置排序顺序
+                     * @param _sortType 排序顺序
+                     * 
+                     */
+                    void SetSortType(const std::string& _sortType);
+
+                    /**
+                     * 判断参数 SortType 是否已赋值
+                     * @return SortType 是否已赋值
+                     * 
+                     */
+                    bool SortTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -387,7 +482,11 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 事件实例目录
+                     * 事件实例目录,示例取值:
+- 已过期: expired
+- 未过期: consuming
+- 全部: all
+
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
@@ -429,7 +528,11 @@ namespace TencentCloud
                     bool m_eventBroadcastTypeHasBeenSet;
 
                     /**
-                     * 事件实例状态
+                     * 事件实例状态,示例取值:
+- 已消费: COMSUMED
+- 已过期: EXPIRED
+- 待消费: ACTIVE
+- 消费中: CONSUMING
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -475,6 +578,24 @@ namespace TencentCloud
                      */
                     std::string m_dimension;
                     bool m_dimensionHasBeenSet;
+
+                    /**
+                     * 事件实例有效时间
+                     */
+                    std::string m_timeToLive;
+                    bool m_timeToLiveHasBeenSet;
+
+                    /**
+                     * 排序字段
+                     */
+                    std::string m_sortItem;
+                    bool m_sortItemHasBeenSet;
+
+                    /**
+                     * 排序顺序
+                     */
+                    std::string m_sortType;
+                    bool m_sortTypeHasBeenSet;
 
                 };
             }

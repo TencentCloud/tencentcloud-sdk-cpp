@@ -14,41 +14,41 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tiw/v20190919/model/DescribeOfflineRecordRequest.h>
+#include <tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Tiw::V20190919::Model;
+using namespace TencentCloud::Mna::V20210119::Model;
 using namespace std;
 
-DescribeOfflineRecordRequest::DescribeOfflineRecordRequest() :
-    m_sdkAppIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+ModifyPackageRenewFlagRequest::ModifyPackageRenewFlagRequest() :
+    m_resourceIdHasBeenSet(false),
+    m_renewFlagHasBeenSet(false)
 {
 }
 
-string DescribeOfflineRecordRequest::ToJsonString() const
+string ModifyPackageRenewFlagRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_sdkAppIdHasBeenSet)
+    if (m_resourceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SdkAppId";
+        string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sdkAppId, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_taskIdHasBeenSet)
+    if (m_renewFlagHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
+        string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_renewFlag, allocator);
     }
 
 
@@ -59,36 +59,36 @@ string DescribeOfflineRecordRequest::ToJsonString() const
 }
 
 
-int64_t DescribeOfflineRecordRequest::GetSdkAppId() const
+string ModifyPackageRenewFlagRequest::GetResourceId() const
 {
-    return m_sdkAppId;
+    return m_resourceId;
 }
 
-void DescribeOfflineRecordRequest::SetSdkAppId(const int64_t& _sdkAppId)
+void ModifyPackageRenewFlagRequest::SetResourceId(const string& _resourceId)
 {
-    m_sdkAppId = _sdkAppId;
-    m_sdkAppIdHasBeenSet = true;
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
 }
 
-bool DescribeOfflineRecordRequest::SdkAppIdHasBeenSet() const
+bool ModifyPackageRenewFlagRequest::ResourceIdHasBeenSet() const
 {
-    return m_sdkAppIdHasBeenSet;
+    return m_resourceIdHasBeenSet;
 }
 
-string DescribeOfflineRecordRequest::GetTaskId() const
+bool ModifyPackageRenewFlagRequest::GetRenewFlag() const
 {
-    return m_taskId;
+    return m_renewFlag;
 }
 
-void DescribeOfflineRecordRequest::SetTaskId(const string& _taskId)
+void ModifyPackageRenewFlagRequest::SetRenewFlag(const bool& _renewFlag)
 {
-    m_taskId = _taskId;
-    m_taskIdHasBeenSet = true;
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
 }
 
-bool DescribeOfflineRecordRequest::TaskIdHasBeenSet() const
+bool ModifyPackageRenewFlagRequest::RenewFlagHasBeenSet() const
 {
-    return m_taskIdHasBeenSet;
+    return m_renewFlagHasBeenSet;
 }
 
 

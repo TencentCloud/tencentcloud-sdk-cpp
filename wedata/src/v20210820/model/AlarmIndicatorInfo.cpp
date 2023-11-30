@@ -30,7 +30,8 @@ AlarmIndicatorInfo::AlarmIndicatorInfo() :
     m_alarmIndicatorUnitHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_durationUnitHasBeenSet(false),
-    m_maxTimesHasBeenSet(false)
+    m_maxTimesHasBeenSet(false),
+    m_thresholdHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome AlarmIndicatorInfo::Deserialize(const rapidjson::Value &valu
         m_maxTimesHasBeenSet = true;
     }
 
+    if (value.HasMember("Threshold") && !value["Threshold"].IsNull())
+    {
+        if (!value["Threshold"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmIndicatorInfo.Threshold` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_threshold = value["Threshold"].GetDouble();
+        m_thresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void AlarmIndicatorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "MaxTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxTimes, allocator);
+    }
+
+    if (m_thresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Threshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_threshold, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void AlarmIndicatorInfo::SetMaxTimes(const int64_t& _maxTimes)
 bool AlarmIndicatorInfo::MaxTimesHasBeenSet() const
 {
     return m_maxTimesHasBeenSet;
+}
+
+double AlarmIndicatorInfo::GetThreshold() const
+{
+    return m_threshold;
+}
+
+void AlarmIndicatorInfo::SetThreshold(const double& _threshold)
+{
+    m_threshold = _threshold;
+    m_thresholdHasBeenSet = true;
+}
+
+bool AlarmIndicatorInfo::ThresholdHasBeenSet() const
+{
+    return m_thresholdHasBeenSet;
 }
 

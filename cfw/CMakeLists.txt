@@ -36,6 +36,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/StaticInfo.h
   include/tencentcloud/cfw/v20190904/model/SyncFwOperateResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatAcRuleResponse.h
+  include/tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/AddAclRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeVpcFwGroupSwitchRequest.h
@@ -80,11 +81,11 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/FwGateway.h
   include/tencentcloud/cfw/v20190904/model/ModifySecurityGroupSequenceRulesResponse.h
   include/tencentcloud/cfw/v20190904/model/SecurityGroupRule.h
-  include/tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleResponse.h
+  include/tencentcloud/cfw/v20190904/model/DeleteIdsWhiteRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifySequenceRulesRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyAclRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/SequenceData.h
-  include/tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressResponse.h
+  include/tencentcloud/cfw/v20190904/model/CreateNatFwInstanceRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifySecurityGroupItemRuleStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/VpcFwGroupInfo.h
@@ -103,10 +104,11 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/AddAclRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/NatInstanceInfo.h
   include/tencentcloud/cfw/v20190904/model/SetNatFwEipResponse.h
-  include/tencentcloud/cfw/v20190904/model/AcListsData.h
+  include/tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateNatRuleItem.h
   include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingResponse.h
+  include/tencentcloud/cfw/v20190904/model/AcListsData.h
   include/tencentcloud/cfw/v20190904/model/ModifySecurityGroupItemRuleStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/VpcFwJoinInstanceType.h
   include/tencentcloud/cfw/v20190904/model/DescribeSourceAssetRequest.h
@@ -135,6 +137,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyVpcFwGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityDispatchStatusResponse.h
+  include/tencentcloud/cfw/v20190904/model/CreateIdsWhiteRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyResourceGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/SecurityGroupListData.h
   include/tencentcloud/cfw/v20190904/model/EdgeIpSwitch.h
@@ -173,16 +176,16 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/UnHandleEventDetail.h
   include/tencentcloud/cfw/v20190904/model/RemoveEnterpriseSecurityGroupRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteResourceGroupRequest.h
-  include/tencentcloud/cfw/v20190904/model/CreateNatFwInstanceRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListRequest.h
   include/tencentcloud/cfw/v20190904/model/VpcRuleItem.h
-  include/tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeIdsWhiteRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/RemoveEnterpriseSecurityGroupRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/NetInstancesInfo.h
   include/tencentcloud/cfw/v20190904/model/VpcDnsInfo.h
   include/tencentcloud/cfw/v20190904/model/CreateAddressTemplateResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeTableStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyEdgeIpSwitchRequest.h
+  include/tencentcloud/cfw/v20190904/model/DeleteIdsWhiteRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateAlertCenterOmitResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceWithRegionResponse.h
@@ -242,6 +245,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyVpcFwSequenceRulesRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeIdsWhiteRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyAssetSyncRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstResponse.h
   include/tencentcloud/cfw/v20190904/model/DescAcItem.h
@@ -270,6 +274,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyRunSyncAssetRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteAddressTemplateRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressResponse.h
   include/tencentcloud/cfw/v20190904/model/NatSwitchListData.h
   include/tencentcloud/cfw/v20190904/model/DescribeSwitchListsResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyAcRuleRequest.h
@@ -292,6 +297,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/VpcFwInstance.h
   include/tencentcloud/cfw/v20190904/model/CreateAlertCenterRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeAddressTemplateListResponse.h
+  include/tencentcloud/cfw/v20190904/model/CreateIdsWhiteRuleRequest.h
   )
 
 set(cfw_src
@@ -313,6 +319,7 @@ set(cfw_src
   src/v20190904/model/StaticInfo.cpp
   src/v20190904/model/SyncFwOperateResponse.cpp
   src/v20190904/model/DescribeNatAcRuleResponse.cpp
+  src/v20190904/model/ModifyBlockTopRequest.cpp
   src/v20190904/model/ModifyPublicIPSwitchStatusResponse.cpp
   src/v20190904/model/AddAclRuleRequest.cpp
   src/v20190904/model/DescribeVpcFwGroupSwitchRequest.cpp
@@ -357,11 +364,11 @@ set(cfw_src
   src/v20190904/model/FwGateway.cpp
   src/v20190904/model/ModifySecurityGroupSequenceRulesResponse.cpp
   src/v20190904/model/SecurityGroupRule.cpp
-  src/v20190904/model/DeleteSecurityGroupRuleResponse.cpp
+  src/v20190904/model/DeleteIdsWhiteRuleRequest.cpp
   src/v20190904/model/ModifySequenceRulesRequest.cpp
   src/v20190904/model/ModifyAclRuleResponse.cpp
   src/v20190904/model/SequenceData.cpp
-  src/v20190904/model/DescribeEnterpriseSGRuleProgressResponse.cpp
+  src/v20190904/model/CreateNatFwInstanceRequest.cpp
   src/v20190904/model/ModifySecurityGroupItemRuleStatusResponse.cpp
   src/v20190904/model/DescribeEnterpriseSecurityGroupRuleResponse.cpp
   src/v20190904/model/VpcFwGroupInfo.cpp
@@ -380,10 +387,11 @@ set(cfw_src
   src/v20190904/model/AddAclRuleResponse.cpp
   src/v20190904/model/NatInstanceInfo.cpp
   src/v20190904/model/SetNatFwEipResponse.cpp
-  src/v20190904/model/AcListsData.cpp
+  src/v20190904/model/DeleteSecurityGroupRuleResponse.cpp
   src/v20190904/model/ModifyPublicIPSwitchStatusRequest.cpp
   src/v20190904/model/CreateNatRuleItem.cpp
   src/v20190904/model/ModifyStorageSettingResponse.cpp
+  src/v20190904/model/AcListsData.cpp
   src/v20190904/model/ModifySecurityGroupItemRuleStatusRequest.cpp
   src/v20190904/model/VpcFwJoinInstanceType.cpp
   src/v20190904/model/DescribeSourceAssetRequest.cpp
@@ -412,6 +420,7 @@ set(cfw_src
   src/v20190904/model/DescribeDefenseSwitchRequest.cpp
   src/v20190904/model/ModifyVpcFwGroupRequest.cpp
   src/v20190904/model/ModifyEnterpriseSecurityDispatchStatusResponse.cpp
+  src/v20190904/model/CreateIdsWhiteRuleResponse.cpp
   src/v20190904/model/ModifyResourceGroupRequest.cpp
   src/v20190904/model/SecurityGroupListData.cpp
   src/v20190904/model/EdgeIpSwitch.cpp
@@ -450,16 +459,16 @@ set(cfw_src
   src/v20190904/model/UnHandleEventDetail.cpp
   src/v20190904/model/RemoveEnterpriseSecurityGroupRuleRequest.cpp
   src/v20190904/model/DeleteResourceGroupRequest.cpp
-  src/v20190904/model/CreateNatFwInstanceRequest.cpp
   src/v20190904/model/DescribeBlockByIpTimesListRequest.cpp
   src/v20190904/model/VpcRuleItem.cpp
-  src/v20190904/model/ModifyBlockTopRequest.cpp
+  src/v20190904/model/DescribeIdsWhiteRuleResponse.cpp
   src/v20190904/model/RemoveEnterpriseSecurityGroupRuleResponse.cpp
   src/v20190904/model/NetInstancesInfo.cpp
   src/v20190904/model/VpcDnsInfo.cpp
   src/v20190904/model/CreateAddressTemplateResponse.cpp
   src/v20190904/model/DescribeTableStatusResponse.cpp
   src/v20190904/model/ModifyEdgeIpSwitchRequest.cpp
+  src/v20190904/model/DeleteIdsWhiteRuleResponse.cpp
   src/v20190904/model/CreateAlertCenterOmitResponse.cpp
   src/v20190904/model/DescribeResourceGroupNewResponse.cpp
   src/v20190904/model/DescribeNatFwInstanceWithRegionResponse.cpp
@@ -519,6 +528,7 @@ set(cfw_src
   src/v20190904/model/DeleteNatFwInstanceRequest.cpp
   src/v20190904/model/ModifyVpcFwSequenceRulesRequest.cpp
   src/v20190904/model/ModifyStorageSettingRequest.cpp
+  src/v20190904/model/DescribeIdsWhiteRuleRequest.cpp
   src/v20190904/model/ModifyAssetSyncRequest.cpp
   src/v20190904/model/DescribeNatFwVpcDnsLstResponse.cpp
   src/v20190904/model/DescAcItem.cpp
@@ -547,6 +557,7 @@ set(cfw_src
   src/v20190904/model/ModifyRunSyncAssetRequest.cpp
   src/v20190904/model/DeleteAddressTemplateRequest.cpp
   src/v20190904/model/CreateAcRulesResponse.cpp
+  src/v20190904/model/DescribeEnterpriseSGRuleProgressResponse.cpp
   src/v20190904/model/NatSwitchListData.cpp
   src/v20190904/model/DescribeSwitchListsResponse.cpp
   src/v20190904/model/ModifyAcRuleRequest.cpp
@@ -569,6 +580,7 @@ set(cfw_src
   src/v20190904/model/VpcFwInstance.cpp
   src/v20190904/model/CreateAlertCenterRuleResponse.cpp
   src/v20190904/model/DescribeAddressTemplateListResponse.cpp
+  src/v20190904/model/CreateIdsWhiteRuleRequest.cpp
   )
 
 set(cfw_include

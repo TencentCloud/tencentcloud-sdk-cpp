@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Result
+                     * 获取导入结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result Result
+                     * @return Result 导入结果
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Result
+                     * 导入结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConfigTemplate m_result;

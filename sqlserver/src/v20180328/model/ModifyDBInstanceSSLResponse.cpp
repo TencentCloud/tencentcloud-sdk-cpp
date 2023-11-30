@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tiw/v20190919/model/CreateOfflineRecordResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceSSLResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tiw::V20190919::Model;
+using namespace TencentCloud::Sqlserver::V20180328::Model;
 using namespace std;
 
-CreateOfflineRecordResponse::CreateOfflineRecordResponse()
+ModifyDBInstanceSSLResponse::ModifyDBInstanceSSLResponse() :
+    m_flowIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateOfflineRecordResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyDBInstanceSSLResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,33 @@ CoreInternalOutcome CreateOfflineRecordResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = rsp["FlowId"].GetUint64();
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string CreateOfflineRecordResponse::ToJsonString() const
+string ModifyDBInstanceSSLResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateOfflineRecordResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t ModifyDBInstanceSSLResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool ModifyDBInstanceSSLResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
 
 

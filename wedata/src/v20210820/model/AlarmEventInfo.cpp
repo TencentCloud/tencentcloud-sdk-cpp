@@ -41,7 +41,10 @@ AlarmEventInfo::AlarmEventInfo() :
     m_regularIdHasBeenSet(false),
     m_alarmRecipientNameHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_sendResultHasBeenSet(false)
+    m_sendResultHasBeenSet(false),
+    m_monitorObjectIdHasBeenSet(false),
+    m_monitorObjectNameHasBeenSet(false),
+    m_thresholdHasBeenSet(false)
 {
 }
 
@@ -260,6 +263,36 @@ CoreInternalOutcome AlarmEventInfo::Deserialize(const rapidjson::Value &value)
         m_sendResultHasBeenSet = true;
     }
 
+    if (value.HasMember("MonitorObjectId") && !value["MonitorObjectId"].IsNull())
+    {
+        if (!value["MonitorObjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.MonitorObjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorObjectId = string(value["MonitorObjectId"].GetString());
+        m_monitorObjectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorObjectName") && !value["MonitorObjectName"].IsNull())
+    {
+        if (!value["MonitorObjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.MonitorObjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorObjectName = string(value["MonitorObjectName"].GetString());
+        m_monitorObjectNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Threshold") && !value["Threshold"].IsNull())
+    {
+        if (!value["Threshold"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.Threshold` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_threshold = value["Threshold"].GetDouble();
+        m_thresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +466,30 @@ void AlarmEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SendResult";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sendResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorObjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorObjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_monitorObjectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorObjectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorObjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_monitorObjectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_thresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Threshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_threshold, allocator);
     }
 
 }
@@ -772,5 +829,53 @@ void AlarmEventInfo::SetSendResult(const string& _sendResult)
 bool AlarmEventInfo::SendResultHasBeenSet() const
 {
     return m_sendResultHasBeenSet;
+}
+
+string AlarmEventInfo::GetMonitorObjectId() const
+{
+    return m_monitorObjectId;
+}
+
+void AlarmEventInfo::SetMonitorObjectId(const string& _monitorObjectId)
+{
+    m_monitorObjectId = _monitorObjectId;
+    m_monitorObjectIdHasBeenSet = true;
+}
+
+bool AlarmEventInfo::MonitorObjectIdHasBeenSet() const
+{
+    return m_monitorObjectIdHasBeenSet;
+}
+
+string AlarmEventInfo::GetMonitorObjectName() const
+{
+    return m_monitorObjectName;
+}
+
+void AlarmEventInfo::SetMonitorObjectName(const string& _monitorObjectName)
+{
+    m_monitorObjectName = _monitorObjectName;
+    m_monitorObjectNameHasBeenSet = true;
+}
+
+bool AlarmEventInfo::MonitorObjectNameHasBeenSet() const
+{
+    return m_monitorObjectNameHasBeenSet;
+}
+
+double AlarmEventInfo::GetThreshold() const
+{
+    return m_threshold;
+}
+
+void AlarmEventInfo::SetThreshold(const double& _threshold)
+{
+    m_threshold = _threshold;
+    m_thresholdHasBeenSet = true;
+}
+
+bool AlarmEventInfo::ThresholdHasBeenSet() const
+{
+    return m_thresholdHasBeenSet;
 }
 

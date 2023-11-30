@@ -106,6 +106,7 @@ set(weilingwith_public_header_model
   include/tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceListRequest.h
   include/tencentcloud/weilingwith/v20230427/model/BuildingProfile.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeDeviceTypeListResponse.h
+  include/tencentcloud/weilingwith/v20230427/model/AlarmStatusData.h
   include/tencentcloud/weilingwith/v20230427/model/RecordInfo.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeVideoRecordStreamResponse.h
   include/tencentcloud/weilingwith/v20230427/model/CreateDeviceSucceeded.h
@@ -228,6 +229,7 @@ set(weilingwith_public_header_model
   include/tencentcloud/weilingwith/v20230427/model/SpaceDataListStatsRes.h
   include/tencentcloud/weilingwith/v20230427/model/RawInfo.h
   include/tencentcloud/weilingwith/v20230427/model/FileDownloadURL.h
+  include/tencentcloud/weilingwith/v20230427/model/DescribeAlarmStatusListRes.h
   include/tencentcloud/weilingwith/v20230427/model/DescribeVideoLiveStreamRequest.h
   include/tencentcloud/weilingwith/v20230427/model/ModelSet.h
   include/tencentcloud/weilingwith/v20230427/model/ChangeAlarmStatusRequest.h
@@ -336,6 +338,7 @@ set(weilingwith_src
   src/v20230427/model/DescribeWorkspaceListRequest.cpp
   src/v20230427/model/BuildingProfile.cpp
   src/v20230427/model/DescribeDeviceTypeListResponse.cpp
+  src/v20230427/model/AlarmStatusData.cpp
   src/v20230427/model/RecordInfo.cpp
   src/v20230427/model/DescribeVideoRecordStreamResponse.cpp
   src/v20230427/model/CreateDeviceSucceeded.cpp
@@ -458,6 +461,7 @@ set(weilingwith_src
   src/v20230427/model/SpaceDataListStatsRes.cpp
   src/v20230427/model/RawInfo.cpp
   src/v20230427/model/FileDownloadURL.cpp
+  src/v20230427/model/DescribeAlarmStatusListRes.cpp
   src/v20230427/model/DescribeVideoLiveStreamRequest.cpp
   src/v20230427/model/ModelSet.cpp
   src/v20230427/model/ChangeAlarmStatusRequest.cpp

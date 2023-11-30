@@ -68,15 +68,135 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><li>CLOUD_BSSD：通用型SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。
-                     * @return DiskType 数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><li>CLOUD_BSSD：通用型SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。
+                     * 获取数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br />
+<li>
+  LOCAL_BASIC：本地硬盘<br />
+  <li>
+    LOCAL_SSD：本地SSD硬盘<br />
+    <li>
+      LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br />
+      <li>
+        LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br />
+        <li>
+          CLOUD_BASIC：普通云硬盘<br />
+          <li>
+            CLOUD_PREMIUM：高性能云硬盘<br />
+            <li>
+              CLOUD_SSD：SSD云硬盘<br />
+              <li>
+                CLOUD_HSSD：增强型SSD云硬盘<br />
+                <li>
+                  CLOUD_TSSD：极速型SSD云硬盘<br />
+                  <li>
+                    CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。
+                  </li>
+                </li>
+              </li>
+            </li>
+          </li>
+        </li>
+      </li>
+    </li>
+  </li>
+</li>
+                     * @return DiskType 数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br />
+<li>
+  LOCAL_BASIC：本地硬盘<br />
+  <li>
+    LOCAL_SSD：本地SSD硬盘<br />
+    <li>
+      LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br />
+      <li>
+        LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br />
+        <li>
+          CLOUD_BASIC：普通云硬盘<br />
+          <li>
+            CLOUD_PREMIUM：高性能云硬盘<br />
+            <li>
+              CLOUD_SSD：SSD云硬盘<br />
+              <li>
+                CLOUD_HSSD：增强型SSD云硬盘<br />
+                <li>
+                  CLOUD_TSSD：极速型SSD云硬盘<br />
+                  <li>
+                    CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。
+                  </li>
+                </li>
+              </li>
+            </li>
+          </li>
+        </li>
+      </li>
+    </li>
+  </li>
+</li>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><li>CLOUD_BSSD：通用型SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。
-                     * @param _diskType 数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><li>CLOUD_BSSD：通用型SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。
+                     * 设置数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br />
+<li>
+  LOCAL_BASIC：本地硬盘<br />
+  <li>
+    LOCAL_SSD：本地SSD硬盘<br />
+    <li>
+      LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br />
+      <li>
+        LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br />
+        <li>
+          CLOUD_BASIC：普通云硬盘<br />
+          <li>
+            CLOUD_PREMIUM：高性能云硬盘<br />
+            <li>
+              CLOUD_SSD：SSD云硬盘<br />
+              <li>
+                CLOUD_HSSD：增强型SSD云硬盘<br />
+                <li>
+                  CLOUD_TSSD：极速型SSD云硬盘<br />
+                  <li>
+                    CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。
+                  </li>
+                </li>
+              </li>
+            </li>
+          </li>
+        </li>
+      </li>
+    </li>
+  </li>
+</li>
+                     * @param _diskType 数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br />
+<li>
+  LOCAL_BASIC：本地硬盘<br />
+  <li>
+    LOCAL_SSD：本地SSD硬盘<br />
+    <li>
+      LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br />
+      <li>
+        LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br />
+        <li>
+          CLOUD_BASIC：普通云硬盘<br />
+          <li>
+            CLOUD_PREMIUM：高性能云硬盘<br />
+            <li>
+              CLOUD_SSD：SSD云硬盘<br />
+              <li>
+                CLOUD_HSSD：增强型SSD云硬盘<br />
+                <li>
+                  CLOUD_TSSD：极速型SSD云硬盘<br />
+                  <li>
+                    CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。
+                  </li>
+                </li>
+              </li>
+            </li>
+          </li>
+        </li>
+      </li>
+    </li>
+  </li>
+</li>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -115,16 +235,20 @@ namespace TencentCloud
 
                     /**
                      * 获取数据盘是否随子机销毁。取值范围：
-<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘
-<li>FALSE：子机销毁时，保留数据盘<br>
-默认取值：TRUE<br>
-该参数目前仅用于 `RunInstances` 接口。
+<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>
+<li>
+  FALSE：子机销毁时，保留数据盘<br />
+  默认取值：TRUE<br />
+  该参数目前仅用于 `RunInstances` 接口。
+</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteWithInstance 数据盘是否随子机销毁。取值范围：
-<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘
-<li>FALSE：子机销毁时，保留数据盘<br>
-默认取值：TRUE<br>
-该参数目前仅用于 `RunInstances` 接口。
+<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>
+<li>
+  FALSE：子机销毁时，保留数据盘<br />
+  默认取值：TRUE<br />
+  该参数目前仅用于 `RunInstances` 接口。
+</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -132,16 +256,20 @@ namespace TencentCloud
 
                     /**
                      * 设置数据盘是否随子机销毁。取值范围：
-<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘
-<li>FALSE：子机销毁时，保留数据盘<br>
-默认取值：TRUE<br>
-该参数目前仅用于 `RunInstances` 接口。
+<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>
+<li>
+  FALSE：子机销毁时，保留数据盘<br />
+  默认取值：TRUE<br />
+  该参数目前仅用于 `RunInstances` 接口。
+</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deleteWithInstance 数据盘是否随子机销毁。取值范围：
-<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘
-<li>FALSE：子机销毁时，保留数据盘<br>
-默认取值：TRUE<br>
-该参数目前仅用于 `RunInstances` 接口。
+<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>
+<li>
+  FALSE：子机销毁时，保留数据盘<br />
+  默认取值：TRUE<br />
+  该参数目前仅用于 `RunInstances` 接口。
+</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -181,16 +309,20 @@ namespace TencentCloud
 
                     /**
                      * 获取数据盘是加密。取值范围：
-<li>true：加密
-<li>false：不加密<br>
-默认取值：false<br>
-该参数目前仅用于 `RunInstances` 接口。
+<li>true：加密</li>
+<li>
+  false：不加密<br />
+  默认取值：false<br />
+  该参数目前仅用于 `RunInstances` 接口。
+</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encrypt 数据盘是加密。取值范围：
-<li>true：加密
-<li>false：不加密<br>
-默认取值：false<br>
-该参数目前仅用于 `RunInstances` 接口。
+<li>true：加密</li>
+<li>
+  false：不加密<br />
+  默认取值：false<br />
+  该参数目前仅用于 `RunInstances` 接口。
+</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,16 +330,20 @@ namespace TencentCloud
 
                     /**
                      * 设置数据盘是加密。取值范围：
-<li>true：加密
-<li>false：不加密<br>
-默认取值：false<br>
-该参数目前仅用于 `RunInstances` 接口。
+<li>true：加密</li>
+<li>
+  false：不加密<br />
+  默认取值：false<br />
+  该参数目前仅用于 `RunInstances` 接口。
+</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encrypt 数据盘是加密。取值范围：
-<li>true：加密
-<li>false：不加密<br>
-默认取值：false<br>
-该参数目前仅用于 `RunInstances` 接口。
+<li>true：加密</li>
+<li>
+  false：不加密<br />
+  默认取值：false<br />
+  该参数目前仅用于 `RunInstances` 接口。
+</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -303,6 +439,39 @@ namespace TencentCloud
                      */
                     bool CdcIdHasBeenSet() const;
 
+                    /**
+                     * 获取突发性能
+
+ <b>注：内测中。</b>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BurstPerformance 突发性能
+
+ <b>注：内测中。</b>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetBurstPerformance() const;
+
+                    /**
+                     * 设置突发性能
+
+ <b>注：内测中。</b>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _burstPerformance 突发性能
+
+ <b>注：内测中。</b>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBurstPerformance(const bool& _burstPerformance);
+
+                    /**
+                     * 判断参数 BurstPerformance 是否已赋值
+                     * @return BurstPerformance 是否已赋值
+                     * 
+                     */
+                    bool BurstPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,7 +481,37 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><li>CLOUD_BSSD：通用型SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。
+                     * 数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br />
+<li>
+  LOCAL_BASIC：本地硬盘<br />
+  <li>
+    LOCAL_SSD：本地SSD硬盘<br />
+    <li>
+      LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br />
+      <li>
+        LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br />
+        <li>
+          CLOUD_BASIC：普通云硬盘<br />
+          <li>
+            CLOUD_PREMIUM：高性能云硬盘<br />
+            <li>
+              CLOUD_SSD：SSD云硬盘<br />
+              <li>
+                CLOUD_HSSD：增强型SSD云硬盘<br />
+                <li>
+                  CLOUD_TSSD：极速型SSD云硬盘<br />
+                  <li>
+                    CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。
+                  </li>
+                </li>
+              </li>
+            </li>
+          </li>
+        </li>
+      </li>
+    </li>
+  </li>
+</li>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
@@ -326,10 +525,12 @@ namespace TencentCloud
 
                     /**
                      * 数据盘是否随子机销毁。取值范围：
-<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘
-<li>FALSE：子机销毁时，保留数据盘<br>
-默认取值：TRUE<br>
-该参数目前仅用于 `RunInstances` 接口。
+<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>
+<li>
+  FALSE：子机销毁时，保留数据盘<br />
+  默认取值：TRUE<br />
+  该参数目前仅用于 `RunInstances` 接口。
+</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deleteWithInstance;
@@ -344,10 +545,12 @@ namespace TencentCloud
 
                     /**
                      * 数据盘是加密。取值范围：
-<li>true：加密
-<li>false：不加密<br>
-默认取值：false<br>
-该参数目前仅用于 `RunInstances` 接口。
+<li>true：加密</li>
+<li>
+  false：不加密<br />
+  默认取值：false<br />
+  该参数目前仅用于 `RunInstances` 接口。
+</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_encrypt;
@@ -375,6 +578,15 @@ namespace TencentCloud
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * 突发性能
+
+ <b>注：内测中。</b>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_burstPerformance;
+                    bool m_burstPerformanceHasBeenSet;
 
                 };
             }

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/EventCaseDTO.h>
+#include <tencentcloud/wedata/v20210820/model/EventBatchCaseDTO.h>
 
 
 namespace TencentCloud
@@ -85,6 +86,27 @@ namespace TencentCloud
                      */
                     bool EventCaseListHasBeenSet() const;
 
+                    /**
+                     * 获取事件实例信息(连续时间)
+                     * @return EventBatchCaseList 事件实例信息(连续时间)
+                     * 
+                     */
+                    std::vector<EventBatchCaseDTO> GetEventBatchCaseList() const;
+
+                    /**
+                     * 设置事件实例信息(连续时间)
+                     * @param _eventBatchCaseList 事件实例信息(连续时间)
+                     * 
+                     */
+                    void SetEventBatchCaseList(const std::vector<EventBatchCaseDTO>& _eventBatchCaseList);
+
+                    /**
+                     * 判断参数 EventBatchCaseList 是否已赋值
+                     * @return EventBatchCaseList 是否已赋值
+                     * 
+                     */
+                    bool EventBatchCaseListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +120,12 @@ namespace TencentCloud
                      */
                     std::vector<EventCaseDTO> m_eventCaseList;
                     bool m_eventCaseListHasBeenSet;
+
+                    /**
+                     * 事件实例信息(连续时间)
+                     */
+                    std::vector<EventBatchCaseDTO> m_eventBatchCaseList;
+                    bool m_eventBatchCaseListHasBeenSet;
 
                 };
             }

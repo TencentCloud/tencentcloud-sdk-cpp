@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tiw/v20190919/model/SetOfflineRecordCallbackResponse.h>
+#include <tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tiw::V20190919::Model;
+using namespace TencentCloud::Mna::V20210119::Model;
 using namespace std;
 
-SetOfflineRecordCallbackResponse::SetOfflineRecordCallbackResponse()
+ModifyPackageRenewFlagResponse::ModifyPackageRenewFlagResponse()
 {
 }
 
-CoreInternalOutcome SetOfflineRecordCallbackResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyPackageRenewFlagResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome SetOfflineRecordCallbackResponse::Deserialize(const string &
     return CoreInternalOutcome(true);
 }
 
-string SetOfflineRecordCallbackResponse::ToJsonString() const
+string ModifyPackageRenewFlagResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

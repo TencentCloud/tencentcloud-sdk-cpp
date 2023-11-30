@@ -853,6 +853,31 @@ namespace TencentCloud
                      */
                     bool OriginalCostWithSPHasBeenSet() const;
 
+                    /**
+                     * 获取账单归属月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillMonth 账单归属月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillMonth() const;
+
+                    /**
+                     * 设置账单归属月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billMonth 账单归属月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillMonth(const std::string& _billMonth);
+
+                    /**
+                     * 判断参数 BillMonth 是否已赋值
+                     * @return BillMonth 是否已赋值
+                     * 
+                     */
+                    bool BillMonthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1084,6 +1109,13 @@ namespace TencentCloud
                      */
                     std::string m_originalCostWithSP;
                     bool m_originalCostWithSPHasBeenSet;
+
+                    /**
+                     * 账单归属月
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billMonth;
+                    bool m_billMonthHasBeenSet;
 
                 };
             }

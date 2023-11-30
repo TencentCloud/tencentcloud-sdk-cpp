@@ -14,32 +14,37 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tiw/v20190919/model/DescribeOfflineRecordCallbackRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetDevicePayModeRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Tiw::V20190919::Model;
+using namespace TencentCloud::Mna::V20210119::Model;
 using namespace std;
 
-DescribeOfflineRecordCallbackRequest::DescribeOfflineRecordCallbackRequest() :
-    m_sdkAppIdHasBeenSet(false)
+GetDevicePayModeRequest::GetDevicePayModeRequest() :
+    m_deviceIdListHasBeenSet(false)
 {
 }
 
-string DescribeOfflineRecordCallbackRequest::ToJsonString() const
+string GetDevicePayModeRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_sdkAppIdHasBeenSet)
+    if (m_deviceIdListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SdkAppId";
+        string key = "DeviceIdList";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sdkAppId, allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deviceIdList.begin(); itr != m_deviceIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -50,20 +55,20 @@ string DescribeOfflineRecordCallbackRequest::ToJsonString() const
 }
 
 
-int64_t DescribeOfflineRecordCallbackRequest::GetSdkAppId() const
+vector<string> GetDevicePayModeRequest::GetDeviceIdList() const
 {
-    return m_sdkAppId;
+    return m_deviceIdList;
 }
 
-void DescribeOfflineRecordCallbackRequest::SetSdkAppId(const int64_t& _sdkAppId)
+void GetDevicePayModeRequest::SetDeviceIdList(const vector<string>& _deviceIdList)
 {
-    m_sdkAppId = _sdkAppId;
-    m_sdkAppIdHasBeenSet = true;
+    m_deviceIdList = _deviceIdList;
+    m_deviceIdListHasBeenSet = true;
 }
 
-bool DescribeOfflineRecordCallbackRequest::SdkAppIdHasBeenSet() const
+bool GetDevicePayModeRequest::DeviceIdListHasBeenSet() const
 {
-    return m_sdkAppIdHasBeenSet;
+    return m_deviceIdListHasBeenSet;
 }
 
 

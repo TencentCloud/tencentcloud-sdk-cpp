@@ -910,6 +910,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/OrderField.h
   include/tencentcloud/wedata/v20210820/model/TaskTypeDsVO.h
   include/tencentcloud/wedata/v20210820/model/BatchSuspendIntegrationTasksResponse.h
+  include/tencentcloud/wedata/v20210820/model/EventBatchCaseDTO.h
   include/tencentcloud/wedata/v20210820/model/DescribeWorkflowExecuteByIdRequest.h
   include/tencentcloud/wedata/v20210820/model/WorkflowExtOpsDtoPage.h
   include/tencentcloud/wedata/v20210820/model/RegisterEventResponse.h
@@ -1823,6 +1824,7 @@ set(wedata_src
   src/v20210820/model/OrderField.cpp
   src/v20210820/model/TaskTypeDsVO.cpp
   src/v20210820/model/BatchSuspendIntegrationTasksResponse.cpp
+  src/v20210820/model/EventBatchCaseDTO.cpp
   src/v20210820/model/DescribeWorkflowExecuteByIdRequest.cpp
   src/v20210820/model/WorkflowExtOpsDtoPage.cpp
   src/v20210820/model/RegisterEventResponse.cpp

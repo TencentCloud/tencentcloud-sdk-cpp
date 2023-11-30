@@ -26,7 +26,8 @@ BatchUpdateIntegrationTasksRequest::BatchUpdateIntegrationTasksRequest() :
     m_taskIdsHasBeenSet(false),
     m_inchargeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_inchargeIdsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string BatchUpdateIntegrationTasksRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inchargeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InchargeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inchargeIds.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void BatchUpdateIntegrationTasksRequest::SetProjectId(const string& _projectId)
 bool BatchUpdateIntegrationTasksRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string BatchUpdateIntegrationTasksRequest::GetInchargeIds() const
+{
+    return m_inchargeIds;
+}
+
+void BatchUpdateIntegrationTasksRequest::SetInchargeIds(const string& _inchargeIds)
+{
+    m_inchargeIds = _inchargeIds;
+    m_inchargeIdsHasBeenSet = true;
+}
+
+bool BatchUpdateIntegrationTasksRequest::InchargeIdsHasBeenSet() const
+{
+    return m_inchargeIdsHasBeenSet;
 }
 
 

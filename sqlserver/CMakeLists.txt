@@ -44,6 +44,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/RestoreInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/InstanceTask.h
   include/tencentcloud/sqlserver/v20180328/model/ProductSpec.h
+  include/tencentcloud/sqlserver/v20180328/model/SSLConfig.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyAccountPrivilegeResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyMigrationResponse.h
@@ -82,6 +83,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/CreateIncrementalMigrationResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeZonesResponse.h
   include/tencentcloud/sqlserver/v20180328/model/UpgradeDBInstanceRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceSSLResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DBPrivilege.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupDetailsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ResourceTag.h
@@ -264,6 +266,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupListRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateBackupRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBsNormalRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceSSLRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeNameRequest.h
   include/tencentcloud/sqlserver/v20180328/model/MigrationAction.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionZoneRequest.h
@@ -406,6 +409,7 @@ set(sqlserver_src
   src/v20180328/model/RestoreInstanceResponse.cpp
   src/v20180328/model/InstanceTask.cpp
   src/v20180328/model/ProductSpec.cpp
+  src/v20180328/model/SSLConfig.cpp
   src/v20180328/model/DescribeFlowStatusRequest.cpp
   src/v20180328/model/ModifyAccountPrivilegeResponse.cpp
   src/v20180328/model/ModifyMigrationResponse.cpp
@@ -444,6 +448,7 @@ set(sqlserver_src
   src/v20180328/model/CreateIncrementalMigrationResponse.cpp
   src/v20180328/model/DescribeZonesResponse.cpp
   src/v20180328/model/UpgradeDBInstanceRequest.cpp
+  src/v20180328/model/ModifyDBInstanceSSLResponse.cpp
   src/v20180328/model/DBPrivilege.cpp
   src/v20180328/model/DescribeReadOnlyGroupDetailsResponse.cpp
   src/v20180328/model/ResourceTag.cpp
@@ -626,6 +631,7 @@ set(sqlserver_src
   src/v20180328/model/DescribeReadOnlyGroupListRequest.cpp
   src/v20180328/model/CreateBackupRequest.cpp
   src/v20180328/model/DescribeDBsNormalRequest.cpp
+  src/v20180328/model/ModifyDBInstanceSSLRequest.cpp
   src/v20180328/model/ModifyPublishSubscribeNameRequest.cpp
   src/v20180328/model/MigrationAction.cpp
   src/v20180328/model/DescribeCrossRegionZoneRequest.cpp

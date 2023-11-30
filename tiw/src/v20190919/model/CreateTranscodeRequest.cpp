@@ -32,7 +32,8 @@ CreateTranscodeRequest::CreateTranscodeRequest() :
     m_extraDataHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_minScaleResolutionHasBeenSet(false),
-    m_autoHandleUnsupportedElementHasBeenSet(false)
+    m_autoHandleUnsupportedElementHasBeenSet(false),
+    m_excelParamHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,15 @@ string CreateTranscodeRequest::ToJsonString() const
         string key = "AutoHandleUnsupportedElement";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoHandleUnsupportedElement, allocator);
+    }
+
+    if (m_excelParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcelParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_excelParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -289,6 +299,22 @@ void CreateTranscodeRequest::SetAutoHandleUnsupportedElement(const bool& _autoHa
 bool CreateTranscodeRequest::AutoHandleUnsupportedElementHasBeenSet() const
 {
     return m_autoHandleUnsupportedElementHasBeenSet;
+}
+
+ExcelParam CreateTranscodeRequest::GetExcelParam() const
+{
+    return m_excelParam;
+}
+
+void CreateTranscodeRequest::SetExcelParam(const ExcelParam& _excelParam)
+{
+    m_excelParam = _excelParam;
+    m_excelParamHasBeenSet = true;
+}
+
+bool CreateTranscodeRequest::ExcelParamHasBeenSet() const
+{
+    return m_excelParamHasBeenSet;
 }
 
 

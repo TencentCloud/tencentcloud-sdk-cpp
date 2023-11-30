@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作空间id
-                     * @return ProjectId 工作空间id
+                     * 获取项目id
+                     * @return ProjectId 项目id
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置工作空间id
-                     * @param _projectId 工作空间id
+                     * 设置项目id
+                     * @param _projectId 项目id
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取可选过滤条件，Filter可选配置(参考): "Name": { "type": "string", "description": "数据源名称" }, "Type": { "type": "string", "description": "类型" }, "ClusterId": { "type": "string", "description": "集群id" }, "CategoryId": { "type": "string", "description": "分类，项目或空间id" }
-                     * @return Filters 可选过滤条件，Filter可选配置(参考): "Name": { "type": "string", "description": "数据源名称" }, "Type": { "type": "string", "description": "类型" }, "ClusterId": { "type": "string", "description": "集群id" }, "CategoryId": { "type": "string", "description": "分类，项目或空间id" }
+                     * 获取过滤条件（暂不支持）
+                     * @return Filters 过滤条件（暂不支持）
                      * 
                      */
                     Filter GetFilters() const;
 
                     /**
-                     * 设置可选过滤条件，Filter可选配置(参考): "Name": { "type": "string", "description": "数据源名称" }, "Type": { "type": "string", "description": "类型" }, "ClusterId": { "type": "string", "description": "集群id" }, "CategoryId": { "type": "string", "description": "分类，项目或空间id" }
-                     * @param _filters 可选过滤条件，Filter可选配置(参考): "Name": { "type": "string", "description": "数据源名称" }, "Type": { "type": "string", "description": "类型" }, "ClusterId": { "type": "string", "description": "集群id" }, "CategoryId": { "type": "string", "description": "分类，项目或空间id" }
+                     * 设置过滤条件（暂不支持）
+                     * @param _filters 过滤条件（暂不支持）
                      * 
                      */
                     void SetFilters(const Filter& _filters);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool OrderFieldsHasBeenSet() const;
 
                     /**
-                     * 获取数据源类型
-                     * @return Type 数据源类型
+                     * 获取数据源类型，必选（如MYSQL、DLC等）
+                     * @return Type 数据源类型，必选（如MYSQL、DLC等）
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置数据源类型
-                     * @param _type 数据源类型
+                     * 设置数据源类型，必选（如MYSQL、DLC等）
+                     * @param _type 数据源类型，必选（如MYSQL、DLC等）
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取数据源名称过滤用
-                     * @return DatasourceName 数据源名称过滤用
+                     * 获取数据源名称过滤
+                     * @return DatasourceName 数据源名称过滤
                      * 
                      */
                     std::string GetDatasourceName() const;
 
                     /**
-                     * 设置数据源名称过滤用
-                     * @param _datasourceName 数据源名称过滤用
+                     * 设置数据源名称过滤
+                     * @param _datasourceName 数据源名称过滤
                      * 
                      */
                     void SetDatasourceName(const std::string& _datasourceName);
@@ -194,7 +194,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作空间id
+                     * 项目id
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -212,7 +212,7 @@ namespace TencentCloud
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 可选过滤条件，Filter可选配置(参考): "Name": { "type": "string", "description": "数据源名称" }, "Type": { "type": "string", "description": "类型" }, "ClusterId": { "type": "string", "description": "集群id" }, "CategoryId": { "type": "string", "description": "分类，项目或空间id" }
+                     * 过滤条件（暂不支持）
                      */
                     Filter m_filters;
                     bool m_filtersHasBeenSet;
@@ -224,13 +224,13 @@ namespace TencentCloud
                     bool m_orderFieldsHasBeenSet;
 
                     /**
-                     * 数据源类型
+                     * 数据源类型，必选（如MYSQL、DLC等）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 数据源名称过滤用
+                     * 数据源名称过滤
                      */
                     std::string m_datasourceName;
                     bool m_datasourceNameHasBeenSet;

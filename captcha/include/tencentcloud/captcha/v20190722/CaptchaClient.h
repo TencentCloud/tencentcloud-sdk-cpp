@@ -41,6 +41,8 @@
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniRiskResultResponse.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaOperDataRequest.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaOperDataResponse.h>
+#include <tencentcloud/captcha/v20190722/model/DescribeCaptchaRceResultRequest.h>
+#include <tencentcloud/captcha/v20190722/model/DescribeCaptchaRceResultResponse.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaResultRequest.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaResultResponse.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaTicketDataRequest.h>
@@ -98,6 +100,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCaptchaOperDataResponse> DescribeCaptchaOperDataOutcome;
                 typedef std::future<DescribeCaptchaOperDataOutcome> DescribeCaptchaOperDataOutcomeCallable;
                 typedef std::function<void(const CaptchaClient*, const Model::DescribeCaptchaOperDataRequest&, DescribeCaptchaOperDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaOperDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCaptchaRceResultResponse> DescribeCaptchaRceResultOutcome;
+                typedef std::future<DescribeCaptchaRceResultOutcome> DescribeCaptchaRceResultOutcomeCallable;
+                typedef std::function<void(const CaptchaClient*, const Model::DescribeCaptchaRceResultRequest&, DescribeCaptchaRceResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaRceResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCaptchaResultResponse> DescribeCaptchaResultOutcome;
                 typedef std::future<DescribeCaptchaResultOutcome> DescribeCaptchaResultOutcomeCallable;
                 typedef std::function<void(const CaptchaClient*, const Model::DescribeCaptchaResultRequest&, DescribeCaptchaResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaResultAsyncHandler;
@@ -205,6 +210,15 @@ namespace TencentCloud
                 DescribeCaptchaOperDataOutcome DescribeCaptchaOperData(const Model::DescribeCaptchaOperDataRequest &request);
                 void DescribeCaptchaOperDataAsync(const Model::DescribeCaptchaOperDataRequest& request, const DescribeCaptchaOperDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCaptchaOperDataOutcomeCallable DescribeCaptchaOperDataCallable(const Model::DescribeCaptchaOperDataRequest& request);
+
+                /**
+                 *Rce融合验证核查验证码票据结果(Web及APP)
+                 * @param req DescribeCaptchaRceResultRequest
+                 * @return DescribeCaptchaRceResultOutcome
+                 */
+                DescribeCaptchaRceResultOutcome DescribeCaptchaRceResult(const Model::DescribeCaptchaRceResultRequest &request);
+                void DescribeCaptchaRceResultAsync(const Model::DescribeCaptchaRceResultRequest& request, const DescribeCaptchaRceResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCaptchaRceResultOutcomeCallable DescribeCaptchaRceResultCallable(const Model::DescribeCaptchaRceResultRequest& request);
 
                 /**
                  *核查验证码票据结果(Web及APP)

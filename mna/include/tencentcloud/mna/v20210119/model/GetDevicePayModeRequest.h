@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TIW_V20190919_MODEL_DESCRIBEOFFLINERECORDCALLBACKREQUEST_H_
-#define TENCENTCLOUD_TIW_V20190919_MODEL_DESCRIBEOFFLINERECORDCALLBACKREQUEST_H_
+#ifndef TENCENTCLOUD_MNA_V20210119_MODEL_GETDEVICEPAYMODEREQUEST_H_
+#define TENCENTCLOUD_MNA_V20210119_MODEL_GETDEVICEPAYMODEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Tiw
+    namespace Mna
     {
-        namespace V20190919
+        namespace V20210119
         {
             namespace Model
             {
                 /**
-                * DescribeOfflineRecordCallback请求参数结构体
+                * GetDevicePayMode请求参数结构体
                 */
-                class DescribeOfflineRecordCallbackRequest : public AbstractModel
+                class GetDevicePayModeRequest : public AbstractModel
                 {
                 public:
-                    DescribeOfflineRecordCallbackRequest();
-                    ~DescribeOfflineRecordCallbackRequest() = default;
+                    GetDevicePayModeRequest();
+                    ~GetDevicePayModeRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取应用的SdkAppId
-                     * @return SdkAppId 应用的SdkAppId
+                     * 获取设备ID列表
+                     * @return DeviceIdList 设备ID列表
                      * 
                      */
-                    int64_t GetSdkAppId() const;
+                    std::vector<std::string> GetDeviceIdList() const;
 
                     /**
-                     * 设置应用的SdkAppId
-                     * @param _sdkAppId 应用的SdkAppId
+                     * 设置设备ID列表
+                     * @param _deviceIdList 设备ID列表
                      * 
                      */
-                    void SetSdkAppId(const int64_t& _sdkAppId);
+                    void SetDeviceIdList(const std::vector<std::string>& _deviceIdList);
 
                     /**
-                     * 判断参数 SdkAppId 是否已赋值
-                     * @return SdkAppId 是否已赋值
+                     * 判断参数 DeviceIdList 是否已赋值
+                     * @return DeviceIdList 是否已赋值
                      * 
                      */
-                    bool SdkAppIdHasBeenSet() const;
+                    bool DeviceIdListHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 应用的SdkAppId
+                     * 设备ID列表
                      */
-                    int64_t m_sdkAppId;
-                    bool m_sdkAppIdHasBeenSet;
+                    std::vector<std::string> m_deviceIdList;
+                    bool m_deviceIdListHasBeenSet;
 
                 };
             }
@@ -77,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TIW_V20190919_MODEL_DESCRIBEOFFLINERECORDCALLBACKREQUEST_H_
+#endif // !TENCENTCLOUD_MNA_V20210119_MODEL_GETDEVICEPAYMODEREQUEST_H_

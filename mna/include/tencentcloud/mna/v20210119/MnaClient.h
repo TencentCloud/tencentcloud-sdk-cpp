@@ -41,8 +41,12 @@
 #include <tencentcloud/mna/v20210119/model/DescribeQosResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetDeviceResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetDevicePayModeRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetDevicePayModeResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDevicesRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetDevicesResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowPackagesRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowPackagesResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetHardwareListRequest.h>
@@ -57,6 +61,10 @@
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetVendorHardwareRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetVendorHardwareResponse.h>
+#include <tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagRequest.h>
+#include <tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagResponse.h>
+#include <tencentcloud/mna/v20210119/model/OrderFlowPackageRequest.h>
+#include <tencentcloud/mna/v20210119/model/OrderFlowPackageResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateHardwareRequest.h>
@@ -102,9 +110,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDeviceResponse> GetDeviceOutcome;
                 typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetDeviceRequest&, GetDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDevicePayModeResponse> GetDevicePayModeOutcome;
+                typedef std::future<GetDevicePayModeOutcome> GetDevicePayModeOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetDevicePayModeRequest&, GetDevicePayModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDevicePayModeAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetDevicesResponse> GetDevicesOutcome;
                 typedef std::future<GetDevicesOutcome> GetDevicesOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetDevicesRequest&, GetDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFlowPackagesResponse> GetFlowPackagesOutcome;
+                typedef std::future<GetFlowPackagesOutcome> GetFlowPackagesOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetFlowPackagesRequest&, GetFlowPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowPackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFlowStatisticResponse> GetFlowStatisticOutcome;
                 typedef std::future<GetFlowStatisticOutcome> GetFlowStatisticOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticRequest&, GetFlowStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticAsyncHandler;
@@ -126,6 +140,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetVendorHardwareResponse> GetVendorHardwareOutcome;
                 typedef std::future<GetVendorHardwareOutcome> GetVendorHardwareOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetVendorHardwareRequest&, GetVendorHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVendorHardwareAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPackageRenewFlagResponse> ModifyPackageRenewFlagOutcome;
+                typedef std::future<ModifyPackageRenewFlagOutcome> ModifyPackageRenewFlagOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::ModifyPackageRenewFlagRequest&, ModifyPackageRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPackageRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::OrderFlowPackageResponse> OrderFlowPackageOutcome;
+                typedef std::future<OrderFlowPackageOutcome> OrderFlowPackageOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::OrderFlowPackageRequest&, OrderFlowPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OrderFlowPackageAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDeviceResponse> UpdateDeviceOutcome;
                 typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::UpdateDeviceRequest&, UpdateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceAsyncHandler;
@@ -217,6 +237,15 @@ namespace TencentCloud
                 GetDeviceOutcomeCallable GetDeviceCallable(const Model::GetDeviceRequest& request);
 
                 /**
+                 *获取设备付费模式
+                 * @param req GetDevicePayModeRequest
+                 * @return GetDevicePayModeOutcome
+                 */
+                GetDevicePayModeOutcome GetDevicePayMode(const Model::GetDevicePayModeRequest &request);
+                void GetDevicePayModeAsync(const Model::GetDevicePayModeRequest& request, const GetDevicePayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDevicePayModeOutcomeCallable GetDevicePayModeCallable(const Model::GetDevicePayModeRequest& request);
+
+                /**
                  *获取设备信息列表
                  * @param req GetDevicesRequest
                  * @return GetDevicesOutcome
@@ -224,6 +253,15 @@ namespace TencentCloud
                 GetDevicesOutcome GetDevices(const Model::GetDevicesRequest &request);
                 void GetDevicesAsync(const Model::GetDevicesRequest& request, const GetDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetDevicesOutcomeCallable GetDevicesCallable(const Model::GetDevicesRequest& request);
+
+                /**
+                 *获取流量包列表
+                 * @param req GetFlowPackagesRequest
+                 * @return GetFlowPackagesOutcome
+                 */
+                GetFlowPackagesOutcome GetFlowPackages(const Model::GetFlowPackagesRequest &request);
+                void GetFlowPackagesAsync(const Model::GetFlowPackagesRequest& request, const GetFlowPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFlowPackagesOutcomeCallable GetFlowPackagesCallable(const Model::GetFlowPackagesRequest& request);
 
                 /**
                  *获取指定设备Id，指定时间点数据流量使用情况
@@ -235,7 +273,7 @@ namespace TencentCloud
                 GetFlowStatisticOutcomeCallable GetFlowStatisticCallable(const Model::GetFlowStatisticRequest& request);
 
                 /**
-                 *租户获取厂商硬件列表
+                 *获取厂商硬件列表
                  * @param req GetHardwareListRequest
                  * @return GetHardwareListOutcome
                  */
@@ -287,6 +325,24 @@ namespace TencentCloud
                 GetVendorHardwareOutcome GetVendorHardware(const Model::GetVendorHardwareRequest &request);
                 void GetVendorHardwareAsync(const Model::GetVendorHardwareRequest& request, const GetVendorHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetVendorHardwareOutcomeCallable GetVendorHardwareCallable(const Model::GetVendorHardwareRequest& request);
+
+                /**
+                 *可开启/关闭流量包自动续费，不影响当前周期正在生效的流量包。
+                 * @param req ModifyPackageRenewFlagRequest
+                 * @return ModifyPackageRenewFlagOutcome
+                 */
+                ModifyPackageRenewFlagOutcome ModifyPackageRenewFlag(const Model::ModifyPackageRenewFlagRequest &request);
+                void ModifyPackageRenewFlagAsync(const Model::ModifyPackageRenewFlagRequest& request, const ModifyPackageRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPackageRenewFlagOutcomeCallable ModifyPackageRenewFlagCallable(const Model::ModifyPackageRenewFlagRequest& request);
+
+                /**
+                 *购买预付费流量包
+                 * @param req OrderFlowPackageRequest
+                 * @return OrderFlowPackageOutcome
+                 */
+                OrderFlowPackageOutcome OrderFlowPackage(const Model::OrderFlowPackageRequest &request);
+                void OrderFlowPackageAsync(const Model::OrderFlowPackageRequest& request, const OrderFlowPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OrderFlowPackageOutcomeCallable OrderFlowPackageCallable(const Model::OrderFlowPackageRequest& request);
 
                 /**
                  *更新设备信息

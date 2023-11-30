@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tiw/v20190919/model/ExcelParam.h>
 
 
 namespace TencentCloud
@@ -336,6 +337,27 @@ tar.gz： 生成`.tar.gz`压缩包
                      */
                     bool AutoHandleUnsupportedElementHasBeenSet() const;
 
+                    /**
+                     * 获取Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）
+                     * @return ExcelParam Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）
+                     * 
+                     */
+                    ExcelParam GetExcelParam() const;
+
+                    /**
+                     * 设置Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）
+                     * @param _excelParam Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）
+                     * 
+                     */
+                    void SetExcelParam(const ExcelParam& _excelParam);
+
+                    /**
+                     * 判断参数 ExcelParam 是否已赋值
+                     * @return ExcelParam 是否已赋值
+                     * 
+                     */
+                    bool ExcelParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -418,6 +440,12 @@ tar.gz： 生成`.tar.gz`压缩包
                      */
                     bool m_autoHandleUnsupportedElement;
                     bool m_autoHandleUnsupportedElementHasBeenSet;
+
+                    /**
+                     * Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）
+                     */
+                    ExcelParam m_excelParam;
+                    bool m_excelParamHasBeenSet;
 
                 };
             }

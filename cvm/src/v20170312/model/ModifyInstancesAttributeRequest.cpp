@@ -30,7 +30,8 @@ ModifyInstancesAttributeRequest::ModifyInstancesAttributeRequest() :
     m_camRoleNameHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
-    m_camRoleTypeHasBeenSet(false)
+    m_camRoleTypeHasBeenSet(false),
+    m_autoRebootHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string ModifyInstancesAttributeRequest::ToJsonString() const
         string key = "CamRoleType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_camRoleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRebootHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoReboot";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoReboot, allocator);
     }
 
 
@@ -249,6 +258,22 @@ void ModifyInstancesAttributeRequest::SetCamRoleType(const string& _camRoleType)
 bool ModifyInstancesAttributeRequest::CamRoleTypeHasBeenSet() const
 {
     return m_camRoleTypeHasBeenSet;
+}
+
+bool ModifyInstancesAttributeRequest::GetAutoReboot() const
+{
+    return m_autoReboot;
+}
+
+void ModifyInstancesAttributeRequest::SetAutoReboot(const bool& _autoReboot)
+{
+    m_autoReboot = _autoReboot;
+    m_autoRebootHasBeenSet = true;
+}
+
+bool ModifyInstancesAttributeRequest::AutoRebootHasBeenSet() const
+{
+    return m_autoRebootHasBeenSet;
 }
 
 

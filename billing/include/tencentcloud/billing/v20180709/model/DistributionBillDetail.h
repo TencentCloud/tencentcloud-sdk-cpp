@@ -652,6 +652,56 @@ namespace TencentCloud
                      */
                     bool FormulaUrlHasBeenSet() const;
 
+                    /**
+                     * 获取账单归属月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillMonth 账单归属月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillMonth() const;
+
+                    /**
+                     * 设置账单归属月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billMonth 账单归属月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillMonth(const std::string& _billMonth);
+
+                    /**
+                     * 判断参数 BillMonth 是否已赋值
+                     * @return BillMonth 是否已赋值
+                     * 
+                     */
+                    bool BillMonthHasBeenSet() const;
+
+                    /**
+                     * 获取账单归属日
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillDay 账单归属日
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillDay() const;
+
+                    /**
+                     * 设置账单归属日
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billDay 账单归属日
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillDay(const std::string& _billDay);
+
+                    /**
+                     * 判断参数 BillDay 是否已赋值
+                     * @return BillDay 是否已赋值
+                     * 
+                     */
+                    bool BillDayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -824,6 +874,20 @@ namespace TencentCloud
                      */
                     std::string m_formulaUrl;
                     bool m_formulaUrlHasBeenSet;
+
+                    /**
+                     * 账单归属月
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billMonth;
+                    bool m_billMonthHasBeenSet;
+
+                    /**
+                     * 账单归属日
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billDay;
+                    bool m_billDayHasBeenSet;
 
                 };
             }

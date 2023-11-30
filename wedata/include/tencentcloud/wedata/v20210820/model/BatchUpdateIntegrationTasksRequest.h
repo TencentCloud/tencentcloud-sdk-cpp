@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取责任人Id（多个责任人用小写分号隔开）
+                     * @return InchargeIds 责任人Id（多个责任人用小写分号隔开）
+                     * 
+                     */
+                    std::string GetInchargeIds() const;
+
+                    /**
+                     * 设置责任人Id（多个责任人用小写分号隔开）
+                     * @param _inchargeIds 责任人Id（多个责任人用小写分号隔开）
+                     * 
+                     */
+                    void SetInchargeIds(const std::string& _inchargeIds);
+
+                    /**
+                     * 判断参数 InchargeIds 是否已赋值
+                     * @return InchargeIds 是否已赋值
+                     * 
+                     */
+                    bool InchargeIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 责任人Id（多个责任人用小写分号隔开）
+                     */
+                    std::string m_inchargeIds;
+                    bool m_inchargeIdsHasBeenSet;
 
                 };
             }
