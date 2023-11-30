@@ -13284,6 +13284,49 @@ WedataClient::TaskLogOutcomeCallable WedataClient::TaskLogCallable(const TaskLog
     return task->get_future();
 }
 
+WedataClient::TriggerDsEventOutcome WedataClient::TriggerDsEvent(const TriggerDsEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "TriggerDsEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TriggerDsEventResponse rsp = TriggerDsEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TriggerDsEventOutcome(rsp);
+        else
+            return TriggerDsEventOutcome(o.GetError());
+    }
+    else
+    {
+        return TriggerDsEventOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::TriggerDsEventAsync(const TriggerDsEventRequest& request, const TriggerDsEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TriggerDsEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::TriggerDsEventOutcomeCallable WedataClient::TriggerDsEventCallable(const TriggerDsEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TriggerDsEventOutcome()>>(
+        [this, request]()
+        {
+            return this->TriggerDsEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::TriggerEventOutcome WedataClient::TriggerEvent(const TriggerEventRequest &request)
 {
     auto outcome = MakeRequest(request, "TriggerEvent");

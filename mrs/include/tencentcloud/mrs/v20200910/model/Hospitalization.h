@@ -126,7 +126,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionDignosis 入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetAdmissionDignosis() const;
 
@@ -135,14 +135,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionDignosis 入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetAdmissionDignosis(const std::string& _admissionDignosis);
 
                     /**
                      * 判断参数 AdmissionDignosis 是否已赋值
                      * @return AdmissionDignosis 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AdmissionDignosisHasBeenSet() const;
 
@@ -246,6 +246,31 @@ namespace TencentCloud
                      */
                     bool DischargeInstructionHasBeenSet() const;
 
+                    /**
+                     * 获取入院诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdmissionDiagnosis 入院诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAdmissionDiagnosis() const;
+
+                    /**
+                     * 设置入院诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _admissionDiagnosis 入院诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAdmissionDiagnosis(const std::string& _admissionDiagnosis);
+
+                    /**
+                     * 判断参数 AdmissionDiagnosis 是否已赋值
+                     * @return AdmissionDiagnosis 是否已赋值
+                     * 
+                     */
+                    bool AdmissionDiagnosisHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +328,13 @@ namespace TencentCloud
                      */
                     std::string m_dischargeInstruction;
                     bool m_dischargeInstructionHasBeenSet;
+
+                    /**
+                     * 入院诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_admissionDiagnosis;
+                    bool m_admissionDiagnosisHasBeenSet;
 
                 };
             }

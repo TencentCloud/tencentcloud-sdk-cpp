@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeChannelSealPolicyWorkflowUrlRequest::DescribeChannelSealPolicyWorkflowUrlRequest() :
     m_agentHasBeenSet(false),
-    m_workflowInstanceIdHasBeenSet(false)
+    m_workflowInstanceIdHasBeenSet(false),
+    m_endpointHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeChannelSealPolicyWorkflowUrlRequest::ToJsonString() const
         string key = "WorkflowInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workflowInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Endpoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeChannelSealPolicyWorkflowUrlRequest::SetWorkflowInstanceId(const st
 bool DescribeChannelSealPolicyWorkflowUrlRequest::WorkflowInstanceIdHasBeenSet() const
 {
     return m_workflowInstanceIdHasBeenSet;
+}
+
+string DescribeChannelSealPolicyWorkflowUrlRequest::GetEndpoint() const
+{
+    return m_endpoint;
+}
+
+void DescribeChannelSealPolicyWorkflowUrlRequest::SetEndpoint(const string& _endpoint)
+{
+    m_endpoint = _endpoint;
+    m_endpointHasBeenSet = true;
+}
+
+bool DescribeChannelSealPolicyWorkflowUrlRequest::EndpointHasBeenSet() const
+{
+    return m_endpointHasBeenSet;
 }
 
 

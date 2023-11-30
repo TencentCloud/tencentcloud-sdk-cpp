@@ -25,7 +25,8 @@ using namespace std;
 
 UpdateCertificateInstanceResponse::UpdateCertificateInstanceResponse() :
     m_deployRecordIdHasBeenSet(false),
-    m_deployStatusHasBeenSet(false)
+    m_deployStatusHasBeenSet(false),
+    m_updateSyncProgressHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome UpdateCertificateInstanceResponse::Deserialize(const string 
         m_deployStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UpdateSyncProgress") && !rsp["UpdateSyncProgress"].IsNull())
+    {
+        if (!rsp["UpdateSyncProgress"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UpdateSyncProgress` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["UpdateSyncProgress"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UpdateSyncProgress item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_updateSyncProgress.push_back(item);
+        }
+        m_updateSyncProgressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +128,21 @@ string UpdateCertificateInstanceResponse::ToJsonString() const
         string key = "DeployStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deployStatus, allocator);
+    }
+
+    if (m_updateSyncProgressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateSyncProgress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_updateSyncProgress.begin(); itr != m_updateSyncProgress.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +175,16 @@ int64_t UpdateCertificateInstanceResponse::GetDeployStatus() const
 bool UpdateCertificateInstanceResponse::DeployStatusHasBeenSet() const
 {
     return m_deployStatusHasBeenSet;
+}
+
+vector<UpdateSyncProgress> UpdateCertificateInstanceResponse::GetUpdateSyncProgress() const
+{
+    return m_updateSyncProgress;
+}
+
+bool UpdateCertificateInstanceResponse::UpdateSyncProgressHasBeenSet() const
+{
+    return m_updateSyncProgressHasBeenSet;
 }
 
 

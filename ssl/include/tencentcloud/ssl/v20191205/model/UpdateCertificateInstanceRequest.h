@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一键更新原证书ID
-                     * @return OldCertificateId 一键更新原证书ID
+                     * 获取一键更新原证书ID， 查询绑定该证书的云资源然后进行证书更新
+                     * @return OldCertificateId 一键更新原证书ID， 查询绑定该证书的云资源然后进行证书更新
                      * 
                      */
                     std::string GetOldCertificateId() const;
 
                     /**
-                     * 设置一键更新原证书ID
-                     * @param _oldCertificateId 一键更新原证书ID
+                     * 设置一键更新原证书ID， 查询绑定该证书的云资源然后进行证书更新
+                     * @param _oldCertificateId 一键更新原证书ID， 查询绑定该证书的云资源然后进行证书更新
                      * 
                      */
                     void SetOldCertificateId(const std::string& _oldCertificateId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool OldCertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb
-                     * @return ResourceTypes 需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb
+                     * 获取需要部署的资源类型，参数值可选（小写）：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb、tse
+                     * @return ResourceTypes 需要部署的资源类型，参数值可选（小写）：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb、tse
                      * 
                      */
                     std::vector<std::string> GetResourceTypes() const;
 
                     /**
-                     * 设置需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb
-                     * @param _resourceTypes 需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb
+                     * 设置需要部署的资源类型，参数值可选（小写）：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb、tse
+                     * @param _resourceTypes 需要部署的资源类型，参数值可选（小写）：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb、tse
                      * 
                      */
                     void SetResourceTypes(const std::vector<std::string>& _resourceTypes);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ResourceTypesHasBeenSet() const;
 
                     /**
-                     * 获取一键更新新证书ID
-                     * @return CertificateId 一键更新新证书ID
+                     * 获取一键更新新证书ID，不传该则证书公钥和私钥必传
+                     * @return CertificateId 一键更新新证书ID，不传该则证书公钥和私钥必传
                      * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
-                     * 设置一键更新新证书ID
-                     * @param _certificateId 一键更新新证书ID
+                     * 设置一键更新新证书ID，不传该则证书公钥和私钥必传
+                     * @param _certificateId 一键更新新证书ID，不传该则证书公钥和私钥必传
                      * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool RegionsHasBeenSet() const;
 
                     /**
-                     * 获取云资源需要部署的地域列表
-                     * @return ResourceTypesRegions 云资源需要部署的地域列表
+                     * 获取云资源需要部署的地域列表，支持地域的云资源类型必传，如：clb、tke、apigateway、waf、tcb、tse等
+                     * @return ResourceTypesRegions 云资源需要部署的地域列表，支持地域的云资源类型必传，如：clb、tke、apigateway、waf、tcb、tse等
                      * 
                      */
                     std::vector<ResourceTypeRegions> GetResourceTypesRegions() const;
 
                     /**
-                     * 设置云资源需要部署的地域列表
-                     * @param _resourceTypesRegions 云资源需要部署的地域列表
+                     * 设置云资源需要部署的地域列表，支持地域的云资源类型必传，如：clb、tke、apigateway、waf、tcb、tse等
+                     * @param _resourceTypesRegions 云资源需要部署的地域列表，支持地域的云资源类型必传，如：clb、tke、apigateway、waf、tcb、tse等
                      * 
                      */
                     void SetResourceTypesRegions(const std::vector<ResourceTypeRegions>& _resourceTypesRegions);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool CertificatePublicKeyHasBeenSet() const;
 
                     /**
-                     * 获取证书私钥，若上传证书公钥， 则证书私钥必填
-                     * @return CertificatePrivateKey 证书私钥，若上传证书公钥， 则证书私钥必填
+                     * 获取证书私钥，若上传证书公钥， 则CertificateId不用传
+                     * @return CertificatePrivateKey 证书私钥，若上传证书公钥， 则CertificateId不用传
                      * 
                      */
                     std::string GetCertificatePrivateKey() const;
 
                     /**
-                     * 设置证书私钥，若上传证书公钥， 则证书私钥必填
-                     * @param _certificatePrivateKey 证书私钥，若上传证书公钥， 则证书私钥必填
+                     * 设置证书私钥，若上传证书公钥， 则CertificateId不用传
+                     * @param _certificatePrivateKey 证书私钥，若上传证书公钥， 则CertificateId不用传
                      * 
                      */
                     void SetCertificatePrivateKey(const std::string& _certificatePrivateKey);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool CertificatePrivateKeyHasBeenSet() const;
 
                     /**
-                     * 获取旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知
-                     * @return ExpiringNotificationSwitch 旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知
+                     * 获取旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知，忽略OldCertificateId到期提醒
+                     * @return ExpiringNotificationSwitch 旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知，忽略OldCertificateId到期提醒
                      * 
                      */
                     uint64_t GetExpiringNotificationSwitch() const;
 
                     /**
-                     * 设置旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知
-                     * @param _expiringNotificationSwitch 旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知
+                     * 设置旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知，忽略OldCertificateId到期提醒
+                     * @param _expiringNotificationSwitch 旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知，忽略OldCertificateId到期提醒
                      * 
                      */
                     void SetExpiringNotificationSwitch(const uint64_t& _expiringNotificationSwitch);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool ExpiringNotificationSwitchHasBeenSet() const;
 
                     /**
-                     * 获取相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数
-                     * @return Repeatable 相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数
+                     * 获取相同的证书是否允许重复上传，若选择上传证书， 则可以配置该参数
+                     * @return Repeatable 相同的证书是否允许重复上传，若选择上传证书， 则可以配置该参数
                      * 
                      */
                     bool GetRepeatable() const;
 
                     /**
-                     * 设置相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数
-                     * @param _repeatable 相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数
+                     * 设置相同的证书是否允许重复上传，若选择上传证书， 则可以配置该参数
+                     * @param _repeatable 相同的证书是否允许重复上传，若选择上传证书， 则可以配置该参数
                      * 
                      */
                     void SetRepeatable(const bool& _repeatable);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool RepeatableHasBeenSet() const;
 
                     /**
-                     * 获取是否允许下载，若上传证书公钥， 则可以配置该参数
-                     * @return AllowDownload 是否允许下载，若上传证书公钥， 则可以配置该参数
+                     * 获取是否允许下载，若选择上传证书， 则可以配置该参数
+                     * @return AllowDownload 是否允许下载，若选择上传证书， 则可以配置该参数
                      * 
                      */
                     bool GetAllowDownload() const;
 
                     /**
-                     * 设置是否允许下载，若上传证书公钥， 则可以配置该参数
-                     * @param _allowDownload 是否允许下载，若上传证书公钥， 则可以配置该参数
+                     * 设置是否允许下载，若选择上传证书， 则可以配置该参数
+                     * @param _allowDownload 是否允许下载，若选择上传证书， 则可以配置该参数
                      * 
                      */
                     void SetAllowDownload(const bool& _allowDownload);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool AllowDownloadHasBeenSet() const;
 
                     /**
-                     * 获取标签列表，若上传证书公钥， 则可以配置该参数
-                     * @return Tags 标签列表，若上传证书公钥， 则可以配置该参数
+                     * 获取标签列表，若选择上传证书， 则可以配置该参数
+                     * @return Tags 标签列表，若选择上传证书， 则可以配置该参数
                      * 
                      */
                     std::vector<Tags> GetTags() const;
 
                     /**
-                     * 设置标签列表，若上传证书公钥， 则可以配置该参数
-                     * @param _tags 标签列表，若上传证书公钥， 则可以配置该参数
+                     * 设置标签列表，若选择上传证书， 则可以配置该参数
+                     * @param _tags 标签列表，若选择上传证书， 则可以配置该参数
                      * 
                      */
                     void SetTags(const std::vector<Tags>& _tags);
@@ -276,15 +276,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取项目 ID，若上传证书公钥， 则可以配置该参数
-                     * @return ProjectId 项目 ID，若上传证书公钥， 则可以配置该参数
+                     * 获取项目 ID，若选择上传证书， 则可以配置该参数
+                     * @return ProjectId 项目 ID，若选择上传证书， 则可以配置该参数
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目 ID，若上传证书公钥， 则可以配置该参数
-                     * @param _projectId 项目 ID，若上传证书公钥， 则可以配置该参数
+                     * 设置项目 ID，若选择上传证书， 则可以配置该参数
+                     * @param _projectId 项目 ID，若选择上传证书， 则可以配置该参数
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -299,19 +299,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一键更新原证书ID
+                     * 一键更新原证书ID， 查询绑定该证书的云资源然后进行证书更新
                      */
                     std::string m_oldCertificateId;
                     bool m_oldCertificateIdHasBeenSet;
 
                     /**
-                     * 需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb
+                     * 需要部署的资源类型，参数值可选（小写）：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb、tse
                      */
                     std::vector<std::string> m_resourceTypes;
                     bool m_resourceTypesHasBeenSet;
 
                     /**
-                     * 一键更新新证书ID
+                     * 一键更新新证书ID，不传该则证书公钥和私钥必传
                      */
                     std::string m_certificateId;
                     bool m_certificateIdHasBeenSet;
@@ -323,7 +323,7 @@ namespace TencentCloud
                     bool m_regionsHasBeenSet;
 
                     /**
-                     * 云资源需要部署的地域列表
+                     * 云资源需要部署的地域列表，支持地域的云资源类型必传，如：clb、tke、apigateway、waf、tcb、tse等
                      */
                     std::vector<ResourceTypeRegions> m_resourceTypesRegions;
                     bool m_resourceTypesRegionsHasBeenSet;
@@ -335,37 +335,37 @@ namespace TencentCloud
                     bool m_certificatePublicKeyHasBeenSet;
 
                     /**
-                     * 证书私钥，若上传证书公钥， 则证书私钥必填
+                     * 证书私钥，若上传证书公钥， 则CertificateId不用传
                      */
                     std::string m_certificatePrivateKey;
                     bool m_certificatePrivateKeyHasBeenSet;
 
                     /**
-                     * 旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知
+                     * 旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知，忽略OldCertificateId到期提醒
                      */
                     uint64_t m_expiringNotificationSwitch;
                     bool m_expiringNotificationSwitchHasBeenSet;
 
                     /**
-                     * 相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数
+                     * 相同的证书是否允许重复上传，若选择上传证书， 则可以配置该参数
                      */
                     bool m_repeatable;
                     bool m_repeatableHasBeenSet;
 
                     /**
-                     * 是否允许下载，若上传证书公钥， 则可以配置该参数
+                     * 是否允许下载，若选择上传证书， 则可以配置该参数
                      */
                     bool m_allowDownload;
                     bool m_allowDownloadHasBeenSet;
 
                     /**
-                     * 标签列表，若上传证书公钥， 则可以配置该参数
+                     * 标签列表，若选择上传证书， 则可以配置该参数
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 项目 ID，若上传证书公钥， 则可以配置该参数
+                     * 项目 ID，若选择上传证书， 则可以配置该参数
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;

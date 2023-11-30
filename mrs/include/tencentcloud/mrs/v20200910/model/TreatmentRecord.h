@@ -51,7 +51,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DmissionCondition 入院
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetDmissionCondition() const;
 
@@ -60,14 +60,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dmissionCondition 入院
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetDmissionCondition(const std::string& _dmissionCondition);
 
                     /**
                      * 判断参数 DmissionCondition 是否已赋值
                      * @return DmissionCondition 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DmissionConditionHasBeenSet() const;
 
@@ -721,6 +721,31 @@ namespace TencentCloud
                      */
                     bool ObservationDaysHasBeenSet() const;
 
+                    /**
+                     * 获取入院
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdmissionCondition 入院
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAdmissionCondition() const;
+
+                    /**
+                     * 设置入院
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _admissionCondition 入院
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAdmissionCondition(const std::string& _admissionCondition);
+
+                    /**
+                     * 判断参数 AdmissionCondition 是否已赋值
+                     * @return AdmissionCondition 是否已赋值
+                     * 
+                     */
+                    bool AdmissionConditionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -911,6 +936,13 @@ namespace TencentCloud
                      */
                     std::string m_observationDays;
                     bool m_observationDaysHasBeenSet;
+
+                    /**
+                     * 入院
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_admissionCondition;
+                    bool m_admissionConditionHasBeenSet;
 
                 };
             }

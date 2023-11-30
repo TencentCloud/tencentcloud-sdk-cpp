@@ -29,6 +29,7 @@
 #include <tencentcloud/scf/v20180416/model/CfsConfig.h>
 #include <tencentcloud/scf/v20180416/model/ProtocolParams.h>
 #include <tencentcloud/scf/v20180416/model/InstanceConcurrencyConfig.h>
+#include <tencentcloud/scf/v20180416/model/IntranetConfigIn.h>
 
 
 namespace TencentCloud
@@ -495,6 +496,48 @@ namespace TencentCloud
                      */
                     bool InstanceConcurrencyConfigHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启Dns缓存能力。只支持EVENT函数。默认为FALSE，TRUE 为开启，FALSE为关闭
+                     * @return DnsCache 是否开启Dns缓存能力。只支持EVENT函数。默认为FALSE，TRUE 为开启，FALSE为关闭
+                     * 
+                     */
+                    std::string GetDnsCache() const;
+
+                    /**
+                     * 设置是否开启Dns缓存能力。只支持EVENT函数。默认为FALSE，TRUE 为开启，FALSE为关闭
+                     * @param _dnsCache 是否开启Dns缓存能力。只支持EVENT函数。默认为FALSE，TRUE 为开启，FALSE为关闭
+                     * 
+                     */
+                    void SetDnsCache(const std::string& _dnsCache);
+
+                    /**
+                     * 判断参数 DnsCache 是否已赋值
+                     * @return DnsCache 是否已赋值
+                     * 
+                     */
+                    bool DnsCacheHasBeenSet() const;
+
+                    /**
+                     * 获取内网访问配置
+                     * @return IntranetConfig 内网访问配置
+                     * 
+                     */
+                    IntranetConfigIn GetIntranetConfig() const;
+
+                    /**
+                     * 设置内网访问配置
+                     * @param _intranetConfig 内网访问配置
+                     * 
+                     */
+                    void SetIntranetConfig(const IntranetConfigIn& _intranetConfig);
+
+                    /**
+                     * 判断参数 IntranetConfig 是否已赋值
+                     * @return IntranetConfig 是否已赋值
+                     * 
+                     */
+                    bool IntranetConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -623,6 +666,18 @@ namespace TencentCloud
                      */
                     InstanceConcurrencyConfig m_instanceConcurrencyConfig;
                     bool m_instanceConcurrencyConfigHasBeenSet;
+
+                    /**
+                     * 是否开启Dns缓存能力。只支持EVENT函数。默认为FALSE，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string m_dnsCache;
+                    bool m_dnsCacheHasBeenSet;
+
+                    /**
+                     * 内网访问配置
+                     */
+                    IntranetConfigIn m_intranetConfig;
+                    bool m_intranetConfigHasBeenSet;
 
                 };
             }

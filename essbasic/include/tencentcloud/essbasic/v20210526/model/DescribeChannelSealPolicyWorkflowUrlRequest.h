@@ -113,6 +113,43 @@ namespace TencentCloud
                      */
                     bool WorkflowInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取生成链接的类型：
+生成链接的类型
+<ul><li>**LongLink**：(默认)长链接，H5跳转到电子签小程序链接，链接有效期为1年</li>
+<li>**ShortLink**：H5跳转到电子签小程序链接，一般用于发送短信中带的链接，打开后进入腾讯电子签小程序，链接有效期为7天</li>
+<li>**App**：第三方APP或小程序跳转电子签小程序链接，一般用于贵方小程序或者APP跳转过来，打开后进入腾讯电子签小程序，链接有效期为1年</li></ul>
+                     * @return Endpoint 生成链接的类型：
+生成链接的类型
+<ul><li>**LongLink**：(默认)长链接，H5跳转到电子签小程序链接，链接有效期为1年</li>
+<li>**ShortLink**：H5跳转到电子签小程序链接，一般用于发送短信中带的链接，打开后进入腾讯电子签小程序，链接有效期为7天</li>
+<li>**App**：第三方APP或小程序跳转电子签小程序链接，一般用于贵方小程序或者APP跳转过来，打开后进入腾讯电子签小程序，链接有效期为1年</li></ul>
+                     * 
+                     */
+                    std::string GetEndpoint() const;
+
+                    /**
+                     * 设置生成链接的类型：
+生成链接的类型
+<ul><li>**LongLink**：(默认)长链接，H5跳转到电子签小程序链接，链接有效期为1年</li>
+<li>**ShortLink**：H5跳转到电子签小程序链接，一般用于发送短信中带的链接，打开后进入腾讯电子签小程序，链接有效期为7天</li>
+<li>**App**：第三方APP或小程序跳转电子签小程序链接，一般用于贵方小程序或者APP跳转过来，打开后进入腾讯电子签小程序，链接有效期为1年</li></ul>
+                     * @param _endpoint 生成链接的类型：
+生成链接的类型
+<ul><li>**LongLink**：(默认)长链接，H5跳转到电子签小程序链接，链接有效期为1年</li>
+<li>**ShortLink**：H5跳转到电子签小程序链接，一般用于发送短信中带的链接，打开后进入腾讯电子签小程序，链接有效期为7天</li>
+<li>**App**：第三方APP或小程序跳转电子签小程序链接，一般用于贵方小程序或者APP跳转过来，打开后进入腾讯电子签小程序，链接有效期为1年</li></ul>
+                     * 
+                     */
+                    void SetEndpoint(const std::string& _endpoint);
+
+                    /**
+                     * 判断参数 Endpoint 是否已赋值
+                     * @return Endpoint 是否已赋值
+                     * 
+                     */
+                    bool EndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,6 +170,16 @@ namespace TencentCloud
                      */
                     std::string m_workflowInstanceId;
                     bool m_workflowInstanceIdHasBeenSet;
+
+                    /**
+                     * 生成链接的类型：
+生成链接的类型
+<ul><li>**LongLink**：(默认)长链接，H5跳转到电子签小程序链接，链接有效期为1年</li>
+<li>**ShortLink**：H5跳转到电子签小程序链接，一般用于发送短信中带的链接，打开后进入腾讯电子签小程序，链接有效期为7天</li>
+<li>**App**：第三方APP或小程序跳转电子签小程序链接，一般用于贵方小程序或者APP跳转过来，打开后进入腾讯电子签小程序，链接有效期为1年</li></ul>
+                     */
+                    std::string m_endpoint;
+                    bool m_endpointHasBeenSet;
 
                 };
             }

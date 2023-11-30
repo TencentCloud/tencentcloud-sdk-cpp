@@ -255,6 +255,49 @@ DlcClient::AlterDMSTableOutcomeCallable DlcClient::AlterDMSTableCallable(const A
     return task->get_future();
 }
 
+DlcClient::AssignMangedTablePropertiesOutcome DlcClient::AssignMangedTableProperties(const AssignMangedTablePropertiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssignMangedTableProperties");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssignMangedTablePropertiesResponse rsp = AssignMangedTablePropertiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssignMangedTablePropertiesOutcome(rsp);
+        else
+            return AssignMangedTablePropertiesOutcome(o.GetError());
+    }
+    else
+    {
+        return AssignMangedTablePropertiesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::AssignMangedTablePropertiesAsync(const AssignMangedTablePropertiesRequest& request, const AssignMangedTablePropertiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssignMangedTableProperties(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::AssignMangedTablePropertiesOutcomeCallable DlcClient::AssignMangedTablePropertiesCallable(const AssignMangedTablePropertiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssignMangedTablePropertiesOutcome()>>(
+        [this, request]()
+        {
+            return this->AssignMangedTableProperties(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::AttachUserPolicyOutcome DlcClient::AttachUserPolicy(const AttachUserPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "AttachUserPolicy");

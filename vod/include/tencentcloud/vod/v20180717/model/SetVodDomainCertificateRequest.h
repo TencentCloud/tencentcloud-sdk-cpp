@@ -42,7 +42,125 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取域名。
+                     * @return Domain 域名。
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置域名。
+                     * @param _domain 域名。
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取本次接口调用的操作类型，可选值：
+<li>Set：设置域名的 HTTPS 所需证书；</li>
+<li>Clear: 清空域名 HTTPS 配置，清空后该域名无法支持 HTTPS 访问。</li>
+                     * @return Operation 本次接口调用的操作类型，可选值：
+<li>Set：设置域名的 HTTPS 所需证书；</li>
+<li>Clear: 清空域名 HTTPS 配置，清空后该域名无法支持 HTTPS 访问。</li>
+                     * 
+                     */
+                    std::string GetOperation() const;
+
+                    /**
+                     * 设置本次接口调用的操作类型，可选值：
+<li>Set：设置域名的 HTTPS 所需证书；</li>
+<li>Clear: 清空域名 HTTPS 配置，清空后该域名无法支持 HTTPS 访问。</li>
+                     * @param _operation 本次接口调用的操作类型，可选值：
+<li>Set：设置域名的 HTTPS 所需证书；</li>
+<li>Clear: 清空域名 HTTPS 配置，清空后该域名无法支持 HTTPS 访问。</li>
+                     * 
+                     */
+                    void SetOperation(const std::string& _operation);
+
+                    /**
+                     * 判断参数 Operation 是否已赋值
+                     * @return Operation 是否已赋值
+                     * 
+                     */
+                    bool OperationHasBeenSet() const;
+
+                    /**
+                     * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
+                     */
+                    uint64_t GetSubAppId() const;
+
+                    /**
+                     * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
+                     */
+                    void SetSubAppId(const uint64_t& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     * 
+                     */
+                    bool SubAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取[腾讯云SSL](/document/product/400/7572) 上传的证书 ID。清空域名 HTTPS 配置时无需填写该字段。
+                     * @return CertID [腾讯云SSL](/document/product/400/7572) 上传的证书 ID。清空域名 HTTPS 配置时无需填写该字段。
+                     * 
+                     */
+                    std::string GetCertID() const;
+
+                    /**
+                     * 设置[腾讯云SSL](/document/product/400/7572) 上传的证书 ID。清空域名 HTTPS 配置时无需填写该字段。
+                     * @param _certID [腾讯云SSL](/document/product/400/7572) 上传的证书 ID。清空域名 HTTPS 配置时无需填写该字段。
+                     * 
+                     */
+                    void SetCertID(const std::string& _certID);
+
+                    /**
+                     * 判断参数 CertID 是否已赋值
+                     * @return CertID 是否已赋值
+                     * 
+                     */
+                    bool CertIDHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 域名。
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * 本次接口调用的操作类型，可选值：
+<li>Set：设置域名的 HTTPS 所需证书；</li>
+<li>Clear: 清空域名 HTTPS 配置，清空后该域名无法支持 HTTPS 访问。</li>
+                     */
+                    std::string m_operation;
+                    bool m_operationHasBeenSet;
+
+                    /**
+                     * <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     */
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * [腾讯云SSL](/document/product/400/7572) 上传的证书 ID。清空域名 HTTPS 配置时无需填写该字段。
+                     */
+                    std::string m_certID;
+                    bool m_certIDHasBeenSet;
 
                 };
             }

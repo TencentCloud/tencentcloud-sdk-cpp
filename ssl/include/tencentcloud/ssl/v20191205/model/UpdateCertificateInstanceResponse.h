@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ssl/v20191205/model/UpdateSyncProgress.h>
 
 
 namespace TencentCloud
@@ -73,6 +74,22 @@ namespace TencentCloud
                      */
                     bool DeployStatusHasBeenSet() const;
 
+                    /**
+                     * 获取更新异步创建任务进度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateSyncProgress 更新异步创建任务进度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<UpdateSyncProgress> GetUpdateSyncProgress() const;
+
+                    /**
+                     * 判断参数 UpdateSyncProgress 是否已赋值
+                     * @return UpdateSyncProgress 是否已赋值
+                     * 
+                     */
+                    bool UpdateSyncProgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -87,6 +104,13 @@ namespace TencentCloud
                      */
                     int64_t m_deployStatus;
                     bool m_deployStatusHasBeenSet;
+
+                    /**
+                     * 更新异步创建任务进度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<UpdateSyncProgress> m_updateSyncProgress;
+                    bool m_updateSyncProgressHasBeenSet;
 
                 };
             }

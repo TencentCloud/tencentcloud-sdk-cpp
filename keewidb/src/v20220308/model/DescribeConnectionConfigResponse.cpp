@@ -26,7 +26,9 @@ using namespace std;
 DescribeConnectionConfigResponse::DescribeConnectionConfigResponse() :
     m_inNetLimitHasBeenSet(false),
     m_outNetLimitHasBeenSet(false),
-    m_clientLimitHasBeenSet(false)
+    m_clientLimitHasBeenSet(false),
+    m_clientLimitMinHasBeenSet(false),
+    m_clientLimitMaxHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,26 @@ CoreInternalOutcome DescribeConnectionConfigResponse::Deserialize(const string &
         m_clientLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClientLimitMin") && !rsp["ClientLimitMin"].IsNull())
+    {
+        if (!rsp["ClientLimitMin"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientLimitMin` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientLimitMin = rsp["ClientLimitMin"].GetInt64();
+        m_clientLimitMinHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClientLimitMax") && !rsp["ClientLimitMax"].IsNull())
+    {
+        if (!rsp["ClientLimitMax"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientLimitMax` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientLimitMax = rsp["ClientLimitMax"].GetInt64();
+        m_clientLimitMaxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +148,22 @@ string DescribeConnectionConfigResponse::ToJsonString() const
         string key = "ClientLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clientLimit, allocator);
+    }
+
+    if (m_clientLimitMinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientLimitMin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientLimitMin, allocator);
+    }
+
+    if (m_clientLimitMaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientLimitMax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientLimitMax, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +206,26 @@ int64_t DescribeConnectionConfigResponse::GetClientLimit() const
 bool DescribeConnectionConfigResponse::ClientLimitHasBeenSet() const
 {
     return m_clientLimitHasBeenSet;
+}
+
+int64_t DescribeConnectionConfigResponse::GetClientLimitMin() const
+{
+    return m_clientLimitMin;
+}
+
+bool DescribeConnectionConfigResponse::ClientLimitMinHasBeenSet() const
+{
+    return m_clientLimitMinHasBeenSet;
+}
+
+int64_t DescribeConnectionConfigResponse::GetClientLimitMax() const
+{
+    return m_clientLimitMax;
+}
+
+bool DescribeConnectionConfigResponse::ClientLimitMaxHasBeenSet() const
+{
+    return m_clientLimitMaxHasBeenSet;
 }
 
 

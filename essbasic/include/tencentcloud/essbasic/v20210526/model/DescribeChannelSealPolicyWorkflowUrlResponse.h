@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用印审批小程序链接，链接类型（通过H5唤起小程序方式查看），一年内有效。
-                     * @return WorkflowUrl 用印审批小程序链接，链接类型（通过H5唤起小程序方式查看），一年内有效。
+                     * 获取用印审批小程序链接，链接类型（通过H5唤起小程序或通过APP跳转方式查看）。
+                     * @return WorkflowUrl 用印审批小程序链接，链接类型（通过H5唤起小程序或通过APP跳转方式查看）。
                      * 
                      */
                     std::string GetWorkflowUrl() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用印审批小程序链接，链接类型（通过H5唤起小程序方式查看），一年内有效。
+                     * 用印审批小程序链接，链接类型（通过H5唤起小程序或通过APP跳转方式查看）。
                      */
                     std::string m_workflowUrl;
                     bool m_workflowUrlHasBeenSet;

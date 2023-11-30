@@ -639,6 +639,8 @@
 #include <tencentcloud/wedata/v20210820/model/SuspendIntegrationTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/TaskLogRequest.h>
 #include <tencentcloud/wedata/v20210820/model/TaskLogResponse.h>
+#include <tencentcloud/wedata/v20210820/model/TriggerDsEventRequest.h>
+#include <tencentcloud/wedata/v20210820/model/TriggerDsEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/TriggerEventRequest.h>
 #include <tencentcloud/wedata/v20210820/model/TriggerEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskRequest.h>
@@ -1587,6 +1589,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TaskLogResponse> TaskLogOutcome;
                 typedef std::future<TaskLogOutcome> TaskLogOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::TaskLogRequest&, TaskLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TaskLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::TriggerDsEventResponse> TriggerDsEventOutcome;
+                typedef std::future<TriggerDsEventOutcome> TriggerDsEventOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::TriggerDsEventRequest&, TriggerDsEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerDsEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::TriggerEventResponse> TriggerEventOutcome;
                 typedef std::future<TriggerEventOutcome> TriggerEventOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::TriggerEventRequest&, TriggerEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerEventAsyncHandler;
@@ -4425,6 +4430,15 @@ namespace TencentCloud
                 TaskLogOutcome TaskLog(const Model::TaskLogRequest &request);
                 void TaskLogAsync(const Model::TaskLogRequest& request, const TaskLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TaskLogOutcomeCallable TaskLogCallable(const Model::TaskLogRequest& request);
+
+                /**
+                 *事件管理-触发事件
+                 * @param req TriggerDsEventRequest
+                 * @return TriggerDsEventOutcome
+                 */
+                TriggerDsEventOutcome TriggerDsEvent(const Model::TriggerDsEventRequest &request);
+                void TriggerDsEventAsync(const Model::TriggerDsEventRequest& request, const TriggerDsEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TriggerDsEventOutcomeCallable TriggerDsEventCallable(const Model::TriggerDsEventRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>

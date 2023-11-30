@@ -52,7 +52,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableIndictors 检验报告V3结论
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<TableIndicators> GetTableIndictors() const;
 
@@ -61,14 +61,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableIndictors 检验报告V3结论
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetTableIndictors(const std::vector<TableIndicators>& _tableIndictors);
 
                     /**
                      * 判断参数 TableIndictors 是否已赋值
                      * @return TableIndictors 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TableIndictorsHasBeenSet() const;
 
@@ -97,6 +97,31 @@ namespace TencentCloud
                      */
                     bool VersionHasBeenSet() const;
 
+                    /**
+                     * 获取检验报告V3结论
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableIndicators 检验报告V3结论
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TableIndicators> GetTableIndicators() const;
+
+                    /**
+                     * 设置检验报告V3结论
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableIndicators 检验报告V3结论
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableIndicators(const std::vector<TableIndicators>& _tableIndicators);
+
+                    /**
+                     * 判断参数 TableIndicators 是否已赋值
+                     * @return TableIndicators 是否已赋值
+                     * 
+                     */
+                    bool TableIndicatorsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +137,13 @@ namespace TencentCloud
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
+
+                    /**
+                     * 检验报告V3结论
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TableIndicators> m_tableIndicators;
+                    bool m_tableIndicatorsHasBeenSet;
 
                 };
             }

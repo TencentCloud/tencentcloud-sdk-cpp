@@ -33,6 +33,8 @@
 #include <tencentcloud/dlc/v20210125/model/AlterDMSPartitionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AlterDMSTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AlterDMSTableResponse.h>
+#include <tencentcloud/dlc/v20210125/model/AssignMangedTablePropertiesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/AssignMangedTablePropertiesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AttachUserPolicyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AttachUserPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AttachWorkGroupPolicyRequest.h>
@@ -296,6 +298,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AlterDMSTableResponse> AlterDMSTableOutcome;
                 typedef std::future<AlterDMSTableOutcome> AlterDMSTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AlterDMSTableRequest&, AlterDMSTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AlterDMSTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssignMangedTablePropertiesResponse> AssignMangedTablePropertiesOutcome;
+                typedef std::future<AssignMangedTablePropertiesOutcome> AssignMangedTablePropertiesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::AssignMangedTablePropertiesRequest&, AssignMangedTablePropertiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignMangedTablePropertiesAsyncHandler;
                 typedef Outcome<Core::Error, Model::AttachUserPolicyResponse> AttachUserPolicyOutcome;
                 typedef std::future<AttachUserPolicyOutcome> AttachUserPolicyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AttachUserPolicyRequest&, AttachUserPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachUserPolicyAsyncHandler;
@@ -694,6 +699,15 @@ namespace TencentCloud
                 AlterDMSTableOutcome AlterDMSTable(const Model::AlterDMSTableRequest &request);
                 void AlterDMSTableAsync(const Model::AlterDMSTableRequest& request, const AlterDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AlterDMSTableOutcomeCallable AlterDMSTableCallable(const Model::AlterDMSTableRequest& request);
+
+                /**
+                 *分配原生表表属性
+                 * @param req AssignMangedTablePropertiesRequest
+                 * @return AssignMangedTablePropertiesOutcome
+                 */
+                AssignMangedTablePropertiesOutcome AssignMangedTableProperties(const Model::AssignMangedTablePropertiesRequest &request);
+                void AssignMangedTablePropertiesAsync(const Model::AssignMangedTablePropertiesRequest& request, const AssignMangedTablePropertiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssignMangedTablePropertiesOutcomeCallable AssignMangedTablePropertiesCallable(const Model::AssignMangedTablePropertiesRequest& request);
 
                 /**
                  *绑定鉴权策略到用户

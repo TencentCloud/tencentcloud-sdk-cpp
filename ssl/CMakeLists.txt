@@ -62,6 +62,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/UpdateRecordDetails.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateDetailResponse.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateResubmitRequest.h
+  include/tencentcloud/ssl/v20191205/model/SupportDownloadType.h
   include/tencentcloud/ssl/v20191205/model/DownloadCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostTkeInstanceListResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateBindResourceTaskResultRequest.h
@@ -69,6 +70,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/BindResourceResult.h
   include/tencentcloud/ssl/v20191205/model/ApplyCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostDeployRecordRequest.h
+  include/tencentcloud/ssl/v20191205/model/UpdateSyncProgressRegion.h
   include/tencentcloud/ssl/v20191205/model/CreateCertificateBindResourceSyncTaskRequest.h
   include/tencentcloud/ssl/v20191205/model/CosInstanceDetail.h
   include/tencentcloud/ssl/v20191205/model/UploadConfirmLetterResponse.h
@@ -76,6 +78,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/ReplaceCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/SyncTaskBindResourceResult.h
   include/tencentcloud/ssl/v20191205/model/ClbInstanceDetail.h
+  include/tencentcloud/ssl/v20191205/model/UpdateSyncProgress.h
   include/tencentcloud/ssl/v20191205/model/DescribeManagersResponse.h
   include/tencentcloud/ssl/v20191205/model/VodInstanceDetail.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateResponse.h
@@ -246,6 +249,7 @@ set(ssl_src
   src/v20191205/model/UpdateRecordDetails.cpp
   src/v20191205/model/DescribeCertificateDetailResponse.cpp
   src/v20191205/model/ModifyCertificateResubmitRequest.cpp
+  src/v20191205/model/SupportDownloadType.cpp
   src/v20191205/model/DownloadCertificateRequest.cpp
   src/v20191205/model/DescribeHostTkeInstanceListResponse.cpp
   src/v20191205/model/DescribeCertificateBindResourceTaskResultRequest.cpp
@@ -253,6 +257,7 @@ set(ssl_src
   src/v20191205/model/BindResourceResult.cpp
   src/v20191205/model/ApplyCertificateResponse.cpp
   src/v20191205/model/DescribeHostDeployRecordRequest.cpp
+  src/v20191205/model/UpdateSyncProgressRegion.cpp
   src/v20191205/model/CreateCertificateBindResourceSyncTaskRequest.cpp
   src/v20191205/model/CosInstanceDetail.cpp
   src/v20191205/model/UploadConfirmLetterResponse.cpp
@@ -260,6 +265,7 @@ set(ssl_src
   src/v20191205/model/ReplaceCertificateResponse.cpp
   src/v20191205/model/SyncTaskBindResourceResult.cpp
   src/v20191205/model/ClbInstanceDetail.cpp
+  src/v20191205/model/UpdateSyncProgress.cpp
   src/v20191205/model/DescribeManagersResponse.cpp
   src/v20191205/model/VodInstanceDetail.cpp
   src/v20191205/model/DescribeCertificateResponse.cpp

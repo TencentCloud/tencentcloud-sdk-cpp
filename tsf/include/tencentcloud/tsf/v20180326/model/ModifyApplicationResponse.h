@@ -44,9 +44,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取true/false
+                     * 获取true：操作成功
+false：操作失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result true/false
+                     * @return Result true：操作成功
+false：操作失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +64,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * true/false
+                     * true：操作成功
+false：操作失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_result;

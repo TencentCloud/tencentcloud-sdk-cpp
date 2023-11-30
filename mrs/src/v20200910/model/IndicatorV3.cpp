@@ -22,7 +22,8 @@ using namespace std;
 
 IndicatorV3::IndicatorV3() :
     m_tableIndictorsHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_tableIndicatorsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome IndicatorV3::Deserialize(const rapidjson::Value &value)
         m_versionHasBeenSet = true;
     }
 
+    if (value.HasMember("TableIndicators") && !value["TableIndicators"].IsNull())
+    {
+        if (!value["TableIndicators"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IndicatorV3.TableIndicators` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TableIndicators"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TableIndicators item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tableIndicators.push_back(item);
+        }
+        m_tableIndicatorsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +110,21 @@ void IndicatorV3::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableIndicatorsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableIndicators";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tableIndicators.begin(); itr != m_tableIndicators.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -124,5 +160,21 @@ void IndicatorV3::SetVersion(const string& _version)
 bool IndicatorV3::VersionHasBeenSet() const
 {
     return m_versionHasBeenSet;
+}
+
+vector<TableIndicators> IndicatorV3::GetTableIndicators() const
+{
+    return m_tableIndicators;
+}
+
+void IndicatorV3::SetTableIndicators(const vector<TableIndicators>& _tableIndicators)
+{
+    m_tableIndicators = _tableIndicators;
+    m_tableIndicatorsHasBeenSet = true;
+}
+
+bool IndicatorV3::TableIndicatorsHasBeenSet() const
+{
+    return m_tableIndicatorsHasBeenSet;
 }
 

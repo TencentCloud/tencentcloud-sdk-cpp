@@ -28,7 +28,8 @@ Hospitalization::Hospitalization() :
     m_admissionConditionHasBeenSet(false),
     m_diagnosisTreatmentHasBeenSet(false),
     m_dischargeDiagnosisHasBeenSet(false),
-    m_dischargeInstructionHasBeenSet(false)
+    m_dischargeInstructionHasBeenSet(false),
+    m_admissionDiagnosisHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome Hospitalization::Deserialize(const rapidjson::Value &value)
         m_dischargeInstructionHasBeenSet = true;
     }
 
+    if (value.HasMember("AdmissionDiagnosis") && !value["AdmissionDiagnosis"].IsNull())
+    {
+        if (!value["AdmissionDiagnosis"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Hospitalization.AdmissionDiagnosis` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_admissionDiagnosis = string(value["AdmissionDiagnosis"].GetString());
+        m_admissionDiagnosisHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void Hospitalization::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "DischargeInstruction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dischargeInstruction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_admissionDiagnosisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdmissionDiagnosis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_admissionDiagnosis.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void Hospitalization::SetDischargeInstruction(const string& _dischargeInstructio
 bool Hospitalization::DischargeInstructionHasBeenSet() const
 {
     return m_dischargeInstructionHasBeenSet;
+}
+
+string Hospitalization::GetAdmissionDiagnosis() const
+{
+    return m_admissionDiagnosis;
+}
+
+void Hospitalization::SetAdmissionDiagnosis(const string& _admissionDiagnosis)
+{
+    m_admissionDiagnosis = _admissionDiagnosis;
+    m_admissionDiagnosisHasBeenSet = true;
+}
+
+bool Hospitalization::AdmissionDiagnosisHasBeenSet() const
+{
+    return m_admissionDiagnosisHasBeenSet;
 }
 

@@ -45,7 +45,9 @@ SingleInvoiceItem::SingleInvoiceItem() :
     m_trainTicketHasBeenSet(false),
     m_medicalOutpatientInvoiceHasBeenSet(false),
     m_medicalHospitalizedInvoiceHasBeenSet(false),
-    m_vatSalesListHasBeenSet(false)
+    m_vatSalesListHasBeenSet(false),
+    m_electronicTrainTicketFullHasBeenSet(false),
+    m_electronicFlightTicketFullHasBeenSet(false)
 {
 }
 
@@ -479,6 +481,40 @@ CoreInternalOutcome SingleInvoiceItem::Deserialize(const rapidjson::Value &value
         m_vatSalesListHasBeenSet = true;
     }
 
+    if (value.HasMember("ElectronicTrainTicketFull") && !value["ElectronicTrainTicketFull"].IsNull())
+    {
+        if (!value["ElectronicTrainTicketFull"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.ElectronicTrainTicketFull` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_electronicTrainTicketFull.Deserialize(value["ElectronicTrainTicketFull"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_electronicTrainTicketFullHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElectronicFlightTicketFull") && !value["ElectronicFlightTicketFull"].IsNull())
+    {
+        if (!value["ElectronicFlightTicketFull"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.ElectronicFlightTicketFull` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_electronicFlightTicketFull.Deserialize(value["ElectronicFlightTicketFull"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_electronicFlightTicketFullHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -709,6 +745,24 @@ void SingleInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_vatSalesList.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_electronicTrainTicketFullHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElectronicTrainTicketFull";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_electronicTrainTicketFull.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_electronicFlightTicketFullHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElectronicFlightTicketFull";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_electronicFlightTicketFull.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1112,5 +1166,37 @@ void SingleInvoiceItem::SetVatSalesList(const VatInvoiceInfo& _vatSalesList)
 bool SingleInvoiceItem::VatSalesListHasBeenSet() const
 {
     return m_vatSalesListHasBeenSet;
+}
+
+ElectronicTrainTicketFull SingleInvoiceItem::GetElectronicTrainTicketFull() const
+{
+    return m_electronicTrainTicketFull;
+}
+
+void SingleInvoiceItem::SetElectronicTrainTicketFull(const ElectronicTrainTicketFull& _electronicTrainTicketFull)
+{
+    m_electronicTrainTicketFull = _electronicTrainTicketFull;
+    m_electronicTrainTicketFullHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::ElectronicTrainTicketFullHasBeenSet() const
+{
+    return m_electronicTrainTicketFullHasBeenSet;
+}
+
+ElectronicFlightTicketFull SingleInvoiceItem::GetElectronicFlightTicketFull() const
+{
+    return m_electronicFlightTicketFull;
+}
+
+void SingleInvoiceItem::SetElectronicFlightTicketFull(const ElectronicFlightTicketFull& _electronicFlightTicketFull)
+{
+    m_electronicFlightTicketFull = _electronicFlightTicketFull;
+    m_electronicFlightTicketFullHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::ElectronicFlightTicketFullHasBeenSet() const
+{
+    return m_electronicFlightTicketFullHasBeenSet;
 }
 

@@ -2434,7 +2434,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeSimpleGroupsOutcomeCallable DescribeSimpleGroupsCallable(const Model::DescribeSimpleGroupsRequest& request);
 
                 /**
-                 *查询简单命名空间列表 
+                 *查询简单命名空间列表
                  * @param req DescribeSimpleNamespacesRequest
                  * @return DescribeSimpleNamespacesOutcome
                  */

@@ -28,6 +28,7 @@
 #include <tencentcloud/ssl/v20191205/model/ProjectInfo.h>
 #include <tencentcloud/ssl/v20191205/model/Tags.h>
 #include <tencentcloud/ssl/v20191205/model/PreAuditInfo.h>
+#include <tencentcloud/ssl/v20191205/model/SupportDownloadType.h>
 
 
 namespace TencentCloud
@@ -1283,6 +1284,106 @@ null = 用户上传证书（没有套餐类型），
                      */
                     bool AllowDownloadHasBeenSet() const;
 
+                    /**
+                     * 获取证书域名是否全部在DNSPOD托管解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDNSPODResolve 证书域名是否全部在DNSPOD托管解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsDNSPODResolve() const;
+
+                    /**
+                     * 设置证书域名是否全部在DNSPOD托管解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isDNSPODResolve 证书域名是否全部在DNSPOD托管解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsDNSPODResolve(const bool& _isDNSPODResolve);
+
+                    /**
+                     * 判断参数 IsDNSPODResolve 是否已赋值
+                     * @return IsDNSPODResolve 是否已赋值
+                     * 
+                     */
+                    bool IsDNSPODResolveHasBeenSet() const;
+
+                    /**
+                     * 获取是否是权益点购买的证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsPackage 是否是权益点购买的证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsPackage() const;
+
+                    /**
+                     * 设置是否是权益点购买的证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isPackage 是否是权益点购买的证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsPackage(const bool& _isPackage);
+
+                    /**
+                     * 判断参数 IsPackage 是否已赋值
+                     * @return IsPackage 是否已赋值
+                     * 
+                     */
+                    bool IsPackageHasBeenSet() const;
+
+                    /**
+                     * 获取是否存在私钥密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KeyPasswordCustomFlag 是否存在私钥密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetKeyPasswordCustomFlag() const;
+
+                    /**
+                     * 设置是否存在私钥密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _keyPasswordCustomFlag 是否存在私钥密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKeyPasswordCustomFlag(const bool& _keyPasswordCustomFlag);
+
+                    /**
+                     * 判断参数 KeyPasswordCustomFlag 是否已赋值
+                     * @return KeyPasswordCustomFlag 是否已赋值
+                     * 
+                     */
+                    bool KeyPasswordCustomFlagHasBeenSet() const;
+
+                    /**
+                     * 获取支持下载的WEB服务器类型： nginx、apache、iis、tomcat、jks、root、other
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportDownloadType 支持下载的WEB服务器类型： nginx、apache、iis、tomcat、jks、root、other
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SupportDownloadType GetSupportDownloadType() const;
+
+                    /**
+                     * 设置支持下载的WEB服务器类型： nginx、apache、iis、tomcat、jks、root、other
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _supportDownloadType 支持下载的WEB服务器类型： nginx、apache、iis、tomcat、jks、root、other
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSupportDownloadType(const SupportDownloadType& _supportDownloadType);
+
+                    /**
+                     * 判断参数 SupportDownloadType 是否已赋值
+                     * @return SupportDownloadType 是否已赋值
+                     * 
+                     */
+                    bool SupportDownloadTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1629,6 +1730,34 @@ null = 用户上传证书（没有套餐类型），
                      */
                     bool m_allowDownload;
                     bool m_allowDownloadHasBeenSet;
+
+                    /**
+                     * 证书域名是否全部在DNSPOD托管解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDNSPODResolve;
+                    bool m_isDNSPODResolveHasBeenSet;
+
+                    /**
+                     * 是否是权益点购买的证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isPackage;
+                    bool m_isPackageHasBeenSet;
+
+                    /**
+                     * 是否存在私钥密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_keyPasswordCustomFlag;
+                    bool m_keyPasswordCustomFlagHasBeenSet;
+
+                    /**
+                     * 支持下载的WEB服务器类型： nginx、apache、iis、tomcat、jks、root、other
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SupportDownloadType m_supportDownloadType;
+                    bool m_supportDownloadTypeHasBeenSet;
 
                 };
             }

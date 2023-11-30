@@ -5114,6 +5114,49 @@ TkeClient::DescribeImagesOutcomeCallable TkeClient::DescribeImagesCallable(const
     return task->get_future();
 }
 
+TkeClient::DescribeLogSwitchesOutcome TkeClient::DescribeLogSwitches(const DescribeLogSwitchesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogSwitches");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogSwitchesResponse rsp = DescribeLogSwitchesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogSwitchesOutcome(rsp);
+        else
+            return DescribeLogSwitchesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogSwitchesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeLogSwitchesAsync(const DescribeLogSwitchesRequest& request, const DescribeLogSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogSwitches(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeLogSwitchesOutcomeCallable TkeClient::DescribeLogSwitchesCallable(const DescribeLogSwitchesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogSwitchesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogSwitches(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribePodDeductionRateOutcome TkeClient::DescribePodDeductionRate(const DescribePodDeductionRateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePodDeductionRate");

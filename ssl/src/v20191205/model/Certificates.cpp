@@ -69,7 +69,11 @@ Certificates::Certificates() :
     m_validationPassedTimeHasBeenSet(false),
     m_certSANsHasBeenSet(false),
     m_awaitingValidationMsgHasBeenSet(false),
-    m_allowDownloadHasBeenSet(false)
+    m_allowDownloadHasBeenSet(false),
+    m_isDNSPODResolveHasBeenSet(false),
+    m_isPackageHasBeenSet(false),
+    m_keyPasswordCustomFlagHasBeenSet(false),
+    m_supportDownloadTypeHasBeenSet(false)
 {
 }
 
@@ -617,6 +621,53 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_allowDownloadHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDNSPODResolve") && !value["IsDNSPODResolve"].IsNull())
+    {
+        if (!value["IsDNSPODResolve"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.IsDNSPODResolve` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDNSPODResolve = value["IsDNSPODResolve"].GetBool();
+        m_isDNSPODResolveHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsPackage") && !value["IsPackage"].IsNull())
+    {
+        if (!value["IsPackage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.IsPackage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPackage = value["IsPackage"].GetBool();
+        m_isPackageHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyPasswordCustomFlag") && !value["KeyPasswordCustomFlag"].IsNull())
+    {
+        if (!value["KeyPasswordCustomFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.KeyPasswordCustomFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyPasswordCustomFlag = value["KeyPasswordCustomFlag"].GetBool();
+        m_keyPasswordCustomFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportDownloadType") && !value["SupportDownloadType"].IsNull())
+    {
+        if (!value["SupportDownloadType"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.SupportDownloadType` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_supportDownloadType.Deserialize(value["SupportDownloadType"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_supportDownloadTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1054,6 +1105,39 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AllowDownload";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allowDownload, allocator);
+    }
+
+    if (m_isDNSPODResolveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDNSPODResolve";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDNSPODResolve, allocator);
+    }
+
+    if (m_isPackageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPackage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPackage, allocator);
+    }
+
+    if (m_keyPasswordCustomFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyPasswordCustomFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keyPasswordCustomFlag, allocator);
+    }
+
+    if (m_supportDownloadTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportDownloadType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_supportDownloadType.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1841,5 +1925,69 @@ void Certificates::SetAllowDownload(const bool& _allowDownload)
 bool Certificates::AllowDownloadHasBeenSet() const
 {
     return m_allowDownloadHasBeenSet;
+}
+
+bool Certificates::GetIsDNSPODResolve() const
+{
+    return m_isDNSPODResolve;
+}
+
+void Certificates::SetIsDNSPODResolve(const bool& _isDNSPODResolve)
+{
+    m_isDNSPODResolve = _isDNSPODResolve;
+    m_isDNSPODResolveHasBeenSet = true;
+}
+
+bool Certificates::IsDNSPODResolveHasBeenSet() const
+{
+    return m_isDNSPODResolveHasBeenSet;
+}
+
+bool Certificates::GetIsPackage() const
+{
+    return m_isPackage;
+}
+
+void Certificates::SetIsPackage(const bool& _isPackage)
+{
+    m_isPackage = _isPackage;
+    m_isPackageHasBeenSet = true;
+}
+
+bool Certificates::IsPackageHasBeenSet() const
+{
+    return m_isPackageHasBeenSet;
+}
+
+bool Certificates::GetKeyPasswordCustomFlag() const
+{
+    return m_keyPasswordCustomFlag;
+}
+
+void Certificates::SetKeyPasswordCustomFlag(const bool& _keyPasswordCustomFlag)
+{
+    m_keyPasswordCustomFlag = _keyPasswordCustomFlag;
+    m_keyPasswordCustomFlagHasBeenSet = true;
+}
+
+bool Certificates::KeyPasswordCustomFlagHasBeenSet() const
+{
+    return m_keyPasswordCustomFlagHasBeenSet;
+}
+
+SupportDownloadType Certificates::GetSupportDownloadType() const
+{
+    return m_supportDownloadType;
+}
+
+void Certificates::SetSupportDownloadType(const SupportDownloadType& _supportDownloadType)
+{
+    m_supportDownloadType = _supportDownloadType;
+    m_supportDownloadTypeHasBeenSet = true;
+}
+
+bool Certificates::SupportDownloadTypeHasBeenSet() const
+{
+    return m_supportDownloadTypeHasBeenSet;
 }
 

@@ -40,6 +40,8 @@
 #include <tencentcloud/ocr/v20181119/model/NonTaxIncomeBill.h>
 #include <tencentcloud/ocr/v20181119/model/TrainTicket.h>
 #include <tencentcloud/ocr/v20181119/model/MedicalInvoice.h>
+#include <tencentcloud/ocr/v20181119/model/ElectronicTrainTicketFull.h>
+#include <tencentcloud/ocr/v20181119/model/ElectronicFlightTicketFull.h>
 
 
 namespace TencentCloud
@@ -687,6 +689,56 @@ namespace TencentCloud
                      */
                     bool VatSalesListHasBeenSet() const;
 
+                    /**
+                     * 获取电子发票（火车票）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElectronicTrainTicketFull 电子发票（火车票）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ElectronicTrainTicketFull GetElectronicTrainTicketFull() const;
+
+                    /**
+                     * 设置电子发票（火车票）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _electronicTrainTicketFull 电子发票（火车票）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetElectronicTrainTicketFull(const ElectronicTrainTicketFull& _electronicTrainTicketFull);
+
+                    /**
+                     * 判断参数 ElectronicTrainTicketFull 是否已赋值
+                     * @return ElectronicTrainTicketFull 是否已赋值
+                     * 
+                     */
+                    bool ElectronicTrainTicketFullHasBeenSet() const;
+
+                    /**
+                     * 获取电子发票（机票行程单）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElectronicFlightTicketFull 电子发票（机票行程单）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ElectronicFlightTicketFull GetElectronicFlightTicketFull() const;
+
+                    /**
+                     * 设置电子发票（机票行程单）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _electronicFlightTicketFull 电子发票（机票行程单）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetElectronicFlightTicketFull(const ElectronicFlightTicketFull& _electronicFlightTicketFull);
+
+                    /**
+                     * 判断参数 ElectronicFlightTicketFull 是否已赋值
+                     * @return ElectronicFlightTicketFull 是否已赋值
+                     * 
+                     */
+                    bool ElectronicFlightTicketFullHasBeenSet() const;
+
                 private:
 
                     /**
@@ -863,6 +915,20 @@ namespace TencentCloud
                      */
                     VatInvoiceInfo m_vatSalesList;
                     bool m_vatSalesListHasBeenSet;
+
+                    /**
+                     * 电子发票（火车票）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ElectronicTrainTicketFull m_electronicTrainTicketFull;
+                    bool m_electronicTrainTicketFullHasBeenSet;
+
+                    /**
+                     * 电子发票（机票行程单）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ElectronicFlightTicketFull m_electronicFlightTicketFull;
+                    bool m_electronicFlightTicketFullHasBeenSet;
 
                 };
             }

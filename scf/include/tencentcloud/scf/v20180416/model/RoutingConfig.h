@@ -38,6 +38,7 @@ namespace TencentCloud
             {
                 /**
                 * 别名的版本路由配置
+其中：随机权重路由附加版本和规则路由附加版本不可以同时配置
                 */
                 class RoutingConfig : public AbstractModel
                 {

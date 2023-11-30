@@ -259,6 +259,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeImageCachesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePodDeductionRateRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribePodDeductionRateResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePodsBySpecRequest.h>
@@ -821,6 +823,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
                 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeImagesRequest&, DescribeImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogSwitchesResponse> DescribeLogSwitchesOutcome;
+                typedef std::future<DescribeLogSwitchesOutcome> DescribeLogSwitchesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeLogSwitchesRequest&, DescribeLogSwitchesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogSwitchesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePodDeductionRateResponse> DescribePodDeductionRateOutcome;
                 typedef std::future<DescribePodDeductionRateOutcome> DescribePodDeductionRateOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribePodDeductionRateRequest&, DescribePodDeductionRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePodDeductionRateAsyncHandler;
@@ -2176,6 +2181,15 @@ namespace TencentCloud
                 DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest &request);
                 void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request);
+
+                /**
+                 *查询集群日志（审计、事件、普通日志）开关列表
+                 * @param req DescribeLogSwitchesRequest
+                 * @return DescribeLogSwitchesOutcome
+                 */
+                DescribeLogSwitchesOutcome DescribeLogSwitches(const Model::DescribeLogSwitchesRequest &request);
+                void DescribeLogSwitchesAsync(const Model::DescribeLogSwitchesRequest& request, const DescribeLogSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogSwitchesOutcomeCallable DescribeLogSwitchesCallable(const Model::DescribeLogSwitchesRequest& request);
 
                 /**
                  *查询各个规格的 Pod 的抵扣率

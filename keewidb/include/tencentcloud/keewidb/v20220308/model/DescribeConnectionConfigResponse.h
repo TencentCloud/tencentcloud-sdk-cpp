@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool OutNetLimitHasBeenSet() const;
 
                     /**
-                     * 获取单分片连接数限制。
-                     * @return ClientLimit 单分片连接数限制。
+                     * 获取实例当前单分片连接数限制。
+                     * @return ClientLimit 实例当前单分片连接数限制。
                      * 
                      */
                     int64_t GetClientLimit() const;
@@ -84,6 +84,38 @@ namespace TencentCloud
                      * 
                      */
                     bool ClientLimitHasBeenSet() const;
+
+                    /**
+                     * 获取单分片连接数限制最小值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientLimitMin 单分片连接数限制最小值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetClientLimitMin() const;
+
+                    /**
+                     * 判断参数 ClientLimitMin 是否已赋值
+                     * @return ClientLimitMin 是否已赋值
+                     * 
+                     */
+                    bool ClientLimitMinHasBeenSet() const;
+
+                    /**
+                     * 获取单分片连接数限制最大值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientLimitMax 单分片连接数限制最大值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetClientLimitMax() const;
+
+                    /**
+                     * 判断参数 ClientLimitMax 是否已赋值
+                     * @return ClientLimitMax 是否已赋值
+                     * 
+                     */
+                    bool ClientLimitMaxHasBeenSet() const;
 
                 private:
 
@@ -100,10 +132,24 @@ namespace TencentCloud
                     bool m_outNetLimitHasBeenSet;
 
                     /**
-                     * 单分片连接数限制。
+                     * 实例当前单分片连接数限制。
                      */
                     int64_t m_clientLimit;
                     bool m_clientLimitHasBeenSet;
+
+                    /**
+                     * 单分片连接数限制最小值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clientLimitMin;
+                    bool m_clientLimitMinHasBeenSet;
+
+                    /**
+                     * 单分片连接数限制最大值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clientLimitMax;
+                    bool m_clientLimitMaxHasBeenSet;
 
                 };
             }
