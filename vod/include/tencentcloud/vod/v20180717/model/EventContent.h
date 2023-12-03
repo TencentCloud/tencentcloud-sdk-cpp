@@ -47,6 +47,7 @@
 #include <tencentcloud/vod/v20180717/model/ReduceMediaBitrateTask.h>
 #include <tencentcloud/vod/v20180717/model/DescribeFileAttributesTask.h>
 #include <tencentcloud/vod/v20180717/model/QualityInspectTask.h>
+#include <tencentcloud/vod/v20180717/model/QualityEnhanceTask.h>
 
 
 namespace TencentCloud
@@ -102,12 +103,13 @@ namespace TencentCloud
 <li>ComposeMediaComplete：制作媒体文件完成；</li>
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <li>RemoveWatermark：智能去除水印完成。</li>
-<li>RebuildMediaComplete：音画质重生完成事件。</li>
+<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>
 <li>ReviewAudioVideoComplete：音视频审核完成；</li>
 <li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
 <li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
-<li>QualityInspectComplete：音画质检测完成。</li>
+<li>QualityInspectComplete：音画质检测完成；</li>
+<li>QualityEnhanceComplete：音画质重生任务完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -125,12 +127,13 @@ namespace TencentCloud
 <li>ComposeMediaComplete：制作媒体文件完成；</li>
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <li>RemoveWatermark：智能去除水印完成。</li>
-<li>RebuildMediaComplete：音画质重生完成事件。</li>
+<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>
 <li>ReviewAudioVideoComplete：音视频审核完成；</li>
 <li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
 <li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
-<li>QualityInspectComplete：音画质检测完成。</li>
+<li>QualityInspectComplete：音画质检测完成；</li>
+<li>QualityEnhanceComplete：音画质重生任务完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -153,12 +156,13 @@ namespace TencentCloud
 <li>ComposeMediaComplete：制作媒体文件完成；</li>
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <li>RemoveWatermark：智能去除水印完成。</li>
-<li>RebuildMediaComplete：音画质重生完成事件。</li>
+<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>
 <li>ReviewAudioVideoComplete：音视频审核完成；</li>
 <li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
 <li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
-<li>QualityInspectComplete：音画质检测完成。</li>
+<li>QualityInspectComplete：音画质检测完成；</li>
+<li>QualityEnhanceComplete：音画质重生任务完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -176,12 +180,13 @@ namespace TencentCloud
 <li>ComposeMediaComplete：制作媒体文件完成；</li>
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <li>RemoveWatermark：智能去除水印完成。</li>
-<li>RebuildMediaComplete：音画质重生完成事件。</li>
+<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>
 <li>ReviewAudioVideoComplete：音视频审核完成；</li>
 <li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
 <li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
-<li>QualityInspectComplete：音画质检测完成。</li>
+<li>QualityInspectComplete：音画质检测完成；</li>
+<li>QualityEnhanceComplete：音画质重生任务完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -774,6 +779,31 @@ namespace TencentCloud
                      */
                     bool QualityInspectCompleteEventHasBeenSet() const;
 
+                    /**
+                     * 获取音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QualityEnhanceCompleteEvent 音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    QualityEnhanceTask GetQualityEnhanceCompleteEvent() const;
+
+                    /**
+                     * 设置音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _qualityEnhanceCompleteEvent 音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQualityEnhanceCompleteEvent(const QualityEnhanceTask& _qualityEnhanceCompleteEvent);
+
+                    /**
+                     * 判断参数 QualityEnhanceCompleteEvent 是否已赋值
+                     * @return QualityEnhanceCompleteEvent 是否已赋值
+                     * 
+                     */
+                    bool QualityEnhanceCompleteEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -794,12 +824,13 @@ namespace TencentCloud
 <li>ComposeMediaComplete：制作媒体文件完成；</li>
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <li>RemoveWatermark：智能去除水印完成。</li>
-<li>RebuildMediaComplete：音画质重生完成事件。</li>
+<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>
 <li>ReviewAudioVideoComplete：音视频审核完成；</li>
 <li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
 <li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
-<li>QualityInspectComplete：音画质检测完成。</li>
+<li>QualityInspectComplete：音画质检测完成；</li>
+<li>QualityEnhanceComplete：音画质重生任务完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -970,6 +1001,13 @@ namespace TencentCloud
                      */
                     QualityInspectTask m_qualityInspectCompleteEvent;
                     bool m_qualityInspectCompleteEventHasBeenSet;
+
+                    /**
+                     * 音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    QualityEnhanceTask m_qualityEnhanceCompleteEvent;
+                    bool m_qualityEnhanceCompleteEventHasBeenSet;
 
                 };
             }

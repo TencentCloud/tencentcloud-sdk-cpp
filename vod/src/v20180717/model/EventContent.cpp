@@ -45,7 +45,8 @@ EventContent::EventContent() :
     m_reviewAudioVideoCompleteEventHasBeenSet(false),
     m_reduceMediaBitrateCompleteEventHasBeenSet(false),
     m_describeFileAttributesCompleteEventHasBeenSet(false),
-    m_qualityInspectCompleteEventHasBeenSet(false)
+    m_qualityInspectCompleteEventHasBeenSet(false),
+    m_qualityEnhanceCompleteEventHasBeenSet(false)
 {
 }
 
@@ -465,6 +466,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_qualityInspectCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("QualityEnhanceCompleteEvent") && !value["QualityEnhanceCompleteEvent"].IsNull())
+    {
+        if (!value["QualityEnhanceCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.QualityEnhanceCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_qualityEnhanceCompleteEvent.Deserialize(value["QualityEnhanceCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_qualityEnhanceCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -693,6 +711,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qualityInspectCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_qualityEnhanceCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityEnhanceCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qualityEnhanceCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1096,5 +1123,21 @@ void EventContent::SetQualityInspectCompleteEvent(const QualityInspectTask& _qua
 bool EventContent::QualityInspectCompleteEventHasBeenSet() const
 {
     return m_qualityInspectCompleteEventHasBeenSet;
+}
+
+QualityEnhanceTask EventContent::GetQualityEnhanceCompleteEvent() const
+{
+    return m_qualityEnhanceCompleteEvent;
+}
+
+void EventContent::SetQualityEnhanceCompleteEvent(const QualityEnhanceTask& _qualityEnhanceCompleteEvent)
+{
+    m_qualityEnhanceCompleteEvent = _qualityEnhanceCompleteEvent;
+    m_qualityEnhanceCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::QualityEnhanceCompleteEventHasBeenSet() const
+{
+    return m_qualityEnhanceCompleteEventHasBeenSet;
 }
 
