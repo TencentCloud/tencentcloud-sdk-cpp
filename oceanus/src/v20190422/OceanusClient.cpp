@@ -728,6 +728,49 @@ OceanusClient::DescribeClustersOutcomeCallable OceanusClient::DescribeClustersCa
     return task->get_future();
 }
 
+OceanusClient::DescribeFolderOutcome OceanusClient::DescribeFolder(const DescribeFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFolderResponse rsp = DescribeFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFolderOutcome(rsp);
+        else
+            return DescribeFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFolderOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeFolderAsync(const DescribeFolderRequest& request, const DescribeFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DescribeFolderOutcomeCallable OceanusClient::DescribeFolderCallable(const DescribeFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFolder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::DescribeJobConfigsOutcome OceanusClient::DescribeJobConfigs(const DescribeJobConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJobConfigs");

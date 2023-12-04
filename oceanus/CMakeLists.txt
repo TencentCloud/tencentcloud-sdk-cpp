@@ -40,6 +40,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/ResultColumn.h
   include/tencentcloud/oceanus/v20190422/model/TreeJobSets.h
   include/tencentcloud/oceanus/v20190422/model/ResourceItem.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeFolderResponse.h
   include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
   include/tencentcloud/oceanus/v20190422/model/CCN.h
   include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesRequest.h
@@ -89,6 +90,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/TraceModeConfiguration.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceResponse.h
+  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Property.h
   include/tencentcloud/oceanus/v20190422/model/JobGraphEdge.h
@@ -122,8 +124,9 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/CreateJobRequest.h
   include/tencentcloud/oceanus/v20190422/model/JobInstanceForSubmissionLog.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeFolderRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteFoldersResponse.h
-  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h
+  include/tencentcloud/oceanus/v20190422/model/SubFolderInfo.h
   include/tencentcloud/oceanus/v20190422/model/ClusterSession.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h
   include/tencentcloud/oceanus/v20190422/model/StopJobsResponse.h
@@ -163,6 +166,7 @@ set(oceanus_src
   src/v20190422/model/ResultColumn.cpp
   src/v20190422/model/TreeJobSets.cpp
   src/v20190422/model/ResourceItem.cpp
+  src/v20190422/model/DescribeFolderResponse.cpp
   src/v20190422/model/ResourceLoc.cpp
   src/v20190422/model/CCN.cpp
   src/v20190422/model/DescribeWorkSpacesRequest.cpp
@@ -212,6 +216,7 @@ set(oceanus_src
   src/v20190422/model/TraceModeConfiguration.cpp
   src/v20190422/model/RunJobsRequest.cpp
   src/v20190422/model/DeleteWorkSpaceResponse.cpp
+  src/v20190422/model/TriggerJobSavepointResponse.cpp
   src/v20190422/model/DeleteJobsResponse.cpp
   src/v20190422/model/Property.cpp
   src/v20190422/model/JobGraphEdge.cpp
@@ -245,8 +250,9 @@ set(oceanus_src
   src/v20190422/model/CreateJobRequest.cpp
   src/v20190422/model/JobInstanceForSubmissionLog.cpp
   src/v20190422/model/DeleteTableConfigResponse.cpp
+  src/v20190422/model/DescribeFolderRequest.cpp
   src/v20190422/model/DeleteFoldersResponse.cpp
-  src/v20190422/model/TriggerJobSavepointResponse.cpp
+  src/v20190422/model/SubFolderInfo.cpp
   src/v20190422/model/ClusterSession.cpp
   src/v20190422/model/CreateResourceConfigRequest.cpp
   src/v20190422/model/StopJobsResponse.cpp

@@ -55,6 +55,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeClustersRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeClustersResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeFolderRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h>
@@ -155,6 +157,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFolderResponse> DescribeFolderOutcome;
+                typedef std::future<DescribeFolderOutcome> DescribeFolderOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeFolderRequest&, DescribeFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFolderAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobConfigsResponse> DescribeJobConfigsOutcome;
                 typedef std::future<DescribeJobConfigsOutcome> DescribeJobConfigsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobConfigsRequest&, DescribeJobConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobConfigsAsyncHandler;
@@ -358,6 +363,15 @@ namespace TencentCloud
                 DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest &request);
                 void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
+
+                /**
+                 *查询指定文件夹及其相应的子文件夹信息
+                 * @param req DescribeFolderRequest
+                 * @return DescribeFolderOutcome
+                 */
+                DescribeFolderOutcome DescribeFolder(const Model::DescribeFolderRequest &request);
+                void DescribeFolderAsync(const Model::DescribeFolderRequest& request, const DescribeFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFolderOutcomeCallable DescribeFolderCallable(const Model::DescribeFolderRequest& request);
 
                 /**
                  *查询作业配置列表，一次最多查询100个
