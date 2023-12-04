@@ -857,6 +857,49 @@ MsClient::DescribeUserBaseInfoInstanceOutcomeCallable MsClient::DescribeUserBase
     return task->get_future();
 }
 
+MsClient::DestroyResourceInstancesOutcome MsClient::DestroyResourceInstances(const DestroyResourceInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyResourceInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyResourceInstancesResponse rsp = DestroyResourceInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyResourceInstancesOutcome(rsp);
+        else
+            return DestroyResourceInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyResourceInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::DestroyResourceInstancesAsync(const DestroyResourceInstancesRequest& request, const DestroyResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyResourceInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::DestroyResourceInstancesOutcomeCallable MsClient::DestroyResourceInstancesCallable(const DestroyResourceInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyResourceInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyResourceInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MsClient::RequestLocalTaskOutcome MsClient::RequestLocalTask(const RequestLocalTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "RequestLocalTask");

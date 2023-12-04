@@ -37,7 +37,8 @@ BizLicenseOCRResponse::BizLicenseOCRResponse() :
     m_recognizeWarnCodeHasBeenSet(false),
     m_recognizeWarnMsgHasBeenSet(false),
     m_isDuplicationHasBeenSet(false),
-    m_registrationDateHasBeenSet(false)
+    m_registrationDateHasBeenSet(false),
+    m_angleHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,16 @@ CoreInternalOutcome BizLicenseOCRResponse::Deserialize(const string &payload)
         m_registrationDateHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
+    {
+        if (!rsp["Angle"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angle = rsp["Angle"].GetDouble();
+        m_angleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -351,6 +362,14 @@ string BizLicenseOCRResponse::ToJsonString() const
         string key = "RegistrationDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_registrationDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_angleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Angle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_angle, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -503,6 +522,16 @@ string BizLicenseOCRResponse::GetRegistrationDate() const
 bool BizLicenseOCRResponse::RegistrationDateHasBeenSet() const
 {
     return m_registrationDateHasBeenSet;
+}
+
+double BizLicenseOCRResponse::GetAngle() const
+{
+    return m_angle;
+}
+
+bool BizLicenseOCRResponse::AngleHasBeenSet() const
+{
+    return m_angleHasBeenSet;
 }
 
 

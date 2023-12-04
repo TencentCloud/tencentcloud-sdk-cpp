@@ -25,8 +25,8 @@ using namespace std;
 UpdateGrafanaNotificationChannelRequest::UpdateGrafanaNotificationChannelRequest() :
     m_channelIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
     m_receiversHasBeenSet(false),
+    m_channelNameHasBeenSet(false),
     m_extraOrgIdsHasBeenSet(false),
     m_organizationIdsHasBeenSet(false)
 {
@@ -55,14 +55,6 @@ string UpdateGrafanaNotificationChannelRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_channelNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ChannelName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_channelName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_receiversHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -74,6 +66,14 @@ string UpdateGrafanaNotificationChannelRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_channelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extraOrgIdsHasBeenSet)
@@ -142,22 +142,6 @@ bool UpdateGrafanaNotificationChannelRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-string UpdateGrafanaNotificationChannelRequest::GetChannelName() const
-{
-    return m_channelName;
-}
-
-void UpdateGrafanaNotificationChannelRequest::SetChannelName(const string& _channelName)
-{
-    m_channelName = _channelName;
-    m_channelNameHasBeenSet = true;
-}
-
-bool UpdateGrafanaNotificationChannelRequest::ChannelNameHasBeenSet() const
-{
-    return m_channelNameHasBeenSet;
-}
-
 vector<string> UpdateGrafanaNotificationChannelRequest::GetReceivers() const
 {
     return m_receivers;
@@ -172,6 +156,22 @@ void UpdateGrafanaNotificationChannelRequest::SetReceivers(const vector<string>&
 bool UpdateGrafanaNotificationChannelRequest::ReceiversHasBeenSet() const
 {
     return m_receiversHasBeenSet;
+}
+
+string UpdateGrafanaNotificationChannelRequest::GetChannelName() const
+{
+    return m_channelName;
+}
+
+void UpdateGrafanaNotificationChannelRequest::SetChannelName(const string& _channelName)
+{
+    m_channelName = _channelName;
+    m_channelNameHasBeenSet = true;
+}
+
+bool UpdateGrafanaNotificationChannelRequest::ChannelNameHasBeenSet() const
+{
+    return m_channelNameHasBeenSet;
 }
 
 vector<string> UpdateGrafanaNotificationChannelRequest::GetExtraOrgIds() const

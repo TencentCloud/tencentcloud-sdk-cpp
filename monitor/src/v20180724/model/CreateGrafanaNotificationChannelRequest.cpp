@@ -25,8 +25,8 @@ using namespace std;
 CreateGrafanaNotificationChannelRequest::CreateGrafanaNotificationChannelRequest() :
     m_instanceIdHasBeenSet(false),
     m_channelNameHasBeenSet(false),
-    m_orgIdHasBeenSet(false),
     m_receiversHasBeenSet(false),
+    m_orgIdHasBeenSet(false),
     m_extraOrgIdsHasBeenSet(false),
     m_organizationIdsHasBeenSet(false)
 {
@@ -55,14 +55,6 @@ string CreateGrafanaNotificationChannelRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_channelName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_orgIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrgId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_orgId, allocator);
-    }
-
     if (m_receiversHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -74,6 +66,14 @@ string CreateGrafanaNotificationChannelRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_orgIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_orgId, allocator);
     }
 
     if (m_extraOrgIdsHasBeenSet)
@@ -142,22 +142,6 @@ bool CreateGrafanaNotificationChannelRequest::ChannelNameHasBeenSet() const
     return m_channelNameHasBeenSet;
 }
 
-int64_t CreateGrafanaNotificationChannelRequest::GetOrgId() const
-{
-    return m_orgId;
-}
-
-void CreateGrafanaNotificationChannelRequest::SetOrgId(const int64_t& _orgId)
-{
-    m_orgId = _orgId;
-    m_orgIdHasBeenSet = true;
-}
-
-bool CreateGrafanaNotificationChannelRequest::OrgIdHasBeenSet() const
-{
-    return m_orgIdHasBeenSet;
-}
-
 vector<string> CreateGrafanaNotificationChannelRequest::GetReceivers() const
 {
     return m_receivers;
@@ -172,6 +156,22 @@ void CreateGrafanaNotificationChannelRequest::SetReceivers(const vector<string>&
 bool CreateGrafanaNotificationChannelRequest::ReceiversHasBeenSet() const
 {
     return m_receiversHasBeenSet;
+}
+
+int64_t CreateGrafanaNotificationChannelRequest::GetOrgId() const
+{
+    return m_orgId;
+}
+
+void CreateGrafanaNotificationChannelRequest::SetOrgId(const int64_t& _orgId)
+{
+    m_orgId = _orgId;
+    m_orgIdHasBeenSet = true;
+}
+
+bool CreateGrafanaNotificationChannelRequest::OrgIdHasBeenSet() const
+{
+    return m_orgIdHasBeenSet;
 }
 
 vector<string> CreateGrafanaNotificationChannelRequest::GetExtraOrgIds() const

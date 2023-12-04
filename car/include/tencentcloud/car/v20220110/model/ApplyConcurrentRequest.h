@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取应用版本ID
-                     * @return ApplicationVersionId 应用版本ID
+                     * 获取应用版本ID。如果请求应用的当前版本，可以不用填写该字段。如果请求应用的其它版本时，才需要通过该字段来指定应用的版本。
+                     * @return ApplicationVersionId 应用版本ID。如果请求应用的当前版本，可以不用填写该字段。如果请求应用的其它版本时，才需要通过该字段来指定应用的版本。
                      * 
                      */
                     std::string GetApplicationVersionId() const;
 
                     /**
-                     * 设置应用版本ID
-                     * @param _applicationVersionId 应用版本ID
+                     * 设置应用版本ID。如果请求应用的当前版本，可以不用填写该字段。如果请求应用的其它版本时，才需要通过该字段来指定应用的版本。
+                     * @param _applicationVersionId 应用版本ID。如果请求应用的当前版本，可以不用填写该字段。如果请求应用的其它版本时，才需要通过该字段来指定应用的版本。
                      * 
                      */
                     void SetApplicationVersionId(const std::string& _applicationVersionId);
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 应用版本ID
+                     * 应用版本ID。如果请求应用的当前版本，可以不用填写该字段。如果请求应用的其它版本时，才需要通过该字段来指定应用的版本。
                      */
                     std::string m_applicationVersionId;
                     bool m_applicationVersionIdHasBeenSet;

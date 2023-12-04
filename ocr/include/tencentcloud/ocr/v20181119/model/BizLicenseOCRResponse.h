@@ -247,6 +247,24 @@ WARN_RESHOOT_SCREENED_CARD 翻拍件告警
                      */
                     bool RegistrationDateHasBeenSet() const;
 
+                    /**
+                     * 获取 图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度
+
+
+                     * @return Angle  图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度
+
+
+                     * 
+                     */
+                    double GetAngle() const;
+
+                    /**
+                     * 判断参数 Angle 是否已赋值
+                     * @return Angle 是否已赋值
+                     * 
+                     */
+                    bool AngleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +354,14 @@ WARN_RESHOOT_SCREENED_CARD 翻拍件告警
                      */
                     std::string m_registrationDate;
                     bool m_registrationDateHasBeenSet;
+
+                    /**
+                     *  图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度
+
+
+                     */
+                    double m_angle;
+                    bool m_angleHasBeenSet;
 
                 };
             }

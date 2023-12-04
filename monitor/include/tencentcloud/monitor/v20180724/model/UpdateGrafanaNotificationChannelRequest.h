@@ -85,27 +85,6 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取告警通道名称，例如：test
-                     * @return ChannelName 告警通道名称，例如：test
-                     * 
-                     */
-                    std::string GetChannelName() const;
-
-                    /**
-                     * 设置告警通道名称，例如：test
-                     * @param _channelName 告警通道名称，例如：test
-                     * 
-                     */
-                    void SetChannelName(const std::string& _channelName);
-
-                    /**
-                     * 判断参数 ChannelName 是否已赋值
-                     * @return ChannelName 是否已赋值
-                     * 
-                     */
-                    bool ChannelNameHasBeenSet() const;
-
-                    /**
                      * 获取接受告警通道 ID 数组
                      * @return Receivers 接受告警通道 ID 数组
                      * 
@@ -125,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ReceiversHasBeenSet() const;
+
+                    /**
+                     * 获取告警通道名称，已废弃，名称不可修改。
+                     * @return ChannelName 告警通道名称，已废弃，名称不可修改。
+                     * 
+                     */
+                    std::string GetChannelName() const;
+
+                    /**
+                     * 设置告警通道名称，已废弃，名称不可修改。
+                     * @param _channelName 告警通道名称，已废弃，名称不可修改。
+                     * 
+                     */
+                    void SetChannelName(const std::string& _channelName);
+
+                    /**
+                     * 判断参数 ChannelName 是否已赋值
+                     * @return ChannelName 是否已赋值
+                     * 
+                     */
+                    bool ChannelNameHasBeenSet() const;
 
                     /**
                      * 获取已废弃，请使用 OrganizationIds
@@ -183,16 +183,16 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 告警通道名称，例如：test
-                     */
-                    std::string m_channelName;
-                    bool m_channelNameHasBeenSet;
-
-                    /**
                      * 接受告警通道 ID 数组
                      */
                     std::vector<std::string> m_receivers;
                     bool m_receiversHasBeenSet;
+
+                    /**
+                     * 告警通道名称，已废弃，名称不可修改。
+                     */
+                    std::string m_channelName;
+                    bool m_channelNameHasBeenSet;
 
                     /**
                      * 已废弃，请使用 OrganizationIds

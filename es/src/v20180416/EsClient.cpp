@@ -986,6 +986,49 @@ EsClient::GetRequestTargetNodeTypesOutcomeCallable EsClient::GetRequestTargetNod
     return task->get_future();
 }
 
+EsClient::InquirePriceRenewInstanceOutcome EsClient::InquirePriceRenewInstance(const InquirePriceRenewInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceRenewInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceRenewInstanceResponse rsp = InquirePriceRenewInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceRenewInstanceOutcome(rsp);
+        else
+            return InquirePriceRenewInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceRenewInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::InquirePriceRenewInstanceAsync(const InquirePriceRenewInstanceRequest& request, const InquirePriceRenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceRenewInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::InquirePriceRenewInstanceOutcomeCallable EsClient::InquirePriceRenewInstanceCallable(const InquirePriceRenewInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceRenewInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceRenewInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::ModifyEsVipSecurityGroupOutcome EsClient::ModifyEsVipSecurityGroup(const ModifyEsVipSecurityGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEsVipSecurityGroup");

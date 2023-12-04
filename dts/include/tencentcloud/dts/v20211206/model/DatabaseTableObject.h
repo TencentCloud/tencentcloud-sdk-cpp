@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool DatabasesHasBeenSet() const;
 
                     /**
-                     * 获取高级对象类型，如trigger、function、procedure、event
+                     * 获取高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdvancedObjects 高级对象类型，如trigger、function、procedure、event
+                     * @return AdvancedObjects 高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAdvancedObjects() const;
 
                     /**
-                     * 设置高级对象类型，如trigger、function、procedure、event
+                     * 设置高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _advancedObjects 高级对象类型，如trigger、function、procedure、event
+                     * @param _advancedObjects 高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_databasesHasBeenSet;
 
                     /**
-                     * 高级对象类型，如trigger、function、procedure、event
+                     * 高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_advancedObjects;

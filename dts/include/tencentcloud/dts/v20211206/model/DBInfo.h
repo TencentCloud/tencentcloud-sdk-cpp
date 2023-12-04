@@ -472,18 +472,18 @@ namespace TencentCloud
                     bool AccountModeHasBeenSet() const;
 
                     /**
-                     * 获取临时密钥Id
+                     * 获取临时密钥Id，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TmpSecretId 临时密钥Id
+                     * @return TmpSecretId 临时密钥Id，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
-                     * 设置临时密钥Id
+                     * 设置临时密钥Id，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tmpSecretId 临时密钥Id
+                     * @param _tmpSecretId 临时密钥Id，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -497,18 +497,18 @@ namespace TencentCloud
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
-                     * 获取临时密钥Key
+                     * 获取临时密钥Key，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TmpSecretKey 临时密钥Key
+                     * @return TmpSecretKey 临时密钥Key，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
-                     * 设置临时密钥Key
+                     * 设置临时密钥Key，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tmpSecretKey 临时密钥Key
+                     * @param _tmpSecretKey 临时密钥Key，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -522,18 +522,18 @@ namespace TencentCloud
                     bool TmpSecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取临时Token
+                     * 获取临时Token，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TmpToken 临时Token
+                     * @return TmpToken 临时Token，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmpToken() const;
 
                     /**
-                     * 设置临时Token
+                     * 设置临时Token，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tmpToken 临时Token
+                     * @param _tmpToken 临时Token，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -668,21 +668,21 @@ namespace TencentCloud
                     bool m_accountModeHasBeenSet;
 
                     /**
-                     * 临时密钥Id
+                     * 临时密钥Id，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpSecretId;
                     bool m_tmpSecretIdHasBeenSet;
 
                     /**
-                     * 临时密钥Key
+                     * 临时密钥Key，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpSecretKey;
                     bool m_tmpSecretKeyHasBeenSet;
 
                     /**
-                     * 临时Token
+                     * 临时Token，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpToken;

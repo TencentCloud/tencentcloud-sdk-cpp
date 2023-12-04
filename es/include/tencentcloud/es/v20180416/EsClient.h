@@ -67,6 +67,8 @@
 #include <tencentcloud/es/v20180416/model/GetDiagnoseSettingsResponse.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesResponse.h>
+#include <tencentcloud/es/v20180416/model/InquirePriceRenewInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/InquirePriceRenewInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h>
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceRequest.h>
@@ -185,6 +187,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetRequestTargetNodeTypesResponse> GetRequestTargetNodeTypesOutcome;
                 typedef std::future<GetRequestTargetNodeTypesOutcome> GetRequestTargetNodeTypesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::GetRequestTargetNodeTypesRequest&, GetRequestTargetNodeTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRequestTargetNodeTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceRenewInstanceResponse> InquirePriceRenewInstanceOutcome;
+                typedef std::future<InquirePriceRenewInstanceOutcome> InquirePriceRenewInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::InquirePriceRenewInstanceRequest&, InquirePriceRenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEsVipSecurityGroupResponse> ModifyEsVipSecurityGroupOutcome;
                 typedef std::future<ModifyEsVipSecurityGroupOutcome> ModifyEsVipSecurityGroupOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::ModifyEsVipSecurityGroupRequest&, ModifyEsVipSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEsVipSecurityGroupAsyncHandler;
@@ -442,6 +447,15 @@ namespace TencentCloud
                 GetRequestTargetNodeTypesOutcome GetRequestTargetNodeTypes(const Model::GetRequestTargetNodeTypesRequest &request);
                 void GetRequestTargetNodeTypesAsync(const Model::GetRequestTargetNodeTypesRequest& request, const GetRequestTargetNodeTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetRequestTargetNodeTypesOutcomeCallable GetRequestTargetNodeTypesCallable(const Model::GetRequestTargetNodeTypesRequest& request);
+
+                /**
+                 *集群续费询价接口，续费前通过调用该接口，可获取集群续费的价格。
+                 * @param req InquirePriceRenewInstanceRequest
+                 * @return InquirePriceRenewInstanceOutcome
+                 */
+                InquirePriceRenewInstanceOutcome InquirePriceRenewInstance(const Model::InquirePriceRenewInstanceRequest &request);
+                void InquirePriceRenewInstanceAsync(const Model::InquirePriceRenewInstanceRequest& request, const InquirePriceRenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceRenewInstanceOutcomeCallable InquirePriceRenewInstanceCallable(const Model::InquirePriceRenewInstanceRequest& request);
 
                 /**
                  *修改绑定VIP的安全组，传安全组id列表

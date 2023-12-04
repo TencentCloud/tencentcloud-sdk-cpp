@@ -72,6 +72,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/LogstashPipelineInfo.h
   include/tencentcloud/es/v20180416/model/UpdatePluginsRequest.h
   include/tencentcloud/es/v20180416/model/Dimension.h
+  include/tencentcloud/es/v20180416/model/InquirePriceRenewInstanceRequest.h
   include/tencentcloud/es/v20180416/model/UpdateJdkResponse.h
   include/tencentcloud/es/v20180416/model/Metric.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceResponse.h
@@ -85,15 +86,16 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/SaveAndDeployLogstashPipelineRequest.h
   include/tencentcloud/es/v20180416/model/ClusterView.h
   include/tencentcloud/es/v20180416/model/CreateIndexResponse.h
+  include/tencentcloud/es/v20180416/model/InquirePriceRenewInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DeleteLogstashPipelinesRequest.h
   include/tencentcloud/es/v20180416/model/RestartKibanaRequest.h
   include/tencentcloud/es/v20180416/model/SaveAndDeployLogstashPipelineResponse.h
   include/tencentcloud/es/v20180416/model/UpdateDictionariesRequest.h
-  include/tencentcloud/es/v20180416/model/CosBackup.h
+  include/tencentcloud/es/v20180416/model/OperationDuration.h
   include/tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h
   include/tencentcloud/es/v20180416/model/DescribeIndexListRequest.h
   include/tencentcloud/es/v20180416/model/NodeInfo.h
-  include/tencentcloud/es/v20180416/model/OperationDuration.h
+  include/tencentcloud/es/v20180416/model/CosBackup.h
   include/tencentcloud/es/v20180416/model/DescribeLogstashPipelinesResponse.h
   include/tencentcloud/es/v20180416/model/OperationDurationUpdated.h
   include/tencentcloud/es/v20180416/model/CreateInstanceRequest.h
@@ -206,6 +208,7 @@ set(es_src
   src/v20180416/model/LogstashPipelineInfo.cpp
   src/v20180416/model/UpdatePluginsRequest.cpp
   src/v20180416/model/Dimension.cpp
+  src/v20180416/model/InquirePriceRenewInstanceRequest.cpp
   src/v20180416/model/UpdateJdkResponse.cpp
   src/v20180416/model/Metric.cpp
   src/v20180416/model/UpdateInstanceResponse.cpp
@@ -219,15 +222,16 @@ set(es_src
   src/v20180416/model/SaveAndDeployLogstashPipelineRequest.cpp
   src/v20180416/model/ClusterView.cpp
   src/v20180416/model/CreateIndexResponse.cpp
+  src/v20180416/model/InquirePriceRenewInstanceResponse.cpp
   src/v20180416/model/DeleteLogstashPipelinesRequest.cpp
   src/v20180416/model/RestartKibanaRequest.cpp
   src/v20180416/model/SaveAndDeployLogstashPipelineResponse.cpp
   src/v20180416/model/UpdateDictionariesRequest.cpp
-  src/v20180416/model/CosBackup.cpp
+  src/v20180416/model/OperationDuration.cpp
   src/v20180416/model/UpgradeLicenseRequest.cpp
   src/v20180416/model/DescribeIndexListRequest.cpp
   src/v20180416/model/NodeInfo.cpp
-  src/v20180416/model/OperationDuration.cpp
+  src/v20180416/model/CosBackup.cpp
   src/v20180416/model/DescribeLogstashPipelinesResponse.cpp
   src/v20180416/model/OperationDurationUpdated.cpp
   src/v20180416/model/CreateInstanceRequest.cpp

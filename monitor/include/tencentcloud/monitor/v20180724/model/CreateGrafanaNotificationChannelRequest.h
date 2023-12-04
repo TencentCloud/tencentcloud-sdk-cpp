@@ -85,27 +85,6 @@ namespace TencentCloud
                     bool ChannelNameHasBeenSet() const;
 
                     /**
-                     * 获取默认为1，建议使用 OrganizationIds
-                     * @return OrgId 默认为1，建议使用 OrganizationIds
-                     * 
-                     */
-                    int64_t GetOrgId() const;
-
-                    /**
-                     * 设置默认为1，建议使用 OrganizationIds
-                     * @param _orgId 默认为1，建议使用 OrganizationIds
-                     * 
-                     */
-                    void SetOrgId(const int64_t& _orgId);
-
-                    /**
-                     * 判断参数 OrgId 是否已赋值
-                     * @return OrgId 是否已赋值
-                     * 
-                     */
-                    bool OrgIdHasBeenSet() const;
-
-                    /**
                      * 获取接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID 
                      * @return Receivers 接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID 
                      * 
@@ -125,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ReceiversHasBeenSet() const;
+
+                    /**
+                     * 获取默认为1，建议使用 OrganizationIds
+                     * @return OrgId 默认为1，建议使用 OrganizationIds
+                     * 
+                     */
+                    int64_t GetOrgId() const;
+
+                    /**
+                     * 设置默认为1，建议使用 OrganizationIds
+                     * @param _orgId 默认为1，建议使用 OrganizationIds
+                     * 
+                     */
+                    void SetOrgId(const int64_t& _orgId);
+
+                    /**
+                     * 判断参数 OrgId 是否已赋值
+                     * @return OrgId 是否已赋值
+                     * 
+                     */
+                    bool OrgIdHasBeenSet() const;
 
                     /**
                      * 获取额外组织 ID 数组，已废弃，请使用 OrganizationIds
@@ -183,16 +183,16 @@ namespace TencentCloud
                     bool m_channelNameHasBeenSet;
 
                     /**
-                     * 默认为1，建议使用 OrganizationIds
-                     */
-                    int64_t m_orgId;
-                    bool m_orgIdHasBeenSet;
-
-                    /**
                      * 接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID 
                      */
                     std::vector<std::string> m_receivers;
                     bool m_receiversHasBeenSet;
+
+                    /**
+                     * 默认为1，建议使用 OrganizationIds
+                     */
+                    int64_t m_orgId;
+                    bool m_orgIdHasBeenSet;
 
                     /**
                      * 额外组织 ID 数组，已废弃，请使用 OrganizationIds

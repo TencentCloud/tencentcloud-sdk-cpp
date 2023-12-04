@@ -585,6 +585,206 @@ namespace TencentCloud
                      */
                     bool AlarmLevelHasBeenSet() const;
 
+                    /**
+                     * 获取是否有配置告警屏蔽规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShieldFlag 是否有配置告警屏蔽规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetShieldFlag() const;
+
+                    /**
+                     * 设置是否有配置告警屏蔽规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shieldFlag 是否有配置告警屏蔽规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShieldFlag(const int64_t& _shieldFlag);
+
+                    /**
+                     * 判断参数 ShieldFlag 是否已赋值
+                     * @return ShieldFlag 是否已赋值
+                     * 
+                     */
+                    bool ShieldFlagHasBeenSet() const;
+
+                    /**
+                     * 获取屏蔽类型（英文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmShieldingType 屏蔽类型（英文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmShieldingType() const;
+
+                    /**
+                     * 设置屏蔽类型（英文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmShieldingType 屏蔽类型（英文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmShieldingType(const std::string& _alarmShieldingType);
+
+                    /**
+                     * 判断参数 AlarmShieldingType 是否已赋值
+                     * @return AlarmShieldingType 是否已赋值
+                     * 
+                     */
+                    bool AlarmShieldingTypeHasBeenSet() const;
+
+                    /**
+                     * 获取屏蔽时间（英文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmShieldingTime 屏蔽时间（英文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmShieldingTime() const;
+
+                    /**
+                     * 设置屏蔽时间（英文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmShieldingTime 屏蔽时间（英文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmShieldingTime(const std::string& _alarmShieldingTime);
+
+                    /**
+                     * 判断参数 AlarmShieldingTime 是否已赋值
+                     * @return AlarmShieldingTime 是否已赋值
+                     * 
+                     */
+                    bool AlarmShieldingTimeHasBeenSet() const;
+
+                    /**
+                     * 获取屏蔽类型（中文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmShieldingShowType 屏蔽类型（中文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmShieldingShowType() const;
+
+                    /**
+                     * 设置屏蔽类型（中文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmShieldingShowType 屏蔽类型（中文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmShieldingShowType(const std::string& _alarmShieldingShowType);
+
+                    /**
+                     * 判断参数 AlarmShieldingShowType 是否已赋值
+                     * @return AlarmShieldingShowType 是否已赋值
+                     * 
+                     */
+                    bool AlarmShieldingShowTypeHasBeenSet() const;
+
+                    /**
+                     * 获取屏蔽时间（中文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmShieldingShowTime 屏蔽时间（中文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmShieldingShowTime() const;
+
+                    /**
+                     * 设置屏蔽时间（中文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmShieldingShowTime 屏蔽时间（中文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmShieldingShowTime(const std::string& _alarmShieldingShowTime);
+
+                    /**
+                     * 判断参数 AlarmShieldingShowTime 是否已赋值
+                     * @return AlarmShieldingShowTime 是否已赋值
+                     * 
+                     */
+                    bool AlarmShieldingShowTimeHasBeenSet() const;
+
+                    /**
+                     * 获取屏蔽原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmShieldReason 屏蔽原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmShieldReason() const;
+
+                    /**
+                     * 设置屏蔽原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmShieldReason 屏蔽原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmShieldReason(const std::string& _alarmShieldReason);
+
+                    /**
+                     * 判断参数 AlarmShieldReason 是否已赋值
+                     * @return AlarmShieldReason 是否已赋值
+                     * 
+                     */
+                    bool AlarmShieldReasonHasBeenSet() const;
+
+                    /**
+                     * 获取告警实例的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternalDimensions 告警实例的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInternalDimensions() const;
+
+                    /**
+                     * 设置告警实例的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _internalDimensions 告警实例的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInternalDimensions(const std::string& _internalDimensions);
+
+                    /**
+                     * 判断参数 InternalDimensions 是否已赋值
+                     * @return InternalDimensions 是否已赋值
+                     * 
+                     */
+                    bool InternalDimensionsHasBeenSet() const;
+
+                    /**
+                     * 获取指标名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricName 指标名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMetricName() const;
+
+                    /**
+                     * 设置指标名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _metricName 指标名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMetricName(const std::string& _metricName);
+
+                    /**
+                     * 判断参数 MetricName 是否已赋值
+                     * @return MetricName 是否已赋值
+                     * 
+                     */
+                    bool MetricNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -739,6 +939,62 @@ namespace TencentCloud
                      */
                     std::string m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
+
+                    /**
+                     * 是否有配置告警屏蔽规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_shieldFlag;
+                    bool m_shieldFlagHasBeenSet;
+
+                    /**
+                     * 屏蔽类型（英文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmShieldingType;
+                    bool m_alarmShieldingTypeHasBeenSet;
+
+                    /**
+                     * 屏蔽时间（英文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmShieldingTime;
+                    bool m_alarmShieldingTimeHasBeenSet;
+
+                    /**
+                     * 屏蔽类型（中文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmShieldingShowType;
+                    bool m_alarmShieldingShowTypeHasBeenSet;
+
+                    /**
+                     * 屏蔽时间（中文）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmShieldingShowTime;
+                    bool m_alarmShieldingShowTimeHasBeenSet;
+
+                    /**
+                     * 屏蔽原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmShieldReason;
+                    bool m_alarmShieldReasonHasBeenSet;
+
+                    /**
+                     * 告警实例的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_internalDimensions;
+                    bool m_internalDimensionsHasBeenSet;
+
+                    /**
+                     * 指标名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metricName;
+                    bool m_metricNameHasBeenSet;
 
                 };
             }

@@ -39,6 +39,7 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/Filter.h
   include/tencentcloud/ms/v20180408/model/CreateShieldPlanInstanceRequest.h
   include/tencentcloud/ms/v20180408/model/CreateEncryptInstanceResponse.h
+  include/tencentcloud/ms/v20180408/model/DestroyResourceInstancesRequest.h
   include/tencentcloud/ms/v20180408/model/SDKResult.h
   include/tencentcloud/ms/v20180408/model/RequestLocalTaskResponse.h
   include/tencentcloud/ms/v20180408/model/UpdateLocalTaskResultRequest.h
@@ -65,6 +66,7 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/DescribeApkDetectionResultRequest.h
   include/tencentcloud/ms/v20180408/model/ResultListItem.h
   include/tencentcloud/ms/v20180408/model/DeleteShieldInstancesResponse.h
+  include/tencentcloud/ms/v20180408/model/DestroyResourceInstancesResponse.h
   include/tencentcloud/ms/v20180408/model/AndroidAppInfo.h
   include/tencentcloud/ms/v20180408/model/DescribeUrlDetectionResultResponse.h
   include/tencentcloud/ms/v20180408/model/CreateShieldInstanceRequest.h
@@ -116,6 +118,7 @@ set(ms_src
   src/v20180408/model/Filter.cpp
   src/v20180408/model/CreateShieldPlanInstanceRequest.cpp
   src/v20180408/model/CreateEncryptInstanceResponse.cpp
+  src/v20180408/model/DestroyResourceInstancesRequest.cpp
   src/v20180408/model/SDKResult.cpp
   src/v20180408/model/RequestLocalTaskResponse.cpp
   src/v20180408/model/UpdateLocalTaskResultRequest.cpp
@@ -142,6 +145,7 @@ set(ms_src
   src/v20180408/model/DescribeApkDetectionResultRequest.cpp
   src/v20180408/model/ResultListItem.cpp
   src/v20180408/model/DeleteShieldInstancesResponse.cpp
+  src/v20180408/model/DestroyResourceInstancesResponse.cpp
   src/v20180408/model/AndroidAppInfo.cpp
   src/v20180408/model/DescribeUrlDetectionResultResponse.cpp
   src/v20180408/model/CreateShieldInstanceRequest.cpp

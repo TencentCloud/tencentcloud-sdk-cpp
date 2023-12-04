@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取宿主机IP
-                     * @return HostIp 宿主机IP
+                     * 获取宿主机IP（废弃）
+                     * @return HostIp 宿主机IP（废弃）
                      * 
                      */
                     std::string GetHostIp() const;
 
                     /**
-                     * 设置宿主机IP
-                     * @param _hostIp 宿主机IP
+                     * 设置宿主机IP（废弃）
+                     * @param _hostIp 宿主机IP（废弃）
                      * 
                      */
                     void SetHostIp(const std::string& _hostIp);
@@ -284,7 +284,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 宿主机IP
+                     * 宿主机IP（废弃）
                      */
                     std::string m_hostIp;
                     bool m_hostIpHasBeenSet;

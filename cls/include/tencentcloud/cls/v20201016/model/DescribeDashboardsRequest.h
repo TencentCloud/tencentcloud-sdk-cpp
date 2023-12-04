@@ -87,26 +87,26 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取<br><li> dashboardId
+                     * 获取<br><li>dashboardId
 
 按照【仪表盘id】进行过滤。
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> dashboardName
 
 按照【仪表盘名字】进行模糊搜索过滤。
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> dashboardRegion
 
 按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> tagKey
 
@@ -114,7 +114,7 @@ namespace TencentCloud
 
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> tag:tagKey
 
@@ -122,29 +122,29 @@ namespace TencentCloud
 
 类型：String
 
-必选：否
+必选：否</li>
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
-                     * @return Filters <br><li> dashboardId
+                     * @return Filters <br><li>dashboardId
 
 按照【仪表盘id】进行过滤。
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> dashboardName
 
 按照【仪表盘名字】进行模糊搜索过滤。
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> dashboardRegion
 
 按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> tagKey
 
@@ -152,7 +152,7 @@ namespace TencentCloud
 
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> tag:tagKey
 
@@ -160,7 +160,7 @@ namespace TencentCloud
 
 类型：String
 
-必选：否
+必选：否</li>
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * 
@@ -168,26 +168,26 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<br><li> dashboardId
+                     * 设置<br><li>dashboardId
 
 按照【仪表盘id】进行过滤。
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> dashboardName
 
 按照【仪表盘名字】进行模糊搜索过滤。
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> dashboardRegion
 
 按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> tagKey
 
@@ -195,7 +195,7 @@ namespace TencentCloud
 
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> tag:tagKey
 
@@ -203,29 +203,29 @@ namespace TencentCloud
 
 类型：String
 
-必选：否
+必选：否</li>
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
-                     * @param _filters <br><li> dashboardId
+                     * @param _filters <br><li>dashboardId
 
 按照【仪表盘id】进行过滤。
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> dashboardName
 
 按照【仪表盘名字】进行模糊搜索过滤。
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> dashboardRegion
 
 按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> tagKey
 
@@ -233,7 +233,7 @@ namespace TencentCloud
 
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> tag:tagKey
 
@@ -241,7 +241,7 @@ namespace TencentCloud
 
 类型：String
 
-必选：否
+必选：否</li>
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * 
@@ -291,26 +291,26 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * <br><li> dashboardId
+                     * <br><li>dashboardId
 
 按照【仪表盘id】进行过滤。
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> dashboardName
 
 按照【仪表盘名字】进行模糊搜索过滤。
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> dashboardRegion
 
 按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> tagKey
 
@@ -318,7 +318,7 @@ namespace TencentCloud
 
 类型：String
 
-必选：否
+必选：否</li>
 
 <br><li> tag:tagKey
 
@@ -326,7 +326,7 @@ namespace TencentCloud
 
 类型：String
 
-必选：否
+必选：否</li>
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      */

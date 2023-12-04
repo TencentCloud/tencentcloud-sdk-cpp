@@ -61,6 +61,8 @@
 #include <tencentcloud/ms/v20180408/model/DescribeUrlDetectionResultResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeUserBaseInfoInstanceRequest.h>
 #include <tencentcloud/ms/v20180408/model/DescribeUserBaseInfoInstanceResponse.h>
+#include <tencentcloud/ms/v20180408/model/DestroyResourceInstancesRequest.h>
+#include <tencentcloud/ms/v20180408/model/DestroyResourceInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/RequestLocalTaskRequest.h>
 #include <tencentcloud/ms/v20180408/model/RequestLocalTaskResponse.h>
 #include <tencentcloud/ms/v20180408/model/UpdateClientStateRequest.h>
@@ -138,6 +140,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserBaseInfoInstanceResponse> DescribeUserBaseInfoInstanceOutcome;
                 typedef std::future<DescribeUserBaseInfoInstanceOutcome> DescribeUserBaseInfoInstanceOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DescribeUserBaseInfoInstanceRequest&, DescribeUserBaseInfoInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserBaseInfoInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyResourceInstancesResponse> DestroyResourceInstancesOutcome;
+                typedef std::future<DestroyResourceInstancesOutcome> DestroyResourceInstancesOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::DestroyResourceInstancesRequest&, DestroyResourceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyResourceInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::RequestLocalTaskResponse> RequestLocalTaskOutcome;
                 typedef std::future<RequestLocalTaskOutcome> RequestLocalTaskOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::RequestLocalTaskRequest&, RequestLocalTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RequestLocalTaskAsyncHandler;
@@ -328,6 +333,16 @@ namespace TencentCloud
                 DescribeUserBaseInfoInstanceOutcome DescribeUserBaseInfoInstance(const Model::DescribeUserBaseInfoInstanceRequest &request);
                 void DescribeUserBaseInfoInstanceAsync(const Model::DescribeUserBaseInfoInstanceRequest& request, const DescribeUserBaseInfoInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserBaseInfoInstanceOutcomeCallable DescribeUserBaseInfoInstanceCallable(const Model::DescribeUserBaseInfoInstanceRequest& request);
+
+                /**
+                 *渠道合作资源销毁
+安卓应用加固-按年收费资源销毁，其他类型暂不支持
+                 * @param req DestroyResourceInstancesRequest
+                 * @return DestroyResourceInstancesOutcome
+                 */
+                DestroyResourceInstancesOutcome DestroyResourceInstances(const Model::DestroyResourceInstancesRequest &request);
+                void DestroyResourceInstancesAsync(const Model::DestroyResourceInstancesRequest& request, const DestroyResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyResourceInstancesOutcomeCallable DestroyResourceInstancesCallable(const Model::DestroyResourceInstancesRequest& request);
 
                 /**
                  *client任务请求
