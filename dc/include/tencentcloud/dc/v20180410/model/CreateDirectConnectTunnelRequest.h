@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专线 ID，例如：dc-kd7d06of
-                     * @return DirectConnectId 专线 ID，例如：dc-kd7d06of
+                     * 获取物理专线ID，例如：dc-kd7d06of。
+                     * @return DirectConnectId 物理专线ID，例如：dc-kd7d06of。
                      * 
                      */
                     std::string GetDirectConnectId() const;
 
                     /**
-                     * 设置专线 ID，例如：dc-kd7d06of
-                     * @param _directConnectId 专线 ID，例如：dc-kd7d06of
+                     * 设置物理专线ID，例如：dc-kd7d06of。
+                     * @param _directConnectId 物理专线ID，例如：dc-kd7d06of。
                      * 
                      */
                     void SetDirectConnectId(const std::string& _directConnectId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DirectConnectIdHasBeenSet() const;
 
                     /**
-                     * 获取专用通道名称
-                     * @return DirectConnectTunnelName 专用通道名称
+                     * 获取专用通道名称。
+                     * @return DirectConnectTunnelName 专用通道名称。
                      * 
                      */
                     std::string GetDirectConnectTunnelName() const;
 
                     /**
-                     * 设置专用通道名称
-                     * @param _directConnectTunnelName 专用通道名称
+                     * 设置专用通道名称。
+                     * @param _directConnectTunnelName 专用通道名称。
                      * 
                      */
                     void SetDirectConnectTunnelName(const std::string& _directConnectTunnelName);
@@ -89,19 +89,19 @@ namespace TencentCloud
                     bool DirectConnectTunnelNameHasBeenSet() const;
 
                     /**
-                     * 获取物理专线 owner，缺省为当前客户（物理专线 owner）
-共享专线时这里需要填写共享专线的开发商账号 ID
-                     * @return DirectConnectOwnerAccount 物理专线 owner，缺省为当前客户（物理专线 owner）
-共享专线时这里需要填写共享专线的开发商账号 ID
+                     * 获取物理专线owner，缺省为当前客户（物理专线 owner）
+共享专线时这里需要填写共享专线的开发商账号 ID。
+                     * @return DirectConnectOwnerAccount 物理专线owner，缺省为当前客户（物理专线 owner）
+共享专线时这里需要填写共享专线的开发商账号 ID。
                      * 
                      */
                     std::string GetDirectConnectOwnerAccount() const;
 
                     /**
-                     * 设置物理专线 owner，缺省为当前客户（物理专线 owner）
-共享专线时这里需要填写共享专线的开发商账号 ID
-                     * @param _directConnectOwnerAccount 物理专线 owner，缺省为当前客户（物理专线 owner）
-共享专线时这里需要填写共享专线的开发商账号 ID
+                     * 设置物理专线owner，缺省为当前客户（物理专线 owner）
+共享专线时这里需要填写共享专线的开发商账号 ID。
+                     * @param _directConnectOwnerAccount 物理专线owner，缺省为当前客户（物理专线 owner）
+共享专线时这里需要填写共享专线的开发商账号 ID。
                      * 
                      */
                     void SetDirectConnectOwnerAccount(const std::string& _directConnectOwnerAccount);
@@ -114,27 +114,15 @@ namespace TencentCloud
                     bool DirectConnectOwnerAccountHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，分别为VPC、BMVPC，CCN，默认是VPC
-VPC：私有网络
-BMVPC：黑石网络
-CCN：云联网
-                     * @return NetworkType 网络类型，分别为VPC、BMVPC，CCN，默认是VPC
-VPC：私有网络
-BMVPC：黑石网络
-CCN：云联网
+                     * 获取网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。
+                     * @return NetworkType 网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。
                      * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置网络类型，分别为VPC、BMVPC，CCN，默认是VPC
-VPC：私有网络
-BMVPC：黑石网络
-CCN：云联网
-                     * @param _networkType 网络类型，分别为VPC、BMVPC，CCN，默认是VPC
-VPC：私有网络
-BMVPC：黑石网络
-CCN：云联网
+                     * 设置网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。
+                     * @param _networkType 网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -147,15 +135,15 @@ CCN：云联网
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取网络地域
-                     * @return NetworkRegion 网络地域
+                     * 获取网络地域。
+                     * @return NetworkRegion 网络地域。
                      * 
                      */
                     std::string GetNetworkRegion() const;
 
                     /**
-                     * 设置网络地域
-                     * @param _networkRegion 网络地域
+                     * 设置网络地域。
+                     * @param _networkRegion 网络地域。
                      * 
                      */
                     void SetNetworkRegion(const std::string& _networkRegion);
@@ -168,15 +156,15 @@ CCN：云联网
                     bool NetworkRegionHasBeenSet() const;
 
                     /**
-                     * 获取私有网络统一 ID 或者黑石网络统一 ID
-                     * @return VpcId 私有网络统一 ID 或者黑石网络统一 ID
+                     * 获取私有网络统一ID或黑石网络统一ID。
+                     * @return VpcId 私有网络统一ID或黑石网络统一ID。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络统一 ID 或者黑石网络统一 ID
-                     * @param _vpcId 私有网络统一 ID 或者黑石网络统一 ID
+                     * 设置私有网络统一ID或黑石网络统一ID。
+                     * @param _vpcId 私有网络统一ID或黑石网络统一ID。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -189,15 +177,15 @@ CCN：云联网
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取专线网关 ID，例如 dcg-d545ddf
-                     * @return DirectConnectGatewayId 专线网关 ID，例如 dcg-d545ddf
+                     * 获取专线网关ID，例如 dcg-d545ddf。
+                     * @return DirectConnectGatewayId 专线网关ID，例如 dcg-d545ddf。
                      * 
                      */
                     std::string GetDirectConnectGatewayId() const;
 
                     /**
-                     * 设置专线网关 ID，例如 dcg-d545ddf
-                     * @param _directConnectGatewayId 专线网关 ID，例如 dcg-d545ddf
+                     * 设置专线网关ID，例如 dcg-d545ddf。
+                     * @param _directConnectGatewayId 专线网关ID，例如 dcg-d545ddf。
                      * 
                      */
                     void SetDirectConnectGatewayId(const std::string& _directConnectGatewayId);
@@ -210,19 +198,15 @@ CCN：云联网
                     bool DirectConnectGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取专线带宽，单位：Mbps
-默认是物理专线带宽值
-                     * @return Bandwidth 专线带宽，单位：Mbps
-默认是物理专线带宽值
+                     * 获取专线带宽，单位：Mbps；默认是物理专线带宽值。
+                     * @return Bandwidth 专线带宽，单位：Mbps；默认是物理专线带宽值。
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置专线带宽，单位：Mbps
-默认是物理专线带宽值
-                     * @param _bandwidth 专线带宽，单位：Mbps
-默认是物理专线带宽值
+                     * 设置专线带宽，单位：Mbps；默认是物理专线带宽值。
+                     * @param _bandwidth 专线带宽，单位：Mbps；默认是物理专线带宽值。
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -235,23 +219,15 @@ CCN：云联网
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取BGP ：BGP路由
-STATIC：静态
-默认为 BGP 路由
-                     * @return RouteType BGP ：BGP路由
-STATIC：静态
-默认为 BGP 路由
+                     * 获取路由类型，枚举：BGP、STATIC；默认为BGP 。（BGP ：BGP路由；STATIC：静态）。
+                     * @return RouteType 路由类型，枚举：BGP、STATIC；默认为BGP 。（BGP ：BGP路由；STATIC：静态）。
                      * 
                      */
                     std::string GetRouteType() const;
 
                     /**
-                     * 设置BGP ：BGP路由
-STATIC：静态
-默认为 BGP 路由
-                     * @param _routeType BGP ：BGP路由
-STATIC：静态
-默认为 BGP 路由
+                     * 设置路由类型，枚举：BGP、STATIC；默认为BGP 。（BGP ：BGP路由；STATIC：静态）。
+                     * @param _routeType 路由类型，枚举：BGP、STATIC；默认为BGP 。（BGP ：BGP路由；STATIC：静态）。
                      * 
                      */
                     void SetRouteType(const std::string& _routeType);
@@ -264,15 +240,15 @@ STATIC：静态
                     bool RouteTypeHasBeenSet() const;
 
                     /**
-                     * 获取BgpPeer，用户侧bgp信息，包括Asn和AuthKey
-                     * @return BgpPeer BgpPeer，用户侧bgp信息，包括Asn和AuthKey
+                     * 获取BgpPeer，用户侧bgp信息，包括Asn和AuthKey。
+                     * @return BgpPeer BgpPeer，用户侧bgp信息，包括Asn和AuthKey。
                      * 
                      */
                     BgpPeer GetBgpPeer() const;
 
                     /**
-                     * 设置BgpPeer，用户侧bgp信息，包括Asn和AuthKey
-                     * @param _bgpPeer BgpPeer，用户侧bgp信息，包括Asn和AuthKey
+                     * 设置BgpPeer，用户侧bgp信息，包括Asn和AuthKey。
+                     * @param _bgpPeer BgpPeer，用户侧bgp信息，包括Asn和AuthKey。
                      * 
                      */
                     void SetBgpPeer(const BgpPeer& _bgpPeer);
@@ -285,15 +261,15 @@ STATIC：静态
                     bool BgpPeerHasBeenSet() const;
 
                     /**
-                     * 获取静态路由，用户IDC的网段地址
-                     * @return RouteFilterPrefixes 静态路由，用户IDC的网段地址
+                     * 获取静态路由，用户IDC的网段地址。
+                     * @return RouteFilterPrefixes 静态路由，用户IDC的网段地址。
                      * 
                      */
                     std::vector<RouteFilterPrefix> GetRouteFilterPrefixes() const;
 
                     /**
-                     * 设置静态路由，用户IDC的网段地址
-                     * @param _routeFilterPrefixes 静态路由，用户IDC的网段地址
+                     * 设置静态路由，用户IDC的网段地址。
+                     * @param _routeFilterPrefixes 静态路由，用户IDC的网段地址。
                      * 
                      */
                     void SetRouteFilterPrefixes(const std::vector<RouteFilterPrefix>& _routeFilterPrefixes);
@@ -306,23 +282,19 @@ STATIC：静态
                     bool RouteFilterPrefixesHasBeenSet() const;
 
                     /**
-                     * 获取vlan，范围：0 ~ 3000
-0：不开启子接口
-默认值是非0
-                     * @return Vlan vlan，范围：0 ~ 3000
-0：不开启子接口
-默认值是非0
+                     * 获取vlan，范围：0 ~ 3000。
+0：不开启子接口，默认值是非0。
+                     * @return Vlan vlan，范围：0 ~ 3000。
+0：不开启子接口，默认值是非0。
                      * 
                      */
                     int64_t GetVlan() const;
 
                     /**
-                     * 设置vlan，范围：0 ~ 3000
-0：不开启子接口
-默认值是非0
-                     * @param _vlan vlan，范围：0 ~ 3000
-0：不开启子接口
-默认值是非0
+                     * 设置vlan，范围：0 ~ 3000。
+0：不开启子接口，默认值是非0。
+                     * @param _vlan vlan，范围：0 ~ 3000。
+0：不开启子接口，默认值是非0。
                      * 
                      */
                     void SetVlan(const int64_t& _vlan);
@@ -335,15 +307,15 @@ STATIC：静态
                     bool VlanHasBeenSet() const;
 
                     /**
-                     * 获取TencentAddress，腾讯侧互联 IP
-                     * @return TencentAddress TencentAddress，腾讯侧互联 IP
+                     * 获取TencentAddress，腾讯侧互联 IP。
+                     * @return TencentAddress TencentAddress，腾讯侧互联 IP。
                      * 
                      */
                     std::string GetTencentAddress() const;
 
                     /**
-                     * 设置TencentAddress，腾讯侧互联 IP
-                     * @param _tencentAddress TencentAddress，腾讯侧互联 IP
+                     * 设置TencentAddress，腾讯侧互联 IP。
+                     * @param _tencentAddress TencentAddress，腾讯侧互联 IP。
                      * 
                      */
                     void SetTencentAddress(const std::string& _tencentAddress);
@@ -356,15 +328,15 @@ STATIC：静态
                     bool TencentAddressHasBeenSet() const;
 
                     /**
-                     * 获取CustomerAddress，用户侧互联 IP
-                     * @return CustomerAddress CustomerAddress，用户侧互联 IP
+                     * 获取CustomerAddress，用户侧互联 IP。
+                     * @return CustomerAddress CustomerAddress，用户侧互联 IP。
                      * 
                      */
                     std::string GetCustomerAddress() const;
 
                     /**
-                     * 设置CustomerAddress，用户侧互联 IP
-                     * @param _customerAddress CustomerAddress，用户侧互联 IP
+                     * 设置CustomerAddress，用户侧互联 IP。
+                     * @param _customerAddress CustomerAddress，用户侧互联 IP。
                      * 
                      */
                     void SetCustomerAddress(const std::string& _customerAddress);
@@ -377,15 +349,15 @@ STATIC：静态
                     bool CustomerAddressHasBeenSet() const;
 
                     /**
-                     * 获取TencentBackupAddress，腾讯侧备用互联 IP
-                     * @return TencentBackupAddress TencentBackupAddress，腾讯侧备用互联 IP
+                     * 获取TencentBackupAddress，腾讯侧备用互联 IP。
+                     * @return TencentBackupAddress TencentBackupAddress，腾讯侧备用互联 IP。
                      * 
                      */
                     std::string GetTencentBackupAddress() const;
 
                     /**
-                     * 设置TencentBackupAddress，腾讯侧备用互联 IP
-                     * @param _tencentBackupAddress TencentBackupAddress，腾讯侧备用互联 IP
+                     * 设置TencentBackupAddress，腾讯侧备用互联 IP。
+                     * @param _tencentBackupAddress TencentBackupAddress，腾讯侧备用互联 IP。
                      * 
                      */
                     void SetTencentBackupAddress(const std::string& _tencentBackupAddress);
@@ -398,15 +370,15 @@ STATIC：静态
                     bool TencentBackupAddressHasBeenSet() const;
 
                     /**
-                     * 获取高速上云服务ID
-                     * @return CloudAttachId 高速上云服务ID
+                     * 获取高速上云服务ID。
+                     * @return CloudAttachId 高速上云服务ID。
                      * 
                      */
                     std::string GetCloudAttachId() const;
 
                     /**
-                     * 设置高速上云服务ID
-                     * @param _cloudAttachId 高速上云服务ID
+                     * 设置高速上云服务ID。
+                     * @param _cloudAttachId 高速上云服务ID。
                      * 
                      */
                     void SetCloudAttachId(const std::string& _cloudAttachId);
@@ -419,15 +391,15 @@ STATIC：静态
                     bool CloudAttachIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启BFD
-                     * @return BfdEnable 是否开启BFD
+                     * 获取是否开启BFD。
+                     * @return BfdEnable 是否开启BFD。
                      * 
                      */
                     int64_t GetBfdEnable() const;
 
                     /**
-                     * 设置是否开启BFD
-                     * @param _bfdEnable 是否开启BFD
+                     * 设置是否开启BFD。
+                     * @param _bfdEnable 是否开启BFD。
                      * 
                      */
                     void SetBfdEnable(const int64_t& _bfdEnable);
@@ -440,15 +412,15 @@ STATIC：静态
                     bool BfdEnableHasBeenSet() const;
 
                     /**
-                     * 获取是否开启NQA
-                     * @return NqaEnable 是否开启NQA
+                     * 获取是否开启NQA。
+                     * @return NqaEnable 是否开启NQA。
                      * 
                      */
                     int64_t GetNqaEnable() const;
 
                     /**
-                     * 设置是否开启NQA
-                     * @param _nqaEnable 是否开启NQA
+                     * 设置是否开启NQA。
+                     * @param _nqaEnable 是否开启NQA。
                      * 
                      */
                     void SetNqaEnable(const int64_t& _nqaEnable);
@@ -461,15 +433,15 @@ STATIC：静态
                     bool NqaEnableHasBeenSet() const;
 
                     /**
-                     * 获取BFD配置信息
-                     * @return BfdInfo BFD配置信息
+                     * 获取BFD配置信息。
+                     * @return BfdInfo BFD配置信息。
                      * 
                      */
                     BFDInfo GetBfdInfo() const;
 
                     /**
-                     * 设置BFD配置信息
-                     * @param _bfdInfo BFD配置信息
+                     * 设置BFD配置信息。
+                     * @param _bfdInfo BFD配置信息。
                      * 
                      */
                     void SetBfdInfo(const BFDInfo& _bfdInfo);
@@ -482,15 +454,15 @@ STATIC：静态
                     bool BfdInfoHasBeenSet() const;
 
                     /**
-                     * 获取NQA配置信息
-                     * @return NqaInfo NQA配置信息
+                     * 获取NQA配置信息。
+                     * @return NqaInfo NQA配置信息。
                      * 
                      */
                     NQAInfo GetNqaInfo() const;
 
                     /**
-                     * 设置NQA配置信息
-                     * @param _nqaInfo NQA配置信息
+                     * 设置NQA配置信息。
+                     * @param _nqaInfo NQA配置信息。
                      * 
                      */
                     void SetNqaInfo(const NQAInfo& _nqaInfo);
@@ -505,130 +477,123 @@ STATIC：静态
                 private:
 
                     /**
-                     * 专线 ID，例如：dc-kd7d06of
+                     * 物理专线ID，例如：dc-kd7d06of。
                      */
                     std::string m_directConnectId;
                     bool m_directConnectIdHasBeenSet;
 
                     /**
-                     * 专用通道名称
+                     * 专用通道名称。
                      */
                     std::string m_directConnectTunnelName;
                     bool m_directConnectTunnelNameHasBeenSet;
 
                     /**
-                     * 物理专线 owner，缺省为当前客户（物理专线 owner）
-共享专线时这里需要填写共享专线的开发商账号 ID
+                     * 物理专线owner，缺省为当前客户（物理专线 owner）
+共享专线时这里需要填写共享专线的开发商账号 ID。
                      */
                     std::string m_directConnectOwnerAccount;
                     bool m_directConnectOwnerAccountHasBeenSet;
 
                     /**
-                     * 网络类型，分别为VPC、BMVPC，CCN，默认是VPC
-VPC：私有网络
-BMVPC：黑石网络
-CCN：云联网
+                     * 网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 网络地域
+                     * 网络地域。
                      */
                     std::string m_networkRegion;
                     bool m_networkRegionHasBeenSet;
 
                     /**
-                     * 私有网络统一 ID 或者黑石网络统一 ID
+                     * 私有网络统一ID或黑石网络统一ID。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 专线网关 ID，例如 dcg-d545ddf
+                     * 专线网关ID，例如 dcg-d545ddf。
                      */
                     std::string m_directConnectGatewayId;
                     bool m_directConnectGatewayIdHasBeenSet;
 
                     /**
-                     * 专线带宽，单位：Mbps
-默认是物理专线带宽值
+                     * 专线带宽，单位：Mbps；默认是物理专线带宽值。
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * BGP ：BGP路由
-STATIC：静态
-默认为 BGP 路由
+                     * 路由类型，枚举：BGP、STATIC；默认为BGP 。（BGP ：BGP路由；STATIC：静态）。
                      */
                     std::string m_routeType;
                     bool m_routeTypeHasBeenSet;
 
                     /**
-                     * BgpPeer，用户侧bgp信息，包括Asn和AuthKey
+                     * BgpPeer，用户侧bgp信息，包括Asn和AuthKey。
                      */
                     BgpPeer m_bgpPeer;
                     bool m_bgpPeerHasBeenSet;
 
                     /**
-                     * 静态路由，用户IDC的网段地址
+                     * 静态路由，用户IDC的网段地址。
                      */
                     std::vector<RouteFilterPrefix> m_routeFilterPrefixes;
                     bool m_routeFilterPrefixesHasBeenSet;
 
                     /**
-                     * vlan，范围：0 ~ 3000
-0：不开启子接口
-默认值是非0
+                     * vlan，范围：0 ~ 3000。
+0：不开启子接口，默认值是非0。
                      */
                     int64_t m_vlan;
                     bool m_vlanHasBeenSet;
 
                     /**
-                     * TencentAddress，腾讯侧互联 IP
+                     * TencentAddress，腾讯侧互联 IP。
                      */
                     std::string m_tencentAddress;
                     bool m_tencentAddressHasBeenSet;
 
                     /**
-                     * CustomerAddress，用户侧互联 IP
+                     * CustomerAddress，用户侧互联 IP。
                      */
                     std::string m_customerAddress;
                     bool m_customerAddressHasBeenSet;
 
                     /**
-                     * TencentBackupAddress，腾讯侧备用互联 IP
+                     * TencentBackupAddress，腾讯侧备用互联 IP。
                      */
                     std::string m_tencentBackupAddress;
                     bool m_tencentBackupAddressHasBeenSet;
 
                     /**
-                     * 高速上云服务ID
+                     * 高速上云服务ID。
                      */
                     std::string m_cloudAttachId;
                     bool m_cloudAttachIdHasBeenSet;
 
                     /**
-                     * 是否开启BFD
+                     * 是否开启BFD。
                      */
                     int64_t m_bfdEnable;
                     bool m_bfdEnableHasBeenSet;
 
                     /**
-                     * 是否开启NQA
+                     * 是否开启NQA。
                      */
                     int64_t m_nqaEnable;
                     bool m_nqaEnableHasBeenSet;
 
                     /**
-                     * BFD配置信息
+                     * BFD配置信息。
                      */
                     BFDInfo m_bfdInfo;
                     bool m_bfdInfoHasBeenSet;
 
                     /**
-                     * NQA配置信息
+                     * NQA配置信息。
                      */
                     NQAInfo m_nqaInfo;
                     bool m_nqaInfoHasBeenSet;

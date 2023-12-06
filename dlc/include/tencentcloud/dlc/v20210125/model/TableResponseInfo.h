@@ -321,6 +321,31 @@ namespace TencentCloud
                      */
                     bool MapMaterializedViewNameHasBeenSet() const;
 
+                    /**
+                     * 获取访问热点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HeatValue 访问热点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetHeatValue() const;
+
+                    /**
+                     * 设置访问热点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _heatValue 访问热点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHeatValue(const int64_t& _heatValue);
+
+                    /**
+                     * 判断参数 HeatValue 是否已赋值
+                     * @return HeatValue 是否已赋值
+                     * 
+                     */
+                    bool HeatValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +423,13 @@ namespace TencentCloud
                      */
                     std::string m_mapMaterializedViewName;
                     bool m_mapMaterializedViewNameHasBeenSet;
+
+                    /**
+                     * 访问热点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_heatValue;
+                    bool m_heatValueHasBeenSet;
 
                 };
             }

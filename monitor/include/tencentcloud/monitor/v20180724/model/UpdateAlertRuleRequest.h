@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Prometheus 报警规则 ID
-                     * @return RuleId Prometheus 报警规则 ID
+                     * 获取Prometheus 高警规则 ID
+                     * @return RuleId Prometheus 高警规则 ID
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置Prometheus 报警规则 ID
-                     * @param _ruleId Prometheus 报警规则 ID
+                     * 设置Prometheus 高警规则 ID
+                     * @param _ruleId Prometheus 高警规则 ID
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -123,15 +123,15 @@ namespace TencentCloud
                     bool RuleStateHasBeenSet() const;
 
                     /**
-                     * 获取报警规则名称
-                     * @return RuleName 报警规则名称
+                     * 获取告警规则名称
+                     * @return RuleName 告警规则名称
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置报警规则名称
-                     * @param _ruleName 报警规则名称
+                     * 设置告警规则名称
+                     * @param _ruleName 告警规则名称
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -144,15 +144,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取报警规则表达式
-                     * @return Expr 报警规则表达式
+                     * 获取告警规则表达式
+                     * @return Expr 告警规则表达式
                      * 
                      */
                     std::string GetExpr() const;
 
                     /**
-                     * 设置报警规则表达式
-                     * @param _expr 报警规则表达式
+                     * 设置告警规则表达式
+                     * @param _expr 告警规则表达式
                      * 
                      */
                     void SetExpr(const std::string& _expr);
@@ -165,15 +165,15 @@ namespace TencentCloud
                     bool ExprHasBeenSet() const;
 
                     /**
-                     * 获取报警规则持续时间
-                     * @return Duration 报警规则持续时间
+                     * 获取告警规则持续时间
+                     * @return Duration 告警规则持续时间
                      * 
                      */
                     std::string GetDuration() const;
 
                     /**
-                     * 设置报警规则持续时间
-                     * @param _duration 报警规则持续时间
+                     * 设置告警规则持续时间
+                     * @param _duration 告警规则持续时间
                      * 
                      */
                     void SetDuration(const std::string& _duration);
@@ -186,15 +186,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取报警规则接收组列表
-                     * @return Receivers 报警规则接收组列表
+                     * 获取告警规则接收组列表(当前规则绑定的接收组列表可通过 DescribeAlertRules 接口获取；用户已有的接收组列表可通过 DescribeAlarmNotices 接口获取)
+                     * @return Receivers 告警规则接收组列表(当前规则绑定的接收组列表可通过 DescribeAlertRules 接口获取；用户已有的接收组列表可通过 DescribeAlarmNotices 接口获取)
                      * 
                      */
                     std::vector<std::string> GetReceivers() const;
 
                     /**
-                     * 设置报警规则接收组列表
-                     * @param _receivers 报警规则接收组列表
+                     * 设置告警规则接收组列表(当前规则绑定的接收组列表可通过 DescribeAlertRules 接口获取；用户已有的接收组列表可通过 DescribeAlarmNotices 接口获取)
+                     * @param _receivers 告警规则接收组列表(当前规则绑定的接收组列表可通过 DescribeAlertRules 接口获取；用户已有的接收组列表可通过 DescribeAlarmNotices 接口获取)
                      * 
                      */
                     void SetReceivers(const std::vector<std::string>& _receivers);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool AnnotationsHasBeenSet() const;
 
                     /**
-                     * 获取报警策略模板分类
-                     * @return Type 报警策略模板分类
+                     * 获取报警策略模板分类(自定义，可不填)
+                     * @return Type 报警策略模板分类(自定义，可不填)
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置报警策略模板分类
-                     * @param _type 报警策略模板分类
+                     * 设置报警策略模板分类(自定义，可不填)
+                     * @param _type 报警策略模板分类(自定义，可不填)
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -280,7 +280,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Prometheus 报警规则 ID
+                     * Prometheus 高警规则 ID
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
@@ -302,25 +302,25 @@ namespace TencentCloud
                     bool m_ruleStateHasBeenSet;
 
                     /**
-                     * 报警规则名称
+                     * 告警规则名称
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 报警规则表达式
+                     * 告警规则表达式
                      */
                     std::string m_expr;
                     bool m_exprHasBeenSet;
 
                     /**
-                     * 报警规则持续时间
+                     * 告警规则持续时间
                      */
                     std::string m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 报警规则接收组列表
+                     * 告警规则接收组列表(当前规则绑定的接收组列表可通过 DescribeAlertRules 接口获取；用户已有的接收组列表可通过 DescribeAlarmNotices 接口获取)
                      */
                     std::vector<std::string> m_receivers;
                     bool m_receiversHasBeenSet;
@@ -340,7 +340,7 @@ namespace TencentCloud
                     bool m_annotationsHasBeenSet;
 
                     /**
-                     * 报警策略模板分类
+                     * 报警策略模板分类(自定义，可不填)
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户侧，BGP Asn
-                     * @return Asn 用户侧，BGP Asn
+                     * 获取用户侧BGP ASN
+                     * @return Asn 用户侧BGP ASN
                      * 
                      */
                     int64_t GetAsn() const;
 
                     /**
-                     * 设置用户侧，BGP Asn
-                     * @param _asn 用户侧，BGP Asn
+                     * 设置用户侧BGP ASN
+                     * @param _asn 用户侧BGP ASN
                      * 
                      */
                     void SetAsn(const int64_t& _asn);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户侧，BGP Asn
+                     * 用户侧BGP ASN
                      */
                     int64_t m_asn;
                     bool m_asnHasBeenSet;

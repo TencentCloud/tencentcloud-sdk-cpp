@@ -989,6 +989,31 @@ namespace TencentCloud
                      */
                     bool PrestoMonitorMetricsHasBeenSet() const;
 
+                    /**
+                     * 获取结果文件格式：默认为csv
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResultFormat 结果文件格式：默认为csv
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResultFormat() const;
+
+                    /**
+                     * 设置结果文件格式：默认为csv
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resultFormat 结果文件格式：默认为csv
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResultFormat(const std::string& _resultFormat);
+
+                    /**
+                     * 判断参数 ResultFormat 是否已赋值
+                     * @return ResultFormat 是否已赋值
+                     * 
+                     */
+                    bool ResultFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1255,6 +1280,13 @@ namespace TencentCloud
                      */
                     PrestoMonitorMetrics m_prestoMonitorMetrics;
                     bool m_prestoMonitorMetricsHasBeenSet;
+
+                    /**
+                     * 结果文件格式：默认为csv
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resultFormat;
+                    bool m_resultFormatHasBeenSet;
 
                 };
             }

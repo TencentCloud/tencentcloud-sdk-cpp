@@ -25,7 +25,8 @@ using namespace std;
 AddSpecifyPrivateZoneVpcRequest::AddSpecifyPrivateZoneVpcRequest() :
     m_zoneIdHasBeenSet(false),
     m_vpcSetHasBeenSet(false),
-    m_accountVpcSetHasBeenSet(false)
+    m_accountVpcSetHasBeenSet(false),
+    m_syncHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string AddSpecifyPrivateZoneVpcRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_syncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sync";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sync, allocator);
     }
 
 
@@ -128,6 +137,22 @@ void AddSpecifyPrivateZoneVpcRequest::SetAccountVpcSet(const vector<AccountVpcIn
 bool AddSpecifyPrivateZoneVpcRequest::AccountVpcSetHasBeenSet() const
 {
     return m_accountVpcSetHasBeenSet;
+}
+
+bool AddSpecifyPrivateZoneVpcRequest::GetSync() const
+{
+    return m_sync;
+}
+
+void AddSpecifyPrivateZoneVpcRequest::SetSync(const bool& _sync)
+{
+    m_sync = _sync;
+    m_syncHasBeenSet = true;
+}
+
+bool AddSpecifyPrivateZoneVpcRequest::SyncHasBeenSet() const
+{
+    return m_syncHasBeenSet;
 }
 
 

@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool ProcessPeriodHasBeenSet() const;
 
                     /**
-                     * 获取单次查询的时间窗口
-                     * @return ProcessTimeWindow 单次查询的时间窗口
+                     * 获取单次查询的时间窗口,如果您的目标主题为指标主题，建议该参数的大小不超过30分钟，否则可能转指标失败。 
+                     * @return ProcessTimeWindow 单次查询的时间窗口,如果您的目标主题为指标主题，建议该参数的大小不超过30分钟，否则可能转指标失败。 
                      * 
                      */
                     std::string GetProcessTimeWindow() const;
 
                     /**
-                     * 设置单次查询的时间窗口
-                     * @param _processTimeWindow 单次查询的时间窗口
+                     * 设置单次查询的时间窗口,如果您的目标主题为指标主题，建议该参数的大小不超过30分钟，否则可能转指标失败。 
+                     * @param _processTimeWindow 单次查询的时间窗口,如果您的目标主题为指标主题，建议该参数的大小不超过30分钟，否则可能转指标失败。 
                      * 
                      */
                     void SetProcessTimeWindow(const std::string& _processTimeWindow);
@@ -367,7 +367,7 @@ namespace TencentCloud
                     bool m_processPeriodHasBeenSet;
 
                     /**
-                     * 单次查询的时间窗口
+                     * 单次查询的时间窗口,如果您的目标主题为指标主题，建议该参数的大小不超过30分钟，否则可能转指标失败。 
                      */
                     std::string m_processTimeWindow;
                     bool m_processTimeWindowHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Token使用的临时秘钥的ID
-                     * @return SecretId Token使用的临时秘钥的ID
+                     * 获取Token使用的临时密钥的ID
+                     * @return SecretId Token使用的临时密钥的ID
                      * 
                      */
                     std::string GetSecretId() const;
 
                     /**
-                     * 设置Token使用的临时秘钥的ID
-                     * @param _secretId Token使用的临时秘钥的ID
+                     * 设置Token使用的临时密钥的ID
+                     * @param _secretId Token使用的临时密钥的ID
                      * 
                      */
                     void SetSecretId(const std::string& _secretId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SecretIdHasBeenSet() const;
 
                     /**
-                     * 获取Token使用的临时秘钥
-                     * @return SecretKey Token使用的临时秘钥
+                     * 获取Token使用的临时密钥
+                     * @return SecretKey Token使用的临时密钥
                      * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
-                     * 设置Token使用的临时秘钥
-                     * @param _secretKey Token使用的临时秘钥
+                     * 设置Token使用的临时密钥
+                     * @param _secretKey Token使用的临时密钥
                      * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
@@ -154,13 +154,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Token使用的临时秘钥的ID
+                     * Token使用的临时密钥的ID
                      */
                     std::string m_secretId;
                     bool m_secretIdHasBeenSet;
 
                     /**
-                     * Token使用的临时秘钥
+                     * Token使用的临时密钥
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;

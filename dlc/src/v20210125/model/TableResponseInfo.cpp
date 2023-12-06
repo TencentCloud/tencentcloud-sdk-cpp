@@ -31,7 +31,8 @@ TableResponseInfo::TableResponseInfo() :
     m_inputFormatHasBeenSet(false),
     m_storageSizeHasBeenSet(false),
     m_recordCountHasBeenSet(false),
-    m_mapMaterializedViewNameHasBeenSet(false)
+    m_mapMaterializedViewNameHasBeenSet(false),
+    m_heatValueHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,16 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
         m_mapMaterializedViewNameHasBeenSet = true;
     }
 
+    if (value.HasMember("HeatValue") && !value["HeatValue"].IsNull())
+    {
+        if (!value["HeatValue"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.HeatValue` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_heatValue = value["HeatValue"].GetInt64();
+        m_heatValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -302,6 +313,14 @@ void TableResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "MapMaterializedViewName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mapMaterializedViewName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_heatValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeatValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_heatValue, allocator);
     }
 
 }
@@ -481,5 +500,21 @@ void TableResponseInfo::SetMapMaterializedViewName(const string& _mapMaterialize
 bool TableResponseInfo::MapMaterializedViewNameHasBeenSet() const
 {
     return m_mapMaterializedViewNameHasBeenSet;
+}
+
+int64_t TableResponseInfo::GetHeatValue() const
+{
+    return m_heatValue;
+}
+
+void TableResponseInfo::SetHeatValue(const int64_t& _heatValue)
+{
+    m_heatValue = _heatValue;
+    m_heatValueHasBeenSet = true;
+}
+
+bool TableResponseInfo::HeatValueHasBeenSet() const
+{
+    return m_heatValueHasBeenSet;
 }
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取Prometheus 实例 ID
+                     * @return InstanceId Prometheus 实例 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _instanceId 实例 ID
+                     * 设置Prometheus 实例 ID
+                     * @param _instanceId Prometheus 实例 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Kind 类型
+                     * 获取类型(可通过 DescribeExporterIntegrations 获取对应集成的 Kind)
+                     * @return Kind 类型(可通过 DescribeExporterIntegrations 获取对应集成的 Kind)
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置类型
-                     * @param _kind 类型
+                     * 设置类型(可通过 DescribeExporterIntegrations 获取对应集成的 Kind)
+                     * @param _kind 类型(可通过 DescribeExporterIntegrations 获取对应集成的 Kind)
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取配置内容
-                     * @return Content 配置内容
+                     * 获取配置内容(可通过 DescribeExporterIntegrations 接口获取对应集成的 Content，并在此基础上做修改)
+                     * @return Content 配置内容(可通过 DescribeExporterIntegrations 接口获取对应集成的 Content，并在此基础上做修改)
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置配置内容
-                     * @param _content 配置内容
+                     * 设置配置内容(可通过 DescribeExporterIntegrations 接口获取对应集成的 Content，并在此基础上做修改)
+                     * @param _content 配置内容(可通过 DescribeExporterIntegrations 接口获取对应集成的 Content，并在此基础上做修改)
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -106,27 +106,27 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取Kubernetes 集群类型，取值如下：
+                     * 获取Kubernetes 集群类型，可不填。取值如下：
 <li> 1= 容器集群(TKE) </li>
-<li> 2=弹性集群<EKS> </li>
-<li> 3= Prometheus管理的弹性集群<MEKS> </li>
-                     * @return KubeType Kubernetes 集群类型，取值如下：
+<li> 2=弹性集群(EKS) </li>
+<li> 3= Prometheus管理的弹性集群(MEKS) </li>
+                     * @return KubeType Kubernetes 集群类型，可不填。取值如下：
 <li> 1= 容器集群(TKE) </li>
-<li> 2=弹性集群<EKS> </li>
-<li> 3= Prometheus管理的弹性集群<MEKS> </li>
+<li> 2=弹性集群(EKS) </li>
+<li> 3= Prometheus管理的弹性集群(MEKS) </li>
                      * 
                      */
                     int64_t GetKubeType() const;
 
                     /**
-                     * 设置Kubernetes 集群类型，取值如下：
+                     * 设置Kubernetes 集群类型，可不填。取值如下：
 <li> 1= 容器集群(TKE) </li>
-<li> 2=弹性集群<EKS> </li>
-<li> 3= Prometheus管理的弹性集群<MEKS> </li>
-                     * @param _kubeType Kubernetes 集群类型，取值如下：
+<li> 2=弹性集群(EKS) </li>
+<li> 3= Prometheus管理的弹性集群(MEKS) </li>
+                     * @param _kubeType Kubernetes 集群类型，可不填。取值如下：
 <li> 1= 容器集群(TKE) </li>
-<li> 2=弹性集群<EKS> </li>
-<li> 3= Prometheus管理的弹性集群<MEKS> </li>
+<li> 2=弹性集群(EKS) </li>
+<li> 3= Prometheus管理的弹性集群(MEKS) </li>
                      * 
                      */
                     void SetKubeType(const int64_t& _kubeType);
@@ -139,15 +139,15 @@ namespace TencentCloud
                     bool KubeTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群 ID
-                     * @return ClusterId 集群 ID
+                     * 获取集群 ID，可不填
+                     * @return ClusterId 集群 ID，可不填
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群 ID
-                     * @param _clusterId 集群 ID
+                     * 设置集群 ID，可不填
+                     * @param _clusterId 集群 ID，可不填
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -162,34 +162,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * Prometheus 实例 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 类型
+                     * 类型(可通过 DescribeExporterIntegrations 获取对应集成的 Kind)
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
-                     * 配置内容
+                     * 配置内容(可通过 DescribeExporterIntegrations 接口获取对应集成的 Content，并在此基础上做修改)
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * Kubernetes 集群类型，取值如下：
+                     * Kubernetes 集群类型，可不填。取值如下：
 <li> 1= 容器集群(TKE) </li>
-<li> 2=弹性集群<EKS> </li>
-<li> 3= Prometheus管理的弹性集群<MEKS> </li>
+<li> 2=弹性集群(EKS) </li>
+<li> 3= Prometheus管理的弹性集群(MEKS) </li>
                      */
                     int64_t m_kubeType;
                     bool m_kubeTypeHasBeenSet;
 
                     /**
-                     * 集群 ID
+                     * 集群 ID，可不填
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

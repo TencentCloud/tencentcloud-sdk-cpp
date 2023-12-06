@@ -107,6 +107,27 @@ namespace TencentCloud
                      */
                     bool AccountVpcSetHasBeenSet() const;
 
+                    /**
+                     * 获取是否为同步操作
+                     * @return Sync 是否为同步操作
+                     * 
+                     */
+                    bool GetSync() const;
+
+                    /**
+                     * 设置是否为同步操作
+                     * @param _sync 是否为同步操作
+                     * 
+                     */
+                    void SetSync(const bool& _sync);
+
+                    /**
+                     * 判断参数 Sync 是否已赋值
+                     * @return Sync 是否已赋值
+                     * 
+                     */
+                    bool SyncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +147,12 @@ namespace TencentCloud
                      */
                     std::vector<AccountVpcInfo> m_accountVpcSet;
                     bool m_accountVpcSetHasBeenSet;
+
+                    /**
+                     * 是否为同步操作
+                     */
+                    bool m_sync;
+                    bool m_syncHasBeenSet;
 
                 };
             }

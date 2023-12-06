@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskFrameTagResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHighlightResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDelLogoResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDescriptionResult.h>
 
 
 namespace TencentCloud
@@ -59,12 +60,16 @@ namespace TencentCloud
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
+<li>DeLogo：智能去水印</li>
+<li>Description：大模型摘要</li>
                      * @return Type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
+<li>DeLogo：智能去水印</li>
+<li>Description：大模型摘要</li>
                      * 
                      */
                     std::string GetType() const;
@@ -76,12 +81,16 @@ namespace TencentCloud
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
+<li>DeLogo：智能去水印</li>
+<li>Description：大模型摘要</li>
                      * @param _type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
+<li>DeLogo：智能去水印</li>
+<li>Description：大模型摘要</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -243,6 +252,31 @@ namespace TencentCloud
                      */
                     bool DeLogoTaskHasBeenSet() const;
 
+                    /**
+                     * 获取视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DescriptionTask 视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskDescriptionResult GetDescriptionTask() const;
+
+                    /**
+                     * 设置视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _descriptionTask 视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescriptionTask(const AiAnalysisTaskDescriptionResult& _descriptionTask);
+
+                    /**
+                     * 判断参数 DescriptionTask 是否已赋值
+                     * @return DescriptionTask 是否已赋值
+                     * 
+                     */
+                    bool DescriptionTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -252,6 +286,8 @@ namespace TencentCloud
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
+<li>DeLogo：智能去水印</li>
+<li>Description：大模型摘要</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -297,6 +333,13 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskDelLogoResult m_deLogoTask;
                     bool m_deLogoTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskDescriptionResult m_descriptionTask;
+                    bool m_descriptionTaskHasBeenSet;
 
                 };
             }

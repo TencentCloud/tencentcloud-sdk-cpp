@@ -194,6 +194,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeFlowTrendRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusRequest.h
+  include/tencentcloud/waf/v20180125/model/MiniPkg.h
   include/tencentcloud/waf/v20180125/model/AddDomainWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeIpAccessControlResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyProtectionStatusRequest.h
@@ -554,6 +555,7 @@ set(waf_src
   src/v20180125/model/DeleteAttackDownloadRecordResponse.cpp
   src/v20180125/model/DescribeFlowTrendRequest.cpp
   src/v20180125/model/DescribeWafAutoDenyStatusRequest.cpp
+  src/v20180125/model/MiniPkg.cpp
   src/v20180125/model/AddDomainWhiteRuleResponse.cpp
   src/v20180125/model/DescribeIpAccessControlResponse.cpp
   src/v20180125/model/ModifyProtectionStatusRequest.cpp

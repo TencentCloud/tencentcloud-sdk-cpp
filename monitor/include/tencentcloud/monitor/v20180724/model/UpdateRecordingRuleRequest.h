@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取Prometheus 实例 ID
-                     * @return InstanceId Prometheus 实例 ID
+                     * 获取Prometheus 实例 ID(可通过 DescribePrometheusInstances 接口获取)
+                     * @return InstanceId Prometheus 实例 ID(可通过 DescribePrometheusInstances 接口获取)
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Prometheus 实例 ID
-                     * @param _instanceId Prometheus 实例 ID
+                     * 设置Prometheus 实例 ID(可通过 DescribePrometheusInstances 接口获取)
+                     * @param _instanceId Prometheus 实例 ID(可通过 DescribePrometheusInstances 接口获取)
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Prometheus 聚合规则 ID
-                     * @return RuleId Prometheus 聚合规则 ID
+                     * 获取Prometheus 聚合规则 ID(可通过 DescribeRecordingRules 接口获取)
+                     * @return RuleId Prometheus 聚合规则 ID(可通过 DescribeRecordingRules 接口获取)
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置Prometheus 聚合规则 ID
-                     * @param _ruleId Prometheus 聚合规则 ID
+                     * 设置Prometheus 聚合规则 ID(可通过 DescribeRecordingRules 接口获取)
+                     * @param _ruleId Prometheus 聚合规则 ID(可通过 DescribeRecordingRules 接口获取)
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -178,13 +178,13 @@ namespace TencentCloud
                     bool m_groupHasBeenSet;
 
                     /**
-                     * Prometheus 实例 ID
+                     * Prometheus 实例 ID(可通过 DescribePrometheusInstances 接口获取)
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Prometheus 聚合规则 ID
+                     * Prometheus 聚合规则 ID(可通过 DescribeRecordingRules 接口获取)
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

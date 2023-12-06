@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取 classification:分类展示  catalog:目录展示
+                     * @return DisplayType  classification:分类展示  catalog:目录展示
+                     * 
+                     */
+                    std::string GetDisplayType() const;
+
+                    /**
+                     * 设置 classification:分类展示  catalog:目录展示
+                     * @param _displayType  classification:分类展示  catalog:目录展示
+                     * 
+                     */
+                    void SetDisplayType(const std::string& _displayType);
+
+                    /**
+                     * 判断参数 DisplayType 是否已赋值
+                     * @return DisplayType 是否已赋值
+                     * 
+                     */
+                    bool DisplayTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     *  classification:分类展示  catalog:目录展示
+                     */
+                    std::string m_displayType;
+                    bool m_displayTypeHasBeenSet;
 
                 };
             }

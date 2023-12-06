@@ -69,7 +69,6 @@ namespace TencentCloud
 
                     /**
                      * 获取性能容量型规格，取值范围：
-<li> SLA：超强型4规格 </li>
 <li> clb.c2.medium：标准型规格 </li>
 <li> clb.c3.small：高阶型1规格 </li>
 <li> clb.c3.medium：高阶型2规格 </li>
@@ -78,7 +77,6 @@ namespace TencentCloud
 <li> clb.c4.large：超强型3规格 </li>
 <li> clb.c4.xlarge：超强型4规格 </li>如需了解规格详情，请参见[实例规格对比](https://cloud.tencent.com/document/product/214/84689)
                      * @return SlaType 性能容量型规格，取值范围：
-<li> SLA：超强型4规格 </li>
 <li> clb.c2.medium：标准型规格 </li>
 <li> clb.c3.small：高阶型1规格 </li>
 <li> clb.c3.medium：高阶型2规格 </li>
@@ -92,7 +90,6 @@ namespace TencentCloud
 
                     /**
                      * 设置性能容量型规格，取值范围：
-<li> SLA：超强型4规格 </li>
 <li> clb.c2.medium：标准型规格 </li>
 <li> clb.c3.small：高阶型1规格 </li>
 <li> clb.c3.medium：高阶型2规格 </li>
@@ -101,7 +98,6 @@ namespace TencentCloud
 <li> clb.c4.large：超强型3规格 </li>
 <li> clb.c4.xlarge：超强型4规格 </li>如需了解规格详情，请参见[实例规格对比](https://cloud.tencent.com/document/product/214/84689)
                      * @param _slaType 性能容量型规格，取值范围：
-<li> SLA：超强型4规格 </li>
 <li> clb.c2.medium：标准型规格 </li>
 <li> clb.c3.small：高阶型1规格 </li>
 <li> clb.c3.medium：高阶型2规格 </li>
@@ -130,7 +126,6 @@ namespace TencentCloud
 
                     /**
                      * 性能容量型规格，取值范围：
-<li> SLA：超强型4规格 </li>
 <li> clb.c2.medium：标准型规格 </li>
 <li> clb.c3.small：高阶型1规格 </li>
 <li> clb.c3.medium：高阶型2规格 </li>

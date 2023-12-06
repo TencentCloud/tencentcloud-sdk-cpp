@@ -157,15 +157,15 @@ BizType为1时，优先使用MetricNames字段多指标只能填充到MetricName
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。
-                     * @return MetricLabels 指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。
+                     * 获取指标维度，不接受时间类型。
+                     * @return MetricLabels 指标维度，不接受时间类型。
                      * 
                      */
                     std::vector<std::string> GetMetricLabels() const;
 
                     /**
-                     * 设置指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。
-                     * @param _metricLabels 指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。
+                     * 设置指标维度，不接受时间类型。
+                     * @param _metricLabels 指标维度，不接受时间类型。
                      * 
                      */
                     void SetMetricLabels(const std::vector<std::string>& _metricLabels);
@@ -199,15 +199,19 @@ BizType为1时，优先使用MetricNames字段多指标只能填充到MetricName
                     bool CustomTimeHasBeenSet() const;
 
                     /**
-                     * 获取除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。
-                     * @return CustomMetricLabels 除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。
+                     * 获取除了MetricLabels，您还可以使用该参数，为指标补充静态的维度。
+维度名以字母或下划线开头，后面可以跟字母、数字或下划线，长度小于等于1024 字节
+                     * @return CustomMetricLabels 除了MetricLabels，您还可以使用该参数，为指标补充静态的维度。
+维度名以字母或下划线开头，后面可以跟字母、数字或下划线，长度小于等于1024 字节
                      * 
                      */
                     std::vector<MetricLabel> GetCustomMetricLabels() const;
 
                     /**
-                     * 设置除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。
-                     * @param _customMetricLabels 除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。
+                     * 设置除了MetricLabels，您还可以使用该参数，为指标补充静态的维度。
+维度名以字母或下划线开头，后面可以跟字母、数字或下划线，长度小于等于1024 字节
+                     * @param _customMetricLabels 除了MetricLabels，您还可以使用该参数，为指标补充静态的维度。
+维度名以字母或下划线开头，后面可以跟字母、数字或下划线，长度小于等于1024 字节
                      * 
                      */
                     void SetCustomMetricLabels(const std::vector<MetricLabel>& _customMetricLabels);
@@ -253,7 +257,7 @@ BizType为1时，优先使用MetricNames字段多指标只能填充到MetricName
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。
+                     * 指标维度，不接受时间类型。
                      */
                     std::vector<std::string> m_metricLabels;
                     bool m_metricLabelsHasBeenSet;
@@ -265,7 +269,8 @@ BizType为1时，优先使用MetricNames字段多指标只能填充到MetricName
                     bool m_customTimeHasBeenSet;
 
                     /**
-                     * 除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。
+                     * 除了MetricLabels，您还可以使用该参数，为指标补充静态的维度。
+维度名以字母或下划线开头，后面可以跟字母、数字或下划线，长度小于等于1024 字节
                      */
                     std::vector<MetricLabel> m_customMetricLabels;
                     bool m_customMetricLabelsHasBeenSet;

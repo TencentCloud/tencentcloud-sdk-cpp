@@ -87,6 +87,22 @@ namespace TencentCloud
                      */
                     bool AccountVpcSetHasBeenSet() const;
 
+                    /**
+                     * 获取唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UniqId 唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUniqId() const;
+
+                    /**
+                     * 判断参数 UniqId 是否已赋值
+                     * @return UniqId 是否已赋值
+                     * 
+                     */
+                    bool UniqIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +122,13 @@ namespace TencentCloud
                      */
                     std::vector<AccountVpcInfo> m_accountVpcSet;
                     bool m_accountVpcSetHasBeenSet;
+
+                    /**
+                     * 唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uniqId;
+                    bool m_uniqIdHasBeenSet;
 
                 };
             }

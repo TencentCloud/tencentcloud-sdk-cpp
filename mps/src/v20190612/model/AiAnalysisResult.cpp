@@ -27,7 +27,8 @@ AiAnalysisResult::AiAnalysisResult() :
     m_tagTaskHasBeenSet(false),
     m_frameTagTaskHasBeenSet(false),
     m_highlightTaskHasBeenSet(false),
-    m_deLogoTaskHasBeenSet(false)
+    m_deLogoTaskHasBeenSet(false),
+    m_descriptionTaskHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,23 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_deLogoTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("DescriptionTask") && !value["DescriptionTask"].IsNull())
+    {
+        if (!value["DescriptionTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.DescriptionTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_descriptionTask.Deserialize(value["DescriptionTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_descriptionTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -215,6 +233,15 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_deLogoTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_descriptionTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DescriptionTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_descriptionTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -330,5 +357,21 @@ void AiAnalysisResult::SetDeLogoTask(const AiAnalysisTaskDelLogoResult& _deLogoT
 bool AiAnalysisResult::DeLogoTaskHasBeenSet() const
 {
     return m_deLogoTaskHasBeenSet;
+}
+
+AiAnalysisTaskDescriptionResult AiAnalysisResult::GetDescriptionTask() const
+{
+    return m_descriptionTask;
+}
+
+void AiAnalysisResult::SetDescriptionTask(const AiAnalysisTaskDescriptionResult& _descriptionTask)
+{
+    m_descriptionTask = _descriptionTask;
+    m_descriptionTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::DescriptionTaskHasBeenSet() const
+{
+    return m_descriptionTaskHasBeenSet;
 }
 

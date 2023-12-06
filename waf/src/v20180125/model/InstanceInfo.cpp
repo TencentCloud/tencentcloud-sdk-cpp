@@ -54,7 +54,10 @@ InstanceInfo::InstanceInfo() :
     m_isAPISecurityTrialHasBeenSet(false),
     m_majorEventsPkgHasBeenSet(false),
     m_hybridPkgHasBeenSet(false),
-    m_apiPkgHasBeenSet(false)
+    m_apiPkgHasBeenSet(false),
+    m_miniPkgHasBeenSet(false),
+    m_miniQpsStandardHasBeenSet(false),
+    m_miniMaxQPSHasBeenSet(false)
 {
 }
 
@@ -459,6 +462,43 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_apiPkgHasBeenSet = true;
     }
 
+    if (value.HasMember("MiniPkg") && !value["MiniPkg"].IsNull())
+    {
+        if (!value["MiniPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MiniPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_miniPkg.Deserialize(value["MiniPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_miniPkgHasBeenSet = true;
+    }
+
+    if (value.HasMember("MiniQpsStandard") && !value["MiniQpsStandard"].IsNull())
+    {
+        if (!value["MiniQpsStandard"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MiniQpsStandard` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_miniQpsStandard = value["MiniQpsStandard"].GetUint64();
+        m_miniQpsStandardHasBeenSet = true;
+    }
+
+    if (value.HasMember("MiniMaxQPS") && !value["MiniMaxQPS"].IsNull())
+    {
+        if (!value["MiniMaxQPS"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MiniMaxQPS` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_miniMaxQPS = value["MiniMaxQPS"].GetUint64();
+        m_miniMaxQPSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -744,6 +784,31 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_apiPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_miniPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_miniPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_miniQpsStandardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniQpsStandard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_miniQpsStandard, allocator);
+    }
+
+    if (m_miniMaxQPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniMaxQPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_miniMaxQPS, allocator);
     }
 
 }
@@ -1291,5 +1356,53 @@ void InstanceInfo::SetApiPkg(const ApiPkg& _apiPkg)
 bool InstanceInfo::ApiPkgHasBeenSet() const
 {
     return m_apiPkgHasBeenSet;
+}
+
+MiniPkg InstanceInfo::GetMiniPkg() const
+{
+    return m_miniPkg;
+}
+
+void InstanceInfo::SetMiniPkg(const MiniPkg& _miniPkg)
+{
+    m_miniPkg = _miniPkg;
+    m_miniPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::MiniPkgHasBeenSet() const
+{
+    return m_miniPkgHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetMiniQpsStandard() const
+{
+    return m_miniQpsStandard;
+}
+
+void InstanceInfo::SetMiniQpsStandard(const uint64_t& _miniQpsStandard)
+{
+    m_miniQpsStandard = _miniQpsStandard;
+    m_miniQpsStandardHasBeenSet = true;
+}
+
+bool InstanceInfo::MiniQpsStandardHasBeenSet() const
+{
+    return m_miniQpsStandardHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetMiniMaxQPS() const
+{
+    return m_miniMaxQPS;
+}
+
+void InstanceInfo::SetMiniMaxQPS(const uint64_t& _miniMaxQPS)
+{
+    m_miniMaxQPS = _miniMaxQPS;
+    m_miniMaxQPSHasBeenSet = true;
+}
+
+bool InstanceInfo::MiniMaxQPSHasBeenSet() const
+{
+    return m_miniMaxQPSHasBeenSet;
 }
 

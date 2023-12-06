@@ -30,7 +30,10 @@ DescribeDsFolderTreeRequest::DescribeDsFolderTreeRequest() :
     m_keywordHasBeenSet(false),
     m_includeWorkflowHasBeenSet(false),
     m_includeTaskHasBeenSet(false),
-    m_includeVirtualTaskHasBeenSet(false)
+    m_includeVirtualTaskHasBeenSet(false),
+    m_taskFolderIdHasBeenSet(false),
+    m_displayTypeHasBeenSet(false),
+    m_includeTaskFolderHasBeenSet(false)
 {
 }
 
@@ -103,6 +106,30 @@ string DescribeDsFolderTreeRequest::ToJsonString() const
         string key = "IncludeVirtualTask";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_includeVirtualTask, allocator);
+    }
+
+    if (m_taskFolderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskFolderId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskFolderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_displayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_displayType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_includeTaskFolderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeTaskFolder";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeTaskFolder, allocator);
     }
 
 
@@ -239,6 +266,54 @@ void DescribeDsFolderTreeRequest::SetIncludeVirtualTask(const bool& _includeVirt
 bool DescribeDsFolderTreeRequest::IncludeVirtualTaskHasBeenSet() const
 {
     return m_includeVirtualTaskHasBeenSet;
+}
+
+string DescribeDsFolderTreeRequest::GetTaskFolderId() const
+{
+    return m_taskFolderId;
+}
+
+void DescribeDsFolderTreeRequest::SetTaskFolderId(const string& _taskFolderId)
+{
+    m_taskFolderId = _taskFolderId;
+    m_taskFolderIdHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::TaskFolderIdHasBeenSet() const
+{
+    return m_taskFolderIdHasBeenSet;
+}
+
+string DescribeDsFolderTreeRequest::GetDisplayType() const
+{
+    return m_displayType;
+}
+
+void DescribeDsFolderTreeRequest::SetDisplayType(const string& _displayType)
+{
+    m_displayType = _displayType;
+    m_displayTypeHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::DisplayTypeHasBeenSet() const
+{
+    return m_displayTypeHasBeenSet;
+}
+
+bool DescribeDsFolderTreeRequest::GetIncludeTaskFolder() const
+{
+    return m_includeTaskFolder;
+}
+
+void DescribeDsFolderTreeRequest::SetIncludeTaskFolder(const bool& _includeTaskFolder)
+{
+    m_includeTaskFolder = _includeTaskFolder;
+    m_includeTaskFolderHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::IncludeTaskFolderHasBeenSet() const
+{
+    return m_includeTaskFolderHasBeenSet;
 }
 
 

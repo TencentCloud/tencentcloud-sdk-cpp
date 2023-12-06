@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群类型
-                     * @return ClusterType 集群类型
+                     * 获取集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群
+                     * @return ClusterType 集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
-                     * @param _clusterType 集群类型
+                     * 设置集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群
+                     * @param _clusterType 集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取集成容器服务中关联的集群ID
+                     * @return ClusterId 集成容器服务中关联的集群ID
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置集成容器服务中关联的集群ID
+                     * @param _clusterId 集成容器服务中关联的集群ID
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Describe 备注
+                     * 获取该参数未使用，不需要填写
+                     * @return Describe 该参数未使用，不需要填写
                      * 
                      */
                     std::string GetDescribe() const;
 
                     /**
-                     * 设置备注
-                     * @param _describe 备注
+                     * 设置该参数未使用，不需要填写
+                     * @param _describe 该参数未使用，不需要填写
                      * 
                      */
                     void SetDescribe(const std::string& _describe);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群类型
+                     * 集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 集群id
+                     * 集成容器服务中关联的集群ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 备注
+                     * 该参数未使用，不需要填写
                      */
                     std::string m_describe;
                     bool m_describeHasBeenSet;

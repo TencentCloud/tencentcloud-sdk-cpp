@@ -32,6 +32,7 @@
 #include <tencentcloud/waf/v20180125/model/MajorEventsPkg.h>
 #include <tencentcloud/waf/v20180125/model/HybridPkg.h>
 #include <tencentcloud/waf/v20180125/model/ApiPkg.h>
+#include <tencentcloud/waf/v20180125/model/MiniPkg.h>
 
 
 namespace TencentCloud
@@ -55,15 +56,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取id
-                     * @return InstanceId id
+                     * 获取实例唯一ID
+                     * @return InstanceId 实例唯一ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置id
-                     * @param _instanceId id
+                     * 设置实例唯一ID
+                     * @param _instanceId 实例唯一ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -76,15 +77,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Name
-                     * @return InstanceName Name
+                     * 获取实例名称
+                     * @return InstanceName 实例名称
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置Name
-                     * @param _instanceName Name
+                     * 设置实例名称
+                     * @param _instanceName 实例名称
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -97,15 +98,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取资源id
-                     * @return ResourceIds 资源id
+                     * 获取实例对应资源ID，计费使用
+                     * @return ResourceIds 实例对应资源ID，计费使用
                      * 
                      */
                     std::string GetResourceIds() const;
 
                     /**
-                     * 设置资源id
-                     * @param _resourceIds 资源id
+                     * 设置实例对应资源ID，计费使用
+                     * @param _resourceIds 实例对应资源ID，计费使用
                      * 
                      */
                     void SetResourceIds(const std::string& _resourceIds);
@@ -118,15 +119,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取实例所属地域
+                     * @return Region 实例所属地域
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置实例所属地域
+                     * @param _region 实例所属地域
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -160,15 +161,23 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取自动续费
-                     * @return RenewFlag 自动续费
+                     * 获取自动续费标识。
+0：关闭
+1：开启
+                     * @return RenewFlag 自动续费标识。
+0：关闭
+1：开启
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费
-                     * @param _renewFlag 自动续费
+                     * 设置自动续费标识。
+0：关闭
+1：开启
+                     * @param _renewFlag 自动续费标识。
+0：关闭
+1：开启
                      * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
@@ -181,15 +190,23 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取弹性计费
-                     * @return Mode 弹性计费
+                     * 获取弹性计费开关。
+0：关闭
+1：开启
+                     * @return Mode 弹性计费开关。
+0：关闭
+1：开启
                      * 
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置弹性计费
-                     * @param _mode 弹性计费
+                     * 设置弹性计费开关。
+0：关闭
+1：开启
+                     * @param _mode 弹性计费开关。
+0：关闭
+1：开启
                      * 
                      */
                     void SetMode(const uint64_t& _mode);
@@ -202,15 +219,39 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取套餐版本
-                     * @return Level 套餐版本
+                     * 获取实例套餐版本。
+101：小微版
+102：超轻版
+2：高级版
+3：企业版
+4：旗舰版
+6：独享版
+                     * @return Level 实例套餐版本。
+101：小微版
+102：超轻版
+2：高级版
+3：企业版
+4：旗舰版
+6：独享版
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
-                     * 设置套餐版本
-                     * @param _level 套餐版本
+                     * 设置实例套餐版本。
+101：小微版
+102：超轻版
+2：高级版
+3：企业版
+4：旗舰版
+6：独享版
+                     * @param _level 实例套餐版本。
+101：小微版
+102：超轻版
+2：高级版
+3：企业版
+4：旗舰版
+6：独享版
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -223,15 +264,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ValidTime 过期时间
+                     * 获取实例过期时间
+                     * @return ValidTime 实例过期时间
                      * 
                      */
                     std::string GetValidTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _validTime 过期时间
+                     * 设置实例过期时间
+                     * @param _validTime 实例过期时间
                      * 
                      */
                     void SetValidTime(const std::string& _validTime);
@@ -244,15 +285,15 @@ namespace TencentCloud
                     bool ValidTimeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return BeginTime 开始时间
+                     * 获取实例开始时间
+                     * @return BeginTime 实例开始时间
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _beginTime 开始时间
+                     * 设置实例开始时间
+                     * @param _beginTime 实例开始时间
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -265,15 +306,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取已用
-                     * @return DomainCount 已用
+                     * 获取已配置域名个数
+                     * @return DomainCount 已配置域名个数
                      * 
                      */
                     uint64_t GetDomainCount() const;
 
                     /**
-                     * 设置已用
-                     * @param _domainCount 已用
+                     * 设置已配置域名个数
+                     * @param _domainCount 已配置域名个数
                      * 
                      */
                     void SetDomainCount(const uint64_t& _domainCount);
@@ -286,15 +327,15 @@ namespace TencentCloud
                     bool DomainCountHasBeenSet() const;
 
                     /**
-                     * 获取上限
-                     * @return SubDomainLimit 上限
+                     * 获取域名数量上限
+                     * @return SubDomainLimit 域名数量上限
                      * 
                      */
                     uint64_t GetSubDomainLimit() const;
 
                     /**
-                     * 设置上限
-                     * @param _subDomainLimit 上限
+                     * 设置域名数量上限
+                     * @param _subDomainLimit 域名数量上限
                      * 
                      */
                     void SetSubDomainLimit(const uint64_t& _subDomainLimit);
@@ -307,15 +348,15 @@ namespace TencentCloud
                     bool SubDomainLimitHasBeenSet() const;
 
                     /**
-                     * 获取已用
-                     * @return MainDomainCount 已用
+                     * 获取已配置主域名个数
+                     * @return MainDomainCount 已配置主域名个数
                      * 
                      */
                     uint64_t GetMainDomainCount() const;
 
                     /**
-                     * 设置已用
-                     * @param _mainDomainCount 已用
+                     * 设置已配置主域名个数
+                     * @param _mainDomainCount 已配置主域名个数
                      * 
                      */
                     void SetMainDomainCount(const uint64_t& _mainDomainCount);
@@ -328,15 +369,15 @@ namespace TencentCloud
                     bool MainDomainCountHasBeenSet() const;
 
                     /**
-                     * 获取上限
-                     * @return MainDomainLimit 上限
+                     * 获取主域名数量上限
+                     * @return MainDomainLimit 主域名数量上限
                      * 
                      */
                     uint64_t GetMainDomainLimit() const;
 
                     /**
-                     * 设置上限
-                     * @param _mainDomainLimit 上限
+                     * 设置主域名数量上限
+                     * @param _mainDomainLimit 主域名数量上限
                      * 
                      */
                     void SetMainDomainLimit(const uint64_t& _mainDomainLimit);
@@ -349,15 +390,15 @@ namespace TencentCloud
                     bool MainDomainLimitHasBeenSet() const;
 
                     /**
-                     * 获取峰值
-                     * @return MaxQPS 峰值
+                     * 获取实例30天内QPS峰值
+                     * @return MaxQPS 实例30天内QPS峰值
                      * 
                      */
                     uint64_t GetMaxQPS() const;
 
                     /**
-                     * 设置峰值
-                     * @param _maxQPS 峰值
+                     * 设置实例30天内QPS峰值
+                     * @param _maxQPS 实例30天内QPS峰值
                      * 
                      */
                     void SetMaxQPS(const uint64_t& _maxQPS);
@@ -370,15 +411,15 @@ namespace TencentCloud
                     bool MaxQPSHasBeenSet() const;
 
                     /**
-                     * 获取qps套餐
-                     * @return QPS qps套餐
+                     * 获取qps扩展包信息
+                     * @return QPS qps扩展包信息
                      * 
                      */
                     QPSPackageNew GetQPS() const;
 
                     /**
-                     * 设置qps套餐
-                     * @param _qPS qps套餐
+                     * 设置qps扩展包信息
+                     * @param _qPS qps扩展包信息
                      * 
                      */
                     void SetQPS(const QPSPackageNew& _qPS);
@@ -391,15 +432,15 @@ namespace TencentCloud
                     bool QPSHasBeenSet() const;
 
                     /**
-                     * 获取域名套餐
-                     * @return DomainPkg 域名套餐
+                     * 获取域名扩展包信息
+                     * @return DomainPkg 域名扩展包信息
                      * 
                      */
                     DomainPackageNew GetDomainPkg() const;
 
                     /**
-                     * 设置域名套餐
-                     * @param _domainPkg 域名套餐
+                     * 设置域名扩展包信息
+                     * @param _domainPkg 域名扩展包信息
                      * 
                      */
                     void SetDomainPkg(const DomainPackageNew& _domainPkg);
@@ -700,18 +741,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例沙箱值
+                     * 获取实例沙箱qps值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SandboxQps 实例沙箱值
+                     * @return SandboxQps 实例沙箱qps值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSandboxQps() const;
 
                     /**
-                     * 设置实例沙箱值
+                     * 设置实例沙箱qps值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sandboxQps 实例沙箱值
+                     * @param _sandboxQps 实例沙箱qps值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -824,28 +865,103 @@ namespace TencentCloud
                      */
                     bool ApiPkgHasBeenSet() const;
 
+                    /**
+                     * 获取小程序安全加速包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MiniPkg 小程序安全加速包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MiniPkg GetMiniPkg() const;
+
+                    /**
+                     * 设置小程序安全加速包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _miniPkg 小程序安全加速包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMiniPkg(const MiniPkg& _miniPkg);
+
+                    /**
+                     * 判断参数 MiniPkg 是否已赋值
+                     * @return MiniPkg 是否已赋值
+                     * 
+                     */
+                    bool MiniPkgHasBeenSet() const;
+
+                    /**
+                     * 获取小程序qps规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MiniQpsStandard 小程序qps规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMiniQpsStandard() const;
+
+                    /**
+                     * 设置小程序qps规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _miniQpsStandard 小程序qps规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMiniQpsStandard(const uint64_t& _miniQpsStandard);
+
+                    /**
+                     * 判断参数 MiniQpsStandard 是否已赋值
+                     * @return MiniQpsStandard 是否已赋值
+                     * 
+                     */
+                    bool MiniQpsStandardHasBeenSet() const;
+
+                    /**
+                     * 获取小程序qps峰值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MiniMaxQPS 小程序qps峰值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMiniMaxQPS() const;
+
+                    /**
+                     * 设置小程序qps峰值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _miniMaxQPS 小程序qps峰值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMiniMaxQPS(const uint64_t& _miniMaxQPS);
+
+                    /**
+                     * 判断参数 MiniMaxQPS 是否已赋值
+                     * @return MiniMaxQPS 是否已赋值
+                     * 
+                     */
+                    bool MiniMaxQPSHasBeenSet() const;
+
                 private:
 
                     /**
-                     * id
+                     * 实例唯一ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Name
+                     * 实例名称
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 资源id
+                     * 实例对应资源ID，计费使用
                      */
                     std::string m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 地域
+                     * 实例所属地域
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
@@ -857,73 +973,83 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 自动续费
+                     * 自动续费标识。
+0：关闭
+1：开启
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 弹性计费
+                     * 弹性计费开关。
+0：关闭
+1：开启
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 套餐版本
+                     * 实例套餐版本。
+101：小微版
+102：超轻版
+2：高级版
+3：企业版
+4：旗舰版
+6：独享版
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 实例过期时间
                      */
                     std::string m_validTime;
                     bool m_validTimeHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 实例开始时间
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 已用
+                     * 已配置域名个数
                      */
                     uint64_t m_domainCount;
                     bool m_domainCountHasBeenSet;
 
                     /**
-                     * 上限
+                     * 域名数量上限
                      */
                     uint64_t m_subDomainLimit;
                     bool m_subDomainLimitHasBeenSet;
 
                     /**
-                     * 已用
+                     * 已配置主域名个数
                      */
                     uint64_t m_mainDomainCount;
                     bool m_mainDomainCountHasBeenSet;
 
                     /**
-                     * 上限
+                     * 主域名数量上限
                      */
                     uint64_t m_mainDomainLimit;
                     bool m_mainDomainLimitHasBeenSet;
 
                     /**
-                     * 峰值
+                     * 实例30天内QPS峰值
                      */
                     uint64_t m_maxQPS;
                     bool m_maxQPSHasBeenSet;
 
                     /**
-                     * qps套餐
+                     * qps扩展包信息
                      */
                     QPSPackageNew m_qPS;
                     bool m_qPSHasBeenSet;
 
                     /**
-                     * 域名套餐
+                     * 域名扩展包信息
                      */
                     DomainPackageNew m_domainPkg;
                     bool m_domainPkgHasBeenSet;
@@ -1010,7 +1136,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例沙箱值
+                     * 实例沙箱qps值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sandboxQps;
@@ -1043,6 +1169,27 @@ namespace TencentCloud
                      */
                     ApiPkg m_apiPkg;
                     bool m_apiPkgHasBeenSet;
+
+                    /**
+                     * 小程序安全加速包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MiniPkg m_miniPkg;
+                    bool m_miniPkgHasBeenSet;
+
+                    /**
+                     * 小程序qps规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_miniQpsStandard;
+                    bool m_miniQpsStandardHasBeenSet;
+
+                    /**
+                     * 小程序qps峰值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_miniMaxQPS;
+                    bool m_miniMaxQPSHasBeenSet;
 
                 };
             }

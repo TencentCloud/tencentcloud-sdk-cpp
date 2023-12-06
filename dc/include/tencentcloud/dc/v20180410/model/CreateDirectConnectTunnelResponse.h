@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专用通道ID
-                     * @return DirectConnectTunnelIdSet 专用通道ID
+                     * 获取专用通道ID。
+                     * @return DirectConnectTunnelIdSet 专用通道ID。
                      * 
                      */
                     std::vector<std::string> GetDirectConnectTunnelIdSet() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 专用通道ID
+                     * 专用通道ID。
                      */
                     std::vector<std::string> m_directConnectTunnelIdSet;
                     bool m_directConnectTunnelIdSetHasBeenSet;

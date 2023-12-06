@@ -1803,6 +1803,49 @@ TeoClient::DescribeHostsSettingOutcomeCallable TeoClient::DescribeHostsSettingCa
     return task->get_future();
 }
 
+TeoClient::DescribeIPRegionOutcome TeoClient::DescribeIPRegion(const DescribeIPRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIPRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIPRegionResponse rsp = DescribeIPRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIPRegionOutcome(rsp);
+        else
+            return DescribeIPRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIPRegionOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeIPRegionAsync(const DescribeIPRegionRequest& request, const DescribeIPRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIPRegion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeIPRegionOutcomeCallable TeoClient::DescribeIPRegionCallable(const DescribeIPRegionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIPRegionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIPRegion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeIdentificationsOutcome TeoClient::DescribeIdentifications(const DescribeIdentificationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIdentifications");

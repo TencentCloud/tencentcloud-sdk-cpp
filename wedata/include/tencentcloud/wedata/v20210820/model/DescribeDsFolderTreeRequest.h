@@ -210,6 +210,69 @@ namespace TencentCloud
                      */
                     bool IncludeVirtualTaskHasBeenSet() const;
 
+                    /**
+                     * 获取任务目录id
+                     * @return TaskFolderId 任务目录id
+                     * 
+                     */
+                    std::string GetTaskFolderId() const;
+
+                    /**
+                     * 设置任务目录id
+                     * @param _taskFolderId 任务目录id
+                     * 
+                     */
+                    void SetTaskFolderId(const std::string& _taskFolderId);
+
+                    /**
+                     * 判断参数 TaskFolderId 是否已赋值
+                     * @return TaskFolderId 是否已赋值
+                     * 
+                     */
+                    bool TaskFolderIdHasBeenSet() const;
+
+                    /**
+                     * 获取classification.分类展示  catalog.目录展示
+                     * @return DisplayType classification.分类展示  catalog.目录展示
+                     * 
+                     */
+                    std::string GetDisplayType() const;
+
+                    /**
+                     * 设置classification.分类展示  catalog.目录展示
+                     * @param _displayType classification.分类展示  catalog.目录展示
+                     * 
+                     */
+                    void SetDisplayType(const std::string& _displayType);
+
+                    /**
+                     * 判断参数 DisplayType 是否已赋值
+                     * @return DisplayType 是否已赋值
+                     * 
+                     */
+                    bool DisplayTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否包含任务目录
+                     * @return IncludeTaskFolder 是否包含任务目录
+                     * 
+                     */
+                    bool GetIncludeTaskFolder() const;
+
+                    /**
+                     * 设置是否包含任务目录
+                     * @param _includeTaskFolder 是否包含任务目录
+                     * 
+                     */
+                    void SetIncludeTaskFolder(const bool& _includeTaskFolder);
+
+                    /**
+                     * 判断参数 IncludeTaskFolder 是否已赋值
+                     * @return IncludeTaskFolder 是否已赋值
+                     * 
+                     */
+                    bool IncludeTaskFolderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +322,24 @@ namespace TencentCloud
                      */
                     bool m_includeVirtualTask;
                     bool m_includeVirtualTaskHasBeenSet;
+
+                    /**
+                     * 任务目录id
+                     */
+                    std::string m_taskFolderId;
+                    bool m_taskFolderIdHasBeenSet;
+
+                    /**
+                     * classification.分类展示  catalog.目录展示
+                     */
+                    std::string m_displayType;
+                    bool m_displayTypeHasBeenSet;
+
+                    /**
+                     * 是否包含任务目录
+                     */
+                    bool m_includeTaskFolder;
+                    bool m_includeTaskFolderHasBeenSet;
 
                 };
             }

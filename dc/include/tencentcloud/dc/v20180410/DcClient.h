@@ -176,7 +176,7 @@ namespace TencentCloud
                 CreateDirectConnectOutcomeCallable CreateDirectConnectCallable(const Model::CreateDirectConnectRequest& request);
 
                 /**
-                 *用于创建专用通道的接口
+                 *创建专用通道。
                  * @param req CreateDirectConnectTunnelRequest
                  * @return CreateDirectConnectTunnelOutcome
                  */

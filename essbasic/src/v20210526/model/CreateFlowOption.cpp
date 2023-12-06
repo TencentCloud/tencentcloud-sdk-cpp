@@ -109,11 +109,11 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("SkipUploadFile") && !value["SkipUploadFile"].IsNull())
     {
-        if (!value["SkipUploadFile"].IsString())
+        if (!value["SkipUploadFile"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.SkipUploadFile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.SkipUploadFile` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_skipUploadFile = string(value["SkipUploadFile"].GetString());
+        m_skipUploadFile = value["SkipUploadFile"].GetBool();
         m_skipUploadFileHasBeenSet = true;
     }
 
@@ -185,7 +185,7 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SkipUploadFile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_skipUploadFile.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_skipUploadFile, allocator);
     }
 
 }
@@ -303,12 +303,12 @@ bool CreateFlowOption::ForbidEditFillComponentHasBeenSet() const
     return m_forbidEditFillComponentHasBeenSet;
 }
 
-string CreateFlowOption::GetSkipUploadFile() const
+bool CreateFlowOption::GetSkipUploadFile() const
 {
     return m_skipUploadFile;
 }
 
-void CreateFlowOption::SetSkipUploadFile(const string& _skipUploadFile)
+void CreateFlowOption::SetSkipUploadFile(const bool& _skipUploadFile)
 {
     m_skipUploadFile = _skipUploadFile;
     m_skipUploadFileHasBeenSet = true;

@@ -26,7 +26,8 @@ using namespace std;
 AddSpecifyPrivateZoneVpcResponse::AddSpecifyPrivateZoneVpcResponse() :
     m_zoneIdHasBeenSet(false),
     m_vpcSetHasBeenSet(false),
-    m_accountVpcSetHasBeenSet(false)
+    m_accountVpcSetHasBeenSet(false),
+    m_uniqIdHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,16 @@ CoreInternalOutcome AddSpecifyPrivateZoneVpcResponse::Deserialize(const string &
         m_accountVpcSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UniqId") && !rsp["UniqId"].IsNull())
+    {
+        if (!rsp["UniqId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UniqId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqId = string(rsp["UniqId"].GetString());
+        m_uniqIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +173,14 @@ string AddSpecifyPrivateZoneVpcResponse::ToJsonString() const
         }
     }
 
+    if (m_uniqIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uniqId.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -202,6 +221,16 @@ vector<AccountVpcInfo> AddSpecifyPrivateZoneVpcResponse::GetAccountVpcSet() cons
 bool AddSpecifyPrivateZoneVpcResponse::AccountVpcSetHasBeenSet() const
 {
     return m_accountVpcSetHasBeenSet;
+}
+
+string AddSpecifyPrivateZoneVpcResponse::GetUniqId() const
+{
+    return m_uniqId;
+}
+
+bool AddSpecifyPrivateZoneVpcResponse::UniqIdHasBeenSet() const
+{
+    return m_uniqIdHasBeenSet;
 }
 
 

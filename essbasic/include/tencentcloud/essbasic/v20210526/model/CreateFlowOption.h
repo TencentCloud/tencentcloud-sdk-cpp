@@ -256,7 +256,7 @@ namespace TencentCloud
 **false**：（默认）不跳过，需要传ResourceId
                      * 
                      */
-                    std::string GetSkipUploadFile() const;
+                    bool GetSkipUploadFile() const;
 
                     /**
                      * 设置跳过上传文件步骤
@@ -269,7 +269,7 @@ namespace TencentCloud
 **false**：（默认）不跳过，需要传ResourceId
                      * 
                      */
-                    void SetSkipUploadFile(const std::string& _skipUploadFile);
+                    void SetSkipUploadFile(const bool& _skipUploadFile);
 
                     /**
                      * 判断参数 SkipUploadFile 是否已赋值
@@ -341,7 +341,7 @@ namespace TencentCloud
 **true**：跳过
 **false**：（默认）不跳过，需要传ResourceId
                      */
-                    std::string m_skipUploadFile;
+                    bool m_skipUploadFile;
                     bool m_skipUploadFileHasBeenSet;
 
                 };

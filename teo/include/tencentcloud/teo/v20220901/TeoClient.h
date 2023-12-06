@@ -105,6 +105,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeEnvironmentsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeHostsSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeHostsSettingResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeIPRegionRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeIPRegionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIdentificationsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIdentificationsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupRequest.h>
@@ -314,6 +316,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHostsSettingResponse> DescribeHostsSettingOutcome;
                 typedef std::future<DescribeHostsSettingOutcome> DescribeHostsSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeHostsSettingRequest&, DescribeHostsSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostsSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIPRegionResponse> DescribeIPRegionOutcome;
+                typedef std::future<DescribeIPRegionOutcome> DescribeIPRegionOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeIPRegionRequest&, DescribeIPRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPRegionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIdentificationsResponse> DescribeIdentificationsOutcome;
                 typedef std::future<DescribeIdentificationsOutcome> DescribeIdentificationsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeIdentificationsRequest&, DescribeIdentificationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIdentificationsAsyncHandler;
@@ -799,6 +804,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeHostsSettingOutcome DescribeHostsSetting(const Model::DescribeHostsSettingRequest &request);
                 void DescribeHostsSettingAsync(const Model::DescribeHostsSettingRequest& request, const DescribeHostsSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeHostsSettingOutcomeCallable DescribeHostsSettingCallable(const Model::DescribeHostsSettingRequest& request);
+
+                /**
+                 *该接口可用于查询 IP 是否为 EdgeOne IP。
+                 * @param req DescribeIPRegionRequest
+                 * @return DescribeIPRegionOutcome
+                 */
+                DescribeIPRegionOutcome DescribeIPRegion(const Model::DescribeIPRegionRequest &request);
+                void DescribeIPRegionAsync(const Model::DescribeIPRegionRequest& request, const DescribeIPRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIPRegionOutcomeCallable DescribeIPRegionCallable(const Model::DescribeIPRegionRequest& request);
 
                 /**
                  *查询站点的验证信息。

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则 ID 列表
-                     * @return RuleIds 规则 ID 列表
+                     * 获取规则 ID 列表(规则 ID 可通过 DescribeRecordingRules 接口获取)
+                     * @return RuleIds 规则 ID 列表(规则 ID 可通过 DescribeRecordingRules 接口获取)
                      * 
                      */
                     std::vector<std::string> GetRuleIds() const;
 
                     /**
-                     * 设置规则 ID 列表
-                     * @param _ruleIds 规则 ID 列表
+                     * 设置规则 ID 列表(规则 ID 可通过 DescribeRecordingRules 接口获取)
+                     * @param _ruleIds 规则 ID 列表(规则 ID 可通过 DescribeRecordingRules 接口获取)
                      * 
                      */
                     void SetRuleIds(const std::vector<std::string>& _ruleIds);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则 ID 列表
+                     * 规则 ID 列表(规则 ID 可通过 DescribeRecordingRules 接口获取)
                      */
                     std::vector<std::string> m_ruleIds;
                     bool m_ruleIdsHasBeenSet;
