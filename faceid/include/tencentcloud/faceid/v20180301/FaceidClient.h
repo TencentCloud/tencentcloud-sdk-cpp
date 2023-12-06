@@ -69,6 +69,8 @@
 #include <tencentcloud/faceid/v20180301/model/IdCardVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/ImageRecognitionRequest.h>
 #include <tencentcloud/faceid/v20180301/model/ImageRecognitionResponse.h>
+#include <tencentcloud/faceid/v20180301/model/ImageRecognitionV2Request.h>
+#include <tencentcloud/faceid/v20180301/model/ImageRecognitionV2Response.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessRequest.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessResponse.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessCompareRequest.h>
@@ -174,6 +176,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImageRecognitionResponse> ImageRecognitionOutcome;
                 typedef std::future<ImageRecognitionOutcome> ImageRecognitionOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::ImageRecognitionRequest&, ImageRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageRecognitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImageRecognitionV2Response> ImageRecognitionV2Outcome;
+                typedef std::future<ImageRecognitionV2Outcome> ImageRecognitionV2OutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::ImageRecognitionV2Request&, ImageRecognitionV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageRecognitionV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::LivenessResponse> LivenessOutcome;
                 typedef std::future<LivenessOutcome> LivenessOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::LivenessRequest&, LivenessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LivenessAsyncHandler;
@@ -417,6 +422,15 @@ namespace TencentCloud
                 ImageRecognitionOutcome ImageRecognition(const Model::ImageRecognitionRequest &request);
                 void ImageRecognitionAsync(const Model::ImageRecognitionRequest& request, const ImageRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImageRecognitionOutcomeCallable ImageRecognitionCallable(const Model::ImageRecognitionRequest& request);
+
+                /**
+                 *传入照片和身份信息，判断该照片与权威库的证件照是否属于同一个人。
+                 * @param req ImageRecognitionV2Request
+                 * @return ImageRecognitionV2Outcome
+                 */
+                ImageRecognitionV2Outcome ImageRecognitionV2(const Model::ImageRecognitionV2Request &request);
+                void ImageRecognitionV2Async(const Model::ImageRecognitionV2Request& request, const ImageRecognitionV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImageRecognitionV2OutcomeCallable ImageRecognitionV2Callable(const Model::ImageRecognitionV2Request& request);
 
                 /**
                  *活体检测

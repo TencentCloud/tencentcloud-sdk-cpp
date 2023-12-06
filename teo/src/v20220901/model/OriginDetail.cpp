@@ -27,7 +27,10 @@ OriginDetail::OriginDetail() :
     m_originGroupNameHasBeenSet(false),
     m_backOriginGroupNameHasBeenSet(false),
     m_privateAccessHasBeenSet(false),
-    m_privateParametersHasBeenSet(false)
+    m_privateParametersHasBeenSet(false),
+    m_vodeoSubAppIdHasBeenSet(false),
+    m_vodeoDistributionRangeHasBeenSet(false),
+    m_vodeoBucketIdHasBeenSet(false)
 {
 }
 
@@ -116,6 +119,36 @@ CoreInternalOutcome OriginDetail::Deserialize(const rapidjson::Value &value)
         m_privateParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("VodeoSubAppId") && !value["VodeoSubAppId"].IsNull())
+    {
+        if (!value["VodeoSubAppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginDetail.VodeoSubAppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodeoSubAppId = value["VodeoSubAppId"].GetInt64();
+        m_vodeoSubAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("VodeoDistributionRange") && !value["VodeoDistributionRange"].IsNull())
+    {
+        if (!value["VodeoDistributionRange"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginDetail.VodeoDistributionRange` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodeoDistributionRange = string(value["VodeoDistributionRange"].GetString());
+        m_vodeoDistributionRangeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VodeoBucketId") && !value["VodeoBucketId"].IsNull())
+    {
+        if (!value["VodeoBucketId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginDetail.VodeoBucketId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodeoBucketId = string(value["VodeoBucketId"].GetString());
+        m_vodeoBucketIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +217,30 @@ void OriginDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_vodeoSubAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodeoSubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vodeoSubAppId, allocator);
+    }
+
+    if (m_vodeoDistributionRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodeoDistributionRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vodeoDistributionRange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vodeoBucketIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodeoBucketId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vodeoBucketId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +356,53 @@ void OriginDetail::SetPrivateParameters(const vector<PrivateParameter>& _private
 bool OriginDetail::PrivateParametersHasBeenSet() const
 {
     return m_privateParametersHasBeenSet;
+}
+
+int64_t OriginDetail::GetVodeoSubAppId() const
+{
+    return m_vodeoSubAppId;
+}
+
+void OriginDetail::SetVodeoSubAppId(const int64_t& _vodeoSubAppId)
+{
+    m_vodeoSubAppId = _vodeoSubAppId;
+    m_vodeoSubAppIdHasBeenSet = true;
+}
+
+bool OriginDetail::VodeoSubAppIdHasBeenSet() const
+{
+    return m_vodeoSubAppIdHasBeenSet;
+}
+
+string OriginDetail::GetVodeoDistributionRange() const
+{
+    return m_vodeoDistributionRange;
+}
+
+void OriginDetail::SetVodeoDistributionRange(const string& _vodeoDistributionRange)
+{
+    m_vodeoDistributionRange = _vodeoDistributionRange;
+    m_vodeoDistributionRangeHasBeenSet = true;
+}
+
+bool OriginDetail::VodeoDistributionRangeHasBeenSet() const
+{
+    return m_vodeoDistributionRangeHasBeenSet;
+}
+
+string OriginDetail::GetVodeoBucketId() const
+{
+    return m_vodeoBucketId;
+}
+
+void OriginDetail::SetVodeoBucketId(const string& _vodeoBucketId)
+{
+    m_vodeoBucketId = _vodeoBucketId;
+    m_vodeoBucketIdHasBeenSet = true;
+}
+
+bool OriginDetail::VodeoBucketIdHasBeenSet() const
+{
+    return m_vodeoBucketIdHasBeenSet;
 }
 

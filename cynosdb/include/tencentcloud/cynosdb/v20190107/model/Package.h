@@ -379,6 +379,31 @@ refund-已退费。
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取资源包历史绑定（已解绑）实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HistoryBindResourceInfos 资源包历史绑定（已解绑）实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<BindInstanceInfo> GetHistoryBindResourceInfos() const;
+
+                    /**
+                     * 设置资源包历史绑定（已解绑）实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _historyBindResourceInfos 资源包历史绑定（已解绑）实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHistoryBindResourceInfos(const std::vector<BindInstanceInfo>& _historyBindResourceInfos);
+
+                    /**
+                     * 判断参数 HistoryBindResourceInfos 是否已赋值
+                     * @return HistoryBindResourceInfos 是否已赋值
+                     * 
+                     */
+                    bool HistoryBindResourceInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -472,6 +497,13 @@ refund-已退费。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 资源包历史绑定（已解绑）实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BindInstanceInfo> m_historyBindResourceInfos;
+                    bool m_historyBindResourceInfosHasBeenSet;
 
                 };
             }

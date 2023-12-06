@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取访问次数限制，限制范围1-99999，为空则不设置访问次数限制
+                     * @return TicketNum 访问次数限制，限制范围1-99999，为空则不设置访问次数限制
+                     * 
+                     */
+                    int64_t GetTicketNum() const;
+
+                    /**
+                     * 设置访问次数限制，限制范围1-99999，为空则不设置访问次数限制
+                     * @param _ticketNum 访问次数限制，限制范围1-99999，为空则不设置访问次数限制
+                     * 
+                     */
+                    void SetTicketNum(const int64_t& _ticketNum);
+
+                    /**
+                     * 判断参数 TicketNum 是否已赋值
+                     * @return TicketNum 是否已赋值
+                     * 
+                     */
+                    bool TicketNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 访问次数限制，限制范围1-99999，为空则不设置访问次数限制
+                     */
+                    int64_t m_ticketNum;
+                    bool m_ticketNumHasBeenSet;
 
                 };
             }

@@ -41,7 +41,8 @@ CreateDatasourceCloudRequest::CreateDatasourceCloudRequest() :
     m_prodDbNameHasBeenSet(false),
     m_dataOriginHasBeenSet(false),
     m_dataOriginProjectIdHasBeenSet(false),
-    m_dataOriginDatasourceIdHasBeenSet(false)
+    m_dataOriginDatasourceIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,14 @@ string CreateDatasourceCloudRequest::ToJsonString() const
         string key = "DataOriginDatasourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataOriginDatasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -514,6 +523,22 @@ void CreateDatasourceCloudRequest::SetDataOriginDatasourceId(const string& _data
 bool CreateDatasourceCloudRequest::DataOriginDatasourceIdHasBeenSet() const
 {
     return m_dataOriginDatasourceIdHasBeenSet;
+}
+
+string CreateDatasourceCloudRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void CreateDatasourceCloudRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool CreateDatasourceCloudRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

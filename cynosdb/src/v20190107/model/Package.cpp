@@ -32,7 +32,8 @@ Package::Package() :
     m_hasQuotaHasBeenSet(false),
     m_bindInstanceInfosHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_historyBindResourceInfosHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,26 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("HistoryBindResourceInfos") && !value["HistoryBindResourceInfos"].IsNull())
+    {
+        if (!value["HistoryBindResourceInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Package.HistoryBindResourceInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HistoryBindResourceInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BindInstanceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_historyBindResourceInfos.push_back(item);
+        }
+        m_historyBindResourceInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +300,21 @@ void Package::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_historyBindResourceInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HistoryBindResourceInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_historyBindResourceInfos.begin(); itr != m_historyBindResourceInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -474,5 +510,21 @@ void Package::SetExpireTime(const string& _expireTime)
 bool Package::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+vector<BindInstanceInfo> Package::GetHistoryBindResourceInfos() const
+{
+    return m_historyBindResourceInfos;
+}
+
+void Package::SetHistoryBindResourceInfos(const vector<BindInstanceInfo>& _historyBindResourceInfos)
+{
+    m_historyBindResourceInfos = _historyBindResourceInfos;
+    m_historyBindResourceInfosHasBeenSet = true;
+}
+
+bool Package::HistoryBindResourceInfosHasBeenSet() const
+{
+    return m_historyBindResourceInfosHasBeenSet;
 }
 

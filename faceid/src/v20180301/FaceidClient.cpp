@@ -1029,6 +1029,49 @@ FaceidClient::ImageRecognitionOutcomeCallable FaceidClient::ImageRecognitionCall
     return task->get_future();
 }
 
+FaceidClient::ImageRecognitionV2Outcome FaceidClient::ImageRecognitionV2(const ImageRecognitionV2Request &request)
+{
+    auto outcome = MakeRequest(request, "ImageRecognitionV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImageRecognitionV2Response rsp = ImageRecognitionV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImageRecognitionV2Outcome(rsp);
+        else
+            return ImageRecognitionV2Outcome(o.GetError());
+    }
+    else
+    {
+        return ImageRecognitionV2Outcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::ImageRecognitionV2Async(const ImageRecognitionV2Request& request, const ImageRecognitionV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImageRecognitionV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::ImageRecognitionV2OutcomeCallable FaceidClient::ImageRecognitionV2Callable(const ImageRecognitionV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImageRecognitionV2Outcome()>>(
+        [this, request]()
+        {
+            return this->ImageRecognitionV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::LivenessOutcome FaceidClient::Liveness(const LivenessRequest &request)
 {
     auto outcome = MakeRequest(request, "Liveness");

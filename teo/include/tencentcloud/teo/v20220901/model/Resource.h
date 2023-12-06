@@ -359,6 +359,31 @@ namespace TencentCloud
                      */
                     bool ZoneNumberHasBeenSet() const;
 
+                    /**
+                     * 获取资源标记类型，取值有：
+<li>vodeo：vodeo资源。</li>
+                     * @return Type 资源标记类型，取值有：
+<li>vodeo：vodeo资源。</li>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置资源标记类型，取值有：
+<li>vodeo：vodeo资源。</li>
+                     * @param _type 资源标记类型，取值有：
+<li>vodeo：vodeo资源。</li>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -447,6 +472,13 @@ namespace TencentCloud
                      */
                     int64_t m_zoneNumber;
                     bool m_zoneNumberHasBeenSet;
+
+                    /**
+                     * 资源标记类型，取值有：
+<li>vodeo：vodeo资源。</li>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

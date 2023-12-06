@@ -32,7 +32,8 @@ Resource::Resource() :
     m_planIdHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_groupHasBeenSet(false),
-    m_zoneNumberHasBeenSet(false)
+    m_zoneNumberHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_zoneNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +290,14 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ZoneNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneNumber, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -474,5 +493,21 @@ void Resource::SetZoneNumber(const int64_t& _zoneNumber)
 bool Resource::ZoneNumberHasBeenSet() const
 {
     return m_zoneNumberHasBeenSet;
+}
+
+string Resource::GetType() const
+{
+    return m_type;
+}
+
+void Resource::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool Resource::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

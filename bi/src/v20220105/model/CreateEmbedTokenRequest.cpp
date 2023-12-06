@@ -29,7 +29,8 @@ CreateEmbedTokenRequest::CreateEmbedTokenRequest() :
     m_expireTimeHasBeenSet(false),
     m_extraParamHasBeenSet(false),
     m_userCorpIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_ticketNumHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateEmbedTokenRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ticketNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ticketNum, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateEmbedTokenRequest::SetUserId(const string& _userId)
 bool CreateEmbedTokenRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+int64_t CreateEmbedTokenRequest::GetTicketNum() const
+{
+    return m_ticketNum;
+}
+
+void CreateEmbedTokenRequest::SetTicketNum(const int64_t& _ticketNum)
+{
+    m_ticketNum = _ticketNum;
+    m_ticketNumHasBeenSet = true;
+}
+
+bool CreateEmbedTokenRequest::TicketNumHasBeenSet() const
+{
+    return m_ticketNumHasBeenSet;
 }
 
 

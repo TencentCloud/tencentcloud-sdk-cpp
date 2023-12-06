@@ -184,6 +184,69 @@ namespace TencentCloud
                      */
                     bool PrivateParametersHasBeenSet() const;
 
+                    /**
+                     * 获取MO 子应用 ID
+                     * @return VodeoSubAppId MO 子应用 ID
+                     * 
+                     */
+                    int64_t GetVodeoSubAppId() const;
+
+                    /**
+                     * 设置MO 子应用 ID
+                     * @param _vodeoSubAppId MO 子应用 ID
+                     * 
+                     */
+                    void SetVodeoSubAppId(const int64_t& _vodeoSubAppId);
+
+                    /**
+                     * 判断参数 VodeoSubAppId 是否已赋值
+                     * @return VodeoSubAppId 是否已赋值
+                     * 
+                     */
+                    bool VodeoSubAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
+                     * @return VodeoDistributionRange MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
+                     * 
+                     */
+                    std::string GetVodeoDistributionRange() const;
+
+                    /**
+                     * 设置MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
+                     * @param _vodeoDistributionRange MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
+                     * 
+                     */
+                    void SetVodeoDistributionRange(const std::string& _vodeoDistributionRange);
+
+                    /**
+                     * 判断参数 VodeoDistributionRange 是否已赋值
+                     * @return VodeoDistributionRange 是否已赋值
+                     * 
+                     */
+                    bool VodeoDistributionRangeHasBeenSet() const;
+
+                    /**
+                     * 获取MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填	
+                     * @return VodeoBucketId MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填	
+                     * 
+                     */
+                    std::string GetVodeoBucketId() const;
+
+                    /**
+                     * 设置MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填	
+                     * @param _vodeoBucketId MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填	
+                     * 
+                     */
+                    void SetVodeoBucketId(const std::string& _vodeoBucketId);
+
+                    /**
+                     * 判断参数 VodeoBucketId 是否已赋值
+                     * @return VodeoBucketId 是否已赋值
+                     * 
+                     */
+                    bool VodeoBucketIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -223,6 +286,24 @@ namespace TencentCloud
                      */
                     std::vector<PrivateParameter> m_privateParameters;
                     bool m_privateParametersHasBeenSet;
+
+                    /**
+                     * MO 子应用 ID
+                     */
+                    int64_t m_vodeoSubAppId;
+                    bool m_vodeoSubAppIdHasBeenSet;
+
+                    /**
+                     * MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
+                     */
+                    std::string m_vodeoDistributionRange;
+                    bool m_vodeoDistributionRangeHasBeenSet;
+
+                    /**
+                     * MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填	
+                     */
+                    std::string m_vodeoBucketId;
+                    bool m_vodeoBucketIdHasBeenSet;
 
                 };
             }

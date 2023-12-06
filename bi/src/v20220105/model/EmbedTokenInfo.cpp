@@ -33,7 +33,8 @@ EmbedTokenInfo::EmbedTokenInfo() :
     m_scopeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_userCorpIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_ticketNumHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome EmbedTokenInfo::Deserialize(const rapidjson::Value &value)
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TicketNum") && !value["TicketNum"].IsNull())
+    {
+        if (!value["TicketNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedTokenInfo.TicketNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ticketNum = value["TicketNum"].GetInt64();
+        m_ticketNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void EmbedTokenInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ticketNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ticketNum, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void EmbedTokenInfo::SetUserId(const string& _userId)
 bool EmbedTokenInfo::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+int64_t EmbedTokenInfo::GetTicketNum() const
+{
+    return m_ticketNum;
+}
+
+void EmbedTokenInfo::SetTicketNum(const int64_t& _ticketNum)
+{
+    m_ticketNum = _ticketNum;
+    m_ticketNumHasBeenSet = true;
+}
+
+bool EmbedTokenInfo::TicketNumHasBeenSet() const
+{
+    return m_ticketNumHasBeenSet;
 }
 
