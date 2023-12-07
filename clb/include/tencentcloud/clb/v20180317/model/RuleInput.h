@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
-                     * @return SessionExpireTime 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
+                     * 获取会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。
+                     * @return SessionExpireTime 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。
                      * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
-                     * @param _sessionExpireTime 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
+                     * 设置会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。
+                     * @param _sessionExpireTime 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。
                      * 
                      */
                     void SetSessionExpireTime(const int64_t& _sessionExpireTime);
@@ -383,7 +383,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
+                     * 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。
                      */
                     int64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;

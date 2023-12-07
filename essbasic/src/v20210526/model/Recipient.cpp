@@ -29,7 +29,9 @@ Recipient::Recipient() :
     m_requireSignHasBeenSet(false),
     m_signTypeHasBeenSet(false),
     m_routingOrderHasBeenSet(false),
-    m_isPromoterHasBeenSet(false)
+    m_isPromoterHasBeenSet(false),
+    m_approverVerifyTypesHasBeenSet(false),
+    m_approverSignTypesHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,32 @@ CoreInternalOutcome Recipient::Deserialize(const rapidjson::Value &value)
         m_isPromoterHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverVerifyTypes") && !value["ApproverVerifyTypes"].IsNull())
+    {
+        if (!value["ApproverVerifyTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Recipient.ApproverVerifyTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApproverVerifyTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_approverVerifyTypes.push_back((*itr).GetInt64());
+        }
+        m_approverVerifyTypesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverSignTypes") && !value["ApproverSignTypes"].IsNull())
+    {
+        if (!value["ApproverSignTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Recipient.ApproverSignTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApproverSignTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_approverSignTypes.push_back((*itr).GetInt64());
+        }
+        m_approverSignTypesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +233,32 @@ void Recipient::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsPromoter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isPromoter, allocator);
+    }
+
+    if (m_approverVerifyTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverVerifyTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_approverVerifyTypes.begin(); itr != m_approverVerifyTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_approverSignTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverSignTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_approverSignTypes.begin(); itr != m_approverSignTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -352,5 +406,37 @@ void Recipient::SetIsPromoter(const bool& _isPromoter)
 bool Recipient::IsPromoterHasBeenSet() const
 {
     return m_isPromoterHasBeenSet;
+}
+
+vector<int64_t> Recipient::GetApproverVerifyTypes() const
+{
+    return m_approverVerifyTypes;
+}
+
+void Recipient::SetApproverVerifyTypes(const vector<int64_t>& _approverVerifyTypes)
+{
+    m_approverVerifyTypes = _approverVerifyTypes;
+    m_approverVerifyTypesHasBeenSet = true;
+}
+
+bool Recipient::ApproverVerifyTypesHasBeenSet() const
+{
+    return m_approverVerifyTypesHasBeenSet;
+}
+
+vector<int64_t> Recipient::GetApproverSignTypes() const
+{
+    return m_approverSignTypes;
+}
+
+void Recipient::SetApproverSignTypes(const vector<int64_t>& _approverSignTypes)
+{
+    m_approverSignTypes = _approverSignTypes;
+    m_approverSignTypesHasBeenSet = true;
+}
+
+bool Recipient::ApproverSignTypesHasBeenSet() const
+{
+    return m_approverSignTypesHasBeenSet;
 }
 

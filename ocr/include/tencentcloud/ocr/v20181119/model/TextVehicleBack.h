@@ -321,6 +321,35 @@ namespace TencentCloud
                      */
                     bool SubPageCodeHasBeenSet() const;
 
+                    /**
+                     * 获取燃料种类
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FuelType 燃料种类
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFuelType() const;
+
+                    /**
+                     * 设置燃料种类
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fuelType 燃料种类
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFuelType(const std::string& _fuelType);
+
+                    /**
+                     * 判断参数 FuelType 是否已赋值
+                     * @return FuelType 是否已赋值
+                     * 
+                     */
+                    bool FuelTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +428,14 @@ namespace TencentCloud
                      */
                     std::string m_subPageCode;
                     bool m_subPageCodeHasBeenSet;
+
+                    /**
+                     * 燃料种类
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fuelType;
+                    bool m_fuelTypeHasBeenSet;
 
                 };
             }

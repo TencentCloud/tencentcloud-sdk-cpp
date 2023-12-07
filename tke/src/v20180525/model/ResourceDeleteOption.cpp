@@ -22,7 +22,8 @@ using namespace std;
 
 ResourceDeleteOption::ResourceDeleteOption() :
     m_resourceTypeHasBeenSet(false),
-    m_deleteModeHasBeenSet(false)
+    m_deleteModeHasBeenSet(false),
+    m_skipDeletionProtectionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ResourceDeleteOption::Deserialize(const rapidjson::Value &va
         m_deleteModeHasBeenSet = true;
     }
 
+    if (value.HasMember("SkipDeletionProtection") && !value["SkipDeletionProtection"].IsNull())
+    {
+        if (!value["SkipDeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceDeleteOption.SkipDeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_skipDeletionProtection = value["SkipDeletionProtection"].GetBool();
+        m_skipDeletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ResourceDeleteOption::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "DeleteMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deleteMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_skipDeletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipDeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_skipDeletionProtection, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ResourceDeleteOption::SetDeleteMode(const string& _deleteMode)
 bool ResourceDeleteOption::DeleteModeHasBeenSet() const
 {
     return m_deleteModeHasBeenSet;
+}
+
+bool ResourceDeleteOption::GetSkipDeletionProtection() const
+{
+    return m_skipDeletionProtection;
+}
+
+void ResourceDeleteOption::SetSkipDeletionProtection(const bool& _skipDeletionProtection)
+{
+    m_skipDeletionProtection = _skipDeletionProtection;
+    m_skipDeletionProtectionHasBeenSet = true;
+}
+
+bool ResourceDeleteOption::SkipDeletionProtectionHasBeenSet() const
+{
+    return m_skipDeletionProtectionHasBeenSet;
 }
 

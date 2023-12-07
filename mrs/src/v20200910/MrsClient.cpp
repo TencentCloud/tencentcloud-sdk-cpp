@@ -40,6 +40,49 @@ MrsClient::MrsClient(const Credential &credential, const string &region, const C
 }
 
 
+MrsClient::ImageMaskOutcome MrsClient::ImageMask(const ImageMaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImageMask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImageMaskResponse rsp = ImageMaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImageMaskOutcome(rsp);
+        else
+            return ImageMaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ImageMaskOutcome(outcome.GetError());
+    }
+}
+
+void MrsClient::ImageMaskAsync(const ImageMaskRequest& request, const ImageMaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImageMask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MrsClient::ImageMaskOutcomeCallable MrsClient::ImageMaskCallable(const ImageMaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImageMaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ImageMask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MrsClient::ImageToClassOutcome MrsClient::ImageToClass(const ImageToClassRequest &request)
 {
     auto outcome = MakeRequest(request, "ImageToClass");

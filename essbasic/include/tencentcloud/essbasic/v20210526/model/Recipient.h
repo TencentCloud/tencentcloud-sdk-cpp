@@ -271,6 +271,72 @@ false-否
                      */
                     bool IsPromoterHasBeenSet() const;
 
+                    /**
+                     * 获取签署人查看合同校验方式, 支持的类型如下:
+<ul><li> 1 :实名认证查看</li>
+<li> 2 :手机号校验查看</li></ul>
+                     * @return ApproverVerifyTypes 签署人查看合同校验方式, 支持的类型如下:
+<ul><li> 1 :实名认证查看</li>
+<li> 2 :手机号校验查看</li></ul>
+                     * 
+                     */
+                    std::vector<int64_t> GetApproverVerifyTypes() const;
+
+                    /**
+                     * 设置签署人查看合同校验方式, 支持的类型如下:
+<ul><li> 1 :实名认证查看</li>
+<li> 2 :手机号校验查看</li></ul>
+                     * @param _approverVerifyTypes 签署人查看合同校验方式, 支持的类型如下:
+<ul><li> 1 :实名认证查看</li>
+<li> 2 :手机号校验查看</li></ul>
+                     * 
+                     */
+                    void SetApproverVerifyTypes(const std::vector<int64_t>& _approverVerifyTypes);
+
+                    /**
+                     * 判断参数 ApproverVerifyTypes 是否已赋值
+                     * @return ApproverVerifyTypes 是否已赋值
+                     * 
+                     */
+                    bool ApproverVerifyTypesHasBeenSet() const;
+
+                    /**
+                     * 获取签署人进行合同签署时的认证方式，支持的类型如下:
+<ul><li> 1 :人脸认证</li>
+<li> 2 :签署密码</li>
+<li> 3 :运营商三要素认证</li>
+<li> 4 :UKey认证</li></ul>
+                     * @return ApproverSignTypes 签署人进行合同签署时的认证方式，支持的类型如下:
+<ul><li> 1 :人脸认证</li>
+<li> 2 :签署密码</li>
+<li> 3 :运营商三要素认证</li>
+<li> 4 :UKey认证</li></ul>
+                     * 
+                     */
+                    std::vector<int64_t> GetApproverSignTypes() const;
+
+                    /**
+                     * 设置签署人进行合同签署时的认证方式，支持的类型如下:
+<ul><li> 1 :人脸认证</li>
+<li> 2 :签署密码</li>
+<li> 3 :运营商三要素认证</li>
+<li> 4 :UKey认证</li></ul>
+                     * @param _approverSignTypes 签署人进行合同签署时的认证方式，支持的类型如下:
+<ul><li> 1 :人脸认证</li>
+<li> 2 :签署密码</li>
+<li> 3 :运营商三要素认证</li>
+<li> 4 :UKey认证</li></ul>
+                     * 
+                     */
+                    void SetApproverSignTypes(const std::vector<int64_t>& _approverSignTypes);
+
+                    /**
+                     * 判断参数 ApproverSignTypes 是否已赋值
+                     * @return ApproverSignTypes 是否已赋值
+                     * 
+                     */
+                    bool ApproverSignTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +401,24 @@ false-否
                      */
                     bool m_isPromoter;
                     bool m_isPromoterHasBeenSet;
+
+                    /**
+                     * 签署人查看合同校验方式, 支持的类型如下:
+<ul><li> 1 :实名认证查看</li>
+<li> 2 :手机号校验查看</li></ul>
+                     */
+                    std::vector<int64_t> m_approverVerifyTypes;
+                    bool m_approverVerifyTypesHasBeenSet;
+
+                    /**
+                     * 签署人进行合同签署时的认证方式，支持的类型如下:
+<ul><li> 1 :人脸认证</li>
+<li> 2 :签署密码</li>
+<li> 3 :运营商三要素认证</li>
+<li> 4 :UKey认证</li></ul>
+                     */
+                    std::vector<int64_t> m_approverSignTypes;
+                    bool m_approverSignTypesHasBeenSet;
 
                 };
             }

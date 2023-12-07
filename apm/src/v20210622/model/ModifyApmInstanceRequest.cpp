@@ -39,7 +39,8 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_logTopicIDHasBeenSet(false),
     m_logSetHasBeenSet(false),
     m_logSourceHasBeenSet(false),
-    m_customShowTagsHasBeenSet(false)
+    m_customShowTagsHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,14 @@ string ModifyApmInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_payMode, allocator);
     }
 
 
@@ -476,6 +485,22 @@ void ModifyApmInstanceRequest::SetCustomShowTags(const vector<string>& _customSh
 bool ModifyApmInstanceRequest::CustomShowTagsHasBeenSet() const
 {
     return m_customShowTagsHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void ModifyApmInstanceRequest::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
 }
 
 

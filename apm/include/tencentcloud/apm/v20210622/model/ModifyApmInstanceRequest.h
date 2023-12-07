@@ -400,6 +400,35 @@ namespace TencentCloud
                      */
                     bool CustomShowTagsHasBeenSet() const;
 
+                    /**
+                     * 获取修改计费模式
+1为预付费
+0为按量付费
+                     * @return PayMode 修改计费模式
+1为预付费
+0为按量付费
+                     * 
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置修改计费模式
+1为预付费
+0为按量付费
+                     * @param _payMode 修改计费模式
+1为预付费
+0为按量付费
+                     * 
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -503,6 +532,14 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_customShowTags;
                     bool m_customShowTagsHasBeenSet;
+
+                    /**
+                     * 修改计费模式
+1为预付费
+0为按量付费
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

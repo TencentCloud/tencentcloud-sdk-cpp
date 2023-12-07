@@ -513,6 +513,49 @@ CsipClient::DescribeDomainAssetsOutcomeCallable CsipClient::DescribeDomainAssets
     return task->get_future();
 }
 
+CsipClient::DescribeGatewayAssetsOutcome CsipClient::DescribeGatewayAssets(const DescribeGatewayAssetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGatewayAssets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGatewayAssetsResponse rsp = DescribeGatewayAssetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGatewayAssetsOutcome(rsp);
+        else
+            return DescribeGatewayAssetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGatewayAssetsOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeGatewayAssetsAsync(const DescribeGatewayAssetsRequest& request, const DescribeGatewayAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGatewayAssets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeGatewayAssetsOutcomeCallable CsipClient::DescribeGatewayAssetsCallable(const DescribeGatewayAssetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGatewayAssetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGatewayAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeListenerListOutcome CsipClient::DescribeListenerList(const DescribeListenerListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeListenerList");

@@ -714,6 +714,64 @@ namespace TencentCloud
                      */
                     bool CustomShowTagsHasBeenSet() const;
 
+                    /**
+                     * 获取实例计费模式
+1为预付费
+0为按量付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayMode 实例计费模式
+1为预付费
+0为按量付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置实例计费模式
+1为预付费
+0为按量付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payMode 实例计费模式
+1为预付费
+0为按量付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取实例计费模式是否生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayModeEffective 实例计费模式是否生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetPayModeEffective() const;
+
+                    /**
+                     * 设置实例计费模式是否生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payModeEffective 实例计费模式是否生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayModeEffective(const bool& _payModeEffective);
+
+                    /**
+                     * 判断参数 PayModeEffective 是否已赋值
+                     * @return PayModeEffective 是否已赋值
+                     * 
+                     */
+                    bool PayModeEffectiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -902,6 +960,22 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_customShowTags;
                     bool m_customShowTagsHasBeenSet;
+
+                    /**
+                     * 实例计费模式
+1为预付费
+0为按量付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 实例计费模式是否生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_payModeEffective;
+                    bool m_payModeEffectiveHasBeenSet;
 
                 };
             }

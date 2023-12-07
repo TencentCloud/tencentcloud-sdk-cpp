@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool SpanDailyCountersHasBeenSet() const;
 
+                    /**
+                     * 获取实例的计费模式
+                     * @return PayMode 实例的计费模式
+                     * 
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置实例的计费模式
+                     * @param _payMode 实例的计费模式
+                     * 
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     uint64_t m_spanDailyCounters;
                     bool m_spanDailyCountersHasBeenSet;
+
+                    /**
+                     * 实例的计费模式
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

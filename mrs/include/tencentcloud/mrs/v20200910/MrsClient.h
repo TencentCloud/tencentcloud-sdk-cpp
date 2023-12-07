@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/mrs/v20200910/model/ImageMaskRequest.h>
+#include <tencentcloud/mrs/v20200910/model/ImageMaskResponse.h>
 #include <tencentcloud/mrs/v20200910/model/ImageToClassRequest.h>
 #include <tencentcloud/mrs/v20200910/model/ImageToClassResponse.h>
 #include <tencentcloud/mrs/v20200910/model/ImageToObjectRequest.h>
@@ -51,6 +53,9 @@ namespace TencentCloud
                 MrsClient(const Credential &credential, const std::string &region);
                 MrsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ImageMaskResponse> ImageMaskOutcome;
+                typedef std::future<ImageMaskOutcome> ImageMaskOutcomeCallable;
+                typedef std::function<void(const MrsClient*, const Model::ImageMaskRequest&, ImageMaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageMaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImageToClassResponse> ImageToClassOutcome;
                 typedef std::future<ImageToClassOutcome> ImageToClassOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::ImageToClassRequest&, ImageToClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageToClassAsyncHandler;
@@ -74,6 +79,15 @@ namespace TencentCloud
                 typedef std::function<void(const MrsClient*, const Model::TurnPDFToObjectAsyncGetResultRequest&, TurnPDFToObjectAsyncGetResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnPDFToObjectAsyncGetResultAsyncHandler;
 
 
+
+                /**
+                 *医疗报告图片脱敏接口
+                 * @param req ImageMaskRequest
+                 * @return ImageMaskOutcome
+                 */
+                ImageMaskOutcome ImageMask(const Model::ImageMaskRequest &request);
+                void ImageMaskAsync(const Model::ImageMaskRequest& request, const ImageMaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImageMaskOutcomeCallable ImageMaskCallable(const Model::ImageMaskRequest& request);
 
                 /**
                  *图片分类

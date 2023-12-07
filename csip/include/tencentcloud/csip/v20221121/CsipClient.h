@@ -45,6 +45,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDbAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDomainAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDomainAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeGatewayAssetsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeGatewayAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeListenerListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeListenerListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribePublicIpAssetsRequest.h>
@@ -132,6 +134,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainAssetsResponse> DescribeDomainAssetsOutcome;
                 typedef std::future<DescribeDomainAssetsOutcome> DescribeDomainAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDomainAssetsRequest&, DescribeDomainAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatewayAssetsResponse> DescribeGatewayAssetsOutcome;
+                typedef std::future<DescribeGatewayAssetsOutcome> DescribeGatewayAssetsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeGatewayAssetsRequest&, DescribeGatewayAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayAssetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeListenerListResponse> DescribeListenerListOutcome;
                 typedef std::future<DescribeListenerListOutcome> DescribeListenerListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeListenerListRequest&, DescribeListenerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenerListAsyncHandler;
@@ -293,6 +298,15 @@ namespace TencentCloud
                 DescribeDomainAssetsOutcome DescribeDomainAssets(const Model::DescribeDomainAssetsRequest &request);
                 void DescribeDomainAssetsAsync(const Model::DescribeDomainAssetsRequest& request, const DescribeDomainAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainAssetsOutcomeCallable DescribeDomainAssetsCallable(const Model::DescribeDomainAssetsRequest& request);
+
+                /**
+                 *获取网关列表
+                 * @param req DescribeGatewayAssetsRequest
+                 * @return DescribeGatewayAssetsOutcome
+                 */
+                DescribeGatewayAssetsOutcome DescribeGatewayAssets(const Model::DescribeGatewayAssetsRequest &request);
+                void DescribeGatewayAssetsAsync(const Model::DescribeGatewayAssetsRequest& request, const DescribeGatewayAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatewayAssetsOutcomeCallable DescribeGatewayAssetsCallable(const Model::DescribeGatewayAssetsRequest& request);
 
                 /**
                  *查询clb监听器列表

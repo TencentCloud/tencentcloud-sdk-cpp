@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool LastLoginIpHasBeenSet() const;
 
                     /**
-                     * 获取最近登录时间
+                     * 获取最近登录时间，回参为空，即为未登录过控制台
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastLoginTime 最近登录时间
+                     * @return LastLoginTime 最近登录时间，回参为空，即为未登录过控制台
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastLoginTime() const;
 
                     /**
-                     * 设置最近登录时间
+                     * 设置最近登录时间，回参为空，即为未登录过控制台
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastLoginTime 最近登录时间
+                     * @param _lastLoginTime 最近登录时间，回参为空，即为未登录过控制台
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -268,7 +268,7 @@ namespace TencentCloud
                     bool m_lastLoginIpHasBeenSet;
 
                     /**
-                     * 最近登录时间
+                     * 最近登录时间，回参为空，即为未登录过控制台
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastLoginTime;

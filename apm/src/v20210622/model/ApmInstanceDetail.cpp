@@ -47,7 +47,9 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_totalCountHasBeenSet(false),
     m_logSetHasBeenSet(false),
     m_metricDurationHasBeenSet(false),
-    m_customShowTagsHasBeenSet(false)
+    m_customShowTagsHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_payModeEffectiveHasBeenSet(false)
 {
 }
 
@@ -339,6 +341,26 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_customShowTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = value["PayMode"].GetInt64();
+        m_payModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayModeEffective") && !value["PayModeEffective"].IsNull())
+    {
+        if (!value["PayModeEffective"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.PayModeEffective` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_payModeEffective = value["PayModeEffective"].GetBool();
+        m_payModeEffectiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -572,6 +594,22 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_payModeEffectiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayModeEffective";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payModeEffective, allocator);
     }
 
 }
@@ -1007,5 +1045,37 @@ void ApmInstanceDetail::SetCustomShowTags(const vector<string>& _customShowTags)
 bool ApmInstanceDetail::CustomShowTagsHasBeenSet() const
 {
     return m_customShowTagsHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void ApmInstanceDetail::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+bool ApmInstanceDetail::GetPayModeEffective() const
+{
+    return m_payModeEffective;
+}
+
+void ApmInstanceDetail::SetPayModeEffective(const bool& _payModeEffective)
+{
+    m_payModeEffective = _payModeEffective;
+    m_payModeEffectiveHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::PayModeEffectiveHasBeenSet() const
+{
+    return m_payModeEffectiveHasBeenSet;
 }
 

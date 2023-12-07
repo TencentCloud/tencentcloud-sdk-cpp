@@ -31,7 +31,8 @@ TextVehicleBack::TextVehicleBack() :
     m_marksHasBeenSet(false),
     m_recordHasBeenSet(false),
     m_totalQuasiMassHasBeenSet(false),
-    m_subPageCodeHasBeenSet(false)
+    m_subPageCodeHasBeenSet(false),
+    m_fuelTypeHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
         m_subPageCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("FuelType") && !value["FuelType"].IsNull())
+    {
+        if (!value["FuelType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.FuelType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fuelType = string(value["FuelType"].GetString());
+        m_fuelTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void TextVehicleBack::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SubPageCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subPageCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fuelTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FuelType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fuelType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void TextVehicleBack::SetSubPageCode(const string& _subPageCode)
 bool TextVehicleBack::SubPageCodeHasBeenSet() const
 {
     return m_subPageCodeHasBeenSet;
+}
+
+string TextVehicleBack::GetFuelType() const
+{
+    return m_fuelType;
+}
+
+void TextVehicleBack::SetFuelType(const string& _fuelType)
+{
+    m_fuelType = _fuelType;
+    m_fuelTypeHasBeenSet = true;
+}
+
+bool TextVehicleBack::FuelTypeHasBeenSet() const
+{
+    return m_fuelTypeHasBeenSet;
 }
 

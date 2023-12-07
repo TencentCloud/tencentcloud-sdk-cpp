@@ -23,6 +23,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/LastMenstrualPeriodBlock.h
   include/tencentcloud/mrs/v20200910/model/Vaccination.h
   include/tencentcloud/mrs/v20200910/model/TimelineEvent.h
+  include/tencentcloud/mrs/v20200910/model/ImageMaskResponse.h
   include/tencentcloud/mrs/v20200910/model/IHCBlock.h
   include/tencentcloud/mrs/v20200910/model/GynaecologyVagina.h
   include/tencentcloud/mrs/v20200910/model/BodyTemperatureBlock.h
@@ -87,6 +88,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/TransfusionHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/MolecularValue.h
   include/tencentcloud/mrs/v20200910/model/ChiefComplaintDetailBlock.h
+  include/tencentcloud/mrs/v20200910/model/ImageMaskFlags.h
   include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectResponse.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineHeart.h
   include/tencentcloud/mrs/v20200910/model/ReportInfo.h
@@ -170,6 +172,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/RelativeHistoryDetailBlock.h
   include/tencentcloud/mrs/v20200910/model/PoslistBlock.h
   include/tencentcloud/mrs/v20200910/model/GynaecologyMenstrualHistory.h
+  include/tencentcloud/mrs/v20200910/model/ImageMaskRequest.h
   include/tencentcloud/mrs/v20200910/model/Endoscopy.h
   include/tencentcloud/mrs/v20200910/model/Prescription.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineBaseItem.h
@@ -261,6 +264,7 @@ set(mrs_src
   src/v20200910/model/LastMenstrualPeriodBlock.cpp
   src/v20200910/model/Vaccination.cpp
   src/v20200910/model/TimelineEvent.cpp
+  src/v20200910/model/ImageMaskResponse.cpp
   src/v20200910/model/IHCBlock.cpp
   src/v20200910/model/GynaecologyVagina.cpp
   src/v20200910/model/BodyTemperatureBlock.cpp
@@ -325,6 +329,7 @@ set(mrs_src
   src/v20200910/model/TransfusionHistoryBlock.cpp
   src/v20200910/model/MolecularValue.cpp
   src/v20200910/model/ChiefComplaintDetailBlock.cpp
+  src/v20200910/model/ImageMaskFlags.cpp
   src/v20200910/model/TurnPDFToObjectResponse.cpp
   src/v20200910/model/InternalMedicineHeart.cpp
   src/v20200910/model/ReportInfo.cpp
@@ -408,6 +413,7 @@ set(mrs_src
   src/v20200910/model/RelativeHistoryDetailBlock.cpp
   src/v20200910/model/PoslistBlock.cpp
   src/v20200910/model/GynaecologyMenstrualHistory.cpp
+  src/v20200910/model/ImageMaskRequest.cpp
   src/v20200910/model/Endoscopy.cpp
   src/v20200910/model/Prescription.cpp
   src/v20200910/model/InternalMedicineBaseItem.cpp
