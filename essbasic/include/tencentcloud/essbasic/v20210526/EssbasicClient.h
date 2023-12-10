@@ -125,6 +125,8 @@
 #include <tencentcloud/essbasic/v20210526/model/DescribeBillUsageDetailResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelSealPolicyWorkflowUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelSealPolicyWorkflowUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoRequest.h>
@@ -318,6 +320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeChannelFlowEvidenceReportResponse> DescribeChannelFlowEvidenceReportOutcome;
                 typedef std::future<DescribeChannelFlowEvidenceReportOutcome> DescribeChannelFlowEvidenceReportOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeChannelFlowEvidenceReportRequest&, DescribeChannelFlowEvidenceReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelFlowEvidenceReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChannelOrganizationsResponse> DescribeChannelOrganizationsOutcome;
+                typedef std::future<DescribeChannelOrganizationsOutcome> DescribeChannelOrganizationsOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::DescribeChannelOrganizationsRequest&, DescribeChannelOrganizationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelOrganizationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeChannelSealPolicyWorkflowUrlResponse> DescribeChannelSealPolicyWorkflowUrlOutcome;
                 typedef std::future<DescribeChannelSealPolicyWorkflowUrlOutcome> DescribeChannelSealPolicyWorkflowUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeChannelSealPolicyWorkflowUrlRequest&, DescribeChannelSealPolicyWorkflowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelSealPolicyWorkflowUrlAsyncHandler;
@@ -1358,6 +1363,15 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 DescribeChannelFlowEvidenceReportOutcome DescribeChannelFlowEvidenceReport(const Model::DescribeChannelFlowEvidenceReportRequest &request);
                 void DescribeChannelFlowEvidenceReportAsync(const Model::DescribeChannelFlowEvidenceReportRequest& request, const DescribeChannelFlowEvidenceReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeChannelFlowEvidenceReportOutcomeCallable DescribeChannelFlowEvidenceReportCallable(const Model::DescribeChannelFlowEvidenceReportRequest& request);
+
+                /**
+                 *查询渠道子客企业信息
+                 * @param req DescribeChannelOrganizationsRequest
+                 * @return DescribeChannelOrganizationsOutcome
+                 */
+                DescribeChannelOrganizationsOutcome DescribeChannelOrganizations(const Model::DescribeChannelOrganizationsRequest &request);
+                void DescribeChannelOrganizationsAsync(const Model::DescribeChannelOrganizationsRequest& request, const DescribeChannelOrganizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChannelOrganizationsOutcomeCallable DescribeChannelOrganizationsCallable(const Model::DescribeChannelOrganizationsRequest& request);
 
                 /**
                  *生成渠道子客用印申请审批小程序链接，链接类型（通过H5唤起小程序或通过APP跳转的方式查看）

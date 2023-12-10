@@ -30,6 +30,8 @@
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h>
 #include <tencentcloud/monitor/v20180724/model/ConditionsTemp.h>
 #include <tencentcloud/monitor/v20180724/model/TagInstance.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmConditionFilter.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmGroupByItem.h>
 #include <tencentcloud/monitor/v20180724/model/Tag.h>
 
 
@@ -791,6 +793,56 @@ namespace TencentCloud
                     bool TagInstancesHasBeenSet() const;
 
                     /**
+                     * 获取过滤条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Filter 过滤条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AlarmConditionFilter GetFilter() const;
+
+                    /**
+                     * 设置过滤条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _filter 过滤条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFilter(const AlarmConditionFilter& _filter);
+
+                    /**
+                     * 判断参数 Filter 是否已赋值
+                     * @return Filter 是否已赋值
+                     * 
+                     */
+                    bool FilterHasBeenSet() const;
+
+                    /**
+                     * 获取聚合条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupBy 聚合条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AlarmGroupByItem> GetGroupBy() const;
+
+                    /**
+                     * 设置聚合条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupBy 聚合条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupBy(const std::vector<AlarmGroupByItem>& _groupBy);
+
+                    /**
+                     * 判断参数 GroupBy 是否已赋值
+                     * @return GroupBy 是否已赋值
+                     * 
+                     */
+                    bool GroupByHasBeenSet() const;
+
+                    /**
                      * 获取策略关联的过滤维度信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterDimensionsParam 策略关联的过滤维度信息
@@ -1172,6 +1224,20 @@ namespace TencentCloud
                      */
                     std::vector<TagInstance> m_tagInstances;
                     bool m_tagInstancesHasBeenSet;
+
+                    /**
+                     * 过滤条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AlarmConditionFilter m_filter;
+                    bool m_filterHasBeenSet;
+
+                    /**
+                     * 聚合条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AlarmGroupByItem> m_groupBy;
+                    bool m_groupByHasBeenSet;
 
                     /**
                      * 策略关联的过滤维度信息

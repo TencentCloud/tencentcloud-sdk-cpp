@@ -69,6 +69,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/PrometheusInstancesOverview.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceInitStatusResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListResponse.h
+  include/tencentcloud/monitor/v20180724/model/AlarmGroupByItem.h
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeCallbacksResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceUsageRequest.h
   include/tencentcloud/monitor/v20180724/model/DeletePrometheusScrapeJobsRequest.h
@@ -304,6 +305,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusAgentsRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoCondition.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceInitStatusRequest.h
+  include/tencentcloud/monitor/v20180724/model/AlarmConditionFilter.h
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusAlertPolicyRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListEvents.h
@@ -497,6 +499,7 @@ set(monitor_src
   src/v20180724/model/PrometheusInstancesOverview.cpp
   src/v20180724/model/DescribePrometheusInstanceInitStatusResponse.cpp
   src/v20180724/model/DescribeProductEventListResponse.cpp
+  src/v20180724/model/AlarmGroupByItem.cpp
   src/v20180724/model/DescribeAlarmNoticeCallbacksResponse.cpp
   src/v20180724/model/DescribePrometheusInstanceUsageRequest.cpp
   src/v20180724/model/DeletePrometheusScrapeJobsRequest.cpp
@@ -732,6 +735,7 @@ set(monitor_src
   src/v20180724/model/DescribePrometheusAgentsRequest.cpp
   src/v20180724/model/DescribePolicyGroupInfoCondition.cpp
   src/v20180724/model/DescribePrometheusInstanceInitStatusRequest.cpp
+  src/v20180724/model/AlarmConditionFilter.cpp
   src/v20180724/model/CreatePrometheusAlertPolicyRequest.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListRequest.cpp
   src/v20180724/model/DescribeProductEventListEvents.cpp

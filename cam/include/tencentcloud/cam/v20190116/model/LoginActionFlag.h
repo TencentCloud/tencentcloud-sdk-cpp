@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool CustomHasBeenSet() const;
 
+                    /**
+                     * 获取邮箱
+                     * @return Mail 邮箱
+                     * 
+                     */
+                    uint64_t GetMail() const;
+
+                    /**
+                     * 设置邮箱
+                     * @param _mail 邮箱
+                     * 
+                     */
+                    void SetMail(const uint64_t& _mail);
+
+                    /**
+                     * 判断参数 Mail 是否已赋值
+                     * @return Mail 是否已赋值
+                     * 
+                     */
+                    bool MailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     uint64_t m_custom;
                     bool m_customHasBeenSet;
+
+                    /**
+                     * 邮箱
+                     */
+                    uint64_t m_mail;
+                    bool m_mailHasBeenSet;
 
                 };
             }

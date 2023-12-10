@@ -50,6 +50,8 @@ AlarmPolicy::AlarmPolicy() :
     m_ruleTypeHasBeenSet(false),
     m_originIdHasBeenSet(false),
     m_tagInstancesHasBeenSet(false),
+    m_filterHasBeenSet(false),
+    m_groupByHasBeenSet(false),
     m_filterDimensionsParamHasBeenSet(false),
     m_isOneClickHasBeenSet(false),
     m_oneClickStatusHasBeenSet(false),
@@ -412,6 +414,43 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
         m_tagInstancesHasBeenSet = true;
     }
 
+    if (value.HasMember("Filter") && !value["Filter"].IsNull())
+    {
+        if (!value["Filter"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.Filter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_filter.Deserialize(value["Filter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_filterHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupBy") && !value["GroupBy"].IsNull())
+    {
+        if (!value["GroupBy"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.GroupBy` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GroupBy"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AlarmGroupByItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_groupBy.push_back(item);
+        }
+        m_groupByHasBeenSet = true;
+    }
+
     if (value.HasMember("FilterDimensionsParam") && !value["FilterDimensionsParam"].IsNull())
     {
         if (!value["FilterDimensionsParam"].IsString())
@@ -759,6 +798,30 @@ void AlarmPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
         int i=0;
         for (auto itr = m_tagInstances.begin(); itr != m_tagInstances.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_filterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_filter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_groupByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupBy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_groupBy.begin(); itr != m_groupBy.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -1293,6 +1356,38 @@ void AlarmPolicy::SetTagInstances(const vector<TagInstance>& _tagInstances)
 bool AlarmPolicy::TagInstancesHasBeenSet() const
 {
     return m_tagInstancesHasBeenSet;
+}
+
+AlarmConditionFilter AlarmPolicy::GetFilter() const
+{
+    return m_filter;
+}
+
+void AlarmPolicy::SetFilter(const AlarmConditionFilter& _filter)
+{
+    m_filter = _filter;
+    m_filterHasBeenSet = true;
+}
+
+bool AlarmPolicy::FilterHasBeenSet() const
+{
+    return m_filterHasBeenSet;
+}
+
+vector<AlarmGroupByItem> AlarmPolicy::GetGroupBy() const
+{
+    return m_groupBy;
+}
+
+void AlarmPolicy::SetGroupBy(const vector<AlarmGroupByItem>& _groupBy)
+{
+    m_groupBy = _groupBy;
+    m_groupByHasBeenSet = true;
+}
+
+bool AlarmPolicy::GroupByHasBeenSet() const
+{
+    return m_groupByHasBeenSet;
 }
 
 string AlarmPolicy::GetFilterDimensionsParam() const

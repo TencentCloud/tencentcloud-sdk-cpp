@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询的站点集合，不填默认查询所有站点。
-                     * @return ZoneIds 查询的站点集合，不填默认查询所有站点。
+                     * 获取查询的站点ID集合。该参数必填。
+                     * @return ZoneIds 查询的站点ID集合。该参数必填。
                      * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置查询的站点集合，不填默认查询所有站点。
-                     * @param _zoneIds 查询的站点集合，不填默认查询所有站点。
+                     * 设置查询的站点ID集合。该参数必填。
+                     * @param _zoneIds 查询的站点ID集合。该参数必填。
                      * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
@@ -138,7 +138,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询的站点集合，不填默认查询所有站点。
+                     * 查询的站点ID集合。该参数必填。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;

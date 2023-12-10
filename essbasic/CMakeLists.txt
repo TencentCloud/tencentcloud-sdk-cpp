@@ -123,12 +123,14 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowApproversResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeBillUsageDetailResponse.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeUsageResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/SignQrCode.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.h
   include/tencentcloud/essbasic/v20210526/model/FillError.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeBillUsageDetailResponse.h
@@ -146,6 +148,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/Filter.h
   include/tencentcloud/essbasic/v20210526/model/FilledComponent.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverItem.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelOrganizationInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchQuickSignUrlResponse.h
@@ -189,7 +192,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/OccupiedSeal.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/UploadFilesRequest.h
-  include/tencentcloud/essbasic/v20210526/model/DescribeUsageResponse.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationBatchSignUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/UsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.h
@@ -443,12 +446,14 @@ set(essbasic_src
   src/v20210526/model/SyncProxyOrganizationOperatorsRequest.cpp
   src/v20210526/model/ChannelCreateFlowApproversResponse.cpp
   src/v20210526/model/DescribeBillUsageDetailResponse.cpp
+  src/v20210526/model/DescribeUsageResponse.cpp
   src/v20210526/model/CreateSignUrlsRequest.cpp
   src/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.cpp
   src/v20210526/model/SignQrCode.cpp
   src/v20210526/model/FlowApproverInfo.cpp
   src/v20210526/model/ChannelCreateUserAutoSignEnableUrlResponse.cpp
   src/v20210526/model/ChannelGetTaskResultApiRequest.cpp
+  src/v20210526/model/DescribeChannelOrganizationsRequest.cpp
   src/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.cpp
   src/v20210526/model/FillError.cpp
   src/v20210526/model/ChannelDescribeBillUsageDetailResponse.cpp
@@ -466,6 +471,7 @@ set(essbasic_src
   src/v20210526/model/Filter.cpp
   src/v20210526/model/FilledComponent.cpp
   src/v20210526/model/FlowApproverItem.cpp
+  src/v20210526/model/ChannelOrganizationInfo.cpp
   src/v20210526/model/CreateSignUrlsResponse.cpp
   src/v20210526/model/ChannelDeleteRoleRequest.cpp
   src/v20210526/model/ChannelCreateBatchQuickSignUrlResponse.cpp
@@ -509,7 +515,7 @@ set(essbasic_src
   src/v20210526/model/OccupiedSeal.cpp
   src/v20210526/model/CreateFlowsByTemplatesRequest.cpp
   src/v20210526/model/UploadFilesRequest.cpp
-  src/v20210526/model/DescribeUsageResponse.cpp
+  src/v20210526/model/DescribeChannelOrganizationsResponse.cpp
   src/v20210526/model/ChannelCreateOrganizationBatchSignUrlResponse.cpp
   src/v20210526/model/UsageDetail.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.cpp

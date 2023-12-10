@@ -2233,6 +2233,49 @@ EssbasicClient::DescribeChannelFlowEvidenceReportOutcomeCallable EssbasicClient:
     return task->get_future();
 }
 
+EssbasicClient::DescribeChannelOrganizationsOutcome EssbasicClient::DescribeChannelOrganizations(const DescribeChannelOrganizationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChannelOrganizations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChannelOrganizationsResponse rsp = DescribeChannelOrganizationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChannelOrganizationsOutcome(rsp);
+        else
+            return DescribeChannelOrganizationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChannelOrganizationsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeChannelOrganizationsAsync(const DescribeChannelOrganizationsRequest& request, const DescribeChannelOrganizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChannelOrganizations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeChannelOrganizationsOutcomeCallable EssbasicClient::DescribeChannelOrganizationsCallable(const DescribeChannelOrganizationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChannelOrganizationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChannelOrganizations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::DescribeChannelSealPolicyWorkflowUrlOutcome EssbasicClient::DescribeChannelSealPolicyWorkflowUrl(const DescribeChannelSealPolicyWorkflowUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeChannelSealPolicyWorkflowUrl");

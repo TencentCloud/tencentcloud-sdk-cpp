@@ -25,6 +25,7 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateDNSAccountListResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneRecordListRequest.h
   include/tencentcloud/privatedns/v20201028/model/PrivateDNSAccount.h
+  include/tencentcloud/privatedns/v20201028/model/QueryAsyncBindVpcStatusResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneRecordListResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneListResponse.h
   include/tencentcloud/privatedns/v20201028/model/AccountVpcInfoOutput.h
@@ -71,6 +72,7 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DeletePrivateZoneResponse.h
   include/tencentcloud/privatedns/v20201028/model/ModifyRecordsStatusRequest.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateDNSAccountRequest.h
+  include/tencentcloud/privatedns/v20201028/model/QueryAsyncBindVpcStatusRequest.h
   include/tencentcloud/privatedns/v20201028/model/MetricData.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateDNSAccountListRequest.h
   include/tencentcloud/privatedns/v20201028/model/PrivateZone.h
@@ -92,6 +94,7 @@ set(privatedns_src
   src/v20201028/model/DescribePrivateDNSAccountListResponse.cpp
   src/v20201028/model/DescribePrivateZoneRecordListRequest.cpp
   src/v20201028/model/PrivateDNSAccount.cpp
+  src/v20201028/model/QueryAsyncBindVpcStatusResponse.cpp
   src/v20201028/model/DescribePrivateZoneRecordListResponse.cpp
   src/v20201028/model/DescribePrivateZoneListResponse.cpp
   src/v20201028/model/AccountVpcInfoOutput.cpp
@@ -138,6 +141,7 @@ set(privatedns_src
   src/v20201028/model/DeletePrivateZoneResponse.cpp
   src/v20201028/model/ModifyRecordsStatusRequest.cpp
   src/v20201028/model/CreatePrivateDNSAccountRequest.cpp
+  src/v20201028/model/QueryAsyncBindVpcStatusRequest.cpp
   src/v20201028/model/MetricData.cpp
   src/v20201028/model/DescribePrivateDNSAccountListRequest.cpp
   src/v20201028/model/PrivateZone.cpp

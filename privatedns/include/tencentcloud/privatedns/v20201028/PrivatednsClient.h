@@ -69,6 +69,8 @@
 #include <tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneVpcResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/ModifyRecordsStatusRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/ModifyRecordsStatusResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/QueryAsyncBindVpcStatusRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/QueryAsyncBindVpcStatusResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/SubscribePrivateZoneServiceRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/SubscribePrivateZoneServiceResponse.h>
 
@@ -154,6 +156,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRecordsStatusResponse> ModifyRecordsStatusOutcome;
                 typedef std::future<ModifyRecordsStatusOutcome> ModifyRecordsStatusOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::ModifyRecordsStatusRequest&, ModifyRecordsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordsStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryAsyncBindVpcStatusResponse> QueryAsyncBindVpcStatusOutcome;
+                typedef std::future<QueryAsyncBindVpcStatusOutcome> QueryAsyncBindVpcStatusOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::QueryAsyncBindVpcStatusRequest&, QueryAsyncBindVpcStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAsyncBindVpcStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubscribePrivateZoneServiceResponse> SubscribePrivateZoneServiceOutcome;
                 typedef std::future<SubscribePrivateZoneServiceOutcome> SubscribePrivateZoneServiceOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::SubscribePrivateZoneServiceRequest&, SubscribePrivateZoneServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubscribePrivateZoneServiceAsyncHandler;
@@ -366,6 +371,15 @@ namespace TencentCloud
                 ModifyRecordsStatusOutcome ModifyRecordsStatus(const Model::ModifyRecordsStatusRequest &request);
                 void ModifyRecordsStatusAsync(const Model::ModifyRecordsStatusRequest& request, const ModifyRecordsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRecordsStatusOutcomeCallable ModifyRecordsStatusCallable(const Model::ModifyRecordsStatusRequest& request);
+
+                /**
+                 *查询异步绑定vpc操作状态
+                 * @param req QueryAsyncBindVpcStatusRequest
+                 * @return QueryAsyncBindVpcStatusOutcome
+                 */
+                QueryAsyncBindVpcStatusOutcome QueryAsyncBindVpcStatus(const Model::QueryAsyncBindVpcStatusRequest &request);
+                void QueryAsyncBindVpcStatusAsync(const Model::QueryAsyncBindVpcStatusRequest& request, const QueryAsyncBindVpcStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryAsyncBindVpcStatusOutcomeCallable QueryAsyncBindVpcStatusCallable(const Model::QueryAsyncBindVpcStatusRequest& request);
 
                 /**
                  *开通私有域解析

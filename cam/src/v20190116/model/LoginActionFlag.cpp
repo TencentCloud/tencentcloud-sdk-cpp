@@ -25,7 +25,8 @@ LoginActionFlag::LoginActionFlag() :
     m_tokenHasBeenSet(false),
     m_stokenHasBeenSet(false),
     m_wechatHasBeenSet(false),
-    m_customHasBeenSet(false)
+    m_customHasBeenSet(false),
+    m_mailHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome LoginActionFlag::Deserialize(const rapidjson::Value &value)
         m_customHasBeenSet = true;
     }
 
+    if (value.HasMember("Mail") && !value["Mail"].IsNull())
+    {
+        if (!value["Mail"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoginActionFlag.Mail` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mail = value["Mail"].GetUint64();
+        m_mailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void LoginActionFlag::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Custom";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_custom, allocator);
+    }
+
+    if (m_mailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mail, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void LoginActionFlag::SetCustom(const uint64_t& _custom)
 bool LoginActionFlag::CustomHasBeenSet() const
 {
     return m_customHasBeenSet;
+}
+
+uint64_t LoginActionFlag::GetMail() const
+{
+    return m_mail;
+}
+
+void LoginActionFlag::SetMail(const uint64_t& _mail)
+{
+    m_mail = _mail;
+    m_mailHasBeenSet = true;
+}
+
+bool LoginActionFlag::MailHasBeenSet() const
+{
+    return m_mailHasBeenSet;
 }
 

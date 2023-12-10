@@ -1029,6 +1029,49 @@ PrivatednsClient::ModifyRecordsStatusOutcomeCallable PrivatednsClient::ModifyRec
     return task->get_future();
 }
 
+PrivatednsClient::QueryAsyncBindVpcStatusOutcome PrivatednsClient::QueryAsyncBindVpcStatus(const QueryAsyncBindVpcStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryAsyncBindVpcStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryAsyncBindVpcStatusResponse rsp = QueryAsyncBindVpcStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryAsyncBindVpcStatusOutcome(rsp);
+        else
+            return QueryAsyncBindVpcStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryAsyncBindVpcStatusOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::QueryAsyncBindVpcStatusAsync(const QueryAsyncBindVpcStatusRequest& request, const QueryAsyncBindVpcStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryAsyncBindVpcStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::QueryAsyncBindVpcStatusOutcomeCallable PrivatednsClient::QueryAsyncBindVpcStatusCallable(const QueryAsyncBindVpcStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryAsyncBindVpcStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryAsyncBindVpcStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PrivatednsClient::SubscribePrivateZoneServiceOutcome PrivatednsClient::SubscribePrivateZoneService(const SubscribePrivateZoneServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "SubscribePrivateZoneService");

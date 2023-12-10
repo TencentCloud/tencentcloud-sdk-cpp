@@ -1803,6 +1803,49 @@ RedisClient::DescribeInstanceShardsOutcomeCallable RedisClient::DescribeInstance
     return task->get_future();
 }
 
+RedisClient::DescribeInstanceSupportFeatureOutcome RedisClient::DescribeInstanceSupportFeature(const DescribeInstanceSupportFeatureRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceSupportFeature");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceSupportFeatureResponse rsp = DescribeInstanceSupportFeatureResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceSupportFeatureOutcome(rsp);
+        else
+            return DescribeInstanceSupportFeatureOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceSupportFeatureOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceSupportFeatureAsync(const DescribeInstanceSupportFeatureRequest& request, const DescribeInstanceSupportFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceSupportFeature(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceSupportFeatureOutcomeCallable RedisClient::DescribeInstanceSupportFeatureCallable(const DescribeInstanceSupportFeatureRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceSupportFeatureOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceSupportFeature(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeInstanceZoneInfoOutcome RedisClient::DescribeInstanceZoneInfo(const DescribeInstanceZoneInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceZoneInfo");
@@ -3179,6 +3222,49 @@ RedisClient::ModifyInstanceAccountOutcomeCallable RedisClient::ModifyInstanceAcc
     return task->get_future();
 }
 
+RedisClient::ModifyInstanceAvailabilityZonesOutcome RedisClient::ModifyInstanceAvailabilityZones(const ModifyInstanceAvailabilityZonesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceAvailabilityZones");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceAvailabilityZonesResponse rsp = ModifyInstanceAvailabilityZonesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceAvailabilityZonesOutcome(rsp);
+        else
+            return ModifyInstanceAvailabilityZonesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceAvailabilityZonesOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyInstanceAvailabilityZonesAsync(const ModifyInstanceAvailabilityZonesRequest& request, const ModifyInstanceAvailabilityZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceAvailabilityZones(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::ModifyInstanceAvailabilityZonesOutcomeCallable RedisClient::ModifyInstanceAvailabilityZonesCallable(const ModifyInstanceAvailabilityZonesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceAvailabilityZonesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceAvailabilityZones(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::ModifyInstanceParamsOutcome RedisClient::ModifyInstanceParams(const ModifyInstanceParamsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceParams");
@@ -3688,6 +3774,49 @@ RedisClient::StartupInstanceOutcomeCallable RedisClient::StartupInstanceCallable
         [this, request]()
         {
             return this->StartupInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::SwitchAccessNewInstanceOutcome RedisClient::SwitchAccessNewInstance(const SwitchAccessNewInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchAccessNewInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchAccessNewInstanceResponse rsp = SwitchAccessNewInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchAccessNewInstanceOutcome(rsp);
+        else
+            return SwitchAccessNewInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchAccessNewInstanceOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::SwitchAccessNewInstanceAsync(const SwitchAccessNewInstanceRequest& request, const SwitchAccessNewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchAccessNewInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::SwitchAccessNewInstanceOutcomeCallable RedisClient::SwitchAccessNewInstanceCallable(const SwitchAccessNewInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchAccessNewInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchAccessNewInstance(request);
         }
     );
 

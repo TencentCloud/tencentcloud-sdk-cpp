@@ -36,7 +36,9 @@ PulsarProInstance::PulsarProInstance() :
     m_scalableTpsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_maxBandWidthHasBeenSet(false)
+    m_maxBandWidthHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,36 @@ CoreInternalOutcome PulsarProInstance::Deserialize(const rapidjson::Value &value
         m_maxBandWidthHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PulsarProInstance.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +370,29 @@ void PulsarProInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "MaxBandWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxBandWidth, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +652,37 @@ void PulsarProInstance::SetMaxBandWidth(const uint64_t& _maxBandWidth)
 bool PulsarProInstance::MaxBandWidthHasBeenSet() const
 {
     return m_maxBandWidthHasBeenSet;
+}
+
+vector<Tag> PulsarProInstance::GetTags() const
+{
+    return m_tags;
+}
+
+void PulsarProInstance::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool PulsarProInstance::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string PulsarProInstance::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void PulsarProInstance::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool PulsarProInstance::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 
