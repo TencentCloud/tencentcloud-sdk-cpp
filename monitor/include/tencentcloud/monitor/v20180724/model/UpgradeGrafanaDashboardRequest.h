@@ -65,6 +65,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
+<li>qcloud</li>
+<li>cvm_process_exporter</li>
+<li>cvm_node_exporter</li>
+<li>cvm</li>
+<li>kubernetes</li>
+<li>cdwch</li>
+<li>rocketmq</li>
 <li>spring_mvc</li>
 <li>mysql</li>
 <li>go</li>
@@ -82,7 +89,16 @@ namespace TencentCloud
 <li>tps</li>
 <li>istio</li>
 <li>etcd</li>
+<li>pts</li>
+<li>kong</li>
                      * @return IntegrationCodes Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
+<li>qcloud</li>
+<li>cvm_process_exporter</li>
+<li>cvm_node_exporter</li>
+<li>cvm</li>
+<li>kubernetes</li>
+<li>cdwch</li>
+<li>rocketmq</li>
 <li>spring_mvc</li>
 <li>mysql</li>
 <li>go</li>
@@ -100,12 +116,21 @@ namespace TencentCloud
 <li>tps</li>
 <li>istio</li>
 <li>etcd</li>
+<li>pts</li>
+<li>kong</li>
                      * 
                      */
                     std::vector<std::string> GetIntegrationCodes() const;
 
                     /**
                      * 设置Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
+<li>qcloud</li>
+<li>cvm_process_exporter</li>
+<li>cvm_node_exporter</li>
+<li>cvm</li>
+<li>kubernetes</li>
+<li>cdwch</li>
+<li>rocketmq</li>
 <li>spring_mvc</li>
 <li>mysql</li>
 <li>go</li>
@@ -123,7 +148,16 @@ namespace TencentCloud
 <li>tps</li>
 <li>istio</li>
 <li>etcd</li>
+<li>pts</li>
+<li>kong</li>
                      * @param _integrationCodes Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
+<li>qcloud</li>
+<li>cvm_process_exporter</li>
+<li>cvm_node_exporter</li>
+<li>cvm</li>
+<li>kubernetes</li>
+<li>cdwch</li>
+<li>rocketmq</li>
 <li>spring_mvc</li>
 <li>mysql</li>
 <li>go</li>
@@ -141,6 +175,8 @@ namespace TencentCloud
 <li>tps</li>
 <li>istio</li>
 <li>etcd</li>
+<li>pts</li>
+<li>kong</li>
                      * 
                      */
                     void SetIntegrationCodes(const std::vector<std::string>& _integrationCodes);
@@ -162,6 +198,13 @@ namespace TencentCloud
 
                     /**
                      * Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
+<li>qcloud</li>
+<li>cvm_process_exporter</li>
+<li>cvm_node_exporter</li>
+<li>cvm</li>
+<li>kubernetes</li>
+<li>cdwch</li>
+<li>rocketmq</li>
 <li>spring_mvc</li>
 <li>mysql</li>
 <li>go</li>
@@ -179,6 +222,8 @@ namespace TencentCloud
 <li>tps</li>
 <li>istio</li>
 <li>etcd</li>
+<li>pts</li>
+<li>kong</li>
                      */
                     std::vector<std::string> m_integrationCodes;
                     bool m_integrationCodesHasBeenSet;

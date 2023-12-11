@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取高级模式
-                     * @return Advance 高级模式
+                     * 获取高级模式（是否使用Session检测），0表示不启用，1表示启用
+                     * @return Advance 高级模式（是否使用Session检测），0表示不启用，1表示启用
                      * 
                      */
                     std::string GetAdvance() const;
 
                     /**
-                     * 设置高级模式
-                     * @param _advance 高级模式
+                     * 设置高级模式（是否使用Session检测），0表示不启用，1表示启用
+                     * @param _advance 高级模式（是否使用Session检测），0表示不启用，1表示启用
                      * 
                      */
                     void SetAdvance(const std::string& _advance);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取匹配方法
-                     * @return MatchFunc 匹配方法
+                     * 获取匹配方法，0表示等于，1表示前缀匹配，2表示包含
+                     * @return MatchFunc 匹配方法，0表示等于，1表示前缀匹配，2表示包含
                      * 
                      */
                     int64_t GetMatchFunc() const;
 
                     /**
-                     * 设置匹配方法
-                     * @param _matchFunc 匹配方法
+                     * 设置匹配方法，0表示等于，1表示前缀匹配，2表示包含
+                     * @param _matchFunc 匹配方法，0表示等于，1表示前缀匹配，2表示包含
                      * 
                      */
                     void SetMatchFunc(const int64_t& _matchFunc);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool MatchFuncHasBeenSet() const;
 
                     /**
-                     * 获取动作
-                     * @return ActionType 动作
+                     * 获取动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截
+                     * @return ActionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置动作
-                     * @param _actionType 动作
+                     * 设置动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截
+                     * @param _actionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool OptionsArrHasBeenSet() const;
 
                     /**
-                     * 获取waf版本
-                     * @return Edition waf版本
+                     * 获取waf版本，sparta-waf或者clb-waf
+                     * @return Edition waf版本，sparta-waf或者clb-waf
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置waf版本
-                     * @param _edition waf版本
+                     * 设置waf版本，sparta-waf或者clb-waf
+                     * @param _edition waf版本，sparta-waf或者clb-waf
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -420,7 +420,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 高级模式
+                     * 高级模式（是否使用Session检测），0表示不启用，1表示启用
                      */
                     std::string m_advance;
                     bool m_advanceHasBeenSet;
@@ -444,13 +444,13 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 匹配方法
+                     * 匹配方法，0表示等于，1表示前缀匹配，2表示包含
                      */
                     int64_t m_matchFunc;
                     bool m_matchFuncHasBeenSet;
 
                     /**
-                     * 动作
+                     * 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
@@ -474,7 +474,7 @@ namespace TencentCloud
                     bool m_optionsArrHasBeenSet;
 
                     /**
-                     * waf版本
+                     * waf版本，sparta-waf或者clb-waf
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;

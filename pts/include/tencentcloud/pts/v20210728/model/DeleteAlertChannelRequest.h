@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取Notice ID
-                     * @return NoticeId Notice ID
+                     * 获取待删除的通知渠道的 Notice ID（所有通知渠道的 Notice ID 可以从 DescribeAlertChannels 接口获取）
+                     * @return NoticeId 待删除的通知渠道的 Notice ID（所有通知渠道的 Notice ID 可以从 DescribeAlertChannels 接口获取）
                      * 
                      */
                     std::string GetNoticeId() const;
 
                     /**
-                     * 设置Notice ID
-                     * @param _noticeId Notice ID
+                     * 设置待删除的通知渠道的 Notice ID（所有通知渠道的 Notice ID 可以从 DescribeAlertChannels 接口获取）
+                     * @param _noticeId 待删除的通知渠道的 Notice ID（所有通知渠道的 Notice ID 可以从 DescribeAlertChannels 接口获取）
                      * 
                      */
                     void SetNoticeId(const std::string& _noticeId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * Notice ID
+                     * 待删除的通知渠道的 Notice ID（所有通知渠道的 Notice ID 可以从 DescribeAlertChannels 接口获取）
                      */
                     std::string m_noticeId;
                     bool m_noticeIdHasBeenSet;

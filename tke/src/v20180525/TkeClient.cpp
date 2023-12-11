@@ -427,6 +427,49 @@ TkeClient::CreateBackupStorageLocationOutcomeCallable TkeClient::CreateBackupSto
     return task->get_future();
 }
 
+TkeClient::CreateCLSLogConfigOutcome TkeClient::CreateCLSLogConfig(const CreateCLSLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCLSLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCLSLogConfigResponse rsp = CreateCLSLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCLSLogConfigOutcome(rsp);
+        else
+            return CreateCLSLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCLSLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateCLSLogConfigAsync(const CreateCLSLogConfigRequest& request, const CreateCLSLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCLSLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateCLSLogConfigOutcomeCallable TkeClient::CreateCLSLogConfigCallable(const CreateCLSLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCLSLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCLSLogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreateClusterOutcome TkeClient::CreateCluster(const CreateClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCluster");
@@ -1065,6 +1108,49 @@ TkeClient::CreateEdgeLogConfigOutcomeCallable TkeClient::CreateEdgeLogConfigCall
         [this, request]()
         {
             return this->CreateEdgeLogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::CreateEksLogConfigOutcome TkeClient::CreateEksLogConfig(const CreateEksLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEksLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEksLogConfigResponse rsp = CreateEksLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEksLogConfigOutcome(rsp);
+        else
+            return CreateEksLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEksLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateEksLogConfigAsync(const CreateEksLogConfigRequest& request, const CreateEksLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEksLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateEksLogConfigOutcomeCallable TkeClient::CreateEksLogConfigCallable(const CreateEksLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEksLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEksLogConfig(request);
         }
     );
 

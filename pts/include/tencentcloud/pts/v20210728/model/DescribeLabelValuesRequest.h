@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
-                     * 获取指标名称
-                     * @return Metric 指标名称
+                     * 获取指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
+                     * @return Metric 指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
-                     * 设置指标名称
-                     * @param _metric 指标名称
+                     * 设置指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
+                     * @param _metric 指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MetricHasBeenSet() const;
 
                     /**
-                     * 获取查询标签名称
-                     * @return LabelName 查询标签名称
+                     * 获取标签名。取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
+                     * @return LabelName 标签名。取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
                      * 
                      */
                     std::string GetLabelName() const;
 
                     /**
-                     * 设置查询标签名称
-                     * @param _labelName 查询标签名称
+                     * 设置标签名。取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
+                     * @param _labelName 标签名。取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
                      * 
                      */
                     void SetLabelName(const std::string& _labelName);
@@ -162,13 +162,13 @@ namespace TencentCloud
                     bool m_scenarioIdHasBeenSet;
 
                     /**
-                     * 指标名称
+                     * 指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
 
                     /**
-                     * 查询标签名称
+                     * 标签名。取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
                      */
                     std::string m_labelName;
                     bool m_labelNameHasBeenSet;

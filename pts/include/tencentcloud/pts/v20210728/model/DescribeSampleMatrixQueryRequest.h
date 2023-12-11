@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
-                     * 获取指标名字
-                     * @return Metric 指标名字
+                     * 获取指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
+                     * @return Metric 指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
-                     * 设置指标名字
-                     * @param _metric 指标名字
+                     * 设置指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
+                     * @param _metric 指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool MetricHasBeenSet() const;
 
                     /**
-                     * 获取聚合函数
-                     * @return Aggregation 聚合函数
+                     * 获取聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge
+                     * @return Aggregation 聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge
                      * 
                      */
                     std::string GetAggregation() const;
 
                     /**
-                     * 设置聚合函数
-                     * @param _aggregation 聚合函数
+                     * 设置聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge
+                     * @param _aggregation 聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge
                      * 
                      */
                     void SetAggregation(const std::string& _aggregation);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool AggregationHasBeenSet() const;
 
                     /**
-                     * 获取指标过滤
-                     * @return Filters 指标过滤
+                     * 获取用标签过滤规则来过滤指标，规则中包含标签名 LabelName、标签值 LabelValue、操作符 Operator（0代表相等，1代表不等）
+                     * @return Filters 用标签过滤规则来过滤指标，规则中包含标签名 LabelName、标签值 LabelValue、操作符 Operator（0代表相等，1代表不等）
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置指标过滤
-                     * @param _filters 指标过滤
+                     * 设置用标签过滤规则来过滤指标，规则中包含标签名 LabelName、标签值 LabelValue、操作符 Operator（0代表相等，1代表不等）
+                     * @param _filters 用标签过滤规则来过滤指标，规则中包含标签名 LabelName、标签值 LabelValue、操作符 Operator（0代表相等，1代表不等）
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -211,19 +211,19 @@ namespace TencentCloud
                     bool m_scenarioIdHasBeenSet;
 
                     /**
-                     * 指标名字
+                     * 指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
 
                     /**
-                     * 聚合函数
+                     * 聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge
                      */
                     std::string m_aggregation;
                     bool m_aggregationHasBeenSet;
 
                     /**
-                     * 指标过滤
+                     * 用标签过滤规则来过滤指标，规则中包含标签名 LabelName、标签值 LabelValue、操作符 Operator（0代表相等，1代表不等）
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

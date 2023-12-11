@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取label名字
-                     * @return LabelName label名字
+                     * 获取标签名
+                     * @return LabelName 标签名
                      * 
                      */
                     std::string GetLabelName() const;
 
                     /**
-                     * 设置label名字
-                     * @param _labelName label名字
+                     * 设置标签名
+                     * @param _labelName 标签名
                      * 
                      */
                     void SetLabelName(const std::string& _labelName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LabelNameHasBeenSet() const;
 
                     /**
-                     * 获取label值
-                     * @return LabelValue label值
+                     * 获取标签值
+                     * @return LabelValue 标签值
                      * 
                      */
                     std::string GetLabelValue() const;
 
                     /**
-                     * 设置label值
-                     * @param _labelValue label值
+                     * 设置标签值
+                     * @param _labelValue 标签值
                      * 
                      */
                     void SetLabelValue(const std::string& _labelValue);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * label名字
+                     * 标签名
                      */
                     std::string m_labelName;
                     bool m_labelNameHasBeenSet;
 
                     /**
-                     * label值
+                     * 标签值
                      */
                     std::string m_labelValue;
                     bool m_labelValueHasBeenSet;

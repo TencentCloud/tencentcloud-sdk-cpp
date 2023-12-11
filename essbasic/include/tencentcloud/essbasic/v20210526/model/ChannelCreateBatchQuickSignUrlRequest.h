@@ -45,31 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量签署的合同流程ID数组。
-注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
-                     * @return FlowIds 批量签署的合同流程ID数组。
-注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
-                     * 
-                     */
-                    std::vector<std::string> GetFlowIds() const;
-
-                    /**
-                     * 设置批量签署的合同流程ID数组。
-注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
-                     * @param _flowIds 批量签署的合同流程ID数组。
-注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
-                     * 
-                     */
-                    void SetFlowIds(const std::vector<std::string>& _flowIds);
-
-                    /**
-                     * 判断参数 FlowIds 是否已赋值
-                     * @return FlowIds 是否已赋值
-                     * 
-                     */
-                    bool FlowIdsHasBeenSet() const;
-
-                    /**
                      * 获取批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
 注:
 `1. ApproverType目前只支持个人类型的签署人。`
@@ -126,6 +101,56 @@ namespace TencentCloud
                      * 
                      */
                     bool AgentHasBeenSet() const;
+
+                    /**
+                     * 获取批量签署的合同流程ID数组。
+注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
+                     * @return FlowIds 批量签署的合同流程ID数组。
+注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
+                     * 
+                     */
+                    std::vector<std::string> GetFlowIds() const;
+
+                    /**
+                     * 设置批量签署的合同流程ID数组。
+注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
+                     * @param _flowIds 批量签署的合同流程ID数组。
+注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
+                     * 
+                     */
+                    void SetFlowIds(const std::vector<std::string>& _flowIds);
+
+                    /**
+                     * 判断参数 FlowIds 是否已赋值
+                     * @return FlowIds 是否已赋值
+                     * 
+                     */
+                    bool FlowIdsHasBeenSet() const;
+
+                    /**
+                     * 获取合同组编号
+注：`该参数和合同流程ID数组必须二选一`
+                     * @return FlowGroupId 合同组编号
+注：`该参数和合同流程ID数组必须二选一`
+                     * 
+                     */
+                    std::string GetFlowGroupId() const;
+
+                    /**
+                     * 设置合同组编号
+注：`该参数和合同流程ID数组必须二选一`
+                     * @param _flowGroupId 合同组编号
+注：`该参数和合同流程ID数组必须二选一`
+                     * 
+                     */
+                    void SetFlowGroupId(const std::string& _flowGroupId);
+
+                    /**
+                     * 判断参数 FlowGroupId 是否已赋值
+                     * @return FlowGroupId 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupIdHasBeenSet() const;
 
                     /**
                      * 获取签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)
@@ -237,13 +262,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量签署的合同流程ID数组。
-注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
-                     */
-                    std::vector<std::string> m_flowIds;
-                    bool m_flowIdsHasBeenSet;
-
-                    /**
                      * 批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
 注:
 `1. ApproverType目前只支持个人类型的签署人。`
@@ -258,6 +276,20 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 批量签署的合同流程ID数组。
+注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
+                     */
+                    std::vector<std::string> m_flowIds;
+                    bool m_flowIdsHasBeenSet;
+
+                    /**
+                     * 合同组编号
+注：`该参数和合同流程ID数组必须二选一`
+                     */
+                    std::string m_flowGroupId;
+                    bool m_flowGroupIdHasBeenSet;
 
                     /**
                      * 签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)

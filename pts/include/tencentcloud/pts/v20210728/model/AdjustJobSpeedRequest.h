@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取目标RPS
-                     * @return TargetRequestsPerSecond 目标RPS
+                     * 获取目标 RPS。其取值应大于起始 RPS，并且小于最大 RPS
+                     * @return TargetRequestsPerSecond 目标 RPS。其取值应大于起始 RPS，并且小于最大 RPS
                      * 
                      */
                     int64_t GetTargetRequestsPerSecond() const;
 
                     /**
-                     * 设置目标RPS
-                     * @param _targetRequestsPerSecond 目标RPS
+                     * 设置目标 RPS。其取值应大于起始 RPS，并且小于最大 RPS
+                     * @param _targetRequestsPerSecond 目标 RPS。其取值应大于起始 RPS，并且小于最大 RPS
                      * 
                      */
                     void SetTargetRequestsPerSecond(const int64_t& _targetRequestsPerSecond);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 目标RPS
+                     * 目标 RPS。其取值应大于起始 RPS，并且小于最大 RPS
                      */
                     int64_t m_targetRequestsPerSecond;
                     bool m_targetRequestsPerSecondHasBeenSet;

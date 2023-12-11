@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取文件 ID 数组
-                     * @return FileIds 文件 ID 数组
+                     * 获取待删除的文件的 ID（所有文件 ID 可从接口 DescribeFiles 获取）
+                     * @return FileIds 待删除的文件的 ID（所有文件 ID 可从接口 DescribeFiles 获取）
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
-                     * 设置文件 ID 数组
-                     * @param _fileIds 文件 ID 数组
+                     * 设置待删除的文件的 ID（所有文件 ID 可从接口 DescribeFiles 获取）
+                     * @param _fileIds 待删除的文件的 ID（所有文件 ID 可从接口 DescribeFiles 获取）
                      * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 文件 ID 数组
+                     * 待删除的文件的 ID（所有文件 ID 可从接口 DescribeFiles 获取）
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;

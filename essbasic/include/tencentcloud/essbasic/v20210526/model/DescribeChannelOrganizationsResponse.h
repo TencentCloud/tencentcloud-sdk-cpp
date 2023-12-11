@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取企业企业信息列表。
-                     * @return ChannelOrganizationInfos 企业企业信息列表。
+                     * 获取满足查询条件的企业信息列表。
+                     * @return ChannelOrganizationInfos 满足查询条件的企业信息列表。
                      * 
                      */
                     std::vector<ChannelOrganizationInfo> GetChannelOrganizationInfos() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的企业数量。
-                     * @return Total 符合条件的企业数量。
+                     * 获取满足查询条件的企业总数量。
+                     * @return Total 满足查询条件的企业总数量。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -103,7 +103,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 企业企业信息列表。
+                     * 满足查询条件的企业信息列表。
                      */
                     std::vector<ChannelOrganizationInfo> m_channelOrganizationInfos;
                     bool m_channelOrganizationInfosHasBeenSet;
@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 符合条件的企业数量。
+                     * 满足查询条件的企业总数量。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

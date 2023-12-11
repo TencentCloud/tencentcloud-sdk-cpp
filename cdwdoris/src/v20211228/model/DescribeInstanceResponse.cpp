@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcr/v20190924/model/DescribeCustomAccountsResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/DescribeInstanceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcr::V20190924::Model;
+using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
-DescribeCustomAccountsResponse::DescribeCustomAccountsResponse() :
-    m_customAccountsHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+DescribeInstanceResponse::DescribeInstanceResponse() :
+    m_instanceInfoHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeCustomAccountsResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,40 @@ CoreInternalOutcome DescribeCustomAccountsResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("CustomAccounts") && !rsp["CustomAccounts"].IsNull())
+    if (rsp.HasMember("InstanceInfo") && !rsp["InstanceInfo"].IsNull())
     {
-        if (!rsp["CustomAccounts"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `CustomAccounts` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["CustomAccounts"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["InstanceInfo"].IsObject())
         {
-            CustomAccount item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_customAccounts.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo` is not object type").SetRequestId(requestId));
         }
-        m_customAccountsHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
+        CoreInternalOutcome outcome = m_instanceInfo.Deserialize(rsp["InstanceInfo"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
+
+        m_instanceInfoHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeCustomAccountsResponse::ToJsonString() const
+string DescribeInstanceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_customAccountsHasBeenSet)
+    if (m_instanceInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomAccounts";
+        string key = "InstanceInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_customAccounts.begin(); itr != m_customAccounts.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +110,14 @@ string DescribeCustomAccountsResponse::ToJsonString() const
 }
 
 
-vector<CustomAccount> DescribeCustomAccountsResponse::GetCustomAccounts() const
+InstanceInfo DescribeInstanceResponse::GetInstanceInfo() const
 {
-    return m_customAccounts;
+    return m_instanceInfo;
 }
 
-bool DescribeCustomAccountsResponse::CustomAccountsHasBeenSet() const
+bool DescribeInstanceResponse::InstanceInfoHasBeenSet() const
 {
-    return m_customAccountsHasBeenSet;
-}
-
-int64_t DescribeCustomAccountsResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeCustomAccountsResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
+    return m_instanceInfoHasBeenSet;
 }
 
 

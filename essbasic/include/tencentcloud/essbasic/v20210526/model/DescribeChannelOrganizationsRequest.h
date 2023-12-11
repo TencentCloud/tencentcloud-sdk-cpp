@@ -51,6 +51,7 @@ namespace TencentCloud
 渠道应用标识: Agent.AppId
 第三方平台子客企业标识: Agent.ProxyOrganizationOpenId
 第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId
+
 第三方平台子客企业和员工必须已经经过实名认证
                      * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
 
@@ -59,6 +60,7 @@ namespace TencentCloud
 渠道应用标识: Agent.AppId
 第三方平台子客企业标识: Agent.ProxyOrganizationOpenId
 第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId
+
 第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
@@ -72,6 +74,7 @@ namespace TencentCloud
 渠道应用标识: Agent.AppId
 第三方平台子客企业标识: Agent.ProxyOrganizationOpenId
 第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId
+
 第三方平台子客企业和员工必须已经经过实名认证
                      * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
 
@@ -80,6 +83,7 @@ namespace TencentCloud
 渠道应用标识: Agent.AppId
 第三方平台子客企业标识: Agent.ProxyOrganizationOpenId
 第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId
+
 第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
@@ -114,15 +118,23 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取子客OrganizationOpenId，定向查询某个子客的企业数据。
-                     * @return OrganizationOpenId 子客OrganizationOpenId，定向查询某个子客的企业数据。
+                     * 获取该字段是指第三方平台子客企业的唯一标识，用于查询单独某个子客的企业数据。
+
+**注**：`如果需要批量查询本应用下的所有企业的信息，则该字段不需要赋值`
+                     * @return OrganizationOpenId 该字段是指第三方平台子客企业的唯一标识，用于查询单独某个子客的企业数据。
+
+**注**：`如果需要批量查询本应用下的所有企业的信息，则该字段不需要赋值`
                      * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置子客OrganizationOpenId，定向查询某个子客的企业数据。
-                     * @param _organizationOpenId 子客OrganizationOpenId，定向查询某个子客的企业数据。
+                     * 设置该字段是指第三方平台子客企业的唯一标识，用于查询单独某个子客的企业数据。
+
+**注**：`如果需要批量查询本应用下的所有企业的信息，则该字段不需要赋值`
+                     * @param _organizationOpenId 该字段是指第三方平台子客企业的唯一标识，用于查询单独某个子客的企业数据。
+
+**注**：`如果需要批量查询本应用下的所有企业的信息，则该字段不需要赋值`
                      * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
@@ -135,47 +147,39 @@ namespace TencentCloud
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取企业认证状态过滤字段。可值如下：
-<ul>
-  <li>**"UNVERIFIED"**： 未认证的企业</li>
+                     * 获取可以按照当前企业的认证状态进行过滤。可值如下：
+<ul><li>**"UNVERIFIED"**： 未认证的企业</li>
   <li>**"VERIFYINGLEGALPENDINGAUTHORIZATION"**： 认证中待法人授权的企业</li>
   <li>**"VERIFYINGAUTHORIZATIONFILEPENDING"**： 认证中授权书审核中的企业</li>
   <li>**"VERIFYINGAUTHORIZATIONFILEREJECT"**： 认证中授权书已驳回的企业</li>
-  <li>**"VERIFYING"**： 认证中的企业</li>
-  <li>**"VERIFIED"**： 已认证的企业</li>
-</ul>
-                     * @return AuthorizationStatusList 企业认证状态过滤字段。可值如下：
-<ul>
-  <li>**"UNVERIFIED"**： 未认证的企业</li>
+  <li>**"VERIFYING"**： 认证进行中的企业</li>
+  <li>**"VERIFIED"**： 已认证完成的企业</li></ul>
+                     * @return AuthorizationStatusList 可以按照当前企业的认证状态进行过滤。可值如下：
+<ul><li>**"UNVERIFIED"**： 未认证的企业</li>
   <li>**"VERIFYINGLEGALPENDINGAUTHORIZATION"**： 认证中待法人授权的企业</li>
   <li>**"VERIFYINGAUTHORIZATIONFILEPENDING"**： 认证中授权书审核中的企业</li>
   <li>**"VERIFYINGAUTHORIZATIONFILEREJECT"**： 认证中授权书已驳回的企业</li>
-  <li>**"VERIFYING"**： 认证中的企业</li>
-  <li>**"VERIFIED"**： 已认证的企业</li>
-</ul>
+  <li>**"VERIFYING"**： 认证进行中的企业</li>
+  <li>**"VERIFIED"**： 已认证完成的企业</li></ul>
                      * 
                      */
                     std::vector<std::string> GetAuthorizationStatusList() const;
 
                     /**
-                     * 设置企业认证状态过滤字段。可值如下：
-<ul>
-  <li>**"UNVERIFIED"**： 未认证的企业</li>
+                     * 设置可以按照当前企业的认证状态进行过滤。可值如下：
+<ul><li>**"UNVERIFIED"**： 未认证的企业</li>
   <li>**"VERIFYINGLEGALPENDINGAUTHORIZATION"**： 认证中待法人授权的企业</li>
   <li>**"VERIFYINGAUTHORIZATIONFILEPENDING"**： 认证中授权书审核中的企业</li>
   <li>**"VERIFYINGAUTHORIZATIONFILEREJECT"**： 认证中授权书已驳回的企业</li>
-  <li>**"VERIFYING"**： 认证中的企业</li>
-  <li>**"VERIFIED"**： 已认证的企业</li>
-</ul>
-                     * @param _authorizationStatusList 企业认证状态过滤字段。可值如下：
-<ul>
-  <li>**"UNVERIFIED"**： 未认证的企业</li>
+  <li>**"VERIFYING"**： 认证进行中的企业</li>
+  <li>**"VERIFIED"**： 已认证完成的企业</li></ul>
+                     * @param _authorizationStatusList 可以按照当前企业的认证状态进行过滤。可值如下：
+<ul><li>**"UNVERIFIED"**： 未认证的企业</li>
   <li>**"VERIFYINGLEGALPENDINGAUTHORIZATION"**： 认证中待法人授权的企业</li>
   <li>**"VERIFYINGAUTHORIZATIONFILEPENDING"**： 认证中授权书审核中的企业</li>
   <li>**"VERIFYINGAUTHORIZATIONFILEREJECT"**： 认证中授权书已驳回的企业</li>
-  <li>**"VERIFYING"**： 认证中的企业</li>
-  <li>**"VERIFIED"**： 已认证的企业</li>
-</ul>
+  <li>**"VERIFYING"**： 认证进行中的企业</li>
+  <li>**"VERIFIED"**： 已认证完成的企业</li></ul>
                      * 
                      */
                     void SetAuthorizationStatusList(const std::vector<std::string>& _authorizationStatusList);
@@ -218,6 +222,7 @@ namespace TencentCloud
 渠道应用标识: Agent.AppId
 第三方平台子客企业标识: Agent.ProxyOrganizationOpenId
 第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId
+
 第三方平台子客企业和员工必须已经经过实名认证
                      */
                     Agent m_agent;
@@ -230,21 +235,21 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 子客OrganizationOpenId，定向查询某个子客的企业数据。
+                     * 该字段是指第三方平台子客企业的唯一标识，用于查询单独某个子客的企业数据。
+
+**注**：`如果需要批量查询本应用下的所有企业的信息，则该字段不需要赋值`
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
-                     * 企业认证状态过滤字段。可值如下：
-<ul>
-  <li>**"UNVERIFIED"**： 未认证的企业</li>
+                     * 可以按照当前企业的认证状态进行过滤。可值如下：
+<ul><li>**"UNVERIFIED"**： 未认证的企业</li>
   <li>**"VERIFYINGLEGALPENDINGAUTHORIZATION"**： 认证中待法人授权的企业</li>
   <li>**"VERIFYINGAUTHORIZATIONFILEPENDING"**： 认证中授权书审核中的企业</li>
   <li>**"VERIFYINGAUTHORIZATIONFILEREJECT"**： 认证中授权书已驳回的企业</li>
-  <li>**"VERIFYING"**： 认证中的企业</li>
-  <li>**"VERIFIED"**： 已认证的企业</li>
-</ul>
+  <li>**"VERIFYING"**： 认证进行中的企业</li>
+  <li>**"VERIFIED"**： 已认证完成的企业</li></ul>
                      */
                     std::vector<std::string> m_authorizationStatusList;
                     bool m_authorizationStatusListHasBeenSet;

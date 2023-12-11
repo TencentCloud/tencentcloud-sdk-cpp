@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID
-                     * @return VpcId VPC ID
+                     * 获取VPC ID(可通过 vpc:DescribeVpcs 接口获取，与实例同地域)
+                     * @return VpcId VPC ID(可通过 vpc:DescribeVpcs 接口获取，与实例同地域)
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC ID
-                     * @param _vpcId VPC ID
+                     * 设置VPC ID(可通过 vpc:DescribeVpcs 接口获取，与实例同地域)
+                     * @param _vpcId VPC ID(可通过 vpc:DescribeVpcs 接口获取，与实例同地域)
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID
-                     * @return SubnetId 子网 ID
+                     * 获取子网 ID(可通过 vpc:DescribeSubnets 接口获取)
+                     * @return SubnetId 子网 ID(可通过 vpc:DescribeSubnets 接口获取)
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网 ID
-                     * @param _subnetId 子网 ID
+                     * 设置子网 ID(可通过 vpc:DescribeSubnets 接口获取)
+                     * @param _subnetId 子网 ID(可通过 vpc:DescribeSubnets 接口获取)
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DataRetentionTimeHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取可用区(与子网同可用区)
+                     * @return Zone 可用区(与子网同可用区)
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置可用区(与子网同可用区)
+                     * @param _zone 可用区(与子网同可用区)
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -199,13 +199,13 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * VPC ID
+                     * VPC ID(可通过 vpc:DescribeVpcs 接口获取，与实例同地域)
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网 ID
+                     * 子网 ID(可通过 vpc:DescribeSubnets 接口获取)
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -217,7 +217,7 @@ namespace TencentCloud
                     bool m_dataRetentionTimeHasBeenSet;
 
                     /**
-                     * 可用区
+                     * 可用区(与子网同可用区)
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

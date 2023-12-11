@@ -23,10 +23,11 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreateBatchQuickSignUrlRequest::CreateBatchQuickSignUrlRequest() :
-    m_flowIdsHasBeenSet(false),
     m_flowApproverInfoHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_operatorHasBeenSet(false),
+    m_flowIdsHasBeenSet(false),
+    m_flowGroupIdHasBeenSet(false),
     m_jumpUrlHasBeenSet(false),
     m_signatureTypesHasBeenSet(false),
     m_approverSignTypesHasBeenSet(false)
@@ -39,19 +40,6 @@ string CreateBatchQuickSignUrlRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_flowIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_flowIds.begin(); itr != m_flowIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
 
     if (m_flowApproverInfoHasBeenSet)
     {
@@ -78,6 +66,27 @@ string CreateBatchQuickSignUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_flowIds.begin(); itr != m_flowIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_flowGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jumpUrlHasBeenSet)
@@ -121,22 +130,6 @@ string CreateBatchQuickSignUrlRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<string> CreateBatchQuickSignUrlRequest::GetFlowIds() const
-{
-    return m_flowIds;
-}
-
-void CreateBatchQuickSignUrlRequest::SetFlowIds(const vector<string>& _flowIds)
-{
-    m_flowIds = _flowIds;
-    m_flowIdsHasBeenSet = true;
-}
-
-bool CreateBatchQuickSignUrlRequest::FlowIdsHasBeenSet() const
-{
-    return m_flowIdsHasBeenSet;
-}
 
 FlowCreateApprover CreateBatchQuickSignUrlRequest::GetFlowApproverInfo() const
 {
@@ -184,6 +177,38 @@ void CreateBatchQuickSignUrlRequest::SetOperator(const UserInfo& _operator)
 bool CreateBatchQuickSignUrlRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+vector<string> CreateBatchQuickSignUrlRequest::GetFlowIds() const
+{
+    return m_flowIds;
+}
+
+void CreateBatchQuickSignUrlRequest::SetFlowIds(const vector<string>& _flowIds)
+{
+    m_flowIds = _flowIds;
+    m_flowIdsHasBeenSet = true;
+}
+
+bool CreateBatchQuickSignUrlRequest::FlowIdsHasBeenSet() const
+{
+    return m_flowIdsHasBeenSet;
+}
+
+string CreateBatchQuickSignUrlRequest::GetFlowGroupId() const
+{
+    return m_flowGroupId;
+}
+
+void CreateBatchQuickSignUrlRequest::SetFlowGroupId(const string& _flowGroupId)
+{
+    m_flowGroupId = _flowGroupId;
+    m_flowGroupIdHasBeenSet = true;
+}
+
+bool CreateBatchQuickSignUrlRequest::FlowGroupIdHasBeenSet() const
+{
+    return m_flowGroupIdHasBeenSet;
 }
 
 string CreateBatchQuickSignUrlRequest::GetJumpUrl() const

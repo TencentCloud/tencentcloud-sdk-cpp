@@ -123,8 +123,6 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeChartDownloadInfoRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeChartDownloadInfoResponse.h>
-#include <tencentcloud/tcr/v20190924/model/DescribeCustomAccountsRequest.h>
-#include <tencentcloud/tcr/v20190924/model/DescribeCustomAccountsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeFavorRepositoryPersonalRequest.h>
@@ -407,9 +405,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeChartDownloadInfoResponse> DescribeChartDownloadInfoOutcome;
                 typedef std::future<DescribeChartDownloadInfoOutcome> DescribeChartDownloadInfoOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeChartDownloadInfoRequest&, DescribeChartDownloadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChartDownloadInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCustomAccountsResponse> DescribeCustomAccountsOutcome;
-                typedef std::future<DescribeCustomAccountsOutcome> DescribeCustomAccountsOutcomeCallable;
-                typedef std::function<void(const TcrClient*, const Model::DescribeCustomAccountsRequest&, DescribeCustomAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExternalEndpointStatusResponse> DescribeExternalEndpointStatusOutcome;
                 typedef std::future<DescribeExternalEndpointStatusOutcome> DescribeExternalEndpointStatusOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeExternalEndpointStatusRequest&, DescribeExternalEndpointStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalEndpointStatusAsyncHandler;
@@ -1041,17 +1036,6 @@ namespace TencentCloud
                 DescribeChartDownloadInfoOutcome DescribeChartDownloadInfo(const Model::DescribeChartDownloadInfoRequest &request);
                 void DescribeChartDownloadInfoAsync(const Model::DescribeChartDownloadInfoRequest& request, const DescribeChartDownloadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeChartDownloadInfoOutcomeCallable DescribeChartDownloadInfoCallable(const Model::DescribeChartDownloadInfoRequest& request);
-
-                /**
-                 *接口未使用
-
-查询自定义账号
-                 * @param req DescribeCustomAccountsRequest
-                 * @return DescribeCustomAccountsOutcome
-                 */
-                DescribeCustomAccountsOutcome DescribeCustomAccounts(const Model::DescribeCustomAccountsRequest &request);
-                void DescribeCustomAccountsAsync(const Model::DescribeCustomAccountsRequest& request, const DescribeCustomAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCustomAccountsOutcomeCallable DescribeCustomAccountsCallable(const Model::DescribeCustomAccountsRequest& request);
 
                 /**
                  *查询实例公网访问入口状态

@@ -327,6 +327,27 @@ namespace TencentCloud
                      */
                     bool LicenseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * @return SceneKey <ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * 
+                     */
+                    std::string GetSceneKey() const;
+
+                    /**
+                     * 设置<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * @param _sceneKey <ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * 
+                     */
+                    void SetSceneKey(const std::string& _sceneKey);
+
+                    /**
+                     * 判断参数 SceneKey 是否已赋值
+                     * @return SceneKey 是否已赋值
+                     * 
+                     */
+                    bool SceneKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +428,12 @@ namespace TencentCloud
                      */
                     int64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;
+
+                    /**
+                     * <ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     */
+                    std::string m_sceneKey;
+                    bool m_sceneKeyHasBeenSet;
 
                 };
             }

@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取电子签企业Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrganizationId 电子签企业Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）
+                     * @return OrganizationId 电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）
                      * 
                      */
                     std::string GetOrganizationId() const;
 
                     /**
-                     * 设置电子签企业Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _organizationId 电子签企业Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）
+                     * @param _organizationId 电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）
                      * 
                      */
                     void SetOrganizationId(const std::string& _organizationId);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取电子签企业OpenId
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrganizationOpenId 电子签企业OpenId
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取第三方平台子客企业的唯一标识
+                     * @return OrganizationOpenId 第三方平台子客企业的唯一标识
                      * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置电子签企业OpenId
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _organizationOpenId 电子签企业OpenId
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置第三方平台子客企业的唯一标识
+                     * @param _organizationOpenId 第三方平台子客企业的唯一标识
                      * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取企业名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrganizationName 企业名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取第三方平台子客企业名称
+                     * @return OrganizationName 第三方平台子客企业名称
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置企业名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _organizationName 企业名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置第三方平台子客企业名称
+                     * @param _organizationName 第三方平台子客企业名称
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -122,19 +110,15 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取企业信用代码
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UnifiedSocialCreditCode 企业信用代码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取企业的统一社会信用代码
+                     * @return UnifiedSocialCreditCode 企业的统一社会信用代码
                      * 
                      */
                     std::string GetUnifiedSocialCreditCode() const;
 
                     /**
-                     * 设置企业信用代码
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _unifiedSocialCreditCode 企业信用代码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置企业的统一社会信用代码
+                     * @param _unifiedSocialCreditCode 企业的统一社会信用代码
                      * 
                      */
                     void SetUnifiedSocialCreditCode(const std::string& _unifiedSocialCreditCode);
@@ -147,19 +131,15 @@ namespace TencentCloud
                     bool UnifiedSocialCreditCodeHasBeenSet() const;
 
                     /**
-                     * 获取法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LegalName 法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取企业法定代表人的姓名
+                     * @return LegalName 企业法定代表人的姓名
                      * 
                      */
                     std::string GetLegalName() const;
 
                     /**
-                     * 设置法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _legalName 法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置企业法定代表人的姓名
+                     * @param _legalName 企业法定代表人的姓名
                      * 
                      */
                     void SetLegalName(const std::string& _legalName);
@@ -172,19 +152,15 @@ namespace TencentCloud
                     bool LegalNameHasBeenSet() const;
 
                     /**
-                     * 获取法人OpenId
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LegalOpenId 法人OpenId
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取企业法定代表人作为第三方平台子客企业员工的唯一标识
+                     * @return LegalOpenId 企业法定代表人作为第三方平台子客企业员工的唯一标识
                      * 
                      */
                     std::string GetLegalOpenId() const;
 
                     /**
-                     * 设置法人OpenId
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _legalOpenId 法人OpenId
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置企业法定代表人作为第三方平台子客企业员工的唯一标识
+                     * @param _legalOpenId 企业法定代表人作为第三方平台子客企业员工的唯一标识
                      * 
                      */
                     void SetLegalOpenId(const std::string& _legalOpenId);
@@ -197,19 +173,15 @@ namespace TencentCloud
                     bool LegalOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取超管姓名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdminName 超管姓名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取企业超级管理员的姓名
+                     * @return AdminName 企业超级管理员的姓名
                      * 
                      */
                     std::string GetAdminName() const;
 
                     /**
-                     * 设置超管姓名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _adminName 超管姓名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置企业超级管理员的姓名
+                     * @param _adminName 企业超级管理员的姓名
                      * 
                      */
                     void SetAdminName(const std::string& _adminName);
@@ -222,19 +194,15 @@ namespace TencentCloud
                     bool AdminNameHasBeenSet() const;
 
                     /**
-                     * 获取超管OpenId
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdminOpenId 超管OpenId
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取企业超级管理员作为第三方平台子客企业员工的唯一标识
+                     * @return AdminOpenId 企业超级管理员作为第三方平台子客企业员工的唯一标识
                      * 
                      */
                     std::string GetAdminOpenId() const;
 
                     /**
-                     * 设置超管OpenId
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _adminOpenId 超管OpenId
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置企业超级管理员作为第三方平台子客企业员工的唯一标识
+                     * @param _adminOpenId 企业超级管理员作为第三方平台子客企业员工的唯一标识
                      * 
                      */
                     void SetAdminOpenId(const std::string& _adminOpenId);
@@ -247,19 +215,19 @@ namespace TencentCloud
                     bool AdminOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取超管手机号，脱敏后返回
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdminMobile 超管手机号，脱敏后返回
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取企业超级管理员的手机号码
+**注**：`手机号码脱敏（隐藏部分用*替代）`
+                     * @return AdminMobile 企业超级管理员的手机号码
+**注**：`手机号码脱敏（隐藏部分用*替代）`
                      * 
                      */
                     std::string GetAdminMobile() const;
 
                     /**
-                     * 设置超管手机号，脱敏后返回
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _adminMobile 超管手机号，脱敏后返回
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置企业超级管理员的手机号码
+**注**：`手机号码脱敏（隐藏部分用*替代）`
+                     * @param _adminMobile 企业超级管理员的手机号码
+**注**：`手机号码脱敏（隐藏部分用*替代）`
                      * 
                      */
                     void SetAdminMobile(const std::string& _adminMobile);
@@ -281,7 +249,6 @@ namespace TencentCloud
   <li>**"VERIFYING"**： 认证中的企业</li>
   <li>**"VERIFIED"**： 已认证的企业</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizationStatus 企业认证状态字段。值如下：
 <ul>
   <li>**"UNVERIFIED"**： 未认证的企业</li>
@@ -291,7 +258,6 @@ namespace TencentCloud
   <li>**"VERIFYING"**： 认证中的企业</li>
   <li>**"VERIFIED"**： 已认证的企业</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthorizationStatus() const;
@@ -306,7 +272,6 @@ namespace TencentCloud
   <li>**"VERIFYING"**： 认证中的企业</li>
   <li>**"VERIFIED"**： 已认证的企业</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizationStatus 企业认证状态字段。值如下：
 <ul>
   <li>**"UNVERIFIED"**： 未认证的企业</li>
@@ -316,7 +281,6 @@ namespace TencentCloud
   <li>**"VERIFYING"**： 认证中的企业</li>
   <li>**"VERIFIED"**： 已认证的企业</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizationStatus(const std::string& _authorizationStatus);
@@ -336,7 +300,6 @@ namespace TencentCloud
   <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>
   <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizationType 企业认证方式字段。值如下：
 <ul>
   <li>**"AuthorizationInit"**： 暂未选择授权方式</li>
@@ -344,7 +307,6 @@ namespace TencentCloud
   <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>
   <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthorizationType() const;
@@ -357,7 +319,6 @@ namespace TencentCloud
   <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>
   <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizationType 企业认证方式字段。值如下：
 <ul>
   <li>**"AuthorizationInit"**： 暂未选择授权方式</li>
@@ -365,7 +326,6 @@ namespace TencentCloud
   <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>
   <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizationType(const std::string& _authorizationType);
@@ -380,64 +340,56 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 电子签企业Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 电子签企业OpenId
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 第三方平台子客企业的唯一标识
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
-                     * 企业名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 第三方平台子客企业名称
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 企业信用代码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 企业的统一社会信用代码
                      */
                     std::string m_unifiedSocialCreditCode;
                     bool m_unifiedSocialCreditCodeHasBeenSet;
 
                     /**
-                     * 法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 企业法定代表人的姓名
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
 
                     /**
-                     * 法人OpenId
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 企业法定代表人作为第三方平台子客企业员工的唯一标识
                      */
                     std::string m_legalOpenId;
                     bool m_legalOpenIdHasBeenSet;
 
                     /**
-                     * 超管姓名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 企业超级管理员的姓名
                      */
                     std::string m_adminName;
                     bool m_adminNameHasBeenSet;
 
                     /**
-                     * 超管OpenId
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 企业超级管理员作为第三方平台子客企业员工的唯一标识
                      */
                     std::string m_adminOpenId;
                     bool m_adminOpenIdHasBeenSet;
 
                     /**
-                     * 超管手机号，脱敏后返回
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 企业超级管理员的手机号码
+**注**：`手机号码脱敏（隐藏部分用*替代）`
                      */
                     std::string m_adminMobile;
                     bool m_adminMobileHasBeenSet;
@@ -452,7 +404,6 @@ namespace TencentCloud
   <li>**"VERIFYING"**： 认证中的企业</li>
   <li>**"VERIFIED"**： 已认证的企业</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authorizationStatus;
                     bool m_authorizationStatusHasBeenSet;
@@ -465,7 +416,6 @@ namespace TencentCloud
   <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>
   <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authorizationType;
                     bool m_authorizationTypeHasBeenSet;

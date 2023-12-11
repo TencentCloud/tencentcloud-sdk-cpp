@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件 ID
-                     * @return FileId 文件 ID
+                     * 获取文件 ID。其值应为前序步骤上传该文件到 cos 桶后，文件在 cos 桶中的相应目录
+                     * @return FileId 文件 ID。其值应为前序步骤上传该文件到 cos 桶后，文件在 cos 桶中的相应目录
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置文件 ID
-                     * @param _fileId 文件 ID
+                     * 设置文件 ID。其值应为前序步骤上传该文件到 cos 桶后，文件在 cos 桶中的相应目录
+                     * @param _fileId 文件 ID。其值应为前序步骤上传该文件到 cos 桶后，文件在 cos 桶中的相应目录
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -298,7 +298,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件 ID
+                     * 文件 ID。其值应为前序步骤上传该文件到 cos 桶后，文件在 cos 桶中的相应目录
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;

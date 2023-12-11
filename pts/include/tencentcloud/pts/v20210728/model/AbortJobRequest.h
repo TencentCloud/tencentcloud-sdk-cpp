@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID
-                     * @return JobId 任务ID
+                     * 获取待停止的压测任务的 ID（所有的压测任务 ID 可以从 DescribeJobs 接口获取）
+                     * @return JobId 待停止的压测任务的 ID（所有的压测任务 ID 可以从 DescribeJobs 接口获取）
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _jobId 任务ID
+                     * 设置待停止的压测任务的 ID（所有的压测任务 ID 可以从 DescribeJobs 接口获取）
+                     * @param _jobId 待停止的压测任务的 ID（所有的压测任务 ID 可以从 DescribeJobs 接口获取）
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID
+                     * 待停止的压测任务的 ID（所有的压测任务 ID 可以从 DescribeJobs 接口获取）
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

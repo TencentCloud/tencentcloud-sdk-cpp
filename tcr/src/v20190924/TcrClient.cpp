@@ -2190,49 +2190,6 @@ TcrClient::DescribeChartDownloadInfoOutcomeCallable TcrClient::DescribeChartDown
     return task->get_future();
 }
 
-TcrClient::DescribeCustomAccountsOutcome TcrClient::DescribeCustomAccounts(const DescribeCustomAccountsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCustomAccounts");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCustomAccountsResponse rsp = DescribeCustomAccountsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCustomAccountsOutcome(rsp);
-        else
-            return DescribeCustomAccountsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCustomAccountsOutcome(outcome.GetError());
-    }
-}
-
-void TcrClient::DescribeCustomAccountsAsync(const DescribeCustomAccountsRequest& request, const DescribeCustomAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCustomAccounts(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcrClient::DescribeCustomAccountsOutcomeCallable TcrClient::DescribeCustomAccountsCallable(const DescribeCustomAccountsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCustomAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCustomAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TcrClient::DescribeExternalEndpointStatusOutcome TcrClient::DescribeExternalEndpointStatus(const DescribeExternalEndpointStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExternalEndpointStatus");

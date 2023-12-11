@@ -33,7 +33,8 @@ ChannelCreatePreparedPersonalEsignRequest::ChannelCreatePreparedPersonalEsignReq
     m_sealImageCompressHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_enableAutoSignHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_sceneKeyHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,14 @@ string ChannelCreatePreparedPersonalEsignRequest::ToJsonString() const
         string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_licenseType, allocator);
+    }
+
+    if (m_sceneKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sceneKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -316,6 +325,22 @@ void ChannelCreatePreparedPersonalEsignRequest::SetLicenseType(const int64_t& _l
 bool ChannelCreatePreparedPersonalEsignRequest::LicenseTypeHasBeenSet() const
 {
     return m_licenseTypeHasBeenSet;
+}
+
+string ChannelCreatePreparedPersonalEsignRequest::GetSceneKey() const
+{
+    return m_sceneKey;
+}
+
+void ChannelCreatePreparedPersonalEsignRequest::SetSceneKey(const string& _sceneKey)
+{
+    m_sceneKey = _sceneKey;
+    m_sceneKeyHasBeenSet = true;
+}
+
+bool ChannelCreatePreparedPersonalEsignRequest::SceneKeyHasBeenSet() const
+{
+    return m_sceneKeyHasBeenSet;
 }
 
 

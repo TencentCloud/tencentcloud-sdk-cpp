@@ -233,14 +233,16 @@ namespace TencentCloud
                     /**
                      * 获取此参数仅在SecretType参数值为1时生效，
 当SecretType值为1时：
-如果ProductName值为空，则表示查询所有类型的云产品凭据
-如果ProductName值为Mysql，则表示查询Mysql数据库凭据
-如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+如果ProductName值为空，则表示查询所有类型的云产品凭据；
+如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；
+如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；
+支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。
                      * @return ProductName 此参数仅在SecretType参数值为1时生效，
 当SecretType值为1时：
-如果ProductName值为空，则表示查询所有类型的云产品凭据
-如果ProductName值为Mysql，则表示查询Mysql数据库凭据
-如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+如果ProductName值为空，则表示查询所有类型的云产品凭据；
+如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；
+如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；
+支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。
                      * 
                      */
                     std::string GetProductName() const;
@@ -248,14 +250,16 @@ namespace TencentCloud
                     /**
                      * 设置此参数仅在SecretType参数值为1时生效，
 当SecretType值为1时：
-如果ProductName值为空，则表示查询所有类型的云产品凭据
-如果ProductName值为Mysql，则表示查询Mysql数据库凭据
-如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+如果ProductName值为空，则表示查询所有类型的云产品凭据；
+如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；
+如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；
+支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。
                      * @param _productName 此参数仅在SecretType参数值为1时生效，
 当SecretType值为1时：
-如果ProductName值为空，则表示查询所有类型的云产品凭据
-如果ProductName值为Mysql，则表示查询Mysql数据库凭据
-如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+如果ProductName值为空，则表示查询所有类型的云产品凭据；
+如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；
+如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；
+支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -324,9 +328,10 @@ namespace TencentCloud
                     /**
                      * 此参数仅在SecretType参数值为1时生效，
 当SecretType值为1时：
-如果ProductName值为空，则表示查询所有类型的云产品凭据
-如果ProductName值为Mysql，则表示查询Mysql数据库凭据
-如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+如果ProductName值为空，则表示查询所有类型的云产品凭据；
+如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；
+如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；
+支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;

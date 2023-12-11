@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取房间状态。0 未开始 ；1进行中  ；2 已结束
+                     * 获取房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 房间状态。0 未开始 ；1进行中  ；2 已结束
+                     * @return Status 房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置房间状态。0 未开始 ；1进行中  ；2 已结束
+                     * 设置房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 房间状态。0 未开始 ；1进行中  ；2 已结束
+                     * @param _status 房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -579,6 +579,31 @@ namespace TencentCloud
                      */
                     bool EnableAutoStartHasBeenSet() const;
 
+                    /**
+                     * 获取录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecordBackground 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRecordBackground() const;
+
+                    /**
+                     * 设置录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _recordBackground 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRecordBackground(const std::string& _recordBackground);
+
+                    /**
+                     * 判断参数 RecordBackground 是否已赋值
+                     * @return RecordBackground 是否已赋值
+                     * 
+                     */
+                    bool RecordBackgroundHasBeenSet() const;
+
                 private:
 
                     /**
@@ -596,7 +621,7 @@ namespace TencentCloud
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 房间状态。0 未开始 ；1进行中  ；2 已结束
+                     * 房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
@@ -729,6 +754,13 @@ namespace TencentCloud
                      */
                     uint64_t m_enableAutoStart;
                     bool m_enableAutoStartHasBeenSet;
+
+                    /**
+                     * 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recordBackground;
+                    bool m_recordBackgroundHasBeenSet;
 
                 };
             }

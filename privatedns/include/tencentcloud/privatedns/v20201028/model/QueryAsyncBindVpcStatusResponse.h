@@ -45,9 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取processing 处理中，success 执行成功，
-fail 执行失败
+failed 执行失败
                      * @return Status processing 处理中，success 执行成功，
-fail 执行失败
+failed 执行失败
                      * 
                      */
                     std::string GetStatus() const;
@@ -79,7 +79,7 @@ fail 执行失败
 
                     /**
                      * processing 处理中，success 执行成功，
-fail 执行失败
+failed 执行失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID数组
-                     * @return JobIds 任务ID数组
+                     * 获取待删除的任务的 ID（所有任务的 ID 可以从 DescribeJobs 获取）
+                     * @return JobIds 待删除的任务的 ID（所有任务的 ID 可以从 DescribeJobs 获取）
                      * 
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
-                     * 设置任务ID数组
-                     * @param _jobIds 任务ID数组
+                     * 设置待删除的任务的 ID（所有任务的 ID 可以从 DescribeJobs 获取）
+                     * @param _jobIds 待删除的任务的 ID（所有任务的 ID 可以从 DescribeJobs 获取）
                      * 
                      */
                     void SetJobIds(const std::vector<std::string>& _jobIds);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID数组
+                     * 待删除的任务的 ID（所有任务的 ID 可以从 DescribeJobs 获取）
                      */
                     std::vector<std::string> m_jobIds;
                     bool m_jobIdsHasBeenSet;

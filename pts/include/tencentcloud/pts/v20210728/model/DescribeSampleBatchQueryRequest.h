@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取job id
-                     * @return JobId job id
+                     * 获取压测任务的 ID
+                     * @return JobId 压测任务的 ID
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置job id
-                     * @param _jobId job id
+                     * 设置压测任务的 ID
+                     * @param _jobId 压测任务的 ID
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取场景id
-                     * @return ScenarioId 场景id
+                     * 获取场景的 ID
+                     * @return ScenarioId 场景的 ID
                      * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
-                     * 设置场景id
-                     * @param _scenarioId 场景id
+                     * 设置场景的 ID
+                     * @param _scenarioId 场景的 ID
                      * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool QueriesHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取项目的 ID
+                     * @return ProjectId 项目的 ID
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置项目的 ID
+                     * @param _projectId 项目的 ID
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -130,13 +130,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * job id
+                     * 压测任务的 ID
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 场景id
+                     * 场景的 ID
                      */
                     std::string m_scenarioId;
                     bool m_scenarioIdHasBeenSet;
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_queriesHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * 项目的 ID
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

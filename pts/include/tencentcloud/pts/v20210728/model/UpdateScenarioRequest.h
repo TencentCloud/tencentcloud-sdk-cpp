@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取压测引擎类型
-                     * @return Type 压测引擎类型
+                     * 获取压测场景的模式类型。取值范围：pts-http 代表简单模式，pts-js 代表脚本模式，pts-jmeter 代表 JMeter 模式。
+                     * @return Type 压测场景的模式类型。取值范围：pts-http 代表简单模式，pts-js 代表脚本模式，pts-jmeter 代表 JMeter 模式。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置压测引擎类型
-                     * @param _type 压测引擎类型
+                     * 设置压测场景的模式类型。取值范围：pts-http 代表简单模式，pts-js 代表脚本模式，pts-jmeter 代表 JMeter 模式。
+                     * @param _type 压测场景的模式类型。取值范围：pts-http 代表简单模式，pts-js 代表脚本模式，pts-jmeter 代表 JMeter 模式。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -533,7 +533,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 压测引擎类型
+                     * 压测场景的模式类型。取值范围：pts-http 代表简单模式，pts-js 代表脚本模式，pts-jmeter 代表 JMeter 模式。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

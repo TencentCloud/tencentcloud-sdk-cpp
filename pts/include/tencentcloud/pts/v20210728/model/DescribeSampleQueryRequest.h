@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
-                     * 获取指标名
-                     * @return Metric 指标名
+                     * 获取指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
+                     * @return Metric 指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
-                     * 设置指标名
-                     * @param _metric 指标名
+                     * 设置指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
+                     * @param _metric 指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool MetricHasBeenSet() const;
 
                     /**
-                     * 获取聚合条件
-                     * @return Aggregation 聚合条件
+                     * 获取聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge
+                     * @return Aggregation 聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge
                      * 
                      */
                     std::string GetAggregation() const;
 
                     /**
-                     * 设置聚合条件
-                     * @param _aggregation 聚合条件
+                     * 设置聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge
+                     * @param _aggregation 聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge
                      * 
                      */
                     void SetAggregation(const std::string& _aggregation);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-                     * @return Labels 过滤条件
+                     * 获取标签过滤条件。各指标支持的标签参见 DescribeMetricLabelWithValues 接口返回的所有指标及其支持的标签
+                     * @return Labels 标签过滤条件。各指标支持的标签参见 DescribeMetricLabelWithValues 接口返回的所有指标及其支持的标签
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param _labels 过滤条件
+                     * 设置标签过滤条件。各指标支持的标签参见 DescribeMetricLabelWithValues 接口返回的所有指标及其支持的标签
+                     * @param _labels 标签过滤条件。各指标支持的标签参见 DescribeMetricLabelWithValues 接口返回的所有指标及其支持的标签
                      * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
@@ -184,13 +184,13 @@ namespace TencentCloud
                     bool m_scenarioIdHasBeenSet;
 
                     /**
-                     * 指标名
+                     * 指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
 
                     /**
-                     * 聚合条件
+                     * 聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge
                      */
                     std::string m_aggregation;
                     bool m_aggregationHasBeenSet;
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 过滤条件
+                     * 标签过滤条件。各指标支持的标签参见 DescribeMetricLabelWithValues 接口返回的所有指标及其支持的标签
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;

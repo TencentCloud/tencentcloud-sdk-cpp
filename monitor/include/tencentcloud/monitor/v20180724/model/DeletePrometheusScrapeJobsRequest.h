@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Agent ID
-                     * @return AgentId Agent ID
+                     * 获取Agent ID(可通过 DescribePrometheusAgents 接口获取)
+                     * @return AgentId Agent ID(可通过 DescribePrometheusAgents 接口获取)
                      * 
                      */
                     std::string GetAgentId() const;
 
                     /**
-                     * 设置Agent ID
-                     * @param _agentId Agent ID
+                     * 设置Agent ID(可通过 DescribePrometheusAgents 接口获取)
+                     * @param _agentId Agent ID(可通过 DescribePrometheusAgents 接口获取)
                      * 
                      */
                     void SetAgentId(const std::string& _agentId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AgentIdHasBeenSet() const;
 
                     /**
-                     * 获取任务 ID 列表
-                     * @return JobIds 任务 ID 列表
+                     * 获取任务 ID 列表(可通过 DescribePrometheusScrapeJobs 接口获取)
+                     * @return JobIds 任务 ID 列表(可通过 DescribePrometheusScrapeJobs 接口获取)
                      * 
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
-                     * 设置任务 ID 列表
-                     * @param _jobIds 任务 ID 列表
+                     * 设置任务 ID 列表(可通过 DescribePrometheusScrapeJobs 接口获取)
+                     * @param _jobIds 任务 ID 列表(可通过 DescribePrometheusScrapeJobs 接口获取)
                      * 
                      */
                     void SetJobIds(const std::vector<std::string>& _jobIds);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Agent ID
+                     * Agent ID(可通过 DescribePrometheusAgents 接口获取)
                      */
                     std::string m_agentId;
                     bool m_agentIdHasBeenSet;
 
                     /**
-                     * 任务 ID 列表
+                     * 任务 ID 列表(可通过 DescribePrometheusScrapeJobs 接口获取)
                      */
                     std::vector<std::string> m_jobIds;
                     bool m_jobIdsHasBeenSet;

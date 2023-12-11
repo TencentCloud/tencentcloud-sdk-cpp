@@ -41,6 +41,8 @@
 #include <tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateBackupStorageLocationRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateBackupStorageLocationResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateCLSLogConfigRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreateCLSLogConfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterEndpointRequest.h>
@@ -71,6 +73,8 @@
 #include <tencentcloud/tke/v20180525/model/CreateEdgeCVMInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateEdgeLogConfigRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateEdgeLogConfigResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateEksLogConfigRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreateEksLogConfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateImageCacheRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateImageCacheResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusAlertPolicyRequest.h>
@@ -496,6 +500,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBackupStorageLocationResponse> CreateBackupStorageLocationOutcome;
                 typedef std::future<CreateBackupStorageLocationOutcome> CreateBackupStorageLocationOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateBackupStorageLocationRequest&, CreateBackupStorageLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupStorageLocationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCLSLogConfigResponse> CreateCLSLogConfigOutcome;
+                typedef std::future<CreateCLSLogConfigOutcome> CreateCLSLogConfigOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateCLSLogConfigRequest&, CreateCLSLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCLSLogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
@@ -541,6 +548,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEdgeLogConfigResponse> CreateEdgeLogConfigOutcome;
                 typedef std::future<CreateEdgeLogConfigOutcome> CreateEdgeLogConfigOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateEdgeLogConfigRequest&, CreateEdgeLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeLogConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEksLogConfigResponse> CreateEksLogConfigOutcome;
+                typedef std::future<CreateEksLogConfigOutcome> CreateEksLogConfigOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateEksLogConfigRequest&, CreateEksLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEksLogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateImageCacheResponse> CreateImageCacheOutcome;
                 typedef std::future<CreateImageCacheOutcome> CreateImageCacheOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateImageCacheRequest&, CreateImageCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageCacheAsyncHandler;
@@ -1202,6 +1212,15 @@ namespace TencentCloud
                 CreateBackupStorageLocationOutcomeCallable CreateBackupStorageLocationCallable(const Model::CreateBackupStorageLocationRequest& request);
 
                 /**
+                 *创建日志采集配置
+                 * @param req CreateCLSLogConfigRequest
+                 * @return CreateCLSLogConfigOutcome
+                 */
+                CreateCLSLogConfigOutcome CreateCLSLogConfig(const Model::CreateCLSLogConfigRequest &request);
+                void CreateCLSLogConfigAsync(const Model::CreateCLSLogConfigRequest& request, const CreateCLSLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCLSLogConfigOutcomeCallable CreateCLSLogConfigCallable(const Model::CreateCLSLogConfigRequest& request);
+
+                /**
                  *创建集群
                  * @param req CreateClusterRequest
                  * @return CreateClusterOutcome
@@ -1335,6 +1354,15 @@ namespace TencentCloud
                 CreateEdgeLogConfigOutcome CreateEdgeLogConfig(const Model::CreateEdgeLogConfigRequest &request);
                 void CreateEdgeLogConfigAsync(const Model::CreateEdgeLogConfigRequest& request, const CreateEdgeLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEdgeLogConfigOutcomeCallable CreateEdgeLogConfigCallable(const Model::CreateEdgeLogConfigRequest& request);
+
+                /**
+                 *为弹性集群创建日志采集配置
+                 * @param req CreateEksLogConfigRequest
+                 * @return CreateEksLogConfigOutcome
+                 */
+                CreateEksLogConfigOutcome CreateEksLogConfig(const Model::CreateEksLogConfigRequest &request);
+                void CreateEksLogConfigAsync(const Model::CreateEksLogConfigRequest& request, const CreateEksLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEksLogConfigOutcomeCallable CreateEksLogConfigCallable(const Model::CreateEksLogConfigRequest& request);
 
                 /**
                  *创建镜像缓存的接口。创建过程中，请勿删除EKSCI实例和云盘，否则镜像缓存将创建失败。

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取聚合规则组内容，格式为 yaml
-                     * @return Group 聚合规则组内容，格式为 yaml
+                     * 获取聚合规则组内容，格式为 yaml，通过 base64 进行编码。
+                     * @return Group 聚合规则组内容，格式为 yaml，通过 base64 进行编码。
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置聚合规则组内容，格式为 yaml
-                     * @param _group 聚合规则组内容，格式为 yaml
+                     * 设置聚合规则组内容，格式为 yaml，通过 base64 进行编码。
+                     * @param _group 聚合规则组内容，格式为 yaml，通过 base64 进行编码。
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 聚合规则组内容，格式为 yaml
+                     * 聚合规则组内容，格式为 yaml，通过 base64 进行编码。
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
