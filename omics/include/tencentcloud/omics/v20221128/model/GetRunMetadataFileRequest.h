@@ -64,6 +64,31 @@ namespace TencentCloud
                     bool RunUuidHasBeenSet() const;
 
                     /**
+                     * 获取项目ID。
+（不填使用指定地域下的默认项目）
+                     * @return ProjectId 项目ID。
+（不填使用指定地域下的默认项目）
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目ID。
+（不填使用指定地域下的默认项目）
+                     * @param _projectId 项目ID。
+（不填使用指定地域下的默认项目）
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
                      * 获取需要获取的文件名。
 
 默认支持以下文件：
@@ -121,29 +146,61 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取项目ID。
-（不填使用指定地域下的默认项目）
-                     * @return ProjectId 项目ID。
-（不填使用指定地域下的默认项目）
+                     * 获取需要批量获取的文件名。
+
+默认支持以下文件：
+- nextflow.log
+
+提交时NFOption中report指定为true时，额外支持以下文件：
+- execution_report.html
+- execution_timeline.html
+- execution_trace.txt
+- pipeline_dag.html
+                     * @return Keys 需要批量获取的文件名。
+
+默认支持以下文件：
+- nextflow.log
+
+提交时NFOption中report指定为true时，额外支持以下文件：
+- execution_report.html
+- execution_timeline.html
+- execution_trace.txt
+- pipeline_dag.html
                      * 
                      */
-                    std::string GetProjectId() const;
+                    std::vector<std::string> GetKeys() const;
 
                     /**
-                     * 设置项目ID。
-（不填使用指定地域下的默认项目）
-                     * @param _projectId 项目ID。
-（不填使用指定地域下的默认项目）
+                     * 设置需要批量获取的文件名。
+
+默认支持以下文件：
+- nextflow.log
+
+提交时NFOption中report指定为true时，额外支持以下文件：
+- execution_report.html
+- execution_timeline.html
+- execution_trace.txt
+- pipeline_dag.html
+                     * @param _keys 需要批量获取的文件名。
+
+默认支持以下文件：
+- nextflow.log
+
+提交时NFOption中report指定为true时，额外支持以下文件：
+- execution_report.html
+- execution_timeline.html
+- execution_trace.txt
+- pipeline_dag.html
                      * 
                      */
-                    void SetProjectId(const std::string& _projectId);
+                    void SetKeys(const std::vector<std::string>& _keys);
 
                     /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
+                     * 判断参数 Keys 是否已赋值
+                     * @return Keys 是否已赋值
                      * 
                      */
-                    bool ProjectIdHasBeenSet() const;
+                    bool KeysHasBeenSet() const;
 
                 private:
 
@@ -152,6 +209,13 @@ namespace TencentCloud
                      */
                     std::string m_runUuid;
                     bool m_runUuidHasBeenSet;
+
+                    /**
+                     * 项目ID。
+（不填使用指定地域下的默认项目）
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                     /**
                      * 需要获取的文件名。
@@ -169,11 +233,19 @@ namespace TencentCloud
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 项目ID。
-（不填使用指定地域下的默认项目）
+                     * 需要批量获取的文件名。
+
+默认支持以下文件：
+- nextflow.log
+
+提交时NFOption中report指定为true时，额外支持以下文件：
+- execution_report.html
+- execution_timeline.html
+- execution_trace.txt
+- pipeline_dag.html
                      */
-                    std::string m_projectId;
-                    bool m_projectIdHasBeenSet;
+                    std::vector<std::string> m_keys;
+                    bool m_keysHasBeenSet;
 
                 };
             }

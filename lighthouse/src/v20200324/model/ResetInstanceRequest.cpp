@@ -24,7 +24,9 @@ using namespace std;
 
 ResetInstanceRequest::ResetInstanceRequest() :
     m_instanceIdHasBeenSet(false),
-    m_blueprintIdHasBeenSet(false)
+    m_blueprintIdHasBeenSet(false),
+    m_containersHasBeenSet(false),
+    m_loginConfigurationHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,30 @@ string ResetInstanceRequest::ToJsonString() const
         string key = "BlueprintId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_blueprintId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Containers";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_containers.begin(); itr != m_containers.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_loginConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loginConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -89,6 +115,38 @@ void ResetInstanceRequest::SetBlueprintId(const string& _blueprintId)
 bool ResetInstanceRequest::BlueprintIdHasBeenSet() const
 {
     return m_blueprintIdHasBeenSet;
+}
+
+vector<DockerContainerConfiguration> ResetInstanceRequest::GetContainers() const
+{
+    return m_containers;
+}
+
+void ResetInstanceRequest::SetContainers(const vector<DockerContainerConfiguration>& _containers)
+{
+    m_containers = _containers;
+    m_containersHasBeenSet = true;
+}
+
+bool ResetInstanceRequest::ContainersHasBeenSet() const
+{
+    return m_containersHasBeenSet;
+}
+
+LoginConfiguration ResetInstanceRequest::GetLoginConfiguration() const
+{
+    return m_loginConfiguration;
+}
+
+void ResetInstanceRequest::SetLoginConfiguration(const LoginConfiguration& _loginConfiguration)
+{
+    m_loginConfiguration = _loginConfiguration;
+    m_loginConfigurationHasBeenSet = true;
+}
+
+bool ResetInstanceRequest::LoginConfigurationHasBeenSet() const
+{
+    return m_loginConfigurationHasBeenSet;
 }
 
 

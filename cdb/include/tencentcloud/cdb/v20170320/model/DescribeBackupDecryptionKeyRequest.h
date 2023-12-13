@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool BackupIdHasBeenSet() const;
 
+                    /**
+                     * 获取备份类型 data: 数据备份 binlog:日志备份，默认为data
+                     * @return BackupType 备份类型 data: 数据备份 binlog:日志备份，默认为data
+                     * 
+                     */
+                    std::string GetBackupType() const;
+
+                    /**
+                     * 设置备份类型 data: 数据备份 binlog:日志备份，默认为data
+                     * @param _backupType 备份类型 data: 数据备份 binlog:日志备份，默认为data
+                     * 
+                     */
+                    void SetBackupType(const std::string& _backupType);
+
+                    /**
+                     * 判断参数 BackupType 是否已赋值
+                     * @return BackupType 是否已赋值
+                     * 
+                     */
+                    bool BackupTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     int64_t m_backupId;
                     bool m_backupIdHasBeenSet;
+
+                    /**
+                     * 备份类型 data: 数据备份 binlog:日志备份，默认为data
+                     */
+                    std::string m_backupType;
+                    bool m_backupTypeHasBeenSet;
 
                 };
             }

@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。
-                     * @return Limit 查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。
+                     * 获取查询前多少个数据，最大值为1000，不填默认为10， 表示查询前top10的数据。
+                     * @return Limit 查询前多少个数据，最大值为1000，不填默认为10， 表示查询前top10的数据。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。
-                     * @param _limit 查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。
+                     * 设置查询前多少个数据，最大值为1000，不填默认为10， 表示查询前top10的数据。
+                     * @param _limit 查询前多少个数据，最大值为1000，不填默认为10， 表示查询前top10的数据。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -439,7 +439,7 @@ namespace TencentCloud
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。
+                     * 查询前多少个数据，最大值为1000，不填默认为10， 表示查询前top10的数据。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

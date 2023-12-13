@@ -2405,6 +2405,49 @@ AntiddosClient::DescribeDefaultAlarmThresholdOutcomeCallable AntiddosClient::Des
     return task->get_future();
 }
 
+AntiddosClient::DescribeIpBlockListOutcome AntiddosClient::DescribeIpBlockList(const DescribeIpBlockListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIpBlockList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIpBlockListResponse rsp = DescribeIpBlockListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIpBlockListOutcome(rsp);
+        else
+            return DescribeIpBlockListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIpBlockListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeIpBlockListAsync(const DescribeIpBlockListRequest& request, const DescribeIpBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIpBlockList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeIpBlockListOutcomeCallable AntiddosClient::DescribeIpBlockListCallable(const DescribeIpBlockListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIpBlockListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIpBlockList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeL7RulesBySSLCertIdOutcome AntiddosClient::DescribeL7RulesBySSLCertId(const DescribeL7RulesBySSLCertIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeL7RulesBySSLCertId");

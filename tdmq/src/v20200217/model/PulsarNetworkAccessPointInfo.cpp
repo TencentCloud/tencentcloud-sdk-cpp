@@ -25,7 +25,8 @@ PulsarNetworkAccessPointInfo::PulsarNetworkAccessPointInfo() :
     m_subnetIdHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_routeTypeHasBeenSet(false)
+    m_routeTypeHasBeenSet(false),
+    m_operationTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome PulsarNetworkAccessPointInfo::Deserialize(const rapidjson::V
         m_routeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("OperationType") && !value["OperationType"].IsNull())
+    {
+        if (!value["OperationType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarNetworkAccessPointInfo.OperationType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationType = value["OperationType"].GetUint64();
+        m_operationTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void PulsarNetworkAccessPointInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "RouteType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_routeType, allocator);
+    }
+
+    if (m_operationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_operationType, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void PulsarNetworkAccessPointInfo::SetRouteType(const uint64_t& _routeType)
 bool PulsarNetworkAccessPointInfo::RouteTypeHasBeenSet() const
 {
     return m_routeTypeHasBeenSet;
+}
+
+uint64_t PulsarNetworkAccessPointInfo::GetOperationType() const
+{
+    return m_operationType;
+}
+
+void PulsarNetworkAccessPointInfo::SetOperationType(const uint64_t& _operationType)
+{
+    m_operationType = _operationType;
+    m_operationTypeHasBeenSet = true;
+}
+
+bool PulsarNetworkAccessPointInfo::OperationTypeHasBeenSet() const
+{
+    return m_operationTypeHasBeenSet;
 }
 

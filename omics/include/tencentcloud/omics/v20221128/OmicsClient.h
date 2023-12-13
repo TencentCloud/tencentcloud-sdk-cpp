@@ -188,7 +188,7 @@ namespace TencentCloud
                 GetRunCallsOutcomeCallable GetRunCallsCallable(const Model::GetRunCallsRequest& request);
 
                 /**
-                 *查询任务详情文件。
+                 *获取任务详情文件。
                  * @param req GetRunMetadataFileRequest
                  * @return GetRunMetadataFileOutcome
                  */

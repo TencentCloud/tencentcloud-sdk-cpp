@@ -384,6 +384,92 @@ HaiClient::RunInstancesOutcomeCallable HaiClient::RunInstancesCallable(const Run
     return task->get_future();
 }
 
+HaiClient::StartInstanceOutcome HaiClient::StartInstance(const StartInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartInstanceResponse rsp = StartInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartInstanceOutcome(rsp);
+        else
+            return StartInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return StartInstanceOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::StartInstanceAsync(const StartInstanceRequest& request, const StartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::StartInstanceOutcomeCallable HaiClient::StartInstanceCallable(const StartInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->StartInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::StopInstanceOutcome HaiClient::StopInstance(const StopInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopInstanceResponse rsp = StopInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopInstanceOutcome(rsp);
+        else
+            return StopInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return StopInstanceOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::StopInstanceAsync(const StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::StopInstanceOutcomeCallable HaiClient::StopInstanceCallable(const StopInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->StopInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HaiClient::TerminateInstancesOutcome HaiClient::TerminateInstances(const TerminateInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "TerminateInstances");

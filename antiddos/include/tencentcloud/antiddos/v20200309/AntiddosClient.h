@@ -133,6 +133,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeDDoSTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDefaultAlarmThresholdRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDefaultAlarmThresholdResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeIpBlockListRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeIpBlockListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeL7RulesBySSLCertIdRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeL7RulesBySSLCertIdResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListBGPIPInstancesRequest.h>
@@ -390,6 +392,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDefaultAlarmThresholdResponse> DescribeDefaultAlarmThresholdOutcome;
                 typedef std::future<DescribeDefaultAlarmThresholdOutcome> DescribeDefaultAlarmThresholdOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeDefaultAlarmThresholdRequest&, DescribeDefaultAlarmThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultAlarmThresholdAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIpBlockListResponse> DescribeIpBlockListOutcome;
+                typedef std::future<DescribeIpBlockListOutcome> DescribeIpBlockListOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeIpBlockListRequest&, DescribeIpBlockListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpBlockListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeL7RulesBySSLCertIdResponse> DescribeL7RulesBySSLCertIdOutcome;
                 typedef std::future<DescribeL7RulesBySSLCertIdOutcome> DescribeL7RulesBySSLCertIdOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeL7RulesBySSLCertIdRequest&, DescribeL7RulesBySSLCertIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL7RulesBySSLCertIdAsyncHandler;
@@ -574,7 +579,7 @@ namespace TencentCloud
                 CreateCcBlackWhiteIpListOutcomeCallable CreateCcBlackWhiteIpListCallable(const Model::CreateCcBlackWhiteIpListRequest& request);
 
                 /**
-                 *新建cc防护的地域封禁配置
+                 *新建CC防护的地域封禁配置
                  * @param req CreateCcGeoIPBlockConfigRequest
                  * @return CreateCcGeoIPBlockConfigOutcome
                  */
@@ -1006,6 +1011,15 @@ namespace TencentCloud
                 DescribeDefaultAlarmThresholdOutcome DescribeDefaultAlarmThreshold(const Model::DescribeDefaultAlarmThresholdRequest &request);
                 void DescribeDefaultAlarmThresholdAsync(const Model::DescribeDefaultAlarmThresholdRequest& request, const DescribeDefaultAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDefaultAlarmThresholdOutcomeCallable DescribeDefaultAlarmThresholdCallable(const Model::DescribeDefaultAlarmThresholdRequest& request);
+
+                /**
+                 *获取IP封堵列表
+                 * @param req DescribeIpBlockListRequest
+                 * @return DescribeIpBlockListOutcome
+                 */
+                DescribeIpBlockListOutcome DescribeIpBlockList(const Model::DescribeIpBlockListRequest &request);
+                void DescribeIpBlockListAsync(const Model::DescribeIpBlockListRequest& request, const DescribeIpBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIpBlockListOutcomeCallable DescribeIpBlockListCallable(const Model::DescribeIpBlockListRequest& request);
 
                 /**
                  *查询与证书ID对于域名匹配的七层规则

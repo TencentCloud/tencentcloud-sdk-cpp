@@ -39,6 +39,10 @@
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesResponse.h>
+#include <tencentcloud/hai/v20230812/model/StartInstanceRequest.h>
+#include <tencentcloud/hai/v20230812/model/StartInstanceResponse.h>
+#include <tencentcloud/hai/v20230812/model/StopInstanceRequest.h>
+#include <tencentcloud/hai/v20230812/model/StopInstanceResponse.h>
 #include <tencentcloud/hai/v20230812/model/TerminateInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/TerminateInstancesResponse.h>
 
@@ -79,6 +83,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunInstancesResponse> RunInstancesOutcome;
                 typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::RunInstancesRequest&, RunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartInstanceResponse> StartInstanceOutcome;
+                typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::StartInstanceRequest&, StartInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopInstanceResponse> StopInstanceOutcome;
+                typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::StopInstanceRequest&, StopInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateInstancesResponse> TerminateInstancesOutcome;
                 typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
@@ -156,6 +166,24 @@ namespace TencentCloud
                 RunInstancesOutcome RunInstances(const Model::RunInstancesRequest &request);
                 void RunInstancesAsync(const Model::RunInstancesRequest& request, const RunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunInstancesOutcomeCallable RunInstancesCallable(const Model::RunInstancesRequest& request);
+
+                /**
+                 *本接口 (StartInstance) 用于主动启动实例。
+                 * @param req StartInstanceRequest
+                 * @return StartInstanceOutcome
+                 */
+                StartInstanceOutcome StartInstance(const Model::StartInstanceRequest &request);
+                void StartInstanceAsync(const Model::StartInstanceRequest& request, const StartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartInstanceOutcomeCallable StartInstanceCallable(const Model::StartInstanceRequest& request);
+
+                /**
+                 *本接口 (StopInstance) 用于主动关闭实例。
+                 * @param req StopInstanceRequest
+                 * @return StopInstanceOutcome
+                 */
+                StopInstanceOutcome StopInstance(const Model::StopInstanceRequest &request);
+                void StopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopInstanceOutcomeCallable StopInstanceCallable(const Model::StopInstanceRequest& request);
 
                 /**
                  *本接口 (TerminateInstances) 用于主动退还实例。

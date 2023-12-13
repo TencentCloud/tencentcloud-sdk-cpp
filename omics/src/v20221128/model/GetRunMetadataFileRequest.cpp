@@ -24,8 +24,9 @@ using namespace std;
 
 GetRunMetadataFileRequest::GetRunMetadataFileRequest() :
     m_runUuidHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
     m_keyHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_keysHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,14 @@ string GetRunMetadataFileRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_runUuid.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_keyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -52,12 +61,17 @@ string GetRunMetadataFileRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_projectIdHasBeenSet)
+    if (m_keysHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectId";
+        string key = "Keys";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keys.begin(); itr != m_keys.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -84,6 +98,22 @@ bool GetRunMetadataFileRequest::RunUuidHasBeenSet() const
     return m_runUuidHasBeenSet;
 }
 
+string GetRunMetadataFileRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void GetRunMetadataFileRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool GetRunMetadataFileRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
 string GetRunMetadataFileRequest::GetKey() const
 {
     return m_key;
@@ -100,20 +130,20 @@ bool GetRunMetadataFileRequest::KeyHasBeenSet() const
     return m_keyHasBeenSet;
 }
 
-string GetRunMetadataFileRequest::GetProjectId() const
+vector<string> GetRunMetadataFileRequest::GetKeys() const
 {
-    return m_projectId;
+    return m_keys;
 }
 
-void GetRunMetadataFileRequest::SetProjectId(const string& _projectId)
+void GetRunMetadataFileRequest::SetKeys(const vector<string>& _keys)
 {
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
+    m_keys = _keys;
+    m_keysHasBeenSet = true;
 }
 
-bool GetRunMetadataFileRequest::ProjectIdHasBeenSet() const
+bool GetRunMetadataFileRequest::KeysHasBeenSet() const
 {
-    return m_projectIdHasBeenSet;
+    return m_keysHasBeenSet;
 }
 
 

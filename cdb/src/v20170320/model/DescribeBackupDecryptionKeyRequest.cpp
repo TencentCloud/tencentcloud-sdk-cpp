@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeBackupDecryptionKeyRequest::DescribeBackupDecryptionKeyRequest() :
     m_instanceIdHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
+    m_backupIdHasBeenSet(false),
+    m_backupTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeBackupDecryptionKeyRequest::ToJsonString() const
         string key = "BackupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupId, allocator);
+    }
+
+    if (m_backupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeBackupDecryptionKeyRequest::SetBackupId(const int64_t& _backupId)
 bool DescribeBackupDecryptionKeyRequest::BackupIdHasBeenSet() const
 {
     return m_backupIdHasBeenSet;
+}
+
+string DescribeBackupDecryptionKeyRequest::GetBackupType() const
+{
+    return m_backupType;
+}
+
+void DescribeBackupDecryptionKeyRequest::SetBackupType(const string& _backupType)
+{
+    m_backupType = _backupType;
+    m_backupTypeHasBeenSet = true;
+}
+
+bool DescribeBackupDecryptionKeyRequest::BackupTypeHasBeenSet() const
+{
+    return m_backupTypeHasBeenSet;
 }
 
 

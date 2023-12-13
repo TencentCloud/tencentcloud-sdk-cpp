@@ -24,7 +24,8 @@ using namespace TencentCloud::Omics::V20221128::Model;
 using namespace std;
 
 GetRunMetadataFileResponse::GetRunMetadataFileResponse() :
-    m_cosSignedUrlHasBeenSet(false)
+    m_cosSignedUrlHasBeenSet(false),
+    m_cosSignedUrlsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ CoreInternalOutcome GetRunMetadataFileResponse::Deserialize(const string &payloa
         m_cosSignedUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CosSignedUrls") && !rsp["CosSignedUrls"].IsNull())
+    {
+        if (!rsp["CosSignedUrls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CosSignedUrls` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CosSignedUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cosSignedUrls.push_back((*itr).GetString());
+        }
+        m_cosSignedUrlsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +102,19 @@ string GetRunMetadataFileResponse::ToJsonString() const
         string key = "CosSignedUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cosSignedUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosSignedUrlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosSignedUrls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cosSignedUrls.begin(); itr != m_cosSignedUrls.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +137,16 @@ string GetRunMetadataFileResponse::GetCosSignedUrl() const
 bool GetRunMetadataFileResponse::CosSignedUrlHasBeenSet() const
 {
     return m_cosSignedUrlHasBeenSet;
+}
+
+vector<string> GetRunMetadataFileResponse::GetCosSignedUrls() const
+{
+    return m_cosSignedUrls;
+}
+
+bool GetRunMetadataFileResponse::CosSignedUrlsHasBeenSet() const
+{
+    return m_cosSignedUrlsHasBeenSet;
 }
 
 
