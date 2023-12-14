@@ -443,6 +443,20 @@ video 纯视频
                      */
                     bool EnableAutoStartHasBeenSet() const;
 
+                    /**
+                     * 获取录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+                     * @return RecordBackground 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+                     * 
+                     */
+                    std::string GetRecordBackground() const;
+
+                    /**
+                     * 判断参数 RecordBackground 是否已赋值
+                     * @return RecordBackground 是否已赋值
+                     * 
+                     */
+                    bool RecordBackgroundHasBeenSet() const;
+
                 private:
 
                     /**
@@ -618,6 +632,12 @@ video 纯视频
                      */
                     uint64_t m_enableAutoStart;
                     bool m_enableAutoStartHasBeenSet;
+
+                    /**
+                     * 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+                     */
+                    std::string m_recordBackground;
+                    bool m_recordBackgroundHasBeenSet;
 
                 };
             }

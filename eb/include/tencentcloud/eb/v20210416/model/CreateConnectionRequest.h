@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Type 类型
+                     * 获取连接器类型，目前支持以下类型:apigw/ckafka/dts/tdmq
+                     * @return Type 连接器类型，目前支持以下类型:apigw/ckafka/dts/tdmq
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型
-                     * @param _type 类型
+                     * 设置连接器类型，目前支持以下类型:apigw/ckafka/dts/tdmq
+                     * @param _type 连接器类型，目前支持以下类型:apigw/ckafka/dts/tdmq
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 类型
+                     * 连接器类型，目前支持以下类型:apigw/ckafka/dts/tdmq
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

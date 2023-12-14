@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 对象存储源站记录私有鉴权参数
+                * 对象存储源站私有鉴权参数
                 */
                 class PrivateParameter : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有鉴权参数名称，取值有：
-<li>AccessKeyId：鉴权参数Access Key ID；</li>
-<li>SecretAccessKey：鉴权参数Secret Access Key；</li>
-<li>SignatureVersion：鉴权版本，v2或者v4；</li>
+<li>AccessKeyId：鉴权参数 Access Key ID；</li>
+<li>SecretAccessKey：鉴权参数 Secret Access Key；</li>
+<li>SignatureVersion：鉴权版本，v2 或者 v4；</li>
 <li>Region：存储桶地域。</li>
                      * @return Name 私有鉴权参数名称，取值有：
-<li>AccessKeyId：鉴权参数Access Key ID；</li>
-<li>SecretAccessKey：鉴权参数Secret Access Key；</li>
-<li>SignatureVersion：鉴权版本，v2或者v4；</li>
+<li>AccessKeyId：鉴权参数 Access Key ID；</li>
+<li>SecretAccessKey：鉴权参数 Secret Access Key；</li>
+<li>SignatureVersion：鉴权版本，v2 或者 v4；</li>
 <li>Region：存储桶地域。</li>
                      * 
                      */
@@ -63,14 +63,14 @@ namespace TencentCloud
 
                     /**
                      * 设置私有鉴权参数名称，取值有：
-<li>AccessKeyId：鉴权参数Access Key ID；</li>
-<li>SecretAccessKey：鉴权参数Secret Access Key；</li>
-<li>SignatureVersion：鉴权版本，v2或者v4；</li>
+<li>AccessKeyId：鉴权参数 Access Key ID；</li>
+<li>SecretAccessKey：鉴权参数 Secret Access Key；</li>
+<li>SignatureVersion：鉴权版本，v2 或者 v4；</li>
 <li>Region：存储桶地域。</li>
                      * @param _name 私有鉴权参数名称，取值有：
-<li>AccessKeyId：鉴权参数Access Key ID；</li>
-<li>SecretAccessKey：鉴权参数Secret Access Key；</li>
-<li>SignatureVersion：鉴权版本，v2或者v4；</li>
+<li>AccessKeyId：鉴权参数 Access Key ID；</li>
+<li>SecretAccessKey：鉴权参数 Secret Access Key；</li>
+<li>SignatureVersion：鉴权版本，v2 或者 v4；</li>
 <li>Region：存储桶地域。</li>
                      * 
                      */
@@ -108,9 +108,9 @@ namespace TencentCloud
 
                     /**
                      * 私有鉴权参数名称，取值有：
-<li>AccessKeyId：鉴权参数Access Key ID；</li>
-<li>SecretAccessKey：鉴权参数Secret Access Key；</li>
-<li>SignatureVersion：鉴权版本，v2或者v4；</li>
+<li>AccessKeyId：鉴权参数 Access Key ID；</li>
+<li>SecretAccessKey：鉴权参数 Secret Access Key；</li>
+<li>SignatureVersion：鉴权版本，v2 或者 v4；</li>
 <li>Region：存储桶地域。</li>
                      */
                     std::string m_name;

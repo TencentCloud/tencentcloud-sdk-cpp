@@ -223,6 +223,7 @@ namespace TencentCloud
 <li>**CONTRACT**: 合同专用章;</li>
 <li>**FINANCE**: 财务专用章;</li>
 <li>**PERSONNEL**: 人事专用章</li>
+<li>**INVOICE**: 发票专用章</li>
 </ul>
 注: `同企业下只能有一个公章, 重复创建会报错`
                      * @return SealType 电子印章类型 , 可选类型如下: 
@@ -230,6 +231,7 @@ namespace TencentCloud
 <li>**CONTRACT**: 合同专用章;</li>
 <li>**FINANCE**: 财务专用章;</li>
 <li>**PERSONNEL**: 人事专用章</li>
+<li>**INVOICE**: 发票专用章</li>
 </ul>
 注: `同企业下只能有一个公章, 重复创建会报错`
                      * 
@@ -242,6 +244,7 @@ namespace TencentCloud
 <li>**CONTRACT**: 合同专用章;</li>
 <li>**FINANCE**: 财务专用章;</li>
 <li>**PERSONNEL**: 人事专用章</li>
+<li>**INVOICE**: 发票专用章</li>
 </ul>
 注: `同企业下只能有一个公章, 重复创建会报错`
                      * @param _sealType 电子印章类型 , 可选类型如下: 
@@ -249,6 +252,7 @@ namespace TencentCloud
 <li>**CONTRACT**: 合同专用章;</li>
 <li>**FINANCE**: 财务专用章;</li>
 <li>**PERSONNEL**: 人事专用章</li>
+<li>**INVOICE**: 发票专用章</li>
 </ul>
 注: `同企业下只能有一个公章, 重复创建会报错`
                      * 
@@ -361,6 +365,35 @@ namespace TencentCloud
                      */
                     bool SealSizeHasBeenSet() const;
 
+                    /**
+                     * 获取企业税号
+注: `1.印章类型SealType是INVOICE类型时，此参数才会生效`
+`2.印章类型SealType是INVOICE类型，且该字段没有传入值或传入空时，会取该企业对应的统一社会信用代码作为默认的企业税号`
+                     * @return TaxIdentifyCode 企业税号
+注: `1.印章类型SealType是INVOICE类型时，此参数才会生效`
+`2.印章类型SealType是INVOICE类型，且该字段没有传入值或传入空时，会取该企业对应的统一社会信用代码作为默认的企业税号`
+                     * 
+                     */
+                    std::string GetTaxIdentifyCode() const;
+
+                    /**
+                     * 设置企业税号
+注: `1.印章类型SealType是INVOICE类型时，此参数才会生效`
+`2.印章类型SealType是INVOICE类型，且该字段没有传入值或传入空时，会取该企业对应的统一社会信用代码作为默认的企业税号`
+                     * @param _taxIdentifyCode 企业税号
+注: `1.印章类型SealType是INVOICE类型时，此参数才会生效`
+`2.印章类型SealType是INVOICE类型，且该字段没有传入值或传入空时，会取该企业对应的统一社会信用代码作为默认的企业税号`
+                     * 
+                     */
+                    void SetTaxIdentifyCode(const std::string& _taxIdentifyCode);
+
+                    /**
+                     * 判断参数 TaxIdentifyCode 是否已赋值
+                     * @return TaxIdentifyCode 是否已赋值
+                     * 
+                     */
+                    bool TaxIdentifyCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -416,6 +449,7 @@ namespace TencentCloud
 <li>**CONTRACT**: 合同专用章;</li>
 <li>**FINANCE**: 财务专用章;</li>
 <li>**PERSONNEL**: 人事专用章</li>
+<li>**INVOICE**: 发票专用章</li>
 </ul>
 注: `同企业下只能有一个公章, 重复创建会报错`
                      */
@@ -448,6 +482,14 @@ namespace TencentCloud
                      */
                     std::string m_sealSize;
                     bool m_sealSizeHasBeenSet;
+
+                    /**
+                     * 企业税号
+注: `1.印章类型SealType是INVOICE类型时，此参数才会生效`
+`2.印章类型SealType是INVOICE类型，且该字段没有传入值或传入空时，会取该企业对应的统一社会信用代码作为默认的企业税号`
+                     */
+                    std::string m_taxIdentifyCode;
+                    bool m_taxIdentifyCodeHasBeenSet;
 
                 };
             }

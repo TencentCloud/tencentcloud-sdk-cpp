@@ -1,0 +1,394 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_IOA_V20220601_MODEL_DESCRIBEDEVICESREQUEST_H_
+#define TENCENTCLOUD_IOA_V20220601_MODEL_DESCRIBEDEVICESREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ioa/v20220601/model/Condition.h>
+#include <tencentcloud/ioa/v20220601/model/Filter.h>
+#include <tencentcloud/ioa/v20220601/model/Sort.h>
+
+
+namespace TencentCloud
+{
+    namespace Ioa
+    {
+        namespace V20220601
+        {
+            namespace Model
+            {
+                /**
+                * DescribeDevices请求参数结构体
+                */
+                class DescribeDevicesRequest : public AbstractModel
+                {
+                public:
+                    DescribeDevicesRequest();
+                    ~DescribeDevicesRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取过滤条件<br>
+<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>
+<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>
+<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>
+分页参数<br>
+<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
+<li>PageSize 最大值5000，最好不超过100。</li>
+                     * @return Condition 过滤条件<br>
+<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>
+<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>
+<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>
+分页参数<br>
+<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
+<li>PageSize 最大值5000，最好不超过100。</li>
+                     * 
+                     */
+                    Condition GetCondition() const;
+
+                    /**
+                     * 设置过滤条件<br>
+<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>
+<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>
+<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>
+分页参数<br>
+<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
+<li>PageSize 最大值5000，最好不超过100。</li>
+                     * @param _condition 过滤条件<br>
+<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>
+<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>
+<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>
+分页参数<br>
+<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
+<li>PageSize 最大值5000，最好不超过100。</li>
+                     * 
+                     */
+                    void SetCondition(const Condition& _condition);
+
+                    /**
+                     * 判断参数 Condition 是否已赋值
+                     * @return Condition 是否已赋值
+                     * 
+                     */
+                    bool ConditionHasBeenSet() const;
+
+                    /**
+                     * 获取私有化默认分组id-名称-操作系统
+1	全网终端	Win
+2	未分组终端	Win
+30000000	服务器	Win
+40000101	全网终端	Linux
+40000102	未分组终端	Linux
+40000103	服务器	Linux
+40000201	全网终端	macOS
+40000202	未分组终端	macOS
+40000203	服务器	macOS
+40000401	全网终端	Android
+40000402	未分组终端	Android
+40000501	全网终端	iOS
+40000502	未分组终端	iOS
+                     * @return GroupId 私有化默认分组id-名称-操作系统
+1	全网终端	Win
+2	未分组终端	Win
+30000000	服务器	Win
+40000101	全网终端	Linux
+40000102	未分组终端	Linux
+40000103	服务器	Linux
+40000201	全网终端	macOS
+40000202	未分组终端	macOS
+40000203	服务器	macOS
+40000401	全网终端	Android
+40000402	未分组终端	Android
+40000501	全网终端	iOS
+40000502	未分组终端	iOS
+                     * 
+                     */
+                    int64_t GetGroupId() const;
+
+                    /**
+                     * 设置私有化默认分组id-名称-操作系统
+1	全网终端	Win
+2	未分组终端	Win
+30000000	服务器	Win
+40000101	全网终端	Linux
+40000102	未分组终端	Linux
+40000103	服务器	Linux
+40000201	全网终端	macOS
+40000202	未分组终端	macOS
+40000203	服务器	macOS
+40000401	全网终端	Android
+40000402	未分组终端	Android
+40000501	全网终端	iOS
+40000502	未分组终端	iOS
+                     * @param _groupId 私有化默认分组id-名称-操作系统
+1	全网终端	Win
+2	未分组终端	Win
+30000000	服务器	Win
+40000101	全网终端	Linux
+40000102	未分组终端	Linux
+40000103	服务器	Linux
+40000201	全网终端	macOS
+40000202	未分组终端	macOS
+40000203	服务器	macOS
+40000401	全网终端	Android
+40000402	未分组终端	Android
+40000501	全网终端	iOS
+40000502	未分组终端	iOS
+                     * 
+                     */
+                    void SetGroupId(const int64_t& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * @return OsType 系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 
+                     */
+                    int64_t GetOsType() const;
+
+                    /**
+                     * 设置系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * @param _osType 系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 
+                     */
+                    void SetOsType(const int64_t& _osType);
+
+                    /**
+                     * 判断参数 OsType 是否已赋值
+                     * @return OsType 是否已赋值
+                     * 
+                     */
+                    bool OsTypeHasBeenSet() const;
+
+                    /**
+                     * 获取在线状态 2 在线 0，1 离线
+                     * @return OnlineStatus 在线状态 2 在线 0，1 离线
+                     * 
+                     */
+                    int64_t GetOnlineStatus() const;
+
+                    /**
+                     * 设置在线状态 2 在线 0，1 离线
+                     * @param _onlineStatus 在线状态 2 在线 0，1 离线
+                     * 
+                     */
+                    void SetOnlineStatus(const int64_t& _onlineStatus);
+
+                    /**
+                     * 判断参数 OnlineStatus 是否已赋值
+                     * @return OnlineStatus 是否已赋值
+                     * 
+                     */
+                    bool OnlineStatusHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件--兼容旧接口,参数同Condition
+                     * @return Filters 过滤条件--兼容旧接口,参数同Condition
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件--兼容旧接口,参数同Condition
+                     * @param _filters 过滤条件--兼容旧接口,参数同Condition
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段--兼容旧接口,参数同Condition
+                     * @return Sort 排序字段--兼容旧接口,参数同Condition
+                     * 
+                     */
+                    Sort GetSort() const;
+
+                    /**
+                     * 设置排序字段--兼容旧接口,参数同Condition
+                     * @param _sort 排序字段--兼容旧接口,参数同Condition
+                     * 
+                     */
+                    void SetSort(const Sort& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     * 
+                     */
+                    bool SortHasBeenSet() const;
+
+                    /**
+                     * 获取获取第几页--兼容旧接口,参数同Condition(只支持32位)
+                     * @return PageNum 获取第几页--兼容旧接口,参数同Condition(只支持32位)
+                     * 
+                     */
+                    int64_t GetPageNum() const;
+
+                    /**
+                     * 设置获取第几页--兼容旧接口,参数同Condition(只支持32位)
+                     * @param _pageNum 获取第几页--兼容旧接口,参数同Condition(只支持32位)
+                     * 
+                     */
+                    void SetPageNum(const int64_t& _pageNum);
+
+                    /**
+                     * 判断参数 PageNum 是否已赋值
+                     * @return PageNum 是否已赋值
+                     * 
+                     */
+                    bool PageNumHasBeenSet() const;
+
+                    /**
+                     * 获取每页获取数--兼容旧接口,参数同Condition(只支持32位)
+                     * @return PageSize 每页获取数--兼容旧接口,参数同Condition(只支持32位)
+                     * 
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置每页获取数--兼容旧接口,参数同Condition(只支持32位)
+                     * @param _pageSize 每页获取数--兼容旧接口,参数同Condition(只支持32位)
+                     * 
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取授权状态 4未授权 5已授权
+                     * @return Status 授权状态 4未授权 5已授权
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置授权状态 4未授权 5已授权
+                     * @param _status 授权状态 4未授权 5已授权
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 过滤条件<br>
+<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>
+<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>
+<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>
+分页参数<br>
+<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
+<li>PageSize 最大值5000，最好不超过100。</li>
+                     */
+                    Condition m_condition;
+                    bool m_conditionHasBeenSet;
+
+                    /**
+                     * 私有化默认分组id-名称-操作系统
+1	全网终端	Win
+2	未分组终端	Win
+30000000	服务器	Win
+40000101	全网终端	Linux
+40000102	未分组终端	Linux
+40000103	服务器	Linux
+40000201	全网终端	macOS
+40000202	未分组终端	macOS
+40000203	服务器	macOS
+40000401	全网终端	Android
+40000402	未分组终端	Android
+40000501	全网终端	iOS
+40000502	未分组终端	iOS
+                     */
+                    int64_t m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     */
+                    int64_t m_osType;
+                    bool m_osTypeHasBeenSet;
+
+                    /**
+                     * 在线状态 2 在线 0，1 离线
+                     */
+                    int64_t m_onlineStatus;
+                    bool m_onlineStatusHasBeenSet;
+
+                    /**
+                     * 过滤条件--兼容旧接口,参数同Condition
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 排序字段--兼容旧接口,参数同Condition
+                     */
+                    Sort m_sort;
+                    bool m_sortHasBeenSet;
+
+                    /**
+                     * 获取第几页--兼容旧接口,参数同Condition(只支持32位)
+                     */
+                    int64_t m_pageNum;
+                    bool m_pageNumHasBeenSet;
+
+                    /**
+                     * 每页获取数--兼容旧接口,参数同Condition(只支持32位)
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 授权状态 4未授权 5已授权
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_IOA_V20220601_MODEL_DESCRIBEDEVICESREQUEST_H_

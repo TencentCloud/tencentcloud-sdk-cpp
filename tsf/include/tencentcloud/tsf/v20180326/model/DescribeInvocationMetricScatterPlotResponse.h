@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取多值时间抽统计指标
+                     * 获取多值时间统计指标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result 多值时间抽统计指标
+                     * @return Result 多值时间统计指标
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 多值时间抽统计指标
+                     * 多值时间统计指标
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InvocationMetricScatterPlot m_result;

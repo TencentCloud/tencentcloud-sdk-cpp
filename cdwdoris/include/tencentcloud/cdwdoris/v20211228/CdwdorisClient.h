@@ -74,7 +74,7 @@ namespace TencentCloud
                 DescribeInstanceNodesOutcomeCallable DescribeInstanceNodesCallable(const Model::DescribeInstanceNodesRequest& request);
 
                 /**
-                 *获取实例列表
+                 *获取集群列表
                  * @param req DescribeInstancesRequest
                  * @return DescribeInstancesOutcome
                  */

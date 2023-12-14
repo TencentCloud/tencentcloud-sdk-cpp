@@ -31,7 +31,8 @@ CreateSealByImageRequest::CreateSealByImageRequest() :
     m_sealTypeHasBeenSet(false),
     m_sealHorizontalTextHasBeenSet(false),
     m_sealStyleHasBeenSet(false),
-    m_sealSizeHasBeenSet(false)
+    m_sealSizeHasBeenSet(false),
+    m_taxIdentifyCodeHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,14 @@ string CreateSealByImageRequest::ToJsonString() const
         string key = "SealSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sealSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxIdentifyCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxIdentifyCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taxIdentifyCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -266,6 +275,22 @@ void CreateSealByImageRequest::SetSealSize(const string& _sealSize)
 bool CreateSealByImageRequest::SealSizeHasBeenSet() const
 {
     return m_sealSizeHasBeenSet;
+}
+
+string CreateSealByImageRequest::GetTaxIdentifyCode() const
+{
+    return m_taxIdentifyCode;
+}
+
+void CreateSealByImageRequest::SetTaxIdentifyCode(const string& _taxIdentifyCode)
+{
+    m_taxIdentifyCode = _taxIdentifyCode;
+    m_taxIdentifyCodeHasBeenSet = true;
+}
+
+bool CreateSealByImageRequest::TaxIdentifyCodeHasBeenSet() const
+{
+    return m_taxIdentifyCodeHasBeenSet;
 }
 
 

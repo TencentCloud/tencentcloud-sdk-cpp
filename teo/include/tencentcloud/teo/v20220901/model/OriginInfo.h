@@ -50,18 +50,20 @@ namespace TencentCloud
                     /**
                      * 获取源站类型，取值有：
 <li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>
-<li>COS：COS 源；</li>
+<li>COS：腾讯云 COS 对象存储源站；</li>
+<li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
-<li>AWS_S3：S3兼容对象存储源站；</li>
-<li>LB: 负载均衡类型源站；</li>
-<li>SPACE：EdgeOne Shield Space 存储。</li>  
+ <li>VODEO：云点播（混合云版）；</li>
+<li>SPACE：源站卸载，当前仅白名单开放；</li>
+<li>LB：负载均衡，当前仅白名单开放。</li>
                      * @return OriginType 源站类型，取值有：
 <li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>
-<li>COS：COS 源；</li>
+<li>COS：腾讯云 COS 对象存储源站；</li>
+<li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
-<li>AWS_S3：S3兼容对象存储源站；</li>
-<li>LB: 负载均衡类型源站；</li>
-<li>SPACE：EdgeOne Shield Space 存储。</li>  
+ <li>VODEO：云点播（混合云版）；</li>
+<li>SPACE：源站卸载，当前仅白名单开放；</li>
+<li>LB：负载均衡，当前仅白名单开放。</li>
                      * 
                      */
                     std::string GetOriginType() const;
@@ -69,18 +71,20 @@ namespace TencentCloud
                     /**
                      * 设置源站类型，取值有：
 <li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>
-<li>COS：COS 源；</li>
+<li>COS：腾讯云 COS 对象存储源站；</li>
+<li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
-<li>AWS_S3：S3兼容对象存储源站；</li>
-<li>LB: 负载均衡类型源站；</li>
-<li>SPACE：EdgeOne Shield Space 存储。</li>  
+ <li>VODEO：云点播（混合云版）；</li>
+<li>SPACE：源站卸载，当前仅白名单开放；</li>
+<li>LB：负载均衡，当前仅白名单开放。</li>
                      * @param _originType 源站类型，取值有：
 <li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>
-<li>COS：COS 源；</li>
+<li>COS：腾讯云 COS 对象存储源站；</li>
+<li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
-<li>AWS_S3：S3兼容对象存储源站；</li>
-<li>LB: 负载均衡类型源站；</li>
-<li>SPACE：EdgeOne Shield Space 存储。</li>  
+ <li>VODEO：云点播（混合云版）；</li>
+<li>SPACE：源站卸载，当前仅白名单开放；</li>
+<li>LB：负载均衡，当前仅白名单开放。</li>
                      * 
                      */
                     void SetOriginType(const std::string& _originType);
@@ -93,15 +97,43 @@ namespace TencentCloud
                     bool OriginTypeHasBeenSet() const;
 
                     /**
-                     * 获取源站地址，当 OriginType 参数指定为 ORIGIN_GROUP 时，该参数填写源站组 ID，其他情况下填写源站地址。
-                     * @return Origin 源站地址，当 OriginType 参数指定为 ORIGIN_GROUP 时，该参数填写源站组 ID，其他情况下填写源站地址。
+                     * 获取源站地址，根据 OriginType 的取值分为以下情况：
+<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>
+<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>
+<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>
+<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>
+<li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数填写 "all-buckets-in-vodeo-application"；如果 VodeoDistributionRange = Bucket，则该参数请填写对应存储桶域名；</li>
+<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>
+<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>
+                     * @return Origin 源站地址，根据 OriginType 的取值分为以下情况：
+<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>
+<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>
+<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>
+<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>
+<li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数填写 "all-buckets-in-vodeo-application"；如果 VodeoDistributionRange = Bucket，则该参数请填写对应存储桶域名；</li>
+<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>
+<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>
                      * 
                      */
                     std::string GetOrigin() const;
 
                     /**
-                     * 设置源站地址，当 OriginType 参数指定为 ORIGIN_GROUP 时，该参数填写源站组 ID，其他情况下填写源站地址。
-                     * @param _origin 源站地址，当 OriginType 参数指定为 ORIGIN_GROUP 时，该参数填写源站组 ID，其他情况下填写源站地址。
+                     * 设置源站地址，根据 OriginType 的取值分为以下情况：
+<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>
+<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>
+<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>
+<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>
+<li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数填写 "all-buckets-in-vodeo-application"；如果 VodeoDistributionRange = Bucket，则该参数请填写对应存储桶域名；</li>
+<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>
+<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>
+                     * @param _origin 源站地址，根据 OriginType 的取值分为以下情况：
+<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>
+<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>
+<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>
+<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>
+<li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数填写 "all-buckets-in-vodeo-application"；如果 VodeoDistributionRange = Bucket，则该参数请填写对应存储桶域名；</li>
+<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>
+<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>
                      * 
                      */
                     void SetOrigin(const std::string& _origin);
@@ -114,15 +146,15 @@ namespace TencentCloud
                     bool OriginHasBeenSet() const;
 
                     /**
-                     * 获取备用源站组 ID，该参数在 OriginType 参数指定为 ORIGIN_GROUP 时生效，为空表示不使用备用源站。
-                     * @return BackupOrigin 备用源站组 ID，该参数在 OriginType 参数指定为 ORIGIN_GROUP 时生效，为空表示不使用备用源站。
+                     * 获取备用源站组 ID，该参数仅在 OriginType = ORIGIN_GROUP 时生效，该字段为旧版能力，调用后控制台无法进行配置修改，如需使用请提交工单咨询。
+                     * @return BackupOrigin 备用源站组 ID，该参数仅在 OriginType = ORIGIN_GROUP 时生效，该字段为旧版能力，调用后控制台无法进行配置修改，如需使用请提交工单咨询。
                      * 
                      */
                     std::string GetBackupOrigin() const;
 
                     /**
-                     * 设置备用源站组 ID，该参数在 OriginType 参数指定为 ORIGIN_GROUP 时生效，为空表示不使用备用源站。
-                     * @param _backupOrigin 备用源站组 ID，该参数在 OriginType 参数指定为 ORIGIN_GROUP 时生效，为空表示不使用备用源站。
+                     * 设置备用源站组 ID，该参数仅在 OriginType = ORIGIN_GROUP 时生效，该字段为旧版能力，调用后控制台无法进行配置修改，如需使用请提交工单咨询。
+                     * @param _backupOrigin 备用源站组 ID，该参数仅在 OriginType = ORIGIN_GROUP 时生效，该字段为旧版能力，调用后控制台无法进行配置修改，如需使用请提交工单咨询。
                      * 
                      */
                     void SetBackupOrigin(const std::string& _backupOrigin);
@@ -135,23 +167,27 @@ namespace TencentCloud
                     bool BackupOriginHasBeenSet() const;
 
                     /**
-                     * 获取指定是否允许访问私有对象存储源站，当源站类型 OriginType=COS 或 AWS_S3 时有效，取值有：
+                     * 获取指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>默认值：off。
-                     * @return PrivateAccess 指定是否允许访问私有对象存储源站，当源站类型 OriginType=COS 或 AWS_S3 时有效，取值有：
+<li>off：不使用私有鉴权。</li>
+不填写时，默认值为off。
+                     * @return PrivateAccess 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>默认值：off。
+<li>off：不使用私有鉴权。</li>
+不填写时，默认值为off。
                      * 
                      */
                     std::string GetPrivateAccess() const;
 
                     /**
-                     * 设置指定是否允许访问私有对象存储源站，当源站类型 OriginType=COS 或 AWS_S3 时有效，取值有：
+                     * 设置指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>默认值：off。
-                     * @param _privateAccess 指定是否允许访问私有对象存储源站，当源站类型 OriginType=COS 或 AWS_S3 时有效，取值有：
+<li>off：不使用私有鉴权。</li>
+不填写时，默认值为off。
+                     * @param _privateAccess 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>默认值：off。
+<li>off：不使用私有鉴权。</li>
+不填写时，默认值为off。
                      * 
                      */
                     void SetPrivateAccess(const std::string& _privateAccess);
@@ -164,15 +200,15 @@ namespace TencentCloud
                     bool PrivateAccessHasBeenSet() const;
 
                     /**
-                     * 获取私有鉴权使用参数，当源站类型 PrivateAccess=on 时有效。
-                     * @return PrivateParameters 私有鉴权使用参数，当源站类型 PrivateAccess=on 时有效。
+                     * 获取私有鉴权使用参数，该参数仅当源站类型 PrivateAccess = on 时会生效。
+                     * @return PrivateParameters 私有鉴权使用参数，该参数仅当源站类型 PrivateAccess = on 时会生效。
                      * 
                      */
                     std::vector<PrivateParameter> GetPrivateParameters() const;
 
                     /**
-                     * 设置私有鉴权使用参数，当源站类型 PrivateAccess=on 时有效。
-                     * @param _privateParameters 私有鉴权使用参数，当源站类型 PrivateAccess=on 时有效。
+                     * 设置私有鉴权使用参数，该参数仅当源站类型 PrivateAccess = on 时会生效。
+                     * @param _privateParameters 私有鉴权使用参数，该参数仅当源站类型 PrivateAccess = on 时会生效。
                      * 
                      */
                     void SetPrivateParameters(const std::vector<PrivateParameter>& _privateParameters);
@@ -185,15 +221,15 @@ namespace TencentCloud
                     bool PrivateParametersHasBeenSet() const;
 
                     /**
-                     * 获取MO 子应用 ID
-                     * @return VodeoSubAppId MO 子应用 ID
+                     * 获取VODEO 子应用 ID。该参数当 OriginType = VODEO 时必填。
+                     * @return VodeoSubAppId VODEO 子应用 ID。该参数当 OriginType = VODEO 时必填。
                      * 
                      */
                     int64_t GetVodeoSubAppId() const;
 
                     /**
-                     * 设置MO 子应用 ID
-                     * @param _vodeoSubAppId MO 子应用 ID
+                     * 设置VODEO 子应用 ID。该参数当 OriginType = VODEO 时必填。
+                     * @param _vodeoSubAppId VODEO 子应用 ID。该参数当 OriginType = VODEO 时必填。
                      * 
                      */
                     void SetVodeoSubAppId(const int64_t& _vodeoSubAppId);
@@ -206,15 +242,23 @@ namespace TencentCloud
                     bool VodeoSubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
-                     * @return VodeoDistributionRange MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
+                     * 获取VODEO 分发范围，该参数当 OriginType = VODEO 时必填。取值有： 
+<li>All：当前应用下所有存储桶；</li> 
+<li>Bucket：指定的某一个存储桶。</li>	
+                     * @return VodeoDistributionRange VODEO 分发范围，该参数当 OriginType = VODEO 时必填。取值有： 
+<li>All：当前应用下所有存储桶；</li> 
+<li>Bucket：指定的某一个存储桶。</li>	
                      * 
                      */
                     std::string GetVodeoDistributionRange() const;
 
                     /**
-                     * 设置MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
-                     * @param _vodeoDistributionRange MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
+                     * 设置VODEO 分发范围，该参数当 OriginType = VODEO 时必填。取值有： 
+<li>All：当前应用下所有存储桶；</li> 
+<li>Bucket：指定的某一个存储桶。</li>	
+                     * @param _vodeoDistributionRange VODEO 分发范围，该参数当 OriginType = VODEO 时必填。取值有： 
+<li>All：当前应用下所有存储桶；</li> 
+<li>Bucket：指定的某一个存储桶。</li>	
                      * 
                      */
                     void SetVodeoDistributionRange(const std::string& _vodeoDistributionRange);
@@ -227,15 +271,15 @@ namespace TencentCloud
                     bool VodeoDistributionRangeHasBeenSet() const;
 
                     /**
-                     * 获取MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填	
-                     * @return VodeoBucketId MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填	
+                     * 获取VODEO 存储桶 ID，该参数当 OriginType = VODEO 且 VodeoDistributionRange = Bucket 时必填。
+                     * @return VodeoBucketId VODEO 存储桶 ID，该参数当 OriginType = VODEO 且 VodeoDistributionRange = Bucket 时必填。
                      * 
                      */
                     std::string GetVodeoBucketId() const;
 
                     /**
-                     * 设置MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填	
-                     * @param _vodeoBucketId MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填	
+                     * 设置VODEO 存储桶 ID，该参数当 OriginType = VODEO 且 VodeoDistributionRange = Bucket 时必填。
+                     * @param _vodeoBucketId VODEO 存储桶 ID，该参数当 OriginType = VODEO 且 VodeoDistributionRange = Bucket 时必填。
                      * 
                      */
                     void SetVodeoBucketId(const std::string& _vodeoBucketId);
@@ -252,55 +296,66 @@ namespace TencentCloud
                     /**
                      * 源站类型，取值有：
 <li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>
-<li>COS：COS 源；</li>
+<li>COS：腾讯云 COS 对象存储源站；</li>
+<li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
-<li>AWS_S3：S3兼容对象存储源站；</li>
-<li>LB: 负载均衡类型源站；</li>
-<li>SPACE：EdgeOne Shield Space 存储。</li>  
+ <li>VODEO：云点播（混合云版）；</li>
+<li>SPACE：源站卸载，当前仅白名单开放；</li>
+<li>LB：负载均衡，当前仅白名单开放。</li>
                      */
                     std::string m_originType;
                     bool m_originTypeHasBeenSet;
 
                     /**
-                     * 源站地址，当 OriginType 参数指定为 ORIGIN_GROUP 时，该参数填写源站组 ID，其他情况下填写源站地址。
+                     * 源站地址，根据 OriginType 的取值分为以下情况：
+<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>
+<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>
+<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>
+<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>
+<li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数填写 "all-buckets-in-vodeo-application"；如果 VodeoDistributionRange = Bucket，则该参数请填写对应存储桶域名；</li>
+<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>
+<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>
                      */
                     std::string m_origin;
                     bool m_originHasBeenSet;
 
                     /**
-                     * 备用源站组 ID，该参数在 OriginType 参数指定为 ORIGIN_GROUP 时生效，为空表示不使用备用源站。
+                     * 备用源站组 ID，该参数仅在 OriginType = ORIGIN_GROUP 时生效，该字段为旧版能力，调用后控制台无法进行配置修改，如需使用请提交工单咨询。
                      */
                     std::string m_backupOrigin;
                     bool m_backupOriginHasBeenSet;
 
                     /**
-                     * 指定是否允许访问私有对象存储源站，当源站类型 OriginType=COS 或 AWS_S3 时有效，取值有：
+                     * 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>默认值：off。
+<li>off：不使用私有鉴权。</li>
+不填写时，默认值为off。
                      */
                     std::string m_privateAccess;
                     bool m_privateAccessHasBeenSet;
 
                     /**
-                     * 私有鉴权使用参数，当源站类型 PrivateAccess=on 时有效。
+                     * 私有鉴权使用参数，该参数仅当源站类型 PrivateAccess = on 时会生效。
                      */
                     std::vector<PrivateParameter> m_privateParameters;
                     bool m_privateParametersHasBeenSet;
 
                     /**
-                     * MO 子应用 ID
+                     * VODEO 子应用 ID。该参数当 OriginType = VODEO 时必填。
                      */
                     int64_t m_vodeoSubAppId;
                     bool m_vodeoSubAppIdHasBeenSet;
 
                     /**
-                     * MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
+                     * VODEO 分发范围，该参数当 OriginType = VODEO 时必填。取值有： 
+<li>All：当前应用下所有存储桶；</li> 
+<li>Bucket：指定的某一个存储桶。</li>	
                      */
                     std::string m_vodeoDistributionRange;
                     bool m_vodeoDistributionRangeHasBeenSet;
 
                     /**
-                     * MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填	
+                     * VODEO 存储桶 ID，该参数当 OriginType = VODEO 且 VodeoDistributionRange = Bucket 时必填。
                      */
                     std::string m_vodeoBucketId;
                     bool m_vodeoBucketIdHasBeenSet;

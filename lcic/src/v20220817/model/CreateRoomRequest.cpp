@@ -48,7 +48,8 @@ CreateRoomRequest::CreateRoomRequest() :
     m_endDelayTimeHasBeenSet(false),
     m_liveTypeHasBeenSet(false),
     m_recordLiveUrlHasBeenSet(false),
-    m_enableAutoStartHasBeenSet(false)
+    m_enableAutoStartHasBeenSet(false),
+    m_recordBackgroundHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,14 @@ string CreateRoomRequest::ToJsonString() const
         string key = "EnableAutoStart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableAutoStart, allocator);
+    }
+
+    if (m_recordBackgroundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordBackground";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordBackground.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -694,6 +703,22 @@ void CreateRoomRequest::SetEnableAutoStart(const uint64_t& _enableAutoStart)
 bool CreateRoomRequest::EnableAutoStartHasBeenSet() const
 {
     return m_enableAutoStartHasBeenSet;
+}
+
+string CreateRoomRequest::GetRecordBackground() const
+{
+    return m_recordBackground;
+}
+
+void CreateRoomRequest::SetRecordBackground(const string& _recordBackground)
+{
+    m_recordBackground = _recordBackground;
+    m_recordBackgroundHasBeenSet = true;
+}
+
+bool CreateRoomRequest::RecordBackgroundHasBeenSet() const
+{
+    return m_recordBackgroundHasBeenSet;
 }
 
 

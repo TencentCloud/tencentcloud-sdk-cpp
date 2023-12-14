@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递kafak配置项
-                     * @return Result 投递kafak配置项
+                     * 获取投递kafka配置项
+                     * @return Result 投递kafka配置项
                      * 
                      */
                     SimpleKafkaDeliveryConfig GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递kafak配置项
+                     * 投递kafka配置项
                      */
                     SimpleKafkaDeliveryConfig m_result;
                     bool m_resultHasBeenSet;
