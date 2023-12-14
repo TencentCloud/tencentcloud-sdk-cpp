@@ -22,11 +22,13 @@ using namespace std;
 
 DomainBatchDetailSet::DomainBatchDetailSet() :
     m_idHasBeenSet(false),
+    m_actionHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_createdOnHasBeenSet(false),
-    m_updatedOnHasBeenSet(false)
+    m_updatedOnHasBeenSet(false),
+    m_bigDealIdHasBeenSet(false)
 {
 }
 
@@ -43,6 +45,16 @@ CoreInternalOutcome DomainBatchDetailSet::Deserialize(const rapidjson::Value &va
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Action") && !value["Action"].IsNull())
+    {
+        if (!value["Action"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainBatchDetailSet.Action` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_action = string(value["Action"].GetString());
+        m_actionHasBeenSet = true;
     }
 
     if (value.HasMember("Domain") && !value["Domain"].IsNull())
@@ -95,6 +107,16 @@ CoreInternalOutcome DomainBatchDetailSet::Deserialize(const rapidjson::Value &va
         m_updatedOnHasBeenSet = true;
     }
 
+    if (value.HasMember("BigDealId") && !value["BigDealId"].IsNull())
+    {
+        if (!value["BigDealId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainBatchDetailSet.BigDealId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bigDealId = string(value["BigDealId"].GetString());
+        m_bigDealIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +130,14 @@ void DomainBatchDetailSet::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_actionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Action";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainHasBeenSet)
@@ -150,6 +180,14 @@ void DomainBatchDetailSet::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         value.AddMember(iKey, rapidjson::Value(m_updatedOn.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_bigDealIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BigDealId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bigDealId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -167,6 +205,22 @@ void DomainBatchDetailSet::SetId(const int64_t& _id)
 bool DomainBatchDetailSet::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string DomainBatchDetailSet::GetAction() const
+{
+    return m_action;
+}
+
+void DomainBatchDetailSet::SetAction(const string& _action)
+{
+    m_action = _action;
+    m_actionHasBeenSet = true;
+}
+
+bool DomainBatchDetailSet::ActionHasBeenSet() const
+{
+    return m_actionHasBeenSet;
 }
 
 string DomainBatchDetailSet::GetDomain() const
@@ -247,5 +301,21 @@ void DomainBatchDetailSet::SetUpdatedOn(const string& _updatedOn)
 bool DomainBatchDetailSet::UpdatedOnHasBeenSet() const
 {
     return m_updatedOnHasBeenSet;
+}
+
+string DomainBatchDetailSet::GetBigDealId() const
+{
+    return m_bigDealId;
+}
+
+void DomainBatchDetailSet::SetBigDealId(const string& _bigDealId)
+{
+    m_bigDealId = _bigDealId;
+    m_bigDealIdHasBeenSet = true;
+}
+
+bool DomainBatchDetailSet::BigDealIdHasBeenSet() const
+{
+    return m_bigDealIdHasBeenSet;
 }
 

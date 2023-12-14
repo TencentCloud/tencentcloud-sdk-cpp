@@ -1889,6 +1889,49 @@ EssbasicClient::ChannelVerifyPdfOutcomeCallable EssbasicClient::ChannelVerifyPdf
     return task->get_future();
 }
 
+EssbasicClient::CreateBatchOrganizationRegistrationTasksOutcome EssbasicClient::CreateBatchOrganizationRegistrationTasks(const CreateBatchOrganizationRegistrationTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchOrganizationRegistrationTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchOrganizationRegistrationTasksResponse rsp = CreateBatchOrganizationRegistrationTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchOrganizationRegistrationTasksOutcome(rsp);
+        else
+            return CreateBatchOrganizationRegistrationTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchOrganizationRegistrationTasksOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateBatchOrganizationRegistrationTasksAsync(const CreateBatchOrganizationRegistrationTasksRequest& request, const CreateBatchOrganizationRegistrationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchOrganizationRegistrationTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateBatchOrganizationRegistrationTasksOutcomeCallable EssbasicClient::CreateBatchOrganizationRegistrationTasksCallable(const CreateBatchOrganizationRegistrationTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchOrganizationRegistrationTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchOrganizationRegistrationTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateChannelFlowEvidenceReportOutcome EssbasicClient::CreateChannelFlowEvidenceReport(const CreateChannelFlowEvidenceReportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateChannelFlowEvidenceReport");
@@ -2140,6 +2183,49 @@ EssbasicClient::CreateSignUrlsOutcomeCallable EssbasicClient::CreateSignUrlsCall
         [this, request]()
         {
             return this->CreateSignUrls(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::DescribeBatchOrganizationRegistrationUrlsOutcome EssbasicClient::DescribeBatchOrganizationRegistrationUrls(const DescribeBatchOrganizationRegistrationUrlsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchOrganizationRegistrationUrls");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchOrganizationRegistrationUrlsResponse rsp = DescribeBatchOrganizationRegistrationUrlsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchOrganizationRegistrationUrlsOutcome(rsp);
+        else
+            return DescribeBatchOrganizationRegistrationUrlsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchOrganizationRegistrationUrlsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeBatchOrganizationRegistrationUrlsAsync(const DescribeBatchOrganizationRegistrationUrlsRequest& request, const DescribeBatchOrganizationRegistrationUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchOrganizationRegistrationUrls(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeBatchOrganizationRegistrationUrlsOutcomeCallable EssbasicClient::DescribeBatchOrganizationRegistrationUrlsCallable(const DescribeBatchOrganizationRegistrationUrlsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchOrganizationRegistrationUrlsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchOrganizationRegistrationUrls(request);
         }
     );
 

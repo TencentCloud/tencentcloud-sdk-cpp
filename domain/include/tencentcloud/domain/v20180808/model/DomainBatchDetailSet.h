@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
+                     * 获取类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新
+                     * @return Action 类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新
+                     * 
+                     */
+                    std::string GetAction() const;
+
+                    /**
+                     * 设置类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新
+                     * @param _action 类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新
+                     * 
+                     */
+                    void SetAction(const std::string& _action);
+
+                    /**
+                     * 判断参数 Action 是否已赋值
+                     * @return Action 是否已赋值
+                     * 
+                     */
+                    bool ActionHasBeenSet() const;
+
+                    /**
                      * 获取域名
                      * @return Domain 域名
                      * 
@@ -188,6 +209,31 @@ success  操作成功。
                      */
                     bool UpdatedOnHasBeenSet() const;
 
+                    /**
+                     * 获取订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BigDealId 订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBigDealId() const;
+
+                    /**
+                     * 设置订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bigDealId 订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBigDealId(const std::string& _bigDealId);
+
+                    /**
+                     * 判断参数 BigDealId 是否已赋值
+                     * @return BigDealId 是否已赋值
+                     * 
+                     */
+                    bool BigDealIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -195,6 +241,12 @@ success  操作成功。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新
+                     */
+                    std::string m_action;
+                    bool m_actionHasBeenSet;
 
                     /**
                      * 域名
@@ -229,6 +281,13 @@ success  操作成功。
                      */
                     std::string m_updatedOn;
                     bool m_updatedOnHasBeenSet;
+
+                    /**
+                     * 订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bigDealId;
+                    bool m_bigDealIdHasBeenSet;
 
                 };
             }

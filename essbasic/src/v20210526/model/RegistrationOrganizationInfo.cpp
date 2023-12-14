@@ -1,0 +1,364 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/essbasic/v20210526/model/RegistrationOrganizationInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Essbasic::V20210526::Model;
+using namespace std;
+
+RegistrationOrganizationInfo::RegistrationOrganizationInfo() :
+    m_organizationNameHasBeenSet(false),
+    m_organizationOpenIdHasBeenSet(false),
+    m_openIdHasBeenSet(false),
+    m_uniformSocialCreditCodeHasBeenSet(false),
+    m_legalNameHasBeenSet(false),
+    m_addressHasBeenSet(false),
+    m_adminNameHasBeenSet(false),
+    m_adminMobileHasBeenSet(false),
+    m_authorizationTypesHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome RegistrationOrganizationInfo::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
+    {
+        if (!value["OrganizationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationName = string(value["OrganizationName"].GetString());
+        m_organizationNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrganizationOpenId") && !value["OrganizationOpenId"].IsNull())
+    {
+        if (!value["OrganizationOpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.OrganizationOpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationOpenId = string(value["OrganizationOpenId"].GetString());
+        m_organizationOpenIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OpenId") && !value["OpenId"].IsNull())
+    {
+        if (!value["OpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_openId = string(value["OpenId"].GetString());
+        m_openIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UniformSocialCreditCode") && !value["UniformSocialCreditCode"].IsNull())
+    {
+        if (!value["UniformSocialCreditCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.UniformSocialCreditCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniformSocialCreditCode = string(value["UniformSocialCreditCode"].GetString());
+        m_uniformSocialCreditCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LegalName") && !value["LegalName"].IsNull())
+    {
+        if (!value["LegalName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.LegalName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_legalName = string(value["LegalName"].GetString());
+        m_legalNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Address") && !value["Address"].IsNull())
+    {
+        if (!value["Address"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.Address` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_address = string(value["Address"].GetString());
+        m_addressHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdminName") && !value["AdminName"].IsNull())
+    {
+        if (!value["AdminName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.AdminName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_adminName = string(value["AdminName"].GetString());
+        m_adminNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdminMobile") && !value["AdminMobile"].IsNull())
+    {
+        if (!value["AdminMobile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.AdminMobile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_adminMobile = string(value["AdminMobile"].GetString());
+        m_adminMobileHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthorizationTypes") && !value["AuthorizationTypes"].IsNull())
+    {
+        if (!value["AuthorizationTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.AuthorizationTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AuthorizationTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_authorizationTypes.push_back((*itr).GetUint64());
+        }
+        m_authorizationTypesHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void RegistrationOrganizationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_organizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationOpenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniformSocialCreditCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniformSocialCreditCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uniformSocialCreditCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_legalNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LegalName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_legalName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Address";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_adminNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_adminName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_adminMobileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminMobile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_adminMobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_authorizationTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizationTypes.begin(); itr != m_authorizationTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+}
+
+
+string RegistrationOrganizationInfo::GetOrganizationName() const
+{
+    return m_organizationName;
+}
+
+void RegistrationOrganizationInfo::SetOrganizationName(const string& _organizationName)
+{
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::OrganizationNameHasBeenSet() const
+{
+    return m_organizationNameHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetOrganizationOpenId() const
+{
+    return m_organizationOpenId;
+}
+
+void RegistrationOrganizationInfo::SetOrganizationOpenId(const string& _organizationOpenId)
+{
+    m_organizationOpenId = _organizationOpenId;
+    m_organizationOpenIdHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::OrganizationOpenIdHasBeenSet() const
+{
+    return m_organizationOpenIdHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetOpenId() const
+{
+    return m_openId;
+}
+
+void RegistrationOrganizationInfo::SetOpenId(const string& _openId)
+{
+    m_openId = _openId;
+    m_openIdHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::OpenIdHasBeenSet() const
+{
+    return m_openIdHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetUniformSocialCreditCode() const
+{
+    return m_uniformSocialCreditCode;
+}
+
+void RegistrationOrganizationInfo::SetUniformSocialCreditCode(const string& _uniformSocialCreditCode)
+{
+    m_uniformSocialCreditCode = _uniformSocialCreditCode;
+    m_uniformSocialCreditCodeHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::UniformSocialCreditCodeHasBeenSet() const
+{
+    return m_uniformSocialCreditCodeHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetLegalName() const
+{
+    return m_legalName;
+}
+
+void RegistrationOrganizationInfo::SetLegalName(const string& _legalName)
+{
+    m_legalName = _legalName;
+    m_legalNameHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::LegalNameHasBeenSet() const
+{
+    return m_legalNameHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetAddress() const
+{
+    return m_address;
+}
+
+void RegistrationOrganizationInfo::SetAddress(const string& _address)
+{
+    m_address = _address;
+    m_addressHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::AddressHasBeenSet() const
+{
+    return m_addressHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetAdminName() const
+{
+    return m_adminName;
+}
+
+void RegistrationOrganizationInfo::SetAdminName(const string& _adminName)
+{
+    m_adminName = _adminName;
+    m_adminNameHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::AdminNameHasBeenSet() const
+{
+    return m_adminNameHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetAdminMobile() const
+{
+    return m_adminMobile;
+}
+
+void RegistrationOrganizationInfo::SetAdminMobile(const string& _adminMobile)
+{
+    m_adminMobile = _adminMobile;
+    m_adminMobileHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::AdminMobileHasBeenSet() const
+{
+    return m_adminMobileHasBeenSet;
+}
+
+vector<uint64_t> RegistrationOrganizationInfo::GetAuthorizationTypes() const
+{
+    return m_authorizationTypes;
+}
+
+void RegistrationOrganizationInfo::SetAuthorizationTypes(const vector<uint64_t>& _authorizationTypes)
+{
+    m_authorizationTypes = _authorizationTypes;
+    m_authorizationTypesHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::AuthorizationTypesHasBeenSet() const
+{
+    return m_authorizationTypesHasBeenSet;
+}
+

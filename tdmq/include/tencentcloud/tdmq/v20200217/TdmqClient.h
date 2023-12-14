@@ -169,6 +169,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClustersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQConsumeStatsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQConsumeStatsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQConsumerConnectionDetailRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQConsumerConnectionDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQConsumerConnectionsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQConsumerConnectionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGroupsRequest.h>
@@ -508,6 +510,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQConsumeStatsResponse> DescribeRocketMQConsumeStatsOutcome;
                 typedef std::future<DescribeRocketMQConsumeStatsOutcome> DescribeRocketMQConsumeStatsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQConsumeStatsRequest&, DescribeRocketMQConsumeStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQConsumeStatsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQConsumerConnectionDetailResponse> DescribeRocketMQConsumerConnectionDetailOutcome;
+                typedef std::future<DescribeRocketMQConsumerConnectionDetailOutcome> DescribeRocketMQConsumerConnectionDetailOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQConsumerConnectionDetailRequest&, DescribeRocketMQConsumerConnectionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQConsumerConnectionDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQConsumerConnectionsResponse> DescribeRocketMQConsumerConnectionsOutcome;
                 typedef std::future<DescribeRocketMQConsumerConnectionsOutcome> DescribeRocketMQConsumerConnectionsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQConsumerConnectionsRequest&, DescribeRocketMQConsumerConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQConsumerConnectionsAsyncHandler;
@@ -1328,6 +1333,15 @@ namespace TencentCloud
                 DescribeRocketMQConsumeStatsOutcome DescribeRocketMQConsumeStats(const Model::DescribeRocketMQConsumeStatsRequest &request);
                 void DescribeRocketMQConsumeStatsAsync(const Model::DescribeRocketMQConsumeStatsRequest& request, const DescribeRocketMQConsumeStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRocketMQConsumeStatsOutcomeCallable DescribeRocketMQConsumeStatsCallable(const Model::DescribeRocketMQConsumeStatsRequest& request);
+
+                /**
+                 *获取在线消费端详情
+                 * @param req DescribeRocketMQConsumerConnectionDetailRequest
+                 * @return DescribeRocketMQConsumerConnectionDetailOutcome
+                 */
+                DescribeRocketMQConsumerConnectionDetailOutcome DescribeRocketMQConsumerConnectionDetail(const Model::DescribeRocketMQConsumerConnectionDetailRequest &request);
+                void DescribeRocketMQConsumerConnectionDetailAsync(const Model::DescribeRocketMQConsumerConnectionDetailRequest& request, const DescribeRocketMQConsumerConnectionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQConsumerConnectionDetailOutcomeCallable DescribeRocketMQConsumerConnectionDetailCallable(const Model::DescribeRocketMQConsumerConnectionDetailRequest& request);
 
                 /**
                  *获取指定消费组下当前客户端的连接情况

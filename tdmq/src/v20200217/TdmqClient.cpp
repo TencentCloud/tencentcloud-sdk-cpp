@@ -3179,6 +3179,49 @@ TdmqClient::DescribeRocketMQConsumeStatsOutcomeCallable TdmqClient::DescribeRock
     return task->get_future();
 }
 
+TdmqClient::DescribeRocketMQConsumerConnectionDetailOutcome TdmqClient::DescribeRocketMQConsumerConnectionDetail(const DescribeRocketMQConsumerConnectionDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQConsumerConnectionDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQConsumerConnectionDetailResponse rsp = DescribeRocketMQConsumerConnectionDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQConsumerConnectionDetailOutcome(rsp);
+        else
+            return DescribeRocketMQConsumerConnectionDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQConsumerConnectionDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQConsumerConnectionDetailAsync(const DescribeRocketMQConsumerConnectionDetailRequest& request, const DescribeRocketMQConsumerConnectionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQConsumerConnectionDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQConsumerConnectionDetailOutcomeCallable TdmqClient::DescribeRocketMQConsumerConnectionDetailCallable(const DescribeRocketMQConsumerConnectionDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQConsumerConnectionDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQConsumerConnectionDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQConsumerConnectionsOutcome TdmqClient::DescribeRocketMQConsumerConnections(const DescribeRocketMQConsumerConnectionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQConsumerConnections");

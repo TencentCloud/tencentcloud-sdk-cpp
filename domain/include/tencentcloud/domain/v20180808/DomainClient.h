@@ -333,7 +333,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 (  DescribeDomainBaseInfo) 获取域名基本信息。
-
                  * @param req DescribeDomainBaseInfoRequest
                  * @return DescribeDomainBaseInfoOutcome
                  */
@@ -343,7 +342,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 (  DescribeDomainNameList ) 我的域名列表。
-
                  * @param req DescribeDomainNameListRequest
                  * @return DescribeDomainNameListOutcome
                  */

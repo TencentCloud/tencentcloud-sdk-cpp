@@ -138,6 +138,69 @@ done 执行完成。
                      */
                     bool CreatedOnHasBeenSet() const;
 
+                    /**
+                     * 获取批量操作成功个数
+                     * @return Success 批量操作成功个数
+                     * 
+                     */
+                    int64_t GetSuccess() const;
+
+                    /**
+                     * 设置批量操作成功个数
+                     * @param _success 批量操作成功个数
+                     * 
+                     */
+                    void SetSuccess(const int64_t& _success);
+
+                    /**
+                     * 判断参数 Success 是否已赋值
+                     * @return Success 是否已赋值
+                     * 
+                     */
+                    bool SuccessHasBeenSet() const;
+
+                    /**
+                     * 获取批量操作处理中个数
+                     * @return Doing 批量操作处理中个数
+                     * 
+                     */
+                    int64_t GetDoing() const;
+
+                    /**
+                     * 设置批量操作处理中个数
+                     * @param _doing 批量操作处理中个数
+                     * 
+                     */
+                    void SetDoing(const int64_t& _doing);
+
+                    /**
+                     * 判断参数 Doing 是否已赋值
+                     * @return Doing 是否已赋值
+                     * 
+                     */
+                    bool DoingHasBeenSet() const;
+
+                    /**
+                     * 获取批量操作失败个数
+                     * @return Failed 批量操作失败个数
+                     * 
+                     */
+                    int64_t GetFailed() const;
+
+                    /**
+                     * 设置批量操作失败个数
+                     * @param _failed 批量操作失败个数
+                     * 
+                     */
+                    void SetFailed(const int64_t& _failed);
+
+                    /**
+                     * 判断参数 Failed 是否已赋值
+                     * @return Failed 是否已赋值
+                     * 
+                     */
+                    bool FailedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +228,24 @@ done 执行完成。
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
+
+                    /**
+                     * 批量操作成功个数
+                     */
+                    int64_t m_success;
+                    bool m_successHasBeenSet;
+
+                    /**
+                     * 批量操作处理中个数
+                     */
+                    int64_t m_doing;
+                    bool m_doingHasBeenSet;
+
+                    /**
+                     * 批量操作失败个数
+                     */
+                    int64_t m_failed;
+                    bool m_failedHasBeenSet;
 
                 };
             }
