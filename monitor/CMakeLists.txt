@@ -406,6 +406,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/PrometheusAlertPolicyItem.h
   include/tencentcloud/monitor/v20180724/model/ModifyPrometheusAgentExternalLabelsRequest.h
   include/tencentcloud/monitor/v20180724/model/PrometheusScrapeJob.h
+  include/tencentcloud/monitor/v20180724/model/PrometheusTarget.h
   include/tencentcloud/monitor/v20180724/model/AlarmHierarchicalNotice.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectDimension.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusTempRequest.h
@@ -836,6 +837,7 @@ set(monitor_src
   src/v20180724/model/PrometheusAlertPolicyItem.cpp
   src/v20180724/model/ModifyPrometheusAgentExternalLabelsRequest.cpp
   src/v20180724/model/PrometheusScrapeJob.cpp
+  src/v20180724/model/PrometheusTarget.cpp
   src/v20180724/model/AlarmHierarchicalNotice.cpp
   src/v20180724/model/BindingPolicyObjectDimension.cpp
   src/v20180724/model/DescribePrometheusTempRequest.cpp

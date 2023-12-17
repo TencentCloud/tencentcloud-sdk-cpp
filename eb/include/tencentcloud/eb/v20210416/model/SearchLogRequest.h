@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件
-                     * @return Filter 筛选条件
+                     * 获取事件查询筛选条件；示例如下：[{"key":"host","operator":"eq","value":"106.53.106.243"},{"type":"AND","filters":[{"key":"region","operator":"like","value":"*guangzhou*"},{"key":"type","operator":"eq","value":"cvm:ErrorEvent:GuestReboot"}]},{"type":"OR","filters":[{"key":"field1","operator":"like","value":"*access*"},{"key":"field2","operator":"eq","value":"custorm"}]}]
+                     * @return Filter 事件查询筛选条件；示例如下：[{"key":"host","operator":"eq","value":"106.53.106.243"},{"type":"AND","filters":[{"key":"region","operator":"like","value":"*guangzhou*"},{"key":"type","operator":"eq","value":"cvm:ErrorEvent:GuestReboot"}]},{"type":"OR","filters":[{"key":"field1","operator":"like","value":"*access*"},{"key":"field2","operator":"eq","value":"custorm"}]}]
                      * 
                      */
                     std::vector<LogFilter> GetFilter() const;
 
                     /**
-                     * 设置筛选条件
-                     * @param _filter 筛选条件
+                     * 设置事件查询筛选条件；示例如下：[{"key":"host","operator":"eq","value":"106.53.106.243"},{"type":"AND","filters":[{"key":"region","operator":"like","value":"*guangzhou*"},{"key":"type","operator":"eq","value":"cvm:ErrorEvent:GuestReboot"}]},{"type":"OR","filters":[{"key":"field1","operator":"like","value":"*access*"},{"key":"field2","operator":"eq","value":"custorm"}]}]
+                     * @param _filter 事件查询筛选条件；示例如下：[{"key":"host","operator":"eq","value":"106.53.106.243"},{"type":"AND","filters":[{"key":"region","operator":"like","value":"*guangzhou*"},{"key":"type","operator":"eq","value":"cvm:ErrorEvent:GuestReboot"}]},{"type":"OR","filters":[{"key":"field1","operator":"like","value":"*access*"},{"key":"field2","operator":"eq","value":"custorm"}]}]
                      * 
                      */
                     void SetFilter(const std::vector<LogFilter>& _filter);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取排序数组
-                     * @return OrderFields 排序数组
+                     * 获取事件查询结果排序，["timestamp","subject"]
+                     * @return OrderFields 事件查询结果排序，["timestamp","subject"]
                      * 
                      */
                     std::vector<std::string> GetOrderFields() const;
 
                     /**
-                     * 设置排序数组
-                     * @param _orderFields 排序数组
+                     * 设置事件查询结果排序，["timestamp","subject"]
+                     * @param _orderFields 事件查询结果排序，["timestamp","subject"]
                      * 
                      */
                     void SetOrderFields(const std::vector<std::string>& _orderFields);
@@ -244,13 +244,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 筛选条件
+                     * 事件查询筛选条件；示例如下：[{"key":"host","operator":"eq","value":"106.53.106.243"},{"type":"AND","filters":[{"key":"region","operator":"like","value":"*guangzhou*"},{"key":"type","operator":"eq","value":"cvm:ErrorEvent:GuestReboot"}]},{"type":"OR","filters":[{"key":"field1","operator":"like","value":"*access*"},{"key":"field2","operator":"eq","value":"custorm"}]}]
                      */
                     std::vector<LogFilter> m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * 排序数组
+                     * 事件查询结果排序，["timestamp","subject"]
                      */
                     std::vector<std::string> m_orderFields;
                     bool m_orderFieldsHasBeenSet;

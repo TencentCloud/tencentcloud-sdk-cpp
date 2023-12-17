@@ -33,7 +33,8 @@ CreateSparkSessionBatchSQLRequest::CreateSparkSessionBatchSQLRequest() :
     m_sessionIdHasBeenSet(false),
     m_sessionNameHasBeenSet(false),
     m_argumentsHasBeenSet(false),
-    m_isInheritHasBeenSet(false)
+    m_isInheritHasBeenSet(false),
+    m_customKeyHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,14 @@ string CreateSparkSessionBatchSQLRequest::ToJsonString() const
         string key = "IsInherit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isInherit, allocator);
+    }
+
+    if (m_customKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -321,6 +330,22 @@ void CreateSparkSessionBatchSQLRequest::SetIsInherit(const int64_t& _isInherit)
 bool CreateSparkSessionBatchSQLRequest::IsInheritHasBeenSet() const
 {
     return m_isInheritHasBeenSet;
+}
+
+string CreateSparkSessionBatchSQLRequest::GetCustomKey() const
+{
+    return m_customKey;
+}
+
+void CreateSparkSessionBatchSQLRequest::SetCustomKey(const string& _customKey)
+{
+    m_customKey = _customKey;
+    m_customKeyHasBeenSet = true;
+}
+
+bool CreateSparkSessionBatchSQLRequest::CustomKeyHasBeenSet() const
+{
+    return m_customKeyHasBeenSet;
 }
 
 

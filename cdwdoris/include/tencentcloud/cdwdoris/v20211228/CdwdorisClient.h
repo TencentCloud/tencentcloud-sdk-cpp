@@ -56,7 +56,7 @@ namespace TencentCloud
 
 
                 /**
-                 *根据实例ID查询某个实例的具体信息
+                 *根据集群ID查询某个集群的具体信息
                  * @param req DescribeInstanceRequest
                  * @return DescribeInstanceOutcome
                  */
@@ -65,7 +65,7 @@ namespace TencentCloud
                 DescribeInstanceOutcomeCallable DescribeInstanceCallable(const Model::DescribeInstanceRequest& request);
 
                 /**
-                 *获取实例节点信息列表
+                 *获取集群节点信息列表
                  * @param req DescribeInstanceNodesRequest
                  * @return DescribeInstanceNodesOutcome
                  */

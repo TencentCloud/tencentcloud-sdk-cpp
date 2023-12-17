@@ -67,22 +67,22 @@ namespace TencentCloud
 
                     /**
                      * 获取待执行命令的实例ID列表，上限200。支持实例类型：
-<li> CVM
-<li> LIGHTHOUSE
+<li> CVM </li>
+<li> LIGHTHOUSE </li>
                      * @return InstanceIds 待执行命令的实例ID列表，上限200。支持实例类型：
-<li> CVM
-<li> LIGHTHOUSE
+<li> CVM </li>
+<li> LIGHTHOUSE </li>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置待执行命令的实例ID列表，上限200。支持实例类型：
-<li> CVM
-<li> LIGHTHOUSE
+<li> CVM </li>
+<li> LIGHTHOUSE </li>
                      * @param _instanceIds 待执行命令的实例ID列表，上限200。支持实例类型：
-<li> CVM
-<li> LIGHTHOUSE
+<li> CVM </li>
+<li> LIGHTHOUSE </li>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -201,12 +201,12 @@ namespace TencentCloud
 
                     /**
                      * 获取是否保存命令，取值范围：
-<li> true：保存
-<li> false：不保存
+<li> true：保存</li>
+<li> false：不保存</li>
 默认为 false。
                      * @return SaveCommand 是否保存命令，取值范围：
-<li> true：保存
-<li> false：不保存
+<li> true：保存</li>
+<li> false：不保存</li>
 默认为 false。
                      * 
                      */
@@ -214,12 +214,12 @@ namespace TencentCloud
 
                     /**
                      * 设置是否保存命令，取值范围：
-<li> true：保存
-<li> false：不保存
+<li> true：保存</li>
+<li> false：不保存</li>
 默认为 false。
                      * @param _saveCommand 是否保存命令，取值范围：
-<li> true：保存
-<li> false：不保存
+<li> true：保存</li>
+<li> false：不保存</li>
 默认为 false。
                      * 
                      */
@@ -236,15 +236,15 @@ namespace TencentCloud
                      * 获取是否启用自定义参数功能。
 一旦创建，此值不提供修改。
 取值范围：
-<li> true：启用
-<li> false：不启用
-默认值：false。
+<li> true：启用 </li>
+<li> false：不启用 </li>
+默认值：false。 
                      * @return EnableParameter 是否启用自定义参数功能。
 一旦创建，此值不提供修改。
 取值范围：
-<li> true：启用
-<li> false：不启用
-默认值：false。
+<li> true：启用 </li>
+<li> false：不启用 </li>
+默认值：false。 
                      * 
                      */
                     bool GetEnableParameter() const;
@@ -253,15 +253,15 @@ namespace TencentCloud
                      * 设置是否启用自定义参数功能。
 一旦创建，此值不提供修改。
 取值范围：
-<li> true：启用
-<li> false：不启用
-默认值：false。
+<li> true：启用 </li>
+<li> false：不启用 </li>
+默认值：false。 
                      * @param _enableParameter 是否启用自定义参数功能。
 一旦创建，此值不提供修改。
 取值范围：
-<li> true：启用
-<li> false：不启用
-默认值：false。
+<li> true：启用 </li>
+<li> false：不启用 </li>
+默认值：false。 
                      * 
                      */
                     void SetEnableParameter(const bool& _enableParameter);
@@ -478,8 +478,8 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
 
                     /**
                      * 待执行命令的实例ID列表，上限200。支持实例类型：
-<li> CVM
-<li> LIGHTHOUSE
+<li> CVM </li>
+<li> LIGHTHOUSE </li>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -516,8 +516,8 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
 
                     /**
                      * 是否保存命令，取值范围：
-<li> true：保存
-<li> false：不保存
+<li> true：保存</li>
+<li> false：不保存</li>
 默认为 false。
                      */
                     bool m_saveCommand;
@@ -527,9 +527,9 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                      * 是否启用自定义参数功能。
 一旦创建，此值不提供修改。
 取值范围：
-<li> true：启用
-<li> false：不启用
-默认值：false。
+<li> true：启用 </li>
+<li> false：不启用 </li>
+默认值：false。 
                      */
                     bool m_enableParameter;
                     bool m_enableParameterHasBeenSet;

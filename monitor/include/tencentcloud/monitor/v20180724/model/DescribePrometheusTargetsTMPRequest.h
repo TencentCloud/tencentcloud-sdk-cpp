@@ -65,36 +65,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
-                     * @return ClusterType 集群类型
-                     * 
-                     */
-                    std::string GetClusterType() const;
-
-                    /**
-                     * 设置集群类型
-                     * @param _clusterType 集群类型
-                     * 
-                     */
-                    void SetClusterType(const std::string& _clusterType);
-
-                    /**
-                     * 判断参数 ClusterType 是否已赋值
-                     * @return ClusterType 是否已赋值
-                     * 
-                     */
-                    bool ClusterTypeHasBeenSet() const;
-
-                    /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取集成容器服务填绑定的集群id；
+集成中心填 non-cluster
+                     * @return ClusterId 集成容器服务填绑定的集群id；
+集成中心填 non-cluster
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置集成容器服务填绑定的集群id；
+集成中心填 non-cluster
+                     * @param _clusterId 集成容器服务填绑定的集群id；
+集成中心填 non-cluster
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -105,6 +88,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群类型(可不填)
+                     * @return ClusterType 集群类型(可不填)
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型(可不填)
+                     * @param _clusterType 集群类型(可不填)
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
 
                     /**
                      * 获取过滤条件，当前支持
@@ -144,16 +148,17 @@ Value=up, down, unknown
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 集群类型
-                     */
-                    std::string m_clusterType;
-                    bool m_clusterTypeHasBeenSet;
-
-                    /**
-                     * 集群id
+                     * 集成容器服务填绑定的集群id；
+集成中心填 non-cluster
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 集群类型(可不填)
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                     /**
                      * 过滤条件，当前支持

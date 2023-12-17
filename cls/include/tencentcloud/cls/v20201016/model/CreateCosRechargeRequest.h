@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取supported: "", "gzip", "lzop", "snappy”; 默认空
-                     * @return Compress supported: "", "gzip", "lzop", "snappy”; 默认空
+                     * 获取supported: "", "gzip", "lzop", "snappy"; 默认空
+                     * @return Compress supported: "", "gzip", "lzop", "snappy"; 默认空
                      * 
                      */
                     std::string GetCompress() const;
 
                     /**
-                     * 设置supported: "", "gzip", "lzop", "snappy”; 默认空
-                     * @param _compress supported: "", "gzip", "lzop", "snappy”; 默认空
+                     * 设置supported: "", "gzip", "lzop", "snappy"; 默认空
+                     * @param _compress supported: "", "gzip", "lzop", "snappy"; 默认空
                      * 
                      */
                     void SetCompress(const std::string& _compress);
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * supported: "", "gzip", "lzop", "snappy”; 默认空
+                     * supported: "", "gzip", "lzop", "snappy"; 默认空
                      */
                     std::string m_compress;
                     bool m_compressHasBeenSet;

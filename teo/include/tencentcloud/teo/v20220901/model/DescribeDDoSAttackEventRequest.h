@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间。
-                     * @return StartTime 开始时间。
+                     * 获取开始时间，时间范围为 30 天。
+                     * @return StartTime 开始时间，时间范围为 30 天。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间。
-                     * @param _startTime 开始时间。
+                     * 设置开始时间，时间范围为 30 天。
+                     * @param _startTime 开始时间，时间范围为 30 天。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。
-                     * @return EndTime 结束时间。
+                     * 获取结束时间，时间范围为 30 天。
+                     * @return EndTime 结束时间，时间范围为 30 天。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间。
-                     * @param _endTime 结束时间。
+                     * 设置结束时间，时间范围为 30 天。
+                     * @param _endTime 结束时间，时间范围为 30 天。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PolicyIdsHasBeenSet() const;
 
                     /**
-                     * 获取站点集合，此参数必填，不填默认查询为空。
-                     * @return ZoneIds 站点集合，此参数必填，不填默认查询为空。
+                     * 获取站点集合，此参数必填。
+                     * @return ZoneIds 站点集合，此参数必填。
                      * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点集合，此参数必填，不填默认查询为空。
-                     * @param _zoneIds 站点集合，此参数必填，不填默认查询为空。
+                     * 设置站点集合，此参数必填。
+                     * @param _zoneIds 站点集合，此参数必填。
                      * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取是否展示详细信息。
-                     * @return ShowDetail 是否展示详细信息。
+                     * 获取展示攻击详情的参数，若填false，默认只返回攻击次数，不返回攻击详情；若填true，返回攻击详情。
+                     * @return ShowDetail 展示攻击详情的参数，若填false，默认只返回攻击次数，不返回攻击详情；若填true，返回攻击详情。
                      * 
                      */
                     bool GetShowDetail() const;
 
                     /**
-                     * 设置是否展示详细信息。
-                     * @param _showDetail 是否展示详细信息。
+                     * 设置展示攻击详情的参数，若填false，默认只返回攻击次数，不返回攻击详情；若填true，返回攻击详情。
+                     * @param _showDetail 展示攻击详情的参数，若填false，默认只返回攻击次数，不返回攻击详情；若填true，返回攻击详情。
                      * 
                      */
                     void SetShowDetail(const bool& _showDetail);
@@ -283,13 +283,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间。
+                     * 开始时间，时间范围为 30 天。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间。
+                     * 结束时间，时间范围为 30 天。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -301,7 +301,7 @@ namespace TencentCloud
                     bool m_policyIdsHasBeenSet;
 
                     /**
-                     * 站点集合，此参数必填，不填默认查询为空。
+                     * 站点集合，此参数必填。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
@@ -319,7 +319,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 是否展示详细信息。
+                     * 展示攻击详情的参数，若填false，默认只返回攻击次数，不返回攻击详情；若填true，返回攻击详情。
                      */
                     bool m_showDetail;
                     bool m_showDetailHasBeenSet;

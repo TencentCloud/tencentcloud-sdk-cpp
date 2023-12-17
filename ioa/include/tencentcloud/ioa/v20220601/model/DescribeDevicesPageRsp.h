@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ioa/v20220601/model/Paging.h>
+#include <tencentcloud/ioa/v20220601/model/DeviceDetail.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,31 @@ namespace TencentCloud
                      */
                     bool PagingHasBeenSet() const;
 
+                    /**
+                     * 获取业务响应数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Items 业务响应数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DeviceDetail> GetItems() const;
+
+                    /**
+                     * 设置业务响应数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _items 业务响应数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetItems(const std::vector<DeviceDetail>& _items);
+
+                    /**
+                     * 判断参数 Items 是否已赋值
+                     * @return Items 是否已赋值
+                     * 
+                     */
+                    bool ItemsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +106,13 @@ namespace TencentCloud
                      */
                     Paging m_paging;
                     bool m_pagingHasBeenSet;
+
+                    /**
+                     * 业务响应数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeviceDetail> m_items;
+                    bool m_itemsHasBeenSet;
 
                 };
             }

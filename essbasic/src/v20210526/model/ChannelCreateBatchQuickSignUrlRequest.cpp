@@ -29,7 +29,8 @@ ChannelCreateBatchQuickSignUrlRequest::ChannelCreateBatchQuickSignUrlRequest() :
     m_flowGroupIdHasBeenSet(false),
     m_jumpUrlHasBeenSet(false),
     m_signatureTypesHasBeenSet(false),
-    m_approverSignTypesHasBeenSet(false)
+    m_approverSignTypesHasBeenSet(false),
+    m_signTypeSelectorHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string ChannelCreateBatchQuickSignUrlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_signTypeSelectorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignTypeSelector";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_signTypeSelector, allocator);
     }
 
 
@@ -231,6 +240,22 @@ void ChannelCreateBatchQuickSignUrlRequest::SetApproverSignTypes(const vector<in
 bool ChannelCreateBatchQuickSignUrlRequest::ApproverSignTypesHasBeenSet() const
 {
     return m_approverSignTypesHasBeenSet;
+}
+
+uint64_t ChannelCreateBatchQuickSignUrlRequest::GetSignTypeSelector() const
+{
+    return m_signTypeSelector;
+}
+
+void ChannelCreateBatchQuickSignUrlRequest::SetSignTypeSelector(const uint64_t& _signTypeSelector)
+{
+    m_signTypeSelector = _signTypeSelector;
+    m_signTypeSelectorHasBeenSet = true;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::SignTypeSelectorHasBeenSet() const
+{
+    return m_signTypeSelectorHasBeenSet;
 }
 
 

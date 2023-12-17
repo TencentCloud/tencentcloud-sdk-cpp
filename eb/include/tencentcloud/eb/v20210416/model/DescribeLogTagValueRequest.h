@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取聚合字段
-                     * @return GroupField 聚合字段
+                     * 获取聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)
+                     * @return GroupField 聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)
                      * 
                      */
                     std::string GetGroupField() const;
 
                     /**
-                     * 设置聚合字段
-                     * @param _groupField 聚合字段
+                     * 设置聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)
+                     * @param _groupField 聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)
                      * 
                      */
                     void SetGroupField(const std::string& _groupField);
@@ -211,7 +211,7 @@ namespace TencentCloud
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * 聚合字段
+                     * 聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)
                      */
                     std::string m_groupField;
                     bool m_groupFieldHasBeenSet;

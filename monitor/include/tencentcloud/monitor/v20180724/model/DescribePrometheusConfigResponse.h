@@ -114,6 +114,20 @@ namespace TencentCloud
                      */
                     bool ProbesHasBeenSet() const;
 
+                    /**
+                     * 获取实例组件是否需要升级
+                     * @return ImageNeedUpdate 实例组件是否需要升级
+                     * 
+                     */
+                    bool GetImageNeedUpdate() const;
+
+                    /**
+                     * 判断参数 ImageNeedUpdate 是否已赋值
+                     * @return ImageNeedUpdate 是否已赋值
+                     * 
+                     */
+                    bool ImageNeedUpdateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +159,12 @@ namespace TencentCloud
                      */
                     std::vector<PrometheusConfigItem> m_probes;
                     bool m_probesHasBeenSet;
+
+                    /**
+                     * 实例组件是否需要升级
+                     */
+                    bool m_imageNeedUpdate;
+                    bool m_imageNeedUpdateHasBeenSet;
 
                 };
             }

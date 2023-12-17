@@ -247,6 +247,56 @@ namespace TencentCloud
                      */
                     bool ColumnFamiliesFieldSetHasBeenSet() const;
 
+                    /**
+                     * 获取对应码表字典ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DictionaryId 对应码表字典ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDictionaryId() const;
+
+                    /**
+                     * 设置对应码表字典ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dictionaryId 对应码表字典ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDictionaryId(const std::string& _dictionaryId);
+
+                    /**
+                     * 判断参数 DictionaryId 是否已赋值
+                     * @return DictionaryId 是否已赋值
+                     * 
+                     */
+                    bool DictionaryIdHasBeenSet() const;
+
+                    /**
+                     * 获取对应码表字典名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DictionaryName 对应码表字典名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDictionaryName() const;
+
+                    /**
+                     * 设置对应码表字典名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dictionaryName 对应码表字典名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDictionaryName(const std::string& _dictionaryName);
+
+                    /**
+                     * 判断参数 DictionaryName 是否已赋值
+                     * @return DictionaryName 是否已赋值
+                     * 
+                     */
+                    bool DictionaryNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +354,20 @@ namespace TencentCloud
                      */
                     std::vector<Pair> m_columnFamiliesFieldSet;
                     bool m_columnFamiliesFieldSetHasBeenSet;
+
+                    /**
+                     * 对应码表字典ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dictionaryId;
+                    bool m_dictionaryIdHasBeenSet;
+
+                    /**
+                     * 对应码表字典名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dictionaryName;
+                    bool m_dictionaryNameHasBeenSet;
 
                 };
             }

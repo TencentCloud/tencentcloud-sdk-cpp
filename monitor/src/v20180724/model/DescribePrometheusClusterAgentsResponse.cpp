@@ -26,7 +26,8 @@ using namespace std;
 DescribePrometheusClusterAgentsResponse::DescribePrometheusClusterAgentsResponse() :
     m_agentsHasBeenSet(false),
     m_totalHasBeenSet(false),
-    m_isFirstBindHasBeenSet(false)
+    m_isFirstBindHasBeenSet(false),
+    m_imageNeedUpdateHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribePrometheusClusterAgentsResponse::Deserialize(const s
         m_isFirstBindHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageNeedUpdate") && !rsp["ImageNeedUpdate"].IsNull())
+    {
+        if (!rsp["ImageNeedUpdate"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageNeedUpdate` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageNeedUpdate = rsp["ImageNeedUpdate"].GetBool();
+        m_imageNeedUpdateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribePrometheusClusterAgentsResponse::ToJsonString() const
         string key = "IsFirstBind";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isFirstBind, allocator);
+    }
+
+    if (m_imageNeedUpdateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageNeedUpdate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_imageNeedUpdate, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ bool DescribePrometheusClusterAgentsResponse::GetIsFirstBind() const
 bool DescribePrometheusClusterAgentsResponse::IsFirstBindHasBeenSet() const
 {
     return m_isFirstBindHasBeenSet;
+}
+
+bool DescribePrometheusClusterAgentsResponse::GetImageNeedUpdate() const
+{
+    return m_imageNeedUpdate;
+}
+
+bool DescribePrometheusClusterAgentsResponse::ImageNeedUpdateHasBeenSet() const
+{
+    return m_imageNeedUpdateHasBeenSet;
 }
 
 

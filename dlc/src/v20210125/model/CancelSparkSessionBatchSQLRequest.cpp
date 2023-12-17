@@ -23,7 +23,8 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 CancelSparkSessionBatchSQLRequest::CancelSparkSessionBatchSQLRequest() :
-    m_batchIdHasBeenSet(false)
+    m_batchIdHasBeenSet(false),
+    m_customKeyHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CancelSparkSessionBatchSQLRequest::ToJsonString() const
         string key = "BatchId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CancelSparkSessionBatchSQLRequest::SetBatchId(const string& _batchId)
 bool CancelSparkSessionBatchSQLRequest::BatchIdHasBeenSet() const
 {
     return m_batchIdHasBeenSet;
+}
+
+string CancelSparkSessionBatchSQLRequest::GetCustomKey() const
+{
+    return m_customKey;
+}
+
+void CancelSparkSessionBatchSQLRequest::SetCustomKey(const string& _customKey)
+{
+    m_customKey = _customKey;
+    m_customKeyHasBeenSet = true;
+}
+
+bool CancelSparkSessionBatchSQLRequest::CustomKeyHasBeenSet() const
+{
+    return m_customKeyHasBeenSet;
 }
 
 

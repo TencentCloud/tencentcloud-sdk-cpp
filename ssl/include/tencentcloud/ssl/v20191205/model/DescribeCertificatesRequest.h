@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ssl/v20191205/model/Tags.h>
 
 
 namespace TencentCloud
@@ -336,6 +337,48 @@ namespace TencentCloud
                      */
                     bool HostableHasBeenSet() const;
 
+                    /**
+                     * 获取筛选指定标签的证书
+                     * @return Tags 筛选指定标签的证书
+                     * 
+                     */
+                    std::vector<Tags> GetTags() const;
+
+                    /**
+                     * 设置筛选指定标签的证书
+                     * @param _tags 筛选指定标签的证书
+                     * 
+                     */
+                    void SetTags(const std::vector<Tags>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取//是否筛选等待签发的证书，传1是筛选，0和null不筛选
+                     * @return IsPendingIssue //是否筛选等待签发的证书，传1是筛选，0和null不筛选
+                     * 
+                     */
+                    int64_t GetIsPendingIssue() const;
+
+                    /**
+                     * 设置//是否筛选等待签发的证书，传1是筛选，0和null不筛选
+                     * @param _isPendingIssue //是否筛选等待签发的证书，传1是筛选，0和null不筛选
+                     * 
+                     */
+                    void SetIsPendingIssue(const int64_t& _isPendingIssue);
+
+                    /**
+                     * 判断参数 IsPendingIssue 是否已赋值
+                     * @return IsPendingIssue 是否已赋值
+                     * 
+                     */
+                    bool IsPendingIssueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +464,18 @@ namespace TencentCloud
                      */
                     uint64_t m_hostable;
                     bool m_hostableHasBeenSet;
+
+                    /**
+                     * 筛选指定标签的证书
+                     */
+                    std::vector<Tags> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * //是否筛选等待签发的证书，传1是筛选，0和null不筛选
+                     */
+                    int64_t m_isPendingIssue;
+                    bool m_isPendingIssueHasBeenSet;
 
                 };
             }

@@ -27,6 +27,7 @@ CreateTaskVersionDsRequest::CreateTaskVersionDsRequest() :
     m_needCheckParentSubmittedHasBeenSet(false),
     m_autoRunHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_requestFromSourceHasBeenSet(false),
     m_alarmWaysHasBeenSet(false),
     m_alarmRecipientTypesHasBeenSet(false)
 {
@@ -70,6 +71,14 @@ string CreateTaskVersionDsRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestFromSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestFromSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_requestFromSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_alarmWaysHasBeenSet)
@@ -158,6 +167,22 @@ void CreateTaskVersionDsRequest::SetProjectId(const string& _projectId)
 bool CreateTaskVersionDsRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string CreateTaskVersionDsRequest::GetRequestFromSource() const
+{
+    return m_requestFromSource;
+}
+
+void CreateTaskVersionDsRequest::SetRequestFromSource(const string& _requestFromSource)
+{
+    m_requestFromSource = _requestFromSource;
+    m_requestFromSourceHasBeenSet = true;
+}
+
+bool CreateTaskVersionDsRequest::RequestFromSourceHasBeenSet() const
+{
+    return m_requestFromSourceHasBeenSet;
 }
 
 string CreateTaskVersionDsRequest::GetAlarmWays() const

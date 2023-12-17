@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取实例ID(可通过 DescribePrometheusInstances 接口获取)
+                     * @return InstanceId 实例ID(可通过 DescribePrometheusInstances 接口获取)
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置实例ID(可通过 DescribePrometheusInstances 接口获取)
+                     * @param _instanceId 实例ID(可通过 DescribePrometheusInstances 接口获取)
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略id列表
-                     * @return AlertIds 告警策略id列表
+                     * 获取告警策略ID列表(可通过 DescribePrometheusAlertPolicy 接口获取)
+                     * @return AlertIds 告警策略ID列表(可通过 DescribePrometheusAlertPolicy 接口获取)
                      * 
                      */
                     std::vector<std::string> GetAlertIds() const;
 
                     /**
-                     * 设置告警策略id列表
-                     * @param _alertIds 告警策略id列表
+                     * 设置告警策略ID列表(可通过 DescribePrometheusAlertPolicy 接口获取)
+                     * @param _alertIds 告警策略ID列表(可通过 DescribePrometheusAlertPolicy 接口获取)
                      * 
                      */
                     void SetAlertIds(const std::vector<std::string>& _alertIds);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AlertIdsHasBeenSet() const;
 
                     /**
-                     * 获取告警策略名称
-                     * @return Names 告警策略名称
+                     * 获取告警策略名称(可通过 DescribePrometheusAlertPolicy 接口获取)，名称完全相同的告警策略才会删除
+                     * @return Names 告警策略名称(可通过 DescribePrometheusAlertPolicy 接口获取)，名称完全相同的告警策略才会删除
                      * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
-                     * 设置告警策略名称
-                     * @param _names 告警策略名称
+                     * 设置告警策略名称(可通过 DescribePrometheusAlertPolicy 接口获取)，名称完全相同的告警策略才会删除
+                     * @param _names 告警策略名称(可通过 DescribePrometheusAlertPolicy 接口获取)，名称完全相同的告警策略才会删除
                      * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * 实例ID(可通过 DescribePrometheusInstances 接口获取)
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 告警策略id列表
+                     * 告警策略ID列表(可通过 DescribePrometheusAlertPolicy 接口获取)
                      */
                     std::vector<std::string> m_alertIds;
                     bool m_alertIdsHasBeenSet;
 
                     /**
-                     * 告警策略名称
+                     * 告警策略名称(可通过 DescribePrometheusAlertPolicy 接口获取)，名称完全相同的告警策略才会删除
                      */
                     std::vector<std::string> m_names;
                     bool m_namesHasBeenSet;

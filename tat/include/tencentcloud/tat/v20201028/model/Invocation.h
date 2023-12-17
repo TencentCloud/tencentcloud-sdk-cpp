@@ -91,38 +91,22 @@ namespace TencentCloud
 
                     /**
                      * 获取执行任务状态。取值范围：
-<li> PENDING：等待下发 
-<li> RUNNING：命令运行中
-<li> SUCCESS：命令成功
-<li> FAILED：命令失败
-<li> TIMEOUT：命令超时
-<li> PARTIAL_FAILED：命令部分失败
+
+<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> </ul>
                      * @return InvocationStatus 执行任务状态。取值范围：
-<li> PENDING：等待下发 
-<li> RUNNING：命令运行中
-<li> SUCCESS：命令成功
-<li> FAILED：命令失败
-<li> TIMEOUT：命令超时
-<li> PARTIAL_FAILED：命令部分失败
+
+<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> </ul>
                      * 
                      */
                     std::string GetInvocationStatus() const;
 
                     /**
                      * 设置执行任务状态。取值范围：
-<li> PENDING：等待下发 
-<li> RUNNING：命令运行中
-<li> SUCCESS：命令成功
-<li> FAILED：命令失败
-<li> TIMEOUT：命令超时
-<li> PARTIAL_FAILED：命令部分失败
+
+<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> </ul>
                      * @param _invocationStatus 执行任务状态。取值范围：
-<li> PENDING：等待下发 
-<li> RUNNING：命令运行中
-<li> SUCCESS：命令成功
-<li> FAILED：命令失败
-<li> TIMEOUT：命令超时
-<li> PARTIAL_FAILED：命令部分失败
+
+<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> </ul>
                      * 
                      */
                     void SetInvocationStatus(const std::string& _invocationStatus);
@@ -507,12 +491,8 @@ namespace TencentCloud
 
                     /**
                      * 执行任务状态。取值范围：
-<li> PENDING：等待下发 
-<li> RUNNING：命令运行中
-<li> SUCCESS：命令成功
-<li> FAILED：命令失败
-<li> TIMEOUT：命令超时
-<li> PARTIAL_FAILED：命令部分失败
+
+<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> </ul>
                      */
                     std::string m_invocationStatus;
                     bool m_invocationStatusHasBeenSet;

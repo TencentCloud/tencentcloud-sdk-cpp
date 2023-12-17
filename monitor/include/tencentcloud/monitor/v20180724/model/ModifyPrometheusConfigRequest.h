@@ -169,6 +169,31 @@ namespace TencentCloud
                      */
                     bool RawJobsHasBeenSet() const;
 
+                    /**
+                     * 获取0: 更新实例组件镜像版本；
+1: 不更新实例组件镜像版本
+                     * @return UpdateImage 0: 更新实例组件镜像版本；
+1: 不更新实例组件镜像版本
+                     * 
+                     */
+                    int64_t GetUpdateImage() const;
+
+                    /**
+                     * 设置0: 更新实例组件镜像版本；
+1: 不更新实例组件镜像版本
+                     * @param _updateImage 0: 更新实例组件镜像版本；
+1: 不更新实例组件镜像版本
+                     * 
+                     */
+                    void SetUpdateImage(const int64_t& _updateImage);
+
+                    /**
+                     * 判断参数 UpdateImage 是否已赋值
+                     * @return UpdateImage 是否已赋值
+                     * 
+                     */
+                    bool UpdateImageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +231,13 @@ namespace TencentCloud
                      */
                     std::vector<PrometheusConfigItem> m_rawJobs;
                     bool m_rawJobsHasBeenSet;
+
+                    /**
+                     * 0: 更新实例组件镜像版本；
+1: 不更新实例组件镜像版本
+                     */
+                    int64_t m_updateImage;
+                    bool m_updateImageHasBeenSet;
 
                 };
             }

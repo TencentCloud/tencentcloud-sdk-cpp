@@ -111,22 +111,22 @@ namespace TencentCloud
 
                     /**
                      * 获取Agent状态，取值范围：
-<li> Online：在线
-<li> Offline：离线
+Online：在线，Offline：离线
+
                      * @return AgentStatus Agent状态，取值范围：
-<li> Online：在线
-<li> Offline：离线
+Online：在线，Offline：离线
+
                      * 
                      */
                     std::string GetAgentStatus() const;
 
                     /**
                      * 设置Agent状态，取值范围：
-<li> Online：在线
-<li> Offline：离线
+Online：在线，Offline：离线
+
                      * @param _agentStatus Agent状态，取值范围：
-<li> Online：在线
-<li> Offline：离线
+Online：在线，Offline：离线
+
                      * 
                      */
                     void SetAgentStatus(const std::string& _agentStatus);
@@ -139,23 +139,15 @@ namespace TencentCloud
                     bool AgentStatusHasBeenSet() const;
 
                     /**
-                     * 获取Agent运行环境，取值范围：
-<li> Linux：Linux实例
-<li> Windows：Windows实例
-                     * @return Environment Agent运行环境，取值范围：
-<li> Linux：Linux实例
-<li> Windows：Windows实例
+                     * 获取Agent运行环境，取值范围：Linux：Linux实例Windows：Windows实例
+                     * @return Environment Agent运行环境，取值范围：Linux：Linux实例Windows：Windows实例
                      * 
                      */
                     std::string GetEnvironment() const;
 
                     /**
-                     * 设置Agent运行环境，取值范围：
-<li> Linux：Linux实例
-<li> Windows：Windows实例
-                     * @param _environment Agent运行环境，取值范围：
-<li> Linux：Linux实例
-<li> Windows：Windows实例
+                     * 设置Agent运行环境，取值范围：Linux：Linux实例Windows：Windows实例
+                     * @param _environment Agent运行环境，取值范围：Linux：Linux实例Windows：Windows实例
                      * 
                      */
                     void SetEnvironment(const std::string& _environment);
@@ -210,16 +202,14 @@ namespace TencentCloud
 
                     /**
                      * Agent状态，取值范围：
-<li> Online：在线
-<li> Offline：离线
+Online：在线，Offline：离线
+
                      */
                     std::string m_agentStatus;
                     bool m_agentStatusHasBeenSet;
 
                     /**
-                     * Agent运行环境，取值范围：
-<li> Linux：Linux实例
-<li> Windows：Windows实例
+                     * Agent运行环境，取值范围：Linux：Linux实例Windows：Windows实例
                      */
                     std::string m_environment;
                     bool m_environmentHasBeenSet;

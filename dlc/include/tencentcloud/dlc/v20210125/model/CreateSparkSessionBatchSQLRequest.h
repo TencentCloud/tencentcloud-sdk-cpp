@@ -282,6 +282,27 @@ namespace TencentCloud
                      */
                     bool IsInheritHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义主键，需唯一
+                     * @return CustomKey 用户自定义主键，需唯一
+                     * 
+                     */
+                    std::string GetCustomKey() const;
+
+                    /**
+                     * 设置用户自定义主键，需唯一
+                     * @param _customKey 用户自定义主键，需唯一
+                     * 
+                     */
+                    void SetCustomKey(const std::string& _customKey);
+
+                    /**
+                     * 判断参数 CustomKey 是否已赋值
+                     * @return CustomKey 是否已赋值
+                     * 
+                     */
+                    bool CustomKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -351,6 +372,12 @@ namespace TencentCloud
                      */
                     int64_t m_isInherit;
                     bool m_isInheritHasBeenSet;
+
+                    /**
+                     * 用户自定义主键，需唯一
+                     */
+                    std::string m_customKey;
+                    bool m_customKeyHasBeenSet;
 
                 };
             }

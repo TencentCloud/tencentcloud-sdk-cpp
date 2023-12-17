@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * GeneralResourceQuotaSet数据结构
+                * 用户配额信息。
                 */
                 class GeneralResourceQuotaSet : public AbstractModel
                 {

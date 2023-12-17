@@ -28,7 +28,8 @@ DescribePrometheusConfigResponse::DescribePrometheusConfigResponse() :
     m_serviceMonitorsHasBeenSet(false),
     m_podMonitorsHasBeenSet(false),
     m_rawJobsHasBeenSet(false),
-    m_probesHasBeenSet(false)
+    m_probesHasBeenSet(false),
+    m_imageNeedUpdateHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,16 @@ CoreInternalOutcome DescribePrometheusConfigResponse::Deserialize(const string &
         m_probesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageNeedUpdate") && !rsp["ImageNeedUpdate"].IsNull())
+    {
+        if (!rsp["ImageNeedUpdate"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageNeedUpdate` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageNeedUpdate = rsp["ImageNeedUpdate"].GetBool();
+        m_imageNeedUpdateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -234,6 +245,14 @@ string DescribePrometheusConfigResponse::ToJsonString() const
         }
     }
 
+    if (m_imageNeedUpdateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageNeedUpdate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_imageNeedUpdate, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -294,6 +313,16 @@ vector<PrometheusConfigItem> DescribePrometheusConfigResponse::GetProbes() const
 bool DescribePrometheusConfigResponse::ProbesHasBeenSet() const
 {
     return m_probesHasBeenSet;
+}
+
+bool DescribePrometheusConfigResponse::GetImageNeedUpdate() const
+{
+    return m_imageNeedUpdate;
+}
+
+bool DescribePrometheusConfigResponse::ImageNeedUpdateHasBeenSet() const
+{
+    return m_imageNeedUpdateHasBeenSet;
 }
 
 

@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool InputImageFaceRectHasBeenSet() const;
 
                     /**
-                     * 获取控制台上传的素材人脸ID，不填默认取最大人脸。此字段仅适用于控制台上传素材的有素材场景。
-                     * @return TemplateFaceID 控制台上传的素材人脸ID，不填默认取最大人脸。此字段仅适用于控制台上传素材的有素材场景。
+                     * 获取素材人脸ID，不填默认取最大人脸。
+                     * @return TemplateFaceID 素材人脸ID，不填默认取最大人脸。
                      * 
                      */
                     std::string GetTemplateFaceID() const;
 
                     /**
-                     * 设置控制台上传的素材人脸ID，不填默认取最大人脸。此字段仅适用于控制台上传素材的有素材场景。
-                     * @param _templateFaceID 控制台上传的素材人脸ID，不填默认取最大人脸。此字段仅适用于控制台上传素材的有素材场景。
+                     * 设置素材人脸ID，不填默认取最大人脸。
+                     * @param _templateFaceID 素材人脸ID，不填默认取最大人脸。
                      * 
                      */
                     void SetTemplateFaceID(const std::string& _templateFaceID);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TemplateFaceIDHasBeenSet() const;
 
                     /**
-                     * 获取模版图片人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于自定义模版素材场景。
-                     * @return TemplateFaceRect 模版图片人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于自定义模版素材场景。
+                     * 获取模版中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模版素材场景。
+                     * @return TemplateFaceRect 模版中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模版素材场景。
                      * 
                      */
                     FaceRect GetTemplateFaceRect() const;
 
                     /**
-                     * 设置模版图片人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于自定义模版素材场景。
-                     * @param _templateFaceRect 模版图片人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于自定义模版素材场景。
+                     * 设置模版中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模版素材场景。
+                     * @param _templateFaceRect 模版中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模版素材场景。
                      * 
                      */
                     void SetTemplateFaceRect(const FaceRect& _templateFaceRect);
@@ -173,13 +173,13 @@ namespace TencentCloud
                     bool m_inputImageFaceRectHasBeenSet;
 
                     /**
-                     * 控制台上传的素材人脸ID，不填默认取最大人脸。此字段仅适用于控制台上传素材的有素材场景。
+                     * 素材人脸ID，不填默认取最大人脸。
                      */
                     std::string m_templateFaceID;
                     bool m_templateFaceIDHasBeenSet;
 
                     /**
-                     * 模版图片人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于自定义模版素材场景。
+                     * 模版中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模版素材场景。
                      */
                     FaceRect m_templateFaceRect;
                     bool m_templateFaceRectHasBeenSet;

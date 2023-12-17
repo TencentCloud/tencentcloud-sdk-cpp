@@ -44,7 +44,8 @@ FlowApproverInfo::FlowApproverInfo() :
     m_signIdHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
     m_addSignComponentsLimitsHasBeenSet(false),
-    m_approverRoleNameHasBeenSet(false)
+    m_approverRoleNameHasBeenSet(false),
+    m_signTypeSelectorHasBeenSet(false)
 {
 }
 
@@ -329,6 +330,16 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_approverRoleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SignTypeSelector") && !value["SignTypeSelector"].IsNull())
+    {
+        if (!value["SignTypeSelector"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.SignTypeSelector` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_signTypeSelector = value["SignTypeSelector"].GetUint64();
+        m_signTypeSelectorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -556,6 +567,14 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ApproverRoleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverRoleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signTypeSelectorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignTypeSelector";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_signTypeSelector, allocator);
     }
 
 }
@@ -943,5 +962,21 @@ void FlowApproverInfo::SetApproverRoleName(const string& _approverRoleName)
 bool FlowApproverInfo::ApproverRoleNameHasBeenSet() const
 {
     return m_approverRoleNameHasBeenSet;
+}
+
+uint64_t FlowApproverInfo::GetSignTypeSelector() const
+{
+    return m_signTypeSelector;
+}
+
+void FlowApproverInfo::SetSignTypeSelector(const uint64_t& _signTypeSelector)
+{
+    m_signTypeSelector = _signTypeSelector;
+    m_signTypeSelectorHasBeenSet = true;
+}
+
+bool FlowApproverInfo::SignTypeSelectorHasBeenSet() const
+{
+    return m_signTypeSelectorHasBeenSet;
 }
 

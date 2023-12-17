@@ -24,8 +24,8 @@ using namespace std;
 
 DescribePrometheusTargetsTMPRequest::DescribePrometheusTargetsTMPRequest() :
     m_instanceIdHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
 }
@@ -45,20 +45,20 @@ string DescribePrometheusTargetsTMPRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_clusterTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_clusterIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -100,22 +100,6 @@ bool DescribePrometheusTargetsTMPRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-string DescribePrometheusTargetsTMPRequest::GetClusterType() const
-{
-    return m_clusterType;
-}
-
-void DescribePrometheusTargetsTMPRequest::SetClusterType(const string& _clusterType)
-{
-    m_clusterType = _clusterType;
-    m_clusterTypeHasBeenSet = true;
-}
-
-bool DescribePrometheusTargetsTMPRequest::ClusterTypeHasBeenSet() const
-{
-    return m_clusterTypeHasBeenSet;
-}
-
 string DescribePrometheusTargetsTMPRequest::GetClusterId() const
 {
     return m_clusterId;
@@ -130,6 +114,22 @@ void DescribePrometheusTargetsTMPRequest::SetClusterId(const string& _clusterId)
 bool DescribePrometheusTargetsTMPRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string DescribePrometheusTargetsTMPRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void DescribePrometheusTargetsTMPRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool DescribePrometheusTargetsTMPRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 vector<Filter> DescribePrometheusTargetsTMPRequest::GetFilters() const

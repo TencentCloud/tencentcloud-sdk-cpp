@@ -919,7 +919,7 @@ namespace TencentCloud
                 CreatePrometheusAgentOutcomeCallable CreatePrometheusAgentCallable(const Model::CreatePrometheusAgentRequest& request);
 
                 /**
-                 *创建告警策略
+                 *创建 Prometheus 告警策略(将逐步废弃，建议使用 CreatePrometheusAlertGroup 创建告警策略)
                  * @param req CreatePrometheusAlertPolicyRequest
                  * @return CreatePrometheusAlertPolicyOutcome
                  */
@@ -946,7 +946,7 @@ namespace TencentCloud
                 CreatePrometheusConfigOutcomeCallable CreatePrometheusConfigCallable(const Model::CreatePrometheusConfigRequest& request);
 
                 /**
-                 *创建全局告警通知渠道
+                 *创建全局告警通知渠道。集群内创建的告警规则如果未配置告警通知渠道，默认走全局告警通知渠道（建议在控制台创建告警，集群内创建告警不易维护）
                  * @param req CreatePrometheusGlobalNotificationRequest
                  * @return CreatePrometheusGlobalNotificationOutcome
                  */

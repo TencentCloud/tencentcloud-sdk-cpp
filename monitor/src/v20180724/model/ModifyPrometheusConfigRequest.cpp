@@ -28,7 +28,8 @@ ModifyPrometheusConfigRequest::ModifyPrometheusConfigRequest() :
     m_clusterIdHasBeenSet(false),
     m_serviceMonitorsHasBeenSet(false),
     m_podMonitorsHasBeenSet(false),
-    m_rawJobsHasBeenSet(false)
+    m_rawJobsHasBeenSet(false),
+    m_updateImageHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string ModifyPrometheusConfigRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_updateImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_updateImage, allocator);
     }
 
 
@@ -210,6 +219,22 @@ void ModifyPrometheusConfigRequest::SetRawJobs(const vector<PrometheusConfigItem
 bool ModifyPrometheusConfigRequest::RawJobsHasBeenSet() const
 {
     return m_rawJobsHasBeenSet;
+}
+
+int64_t ModifyPrometheusConfigRequest::GetUpdateImage() const
+{
+    return m_updateImage;
+}
+
+void ModifyPrometheusConfigRequest::SetUpdateImage(const int64_t& _updateImage)
+{
+    m_updateImage = _updateImage;
+    m_updateImageHasBeenSet = true;
+}
+
+bool ModifyPrometheusConfigRequest::UpdateImageHasBeenSet() const
+{
+    return m_updateImageHasBeenSet;
 }
 
 

@@ -711,18 +711,18 @@ timeRollback，时间点回档
                     bool DbModeHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SEVERLESS时必填
+                     * 获取当DbMode为SERVERLESS时必填
 cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @return MinCpu 当DbMode为SEVERLESS时必填
+                     * @return MinCpu 当DbMode为SERVERLESS时必填
 cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      * 
                      */
                     double GetMinCpu() const;
 
                     /**
-                     * 设置当DbMode为SEVERLESS时必填
+                     * 设置当DbMode为SERVERLESS时必填
 cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @param _minCpu 当DbMode为SEVERLESS时必填
+                     * @param _minCpu 当DbMode为SERVERLESS时必填
 cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      * 
                      */
@@ -736,18 +736,18 @@ cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool MinCpuHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SEVERLESS时必填：
+                     * 获取当DbMode为SERVERLESS时必填：
 cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @return MaxCpu 当DbMode为SEVERLESS时必填：
+                     * @return MaxCpu 当DbMode为SERVERLESS时必填：
 cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      * 
                      */
                     double GetMaxCpu() const;
 
                     /**
-                     * 设置当DbMode为SEVERLESS时必填：
+                     * 设置当DbMode为SERVERLESS时必填：
 cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @param _maxCpu 当DbMode为SEVERLESS时必填：
+                     * @param _maxCpu 当DbMode为SERVERLESS时必填：
 cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      * 
                      */
@@ -761,11 +761,11 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool MaxCpuHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
+                     * 获取当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围
 <li>yes</li>
 <li>no</li>
 默认值:yes
-                     * @return AutoPause 当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
+                     * @return AutoPause 当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围
 <li>yes</li>
 <li>no</li>
 默认值:yes
@@ -774,11 +774,11 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     std::string GetAutoPause() const;
 
                     /**
-                     * 设置当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
+                     * 设置当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围
 <li>yes</li>
 <li>no</li>
 默认值:yes
-                     * @param _autoPause 当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
+                     * @param _autoPause 当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围
 <li>yes</li>
 <li>no</li>
 默认值:yes
@@ -794,18 +794,18 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool AutoPauseHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
+                     * 获取当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
 默认值:600
-                     * @return AutoPauseDelay 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
+                     * @return AutoPauseDelay 当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
 默认值:600
                      * 
                      */
                     int64_t GetAutoPauseDelay() const;
 
                     /**
-                     * 设置当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
+                     * 设置当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
 默认值:600
-                     * @param _autoPauseDelay 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
+                     * @param _autoPauseDelay 当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
 默认值:600
                      * 
                      */
@@ -1185,21 +1185,21 @@ timeRollback，时间点回档
                     bool m_dbModeHasBeenSet;
 
                     /**
-                     * 当DbMode为SEVERLESS时必填
+                     * 当DbMode为SERVERLESS时必填
 cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     double m_minCpu;
                     bool m_minCpuHasBeenSet;
 
                     /**
-                     * 当DbMode为SEVERLESS时必填：
+                     * 当DbMode为SERVERLESS时必填：
 cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     double m_maxCpu;
                     bool m_maxCpuHasBeenSet;
 
                     /**
-                     * 当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
+                     * 当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围
 <li>yes</li>
 <li>no</li>
 默认值:yes
@@ -1208,7 +1208,7 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_autoPauseHasBeenSet;
 
                     /**
-                     * 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
+                     * 当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
 默认值:600
                      */
                     int64_t m_autoPauseDelay;

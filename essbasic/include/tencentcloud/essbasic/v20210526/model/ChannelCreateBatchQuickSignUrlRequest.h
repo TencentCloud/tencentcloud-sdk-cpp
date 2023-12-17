@@ -259,6 +259,43 @@ namespace TencentCloud
                      */
                     bool ApproverSignTypesHasBeenSet() const;
 
+                    /**
+                     * 获取生成H5签署链接时，你可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：
+<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>
+<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>
+注：
+`不指定该值时，默认为签署方自行选择。`
+                     * @return SignTypeSelector 生成H5签署链接时，你可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：
+<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>
+<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>
+注：
+`不指定该值时，默认为签署方自行选择。`
+                     * 
+                     */
+                    uint64_t GetSignTypeSelector() const;
+
+                    /**
+                     * 设置生成H5签署链接时，你可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：
+<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>
+<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>
+注：
+`不指定该值时，默认为签署方自行选择。`
+                     * @param _signTypeSelector 生成H5签署链接时，你可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：
+<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>
+<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>
+注：
+`不指定该值时，默认为签署方自行选择。`
+                     * 
+                     */
+                    void SetSignTypeSelector(const uint64_t& _signTypeSelector);
+
+                    /**
+                     * 判断参数 SignTypeSelector 是否已赋值
+                     * @return SignTypeSelector 是否已赋值
+                     * 
+                     */
+                    bool SignTypeSelectorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +356,16 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_approverSignTypes;
                     bool m_approverSignTypesHasBeenSet;
+
+                    /**
+                     * 生成H5签署链接时，你可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：
+<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>
+<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>
+注：
+`不指定该值时，默认为签署方自行选择。`
+                     */
+                    uint64_t m_signTypeSelector;
+                    bool m_signTypeSelectorHasBeenSet;
 
                 };
             }

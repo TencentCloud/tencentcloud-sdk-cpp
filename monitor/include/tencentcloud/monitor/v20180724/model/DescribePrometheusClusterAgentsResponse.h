@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取是否为首次绑定，需要安装预聚合规则
-                     * @return IsFirstBind 是否为首次绑定，需要安装预聚合规则
+                     * 获取是否为首次绑定，如果是首次绑定则需要安装预聚合规则
+                     * @return IsFirstBind 是否为首次绑定，如果是首次绑定则需要安装预聚合规则
                      * 
                      */
                     bool GetIsFirstBind() const;
@@ -85,6 +85,20 @@ namespace TencentCloud
                      * 
                      */
                     bool IsFirstBindHasBeenSet() const;
+
+                    /**
+                     * 获取实例组件是否需要更新镜像版本
+                     * @return ImageNeedUpdate 实例组件是否需要更新镜像版本
+                     * 
+                     */
+                    bool GetImageNeedUpdate() const;
+
+                    /**
+                     * 判断参数 ImageNeedUpdate 是否已赋值
+                     * @return ImageNeedUpdate 是否已赋值
+                     * 
+                     */
+                    bool ImageNeedUpdateHasBeenSet() const;
 
                 private:
 
@@ -101,10 +115,16 @@ namespace TencentCloud
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 是否为首次绑定，需要安装预聚合规则
+                     * 是否为首次绑定，如果是首次绑定则需要安装预聚合规则
                      */
                     bool m_isFirstBind;
                     bool m_isFirstBindHasBeenSet;
+
+                    /**
+                     * 实例组件是否需要更新镜像版本
+                     */
+                    bool m_imageNeedUpdate;
+                    bool m_imageNeedUpdateHasBeenSet;
 
                 };
             }

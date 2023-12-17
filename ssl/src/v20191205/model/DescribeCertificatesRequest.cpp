@@ -36,7 +36,9 @@ DescribeCertificatesRequest::DescribeCertificatesRequest() :
     m_filterSourceHasBeenSet(false),
     m_isSMHasBeenSet(false),
     m_filterExpiringHasBeenSet(false),
-    m_hostableHasBeenSet(false)
+    m_hostableHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_isPendingIssueHasBeenSet(false)
 {
 }
 
@@ -162,6 +164,29 @@ string DescribeCertificatesRequest::ToJsonString() const
         string key = "Hostable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_hostable, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isPendingIssueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPendingIssue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPendingIssue, allocator);
     }
 
 
@@ -394,6 +419,38 @@ void DescribeCertificatesRequest::SetHostable(const uint64_t& _hostable)
 bool DescribeCertificatesRequest::HostableHasBeenSet() const
 {
     return m_hostableHasBeenSet;
+}
+
+vector<Tags> DescribeCertificatesRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeCertificatesRequest::SetTags(const vector<Tags>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeCertificatesRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+int64_t DescribeCertificatesRequest::GetIsPendingIssue() const
+{
+    return m_isPendingIssue;
+}
+
+void DescribeCertificatesRequest::SetIsPendingIssue(const int64_t& _isPendingIssue)
+{
+    m_isPendingIssue = _isPendingIssue;
+    m_isPendingIssueHasBeenSet = true;
+}
+
+bool DescribeCertificatesRequest::IsPendingIssueHasBeenSet() const
+{
+    return m_isPendingIssueHasBeenSet;
 }
 
 

@@ -23,7 +23,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 UploadContentRequest::UploadContentRequest() :
-    m_scriptRequestInfoHasBeenSet(false)
+    m_scriptRequestInfoHasBeenSet(false),
+    m_requestFromSourceHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string UploadContentRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scriptRequestInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_requestFromSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestFromSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_requestFromSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void UploadContentRequest::SetScriptRequestInfo(const ScriptRequestInfo& _script
 bool UploadContentRequest::ScriptRequestInfoHasBeenSet() const
 {
     return m_scriptRequestInfoHasBeenSet;
+}
+
+string UploadContentRequest::GetRequestFromSource() const
+{
+    return m_requestFromSource;
+}
+
+void UploadContentRequest::SetRequestFromSource(const string& _requestFromSource)
+{
+    m_requestFromSource = _requestFromSource;
+    m_requestFromSourceHasBeenSet = true;
+}
+
+bool UploadContentRequest::RequestFromSourceHasBeenSet() const
+{
+    return m_requestFromSourceHasBeenSet;
 }
 
 

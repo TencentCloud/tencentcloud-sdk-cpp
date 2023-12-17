@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤字段名称
-                     * @return Key 过滤字段名称
+                     * 获取过滤字段名称，取值范围如下:region(地域)，type(事件类型)，source(事件源)，status(事件状态)
+                     * @return Key 过滤字段名称，取值范围如下:region(地域)，type(事件类型)，source(事件源)，status(事件状态)
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置过滤字段名称
-                     * @param _key 过滤字段名称
+                     * 设置过滤字段名称，取值范围如下:region(地域)，type(事件类型)，source(事件源)，status(事件状态)
+                     * @param _key 过滤字段名称，取值范围如下:region(地域)，type(事件类型)，source(事件源)，status(事件状态)
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -116,7 +116,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤字段名称
+                     * 过滤字段名称，取值范围如下:region(地域)，type(事件类型)，source(事件源)，status(事件状态)
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

@@ -45,7 +45,8 @@ FlowCreateApprover::FlowCreateApprover() :
     m_componentsHasBeenSet(false),
     m_componentLimitTypeHasBeenSet(false),
     m_approverVerifyTypesHasBeenSet(false),
-    m_approverSignTypesHasBeenSet(false)
+    m_approverSignTypesHasBeenSet(false),
+    m_signTypeSelectorHasBeenSet(false)
 {
 }
 
@@ -350,6 +351,16 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_approverSignTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("SignTypeSelector") && !value["SignTypeSelector"].IsNull())
+    {
+        if (!value["SignTypeSelector"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.SignTypeSelector` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_signTypeSelector = value["SignTypeSelector"].GetUint64();
+        m_signTypeSelectorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -591,6 +602,14 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_signTypeSelectorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignTypeSelector";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_signTypeSelector, allocator);
     }
 
 }
@@ -994,5 +1013,21 @@ void FlowCreateApprover::SetApproverSignTypes(const vector<uint64_t>& _approverS
 bool FlowCreateApprover::ApproverSignTypesHasBeenSet() const
 {
     return m_approverSignTypesHasBeenSet;
+}
+
+uint64_t FlowCreateApprover::GetSignTypeSelector() const
+{
+    return m_signTypeSelector;
+}
+
+void FlowCreateApprover::SetSignTypeSelector(const uint64_t& _signTypeSelector)
+{
+    m_signTypeSelector = _signTypeSelector;
+    m_signTypeSelectorHasBeenSet = true;
+}
+
+bool FlowCreateApprover::SignTypeSelectorHasBeenSet() const
+{
+    return m_signTypeSelectorHasBeenSet;
 }
 

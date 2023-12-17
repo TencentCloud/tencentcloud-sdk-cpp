@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool BatchIdHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义主键，若不为空，则使用该值进行查询
+                     * @return CustomKey 用户自定义主键，若不为空，则使用该值进行查询
+                     * 
+                     */
+                    std::string GetCustomKey() const;
+
+                    /**
+                     * 设置用户自定义主键，若不为空，则使用该值进行查询
+                     * @param _customKey 用户自定义主键，若不为空，则使用该值进行查询
+                     * 
+                     */
+                    void SetCustomKey(const std::string& _customKey);
+
+                    /**
+                     * 判断参数 CustomKey 是否已赋值
+                     * @return CustomKey 是否已赋值
+                     * 
+                     */
+                    bool CustomKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
+
+                    /**
+                     * 用户自定义主键，若不为空，则使用该值进行查询
+                     */
+                    std::string m_customKey;
+                    bool m_customKeyHasBeenSet;
 
                 };
             }

@@ -2104,6 +2104,49 @@ EssbasicClient::CreateFlowsByTemplatesOutcomeCallable EssbasicClient::CreateFlow
     return task->get_future();
 }
 
+EssbasicClient::CreatePartnerAutoSignAuthUrlOutcome EssbasicClient::CreatePartnerAutoSignAuthUrl(const CreatePartnerAutoSignAuthUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePartnerAutoSignAuthUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePartnerAutoSignAuthUrlResponse rsp = CreatePartnerAutoSignAuthUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePartnerAutoSignAuthUrlOutcome(rsp);
+        else
+            return CreatePartnerAutoSignAuthUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePartnerAutoSignAuthUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreatePartnerAutoSignAuthUrlAsync(const CreatePartnerAutoSignAuthUrlRequest& request, const CreatePartnerAutoSignAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePartnerAutoSignAuthUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreatePartnerAutoSignAuthUrlOutcomeCallable EssbasicClient::CreatePartnerAutoSignAuthUrlCallable(const CreatePartnerAutoSignAuthUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePartnerAutoSignAuthUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePartnerAutoSignAuthUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateSealByImageOutcome EssbasicClient::CreateSealByImage(const CreateSealByImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSealByImage");
@@ -2398,6 +2441,49 @@ EssbasicClient::DescribeChannelSealPolicyWorkflowUrlOutcomeCallable EssbasicClie
         [this, request]()
         {
             return this->DescribeChannelSealPolicyWorkflowUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::DescribeExtendedServiceAuthDetailOutcome EssbasicClient::DescribeExtendedServiceAuthDetail(const DescribeExtendedServiceAuthDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtendedServiceAuthDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtendedServiceAuthDetailResponse rsp = DescribeExtendedServiceAuthDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtendedServiceAuthDetailOutcome(rsp);
+        else
+            return DescribeExtendedServiceAuthDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtendedServiceAuthDetailOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeExtendedServiceAuthDetailAsync(const DescribeExtendedServiceAuthDetailRequest& request, const DescribeExtendedServiceAuthDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExtendedServiceAuthDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeExtendedServiceAuthDetailOutcomeCallable EssbasicClient::DescribeExtendedServiceAuthDetailCallable(const DescribeExtendedServiceAuthDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExtendedServiceAuthDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExtendedServiceAuthDetail(request);
         }
     );
 

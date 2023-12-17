@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool SystemNameHasBeenSet() const;
 
                     /**
-                     * 获取主机IP。
+                     * 获取主机名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HostName 主机IP。
+                     * @return HostName 主机名。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
-                     * 设置主机IP。
+                     * 设置主机名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hostName 主机IP。
+                     * @param _hostName 主机名。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -359,7 +359,7 @@ namespace TencentCloud
                     bool m_systemNameHasBeenSet;
 
                     /**
-                     * 主机IP。
+                     * 主机名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;

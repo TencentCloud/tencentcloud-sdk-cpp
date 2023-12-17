@@ -119,6 +119,8 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSealByImageRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h>
@@ -133,6 +135,8 @@
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelSealPolicyWorkflowUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelSealPolicyWorkflowUrlResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthDetailRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthDetailResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h>
@@ -315,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowsByTemplatesResponse> CreateFlowsByTemplatesOutcome;
                 typedef std::future<CreateFlowsByTemplatesOutcome> CreateFlowsByTemplatesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateFlowsByTemplatesRequest&, CreateFlowsByTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowsByTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePartnerAutoSignAuthUrlResponse> CreatePartnerAutoSignAuthUrlOutcome;
+                typedef std::future<CreatePartnerAutoSignAuthUrlOutcome> CreatePartnerAutoSignAuthUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreatePartnerAutoSignAuthUrlRequest&, CreatePartnerAutoSignAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartnerAutoSignAuthUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSealByImageResponse> CreateSealByImageOutcome;
                 typedef std::future<CreateSealByImageOutcome> CreateSealByImageOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateSealByImageRequest&, CreateSealByImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSealByImageAsyncHandler;
@@ -336,6 +343,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeChannelSealPolicyWorkflowUrlResponse> DescribeChannelSealPolicyWorkflowUrlOutcome;
                 typedef std::future<DescribeChannelSealPolicyWorkflowUrlOutcome> DescribeChannelSealPolicyWorkflowUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeChannelSealPolicyWorkflowUrlRequest&, DescribeChannelSealPolicyWorkflowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelSealPolicyWorkflowUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExtendedServiceAuthDetailResponse> DescribeExtendedServiceAuthDetailOutcome;
+                typedef std::future<DescribeExtendedServiceAuthDetailOutcome> DescribeExtendedServiceAuthDetailOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::DescribeExtendedServiceAuthDetailRequest&, DescribeExtendedServiceAuthDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtendedServiceAuthDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExtendedServiceAuthInfoResponse> DescribeExtendedServiceAuthInfoOutcome;
                 typedef std::future<DescribeExtendedServiceAuthInfoOutcome> DescribeExtendedServiceAuthInfoOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeExtendedServiceAuthInfoRequest&, DescribeExtendedServiceAuthInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtendedServiceAuthInfoAsyncHandler;
@@ -1334,6 +1344,22 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 CreateFlowsByTemplatesOutcomeCallable CreateFlowsByTemplatesCallable(const Model::CreateFlowsByTemplatesRequest& request);
 
                 /**
+                 *创建他方自动签授权链接，通过该链接可进入小程序进行合作方企业的自动签授权，若当前企业未开通企业自动签，通过该链接会先引导开通本企业自动签。
+该接口效果同控制台： 企业设置-> 扩展服务 -> 企业自动签署 -> 合作企业方授权
+
+
+
+注: 
+1. <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Agent.ProxyOperator.OpenId 需要传递超管或者法人的OpenId)
+2. 已经在授权中或者授权成功的企业，无法重复授权
+                 * @param req CreatePartnerAutoSignAuthUrlRequest
+                 * @return CreatePartnerAutoSignAuthUrlOutcome
+                 */
+                CreatePartnerAutoSignAuthUrlOutcome CreatePartnerAutoSignAuthUrl(const Model::CreatePartnerAutoSignAuthUrlRequest &request);
+                void CreatePartnerAutoSignAuthUrlAsync(const Model::CreatePartnerAutoSignAuthUrlRequest& request, const CreatePartnerAutoSignAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePartnerAutoSignAuthUrlOutcomeCallable CreatePartnerAutoSignAuthUrlCallable(const Model::CreatePartnerAutoSignAuthUrlRequest& request);
+
+                /**
                  *1. 可以**通过图片**为子客企业代创建印章，图片最大5MB
 
 2. 可以**系统创建**子客企业代创建印章, 系统创建的印章样子下图(样式可以调整)
@@ -1432,6 +1458,21 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 DescribeChannelSealPolicyWorkflowUrlOutcome DescribeChannelSealPolicyWorkflowUrl(const Model::DescribeChannelSealPolicyWorkflowUrlRequest &request);
                 void DescribeChannelSealPolicyWorkflowUrlAsync(const Model::DescribeChannelSealPolicyWorkflowUrlRequest& request, const DescribeChannelSealPolicyWorkflowUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeChannelSealPolicyWorkflowUrlOutcomeCallable DescribeChannelSealPolicyWorkflowUrlCallable(const Model::DescribeChannelSealPolicyWorkflowUrlRequest& request);
+
+                /**
+                 *查询企业扩展服务的授权详情（列表），当前支持查询以下内容：
+
+1. **企业自动签**
+2. **批量签署**
+
+
+注: <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Agent.ProxyOperator.OpenId 需要传递超管或者法人的OpenId)
+                 * @param req DescribeExtendedServiceAuthDetailRequest
+                 * @return DescribeExtendedServiceAuthDetailOutcome
+                 */
+                DescribeExtendedServiceAuthDetailOutcome DescribeExtendedServiceAuthDetail(const Model::DescribeExtendedServiceAuthDetailRequest &request);
+                void DescribeExtendedServiceAuthDetailAsync(const Model::DescribeExtendedServiceAuthDetailRequest& request, const DescribeExtendedServiceAuthDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtendedServiceAuthDetailOutcomeCallable DescribeExtendedServiceAuthDetailCallable(const Model::DescribeExtendedServiceAuthDetailRequest& request);
 
                 /**
                  *查询企业扩展服务的开通和授权情况，当前支持查询以下内容：

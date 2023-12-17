@@ -21,7 +21,8 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 DescribeDevicesPageRsp::DescribeDevicesPageRsp() :
-    m_pagingHasBeenSet(false)
+    m_pagingHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,26 @@ CoreInternalOutcome DescribeDevicesPageRsp::Deserialize(const rapidjson::Value &
         m_pagingHasBeenSet = true;
     }
 
+    if (value.HasMember("Items") && !value["Items"].IsNull())
+    {
+        if (!value["Items"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeDevicesPageRsp.Items` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Items"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_items.push_back(item);
+        }
+        m_itemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +82,21 @@ void DescribeDevicesPageRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_paging.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_itemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Items";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -80,5 +116,21 @@ void DescribeDevicesPageRsp::SetPaging(const Paging& _paging)
 bool DescribeDevicesPageRsp::PagingHasBeenSet() const
 {
     return m_pagingHasBeenSet;
+}
+
+vector<DeviceDetail> DescribeDevicesPageRsp::GetItems() const
+{
+    return m_items;
+}
+
+void DescribeDevicesPageRsp::SetItems(const vector<DeviceDetail>& _items)
+{
+    m_items = _items;
+    m_itemsHasBeenSet = true;
+}
+
+bool DescribeDevicesPageRsp::ItemsHasBeenSet() const
+{
+    return m_itemsHasBeenSet;
 }
 

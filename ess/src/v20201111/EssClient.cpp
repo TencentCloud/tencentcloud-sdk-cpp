@@ -1889,6 +1889,49 @@ EssClient::DescribeBillUsageDetailOutcomeCallable EssClient::DescribeBillUsageDe
     return task->get_future();
 }
 
+EssClient::DescribeExtendedServiceAuthDetailOutcome EssClient::DescribeExtendedServiceAuthDetail(const DescribeExtendedServiceAuthDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtendedServiceAuthDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtendedServiceAuthDetailResponse rsp = DescribeExtendedServiceAuthDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtendedServiceAuthDetailOutcome(rsp);
+        else
+            return DescribeExtendedServiceAuthDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtendedServiceAuthDetailOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeExtendedServiceAuthDetailAsync(const DescribeExtendedServiceAuthDetailRequest& request, const DescribeExtendedServiceAuthDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExtendedServiceAuthDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeExtendedServiceAuthDetailOutcomeCallable EssClient::DescribeExtendedServiceAuthDetailCallable(const DescribeExtendedServiceAuthDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExtendedServiceAuthDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExtendedServiceAuthDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeExtendedServiceAuthInfosOutcome EssClient::DescribeExtendedServiceAuthInfos(const DescribeExtendedServiceAuthInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExtendedServiceAuthInfos");

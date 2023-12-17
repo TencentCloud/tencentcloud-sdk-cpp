@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool DataEngineIdHasBeenSet() const;
 
                     /**
-                     * 获取引擎配置项
-                     * @return DataEngineConfigPairs 引擎配置项
+                     * 获取用户自定义引擎配置项集合。该参数需要传用户需要添加的全部配置项，例如，已有配置项k1:v1，添加k2:v2，需要传[k1:v1,k2:v2]。
+                     * @return DataEngineConfigPairs 用户自定义引擎配置项集合。该参数需要传用户需要添加的全部配置项，例如，已有配置项k1:v1，添加k2:v2，需要传[k1:v1,k2:v2]。
                      * 
                      */
                     std::vector<DataEngineConfigPair> GetDataEngineConfigPairs() const;
 
                     /**
-                     * 设置引擎配置项
-                     * @param _dataEngineConfigPairs 引擎配置项
+                     * 设置用户自定义引擎配置项集合。该参数需要传用户需要添加的全部配置项，例如，已有配置项k1:v1，添加k2:v2，需要传[k1:v1,k2:v2]。
+                     * @param _dataEngineConfigPairs 用户自定义引擎配置项集合。该参数需要传用户需要添加的全部配置项，例如，已有配置项k1:v1，添加k2:v2，需要传[k1:v1,k2:v2]。
                      * 
                      */
                     void SetDataEngineConfigPairs(const std::vector<DataEngineConfigPair>& _dataEngineConfigPairs);
@@ -116,7 +116,7 @@ namespace TencentCloud
                     bool m_dataEngineIdHasBeenSet;
 
                     /**
-                     * 引擎配置项
+                     * 用户自定义引擎配置项集合。该参数需要传用户需要添加的全部配置项，例如，已有配置项k1:v1，添加k2:v2，需要传[k1:v1,k2:v2]。
                      */
                     std::vector<DataEngineConfigPair> m_dataEngineConfigPairs;
                     bool m_dataEngineConfigPairsHasBeenSet;

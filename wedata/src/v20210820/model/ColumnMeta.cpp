@@ -28,7 +28,9 @@ ColumnMeta::ColumnMeta() :
     m_positionHasBeenSet(false),
     m_isPartitionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_columnFamiliesFieldSetHasBeenSet(false)
+    m_columnFamiliesFieldSetHasBeenSet(false),
+    m_dictionaryIdHasBeenSet(false),
+    m_dictionaryNameHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome ColumnMeta::Deserialize(const rapidjson::Value &value)
         m_columnFamiliesFieldSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DictionaryId") && !value["DictionaryId"].IsNull())
+    {
+        if (!value["DictionaryId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnMeta.DictionaryId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dictionaryId = string(value["DictionaryId"].GetString());
+        m_dictionaryIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DictionaryName") && !value["DictionaryName"].IsNull())
+    {
+        if (!value["DictionaryName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnMeta.DictionaryName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dictionaryName = string(value["DictionaryName"].GetString());
+        m_dictionaryNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +225,22 @@ void ColumnMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dictionaryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DictionaryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dictionaryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dictionaryNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DictionaryName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dictionaryName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +372,37 @@ void ColumnMeta::SetColumnFamiliesFieldSet(const vector<Pair>& _columnFamiliesFi
 bool ColumnMeta::ColumnFamiliesFieldSetHasBeenSet() const
 {
     return m_columnFamiliesFieldSetHasBeenSet;
+}
+
+string ColumnMeta::GetDictionaryId() const
+{
+    return m_dictionaryId;
+}
+
+void ColumnMeta::SetDictionaryId(const string& _dictionaryId)
+{
+    m_dictionaryId = _dictionaryId;
+    m_dictionaryIdHasBeenSet = true;
+}
+
+bool ColumnMeta::DictionaryIdHasBeenSet() const
+{
+    return m_dictionaryIdHasBeenSet;
+}
+
+string ColumnMeta::GetDictionaryName() const
+{
+    return m_dictionaryName;
+}
+
+void ColumnMeta::SetDictionaryName(const string& _dictionaryName)
+{
+    m_dictionaryName = _dictionaryName;
+    m_dictionaryNameHasBeenSet = true;
+}
+
+bool ColumnMeta::DictionaryNameHasBeenSet() const
+{
+    return m_dictionaryNameHasBeenSet;
 }
 

@@ -65,22 +65,22 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID列表，上限100。支持实例类型：
-<li> CVM
-<li> LIGHTHOUSE
+<li> CVM </li>
+<li> LIGHTHOUSE </li>
                      * @return InstanceIds 实例ID列表，上限100。支持实例类型：
-<li> CVM
-<li> LIGHTHOUSE
+<li> CVM </li>
+<li> LIGHTHOUSE </li>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID列表，上限100。支持实例类型：
-<li> CVM
-<li> LIGHTHOUSE
+<li> CVM </li>
+<li> LIGHTHOUSE </li>
                      * @param _instanceIds 实例ID列表，上限100。支持实例类型：
-<li> CVM
-<li> LIGHTHOUSE
+<li> CVM </li>
+<li> LIGHTHOUSE </li>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -102,8 +102,8 @@ namespace TencentCloud
 
                     /**
                      * 实例ID列表，上限100。支持实例类型：
-<li> CVM
-<li> LIGHTHOUSE
+<li> CVM </li>
+<li> LIGHTHOUSE </li>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

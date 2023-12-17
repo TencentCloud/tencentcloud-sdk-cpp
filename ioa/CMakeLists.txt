@@ -26,6 +26,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/Filter.h
   include/tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h
   include/tencentcloud/ioa/v20220601/model/Paging.h
+  include/tencentcloud/ioa/v20220601/model/DeviceDetail.h
   include/tencentcloud/ioa/v20220601/model/Condition.h
   )
 
@@ -38,6 +39,7 @@ set(ioa_src
   src/v20220601/model/Filter.cpp
   src/v20220601/model/DescribeDevicesRequest.cpp
   src/v20220601/model/Paging.cpp
+  src/v20220601/model/DeviceDetail.cpp
   src/v20220601/model/Condition.cpp
   )
 
