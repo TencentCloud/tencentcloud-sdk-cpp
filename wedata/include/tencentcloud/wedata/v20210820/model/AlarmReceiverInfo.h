@@ -239,6 +239,31 @@ namespace TencentCloud
                      */
                     bool WecomGroupHasBeenSet() const;
 
+                    /**
+                     * 获取飞书群，0：未设置，1：成功，2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LarkGroup 飞书群，0：未设置，1：成功，2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetLarkGroup() const;
+
+                    /**
+                     * 设置飞书群，0：未设置，1：成功，2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _larkGroup 飞书群，0：未设置，1：成功，2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLarkGroup(const uint64_t& _larkGroup);
+
+                    /**
+                     * 判断参数 LarkGroup 是否已赋值
+                     * @return LarkGroup 是否已赋值
+                     * 
+                     */
+                    bool LarkGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -295,6 +320,13 @@ namespace TencentCloud
                      */
                     uint64_t m_wecomGroup;
                     bool m_wecomGroupHasBeenSet;
+
+                    /**
+                     * 飞书群，0：未设置，1：成功，2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_larkGroup;
+                    bool m_larkGroupHasBeenSet;
 
                 };
             }

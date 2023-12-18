@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递到kafka的数据类型，如Avro,Json
-                     * @return DataType 投递到kafka的数据类型，如Avro,Json
+                     * 获取投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json
+                     * @return DataType 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json
                      * 
                      */
                     std::string GetDataType() const;
 
                     /**
-                     * 设置投递到kafka的数据类型，如Avro,Json
-                     * @param _dataType 投递到kafka的数据类型，如Avro,Json
+                     * 设置投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json
+                     * @param _dataType 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json
                      * 
                      */
                     void SetDataType(const std::string& _dataType);
@@ -134,7 +134,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递到kafka的数据类型，如Avro,Json
+                     * 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json
                      */
                     std::string m_dataType;
                     bool m_dataTypeHasBeenSet;

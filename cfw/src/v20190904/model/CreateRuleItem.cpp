@@ -35,7 +35,8 @@ CreateRuleItem::CreateRuleItem() :
     m_descriptionHasBeenSet(false),
     m_scopeHasBeenSet(false),
     m_ruleSourceHasBeenSet(false),
-    m_logIdHasBeenSet(false)
+    m_logIdHasBeenSet(false),
+    m_paramTemplateIdHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome CreateRuleItem::Deserialize(const rapidjson::Value &value)
         m_logIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ParamTemplateId") && !value["ParamTemplateId"].IsNull())
+    {
+        if (!value["ParamTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateRuleItem.ParamTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paramTemplateId = string(value["ParamTemplateId"].GetString());
+        m_paramTemplateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void CreateRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LogId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paramTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void CreateRuleItem::SetLogId(const string& _logId)
 bool CreateRuleItem::LogIdHasBeenSet() const
 {
     return m_logIdHasBeenSet;
+}
+
+string CreateRuleItem::GetParamTemplateId() const
+{
+    return m_paramTemplateId;
+}
+
+void CreateRuleItem::SetParamTemplateId(const string& _paramTemplateId)
+{
+    m_paramTemplateId = _paramTemplateId;
+    m_paramTemplateIdHasBeenSet = true;
+}
+
+bool CreateRuleItem::ParamTemplateIdHasBeenSet() const
+{
+    return m_paramTemplateIdHasBeenSet;
 }
 

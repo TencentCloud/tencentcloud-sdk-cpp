@@ -32,7 +32,8 @@ CreateNatRuleItem::CreateNatRuleItem() :
     m_orderIndexHasBeenSet(false),
     m_enableHasBeenSet(false),
     m_uuidHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_paramTemplateIdHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome CreateNatRuleItem::Deserialize(const rapidjson::Value &value
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ParamTemplateId") && !value["ParamTemplateId"].IsNull())
+    {
+        if (!value["ParamTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateNatRuleItem.ParamTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paramTemplateId = string(value["ParamTemplateId"].GetString());
+        m_paramTemplateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void CreateNatRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paramTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void CreateNatRuleItem::SetDescription(const string& _description)
 bool CreateNatRuleItem::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CreateNatRuleItem::GetParamTemplateId() const
+{
+    return m_paramTemplateId;
+}
+
+void CreateNatRuleItem::SetParamTemplateId(const string& _paramTemplateId)
+{
+    m_paramTemplateId = _paramTemplateId;
+    m_paramTemplateIdHasBeenSet = true;
+}
+
+bool CreateNatRuleItem::ParamTemplateIdHasBeenSet() const
+{
+    return m_paramTemplateIdHasBeenSet;
 }
 

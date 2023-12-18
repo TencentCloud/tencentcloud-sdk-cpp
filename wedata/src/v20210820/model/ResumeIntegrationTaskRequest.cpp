@@ -26,7 +26,8 @@ ResumeIntegrationTaskRequest::ResumeIntegrationTaskRequest() :
     m_taskIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_eventHasBeenSet(false),
-    m_extConfigHasBeenSet(false)
+    m_extConfigHasBeenSet(false),
+    m_eventDescHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string ResumeIntegrationTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_eventDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventDesc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eventDesc.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void ResumeIntegrationTaskRequest::SetExtConfig(const vector<RecordField>& _extC
 bool ResumeIntegrationTaskRequest::ExtConfigHasBeenSet() const
 {
     return m_extConfigHasBeenSet;
+}
+
+string ResumeIntegrationTaskRequest::GetEventDesc() const
+{
+    return m_eventDesc;
+}
+
+void ResumeIntegrationTaskRequest::SetEventDesc(const string& _eventDesc)
+{
+    m_eventDesc = _eventDesc;
+    m_eventDescHasBeenSet = true;
+}
+
+bool ResumeIntegrationTaskRequest::EventDescHasBeenSet() const
+{
+    return m_eventDescHasBeenSet;
 }
 
 

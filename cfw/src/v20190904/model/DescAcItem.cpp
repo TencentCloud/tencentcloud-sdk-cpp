@@ -47,7 +47,9 @@ DescAcItem::DescAcItem() :
     m_statusHasBeenSet(false),
     m_betaListHasBeenSet(false),
     m_scopeHasBeenSet(false),
-    m_internetBorderUuidHasBeenSet(false)
+    m_internetBorderUuidHasBeenSet(false),
+    m_paramTemplateNameHasBeenSet(false),
+    m_paramTemplateIdHasBeenSet(false)
 {
 }
 
@@ -336,6 +338,26 @@ CoreInternalOutcome DescAcItem::Deserialize(const rapidjson::Value &value)
         m_internetBorderUuidHasBeenSet = true;
     }
 
+    if (value.HasMember("ParamTemplateName") && !value["ParamTemplateName"].IsNull())
+    {
+        if (!value["ParamTemplateName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.ParamTemplateName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paramTemplateName = string(value["ParamTemplateName"].GetString());
+        m_paramTemplateNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParamTemplateId") && !value["ParamTemplateId"].IsNull())
+    {
+        if (!value["ParamTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.ParamTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paramTemplateId = string(value["ParamTemplateId"].GetString());
+        m_paramTemplateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -564,6 +586,22 @@ void DescAcItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "InternetBorderUuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_internetBorderUuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramTemplateNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamTemplateName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paramTemplateName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paramTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -999,5 +1037,37 @@ void DescAcItem::SetInternetBorderUuid(const string& _internetBorderUuid)
 bool DescAcItem::InternetBorderUuidHasBeenSet() const
 {
     return m_internetBorderUuidHasBeenSet;
+}
+
+string DescAcItem::GetParamTemplateName() const
+{
+    return m_paramTemplateName;
+}
+
+void DescAcItem::SetParamTemplateName(const string& _paramTemplateName)
+{
+    m_paramTemplateName = _paramTemplateName;
+    m_paramTemplateNameHasBeenSet = true;
+}
+
+bool DescAcItem::ParamTemplateNameHasBeenSet() const
+{
+    return m_paramTemplateNameHasBeenSet;
+}
+
+string DescAcItem::GetParamTemplateId() const
+{
+    return m_paramTemplateId;
+}
+
+void DescAcItem::SetParamTemplateId(const string& _paramTemplateId)
+{
+    m_paramTemplateId = _paramTemplateId;
+    m_paramTemplateIdHasBeenSet = true;
+}
+
+bool DescAcItem::ParamTemplateIdHasBeenSet() const
+{
+    return m_paramTemplateIdHasBeenSet;
 }
 

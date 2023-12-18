@@ -972,6 +972,31 @@ Modify 集群变更中；
                      */
                     bool ComponentsHasBeenSet() const;
 
+                    /**
+                     * 获取判断审计日志表是否有catalog字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IfExistCatalog 判断审计日志表是否有catalog字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIfExistCatalog() const;
+
+                    /**
+                     * 设置判断审计日志表是否有catalog字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ifExistCatalog 判断审计日志表是否有catalog字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIfExistCatalog(const int64_t& _ifExistCatalog);
+
+                    /**
+                     * 判断参数 IfExistCatalog 是否已赋值
+                     * @return IfExistCatalog 是否已赋值
+                     * 
+                     */
+                    bool IfExistCatalogHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1231,6 +1256,13 @@ Modify 集群变更中；
                      */
                     std::string m_components;
                     bool m_componentsHasBeenSet;
+
+                    /**
+                     * 判断审计日志表是否有catalog字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ifExistCatalog;
+                    bool m_ifExistCatalogHasBeenSet;
 
                 };
             }

@@ -252,6 +252,31 @@ namespace TencentCloud
                      */
                     bool ModelFormatHasBeenSet() const;
 
+                    /**
+                     * 获取是否为私有化大模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsPrivateModel 是否为私有化大模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsPrivateModel() const;
+
+                    /**
+                     * 设置是否为私有化大模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isPrivateModel 是否为私有化大模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsPrivateModel(const bool& _isPrivateModel);
+
+                    /**
+                     * 判断参数 IsPrivateModel 是否已赋值
+                     * @return IsPrivateModel 是否已赋值
+                     * 
+                     */
+                    bool IsPrivateModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +336,13 @@ namespace TencentCloud
                      */
                     std::string m_modelFormat;
                     bool m_modelFormatHasBeenSet;
+
+                    /**
+                     * 是否为私有化大模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isPrivateModel;
+                    bool m_isPrivateModelHasBeenSet;
 
                 };
             }

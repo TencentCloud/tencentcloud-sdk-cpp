@@ -50,7 +50,8 @@ TaskAlarmInfo::TaskAlarmInfo() :
     m_monitorObjectIdsHasBeenSet(false),
     m_latestAlarmInstanceIdHasBeenSet(false),
     m_latestAlarmTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_larkWebHooksHasBeenSet(false)
 {
 }
 
@@ -372,6 +373,16 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("LarkWebHooks") && !value["LarkWebHooks"].IsNull())
+    {
+        if (!value["LarkWebHooks"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.LarkWebHooks` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_larkWebHooks = string(value["LarkWebHooks"].GetString());
+        m_larkWebHooksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -629,6 +640,14 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_larkWebHooksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LarkWebHooks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_larkWebHooks.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1112,5 +1131,21 @@ void TaskAlarmInfo::SetDescription(const string& _description)
 bool TaskAlarmInfo::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string TaskAlarmInfo::GetLarkWebHooks() const
+{
+    return m_larkWebHooks;
+}
+
+void TaskAlarmInfo::SetLarkWebHooks(const string& _larkWebHooks)
+{
+    m_larkWebHooks = _larkWebHooks;
+    m_larkWebHooksHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::LarkWebHooksHasBeenSet() const
+{
+    return m_larkWebHooksHasBeenSet;
 }
 

@@ -32,7 +32,8 @@ PreExecuteFileSettings::PreExecuteFileSettings() :
     m_cosFileURIHasBeenSet(false),
     m_cosSecretIdHasBeenSet(false),
     m_cosSecretKeyHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,16 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void PreExecuteFileSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void PreExecuteFileSettings::SetAppId(const string& _appId)
 bool PreExecuteFileSettings::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+string PreExecuteFileSettings::GetRemark() const
+{
+    return m_remark;
+}
+
+void PreExecuteFileSettings::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool PreExecuteFileSettings::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 

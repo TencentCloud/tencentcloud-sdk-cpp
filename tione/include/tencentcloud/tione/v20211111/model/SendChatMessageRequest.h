@@ -86,22 +86,22 @@ namespace TencentCloud
 
                     /**
                      * 获取会话模型版本。
-多行业客服大模型：填写demo_big_model_version_id。
-默认为demo_big_model_version_id，即多行业客服大模型。
+金融大模型：填写sn-finllm-13b-chat-v1。
+默认为sn-finllm-13b-chat-v1，即金融大模型。
                      * @return ModelVersion 会话模型版本。
-多行业客服大模型：填写demo_big_model_version_id。
-默认为demo_big_model_version_id，即多行业客服大模型。
+金融大模型：填写sn-finllm-13b-chat-v1。
+默认为sn-finllm-13b-chat-v1，即金融大模型。
                      * 
                      */
                     std::string GetModelVersion() const;
 
                     /**
                      * 设置会话模型版本。
-多行业客服大模型：填写demo_big_model_version_id。
-默认为demo_big_model_version_id，即多行业客服大模型。
+金融大模型：填写sn-finllm-13b-chat-v1。
+默认为sn-finllm-13b-chat-v1，即金融大模型。
                      * @param _modelVersion 会话模型版本。
-多行业客服大模型：填写demo_big_model_version_id。
-默认为demo_big_model_version_id，即多行业客服大模型。
+金融大模型：填写sn-finllm-13b-chat-v1。
+默认为sn-finllm-13b-chat-v1，即金融大模型。
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -114,27 +114,31 @@ namespace TencentCloud
                     bool ModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取使用模式(仅多场景客服大模型支持)。
+                     * 获取使用模式。
 通用问答：填写General。
 搜索增强问答：填写WithSearchPlugin。
 默认为General，即通用问答。
-                     * @return Mode 使用模式(仅多场景客服大模型支持)。
+当前可体验模型仅支持General。
+                     * @return Mode 使用模式。
 通用问答：填写General。
 搜索增强问答：填写WithSearchPlugin。
 默认为General，即通用问答。
+当前可体验模型仅支持General。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置使用模式(仅多场景客服大模型支持)。
+                     * 设置使用模式。
 通用问答：填写General。
 搜索增强问答：填写WithSearchPlugin。
 默认为General，即通用问答。
-                     * @param _mode 使用模式(仅多场景客服大模型支持)。
+当前可体验模型仅支持General。
+                     * @param _mode 使用模式。
 通用问答：填写General。
 搜索增强问答：填写WithSearchPlugin。
 默认为General，即通用问答。
+当前可体验模型仅支持General。
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -187,17 +191,18 @@ namespace TencentCloud
 
                     /**
                      * 会话模型版本。
-多行业客服大模型：填写demo_big_model_version_id。
-默认为demo_big_model_version_id，即多行业客服大模型。
+金融大模型：填写sn-finllm-13b-chat-v1。
+默认为sn-finllm-13b-chat-v1，即金融大模型。
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
 
                     /**
-                     * 使用模式(仅多场景客服大模型支持)。
+                     * 使用模式。
 通用问答：填写General。
 搜索增强问答：填写WithSearchPlugin。
 默认为General，即通用问答。
+当前可体验模型仅支持General。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;

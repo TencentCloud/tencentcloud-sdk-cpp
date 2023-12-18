@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool FilterNameHasBeenSet() const;
 
+                    /**
+                     * 获取按订阅消费组名称过滤
+                     * @return FilterGroup 按订阅消费组名称过滤
+                     * 
+                     */
+                    std::string GetFilterGroup() const;
+
+                    /**
+                     * 设置按订阅消费组名称过滤
+                     * @param _filterGroup 按订阅消费组名称过滤
+                     * 
+                     */
+                    void SetFilterGroup(const std::string& _filterGroup);
+
+                    /**
+                     * 判断参数 FilterGroup 是否已赋值
+                     * @return FilterGroup 是否已赋值
+                     * 
+                     */
+                    bool FilterGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_filterName;
                     bool m_filterNameHasBeenSet;
+
+                    /**
+                     * 按订阅消费组名称过滤
+                     */
+                    std::string m_filterGroup;
+                    bool m_filterGroupHasBeenSet;
 
                 };
             }

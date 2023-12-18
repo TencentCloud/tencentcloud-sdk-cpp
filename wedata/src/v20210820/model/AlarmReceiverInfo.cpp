@@ -29,7 +29,8 @@ AlarmReceiverInfo::AlarmReceiverInfo() :
     m_voiceHasBeenSet(false),
     m_wecomHasBeenSet(false),
     m_httpHasBeenSet(false),
-    m_wecomGroupHasBeenSet(false)
+    m_wecomGroupHasBeenSet(false),
+    m_larkGroupHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome AlarmReceiverInfo::Deserialize(const rapidjson::Value &value
         m_wecomGroupHasBeenSet = true;
     }
 
+    if (value.HasMember("LarkGroup") && !value["LarkGroup"].IsNull())
+    {
+        if (!value["LarkGroup"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmReceiverInfo.LarkGroup` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_larkGroup = value["LarkGroup"].GetUint64();
+        m_larkGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void AlarmReceiverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "WecomGroup";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wecomGroup, allocator);
+    }
+
+    if (m_larkGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LarkGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_larkGroup, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void AlarmReceiverInfo::SetWecomGroup(const uint64_t& _wecomGroup)
 bool AlarmReceiverInfo::WecomGroupHasBeenSet() const
 {
     return m_wecomGroupHasBeenSet;
+}
+
+uint64_t AlarmReceiverInfo::GetLarkGroup() const
+{
+    return m_larkGroup;
+}
+
+void AlarmReceiverInfo::SetLarkGroup(const uint64_t& _larkGroup)
+{
+    m_larkGroup = _larkGroup;
+    m_larkGroupHasBeenSet = true;
+}
+
+bool AlarmReceiverInfo::LarkGroupHasBeenSet() const
+{
+    return m_larkGroupHasBeenSet;
 }
 

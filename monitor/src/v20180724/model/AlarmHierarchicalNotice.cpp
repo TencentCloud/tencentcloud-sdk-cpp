@@ -22,7 +22,8 @@ using namespace std;
 
 AlarmHierarchicalNotice::AlarmHierarchicalNotice() :
     m_noticeIdHasBeenSet(false),
-    m_classificationHasBeenSet(false)
+    m_classificationHasBeenSet(false),
+    m_policyIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome AlarmHierarchicalNotice::Deserialize(const rapidjson::Value 
         m_classificationHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyId") && !value["PolicyId"].IsNull())
+    {
+        if (!value["PolicyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmHierarchicalNotice.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyId = string(value["PolicyId"].GetString());
+        m_policyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void AlarmHierarchicalNotice::ToJsonObject(rapidjson::Value &value, rapidjson::D
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void AlarmHierarchicalNotice::SetClassification(const vector<string>& _classific
 bool AlarmHierarchicalNotice::ClassificationHasBeenSet() const
 {
     return m_classificationHasBeenSet;
+}
+
+string AlarmHierarchicalNotice::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void AlarmHierarchicalNotice::SetPolicyId(const string& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool AlarmHierarchicalNotice::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
 }
 

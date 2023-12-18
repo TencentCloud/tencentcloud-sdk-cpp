@@ -29,7 +29,8 @@ ModelInfo::ModelInfo() :
     m_cosPathInfoHasBeenSet(false),
     m_algorithmFrameworkHasBeenSet(false),
     m_modelTypeHasBeenSet(false),
-    m_modelFormatHasBeenSet(false)
+    m_modelFormatHasBeenSet(false),
+    m_isPrivateModelHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,16 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_modelFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPrivateModel") && !value["IsPrivateModel"].IsNull())
+    {
+        if (!value["IsPrivateModel"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.IsPrivateModel` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPrivateModel = value["IsPrivateModel"].GetBool();
+        m_isPrivateModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ModelFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modelFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPrivateModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPrivateModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPrivateModel, allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void ModelInfo::SetModelFormat(const string& _modelFormat)
 bool ModelInfo::ModelFormatHasBeenSet() const
 {
     return m_modelFormatHasBeenSet;
+}
+
+bool ModelInfo::GetIsPrivateModel() const
+{
+    return m_isPrivateModel;
+}
+
+void ModelInfo::SetIsPrivateModel(const bool& _isPrivateModel)
+{
+    m_isPrivateModel = _isPrivateModel;
+    m_isPrivateModelHasBeenSet = true;
+}
+
+bool ModelInfo::IsPrivateModelHasBeenSet() const
+{
+    return m_isPrivateModelHasBeenSet;
 }
 

@@ -1121,7 +1121,6 @@ namespace TencentCloud
 
                 /**
                  *DescribeSourceAsset-查询资产组全部资产信息
-
                  * @param req DescribeSourceAssetRequest
                  * @return DescribeSourceAssetOutcome
                  */

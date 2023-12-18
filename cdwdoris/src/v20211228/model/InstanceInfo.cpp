@@ -56,7 +56,8 @@ InstanceInfo::InstanceInfo() :
     m_cosBucketNameHasBeenSet(false),
     m_canAttachCbsHasBeenSet(false),
     m_buildVersionHasBeenSet(false),
-    m_componentsHasBeenSet(false)
+    m_componentsHasBeenSet(false),
+    m_ifExistCatalogHasBeenSet(false)
 {
 }
 
@@ -449,6 +450,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_componentsHasBeenSet = true;
     }
 
+    if (value.HasMember("IfExistCatalog") && !value["IfExistCatalog"].IsNull())
+    {
+        if (!value["IfExistCatalog"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IfExistCatalog` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ifExistCatalog = value["IfExistCatalog"].GetInt64();
+        m_ifExistCatalogHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -751,6 +762,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Components";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_components.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ifExistCatalogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IfExistCatalog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ifExistCatalog, allocator);
     }
 
 }
@@ -1330,5 +1349,21 @@ void InstanceInfo::SetComponents(const string& _components)
 bool InstanceInfo::ComponentsHasBeenSet() const
 {
     return m_componentsHasBeenSet;
+}
+
+int64_t InstanceInfo::GetIfExistCatalog() const
+{
+    return m_ifExistCatalog;
+}
+
+void InstanceInfo::SetIfExistCatalog(const int64_t& _ifExistCatalog)
+{
+    m_ifExistCatalog = _ifExistCatalog;
+    m_ifExistCatalogHasBeenSet = true;
+}
+
+bool InstanceInfo::IfExistCatalogHasBeenSet() const
+{
+    return m_ifExistCatalogHasBeenSet;
 }
 

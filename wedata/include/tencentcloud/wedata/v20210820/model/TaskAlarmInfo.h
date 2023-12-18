@@ -765,6 +765,31 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取飞书群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LarkWebHooks 飞书群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLarkWebHooks() const;
+
+                    /**
+                     * 设置飞书群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _larkWebHooks 飞书群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLarkWebHooks(const std::string& _larkWebHooks);
+
+                    /**
+                     * 判断参数 LarkWebHooks 是否已赋值
+                     * @return LarkWebHooks 是否已赋值
+                     * 
+                     */
+                    bool LarkWebHooksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -968,6 +993,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 飞书群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_larkWebHooks;
+                    bool m_larkWebHooksHasBeenSet;
 
                 };
             }

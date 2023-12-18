@@ -211,6 +211,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsInstanceTrendResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogListRequest.h
   include/tencentcloud/wedata/v20210820/model/RerunOpsMakePlanInstancesResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeTableMetaRequest.h
   include/tencentcloud/wedata/v20210820/model/RunnerRuleExecResult.h
   include/tencentcloud/wedata/v20210820/model/DescribeAllTaskTypeResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleGroupResponse.h
@@ -660,6 +661,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ModifyTaskInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeOperateOpsTasksRequest.h
   include/tencentcloud/wedata/v20210820/model/DataSourceInfo.h
+  include/tencentcloud/wedata/v20210820/model/DescribeTableMetaResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskDetailRequest.h
   include/tencentcloud/wedata/v20210820/model/TaskOpsDto.h
   include/tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenRequest.h
@@ -1125,6 +1127,7 @@ set(wedata_src
   src/v20210820/model/DescribeIntegrationStatisticsInstanceTrendResponse.cpp
   src/v20210820/model/DescribeInstanceLogListRequest.cpp
   src/v20210820/model/RerunOpsMakePlanInstancesResponse.cpp
+  src/v20210820/model/DescribeTableMetaRequest.cpp
   src/v20210820/model/RunnerRuleExecResult.cpp
   src/v20210820/model/DescribeAllTaskTypeResponse.cpp
   src/v20210820/model/DescribeRuleGroupResponse.cpp
@@ -1574,6 +1577,7 @@ set(wedata_src
   src/v20210820/model/ModifyTaskInfoRequest.cpp
   src/v20210820/model/DescribeOperateOpsTasksRequest.cpp
   src/v20210820/model/DataSourceInfo.cpp
+  src/v20210820/model/DescribeTableMetaResponse.cpp
   src/v20210820/model/DescribeTaskDetailRequest.cpp
   src/v20210820/model/TaskOpsDto.cpp
   src/v20210820/model/DescribeOfflineTaskTokenRequest.cpp

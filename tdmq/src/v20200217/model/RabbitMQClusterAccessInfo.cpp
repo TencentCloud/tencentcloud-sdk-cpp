@@ -32,7 +32,8 @@ RabbitMQClusterAccessInfo::RabbitMQClusterAccessInfo() :
     m_publicWebConsoleSwitchStatusHasBeenSet(false),
     m_vpcWebConsoleSwitchStatusHasBeenSet(false),
     m_publicDataStreamStatusHasBeenSet(false),
-    m_prometheusEndpointInfoHasBeenSet(false)
+    m_prometheusEndpointInfoHasBeenSet(false),
+    m_webConsoleDomainEndpointHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,16 @@ CoreInternalOutcome RabbitMQClusterAccessInfo::Deserialize(const rapidjson::Valu
         m_prometheusEndpointInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("WebConsoleDomainEndpoint") && !value["WebConsoleDomainEndpoint"].IsNull())
+    {
+        if (!value["WebConsoleDomainEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterAccessInfo.WebConsoleDomainEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webConsoleDomainEndpoint = string(value["WebConsoleDomainEndpoint"].GetString());
+        m_webConsoleDomainEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void RabbitMQClusterAccessInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_prometheusEndpointInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_webConsoleDomainEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebConsoleDomainEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webConsoleDomainEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void RabbitMQClusterAccessInfo::SetPrometheusEndpointInfo(const PrometheusEndpoi
 bool RabbitMQClusterAccessInfo::PrometheusEndpointInfoHasBeenSet() const
 {
     return m_prometheusEndpointInfoHasBeenSet;
+}
+
+string RabbitMQClusterAccessInfo::GetWebConsoleDomainEndpoint() const
+{
+    return m_webConsoleDomainEndpoint;
+}
+
+void RabbitMQClusterAccessInfo::SetWebConsoleDomainEndpoint(const string& _webConsoleDomainEndpoint)
+{
+    m_webConsoleDomainEndpoint = _webConsoleDomainEndpoint;
+    m_webConsoleDomainEndpointHasBeenSet = true;
+}
+
+bool RabbitMQClusterAccessInfo::WebConsoleDomainEndpointHasBeenSet() const
+{
+    return m_webConsoleDomainEndpointHasBeenSet;
 }
 

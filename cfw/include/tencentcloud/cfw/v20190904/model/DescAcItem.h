@@ -714,6 +714,56 @@ namespace TencentCloud
                      */
                     bool InternetBorderUuidHasBeenSet() const;
 
+                    /**
+                     * 获取协议端口组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParamTemplateName 协议端口组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParamTemplateName() const;
+
+                    /**
+                     * 设置协议端口组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _paramTemplateName 协议端口组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParamTemplateName(const std::string& _paramTemplateName);
+
+                    /**
+                     * 判断参数 ParamTemplateName 是否已赋值
+                     * @return ParamTemplateName 是否已赋值
+                     * 
+                     */
+                    bool ParamTemplateNameHasBeenSet() const;
+
+                    /**
+                     * 获取协议端口组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParamTemplateId 协议端口组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParamTemplateId() const;
+
+                    /**
+                     * 设置协议端口组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _paramTemplateId 协议端口组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParamTemplateId(const std::string& _paramTemplateId);
+
+                    /**
+                     * 判断参数 ParamTemplateId 是否已赋值
+                     * @return ParamTemplateId 是否已赋值
+                     * 
+                     */
+                    bool ParamTemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -902,6 +952,20 @@ namespace TencentCloud
                      */
                     std::string m_internetBorderUuid;
                     bool m_internetBorderUuidHasBeenSet;
+
+                    /**
+                     * 协议端口组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paramTemplateName;
+                    bool m_paramTemplateNameHasBeenSet;
+
+                    /**
+                     * 协议端口组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paramTemplateId;
+                    bool m_paramTemplateIdHasBeenSet;
 
                 };
             }

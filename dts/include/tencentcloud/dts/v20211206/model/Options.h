@@ -251,18 +251,18 @@ namespace TencentCloud
                     bool KafkaOptionHasBeenSet() const;
 
                     /**
-                     * 获取任务限速信息、该字段仅用作出参、入参该字段无效
+                     * 获取任务限速信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RateLimitOption 任务限速信息、该字段仅用作出参、入参该字段无效
+                     * @return RateLimitOption 任务限速信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RateLimitOption GetRateLimitOption() const;
 
                     /**
-                     * 设置任务限速信息、该字段仅用作出参、入参该字段无效
+                     * 设置任务限速信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rateLimitOption 任务限速信息、该字段仅用作出参、入参该字段无效
+                     * @param _rateLimitOption 任务限速信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -359,7 +359,7 @@ namespace TencentCloud
                     bool m_kafkaOptionHasBeenSet;
 
                     /**
-                     * 任务限速信息、该字段仅用作出参、入参该字段无效
+                     * 任务限速信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitOption m_rateLimitOption;

@@ -298,6 +298,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取端口协议组ID
+                     * @return ParamTemplateId 端口协议组ID
+                     * 
+                     */
+                    std::string GetParamTemplateId() const;
+
+                    /**
+                     * 设置端口协议组ID
+                     * @param _paramTemplateId 端口协议组ID
+                     * 
+                     */
+                    void SetParamTemplateId(const std::string& _paramTemplateId);
+
+                    /**
+                     * 判断参数 ParamTemplateId 是否已赋值
+                     * @return ParamTemplateId 是否已赋值
+                     * 
+                     */
+                    bool ParamTemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +392,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 端口协议组ID
+                     */
+                    std::string m_paramTemplateId;
+                    bool m_paramTemplateIdHasBeenSet;
 
                 };
             }

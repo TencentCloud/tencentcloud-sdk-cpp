@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取事件类型(START, STOP, SUSPEND, SUSPEND_WITHOUT_SP,RESUME, COMMIT, TIMESTAMP)	
+                     * @return Event 事件类型(START, STOP, SUSPEND, SUSPEND_WITHOUT_SP,RESUME, COMMIT, TIMESTAMP)	
+                     * 
+                     */
+                    std::string GetEvent() const;
+
+                    /**
+                     * 设置事件类型(START, STOP, SUSPEND, SUSPEND_WITHOUT_SP,RESUME, COMMIT, TIMESTAMP)	
+                     * @param _event 事件类型(START, STOP, SUSPEND, SUSPEND_WITHOUT_SP,RESUME, COMMIT, TIMESTAMP)	
+                     * 
+                     */
+                    void SetEvent(const std::string& _event);
+
+                    /**
+                     * 判断参数 Event 是否已赋值
+                     * @return Event 是否已赋值
+                     * 
+                     */
+                    bool EventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 事件类型(START, STOP, SUSPEND, SUSPEND_WITHOUT_SP,RESUME, COMMIT, TIMESTAMP)	
+                     */
+                    std::string m_event;
+                    bool m_eventHasBeenSet;
 
                 };
             }

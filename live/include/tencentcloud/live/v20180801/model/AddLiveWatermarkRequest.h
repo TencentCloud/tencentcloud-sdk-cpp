@@ -73,18 +73,18 @@ URL中禁止包含的字符：
 
                     /**
                      * 获取水印名称。
-最长16字节。
+最长30字节。
                      * @return WatermarkName 水印名称。
-最长16字节。
+最长30字节。
                      * 
                      */
                     std::string GetWatermarkName() const;
 
                     /**
                      * 设置水印名称。
-最长16字节。
+最长30字节。
                      * @param _watermarkName 水印名称。
-最长16字节。
+最长30字节。
                      * 
                      */
                     void SetWatermarkName(const std::string& _watermarkName);
@@ -234,7 +234,7 @@ URL中禁止包含的字符：
 
                     /**
                      * 水印名称。
-最长16字节。
+最长30字节。
                      */
                     std::string m_watermarkName;
                     bool m_watermarkNameHasBeenSet;

@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前生效的全量导出线程数
+                     * 获取当前生效的全量导出线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentDumpThread 当前生效的全量导出线程数
+                     * @return CurrentDumpThread 当前生效的全量导出线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentDumpThread() const;
 
                     /**
-                     * 设置当前生效的全量导出线程数
+                     * 设置当前生效的全量导出线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _currentDumpThread 当前生效的全量导出线程数
+                     * @param _currentDumpThread 当前生效的全量导出线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool CurrentDumpThreadHasBeenSet() const;
 
                     /**
-                     * 获取默认的全量导出线程数
+                     * 获取默认的全量导出线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultDumpThread 默认的全量导出线程数
+                     * @return DefaultDumpThread 默认的全量导出线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultDumpThread() const;
 
                     /**
-                     * 设置默认的全量导出线程数
+                     * 设置默认的全量导出线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultDumpThread 默认的全量导出线程数
+                     * @param _defaultDumpThread 默认的全量导出线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool DefaultDumpThreadHasBeenSet() const;
 
                     /**
-                     * 获取当前生效的全量导出Rps	
+                     * 获取当前生效的全量导出Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentDumpRps 当前生效的全量导出Rps	
+                     * @return CurrentDumpRps 当前生效的全量导出Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentDumpRps() const;
 
                     /**
-                     * 设置当前生效的全量导出Rps	
+                     * 设置当前生效的全量导出Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _currentDumpRps 当前生效的全量导出Rps	
+                     * @param _currentDumpRps 当前生效的全量导出Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool CurrentDumpRpsHasBeenSet() const;
 
                     /**
-                     * 获取默认的全量导出Rps	
+                     * 获取默认的全量导出Rps，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultDumpRps 默认的全量导出Rps	
+                     * @return DefaultDumpRps 默认的全量导出Rps，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultDumpRps() const;
 
                     /**
-                     * 设置默认的全量导出Rps	
+                     * 设置默认的全量导出Rps，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultDumpRps 默认的全量导出Rps	
+                     * @param _defaultDumpRps 默认的全量导出Rps，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool DefaultDumpRpsHasBeenSet() const;
 
                     /**
-                     * 获取当前生效的全量导入线程数
+                     * 获取当前生效的全量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentLoadThread 当前生效的全量导入线程数
+                     * @return CurrentLoadThread 当前生效的全量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentLoadThread() const;
 
                     /**
-                     * 设置当前生效的全量导入线程数
+                     * 设置当前生效的全量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _currentLoadThread 当前生效的全量导入线程数
+                     * @param _currentLoadThread 当前生效的全量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool CurrentLoadThreadHasBeenSet() const;
 
                     /**
-                     * 获取默认的全量导入线程数
+                     * 获取默认的全量导入线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultLoadThread 默认的全量导入线程数
+                     * @return DefaultLoadThread 默认的全量导入线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultLoadThread() const;
 
                     /**
-                     * 设置默认的全量导入线程数
+                     * 设置默认的全量导入线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultLoadThread 默认的全量导入线程数
+                     * @param _defaultLoadThread 默认的全量导入线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool DefaultLoadThreadHasBeenSet() const;
 
                     /**
-                     * 获取当前生效的全量导入Rps	
+                     * 获取当前生效的全量导入Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentLoadRps 当前生效的全量导入Rps	
+                     * @return CurrentLoadRps 当前生效的全量导入Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000	
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentLoadRps() const;
 
                     /**
-                     * 设置当前生效的全量导入Rps	
+                     * 设置当前生效的全量导入Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _currentLoadRps 当前生效的全量导入Rps	
+                     * @param _currentLoadRps 当前生效的全量导入Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000	
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool CurrentLoadRpsHasBeenSet() const;
 
                     /**
-                     * 获取默认的全量导入Rps	
+                     * 获取默认的全量导入Rps，该字段仅在出参有意义	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultLoadRps 默认的全量导入Rps	
+                     * @return DefaultLoadRps 默认的全量导入Rps，该字段仅在出参有意义	
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultLoadRps() const;
 
                     /**
-                     * 设置默认的全量导入Rps	
+                     * 设置默认的全量导入Rps，该字段仅在出参有意义	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultLoadRps 默认的全量导入Rps	
+                     * @param _defaultLoadRps 默认的全量导入Rps，该字段仅在出参有意义	
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool DefaultLoadRpsHasBeenSet() const;
 
                     /**
-                     * 获取当前生效的增量导入线程数
+                     * 获取当前生效的增量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为128
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentSinkerThread 当前生效的增量导入线程数
+                     * @return CurrentSinkerThread 当前生效的增量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为128
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentSinkerThread() const;
 
                     /**
-                     * 设置当前生效的增量导入线程数
+                     * 设置当前生效的增量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为128
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _currentSinkerThread 当前生效的增量导入线程数
+                     * @param _currentSinkerThread 当前生效的增量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为128
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool CurrentSinkerThreadHasBeenSet() const;
 
                     /**
-                     * 获取默认的增量导入线程数
+                     * 获取默认的增量导入线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultSinkerThread 默认的增量导入线程数
+                     * @return DefaultSinkerThread 默认的增量导入线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultSinkerThread() const;
 
                     /**
-                     * 设置默认的增量导入线程数
+                     * 设置默认的增量导入线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultSinkerThread 默认的增量导入线程数
+                     * @param _defaultSinkerThread 默认的增量导入线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool DefaultSinkerThreadHasBeenSet() const;
 
                     /**
-                     * 获取enum:"no"/"yes"、no表示用户未设置过限速、yes表示设置过限速
+                     * 获取enum:"no"/"yes"、no表示用户未设置过限速、yes表示设置过限速，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HasUserSetRateLimit enum:"no"/"yes"、no表示用户未设置过限速、yes表示设置过限速
+                     * @return HasUserSetRateLimit enum:"no"/"yes"、no表示用户未设置过限速、yes表示设置过限速，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHasUserSetRateLimit() const;
 
                     /**
-                     * 设置enum:"no"/"yes"、no表示用户未设置过限速、yes表示设置过限速
+                     * 设置enum:"no"/"yes"、no表示用户未设置过限速、yes表示设置过限速，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hasUserSetRateLimit enum:"no"/"yes"、no表示用户未设置过限速、yes表示设置过限速
+                     * @param _hasUserSetRateLimit enum:"no"/"yes"、no表示用户未设置过限速、yes表示设置过限速，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,77 +324,77 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前生效的全量导出线程数
+                     * 当前生效的全量导出线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentDumpThread;
                     bool m_currentDumpThreadHasBeenSet;
 
                     /**
-                     * 默认的全量导出线程数
+                     * 默认的全量导出线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultDumpThread;
                     bool m_defaultDumpThreadHasBeenSet;
 
                     /**
-                     * 当前生效的全量导出Rps	
+                     * 当前生效的全量导出Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentDumpRps;
                     bool m_currentDumpRpsHasBeenSet;
 
                     /**
-                     * 默认的全量导出Rps	
+                     * 默认的全量导出Rps，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultDumpRps;
                     bool m_defaultDumpRpsHasBeenSet;
 
                     /**
-                     * 当前生效的全量导入线程数
+                     * 当前生效的全量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentLoadThread;
                     bool m_currentLoadThreadHasBeenSet;
 
                     /**
-                     * 默认的全量导入线程数
+                     * 默认的全量导入线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultLoadThread;
                     bool m_defaultLoadThreadHasBeenSet;
 
                     /**
-                     * 当前生效的全量导入Rps	
+                     * 当前生效的全量导入Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000	
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentLoadRps;
                     bool m_currentLoadRpsHasBeenSet;
 
                     /**
-                     * 默认的全量导入Rps	
+                     * 默认的全量导入Rps，该字段仅在出参有意义	
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultLoadRps;
                     bool m_defaultLoadRpsHasBeenSet;
 
                     /**
-                     * 当前生效的增量导入线程数
+                     * 当前生效的增量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为128
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentSinkerThread;
                     bool m_currentSinkerThreadHasBeenSet;
 
                     /**
-                     * 默认的增量导入线程数
+                     * 默认的增量导入线程数，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultSinkerThread;
                     bool m_defaultSinkerThreadHasBeenSet;
 
                     /**
-                     * enum:"no"/"yes"、no表示用户未设置过限速、yes表示设置过限速
+                     * enum:"no"/"yes"、no表示用户未设置过限速、yes表示设置过限速，该字段仅在出参有意义
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hasUserSetRateLimit;

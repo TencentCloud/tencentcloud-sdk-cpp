@@ -9027,6 +9027,49 @@ WedataClient::DescribeTableLineageOutcomeCallable WedataClient::DescribeTableLin
     return task->get_future();
 }
 
+WedataClient::DescribeTableMetaOutcome WedataClient::DescribeTableMeta(const DescribeTableMetaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTableMeta");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTableMetaResponse rsp = DescribeTableMetaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTableMetaOutcome(rsp);
+        else
+            return DescribeTableMetaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTableMetaOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeTableMetaAsync(const DescribeTableMetaRequest& request, const DescribeTableMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTableMeta(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeTableMetaOutcomeCallable WedataClient::DescribeTableMetaCallable(const DescribeTableMetaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTableMetaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTableMeta(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeTableMetasOutcome WedataClient::DescribeTableMetas(const DescribeTableMetasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTableMetas");

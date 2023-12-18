@@ -25,7 +25,8 @@ using namespace std;
 BatchSuspendIntegrationTasksRequest::BatchSuspendIntegrationTasksRequest() :
     m_taskIdsHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_eventHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string BatchSuspendIntegrationTasksRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Event";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_event.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void BatchSuspendIntegrationTasksRequest::SetProjectId(const string& _projectId)
 bool BatchSuspendIntegrationTasksRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string BatchSuspendIntegrationTasksRequest::GetEvent() const
+{
+    return m_event;
+}
+
+void BatchSuspendIntegrationTasksRequest::SetEvent(const string& _event)
+{
+    m_event = _event;
+    m_eventHasBeenSet = true;
+}
+
+bool BatchSuspendIntegrationTasksRequest::EventHasBeenSet() const
+{
+    return m_eventHasBeenSet;
 }
 
 

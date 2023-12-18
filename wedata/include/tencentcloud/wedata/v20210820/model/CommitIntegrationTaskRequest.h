@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool InstanceVersionHasBeenSet() const;
 
+                    /**
+                     * 获取前端操作类型描述
+                     * @return EventDesc 前端操作类型描述
+                     * 
+                     */
+                    std::string GetEventDesc() const;
+
+                    /**
+                     * 设置前端操作类型描述
+                     * @param _eventDesc 前端操作类型描述
+                     * 
+                     */
+                    void SetEventDesc(const std::string& _eventDesc);
+
+                    /**
+                     * 判断参数 EventDesc 是否已赋值
+                     * @return EventDesc 是否已赋值
+                     * 
+                     */
+                    bool EventDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     int64_t m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
+
+                    /**
+                     * 前端操作类型描述
+                     */
+                    std::string m_eventDesc;
+                    bool m_eventDescHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ DescribeRocketMQTopicsRequest::DescribeRocketMQTopicsRequest() :
     m_clusterIdHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
     m_filterTypeHasBeenSet(false),
-    m_filterNameHasBeenSet(false)
+    m_filterNameHasBeenSet(false),
+    m_filterGroupHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string DescribeRocketMQTopicsRequest::ToJsonString() const
         string key = "FilterName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_filterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_filterGroup.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void DescribeRocketMQTopicsRequest::SetFilterName(const string& _filterName)
 bool DescribeRocketMQTopicsRequest::FilterNameHasBeenSet() const
 {
     return m_filterNameHasBeenSet;
+}
+
+string DescribeRocketMQTopicsRequest::GetFilterGroup() const
+{
+    return m_filterGroup;
+}
+
+void DescribeRocketMQTopicsRequest::SetFilterGroup(const string& _filterGroup)
+{
+    m_filterGroup = _filterGroup;
+    m_filterGroupHasBeenSet = true;
+}
+
+bool DescribeRocketMQTopicsRequest::FilterGroupHasBeenSet() const
+{
+    return m_filterGroupHasBeenSet;
 }
 
 
