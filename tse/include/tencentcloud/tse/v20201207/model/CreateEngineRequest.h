@@ -503,11 +503,11 @@ polarismesh - STANDARD版本
                     bool EngineTagsHasBeenSet() const;
 
                     /**
-                     * 获取引擎的初始帐号信息。可设置参数：
+                     * 获取引擎的初始账号信息。可设置参数：
 - Name：控制台初始用户名
 - Password：控制台初始密码
 - Token：引擎接口的管理员 Token
-                     * @return EngineAdmin 引擎的初始帐号信息。可设置参数：
+                     * @return EngineAdmin 引擎的初始账号信息。可设置参数：
 - Name：控制台初始用户名
 - Password：控制台初始密码
 - Token：引擎接口的管理员 Token
@@ -516,11 +516,11 @@ polarismesh - STANDARD版本
                     EngineAdmin GetEngineAdmin() const;
 
                     /**
-                     * 设置引擎的初始帐号信息。可设置参数：
+                     * 设置引擎的初始账号信息。可设置参数：
 - Name：控制台初始用户名
 - Password：控制台初始密码
 - Token：引擎接口的管理员 Token
-                     * @param _engineAdmin 引擎的初始帐号信息。可设置参数：
+                     * @param _engineAdmin 引擎的初始账号信息。可设置参数：
 - Name：控制台初始用户名
 - Password：控制台初始密码
 - Token：引擎接口的管理员 Token
@@ -732,7 +732,7 @@ polarismesh - STANDARD版本
                     bool m_engineTagsHasBeenSet;
 
                     /**
-                     * 引擎的初始帐号信息。可设置参数：
+                     * 引擎的初始账号信息。可设置参数：
 - Name：控制台初始用户名
 - Password：控制台初始密码
 - Token：引擎接口的管理员 Token

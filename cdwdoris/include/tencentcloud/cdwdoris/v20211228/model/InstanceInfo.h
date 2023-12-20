@@ -977,7 +977,7 @@ Modify 集群变更中；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IfExistCatalog 判断审计日志表是否有catalog字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetIfExistCatalog() const;
 
@@ -986,16 +986,41 @@ Modify 集群变更中；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ifExistCatalog 判断审计日志表是否有catalog字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetIfExistCatalog(const int64_t& _ifExistCatalog);
 
                     /**
                      * 判断参数 IfExistCatalog 是否已赋值
                      * @return IfExistCatalog 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IfExistCatalogHasBeenSet() const;
+
+                    /**
+                     * 获取页面特性，用于前端屏蔽一些页面入口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Characteristic 页面特性，用于前端屏蔽一些页面入口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCharacteristic() const;
+
+                    /**
+                     * 设置页面特性，用于前端屏蔽一些页面入口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _characteristic 页面特性，用于前端屏蔽一些页面入口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCharacteristic(const std::vector<std::string>& _characteristic);
+
+                    /**
+                     * 判断参数 Characteristic 是否已赋值
+                     * @return Characteristic 是否已赋值
+                     * 
+                     */
+                    bool CharacteristicHasBeenSet() const;
 
                 private:
 
@@ -1263,6 +1288,13 @@ Modify 集群变更中；
                      */
                     int64_t m_ifExistCatalog;
                     bool m_ifExistCatalogHasBeenSet;
+
+                    /**
+                     * 页面特性，用于前端屏蔽一些页面入口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_characteristic;
+                    bool m_characteristicHasBeenSet;
 
                 };
             }

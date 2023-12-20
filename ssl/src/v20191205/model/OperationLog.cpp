@@ -22,7 +22,11 @@ using namespace std;
 
 OperationLog::OperationLog() :
     m_actionHasBeenSet(false),
-    m_createdOnHasBeenSet(false)
+    m_createdOnHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false),
+    m_certIdHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -51,6 +55,46 @@ CoreInternalOutcome OperationLog::Deserialize(const rapidjson::Value &value)
         m_createdOnHasBeenSet = true;
     }
 
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OperationLog.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OperationLog.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("CertId") && !value["CertId"].IsNull())
+    {
+        if (!value["CertId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OperationLog.CertId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certId = string(value["CertId"].GetString());
+        m_certIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OperationLog.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +116,38 @@ void OperationLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreatedOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +183,69 @@ void OperationLog::SetCreatedOn(const string& _createdOn)
 bool OperationLog::CreatedOnHasBeenSet() const
 {
     return m_createdOnHasBeenSet;
+}
+
+string OperationLog::GetUin() const
+{
+    return m_uin;
+}
+
+void OperationLog::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool OperationLog::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+string OperationLog::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void OperationLog::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool OperationLog::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
+}
+
+string OperationLog::GetCertId() const
+{
+    return m_certId;
+}
+
+void OperationLog::SetCertId(const string& _certId)
+{
+    m_certId = _certId;
+    m_certIdHasBeenSet = true;
+}
+
+bool OperationLog::CertIdHasBeenSet() const
+{
+    return m_certIdHasBeenSet;
+}
+
+string OperationLog::GetType() const
+{
+    return m_type;
+}
+
+void OperationLog::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool OperationLog::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

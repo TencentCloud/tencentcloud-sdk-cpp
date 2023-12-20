@@ -57,7 +57,8 @@ InstanceInfo::InstanceInfo() :
     m_canAttachCbsHasBeenSet(false),
     m_buildVersionHasBeenSet(false),
     m_componentsHasBeenSet(false),
-    m_ifExistCatalogHasBeenSet(false)
+    m_ifExistCatalogHasBeenSet(false),
+    m_characteristicHasBeenSet(false)
 {
 }
 
@@ -460,6 +461,19 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_ifExistCatalogHasBeenSet = true;
     }
 
+    if (value.HasMember("Characteristic") && !value["Characteristic"].IsNull())
+    {
+        if (!value["Characteristic"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Characteristic` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Characteristic"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_characteristic.push_back((*itr).GetString());
+        }
+        m_characteristicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -770,6 +784,19 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IfExistCatalog";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ifExistCatalog, allocator);
+    }
+
+    if (m_characteristicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Characteristic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_characteristic.begin(); itr != m_characteristic.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1365,5 +1392,21 @@ void InstanceInfo::SetIfExistCatalog(const int64_t& _ifExistCatalog)
 bool InstanceInfo::IfExistCatalogHasBeenSet() const
 {
     return m_ifExistCatalogHasBeenSet;
+}
+
+vector<string> InstanceInfo::GetCharacteristic() const
+{
+    return m_characteristic;
+}
+
+void InstanceInfo::SetCharacteristic(const vector<string>& _characteristic)
+{
+    m_characteristic = _characteristic;
+    m_characteristicHasBeenSet = true;
+}
+
+bool InstanceInfo::CharacteristicHasBeenSet() const
+{
+    return m_characteristicHasBeenSet;
 }
 

@@ -814,6 +814,49 @@ OceanusClient::DescribeJobConfigsOutcomeCallable OceanusClient::DescribeJobConfi
     return task->get_future();
 }
 
+OceanusClient::DescribeJobEventsOutcome OceanusClient::DescribeJobEvents(const DescribeJobEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobEventsResponse rsp = DescribeJobEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobEventsOutcome(rsp);
+        else
+            return DescribeJobEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobEventsOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeJobEventsAsync(const DescribeJobEventsRequest& request, const DescribeJobEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJobEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DescribeJobEventsOutcomeCallable OceanusClient::DescribeJobEventsCallable(const DescribeJobEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJobEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJobEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::DescribeJobSavepointOutcome OceanusClient::DescribeJobSavepoint(const DescribeJobSavepointRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJobSavepoint");

@@ -630,10 +630,10 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
 
                     /**
                      * 获取个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传：
-<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：处方单（医疗自动签）  </li></ul>
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：电子处方单（医疗自动签）  </li><li> **OTHER** :  通用场景</li></ul>
 注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`
                      * @return AutoSignScene 个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传：
-<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：处方单（医疗自动签）  </li></ul>
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：电子处方单（医疗自动签）  </li><li> **OTHER** :  通用场景</li></ul>
 注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`
                      * 
                      */
@@ -641,10 +641,10 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
 
                     /**
                      * 设置个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传：
-<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：处方单（医疗自动签）  </li></ul>
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：电子处方单（医疗自动签）  </li><li> **OTHER** :  通用场景</li></ul>
 注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`
                      * @param _autoSignScene 个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传：
-<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：处方单（医疗自动签）  </li></ul>
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：电子处方单（医疗自动签）  </li><li> **OTHER** :  通用场景</li></ul>
 注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`
                      * 
                      */
@@ -840,7 +840,7 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
 
                     /**
                      * 个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传：
-<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：处方单（医疗自动签）  </li></ul>
+<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：电子处方单（医疗自动签）  </li><li> **OTHER** :  通用场景</li></ul>
 注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`
                      */
                     std::string m_autoSignScene;

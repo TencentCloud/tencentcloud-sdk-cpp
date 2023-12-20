@@ -38,6 +38,7 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_needSignReviewHasBeenSet(false),
     m_needCreateReviewHasBeenSet(false),
     m_userDataHasBeenSet(false),
+    m_ccInfosHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_initiatorComponentsHasBeenSet(false)
@@ -179,6 +180,15 @@ string CreatePrepareFlowRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ccInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ccInfos.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_flowIdHasBeenSet)
@@ -459,6 +469,22 @@ void CreatePrepareFlowRequest::SetUserData(const string& _userData)
 bool CreatePrepareFlowRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+CcInfo CreatePrepareFlowRequest::GetCcInfos() const
+{
+    return m_ccInfos;
+}
+
+void CreatePrepareFlowRequest::SetCcInfos(const CcInfo& _ccInfos)
+{
+    m_ccInfos = _ccInfos;
+    m_ccInfosHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::CcInfosHasBeenSet() const
+{
+    return m_ccInfosHasBeenSet;
 }
 
 string CreatePrepareFlowRequest::GetFlowId() const

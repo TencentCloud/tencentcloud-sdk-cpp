@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool InstanceNamePrefixHasBeenSet() const;
 
                     /**
-                     * 获取该注册码允许注册的实列数目。
+                     * 获取该注册码允许注册的实例数目。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegisterLimit 该注册码允许注册的实列数目。
+                     * @return RegisterLimit 该注册码允许注册的实例数目。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegisterLimit() const;
 
                     /**
-                     * 设置该注册码允许注册的实列数目。
+                     * 设置该注册码允许注册的实例数目。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _registerLimit 该注册码允许注册的实列数目。
+                     * @param _registerLimit 该注册码允许注册的实例数目。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -344,7 +344,7 @@ namespace TencentCloud
                     bool m_instanceNamePrefixHasBeenSet;
 
                     /**
-                     * 该注册码允许注册的实列数目。
+                     * 该注册码允许注册的实例数目。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_registerLimit;

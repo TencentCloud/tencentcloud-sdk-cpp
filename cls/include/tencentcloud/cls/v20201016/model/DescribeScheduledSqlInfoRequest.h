@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return Name 任务名称
+                     * 获取任务名称。
+                     * @return Name 任务名称。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _name 任务名称
+                     * 设置任务名称。
+                     * @param _name 任务名称。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取任务id
-                     * @return TaskId 任务id
+                     * 获取任务id。
+                     * @return TaskId 任务id。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
-                     * @param _taskId 任务id
+                     * 设置任务id。
+                     * @param _taskId 任务id。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -128,46 +128,46 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>
-<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>
-<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String必选：否</li>
-<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String必选：否</li>
-<li>bizType按照【主题类型】进行过滤,0日志主题1指标主题,。类型：String必选：否</li>
-<li>status按照【任务状态】进行过滤。类型：String必选：否</li>
-<li>taskName按照【任务名称】进行过滤，模糊匹配，。类型：String必选：否</li>
-<li>taskId按照【任务ID】进行过滤，模糊匹配，。类型：String必选：否</li>
+                     * 获取<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>
+<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>
+<li>bizType按照【主题类型】进行过滤,0日志主题 1指标主题。类型：String。必选：否</li>
+<li>status按照【任务状态】进行过滤，1:运行 2:停止。类型：String。必选：否</li>
+<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>
 
-                     * @return Filters <li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>
-<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>
-<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String必选：否</li>
-<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String必选：否</li>
-<li>bizType按照【主题类型】进行过滤,0日志主题1指标主题,。类型：String必选：否</li>
-<li>status按照【任务状态】进行过滤。类型：String必选：否</li>
-<li>taskName按照【任务名称】进行过滤，模糊匹配，。类型：String必选：否</li>
-<li>taskId按照【任务ID】进行过滤，模糊匹配，。类型：String必选：否</li>
+                     * @return Filters <li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>
+<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>
+<li>bizType按照【主题类型】进行过滤,0日志主题 1指标主题。类型：String。必选：否</li>
+<li>status按照【任务状态】进行过滤，1:运行 2:停止。类型：String。必选：否</li>
+<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>
 
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>
-<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>
-<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String必选：否</li>
-<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String必选：否</li>
-<li>bizType按照【主题类型】进行过滤,0日志主题1指标主题,。类型：String必选：否</li>
-<li>status按照【任务状态】进行过滤。类型：String必选：否</li>
-<li>taskName按照【任务名称】进行过滤，模糊匹配，。类型：String必选：否</li>
-<li>taskId按照【任务ID】进行过滤，模糊匹配，。类型：String必选：否</li>
+                     * 设置<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>
+<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>
+<li>bizType按照【主题类型】进行过滤,0日志主题 1指标主题。类型：String。必选：否</li>
+<li>status按照【任务状态】进行过滤，1:运行 2:停止。类型：String。必选：否</li>
+<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>
 
-                     * @param _filters <li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>
-<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>
-<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String必选：否</li>
-<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String必选：否</li>
-<li>bizType按照【主题类型】进行过滤,0日志主题1指标主题,。类型：String必选：否</li>
-<li>status按照【任务状态】进行过滤。类型：String必选：否</li>
-<li>taskName按照【任务名称】进行过滤，模糊匹配，。类型：String必选：否</li>
-<li>taskId按照【任务ID】进行过滤，模糊匹配，。类型：String必选：否</li>
+                     * @param _filters <li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>
+<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>
+<li>bizType按照【主题类型】进行过滤,0日志主题 1指标主题。类型：String。必选：否</li>
+<li>status按照【任务状态】进行过滤，1:运行 2:停止。类型：String。必选：否</li>
+<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>
 
                      * 
                      */
@@ -195,26 +195,26 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * 任务名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 任务id
+                     * 任务id。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * <li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>
-<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>
-<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String必选：否</li>
-<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String必选：否</li>
-<li>bizType按照【主题类型】进行过滤,0日志主题1指标主题,。类型：String必选：否</li>
-<li>status按照【任务状态】进行过滤。类型：String必选：否</li>
-<li>taskName按照【任务名称】进行过滤，模糊匹配，。类型：String必选：否</li>
-<li>taskId按照【任务ID】进行过滤，模糊匹配，。类型：String必选：否</li>
+                     * <li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>
+<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>
+<li>bizType按照【主题类型】进行过滤,0日志主题 1指标主题。类型：String。必选：否</li>
+<li>status按照【任务状态】进行过滤，1:运行 2:停止。类型：String。必选：否</li>
+<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>
+<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>
 
                      */
                     std::vector<Filter> m_filters;

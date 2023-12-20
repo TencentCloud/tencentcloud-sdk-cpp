@@ -89,15 +89,27 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。
-                     * @return CidrBlock 网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。
+                     * 获取IPv4网段或 IPv4地址(互斥)。
+示例值：0.0.0.0/0。
+
+和Ipv6CidrBlock互斥，两者都不指定时，如果Protocol不是ICMPv6，则取默认值0.0.0.0/0。
+                     * @return CidrBlock IPv4网段或 IPv4地址(互斥)。
+示例值：0.0.0.0/0。
+
+和Ipv6CidrBlock互斥，两者都不指定时，如果Protocol不是ICMPv6，则取默认值0.0.0.0/0。
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。
-                     * @param _cidrBlock 网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。
+                     * 设置IPv4网段或 IPv4地址(互斥)。
+示例值：0.0.0.0/0。
+
+和Ipv6CidrBlock互斥，两者都不指定时，如果Protocol不是ICMPv6，则取默认值0.0.0.0/0。
+                     * @param _cidrBlock IPv4网段或 IPv4地址(互斥)。
+示例值：0.0.0.0/0。
+
+和Ipv6CidrBlock互斥，两者都不指定时，如果Protocol不是ICMPv6，则取默认值0.0.0.0/0。
                      * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
@@ -166,7 +178,10 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。
+                     * IPv4网段或 IPv4地址(互斥)。
+示例值：0.0.0.0/0。
+
+和Ipv6CidrBlock互斥，两者都不指定时，如果Protocol不是ICMPv6，则取默认值0.0.0.0/0。
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;

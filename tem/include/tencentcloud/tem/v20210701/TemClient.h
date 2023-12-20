@@ -327,7 +327,7 @@ namespace TencentCloud
                 CreateConfigDataOutcomeCallable CreateConfigDataCallable(const Model::CreateConfigDataRequest& request);
 
                 /**
-                 *生成Cos临时秘钥
+                 *生成Cos临时密钥
                  * @param req CreateCosTokenRequest
                  * @return CreateCosTokenOutcome
                  */

@@ -25,6 +25,7 @@
 #include <tencentcloud/ess/v20201111/model/FlowCreateApprover.h>
 #include <tencentcloud/ess/v20201111/model/Component.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowOption.h>
+#include <tencentcloud/ess/v20201111/model/CcInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
 
 
@@ -499,6 +500,31 @@ namespace TencentCloud
                     bool UserDataHasBeenSet() const;
 
                     /**
+                     * 获取合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
+
+                     * @return CcInfos 合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
+
+                     * 
+                     */
+                    CcInfo GetCcInfos() const;
+
+                    /**
+                     * 设置合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
+
+                     * @param _ccInfos 合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
+
+                     * 
+                     */
+                    void SetCcInfos(const CcInfo& _ccInfos);
+
+                    /**
+                     * 判断参数 CcInfos 是否已赋值
+                     * @return CcInfos 是否已赋值
+                     * 
+                     */
+                    bool CcInfosHasBeenSet() const;
+
+                    /**
                      * 获取合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
 注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`
                      * @return FlowId 合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接
@@ -698,6 +724,13 @@ namespace TencentCloud
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
+
+                    /**
+                     * 合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
+
+                     */
+                    CcInfo m_ccInfos;
+                    bool m_ccInfosHasBeenSet;
 
                     /**
                      * 合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接

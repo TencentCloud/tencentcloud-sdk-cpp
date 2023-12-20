@@ -213,15 +213,19 @@ namespace TencentCloud
                     bool IsEncryptionAddrHasBeenSet() const;
 
                     /**
-                     * 获取加密访问协议，IsEncryptionAddr参数为true时必填
-                     * @return Protocol 加密访问协议，IsEncryptionAddr参数为true时必填
+                     * 获取加密访问协议。
+KafkaType为1并且IsEncryptionAddr为true时Protocol必填
+                     * @return Protocol 加密访问协议。
+KafkaType为1并且IsEncryptionAddr为true时Protocol必填
                      * 
                      */
                     KafkaProtocolInfo GetProtocol() const;
 
                     /**
-                     * 设置加密访问协议，IsEncryptionAddr参数为true时必填
-                     * @param _protocol 加密访问协议，IsEncryptionAddr参数为true时必填
+                     * 设置加密访问协议。
+KafkaType为1并且IsEncryptionAddr为true时Protocol必填
+                     * @param _protocol 加密访问协议。
+KafkaType为1并且IsEncryptionAddr为true时Protocol必填
                      * 
                      */
                     void SetProtocol(const KafkaProtocolInfo& _protocol);
@@ -255,15 +259,19 @@ namespace TencentCloud
                     bool ConsumerGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取日志导入规则
-                     * @return LogRechargeRule 日志导入规则
+                     * 获取日志导入规则。
+必填字段。
+                     * @return LogRechargeRule 日志导入规则。
+必填字段。
                      * 
                      */
                     LogRechargeRuleInfo GetLogRechargeRule() const;
 
                     /**
-                     * 设置日志导入规则
-                     * @param _logRechargeRule 日志导入规则
+                     * 设置日志导入规则。
+必填字段。
+                     * @param _logRechargeRule 日志导入规则。
+必填字段。
                      * 
                      */
                     void SetLogRechargeRule(const LogRechargeRuleInfo& _logRechargeRule);
@@ -326,7 +334,8 @@ namespace TencentCloud
                     bool m_isEncryptionAddrHasBeenSet;
 
                     /**
-                     * 加密访问协议，IsEncryptionAddr参数为true时必填
+                     * 加密访问协议。
+KafkaType为1并且IsEncryptionAddr为true时Protocol必填
                      */
                     KafkaProtocolInfo m_protocol;
                     bool m_protocolHasBeenSet;
@@ -338,7 +347,8 @@ namespace TencentCloud
                     bool m_consumerGroupNameHasBeenSet;
 
                     /**
-                     * 日志导入规则
+                     * 日志导入规则。
+必填字段。
                      */
                     LogRechargeRuleInfo m_logRechargeRule;
                     bool m_logRechargeRuleHasBeenSet;

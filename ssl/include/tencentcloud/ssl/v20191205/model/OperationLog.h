@@ -88,6 +88,106 @@ namespace TencentCloud
                      */
                     bool CreatedOnHasBeenSet() const;
 
+                    /**
+                     * 获取主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uin 主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _uin 主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     * 
+                     */
+                    bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubAccountUin 子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 设置子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subAccountUin 子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubAccountUin(const std::string& _subAccountUin);
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertId 证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCertId() const;
+
+                    /**
+                     * 设置证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _certId 证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCertId(const std::string& _certId);
+
+                    /**
+                     * 判断参数 CertId 是否已赋值
+                     * @return CertId 是否已赋值
+                     * 
+                     */
+                    bool CertIdHasBeenSet() const;
+
+                    /**
+                     * 获取操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type 操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _type 操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +201,34 @@ namespace TencentCloud
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
+
+                    /**
+                     * 主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
+
+                    /**
+                     * 子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * 证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_certId;
+                    bool m_certIdHasBeenSet;
+
+                    /**
+                     * 操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

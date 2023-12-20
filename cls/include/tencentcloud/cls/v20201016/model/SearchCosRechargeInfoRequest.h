@@ -106,15 +106,19 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取存储桶
-                     * @return Bucket 存储桶
+                     * 获取存储桶。
+存储桶命名规范：https://cloud.tencent.com/document/product/436/13312
+                     * @return Bucket 存储桶。
+存储桶命名规范：https://cloud.tencent.com/document/product/436/13312
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置存储桶
-                     * @param _bucket 存储桶
+                     * 设置存储桶。
+存储桶命名规范：https://cloud.tencent.com/document/product/436/13312
+                     * @param _bucket 存储桶。
+存储桶命名规范：https://cloud.tencent.com/document/product/436/13312
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -127,15 +131,19 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取存储桶所在地域
-                     * @return BucketRegion 存储桶所在地域
+                     * 获取存储桶所在地域。
+地域和访问域名：https://cloud.tencent.com/document/product/436/6224
+                     * @return BucketRegion 存储桶所在地域。
+地域和访问域名：https://cloud.tencent.com/document/product/436/6224
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置存储桶所在地域
-                     * @param _bucketRegion 存储桶所在地域
+                     * 设置存储桶所在地域。
+地域和访问域名：https://cloud.tencent.com/document/product/436/6224
+                     * @param _bucketRegion 存储桶所在地域。
+地域和访问域名：https://cloud.tencent.com/document/product/436/6224
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -210,13 +218,15 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 存储桶
+                     * 存储桶。
+存储桶命名规范：https://cloud.tencent.com/document/product/436/13312
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * 存储桶所在地域
+                     * 存储桶所在地域。
+地域和访问域名：https://cloud.tencent.com/document/product/436/6224
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;

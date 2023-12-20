@@ -91,12 +91,13 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreateNotebookImageResponse.h
   include/tencentcloud/tione/v20211111/model/ModelInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeLogsRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateVersionsRequest.h
   include/tencentcloud/tione/v20211111/model/StopModelAccelerateTaskRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionResponse.h
   include/tencentcloud/tione/v20211111/model/BatchTaskDetail.h
   include/tencentcloud/tione/v20211111/model/DeleteNotebookImageRecordRequest.h
   include/tencentcloud/tione/v20211111/model/NotebookSetItem.h
-  include/tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h
+  include/tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetDetailStructuredResponse.h
   include/tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsResponse.h
   include/tencentcloud/tione/v20211111/model/RestartModelAccelerateTaskRequest.h
@@ -141,7 +142,9 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreateNotebookImageRequest.h
   include/tencentcloud/tione/v20211111/model/APIConfigDetail.h
   include/tencentcloud/tione/v20211111/model/InferTemplate.h
-  include/tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateVersionsResponse.h
+  include/tencentcloud/tione/v20211111/model/StartNotebookRequest.h
+  include/tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/StopBatchTaskRequest.h
   include/tencentcloud/tione/v20211111/model/ContainerStatus.h
   include/tencentcloud/tione/v20211111/model/TextLabelDistributionDetailInfoThirdClass.h
@@ -167,7 +170,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreateNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/ModifyNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServicesRequest.h
-  include/tencentcloud/tione/v20211111/model/StopCreatingImageResponse.h
+  include/tencentcloud/tione/v20211111/model/RestartModelAccelerateTaskResponse.h
   include/tencentcloud/tione/v20211111/model/ModelAccEngineVersion.h
   include/tencentcloud/tione/v20211111/model/ResourceConfigInfo.h
   include/tencentcloud/tione/v20211111/model/Spec.h
@@ -183,7 +186,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceHistoryRequest.h
   include/tencentcloud/tione/v20211111/model/Tag.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetsRequest.h
-  include/tencentcloud/tione/v20211111/model/StartNotebookRequest.h
+  include/tencentcloud/tione/v20211111/model/ModelAccelerateVersion.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeInferTemplatesResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsRequest.h
@@ -192,6 +195,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeInferTemplatesRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceGroupResponse.h
   include/tencentcloud/tione/v20211111/model/GpuDetail.h
+  include/tencentcloud/tione/v20211111/model/StopCreatingImageResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingFrameworksRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeBatchTasksResponse.h
   include/tencentcloud/tione/v20211111/model/CronScaleJob.h
@@ -221,7 +225,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ModifyNotebookResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetsResponse.h
-  include/tencentcloud/tione/v20211111/model/RestartModelAccelerateTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/ModelSource.h
   include/tencentcloud/tione/v20211111/model/CreateBatchModelAccTasksRequest.h
   include/tencentcloud/tione/v20211111/model/IntranetCallInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceRequest.h
@@ -415,12 +419,13 @@ set(tione_src
   src/v20211111/model/CreateNotebookImageResponse.cpp
   src/v20211111/model/ModelInfo.cpp
   src/v20211111/model/DescribeLogsRequest.cpp
+  src/v20211111/model/DescribeModelAccelerateVersionsRequest.cpp
   src/v20211111/model/StopModelAccelerateTaskRequest.cpp
   src/v20211111/model/DeleteTrainingModelVersionResponse.cpp
   src/v20211111/model/BatchTaskDetail.cpp
   src/v20211111/model/DeleteNotebookImageRecordRequest.cpp
   src/v20211111/model/NotebookSetItem.cpp
-  src/v20211111/model/StartTrainingTaskRequest.cpp
+  src/v20211111/model/ModifyNotebookTagsRequest.cpp
   src/v20211111/model/DescribeDatasetDetailStructuredResponse.cpp
   src/v20211111/model/ModifyServiceGroupWeightsResponse.cpp
   src/v20211111/model/RestartModelAccelerateTaskRequest.cpp
@@ -465,7 +470,9 @@ set(tione_src
   src/v20211111/model/CreateNotebookImageRequest.cpp
   src/v20211111/model/APIConfigDetail.cpp
   src/v20211111/model/InferTemplate.cpp
-  src/v20211111/model/ModifyNotebookTagsRequest.cpp
+  src/v20211111/model/DescribeModelAccelerateVersionsResponse.cpp
+  src/v20211111/model/StartNotebookRequest.cpp
+  src/v20211111/model/StartTrainingTaskRequest.cpp
   src/v20211111/model/StopBatchTaskRequest.cpp
   src/v20211111/model/ContainerStatus.cpp
   src/v20211111/model/TextLabelDistributionDetailInfoThirdClass.cpp
@@ -491,7 +498,7 @@ set(tione_src
   src/v20211111/model/CreateNotebookRequest.cpp
   src/v20211111/model/ModifyNotebookRequest.cpp
   src/v20211111/model/DescribeModelServicesRequest.cpp
-  src/v20211111/model/StopCreatingImageResponse.cpp
+  src/v20211111/model/RestartModelAccelerateTaskResponse.cpp
   src/v20211111/model/ModelAccEngineVersion.cpp
   src/v20211111/model/ResourceConfigInfo.cpp
   src/v20211111/model/Spec.cpp
@@ -507,7 +514,7 @@ set(tione_src
   src/v20211111/model/DescribeModelServiceHistoryRequest.cpp
   src/v20211111/model/Tag.cpp
   src/v20211111/model/DescribeDatasetsRequest.cpp
-  src/v20211111/model/StartNotebookRequest.cpp
+  src/v20211111/model/ModelAccelerateVersion.cpp
   src/v20211111/model/DeleteTrainingModelResponse.cpp
   src/v20211111/model/DescribeInferTemplatesResponse.cpp
   src/v20211111/model/DescribeBillingSpecsRequest.cpp
@@ -516,6 +523,7 @@ set(tione_src
   src/v20211111/model/DescribeInferTemplatesRequest.cpp
   src/v20211111/model/DeleteModelServiceGroupResponse.cpp
   src/v20211111/model/GpuDetail.cpp
+  src/v20211111/model/StopCreatingImageResponse.cpp
   src/v20211111/model/DescribeTrainingFrameworksRequest.cpp
   src/v20211111/model/DescribeBatchTasksResponse.cpp
   src/v20211111/model/CronScaleJob.cpp
@@ -545,7 +553,7 @@ set(tione_src
   src/v20211111/model/ModifyNotebookResponse.cpp
   src/v20211111/model/DescribeModelServiceResponse.cpp
   src/v20211111/model/DescribeDatasetsResponse.cpp
-  src/v20211111/model/RestartModelAccelerateTaskResponse.cpp
+  src/v20211111/model/ModelSource.cpp
   src/v20211111/model/CreateBatchModelAccTasksRequest.cpp
   src/v20211111/model/IntranetCallInfo.cpp
   src/v20211111/model/DescribeBillingSpecsPriceRequest.cpp

@@ -101,6 +101,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateTasksRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateTasksResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateVersionsRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateVersionsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelServiceCallInfoRequest.h>
@@ -300,6 +302,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeModelAccelerateTasksResponse> DescribeModelAccelerateTasksOutcome;
                 typedef std::future<DescribeModelAccelerateTasksOutcome> DescribeModelAccelerateTasksOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeModelAccelerateTasksRequest&, DescribeModelAccelerateTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelAccelerateTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelAccelerateVersionsResponse> DescribeModelAccelerateVersionsOutcome;
+                typedef std::future<DescribeModelAccelerateVersionsOutcome> DescribeModelAccelerateVersionsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeModelAccelerateVersionsRequest&, DescribeModelAccelerateVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelAccelerateVersionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeModelServiceResponse> DescribeModelServiceOutcome;
                 typedef std::future<DescribeModelServiceOutcome> DescribeModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeModelServiceRequest&, DescribeModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelServiceAsyncHandler;
@@ -755,6 +760,15 @@ namespace TencentCloud
                 DescribeModelAccelerateTasksOutcome DescribeModelAccelerateTasks(const Model::DescribeModelAccelerateTasksRequest &request);
                 void DescribeModelAccelerateTasksAsync(const Model::DescribeModelAccelerateTasksRequest& request, const DescribeModelAccelerateTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeModelAccelerateTasksOutcomeCallable DescribeModelAccelerateTasksCallable(const Model::DescribeModelAccelerateTasksRequest& request);
+
+                /**
+                 *模型加速之后的模型版本列表
+                 * @param req DescribeModelAccelerateVersionsRequest
+                 * @return DescribeModelAccelerateVersionsOutcome
+                 */
+                DescribeModelAccelerateVersionsOutcome DescribeModelAccelerateVersions(const Model::DescribeModelAccelerateVersionsRequest &request);
+                void DescribeModelAccelerateVersionsAsync(const Model::DescribeModelAccelerateVersionsRequest& request, const DescribeModelAccelerateVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelAccelerateVersionsOutcomeCallable DescribeModelAccelerateVersionsCallable(const Model::DescribeModelAccelerateVersionsRequest& request);
 
                 /**
                  *查询单个服务

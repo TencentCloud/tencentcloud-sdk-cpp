@@ -32,7 +32,8 @@ InstanceLogInfo::InstanceLogInfo() :
     m_instanceLogTypeHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_costTimeHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false)
+    m_instanceStatusHasBeenSet(false),
+    m_codeFileNameHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome InstanceLogInfo::Deserialize(const rapidjson::Value &value)
         m_instanceStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("CodeFileName") && !value["CodeFileName"].IsNull())
+    {
+        if (!value["CodeFileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfo.CodeFileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codeFileName = string(value["CodeFileName"].GetString());
+        m_codeFileNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void InstanceLogInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "InstanceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codeFileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeFileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeFileName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void InstanceLogInfo::SetInstanceStatus(const string& _instanceStatus)
 bool InstanceLogInfo::InstanceStatusHasBeenSet() const
 {
     return m_instanceStatusHasBeenSet;
+}
+
+string InstanceLogInfo::GetCodeFileName() const
+{
+    return m_codeFileName;
+}
+
+void InstanceLogInfo::SetCodeFileName(const string& _codeFileName)
+{
+    m_codeFileName = _codeFileName;
+    m_codeFileNameHasBeenSet = true;
+}
+
+bool InstanceLogInfo::CodeFileNameHasBeenSet() const
+{
+    return m_codeFileNameHasBeenSet;
 }
 

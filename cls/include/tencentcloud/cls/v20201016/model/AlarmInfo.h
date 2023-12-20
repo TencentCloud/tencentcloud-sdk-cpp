@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool MonitorTimeHasBeenSet() const;
 
                     /**
-                     * 获取触发条件。
-                     * @return Condition 触发条件。
+                     * 获取单触发条件。与MultiConditions参数互斥。
+                     * @return Condition 单触发条件。与MultiConditions参数互斥。
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
-                     * 设置触发条件。
-                     * @param _condition 触发条件。
+                     * 设置单触发条件。与MultiConditions参数互斥。
+                     * @param _condition 单触发条件。与MultiConditions参数互斥。
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -458,22 +458,22 @@ namespace TencentCloud
                     bool AlarmLevelHasBeenSet() const;
 
                     /**
-                     * 获取多触发条件。
-
+                     * 获取多触发条件。与
+Condition互斥。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MultiConditions 多触发条件。
-
+                     * @return MultiConditions 多触发条件。与
+Condition互斥。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MultiCondition> GetMultiConditions() const;
 
                     /**
-                     * 设置多触发条件。
-
+                     * 设置多触发条件。与
+Condition互斥。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _multiConditions 多触发条件。
-
+                     * @param _multiConditions 多触发条件。与
+Condition互斥。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -507,7 +507,7 @@ namespace TencentCloud
                     bool m_monitorTimeHasBeenSet;
 
                     /**
-                     * 触发条件。
+                     * 单触发条件。与MultiConditions参数互斥。
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
@@ -604,8 +604,8 @@ namespace TencentCloud
                     bool m_alarmLevelHasBeenSet;
 
                     /**
-                     * 多触发条件。
-
+                     * 多触发条件。与
+Condition互斥。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MultiCondition> m_multiConditions;

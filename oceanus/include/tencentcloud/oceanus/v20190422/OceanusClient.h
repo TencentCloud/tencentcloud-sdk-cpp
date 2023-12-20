@@ -59,6 +59,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobEventsRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobEventsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobSubmissionLogRequest.h>
@@ -163,6 +165,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobConfigsResponse> DescribeJobConfigsOutcome;
                 typedef std::future<DescribeJobConfigsOutcome> DescribeJobConfigsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobConfigsRequest&, DescribeJobConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobEventsResponse> DescribeJobEventsOutcome;
+                typedef std::future<DescribeJobEventsOutcome> DescribeJobEventsOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeJobEventsRequest&, DescribeJobEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobSavepointResponse> DescribeJobSavepointOutcome;
                 typedef std::future<DescribeJobSavepointOutcome> DescribeJobSavepointOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobSavepointRequest&, DescribeJobSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobSavepointAsyncHandler;
@@ -381,6 +386,15 @@ namespace TencentCloud
                 DescribeJobConfigsOutcome DescribeJobConfigs(const Model::DescribeJobConfigsRequest &request);
                 void DescribeJobConfigsAsync(const Model::DescribeJobConfigsRequest& request, const DescribeJobConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJobConfigsOutcomeCallable DescribeJobConfigsCallable(const Model::DescribeJobConfigsRequest& request);
+
+                /**
+                 *获取指定作业的事件，包括作业启动停止、运行失败、快照失败、作业异常等各种事件类型
+                 * @param req DescribeJobEventsRequest
+                 * @return DescribeJobEventsOutcome
+                 */
+                DescribeJobEventsOutcome DescribeJobEvents(const Model::DescribeJobEventsRequest &request);
+                void DescribeJobEventsAsync(const Model::DescribeJobEventsRequest& request, const DescribeJobEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobEventsOutcomeCallable DescribeJobEventsCallable(const Model::DescribeJobEventsRequest& request);
 
                 /**
                  *查找Savepoint列表

@@ -1717,6 +1717,49 @@ TioneClient::DescribeModelAccelerateTasksOutcomeCallable TioneClient::DescribeMo
     return task->get_future();
 }
 
+TioneClient::DescribeModelAccelerateVersionsOutcome TioneClient::DescribeModelAccelerateVersions(const DescribeModelAccelerateVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelAccelerateVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelAccelerateVersionsResponse rsp = DescribeModelAccelerateVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelAccelerateVersionsOutcome(rsp);
+        else
+            return DescribeModelAccelerateVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelAccelerateVersionsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeModelAccelerateVersionsAsync(const DescribeModelAccelerateVersionsRequest& request, const DescribeModelAccelerateVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeModelAccelerateVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeModelAccelerateVersionsOutcomeCallable TioneClient::DescribeModelAccelerateVersionsCallable(const DescribeModelAccelerateVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeModelAccelerateVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeModelAccelerateVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DescribeModelServiceOutcome TioneClient::DescribeModelService(const DescribeModelServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeModelService");

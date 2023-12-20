@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 引擎的初始管理帐号
+                * 引擎的初始管理账号
                 */
                 class EngineAdmin : public AbstractModel
                 {

@@ -110,8 +110,8 @@ namespace TencentCloud
                     bool TaskMessageHasBeenSet() const;
 
                     /**
-                     * 获取资源Id，也是FileId，用于文件发起时使用
-                     * @return ResourceId 资源Id，也是FileId，用于文件发起时使用
+                     * 获取资源Id（即FileId），用于[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)
+                     * @return ResourceId 资源Id（即FileId），用于[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)
                      * 
                      */
                     std::string GetResourceId() const;
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_taskMessageHasBeenSet;
 
                     /**
-                     * 资源Id，也是FileId，用于文件发起时使用
+                     * 资源Id（即FileId），用于[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

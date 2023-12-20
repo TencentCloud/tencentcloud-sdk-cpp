@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取指标名称
-                     * @return MetricName 指标名称
+                     * 获取指标名称。当BizType为1时，MetricName需要填写
+                     * @return MetricName 指标名称。当BizType为1时，MetricName需要填写
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标名称
-                     * @param _metricName 指标名称
+                     * 设置指标名称。当BizType为1时，MetricName需要填写
+                     * @param _metricName 指标名称。当BizType为1时，MetricName需要填写
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -244,7 +244,7 @@ BizType为1时，优先使用MetricNames字段多指标只能填充到MetricName
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 指标名称
+                     * 指标名称。当BizType为1时，MetricName需要填写
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;

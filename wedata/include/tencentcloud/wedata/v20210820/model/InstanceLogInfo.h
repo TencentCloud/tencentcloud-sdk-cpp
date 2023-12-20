@@ -346,6 +346,31 @@ namespace TencentCloud
                      */
                     bool InstanceStatusHasBeenSet() const;
 
+                    /**
+                     * 获取实例代码文件，为空表示对应代码文件不存在，可能是因为执行机未升级/对应类型任务无代码。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CodeFileName 实例代码文件，为空表示对应代码文件不存在，可能是因为执行机未升级/对应类型任务无代码。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCodeFileName() const;
+
+                    /**
+                     * 设置实例代码文件，为空表示对应代码文件不存在，可能是因为执行机未升级/对应类型任务无代码。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _codeFileName 实例代码文件，为空表示对应代码文件不存在，可能是因为执行机未升级/对应类型任务无代码。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCodeFileName(const std::string& _codeFileName);
+
+                    /**
+                     * 判断参数 CodeFileName 是否已赋值
+                     * @return CodeFileName 是否已赋值
+                     * 
+                     */
+                    bool CodeFileNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +456,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
+
+                    /**
+                     * 实例代码文件，为空表示对应代码文件不存在，可能是因为执行机未升级/对应类型任务无代码。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_codeFileName;
+                    bool m_codeFileNameHasBeenSet;
 
                 };
             }
