@@ -27,7 +27,8 @@ DescribeBinlogsRequest::DescribeBinlogsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_minStartTimeHasBeenSet(false),
-    m_maxStartTimeHasBeenSet(false)
+    m_maxStartTimeHasBeenSet(false),
+    m_containsMinStartTimeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeBinlogsRequest::ToJsonString() const
         string key = "MaxStartTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_maxStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containsMinStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainsMinStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_containsMinStartTime, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeBinlogsRequest::SetMaxStartTime(const string& _maxStartTime)
 bool DescribeBinlogsRequest::MaxStartTimeHasBeenSet() const
 {
     return m_maxStartTimeHasBeenSet;
+}
+
+bool DescribeBinlogsRequest::GetContainsMinStartTime() const
+{
+    return m_containsMinStartTime;
+}
+
+void DescribeBinlogsRequest::SetContainsMinStartTime(const bool& _containsMinStartTime)
+{
+    m_containsMinStartTime = _containsMinStartTime;
+    m_containsMinStartTimeHasBeenSet = true;
+}
+
+bool DescribeBinlogsRequest::ContainsMinStartTimeHasBeenSet() const
+{
+    return m_containsMinStartTimeHasBeenSet;
 }
 
 

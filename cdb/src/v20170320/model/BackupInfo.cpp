@@ -40,7 +40,8 @@ BackupInfo::BackupInfo() :
     m_remoteInfoHasBeenSet(false),
     m_cosStorageTypeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_encryptionFlagHasBeenSet(false)
+    m_encryptionFlagHasBeenSet(false),
+    m_executedGTIDSetHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
         m_encryptionFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecutedGTIDSet") && !value["ExecutedGTIDSet"].IsNull())
+    {
+        if (!value["ExecutedGTIDSet"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.ExecutedGTIDSet` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executedGTIDSet = string(value["ExecutedGTIDSet"].GetString());
+        m_executedGTIDSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +442,14 @@ void BackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "EncryptionFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_encryptionFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executedGTIDSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutedGTIDSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executedGTIDSet.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -754,5 +773,21 @@ void BackupInfo::SetEncryptionFlag(const string& _encryptionFlag)
 bool BackupInfo::EncryptionFlagHasBeenSet() const
 {
     return m_encryptionFlagHasBeenSet;
+}
+
+string BackupInfo::GetExecutedGTIDSet() const
+{
+    return m_executedGTIDSet;
+}
+
+void BackupInfo::SetExecutedGTIDSet(const string& _executedGTIDSet)
+{
+    m_executedGTIDSet = _executedGTIDSet;
+    m_executedGTIDSetHasBeenSet = true;
+}
+
+bool BackupInfo::ExecutedGTIDSetHasBeenSet() const
+{
+    return m_executedGTIDSetHasBeenSet;
 }
 

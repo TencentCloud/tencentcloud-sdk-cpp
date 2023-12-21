@@ -471,6 +471,31 @@ namespace TencentCloud
                      */
                     bool EncryptionFlagHasBeenSet() const;
 
+                    /**
+                     * 获取备份GTID点位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutedGTIDSet 备份GTID点位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExecutedGTIDSet() const;
+
+                    /**
+                     * 设置备份GTID点位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executedGTIDSet 备份GTID点位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutedGTIDSet(const std::string& _executedGTIDSet);
+
+                    /**
+                     * 判断参数 ExecutedGTIDSet 是否已赋值
+                     * @return ExecutedGTIDSet 是否已赋值
+                     * 
+                     */
+                    bool ExecutedGTIDSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +618,13 @@ namespace TencentCloud
                      */
                     std::string m_encryptionFlag;
                     bool m_encryptionFlagHasBeenSet;
+
+                    /**
+                     * 备份GTID点位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executedGTIDSet;
+                    bool m_executedGTIDSetHasBeenSet;
 
                 };
             }

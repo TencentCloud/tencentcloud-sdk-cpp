@@ -25,7 +25,8 @@ using namespace std;
 
 DetectAIFakeFacesResponse::DetectAIFakeFacesResponse() :
     m_attackRiskLevelHasBeenSet(false),
-    m_attackRiskDetailListHasBeenSet(false)
+    m_attackRiskDetailListHasBeenSet(false),
+    m_extraInfoHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,23 @@ CoreInternalOutcome DetectAIFakeFacesResponse::Deserialize(const string &payload
         m_attackRiskDetailListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtraInfo") && !rsp["ExtraInfo"].IsNull())
+    {
+        if (!rsp["ExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraInfo.Deserialize(rsp["ExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +144,15 @@ string DetectAIFakeFacesResponse::ToJsonString() const
         }
     }
 
+    if (m_extraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +183,16 @@ vector<AttackRiskDetail> DetectAIFakeFacesResponse::GetAttackRiskDetailList() co
 bool DetectAIFakeFacesResponse::AttackRiskDetailListHasBeenSet() const
 {
     return m_attackRiskDetailListHasBeenSet;
+}
+
+ExtraInfo DetectAIFakeFacesResponse::GetExtraInfo() const
+{
+    return m_extraInfo;
+}
+
+bool DetectAIFakeFacesResponse::ExtraInfoHasBeenSet() const
+{
+    return m_extraInfoHasBeenSet;
 }
 
 

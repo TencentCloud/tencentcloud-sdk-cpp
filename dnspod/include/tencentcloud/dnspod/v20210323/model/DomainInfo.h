@@ -763,6 +763,27 @@ namespace TencentCloud
                      */
                     bool SearchEnginePushHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启辅助 DNS
+                     * @return SlaveDNS 是否开启辅助 DNS
+                     * 
+                     */
+                    std::string GetSlaveDNS() const;
+
+                    /**
+                     * 设置是否开启辅助 DNS
+                     * @param _slaveDNS 是否开启辅助 DNS
+                     * 
+                     */
+                    void SetSlaveDNS(const std::string& _slaveDNS);
+
+                    /**
+                     * 判断参数 SlaveDNS 是否已赋值
+                     * @return SlaveDNS 是否已赋值
+                     * 
+                     */
+                    bool SlaveDNSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -967,6 +988,12 @@ namespace TencentCloud
                      */
                     std::string m_searchEnginePush;
                     bool m_searchEnginePushHasBeenSet;
+
+                    /**
+                     * 是否开启辅助 DNS
+                     */
+                    std::string m_slaveDNS;
+                    bool m_slaveDNSHasBeenSet;
 
                 };
             }

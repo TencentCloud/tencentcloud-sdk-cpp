@@ -73,6 +73,7 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20201229/model/StorageInfo.h
   include/tencentcloud/ams/v20201229/model/DescribeTaskDetailRequest.h
   include/tencentcloud/ams/v20201229/model/CreateAudioModerationSyncTaskResponse.h
+  include/tencentcloud/ams/v20201229/model/User.h
   include/tencentcloud/ams/v20201229/model/TaskLabel.h
   include/tencentcloud/ams/v20201229/model/TaskFilter.h
   include/tencentcloud/ams/v20201229/model/InputInfo.h
@@ -146,6 +147,7 @@ set(ams_src
   src/v20201229/model/StorageInfo.cpp
   src/v20201229/model/DescribeTaskDetailRequest.cpp
   src/v20201229/model/CreateAudioModerationSyncTaskResponse.cpp
+  src/v20201229/model/User.cpp
   src/v20201229/model/TaskLabel.cpp
   src/v20201229/model/TaskFilter.cpp
   src/v20201229/model/InputInfo.cpp

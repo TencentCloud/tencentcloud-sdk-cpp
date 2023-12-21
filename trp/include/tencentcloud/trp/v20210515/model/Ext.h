@@ -46,7 +46,39 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Value 字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    std::string GetValue() const;
+
+                    /**
+                     * 设置字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _value 字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetValue(const std::string& _value);
+
+                    /**
+                     * 判断参数 Value 是否已赋值
+                     * @return Value 是否已赋值
+                     * @deprecated
+                     */
+                    bool ValueHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_value;
+                    bool m_valueHasBeenSet;
 
                 };
             }

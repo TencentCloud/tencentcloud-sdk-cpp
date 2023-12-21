@@ -32,6 +32,7 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20210922/model/DescribeTasksRequest.h
   include/tencentcloud/vm/v20210922/model/TaskInput.h
   include/tencentcloud/vm/v20210922/model/DescribeTaskDetailRequest.h
+  include/tencentcloud/vm/v20210922/model/User.h
   include/tencentcloud/vm/v20210922/model/TaskLabel.h
   include/tencentcloud/vm/v20210922/model/ImageResultsResultDetail.h
   include/tencentcloud/vm/v20210922/model/InputInfo.h
@@ -131,6 +132,7 @@ set(vm_src
   src/v20210922/model/DescribeTasksRequest.cpp
   src/v20210922/model/TaskInput.cpp
   src/v20210922/model/DescribeTaskDetailRequest.cpp
+  src/v20210922/model/User.cpp
   src/v20210922/model/TaskLabel.cpp
   src/v20210922/model/ImageResultsResultDetail.cpp
   src/v20210922/model/InputInfo.cpp

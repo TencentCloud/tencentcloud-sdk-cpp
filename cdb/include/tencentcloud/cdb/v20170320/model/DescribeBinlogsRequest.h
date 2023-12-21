@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool MaxStartTimeHasBeenSet() const;
 
+                    /**
+                     * 获取返回binlog列表是否包含MinStartTime起始节点，默认为否
+                     * @return ContainsMinStartTime 返回binlog列表是否包含MinStartTime起始节点，默认为否
+                     * 
+                     */
+                    bool GetContainsMinStartTime() const;
+
+                    /**
+                     * 设置返回binlog列表是否包含MinStartTime起始节点，默认为否
+                     * @param _containsMinStartTime 返回binlog列表是否包含MinStartTime起始节点，默认为否
+                     * 
+                     */
+                    void SetContainsMinStartTime(const bool& _containsMinStartTime);
+
+                    /**
+                     * 判断参数 ContainsMinStartTime 是否已赋值
+                     * @return ContainsMinStartTime 是否已赋值
+                     * 
+                     */
+                    bool ContainsMinStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_maxStartTime;
                     bool m_maxStartTimeHasBeenSet;
+
+                    /**
+                     * 返回binlog列表是否包含MinStartTime起始节点，默认为否
+                     */
+                    bool m_containsMinStartTime;
+                    bool m_containsMinStartTimeHasBeenSet;
 
                 };
             }

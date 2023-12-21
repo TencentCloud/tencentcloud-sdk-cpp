@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/faceid/v20180301/model/AttackRiskDetail.h>
+#include <tencentcloud/faceid/v20180301/model/ExtraInfo.h>
 
 
 namespace TencentCloud
@@ -82,6 +83,20 @@ High：高度疑似攻击
                      */
                     bool AttackRiskDetailListHasBeenSet() const;
 
+                    /**
+                     * 获取额外信息
+                     * @return ExtraInfo 额外信息
+                     * 
+                     */
+                    ExtraInfo GetExtraInfo() const;
+
+                    /**
+                     * 判断参数 ExtraInfo 是否已赋值
+                     * @return ExtraInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtraInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +115,12 @@ High：高度疑似攻击
                      */
                     std::vector<AttackRiskDetail> m_attackRiskDetailList;
                     bool m_attackRiskDetailListHasBeenSet;
+
+                    /**
+                     * 额外信息
+                     */
+                    ExtraInfo m_extraInfo;
+                    bool m_extraInfoHasBeenSet;
 
                 };
             }

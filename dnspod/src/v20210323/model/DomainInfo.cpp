@@ -52,7 +52,8 @@ DomainInfo::DomainInfo() :
     m_vipResourceIdHasBeenSet(false),
     m_isSubDomainHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_searchEnginePushHasBeenSet(false)
+    m_searchEnginePushHasBeenSet(false),
+    m_slaveDNSHasBeenSet(false)
 {
 }
 
@@ -397,6 +398,16 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_searchEnginePushHasBeenSet = true;
     }
 
+    if (value.HasMember("SlaveDNS") && !value["SlaveDNS"].IsNull())
+    {
+        if (!value["SlaveDNS"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.SlaveDNS` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_slaveDNS = string(value["SlaveDNS"].GetString());
+        m_slaveDNSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -675,6 +686,14 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SearchEnginePush";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_searchEnginePush.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_slaveDNSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveDNS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_slaveDNS.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1190,5 +1209,21 @@ void DomainInfo::SetSearchEnginePush(const string& _searchEnginePush)
 bool DomainInfo::SearchEnginePushHasBeenSet() const
 {
     return m_searchEnginePushHasBeenSet;
+}
+
+string DomainInfo::GetSlaveDNS() const
+{
+    return m_slaveDNS;
+}
+
+void DomainInfo::SetSlaveDNS(const string& _slaveDNS)
+{
+    m_slaveDNS = _slaveDNS;
+    m_slaveDNSHasBeenSet = true;
+}
+
+bool DomainInfo::SlaveDNSHasBeenSet() const
+{
+    return m_slaveDNSHasBeenSet;
 }
 

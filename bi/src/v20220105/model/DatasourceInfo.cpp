@@ -54,7 +54,8 @@ DatasourceInfo::DatasourceInfo() :
     m_authListHasBeenSet(false),
     m_dataOriginHasBeenSet(false),
     m_dataOriginProjectIdHasBeenSet(false),
-    m_dataOriginDatasourceIdHasBeenSet(false)
+    m_dataOriginDatasourceIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -423,6 +424,16 @@ CoreInternalOutcome DatasourceInfo::Deserialize(const rapidjson::Value &value)
         m_dataOriginDatasourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceInfo.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -713,6 +724,14 @@ void DatasourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DataOriginDatasourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dataOriginDatasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1260,5 +1279,21 @@ void DatasourceInfo::SetDataOriginDatasourceId(const string& _dataOriginDatasour
 bool DatasourceInfo::DataOriginDatasourceIdHasBeenSet() const
 {
     return m_dataOriginDatasourceIdHasBeenSet;
+}
+
+string DatasourceInfo::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DatasourceInfo::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DatasourceInfo::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 

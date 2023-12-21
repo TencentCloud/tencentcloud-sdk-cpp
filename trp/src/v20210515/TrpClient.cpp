@@ -1330,6 +1330,49 @@ TrpClient::DescribeMerchantsOutcomeCallable TrpClient::DescribeMerchantsCallable
     return task->get_future();
 }
 
+TrpClient::DescribePlanQRCodeScanRecordsOutcome TrpClient::DescribePlanQRCodeScanRecords(const DescribePlanQRCodeScanRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlanQRCodeScanRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlanQRCodeScanRecordsResponse rsp = DescribePlanQRCodeScanRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlanQRCodeScanRecordsOutcome(rsp);
+        else
+            return DescribePlanQRCodeScanRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlanQRCodeScanRecordsOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribePlanQRCodeScanRecordsAsync(const DescribePlanQRCodeScanRecordsRequest& request, const DescribePlanQRCodeScanRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePlanQRCodeScanRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribePlanQRCodeScanRecordsOutcomeCallable TrpClient::DescribePlanQRCodeScanRecordsCallable(const DescribePlanQRCodeScanRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePlanQRCodeScanRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePlanQRCodeScanRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::DescribePlanQRCodesOutcome TrpClient::DescribePlanQRCodes(const DescribePlanQRCodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePlanQRCodes");

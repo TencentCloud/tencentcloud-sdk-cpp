@@ -173,15 +173,23 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>
-                     * @return Role 节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>
+                     * 获取节点所属角色。
+- master：主节点。
+- slave：从节点。
+                     * @return Role 节点所属角色。
+- master：主节点。
+- slave：从节点。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>
-                     * @param _role 节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>
+                     * 设置节点所属角色。
+- master：主节点。
+- slave：从节点。
+                     * @param _role 节点所属角色。
+- master：主节点。
+- slave：从节点。
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -233,7 +241,9 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>
+                     * 节点所属角色。
+- master：主节点。
+- slave：从节点。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;

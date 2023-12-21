@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vm/v20210922/model/TaskInput.h>
+#include <tencentcloud/vm/v20210922/model/User.h>
 
 
 namespace TencentCloud
@@ -173,6 +174,27 @@ namespace TencentCloud
                      */
                     bool PriorityHasBeenSet() const;
 
+                    /**
+                     * 获取该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户
+                     * @return User 该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户
+                     * 
+                     */
+                    User GetUser() const;
+
+                    /**
+                     * 设置该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户
+                     * @param _user 该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户
+                     * 
+                     */
+                    void SetUser(const User& _user);
+
+                    /**
+                     * 判断参数 User 是否已赋值
+                     * @return User 是否已赋值
+                     * 
+                     */
+                    bool UserHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +233,12 @@ namespace TencentCloud
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
+
+                    /**
+                     * 该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户
+                     */
+                    User m_user;
+                    bool m_userHasBeenSet;
 
                 };
             }

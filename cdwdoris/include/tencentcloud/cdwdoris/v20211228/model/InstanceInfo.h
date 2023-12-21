@@ -1022,6 +1022,31 @@ Modify 集群变更中；
                      */
                     bool CharacteristicHasBeenSet() const;
 
+                    /**
+                     * 获取超时时间 单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RestartTimeout 超时时间 单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRestartTimeout() const;
+
+                    /**
+                     * 设置超时时间 单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _restartTimeout 超时时间 单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRestartTimeout(const std::string& _restartTimeout);
+
+                    /**
+                     * 判断参数 RestartTimeout 是否已赋值
+                     * @return RestartTimeout 是否已赋值
+                     * 
+                     */
+                    bool RestartTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1295,6 +1320,13 @@ Modify 集群变更中；
                      */
                     std::vector<std::string> m_characteristic;
                     bool m_characteristicHasBeenSet;
+
+                    /**
+                     * 超时时间 单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_restartTimeout;
+                    bool m_restartTimeoutHasBeenSet;
 
                 };
             }

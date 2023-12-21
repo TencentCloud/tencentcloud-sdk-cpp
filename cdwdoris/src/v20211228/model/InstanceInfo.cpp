@@ -58,7 +58,8 @@ InstanceInfo::InstanceInfo() :
     m_buildVersionHasBeenSet(false),
     m_componentsHasBeenSet(false),
     m_ifExistCatalogHasBeenSet(false),
-    m_characteristicHasBeenSet(false)
+    m_characteristicHasBeenSet(false),
+    m_restartTimeoutHasBeenSet(false)
 {
 }
 
@@ -474,6 +475,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_characteristicHasBeenSet = true;
     }
 
+    if (value.HasMember("RestartTimeout") && !value["RestartTimeout"].IsNull())
+    {
+        if (!value["RestartTimeout"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RestartTimeout` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_restartTimeout = string(value["RestartTimeout"].GetString());
+        m_restartTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -797,6 +808,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_restartTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestartTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_restartTimeout.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1408,5 +1427,21 @@ void InstanceInfo::SetCharacteristic(const vector<string>& _characteristic)
 bool InstanceInfo::CharacteristicHasBeenSet() const
 {
     return m_characteristicHasBeenSet;
+}
+
+string InstanceInfo::GetRestartTimeout() const
+{
+    return m_restartTimeout;
+}
+
+void InstanceInfo::SetRestartTimeout(const string& _restartTimeout)
+{
+    m_restartTimeout = _restartTimeout;
+    m_restartTimeoutHasBeenSet = true;
+}
+
+bool InstanceInfo::RestartTimeoutHasBeenSet() const
+{
+    return m_restartTimeoutHasBeenSet;
 }
 

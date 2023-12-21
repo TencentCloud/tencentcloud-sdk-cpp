@@ -858,6 +858,31 @@ namespace TencentCloud
                      */
                     bool DataOriginDatasourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterId 集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterId 集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1087,6 +1112,13 @@ namespace TencentCloud
                      */
                     std::string m_dataOriginDatasourceId;
                     bool m_dataOriginDatasourceIdHasBeenSet;
+
+                    /**
+                     * 集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }

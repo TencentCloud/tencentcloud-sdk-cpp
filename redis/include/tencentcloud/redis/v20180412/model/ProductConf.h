@@ -355,10 +355,10 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取是否支持副本只读。
+                     * 获取该参数名因存在拼写不规范的问题，建议使用**EnableReplicaReadOnly**参数取代。其含义为是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-                     * @return EnableRepicaReadOnly 是否支持副本只读。
+                     * @return EnableRepicaReadOnly 该参数名因存在拼写不规范的问题，建议使用**EnableReplicaReadOnly**参数取代。其含义为是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
                      * 
@@ -366,10 +366,10 @@ namespace TencentCloud
                     bool GetEnableRepicaReadOnly() const;
 
                     /**
-                     * 设置是否支持副本只读。
+                     * 设置该参数名因存在拼写不规范的问题，建议使用**EnableReplicaReadOnly**参数取代。其含义为是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-                     * @param _enableRepicaReadOnly 是否支持副本只读。
+                     * @param _enableRepicaReadOnly 该参数名因存在拼写不规范的问题，建议使用**EnableReplicaReadOnly**参数取代。其含义为是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
                      * 
@@ -382,6 +382,39 @@ namespace TencentCloud
                      * 
                      */
                     bool EnableRepicaReadOnlyHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持副本只读。
+- true：支持副本只读。
+- false：不支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableReplicaReadOnly 是否支持副本只读。
+- true：支持副本只读。
+- false：不支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableReplicaReadOnly() const;
+
+                    /**
+                     * 设置是否支持副本只读。
+- true：支持副本只读。
+- false：不支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableReplicaReadOnly 是否支持副本只读。
+- true：支持副本只读。
+- false：不支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableReplicaReadOnly(const bool& _enableReplicaReadOnly);
+
+                    /**
+                     * 判断参数 EnableReplicaReadOnly 是否已赋值
+                     * @return EnableReplicaReadOnly 是否已赋值
+                     * 
+                     */
+                    bool EnableReplicaReadOnlyHasBeenSet() const;
 
                 private:
 
@@ -472,12 +505,21 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 是否支持副本只读。
+                     * 该参数名因存在拼写不规范的问题，建议使用**EnableReplicaReadOnly**参数取代。其含义为是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
                      */
                     bool m_enableRepicaReadOnly;
                     bool m_enableRepicaReadOnlyHasBeenSet;
+
+                    /**
+                     * 是否支持副本只读。
+- true：支持副本只读。
+- false：不支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableReplicaReadOnly;
+                    bool m_enableReplicaReadOnlyHasBeenSet;
 
                 };
             }

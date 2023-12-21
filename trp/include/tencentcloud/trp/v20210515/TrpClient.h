@@ -83,6 +83,8 @@
 #include <tencentcloud/trp/v20210515/model/DescribeMerchantByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeMerchantsRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeMerchantsResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribePlanQRCodeScanRecordsRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribePlanQRCodeScanRecordsResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribePlanQRCodesRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribePlanQRCodesResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeProductByIdRequest.h>
@@ -231,6 +233,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMerchantsResponse> DescribeMerchantsOutcome;
                 typedef std::future<DescribeMerchantsOutcome> DescribeMerchantsOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeMerchantsRequest&, DescribeMerchantsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMerchantsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlanQRCodeScanRecordsResponse> DescribePlanQRCodeScanRecordsOutcome;
+                typedef std::future<DescribePlanQRCodeScanRecordsOutcome> DescribePlanQRCodeScanRecordsOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribePlanQRCodeScanRecordsRequest&, DescribePlanQRCodeScanRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlanQRCodeScanRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePlanQRCodesResponse> DescribePlanQRCodesOutcome;
                 typedef std::future<DescribePlanQRCodesOutcome> DescribePlanQRCodesOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribePlanQRCodesRequest&, DescribePlanQRCodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlanQRCodesAsyncHandler;
@@ -571,6 +576,15 @@ namespace TencentCloud
                 DescribeMerchantsOutcome DescribeMerchants(const Model::DescribeMerchantsRequest &request);
                 void DescribeMerchantsAsync(const Model::DescribeMerchantsRequest& request, const DescribeMerchantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMerchantsOutcomeCallable DescribeMerchantsCallable(const Model::DescribeMerchantsRequest& request);
+
+                /**
+                 *查询安心计划二维码扫码记录
+                 * @param req DescribePlanQRCodeScanRecordsRequest
+                 * @return DescribePlanQRCodeScanRecordsOutcome
+                 */
+                DescribePlanQRCodeScanRecordsOutcome DescribePlanQRCodeScanRecords(const Model::DescribePlanQRCodeScanRecordsRequest &request);
+                void DescribePlanQRCodeScanRecordsAsync(const Model::DescribePlanQRCodeScanRecordsRequest& request, const DescribePlanQRCodeScanRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlanQRCodeScanRecordsOutcomeCallable DescribePlanQRCodeScanRecordsCallable(const Model::DescribePlanQRCodeScanRecordsRequest& request);
 
                 /**
                  *查询安心计划二维码列表
