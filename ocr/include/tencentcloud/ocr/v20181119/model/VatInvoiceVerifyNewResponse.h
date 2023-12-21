@@ -25,6 +25,8 @@
 #include <tencentcloud/ocr/v20181119/model/VehicleInvoiceInfo.h>
 #include <tencentcloud/ocr/v20181119/model/UsedVehicleInvoiceInfo.h>
 #include <tencentcloud/ocr/v20181119/model/PassInvoiceInfo.h>
+#include <tencentcloud/ocr/v20181119/model/ElectronicTrainTicket.h>
+#include <tencentcloud/ocr/v20181119/model/ElectronicAirTransport.h>
 
 
 namespace TencentCloud
@@ -48,8 +50,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取增值税发票信息，详情请点击左侧链接。
-                     * @return Invoice 增值税发票信息，详情请点击左侧链接。
+                     * 获取增值税发票、购车发票、全电发票的基础要素字段信息。
+                     * @return Invoice 增值税发票、购车发票、全电发票的基础要素字段信息。
                      * 
                      */
                     VatInvoice GetInvoice() const;
@@ -62,8 +64,8 @@ namespace TencentCloud
                     bool InvoiceHasBeenSet() const;
 
                     /**
-                     * 获取机动车销售统一发票信息
-                     * @return VehicleInvoiceInfo 机动车销售统一发票信息
+                     * 获取机动车销售统一发票详细字段信息。
+                     * @return VehicleInvoiceInfo 机动车销售统一发票详细字段信息。
                      * 
                      */
                     VehicleInvoiceInfo GetVehicleInvoiceInfo() const;
@@ -76,8 +78,8 @@ namespace TencentCloud
                     bool VehicleInvoiceInfoHasBeenSet() const;
 
                     /**
-                     * 获取二手车销售统一发票信息
-                     * @return UsedVehicleInvoiceInfo 二手车销售统一发票信息
+                     * 获取二手车销售统一发票详细字段信息。
+                     * @return UsedVehicleInvoiceInfo 二手车销售统一发票详细字段信息。
                      * 
                      */
                     UsedVehicleInvoiceInfo GetUsedVehicleInvoiceInfo() const;
@@ -90,8 +92,8 @@ namespace TencentCloud
                     bool UsedVehicleInvoiceInfoHasBeenSet() const;
 
                     /**
-                     * 获取通行费发票信息
-                     * @return PassInvoiceInfoList 通行费发票信息
+                     * 获取通行费发票详细字段信息。
+                     * @return PassInvoiceInfoList 通行费发票详细字段信息。
                      * 
                      */
                     std::vector<PassInvoiceInfo> GetPassInvoiceInfoList() const;
@@ -103,31 +105,74 @@ namespace TencentCloud
                      */
                     bool PassInvoiceInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取全电发票（铁路电子客票）详细字段信息。
+
+                     * @return ElectronicTrainTicket 全电发票（铁路电子客票）详细字段信息。
+
+                     * 
+                     */
+                    ElectronicTrainTicket GetElectronicTrainTicket() const;
+
+                    /**
+                     * 判断参数 ElectronicTrainTicket 是否已赋值
+                     * @return ElectronicTrainTicket 是否已赋值
+                     * 
+                     */
+                    bool ElectronicTrainTicketHasBeenSet() const;
+
+                    /**
+                     * 获取全电发票（航空运输电子客票行程单）详细字段信息。
+                     * @return ElectronicAirTransport 全电发票（航空运输电子客票行程单）详细字段信息。
+                     * 
+                     */
+                    ElectronicAirTransport GetElectronicAirTransport() const;
+
+                    /**
+                     * 判断参数 ElectronicAirTransport 是否已赋值
+                     * @return ElectronicAirTransport 是否已赋值
+                     * 
+                     */
+                    bool ElectronicAirTransportHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 增值税发票信息，详情请点击左侧链接。
+                     * 增值税发票、购车发票、全电发票的基础要素字段信息。
                      */
                     VatInvoice m_invoice;
                     bool m_invoiceHasBeenSet;
 
                     /**
-                     * 机动车销售统一发票信息
+                     * 机动车销售统一发票详细字段信息。
                      */
                     VehicleInvoiceInfo m_vehicleInvoiceInfo;
                     bool m_vehicleInvoiceInfoHasBeenSet;
 
                     /**
-                     * 二手车销售统一发票信息
+                     * 二手车销售统一发票详细字段信息。
                      */
                     UsedVehicleInvoiceInfo m_usedVehicleInvoiceInfo;
                     bool m_usedVehicleInvoiceInfoHasBeenSet;
 
                     /**
-                     * 通行费发票信息
+                     * 通行费发票详细字段信息。
                      */
                     std::vector<PassInvoiceInfo> m_passInvoiceInfoList;
                     bool m_passInvoiceInfoListHasBeenSet;
+
+                    /**
+                     * 全电发票（铁路电子客票）详细字段信息。
+
+                     */
+                    ElectronicTrainTicket m_electronicTrainTicket;
+                    bool m_electronicTrainTicketHasBeenSet;
+
+                    /**
+                     * 全电发票（航空运输电子客票行程单）详细字段信息。
+                     */
+                    ElectronicAirTransport m_electronicAirTransport;
+                    bool m_electronicAirTransportHasBeenSet;
 
                 };
             }

@@ -23,10 +23,10 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ChannelCreatePrepareFlowRequest::ChannelCreatePrepareFlowRequest() :
-    m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_flowInfoHasBeenSet(false),
     m_agentHasBeenSet(false),
+    m_resourceIdHasBeenSet(false),
     m_flowOptionHasBeenSet(false),
     m_flowApproverListHasBeenSet(false),
     m_flowIdHasBeenSet(false),
@@ -42,14 +42,6 @@ string ChannelCreatePrepareFlowRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_resourceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_resourceTypeHasBeenSet)
     {
@@ -75,6 +67,14 @@ string ChannelCreatePrepareFlowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowOptionHasBeenSet)
@@ -143,22 +143,6 @@ string ChannelCreatePrepareFlowRequest::ToJsonString() const
 }
 
 
-string ChannelCreatePrepareFlowRequest::GetResourceId() const
-{
-    return m_resourceId;
-}
-
-void ChannelCreatePrepareFlowRequest::SetResourceId(const string& _resourceId)
-{
-    m_resourceId = _resourceId;
-    m_resourceIdHasBeenSet = true;
-}
-
-bool ChannelCreatePrepareFlowRequest::ResourceIdHasBeenSet() const
-{
-    return m_resourceIdHasBeenSet;
-}
-
 int64_t ChannelCreatePrepareFlowRequest::GetResourceType() const
 {
     return m_resourceType;
@@ -205,6 +189,22 @@ void ChannelCreatePrepareFlowRequest::SetAgent(const Agent& _agent)
 bool ChannelCreatePrepareFlowRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string ChannelCreatePrepareFlowRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void ChannelCreatePrepareFlowRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool ChannelCreatePrepareFlowRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 CreateFlowOption ChannelCreatePrepareFlowRequest::GetFlowOption() const

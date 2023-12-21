@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取定时拉起时间：如：周一8点
+                     * 获取定时拉起时间：如：周一&周三8点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResumeTime 定时拉起时间：如：周一8点
+                     * @return ResumeTime 定时拉起时间：如：周一&周三8点
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResumeTime() const;
 
                     /**
-                     * 设置定时拉起时间：如：周一8点
+                     * 设置定时拉起时间：如：周一&周三8点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resumeTime 定时拉起时间：如：周一8点
+                     * @param _resumeTime 定时拉起时间：如：周一&周三8点
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ResumeTimeHasBeenSet() const;
 
                     /**
-                     * 获取定时挂起时间：如：周一20点
+                     * 获取定时挂起时间：如：周一&周三20点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SuspendTime 定时挂起时间：如：周一20点
+                     * @return SuspendTime 定时挂起时间：如：周一&周三20点
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuspendTime() const;
 
                     /**
-                     * 设置定时挂起时间：如：周一20点
+                     * 设置定时挂起时间：如：周一&周三20点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _suspendTime 定时挂起时间：如：周一20点
+                     * @param _suspendTime 定时挂起时间：如：周一&周三20点
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,14 +124,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 定时拉起时间：如：周一8点
+                     * 定时拉起时间：如：周一&周三8点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resumeTime;
                     bool m_resumeTimeHasBeenSet;
 
                     /**
-                     * 定时挂起时间：如：周一20点
+                     * 定时挂起时间：如：周一&周三20点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suspendTime;

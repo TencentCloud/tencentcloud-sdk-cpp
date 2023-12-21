@@ -400,6 +400,64 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
+                     * 获取合同流程的签署顺序类型：
+<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
+<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
+                     * @return Unordered 合同流程的签署顺序类型：
+<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
+<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
+                     * 
+                     */
+                    bool GetUnordered() const;
+
+                    /**
+                     * 设置合同流程的签署顺序类型：
+<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
+<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
+                     * @param _unordered 合同流程的签署顺序类型：
+<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
+<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
+                     * 
+                     */
+                    void SetUnordered(const bool& _unordered);
+
+                    /**
+                     * 判断参数 Unordered 是否已赋值
+                     * @return Unordered 是否已赋值
+                     * 
+                     */
+                    bool UnorderedHasBeenSet() const;
+
+                    /**
+                     * 获取调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
+                     * @return UserData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
+                     * 
+                     */
+                    std::string GetUserData() const;
+
+                    /**
+                     * 设置调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
+                     * @param _userData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
+                     * 
+                     */
+                    void SetUserData(const std::string& _userData);
+
+                    /**
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
+                     * 
+                     */
+                    bool UserDataHasBeenSet() const;
+
+                    /**
                      * 获取合同到期提醒时间，为Unix标准时间戳（秒）格式，支持的范围是从发起时间开始到后10年内。
 
 到达提醒时间后，腾讯电子签会短信通知发起方企业合同提醒，可用于处理合同到期事务，如合同续签等事宜。
@@ -429,33 +487,62 @@ namespace TencentCloud
                     bool RemindedOnHasBeenSet() const;
 
                     /**
-                     * 获取合同流程的签署顺序类型：
-<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
-<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
-                     * @return Unordered 合同流程的签署顺序类型：
-<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
-<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
+                     * 获取指定个人签署方查看合同的校验方式
+<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>
+<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>
+                     * @return ApproverVerifyType 指定个人签署方查看合同的校验方式
+<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>
+<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>
                      * 
                      */
-                    bool GetUnordered() const;
+                    std::string GetApproverVerifyType() const;
 
                     /**
-                     * 设置合同流程的签署顺序类型：
-<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
-<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
-                     * @param _unordered 合同流程的签署顺序类型：
-<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
-<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
+                     * 设置指定个人签署方查看合同的校验方式
+<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>
+<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>
+                     * @param _approverVerifyType 指定个人签署方查看合同的校验方式
+<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>
+<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>
                      * 
                      */
-                    void SetUnordered(const bool& _unordered);
+                    void SetApproverVerifyType(const std::string& _approverVerifyType);
 
                     /**
-                     * 判断参数 Unordered 是否已赋值
-                     * @return Unordered 是否已赋值
+                     * 判断参数 ApproverVerifyType 是否已赋值
+                     * @return ApproverVerifyType 是否已赋值
                      * 
                      */
-                    bool UnorderedHasBeenSet() const;
+                    bool ApproverVerifyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取签署方签署控件（印章/签名等）的生成方式：
+<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
+<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
+                     * @return SignBeanTag 签署方签署控件（印章/签名等）的生成方式：
+<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
+<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
+                     * 
+                     */
+                    int64_t GetSignBeanTag() const;
+
+                    /**
+                     * 设置签署方签署控件（印章/签名等）的生成方式：
+<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
+<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
+                     * @param _signBeanTag 签署方签署控件（印章/签名等）的生成方式：
+<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
+<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
+                     * 
+                     */
+                    void SetSignBeanTag(const int64_t& _signBeanTag);
+
+                    /**
+                     * 判断参数 SignBeanTag 是否已赋值
+                     * @return SignBeanTag 是否已赋值
+                     * 
+                     */
+                    bool SignBeanTagHasBeenSet() const;
 
                     /**
                      * 获取您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：
@@ -535,138 +622,6 @@ namespace TencentCloud
                     bool CustomShowMapHasBeenSet() const;
 
                     /**
-                     * 获取发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
-<ul><li> **false**：（默认）不需要审批，直接签署。</li>
-<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
-企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
-<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
-<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     * @return NeedSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
-<ul><li> **false**：（默认）不需要审批，直接签署。</li>
-<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
-企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
-<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
-<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     * 
-                     */
-                    bool GetNeedSignReview() const;
-
-                    /**
-                     * 设置发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
-<ul><li> **false**：（默认）不需要审批，直接签署。</li>
-<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
-企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
-<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
-<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     * @param _needSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
-<ul><li> **false**：（默认）不需要审批，直接签署。</li>
-<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
-企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
-<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
-<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     * 
-                     */
-                    void SetNeedSignReview(const bool& _needSignReview);
-
-                    /**
-                     * 判断参数 NeedSignReview 是否已赋值
-                     * @return NeedSignReview 是否已赋值
-                     * 
-                     */
-                    bool NeedSignReviewHasBeenSet() const;
-
-                    /**
-                     * 获取调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
-
-在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
-                     * @return UserData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
-
-在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
-                     * 
-                     */
-                    std::string GetUserData() const;
-
-                    /**
-                     * 设置调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
-
-在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
-                     * @param _userData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
-
-在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
-                     * 
-                     */
-                    void SetUserData(const std::string& _userData);
-
-                    /**
-                     * 判断参数 UserData 是否已赋值
-                     * @return UserData 是否已赋值
-                     * 
-                     */
-                    bool UserDataHasBeenSet() const;
-
-                    /**
-                     * 获取指定个人签署方查看合同的校验方式
-<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>
-<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>
-                     * @return ApproverVerifyType 指定个人签署方查看合同的校验方式
-<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>
-<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>
-                     * 
-                     */
-                    std::string GetApproverVerifyType() const;
-
-                    /**
-                     * 设置指定个人签署方查看合同的校验方式
-<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>
-<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>
-                     * @param _approverVerifyType 指定个人签署方查看合同的校验方式
-<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>
-<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>
-                     * 
-                     */
-                    void SetApproverVerifyType(const std::string& _approverVerifyType);
-
-                    /**
-                     * 判断参数 ApproverVerifyType 是否已赋值
-                     * @return ApproverVerifyType 是否已赋值
-                     * 
-                     */
-                    bool ApproverVerifyTypeHasBeenSet() const;
-
-                    /**
-                     * 获取签署方签署控件（印章/签名等）的生成方式：
-<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
-<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
-                     * @return SignBeanTag 签署方签署控件（印章/签名等）的生成方式：
-<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
-<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
-                     * 
-                     */
-                    int64_t GetSignBeanTag() const;
-
-                    /**
-                     * 设置签署方签署控件（印章/签名等）的生成方式：
-<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
-<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
-                     * @param _signBeanTag 签署方签署控件（印章/签名等）的生成方式：
-<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
-<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
-                     * 
-                     */
-                    void SetSignBeanTag(const int64_t& _signBeanTag);
-
-                    /**
-                     * 判断参数 SignBeanTag 是否已赋值
-                     * @return SignBeanTag 是否已赋值
-                     * 
-                     */
-                    bool SignBeanTagHasBeenSet() const;
-
-                    /**
                      * 获取代理企业和员工的信息。
 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * @return Agent 代理企业和员工的信息。
@@ -719,6 +674,51 @@ namespace TencentCloud
                      * 
                      */
                     bool AutoSignSceneHasBeenSet() const;
+
+                    /**
+                     * 获取发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+                     * @return NeedSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+                     * 
+                     */
+                    bool GetNeedSignReview() const;
+
+                    /**
+                     * 设置发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+                     * @param _needSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+                     * 
+                     */
+                    void SetNeedSignReview(const bool& _needSignReview);
+
+                    /**
+                     * 判断参数 NeedSignReview 是否已赋值
+                     * @return NeedSignReview 是否已赋值
+                     * 
+                     */
+                    bool NeedSignReviewHasBeenSet() const;
 
                 private:
 
@@ -820,6 +820,22 @@ namespace TencentCloud
                     bool m_deadlineHasBeenSet;
 
                     /**
+                     * 合同流程的签署顺序类型：
+<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
+<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
+                     */
+                    bool m_unordered;
+                    bool m_unorderedHasBeenSet;
+
+                    /**
+                     * 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
+                     */
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
+
+                    /**
                      * 合同到期提醒时间，为Unix标准时间戳（秒）格式，支持的范围是从发起时间开始到后10年内。
 
 到达提醒时间后，腾讯电子签会短信通知发起方企业合同提醒，可用于处理合同到期事务，如合同续签等事宜。
@@ -828,12 +844,20 @@ namespace TencentCloud
                     bool m_remindedOnHasBeenSet;
 
                     /**
-                     * 合同流程的签署顺序类型：
-<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>
-<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>
+                     * 指定个人签署方查看合同的校验方式
+<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>
+<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>
                      */
-                    bool m_unordered;
-                    bool m_unorderedHasBeenSet;
+                    std::string m_approverVerifyType;
+                    bool m_approverVerifyTypeHasBeenSet;
+
+                    /**
+                     * 签署方签署控件（印章/签名等）的生成方式：
+<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
+<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
+                     */
+                    int64_t m_signBeanTag;
+                    bool m_signBeanTagHasBeenSet;
 
                     /**
                      * 您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：
@@ -856,42 +880,6 @@ namespace TencentCloud
                     bool m_customShowMapHasBeenSet;
 
                     /**
-                     * 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
-<ul><li> **false**：（默认）不需要审批，直接签署。</li>
-<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
-企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
-<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
-<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     */
-                    bool m_needSignReview;
-                    bool m_needSignReviewHasBeenSet;
-
-                    /**
-                     * 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。
-
-在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
-                     */
-                    std::string m_userData;
-                    bool m_userDataHasBeenSet;
-
-                    /**
-                     * 指定个人签署方查看合同的校验方式
-<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>
-<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>
-                     */
-                    std::string m_approverVerifyType;
-                    bool m_approverVerifyTypeHasBeenSet;
-
-                    /**
-                     * 签署方签署控件（印章/签名等）的生成方式：
-<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
-<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
-                     */
-                    int64_t m_signBeanTag;
-                    bool m_signBeanTagHasBeenSet;
-
-                    /**
                      * 代理企业和员工的信息。
 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      */
@@ -905,6 +893,18 @@ namespace TencentCloud
                      */
                     std::string m_autoSignScene;
                     bool m_autoSignSceneHasBeenSet;
+
+                    /**
+                     * 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+<ul><li> **false**：（默认）不需要审批，直接签署。</li>
+<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
+<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
+<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
+注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+                     */
+                    bool m_needSignReview;
+                    bool m_needSignReviewHasBeenSet;
 
                 };
             }

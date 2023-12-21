@@ -27,7 +27,9 @@ VatInvoiceVerifyNewResponse::VatInvoiceVerifyNewResponse() :
     m_invoiceHasBeenSet(false),
     m_vehicleInvoiceInfoHasBeenSet(false),
     m_usedVehicleInvoiceInfoHasBeenSet(false),
-    m_passInvoiceInfoListHasBeenSet(false)
+    m_passInvoiceInfoListHasBeenSet(false),
+    m_electronicTrainTicketHasBeenSet(false),
+    m_electronicAirTransportHasBeenSet(false)
 {
 }
 
@@ -136,6 +138,40 @@ CoreInternalOutcome VatInvoiceVerifyNewResponse::Deserialize(const string &paylo
         m_passInvoiceInfoListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ElectronicTrainTicket") && !rsp["ElectronicTrainTicket"].IsNull())
+    {
+        if (!rsp["ElectronicTrainTicket"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicTrainTicket` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_electronicTrainTicket.Deserialize(rsp["ElectronicTrainTicket"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_electronicTrainTicketHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ElectronicAirTransport") && !rsp["ElectronicAirTransport"].IsNull())
+    {
+        if (!rsp["ElectronicAirTransport"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicAirTransport` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_electronicAirTransport.Deserialize(rsp["ElectronicAirTransport"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_electronicAirTransportHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -188,6 +224,24 @@ string VatInvoiceVerifyNewResponse::ToJsonString() const
         }
     }
 
+    if (m_electronicTrainTicketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElectronicTrainTicket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_electronicTrainTicket.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_electronicAirTransportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElectronicAirTransport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_electronicAirTransport.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -238,6 +292,26 @@ vector<PassInvoiceInfo> VatInvoiceVerifyNewResponse::GetPassInvoiceInfoList() co
 bool VatInvoiceVerifyNewResponse::PassInvoiceInfoListHasBeenSet() const
 {
     return m_passInvoiceInfoListHasBeenSet;
+}
+
+ElectronicTrainTicket VatInvoiceVerifyNewResponse::GetElectronicTrainTicket() const
+{
+    return m_electronicTrainTicket;
+}
+
+bool VatInvoiceVerifyNewResponse::ElectronicTrainTicketHasBeenSet() const
+{
+    return m_electronicTrainTicketHasBeenSet;
+}
+
+ElectronicAirTransport VatInvoiceVerifyNewResponse::GetElectronicAirTransport() const
+{
+    return m_electronicAirTransport;
+}
+
+bool VatInvoiceVerifyNewResponse::ElectronicAirTransportHasBeenSet() const
+{
+    return m_electronicAirTransportHasBeenSet;
 }
 
 

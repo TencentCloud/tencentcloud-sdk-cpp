@@ -239,6 +239,8 @@
 #include <tencentcloud/vod/v20180717/model/EditMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/EnhanceMediaByTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/EnhanceMediaByTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/EnhanceMediaQualityRequest.h>
+#include <tencentcloud/vod/v20180717/model/EnhanceMediaQualityResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExecuteFunctionRequest.h>
 #include <tencentcloud/vod/v20180717/model/ExecuteFunctionResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExtractCopyRightWatermarkRequest.h>
@@ -695,6 +697,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnhanceMediaByTemplateResponse> EnhanceMediaByTemplateOutcome;
                 typedef std::future<EnhanceMediaByTemplateOutcome> EnhanceMediaByTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::EnhanceMediaByTemplateRequest&, EnhanceMediaByTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceMediaByTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnhanceMediaQualityResponse> EnhanceMediaQualityOutcome;
+                typedef std::future<EnhanceMediaQualityOutcome> EnhanceMediaQualityOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::EnhanceMediaQualityRequest&, EnhanceMediaQualityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceMediaQualityAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExecuteFunctionResponse> ExecuteFunctionOutcome;
                 typedef std::future<ExecuteFunctionOutcome> ExecuteFunctionOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ExecuteFunctionRequest&, ExecuteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteFunctionAsyncHandler;
@@ -1971,6 +1976,15 @@ namespace TencentCloud
                 EnhanceMediaByTemplateOutcome EnhanceMediaByTemplate(const Model::EnhanceMediaByTemplateRequest &request);
                 void EnhanceMediaByTemplateAsync(const Model::EnhanceMediaByTemplateRequest& request, const EnhanceMediaByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnhanceMediaByTemplateOutcomeCallable EnhanceMediaByTemplateCallable(const Model::EnhanceMediaByTemplateRequest& request);
+
+                /**
+                 *对点播中的音视频媒体发起音画质重生任务。
+                 * @param req EnhanceMediaQualityRequest
+                 * @return EnhanceMediaQualityOutcome
+                 */
+                EnhanceMediaQualityOutcome EnhanceMediaQuality(const Model::EnhanceMediaQualityRequest &request);
+                void EnhanceMediaQualityAsync(const Model::EnhanceMediaQualityRequest& request, const EnhanceMediaQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnhanceMediaQualityOutcomeCallable EnhanceMediaQualityCallable(const Model::EnhanceMediaQualityRequest& request);
 
                 /**
                  *本接口仅用于定制开发的特殊场景，除非云点播客服人员主动告知您需要使用本接口，其它情况请勿调用。

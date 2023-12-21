@@ -45,7 +45,8 @@ RoomInfo::RoomInfo() :
     m_endDelayTimeHasBeenSet(false),
     m_liveTypeHasBeenSet(false),
     m_recordLiveUrlHasBeenSet(false),
-    m_enableAutoStartHasBeenSet(false)
+    m_enableAutoStartHasBeenSet(false),
+    m_recordBackgroundHasBeenSet(false)
 {
 }
 
@@ -307,6 +308,16 @@ CoreInternalOutcome RoomInfo::Deserialize(const rapidjson::Value &value)
         m_enableAutoStartHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordBackground") && !value["RecordBackground"].IsNull())
+    {
+        if (!value["RecordBackground"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomInfo.RecordBackground` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordBackground = string(value["RecordBackground"].GetString());
+        m_recordBackgroundHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -517,6 +528,14 @@ void RoomInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "EnableAutoStart";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableAutoStart, allocator);
+    }
+
+    if (m_recordBackgroundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordBackground";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordBackground.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -920,5 +939,21 @@ void RoomInfo::SetEnableAutoStart(const uint64_t& _enableAutoStart)
 bool RoomInfo::EnableAutoStartHasBeenSet() const
 {
     return m_enableAutoStartHasBeenSet;
+}
+
+string RoomInfo::GetRecordBackground() const
+{
+    return m_recordBackground;
+}
+
+void RoomInfo::SetRecordBackground(const string& _recordBackground)
+{
+    m_recordBackground = _recordBackground;
+    m_recordBackgroundHasBeenSet = true;
+}
+
+bool RoomInfo::RecordBackgroundHasBeenSet() const
+{
+    return m_recordBackgroundHasBeenSet;
 }
 

@@ -23,8 +23,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DescribeBillingSpecsRequest::DescribeBillingSpecsRequest() :
-    m_taskTypeHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
 }
@@ -36,20 +36,20 @@ string DescribeBillingSpecsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_taskTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_chargeTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_chargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceTypeHasBeenSet)
@@ -68,22 +68,6 @@ string DescribeBillingSpecsRequest::ToJsonString() const
 }
 
 
-string DescribeBillingSpecsRequest::GetTaskType() const
-{
-    return m_taskType;
-}
-
-void DescribeBillingSpecsRequest::SetTaskType(const string& _taskType)
-{
-    m_taskType = _taskType;
-    m_taskTypeHasBeenSet = true;
-}
-
-bool DescribeBillingSpecsRequest::TaskTypeHasBeenSet() const
-{
-    return m_taskTypeHasBeenSet;
-}
-
 string DescribeBillingSpecsRequest::GetChargeType() const
 {
     return m_chargeType;
@@ -98,6 +82,22 @@ void DescribeBillingSpecsRequest::SetChargeType(const string& _chargeType)
 bool DescribeBillingSpecsRequest::ChargeTypeHasBeenSet() const
 {
     return m_chargeTypeHasBeenSet;
+}
+
+string DescribeBillingSpecsRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void DescribeBillingSpecsRequest::SetTaskType(const string& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool DescribeBillingSpecsRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
 }
 
 string DescribeBillingSpecsRequest::GetResourceType() const

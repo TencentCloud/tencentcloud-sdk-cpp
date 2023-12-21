@@ -4684,6 +4684,49 @@ VodClient::EnhanceMediaByTemplateOutcomeCallable VodClient::EnhanceMediaByTempla
     return task->get_future();
 }
 
+VodClient::EnhanceMediaQualityOutcome VodClient::EnhanceMediaQuality(const EnhanceMediaQualityRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnhanceMediaQuality");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnhanceMediaQualityResponse rsp = EnhanceMediaQualityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnhanceMediaQualityOutcome(rsp);
+        else
+            return EnhanceMediaQualityOutcome(o.GetError());
+    }
+    else
+    {
+        return EnhanceMediaQualityOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::EnhanceMediaQualityAsync(const EnhanceMediaQualityRequest& request, const EnhanceMediaQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnhanceMediaQuality(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::EnhanceMediaQualityOutcomeCallable VodClient::EnhanceMediaQualityCallable(const EnhanceMediaQualityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnhanceMediaQualityOutcome()>>(
+        [this, request]()
+        {
+            return this->EnhanceMediaQuality(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ExecuteFunctionOutcome VodClient::ExecuteFunction(const ExecuteFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "ExecuteFunction");

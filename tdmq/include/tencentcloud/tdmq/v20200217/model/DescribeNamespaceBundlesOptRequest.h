@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool BundleHasBeenSet() const;
 
                     /**
-                     * 获取bundle 所属的 broker ip 地址，支持模糊查询
-                     * @return OwnerBroker bundle 所属的 broker ip 地址，支持模糊查询
+                     * 获取bundle 所属的 broker IP 地址，支持模糊查询
+                     * @return OwnerBroker bundle 所属的 broker IP 地址，支持模糊查询
                      * 
                      */
                     std::string GetOwnerBroker() const;
 
                     /**
-                     * 设置bundle 所属的 broker ip 地址，支持模糊查询
-                     * @param _ownerBroker bundle 所属的 broker ip 地址，支持模糊查询
+                     * 设置bundle 所属的 broker IP 地址，支持模糊查询
+                     * @param _ownerBroker bundle 所属的 broker IP 地址，支持模糊查询
                      * 
                      */
                     void SetOwnerBroker(const std::string& _ownerBroker);
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_bundleHasBeenSet;
 
                     /**
-                     * bundle 所属的 broker ip 地址，支持模糊查询
+                     * bundle 所属的 broker IP 地址，支持模糊查询
                      */
                     std::string m_ownerBroker;
                     bool m_ownerBrokerHasBeenSet;

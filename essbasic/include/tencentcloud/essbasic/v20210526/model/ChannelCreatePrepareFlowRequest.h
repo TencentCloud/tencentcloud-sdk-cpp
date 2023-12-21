@@ -49,43 +49,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源id，与ResourceType相对应，取值范围：
-<ul>
-<li>文件Id（通过UploadFiles获取文件资源Id）</li>
-<li>模板Id</li>
-</ul>
-                     * @return ResourceId 资源id，与ResourceType相对应，取值范围：
-<ul>
-<li>文件Id（通过UploadFiles获取文件资源Id）</li>
-<li>模板Id</li>
-</ul>
-                     * 
-                     */
-                    std::string GetResourceId() const;
-
-                    /**
-                     * 设置资源id，与ResourceType相对应，取值范围：
-<ul>
-<li>文件Id（通过UploadFiles获取文件资源Id）</li>
-<li>模板Id</li>
-</ul>
-                     * @param _resourceId 资源id，与ResourceType相对应，取值范围：
-<ul>
-<li>文件Id（通过UploadFiles获取文件资源Id）</li>
-<li>模板Id</li>
-</ul>
-                     * 
-                     */
-                    void SetResourceId(const std::string& _resourceId);
-
-                    /**
-                     * 判断参数 ResourceId 是否已赋值
-                     * @return ResourceId 是否已赋值
-                     * 
-                     */
-                    bool ResourceIdHasBeenSet() const;
-
-                    /**
                      * 获取资源类型，取值有：
 <ul><li> **1**：模板</li>
 <li> **2**：文件（默认值）</li></ul>
@@ -187,6 +150,43 @@ namespace TencentCloud
                      * 
                      */
                     bool AgentHasBeenSet() const;
+
+                    /**
+                     * 获取资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
+                     * @return ResourceId 资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
+                     * @param _resourceId 资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取合同流程配置信息，用于配置发起合同时定制化如是否允许修改，某些按钮的隐藏等逻辑
@@ -321,16 +321,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源id，与ResourceType相对应，取值范围：
-<ul>
-<li>文件Id（通过UploadFiles获取文件资源Id）</li>
-<li>模板Id</li>
-</ul>
-                     */
-                    std::string m_resourceId;
-                    bool m_resourceIdHasBeenSet;
-
-                    /**
                      * 资源类型，取值有：
 <ul><li> **1**：模板</li>
 <li> **2**：文件（默认值）</li></ul>
@@ -357,6 +347,16 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 资源id，与ResourceType相对应，取值范围：
+<ul>
+<li>文件Id（通过UploadFiles获取文件资源Id）</li>
+<li>模板Id</li>
+</ul>
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                     /**
                      * 合同流程配置信息，用于配置发起合同时定制化如是否允许修改，某些按钮的隐藏等逻辑

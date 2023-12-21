@@ -509,15 +509,15 @@ namespace TencentCloud
                     bool EndDelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取直播方式：0 常规模式（默认）1 回放直播模式（伪直播）
-                     * @return LiveType 直播方式：0 常规模式（默认）1 回放直播模式（伪直播）
+                     * 获取直播类型：0 常规（默认）1 伪直播
+                     * @return LiveType 直播类型：0 常规（默认）1 伪直播
                      * 
                      */
                     uint64_t GetLiveType() const;
 
                     /**
-                     * 设置直播方式：0 常规模式（默认）1 回放直播模式（伪直播）
-                     * @param _liveType 直播方式：0 常规模式（默认）1 回放直播模式（伪直播）
+                     * 设置直播类型：0 常规（默认）1 伪直播
+                     * @param _liveType 直播类型：0 常规（默认）1 伪直播
                      * 
                      */
                     void SetLiveType(const uint64_t& _liveType);
@@ -570,6 +570,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EnableAutoStartHasBeenSet() const;
+
+                    /**
+                     * 获取录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+                     * @return RecordBackground 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+                     * 
+                     */
+                    std::string GetRecordBackground() const;
+
+                    /**
+                     * 设置录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+                     * @param _recordBackground 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+                     * 
+                     */
+                    void SetRecordBackground(const std::string& _recordBackground);
+
+                    /**
+                     * 判断参数 RecordBackground 是否已赋值
+                     * @return RecordBackground 是否已赋值
+                     * 
+                     */
+                    bool RecordBackgroundHasBeenSet() const;
 
                 private:
 
@@ -706,7 +727,7 @@ namespace TencentCloud
                     bool m_endDelayTimeHasBeenSet;
 
                     /**
-                     * 直播方式：0 常规模式（默认）1 回放直播模式（伪直播）
+                     * 直播类型：0 常规（默认）1 伪直播
                      */
                     uint64_t m_liveType;
                     bool m_liveTypeHasBeenSet;
@@ -722,6 +743,12 @@ namespace TencentCloud
                      */
                     uint64_t m_enableAutoStart;
                     bool m_enableAutoStartHasBeenSet;
+
+                    /**
+                     * 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+                     */
+                    std::string m_recordBackground;
+                    bool m_recordBackgroundHasBeenSet;
 
                 };
             }

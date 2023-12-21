@@ -35,15 +35,15 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_needPreviewHasBeenSet(false),
     m_previewTypeHasBeenSet(false),
     m_deadlineHasBeenSet(false),
-    m_remindedOnHasBeenSet(false),
     m_unorderedHasBeenSet(false),
-    m_customShowMapHasBeenSet(false),
-    m_needSignReviewHasBeenSet(false),
     m_userDataHasBeenSet(false),
+    m_remindedOnHasBeenSet(false),
     m_approverVerifyTypeHasBeenSet(false),
     m_signBeanTagHasBeenSet(false),
+    m_customShowMapHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_autoSignSceneHasBeenSet(false)
+    m_autoSignSceneHasBeenSet(false),
+    m_needSignReviewHasBeenSet(false)
 {
 }
 
@@ -177,14 +177,6 @@ string CreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, m_deadline, allocator);
     }
 
-    if (m_remindedOnHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RemindedOn";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_remindedOn, allocator);
-    }
-
     if (m_unorderedHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -193,28 +185,20 @@ string CreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, m_unordered, allocator);
     }
 
-    if (m_customShowMapHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomShowMap";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_customShowMap.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_needSignReviewHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NeedSignReview";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_needSignReview, allocator);
-    }
-
     if (m_userDataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remindedOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemindedOn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_remindedOn, allocator);
     }
 
     if (m_approverVerifyTypeHasBeenSet)
@@ -233,6 +217,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, m_signBeanTag, allocator);
     }
 
+    if (m_customShowMapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomShowMap";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customShowMap.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -248,6 +240,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "AutoSignScene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_autoSignScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needSignReviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedSignReview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needSignReview, allocator);
     }
 
 
@@ -450,22 +450,6 @@ bool CreateFlowByFilesRequest::DeadlineHasBeenSet() const
     return m_deadlineHasBeenSet;
 }
 
-int64_t CreateFlowByFilesRequest::GetRemindedOn() const
-{
-    return m_remindedOn;
-}
-
-void CreateFlowByFilesRequest::SetRemindedOn(const int64_t& _remindedOn)
-{
-    m_remindedOn = _remindedOn;
-    m_remindedOnHasBeenSet = true;
-}
-
-bool CreateFlowByFilesRequest::RemindedOnHasBeenSet() const
-{
-    return m_remindedOnHasBeenSet;
-}
-
 bool CreateFlowByFilesRequest::GetUnordered() const
 {
     return m_unordered;
@@ -482,38 +466,6 @@ bool CreateFlowByFilesRequest::UnorderedHasBeenSet() const
     return m_unorderedHasBeenSet;
 }
 
-string CreateFlowByFilesRequest::GetCustomShowMap() const
-{
-    return m_customShowMap;
-}
-
-void CreateFlowByFilesRequest::SetCustomShowMap(const string& _customShowMap)
-{
-    m_customShowMap = _customShowMap;
-    m_customShowMapHasBeenSet = true;
-}
-
-bool CreateFlowByFilesRequest::CustomShowMapHasBeenSet() const
-{
-    return m_customShowMapHasBeenSet;
-}
-
-bool CreateFlowByFilesRequest::GetNeedSignReview() const
-{
-    return m_needSignReview;
-}
-
-void CreateFlowByFilesRequest::SetNeedSignReview(const bool& _needSignReview)
-{
-    m_needSignReview = _needSignReview;
-    m_needSignReviewHasBeenSet = true;
-}
-
-bool CreateFlowByFilesRequest::NeedSignReviewHasBeenSet() const
-{
-    return m_needSignReviewHasBeenSet;
-}
-
 string CreateFlowByFilesRequest::GetUserData() const
 {
     return m_userData;
@@ -528,6 +480,22 @@ void CreateFlowByFilesRequest::SetUserData(const string& _userData)
 bool CreateFlowByFilesRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+int64_t CreateFlowByFilesRequest::GetRemindedOn() const
+{
+    return m_remindedOn;
+}
+
+void CreateFlowByFilesRequest::SetRemindedOn(const int64_t& _remindedOn)
+{
+    m_remindedOn = _remindedOn;
+    m_remindedOnHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::RemindedOnHasBeenSet() const
+{
+    return m_remindedOnHasBeenSet;
 }
 
 string CreateFlowByFilesRequest::GetApproverVerifyType() const
@@ -562,6 +530,22 @@ bool CreateFlowByFilesRequest::SignBeanTagHasBeenSet() const
     return m_signBeanTagHasBeenSet;
 }
 
+string CreateFlowByFilesRequest::GetCustomShowMap() const
+{
+    return m_customShowMap;
+}
+
+void CreateFlowByFilesRequest::SetCustomShowMap(const string& _customShowMap)
+{
+    m_customShowMap = _customShowMap;
+    m_customShowMapHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::CustomShowMapHasBeenSet() const
+{
+    return m_customShowMapHasBeenSet;
+}
+
 Agent CreateFlowByFilesRequest::GetAgent() const
 {
     return m_agent;
@@ -592,6 +576,22 @@ void CreateFlowByFilesRequest::SetAutoSignScene(const string& _autoSignScene)
 bool CreateFlowByFilesRequest::AutoSignSceneHasBeenSet() const
 {
     return m_autoSignSceneHasBeenSet;
+}
+
+bool CreateFlowByFilesRequest::GetNeedSignReview() const
+{
+    return m_needSignReview;
+}
+
+void CreateFlowByFilesRequest::SetNeedSignReview(const bool& _needSignReview)
+{
+    m_needSignReview = _needSignReview;
+    m_needSignReviewHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::NeedSignReviewHasBeenSet() const
+{
+    return m_needSignReviewHasBeenSet;
 }
 
 

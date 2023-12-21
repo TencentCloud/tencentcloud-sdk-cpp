@@ -882,13 +882,13 @@ namespace TencentCloud
                     bool FilterModalHasBeenSet() const;
 
                     /**
-                     * 获取单标点最多字数
+                     * 获取单标点最多字数（目前仅支持8k_zh/16k_zh引擎）
 **可控制单行字幕最大字数，适用于字幕生成场景**，取值范围：[6，40]
 0：不开启该功能；
 默认值为0
 
 注意：需设置ResTextFormat为3，解析返回的ResultDetail列表，通过结构中FinalSentence获取单个标点断句结果
-                     * @return SentenceMaxLength 单标点最多字数
+                     * @return SentenceMaxLength 单标点最多字数（目前仅支持8k_zh/16k_zh引擎）
 **可控制单行字幕最大字数，适用于字幕生成场景**，取值范围：[6，40]
 0：不开启该功能；
 默认值为0
@@ -899,13 +899,13 @@ namespace TencentCloud
                     int64_t GetSentenceMaxLength() const;
 
                     /**
-                     * 设置单标点最多字数
+                     * 设置单标点最多字数（目前仅支持8k_zh/16k_zh引擎）
 **可控制单行字幕最大字数，适用于字幕生成场景**，取值范围：[6，40]
 0：不开启该功能；
 默认值为0
 
 注意：需设置ResTextFormat为3，解析返回的ResultDetail列表，通过结构中FinalSentence获取单个标点断句结果
-                     * @param _sentenceMaxLength 单标点最多字数
+                     * @param _sentenceMaxLength 单标点最多字数（目前仅支持8k_zh/16k_zh引擎）
 **可控制单行字幕最大字数，适用于字幕生成场景**，取值范围：[6，40]
 0：不开启该功能；
 默认值为0
@@ -1170,7 +1170,7 @@ namespace TencentCloud
                     bool m_filterModalHasBeenSet;
 
                     /**
-                     * 单标点最多字数
+                     * 单标点最多字数（目前仅支持8k_zh/16k_zh引擎）
 **可控制单行字幕最大字数，适用于字幕生成场景**，取值范围：[6，40]
 0：不开启该功能；
 默认值为0

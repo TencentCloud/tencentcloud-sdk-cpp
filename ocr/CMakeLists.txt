@@ -58,6 +58,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceItem.h
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertInfo.h
+  include/tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/FlightItem.h
   include/tencentcloud/ocr/v20181119/model/Value.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h
@@ -119,7 +120,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/RecognizePhilippinesSssIDOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/Key.h
-  include/tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicAirTransport.h
   include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/DutyPaidProofOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TollInvoiceOCRRequest.h
@@ -157,6 +158,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/PassportOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TextDetectRequest.h
   include/tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicAirTransportDetail.h
   include/tencentcloud/ocr/v20181119/model/WordCoordPoint.h
   include/tencentcloud/ocr/v20181119/model/LicensePlateOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralBasicOCRRequest.h
@@ -190,6 +192,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/TextTable.h
   include/tencentcloud/ocr/v20181119/model/FinanBillSliceInfo.h
   include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicTrainTicket.h
   include/tencentcloud/ocr/v20181119/model/ArithmeticOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/NonTaxIncomeBill.h
   include/tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRRequest.h
@@ -333,6 +336,7 @@ set(ocr_src
   src/v20181119/model/HmtResidentPermitOCRResponse.cpp
   src/v20181119/model/VatInvoiceItem.cpp
   src/v20181119/model/VehicleRegCertInfo.cpp
+  src/v20181119/model/IDCardOCRResponse.cpp
   src/v20181119/model/FlightItem.cpp
   src/v20181119/model/Value.cpp
   src/v20181119/model/EnterpriseLicenseOCRResponse.cpp
@@ -394,7 +398,7 @@ set(ocr_src
   src/v20181119/model/VehicleLicenseOCRResponse.cpp
   src/v20181119/model/RecognizePhilippinesSssIDOCRRequest.cpp
   src/v20181119/model/Key.cpp
-  src/v20181119/model/IDCardOCRResponse.cpp
+  src/v20181119/model/ElectronicAirTransport.cpp
   src/v20181119/model/ClassifyDetectOCRRequest.cpp
   src/v20181119/model/DutyPaidProofOCRResponse.cpp
   src/v20181119/model/TollInvoiceOCRRequest.cpp
@@ -432,6 +436,7 @@ set(ocr_src
   src/v20181119/model/PassportOCRResponse.cpp
   src/v20181119/model/TextDetectRequest.cpp
   src/v20181119/model/RecognizeTravelCardOCRResponse.cpp
+  src/v20181119/model/ElectronicAirTransportDetail.cpp
   src/v20181119/model/WordCoordPoint.cpp
   src/v20181119/model/LicensePlateOCRRequest.cpp
   src/v20181119/model/GeneralBasicOCRRequest.cpp
@@ -465,6 +470,7 @@ set(ocr_src
   src/v20181119/model/TextTable.cpp
   src/v20181119/model/FinanBillSliceInfo.cpp
   src/v20181119/model/RideHailingDriverLicenseOCRRequest.cpp
+  src/v20181119/model/ElectronicTrainTicket.cpp
   src/v20181119/model/ArithmeticOCRRequest.cpp
   src/v20181119/model/NonTaxIncomeBill.cpp
   src/v20181119/model/VerifyOfdVatInvoiceOCRRequest.cpp

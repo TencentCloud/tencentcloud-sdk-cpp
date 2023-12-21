@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取枚举值：TRAIN、NOTEBOOK、INFERENCE
-                     * @return TaskType 枚举值：TRAIN、NOTEBOOK、INFERENCE
-                     * 
-                     */
-                    std::string GetTaskType() const;
-
-                    /**
-                     * 设置枚举值：TRAIN、NOTEBOOK、INFERENCE
-                     * @param _taskType 枚举值：TRAIN、NOTEBOOK、INFERENCE
-                     * 
-                     */
-                    void SetTaskType(const std::string& _taskType);
-
-                    /**
-                     * 判断参数 TaskType 是否已赋值
-                     * @return TaskType 是否已赋值
-                     * 
-                     */
-                    bool TaskTypeHasBeenSet() const;
-
-                    /**
                      * 获取付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
                      * @return ChargeType 付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
                      * 
@@ -83,6 +62,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取枚举值：TRAIN、NOTEBOOK、INFERENCE
+                     * @return TaskType 枚举值：TRAIN、NOTEBOOK、INFERENCE
+                     * 
+                     */
+                    std::string GetTaskType() const;
+
+                    /**
+                     * 设置枚举值：TRAIN、NOTEBOOK、INFERENCE
+                     * @param _taskType 枚举值：TRAIN、NOTEBOOK、INFERENCE
+                     * 
+                     */
+                    void SetTaskType(const std::string& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取资源类型：CALC 计算资源、CPU CPU资源、GPU GPU资源、CBS云硬盘
@@ -108,16 +108,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 枚举值：TRAIN、NOTEBOOK、INFERENCE
-                     */
-                    std::string m_taskType;
-                    bool m_taskTypeHasBeenSet;
-
-                    /**
                      * 付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 枚举值：TRAIN、NOTEBOOK、INFERENCE
+                     */
+                    std::string m_taskType;
+                    bool m_taskTypeHasBeenSet;
 
                     /**
                      * 资源类型：CALC 计算资源、CPU CPU资源、GPU GPU资源、CBS云硬盘

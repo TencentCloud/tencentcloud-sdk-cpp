@@ -26,7 +26,6 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/RabbitMQClusterWhiteListInfo.h
   include/tencentcloud/tdmq/v20200217/model/CreateProClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/CmqDeadLetterPolicy.h
-  include/tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRabbitMQUserRequest.h
   include/tencentcloud/tdmq/v20200217/model/RocketMQNamespace.h
   include/tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsRequest.h
@@ -249,7 +248,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/ConsumerLog.h
   include/tencentcloud/tdmq/v20200217/model/DeleteTopicsRequest.h
   include/tencentcloud/tdmq/v20200217/model/CmqTransactionPolicy.h
-  include/tencentcloud/tdmq/v20200217/model/BundleSetOpt.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyTopicRequest.h
   include/tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleResponse.h
@@ -369,7 +368,6 @@ set(tdmq_src
   src/v20200217/model/RabbitMQClusterWhiteListInfo.cpp
   src/v20200217/model/CreateProClusterResponse.cpp
   src/v20200217/model/CmqDeadLetterPolicy.cpp
-  src/v20200217/model/DescribeNamespaceBundlesOptRequest.cpp
   src/v20200217/model/DeleteRabbitMQUserRequest.cpp
   src/v20200217/model/RocketMQNamespace.cpp
   src/v20200217/model/DescribeSubscriptionsRequest.cpp
@@ -592,7 +590,7 @@ set(tdmq_src
   src/v20200217/model/ConsumerLog.cpp
   src/v20200217/model/DeleteTopicsRequest.cpp
   src/v20200217/model/CmqTransactionPolicy.cpp
-  src/v20200217/model/BundleSetOpt.cpp
+  src/v20200217/model/DescribeNamespaceBundlesOptRequest.cpp
   src/v20200217/model/ModifyTopicRequest.cpp
   src/v20200217/model/ResetMsgSubOffsetByTimestampRequest.cpp
   src/v20200217/model/CreateEnvironmentRoleResponse.cpp

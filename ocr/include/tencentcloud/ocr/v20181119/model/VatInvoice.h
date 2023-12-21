@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 增值税发票信息
+                * 增值税发票、购车发票、全电发票的基础要素字段信息。
                 */
                 class VatInvoice : public AbstractModel
                 {
@@ -112,14 +112,18 @@ namespace TencentCloud
 
                     /**
                      * 获取购方抬头
+通用机打发票类型时不返回
                      * @return BuyerName 购方抬头
+通用机打发票类型时不返回
                      * 
                      */
                     std::string GetBuyerName() const;
 
                     /**
                      * 设置购方抬头
+通用机打发票类型时不返回
                      * @param _buyerName 购方抬头
+通用机打发票类型时不返回
                      * 
                      */
                     void SetBuyerName(const std::string& _buyerName);
@@ -133,14 +137,18 @@ namespace TencentCloud
 
                     /**
                      * 获取购方税号
+通用机打发票类型时不返回
                      * @return BuyerTaxCode 购方税号
+通用机打发票类型时不返回
                      * 
                      */
                     std::string GetBuyerTaxCode() const;
 
                     /**
                      * 设置购方税号
+通用机打发票类型时不返回
                      * @param _buyerTaxCode 购方税号
+通用机打发票类型时不返回
                      * 
                      */
                     void SetBuyerTaxCode(const std::string& _buyerTaxCode);
@@ -154,14 +162,18 @@ namespace TencentCloud
 
                     /**
                      * 获取购方地址电话
+通用机打发票类型做不返回
                      * @return BuyerAddressPhone 购方地址电话
+通用机打发票类型做不返回
                      * 
                      */
                     std::string GetBuyerAddressPhone() const;
 
                     /**
                      * 设置购方地址电话
+通用机打发票类型做不返回
                      * @param _buyerAddressPhone 购方地址电话
+通用机打发票类型做不返回
                      * 
                      */
                     void SetBuyerAddressPhone(const std::string& _buyerAddressPhone);
@@ -175,14 +187,18 @@ namespace TencentCloud
 
                     /**
                      * 获取购方银行账号
+通用机打发票类型时不返回
                      * @return BuyerBankAccount 购方银行账号
+通用机打发票类型时不返回
                      * 
                      */
                     std::string GetBuyerBankAccount() const;
 
                     /**
                      * 设置购方银行账号
+通用机打发票类型时不返回
                      * @param _buyerBankAccount 购方银行账号
+通用机打发票类型时不返回
                      * 
                      */
                     void SetBuyerBankAccount(const std::string& _buyerBankAccount);
@@ -333,6 +349,8 @@ namespace TencentCloud
 15：二手车销售统一发票，
 32：深圳区块链发票，
 102：通用机打电子发票
+61：电子发票（航空运输电子客票行程单）
+83：电子发票（铁路电子发票）
                      * @return Type 票种类型
 01：增值税专用发票，
 02：货运运输业增值税专用发票，
@@ -345,6 +363,8 @@ namespace TencentCloud
 15：二手车销售统一发票，
 32：深圳区块链发票，
 102：通用机打电子发票
+61：电子发票（航空运输电子客票行程单）
+83：电子发票（铁路电子发票）
                      * 
                      */
                     std::string GetType() const;
@@ -362,6 +382,8 @@ namespace TencentCloud
 15：二手车销售统一发票，
 32：深圳区块链发票，
 102：通用机打电子发票
+61：电子发票（航空运输电子客票行程单）
+83：电子发票（铁路电子发票）
                      * @param _type 票种类型
 01：增值税专用发票，
 02：货运运输业增值税专用发票，
@@ -374,6 +396,8 @@ namespace TencentCloud
 15：二手车销售统一发票，
 32：深圳区块链发票，
 102：通用机打电子发票
+61：电子发票（航空运输电子客票行程单）
+83：电子发票（铁路电子发票）
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -384,6 +408,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单
+                     * @return ElectronicType 具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单
+                     * 
+                     */
+                    std::string GetElectronicType() const;
+
+                    /**
+                     * 设置具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单
+                     * @param _electronicType 具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单
+                     * 
+                     */
+                    void SetElectronicType(const std::string& _electronicType);
+
+                    /**
+                     * 判断参数 ElectronicType 是否已赋值
+                     * @return ElectronicType 是否已赋值
+                     * 
+                     */
+                    bool ElectronicTypeHasBeenSet() const;
 
                     /**
                      * 获取检验码
@@ -742,24 +787,28 @@ Y: 有清单 N：无清单
 
                     /**
                      * 购方抬头
+通用机打发票类型时不返回
                      */
                     std::string m_buyerName;
                     bool m_buyerNameHasBeenSet;
 
                     /**
                      * 购方税号
+通用机打发票类型时不返回
                      */
                     std::string m_buyerTaxCode;
                     bool m_buyerTaxCodeHasBeenSet;
 
                     /**
                      * 购方地址电话
+通用机打发票类型做不返回
                      */
                     std::string m_buyerAddressPhone;
                     bool m_buyerAddressPhoneHasBeenSet;
 
                     /**
                      * 购方银行账号
+通用机打发票类型时不返回
                      */
                     std::string m_buyerBankAccount;
                     bool m_buyerBankAccountHasBeenSet;
@@ -813,9 +862,17 @@ Y: 有清单 N：无清单
 15：二手车销售统一发票，
 32：深圳区块链发票，
 102：通用机打电子发票
+61：电子发票（航空运输电子客票行程单）
+83：电子发票（铁路电子发票）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单
+                     */
+                    std::string m_electronicType;
+                    bool m_electronicTypeHasBeenSet;
 
                     /**
                      * 检验码

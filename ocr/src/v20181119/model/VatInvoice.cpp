@@ -35,6 +35,7 @@ VatInvoice::VatInvoice() :
     m_remarkHasBeenSet(false),
     m_machineNoHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_electronicTypeHasBeenSet(false),
     m_checkCodeHasBeenSet(false),
     m_isAbandonedHasBeenSet(false),
     m_hasSellerListHasBeenSet(false),
@@ -196,6 +197,16 @@ CoreInternalOutcome VatInvoice::Deserialize(const rapidjson::Value &value)
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElectronicType") && !value["ElectronicType"].IsNull())
+    {
+        if (!value["ElectronicType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.ElectronicType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_electronicType = string(value["ElectronicType"].GetString());
+        m_electronicTypeHasBeenSet = true;
     }
 
     if (value.HasMember("CheckCode") && !value["CheckCode"].IsNull())
@@ -475,6 +486,14 @@ void VatInvoice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_electronicTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElectronicType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_electronicType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_checkCodeHasBeenSet)
@@ -829,6 +848,22 @@ void VatInvoice::SetType(const string& _type)
 bool VatInvoice::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string VatInvoice::GetElectronicType() const
+{
+    return m_electronicType;
+}
+
+void VatInvoice::SetElectronicType(const string& _electronicType)
+{
+    m_electronicType = _electronicType;
+    m_electronicTypeHasBeenSet = true;
+}
+
+bool VatInvoice::ElectronicTypeHasBeenSet() const
+{
+    return m_electronicTypeHasBeenSet;
 }
 
 string VatInvoice::GetCheckCode() const

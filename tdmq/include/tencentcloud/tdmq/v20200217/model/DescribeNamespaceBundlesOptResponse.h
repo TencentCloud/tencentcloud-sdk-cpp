@@ -21,7 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tdmq/v20200217/model/BundleSetOpt.h>
 
 
 namespace TencentCloud
@@ -58,20 +57,6 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
-                    /**
-                     * 获取bundle列表
-                     * @return BundleSet bundle列表
-                     * 
-                     */
-                    std::vector<BundleSetOpt> GetBundleSet() const;
-
-                    /**
-                     * 判断参数 BundleSet 是否已赋值
-                     * @return BundleSet 是否已赋值
-                     * 
-                     */
-                    bool BundleSetHasBeenSet() const;
-
                 private:
 
                     /**
@@ -79,12 +64,6 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
-
-                    /**
-                     * bundle列表
-                     */
-                    std::vector<BundleSetOpt> m_bundleSet;
-                    bool m_bundleSetHasBeenSet;
 
                 };
             }
