@@ -80,8 +80,8 @@ namespace TencentCloud
 <li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>
 <li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>
 <li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>
-<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>
-<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>
+<li>PREVIEW_FLOW：生成预览合同的嵌入页面（支持移动端）</li>
+<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面（仅支持PC端）</li></ul>
                      * @return EmbedType WEB嵌入资源类型，支持以下类型
 <ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>
 <li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>
@@ -90,8 +90,8 @@ namespace TencentCloud
 <li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>
 <li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>
 <li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>
-<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>
-<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>
+<li>PREVIEW_FLOW：生成预览合同的嵌入页面（支持移动端）</li>
+<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面（仅支持PC端）</li></ul>
                      * 
                      */
                     std::string GetEmbedType() const;
@@ -105,8 +105,8 @@ namespace TencentCloud
 <li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>
 <li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>
 <li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>
-<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>
-<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>
+<li>PREVIEW_FLOW：生成预览合同的嵌入页面（支持移动端）</li>
+<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面（仅支持PC端）</li></ul>
                      * @param _embedType WEB嵌入资源类型，支持以下类型
 <ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>
 <li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>
@@ -115,8 +115,8 @@ namespace TencentCloud
 <li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>
 <li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>
 <li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>
-<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>
-<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>
+<li>PREVIEW_FLOW：生成预览合同的嵌入页面（支持移动端）</li>
+<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面（仅支持PC端）</li></ul>
                      * 
                      */
                     void SetEmbedType(const std::string& _embedType);
@@ -311,8 +311,8 @@ namespace TencentCloud
 <li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>
 <li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>
 <li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>
-<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>
-<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>
+<li>PREVIEW_FLOW：生成预览合同的嵌入页面（支持移动端）</li>
+<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面（仅支持PC端）</li></ul>
                      */
                     std::string m_embedType;
                     bool m_embedTypeHasBeenSet;

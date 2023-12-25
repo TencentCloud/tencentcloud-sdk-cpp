@@ -1008,7 +1008,8 @@ namespace TencentCloud
                 CreateDomainVerifyRecordOutcomeCallable CreateDomainVerifyRecordCallable(const Model::CreateDomainVerifyRecordRequest& request);
 
                 /**
-                 *创建音画质重生模板。
+                 *该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。
+创建音画质重生模板。
                  * @param req CreateEnhanceMediaTemplateRequest
                  * @return CreateEnhanceMediaTemplateOutcome
                  */
@@ -1080,7 +1081,8 @@ namespace TencentCloud
                 CreateQualityInspectTemplateOutcomeCallable CreateQualityInspectTemplateCallable(const Model::CreateQualityInspectTemplateRequest& request);
 
                 /**
-                 *创建视频重生模板。
+                 *该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。
+创建视频重生模板。
                  * @param req CreateRebuildMediaTemplateRequest
                  * @return CreateRebuildMediaTemplateOutcome
                  */
@@ -1253,7 +1255,8 @@ namespace TencentCloud
                 DeleteContentReviewTemplateOutcomeCallable DeleteContentReviewTemplateCallable(const Model::DeleteContentReviewTemplateRequest& request);
 
                 /**
-                 *删除音画质重生模板。
+                 *该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。
+删除音画质重生模板。
                  * @param req DeleteEnhanceMediaTemplateRequest
                  * @return DeleteEnhanceMediaTemplateOutcome
                  */
@@ -1336,7 +1339,8 @@ namespace TencentCloud
                 DeleteQualityInspectTemplateOutcomeCallable DeleteQualityInspectTemplateCallable(const Model::DeleteQualityInspectTemplateRequest& request);
 
                 /**
-                 *删除视频重生模板。
+                 *该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。
+删除视频重生模板。
                  * @param req DeleteRebuildMediaTemplateRequest
                  * @return DeleteRebuildMediaTemplateOutcome
                  */
@@ -1595,7 +1599,8 @@ namespace TencentCloud
                 DescribeDrmKeyProviderInfoOutcomeCallable DescribeDrmKeyProviderInfoCallable(const Model::DescribeDrmKeyProviderInfoRequest& request);
 
                 /**
-                 *获取音画质重生模板列表。
+                 *该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。
+获取音画质重生模板列表。
                  * @param req DescribeEnhanceMediaTemplatesRequest
                  * @return DescribeEnhanceMediaTemplatesOutcome
                  */
@@ -1778,7 +1783,8 @@ namespace TencentCloud
                 DescribeQualityInspectTemplatesOutcomeCallable DescribeQualityInspectTemplatesCallable(const Model::DescribeQualityInspectTemplatesRequest& request);
 
                 /**
-                 *获取视频重生模板列表。
+                 *该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。
+获取视频重生模板列表。
                  * @param req DescribeRebuildMediaTemplatesRequest
                  * @return DescribeRebuildMediaTemplatesOutcome
                  */
@@ -1969,7 +1975,8 @@ namespace TencentCloud
                 EditMediaOutcomeCallable EditMediaCallable(const Model::EditMediaRequest& request);
 
                 /**
-                 *使用模板发起音画质重生。
+                 *该 API 已经<font color=red>不再维护</font>，请使用新版接口 [音画质重生](https://cloud.tencent.com/document/api/266/102571)。
+使用模板发起音画质重生。
                  * @param req EnhanceMediaByTemplateRequest
                  * @return EnhanceMediaByTemplateOutcome
                  */
@@ -2140,7 +2147,8 @@ namespace TencentCloud
                 ModifyDefaultStorageRegionOutcomeCallable ModifyDefaultStorageRegionCallable(const Model::ModifyDefaultStorageRegionRequest& request);
 
                 /**
-                 *修改音画质重生模板。
+                 *该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。
+修改音画质重生模板。
                  * @param req ModifyEnhanceMediaTemplateRequest
                  * @return ModifyEnhanceMediaTemplateOutcome
                  */
@@ -2238,7 +2246,8 @@ namespace TencentCloud
                 ModifyQualityInspectTemplateOutcomeCallable ModifyQualityInspectTemplateCallable(const Model::ModifyQualityInspectTemplateRequest& request);
 
                 /**
-                 *修改视频重生模板。
+                 *该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。
+修改视频重生模板。
                  * @param req ModifyRebuildMediaTemplateRequest
                  * @return ModifyRebuildMediaTemplateOutcome
                  */
@@ -2465,7 +2474,8 @@ namespace TencentCloud
                 PushUrlCacheOutcomeCallable PushUrlCacheCallable(const Model::PushUrlCacheRequest& request);
 
                 /**
-                 *发起音画质重生
+                 *该 API 已经<font color=red>不再维护</font>，请使用新版接口 [音画质重生](https://cloud.tencent.com/document/api/266/102571)。
+发起音画质重生
                  * @param req RebuildMediaRequest
                  * @return RebuildMediaOutcome
                  */
@@ -2474,7 +2484,8 @@ namespace TencentCloud
                 RebuildMediaOutcomeCallable RebuildMediaCallable(const Model::RebuildMediaRequest& request);
 
                 /**
-                 *使用模板发起视频重生。
+                 *该 API 已经<font color=red>不再维护</font>，请使用新版接口 [音画质重生](https://cloud.tencent.com/document/api/266/102571)。
+使用模板发起视频重生。
                  * @param req RebuildMediaByTemplateRequest
                  * @return RebuildMediaByTemplateOutcome
                  */

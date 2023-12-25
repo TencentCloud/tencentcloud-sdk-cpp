@@ -142,6 +142,27 @@ namespace TencentCloud
                      */
                     bool CosFileNameHasBeenSet() const;
 
+                    /**
+                     * 获取备注
+                     * @return Remark 备注
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注
+                     * @param _remark 备注
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +191,12 @@ namespace TencentCloud
                      */
                     std::string m_cosFileName;
                     bool m_cosFileNameHasBeenSet;
+
+                    /**
+                     * 备注
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                 };
             }

@@ -126,6 +126,27 @@ namespace TencentCloud
                     bool NodeFlagHasBeenSet() const;
 
                     /**
+                     * 获取导出全部节点信息csv时是否携带cdb信息
+                     * @return ExportDb 导出全部节点信息csv时是否携带cdb信息
+                     * 
+                     */
+                    bool GetExportDb() const;
+
+                    /**
+                     * 设置导出全部节点信息csv时是否携带cdb信息
+                     * @param _exportDb 导出全部节点信息csv时是否携带cdb信息
+                     * 
+                     */
+                    void SetExportDb(const bool& _exportDb);
+
+                    /**
+                     * 判断参数 ExportDb 是否已赋值
+                     * @return ExportDb 是否已赋值
+                     * 
+                     */
+                    bool ExportDbHasBeenSet() const;
+
+                    /**
                      * 获取页编号，默认值为0，表示第一页。
                      * @return Offset 页编号，默认值为0，表示第一页。
                      * 
@@ -274,6 +295,12 @@ namespace TencentCloud
                      */
                     std::string m_nodeFlag;
                     bool m_nodeFlagHasBeenSet;
+
+                    /**
+                     * 导出全部节点信息csv时是否携带cdb信息
+                     */
+                    bool m_exportDb;
+                    bool m_exportDbHasBeenSet;
 
                     /**
                      * 页编号，默认值为0，表示第一页。

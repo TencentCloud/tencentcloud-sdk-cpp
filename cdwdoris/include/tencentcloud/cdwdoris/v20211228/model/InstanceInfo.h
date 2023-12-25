@@ -1047,6 +1047,56 @@ Modify 集群变更中；
                      */
                     bool RestartTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取内核优雅重启超时时间，如果为-1说明未设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GraceShutdownWaitSeconds 内核优雅重启超时时间，如果为-1说明未设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGraceShutdownWaitSeconds() const;
+
+                    /**
+                     * 设置内核优雅重启超时时间，如果为-1说明未设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _graceShutdownWaitSeconds 内核优雅重启超时时间，如果为-1说明未设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGraceShutdownWaitSeconds(const std::string& _graceShutdownWaitSeconds);
+
+                    /**
+                     * 判断参数 GraceShutdownWaitSeconds 是否已赋值
+                     * @return GraceShutdownWaitSeconds 是否已赋值
+                     * 
+                     */
+                    bool GraceShutdownWaitSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CaseSensitive 表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCaseSensitive() const;
+
+                    /**
+                     * 设置表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _caseSensitive 表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCaseSensitive(const int64_t& _caseSensitive);
+
+                    /**
+                     * 判断参数 CaseSensitive 是否已赋值
+                     * @return CaseSensitive 是否已赋值
+                     * 
+                     */
+                    bool CaseSensitiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1327,6 +1377,20 @@ Modify 集群变更中；
                      */
                     std::string m_restartTimeout;
                     bool m_restartTimeoutHasBeenSet;
+
+                    /**
+                     * 内核优雅重启超时时间，如果为-1说明未设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_graceShutdownWaitSeconds;
+                    bool m_graceShutdownWaitSecondsHasBeenSet;
+
+                    /**
+                     * 表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_caseSensitive;
+                    bool m_caseSensitiveHasBeenSet;
 
                 };
             }

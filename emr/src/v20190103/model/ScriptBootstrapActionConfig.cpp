@@ -24,7 +24,8 @@ ScriptBootstrapActionConfig::ScriptBootstrapActionConfig() :
     m_cosFileURIHasBeenSet(false),
     m_executionMomentHasBeenSet(false),
     m_argsHasBeenSet(false),
-    m_cosFileNameHasBeenSet(false)
+    m_cosFileNameHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome ScriptBootstrapActionConfig::Deserialize(const rapidjson::Va
         m_cosFileNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScriptBootstrapActionConfig.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void ScriptBootstrapActionConfig::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "CosFileName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cosFileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void ScriptBootstrapActionConfig::SetCosFileName(const string& _cosFileName)
 bool ScriptBootstrapActionConfig::CosFileNameHasBeenSet() const
 {
     return m_cosFileNameHasBeenSet;
+}
+
+string ScriptBootstrapActionConfig::GetRemark() const
+{
+    return m_remark;
+}
+
+void ScriptBootstrapActionConfig::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool ScriptBootstrapActionConfig::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 

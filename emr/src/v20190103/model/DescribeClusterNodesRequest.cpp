@@ -25,6 +25,7 @@ using namespace std;
 DescribeClusterNodesRequest::DescribeClusterNodesRequest() :
     m_instanceIdHasBeenSet(false),
     m_nodeFlagHasBeenSet(false),
+    m_exportDbHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_hardwareResourceTypeHasBeenSet(false),
@@ -55,6 +56,14 @@ string DescribeClusterNodesRequest::ToJsonString() const
         string key = "NodeFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nodeFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exportDbHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExportDb";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_exportDb, allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -150,6 +159,22 @@ void DescribeClusterNodesRequest::SetNodeFlag(const string& _nodeFlag)
 bool DescribeClusterNodesRequest::NodeFlagHasBeenSet() const
 {
     return m_nodeFlagHasBeenSet;
+}
+
+bool DescribeClusterNodesRequest::GetExportDb() const
+{
+    return m_exportDb;
+}
+
+void DescribeClusterNodesRequest::SetExportDb(const bool& _exportDb)
+{
+    m_exportDb = _exportDb;
+    m_exportDbHasBeenSet = true;
+}
+
+bool DescribeClusterNodesRequest::ExportDbHasBeenSet() const
+{
+    return m_exportDbHasBeenSet;
 }
 
 int64_t DescribeClusterNodesRequest::GetOffset() const

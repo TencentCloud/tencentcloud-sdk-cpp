@@ -36,6 +36,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/HiveQuery.h
   include/tencentcloud/emr/v20190103/model/Step.h
   include/tencentcloud/emr/v20190103/model/KeyValue.h
+  include/tencentcloud/emr/v20190103/model/EmrProductConfigDetail.h
   include/tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsRequest.h
   include/tencentcloud/emr/v20190103/model/UserManagerFilter.h
   include/tencentcloud/emr/v20190103/model/MetaDbInfo.h
@@ -107,6 +108,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/SearchItem.h
   include/tencentcloud/emr/v20190103/model/CreateClusterRequest.h
   include/tencentcloud/emr/v20190103/model/UserAndGroup.h
+  include/tencentcloud/emr/v20190103/model/ResourceDetail.h
   include/tencentcloud/emr/v20190103/model/BootstrapAction.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeCvmQuotaRequest.h
@@ -195,6 +197,7 @@ set(emr_src
   src/v20190103/model/HiveQuery.cpp
   src/v20190103/model/Step.cpp
   src/v20190103/model/KeyValue.cpp
+  src/v20190103/model/EmrProductConfigDetail.cpp
   src/v20190103/model/DescribeEmrApplicationStaticsRequest.cpp
   src/v20190103/model/UserManagerFilter.cpp
   src/v20190103/model/MetaDbInfo.cpp
@@ -266,6 +269,7 @@ set(emr_src
   src/v20190103/model/SearchItem.cpp
   src/v20190103/model/CreateClusterRequest.cpp
   src/v20190103/model/UserAndGroup.cpp
+  src/v20190103/model/ResourceDetail.cpp
   src/v20190103/model/BootstrapAction.cpp
   src/v20190103/model/DescribeClusterNodesRequest.cpp
   src/v20190103/model/DescribeCvmQuotaRequest.cpp

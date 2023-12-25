@@ -142,10 +142,14 @@ namespace TencentCloud
 <ul>
 <li>支持自动签传递印章，可通过指定自动签控件id，指定印章id来完成</li>
 </ul>
+注：只有在控制台编辑模板时，<font color="red">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。
+![image](https://qcloudimg.tencent-cloud.cn/raw/a54a76a58c454593d06d8e9883ecc9b3.png)
                      * @return FormFields 电子文档的填写控件的填充内容。具体方式可以参考[FormField](https://qian.tencent.com/developers/companyApis/dataTypes/#formfield)结构体的定义。
 <ul>
 <li>支持自动签传递印章，可通过指定自动签控件id，指定印章id来完成</li>
 </ul>
+注：只有在控制台编辑模板时，<font color="red">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。
+![image](https://qcloudimg.tencent-cloud.cn/raw/a54a76a58c454593d06d8e9883ecc9b3.png)
                      * 
                      */
                     std::vector<FormField> GetFormFields() const;
@@ -155,10 +159,14 @@ namespace TencentCloud
 <ul>
 <li>支持自动签传递印章，可通过指定自动签控件id，指定印章id来完成</li>
 </ul>
+注：只有在控制台编辑模板时，<font color="red">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。
+![image](https://qcloudimg.tencent-cloud.cn/raw/a54a76a58c454593d06d8e9883ecc9b3.png)
                      * @param _formFields 电子文档的填写控件的填充内容。具体方式可以参考[FormField](https://qian.tencent.com/developers/companyApis/dataTypes/#formfield)结构体的定义。
 <ul>
 <li>支持自动签传递印章，可通过指定自动签控件id，指定印章id来完成</li>
 </ul>
+注：只有在控制台编辑模板时，<font color="red">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。
+![image](https://qcloudimg.tencent-cloud.cn/raw/a54a76a58c454593d06d8e9883ecc9b3.png)
                      * 
                      */
                     void SetFormFields(const std::vector<FormField>& _formFields);
@@ -319,6 +327,8 @@ namespace TencentCloud
 <ul>
 <li>支持自动签传递印章，可通过指定自动签控件id，指定印章id来完成</li>
 </ul>
+注：只有在控制台编辑模板时，<font color="red">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。
+![image](https://qcloudimg.tencent-cloud.cn/raw/a54a76a58c454593d06d8e9883ecc9b3.png)
                      */
                     std::vector<FormField> m_formFields;
                     bool m_formFieldsHasBeenSet;

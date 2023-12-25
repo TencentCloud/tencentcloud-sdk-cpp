@@ -59,7 +59,9 @@ InstanceInfo::InstanceInfo() :
     m_componentsHasBeenSet(false),
     m_ifExistCatalogHasBeenSet(false),
     m_characteristicHasBeenSet(false),
-    m_restartTimeoutHasBeenSet(false)
+    m_restartTimeoutHasBeenSet(false),
+    m_graceShutdownWaitSecondsHasBeenSet(false),
+    m_caseSensitiveHasBeenSet(false)
 {
 }
 
@@ -485,6 +487,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_restartTimeoutHasBeenSet = true;
     }
 
+    if (value.HasMember("GraceShutdownWaitSeconds") && !value["GraceShutdownWaitSeconds"].IsNull())
+    {
+        if (!value["GraceShutdownWaitSeconds"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.GraceShutdownWaitSeconds` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_graceShutdownWaitSeconds = string(value["GraceShutdownWaitSeconds"].GetString());
+        m_graceShutdownWaitSecondsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CaseSensitive") && !value["CaseSensitive"].IsNull())
+    {
+        if (!value["CaseSensitive"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CaseSensitive` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_caseSensitive = value["CaseSensitive"].GetInt64();
+        m_caseSensitiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -816,6 +838,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RestartTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_restartTimeout.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_graceShutdownWaitSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceShutdownWaitSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_graceShutdownWaitSeconds.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_caseSensitiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaseSensitive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_caseSensitive, allocator);
     }
 
 }
@@ -1443,5 +1481,37 @@ void InstanceInfo::SetRestartTimeout(const string& _restartTimeout)
 bool InstanceInfo::RestartTimeoutHasBeenSet() const
 {
     return m_restartTimeoutHasBeenSet;
+}
+
+string InstanceInfo::GetGraceShutdownWaitSeconds() const
+{
+    return m_graceShutdownWaitSeconds;
+}
+
+void InstanceInfo::SetGraceShutdownWaitSeconds(const string& _graceShutdownWaitSeconds)
+{
+    m_graceShutdownWaitSeconds = _graceShutdownWaitSeconds;
+    m_graceShutdownWaitSecondsHasBeenSet = true;
+}
+
+bool InstanceInfo::GraceShutdownWaitSecondsHasBeenSet() const
+{
+    return m_graceShutdownWaitSecondsHasBeenSet;
+}
+
+int64_t InstanceInfo::GetCaseSensitive() const
+{
+    return m_caseSensitive;
+}
+
+void InstanceInfo::SetCaseSensitive(const int64_t& _caseSensitive)
+{
+    m_caseSensitive = _caseSensitive;
+    m_caseSensitiveHasBeenSet = true;
+}
+
+bool InstanceInfo::CaseSensitiveHasBeenSet() const
+{
+    return m_caseSensitiveHasBeenSet;
 }
 

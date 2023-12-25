@@ -154,15 +154,27 @@ namespace TencentCloud
                     bool FlowApproversHasBeenSet() const;
 
                     /**
-                     * 获取表单K-V对列表
-                     * @return FormFields 表单K-V对列表
+                     * 获取发起方角色的填写控件的填充内容。
+
+注：只有在控制台编辑模板时，<font color="red">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。(<font color="red">白名单功能需要联系对接经理开通，否则模板编辑时无法将填写控件分配给发起方</font>)。
+![image](https://qcloudimg.tencent-cloud.cn/raw/b1d3978140ee2b44e2c9fdc96e467a5d.png)
+                     * @return FormFields 发起方角色的填写控件的填充内容。
+
+注：只有在控制台编辑模板时，<font color="red">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。(<font color="red">白名单功能需要联系对接经理开通，否则模板编辑时无法将填写控件分配给发起方</font>)。
+![image](https://qcloudimg.tencent-cloud.cn/raw/b1d3978140ee2b44e2c9fdc96e467a5d.png)
                      * 
                      */
                     std::vector<FormField> GetFormFields() const;
 
                     /**
-                     * 设置表单K-V对列表
-                     * @param _formFields 表单K-V对列表
+                     * 设置发起方角色的填写控件的填充内容。
+
+注：只有在控制台编辑模板时，<font color="red">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。(<font color="red">白名单功能需要联系对接经理开通，否则模板编辑时无法将填写控件分配给发起方</font>)。
+![image](https://qcloudimg.tencent-cloud.cn/raw/b1d3978140ee2b44e2c9fdc96e467a5d.png)
+                     * @param _formFields 发起方角色的填写控件的填充内容。
+
+注：只有在控制台编辑模板时，<font color="red">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。(<font color="red">白名单功能需要联系对接经理开通，否则模板编辑时无法将填写控件分配给发起方</font>)。
+![image](https://qcloudimg.tencent-cloud.cn/raw/b1d3978140ee2b44e2c9fdc96e467a5d.png)
                      * 
                      */
                     void SetFormFields(const std::vector<FormField>& _formFields);
@@ -511,7 +523,10 @@ namespace TencentCloud
                     bool m_flowApproversHasBeenSet;
 
                     /**
-                     * 表单K-V对列表
+                     * 发起方角色的填写控件的填充内容。
+
+注：只有在控制台编辑模板时，<font color="red">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。(<font color="red">白名单功能需要联系对接经理开通，否则模板编辑时无法将填写控件分配给发起方</font>)。
+![image](https://qcloudimg.tencent-cloud.cn/raw/b1d3978140ee2b44e2c9fdc96e467a5d.png)
                      */
                     std::vector<FormField> m_formFields;
                     bool m_formFieldsHasBeenSet;

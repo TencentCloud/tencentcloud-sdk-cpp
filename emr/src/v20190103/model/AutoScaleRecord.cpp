@@ -31,7 +31,9 @@ AutoScaleRecord::AutoScaleRecord() :
     m_strategyTypeHasBeenSet(false),
     m_specInfoHasBeenSet(false),
     m_compensateFlagHasBeenSet(false),
-    m_compensateCountHasBeenSet(false)
+    m_compensateCountHasBeenSet(false),
+    m_retryCountHasBeenSet(false),
+    m_retryInfoHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome AutoScaleRecord::Deserialize(const rapidjson::Value &value)
         m_compensateCountHasBeenSet = true;
     }
 
+    if (value.HasMember("RetryCount") && !value["RetryCount"].IsNull())
+    {
+        if (!value["RetryCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleRecord.RetryCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryCount = value["RetryCount"].GetUint64();
+        m_retryCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetryInfo") && !value["RetryInfo"].IsNull())
+    {
+        if (!value["RetryInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleRecord.RetryInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryInfo = string(value["RetryInfo"].GetString());
+        m_retryInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void AutoScaleRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CompensateCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_compensateCount, allocator);
+    }
+
+    if (m_retryCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retryCount, allocator);
+    }
+
+    if (m_retryInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_retryInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void AutoScaleRecord::SetCompensateCount(const int64_t& _compensateCount)
 bool AutoScaleRecord::CompensateCountHasBeenSet() const
 {
     return m_compensateCountHasBeenSet;
+}
+
+uint64_t AutoScaleRecord::GetRetryCount() const
+{
+    return m_retryCount;
+}
+
+void AutoScaleRecord::SetRetryCount(const uint64_t& _retryCount)
+{
+    m_retryCount = _retryCount;
+    m_retryCountHasBeenSet = true;
+}
+
+bool AutoScaleRecord::RetryCountHasBeenSet() const
+{
+    return m_retryCountHasBeenSet;
+}
+
+string AutoScaleRecord::GetRetryInfo() const
+{
+    return m_retryInfo;
+}
+
+void AutoScaleRecord::SetRetryInfo(const string& _retryInfo)
+{
+    m_retryInfo = _retryInfo;
+    m_retryInfoHasBeenSet = true;
+}
+
+bool AutoScaleRecord::RetryInfoHasBeenSet() const
+{
+    return m_retryInfoHasBeenSet;
 }
 

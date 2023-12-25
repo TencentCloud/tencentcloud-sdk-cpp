@@ -285,6 +285,56 @@ namespace TencentCloud
                      */
                     bool CompensateCountHasBeenSet() const;
 
+                    /**
+                     * 获取重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetryCount 重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRetryCount() const;
+
+                    /**
+                     * 设置重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _retryCount 重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRetryCount(const uint64_t& _retryCount);
+
+                    /**
+                     * 判断参数 RetryCount 是否已赋值
+                     * @return RetryCount 是否已赋值
+                     * 
+                     */
+                    bool RetryCountHasBeenSet() const;
+
+                    /**
+                     * 获取重试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetryInfo 重试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRetryInfo() const;
+
+                    /**
+                     * 设置重试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _retryInfo 重试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRetryInfo(const std::string& _retryInfo);
+
+                    /**
+                     * 判断参数 RetryInfo 是否已赋值
+                     * @return RetryInfo 是否已赋值
+                     * 
+                     */
+                    bool RetryInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -354,6 +404,20 @@ namespace TencentCloud
                      */
                     int64_t m_compensateCount;
                     bool m_compensateCountHasBeenSet;
+
+                    /**
+                     * 重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_retryCount;
+                    bool m_retryCountHasBeenSet;
+
+                    /**
+                     * 重试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_retryInfo;
+                    bool m_retryInfoHasBeenSet;
 
                 };
             }

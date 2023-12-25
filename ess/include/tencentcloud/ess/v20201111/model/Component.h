@@ -159,27 +159,6 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
                     bool ComponentTypeHasBeenSet() const;
 
                     /**
-                     * 获取<font color="red">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0
-                     * @return FileIndex <font color="red">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0
-                     * 
-                     */
-                    int64_t GetFileIndex() const;
-
-                    /**
-                     * 设置<font color="red">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0
-                     * @param _fileIndex <font color="red">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0
-                     * 
-                     */
-                    void SetFileIndex(const int64_t& _fileIndex);
-
-                    /**
-                     * 判断参数 FileIndex 是否已赋值
-                     * @return FileIndex 是否已赋值
-                     * 
-                     */
-                    bool FileIndexHasBeenSet() const;
-
-                    /**
                      * 获取**在绝对定位方式和关键字定位方式下**，指定控件的高度， 控件高度是指控件在PDF文件中的高度，单位为pt（点）。
 
                      * @return ComponentHeight **在绝对定位方式和关键字定位方式下**，指定控件的高度， 控件高度是指控件在PDF文件中的高度，单位为pt（点）。
@@ -307,6 +286,60 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
                      * 
                      */
                     bool ComponentPosYHasBeenSet() const;
+
+                    /**
+                     * 获取<font color="red">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0
+                     * @return FileIndex <font color="red">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0
+                     * 
+                     */
+                    int64_t GetFileIndex() const;
+
+                    /**
+                     * 设置<font color="red">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0
+                     * @param _fileIndex <font color="red">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0
+                     * 
+                     */
+                    void SetFileIndex(const int64_t& _fileIndex);
+
+                    /**
+                     * 判断参数 FileIndex 是否已赋值
+                     * @return FileIndex 是否已赋值
+                     * 
+                     */
+                    bool FileIndexHasBeenSet() const;
+
+                    /**
+                     * 获取控件生成的方式：
+<ul><li> <b>NORMAL</b> : 绝对定位控件</li>
+<li> <b>FIELD</b> : 表单域</li>
+<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>
+                     * @return GenerateMode 控件生成的方式：
+<ul><li> <b>NORMAL</b> : 绝对定位控件</li>
+<li> <b>FIELD</b> : 表单域</li>
+<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>
+                     * 
+                     */
+                    std::string GetGenerateMode() const;
+
+                    /**
+                     * 设置控件生成的方式：
+<ul><li> <b>NORMAL</b> : 绝对定位控件</li>
+<li> <b>FIELD</b> : 表单域</li>
+<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>
+                     * @param _generateMode 控件生成的方式：
+<ul><li> <b>NORMAL</b> : 绝对定位控件</li>
+<li> <b>FIELD</b> : 表单域</li>
+<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>
+                     * 
+                     */
+                    void SetGenerateMode(const std::string& _generateMode);
+
+                    /**
+                     * 判断参数 GenerateMode 是否已赋值
+                     * @return GenerateMode 是否已赋值
+                     * 
+                     */
+                    bool GenerateModeHasBeenSet() const;
 
                     /**
                      * 获取控件唯一ID。
@@ -748,81 +781,6 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
                     bool ComponentValueHasBeenSet() const;
 
                     /**
-                     * 获取控件生成的方式：
-<ul><li> <b>NORMAL</b> : 绝对定位控件</li>
-<li> <b>FIELD</b> : 表单域</li>
-<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>
-                     * @return GenerateMode 控件生成的方式：
-<ul><li> <b>NORMAL</b> : 绝对定位控件</li>
-<li> <b>FIELD</b> : 表单域</li>
-<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>
-                     * 
-                     */
-                    std::string GetGenerateMode() const;
-
-                    /**
-                     * 设置控件生成的方式：
-<ul><li> <b>NORMAL</b> : 绝对定位控件</li>
-<li> <b>FIELD</b> : 表单域</li>
-<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>
-                     * @param _generateMode 控件生成的方式：
-<ul><li> <b>NORMAL</b> : 绝对定位控件</li>
-<li> <b>FIELD</b> : 表单域</li>
-<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>
-                     * 
-                     */
-                    void SetGenerateMode(const std::string& _generateMode);
-
-                    /**
-                     * 判断参数 GenerateMode 是否已赋值
-                     * @return GenerateMode 是否已赋值
-                     * 
-                     */
-                    bool GenerateModeHasBeenSet() const;
-
-                    /**
-                     * 获取<font color="red">【暂未使用】</font>日期签署控件的字号，默认为 12
-                     * @return ComponentDateFontSize <font color="red">【暂未使用】</font>日期签署控件的字号，默认为 12
-                     * 
-                     */
-                    int64_t GetComponentDateFontSize() const;
-
-                    /**
-                     * 设置<font color="red">【暂未使用】</font>日期签署控件的字号，默认为 12
-                     * @param _componentDateFontSize <font color="red">【暂未使用】</font>日期签署控件的字号，默认为 12
-                     * 
-                     */
-                    void SetComponentDateFontSize(const int64_t& _componentDateFontSize);
-
-                    /**
-                     * 判断参数 ComponentDateFontSize 是否已赋值
-                     * @return ComponentDateFontSize 是否已赋值
-                     * 
-                     */
-                    bool ComponentDateFontSizeHasBeenSet() const;
-
-                    /**
-                     * 获取<font color="red">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识
-                     * @return ChannelComponentId <font color="red">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识
-                     * 
-                     */
-                    std::string GetChannelComponentId() const;
-
-                    /**
-                     * 设置<font color="red">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识
-                     * @param _channelComponentId <font color="red">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识
-                     * 
-                     */
-                    void SetChannelComponentId(const std::string& _channelComponentId);
-
-                    /**
-                     * 判断参数 ChannelComponentId 是否已赋值
-                     * @return ChannelComponentId 是否已赋值
-                     * 
-                     */
-                    bool ChannelComponentIdHasBeenSet() const;
-
-                    /**
                      * 获取**如果控件是关键字定位方式**，可以对关键字定位出来的区域进行横坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏左或偏右，可以通过调整横坐标方向的参数来使控件位置更加准确。
 注意： `向左调整设置为负数， 向右调整设置成正数`
 注意：此字段可能返回 null，表示取不到有效值。
@@ -879,35 +837,6 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
                      * 
                      */
                     bool OffsetYHasBeenSet() const;
-
-                    /**
-                     * 获取<font color="red">【暂未使用】</font>第三方应用集成中子客企业控件来源。
-<ul><li> <b>0</b> :平台指定；</li>
-<li> <b>1</b> :用户自定义</li></ul>
-                     * @return ChannelComponentSource <font color="red">【暂未使用】</font>第三方应用集成中子客企业控件来源。
-<ul><li> <b>0</b> :平台指定；</li>
-<li> <b>1</b> :用户自定义</li></ul>
-                     * 
-                     */
-                    uint64_t GetChannelComponentSource() const;
-
-                    /**
-                     * 设置<font color="red">【暂未使用】</font>第三方应用集成中子客企业控件来源。
-<ul><li> <b>0</b> :平台指定；</li>
-<li> <b>1</b> :用户自定义</li></ul>
-                     * @param _channelComponentSource <font color="red">【暂未使用】</font>第三方应用集成中子客企业控件来源。
-<ul><li> <b>0</b> :平台指定；</li>
-<li> <b>1</b> :用户自定义</li></ul>
-                     * 
-                     */
-                    void SetChannelComponentSource(const uint64_t& _channelComponentSource);
-
-                    /**
-                     * 判断参数 ChannelComponentSource 是否已赋值
-                     * @return ChannelComponentSource 是否已赋值
-                     * 
-                     */
-                    bool ChannelComponentSourceHasBeenSet() const;
 
                     /**
                      * 获取**如果控件是关键字定位方式**，指定关键字排序规则时，可以选择Positive或Reverse两种排序方式。
@@ -1107,6 +1036,77 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
                      */
                     bool ForbidMoveAndDeleteHasBeenSet() const;
 
+                    /**
+                     * 获取<font color="red">【暂未使用】</font>日期签署控件的字号，默认为 12
+                     * @return ComponentDateFontSize <font color="red">【暂未使用】</font>日期签署控件的字号，默认为 12
+                     * 
+                     */
+                    int64_t GetComponentDateFontSize() const;
+
+                    /**
+                     * 设置<font color="red">【暂未使用】</font>日期签署控件的字号，默认为 12
+                     * @param _componentDateFontSize <font color="red">【暂未使用】</font>日期签署控件的字号，默认为 12
+                     * 
+                     */
+                    void SetComponentDateFontSize(const int64_t& _componentDateFontSize);
+
+                    /**
+                     * 判断参数 ComponentDateFontSize 是否已赋值
+                     * @return ComponentDateFontSize 是否已赋值
+                     * 
+                     */
+                    bool ComponentDateFontSizeHasBeenSet() const;
+
+                    /**
+                     * 获取<font color="red">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识
+                     * @return ChannelComponentId <font color="red">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识
+                     * 
+                     */
+                    std::string GetChannelComponentId() const;
+
+                    /**
+                     * 设置<font color="red">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识
+                     * @param _channelComponentId <font color="red">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识
+                     * 
+                     */
+                    void SetChannelComponentId(const std::string& _channelComponentId);
+
+                    /**
+                     * 判断参数 ChannelComponentId 是否已赋值
+                     * @return ChannelComponentId 是否已赋值
+                     * 
+                     */
+                    bool ChannelComponentIdHasBeenSet() const;
+
+                    /**
+                     * 获取<font color="red">【暂未使用】</font>第三方应用集成中子客企业控件来源。
+<ul><li> <b>0</b> :平台指定；</li>
+<li> <b>1</b> :用户自定义</li></ul>
+                     * @return ChannelComponentSource <font color="red">【暂未使用】</font>第三方应用集成中子客企业控件来源。
+<ul><li> <b>0</b> :平台指定；</li>
+<li> <b>1</b> :用户自定义</li></ul>
+                     * 
+                     */
+                    uint64_t GetChannelComponentSource() const;
+
+                    /**
+                     * 设置<font color="red">【暂未使用】</font>第三方应用集成中子客企业控件来源。
+<ul><li> <b>0</b> :平台指定；</li>
+<li> <b>1</b> :用户自定义</li></ul>
+                     * @param _channelComponentSource <font color="red">【暂未使用】</font>第三方应用集成中子客企业控件来源。
+<ul><li> <b>0</b> :平台指定；</li>
+<li> <b>1</b> :用户自定义</li></ul>
+                     * 
+                     */
+                    void SetChannelComponentSource(const uint64_t& _channelComponentSource);
+
+                    /**
+                     * 判断参数 ChannelComponentSource 是否已赋值
+                     * @return ChannelComponentSource 是否已赋值
+                     * 
+                     */
+                    bool ChannelComponentSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1135,12 +1135,6 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
                      */
                     std::string m_componentType;
                     bool m_componentTypeHasBeenSet;
-
-                    /**
-                     * <font color="red">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0
-                     */
-                    int64_t m_fileIndex;
-                    bool m_fileIndexHasBeenSet;
 
                     /**
                      * **在绝对定位方式和关键字定位方式下**，指定控件的高度， 控件高度是指控件在PDF文件中的高度，单位为pt（点）。
@@ -1177,6 +1171,21 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
                      */
                     double m_componentPosY;
                     bool m_componentPosYHasBeenSet;
+
+                    /**
+                     * <font color="red">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0
+                     */
+                    int64_t m_fileIndex;
+                    bool m_fileIndexHasBeenSet;
+
+                    /**
+                     * 控件生成的方式：
+<ul><li> <b>NORMAL</b> : 绝对定位控件</li>
+<li> <b>FIELD</b> : 表单域</li>
+<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>
+                     */
+                    std::string m_generateMode;
+                    bool m_generateModeHasBeenSet;
 
                     /**
                      * 控件唯一ID。
@@ -1294,27 +1303,6 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
                     bool m_componentValueHasBeenSet;
 
                     /**
-                     * 控件生成的方式：
-<ul><li> <b>NORMAL</b> : 绝对定位控件</li>
-<li> <b>FIELD</b> : 表单域</li>
-<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>
-                     */
-                    std::string m_generateMode;
-                    bool m_generateModeHasBeenSet;
-
-                    /**
-                     * <font color="red">【暂未使用】</font>日期签署控件的字号，默认为 12
-                     */
-                    int64_t m_componentDateFontSize;
-                    bool m_componentDateFontSizeHasBeenSet;
-
-                    /**
-                     * <font color="red">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识
-                     */
-                    std::string m_channelComponentId;
-                    bool m_channelComponentIdHasBeenSet;
-
-                    /**
                      * **如果控件是关键字定位方式**，可以对关键字定位出来的区域进行横坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏左或偏右，可以通过调整横坐标方向的参数来使控件位置更加准确。
 注意： `向左调整设置为负数， 向右调整设置成正数`
 注意：此字段可能返回 null，表示取不到有效值。
@@ -1329,14 +1317,6 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
                      */
                     double m_offsetY;
                     bool m_offsetYHasBeenSet;
-
-                    /**
-                     * <font color="red">【暂未使用】</font>第三方应用集成中子客企业控件来源。
-<ul><li> <b>0</b> :平台指定；</li>
-<li> <b>1</b> :用户自定义</li></ul>
-                     */
-                    uint64_t m_channelComponentSource;
-                    bool m_channelComponentSourceHasBeenSet;
 
                     /**
                      * **如果控件是关键字定位方式**，指定关键字排序规则时，可以选择Positive或Reverse两种排序方式。
@@ -1391,6 +1371,26 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
                      */
                     bool m_forbidMoveAndDelete;
                     bool m_forbidMoveAndDeleteHasBeenSet;
+
+                    /**
+                     * <font color="red">【暂未使用】</font>日期签署控件的字号，默认为 12
+                     */
+                    int64_t m_componentDateFontSize;
+                    bool m_componentDateFontSizeHasBeenSet;
+
+                    /**
+                     * <font color="red">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识
+                     */
+                    std::string m_channelComponentId;
+                    bool m_channelComponentIdHasBeenSet;
+
+                    /**
+                     * <font color="red">【暂未使用】</font>第三方应用集成中子客企业控件来源。
+<ul><li> <b>0</b> :平台指定；</li>
+<li> <b>1</b> :用户自定义</li></ul>
+                     */
+                    uint64_t m_channelComponentSource;
+                    bool m_channelComponentSourceHasBeenSet;
 
                 };
             }

@@ -22,12 +22,13 @@ using namespace std;
 
 Component::Component() :
     m_componentTypeHasBeenSet(false),
-    m_fileIndexHasBeenSet(false),
     m_componentHeightHasBeenSet(false),
     m_componentWidthHasBeenSet(false),
     m_componentPageHasBeenSet(false),
     m_componentPosXHasBeenSet(false),
     m_componentPosYHasBeenSet(false),
+    m_fileIndexHasBeenSet(false),
+    m_generateModeHasBeenSet(false),
     m_componentIdHasBeenSet(false),
     m_componentNameHasBeenSet(false),
     m_componentRequiredHasBeenSet(false),
@@ -35,18 +36,17 @@ Component::Component() :
     m_componentExtraHasBeenSet(false),
     m_isFormTypeHasBeenSet(false),
     m_componentValueHasBeenSet(false),
-    m_generateModeHasBeenSet(false),
-    m_componentDateFontSizeHasBeenSet(false),
-    m_channelComponentIdHasBeenSet(false),
     m_offsetXHasBeenSet(false),
     m_offsetYHasBeenSet(false),
-    m_channelComponentSourceHasBeenSet(false),
     m_keywordOrderHasBeenSet(false),
     m_keywordPageHasBeenSet(false),
     m_relativeLocationHasBeenSet(false),
     m_keywordIndexesHasBeenSet(false),
     m_lockComponentValueHasBeenSet(false),
-    m_forbidMoveAndDeleteHasBeenSet(false)
+    m_forbidMoveAndDeleteHasBeenSet(false),
+    m_componentDateFontSizeHasBeenSet(false),
+    m_channelComponentIdHasBeenSet(false),
+    m_channelComponentSourceHasBeenSet(false)
 {
 }
 
@@ -63,16 +63,6 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         }
         m_componentType = string(value["ComponentType"].GetString());
         m_componentTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("FileIndex") && !value["FileIndex"].IsNull())
-    {
-        if (!value["FileIndex"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Component.FileIndex` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_fileIndex = value["FileIndex"].GetInt64();
-        m_fileIndexHasBeenSet = true;
     }
 
     if (value.HasMember("ComponentHeight") && !value["ComponentHeight"].IsNull())
@@ -123,6 +113,26 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         }
         m_componentPosY = value["ComponentPosY"].GetDouble();
         m_componentPosYHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileIndex") && !value["FileIndex"].IsNull())
+    {
+        if (!value["FileIndex"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.FileIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileIndex = value["FileIndex"].GetInt64();
+        m_fileIndexHasBeenSet = true;
+    }
+
+    if (value.HasMember("GenerateMode") && !value["GenerateMode"].IsNull())
+    {
+        if (!value["GenerateMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.GenerateMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_generateMode = string(value["GenerateMode"].GetString());
+        m_generateModeHasBeenSet = true;
     }
 
     if (value.HasMember("ComponentId") && !value["ComponentId"].IsNull())
@@ -195,36 +205,6 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_componentValueHasBeenSet = true;
     }
 
-    if (value.HasMember("GenerateMode") && !value["GenerateMode"].IsNull())
-    {
-        if (!value["GenerateMode"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Component.GenerateMode` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_generateMode = string(value["GenerateMode"].GetString());
-        m_generateModeHasBeenSet = true;
-    }
-
-    if (value.HasMember("ComponentDateFontSize") && !value["ComponentDateFontSize"].IsNull())
-    {
-        if (!value["ComponentDateFontSize"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Component.ComponentDateFontSize` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_componentDateFontSize = value["ComponentDateFontSize"].GetInt64();
-        m_componentDateFontSizeHasBeenSet = true;
-    }
-
-    if (value.HasMember("ChannelComponentId") && !value["ChannelComponentId"].IsNull())
-    {
-        if (!value["ChannelComponentId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Component.ChannelComponentId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_channelComponentId = string(value["ChannelComponentId"].GetString());
-        m_channelComponentIdHasBeenSet = true;
-    }
-
     if (value.HasMember("OffsetX") && !value["OffsetX"].IsNull())
     {
         if (!value["OffsetX"].IsLosslessDouble())
@@ -243,16 +223,6 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         }
         m_offsetY = value["OffsetY"].GetDouble();
         m_offsetYHasBeenSet = true;
-    }
-
-    if (value.HasMember("ChannelComponentSource") && !value["ChannelComponentSource"].IsNull())
-    {
-        if (!value["ChannelComponentSource"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Component.ChannelComponentSource` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_channelComponentSource = value["ChannelComponentSource"].GetUint64();
-        m_channelComponentSourceHasBeenSet = true;
     }
 
     if (value.HasMember("KeywordOrder") && !value["KeywordOrder"].IsNull())
@@ -318,6 +288,36 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_forbidMoveAndDeleteHasBeenSet = true;
     }
 
+    if (value.HasMember("ComponentDateFontSize") && !value["ComponentDateFontSize"].IsNull())
+    {
+        if (!value["ComponentDateFontSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.ComponentDateFontSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_componentDateFontSize = value["ComponentDateFontSize"].GetInt64();
+        m_componentDateFontSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChannelComponentId") && !value["ChannelComponentId"].IsNull())
+    {
+        if (!value["ChannelComponentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.ChannelComponentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelComponentId = string(value["ChannelComponentId"].GetString());
+        m_channelComponentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChannelComponentSource") && !value["ChannelComponentSource"].IsNull())
+    {
+        if (!value["ChannelComponentSource"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.ChannelComponentSource` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelComponentSource = value["ChannelComponentSource"].GetUint64();
+        m_channelComponentSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -331,14 +331,6 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ComponentType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_componentType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_fileIndexHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FileIndex";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_fileIndex, allocator);
     }
 
     if (m_componentHeightHasBeenSet)
@@ -379,6 +371,22 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ComponentPosY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_componentPosY, allocator);
+    }
+
+    if (m_fileIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileIndex, allocator);
+    }
+
+    if (m_generateModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GenerateMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_generateMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_componentIdHasBeenSet)
@@ -437,30 +445,6 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_componentValue.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_generateModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GenerateMode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_generateMode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_componentDateFontSizeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ComponentDateFontSize";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_componentDateFontSize, allocator);
-    }
-
-    if (m_channelComponentIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ChannelComponentId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_channelComponentId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_offsetXHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -475,14 +459,6 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "OffsetY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offsetY, allocator);
-    }
-
-    if (m_channelComponentSourceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ChannelComponentSource";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_channelComponentSource, allocator);
     }
 
     if (m_keywordOrderHasBeenSet)
@@ -538,6 +514,30 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_forbidMoveAndDelete, allocator);
     }
 
+    if (m_componentDateFontSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentDateFontSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_componentDateFontSize, allocator);
+    }
+
+    if (m_channelComponentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelComponentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelComponentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelComponentSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelComponentSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_channelComponentSource, allocator);
+    }
+
 }
 
 
@@ -555,22 +555,6 @@ void Component::SetComponentType(const string& _componentType)
 bool Component::ComponentTypeHasBeenSet() const
 {
     return m_componentTypeHasBeenSet;
-}
-
-int64_t Component::GetFileIndex() const
-{
-    return m_fileIndex;
-}
-
-void Component::SetFileIndex(const int64_t& _fileIndex)
-{
-    m_fileIndex = _fileIndex;
-    m_fileIndexHasBeenSet = true;
-}
-
-bool Component::FileIndexHasBeenSet() const
-{
-    return m_fileIndexHasBeenSet;
 }
 
 double Component::GetComponentHeight() const
@@ -651,6 +635,38 @@ void Component::SetComponentPosY(const double& _componentPosY)
 bool Component::ComponentPosYHasBeenSet() const
 {
     return m_componentPosYHasBeenSet;
+}
+
+int64_t Component::GetFileIndex() const
+{
+    return m_fileIndex;
+}
+
+void Component::SetFileIndex(const int64_t& _fileIndex)
+{
+    m_fileIndex = _fileIndex;
+    m_fileIndexHasBeenSet = true;
+}
+
+bool Component::FileIndexHasBeenSet() const
+{
+    return m_fileIndexHasBeenSet;
+}
+
+string Component::GetGenerateMode() const
+{
+    return m_generateMode;
+}
+
+void Component::SetGenerateMode(const string& _generateMode)
+{
+    m_generateMode = _generateMode;
+    m_generateModeHasBeenSet = true;
+}
+
+bool Component::GenerateModeHasBeenSet() const
+{
+    return m_generateModeHasBeenSet;
 }
 
 string Component::GetComponentId() const
@@ -765,54 +781,6 @@ bool Component::ComponentValueHasBeenSet() const
     return m_componentValueHasBeenSet;
 }
 
-string Component::GetGenerateMode() const
-{
-    return m_generateMode;
-}
-
-void Component::SetGenerateMode(const string& _generateMode)
-{
-    m_generateMode = _generateMode;
-    m_generateModeHasBeenSet = true;
-}
-
-bool Component::GenerateModeHasBeenSet() const
-{
-    return m_generateModeHasBeenSet;
-}
-
-int64_t Component::GetComponentDateFontSize() const
-{
-    return m_componentDateFontSize;
-}
-
-void Component::SetComponentDateFontSize(const int64_t& _componentDateFontSize)
-{
-    m_componentDateFontSize = _componentDateFontSize;
-    m_componentDateFontSizeHasBeenSet = true;
-}
-
-bool Component::ComponentDateFontSizeHasBeenSet() const
-{
-    return m_componentDateFontSizeHasBeenSet;
-}
-
-string Component::GetChannelComponentId() const
-{
-    return m_channelComponentId;
-}
-
-void Component::SetChannelComponentId(const string& _channelComponentId)
-{
-    m_channelComponentId = _channelComponentId;
-    m_channelComponentIdHasBeenSet = true;
-}
-
-bool Component::ChannelComponentIdHasBeenSet() const
-{
-    return m_channelComponentIdHasBeenSet;
-}
-
 double Component::GetOffsetX() const
 {
     return m_offsetX;
@@ -843,22 +811,6 @@ void Component::SetOffsetY(const double& _offsetY)
 bool Component::OffsetYHasBeenSet() const
 {
     return m_offsetYHasBeenSet;
-}
-
-uint64_t Component::GetChannelComponentSource() const
-{
-    return m_channelComponentSource;
-}
-
-void Component::SetChannelComponentSource(const uint64_t& _channelComponentSource)
-{
-    m_channelComponentSource = _channelComponentSource;
-    m_channelComponentSourceHasBeenSet = true;
-}
-
-bool Component::ChannelComponentSourceHasBeenSet() const
-{
-    return m_channelComponentSourceHasBeenSet;
 }
 
 string Component::GetKeywordOrder() const
@@ -955,5 +907,53 @@ void Component::SetForbidMoveAndDelete(const bool& _forbidMoveAndDelete)
 bool Component::ForbidMoveAndDeleteHasBeenSet() const
 {
     return m_forbidMoveAndDeleteHasBeenSet;
+}
+
+int64_t Component::GetComponentDateFontSize() const
+{
+    return m_componentDateFontSize;
+}
+
+void Component::SetComponentDateFontSize(const int64_t& _componentDateFontSize)
+{
+    m_componentDateFontSize = _componentDateFontSize;
+    m_componentDateFontSizeHasBeenSet = true;
+}
+
+bool Component::ComponentDateFontSizeHasBeenSet() const
+{
+    return m_componentDateFontSizeHasBeenSet;
+}
+
+string Component::GetChannelComponentId() const
+{
+    return m_channelComponentId;
+}
+
+void Component::SetChannelComponentId(const string& _channelComponentId)
+{
+    m_channelComponentId = _channelComponentId;
+    m_channelComponentIdHasBeenSet = true;
+}
+
+bool Component::ChannelComponentIdHasBeenSet() const
+{
+    return m_channelComponentIdHasBeenSet;
+}
+
+uint64_t Component::GetChannelComponentSource() const
+{
+    return m_channelComponentSource;
+}
+
+void Component::SetChannelComponentSource(const uint64_t& _channelComponentSource)
+{
+    m_channelComponentSource = _channelComponentSource;
+    m_channelComponentSourceHasBeenSet = true;
+}
+
+bool Component::ChannelComponentSourceHasBeenSet() const
+{
+    return m_channelComponentSourceHasBeenSet;
 }
 

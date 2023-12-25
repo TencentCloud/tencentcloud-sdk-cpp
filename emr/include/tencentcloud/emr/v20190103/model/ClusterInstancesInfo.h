@@ -28,6 +28,7 @@
 #include <tencentcloud/emr/v20190103/model/Tag.h>
 #include <tencentcloud/emr/v20190103/model/ClusterExternalServiceInfo.h>
 #include <tencentcloud/emr/v20190103/model/TopologyInfo.h>
+#include <tencentcloud/emr/v20190103/model/EmrProductConfigDetail.h>
 
 
 namespace TencentCloud
@@ -105,7 +106,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ftitle 标题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetFtitle() const;
 
@@ -114,14 +115,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ftitle 标题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetFtitle(const std::string& _ftitle);
 
                     /**
                      * 判断参数 Ftitle 是否已赋值
                      * @return Ftitle 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool FtitleHasBeenSet() const;
 
@@ -513,7 +514,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Config 集群产品配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     EmrProductConfigOutter GetConfig() const;
 
@@ -522,14 +523,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _config 集群产品配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetConfig(const EmrProductConfigOutter& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ConfigHasBeenSet() const;
 
@@ -1208,6 +1209,56 @@ namespace TencentCloud
                      */
                     bool IsCvmReplaceHasBeenSet() const;
 
+                    /**
+                     * 获取标题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterTitle 标题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterTitle() const;
+
+                    /**
+                     * 设置标题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterTitle 标题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterTitle(const std::string& _clusterTitle);
+
+                    /**
+                     * 判断参数 ClusterTitle 是否已赋值
+                     * @return ClusterTitle 是否已赋值
+                     * 
+                     */
+                    bool ClusterTitleHasBeenSet() const;
+
+                    /**
+                     * 获取集群产品配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigDetail 集群产品配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    EmrProductConfigDetail GetConfigDetail() const;
+
+                    /**
+                     * 设置集群产品配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _configDetail 集群产品配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfigDetail(const EmrProductConfigDetail& _configDetail);
+
+                    /**
+                     * 判断参数 ConfigDetail 是否已赋值
+                     * @return ConfigDetail 是否已赋值
+                     * 
+                     */
+                    bool ConfigDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1530,6 +1581,20 @@ namespace TencentCloud
                      */
                     bool m_isCvmReplace;
                     bool m_isCvmReplaceHasBeenSet;
+
+                    /**
+                     * 标题
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterTitle;
+                    bool m_clusterTitleHasBeenSet;
+
+                    /**
+                     * 集群产品配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EmrProductConfigDetail m_configDetail;
+                    bool m_configDetailHasBeenSet;
 
                 };
             }

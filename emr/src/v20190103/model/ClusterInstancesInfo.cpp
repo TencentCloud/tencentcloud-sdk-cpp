@@ -62,7 +62,9 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_uniqSubnetIdHasBeenSet(false),
     m_topologyInfoListHasBeenSet(false),
     m_isMultiZoneClusterHasBeenSet(false),
-    m_isCvmReplaceHasBeenSet(false)
+    m_isCvmReplaceHasBeenSet(false),
+    m_clusterTitleHasBeenSet(false),
+    m_configDetailHasBeenSet(false)
 {
 }
 
@@ -528,6 +530,33 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const rapidjson::Value &va
         m_isCvmReplaceHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterTitle") && !value["ClusterTitle"].IsNull())
+    {
+        if (!value["ClusterTitle"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.ClusterTitle` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterTitle = string(value["ClusterTitle"].GetString());
+        m_clusterTitleHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigDetail") && !value["ConfigDetail"].IsNull())
+    {
+        if (!value["ConfigDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.ConfigDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_configDetail.Deserialize(value["ConfigDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_configDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -891,6 +920,23 @@ void ClusterInstancesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "IsCvmReplace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCvmReplace, allocator);
+    }
+
+    if (m_clusterTitleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterTitle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterTitle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_configDetail.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1566,5 +1612,37 @@ void ClusterInstancesInfo::SetIsCvmReplace(const bool& _isCvmReplace)
 bool ClusterInstancesInfo::IsCvmReplaceHasBeenSet() const
 {
     return m_isCvmReplaceHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetClusterTitle() const
+{
+    return m_clusterTitle;
+}
+
+void ClusterInstancesInfo::SetClusterTitle(const string& _clusterTitle)
+{
+    m_clusterTitle = _clusterTitle;
+    m_clusterTitleHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::ClusterTitleHasBeenSet() const
+{
+    return m_clusterTitleHasBeenSet;
+}
+
+EmrProductConfigDetail ClusterInstancesInfo::GetConfigDetail() const
+{
+    return m_configDetail;
+}
+
+void ClusterInstancesInfo::SetConfigDetail(const EmrProductConfigDetail& _configDetail)
+{
+    m_configDetail = _configDetail;
+    m_configDetailHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::ConfigDetailHasBeenSet() const
+{
+    return m_configDetailHasBeenSet;
 }
 
