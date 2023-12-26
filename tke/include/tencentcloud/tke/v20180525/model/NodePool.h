@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/Label.h>
 #include <tencentcloud/tke/v20180525/model/Taint.h>
+#include <tencentcloud/tke/v20180525/model/AnnotationValue.h>
 #include <tencentcloud/tke/v20180525/model/NodeCountSummary.h>
 #include <tencentcloud/tke/v20180525/model/Tag.h>
 #include <tencentcloud/tke/v20180525/model/InstanceExtraArgs.h>
@@ -220,6 +221,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TaintsHasBeenSet() const;
+
+                    /**
+                     * 获取节点 Annotation 列表
+                     * @return Annotations 节点 Annotation 列表
+                     * 
+                     */
+                    std::vector<AnnotationValue> GetAnnotations() const;
+
+                    /**
+                     * 设置节点 Annotation 列表
+                     * @param _annotations 节点 Annotation 列表
+                     * 
+                     */
+                    void SetAnnotations(const std::vector<AnnotationValue>& _annotations);
+
+                    /**
+                     * 判断参数 Annotations 是否已赋值
+                     * @return Annotations 是否已赋值
+                     * 
+                     */
+                    bool AnnotationsHasBeenSet() const;
 
                     /**
                      * 获取NodeCountSummary 节点列表
@@ -716,6 +738,12 @@ namespace TencentCloud
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
+
+                    /**
+                     * 节点 Annotation 列表
+                     */
+                    std::vector<AnnotationValue> m_annotations;
+                    bool m_annotationsHasBeenSet;
 
                     /**
                      * NodeCountSummary 节点列表

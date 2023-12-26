@@ -33,6 +33,8 @@
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMatchMusicsResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicAccompanySegmentUrlRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicAccompanySegmentUrlResponse.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicAccompanySegmentUrlVipRequest.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicAccompanySegmentUrlVipResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicsByTagRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicsByTagResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistDetailRequest.h>
@@ -49,10 +51,14 @@
 #include <tencentcloud/yinsuda/v20220527/model/DescribeLiveVipTradeInfosResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeUserInfoRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeUserInfoResponse.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeVipUserInfoRequest.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeVipUserInfoResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DestroyKTVRobotRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DestroyKTVRobotResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/RechargeLiveVipRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/RechargeLiveVipResponse.h>
+#include <tencentcloud/yinsuda/v20220527/model/RechargeVipRequest.h>
+#include <tencentcloud/yinsuda/v20220527/model/RechargeVipResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/SearchKTVMusicsRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/SearchKTVMusicsResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/SyncKTVRobotCommandRequest.h>
@@ -86,6 +92,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKTVMusicAccompanySegmentUrlResponse> DescribeKTVMusicAccompanySegmentUrlOutcome;
                 typedef std::future<DescribeKTVMusicAccompanySegmentUrlOutcome> DescribeKTVMusicAccompanySegmentUrlOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVMusicAccompanySegmentUrlRequest&, DescribeKTVMusicAccompanySegmentUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMusicAccompanySegmentUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKTVMusicAccompanySegmentUrlVipResponse> DescribeKTVMusicAccompanySegmentUrlVipOutcome;
+                typedef std::future<DescribeKTVMusicAccompanySegmentUrlVipOutcome> DescribeKTVMusicAccompanySegmentUrlVipOutcomeCallable;
+                typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVMusicAccompanySegmentUrlVipRequest&, DescribeKTVMusicAccompanySegmentUrlVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMusicAccompanySegmentUrlVipAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKTVMusicsByTagResponse> DescribeKTVMusicsByTagOutcome;
                 typedef std::future<DescribeKTVMusicsByTagOutcome> DescribeKTVMusicsByTagOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVMusicsByTagRequest&, DescribeKTVMusicsByTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMusicsByTagAsyncHandler;
@@ -110,12 +119,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserInfoResponse> DescribeUserInfoOutcome;
                 typedef std::future<DescribeUserInfoOutcome> DescribeUserInfoOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DescribeUserInfoRequest&, DescribeUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVipUserInfoResponse> DescribeVipUserInfoOutcome;
+                typedef std::future<DescribeVipUserInfoOutcome> DescribeVipUserInfoOutcomeCallable;
+                typedef std::function<void(const YinsudaClient*, const Model::DescribeVipUserInfoRequest&, DescribeVipUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVipUserInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyKTVRobotResponse> DestroyKTVRobotOutcome;
                 typedef std::future<DestroyKTVRobotOutcome> DestroyKTVRobotOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DestroyKTVRobotRequest&, DestroyKTVRobotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyKTVRobotAsyncHandler;
                 typedef Outcome<Core::Error, Model::RechargeLiveVipResponse> RechargeLiveVipOutcome;
                 typedef std::future<RechargeLiveVipOutcome> RechargeLiveVipOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::RechargeLiveVipRequest&, RechargeLiveVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RechargeLiveVipAsyncHandler;
+                typedef Outcome<Core::Error, Model::RechargeVipResponse> RechargeVipOutcome;
+                typedef std::future<RechargeVipOutcome> RechargeVipOutcomeCallable;
+                typedef std::function<void(const YinsudaClient*, const Model::RechargeVipRequest&, RechargeVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RechargeVipAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchKTVMusicsResponse> SearchKTVMusicsOutcome;
                 typedef std::future<SearchKTVMusicsOutcome> SearchKTVMusicsOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::SearchKTVMusicsRequest&, SearchKTVMusicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchKTVMusicsAsyncHandler;
@@ -169,6 +184,15 @@ namespace TencentCloud
                 DescribeKTVMusicAccompanySegmentUrlOutcome DescribeKTVMusicAccompanySegmentUrl(const Model::DescribeKTVMusicAccompanySegmentUrlRequest &request);
                 void DescribeKTVMusicAccompanySegmentUrlAsync(const Model::DescribeKTVMusicAccompanySegmentUrlRequest& request, const DescribeKTVMusicAccompanySegmentUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKTVMusicAccompanySegmentUrlOutcomeCallable DescribeKTVMusicAccompanySegmentUrlCallable(const Model::DescribeKTVMusicAccompanySegmentUrlRequest& request);
+
+                /**
+                 *获取歌曲伴奏高潮的开始、结束时间，可用于抢唱
+                 * @param req DescribeKTVMusicAccompanySegmentUrlVipRequest
+                 * @return DescribeKTVMusicAccompanySegmentUrlVipOutcome
+                 */
+                DescribeKTVMusicAccompanySegmentUrlVipOutcome DescribeKTVMusicAccompanySegmentUrlVip(const Model::DescribeKTVMusicAccompanySegmentUrlVipRequest &request);
+                void DescribeKTVMusicAccompanySegmentUrlVipAsync(const Model::DescribeKTVMusicAccompanySegmentUrlVipRequest& request, const DescribeKTVMusicAccompanySegmentUrlVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKTVMusicAccompanySegmentUrlVipOutcomeCallable DescribeKTVMusicAccompanySegmentUrlVipCallable(const Model::DescribeKTVMusicAccompanySegmentUrlVipRequest& request);
 
                 /**
                  *通过标签过滤歌曲列表。
@@ -243,6 +267,15 @@ namespace TencentCloud
                 DescribeUserInfoOutcomeCallable DescribeUserInfoCallable(const Model::DescribeUserInfoRequest& request);
 
                 /**
+                 *获取会员信息：获取用户是否开通会员
+                 * @param req DescribeVipUserInfoRequest
+                 * @return DescribeVipUserInfoOutcome
+                 */
+                DescribeVipUserInfoOutcome DescribeVipUserInfo(const Model::DescribeVipUserInfoRequest &request);
+                void DescribeVipUserInfoAsync(const Model::DescribeVipUserInfoRequest& request, const DescribeVipUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVipUserInfoOutcomeCallable DescribeVipUserInfoCallable(const Model::DescribeVipUserInfoRequest& request);
+
+                /**
                  *销毁机器人，机器人退出 RTC 房间。
                  * @param req DestroyKTVRobotRequest
                  * @return DestroyKTVRobotOutcome
@@ -259,6 +292,15 @@ namespace TencentCloud
                 RechargeLiveVipOutcome RechargeLiveVip(const Model::RechargeLiveVipRequest &request);
                 void RechargeLiveVipAsync(const Model::RechargeLiveVipRequest& request, const RechargeLiveVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RechargeLiveVipOutcomeCallable RechargeLiveVipCallable(const Model::RechargeLiveVipRequest& request);
+
+                /**
+                 *充值会员
+                 * @param req RechargeVipRequest
+                 * @return RechargeVipOutcome
+                 */
+                RechargeVipOutcome RechargeVip(const Model::RechargeVipRequest &request);
+                void RechargeVipAsync(const Model::RechargeVipRequest& request, const RechargeVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RechargeVipOutcomeCallable RechargeVipCallable(const Model::RechargeVipRequest& request);
 
                 /**
                  *根据关键词搜索歌曲，返回相关歌曲列表。

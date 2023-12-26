@@ -176,15 +176,15 @@ AnalyzeTaskType_MediaStream：音视频体验
                     bool AscendingHasBeenSet() const;
 
                     /**
-                     * 获取选中字段
-                     * @return SelectedFields 选中字段
+                     * 获取选中字段，如ProbeTime、TransferTime、TransferSize等。
+                     * @return SelectedFields 选中字段，如ProbeTime、TransferTime、TransferSize等。
                      * 
                      */
                     std::vector<std::string> GetSelectedFields() const;
 
                     /**
-                     * 设置选中字段
-                     * @param _selectedFields 选中字段
+                     * 设置选中字段，如ProbeTime、TransferTime、TransferSize等。
+                     * @param _selectedFields 选中字段，如ProbeTime、TransferTime、TransferSize等。
                      * 
                      */
                     void SetSelectedFields(const std::vector<std::string>& _selectedFields);
@@ -444,6 +444,27 @@ AnalyzeTaskType_MediaStream：音视频体验
                      */
                     bool ScrollIDHasBeenSet() const;
 
+                    /**
+                     * 获取详情数据下载
+                     * @return QueryFlag 详情数据下载
+                     * 
+                     */
+                    std::string GetQueryFlag() const;
+
+                    /**
+                     * 设置详情数据下载
+                     * @param _queryFlag 详情数据下载
+                     * 
+                     */
+                    void SetQueryFlag(const std::string& _queryFlag);
+
+                    /**
+                     * 判断参数 QueryFlag 是否已赋值
+                     * @return QueryFlag 是否已赋值
+                     * 
+                     */
+                    bool QueryFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -484,7 +505,7 @@ AnalyzeTaskType_MediaStream：音视频体验
                     bool m_ascendingHasBeenSet;
 
                     /**
-                     * 选中字段
+                     * 选中字段，如ProbeTime、TransferTime、TransferSize等。
                      */
                     std::vector<std::string> m_selectedFields;
                     bool m_selectedFieldsHasBeenSet;
@@ -556,6 +577,12 @@ AnalyzeTaskType_MediaStream：音视频体验
                      */
                     std::string m_scrollID;
                     bool m_scrollIDHasBeenSet;
+
+                    /**
+                     * 详情数据下载
+                     */
+                    std::string m_queryFlag;
+                    bool m_queryFlagHasBeenSet;
 
                 };
             }

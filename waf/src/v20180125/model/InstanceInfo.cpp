@@ -57,7 +57,8 @@ InstanceInfo::InstanceInfo() :
     m_apiPkgHasBeenSet(false),
     m_miniPkgHasBeenSet(false),
     m_miniQpsStandardHasBeenSet(false),
-    m_miniMaxQPSHasBeenSet(false)
+    m_miniMaxQPSHasBeenSet(false),
+    m_lastQpsExceedTimeHasBeenSet(false)
 {
 }
 
@@ -499,6 +500,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_miniMaxQPSHasBeenSet = true;
     }
 
+    if (value.HasMember("LastQpsExceedTime") && !value["LastQpsExceedTime"].IsNull())
+    {
+        if (!value["LastQpsExceedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.LastQpsExceedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastQpsExceedTime = string(value["LastQpsExceedTime"].GetString());
+        m_lastQpsExceedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -809,6 +820,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "MiniMaxQPS";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_miniMaxQPS, allocator);
+    }
+
+    if (m_lastQpsExceedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastQpsExceedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastQpsExceedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1404,5 +1423,21 @@ void InstanceInfo::SetMiniMaxQPS(const uint64_t& _miniMaxQPS)
 bool InstanceInfo::MiniMaxQPSHasBeenSet() const
 {
     return m_miniMaxQPSHasBeenSet;
+}
+
+string InstanceInfo::GetLastQpsExceedTime() const
+{
+    return m_lastQpsExceedTime;
+}
+
+void InstanceInfo::SetLastQpsExceedTime(const string& _lastQpsExceedTime)
+{
+    m_lastQpsExceedTime = _lastQpsExceedTime;
+    m_lastQpsExceedTimeHasBeenSet = true;
+}
+
+bool InstanceInfo::LastQpsExceedTimeHasBeenSet() const
+{
+    return m_lastQpsExceedTimeHasBeenSet;
 }
 

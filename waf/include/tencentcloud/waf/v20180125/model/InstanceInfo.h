@@ -940,6 +940,31 @@ namespace TencentCloud
                      */
                     bool MiniMaxQPSHasBeenSet() const;
 
+                    /**
+                     * 获取最近一次超量时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastQpsExceedTime 最近一次超量时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLastQpsExceedTime() const;
+
+                    /**
+                     * 设置最近一次超量时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastQpsExceedTime 最近一次超量时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastQpsExceedTime(const std::string& _lastQpsExceedTime);
+
+                    /**
+                     * 判断参数 LastQpsExceedTime 是否已赋值
+                     * @return LastQpsExceedTime 是否已赋值
+                     * 
+                     */
+                    bool LastQpsExceedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1190,6 +1215,13 @@ namespace TencentCloud
                      */
                     uint64_t m_miniMaxQPS;
                     bool m_miniMaxQPSHasBeenSet;
+
+                    /**
+                     * 最近一次超量时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastQpsExceedTime;
+                    bool m_lastQpsExceedTimeHasBeenSet;
 
                 };
             }

@@ -30,6 +30,7 @@ ModifyClusterNodePoolRequest::ModifyClusterNodePoolRequest() :
     m_minNodesNumHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
+    m_annotationsHasBeenSet(false),
     m_enableAutoscaleHasBeenSet(false),
     m_osNameHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
@@ -116,6 +117,21 @@ string ModifyClusterNodePoolRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_taints.begin(); itr != m_taints.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_annotationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Annotations";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_annotations.begin(); itr != m_annotations.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -345,6 +361,22 @@ void ModifyClusterNodePoolRequest::SetTaints(const vector<Taint>& _taints)
 bool ModifyClusterNodePoolRequest::TaintsHasBeenSet() const
 {
     return m_taintsHasBeenSet;
+}
+
+vector<AnnotationValue> ModifyClusterNodePoolRequest::GetAnnotations() const
+{
+    return m_annotations;
+}
+
+void ModifyClusterNodePoolRequest::SetAnnotations(const vector<AnnotationValue>& _annotations)
+{
+    m_annotations = _annotations;
+    m_annotationsHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::AnnotationsHasBeenSet() const
+{
+    return m_annotationsHasBeenSet;
 }
 
 bool ModifyClusterNodePoolRequest::GetEnableAutoscale() const

@@ -85,6 +85,27 @@ namespace TencentCloud
                      */
                     bool Ipv6SubnetCidrBlocksHasBeenSet() const;
 
+                    /**
+                     * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 
+                     */
+                    std::string GetClientToken() const;
+
+                    /**
+                     * 设置用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * @param _clientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 
+                     */
+                    void SetClientToken(const std::string& _clientToken);
+
+                    /**
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
+                     * 
+                     */
+                    bool ClientTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +119,12 @@ namespace TencentCloud
                      */
                     std::vector<Ipv6SubnetCidrBlock> m_ipv6SubnetCidrBlocks;
                     bool m_ipv6SubnetCidrBlocksHasBeenSet;
+
+                    /**
+                     * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     */
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
 
                 };
             }

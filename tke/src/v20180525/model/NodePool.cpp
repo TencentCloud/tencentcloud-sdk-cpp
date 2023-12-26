@@ -29,6 +29,7 @@ NodePool::NodePool() :
     m_autoscalingGroupIdHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
+    m_annotationsHasBeenSet(false),
     m_nodeCountSummaryHasBeenSet(false),
     m_autoscalingGroupStatusHasBeenSet(false),
     m_maxNodesNumHasBeenSet(false),
@@ -153,6 +154,26 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
             m_taints.push_back(item);
         }
         m_taintsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Annotations") && !value["Annotations"].IsNull())
+    {
+        if (!value["Annotations"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodePool.Annotations` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Annotations"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AnnotationValue item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_annotations.push_back(item);
+        }
+        m_annotationsHasBeenSet = true;
     }
 
     if (value.HasMember("NodeCountSummary") && !value["NodeCountSummary"].IsNull())
@@ -461,6 +482,21 @@ void NodePool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         }
     }
 
+    if (m_annotationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Annotations";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_annotations.begin(); itr != m_annotations.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_nodeCountSummaryHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -751,6 +787,22 @@ void NodePool::SetTaints(const vector<Taint>& _taints)
 bool NodePool::TaintsHasBeenSet() const
 {
     return m_taintsHasBeenSet;
+}
+
+vector<AnnotationValue> NodePool::GetAnnotations() const
+{
+    return m_annotations;
+}
+
+void NodePool::SetAnnotations(const vector<AnnotationValue>& _annotations)
+{
+    m_annotations = _annotations;
+    m_annotationsHasBeenSet = true;
+}
+
+bool NodePool::AnnotationsHasBeenSet() const
+{
+    return m_annotationsHasBeenSet;
 }
 
 NodeCountSummary NodePool::GetNodeCountSummary() const

@@ -1,0 +1,323 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CDWDORIS_V20211228_MODEL_DESCRIBESLOWQUERYRECORDSREQUEST_H_
+#define TENCENTCLOUD_CDWDORIS_V20211228_MODEL_DESCRIBESLOWQUERYRECORDSREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Cdwdoris
+    {
+        namespace V20211228
+        {
+            namespace Model
+            {
+                /**
+                * DescribeSlowQueryRecords请求参数结构体
+                */
+                class DescribeSlowQueryRecordsRequest : public AbstractModel
+                {
+                public:
+                    DescribeSlowQueryRecordsRequest();
+                    ~DescribeSlowQueryRecordsRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例ID
+                     * @param _instanceId 实例ID
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取慢查询时间
+                     * @return QueryDurationMs 慢查询时间
+                     * 
+                     */
+                    int64_t GetQueryDurationMs() const;
+
+                    /**
+                     * 设置慢查询时间
+                     * @param _queryDurationMs 慢查询时间
+                     * 
+                     */
+                    void SetQueryDurationMs(const int64_t& _queryDurationMs);
+
+                    /**
+                     * 判断参数 QueryDurationMs 是否已赋值
+                     * @return QueryDurationMs 是否已赋值
+                     * 
+                     */
+                    bool QueryDurationMsHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间
+                     * @return StartTime 开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param _startTime 开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间
+                     * @return EndTime 结束时间
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置结束时间
+                     * @param _endTime 结束时间
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取分页
+                     * @return PageSize 分页
+                     * 
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置分页
+                     * @param _pageSize 分页
+                     * 
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取分页
+                     * @return PageNum 分页
+                     * 
+                     */
+                    int64_t GetPageNum() const;
+
+                    /**
+                     * 设置分页
+                     * @param _pageNum 分页
+                     * 
+                     */
+                    void SetPageNum(const int64_t& _pageNum);
+
+                    /**
+                     * 判断参数 PageNum 是否已赋值
+                     * @return PageNum 是否已赋值
+                     * 
+                     */
+                    bool PageNumHasBeenSet() const;
+
+                    /**
+                     * 获取排序参数
+                     * @return DurationMs 排序参数
+                     * 
+                     */
+                    std::string GetDurationMs() const;
+
+                    /**
+                     * 设置排序参数
+                     * @param _durationMs 排序参数
+                     * 
+                     */
+                    void SetDurationMs(const std::string& _durationMs);
+
+                    /**
+                     * 判断参数 DurationMs 是否已赋值
+                     * @return DurationMs 是否已赋值
+                     * 
+                     */
+                    bool DurationMsHasBeenSet() const;
+
+                    /**
+                     * 获取数据库名称
+                     * @return DbName 数据库名称
+                     * 
+                     */
+                    std::vector<std::string> GetDbName() const;
+
+                    /**
+                     * 设置数据库名称
+                     * @param _dbName 数据库名称
+                     * 
+                     */
+                    void SetDbName(const std::vector<std::string>& _dbName);
+
+                    /**
+                     * 判断参数 DbName 是否已赋值
+                     * @return DbName 是否已赋值
+                     * 
+                     */
+                    bool DbNameHasBeenSet() const;
+
+                    /**
+                     * 获取是否是查询，0：否， 1：是
+                     * @return IsQuery 是否是查询，0：否， 1：是
+                     * 
+                     */
+                    int64_t GetIsQuery() const;
+
+                    /**
+                     * 设置是否是查询，0：否， 1：是
+                     * @param _isQuery 是否是查询，0：否， 1：是
+                     * 
+                     */
+                    void SetIsQuery(const int64_t& _isQuery);
+
+                    /**
+                     * 判断参数 IsQuery 是否已赋值
+                     * @return IsQuery 是否已赋值
+                     * 
+                     */
+                    bool IsQueryHasBeenSet() const;
+
+                    /**
+                     * 获取catalog名称
+                     * @return CatalogName catalog名称
+                     * 
+                     */
+                    std::vector<std::string> GetCatalogName() const;
+
+                    /**
+                     * 设置catalog名称
+                     * @param _catalogName catalog名称
+                     * 
+                     */
+                    void SetCatalogName(const std::vector<std::string>& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 慢查询时间
+                     */
+                    int64_t m_queryDurationMs;
+                    bool m_queryDurationMsHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 分页
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 分页
+                     */
+                    int64_t m_pageNum;
+                    bool m_pageNumHasBeenSet;
+
+                    /**
+                     * 排序参数
+                     */
+                    std::string m_durationMs;
+                    bool m_durationMsHasBeenSet;
+
+                    /**
+                     * 数据库名称
+                     */
+                    std::vector<std::string> m_dbName;
+                    bool m_dbNameHasBeenSet;
+
+                    /**
+                     * 是否是查询，0：否， 1：是
+                     */
+                    int64_t m_isQuery;
+                    bool m_isQueryHasBeenSet;
+
+                    /**
+                     * catalog名称
+                     */
+                    std::vector<std::string> m_catalogName;
+                    bool m_catalogNameHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CDWDORIS_V20211228_MODEL_DESCRIBESLOWQUERYRECORDSREQUEST_H_

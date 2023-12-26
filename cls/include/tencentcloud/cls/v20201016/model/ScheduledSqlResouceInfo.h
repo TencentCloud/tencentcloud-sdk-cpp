@@ -178,15 +178,15 @@ BizType为1时，优先使用MetricNames字段多指标只能填充到MetricName
                     bool MetricLabelsHasBeenSet() const;
 
                     /**
-                     * 获取指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间，精度毫秒）为指标时间戳。
-                     * @return CustomTime 指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间，精度毫秒）为指标时间戳。
+                     * 获取指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间、TimeStamp，精度毫秒）为指标时间戳。
+                     * @return CustomTime 指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间、TimeStamp，精度毫秒）为指标时间戳。
                      * 
                      */
                     std::string GetCustomTime() const;
 
                     /**
-                     * 设置指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间，精度毫秒）为指标时间戳。
-                     * @param _customTime 指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间，精度毫秒）为指标时间戳。
+                     * 设置指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间、TimeStamp，精度毫秒）为指标时间戳。
+                     * @param _customTime 指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间、TimeStamp，精度毫秒）为指标时间戳。
                      * 
                      */
                     void SetCustomTime(const std::string& _customTime);
@@ -263,7 +263,7 @@ BizType为1时，优先使用MetricNames字段多指标只能填充到MetricName
                     bool m_metricLabelsHasBeenSet;
 
                     /**
-                     * 指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间，精度毫秒）为指标时间戳。
+                     * 指标时间戳，默认值为SQL查询时间范围的左侧时间点，您也可以指定其他字段（类型为uinx时间、TimeStamp，精度毫秒）为指标时间戳。
                      */
                     std::string m_customTime;
                     bool m_customTimeHasBeenSet;

@@ -24,7 +24,8 @@ using namespace std;
 
 AssignIpv6SubnetCidrBlockRequest::AssignIpv6SubnetCidrBlockRequest() :
     m_vpcIdHasBeenSet(false),
-    m_ipv6SubnetCidrBlocksHasBeenSet(false)
+    m_ipv6SubnetCidrBlocksHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string AssignIpv6SubnetCidrBlockRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,6 +105,22 @@ void AssignIpv6SubnetCidrBlockRequest::SetIpv6SubnetCidrBlocks(const vector<Ipv6
 bool AssignIpv6SubnetCidrBlockRequest::Ipv6SubnetCidrBlocksHasBeenSet() const
 {
     return m_ipv6SubnetCidrBlocksHasBeenSet;
+}
+
+string AssignIpv6SubnetCidrBlockRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void AssignIpv6SubnetCidrBlockRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool AssignIpv6SubnetCidrBlockRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

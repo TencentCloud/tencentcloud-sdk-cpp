@@ -141,15 +141,15 @@ namespace TencentCloud
                     bool ComponentsHasBeenSet() const;
 
                     /**
-                     * 获取模板中的签署参与方列表
-                     * @return Recipients 模板中的签署参与方列表
+                     * 获取此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+                     * @return Recipients 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
                      * 
                      */
                     std::vector<Recipient> GetRecipients() const;
 
                     /**
-                     * 设置模板中的签署参与方列表
-                     * @param _recipients 模板中的签署参与方列表
+                     * 设置此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+                     * @param _recipients 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
                      * 
                      */
                     void SetRecipients(const std::vector<Recipient>& _recipients);
@@ -162,15 +162,15 @@ namespace TencentCloud
                     bool RecipientsHasBeenSet() const;
 
                     /**
-                     * 获取模板中的签署控件列表
-                     * @return SignComponents 模板中的签署控件列表
+                     * 获取此模版中的签署控件列表
+                     * @return SignComponents 此模版中的签署控件列表
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置模板中的签署控件列表
-                     * @param _signComponents 模板中的签署控件列表
+                     * 设置此模版中的签署控件列表
+                     * @param _signComponents 此模版中的签署控件列表
                      * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
@@ -269,11 +269,9 @@ namespace TencentCloud
                     /**
                      * 获取模板的H5预览链接,有效期5分钟。
 可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
-（此功能开放需要联系客户经理）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewUrl 模板的H5预览链接,有效期5分钟。
 可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
-（此功能开放需要联系客户经理）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -282,11 +280,9 @@ namespace TencentCloud
                     /**
                      * 设置模板的H5预览链接,有效期5分钟。
 可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
-（此功能开放需要联系客户经理）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _previewUrl 模板的H5预览链接,有效期5分钟。
 可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
-（此功能开放需要联系客户经理）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -408,22 +404,22 @@ namespace TencentCloud
                     bool ChannelAutoSaveHasBeenSet() const;
 
                     /**
-                     * 获取模板版本，全数字字符。
-默认为空，初始版本为yyyyMMdd001。
+                     * 获取模板版本，由全数字字符组成。
+默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateVersion 模板版本，全数字字符。
-默认为空，初始版本为yyyyMMdd001。
+                     * @return TemplateVersion 模板版本，由全数字字符组成。
+默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateVersion() const;
 
                     /**
-                     * 设置模板版本，全数字字符。
-默认为空，初始版本为yyyyMMdd001。
+                     * 设置模板版本，由全数字字符组成。
+默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateVersion 模板版本，全数字字符。
-默认为空，初始版本为yyyyMMdd001。
+                     * @param _templateVersion 模板版本，由全数字字符组成。
+默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -437,26 +433,30 @@ namespace TencentCloud
                     bool TemplateVersionHasBeenSet() const;
 
                     /**
-                     * 获取模板可用状态：
-1启用（默认）
-2停用
+                     * 获取模板可用状态的取值通常为以下两种：
+
+<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
+<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Available 模板可用状态：
-1启用（默认）
-2停用
+                     * @return Available 模板可用状态的取值通常为以下两种：
+
+<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
+<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAvailable() const;
 
                     /**
-                     * 设置模板可用状态：
-1启用（默认）
-2停用
+                     * 设置模板可用状态的取值通常为以下两种：
+
+<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
+<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _available 模板可用状态：
-1启用（默认）
-2停用
+                     * @param _available 模板可用状态的取值通常为以下两种：
+
+<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
+<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -496,13 +496,13 @@ namespace TencentCloud
                     bool m_componentsHasBeenSet;
 
                     /**
-                     * 模板中的签署参与方列表
+                     * 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
                      */
                     std::vector<Recipient> m_recipients;
                     bool m_recipientsHasBeenSet;
 
                     /**
-                     * 模板中的签署控件列表
+                     * 此模版中的签署控件列表
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
@@ -534,7 +534,6 @@ namespace TencentCloud
                     /**
                      * 模板的H5预览链接,有效期5分钟。
 可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
-（此功能开放需要联系客户经理）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;
@@ -571,17 +570,18 @@ namespace TencentCloud
                     bool m_channelAutoSaveHasBeenSet;
 
                     /**
-                     * 模板版本，全数字字符。
-默认为空，初始版本为yyyyMMdd001。
+                     * 模板版本，由全数字字符组成。
+默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateVersion;
                     bool m_templateVersionHasBeenSet;
 
                     /**
-                     * 模板可用状态：
-1启用（默认）
-2停用
+                     * 模板可用状态的取值通常为以下两种：
+
+<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
+<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_available;

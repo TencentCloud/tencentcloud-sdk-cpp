@@ -24,6 +24,7 @@
 #include <tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h>
 #include <tencentcloud/tke/v20180525/model/Label.h>
 #include <tencentcloud/tke/v20180525/model/Taint.h>
+#include <tencentcloud/tke/v20180525/model/AnnotationValue.h>
 #include <tencentcloud/tke/v20180525/model/Tag.h>
 
 
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool LaunchConfigureParaHasBeenSet() const;
 
                     /**
-                     * 获取InstanceAdvancedSettings 示例参数
-                     * @return InstanceAdvancedSettings InstanceAdvancedSettings 示例参数
+                     * 获取InstanceAdvancedSettings
+                     * @return InstanceAdvancedSettings InstanceAdvancedSettings
                      * 
                      */
                     InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
 
                     /**
-                     * 设置InstanceAdvancedSettings 示例参数
-                     * @param _instanceAdvancedSettings InstanceAdvancedSettings 示例参数
+                     * 设置InstanceAdvancedSettings
+                     * @param _instanceAdvancedSettings InstanceAdvancedSettings
                      * 
                      */
                     void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
@@ -213,6 +214,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TaintsHasBeenSet() const;
+
+                    /**
+                     * 获取节点Annotation 列表
+                     * @return Annotations 节点Annotation 列表
+                     * 
+                     */
+                    std::vector<AnnotationValue> GetAnnotations() const;
+
+                    /**
+                     * 设置节点Annotation 列表
+                     * @param _annotations 节点Annotation 列表
+                     * 
+                     */
+                    void SetAnnotations(const std::vector<AnnotationValue>& _annotations);
+
+                    /**
+                     * 判断参数 Annotations 是否已赋值
+                     * @return Annotations 是否已赋值
+                     * 
+                     */
+                    bool AnnotationsHasBeenSet() const;
 
                     /**
                      * 获取节点池纬度运行时类型及版本
@@ -361,7 +383,7 @@ namespace TencentCloud
                     bool m_launchConfigureParaHasBeenSet;
 
                     /**
-                     * InstanceAdvancedSettings 示例参数
+                     * InstanceAdvancedSettings
                      */
                     InstanceAdvancedSettings m_instanceAdvancedSettings;
                     bool m_instanceAdvancedSettingsHasBeenSet;
@@ -389,6 +411,12 @@ namespace TencentCloud
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
+
+                    /**
+                     * 节点Annotation 列表
+                     */
+                    std::vector<AnnotationValue> m_annotations;
+                    bool m_annotationsHasBeenSet;
 
                     /**
                      * 节点池纬度运行时类型及版本

@@ -255,6 +255,49 @@ YinsudaClient::DescribeKTVMusicAccompanySegmentUrlOutcomeCallable YinsudaClient:
     return task->get_future();
 }
 
+YinsudaClient::DescribeKTVMusicAccompanySegmentUrlVipOutcome YinsudaClient::DescribeKTVMusicAccompanySegmentUrlVip(const DescribeKTVMusicAccompanySegmentUrlVipRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKTVMusicAccompanySegmentUrlVip");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKTVMusicAccompanySegmentUrlVipResponse rsp = DescribeKTVMusicAccompanySegmentUrlVipResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKTVMusicAccompanySegmentUrlVipOutcome(rsp);
+        else
+            return DescribeKTVMusicAccompanySegmentUrlVipOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKTVMusicAccompanySegmentUrlVipOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::DescribeKTVMusicAccompanySegmentUrlVipAsync(const DescribeKTVMusicAccompanySegmentUrlVipRequest& request, const DescribeKTVMusicAccompanySegmentUrlVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKTVMusicAccompanySegmentUrlVip(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::DescribeKTVMusicAccompanySegmentUrlVipOutcomeCallable YinsudaClient::DescribeKTVMusicAccompanySegmentUrlVipCallable(const DescribeKTVMusicAccompanySegmentUrlVipRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKTVMusicAccompanySegmentUrlVipOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKTVMusicAccompanySegmentUrlVip(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YinsudaClient::DescribeKTVMusicsByTagOutcome YinsudaClient::DescribeKTVMusicsByTag(const DescribeKTVMusicsByTagRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeKTVMusicsByTag");
@@ -599,6 +642,49 @@ YinsudaClient::DescribeUserInfoOutcomeCallable YinsudaClient::DescribeUserInfoCa
     return task->get_future();
 }
 
+YinsudaClient::DescribeVipUserInfoOutcome YinsudaClient::DescribeVipUserInfo(const DescribeVipUserInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVipUserInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVipUserInfoResponse rsp = DescribeVipUserInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVipUserInfoOutcome(rsp);
+        else
+            return DescribeVipUserInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVipUserInfoOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::DescribeVipUserInfoAsync(const DescribeVipUserInfoRequest& request, const DescribeVipUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVipUserInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::DescribeVipUserInfoOutcomeCallable YinsudaClient::DescribeVipUserInfoCallable(const DescribeVipUserInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVipUserInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVipUserInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YinsudaClient::DestroyKTVRobotOutcome YinsudaClient::DestroyKTVRobot(const DestroyKTVRobotRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyKTVRobot");
@@ -678,6 +764,49 @@ YinsudaClient::RechargeLiveVipOutcomeCallable YinsudaClient::RechargeLiveVipCall
         [this, request]()
         {
             return this->RechargeLiveVip(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YinsudaClient::RechargeVipOutcome YinsudaClient::RechargeVip(const RechargeVipRequest &request)
+{
+    auto outcome = MakeRequest(request, "RechargeVip");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RechargeVipResponse rsp = RechargeVipResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RechargeVipOutcome(rsp);
+        else
+            return RechargeVipOutcome(o.GetError());
+    }
+    else
+    {
+        return RechargeVipOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::RechargeVipAsync(const RechargeVipRequest& request, const RechargeVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RechargeVip(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::RechargeVipOutcomeCallable YinsudaClient::RechargeVipCallable(const RechargeVipRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RechargeVipOutcome()>>(
+        [this, request]()
+        {
+            return this->RechargeVip(request);
         }
     );
 
