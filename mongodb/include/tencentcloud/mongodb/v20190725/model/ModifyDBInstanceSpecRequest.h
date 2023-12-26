@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mongodb/v20190725/model/AddNodeList.h>
+#include <tencentcloud/mongodb/v20190725/model/RemoveNodeList.h>
 
 
 namespace TencentCloud
@@ -225,6 +227,48 @@ namespace TencentCloud
                      */
                     bool InMaintenanceHasBeenSet() const;
 
+                    /**
+                     * 获取新增节点属性列表。
+                     * @return AddNodeList 新增节点属性列表。
+                     * 
+                     */
+                    std::vector<AddNodeList> GetAddNodeList() const;
+
+                    /**
+                     * 设置新增节点属性列表。
+                     * @param _addNodeList 新增节点属性列表。
+                     * 
+                     */
+                    void SetAddNodeList(const std::vector<AddNodeList>& _addNodeList);
+
+                    /**
+                     * 判断参数 AddNodeList 是否已赋值
+                     * @return AddNodeList 是否已赋值
+                     * 
+                     */
+                    bool AddNodeListHasBeenSet() const;
+
+                    /**
+                     * 获取删除节点属性列表。
+                     * @return RemoveNodeList 删除节点属性列表。
+                     * 
+                     */
+                    std::vector<RemoveNodeList> GetRemoveNodeList() const;
+
+                    /**
+                     * 设置删除节点属性列表。
+                     * @param _removeNodeList 删除节点属性列表。
+                     * 
+                     */
+                    void SetRemoveNodeList(const std::vector<RemoveNodeList>& _removeNodeList);
+
+                    /**
+                     * 判断参数 RemoveNodeList 是否已赋值
+                     * @return RemoveNodeList 是否已赋值
+                     * 
+                     */
+                    bool RemoveNodeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -277,6 +321,18 @@ namespace TencentCloud
                      */
                     uint64_t m_inMaintenance;
                     bool m_inMaintenanceHasBeenSet;
+
+                    /**
+                     * 新增节点属性列表。
+                     */
+                    std::vector<AddNodeList> m_addNodeList;
+                    bool m_addNodeListHasBeenSet;
+
+                    /**
+                     * 删除节点属性列表。
+                     */
+                    std::vector<RemoveNodeList> m_removeNodeList;
+                    bool m_removeNodeListHasBeenSet;
 
                 };
             }

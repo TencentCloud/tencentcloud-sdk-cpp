@@ -28,6 +28,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/UpdateIntegrationEmployeesResponse.h
   include/tencentcloud/ess/v20201111/model/Department.h
   include/tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignRequest.h
+  include/tencentcloud/ess/v20201111/model/DeleteStaffsResult.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversResponse.h
@@ -57,6 +58,8 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersResponse.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesResponse.h
+  include/tencentcloud/ess/v20201111/model/NeedReviewApproverInfo.h
+  include/tencentcloud/ess/v20201111/model/CreateFlowGroupSignReviewResponse.h
   include/tencentcloud/ess/v20201111/model/CreateBatchSignUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRemindsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsRequest.h
@@ -201,7 +204,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h
   include/tencentcloud/ess/v20201111/model/SignUrl.h
   include/tencentcloud/ess/v20201111/model/VerifyPdfResponse.h
-  include/tencentcloud/ess/v20201111/model/DeleteStaffsResult.h
+  include/tencentcloud/ess/v20201111/model/CreateFlowGroupSignReviewRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageDetailRequest.h
   include/tencentcloud/ess/v20201111/model/Admin.h
   include/tencentcloud/ess/v20201111/model/Caller.h
@@ -240,6 +243,7 @@ set(ess_src
   src/v20201111/model/UpdateIntegrationEmployeesResponse.cpp
   src/v20201111/model/Department.cpp
   src/v20201111/model/CreatePreparedPersonalEsignRequest.cpp
+  src/v20201111/model/DeleteStaffsResult.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsResponse.cpp
   src/v20201111/model/DeleteExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/CreateFlowApproversResponse.cpp
@@ -269,6 +273,8 @@ set(ess_src
   src/v20201111/model/DeleteIntegrationRoleUsersResponse.cpp
   src/v20201111/model/CreateConvertTaskApiRequest.cpp
   src/v20201111/model/DeleteIntegrationEmployeesResponse.cpp
+  src/v20201111/model/NeedReviewApproverInfo.cpp
+  src/v20201111/model/CreateFlowGroupSignReviewResponse.cpp
   src/v20201111/model/CreateBatchSignUrlResponse.cpp
   src/v20201111/model/CreateFlowRemindsResponse.cpp
   src/v20201111/model/DescribeOrganizationGroupOrganizationsRequest.cpp
@@ -413,7 +419,7 @@ set(ess_src
   src/v20201111/model/CreateUserAutoSignEnableUrlResponse.cpp
   src/v20201111/model/SignUrl.cpp
   src/v20201111/model/VerifyPdfResponse.cpp
-  src/v20201111/model/DeleteStaffsResult.cpp
+  src/v20201111/model/CreateFlowGroupSignReviewRequest.cpp
   src/v20201111/model/DescribeBillUsageDetailRequest.cpp
   src/v20201111/model/Admin.cpp
   src/v20201111/model/Caller.cpp

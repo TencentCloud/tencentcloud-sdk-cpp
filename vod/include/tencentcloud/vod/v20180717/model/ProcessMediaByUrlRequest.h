@@ -48,6 +48,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 
+                     */
+                    uint64_t GetSubAppId() const;
+
+                    /**
+                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 
+                     */
+                    void SetSubAppId(const uint64_t& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     * 
+                     */
+                    bool SubAppIdHasBeenSet() const;
+
+                    /**
                      * 获取API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
                      * @return InputInfo API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
                      * 
@@ -236,28 +257,13 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
-                    /**
-                     * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * 
-                     */
-                    uint64_t GetSubAppId() const;
-
-                    /**
-                     * 设置点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @param _subAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * 
-                     */
-                    void SetSubAppId(const uint64_t& _subAppId);
-
-                    /**
-                     * 判断参数 SubAppId 是否已赋值
-                     * @return SubAppId 是否已赋值
-                     * 
-                     */
-                    bool SubAppIdHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     */
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
 
                     /**
                      * API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
@@ -312,12 +318,6 @@ namespace TencentCloud
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
-
-                    /**
-                     * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t m_subAppId;
-                    bool m_subAppIdHasBeenSet;
 
                 };
             }

@@ -480,15 +480,15 @@ namespace TencentCloud
                     bool NotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署人配置
-                     * @return ApproverOption 签署人配置
+                     * 获取签署人配置，用于控制签署人相关属性
+                     * @return ApproverOption 签署人配置，用于控制签署人相关属性
                      * 
                      */
                     CommonApproverOption GetApproverOption() const;
 
                     /**
-                     * 设置签署人配置
-                     * @param _approverOption 签署人配置
+                     * 设置签署人配置，用于控制签署人相关属性
+                     * @param _approverOption 签署人配置，用于控制签署人相关属性
                      * 
                      */
                     void SetApproverOption(const CommonApproverOption& _approverOption);
@@ -745,7 +745,7 @@ namespace TencentCloud
                     bool m_notifyTypeHasBeenSet;
 
                     /**
-                     * 签署人配置
+                     * 签署人配置，用于控制签署人相关属性
                      */
                     CommonApproverOption m_approverOption;
                     bool m_approverOptionHasBeenSet;

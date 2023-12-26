@@ -85,15 +85,36 @@ namespace TencentCloud
                     bool IsContainSubLevelHasBeenSet() const;
 
                     /**
-                     * 获取设备接入协议。1:RTMP，2:GB，3:GW
-                     * @return AccessProtocol 设备接入协议。1:RTMP，2:GB，3:GW
+                     * 获取是否包含当前用户已关联的设备，默认false
+                     * @return IsContainUser 是否包含当前用户已关联的设备，默认false
+                     * 
+                     */
+                    bool GetIsContainUser() const;
+
+                    /**
+                     * 设置是否包含当前用户已关联的设备，默认false
+                     * @param _isContainUser 是否包含当前用户已关联的设备，默认false
+                     * 
+                     */
+                    void SetIsContainUser(const bool& _isContainUser);
+
+                    /**
+                     * 判断参数 IsContainUser 是否已赋值
+                     * @return IsContainUser 是否已赋值
+                     * 
+                     */
+                    bool IsContainUserHasBeenSet() const;
+
+                    /**
+                     * 获取设备接入协议。1:RTMP，2:GB，3:GW，4:IVCP(私有协议)
+                     * @return AccessProtocol 设备接入协议。1:RTMP，2:GB，3:GW，4:IVCP(私有协议)
                      * 
                      */
                     uint64_t GetAccessProtocol() const;
 
                     /**
-                     * 设置设备接入协议。1:RTMP，2:GB，3:GW
-                     * @param _accessProtocol 设备接入协议。1:RTMP，2:GB，3:GW
+                     * 设置设备接入协议。1:RTMP，2:GB，3:GW，4:IVCP(私有协议)
+                     * @param _accessProtocol 设备接入协议。1:RTMP，2:GB，3:GW，4:IVCP(私有协议)
                      * 
                      */
                     void SetAccessProtocol(const uint64_t& _accessProtocol);
@@ -169,15 +190,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取模糊搜索设备关键字
-                     * @return Keyword 模糊搜索设备关键字
+                     * 获取模糊搜索设备的关键字
+                     * @return Keyword 模糊搜索设备的关键字
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置模糊搜索设备关键字
-                     * @param _keyword 模糊搜索设备关键字
+                     * 设置模糊搜索设备的关键字
+                     * @param _keyword 模糊搜索设备的关键字
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -267,7 +288,13 @@ namespace TencentCloud
                     bool m_isContainSubLevelHasBeenSet;
 
                     /**
-                     * 设备接入协议。1:RTMP，2:GB，3:GW
+                     * 是否包含当前用户已关联的设备，默认false
+                     */
+                    bool m_isContainUser;
+                    bool m_isContainUserHasBeenSet;
+
+                    /**
+                     * 设备接入协议。1:RTMP，2:GB，3:GW，4:IVCP(私有协议)
                      */
                     uint64_t m_accessProtocol;
                     bool m_accessProtocolHasBeenSet;
@@ -291,7 +318,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 模糊搜索设备关键字
+                     * 模糊搜索设备的关键字
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;

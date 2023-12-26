@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DeleteWithInstanceHasBeenSet() const;
 
                     /**
-                     * 获取可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF<br><li>VF
-                     * @return AttachMode 可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF<br><li>VF
+                     * 获取可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF</li><br><li>VF</li>
+                     * @return AttachMode 可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF</li><br><li>VF</li>
                      * 
                      */
                     std::string GetAttachMode() const;
 
                     /**
-                     * 设置可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF<br><li>VF
-                     * @param _attachMode 可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF<br><li>VF
+                     * 设置可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF</li><br><li>VF</li>
+                     * @param _attachMode 可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF</li><br><li>VF</li>
                      * 
                      */
                     void SetAttachMode(const std::string& _attachMode);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_deleteWithInstanceHasBeenSet;
 
                     /**
-                     * 可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF<br><li>VF
+                     * 可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF</li><br><li>VF</li>
                      */
                     std::string m_attachMode;
                     bool m_attachModeHasBeenSet;

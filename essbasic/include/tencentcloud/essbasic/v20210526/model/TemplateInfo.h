@@ -225,15 +225,15 @@ namespace TencentCloud
                     bool IsPromoterHasBeenSet() const;
 
                     /**
-                     * 获取模板的创建者信息，电子签系统用户ID
-                     * @return Creator 模板的创建者信息，电子签系统用户ID
+                     * 获取模板的创建者名字
+                     * @return Creator 模板的创建者名字
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置模板的创建者信息，电子签系统用户ID
-                     * @param _creator 模板的创建者信息，电子签系统用户ID
+                     * 设置模板的创建者名字
+                     * @param _creator 模板的创建者名字
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -520,7 +520,7 @@ namespace TencentCloud
                     bool m_isPromoterHasBeenSet;
 
                     /**
-                     * 模板的创建者信息，电子签系统用户ID
+                     * 模板的创建者名字
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;

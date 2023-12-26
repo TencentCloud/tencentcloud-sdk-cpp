@@ -25,6 +25,7 @@ using namespace std;
 ListDevicesRequest::ListDevicesRequest() :
     m_organizationIdHasBeenSet(false),
     m_isContainSubLevelHasBeenSet(false),
+    m_isContainUserHasBeenSet(false),
     m_accessProtocolHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -57,6 +58,14 @@ string ListDevicesRequest::ToJsonString() const
         string key = "IsContainSubLevel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isContainSubLevel, allocator);
+    }
+
+    if (m_isContainUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsContainUser";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isContainUser, allocator);
     }
 
     if (m_accessProtocolHasBeenSet)
@@ -161,6 +170,22 @@ void ListDevicesRequest::SetIsContainSubLevel(const bool& _isContainSubLevel)
 bool ListDevicesRequest::IsContainSubLevelHasBeenSet() const
 {
     return m_isContainSubLevelHasBeenSet;
+}
+
+bool ListDevicesRequest::GetIsContainUser() const
+{
+    return m_isContainUser;
+}
+
+void ListDevicesRequest::SetIsContainUser(const bool& _isContainUser)
+{
+    m_isContainUser = _isContainUser;
+    m_isContainUserHasBeenSet = true;
+}
+
+bool ListDevicesRequest::IsContainUserHasBeenSet() const
+{
+    return m_isContainUserHasBeenSet;
 }
 
 uint64_t ListDevicesRequest::GetAccessProtocol() const

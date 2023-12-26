@@ -88,10 +88,10 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件。
 <li>Name- string - 是否必填：否 - 包名</li>
-<li>User- string - 是否必填：否 - 用户</li>
+<li>User- string - 是否必填：否 - 用户名</li>
                      * @return Filters 过滤条件。
 <li>Name- string - 是否必填：否 - 包名</li>
-<li>User- string - 是否必填：否 - 用户</li>
+<li>User- string - 是否必填：否 - 用户名</li>
                      * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
@@ -99,10 +99,10 @@ namespace TencentCloud
                     /**
                      * 设置过滤条件。
 <li>Name- string - 是否必填：否 - 包名</li>
-<li>User- string - 是否必填：否 - 用户</li>
+<li>User- string - 是否必填：否 - 用户名</li>
                      * @param _filters 过滤条件。
 <li>Name- string - 是否必填：否 - 包名</li>
-<li>User- string - 是否必填：否 - 用户</li>
+<li>User- string - 是否必填：否 - 用户名</li>
                      * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
@@ -173,7 +173,7 @@ namespace TencentCloud
                     /**
                      * 过滤条件。
 <li>Name- string - 是否必填：否 - 包名</li>
-<li>User- string - 是否必填：否 - 用户</li>
+<li>User- string - 是否必填：否 - 用户名</li>
                      */
                     std::vector<AssetFilters> m_filters;
                     bool m_filtersHasBeenSet;

@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool CcnDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启等价路由功能。`False` 不开启，`True` 开启。
+                     * @return RouteECMPFlag 是否开启等价路由功能。`False` 不开启，`True` 开启。
+                     * 
+                     */
+                    bool GetRouteECMPFlag() const;
+
+                    /**
+                     * 设置是否开启等价路由功能。`False` 不开启，`True` 开启。
+                     * @param _routeECMPFlag 是否开启等价路由功能。`False` 不开启，`True` 开启。
+                     * 
+                     */
+                    void SetRouteECMPFlag(const bool& _routeECMPFlag);
+
+                    /**
+                     * 判断参数 RouteECMPFlag 是否已赋值
+                     * @return RouteECMPFlag 是否已赋值
+                     * 
+                     */
+                    bool RouteECMPFlagHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启路由重叠功能。`False` 不开启，`True` 开启。
+                     * @return RouteOverlapFlag 是否开启路由重叠功能。`False` 不开启，`True` 开启。
+                     * 
+                     */
+                    bool GetRouteOverlapFlag() const;
+
+                    /**
+                     * 设置是否开启路由重叠功能。`False` 不开启，`True` 开启。
+                     * @param _routeOverlapFlag 是否开启路由重叠功能。`False` 不开启，`True` 开启。
+                     * 
+                     */
+                    void SetRouteOverlapFlag(const bool& _routeOverlapFlag);
+
+                    /**
+                     * 判断参数 RouteOverlapFlag 是否已赋值
+                     * @return RouteOverlapFlag 是否已赋值
+                     * 
+                     */
+                    bool RouteOverlapFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     std::string m_ccnDescription;
                     bool m_ccnDescriptionHasBeenSet;
+
+                    /**
+                     * 是否开启等价路由功能。`False` 不开启，`True` 开启。
+                     */
+                    bool m_routeECMPFlag;
+                    bool m_routeECMPFlagHasBeenSet;
+
+                    /**
+                     * 是否开启路由重叠功能。`False` 不开启，`True` 开启。
+                     */
+                    bool m_routeOverlapFlag;
+                    bool m_routeOverlapFlagHasBeenSet;
 
                 };
             }

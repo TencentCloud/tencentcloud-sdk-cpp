@@ -38,6 +38,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/IsolateDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskResponse.h
+  include/tencentcloud/mongodb/v20190725/model/AddNodeList.h
   include/tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h
   include/tencentcloud/mongodb/v20190725/model/DBInstanceInfo.h
   include/tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h
@@ -73,7 +74,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeDBBackupsResponse.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSecurityGroupResponse.h
   include/tencentcloud/mongodb/v20190725/model/UserInfo.h
-  include/tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsRequest.h
+  include/tencentcloud/mongodb/v20190725/model/RemoveNodeList.h
   include/tencentcloud/mongodb/v20190725/model/NodeTag.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupResponse.h
@@ -116,6 +117,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceRequest.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsResponse.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsRequest.h
   include/tencentcloud/mongodb/v20190725/model/InstanceDetail.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecResponse.h
   include/tencentcloud/mongodb/v20190725/model/InstanceChargePrepaid.h
@@ -176,6 +178,7 @@ set(mongodb_src
   src/v20190725/model/IsolateDBInstanceResponse.cpp
   src/v20190725/model/DescribeSecurityGroupRequest.cpp
   src/v20190725/model/DescribeBackupDownloadTaskResponse.cpp
+  src/v20190725/model/AddNodeList.cpp
   src/v20190725/model/FlushInstanceRouterConfigRequest.cpp
   src/v20190725/model/DBInstanceInfo.cpp
   src/v20190725/model/SetAccountUserPrivilegeResponse.cpp
@@ -211,7 +214,7 @@ set(mongodb_src
   src/v20190725/model/DescribeDBBackupsResponse.cpp
   src/v20190725/model/ModifyDBInstanceSecurityGroupResponse.cpp
   src/v20190725/model/UserInfo.cpp
-  src/v20190725/model/DescribeInstanceParamsRequest.cpp
+  src/v20190725/model/RemoveNodeList.cpp
   src/v20190725/model/NodeTag.cpp
   src/v20190725/model/InquirePriceCreateDBInstancesResponse.cpp
   src/v20190725/model/DescribeSecurityGroupResponse.cpp
@@ -254,6 +257,7 @@ set(mongodb_src
   src/v20190725/model/OfflineIsolatedDBInstanceRequest.cpp
   src/v20190725/model/InquirePriceCreateDBInstancesRequest.cpp
   src/v20190725/model/DescribeInstanceParamsResponse.cpp
+  src/v20190725/model/DescribeInstanceParamsRequest.cpp
   src/v20190725/model/InstanceDetail.cpp
   src/v20190725/model/ModifyDBInstanceSpecResponse.cpp
   src/v20190725/model/InstanceChargePrepaid.cpp

@@ -65,15 +65,23 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取签署流程编号
-                     * @return FlowId 签署流程编号
+                     * 获取合同流程ID，为32位字符串。
+<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>
+<li>可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>
+                     * @return FlowId 合同流程ID，为32位字符串。
+<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>
+<li>可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置签署流程编号
-                     * @param _flowId 签署流程编号
+                     * 设置合同流程ID，为32位字符串。
+<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>
+<li>可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>
+                     * @param _flowId 合同流程ID，为32位字符串。
+<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>
+<li>可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -87,26 +95,26 @@ namespace TencentCloud
 
                     /**
                      * 获取企业内部审核结果
-PASS: 通过
-REJECT: 拒绝
-SIGN_REJECT:拒签(流程结束)
+<ul><li>PASS: 审核通过</li>
+<li>REJECT: 审核拒绝</li>
+<li>SIGN_REJECT:拒签(流程结束)</li></ul>
                      * @return ReviewType 企业内部审核结果
-PASS: 通过
-REJECT: 拒绝
-SIGN_REJECT:拒签(流程结束)
+<ul><li>PASS: 审核通过</li>
+<li>REJECT: 审核拒绝</li>
+<li>SIGN_REJECT:拒签(流程结束)</li></ul>
                      * 
                      */
                     std::string GetReviewType() const;
 
                     /**
                      * 设置企业内部审核结果
-PASS: 通过
-REJECT: 拒绝
-SIGN_REJECT:拒签(流程结束)
+<ul><li>PASS: 审核通过</li>
+<li>REJECT: 审核拒绝</li>
+<li>SIGN_REJECT:拒签(流程结束)</li></ul>
                      * @param _reviewType 企业内部审核结果
-PASS: 通过
-REJECT: 拒绝
-SIGN_REJECT:拒签(流程结束)
+<ul><li>PASS: 审核通过</li>
+<li>REJECT: 审核拒绝</li>
+<li>SIGN_REJECT:拒签(流程结束)</li></ul>
                      * 
                      */
                     void SetReviewType(const std::string& _reviewType);
@@ -119,19 +127,27 @@ SIGN_REJECT:拒签(流程结束)
                     bool ReviewTypeHasBeenSet() const;
 
                     /**
-                     * 获取审核原因 
-当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
-                     * @return ReviewMessage 审核原因 
-当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
+                     * 获取审核结果原因
+<ul><li>字符串长度不超过200</li>
+<li>当ReviewType 是拒绝（REJECT） 时此字段必填。</li>
+<li>当ReviewType 是拒绝（SIGN_REJECT） 时此字段必填。</li></ul>
+                     * @return ReviewMessage 审核结果原因
+<ul><li>字符串长度不超过200</li>
+<li>当ReviewType 是拒绝（REJECT） 时此字段必填。</li>
+<li>当ReviewType 是拒绝（SIGN_REJECT） 时此字段必填。</li></ul>
                      * 
                      */
                     std::string GetReviewMessage() const;
 
                     /**
-                     * 设置审核原因 
-当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
-                     * @param _reviewMessage 审核原因 
-当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
+                     * 设置审核结果原因
+<ul><li>字符串长度不超过200</li>
+<li>当ReviewType 是拒绝（REJECT） 时此字段必填。</li>
+<li>当ReviewType 是拒绝（SIGN_REJECT） 时此字段必填。</li></ul>
+                     * @param _reviewMessage 审核结果原因
+<ul><li>字符串长度不超过200</li>
+<li>当ReviewType 是拒绝（REJECT） 时此字段必填。</li>
+<li>当ReviewType 是拒绝（SIGN_REJECT） 时此字段必填。</li></ul>
                      * 
                      */
                     void SetReviewMessage(const std::string& _reviewMessage);
@@ -144,15 +160,19 @@ SIGN_REJECT:拒签(流程结束)
                     bool ReviewMessageHasBeenSet() const;
 
                     /**
-                     * 获取签署节点审核时需要指定，给个人审核时必填。
-                     * @return RecipientId 签署节点审核时需要指定，给个人审核时必填。
+                     * 获取审核节点的签署人标志，用于指定当前审核的签署方
+<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
+                     * @return RecipientId 审核节点的签署人标志，用于指定当前审核的签署方
+<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置签署节点审核时需要指定，给个人审核时必填。
-                     * @param _recipientId 签署节点审核时需要指定，给个人审核时必填。
+                     * 设置审核节点的签署人标志，用于指定当前审核的签署方
+<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
+                     * @param _recipientId 审核节点的签署人标志，用于指定当前审核的签署方
+<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -165,31 +185,35 @@ SIGN_REJECT:拒签(流程结束)
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
-注：接口通过该字段区分操作类型
-该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
-若想使用发起审核，请指定该字段为：CreateReview
-若发起个人审核，则指定该字段为：SignReview
-                     * @return OperateType 操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
-注：接口通过该字段区分操作类型
-该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
-若想使用发起审核，请指定该字段为：CreateReview
-若发起个人审核，则指定该字段为：SignReview
+                     * 获取流程审核操作类型，取值如下：
+<ul><li>**SignReview**：（默认）签署审核</li>
+<li>**CreateReview**：发起审核</li>
+<li>注意：`该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程`</li></ul>
+
+
+                     * @return OperateType 流程审核操作类型，取值如下：
+<ul><li>**SignReview**：（默认）签署审核</li>
+<li>**CreateReview**：发起审核</li>
+<li>注意：`该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程`</li></ul>
+
+
                      * 
                      */
                     std::string GetOperateType() const;
 
                     /**
-                     * 设置操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
-注：接口通过该字段区分操作类型
-该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
-若想使用发起审核，请指定该字段为：CreateReview
-若发起个人审核，则指定该字段为：SignReview
-                     * @param _operateType 操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
-注：接口通过该字段区分操作类型
-该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
-若想使用发起审核，请指定该字段为：CreateReview
-若发起个人审核，则指定该字段为：SignReview
+                     * 设置流程审核操作类型，取值如下：
+<ul><li>**SignReview**：（默认）签署审核</li>
+<li>**CreateReview**：发起审核</li>
+<li>注意：`该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程`</li></ul>
+
+
+                     * @param _operateType 流程审核操作类型，取值如下：
+<ul><li>**SignReview**：（默认）签署审核</li>
+<li>**CreateReview**：发起审核</li>
+<li>注意：`该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程`</li></ul>
+
+
                      * 
                      */
                     void SetOperateType(const std::string& _operateType);
@@ -210,39 +234,45 @@ SIGN_REJECT:拒签(流程结束)
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 签署流程编号
+                     * 合同流程ID，为32位字符串。
+<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>
+<li>可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
                      * 企业内部审核结果
-PASS: 通过
-REJECT: 拒绝
-SIGN_REJECT:拒签(流程结束)
+<ul><li>PASS: 审核通过</li>
+<li>REJECT: 审核拒绝</li>
+<li>SIGN_REJECT:拒签(流程结束)</li></ul>
                      */
                     std::string m_reviewType;
                     bool m_reviewTypeHasBeenSet;
 
                     /**
-                     * 审核原因 
-当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
+                     * 审核结果原因
+<ul><li>字符串长度不超过200</li>
+<li>当ReviewType 是拒绝（REJECT） 时此字段必填。</li>
+<li>当ReviewType 是拒绝（SIGN_REJECT） 时此字段必填。</li></ul>
                      */
                     std::string m_reviewMessage;
                     bool m_reviewMessageHasBeenSet;
 
                     /**
-                     * 签署节点审核时需要指定，给个人审核时必填。
+                     * 审核节点的签署人标志，用于指定当前审核的签署方
+<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
-注：接口通过该字段区分操作类型
-该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
-若想使用发起审核，请指定该字段为：CreateReview
-若发起个人审核，则指定该字段为：SignReview
+                     * 流程审核操作类型，取值如下：
+<ul><li>**SignReview**：（默认）签署审核</li>
+<li>**CreateReview**：发起审核</li>
+<li>注意：`该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程`</li></ul>
+
+
                      */
                     std::string m_operateType;
                     bool m_operateTypeHasBeenSet;

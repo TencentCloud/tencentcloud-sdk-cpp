@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取设备国标编码
-                     * @return Code 设备国标编码
+                     * 获取设备编码
+                     * @return Code 设备编码
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置设备国标编码
-                     * @param _code 设备国标编码
+                     * 设置设备编码
+                     * @param _code 设备编码
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -328,7 +328,7 @@ namespace TencentCloud
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 设备国标编码
+                     * 设备编码
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;

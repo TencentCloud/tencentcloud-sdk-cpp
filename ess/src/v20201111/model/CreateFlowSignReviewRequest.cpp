@@ -26,10 +26,10 @@ CreateFlowSignReviewRequest::CreateFlowSignReviewRequest() :
     m_operatorHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_reviewTypeHasBeenSet(false),
-    m_reviewMessageHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_recipientIdHasBeenSet(false),
-    m_operateTypeHasBeenSet(false)
+    m_operateTypeHasBeenSet(false),
+    m_reviewMessageHasBeenSet(false)
 {
 }
 
@@ -65,14 +65,6 @@ string CreateFlowSignReviewRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_reviewType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_reviewMessageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReviewMessage";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_reviewMessage.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -96,6 +88,14 @@ string CreateFlowSignReviewRequest::ToJsonString() const
         string key = "OperateType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reviewMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewMessage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reviewMessage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -154,22 +154,6 @@ bool CreateFlowSignReviewRequest::ReviewTypeHasBeenSet() const
     return m_reviewTypeHasBeenSet;
 }
 
-string CreateFlowSignReviewRequest::GetReviewMessage() const
-{
-    return m_reviewMessage;
-}
-
-void CreateFlowSignReviewRequest::SetReviewMessage(const string& _reviewMessage)
-{
-    m_reviewMessage = _reviewMessage;
-    m_reviewMessageHasBeenSet = true;
-}
-
-bool CreateFlowSignReviewRequest::ReviewMessageHasBeenSet() const
-{
-    return m_reviewMessageHasBeenSet;
-}
-
 Agent CreateFlowSignReviewRequest::GetAgent() const
 {
     return m_agent;
@@ -216,6 +200,22 @@ void CreateFlowSignReviewRequest::SetOperateType(const string& _operateType)
 bool CreateFlowSignReviewRequest::OperateTypeHasBeenSet() const
 {
     return m_operateTypeHasBeenSet;
+}
+
+string CreateFlowSignReviewRequest::GetReviewMessage() const
+{
+    return m_reviewMessage;
+}
+
+void CreateFlowSignReviewRequest::SetReviewMessage(const string& _reviewMessage)
+{
+    m_reviewMessage = _reviewMessage;
+    m_reviewMessageHasBeenSet = true;
+}
+
+bool CreateFlowSignReviewRequest::ReviewMessageHasBeenSet() const
+{
+    return m_reviewMessageHasBeenSet;
 }
 
 

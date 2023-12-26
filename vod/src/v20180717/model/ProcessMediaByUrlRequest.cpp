@@ -23,6 +23,7 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 ProcessMediaByUrlRequest::ProcessMediaByUrlRequest() :
+    m_subAppIdHasBeenSet(false),
     m_inputInfoHasBeenSet(false),
     m_outputInfoHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
@@ -31,8 +32,7 @@ ProcessMediaByUrlRequest::ProcessMediaByUrlRequest() :
     m_tasksPriorityHasBeenSet(false),
     m_tasksNotifyModeHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -42,6 +42,14 @@ string ProcessMediaByUrlRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
 
     if (m_inputInfoHasBeenSet)
     {
@@ -120,14 +128,6 @@ string ProcessMediaByUrlRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -135,6 +135,22 @@ string ProcessMediaByUrlRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t ProcessMediaByUrlRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ProcessMediaByUrlRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ProcessMediaByUrlRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
 
 MediaInputInfo ProcessMediaByUrlRequest::GetInputInfo() const
 {
@@ -278,22 +294,6 @@ void ProcessMediaByUrlRequest::SetSessionId(const string& _sessionId)
 bool ProcessMediaByUrlRequest::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
-}
-
-uint64_t ProcessMediaByUrlRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ProcessMediaByUrlRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ProcessMediaByUrlRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

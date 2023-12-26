@@ -57,6 +57,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowGroupByFilesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowGroupSignReviewRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowGroupSignReviewResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowRemindsRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowRemindsResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h>
@@ -226,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowGroupByTemplatesResponse> CreateFlowGroupByTemplatesOutcome;
                 typedef std::future<CreateFlowGroupByTemplatesOutcome> CreateFlowGroupByTemplatesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowGroupByTemplatesRequest&, CreateFlowGroupByTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowGroupByTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFlowGroupSignReviewResponse> CreateFlowGroupSignReviewOutcome;
+                typedef std::future<CreateFlowGroupSignReviewOutcome> CreateFlowGroupSignReviewOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateFlowGroupSignReviewRequest&, CreateFlowGroupSignReviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowGroupSignReviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowRemindsResponse> CreateFlowRemindsOutcome;
                 typedef std::future<CreateFlowRemindsOutcome> CreateFlowRemindsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowRemindsRequest&, CreateFlowRemindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowRemindsAsyncHandler;
@@ -685,6 +690,22 @@ namespace TencentCloud
                 CreateFlowGroupByTemplatesOutcomeCallable CreateFlowGroupByTemplatesCallable(const Model::CreateFlowGroupByTemplatesRequest& request);
 
                 /**
+                 *提交合同组签署流程审批结果的适用场景包括：
+
+1. 在使用[通过多文件创建合同组签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowGroupByFiles)或[通过多模板创建合同组签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowGroupByTemplates)创建合同组签署流程时，若指定了以下参数 为true，则可以调用此接口提交企业内部签署审批结果。即使是自动签署也需要进行审核通过才会进行签署。
+  - [FlowGroupInfo.NeedSignReview](https://qian.tencent.com/developers/companyApis/dataTypes/#flowgroupinfo)
+  - [ApproverInfo.ApproverNeedSignReview](https://qian.tencent.com/developers/companyApis/dataTypes/#approverinfo)
+
+
+2. 同一合同组，同一签署人可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。
+                 * @param req CreateFlowGroupSignReviewRequest
+                 * @return CreateFlowGroupSignReviewOutcome
+                 */
+                CreateFlowGroupSignReviewOutcome CreateFlowGroupSignReview(const Model::CreateFlowGroupSignReviewRequest &request);
+                void CreateFlowGroupSignReviewAsync(const Model::CreateFlowGroupSignReviewRequest& request, const CreateFlowGroupSignReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFlowGroupSignReviewOutcomeCallable CreateFlowGroupSignReviewCallable(const Model::CreateFlowGroupSignReviewRequest& request);
+
+                /**
                  *指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办：
 
 1. 发起合同时，**签署人的NotifyType需设置为sms**
@@ -703,9 +724,36 @@ namespace TencentCloud
                 CreateFlowRemindsOutcomeCallable CreateFlowRemindsCallable(const Model::CreateFlowRemindsRequest& request);
 
                 /**
-                 *提交签署流程审批结果的适用场景包括：
-1. 在使用模板（CreateFlow）或文件（CreateFlowByFiles）创建签署流程时，若指定了参数NeedSignReview为true，且发起方企业作为签署方参与了流程签署，则可以调用此接口提交企业内部签署审批结果。自动签署也需要进行审核通过才会进行签署。
-2. 若签署流程状态正常，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。
+                 *提交企业流程审批结果 
+**当前存在两种审核操作：**
+<ul>
+<li>签署审核
+<ul>
+<li>在通过接口<ul>
+<li>CreateFlowByFiles</li>
+<li>CreateFlow</li>
+<li>CreateFlowGroupByTemplates</li>
+<li>CreateFlowGroupByFiles</li>
+<li>CreatePrepareFlow</li>
+</ul> 
+发起签署流程时，通过指定NeedSignReview为true，则可以调用此接口，并指定operate=SignReview，以提交企业内部签署审批结果</li>
+<li>在通过接口
+<ul>
+<li>CreateFlowByFiles</li>
+<li>CreateFlow</li>
+<li>CreateFlowGroupByTemplates</li>
+<li>CreateFlowGroupByFiles</li>
+</ul>
+发起签署流程时，通过指定签署人ApproverNeedSignReview为true，则可以调用此接口，并指定operate=SignReview，并指定RecipientId，以提交企业内部签署审批结果</li>
+</ul>
+</li>
+<li>发起审核
+ <ul>
+<li>通过接口CreatePrepareFlow指定发起后需要审核，那么可以调用此接口，并指定operate=CreateReview，以提交企业内部审批结果。可以多次提交审批结果，但一旦审批通过，后续提交的结果将无效
+</li>
+</ul>
+</li>
+</ul>
                  * @param req CreateFlowSignReviewRequest
                  * @return CreateFlowSignReviewOutcome
                  */

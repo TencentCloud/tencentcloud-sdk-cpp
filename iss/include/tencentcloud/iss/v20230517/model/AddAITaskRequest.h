@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DescHasBeenSet() const;
 
                     /**
-                     * 获取AI 结果回调地址。类似 "http://ip:port/xxx或者https://domain/xxx
-                     * @return CallbackUrl AI 结果回调地址。类似 "http://ip:port/xxx或者https://domain/xxx
+                     * 获取AI 结果回调地址。类似 "http://ip:port/***或者https://domain/***
+                     * @return CallbackUrl AI 结果回调地址。类似 "http://ip:port/***或者https://domain/***
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置AI 结果回调地址。类似 "http://ip:port/xxx或者https://domain/xxx
-                     * @param _callbackUrl AI 结果回调地址。类似 "http://ip:port/xxx或者https://domain/xxx
+                     * 设置AI 结果回调地址。类似 "http://ip:port/***或者https://domain/***
+                     * @param _callbackUrl AI 结果回调地址。类似 "http://ip:port/***或者https://domain/***
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_descHasBeenSet;
 
                     /**
-                     * AI 结果回调地址。类似 "http://ip:port/xxx或者https://domain/xxx
+                     * AI 结果回调地址。类似 "http://ip:port/***或者https://domain/***
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

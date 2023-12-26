@@ -842,7 +842,7 @@ namespace TencentCloud
                 CreateBackupMigrationOutcomeCallable CreateBackupMigrationCallable(const Model::CreateBackupMigrationRequest& request);
 
                 /**
-                 *本接口（CreateBasicDBInstances）用于创建SQL server基础版实例。
+                 *本接口（CreateBasicDBInstances）用于创建基础版实例 (云盘)。
                  * @param req CreateBasicDBInstancesRequest
                  * @return CreateBasicDBInstancesOutcome
                  */
@@ -851,7 +851,7 @@ namespace TencentCloud
                 CreateBasicDBInstancesOutcomeCallable CreateBasicDBInstancesCallable(const Model::CreateBasicDBInstancesRequest& request);
 
                 /**
-                 *本接口（CreateBusinessDBInstances）用于创建商业智能服务实例。
+                 *本接口（CreateBusinessDBInstances）用于创建商业智能服务实例 (云盘)。
                  * @param req CreateBusinessDBInstancesRequest
                  * @return CreateBusinessDBInstancesOutcome
                  */
@@ -869,7 +869,7 @@ namespace TencentCloud
                 CreateBusinessIntelligenceFileOutcomeCallable CreateBusinessIntelligenceFileCallable(const Model::CreateBusinessIntelligenceFileRequest& request);
 
                 /**
-                 *本接口（CreateCloudDBInstances）用于创建高可用实例(虚拟机版本)。
+                 *本接口（CreateCloudDBInstances）用于创建高可用实例 (云盘)。
                  * @param req CreateCloudDBInstancesRequest
                  * @return CreateCloudDBInstancesOutcome
                  */
@@ -878,7 +878,7 @@ namespace TencentCloud
                 CreateCloudDBInstancesOutcomeCallable CreateCloudDBInstancesCallable(const Model::CreateCloudDBInstancesRequest& request);
 
                 /**
-                 *本接口（CreateCloudReadOnlyDBInstances）用于添加只读副本实例(虚拟机版本)。
+                 *本接口（CreateCloudReadOnlyDBInstances）用于创建只读实例 (云盘)。
                  * @param req CreateCloudReadOnlyDBInstancesRequest
                  * @return CreateCloudReadOnlyDBInstancesOutcome
                  */
@@ -896,7 +896,7 @@ namespace TencentCloud
                 CreateDBOutcomeCallable CreateDBCallable(const Model::CreateDBRequest& request);
 
                 /**
-                 *本接口（CreateDBInstances）用于创建实例。
+                 *本接口（CreateDBInstances）用于创建高可用实例 (本地盘)
                  * @param req CreateDBInstancesRequest
                  * @return CreateDBInstancesOutcome
                  */
@@ -932,7 +932,7 @@ namespace TencentCloud
                 CreatePublishSubscribeOutcomeCallable CreatePublishSubscribeCallable(const Model::CreatePublishSubscribeRequest& request);
 
                 /**
-                 *本接口（CreateReadOnlyDBInstances）用于添加只读副本实例。
+                 *本接口（CreateReadOnlyDBInstances）用于创建只读实例 (本地盘)。
                  * @param req CreateReadOnlyDBInstancesRequest
                  * @return CreateReadOnlyDBInstancesOutcome
                  */

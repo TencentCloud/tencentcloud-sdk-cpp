@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * 获取对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Method 对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * @return Method 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * 设置对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _method 对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * @param _method 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,7 +124,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;

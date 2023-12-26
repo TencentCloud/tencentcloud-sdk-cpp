@@ -64,6 +64,8 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigRequest.h
+  include/tencentcloud/essbasic/v20210526/model/NeedReviewApproverInfo.h
+  include/tencentcloud/essbasic/v20210526/model/CreateFlowGroupSignReviewResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/UploadFilesResponse.h
@@ -196,6 +198,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/SignUrl.h
+  include/tencentcloud/essbasic/v20210526/model/CreateFlowGroupSignReviewRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelBillUsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/DescribeBillUsageDetailRequest.h
   include/tencentcloud/essbasic/v20210526/model/RelieveInfo.h
@@ -400,6 +403,8 @@ set(essbasic_src
   src/v20210526/model/DownloadFlowInfo.cpp
   src/v20210526/model/FlowApproverUrlInfo.cpp
   src/v20210526/model/ChannelCreateWebThemeConfigRequest.cpp
+  src/v20210526/model/NeedReviewApproverInfo.cpp
+  src/v20210526/model/CreateFlowGroupSignReviewResponse.cpp
   src/v20210526/model/ChannelCreateConvertTaskApiRequest.cpp
   src/v20210526/model/ChannelCreateFlowByFilesRequest.cpp
   src/v20210526/model/UploadFilesResponse.cpp
@@ -532,6 +537,7 @@ set(essbasic_src
   src/v20210526/model/ChannelUpdateSealStatusRequest.cpp
   src/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.cpp
   src/v20210526/model/SignUrl.cpp
+  src/v20210526/model/CreateFlowGroupSignReviewRequest.cpp
   src/v20210526/model/ChannelBillUsageDetail.cpp
   src/v20210526/model/DescribeBillUsageDetailRequest.cpp
   src/v20210526/model/RelieveInfo.cpp

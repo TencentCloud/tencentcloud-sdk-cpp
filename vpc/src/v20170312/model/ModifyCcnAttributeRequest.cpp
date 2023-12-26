@@ -25,7 +25,9 @@ using namespace std;
 ModifyCcnAttributeRequest::ModifyCcnAttributeRequest() :
     m_ccnIdHasBeenSet(false),
     m_ccnNameHasBeenSet(false),
-    m_ccnDescriptionHasBeenSet(false)
+    m_ccnDescriptionHasBeenSet(false),
+    m_routeECMPFlagHasBeenSet(false),
+    m_routeOverlapFlagHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string ModifyCcnAttributeRequest::ToJsonString() const
         string key = "CcnDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ccnDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routeECMPFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteECMPFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_routeECMPFlag, allocator);
+    }
+
+    if (m_routeOverlapFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteOverlapFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_routeOverlapFlag, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void ModifyCcnAttributeRequest::SetCcnDescription(const string& _ccnDescription)
 bool ModifyCcnAttributeRequest::CcnDescriptionHasBeenSet() const
 {
     return m_ccnDescriptionHasBeenSet;
+}
+
+bool ModifyCcnAttributeRequest::GetRouteECMPFlag() const
+{
+    return m_routeECMPFlag;
+}
+
+void ModifyCcnAttributeRequest::SetRouteECMPFlag(const bool& _routeECMPFlag)
+{
+    m_routeECMPFlag = _routeECMPFlag;
+    m_routeECMPFlagHasBeenSet = true;
+}
+
+bool ModifyCcnAttributeRequest::RouteECMPFlagHasBeenSet() const
+{
+    return m_routeECMPFlagHasBeenSet;
+}
+
+bool ModifyCcnAttributeRequest::GetRouteOverlapFlag() const
+{
+    return m_routeOverlapFlag;
+}
+
+void ModifyCcnAttributeRequest::SetRouteOverlapFlag(const bool& _routeOverlapFlag)
+{
+    m_routeOverlapFlag = _routeOverlapFlag;
+    m_routeOverlapFlagHasBeenSet = true;
+}
+
+bool ModifyCcnAttributeRequest::RouteOverlapFlagHasBeenSet() const
+{
+    return m_routeOverlapFlagHasBeenSet;
 }
 
 

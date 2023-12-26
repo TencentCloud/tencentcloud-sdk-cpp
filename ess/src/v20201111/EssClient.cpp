@@ -771,6 +771,49 @@ EssClient::CreateFlowGroupByTemplatesOutcomeCallable EssClient::CreateFlowGroupB
     return task->get_future();
 }
 
+EssClient::CreateFlowGroupSignReviewOutcome EssClient::CreateFlowGroupSignReview(const CreateFlowGroupSignReviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowGroupSignReview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowGroupSignReviewResponse rsp = CreateFlowGroupSignReviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowGroupSignReviewOutcome(rsp);
+        else
+            return CreateFlowGroupSignReviewOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowGroupSignReviewOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowGroupSignReviewAsync(const CreateFlowGroupSignReviewRequest& request, const CreateFlowGroupSignReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowGroupSignReview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFlowGroupSignReviewOutcomeCallable EssClient::CreateFlowGroupSignReviewCallable(const CreateFlowGroupSignReviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowGroupSignReviewOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowGroupSignReview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateFlowRemindsOutcome EssClient::CreateFlowReminds(const CreateFlowRemindsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowReminds");
