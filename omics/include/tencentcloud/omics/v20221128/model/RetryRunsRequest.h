@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/omics/v20221128/model/RunOption.h>
+#include <tencentcloud/omics/v20221128/model/NFOption.h>
 
 
 namespace TencentCloud
@@ -43,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关联项目ID。
-                     * @return ProjectId 关联项目ID。
+                     * 获取项目ID。（不填使用指定地域下的默认项目）
+                     * @return ProjectId 项目ID。（不填使用指定地域下的默认项目）
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置关联项目ID。
-                     * @param _projectId 关联项目ID。
+                     * 设置项目ID。（不填使用指定地域下的默认项目）
+                     * @param _projectId 项目ID。（不填使用指定地域下的默认项目）
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +66,36 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务UUID。
-                     * @return RunUuids 任务UUID。
+                     * 获取需要重试的任务批次ID。
+                     * @return RunGroupId 需要重试的任务批次ID。
+                     * 
+                     */
+                    std::string GetRunGroupId() const;
+
+                    /**
+                     * 设置需要重试的任务批次ID。
+                     * @param _runGroupId 需要重试的任务批次ID。
+                     * 
+                     */
+                    void SetRunGroupId(const std::string& _runGroupId);
+
+                    /**
+                     * 判断参数 RunGroupId 是否已赋值
+                     * @return RunGroupId 是否已赋值
+                     * 
+                     */
+                    bool RunGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取需要重试的任务UUID。
+                     * @return RunUuids 需要重试的任务UUID。
                      * 
                      */
                     std::vector<std::string> GetRunUuids() const;
 
                     /**
-                     * 设置任务UUID。
-                     * @param _runUuids 任务UUID。
+                     * 设置需要重试的任务UUID。
+                     * @param _runUuids 需要重试的任务UUID。
                      * 
                      */
                     void SetRunUuids(const std::vector<std::string>& _runUuids);
@@ -84,19 +107,79 @@ namespace TencentCloud
                      */
                     bool RunUuidsHasBeenSet() const;
 
+                    /**
+                     * 获取WDL运行选项，不填使用被重试的任务批次运行选项。
+                     * @return WDLOption WDL运行选项，不填使用被重试的任务批次运行选项。
+                     * 
+                     */
+                    RunOption GetWDLOption() const;
+
+                    /**
+                     * 设置WDL运行选项，不填使用被重试的任务批次运行选项。
+                     * @param _wDLOption WDL运行选项，不填使用被重试的任务批次运行选项。
+                     * 
+                     */
+                    void SetWDLOption(const RunOption& _wDLOption);
+
+                    /**
+                     * 判断参数 WDLOption 是否已赋值
+                     * @return WDLOption 是否已赋值
+                     * 
+                     */
+                    bool WDLOptionHasBeenSet() const;
+
+                    /**
+                     * 获取Nextflow运行选项，不填使用被重试的任务批次运行选项。
+                     * @return NFOption Nextflow运行选项，不填使用被重试的任务批次运行选项。
+                     * 
+                     */
+                    NFOption GetNFOption() const;
+
+                    /**
+                     * 设置Nextflow运行选项，不填使用被重试的任务批次运行选项。
+                     * @param _nFOption Nextflow运行选项，不填使用被重试的任务批次运行选项。
+                     * 
+                     */
+                    void SetNFOption(const NFOption& _nFOption);
+
+                    /**
+                     * 判断参数 NFOption 是否已赋值
+                     * @return NFOption 是否已赋值
+                     * 
+                     */
+                    bool NFOptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 关联项目ID。
+                     * 项目ID。（不填使用指定地域下的默认项目）
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务UUID。
+                     * 需要重试的任务批次ID。
+                     */
+                    std::string m_runGroupId;
+                    bool m_runGroupIdHasBeenSet;
+
+                    /**
+                     * 需要重试的任务UUID。
                      */
                     std::vector<std::string> m_runUuids;
                     bool m_runUuidsHasBeenSet;
+
+                    /**
+                     * WDL运行选项，不填使用被重试的任务批次运行选项。
+                     */
+                    RunOption m_wDLOption;
+                    bool m_wDLOptionHasBeenSet;
+
+                    /**
+                     * Nextflow运行选项，不填使用被重试的任务批次运行选项。
+                     */
+                    NFOption m_nFOption;
+                    bool m_nFOptionHasBeenSet;
 
                 };
             }

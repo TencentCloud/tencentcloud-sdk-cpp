@@ -48,8 +48,12 @@ namespace TencentCloud
 
                     /**
                      * 获取签署链接，过期时间为90天
+
+注：<font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignUrl 签署链接，过期时间为90天
+
+注：<font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -57,8 +61,12 @@ namespace TencentCloud
 
                     /**
                      * 设置签署链接，过期时间为90天
+
+注：<font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signUrl 签署链接，过期时间为90天
+
+注：<font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -408,6 +416,8 @@ namespace TencentCloud
 
                     /**
                      * 签署链接，过期时间为90天
+
+注：<font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signUrl;

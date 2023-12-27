@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Omics::V20221128::Model;
 using namespace std;
 
-RetryRunsResponse::RetryRunsResponse()
+RetryRunsResponse::RetryRunsResponse() :
+    m_runGroupIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome RetryRunsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("RunGroupId") && !rsp["RunGroupId"].IsNull())
+    {
+        if (!rsp["RunGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runGroupId = string(rsp["RunGroupId"].GetString());
+        m_runGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string RetryRunsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_runGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runGroupId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string RetryRunsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string RetryRunsResponse::GetRunGroupId() const
+{
+    return m_runGroupId;
+}
+
+bool RetryRunsResponse::RunGroupIdHasBeenSet() const
+{
+    return m_runGroupIdHasBeenSet;
+}
 
 

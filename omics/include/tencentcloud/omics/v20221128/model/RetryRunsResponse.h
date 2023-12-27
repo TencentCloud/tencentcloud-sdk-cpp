@@ -43,7 +43,30 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取新的任务批次ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunGroupId 新的任务批次ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRunGroupId() const;
+
+                    /**
+                     * 判断参数 RunGroupId 是否已赋值
+                     * @return RunGroupId 是否已赋值
+                     * 
+                     */
+                    bool RunGroupIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 新的任务批次ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_runGroupId;
+                    bool m_runGroupIdHasBeenSet;
 
                 };
             }

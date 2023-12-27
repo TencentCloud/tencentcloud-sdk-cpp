@@ -24,7 +24,10 @@ using namespace std;
 
 RetryRunsRequest::RetryRunsRequest() :
     m_projectIdHasBeenSet(false),
-    m_runUuidsHasBeenSet(false)
+    m_runGroupIdHasBeenSet(false),
+    m_runUuidsHasBeenSet(false),
+    m_wDLOptionHasBeenSet(false),
+    m_nFOptionHasBeenSet(false)
 {
 }
 
@@ -43,6 +46,14 @@ string RetryRunsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_runGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_runGroupId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_runUuidsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -54,6 +65,24 @@ string RetryRunsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_wDLOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WDLOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_wDLOption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_nFOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NFOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_nFOption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -80,6 +109,22 @@ bool RetryRunsRequest::ProjectIdHasBeenSet() const
     return m_projectIdHasBeenSet;
 }
 
+string RetryRunsRequest::GetRunGroupId() const
+{
+    return m_runGroupId;
+}
+
+void RetryRunsRequest::SetRunGroupId(const string& _runGroupId)
+{
+    m_runGroupId = _runGroupId;
+    m_runGroupIdHasBeenSet = true;
+}
+
+bool RetryRunsRequest::RunGroupIdHasBeenSet() const
+{
+    return m_runGroupIdHasBeenSet;
+}
+
 vector<string> RetryRunsRequest::GetRunUuids() const
 {
     return m_runUuids;
@@ -94,6 +139,38 @@ void RetryRunsRequest::SetRunUuids(const vector<string>& _runUuids)
 bool RetryRunsRequest::RunUuidsHasBeenSet() const
 {
     return m_runUuidsHasBeenSet;
+}
+
+RunOption RetryRunsRequest::GetWDLOption() const
+{
+    return m_wDLOption;
+}
+
+void RetryRunsRequest::SetWDLOption(const RunOption& _wDLOption)
+{
+    m_wDLOption = _wDLOption;
+    m_wDLOptionHasBeenSet = true;
+}
+
+bool RetryRunsRequest::WDLOptionHasBeenSet() const
+{
+    return m_wDLOptionHasBeenSet;
+}
+
+NFOption RetryRunsRequest::GetNFOption() const
+{
+    return m_nFOption;
+}
+
+void RetryRunsRequest::SetNFOption(const NFOption& _nFOption)
+{
+    m_nFOption = _nFOption;
+    m_nFOptionHasBeenSet = true;
+}
+
+bool RetryRunsRequest::NFOptionHasBeenSet() const
+{
+    return m_nFOptionHasBeenSet;
 }
 
 

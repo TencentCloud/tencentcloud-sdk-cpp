@@ -38,6 +38,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeRuleDimStatResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskAlarmRegulationsResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeTableLineageInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/CheckIntegrationTaskNameExistsResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeWorkflowInfoByIdRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateDataSourceRequest.h
@@ -85,6 +86,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/EventPage.h
   include/tencentcloud/wedata/v20210820/model/ModifyDimensionWeightResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceByCycleReportResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeFieldBasicInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleExecResultsByPageResponse.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupExecResult.h
   include/tencentcloud/wedata/v20210820/model/MakeUpTasksByWorkflowResponse.h
@@ -92,6 +94,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/TaskInstanceDetail.h
   include/tencentcloud/wedata/v20210820/model/BytesSpeed.h
   include/tencentcloud/wedata/v20210820/model/CheckTaskNameExistRequest.h
+  include/tencentcloud/wedata/v20210820/model/TablePropertyScore.h
   include/tencentcloud/wedata/v20210820/model/ThresholdValue.h
   include/tencentcloud/wedata/v20210820/model/DescribeFunctionKindsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeFunctionKindsResponse.h
@@ -124,6 +127,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/WorkflowTaskCountOpsDto.h
   include/tencentcloud/wedata/v20210820/model/StageCloudApiRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDependOpsTasksRequest.h
+  include/tencentcloud/wedata/v20210820/model/ColumnBasicInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeClusterNamespaceListResponse.h
   include/tencentcloud/wedata/v20210820/model/CreateInLongAgentResponse.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupTable.h
@@ -209,7 +213,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeTaskReportDetailListResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeBaselineInstanceDagRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsInstanceTrendResponse.h
-  include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogListRequest.h
+  include/tencentcloud/wedata/v20210820/model/BatchReturn.h
   include/tencentcloud/wedata/v20210820/model/RerunOpsMakePlanInstancesResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTableMetaRequest.h
   include/tencentcloud/wedata/v20210820/model/RunnerRuleExecResult.h
@@ -268,7 +272,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/CreateTaskAlarmRegularRequest.h
   include/tencentcloud/wedata/v20210820/model/ModifyRuleRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeTableMetasResponse.h
-  include/tencentcloud/wedata/v20210820/model/BatchReturn.h
+  include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogListRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDiagnosticInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/AlarmDsVO.h
   include/tencentcloud/wedata/v20210820/model/DependencyConfigDsDTONoRecurV2.h
@@ -328,6 +332,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/SimpleDataSourceInfo.h
   include/tencentcloud/wedata/v20210820/model/InstanceLogInfo.h
   include/tencentcloud/wedata/v20210820/model/GetFileInfoRequest.h
+  include/tencentcloud/wedata/v20210820/model/TableLineageBaseInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeSonInstancesRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeBaselinesResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskInstancesData.h
@@ -356,6 +361,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/AlarmReceiverInfo.h
   include/tencentcloud/wedata/v20210820/model/GeneralTaskParam.h
   include/tencentcloud/wedata/v20210820/model/CandidateDsDTo.h
+  include/tencentcloud/wedata/v20210820/model/DescribeTableBasicInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeDiagnosticInfoByBaselineIdResponse.h
   include/tencentcloud/wedata/v20210820/model/CompareRuleItem.h
   include/tencentcloud/wedata/v20210820/model/ModifyRuleTemplateRequest.h
@@ -444,6 +450,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/RuleExecConfig.h
   include/tencentcloud/wedata/v20210820/model/BaselineTaskDto.h
   include/tencentcloud/wedata/v20210820/model/SearchConditionInstance.h
+  include/tencentcloud/wedata/v20210820/model/TableBasicInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeSchedulerRunTimeInstanceCntByStatusResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeDataTypesRequest.h
   include/tencentcloud/wedata/v20210820/model/RecordField.h
@@ -482,7 +489,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/RealTimeTaskInstanceNodeInfo.h
   include/tencentcloud/wedata/v20210820/model/DeleteResourceFilesResponse.h
   include/tencentcloud/wedata/v20210820/model/RerunInstancesRequest.h
-  include/tencentcloud/wedata/v20210820/model/TablePropertyScore.h
+  include/tencentcloud/wedata/v20210820/model/DescribeFieldBasicInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeEventIsAlarmTypesRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateOpsMakePlanResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeStreamTaskLogListResponse.h
@@ -598,6 +605,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ModifyTaskInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DataCheckStat.h
   include/tencentcloud/wedata/v20210820/model/CreateRuleRequest.h
+  include/tencentcloud/wedata/v20210820/model/IntegrationNodeSchema.h
   include/tencentcloud/wedata/v20210820/model/DescribeColumnsMetaResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleExecResultsResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskByStatusReportRequest.h
@@ -744,7 +752,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ModifyExecStrategyResponse.h
   include/tencentcloud/wedata/v20210820/model/BatchStartIntegrationTasksRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDatasourceResponse.h
-  include/tencentcloud/wedata/v20210820/model/IntegrationNodeSchema.h
+  include/tencentcloud/wedata/v20210820/model/DescribeTableBasicInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDatasourceRequest.h
   include/tencentcloud/wedata/v20210820/model/RuleExecStat.h
   include/tencentcloud/wedata/v20210820/model/KillInstancesResponse.h
@@ -783,6 +791,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/TaskTypeMap.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleDataSourcesResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeAlarmReceiverResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeTableLineageInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DlcExpiredSnapshotsInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DependencyConfig.h
@@ -954,6 +963,7 @@ set(wedata_src
   src/v20210820/model/DescribeRuleDimStatResponse.cpp
   src/v20210820/model/DescribeInstanceLogsRequest.cpp
   src/v20210820/model/DescribeTaskAlarmRegulationsResponse.cpp
+  src/v20210820/model/DescribeTableLineageInfoRequest.cpp
   src/v20210820/model/CheckIntegrationTaskNameExistsResponse.cpp
   src/v20210820/model/DescribeWorkflowInfoByIdRequest.cpp
   src/v20210820/model/CreateDataSourceRequest.cpp
@@ -1001,6 +1011,7 @@ set(wedata_src
   src/v20210820/model/EventPage.cpp
   src/v20210820/model/ModifyDimensionWeightResponse.cpp
   src/v20210820/model/DescribeInstanceByCycleReportResponse.cpp
+  src/v20210820/model/DescribeFieldBasicInfoResponse.cpp
   src/v20210820/model/DescribeRuleExecResultsByPageResponse.cpp
   src/v20210820/model/RuleGroupExecResult.cpp
   src/v20210820/model/MakeUpTasksByWorkflowResponse.cpp
@@ -1008,6 +1019,7 @@ set(wedata_src
   src/v20210820/model/TaskInstanceDetail.cpp
   src/v20210820/model/BytesSpeed.cpp
   src/v20210820/model/CheckTaskNameExistRequest.cpp
+  src/v20210820/model/TablePropertyScore.cpp
   src/v20210820/model/ThresholdValue.cpp
   src/v20210820/model/DescribeFunctionKindsRequest.cpp
   src/v20210820/model/DescribeFunctionKindsResponse.cpp
@@ -1040,6 +1052,7 @@ set(wedata_src
   src/v20210820/model/WorkflowTaskCountOpsDto.cpp
   src/v20210820/model/StageCloudApiRequest.cpp
   src/v20210820/model/DescribeDependOpsTasksRequest.cpp
+  src/v20210820/model/ColumnBasicInfo.cpp
   src/v20210820/model/DescribeClusterNamespaceListResponse.cpp
   src/v20210820/model/CreateInLongAgentResponse.cpp
   src/v20210820/model/RuleGroupTable.cpp
@@ -1125,7 +1138,7 @@ set(wedata_src
   src/v20210820/model/DescribeTaskReportDetailListResponse.cpp
   src/v20210820/model/DescribeBaselineInstanceDagRequest.cpp
   src/v20210820/model/DescribeIntegrationStatisticsInstanceTrendResponse.cpp
-  src/v20210820/model/DescribeInstanceLogListRequest.cpp
+  src/v20210820/model/BatchReturn.cpp
   src/v20210820/model/RerunOpsMakePlanInstancesResponse.cpp
   src/v20210820/model/DescribeTableMetaRequest.cpp
   src/v20210820/model/RunnerRuleExecResult.cpp
@@ -1184,7 +1197,7 @@ set(wedata_src
   src/v20210820/model/CreateTaskAlarmRegularRequest.cpp
   src/v20210820/model/ModifyRuleRequest.cpp
   src/v20210820/model/DescribeTableMetasResponse.cpp
-  src/v20210820/model/BatchReturn.cpp
+  src/v20210820/model/DescribeInstanceLogListRequest.cpp
   src/v20210820/model/DescribeDiagnosticInfoResponse.cpp
   src/v20210820/model/AlarmDsVO.cpp
   src/v20210820/model/DependencyConfigDsDTONoRecurV2.cpp
@@ -1244,6 +1257,7 @@ set(wedata_src
   src/v20210820/model/SimpleDataSourceInfo.cpp
   src/v20210820/model/InstanceLogInfo.cpp
   src/v20210820/model/GetFileInfoRequest.cpp
+  src/v20210820/model/TableLineageBaseInfo.cpp
   src/v20210820/model/DescribeSonInstancesRequest.cpp
   src/v20210820/model/DescribeBaselinesResponse.cpp
   src/v20210820/model/DescribeTaskInstancesData.cpp
@@ -1272,6 +1286,7 @@ set(wedata_src
   src/v20210820/model/AlarmReceiverInfo.cpp
   src/v20210820/model/GeneralTaskParam.cpp
   src/v20210820/model/CandidateDsDTo.cpp
+  src/v20210820/model/DescribeTableBasicInfoResponse.cpp
   src/v20210820/model/DescribeDiagnosticInfoByBaselineIdResponse.cpp
   src/v20210820/model/CompareRuleItem.cpp
   src/v20210820/model/ModifyRuleTemplateRequest.cpp
@@ -1360,6 +1375,7 @@ set(wedata_src
   src/v20210820/model/RuleExecConfig.cpp
   src/v20210820/model/BaselineTaskDto.cpp
   src/v20210820/model/SearchConditionInstance.cpp
+  src/v20210820/model/TableBasicInfo.cpp
   src/v20210820/model/DescribeSchedulerRunTimeInstanceCntByStatusResponse.cpp
   src/v20210820/model/DescribeDataTypesRequest.cpp
   src/v20210820/model/RecordField.cpp
@@ -1398,7 +1414,7 @@ set(wedata_src
   src/v20210820/model/RealTimeTaskInstanceNodeInfo.cpp
   src/v20210820/model/DeleteResourceFilesResponse.cpp
   src/v20210820/model/RerunInstancesRequest.cpp
-  src/v20210820/model/TablePropertyScore.cpp
+  src/v20210820/model/DescribeFieldBasicInfoRequest.cpp
   src/v20210820/model/DescribeEventIsAlarmTypesRequest.cpp
   src/v20210820/model/CreateOpsMakePlanResponse.cpp
   src/v20210820/model/DescribeStreamTaskLogListResponse.cpp
@@ -1514,6 +1530,7 @@ set(wedata_src
   src/v20210820/model/ModifyTaskInfoResponse.cpp
   src/v20210820/model/DataCheckStat.cpp
   src/v20210820/model/CreateRuleRequest.cpp
+  src/v20210820/model/IntegrationNodeSchema.cpp
   src/v20210820/model/DescribeColumnsMetaResponse.cpp
   src/v20210820/model/DescribeRuleExecResultsResponse.cpp
   src/v20210820/model/DescribeTaskByStatusReportRequest.cpp
@@ -1660,7 +1677,7 @@ set(wedata_src
   src/v20210820/model/ModifyExecStrategyResponse.cpp
   src/v20210820/model/BatchStartIntegrationTasksRequest.cpp
   src/v20210820/model/DescribeDatasourceResponse.cpp
-  src/v20210820/model/IntegrationNodeSchema.cpp
+  src/v20210820/model/DescribeTableBasicInfoRequest.cpp
   src/v20210820/model/DescribeDatasourceRequest.cpp
   src/v20210820/model/RuleExecStat.cpp
   src/v20210820/model/KillInstancesResponse.cpp
@@ -1699,6 +1716,7 @@ set(wedata_src
   src/v20210820/model/TaskTypeMap.cpp
   src/v20210820/model/DescribeRuleDataSourcesResponse.cpp
   src/v20210820/model/DescribeAlarmReceiverResponse.cpp
+  src/v20210820/model/DescribeTableLineageInfoResponse.cpp
   src/v20210820/model/DlcExpiredSnapshotsInfo.cpp
   src/v20210820/model/DescribeWorkflowCanvasInfoResponse.cpp
   src/v20210820/model/DependencyConfig.cpp
