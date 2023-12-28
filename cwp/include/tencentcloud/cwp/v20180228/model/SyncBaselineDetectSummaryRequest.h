@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取用于计算检测中和进度的任务ID集合，一般不用传入
+                     * @return TaskIds 用于计算检测中和进度的任务ID集合，一般不用传入
+                     * 
+                     */
+                    std::vector<uint64_t> GetTaskIds() const;
+
+                    /**
+                     * 设置用于计算检测中和进度的任务ID集合，一般不用传入
+                     * @param _taskIds 用于计算检测中和进度的任务ID集合，一般不用传入
+                     * 
+                     */
+                    void SetTaskIds(const std::vector<uint64_t>& _taskIds);
+
+                    /**
+                     * 判断参数 TaskIds 是否已赋值
+                     * @return TaskIds 是否已赋值
+                     * 
+                     */
+                    bool TaskIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 用于计算检测中和进度的任务ID集合，一般不用传入
+                     */
+                    std::vector<uint64_t> m_taskIds;
+                    bool m_taskIdsHasBeenSet;
 
                 };
             }

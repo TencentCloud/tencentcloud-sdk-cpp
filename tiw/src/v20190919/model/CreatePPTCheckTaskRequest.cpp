@@ -25,7 +25,8 @@ using namespace std;
 CreatePPTCheckTaskRequest::CreatePPTCheckTaskRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_autoHandleUnsupportedElementHasBeenSet(false)
+    m_autoHandleUnsupportedElementHasBeenSet(false),
+    m_autoHandleUnsupportedElementTypesHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,19 @@ string CreatePPTCheckTaskRequest::ToJsonString() const
         string key = "AutoHandleUnsupportedElement";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoHandleUnsupportedElement, allocator);
+    }
+
+    if (m_autoHandleUnsupportedElementTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoHandleUnsupportedElementTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_autoHandleUnsupportedElementTypes.begin(); itr != m_autoHandleUnsupportedElementTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -114,6 +128,22 @@ void CreatePPTCheckTaskRequest::SetAutoHandleUnsupportedElement(const bool& _aut
 bool CreatePPTCheckTaskRequest::AutoHandleUnsupportedElementHasBeenSet() const
 {
     return m_autoHandleUnsupportedElementHasBeenSet;
+}
+
+vector<int64_t> CreatePPTCheckTaskRequest::GetAutoHandleUnsupportedElementTypes() const
+{
+    return m_autoHandleUnsupportedElementTypes;
+}
+
+void CreatePPTCheckTaskRequest::SetAutoHandleUnsupportedElementTypes(const vector<int64_t>& _autoHandleUnsupportedElementTypes)
+{
+    m_autoHandleUnsupportedElementTypes = _autoHandleUnsupportedElementTypes;
+    m_autoHandleUnsupportedElementTypesHasBeenSet = true;
+}
+
+bool CreatePPTCheckTaskRequest::AutoHandleUnsupportedElementTypesHasBeenSet() const
+{
+    return m_autoHandleUnsupportedElementTypesHasBeenSet;
 }
 
 

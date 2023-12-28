@@ -43,6 +43,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h
   include/tencentcloud/ess/v20201111/model/HasAuthUser.h
   include/tencentcloud/ess/v20201111/model/DisableUserAutoSignResponse.h
+  include/tencentcloud/ess/v20201111/model/ModifyExtendedServiceRequest.h
   include/tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h
   include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h
@@ -186,6 +187,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverOption.h
   include/tencentcloud/ess/v20201111/model/CreateEmbedWebUrlResponse.h
+  include/tencentcloud/ess/v20201111/model/ModifyExtendedServiceResponse.h
   include/tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationSealsRequest.h
   include/tencentcloud/ess/v20201111/model/PermissionGroup.h
@@ -258,6 +260,7 @@ set(ess_src
   src/v20201111/model/DescribeThirdPartyAuthCodeResponse.cpp
   src/v20201111/model/HasAuthUser.cpp
   src/v20201111/model/DisableUserAutoSignResponse.cpp
+  src/v20201111/model/ModifyExtendedServiceRequest.cpp
   src/v20201111/model/CancelUserAutoSignEnableUrlResponse.cpp
   src/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.cpp
   src/v20201111/model/CreateIntegrationEmployeesRequest.cpp
@@ -401,6 +404,7 @@ set(ess_src
   src/v20201111/model/CreatePrepareFlowRequest.cpp
   src/v20201111/model/ApproverOption.cpp
   src/v20201111/model/CreateEmbedWebUrlResponse.cpp
+  src/v20201111/model/ModifyExtendedServiceResponse.cpp
   src/v20201111/model/CreateSealPolicyRequest.cpp
   src/v20201111/model/DescribeOrganizationSealsRequest.cpp
   src/v20201111/model/PermissionGroup.cpp

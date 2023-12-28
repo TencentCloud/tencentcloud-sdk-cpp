@@ -476,6 +476,56 @@ namespace TencentCloud
                      */
                     bool ClusterAccessedStatusHasBeenSet() const;
 
+                    /**
+                     * 获取计费核数
+                     * @return ChargeCoresCnt 计费核数
+                     * 
+                     */
+                    uint64_t GetChargeCoresCnt() const;
+
+                    /**
+                     * 设置计费核数
+                     * @param _chargeCoresCnt 计费核数
+                     * 
+                     */
+                    void SetChargeCoresCnt(const uint64_t& _chargeCoresCnt);
+
+                    /**
+                     * 判断参数 ChargeCoresCnt 是否已赋值
+                     * @return ChargeCoresCnt 是否已赋值
+                     * 
+                     */
+                    bool ChargeCoresCntHasBeenSet() const;
+
+                    /**
+                     * 获取防护状态:
+已防护: Defended
+未防护: UnDefended
+                     * @return DefendStatus 防护状态:
+已防护: Defended
+未防护: UnDefended
+                     * 
+                     */
+                    std::string GetDefendStatus() const;
+
+                    /**
+                     * 设置防护状态:
+已防护: Defended
+未防护: UnDefended
+                     * @param _defendStatus 防护状态:
+已防护: Defended
+未防护: UnDefended
+                     * 
+                     */
+                    void SetDefendStatus(const std::string& _defendStatus);
+
+                    /**
+                     * 判断参数 DefendStatus 是否已赋值
+                     * @return DefendStatus 是否已赋值
+                     * 
+                     */
+                    bool DefendStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -599,6 +649,20 @@ namespace TencentCloud
                      */
                     std::string m_clusterAccessedStatus;
                     bool m_clusterAccessedStatusHasBeenSet;
+
+                    /**
+                     * 计费核数
+                     */
+                    uint64_t m_chargeCoresCnt;
+                    bool m_chargeCoresCntHasBeenSet;
+
+                    /**
+                     * 防护状态:
+已防护: Defended
+未防护: UnDefended
+                     */
+                    std::string m_defendStatus;
+                    bool m_defendStatusHasBeenSet;
 
                 };
             }

@@ -45,7 +45,8 @@ ClusterInfoItem::ClusterInfoItem() :
     m_accessedSubStatusHasBeenSet(false),
     m_nodeCountHasBeenSet(false),
     m_offLineNodeCountHasBeenSet(false),
-    m_unInstallAgentNodeCountHasBeenSet(false)
+    m_unInstallAgentNodeCountHasBeenSet(false),
+    m_chargeCoresCntHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome ClusterInfoItem::Deserialize(const rapidjson::Value &value)
         m_unInstallAgentNodeCountHasBeenSet = true;
     }
 
+    if (value.HasMember("ChargeCoresCnt") && !value["ChargeCoresCnt"].IsNull())
+    {
+        if (!value["ChargeCoresCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.ChargeCoresCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_chargeCoresCnt = value["ChargeCoresCnt"].GetUint64();
+        m_chargeCoresCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void ClusterInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UnInstallAgentNodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unInstallAgentNodeCount, allocator);
+    }
+
+    if (m_chargeCoresCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChargeCoresCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_chargeCoresCnt, allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void ClusterInfoItem::SetUnInstallAgentNodeCount(const uint64_t& _unInstallAgent
 bool ClusterInfoItem::UnInstallAgentNodeCountHasBeenSet() const
 {
     return m_unInstallAgentNodeCountHasBeenSet;
+}
+
+uint64_t ClusterInfoItem::GetChargeCoresCnt() const
+{
+    return m_chargeCoresCnt;
+}
+
+void ClusterInfoItem::SetChargeCoresCnt(const uint64_t& _chargeCoresCnt)
+{
+    m_chargeCoresCnt = _chargeCoresCnt;
+    m_chargeCoresCntHasBeenSet = true;
+}
+
+bool ClusterInfoItem::ChargeCoresCntHasBeenSet() const
+{
+    return m_chargeCoresCntHasBeenSet;
 }
 

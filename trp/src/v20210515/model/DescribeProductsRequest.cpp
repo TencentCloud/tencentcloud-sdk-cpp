@@ -27,7 +27,8 @@ DescribeProductsRequest::DescribeProductsRequest() :
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_merchantIdHasBeenSet(false),
-    m_corpIdHasBeenSet(false)
+    m_corpIdHasBeenSet(false),
+    m_certStateHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeProductsRequest::ToJsonString() const
         string key = "CorpId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_corpId, allocator);
+    }
+
+    if (m_certStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertState";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_certState, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeProductsRequest::SetCorpId(const uint64_t& _corpId)
 bool DescribeProductsRequest::CorpIdHasBeenSet() const
 {
     return m_corpIdHasBeenSet;
+}
+
+int64_t DescribeProductsRequest::GetCertState() const
+{
+    return m_certState;
+}
+
+void DescribeProductsRequest::SetCertState(const int64_t& _certState)
+{
+    m_certState = _certState;
+    m_certStateHasBeenSet = true;
+}
+
+bool DescribeProductsRequest::CertStateHasBeenSet() const
+{
+    return m_certStateHasBeenSet;
 }
 
 

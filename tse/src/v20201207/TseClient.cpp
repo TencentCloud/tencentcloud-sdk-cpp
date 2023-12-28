@@ -212,6 +212,49 @@ TseClient::CreateCloudNativeAPIGatewayCertificateOutcomeCallable TseClient::Crea
     return task->get_future();
 }
 
+TseClient::CreateCloudNativeAPIGatewayPublicNetworkOutcome TseClient::CreateCloudNativeAPIGatewayPublicNetwork(const CreateCloudNativeAPIGatewayPublicNetworkRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayPublicNetwork");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayPublicNetworkResponse rsp = CreateCloudNativeAPIGatewayPublicNetworkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayPublicNetworkOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayPublicNetworkOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayPublicNetworkOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayPublicNetworkAsync(const CreateCloudNativeAPIGatewayPublicNetworkRequest& request, const CreateCloudNativeAPIGatewayPublicNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudNativeAPIGatewayPublicNetwork(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateCloudNativeAPIGatewayPublicNetworkOutcomeCallable TseClient::CreateCloudNativeAPIGatewayPublicNetworkCallable(const CreateCloudNativeAPIGatewayPublicNetworkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudNativeAPIGatewayPublicNetworkOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudNativeAPIGatewayPublicNetwork(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::CreateCloudNativeAPIGatewayRouteOutcome TseClient::CreateCloudNativeAPIGatewayRoute(const CreateCloudNativeAPIGatewayRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayRoute");
@@ -635,6 +678,49 @@ TseClient::DeleteCloudNativeAPIGatewayCertificateOutcomeCallable TseClient::Dele
         [this, request]()
         {
             return this->DeleteCloudNativeAPIGatewayCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayPublicNetworkOutcome TseClient::DeleteCloudNativeAPIGatewayPublicNetwork(const DeleteCloudNativeAPIGatewayPublicNetworkRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayPublicNetwork");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayPublicNetworkResponse rsp = DeleteCloudNativeAPIGatewayPublicNetworkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayPublicNetworkOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayPublicNetworkOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayPublicNetworkOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayPublicNetworkAsync(const DeleteCloudNativeAPIGatewayPublicNetworkRequest& request, const DeleteCloudNativeAPIGatewayPublicNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudNativeAPIGatewayPublicNetwork(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteCloudNativeAPIGatewayPublicNetworkOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayPublicNetworkCallable(const DeleteCloudNativeAPIGatewayPublicNetworkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudNativeAPIGatewayPublicNetworkOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudNativeAPIGatewayPublicNetwork(request);
         }
     );
 
@@ -2276,6 +2362,49 @@ TseClient::ModifyCloudNativeAPIGatewayServiceRateLimitOutcomeCallable TseClient:
     return task->get_future();
 }
 
+TseClient::ModifyConsoleNetworkOutcome TseClient::ModifyConsoleNetwork(const ModifyConsoleNetworkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConsoleNetwork");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConsoleNetworkResponse rsp = ModifyConsoleNetworkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConsoleNetworkOutcome(rsp);
+        else
+            return ModifyConsoleNetworkOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConsoleNetworkOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyConsoleNetworkAsync(const ModifyConsoleNetworkRequest& request, const ModifyConsoleNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConsoleNetwork(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyConsoleNetworkOutcomeCallable TseClient::ModifyConsoleNetworkCallable(const ModifyConsoleNetworkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConsoleNetworkOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConsoleNetwork(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::ModifyNativeGatewayServerGroupOutcome TseClient::ModifyNativeGatewayServerGroup(const ModifyNativeGatewayServerGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyNativeGatewayServerGroup");
@@ -2312,6 +2441,92 @@ TseClient::ModifyNativeGatewayServerGroupOutcomeCallable TseClient::ModifyNative
         [this, request]()
         {
             return this->ModifyNativeGatewayServerGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyNetworkAccessStrategyOutcome TseClient::ModifyNetworkAccessStrategy(const ModifyNetworkAccessStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNetworkAccessStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNetworkAccessStrategyResponse rsp = ModifyNetworkAccessStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNetworkAccessStrategyOutcome(rsp);
+        else
+            return ModifyNetworkAccessStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNetworkAccessStrategyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyNetworkAccessStrategyAsync(const ModifyNetworkAccessStrategyRequest& request, const ModifyNetworkAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNetworkAccessStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyNetworkAccessStrategyOutcomeCallable TseClient::ModifyNetworkAccessStrategyCallable(const ModifyNetworkAccessStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNetworkAccessStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNetworkAccessStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyNetworkBasicInfoOutcome TseClient::ModifyNetworkBasicInfo(const ModifyNetworkBasicInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNetworkBasicInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNetworkBasicInfoResponse rsp = ModifyNetworkBasicInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNetworkBasicInfoOutcome(rsp);
+        else
+            return ModifyNetworkBasicInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNetworkBasicInfoOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyNetworkBasicInfoAsync(const ModifyNetworkBasicInfoRequest& request, const ModifyNetworkBasicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNetworkBasicInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyNetworkBasicInfoOutcomeCallable TseClient::ModifyNetworkBasicInfoCallable(const ModifyNetworkBasicInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNetworkBasicInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNetworkBasicInfo(request);
         }
     );
 

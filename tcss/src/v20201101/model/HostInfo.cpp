@@ -40,7 +40,9 @@ HostInfo::HostInfo() :
     m_tagsHasBeenSet(false),
     m_clusterIDHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_clusterAccessedStatusHasBeenSet(false)
+    m_clusterAccessedStatusHasBeenSet(false),
+    m_chargeCoresCntHasBeenSet(false),
+    m_defendStatusHasBeenSet(false)
 {
 }
 
@@ -266,6 +268,26 @@ CoreInternalOutcome HostInfo::Deserialize(const rapidjson::Value &value)
         m_clusterAccessedStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ChargeCoresCnt") && !value["ChargeCoresCnt"].IsNull())
+    {
+        if (!value["ChargeCoresCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.ChargeCoresCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_chargeCoresCnt = value["ChargeCoresCnt"].GetUint64();
+        m_chargeCoresCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefendStatus") && !value["DefendStatus"].IsNull())
+    {
+        if (!value["DefendStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.DefendStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defendStatus = string(value["DefendStatus"].GetString());
+        m_defendStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -439,6 +461,22 @@ void HostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ClusterAccessedStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterAccessedStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chargeCoresCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChargeCoresCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_chargeCoresCnt, allocator);
+    }
+
+    if (m_defendStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefendStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defendStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -762,5 +800,37 @@ void HostInfo::SetClusterAccessedStatus(const string& _clusterAccessedStatus)
 bool HostInfo::ClusterAccessedStatusHasBeenSet() const
 {
     return m_clusterAccessedStatusHasBeenSet;
+}
+
+uint64_t HostInfo::GetChargeCoresCnt() const
+{
+    return m_chargeCoresCnt;
+}
+
+void HostInfo::SetChargeCoresCnt(const uint64_t& _chargeCoresCnt)
+{
+    m_chargeCoresCnt = _chargeCoresCnt;
+    m_chargeCoresCntHasBeenSet = true;
+}
+
+bool HostInfo::ChargeCoresCntHasBeenSet() const
+{
+    return m_chargeCoresCntHasBeenSet;
+}
+
+string HostInfo::GetDefendStatus() const
+{
+    return m_defendStatus;
+}
+
+void HostInfo::SetDefendStatus(const string& _defendStatus)
+{
+    m_defendStatus = _defendStatus;
+    m_defendStatusHasBeenSet = true;
+}
+
+bool HostInfo::DefendStatusHasBeenSet() const
+{
+    return m_defendStatusHasBeenSet;
 }
 

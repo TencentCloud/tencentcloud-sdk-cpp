@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要获取详情的函数名称
-                     * @return FunctionName 需要获取详情的函数名称
+                     * 获取需要获取详情的函数名称，ResourceId和FunctionName只能传一个
+                     * @return FunctionName 需要获取详情的函数名称，ResourceId和FunctionName只能传一个
                      * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
-                     * 设置需要获取详情的函数名称
-                     * @param _functionName 需要获取详情的函数名称
+                     * 设置需要获取详情的函数名称，ResourceId和FunctionName只能传一个
+                     * @param _functionName 需要获取详情的函数名称，ResourceId和FunctionName只能传一个
                      * 
                      */
                     void SetFunctionName(const std::string& _functionName);
@@ -137,7 +137,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要获取详情的函数名称
+                     * 需要获取详情的函数名称，ResourceId和FunctionName只能传一个
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;

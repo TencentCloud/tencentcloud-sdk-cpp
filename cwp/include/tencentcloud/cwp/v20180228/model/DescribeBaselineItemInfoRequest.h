@@ -44,13 +44,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<li>ItemId - int64 - 是否必填：否 - 项Id</i>
-<li>PolicyId - int64 - 是否必填：否 - 项Id</i>
+                     * 获取<li>ItemId - int64 - 是否必填：否 - 项Id</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
 <li>ItemName - string - 是否必填：否 - 检测项名字</li>
 <li>RuleId - int - 是否必填：否 - 规则Id</li>
-                     * @return Filters <li>ItemId - int64 - 是否必填：否 - 项Id</i>
-<li>PolicyId - int64 - 是否必填：否 - 项Id</i>
+                     * @return Filters <li>ItemId - int64 - 是否必填：否 - 项Id</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
 <li>ItemName - string - 是否必填：否 - 检测项名字</li>
 <li>RuleId - int - 是否必填：否 - 规则Id</li>
@@ -59,13 +57,11 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<li>ItemId - int64 - 是否必填：否 - 项Id</i>
-<li>PolicyId - int64 - 是否必填：否 - 项Id</i>
+                     * 设置<li>ItemId - int64 - 是否必填：否 - 项Id</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
 <li>ItemName - string - 是否必填：否 - 检测项名字</li>
 <li>RuleId - int - 是否必填：否 - 规则Id</li>
-                     * @param _filters <li>ItemId - int64 - 是否必填：否 - 项Id</i>
-<li>PolicyId - int64 - 是否必填：否 - 项Id</i>
+                     * @param _filters <li>ItemId - int64 - 是否必填：否 - 项Id</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
 <li>ItemName - string - 是否必填：否 - 检测项名字</li>
 <li>RuleId - int - 是否必填：否 - 规则Id</li>
@@ -167,8 +163,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <li>ItemId - int64 - 是否必填：否 - 项Id</i>
-<li>PolicyId - int64 - 是否必填：否 - 项Id</i>
+                     * <li>ItemId - int64 - 是否必填：否 - 项Id</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
 <li>ItemName - string - 是否必填：否 - 检测项名字</li>
 <li>RuleId - int - 是否必填：否 - 规则Id</li>

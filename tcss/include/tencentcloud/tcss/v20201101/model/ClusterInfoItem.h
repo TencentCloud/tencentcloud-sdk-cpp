@@ -467,18 +467,50 @@ namespace TencentCloud
                     bool TaskCreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取接入状态
+                     * 获取接入状态:
+未接入: AccessedNone
+已防护: AccessedDefended
+未防护: AccessedInstalled
+部分防护: AccessedPartialDefence
+接入异常: AccessedException
+卸载异常: AccessedUninstallException
+接入中: AccessedInstalling
+卸载中: AccessedUninstalling
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccessedStatus 接入状态
+                     * @return AccessedStatus 接入状态:
+未接入: AccessedNone
+已防护: AccessedDefended
+未防护: AccessedInstalled
+部分防护: AccessedPartialDefence
+接入异常: AccessedException
+卸载异常: AccessedUninstallException
+接入中: AccessedInstalling
+卸载中: AccessedUninstalling
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessedStatus() const;
 
                     /**
-                     * 设置接入状态
+                     * 设置接入状态:
+未接入: AccessedNone
+已防护: AccessedDefended
+未防护: AccessedInstalled
+部分防护: AccessedPartialDefence
+接入异常: AccessedException
+卸载异常: AccessedUninstallException
+接入中: AccessedInstalling
+卸载中: AccessedUninstalling
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accessedStatus 接入状态
+                     * @param _accessedStatus 接入状态:
+未接入: AccessedNone
+已防护: AccessedDefended
+未防护: AccessedInstalled
+部分防护: AccessedPartialDefence
+接入异常: AccessedException
+卸载异常: AccessedUninstallException
+接入中: AccessedInstalling
+卸载中: AccessedUninstalling
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -590,6 +622,31 @@ namespace TencentCloud
                      * 
                      */
                     bool UnInstallAgentNodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取计费核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChargeCoresCnt 计费核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetChargeCoresCnt() const;
+
+                    /**
+                     * 设置计费核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _chargeCoresCnt 计费核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChargeCoresCnt(const uint64_t& _chargeCoresCnt);
+
+                    /**
+                     * 判断参数 ChargeCoresCnt 是否已赋值
+                     * @return ChargeCoresCnt 是否已赋值
+                     * 
+                     */
+                    bool ChargeCoresCntHasBeenSet() const;
 
                 private:
 
@@ -714,7 +771,15 @@ namespace TencentCloud
                     bool m_taskCreateTimeHasBeenSet;
 
                     /**
-                     * 接入状态
+                     * 接入状态:
+未接入: AccessedNone
+已防护: AccessedDefended
+未防护: AccessedInstalled
+部分防护: AccessedPartialDefence
+接入异常: AccessedException
+卸载异常: AccessedUninstallException
+接入中: AccessedInstalling
+卸载中: AccessedUninstalling
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessedStatus;
@@ -747,6 +812,13 @@ namespace TencentCloud
                      */
                     uint64_t m_unInstallAgentNodeCount;
                     bool m_unInstallAgentNodeCountHasBeenSet;
+
+                    /**
+                     * 计费核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_chargeCoresCnt;
+                    bool m_chargeCoresCntHasBeenSet;
 
                 };
             }

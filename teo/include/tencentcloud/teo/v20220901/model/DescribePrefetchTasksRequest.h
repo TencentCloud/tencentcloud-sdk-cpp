@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取查询起始时间。
-                     * @return StartTime 查询起始时间。
+                     * 获取查询起始时间，时间与 job-id 必填一个。
+                     * @return StartTime 查询起始时间，时间与 job-id 必填一个。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询起始时间。
-                     * @param _startTime 查询起始时间。
+                     * 设置查询起始时间，时间与 job-id 必填一个。
+                     * @param _startTime 查询起始时间，时间与 job-id 必填一个。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间。
-                     * @return EndTime 查询结束时间。
+                     * 获取查询结束时间，时间与 job-id 必填一个。
+                     * @return EndTime 查询结束时间，时间与 job-id 必填一个。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间。
-                     * @param _endTime 查询结束时间。
+                     * 设置查询结束时间，时间与 job-id 必填一个。
+                     * @param _endTime 查询结束时间，时间与 job-id 必填一个。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 查询起始时间。
+                     * 查询起始时间，时间与 job-id 必填一个。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间。
+                     * 查询结束时间，时间与 job-id 必填一个。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

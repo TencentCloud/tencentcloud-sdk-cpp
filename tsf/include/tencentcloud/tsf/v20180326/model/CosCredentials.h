@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * cos临时帐号信息
+                * cos临时账号信息
                 */
                 class CosCredentials : public AbstractModel
                 {

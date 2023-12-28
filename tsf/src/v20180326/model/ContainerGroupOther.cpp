@@ -23,6 +23,7 @@ using namespace std;
 ContainerGroupOther::ContainerGroupOther() :
     m_instanceNumHasBeenSet(false),
     m_currentNumHasBeenSet(false),
+    m_lbDnsHasBeenSet(false),
     m_lbIpHasBeenSet(false),
     m_clusterIpHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -58,6 +59,16 @@ CoreInternalOutcome ContainerGroupOther::Deserialize(const rapidjson::Value &val
         }
         m_currentNum = value["CurrentNum"].GetInt64();
         m_currentNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("LbDns") && !value["LbDns"].IsNull())
+    {
+        if (!value["LbDns"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupOther.LbDns` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lbDns = string(value["LbDns"].GetString());
+        m_lbDnsHasBeenSet = true;
     }
 
     if (value.HasMember("LbIp") && !value["LbIp"].IsNull())
@@ -190,6 +201,14 @@ void ContainerGroupOther::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, m_currentNum, allocator);
     }
 
+    if (m_lbDnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LbDns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lbDns.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_lbIpHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -303,6 +322,22 @@ void ContainerGroupOther::SetCurrentNum(const int64_t& _currentNum)
 bool ContainerGroupOther::CurrentNumHasBeenSet() const
 {
     return m_currentNumHasBeenSet;
+}
+
+string ContainerGroupOther::GetLbDns() const
+{
+    return m_lbDns;
+}
+
+void ContainerGroupOther::SetLbDns(const string& _lbDns)
+{
+    m_lbDns = _lbDns;
+    m_lbDnsHasBeenSet = true;
+}
+
+bool ContainerGroupOther::LbDnsHasBeenSet() const
+{
+    return m_lbDnsHasBeenSet;
 }
 
 string ContainerGroupOther::GetLbIp() const

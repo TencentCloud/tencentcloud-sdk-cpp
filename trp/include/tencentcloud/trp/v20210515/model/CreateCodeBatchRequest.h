@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取模版ID，或者活动ID
-                     * @return MpTpl 模版ID，或者活动ID
+                     * 获取模板ID，或者活动ID
+                     * @return MpTpl 模板ID，或者活动ID
                      * 
                      */
                     std::string GetMpTpl() const;
 
                     /**
-                     * 设置模版ID，或者活动ID
-                     * @param _mpTpl 模版ID，或者活动ID
+                     * 设置模板ID，或者活动ID
+                     * @param _mpTpl 模板ID，或者活动ID
                      * 
                      */
                     void SetMpTpl(const std::string& _mpTpl);
@@ -312,7 +312,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 模版ID，或者活动ID
+                     * 模板ID，或者活动ID
                      */
                     std::string m_mpTpl;
                     bool m_mpTplHasBeenSet;

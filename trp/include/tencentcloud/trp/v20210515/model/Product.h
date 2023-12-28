@@ -315,6 +315,31 @@ namespace TencentCloud
                      */
                     bool MerchantNameHasBeenSet() const;
 
+                    /**
+                     * 获取认证状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertState 认证状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCertState() const;
+
+                    /**
+                     * 设置认证状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _certState 认证状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCertState(const int64_t& _certState);
+
+                    /**
+                     * 判断参数 CertState 是否已赋值
+                     * @return CertState 是否已赋值
+                     * 
+                     */
+                    bool CertStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -392,6 +417,13 @@ namespace TencentCloud
                      */
                     std::string m_merchantName;
                     bool m_merchantNameHasBeenSet;
+
+                    /**
+                     * 认证状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_certState;
+                    bool m_certStateHasBeenSet;
 
                 };
             }

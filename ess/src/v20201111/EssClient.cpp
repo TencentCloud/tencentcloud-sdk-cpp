@@ -2749,6 +2749,49 @@ EssClient::ModifyApplicationCallbackInfoOutcomeCallable EssClient::ModifyApplica
     return task->get_future();
 }
 
+EssClient::ModifyExtendedServiceOutcome EssClient::ModifyExtendedService(const ModifyExtendedServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyExtendedService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyExtendedServiceResponse rsp = ModifyExtendedServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyExtendedServiceOutcome(rsp);
+        else
+            return ModifyExtendedServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyExtendedServiceOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ModifyExtendedServiceAsync(const ModifyExtendedServiceRequest& request, const ModifyExtendedServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyExtendedService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::ModifyExtendedServiceOutcomeCallable EssClient::ModifyExtendedServiceCallable(const ModifyExtendedServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyExtendedServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyExtendedService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::ModifyIntegrationDepartmentOutcome EssClient::ModifyIntegrationDepartment(const ModifyIntegrationDepartmentRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyIntegrationDepartment");

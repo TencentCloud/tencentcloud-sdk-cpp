@@ -83,6 +83,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/GetMetaTableRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/GetMetaTableResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyFolderRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h>
@@ -201,6 +203,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FetchSqlGatewayStatementResultResponse> FetchSqlGatewayStatementResultOutcome;
                 typedef std::future<FetchSqlGatewayStatementResultOutcome> FetchSqlGatewayStatementResultOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::FetchSqlGatewayStatementResultRequest&, FetchSqlGatewayStatementResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchSqlGatewayStatementResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetMetaTableResponse> GetMetaTableOutcome;
+                typedef std::future<GetMetaTableOutcome> GetMetaTableOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::GetMetaTableRequest&, GetMetaTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMetaTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFolderResponse> ModifyFolderOutcome;
                 typedef std::future<ModifyFolderOutcome> ModifyFolderOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ModifyFolderRequest&, ModifyFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFolderAsyncHandler;
@@ -494,6 +499,15 @@ namespace TencentCloud
                 FetchSqlGatewayStatementResultOutcome FetchSqlGatewayStatementResult(const Model::FetchSqlGatewayStatementResultRequest &request);
                 void FetchSqlGatewayStatementResultAsync(const Model::FetchSqlGatewayStatementResultRequest& request, const FetchSqlGatewayStatementResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FetchSqlGatewayStatementResultOutcomeCallable FetchSqlGatewayStatementResultCallable(const Model::FetchSqlGatewayStatementResultRequest& request);
+
+                /**
+                 *查询元数据表
+                 * @param req GetMetaTableRequest
+                 * @return GetMetaTableOutcome
+                 */
+                GetMetaTableOutcome GetMetaTable(const Model::GetMetaTableRequest &request);
+                void GetMetaTableAsync(const Model::GetMetaTableRequest& request, const GetMetaTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetMetaTableOutcomeCallable GetMetaTableCallable(const Model::GetMetaTableRequest& request);
 
                 /**
                  *自定义树状结构页面拖拽文件夹

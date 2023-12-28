@@ -1330,6 +1330,49 @@ OceanusClient::FetchSqlGatewayStatementResultOutcomeCallable OceanusClient::Fetc
     return task->get_future();
 }
 
+OceanusClient::GetMetaTableOutcome OceanusClient::GetMetaTable(const GetMetaTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetMetaTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetMetaTableResponse rsp = GetMetaTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetMetaTableOutcome(rsp);
+        else
+            return GetMetaTableOutcome(o.GetError());
+    }
+    else
+    {
+        return GetMetaTableOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::GetMetaTableAsync(const GetMetaTableRequest& request, const GetMetaTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetMetaTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::GetMetaTableOutcomeCallable OceanusClient::GetMetaTableCallable(const GetMetaTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetMetaTableOutcome()>>(
+        [this, request]()
+        {
+            return this->GetMetaTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::ModifyFolderOutcome OceanusClient::ModifyFolder(const ModifyFolderRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyFolder");

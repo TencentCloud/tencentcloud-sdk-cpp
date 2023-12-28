@@ -149,6 +149,8 @@
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h>
+#include <tencentcloud/ess/v20201111/model/ModifyExtendedServiceRequest.h>
+#include <tencentcloud/ess/v20201111/model/ModifyExtendedServiceResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleRequest.h>
@@ -366,6 +368,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApplicationCallbackInfoResponse> ModifyApplicationCallbackInfoOutcome;
                 typedef std::future<ModifyApplicationCallbackInfoOutcome> ModifyApplicationCallbackInfoOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyApplicationCallbackInfoRequest&, ModifyApplicationCallbackInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationCallbackInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyExtendedServiceResponse> ModifyExtendedServiceOutcome;
+                typedef std::future<ModifyExtendedServiceOutcome> ModifyExtendedServiceOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ModifyExtendedServiceRequest&, ModifyExtendedServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExtendedServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyIntegrationDepartmentResponse> ModifyIntegrationDepartmentOutcome;
                 typedef std::future<ModifyIntegrationDepartmentOutcome> ModifyIntegrationDepartmentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyIntegrationDepartmentRequest&, ModifyIntegrationDepartmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntegrationDepartmentAsyncHandler;
@@ -1123,12 +1128,25 @@ namespace TencentCloud
 
                 /**
                  *查询企业扩展服务的开通和授权情况，当前支持查询以下内容：
-1. 企业自动签
-2. 企业与港澳台居民签署合同
-3. 使用手机号验证签署方身份
-4. 骑缝章
-5. 批量签署能力
-6. 拓宽签署方年龄限制
+
+1. **企业自动签署**
+2. **批量签署授权**
+3. **企业与港澳台居民签署合同**
+4. **拓宽签署方年龄限制**
+5. **个人签署方仅校验手机号**
+6. **隐藏合同经办人姓名**
+7. **正楷临摹签名失败后更换其他签名类型**
+8. **短信通知签署方**
+9. **个人签署方手动签字**
+10. **骑缝章**
+11. **签署密码开通引导**
+
+
+对应能力开通页面在Web控制台-更多-企业设置-拓展服务，如下图所示:
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/7d79746ecca1c5fe878a2ec36ed69c23.jpg)
+
+注: <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Operator.UserId需要传递超管或者法人的UserId)
                  * @param req DescribeExtendedServiceAuthInfosRequest
                  * @return DescribeExtendedServiceAuthInfosOutcome
                  */
@@ -1344,6 +1362,34 @@ namespace TencentCloud
                 ModifyApplicationCallbackInfoOutcome ModifyApplicationCallbackInfo(const Model::ModifyApplicationCallbackInfoRequest &request);
                 void ModifyApplicationCallbackInfoAsync(const Model::ModifyApplicationCallbackInfoRequest& request, const ModifyApplicationCallbackInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApplicationCallbackInfoOutcomeCallable ModifyApplicationCallbackInfoCallable(const Model::ModifyApplicationCallbackInfoRequest& request);
+
+                /**
+                 *管理企业扩展服务 ，企业经办人需要是企业超管或者法人。
+
+跳转小程序的几种方式：主要是设置不同的EndPoint
+1. 通过链接Url直接跳转到小程序，不需要返回
+设置EndPoint为WEIXINAPP，得到链接打开即可。
+
+2. 客户App直接跳转到小程序-->腾讯电子签小程序操作完成-->返回App
+跳转到小程序的实现，参考官方文档<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html">打开 App</a>
+设置EndPoint为APP，得到path。
+
+3. 客户小程序直接跳到电子签小程序-->腾讯电子签小程序操作完成--->回到客户小程序
+跳转到小程序的实现，参考官方文档（分为<a href="https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html">全屏</a>、<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html">半屏</a>两种方式），如何配置也可以请参考: <a href="https://qian.tencent.com/developers/company/openwxminiprogram">跳转电子签小程序配置</a>
+设置EndPoint为APP，得到path。
+
+4.其中小程序的原始Id如下，或者查看小程序信息自助获取。
+
+| 小程序 | AppID | 原始ID |
+| ------------ | ------------ | ------------ |
+| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |
+| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |
+                 * @param req ModifyExtendedServiceRequest
+                 * @return ModifyExtendedServiceOutcome
+                 */
+                ModifyExtendedServiceOutcome ModifyExtendedService(const Model::ModifyExtendedServiceRequest &request);
+                void ModifyExtendedServiceAsync(const Model::ModifyExtendedServiceRequest& request, const ModifyExtendedServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyExtendedServiceOutcomeCallable ModifyExtendedServiceCallable(const Model::ModifyExtendedServiceRequest& request);
 
                 /**
                  *此接口（ModifyIntegrationDepartment）用于更新企业的部门信息，支持更新部门名称、客户系统部门ID和部门序号等信息。

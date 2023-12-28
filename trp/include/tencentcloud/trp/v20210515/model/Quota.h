@@ -371,6 +371,31 @@ namespace TencentCloud
                      */
                     bool VersionHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启企业认证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductCertify 是否开启企业认证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetProductCertify() const;
+
+                    /**
+                     * 设置是否开启企业认证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productCertify 是否开启企业认证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductCertify(const uint64_t& _productCertify);
+
+                    /**
+                     * 判断参数 ProductCertify 是否已赋值
+                     * @return ProductCertify 是否已赋值
+                     * 
+                     */
+                    bool ProductCertifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +488,13 @@ namespace TencentCloud
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
+
+                    /**
+                     * 是否开启企业认证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_productCertify;
+                    bool m_productCertifyHasBeenSet;
 
                 };
             }

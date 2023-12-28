@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool StrategyHasBeenSet() const;
 
                     /**
-                     * 获取访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
-                     * @return SourceType 访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
+                     * 获取访问源类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板
+                     * @return SourceType 访问源类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板
                      * 
                      */
                     uint64_t GetSourceType() const;
 
                     /**
-                     * 设置访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
-                     * @param _sourceType 访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
+                     * 设置访问源类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板
+                     * @param _sourceType 访问源类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板
                      * 
                      */
                     void SetSourceType(const uint64_t& _sourceType);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
-                     * @return TargetType 访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
+                     * 获取访问目的类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板
+                     * @return TargetType 访问目的类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板
                      * 
                      */
                     uint64_t GetTargetType() const;
 
                     /**
-                     * 设置访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
-                     * @param _targetType 访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
+                     * 设置访问目的类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板
+                     * @param _targetType 访问目的类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板
                      * 
                      */
                     void SetTargetType(const uint64_t& _targetType);
@@ -478,7 +478,7 @@ namespace TencentCloud
                     bool m_strategyHasBeenSet;
 
                     /**
-                     * 访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
+                     * 访问源类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板
                      */
                     uint64_t m_sourceType;
                     bool m_sourceTypeHasBeenSet;
@@ -496,7 +496,7 @@ namespace TencentCloud
                     bool m_detailHasBeenSet;
 
                     /**
-                     * 访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
+                     * 访问目的类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板
                      */
                     uint64_t m_targetType;
                     bool m_targetTypeHasBeenSet;

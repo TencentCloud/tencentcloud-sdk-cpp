@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool ProfileListHasBeenSet() const;
 
                     /**
-                     * 获取邮件模版总数。
+                     * 获取邮件模板总数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 邮件模版总数。
+                     * @return TotalCount 邮件模板总数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -86,7 +86,7 @@ namespace TencentCloud
                     bool m_profileListHasBeenSet;
 
                     /**
-                     * 邮件模版总数。
+                     * 邮件模板总数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;

@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-SyncBaselineDetectSummaryRequest::SyncBaselineDetectSummaryRequest()
+SyncBaselineDetectSummaryRequest::SyncBaselineDetectSummaryRequest() :
+    m_taskIdsHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,19 @@ string SyncBaselineDetectSummaryRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_taskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskIds.begin(); itr != m_taskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +54,21 @@ string SyncBaselineDetectSummaryRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<uint64_t> SyncBaselineDetectSummaryRequest::GetTaskIds() const
+{
+    return m_taskIds;
+}
+
+void SyncBaselineDetectSummaryRequest::SetTaskIds(const vector<uint64_t>& _taskIds)
+{
+    m_taskIds = _taskIds;
+    m_taskIdsHasBeenSet = true;
+}
+
+bool SyncBaselineDetectSummaryRequest::TaskIdsHasBeenSet() const
+{
+    return m_taskIdsHasBeenSet;
+}
 
 

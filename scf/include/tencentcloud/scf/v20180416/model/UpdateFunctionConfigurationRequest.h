@@ -538,6 +538,27 @@ namespace TencentCloud
                      */
                     bool IntranetConfigHasBeenSet() const;
 
+                    /**
+                     * 获取忽略系统日志上报
+                     * @return IgnoreSysLog 忽略系统日志上报
+                     * 
+                     */
+                    bool GetIgnoreSysLog() const;
+
+                    /**
+                     * 设置忽略系统日志上报
+                     * @param _ignoreSysLog 忽略系统日志上报
+                     * 
+                     */
+                    void SetIgnoreSysLog(const bool& _ignoreSysLog);
+
+                    /**
+                     * 判断参数 IgnoreSysLog 是否已赋值
+                     * @return IgnoreSysLog 是否已赋值
+                     * 
+                     */
+                    bool IgnoreSysLogHasBeenSet() const;
+
                 private:
 
                     /**
@@ -678,6 +699,12 @@ namespace TencentCloud
                      */
                     IntranetConfigIn m_intranetConfig;
                     bool m_intranetConfigHasBeenSet;
+
+                    /**
+                     * 忽略系统日志上报
+                     */
+                    bool m_ignoreSysLog;
+                    bool m_ignoreSysLogHasBeenSet;
 
                 };
             }

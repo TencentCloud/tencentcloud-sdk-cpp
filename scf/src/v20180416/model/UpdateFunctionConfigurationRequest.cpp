@@ -45,7 +45,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_protocolParamsHasBeenSet(false),
     m_instanceConcurrencyConfigHasBeenSet(false),
     m_dnsCacheHasBeenSet(false),
-    m_intranetConfigHasBeenSet(false)
+    m_intranetConfigHasBeenSet(false),
+    m_ignoreSysLogHasBeenSet(false)
 {
 }
 
@@ -253,6 +254,14 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intranetConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ignoreSysLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreSysLog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ignoreSysLog, allocator);
     }
 
 
@@ -629,6 +638,22 @@ void UpdateFunctionConfigurationRequest::SetIntranetConfig(const IntranetConfigI
 bool UpdateFunctionConfigurationRequest::IntranetConfigHasBeenSet() const
 {
     return m_intranetConfigHasBeenSet;
+}
+
+bool UpdateFunctionConfigurationRequest::GetIgnoreSysLog() const
+{
+    return m_ignoreSysLog;
+}
+
+void UpdateFunctionConfigurationRequest::SetIgnoreSysLog(const bool& _ignoreSysLog)
+{
+    m_ignoreSysLog = _ignoreSysLog;
+    m_ignoreSysLogHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::IgnoreSysLogHasBeenSet() const
+{
+    return m_ignoreSysLogHasBeenSet;
 }
 
 

@@ -25,6 +25,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSubmissionLogResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceRequest.h
+  include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h
@@ -63,9 +64,10 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/StatementResult.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeJobsRsp.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h
-  include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/SlotSharingGroupSpec.h
   include/tencentcloud/oceanus/v20190422/model/Tag.h
+  include/tencentcloud/oceanus/v20190422/model/GetMetaTableResponse.h
   include/tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultResponse.h
   include/tencentcloud/oceanus/v20190422/model/JobGraphNode.h
   include/tencentcloud/oceanus/v20190422/model/CreateWorkSpaceRequest.h
@@ -111,6 +113,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/ClusterGroupSetItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h
+  include/tencentcloud/oceanus/v20190422/model/GetMetaTableRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResultData.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Cluster.h
@@ -125,7 +128,6 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobRequest.h
   include/tencentcloud/oceanus/v20190422/model/JobInstanceForSubmissionLog.h
-  include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeFolderRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteFoldersResponse.h
   include/tencentcloud/oceanus/v20190422/model/SubFolderInfo.h
@@ -154,6 +156,7 @@ set(oceanus_src
   src/v20190422/model/DescribeJobSubmissionLogResponse.cpp
   src/v20190422/model/DeleteJobsRequest.cpp
   src/v20190422/model/ModifyWorkSpaceRequest.cpp
+  src/v20190422/model/ModifyJobResponse.cpp
   src/v20190422/model/CreateJobConfigResponse.cpp
   src/v20190422/model/CreateResourceConfigResponse.cpp
   src/v20190422/model/CreateJobConfigRequest.cpp
@@ -192,9 +195,10 @@ set(oceanus_src
   src/v20190422/model/StatementResult.cpp
   src/v20190422/model/DescribeTreeJobsRsp.cpp
   src/v20190422/model/DeleteResourcesResponse.cpp
-  src/v20190422/model/ModifyJobResponse.cpp
+  src/v20190422/model/DeleteTableConfigResponse.cpp
   src/v20190422/model/SlotSharingGroupSpec.cpp
   src/v20190422/model/Tag.cpp
+  src/v20190422/model/GetMetaTableResponse.cpp
   src/v20190422/model/FetchSqlGatewayStatementResultResponse.cpp
   src/v20190422/model/JobGraphNode.cpp
   src/v20190422/model/CreateWorkSpaceRequest.cpp
@@ -240,6 +244,7 @@ set(oceanus_src
   src/v20190422/model/ClusterGroupSetItem.cpp
   src/v20190422/model/DescribeJobConfigsRequest.cpp
   src/v20190422/model/ModifyJobRequest.cpp
+  src/v20190422/model/GetMetaTableRequest.cpp
   src/v20190422/model/ResultData.cpp
   src/v20190422/model/DeleteResourceConfigsResponse.cpp
   src/v20190422/model/Cluster.cpp
@@ -254,7 +259,6 @@ set(oceanus_src
   src/v20190422/model/RunSqlGatewayStatementResponse.cpp
   src/v20190422/model/CreateJobRequest.cpp
   src/v20190422/model/JobInstanceForSubmissionLog.cpp
-  src/v20190422/model/DeleteTableConfigResponse.cpp
   src/v20190422/model/DescribeFolderRequest.cpp
   src/v20190422/model/DeleteFoldersResponse.cpp
   src/v20190422/model/SubFolderInfo.cpp

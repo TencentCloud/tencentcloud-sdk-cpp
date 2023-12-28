@@ -91,6 +91,27 @@ namespace TencentCloud
                     bool CurrentNumHasBeenSet() const;
 
                     /**
+                     * 获取负载均衡DNS地址
+                     * @return LbDns 负载均衡DNS地址
+                     * 
+                     */
+                    std::string GetLbDns() const;
+
+                    /**
+                     * 设置负载均衡DNS地址
+                     * @param _lbDns 负载均衡DNS地址
+                     * 
+                     */
+                    void SetLbDns(const std::string& _lbDns);
+
+                    /**
+                     * 判断参数 LbDns 是否已赋值
+                     * @return LbDns 是否已赋值
+                     * 
+                     */
+                    bool LbDnsHasBeenSet() const;
+
+                    /**
                      * 获取负载均衡ip
                      * @return LbIp 负载均衡ip
                      * 
@@ -133,15 +154,15 @@ namespace TencentCloud
                     bool ClusterIpHasBeenSet() const;
 
                     /**
-                     * 获取服务状态，请参考后面的的状态定义
-                     * @return Status 服务状态，请参考后面的的状态定义
+                     * 获取服务状态，请参考后面的状态定义
+                     * @return Status 服务状态，请参考后面的状态定义
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置服务状态，请参考后面的的状态定义
-                     * @param _status 服务状态，请参考后面的的状态定义
+                     * 设置服务状态，请参考后面的状态定义
+                     * @param _status 服务状态，请参考后面的状态定义
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -154,15 +175,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取服务状态，请参考后面的的状态定义
-                     * @return Message 服务状态，请参考后面的的状态定义
+                     * 获取服务状态，请参考后面的状态定义
+                     * @return Message 服务状态，请参考后面的状态定义
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置服务状态，请参考后面的的状态定义
-                     * @param _message 服务状态，请参考后面的的状态定义
+                     * 设置服务状态，请参考后面的状态定义
+                     * @param _message 服务状态，请参考后面的状态定义
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -310,6 +331,12 @@ namespace TencentCloud
                     bool m_currentNumHasBeenSet;
 
                     /**
+                     * 负载均衡DNS地址
+                     */
+                    std::string m_lbDns;
+                    bool m_lbDnsHasBeenSet;
+
+                    /**
                      * 负载均衡ip
                      */
                     std::string m_lbIp;
@@ -322,13 +349,13 @@ namespace TencentCloud
                     bool m_clusterIpHasBeenSet;
 
                     /**
-                     * 服务状态，请参考后面的的状态定义
+                     * 服务状态，请参考后面的状态定义
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 服务状态，请参考后面的的状态定义
+                     * 服务状态，请参考后面的状态定义
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取拨测参数，如{}，详细可参考云拨测官方文档。
-                     * @return Parameters 拨测参数，如{}，详细可参考云拨测官方文档。
+                     * 获取拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。
+                     * @return Parameters 拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。
                      * 
                      */
                     std::string GetParameters() const;
 
                     /**
-                     * 设置拨测参数，如{}，详细可参考云拨测官方文档。
-                     * @param _parameters 拨测参数，如{}，详细可参考云拨测官方文档。
+                     * 设置拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。
+                     * @param _parameters 拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。
                      * 
                      */
                     void SetParameters(const std::string& _parameters);
@@ -331,7 +331,7 @@ namespace TencentCloud
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 拨测参数，如{}，详细可参考云拨测官方文档。
+                     * 拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。
                      */
                     std::string m_parameters;
                     bool m_parametersHasBeenSet;

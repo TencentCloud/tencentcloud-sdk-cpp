@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 地址模版列表数据
+                * 地址模板列表数据
                 */
                 class TemplateListInfo : public AbstractModel
                 {
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版ID
+                     * 获取模板ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Uuid 模版ID
+                     * @return Uuid 模板ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置模版ID
+                     * 设置模板ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _uuid 模版ID
+                     * @param _uuid 模板ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取模版名称
+                     * 获取模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 模版名称
+                     * @return Name 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置模版名称
+                     * 设置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 模版名称
+                     * @param _name 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取IP模版
+                     * 获取IP模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpString IP模版
+                     * @return IpString IP模板
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpString() const;
 
                     /**
-                     * 设置IP模版
+                     * 设置IP模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipString IP模版
+                     * @param _ipString IP模板
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取模版类型
+                     * 获取模板类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 模版类型
+                     * @return Type 模板类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置模版类型
+                     * 设置模板类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 模版类型
+                     * @param _type 模板类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,14 +299,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版ID
+                     * 模板ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 模版名称
+                     * 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
@@ -320,7 +320,7 @@ namespace TencentCloud
                     bool m_detailHasBeenSet;
 
                     /**
-                     * IP模版
+                     * IP模板
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipString;
@@ -341,7 +341,7 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 模版类型
+                     * 模板类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;

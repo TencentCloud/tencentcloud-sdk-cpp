@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool CorpIdHasBeenSet() const;
 
+                    /**
+                     * 获取认证状态
+                     * @return CertState 认证状态
+                     * 
+                     */
+                    int64_t GetCertState() const;
+
+                    /**
+                     * 设置认证状态
+                     * @param _certState 认证状态
+                     * 
+                     */
+                    void SetCertState(const int64_t& _certState);
+
+                    /**
+                     * 判断参数 CertState 是否已赋值
+                     * @return CertState 是否已赋值
+                     * 
+                     */
+                    bool CertStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
+
+                    /**
+                     * 认证状态
+                     */
+                    int64_t m_certState;
+                    bool m_certStateHasBeenSet;
 
                 };
             }

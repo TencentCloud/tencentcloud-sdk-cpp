@@ -33,6 +33,7 @@ CreateTranscodeRequest::CreateTranscodeRequest() :
     m_priorityHasBeenSet(false),
     m_minScaleResolutionHasBeenSet(false),
     m_autoHandleUnsupportedElementHasBeenSet(false),
+    m_autoHandleUnsupportedElementTypesHasBeenSet(false),
     m_excelParamHasBeenSet(false)
 {
 }
@@ -122,6 +123,19 @@ string CreateTranscodeRequest::ToJsonString() const
         string key = "AutoHandleUnsupportedElement";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoHandleUnsupportedElement, allocator);
+    }
+
+    if (m_autoHandleUnsupportedElementTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoHandleUnsupportedElementTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_autoHandleUnsupportedElementTypes.begin(); itr != m_autoHandleUnsupportedElementTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     if (m_excelParamHasBeenSet)
@@ -299,6 +313,22 @@ void CreateTranscodeRequest::SetAutoHandleUnsupportedElement(const bool& _autoHa
 bool CreateTranscodeRequest::AutoHandleUnsupportedElementHasBeenSet() const
 {
     return m_autoHandleUnsupportedElementHasBeenSet;
+}
+
+vector<int64_t> CreateTranscodeRequest::GetAutoHandleUnsupportedElementTypes() const
+{
+    return m_autoHandleUnsupportedElementTypes;
+}
+
+void CreateTranscodeRequest::SetAutoHandleUnsupportedElementTypes(const vector<int64_t>& _autoHandleUnsupportedElementTypes)
+{
+    m_autoHandleUnsupportedElementTypes = _autoHandleUnsupportedElementTypes;
+    m_autoHandleUnsupportedElementTypesHasBeenSet = true;
+}
+
+bool CreateTranscodeRequest::AutoHandleUnsupportedElementTypesHasBeenSet() const
+{
+    return m_autoHandleUnsupportedElementTypesHasBeenSet;
 }
 
 ExcelParam CreateTranscodeRequest::GetExcelParam() const

@@ -162,15 +162,15 @@ namespace TencentCloud
                     bool RecipientsHasBeenSet() const;
 
                     /**
-                     * 获取此模版中的签署控件列表
-                     * @return SignComponents 此模版中的签署控件列表
+                     * 获取此模板中的签署控件列表
+                     * @return SignComponents 此模板中的签署控件列表
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置此模版中的签署控件列表
-                     * @param _signComponents 此模版中的签署控件列表
+                     * 设置此模板中的签署控件列表
+                     * @param _signComponents 此模板中的签署控件列表
                      * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
@@ -502,7 +502,7 @@ namespace TencentCloud
                     bool m_recipientsHasBeenSet;
 
                     /**
-                     * 此模版中的签署控件列表
+                     * 此模板中的签署控件列表
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;

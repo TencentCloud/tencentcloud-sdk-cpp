@@ -33,7 +33,8 @@ Quota::Quota() :
     m_chainQuotaHasBeenSet(false),
     m_riskQuotaHasBeenSet(false),
     m_trackTypeHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_productCertifyHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,16 @@ CoreInternalOutcome Quota::Deserialize(const rapidjson::Value &value)
         m_versionHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductCertify") && !value["ProductCertify"].IsNull())
+    {
+        if (!value["ProductCertify"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Quota.ProductCertify` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_productCertify = value["ProductCertify"].GetUint64();
+        m_productCertifyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +300,14 @@ void Quota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productCertifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductCertify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_productCertify, allocator);
     }
 
 }
@@ -500,5 +519,21 @@ void Quota::SetVersion(const string& _version)
 bool Quota::VersionHasBeenSet() const
 {
     return m_versionHasBeenSet;
+}
+
+uint64_t Quota::GetProductCertify() const
+{
+    return m_productCertify;
+}
+
+void Quota::SetProductCertify(const uint64_t& _productCertify)
+{
+    m_productCertify = _productCertify;
+    m_productCertifyHasBeenSet = true;
+}
+
+bool Quota::ProductCertifyHasBeenSet() const
+{
+    return m_productCertifyHasBeenSet;
 }
 

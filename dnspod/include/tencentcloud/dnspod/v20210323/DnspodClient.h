@@ -474,6 +474,7 @@ namespace TencentCloud
 
                 /**
                  *添加记录
+备注：新添加的解析记录存在短暂的索引延迟，如果查询不到新增记录，请在 30 秒后重试
                  * @param req CreateRecordRequest
                  * @return CreateRecordOutcome
                  */
@@ -636,6 +637,7 @@ namespace TencentCloud
 
                 /**
                  *获取域名筛选列表
+备注：新添加的解析记录存在短暂的索引延迟，如果查询不到新增记录，请在 30 秒后重试
                  * @param req DescribeDomainFilterListRequest
                  * @return DescribeDomainFilterListOutcome
                  */
@@ -762,6 +764,7 @@ namespace TencentCloud
 
                 /**
                  *获取某个域名下的解析记录列表
+备注：新添加的解析记录存在短暂的索引延迟，如果查询不到新增记录，请在 30 秒后重试
                  * @param req DescribeRecordListRequest
                  * @return DescribeRecordListOutcome
                  */

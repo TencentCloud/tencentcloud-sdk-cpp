@@ -32,7 +32,8 @@ Product::Product() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_extHasBeenSet(false),
-    m_merchantNameHasBeenSet(false)
+    m_merchantNameHasBeenSet(false),
+    m_certStateHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
         m_merchantNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CertState") && !value["CertState"].IsNull())
+    {
+        if (!value["CertState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Product.CertState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_certState = value["CertState"].GetInt64();
+        m_certStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +289,14 @@ void Product::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "MerchantName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_merchantName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_certState, allocator);
     }
 
 }
@@ -473,5 +492,21 @@ void Product::SetMerchantName(const string& _merchantName)
 bool Product::MerchantNameHasBeenSet() const
 {
     return m_merchantNameHasBeenSet;
+}
+
+int64_t Product::GetCertState() const
+{
+    return m_certState;
+}
+
+void Product::SetCertState(const int64_t& _certState)
+{
+    m_certState = _certState;
+    m_certStateHasBeenSet = true;
+}
+
+bool Product::CertStateHasBeenSet() const
+{
+    return m_certStateHasBeenSet;
 }
 
