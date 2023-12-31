@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 带有时间的详细数据。
+                * 带有时间戳的详细数据。
                 */
                 class DetailData : public AbstractModel
                 {

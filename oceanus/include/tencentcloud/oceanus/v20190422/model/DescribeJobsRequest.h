@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取查询额外的作业信息,例如 JobEventInfo	
+                     * @return ExtraResult 查询额外的作业信息,例如 JobEventInfo	
+                     * 
+                     */
+                    std::vector<std::string> GetExtraResult() const;
+
+                    /**
+                     * 设置查询额外的作业信息,例如 JobEventInfo	
+                     * @param _extraResult 查询额外的作业信息,例如 JobEventInfo	
+                     * 
+                     */
+                    void SetExtraResult(const std::vector<std::string>& _extraResult);
+
+                    /**
+                     * 判断参数 ExtraResult 是否已赋值
+                     * @return ExtraResult 是否已赋值
+                     * 
+                     */
+                    bool ExtraResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * 查询额外的作业信息,例如 JobEventInfo	
+                     */
+                    std::vector<std::string> m_extraResult;
+                    bool m_extraResultHasBeenSet;
 
                 };
             }

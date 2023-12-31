@@ -277,15 +277,27 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取高可用类型：0：非高可用，1：读高可用，2：读写高可用。
-                     * @return HaType 高可用类型：0：非高可用，1：读高可用，2：读写高可用。
+                     * 获取高可用类型：
+0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），
+1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），
+2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。
+                     * @return HaType 高可用类型：
+0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），
+1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），
+2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。
                      * 
                      */
                     int64_t GetHaType() const;
 
                     /**
-                     * 设置高可用类型：0：非高可用，1：读高可用，2：读写高可用。
-                     * @param _haType 高可用类型：0：非高可用，1：读高可用，2：读写高可用。
+                     * 设置高可用类型：
+0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），
+1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），
+2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。
+                     * @param _haType 高可用类型：
+0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），
+1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），
+2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。
                      * 
                      */
                     void SetHaType(const int64_t& _haType);
@@ -387,7 +399,10 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 高可用类型：0：非高可用，1：读高可用，2：读写高可用。
+                     * 高可用类型：
+0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），
+1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），
+2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。
                      */
                     int64_t m_haType;
                     bool m_haTypeHasBeenSet;

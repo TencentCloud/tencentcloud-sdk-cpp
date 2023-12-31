@@ -27,7 +27,8 @@ DescribeJobsRequest::DescribeJobsRequest() :
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_extraResultHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,19 @@ string DescribeJobsRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraResult";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_extraResult.begin(); itr != m_extraResult.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -176,6 +190,22 @@ void DescribeJobsRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool DescribeJobsRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+vector<string> DescribeJobsRequest::GetExtraResult() const
+{
+    return m_extraResult;
+}
+
+void DescribeJobsRequest::SetExtraResult(const vector<string>& _extraResult)
+{
+    m_extraResult = _extraResult;
+    m_extraResultHasBeenSet = true;
+}
+
+bool DescribeJobsRequest::ExtraResultHasBeenSet() const
+{
+    return m_extraResultHasBeenSet;
 }
 
 

@@ -2295,7 +2295,7 @@ namespace TencentCloud
                 ModifySnapshotByTimeOffsetTemplateOutcomeCallable ModifySnapshotByTimeOffsetTemplateCallable(const Model::ModifySnapshotByTimeOffsetTemplateRequest& request);
 
                 /**
-                 *该接口用于修改子应用信息，但不允许修改主应用信息。
+                 *该接口用于修改应用信息，但不允许修改默认应用信息。
                  * @param req ModifySubAppIdInfoRequest
                  * @return ModifySubAppIdInfoOutcome
                  */
@@ -2304,7 +2304,7 @@ namespace TencentCloud
                 ModifySubAppIdInfoOutcomeCallable ModifySubAppIdInfoCallable(const Model::ModifySubAppIdInfoRequest& request);
 
                 /**
-                 *该接口用于启用、停用子应用。被停用的子应用将封停对应域名，并限制控制台访问。
+                 *该接口用于启用、停用应用。被停用的应用将封停对应域名，并限制控制台访问。
                  * @param req ModifySubAppIdStatusRequest
                  * @return ModifySubAppIdStatusOutcome
                  */

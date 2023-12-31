@@ -64,12 +64,12 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取子应用状态，取值范围：
+                     * 获取应用状态，取值范围：
 <li>On：启用。</li>
 <li>Off：停用。</li>
 <li>Destroyed：销毁。</li>
 当前状态如果是 Destoying ，不能进行启用操作，需要等待销毁完成后才能重新启用。
-                     * @return Status 子应用状态，取值范围：
+                     * @return Status 应用状态，取值范围：
 <li>On：启用。</li>
 <li>Off：停用。</li>
 <li>Destroyed：销毁。</li>
@@ -79,12 +79,12 @@ namespace TencentCloud
                     std::string GetStatus() const;
 
                     /**
-                     * 设置子应用状态，取值范围：
+                     * 设置应用状态，取值范围：
 <li>On：启用。</li>
 <li>Off：停用。</li>
 <li>Destroyed：销毁。</li>
 当前状态如果是 Destoying ，不能进行启用操作，需要等待销毁完成后才能重新启用。
-                     * @param _status 子应用状态，取值范围：
+                     * @param _status 应用状态，取值范围：
 <li>On：启用。</li>
 <li>Off：停用。</li>
 <li>Destroyed：销毁。</li>
@@ -109,7 +109,7 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 子应用状态，取值范围：
+                     * 应用状态，取值范围：
 <li>On：启用。</li>
 <li>Off：停用。</li>
 <li>Destroyed：销毁。</li>

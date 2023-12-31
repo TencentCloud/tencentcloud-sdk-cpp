@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/oceanus/v20190422/model/Tag.h>
+#include <tencentcloud/oceanus/v20190422/model/JobEventInfo.h>
 
 
 namespace TencentCloud
@@ -847,6 +848,31 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取作业异常事件信息	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventInfo 作业异常事件信息	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    JobEventInfo GetEventInfo() const;
+
+                    /**
+                     * 设置作业异常事件信息	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _eventInfo 作业异常事件信息	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEventInfo(const JobEventInfo& _eventInfo);
+
+                    /**
+                     * 判断参数 EventInfo 是否已赋值
+                     * @return EventInfo 是否已赋值
+                     * 
+                     */
+                    bool EventInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1072,6 +1098,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 作业异常事件信息	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    JobEventInfo m_eventInfo;
+                    bool m_eventInfoHasBeenSet;
 
                 };
             }
