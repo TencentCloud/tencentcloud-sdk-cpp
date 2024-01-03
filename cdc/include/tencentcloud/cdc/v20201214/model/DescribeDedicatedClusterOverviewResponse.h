@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdc/v20201214/model/VpngwBandwidthData.h>
 #include <tencentcloud/cdc/v20201214/model/LocalNetInfo.h>
+#include <tencentcloud/cdc/v20201214/model/HostDetailInfo.h>
 
 
 namespace TencentCloud
@@ -137,6 +138,54 @@ namespace TencentCloud
                      */
                     bool VpnConnectionBandwidthDataHasBeenSet() const;
 
+                    /**
+                     * 获取宿主机资源概览信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostDetailInfo 宿主机资源概览信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<HostDetailInfo> GetHostDetailInfo() const;
+
+                    /**
+                     * 判断参数 HostDetailInfo 是否已赋值
+                     * @return HostDetailInfo 是否已赋值
+                     * 
+                     */
+                    bool HostDetailInfoHasBeenSet() const;
+
+                    /**
+                     * 获取热备宿主机数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostStandbyCount 热备宿主机数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetHostStandbyCount() const;
+
+                    /**
+                     * 判断参数 HostStandbyCount 是否已赋值
+                     * @return HostStandbyCount 是否已赋值
+                     * 
+                     */
+                    bool HostStandbyCountHasBeenSet() const;
+
+                    /**
+                     * 获取普通宿主机数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostNormalCount 普通宿主机数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetHostNormalCount() const;
+
+                    /**
+                     * 判断参数 HostNormalCount 是否已赋值
+                     * @return HostNormalCount 是否已赋值
+                     * 
+                     */
+                    bool HostNormalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +227,27 @@ namespace TencentCloud
                      */
                     std::vector<VpngwBandwidthData> m_vpnConnectionBandwidthData;
                     bool m_vpnConnectionBandwidthDataHasBeenSet;
+
+                    /**
+                     * 宿主机资源概览信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HostDetailInfo> m_hostDetailInfo;
+                    bool m_hostDetailInfoHasBeenSet;
+
+                    /**
+                     * 热备宿主机数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_hostStandbyCount;
+                    bool m_hostStandbyCountHasBeenSet;
+
+                    /**
+                     * 普通宿主机数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_hostNormalCount;
+                    bool m_hostNormalCountHasBeenSet;
 
                 };
             }

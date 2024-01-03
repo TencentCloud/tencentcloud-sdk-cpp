@@ -4686,7 +4686,7 @@ namespace TencentCloud
                 DescribeMachineDefenseCntOutcomeCallable DescribeMachineDefenseCntCallable(const Model::DescribeMachineDefenseCntRequest& request);
 
                 /**
-                 *查询主机相关核心文件监控规则列 表   
+                 *查询主机相关核心文件监控规则列表
                  * @param req DescribeMachineFileTamperRulesRequest
                  * @return DescribeMachineFileTamperRulesOutcome
                  */

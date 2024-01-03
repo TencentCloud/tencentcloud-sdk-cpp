@@ -182,15 +182,35 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。
-                     * @return Offset 指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。
+                     * 获取OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0,最大2000。
+分页参数, 需要limit, offset 配合使用
+例如:
+您希望得到第三页的数据, 且每页限制最多10条
+你可以使用 LIMIT 10 OFFSET 20
+
+                     * @return Offset OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0,最大2000。
+分页参数, 需要limit, offset 配合使用
+例如:
+您希望得到第三页的数据, 且每页限制最多10条
+你可以使用 LIMIT 10 OFFSET 20
+
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。
-                     * @param _offset 指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。
+                     * 设置OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0,最大2000。
+分页参数, 需要limit, offset 配合使用
+例如:
+您希望得到第三页的数据, 且每页限制最多10条
+你可以使用 LIMIT 10 OFFSET 20
+
+                     * @param _offset OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0,最大2000。
+分页参数, 需要limit, offset 配合使用
+例如:
+您希望得到第三页的数据, 且每页限制最多10条
+你可以使用 LIMIT 10 OFFSET 20
+
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -242,7 +262,12 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。
+                     * OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0,最大2000。
+分页参数, 需要limit, offset 配合使用
+例如:
+您希望得到第三页的数据, 且每页限制最多10条
+你可以使用 LIMIT 10 OFFSET 20
+
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

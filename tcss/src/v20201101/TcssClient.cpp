@@ -5802,6 +5802,49 @@ TcssClient::DescribeAssetSummaryOutcomeCallable TcssClient::DescribeAssetSummary
     return task->get_future();
 }
 
+TcssClient::DescribeAssetSuperNodeListOutcome TcssClient::DescribeAssetSuperNodeList(const DescribeAssetSuperNodeListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetSuperNodeList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetSuperNodeListResponse rsp = DescribeAssetSuperNodeListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetSuperNodeListOutcome(rsp);
+        else
+            return DescribeAssetSuperNodeListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetSuperNodeListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeAssetSuperNodeListAsync(const DescribeAssetSuperNodeListRequest& request, const DescribeAssetSuperNodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetSuperNodeList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeAssetSuperNodeListOutcomeCallable TcssClient::DescribeAssetSuperNodeListCallable(const DescribeAssetSuperNodeListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetSuperNodeListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetSuperNodeList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeAssetSyncLastTimeOutcome TcssClient::DescribeAssetSyncLastTime(const DescribeAssetSyncLastTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetSyncLastTime");
@@ -6010,6 +6053,49 @@ TcssClient::DescribeClusterDetailOutcomeCallable TcssClient::DescribeClusterDeta
         [this, request]()
         {
             return this->DescribeClusterDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeClusterNodesOutcome TcssClient::DescribeClusterNodes(const DescribeClusterNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterNodesResponse rsp = DescribeClusterNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterNodesOutcome(rsp);
+        else
+            return DescribeClusterNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterNodesOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeClusterNodesAsync(const DescribeClusterNodesRequest& request, const DescribeClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeClusterNodesOutcomeCallable TcssClient::DescribeClusterNodesCallable(const DescribeClusterNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterNodes(request);
         }
     );
 
@@ -10059,6 +10145,49 @@ TcssClient::DescribeSecLogVasInfoOutcomeCallable TcssClient::DescribeSecLogVasIn
     return task->get_future();
 }
 
+TcssClient::DescribeSuperNodePodListOutcome TcssClient::DescribeSuperNodePodList(const DescribeSuperNodePodListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSuperNodePodList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSuperNodePodListResponse rsp = DescribeSuperNodePodListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSuperNodePodListOutcome(rsp);
+        else
+            return DescribeSuperNodePodListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSuperNodePodListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSuperNodePodListAsync(const DescribeSuperNodePodListRequest& request, const DescribeSuperNodePodListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSuperNodePodList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSuperNodePodListOutcomeCallable TcssClient::DescribeSuperNodePodListCallable(const DescribeSuperNodePodListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSuperNodePodListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSuperNodePodList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeSupportDefenceVulOutcome TcssClient::DescribeSupportDefenceVul(const DescribeSupportDefenceVulRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSupportDefenceVul");
@@ -10353,6 +10482,49 @@ TcssClient::DescribeUserClusterOutcomeCallable TcssClient::DescribeUserClusterCa
         [this, request]()
         {
             return this->DescribeUserCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeUserPodListOutcome TcssClient::DescribeUserPodList(const DescribeUserPodListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserPodList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserPodListResponse rsp = DescribeUserPodListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserPodListOutcome(rsp);
+        else
+            return DescribeUserPodListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserPodListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeUserPodListAsync(const DescribeUserPodListRequest& request, const DescribeUserPodListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserPodList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeUserPodListOutcomeCallable TcssClient::DescribeUserPodListCallable(const DescribeUserPodListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserPodListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserPodList(request);
         }
     );
 

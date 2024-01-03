@@ -66,26 +66,30 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤器，跟ApplicationIds不能共用，支持的filter主要有：
-application-id，精确匹配
-scene-id，精确匹配
-application-name，模糊匹配
+application-id: 精确匹配;
+scene-id: 精确匹配;
+application-name: 模糊匹配;
+application-type: 精确匹配;
                      * @return Filters 过滤器，跟ApplicationIds不能共用，支持的filter主要有：
-application-id，精确匹配
-scene-id，精确匹配
-application-name，模糊匹配
+application-id: 精确匹配;
+scene-id: 精确匹配;
+application-name: 模糊匹配;
+application-type: 精确匹配;
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤器，跟ApplicationIds不能共用，支持的filter主要有：
-application-id，精确匹配
-scene-id，精确匹配
-application-name，模糊匹配
+application-id: 精确匹配;
+scene-id: 精确匹配;
+application-name: 模糊匹配;
+application-type: 精确匹配;
                      * @param _filters 过滤器，跟ApplicationIds不能共用，支持的filter主要有：
-application-id，精确匹配
-scene-id，精确匹配
-application-name，模糊匹配
+application-id: 精确匹配;
+scene-id: 精确匹配;
+application-name: 模糊匹配;
+application-type: 精确匹配;
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -151,6 +155,48 @@ MC：1000
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取应用列表排序的依据字段。取值范围："CREATED_TIME"：依据应用的创建时间排序。 "APPLICATION_SIZE"：依据应用的大小排序。默认按应用的创建时间排序。
+                     * @return OrderField 应用列表排序的依据字段。取值范围："CREATED_TIME"：依据应用的创建时间排序。 "APPLICATION_SIZE"：依据应用的大小排序。默认按应用的创建时间排序。
+                     * 
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置应用列表排序的依据字段。取值范围："CREATED_TIME"：依据应用的创建时间排序。 "APPLICATION_SIZE"：依据应用的大小排序。默认按应用的创建时间排序。
+                     * @param _orderField 应用列表排序的依据字段。取值范围："CREATED_TIME"：依据应用的创建时间排序。 "APPLICATION_SIZE"：依据应用的大小排序。默认按应用的创建时间排序。
+                     * 
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     * 
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取输出应用列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列。
+                     * @return Order 输出应用列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列。
+                     * 
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置输出应用列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列。
+                     * @param _order 输出应用列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列。
+                     * 
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     * 
+                     */
+                    bool OrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,9 +207,10 @@ MC：1000
 
                     /**
                      * 过滤器，跟ApplicationIds不能共用，支持的filter主要有：
-application-id，精确匹配
-scene-id，精确匹配
-application-name，模糊匹配
+application-id: 精确匹配;
+scene-id: 精确匹配;
+application-name: 模糊匹配;
+application-type: 精确匹配;
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -182,6 +229,18 @@ MC：1000
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 应用列表排序的依据字段。取值范围："CREATED_TIME"：依据应用的创建时间排序。 "APPLICATION_SIZE"：依据应用的大小排序。默认按应用的创建时间排序。
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 输出应用列表的排列顺序。取值范围："ASC"：升序排列。 "DESC"：降序排列。默认按降序排列。
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
 
                 };
             }

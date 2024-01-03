@@ -179,6 +179,110 @@ namespace TencentCloud
                      */
                     bool MinSystemDiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationType 应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationType() const;
+
+                    /**
+                     * 设置应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationType 应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationType(const std::string& _applicationType);
+
+                    /**
+                     * 判断参数 ApplicationType 是否已赋值
+                     * @return ApplicationType 是否已赋值
+                     * 
+                     */
+                    bool ApplicationTypeHasBeenSet() const;
+
+                    /**
+                     * 获取应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离
+示例值：ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationState 应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离
+示例值：ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationState() const;
+
+                    /**
+                     * 设置应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离
+示例值：ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationState 应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离
+示例值：ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationState(const std::string& _applicationState);
+
+                    /**
+                     * 判断参数 ApplicationState 是否已赋值
+                     * @return ApplicationState 是否已赋值
+                     * 
+                     */
+                    bool ApplicationStateHasBeenSet() const;
+
+                    /**
+                     * 获取应用创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 应用创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置应用创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 应用创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取应用大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationSize 应用大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetApplicationSize() const;
+
+                    /**
+                     * 设置应用大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationSize 应用大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationSize(const int64_t& _applicationSize);
+
+                    /**
+                     * 判断参数 ApplicationSize 是否已赋值
+                     * @return ApplicationSize 是否已赋值
+                     * 
+                     */
+                    bool ApplicationSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +321,35 @@ namespace TencentCloud
                      */
                     int64_t m_minSystemDiskSize;
                     bool m_minSystemDiskSizeHasBeenSet;
+
+                    /**
+                     * 应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationType;
+                    bool m_applicationTypeHasBeenSet;
+
+                    /**
+                     * 应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离
+示例值：ONLINE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationState;
+                    bool m_applicationStateHasBeenSet;
+
+                    /**
+                     * 应用创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 应用大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_applicationSize;
+                    bool m_applicationSizeHasBeenSet;
 
                 };
             }

@@ -57,6 +57,7 @@ set(cdc_public_header_model
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterOrdersRequest.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClustersResponse.h
   include/tencentcloud/cdc/v20201214/model/HostStatistic.h
+  include/tencentcloud/cdc/v20201214/model/HostDetailInfo.h
   include/tencentcloud/cdc/v20201214/model/CbsInfo.h
   include/tencentcloud/cdc/v20201214/model/ModifySiteDeviceInfoResponse.h
   include/tencentcloud/cdc/v20201214/model/CreateDedicatedClusterRequest.h
@@ -121,6 +122,7 @@ set(cdc_src
   src/v20201214/model/DescribeDedicatedClusterOrdersRequest.cpp
   src/v20201214/model/DescribeDedicatedClustersResponse.cpp
   src/v20201214/model/HostStatistic.cpp
+  src/v20201214/model/HostDetailInfo.cpp
   src/v20201214/model/CbsInfo.cpp
   src/v20201214/model/ModifySiteDeviceInfoResponse.cpp
   src/v20201214/model/CreateDedicatedClusterRequest.cpp

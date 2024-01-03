@@ -25,7 +25,11 @@ ApplicationInfo::ApplicationInfo() :
     m_applicationNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_configEnvironmentHasBeenSet(false),
-    m_minSystemDiskSizeHasBeenSet(false)
+    m_minSystemDiskSizeHasBeenSet(false),
+    m_applicationTypeHasBeenSet(false),
+    m_applicationStateHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_applicationSizeHasBeenSet(false)
 {
 }
 
@@ -84,6 +88,46 @@ CoreInternalOutcome ApplicationInfo::Deserialize(const rapidjson::Value &value)
         m_minSystemDiskSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationType") && !value["ApplicationType"].IsNull())
+    {
+        if (!value["ApplicationType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationInfo.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationType = string(value["ApplicationType"].GetString());
+        m_applicationTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationState") && !value["ApplicationState"].IsNull())
+    {
+        if (!value["ApplicationState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationInfo.ApplicationState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationState = string(value["ApplicationState"].GetString());
+        m_applicationStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationSize") && !value["ApplicationSize"].IsNull())
+    {
+        if (!value["ApplicationSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationInfo.ApplicationSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationSize = value["ApplicationSize"].GetInt64();
+        m_applicationSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +173,38 @@ void ApplicationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "MinSystemDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minSystemDiskSize, allocator);
+    }
+
+    if (m_applicationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_applicationSize, allocator);
     }
 
 }
@@ -212,5 +288,69 @@ void ApplicationInfo::SetMinSystemDiskSize(const int64_t& _minSystemDiskSize)
 bool ApplicationInfo::MinSystemDiskSizeHasBeenSet() const
 {
     return m_minSystemDiskSizeHasBeenSet;
+}
+
+string ApplicationInfo::GetApplicationType() const
+{
+    return m_applicationType;
+}
+
+void ApplicationInfo::SetApplicationType(const string& _applicationType)
+{
+    m_applicationType = _applicationType;
+    m_applicationTypeHasBeenSet = true;
+}
+
+bool ApplicationInfo::ApplicationTypeHasBeenSet() const
+{
+    return m_applicationTypeHasBeenSet;
+}
+
+string ApplicationInfo::GetApplicationState() const
+{
+    return m_applicationState;
+}
+
+void ApplicationInfo::SetApplicationState(const string& _applicationState)
+{
+    m_applicationState = _applicationState;
+    m_applicationStateHasBeenSet = true;
+}
+
+bool ApplicationInfo::ApplicationStateHasBeenSet() const
+{
+    return m_applicationStateHasBeenSet;
+}
+
+string ApplicationInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ApplicationInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ApplicationInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+int64_t ApplicationInfo::GetApplicationSize() const
+{
+    return m_applicationSize;
+}
+
+void ApplicationInfo::SetApplicationSize(const int64_t& _applicationSize)
+{
+    m_applicationSize = _applicationSize;
+    m_applicationSizeHasBeenSet = true;
+}
+
+bool ApplicationInfo::ApplicationSizeHasBeenSet() const
+{
+    return m_applicationSizeHasBeenSet;
 }
 

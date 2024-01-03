@@ -50,16 +50,16 @@ namespace TencentCloud
 <li>IP   内网IP或公网IP</li>
 <li>OsType - String - 是否必填：否 - windows或linux</li>
 <li>CpuLoad - Int - 是否必填：否 - 
-0: 未知  1: 低负载
-2: 中负载  3: 高负载</li>
+	0: 未知  1: 低负载
+	2: 中负载  3: 高负载</li>
 <li>DiskLoad - Int - 是否必填：否 - 
-0: 0%或未知  1: 0%～20%
-2: 20%～50%  3: 50%～80%
-4: 80%～100%</li>
+	0: 0%或未知  1: 0%～20%
+	2: 20%～50%  3: 50%～80%
+	4: 80%～100%</li>
 <li>MemLoad - Int - 是否必填：否 - 
-0: 0%或未知  1: 0%～20%
-2: 20%～50%  3: 50%～80%
-4: 80%～100%</li>
+	0: 0%或未知  1: 0%～20%
+	2: 20%～50%  3: 50%～80%
+	4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * @return Filters 过滤条件。
@@ -68,16 +68,16 @@ namespace TencentCloud
 <li>IP   内网IP或公网IP</li>
 <li>OsType - String - 是否必填：否 - windows或linux</li>
 <li>CpuLoad - Int - 是否必填：否 - 
-0: 未知  1: 低负载
-2: 中负载  3: 高负载</li>
+	0: 未知  1: 低负载
+	2: 中负载  3: 高负载</li>
 <li>DiskLoad - Int - 是否必填：否 - 
-0: 0%或未知  1: 0%～20%
-2: 20%～50%  3: 50%～80%
-4: 80%～100%</li>
+	0: 0%或未知  1: 0%～20%
+	2: 20%～50%  3: 50%～80%
+	4: 80%～100%</li>
 <li>MemLoad - Int - 是否必填：否 - 
-0: 0%或未知  1: 0%～20%
-2: 20%～50%  3: 50%～80%
-4: 80%～100%</li>
+	0: 0%或未知  1: 0%～20%
+	2: 20%～50%  3: 50%～80%
+	4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * 
@@ -91,16 +91,16 @@ namespace TencentCloud
 <li>IP   内网IP或公网IP</li>
 <li>OsType - String - 是否必填：否 - windows或linux</li>
 <li>CpuLoad - Int - 是否必填：否 - 
-0: 未知  1: 低负载
-2: 中负载  3: 高负载</li>
+	0: 未知  1: 低负载
+	2: 中负载  3: 高负载</li>
 <li>DiskLoad - Int - 是否必填：否 - 
-0: 0%或未知  1: 0%～20%
-2: 20%～50%  3: 50%～80%
-4: 80%～100%</li>
+	0: 0%或未知  1: 0%～20%
+	2: 20%～50%  3: 50%～80%
+	4: 80%～100%</li>
 <li>MemLoad - Int - 是否必填：否 - 
-0: 0%或未知  1: 0%～20%
-2: 20%～50%  3: 50%～80%
-4: 80%～100%</li>
+	0: 0%或未知  1: 0%～20%
+	2: 20%～50%  3: 50%～80%
+	4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * @param _filters 过滤条件。
@@ -109,16 +109,16 @@ namespace TencentCloud
 <li>IP   内网IP或公网IP</li>
 <li>OsType - String - 是否必填：否 - windows或linux</li>
 <li>CpuLoad - Int - 是否必填：否 - 
-0: 未知  1: 低负载
-2: 中负载  3: 高负载</li>
+	0: 未知  1: 低负载
+	2: 中负载  3: 高负载</li>
 <li>DiskLoad - Int - 是否必填：否 - 
-0: 0%或未知  1: 0%～20%
-2: 20%～50%  3: 50%～80%
-4: 80%～100%</li>
+	0: 0%或未知  1: 0%～20%
+	2: 20%～50%  3: 50%～80%
+	4: 80%～100%</li>
 <li>MemLoad - Int - 是否必填：否 - 
-0: 0%或未知  1: 0%～20%
-2: 20%～50%  3: 50%～80%
-4: 80%～100%</li>
+	0: 0%或未知  1: 0%～20%
+	2: 20%～50%  3: 50%～80%
+	4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      * 
@@ -225,16 +225,16 @@ namespace TencentCloud
 <li>IP   内网IP或公网IP</li>
 <li>OsType - String - 是否必填：否 - windows或linux</li>
 <li>CpuLoad - Int - 是否必填：否 - 
-0: 未知  1: 低负载
-2: 中负载  3: 高负载</li>
+	0: 未知  1: 低负载
+	2: 中负载  3: 高负载</li>
 <li>DiskLoad - Int - 是否必填：否 - 
-0: 0%或未知  1: 0%～20%
-2: 20%～50%  3: 50%～80%
-4: 80%～100%</li>
+	0: 0%或未知  1: 0%～20%
+	2: 20%～50%  3: 50%～80%
+	4: 80%～100%</li>
 <li>MemLoad - Int - 是否必填：否 - 
-0: 0%或未知  1: 0%～20%
-2: 20%～50%  3: 50%～80%
-4: 80%～100%</li>
+	0: 0%或未知  1: 0%～20%
+	2: 20%～50%  3: 50%～80%
+	4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
                      */

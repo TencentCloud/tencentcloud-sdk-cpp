@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool IsElasticHasBeenSet() const;
 
+                    /**
+                     * 获取是否是购买页面需要的spec
+                     * @return CaseType 是否是购买页面需要的spec
+                     * 
+                     */
+                    int64_t GetCaseType() const;
+
+                    /**
+                     * 设置是否是购买页面需要的spec
+                     * @param _caseType 是否是购买页面需要的spec
+                     * 
+                     */
+                    void SetCaseType(const int64_t& _caseType);
+
+                    /**
+                     * 判断参数 CaseType 是否已赋值
+                     * @return CaseType 是否已赋值
+                     * 
+                     */
+                    bool CaseTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     bool m_isElastic;
                     bool m_isElasticHasBeenSet;
+
+                    /**
+                     * 是否是购买页面需要的spec
+                     */
+                    int64_t m_caseType;
+                    bool m_caseTypeHasBeenSet;
 
                 };
             }

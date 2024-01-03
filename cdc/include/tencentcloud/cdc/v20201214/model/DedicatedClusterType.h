@@ -240,15 +240,15 @@ namespace TencentCloud
                     bool PowerDrawKvaHasBeenSet() const;
 
                     /**
-                     * 获取显示计算资源规格详情，存储等资源不显示；对应规格
-                     * @return ComputeFormatDesc 显示计算资源规格详情，存储等资源不显示；对应规格
+                     * 获取显示计算资源规格详情，存储等资源不显示
+                     * @return ComputeFormatDesc 显示计算资源规格详情，存储等资源不显示
                      * 
                      */
                     std::string GetComputeFormatDesc() const;
 
                     /**
-                     * 设置显示计算资源规格详情，存储等资源不显示；对应规格
-                     * @param _computeFormatDesc 显示计算资源规格详情，存储等资源不显示；对应规格
+                     * 设置显示计算资源规格详情，存储等资源不显示
+                     * @param _computeFormatDesc 显示计算资源规格详情，存储等资源不显示
                      * 
                      */
                     void SetComputeFormatDesc(const std::string& _computeFormatDesc);
@@ -318,7 +318,7 @@ namespace TencentCloud
                     bool m_powerDrawKvaHasBeenSet;
 
                     /**
-                     * 显示计算资源规格详情，存储等资源不显示；对应规格
+                     * 显示计算资源规格详情，存储等资源不显示
                      */
                     std::string m_computeFormatDesc;
                     bool m_computeFormatDescHasBeenSet;

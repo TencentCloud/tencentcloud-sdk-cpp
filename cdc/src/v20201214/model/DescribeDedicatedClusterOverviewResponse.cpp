@@ -29,7 +29,10 @@ DescribeDedicatedClusterOverviewResponse::DescribeDedicatedClusterOverviewRespon
     m_vpnConnectionStateHasBeenSet(false),
     m_vpngwBandwidthDataHasBeenSet(false),
     m_localNetInfoHasBeenSet(false),
-    m_vpnConnectionBandwidthDataHasBeenSet(false)
+    m_vpnConnectionBandwidthDataHasBeenSet(false),
+    m_hostDetailInfoHasBeenSet(false),
+    m_hostStandbyCountHasBeenSet(false),
+    m_hostNormalCountHasBeenSet(false)
 {
 }
 
@@ -151,6 +154,46 @@ CoreInternalOutcome DescribeDedicatedClusterOverviewResponse::Deserialize(const 
         m_vpnConnectionBandwidthDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HostDetailInfo") && !rsp["HostDetailInfo"].IsNull())
+    {
+        if (!rsp["HostDetailInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HostDetailInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["HostDetailInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HostDetailInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_hostDetailInfo.push_back(item);
+        }
+        m_hostDetailInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HostStandbyCount") && !rsp["HostStandbyCount"].IsNull())
+    {
+        if (!rsp["HostStandbyCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostStandbyCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostStandbyCount = rsp["HostStandbyCount"].GetUint64();
+        m_hostStandbyCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HostNormalCount") && !rsp["HostNormalCount"].IsNull())
+    {
+        if (!rsp["HostNormalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostNormalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostNormalCount = rsp["HostNormalCount"].GetUint64();
+        m_hostNormalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -216,6 +259,37 @@ string DescribeDedicatedClusterOverviewResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hostDetailInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostDetailInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hostDetailInfo.begin(); itr != m_hostDetailInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hostStandbyCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostStandbyCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostStandbyCount, allocator);
+    }
+
+    if (m_hostNormalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostNormalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostNormalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -288,6 +362,36 @@ vector<VpngwBandwidthData> DescribeDedicatedClusterOverviewResponse::GetVpnConne
 bool DescribeDedicatedClusterOverviewResponse::VpnConnectionBandwidthDataHasBeenSet() const
 {
     return m_vpnConnectionBandwidthDataHasBeenSet;
+}
+
+vector<HostDetailInfo> DescribeDedicatedClusterOverviewResponse::GetHostDetailInfo() const
+{
+    return m_hostDetailInfo;
+}
+
+bool DescribeDedicatedClusterOverviewResponse::HostDetailInfoHasBeenSet() const
+{
+    return m_hostDetailInfoHasBeenSet;
+}
+
+uint64_t DescribeDedicatedClusterOverviewResponse::GetHostStandbyCount() const
+{
+    return m_hostStandbyCount;
+}
+
+bool DescribeDedicatedClusterOverviewResponse::HostStandbyCountHasBeenSet() const
+{
+    return m_hostStandbyCountHasBeenSet;
+}
+
+uint64_t DescribeDedicatedClusterOverviewResponse::GetHostNormalCount() const
+{
+    return m_hostNormalCount;
+}
+
+bool DescribeDedicatedClusterOverviewResponse::HostNormalCountHasBeenSet() const
+{
+    return m_hostNormalCountHasBeenSet;
 }
 
 

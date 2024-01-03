@@ -204,7 +204,7 @@ namespace TencentCloud
                 DescribeDedicatedClusterHostStatisticsOutcomeCallable DescribeDedicatedClusterHostStatisticsCallable(const Model::DescribeDedicatedClusterHostStatisticsRequest& request);
 
                 /**
-                 *专用集群宿主机信息
+                 *查询专用集群宿主机信息
                  * @param req DescribeDedicatedClusterHostsRequest
                  * @return DescribeDedicatedClusterHostsOutcome
                  */
@@ -231,7 +231,7 @@ namespace TencentCloud
                 DescribeDedicatedClusterOrdersOutcomeCallable DescribeDedicatedClusterOrdersCallable(const Model::DescribeDedicatedClusterOrdersRequest& request);
 
                 /**
-                 *专用集群概览信息
+                 *查询专用集群概览信息
                  * @param req DescribeDedicatedClusterOverviewRequest
                  * @return DescribeDedicatedClusterOverviewOutcome
                  */

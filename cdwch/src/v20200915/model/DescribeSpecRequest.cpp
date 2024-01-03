@@ -25,7 +25,8 @@ using namespace std;
 DescribeSpecRequest::DescribeSpecRequest() :
     m_zoneHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_isElasticHasBeenSet(false)
+    m_isElasticHasBeenSet(false),
+    m_caseTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeSpecRequest::ToJsonString() const
         string key = "IsElastic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isElastic, allocator);
+    }
+
+    if (m_caseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaseType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_caseType, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeSpecRequest::SetIsElastic(const bool& _isElastic)
 bool DescribeSpecRequest::IsElasticHasBeenSet() const
 {
     return m_isElasticHasBeenSet;
+}
+
+int64_t DescribeSpecRequest::GetCaseType() const
+{
+    return m_caseType;
+}
+
+void DescribeSpecRequest::SetCaseType(const int64_t& _caseType)
+{
+    m_caseType = _caseType;
+    m_caseTypeHasBeenSet = true;
+}
+
+bool DescribeSpecRequest::CaseTypeHasBeenSet() const
+{
+    return m_caseTypeHasBeenSet;
 }
 
 

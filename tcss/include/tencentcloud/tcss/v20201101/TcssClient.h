@@ -291,6 +291,8 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetProcessListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetSummaryRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetSummaryResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeAssetSuperNodeListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeAssetSuperNodeListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetSyncLastTimeRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetSyncLastTimeResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetWebServiceListRequest.h>
@@ -301,6 +303,8 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeCheckItemListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeClusterDetailRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeClusterDetailResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeClusterNodesRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeClusterNodesResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeClusterSummaryRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeClusterSummaryResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeComplianceAssetDetailInfoRequest.h>
@@ -489,6 +493,8 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeSecLogKafkaUINResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeSecLogVasInfoRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeSecLogVasInfoResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeSuperNodePodListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeSuperNodePodListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeSupportDefenceVulRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeSupportDefenceVulResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeSystemVulListRequest.h>
@@ -503,6 +509,8 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeUnfinishRefreshTaskResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeUserClusterRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeUserClusterResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeUserPodListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeUserPodListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeValueAddedSrvInfoRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeValueAddedSrvInfoResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusAutoIsolateSampleDetailRequest.h>
@@ -1105,6 +1113,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssetSummaryResponse> DescribeAssetSummaryOutcome;
                 typedef std::future<DescribeAssetSummaryOutcome> DescribeAssetSummaryOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAssetSummaryRequest&, DescribeAssetSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetSuperNodeListResponse> DescribeAssetSuperNodeListOutcome;
+                typedef std::future<DescribeAssetSuperNodeListOutcome> DescribeAssetSuperNodeListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeAssetSuperNodeListRequest&, DescribeAssetSuperNodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetSuperNodeListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetSyncLastTimeResponse> DescribeAssetSyncLastTimeOutcome;
                 typedef std::future<DescribeAssetSyncLastTimeOutcome> DescribeAssetSyncLastTimeOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAssetSyncLastTimeRequest&, DescribeAssetSyncLastTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetSyncLastTimeAsyncHandler;
@@ -1120,6 +1131,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterDetailResponse> DescribeClusterDetailOutcome;
                 typedef std::future<DescribeClusterDetailOutcome> DescribeClusterDetailOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeClusterDetailRequest&, DescribeClusterDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterNodesResponse> DescribeClusterNodesOutcome;
+                typedef std::future<DescribeClusterNodesOutcome> DescribeClusterNodesOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeClusterNodesRequest&, DescribeClusterNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterSummaryResponse> DescribeClusterSummaryOutcome;
                 typedef std::future<DescribeClusterSummaryOutcome> DescribeClusterSummaryOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeClusterSummaryRequest&, DescribeClusterSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterSummaryAsyncHandler;
@@ -1402,6 +1416,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecLogVasInfoResponse> DescribeSecLogVasInfoOutcome;
                 typedef std::future<DescribeSecLogVasInfoOutcome> DescribeSecLogVasInfoOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeSecLogVasInfoRequest&, DescribeSecLogVasInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecLogVasInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSuperNodePodListResponse> DescribeSuperNodePodListOutcome;
+                typedef std::future<DescribeSuperNodePodListOutcome> DescribeSuperNodePodListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeSuperNodePodListRequest&, DescribeSuperNodePodListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSuperNodePodListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSupportDefenceVulResponse> DescribeSupportDefenceVulOutcome;
                 typedef std::future<DescribeSupportDefenceVulOutcome> DescribeSupportDefenceVulOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeSupportDefenceVulRequest&, DescribeSupportDefenceVulOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupportDefenceVulAsyncHandler;
@@ -1423,6 +1440,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserClusterResponse> DescribeUserClusterOutcome;
                 typedef std::future<DescribeUserClusterOutcome> DescribeUserClusterOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeUserClusterRequest&, DescribeUserClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserPodListResponse> DescribeUserPodListOutcome;
+                typedef std::future<DescribeUserPodListOutcome> DescribeUserPodListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeUserPodListRequest&, DescribeUserPodListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserPodListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeValueAddedSrvInfoResponse> DescribeValueAddedSrvInfoOutcome;
                 typedef std::future<DescribeValueAddedSrvInfoOutcome> DescribeValueAddedSrvInfoOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeValueAddedSrvInfoRequest&, DescribeValueAddedSrvInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeValueAddedSrvInfoAsyncHandler;
@@ -2915,6 +2935,15 @@ namespace TencentCloud
                 DescribeAssetSummaryOutcomeCallable DescribeAssetSummaryCallable(const Model::DescribeAssetSummaryRequest& request);
 
                 /**
+                 *查询超级节点列表
+                 * @param req DescribeAssetSuperNodeListRequest
+                 * @return DescribeAssetSuperNodeListOutcome
+                 */
+                DescribeAssetSuperNodeListOutcome DescribeAssetSuperNodeList(const Model::DescribeAssetSuperNodeListRequest &request);
+                void DescribeAssetSuperNodeListAsync(const Model::DescribeAssetSuperNodeListRequest& request, const DescribeAssetSuperNodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetSuperNodeListOutcomeCallable DescribeAssetSuperNodeListCallable(const Model::DescribeAssetSuperNodeListRequest& request);
+
+                /**
                  *查询资产同步最近时间
                  * @param req DescribeAssetSyncLastTimeRequest
                  * @return DescribeAssetSyncLastTimeOutcome
@@ -2958,6 +2987,15 @@ namespace TencentCloud
                 DescribeClusterDetailOutcome DescribeClusterDetail(const Model::DescribeClusterDetailRequest &request);
                 void DescribeClusterDetailAsync(const Model::DescribeClusterDetailRequest& request, const DescribeClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterDetailOutcomeCallable DescribeClusterDetailCallable(const Model::DescribeClusterDetailRequest& request);
+
+                /**
+                 *查询集群节点信息
+                 * @param req DescribeClusterNodesRequest
+                 * @return DescribeClusterNodesOutcome
+                 */
+                DescribeClusterNodesOutcome DescribeClusterNodes(const Model::DescribeClusterNodesRequest &request);
+                void DescribeClusterNodesAsync(const Model::DescribeClusterNodesRequest& request, const DescribeClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterNodesOutcomeCallable DescribeClusterNodesCallable(const Model::DescribeClusterNodesRequest& request);
 
                 /**
                  *查询用户集群资产总览
@@ -3806,6 +3844,15 @@ namespace TencentCloud
                 DescribeSecLogVasInfoOutcomeCallable DescribeSecLogVasInfoCallable(const Model::DescribeSecLogVasInfoRequest& request);
 
                 /**
+                 *查询超级节点pod列表
+                 * @param req DescribeSuperNodePodListRequest
+                 * @return DescribeSuperNodePodListOutcome
+                 */
+                DescribeSuperNodePodListOutcome DescribeSuperNodePodList(const Model::DescribeSuperNodePodListRequest &request);
+                void DescribeSuperNodePodListAsync(const Model::DescribeSuperNodePodListRequest& request, const DescribeSuperNodePodListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSuperNodePodListOutcomeCallable DescribeSuperNodePodListCallable(const Model::DescribeSuperNodePodListRequest& request);
+
+                /**
                  *查询支持防御的漏洞列表
                  * @param req DescribeSupportDefenceVulRequest
                  * @return DescribeSupportDefenceVulOutcome
@@ -3867,6 +3914,15 @@ namespace TencentCloud
                 DescribeUserClusterOutcome DescribeUserCluster(const Model::DescribeUserClusterRequest &request);
                 void DescribeUserClusterAsync(const Model::DescribeUserClusterRequest& request, const DescribeUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserClusterOutcomeCallable DescribeUserClusterCallable(const Model::DescribeUserClusterRequest& request);
+
+                /**
+                 *获取用户的pod列表
+                 * @param req DescribeUserPodListRequest
+                 * @return DescribeUserPodListOutcome
+                 */
+                DescribeUserPodListOutcome DescribeUserPodList(const Model::DescribeUserPodListRequest &request);
+                void DescribeUserPodListAsync(const Model::DescribeUserPodListRequest& request, const DescribeUserPodListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserPodListOutcomeCallable DescribeUserPodListCallable(const Model::DescribeUserPodListRequest& request);
 
                 /**
                  *DescribeValueAddedSrvInfo查询增值服务需购买信息
